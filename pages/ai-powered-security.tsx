@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -8,7 +8,7 @@ interface SecurityThreat {'
   severity: 'low' | 'medium' | 'high' | 'critical";
   source: string;
   target: string;
-  description: string;'
+  description: string;
   detectedAt: Date;
   status: 'active' | 'contained' | 'resolved' | 'investigating";
   aiConfidence: number;
@@ -31,13 +31,13 @@ interface SecurityEvent {'
     suspicious: boolean;
     threatLevel: 'low' | 'medium' | 'high' | 'critical";
     confidence: number;
-    recommendations: string[];'
+    recommendations: string[];
   };
   action: 'allowed' | 'blocked' | 'flagged' | 'investigated';}
 interface SecurityPolicy {
-  id: string;'
+  id: string;
   name: string;
-  type: 'authentication' | 'authorization' | 'data-protection' | 'network-security' | 'compliance';'
+  type: 'authentication' | 'authorization' | 'data-protection' | 'network-security' | 'compliance';
   description: string;
   status: 'active' | 'inactive' | 'draft";
   aiEnabled: boolean;
@@ -53,7 +53,7 @@ interface SecurityAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -61,7 +61,7 @@ const AIPoweredSecurityPage: NextPage = () => {
   ;
   const [threats, setThreats] = useState<SecurityThreat[]>([]);
   const [events, setEvents] = useState<SecurityEvent[]>([]);
-  const [policies, setPolicies] = useState<SecurityPolicy[]>([]);'
+  const [policies, setPolicies] = useState<SecurityPolicy[]>([]);
   const [analytics, setAnalytics] = useState<SecurityAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'threats' | 'events' | 'policies' | 'analytics'>('overview');
   const [filterSeverity, setFilterSeverity] = useState<string>('all');
@@ -89,7 +89,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             usersAffected: 1,
             dataCompromised: false,
             systemDowntime: 0,
-            financialLoss: 0}}}'
+            financialLoss: 0}}}
         {
           id: '2',
           type: 'brute-force',
@@ -105,7 +105,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             usersAffected: 0,
             dataCompromised: false,
             systemDowntime: 0,
-            financialLoss: 0}}'
+            financialLoss: 0}}
         {
           id: '3',
           type: 'ddos',
@@ -121,7 +121,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             usersAffected: 1500,
             dataCompromised: false,
             systemDowntime: 15,
-            financialLoss: 2500}}'
+            financialLoss: 2500}}
         {
           id: '4',
           type: 'sql-injection',
@@ -137,7 +137,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             usersAffected: 0,
             dataCompromised: false,
             systemDowntime: 0,
-            financialLoss: 0}}'
+            financialLoss: 0}}
         {
           id: '5',
           type: 'data-breach',
@@ -168,9 +168,9 @@ const AIPoweredSecurityPage: NextPage = () => {
             suspicious: true,
             threatLevel: 'high','
             confidence: 87,
-            recommendations: ['Block IP', 'Require 2FA', 'Monitor activity']'
+            recommendations: ['Block IP', 'Require 2FA', 'Monitor activity']
           }
-          action: 'blocked'}'
+          action: 'blocked'}
         {
           id: '2',
           type: 'data-access',
@@ -183,9 +183,9 @@ const AIPoweredSecurityPage: NextPage = () => {
             suspicious: false,
             threatLevel: 'low','
             confidence: 95,
-            recommendations: ['Allow access', 'Log activity']'
+            recommendations: ['Allow access', 'Log activity']
           }
-          action: 'allowed'}'
+          action: 'allowed'}
         {
           id: '3',
           type: 'system-change',
@@ -198,9 +198,9 @@ const AIPoweredSecurityPage: NextPage = () => {
             suspicious: false,
             threatLevel: 'low','
             confidence: 90,
-            recommendations: ['Monitor changes', 'Verify integrity']'
+            recommendations: ['Monitor changes', 'Verify integrity']
           }
-          action: 'flagged'}'
+          action: 'flagged'}
         {
           id: '4',
           type: 'network-traffic',
@@ -213,9 +213,9 @@ const AIPoweredSecurityPage: NextPage = () => {
             suspicious: true,
             threatLevel: 'critical','
             confidence: 92,
-            recommendations: ['Block IP', 'Investigate source', 'Alert security team']'
+            recommendations: ['Block IP', 'Investigate source', 'Alert security team']
           }
-          action: 'blocked'}'
+          action: 'blocked'}
         {
           id: '5',
           type: 'api-call',
@@ -228,7 +228,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             suspicious: false,
             threatLevel: 'low','
             confidence: 88,
-            recommendations: ['Allow request', 'Rate limit']'
+            recommendations: ['Allow request', 'Rate limit']
           }
           action: 'allowed'}
       ];
@@ -246,15 +246,15 @@ const AIPoweredSecurityPage: NextPage = () => {
               condition: 'High-risk login attempt',
               action: 'Require additional verification',
               priority: 1
-            },'
+            },
 {
               id: '1-2',
               condition: 'Unusual location',
               action: 'Send verification email',
-              priority: 2}'
+              priority: 2}
           ],
           lastUpdated: new Date('2024-01-15'),
-          compliance: ['GDPR', 'SOC2', 'PCI-DSS']}'
+          compliance: ['GDPR', 'SOC2', 'PCI-DSS']}
         {
           id: '2',
           name: 'Data Encryption Policy',
@@ -268,15 +268,15 @@ const AIPoweredSecurityPage: NextPage = () => {
               condition: 'Payment data',
               action: 'AES-256 encryption',
               priority: 1
-            },'
+            },
 {
               id: '2-2',
               condition: 'User personal data',
               action: 'AES-128 encryption',
-              priority: 2}'
+              priority: 2}
           ],
           lastUpdated: new Date('2024-01-10'),
-          compliance: ['GDPR', 'CCPA', 'HIPAA']}'
+          compliance: ['GDPR', 'CCPA', 'HIPAA']}
         {
           id: '3',
           name: 'Network Security Policy',
@@ -290,15 +290,15 @@ const AIPoweredSecurityPage: NextPage = () => {
               condition: 'DDoS attack detected',
               action: 'Activate DDoS protection',
               priority: 1
-            },'
+            },
 {
               id: '3-2',
               condition: 'Suspicious traffic',
               action: 'Block IP and investigate',
-              priority: 2}'
+              priority: 2}
           ],
           lastUpdated: new Date('2024-01-12'),
-          compliance: ['ISO27001', 'NIST']}'
+          compliance: ['ISO27001', 'NIST']}
         {
           id: '4',
           name: 'Access Control Policy',
@@ -312,12 +312,12 @@ const AIPoweredSecurityPage: NextPage = () => {
               condition: 'Admin access request',
               action: 'Require approval and audit',
               priority: 1
-            },'
+            },
 {
               id: '4-2',
               condition: 'Sensitive data access',
               action: 'Log and monitor',
-              priority: 2}'
+              priority: 2}
           ],
           lastUpdated: new Date('2024-01-08'),
           compliance: ['SOC2', 'ISO27001']}
@@ -331,7 +331,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -0.5,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'False Positive Rate',
@@ -340,7 +340,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -40.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Response Time',
@@ -349,7 +349,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -60.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'Security Score',
@@ -358,7 +358,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -2.8,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'AI Confidence',
@@ -367,7 +367,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -0.3,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'Automated Response Rate',
@@ -388,7 +388,7 @@ const AIPoweredSecurityPage: NextPage = () => {
 
   const filteredThreats = useMemo(() => {
     let filtered = threats.filter(threat => {'
-      // Severity filter';'
+      // Severity filter';
       if (filterSeverity !== 'all' && threat.severity !== filterSeverity) return false;
       '
       // Status filter
@@ -405,7 +405,7 @@ const AIPoweredSecurityPage: NextPage = () => {
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'severity':
-          const severityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
+          const $1 = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
           return severityOrder[b.severity] - severityOrder[a.severity];
         case 'confidence':'
           return b.aiConfidence - a.aiConfidence;
@@ -419,7 +419,7 @@ const AIPoweredSecurityPage: NextPage = () => {
     return filtered;
   } [threats, filterSeverity, filterStatus, searchTerm, sortBy]);
   const getSeverityColor = (severity: string) => {'
-    switch (severity) {';'
+    switch (severity) {';
       case 'critical': return 'text-red-400 bg-red-500/20";
       case 'high': return 'text-orange-400 bg-orange-500/20";
       case 'medium': return 'text-yellow-400 bg-yellow-500/20";
@@ -427,7 +427,7 @@ const AIPoweredSecurityPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-red-400 bg-red-500/20";
       case 'contained': return 'text-yellow-400 bg-yellow-500/20";
       case 'resolved': return 'text-green-400 bg-green-500/20";
@@ -435,7 +435,7 @@ const AIPoweredSecurityPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getThreatIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'malware': return '🦠";
       case 'phishing': return '🎣";
       case 'ddos': return '🌊";
@@ -447,7 +447,7 @@ const AIPoweredSecurityPage: NextPage = () => {
       default: return '⚠️';}
   };
   const getActionColor = (action: string) => {'
-    switch (action) {';'
+    switch (action) {';
       case 'blocked': return 'text-red-400";
       case 'allowed': return 'text-green-400";
       case 'flagged': return 'text-yellow-400";
@@ -455,14 +455,14 @@ const AIPoweredSecurityPage: NextPage = () => {
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
-  const getRiskScoreColor = (score: number) => {';'
+  const getRiskScoreColor = (score: number) => {';
     if (score >= 80) return 'text-red-400";
     if (score >= 60) return 'text-orange-400";
     if (score >= 40) return 'text-yellow-400";
@@ -553,7 +553,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -577,8 +577,8 @@ const AIPoweredSecurityPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
-        {/* Search and Filters */},'"'
+        )}
+        {/* Search and Filters */},"'
 {selectedView === 'threats' && (
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 > 
             </div><div className="grid grid-cols-1 lg grid-cols-4" gap-4>
@@ -684,7 +684,7 @@ const AIPoweredSecurityPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Security Events */},
 {selectedView === 'events' && ("
           <div className="space-y-4>" 
@@ -748,7 +748,7 @@ const AIPoweredSecurityPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Security Policies */},
 {selectedView === 'policies' && ("
           <div className="grid" grid-cols-1 md grid-cols-2 gap-6 > 

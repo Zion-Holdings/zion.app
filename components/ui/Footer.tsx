@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true)
       } else {
-        setIsVisible(false)}}'
+        setIsVisible(false)}}
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
           <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg" space-y-0">
             <div className=" text-center lg" text-left">
               <p className="text-responsive-sm text-gray-400">;
-                &copy;"
+                &copy;
  2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace
               </p>
             </div>
@@ -209,7 +209,7 @@ const Footer: React.FC = () => {
 
       {/* Animated Border */} 
       <div className="absolute" bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-pulse></div>
-    </footer"> );"
+    </footer"> );
 };
 '
 export default Footer "'"

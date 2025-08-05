@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface RealTimeDashboardProps {
-  className?: string;}'
+  className?: string;}
 const RealTimeDashboard: React.FC<RealTimeDashboardProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const RealTimeDashboard: React.FC<RealTimeDashboardProps> = ({ className="'' }) 
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default RealTimeDashboard;"'"'`
+export default RealTimeDashboard;'`

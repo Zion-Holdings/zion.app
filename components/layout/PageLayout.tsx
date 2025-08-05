@@ -12,7 +12,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
           {children}
         </div>
       </main>
-    </div > );"
+    </div > );
 };
 '
 export default PageLayout "'"

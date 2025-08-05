@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -246,7 +246,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Development Dashboard */},'
+            {/* Development Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -305,7 +305,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum IDEs */},''
+            {/* Quantum IDEs */},
 {activeTab === 'ides' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum IDEs</h2>
@@ -346,7 +346,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Development Tools */},"''
 {activeTab === 'tools' && (
               <div className="space-y-6>"
@@ -388,7 +388,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Testing */},"''
 {activeTab === 'testing' && (
               <div className="space-y-6>"
@@ -432,7 +432,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Deployment */}, ''
 {activeTab === 'deployments' && (
               <div className="space-y-6">
@@ -476,7 +476,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Debugging */},''
+            {/* Quantum Debugging */},
 {activeTab === 'debugging' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Debugging</h2>
@@ -517,7 +517,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Optimization */},"''
 {activeTab === 'optimizations' && (
               <div className="space-y-6>"

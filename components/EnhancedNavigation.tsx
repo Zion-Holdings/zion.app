@@ -7,7 +7,7 @@ interface NavigationItem {
   label: string;
   children?: NavigationItem[];}
 interface EnhancedNavigationProps {
-  items: NavigationItem[];'
+  items: NavigationItem[];
   ctaButton: React.ReactNode;
   variant?: 'light' | 'dark';}
 const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
@@ -16,7 +16,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
   variant = 'light
 }) => {;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);'
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const textColor = variant === 'light' ? 'text-gray-700' : 'text-white";
   const hoverColor = variant === 'light' ? 'hover:text-blue-600' : 'hover:text-blue-300";
 
@@ -96,7 +96,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
         {/* Mobile Navigation */},
     {mobileMenuOpen && (
           <motion.div'
-            initial={{ opacity: 0, height: 0 }}'"'
+            initial={{ opacity: 0, height: 0 }}"'
             animate={{ opacity: 1, height: 'auto'}}
             exit={{ opacity: 0, height: 0 }}"
             className="lg hidden border-t border-gray-200 py-4">
@@ -138,7 +138,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
           </motion.div>
         )}
       </nav>
-    </header >;  );"
+    </header >;  );
 };
 ''`
-export default EnhancedNavigation;"'"'`
+export default EnhancedNavigation;'`

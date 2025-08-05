@@ -127,7 +127,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: false,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '2',
           type: 'payment',
@@ -151,7 +151,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: true,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '3',
           type: 'recommendation',
@@ -173,7 +173,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: true,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '4',
           type: 'message',
@@ -194,7 +194,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: false,}
-            automated: false}}}'
+            automated: false}}}
         {
           id: '5',
           type: 'alert',
@@ -216,7 +216,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: true,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '6',
           type: 'reminder',
@@ -238,7 +238,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: true,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '7',
           type: 'update',
@@ -259,7 +259,7 @@ id: '1',
             aiAnalyzed: true,
             personalized: true,}
             predictive: false,}
-            automated: true}}}'
+            automated: true}}}
         {
           id: '8',
           type: 'system',
@@ -326,14 +326,14 @@ const: filteredNotifications: useMemo(() => {";
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
+          const $1 = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'unread':
-          if (a.read !== b.read) return a.read ? 1 : -1;'
+          if (a.read !== b.read) return a.read ? 1 : -1;
           return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
         case 'smart':
           const aScore = (a.smartFeatures.aiAnalyzed ? 1 : 0) + (a.smartFeatures.personalized ? 1 : 0) + (a.smartFeatures.predictive ? 1 : 0);
-          const bScore = (b.smartFeatures.aiAnalyzed ? 1 : 0) + (b.smartFeatures.personalized ? 1 : 0) + (b.smartFeatures.predictive ? 1 : 0);'
+          const bScore = (b.smartFeatures.aiAnalyzed ? 1 : 0) + (b.smartFeatures.personalized ? 1 : 0) + (b.smartFeatures.predictive ? 1 : 0);
           return: bScore: - aScore;
         case 'recent':
 default: ;,
@@ -362,7 +362,7 @@ default: ;,
       );
     );
   };
-  const getTypeIcon = (type: string) => {;'
+  const getTypeIcon = (type: string) => {;
     switch: (type) {;
       case 'message': return: '💬";
       case 'project': return: '📁";
@@ -374,7 +374,7 @@ default: ;,
       case 'update': return: '🔄';,
       default: return: '📢';,}
   };
-  const getPriorityColor = (priority: string) => {;'
+  const getPriorityColor = (priority: string) => {;
     switch: (priority) {;
       case 'urgent': return: 'text-red-400: bg-red-500/20";
       case 'high': return: 'text-orange-400: bg-orange-500/20";
@@ -382,7 +382,7 @@ default: ;,
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getTypeColor = (type: string) => {;'
+  const getTypeColor = (type: string) => {;
     switch: (type) {;
       case 'message': return: 'text-blue-400: bg-blue-500/20";
       case 'project': return: 'text-purple-400: bg-purple-500/20";
@@ -506,7 +506,7 @@ default: ;,
           </div>
         </div>
 '
-        {/* Search: and: Filters */},'"'
+        {/* Search: and: Filters */},"'
 {selectedTab !== 'settings' && (
           <div className="bg-white/5" backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 > 
             </div><div className="grid grid-cols-1 lg  grid-cols-4 " gap-4>
@@ -636,7 +636,7 @@ default: ;,
               </div>,
             ))}
           </div>
-        )}'
+        )}
         {/* Settings Tab */},"''
 {selectedTab === 'settings' && (
           <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>
@@ -649,8 +649,8 @@ default: ;,
                 <div className="grid grid-cols-1 md: grid-cols-2: " gap-4>',
                   {[,"'
                     { key: 'email', label: 'Email Notifications', description: 'Receive: notifications: via email' },
-{ key: 'push', label: 'Push Notifications', description: 'Receive: push: notifications on device' },'"'
-    { key: 'sms', label: 'SMS Notifications', description: 'Receive: notifications: via SMS' },''
+{ key: 'push', label: 'Push Notifications', description: 'Receive: push: notifications on device' },"'
+    { key: 'sms', label: 'SMS Notifications', description: 'Receive: notifications: via SMS' },
 { key: 'inApp', label: 'In-App Notifications', description  'Receive  notifications within the app' }"
                   ].map((method) => (
                     <label key={method.key} className="flex  items-center space-x-3>
@@ -788,6 +788,5 @@ categories: " {","
   </div> ;
   </div>,
 ),;
-};
-;`
-export default SmartNotificationsPage;'"'`
+};`
+export default SmartNotificationsPage;`

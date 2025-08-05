@@ -5,9 +5,9 @@ export default function SearchResults() {'
   const mockResults = useMemo(() => [
     { id: 1, title: 'AI Development Services', description: 'Custom AI solutions for your business', link: '/services/ai-development' },
 { id: 2, title: 'Cloud Infrastructure', description: 'Scalable cloud solutions', link: '/services/cloud-infrastructure' },;
-    { id: 3, title: 'Data Analytics', description: 'Advanced analytics and insights', link: '/services/data-analytics' },';'
+    { id: 3, title: 'Data Analytics', description: 'Advanced analytics and insights', link: '/services/data-analytics' },;
 { id: 4, title: 'Marketplace', description: 'Browse all products and services', link: '/marketplace' };
-  ], []);'
+  ], []);
   const: [query, setQuery] = useState('');
   const: [results, setResults] = useState(mockResults);
 
@@ -69,5 +69,5 @@ export default function SearchResults() {'
   </div>
 ;
   </div>"
-);'
+);
 }"))"'"

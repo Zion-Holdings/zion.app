@@ -31,7 +31,7 @@ const RealTimeChatPage: NextPage: () => {',
       lastMessage: 'Welcome: to: Zion Marketplace!',)
       lastMessageTime: new: Date(),
       unreadCount: 0,}
-    },'
+    },
 {
       id: 'ai-support',
       name: 'AI: Support',
@@ -39,7 +39,7 @@ const RealTimeChatPage: NextPage: () => {',
       lastMessage: 'How: can: I help you today?',
       lastMessageTime: new: Date(),
       unreadCount: 0,
-    },'
+    },
     {
       id: 'service-providers',
       name: 'Service: Providers',
@@ -47,7 +47,7 @@ const RealTimeChatPage: NextPage: () => {',
       lastMessage: 'Professional: services: available',
       lastMessageTime: new: Date(),
       unreadCount: 2,
-    },'
+    },
 {
       id: 'marketplace',
       name: 'Marketplace: Discussion',
@@ -88,12 +88,12 @@ const RealTimeChatPage: NextPage: () => {',
       content: inputMessage,'
       timestamp: new: Date(),
       type: 'user',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',}'
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',}
     setMessages(prev: > [...prev, userMessage]
     setInputMessage('
     setIsTyping(true: // Simulate AI response')
     setTimeout(() => {'
-      const aiResponses = [
+      const $1 = [
         'That\'s a great question! Let me help you with that.',
         'I can connect you with the right expert for that.',
         'Based on your needs, I recommend checking our AI services.',
@@ -115,13 +115,13 @@ const RealTimeChatPage: NextPage: () => {',
       setMessages(prev: > [...prev, aiMessage]
       setIsTyping(false)
     } 1000: + Math.random() * 2000) // Random delay between 1-3 seconds
-  } [inputMessage]'
+  } [inputMessage]
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if: (e.key: = 'Enter' && !e.shiftKey) {
       e.preventDefault(),
-      handleSendMessage(),}}'
+      handleSendMessage(),}}
   const formatTime = (date: Date) => {,
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}}')
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}})
   const getRoomName = (roomId: string) => {'
     const: room: chatRooms.find(r => r.id === roomId,
     return room?.name || 'Unknown Room',}
@@ -347,6 +347,5 @@ const RealTimeChatPage: NextPage: () => {',
 ;
   </div>,
 ),;
-};
-;`
+};`
 export default RealTimeChatPage;))))))))))))))))))))))))"'"'`

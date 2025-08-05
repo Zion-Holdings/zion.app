@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -8,17 +8,17 @@ interface ExecutiveMetric {
   id: string;
   name: string;
   value: number;
-  previousValue: number;'
+  previousValue: number;
   unit: string;
-  trend: 'up' | 'down' | 'stable';'
+  trend: 'up' | 'down' | 'stable';
   changePercent: number;
   category: 'financial' | 'operational' | 'customer' | 'market' | 'technology' | 'strategic";
-  priority: 'high' | 'medium' | 'low';'
+  priority: 'high' | 'medium' | 'low';
   target?: number;
   status: 'on-track' | 'at-risk' | 'behind' | 'exceeding';}
 interface StrategicInitiative {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   category: 'growth' | 'efficiency' | 'innovation' | 'risk' | 'compliance";
   status: 'on-track' | 'at-risk' | 'behind' | 'completed";
@@ -26,13 +26,13 @@ interface StrategicInitiative {
   startDate: Date;
   endDate: Date;
   budget: number;
-  spent: number;'
+  spent: number;
   owner: string;
   priority: 'critical' | 'high' | 'medium' | 'low";
   kpis: string[];}
 interface MarketInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'opportunity' | 'threat' | 'trend' | 'competition";
   impact: 'high' | 'medium' | 'low";
@@ -99,7 +99,7 @@ const ExecutiveDashboardPage: NextPage = () => {
   const [initiatives, setInitiatives] = useState<StrategicInitiative[]>([]);
   const [insights, setInsights] = useState<MarketInsight[]>([]);
   const [financial, setFinancial] = useState<FinancialSummary | null>(null);
-  const [customers, setCustomers] = useState<CustomerMetrics | null>(null);'
+  const [customers, setCustomers] = useState<CustomerMetrics | null>(null);
   const [operations, setOperations] = useState<OperationalMetrics | null>(null);
   const [activeTab, setActiveTab] = useState<'overview' | 'financial' | 'strategic' | 'operational' | 'market' | 'customers'>('overview');
   const [timeframe, setTimeframe] = useState<'month' | 'quarter' | 'year'>('quarter');
@@ -121,7 +121,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high','
           target: 13000000,
           status: 'on-track'}
-        },'
+        },
 {
           id: '2',
           name: 'Customer Acquisition Cost',
@@ -134,7 +134,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high','
           target: 140,
           status: 'exceeding'
-        },'
+        },
     {
           id: '3',
           name: 'Market Share',
@@ -147,7 +147,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high','
           target: 25,
           status: 'on-track'
-        },'
+        },
 {
           id: '4',
           name: 'Customer Satisfaction',
@@ -160,7 +160,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'medium','
           target: 4.5,
           status: 'exceeding'
-        },'
+        },
     {
           id: '5',
           name: 'Technology Uptime',
@@ -173,7 +173,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high','
           target: 99.9,
           status: 'on-track'
-        },'
+        },
 {
           id: '6',
           name: 'Employee Retention',
@@ -202,7 +202,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           owner: 'CTO',
           priority: 'critical',
           kpis: ['Process Efficiency', 'Cost Reduction', 'Customer Experience']
-        },'
+        },
 {
           id: '2',
           name: 'Market Expansion',
@@ -217,7 +217,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           owner: 'CMO',
           priority: 'high',
           kpis: ['Market Penetration', 'Revenue Growth', 'Brand Awareness']
-        },'
+        },
     {
           id: '3',
           name: 'AI Implementation',
@@ -247,7 +247,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             'Increase AI product development investment',
             'Expand AI consulting services',
             'Partner with AI technology providers']
-        },'
+        },
 {
           id: '2',
           title: 'Competitive Pressure',
@@ -261,7 +261,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             'Review pricing strategy',
             'Enhance value proposition',
             'Accelerate innovation pipeline']
-        },'
+        },
     {
           id: '3',
           title: 'Remote Work Trend',
@@ -314,13 +314,13 @@ const ExecutiveDashboardPage: NextPage = () => {
             count: 3200,
             revenue: 6500000,
             growth: 15.2
-          },'
+          },
 {
             name: 'Mid-Market',
             count: 5800,
             revenue: 4200000,
             growth: 12.8
-          },'
+          },
     {
             name: 'SMB',
             count: 6420,
@@ -358,19 +358,19 @@ const ExecutiveDashboardPage: NextPage = () => {
     } 1000);
   } []);
   const getTrendColor = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return 'text-green-400";
       case 'down': return 'text-red-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '↗️";
       case 'down': return '↘️";
       default: return '→';}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'on-track': return 'text-green-400";
       case 'at-risk': return 'text-yellow-400";
       case 'behind': return 'text-red-400";
@@ -378,7 +378,7 @@ const ExecutiveDashboardPage: NextPage = () => {
       default: return 'text-gray-400';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'critical': return 'bg-red-600";
       case 'high': return 'bg-orange-600";
       case 'medium': return 'bg-yellow-1200";
@@ -395,7 +395,7 @@ const ExecutiveDashboardPage: NextPage = () => {
     }).format(value);
   };
 '
-  const formatPercent = (value: number) => {';'
+  const formatPercent = (value: number) => {';
     return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`;
   };
 
@@ -482,7 +482,7 @@ const ExecutiveDashboardPage: NextPage = () => {
               Overview
             </button> '
             "'''`
-              onClick={() => setActiveTab('financial')}''``
+              onClick={() => setActiveTab('financial')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'financial
                   ? 'text-white border-b-2 border-purple-500'`
@@ -492,7 +492,7 @@ const ExecutiveDashboardPage: NextPage = () => {
               Financial
             </button>'
             `
-              onClick={() => setActiveTab('strategic')}''``
+              onClick={() => setActiveTab('strategic')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'strategic
                   ? 'text-white border-b-2 border-purple-500'`
@@ -502,7 +502,7 @@ const ExecutiveDashboardPage: NextPage = () => {
               Strategic Initiatives
             </button>'
             `
-              onClick={() => setActiveTab('operational')}''``
+              onClick={() => setActiveTab('operational')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'operational
                   ? 'text-white border-b-2 border-purple-500'`
@@ -522,7 +522,7 @@ const ExecutiveDashboardPage: NextPage = () => {
               Market Insights
             </button> '
             "'''`
-              onClick={() => setActiveTab('customers')}''``
+              onClick={() => setActiveTab('customers')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'customers
                   ? 'text-white border-b-2 border-purple-500'`
@@ -656,7 +656,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                         <div className="flex" items-center space-x-3 mb-2 ">`"
                           <h3 className="text-lg" font-semibold text-white>{initiative.name}</h3>`` 
                           <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
-                            {initiative.priority}'`
+                            {initiative.priority}`
                           </span>''``
                           <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                             {initiative.status.replace('-', ' ')}
@@ -700,7 +700,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                   </motion.div>
                 ))}
               </div>
-            )}'
+            )}
             {activeTab === 'operational' && operations && ("
               <div className="grid" grid-cols-1 lg grid-cols-3 gap-6 > 
                 {/* Efficiency Metrics */}
@@ -801,7 +801,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                   </div >
                 </div>
               </div>
-            )}'
+            )}
 "''
             {activeTab === 'market' && (
               <div className="space-y-6>"
@@ -901,7 +901,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                                       </div>
         </div>
       </div>
-    </div >;  );"
+    </div >;  );
 };
 ''`
-export default ExecutiveDashboardPage;"'"'`
+export default ExecutiveDashboardPage;'`

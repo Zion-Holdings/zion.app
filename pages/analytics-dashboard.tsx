@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -33,7 +33,7 @@ interface AnalyticsData {
     seasonalTrends: { month: string; demand: number; supply: number }[];
   };}
 const AnalyticsDashboardPage: NextPage = () => {
-  ;'
+  ;
   const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<'7d' | '30d' | '90d' | '1y'>('30d');
   const [selectedView, setSelectedView] = useState<'overview' | 'revenue' | 'performance' | 'behavior' | 'insights'>('overview');
@@ -153,11 +153,11 @@ const AnalyticsDashboardPage: NextPage = () => {
     return `${value.toFixed(1)}%`;
   };
 '
-  const getGrowthColor = (value: number) => {';'
+  const getGrowthColor = (value: number) => {';
     return value >= 0 ? 'text-green-400' : 'text-red-400";
   };
 '
-  const getGrowthIcon = (value: number) => {';'
+  const getGrowthIcon = (value: number) => {';
     return value >= 0 ? '↗' : '↘";
   };
 
@@ -231,7 +231,7 @@ const AnalyticsDashboardPage: NextPage = () => {
 { id  '1y', label  '1 Year'}"
             ].map((period) => (
               "`
-                onClick={() => setSelectedPeriod(period.id as any)}'``
+                onClick={() => setSelectedPeriod(period.id as any)}``
                 className="{`px-4" py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
                   selectedPeriod === period.id
                     ? 'bg-purple-600 text-white'`
@@ -254,7 +254,7 @@ const AnalyticsDashboardPage: NextPage = () => {
 { id: 'behavior', name: 'User Behavior', icon: '👥' },
     { id: 'insights', name: 'Market Insights', icon: '🔍'}
             ].map((view) => (`
-                onClick={() => setSelectedView(view.id as any)}'``
+                onClick={() => setSelectedView(view.id as any)}``
                 className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
                   selectedView === view.id
                     ? 'bg-purple-600 text-white'`
@@ -354,7 +354,7 @@ const AnalyticsDashboardPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'revenue' && analyticsData && (
           <div className=" space-y-8>
@@ -447,7 +447,7 @@ const AnalyticsDashboardPage: NextPage = () => {
               </div >
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'behavior' && analyticsData && (
           <div className="space-y-8">

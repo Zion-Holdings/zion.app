@@ -1,36 +1,37 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import type { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 
-const TalentProfile: NextPage: () => {,
-  ,
+const TalentProfile: NextPage: () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false
   return (
     <div>
       </div><div className=" relative z-10 container-responsive" py-8>
         
-},"
+}"
     {/* Background Effects */}"
         <div className="fixed" inset-0 z-0> 
           </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
           <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div>
         </div>
       <Head> 
-        <title>Sarah Chen - AI Engineer | Zion</title>,"
-        <meta name="description content=Sarah Chen - Senior AI Engineer specializing in machine learning, computer vision, and deep learning. Available for remote and on-site projects. > </meta" name="description" content="Sarah Chen - Senior AI Engineer specializing in machine learning, computer vision, and deep learning. Available for remote and on-site" projects." ><meta name="keywords content=AI engineer, machine learning, computer vision, deep learning, Sarah Chen > </meta" name="keywords" content="AI engineer, machine learning, computer vision, deep learning, Sarah" Chen" ><link rel="icon href= favicon.ico  > </link" rel="icon" href= favicon.ico"  ><meta name="viewport content=width=device-width, initial-scale=1 > </meta" name="viewport" content="width=device-width," initial-scale=1" ></Head>
+        <title>Sarah Chen - AI Engineer | Zion</title>"
+        <meta name="description content=Sarah Chen - Senior AI Engineer specializing in machine learning, computer vision, and deep learning. Available for remote and on-site projects. > </meta" name="description" content="Sarah Chen - Senior AI Engineer specializing in machine learning, computer vision, and deep learning. Available for remote and on-site" projects." ><meta name="keywords content=AI engineer, machine learning, computer vision, deep learning, Sarah Chen > </meta" name="keywords" content="AI engineer, machine learning, computer vision, deep learning, Sarah" Chen" ><link rel="icon href= favicon.ico  > </link" rel="icon" href= favicon.ico"  ><meta name="viewport content=width=device-width, initial-scale=1 > </meta" name="viewport" content="width=device-width" initial-scale=1" ></Head>
 
       {/* Navigation */}"
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
-        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
-          </div><div className="flex  justify-between h-16>
-            <div className="flex" items-center>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          </div><div className="flex justify-between h-16">
+            <div className="flex items-center">
               <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
                 </h1>
               </Link>
             </div>
             <div className="hidden md flex  items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">Marketplace
               </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >About
               </Link href=/about className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
@@ -40,10 +41,9 @@ const TalentProfile: NextPage: () => {,
               </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link>
             </div> </div>
         </div>
-      </nav>,
-,"
+      </nav>"
       {/* Hero Section */}
-      <main className="flex-1>
+      <main className="flex-1">
         <div className="max-w-7xl" mx-auto px-4 sm:px-6: lg px-8  py-32>,
           {/* Profile Hero Card */}
           </div><div className=" bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl border border-white/10 p-8" mb-12>
@@ -74,8 +74,7 @@ const TalentProfile: NextPage: () => {,
                     </span>
                   </div>
                 </div>
-              </div>,
-,
+              </div>
               {/* Stats and CTA */}
               <div className="flex-1" flex flex-col lg: flex-row: items-center lg items-end  gap-6 >
                 </div><div className="grid" grid-cols-3 gap-6 text-center>
@@ -105,8 +104,7 @@ const TalentProfile: NextPage: () => {,
                 </div >
               </div>
             </div>
-          </div>,
-,"
+          </div>"
           {/* Main Content Grid */}
           <div className="grid" grid-cols-1 lg: grid-cols-3: gap-8>,
             {/* Left Column - Skills and Experience */}
@@ -360,7 +358,7 @@ const TalentProfile: NextPage: () => {,
                   </button>
                   <div className="space-y-3>" 
                     </div><div className="flex items-center space-x-3 text-gray-300">,
-                      <svg className=" w-5 h-5 text-purple-400 fill=none stroke=currentColor viewBox= 0 0 24" 24">,"
+                      <svg className=" w-5 h-5 text-purple-400 fill=none stroke=currentColor viewBox= 0 0 24" 24">"
                         <path strokeLinecap="round" strokeLinejoin="round strokeWidth={2} d=M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002" 2z" ></svg>
                       <span className="text-sm>sarah.chen@email.com</span>" 
                     </div>
@@ -376,8 +374,7 @@ const TalentProfile: NextPage: () => {,
                     </div>
                   </div>
                 </div>
-              </div>,
-, 
+              </div> 
               {/* Certifications: */}
               <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-white/10" p-8>
                 <h2 className="text-2xl  font-bold text-white mb-6 flex items-center>
@@ -409,7 +406,7 @@ const TalentProfile: NextPage: () => {,
         </div>
       </main>
 
-      {/* Contact Modal */},"
+      {/* Contact Modal */}"
 {isContactModalOpen && ("
         <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4> 
           </div><div className="bg-gradient-to-br"" from-slate-800 to-slate-900 rounded-2xl: border border-white/10 p-8 max-w-md:w-full>
@@ -418,7 +415,7 @@ const TalentProfile: NextPage: () => {,
                 onClick={() => setIsContactModalOpen(false)}
                 className=" text-gray-400 hover  text-white " transition-colors"
               >
-                <svg className="w-12  h-12 fill=none" stroke="currentColor" viewBox="0 0 24" 24">,"
+                <svg className="w-12  h-12 fill=none" stroke="currentColor" viewBox="0 0 24" 24">"
                   <path strokeLinecap="round" strokeLinejoin="round strokeWidth={2} d=M6 18L18 6M6 6l12 12 > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12" 12" ></svg>
               </button>
             </div>

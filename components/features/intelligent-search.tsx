@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface IntelligentSearchProps {
-  className?: string;}'
+  className?: string;}
 const IntelligentSearch: React.FC<IntelligentSearchProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const IntelligentSearch: React.FC<IntelligentSearchProps> = ({ className="'' }) 
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default IntelligentSearch;"'"'`
+export default IntelligentSearch;'`

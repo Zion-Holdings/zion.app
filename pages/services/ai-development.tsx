@@ -106,5 +106,4 @@ const Https___ziontechgroup_netlify_app_services_ai_devePage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default Https___ziontechgroup_netlify_app_services_ai_devePage;"'"
+export default Https___ziontechgroup_netlify_app_services_ai_devePage;

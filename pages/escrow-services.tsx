@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 interface EscrowTransaction {
   id: string;
   buyer: string;
-  seller: string;'
+  seller: string;
   amount: number;
   status: 'pending' | 'funded' | 'in_progress' | 'completed' | 'disputed' | 'refunded";
   service: string;
@@ -32,7 +32,7 @@ const EscrowServicesPage: NextPage = () => {'
       createdAt: new Date('2024-01-15'),
       deadline: new Date('2024-02-15'),
       description: 'Custom machine learning model for predictive analytics'}
-    },'
+    },
 {
       id: 'ESC-002',
       buyer: 'StartupXYZ',
@@ -43,7 +43,7 @@ const EscrowServicesPage: NextPage = () => {'
       createdAt: new Date('2024-01-20'),
       deadline: new Date('2024-03-20'),
       description: 'Complete AWS migration with security implementation'
-    },'
+    },
     {
       id: 'ESC-003',
       buyer: 'Enterprise Solutions',
@@ -54,7 +54,7 @@ const EscrowServicesPage: NextPage = () => {'
       createdAt: new Date('2024-01-10'),
       deadline: new Date('2024-02-10'),
       description: 'Smart contract development and blockchain integration'
-    }]'
+    }]
   const [escrowAccount, setEscrowAccount] = useState<EscrowAccount>({
     id: 'ACC-001',
     balance: 45000,
@@ -80,7 +80,7 @@ const EscrowServicesPage: NextPage = () => {'
       case 'refunded': return 'text-gray-400
       default: return 'text-gray-400'}}
   const getStatusBadge = (status: string) => {'
-    const colors = {
+    const $1 = {
       pending: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
       funded: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
       in_progress: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
@@ -256,7 +256,7 @@ const EscrowServicesPage: NextPage = () => {'
               </div>
             </div>
           </div>
-        )}'
+        )}
 '"'
         {activeTab === 'transactions' && (
           <div className="space-y-6>" 
@@ -312,7 +312,7 @@ const EscrowServicesPage: NextPage = () => {'
               </div>
             </div>
           </div>
-        )}'
+        )}
 '"'
         {activeTab === 'disputes' && (
           <div className="space-y-6>" 
@@ -372,7 +372,7 @@ const EscrowServicesPage: NextPage = () => {'
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {activeTab === 'account' && (
           <div className="space-y-6">
@@ -487,7 +487,7 @@ const EscrowServicesPage: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default EscrowServicesPage )))))"'"'`

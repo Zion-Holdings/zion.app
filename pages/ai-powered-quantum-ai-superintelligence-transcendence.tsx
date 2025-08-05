@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -252,7 +252,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Transcendence Dashboard */},'
+            {/* Transcendence Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -311,7 +311,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum AI Superintelligence */},''
+            {/* Quantum AI Superintelligence */},
 {activeTab === 'superintelligence' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum AI Superintelligence</h2>
@@ -352,7 +352,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Evolution */},"''
 {activeTab === 'evolution' && (
               <div className="space-y-6>"
@@ -394,7 +394,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Singularity */},"''
 {activeTab === 'singularity' && (
               <div className="space-y-6>"
@@ -438,7 +438,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Transcendence */}, ''
 {activeTab === 'transcendence' && (
               <div className="space-y-6">
@@ -482,7 +482,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum AI Cosmic */},''
+            {/* Quantum AI Cosmic */},
 {activeTab === 'cosmic' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum AI Cosmic</h2>
@@ -523,7 +523,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Omniscience */},"''
 {activeTab === 'omniscience' && (
               <div className="space-y-6>"

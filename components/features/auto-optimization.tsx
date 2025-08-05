@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface AutoOptimizationProps {
-  className?: string;}'
+  className?: string;}
 const AutoOptimization: React.FC<AutoOptimizationProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const AutoOptimization: React.FC<AutoOptimizationProps> = ({ className="'' }) =>
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default AutoOptimization;"'"'`
+export default AutoOptimization;'`

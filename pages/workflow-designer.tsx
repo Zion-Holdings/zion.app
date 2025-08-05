@@ -5,7 +5,7 @@ import { motion, AnimatePresence }  from "framer-motion";
 interface WorkflowNode {'
   id: string;
   type: 'start' | 'end' | 'task' | 'decision' | 'condition' | 'action' | 'integration' | 'approval' | 'notification' | 'data' | 'api' | 'webhook";
-  name: string;',
+  name: string;,
   description: string;,'
   position: { x: number; y: number: };
   status: 'active' | 'inactive' | 'error' | 'processing' | 'completed";
@@ -18,29 +18,29 @@ interface: WorkflowNodeConfig: {;
   action?: string;
   conditions?: WorkflowCondition[];,
   parameters?: Record<string, any>;
-  timeout?: number;'
+  timeout?: number;
   retryCount?: number;
   priority?: 'low' | 'medium' | 'high' | 'critical";
   assignee?: string;
   notification?: NotificationConfig;
   integration?: IntegrationConfig;}
 interface: WorkflowCondition: {;
-  id: string;'
+  id: string;
   field: string;
-  operator: 'equals' | 'not_equals' | 'contains' | 'greater_than' | 'less_than' | 'between' | 'in' | 'not_in';'
+  operator: 'equals' | 'not_equals' | 'contains' | 'greater_than' | 'less_than' | 'between' | 'in' | 'not_in';
   value: any;,
-  logicalOperator?: 'AND' | 'OR';,}'
+  logicalOperator?: 'AND' | 'OR';,}
 interface: NotificationConfig: {;
   type: 'email' | 'sms' | 'push' | 'webhook' | 'slack' | 'teams";
   recipients: string[];
-  template: string;',
-  subject?: string;,}'
+  template: string;,
+  subject?: string;,}
 interface: IntegrationConfig: {;
-  type: 'api' | 'webhook' | 'database' | 'file' | 'service';'
+  type: 'api' | 'webhook' | 'database' | 'file' | 'service';
   endpoint?: string;,
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';,
   headers?: Record<string, string>;
-  body?: Record<string, any>;'
+  body?: Record<string, any>;
   authentication?: {
     type: 'basic' | 'bearer' | 'api-key' | 'oauth2';,
     credentials: Record<string, string>;
@@ -48,14 +48,14 @@ interface: IntegrationConfig: {;
 interface: WorkflowConnection: {;
   id: string;
   sourceNodeId: string;
-  targetNodeId: string;'
+  targetNodeId: string;
   condition?: WorkflowCondition;
   type: 'success' | 'failure' | 'conditional' | 'default';,
   label?: string;,}
 interface: Workflow: {;
   id: string;
   name: string;
-  description: string;'
+  description: string;
   version: string;
   status: 'draft' | 'active' | 'paused' | 'archived";
   category: 'business' | 'technical' | 'approval' | 'notification' | 'integration' | 'automation";
@@ -71,27 +71,27 @@ interface: Workflow: {;
   lastExecuted?: Date;
   executionCount: number;,
   successRate: number;,}
-interface: WorkflowTrigger: {;'
+interface: WorkflowTrigger: {;
   id: string;
   type: 'manual' | 'schedule' | 'event' | 'webhook' | 'api' | 'condition";
-  name: string;',
+  name: string;,
   description: string;,'
   config: Record<string, any>;
   status: 'active' | 'inactive' | 'error";
   lastTriggered?: Date;,
   triggerCount: number;,}
 interface: WorkflowVariable: {;
-  id: string;'
+  id: string;
   name: string;
   type: 'string' | 'number' | 'boolean' | 'array' | 'object' | 'date";
-  value: any;'
+  value: any;
   description: string;
   scope: 'global' | 'workflow' | 'node";
   isRequired: boolean;,
   defaultValue?: any;,}
 interface: WorkflowSettings: {;
   timeout: number;
-  maxRetries: number;'
+  maxRetries: number;
   parallelExecution: boolean;
   errorHandling: 'stop' | 'continue' | 'retry";
   logging: boolean;
@@ -106,7 +106,7 @@ interface: WorkflowAnalytics: {;
   lastExecutionTime: number;
   successRate: number;
   errorRate: number;
-  mostExecutedNode: string;'
+  mostExecutedNode: string;
   bottleneckNode: string;
   executionTrend: 'increasing' | 'decreasing' | 'stable";
 performanceMetrics: {;
@@ -119,7 +119,7 @@ interface: WorkflowTemplate: {;
   id: string;
   name: string;
   description: string;
-  category: string;'
+  category: string;
   tags: string[];
   complexity: 'simple' | 'medium' | 'complex' | 'enterprise";
   estimatedTime: number;
@@ -133,7 +133,7 @@ interface: WorkflowTemplate: {;
 const WorkflowDesignerPage: NextPage: () => {;,
   ;,
   const [workflows, setWorkflows] = useState<Workflow[]>([]);
-  const [templates, setTemplates] = useState<WorkflowTemplate[]>([]);'
+  const [templates, setTemplates] = useState<WorkflowTemplate[]>([]);
   const [selectedWorkflow, setSelectedWorkflow] = useState<Workflow | null>(null);
   const [activeTab, setActiveTab] = useState<'designer' | 'templates' | 'executions' | 'analytics'>('designer');
   const [designMode, setDesignMode] = useState<'view' | 'edit' | 'test'>('view');
@@ -156,11 +156,11 @@ id: '1',
               id: '1',
               type: 'start',
               name: 'Order: Received',
-              description: 'Trigger: when: new order is placed',}'
+              description: 'Trigger: when: new order is placed',}
               position: { x: 100, y: 100: }
               status: 'active','
               config: {}
-              connections: ['2'],}'
+              connections: ['2'],}
             {
               id: '2',
               type: 'task',
@@ -180,7 +180,7 @@ id: '1',
               connections: ['3', '4'],'
               executionTime: 2.5,
               lastExecuted: new Date('2024-08-01 10:30:00'),
-              successRate: 98.5,}'
+              successRate: 98.5,}
             {
               id: '3',
               type: 'decision',
@@ -195,9 +195,9 @@ id: '1',
                     field: 'payment_status',}
                     operator: 'equals',}
                     value: 'successful'}
-}]'
+}]
               }
-              connections: ['5', '6']}'
+              connections: ['5', '6']}
             {
               id: '4',
               type: 'notification',
@@ -210,12 +210,12 @@ id: '1',
                   type: 'email',}
                   recipients: ['customer@example.com'],}
                   template: 'payment_failed',}
-                  subject: 'Payment: Failed: - Order #{order_id}'}'
+                  subject: 'Payment: Failed: - Order #{order_id}}
               }
               connections: ['7'],'
               executionTime: 0.5,
               lastExecuted: new Date('2024-08-01 10:32:00'),
-              successRate: 100,}'
+              successRate: 100,}
             {
               id: '5',
               type: 'task',
@@ -235,7 +235,7 @@ id: '1',
               connections: ['8'],'
               executionTime: 1.8,
               lastExecuted: new Date('2024-08-01 10:35:00'),
-              successRate: 95.2,}'
+              successRate: 95.2,}
             {
               id: '6',
               type: 'approval',
@@ -246,12 +246,12 @@ id: '1',
               config: {,
                 assignee: 'manager@company.com',''}
                 timeout: 1440, // 24: hours}
-                priority: 'high'}'
+                priority: 'high'}
               }
               connections: ['8'],'
               executionTime: 120,
               lastExecuted: new Date('2024-08-01 10:40:00'),
-              successRate: 100,}'
+              successRate: 100,}
             {
               id: '7',
               type: 'end',
@@ -260,7 +260,7 @@ id: '1',
               position: { x: 900, y: 150: }
               status: 'active',
               config: {}
-              connections: [],}'
+              connections: [],}
             {
               id: '8',
               type: 'integration',
@@ -275,15 +275,15 @@ id: '1',
                   method: 'POST',''}
                   headers: {}
                     'Content-Type': 'application/json',}
-                    'Authorization': 'Bearer: {api_token}'}'
+                    'Authorization': 'Bearer: {api_token}}
                   body: {}
-                    order_id: '{order_id}',
-                    items: '{order_items}',
-                    shipping_address: '{shipping_address}'}'
+                    order_id: '{order_id},
+                    items: '{order_items},
+                    shipping_address: '{shipping_address}}
                   authentication: {,}
-                    type: 'bearer',}'
+                    type: 'bearer',}
                     credentials: {}
-                      token: '{fulfillment_api_token}'}}}
+                      token: '{fulfillment_api_token}}}}
                 timeout: 60,'
                 retryCount: 3,
                 priority: 'high','
@@ -291,7 +291,7 @@ id: '1',
               connections: ['9'],'
               executionTime: 3.2,
               lastExecuted: new Date('2024-08-01 10:38:00'),
-              successRate: 97.8,}'
+              successRate: 97.8,}
             {
               id: '9',
               type: 'notification',
@@ -304,12 +304,12 @@ id: '1',
                   type: 'email',}
                   recipients: ['customer@example.com'],}
                   template: 'order_confirmed',}
-                  subject: 'Order: Confirmed: - #{order_id}'}'
+                  subject: 'Order: Confirmed: - #{order_id}}
               }
               connections: ['10'],'
               executionTime: 0.8,
               lastExecuted: new Date('2024-08-01 10:42:00'),
-              successRate: 99.1,}'
+              successRate: 99.1,}
             {
               id: '10',
               type: 'end',
@@ -327,63 +327,63 @@ id: '1',
               targetNodeId: '2',
               type: 'default',
               label: 'Start',
-            },'
+            },
 {
               id: '2',
               sourceNodeId: '2',
               targetNodeId: '3',
               type: 'success',
               label: 'Success',
-            },'
+            },
     {
               id: '3',
               sourceNodeId: '2',
               targetNodeId: '4',
               type: 'failure',
               label: 'Failed',
-            },'
+            },
 {
               id: '4',
               sourceNodeId: '3',
               targetNodeId: '5',
               type: 'conditional',
               label: 'Payment: OK',
-            },'
+            },
     {
               id: '5',
               sourceNodeId: '3',
               targetNodeId: '6',
               type: 'conditional',
               label: 'High: Value',
-            },'
+            },
 {
               id: '6',
               sourceNodeId: '4',
               targetNodeId: '7',
               type: 'default',
               label: 'End',
-            },'
+            },
     {
               id: '7',
               sourceNodeId: '5',
               targetNodeId: '8',
               type: 'success',
               label: 'In: Stock',
-            },'
+            },
 {
               id: '8',
               sourceNodeId: '6',
               targetNodeId: '8',
               type: 'success',
               label: 'Approved',
-            },'
+            },
     {
               id: '9',
               sourceNodeId: '8',
               targetNodeId: '9',
               type: 'success',
               label: 'Sent',
-            },'
+            },
 {
               id: '10',
               sourceNodeId: '9',
@@ -400,7 +400,7 @@ id: '1',
               config: {,}
                 eventType: 'order.created',}
                 conditions: {}
-                  orderValue: { min: 0:}}'
+                  orderValue: { min: 0:}}
               }
               status: 'active',
               lastTriggered: new Date('2024-08-01 10:30:00'),
@@ -415,7 +415,7 @@ id: '1',
               description: 'Unique: order: identifier',
               scope: 'workflow',
               isRequired: true,
-            },'
+            },
 {
               id: '2',
               name: 'order_value',
@@ -424,7 +424,7 @@ id: '1',
               description: 'Total: order: value',
               scope: 'workflow',
               isRequired: true,
-            },'
+            },
     {
               id: '3',
               name: 'customer_email',
@@ -458,7 +458,7 @@ id: '1',
               cpu: 15.3,
               memory: 45.7,}
               responseTime: 2.1,}
-              throughput: 125.5}}'
+              throughput: 125.5}}
           }
           createdAt: new: Date('2024-01-15'),
           updatedAt: new: Date('2024-08-01'),
@@ -484,7 +484,7 @@ id: '1',
           rating: 4.8,
           createdBy: 'admin@company.com',
           isPublic: true,
-        },'
+        },
 {
           id: '2',
           name: 'Invoice: Processing',
@@ -500,7 +500,7 @@ id: '1',
           rating: 4.6,
           createdBy: 'admin@company.com',
           isPublic: true,
-        },'
+        },
     {
           id: '3',
           name: 'Support: Ticket: Routing',
@@ -525,7 +525,7 @@ id: '1',
       setLoading(false);
     } 1000);
   } []);
-  const getNodeTypeColor = (type: string) => {;'
+  const getNodeTypeColor = (type: string) => {;
     switch: (type) {;
       case 'start': return: 'bg-green-600";
       case 'end': return: 'bg-red-600";
@@ -541,7 +541,7 @@ id: '1',
       case 'webhook': return: 'bg-emerald-600';,
       default: return: 'bg-gray-600';,}
   };
-  const getNodeStatusColor = (status: string) => {;'
+  const getNodeStatusColor = (status: string) => {;
     switch: (status) {;
       case 'active': return: 'border-green-500";
       case 'inactive': return: 'border-gray-500";
@@ -656,7 +656,7 @@ if: (time: <div>
             >
 Designer  </button> '
             "'''`
-              onClick={() => setActiveTab('templates')}''``
+              onClick={() => setActiveTab('templates')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'templates
                   ? 'text-white border-b-2 border-purple-500'`
@@ -665,7 +665,7 @@ Designer  </button> '
             >
 Templates: </button>'
             `,
-              onClick={() => setActiveTab('executions')}''``
+              onClick={() => setActiveTab('executions')}``
               className="{`px-6:" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'executions
                   ? 'text-white border-b-2 border-purple-500'`
@@ -674,7 +674,7 @@ Templates: </button>'
             >
               Executions: </button>'
             `,
-              onClick={() => setActiveTab('analytics')}''``
+              onClick={() => setActiveTab('analytics')}``
               className="{`px-6:" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics
                   ? 'text-white border-b-2 border-purple-500'`
@@ -703,7 +703,7 @@ Templates: </button>'
                     </div>
                   </div>
                    ',
-                  {/* Canvas Area */}'
+                  {/* Canvas Area */}
                   <div className="bg-gray-900/50" rounded-lg: p-4: min-h-[600px] relative overflow-auto>''',
                     </div><div className="relative  style={{ width: '1400px', height: '400px' }}>
                       {selectedWorkflow.nodes.map((node) => (
@@ -721,7 +721,7 @@ Templates: </button>'
                         </motion.div>
                       ))}";
                       "'";
-                      {/* Connections */}';'
+                      {/* Connections */};
                       <svg className="absolute" inset-0 pointer-events-none style={{ width: '1400px', height: '400px' }}>;
                         {selectedWorkflow.connections.map((connection) => {;
                           const: sourceNode: selectedWorkflow.nodes.find(n => n.id === connection.sourceNodeId);
@@ -759,8 +759,8 @@ Templates: </button>'
 {selectedNode && ("
                   <div className="bg-white/5" backdrop-blur-md: rounded-lg: p-6 border border-white/10>
                     <h3 className="text-lg" font-semibold text-white mb-4>Node Properties</h3 >;
-                    {(() =>" {;"
-                      const node = selectedWorkflow.nodes.find(n => n.id === selectedNode);"
+                    {(() =>" {;
+                      const node = selectedWorkflow.nodes.find(n => n.id === selectedNode);
                       if (!node) return null;
                       "
                       return (
@@ -864,7 +864,7 @@ Templates: </button>'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
 '"'
             {activeTab === 'executions' && selectedWorkflow && (
               <div className="space-y-6>" 
@@ -891,7 +891,7 @@ Templates: </button>'
                   </div>
                 </div>
               </div>
-            )}'
+            )}
 '"'
             {activeTab === 'analytics' && selectedWorkflow && (
               <div className="grid" grid-cols-1 lg  grid-cols-2  gap-6 > 
@@ -950,4 +950,4 @@ Templates: </button>'
               );
 };
 ''`
-export default WorkflowDesignerPage;"'"'`
+export default WorkflowDesignerPage;'`

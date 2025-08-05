@@ -1,5 +1,5 @@
 import React from "react;
-// import ModernLayout from '../components/layout/ModernLayout';'
+// import ModernLayout from '../components/layout/ModernLayout';
 import Head from "next/head";
 import Layout from '../components/Layout";
 import { motion } from "framer-motion";
@@ -195,7 +195,7 @@ const AiPoweredMonitoring = () => {
       </div>
     </Layout>
   
-                      </div >;  );"
+                      </div >;  );
 };
 '
-export default AiPoweredMonitoring;"'"
+export default AiPoweredMonitoring;

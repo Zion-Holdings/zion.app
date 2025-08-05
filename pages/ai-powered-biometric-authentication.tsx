@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface BiometricAuthentication {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'facial_recognition' | 'fingerprint_scanning' | 'voice_recognition' | 'iris_scanning' | 'gait_analysis' | 'behavioral_biometrics";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -22,7 +22,7 @@ interface BiometricAnalysis {
   recommendations: string[];}
 interface FacialRecognition {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'face_detection' | 'face_verification' | 'face_identification' | 'emotion_recognition' | 'age_estimation' | 'gender_detection";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -37,7 +37,7 @@ interface FacialOptimization {
   recommendations: string[];}
 interface FingerprintScanning {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'optical_scanning' | 'capacitive_scanning' | 'ultrasonic_scanning' | 'thermal_scanning' | 'pressure_scanning' | 'multispectral_scanning";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -53,7 +53,7 @@ interface FingerprintAnalysis {
 interface VoiceRecognition {
   id: string;
   voiceId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'speaker_identification' | 'speaker_verification' | 'voice_biometrics' | 'emotion_detection' | 'language_detection' | 'accent_recognition";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -69,7 +69,7 @@ interface VoiceAnalysis {
 interface IrisScanning {
   id: string;
   irisId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'iris_detection' | 'iris_verification' | 'iris_identification' | 'pupil_tracking' | 'eye_movement' | 'retinal_scanning";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -85,7 +85,7 @@ interface IrisAnalysis {
 interface BiometricSecurityManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -110,7 +110,7 @@ interface BiometricAuthenticationAnalytics {
   aiInsights: BiometricAuthenticationInsight[];}
 interface BiometricAuthenticationInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -123,7 +123,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
   const [fingerprintScannings, setFingerprintScannings] = useState<FingerprintScanning[]>([]
   const [voiceRecognitions, setVoiceRecognitions] = useState<VoiceRecognition[]>([]
   const [irisScannings, setIrisScannings] = useState<IrisScanning[]>([]
-  const [biometricSecurityManagements, setBiometricSecurityManagements] = useState<BiometricSecurityManagement[]>([]'
+  const [biometricSecurityManagements, setBiometricSecurityManagements] = useState<BiometricSecurityManagement[]>([]
   const [analytics, setAnalytics] = useState<BiometricAuthenticationAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'biometrics' | 'facial' | 'fingerprint' | 'voice' | 'iris' | 'security' | 'analytics'>('biometrics
   const [selectedType, setSelectedType] = useState<string>('all
@@ -360,7 +360,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
           </>
             {/* Tabs */}
             <div className=" flex flex-wrap justify-center mb-8>'
-                onClick={() => setActiveTab('biometrics')}'
+                onClick={() => setActiveTab('biometrics')}
                 className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'biometrics
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -370,7 +370,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                 Biometric Authentication ({biometricAuthentications.length}
               </button>'
               "'''`
-                onClick={() => setActiveTab('facial')}''``
+                onClick={() => setActiveTab('facial')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'facial
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -380,7 +380,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                 Facial Recognition ({facialRecognitions.length}
               </button>'
               `
-                onClick={() => setActiveTab('fingerprint')}''``
+                onClick={() => setActiveTab('fingerprint')}``
                 className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'fingerprint
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -390,7 +390,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                 Fingerprint Scanning ({fingerprintScannings.length}
               </button>'
               `
-                onClick={() => setActiveTab('voice')}''``
+                onClick={() => setActiveTab('voice')}``
                 className=" {`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'voice
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -410,7 +410,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                 Iris Scanning ({irisScannings.length}
               </button>'
               '"''`
-                onClick={() => setActiveTab('security')}''``
+                onClick={() => setActiveTab('security')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'security
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -420,7 +420,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                 Management ({biometricSecurityManagements.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -530,8 +530,8 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
-            {/* Overview Tab */},'"'
+            )}
+            {/* Overview Tab */},"'
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"
                 </div><div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>

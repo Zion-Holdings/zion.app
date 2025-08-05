@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 interface Course {
   id: string;
   title: string;
-  description: string;'
+  description: string;
   category: string;
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   duration: number; // hours
@@ -28,7 +28,7 @@ interface Course {
 interface Module {
   id: string;
   title: string;
-  description: string;'
+  description: string;
   duration: number; // minutes
   type: 'video' | 'interactive' | 'quiz' | 'project' | 'ai-simulation";
   content: string[];
@@ -56,14 +56,14 @@ interface SkillAssessment {
   aiAnalysis: AIAnalysis;
   certificate: boolean;}
 interface AssessmentQuestion {
-  id: string;'
+  id: string;
   question: string;
   type: 'multiple-choice' | 'coding' | 'scenario' | 'ai-interactive";
   options?: string[];
   correctAnswer: string | string[];
   explanation: string;
   difficulty: number;
-  aiGenerated: boolean;}'
+  aiGenerated: boolean;}
 interface AIAnalysis {
   skillLevel: 'novice' | 'beginner' | 'intermediate' | 'advanced' | 'expert";
   confidence: number;
@@ -78,7 +78,7 @@ interface LearningPath {
   category: string;
   duration: number; // weeks
   courses: string[];
-  skills: string[];'
+  skills: string[];
   careerOutcome: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced";
   aiRecommended: boolean;
@@ -98,7 +98,7 @@ interface Certification {
 const AIPoweredLearningPlatformPage: NextPage = () => {
   const [courses, setCourses] = useState<Course[]>([]
   const [assessments, setAssessments] = useState<SkillAssessment[]>([]
-  const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]'
+  const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]
   const [certifications, setCertifications] = useState<Certification[]>([]
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [selectedLevel, setSelectedLevel] = useState<string>('all
@@ -125,7 +125,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
           aiFeatures: ['Personalized Learning Path', 'AI-Generated Examples', 'Smart Code Review'],
           progress: 0,
           completed: false}
-        },'
+        },
 {
           id: '1-2',
           title: 'Building AI-Powered APIs',
@@ -159,7 +159,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       prerequisites: ['Basic JavaScript', 'HTML/CSS Fundamentals'],
       learningPath: ['AI Basics', 'Web Development', 'ML Integration'],'
       completionRate: 0.78,
-      lastUpdated: new Date('2024-01-15'}'
+      lastUpdated: new Date('2024-01-15'}
     {
       id: '2',
       title: 'Blockchain Development with AI Integration',
@@ -272,7 +272,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
   const filteredCourses = useMemo(() => {
     let filtered = courses'
     if (selectedCategory !== 'all') {
-      filtered = filtered.filter(c => c.category === selectedCategory}'
+      filtered = filtered.filter(c => c.category === selectedCategory}
     if (selectedLevel !== 'all') {
       filtered = filtered.filter(c => c.level === selectedLevel}
     return filtered.sort((a, b) => {'
@@ -359,7 +359,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                 Courses
               </button> '
               "'''`
-                onClick={() => setActiveTab('assessments')}''``
+                onClick={() => setActiveTab('assessments')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'assessments
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -369,7 +369,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                 Skill Assessments
               </button>'
               `
-                onClick={() => setActiveTab('paths')}''``
+                onClick={() => setActiveTab('paths')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'paths
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -379,7 +379,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                 Learning Paths
               </button>'
               `
-                onClick={() => setActiveTab('certifications')}''``
+                onClick={() => setActiveTab('certifications')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'certifications
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -524,7 +524,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Skill Assessments Tab */}, ''
 {activeTab === 'assessments' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
@@ -568,7 +568,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Learning Paths Tab */},"''
 {activeTab === 'paths' && (
               <div className=" grid grid-cols-1 md grid-cols-2 gap-6>
@@ -621,7 +621,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Certifications Tab */}, ''
 {activeTab === 'certifications' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>

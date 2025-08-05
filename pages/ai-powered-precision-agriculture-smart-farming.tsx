@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface CropMonitoring {
   area: number
   healthScore: number
   yieldPrediction: number
-  aiAnalysis: CropAnalysis}'
+  aiAnalysis: CropAnalysis}
 interface CropAnalysis {
   growthStage: 'seedling' | 'vegetative' | 'flowering' | 'fruiting' | 'harvest
   diseaseRisk: 'low' | 'medium' | 'high' | 'critical
@@ -81,7 +81,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
   const [cropMonitoring, setCropMonitoring] = useState<CropMonitoring[]>([]
   const [soilAnalysis, setSoilAnalysis] = useState<SoilAnalysis[]>([]
   const [irrigationSystems, setIrrigationSystems] = useState<IrrigationSystem[]>([]
-  const [smartFarming, setSmartFarming] = useState<SmartFarming[]>([]'
+  const [smartFarming, setSmartFarming] = useState<SmartFarming[]>([]
   const [analytics, setAnalytics] = useState<AgriculturalAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'crops' | 'soil' | 'irrigation' | 'farming' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -101,7 +101,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         growthStage: 'flowering',
         diseaseRisk: 'low',
         nutrientDeficiency: ['potassium'],
-        recommendations: ['Apply potassium fertilizer', 'Monitor for rust disease', 'Optimize irrigation schedule']}}}'
+        recommendations: ['Apply potassium fertilizer', 'Monitor for rust disease', 'Optimize irrigation schedule']}}}
     {
       id: '2',
       name: 'Corn Field B',
@@ -115,7 +115,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         growthStage: 'vegetative',
         diseaseRisk: 'medium','
         nutrientDeficiency: [],
-        recommendations: ['Monitor for corn borer', 'Apply nitrogen fertilizer', 'Check soil moisture']}}'
+        recommendations: ['Monitor for corn borer', 'Apply nitrogen fertilizer', 'Check soil moisture']}}
     {
       id: '3',
       name: 'Soybean Field C',
@@ -148,7 +148,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         fertilityScore: 8.7,'
         irrigationNeeds: 0.3,
         amendmentRecommendations: ['Add potassium fertilizer', 'Increase organic matter', 'Maintain pH levels'],
-        cropSuitability: ['wheat', 'corn', 'soybeans']}}'
+        cropSuitability: ['wheat', 'corn', 'soybeans']}}
     {
       id: '2',
       location: 'Field B-2',
@@ -165,7 +165,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         fertilityScore: 9.1,'
         irrigationNeeds: 0.2,
         amendmentRecommendations: ['Reduce irrigation frequency', 'Add phosphorus fertilizer', 'Monitor drainage'],
-        cropSuitability: ['corn', 'wheat', 'vegetables']}}'
+        cropSuitability: ['corn', 'wheat', 'vegetables']}}
     {
       id: '3',
       location: 'Field C-3',
@@ -197,7 +197,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         optimizationScore: 9.4,'
         waterConservation: 0.25,
         scheduleRecommendations: ['Optimize timing for early morning', 'Reduce frequency during rain', 'Adjust for crop growth stage'],
-        maintenanceNeeds: ['Check filters monthly', 'Inspect emitters quarterly', 'Calibrate sensors']}}'
+        maintenanceNeeds: ['Check filters monthly', 'Inspect emitters quarterly', 'Calibrate sensors']}}
     {
       id: '2',
       name: 'Automated Sprinkler B',
@@ -210,7 +210,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         optimizationScore: 7.8,'
         waterConservation: 0.15,
         scheduleRecommendations: ['Reduce overlap zones', 'Adjust spray patterns', 'Optimize pressure settings'],
-        maintenanceNeeds: ['Clean nozzles weekly', 'Check pressure monthly', 'Inspect pumps quarterly']}}'
+        maintenanceNeeds: ['Clean nozzles weekly', 'Check pressure monthly', 'Inspect pumps quarterly']}}
     {
       id: '3',
       name: 'Smart Irrigation C',
@@ -238,7 +238,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         roi: 0.85,
         productivityGain: 0.40,'
         sustainabilityScore: 9.2,
-        recommendations: ['Expand to additional fields', 'Optimize planting patterns', 'Integrate with weather data']}}'
+        recommendations: ['Expand to additional fields', 'Optimize planting patterns', 'Integrate with weather data']}}
     {
       id: '2',
       name: 'Drone Monitoring System',
@@ -251,7 +251,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         roi: 0.72,
         productivityGain: 0.25,'
         sustainabilityScore: 8.8,
-        recommendations: ['Increase flight frequency', 'Enhance image analysis', 'Expand coverage area']}}'
+        recommendations: ['Increase flight frequency', 'Enhance image analysis', 'Expand coverage area']}}
     {
       id: '3',
       name: 'Smart Weather Station',
@@ -279,7 +279,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.91,
         recommendations: ['Expand smart irrigation coverage', 'Optimize scheduling algorithms', 'Integrate weather forecasting']
-      },'
+      },
 {
         id: '2',
         title: 'Crop Disease Detection Improving',
@@ -343,14 +343,14 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
       case 'positive': return '🌾
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredCropMonitoring = useMemo(() => {'
@@ -492,7 +492,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'crops' && (
           <div className=" space-y-6>
@@ -500,7 +500,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'wheat', 'corn', 'soybeans', 'rice', 'cotton', 'vegetables', 'fruits'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -549,7 +549,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'soil' && (
           <div className="space-y-6>" 
@@ -584,7 +584,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'irrigation' && (
           <div className="space-y-6>" 
@@ -622,7 +622,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'farming' && (
           <div className="space-y-6>

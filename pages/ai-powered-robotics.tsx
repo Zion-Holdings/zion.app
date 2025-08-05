@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Robot {
-  id: string;'
+  id: string;
   name: string;
   type: 'industrial' | 'service' | 'autonomous' | 'collaborative' | 'mobile' | 'humanoid";
   status: 'active' | 'idle' | 'maintenance' | 'error' | 'charging";
@@ -26,7 +26,7 @@ interface Robot {
     data: any;
   }[];}
 interface RobotTask {
-  id: string;'
+  id: string;
   robotId: string;
   taskType: 'assembly' | 'inspection' | 'transport' | 'cleaning' | 'welding' | 'painting";
   status: 'queued' | 'running' | 'completed' | 'failed' | 'paused";
@@ -49,7 +49,7 @@ interface RobotTask {
   };}
 interface RobotAutomation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'active' | 'inactive' | 'testing' | 'error";
   robotId: string;
@@ -71,7 +71,7 @@ interface RoboticsAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -79,7 +79,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
   ;
   const [robots, setRobots] = useState<Robot[]>([]);
   const [tasks, setTasks] = useState<RobotTask[]>([]);
-  const [automations, setAutomations] = useState<RobotAutomation[]>([]);'
+  const [automations, setAutomations] = useState<RobotAutomation[]>([]);
   const [analytics, setAnalytics] = useState<RoboticsAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'robots' | 'tasks' | 'automations' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -112,16 +112,16 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               type: 'vision',
               status: 'active',
-              data: { resolution: '4K', fps: 60}}'
+              data: { resolution: '4K', fps: 60}}
             {
               type: 'force',
               status: 'active',
-              data: { sensitivity: 'high', range: '0-100N'}}'
+              data: { sensitivity: 'high', range: '0-100N'}}
             {
               type: 'proximity',
               status: 'active',
               data: { range: '0-5m', accuracy: '±2cm'}
-}]}'
+}]}
         {
           id: '2',
           name: 'Zion Service Robot',
@@ -142,16 +142,16 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               type: 'lidar',
               status: 'active',
-              data: { range: '0-10m', resolution: '1cm'}}'
+              data: { range: '0-10m', resolution: '1cm'}}
             {
               type: 'camera',
               status: 'active',
-              data: { resolution: '1080p', fps: 30}}'
+              data: { resolution: '1080p', fps: 30}}
             {
               type: 'microphone',
               status: 'active',
               data: { sensitivity: 'high', channels: 8}
-}]}'
+}]}
         {
           id: '3',
           name: 'Zion Autonomous Robot',
@@ -172,16 +172,16 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               type: 'gps',
               status: 'active',
-              data: { accuracy: '±1m', update_rate: '10Hz'}}'
+              data: { accuracy: '±1m', update_rate: '10Hz'}}
             {
               type: 'imu',
               status: 'active',
-              data: { gyroscope: '3-axis', accelerometer: '3-axis'}}'
+              data: { gyroscope: '3-axis', accelerometer: '3-axis'}}
             {
               type: 'ultrasonic',
               status: 'active',
               data: { range: '0-3m', frequency: '40kHz'}
-}]}'
+}]}
         {
           id: '4',
           name: 'Zion Collaborative Robot',
@@ -202,12 +202,12 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               type: 'force_torque',
               status: 'error',
-              data: { range: '0-1000N', resolution: '0.1N'}}'
+              data: { range: '0-1000N', resolution: '0.1N'}}
             {
               type: 'safety_laser',
               status: 'inactive',
               data: { range: '0-4m', zones: 4}
-}]}'
+}]}
         {
           id: '5',
           name: 'Zion Humanoid Robot',
@@ -228,7 +228,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               type: 'stereo_camera',
               status: 'error',
-              data: { resolution: '720p', fps: 15}}'
+              data: { resolution: '720p', fps: 15}}
             {
               type: 'joint_encoders',
               status: 'error',
@@ -254,7 +254,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
             completionRate: 67,
             accuracy: 99.2,
             efficiency: 97.3,
-            safetyScore: 98.5}}'
+            safetyScore: 98.5}}
         {
           id: '2',
           robotId: '2',
@@ -274,7 +274,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
             completionRate: 100,
             accuracy: 96.5,
             efficiency: 94.2,
-            safetyScore: 99.1}}'
+            safetyScore: 99.1}}
         {
           id: '3',
           robotId: '3',
@@ -307,7 +307,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               condition: 'component_detected','
               threshold: 1,
               sensor: 'vision_system'
-            },'
+            },
 {
               condition: 'quality_check_passed','
               threshold: 95,
@@ -317,16 +317,16 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               robot: 'Zion Assembly Robot',
               action: 'assemble_component',
-              parameters: { precision: 0.1, speed: 85}}'
+              parameters: { precision: 0.1, speed: 85}}
             {
               robot: 'Zion Service Robot',
               action: 'transport_completed',
-              parameters: { destination: 'packaging_station'}}'
+              parameters: { destination: 'packaging_station'}}
           ],
           lastExecuted: new Date('2024-01-20T15:30:00'),
           executionCount: 1542,
           successRate: 94.5,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '2',
           name: 'Warehouse Automation',
@@ -338,7 +338,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               condition: 'order_received','
               threshold: 1,
               sensor: 'order_system'
-            },'
+            },
 {
               condition: 'path_clear','
               threshold: 100,
@@ -348,16 +348,16 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               robot: 'Zion Autonomous Robot',
               action: 'navigate_to_location',
-              parameters: { destination: 'storage_zone_a'}}'
+              parameters: { destination: 'storage_zone_a'}}
             {
               robot: 'Zion Autonomous Robot',
               action: 'pick_and_transport',
-              parameters: { item: 'package_123', destination: 'shipping_dock'}}'
+              parameters: { item: 'package_123', destination: 'shipping_dock'}}
           ],
           lastExecuted: new Date('2024-01-20T15:25:00'),
           executionCount: 892,
           successRate: 97.2,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '3',
           name: 'Safety Monitoring',
@@ -369,7 +369,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               condition: 'human_detected','
               threshold: 1,
               sensor: 'safety_laser'
-            },'
+            },
 {
               condition: 'force_exceeded','
               threshold: 50,
@@ -379,11 +379,11 @@ const AIPoweredRoboticsPage: NextPage = () => {
             {
               robot: 'Zion Collaborative Robot',
               action: 'stop_motion',
-              parameters: { emergency_stop: true}}'
+              parameters: { emergency_stop: true}}
             {
               robot: 'Zion Service Robot',
               action: 'alert_operator',
-              parameters: { message: 'Safety alert triggered'}}'
+              parameters: { message: 'Safety alert triggered'}}
           ],
           lastExecuted: new Date('2024-01-20T15:20:00'),
           executionCount: 234,
@@ -399,7 +399,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -1.2,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'Task Completion',
@@ -408,7 +408,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -1.6,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Safety Score',
@@ -417,7 +417,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -1.2,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'AI Optimization',
@@ -426,7 +426,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -7.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'Energy Efficiency',
@@ -435,7 +435,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -2.4,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'Automation Success',
@@ -454,7 +454,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
     } 1000);
   } []);
   const filteredRobots = useMemo(() => {'
-    let filtered = robots.filter(robot => {';'
+    let filtered = robots.filter(robot => {';
       if (filterType !== 'all' && robot.type !== filterType) return false;
       if (filterStatus !== 'all' && robot.status !== filterStatus) return false;
       if (searchTerm && !robot.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -477,7 +477,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
     return filtered;
   } [robots, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'idle': return 'text-gray-400 bg-gray-500/20";
       case 'maintenance': return 'text-yellow-400 bg-yellow-500/20";
@@ -486,7 +486,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'industrial': return '🏭";
       case 'service': return '🤖";
       case 'autonomous': return '🚗";
@@ -496,7 +496,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
       default: return '🤖';}
   };
   const getTaskStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'running': return 'text-blue-400 bg-blue-500/20";
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -505,7 +505,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTaskTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'assembly': return '🔧";
       case 'inspection': return '🔍";
       case 'transport': return '📦";
@@ -515,7 +515,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
       default: return '⚙️';}
   };
   const getAutomationStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       case 'testing': return 'text-blue-400 bg-blue-500/20";
@@ -523,14 +523,14 @@ const AIPoweredRoboticsPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
-  const getBatteryColor = (level: number) => {';'
+  const getBatteryColor = (level: number) => {';
     if (level > 80) return 'text-green-400";
     if (level > 50) return 'text-yellow-400";
     if (level > 20) return 'text-orange-400";
@@ -621,7 +621,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -645,7 +645,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Robots */},
 {selectedView === 'robots' && ("
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
@@ -730,7 +730,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
             ))}
           </div>
         )}"'
-        {/* Robot Tasks */},''
+        {/* Robot Tasks */},
 {selectedView === 'tasks' && ("
           <div className=" space-y-6>
             {tasks.map((task) => (
@@ -814,7 +814,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Robot Automations */},
 {selectedView === 'automations' && ("
           <div className="space-y-6>" 

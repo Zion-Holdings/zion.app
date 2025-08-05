@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
   const [financialServices, setFinancialServices] = useState<FinancialServices[]>([]
   const [bankingOperations, setBankingOperations] = useState<BankingOperations[]>([]
   const [riskManagement, setRiskManagement] = useState<RiskManagement[]>([]
-  const [financialAnalytics, setFinancialAnalytics] = useState<FinancialAnalytics[]>([]'
+  const [financialAnalytics, setFinancialAnalytics] = useState<FinancialAnalytics[]>([]
   const [data, setData] = useState<FinancialData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'services' | 'operations' | 'risk' | 'analytics' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         performanceScore: 9.2,'
         riskAssessment: 0.12,
         marketTrends: ['Increasing loan demand', 'Improving credit scores', 'Reducing default rates'],
-        recommendations: ['Expand lending criteria', 'Implement dynamic pricing', 'Enhance fraud detection']}}}'
+        recommendations: ['Expand lending criteria', 'Implement dynamic pricing', 'Enhance fraud detection']}}}
     {
       id: '2',
       name: 'Investment Portfolio Manager',
@@ -116,7 +116,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         performanceScore: 8.9,'
         riskAssessment: 0.18,
         marketTrends: ['Market volatility increasing', 'Tech sector outperforming', 'Bond yields rising'],
-        recommendations: ['Diversify portfolio', 'Increase tech exposure', 'Hedge against volatility']}}'
+        recommendations: ['Diversify portfolio', 'Increase tech exposure', 'Hedge against volatility']}}
     {
       id: '3',
       name: 'Smart Insurance Platform',
@@ -146,7 +146,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         reliabilityScore: 9.7,'
         securityLevel: 9.9,
         optimizationOpportunities: ['Reduce processing time', 'Improve user experience', 'Enhance security'],
-        maintenanceSchedule: ['Daily system check', 'Weekly security audit', 'Monthly performance review']}}'
+        maintenanceSchedule: ['Daily system check', 'Weekly security audit', 'Monthly performance review']}}
     {
       id: '2',
       name: 'Transaction Processing Engine',
@@ -160,7 +160,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         reliabilityScore: 9.8,'
         securityLevel: 9.8,
         optimizationOpportunities: ['Optimize processing speed', 'Enhance fraud detection', 'Improve scalability'],
-        maintenanceSchedule: ['Real-time monitoring', 'Hourly security checks', 'Daily performance analysis']}}'
+        maintenanceSchedule: ['Real-time monitoring', 'Hourly security checks', 'Daily performance analysis']}}
     {
       id: '3',
       name: 'Fraud Detection System',
@@ -190,7 +190,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         riskAssessment: 0.15,'
         exposureLevel: 0.25,
         mitigationStrategies: ['Tighten lending criteria', 'Increase collateral requirements', 'Implement dynamic pricing'],
-        recommendations: ['Expand credit models', 'Enhance monitoring systems', 'Improve risk scoring']}}'
+        recommendations: ['Expand credit models', 'Enhance monitoring systems', 'Improve risk scoring']}}
     {
       id: '2',
       name: 'Market Risk Monitoring',
@@ -204,7 +204,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         riskAssessment: 0.22,'
         exposureLevel: 0.30,
         mitigationStrategies: ['Diversify portfolio', 'Implement hedging strategies', 'Reduce position sizes'],
-        recommendations: ['Enhance market analysis', 'Improve hedging models', 'Strengthen risk limits']}}'
+        recommendations: ['Enhance market analysis', 'Improve hedging models', 'Strengthen risk limits']}}
     {
       id: '3',
       name: 'Operational Risk Control',
@@ -230,12 +230,12 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         totalAssets: 50000000,
         performanceGain: 18,
         riskReduction: 25,
-        costSavings: 850000}'
+        costSavings: 850000}
       aiAnalysis: {
         insights: ['Market volatility increased by 15%', 'Tech sector outperforming by 30%', 'Bond yields rising steadily'],
         trends: ['Increasing market volatility', 'Tech sector dominance', 'Rising interest rates'],
         recommendations: ['Diversify portfolio allocation', 'Increase tech exposure', 'Implement hedging strategies'],
-        impactScore: 8.7}}'
+        impactScore: 8.7}}
     {
       id: '2',
       name: 'Portfolio Optimization System',
@@ -245,12 +245,12 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         totalAssets: 75000000,
         performanceGain: 22,
         riskReduction: 30,
-        costSavings: 1200000}'
+        costSavings: 1200000}
       aiAnalysis: {
         insights: ['Portfolio performance improved by 22%', 'Risk-adjusted returns increased by 30%', 'Diversification enhanced'],
         trends: ['Improving portfolio efficiency', 'Reducing concentration risk', 'Optimizing asset allocation'],
         recommendations: ['Rebalance portfolio monthly', 'Increase international exposure', 'Implement factor investing'],
-        impactScore: 9.1}}'
+        impactScore: 9.1}}
     {
       id: '3',
       name: 'Risk Modeling Platform',
@@ -260,7 +260,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         totalAssets: 60000000,
         performanceGain: 15,
         riskReduction: 20,
-        costSavings: 650000}'
+        costSavings: 650000}
       aiAnalysis: {
         insights: ['Risk models improved accuracy by 25%', 'Stress testing enhanced', 'Scenario analysis expanded'],
         trends: ['Improving risk assessment', 'Enhancing stress testing', 'Expanding scenario analysis'],
@@ -281,7 +281,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance risk management']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Banking Operations Reducing Costs',
@@ -347,14 +347,14 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
       case 'positive': return '💰
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredFinancialServices = useMemo(() => {'
@@ -504,7 +504,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'services' && (
           <div className=" space-y-6>
@@ -512,7 +512,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'lending', 'investment', 'insurance', 'payments', 'wealth-management', 'trading'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -559,7 +559,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'operations' && (
           <div className="space-y-6>" 
@@ -597,7 +597,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'risk' && (
           <div className="space-y-6>

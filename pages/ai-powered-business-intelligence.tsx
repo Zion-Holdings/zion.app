@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect }  from "react";
@@ -8,7 +8,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
     revenue: 1250000,
     growth: 23.5,
     customers: 15420,
-    satisfaction: 94.2}}'
+    satisfaction: 94.2}}
   const [insights, setInsights] = useState([
     { id: 1, title: 'Revenue Growth Trend', value: '+23.5%', trend: 'up', confidence: 92 },
 { id: 2, title: 'Customer Acquisition Cost', value: '$45', trend: 'down', confidence: 88 },

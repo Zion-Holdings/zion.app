@@ -1,5 +1,5 @@
 import React from "react;
-// import ModernLayout from '../components/layout/ModernLayout';'
+// import ModernLayout from '../components/layout/ModernLayout';
 import Head from "next/head";
 import Layout from '../../components/Layout";
 
@@ -30,9 +30,8 @@ const QuantumComputingServices = () => {
         </section>
       </div>
     </Layout>;
-  ;
   </div>,
   );
 };
 '
-export default QuantumComputingServices;"'"
+export default QuantumComputingServices;

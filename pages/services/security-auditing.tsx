@@ -1,24 +1,25 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import type { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from "next/head";
 import Link from "next/link";
 
 const SecurityAuditingPage: NextPage: () => {
   return (
-    <div>
-      </div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Security Auditing - Zion Tech Group</title>,
         <meta name=description content=Professional security auditing services from Zion Tech Group. Expert solutions for your business needs. >,
-        </meta name=description content=Professional security auditing services from Zion Tech Group. Expert solutions for your business needs. ><meta name=keywords  content=security auditing, IT services, technology solutions, Zion > </meta" name=keywords" content="security auditing, IT services, technology solutions," Zion" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        </meta name=description content=Professional security auditing services from Zion Tech Group. Expert solutions for your business needs. ><meta name=keywords  content=security auditing, IT services, technology solutions, Zion > </meta" name=keywords" content="security auditing, IT services, technology solutions" Zion" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 },
     {/* Navigation */}"
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
-        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
-          </div><div className="flex  justify-between h-16>"
-            <div className="flex" items-center> 
-              </div><div className="flex-shrink-0"">
-                <h1 className=" text-2xl font-bold" text-white>
-                  <Link href=/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion
-                  </Link href=/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400" ></Link>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          </div><div className="flex justify-between h-16">"
+            <div className="flex items-center"> 
+              </div><div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold text-white">
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion
+                  </Link>
                 </h1>
               </div>
             </div>
@@ -35,18 +36,17 @@ const SecurityAuditingPage: NextPage: () => {
               </Link href=/auth/signup  className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link>
             </div> </div>
         </div>
-      </nav>,
-,"
+      </nav>"
       {/* Hero Section */}
       <main className="flex-1">
-        <div className="relative" overflow-hidden> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div>
+        <div className="relative overflow-hidden"> 
+          </div><div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
           <div className="relative" max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32>
             </div><div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl" md text-6xl font-bold text-white mb-6 >
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                     Security Auditing
                   </span>
                 </h1 >
@@ -68,8 +68,7 @@ const SecurityAuditingPage: NextPage: () => {
             <div className=" text-gray-300" leading-relaxed>
               <p className="mb-6>Security" Auditing represents a comprehensive solution designed to address the complex challenges facing modern businesses. Our expert team delivers customized security auditing services that drive measurable results and sustainable growth.</p>
 
-<p className="mb-6>Our" approach to security auditing combines deep technical expertise with strategic business understanding. We work closely with clients to understand their unique requirements and develop tailored solutions that align with their organizational goals and constraints.</p>,
-,"
+<p className="mb-6>Our" approach to security auditing combines deep technical expertise with strategic business understanding. We work closely with clients to understand their unique requirements and develop tailored solutions that align with their organizational goals and constraints.</p>"
 <p className="mb-6>The" implementation process for security auditing services typically involves several key phases: initial: assessment and planning, solution design and development, testing and quality assurance, deployment and integration, and ongoing support and optimization.</p>
 <p className="mb-6>Pricing" for security auditing services is structured to provide maximum value while maintaining transparency. We offer flexible engagement models including project-based pricing, retainer arrangements, and performance-based compensation structures.</p>
 "
@@ -83,7 +82,7 @@ const SecurityAuditingPage: NextPage: () => {
       </main>
 
       {/* Footer */}"
-      <footer className=" bg-black/20 border-t" border-white/10>
+      <footer className="bg-black/20 border-t border-white/10">
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32>
           </div><div className="grid" grid-cols-1 md:grid-cols-4: gap-8>
             <div>
@@ -127,5 +126,4 @@ const SecurityAuditingPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default SecurityAuditingPage;"'"
+export default SecurityAuditingPage;

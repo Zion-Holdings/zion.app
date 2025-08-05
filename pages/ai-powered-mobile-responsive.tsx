@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { Home, Search, User }  from "lucide-react";
 
 interface MobileDevice {
-  id: string;'
+  id: string;
   name: string;
   type: 'smartphone' | 'tablet' | 'phablet' | 'foldable";
   screenSize: string;
@@ -42,7 +42,7 @@ interface MobilePerformance {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   deviceType: string;
@@ -63,14 +63,14 @@ interface AILayoutOptimization {
     adaptiveLayout: boolean;
     intelligentScaling: boolean;
     touchOptimization: boolean;
-    gestureRecognition: boolean;'
+    gestureRecognition: boolean;
   };
   status: 'active' | 'testing' | 'inactive';}
 const AIPoweredMobileResponsivePage: NextPage = () => {
   ;
   const [devices, setDevices] = useState<MobileDevice[]>([]);
   const [breakpoints, setBreakpoints] = useState<ResponsiveBreakpoint[]>([]);
-  const [performanceMetrics, setPerformanceMetrics] = useState<MobilePerformance[]>([]);'
+  const [performanceMetrics, setPerformanceMetrics] = useState<MobilePerformance[]>([]);
   const [layoutOptimizations, setLayoutOptimizations] = useState<AILayoutOptimization[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'devices' | 'breakpoints' | 'performance' | 'optimizations'>('overview');
   const [filterDeviceType, setFilterDeviceType] = useState<string>('all');
@@ -90,7 +90,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           screenSize: '6.1"',
           resolution: '2556 x 1179','
           pixelDensity: 460,
-          userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)',
+          userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X),
           marketShare: 18.5,
           performance: {
             loadTime: 1.8,
@@ -101,7 +101,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             imagesOptimized: true,
             lazyLoading: true,
             codeSplitting: true,
-            cachingEnabled: true}}'
+            cachingEnabled: true}}
         {
           id: '2','"'
           name: 'Samsung Galaxy S24',''
@@ -109,7 +109,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           screenSize: '6.2"',
           resolution: '2340 x 1080','
           pixelDensity: 393,
-          userAgent: 'Mozilla/5.0 (Linux; Android 14; SM-S921B)',
+          userAgent: 'Mozilla/5.0 (Linux; Android 14; SM-S921B),
           marketShare: 15.2,
           performance: {
             loadTime: 2.1,
@@ -128,7 +128,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           screenSize: '12.9"',
           resolution: '2732 x 2048','
           pixelDensity: 264,
-          userAgent: 'Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X)',
+          userAgent: 'Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X),
           marketShare: 8.7,
           performance: {
             loadTime: 2.5,
@@ -139,7 +139,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             imagesOptimized: true,
             lazyLoading: true,
             codeSplitting: true,
-            cachingEnabled: true}}'
+            cachingEnabled: true}}
         {
           id: '4','"'
           name: 'Samsung Galaxy Z Fold 5',''
@@ -147,7 +147,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           screenSize: '7.6"',
           resolution: '2176 x 1812','
           pixelDensity: 374,
-          userAgent: 'Mozilla/5.0 (Linux; Android 13; SM-F946B)',
+          userAgent: 'Mozilla/5.0 (Linux; Android 13; SM-F946B),
           marketShare: 2.1,
           performance: {
             loadTime: 2.8,
@@ -158,7 +158,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             imagesOptimized: true,
             lazyLoading: true,
             codeSplitting: true,
-            cachingEnabled: true}}'
+            cachingEnabled: true}}
         {
           id: '5',
           name: 'Google Pixel 8',
@@ -166,7 +166,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           screenSize: '6.2',
           resolution: '2400 x 1080','
           pixelDensity: 428,
-          userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8)',
+          userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8),
           marketShare: 4.3,
           performance: {
             loadTime: 1.9,
@@ -190,12 +190,12 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           performance: {
             averageLoadTime: 2.1,
             successRate: 98.5,
-            errorRate: 1.5}'
+            errorRate: 1.5}
           optimizations: [
-            'Touch-friendly buttons (44px minimum)',
+            'Touch-friendly buttons (44px minimum),
             'Simplified navigation',
             'Optimized images for small screens',
-            'Reduced content density']}'
+            'Reduced content density']}
         {
           id: '2',
           name: 'Mobile Large',
@@ -206,12 +206,12 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           performance: {
             averageLoadTime: 1.8,
             successRate: 99.2,
-            errorRate: 0.8}'
+            errorRate: 0.8}
           optimizations: [
             'Enhanced touch targets',
             'Improved navigation patterns',
             'Better content layout',
-            'Optimized form inputs']}'
+            'Optimized form inputs']}
         {
           id: '3',
           name: 'Tablet Portrait',
@@ -222,12 +222,12 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           performance: {
             averageLoadTime: 2.3,
             successRate: 97.8,
-            errorRate: 2.2}'
+            errorRate: 2.2}
           optimizations: [
             'Tablet-optimized layouts',
             'Enhanced navigation menus',
             'Improved content spacing',
-            'Touch and mouse support']}'
+            'Touch and mouse support']}
         {
           id: '4',
           name: 'Tablet Landscape',
@@ -238,7 +238,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           performance: {
             averageLoadTime: 2.5,
             successRate: 96.9,
-            errorRate: 3.1}'
+            errorRate: 3.1}
           optimizations: [
             'Landscape-optimized layouts',
             'Multi-column content',
@@ -255,7 +255,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '2',
           metric: 'Touch Response Time',
@@ -265,7 +265,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date()
-        },'
+        },
     {
           id: '3',
           metric: 'Battery Efficiency',
@@ -275,7 +275,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '4',
           metric: 'Memory Usage',
@@ -285,7 +285,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date()
-        },'
+        },
     {
           id: '5',
           metric: 'User Engagement',
@@ -295,7 +295,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '6',
           metric: 'Conversion Rate',
@@ -324,7 +324,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             touchOptimization: true,
             gestureRecognition: true'
           }
-          status: 'active'}'
+          status: 'active'}
         {
           id: '2',
           page: 'Service Marketplace',
@@ -342,7 +342,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             touchOptimization: true,
             gestureRecognition: true'
           }
-          status: 'active'}'
+          status: 'active'}
         {
           id: '3',
           page: 'User Profiles',
@@ -360,7 +360,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             touchOptimization: true,
             gestureRecognition: true'
           }
-          status: 'testing'}'
+          status: 'testing'}
         {
           id: '4',
           page: 'Payment Processing',
@@ -391,7 +391,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
   const filteredDevices = useMemo(() => {
     let filtered = devices.filter(device => {'
-      // Device type filter';'
+      // Device type filter';
       if (filterDeviceType !== 'all' && device.type !== filterDeviceType) return false;
       
       // Search term filter
@@ -417,7 +417,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
     return filtered;
   } [devices, filterDeviceType, searchTerm, sortBy]);
   const getDeviceTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'smartphone': return '📱";
       case 'tablet': return '📱";
       case 'phablet': return '📱";
@@ -428,18 +428,18 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
   const getPerformanceColor = (value: number, target: number) => {;
     const ratio = value / target;
     if (ratio '
-  const getOptimizationIcon = (optimized: boolean) => {';'
+  const getOptimizationIcon = (optimized: boolean) => {';
     return optimized ? '✅' : '❌";
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'testing': return 'text-yellow-400 bg-yellow-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -555,7 +555,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
               </div>
             ))}
           </div> 
-        )}'
+        )}
         {/* Search and Filters */},"''
 {selectedView === 'devices' && ("
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8> 
@@ -666,7 +666,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Breakpoints */}, ''
 {selectedView === 'breakpoints' && (
           <div className="space-y-6>
@@ -721,7 +721,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
             ))}
           </div>
         )}"'
-        {/* Layout Optimizations */},''
+        {/* Layout Optimizations */},
 {selectedView === 'optimizations' && ("
           <div className=" space-y-6>
             {layoutOptimizations.map((optimization) => (

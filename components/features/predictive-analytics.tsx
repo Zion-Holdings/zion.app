@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface PredictiveAnalyticsProps {
-  className?: string;}'
+  className?: string;}
 const PredictiveAnalytics: React.FC<PredictiveAnalyticsProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const PredictiveAnalytics: React.FC<PredictiveAnalyticsProps> = ({ className="''
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default PredictiveAnalytics;"'"'`
+export default PredictiveAnalytics;'`

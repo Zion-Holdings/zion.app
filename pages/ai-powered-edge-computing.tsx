@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface EdgeComputing {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'iot_gateway' | 'edge_server' | 'micro_data_center' | 'edge_device' | 'edge_router' | 'edge_storage";
   status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
@@ -21,7 +21,7 @@ interface EdgeAnalysis {
   recommendations: string[];}
 interface FogComputing {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'fog_node' | 'fog_cluster' | 'fog_gateway' | 'fog_router' | 'fog_storage' | 'fog_processor";
   status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
@@ -37,7 +37,7 @@ interface FogOptimization {
   recommendations: string[];}
 interface DistributedComputing {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'distributed_cluster' | 'grid_computing' | 'peer_to_peer' | 'distributed_storage' | 'distributed_processing' | 'distributed_analytics";
   status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
@@ -53,7 +53,7 @@ interface DistributedAnalysis {
 interface EdgeAnalytics {
   id: string;
   analyticsId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'real_time' | 'batch_processing' | 'stream_processing' | 'predictive' | 'descriptive' | 'prescriptive";
   status: 'running' | 'completed' | 'failed' | 'scheduled";
@@ -69,7 +69,7 @@ interface AnalyticsAnalysis {
 interface FogOrchestration {
   id: string;
   orchestrationId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'resource_orchestration' | 'service_orchestration' | 'workflow_orchestration' | 'network_orchestration' | 'security_orchestration' | 'data_orchestration";
   status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
@@ -85,7 +85,7 @@ interface OrchestrationAnalysis {
 interface EdgeComputingManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -110,7 +110,7 @@ interface EdgeComputingAnalytics {
   aiInsights: EdgeComputingInsight[];}
 interface EdgeComputingInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -121,7 +121,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
   const [distributedComputing, setDistributedComputing] = useState<DistributedComputing[]>([]
   const [edgeAnalytics, setEdgeAnalytics] = useState<EdgeAnalytics[]>([]
   const [fogOrchestration, setFogOrchestration] = useState<FogOrchestration[]>([]
-  const [edgeComputingManagement, setEdgeComputingManagement] = useState<EdgeComputingManagement[]>([]'
+  const [edgeComputingManagement, setEdgeComputingManagement] = useState<EdgeComputingManagement[]>([]
   const [analytics, setAnalytics] = useState<EdgeComputingAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'edge' | 'fog' | 'distributed' | 'analytics' | 'orchestration' | 'management' | 'overview'>('edge
   const [selectedType, setSelectedType] = useState<string>('all
@@ -358,7 +358,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 Edge Computing ({edgeComputing.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('fog')}''``
+                onClick={() => setActiveTab('fog')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'fog
                     ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -368,7 +368,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 Fog Computing ({fogComputing.length}
               </button>'
               `
-                onClick={() => setActiveTab('distributed')}''``
+                onClick={() => setActiveTab('distributed')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'distributed
                     ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -378,7 +378,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 Distributed Computing ({distributedComputing.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -398,7 +398,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 Fog Orchestration ({fogOrchestration.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -408,7 +408,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 Management ({edgeComputingManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('overview')}''``
+                onClick={() => setActiveTab('overview')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview
                     ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -419,7 +419,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Edge Computing Tab */},''
+            {/* Edge Computing Tab */},
 {activeTab === 'edge' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -519,7 +519,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Overview Tab */},"''
 {activeTab === 'overview' && analytics && (
               <div className=" space-y-8>

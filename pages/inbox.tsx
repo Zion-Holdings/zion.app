@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -9,7 +9,7 @@ interface Message {'
   priority: 'low' | 'medium' | 'high' | 'urgent";
   sender: {
     id: string;
-    name: string;'
+    name: string;
     avatar?: string;
     type: 'user' | 'service-provider' | 'talent' | 'system' | 'admin";
   };
@@ -40,7 +40,7 @@ interface Message {'
     category?: string;
   };
   actions?: {
-    label: string;'
+    label: string;
     url: string;
     type: 'primary' | 'secondary";
   }[];}
@@ -56,21 +56,21 @@ interface InboxStats {
 interface InboxFilters {
   type: string;
   priority: string;
-  sender: string;'
+  sender: string;
   dateRange: string;
   readStatus: 'all' | 'read' | 'unread";
   starred: boolean;}
 const InboxPage: NextPage = () => {
   ;
   const [messages, setMessages] = useState<Message[]>([]);
-  const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);'
+  const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [filters, setFilters] = useState<InboxFilters>({
     type: 'all',
     priority: 'all',
     sender: 'all',
     dateRange: 'all',
     readStatus: 'all',
-    starred: false}'
+    starred: false}
   });
   const [searchTerm, setSearchTerm] = useState('');
   const [view, setView] = useState<'list' | 'grid'>('list');
@@ -110,12 +110,12 @@ const InboxPage: NextPage = () => {
               label: 'View Quote',
               url: '/quote-request',
               type: 'primary'
-            },'
+            },
 {
               label: 'Contact Provider',
               url: '/chat',
               type: 'secondary'
-            }]}'
+            }]}
         {
           id: '2',
           type: 'talent',
@@ -142,7 +142,7 @@ const InboxPage: NextPage = () => {
               label: 'View Profile',
               url: '/talents',
               type: 'primary'
-            }]}'
+            }]}
         {
           id: '3',
           type: 'payment',
@@ -171,7 +171,7 @@ const InboxPage: NextPage = () => {
               label: 'Retry Payment',
               url: '/payment-processing',
               type: 'primary'
-            }]}'
+            }]}
         {
           id: '4',
           type: 'marketplace',
@@ -198,7 +198,7 @@ const InboxPage: NextPage = () => {
               label: 'View Equipment',
               url: '/equipment',
               type: 'primary'
-            }]}'
+            }]}
         {
           id: '5',
           type: 'support',
@@ -250,7 +250,7 @@ const InboxPage: NextPage = () => {
 
   const filteredMessages = useMemo(() => {
     return messages.filter(message => {'
-      // Type filter';'
+      // Type filter';
       if (filters.type !== 'all' && message.type !== filters.type) return false;
       '
       // Priority filter
@@ -293,7 +293,7 @@ const InboxPage: NextPage = () => {
     ));
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'urgent': return 'text-red-400";
       case 'high': return 'text-orange-400";
       case 'medium': return 'text-yellow-400";
@@ -301,7 +301,7 @@ const InboxPage: NextPage = () => {
       default: return 'text-gray-400';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'marketplace': return '🏪";
       case 'service': return '🛠️";
       case 'talent': return '👨‍💻";
@@ -496,7 +496,7 @@ const InboxPage: NextPage = () => {
                   <AnimatePresence>
                     {filteredMessages.map((message, index) => (
                         onClick={() => {;
-                          setSelectedMessage(message);"
+                          setSelectedMessage(message);
                           if (!message.read) markAsRead(message.id);
                         }}"
                       >
@@ -524,9 +524,9 @@ const InboxPage: NextPage = () => {
                                   {formatTimeAgo(message.createdAt)}
                                 </span >
                                 
-                                  onClick={(e) => {;"
+                                  onClick={(e) => {;
                                     e.stopPropagation();
-                                    toggleStar(message.id);"
+                                    toggleStar(message.id);
                                   }}
                                   className="text-gray-400" hover:text-yellow-400 transition-colors'
                                 >

@@ -21,7 +21,7 @@ import {
 interface Facility {
   id: string;
   name: string;
-  type: string;'
+  type: string;
   location: string;
   status: 'operational' | 'maintenance' | 'offline";
   capacity: number;
@@ -34,7 +34,7 @@ interface Facility {
 interface Equipment {
   id: string;
   name: string;
-  type: string;'
+  type: string;
   facility: string;
   status: 'operational' | 'maintenance' | 'offline";
   lastMaintenance: string;
@@ -44,7 +44,7 @@ interface Equipment {
 interface MaintenanceTask {
   id: string;
   title: string;
-  facility: string;'
+  facility: string;
   equipment: string;
   type: 'preventive' | 'corrective' | 'emergency";
   priority: 'low' | 'medium' | 'high' | 'critical";
@@ -61,14 +61,14 @@ interface EnergyMetric {
   facility: string;
   category: string;
   currentUsage: number;
-  targetUsage: number;'
+  targetUsage: number;
   unit: string;
   trend: 'increasing' | 'decreasing' | 'stable";
   lastUpdated: string;}
 interface SecurityEvent {
   id: string;
   title: string;
-  facility: string;'
+  facility: string;
   type: string;
   severity: 'low' | 'medium' | 'high' | 'critical";
   status: 'open' | 'closed";
@@ -76,13 +76,13 @@ interface SecurityEvent {
   location: string;
   timestamp: string;}
 const AIPoweredFacilityManagementPage: NextPage = () => {'
-  ';'
+  ';
   const [activeTab, setActiveTab] = useState('overview');
   const [facilities, setFacilities] = useState<Facility[]>([]);
   const [equipment, setEquipment] = useState<Equipment[]>([]);
   const [maintenanceTasks, setMaintenanceTasks] = useState<MaintenanceTask[]>([]);
   const [energyMetrics, setEnergyMetrics] = useState<EnergyMetric[]>([]);
-  const [securityEvents, setSecurityEvents] = useState<SecurityEvent[]>([]);'
+  const [securityEvents, setSecurityEvents] = useState<SecurityEvent[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
 
@@ -91,7 +91,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
   } [selectedTimeframe]);
 
   const loadFacilityData = async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-facility-management', {
         method: 'POST','
@@ -109,21 +109,21 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
         setEquipment(data.equipment || []);
         setMaintenanceTasks(data.maintenanceTasks || []);
         setEnergyMetrics(data.energyMetrics || []);
-        setSecurityEvents(data.securityEvents || []);}'
+        setSecurityEvents(data.securityEvents || []);}
     } catch (error) {
       console.error('Error loading facility data: , error);
     } finally {
       setLoading(false);}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'operational': return 'bg-green-500";
       case 'maintenance': return 'bg-yellow-500";
       case 'offline': return 'bg-gray-500";
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'low': return 'bg-green-500";
       case 'medium': return 'bg-yellow-500";
       case 'high': return 'bg-orange-500";
@@ -131,7 +131,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'overview', name: 'Overview', icon: Activity },
 { id: 'facilities', name: 'Facilities', icon: Building },
     { id: 'maintenance', name: 'Maintenance', icon: Wrench },
@@ -169,8 +169,8 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
       {/* Navigation Tabs */}"
       <nav className="mb-8">
         <div className="flex space-x-8 border-b border-white/10">
-          {tabs.map((tab) =>" {;"
-            const Icon = tab.icon;"
+          {tabs.map((tab) =>" {;
+            const Icon = tab.icon;
             return (
               "
                 onClick = {() => setActiveTab(tab.id)}
@@ -194,7 +194,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
         </div>
       )   (
         <div className="space-y-8>'"
-          {/* Overview Tab */},''
+          {/* Overview Tab */},
     {activeTab === 'overview' && (
             </div><div className="space-y-6"">
               {/* KPI Cards */}
@@ -257,8 +257,8 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                 </div>
               </div>
             </div>
-          )}'
-          {/* Facilities Tab */},' '
+          )}
+          {/* Facilities Tab */}, '
 {activeTab === 'facilities' && (
             <div className="space-y-6>"
               </div><div className=" flex justify-between" items-center>"
@@ -305,7 +305,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {/* Maintenance Tab */},"''
 {activeTab === 'maintenance' && (
             <div className=" space-y-6>
@@ -441,4 +441,4 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                 );
 };
 ''`
-export default AIPoweredFacilityManagementPage;"'"'`
+export default AIPoweredFacilityManagementPage;'`

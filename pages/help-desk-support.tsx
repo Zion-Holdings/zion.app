@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { motion, AnimatePresence }  from "framer-motion";
 
 interface SupportTicket {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   status: 'open' | 'in-progress' | 'resolved' | 'closed' | 'pending";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -27,7 +27,7 @@ interface SupportTicket {
 interface TicketResponse {
   id: string;
   author: {
-    id: string;'
+    id: string;
     name: string;
     type: 'customer' | 'support-agent' | 'admin";
   };
@@ -36,7 +36,7 @@ interface TicketResponse {
   isInternal: boolean;}
 interface SupportAgent {
   id: string;
-  name: string;'
+  name: string;
   email: string;
   role: 'agent' | 'senior-agent' | 'supervisor' | 'manager";
   status: 'online' | 'offline' | 'busy' | 'away";
@@ -74,7 +74,7 @@ const HelpDeskSupport: NextPage = () => {'
           id: '1',
           name: 'John Smith',
           email: 'john@example.com',
-          plan: 'premium'}'
+          plan: 'premium'}
         }
         assignedTo: 'agent-1',
         createdAt: new Date(Date.now() - 3600000),'
@@ -91,7 +91,7 @@ const HelpDeskSupport: NextPage = () => {'
             }
             content: 'I\'m still experiencing the payment issue. Can you help?',
             createdAt: new Date(Date.now() - 3600000),
-            isInternal: false}'
+            isInternal: false}
           {
             id: '2','
             author: {
@@ -102,7 +102,7 @@ const HelpDeskSupport: NextPage = () => {'
             content: 'I\'m investigating this issue. Please check your payment method.',
             createdAt: new Date(Date.now() - 1800000),
             isInternal: false
-          }]}'
+          }]}
       {
         id: '2',
         title: 'Feature Request: Dark Mode',
@@ -143,7 +143,7 @@ const HelpDeskSupport: NextPage = () => {'
         avgResponseTime: 2.5,'
         satisfactionScore: 4.8,
         specialties: ['billing', 'technical', 'account']
-      },'
+      },
 {
         id: 'agent-2',
         name: 'Mike Chen',
@@ -163,7 +163,7 @@ const HelpDeskSupport: NextPage = () => {'
         ticketCount: 45,
         avgResolutionTime: 3.2,
         satisfactionScore: 4.6
-      },'
+      },
 {
         id: '2',
         name: 'Billing & Payments',
@@ -462,7 +462,7 @@ const HelpDeskSupport: NextPage = () => {'
                 ))}
               </div>
             </motion.div>
-          )}'
+          )}
 '"'
           {activeTab === 'analytics' && (
             "
@@ -512,7 +512,7 @@ const HelpDeskSupport: NextPage = () => {'
                 </div>
               </div>
             </motion.div>
-          )}'
+          )}
 '"'
           {activeTab === 'categories' && (
             "

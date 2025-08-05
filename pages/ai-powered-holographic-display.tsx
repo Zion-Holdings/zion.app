@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface HolographicDisplay {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'volumetric' | 'light_field' | 'holographic_projection' | 'spatial_computing' | 'mixed_reality' | 'augmented_reality";
   status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline";
@@ -21,7 +21,7 @@ interface DisplayAnalysis {
   recommendations: string[];}
 interface ThreeDVisualization {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: '3d_modeling' | '3d_rendering' | '3d_animation' | '3d_simulation' | '3d_interaction' | '3d_visualization";
   status: 'active' | 'inactive' | 'processing' | 'error' | 'offline";
@@ -36,7 +36,7 @@ interface VisualizationOptimization {
   recommendations: string[];}
 interface SpatialComputing {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'spatial_mapping' | 'spatial_tracking' | 'spatial_interaction' | 'spatial_audio' | 'spatial_gestures' | 'spatial_environment";
   status: 'active' | 'inactive' | 'mapping' | 'error' | 'offline";
@@ -52,7 +52,7 @@ interface SpatialAnalysis {
 interface HolographicProjection {
   id: string;
   projectionId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'laser_projection' | 'led_projection' | 'lcd_projection' | 'dlp_projection' | 'lcos_projection' | 'microled_projection";
   status: 'active' | 'inactive' | 'projecting' | 'error' | 'offline";
@@ -68,7 +68,7 @@ interface ProjectionAnalysis {
 interface VolumetricDisplay {
   id: string;
   displayId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'volumetric_rendering' | 'volumetric_capture' | 'volumetric_interaction' | 'volumetric_audio' | 'volumetric_haptics' | 'volumetric_environment";
   status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline";
@@ -84,7 +84,7 @@ interface VolumetricAnalysis {
 interface HolographicSystemManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'hardware' | 'software' | 'network' | 'performance' | 'maintenance' | 'optimization";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -109,7 +109,7 @@ interface HolographicDisplayAnalytics {
   aiInsights: HolographicDisplayInsight[];}
 interface HolographicDisplayInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -120,7 +120,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
   const [spatialComputing, setSpatialComputing] = useState<SpatialComputing[]>([]
   const [holographicProjections, setHolographicProjections] = useState<HolographicProjection[]>([]
   const [volumetricDisplays, setVolumetricDisplays] = useState<VolumetricDisplay[]>([]
-  const [holographicSystemManagement, setHolographicSystemManagement] = useState<HolographicSystemManagement[]>([]'
+  const [holographicSystemManagement, setHolographicSystemManagement] = useState<HolographicSystemManagement[]>([]
   const [analytics, setAnalytics] = useState<HolographicDisplayAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'displays' | 'visualization' | 'spatial' | 'projection' | 'volumetric' | 'management' | 'overview'>('displays
   const [selectedType, setSelectedType] = useState<string>('all
@@ -368,7 +368,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 Holographic Displays ({holographicDisplays.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('visualization')}''``
+                onClick={() => setActiveTab('visualization')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'visualization
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -378,7 +378,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 3D Visualization ({threeDVisualizations.length}
               </button>'
               `
-                onClick={() => setActiveTab('spatial')}''``
+                onClick={() => setActiveTab('spatial')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'spatial
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -388,7 +388,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 Spatial Computing ({spatialComputing.length}
               </button>'
               `
-                onClick={() => setActiveTab('projection')}''``
+                onClick={() => setActiveTab('projection')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'projection
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -408,7 +408,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 Volumetric Displays ({volumetricDisplays.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -418,7 +418,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 Management ({holographicSystemManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('overview')}''``
+                onClick={() => setActiveTab('overview')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -429,7 +429,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Holographic Displays Tab */},''
+            {/* Holographic Displays Tab */},
 {activeTab === 'displays' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -529,7 +529,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Overview Tab */},"''
 {activeTab === 'overview' && analytics && (
               <div className=" space-y-8>

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface DistributedLedger {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'blockchain' | 'hashgraph' | 'dag' | 'tangle' | 'holochain' | 'tempo";
   status: 'active' | 'inactive' | 'syncing' | 'error' | 'offline";
@@ -21,7 +21,7 @@ interface LedgerAnalysis {
   recommendations: string[];}
 interface ConsensusMechanism:{
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'proof_of_work' | 'proof_of_stake' | 'delegated_proof_of_stake' | 'proof_of_authority' | 'byzantine_fault_tolerance' | 'practical_byzantine_fault_tolerance";
   status: 'active' | 'inactive' | 'validating' | 'error' | 'offline";
@@ -36,7 +36,7 @@ interface ConsensusOptimization {
   recommendations: string[];}
 interface SmartContract {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'defi' | 'nft' | 'governance' | 'oracle' | 'identity' | 'supply_chain";
   status: 'active' | 'inactive' | 'deploying' | 'error' | 'offline";
@@ -52,7 +52,7 @@ interface ContractAnalysis {
 interface BlockchainGovernance {
   id: string;
   governanceId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'dao' | 'on_chain_governance' | 'off_chain_governance' | 'hybrid_governance' | 'consensus_governance' | 'stakeholder_governance";
   status: 'active' | 'inactive' | 'voting' | 'error' | 'offline";
@@ -68,7 +68,7 @@ interface GovernanceAnalysis {
 interface DecentralizedApplication {
   id: string;
   appId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'defi_application' | 'gaming_application' | 'social_application' | 'enterprise_application' | 'identity_application' | 'supply_chain_application";
   status: 'active' | 'inactive' | 'developing' | 'error' | 'offline";
@@ -84,7 +84,7 @@ interface DAppAnalysis {
 interface DistributedLedgerManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'network' | 'security' | 'performance' | 'governance' | 'development' | 'maintenance";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -109,7 +109,7 @@ interface DistributedLedgerAnalytics {
   aiInsights: DistributedLedgerInsight[];}
 interface DistributedLedgerInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -120,7 +120,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
   const [smartContracts, setSmartContracts] = useState<SmartContract[]>([]
   const [blockchainGovernance, setBlockchainGovernance] = useState<BlockchainGovernance[]>([]
   const [decentralizedApplications, setDecentralizedApplications] = useState<DecentralizedApplication[]>([]
-  const [distributedLedgerManagement, setDistributedLedgerManagement] = useState<DistributedLedgerManagement[]>([]'
+  const [distributedLedgerManagement, setDistributedLedgerManagement] = useState<DistributedLedgerManagement[]>([]
   const [analytics, setAnalytics] = useState<DistributedLedgerAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'ledgers' | 'consensus' | 'contracts' | 'governance' | 'dapps' | 'management' | 'overview'>('ledgers
   const [selectedType, setSelectedType] = useState<string>('all
@@ -369,7 +369,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 Distributed Ledgers ({distributedLedgers.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('consensus')}''``
+                onClick={() => setActiveTab('consensus')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'consensus
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -379,7 +379,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 Consensus Mechanisms ({consensusMechanisms.length}
               </button>'
               `
-                onClick={() => setActiveTab('contracts')}''``
+                onClick={() => setActiveTab('contracts')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'contracts
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -389,7 +389,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 Smart Contracts ({smartContracts.length}
               </button>'
               `
-                onClick={() => setActiveTab('governance')}''``
+                onClick={() => setActiveTab('governance')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'governance
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -409,7 +409,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 Decentralized Apps ({decentralizedApplications.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -419,7 +419,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 Management ({distributedLedgerManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('overview')}''``
+                onClick={() => setActiveTab('overview')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -430,7 +430,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Distributed Ledgers Tab */},''
+            {/* Distributed Ledgers Tab */},
 {activeTab === 'ledgers' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -530,7 +530,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Overview Tab */},"''
 {activeTab === 'overview' && analytics && (
               <div className=" space-y-8>

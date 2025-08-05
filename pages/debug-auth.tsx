@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useAuth } from "../src/contexts/AuthContext";
 import { useEffect, useState }  from "react";
@@ -7,7 +7,7 @@ const DebugAuth: NextPage = () => {}
   const { user, session, loading, error } = useAuth(
   const [debugInfo, setDebugInfo] = useState<any>({}
   useEffect(() => {
-    const info = {
+    const $1 = {
       user: user ? {
         id: user.id,
         email: user.email,

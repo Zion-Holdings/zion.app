@@ -5,7 +5,7 @@ const FuturisticHero: React.FC = () => {;
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
 '
-  const animatedTexts = [
+  const $1 = [
     'AI-Powered Marketplace',
     'High-Tech Products',
     'IT Services',
@@ -129,4 +129,4 @@ const FuturisticHero: React.FC = () => {;
   );
 };
 ''`
-export default FuturisticHero;'"'`
+export default FuturisticHero;`

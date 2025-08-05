@@ -24,7 +24,7 @@ import {
 } from "lucide-react"'
 '
 interface ModernFooterProps {
-  variant?: 'default' | 'minimal' | 'none'}'
+  variant?: 'default' | 'minimal' | 'none'}
 const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
   const [isVisible, setIsVisible] = useState(false)
   useEffect(() => {
@@ -32,7 +32,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
       if (window.pageYOffset > 300) {
         setIsVisible(true)
       } else {
-        setIsVisible(false)}}'
+        setIsVisible(false)}}
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
@@ -40,9 +40,9 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
     window.scrollTo({'
       top: 0,
       behavior: 'smooth'
-    })}'
+    })}
   if (variant === 'none') return null;
-  const footerSections = ['
+  const $1 = ['
     {
       title: 'Marketplace',
       icon: Globe,'
@@ -55,7 +55,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         { label: 'AI Service Matcher', href: '/ai-service-matcher' },
         { label: 'Service Categories', href: '/service-categories' },
         { label: 'Talent Directory', href: '/talent-directory' }]
-    },'
+    },
     {
       title: 'AI Services',
       icon: Zap,'
@@ -68,7 +68,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         { label: 'Legal & Contracts', href: '/ai-powered-contract-legal' },
         { label: 'Customer Support', href: '/ai-powered-customer-support' },
         { label: 'Identity Verification', href: '/ai-powered-identity-verification' }]
-    },'
+    },
     {
       title: 'Business Tools',
       icon: Settings,'
@@ -81,7 +81,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         { label: 'Workflow Designer', href: '/workflow-designer' },
         { label: 'Data Warehouse ETL', href: '/data-warehouse-etl' },
         { label: 'Help Desk Support', href: '/help-desk-support' }]
-    },'
+    },
     {
       title: 'Support & Resources',
       icon: HelpCircle,'
@@ -94,14 +94,14 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         { label: 'About Us', href: '/about' },
         { label: 'Privacy Policy', href: '/privacy' },
         { label: 'Terms of Service', href: '/terms' }]
-    }]'
-  const socialLinks = [
+    }]
+  const $1 = [
     { label: 'GitHub', href: 'https://github.com', icon: Github },
     { label: 'Twitter', href: 'https://twitter.com', icon: Twitter },
     { label: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
     { label: 'Facebook', href: 'https://facebook.com', icon: Facebook },
     { label: 'Instagram', href: 'https://instagram.com', icon: Instagram },
-    { label: 'YouTube', href: 'https://youtube.com', icon: Youtube }]'
+    { label: 'YouTube', href: 'https://youtube.com', icon: Youtube }]
   if (variant === 'minimal') {
     return (
       <footer className=" relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t" border-neon-blue/20">

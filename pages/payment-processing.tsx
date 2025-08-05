@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -14,7 +14,7 @@ interface PaymentMethod {'
 interface Transaction {'
   id: string;
   type: 'payment' | 'refund' | 'withdrawal' | 'fee";
-  amount: number;'
+  amount: number;
   currency: string;
   status: 'pending' | 'completed' | 'failed' | 'cancelled";
   description: string;
@@ -30,9 +30,9 @@ interface PaymentForm {
   recipient: string;}
 const PaymentProcessingPage: NextPage = () => {
   ;
-  const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([]);'
+  const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [selectedTab, setSelectedTab] = useState<'pay' | 'history' | 'methods' | 'analytics'>('pay');'
+  const [selectedTab, setSelectedTab] = useState<'pay' | 'history' | 'methods' | 'analytics'>('pay');
   const [paymentForm, setPaymentForm] = useState<PaymentForm>({
     amount: '',
     currency: 'USD',
@@ -56,7 +56,7 @@ const PaymentProcessingPage: NextPage = () => {
           expiry: '12/25',
           isDefault: true,
           isVerified: true
-        },'
+        },
 {
           id: '2',
           type: 'card',
@@ -66,7 +66,7 @@ const PaymentProcessingPage: NextPage = () => {
           expiry: '08/26',
           isDefault: false,
           isVerified: true
-        },'
+        },
     {
           id: '3',
           type: 'paypal',
@@ -74,7 +74,7 @@ const PaymentProcessingPage: NextPage = () => {
           icon: '🔵',
           isDefault: false,
           isVerified: true
-        },'
+        },
 {
           id: '4',
           type: 'crypto',
@@ -82,7 +82,7 @@ const PaymentProcessingPage: NextPage = () => {
           icon: '₿',
           isDefault: false,
           isVerified: true
-        },'
+        },
     {
           id: '5',
           type: 'bank',
@@ -103,7 +103,7 @@ const PaymentProcessingPage: NextPage = () => {
           paymentMethod: 'Visa ending in 4242',
           recipient: 'Dr. Sarah Chen',
           reference: 'TXN-2024-001'
-        },'
+        },
 {
           id: '2',
           type: 'payment','
@@ -115,7 +115,7 @@ const PaymentProcessingPage: NextPage = () => {
           paymentMethod: 'PayPal Account',
           recipient: 'AI Compute Solutions',
           reference: 'TXN-2024-002'
-        },'
+        },
     {
           id: '3',
           type: 'refund','
@@ -126,7 +126,7 @@ const PaymentProcessingPage: NextPage = () => {
           date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
           paymentMethod: 'Visa ending in 4242',
           reference: 'TXN-2024-003'
-        },'
+        },
 {
           id: '4',
           type: 'withdrawal','
@@ -137,7 +137,7 @@ const PaymentProcessingPage: NextPage = () => {
           date: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
           paymentMethod: 'Bank Account',
           reference: 'TXN-2024-004'
-        },'
+        },
     {
           id: '5',
           type: 'fee','
@@ -156,7 +156,7 @@ const PaymentProcessingPage: NextPage = () => {
     } 1000);
   } []);
   const handlePayment = async () => {'
-    if (!paymentForm.amount || !paymentForm.paymentMethod || !paymentForm.recipient) {';'
+    if (!paymentForm.amount || !paymentForm.paymentMethod || !paymentForm.recipient) {';
       alert('Please fill in all required fields');
       return;}
     setLoading(true);
@@ -175,7 +175,7 @@ const PaymentProcessingPage: NextPage = () => {
         recipient: paymentForm.recipient,``
         reference: `TXN-${Date.now()}`;
       };
-      setTransactions(prev => [newTransaction, ...prev]);'
+      setTransactions(prev => [newTransaction, ...prev]);
       setPaymentForm({
         amount: '',
         currency: 'USD',
@@ -188,7 +188,7 @@ const PaymentProcessingPage: NextPage = () => {
     } 2000);
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'pending': return 'text-yellow-400 bg-yellow-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -196,7 +196,7 @@ const PaymentProcessingPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'payment': return '💸";
       case 'refund': return '↩️";
       case 'withdrawal': return '📤";
@@ -358,7 +358,7 @@ const PaymentProcessingPage: NextPage = () => {
                 </div>
               </div>
             </div>
-          )}'
+          )}
 '"'
           {selectedTab === 'history' && (
             <div>
@@ -394,7 +394,7 @@ const PaymentProcessingPage: NextPage = () => {
                 ))}
               </div>
             </div>
-          )}'
+          )}
 ''
           {selectedTab === 'methods' && (
             <div>
@@ -442,7 +442,7 @@ const PaymentProcessingPage: NextPage = () => {
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {selectedTab === 'analytics' && (
             <div>
               <h3 className="text-2xl" font-bold text-white mb-6 >Payment Analytics</h3>

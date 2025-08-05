@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
   const [smartRetail, setSmartRetail] = useState<SmartRetail[]>([]
   const [ecommerceManagement, setEcommerceManagement] = useState<EcommerceManagement[]>([]
   const [customerAnalytics, setCustomerAnalytics] = useState<CustomerAnalytics[]>([]
-  const [retailOptimization, setRetailOptimization] = useState<RetailOptimization[]>([]'
+  const [retailOptimization, setRetailOptimization] = useState<RetailOptimization[]>([]
   const [data, setData] = useState<RetailData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'retail' | 'ecommerce' | 'analytics' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         performanceScore: 9.2,'
         optimizationPotential: 0.08,
         customerInsights: ['High demand for tech products', 'Seasonal trends detected', 'Inventory turnover improving'],
-        recommendations: ['Optimize stock levels', 'Implement predictive ordering', 'Enhance demand forecasting']}}}'
+        recommendations: ['Optimize stock levels', 'Implement predictive ordering', 'Enhance demand forecasting']}}}
     {
       id: '2',
       name: 'AI-Powered POS System',
@@ -116,7 +116,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         performanceScore: 9.5,'
         optimizationPotential: 0.05,
         customerInsights: ['Fast checkout preferred', 'Mobile payments increasing', 'Loyalty program effective'],
-        recommendations: ['Enhance mobile payment options', 'Optimize checkout flow', 'Expand loyalty features']}}'
+        recommendations: ['Enhance mobile payment options', 'Optimize checkout flow', 'Expand loyalty features']}}
     {
       id: '3',
       name: 'Customer Service AI',
@@ -146,7 +146,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         conversionOptimization: 8.7,'
         userExperienceScore: 9.1,
         optimizationOpportunities: ['Improve product recommendations', 'Enhance checkout process', 'Optimize mobile experience'],
-        growthStrategies: ['Expand product catalog', 'Implement personalization', 'Enhance mobile app']}}'
+        growthStrategies: ['Expand product catalog', 'Implement personalization', 'Enhance mobile app']}}
     {
       id: '2',
       name: 'Marketplace Integration',
@@ -160,7 +160,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         conversionOptimization: 8.4,'
         userExperienceScore: 8.8,
         optimizationOpportunities: ['Optimize product listings', 'Improve search functionality', 'Enhance seller tools'],
-        growthStrategies: ['Expand marketplace features', 'Improve seller onboarding', 'Enhance buyer experience']}}'
+        growthStrategies: ['Expand marketplace features', 'Improve seller onboarding', 'Enhance buyer experience']}}
     {
       id: '3',
       name: 'Mobile Commerce App',
@@ -190,7 +190,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         segmentationAccuracy: 9.4,'
         behaviorPrediction: 8.9,
         improvementAreas: ['Enhance real-time segmentation', 'Improve predictive models', 'Expand data sources'],
-        recommendations: ['Implement real-time segmentation', 'Enhance predictive analytics', 'Integrate more data sources']}}'
+        recommendations: ['Implement real-time segmentation', 'Enhance predictive analytics', 'Integrate more data sources']}}
     {
       id: '2',
       name: 'Behavior Analysis System',
@@ -204,7 +204,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         segmentationAccuracy: 9.1,'
         behaviorPrediction: 8.7,
         improvementAreas: ['Improve tracking accuracy', 'Enhance privacy compliance', 'Expand behavior patterns'],
-        recommendations: ['Optimize tracking systems', 'Enhance privacy controls', 'Expand pattern recognition']}}'
+        recommendations: ['Optimize tracking systems', 'Enhance privacy controls', 'Expand pattern recognition']}}
     {
       id: '3',
       name: 'Loyalty Program Analytics',
@@ -230,12 +230,12 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         totalRevenue: 8500000,
         efficiencyGain: 22,
         costSavings: 450000,
-        customerGrowth: 18}'
+        customerGrowth: 18}
       aiAnalysis: {
         insights: ['Dynamic pricing increased revenue by 22%', 'Competitive pricing improved market share'],
         trends: ['Increasing price sensitivity', 'Competition intensifying', 'Value perception improving'],
         recommendations: ['Expand dynamic pricing', 'Implement competitor monitoring', 'Enhance value messaging'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '2',
       name: 'Inventory Optimization System',
@@ -245,12 +245,12 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         totalRevenue: 7200000,
         efficiencyGain: 28,
         costSavings: 380000,
-        customerGrowth: 15}'
+        customerGrowth: 15}
       aiAnalysis: {
         insights: ['Inventory optimization reduced costs by 28%', 'Stockout rates decreased by 40%'],
         trends: ['Improving inventory turnover', 'Reducing carrying costs', 'Enhancing availability'],
         recommendations: ['Expand optimization coverage', 'Implement predictive ordering', 'Enhance demand forecasting'],
-        impactScore: 9.1}}'
+        impactScore: 9.1}}
     {
       id: '3',
       name: 'Marketing Automation Platform',
@@ -260,7 +260,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         totalRevenue: 6800000,
         efficiencyGain: 25,
         costSavings: 320000,
-        customerGrowth: 20}'
+        customerGrowth: 20}
       aiAnalysis: {
         insights: ['Marketing automation increased conversions by 25%', 'Customer acquisition costs reduced by 30%'],
         trends: ['Improving campaign performance', 'Reducing manual effort', 'Enhancing personalization'],
@@ -281,7 +281,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance customer experience']
-      },'
+      },
 {
         id: '2',
         title: 'Smart E-commerce Driving Growth',
@@ -337,14 +337,14 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
       case 'positive': return '🛍️
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredSmartRetail = useMemo(() => {'
@@ -448,7 +448,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Smart Retail Overview */}
@@ -494,14 +494,14 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'retail' && ("
           <div className="space-y-6>" 
             {/* Store Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'inventory-management', 'point-of-sale', 'customer-service', 'store-analytics', 'merchandising', 'loss-prevention'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -623,7 +623,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'optimization' && (
           <div className="space-y-6>" 
@@ -661,7 +661,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'insights' && data && (
           <div className="space-y-6>

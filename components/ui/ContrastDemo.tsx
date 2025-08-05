@@ -121,7 +121,7 @@ const ContrastDemo: React.FC = () => {;
           </div>
         </div>
       </section>
-    </div >;  );"
+    </div >;  );
 };
 ''`
-export default ContrastDemo;"'"'`
+export default ContrastDemo;'`

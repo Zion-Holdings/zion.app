@@ -27,7 +27,7 @@ export default function DebugAdmin() {
       });}
   } [user, session, loading]);
   const checkAdminAccess = () => {'
-    const authorizedEmails = [
+    const $1 = [
       'kleber@ziontechgroup.com',
       'admin@ziontechgroup.com";
     ];
@@ -35,7 +35,7 @@ export default function DebugAdmin() {
     if (!user?.email) {
       return { hasAccess: false, reason: 'No user email' };}
     if (!authorizedEmails.includes(user.email)) {
-      return { hasAccess: false, reason: `Email ${user.email} not authorized` };}'
+      return { hasAccess: false, reason: `Email ${user.email} not authorized` };}
     return { hasAccess: true, reason: 'Authorized' };
   };
 

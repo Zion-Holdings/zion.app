@@ -7,7 +7,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
       <div className="min-h-screen>"
         {children}
       </div>
-    </div > );"
+    </div > );
 };
 '
 export default AuthLayout "'"

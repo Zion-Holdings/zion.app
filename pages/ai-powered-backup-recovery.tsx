@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface BackupJob {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'full' | 'incremental' | 'differential' | 'snapshot' | 'archive' | 'replication";
   status: 'running' | 'completed' | 'failed' | 'scheduled' | 'paused";
@@ -23,7 +23,7 @@ interface AIBackupAnalysis {
   recommendations: string[];}
 interface RecoveryPlan {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   category: 'disaster' | 'system' | 'data' | 'application' | 'infrastructure' | 'business";
   status: 'active' | 'draft' | 'archived' | 'testing";
@@ -39,7 +39,7 @@ interface AIRecoveryOptimization {
   recommendations: string[];}
 interface DisasterRecovery {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   scenario: 'natural_disaster' | 'cyber_attack' | 'hardware_failure' | 'human_error' | 'power_outage' | 'network_failure";
   status: 'active' | 'draft' | 'archived' | 'testing";
@@ -55,7 +55,7 @@ interface AIDisasterAnalysis {
   recommendations: string[];}
 interface BackupStorage {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'local' | 'cloud' | 'hybrid' | 'offsite' | 'tape' | 'disk";
   status: 'active' | 'inactive' | 'maintenance' | 'error";
@@ -71,7 +71,7 @@ interface AIStorageOptimization {
   recommendations: string[];}
 interface SystemRestoration {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   system: 'database' | 'application' | 'server' | 'network' | 'storage' | 'service";
   status: 'in_progress' | 'completed' | 'failed' | 'scheduled' | 'cancelled";
@@ -96,7 +96,7 @@ interface BackupRecoveryAnalytics {
   aiInsights: BackupRecoveryInsight[];}
 interface BackupRecoveryInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -108,7 +108,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
   const [recoveryPlans, setRecoveryPlans] = useState<RecoveryPlan[]>([]
   const [disasterRecoveries, setDisasterRecoveries] = useState<DisasterRecovery[]>([]
   const [backupStorages, setBackupStorages] = useState<BackupStorage[]>([]
-  const [systemRestorations, setSystemRestorations] = useState<SystemRestoration[]>([]'
+  const [systemRestorations, setSystemRestorations] = useState<SystemRestoration[]>([]
   const [analytics, setAnalytics] = useState<BackupRecoveryAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'backups' | 'recovery' | 'disasters' | 'storage' | 'restoration' | 'analytics'>('backups
   const [selectedType, setSelectedType] = useState<string>('all
@@ -251,9 +251,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
       case 'high': return 'bg-orange-500/20 text-orange-300
       case 'medium': return 'bg-yellow-500/20 text-yellow-300
       case 'low': return 'bg-green-500/20 text-green-300
-      default: return 'bg-gray-500/20 text-gray-300'}}'
+      default: return 'bg-gray-500/20 text-gray-300'}}
   const formatBytes = (bytes: number) => {
-    const sizes = ['B', 'KB', 'MB', 'GB', 'TB']
+    const $1 = ['B', 'KB', 'MB', 'GB', 'TB']
     if (bytes === 0) return '0 B
     const i = Math.floor(Math.log(bytes) / Math.log(1024)
     return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i]}
@@ -308,7 +308,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
             {/* Tabs */}"
             <div className=" flex flex-wrap justify-center mb-8>
               '
-                onClick={() => setActiveTab('backups')}'
+                onClick={() => setActiveTab('backups')}
                 className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'backups
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -318,7 +318,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                 Backups ({backupJobs.length})
               </button>'
               `
-                onClick={() => setActiveTab('recovery')}''``
+                onClick={() => setActiveTab('recovery')}``
                 className=" {`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'recovery
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -328,7 +328,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                 Recovery ({recoveryPlans.length})
               </button>'
               `
-                onClick={() => setActiveTab('disasters')}''``
+                onClick={() => setActiveTab('disasters')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'disasters
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -338,7 +338,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                 Disasters ({disasterRecoveries.length})
               </button>'
               `
-                onClick={() => setActiveTab('storage')}''``
+                onClick={() => setActiveTab('storage')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'storage
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -348,7 +348,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                 Storage ({backupStorages.length})
               </button>'
               `
-                onClick={() => setActiveTab('restoration')}''``
+                onClick={() => setActiveTab('restoration')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'restoration
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -538,7 +538,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
           </div>
         </div>
       </div>
-    </> ;"
+    </> ;
 };
 ''`
 export default AIPoweredBackupRecoveryPage ))))))))))))))))))))))))))))"'"'`

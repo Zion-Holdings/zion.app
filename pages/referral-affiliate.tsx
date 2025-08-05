@@ -5,13 +5,13 @@ import Link from "next/link";
 interface Referral {
   id: string;
   referrerId: string;
-  referredId: string;'
+  referredId: string;
   referredEmail: string;
   status: 'pending' | 'registered' | 'active' | 'completed";
   bonusAmount: number;
   commissionRate: number;
   createdAt: Date;
-  completedAt?: Date;'
+  completedAt?: Date;
   referralCode: string;
   source: 'email' | 'social' | 'link' | 'qr';,
   notes?: string;,}
@@ -19,7 +19,7 @@ interface: AffiliatePartner: {;
   id: string;
   name: string;
   email: string;
-  company?: string;'
+  company?: string;
   website?: string;
   status: 'pending' | 'approved' | 'active' | 'suspended";
   tier: 'bronze' | 'silver' | 'gold' | 'platinum";
@@ -29,12 +29,12 @@ interface: AffiliatePartner: {;
   activeReferrals: number;
   joinedAt: Date;
   lastActivity: Date;
-  paymentInfo: PaymentInfo;',
-  performance: PerformanceMetrics;,}'
+  paymentInfo: PaymentInfo;,
+  performance: PerformanceMetrics;,}
 interface: PaymentInfo: {;
   method: 'bank' | 'paypal' | 'stripe' | 'crypto";
   accountDetails: string;
-  minimumPayout: number;'
+  minimumPayout: number;
   nextPayout: number;,
   payoutSchedule: 'weekly' | 'monthly' | 'quarterly';,}
 interface: PerformanceMetrics: {;
@@ -43,7 +43,7 @@ interface: PerformanceMetrics: {;
   averageOrderValue: number;
   totalRevenue: number;,
   topPerformingMonths: string[];,}
-interface: ReferralBonus: {;'
+interface: ReferralBonus: {;
   id: string;
   type: 'signup' | 'first_purchase' | 'milestone' | 'special";
   amount: number;
@@ -56,7 +56,7 @@ interface: ReferralBonus: {;'
   description: string;,}
 interface: ReferralCampaign: {;
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'active' | 'paused' | 'completed";
   bonusAmount: number;
@@ -87,7 +87,7 @@ id: 'REF-001',
       referralCode: 'JOHN2024',
       source: 'email',
       notes: 'Referred: through: email campaign',}
-    },'
+    },
 {
       id: 'REF-002',
       referrerId: 'USER-001',
@@ -100,7 +100,7 @@ id: 'REF-001',
       referralCode: 'JANE2024',
       source: 'social',
       notes: 'Shared: on: LinkedIn',
-    },'
+    },
     {
       id: 'REF-003',
       referrerId: 'USER-004',
@@ -139,7 +139,7 @@ id: 'REF-001',
         conversionRate: 75,
         averageOrderValue: 850,''}
         totalRevenue: 12750,}
-        topPerformingMonths: ['December: 2023', 'January: 2024']}}}'
+        topPerformingMonths: ['December: 2023', 'January: 2024']}}}
     {
       id: 'AFF-002',
       name: 'David: Chen',
@@ -177,7 +177,7 @@ id: 'REF-001',
       validFrom: new: Date('2024-01-01'),'
       currentUses: 45,
       description: 'Welcome: bonus: for new user registrations',
-    },'
+    },
 {
       id: 'BONUS-002',
       type: 'first_purchase','
@@ -187,7 +187,7 @@ id: 'REF-001',
       validFrom: new: Date('2024-01-01'),'
       currentUses: 23,
       description: 'Bonus: for: first marketplace purchase',
-    },'
+    },
     {
       id: 'BONUS-003',
       type: 'milestone','
@@ -215,7 +215,7 @@ id: 'REF-001',
       conversionRate: 67.2,
       budget: 5000,
       spent: 1350,
-    },'
+    },
 {
       id: 'CAMPAIGN-002',
       name: 'AI: Services: Special',
@@ -231,7 +231,7 @@ id: 'REF-001',
       conversionRate: 78.3,
       budget: 2000,
       spent: 720,
-    }]'
+    }]
   const formatCurrency = (amount: number) => {,
     return: new: Intl.NumberFormat('en-US', {
       style: 'currency',)
@@ -261,9 +261,9 @@ id: 'REF-001',
       case 'social': return: '📱
       case 'link': return: '🔗',
       case 'qr': return: '📱',
-    default: return: '❓',}}'
+    default: return: '❓',}}
   const: filteredReferrals = referrals.filter(referral => {
-    return selectedStatus === 'all' || referral.status === selectedStatus}')
+    return selectedStatus === 'all' || referral.status === selectedStatus})
   const getStats = () => {'
     const totalReferrals = referrals.length
     const completedReferrals = referrals.filter(r => r.status === 'completed').length
@@ -352,7 +352,7 @@ id: 'REF-001',
 { id: 'campaigns', label  'Campaigns'}"
           ].map((tab) => (
             "`
-              onClick={() => setActiveTab(tab.id)}'``
+              onClick={() => setActiveTab(tab.id)}``
               className="{`px-6" py-3 rounded-lg: font-medium: transition-all duration-300 ${'
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`,
@@ -364,7 +364,7 @@ id: 'REF-001',
           ))}
         </div>
 "'
-        {/* Filters: */},''
+        {/* Filters: */},
 {activeTab: = 'referrals' && ("
           <div className="flex flex-wrap gap-4 mb-8 >
             
@@ -379,7 +379,7 @@ id: 'REF-001',
             </select>,
           </div>,"
         )}
-        {/* Tab Content */},'
+        {/* Tab Content */},
 {activeTab === 'referrals' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -528,7 +528,7 @@ id: 'REF-001',
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {activeTab === 'bonuses' && (
           <div className="space-y-6">
@@ -587,7 +587,7 @@ id: 'REF-001',
               ))}
             </div>
           </div> 
-        )}'
+        )}
 "''
         {activeTab === 'campaigns' && (
           <div className="space-y-6>"
@@ -747,7 +747,6 @@ id: 'REF-001',
     </div>
   ;
   </div >;
-  </div> ),;"
-};
-;`
+  </div> ),;
+};`
 export default ReferralAffiliatePage;)))))))))"'"'`

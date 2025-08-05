@@ -1,13 +1,13 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useRef, useEffect }  from "react";
 import Link from "next/link";
 import { Home, Search, User }  from "lucide-react";
 
 interface Message {
-  id: string;'
+  id: string;
   content: string;
-  role: 'user' | 'assistant';'
+  role: 'user' | 'assistant';
   timestamp: Date;
   type?: 'text' | 'quick-actions' | 'recommendation";
   actions?: Array
@@ -84,9 +84,9 @@ const AiVirtualAssistant: NextPage = () => {
         timestamp: new Date(),
         type: 'text";
       };
-      setMessages(prev => [...prev]);'
+      setMessages(prev => [...prev]);
     } catch (error) {
-      console.error('Error sending message: , error);"
+      console.error('Error sending message: , error);
       const errorMessage: Message = {'
         id: (Date.now() + 1).toString(),"''
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
@@ -139,9 +139,9 @@ const AiVirtualAssistant: NextPage = () => {
         timestamp: new Date(),
         type: 'text";
       };
-      setMessages(prev => [...prev]);'
+      setMessages(prev => [...prev]);
     } catch (error) {
-      console.error('Error sending message: , error);"
+      console.error('Error sending message: , error);
       const errorMessage: Message = {'
         id: (Date.now() + 1).toString(),''
         content: I'm sorry, I'm having trouble connecting right now. Please try again in a moment.,
@@ -160,7 +160,7 @@ const AiVirtualAssistant: NextPage = () => {
       handleSendMessage();}
   };
 '
-  const formatTime = (date: Date) => {';'
+  const formatTime = (date: Date) => {';
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
@@ -189,7 +189,7 @@ const AiVirtualAssistant: NextPage = () => {
           </p>
         </div >
       </div>"
-    );"
+    );
   };
 "
   return (

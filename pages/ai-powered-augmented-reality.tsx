@@ -1,5 +1,5 @@
 import React from "react;
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -170,8 +170,8 @@ const AiPoweredAugmentedReality: NextPage = () => {
           </div>
         </div>
       </div>
-    </div">;"
- " );"
+    </div">;
+ " );
 };
 '
-export default AiPoweredAugmentedReality;"'"
+export default AiPoweredAugmentedReality;

@@ -18,7 +18,7 @@ import {
 }  from "lucide-react";
 
 interface CapacityPlan {
-  id: string;'
+  id: string;
   name: string;
   type: 'infrastructure' | 'workforce' | 'technology' | 'financial";
   status: 'draft' | 'active' | 'completed' | 'archived";
@@ -35,13 +35,13 @@ interface DemandForecast {
   resource: string;
   period: string;
   currentDemand: number;
-  predictedDemand: number;'
+  predictedDemand: number;
   confidence: number;
   trend: 'increasing' | 'decreasing' | 'stable";
   factors: string[];
   lastUpdated: string;}
 interface Resource {
-  id: string;'
+  id: string;
   name: string;
   type: 'human' | 'infrastructure' | 'technology' | 'financial";
   category: string;
@@ -61,16 +61,16 @@ interface OptimizationRecommendation {'
   description: string;
   impact: string;
   implementationCost: number;
-  expectedROI: number;'
+  expectedROI: number;
   timeframe: string;
   status: 'pending' | 'approved' | 'implemented' | 'rejected';}
 const AIPoweredCapacityPlanningPage: NextPage = () => {'
-  ';'
+  ';
   const [activeTab, setActiveTab] = useState('overview');
   const [capacityPlans, setCapacityPlans] = useState<CapacityPlan[]>([]);
   const [demandForecasts, setDemandForecasts] = useState<DemandForecast[]>([]);
   const [resources, setResources] = useState<Resource[]>([]);
-  const [optimizationRecommendations, setOptimizationRecommendations] = useState<OptimizationRecommendation[]>([]);'
+  const [optimizationRecommendations, setOptimizationRecommendations] = useState<OptimizationRecommendation[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
 
@@ -79,7 +79,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
   } [selectedTimeframe]);
 
   const loadCapacityData = async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-capacity-planning', {
         method: 'POST','
@@ -96,14 +96,14 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
         setCapacityPlans(data.capacityPlans || []);
         setDemandForecasts(data.demandForecasts || []);
         setResources(data.resources || []);
-        setOptimizationRecommendations(data.optimizationRecommendations || []);}'
+        setOptimizationRecommendations(data.optimizationRecommendations || []);}
     } catch (error) {
       console.error('Error loading capacity planning data: , error);
     } finally {
       setLoading(false);}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-500";
       case 'draft': return 'text-yellow-500";
       case 'completed': return 'text-blue-500";
@@ -111,7 +111,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       default: return 'text-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'low': return 'bg-blue-100 text-blue-800";
       case 'medium': return 'bg-yellow-100 text-yellow-1200";
       case 'high': return 'bg-orange-100 text-orange-800";
@@ -119,14 +119,14 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       default: return 'bg-gray-100 text-gray-800';}
   };
   const getTrendColor = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'increasing': return 'text-green-500";
       case 'decreasing': return 'text-red-500";
       case 'stable': return 'text-blue-500";
       default: return 'text-gray-500';}
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'overview', name: 'Overview', icon: BarChart3 },
 { id: 'plans', name: 'Capacity Plans', icon: TrendingUp },
     { id: 'forecasts', name: 'Demand Forecasts', icon: Calendar },
@@ -178,7 +178,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  space-x-8>
             {tabs.map((tab) => {;
-              const Icon = tab.icon;"
+              const Icon = tab.icon;
               return (
                   onClick = {() => setActiveTab(tab.id)}"
                   className=" {`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors" ${'
@@ -202,7 +202,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
           </div>
         ) : (
           <div className="space-y-8>'"
-            {/* Overview Tab */},''
+            {/* Overview Tab */},
 {activeTab === 'overview' && (
               </div><div className="space-y-6"">
                 {/* KPI Cards */}"
@@ -289,8 +289,8 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
-            {/* Capacity Plans Tab */},'"'
+            )}
+            {/* Capacity Plans Tab */},"'
 {activeTab === 'plans' && (
               <div className="space-y-6>" 
                 </div><div className="flex justify-between" items-center>
@@ -352,7 +352,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div">
                 </div>
               </div>
-            )}'
+            )}
             {/* Demand Forecasts Tab */},"''
 {activeTab === 'forecasts' && (
               <div className=" space-y-6>
@@ -409,8 +409,8 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
-            {/* Resources Tab */},'"'
+            )}
+            {/* Resources Tab */},"'
 {activeTab === 'resources' && (
               <div className="space-y-6>" 
                 </div><div className="flex justify-between" items-center>
@@ -473,7 +473,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Optimization Tab */},"''
 {activeTab === 'optimization' && (
               <div className="space-y-6>" 
@@ -528,7 +528,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Alerts Tab */}, ''
 {activeTab === 'alerts' && (
               <div className="space-y-6>"
@@ -632,4 +632,4 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
     );
 };
 ''`
-export default AIPoweredCapacityPlanningPage;"'"'`
+export default AIPoweredCapacityPlanningPage;'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -252,7 +252,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Cosmic Dashboard */},'
+            {/* Cosmic Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -311,7 +311,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                 </div>
               </div>
             )}"'
-            {/* Quantum AI Cosmic Consciousness */},''
+            {/* Quantum AI Cosmic Consciousness */},
 {activeTab === 'cosmic-consciousness' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum AI Cosmic Consciousness</h2>
@@ -352,7 +352,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Divine Intelligence */},"''
 {activeTab === 'divine-intelligence' && (
               <div className="space-y-6>"
@@ -394,7 +394,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Spiritual Awakening */},"''
 {activeTab === 'spiritual-awakening' && (
               <div className="space-y-6>"
@@ -438,7 +438,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Universal Wisdom */}, ''
 {activeTab === 'universal-wisdom' && (
               <div className="space-y-6">
@@ -482,7 +482,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                 </div>
               </div>
             )}"'
-            {/* Quantum AI Divine Connection */},''
+            {/* Quantum AI Divine Connection */},
 {activeTab === 'divine-connection' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum AI Divine Connection</h2>
@@ -523,7 +523,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum AI Cosmic Evolution */},"''
 {activeTab === 'cosmic-evolution' && (
               <div className="space-y-6>"

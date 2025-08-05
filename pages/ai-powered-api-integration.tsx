@@ -1,8 +1,8 @@
-import React from "react;
-import { NextPage } from 'next";
+import React from "react";
+import { NextPage } from 'next';
 import Head from "next/head";
 import Link from "next/link";
-import PageLayout from '../components/layout/PageLayout";
+import PageLayout from '../components/layout/PageLayout';
 import {
   Code, 
   Database, 
@@ -14,16 +14,16 @@ import {
   Clock,
   Target,
   TrendingUp,
-  Zap,'
+  Zap,
   Shield
-}  from "lucide-react";
+} from "lucide-react";
 
 interface APIManagement {
   id: string;
-  name: string;'
+  name: string;
   description: string;
-  type: 'rest' | 'graphql' | 'soap' | 'grpc' | 'websocket' | 'webhook";
-  status: 'active' | 'inactive' | 'maintenance' | 'deprecated' | 'beta";
+  type: 'rest' | 'graphql' | 'soap' | 'grpc' | 'websocket' | 'webhook';
+  status: 'active' | 'inactive' | 'maintenance' | 'deprecated' | 'beta';
   version: string;
   baseUrl: string;
   rateLimit: number;
@@ -36,9 +36,9 @@ interface APIEndpoint {
   name: string;
   description: string;
   endpoint: string;
-  method: string;'
+  method: string;
   path: string;
-  status: 'active' | 'inactive' | 'deprecated";
+  status: 'active' | 'inactive' | 'deprecated';
   responseTime: number;
   successRate: number;
   rateLimit: number;
@@ -49,9 +49,9 @@ interface APIMonitoring {
   name: string;
   description: string;
   endpoint: string;
-  type: string;'
+  type: string;
   priority: string;
-  status: 'healthy' | 'warning' | 'error' | 'down";
+  status: 'healthy' | 'warning' | 'error' | 'down';
   responseTime: number;
   uptime: number;
   lastCheck: string;
@@ -60,12 +60,12 @@ interface APISecurity {
   id: string;
   name: string;
   description: string;
-  type: string;'
+  type: string;
   endpoint: string;
   severity: 'low' | 'medium' | 'high' | 'critical";
-  detected: string;'
+  detected: string;
   recommendation: string;
-  status: 'active' | 'resolved' | 'pending";
+  status: 'active' | 'resolved' | 'pending';
   lastUpdated: string;}
 interface SecurityAnalysis {
   id: string;
@@ -81,10 +81,10 @@ interface APIAnalysis {
   recommendations: string[];}
 interface WebhookOrchestration {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api";
-  status: 'active' | 'inactive' | 'error' | 'paused' | 'testing';'
+  status: 'active' | 'inactive' | 'error' | 'paused' | 'testing';
   endpoint: string;
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
   aiOptimization: WebhookOptimization;}
@@ -96,7 +96,7 @@ interface WebhookOptimization {
   recommendations: string[];}
 interface IntegrationConnector {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'third_party' | 'internal' | 'custom' | 'plugin' | 'extension' | 'middleware";
   status: 'connected' | 'disconnected' | 'error' | 'syncing' | 'maintenance";
@@ -128,7 +128,7 @@ interface DocumentationAnalysis {
 interface EndpointMonitoring {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   endpoint: string;
   status: 'healthy' | 'warning' | 'error' | 'down' | 'maintenance";
   responseTime: number;
@@ -143,7 +143,7 @@ interface MonitoringAnalysis {
   recommendations: string[];}
 interface APITesting {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression";
   status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending";
@@ -168,23 +168,23 @@ interface APIIntegrationAnalytics {
   aiInsights: APIIntegrationInsight[];}
 interface APIIntegrationInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredAPIIntegrationPage: NextPage = () => {'
-  ';'
+  ';
   const [activeTab, setActiveTab] = useState('overview');
   const [integrations, setIntegrations] = useState<APIManagement[]>([]);
   const [endpoints, setEndpoints] = useState<APIEndpoint[]>([]);
   const [monitoring, setMonitoring] = useState<APIMonitoring[]>([]);
-  const [security, setSecurity] = useState<APISecurity[]>([]);'
+  const [security, setSecurity] = useState<APISecurity[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedTimeframe, setSelectedTimeframe] = useState('7d');
 
   const loadAPIData = useCallback(async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-api-integration', {
         method: 'POST','
@@ -201,7 +201,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
         setIntegrations(data.integrations || []);
         setEndpoints(data.endpoints || []);
         setMonitoring(data.monitoring || []);
-        setSecurity(data.security || []);}'
+        setSecurity(data.security || []);}
     } catch (error) {
       console.error('Error loading API data: , error);
     } finally {
@@ -212,7 +212,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
     loadAPIData();
   } [loadAPIData]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'bg-green-500";
       case 'pending': return 'bg-yellow-500";
       case 'error': return 'bg-red-500";
@@ -220,7 +220,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'low': return 'bg-green-500";
       case 'medium': return 'bg-yellow-500";
       case 'high': return 'bg-orange-500";
@@ -228,7 +228,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'overview', name: 'Overview', icon: Activity },
 { id: 'integrations', name: 'Integrations', icon: Code },
     { id: 'endpoints', name: 'Endpoints', icon: Database },
@@ -266,8 +266,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
       {/* Navigation Tabs */}"
       <nav className="mb-8">
         <div className="flex space-x-8 border-b border-white/10">
-          {tabs.map((tab) =>" {;"
-            const Icon = tab.icon;"
+          {tabs.map((tab) =>" {;
+            const Icon = tab.icon;
             return (
               "
                 onClick = {() => setActiveTab(tab.id)}
@@ -291,7 +291,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
         </div>
       )   (
         <div className="space-y-8>'"
-          {/* Overview Tab */},''
+          {/* Overview Tab */},
     {activeTab === 'overview' && (
             </div><div className="space-y-6"">
               {/* KPI Cards */}
@@ -354,8 +354,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                 </div>
               </div>
             </div>
-          )}'
-          {/* Integrations Tab */},' '
+          )}
+          {/* Integrations Tab */}, '
 {activeTab === 'integrations' && (
             <div className="space-y-6>"
               </div><div className=" flex justify-between" items-center>"
@@ -402,7 +402,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {/* Endpoints Tab */},"''
 {activeTab === 'endpoints' && (
             <div className=" space-y-6>
@@ -538,7 +538,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
           )}
         </div>
       )}
-    </PageLayout >;  );"
+    </PageLayout >;  );
 };
 ''`
-export default AIPoweredAPIIntegrationPage;"'"'`
+export default AIPoweredAPIIntegrationPage;'`

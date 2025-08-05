@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"";
 import ModernLayout from '../components/layout/ModernLayout';import { useEffect } from "react";
-import { createClient } from '@supabase/supabase-js';'
+import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key
 ;
@@ -19,7 +19,7 @@ export default function AuthCallback() {
       if (error) {
         console.error('Auth callback error: , error
         router.push('/auth/login?error=auth_callback_failed'
-        return}'
+        return}
       if (data.session) {
         router.push('/dashboard
       } else {
@@ -39,4 +39,4 @@ export default function AuthCallback() {
 
   </div>
 '
-} )))))))))))"';"
+} )))))))))))"';

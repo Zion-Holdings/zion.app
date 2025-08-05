@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -41,14 +41,14 @@ const InvestorMatchmakingPage: NextPage = () => {'
   const [showForm, setShowForm] = useState(true'
   const [selectedInvestor, setSelectedInvestor] = useState<Investor | null>(null
   const [pitchEmail, setPitchEmail] = useState(
-  const industries = [
+  const $1 = [
     'AI/ML', 'Fintech', 'Healthcare', 'E-commerce', 'SaaS', 'EdTech', 
-    'CleanTech', 'Biotech', 'Cybersecurity', 'IoT', 'Blockchain', 'Other']'
-  const stages = [
-    'Idea Stage', 'MVP', 'Early Revenue', 'Growth Stage', 'Scale Up']'
-  const teamSizes = [
-    '1-5', '6-10', '11-25', '26-50', '50+']'
-  const fundingRanges = [
+    'CleanTech', 'Biotech', 'Cybersecurity', 'IoT', 'Blockchain', 'Other']
+  const $1 = [
+    'Idea Stage', 'MVP', 'Early Revenue', 'Growth Stage', 'Scale Up']
+  const $1 = [
+    '1-5', '6-10', '11-25', '26-50', '50+']
+  const $1 = [
     '$10K-$50K', '$50K-$200K', '$200K-$1M', '$1M-$5M', '$5M+']
   // Mock investor data
   const $1: $2[] = [
@@ -66,7 +66,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
       contactEmail: 'sarah@techventures.com','
       matchScore: 95,
       reason: 'Perfect match for AI/ML startup with MVP stage'
-    },'
+    },
 {
       id: '2',
       name: 'Michael Rodriguez',
@@ -81,7 +81,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
       contactEmail: 'michael@innovationfund.com','
       matchScore: 88,
       reason: 'Strong healthcare focus with growth-stage investment'
-    },'
+    },
     {
       id: '3',
       name: 'Emma Thompson',
@@ -96,7 +96,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
       contactEmail: 'emma@greentechventures.com','
       matchScore: 82,
       reason: 'CleanTech focus with early-stage investment range'
-    },'
+    },
 {
       id: '4',
       name: 'David Kim',
@@ -128,7 +128,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
       // Stage match
       if (investor.investmentStage.includes(startupProfile.stage)) {'
         score += 25
-        reason += 'Investment stage match. '}'
+        reason += 'Investment stage match. '}
       // Location match (simplified
       if (investor.location.includes(startupProfile.location) || startupProfile.location === '') {'
         score += 15
@@ -136,7 +136,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
       // Funding range match
       if (investor.investmentRange === startupProfile.fundingNeeded) {'
         score += 20
-        reason += 'Funding range match. '}'
+        reason += 'Funding range match. '}
       // Team size consideration
       if (startupProfile.teamSize === '1-5' || startupProfile.teamSize === '6-10') {'
         score += 10
@@ -152,8 +152,8 @@ const InvestorMatchmakingPage: NextPage = () => {'
     setIsLoading(false}
   const generatePitchEmail = (investor: Investor) => {
     const email = `Subject: Investment Opportunity - ${startupProfile.name}
-Dear ${investor.name}'
-I hope this email finds you well. I'm reaching out regarding an investment opportunity that I believe aligns with ${investor.company}'s investment thesis.
+Dear ${investor.name}
+I hope this email finds you well. I'm reaching out regarding an investment opportunity that I believe aligns with ${investor.company}s investment thesis.
 
 About ${startupProfile.name}:
 - Industry: ${startupProfile.industry}
@@ -161,7 +161,7 @@ About ${startupProfile.name}:
 - Location: ${startupProfile.location}
 - Team Size: ${startupProfile.teamSize}
 - Funding Needed: ${startupProfile.fundingNeeded}
-${startupProfile.pitchSummary}''`
+${startupProfile.pitchSummary}`
 ``
 ${startupProfile.website ? `You can learn more about us at: ${startupProfile.website}` : ''}
 I would welcome the opportunity to discuss this further and would be happy to schedule a call at your convenience.
@@ -171,12 +171,12 @@ Best regards,`
 [Your Contact Information]`
 
     setPitchEmail(email
-    setSelectedInvestor(investor}'
+    setSelectedInvestor(investor}
   const getMatchScoreColor = (score: number) => {
     if (score >= 90) return 'text-green-500
     if (score >= 80) return 'text-yellow-500
     if (score >= 70) return 'text-orange-500
-    return 'text-red-500'}'
+    return 'text-red-500'}
   const getMatchScoreText = (score: number) => {
     if (score >= 90) return 'Excellent Match
     if (score >= 80) return 'Great Match
@@ -324,7 +324,7 @@ Best regards,`
                   <label className="block" text-sm font-medium text-gray-300 mb-2>
                     Pitch Summary *
                   </label>
-                    onChange={(e) => setStartupProfile({...startupProfile, pitchSummary  e.target.value})}'
+                    onChange={(e) => setStartupProfile({...startupProfile, pitchSummary  e.target.value})}
                     className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500''
                     placeholder=Briefly describe your startup, problem you're solving, and your unique value proposition...
                   />

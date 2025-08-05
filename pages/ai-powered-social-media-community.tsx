@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
   const [socialNetworking, setSocialNetworking] = useState<SocialNetworking[]>([]
   const [communityManagement, setCommunityManagement] = useState<CommunityManagement[]>([]
   const [contentModeration, setContentModeration] = useState<ContentModeration[]>([]
-  const [socialAnalytics, setSocialAnalytics] = useState<SocialAnalytics[]>([]'
+  const [socialAnalytics, setSocialAnalytics] = useState<SocialAnalytics[]>([]
   const [data, setData] = useState<SocialData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'social' | 'community' | 'moderation' | 'analytics' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         performanceScore: 9.2,'
         userEngagement: 8.8,
         socialInsights: ['High engagement with video content', 'Community features driving retention', 'AI recommendations increasing time spent'],
-        recommendations: ['Expand video features', 'Enhance community tools', 'Optimize AI recommendations']}}}'
+        recommendations: ['Expand video features', 'Enhance community tools', 'Optimize AI recommendations']}}}
     {
       id: '2',
       name: 'Professional Network',
@@ -116,7 +116,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         performanceScore: 9.4,'
         userEngagement: 9.1,
         socialInsights: ['Professional content highly valued', 'Networking features effective', 'Career opportunities driving engagement'],
-        recommendations: ['Enhance networking features', 'Improve career matching', 'Expand professional content']}}'
+        recommendations: ['Enhance networking features', 'Improve career matching', 'Expand professional content']}}
     {
       id: '3',
       name: 'Interest-Based Communities',
@@ -146,7 +146,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         moderationAccuracy: 9.6,'
         userSatisfaction: 9.2,
         optimizationOpportunities: ['Improve moderation speed', 'Enhance accuracy', 'Expand coverage'],
-        improvementStrategies: ['Implement advanced AI', 'Enhance human oversight', 'Expand moderation tools']}}'
+        improvementStrategies: ['Implement advanced AI', 'Enhance human oversight', 'Expand moderation tools']}}
     {
       id: '2',
       name: 'User Management Platform',
@@ -160,7 +160,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         moderationAccuracy: 9.4,'
         userSatisfaction: 8.9,
         optimizationOpportunities: ['Enhance user experience', 'Improve management tools', 'Expand user features'],
-        improvementStrategies: ['Implement user analytics', 'Enhance management interface', 'Expand user tools']}}'
+        improvementStrategies: ['Implement user analytics', 'Enhance management interface', 'Expand user tools']}}
     {
       id: '3',
       name: 'Content Curation Engine',
@@ -190,7 +190,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         detectionAccuracy: 9.6,'
         automationLevel: 9.3,
         improvementAreas: ['Enhance detection accuracy', 'Reduce false positives', 'Improve response speed'],
-        recommendations: ['Optimize detection algorithms', 'Enhance training data', 'Improve automation logic']}}'
+        recommendations: ['Optimize detection algorithms', 'Enhance training data', 'Improve automation logic']}}
     {
       id: '2',
       name: 'Content Filtering System',
@@ -204,7 +204,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         detectionAccuracy: 9.5,'
         automationLevel: 9.1,
         improvementAreas: ['Improve filtering accuracy', 'Enhance content analysis', 'Expand filter categories'],
-        recommendations: ['Optimize filtering algorithms', 'Enhance content analysis', 'Expand filter options']}}'
+        recommendations: ['Optimize filtering algorithms', 'Enhance content analysis', 'Expand filter options']}}
     {
       id: '3',
       name: 'Spam Detection Engine',
@@ -230,12 +230,12 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         totalUsers: 13800000,
         engagementRate: 78,
         contentGrowth: 25,
-        communityHealth: 92}'
+        communityHealth: 92}
       aiAnalysis: {
         insights: ['Engagement analytics increased user retention by 25%', 'AI insights improved content strategy by 30%'],
         trends: ['Improving user engagement', 'Increasing content quality', 'Enhancing community health'],
         recommendations: ['Expand analytics coverage', 'Enhance engagement tracking', 'Implement predictive analytics'],
-        impactScore: 9.2}}'
+        impactScore: 9.2}}
     {
       id: '2',
       name: 'Trend Analysis System',
@@ -245,12 +245,12 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         totalUsers: 11200000,
         engagementRate: 82,
         contentGrowth: 28,
-        communityHealth: 89}'
+        communityHealth: 89}
       aiAnalysis: {
         insights: ['Trend analysis improved content relevance by 28%', 'Predictive analytics increased engagement by 35%'],
         trends: ['Improving trend detection', 'Increasing content relevance', 'Enhancing user experience'],
         recommendations: ['Expand trend analysis', 'Enhance predictive capabilities', 'Implement real-time insights'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Sentiment Analysis Engine',
@@ -260,7 +260,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         totalUsers: 9500000,
         engagementRate: 75,
         contentGrowth: 22,
-        communityHealth: 94}'
+        communityHealth: 94}
       aiAnalysis: {
         insights: ['Sentiment analysis improved community health by 22%', 'Emotion detection enhanced user experience by 40%'],
         trends: ['Improving sentiment accuracy', 'Increasing community health', 'Enhancing user satisfaction'],
@@ -281,7 +281,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance community features']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Content Moderation Boosting Platform Safety',
@@ -337,14 +337,14 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
       case 'positive': return '👥
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredSocialNetworking = useMemo(() => {'
@@ -456,7 +456,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Social Networking Overview */}
@@ -502,14 +502,14 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'social' && ("
           <div className="space-y-6>" 
             {/* Platform Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'social-platform', 'community-forum', 'messaging-app', 'content-sharing', 'professional-network', 'interest-groups'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white'`
@@ -631,7 +631,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'analytics' && (
           <div className="space-y-6>" 
@@ -669,7 +669,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'insights' && data && (
           <div className="space-y-6>

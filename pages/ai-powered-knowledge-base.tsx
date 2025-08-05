@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { Home, Search, User }  from "lucide-react";
 
 interface KnowledgeArticle {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'guide' | 'tutorial' | 'manual' | 'faq' | 'wiki' | 'documentation";
   status: 'draft' | 'published' | 'archived' | 'review";
@@ -23,7 +23,7 @@ interface AIKnowledgeAnalysis {
   recommendations: string[];}
 interface Documentation {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'api' | 'user-guide' | 'developer-guide' | 'admin-guide' | 'integration";
   status: 'draft' | 'published' | 'archived' | 'review";
@@ -33,7 +33,7 @@ interface Documentation {
 interface DocumentationSection {
   id: string;
   title: string;
-  content: string;'
+  content: string;
   order: number;
   status: 'draft' | 'published' | 'archived';}
 interface DocumentationAnalytics {
@@ -49,7 +49,7 @@ interface AIDocumentationOptimization {
   recommendations: string[];}
 interface Tutorial {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   category: 'getting-started' | 'features' | 'advanced-topics' | 'troubleshooting";
@@ -61,7 +61,7 @@ interface TutorialStep {
   id: string;
   title: string;
   description: string;
-  order: number;'
+  order: number;
   estimatedTime: number;
   status: 'draft' | 'published' | 'archived';}
 interface TutorialAnalytics {
@@ -77,7 +77,7 @@ interface AITutorialAnalysis {
   recommendations: string[];}
 interface FAQ {
   id: string;
-  question: string;'
+  question: string;
   answer: string;
   category: 'general' | 'technical' | 'billing' | 'account' | 'features";
   status: 'draft' | 'published' | 'archived' | 'review";
@@ -92,7 +92,7 @@ interface AIFAQAnalysis {
   recommendations: string[];}
 interface Wiki {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'platform' | 'features' | 'best-practices' | 'troubleshooting";
   status: 'draft' | 'published' | 'archived' | 'review";
@@ -121,7 +121,7 @@ interface KnowledgeBaseAnalytics {
   aiInsights: KnowledgeBaseInsight[];}
 interface KnowledgeBaseInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -131,7 +131,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
   const [documentation, setDocumentation] = useState<Documentation[]>([]
   const [tutorials, setTutorials] = useState<Tutorial[]>([]
   const [faqs, setFaqs] = useState<FAQ[]>([]
-  const [wikis, setWikis] = useState<Wiki[]>([]'
+  const [wikis, setWikis] = useState<Wiki[]>([]
   const [analytics, setAnalytics] = useState<KnowledgeBaseAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'articles' | 'documentation' | 'tutorials' | 'faqs' | 'wikis' | 'analytics'>('articles
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -153,7 +153,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         readabilityScore: 92,
         helpfulnessScore: 88,'
         searchOptimization: 85,
-        recommendations: ['Add more screenshots', 'Include video tutorials']}}}'
+        recommendations: ['Add more screenshots', 'Include video tutorials']}}}
     {
       id: '2',
       title: 'Advanced AI Features Tutorial',
@@ -185,7 +185,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
           content: 'Learn how to authenticate with the marketplace API','
           order: 1,
           status: 'published'
-        },'
+        },
 {
           id: '2',
           title: 'Endpoints',
@@ -198,7 +198,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         averageTimeSpent: 8.5,
         completionRate: 76,'
         searchQueries: 156,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiOptimization: {
         id: '1',
         optimizationScore: 91,'
@@ -221,7 +221,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
           order: 1,'
           estimatedTime: 5,
           status: 'published'
-        },'
+        },
 {
           id: '2',
           title: 'Configure Profile',
@@ -235,7 +235,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         averageCompletionTime: 15.2,
         successRate: 89,'
         dropoffRate: 12,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiAnalysis: {
         id: '1',
         difficultyAssessment: 85,'
@@ -256,7 +256,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         clarityScore: 94,
         helpfulnessScore: 91,'
         searchOptimization: 88,
-        recommendations: ['Add screenshots', 'Include alternative methods']}}'
+        recommendations: ['Add screenshots', 'Include alternative methods']}}
     {
       id: '2',
       question: 'What payment methods are accepted?',
@@ -285,7 +285,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         totalViews: 3456,
         editCount: 23,'
         contributorCount: 3,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiAnalysis: {
         id: '1',
         contentQuality: 93,'
@@ -308,7 +308,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Continue AI monitoring', 'Expand content categories']
-      },'
+      },
 {
         id: '2',
         title: 'Strong Tutorial Completion',
@@ -418,7 +418,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 Articles ({articles.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('documentation')}''``
+                onClick={() => setActiveTab('documentation')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'documentation
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -428,7 +428,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 Documentation ({documentation.length}
               </button>'
               `
-                onClick={() => setActiveTab('tutorials')}''``
+                onClick={() => setActiveTab('tutorials')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'tutorials
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -438,7 +438,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 Tutorials ({tutorials.length}
               </button>'
               `
-                onClick={() => setActiveTab('faqs')}''``
+                onClick={() => setActiveTab('faqs')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'faqs
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -458,7 +458,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 Wikis ({wikis.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -562,7 +562,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Documentation Tab */},"''
 {activeTab === 'documentation' && (
               <div className="space-y-8>" 
@@ -626,7 +626,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Tutorials Tab */},"''
 {activeTab === 'tutorials' && (
               <div className=" space-y-8>
@@ -696,7 +696,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* FAQs Tab */},
 {activeTab === 'faqs' && ("
               <div className="space-y-8>" 
@@ -763,7 +763,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 ))}
               </div>
             )} '
-            {/* Wikis Tab */},''
+            {/* Wikis Tab */},
 {activeTab === 'wikis' && ("
               <div className=" space-y-8>
                 {wikis.map((wiki) => (
@@ -829,7 +829,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className=" space-y-8>

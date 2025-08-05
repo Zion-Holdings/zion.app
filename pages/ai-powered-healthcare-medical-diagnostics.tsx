@@ -26,7 +26,7 @@ interface Patient {
   gender: string;
   medicalHistory: string[];
   currentConditions: string[];
-  lastVisit: Date;'
+  lastVisit: Date;
   nextAppointment?: Date;
   status: 'active' | 'inactive' | 'discharged' | 'pending";
   patientId: string;
@@ -59,7 +59,7 @@ interface PatientMonitoring {
     temperature: number
     oxygenSaturation: number
     respiratoryRate: number}
-  aiAnalysis: MonitoringAnalysis}'
+  aiAnalysis: MonitoringAnalysis}
 interface MonitoringAnalysis {
   trend: 'improving' | 'stable' | 'declining' | 'critical
   riskScore: number
@@ -96,12 +96,12 @@ interface HealthcareData {
   analyticsProjects: number
   aiInsights: MedicalInsight[]}
 const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
-  ';'
+  ';
   const [activeTab, setActiveTab] = useState('overview');
   const [diagnostics, setDiagnostics] = useState<MedicalDiagnostic[]>([]);
   const [patients, setPatients] = useState<Patient[]>([]);
   const [monitoring, setMonitoring] = useState<PatientMonitoring[]>([]);
-  const [analytics, setAnalytics] = useState<HealthcareAnalytics[]>([]);'
+  const [analytics, setAnalytics] = useState<HealthcareAnalytics[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
 
@@ -110,7 +110,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
   } [selectedTimeframe]);
 
   const loadHealthcareData = async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-healthcare-medical-diagnostics', {
         method: 'POST','
@@ -127,14 +127,14 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
         setDiagnostics(data.diagnostics || []);
         setPatients(data.patients || []);
         setMonitoring(data.monitoring || []);
-        setAnalytics(data.analytics || []);}'
+        setAnalytics(data.analytics || []);}
     } catch (error) {
       console.error('Error loading healthcare data: , error);
     } finally {
       setLoading(false);}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'normal': return 'bg-green-500";
       case 'warning': return 'bg-yellow-500";
       case 'critical': return 'bg-red-500";
@@ -142,7 +142,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'low': return 'bg-green-500";
       case 'medium': return 'bg-yellow-500";
       case 'high': return 'bg-orange-500";
@@ -150,7 +150,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'overview', name: 'Overview', icon: Activity },
 { id: 'diagnostics', name: 'Diagnostics', icon: Brain },
     { id: 'patients', name: 'Patients', icon: User },
@@ -188,8 +188,8 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
       {/* Navigation Tabs */}"
       <nav className="mb-8">
         <div className="flex space-x-8 border-b border-white/10">
-          {tabs.map((tab) =>" {;"
-            const Icon = tab.icon;"
+          {tabs.map((tab) =>" {;
+            const Icon = tab.icon;
             return (
               "
                 onClick = {() => setActiveTab(tab.id)}
@@ -213,7 +213,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
         </div>
       )   (
         <div className="space-y-8>'"
-          {/* Overview Tab */},''
+          {/* Overview Tab */},
     {activeTab === 'overview' && (
             </div><div className="space-y-6"">
               {/* KPI Cards */}
@@ -276,8 +276,8 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
                 </div>
               </div>
             </div>
-          )}'
-          {/* Diagnostics Tab */},' '
+          )}
+          {/* Diagnostics Tab */}, '
 {activeTab === 'diagnostics' && (
             <div className="space-y-6>"
               </div><div className=" flex justify-between" items-center>"
@@ -424,7 +424,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
               </div>
             </div>
           )}"'
-          {/* Analytics Tab */},''
+          {/* Analytics Tab */},
 {activeTab === 'analytics' && ("
             <div className="space-y-6>"
               <h2 className="text-2xl" font-bold text-white >Healthcare Analytics</h2>
@@ -464,7 +464,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
           )}
         </div>
       )}
-    </PageLayout >;  );"
+    </PageLayout >;  );
 };
 ''`
-export default AIPoweredHealthcareMedicalDiagnosticsPage;"'"'`
+export default AIPoweredHealthcareMedicalDiagnosticsPage;'`

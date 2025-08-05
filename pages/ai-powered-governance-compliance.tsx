@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface GovernancePolicy {
-  id: string;'
+  id: string;
   name: string;
   category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory' | 'custom";
   status: 'active' | 'draft' | 'review' | 'archived";
@@ -15,12 +15,12 @@ interface GovernancePolicy {
   nextReview: Date;
   aiAnalysis: AIPolicyAnalysis;}
 interface AIPolicyAnalysis {
-  id: string;'
+  id: string;
   complianceScore: number;
   riskLevel: 'low' | 'medium' | 'high' | 'critical";
   recommendations: string[];}
 interface ComplianceFramework {
-  id: string;'
+  id: string;
   name: string;
   type: 'GDPR' | 'CCPA' | 'SOX' | 'HIPAA' | 'PCI-DSS' | 'ISO' | 'custom";
   status: 'active' | 'inactive' | 'maintenance";
@@ -42,14 +42,14 @@ interface GovernanceComplianceAnalytics {
   aiInsights: GovernanceComplianceInsight[];}
 interface GovernanceComplianceInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredGovernanceCompliancePage: NextPage = () => {
   const [policies, setPolicies] = useState<GovernancePolicy[]>([]
-  const [frameworks, setFrameworks] = useState<ComplianceFramework[]>([]'
+  const [frameworks, setFrameworks] = useState<ComplianceFramework[]>([]
   const [analytics, setAnalytics] = useState<GovernanceComplianceAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'policies' | 'frameworks' | 'analytics'>('policies
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -70,7 +70,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
         id: '1','
         complianceScore: 92,
         riskLevel: 'low',
-        recommendations: ['Update consent mechanisms', 'Enhance data retention tracking']}}}'
+        recommendations: ['Update consent mechanisms', 'Enhance data retention tracking']}}}
     {
       id: '2',
       name: 'Security Access Control Policy',
@@ -100,7 +100,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
         id: '1',
         optimizationScore: 91,'
         riskReduction: 85,
-        recommendations: ['Enhance consent granularity', 'Improve DSAR automation']}}'
+        recommendations: ['Enhance consent granularity', 'Improve DSAR automation']}}
     {
       id: '2',
       name: 'PCI-DSS Compliance Framework',
@@ -129,7 +129,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Continue AI monitoring', 'Implement predictive compliance']
-      },'
+      },
 {
         id: '2',
         title: 'Regulatory Risk Reduction',
@@ -233,7 +233,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                 Governance Policies ({policies.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('frameworks')}''``
+                onClick={() => setActiveTab('frameworks')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'frameworks
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -243,7 +243,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                 Compliance Frameworks ({frameworks.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'`
@@ -254,7 +254,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Policies Tab */},''
+            {/* Policies Tab */},
 {activeTab === 'policies' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -349,7 +349,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                 </div>
               </div>
             )}"'
-            {/* Frameworks Tab */},''
+            {/* Frameworks Tab */},
 {activeTab === 'frameworks' && ("
               <div className=" space-y-8>
                 {frameworks.map((framework) => (
@@ -397,8 +397,8 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
-            {/* Analytics Tab */},' '
+            )}
+            {/* Analytics Tab */}, '
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"
                 </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>"

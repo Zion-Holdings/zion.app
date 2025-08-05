@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface IoTDevice {
-  id: string;'
+  id: string;
   name: string;
   type: 'sensor' | 'actuator' | 'gateway' | 'camera' | 'controller' | 'smart-appliance";
   status: 'online' | 'offline' | 'maintenance' | 'error' | 'updating";
@@ -22,14 +22,14 @@ interface IoTDevice {
     energyEfficiency: number;
   };}
 interface SensorData {
-  id: string;'
+  id: string;
   deviceId: string;
   sensorType: 'temperature' | 'humidity' | 'pressure' | 'motion' | 'light' | 'air-quality";
   value: number;
   unit: string;
   timestamp: Date;
   location: string;
-  aiProcessed: boolean;'
+  aiProcessed: boolean;
   anomaly: boolean;
   trend: 'increasing' | 'decreasing' | 'stable";
   threshold: {
@@ -39,7 +39,7 @@ interface SensorData {
   };}
 interface IoTAutomation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'active' | 'inactive' | 'testing' | 'error";
   triggers: {
@@ -60,7 +60,7 @@ interface IoTAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -68,7 +68,7 @@ const AIPoweredIoTPage: NextPage = () => {
   ;
   const [devices, setDevices] = useState<IoTDevice[]>([]);
   const [sensorData, setSensorData] = useState<SensorData[]>([]);
-  const [automations, setAutomations] = useState<IoTAutomation[]>([]);'
+  const [automations, setAutomations] = useState<IoTAutomation[]>([]);
   const [analytics, setAnalytics] = useState<IoTAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'devices' | 'sensors' | 'automations' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -97,7 +97,7 @@ const AIPoweredIoTPage: NextPage = () => {
             responseTime: 0.8,
             accuracy: 98.5,
             reliability: 99.2,
-            energyEfficiency: 94.3}}}'
+            energyEfficiency: 94.3}}}
         {
           id: '2',
           name: 'Smart Light Controller',
@@ -114,7 +114,7 @@ const AIPoweredIoTPage: NextPage = () => {
             responseTime: 0.6,
             accuracy: 96.8,
             reliability: 98.7,
-            energyEfficiency: 97.2}}'
+            energyEfficiency: 97.2}}
         {
           id: '3',
           name: 'Security Camera',
@@ -131,7 +131,7 @@ const AIPoweredIoTPage: NextPage = () => {
             responseTime: 1.2,
             accuracy: 97.3,
             reliability: 99.8,
-            energyEfficiency: 78.5}}'
+            energyEfficiency: 78.5}}
         {
           id: '4',
           name: 'Smart Thermostat',
@@ -148,7 +148,7 @@ const AIPoweredIoTPage: NextPage = () => {
             responseTime: 2.1,
             accuracy: 89.4,
             reliability: 85.6,
-            energyEfficiency: 82.3}}'
+            energyEfficiency: 82.3}}
         {
           id: '5',
           name: 'Air Quality Monitor',
@@ -182,7 +182,7 @@ const AIPoweredIoTPage: NextPage = () => {
           threshold: {
             min: 18,
             max: 26,
-            critical: false}}'
+            critical: false}}
         {
           id: '2',
           deviceId: '1',
@@ -197,7 +197,7 @@ const AIPoweredIoTPage: NextPage = () => {
           threshold: {
             min: 30,
             max: 60,
-            critical: false}}'
+            critical: false}}
         {
           id: '3',
           deviceId: '3',
@@ -212,7 +212,7 @@ const AIPoweredIoTPage: NextPage = () => {
           threshold: {
             min: 0,
             max: 1,
-            critical: true}}'
+            critical: true}}
         {
           id: '4',
           deviceId: '5',
@@ -227,7 +227,7 @@ const AIPoweredIoTPage: NextPage = () => {
           threshold: {
             min: 0,
             max: 100,
-            critical: true}}'
+            critical: true}}
         {
           id: '5',
           deviceId: '2',
@@ -255,7 +255,7 @@ const AIPoweredIoTPage: NextPage = () => {
               device: 'Smart Temperature Sensor',
               condition: 'temperature > 24°C',
               threshold: 24
-            },'
+            },
 {
               device: 'Motion Sensor',
               condition: 'motion detected',
@@ -266,16 +266,16 @@ const AIPoweredIoTPage: NextPage = () => {
               device: 'Smart Thermostat',
               action: 'set_temperature',
               value: 22
-            },'
+            },
 {
               device: 'Smart Light Controller',
               action: 'set_brightness',
-              value: 80}'
+              value: 80}
           ],
           lastExecuted: new Date('2024-01-20T15:30:00'),
           executionCount: 1542,
           successRate: 94.5,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '2',
           name: 'Security Automation',
@@ -292,16 +292,16 @@ const AIPoweredIoTPage: NextPage = () => {
               device: 'Security Camera',
               action: 'start_recording',
               value: true
-            },'
+            },
 {
               device: 'Smart Light Controller',
               action: 'turn_on',
-              value: true}'
+              value: true}
           ],
           lastExecuted: new Date('2024-01-20T15:25:00'),
           executionCount: 892,
           successRate: 97.2,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '3',
           name: 'Energy Optimization',
@@ -318,11 +318,11 @@ const AIPoweredIoTPage: NextPage = () => {
               device: 'Smart Light Controller',
               action: 'turn_off',
               value: false
-            },'
+            },
 {
               device: 'Smart Thermostat',
               action: 'set_eco_mode',
-              value: true}'
+              value: true}
           ],
           lastExecuted: new Date('2024-01-20T15:20:00'),
           executionCount: 234,
@@ -338,7 +338,7 @@ const AIPoweredIoTPage: NextPage = () => {
           improvement: -1.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'Response Time',
@@ -347,7 +347,7 @@ const AIPoweredIoTPage: NextPage = () => {
           improvement: -60.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Energy Efficiency',
@@ -356,7 +356,7 @@ const AIPoweredIoTPage: NextPage = () => {
           improvement: -4.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'AI Optimization',
@@ -365,7 +365,7 @@ const AIPoweredIoTPage: NextPage = () => {
           improvement: -7.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'Automation Success',
@@ -374,7 +374,7 @@ const AIPoweredIoTPage: NextPage = () => {
           improvement: -3.5,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'Data Accuracy',
@@ -393,7 +393,7 @@ const AIPoweredIoTPage: NextPage = () => {
     } 1000);
   } []);
   const filteredDevices = useMemo(() => {'
-    let filtered = devices.filter(device => {';'
+    let filtered = devices.filter(device => {';
       if (filterType !== 'all' && device.type !== filterType) return false;
       if (filterStatus !== 'all' && device.status !== filterStatus) return false;
       if (searchTerm && !device.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -416,7 +416,7 @@ const AIPoweredIoTPage: NextPage = () => {
     return filtered;
   } [devices, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'online': return 'text-green-400 bg-green-500/20";
       case 'offline': return 'text-gray-400 bg-gray-500/20";
       case 'maintenance': return 'text-yellow-400 bg-yellow-500/20";
@@ -425,7 +425,7 @@ const AIPoweredIoTPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'sensor': return '📡";
       case 'actuator': return '⚙️";
       case 'gateway': return '🌐";
@@ -435,7 +435,7 @@ const AIPoweredIoTPage: NextPage = () => {
       default: return '📱';}
   };
   const getSensorTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'temperature': return '🌡️";
       case 'humidity': return '💧";
       case 'pressure': return '📊";
@@ -445,7 +445,7 @@ const AIPoweredIoTPage: NextPage = () => {
       default: return '📡';}
   };
   const getAutomationStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       case 'testing': return 'text-blue-400 bg-blue-500/20";
@@ -453,14 +453,14 @@ const AIPoweredIoTPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
-  const getBatteryColor = (level: number) => {';'
+  const getBatteryColor = (level: number) => {';
     if (level > 80) return 'text-green-400";
     if (level > 50) return 'text-yellow-400";
     if (level > 20) return 'text-orange-400";
@@ -551,7 +551,7 @@ const AIPoweredIoTPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -575,7 +575,7 @@ const AIPoweredIoTPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* IoT Devices */},
 {selectedView === 'devices' && ("
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
@@ -644,7 +644,7 @@ const AIPoweredIoTPage: NextPage = () => {
                 </div>
               </div > ))}
           </div>
-        )}'
+        )}
         {/* Sensor Data */},"''
 {selectedView === 'sensors' && (
           <div className="space-y-6>" 
@@ -709,7 +709,7 @@ const AIPoweredIoTPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* IoT Automations */},
 {selectedView === 'automations' && ("
           <div className="space-y-6>" 

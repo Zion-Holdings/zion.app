@@ -21,4 +21,4 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   if (!user) {
     return null} 
   return </>{children}</>'
-} "';"
+} "';

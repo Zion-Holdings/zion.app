@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -86,7 +86,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       id: 'qa-001',
       name: 'Grover Search Algorithm',
       algorithm: 'grover-search',
-      complexity: 'O(√N)',
+      complexity: 'O(√N),
       qubits: 8,
       gates: 24,'
       successRate: 95.2,
@@ -240,7 +240,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Simulation Dashboard */},'
+            {/* Simulation Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -299,7 +299,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Simulations */},''
+            {/* Simulations */},
 {activeTab === 'simulations' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Simulations</h2>
@@ -340,7 +340,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Algorithms */},"''
 {activeTab === 'algorithms' && (
               <div className="space-y-6>"
@@ -382,7 +382,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Gates */},"''
 {activeTab === 'gates' && (
               <div className="space-y-6>"
@@ -422,7 +422,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum States */},"''
 {activeTab === 'states' && (
               <div className="space-y-6>"
@@ -466,7 +466,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Circuits */}, ''
 {activeTab === 'circuits' && (
               <div className="space-y-6">
@@ -513,7 +513,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Measurements */},"''
 {activeTab === 'measurements' && (
               <div className="space-y-6>"

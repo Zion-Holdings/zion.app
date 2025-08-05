@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 interface Language {
   code: string;
   name: string;
-  nativeName: string;'
+  nativeName: string;
   flag: string;
   status: 'available' | 'beta' | 'coming-soon";
   completion: number;
@@ -24,7 +24,7 @@ interface Translation {
   portuguese: string;
   russian: string;}
 const MultiLanguagePage: NextPage = () => {'
-  ';'
+  ';
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
   const [showTranslations, setShowTranslations] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'available',
       completion: 100,
       lastUpdated: new Date(}
-    },'
+    },
 {
       code: 'es',
       name: 'Spanish',
@@ -46,7 +46,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'available',
       completion: 95,
       lastUpdated: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000
-    },'
+    },
     {
       code: 'fr',
       name: 'French',
@@ -55,7 +55,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'available',
       completion: 90,
       lastUpdated: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000
-    },'
+    },
 {
       code: 'de',
       name: 'German',
@@ -64,7 +64,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'available',
       completion: 85,
       lastUpdated: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000
-    },'
+    },
     {
       code: 'zh',
       name: 'Chinese',
@@ -73,7 +73,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'beta',
       completion: 75,
       lastUpdated: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000
-    },'
+    },
 {
       code: 'ja',
       name: 'Japanese',
@@ -82,7 +82,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'beta',
       completion: 70,
       lastUpdated: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000
-    },'
+    },
     {
       code: 'ar',
       name: 'Arabic',
@@ -91,7 +91,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'beta',
       completion: 65,
       lastUpdated: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000
-    },'
+    },
 {
       code: 'hi',
       name: 'Hindi',
@@ -100,7 +100,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'coming-soon',
       completion: 40,
       lastUpdated: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000
-    },'
+    },
     {
       code: 'pt',
       name: 'Portuguese',
@@ -109,7 +109,7 @@ const MultiLanguagePage: NextPage = () => {'
       status: 'coming-soon',
       completion: 35,
       lastUpdated: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000
-    },'
+    },
 {
       code: 'ru',
       name: 'Russian',
@@ -132,7 +132,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'Zion मार्केटप्लेस में आपका स्वागत है',
       portuguese: 'Bem-vindo ao Mercado Zion',
       russian: 'Добро пожаловать на рынок Сион'
-    },'
+    },
 {
       key: 'marketplace',
       english: 'Marketplace',
@@ -145,7 +145,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'मार्केटप्लेस',
       portuguese: 'Mercado',
       russian: 'Рынок'
-    },'
+    },
     {
       key: 'services',
       english: 'Services',
@@ -158,7 +158,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'सेवाएं',
       portuguese: 'Serviços',
       russian: 'Услуги'
-    },'
+    },
 {
       key: 'talents',
       english: 'Talents',
@@ -171,7 +171,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'प्रतिभाएं',
       portuguese: 'Talentos',
       russian: 'Таланты'
-    },'
+    },
     {
       key: 'equipment',
       english: 'Equipment',
@@ -184,7 +184,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'उपकरण',
       portuguese: 'Equipamento',
       russian: 'Оборудование'
-    },'
+    },
 {
       key: 'analytics',
       english: 'Analytics',
@@ -197,7 +197,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'विश्लेषण',
       portuguese: 'Análise',
       russian: 'Аналитика'
-    },'
+    },
     {
       key: 'reviews',
       english: 'Reviews',
@@ -210,7 +210,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'समीक्षाएं',
       portuguese: 'Avaliações',
       russian: 'Отзывы'
-    },'
+    },
 {
       key: 'profiles',
       english: 'Profiles',
@@ -223,7 +223,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'प्रोफाइल',
       portuguese: 'Perfis',
       russian: 'Профили'
-    },'
+    },
     {
       key: 'search',
       english: 'Search',
@@ -236,7 +236,7 @@ const MultiLanguagePage: NextPage = () => {'
       hindi: 'खोज',
       portuguese: 'Pesquisar',
       russian: 'Поиск'
-    },'
+    },
 {
       key: 'login',
       english: 'Login',
@@ -258,14 +258,14 @@ const MultiLanguagePage: NextPage = () => {'
     } 1000);
   } []);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'available': return 'text-green-400 bg-green-500/20";
       case 'beta': return 'text-yellow-400 bg-yellow-500/20";
       case 'coming-soon': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getStatusIcon = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'available': return '✅";
       case 'beta': return '🟡";
       case 'coming-soon': return '⏳";
@@ -546,7 +546,7 @@ const MultiLanguagePage: NextPage = () => {'
                     <p className="text-white" text-sm >{language.lastUpdated.toLocaleDateString()}</p>`
                   </div>``
                   <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(language.status)}`}>
-                    {getStatusIcon(language.status)},'
+                    {getStatusIcon(language.status)},
 {language.status.replace('-', ' ')}
                   </span>
                 </div>

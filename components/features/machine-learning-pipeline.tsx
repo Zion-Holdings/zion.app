@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface MachineLearningPipelineProps {
-  className?: string;}'
+  className?: string;}
 const MachineLearningPipeline: React.FC<MachineLearningPipelineProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const MachineLearningPipeline: React.FC<MachineLearningPipelineProps> = ({ class
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default MachineLearningPipeline;"'"'`
+export default MachineLearningPipeline;'`

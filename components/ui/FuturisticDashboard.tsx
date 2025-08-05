@@ -4,13 +4,13 @@ interface DashboardMetric {
   id: string;
   title: string;
   value: string | number;
-  change: number;'
+  change: number;
   icon: string;
   color: 'blue' | 'purple' | 'pink' | 'green';}
 interface DashboardChart {
   id: string;
   title: string;
-  data: number[];'
+  data: number[];
   labels: string[];
   type: 'line' | 'bar' | 'area";
   color: 'blue' | 'purple' | 'pink' | 'green';}
@@ -32,25 +32,25 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  const colorClasses = {'
+  const $1 = {'
     blue: {
       bg: 'bg-gradient-to-r from-neon-blue to-blue-600',
       text: 'text-neon-blue',
       border: 'border-neon-blue',
       glow: 'shadow-neon-blue'
-    },'
+    },
     purple: {
       bg: 'bg-gradient-to-r from-neon-purple to-purple-600',
       text: 'text-neon-purple',
       border: 'border-neon-purple',
       glow: 'shadow-neon-purple'
-    },'
+    },
     pink: {
       bg: 'bg-gradient-to-r from-neon-pink to-pink-600',
       text: 'text-neon-pink',
       border: 'border-neon-pink',
       glow: 'shadow-neon-pink'
-    },'
+    },
     green: {
       bg: 'bg-gradient-to-r from-neon-green to-green-600',
       text: 'text-neon-green',
@@ -81,22 +81,22 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
                 d={chart.data.map((value, index) => {;
                   const x = (index / (chart.data.length - 1)) * 100;`
                   const y = 40 - (value / maxValue) * 40;``
-                  return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;'"'
-                }).join(' ')}''
+                  return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
+                }).join(' ')}
                 stroke = {chart.color === 'blue' ? '#00d4ff' : chart.color === 'purple' ? '#8b5cf6' : chart.color === 'pink' ? '#ec4899' : '#10b981'}"
                 strokeWidth="2 
                 fill="none
                 className="animate-pulse" />`
               <path``
                 d={`M 0 40 ${chart.data.map((value, index) => {;
-                  const x = (index / (chart.data.length - 1)) * 100;'`
+                  const x = (index / (chart.data.length - 1)) * 100;`
                   const y = 40 - (value / maxValue) * 40;``
                   return `L ${x} ${y}`;``
                 }).join(' ')} L 100 40 Z`}``
                 fill = {`url(#gradient-${chart.id})`}
               />
             </svg>
-          )}'
+          )}
            ''
           {chart.type === 'bar' && (
             <div className="flex" items-end justify-between h-full space-x-1">
@@ -117,7 +117,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
           )}
         </div>
       </div >;
-    );"
+    );
   }; `"
   return ("``
     <div className="{`min-h-screen cyber-bg ${className}`}> 
@@ -145,7 +145,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
             const colorClass = colorClasses[metric.color];
             return (
               <div'`
-                key = {metric.id}''``
+                key = {metric.id}``
                 className="{`glass-dark border border-neon-blue/20 rounded-xl p-6 hover:border-neon-blue/40 transition-all duration-500 transform hover:scale-105 ${`
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'``
                 }`} ``
@@ -171,14 +171,14 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
                 {/* Animated Border */}``
                 <div className="{`absolute" inset-0 rounded-xl border-2 border-transparent hover:${colorClass.border} transition-all duration-300`}></div>
               </div">;
-            );"
+            );
           })}
         </div>
 
         {/* Charts Grid */}"
         <div className="grid" grid-cols-1 lg grid-cols-2 gap-6>
           {charts.map((chart, index) => ('`
-            <div key={chart.id}''``
+            <div key={chart.id}``
               className="{`${`"
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'``
               } transition-all duration-500`}``
@@ -198,4 +198,4 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
   );
 };
 ''`
-export default FuturisticDashboard;"'"'`
+export default FuturisticDashboard;'`

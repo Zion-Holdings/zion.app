@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -100,7 +100,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
   const [missions, setMissions] = useState<SpaceMission[]>([]
   const [trajectories, setTrajectories] = useState<OrbitalTrajectory[]>([]
   const [stations, setStations] = useState<SpaceStation[]>([]
-  const [explorations, setExplorations] = useState<SpaceExploration[]>([]'
+  const [explorations, setExplorations] = useState<SpaceExploration[]>([]
   const [analytics, setAnalytics] = useState<SpaceAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'satellites' | 'missions' | 'trajectories' | 'stations' | 'explorations' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -128,7 +128,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         healthScore: 9.5,'
         performanceScore: 9.8,
         riskLevel: 'low',
-        recommendations: ['Monitor solar panel efficiency', 'Check atomic clock accuracy', 'Update navigation data']}}'
+        recommendations: ['Monitor solar panel efficiency', 'Check atomic clock accuracy', 'Update navigation data']}}
     {
       id: '2',
       name: 'Hubble Space Telescope',
@@ -150,7 +150,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         healthScore: 8.2,'
         performanceScore: 9.1,
         riskLevel: 'medium',
-        recommendations: ['Schedule maintenance mission', 'Optimize observation schedule', 'Monitor gyroscope health']}}'
+        recommendations: ['Schedule maintenance mission', 'Optimize observation schedule', 'Monitor gyroscope health']}}
     {
       id: '3',
       name: 'Starlink-1234',
@@ -188,7 +188,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         successProbability: 0.85,
         riskAssessment: 0.3,'
         resourceOptimization: 0.9,
-        recommendations: ['Optimize launch window', 'Enhance safety protocols', 'Improve resource allocation']}}'
+        recommendations: ['Optimize launch window', 'Enhance safety protocols', 'Improve resource allocation']}}
     {
       id: '2',
       name: 'Mars Sample Return',
@@ -202,7 +202,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         successProbability: 0.78,
         riskAssessment: 0.4,'
         resourceOptimization: 0.85,
-        recommendations: ['Monitor sample integrity', 'Optimize return trajectory', 'Enhance communication systems']}}'
+        recommendations: ['Monitor sample integrity', 'Optimize return trajectory', 'Enhance communication systems']}}
     {
       id: '3',
       name: 'Commercial Space Station',
@@ -231,7 +231,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         efficiencyScore: 9.2,
         fuelConsumption: 0.8,'
         collisionRisk: 0.15,
-        recommendations: ['Optimize orbital parameters', 'Monitor space debris', 'Improve fuel efficiency']}}'
+        recommendations: ['Optimize orbital parameters', 'Monitor space debris', 'Improve fuel efficiency']}}
     {
       id: '2',
       name: 'Geostationary Transfer',
@@ -244,7 +244,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         efficiencyScore: 8.8,
         fuelConsumption: 1.2,'
         collisionRisk: 0.05,
-        recommendations: ['Optimize transfer orbit', 'Reduce fuel consumption', 'Monitor orbital stability']}}'
+        recommendations: ['Optimize transfer orbit', 'Reduce fuel consumption', 'Monitor orbital stability']}}
     {
       id: '3',
       name: 'Interplanetary Transfer',
@@ -272,7 +272,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         operationalEfficiency: 9.1,
         safetyScore: 9.5,'
         resourceUtilization: 8.8,
-        recommendations: ['Optimize power distribution', 'Enhance life support systems', 'Improve waste management']}}'
+        recommendations: ['Optimize power distribution', 'Enhance life support systems', 'Improve waste management']}}
     {
       id: '2',
       name: 'Tiangong Space Station',
@@ -285,7 +285,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         operationalEfficiency: 8.9,
         safetyScore: 9.3,'
         resourceUtilization: 8.5,
-        recommendations: ['Expand station modules', 'Optimize crew rotation', 'Enhance research capabilities']}}'
+        recommendations: ['Expand station modules', 'Optimize crew rotation', 'Enhance research capabilities']}}
     {
       id: '3',
       name: 'Axiom Station',
@@ -312,7 +312,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         discoveryProbability: 0.85,
         scientificValue: 9.5,'
         resourcePotential: 7.8,
-        recommendations: ['Continue sample collection', 'Explore new regions', 'Analyze geological formations']}}'
+        recommendations: ['Continue sample collection', 'Explore new regions', 'Analyze geological formations']}}
     {
       id: '2',
       name: 'Europa Clipper',
@@ -324,7 +324,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         discoveryProbability: 0.92,
         scientificValue: 9.8,'
         resourcePotential: 8.5,
-        recommendations: ['Optimize mission design', 'Enhance detection systems', 'Plan landing strategy']}}'
+        recommendations: ['Optimize mission design', 'Enhance detection systems', 'Plan landing strategy']}}
     {
       id: '3',
       name: 'OSIRIS-REx',
@@ -351,7 +351,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         impact: 'negative','
         confidence: 0.89,
         recommendations: ['Implement debris removal missions', 'Enhance collision avoidance systems', 'Develop debris tracking networks']
-      },'
+      },
 {
         id: '2',
         title: 'Commercial Space Growth',
@@ -418,14 +418,14 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
       case 'positive': return '🚀
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredSatellites = useMemo(() => {'
@@ -514,7 +514,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Satellites Overview */}
@@ -571,7 +571,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'communication', 'navigation', 'weather', 'scientific', 'military', 'commercial'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -698,7 +698,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'stations' && (
           <div className="space-y-6>" 
@@ -736,7 +736,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'explorations' && (
           <div className="space-y-6>
@@ -881,7 +881,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default AIPoweredSpaceExplorationSatelliteManagementPage )))))))))))))))))))))"'"'`

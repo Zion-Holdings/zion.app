@@ -2,7 +2,7 @@ import React from "react;
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 '
-const languages = [
+const $1 = [
   { code: 'en', name: 'English' },
 { code: 'es', name: 'Spanish' },
     { code: 'fr', name: 'French' },
@@ -79,5 +79,5 @@ export default function ContributeTranslations() {
   </div> 
   </div>
   </div>
-);'
-}'"
+);
+}"

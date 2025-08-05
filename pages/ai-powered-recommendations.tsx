@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -27,7 +27,7 @@ interface UserPreference {
   weight: number;
   lastUpdated: Date;}
 interface RecommendationEngine {
-  id: string;'
+  id: string;
   name: string;
   type: 'collaborative' | 'content-based' | 'hybrid' | 'deep-learning";
   status: 'active' | 'training' | 'inactive";
@@ -48,7 +48,7 @@ interface RecommendationAnalytics {
 const AIPoweredRecommendationsPage: NextPage = () => {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]
   const [userPreferences, setUserPreferences] = useState<UserPreference[]>([]
-  const [recommendationEngines, setRecommendationEngines] = useState<RecommendationEngine[]>([]'
+  const [recommendationEngines, setRecommendationEngines] = useState<RecommendationEngine[]>([]
   const [analytics, setAnalytics] = useState<RecommendationAnalytics | null>(null
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [sortBy, setSortBy] = useState<'confidence' | 'rating' | 'price' | 'aiScore'>('confidence
@@ -74,7 +74,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       userMatch: 0.89,
       trending: true,
       featured: true}
-    },'
+    },
 {
       id: '2',
       type: 'service',
@@ -92,7 +92,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       userMatch: 0.85,
       trending: false,
       featured: true
-    },'
+    },
     {
       id: '3',
       type: 'talent',
@@ -112,7 +112,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       userMatch: 0.93,
       trending: true,
       featured: false
-    },'
+    },
 {
       id: '4',
       type: 'equipment',
@@ -130,7 +130,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       userMatch: 0.82,
       trending: false,
       featured: true
-    },'
+    },
     {
       id: '5',
       type: 'product',
@@ -161,7 +161,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       lastTrained: new Date('2024-01-15'),
       modelVersion: 'v2.1.0',
       features: ['User-Item Matrix', 'Similarity Scoring', 'Neighborhood Selection']
-    },'
+    },
 {
       id: '2',
       name: 'Content-Based Engine',
@@ -172,7 +172,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       lastTrained: new Date('2024-01-10'),
       modelVersion: 'v1.8.2',
       features: ['Feature Extraction', 'TF-IDF', 'Cosine Similarity']
-    },'
+    },
     {
       id: '3',
       name: 'Deep Learning Engine',
@@ -183,7 +183,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       lastTrained: new Date('2024-01-20'),
       modelVersion: 'v3.0.0',
       features: ['Neural Networks', 'Embeddings', 'Attention Mechanisms']
-    },'
+    },
 {
       id: '4',
       name: 'Hybrid Engine',
@@ -217,7 +217,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
   const filteredRecommendations = useMemo(() => {
     let filtered = recommendations'
     if (selectedCategory !== 'all') {
-      filtered = filtered.filter(r => r.category === selectedCategory}'
+      filtered = filtered.filter(r => r.category === selectedCategory}
     if (filterType !== 'all') {
       filtered = filtered.filter(r => r.type === filterType}
     return filtered.sort((a, b) => {'
@@ -238,12 +238,12 @@ const AIPoweredRecommendationsPage: NextPage = () => {
   const categories = useMemo(() => {'
     const cats = Array.from(new Set(recommendations.map(r => r.category))
     return ['all', ...cats]
-  } [recommendations]'
+  } [recommendations]
   const getConfidenceColor = (confidence: number) => {
     if (confidence >= 0.9) return 'text-green-500
     if (confidence >= 0.8) return 'text-yellow-500
     if (confidence >= 0.7) return 'text-orange-500
-    return 'text-red-500'}'
+    return 'text-red-500'}
   const getConfidenceText = (confidence: number) => {
     if (confidence >= 0.9) return 'Excellent Match
     if (confidence >= 0.8) return 'Great Match

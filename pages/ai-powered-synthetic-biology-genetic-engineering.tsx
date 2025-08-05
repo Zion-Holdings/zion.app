@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -205,7 +205,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Bio Dashboard */},'
+            {/* Bio Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -264,7 +264,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* DNA Sequences */},''
+            {/* DNA Sequences */},
 {activeTab === 'dna' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DNA Sequence Design</h2>
@@ -309,7 +309,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Protein Design */},''
+            {/* Protein Design */},
 {activeTab === 'proteins' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Protein Structure Design</h2>
@@ -353,7 +353,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Genetic Circuits */}, ''
 {activeTab === 'circuits' && (
               <div className="space-y-6>"
@@ -395,7 +395,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* CRISPR Editing */}, ''
 {activeTab === 'crispr' && (
               <div className="space-y-6>"
@@ -434,7 +434,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Synthetic Organisms */},"''
 {activeTab === 'organisms' && (
               <div className="space-y-6">

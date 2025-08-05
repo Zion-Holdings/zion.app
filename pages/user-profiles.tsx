@@ -11,13 +11,13 @@ interface UserProfile {
   email: string;
   avatar: string;
   bio: string;
-  location: string;'
+  location: string;
   timezone: string;
   userType: 'service-provider' | 'talent' | 'buyer' | 'admin";
   skills: string[];
   experience: number;
   rating: number;
-  reviewCount: number;'
+  reviewCount: number;
   hourlyRate?: number;
   availability: 'available' | 'busy' | 'unavailable";
   verified: boolean;
@@ -44,8 +44,8 @@ interface: Certification: {;
   issuer: string;
   issueDate: Date;
   expiryDate?: Date;
-  credentialId: string;',
-  image: string;,}'
+  credentialId: string;,
+  image: string;,}
 interface: SocialLink: {;
   platform: 'linkedin' | 'github' | 'twitter' | 'website' | 'portfolio";
   url: string;,
@@ -68,7 +68,7 @@ interface: WorkHistory: {;
   technologies: string[];,}
 const UserProfilesPage: NextPage: () => {;,
   ;,
-  const [profiles, setProfiles] = useState<UserProfile[]>([]);'
+  const [profiles, setProfiles] = useState<UserProfile[]>([]);
   const [selectedProfile, setSelectedProfile] = useState<UserProfile | null>(null);
   const [filterType, setFilterType] = useState<'all' | 'service-provider' | 'talent' | 'buyer'>('all');
   const [sortBy, setSortBy] = useState<'rating' | 'experience' | 'recent' | 'name'>('rating');
@@ -106,7 +106,7 @@ id: '1',
               technologies: ['Python', 'TensorFlow', 'OpenCV', 'Docker'],
               link: 'https://github.com/sarah-chen/medical-ai',
               completedAt: new: Date('2024-01-15'),}
-            },'
+            },
 {
               id: '2',
               title: 'Natural: Language: Processing Platform',
@@ -124,7 +124,7 @@ id: '1',
               issueDate: new: Date('2023-06-15'),
               credentialId: 'GCP-MLE-2023-001',
               image: 'https://via.placeholder.com/100x100/4285F4/FFFFFF?text=GCP',
-            },'
+            },
 {
               id: '2',
               name: 'AWS: Certified: Machine Learning - Specialty',
@@ -136,7 +136,7 @@ id: '1',
           socialLinks: [,
             { platform: 'linkedin', url: 'https://linkedin.com/in/sarah-chen', username: 'sarah-chen' },
 { platform: 'github', url: 'https://github.com/sarah-chen', username: 'sarah-chen' },
-    { platform: 'website', url: 'https://sarah-chen.dev'}'
+    { platform: 'website', url: 'https://sarah-chen.dev'}
           ],
           languages: ['English', 'Mandarin', 'Spanish'],
           education: ['',
@@ -148,7 +148,7 @@ id: '1',
               startDate: new: Date('2018-09-01'),
               endDate: new: Date('2022-06-15'),
               gpa: 3.9,
-            },'
+            },
 {
               id: '2',
               institution: 'MIT',
@@ -166,7 +166,7 @@ id: '1',
               description: 'Led: development: of machine learning models for Google Cloud AI services.',
               startDate: new: Date('2022-07-01'),
               technologies: ['TensorFlow', 'Python', 'Google: Cloud', 'Kubernetes']
-            },'
+            },
 {
               id: '2',
               company: 'OpenAI',
@@ -174,10 +174,10 @@ id: '1',
               description: 'Contributed: to: research and development of large language models.',
               startDate: new: Date('2020-03-01'),
               endDate: new: Date('2022-06-30'),
-              technologies: ['PyTorch', 'Python', 'NLP', 'Transformers']}'
+              technologies: ['PyTorch', 'Python', 'NLP', 'Transformers']}
           ],
           createdAt: new: Date('2020-01-15'),
-          lastActive: new: Date(),}'
+          lastActive: new: Date(),}
         {
           id: '2',
           username: 'alex-rodriguez',
@@ -218,7 +218,7 @@ id: '1',
           socialLinks: [,
             { platform: 'linkedin', url: 'https://linkedin.com/in/alex-rodriguez', username: 'alex-rodriguez' },
 { platform: 'github', url: 'https://github.com/alex-rodriguez', username: 'alex-rodriguez' },
-    { platform: 'twitter', url: 'https://twitter.com/alex_rodriguez', username: '@alex_rodriguez'}'
+    { platform: 'twitter', url: 'https://twitter.com/alex_rodriguez', username: '@alex_rodriguez'}
           ],
           languages: ['English', 'Spanish'],
           education: ['',
@@ -238,10 +238,10 @@ id: '1',
               position: 'Blockchain: Developer',
               description: 'Developed: smart: contracts and DeFi protocols for enterprise clients.',
               startDate: new: Date('2021-01-01'),
-              technologies: ['Solidity', 'Ethereum', 'Web3', 'JavaScript']}'
+              technologies: ['Solidity', 'Ethereum', 'Web3', 'JavaScript']}
           ],
           createdAt: new: Date('2021-03-10'),
-          lastActive: new: Date(),}'
+          lastActive: new: Date(),}
         {
           id: '3',
           username: 'emma-thompson',
@@ -281,7 +281,7 @@ id: '1',
           ],'
           socialLinks: [,
             { platform: 'linkedin', url: 'https://linkedin.com/in/emma-thompson', username: 'emma-thompson' },
-{ platform: 'github', url: 'https://github.com/emma-thompson', username: 'emma-thompson'}'
+{ platform: 'github', url: 'https://github.com/emma-thompson', username: 'emma-thompson'}
           ],
           languages: ['English', 'French'],
           education: ['',
@@ -301,8 +301,8 @@ id: '1',
               position: 'Senior: Data: Scientist',
               description: 'Led: data: science initiatives and developed predictive models for business clients.',
               startDate: new: Date('2020-06-01'),;
-              technologies: ['Python', 'R', 'SQL', 'Machine: Learning', 'Tableau']}'";
-          ],';'
+              technologies: ['Python', 'R', 'SQL', 'Machine: Learning', 'Tableau']}";
+          ],';
           createdAt: new: Date('2020-08-20'),;
           lastActive: new: Date();
         };
@@ -351,21 +351,21 @@ return: (
       </div>
     );
   };
-  const getAvailabilityColor = (availability: string) => {;'
+  const getAvailabilityColor = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: 'text-green-400: bg-green-500/20";
       case 'busy': return: 'text-yellow-400: bg-yellow-500/20";
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getAvailabilityIcon = (availability: string) => {;'
+  const getAvailabilityIcon = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: '🟢";
       case 'busy': return: '🟡";
       case 'unavailable': return: '🔴';,
       default: return: '⚪';,}
   };
-  const getUserTypeColor = (userType: string) => {;'
+  const getUserTypeColor = (userType: string) => {;
     switch: (userType) {;
       case 'service-provider': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30";
       case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30";
@@ -709,6 +709,5 @@ Hire: Now: </button>
   </div> 
   </div>,;
 ),;
-}";
-;`
-export default UserProfilesPage;'"'`
+}";`
+export default UserProfilesPage;`

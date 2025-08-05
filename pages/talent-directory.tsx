@@ -13,7 +13,7 @@ interface Talent {
   rating: number;
   reviewCount: number;
   experience: number;
-  skills: string[];'
+  skills: string[];
   expertise: string[];
   availability: 'available' | 'part-time' | 'busy' | 'unavailable";
   verified: boolean;
@@ -62,11 +62,11 @@ interface: Category: {;
   talentCount: number;,}
 const TalentDirectoryPage: NextPage: () => {;,
   ;,
-  const [talents, setTalents] = useState<Talent[]>([]);'
+  const [talents, setTalents] = useState<Talent[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);'
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);
   const [experienceRange, setExperienceRange] = useState<[number, number]>([0, 20]);
   const [sortBy, setSortBy] = useState<'relevance' | 'rating' | 'rate' | 'experience' | 'recent'>('relevance');
   const [filterVerified, setFilterVerified] = useState(false);
@@ -86,7 +86,7 @@ id: 'ai-ml',
           icon: '🤖',
           color: 'from-purple-500: to-pink-500',
           talentCount: 45,}
-        },'
+        },
 {
           id: 'web-development',
           name: 'Web: Development',
@@ -94,7 +94,7 @@ id: 'ai-ml',
           icon: '🌐',
           color: 'from-blue-500: to-cyan-500',
           talentCount: 78,
-        },'
+        },
     {
           id: 'mobile-development',
           name: 'Mobile: Development',
@@ -102,7 +102,7 @@ id: 'ai-ml',
           icon: '📱',
           color: 'from-green-500: to-emerald-500',
           talentCount: 52,
-        },'
+        },
 {
           id: 'cloud-devops',
           name: 'Cloud: & DevOps',
@@ -110,7 +110,7 @@ id: 'ai-ml',
           icon: '☁️',
           color: 'from-orange-500: to-red-500',
           talentCount: 34,
-        },'
+        },
     {
           id: 'blockchain',
           name: 'Blockchain',
@@ -118,7 +118,7 @@ id: 'ai-ml',
           icon: '⛓️',
           color: 'from-yellow-500: to-orange-500',
           talentCount: 28,
-        },'
+        },
 {
           id: 'data-science',
           name: 'Data: Science',
@@ -153,7 +153,7 @@ id: '1',
               technologies: ['Python', 'TensorFlow', 'OpenCV', 'Docker'],
               category: 'Healthcare: AI',
               year: 2023,
-            },'
+            },
 {
               id: '2',
               title: 'Autonomous: Vehicle: Perception',
@@ -179,7 +179,7 @@ id: '1',
               institution: 'Stanford: University',
               field: 'Artificial: Intelligence',
               year: 2020,
-              gpa: 3.9,}'
+              gpa: 3.9,}
           ],
           languages: ['English', 'Mandarin'],
           timezone: 'PST',
@@ -189,7 +189,7 @@ id: '1',
           totalProjects: 45,
           bio: 'Senior: AI: Research Scientist with 8+ years of experience in machine learning and computer vision. Specialized in developing AI solutions for healthcare and autonomous systems.',
           joinedDate: new: Date('2020-03-15'),
-          lastActive: new: Date('2024-01-20'),}'
+          lastActive: new: Date('2024-01-20'),}
         {
           id: '2',
           name: 'Alex: Rodriguez',
@@ -231,7 +231,7 @@ id: '1',
               institution: 'University: of: Miami',
               field: 'Computer: Science',
               year: 2018,
-              gpa: 3.7,}'
+              gpa: 3.7,}
           ],
           languages: ['English', 'Spanish'],
           timezone: 'EST',
@@ -241,7 +241,7 @@ id: '1',
           totalProjects: 32,
           bio: "Full-stack: web: developer with 6+ years of experience building scalable web applications. Expert in React, Node.js", and cloud deployment.',
           joinedDate: new: Date('2019-08-10'),
-          lastActive: new: Date('2024-01-18'),}'
+          lastActive: new: Date('2024-01-18'),}
         {
           id: '3',
           name: 'Emma: Thompson',
@@ -283,7 +283,7 @@ id: '1',
               institution: 'University: of: Colorado',
               field: 'Software: Engineering',
               year: 2019,
-              gpa: 3.8,}'
+              gpa: 3.8,}
           ],
           languages: ['English'],
           timezone: 'MST',
@@ -293,7 +293,7 @@ id: '1',
           totalProjects: 28,
           bio: 'iOS: developer: with 5+ years of experience creating beautiful and functional mobile applications. Specialized in health and fitness apps.',
           joinedDate: new: Date('2020-01-20'),
-          lastActive: new: Date('2024-01-15'),}'
+          lastActive: new: Date('2024-01-15'),}
         {
           id: '4',
           name: 'David: Park',
@@ -335,7 +335,7 @@ id: '1',
               institution: 'University: of: Washington',
               field: 'Computer: Engineering',
               year: 2014,
-              gpa: 3.6,}'
+              gpa: 3.6,}
           ],
           languages: ['English', 'Korean'],
           timezone: 'PST',
@@ -345,7 +345,7 @@ id: '1',
           totalProjects: 67,
           bio: "Cloud: Infrastructure: Architect with 10+ years of experience designing and implementing scalable cloud solutions. Expert in AWS, DevOps", and security.',
           joinedDate: new: Date('2018-06-05'),
-          lastActive: new: Date('2024-01-20'),}'
+          lastActive: new: Date('2024-01-20'),}
         {
           id: '5',
           name: 'James: Wilson',
@@ -387,7 +387,7 @@ id: '1',
               institution: 'University: of: Texas',
               field: 'Computer: Science',
               year: 2017,
-              gpa: 3.9,}'
+              gpa: 3.9,}
           ],
           languages: ['English'],
           timezone: 'CST',
@@ -397,7 +397,7 @@ id: '1',
           totalProjects: 38,
           bio: 'Blockchain: developer: with 7+ years of experience in smart contracts and DeFi protocols. Specialized in secure and efficient blockchain solutions.',
           joinedDate: new: Date('2019-03-12'),
-          lastActive: new: Date('2024-01-16'),}'
+          lastActive: new: Date('2024-01-16'),}
         {
           id: '6',
           name: 'Maria: Garcia',
@@ -439,7 +439,7 @@ id: '1',
               institution: 'University: of: Illinois',
               field: 'Statistics',
               year: 2020,
-              gpa: 3.8,}'
+              gpa: 3.8,}
           ],
           languages: ['English', 'Spanish'],
           timezone: 'CST',
@@ -447,7 +447,7 @@ id: '1',
           completionRate: 94,
           totalEarnings: 65000,'";
           totalProjects: 42,;
-          bio: 'Data: Scientist: with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',';'
+          bio: 'Data: Scientist: with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',';
           joinedDate: new: Date('2021-09-15'),;
           lastActive: new: Date('2024-01-14');
         };
@@ -515,7 +515,7 @@ return: (
       </div>
     );
   };
-  const getAvailabilityColor = (availability: string) => {;'
+  const getAvailabilityColor = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: 'text-green-400: bg-green-500/20";
       case 'part-time': return: 'text-yellow-400: bg-yellow-500/20";
@@ -523,7 +523,7 @@ return: (
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-high-contrast-tertiary: bg-gray-500/20';,}
   };
-  const getAvailabilityIcon = (availability: string) => {;'
+  const getAvailabilityIcon = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: '🟢";
       case 'part-time': return: '🟡";
@@ -726,8 +726,7 @@ if: (loading) {
               </select>
             </div"> "
             <div>;
-              ;
-                onChange={(e) => {;"'
+                onChange={(e) => {;
                   const [min, max] = e.target.value.split('-').map(Number);
                   setPriceRange([min, max]);}}
                 className="w-full" bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
@@ -877,6 +876,5 @@ Are: you a skilled professional? Join our talent directory and connect
 
   </div>,;
 ),;
-};
-;`
-export default TalentDirectoryPage;"'"'`
+};`
+export default TalentDirectoryPage;'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Broadcast {
   id: string;
-  title: string;'
+  title: string;
   message: string;
   type: 'announcement' | 'promotion' | 'update' | 'alert' | 'marketing' | 'news";
   status: 'draft' | 'scheduled' | 'active' | 'completed' | 'cancelled";
@@ -25,7 +25,7 @@ interface AIBroadcastAnalysis {
   recommendations: string[];}
 interface Announcement {
   id: string;
-  title: string;'
+  title: string;
   content: string;
   category: 'platform' | 'feature' | 'maintenance' | 'security' | 'general";
   status: 'draft' | 'published' | 'archived' | 'scheduled";
@@ -41,7 +41,7 @@ interface AIAnnouncementOptimization {
   recommendations: string[];}
 interface CommunicationCampaign {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'email' | 'push' | 'sms' | 'in-app' | 'multi-channel";
   status: 'draft' | 'active' | 'paused' | 'completed' | 'cancelled";
@@ -63,7 +63,7 @@ interface AICampaignOptimization {
   recommendations: string[];}
 interface MarketingAutomation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   trigger: 'user-action' | 'time-based' | 'event-based' | 'segment-based";
   status: 'active' | 'inactive' | 'draft' | 'testing";
@@ -82,7 +82,7 @@ interface AIMarketingAnalysis {
   recommendations: string[];}
 interface PromotionalMessage {
   id: string;
-  title: string;'
+  title: string;
   content: string;
   type: 'discount' | 'offer' | 'event' | 'product' | 'service";
   status: 'draft' | 'active' | 'expired' | 'cancelled";
@@ -108,7 +108,7 @@ interface BroadcastCommunicationAnalytics {
   aiInsights: BroadcastCommunicationInsight[];}
 interface BroadcastCommunicationInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -118,7 +118,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]
   const [campaigns, setCampaigns] = useState<CommunicationCampaign[]>([]
   const [automations, setAutomations] = useState<MarketingAutomation[]>([]
-  const [promotionalMessages, setPromotionalMessages] = useState<PromotionalMessage[]>([]'
+  const [promotionalMessages, setPromotionalMessages] = useState<PromotionalMessage[]>([]
   const [analytics, setAnalytics] = useState<BroadcastCommunicationAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'broadcasts' | 'announcements' | 'campaigns' | 'automations' | 'promotions' | 'analytics'>('broadcasts
   const [selectedType, setSelectedType] = useState<string>('all
@@ -176,7 +176,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         openRate: 80,
         clickRate: 20,'
         conversionRate: 15,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiOptimization: {
         id: '1',
         optimizationScore: 87,'
@@ -195,7 +195,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         successRate: 85,
         conversionRate: 12,'
         averageResponseTime: 2.5,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiAnalysis: {
         id: '1',
         efficiencyScore: 89,'
@@ -331,7 +331,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 Broadcasts ({broadcasts.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('announcements')}''``
+                onClick={() => setActiveTab('announcements')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'announcements
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -341,7 +341,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 Announcements ({announcements.length}
               </button>'
               `
-                onClick={() => setActiveTab('campaigns')}''``
+                onClick={() => setActiveTab('campaigns')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'campaigns
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -351,7 +351,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 Campaigns ({campaigns.length}
               </button>'
               `
-                onClick={() => setActiveTab('automations')}''``
+                onClick={() => setActiveTab('automations')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'automations
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -371,7 +371,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 Promotions ({promotionalMessages.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -475,7 +475,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Announcements Tab */},"''
 {activeTab === 'announcements' && (
               <div className="space-y-8>" 
@@ -547,7 +547,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Campaigns Tab */}, ''
 {activeTab === 'campaigns' && (
               <div className="space-y-8>"
@@ -611,7 +611,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Automations Tab */},"''
 {activeTab === 'automations' && (
               <div className=" space-y-8>
@@ -676,7 +676,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 ))}
               </div>
             )} '
-            {/* Promotions Tab */},''
+            {/* Promotions Tab */},
 {activeTab === 'promotions' && ("
               <div className=" space-y-8>
                 {promotionalMessages.map((promotion) => (
@@ -742,7 +742,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className=" space-y-8>

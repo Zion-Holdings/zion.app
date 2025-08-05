@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -16,7 +16,7 @@ interface Notification {'
   };
   icon?: string;}
 const NotificationsPage: NextPage = () => {
-  ;'
+  ;
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [filter, setFilter] = useState<'all' | 'unread' | 'read'>('all');
   const [typeFilter, setTypeFilter] = useState<string>('all');
@@ -36,9 +36,9 @@ const NotificationsPage: NextPage = () => {
           read: false,'
           action: {
             label: 'View Service',
-            url: '/services/ai-model-development'}'
+            url: '/services/ai-model-development'}
           }
-          icon: '🤖'}'
+          icon: '🤖'}
         {
           id: '2',
           type: 'talent',
@@ -50,7 +50,7 @@ const NotificationsPage: NextPage = () => {
             label: 'View Profile',
             url: '/talents
           }
-          icon: '👨‍💻'}'
+          icon: '👨‍💻'}
         {
           id: '3',
           type: 'payment',
@@ -62,7 +62,7 @@ const NotificationsPage: NextPage = () => {
             label: 'View Receipt',
             url: '/dashboard
           }
-          icon: '💰'}'
+          icon: '💰'}
         {
           id: '4',
           type: 'service',
@@ -74,7 +74,7 @@ const NotificationsPage: NextPage = () => {
             label: 'View Details',
             url: '/quote-request
           }
-          icon: '📋'}'
+          icon: '📋'}
         {
           id: '5',
           type: 'info',
@@ -86,7 +86,7 @@ const NotificationsPage: NextPage = () => {
             label: 'Learn More',
             url: '/about
           }
-          icon: '🔔'}'
+          icon: '🔔'}
         {
           id: '6',
           type: 'marketplace',
@@ -98,7 +98,7 @@ const NotificationsPage: NextPage = () => {
             label: 'View Equipment',
             url: '/equipment
           }
-          icon: '⚙️'}'
+          icon: '⚙️'}
         {
           id: '7',
           type: 'service',
@@ -110,7 +110,7 @@ const NotificationsPage: NextPage = () => {
             label: 'Chat Now',
             url: '/real-time-chat
           }
-          icon: '👨‍💼'}'
+          icon: '👨‍💼'}
         {
           id: '8',
           type: 'talent',
@@ -122,7 +122,7 @@ const NotificationsPage: NextPage = () => {
             label: 'View Profile',
             url: '/talents
           }
-          icon: '🎯'}'
+          icon: '🎯'}
         {
           id: '9',
           type: 'payment',
@@ -134,7 +134,7 @@ const NotificationsPage: NextPage = () => {
             label: 'Manage Billing',
             url: '/dashboard
           }
-          icon: '💳'}'
+          icon: '💳'}
         {
           id: '10',
           type: 'warning',
@@ -156,9 +156,9 @@ const NotificationsPage: NextPage = () => {
 '
   const filteredNotifications = notifications.filter(notification => {
     const matchesFilter = filter === 'all' || 
-      (filter === 'unread' && !notification.read) || ';'
-      (filter === 'read' && notification.read);'
-    const matchesType = typeFilter === 'all' || notification.type === typeFilter;'
+      (filter === 'unread' && !notification.read) || ';
+      (filter === 'read' && notification.read);
+    const matchesType = typeFilter === 'all' || notification.type === typeFilter;
     const matchesSearch = searchTerm === '' || 
       notification.title.toLowerCase().includes(searchTerm.toLowerCase()) ||;
       notification.message.toLowerCase().includes(searchTerm.toLowerCase());
@@ -197,7 +197,7 @@ const NotificationsPage: NextPage = () => {
       default: return '🔔';}
   };
   const getNotificationColor = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'success': return 'border-green-500 bg-green-500/10";
       case 'error': return 'border-red-500 bg-red-500/10";
       case 'warning': return 'border-yellow-500 bg-yellow-500/10";

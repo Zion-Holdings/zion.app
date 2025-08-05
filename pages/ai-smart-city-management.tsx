@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -65,7 +65,7 @@ interface EnvironmentalMonitoring {
     airQualityTrend: string
     trafficPrediction: string
     energyDemand: string
-    recommendations: string[]}}'
+    recommendations: string[]}}
 interface AIInsight {
   type: 'optimization' | 'sustainability' | 'efficiency' | 'prediction
   title: string
@@ -77,7 +77,7 @@ const AISmartCityManagementPage: NextPage = () => {
   const [infrastructure, setInfrastructure] = useState<CityInfrastructure[]>([]
   const [planning, setPlanning] = useState<UrbanPlanning[]>([]
   const [services, setCityServices] = useState<CityService[]>([]
-  const [environmental, setEnvironmental] = useState<EnvironmentalMonitoring[]>([]'
+  const [environmental, setEnvironmental] = useState<EnvironmentalMonitoring[]>([]
   const [insights, setInsights] = useState<AIInsight[]>([]
   const [selectedView, setSelectedView] = useState<'overview' | 'infrastructure' | 'planning' | 'services' | 'environmental' | 'insights'>('overview
   const [isLoading, setIsLoading] = useState(false
@@ -95,11 +95,11 @@ const AISmartCityManagementPage: NextPage = () => {
       aiOptimization: {'
         score: 9.1,
         recommendations: ['Implement demand response programs', 'Optimize peak load distribution'],
-        predictedIssues: ['Potential overload during heat wave']}}'
+        predictedIssues: ['Potential overload during heat wave']}}
       sensors: [
         { type: 'Power Meter', status: 'active', data: { current: 78, voltage: 220 } }
         { type: 'Temperature', status: 'active', data: { temp: 24}
-}]}'
+}]}
     {
       id: '2',
       name: 'Intelligent Traffic System',
@@ -112,7 +112,7 @@ const AISmartCityManagementPage: NextPage = () => {
       aiOptimization: {'
         score: 8.7,
         recommendations: ['Optimize signal timing', 'Implement adaptive routing'],
-        predictedIssues: ['Congestion expected during rush hour']}'
+        predictedIssues: ['Congestion expected during rush hour']}
       sensors: [
         { type: 'Traffic Camera', status: 'active', data: { density: 85 } }
         { type: 'Vehicle Counter', status: 'active', data: { count: 1200}
@@ -132,9 +132,9 @@ const AISmartCityManagementPage: NextPage = () => {
         impactScore: 9.2,
         sustainabilityScore: 9.5,'
         economicScore: 8.8,
-        recommendations: ['Increase solar panel density', 'Add energy storage systems']'
+        recommendations: ['Increase solar panel density', 'Add energy storage systems']
       }
-      stakeholders: ['Residents', 'Businesses', 'Energy Companies']}'
+      stakeholders: ['Residents', 'Businesses', 'Energy Companies']}
     {
       id: '2',
       name: 'Smart Transportation Hub',
@@ -148,7 +148,7 @@ const AISmartCityManagementPage: NextPage = () => {
         impactScore: 8.9,
         sustainabilityScore: 9.1,'
         economicScore: 9.3,
-        recommendations: ['Integrate with existing transit', 'Add electric charging stations']'
+        recommendations: ['Integrate with existing transit', 'Add electric charging stations']
       }
       stakeholders: ['Transit Authority', 'Commuters', 'Local Businesses']
     }]
@@ -167,7 +167,7 @@ const AISmartCityManagementPage: NextPage = () => {
       coverage: {
         area: 95,
         population: 98,
-        accessibility: 96}}'
+        accessibility: 96}}
     {
       id: '2',
       name: 'Smart Waste Management',
@@ -199,7 +199,7 @@ const AISmartCityManagementPage: NextPage = () => {
         airQualityTrend: 'Improving over next 6 hours',
         trafficPrediction: 'Peak congestion in 2 hours',
         energyDemand: 'High demand expected this evening',
-        recommendations: ['Activate air purification systems', 'Optimize traffic flow']}}'
+        recommendations: ['Activate air purification systems', 'Optimize traffic flow']}}
     {
       id: '2',
       location: 'Residential District',
@@ -224,7 +224,7 @@ const AISmartCityManagementPage: NextPage = () => {
       confidence: 94,
       impact: 'positive',
       actionItems: ['Expand AI optimization', 'Implement predictive maintenance', 'Scale successful programs']
-    },'
+    },
 {
       type: 'sustainability',
       title: 'Green Energy Integration',
@@ -232,7 +232,7 @@ const AISmartCityManagementPage: NextPage = () => {
       confidence: 91,
       impact: 'positive',
       actionItems: ['Increase renewable energy sources', 'Expand green building programs', 'Optimize energy distribution']
-    },'
+    },
     {
       type: 'efficiency',
       title: 'Service Delivery Optimization',
@@ -240,7 +240,7 @@ const AISmartCityManagementPage: NextPage = () => {
       confidence: 89,
       impact: 'positive',
       actionItems: ['Optimize service routes', 'Implement predictive analytics', 'Enhance citizen engagement']
-    },'
+    },
 {
       type: 'prediction',
       title: 'Urban Growth Analysis',
@@ -360,7 +360,7 @@ const AISmartCityManagementPage: NextPage = () => {
           </div>
         ) : ("
           </>
-            {/* Overview */},'
+            {/* Overview */},
 {selectedView === 'overview' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 mb-8> 
                 </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
@@ -384,7 +384,7 @@ const AISmartCityManagementPage: NextPage = () => {
                   <div className="text-gray-400>AI" Insights</div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Infrastructure */},"''
 {selectedView === 'infrastructure' && (
               <div className="space-y-6">
@@ -445,7 +445,7 @@ const AISmartCityManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Urban Planning */},"''
 {selectedView === 'planning' && (
               <div className="space-y-6>"
@@ -513,7 +513,7 @@ const AISmartCityManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* City Services */},"''
 {selectedView === 'services' && (
               <div className="space-y-6>"
@@ -584,7 +584,7 @@ const AISmartCityManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Environmental Monitoring */},"''
 {selectedView === 'environmental' && (
               <div className="space-y-6>"
@@ -637,7 +637,7 @@ const AISmartCityManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* AI Insights */},"''
 {selectedView === 'insights' && (
               <div className="space-y-6">
@@ -687,7 +687,7 @@ const AISmartCityManagementPage: NextPage = () => {
   </div>
 
   </div">
-  </div> ;"
+  </div> ;
 };
 ''`
 export default AISmartCityManagementPage )))))))))))))))))"'"'`

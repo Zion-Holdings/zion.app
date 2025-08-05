@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Event {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'meeting' | 'webinar' | 'workshop' | 'conference' | 'deadline' | 'milestone' | 'custom";
   status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled";
@@ -19,7 +19,7 @@ interface Event {
   aiAnalysis: AIEventAnalysis;}
 interface EventAttendee {
   id: string;
-  name: string;'
+  name: string;
   role: string;
   status: 'confirmed' | 'pending' | 'declined' | 'maybe";
   responseTime: Date;}
@@ -27,7 +27,7 @@ interface EventAgenda {
   id: string;
   title: string;
   duration: number;
-  speaker?: string;'
+  speaker?: string;
   description: string;
   status: 'pending' | 'in-progress' | 'completed';}
 interface EventPerformance {
@@ -43,7 +43,7 @@ interface AIEventAnalysis {
   recommendations: string[];
   riskFactors: string[];}
 interface Calendar {
-  id: string;'
+  id: string;
   name: string;
   type: 'personal' | 'team' | 'project' | 'organization";
   events: string[];
@@ -92,7 +92,7 @@ interface Timeline {
 interface TimelineMilestone {
   id: string;
   title: string;
-  description: string;'
+  description: string;
   targetDate: Date;
   status: 'upcoming' | 'in-progress' | 'completed' | 'delayed";
   progress: number;
@@ -100,7 +100,7 @@ interface TimelineMilestone {
 interface TimelineDeadline {
   id: string;
   title: string;
-  description: string;'
+  description: string;
   dueDate: Date;
   priority: 'low' | 'medium' | 'high' | 'critical";
   status: 'pending' | 'in-progress' | 'completed' | 'overdue";
@@ -127,7 +127,7 @@ interface EventCalendarAnalytics {
   aiInsights: EventCalendarInsight[];}
 interface EventCalendarInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -135,7 +135,7 @@ interface EventCalendarInsight {
 const AIPoweredEventCalendarPage: NextPage = () => {
   const [events, setEvents] = useState<Event[]>([]
   const [calendars, setCalendars] = useState<Calendar[]>([]
-  const [timelines, setTimelines] = useState<Timeline[]>([]'
+  const [timelines, setTimelines] = useState<Timeline[]>([]
   const [analytics, setAnalytics] = useState<EventCalendarAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'events' | 'calendars' | 'timelines' | 'analytics'>('events
   const [selectedType, setSelectedType] = useState<string>('all
@@ -159,7 +159,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           role: 'Product Manager',
           status: 'confirmed',
           responseTime: new Date('2024-01-20T09:00:00'}
-        },'
+        },
 {
           id: '2',
           name: 'Mike Chen',
@@ -175,7 +175,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           speaker: 'Sarah Johnson',
           description: 'Introduction to the AI-powered marketplace features',
           status: 'pending'
-        },'
+        },
 {
           id: '2',
           title: 'Technical Deep Dive','
@@ -189,13 +189,13 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         engagementScore: 92,
         satisfactionRate: 88,'
         completionRate: 95,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiAnalysis: {
         id: '1',
         successProbability: 94,'
         engagementPrediction: 89,
         recommendations: ['Enhance interactive elements', 'Prepare backup speakers'],
-        riskFactors: ['Technical issues', 'Low attendance']}}'
+        riskFactors: ['Technical issues', 'Low attendance']}}
     {
       id: '2',
       title: 'Q1 Strategy Review Meeting',
@@ -213,7 +213,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           role: 'Marketing Director',
           status: 'confirmed',
           responseTime: new Date('2024-01-19T15:00:00'
-        },'
+        },
 {
           id: '4',
           name: 'David Kim',
@@ -228,7 +228,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           duration: 45,
           description: 'Review of Q1 performance metrics and achievements',
           status: 'pending'
-        },'
+        },
 {
           id: '4',
           title: 'Q2 Planning','
@@ -241,7 +241,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         engagementScore: 85,
         satisfactionRate: 82,'
         completionRate: 88,
-        lastUpdated: new Date('2024-01-20T12:00:00'}'
+        lastUpdated: new Date('2024-01-20T12:00:00'}
       aiAnalysis: {
         id: '2',
         successProbability: 87,'
@@ -279,12 +279,12 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         completedEvents: 20,
         averageAttendance: 85,'
         efficiencyScore: 88,
-        lastOptimized: new Date('2024-01-19T15:00:00'}'
+        lastOptimized: new Date('2024-01-19T15:00:00'}
       aiOptimization: {
         id: '1',
         optimizationScore: 91,'
         timeEfficiency: 87,
-        recommendations: ['Optimize meeting durations', 'Implement smart scheduling']}}'
+        recommendations: ['Optimize meeting durations', 'Implement smart scheduling']}}
     {
       id: '2',
       name: 'Marketing Campaign Calendar',
@@ -314,7 +314,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         completedEvents: 10,
         averageAttendance: 92,'
         efficiencyScore: 90,
-        lastOptimized: new Date('2024-01-18T10:00:00'}'
+        lastOptimized: new Date('2024-01-18T10:00:00'}
       aiOptimization: {
         id: '2',
         optimizationScore: 89,'
@@ -335,7 +335,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           status: 'in-progress',
           progress: 85,
           dependencies: []
-        },'
+        },
 {
           id: '2',
           title: 'Beta Testing Phase',
@@ -354,7 +354,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
           priority: 'critical',
           status: 'in-progress',
           assignedTo: 'Security Team'
-        },'
+        },
 {
           id: '2',
           title: 'Marketing Materials Ready',
@@ -369,13 +369,13 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         completedMilestones: 2,
         onTimeDeadlines: 8,
         totalDeadlines: 10,
-        efficiencyScore: 87}'
+        efficiencyScore: 87}
       aiAnalysis: {
         id: '1',
         completionProbability: 89,'
         riskAssessment: 15,
         recommendations: ['Accelerate security audit', 'Prepare backup resources'],
-        predictedDelays: ['Marketing materials may be delayed']}}'
+        predictedDelays: ['Marketing materials may be delayed']}}
     {
       id: '2',
       name: 'Q1 Strategic Initiatives',
@@ -405,7 +405,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         completedMilestones: 1,
         onTimeDeadlines: 5,
         totalDeadlines: 6,
-        efficiencyScore: 83}'
+        efficiencyScore: 83}
       aiAnalysis: {
         id: '2',
         completionProbability: 85,'
@@ -428,7 +428,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Continue AI monitoring', 'Implement predictive scheduling']
-      },'
+      },
 {
         id: '2',
         title: 'Timeline Efficiency',
@@ -529,7 +529,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                 Events ({events.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('calendars')}''``
+                onClick={() => setActiveTab('calendars')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'calendars
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -539,7 +539,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                 Calendars ({calendars.length}
               </button>'
               `
-                onClick={() => setActiveTab('timelines')}''``
+                onClick={() => setActiveTab('timelines')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'timelines
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -549,7 +549,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                 Timelines ({timelines.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -654,7 +654,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                 </div>
               </div>
             )}"'
-            {/* Calendars Tab */},''
+            {/* Calendars Tab */},
 {activeTab === 'calendars' && ("
               <div className=" space-y-8>
                 {calendars.map((calendar) => (
@@ -716,7 +716,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Timelines Tab */},
 {activeTab === 'timelines' && ("
               <div className="space-y-8>" 
@@ -778,7 +778,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */}, ''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"

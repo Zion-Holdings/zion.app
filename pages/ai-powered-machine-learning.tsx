@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface MLModel {
-  id: string;'
+  id: string;
   name: string;
   type: 'classification' | 'regression' | 'clustering' | 'nlp' | 'computer-vision' | 'recommendation";
   status: 'training' | 'deployed' | 'failed' | 'archived' | 'monitoring";
@@ -26,7 +26,7 @@ interface MLModel {
   };}
 interface TrainingJob {
   id: string;
-  modelName: string;'
+  modelName: string;
   type: string;
   status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled";
   progress: number;
@@ -49,14 +49,14 @@ interface MLAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredMachineLearningPage: NextPage = () => {
   ;
   const [models, setModels] = useState<MLModel[]>([]);
-  const [trainingJobs, setTrainingJobs] = useState<TrainingJob[]>([]);'
+  const [trainingJobs, setTrainingJobs] = useState<TrainingJob[]>([]);
   const [analytics, setAnalytics] = useState<MLAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'models' | 'training' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -87,7 +87,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             throughput: 1200,
             errorRate: 0.3,
             cpuUsage: 23,
-            memoryUsage: 67}}}'
+            memoryUsage: 67}}}
         {
           id: '2',
           name: 'Revenue Forecasting Model',
@@ -107,7 +107,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             throughput: 1800,
             errorRate: 0.2,
             cpuUsage: 18,
-            memoryUsage: 45}}'
+            memoryUsage: 45}}
         {
           id: '3',
           name: 'Product Recommendation Engine',
@@ -147,7 +147,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             loss: 0.234,
             accuracy: 76.5,
             validationAccuracy: 74.2}
-          aiAssisted: true}'
+          aiAssisted: true}
         {
           id: '2',
           modelName: 'Customer Segmentation Model',
@@ -177,7 +177,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
           improvement: -2.5,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'Training Speed',
@@ -186,7 +186,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
           improvement: -40.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Deployment Success',
@@ -195,7 +195,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
           improvement: -1.6,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'AI Optimization',
@@ -213,7 +213,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
     } 1000);
   } []);
   const filteredModels = useMemo(() => {'
-    let filtered = models.filter(model => {';'
+    let filtered = models.filter(model => {';
       if (filterType !== 'all' && model.type !== filterType) return false;
       if (filterStatus !== 'all' && model.status !== filterStatus) return false;
       if (searchTerm && !model.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -236,7 +236,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
     return filtered;
   } [models, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'deployed': return 'text-green-400 bg-green-500/20";
       case 'training': return 'text-blue-400 bg-blue-500/20";
       case 'monitoring': return 'text-yellow-400 bg-yellow-500/20";
@@ -245,7 +245,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'classification': return '🎯";
       case 'regression': return '📈";
       case 'clustering': return '🎪";
@@ -255,7 +255,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       default: return '🤖';}
   };
   const getJobStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'running': return 'text-blue-400 bg-blue-500/20";
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -264,7 +264,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -354,7 +354,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-2 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -378,7 +378,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* ML Models */},
 {selectedView === 'models' && ("
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
@@ -437,7 +437,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Training Jobs */},
 {selectedView === 'training' && ("
           <div className="space-y-6>" 

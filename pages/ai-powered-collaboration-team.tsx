@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Team {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'project' | 'department' | 'cross-functional' | 'virtual' | 'partnership' | 'alliance";
   status: 'active' | 'inactive' | 'forming' | 'storming' | 'norming' | 'performing";
@@ -24,10 +24,10 @@ interface TeamMember {
   collaboration: number;
   lastActive: Date;}
 interface TeamProject {
-  id: string;'
+  id: string;
   name: string;
   status: 'planning' | 'active' | 'completed' | 'on-hold";
-  progress: number;'
+  progress: number;
   deadline: Date;
   priority: 'low' | 'medium' | 'high' | 'critical';}
 interface TeamPerformance {
@@ -45,7 +45,7 @@ interface AITeamAnalysis {
   predictedOutcomes: string[];}
 interface Workspace {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'virtual' | 'hybrid' | 'physical' | 'project-based";
   teams: string[];
@@ -53,7 +53,7 @@ interface Workspace {
   performance: WorkspacePerformance;
   aiOptimization: AIWorkspaceOptimization;}
 interface WorkspaceTool {
-  id: string;'
+  id: string;
   name: string;
   category: 'communication' | 'project-management' | 'file-sharing' | 'collaboration' | 'analytics";
   status: 'active' | 'inactive' | 'maintenance";
@@ -71,7 +71,7 @@ interface AIWorkspaceOptimization {
   efficiencyGains: number;
   recommendations: string[];}
 interface Partnership {
-  id: string;'
+  id: string;
   name: string;
   type: 'strategic' | 'operational' | 'research' | 'marketing' | 'technical";
   status: 'active' | 'pending' | 'completed' | 'terminated";
@@ -87,7 +87,7 @@ interface PartnershipMember {
   contribution: number;
   lastEngagement: Date;}
 interface PartnershipObjective {
-  id: string;'
+  id: string;
   description: string;
   status: 'pending' | 'in-progress' | 'completed' | 'delayed";
   progress: number;
@@ -114,7 +114,7 @@ interface CollaborationTeamAnalytics {
   aiInsights: CollaborationTeamInsight[];}
 interface CollaborationTeamInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -122,7 +122,7 @@ interface CollaborationTeamInsight {
 const AIPoweredCollaborationTeamPage: NextPage = () => {
   const [teams, setTeams] = useState<Team[]>([]
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]
-  const [partnerships, setPartnerships] = useState<Partnership[]>([]'
+  const [partnerships, setPartnerships] = useState<Partnership[]>([]
   const [analytics, setAnalytics] = useState<CollaborationTeamAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'teams' | 'workspaces' | 'partnerships' | 'analytics'>('teams
   const [selectedType, setSelectedType] = useState<string>('all
@@ -161,7 +161,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         productivity: 88,
         communication: 91,
         innovation: 89,
-        lastUpdated: new Date(}'
+        lastUpdated: new Date(}
       aiAnalysis: {
         id: '1',
         efficiency: 91,'
@@ -182,7 +182,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         activeProjects: 15,
         collaborationScore: 92,
         productivityScore: 90,
-        lastOptimized: new Date(}'
+        lastOptimized: new Date(}
       aiOptimization: {
         id: '1',
         optimizationScore: 88,'
@@ -217,7 +217,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         collaboration: 94,
         valueCreation: 92,
         riskManagement: 88,
-        lastEvaluated: new Date(}'
+        lastEvaluated: new Date(}
       aiAnalysis: {
         id: '1',
         successProbability: 85,'
@@ -333,7 +333,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                 Teams ({teams.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('workspaces')}''``
+                onClick={() => setActiveTab('workspaces')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'workspaces
                     ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white'`
@@ -343,7 +343,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                 Workspaces ({workspaces.length}
               </button>'
               `
-                onClick={() => setActiveTab('partnerships')}''``
+                onClick={() => setActiveTab('partnerships')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'partnerships
                     ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white'`
@@ -353,7 +353,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                 Partnerships ({partnerships.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white'`
@@ -451,7 +451,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Workspaces Tab */},
 {activeTab === 'workspaces' && ("
               <div className="space-y-8>" 
@@ -513,7 +513,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Partnerships Tab */}, ''
 {activeTab === 'partnerships' && (
               <div className="space-y-8>"
@@ -577,7 +577,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className=" space-y-8>

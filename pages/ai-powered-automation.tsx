@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect }  from "react";
@@ -8,7 +8,7 @@ const AIPoweredAutomation: NextPage = () => {
     workflows: 12,
     active: 8,
     completed: 156,
-    efficiency: 87}}'
+    efficiency: 87}}
   const [workflows, setWorkflows] = useState([
     { id: 1, name: 'Data Processing Pipeline', status: 'active', efficiency: 94, lastRun: '2 min ago' },
 { id: 2, name: 'Email Marketing Automation', status: 'active', efficiency: 89, lastRun: '5 min ago' },

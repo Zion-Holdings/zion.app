@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -249,7 +249,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Intelligence Dashboard */},'
+            {/* Intelligence Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -308,7 +308,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum AI Assistants */},''
+            {/* Quantum AI Assistants */},
 {activeTab === 'assistants' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum AI Assistants</h2>
@@ -349,7 +349,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Intelligence */},"''
 {activeTab === 'intelligence' && (
               <div className="space-y-6>"
@@ -391,7 +391,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Consciousness */},"''
 {activeTab === 'consciousness' && (
               <div className="space-y-6>"
@@ -435,7 +435,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Brains */}, ''
 {activeTab === 'brains' && (
               <div className="space-y-6">
@@ -479,7 +479,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Knowledge */},''
+            {/* Quantum Knowledge */},
 {activeTab === 'knowledge' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Knowledge</h2>
@@ -520,7 +520,7 @@ const AIPoweredQuantumAIAssistantIntelligence: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Communication */},"''
 {activeTab === 'communication' && (
               <div className="space-y-6>"

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
 
 interface Dispute {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -41,23 +41,23 @@ interface Mediator {
   id: string;
   name: string;
   specialization: string[];
-  rating: number;'
+  rating: number;
   casesResolved: number;
   availability: 'available' | 'busy' | 'unavailable";
   hourlyRate: number;}
 interface ResolutionProposal {
   id: string;
-  disputeId: string;'
+  disputeId: string;
   proposedBy: string;
   type: 'refund' | 'partial_refund' | 'service_redo' | 'compensation' | 'apology' | 'other";
-  amount?: number;'
+  amount?: number;
   description: string;
   status: 'pending' | 'accepted' | 'rejected' | 'modified";
   createdAt: Date;
   responses: ResolutionResponse[];}
 interface ResolutionResponse {
   id: string;
-  proposalId: string;'
+  proposalId: string;
   partyId: string;
   response: 'accept' | 'reject' | 'modify";
   comment?: string;
@@ -77,7 +77,7 @@ const DisputeResolutionPage: NextPage = () => {'
       type: 'service','
       parties: {
         complainant: 'TechCorp Solutions',
-        respondent: 'AI Development Pro'}}'
+        respondent: 'AI Development Pro'}}
       amount: 15000,
       currency: 'USD',
       createdAt: new Date('2024-01-15'),
@@ -92,7 +92,7 @@ const DisputeResolutionPage: NextPage = () => {'
           uploadedBy: 'TechCorp Solutions',
           uploadedAt: new Date('2024-01-15'),
           url: '#'
-        },'
+        },
 {
           id: 'EVID-002',
           type: 'document',
@@ -110,7 +110,7 @@ const DisputeResolutionPage: NextPage = () => {'
           description: 'Dispute filed by TechCorp Solutions',
           timestamp: new Date('2024-01-15'),
           actor: 'TechCorp Solutions'
-        },'
+        },
 {
           id: 'TIMELINE-002',
           type: 'assigned',
@@ -118,7 +118,7 @@ const DisputeResolutionPage: NextPage = () => {'
           description: 'Sarah Johnson assigned as mediator',
           timestamp: new Date('2024-01-16'),
           actor: 'System'
-        },'
+        },
     {
           id: 'TIMELINE-003',
           type: 'mediation_started',
@@ -126,7 +126,7 @@ const DisputeResolutionPage: NextPage = () => {'
           description: 'Initial mediation session scheduled',
           timestamp: new Date('2024-01-17'),
           actor: 'Sarah Johnson'
-        }]}'
+        }]}
     {
       id: 'DISP-002',
       title: 'Payment Dispute',
@@ -136,7 +136,7 @@ const DisputeResolutionPage: NextPage = () => {'
       type: 'payment','
       parties: {
         complainant: 'Freelance Developer',
-        respondent: 'Startup Inc'}'
+        respondent: 'Startup Inc'}
       amount: 5000,
       currency: 'USD',
       createdAt: new Date('2024-01-18'),
@@ -159,7 +159,7 @@ const DisputeResolutionPage: NextPage = () => {'
           description: 'Payment dispute filed',
           timestamp: new Date('2024-01-18'),
           actor: 'Freelance Developer'
-        }]}'
+        }]}
     {
       id: 'DISP-003',
       title: 'Delivery Timeline Dispute',
@@ -169,7 +169,7 @@ const DisputeResolutionPage: NextPage = () => {'
       type: 'delivery','
       parties: {
         complainant: 'Marketing Agency',
-        respondent: 'Web Development Studio'}'
+        respondent: 'Web Development Studio'}
       amount: 8000,
       currency: 'USD',
       createdAt: new Date('2024-01-10'),
@@ -194,7 +194,7 @@ const DisputeResolutionPage: NextPage = () => {'
           description: 'Delivery dispute filed',
           timestamp: new Date('2024-01-10'),
           actor: 'Marketing Agency'
-        },'
+        },
 {
           id: 'TIMELINE-006',
           type: 'resolved',
@@ -213,7 +213,7 @@ const DisputeResolutionPage: NextPage = () => {'
       casesResolved: 45,
       availability: 'available',
       hourlyRate: 150
-    },'
+    },
 {
       id: 'MED-002',
       name: 'Michael Chen',
@@ -222,7 +222,7 @@ const DisputeResolutionPage: NextPage = () => {'
       casesResolved: 67,
       availability: 'busy',
       hourlyRate: 140
-    },'
+    },
     {
       id: 'MED-003',
       name: 'Dr. Emily Rodriguez',
@@ -250,7 +250,7 @@ const DisputeResolutionPage: NextPage = () => {'
           response: 'accept',
           comment: 'This is a fair resolution',
           timestamp: new Date('2024-01-19'
-        },'
+        },
 {
           id: 'RESP-002',
           proposalId: 'PROP-001',
@@ -282,12 +282,12 @@ const DisputeResolutionPage: NextPage = () => {'
       case 'quality': return '📊
       case 'delivery': return '📦
       case 'communication': return '💬
-      default: return '❓'}}'
+      default: return '❓'}}
   const formatCurrency = (amount: number, currency: string = 'USD') => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: currency
-    }).format(amount}'
+    }).format(amount}
   const filteredDisputes = disputes.filter(dispute => {
     const statusMatch = filterStatus === 'all' || dispute.status === filterStatus
     const typeMatch = filterType === 'all' || dispute.type === filterType
@@ -423,7 +423,7 @@ const DisputeResolutionPage: NextPage = () => {'
             </select>
           </div>
         )}
-        {/* Tab Content */},'
+        {/* Tab Content */},
 {activeTab === 'disputes' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -613,7 +613,7 @@ const DisputeResolutionPage: NextPage = () => {'
               ))}
             </div>
           </div>
-        )}'
+        )}
 "''
         {activeTab === 'resources' && (
           <div className="space-y-8>"
@@ -742,7 +742,7 @@ const DisputeResolutionPage: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default DisputeResolutionPage ))))))))))))))"'"'`

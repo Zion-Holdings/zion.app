@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
   const [smartLearning, setSmartLearning] = useState<SmartLearning[]>([]
   const [educationalAnalytics, setEducationalAnalytics] = useState<EducationalAnalytics[]>([]
   const [personalizedTraining, setPersonalizedTraining] = useState<PersonalizedTraining[]>([]
-  const [educationalOptimization, setEducationalOptimization] = useState<EducationalOptimization[]>([]'
+  const [educationalOptimization, setEducationalOptimization] = useState<EducationalOptimization[]>([]
   const [data, setData] = useState<EducationalData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'learning' | 'analytics' | 'training' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         performanceScore: 9.1,'
         engagementLevel: 8.7,
         learningInsights: ['High engagement with interactive content', 'Video-based learning preferred', 'Gamification increases retention'],
-        recommendations: ['Expand interactive content', 'Enhance video quality', 'Implement more gamification']}}}'
+        recommendations: ['Expand interactive content', 'Enhance video quality', 'Implement more gamification']}}}
     {
       id: '2',
       name: 'Virtual Classroom System',
@@ -116,7 +116,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         performanceScore: 8.9,'
         engagementLevel: 8.5,
         learningInsights: ['Real-time collaboration effective', 'Breakout rooms increase participation', 'Screen sharing enhances learning'],
-        recommendations: ['Optimize breakout room allocation', 'Enhance screen sharing features', 'Improve real-time feedback']}}'
+        recommendations: ['Optimize breakout room allocation', 'Enhance screen sharing features', 'Improve real-time feedback']}}
     {
       id: '3',
       name: 'Adaptive Learning Engine',
@@ -146,7 +146,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         dataAccuracy: 9.4,'
         predictionReliability: 8.9,
         optimizationOpportunities: ['Improve prediction models', 'Enhance data collection', 'Expand analytics coverage'],
-        improvementStrategies: ['Implement advanced ML models', 'Enhance data quality', 'Expand metric tracking']}}'
+        improvementStrategies: ['Implement advanced ML models', 'Enhance data quality', 'Expand metric tracking']}}
     {
       id: '2',
       name: 'Learning Pattern Analysis',
@@ -160,7 +160,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         dataAccuracy: 9.1,'
         predictionReliability: 8.6,
         optimizationOpportunities: ['Enhance pattern recognition', 'Improve real-time analysis', 'Expand behavioral tracking'],
-        improvementStrategies: ['Implement pattern recognition AI', 'Enhance real-time processing', 'Expand tracking capabilities']}}'
+        improvementStrategies: ['Implement pattern recognition AI', 'Enhance real-time processing', 'Expand tracking capabilities']}}
     {
       id: '3',
       name: 'Content Effectiveness Monitor',
@@ -190,7 +190,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         personalizationScore: 9.2,'
         adaptationEfficiency: 9.5,
         improvementAreas: ['Enhance curriculum adaptation', 'Improve learning path optimization', 'Expand personalization scope'],
-        recommendations: ['Optimize adaptation algorithms', 'Enhance learning path design', 'Expand personalization features']}}'
+        recommendations: ['Optimize adaptation algorithms', 'Enhance learning path design', 'Expand personalization features']}}
     {
       id: '2',
       name: 'Personalized Learning Pathways',
@@ -204,7 +204,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         personalizationScore: 8.9,'
         adaptationEfficiency: 9.2,
         improvementAreas: ['Improve pathway optimization', 'Enhance skill mapping', 'Expand pathway options'],
-        recommendations: ['Optimize pathway algorithms', 'Enhance skill assessment', 'Expand pathway variety']}}'
+        recommendations: ['Optimize pathway algorithms', 'Enhance skill assessment', 'Expand pathway variety']}}
     {
       id: '3',
       name: 'Skill Gap Analysis System',
@@ -230,12 +230,12 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         totalStudents: 25000,
         improvementRate: 25,
         costSavings: 450000,
-        learningOutcomes: 92}'
+        learningOutcomes: 92}
       aiAnalysis: {
         insights: ['Content optimization improved learning outcomes by 25%', 'Personalized content increased engagement by 30%'],
         trends: ['Improving content effectiveness', 'Increasing student engagement', 'Enhancing learning outcomes'],
         recommendations: ['Expand content optimization', 'Implement A/B testing', 'Enhance personalization'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '2',
       name: 'Curriculum Design AI',
@@ -245,12 +245,12 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         totalStudents: 18000,
         improvementRate: 22,
         costSavings: 320000,
-        learningOutcomes: 89}'
+        learningOutcomes: 89}
       aiAnalysis: {
         insights: ['AI-designed curricula improved completion rates by 22%', 'Adaptive design reduced learning time by 15%'],
         trends: ['Improving curriculum effectiveness', 'Reducing learning time', 'Enhancing completion rates'],
         recommendations: ['Expand AI curriculum design', 'Enhance adaptive features', 'Implement continuous improvement'],
-        impactScore: 8.7}}'
+        impactScore: 8.7}}
     {
       id: '3',
       name: 'Assessment Improvement System',
@@ -260,7 +260,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         totalStudents: 22000,
         improvementRate: 28,
         costSavings: 380000,
-        learningOutcomes: 94}'
+        learningOutcomes: 94}
       aiAnalysis: {
         insights: ['AI-enhanced assessments improved accuracy by 28%', 'Adaptive testing reduced assessment time by 20%'],
         trends: ['Improving assessment accuracy', 'Reducing assessment time', 'Enhancing learning outcomes'],
@@ -281,7 +281,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance personalization']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Training Platforms Driving Learning Outcomes',
@@ -337,14 +337,14 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
       case 'positive': return '🎓
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredSmartLearning = useMemo(() => {'
@@ -498,7 +498,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'learning' && (
           <div className=" space-y-6>
@@ -506,7 +506,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'online-courses', 'virtual-classrooms', 'adaptive-learning', 'skill-assessment', 'certification', 'microlearning'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -553,7 +553,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'analytics' && (
           <div className="space-y-6>" 
@@ -591,7 +591,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'training' && (
           <div className="space-y-6>

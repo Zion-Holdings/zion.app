@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface DataVisualizationProps {
   className?: string;
-  data?: any;}'
+  data?: any;}
 const DataVisualization: React.FC<DataVisualizationProps> = ({ 
   className="'', 
   data 
@@ -27,7 +27,7 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({
         <div className="h-4" bg-gray-200 rounded animate-pulse w-3/4></div>
         <div className="h-4" bg-gray-200 rounded animate-pulse w-1/2></div>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default DataVisualization;"'"'`
+export default DataVisualization;'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -79,7 +79,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
   const [robots, setRobots] = useState<UnderwaterRobot[]>([]
   const [research, setResearch] = useState<MarineResearch[]>([]
   const [monitoring, setMonitoring] = useState<OceanMonitoring[]>([]
-  const [explorations, setExplorations] = useState<UnderwaterExploration[]>([]'
+  const [explorations, setExplorations] = useState<UnderwaterExploration[]>([]
   const [analytics, setAnalytics] = useState<MarineAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'robots' | 'research' | 'monitoring' | 'explorations' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -101,7 +101,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         operationalEfficiency: 9.2,'
         batteryLife: 85,
         riskLevel: 'low',
-        recommendations: ['Monitor battery levels', 'Check pressure sensors', 'Update navigation systems']}}'
+        recommendations: ['Monitor battery levels', 'Check pressure sensors', 'Update navigation systems']}}
     {
       id: '2',
       name: 'Ocean Glider AUV',
@@ -117,7 +117,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         operationalEfficiency: 8.8,'
         batteryLife: 92,
         riskLevel: 'low',
-        recommendations: ['Optimize gliding patterns', 'Monitor current data', 'Check communication systems']}}'
+        recommendations: ['Optimize gliding patterns', 'Monitor current data', 'Check communication systems']}}
     {
       id: '3',
       name: 'Coral Reef Drone',
@@ -149,7 +149,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         successProbability: 0.88,
         scientificValue: 9.2,'
         environmentalImpact: 0.1,
-        recommendations: ['Expand monitoring areas', 'Increase sampling frequency', 'Enhance data analysis']}}'
+        recommendations: ['Expand monitoring areas', 'Increase sampling frequency', 'Enhance data analysis']}}
     {
       id: '2',
       name: 'Deep Sea Vent Research',
@@ -163,7 +163,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         successProbability: 0.75,
         scientificValue: 9.8,'
         environmentalImpact: 0.05,
-        recommendations: ['Optimize dive schedules', 'Enhance safety protocols', 'Improve sample collection']}}'
+        recommendations: ['Optimize dive schedules', 'Enhance safety protocols', 'Improve sample collection']}}
     {
       id: '3',
       name: 'Ocean Acidification Study',
@@ -191,7 +191,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         dataQuality: 9.4,
         coverageArea: 85,'
         accuracyScore: 9.6,
-        recommendations: ['Expand network coverage', 'Improve data transmission', 'Enhance calibration protocols']}}'
+        recommendations: ['Expand network coverage', 'Improve data transmission', 'Enhance calibration protocols']}}
     {
       id: '2',
       name: 'Current Profiler Array',
@@ -203,7 +203,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         dataQuality: 9.1,
         coverageArea: 72,'
         accuracyScore: 9.3,
-        recommendations: ['Optimize deployment locations', 'Enhance data processing', 'Improve maintenance schedule']}}'
+        recommendations: ['Optimize deployment locations', 'Enhance data processing', 'Improve maintenance schedule']}}
     {
       id: '3',
       name: 'Pollution Monitoring Station',
@@ -229,7 +229,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         discoveryProbability: 0.85,
         scientificValue: 9.7,'
         riskAssessment: 0.3,
-        recommendations: ['Continue artifact recovery', 'Document structural changes', 'Monitor preservation status']}}'
+        recommendations: ['Continue artifact recovery', 'Document structural changes', 'Monitor preservation status']}}
     {
       id: '2',
       name: 'Mariana Trench Survey',
@@ -241,7 +241,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         discoveryProbability: 0.92,
         scientificValue: 9.9,'
         riskAssessment: 0.4,
-        recommendations: ['Prepare specialized equipment', 'Plan safety protocols', 'Establish communication systems']}}'
+        recommendations: ['Prepare specialized equipment', 'Plan safety protocols', 'Establish communication systems']}}
     {
       id: '3',
       name: 'Coral Reef Mapping',
@@ -268,7 +268,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         impact: 'negative','
         confidence: 0.91,
         recommendations: ['Expand monitoring networks', 'Implement conservation measures', 'Develop mitigation strategies']
-      },'
+      },
 {
         id: '2',
         title: 'Marine Biodiversity Discovery',
@@ -332,14 +332,14 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
       case 'positive': return '🐠
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredRobots = useMemo(() => {'
@@ -479,14 +479,14 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'robots' && (
           <div className="space-y-6>" 
             {/* Robot Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto pb-2 >'
               {['all', 'ROV', 'AUV', 'HOV', 'Glider', 'Drone'].map((type) => (`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -532,7 +532,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'research' && (
           <div className="space-y-6>

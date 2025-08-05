@@ -12,12 +12,12 @@ const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({'
   padding = 'base',
   maxWidth
 }) => {'
-  const containerClasses = {
+  const $1 = {
     responsive: 'container-responsive',
     fluid: 'container-fluid',
     narrow: 'container-narrow',
-    wide: 'container-wide'}'
-  const paddingClasses = {
+    wide: 'container-wide'}
+  const $1 = {
     none: '',
     sm: 'section-padding-sm',
     base: 'section-padding',

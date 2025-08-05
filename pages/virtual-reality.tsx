@@ -1,5 +1,5 @@
 import React from "react;
-// import ModernLayout from '../components/layout/ModernLayout';'
+// import ModernLayout from '../components/layout/ModernLayout';
 import Head from "next/head";
 import Layout from '../components/Layout";
 import { motion } from "framer-motion";
@@ -197,8 +197,8 @@ Experience: the benefits that transform your business operations
   ;
   </div>
 ;
-  </div >;",
- " );"
+  </div >;,
+ " );
 };
 '
-export default VirtualReality;"'"
+export default VirtualReality;

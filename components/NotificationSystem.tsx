@@ -6,5 +6,5 @@ export default function NotificationSystem() {
     <motion.div className="notification-system>"
       {/* Notification system implementation */}
     </motion.div>;
-  );'
+  );
 }"'"

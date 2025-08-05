@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -94,7 +94,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
       description: 'AI suggests scheduling a code review for the AI integration module',
       priority: 'high',
       action: 'Schedule Review'
-    },'
+    },
 {
       id: '2',
       type: 'meeting',
@@ -102,7 +102,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
       description: 'Daily standup meeting is due in 15 minutes',
       priority: 'medium',
       action: 'Join Meeting'
-    },'
+    },
     {
       id: '3',
       type: 'deadline',
@@ -114,7 +114,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
   useEffect(() => {
     setSelectedProject(mockProjects[0]
     setAiSuggestions(mockSuggestions
-  } []'
+  } []
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth'}
   } [chatMessages]
@@ -294,7 +294,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
               <div className="flex-1" p-6>
                 </div><div className="flex" space-x-8 border-b border-white/10 mb-6 >'
                   {['overview', 'tasks', 'documents', 'chat'].map((tab) => (`
-                      onClick={() => setActiveTab(tab)}'``
+                      onClick={() => setActiveTab(tab)}``
                       className="{`py-4" px-3 border-b-2 font-medium text-sm:transition-colors ${'
                         activeTab === tab
                           ? 'border-purple-500 text-purple-400'`
@@ -359,7 +359,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                       </div>
                     </div>
                   </div>
-                )}'
+                )}
 '"'
                 {activeTab === 'tasks' && (
                   <div className="space-y-4>" 
@@ -436,7 +436,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                       ))}
                     </div>
                   </div>
-                )}'
+                )}
  ''
                 {activeTab === 'chat' && (
                   <div className="flex flex-col h-full>
@@ -457,7 +457,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                     {/* Chat Input */}
                     <div className="flex  space-x-2">
                       "'
-                        onChange={(e) => setNewMessage(e.target.value)}''
+                        onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}"
                         placeholder="Type your" message...
                         className="flex-1" bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus outline-none focus ring-2 focus ring-purple-500

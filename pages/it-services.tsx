@@ -26,7 +26,7 @@ const $1: $2[] = [
     experience: '8+ years',
     specialties: ['Cloud Migration', 'Cybersecurity', 'Digital Transformation'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
 {
     id: '2',
     title: 'CyberShield Pro',
@@ -39,7 +39,7 @@ const $1: $2[] = [
     experience: '12+ years',
     specialties: ['Threat Detection', 'Incident Response', 'Security Audits'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
     {
     id: '3',
     title: 'CloudFirst Technologies',
@@ -52,7 +52,7 @@ const $1: $2[] = [
     experience: '6+ years',
     specialties: ['AWS', 'Azure', 'DevOps'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
 {
     id: '4',
     title: 'DataSync Analytics',
@@ -65,7 +65,7 @@ const $1: $2[] = [
     experience: '10+ years',
     specialties: ['Big Data', 'Business Intelligence', 'Machine Learning'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
     {
     id: '5',
     title: 'NetPro Solutions',
@@ -78,7 +78,7 @@ const $1: $2[] = [
     experience: '15+ years',
     specialties: ['Network Design', 'Infrastructure', 'Maintenance'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
 {
     id: '6',
     title: 'AppWorks Development',
@@ -91,7 +91,7 @@ const $1: $2[] = [
     experience: '9+ years',
     specialties: ['Custom Software', 'Mobile Apps', 'Web Development'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
     {
     id: '7',
     title: 'IT Support Plus',
@@ -104,7 +104,7 @@ const $1: $2[] = [
     experience: '7+ years',
     specialties: ['Help Desk', 'Technical Support', 'Remote Support'],
     imageUrl: '/api/placeholder/400/200'
-  },'
+  },
 {
     id: '8',
     title: 'Digital Innovation Hub',
@@ -119,7 +119,7 @@ const $1: $2[] = [
     imageUrl: '/api/placeholder/400/200'}
 ];
 '
-const categories = [
+const $1 = [
   'All Categories',
   'Managed IT Services',
   'Cybersecurity',
@@ -131,7 +131,7 @@ const categories = [
   'Digital Transformation";
 ];
 '
-const ITServicesPage: React.FC = () => {';'
+const ITServicesPage: React.FC = () => {';
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<'aiScore' | 'rating' | 'reviewCount'>('aiScore');
@@ -167,7 +167,7 @@ const ITServicesPage: React.FC = () => {';'
   };
 
   const renderStars = (rating: number) => {;
-    const stars = [];
+    const $1 = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 

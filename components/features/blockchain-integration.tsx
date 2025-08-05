@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface BlockchainIntegrationProps {
-  className?: string;}'
+  className?: string;}
 const BlockchainIntegration: React.FC<BlockchainIntegrationProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const BlockchainIntegration: React.FC<BlockchainIntegrationProps> = ({ className
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default BlockchainIntegration;"'"'`
+export default BlockchainIntegration;'`

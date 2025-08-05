@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -122,7 +122,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       id: 'qa-001',
       name: 'Grover\'s Algorithm',
       type: 'grover',
-      complexity: 'O(√N)',
+      complexity: 'O(√N),
       qubits: 10,
       depth: 50,'
       successRate: 98.5,
@@ -255,7 +255,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Quantum Dashboard */},'
+            {/* Quantum Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -314,7 +314,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Annealing Problems */},''
+            {/* Annealing Problems */},
 {activeTab === 'annealing' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Annealing Problems</h2>
@@ -358,7 +358,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Optimization */},''
+            {/* Optimization */},
 {activeTab === 'optimization' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Optimization</h2>
@@ -399,7 +399,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Machine Learning */},"''
 {activeTab === 'machine-learning' && (
               <div className="space-y-6>"
@@ -443,7 +443,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Algorithms */}, ''
 {activeTab === 'algorithms' && (
               <div className="space-y-6">
@@ -497,7 +497,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                 </div>
               </div>
             )} '
-            {/* Simulation */},''
+            {/* Simulation */},
 {activeTab === 'simulation' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Simulation</h2>
@@ -541,7 +541,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Error Correction */},''
+            {/* Error Correction */},
 {activeTab === 'error-correction' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Error Correction</h2>

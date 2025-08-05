@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useEffect, useState }  from "react";
 import { useRouter } from "next/router"";
@@ -55,7 +55,7 @@ const Verify: NextPage = () => {'
                 Continue to Login
               </Link>
             </div>
-          )}'
+          )}
            ''
           {status === 'error' && (
             <div className="text-center>"

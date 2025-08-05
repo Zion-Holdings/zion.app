@@ -1,13 +1,13 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { Home, Search, User }  from "lucide-react";
 
 interface SubscriptionTier {
-  id: string;'
+  id: string;
   name: string;
-  type: 'free' | 'basic' | 'premium' | 'enterprise' | 'vip';'
+  type: 'free' | 'basic' | 'premium' | 'enterprise' | 'vip';
   price: number;
   billingCycle: 'monthly' | 'yearly' | 'lifetime";
   features: SubscriptionFeature[];
@@ -18,7 +18,7 @@ interface SubscriptionTier {
   aiScore: number;}
 interface SubscriptionFeature {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   category: 'core' | 'ai' | 'premium' | 'enterprise";
   included: boolean;
@@ -30,13 +30,13 @@ interface SubscriptionFeature {
 interface AIBenefit {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   value: number;
   category: 'productivity' | 'analytics' | 'support' | 'exclusive";
   aiPowered: boolean;}
 interface UserMembership {
   id: string;
-  userId: string;'
+  userId: string;
   tierId: string;
   status: 'active' | 'cancelled' | 'expired' | 'suspended";
   startDate: Date;
@@ -65,7 +65,7 @@ interface AIRecommendation {'
   title: string;
   description: string;
   reasoning: string;
-  potentialSavings?: number;'
+  potentialSavings?: number;
   confidence: number;
   priority: 'low' | 'medium' | 'high';}
 interface UserBenefit {
@@ -79,7 +79,7 @@ interface UserBenefit {
 interface BillingHistory {
   id: string;
   userId: string;
-  amount: number;'
+  amount: number;
   currency: string;
   status: 'paid' | 'pending' | 'failed' | 'refunded";
   date: Date;
@@ -95,7 +95,7 @@ interface MembershipAnalytics {
   aiInsights: AIInsight[];}
 interface AIInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -103,7 +103,7 @@ interface AIInsight {
 const AIPoweredSubscriptionMembershipPage: NextPage = () => {
   const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]
   const [userMembership, setUserMembership] = useState<UserMembership | null>(null
-  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([]'
+  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([]
   const [analytics, setAnalytics] = useState<MembershipAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'overview' | 'tiers' | 'billing' | 'analytics'>('overview
   const [isLoading, setIsLoading] = useState(true
@@ -123,7 +123,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'ai',
           included: true,'
 }
-          usage: { current: 5, limit: 10, unit: 'recommendations/month'}}'
+          usage: { current: 5, limit: 10, unit: 'recommendations/month'}}
         {
           id: '2',
           name: 'Standard Support',
@@ -138,12 +138,12 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           description: 'Limited AI-powered marketplace insights','
           value: 50,
           category: 'analytics',
-          aiPowered: true}'
+          aiPowered: true}
       ],
       limitations: ['Limited AI features', 'No priority support', 'Basic analytics'],
       popular: false,
       recommended: false,
-      aiScore: 60}'
+      aiScore: 60}
     {
       id: '2',
       name: 'Basic',
@@ -157,14 +157,14 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           description: 'Unlimited AI-powered service recommendations',
           category: 'ai','
           included: true,
-          usage: { current: 25, limit: 100, unit: 'recommendations/month'}}'
+          usage: { current: 25, limit: 100, unit: 'recommendations/month'}}
         {
           id: '4',
           name: 'Priority Support',
           description: 'Email and chat support with 24-hour response',
           category: 'core',
           included: true
-        },'
+        },
 {
           id: '5',
           name: 'AI-Powered Pricing Analysis',
@@ -180,19 +180,19 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           value: 150,
           category: 'analytics',
           aiPowered: true
-        },'
+        },
 {
           id: '3',
           name: 'AI Contract Assistant',
           description: 'Basic AI-powered contract generation','
           value: 200,
           category: 'productivity',
-          aiPowered: true}'
+          aiPowered: true}
       ],
       limitations: ['No enterprise features', 'Limited integrations'],
       popular: true,
       recommended: false,
-      aiScore: 75}'
+      aiScore: 75}
     {
       id: '3',
       name: 'Premium',
@@ -206,21 +206,21 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           description: 'Unlimited AI-powered recommendations with priority',
           category: 'ai','
           included: true,
-          usage: { current: 150, limit: -1, unit: 'recommendations/month'}}'
+          usage: { current: 150, limit: -1, unit: 'recommendations/month'}}
         {
           id: '7',
           name: 'VIP Support',
           description: '24/7 priority support with dedicated account manager',
           category: 'premium',
           included: true
-        },'
+        },
 {
           id: '8',
           name: 'Advanced AI Tools',
           description: 'Full access to all AI-powered marketplace tools',
           category: 'ai',
           included: true
-        },'
+        },
     {
           id: '9',
           name: 'Learning Platform Access',
@@ -236,7 +236,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           value: 300,
           category: 'analytics',
           aiPowered: true
-        },'
+        },
 {
           id: '5',
           name: 'AI Legal Assistant',
@@ -244,19 +244,19 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           value: 500,
           category: 'productivity',
           aiPowered: true
-        },'
+        },
     {
           id: '6',
           name: 'Exclusive AI Features',
           description: 'Access to beta AI features and early releases','
           value: 250,
           category: 'exclusive',
-          aiPowered: true}'
+          aiPowered: true}
       ],
       limitations: ['No enterprise integrations', 'Limited team features'],
       popular: false,
       recommended: true,
-      aiScore: 90}'
+      aiScore: 90}
     {
       id: '4',
       name: 'Enterprise',
@@ -270,14 +270,14 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           description: 'Complete AI-powered enterprise solution',
           category: 'enterprise',
           included: true
-        },'
+        },
 {
           id: '11',
           name: 'Dedicated Support Team',
           description: '24/7 dedicated support team with custom solutions',
           category: 'enterprise',
           included: true
-        },'
+        },
     {
           id: '12',
           name: 'Custom AI Integration',
@@ -293,7 +293,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           value: 800,
           category: 'analytics',
           aiPowered: true
-        },'
+        },
 {
           id: '8',
           name: 'Custom AI Solutions',
@@ -342,7 +342,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         potentialSavings: 500,'
         confidence: 0.85,
         priority: 'medium'
-      },'
+      },
 {
         id: '2',
         type: 'feature',
@@ -361,7 +361,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         value: 150,
         category: 'analytics',
         lastUsed: new Date('2024-01-15'
-      },'
+      },
 {
         id: '2',
         name: 'AI Contract Assistant',
@@ -380,7 +380,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       status: 'paid',
       date: new Date('2024-01-01'),
       description: 'Basic Plan - Monthly Subscription'
-    },'
+    },
 {
       id: '2',
       userId: 'user123','
@@ -389,7 +389,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       status: 'paid',
       date: new Date('2023-12-01'),
       description: 'Basic Plan - Monthly Subscription'
-    },'
+    },
     {
       id: '3',
       userId: 'user123','
@@ -415,7 +415,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.92,
         recommendations: ['Consider expanding AI features', 'Add more AI-powered tools']
-      },'
+      },
 {
         id: '2',
         title: 'Premium Tier Conversion Opportunity',
@@ -514,7 +514,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                 My Membership
               </button> '
               "'''`
-                onClick={() => setActiveTab('tiers')}''``
+                onClick={() => setActiveTab('tiers')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'tiers
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -524,7 +524,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                 Plans & Pricing
               </button>'
               `
-                onClick={() => setActiveTab('billing')}''``
+                onClick={() => setActiveTab('billing')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'billing
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -534,7 +534,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                 Billing History
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -632,7 +632,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   </div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Tiers Tab */}, ''
 {activeTab === 'tiers' && (
               <div className="space-y-8>"
@@ -690,7 +690,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Billing Tab */}, ''
 {activeTab === 'billing' && (
               <div className="space-y-8>
@@ -715,8 +715,8 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   </div>
                 </div>
               </div>
-            )}'
-            {/* Analytics Tab */},'"'
+            )}
+            {/* Analytics Tab */},"'
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
                 </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>

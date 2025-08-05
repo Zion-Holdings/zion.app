@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Nanotechnology {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'nanomaterials' | 'nanodevices' | 'nanosensors' | 'nanomedicine' | 'nanoelectronics' | 'nanophotonics";
   status: 'active' | 'inactive' | 'research' | 'error' | 'offline";
@@ -21,7 +21,7 @@ interface NanoAnalysis {
   recommendations: string[];}
 interface MolecularEngineering {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'molecular_design' | 'molecular_synthesis' | 'molecular_assembly' | 'molecular_computing' | 'molecular_sensors' | 'molecular_machines";
   status: 'active' | 'inactive' | 'designing' | 'error' | 'offline";
@@ -36,7 +36,7 @@ interface MolecularOptimization {
   recommendations: string[];}
 interface NanoscaleDevices {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'quantum_dots' | 'nanowires' | 'nanotubes' | 'nanoparticles' | 'nanofilms' | 'nanostructures";
   status: 'active' | 'inactive' | 'fabricating' | 'error' | 'offline";
@@ -52,7 +52,7 @@ interface DeviceAnalysis {
 interface MolecularComputing {
   id: string;
   computingId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'dna_computing' | 'molecular_logic' | 'quantum_molecular' | 'biomolecular' | 'synthetic_biology' | 'molecular_memory";
   status: 'active' | 'inactive' | 'computing' | 'error' | 'offline";
@@ -68,7 +68,7 @@ interface ComputingAnalysis {
 interface Nanorobotics {
   id: string;
   robotId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'nanorobots' | 'nanomachines' | 'nanomotors' | 'nanoswimmers' | 'nanogrippers' | 'nanopropellers";
   status: 'active' | 'inactive' | 'operating' | 'error' | 'offline";
@@ -84,7 +84,7 @@ interface RoboticsAnalysis {
 interface NanotechnologyManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'research' | 'development' | 'production' | 'quality' | 'safety' | 'optimization";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -109,7 +109,7 @@ interface NanotechnologyAnalytics {
   aiInsights: NanotechnologyInsight[];}
 interface NanotechnologyInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -120,7 +120,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
   const [nanoscaleDevices, setNanoscaleDevices] = useState<NanoscaleDevices[]>([]
   const [molecularComputing, setMolecularComputing] = useState<MolecularComputing[]>([]
   const [nanorobotics, setNanorobotics] = useState<Nanorobotics[]>([]
-  const [nanotechnologyManagement, setNanotechnologyManagement] = useState<NanotechnologyManagement[]>([]'
+  const [nanotechnologyManagement, setNanotechnologyManagement] = useState<NanotechnologyManagement[]>([]
   const [analytics, setAnalytics] = useState<NanotechnologyAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'nanotechnology' | 'molecular' | 'devices' | 'computing' | 'robotics' | 'management' | 'overview'>('nanotechnology
   const [selectedType, setSelectedType] = useState<string>('all
@@ -369,7 +369,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 Nanotechnology ({nanotechnology.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('molecular')}''``
+                onClick={() => setActiveTab('molecular')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'molecular
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -379,7 +379,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 Molecular Engineering ({molecularEngineering.length}
               </button>'
               `
-                onClick={() => setActiveTab('devices')}''``
+                onClick={() => setActiveTab('devices')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'devices
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -389,7 +389,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 Nanoscale Devices ({nanoscaleDevices.length}
               </button>'
               `
-                onClick={() => setActiveTab('computing')}''``
+                onClick={() => setActiveTab('computing')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'computing
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -409,7 +409,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 Nanorobotics ({nanorobotics.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -419,7 +419,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 Management ({nanotechnologyManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('overview')}''``
+                onClick={() => setActiveTab('overview')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -430,7 +430,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Nanotechnology Tab */},''
+            {/* Nanotechnology Tab */},
 {activeTab === 'nanotechnology' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -530,7 +530,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Overview Tab */},"''
 {activeTab === 'overview' && analytics && (
               <div className=" space-y-8>

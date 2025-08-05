@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 interface Language {
   code: string;
   name: string;
-  nativeName: string;'
+  nativeName: string;
   flag: string;
   status: 'active' | 'inactive' | 'beta' | 'coming-soon";
   translationProgress: number;
@@ -17,7 +17,7 @@ interface TranslationJob {
   id: string;
   sourceLanguage: string;
   targetLanguage: string;
-  content: string;'
+  content: string;
   translatedContent: string;
   status: 'pending' | 'processing' | 'completed' | 'failed";
   accuracy: number;
@@ -31,7 +31,7 @@ interface TranslationJob {
     industrySpecific: boolean;
   };}
 interface CulturalAdaptation {
-  id: string;'
+  id: string;
   language: string;
   category: 'date-format' | 'currency' | 'measurement' | 'color' | 'symbol' | 'custom";
   originalValue: string;
@@ -43,7 +43,7 @@ interface LanguageAnalytics {
   id: string;
   metric: string;
   value: number;
-  previousValue: number;'
+  previousValue: number;
   change: number;
   trend: 'up' | 'down' | 'stable";
   language: string;
@@ -67,7 +67,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
   const [languages, setLanguages] = useState<Language[]>([]);
   const [translationJobs, setTranslationJobs] = useState<TranslationJob[]>([]);
   const [culturalAdaptations, setCulturalAdaptations] = useState<CulturalAdaptation[]>([]);
-  const [languageAnalytics, setLanguageAnalytics] = useState<LanguageAnalytics[]>([]);'
+  const [languageAnalytics, setLanguageAnalytics] = useState<LanguageAnalytics[]>([]);
   const [aiModels, setAiModels] = useState<AILanguageModel[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'languages' | 'translations' | 'cultural' | 'analytics'>('overview');
   const [filterStatus, setFilterStatus] = useState<string>('all');
@@ -90,7 +90,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 95,
           userCount: 45600,
           marketShare: 45.2}
-        },'
+        },
 {
           code: 'es',
           name: 'Spanish',
@@ -101,7 +101,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 92,
           userCount: 23400,
           marketShare: 23.1
-        },'
+        },
     {
           code: 'fr',
           name: 'French',
@@ -112,7 +112,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 88,
           userCount: 15600,
           marketShare: 15.4
-        },'
+        },
 {
           code: 'de',
           name: 'German',
@@ -123,7 +123,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 85,
           userCount: 12300,
           marketShare: 12.2
-        },'
+        },
     {
           code: 'zh',
           name: 'Chinese',
@@ -134,7 +134,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 72,
           userCount: 8900,
           marketShare: 8.8
-        },'
+        },
 {
           code: 'ja',
           name: 'Japanese',
@@ -145,7 +145,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 68,
           userCount: 6700,
           marketShare: 6.6
-        },'
+        },
     {
           code: 'ar',
           name: 'Arabic',
@@ -156,7 +156,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           culturalAdaptation: 40,
           userCount: 0,
           marketShare: 0
-        },'
+        },
 {
           code: 'hi',
           name: 'Hindi',
@@ -184,7 +184,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             contextAware: true,
             culturalAdaptation: true,
             tonePreservation: true,
-            industrySpecific: true}}'
+            industrySpecific: true}}
         {
           id: '2',
           sourceLanguage: 'en',
@@ -200,7 +200,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             contextAware: true,
             culturalAdaptation: true,
             tonePreservation: true,
-            industrySpecific: true}}'
+            industrySpecific: true}}
         {
           id: '3',
           sourceLanguage: 'en',
@@ -215,7 +215,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             contextAware: true,
             culturalAdaptation: true,
             tonePreservation: true,
-            industrySpecific: true}}'
+            industrySpecific: true}}
         {
           id: '4',
           sourceLanguage: 'en',
@@ -242,7 +242,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           context: 'Date formatting for Spanish-speaking regions',
           confidence: 98.5,
           lastUpdated: new Date(Date.now() - 2 * 60 * 60 * 1000
-        },'
+        },
 {
           id: '2',
           language: 'fr',
@@ -252,7 +252,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           context: 'Currency formatting for French-speaking regions',
           confidence: 97.2,
           lastUpdated: new Date(Date.now() - 4 * 60 * 60 * 1000
-        },'
+        },
     {
           id: '3',
           language: 'de',
@@ -262,17 +262,17 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           context: 'Measurement conversion for German-speaking regions',
           confidence: 99.1,
           lastUpdated: new Date(Date.now() - 6 * 60 * 60 * 1000
-        },'
+        },
 {
           id: '4',
           language: 'zh',
           category: 'color',
-          originalValue: 'Red (success)',
-          adaptedValue: 'Green (success)',
+          originalValue: 'Red (success),
+          adaptedValue: 'Green (success),
           context: 'Color adaptation for Chinese cultural preferences',
           confidence: 94.8,
           lastUpdated: new Date(Date.now() - 8 * 60 * 60 * 1000
-        },'
+        },
     {
           id: '5',
           language: 'ja',
@@ -293,7 +293,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           trend: 'up',
           language: 'Spanish',
           period: 'last 30 days'
-        },'
+        },
 {
           id: '2',
           metric: 'Cultural Adaptation Score',
@@ -303,7 +303,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           trend: 'up',
           language: 'French',
           period: 'last 30 days'
-        },'
+        },
     {
           id: '3',
           metric: 'User Engagement',
@@ -313,7 +313,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           trend: 'up',
           language: 'German',
           period: 'last 30 days'
-        },'
+        },
 {
           id: '4',
           metric: 'Translation Speed',
@@ -337,7 +337,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             translationSpeed: 0.8,
             culturalAccuracy: 94.2,
             contextUnderstanding: 92.5,
-            tonePreservation: 95.8}}'
+            tonePreservation: 95.8}}
         {
           id: '2',
           language: 'French',
@@ -350,7 +350,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             translationSpeed: 0.9,
             culturalAccuracy: 91.7,
             contextUnderstanding: 90.3,
-            tonePreservation: 93.4}}'
+            tonePreservation: 93.4}}
         {
           id: '3',
           language: 'German',
@@ -363,7 +363,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             translationSpeed: 0.7,
             culturalAccuracy: 88.9,
             contextUnderstanding: 89.1,
-            tonePreservation: 91.2}}'
+            tonePreservation: 91.2}}
         {
           id: '4',
           language: 'Chinese',
@@ -390,7 +390,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
   const filteredLanguages = useMemo(() => {
     let filtered = languages.filter(language => {'
-      // Status filter';'
+      // Status filter';
       if (filterStatus !== 'all' && language.status !== filterStatus) return false;
       
       // Search term filter
@@ -417,7 +417,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
     return filtered;
   } [languages, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       case 'beta': return 'text-yellow-400 bg-yellow-500/20";
@@ -425,7 +425,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getJobStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'processing': return 'text-blue-400 bg-blue-500/20";
       case 'pending': return 'text-yellow-400 bg-yellow-500/20";
@@ -433,7 +433,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getCategoryIcon = (category: string) => {'
-    switch (category) {';'
+    switch (category) {';
       case 'date-format': return '📅";
       case 'currency': return '💰";
       case 'measurement': return '📏";
@@ -443,7 +443,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
       default: return '🌐';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -560,7 +560,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Search and Filters */}, ''
 {selectedView === 'languages' && ("
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8> 
@@ -645,7 +645,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Translation Jobs */},
 {selectedView === 'translations' && ("
           <div className="space-y-6>" 
@@ -714,7 +714,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Cultural Adaptations */},
 {selectedView === 'cultural' && ("
           <div className="space-y-6>" 
@@ -755,7 +755,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* AI Models */}, ''
 {selectedView === 'analytics' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>

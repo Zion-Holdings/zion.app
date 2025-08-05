@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -252,7 +252,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* ML Dashboard */},'
+            {/* ML Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -311,7 +311,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Neural Networks */},''
+            {/* Neural Networks */},
 {activeTab === 'neural-networks' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Neural Networks</h2>
@@ -356,7 +356,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Classification */},"''
 {activeTab === 'classification' && (
               <div className="space-y-6>"
@@ -408,7 +408,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Regression */},"''
 {activeTab === 'regression' && (
               <div className="space-y-6>"
@@ -454,7 +454,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Feature Maps */}, ''
 {activeTab === 'feature-maps' && (
               <div className="space-y-6">
@@ -508,7 +508,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                 </div>
               </div>
             )} '
-            {/* Optimization */},''
+            {/* Optimization */},
 {activeTab === 'optimization' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Optimization</h2>
@@ -553,7 +553,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Unsupervised Learning */},"''
 {activeTab === 'unsupervised' && (
               <div className="space-y-6>"

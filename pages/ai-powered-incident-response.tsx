@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface IncidentDetection {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'malware' | 'phishing' | 'ddos' | 'data_breach' | 'insider_threat' | 'zero_day";
   severity: 'critical' | 'high' | 'medium' | 'low";
@@ -22,10 +22,10 @@ interface IncidentAnalysis {
 interface ResponseCoordination {
   id: string;
   incidentId: string;
-  title: string;'
+  title: string;
   description: string;
   phase: 'detection' | 'analysis' | 'containment' | 'eradication' | 'recovery' | 'lessons_learned";
-  status: 'active' | 'completed' | 'paused' | 'escalated';'
+  status: 'active' | 'completed' | 'paused' | 'escalated';
   assignedTeam: string;
   priority: 'critical' | 'high' | 'medium' | 'low";
   aiOptimization: ResponseOptimization;}
@@ -38,7 +38,7 @@ interface ResponseOptimization {
 interface DigitalForensics {
   id: string;
   caseNumber: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'network' | 'memory' | 'disk' | 'mobile' | 'cloud' | 'malware";
   status: 'active' | 'completed' | 'pending' | 'cancelled";
@@ -54,7 +54,7 @@ interface ForensicsAnalysis {
 interface BreachInvestigation {
   id: string;
   breachId: string;
-  title: string;'
+  title: string;
   description: string;
   breachType: 'data_exfiltration' | 'system_compromise' | 'credential_theft' | 'ransomware' | 'insider_breach' | 'supply_chain";
   status: 'investigating' | 'contained' | 'resolved' | 'closed";
@@ -70,7 +70,7 @@ interface BreachAnalysis {
 interface ThreatHunting {
   id: string;
   huntId: string;
-  title: string;'
+  title: string;
   description: string;
   huntType: 'proactive' | 'reactive' | 'intel_driven' | 'hypothesis_driven' | 'threat_led' | 'anomaly_based";
   status: 'active' | 'completed' | 'paused' | 'scheduled";
@@ -86,7 +86,7 @@ interface HuntingAnalysis {
 interface IncidentManagement {
   id: string;
   incidentId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'security' | 'privacy' | 'compliance' | 'availability' | 'integrity' | 'confidentiality";
   status: 'open' | 'in_progress' | 'resolved' | 'closed";
@@ -111,7 +111,7 @@ interface IncidentResponseAnalytics {
   aiInsights: IncidentResponseInsight[];}
 interface IncidentResponseInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -122,7 +122,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
   const [digitalForensics, setDigitalForensics] = useState<DigitalForensics[]>([]
   const [breachInvestigations, setBreachInvestigations] = useState<BreachInvestigation[]>([]
   const [threatHunting, setThreatHunting] = useState<ThreatHunting[]>([]
-  const [incidentManagement, setIncidentManagement] = useState<IncidentManagement[]>([]'
+  const [incidentManagement, setIncidentManagement] = useState<IncidentManagement[]>([]
   const [analytics, setAnalytics] = useState<IncidentResponseAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'detections' | 'coordination' | 'forensics' | 'breaches' | 'hunting' | 'management' | 'analytics'>('detections
   const [selectedType, setSelectedType] = useState<string>('all
@@ -351,7 +351,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 Detections ({incidentDetections.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('coordination')}''``
+                onClick={() => setActiveTab('coordination')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'coordination
                     ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -361,7 +361,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 Coordination ({responseCoordination.length}
               </button>'
               `
-                onClick={() => setActiveTab('forensics')}''``
+                onClick={() => setActiveTab('forensics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'forensics
                     ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -371,7 +371,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 Forensics ({digitalForensics.length}
               </button>'
               `
-                onClick={() => setActiveTab('breaches')}''``
+                onClick={() => setActiveTab('breaches')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'breaches
                     ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -391,7 +391,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 Hunting ({threatHunting.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -401,7 +401,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 Management ({incidentManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -412,7 +412,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Detections Tab */},''
+            {/* Detections Tab */},
 {activeTab === 'detections' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -510,7 +510,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 

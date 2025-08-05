@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -8,7 +8,7 @@ interface SEOAnalysis {
   url: string;
   title: string;
   description: string;
-  keywords: string[];'
+  keywords: string[];
   score: number;
   grade: 'A' | 'B' | 'C' | 'D' | 'F";
   issues: SEOIssue[];
@@ -18,7 +18,7 @@ interface SEOAnalysis {
 interface SEOIssue {'
   id: string;
   type: 'critical' | 'warning' | 'info";
-  title: string;'
+  title: string;
   description: string;
   impact: 'high' | 'medium' | 'low";
   fixable: boolean;
@@ -27,7 +27,7 @@ interface SEOIssue {'
 interface SEORecommendation {'
   id: string;
   category: 'content' | 'technical' | 'on-page' | 'off-page' | 'performance";
-  title: string;'
+  title: string;
   description: string;
   impact: 'high' | 'medium' | 'low";
   effort: 'easy' | 'medium' | 'hard";
@@ -43,7 +43,7 @@ interface KeywordAnalysis {
   ranking: number;
   traffic: number;
   aiInsights: string;
-  opportunities: string[];'
+  opportunities: string[];
   trends: {
     trend: 'up' | 'down' | 'stable";
     change: number;
@@ -68,7 +68,7 @@ interface PerformanceMetrics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   lastUpdated: Date;}
@@ -76,7 +76,7 @@ const AIPoweredSEOPage: NextPage = () => {
   ;
   const [seoAnalyses, setSeoAnalyses] = useState<SEOAnalysis[]>([]);
   const [keywordAnalyses, setKeywordAnalyses] = useState<KeywordAnalysis[]>([]);
-  const [contentOptimizations, setContentOptimizations] = useState<ContentOptimization[]>([]);'
+  const [contentOptimizations, setContentOptimizations] = useState<ContentOptimization[]>([]);
   const [performanceMetrics, setPerformanceMetrics] = useState<PerformanceMetrics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'analysis' | 'keywords' | 'content' | 'performance'>('overview');
   const [filterGrade, setFilterGrade] = useState<string>('all');
@@ -107,7 +107,7 @@ const AIPoweredSEOPage: NextPage = () => {
               fixable: true,
               fixDescription: 'Add a compelling meta description between 150-160 characters.',
               priority: 2}
-            },'
+            },
 {
               id: '2',
               type: 'info',
@@ -128,7 +128,7 @@ const AIPoweredSEOPage: NextPage = () => {
               effort: 'easy',
               estimatedImprovement: 15,
               aiGenerated: true
-            },'
+            },
 {
               id: '2',
               category: 'technical',
@@ -140,7 +140,7 @@ const AIPoweredSEOPage: NextPage = () => {
               aiGenerated: true}
           ],
           lastAnalyzed: new Date(Date.now() - 2 * 60 * 60 * 1000),
-          nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000}'
+          nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000}
         {
           id: '2',
           url: 'https://ziontechgroup.netlify.app/service-marketplace',
@@ -162,7 +162,7 @@ const AIPoweredSEOPage: NextPage = () => {
               aiGenerated: true}
           ],
           lastAnalyzed: new Date(Date.now() - 4 * 60 * 60 * 1000),
-          nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000}'
+          nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000}
         {
           id: '3',
           url: 'https://ziontechgroup.netlify.app/talent-directory',
@@ -215,7 +215,7 @@ const AIPoweredSEOPage: NextPage = () => {
           trends: {
             trend: 'up','
             change: 12.5,
-            period: 'last 30 days'}}'
+            period: 'last 30 days'}}
         {
           id: '2',
           keyword: 'professional services',
@@ -234,7 +234,7 @@ const AIPoweredSEOPage: NextPage = () => {
           trends: {
             trend: 'stable','
             change: 2.1,
-            period: 'last 30 days'}}'
+            period: 'last 30 days'}}
         {
           id: '3',
           keyword: 'equipment rental',
@@ -269,7 +269,7 @@ const AIPoweredSEOPage: NextPage = () => {
             description: "Connect with verified AI developers, web developers", and tech professionals on Zion\'s AI-powered marketplace. Secure payments, instant quotes, and guaranteed quality.',
             content: "Zion revolutionizes how businesses find and hire professional services. Our AI-powered marketplace features advanced matching algorithms, secure payment processing, and comprehensive project management tools. Whether you need AI development, web development, mobile apps, or blockchain solutions", Zion connects you with verified experts.',
             keywords: ['AI marketplace', 'professional services', 'expert developers', 'AI development', 'web development']}
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '2',
           pageTitle: 'Service Marketplace - Browse Professional Services',
@@ -294,7 +294,7 @@ const AIPoweredSEOPage: NextPage = () => {
           improvement: 23.0,
           trend: 'up',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '2',
           metric: 'Search Rankings',
@@ -303,7 +303,7 @@ const AIPoweredSEOPage: NextPage = () => {
           improvement: -41.2,
           trend: 'up',
           lastUpdated: new Date()
-        },'
+        },
     {
           id: '3',
           metric: 'Click-Through Rate',
@@ -312,7 +312,7 @@ const AIPoweredSEOPage: NextPage = () => {
           improvement: 20.0,
           trend: 'up',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '4',
           metric: 'Page Load Speed',
@@ -321,7 +321,7 @@ const AIPoweredSEOPage: NextPage = () => {
           improvement: -28.6,
           trend: 'down',
           lastUpdated: new Date()
-        },'
+        },
     {
           id: '5',
           metric: 'Bounce Rate',
@@ -330,7 +330,7 @@ const AIPoweredSEOPage: NextPage = () => {
           improvement: -17.3,
           trend: 'down',
           lastUpdated: new Date()
-        },'
+        },
 {
           id: '6',
           metric: 'Conversion Rate',
@@ -351,7 +351,7 @@ const AIPoweredSEOPage: NextPage = () => {
 
   const filteredAnalyses = useMemo(() => {
     let filtered = seoAnalyses.filter(analysis => {'
-      // Grade filter';'
+      // Grade filter';
       if (filterGrade !== 'all' && analysis.grade !== filterGrade) return false;
       
       // Search term filter
@@ -370,7 +370,7 @@ const AIPoweredSEOPage: NextPage = () => {
           return a.grade.localeCompare(b.grade);
         case 'impact':
           const aImpact = a.issues.filter(i => i.impact === 'high').length;
-          const bImpact = b.issues.filter(i => i.impact === 'high').length;'
+          const bImpact = b.issues.filter(i => i.impact === 'high').length;
           return bImpact - aImpact;
         case 'recent':
         default:
@@ -380,7 +380,7 @@ const AIPoweredSEOPage: NextPage = () => {
     return filtered;
   } [seoAnalyses, filterGrade, searchTerm, sortBy]);
   const getGradeColor = (grade: string) => {'
-    switch (grade) {';'
+    switch (grade) {';
       case 'A': return 'text-green-400 bg-green-500/20";
       case 'B': return 'text-blue-400 bg-blue-500/20";
       case 'C': return 'text-yellow-400 bg-yellow-500/20";
@@ -389,21 +389,21 @@ const AIPoweredSEOPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getIssueColor = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'critical': return 'text-red-400 bg-red-500/20";
       case 'warning': return 'text-yellow-400 bg-yellow-500/20";
       case 'info': return 'text-blue-400 bg-blue-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getImpactColor = (impact: string) => {'
-    switch (impact) {';'
+    switch (impact) {';
       case 'high': return 'text-red-400";
       case 'medium': return 'text-yellow-400";
       case 'low': return 'text-green-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -520,7 +520,7 @@ const AIPoweredSEOPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Search and Filters */}, ''
 {selectedView === 'analysis' && ("
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8> 
@@ -650,7 +650,7 @@ const AIPoweredSEOPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Keyword Analysis */},"''
 {selectedView === 'keywords' && (
           <div className=" space-y-6>
@@ -705,7 +705,7 @@ const AIPoweredSEOPage: NextPage = () => {
                 </div>
               </div > ))}
           </div>
-        )}'
+        )}
         {/* Content Optimization */},"''
 {selectedView === 'content' && (
           <div className="space-y-6>" 

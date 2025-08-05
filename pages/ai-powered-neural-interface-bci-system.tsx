@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -78,7 +78,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       timestamp: '2025-08-03T19:00:00Z','
       quality: 92,
       location: 'occipital'}
-    },'
+    },
 {
       id: 'sig-002',
       type: 'beta',
@@ -87,7 +87,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       timestamp: '2025-08-03T19:00:01Z','
       quality: 88,
       location: 'frontal'
-    },'
+    },
     {
       id: 'sig-003',
       type: 'theta',
@@ -104,28 +104,28 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       status: 'active',
       function: 'Decision Making',
       connectivity: 85
-    },'
+    },
 {
       region: 'Occipital Lobe','
       activity: 92,
       status: 'active',
       function: 'Visual Processing',
       connectivity: 91
-    },'
+    },
     {
       region: 'Temporal Lobe','
       activity: 65,
       status: 'active',
       function: 'Memory & Language',
       connectivity: 72
-    },'
+    },
 {
       region: 'Parietal Lobe','
       activity: 71,
       status: 'active',
       function: 'Spatial Awareness',
       connectivity: 78
-    },'
+    },
     {
       region: 'Motor Cortex','
       activity: 45,
@@ -143,7 +143,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       completion: 85,
       brainRegions: ['Hippocampus', 'Prefrontal Cortex'],
       performance: 92
-    },'
+    },
 {
       id: 'task-002',
       name: 'Focus Enhancement Training',
@@ -153,7 +153,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       completion: 100,
       brainRegions: ['Frontal Lobe', 'Parietal Lobe'],
       performance: 88
-    },'
+    },
     {
       id: 'task-003',
       name: 'Creative Problem Solving',
@@ -174,7 +174,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       signalQuality: 94,
       lastCalibration: '2025-08-03T18:30:00Z',
       firmware: 'v2.1.4'
-    },'
+    },
 {
       id: 'device-002',
       name: 'BrainGate ECoG Array',
@@ -184,7 +184,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       signalQuality: 89,
       lastCalibration: '2025-08-03T18:45:00Z',
       firmware: 'v1.8.2'
-    },'
+    },
     {
       id: 'device-003',
       name: 'MindReader fNIRS',
@@ -206,7 +206,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       accuracy: 94,
       latency: 150,
       userRating: 4.8
-    },'
+    },
 {
       id: 'app-002',
       name: 'Mind-Controlled Cursor',
@@ -217,7 +217,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       accuracy: 89,
       latency: 200,
       userRating: 4.6
-    },'
+    },
     {
       id: 'app-003',
       name: 'Neural Gaming Interface',
@@ -243,13 +243,13 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
           description: 'Focus on a single point while monitoring brain activity',
           duration: 300,
           difficulty: 5
-        },'
+        },
 {
           name: 'Attention Switching',
           description: 'Rapidly switch attention between different stimuli',
           duration: 180,
           difficulty: 7
-        }]}'
+        }]}
     {
       id: 'training-002',
       name: 'Memory Enhancement Course',
@@ -263,7 +263,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
           description: 'Identify and remember complex patterns',
           duration: 240,
           difficulty: 6
-        },'
+        },
 {
           name: 'Spatial Memory Training',
           description: 'Navigate virtual environments using memory',
@@ -277,7 +277,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       setIsCalibrating(true
       try {
         // Simulate device connection and calibration
-        await new Promise(resolve => setTimeout(resolve, 3000)'
+        await new Promise(resolve => setTimeout(resolve, 3000)
         setIsConnected(true
         setSelectedDevice('device-001
         setNeuralSignals(mockNeuralSignals
@@ -325,7 +325,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
   const startCognitiveTask = async (taskId: string) => {`
     try {``"
       console.log(`Starting cognitive task ${taskId}...`
-      setCurrentSession({ taskId, startTime: new Date()}'
+      setCurrentSession({ taskId, startTime: new Date()}
     } catch (error) {
       console.error('Error starting cognitive task: , error}}
   const getSignalTypeColor = (type: string) => {'
@@ -379,12 +379,12 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
             <div className=" flex items-center" space-x-4>
               
                 onClick={() => setIsConnected(!isConnected)}"`
-                disabled={isCalibrating}'``
+                disabled={isCalibrating}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${'
                   isConnected 
                     ? 'bg-green-600 text-white hover:bg-green-700' `
                     : 'bg-gray-600 text-white hover:bg-gray-700''``
-                } disabled:opacity-50`}'
+                } disabled:opacity-50`}
               >
                 {isCalibrating ? 'Calibrating...' : isConnected ? 'Connected' : 'Connect Device'}
               </button>
@@ -416,7 +416,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
     { id  'training', label  'Neural Training', icon  '🏋️'}"
               ].map((tab) => (
                 "`
-                  onClick={() => setActiveTab(tab.id)}'``
+                  onClick={() => setActiveTab(tab.id)}``
                   className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -433,7 +433,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
           {/* Tab Content */}
           <div className="space-y-8>"
             '
-            {/* Neural Dashboard */},''
+            {/* Neural Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* Connection Status */}"
@@ -520,8 +520,8 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
-            {/* Brain Signals */},'"'
+            )}
+            {/* Brain Signals */},"'
 {activeTab === 'signals' && (
               <div className="space-y-6>" 
                 </div><div className="flex items-center" justify-between>
@@ -575,7 +575,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Brain Activity */},"''
 {activeTab === 'activity' && (
               <div className="space-y-6>"
@@ -676,7 +676,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Neural Devices */}, ''
 {activeTab === 'devices' && (
               <div className="space-y-6>"
@@ -732,7 +732,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* BCI Applications */}, ''
 {activeTab === 'applications' && (
               <div className="space-y-6">
@@ -784,7 +784,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Neural Training */},''
+            {/* Neural Training */},
 {activeTab === 'training' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Neural Training Programs</h2>

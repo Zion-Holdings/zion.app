@@ -1,9 +1,9 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 
 const Blog: NextPage = () => {
-  const blogPosts = ['
+  const $1 = ['
     {
       id: 'ai-powered-marketplaces-the-future-of-digital-commerce',
       title: 'AI-Powered Marketplaces: The Future of Digital Commerce',
@@ -12,7 +12,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-15',
       tags: ['AI', 'Marketplace', 'Digital Commerce', 'Technology'],
       readTime: '8 min read'}
-    },'
+    },
 {
       id: 'blockchain-technology-in-modern-business-solutions',
       title: 'Blockchain Technology in Modern Business Solutions',
@@ -21,7 +21,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-10',
       tags: ['Blockchain', 'Business', 'Technology', 'Security'],
       readTime: '7 min read'
-    },'
+    },
     {
       id: 'cybersecurity-trends-for-2024-and-beyond',
       title: 'Cybersecurity Trends for 2024 and Beyond',
@@ -30,7 +30,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-08',
       tags: ['Cybersecurity', 'Security', 'Technology', 'Trends'],
       readTime: '6 min read'
-    },'
+    },
 {
       id: 'machine-learning-applications-in-enterprise-software',
       title: 'Machine Learning Applications in Enterprise Software',
@@ -39,7 +39,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-05',
       tags: ['Machine Learning', 'Enterprise', 'Software', 'AI'],
       readTime: '9 min read'
-    },'
+    },
     {
       id: 'the-rise-of-edge-computing-in-iot-applications',
       title: 'The Rise of Edge Computing in IoT Applications',
@@ -48,7 +48,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-03',
       tags: ['Edge Computing', 'IoT', 'Technology', 'Innovation'],
       readTime: '7 min read'
-    },'
+    },
 {
       id: 'blockchain-for-supply-chain-management',
       title: 'Blockchain for Supply Chain Management',
@@ -57,7 +57,7 @@ const Blog: NextPage = () => {
       publishDate: '2024-01-01',
       tags: ['Blockchain', 'Supply Chain', 'Management', 'Technology'],
       readTime: '6 min read'
-    },'
+    },
     {
       id: 'cybersecurity-in-the-age-of-ai',
       title: 'Cybersecurity in the Age of AI',
@@ -66,7 +66,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-28',
       tags: ['Cybersecurity', 'AI', 'Security', 'Technology'],
       readTime: '8 min read'
-    },'
+    },
 {
       id: 'machine-learning-in-healthcare',
       title: 'Machine Learning in Healthcare',
@@ -75,7 +75,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-25',
       tags: ['Machine Learning', 'Healthcare', 'AI', 'Medicine'],
       readTime: '7 min read'
-    },'
+    },
     {
       id: 'sustainable-technology-solutions',
       title: 'Sustainable Technology Solutions',
@@ -84,7 +84,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-22',
       tags: ['Sustainability', 'Technology', 'Environment', 'Innovation'],
       readTime: '6 min read'
-    },'
+    },
 {
       id: '5g-networks-and-iot-integration',
       title: '5G Networks and IoT Integration',
@@ -93,7 +93,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-20',
       tags: ['5G', 'IoT', 'Networks', 'Technology'],
       readTime: '5 min read'
-    },'
+    },
     {
       id: 'augmented-reality-in-enterprise',
       title: 'Augmented Reality in Enterprise',
@@ -102,7 +102,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-18',
       tags: ['AR', 'Enterprise', 'Technology', 'Innovation'],
       readTime: '6 min read'
-    },'
+    },
 {
       id: 'cloud-native-architecture-patterns',
       title: 'Cloud-Native Architecture Patterns',
@@ -111,7 +111,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-15',
       tags: ['Cloud', 'Architecture', 'Technology', 'Development'],
       readTime: '8 min read'
-    },'
+    },
     {
       id: 'quantum-computing-applications-in-business',
       title: 'Quantum Computing Applications in Business',
@@ -120,7 +120,7 @@ const Blog: NextPage = () => {
       publishDate: '2023-12-12',
       tags: ['Quantum Computing', 'Business', 'Technology', 'Innovation'],
       readTime: '7 min read'
-    },'
+    },
 {
       id: 'digital-transformation-strategies',
       title: 'Digital Transformation Strategies',
@@ -204,7 +204,7 @@ const Blog: NextPage = () => {
       <footer className="bg-black/20  backdrop-blur-md:border-t border-white/10 mt-16>"
         <div className="container-responsive" section-padding-sm > 
           </div><div className="text-center" text-gray-400>;
-            <p className="text-responsive-sm>&copy;" 2024 Zion. All rights reserved.</p>
+            <p className="text-responsive-sm>&copy; 2024 Zion. All rights reserved.</p>
           </div>
         </div>
       </footer>

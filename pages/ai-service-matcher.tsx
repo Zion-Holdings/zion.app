@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -24,7 +24,7 @@ const AIServiceMatcher: NextPage = () => {'
   const [matches, setMatches] = useState<ServiceMatch[]>([]
   const [isAnalyzing, setIsAnalyzing] = useState(false
   const [analysisComplete, setAnalysisComplete] = useState(false'
-  const industries = [
+  const $1 = [
     'Technology',
     'Healthcare',
     'Finance',
@@ -34,18 +34,18 @@ const AIServiceMatcher: NextPage = () => {'
     'Real Estate',
     'Entertainment',
     'Transportation',
-    'Other']'
-  const budgets = [
+    'Other']
+  const $1 = [
     'Under $1,000',
     '$1,000 - $5,000',
     '$5,000 - $15,000',
     '$15,000 - $50,000',
-    '$50,000+']'
-  const timelines = [
-    'Immediate (1-2 weeks)',
-    'Short-term (1-3 months)',
-    'Medium-term (3-6 months)',
-    'Long-term (6+ months)']
+    '$50,000+']
+  const $1 = [
+    'Immediate (1-2 weeks),
+    'Short-term (1-3 months),
+    'Medium-term (3-6 months),
+    'Long-term (6+ months)]
   const analyzeNeeds = async () => {
     if (!userNeeds.trim()) return
 
@@ -70,7 +70,7 @@ const AIServiceMatcher: NextPage = () => {'
     if (score >= 90) return 'text-green-500
     if (score >= 80) return 'text-blue-500
     if (score >= 70) return 'text-yellow-500
-    return 'text-red-500'}'
+    return 'text-red-500'}
   const getMatchScoreBg = (score: number) => {
     if (score >= 90) return 'bg-green-100
     if (score >= 80) return 'bg-blue-100
@@ -287,7 +287,7 @@ const AIServiceMatcher: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default AIServiceMatcher ))))))))))))))"'"'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ interface DroneFleet {
 interface DeliveryRoute {
   id: string
   origin: { lat: number; lng: number; address: string}
-  destination: { lat: number; lng: number; address: string}'
+  destination: { lat: number; lng: number; address: string}
   droneId: string
   status: 'pending' | 'in-progress' | 'completed' | 'failed
   estimatedTime: number
@@ -91,7 +91,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       speed: 60,
       lastMaintenance: '2025-08-01',
       totalDeliveries: 127,
-      successRate: 98.4}'
+      successRate: 98.4}
     {
       id: 'drone-002',
       name: 'Heavy Lift Bravo',
@@ -104,7 +104,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       speed: 45,
       lastMaintenance: '2025-07-28',
       totalDeliveries: 89,
-      successRate: 96.7}'
+      successRate: 96.7}
     {
       id: 'drone-003',
       name: 'Surveillance Echo',
@@ -133,7 +133,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
         weight: 2.5,'
         dimensions: { length: 30, width: 20, height: 15 }
         fragility: 'medium',
-        specialRequirements: ['temperature-controlled', 'signature-required']}'
+        specialRequirements: ['temperature-controlled', 'signature-required']}
       customerInfo: {
         name: 'Sarah Johnson',
         phone: '+1-555-0123',
@@ -141,7 +141,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
         deliveryInstructions: "Leave at front desk", call upon arrival
       }
       createdAt: '2025-08-03T14:30:00Z',
-      updatedAt: '2025-08-03T14:45:00Z'}'
+      updatedAt: '2025-08-03T14:45:00Z'}
     {
       id: 'route-002',
       origin: { lat: 40.7505, lng: -73.9934, address: 'Brooklyn Bridge Park' }
@@ -155,7 +155,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
         weight: 1.8,'
         dimensions: { length: 25, width: 18, height: 12 }
         fragility: 'low',
-        specialRequirements: []}'
+        specialRequirements: []}
       customerInfo: {
         name: 'Mike Chen',
         phone: '+1-555-0456',
@@ -178,7 +178,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       contactInfo: {
         phone: '+1-555-0001',
         email: 'manhattan.hub@ziontech.com',
-        manager: 'Alex Rodriguez'}}'
+        manager: 'Alex Rodriguez'}}
     {
       id: 'hub-002',
       name: 'Brooklyn Distribution Center',
@@ -212,7 +212,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
         area: { lat: 40.7484, lng: -73.9857, radius: 0.5 }
         reason: 'Government building security',
         startTime: '2025-01-01T00:00:00Z',
-        severity: 'critical'}'
+        severity: 'critical'}
       {
         id: 'restriction-002',
         type: 'temporary','
@@ -236,7 +236,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       // Initialize drone fleet management system
       console.log('Initializing AI-powered drone delivery system...
       // Simulate system initialization
-      await new Promise(resolve => setTimeout(resolve, 2000)'
+      await new Promise(resolve => setTimeout(resolve, 2000)
       setRealTimeTracking(true
       console.log('Drone delivery system initialized successfully
     } catch (error) {
@@ -310,7 +310,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     realTimeTracking 
                       ? 'bg-green-600 text-white hover:bg-green-700' `
                       : 'bg-gray-600 text-white hover:bg-gray-700''``
-                  }`}'
+                  }`}
                 >
                   {realTimeTracking ? 'Tracking Active' : 'Start Tracking'}
                 </button>
@@ -334,7 +334,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
     { id: 'weather', label: 'Weather & Airspace', icon: '🌤️' },
 { id: 'analytics', label: 'Analytics', icon: '📈'}
                 ].map((tab) => (`
-                    onClick={() => setActiveTab(tab.id)}'``
+                    onClick={() => setActiveTab(tab.id)}``
                     className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
                       activeTab === tab.id
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'`
@@ -351,7 +351,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
             {/* Tab Content */}
             <div className="space-y-8">
               
-              {/* System Overview */},'
+              {/* System Overview */},
 {activeTab === 'overview' && (
                 </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                   {/* System Status */}
@@ -425,8 +425,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     </div>
                   </div>
                 </div>
-              )}'
-              {/* Drone Fleet */},'"'
+              )}
+              {/* Drone Fleet */},"'
 {activeTab === 'fleet' && (
                 <div className="space-y-6>" 
                   </div><div className="flex items-center" justify-between>
@@ -503,8 +503,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     ))}
                   </div>
                 </div>
-              )}'
-              {/* Delivery Routes */},'"'
+              )}
+              {/* Delivery Routes */},"'
 {activeTab === 'routes' && (
                 <div className="space-y-6>" 
                   </div><div className="flex items-center" justify-between>
@@ -577,7 +577,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     ))}
                   </div>
                 </div>
-              )}'
+              )}
               {/* Logistics Hubs */},"''
 {activeTab === 'hubs' && (
                 <div className=" space-y-6>
@@ -641,7 +641,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     ))}
                   </div>
                 </div>
-              )}'
+              )}
               {/* Weather & Airspace */}, ''
 {activeTab === 'weather' && (
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
@@ -692,7 +692,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     </div>
                   </div>
                 </div>
-              )}'
+              )}
               {/* Analytics */},"''
 {activeTab === 'analytics' && (
                 <div className="space-y-6">

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface InteractiveChartProps {
   className?: string;
-  data?: any;}'
+  data?: any;}
 const InteractiveChart: React.FC<InteractiveChartProps> = ({ 
   className="'', 
   data 
@@ -27,7 +27,7 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
         <div className="h-4" bg-gray-200 rounded animate-pulse w-3/4></div>
         <div className="h-4" bg-gray-200 rounded animate-pulse w-1/2></div>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default InteractiveChart;"'"'`
+export default InteractiveChart;'`

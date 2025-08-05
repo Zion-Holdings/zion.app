@@ -127,5 +127,4 @@ const CloudMigrationServicesPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default CloudMigrationServicesPage;"'"
+export default CloudMigrationServicesPage;

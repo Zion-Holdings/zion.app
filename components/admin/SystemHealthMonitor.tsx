@@ -8,7 +8,7 @@ interface SystemHealthData {
   timestamp: string;
   activeAgents: number;
   totalAgents: number;
-  systemHealth: 'healthy' | 'warning' | 'error";
+  systemHealth: "healthy" | "warning" | "error";
   memoryUsage?: {
     rss: number;
     heapTotal: number;
@@ -27,9 +27,9 @@ interface SystemHealthMonitorProps {
 
 export default function SystemHealthMonitor({ systemHealth }: SystemHealthMonitorProps) {
   const formatBytes = (bytes: number) => {
-    if (bytes === 0) return '0 Bytes";
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const $1 = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
@@ -40,10 +40,10 @@ export default function SystemHealthMonitor({ systemHealth }: SystemHealthMonito
 
   const getSystemHealthColor = (health: string) => {
     switch (health) {
-      case 'healthy': return 'bg-green-100 text-green-800 border-green-200";
-      case 'warning': return 'bg-yellow-100 text-yellow-800 border-yellow-200";
-      case 'error': return 'bg-red-100 text-red-800 border-red-200";
-      default: return 'bg-gray-100 text-gray-800 border-gray-200";
+      case 'healthy': return "bg-green-100 text-green-800 border-green-200";
+      case 'warning': return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case 'error': return "bg-red-100 text-red-800 border-red-200";
+      default: return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 

@@ -6,5 +6,5 @@ export default function ReviewList() {
     <motion.div className="review-component>"
       {/* ReviewList.tsx implementation */}
     </motion.div>;
-  );'
+  );
 }"'"

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
   const [gamingPlatforms, setGamingPlatforms] = useState<GamingPlatform[]>([]
   const [entertainmentAnalytics, setEntertainmentAnalytics] = useState<EntertainmentAnalytics[]>([]
   const [contentCreation, setContentCreation] = useState<ContentCreation[]>([]
-  const [entertainmentOptimization, setEntertainmentOptimization] = useState<EntertainmentOptimization[]>([]'
+  const [entertainmentOptimization, setEntertainmentOptimization] = useState<EntertainmentOptimization[]>([]
   const [data, setData] = useState<EntertainmentData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'gaming' | 'analytics' | 'content' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         performanceScore: 9.3,'
         engagementLevel: 8.9,
         gamingInsights: ['High engagement with casual games', 'In-app purchases increasing', 'Social features driving retention'],
-        recommendations: ['Expand casual game offerings', 'Enhance social features', 'Optimize monetization']}}}'
+        recommendations: ['Expand casual game offerings', 'Enhance social features', 'Optimize monetization']}}}
     {
       id: '2',
       name: 'PC Gaming Platform',
@@ -116,7 +116,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         performanceScore: 9.1,'
         engagementLevel: 8.7,
         gamingInsights: ['Competitive games popular', 'Hardware optimization effective', 'Community features strong'],
-        recommendations: ['Expand competitive game library', 'Enhance hardware optimization', 'Improve community tools']}}'
+        recommendations: ['Expand competitive game library', 'Enhance hardware optimization', 'Improve community tools']}}
     {
       id: '3',
       name: 'VR Gaming Experience',
@@ -146,7 +146,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         dataAccuracy: 9.5,'
         predictionReliability: 9.1,
         optimizationOpportunities: ['Improve content recommendations', 'Enhance user segmentation', 'Expand analytics coverage'],
-        improvementStrategies: ['Implement advanced ML models', 'Enhance data quality', 'Expand metric tracking']}}'
+        improvementStrategies: ['Implement advanced ML models', 'Enhance data quality', 'Expand metric tracking']}}
     {
       id: '2',
       name: 'User Behavior Analysis',
@@ -160,7 +160,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         dataAccuracy: 9.2,'
         predictionReliability: 8.8,
         optimizationOpportunities: ['Enhance behavior tracking', 'Improve real-time analysis', 'Expand behavioral patterns'],
-        improvementStrategies: ['Implement pattern recognition AI', 'Enhance real-time processing', 'Expand tracking capabilities']}}'
+        improvementStrategies: ['Implement pattern recognition AI', 'Enhance real-time processing', 'Expand tracking capabilities']}}
     {
       id: '3',
       name: 'Engagement Metrics System',
@@ -190,7 +190,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         creationEfficiency: 9.5,'
         qualityAccuracy: 8.8,
         improvementAreas: ['Enhance content quality', 'Improve generation speed', 'Expand content variety'],
-        recommendations: ['Optimize generation algorithms', 'Enhance quality filters', 'Expand content types']}}'
+        recommendations: ['Optimize generation algorithms', 'Enhance quality filters', 'Expand content types']}}
     {
       id: '2',
       name: 'Video Production AI',
@@ -204,7 +204,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         creationEfficiency: 9.2,'
         qualityAccuracy: 9.1,
         improvementAreas: ['Improve video quality', 'Enhance editing speed', 'Expand video formats'],
-        recommendations: ['Optimize video processing', 'Enhance editing tools', 'Expand format support']}}'
+        recommendations: ['Optimize video processing', 'Enhance editing tools', 'Expand format support']}}
     {
       id: '3',
       name: 'Audio Creation Engine',
@@ -230,12 +230,12 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         totalUsers: 4750000,
         engagementRate: 78,
         revenueGrowth: 25,
-        contentViews: 12500000}'
+        contentViews: 12500000}
       aiAnalysis: {
         insights: ['Content optimization increased engagement by 25%', 'Personalized content improved retention by 30%'],
         trends: ['Improving content relevance', 'Increasing user engagement', 'Enhancing personalization'],
         recommendations: ['Expand content optimization', 'Implement A/B testing', 'Enhance personalization'],
-        impactScore: 9.2}}'
+        impactScore: 9.2}}
     {
       id: '2',
       name: 'User Experience Optimization',
@@ -245,12 +245,12 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         totalUsers: 3800000,
         engagementRate: 82,
         revenueGrowth: 22,
-        contentViews: 9800000}'
+        contentViews: 9800000}
       aiAnalysis: {
         insights: ['UX optimization improved satisfaction by 22%', 'Streamlined interfaces increased conversions by 35%'],
         trends: ['Improving user satisfaction', 'Reducing friction points', 'Enhancing usability'],
         recommendations: ['Expand UX optimization', 'Enhance interface design', 'Implement user testing'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Revenue Optimization System',
@@ -260,7 +260,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         totalUsers: 4200000,
         engagementRate: 75,
         revenueGrowth: 28,
-        contentViews: 11200000}'
+        contentViews: 11200000}
       aiAnalysis: {
         insights: ['Revenue optimization increased monetization by 28%', 'Dynamic pricing improved ARPU by 40%'],
         trends: ['Improving monetization', 'Optimizing pricing strategies', 'Enhancing revenue streams'],
@@ -281,7 +281,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance personalization']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Content Creation Boosting Entertainment Revenue',
@@ -337,14 +337,14 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
       case 'positive': return '🎮
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredGamingPlatforms = useMemo(() => {'
@@ -502,7 +502,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'gaming' && (
           <div className=" space-y-6>
@@ -510,7 +510,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'mobile-gaming', 'pc-gaming', 'console-gaming', 'vr-gaming', 'esports', 'casual-gaming'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -557,7 +557,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'analytics' && (
           <div className="space-y-6>" 
@@ -595,7 +595,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'content' && (
           <div className="space-y-6>

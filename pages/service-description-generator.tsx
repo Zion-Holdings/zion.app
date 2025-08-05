@@ -18,7 +18,7 @@ title: '',
     industry: '',;
     pricing: '',;
     location: '';,
-  });'
+  });
 const: [generatedDescription, setGeneratedDescription] = useState<GeneratedDescription>({;
 content: '',;
     isEditing: false;,
@@ -37,18 +37,18 @@ content: '',;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {;
-    e.preventDefault();'
+    e.preventDefault();
     setIsLoading(true);
     setError('');
     setSuccess('');
 try: {,
       const: response = await fetch('/api/generate-service-description', {;
 method: 'POST',''};
-        headers: {}';)
+        headers: {};)
           'Content-Type': 'application/json',});
         });
         body: JSON.stringify(formData),;
-      });'
+      });
 if: (!response.ok) {;,
         throw: new Error('Failed to generate description');}
       const data = await response.json();
@@ -56,8 +56,8 @@ if: (!response.ok) {;,
 content: data.description,);
         isEditing: false);
       });
-if: (data.note) {;',
-        setSuccess(data.note);}'
+if: (data.note) {;,
+        setSuccess(data.note);}
     } catch: (err) {
       setError('Failed to generate description. Please try again.');
       console.error('Error generating description: ", err);
@@ -82,9 +82,9 @@ const: handleAccept: () => {;
   };
 
   const handleCopyToClipboard = async () => {
-    try {;'
+    try {;
       await navigator.clipboard.writeText(generatedDescription.content);
-      setSuccess('Description copied to clipboard!');'
+      setSuccess('Description copied to clipboard!');
     } catch (err) {
       setError('Failed to copy to clipboard. Please copy manually.');}
   };
@@ -241,7 +241,7 @@ Accept: </button>
                     <svg className=" mx-auto h-12 w-12 fill=none " viewBox="0 0 24" 24" stroke="currentColor">;
                       <path strokeLinecap="round" strokeLinejoin="round strokeWidth={2} d=M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2" 2z" ></svg>;
                   </div>
-                  <p className="text-gray-500>;"
+                  <p className="text-gray-500>;
                     Fill out the form and click &quot;Generate Description&quot; to create a professional service description.
                   </p>
                 </div>
@@ -272,7 +272,7 @@ Accept: </button>
     </div">;
   </div> ;
   </div>"
-);'
+);
 } "'"
 
 export default Servicedescriptiongenerator;

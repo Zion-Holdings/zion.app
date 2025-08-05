@@ -14,24 +14,24 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({'
   items = 'stretch',
   justify = 'start'
 }) => {'
-  const gridClasses = {
+  const $1 = {
     1: 'grid-responsive-1',
     2: 'grid-responsive-2',
     3: 'grid-responsive-3',
     4: 'grid-responsive-4',
     5: 'grid-responsive-5',
-    6: 'grid-responsive-6'}'
-  const gapClasses = {
+    6: 'grid-responsive-6'}
+  const $1 = {
     sm: 'gap-4',
     base: 'gap-6 lg:gap-8',
     lg: 'gap-8 lg:gap-12',
-    xl: 'gap-12 lg:gap-16'}'
-  const itemsClasses = {
+    xl: 'gap-12 lg:gap-16'}
+  const $1 = {
     start: 'items-start',
     center: 'items-center',
     end: 'items-end',
-    stretch: 'items-stretch'}'
-  const justifyClasses = {
+    stretch: 'items-stretch'}
+  const $1 = {
     start: 'justify-start',
     center: 'justify-center',
     end: 'justify-end',

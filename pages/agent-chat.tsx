@@ -1,252 +1,260 @@
-import React from "react";
-import type { NextPage } from 'next";
-import Head from "next/head";
-import { motion } from "framer-motion";
-interface ChatMessage {'
+import React, { useState, useEffect, useRef } from 'react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+
+interface ChatMessage {
   id: string;
-  type: 'user' | 'agent";
+  type: 'user' | 'agent';
   content: string;
-  timestamp: Date;}
+  timestamp: Date;
+  status?: 'sending' | 'sent' | 'error';
+}
+
 interface Agent {
   id: string;
   name: string;
-  description: string;
   avatar: string;
   category: string;
-  isOnline: boolean;}
-const AgentChat: NextPage = () => {
-  ;
-  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);'
+  isOnline: boolean;
+  description: string;
+}
+
+const AgentChatPage: NextPage = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const $1: $2[] = [
+
+  const agents: Agent[] = [
     {
       id: '1',
       name: 'AI Assistant',
-      description: 'General purpose AI assistant for various tasks',
       avatar: '🤖',
       category: 'General',
-      isOnline: true}
-    },'
-{
+      isOnline: true,
+      description: 'General purpose AI assistant'
+    },
+    {
       id: '2',
-      name: 'Code Helper',
-      description: 'Specialized in programming and technical questions',
-      avatar: '💻',
-      category: 'Technical',
-      isOnline: true
-    },'
+      name: 'Research Agent',
+      avatar: '🔍',
+      category: 'Research',
+      isOnline: true,
+      description: 'Specialized in research and analysis'
+    },
     {
       id: '3',
-      name: 'Creative Writer',
-      description: 'AI writer for content creation and storytelling',
-      avatar: '✍️',
+      name: 'Creative Agent',
+      avatar: '🎨',
       category: 'Creative',
-      isOnline: true
-    },'
-{
+      isOnline: false,
+      description: 'Creative writing and design assistance'
+    },
+    {
       id: '4',
-      name: 'Data Analyst',
-      description: 'Expert in data analysis and visualization',
-      avatar: '📊',
-      category: 'Analytics',
-      isOnline: false
-    },'
+      name: 'Technical Agent',
+      avatar: '⚙️',
+      category: 'Technical',
+      isOnline: true,
+      description: 'Technical support and coding help'
+    },
     {
       id: '5',
-      name: 'Business Advisor',
-      description: 'Strategic business advice and planning',
+      name: 'Business Agent',
       avatar: '💼',
       category: 'Business',
-      isOnline: true
-    },'
-{
+      isOnline: true,
+      description: 'Business strategy and analysis'
+    },
+    {
       id: '6',
-      name: 'Language Tutor',
-      description: 'Language learning and translation assistance',
+      name: 'Learning Agent',
       avatar: '🌍',
       category: 'Education',
-      isOnline: true}
+      isOnline: true,
+      description: 'Educational content and tutoring'
+    }
   ];
-'
-  const $1 = () => {'
+
+  const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  } [messages]);
-
-  const startNewChat = (agent: Agent) => {;
-    setSelectedAgent(agent);'
+  const startNewChat = (agent: Agent) => {
+    setSelectedAgent(agent);
     setMessages([]);
-    setInputMessage('');
   };
 
-  const sendMessage = async () => {;
+  const sendMessage = async () => {
     if (!inputMessage.trim() || !selectedAgent) return;
-    const userMessage: ChatMessage = {'
+
+    const userMessage: ChatMessage = {
       id: Date.now().toString(),
       type: 'user',
       content: inputMessage,
-      timestamp: new Date(;
+      timestamp: new Date(),
+      status: 'sending'
     };
-'
+
     setMessages(prev => [...prev, userMessage]);
     setInputMessage('');
     setIsTyping(true);
 
-    // Simulate AI response
+    // Simulate agent response
     setTimeout(() => {
-      const aiResponse: ChatMessage = {'
+      const agentMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         type: 'agent',
-        content: `Hello! I'm ${selectedAgent.name}. I received your message: "${inputMessage}. How can I help you further?`,
-        timestamp: new Date(;
+        content: `This is a simulated response from ${selectedAgent.name}. I understand you said: "${inputMessage}". How can I help you further?`,
+        timestamp: new Date(),
+        status: 'sent'
       };
-      setMessages(prev => [...prev", aiResponse]);
+
+      setMessages(prev => [...prev, agentMessage]);
       setIsTyping(false);
-    } 1000 + Math.random() * 2000);
-  };
-'
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {;
-      e.preventDefault();
-      sendMessage();}
+    }, 1000);
   };
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
   return (
-    <div>
+    <>
       <Head>
-        <title>Agent Chat - Zion AI Marketplace</title>
-        <meta name = "description content=Start a conversation with AI agents for various tasks and assistance > </meta" name="description" content="Start a conversation with AI agents for various tasks and" assistance" ><meta name="viewport content=width=device-width, initial-scale=1 > </meta" name="viewport" content="width=device-width," initial-scale=1" ><link rel="icon href=/favicon.ico > </link" rel="icon" href="/favicon.ico" ></Head>
-"
-      <main className=" min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker" to-cyber-dark-blue>
-        <div className=" container-responsive" py-8>
-          {/* Header */}
-          >"
-            <h1 className="text-responsive-4xl" lg text-responsive-5xl font-bold text-high-contrast mb-4 >
-              <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple>
-                AI Agent Chat
-              </span>
-            </h1 >
-            <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl mx-auto>
-              Start a conversation with specialized AI agents for various tasks and assistance
-            </p>
-          </motion.div>
-          <div className="grid  grid-cols-1 lg:grid-cols-3 gap-8>
+        <title>Agent Chat - Zion App</title>
+        <meta name="description" content="Chat with AI agents for various tasks" />
+      </Head>
+
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Agent Chat</h1>
+            <p className="text-gray-600">Chat with specialized AI agents for different tasks</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Agent Selection */}
-            >"
-              <div className=" glass-dark border border-neon-blue/30 rounded-2xl" p-6>
-                <h2 className="text-2xl font-bold text-high-contrast mb-6> 
-                  Available Agents
-                </h2>
-                <div className="space-y-4 >
-                  {availableAgents.map((agent) => (
-                      onClick={() => startNewChat(agent)}">
-                      <div className="flex" items-center space-x-3> 
-                        </div><div className="text-2xl>{agent.avatar}</div"">
-                        <div className="flex-1>"
-                          <h3 className="font-semibold" text-high-contrast >{agent.name}</h3>
-                          <p className="text-sm" text-high-contrast-secondary>{agent.description}</p>
-                          <div className="flex" items-center" mt-2>`
-                            ``
-                            }`}></span>
-                            <span className="text-xs" text-high-contrast-secondary >'
-                              {agent.isOnline ? 'Online' : 'Offline'}
-                            </span>
+            <div className="lg:col-span-1">
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Agent</h2>
+                <div className="space-y-3">
+                  {agents.map((agent) => (
+                    <button
+                      key={agent.id}
+                      onClick={() => startNewChat(agent)}
+                      className={`w-full text-left p-3 rounded-lg border transition-colors ${
+                        selectedAgent?.id === agent.id
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <span className="text-2xl">{agent.avatar}</span>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2">
+                            <h3 className="font-medium text-gray-900">{agent.name}</h3>
+                            <span className={`w-2 h-2 rounded-full ${
+                              agent.isOnline ? 'bg-green-500' : 'bg-gray-400'
+                            }`} />
                           </div>
+                          <p className="text-sm text-gray-500">{agent.category}</p>
                         </div>
                       </div>
-                    </motion.div>
+                    </button>
                   ))}
                 </div>
               </div>
-            </motion.div>
- 
-            {/* Chat Interface */}
-            "
-            >
-              <div className=" glass-dark border border-neon-blue/30 rounded-2xl h-[600px] flex flex-col>
+            </div>
+
+            {/* Chat Area */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm h-96 flex flex-col">
                 {/* Chat Header */}
-                </div><div className="p-6" border-b border-neon-blue/20>
-                  {selectedAgent ? (
-                    <div className="flex" items-center space-x-3 >
-                      </div><div className="text-2xl>{selectedAgent.avatar}</div>"
-                      <div> 
-                        <h3 className="font-semibold" text-high-contrast>{selectedAgent.name}</h3>
-                        <p className="text-sm:text-high-contrast-secondary>{selectedAgent.description}</p>"
+                {selectedAgent && (
+                  <div className="border-b border-gray-200 p-4">
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">{selectedAgent.avatar}</span>
+                      <div>
+                        <h3 className="font-semibold text-gray-900">{selectedAgent.name}</h3>
+                        <p className="text-sm text-gray-500">{selectedAgent.description}</p>
                       </div>
-                      <div className="ml-auto>`"
-                        ``
-                        }`}></span>
-                      </div> 
                     </div>
-                  )   (
-                    <h3 className="text-xl" font-semibold text-high-contrast>
-                      Select an agent to start chatting
-                    </h3>
-                  )}
-                </div> 
+                  </div>
+                )}
+
                 {/* Messages */}
-                <div className="flex-1" overflow-y-auto p-6 space-y-4>
-                  {messages.length === 0 && selectedAgent && (
-                    </div><div className="text-center" text-high-contrast-secondary >
-                      <p>Start a conversation with {selectedAgent.name}</p>
-                    </div>
-                  )}"
+                <div className="flex-1 overflow-y-auto p-4 space-y-4">
                   {messages.map((message) => (
-                    "
-                    >"`
-                      "``
-                      }`}>
-                        <p className="text-sm>{message.content}</p>"
-                        <p className="text-xs" opacity-70 mt-2 >
+                    <div
+                      key={message.id}
+                      className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div
+                        className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                          message.type === 'user'
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-gray-100 text-gray-900'
+                        }`}
+                      >
+                        <p className="text-sm">{message.content}</p>
+                        <p className={`text-xs mt-1 ${
+                          message.type === 'user' ? 'text-blue-100' : 'text-gray-500'
+                        }`}>
                           {message.timestamp.toLocaleTimeString()}
                         </p>
                       </div>
-                    </motion.div>
-                  ))}"
+                    </div>
+                  ))}
+                  
                   {isTyping && (
-                    "
-                    >"
-                      <div className="glass" border border-neon-blue/30 p-4 rounded-2xl> 
-                        </div><div className="flex" space-x-1>'
-                          <div className="w-2" h-2 bg-neon-blue rounded-full animate-bounce ></div>
-                          <div className="w-2" h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay  '0.1s' }}></div>
-                          <div className="w-2" h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay  '0.2s' }}></div>
-                        </div>
+                    <div className="flex justify-start">
+                      <div className="bg-gray-100 text-gray-900 px-4 py-2 rounded-lg">
+                        <p className="text-sm">Typing...</p>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
-                  <div ref={messagesEndRef} > </div ref={messagesEndRef} ></div>
+                  
+                  <div ref={messagesEndRef} />
+                </div>
 
-                {/* Input */},"
-{selectedAgent && (
-                  <div className="p-6" border-t border-neon-blue/20> 
-                    </div><div className="flex space-x-4">
+                {/* Input */}
+                {selectedAgent && (
+                  <div className="border-t border-gray-200 p-4">
+                    <div className="flex space-x-2">
+                      <input
+                        type="text"
+                        value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
-                        onKeyPress={handleKeyPress}"
-                        placeholder="Type your" message...
-                        className="flex-1" bg-transparent border border-neon-blue/30 rounded-xl px-4 py-3 text-high-contrast placeholder-high-contrast-secondary focus border-neon-blue focus outline-none
-                        disabled={isTyping}
+                        onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                        placeholder="Type your message..."
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
-                      
+                      <button
+                        onClick={sendMessage}
+                        disabled={!inputMessage.trim()}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Send
                       </button>
                     </div>
                   </div>
                 )}
+
+                {!selectedAgent && (
+                  <div className="flex-1 flex items-center justify-center">
+                    <p className="text-gray-500">Select an agent to start chatting</p>
+                  </div>
+                )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   );
 };
-''`
-export default AgentChat;))"'"'`
+
+export default AgentChatPage;

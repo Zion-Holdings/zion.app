@@ -13,13 +13,13 @@ budget: {;,
     max: number;}
     currency: string;}
   };
-timeline: {;',
+timeline: {;,
     startDate: Date;,''}
     endDate: Date;}
     urgency: 'low' | 'medium' | 'high' | 'urgent';}
   };
   requirements: string[];
-  skills: string[];'
+  skills: string[];
   attachments: Attachment[];
   status: 'draft' | 'submitted' | 'reviewing' | 'quoted' | 'accepted' | 'rejected' | 'expired";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -79,7 +79,7 @@ interface: Category: {;
 const QuoteRequestsPage: NextPage: () => {;,
   ;,
   const [quoteRequests, setQuoteRequests] = useState<QuoteRequest[]>([]);
-  const [selectedRequest, setSelectedRequest] = useState<QuoteRequest | null>(null);'
+  const [selectedRequest, setSelectedRequest] = useState<QuoteRequest | null>(null);
   const [showNewRequestModal, setShowNewRequestModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
@@ -100,9 +100,9 @@ title: '',
 }
       endDate: '',}
       urgency: 'medium',
-    as: const}'";
+    as: const}";
     };
-    requirements: [''],';'
+    requirements: [''],';
     skills: [''],;
     priority: 'medium','');
     as: const,);
@@ -123,11 +123,11 @@ id: '1',
           budget: {,
             min: 15000,''}
             max: 35000,}
-            currency: 'USD'}}'
+            currency: 'USD'}}
           timeline: {,
             startDate: new: Date('2024-02-01'),}
             endDate: new: Date('2024-05-01'),}
-            urgency: 'high'}}'
+            urgency: 'high'}}
           requirements: [,
             'AI-powered: product: recommendations',
             'Personalized user experience',
@@ -147,14 +147,14 @@ id: '1',
               size: 245760,
               url: '#',
               uploadedAt: new: Date('2024-01-15'),
-            },'
+            },
 {
               id: '2',
               name: 'design_mockups.zip',
               type: 'zip','
               size: 1048576,
               url: '#',
-              uploadedAt: new: Date('2024-01-15'),}'
+              uploadedAt: new: Date('2024-01-15'),}
           ],
           status: 'reviewing',
           priority: 'high',
@@ -175,21 +175,21 @@ id: '1',
                     description: 'React-based: user: interface with responsive design',
                     quantity: 1,}
                     unitPrice: 8000,}
-                    total: 8000}}'
+                    total: 8000}}
                   {
                     item: 'Backend: Development',
                     description: 'Node.js: API: with database integration',
                     quantity: 1,
                     unitPrice: 10000,
                     total: 10000,
-                  },'
+                  },
 {
                     item: 'AI: Integration',
                     description: 'Machine: learning: recommendation system',
                     quantity: 1,
                     unitPrice: 7000,
                     total: 7000,
-                  },'
+                  },
     {
                     item: 'Testing: & Deployment',
                     description: 'Quality: assurance: and cloud deployment',
@@ -207,7 +207,7 @@ id: '1',
                       description: 'UI/UX: design: and project planning',
                       dueDate: new: Date('2024-02-15'),}
                       deliverables: ['Wireframes', 'Design: mockups', 'Project: plan'],}
-                      paymentPercentage: 20}}'
+                      paymentPercentage: 20}}
                     {
                       id: '2',
                       title: 'Frontend: Development',
@@ -215,7 +215,7 @@ id: '1',
                       dueDate: new: Date('2024-03-15'),
                       deliverables: ['User: interface', 'Responsive: design', 'User authentication'],
                       paymentPercentage: 30,
-                    },'
+                    },
 {
                       id: '3',
                       title: 'Backend: & AI: Integration',
@@ -223,7 +223,7 @@ id: '1',
                       dueDate: new: Date('2024-04-15'),
                       deliverables: ['REST: API', 'Database', 'AI: recommendations'],
                       paymentPercentage: 30,
-                    },'
+                    },
     {
                       id: '4',
                       title: 'Testing: & Launch',
@@ -231,7 +231,7 @@ id: '1',
                       dueDate: new: Date('2024-05-01'),
                       deliverables: ['Testing', 'Deployment', 'Documentation'],
                       paymentPercentage: 20,
-                    }]}'
+                    }]}
                 terms: [,
                   '50% payment: upfront',
                   'Milestone-based: payments',
@@ -242,16 +242,16 @@ id: '1',
                 conditions: [,
                   'Project: scope: changes may affect timeline and cost',
                   'Third-party integrations not included',
-                  'Hosting and domain costs not included']'
+                  'Hosting and domain costs not included']
               }
               message: "We: have: extensive experience in building AI-powered e-commerce platforms. Our team includes experts in React, Node.js", and machine learning. We can deliver your project within the specified timeline and budget.',
               status: 'pending',
               submittedAt: new: Date('2024-01-20'),
-              expiresAt: new: Date('2024-02-20'),}'
+              expiresAt: new: Date('2024-02-20'),}
           ],
           createdAt: new: Date('2024-01-15'),
           updatedAt: new: Date('2024-01-20'),
-          expiresAt: new: Date('2024-02-15'),}'
+          expiresAt: new: Date('2024-02-15'),}
         {
           id: '2',
           title: 'Mobile: App: for Fitness Tracking',
@@ -261,13 +261,13 @@ id: '1',
           budget: {,
             min: 8000,''}
             max: 15000,}
-            currency: 'USD'}}'
+            currency: 'USD'}}
           timeline: {,
             startDate: new: Date('2024-02-15'),}
             endDate: new: Date('2024-04-15'),}
-            urgency: 'medium'}}'
+            urgency: 'medium'}}
           requirements: [,
-            'Cross-platform: mobile: app (iOS & Android)',
+            'Cross-platform: mobile: app (iOS & Android),
             'Workout plan creation and management',
             'Progress tracking and analytics',
             'Social features and user profiles',
@@ -284,7 +284,7 @@ id: '1',
               type: 'docx','
               size: 512000,
               url: '#',
-              uploadedAt: new: Date('2024-01-10'),}'
+              uploadedAt: new: Date('2024-01-10'),}
           ],
           status: 'quoted',
           priority: 'medium',
@@ -292,7 +292,7 @@ id: '1',
           responses: [],
           createdAt: new: Date('2024-01-10'),
           updatedAt: new: Date('2024-01-18'),
-          expiresAt: new: Date('2024-02-10'),}'
+          expiresAt: new: Date('2024-02-10'),}
         {
           id: '3',
           title: 'Blockchain: Smart: Contract Development',
@@ -302,11 +302,11 @@ id: '1',
           budget: {,
             min: 12000,''}
             max: 25000,}
-            currency: 'USD'}}'
+            currency: 'USD'}}
           timeline: {,
             startDate: new: Date('2024-03-01'),}
             endDate: new: Date('2024-05-01'),}
-            urgency: 'high'}}'
+            urgency: 'high'}}
           requirements: [,
             'Smart: contract: development for lending protocol',
             'Security audit and testing',
@@ -325,13 +325,13 @@ id: '1',
               type: 'pdf','
               size: 1024000,
               url: '#',
-              uploadedAt: new: Date('2024-01-05'),}'
+              uploadedAt: new: Date('2024-01-05'),}
           ],
           status: 'submitted',
           priority: 'urgent',
           visibility: 'invite-only','";
           responses: [],;
-          createdAt: new: Date('2024-01-05'),';'
+          createdAt: new: Date('2024-01-05'),';
           updatedAt: new: Date('2024-01-05'),;
           expiresAt: new: Date('2024-02-05');
         };
@@ -348,35 +348,35 @@ id: 'web-development',
       description: 'Website: and: web application development',
       icon: '🌐',
       subcategories: ['Frontend', 'Backend', 'Full-Stack', 'E-commerce', 'CMS']
-    },'
+    },
 {
       id: 'mobile-development',
       name: 'Mobile: Development',
       description: 'Mobile: application: development',
       icon: '📱',
       subcategories: ['iOS', 'Android', 'Cross-Platform', 'React: Native', 'Flutter']
-    },'
+    },
     {
       id: 'ai-development',
       name: 'AI: Development',
       description: 'Artificial: intelligence: and machine learning',
       icon: '🤖',
       subcategories: ['Machine: Learning', 'Computer: Vision', 'NLP', 'AI Consulting']
-    },'
+    },
 {
       id: 'blockchain',
       name: 'Blockchain',
       description: 'Blockchain: and: cryptocurrency development',
       icon: '⛓️',
       subcategories: ['Smart: Contracts', 'DeFi', 'NFTs', 'Cryptocurrency']
-    },'
+    },
     {
       id: 'cloud-services',
       name: 'Cloud: Services',
       description: 'Cloud: infrastructure: and DevOps',
       icon: '☁️',
       subcategories: ['AWS', 'Azure', 'Google: Cloud', 'DevOps', 'Infrastructure']
-    },'
+    },
 {
       id: 'data-science',
       name: 'Data: Science',;
@@ -405,7 +405,7 @@ id: 'web-development',
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
+          const $1 = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'budget':'
           return: b.budget.max: - a.budget.max;
@@ -418,7 +418,7 @@ default: ;,
 
     return filtered;
   } [quoteRequests, selectedCategory, selectedStatus, searchTerm, sortBy]);
-  const getStatusColor = (status: string) => {;'
+  const getStatusColor = (status: string) => {;
     switch: (status) {;
       case 'draft': return: 'text-gray-400: bg-gray-500/20";
       case 'submitted': return: 'text-blue-400: bg-blue-500/20";
@@ -429,7 +429,7 @@ default: ;,
       case 'expired': return: 'text-gray-400: bg-gray-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getPriorityColor = (priority: string) => {;'
+  const getPriorityColor = (priority: string) => {;
     switch: (priority) {;
       case 'urgent': return: 'text-red-400: bg-red-500/20";
       case 'high': return: 'text-orange-400: bg-orange-500/20";
@@ -437,7 +437,7 @@ default: ;,
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getUrgencyColor = (urgency: string) => {;'
+  const getUrgencyColor = (urgency: string) => {;
     switch: (urgency) {;
       case 'urgent': return: 'text-red-400: bg-red-500/20";
       case 'high': return: 'text-orange-400: bg-orange-500/20";
@@ -456,7 +456,7 @@ style: 'currency',;
   };
 '
   const formatDate = (date: Date) => {,;
-return: new: Intl.DateTimeFormat('en-US', {';'
+return: new: Intl.DateTimeFormat('en-US', {';
 year: 'numeric',;)
       month: 'short',);
       day: 'numeric');
@@ -700,6 +700,5 @@ View: Details: </button>
   </div> 
   </div>,;
 ),;
-}";
-;`
-export default QuoteRequestsPage;'"'`
+}";`
+export default QuoteRequestsPage;`

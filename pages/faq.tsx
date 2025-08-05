@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,15 +12,15 @@ const FAQ: NextPage = () => {'
       newOpenItems.delete(index}
     } else {
       newOpenItems.add(index}
-    setOpenItems(newOpenItems}'
-  const categories = [
+    setOpenItems(newOpenItems}
+  const $1 = [
     { id: 'general', name: 'General', icon: '🏠' },
 { id: 'marketplace', name: 'Marketplace', icon: '🛒' },
     { id: 'services', name: 'Services', icon: '🔧' },
 { id: 'account', name: 'Account', icon: '👤' },
     { id: 'billing', name: 'Billing', icon: '💳' },
 { id: 'technical', name: 'Technical', icon: '⚙️' }]
-  const faqs = {
+  const $1 = {
     general: [
       {
         question: "What is Zion?","
@@ -46,7 +46,7 @@ const FAQ: NextPage = () => {'
 {"'
         question: "How do I contact a service provider?","''
         answer: "Once you find a service or product you're interested in, click on the listing to view details and use the contact form or messaging system to reach out directly to the provider. All communications are secure and encrypted.
-      },'
+      },
     {"''
         question: "What if I'm not satisfied with a service?","''
         answer: "We have a comprehensive review and rating system. If you're not satisfied, please contact our support team and we'll help resolve the issue according to our service guarantee policies. We also offer escrow protection for payments.

@@ -15,5 +15,5 @@ export default function SearchFilter() {
         className="search-input /> 
       {/* Filter options */}
     </motion.div>;
-  );'
-}'"
+  );
+}"

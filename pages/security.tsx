@@ -113,5 +113,4 @@ const Https___ziontechgroup_netlify_app_securityPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default Https___ziontechgroup_netlify_app_securityPage;"'"
+export default Https___ziontechgroup_netlify_app_securityPage;

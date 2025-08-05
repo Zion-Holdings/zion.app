@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface QuantumAlgorithm {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'shor' | 'grover' | 'quantum_fourier' | 'quantum_phase' | 'quantum_walk' | 'variational";
   status: 'running' | 'completed' | 'failed' | 'queued' | 'cancelled";
@@ -21,7 +21,7 @@ interface AlgorithmAnalysis {
   recommendations: string[];}
 interface QuantumOptimization {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   problemType: 'combinatorial' | 'continuous' | 'discrete' | 'mixed' | 'constrained' | 'multi_objective";
   status: 'active' | 'completed' | 'failed' | 'paused";
@@ -36,7 +36,7 @@ interface OptimizationAnalysis {
   recommendations: string[];}
 interface QuantumSimulation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'quantum_circuit' | 'quantum_dynamics' | 'quantum_chemistry' | 'quantum_materials' | 'quantum_optics' | 'quantum_biology";
   status: 'running' | 'completed' | 'failed' | 'scheduled";
@@ -51,7 +51,7 @@ interface SimulationAnalysis {
   recommendations: string[];}
 interface QuantumCryptography {
   id: string;
-  protocol: string;'
+  protocol: string;
   description: string;
   type: 'qkd' | 'quantum_key' | 'quantum_signature' | 'quantum_commitment' | 'quantum_zero_knowledge' | 'post_quantum";
   status: 'active' | 'inactive' | 'testing' | 'deployed";
@@ -66,7 +66,7 @@ interface CryptographyAnalysis {
   recommendations: string[];}
 interface QuantumMachineLearning {
   id: string;
-  model: string;'
+  model: string;
   description: string;
   type: 'quantum_neural_network' | 'quantum_kernel' | 'quantum_feature_map' | 'quantum_boltzmann' | 'quantum_gan' | 'quantum_autoencoder";
   status: 'training' | 'trained' | 'failed' | 'evaluating";
@@ -82,7 +82,7 @@ interface MLAnalysis {
 interface QuantumComputingManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -107,7 +107,7 @@ interface QuantumComputingAnalytics {
   aiInsights: QuantumComputingInsight[];}
 interface QuantumComputingInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -118,7 +118,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
   const [quantumSimulations, setQuantumSimulations] = useState<QuantumSimulation[]>([]
   const [quantumCryptography, setQuantumCryptography] = useState<QuantumCryptography[]>([]
   const [quantumMachineLearning, setQuantumMachineLearning] = useState<QuantumMachineLearning[]>([]
-  const [quantumComputingManagement, setQuantumComputingManagement] = useState<QuantumComputingManagement[]>([]'
+  const [quantumComputingManagement, setQuantumComputingManagement] = useState<QuantumComputingManagement[]>([]
   const [analytics, setAnalytics] = useState<QuantumComputingAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'algorithms' | 'optimization' | 'simulation' | 'cryptography' | 'machine_learning' | 'management' | 'analytics'>('algorithms
   const [selectedType, setSelectedType] = useState<string>('all
@@ -353,7 +353,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Algorithms ({quantumAlgorithms.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('optimization')}''``
+                onClick={() => setActiveTab('optimization')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'optimization
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'`
@@ -363,7 +363,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Optimization ({quantumOptimizations.length}
               </button>'
               `
-                onClick={() => setActiveTab('simulation')}''``
+                onClick={() => setActiveTab('simulation')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'simulation
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'`
@@ -373,7 +373,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Simulation ({quantumSimulations.length}
               </button>'
               `
-                onClick={() => setActiveTab('cryptography')}''``
+                onClick={() => setActiveTab('cryptography')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'cryptography
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'`
@@ -393,7 +393,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Machine Learning ({quantumMachineLearning.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'`
@@ -403,7 +403,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Management ({quantumComputingManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'`
@@ -414,7 +414,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Algorithms Tab */},''
+            {/* Algorithms Tab */},
 {activeTab === 'algorithms' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -514,7 +514,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className=" space-y-8>

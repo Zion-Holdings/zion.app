@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface MonitoringSystem {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'performance' | 'security' | 'network' | 'application' | 'infrastructure' | 'user";
   status: 'active' | 'inactive' | 'maintenance' | 'error";
@@ -23,7 +23,7 @@ interface AIMonitoringAnalysis {
 interface SurveillanceCamera {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   location: string;
   status: 'active' | 'inactive' | 'maintenance' | 'error";
   resolution: string;
@@ -38,7 +38,7 @@ interface AISurveillanceDetection {
   recommendations: string[];}
 interface SystemAlert {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   severity: 'critical' | 'high' | 'medium' | 'low";
   category: 'performance' | 'security' | 'network' | 'application' | 'infrastructure";
@@ -53,7 +53,7 @@ interface AIAlertAnalysis {
   recommendations: string[];}
 interface PerformanceMetric {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   category: 'cpu' | 'memory' | 'disk' | 'network' | 'database' | 'application";
   status: 'normal' | 'warning' | 'critical' | 'error";
@@ -69,7 +69,7 @@ interface AIPerformanceOptimization {
   recommendations: string[];}
 interface SecurityIncident {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'intrusion' | 'malware' | 'data_breach' | 'ddos' | 'phishing' | 'unauthorized_access";
   severity: 'critical' | 'high' | 'medium' | 'low";
@@ -92,7 +92,7 @@ interface MonitoringSurveillanceAnalytics {
   aiInsights: MonitoringSurveillanceInsight[];}
 interface MonitoringSurveillanceInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -102,7 +102,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
   const [surveillanceCameras, setSurveillanceCameras] = useState<SurveillanceCamera[]>([]
   const [systemAlerts, setSystemAlerts] = useState<SystemAlert[]>([]
   const [performanceMetrics, setPerformanceMetrics] = useState<PerformanceMetric[]>([]
-  const [securityIncidents, setSecurityIncidents] = useState<SecurityIncident[]>([]'
+  const [securityIncidents, setSecurityIncidents] = useState<SecurityIncident[]>([]
   const [analytics, setAnalytics] = useState<MonitoringSurveillanceAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'systems' | 'cameras' | 'alerts' | 'performance' | 'security' | 'analytics'>('systems
   const [selectedType, setSelectedType] = useState<string>('all
@@ -299,7 +299,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                 Systems ({monitoringSystems.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('cameras')}''``
+                onClick={() => setActiveTab('cameras')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'cameras
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -309,7 +309,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                 Cameras ({surveillanceCameras.length}
               </button>'
               `
-                onClick={() => setActiveTab('alerts')}''``
+                onClick={() => setActiveTab('alerts')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'alerts
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -319,7 +319,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                 Alerts ({systemAlerts.length}
               </button>'
               `
-                onClick={() => setActiveTab('performance')}''``
+                onClick={() => setActiveTab('performance')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'performance
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -339,7 +339,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                 Security ({securityIncidents.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'`
@@ -452,8 +452,8 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
-            {/* Analytics Tab */},'"'
+            )}
+            {/* Analytics Tab */},"'
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
                 </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>

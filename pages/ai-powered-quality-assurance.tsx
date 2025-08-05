@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface QualityTest {
-  id: string;'
+  id: string;
   name: string;
   type: 'automated' | 'manual' | 'ai-powered' | 'performance' | 'security' | 'compliance";
   status: 'pending' | 'running' | 'passed' | 'failed' | 'blocked";
@@ -15,7 +15,7 @@ interface QualityTest {
   lastRun: Date;
   aiScore: number;}
 interface ComplianceCheck {
-  id: string;'
+  id: string;
   standard: string;
   category: 'security' | 'privacy' | 'accessibility' | 'performance' | 'legal";
   status: 'compliant' | 'non-compliant' | 'pending' | 'exempt";
@@ -31,7 +31,7 @@ interface QualityDashboard {
   aiAccuracy: number;}
 const AIPoweredQualityAssurancePage: NextPage = () => {
   const [qualityTests, setQualityTests] = useState<QualityTest[]>([]
-  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]'
+  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]
   const [dashboard, setDashboard] = useState<QualityDashboard | null>(null
   const [activeTab, setActiveTab] = useState<'tests' | 'compliance' | 'dashboard'>('tests
   const [isLoading, setIsLoading] = useState(true
@@ -48,7 +48,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
       executionTime: 45,
       lastRun: new Date('2024-01-20T10:00:00'),
       aiScore: 94}
-    },'
+    },
 {
       id: '2',
       name: 'Security Vulnerability Assessment',
@@ -70,7 +70,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
       complianceRate: 95,
       lastAudit: new Date('2024-01-15'),
       nextAudit: new Date('2024-04-15'
-    },'
+    },
 {
       id: '2',
       standard: 'WCAG 2.1 AA',
@@ -170,7 +170,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                 Quality Tests ({qualityTests.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('compliance')}''``
+                onClick={() => setActiveTab('compliance')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'compliance
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -180,7 +180,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                 Compliance Checks ({complianceChecks.length}
               </button>'
               `
-                onClick={() => setActiveTab('dashboard')}''``
+                onClick={() => setActiveTab('dashboard')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'dashboard
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -191,7 +191,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
               </button>
             </div>
 '
-            {/* Tests Tab */},'"'
+            {/* Tests Tab */},"'
 {activeTab === 'tests' && (
               <div className="space-y-8>" 
                 </div><div className="grid grid-cols-1 lg grid-cols-2" gap-6>
@@ -235,7 +235,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Compliance Tab */},"''
 {activeTab === 'compliance' && (
               <div className=" space-y-8>
@@ -269,7 +269,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Dashboard Tab */},"''
 {activeTab === 'dashboard' && dashboard && (
               <div className=" space-y-8>

@@ -15,7 +15,7 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
 }) => {;
   const router = useRouter();
   // Generate breadcrumbs from router path if not provided'
-  const generateBreadcrumbs = (): BreadcrumbItem[] => {';'
+  const generateBreadcrumbs = (): BreadcrumbItem[] => {';
     const pathSegments = router.asPath.split('/').filter(segment => segment);
     const breadcrumbs: BreadcrumbItem[] = [];
     if (showHome) {'
@@ -23,15 +23,15 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
         label: 'Home',
         href: '/',
         current: pathSegments.length = == 0;
-      });}'
+      });}
     let currentPath = '";
     pathSegments.forEach((segment, index) => {
       currentPath += `/${segment}`;
       const isLast = index === pathSegments.length - 1;
       // Convert segment to readable label'
       const label = segment
-        .split('-')'
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))';'
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1));
         .join(' ');
       
       breadcrumbs.push({
@@ -86,8 +86,8 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
           </ol>
         </div >
       </div>
-    </nav>;"
+    </nav>;
   );
 };
 ''`
-export default BreadcrumbNavigation;'"'`
+export default BreadcrumbNavigation;`

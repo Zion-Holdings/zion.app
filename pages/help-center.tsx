@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { Home, Search, User }  from "lucide-react";
 const HelpCenter: NextPage = () => {'
   const [activeCategory, setActiveCategory] = useState('general
   const [searchQuery, setSearchQuery] = useState(
-  const categories = ['
+  const $1 = ['
 },
     { id: 'general', name: 'General', icon: '🏠' },
 { id: 'marketplace', name: 'Marketplace', icon: '🛒' },
@@ -14,7 +14,7 @@ const HelpCenter: NextPage = () => {'
 { id: 'account', name: 'Account', icon: '👤' },
     { id: 'billing', name: 'Billing', icon: '💳' },
 { id: 'technical', name: 'Technical', icon: '⚙️' }]
-  const faqs = {
+  const $1 = {
     general: [
       {
         question: "What is Zion?","
@@ -36,7 +36,7 @@ const HelpCenter: NextPage = () => {'
 {"'
         question: "How do I contact a service provider?","''
         answer: "Once you find a service or product you're interested in, click on the listing to view details and use the contact form or messaging system to reach out directly to the provider.
-      },'
+      },
     {"''
         question: "What if I'm not satisfied with a service?","''
         answer: "We have a comprehensive review and rating system. If you're not satisfied, please contact our support team and we'll help resolve the issue according to our service guarantee policies."}

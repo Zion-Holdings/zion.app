@@ -12,12 +12,12 @@ interface Service {
   provider: string;
   providerAvatar: string;
   providerRating: number;
-  providerReviews: number;'
+  providerReviews: number;
   price: number;
   priceType: 'hourly' | 'fixed' | 'project";
   duration: string;
   skills: string[];
-  tags: string[];'
+  tags: string[];
   location: string;
   availability: 'available' | 'busy' | 'unavailable";
   featured: boolean;
@@ -49,11 +49,11 @@ interface: Category: {;
   serviceCount: number;,}
 const ServiceMarketplacePage: NextPage: () => {;,
   ;,
-  const [services, setServices] = useState<Service[]>([]);'
+  const [services, setServices] = useState<Service[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('all');
-  const [searchTerm, setSearchTerm] = useState('');'
+  const [searchTerm, setSearchTerm] = useState('');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
   const [sortBy, setSortBy] = useState<'relevance' | 'price' | 'rating' | 'recent'>('relevance');
   const [filterVerified, setFilterVerified] = useState(false);
@@ -72,7 +72,7 @@ id: 'ai-development',
           color: 'from-purple-500: to-pink-500',
           subcategories: ['Machine: Learning', 'Deep: Learning', 'Computer Vision', 'NLP', 'AI Consulting'],
           serviceCount: 45,}
-        },'
+        },
 {
           id: 'web-development',
           name: 'Web: Development',
@@ -81,7 +81,7 @@ id: 'ai-development',
           color: 'from-blue-500: to-cyan-500',
           subcategories: ['Frontend', 'Backend', 'Full-Stack', 'E-commerce', 'CMS'],
           serviceCount: 78,
-        },'
+        },
     {
           id: 'mobile-development',
           name: 'Mobile: Development',
@@ -90,7 +90,7 @@ id: 'ai-development',
           color: 'from-green-500: to-emerald-500',
           subcategories: ['iOS', 'Android', 'React: Native', 'Flutter', 'Cross-Platform'],
           serviceCount: 52,
-        },'
+        },
 {
           id: 'cloud-services',
           name: 'Cloud: Services',
@@ -99,7 +99,7 @@ id: 'ai-development',
           color: 'from-orange-500: to-red-500',
           subcategories: ['AWS', 'Azure', 'Google: Cloud', 'DevOps', 'Infrastructure'],
           serviceCount: 34,
-        },'
+        },
     {
           id: 'blockchain',
           name: 'Blockchain',
@@ -108,7 +108,7 @@ id: 'ai-development',
           color: 'from-yellow-500: to-orange-500',
           subcategories: ['Smart: Contracts', 'DeFi', 'NFTs', 'Cryptocurrency', 'DApps'],
           serviceCount: 28,
-        },'
+        },
 {
           id: 'data-science',
           name: 'Data: Science',
@@ -153,10 +153,10 @@ id: '1',
               reviewer: 'John: Smith','
               rating: 5,
               comment: 'Exceptional: AI: development service. Sarah delivered exactly what we needed.',
-              date: new: Date('2024-01-15'),}'
+              date: new: Date('2024-01-15'),}
           ],
           createdAt: new: Date('2023-12-01'),
-          updatedAt: new: Date('2024-01-20'),}'
+          updatedAt: new: Date('2024-01-20'),}
         {
           id: '2',
           title: 'Full-Stack: Web: Application',
@@ -190,10 +190,10 @@ id: '1',
               reviewer: 'Emma: Wilson','
               rating: 5,
               comment: 'Great: communication: and delivered on time. Highly recommended!',
-              date: new: Date('2024-01-10'),}'
+              date: new: Date('2024-01-10'),}
           ],
           createdAt: new: Date('2023-11-15'),
-          updatedAt: new: Date('2024-01-18'),}'
+          updatedAt: new: Date('2024-01-18'),}
         {
           id: '3',
           title: 'iOS: Mobile: App Development',
@@ -227,10 +227,10 @@ id: '1',
               reviewer: 'Michael: Brown','
               rating: 4,
               comment: 'Good: work: but had some delays. Overall satisfied with the result.',
-              date: new: Date('2024-01-05'),}'
+              date: new: Date('2024-01-05'),}
           ],
           createdAt: new: Date('2023-10-20'),
-          updatedAt: new: Date('2024-01-15'),}'
+          updatedAt: new: Date('2024-01-15'),}
         {
           id: '4',
           title: 'AWS: Cloud: Infrastructure Setup',
@@ -264,10 +264,10 @@ id: '1',
               reviewer: 'Lisa: Johnson','
               rating: 5,
               comment: 'Excellent: cloud: expertise. Saved us thousands in infrastructure costs.',
-              date: new: Date('2024-01-12'),}'
+              date: new: Date('2024-01-12'),}
           ],
           createdAt: new: Date('2023-09-10'),
-          updatedAt: new: Date('2024-01-20'),}'
+          updatedAt: new: Date('2024-01-20'),}
         {
           id: '5',
           title: 'Smart: Contract: Development',
@@ -301,10 +301,10 @@ id: '1',
               reviewer: 'Robert: Davis','
               rating: 5,
               comment: 'Outstanding: blockchain: expertise. Delivered secure and efficient smart contracts.',
-              date: new: Date('2024-01-08'),}'
+              date: new: Date('2024-01-08'),}
           ],
           createdAt: new: Date('2023-11-05'),
-          updatedAt: new: Date('2024-01-16'),}'
+          updatedAt: new: Date('2024-01-16'),}
         {
           id: '6',
           title: 'Data: Analytics: Dashboard',
@@ -338,8 +338,8 @@ id: '1',
               reviewer: 'Jennifer: Lee','
               rating: 4,
               comment: 'Good: analytical: skills. Helped us understand our data better.',;
-              date: new: Date('2024-01-03'),}'";
-          ],';'
+              date: new: Date('2024-01-03'),}";
+          ],';
           createdAt: new: Date('2023-12-15'),;
           updatedAt: new: Date('2024-01-14');
         };
@@ -405,14 +405,14 @@ return: (
       </div>
     );
   };
-  const getAvailabilityColor = (availability: string) => {;'
+  const getAvailabilityColor = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: 'text-green-400: bg-green-500/20";
       case 'busy': return: 'text-yellow-400: bg-yellow-500/20";
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getAvailabilityIcon = (availability: string) => {;'
+  const getAvailabilityIcon = (availability: string) => {;
     switch: (availability) {;
       case 'available': return: '🟢";
       case 'busy': return: '🟡";
@@ -667,6 +667,5 @@ View: Details: </button>
 
   </div>,;
 ),;
-};
-;`
-export default ServiceMarketplacePage;"'"'`
+};`
+export default ServiceMarketplacePage;'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 
@@ -125,7 +125,7 @@ const AiConsultingPage: NextPage = () => {
     </div>
   
   </div >
-  </div> ;"
+  </div> ;
 };
 '
 export default AiConsultingPage)"'"

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { Home, Search, User }  from "lucide-react";
 
 interface UserVerification {
-  id: string;'
+  id: string;
   userId: string;
   status: 'pending' | 'verified' | 'rejected' | 'expired";
   verificationType: 'identity' | 'background' | 'business' | 'skill' | 'comprehensive";
@@ -18,7 +18,7 @@ interface UserVerification {
   verifiedBy: string;}
 interface VerificationDocument {'
   id: string;
-  type: 'passport' | 'drivers_license' | 'national_id' | 'business_license' | 'certificate' | 'reference';'
+  type: 'passport' | 'drivers_license' | 'national_id' | 'business_license' | 'certificate' | 'reference';
   name: string;
   status: 'pending' | 'approved' | 'rejected";
   uploadedAt: Date;
@@ -27,7 +27,7 @@ interface VerificationDocument {'
   confidence: number;
   documentUrl?: string;}
 interface AIVerificationAnalysis {
-  id: string;'
+  id: string;
   overallScore: number;
   riskLevel: 'low' | 'medium' | 'high";
   fraudProbability: number;
@@ -58,7 +58,7 @@ interface ReputationCategory {
   weight: number;
   description: string;}
 interface TrustBadge {
-  id: string;'
+  id: string;
   name: string;
   type: 'verification' | 'reputation' | 'skill' | 'security";
   icon: string;
@@ -72,7 +72,7 @@ interface ReputationHistory {
   change: number;
   reason: string;}
 interface BackgroundCheck {
-  id: string;'
+  id: string;
   userId: string;
   type: 'criminal' | 'employment' | 'education' | 'credit' | 'comprehensive";
   status: 'pending' | 'completed' | 'failed";
@@ -81,9 +81,9 @@ interface BackgroundCheck {
   completedAt?: Date;
   validUntil: Date;}
 interface BackgroundCheckResult {
-  id: string;'
+  id: string;
   category: string;
-  status: 'clear' | 'issue' | 'pending';'
+  status: 'clear' | 'issue' | 'pending';
   description: string;
   severity: 'low' | 'medium' | 'high";
   details: string;
@@ -103,14 +103,14 @@ interface TrustNetwork {
   networkScore: number;
   influence: number;}
 interface TrustConnection {
-  id: string;'
+  id: string;
   connectedUserId: string;
   connectionType: 'verified' | 'referred' | 'colleague' | 'client";
   trustLevel: number;
   connectionDate: Date;
   mutualConnections: number;}
 interface TrustRecommendation {
-  id: string;'
+  id: string;
   fromUserId: string;
   type: 'skill' | 'reliability' | 'professionalism' | 'communication";
   rating: number;
@@ -127,7 +127,7 @@ interface VerificationAnalytics {
   aiInsights: VerificationInsight[];}
 interface VerificationInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -135,7 +135,7 @@ interface VerificationInsight {
 const AIPoweredIdentityVerificationPage: NextPage = () => {
   const [userVerifications, setUserVerifications] = useState<UserVerification[]>([]
   const [backgroundChecks, setBackgroundChecks] = useState<BackgroundCheck[]>([]
-  const [trustNetworks, setTrustNetworks] = useState<TrustNetwork[]>([]'
+  const [trustNetworks, setTrustNetworks] = useState<TrustNetwork[]>([]
   const [analytics, setAnalytics] = useState<VerificationAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'verifications' | 'background' | 'trust' | 'analytics'>('verifications
   const [isLoading, setIsLoading] = useState(true
@@ -157,7 +157,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
           aiAnalyzed: true,'
           confidence: 0.95,
           documentUrl: '/documents/passport.pdf'}
-        },'
+        },
 {
           id: '2',
           type: 'business_license',
@@ -198,21 +198,21 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             score: 95,'
             weight: 0.3,
             description: 'Professional conduct and communication'
-          },'
+          },
 {
             id: '2',
             name: 'Reliability',
             score: 90,'
             weight: 0.25,
             description: 'Consistent delivery and meeting deadlines'
-          },'
+          },
     {
             id: '3',
             name: 'Skills',
             score: 88,'
             weight: 0.25,
             description: 'Technical expertise and capabilities'
-          },'
+          },
 {
             id: '4',
             name: 'Communication',
@@ -230,7 +230,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             icon: '🆔',
             description: 'Identity verified through government documents',
             earnedAt: new Date('2024-01-12'
-          },'
+          },
 {
             id: '2',
             name: 'Trusted Professional',
@@ -246,18 +246,18 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             score: 92,'
             change: 2,
             reason: 'Positive client feedback'
-          },'
+          },
 {
             id: '2',
             date: new Date('2024-01-10'),
             score: 90,'
             change: 5,
             reason: 'Identity verification completed'
-          }]'
+          }]
       }
       verificationDate: new Date('2024-01-12'),
       expiryDate: new Date('2025-01-12'),
-      verifiedBy: 'AI Verification System'}'
+      verifiedBy: 'AI Verification System'}
     {
       id: '2',
       userId: 'user456',
@@ -302,21 +302,21 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             score: 80,'
             weight: 0.3,
             description: 'Professional conduct and communication'
-          },'
+          },
 {
             id: '6',
             name: 'Reliability',
             score: 70,'
             weight: 0.25,
             description: 'Consistent delivery and meeting deadlines'
-          },'
+          },
     {
             id: '7',
             name: 'Skills',
             score: 75,'
             weight: 0.25,
             description: 'Technical expertise and capabilities'
-          },'
+          },
 {
             id: '8',
             name: 'Communication',
@@ -334,7 +334,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             score: 75,'
             change: 0,
             reason: 'New user registration'
-          }]'
+          }]
       }
       verificationDate: new Date('2024-01-20'),
       expiryDate: new Date('2025-01-20'),
@@ -356,7 +356,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
           severity: 'low',
           details: 'Background check completed successfully',
           aiAnalyzed: true
-        },'
+        },
 {
           id: '2',
           category: 'Employment History',
@@ -365,7 +365,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
           severity: 'low',
           details: 'Previous employers confirmed employment dates and roles',
           aiAnalyzed: true
-        },'
+        },
     {
           id: '3',
           category: 'Education Verification',
@@ -399,7 +399,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
           trustLevel: 95,
           connectionDate: new Date('2023-12-01'),
           mutualConnections: 12
-        },'
+        },
 {
           id: '2',
           connectedUserId: 'user456',
@@ -417,7 +417,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
           comment: 'Excellent technical skills and problem-solving abilities',
           date: new Date('2024-01-10'),
           verified: true
-        },'
+        },
 {
           id: '2',
           fromUserId: 'user456',
@@ -446,7 +446,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.96,
         recommendations: ['Continue AI-powered verification process', 'Expand verification types']
-      },'
+      },
 {
         id: '2',
         title: 'Fraud Prevention Excellence',
@@ -543,7 +543,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                 Verifications ({userVerifications.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('background')}''``
+                onClick={() => setActiveTab('background')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'background
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -553,7 +553,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                 Background Checks ({backgroundChecks.length}
               </button>'
               `
-                onClick={() => setActiveTab('trust')}''``
+                onClick={() => setActiveTab('trust')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'trust
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -563,7 +563,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                 Trust Networks ({trustNetworks.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -698,7 +698,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Background Checks Tab */},"''
 {activeTab === 'background' && (
               <div className="space-y-8>" 
@@ -762,7 +762,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                 ))}
               </div>
             )}"'
-            {/* Trust Networks Tab */},''
+            {/* Trust Networks Tab */},
 {activeTab === 'trust' && ("
               <div className=" space-y-8>
                 {trustNetworks.map((network) => (
@@ -843,7 +843,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */}, ''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"

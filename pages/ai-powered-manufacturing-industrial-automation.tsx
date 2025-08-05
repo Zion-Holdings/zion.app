@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
   const [smartManufacturing, setSmartManufacturing] = useState<SmartManufacturing[]>([]
   const [industrialAutomation, setIndustrialAutomation] = useState<IndustrialAutomation[]>([]
   const [qualityControl, setQualityControl] = useState<QualityControl[]>([]
-  const [productionOptimization, setProductionOptimization] = useState<ProductionOptimization[]>([]'
+  const [productionOptimization, setProductionOptimization] = useState<ProductionOptimization[]>([]
   const [data, setData] = useState<ManufacturingData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'manufacturing' | 'automation' | 'quality' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         performanceScore: 9.2,'
         optimizationPotential: 0.08,
         maintenanceNeeds: ['Belt inspection monthly', 'Motor check quarterly', 'Sensor calibration'],
-        recommendations: ['Optimize cycle time', 'Implement predictive maintenance', 'Enhance quality monitoring']}}}'
+        recommendations: ['Optimize cycle time', 'Implement predictive maintenance', 'Enhance quality monitoring']}}}
     {
       id: '2',
       name: 'CNC Machining Center',
@@ -116,7 +116,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         performanceScore: 8.9,'
         optimizationPotential: 0.12,
         maintenanceNeeds: ['Tool change monitoring', 'Spindle inspection', 'Coolant system check'],
-        recommendations: ['Optimize cutting parameters', 'Implement tool life monitoring', 'Enhance coolant management']}}'
+        recommendations: ['Optimize cutting parameters', 'Implement tool life monitoring', 'Enhance coolant management']}}
     {
       id: '3',
       name: 'Robotic Welding Station',
@@ -146,7 +146,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         reliabilityScore: 9.4,'
         precisionLevel: 9.8,
         optimizationOpportunities: ['Reduce cycle time', 'Improve part handling', 'Enhance vision system'],
-        maintenanceSchedule: ['Daily inspection', 'Weekly calibration', 'Monthly preventive maintenance']}}'
+        maintenanceSchedule: ['Daily inspection', 'Weekly calibration', 'Monthly preventive maintenance']}}
     {
       id: '2',
       name: 'PLC Control System',
@@ -160,7 +160,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         reliabilityScore: 9.7,'
         precisionLevel: 9.9,
         optimizationOpportunities: ['Optimize control loops', 'Enhance fault detection', 'Improve response time'],
-        maintenanceSchedule: ['Weekly backup', 'Monthly firmware check', 'Quarterly system test']}}'
+        maintenanceSchedule: ['Weekly backup', 'Monthly firmware check', 'Quarterly system test']}}
     {
       id: '3',
       name: 'SCADA Monitoring System',
@@ -190,7 +190,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         defectDetectionRate: 98.5,'
         qualityScore: 9.6,
         improvementAreas: ['Reduce false positives', 'Enhance defect classification', 'Improve lighting'],
-        recommendations: ['Optimize camera settings', 'Update defect models', 'Enhance lighting system']}}'
+        recommendations: ['Optimize camera settings', 'Update defect models', 'Enhance lighting system']}}
     {
       id: '2',
       name: 'Dimensional Measurement',
@@ -204,7 +204,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         defectDetectionRate: 99.1,'
         qualityScore: 9.8,
         improvementAreas: ['Improve measurement speed', 'Enhance precision', 'Reduce calibration time'],
-        recommendations: ['Optimize measurement parameters', 'Implement auto-calibration', 'Enhance probe system']}}'
+        recommendations: ['Optimize measurement parameters', 'Implement auto-calibration', 'Enhance probe system']}}
     {
       id: '3',
       name: 'Material Testing Lab',
@@ -230,12 +230,12 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         totalProduction: 50000,
         efficiencyGain: 25,
         costSavings: 350000,
-        qualityImprovement: 15}'
+        qualityImprovement: 15}
       aiAnalysis: {
         insights: ['Cycle time reduced by 20% through AI optimization', 'Energy consumption decreased by 15%'],
         trends: ['Increasing production efficiency', 'Decreasing operational costs', 'Improving quality metrics'],
         recommendations: ['Expand AI optimization coverage', 'Implement predictive analytics', 'Enhance monitoring systems'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '2',
       name: 'Resource Allocation System',
@@ -245,12 +245,12 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         totalProduction: 45000,
         efficiencyGain: 30,
         costSavings: 420000,
-        qualityImprovement: 20}'
+        qualityImprovement: 20}
       aiAnalysis: {
         insights: ['Resource utilization improved by 30% with AI allocation', 'Downtime reduced by 40%'],
         trends: ['Optimizing resource usage', 'Reducing waste', 'Improving productivity'],
         recommendations: ['Expand AI allocation algorithms', 'Implement real-time monitoring', 'Enhance predictive capabilities'],
-        impactScore: 9.2}}'
+        impactScore: 9.2}}
     {
       id: '3',
       name: 'Predictive Maintenance Platform',
@@ -260,7 +260,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         totalProduction: 48000,
         efficiencyGain: 22,
         costSavings: 280000,
-        qualityImprovement: 18}'
+        qualityImprovement: 18}
       aiAnalysis: {
         insights: ['Maintenance costs reduced by 35% with predictive analytics', 'Equipment uptime increased by 25%'],
         trends: ['Reducing unplanned downtime', 'Improving equipment reliability', 'Optimizing maintenance schedules'],
@@ -281,7 +281,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive maintenance', 'Enhance quality monitoring']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Automation Reducing Operational Costs',
@@ -337,14 +337,14 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
       case 'positive': return '🏭
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredSmartManufacturing = useMemo(() => {'
@@ -444,7 +444,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Smart Manufacturing Overview */}
@@ -490,14 +490,14 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'manufacturing' && ("
           <div className="space-y-6>" 
             {/* System Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'assembly-line', 'machining', 'welding', 'packaging', 'inspection', 'material-handling'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -619,7 +619,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'optimization' && (
           <div className="space-y-6>" 
@@ -657,7 +657,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'insights' && data && (
           <div className="space-y-6>

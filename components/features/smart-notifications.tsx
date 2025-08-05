@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface SmartNotificationsProps {
-  className?: string;}'
+  className?: string;}
 const SmartNotifications: React.FC<SmartNotificationsProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const SmartNotifications: React.FC<SmartNotificationsProps> = ({ className="'' }
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default SmartNotifications;"'"'`
+export default SmartNotifications;'`

@@ -16,7 +16,7 @@ const ResponsiveText: React.FC<ResponsiveTextProps> = ({'
   align = 'left',
   as: Component = 'p'
 }) => {'
-  const sizeClasses = {
+  const $1 = {
     xs: 'text-responsive-xs',
     sm: 'text-responsive-sm',
     base: 'text-responsive-base',
@@ -25,20 +25,20 @@ const ResponsiveText: React.FC<ResponsiveTextProps> = ({'
     '2xl': 'text-responsive-2xl',
     '3xl': 'text-responsive-3xl',
     '4xl': 'text-responsive-4xl',
-    '5xl': 'text-responsive-5xl'}'
-  const weightClasses = {
+    '5xl': 'text-responsive-5xl'}
+  const $1 = {
     normal: 'font-normal',
     medium: 'font-medium',
     semibold: 'font-semibold',
     bold: 'font-bold',
-    extrabold: 'font-extrabold'}'
-  const colorClasses = {
+    extrabold: 'font-extrabold'}
+  const $1 = {
     white: 'text-white',
     gray: 'text-gray-300',
     purple: 'text-purple-400',
     pink: 'text-pink-400',
-    gradient: 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'}'
-  const alignClasses = {
+    gradient: 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'}
+  const $1 = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right',

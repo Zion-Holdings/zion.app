@@ -6,7 +6,7 @@ import ModernLayout from '../components/layout/ModernLayout';
 import ResponsiveNavigation from '../components/ResponsiveNavigation';
 
 const AboutPage: NextPage = () => {
-  const navigationItems = [
+  const $1 = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
     { href: '/about', label: 'About' },

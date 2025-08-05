@@ -1,13 +1,13 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface SmartContract {
-  id: string;'
+  id: string;
   name: string;
   type: 'defi' | 'nft' | 'dao' | 'gaming' | 'supply-chain' | 'identity";
-  status: 'deployed' | 'testing' | 'failed' | 'archived' | 'updating';'
+  status: 'deployed' | 'testing' | 'failed' | 'archived' | 'updating';
   address: string;
   network: 'ethereum' | 'polygon' | 'binance' | 'arbitrum' | 'optimism";
   gasUsed: number;
@@ -24,7 +24,7 @@ interface SmartContract {
     complexity: number;
   };}
 interface BlockchainTransaction {
-  id: string;'
+  id: string;
   hash: string;
   type: 'transfer' | 'contract-interaction' | 'mint' | 'burn' | 'swap";
   status: 'pending' | 'confirmed' | 'failed' | 'reverted";
@@ -39,9 +39,9 @@ interface BlockchainTransaction {
   network: string;
   fee: number;}
 interface DApp {
-  id: string;'
+  id: string;
   name: string;
-  category: 'defi' | 'nft' | 'gaming' | 'social' | 'utility' | 'governance';'
+  category: 'defi' | 'nft' | 'gaming' | 'social' | 'utility' | 'governance';
   description: string;
   status: 'active' | 'development' | 'maintenance' | 'archived";
   users: number;
@@ -60,7 +60,7 @@ interface BlockchainAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -70,7 +70,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
   ;
   const [contracts, setContracts] = useState<SmartContract[]>([]);
   const [transactions, setTransactions] = useState<BlockchainTransaction[]>([]);
-  const [dapps, setDapps] = useState<DApp[]>([]);'
+  const [dapps, setDapps] = useState<DApp[]>([]);
   const [analytics, setAnalytics] = useState<BlockchainAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'contracts' | 'transactions' | 'dapps' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -103,7 +103,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
             securityScore: 98.5,
 }
 }
-            complexity: 7.8}}}'
+            complexity: 7.8}}}
         {
           id: '2',
           name: 'Zion NFT Marketplace',
@@ -122,7 +122,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
             executionTime: 0.6,
             gasEfficiency: 96.8,
             securityScore: 97.2,
-            complexity: 6.5}}'
+            complexity: 6.5}}
         {
           id: '3',
           name: 'Zion DAO Governance',
@@ -141,7 +141,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
             executionTime: 1.2,
             gasEfficiency: 91.5,
             securityScore: 99.1,
-            complexity: 8.9}}'
+            complexity: 8.9}}
         {
           id: '4',
           name: 'Zion Gaming Protocol',
@@ -160,7 +160,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
             executionTime: 0.4,
             gasEfficiency: 98.3,
             securityScore: 95.8,
-            complexity: 5.2}}'
+            complexity: 5.2}}
         {
           id: '5',
           name: 'Zion Supply Chain',
@@ -197,7 +197,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           aiAssisted: true,
           network: 'ethereum',
           fee: 0.003125
-        },'
+        },
 {
           id: '2',
           hash: '0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890',
@@ -213,7 +213,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           aiAssisted: true,
           network: 'ethereum',
           fee: 0.00042
-        },'
+        },
     {
           id: '3',
           hash: '0x567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234',
@@ -229,7 +229,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           aiAssisted: true,
           network: 'polygon',
           fee: 0.001335
-        },'
+        },
 {
           id: '4',
           hash: '0xdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abc',
@@ -245,7 +245,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           aiAssisted: true,
           network: 'arbitrum',
           fee: 0.00468
-        },'
+        },
     {
           id: '5',
           hash: '0x7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456',
@@ -281,17 +281,17 @@ const AIPoweredBlockchainPage: NextPage = () => {
               name: 'Lending Protocol',
               status: 'implemented',
               aiOptimized: true
-            },'
+            },
 {
               name: 'Yield Farming',
               status: 'implemented',
               aiOptimized: true
-            },'
+            },
     {
               name: 'Cross-chain Bridge',
               status: 'planned',
               aiOptimized: false
-            }]}'
+            }]}
         {
           id: '2',
           name: 'Zion NFT Gallery',
@@ -310,17 +310,17 @@ const AIPoweredBlockchainPage: NextPage = () => {
               name: 'NFT Marketplace',
               status: 'implemented',
               aiOptimized: true
-            },'
+            },
 {
               name: 'AI Curation',
               status: 'implemented',
               aiOptimized: true
-            },'
+            },
     {
               name: 'Royalty System',
               status: 'testing',
               aiOptimized: true
-            }]}'
+            }]}
         {
           id: '3',
           name: 'Zion Gaming Metaverse',
@@ -339,12 +339,12 @@ const AIPoweredBlockchainPage: NextPage = () => {
               name: 'Game Engine',
               status: 'implemented',
               aiOptimized: true
-            },'
+            },
 {
               name: 'AI Opponents',
               status: 'testing',
               aiOptimized: true
-            },'
+            },
     {
               name: 'Reward System',
               status: 'planned',
@@ -360,7 +360,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           improvement: -1.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'Transaction Speed',
@@ -369,7 +369,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           improvement: -40.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Security Score',
@@ -378,7 +378,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           improvement: -1.2,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'AI Optimization',
@@ -387,7 +387,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           improvement: -7.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'Smart Contract Success',
@@ -396,7 +396,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           improvement: -3.7,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'DApp Performance',
@@ -415,7 +415,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
     } 1000);
   } []);
   const filteredContracts = useMemo(() => {'
-    let filtered = contracts.filter(contract => {';'
+    let filtered = contracts.filter(contract => {';
       if (filterType !== 'all' && contract.type !== filterType) return false;
       if (filterStatus !== 'all' && contract.status !== filterStatus) return false;
       if (searchTerm && !contract.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -438,7 +438,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
     return filtered;
   } [contracts, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'deployed': return 'text-green-400 bg-green-500/20";
       case 'testing': return 'text-blue-400 bg-blue-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -447,7 +447,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'defi': return '💰";
       case 'nft': return '🎨";
       case 'dao': return '🏛️";
@@ -457,7 +457,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
       default: return '🔗';}
   };
   const getNetworkIcon = (network: string) => {'
-    switch (network) {';'
+    switch (network) {';
       case 'ethereum': return '🔷";
       case 'polygon': return '🟣";
       case 'binance': return '🟡";
@@ -466,7 +466,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
       default: return '⚫';}
   };
   const getTransactionStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'confirmed': return 'text-green-400 bg-green-500/20";
       case 'pending': return 'text-yellow-400 bg-yellow-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -474,7 +474,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTransactionTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'transfer': return '💸";
       case 'contract-interaction': return '🤝";
       case 'mint': return '🪙";
@@ -483,7 +483,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
       default: return '📝';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -569,7 +569,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
 { id: 'dapps', name: 'DApps', icon: '🖥️' },
     { id: 'analytics', name: 'Analytics', icon: '📈'}
             ].map((tab) => (`
-                onClick={() => setSelectedView(tab.id as any)}'``
+                onClick={() => setSelectedView(tab.id as any)}``
                 className=" {`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'`
@@ -606,7 +606,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Smart Contracts */},
 {selectedView === 'contracts' && (
           <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 >
@@ -694,8 +694,8 @@ const AIPoweredBlockchainPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
-        {/* Blockchain Transactions */},''
+        )}
+        {/* Blockchain Transactions */},
 {selectedView === 'transactions' && (
           <div className="space-y-6>"
             {transactions.map((tx) => (
@@ -770,7 +770,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
                 </div>
               </div"> ))}
           </div>
-        )}'
+        )}
         {/* DApps */},"''
 {selectedView === 'dapps' && (
           <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>
@@ -822,7 +822,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
                         <span className="text-sm:text-white>{feature.name}</span>`
                         <div className=" flex" items-center space-x-2 >``"
                           <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusColor(feature.status)}`}>
-                            {feature.status}'`
+                            {feature.status}`
                           </span>''``
                           <span className="{`px-4 py-3 rounded text-xs font-medium ${feature.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                             {feature.aiOptimized ? 'AI'   'Manual'}

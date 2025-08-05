@@ -40,7 +40,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
       <h3 className="text-lg" font-semibold text-gray-900 mb-3>{title}</h3 >
       {children}
     </div>"
-  );"
+  );
 
   const filterContent = ("
     <div className="space-y-6">
@@ -52,7 +52,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
               type="radio 
               name="category '
               value="All" Categories"'"'
-              checked={filters.category === 'All Categories'}''
+              checked={filters.category === 'All Categories'}
               onChange={(e) => handleFilterChange('category', e.target.value)}"
               className=" mr-2 text-blue-600 focus ring-blue-500" />
             <span className="text-sm" text-gray-700>All Categories</span>
@@ -63,7 +63,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 type="radio 
                 name="category"
                 value={category.name}"'
-                checked={filters.category === category.name}''
+                checked={filters.category === category.name}
                 onChange={(e) => handleFilterChange('category', e.target.value)}"
                 className=" mr-2 text-blue-600 focus ring-blue-500" />
               <span className="text-sm" text-gray-700 flex items-center >
@@ -88,7 +88,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
               min="0 
               max="100000 
               step="1000 '
-              value={filters.priceRange[0]}''
+              value={filters.priceRange[0]}
               onChange={(e) => handleFilterChange('priceRange', [parseInt(e.target.value), filters.priceRange[1]])}"
               className=" w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider" />"
             <input
@@ -112,7 +112,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 type="radio 
                 name="rating"
                 value={rating}"'
-                checked={filters.rating === rating}''
+                checked={filters.rating === rating}
                 onChange={(e) => handleFilterChange('rating', parseFloat(e.target.value))}"
                 className=" mr-2 text-blue-600 focus ring-blue-500" />
               <div className="flex items-center >
@@ -124,7 +124,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                       }`}
                     >))}
                 </Star'`
-                      key={star}''``
+                      key={star}``
                       className="{`w-4" h-4 ${`
                         star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300' ``
                       }`}
@@ -145,7 +145,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 type="radio 
                 name="deliveryTime"
                 value={time}"'
-                checked={filters.deliveryTime === time}''
+                checked={filters.deliveryTime === time}
                 onChange={(e) => handleFilterChange('deliveryTime', e.target.value)}"
                 className=" mr-2 text-blue-600 focus ring-blue-500" />
               <span className="text-sm" text-gray-700>{time}</span>
@@ -182,7 +182,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
           </button>
         </div>
       )}"''`
-      {/* Desktop Sidebar */}'''``
+      {/* Desktop Sidebar */}``
       <div className="{`${isMobile ? 'hidden' : 'block'} lg:block`}>
         <div className="bg-white" rounded-xl shadow-lg p-6 border" border-gray-100">
           <div className=" flex items-center justify-between" mb-6">
@@ -222,4 +222,4 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
   );
 };
 ''`
-export default ServiceFilters;"'"'`
+export default ServiceFilters;'`

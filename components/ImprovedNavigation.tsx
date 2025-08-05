@@ -9,7 +9,7 @@ interface NavigationItem {
   description?: string;
   icon?: string;}
 interface ImprovedNavigationProps {
-  items: NavigationItem[];'
+  items: NavigationItem[];
   ctaButton: React.ReactNode;
   variant?: 'light' | 'dark';}
 const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
@@ -23,11 +23,11 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {;
-      setScrolled(window.scrollY > 10);'
+      setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);'
+  }, []);
   const textColor = variant === 'light' ? 'text-gray-700' : 'text-white";
   const hoverColor = variant === 'light' ? 'hover:text-blue-600' : 'hover:text-blue-300";
   const bgColor = variant === 'light' ? 'bg-white' : 'bg-gray-900";
@@ -197,8 +197,8 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
           )}
         </AnimatePresence>
       </nav>
-    </header>;"
+    </header>;
   );
 };
 ''`
-export default ImprovedNavigation;'"'`
+export default ImprovedNavigation;`

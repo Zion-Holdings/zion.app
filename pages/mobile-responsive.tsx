@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import { Home, Search, User }  from "lucide-react";
 interface MobileFeature {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   icon: string;
   status: 'implemented' | 'in-progress' | 'planned";
   priority: 'high' | 'medium' | 'low";
@@ -16,7 +16,7 @@ interface MobileFeature {
 interface ResponsiveBreakpoint {
   name: string;
   width: string;
-  description: string;'
+  description: string;
   features: string[];
   status: 'optimized' | 'needs-work' | 'not-started';}
 interface MobileOptimization {
@@ -30,7 +30,7 @@ interface MobileOptimization {
   improvements: string[];
   status: 'completed' | 'in-progress' | 'planned';}
 const MobileResponsivePage: NextPage = () => {'
-  ';'
+  ';
   const [selectedDevice, setSelectedDevice] = useState<'mobile' | 'tablet' | 'desktop'>('mobile');
   const [selectedFeature, setSelectedFeature] = useState<string>('');
   const [loading, setLoading] = useState(true);
@@ -44,7 +44,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 95,
       effort: 8}
-    },'
+    },
 {
       id: 'responsive-layout',
       name: 'Responsive Layout',
@@ -54,7 +54,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 90,
       effort: 9
-    },'
+    },
     {
       id: 'mobile-navigation',
       name: 'Mobile Navigation',
@@ -64,7 +64,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 88,
       effort: 7
-    },'
+    },
 {
       id: 'touch-gestures',
       name: 'Touch Gestures',
@@ -74,7 +74,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'medium',
       impact: 75,
       effort: 6
-    },'
+    },
     {
       id: 'mobile-forms',
       name: 'Mobile Forms',
@@ -84,7 +84,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 85,
       effort: 8
-    },'
+    },
 {
       id: 'mobile-images',
       name: 'Mobile Images',
@@ -94,7 +94,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'medium',
       impact: 80,
       effort: 5
-    },'
+    },
     {
       id: 'mobile-performance',
       name: 'Mobile Performance',
@@ -104,7 +104,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 92,
       effort: 9
-    },'
+    },
 {
       id: 'mobile-accessibility',
       name: 'Mobile Accessibility',
@@ -114,7 +114,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'medium',
       impact: 70,
       effort: 7
-    },'
+    },
     {
       id: 'mobile-payments',
       name: 'Mobile Payments',
@@ -124,7 +124,7 @@ const MobileResponsivePage: NextPage = () => {'
       priority: 'high',
       impact: 88,
       effort: 8
-    },'
+    },
 {
       id: 'mobile-notifications',
       name: 'Mobile Notifications',
@@ -142,14 +142,14 @@ const MobileResponsivePage: NextPage = () => {'
       description: 'Smartphone and small tablet optimization',
       features: ['Touch-optimized interface', 'Simplified navigation', 'Optimized forms', 'Fast loading'],
       status: 'optimized'
-    },'
+    },
 {
       name: 'Tablet',
       width: '768px - 1024px',
       description: 'Tablet and medium screen optimization',
       features: ['Adaptive layouts', 'Enhanced navigation', 'Touch and mouse support', 'Optimized content'],
       status: 'optimized'
-    },'
+    },
     {
       name: 'Desktop',
       width: '1024px+',
@@ -164,49 +164,49 @@ const MobileResponsivePage: NextPage = () => {'
         performance: 92,
         accessibility: 88,
         usability: 90,
-        seo: 85}'
+        seo: 85}
       improvements: [
         'Optimized image loading and compression',
         'Reduced bundle size and code splitting',
         'Implemented lazy loading for better performance',
         'Enhanced caching strategies for mobile networks
       ],
-      status: 'completed'}'
+      status: 'completed'}
     {
       category: 'User Experience',
       metrics: {
         performance: 88,
         accessibility: 85,
         usability: 92,
-        seo: 80}'
+        seo: 80}
       improvements: [
         'Touch-optimized interface elements',
         'Simplified navigation for mobile users',
         'Responsive form design and validation',
         'Mobile-first content layout and typography
       ],
-      status: 'completed'}'
+      status: 'completed'}
     {
       category: 'Accessibility',
       metrics: {
         performance: 85,
         accessibility: 90,
         usability: 88,
-        seo: 82}'
+        seo: 82}
       improvements: [
         'Screen reader compatibility and support',
         'Voice navigation and control features',
         'High contrast and readable typography',
         'Keyboard navigation for mobile devices
       ],
-      status: 'in-progress'}'
+      status: 'in-progress'}
     {
       category: 'SEO',
       metrics: {
         performance: 90,
         accessibility: 85,
         usability: 88,
-        seo: 92}'
+        seo: 92}
       improvements: [
         'Mobile-first indexing optimization',
         'Structured data for mobile search',
@@ -226,14 +226,14 @@ const MobileResponsivePage: NextPage = () => {'
     switch (status) {
       case 'implemented':
       case 'optimized':
-      case 'completed':';'
+      case 'completed':';
         return 'text-green-400 bg-green-500/20";
       case 'in-progress':
         return 'text-yellow-400 bg-yellow-500/20";
       case 'planned':
       case 'needs-work':
       case 'not-started':
-        return 'text-gray-400 bg-gray-500/20';'
+        return 'text-gray-400 bg-gray-500/20';
       default:
         return 'text-gray-400 bg-gray-500/20';}
   };
@@ -241,7 +241,7 @@ const MobileResponsivePage: NextPage = () => {'
     switch (status) {
       case 'implemented':
       case 'optimized':
-      case 'completed':';'
+      case 'completed':';
         return '✅";
       case 'in-progress':
         return '🔄";
@@ -250,18 +250,18 @@ const MobileResponsivePage: NextPage = () => {'
       case 'needs-work':
         return '⚠️";
       case 'not-started':
-        return '❌';'
+        return '❌';
       default:
         return '❓';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {
-      case 'high':';'
+      case 'high':';
         return 'text-red-400 bg-red-500/20";
       case 'medium':
         return 'text-yellow-400 bg-yellow-500/20";
       case 'low':
-        return 'text-blue-400 bg-blue-500/20';'
+        return 'text-blue-400 bg-blue-500/20';
       default:
         return 'text-gray-400 bg-gray-500/20';}
   };
@@ -358,7 +358,7 @@ const MobileResponsivePage: NextPage = () => {'
                 </div><div className="text-3xl>{feature.icon}</div>`"
                 <div className="flex flex-col items-end space-y-2">``
                   <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(feature.status)}`}>
-                    {getStatusIcon(feature.status)},'
+                    {getStatusIcon(feature.status)},
 {feature.status.replace('-', ' ')}`
                   </span>``
                   <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(feature.priority)}`}>

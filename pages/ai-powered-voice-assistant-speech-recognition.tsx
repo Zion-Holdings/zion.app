@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
   const [commands, setCommands] = useState<VoiceCommand[]>([]
   const [transcriptions, setTranscriptions] = useState<SpeechToText[]>([]
   const [speechOutputs, setSpeechOutputs] = useState<TextToSpeech[]>([]
-  const [assistants, setAssistants] = useState<VoiceAssistant[]>([]'
+  const [assistants, setAssistants] = useState<VoiceAssistant[]>([]
   const [analytics, setAnalytics] = useState<VoiceAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'commands' | 'transcription' | 'speech' | 'assistants' | 'analytics'>('overview
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -104,7 +104,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         confidence: 0.92,
         intentRecognition: 0.89,'
         contextUnderstanding: 0.91,
-        recommendations: ['Improve context awareness', 'Add more search filters', 'Enhance response speed']}}}'
+        recommendations: ['Improve context awareness', 'Add more search filters', 'Enhance response speed']}}}
     {
       id: '2',
       command: 'Schedule a meeting with Dr. Sarah Chen',
@@ -118,7 +118,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         confidence: 0.85,
         intentRecognition: 0.82,'
         contextUnderstanding: 0.88,
-        recommendations: ['Improve name recognition', 'Add calendar integration', 'Enhance scheduling logic']}}'
+        recommendations: ['Improve name recognition', 'Add calendar integration', 'Enhance scheduling logic']}}
     {
       id: '3',
       command: 'Show me the latest AI equipment',
@@ -149,7 +149,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         accuracy: 0.94,
         languageDetection: 0.98,'
         noiseReduction: 0.92,
-        recommendations: ['Excellent clarity', 'Good noise reduction', 'Consider adding speaker identification']}}'
+        recommendations: ['Excellent clarity', 'Good noise reduction', 'Consider adding speaker identification']}}
     {
       id: '2',
       title: 'Technical Support Call',
@@ -181,7 +181,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         naturalness: 0.94,
         clarity: 0.96,'
         emotionDetection: 0.89,
-        recommendations: ['Excellent naturalness', 'Clear pronunciation', 'Consider adding emotional variation']}}'
+        recommendations: ['Excellent naturalness', 'Clear pronunciation', 'Consider adding emotional variation']}}
     {
       id: '2',
       title: 'Service Description',
@@ -211,7 +211,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         performanceScore: 9.1,
         userSatisfaction: 8.9,'
         responseQuality: 9.3,
-        recommendations: ['Improve response speed', 'Add more personality', 'Enhance context understanding']}}'
+        recommendations: ['Improve response speed', 'Add more personality', 'Enhance context understanding']}}
     {
       id: '2',
       name: 'Tech Support Assistant',
@@ -239,7 +239,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Maintain current performance', 'Add more voice commands', 'Improve context awareness']
-      },'
+      },
 {
         id: '2',
         title: 'Fast Response Times',
@@ -358,17 +358,17 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 isListening
                   ? 'bg-red-600 text-white hover:bg-red-700'`
                   : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700''``
-              }`}'
+              }`}
             >
               {isListening ? 'Stop Listening' : 'Start Voice Assistant'}
             </button>
             `
-              onClick={() => setIsSpeaking(!isSpeaking)}'``
+              onClick={() => setIsSpeaking(!isSpeaking)}``
               className="{`px-8" py-3 rounded-lg:font-medium transition-all duration-200 ${'
                 isSpeaking
                   ? 'bg-blue-600 text-white hover:bg-blue-700'`
                   : 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700''``
-              }`}'
+              }`}
             >
               {isSpeaking ? 'Stop Speaking' : 'Text to Speech'}
             </button>
@@ -386,7 +386,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 { id  'analytics', label  'Analytics', icon  '📈'}"
           ].map((tab) => (
             "`
-              onClick={() => setSelectedView(tab.id as any)}'``
+              onClick={() => setSelectedView(tab.id as any)}``
               className="{`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -446,7 +446,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'commands' && (
           <div className=" space-y-6>
@@ -454,7 +454,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'search', 'scheduling', 'navigation', 'control'].map((category) => (
                 "`
-                  onClick={() => setSelectedCategory(category)}'``
+                  onClick={() => setSelectedCategory(category)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -588,7 +588,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'assistants' && (
           <div className="space-y-6>" 
@@ -637,7 +637,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6>

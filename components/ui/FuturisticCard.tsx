@@ -7,7 +7,7 @@ interface FuturisticCardProps {
   icon?: string;
   price?: string;
   rating?: number;
-  link: string;'
+  link: string;
   category?: string;
   color?: 'blue' | 'purple' | 'pink' | 'green";
   featured?: boolean;}
@@ -22,28 +22,28 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
   color = 'blue',
   featured = false
 }) => {
-  const colorClasses = {'
+  const $1 = {'
     blue: {
       border: 'border-neon-blue/30',
       hoverBorder: 'hover:border-neon-blue/60',
       glow: 'hover:shadow-neon-blue',
       text: 'text-neon-blue',
       bg: 'from-neon-blue/20 to-transparent'
-    },'
+    },
     purple: {
       border: 'border-neon-purple/30',
       hoverBorder: 'hover:border-neon-purple/60',
       glow: 'hover:shadow-neon-purple',
       text: 'text-neon-purple',
       bg: 'from-neon-purple/20 to-transparent'
-    },'
+    },
     pink: {
       border: 'border-neon-pink/30',
       hoverBorder: 'hover:border-neon-pink/60',
       glow: 'hover:shadow-neon-pink',
       text: 'text-neon-pink',
       bg: 'from-neon-pink/20 to-transparent'
-    },'
+    },
     green: {
       border: 'border-neon-green/30',
       hoverBorder: 'hover:border-neon-green/60',
@@ -94,7 +94,7 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <svg"''`
-                    key={i}'''``
+                    key={i}``
                     className="{`w-3 h-3 sm:w-4 sm:h-4 ${i < Math.floor(rating) ? 'text-yellow-400' : 'text-gray-600'}`} 
                     fill="currentColor 
                     viewBox="0 0 20" 20"
@@ -112,7 +112,7 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
         {/* Corner Accent */}``
         <div className="{`absolute" top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 ${currentColor.border} rounded-bl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
       </div>
-    </Link >;  );"
+    </Link >;  );
 };
 ''`
-export default FuturisticCard;"'"'`
+export default FuturisticCard;'`

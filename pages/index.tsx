@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     setIsVisible(true}
   } []
-  const marketplaceCategories = ['
+  const $1 = ['
     {
       title: 'IT Services',
       description: 'Professional IT consulting and development services',
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       link: '/services',
       color: 'blue' as const,
       category: 'Services'
-    },'
+    },
 {
       title: 'AI Talents',
       description: 'Expert AI developers and consultants',
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       link: '/talents',
       color: 'purple' as const,
       category: 'Talent'
-    },'
+    },
     {
       title: 'Equipment',
       description: 'High-performance computing hardware',
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       link: '/equipment',
       color: 'green' as const,
       category: 'Hardware'
-    },'
+    },
 {
       title: 'Innovation',
       description: 'Cutting-edge technology solutions',
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
       color: 'pink' as const,
       category: 'Products
     }]
-  const featuredServices = ['
+  const $1 = ['
     {
       title: 'AI Development',
       description: 'Custom AI solutions and machine learning models for your business needs',
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       link: '/services/ai-model-development',
       color: 'blue' as const,
       featured: true
-    },'
+    },
 {
       title: 'Cloud Migration',
       description: 'Seamless cloud infrastructure setup and migration services',
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
       rating: 4.8,
       link: '/services/cloud-migration-services',
       color: 'purple' as const
-    },'
+    },
     {
       title: 'Security Auditing',
       description: 'Comprehensive security assessments and penetration testing',
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
       rating: 4.9,
       link: '/services/security-auditing',
       color: 'green' as const
-    },'
+    },
 {
       title: 'Performance Optimization',
       description: 'System and application optimization for maximum efficiency',
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
       link: '/services/performance-optimization',
       color: 'pink' as const
     }]
-  const topTalents = ['
+  const $1 = ['
     {
       title: 'Dr. Sarah Chen',
       description: 'Machine Learning Expert with 8+ years of experience in AI research',
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       link: '/talents',
       color: 'blue' as const,
       featured: true
-    },'
+    },
 {
       title: 'Alex Rodriguez',
       description: 'Deep Learning Specialist specializing in neural networks and computer vision',
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
       rating: 4.8,
       link: '/talents',
       color: 'purple' as const
-    },'
+    },
     {
       title: 'Dr. Michael Kim',
       description: 'AI Research Scientist with 10+ years in quantum computing and AI',
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
       rating: 4.9,
       link: '/talents',
       color: 'green' as const
-    },'
+    },
 {
       title: 'Emma Thompson',
       description: 'Computer Vision Engineer with expertise in autonomous systems',
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
       link: '/talents',
       color: 'pink' as const
     }]
-  const premiumEquipment = ['
+  const $1 = ['
     {
       title: 'GPU Clusters',
       description: 'High-performance computing clusters for AI and machine learning workloads',
@@ -120,7 +120,7 @@ const Home: NextPage = () => {
       link: '/equipment',
       color: 'blue' as const,
       featured: true
-    },'
+    },
 {
       title: 'Quantum Computers',
       description: 'Next-generation quantum processing units for advanced computations',
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
       rating: 4.8,
       link: '/equipment',
       color: 'purple' as const
-    },'
+    },
     {
       title: 'Edge Computing Devices',
       description: 'IoT and edge processing solutions for real-time applications',
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
       rating: 4.7,
       link: '/equipment',
       color: 'green' as const
-    },'
+    },
 {
       title: 'Data Storage Systems',
       description: 'Enterprise-grade storage solutions with high availability',

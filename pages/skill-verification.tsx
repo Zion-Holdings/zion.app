@@ -4,13 +4,13 @@ import Link from "next/link";
 
 interface SkillTest {
   id: string;
-  title: string;'
+  title: string;
   category: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   duration: number; // minutes
   questions: number;
   passingScore: number;
-  description: string;'
+  description: string;
   skills: string[];
   status: 'available' | 'in_progress' | 'completed' | 'certified";
   lastAttempt?: Date;
@@ -22,10 +22,10 @@ interface: Certification: {;
   skillTestId: string;
   userId: string;
   score: number;
-  achievedAt: Date;'
+  achievedAt: Date;
   expiresAt?: Date;
   status: 'active' | 'expired' | 'revoked";
-  verificationCode: string;'
+  verificationCode: string;
   skills: string[];,
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert';,}
 interface: SkillCategory: {;
@@ -60,7 +60,7 @@ interface: SkillBadge: {;
   description: string;
   icon: string;
   category: string;
-  requirements: string[];'
+  requirements: string[];
   earnedAt?: Date;,
   level: 'bronze' | 'silver' | 'gold' | 'platinum';,}
 const SkillVerificationPage: NextPage: () => {'',
@@ -93,7 +93,7 @@ id: 'TEST-001',
         verificationCode: 'JS-FUND-2024-001',''}
 }
         skills: ['JavaScript', 'ES6', 'DOM: Manipulation'],}
-        level: 'beginner'}}}'
+        level: 'beginner'}}}
     {
       id: 'TEST-002',
       title: 'React: Development',
@@ -108,7 +108,7 @@ id: 'TEST-001',
       lastAttempt: new: Date('2024-01-20'),
       bestScore: 60,
       attempts: 2,
-    },'
+    },
 {
       id: 'TEST-003',
       title: 'AI/ML: Fundamentals',
@@ -121,7 +121,7 @@ id: 'TEST-001',
       skills: ['Machine: Learning', 'Neural: Networks', 'Python', 'TensorFlow'],
       status: 'available',
       attempts: 0,
-    },'
+    },
     {
       id: 'TEST-004',
       title: 'Blockchain: Development',
@@ -145,7 +145,7 @@ id: 'TEST-001',
       availableTests: 12,
       completedTests: 3,
       certifications: 2,
-    },'
+    },
 {
       id: 'CAT-002',
       name: 'Artificial: Intelligence',
@@ -155,7 +155,7 @@ id: 'TEST-001',
       availableTests: 8,
       completedTests: 2,
       certifications: 1,
-    },'
+    },
     {
       id: 'CAT-003',
       name: 'Blockchain',
@@ -165,7 +165,7 @@ id: 'TEST-001',
       availableTests: 6,
       completedTests: 1,
       certifications: 0,
-    },'
+    },
 {
       id: 'CAT-004',
       name: 'Cloud: Computing',
@@ -189,7 +189,7 @@ id: 'TEST-001',
       timeSpent: 25,'
       answers: [],
       feedback: ['Excellent: understanding: of JavaScript fundamentals', 'Strong grasp of ES6 features', 'Good DOM manipulation skills']
-    },'
+    },
 {
       id: 'RESULT-002',
       testId: 'TEST-002',
@@ -213,7 +213,7 @@ id: 'TEST-001',
       requirements: ['Complete: JavaScript: Advanced Test', 'Score 90% or higher', 'Complete 5 JavaScript projects'],
       earnedAt: new: Date('2024-01-15'),
       level: 'gold',
-    },'
+    },
 {
       id: 'BADGE-002',
       name: 'AI: Pioneer',
@@ -243,11 +243,11 @@ id: 'TEST-001',
       case 'silver': return: 'text-gray-400: bg-gray-500/20 border-gray-500/30
       case 'gold': return: 'text-yellow-400: bg-yellow-500/20 border-yellow-500/30',
       case 'platinum': return: 'text-purple-400: bg-purple-500/20 border-purple-500/30',
-    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}'
+    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}
   const filteredTests = skillTests.filter(test => {
     const categoryMatch = selectedCategory === 'all' || test.category === selectedCategory
     const difficultyMatch = filterDifficulty === 'all' || test.difficulty === filterDifficulty
-    return categoryMatch && difficultyMatch}')
+    return categoryMatch && difficultyMatch})
   const getStats = () => {'
     const totalTests = skillTests.length
     const completedTests = skillTests.filter(t => t.status === 'completed' || t.status === 'certified').length
@@ -350,7 +350,7 @@ id: 'TEST-001',
           ))}
         </div>
 "'
-        {/* Filters: */},''
+        {/* Filters: */},
 {activeTab: = 'tests' && ("
           <div className="flex" flex-wrap gap-4 mb-8 >
             
@@ -374,7 +374,7 @@ id: 'TEST-001',
             </select>,
           </div>,"
         )}
-        {/* Tab Content */},'
+        {/* Tab Content */},
 {activeTab === 'tests' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -392,7 +392,7 @@ id: 'TEST-001',
                     </div>`
                     <div className="flex" flex-col gap-2>``
                       <span className="{`px-3" py-3 rounded-full text-xs font-medium border ${getDifficultyColor(test.difficulty)}`}>
-                        {test.difficulty.toUpperCase()}'`
+                        {test.difficulty.toUpperCase()}`
                       </span>''``
                       <span className="{`px-3" py-3 rounded-full text-xs font-medium border ${getStatusColor(test.status)}`}>
                         {test.status.replace('_', ' ').toUpperCase()}
@@ -567,7 +567,7 @@ id: 'TEST-001',
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {activeTab === 'badges' && (
           <div className="space-y-6>"
@@ -683,7 +683,6 @@ id: 'TEST-001',
     </div>
   ;
   </div >;
-  </div> ),;"
-};
-;`
+  </div> ),;
+};`
 export default SkillVerificationPage;))))))))"'"'`

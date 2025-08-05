@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -44,7 +44,7 @@ interface WorkflowStep {
   description: string
   estimatedTime: number
   dependencies: string[]
-  aiOptimization: string}'
+  aiOptimization: string}
 interface AIInsight {
   type: 'optimization' | 'risk' | 'opportunity' | 'prediction'
   title: string'
@@ -56,7 +56,7 @@ const AIProjectManagementPage: NextPage = () => {
   const [projects, setProjects] = useState<Project[]>([]
   const [tasks, setTasks] = useState<Task[]>([]
   const [workflows, setWorkflows] = useState<Workflow[]>([]
-  const [insights, setInsights] = useState<AIInsight[]>([]'
+  const [insights, setInsights] = useState<AIInsight[]>([]
   const [selectedProject, setSelectedProject] = useState<Project | null>(null
   const [view, setView] = useState<'overview' | 'projects' | 'tasks' | 'workflows' | 'insights'>('overview
   const [isLoading, setIsLoading] = useState(false
@@ -75,7 +75,7 @@ const AIProjectManagementPage: NextPage = () => {
       budget: 50000,
       aiScore: 92,
       automationLevel: 85}
-    },'
+    },
 {
       id: '2',
       name: 'Mobile App Development',
@@ -89,7 +89,7 @@ const AIProjectManagementPage: NextPage = () => {
       budget: 75000,
       aiScore: 78,
       automationLevel: 60
-    },'
+    },
     {
       id: '3',
       name: 'Security Infrastructure Upgrade',
@@ -118,7 +118,7 @@ const AIProjectManagementPage: NextPage = () => {
       actualHours: 32,
       dependencies: [],
       aiOptimized: true
-    },'
+    },
 {
       id: '2',
       projectId: '1',
@@ -132,7 +132,7 @@ const AIProjectManagementPage: NextPage = () => {
       actualHours: 22,
       dependencies: [],
       aiOptimized: false
-    },'
+    },
     {
       id: '3',
       projectId: '2',
@@ -161,7 +161,7 @@ const AIProjectManagementPage: NextPage = () => {
           estimatedTime: 2,'
           dependencies: [],
           aiOptimization: 'Automated requirement extraction from user feedback'
-        },'
+        },
 {
           id: '1-2',
           name: 'Design Phase',
@@ -170,7 +170,7 @@ const AIProjectManagementPage: NextPage = () => {
           estimatedTime: 4,
           dependencies: ['1-1'],
           aiOptimization: 'AI-generated design prototypes'
-        },'
+        },
     {
           id: '1-3',
           name: 'Development',
@@ -182,7 +182,7 @@ const AIProjectManagementPage: NextPage = () => {
       ],
       automationLevel: 75,
       successRate: 92,
-      avgCompletionTime: 22}'
+      avgCompletionTime: 22}
     {
       id: '2',
       name: 'Quality Assurance Process',
@@ -196,7 +196,7 @@ const AIProjectManagementPage: NextPage = () => {
           estimatedTime: 3,'
           dependencies: [],
           aiOptimization: 'Intelligent test case generation'
-        },'
+        },
 {
           id: '2-2',
           name: 'Code Review',
@@ -218,7 +218,7 @@ const AIProjectManagementPage: NextPage = () => {
       impact: 'high','
       confidence: 89,
       actionItems: ['Reschedule task dependencies', 'Optimize resource allocation', 'Implement parallel processing']
-    },'
+    },
 {
       type: 'risk',
       title: 'Resource Bottleneck Detected',
@@ -226,7 +226,7 @@ const AIProjectManagementPage: NextPage = () => {
       impact: 'medium','
       confidence: 76,
       actionItems: ['Redistribute workload', 'Add team member', 'Extend project timeline']
-    },'
+    },
     {
       type: 'opportunity',
       title: 'Automation Potential',
@@ -234,7 +234,7 @@ const AIProjectManagementPage: NextPage = () => {
       impact: 'high','
       confidence: 94,
       actionItems: ['Implement task automation', 'Train team on new tools', 'Monitor automation effectiveness']
-    },'
+    },
 {
       type: 'prediction',
       title: 'Project Completion Forecast',
@@ -267,7 +267,7 @@ const AIProjectManagementPage: NextPage = () => {
       case 'high': return 'text-orange-500
       case 'medium': return 'text-yellow-500
       case 'low': return 'text-green-500
-      default: return 'text-gray-500'}}'
+      default: return 'text-gray-500'}}
   const getProgressColor = (progress: number) => {
     if (progress >= 80) return 'text-green-500
     if (progress >= 60) return 'text-blue-500
@@ -354,7 +354,7 @@ const AIProjectManagementPage: NextPage = () => {
           </div>
         ) : ("
           </>
-            {/* Overview */},'
+            {/* Overview */},
 {view === 'overview' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 mb-8> 
                 </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
@@ -378,7 +378,7 @@ const AIProjectManagementPage: NextPage = () => {
                   <div className="text-gray-400>AI" Insights</div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Projects */},"''
 {view === 'projects' && (
               <div className="space-y-6">
@@ -435,7 +435,7 @@ const AIProjectManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Tasks */}, ''
 {view === 'tasks' && (
               <div className="space-y-6"">
@@ -476,7 +476,7 @@ const AIProjectManagementPage: NextPage = () => {
                   ))}
                 </div>
               </div> 
-            )}'
+            )}
             {/* Workflows */},"''
 {view === 'workflows' && (
               <div className="space-y-6">
@@ -523,7 +523,7 @@ const AIProjectManagementPage: NextPage = () => {
                 </div>
               </div>
             )}"'
-            {/* AI Insights */},''
+            {/* AI Insights */},
 {view === 'insights' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2>
@@ -568,7 +568,7 @@ const AIProjectManagementPage: NextPage = () => {
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default AIProjectManagementPage ))))))))))))))))"'"'`

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -10,9 +10,9 @@ interface Equipment {
   category: string;
   description: string;
   dailyRate: number;
-  weeklyRate: number;'
+  weeklyRate: number;
   monthlyRate: number;
-  availability: 'available' | 'rented' | 'maintenance' | 'reserved';'
+  availability: 'available' | 'rented' | 'maintenance' | 'reserved';
   location: string;
   condition: 'excellent' | 'good' | 'fair' | 'poor";
   images: string[];
@@ -38,7 +38,7 @@ interface Rental {
   renterId: string;
   startDate: Date;
   endDate: Date;
-  totalDays: number;'
+  totalDays: number;
   totalCost: number;
   status: 'pending' | 'active' | 'completed' | 'cancelled";
   paymentStatus: 'pending' | 'paid' | 'refunded";
@@ -47,13 +47,13 @@ interface Rental {
   notes?: string;
   createdAt: Date;}
 interface MaintenanceRecord {
-  id: string;'
+  id: string;
   equipmentId: string;
   type: 'routine' | 'repair' | 'inspection' | 'emergency";
   description: string;
   cost: number;
   technician: string;
-  startDate: Date;'
+  startDate: Date;
   endDate: Date;
   status: 'scheduled' | 'in_progress' | 'completed";
   parts: string[];
@@ -98,7 +98,7 @@ const EquipmentRentalPage: NextPage = () => {'
         weight: 2.5,
         dimensions: '15" x 12" x 8"',
         power: 'Battery powered',
-        features: ['4K Video', '45MP Sensor', 'Dual Card Slots', 'WiFi Connectivity']}'
+        features: ['4K Video', '45MP Sensor', 'Dual Card Slots', 'WiFi Connectivity']}
       }
       owner: 'PhotoPro Studios',
       totalRentals: 45,'
@@ -106,7 +106,7 @@ const EquipmentRentalPage: NextPage = () => {'
       lastMaintenance: new Date('2024-01-10'),
       nextMaintenance: new Date('2024-02-10'),
       insurance: true,
-      warranty: true}'
+      warranty: true}
     {
       id: 'EQ-002',
       name: 'DJ Equipment Set',
@@ -126,7 +126,7 @@ const EquipmentRentalPage: NextPage = () => {'
         weight: 15.0,"''
         dimensions: '24" x 18" x 12"',
         power: 'AC powered',
-        features: ['USB Support', 'Beat Sync', 'Hot Cues', 'Performance Pads']'
+        features: ['USB Support', 'Beat Sync', 'Hot Cues', 'Performance Pads']
       }
       owner: 'SoundWave Productions',
       totalRentals: 32,'
@@ -134,7 +134,7 @@ const EquipmentRentalPage: NextPage = () => {'
       lastMaintenance: new Date('2024-01-05'),
       nextMaintenance: new Date('2024-02-05'),
       insurance: true,
-      warranty: false}'
+      warranty: false}
     {
       id: 'EQ-003',
       name: 'Construction Tools Set',
@@ -154,7 +154,7 @@ const EquipmentRentalPage: NextPage = () => {'
         weight: 25.0,"''
         dimensions: '36" x 24 x 18',
         power: 'Battery/AC',
-        features: ['Cordless Drills', 'Circular Saws', 'Safety Gear', 'Tool Storage']'
+        features: ['Cordless Drills', 'Circular Saws', 'Safety Gear', 'Tool Storage']
       }
       owner: 'BuildRight Tools',
       totalRentals: 28,'
@@ -179,7 +179,7 @@ const EquipmentRentalPage: NextPage = () => {'
       deposit: 300,
       notes: 'Event photography for corporate conference',
       createdAt: new Date('2024-01-18'
-    },'
+    },
 {
       id: 'RENTAL-002',
       equipmentId: 'EQ-002',
@@ -208,7 +208,7 @@ const EquipmentRentalPage: NextPage = () => {'
       status: 'completed',
       parts: ['Replacement batteries', 'Cleaning supplies'],
       notes: 'All tools inspected and cleaned. Batteries replaced.'
-    },'
+    },
 {
       id: 'MAINT-002',
       equipmentId: 'EQ-001',
@@ -235,7 +235,7 @@ const EquipmentRentalPage: NextPage = () => {'
     categoryPerformance: [
       { category: 'Photography', revenue: 6000, rentals: 25, averageRating: 4.7 },
 { category: 'Audio', revenue: 4000, rentals: 20, averageRating: 4.5 },
-    { category: 'Construction', revenue: 2500, rentals: 15, averageRating: 4.3 }]}'
+    { category: 'Construction', revenue: 2500, rentals: 15, averageRating: 4.3 }]}
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -261,7 +261,7 @@ const EquipmentRentalPage: NextPage = () => {'
       case 'active': return 'text-blue-400 bg-blue-500/20 border-blue-500/30
       case 'completed': return 'text-green-400 bg-green-500/20 border-green-500/30
       case 'cancelled': return 'text-red-400 bg-red-500/20 border-red-500/30
-      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'}}'
+      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'}}
   const filteredEquipment = equipment.filter(item => {
     const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory
     const availabilityMatch = filterAvailability === 'all' || item.availability === filterAvailability
@@ -367,7 +367,7 @@ const EquipmentRentalPage: NextPage = () => {'
           ))}
         </div>
 "'
-        {/* Filters */},''
+        {/* Filters */},
 {activeTab === 'equipment' && ("
           <div className="flex flex-wrap gap-4 mb-8 >
             
@@ -393,7 +393,7 @@ const EquipmentRentalPage: NextPage = () => {'
             </select>
           </div>
         )}
-        {/* Tab Content */},'
+        {/* Tab Content */},
 {activeTab === 'equipment' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -592,7 +592,7 @@ const EquipmentRentalPage: NextPage = () => {'
               ))}
             </div>
           </div>
-        )}'
+        )}
 "''
         {activeTab === 'analytics' && (
           <div className="space-y-6>"
@@ -713,7 +713,7 @@ const EquipmentRentalPage: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default EquipmentRentalPage )))))))))))))"'"'`

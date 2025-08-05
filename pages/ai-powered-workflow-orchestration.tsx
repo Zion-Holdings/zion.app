@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Workflow {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'active' | 'inactive' | 'draft' | 'archived";
   category: 'business' | 'technical' | 'marketing' | 'sales' | 'support' | 'custom";
@@ -17,9 +17,9 @@ interface Workflow {
   successRate: number;
   aiOptimization: AIWorkflowOptimization;}
 interface WorkflowStep {
-  id: string;'
+  id: string;
   name: string;
-  type: 'action' | 'condition' | 'integration' | 'notification' | 'approval';'
+  type: 'action' | 'condition' | 'integration' | 'notification' | 'approval';
   description: string;
   status: 'pending' | 'running' | 'completed' | 'failed' | 'skipped";
   order: number;
@@ -28,7 +28,7 @@ interface WorkflowStep {
   actualTime?: number;
   aiAnalysis: AIWorkflowStepAnalysis;}
 interface WorkflowTrigger {
-  id: string;'
+  id: string;
   name: string;
   type: 'event' | 'schedule' | 'manual' | 'api' | 'webhook";
   condition: string;
@@ -58,7 +58,7 @@ interface AIWorkflowStepAnalysis {
 interface ProcessOrchestration {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   workflows: string[];
   status: 'active' | 'inactive' | 'maintenance";
   performance: ProcessPerformance;
@@ -76,9 +76,9 @@ interface AIProcessOptimization {
   costSavings: number;
   recommendations: string[];}
 interface Integration {
-  id: string;'
+  id: string;
   name: string;
-  type: 'api' | 'webhook' | 'database' | 'service' | 'custom';'
+  type: 'api' | 'webhook' | 'database' | 'service' | 'custom';
   provider: string;
   status: 'active' | 'inactive' | 'error' | 'maintenance";
   endpoints: IntegrationEndpoint[];
@@ -86,7 +86,7 @@ interface Integration {
   aiAnalysis: AIIntegrationAnalysis;}
 interface IntegrationEndpoint {
   id: string;
-  name: string;'
+  name: string;
   url: string;
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
   status: 'healthy' | 'degraded' | 'down' | 'maintenance";
@@ -117,7 +117,7 @@ interface WorkflowOrchestrationAnalytics {
   aiInsights: WorkflowOrchestrationInsight[];}
 interface WorkflowOrchestrationInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -125,7 +125,7 @@ interface WorkflowOrchestrationInsight {
 const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
   const [workflows, setWorkflows] = useState<Workflow[]>([]
   const [processOrchestrations, setProcessOrchestrations] = useState<ProcessOrchestration[]>([]
-  const [integrations, setIntegrations] = useState<Integration[]>([]'
+  const [integrations, setIntegrations] = useState<Integration[]>([]
   const [analytics, setAnalytics] = useState<WorkflowOrchestrationAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'workflows' | 'orchestration' | 'integrations' | 'analytics'>('workflows
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -155,7 +155,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
             performance: 93,
             reliability: 98,'
             complexity: 2,
-            recommendations: ['Optimize validation logic', 'Add retry mechanism']}}}'
+            recommendations: ['Optimize validation logic', 'Add retry mechanism']}}}
         {
           id: '2',
           name: 'Identity Verification',
@@ -180,7 +180,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
           condition: 'customer.registered','
           isActive: true,
           lastTriggered: new Date('2024-01-20T10:00:00'),
-          triggerCount: 45}'
+          triggerCount: 45}
       ],
       lastExecuted: new Date('2024-01-20T10:00:00'),
       executionCount: 45,
@@ -199,7 +199,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
             impact: 40,
             implementationTime: 2,
             confidence: 0.88
-          }]}}'
+          }]}}
     {
       id: '2',
       name: 'Order Processing Workflow',
@@ -223,7 +223,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
             performance: 96,
             reliability: 99,'
             complexity: 3,
-            recommendations: ['Cache inventory data', 'Implement real-time updates']}}'
+            recommendations: ['Cache inventory data', 'Implement real-time updates']}}
         {
           id: '4',
           name: 'Payment Processing',
@@ -248,7 +248,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
           condition: 'order.created','
           isActive: true,
           lastTriggered: new Date('2024-01-20T11:00:00'),
-          triggerCount: 128}'
+          triggerCount: 128}
       ],
       lastExecuted: new Date('2024-01-20T11:00:00'),
       executionCount: 128,
@@ -281,13 +281,13 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         successRate: 95,
         averageExecutionTime: 180,'
         errorRate: 2.5,
-        lastOptimized: new Date('2024-01-19T15:00:00'}'
+        lastOptimized: new Date('2024-01-19T15:00:00'}
       aiOptimization: {
         id: '1',
         optimizationScore: 94,
         efficiencyGains: 28,'
         costSavings: 15000,
-        recommendations: ['Implement parallel processing', 'Add intelligent routing']}}'
+        recommendations: ['Implement parallel processing', 'Add intelligent routing']}}
     {
       id: '2',
       name: 'Order Fulfillment Process',
@@ -299,7 +299,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         successRate: 97,
         averageExecutionTime: 120,'
         errorRate: 1.8,
-        lastOptimized: new Date('2024-01-18T10:00:00'}'
+        lastOptimized: new Date('2024-01-18T10:00:00'}
       aiOptimization: {
         id: '2',
         optimizationScore: 96,
@@ -324,7 +324,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
           responseTime: 250,'
           successRate: 99.2,
           lastChecked: new Date('2024-01-20T12:00:00'
-        },'
+        },
 {
           id: '2',
           name: 'Refund Payment',
@@ -340,14 +340,14 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         averageResponseTime: 215,
         successRate: 99.0,
         errorRate: 0.8,
-        uptime: 99.9}'
+        uptime: 99.9}
       aiAnalysis: {
         id: '1',
         healthScore: 98,
         performanceScore: 94,'
         reliabilityScore: 99,
         recommendations: ['Implement request caching', 'Add circuit breaker pattern'],
-        predictedIssues: ['High traffic during peak hours']}}'
+        predictedIssues: ['High traffic during peak hours']}}
     {
       id: '2',
       name: 'Identity Verification Service',
@@ -370,7 +370,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         averageResponseTime: 420,
         successRate: 96.5,
         errorRate: 2.1,
-        uptime: 99.7}'
+        uptime: 99.7}
       aiAnalysis: {
         id: '2',
         healthScore: 95,
@@ -395,7 +395,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Continue AI optimization', 'Implement predictive scaling']
-      },'
+      },
 {
         id: '2',
         title: 'Integration Performance Optimization',
@@ -501,7 +501,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                 Workflows ({workflows.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('orchestration')}''``
+                onClick={() => setActiveTab('orchestration')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'orchestration
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -511,7 +511,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                 Process Orchestration ({processOrchestrations.length}
               </button>'
               `
-                onClick={() => setActiveTab('integrations')}''``
+                onClick={() => setActiveTab('integrations')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'integrations
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -521,7 +521,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                 Integrations ({integrations.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'`
@@ -646,7 +646,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Process Orchestration Tab */},"''
 {activeTab === 'orchestration' && (
               <div className="space-y-8>" 
@@ -710,7 +710,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Integrations Tab */},"''
 {activeTab === 'integrations' && (
               <div className=" space-y-8>
@@ -799,7 +799,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className=" space-y-8>

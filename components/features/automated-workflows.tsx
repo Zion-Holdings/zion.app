@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface AutomatedWorkflowsProps {
-  className?: string;}'
+  className?: string;}
 const AutomatedWorkflows: React.FC<AutomatedWorkflowsProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const AutomatedWorkflows: React.FC<AutomatedWorkflowsProps> = ({ className="'' }
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default AutomatedWorkflows;"'"'`
+export default AutomatedWorkflows;'`

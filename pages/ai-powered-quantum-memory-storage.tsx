@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -246,7 +246,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Storage Dashboard */},'
+            {/* Storage Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -305,7 +305,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Memories */},''
+            {/* Quantum Memories */},
 {activeTab === 'memories' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Memories</h2>
@@ -346,7 +346,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Storage */},"''
 {activeTab === 'storages' && (
               <div className="space-y-6>"
@@ -388,7 +388,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Databases */},"''
 {activeTab === 'databases' && (
               <div className="space-y-6>"
@@ -432,7 +432,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Cloud */}, ''
 {activeTab === 'clouds' && (
               <div className="space-y-6">
@@ -476,7 +476,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Backup */},''
+            {/* Quantum Backup */},
 {activeTab === 'backups' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Backup</h2>
@@ -517,7 +517,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Recovery */},"''
 {activeTab === 'recoveries' && (
               <div className="space-y-6>"

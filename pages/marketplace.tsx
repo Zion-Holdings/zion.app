@@ -6,7 +6,7 @@ import ModernLayout from '../components/layout/ModernLayout
 import FuturisticCard from '../components/ui/FuturisticCard';import FuturisticDataTable from '../components/ui/FuturisticDataTable";
 
 const Marketplace: NextPage = () => {
-  const marketplaceCategories = ['
+  const $1 = ['
     {
       title: 'AI Services',
       description: 'Professional AI development and consulting services',
@@ -17,7 +17,7 @@ const Marketplace: NextPage = () => {
       category: 'Services',
       color: 'blue' as const,
       featured: true}
-    },'
+    },
 {
       title: 'AI Talent',
       description: 'Expert AI professionals and developers',
@@ -28,7 +28,7 @@ const Marketplace: NextPage = () => {
       category: 'Talent',
       color: 'purple' as const,
       featured: true
-    },'
+    },
     {
       title: 'Computing Equipment',
       description: 'High-performance AI hardware and servers',
@@ -39,7 +39,7 @@ const Marketplace: NextPage = () => {
       category: 'Equipment',
       color: 'green' as const,
       featured: false
-    },'
+    },
 {
       title: 'AI Products',
       description: 'Cutting-edge AI software and tools',
@@ -53,7 +53,7 @@ const Marketplace: NextPage = () => {
     };
   ];
 
-  const trendingServices = ["
+  const $1 = ["
     {'
       id: 1,
       name: 'AI Model Training',
@@ -92,13 +92,13 @@ const Marketplace: NextPage = () => {
     };
   ];
 '
-  const tableColumns = [
+  const $1 = [
     { key: 'name', label: 'Service Name', sortable: true },
 { key: 'provider', label: 'Provider', sortable: true },
     { key: 'category', label: 'Category', sortable: true },
 { key: 'price', label: 'Price', sortable: true },
     { key: 'rating', label: 'Rating', sortable: true },
-{ key: 'status', label: 'Status', sortable: true },'
+{ key: 'status', label: 'Status', sortable: true },
     {
       key: 'actions',
       label: 'Actions',
@@ -224,7 +224,7 @@ const Marketplace: NextPage = () => {
             </div>
           </div>
         </section>
-        {/* Floating Elements */}'
+        {/* Floating Elements */}
         <div className="fixed" top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-xl:md:blur-3xl:animate-pulse md:animate-pulse></div>' '
         <div className="fixed" bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-xl:md:blur-3xl animate-pulse md animate-pulse style={{ animationDelay  '1s' }}></div>''
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-124 h-124 bg-neon-pink/5 rounded-full blur-xl:md blur-3xl animate-pulse md animate-pulse style={{ animationDelay: '2s' }}></div>
@@ -235,5 +235,5 @@ const Marketplace: NextPage = () => {
 ;
 };
 "
-export default Marketplace;'
+export default Marketplace;
 ))"'"

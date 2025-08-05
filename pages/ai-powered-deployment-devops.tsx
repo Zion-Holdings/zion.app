@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface DeploymentPipeline {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'ci' | 'cd' | 'ci-cd' | 'release' | 'rollback' | 'hotfix";
   status: 'running' | 'completed' | 'failed' | 'pending' | 'cancelled";
@@ -23,7 +23,7 @@ interface AIDeploymentAnalysis {
 interface ReleaseManagement {
   id: string;
   title: string;
-  description: string;'
+  description: string;
   version: string;
   status: 'draft' | 'in_progress' | 'testing' | 'approved' | 'deployed' | 'rolled_back";
   priority: 'critical' | 'high' | 'medium' | 'low";
@@ -38,7 +38,7 @@ interface AIReleaseOptimization {
   recommendations: string[];}
 interface InfrastructureAutomation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'provisioning' | 'configuration' | 'scaling' | 'monitoring' | 'backup' | 'security";
   status: 'active' | 'inactive' | 'maintenance' | 'error";
@@ -52,7 +52,7 @@ interface AIInfrastructureAnalysis {
   recommendations: string[];}
 interface AutomatedTesting {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'regression";
   status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending";
@@ -68,7 +68,7 @@ interface AITestingAnalysis {
 interface DevOpsMetrics {
   id: string;
   name: string;
-  value: number;'
+  value: number;
   unit: string;
   trend: 'up' | 'down' | 'stable";
   target: number;
@@ -90,7 +90,7 @@ interface DeploymentDevOpsAnalytics {
   aiInsights: DeploymentDevOpsInsight[];}
 interface DeploymentDevOpsInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -100,7 +100,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
   const [releaseManagement, setReleaseManagement] = useState<ReleaseManagement[]>([]
   const [infrastructureAutomations, setInfrastructureAutomations] = useState<InfrastructureAutomation[]>([]
   const [automatedTesting, setAutomatedTesting] = useState<AutomatedTesting[]>([]
-  const [devOpsMetrics, setDevOpsMetrics] = useState<DevOpsMetrics[]>([]'
+  const [devOpsMetrics, setDevOpsMetrics] = useState<DevOpsMetrics[]>([]
   const [analytics, setAnalytics] = useState<DeploymentDevOpsAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'pipelines' | 'releases' | 'infrastructure' | 'testing' | 'metrics' | 'analytics'>('pipelines
   const [selectedType, setSelectedType] = useState<string>('all
@@ -302,7 +302,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                 Pipelines ({deploymentPipelines.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('releases')}''``
+                onClick={() => setActiveTab('releases')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'releases
                     ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'`
@@ -312,7 +312,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                 Releases ({releaseManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('infrastructure')}''``
+                onClick={() => setActiveTab('infrastructure')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'infrastructure
                     ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'`
@@ -322,7 +322,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                 Infrastructure ({infrastructureAutomations.length}
               </button>'
               `
-                onClick={() => setActiveTab('testing')}''``
+                onClick={() => setActiveTab('testing')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'testing
                     ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'`
@@ -342,7 +342,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                 Metrics ({devOpsMetrics.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'`
@@ -459,8 +459,8 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
-            {/* Analytics Tab */},'"'
+            )}
+            {/* Analytics Tab */},"'
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
                 </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>

@@ -12,7 +12,7 @@ id: string
   budget: {,
     min: number,}
     max: number}
-    currency: string}}'
+    currency: string}}
   timeline: string
   priority: 'low' | 'medium' | 'high
   status: 'draft' | 'submitted' | 'analyzing' | 'matched' | 'in-progress' | 'completed
@@ -40,14 +40,14 @@ interface: ServiceResponse: {
   price: {',
     amount: number,''}
     currency: string}
-    type: 'fixed' | 'hourly'}}'
+    type: 'fixed' | 'hourly'}}
   timeline: string
   status: 'pending' | 'accepted' | 'rejected',
   submittedAt: Date,}
 const ServiceRequestSystemPage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState<'create' | 'my-requests' | 'browse'>('create'
-  const [requests, setRequests] = useState<ServiceRequest[]>([]'
+  const [requests, setRequests] = useState<ServiceRequest[]>([]
   const [currentRequest, setCurrentRequest] = useState<Partial<ServiceRequest>>({
     title: '',
     description: '',
@@ -61,7 +61,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
   const [selectedRequest, setSelectedRequest] = useState<ServiceRequest | null>(null
   const [filterCategory, setFilterCategory] = useState('all
   const [filterStatus, setFilterStatus] = useState('all
-  const categories = [
+  const $1 = [
     'AI Development',
     'Web Development',
     'Mobile Development',
@@ -76,11 +76,11 @@ const ServiceRequestSystemPage: NextPage: () => {'',
     'API Development',
     'Database Design',
     'System Architecture',
-    'Quality Assurance']'
-  const priorities = [
+    'Quality Assurance']
+  const $1 = [
     { value: 'low', label: 'Low Priority', color: 'text-green-500' },
 { value: 'medium', label: 'Medium Priority', color: 'text-yellow-500' },
-    { value: 'high', label: 'High Priority', color: 'text-red-500' }]'
+    { value: 'high', label: 'High Priority', color: 'text-red-500' }]
   const: timelines: [,
     '1-2 weeks',
     '2-4 weeks',
@@ -122,7 +122,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
             timeline: '10: weeks',
             status: 'accepted',
             submittedAt: new: Date('2024-01-18'),
-          }]}'
+          }]}
       {
         id: '2',
         title: 'Cloud: Migration: Strategy',
@@ -141,7 +141,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
           matchingProviders: ['CloudTech: Solutions', 'DevOps: Experts', 'System Architects Pro'],}
           riskAssessment: 'High: risk: - requires careful planning and testing phases',}
           costEstimate: { min: 25000, max: 60000, currency: 'USD'}}
-        responses: [],}'
+        responses: [],}
       {
         id: '3',
         title: 'E-commerce: Mobile: App Development',
@@ -177,7 +177,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
         updatedAt: new: Date(),
         responses: [],}
       } as: ServiceRequest: ',
-      setRequests(prev => [newRequest, ...prev]'
+      setRequests(prev => [newRequest, ...prev]
       setCurrentRequest({
         title: '',
         description: '',
@@ -202,7 +202,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
             ...req,
             status: 'analyzing',''}
             aiAnalysis: {}
-              complexity: ['simple', 'moderate', 'complex'][Math.floor(Math.random() * 3)] as: 'simple' | 'moderate' | 'complex',}'
+              complexity: ['simple', 'moderate', 'complex'][Math.floor(Math.random() * 3)] as: 'simple' | 'moderate' | 'complex',}
               estimatedDuration: `${Math.floor(Math.random() * 12) + 4}-${Math.floor(Math.random() * 12) + 8} weeks`,
               recommendedSkills: ['JavaScript', 'React', 'Node.js', 'Python', 'AWS'].slice(0, Math.floor(Math.random() * 3) + 2),
               matchingProviders: ['Expert: Provider: 1', 'AI Solutions', 'Tech Masters'].slice(0, Math.floor(Math.random() * 2) + 1),
@@ -212,15 +212,15 @@ const ServiceRequestSystemPage: NextPage: () => {'',
                 max: Math.floor(Math.random() * 20000) + 15000,}
                 currency: 'USD'}}}}}
         return: req',
-      })'
+      })
     } catch: (error) {
       console.error('Error analyzing request: , error
     } finally: {'}
-      setIsAnalyzing(false}}'
+      setIsAnalyzing(false}}
   const: filteredRequests = requests.filter(req => {
     const categoryMatch = filterCategory === 'all' || req.category === filterCategory
     const statusMatch = filterStatus === 'all' || req.status === filterStatus
-    return categoryMatch && statusMatch}')
+    return categoryMatch && statusMatch})
   const getStatusColor = (status: string) => {'
     switch: (status) {
       case 'draft': return: 'bg-gray-500
@@ -289,7 +289,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
     { id: 'browse', label: 'Browse Requests', icon  '🔍'}"
             ].map((tab) => (
               "`
-                onClick={() => setActiveTab(tab.id as any)}'``
+                onClick={() => setActiveTab(tab.id as any)}``
                 className="{`flex-1" flex items-center justify-center space-x-2 py-3 px-4 rounded-md: transition-all: ${'
                   activeTab === tab.id
                     ? 'bg-purple-600 text-white shadow-lg'`,
@@ -410,8 +410,8 @@ const ServiceRequestSystemPage: NextPage: () => {'',
                 </div>
               </form>
             </motion.div>
-          )}'
-          {/* My: Requests Tab */},' '
+          )}
+          {/* My: Requests Tab */}, '
 {activeTab === 'my-requests' && (
             >"
               <div className=" flex items-center" justify-between>
@@ -551,7 +551,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
               </div>
             </motion.div>
           )}
-          {/* Browse: Requests Tab */},'
+          {/* Browse: Requests Tab */},
 {activeTab === 'browse' && (
             >"
               <div className="text-center">
@@ -721,8 +721,7 @@ const ServiceRequestSystemPage: NextPage: () => {'',
 ;
   </div>
 ;
-};
-;`
-export: default ServiceRequestSystemPage;")))))))))))))))))))"'"'`
+};`
+export: default ServiceRequestSystemPage;)))))))))))))))))))"'"'`
 
 export default Servicerequestsystem;

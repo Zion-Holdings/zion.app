@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
 import { motion, AnimatePresence }  from "framer-motion";
 
 interface DataSource {
-  id: string;'
+  id: string;
   name: string;
   type: 'database' | 'api' | 'file' | 'stream";
   status: 'connected' | 'disconnected' | 'error";
@@ -13,7 +13,7 @@ interface DataSource {
   size: number;
   lastSync?: Date;}
 interface ETLPipeline {
-  id: string;'
+  id: string;
   name: string;
   status: 'active' | 'inactive' | 'running' | 'error";
   schedule: 'manual' | 'hourly' | 'daily' | 'weekly";
@@ -24,7 +24,7 @@ interface ETLPipeline {
     successRate: number;
   };}
 interface DataWarehouse {
-  id: string;'
+  id: string;
   name: string;
   type: 'snowflake' | 'redshift' | 'bigquery";
   status: 'active' | 'inactive";
@@ -47,7 +47,7 @@ const DataWarehouseETL: NextPage = () => {'
         recordCount: 2450000,
         size: 1560000000,
         lastSync: new Date(Date.now() - 3600000}
-      },'
+      },
 {
         id: '2',
         name: 'Salesforce CRM API',
@@ -95,11 +95,11 @@ const DataWarehouseETL: NextPage = () => {'
       case 'disconnected':
         return 'bg-red-500/20 text-red-400 border-red-500/30
       default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'}}'
+        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'}}
   const formatBytes = (bytes: number) => {
     if (bytes === 0) return '0 Bytes
     const k = 1024
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']'
+    const $1 = ['Bytes', 'KB', 'MB', 'GB', 'TB']
     const i = Math.floor(Math.log(bytes) / Math.log(k)
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]}
   if (loading) {
@@ -236,7 +236,7 @@ const DataWarehouseETL: NextPage = () => {'
                 </div>
               </div>
             </motion.div>
-          )}'
+          )}
 ' '
           {activeTab === 'sources' && (
             "
@@ -309,7 +309,7 @@ const DataWarehouseETL: NextPage = () => {'
                 ))}
               </div>
             </motion.div>
-          )}'
+          )}
 '"'
           {activeTab === 'warehouse' && (
             "

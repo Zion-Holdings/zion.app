@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
   const [predictiveModels, setPredictiveModels] = useState<PredictiveModel[]>([]
   const [machineLearningAlgorithms, setMachineLearningAlgorithms] = useState<MachineLearningAlgorithm[]>([]
   const [deepLearning, setDeepLearning] = useState<DeepLearning[]>([]
-  const [analyticsOptimization, setAnalyticsOptimization] = useState<AnalyticsOptimization[]>([]'
+  const [analyticsOptimization, setAnalyticsOptimization] = useState<AnalyticsOptimization[]>([]
   const [data, setData] = useState<PredictiveData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'models' | 'algorithms' | 'deep-learning' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         performanceScore: 9.4,'
         predictionReliability: 9.2,
         modelInsights: ['High accuracy in numerical predictions', 'Strong correlation with target variables', 'Robust feature importance'],
-        recommendations: ['Enhance feature engineering', 'Implement ensemble methods', 'Optimize hyperparameters']}}}'
+        recommendations: ['Enhance feature engineering', 'Implement ensemble methods', 'Optimize hyperparameters']}}}
     {
       id: '2',
       name: 'Classification Model',
@@ -116,7 +116,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         performanceScore: 9.6,'
         predictionReliability: 9.4,
         modelInsights: ['Excellent class separation', 'Balanced precision and recall', 'Effective feature selection'],
-        recommendations: ['Expand training data', 'Implement cross-validation', 'Enhance model interpretability']}}'
+        recommendations: ['Expand training data', 'Implement cross-validation', 'Enhance model interpretability']}}
     {
       id: '3',
       name: 'Time Series Forecasting',
@@ -146,7 +146,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         learningAccuracy: 9.5,'
         optimizationLevel: 9.3,
         improvementOpportunities: ['Enhance feature selection', 'Optimize algorithm parameters', 'Expand training datasets'],
-        enhancementStrategies: ['Implement advanced feature engineering', 'Optimize hyperparameters', 'Expand data collection']}}'
+        enhancementStrategies: ['Implement advanced feature engineering', 'Optimize hyperparameters', 'Expand data collection']}}
     {
       id: '2',
       name: 'Unsupervised Learning System',
@@ -160,7 +160,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         learningAccuracy: 9.3,'
         optimizationLevel: 9.1,
         improvementOpportunities: ['Improve clustering algorithms', 'Enhance dimensionality reduction', 'Optimize similarity metrics'],
-        enhancementStrategies: ['Implement advanced clustering', 'Enhance dimensionality reduction', 'Optimize similarity measures']}}'
+        enhancementStrategies: ['Implement advanced clustering', 'Enhance dimensionality reduction', 'Optimize similarity measures']}}
     {
       id: '3',
       name: 'Reinforcement Learning Agent',
@@ -190,7 +190,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         modelAccuracy: 9.7,'
         trainingEfficiency: 9.4,
         improvementAreas: ['Enhance convolutional layers', 'Optimize pooling operations', 'Improve regularization'],
-        recommendations: ['Implement advanced CNN architectures', 'Optimize layer configurations', 'Enhance regularization techniques']}}'
+        recommendations: ['Implement advanced CNN architectures', 'Optimize layer configurations', 'Enhance regularization techniques']}}
     {
       id: '2',
       name: 'Recurrent Neural Network',
@@ -204,7 +204,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         modelAccuracy: 9.2,'
         trainingEfficiency: 8.9,
         improvementAreas: ['Improve sequence modeling', 'Enhance memory mechanisms', 'Optimize gradient flow'],
-        recommendations: ['Implement LSTM/GRU layers', 'Enhance attention mechanisms', 'Optimize gradient clipping']}}'
+        recommendations: ['Implement LSTM/GRU layers', 'Enhance attention mechanisms', 'Optimize gradient clipping']}}
     {
       id: '3',
       name: 'Transformer Model',
@@ -230,12 +230,12 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         totalModels: 185,
         optimizationRate: 94,
         performanceGain: 28,
-        efficiencyScore: 92}'
+        efficiencyScore: 92}
       aiAnalysis: {
         insights: ['AI optimization improved model performance by 28%', 'Automated hyperparameter tuning increased accuracy by 15%'],
         trends: ['Improving model performance', 'Enhancing optimization efficiency', 'Increasing automation'],
         recommendations: ['Expand optimization algorithms', 'Enhance automation capabilities', 'Implement advanced tuning'],
-        impactScore: 9.3}}'
+        impactScore: 9.3}}
     {
       id: '2',
       name: 'Feature Engineering Platform',
@@ -245,12 +245,12 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         totalModels: 145,
         optimizationRate: 91,
         performanceGain: 22,
-        efficiencyScore: 89}'
+        efficiencyScore: 89}
       aiAnalysis: {
         insights: ['Feature engineering improved model accuracy by 22%', 'Automated feature selection enhanced performance by 18%'],
         trends: ['Improving feature quality', 'Enhancing selection algorithms', 'Increasing automation'],
         recommendations: ['Expand feature engineering', 'Enhance selection algorithms', 'Implement advanced automation'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Hyperparameter Tuning System',
@@ -260,7 +260,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         totalModels: 125,
         optimizationRate: 96,
         performanceGain: 35,
-        efficiencyScore: 94}'
+        efficiencyScore: 94}
       aiAnalysis: {
         insights: ['Hyperparameter tuning improved model performance by 35%', 'Automated optimization increased efficiency by 25%'],
         trends: ['Improving tuning efficiency', 'Enhancing optimization algorithms', 'Increasing automation'],
@@ -281,7 +281,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI optimization coverage', 'Implement advanced algorithms', 'Enhance model performance']
-      },'
+      },
 {
         id: '2',
         title: 'Deep Learning Boosting Predictive Accuracy',
@@ -347,14 +347,14 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
       case 'positive': return '🧠
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredPredictiveModels = useMemo(() => {'
@@ -520,7 +520,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'models' && (
           <div className=" space-y-6>
@@ -528,7 +528,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'regression', 'classification', 'clustering', 'time-series', 'anomaly-detection', 'recommendation'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-emerald-600 to-green-600 text-white'`
@@ -575,7 +575,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'algorithms' && (
           <div className="space-y-6>" 
@@ -613,7 +613,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'deep-learning' && (
           <div className="space-y-6>

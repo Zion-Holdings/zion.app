@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
   const [energyMonitoring, setEnergyMonitoring] = useState<EnergyMonitoring[]>([]
   const [renewableEnergy, setRenewableEnergy] = useState<RenewableEnergy[]>([]
   const [smartGrid, setSmartGrid] = useState<SmartGrid[]>([]
-  const [energyAnalytics, setEnergyAnalytics] = useState<EnergyAnalytics[]>([]'
+  const [energyAnalytics, setEnergyAnalytics] = useState<EnergyAnalytics[]>([]
   const [data, setData] = useState<EnergyData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'monitoring' | 'renewable' | 'grid' | 'analytics' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         performanceScore: 8.7,'
         optimizationPotential: 0.15,
         maintenanceNeeds: ['Clean panels monthly', 'Check inverter quarterly', 'Monitor connections'],
-        recommendations: ['Optimize panel angle', 'Add tracking system', 'Expand capacity']}}}'
+        recommendations: ['Optimize panel angle', 'Add tracking system', 'Expand capacity']}}}
     {
       id: '2',
       name: 'Wind Turbine B',
@@ -116,7 +116,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         performanceScore: 8.2,'
         optimizationPotential: 0.12,
         maintenanceNeeds: ['Inspect blades annually', 'Check gearbox quarterly', 'Monitor vibrations'],
-        recommendations: ['Adjust blade pitch', 'Optimize positioning', 'Enhance monitoring']}}'
+        recommendations: ['Adjust blade pitch', 'Optimize positioning', 'Enhance monitoring']}}
     {
       id: '3',
       name: 'Battery Storage C',
@@ -146,7 +146,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         weatherImpact: 0.92,'
         productionForecast: 0.88,
         maintenanceSchedule: ['Panel cleaning every 2 weeks', 'Inverter check monthly', 'Full inspection quarterly'],
-        optimizationRecommendations: ['Add tracking systems', 'Implement smart cleaning', 'Expand capacity']}}'
+        optimizationRecommendations: ['Add tracking systems', 'Implement smart cleaning', 'Expand capacity']}}
     {
       id: '2',
       name: 'Wind Farm Beta',
@@ -160,7 +160,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         weatherImpact: 0.85,'
         productionForecast: 0.82,
         maintenanceSchedule: ['Blade inspection annually', 'Gearbox check quarterly', 'Tower inspection biannually'],
-        optimizationRecommendations: ['Optimize blade design', 'Enhance weather forecasting', 'Improve positioning']}}'
+        optimizationRecommendations: ['Optimize blade design', 'Enhance weather forecasting', 'Improve positioning']}}
     {
       id: '3',
       name: 'Hydroelectric Plant Gamma',
@@ -190,7 +190,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         loadBalance: 0.85,
         stabilityScore: 9.2,'
         outageRisk: 0.05,
-        optimizationRecommendations: ['Implement load balancing', 'Add redundancy systems', 'Enhance monitoring']}}'
+        optimizationRecommendations: ['Implement load balancing', 'Add redundancy systems', 'Enhance monitoring']}}
     {
       id: '2',
       name: 'Microgrid Network',
@@ -204,7 +204,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         loadBalance: 0.78,
         stabilityScore: 8.8,'
         outageRisk: 0.08,
-        optimizationRecommendations: ['Optimize load distribution', 'Add energy storage', 'Improve grid resilience']}}'
+        optimizationRecommendations: ['Optimize load distribution', 'Add energy storage', 'Improve grid resilience']}}
     {
       id: '3',
       name: 'Energy Storage Facility',
@@ -230,12 +230,12 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         totalEnergy: 150000,
         renewablePercentage: 65,
         costSavings: 450000,
-        carbonReduction: 2500}'
+        carbonReduction: 2500}
       aiAnalysis: {
         insights: ['Peak demand reduced by 25% through smart scheduling', 'Renewable energy integration increased efficiency'],
         trends: ['Decreasing energy costs', 'Improving grid stability', 'Increasing renewable adoption'],
         recommendations: ['Expand renewable capacity', 'Implement demand response', 'Optimize energy storage'],
-        impactScore: 8.7}}'
+        impactScore: 8.7}}
     {
       id: '2',
       name: 'Renewable Energy Production',
@@ -245,12 +245,12 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         totalEnergy: 200000,
         renewablePercentage: 75,
         costSavings: 600000,
-        carbonReduction: 3500}'
+        carbonReduction: 3500}
       aiAnalysis: {
         insights: ['Solar production increased by 30% with AI optimization', 'Wind energy efficiency improved by 20%'],
         trends: ['Increasing renewable production', 'Decreasing fossil fuel dependency', 'Improving energy storage'],
         recommendations: ['Expand solar capacity', 'Optimize wind farms', 'Enhance storage systems'],
-        impactScore: 9.1}}'
+        impactScore: 9.1}}
     {
       id: '3',
       name: 'Grid Efficiency Metrics',
@@ -260,7 +260,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         totalEnergy: 180000,
         renewablePercentage: 70,
         costSavings: 520000,
-        carbonReduction: 3000}'
+        carbonReduction: 3000}
       aiAnalysis: {
         insights: ['Grid efficiency improved by 35% with AI management', 'Outage frequency reduced by 40%'],
         trends: ['Improving grid stability', 'Reducing energy losses', 'Increasing automation'],
@@ -281,7 +281,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Expand AI optimization coverage', 'Implement predictive maintenance', 'Enhance grid monitoring']
-      },'
+      },
 {
         id: '2',
         title: 'Renewable Energy Integration Accelerating',
@@ -339,14 +339,14 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
       case 'positive': return '⚡
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredEnergyMonitoring = useMemo(() => {'
@@ -492,7 +492,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'monitoring' && (
           <div className=" space-y-6>
@@ -500,7 +500,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'solar', 'wind', 'hydro', 'battery', 'grid', 'consumption'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-yellow-1200 to-orange-600 text-white'`
@@ -547,7 +547,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'renewable' && (
           <div className="space-y-6>" 
@@ -585,7 +585,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'grid' && (
           <div className="space-y-6>

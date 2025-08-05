@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface PricingEstimate {
   id: string;
-  projectType: string;'
+  projectType: string;
   category: string;
   complexity: 'simple' | 'medium' | 'complex' | 'enterprise";
   estimatedCost: number;
@@ -37,12 +37,12 @@ interface CompetitorPrice {
   name: string;
   price: number;
   rating: number;
-  features: string[];}'
+  features: string[];}
 interface PricingRecommendation {
   type: 'cost-optimization' | 'feature-addition' | 'timeline-adjustment' | 'quality-improvement";
   title: string;
   description: string;
-  potentialSavings?: number;'
+  potentialSavings?: number;
   additionalCost?: number;
   impact: 'high' | 'medium' | 'low";
   priority: number;}
@@ -59,12 +59,12 @@ interface PhaseEstimate {
   deliverables: string[];}
 interface RiskFactor {
   category: string;
-  description: string;'
+  description: string;
   probability: number;
   impact: 'high' | 'medium' | 'low";
   mitigation: string;}
 interface PricingModel {
-  id: string;'
+  id: string;
   name: string;
   type: 'fixed' | 'hourly' | 'value-based' | 'subscription' | 'performance-based";
   description: string;
@@ -92,7 +92,7 @@ interface Tradeoff {
   qualityImpact: string;}
 const AIPoweredPricingEstimationPage: NextPage = () => {
   const [estimates, setEstimates] = useState<PricingEstimate[]>([]
-  const [pricingModels, setPricingModels] = useState<PricingModel[]>([]'
+  const [pricingModels, setPricingModels] = useState<PricingModel[]>([]
   const [budgetOptimizations, setBudgetOptimizations] = useState<BudgetOptimization[]>([]
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [selectedComplexity, setSelectedComplexity] = useState<string>('all
@@ -117,14 +117,14 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           cost: 15000,'
           percentage: 33.3,
           details: ['Responsive Design', 'Component Library', 'State Management', 'Performance Optimization']}
-        },'
+        },
 {
           category: 'Backend Development',
           description: 'Node.js/Express API with database design',
           cost: 18000,'
           percentage: 40.0,
           details: ['RESTful API', 'Database Design', 'Authentication', 'API Documentation']
-        },'
+        },
     {
           category: 'AI/ML Integration',
           description: 'Machine learning models and data processing',
@@ -134,11 +134,11 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       ],
       marketComparison: {
         averageMarketPrice: 52000,
-        priceRange: { min: 35000, max: 75000}'
+        priceRange: { min: 35000, max: 75000}
         competitors: [
           { name: 'TechCorp Solutions', price: 48000, rating: 4.5, features: ['Full-stack', 'AI Integration', '24/7 Support'] },
 { name: 'InnovateDev', price: 55000, rating: 4.3, features: ['Custom AI', 'Scalable', 'Analytics'] },
-    { name: 'SmartSystems', price: 42000, rating: 4.1, features: ['AI-Powered', 'Cloud-Native', 'Security']}'
+    { name: 'SmartSystems', price: 42000, rating: 4.1, features: ['AI-Powered', 'Cloud-Native', 'Security']}
         ],
         marketTrend: 'increasing',
         trendPercentage: 8.5}
@@ -150,7 +150,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           potentialSavings: 8000,
           impact: 'high',
           priority: 1
-        },'
+        },
 {
           type: 'feature-addition',
           title: 'Add Advanced Analytics Dashboard',
@@ -168,27 +168,27 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
             cost: 5000,
             resources: ['Project Manager', 'UX Designer', 'Architect'],
             deliverables: ['Requirements Doc', 'UI/UX Design', 'Technical Architecture']
-          },'
+          },
 {
             name: 'Frontend Development',
             duration: 6,'
             cost: 15000,
             resources: ['Frontend Developer', 'UI Developer'],
             deliverables: ['Responsive UI', 'Component Library', 'State Management']
-          },'
+          },
     {
             name: 'Backend Development',
             duration: 5,'
             cost: 18000,
             resources: ['Backend Developer', 'Database Engineer'],
             deliverables: ['API Development', 'Database Setup', 'Authentication']
-          },'
+          },
 {
             name: 'AI/ML Integration',
             duration: 3,'
             cost: 12000,
             resources: ['ML Engineer', 'Data Scientist'],
-            deliverables: ['Model Training', 'API Integration', 'Testing']}'
+            deliverables: ['Model Training', 'API Integration', 'Testing']}
         ],
         criticalPath: ['Planning & Design', 'Backend Development', 'AI/ML Integration'],
         dependencies: ['Frontend Development', 'Backend Development']}
@@ -199,15 +199,15 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           probability: 0.3,
           impact: 'medium',
           mitigation: 'Implement fallback solutions and extensive testing'
-        },'
+        },
 {
           category: 'Timeline',
           description: 'Complex AI integration may extend timeline','
           probability: 0.4,
           impact: 'high',
-          mitigation: 'Allocate buffer time and parallel development'}'
+          mitigation: 'Allocate buffer time and parallel development'}
       ],
-      createdAt: new Date('2024-01-15'}'
+      createdAt: new Date('2024-01-15'}
     {
       id: '2',
       projectType: 'E-commerce Platform',
@@ -224,14 +224,14 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           cost: 10000,'
           percentage: 40.0,
           details: ['Product Catalog', 'Shopping Cart', 'User Dashboard', 'Mobile Responsive']
-        },'
+        },
 {
           category: 'Backend Development',
           description: 'Node.js API with payment integration',
           cost: 12000,'
           percentage: 48.0,
           details: ['Payment Processing', 'Order Management', 'Inventory System', 'Security']
-        },'
+        },
     {
           category: 'AI Features',
           description: 'Recommendation engine and analytics',
@@ -241,10 +241,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       ],
       marketComparison: {
         averageMarketPrice: 28000,
-        priceRange: { min: 20000, max: 40000}'
+        priceRange: { min: 20000, max: 40000}
         competitors: [
           { name: 'ShopTech', price: 26000, rating: 4.4, features: ['Payment Integration', 'Analytics', 'Mobile App'] },
-{ name: 'EcomPro', price: 32000, rating: 4.2, features: ['AI Recommendations', 'Multi-vendor', 'Advanced Analytics']}'
+{ name: 'EcomPro', price: 32000, rating: 4.2, features: ['AI Recommendations', 'Multi-vendor', 'Advanced Analytics']}
         ],
         marketTrend: 'stable',
         trendPercentage: 2.1}
@@ -266,27 +266,27 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
             cost: 3000,
             resources: ['Project Manager', 'UX Designer'],
             deliverables: ['Requirements', 'UI Design', 'Architecture']
-          },'
+          },
 {
             name: 'Frontend Development',
             duration: 5,'
             cost: 10000,
             resources: ['Frontend Developer'],
             deliverables: ['E-commerce UI', 'Product Catalog', 'Shopping Cart']
-          },'
+          },
     {
             name: 'Backend Development',
             duration: 4,'
             cost: 12000,
             resources: ['Backend Developer'],
             deliverables: ['API Development', 'Payment Integration', 'Order System']
-          },'
+          },
 {
             name: 'AI Integration',
             duration: 1,'
             cost: 3000,
             resources: ['AI Developer'],
-            deliverables: ['Recommendations', 'Analytics']}'
+            deliverables: ['Recommendations', 'Analytics']}
         ],
         criticalPath: ['Planning & Design', 'Backend Development', 'AI Integration'],
         dependencies: ['Frontend Development', 'Backend Development']}
@@ -296,7 +296,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           description: 'Payment gateway integration complexity','
           probability: 0.2,
           impact: 'medium',
-          mitigation: 'Use established payment providers and thorough testing'}'
+          mitigation: 'Use established payment providers and thorough testing'}
       ],
       createdAt: new Date('2024-01-10
     }]
@@ -311,7 +311,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       disadvantages: ['Limited flexibility', 'Scope creep risks', 'May not reflect actual effort'],
       bestFor: ['Well-defined projects', 'Small to medium projects', 'Clients with fixed budgets'],
       examples: ['Website development', 'Mobile app development', 'Logo design']
-    },'
+    },
 {
       id: '2',
       name: 'Hourly Rate',
@@ -321,7 +321,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       disadvantages: ['Uncertain total cost', 'Potential for inefficiency', 'Harder to budget'],
       bestFor: ['Ongoing projects', 'Unclear requirements', 'Agile development'],
       examples: ['Consulting services', 'Maintenance work', 'Research projects']
-    },'
+    },
     {
       id: '3',
       name: 'Value-Based Pricing',
@@ -331,7 +331,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       disadvantages: ['Harder to quantify', 'Subjective pricing', 'Client education needed'],
       bestFor: ['High-value projects', 'Business transformation', 'Strategic initiatives'],
       examples: ['AI implementation', 'Digital transformation', 'Business automation']
-    },'
+    },
 {
       id: '4',
       name: 'Subscription Model',
@@ -341,7 +341,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       disadvantages: ['Lower upfront revenue', 'Client dependency', 'Service level requirements'],
       bestFor: ['SaaS products', 'Ongoing maintenance', 'Support services'],
       examples: ['Cloud services', 'Website maintenance', 'Technical support']
-    },'
+    },
     {
       id: '5',
       name: 'Performance-Based',
@@ -365,14 +365,14 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           savings: 5000,
           impact: 'Reduced licensing costs while maintaining functionality',
           implementation: 'Replace proprietary software with open-source equivalents'
-        },'
+        },
 {
           category: 'Development Approach',
           action: 'Implement MVP first','
           savings: 4000,
           impact: 'Faster time to market with core features',
           implementation: Build essential features first, add advanced features later'
-        },'
+        },
     {
           category: 'Resource Allocation',
           action: 'Optimize team composition','
@@ -387,7 +387,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
           cons: ['Less support', 'Security concerns', 'Integration challenges'],'
           costImpact: -5000,
           qualityImpact: 'Minimal'
-        },'
+        },
 {
           option: 'MVP vs Full-featured',
           pros: ['Faster delivery', 'Lower risk', 'User feedback'],
@@ -408,7 +408,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
   const filteredEstimates = useMemo(() => {
     let filtered = estimates'
     if (selectedCategory !== 'all') {
-      filtered = filtered.filter(e => e.category === selectedCategory}'
+      filtered = filtered.filter(e => e.category === selectedCategory}
     if (selectedComplexity !== 'all') {
       filtered = filtered.filter(e => e.complexity === selectedComplexity}
     return filtered.sort((a, b) => {'
@@ -425,7 +425,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
   const categories = useMemo(() => {'
     const cats = Array.from(new Set(estimates.map(e => e.category))
     return ['all', ...cats]
-  } [estimates]'
+  } [estimates]
   const getConfidenceColor = (confidence: number) => {
     if (confidence >= 0.9) return 'text-green-500
     if (confidence >= 0.8) return 'text-yellow-500
@@ -498,7 +498,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                 Cost Estimates
               </button> '
               "'''`
-                onClick={() => setActiveTab('models')}''``
+                onClick={() => setActiveTab('models')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'models
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -508,7 +508,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                 Pricing Models
               </button>'
               `
-                onClick={() => setActiveTab('optimization')}''``
+                onClick={() => setActiveTab('optimization')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'optimization
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -519,7 +519,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Estimates Tab */},''
+            {/* Estimates Tab */},
 {activeTab === 'estimates' && ("
               <div className=" space-y-8>
                 {/* Filters */}
@@ -649,7 +649,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Pricing Models Tab */},
 {activeTab === 'models' && ("
               <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
@@ -695,7 +695,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Budget Optimization Tab */},"''
 {activeTab === 'optimization' && (
               <div className="space-y-8>" 

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -243,7 +243,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Error Dashboard */},'
+            {/* Error Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -302,7 +302,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Error Correction Codes */},''
+            {/* Error Correction Codes */},
 {activeTab === 'error-correction' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Error Correction Codes</h2>
@@ -347,7 +347,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Fault Tolerant Operations */},"''
 {activeTab === 'fault-tolerance' && (
               <div className="space-y-6>"
@@ -391,7 +391,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Decoherence Mitigation */}, ''
 {activeTab === 'decoherence' && (
               <div className="space-y-6">
@@ -435,7 +435,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Noise Reduction */},''
+            {/* Noise Reduction */},
 {activeTab === 'noise-reduction' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Noise Reduction</h2>
@@ -476,7 +476,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Fault Diagnosis */},"''
 {activeTab === 'fault-diagnosis' && (
               <div className="space-y-6>"
@@ -518,7 +518,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Recovery Protocols */},"''
 {activeTab === 'recovery' && (
               <div className="space-y-6>"

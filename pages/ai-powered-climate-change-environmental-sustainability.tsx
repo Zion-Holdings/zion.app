@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface ClimateMonitoring {
   currentValue: number'
   unit: string
   trend: 'increasing' | 'decreasing' | 'stable'
-  aiAnalysis: ClimateAnalysis}'
+  aiAnalysis: ClimateAnalysis}
 interface ClimateAnalysis {
   severityLevel: 'low' | 'medium' | 'high' | 'critical
   impactScore: number
@@ -45,7 +45,7 @@ interface CarbonFootprint {
     agriculture: number
     waste: number}
   reductionTarget: number
-  aiAnalysis: CarbonAnalysis}'
+  aiAnalysis: CarbonAnalysis}
 interface CarbonAnalysis {
   currentTrend: 'increasing' | 'decreasing' | 'stable
   targetAchievement: number
@@ -59,7 +59,7 @@ interface EnvironmentalImpact {
   location: string
   affectedArea: number
   populationImpact: number
-  aiAnalysis: ImpactAnalysis}'
+  aiAnalysis: ImpactAnalysis}
 interface ImpactAnalysis {
   riskLevel: 'low' | 'medium' | 'high' | 'critical
   mitigationPotential: number
@@ -82,7 +82,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
   const [climateMonitoring, setClimateMonitoring] = useState<ClimateMonitoring[]>([]
   const [sustainabilityProjects, setSustainabilityProjects] = useState<SustainabilityProject[]>([]
   const [carbonFootprints, setCarbonFootprints] = useState<CarbonFootprint[]>([]
-  const [environmentalImpacts, setEnvironmentalImpacts] = useState<EnvironmentalImpact[]>([]'
+  const [environmentalImpacts, setEnvironmentalImpacts] = useState<EnvironmentalImpact[]>([]
   const [analytics, setAnalytics] = useState<EnvironmentalAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'climate' | 'sustainability' | 'carbon' | 'impacts' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         severityLevel: 'high',
         impactScore: 8.5,'
         predictionAccuracy: 0.92,
-        recommendations: ['Accelerate renewable energy adoption', 'Implement carbon pricing', 'Enhance climate adaptation measures']}}}'
+        recommendations: ['Accelerate renewable energy adoption', 'Implement carbon pricing', 'Enhance climate adaptation measures']}}}
     {
       id: '2',
       name: 'CO2 Concentration Station',
@@ -116,7 +116,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         severityLevel: 'critical',
         impactScore: 9.2,'
         predictionAccuracy: 0.95,
-        recommendations: ['Deploy carbon capture technologies', 'Reduce fossil fuel consumption', 'Expand forest conservation']}}'
+        recommendations: ['Deploy carbon capture technologies', 'Reduce fossil fuel consumption', 'Expand forest conservation']}}
     {
       id: '3',
       name: 'Arctic Ice Melt Monitor',
@@ -146,7 +146,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         successProbability: 0.88,
         environmentalImpact: 9.1,'
         costEffectiveness: 8.7,
-        recommendations: ['Optimize panel efficiency', 'Expand storage capacity', 'Integrate smart grid technology']}}'
+        recommendations: ['Optimize panel efficiency', 'Expand storage capacity', 'Integrate smart grid technology']}}
     {
       id: '2',
       name: 'Carbon Capture Facility',
@@ -160,7 +160,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         successProbability: 0.75,
         environmentalImpact: 9.5,'
         costEffectiveness: 7.8,
-        recommendations: ['Enhance capture efficiency', 'Reduce operational costs', 'Scale up deployment']}}'
+        recommendations: ['Enhance capture efficiency', 'Reduce operational costs', 'Scale up deployment']}}
     {
       id: '3',
       name: 'Urban Reforestation',
@@ -193,7 +193,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         currentTrend: 'decreasing',
         targetAchievement: 0.65,'
         reductionPotential: 0.78,
-        recommendations: ['Switch to renewable energy', 'Optimize supply chain', 'Implement circular economy']}}'
+        recommendations: ['Switch to renewable energy', 'Optimize supply chain', 'Implement circular economy']}}
     {
       id: '2',
       entity: 'New York City',
@@ -210,7 +210,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         currentTrend: 'decreasing',
         targetAchievement: 0.45,'
         reductionPotential: 0.85,
-        recommendations: ['Electrify public transport', 'Retrofit buildings', 'Expand green infrastructure']}}'
+        recommendations: ['Electrify public transport', 'Retrofit buildings', 'Expand green infrastructure']}}
     {
       id: '3',
       entity: 'John Smith',
@@ -242,7 +242,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         riskLevel: 'critical',
         mitigationPotential: 0.75,'
         recoveryTime: 50,
-        recommendations: ['Reduce plastic production', 'Improve waste management', 'Clean up ocean debris']}}'
+        recommendations: ['Reduce plastic production', 'Improve waste management', 'Clean up ocean debris']}}
     {
       id: '2',
       name: 'Amazon Deforestation',
@@ -255,7 +255,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         riskLevel: 'high',
         mitigationPotential: 0.65,'
         recoveryTime: 100,
-        recommendations: ['Strengthen forest protection', 'Support sustainable agriculture', 'Implement reforestation']}}'
+        recommendations: ['Strengthen forest protection', 'Support sustainable agriculture', 'Implement reforestation']}}
     {
       id: '3',
       name: 'Air Quality Degradation',
@@ -283,7 +283,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         impact: 'negative','
         confidence: 0.94,
         recommendations: ['Accelerate emission reductions', 'Implement adaptation measures', 'Enhance climate monitoring']
-      },'
+      },
 {
         id: '2',
         title: 'Renewable Energy Adoption Accelerating',
@@ -351,14 +351,14 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
       case 'positive': return '🌱
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredClimateMonitoring = useMemo(() => {'
@@ -449,7 +449,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Climate Monitoring Overview */}
@@ -507,7 +507,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'temperature', 'co2', 'methane', 'sea-level', 'ice-melt', 'precipitation'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
@@ -595,7 +595,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'carbon' && (
           <div className="space-y-6>" 
@@ -632,7 +632,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'impacts' && (
           <div className="space-y-6>" 
@@ -671,7 +671,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6>

@@ -1,14 +1,17 @@
-import { useState, useEffect }  from "react";
-import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import React, { useState, useEffect } from 'react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-interface KPI {
+interface Metric {
   id: string;
   name: string;
-  value: number;'
+  value: number;
   change: number;
-  trend: 'up' | 'down' | 'stable";
+  trend: 'up' | 'down' | 'stable';
   target: number;
-  unit: string;}
+  unit: string;
+}
+
 interface ChartData {
   labels: string[];
   datasets: {
@@ -16,540 +19,371 @@ interface ChartData {
     data: number[];
     backgroundColor: string;
     borderColor: string;
-  }[];}
-interface Insight {'
+  }[];
+}
+
+interface Insight {
   id: string;
-  type: 'positive' | 'negative' | 'neutral' | 'warning";
+  type: 'positive' | 'negative' | 'neutral' | 'warning';
   title: string;
   description: string;
   impact: string;
-  recommendation: string;
-  timestamp: string;}
+  confidence: number;
+}
+
 interface Report {
-  id: string;'
+  id: string;
   name: string;
-  type: 'daily' | 'weekly' | 'monthly' | 'quarterly";
-  status: 'generated' | 'pending' | 'failed";
+  type: 'daily' | 'weekly' | 'monthly' | 'quarterly';
+  status: 'generated' | 'pending' | 'failed';
   lastGenerated: string;
-  nextScheduled: string;}'
-const $1 = () => {'
+  nextScheduled: string;
+}
+
+const AIBusinessIntelligenceDashboardPage: NextPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
   const [loading, setLoading] = useState(false);
+  const [metrics, setMetrics] = useState<Metric[]>([]);
   const [insights, setInsights] = useState<Insight[]>([]);
   const [reports, setReports] = useState<Report[]>([]);
 
-  // Mock KPI data
-  const $1: $2[] = [
-    {
-      id: '1',
-      name: 'Revenue',
-      value: 1250000,'
-      change: 12.5,
-      trend: 'up','
-      target: 1500000,
-      unit: '$'
-    },'
-{
-      id: '2',
-      name: 'Customer Acquisition',
-      value: 1250,'
-      change: -2.3,
-      trend: 'down','
-      target: 1500,
-      unit: 
-    },'
-    {
-      id: '3',
-      name: 'Conversion Rate',
-      value: 3.2,'
-      change: 0.8,
-      trend: 'up','
-      target: 4.0,
-      unit: '%'
-    },'
-{
-      id: '4',
-      name: 'Customer Satisfaction',
-      value: 4.6,'
-      change: 0.2,
-      trend: 'up','
-      target: 4.8,
-      unit: '/5'
-    },'
-    {
-      id: '5',
-      name: 'Churn Rate',
-      value: 2.1,'
-      change: -0.5,
-      trend: 'down','
-      target: 1.5,
-      unit: '%'
-    },'
-{
-      id: '6',
-      name: 'Average Order Value',
-      value: 85.50,'
-      change: 5.2,
-      trend: 'up','
-      target: 100.00,
-      unit: '$'}
-  ];
-  // Mock chart data'
-  const revenueChartData: ChartData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: ['
-      {
-        label: 'Revenue','
-        data: [850000, 920000, 980000, 1050000, 1150000, 1250000],
-        backgroundColor: "rgba(59, 130, 246", 0.1)',
-        borderColor: "rgba(59, 130, 246", 1)'}
-    ];
-  };
-'
-  const customerChartData: ChartData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: ['
-      {
-        label: 'New Customers','
-        data: [1200, 1350, 1420, 1380, 1450, 1250],
-        backgroundColor: "rgba(16, 185, 129", 0.1)',
-        borderColor: "rgba(16, 185, 129", 1)'
-      },'
-{
-        label: 'Returning Customers','
-        data: [800, 920, 980, 1050, 1150, 1250],
-        backgroundColor: "rgba(245, 158, 11", 0.1)',
-        borderColor: "rgba(245, 158, 11", 1)'}
-    ];
-  };
-
-  // Mock insights
-  const $1: $2[] = [
-    {
-      id: '1',
-      type: 'positive',
-      title: 'Revenue Growth Exceeds Target',
-      description: "Revenue has grown 12.5% this month", exceeding the target of 10%. This is primarily driven by increased customer acquisition and higher average order values.',
-      impact: 'High',
-      recommendation: 'Consider expanding marketing campaigns to capitalize on current momentum.',
-      timestamp: '2024-01-15T10:30:00Z'
-    },'
-{
-      id: '2',
-      type: 'warning',
-      title: 'Customer Acquisition Declining',
-      description: 'New customer acquisition has decreased by 2.3% this month. This may be due to increased competition or changes in marketing strategy.',
-      impact: 'Medium',
-      recommendation: 'Review marketing channels and consider A/B testing new campaigns.',
-      timestamp: '2024-01-14T14:20:00Z'
-    },'
-    {
-      id: '3',
-      type: 'positive',
-      title: 'Conversion Rate Improving',
-      description: 'Website conversion rate has improved by 0.8% this month. This suggests recent UX improvements are having a positive impact.',
-      impact: 'Medium',
-      recommendation: 'Continue monitoring and consider implementing similar improvements across other touchpoints.',
-      timestamp: '2024-01-13T09:15:00Z'
-    },'
-{
-      id: '4',
-      type: 'neutral',
-      title: 'Customer Satisfaction Stable',
-      description: Customer satisfaction score remains stable at 4.6/5. While this is good, there\'s room for improvement to reach the target of 4.8.',
-      impact: 'Low',
-      recommendation: 'Analyze customer feedback to identify areas for improvement.',
-      timestamp: '2024-01-12T16:45:00Z'}
-  ];
-
-  // Mock reports
-  const $1: $2[] = [
-    {
-      id: '1',
-      name: 'Daily Sales Report',
-      type: 'daily',
-      status: 'generated',
-      lastGenerated: '2024-01-15T06:00:00Z',
-      nextScheduled: '2024-01-16T06:00:00Z'
-    },'
-{
-      id: '2',
-      name: 'Weekly Performance Report',
-      type: 'weekly',
-      status: 'generated',
-      lastGenerated: '2024-01-14T08:00:00Z',
-      nextScheduled: '2024-01-21T08:00:00Z'
-    },'
-    {
-      id: '3',
-      name: 'Monthly Business Review',
-      type: 'monthly',
-      status: 'pending',
-      lastGenerated: '2023-12-15T10:00:00Z',
-      nextScheduled: '2024-01-15T10:00:00Z'
-    },'
-{
-      id: '4',
-      name: 'Quarterly Financial Analysis',
-      type: 'quarterly',
-      status: 'generated',
-      lastGenerated: '2023-12-31T12:00:00Z',
-      nextScheduled: '2024-03-31T12:00:00Z'}
-  ];
-
   useEffect(() => {
-    setInsights(mockInsights);
-    setReports(mockReports);
-  } []);
+    // Simulate loading data
+    setTimeout(() => {
+      const mockMetrics: Metric[] = [
+        {
+          id: '1',
+          name: 'Revenue',
+          value: 1250000,
+          change: 12.5,
+          trend: 'up',
+          target: 1500000,
+          unit: '$'
+        },
+        {
+          id: '2',
+          name: 'Customers',
+          value: 15420,
+          change: 8.3,
+          trend: 'up',
+          target: 20000,
+          unit: ''
+        },
+        {
+          id: '3',
+          name: 'Conversion Rate',
+          value: 3.2,
+          change: -0.5,
+          trend: 'down',
+          target: 4.0,
+          unit: '%'
+        },
+        {
+          id: '4',
+          name: 'Customer Satisfaction',
+          value: 4.6,
+          change: 0.2,
+          trend: 'up',
+          target: 4.8,
+          unit: '/5'
+        }
+      ];
 
-  const generateReport = async (reportId: string) => {;
-    setLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setLoading(false);
+      const mockInsights: Insight[] = [
+        {
+          id: '1',
+          type: 'positive',
+          title: 'Revenue Growth Strong',
+          description: 'Revenue increased by 12.5% compared to last month',
+          impact: 'High',
+          confidence: 95
+        },
+        {
+          id: '2',
+          type: 'warning',
+          title: 'Conversion Rate Declining',
+          description: 'Conversion rate dropped by 0.5% this month',
+          impact: 'Medium',
+          confidence: 87
+        },
+        {
+          id: '3',
+          type: 'positive',
+          title: 'Customer Satisfaction Improving',
+          description: 'Customer satisfaction score increased to 4.6/5',
+          impact: 'High',
+          confidence: 92
+        }
+      ];
+
+      const mockReports: Report[] = [
+        {
+          id: '1',
+          name: 'Daily Sales Report',
+          type: 'daily',
+          status: 'generated',
+          lastGenerated: '2024-01-20 08:00',
+          nextScheduled: '2024-01-21 08:00'
+        },
+        {
+          id: '2',
+          name: 'Weekly Performance',
+          type: 'weekly',
+          status: 'pending',
+          lastGenerated: '2024-01-15 09:00',
+          nextScheduled: '2024-01-22 09:00'
+        },
+        {
+          id: '3',
+          name: 'Monthly Analytics',
+          type: 'monthly',
+          status: 'generated',
+          lastGenerated: '2024-01-01 10:00',
+          nextScheduled: '2024-02-01 10:00'
+        }
+      ];
+
+      setMetrics(mockMetrics);
+      setInsights(mockInsights);
+      setReports(mockReports);
+    }, 1000);
+  }, []);
+
+  const getTrendIcon = (trend: string) => {
+    switch (trend) {
+      case 'up': return '↗️';
+      case 'down': return '↘️';
+      case 'stable': return '→';
+      default: return '→';
+    }
   };
-  const exportData = (format: 'pdf' | 'csv' | 'excel') => {
-    // Simulate export functionality;
-    console.log(`Exporting data in ${format} format`);
+
+  const getTrendColor = (trend: string) => {
+    switch (trend) {
+      case 'up': return 'text-green-600';
+      case 'down': return 'text-red-600';
+      case 'stable': return 'text-gray-600';
+      default: return 'text-gray-600';
+    }
   };
-'
-  const tabs = [
-    { id: 'overview', label: 'Overview', icon: '📊' },
-{ id: 'analytics', label: 'Analytics', icon: '📈' },
-    { id: 'insights', label: 'AI Insights', icon: '🤖' },
-{ id: 'reports', label: 'Reports', icon: '📋' },
-    { id: 'alerts', label: 'Alerts', icon: '🔔' };
-  ];
-'
-  const timeframes = [
-    { value: '7d', label: '7 Days' },
-{ value: '30d', label: '30 Days' },
-    { value: '90d', label: '90 Days' },
-{ value: '1y', label: '1 Year' };
-  ];
+
+  const getInsightColor = (type: string) => {
+    switch (type) {
+      case 'positive': return 'bg-green-100 text-green-800';
+      case 'negative': return 'bg-red-100 text-red-800';
+      case 'warning': return 'bg-yellow-100 text-yellow-800';
+      case 'neutral': return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'generated': return 'bg-green-100 text-green-800';
+      case 'pending': return 'bg-yellow-100 text-yellow-800';
+      case 'failed': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   return (
-    <div>
+    <>
       <Head>
-        <title>AI Business Intelligence Dashboard - Zion Marketplace</title>
-        <meta name = "description content=Real-time business intelligence, predictive analytics, and AI-powered insights > </meta" name="description" content="Real-time business intelligence, predictive analytics, and AI-powered" insights" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0," user-scalable=no" ></Head>
-"
-      <div className=" relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}
-        </div><div className=" fixed inset-0" z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-        {/* Header */}
-        <div className="bg-black/20" backdrop-blur-md border-b border-white/10>
-          </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>"
-            <div className="flex" justify-between items-center>
-              </div><div>
-                <h1 className="text-4xl" md text-5xl font-bold text-white mb-2 >
-                  AI Business Intelligence Dashboard
-                </h1>
-                <p className="text-xl" text-gray-300>
-                  Real-time insights, predictive analytics, and AI-powered decision making
-                </p>
-              </div>
-              <div className="flex items-center" space-x-4>
-                "
-                  onChange={(e) => setSelectedTimeframe(e.target.value)}
-                  className="bg-white/10" border border-white/20 rounded-lg:text-white px-4 py-4 focus outline-none focus ring-2 focus ring-purple-500
+        <title>AI Business Intelligence Dashboard - Zion App</title>
+        <meta name="description" content="AI-powered business intelligence and analytics dashboard" />
+      </Head>
+
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Business Intelligence Dashboard</h1>
+            <p className="text-gray-600">Real-time analytics and insights powered by AI</p>
+          </div>
+
+          {/* Timeframe Selector */}
+          <div className="mb-6">
+            <div className="flex space-x-2">
+              {['7d', '30d', '90d', '1y'].map((timeframe) => (
+                <button
+                  key={timeframe}
+                  onClick={() => setSelectedTimeframe(timeframe)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    selectedTimeframe === timeframe
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
                 >
-                  {timeframes.map((tf) => (
-                    <option key={tf.value} value={tf.value}>
-                      {tf.label}
-                    </option>
-                  ))}
-                </select>'
-                  onClick={() => exportData('pdf')}
-                  className="bg-purple-600" text-white px-4 py-4 rounded-lg:hover bg-purple-700 transition-colors 
-                >
-                  Export
+                  {timeframe}
                 </button>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-8>
-          {/* Tab Navigation */}
-          </div><div className=" flex flex-wrap gap-2" mb-8>
-            {tabs.map((tab) => (
-              "`
-                onClick={() => setActiveTab(tab.id)}'``
-                className="{`flex" items-center space-x-2 px-4 py-4 rounded-lg:transition-all duration-200 ${'
-                  activeTab === tab.id
-                    ? 'bg-purple-600 text-white'`
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
-                }`}
-              >
-                <span>{tab.icon}</span>
-                <span>{tab.label}</span>
-              </button>
+
+          {/* Metrics Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {metrics.map((metric) => (
+              <div key={metric.id} className="bg-white rounded-lg shadow-sm p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-sm font-medium text-gray-600">{metric.name}</h3>
+                  <span className={`text-sm ${getTrendColor(metric.trend)}`}>
+                    {getTrendIcon(metric.trend)} {metric.change}%
+                  </span>
+                </div>
+                <div className="flex items-baseline">
+                  <p className="text-2xl font-bold text-gray-900">
+                    {metric.unit}{metric.value.toLocaleString()}
+                  </p>
+                  {metric.unit && metric.unit !== '$' && (
+                    <span className="text-sm text-gray-500 ml-1">{metric.unit}</span>
+                  )}
+                </div>
+                <div className="mt-2">
+                  <div className="flex justify-between text-xs text-gray-500">
+                    <span>Target: {metric.unit}{metric.target.toLocaleString()}</span>
+                    <span>{((metric.value / metric.target) * 100).toFixed(1)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                    <div
+                      className="bg-blue-600 h-2 rounded-full"
+                      style={{ width: `${Math.min((metric.value / metric.target) * 100, 100)}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-'
-          {/* Overview Tab */},
-{activeTab === 'overview' && ("
-            <div className="space-y-8>" 
-              {/* KPI Cards */}
-              </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
-                {kpis.map((kpi) => ("
-                  <div key={kpi.id} className="bg-white/5" backdrop-blur-md:rounded-xl p-6 border border-white/10> 
-                    </div><div className="flex" justify-between items-start mb-4>
-                      <h3 className="text-white" font-semibold >{kpi.name}</h3>'`
-                      "''``
-                      }`}>''
-                        <span>{kpi.trend === 'up' ? '↗'   kpi.trend === 'down' ? '↘'   '→'}</span>
-                        <span className="text-sm>{Math.abs(kpi.change)}%</span">
-                      </div>
-                    </div>
-                    <div className="mb-4>"
-                      </div><div className="text-3xl" font-bold text-white >
-                        {kpi.unit},
-{kpi.value.toLocaleString()}
-                      </div>
-                      <div className="text-sm:text-gray-400>"
-                        Target  {kpi.unit},
-{kpi.target.toLocaleString()}
-                      </div>
-                    </div>
-                    <div className="w-full" bg-gray-700 rounded-full h-2>
-                      </div>
-                      ></div>
-                    </div>
-                  </div >
+
+          {/* Tabs */}
+          <div className="mb-6">
+            <div className="border-b border-gray-200">
+              <nav className="-mb-px flex space-x-8">
+                {[
+                  { id: 'overview', label: 'Overview' },
+                  { id: 'insights', label: 'AI Insights' },
+                  { id: 'reports', label: 'Reports' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                      activeTab === tab.id
+                        ? 'border-blue-500 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
                 ))}
+              </nav>
+            </div>
+          </div>
+
+          {/* Tab Content */}
+          {activeTab === 'overview' && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Chart Placeholder */}
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Revenue Trend</h3>
+                <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <p className="text-gray-500">Chart visualization would go here</p>
+                </div>
               </div>
-              {/* Charts */}
-              <div className="grid" grid-cols-1 lg grid-cols-2 gap-8 > 
-                </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                  <h3 className="text-white" font-semibold mb-4>Revenue Trend</h3>
-                  <div className="h-124" flex items-center justify-center text-gray-400> 
-                    </div><div className="text-center>"
-                      <div className="text-4xl" mb-2>📈</div>
-                      <p>Interactive Revenue Chart</p>
-                      <p className="text-sm>Real-time" data visualization</p >
+
+              {/* Recent Activity */}
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900">New customer signup</p>
+                      <p className="text-xs text-gray-500">2 minutes ago</p>
                     </div>
                   </div>
-                </div> 
-                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                  <h3 className="text-white" font-semibold mb-4>Customer Growth</h3> 
-                  <div className="h-124" flex items-center justify-center text-gray-400>
-                    </div><div className="text-center">
-                      <div className="text-4xl" mb-2>👥</div>
-                      <p>Interactive Customer Chart</p>
-                      <p className="text-sm>New" vs Returning customers</p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900">Order completed</p>
+                      <p className="text-xs text-gray-500">5 minutes ago</p>
                     </div>
                   </div>
-                </div >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900">Payment processed</p>
+                      <p className="text-xs text-gray-500">10 minutes ago</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
-          {/* Analytics Tab */},'
-{activeTab === 'analytics' && (
-            <div className="space-y-8>" 
-              </div><div className="grid grid-cols-1 lg grid-cols-3" gap-6>
-                <div className="bg-white/5" backdrop-blur-md:rounded-xl:p-6 border border-white/10>
-                  <h3 className="text-white" font-semibold mb-4 >Sales Analytics</h3>
-                  <div className="space-y-4>" 
-                    </div><div className="flex" justify-between>
-                      <span className="text-gray-300>Total" Sales</span>
-                      <span className="text-white" font-semibold >$1,250,000</span>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=" text-gray-300>Growth Rate</span>
-                      <span className="text-green-400>+12.5%</span">
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300>Top" Product</span>
-                      <span className="text-white>Premium" Package</span >
-                    </div>
-                  </div>
-                </div> 
-                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                  <h3 className="text-white" font-semibold mb-4>Customer Analytics</h3> 
-                  <div className="space-y-4>"
-                    </div><div className=" flex" justify-between>"
-                      <span className="text-gray-300>Total" Customers</span>
-                      <span className="text-white" font-semibold >12,450</span>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=" text-gray-300>New This Month</span>
-                      <span className="text-green-400>+1,250</span">
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300>Churn" Rate</span>
-                      <span className="text-red-400>2.1%</span">
-                    </div>
-                  </div>
-                </div> 
-                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                  <h3 className="text-white" font-semibold mb-4>Performance Metrics</h3> 
-                  <div className="space-y-4>"
-                    </div><div className=" flex" justify-between>"
-                      <span className="text-gray-300>Conversion" Rate</span>
-                      <span className="text-white" font-semibold >3.2%</span>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=" text-gray-300>Avg Order Value</span>
-                      <span className="text-white>$85.50</span">
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300>Customer" Lifetime Value</span>
-                      <span className="text-white>$1,250</span>"
-                    </div >
-                  </div>
-                </div>
-              </div> 
-              <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                <h3 className="text-white" font-semibold mb-4>Predictive Analytics</h3>
-                <div className="grid" grid-cols-1 md grid-cols-2 gap-6>
-                  </div><div> 
-                    <h4 className="text-gray-300" mb-2>Revenue Forecast</h4>
-                    <div className="text-2xl" font-bold text-white mb-2>$1,450,000</div>
-                    <div className="text-green-400" text-sm >+16% predicted growth</div>
-                  </div>
-                  <div>
-                    <h4 className="text-gray-300" mb-2>Customer Growth</h4> 
-                    <div className="text-2xl" font-bold text-white mb-2>14,200</div>
-                    <div className="text-green-400" text-sm>+14% predicted growth</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )},'
-    {/* AI Insights Tab */},'"'
-{activeTab === 'insights' && (
-            <div className="space-y-6>" 
-              </div><div className="flex justify-between" items-center>
-                <h2 className="text-2xl" font-bold text-white>AI-Powered Insights</h2>
-                <button className="bg-purple-600" text-white px-4 py-4 rounded-lg:hover:bg-purple-700 transition-colors>
-                  Generate New Insights
-                </button>
-              </div>
 
-              <div className="space-y-4>"
-                {insights.map((insight) => (`
-                  </div>``
-                  }`}>"
-                    <div className="flex" items-start justify-between mb-4> 
-                      </div><div className="flex" items-center space-x-3>`
-                        ``
-                        }`}></div>
-                        <h3 className="text-white" font-semibold>{insight.title}</h3> 
+          {activeTab === 'insights' && (
+            <div className="space-y-6">
+              {insights.map((insight) => (
+                <div key={insight.id} className="bg-white rounded-lg shadow-sm p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getInsightColor(insight.type)}`}>
+                          {insight.type}
+                        </span>
+                        <span className="text-sm text-gray-500">{insight.confidence}% confidence</span>
                       </div>
-                      <div className="text-sm text-gray-400">
-                        {new Date(insight.timestamp).toLocaleDateString()}
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{insight.title}</h3>
+                      <p className="text-gray-600 mb-3">{insight.description}</p>
+                      <div className="flex items-center space-x-4 text-sm">
+                        <span className="text-gray-500">Impact:</span>
+                        <span className="font-medium">{insight.impact}</span>
                       </div>
-                    </div>
-                    <p className="text-gray-300 mb-4">{insight.description}</p>
-                    <div className="flex"  justify-between items-center>
-                      </div><div className=" flex items-center" space-x-4>
-                        <span className=" text-sm" text-gray-400">Impact: <span className="text-white>{insight.impact}</span></span">
-                        <span className="text-sm:text-gray-400>Recommendation:" <span className="text-white>{insight.recommendation}</span></span>"
-                      </div>
-                      <button className="text-purple-400" hover text-purple-300 transition-colors>
-                        View Details
-                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          )}'
-          {/* Reports Tab */},"''
-{activeTab === 'reports' && (
-            <div className="space-y-6>" 
-              </div><div className="flex" justify-between items-center >
-                <h2 className="text-2xl" font-bold text-white>Automated Reports</h2">
-                <button className="bg-purple-600" text-white px-4 py-4 rounded-lg:hover bg-purple-700  transition-colors>
-                  Create New Report
-                </button>
-              </div>
-              <div className="grid" grid-cols-1 md:grid-cols-2 gap-6> 
-                {reports.map((report) => (
-                  </div><div key={report.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
-                    <div className="flex" justify-between items-start mb-4>
-                      </div><div>
-                        <h3 className="text-white" font-semibold>{report.name}</h3>
-                        <p className="text-gray-400" text-sm:capitalize>{report.type} Report</p>
-                      </div>`
-                      ``
-                      }`}>
-                        {report.status}
-                      </div>
-                    </div>
-                    <div className="space-y-2 mb-4">
-                      </div><div className=" flex justify-between" text-sm>"
-                        <span className="text-gray-400>Last" Generated:</span>
-                        <span className="text-white>{new" Date(report.lastGenerated).toLocaleDateString()}</span>
-                      </div>
-                      <div className=" flex justify-between" text-sm>
-                        <span className=" text-gray-400>Next Scheduled:</span>
-                        <span className=" text-white>{new Date(report.nextScheduled).toLocaleDateString()}</span>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2 ">
-                        onClick={() =>" generateReport(report.id)}"
-                        disabled={loading}"
-                        className="flex-1" bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors disabled opacity-50
-                      >'
-                        {loading ? 'Generating...'   'Generate Now'}
-                      </button>
-                      <button className="bg-white/10" text-white px-4 py-4 rounded-lg:hover bg-white/20 transition-colors>
-                        Download
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}'
-          {/* Alerts Tab */}, ''
-{activeTab === 'alerts' && (
-            <div className="space-y-6>"
-              </div><div className="flex" justify-between items-center >
-                <h2 className="text-2xl" font-bold text-white>Smart Alerts</h2 >
-                <button className="bg-purple-600" text-white px-4 py-4 rounded-lg:hover bg-purple-700 transition-colors>
-                  Configure Alerts
-                </button>
-              </div>
-              <div className="space-y-4>" 
-                </div><div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
-                  <div className="flex" items-center space-x-3 mb-2> 
-                    </div><div className="w-3" h-3 bg-red-400 rounded-full></div>
-                    <h3 className="text-white" font-semibold>High Priority Alert</h3>
-                  </div>
-                  <p className="text-gray-300" mb-2 >Customer acquisition rate has dropped below threshold for 3 consecutive days.</p>
-                  <div className="text-sm" text-gray-400>Triggered 2 hours ago</div> 
                 </div>
-                <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6>
-                  </div><div className="flex" items-center space-x-3 mb-2>
-                    <div className="w-3" h-3 bg-yellow-400 rounded-full ></div>
-                    <h3 className="text-white" font-semibold>Medium Priority Alert</h3>
-                  </div> 
-                  <p className="text-gray-300" mb-2>Average order value is trending downward this week.</p>
-                  <div className="text-sm:text-gray-400>Triggered" 1 day ago</div>
-                </div>
+              ))}
+            </div>
+          )}
 
-                <div className="bg-green-500/10" border border-green-500/20 rounded-xl p-6 > 
-                  </div><div className="flex items-center space-x-3" mb-2>
-                    <div className="w-3" h-3 bg-green-400 rounded-full></div>
-                    <h3 className="text-white" font-semibold>Positive Alert</h3>
+          {activeTab === 'reports' && (
+            <div className="space-y-6">
+              {reports.map((report) => (
+                <div key={report.id} className="bg-white rounded-lg shadow-sm p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900">{report.name}</h3>
+                      <p className="text-sm text-gray-500 capitalize">{report.type} report</p>
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(report.status)}`}>
+                      {report.status}
+                    </span>
                   </div>
-                  <p className="text-gray-300" mb-2 >Revenue growth exceeds target by 15% this month.</p>
-                  <div className="text-sm" text-gray-400>Triggered 3 days ago</div>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-gray-500">Last Generated:</span>
+                      <p className="font-medium">{report.lastGenerated}</p>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Next Scheduled:</span>
+                      <p className="font-medium">{report.nextScheduled}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex space-x-2">
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">
+                      View Report
+                    </button>
+                    <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm">
+                      Download
+                    </button>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           )}
         </div>
       </div>
-    </div >;  );"
+    </>
+  );
 };
-''`
-export default BusinessIntelligenceDashboard;"'"'`
+
+export default AIBusinessIntelligenceDashboardPage;

@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface VRExperience {
-  id: string;'
+  id: string;
   name: string;
   type: 'immersive-gaming' | 'virtual-tours' | 'training-simulation' | 'social-vr' | 'virtual-events' | 'virtual-commerce";
   status: 'active' | 'inactive' | 'testing' | 'error' | 'updating";
@@ -26,7 +26,7 @@ interface VRExperience {
     data: any;
   }[];}
 interface VRSession {
-  id: string;'
+  id: string;
   experienceId: string;
   sessionType: 'gaming' | 'exploration' | 'training' | 'social' | 'event' | 'shopping";
   status: 'active' | 'completed' | 'failed' | 'paused' | 'queued";
@@ -49,7 +49,7 @@ interface VRSession {
   };}
 interface VRAutomation {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'active' | 'inactive' | 'testing' | 'error";
   experienceId: string;
@@ -71,7 +71,7 @@ interface VRAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -79,7 +79,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
   ;
   const [experiences, setExperiences] = useState<VRExperience[]>([]);
   const [sessions, setSessions] = useState<VRSession[]>([]);
-  const [automations, setAutomations] = useState<VRAutomation[]>([]);'
+  const [automations, setAutomations] = useState<VRAutomation[]>([]);
   const [analytics, setAnalytics] = useState<VRAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'experiences' | 'sessions' | 'automations' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -112,16 +112,16 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               type: 'haptic_feedback',
               status: 'active',
-              data: { intensity: 'adaptive', zones: 16}}'
+              data: { intensity: 'adaptive', zones: 16}}
             {
               type: 'spatial_audio',
               status: 'active',
-              data: { channels: 8, quality: '3D'}}'
+              data: { channels: 8, quality: '3D'}}
             {
               type: 'motion_tracking',
               status: 'active',
               data: { precision: '±1mm', range: '360°'}
-}]}'
+}]}
         {
           id: '2',
           name: 'Zion Virtual Tours',
@@ -142,16 +142,16 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               type: '360_camera',
               status: 'active',
-              data: { resolution: '8K', fps: 60}}'
+              data: { resolution: '8K', fps: 60}}
             {
               type: 'environment_mapping',
               status: 'active',
-              data: { coverage: '100%', detail: 'ultra'}}'
+              data: { coverage: '100%', detail: 'ultra'}}
             {
               type: 'interactive_elements',
               status: 'active',
               data: { hotspots: 50, info: 'rich'}
-}]}'
+}]}
         {
           id: '3',
           name: 'Zion Training Simulation',
@@ -172,16 +172,16 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               type: 'scenario_builder',
               status: 'active',
-              data: { scenarios: 25, complexity: 'high'}}'
+              data: { scenarios: 25, complexity: 'high'}}
             {
               type: 'performance_tracking',
               status: 'active',
-              data: { metrics: 15, real_time: true}}'
+              data: { metrics: 15, real_time: true}}
             {
               type: 'ai_coaching',
               status: 'active',
               data: { feedback: 'instant', adaptive: true}
-}]}'
+}]}
         {
           id: '4',
           name: 'Zion Social VR',
@@ -202,12 +202,12 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               type: 'avatar_system',
               status: 'error',
-              data: { customization: 100, quality: 'high'}}'
+              data: { customization: 100, quality: 'high'}}
             {
               type: 'voice_chat',
               status: 'inactive',
               data: { quality: 'HD', noise_reduction: true}
-}]}'
+}]}
         {
           id: '5',
           name: 'Zion Virtual Events',
@@ -228,7 +228,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               type: 'stage_system',
               status: 'error',
-              data: { capacity: 1000, quality: 'low'}}'
+              data: { capacity: 1000, quality: 'low'}}
             {
               type: 'audience_interaction',
               status: 'error',
@@ -254,7 +254,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             completionRate: 67,
             immersion: 98.5,
             engagement: 96.2,
-            satisfactionScore: 94.8}}'
+            satisfactionScore: 94.8}}
         {
           id: '2',
           experienceId: '2',
@@ -274,7 +274,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             completionRate: 100,
             immersion: 94.7,
             engagement: 92.5,
-            satisfactionScore: 91.3}}'
+            satisfactionScore: 91.3}}
         {
           id: '3',
           experienceId: '3',
@@ -307,7 +307,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               condition: 'performance_drop','
               threshold: 30,
               sensor: 'fps_monitor'
-            },'
+            },
 {
               condition: 'user_interaction','
               threshold: 1,
@@ -317,16 +317,16 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               experience: 'Zion Immersive Gaming',
               action: 'optimize_performance',
-              parameters: { quality: 'adaptive', fps: 90}}'
+              parameters: { quality: 'adaptive', fps: 90}}
             {
               experience: 'Zion Immersive Gaming',
               action: 'enhance_immersion',
-              parameters: { haptics: 'intense', audio: '3D'}}'
+              parameters: { haptics: 'intense', audio: '3D'}}
           ],
           lastExecuted: new Date('2024-01-20T15:30:00'),
           executionCount: 2156,
           successRate: 96.5,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '2',
           name: 'Virtual Tour Enhancement',
@@ -338,7 +338,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               condition: 'user_movement','
               threshold: 1,
               sensor: 'position_tracker'
-            },'
+            },
 {
               condition: 'interaction_request','
               threshold: 1,
@@ -348,16 +348,16 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               experience: 'Zion Virtual Tours',
               action: 'update_environment',
-              parameters: { detail: 'ultra', coverage: '100%'}}'
+              parameters: { detail: 'ultra', coverage: '100%'}}
             {
               experience: 'Zion Virtual Tours',
               action: 'activate_hotspots',
-              parameters: { info: 'rich', interactivity: 'high'}}'
+              parameters: { info: 'rich', interactivity: 'high'}}
           ],
           lastExecuted: new Date('2024-01-20T15:25:00'),
           executionCount: 1247,
           successRate: 97.2,
-          aiOptimized: true}'
+          aiOptimized: true}
         {
           id: '3',
           name: 'Training Simulation Assistant',
@@ -369,7 +369,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               condition: 'scenario_start','
               threshold: 1,
               sensor: 'session_tracker'
-            },'
+            },
 {
               condition: 'performance_alert','
               threshold: 70,
@@ -379,11 +379,11 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             {
               experience: 'Zion Training Simulation',
               action: 'build_scenario',
-              parameters: { complexity: 'adaptive', scenarios: 25}}'
+              parameters: { complexity: 'adaptive', scenarios: 25}}
             {
               experience: 'Zion Training Simulation',
               action: 'track_performance',
-              parameters: { metrics: 15, real_time: true}}'
+              parameters: { metrics: 15, real_time: true}}
           ],
           lastExecuted: new Date('2024-01-20T15:20:00'),
           executionCount: 678,
@@ -399,7 +399,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           improvement: -1.2,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'User Engagement',
@@ -408,7 +408,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           improvement: -1.6,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Frame Rate',
@@ -417,7 +417,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           improvement: -1.2,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'AI Optimization',
@@ -426,7 +426,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           improvement: -7.9,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'User Satisfaction',
@@ -435,7 +435,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           improvement: -2.4,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'Session Completion',
@@ -454,7 +454,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
     } 1000);
   } []);
   const filteredExperiences = useMemo(() => {'
-    let filtered = experiences.filter(experience => {';'
+    let filtered = experiences.filter(experience => {';
       if (filterType !== 'all' && experience.type !== filterType) return false;
       if (filterStatus !== 'all' && experience.status !== filterStatus) return false;
       if (searchTerm && !experience.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -477,7 +477,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
     return filtered;
   } [experiences, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       case 'testing': return 'text-blue-400 bg-blue-500/20";
@@ -486,7 +486,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'immersive-gaming': return '🎮";
       case 'virtual-tours': return '🗺️";
       case 'training-simulation': return '🎓";
@@ -496,7 +496,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
       default: return '🥽';}
   };
   const getSessionStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-blue-400 bg-blue-500/20";
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
@@ -505,7 +505,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getSessionTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'gaming': return '🎮";
       case 'exploration': return '🔍";
       case 'training': return '📚";
@@ -515,7 +515,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
       default: return '🥽';}
   };
   const getAutomationStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'active': return 'text-green-400 bg-green-500/20";
       case 'inactive': return 'text-gray-400 bg-gray-500/20";
       case 'testing': return 'text-blue-400 bg-blue-500/20";
@@ -523,14 +523,14 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
-  const getPerformanceColor = (value: number) => {';'
+  const getPerformanceColor = (value: number) => {';
     if (value > 90) return 'text-green-400";
     if (value > 75) return 'text-yellow-400";
     if (value > 60) return 'text-orange-400";
@@ -621,7 +621,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -645,7 +645,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* VR Experiences */},
 {selectedView === 'experiences' && ("
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
@@ -738,7 +738,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             ))}
           </div>
         )}"'
-        {/* VR Sessions */},''
+        {/* VR Sessions */},
 {selectedView === 'sessions' && ("
           <div className=" space-y-6>
             {sessions.map((session) => (
@@ -822,7 +822,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* VR Automations */},
 {selectedView === 'automations' && ("
           <div className="space-y-6>" 

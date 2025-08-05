@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface NaturalLanguageInterfaceProps {
-  className?: string;}'
+  className?: string;}
 const NaturalLanguageInterface: React.FC<NaturalLanguageInterfaceProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const NaturalLanguageInterface: React.FC<NaturalLanguageInterfaceProps> = ({ cla
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default NaturalLanguageInterface;"'"'`
+export default NaturalLanguageInterface;'`

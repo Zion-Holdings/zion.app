@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface InventoryItem {
-  id: string;'
+  id: string;
   name: string;
   category: 'physical' | 'digital' | 'service' | 'talent";
   type: 'product' | 'service' | 'equipment' | 'material";
@@ -25,13 +25,13 @@ interface AIInventoryAnalysis {
   reorderPoint: number;
   safetyStock: number;
   leadTime: number;
-  confidence: number;'
+  confidence: number;
   recommendations: string[];
   riskLevel: 'low' | 'medium' | 'high' | 'critical';}
 interface SupplyChainNode {
-  id: string;'
+  id: string;
   name: string;
-  type: 'supplier' | 'manufacturer' | 'distributor' | 'warehouse' | 'retailer';'
+  type: 'supplier' | 'manufacturer' | 'distributor' | 'warehouse' | 'retailer';
   location: string;
   status: 'active' | 'inactive' | 'delayed' | 'blocked";
   performance: number;
@@ -58,7 +58,7 @@ interface SupplyChainRoute {
 interface LogisticsOrder {
   id: string;
   orderNumber: string;
-  customer: string;'
+  customer: string;
   items: LogisticsOrderItem[];
   status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -72,7 +72,7 @@ interface LogisticsOrderItem {
   id: string;
   itemId: string;
   quantity: number;
-  unitPrice: number;'
+  unitPrice: number;
   totalPrice: number;
   status: 'available' | 'backordered' | 'substituted';}
 interface AILogisticsOptimization {
@@ -94,7 +94,7 @@ interface InventoryAnalytics {
   aiInsights: InventoryInsight[];}
 interface InventoryInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -102,7 +102,7 @@ interface InventoryInsight {
 const AIPoweredInventorySupplyChainPage: NextPage = () => {
   const [inventoryItems, setInventoryItems] = useState<InventoryItem[]>([]
   const [supplyChainNodes, setSupplyChainNodes] = useState<SupplyChainNode[]>([]
-  const [logisticsOrders, setLogisticsOrders] = useState<LogisticsOrder[]>([]'
+  const [logisticsOrders, setLogisticsOrders] = useState<LogisticsOrder[]>([]
   const [analytics, setAnalytics] = useState<InventoryAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'inventory' | 'supply-chain' | 'logistics' | 'analytics'>('inventory
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -132,7 +132,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
         leadTime: 7,'
         confidence: 0.92,
         recommendations: ['Increase stock by 5 units', 'Negotiate better supplier terms'],
-        riskLevel: 'low'}}}'
+        riskLevel: 'low'}}}
     {
       id: '2',
       name: 'Cloud Computing Credits',
@@ -185,7 +185,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
             time: 7,
             reliability: 98,
             aiScore: 95
-          }]}}'
+          }]}}
     {
       id: '2',
       name: 'CloudTech Inc',
@@ -226,7 +226,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
           quantity: 2,
           unitPrice: 2500,'
           totalPrice: 5000,
-          status: 'available'}'
+          status: 'available'}
       ],
       status: 'processing',
       priority: 'high',
@@ -259,7 +259,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.92,
         recommendations: ['Increase stock levels', 'Negotiate better supplier terms']
-      },'
+      },
 {
         id: '2',
         title: 'Supply Chain Optimization Opportunity',
@@ -364,7 +364,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                 Inventory ({inventoryItems.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('supply-chain')}''``
+                onClick={() => setActiveTab('supply-chain')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'supply-chain
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -374,7 +374,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                 Supply Chain ({supplyChainNodes.length}
               </button>'
               `
-                onClick={() => setActiveTab('logistics')}''``
+                onClick={() => setActiveTab('logistics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'logistics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -384,7 +384,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                 Logistics ({logisticsOrders.length}
               </button>'
               `
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -491,7 +491,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Supply Chain Tab */},
 {activeTab === 'supply-chain' && ("
               <div className="space-y-8>" 
@@ -554,7 +554,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Logistics Tab */}, ''
 {activeTab === 'logistics' && (
               <div className="space-y-8>"
@@ -628,7 +628,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 

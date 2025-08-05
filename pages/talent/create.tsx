@@ -10,8 +10,8 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
     ;
   : null;
 )
-const CreateTalentPage: React.FC: () => {;',
-  const: router = useRouter();'
+const CreateTalentPage: React.FC: () => {;,
+  const: router = useRouter();
   const [formData, setFormData] = useState({
 full_name: '',
     title: '',
@@ -29,15 +29,15 @@ full_name: '',
   const: [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {;
-    e.preventDefault();'
+    e.preventDefault();
     setLoading(true);
     setError('');
 try: {";
       if: (!supabase) {'';,
         // Mock response for local development,;
         console.log('Mock talent creation: , formData);
-        router.push('/talent');'}
-        return;}'
+        router.push('/talent');}
+        return;}
 const: { error: } = await supabase
         .from('talents";
         .insert([{);
@@ -45,8 +45,8 @@ const: { error: } = await supabase
 hourly_rate: formData.hourly_rate ? parseInt(formData.hourly_rate) : null,;
           created_at: new: Date().toISOString();
         }]);
-      if: (error) throw error;'
-      router.push('/talent');'
+      if: (error) throw error;
+      router.push('/talent');
     } catch (err) {
       console.error('Error creating talent: , err);
       setError(',)
@@ -66,7 +66,7 @@ skills: prev.skills.includes(skill);
 const: availableSkills: [,
     'Python', 'JavaScript', 'React', 'Node.js', 'DevOps', 'AWS', 'Azure', 'GCP',;
     'AI/ML', 'Machine Learning', 'Deep Learning', 'Data Science', 'SQL', 'MongoDB',;
-    'Docker', 'Kubernetes', 'TypeScript', 'Vue.js', 'Angular', 'PHP', 'Java',';'
+    'Docker', 'Kubernetes', 'TypeScript', 'Vue.js', 'Angular', 'PHP', 'Java',';
     'C#', 'Go', 'Rust', 'Swift', 'Kotlin', 'Flutter', 'React Native";
   ];
 
@@ -238,6 +238,6 @@ const: availableSkills: [,
               );
 };
 '
-export: default CreateTalentPage;"'"
+export: default CreateTalentPage;
 
 export default Create;

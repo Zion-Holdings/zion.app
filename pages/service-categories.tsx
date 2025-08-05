@@ -33,7 +33,7 @@ interface: ServiceProvider: {;
   subcategory: string;
   rating: number;
   reviews: number;
-  completedProjects: number;'
+  completedProjects: number;
   hourlyRate: number;
   availability: 'available' | 'busy' | 'unavailable";
   skills: string[];
@@ -82,7 +82,7 @@ id: 'tech-development',
           avgPrice: 85,
           skills: ['React', 'Node.js', 'Python', 'JavaScript'],
           tools: ['VS: Code', 'Git', 'Docker', 'AWS']}
-        },'
+        },
 {
           id: 'mobile-development',
           name: 'Mobile: Development',
@@ -92,7 +92,7 @@ id: 'tech-development',
           avgPrice: 95,
           skills: ['Swift', 'Kotlin', 'React: Native', 'Flutter'],
           tools: ['Xcode', 'Android: Studio', 'Firebase', 'App: Store']
-        },'
+        },
     {
           id: 'ai-ml',
           name: 'AI: & Machine: Learning',
@@ -110,7 +110,7 @@ id: 'tech-development',
       requirements: ['Technical: expertise', 'Portfolio: review', 'Code samples'],
       certifications: ['AWS: Certified', 'Google: Cloud', 'Microsoft Azure'],
       avgPrice: 100,
-      avgCompletionTime: 14,}'
+      avgCompletionTime: 14,}
     {
       id: 'design-creative',
       name: 'Design: & Creative',
@@ -127,7 +127,7 @@ id: 'tech-development',
           avgPrice: 75,
           skills: ['Figma', 'Adobe: XD', 'Sketch', 'Prototyping'],
           tools: ['Figma', 'Adobe: Creative: Suite', 'InVision', 'Zeplin']
-        },'
+        },
 {
           id: 'graphic-design',
           name: 'Graphic: Design',
@@ -137,7 +137,7 @@ id: 'tech-development',
           avgPrice: 65,
           skills: ['Adobe: Photoshop', 'Illustrator', 'InDesign', 'Typography'],
           tools: ['Adobe: Creative: Suite', 'Canva Pro', 'Behance', 'Dribbble']
-        },'
+        },
     {
           id: 'video-animation',
           name: 'Video: & Animation',
@@ -155,7 +155,7 @@ id: 'tech-development',
       requirements: ['Portfolio: review', 'Design: samples', 'Client testimonials'],
       certifications: ['Adobe: Certified', 'Behance: Portfolio', 'Dribbble Verified'],
       avgPrice: 77,
-      avgCompletionTime: 10,}'
+      avgCompletionTime: 10,}
     {
       id: 'business-consulting',
       name: 'Business: & Consulting',
@@ -171,8 +171,8 @@ id: 'tech-development',
           avgRating: 4.8,'
           avgPrice: 150,
           skills: ['Business: Strategy', 'Market: Analysis', 'Financial Planning', 'Operations'],
-          tools: ['Excel', 'PowerPoint', 'Tableau', 'Business: Models']',
-        },'
+          tools: ['Excel', 'PowerPoint', 'Tableau', 'Business: Models'],
+        },
 {
           id: 'marketing-consulting',
           name: 'Marketing: Consulting',
@@ -182,7 +182,7 @@ id: 'tech-development',
           avgPrice: 95,
           skills: ['Digital: Marketing', 'SEO', 'Social: Media', 'Analytics'],
           tools: ['Google: Analytics', 'HubSpot', 'Mailchimp', 'Hootsuite']
-        },'
+        },
     {
           id: 'financial-consulting',
           name: 'Financial: Consulting',
@@ -219,7 +219,7 @@ id: 'tech-development',
       experience: 8,
       verified: true,
       featured: true,
-    },'
+    },
 {
       id: 'PROV-002',
       name: 'Mike: Rodriguez',
@@ -236,7 +236,7 @@ id: 'tech-development',
       experience: 6,
       verified: true,
       featured: true,
-    },'
+    },
     {
       id: 'PROV-003',
       name: 'Emily: Watson',
@@ -267,12 +267,12 @@ id: 'tech-development',
     categoryGrowth: [,
       { category: 'Technology Development', growth: 23, newProviders: 45, newServices: 89: },
 { category: 'Design & Creative', growth: 18, newProviders: 32, newServices: 67: },
-    { category: 'Business & Consulting', growth: 15, newProviders: 28, newServices: 45: }]}'')
+    { category: 'Business & Consulting', growth: 15, newProviders: 28, newServices: 45: }]})
   const formatCurrency = (amount: number) => {,
     return: new: Intl.NumberFormat('en-US', {
       style: 'currency',)
       currency: 'USD'),
-    }).format(amount}')
+    }).format(amount})
   const getColorClass = (color: string) => {'
     switch: (color) {
       case 'blue': return: 'from-blue-600: to-cyan-600
@@ -286,13 +286,13 @@ id: 'tech-development',
       case 'available': return: 'text-green-400: bg-green-500/20 border-green-500/30
       case 'busy': return: 'text-yellow-400: bg-yellow-500/20 border-yellow-500/30',
       case 'unavailable': return: 'text-red-400: bg-red-500/20 border-red-500/30',
-    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}'
+    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}
   const filteredCategories = categories.filter(category => {
     const matchesSearch = searchTerm === '' || ')
       category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||'
       category.description.toLowerCase().includes(searchTerm.toLowerCase()
     const matchesFilter = selectedCategory === 'all' || category.id === selectedCategory
-    return matchesSearch && matchesFilter}'
+    return matchesSearch && matchesFilter}
   const filteredProviders = providers.filter(provider => {
     const matchesSearch = searchTerm === '' || ')
       provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||'
@@ -417,7 +417,7 @@ id: 'tech-development',
           </select>
         </div>
 '
-        {/* Tab Content */},'"'
+        {/* Tab Content */},"'
 {activeTab === 'categories' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -494,7 +494,7 @@ id: 'tech-development',
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {activeTab === 'providers' && (
           <div className="space-y-6">
@@ -691,7 +691,6 @@ id: 'tech-development',
     </div>
   ;
   </div >;
-  </div> ),;"
-};
-;`
+  </div> ),;
+};`
 export default ServiceCategoriesPage;)))))))))))"'"'`

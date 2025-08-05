@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
 
 interface PricingTier {
-  id: string;'
+  id: string;
   name: string;
   type: 'basic' | 'premium' | 'enterprise' | 'custom";
   monthlyFee: number;
@@ -46,7 +46,7 @@ interface Transaction {
   commission: number;
   platformFee: number;
   totalFees: number;
-  netAmount: number;'
+  netAmount: number;
   date: Date;
   status: 'pending' | 'completed' | 'refunded';}
 interface RevenueReport {
@@ -87,7 +87,7 @@ const MarketplacePricingPage: NextPage = () => {'
         monthlyTransactions: 50,
         storageGB: 5,'
         apiCalls: 1000,
-        supportLevel: 'Email'}}}'
+        supportLevel: 'Email'}}}
     {
       id: 'TIER-002',
       name: 'Premium',
@@ -110,7 +110,7 @@ const MarketplacePricingPage: NextPage = () => {'
         storageGB: 50,'
         apiCalls: 10000,
         supportLevel: 'Priority'}
-      popular: true}'
+      popular: true}
     {
       id: 'TIER-003',
       name: 'Enterprise',
@@ -152,7 +152,7 @@ const MarketplacePricingPage: NextPage = () => {'
           conditions: ['Minimum $10K monthly volume', 'Verified AI provider'],
           validUntil: new Date('2024-12-31'}
       ],
-      minimumThreshold: 100}'
+      minimumThreshold: 100}
     {
       id: 'COMM-002',
       category: 'Consulting Services',
@@ -163,7 +163,7 @@ const MarketplacePricingPage: NextPage = () => {'
     { tier: 'Gold', monthlyVolume: 50000, discountRate: 1.0, effectiveRate: 3.0}
       ],
       specialRates: [],
-      minimumThreshold: 200}'
+      minimumThreshold: 200}
     {
       id: 'COMM-003',
       category: 'Digital Products',
@@ -189,7 +189,7 @@ const MarketplacePricingPage: NextPage = () => {'
       netAmount: 2287.5,
       date: new Date('2024-01-15'),
       status: 'completed'
-    },'
+    },
 {
       id: 'TXN-002','
       amount: 1800,
@@ -202,7 +202,7 @@ const MarketplacePricingPage: NextPage = () => {'
       netAmount: 1638,
       date: new Date('2024-01-16'),
       status: 'completed'
-    },'
+    },
     {
       id: 'TXN-003','
       amount: 500,
@@ -231,7 +231,7 @@ const MarketplacePricingPage: NextPage = () => {'
     { category: 'Digital Products', revenue: 500, transactionCount: 1, averageCommission: 12.5}
       ],
       growthRate: 15.2
-    }]'
+    }]
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -336,7 +336,7 @@ const MarketplacePricingPage: NextPage = () => {'
 { id  'reports', label  'Revenue Reports'}"
           ].map((tab) => (
             "`
-              onClick={() => setActiveTab(tab.id)}'``
+              onClick={() => setActiveTab(tab.id)}``
               className="{`px-6" py-3 rounded-lg:font-medium transition-all duration-300 ${'
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -348,7 +348,7 @@ const MarketplacePricingPage: NextPage = () => {'
           ))}
         </div>
 '
-        {/* Period Toggle */},'"'
+        {/* Period Toggle */},"'
 {activeTab === 'pricing' && (
           <div className="flex" justify-center mb-8 > 
             </div><div className="bg-white/10 rounded-lg" p-1>'
@@ -363,7 +363,7 @@ const MarketplacePricingPage: NextPage = () => {'
                 Monthly
               </button> '
               "'''`
-                onClick={() => setSelectedPeriod('yearly')}''``
+                onClick={() => setSelectedPeriod('yearly')}``
                 className="{`px-4" py-4 rounded-md:text-sm font-medium transition-colors ${
                   selectedPeriod === 'yearly
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -375,7 +375,7 @@ const MarketplacePricingPage: NextPage = () => {'
             </div>
           </div>
         )}"'
-        {/* Tab Content */},''
+        {/* Tab Content */},
 {activeTab === 'pricing' && ("
           <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white text-center mb-8>Choose Your Plan</h2>
@@ -395,7 +395,7 @@ const MarketplacePricingPage: NextPage = () => {'
                     <h3 className="text-2xl" font-bold text-white mb-2>{tier.name}</h3>
                     <div className="mb-4"">'
                       <span className="text-4xl:font-bold text-white>' '
-                        {selectedPeriod === 'monthly' ? formatCurrency(tier.monthlyFee)   formatCurrency(tier.yearlyFee)}'
+                        {selectedPeriod === 'monthly' ? formatCurrency(tier.monthlyFee)   formatCurrency(tier.yearlyFee)}
                       </span>''
                       <span className=" text-gray-300>/{selectedPeriod === 'monthly' ? 'month' : 'year'}</span>'
                     </div>
@@ -525,7 +525,7 @@ const MarketplacePricingPage: NextPage = () => {'
               ))}
             </div>
           </div>
-        )}'
+        )}
 "''
         {activeTab === 'transactions' && (
           <div className="space-y-6>"
@@ -696,7 +696,7 @@ const MarketplacePricingPage: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default MarketplacePricingPage )))))))))"'"'`

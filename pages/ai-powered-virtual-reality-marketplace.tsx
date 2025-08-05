@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -56,11 +56,11 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           vrModel: '/models/ai-robot.glb',
           dimensions: { x: 0.5, y: 1.2, z: 0.3}
           position: { x: 2, y: 0, z: 3}
-          rotation: { x: 0, y: 0, z: 0}'
+          rotation: { x: 0, y: 0, z: 0}
           scale: { x: 1, y: 1, z: 1 }
           features: ['Voice Recognition', 'Facial Recognition', 'Autonomous Navigation'],
           rating: 4.8,
-          reviews: 127}'
+          reviews: 127}
         {
           id: 'quantum-computer',
           name: 'Quantum Computing System',
@@ -70,12 +70,12 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           vrModel: '/models/quantum-computer.glb',
           dimensions: { x: 1.5, y: 1.8, z: 1.2}
           position: { x: -2, y: 0, z: 4}
-          rotation: { x: 0, y: 0.3, z: 0}'
+          rotation: { x: 0, y: 0.3, z: 0}
           scale: { x: 1, y: 1, z: 1 }
           features: ['Quantum Processing', 'Superposition States', 'Entanglement'],
           rating: 4.9,
           reviews: 89
-        }]}'
+        }]}
     {
       id: 'smart-home',
       name: 'Smart Home Experience',
@@ -93,12 +93,12 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           vrModel: '/models/smart-speaker.glb',
           dimensions: { x: 0.15, y: 0.25, z: 0.15}
           position: { x: 1, y: 0.8, z: 2}
-          rotation: { x: 0, y: 0, z: 0}'
+          rotation: { x: 0, y: 0, z: 0}
           scale: { x: 1, y: 1, z: 1 }
           features: ['Voice Control', 'Music Streaming', 'Home Automation'],
           rating: 4.6,
           reviews: 234
-        }]}'
+        }]}
     {
       id: 'industrial-ai',
       name: 'Industrial AI Hub',
@@ -116,7 +116,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           vrModel: '/models/industrial-robot.glb',
           dimensions: { x: 1.2, y: 2.1, z: 0.8}
           position: { x: 0, y: 0, z: 5}
-          rotation: { x: 0, y: 0, z: 0}'
+          rotation: { x: 0, y: 0, z: 0}
           scale: { x: 1, y: 1, z: 1 }
           features: ['Precision Control', 'Safety Systems', 'Adaptive Learning'],
           rating: 4.7,
@@ -167,7 +167,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
         const displays = await (navigator as any).getVRDisplays(
         if (displays.length > 0) {
           setIsVRMode(true
-          setCurrentExperience(vrExperiences[0]}}'
+          setCurrentExperience(vrExperiences[0]}}
     } catch (error) {
       console.error('VR not available: , error
       // Fallback to immersive mode
@@ -192,13 +192,13 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
     const speed = 0.1'
     switch (direction) {
       case 'forward':
-        setUserPosition(prev => ({ ...prev, z: prev.z - speed })'
+        setUserPosition(prev => ({ ...prev, z: prev.z - speed })
         break
       case 'backward':
-        setUserPosition(prev => ({ ...prev, z: prev.z + speed })'
+        setUserPosition(prev => ({ ...prev, z: prev.z + speed })
         break
       case 'left':
-        setUserPosition(prev => ({ ...prev, x: prev.x - speed })'
+        setUserPosition(prev => ({ ...prev, x: prev.x - speed })
         break
       case 'right':
         setUserPosition(prev => ({ ...prev, x: prev.x + speed })
@@ -410,7 +410,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                   <h4 className="text-white" font-semibold mb-2>VR Experiences</h4>
                   <div className="space-y-2>"
                     {vrExperiences.map((experience) => (`
-                        onClick={() => changeExperience(experience)}'``
+                        onClick={() => changeExperience(experience)}``
                         className="{`block" w-full text-left px-3 py-4 rounded text-sm:transition-all duration-300 ${'
                           currentExperience?.id === experience.id
                             ? 'bg-purple-600 text-white'`

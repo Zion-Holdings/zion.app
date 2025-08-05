@@ -1,5 +1,5 @@
 
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -23,7 +23,7 @@ const Login: NextPage = () => {'
     const { error } = await signIn(email, password'
     if (!error) {
       router.push('/dashboard'}
-    setLoading(false}'
+    setLoading(false}
   const handleSocialSignIn = async (provider: 'google' | 'github' | 'linkedin' | 'twitter') => {
     setLoading(true
     const { error } = await signInWithProvider(provider'
@@ -166,7 +166,7 @@ const Login: NextPage = () => {'
     </AuthLayout>
   
   </div> </div>
-;"
+;
 };
 "
 export default Login'

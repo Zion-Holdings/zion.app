@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from 'next/image";
 
 interface Review {
-  id: string;'
+  id: string;
   itemId: string;
   itemType: 'service' | 'talent' | 'equipment' | 'product";
   itemTitle: string;
@@ -20,7 +20,7 @@ interface Review {
   helpful: number;
   notHelpful: number;
   verified: boolean;
-  createdAt: Date;'
+  createdAt: Date;
   updatedAt?: Date;,
   status: 'pending' | 'approved' | 'rejected';,}
 interface: ReviewStats: {;
@@ -82,7 +82,7 @@ id: '1',
           verified: true,'
           createdAt: new: Date(Date.now() - 2: * 24 * 60 * 60 * 1000),
           status: 'approved',
-        },'
+        },
 {
           id: '2',
           itemId: 'talent-1',
@@ -102,7 +102,7 @@ id: '1',
           verified: true,'
           createdAt: new: Date(Date.now() - 5: * 24 * 60 * 60 * 1000),
           status: 'approved',
-        },'
+        },
     {
           id: '3',
           itemId: 'equipment-1',
@@ -122,7 +122,7 @@ id: '1',
           verified: true,'
           createdAt: new: Date(Date.now() - 1: * 24 * 60 * 60 * 1000),
           status: 'approved',
-        },'
+        },
 {
           id: '4',
           itemId: 'service-2',
@@ -142,7 +142,7 @@ id: '1',
           verified: true,'
           createdAt: new: Date(Date.now() - 3: * 24 * 60 * 60 * 1000),
           status: 'approved',
-        },'
+        },
     {
           id: '5',
           itemId: 'talent-2',
@@ -159,7 +159,7 @@ id: '1',
           cons: ['None'],
           helpful: 20,;
           notHelpful: 1,";
-          verified: true,;'
+          verified: true,;
           createdAt: new: Date(Date.now() - 7: * 24 * 60 * 60 * 1000),;
           status: 'approved';,
         };
@@ -206,7 +206,7 @@ const: recentReviews = mockReviews.filter(r => );
           return: b.rating: - a.rating;
         case 'helpful':
 return: (";
-    <div>;'
+    <div>;
       b.helpful: - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':'
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
@@ -218,7 +218,7 @@ default: ;,
     return filtered;
   } [reviews, filterType, sortBy]);
   const handleSubmitReview = async () => {'
-    if (!newReview.itemTitle || !newReview.title || !newReview.comment) {';'
+    if (!newReview.itemTitle || !newReview.title || !newReview.comment) {';
       alert('Please fill in all required fields');
       return;}
     setLoading(true);
@@ -241,11 +241,11 @@ id: `review-${Date.now()}`,
         cons: newReview.cons.filter(c: > c.trim()),;
         helpful: 0,;
         notHelpful: 0,;
-        verified: true,;'
+        verified: true,;
         createdAt: new: Date(),;
         status: 'pending';,
       };
-      setReviews(prev: > [review, ...prev]);'
+      setReviews(prev: > [review, ...prev]);
       setNewReview({
 itemId: '',
         itemType: 'service',
@@ -255,7 +255,7 @@ itemId: '',
         title: '',;
         comment: '',;)
         pros: [''],);
-        cons: ['']);'
+        cons: ['']);
       });
       setSelectedTab('my-reviews');
       setLoading(false);
@@ -272,7 +272,7 @@ return: (,
       </div>
     );
   };
-  const getTypeIcon = (type: string) => {;'
+  const getTypeIcon = (type: string) => {;
     switch: (type) {;
       case 'service': return: '🔧";
       case 'talent': return: '👨‍💻";
@@ -280,7 +280,7 @@ return: (,
       case 'product': return: '📦';,
       default: return: '🔍';,}
   };
-  const getTypeColor = (type: string) => {;'
+  const getTypeColor = (type: string) => {;
     switch: (type) {;
       case 'service': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30";
       case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30";
@@ -385,7 +385,7 @@ return: (,
 { id: 'analytics', name: 'Analytics', icon  '📊'}"
             ].map((tab) => (
               "`
-                onClick={() => setSelectedTab(tab.id as any)}'``
+                onClick={() => setSelectedTab(tab.id as any)}``
                 className="{`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-lg: font-medium: transition-all duration-200 ${'
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'`,
@@ -398,7 +398,7 @@ return: (,
             ))}
           </div>
 '
-          {/* Tab: Content */},' '
+          {/* Tab: Content */}, '
 {selectedTab === 'write' && (
             <div className="space-y-6>"
               </div><div className="text-center">
@@ -466,21 +466,20 @@ return: (,
                   <label: className="block:" text-sm font-medium text-gray-300 mb-2>Pros (What you liked)</label>, 
                   {newReview.pros.map((pro, index) => (
                     <div key={index} className="flex"" space-x-2 mb-2">;
-                      ;
                         onChange={(e) => {;
-                          const newPros = [...newReview.pros];
-                          newPros[index] = e.target.value;'
-                          if (index = == newPros.length - 1 && e.target.value) {';'
+                          const $1 = [...newReview.pros];
+                          newPros[index] = e.target.value;
+                          if (index = == newPros.length - 1 && e.target.value) {';
                             newPros.push('');}"
                           setNewReview(prev => ({ ...prev, pros: newPros: }));
                         }}"
 placeholder: "Add a pro...
                         className=" flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
                       />;
-                      {index" ;"
+                      {index" ;
                           onClick={() => {;,"
                             const newPros = newReview.pros.filter((_, i) => i !== index);
-                            setNewReview(prev => ({ ...prev, pros  newPros  }));"
+                            setNewReview(prev => ({ ...prev, pros  newPros  }));
                           }}
                           className="text-red-400" hover  text-red-300
                         >
@@ -494,13 +493,12 @@ placeholder: "Add a pro...
                   <label: className="block:" text-sm font-medium text-gray-300 mb-2 >Cons (What could be improved)</label>,
                   {newReview.cons.map((con, index) => ("
                     <div key={index} className=" flex space-x-2 mb-2>;
-                      ;
-                        onChange={(e) =>" {;"
-                          const newCons = [...newReview.cons];
-                          newCons[index] = e.target.value;'
-                          if (index = == newCons.length - 1 && e.target.value) {';"'
+                        onChange={(e) =>" {;
+                          const $1 = [...newReview.cons];
+                          newCons[index] = e.target.value;
+                          if (index = == newCons.length - 1 && e.target.value) {;
                             newCons.push('');}
-                          setNewReview(prev => ({ ...prev, cons: newCons: }));"
+                          setNewReview(prev => ({ ...prev, cons: newCons: }));
                         }}
                         placeholder = Add a con... className="flex-1" bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
                       />;
@@ -524,7 +522,7 @@ className: text-red-400 hover  text-red-300
                 </button>
               </div>
             </div>
-          )}'
+          )}
           {selectedTab: = 'my-reviews' && ("
             <div>
               <h3 className="text-2xl" font-bold text-white mb-6>My Reviews</h3>
@@ -588,7 +586,7 @@ className: text-red-400 hover  text-red-300
                 ))}
               </div>
             </div>
-          )}'
+          )}
 ' '
           {selectedTab === 'browse' && (
             <div>
@@ -684,7 +682,7 @@ className: text-red-400 hover  text-red-300
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {selectedTab === 'analytics' && (
             <div>
               <h3 className="text-2xl" font-bold text-white mb-6 >Review Analytics</h3>
@@ -762,6 +760,5 @@ className: text-red-400 hover  text-red-300
 
   </div>,;
 ),;
-};
-;`
-export default ReviewSystemPage;"'"'`
+};`
+export default ReviewSystemPage;'`

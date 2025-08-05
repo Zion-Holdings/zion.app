@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ interface WishlistItem {'
     verified: boolean;
   };
   addedAt: Date;
-  aiScore: number;'
+  aiScore: number;
   aiRecommendation: string;
   availability: 'available' | 'limited' | 'unavailable";
   location: string;
@@ -52,7 +52,7 @@ interface ComparisonRecommendation {
   id: string;
   title: string;
   description: string;
-  reasoning: string;'
+  reasoning: string;
   confidence: number;
   category: 'price' | 'quality' | 'features' | 'overall';}
 interface WishlistCategory {
@@ -62,7 +62,7 @@ interface WishlistCategory {
   count: number;
   items: WishlistItem[];}
 const AIPoweredWishlistComparisonPage: NextPage = () => {
-  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]'
+  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]
   const [comparisons, setComparisons] = useState<ComparisonItem[]>([]
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [sortBy, setSortBy] = useState<'date' | 'price' | 'rating' | 'aiScore'>('date
@@ -89,7 +89,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         name: 'TechCorp Solutions',
         avatar: '/images/providers/techcorp.jpg',
         rating: 4.9,
-        verified: true}'
+        verified: true}
       }
       addedAt: new Date('2024-01-15'),'
       aiScore: 95,
@@ -102,7 +102,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         'Technology Stack': 'React, Node.js, MongoDB',
         'AI Features': 'ChatGPT API, TensorFlow.js',
         'Performance': '99.9% Uptime',
-        'Support': '24/7 Technical Support'}}'
+        'Support': '24/7 Technical Support'}}
     {
       id: '2',
       type: 'talent',
@@ -131,7 +131,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         'Experience': '8+ years',
         'Specialization': 'Computer Vision, NLP',
         'Certifications': 'AWS ML, Google Cloud AI',
-        'Languages': 'Python, JavaScript, C++'}}'
+        'Languages': 'Python, JavaScript, C++'}}
     {
       id: '3',
       type: 'equipment',
@@ -177,19 +177,19 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         priceRange: {
           min: 120,
           max: 2500,
-          average: 1310}'
+          average: 1310}
         featureComparison: {
           'AI Capabilities': ['Advanced', 'Expert', 'Hardware Support'],
           'Cost Efficiency': ['High', 'Medium', 'High Investment'],
-          'Flexibility': ['High', 'Very High', 'Low']}'
+          'Flexibility': ['High', 'Very High', 'Low']}
         prosCons: {
           'AI-Powered Web Development': {
             pros: ['Complete solution', 'AI integration', 'Good value'],
-            cons: ['Longer delivery time', 'Higher upfront cost']'
+            cons: ['Longer delivery time', 'Higher upfront cost']
           }
           'Senior AI Engineer': {
             pros: ['Expert skills', 'Flexible engagement', 'Proven track record'],
-            cons: ['Ongoing cost', 'Availability dependent']}'
+            cons: ['Ongoing cost', 'Availability dependent']}
         }
         recommendation: 'Consider the AI Engineer for immediate needs and the web development service for long-term projects',
         confidence: 0.87}
@@ -201,7 +201,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
           reasoning: 'Provides immediate expertise and flexibility for current AI projects','
           confidence: 0.92,
           category: 'overall'
-        },'
+        },
 {
           id: '2',
           title: 'Plan Web Development',
@@ -259,7 +259,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         : [...prev, itemId]}
   const handleCompare = () => {
     if (selectedItems.length >= 2) {
-      const comparisonItems = wishlistItems.filter(item => selectedItems.includes(item.id)'
+      const comparisonItems = wishlistItems.filter(item => selectedItems.includes(item.id)
       // Create new comparison
       console.log('Creating comparison with: , comparisonItems}}
   return (
@@ -321,7 +321,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                 Wishlist ({wishlistItems.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('comparisons')}''``
+                onClick={() => setActiveTab('comparisons')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'comparisons
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -331,7 +331,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                 Comparisons ({comparisons.length}
               </button>'
               `
-                onClick={() => setActiveTab('recommendations')}''``
+                onClick={() => setActiveTab('recommendations')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'recommendations
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -342,7 +342,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Wishlist Tab */},''
+            {/* Wishlist Tab */},
 {activeTab === 'wishlist' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -370,7 +370,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     </div>
                     <div className="flex items-center space-x-4">"
                       "''`
-                        onClick={() => setViewMode('grid')}''``
+                        onClick={() => setViewMode('grid')}``
                         className="{`p-2" rounded-lg transition-all duration-300 ${
                           viewMode === 'grid
                             ? 'bg-purple-600 text-white'`
@@ -380,7 +380,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                         Grid
                       </button> '
                       "'''`
-                        onClick={() => setViewMode('list')}''``
+                        onClick={() => setViewMode('list')}``
                         className="{`p-2" rounded-lg transition-all duration-300 ${
                           viewMode === 'list
                             ? 'bg-purple-600 text-white'`
@@ -521,7 +521,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     ))}
                   </div > )}
               </div>
-            )}'
+            )}
             {/* Comparisons Tab */},"''
 {activeTab === 'comparisons' && (
               <div className=" space-y-6>
@@ -617,7 +617,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     </div>
                   </div > ))}
               </div>
-            )}'
+            )}
             {/* AI Recommendations Tab */},"''
 {activeTab === 'recommendations' && (
               <div className="space-y-6>" 

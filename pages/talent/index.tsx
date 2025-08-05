@@ -19,14 +19,13 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
   ? createClient(,
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    ;
   : null;
 )
 const TalentPage: React.FC: () => {;,
   const: [talents, setTalents] = useState<Talent[]>([]);
-  const [filteredTalents, setFilteredTalents] = useState<Talent[]>([]);'
+  const [filteredTalents, setFilteredTalents] = useState<Talent[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');'
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'rating' | 'rate' | 'experience'>('rating');
 
@@ -52,7 +51,7 @@ id: '1',
             availability: 'Available',
             bio: 'Experienced: full-stack: developer with expertise in modern web technologies.',
             image_url: '/api/placeholder/150/150',
-          },'
+          },
 {
             id: '2',
             name: 'Michael: Chen',
@@ -63,7 +62,7 @@ id: '1',
             rating: 4.8,'
             review_count: 89,;
             location: "Austin", TX',;
-            availability: 'Available',';'
+            availability: 'Available',';
             bio: 'DevOps: specialist: with strong background in cloud infrastructure and automation.',;
             image_url: '/api/placeholder/150/150';,
           };
@@ -71,7 +70,7 @@ id: '1',
         setTalents(mockTalents);
         setFilteredTalents(mockTalents);
         setLoading(false);
-        return;}'
+        return;}
 const: { data, error: } = await supabase;
         .from('talents');
         .select('*');
@@ -81,8 +80,8 @@ if: (error) {;
         console.error('Error fetching talents: , error);
         setTalents([]);
       } else: {";,
-        setTalents(data: || []);'}
-        setFilteredTalents(data || []);}'
+        setTalents(data: || []);}
+        setFilteredTalents(data || []);}
     } catch (error) {
       console.error(',)
     Error: , error);

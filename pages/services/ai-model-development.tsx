@@ -127,5 +127,4 @@ const AIModelDevelopmentPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default AIModelDevelopmentPage;"'"
+export default AIModelDevelopmentPage;

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface ComputerVisionAnalysisProps {
-  className?: string;}'
+  className?: string;}
 const ComputerVisionAnalysis: React.FC<ComputerVisionAnalysisProps> = ({ className="'' }) => {
   return (
     <motion.div
@@ -29,7 +29,7 @@ const ComputerVisionAnalysis: React.FC<ComputerVisionAnalysisProps> = ({ classNa
           Demo
         </button>
       </div>
-    </motion.div >;  );"
+    </motion.div >;  );
 };
 ''`
-export default ComputerVisionAnalysis;"'"'`
+export default ComputerVisionAnalysis;'`

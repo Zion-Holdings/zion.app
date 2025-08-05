@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -244,7 +244,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Sensing Dashboard */},'
+            {/* Sensing Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -303,7 +303,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Sensing */},''
+            {/* Quantum Sensing */},
 {activeTab === 'sensing' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Sensing</h2>
@@ -344,7 +344,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Imaging */},"''
 {activeTab === 'imaging' && (
               <div className="space-y-6>"
@@ -386,7 +386,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Metrology */},"''
 {activeTab === 'metrology' && (
               <div className="space-y-6>"
@@ -430,7 +430,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Detection */}, ''
 {activeTab === 'detection' && (
               <div className="space-y-6">
@@ -474,7 +474,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Interferometry */},''
+            {/* Quantum Interferometry */},
 {activeTab === 'interferometry' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Interferometry</h2>
@@ -515,7 +515,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Spectroscopy */},"''
 {activeTab === 'spectroscopy' && (
               <div className="space-y-6>"

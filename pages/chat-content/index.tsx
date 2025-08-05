@@ -1,73 +1,73 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const ChatContentIndex: NextPage = () => {
-  const chatTopics = ['
+  const $1 = ['
     {
       title: 'AI-Powered Business Solutions Discussion',
       description: 'Explore how AI is transforming business operations and decision-making processes',
       href: '/chat-content/ai-powered-business-solutions-discussion',
       icon: '🤖',
       category: 'Business AI'}
-    },'
+    },
 {
       title: 'Cloud Computing Strategies',
       description: Discuss cloud migration, optimization, and best practices for modern applications',
       href: '/chat-content/cloud-computing-strategies',
       icon: '☁️',
       category: 'Cloud Computing'
-    },'
+    },
     {
       title: 'Cybersecurity Best Practices',
       description: 'Learn about the latest cybersecurity threats and defense strategies',
       href: '/chat-content/cybersecurity-best-practices',
       icon: '🔒',
       category: 'Security'
-    },'
+    },
 {
       title: 'Data Analytics Implementation',
       description: 'Discover how to implement effective data analytics solutions',
       href: '/chat-content/data-analytics-implementation',
       icon: '📊',
       category: 'Data Analytics'
-    },'
+    },
     {
       title: 'Digital Transformation Insights',
       description: 'Explore digital transformation strategies and implementation approaches',
       href: '/chat-content/digital-transformation-insights',
       icon: '🔄',
       category: 'Digital Transformation'
-    },'
+    },
 {
       title: 'Emerging Technology Trends',
       description: 'Stay updated on the latest technology trends and innovations',
       href: '/chat-content/emerging-technology-trends',
       icon: '🚀',
       category: 'Innovation'
-    },'
+    },
     {
       title: 'Future of Work and Automation',
       description: 'Discuss how automation is reshaping the workplace and job market',
       href: '/chat-content/future-of-work-and-automation',
       icon: '⚙️',
       category: 'Automation'
-    },'
+    },
 {
       title: 'Innovation in Enterprise Technology',
       description: 'Explore cutting-edge enterprise technology solutions and implementations',
       href: '/chat-content/innovation-in-enterprise-technology',
       icon: '💡',
       category: 'Enterprise'
-    },'
+    },
     {
       title: 'Sustainable Technology Practices',
       description: 'Learn about green technology and sustainable development practices',
       href: '/chat-content/sustainable-technology-practices',
       icon: '🌱',
       category: 'Sustainability'
-    },'
+    },
 {
       title: 'Technology Implementation Strategies',
       description: 'Best practices for implementing new technologies in organizations',

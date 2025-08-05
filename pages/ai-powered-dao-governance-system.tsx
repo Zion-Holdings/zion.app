@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -112,7 +112,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
           value: '0',
           data: '0x...',
           description: 'Deploy AI matching algorithm contract'}
-}]}'
+}]}
     {
       id: 'prop-002',
       title: 'Allocate Treasury Funds for Blockchain Security Audit',
@@ -136,7 +136,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
           data: '0x...',
           description: "Transfer 500",000 ZION for security audit
         }]
-    }]'
+    }]
   const mockToken: DAOToken = {
     symbol: 'ZION',
     name: 'Zion Governance Token',
@@ -160,7 +160,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
       proposalsPassed: 8,
       lastActive: '2025-08-03T15:30:00Z',
       badges: ['Founder', 'Core Contributor', 'Security Expert']
-    },'
+    },
 {
       address: '0x5678...9012',
       username: 'Blockchain_Dev',
@@ -240,7 +240,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
     } catch (error) {
       console.error('Error creating proposal: , error"
     } finally {
-      setIsLoading(false}}'
+      setIsLoading(false}}
   const voteOnProposal = async (proposalId: string, vote: 'for' | 'against' | 'abstain') => {
     setIsLoading(true
     try {
@@ -308,12 +308,12 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
             <div className=" flex items-center" space-x-4>
               
                 onClick={() => setIsConnected(!isConnected)}"`
-                disabled={isLoading}'``
+                disabled={isLoading}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${'
                   isConnected 
                     ? 'bg-green-600 text-white hover:bg-green-700' `
                     : 'bg-gray-600 text-white hover:bg-gray-700''``
-                } disabled:opacity-50`}'
+                } disabled:opacity-50`}
               >
                 {isLoading ? 'Connecting...' : isConnected ? 'Connected' : 'Connect Wallet'}
               </button>
@@ -344,7 +344,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
 { id  'analytics', label  'Analytics', icon  '📈'}"
               ].map((tab) => (
                 "`
-                  onClick={() => setActiveTab(tab.id)}'``
+                  onClick={() => setActiveTab(tab.id)}``
                   className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -361,7 +361,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
           {/* Tab Content */}
           <div className="space-y-8>"
             '
-            {/* DAO Overview */},''
+            {/* DAO Overview */},
 {activeTab === 'overview' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* Token Info */}"
@@ -524,7 +524,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Treasury */},''
+            {/* Treasury */},
 {activeTab === 'treasury' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DAO Treasury</h2>
@@ -575,7 +575,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                   </div>
                 </div>
               </div>
-            )}'
+            )}
             {/* Members */},"''
 {activeTab === 'members' && (
               <div className="space-y-6>"
@@ -627,7 +627,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Governance */},''
+            {/* Governance */},
 {activeTab === 'governance' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Governance Parameters</h2>
@@ -677,7 +677,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Analytics */},''
+            {/* Analytics */},
 {activeTab === 'analytics' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DAO Analytics</h2>

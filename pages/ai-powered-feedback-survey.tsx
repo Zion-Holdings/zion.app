@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Feedback {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'general' | 'product' | 'service' | 'support' | 'feature' | 'bug";
   status: 'active' | 'closed' | 'analyzing' | 'completed";
@@ -21,7 +21,7 @@ interface AIFeedbackAnalysis {
   recommendations: string[];}
 interface Survey {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'market-research' | 'user-satisfaction' | 'product-feedback' | 'service-evaluation' | 'custom";
   status: 'draft' | 'active' | 'closed' | 'analyzing";
@@ -36,7 +36,7 @@ interface AISurveyOptimization {
   recommendations: string[];}
 interface Poll {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'single-choice' | 'multiple-choice' | 'ranking' | 'rating";
   status: 'active' | 'closed' | 'scheduled";
@@ -54,7 +54,7 @@ interface Testimonial {
   author: string;
   role: string;
   company: string;
-  content: string;'
+  content: string;
   rating: number;
   status: 'pending' | 'approved' | 'featured' | 'rejected";
   aiAnalysis: AITestimonialAnalysis;}
@@ -74,7 +74,7 @@ interface FeedbackSurveyAnalytics {
   aiInsights: FeedbackSurveyInsight[];}
 interface FeedbackSurveyInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -83,7 +83,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
   const [feedback, setFeedback] = useState<Feedback[]>([]
   const [surveys, setSurveys] = useState<Survey[]>([]
   const [polls, setPolls] = useState<Poll[]>([]
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]'
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]
   const [analytics, setAnalytics] = useState<FeedbackSurveyAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'feedback' | 'surveys' | 'polls' | 'testimonials' | 'analytics'>('feedback
   const [selectedType, setSelectedType] = useState<string>('all
@@ -104,7 +104,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         id: '1',
         sentimentScore: 82,'
         trendAnalysis: 15,
-        recommendations: ['Improve mobile responsiveness', 'Add more interactive elements']}}}'
+        recommendations: ['Improve mobile responsiveness', 'Add more interactive elements']}}}
     {
       id: '2',
       title: 'AI-Powered Features Feedback',
@@ -167,7 +167,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         sentimentScore: 95,
         credibilityScore: 92,'
         impactScore: 88,
-        recommendations: ['Use in marketing materials', 'Highlight AI capabilities']}}'
+        recommendations: ['Use in marketing materials', 'Highlight AI capabilities']}}
     {
       id: '2',
       author: 'Mike Chen',
@@ -198,7 +198,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Continue AI monitoring', 'Expand feedback channels']
-      },'
+      },
 {
         id: '2',
         title: 'Strong AI Feature Adoption',
@@ -303,7 +303,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 Feedback ({feedback.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('surveys')}''``
+                onClick={() => setActiveTab('surveys')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'surveys
                     ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white'`
@@ -313,7 +313,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 Surveys ({surveys.length}
               </button>'
               `
-                onClick={() => setActiveTab('polls')}''``
+                onClick={() => setActiveTab('polls')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'polls
                     ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white'`
@@ -323,7 +323,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 Polls ({polls.length}
               </button>'
               `
-                onClick={() => setActiveTab('testimonials')}''``
+                onClick={() => setActiveTab('testimonials')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'testimonials
                     ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white'`
@@ -333,7 +333,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 Testimonials ({testimonials.length}
               </button>'
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white'`
@@ -438,7 +438,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Surveys Tab */},"''
 {activeTab === 'surveys' && (
               <div className="space-y-8>" 
@@ -502,7 +502,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Polls Tab */},"''
 {activeTab === 'polls' && (
               <div className=" space-y-8>
@@ -567,7 +567,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 ))}
               </div>
             )} '
-            {/* Testimonials Tab */},''
+            {/* Testimonials Tab */},
 {activeTab === 'testimonials' && ("
               <div className=" space-y-8>
                 {testimonials.map((testimonial) => (
@@ -619,8 +619,8 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
-            {/* Analytics Tab */},' '
+            )}
+            {/* Analytics Tab */}, '
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"
                 </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>"

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -173,7 +173,7 @@ print(data)`}</code>
                 </div>
               </div>
             </div>
-          )}'
+          )}
  ''
           {activeSection === 'errors' && (
             <div className="space-y-8>"

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -87,7 +87,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
   const [vehicles, setVehicles] = useState<AutonomousVehicle[]>([]
   const [trafficOptimizations, setTrafficOptimizations] = useState<TrafficOptimization[]>([]
   const [routes, setRoutes] = useState<RoutePlanning[]>([]
-  const [logistics, setLogistics] = useState<LogisticsOrder[]>([]'
+  const [logistics, setLogistics] = useState<LogisticsOrder[]>([]
   const [analytics, setAnalytics] = useState<TransportationAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'vehicles' | 'traffic' | 'routes' | 'logistics' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -113,7 +113,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         performanceScore: 9.2,
         safetyScore: 9.5,'
         efficiencyScore: 8.8,
-        recommendations: ['Optimize route for better efficiency', 'Consider traffic patterns', 'Monitor battery usage']}}'
+        recommendations: ['Optimize route for better efficiency', 'Consider traffic patterns', 'Monitor battery usage']}}
     {
       id: '2',
       name: 'AV-002',
@@ -131,7 +131,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         performanceScore: 8.9,
         safetyScore: 9.3,'
         efficiencyScore: 9.1,
-        recommendations: ['Adjust speed for cargo safety', 'Optimize loading sequence', 'Monitor weather conditions']}}'
+        recommendations: ['Adjust speed for cargo safety', 'Optimize loading sequence', 'Monitor weather conditions']}}
     {
       id: '3',
       name: 'AV-003',
@@ -164,7 +164,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         accuracy: 0.94,
         predictionScore: 0.91,'
         optimizationEfficiency: 0.88,
-        recommendations: ['Implement dynamic signal timing', 'Add traffic sensors', 'Optimize intersection design']}}'
+        recommendations: ['Implement dynamic signal timing', 'Add traffic sensors', 'Optimize intersection design']}}
     {
       id: '2',
       location: 'Los Angeles Freeway',
@@ -193,7 +193,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         efficiency: 0.92,
         reliability: 0.89,'
         safetyScore: 0.94,
-        recommendations: ['Consider alternative routes during peak hours', 'Monitor construction updates', 'Optimize departure time']}}'
+        recommendations: ['Consider alternative routes during peak hours', 'Monitor construction updates', 'Optimize departure time']}}
     {
       id: '2',
       origin: 'Downtown LA',
@@ -225,7 +225,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         optimizationScore: 0.91,
         costEfficiency: 0.88,'
         deliveryReliability: 0.94,
-        recommendations: ['Optimize loading sequence', 'Monitor weather conditions', 'Consider alternative routes']}}'
+        recommendations: ['Optimize loading sequence', 'Monitor weather conditions', 'Consider alternative routes']}}
     {
       id: '2',
       customer: 'MedSupply Co.',
@@ -256,7 +256,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.94,
         recommendations: ['Maintain current optimization algorithms', 'Expand autonomous fleet', 'Implement predictive maintenance']
-      },'
+      },
 {
         id: '2',
         title: 'Traffic Optimization Impact',
@@ -416,7 +416,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
           ))}
         </div>
 '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Autonomous Vehicles Overview */}
@@ -463,7 +463,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'vehicles' && (
           <div className="space-y-6>"
@@ -471,7 +471,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </div><div className="flex" space-x-2 overflow-x-auto pb-2>'
               {['all', 'passenger', 'cargo', 'emergency', 'delivery'].map((type) => (
                 `
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -560,7 +560,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'routes' && (
           <div className="space-y-6>"
             </div><div className="grid grid-cols-1 md grid-cols-2 gap-6>
@@ -597,7 +597,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'logistics' && (
           <div className="space-y-6>"

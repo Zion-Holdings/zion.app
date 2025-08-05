@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface ContentItem {
-  id: string;'
+  id: string;
   title: string;
   type: 'blog' | 'service' | 'product' | 'landing' | 'social' | 'email";
   status: 'draft' | 'published' | 'scheduled' | 'archived";
@@ -46,11 +46,11 @@ interface ContentWorkflow {
   name: string;
   description: string;
   steps: {
-    id: string;'
+    id: string;
     name: string;
     type: 'ai-generation' | 'human-review' | 'seo-optimization' | 'publishing' | 'promotion";
     status: 'pending' | 'in-progress' | 'completed' | 'failed";
-    aiAssisted: boolean;'
+    aiAssisted: boolean;
   }[];
   status: 'active' | 'inactive' | 'draft";
   createdAt: Date;}
@@ -58,7 +58,7 @@ interface ContentAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -66,7 +66,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
   ;
   const [contentItems, setContentItems] = useState<ContentItem[]>([]);
   const [templates, setTemplates] = useState<ContentTemplate[]>([]);
-  const [workflows, setWorkflows] = useState<ContentWorkflow[]>([]);'
+  const [workflows, setWorkflows] = useState<ContentWorkflow[]>([]);
   const [analytics, setAnalytics] = useState<ContentAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'content' | 'templates' | 'workflows' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -105,7 +105,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             likes: 892,
             shares: 445,
             comments: 156,
-            conversionRate: 3.2}}'
+            conversionRate: 3.2}}
         {
           id: '2',
           title: 'Web Development Services - Professional Solutions',
@@ -132,7 +132,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             likes: 445,
             shares: 223,
             comments: 89,
-            conversionRate: 4.1}}'
+            conversionRate: 4.1}}
         {
           id: '3',
           title: 'Mobile App Development Guide',
@@ -159,7 +159,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             likes: 0,
             shares: 0,
             comments: 0,
-            conversionRate: 0}}'
+            conversionRate: 0}}
         {
           id: '4',
           title: 'Cloud Computing Solutions',
@@ -186,7 +186,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             likes: 0,
             shares: 0,
             comments: 0,
-            conversionRate: 0}}'
+            conversionRate: 0}}
         {
           id: '5',
           title: 'Email Newsletter - Weekly Tech Update',
@@ -225,7 +225,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 45,
           lastUsed: new Date('2024-01-20'),
           tags: ['Blog', 'SEO', 'AI']
-        },'
+        },
 {
           id: '2',
           name: 'Service Description Template',
@@ -235,7 +235,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 32,
           lastUsed: new Date('2024-01-19'),
           tags: ['Service', 'Conversion', 'Professional']
-        },'
+        },
     {
           id: '3',
           name: 'Landing Page Template',
@@ -245,7 +245,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 28,
           lastUsed: new Date('2024-01-18'),
           tags: ['Landing Page', 'Conversion', 'AI']
-        },'
+        },
 {
           id: '4',
           name: 'Social Media Post Template',
@@ -255,7 +255,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 67,
           lastUsed: new Date('2024-01-21'),
           tags: ['Social Media', 'Engagement', 'Viral']
-        },'
+        },
     {
           id: '5',
           name: 'Email Newsletter Template',
@@ -278,37 +278,37 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'ai-generation',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
 {
               id: '1-2',
               name: 'SEO Optimization',
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
     {
               id: '1-3',
               name: 'Human Review',
               type: 'human-review',
               status: 'completed',
               aiAssisted: false
-            },'
+            },
 {
               id: '1-4',
               name: 'Publishing',
               type: 'publishing',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
     {
               id: '1-5',
               name: 'Promotion',
               type: 'promotion',
               status: 'completed',
-              aiAssisted: true}'
+              aiAssisted: true}
           ],
           status: 'active',
-          createdAt: new Date('2024-01-15'}'
+          createdAt: new Date('2024-01-15'}
         {
           id: '2',
           name: 'Service Description Creation',
@@ -320,30 +320,30 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'ai-generation',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
 {
               id: '2-2',
               name: 'Conversion Optimization',
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
     {
               id: '2-3',
               name: 'Human Review',
               type: 'human-review',
               status: 'in-progress',
               aiAssisted: false
-            },'
+            },
 {
               id: '2-4',
               name: 'Publishing',
               type: 'publishing',
               status: 'pending',
-              aiAssisted: true}'
+              aiAssisted: true}
           ],
           status: 'active',
-          createdAt: new Date('2024-01-18'}'
+          createdAt: new Date('2024-01-18'}
         {
           id: '3',
           name: 'Social Media Campaign',
@@ -355,20 +355,20 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'ai-generation',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
 {
               id: '3-2',
               name: 'Engagement Optimization',
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            },'
+            },
     {
               id: '3-3',
               name: 'Scheduling',
               type: 'publishing',
               status: 'pending',
-              aiAssisted: true}'
+              aiAssisted: true}
           ],
           status: 'active',
           createdAt: new Date('2024-01-20'}
@@ -382,7 +382,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: -5.6,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '2',
           metric: 'SEO Score Average',
@@ -391,7 +391,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: 2.4,
           trend: 'up',
           period: 'This Month'
-        },'
+        },
     {
           id: '3',
           metric: 'Engagement Rate',
@@ -400,7 +400,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: -16.0,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
 {
           id: '4',
           metric: 'Conversion Rate',
@@ -409,7 +409,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: -15.6,
           trend: 'down',
           period: 'This Month'
-        },'
+        },
     {
           id: '5',
           metric: 'AI Content Quality',
@@ -418,7 +418,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: 2.2,
           trend: 'up',
           period: 'This Month'
-        },'
+        },
 {
           id: '6',
           metric: 'Publishing Frequency',
@@ -439,7 +439,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
   const filteredContent = useMemo(() => {
     let filtered = contentItems.filter(item => {'
-      // Type filter';'
+      // Type filter';
       if (filterType !== 'all' && item.type !== filterType) return false;
       '
       // Status filter
@@ -469,7 +469,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
     return filtered;
   } [contentItems, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'published': return 'text-green-400 bg-green-500/20";
       case 'draft': return 'text-yellow-400 bg-yellow-500/20";
       case 'scheduled': return 'text-blue-400 bg-blue-500/20";
@@ -477,7 +477,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'blog': return '📝";
       case 'service': return '🛠️";
       case 'product': return '📦";
@@ -487,21 +487,21 @@ const AIPoweredContentManagementPage: NextPage = () => {
       default: return '📄';}
   };
 '
-  const getScoreColor = (score: number) => {';'
+  const getScoreColor = (score: number) => {';
     if (score >= 90) return 'text-green-400";
     if (score >= 80) return 'text-yellow-400";
     if (score >= 70) return 'text-orange-400";
     return 'text-red-400";
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
       default: return '➡️';}
   };
   const getWorkflowStepColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'completed': return 'text-green-400 bg-green-500/20";
       case 'in-progress': return 'text-blue-400 bg-blue-500/20";
       case 'pending': return 'text-yellow-400 bg-yellow-500/20";
@@ -593,7 +593,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -617,8 +617,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
-        {/* Search and Filters */},'"'
+        )}
+        {/* Search and Filters */},"'
 {selectedView === 'content' && (
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 > 
             </div><div className="grid grid-cols-1 lg grid-cols-4" gap-4>
@@ -738,7 +738,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Templates */}, ''
 {selectedView === 'templates' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
@@ -777,7 +777,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Workflows */},
 {selectedView === 'workflows' && ("
           <div className="space-y-6>" 

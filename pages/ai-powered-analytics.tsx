@@ -1,177 +1,119 @@
-import React from "react;
-import type { NextPage } from 'next";
-import Head from "next/head";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const AiPoweredAnalytics: NextPage = () => {
-  ;
+interface AnalyticsData {
+  revenue: number;
+  growth: number;
+  engagement: number;
+}
+
+const AIPoweredAnalyticsPage: NextPage = () => {
+  const [analyticsData, setAnalyticsData] = useState<AnalyticsData>({
+    revenue: 0,
+    growth: 0,
+    engagement: 0
+  });
   const [loading, setLoading] = useState(true);
-  const [analyticsData, setAnalyticsData] = useState(null);
 
   useEffect(() => {
     // Simulate loading analytics data
     setTimeout(() => {
       setAnalyticsData({
-        users: 15420,
         revenue: 125000,
         growth: 23.5,
-        engagement: 78.2}
+        engagement: 78.2
       });
       setLoading(false);
-    } 2000);
-  } []);
+    }, 2000);
+  }, []);
 
-  if (loading) {
-    return (
-      <div>
-        </div><div className=" relative z-10 container-responsive py-8> 
-          {/* Background Effects */}"
-          <div className="fixed" inset-0 z-0> '
-            </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
-            <div className="absolute" inset-0 bg-[url('/grid-pattern.svg')] opacity-10 ></div>
-            <div className="absolute" inset-0 bg-gradient-to-t from-black/50 to-transparent></div>
-          </div>
- 
-          {/* Loading State */}"
-          <div className="text-center" py-12> 
-            </div><div className="text-6xl:mb-4>📊</div>"
-            <h3 className="text-xl" font-semibold text-high-contrast mb-2 >
-              Loading Analytics
-            </h3>
-            <p className="text-high-contrast-secondary>"
-              Gathering your data and insights...
-            </p>
-          </div>
-        </div>
-      </div>
-    );}
   return (
-    <div>
+    <>
       <Head>
-        <title>AI-Powered Analytics - Zion App</title>
-        <meta name = description content=Advanced AI-powered analytics and insights for your business data > 
-        </meta name=description content=Advanced AI-powered analytics and insights for your business data ><meta name=viewport content=width=device-width, initial-scale=1 > </meta" name=viewport" content="width=device-width," initial-scale=1" ><link rel="icon href=/favicon.ico > </link" rel="icon" href="/favicon.ico" ></Head>
-"
-      <div className=" relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}
-        </div><div className=" fixed inset-0" z-0>'
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
-          <div className="absolute" inset-0 bg-[url('/grid-pattern.svg')] opacity-10 ></div>
-          <div className="absolute" inset-0 bg-gradient-to-t from-black/50 to-transparent></div>
-        </div>
-        {/* Header */}
-        "
-        >
-          <h1 className="text-responsive-4xl:lg:text-responsive-5xl:font-bold" text-high-contrast mb-4>
-            <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >
-              AI-Powered Analytics
-            </span>
-          </h1>
-          <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl mx-auto>
-            Advanced AI-powered analytics and insights for your business data
-          </p>
-        </motion.div>
- 
-        {/* Analytics Dashboard */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8>
-          
-          >
-            <div className="flex" items-center justify-between  >
-              </div><div>
-                <p className="text-high-contrast-secondary" text-sm>Total Users</p>
-                <p className="text-2xl" font-bold text-high-contrast>{analyticsData.users.toLocaleString()}</p>
-              </div>
-              <div className="text-3xl>👥</div>"
-            </div>
-          </motion.div>
+        <title>AI Powered Analytics - Zion App</title>
+        <meta name="description" content="AI-powered analytics and data insights" />
+      </Head>
 
-          
-          >
-            <div className="flex" items-center justify-between>
-              </div><div> 
-                <p className="text-high-contrast-secondary" text-sm>Revenue</p>
-                <p className="text-2xl" font-bold text-high-contrast>${analyticsData.revenue.toLocaleString()}</p>
-              </div>
-              <div className="text-3xl>💰</div>"
-            </div>
-          </motion.div>
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Powered Analytics</h1>
+            <p className="text-gray-600">Advanced analytics powered by artificial intelligence</p>
+          </div>
 
-           
-          >
-            <div className="flex" items-center justify-between>
-              </div><div>
-                <p className="text-high-contrast-secondary" text-sm>Growth</p>
-                <p className="text-2xl" font-bold text-neon-green >+{analyticsData.growth}%</p>
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800">
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-3"></div>
+                Loading analytics data...
               </div>
-              <div className="text-3xl>📈</div>"
             </div>
-          </motion.div>
-
-           
-          >
-            <div className="flex" items-center justify-between>
-              </div><div>
-                <p className="text-high-contrast-secondary" text-sm >Engagement</p>
-                <p className="text-2xl" font-bold text-high-contrast>{analyticsData.engagement}%</p> 
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <div className="flex items-center">
+                  <div className="p-2 bg-green-100 rounded-lg">
+                    <span className="text-2xl">💰</span>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-sm font-medium text-gray-600">Revenue</p>
+                    <p className="text-2xl font-bold text-gray-900">${analyticsData.revenue.toLocaleString()}</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-3xl>🎯</div>"
-            </div">
-          </motion.div>
-        </div>
 
-        {/* Analytics Features */}"
-        <div className=" glass-dark border border-neon-blue/30 rounded-2xl" p-8>
-          <h2 className="text-2xl" font-bold text-high-contrast mb-6>Analytics Features</h2>
-          
-          <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6> 
-            </div><div className="glass border border-neon-blue/20 rounded-xl" p-6>
-              <div className="text-3xl:mb-4>📊</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Real-time Dashboards</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Monitor your key metrics in real-time with interactive dashboards
-              </p>
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <div className="flex items-center">
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <span className="text-2xl">📈</span>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-sm font-medium text-gray-600">Growth</p>
+                    <p className="text-2xl font-bold text-gray-900">{analyticsData.growth}%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <div className="flex items-center">
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <span className="text-2xl">👥</span>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-sm font-medium text-gray-600">Engagement</p>
+                    <p className="text-2xl font-bold text-gray-900">{analyticsData.engagement}%</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl:mb-4>🤖</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >AI Insights</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Get intelligent insights and recommendations from AI analysis
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl:mb-4>📈</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Predictive Analytics</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Forecast trends and outcomes using advanced AI models
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl:mb-4>🔍</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Deep Analytics</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Dive deep into your data with advanced analytical tools
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl:mb-4>⚡</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Performance Monitoring</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Track performance metrics and optimize your operations
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl:mb-4>🎯</div>"
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Custom Reports</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Create custom reports and visualizations for your needs
-              </p>
+          )}
+
+          {/* Features Section */}
+          <div className="mt-12 bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Analytics Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Data Visualization</h3>
+                <p className="text-gray-600 text-sm">Interactive charts and graphs for data analysis</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🔍</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Pattern Recognition</h3>
+                <p className="text-gray-600 text-sm">AI-powered pattern detection in your data</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🎯</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Predictive Analytics</h3>
+                <p className="text-gray-600 text-sm">Forecast future trends and outcomes</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div">;"
- " );"
+    </>
+  );
 };
-'
-export default AiPoweredAnalytics; "'"
+
+export default AIPoweredAnalyticsPage;

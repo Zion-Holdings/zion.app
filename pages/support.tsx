@@ -1,4 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import type { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from "next/head";
 import Link from "next/link";
 
 const SupportPage: NextPage: () => {
@@ -54,5 +56,4 @@ const SupportPage: NextPage: () => {
   </div>,
 ),};
 }";
-;'
-export default SupportPage;'"
+export default SupportPage;

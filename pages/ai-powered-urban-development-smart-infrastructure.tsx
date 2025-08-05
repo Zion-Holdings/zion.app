@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
   const [urbanPlanning, setUrbanPlanning] = useState<UrbanPlanning[]>([]
   const [infrastructureManagement, setInfrastructureManagement] = useState<InfrastructureManagement[]>([]
   const [smartCityAnalytics, setSmartCityAnalytics] = useState<SmartCityAnalytics[]>([]
-  const [urbanDevelopment, setUrbanDevelopment] = useState<UrbanDevelopment[]>([]'
+  const [urbanDevelopment, setUrbanDevelopment] = useState<UrbanDevelopment[]>([]
   const [data, setData] = useState<UrbanData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'planning' | 'infrastructure' | 'analytics' | 'development' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         planningAccuracy: 9.4,'
         sustainabilityScore: 9.1,
         planningInsights: ['Optimal land use distribution achieved', 'Green space integration effective', 'Transportation planning optimized'],
-        recommendations: ['Expand green infrastructure', 'Enhance public transportation', 'Implement smart zoning']}}}'
+        recommendations: ['Expand green infrastructure', 'Enhance public transportation', 'Implement smart zoning']}}}
     {
       id: '2',
       name: 'Land Use Optimization',
@@ -116,7 +116,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         planningAccuracy: 9.2,'
         sustainabilityScore: 8.8,
         planningInsights: ['Mixed-use development successful', 'Density optimization effective', 'Community integration strong'],
-        recommendations: ['Expand mixed-use zones', 'Optimize density distribution', 'Enhance community spaces']}}'
+        recommendations: ['Expand mixed-use zones', 'Optimize density distribution', 'Enhance community spaces']}}
     {
       id: '3',
       name: 'Sustainability Planning',
@@ -146,7 +146,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         operationalEfficiency: 9.5,'
         maintenanceScore: 9.2,
         optimizationOpportunities: ['Improve load balancing', 'Enhance energy storage', 'Expand renewable integration'],
-        improvementStrategies: ['Implement advanced load management', 'Enhance storage systems', 'Expand renewable capacity']}}'
+        improvementStrategies: ['Implement advanced load management', 'Enhance storage systems', 'Expand renewable capacity']}}
     {
       id: '2',
       name: 'Water Management Network',
@@ -160,7 +160,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         operationalEfficiency: 9.1,'
         maintenanceScore: 8.9,
         optimizationOpportunities: ['Improve water conservation', 'Enhance leak detection', 'Expand treatment capacity'],
-        improvementStrategies: ['Implement smart metering', 'Enhance leak detection', 'Expand treatment facilities']}}'
+        improvementStrategies: ['Implement smart metering', 'Enhance leak detection', 'Expand treatment facilities']}}
     {
       id: '3',
       name: 'Transportation Infrastructure',
@@ -190,7 +190,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         dataAccuracy: 9.6,'
         predictionReliability: 9.3,
         improvementAreas: ['Enhance real-time monitoring', 'Improve predictive analytics', 'Expand data coverage'],
-        recommendations: ['Implement advanced monitoring', 'Enhance predictive models', 'Expand data collection']}}'
+        recommendations: ['Implement advanced monitoring', 'Enhance predictive models', 'Expand data collection']}}
     {
       id: '2',
       name: 'Traffic Monitoring System',
@@ -204,7 +204,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         dataAccuracy: 9.4,'
         predictionReliability: 9.1,
         improvementAreas: ['Improve traffic prediction', 'Enhance congestion management', 'Expand coverage area'],
-        recommendations: ['Implement advanced prediction', 'Enhance congestion control', 'Expand monitoring coverage']}}'
+        recommendations: ['Implement advanced prediction', 'Enhance congestion control', 'Expand monitoring coverage']}}
     {
       id: '3',
       name: 'Environmental Monitoring',
@@ -230,12 +230,12 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         totalProjects: 125,
         completionRate: 88,
         costSavings: 45000000,
-        sustainabilityScore: 92}'
+        sustainabilityScore: 92}
       aiAnalysis: {
         insights: ['AI optimization reduced project costs by 25%', 'Smart planning improved completion rates by 15%'],
         trends: ['Improving project efficiency', 'Reducing construction costs', 'Enhancing sustainability'],
         recommendations: ['Expand AI project management', 'Enhance cost optimization', 'Implement sustainable practices'],
-        impactScore: 9.2}}'
+        impactScore: 9.2}}
     {
       id: '2',
       name: 'Construction Management',
@@ -245,12 +245,12 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         totalProjects: 95,
         completionRate: 92,
         costSavings: 38000000,
-        sustainabilityScore: 89}'
+        sustainabilityScore: 89}
       aiAnalysis: {
         insights: ['AI construction management improved efficiency by 30%', 'Smart scheduling reduced delays by 40%'],
         trends: ['Improving construction efficiency', 'Reducing project delays', 'Enhancing quality control'],
         recommendations: ['Expand AI construction tools', 'Enhance scheduling systems', 'Implement quality monitoring'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Sustainability Initiatives',
@@ -260,7 +260,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         totalProjects: 68,
         completionRate: 95,
         costSavings: 28000000,
-        sustainabilityScore: 96}'
+        sustainabilityScore: 96}
       aiAnalysis: {
         insights: ['Sustainability initiatives reduced carbon footprint by 35%', 'Green infrastructure improved efficiency by 45%'],
         trends: ['Improving sustainability', 'Reducing environmental impact', 'Enhancing green infrastructure'],
@@ -281,7 +281,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI urban planning', 'Implement smart infrastructure', 'Enhance sustainability programs']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Infrastructure Management Boosting City Efficiency',
@@ -333,14 +333,14 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
       case 'positive': return '🏗️
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredUrbanPlanning = useMemo(() => {'
@@ -502,7 +502,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'planning' && (
           <div className=" space-y-6>
@@ -510,7 +510,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>"'
               {['all', 'city-planning', 'land-use-optimization', 'zoning-management', 'development-strategy', 'sustainability-planning', 'growth-management'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'`
@@ -557,7 +557,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'infrastructure' && (
           <div className="space-y-6>" 
@@ -595,7 +595,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'analytics' && (
           <div className="space-y-6>

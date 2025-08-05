@@ -1,6 +1,6 @@
 import React from "react;
 import Link from "next/link";
-// import ModernLayout from '../components/layout/ModernLayout';'
+// import ModernLayout from '../components/layout/ModernLayout';
 import Head from "next/head";
 
 export default function Docs() {
@@ -29,7 +29,7 @@ export default function Docs() {
 { title: 'API Reference', description: 'Complete API documentation', link: '/api-docs' },
     { title: 'User Guide', description: 'How to use Zion marketplace', link: '/help-center' },
 { title: 'Developer Guide', description: 'Integration and development', link: '/api-docs' },
-    { title: 'Security', description: 'Security and compliance information', link: '/security' },''
+    { title: 'Security', description: 'Security and compliance information', link: '/security' },
 { title  'Support', description  'Get help and support', link  '/help-center'}
             ].map((doc, index) => (
               </div><div key={doc.title} className=" bg-white/5 border border-white/10 rounded-lg p-6" backdrop-blur-sm>
@@ -49,5 +49,5 @@ export default function Docs() {
 
   </div> 
   </div>"
-);'
+);
 } "'"

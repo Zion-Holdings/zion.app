@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -243,7 +243,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Network Dashboard */},'
+            {/* Network Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -302,7 +302,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Communications */},''
+            {/* Quantum Communications */},
 {activeTab === 'communications' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Communications</h2>
@@ -343,7 +343,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Networks */},"''
 {activeTab === 'networks' && (
               <div className="space-y-6>"
@@ -385,7 +385,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Routers */},"''
 {activeTab === 'routers' && (
               <div className="space-y-6>"
@@ -429,7 +429,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Switches */}, ''
 {activeTab === 'switches' && (
               <div className="space-y-6">
@@ -473,7 +473,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Channels */},''
+            {/* Quantum Channels */},
 {activeTab === 'channels' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Channels</h2>
@@ -514,7 +514,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum Protocols */},"''
 {activeTab === 'protocols' && (
               <div className="space-y-6>"

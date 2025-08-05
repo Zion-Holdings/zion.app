@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 interface Invoice {
   id: string;
   invoiceNumber: string;
-  client: string;'
+  client: string;
   amount: number;
   status: 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled";
   dueDate: Date;
@@ -24,7 +24,7 @@ interface InvoiceItem {
   unitPrice: number;
   total: number;}
 interface BillingCycle {
-  id: string;'
+  id: string;
   name: string;
   type: 'monthly' | 'quarterly' | 'yearly' | 'custom";
   startDate: Date;
@@ -37,7 +37,7 @@ interface Payment {
   id: string;
   invoiceId: string;
   amount: number;
-  method: string;'
+  method: string;
   date: Date;
   status: 'pending' | 'completed' | 'failed' | 'refunded";
   transactionId: string;}
@@ -62,7 +62,7 @@ const InvoiceBillingPage: NextPage = () => {'
       total: 2750,
       currency: 'USD',
       paymentMethod: 'Credit Card',
-      paidDate: new Date('2024-01-10'}'
+      paidDate: new Date('2024-01-10'}
     {
       id: 'INV-002',
       invoiceNumber: 'INV-2024-002',
@@ -77,7 +77,7 @@ const InvoiceBillingPage: NextPage = () => {'
       ],
       tax: 180,'
       total: 1980,
-      currency: 'USD'}'
+      currency: 'USD'}
     {
       id: 'INV-003',
       invoiceNumber: 'INV-2024-003',
@@ -105,7 +105,7 @@ const InvoiceBillingPage: NextPage = () => {'
       totalAmount: 45000,
       paidAmount: 38000,
       outstandingAmount: 7000
-    },'
+    },
 {
       id: 'CYCLE-002',
       name: 'Q4 2023',
@@ -126,7 +126,7 @@ const InvoiceBillingPage: NextPage = () => {'
       date: new Date('2024-01-10'),
       status: 'completed',
       transactionId: 'TXN-123456'
-    },'
+    },
 {
       id: 'PAY-002',
       invoiceId: 'INV-003','
@@ -150,7 +150,7 @@ const InvoiceBillingPage: NextPage = () => {'
       case 'completed': return 'text-green-400 bg-green-500/20 border-green-500/30
       case 'failed': return 'text-red-400 bg-red-500/20 border-red-500/30
       case 'refunded': return 'text-orange-400 bg-orange-500/20 border-orange-500/30
-      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'}}'
+      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'}}
   const formatCurrency = (amount: number, currency: string = 'USD') => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -257,7 +257,7 @@ const InvoiceBillingPage: NextPage = () => {'
           ))}
         </div>
 '
-        {/* Tab Content */},'"'
+        {/* Tab Content */},"'
 {activeTab === 'invoices' && (
           <div className="space-y-6>" 
             </div><div className="flex justify-between" items-center>
@@ -567,7 +567,7 @@ const InvoiceBillingPage: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default InvoiceBillingPage ))))))))))))"'"'`

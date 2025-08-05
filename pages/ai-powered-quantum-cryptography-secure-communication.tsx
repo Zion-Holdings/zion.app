@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -130,7 +130,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       id: 'qcp-001',
       name: 'Quantum Commitment',
       type: 'commitment',
-      complexity: 'O(log n)',
+      complexity: 'O(log n),
       security: 99.9,'
       efficiency: 95.5,
       applications: ['Blockchain', 'Voting Systems', 'Secure Auctions'],
@@ -240,7 +240,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Security Dashboard */},'
+            {/* Security Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -299,7 +299,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Key Distribution */},''
+            {/* Key Distribution */},
 {activeTab === 'key-distribution' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Key Distribution</h2>
@@ -340,7 +340,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Quantum-Resistant Cryptography */},"''
 {activeTab === 'resistant-cryptography' && (
               <div className="space-y-6>"
@@ -382,7 +382,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Secure Communication */},"''
 {activeTab === 'secure-communication' && (
               <div className="space-y-6>"
@@ -426,7 +426,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Random Generation */}, ''
 {activeTab === 'random-generation' && (
               <div className="space-y-6">
@@ -470,7 +470,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Digital Signatures */},''
+            {/* Digital Signatures */},
 {activeTab === 'digital-signatures' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Digital Signatures</h2>
@@ -511,7 +511,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Cryptographic Protocols */},"''
 {activeTab === 'cryptographic-protocols' && (
               <div className="space-y-6>"

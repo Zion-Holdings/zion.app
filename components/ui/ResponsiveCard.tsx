@@ -16,17 +16,17 @@ const ResponsiveCard: React.FC<ResponsiveCardProps> = ({'
   interactive = false,
   onClick
 }) => {'
-  const variantClasses = {
+  const $1 = {
     default: 'bg-white/5 backdrop-blur-sm border border-white/10',
     elevated: 'bg-white/10 backdrop-blur-md border border-white/20 shadow-lg',
     outlined: 'bg-transparent border border-white/20',
-    glass: 'bg-white/5 backdrop-blur-md border border-white/10 shadow-xl'}'
-  const paddingClasses = {
+    glass: 'bg-white/5 backdrop-blur-md border border-white/10 shadow-xl'}
+  const $1 = {
     none: '',
     sm: 'p-3 sm:p-4',
     base: 'p-4 sm:p-6',
     lg: 'p-6 sm:p-8',
-    xl: 'p-8 sm:p-12'}'
+    xl: 'p-8 sm:p-12'}
   const hoverClasses = hover ? 'hover-responsive' : '
   const interactiveClasses = interactive ? 'cursor-pointer' : '
   return (

@@ -106,5 +106,4 @@ const Https___ziontechgroup_netlify_app_services_blockchPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default Https___ziontechgroup_netlify_app_services_blockchPage;"'"
+export default Https___ziontechgroup_netlify_app_services_blockchPage;

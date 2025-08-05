@@ -1,11 +1,11 @@
-'use client';'
+'use client';
 import React, { useState, useRef, useEffect , useCallback } from "react";
 import Link from "next/link";
 
 interface Message {
-  id: string;'
+  id: string;
   content: string;
-  role: 'user' | 'assistant';'
+  role: 'user' | 'assistant';
   timestamp: Date;
   type?: 'text' | 'quick-actions' | 'recommendation";
   actions?: Array<{
@@ -28,7 +28,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         { label: 'Find IT Services', action: 'Show me IT services', link: '/services' },
         { label: 'Browse AI Talent', action: 'Show me AI experts', link: '/talents' },
         { label: 'Get a Quote', action: 'I need a quote for a project', link: '/quote-request' },
-        { label: 'Explore Equipment', action: 'Show me computing equipment', link: '/equipment' }]}'
+        { label: 'Explore Equipment', action: 'Show me computing equipment', link: '/equipment' }]}
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -87,9 +87,9 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         timestamp: new Date(),
         type: 'text";
       };
-      setMessages(prev => [...prev, assistantMessage]);'
+      setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error sending message: , error);"
+      console.error('Error sending message: , error);
       const errorMessage: Message = {'
         id: (Date.now() + 1).toString(),"''
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
@@ -143,9 +143,9 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         timestamp: new Date(),
         type: 'text";
       };
-      setMessages(prev => [...prev, assistantMessage]);'
+      setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error sending message: , error);"
+      console.error('Error sending message: , error);
       const errorMessage: Message = {'
         id: (Date.now() + 1).toString(),"''
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
@@ -164,7 +164,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
       handleSendMessage();}
   };
 '
-  const formatTime = (date: Date) => {';'
+  const formatTime = (date: Date) => {';
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
@@ -192,7 +192,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
                   {action.label}
                 </button > ))}
             </div>`
-          )}'``
+          )}``
           <p className="{`text-xs" mt-1 ${''`
             message.role === 'user' ? 'text-blue-100' : 'text-gray-500'``
           }`}>
@@ -288,4 +288,4 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
   );
 };
 ''`
-export default ChatAssistant;"'"'`
+export default ChatAssistant;'`

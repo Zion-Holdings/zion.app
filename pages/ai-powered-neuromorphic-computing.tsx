@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface NeuromorphicComputing {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'neuromorphic_chip' | 'brain_inspired' | 'cognitive_computing' | 'neural_processor' | 'synaptic_network' | 'neuromorphic_memory";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -21,7 +21,7 @@ interface NeuromorphicAnalysis {
   recommendations: string[];}
 interface SpikingNeuralNetwork {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'temporal_encoding' | 'rate_encoding' | 'population_encoding' | 'spike_timing' | 'adaptive_threshold' | 'plasticity";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -36,7 +36,7 @@ interface SpikingOptimization {
   recommendations: string[];}
 interface BrainInspiredAlgorithm {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'hebbian_learning' | 'competitive_learning' | 'self_organizing' | 'attractor_network' | 'oscillatory' | 'reservoir_computing";
   status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
@@ -52,7 +52,7 @@ interface BrainAnalysis {
 interface NeuromorphicChip {
   id: string;
   chipId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'digital_neuromorphic' | 'analog_neuromorphic' | 'mixed_signal' | 'memristor_based' | 'photonic_neuromorphic' | 'quantum_neuromorphic";
   status: 'active' | 'inactive' | 'testing' | 'error' | 'offline";
@@ -68,7 +68,7 @@ interface ChipAnalysis {
 interface CognitiveComputing {
   id: string;
   cognitiveId: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'pattern_recognition' | 'decision_making' | 'learning_adaptation' | 'reasoning_inference' | 'attention_mechanism' | 'memory_consolidation";
   status: 'active' | 'inactive' | 'processing' | 'error' | 'offline";
@@ -84,7 +84,7 @@ interface CognitiveAnalysis {
 interface NeuromorphicComputingManagement {
   id: string;
   systemId: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
   status: 'operational' | 'maintenance' | 'error' | 'offline";
@@ -109,7 +109,7 @@ interface NeuromorphicComputingAnalytics {
   aiInsights: NeuromorphicComputingInsight[];}
 interface NeuromorphicComputingInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -120,7 +120,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
   const [brainInspiredAlgorithms, setBrainInspiredAlgorithms] = useState<BrainInspiredAlgorithm[]>([]
   const [neuromorphicChips, setNeuromorphicChips] = useState<NeuromorphicChip[]>([]
   const [cognitiveComputing, setCognitiveComputing] = useState<CognitiveComputing[]>([]
-  const [neuromorphicComputingManagement, setNeuromorphicComputingManagement] = useState<NeuromorphicComputingManagement[]>([]'
+  const [neuromorphicComputingManagement, setNeuromorphicComputingManagement] = useState<NeuromorphicComputingManagement[]>([]
   const [analytics, setAnalytics] = useState<NeuromorphicComputingAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'neuromorphic' | 'spiking' | 'brain' | 'chips' | 'cognitive' | 'management' | 'overview'>('neuromorphic
   const [selectedType, setSelectedType] = useState<string>('all
@@ -367,7 +367,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 Neuromorphic Computing ({neuromorphicComputing.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('spiking')}''``
+                onClick={() => setActiveTab('spiking')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'spiking
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -377,7 +377,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 Spiking Networks ({spikingNeuralNetworks.length}
               </button>'
               `
-                onClick={() => setActiveTab('brain')}''``
+                onClick={() => setActiveTab('brain')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'brain
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -387,7 +387,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 Brain Algorithms ({brainInspiredAlgorithms.length}
               </button>'
               `
-                onClick={() => setActiveTab('chips')}''``
+                onClick={() => setActiveTab('chips')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'chips
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -407,7 +407,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 Cognitive Computing ({cognitiveComputing.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('management')}''``
+                onClick={() => setActiveTab('management')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -417,7 +417,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 Management ({neuromorphicComputingManagement.length}
               </button>'
               `
-                onClick={() => setActiveTab('overview')}''``
+                onClick={() => setActiveTab('overview')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -428,7 +428,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
               </button>
             </div>
 "'
-            {/* Neuromorphic Computing Tab */},''
+            {/* Neuromorphic Computing Tab */},
 {activeTab === 'neuromorphic' && ("
               <div className=" space-y-8>
                 {/* Controls */}
@@ -528,7 +528,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Overview Tab */},"''
 {activeTab === 'overview' && analytics && (
               <div className=" space-y-8>

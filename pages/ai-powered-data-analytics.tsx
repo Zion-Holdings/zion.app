@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect }  from "react";
@@ -8,7 +8,7 @@ const AIPoweredDataAnalytics: NextPage = () => {
     totalDatasets: 1247,
     processedRecords: 15420000,
     accuracy: 96.8,
-    insights: 892}}'
+    insights: 892}}
   const [datasets, setDatasets] = useState([
     { id: 1, name: 'Customer Behavior', size: '2.4GB', records: 1250000, lastUpdated: '2 hours ago' },
 { id: 2, name: 'Sales Performance', size: '1.8GB', records: 890000, lastUpdated: '1 hour ago' },

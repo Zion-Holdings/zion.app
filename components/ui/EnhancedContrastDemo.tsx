@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface EnhancedContrastDemoProps {
-  className?: string;}'
+  className?: string;}
 const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="'' }) => {;
   const [highContrastMode, setHighContrastMode] = useState(false);
   const [largeTextMode, setLargeTextMode] = useState(false);
@@ -14,7 +14,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
         <h3 className=" text-high-contrast text-xl font-bold mb-4>Accessibility Controls</h3>
         <div className=" grid grid-cols-1 md grid-cols-3" gap-4">
           <button"''`
-            onClick={() => setHighContrastMode(!highContrastMode)}'''``
+            onClick={() => setHighContrastMode(!highContrastMode)}``
             className="{`btn ${highContrastMode ? 'btn-primary' : 'btn-secondary'} focus-high-contrast`} 
             aria-label=Toggle high contrast mode'
           >
@@ -22,7 +22,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
           </button>
           
           <button"''`
-            onClick={() => setLargeTextMode(!largeTextMode)}'''``
+            onClick={() => setLargeTextMode(!largeTextMode)}``
             className="{`btn ${largeTextMode ? 'btn-primary' : 'btn-secondary'} focus-high-contrast`} 
             aria-label=Toggle large text mode'
           >
@@ -30,7 +30,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
           </button>
           
           <button"''`
-            onClick={() => setReducedMotionMode(!reducedMotionMode)}'''``
+            onClick={() => setReducedMotionMode(!reducedMotionMode)}``
             className="{`btn ${reducedMotionMode ? 'btn-primary' : 'btn-secondary'} focus-high-contrast`} 
             aria-label=Toggle reduced motion mode'
           >
@@ -259,7 +259,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
           </div>
         </section>
       </div>
-    </div >;  );"
+    </div >;  );
 };
 ''`
-export default EnhancedContrastDemo;"'"'`
+export default EnhancedContrastDemo;'`

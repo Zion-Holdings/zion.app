@@ -1,10 +1,10 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface TestSuite {
-  id: string;'
+  id: string;
   name: string;
   type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'accessibility";
   status: 'running' | 'passed' | 'failed' | 'pending' | 'skipped";
@@ -14,19 +14,19 @@ interface TestSuite {
   skippedTests: number;
   duration: number;
   lastRun: Date;
-  aiGenerated: boolean;'
+  aiGenerated: boolean;
   coverage: number;
   priority: 'low' | 'medium' | 'high' | 'critical";
   tags: string[];}
 interface TestCase {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   suite: string;
   status: 'passed' | 'failed' | 'skipped' | 'pending";
   duration: number;
   lastRun: Date;
-  aiGenerated: boolean;'
+  aiGenerated: boolean;
   automated: boolean;
   priority: 'low' | 'medium' | 'high' | 'critical";
   flaky: boolean;
@@ -34,16 +34,16 @@ interface TestCase {
   steps: {
     id: string;
     action: string;
-    expected: string;'
+    expected: string;
     actual?: string;
     status: 'passed' | 'failed' | 'skipped";
   }[];}
 interface TestExecution {
-  id: string;'
+  id: string;
   suiteId: string;
   environment: 'development' | 'staging' | 'production' | 'testing";
   startTime: Date;
-  endTime?: Date;'
+  endTime?: Date;
   duration: number;
   status: 'running' | 'completed' | 'failed' | 'cancelled";
   totalTests: number;
@@ -61,7 +61,7 @@ interface TestAnalytics {
   id: string;
   metric: string;
   current: number;
-  target: number;'
+  target: number;
   improvement: number;
   trend: 'up' | 'down' | 'stable";
   period: string;}
@@ -69,7 +69,7 @@ const AIPoweredTestingPage: NextPage = () => {
   ;
   const [testSuites, setTestSuites] = useState<TestSuite[]>([]);
   const [testCases, setTestCases] = useState<TestCase[]>([]);
-  const [executions, setExecutions] = useState<TestExecution[]>([]);'
+  const [executions, setExecutions] = useState<TestExecution[]>([]);
   const [analytics, setAnalytics] = useState<TestAnalytics[]>([]);
   const [selectedView, setSelectedView] = useState<'overview' | 'suites' | 'cases' | 'executions' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
@@ -97,7 +97,7 @@ const AIPoweredTestingPage: NextPage = () => {
           coverage: 92,
           priority: 'high',
           tags: ['authentication', 'security', 'user-management']}
-        },'
+        },
 {
           id: '2',
           name: 'Payment Processing Tests',
@@ -113,7 +113,7 @@ const AIPoweredTestingPage: NextPage = () => {
           coverage: 88,
           priority: 'critical',
           tags: ['payment', 'e2e', 'critical-path']
-        },'
+        },
     {
           id: '3',
           name: 'API Performance Tests',
@@ -129,7 +129,7 @@ const AIPoweredTestingPage: NextPage = () => {
           coverage: 75,
           priority: 'high',
           tags: ['performance', 'api', 'load-testing']
-        },'
+        },
 {
           id: '4',
           name: 'UI Component Tests',
@@ -145,7 +145,7 @@ const AIPoweredTestingPage: NextPage = () => {
           coverage: 95,
           priority: 'medium',
           tags: ['ui', 'components', 'unit-testing']
-        },'
+        },
     {
           id: '5',
           name: 'Security Vulnerability Tests',
@@ -181,19 +181,19 @@ const AIPoweredTestingPage: NextPage = () => {
               action: 'Navigate to login page',
               expected: 'Login form is displayed',
               status: 'passed'
-            },'
+            },
 {
               id: '1-2',
               action: 'Enter valid email and password',
               expected: 'Credentials are accepted',
               status: 'passed'
-            },'
+            },
     {
               id: '1-3',
               action: 'Click login button',
               expected: 'User is redirected to dashboard',
               status: 'passed'
-            }]}'
+            }]}
         {
           id: '2',
           name: 'User Login with Invalid Credentials',
@@ -213,14 +213,14 @@ const AIPoweredTestingPage: NextPage = () => {
               action: 'Navigate to login page',
               expected: 'Login form is displayed',
               status: 'passed'
-            },'
+            },
 {
               id: '2-2',
               action: 'Enter invalid email and password',
               expected: 'Error message is displayed',
               actual: 'No error message shown',
               status: 'failed'
-            }]}'
+            }]}
         {
           id: '3',
           name: 'Payment Processing Flow',
@@ -239,19 +239,19 @@ const AIPoweredTestingPage: NextPage = () => {
               action: 'Select payment method',
               expected: 'Payment method is selected',
               status: 'passed'
-            },'
+            },
 {
               id: '3-2',
               action: 'Enter payment details',
               expected: 'Payment details are validated',
               status: 'passed'
-            },'
+            },
     {
               id: '3-3',
               action: 'Process payment',
               expected: 'Payment is processed successfully',
               status: 'passed'
-            }]}'
+            }]}
         {
           id: '4',
           name: 'API Response Time Test',
@@ -272,7 +272,7 @@ const AIPoweredTestingPage: NextPage = () => {
               expected: Response time 
   const filteredTestSuites = useMemo(() => {
     let filtered = testSuites.filter(suite => {'
-      // Type filter';'
+      // Type filter';
       if (filterType !== 'all' && suite.type !== filterType) return false;
       '
       // Status filter
@@ -289,7 +289,7 @@ const AIPoweredTestingPage: NextPage = () => {
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
+          const $1 = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
           return priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'coverage':'
           return b.coverage - a.coverage;
@@ -303,7 +303,7 @@ const AIPoweredTestingPage: NextPage = () => {
     return filtered;
   } [testSuites, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'passed': return 'text-green-400 bg-green-500/20";
       case 'failed': return 'text-red-400 bg-red-500/20";
       case 'running': return 'text-blue-400 bg-blue-500/20";
@@ -312,7 +312,7 @@ const AIPoweredTestingPage: NextPage = () => {
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
-    switch (type) {';'
+    switch (type) {';
       case 'unit': return '🧪";
       case 'integration': return '🔗";
       case 'e2e': return '🌐";
@@ -322,7 +322,7 @@ const AIPoweredTestingPage: NextPage = () => {
       default: return '📋';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'critical': return 'text-red-400";
       case 'high': return 'text-orange-400";
       case 'medium': return 'text-yellow-400";
@@ -330,7 +330,7 @@ const AIPoweredTestingPage: NextPage = () => {
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
-    switch (trend) {';'
+    switch (trend) {';
       case 'up': return '📈";
       case 'down': return '📉";
       case 'stable': return '➡️";
@@ -425,7 +425,7 @@ const AIPoweredTestingPage: NextPage = () => {
           </div>
         </div>
 "'
-        {/* Analytics Overview */},''
+        {/* Analytics Overview */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (
@@ -449,8 +449,8 @@ const AIPoweredTestingPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
-        {/* Search and Filters */},'"'
+        )}
+        {/* Search and Filters */},"'
 {selectedView === 'suites' && (
           <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 > 
             </div><div className="grid grid-cols-1 lg grid-cols-4" gap-4>
@@ -569,7 +569,7 @@ const AIPoweredTestingPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Test Cases */},
 {selectedView === 'cases' && ("
           <div className="space-y-6>" 
@@ -647,7 +647,7 @@ const AIPoweredTestingPage: NextPage = () => {
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Test Executions */}, ''
 {selectedView === 'executions' && (
           <div className="space-y-6>

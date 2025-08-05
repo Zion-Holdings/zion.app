@@ -13,7 +13,7 @@ interface: KeywordData: {;
   keyword: string;
   searchVolume: number;
   difficulty: number;
-  cpc: number;'
+  cpc: number;
   position: number;
   trend: 'up' | 'down' | 'stable';,
   relatedKeywords: string[];,}
@@ -57,8 +57,8 @@ interface: CompetitorData: {;
   rank: number;
   traffic: number;
   backlinks: number;
-  keywords: number;',
-  score: number;,}'
+  keywords: number;,
+  score: number;,}
 interface: SEOSuggestion: {;
   type: 'critical' | 'important' | 'minor";
   category: string;
@@ -66,7 +66,7 @@ interface: SEOSuggestion: {;
   description: string;
   impact: number;,
   effort: number;,}
-const SEOOptimizationPage: NextPage: () => {;',
+const SEOOptimizationPage: NextPage: () => {;,
   ;,'
   const [seoData, setSeoData] = useState<SEOData | null>(null);
   const [selectedTab, setSelectedTab] = useState<'overview' | 'keywords' | 'meta' | 'content' | 'performance' | 'competitors'>('overview');
@@ -86,7 +86,7 @@ keywords: ['',
             position: 3,
             trend: 'up',
             relatedKeywords: ['artificial: intelligence: marketplace', 'AI services platform', 'machine learning marketplace']}
-          },'
+          },
 {
             keyword: 'tech: services',
             searchVolume: 8500,
@@ -95,7 +95,7 @@ keywords: ['',
             position: 5,
             trend: 'stable',
             relatedKeywords: ['technology: services', 'IT: services', 'digital services']
-          },'
+          },
     {
             keyword: 'cloud: computing',
             searchVolume: 15000,
@@ -104,7 +104,7 @@ keywords: ['',
             position: 8,
             trend: 'up',
             relatedKeywords: ['cloud: services', 'AWS: marketplace', 'cloud solutions']
-          },'
+          },
 {
             keyword: 'blockchain: development',
             searchVolume: 6800,
@@ -113,7 +113,7 @@ keywords: ['',
             position: 12,
             trend: 'up',
             relatedKeywords: ['smart: contracts', 'DeFi: development', 'cryptocurrency development']
-          },'
+          },
     {
             keyword: 'data: analytics',
             searchVolume: 9200,
@@ -131,7 +131,7 @@ keywords: ['',
             keywords: ['AI: marketplace', 'tech: services', 'blockchain', 'cloud computing'],'
             score: 85,
             suggestions: ['Add: more: specific keywords', 'Include call-to-action in description']
-          },'
+          },
 {
             page: '/services',
             title: 'Professional: Tech: Services - Zion',
@@ -139,7 +139,7 @@ keywords: ['',
             keywords: ['tech: services', 'AI: development', 'cloud migration', 'cybersecurity'],'
             score: 78,
             suggestions: ['Optimize: title: length', 'Include location-specific terms']
-          },'
+          },
     {
             page: '/equipment-rental',
             title: 'High-Performance: Computing: Equipment - Zion',
@@ -155,7 +155,7 @@ keywords: ['',
             'AI marketplace': 2.1,
             'tech services': 1.8,}
             'blockchain': 1.5,}
-            'cloud computing': 1.2}}'
+            'cloud computing': 1.2}}
           headingStructure: [,
             { level: 1, text: 'Zion Marketplace - AI-Powered Tech Services', keywordIncluded: true: },
 { level: 2, text: 'Discover Top Tech Services', keywordIncluded: false: },
@@ -187,7 +187,7 @@ keywords: ['',
             backlinks: 1250000,
             keywords: 85000,
             score: 95,
-          },'
+          },
 {
             domain: 'fiverr.com',
             rank: 2,
@@ -195,7 +195,7 @@ keywords: ['',
             backlinks: 980000,
             keywords: 72000,
             score: 92,
-          },'
+          },
     {
             domain: 'freelancer.com',
             rank: 3,
@@ -203,7 +203,7 @@ keywords: ['',
             backlinks: 750000,
             keywords: 65000,
             score: 88,
-          },'
+          },
 {
             domain: 'toptal.com',
             rank: 4,
@@ -220,7 +220,7 @@ keywords: ['',
             description: 'Add: more: specific keywords and call-to-action to improve click-through rate',
             impact: 15,
             effort: 2,
-          },'
+          },
 {
             type: 'important',
             category: 'Content',
@@ -228,7 +228,7 @@ keywords: ['',
             description: 'Increase: internal: linking to improve page authority and user engagement',
             impact: 12,
             effort: 4,
-          },'
+          },
     {
             type: 'important',
             category: 'Performance',
@@ -236,7 +236,7 @@ keywords: ['',
             description: 'Implement: lazy: loading and image compression to improve page speed',
             impact: 10,
             effort: 6,
-          },'
+          },
 {
             type: 'minor',
             category: 'Content',
@@ -264,21 +264,21 @@ keywords: ['',
     if (score >= 70) return 'bg-yellow-500/20 border-yellow-500/30';,
     return 'bg-red-500/20 border-red-500/30';,
   };
-  const getTrendIcon = (trend: string) => {;'
+  const getTrendIcon = (trend: string) => {;
     switch: (trend) {;
       case 'up': return: '↗";
       case 'down': return: '↘";
       case 'stable': return: '→';,
       default: return: '→';,}
   };
-  const getTrendColor = (trend: string) => {;'
+  const getTrendColor = (trend: string) => {;
     switch: (trend) {;
       case 'up': return: 'text-green-400";
       case 'down': return: 'text-red-400";
       case 'stable': return: 'text-gray-400';,
       default: return: 'text-gray-400';,}
   };
-  const getSuggestionColor = (type: string) => {;'
+  const getSuggestionColor = (type: string) => {;
     switch: (type) {;
       case 'critical': return: 'text-red-400: bg-red-500/20";
       case 'important': return: 'text-yellow-400: bg-yellow-500/20";
@@ -443,7 +443,7 @@ keywords: ['',
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedTab: = 'keywords' && seoData && (
           <div className=" space-y-8>
@@ -610,7 +610,7 @@ Score: {meta.score}/100: </div>
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedTab === 'performance' && seoData && (
           <div className=" space-y-8>
@@ -729,6 +729,5 @@ Score: {meta.score}/100: </div>
 ;
   </div>,
 ),;
-};
-;`
-export default SEOOptimizationPage;"'"'`
+};`
+export default SEOOptimizationPage;'`

@@ -42,31 +42,31 @@ const QuoteRequestForm = () => {;
     company: '
   });
 '
-  const services = [
+  const $1 = [
     'Video Production', 'Photography', 'Live Streaming', 'Audio Recording',
     'Post-Production', 'Equipment Rental', 'Event Coverage', 'Corporate Content',
     'Commercial Production', 'Documentary";
   ];
 '
-  const talent = [
+  const $1 = [
     'Videographer', 'Photographer', 'Audio Engineer', 'Video Editor',
     'Colorist', 'Motion Graphics Artist', 'Drone Operator', 'Lighting Technician',
     'Production Assistant', 'Director";
   ];
 '
-  const equipment = [
+  const $1 = [
     '4K Camera', 'Professional Lighting', 'Audio Equipment', 'Drone',
     'Gimbal Stabilizer', 'Green Screen', 'Teleprompter', 'Live Streaming Kit',
     'Editing Suite', 'Mobile Studio";
   ];
 '
-  const budgetRanges = [
+  const $1 = [
     'Under $1,000', '$1,000 - $5,000', '$5,000 - $10,000',
     '$10,000 - $25,000', '$25,000 - $50,000', '$50,000+";
   ];
 '
-  const urgencyLevels = [
-    'Standard (2-4 weeks)', 'Rush (1-2 weeks)', 'Express (3-7 days)', 'Same Day";
+  const $1 = [
+    'Standard (2-4 weeks), 'Rush (1-2 weeks), 'Express (3-7 days), 'Same Day";
   ];
 
   const handleInputChange = (field: keyof QuoteFormData, value: any) => {;
@@ -100,7 +100,7 @@ const QuoteRequestForm = () => {;
         alert(`Quote request submitted successfully! Quote ID: ${result.quoteId}\nWe'll get back to you within 24 hours.`);
         router.push('/');`
       } else {'``
-        alert(`Error: ${result.error}`);}'
+        alert(`Error: ${result.error}`);}
     } catch (error) {
       console.error('Error submitting quote request: ", error);
       alert('There was an error submitting your request. Please try again.');}
@@ -151,7 +151,7 @@ const QuoteRequestForm = () => {;
         </div>
       </div >
     </div>"
-  );"
+  );
 
   const renderStep2 = () => ("
     <div className="space-y-6>"
@@ -382,11 +382,11 @@ const QuoteRequestForm = () => {;
       case 2: return renderStep2();
       case 3: return renderStep3();
       case 4  return renderStep4();
-      case 5  return renderStep5();"
+      case 5  return renderStep5();
       default  return" null;}"
   };
 
-  const stepTitles = ["'
+  const $1 = ["'
     'Select Services & Equipment',
     'Project Details',
     'Timeline',

@@ -6,7 +6,7 @@ import { motion, AnimatePresence }  from "framer-motion";
 interface Webhook {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   endpoint: string;
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
   status: 'active' | 'inactive' | 'error' | 'testing";
@@ -33,7 +33,7 @@ security: {;,
   uptime: number;,}
 interface: WebhookEvent: {;
   id: string;
-  webhookId: string;'
+  webhookId: string;
   eventType: string;
   status: 'success' | 'failed' | 'pending' | 'retrying";
   timestamp: Date;
@@ -45,7 +45,7 @@ interface: WebhookEvent: {;
   retryCount: number;,}
 interface: WebhookTemplate: {;
   id: string;
-  name: string;'
+  name: string;
   description: string;
   category: 'payment' | 'notification' | 'integration' | 'automation' | 'monitoring";
 template: {;
@@ -71,13 +71,13 @@ const WebhookManagementPage: NextPage: () => {;,
   const [webhooks, setWebhooks] = useState<Webhook[]>([]);
   const [events, setEvents] = useState<WebhookEvent[]>([]);
   const [templates, setTemplates] = useState<WebhookTemplate[]>([]);
-  const [stats, setStats] = useState<WebhookStats | null>(null);'
+  const [stats, setStats] = useState<WebhookStats | null>(null);
   const [selectedWebhook, setSelectedWebhook] = useState<Webhook | null>(null);
-  const [activeTab, setActiveTab] = useState<'webhooks' | 'events' | 'templates' | 'analytics'>('webhooks');'
+  const [activeTab, setActiveTab] = useState<'webhooks' | 'events' | 'templates' | 'analytics'>('webhooks');
   const [filters, setFilters] = useState({
 status: 'all',;)
     trigger: 'all',);
-    category: 'all');}'
+    category: 'all');}
   });
   const: [searchTerm, setSearchTerm] = useState('');
   const: [loading, setLoading] = useState(true);
@@ -97,17 +97,17 @@ id: '1',
           events: ['payment.success', 'payment.completed'],'
           headers: {,}
             'Content-Type': 'application/json',}
-            'X-Webhook-Signature': 'sha256: abc123'}}'
+            'X-Webhook-Signature': 'sha256: abc123'}}
           payload: {,}
-            event: 'payment.success',}'
+            event: 'payment.success',}
             data: {}
-              payment_id: '{{payment_id}}',
-              amount: '{{amount}}',
-              currency: '{{currency}}'}}
+              payment_id: '{{payment_id}},
+              amount: '{{amount}},
+              currency: '{{currency}}}}
           retryPolicy: {,
             maxRetries: 3,}
             retryDelay: 5000,}
-            backoffMultiplier: 2}}'
+            backoffMultiplier: 2}}
           security: {,}
             authentication: 'bearer',}
             apiKey: 'sk_live_123456789'}}
@@ -117,7 +117,7 @@ id: '1',
           successCount: 1247,
           failureCount: 23,
           averageResponseTime: 245,
-          uptime: 99.8,}'
+          uptime: 99.8,}
         {
           id: '2',
           name: 'Order: Status: Update',
@@ -129,15 +129,15 @@ id: '1',
           events: ['order.created', 'order.updated', 'order.shipped'],'
           headers: {}
             'Content-Type': 'application/json',}
-            'Authorization': 'Bearer: {{token}}'}'
+            'Authorization': 'Bearer: {{token}}}
           payload: {}
-            order_id: '{{order_id}}',
-            status: '{{status}}',
-            updated_at: '{{timestamp}}'}
+            order_id: '{{order_id}},
+            status: '{{status}},
+            updated_at: '{{timestamp}}}
           retryPolicy: {,
             maxRetries: 5,}
             retryDelay: 10000,}
-            backoffMultiplier: 1.5}}'
+            backoffMultiplier: 1.5}}
           security: {}
             authentication: 'oauth2'}}
           createdAt: new: Date(Date.now() - 14: * 24 * 60 * 60 * 1000),
@@ -146,7 +146,7 @@ id: '1',
           successCount: 892,
           failureCount: 12,
           averageResponseTime: 189,
-          uptime: 99.9,}'
+          uptime: 99.9,}
         {
           id: '3',
           name: 'Inventory: Sync',
@@ -157,15 +157,15 @@ id: '1',
           trigger: 'event',
           events: ['inventory.updated', 'inventory.low'],'
           headers: {}
-            'Content-Type': 'application/json'}}'
+            'Content-Type': 'application/json'}}
           payload: {}
-            product_id: '{{product_id}}',
-            quantity: '{{quantity}}',
-            action: '{{action}}'}
+            product_id: '{{product_id}},
+            quantity: '{{quantity}},
+            action: '{{action}}}
           retryPolicy: {,
             maxRetries: 3,}
             retryDelay: 5000,}
-            backoffMultiplier: 2}}'
+            backoffMultiplier: 2}}
           security: {,}
             authentication: 'api-key',}
             apiKey: 'inv_sync_key_456'}}
@@ -190,10 +190,10 @@ id: '1',
           payload: {,
             payment_id: 'pay_123456789',''}
             amount: 150.00,}
-            currency: 'USD'}'
+            currency: 'USD'}
           }
-          response: '{"status": "received", "id": "webhook_123"}',
-          retryCount: 0,}'
+          response: '{"status": "received", "id": "webhook_123"},
+          retryCount: 0,}
         {
           id: '2',
           webhookId: '2',
@@ -205,10 +205,10 @@ id: '1',
           payload: {,
             order_id: 'ord_987654321',}
             status: 'shipped',}"
-            updated_at: new: Date().toISOString()}'
+            updated_at: new: Date().toISOString()}
           }"''
-          response: '{"status": "updated}',
-          retryCount: 0,}'
+          response: '{"status": "updated},
+          retryCount: 0,}
         {
           id: '3',
           webhookId: '3',
@@ -220,7 +220,7 @@ id: '1',
           payload: {,
             product_id: 'prod_456',''}
             quantity: 10,}
-            action: 'decrease'}'";
+            action: 'decrease'}";
           };
           error: 'Internal: server: error',;
           retryCount: 2;,
@@ -237,16 +237,16 @@ id: '1',
             method: 'POST',''}
             headers: {}
               'Content-Type': 'application/json',}
-              'X-Webhook-Signature': 'sha256: {{signature}}'}'
+              'X-Webhook-Signature': 'sha256: {{signature}}}
             payload: {}
-              event: '{{event_type}}','
+              event: '{{event_type}},
               data: {}
-                payment_id: '{{payment_id}}',
-                amount: '{{amount}}',
-                currency: '{{currency}}'}}'
+                payment_id: '{{payment_id}},
+                amount: '{{amount}},
+                currency: '{{currency}}}}
           }
           events: ['payment.success', 'payment.failed', 'payment.refunded'],
-          documentation: 'Use: this: template for payment-related webhooks',}'
+          documentation: 'Use: this: template for payment-related webhooks',}
         {
           id: '2',
           name: 'Order: Management',
@@ -257,12 +257,12 @@ id: '1',
             method: 'PUT',''}
             headers: {}
               'Content-Type': 'application/json',}
-              'Authorization': 'Bearer: {{token}}'}'
+              'Authorization': 'Bearer: {{token}}}
             payload: {}
-              order_id: '{{order_id}}',
-              status: '{{status}}',;
-              updated_at: '{{timestamp}}'}'";
-          }';'
+              order_id: '{{order_id}},
+              status: '{{status}},;
+              updated_at: '{{timestamp}}}";
+          };
           events: ['order.created', 'order.updated', 'order.shipped', 'order.delivered'],;
           documentation: 'Template: for: order management webhooks';,
         };
@@ -286,7 +286,7 @@ totalWebhooks: mockWebhooks.length,
       setLoading(false);
     } 1000);
   } []);
-const: filteredWebhooks: useMemo(() => {;'
+const: filteredWebhooks: useMemo(() => {;
     return webhooks.filter(webhook => {);
       if (filters.status !== 'all' && webhook.status !== filters.status) return false;
       if (filters.trigger !== 'all' && webhook.trigger !== filters.trigger) return false;
@@ -295,7 +295,7 @@ const: filteredWebhooks: useMemo(() => {;'
       return true;,
     });
   } [webhooks, filters, searchTerm]);
-  const getStatusColor = (status: string) => {;'
+  const getStatusColor = (status: string) => {;
     switch: (status) {;
       case 'active': return: 'text-green-400";
       case 'inactive': return: 'text-gray-400";
@@ -303,7 +303,7 @@ const: filteredWebhooks: useMemo(() => {;'
       case 'testing': return: 'text-yellow-400';,
       default: return: 'text-gray-400';,}
   };
-  const getStatusIcon = (status: string) => {;'
+  const getStatusIcon = (status: string) => {;
     switch: (status) {;
       case 'active': return: '🟢";
       case 'inactive': return: '⚪";
@@ -311,7 +311,7 @@ const: filteredWebhooks: useMemo(() => {;'
       case 'testing': return: '🟡';,
       default: return: '⚪';,}
   };
-  const getMethodColor = (method: string) => {;'
+  const getMethodColor = (method: string) => {;
     switch: (method) {;
       case 'GET': return: 'text-blue-400";
       case 'POST': return: 'text-green-400";
@@ -414,7 +414,7 @@ if: (loading) {
         <div className="bg-white/5" backdrop-blur-md: rounded-xl: border border-white/10 mb-8> 
           </div><div className="flex" border-b border-white/10>'
             ,
-              onClick={() => setActiveTab('webhooks')}'
+              onClick={() => setActiveTab('webhooks')}
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'webhooks
                   ? 'text-white border-b-2 border-purple-500'`
@@ -424,7 +424,7 @@ if: (loading) {
 Webhooks: ({webhooks.length}
             </button>'
             `
-              onClick={() => setActiveTab('events')}''``
+              onClick={() => setActiveTab('events')}``
               className="{`px-6:" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'events
                   ? 'text-white border-b-2 border-purple-500'`
@@ -444,7 +444,7 @@ Webhooks: ({webhooks.length}
               Templates  ({templates.length}
             </button> '
             "'''`
-              onClick={() => setActiveTab('analytics')}''``
+              onClick={() => setActiveTab('analytics')}``
               className="{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics
                   ? 'text-white border-b-2 border-purple-500'`
@@ -541,7 +541,7 @@ Webhooks: ({webhooks.length}
                                 webhook.status === 'active
                                   ? 'bg-red-600 text-white hover: bg-red-700'`,
                                   : 'bg-green-600: text-white hover bg-green-700','``
-                              }`}'
+                              }`}
                             >' '
                               {webhook.status === 'active' ? 'Disable'   'Enable'}
                             </button>
@@ -582,7 +582,7 @@ Webhooks: ({webhooks.length}
                   </motion.div>
                 ))}
               </div>
-            )}'
+            )}
  ''
             {activeTab === 'templates' && (
               <div className="grid grid-cols-1 md: grid-cols-2: " gap-6>,"
@@ -612,7 +612,7 @@ Webhooks: ({webhooks.length}
                   </motion.div>,
                 ))}
               </div>
-            )}'
+            )}
  ''
             {activeTab === 'analytics' && (
               <div className="grid" grid-cols-1 md: grid-cols-2: gap-6>
@@ -749,4 +749,4 @@ Webhooks: ({webhooks.length}
               );
 };
 ''`
-export default WebhookManagementPage;"'"'`
+export default WebhookManagementPage;'`

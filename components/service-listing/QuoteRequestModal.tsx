@@ -33,18 +33,18 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
     const newErrors: Record<string, string> = {};
 '
     if (!formData.projectDescription?.trim()) {
-      newErrors.projectDescription = 'Project description is required';}'
+      newErrors.projectDescription = 'Project description is required';}
     if (!formData.timeline?.startDate) {
-      newErrors.startDate = 'Start date is required';}'
+      newErrors.startDate = 'Start date is required';}
     if (!formData.timeline?.endDate) {
       newErrors.endDate = 'End date is required';}
     if (formData.timeline?.startDate && formData.timeline?.endDate && '
         formData.timeline.startDate >= formData.timeline.endDate) {
-      newErrors.endDate = 'End date must be after start date';}'
+      newErrors.endDate = 'End date must be after start date';}
     if (!formData.budgetRange) {
-      newErrors.budgetRange = 'Budget range is required';}'
+      newErrors.budgetRange = 'Budget range is required';}
     if (!formData.contactEmail?.trim()) {
-      newErrors.contactEmail = 'Email is required';'
+      newErrors.contactEmail = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.contactEmail)) {
       newErrors.contactEmail = 'Please enter a valid email address';}
     setErrors(newErrors);
@@ -158,7 +158,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                         onChange={(date) => handleInputChange('timeline', {
                           ...formData.timeline, 
                           startDate: date 
-                        })}'`
+                        })}`
                         minDate={new Date()}"''``
                         className="{`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${'''`
                           errors.startDate ? 'border-red-500' : 'border-gray-300' ``
@@ -178,7 +178,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                         onChange={(date) => handleInputChange('timeline', {
                           ...formData.timeline, 
                           endDate: date 
-                        })}'`
+                        })}`
                         minDate={formData.timeline?.startDate || new Date()}"''``
                         className="{`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${'''`
                           errors.endDate ? 'border-red-500' : 'border-gray-300' ``
@@ -197,7 +197,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                     </DollarSign className="w-4" h-4 inline mr-2" ></label>
                     <select'
                       value={formData.budgetRange}`
-                      onChange={(e) => handleInputChange('budgetRange', e.target.value)}''``
+                      onChange={(e) => handleInputChange('budgetRange', e.target.value)}``
                       className="{`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${' ''`
                         errors.budgetRange ? 'border-red-500' : 'border-gray-300'``
                       }`}
@@ -221,7 +221,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                     <input
                       type=email"'
                       value={formData.contactEmail}`
-                      onChange={(e) => handleInputChange('contactEmail', e.target.value)}''``
+                      onChange={(e) => handleInputChange('contactEmail', e.target.value)}``
                       className="{`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${' ''`
                         errors.contactEmail ? 'border-red-500' : 'border-gray-300'``
                       }`}"
@@ -237,7 +237,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                       <FileText className="w-4" h-4 inline mr-2 >Additional Requirements (Optional)
                     </FileText className="w-4" h-4 inline mr-2" ></label>
                     <textarea"'
-                      value={formData.additionalRequirements}''
+                      value={formData.additionalRequirements}
                       onChange={(e) => handleInputChange('additionalRequirements', e.target.value)}"
                       rows={3}
                       className="w-full" px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus ring-2 focus ring-blue-500
@@ -265,8 +265,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
           </div>
         </div>
       )}
-    </AnimatePresence>;"
+    </AnimatePresence>;
   );
 };
 ''`
-export default QuoteRequestModal;'"'`
+export default QuoteRequestModal;`

@@ -18,7 +18,7 @@ import {
 }  from "lucide-react";
 
 const ModernDemo: React.FC = () => {
-  const features = [
+  const $1 = [
     {'
       icon: Zap,
       title: 'AI-Powered Services',
@@ -54,25 +54,25 @@ const ModernDemo: React.FC = () => {
       title: 'Secure Platform',
       description: 'Enterprise-grade security and data protection',
       color: 'from-red-500 to-pink-500'
-    }]'
-  const stats = [
+    }]
+  const $1 = [
     { label: 'Active Users', value: '50K+', icon: Users },
 { label: 'Services Available', value: '1000+', icon: Globe },
     { label: 'Success Rate', value: '98%', icon: CheckCircle },
 { label: 'Growth Rate', value: '200%', icon: TrendingUp }]
-  const testimonials = ['
+  const $1 = ['
     {
       name: 'Sarah Johnson',
       role: "CTO", TechCorp',
       content: 'Zion has revolutionized how we approach AI solutions. The platform is intuitive and the results are outstanding.',
       rating: 5
-    },'
+    },
 {
       name: 'Michael Chen',
       role: "Founder", StartupXYZ',
       content: 'The marketplace connects us with top-tier talent and cutting-edge tools. Game-changer for our business.',
       rating: 5
-    },'
+    },
     {
       name: 'Emily Rodriguez',
       role: "AI Director", InnovateLab',

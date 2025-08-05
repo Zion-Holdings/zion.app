@@ -1,17 +1,17 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 const Partners: NextPage = () => {'
   const [activeCategory, setActiveCategory] = useState('all'
-  const categories = ['
+  const $1 = ['
 },
     { id: 'all', name: 'All Partners' },
 { id: 'technology', name: 'Technology' },
     { id: 'consulting', name: 'Consulting' },
 { id: 'education', name: 'Education' },
     { id: 'research', name: 'Research' }]
-  const partners = [
+  const $1 = [
     {'
       id: 1,
       name: 'TechCorp Solutions',
@@ -72,7 +72,7 @@ const Partners: NextPage = () => {'
       website: 'https://innovationlabs.org',
       partnershipType: 'Research Partner
     }]
-  const partnershipTypes = ['
+  const $1 = ['
     {
       type: 'Technology Partners',
       description: 'Integrate your technology solutions with Zion\'s marketplace platform.','
@@ -83,7 +83,7 @@ const Partners: NextPage = () => {'
         'Technical collaboration and support
       ],
       icon: '🔧'
-    },'
+    },
 {
       type: 'Consulting Partners',
       description: 'Provide expert consulting services through Zion\'s marketplace.','
@@ -94,7 +94,7 @@ const Partners: NextPage = () => {'
         'Revenue sharing and commission structure
       ],
       icon: '💼'
-    },'
+    },
     {
       type: 'Education Partners',
       description: 'Offer educational programs and training through Zion\'s platform.','
@@ -105,7 +105,7 @@ const Partners: NextPage = () => {'
         'Revenue sharing and partnership programs
       ],
       icon: '🎓'
-    },'
+    },
 {
       type: 'Research Partners',
       description: 'Collaborate on research initiatives and innovation projects.','
@@ -116,7 +116,7 @@ const Partners: NextPage = () => {'
         'Academic and industry collaboration
       ],
       icon: '🔬'
-    }]'
+    }]
   const filteredPartners = activeCategory === 'all
     ? partners 
     : partners.filter(partner => partner.category === activeCategory

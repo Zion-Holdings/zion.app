@@ -6,7 +6,7 @@ interface Candidate {
   id: string;
   name: string;
   position: string;
-  experience: string;'
+  experience: string;
   skills: string[];
   status: 'applied' | 'screening' | 'interviewing' | 'offered' | 'hired' | 'rejected";
   score: number;
@@ -35,7 +35,7 @@ interface Employee {
 interface JobPosting {
   id: string;
   title: string;
-  department: string;'
+  department: string;
   location: string;
   type: 'full-time' | 'part-time' | 'contract' | 'internship";
   status: 'active' | 'paused' | 'closed";
@@ -54,8 +54,8 @@ interface PerformanceReview {
   goals: string[];
   achievements: string[];
   areasForImprovement: string[];
-  aiRecommendations: string[];}'
-const AIHRManagement: React.FC = () => {';'
+  aiRecommendations: string[];}
+const AIHRManagement: React.FC = () => {';
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [loading, setLoading] = useState(false);
@@ -80,7 +80,7 @@ const AIHRManagement: React.FC = () => {';'
         growthPotential: 90,
         riskAssessment: 12'
       }
-      lastUpdated: '2024-01-15'}'
+      lastUpdated: '2024-01-15'}
     {
       id: '2',
       name: 'Michael Chen',
@@ -95,7 +95,7 @@ const AIHRManagement: React.FC = () => {';'
         growthPotential: 92,
         riskAssessment: 18'
       }
-      lastUpdated: '2024-01-14'}'
+      lastUpdated: '2024-01-14'}
     {
       id: '3',
       name: 'Emily Rodriguez',
@@ -126,7 +126,7 @@ const AIHRManagement: React.FC = () => {';'
         innovation: 91}
       engagement: 88,'
       retentionRisk: 15,
-      developmentNeeds: ['Leadership Skills', 'System Architecture']}'
+      developmentNeeds: ['Leadership Skills', 'System Architecture']}
     {
       id: '2',
       name: 'Lisa Wang',
@@ -140,7 +140,7 @@ const AIHRManagement: React.FC = () => {';'
         innovation: 88}
       engagement: 92,'
       retentionRisk: 8,
-      developmentNeeds: ['Data Analytics', 'Strategic Planning']}'
+      developmentNeeds: ['Data Analytics', 'Strategic Planning']}
     {
       id: '3',
       name: 'James Wilson',
@@ -168,7 +168,7 @@ const AIHRManagement: React.FC = () => {';'
       aiOptimization: {
         keywordOptimization: 92,
         diversityScore: 78,
-        marketCompetitiveness: 85}}'
+        marketCompetitiveness: 85}}
     {
       id: '2',
       title: 'Product Marketing Specialist',
@@ -180,7 +180,7 @@ const AIHRManagement: React.FC = () => {';'
       aiOptimization: {
         keywordOptimization: 88,
         diversityScore: 82,
-        marketCompetitiveness: 79}}'
+        marketCompetitiveness: 79}}
     {
       id: '3',
       title: 'Data Scientist',
@@ -205,7 +205,7 @@ const AIHRManagement: React.FC = () => {';'
       achievements: ['Successfully launched new product feature', 'Improved team productivity by 25%'],
       areasForImprovement: ['Communication with non-technical stakeholders'],
       aiRecommendations: ['Consider leadership training program', 'Schedule regular stakeholder updates']
-    },'
+    },
 {
       id: '2',
       employeeId: '2',
@@ -233,21 +233,21 @@ const AIHRManagement: React.FC = () => {';'
   };
 
   const exportHRData = () => {
-    const data = {
+    const $1 = {
       candidates,
       employees,
       jobPostings,
-      performanceReviews;'
+      performanceReviews;
     };
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });'
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');'
+    const a = document.createElement('a');
     a.href = url;
     a.download = 'hr-data.json";
     a.click();
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'hired': return 'bg-green-500";
       case 'offered': return 'bg-blue-500";
       case 'interviewing': return 'bg-yellow-500";
@@ -308,7 +308,7 @@ const AIHRManagement: React.FC = () => {';'
             </button>
           </div>
         </div>
-        {/* Navigation Tabs */}'
+        {/* Navigation Tabs */}
         <div className="flex" flex-wrap justify-center mb-8>
           {['overview', 'recruitment', 'employees', 'performance', 'analytics'].map((tab) => (
               onClick={() => setActiveTab(tab)}
@@ -383,7 +383,7 @@ const AIHRManagement: React.FC = () => {';'
                 </div>
               </div>
             </div>'
-          )},'"'
+          )},"'
 {activeTab === 'recruitment' && (
             <div className="space-y-8>" 
               </div><div className="flex justify-between" items-center>
@@ -548,7 +548,7 @@ const AIHRManagement: React.FC = () => {';'
                 </div>
               </div>
             </div>
-          )}'
+          )}
 "''
           {activeTab === 'performance' && (
             <div className="space-y-8">
@@ -763,7 +763,7 @@ const AIHRManagement: React.FC = () => {';'
         </div>
       </footer>
                             </div>
-        </div >;  );"
+        </div >;  );
 };
 ''`
-export default AIHRManagement;"'"'`
+export default AIHRManagement;'`

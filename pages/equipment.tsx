@@ -1,5 +1,5 @@
 
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import Link from "next/link";
 
@@ -52,5 +52,5 @@ const Equipment: NextPage = () => {
 ;
 };
 "
-export default Equipment;'
+export default Equipment;
 )"'"

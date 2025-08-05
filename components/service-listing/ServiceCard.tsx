@@ -8,7 +8,7 @@ interface ServiceCardProps {
   onRequestQuote: (service: Service) => void;}
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) => {
   const renderStars = (rating: number) => {;
-    const stars = [];
+    const $1 = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 
@@ -19,9 +19,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       stars.push(
         </ fullStars; i++) {'
       stars.push("''
-        <Star key={i} className=" w-4 h-4 text-yellow-400 fill-current ><Star key=" half" className="w-4 h-4 text-yellow-400 fill-current style={{ clipPath: 'inset(0 50% 0 0)' }} >);}'
+        <Star key={i} className=" w-4 h-4 text-yellow-400 fill-current ><Star key=" half" className="w-4 h-4 text-yellow-400 fill-current style={{ clipPath: 'inset(0 50% 0 0) }} >);}
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0); ''
-    for (let i = 0; i </Star key= half" className=" w-4 h-4 text-yellow-400 fill-current style={{ clipPath:" 'inset(0 50% 0 0)' }} >< emptyStars; i++) {"
+    for (let i = 0; i </Star key= half" className=" w-4 h-4 text-yellow-400 fill-current style={{ clipPath:" 'inset(0 50% 0 0) }} >< emptyStars; i++) {"
       stars.push(
         <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300 >);}
     return stars;
@@ -33,7 +33,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,;
     });
-    const formattedPrice = formatter.format(price.from);'
+    const formattedPrice = formatter.format(price.from);
     `
     if (price.type = == 'hourly') {;``
       return `From ${formattedPrice}/hr`;`
@@ -146,8 +146,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
           Request Quote
         </motion.button>
       </div>
-    </motion.div>;"
+    </motion.div>;
   );
 };
 ''`
-export default ServiceCard;'"'`
+export default ServiceCard;`

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Contract {
-  id: string;'
+  id: string;
   title: string;
   type: 'service' | 'employment' | 'partnership' | 'nda' | 'licensing' | 'custom";
   status: 'draft' | 'pending' | 'active' | 'completed' | 'disputed' | 'terminated";
@@ -15,14 +15,14 @@ interface Contract {
   currency: string;
   startDate: Date;
   endDate?: Date;
-  aiGenerated: boolean;'
+  aiGenerated: boolean;
   complianceScore: number;
   riskLevel: 'low' | 'medium' | 'high";
   legalReview: LegalReview;
   signatures: Signature[];
   attachments: Attachment[];}
 interface ContractParty {
-  id: string;'
+  id: string;
   name: string;
   type: 'client' | 'provider' | 'both";
   email: string;
@@ -35,12 +35,12 @@ interface ContractTerm {
   section: string;
   title: string;
   content: string;
-  aiGenerated: boolean;'
+  aiGenerated: boolean;
   compliance: boolean;
   riskLevel: 'low' | 'medium' | 'high";
   recommendations: string[];}
 interface LegalReview {
-  id: string;'
+  id: string;
   reviewer: string;
   status: 'pending' | 'approved' | 'rejected' | 'needs-revision";
   comments: string[];
@@ -63,7 +63,7 @@ interface Attachment {
   uploadedAt: Date;
   aiAnalyzed: boolean;}
 interface Dispute {
-  id: string;'
+  id: string;
   contractId: string;
   type: 'payment' | 'delivery' | 'quality' | 'timeline' | 'other";
   status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed";
@@ -108,7 +108,7 @@ interface LegalTemplate {
   preview: string;}
 interface ComplianceCheck {
   id: string;
-  contractId: string;'
+  contractId: string;
   checkType: string;
   status: 'pass' | 'fail' | 'warning";
   description: string;
@@ -124,7 +124,7 @@ interface ContractLegalAnalytics {
   aiOptimizationScore: number;
   aiInsights: {
     id: string;
-    title: string;'
+    title: string;
     description: string;
     impact: 'positive' | 'negative' | 'neutral";
     confidence: number;
@@ -134,7 +134,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
   const [contracts, setContracts] = useState<Contract[]>([]
   const [disputes, setDisputes] = useState<Dispute[]>([]
   const [templates, setTemplates] = useState<LegalTemplate[]>([]
-  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]'
+  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]
   const [analytics, setAnalytics] = useState<ContractLegalAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'contracts' | 'disputes' | 'templates' | 'compliance' | 'analytics'>('contracts
   const [selectedStatus, setSelectedStatus] = useState<string>('all
@@ -156,7 +156,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
           email: 'contact@ziontech.com',
           address: "123 Tech Street", Innovation City',
           verified: true}
-        },'
+        },
 {
           id: '2',
           name: 'Client Corp',
@@ -256,7 +256,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
   const filteredContracts = useMemo(() => {
     let filtered = contracts'
     if (selectedStatus !== 'all') {
-      filtered = filtered.filter(c => c.status === selectedStatus}'
+      filtered = filtered.filter(c => c.status === selectedStatus}
     if (selectedType !== 'all') {
       filtered = filtered.filter(c => c.type === selectedType}
     return filtered.sort((a, b) => {'
@@ -292,7 +292,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
       case 'low': return 'bg-green-500/20 text-green-300
       case 'medium': return 'bg-yellow-500/20 text-yellow-300
       case 'high': return 'bg-red-500/20 text-red-300
-      default: return 'bg-gray-500/20 text-gray-300'}}'
+      default: return 'bg-gray-500/20 text-gray-300'}}
   const getComplianceColor = (score: number) => {
     if (score >= 90) return 'bg-green-500/20 text-green-300
     if (score >= 70) return 'bg-yellow-500/20 text-yellow-300
@@ -357,7 +357,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                 Contracts ({contracts.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('disputes')}''``
+                onClick={() => setActiveTab('disputes')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'disputes
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -367,7 +367,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                 Disputes ({disputes.length}
               </button>'
               `
-                onClick={() => setActiveTab('templates')}''``
+                onClick={() => setActiveTab('templates')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'templates
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -377,7 +377,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                 Templates ({templates.length}
               </button>'
               `
-                onClick={() => setActiveTab('compliance')}''``
+                onClick={() => setActiveTab('compliance')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'compliance
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -387,7 +387,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                 Compliance Checks
               </button>'
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -523,7 +523,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Disputes Tab */},"''
 {activeTab === 'disputes' && (
               <div className="space-y-6>" 
@@ -602,7 +602,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Templates Tab */},"''
 {activeTab === 'templates' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
@@ -646,7 +646,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                     </button>
                   </div > ))}
               </div>
-            )}'
+            )}
             {/* Compliance Tab */},"''
 {activeTab === 'compliance' && (
               <div className="space-y-6>" 
@@ -684,7 +684,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                     </button>
                   </div > ))}
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && (
               <div className="space-y-6">

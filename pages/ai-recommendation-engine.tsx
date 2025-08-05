@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect }  from "react";
 import Link from "next/link";
 import { Home, Search, User }  from "lucide-react";
 interface Recommendation {'
   id: string;
-  type: 'service' | 'talent' | 'equipment' | 'product";
+  type: "service" | "talent" | "equipment" | "product";
   title: string;
   description: string;
   matchScore: number;
@@ -31,7 +31,7 @@ const AIRecommendationEngine: NextPage = () => {
 };
   });
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);'
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisProgress, setAnalysisProgress] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const $1: $2[] = [
@@ -51,7 +51,7 @@ const AIRecommendationEngine: NextPage = () => {
         'Provider has 8+ years experience in ML',
         'Previous projects similar to your needs',
         'Excellent client satisfaction rate']
-    },'
+    },
 {
       id: '2',
       type: 'talent',
@@ -68,7 +68,7 @@ const AIRecommendationEngine: NextPage = () => {
         'Available for your timeline',
         'Strong background in similar projects',
         'High success rate with clients']
-    },'
+    },
     {
       id: '3',
       type: 'equipment',
@@ -85,7 +85,7 @@ const AIRecommendationEngine: NextPage = () => {
         'Cost-effective for your budget',
         'Scalable as your project grows',
         'Includes technical support']
-    },'
+    },
 {
       id: '4',
       type: 'service',
@@ -104,7 +104,7 @@ const AIRecommendationEngine: NextPage = () => {
         'Post-migration support included']}
   ];
 '
-  const categories = [
+  const $1 = [
     { id: 'all', name: 'All Recommendations', icon: '🎯' },
 { id: 'service', name: 'IT Services', icon: '💻' },
     { id: 'talent', name: 'AI Talents', icon: '🤖' },
@@ -112,7 +112,7 @@ const AIRecommendationEngine: NextPage = () => {
     { id: 'product', name: 'Products', icon: '🚀' };
   ];
 '
-  const budgetOptions = [
+  const $1 = [
     'Under $1,000',
     '$1,000 - $5,000',
     '$5,000 - $15,000',
@@ -120,21 +120,21 @@ const AIRecommendationEngine: NextPage = () => {
     '$50,000+";
   ];
 '
-  const timelineOptions = [
+  const $1 = [
     '1-2 weeks',
     '1-2 months',
     '3-6 months',
     '6+ months";
   ];
 '
-  const expertiseLevels = [
+  const $1 = [
     'Beginner',
     'Intermediate',
     'Advanced',
     'Expert";
   ];
 '
-  const projectTypes = [
+  const $1 = [
     'AI/ML Development',
     'Web Development',
     'Mobile App',
@@ -186,7 +186,7 @@ const AIRecommendationEngine: NextPage = () => {
       setAnalysisProgress(100);
       
       // Set the recommendations from the API
-      setRecommendations(data.recommendations);'
+      setRecommendations(data.recommendations);
     } catch (error) {
       console.error('Error getting AI recommendations: , error);
       // Fallback to mock data if API fails

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -36,7 +36,7 @@ interface TeleportationProtocol {
 interface QuantumNetwork {
   id: string
   name: string
-  nodes: string[]'
+  nodes: string[]
   connections: { from: string; to: string; fidelity: number }[]
   topology: 'linear' | 'star' | 'mesh' | 'hierarchical
   totalQubits: number
@@ -103,7 +103,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
       nodes: ['Node A', 'Node B', 'Node C'],'
       connections: [
         { from: 'Node A', to: 'Node B', fidelity: 98.5 },
-{ from: 'Node B', to: 'Node C', fidelity: 97.2}'
+{ from: 'Node B', to: 'Node C', fidelity: 97.2}
       ],
       topology: 'linear',
       totalQubits: 24,
@@ -222,7 +222,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
           {/* Tab Content */} 
           <div className="space-y-8">
             
-            {/* Quantum Dashboard */},'
+            {/* Quantum Dashboard */},
 {activeTab === 'dashboard' && (
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
@@ -281,7 +281,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum States */},''
+            {/* Quantum States */},
 {activeTab === 'states' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum State Management</h2>
@@ -322,7 +322,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Entanglement */},"''
 {activeTab === 'entanglement' && (
               <div className="space-y-6>"
@@ -362,7 +362,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Teleportation */}, ''
 {activeTab === 'teleportation' && (
               <div className="space-y-6>"
@@ -410,7 +410,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Networks */},''
+            {/* Quantum Networks */},
 {activeTab === 'networks' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Network Management</h2>
@@ -456,7 +456,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
                 </div>
               </div>
             )}"'
-            {/* Quantum Memory */},''
+            {/* Quantum Memory */},
 {activeTab === 'memory' && ("
               <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Memory Management</h2>
@@ -524,7 +524,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {'
   </div>
 
   </div >
-  </div> ;"
+  </div> ;
 };
 ''`
 export default AIPoweredQuantumEntanglementTeleportation )))))))))))))))))))))"'"'`

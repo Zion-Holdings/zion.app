@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
   const [threatDetection, setThreatDetection] = useState<ThreatDetection[]>([]
   const [securityAnalytics, setSecurityAnalytics] = useState<SecurityAnalytics[]>([]
   const [incidentResponse, setIncidentResponse] = useState<IncidentResponse[]>([]
-  const [securityOptimization, setSecurityOptimization] = useState<SecurityOptimization[]>([]'
+  const [securityOptimization, setSecurityOptimization] = useState<SecurityOptimization[]>([]
   const [data, setData] = useState<SecurityData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'threats' | 'analytics' | 'response' | 'optimization' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         accuracyScore: 9.6,'
         threatLevel: 7.2,
         detectionInsights: ['Advanced malware patterns detected', 'Behavioral analysis effective', 'Real-time threat blocking working'],
-        recommendations: ['Enhance behavioral analysis', 'Expand threat intelligence', 'Improve response automation']}}}'
+        recommendations: ['Enhance behavioral analysis', 'Expand threat intelligence', 'Improve response automation']}}}
     {
       id: '2',
       name: 'Intrusion Detection System',
@@ -116,7 +116,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         accuracyScore: 9.4,'
         threatLevel: 6.8,
         detectionInsights: ['Network anomalies detected', 'Traffic pattern analysis effective', 'Real-time alerts working'],
-        recommendations: ['Optimize detection algorithms', 'Enhance traffic analysis', 'Improve alert accuracy']}}'
+        recommendations: ['Optimize detection algorithms', 'Enhance traffic analysis', 'Improve alert accuracy']}}
     {
       id: '3',
       name: 'Anomaly Detection Engine',
@@ -146,7 +146,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         monitoringAccuracy: 9.7,'
         riskAssessmentScore: 8.9,
         optimizationOpportunities: ['Improve monitoring coverage', 'Enhance alert accuracy', 'Expand analytics scope'],
-        improvementStrategies: ['Implement advanced monitoring', 'Enhance alert systems', 'Expand analytics coverage']}}'
+        improvementStrategies: ['Implement advanced monitoring', 'Enhance alert systems', 'Expand analytics coverage']}}
     {
       id: '2',
       name: 'Vulnerability Assessment System',
@@ -160,7 +160,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         monitoringAccuracy: 9.4,'
         riskAssessmentScore: 8.6,
         optimizationOpportunities: ['Enhance vulnerability scanning', 'Improve risk assessment', 'Expand assessment coverage'],
-        improvementStrategies: ['Implement advanced scanning', 'Enhance risk assessment', 'Expand assessment scope']}}'
+        improvementStrategies: ['Implement advanced scanning', 'Enhance risk assessment', 'Expand assessment scope']}}
     {
       id: '3',
       name: 'Risk Analysis Engine',
@@ -190,7 +190,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         responseEfficiency: 9.5,'
         automationLevel: 9.2,
         improvementAreas: ['Enhance response automation', 'Improve response speed', 'Expand automation scope'],
-        recommendations: ['Optimize automation algorithms', 'Enhance response speed', 'Expand automation coverage']}}'
+        recommendations: ['Optimize automation algorithms', 'Enhance response speed', 'Expand automation coverage']}}
     {
       id: '2',
       name: 'Incident Coordination Platform',
@@ -204,7 +204,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         responseEfficiency: 9.2,'
         automationLevel: 8.8,
         improvementAreas: ['Improve coordination efficiency', 'Enhance team collaboration', 'Expand coordination scope'],
-        recommendations: ['Optimize coordination workflows', 'Enhance team collaboration', 'Expand coordination coverage']}}'
+        recommendations: ['Optimize coordination workflows', 'Enhance team collaboration', 'Expand coordination coverage']}}
     {
       id: '3',
       name: 'Forensic Analysis System',
@@ -230,12 +230,12 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         totalThreats: 1250,
         preventionRate: 95,
         costSavings: 850000,
-        securityScore: 92}'
+        securityScore: 92}
       aiAnalysis: {
         insights: ['Security automation prevented 95% of threats', 'Automated response reduced incident time by 60%'],
         trends: ['Improving threat prevention', 'Reducing response times', 'Enhancing security efficiency'],
         recommendations: ['Expand automation coverage', 'Enhance automation capabilities', 'Implement continuous improvement'],
-        impactScore: 9.1}}'
+        impactScore: 9.1}}
     {
       id: '2',
       name: 'Threat Intelligence System',
@@ -245,12 +245,12 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         totalThreats: 980,
         preventionRate: 92,
         costSavings: 650000,
-        securityScore: 89}'
+        securityScore: 89}
       aiAnalysis: {
         insights: ['Threat intelligence improved detection by 92%', 'Real-time intelligence reduced response time by 45%'],
         trends: ['Improving threat detection', 'Reducing response times', 'Enhancing intelligence sharing'],
         recommendations: ['Expand intelligence coverage', 'Enhance intelligence sharing', 'Implement continuous improvement'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Security Policy Management',
@@ -260,7 +260,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         totalThreats: 1100,
         preventionRate: 88,
         costSavings: 720000,
-        securityScore: 87}'
+        securityScore: 87}
       aiAnalysis: {
         insights: ['Policy automation improved compliance by 88%', 'Automated policy enforcement reduced violations by 70%'],
         trends: ['Improving policy compliance', 'Reducing policy violations', 'Enhancing policy enforcement'],
@@ -281,7 +281,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI security coverage', 'Implement predictive analytics', 'Enhance threat intelligence']
-      },'
+      },
 {
         id: '2',
         title: 'Smart Security Analytics Driving Proactive Defense',
@@ -337,14 +337,14 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
       case 'positive': return '🛡️
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredThreatDetection = useMemo(() => {'
@@ -452,7 +452,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Threat Detection Overview */}
@@ -498,14 +498,14 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'threats' && ("
           <div className="space-y-6>" 
             {/* System Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'malware-detection', 'intrusion-detection', 'anomaly-detection', 'phishing-detection', 'ransomware-protection', 'zero-day-detection'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
@@ -627,7 +627,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'optimization' && (
           <div className="space-y-6>" 
@@ -665,7 +665,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'insights' && data && (
           <div className="space-y-6>

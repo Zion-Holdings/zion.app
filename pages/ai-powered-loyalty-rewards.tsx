@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ interface UserProfile {
 interface Badge {
   id: string;
   name: string;
-  description: string;'
+  description: string;
   icon: string;
   category: 'transaction' | 'social' | 'skill' | 'milestone' | 'special";
   rarity: 'common' | 'rare' | 'epic' | 'legendary";
@@ -42,7 +42,7 @@ interface Achievement {
   aiRecommended: boolean;}
 interface Reward {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'discount' | 'bonus' | 'feature' | 'exclusive' | 'cashback";
   value: number;
@@ -54,7 +54,7 @@ interface Reward {
   usageCount: number;
   maxUsage?: number;}
 interface Leaderboard {
-  id: string;'
+  id: string;
   name: string;
   category: 'points' | 'transactions' | 'streak' | 'reviews' | 'referrals";
   period: 'daily' | 'weekly' | 'monthly' | 'all-time";
@@ -72,7 +72,7 @@ interface LeaderboardEntry {
   change: number;}
 interface GamificationEvent {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   type: 'challenge' | 'competition' | 'quest' | 'seasonal";
   startDate: Date;
@@ -95,7 +95,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
   const [achievements, setAchievements] = useState<Achievement[]>([]
   const [rewards, setRewards] = useState<Reward[]>([]
   const [leaderboards, setLeaderboards] = useState<Leaderboard[]>([]
-  const [events, setEvents] = useState<GamificationEvent[]>([]'
+  const [events, setEvents] = useState<GamificationEvent[]>([]
   const [pointsHistory, setPointsHistory] = useState<PointsHistory[]>([]
   const [activeTab, setActiveTab] = useState<'profile' | 'badges' | 'achievements' | 'rewards' | 'leaderboards' | 'events'>('profile
   const [isLoading, setIsLoading] = useState(true
@@ -117,7 +117,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         category: 'transaction',
         rarity: 'common',
         unlockedAt: new Date('2024-01-05'}
-      },'
+      },
 {
         id: '2',
         name: 'Power User',
@@ -126,7 +126,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         category: 'milestone',
         rarity: 'rare',
         unlockedAt: new Date('2024-01-15'
-      },'
+      },
     {
         id: '3',
         name: 'AI Enthusiast',
@@ -147,7 +147,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         progress: 1,
         maxProgress: 1,
         aiRecommended: true
-      },'
+      },
 {
         id: '2',
         name: 'Skill Master',
@@ -174,7 +174,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       category: 'transaction',
       rarity: 'common',
       unlockedAt: new Date('2024-01-05'
-    },'
+    },
 {
       id: '2',
       name: 'Power User',
@@ -183,7 +183,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       category: 'milestone',
       rarity: 'rare',
       unlockedAt: new Date('2024-01-15'
-    },'
+    },
     {
       id: '3',
       name: 'AI Enthusiast',
@@ -192,7 +192,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       category: 'skill',
       rarity: 'epic',
       unlockedAt: new Date('2024-01-20'
-    },'
+    },
 {
       id: '4',
       name: 'Community Helper',
@@ -202,7 +202,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       rarity: 'rare',
       progress: 18,
       maxProgress: 25
-    },'
+    },
     {
       id: '5',
       name: 'Legendary Trader',
@@ -225,7 +225,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       progress: 1,
       maxProgress: 1,
       aiRecommended: true
-    },'
+    },
 {
       id: '2',
       name: 'Skill Master',
@@ -236,7 +236,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       progress: 7,
       maxProgress: 10,
       aiRecommended: false
-    },'
+    },
     {
       id: '3',
       name: 'AI Power User',
@@ -247,7 +247,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       progress: 3,
       maxProgress: 5,
       aiRecommended: true
-    },'
+    },
 {
       id: '4',
       name: 'Referral Champion',
@@ -273,7 +273,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       aiRecommended: true,
       usageCount: 0,
       maxUsage: 3
-    },'
+    },
 {
       id: '2',
       name: 'Exclusive AI Consultation',
@@ -285,7 +285,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       aiRecommended: true,
       usageCount: 0,
       maxUsage: 1
-    },'
+    },
     {
       id: '3',
       name: 'Cashback Bonus',
@@ -339,7 +339,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       participants: 456,
       maxParticipants: 1000,
       aiOptimized: true
-    },'
+    },
 {
       id: '2',
       name: 'Winter Trading Quest',
@@ -361,7 +361,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       timestamp: new Date('2024-01-20 14:30:00'),
       description: 'Completed service purchase',
       multiplier: 1.5
-    },'
+    },
 {
       id: '2',
       action: 'AI Feature Used','
@@ -370,7 +370,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       timestamp: new Date('2024-01-20 12:15:00'),
       description: 'Used AI-powered recommendations',
       multiplier: 1.0
-    },'
+    },
     {
       id: '3',
       action: 'Achievement Unlocked','
@@ -475,7 +475,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Profile
               </button> '
               "'''`
-                onClick={() => setActiveTab('badges')}''``
+                onClick={() => setActiveTab('badges')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'badges
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -485,7 +485,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Badges
               </button>'
               `
-                onClick={() => setActiveTab('achievements')}''``
+                onClick={() => setActiveTab('achievements')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'achievements
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -495,7 +495,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Achievements
               </button>'
               `
-                onClick={() => setActiveTab('rewards')}''``
+                onClick={() => setActiveTab('rewards')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'rewards
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -515,7 +515,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Leaderboards
               </button> '
               "'''`
-                onClick={() => setActiveTab('events')}''``
+                onClick={() => setActiveTab('events')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'events
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -614,7 +614,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 </div>
               </div>
             )} '
-            {/* Badges Tab */},''
+            {/* Badges Tab */},
 {activeTab === 'badges' && ("
               <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                 {badges.map((badge) => (
@@ -655,7 +655,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Achievements Tab */},"''
 {activeTab === 'achievements' && (
               <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
@@ -739,7 +739,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Leaderboards Tab */},"''
 {activeTab === 'leaderboards' && (
               <div className=" space-y-6>
@@ -777,7 +777,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   </div>
                 ))}
               </div>
-            )}'
+            )}
             {/* Events Tab */}, ''
 {activeTab === 'events' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>

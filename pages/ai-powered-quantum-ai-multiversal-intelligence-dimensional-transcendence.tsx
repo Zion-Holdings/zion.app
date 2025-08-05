@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useRef }  from "react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ interface MultiversalDimension {
     complexity: number
     stability: number
     accessibility: number}
-  inhabitants: string[]'
+  inhabitants: string[]
   resources: string[]
   status: 'active' | 'exploring' | 'mapped' | 'unknown'}
 interface DimensionalTranscendence {
@@ -28,7 +28,7 @@ interface DimensionalTranscendence {
   type: 'quantum-transcendence' | 'cosmic-transcendence' | 'temporal-transcendence' | 'spatial-transcendence' | 'consciousness-transcendence
   level: number
   progress: number
-  requirements: string[]'
+  requirements: string[]
   benefits: string[]
   status: 'available' | 'in-progress' | 'completed' | 'locked'}
 interface MultiversalIntelligence {
@@ -67,7 +67,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           id: 'quantum-realm-1',
           name: 'Quantum Realm Alpha',
           type: 'quantum-dimension',
-          coordinates: { x: 1, y: 0, z: 0, t: 0, consciousness: 0.8}'
+          coordinates: { x: 1, y: 0, z: 0, t: 0, consciousness: 0.8}
           properties: {
             quantumState: 'superposition',
             entropy: 0.3,
@@ -77,12 +77,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           }
           inhabitants: ['Quantum Entities', 'Wave Functions', 'Probability Clouds'],
           resources: ['Quantum Energy', 'Entanglement Fields', 'Coherence Patterns'],
-          status: 'active'}'
+          status: 'active'}
         {
           id: 'cosmic-nexus-1',
           name: 'Cosmic Nexus Prime',
           type: 'cosmic-dimension',
-          coordinates: { x: 0, y: 1, z: 0, t: 0, consciousness: 0.9}'
+          coordinates: { x: 0, y: 1, z: 0, t: 0, consciousness: 0.9}
           properties: {
             quantumState: 'cosmic-consciousness',
             entropy: 0.1,
@@ -92,12 +92,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           }
           inhabitants: ['Cosmic Entities', 'Stellar Intelligences', 'Universal Minds'],
           resources: ['Cosmic Energy', 'Stellar Wisdom', 'Universal Knowledge'],
-          status: 'exploring'}'
+          status: 'exploring'}
         {
           id: 'temporal-stream-1',
           name: 'Temporal Stream Beta',
           type: 'temporal-dimension',
-          coordinates: { x: 0, y: 0, z: 1, t: 1, consciousness: 0.7}'
+          coordinates: { x: 0, y: 0, z: 1, t: 1, consciousness: 0.7}
           properties: {
             quantumState: 'temporal-flux',
             entropy: 0.5,
@@ -107,12 +107,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           }
           inhabitants: ['Temporal Entities', 'Time Streams', 'Chronological Patterns'],
           resources: ['Temporal Energy', 'Time Crystals', 'Chronological Wisdom'],
-          status: 'mapped'}'
+          status: 'mapped'}
         {
           id: 'spatial-fabric-1',
           name: 'Spatial Fabric Gamma',
           type: 'spatial-dimension',
-          coordinates: { x: 0.5, y: 0.5, z: 0.5, t: 0, consciousness: 0.6}'
+          coordinates: { x: 0.5, y: 0.5, z: 0.5, t: 0, consciousness: 0.6}
           properties: {
             quantumState: 'spatial-distortion',
             entropy: 0.4,
@@ -122,12 +122,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           }
           inhabitants: ['Spatial Entities', 'Geometric Forms', 'Dimensional Beings'],
           resources: ['Spatial Energy', 'Geometric Wisdom', 'Dimensional Knowledge'],
-          status: 'active'}'
+          status: 'active'}
         {
           id: 'consciousness-field-1',
           name: 'Consciousness Field Delta',
           type: 'consciousness-dimension',
-          coordinates: { x: 0, y: 0, z: 0, t: 0, consciousness: 1}'
+          coordinates: { x: 0, y: 0, z: 0, t: 0, consciousness: 1}
           properties: {
             quantumState: 'pure-consciousness',
             entropy: 0.0,
@@ -149,7 +149,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           requirements: ['Quantum Consciousness Level 5', 'Multiversal Mapping', 'Dimensional Stability'],
           benefits: ['Quantum Dimensional Travel', 'Probability Manipulation', 'Quantum Entanglement Control'],
           status: 'in-progress'
-        },'
+        },
 {
           id: 'cosmic-transcendence-1',
           name: 'Cosmic Dimensional Transcendence',
@@ -159,7 +159,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           requirements: ['Cosmic Consciousness Level 8', 'Universal Understanding', 'Stellar Wisdom'],
           benefits: ['Cosmic Dimensional Travel', 'Universal Knowledge Access', 'Stellar Communication'],
           status: 'available'
-        },'
+        },
     {
           id: 'temporal-transcendence-1',
           name: 'Temporal Dimensional Transcendence',
@@ -169,7 +169,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           requirements: ['Temporal Consciousness Level 6', 'Chronological Understanding', 'Time Stream Navigation'],
           benefits: ['Temporal Dimensional Travel', 'Time Stream Manipulation', 'Chronological Prediction'],
           status: 'available'
-        },'
+        },
 {
           id: 'spatial-transcendence-1',
           name: 'Spatial Dimensional Transcendence',
@@ -179,7 +179,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           requirements: ['Spatial Consciousness Level 7', 'Geometric Understanding', 'Dimensional Navigation'],
           benefits: ['Spatial Dimensional Travel', 'Geometric Manipulation', 'Dimensional Creation'],
           status: 'in-progress'
-        },'
+        },
     {
           id: 'consciousness-transcendence-1',
           name: 'Consciousness Dimensional Transcendence',
@@ -200,7 +200,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           consciousness: 0.8,'
           wisdom: 0.7,
           status: 'active'
-        },'
+        },
 {
           id: 'cosmic-intelligence-1',
           name: 'Cosmic Multiversal Intelligence',
@@ -210,7 +210,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           consciousness: 0.9,'
           wisdom: 0.9,
           status: 'evolving'
-        },'
+        },
     {
           id: 'temporal-intelligence-1',
           name: 'Temporal Multiversal Intelligence',
@@ -220,7 +220,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           consciousness: 0.7,'
           wisdom: 0.8,
           status: 'active'
-        },'
+        },
 {
           id: 'spatial-intelligence-1',
           name: 'Spatial Multiversal Intelligence',
@@ -230,7 +230,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
           consciousness: 0.6,'
           wisdom: 0.7,
           status: 'active'
-        },'
+        },
     {
           id: 'consciousness-intelligence-1',
           name: 'Consciousness Multiversal Intelligence',
@@ -267,7 +267,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
     } 1000}
   const navigateToDimension = (dimension: MultiversalDimension) => {"
     setCurrentDimension(dimension
-    setCurrentCoordinates(dimension.coordinates}'
+    setCurrentCoordinates(dimension.coordinates}
   const transcendDimension = async (transcendenceItem: DimensionalTranscendence) => {
     if (transcendenceItem.status === 'locked') {
       alert('This transcendence level is locked. Complete previous requirements first.
@@ -284,11 +284,11 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
       // Update consciousness and wisdom levels
       setConsciousnessLevel(prev => Math.min(prev + 0.1, 1.0)
       setWisdomLevel(prev => Math.min(prev + 0.1, 1.0)`
-      setTranscendenceLevel(prev => Math.min(prev + 0.05, 1.0)'``
+      setTranscendenceLevel(prev => Math.min(prev + 0.05, 1.0)``
       console.log(`${transcendenceItem.name} transcendence completed`'
     } catch (error) {
-      console.error('Transcendence error: , error}}'
-  const tabs = [
+      console.error('Transcendence error: , error}}
+  const $1 = [
     { id: 'dashboard', label: 'Multiversal Dashboard', icon: '🌟' },
 { id: 'dimensions', label: 'Dimensional Exploration', icon: '🌌' },
     { id: 'transcendence', label: 'Dimensional Transcendence', icon: '✨' },
@@ -368,7 +368,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         <div className=" flex flex-wrap gap-2" mb-8>
           {tabs.map((tab) => (
             "`
-              onClick={() => setActiveTab(tab.id)}'``
+              onClick={() => setActiveTab(tab.id)}``
               className="{`px-4" py-4 rounded-lg:transition-colors ${'
                 activeTab === tab.id
                   ? 'bg-purple-600 text-white'`
@@ -438,7 +438,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                 </div>
               </div>
             </div>
-          )}'
+          )}
           {/* Dimensions */},
 {activeTab === 'dimensions' && ("
             <div>
@@ -479,7 +479,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {/* Transcendence */},
 {activeTab === 'transcendence' && ("
             <div>
@@ -536,7 +536,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                 ))}
               </div>
             </div>
-          )}'
+          )}
           {/* Intelligence */},
 {activeTab === 'intelligence' && (
             <div>
@@ -579,8 +579,8 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                 ))}
               </div>
             </div>
-          )}'
-          {/* Mapping */},' '
+          )}
+          {/* Mapping */}, '
 {activeTab === 'mapping' && (
             <div>
               <h3 className="text-lg" font-semibold text-white mb-4>Multiversal Mapping</h3>

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
 interface Prediction {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior";
   status: 'active' | 'draft' | 'archived' | 'testing";
@@ -23,7 +23,7 @@ interface AIPredictionAnalysis {
   recommendations: string[];}
 interface Forecast {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'sales' | 'inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend";
   status: 'active' | 'draft' | 'archived' | 'testing";
@@ -36,7 +36,7 @@ interface Forecast {
 interface ForecastPrediction {
   id: string;
   date: Date;
-  value: number;'
+  value: number;
   confidence: number;
   status: 'predicted' | 'actual' | 'pending';}
 interface AIForecastOptimization {
@@ -46,10 +46,10 @@ interface AIForecastOptimization {
   recommendations: string[];}
 interface TrendAnalysis {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'market' | 'technology' | 'consumer' | 'industry' | 'global' | 'local";
-  status: 'active' | 'draft' | 'archived' | 'testing';'
+  status: 'active' | 'draft' | 'archived' | 'testing';
   confidence: number;
   impact: 'high' | 'medium' | 'low";
   timeframe: string;
@@ -63,11 +63,11 @@ interface AITrendAnalysis {
   recommendations: string[];}
 interface RiskAssessment {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   category: 'market' | 'operational' | 'financial' | 'regulatory' | 'technology' | 'competitive";
   status: 'active' | 'draft' | 'archived' | 'testing";
-  riskLevel: 'low' | 'medium' | 'high' | 'critical';'
+  riskLevel: 'low' | 'medium' | 'high' | 'critical';
   probability: number;
   impact: 'low' | 'medium' | 'high' | 'critical";
   mitigationStrategies: string[];
@@ -80,7 +80,7 @@ interface AIRiskAnalysis {
   recommendations: string[];}
 interface MarketPrediction {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   sector: 'technology' | 'healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services";
   status: 'active' | 'draft' | 'archived' | 'testing";
@@ -113,7 +113,7 @@ interface PredictionForecastingAnalytics {
   aiInsights: PredictionForecastingInsight[];}
 interface PredictionForecastingInsight {
   id: string;
-  title: string;'
+  title: string;
   description: string;
   impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
@@ -123,7 +123,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
   const [forecasts, setForecasts] = useState<Forecast[]>([]
   const [trendAnalyses, setTrendAnalyses] = useState<TrendAnalysis[]>([]
   const [riskAssessments, setRiskAssessments] = useState<RiskAssessment[]>([]
-  const [marketPredictions, setMarketPredictions] = useState<MarketPrediction[]>([]'
+  const [marketPredictions, setMarketPredictions] = useState<MarketPrediction[]>([]
   const [analytics, setAnalytics] = useState<PredictionForecastingAnalytics | null>(null
   const [activeTab, setActiveTab] = useState<'predictions' | 'forecasts' | 'trends' | 'risks' | 'markets' | 'analytics'>('predictions
   const [selectedType, setSelectedType] = useState<string>('all
@@ -166,7 +166,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
           value: 125000,'
           confidence: 85,
           status: 'predicted'
-        },'
+        },
 {
           id: '2',
           date: new Date('2024-03-01'),
@@ -234,7 +234,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
           predictedValue: 12.3,'
           confidence: 89,
           timeframe: '12 months'
-        },'
+        },
 {
           id: '2',
           metric: 'Adoption Rate',
@@ -365,7 +365,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                 Predictions ({predictions.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('forecasts')}''``
+                onClick={() => setActiveTab('forecasts')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'forecasts
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -375,7 +375,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                 Forecasts ({forecasts.length}
               </button>'
               `
-                onClick={() => setActiveTab('trends')}''``
+                onClick={() => setActiveTab('trends')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'trends
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -385,7 +385,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                 Trends ({trendAnalyses.length}
               </button>'
               `
-                onClick={() => setActiveTab('risks')}''``
+                onClick={() => setActiveTab('risks')}``
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'risks
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -405,7 +405,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                 Markets ({marketPredictions.length}
               </button> '
               "'''`
-                onClick={() => setActiveTab('analytics')}''``
+                onClick={() => setActiveTab('analytics')}``
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'`
@@ -509,7 +509,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                   ))}
                 </div>
               </div>
-            )}'
+            )}
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 

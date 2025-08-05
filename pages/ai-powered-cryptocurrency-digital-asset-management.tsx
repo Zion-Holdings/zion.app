@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -79,7 +79,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
   const [cryptocurrencies, setCryptocurrencies] = useState<Cryptocurrency[]>([]
   const [digitalAssets, setDigitalAssets] = useState<DigitalAsset[]>([]
   const [portfolios, setPortfolios] = useState<Portfolio[]>([]
-  const [tradingStrategies, setTradingStrategies] = useState<TradingStrategy[]>([]'
+  const [tradingStrategies, setTradingStrategies] = useState<TradingStrategy[]>([]
   const [analytics, setAnalytics] = useState<CryptocurrencyAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'crypto' | 'assets' | 'portfolios' | 'strategies' | 'analytics'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -101,7 +101,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         volatilityIndex: 0.65,
         riskLevel: 'medium',
         trendPrediction: 'bullish',
-        recommendations: ['Consider dollar-cost averaging', 'Monitor support levels', 'Watch for institutional adoption']}}}'
+        recommendations: ['Consider dollar-cost averaging', 'Monitor support levels', 'Watch for institutional adoption']}}}
     {
       id: '2',
       symbol: 'ETH',
@@ -117,7 +117,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         volatilityIndex: 0.72,
         riskLevel: 'medium',
         trendPrediction: 'neutral',
-        recommendations: ['Monitor DeFi ecosystem growth', 'Watch for ETH 2.0 updates', 'Consider staking opportunities']}}'
+        recommendations: ['Monitor DeFi ecosystem growth', 'Watch for ETH 2.0 updates', 'Consider staking opportunities']}}
     {
       id: '3',
       symbol: 'ADA',
@@ -149,7 +149,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         performanceScore: 8.5,
         diversificationImpact: 0.7,'
         riskAssessment: 0.6,
-        recommendations: ['Hold for long-term', 'Consider increasing position', 'Monitor market conditions']}}'
+        recommendations: ['Hold for long-term', 'Consider increasing position', 'Monitor market conditions']}}
     {
       id: '2',
       name: 'Ethereum',
@@ -163,7 +163,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         performanceScore: 7.8,
         diversificationImpact: 0.6,'
         riskAssessment: 0.7,
-        recommendations: ['Consider staking', 'Monitor DeFi opportunities', 'Hold for medium-term']}}'
+        recommendations: ['Consider staking', 'Monitor DeFi opportunities', 'Hold for medium-term']}}
     {
       id: '3',
       name: 'CryptoPunk #1234',
@@ -192,7 +192,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         optimizationScore: 8.2,
         rebalancingNeeded: false,'
         riskAdjustment: 0.2,
-        recommendations: ['Well-diversified portfolio', 'Consider adding stablecoins', 'Monitor rebalancing needs']}}'
+        recommendations: ['Well-diversified portfolio', 'Consider adding stablecoins', 'Monitor rebalancing needs']}}
     {
       id: '2',
       name: 'Growth Portfolio',
@@ -219,7 +219,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         accuracy: 0.78,
         profitFactor: 2.1,'
         maxDrawdown: 0.12,
-        recommendations: ['Continue monitoring', 'Consider position sizing', 'Watch for market shifts']}}'
+        recommendations: ['Continue monitoring', 'Consider position sizing', 'Watch for market shifts']}}
     {
       id: '2',
       name: 'Mean Reversion Bot',
@@ -231,7 +231,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         accuracy: 0.72,
         profitFactor: 1.8,'
         maxDrawdown: 0.08,
-        recommendations: ['Stable performance', 'Consider scaling up', 'Monitor volatility']}}'
+        recommendations: ['Stable performance', 'Consider scaling up', 'Monitor volatility']}}
     {
       id: '3',
       name: 'Arbitrage Scanner',
@@ -249,7 +249,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
     totalAssets: 15,
     totalValue: 125000,'
     averageReturn: 18.5,
-    topPerformer: 'Cardano (ADA)',
+    topPerformer: 'Cardano (ADA),
     aiInsights: ['
       {
         id: '1',
@@ -258,7 +258,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.85,
         recommendations: ['Consider increasing exposure', 'Monitor institutional flows', 'Watch for regulatory news']
-      },'
+      },
 {
         id: '2',
         title: 'Portfolio Rebalancing Needed',
@@ -273,9 +273,9 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
     setPortfolios(mockPortfolios
     setTradingStrategies(mockTradingStrategies
     setAnalytics(mockAnalytics
-  } []'
+  } []
   const getChangeColor = (change: number) => {
-    return change >= 0 ? 'text-green-400' : 'text-red-400'}'
+    return change >= 0 ? 'text-green-400' : 'text-red-400'}
   const getChangeBgColor = (change: number) => {
     return change >= 0 ? 'bg-green-500' : 'bg-red-500'}
   const getRiskColor = (risk: string) => {'
@@ -302,14 +302,14 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
       case 'positive': return '📈
       case 'negative': return '📉
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
-    }).format(value}'
+    }).format(value}
   const formatPercentage = (value: number) => {
     return `${value >= 0 ? '+' : ''}${value.toFixed(2)}%`}
   const filteredAssets = useMemo(() => {'
@@ -383,7 +383,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 { id  'analytics', label  'Analytics', icon  '📈'}"
           ].map((tab) => (
             "`
-              onClick={() => setSelectedView(tab.id as any)}'``
+              onClick={() => setSelectedView(tab.id as any)}``
               className="{`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -445,7 +445,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'crypto' && (
           <div className="space-y-6>" 
@@ -490,14 +490,14 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'assets' && (
           <div className="space-y-6>" 
             {/* Asset Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto pb-2 >'
               {['all', 'cryptocurrency', 'nft', 'token', 'defi', 'metaverse'].map((type) => (`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
@@ -547,7 +547,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'portfolios' && (
           <div className="space-y-6>" 
@@ -585,7 +585,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'strategies' && (
           <div className="space-y-6>

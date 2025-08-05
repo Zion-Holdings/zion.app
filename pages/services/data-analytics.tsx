@@ -1,29 +1,30 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import type { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from "next/head";
 import Link from "next/link";
 
-const Https___ziontechgroup_netlify_app_services_data_anPage: NextPage: () => {
+const Data_anPagePage: NextPage = () => {
   return (
-    <div>
-      </div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>Our Services - Zion Tech Group</title>,
-        <meta name=description content=Explore our comprehensive service offerings >,
-        </meta name=description content=Explore our comprehensive service offerings ><meta name=keywords  content=https //ziontechgroup.netlify.app/services/data-analytics  , Zion, AI marketplace  > </meta" name=keywords" content="https //ziontechgroup.netlify.app/services/data-analytics  , Zion, AI" marketplace"  ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <title>Data Analytics - Zion Tech Group</title>
+        <meta name="description" content="Explore our comprehensive data analytics service offerings" />
+        <meta name="keywords" content="data analytics, Zion, AI marketplace" /> </meta" name=keywords" content="https //ziontechgroup.netlify.app/services/data-analytics  , Zion, AI" marketplace"  ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
-        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
-          </div><div className="flex  justify-between h-16>"
-            <div className="flex" items-center> 
-              </div><div className="flex-shrink-0"">
-                <h1 className=" text-2xl font-bold" text-white>
-                  <Link href=/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion
-                  </Link href=/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400" ></Link>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          </div><div className="flex justify-between h-16">"
+            <div className="flex items-center"> 
+              </div><div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold text-white">
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion
+                  </Link>
                 </h1>
               </div>
             </div>
             <div className="hidden  md:flex: items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">Marketplace
               </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >About
               </Link href=/about className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
@@ -33,25 +34,24 @@ const Https___ziontechgroup_netlify_app_services_data_anPage: NextPage: () => {
               </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link>
             </div> </div>
         </div>
-      </nav>,
-,"
+      </nav>"
       {/* Main Content */}
-      <main className="flex-1>"
-        <div className="relative" overflow-hidden> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div>
-          <div className="relative" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-44 lg:py-32>
-            </div><div: className="text-center >
+      <main className="flex-1">"
+        <div className="relative overflow-hidden"> 
+          </div><div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
+            </div><div className="text-center">
               <div className="mb-8">
-                <h1 className=" text-4xl md text-6xl font-bold text-white" mb-6>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                     Our Services - Zion Tech Group
                   </span>
                 </h1>
-                <p className="text-xl" text-gray-300 max-w-3xl mx-auto leading-relaxed >
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                   Explore our comprehensive service offerings
                 </p>
               </div>
-              <div className=" mt-12 flex flex-col sm flex-row  gap-4" justify-center>"
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">"
                 <Link href=/marketplace className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace
                 </Link href=/marketplace className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
                 <Link href=/auth/signup className="border" border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 >Get Started
@@ -59,15 +59,14 @@ const Https___ziontechgroup_netlify_app_services_data_anPage: NextPage: () => {
               </div>
             </div> </div>
         </div>
-      </main>,
-,"
+      </main>"
       {/* Footer */}
-      <footer className=" bg-black/20 border-t" border-white/10>
-        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8: py-32> 
-          </div><div className="grid" grid-cols-1 md grid-cols-4 gap-8 >
+      <footer className="bg-black/20 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32"> 
+          </div><div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-white" font-semibold mb-4>Zion</h3>
-              <p className="text-gray-400" text-sm">
+              <h3 className="text-white font-semibold mb-4">Zion</h3>
+              <p className="text-gray-400 text-sm">
                 The future of AI-powered marketplace technology.
               </p>
             </div>
@@ -106,5 +105,4 @@ const Https___ziontechgroup_netlify_app_services_data_anPage: NextPage: () => {
   </div>,
 ),;
 };
-;'
-export default Https___ziontechgroup_netlify_app_services_data_anPage;"'"
+export default Data_anPagePage;

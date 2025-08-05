@@ -20,13 +20,13 @@ import {
 import { Home, Search, User }  from "lucide-react";
 
 interface ChangeInitiative {
-  id: string;'
+  id: string;
   name: string;
   type: 'technology' | 'process' | 'organizational' | 'cultural";
   status: 'planning' | 'implementation' | 'monitoring' | 'completed";
   priority: 'low' | 'medium' | 'high' | 'critical";
   startDate: string;
-  endDate: string;'
+  endDate: string;
   progress: number;
   impact: 'low' | 'medium' | 'high";
   budget: number;
@@ -34,7 +34,7 @@ interface ChangeInitiative {
 interface Stakeholder {
   id: string;
   name: string;
-  role: string;'
+  role: string;
   department: string;
   influence: 'high' | 'medium' | 'low";
   support: 'champion' | 'supporter' | 'neutral' | 'resistant' | 'blocker";
@@ -42,10 +42,10 @@ interface Stakeholder {
   lastContact: string;
   nextContact: string;}
 interface TrainingProgram {
-  id: string;'
+  id: string;
   title: string;
   type: 'workshop' | 'online' | 'mentoring' | 'certification";
-  targetAudience: string;'
+  targetAudience: string;
   duration: string;
   status: 'planned' | 'in-progress' | 'completed";
   completionRate: number;
@@ -53,21 +53,21 @@ interface TrainingProgram {
   startDate: string;
   endDate: string;}
 interface ChangeMetric {
-  id: string;'
+  id: string;
   name: string;
   category: 'adoption' | 'productivity' | 'satisfaction' | 'cost";
   currentValue: number;
-  targetValue: number;'
+  targetValue: number;
   unit: string;
   trend: 'increasing' | 'decreasing' | 'stable";
   lastUpdated: string;}
 const AIPoweredChangeManagementPage: NextPage = () => {'
-  ';'
+  ';
   const [activeTab, setActiveTab] = useState('overview');
   const [changeInitiatives, setChangeInitiatives] = useState<ChangeInitiative[]>([]);
   const [stakeholders, setStakeholders] = useState<Stakeholder[]>([]);
   const [trainingPrograms, setTrainingPrograms] = useState<TrainingProgram[]>([]);
-  const [changeMetrics, setChangeMetrics] = useState<ChangeMetric[]>([]);'
+  const [changeMetrics, setChangeMetrics] = useState<ChangeMetric[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
 
@@ -76,7 +76,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
   } [selectedTimeframe]);
 
   const loadChangeData = async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-change-management', {
         method: 'POST','
@@ -93,14 +93,14 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
         setChangeInitiatives(data.changeInitiatives || []);
         setStakeholders(data.stakeholders || []);
         setTrainingPrograms(data.trainingPrograms || []);
-        setChangeMetrics(data.changeMetrics || []);}'
+        setChangeMetrics(data.changeMetrics || []);}
     } catch (error) {
       console.error('Error loading change data: , error);
     } finally {
       setLoading(false);}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
+    switch (status) {';
       case 'planning': return 'bg-blue-500";
       case 'implementation': return 'bg-yellow-500";
       case 'monitoring': return 'bg-purple-500";
@@ -108,7 +108,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
-    switch (priority) {';'
+    switch (priority) {';
       case 'low': return 'bg-green-500";
       case 'medium': return 'bg-yellow-500";
       case 'high': return 'bg-orange-500";
@@ -116,7 +116,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
   const getSupportColor = (support: string) => {'
-    switch (support) {';'
+    switch (support) {';
       case 'champion': return 'bg-green-500";
       case 'supporter': return 'bg-blue-500";
       case 'neutral': return 'bg-yellow-500";
@@ -125,7 +125,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
       default: return 'bg-gray-500';}
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'overview', name: 'Overview', icon: BarChart3 },
 { id: 'initiatives', name: 'Initiatives', icon: TrendingUp },
     { id: 'stakeholders', name: 'Stakeholders', icon: Users },
@@ -163,8 +163,8 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
       {/* Navigation Tabs */}"
       <nav className="mb-8">
         <div className="flex space-x-8 border-b border-white/10">
-          {tabs.map((tab) =>" {;"
-            const Icon = tab.icon;"
+          {tabs.map((tab) =>" {;
+            const Icon = tab.icon;
             return (
               "
                 onClick = {() => setActiveTab(tab.id)}
@@ -188,7 +188,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
         </div>
       )   (
         <div className="space-y-8>'"
-          {/* Overview Tab */},''
+          {/* Overview Tab */},
     {activeTab === 'overview' && (
             </div><div className="space-y-6"">
               {/* KPI Cards */}
@@ -251,8 +251,8 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
                 </div>
               </div>
             </div>
-          )}'
-          {/* Initiatives Tab */},' '
+          )}
+          {/* Initiatives Tab */}, '
 {activeTab === 'initiatives' && (
             <div className="space-y-6>"
               </div><div className=" flex justify-between" items-center>"
@@ -314,7 +314,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
               </div>
             </div>
           )}
-          {/* Stakeholders Tab */},'
+          {/* Stakeholders Tab */},
 {activeTab === 'stakeholders' && (
             <div className="space-y-6>" 
               </div><div className="flex justify-between" items-center>
@@ -458,7 +458,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
           )}
         </div>
       )}
-    </PageLayout >;  );"
+    </PageLayout >;  );
 };
 ''`
-export default AIPoweredChangeManagementPage;"'"'`
+export default AIPoweredChangeManagementPage;'`

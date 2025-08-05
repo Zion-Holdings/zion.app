@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -54,7 +54,7 @@ interface LiveChat {
   message: string'
   timestamp: Date
   type: 'text' | 'reaction' | 'question' | 'moderation'
-  aiAnalysis: ChatAnalysis}'
+  aiAnalysis: ChatAnalysis}
 interface ChatAnalysis {
   sentiment: 'positive' | 'negative' | 'neutral
   spamScore: number
@@ -78,7 +78,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
   const [streams, setStreams] = useState<LiveStream[]>([]
   const [channels, setChannels] = useState<BroadcastingChannel[]>([]
   const [contentAnalysis, setContentAnalysis] = useState<AIContentAnalysis[]>([]
-  const [liveChat, setLiveChat] = useState<LiveChat[]>([]'
+  const [liveChat, setLiveChat] = useState<LiveChat[]>([]
   const [analytics, setAnalytics] = useState<BroadcastingAnalytics | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'streams' | 'channels' | 'analytics' | 'chat'>('overview
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -104,7 +104,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         contentQuality: 9.2,
         audienceRetention: 87,'
         sentimentScore: 0.85,
-        recommendations: ['Add more interactive elements', 'Include Q&A sessions', 'Show code examples']}}}'
+        recommendations: ['Add more interactive elements', 'Include Q&A sessions', 'Show code examples']}}}
     {
       id: '2',
       title: 'Quantum Computing Workshop',
@@ -122,7 +122,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         contentQuality: 9.5,
         audienceRetention: 92,'
         sentimentScore: 0.78,
-        recommendations: ['Simplify complex concepts', 'Add visual aids', 'Include hands-on demos']}}'
+        recommendations: ['Simplify complex concepts', 'Add visual aids', 'Include hands-on demos']}}
     {
       id: '3',
       title: 'Blockchain Development Tutorial',
@@ -157,7 +157,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         reachScore: 8.7,
         engagementScore: 8.9,'
         monetizationScore: 8.5,
-        recommendations: ['Increase streaming frequency', 'Add exclusive content', 'Engage with community more']}}'
+        recommendations: ['Increase streaming frequency', 'Add exclusive content', 'Engage with community more']}}
     {
       id: '2',
       name: 'Tech Startup Showcase',
@@ -183,7 +183,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
       confidence: 0.92,
       insights: ['High engagement during live coding', 'Positive comments about AI content', 'Strong community interaction'],
       actions: ['Continue current content style', 'Increase interactive segments', 'Add more Q&A sessions']
-    },'
+    },
 {
       id: '2',
       type: 'engagement',
@@ -192,7 +192,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
       confidence: 0.88,
       insights: ['Peak viewership at 7-9 PM EST', 'Weekend streams perform 40% better', 'Technical content drives engagement'],
       actions: ['Schedule more weekend streams', 'Focus on technical content', 'Optimize stream timing']
-    },'
+    },
     {
       id: '3',
       type: 'quality',
@@ -214,7 +214,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         sentiment: 'positive',
         spamScore: 0.1,
         relevanceScore: 0.9,
-        moderationRequired: false}}'
+        moderationRequired: false}}
     {
       id: '2',
       userId: 'user456',
@@ -242,7 +242,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.91,
         recommendations: ['Increase AI-focused content', 'Hire more AI experts', 'Create AI tutorial series']
-      },'
+      },
 {
         id: '2',
         title: 'Interactive Content Performance',
@@ -415,14 +415,14 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'streams' && ("
           <div className="space-y-6>" 
             {/* Category Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'technology', 'business', 'education', 'entertainment'].map((category) => (
                 "`
-                  onClick={() => setSelectedCategory(category)}'``
+                  onClick={() => setSelectedCategory(category)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
@@ -468,7 +468,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'channels' && (
           <div className="space-y-6>"
@@ -562,7 +562,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               </div >
             </div>
           </div>
-        )}'
+        )}
 "''
         {selectedView === 'chat' && (
           <div className="space-y-6">

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface AgentStatus {
-  agentId: string;'
+  agentId: string;
   type: string;
   status: 'active' | 'idle' | 'error' | 'stopped";
   lastActivity: string;
@@ -20,11 +20,11 @@ interface AgentMonitorProps {
 
 export default function AgentMonitor({ agents, onAgentClick }: AgentMonitorProps) {
   const getStatusColor = (status: string) => {'
-    switch (status) {';'
-      case 'active': return 'bg-green-100 text-green-800 border-green-200";
-      case 'idle': return 'bg-yellow-100 text-yellow-800 border-yellow-200";
-      case 'error': return 'bg-red-100 text-red-800 border-red-200";
-      case 'stopped': return 'bg-gray-100 text-gray-800 border-gray-200";
+    switch (status) {';
+      case 'active': return "bg-green-100 text-green-800 border-green-200";
+      case 'idle': return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case 'error': return "bg-red-100 text-red-800 border-red-200";
+      case 'stopped': return "bg-gray-100 text-gray-800 border-gray-200";
       default: return 'bg-gray-100 text-gray-800 border-gray-200';}
   };
   const getStatusIcon = (status: string) => {'
@@ -35,21 +35,21 @@ export default function AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
             <div className="w-2" h-2 bg-green-500 rounded-full mr-2 animate-pulse></div>
             <span className="text-xs" font-semibold>Active</span>
           </div>
-        );'
+        );
       case 'idle':
         return ("
           <div className="flex items-center">
             <div className="w-2" h-2 bg-yellow-500 rounded-full mr-2></div>
             <span className="text-xs" font-semibold>Idle</span>
           </div>
-        );'
+        );
       case 'error':
         return ("
           <div className="flex items-center">
             <div className="w-2" h-2 bg-red-500 rounded-full mr-2></div>
             <span className="text-xs" font-semibold>Error</span>
           </div>
-        );'
+        );
       case 'stopped':
         return ("
           <div className="flex items-center">
@@ -64,9 +64,9 @@ export default function AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
   const formatTime = (timestamp: string) ="> {;
     const date = new Date(timestamp);
     const now = new Date();
-    const diffMs = now.getTime() - date.getTime();"
-    const diffMins = Math.floor(diffMs /" 60000);"
-    const diffHours = Math.floor(diffMs / 3600000);"
+    const diffMs = now.getTime() - date.getTime();
+    const diffMins = Math.floor(diffMs /" 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
     const diffDays = Math.floor(diffMs / 86400000);
 "'
     if (diffMins < 1) return 'Just now";
@@ -104,8 +104,8 @@ export default function AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
       </div>
       <div className=" grid grid-cols-1 md grid-cols-2 lg grid-cols-3" gap-4">
         {agents.map((agent) => (
-          <div key={agent.agentId}'`
-            onClick={() => onAgentClick?.(agent)}''``
+          <div key={agent.agentId}`
+            onClick={() => onAgentClick?.(agent)}``
             className="{`bg-white rounded-lg shadow p-4 border-2 cursor-pointer transition-all hover:shadow-lg ${`
               onAgentClick ? 'hover:border-blue-300' : '' ``
             }`}

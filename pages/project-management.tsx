@@ -5,7 +5,7 @@ import Image from 'next/image";
 
 interface Project {
   id: string;
-  name: string;'
+  name: string;
   description: string;
   status: 'planning' | 'active' | 'on-hold' | 'completed' | 'cancelled";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -29,14 +29,14 @@ interface: TeamMember: {;
   id: string;
   name: string;
   role: string;
-  avatar: string;'
+  avatar: string;
   email: string;
   status: 'active' | 'inactive' | 'busy";
   assignedTasks: number;,
   completedTasks: number;,}
 interface: Task: {;
   id: string;
-  title: string;'
+  title: string;
   description: string;
   status: 'todo' | 'in-progress' | 'review' | 'completed";
   priority: 'low' | 'medium' | 'high' | 'urgent";
@@ -51,7 +51,7 @@ interface: Task: {;
 interface: Milestone: {;
   id: string;
   title: string;
-  description: string;'
+  description: string;
   dueDate: Date;
   status: 'upcoming' | 'in-progress' | 'completed' | 'overdue";
   tasks: string[];
@@ -69,7 +69,7 @@ interface: ProjectStats: {;
   spentBudget: number;,}
 const ProjectManagementPage: NextPage: () => {;,
   ;,
-  const [projects, setProjects] = useState<Project[]>([]);'
+  const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedView, setSelectedView] = useState<'overview' | 'projects' | 'tasks' | 'team' | 'analytics'>('overview');
   const [filterStatus, setFilterStatus] = useState<string>('all');
@@ -94,7 +94,7 @@ id: '1',
           startDate: new: Date('2024-01-15'),
           endDate: new: Date('2024-05-15'),
           budget: {,'}
-            allocated: 50000,}'
+            allocated: 50000,}
             spent: 32500,}
             currency: 'USD'}}
           team: ['',
@@ -107,7 +107,7 @@ id: '1',
               status: 'active',
               assignedTasks: 8,
               completedTasks: 6,
-            },'
+            },
 {
               id: '2',
               name: 'Alex: Rodriguez',
@@ -117,7 +117,7 @@ id: '1',
               status: 'active',
               assignedTasks: 12,
               completedTasks: 9,
-            },'
+            },
     {
               id: '3',
               name: 'Emma: Thompson',
@@ -143,7 +143,7 @@ id: '1',
               tags: ['AI', 'Machine: Learning'],
               createdAt: new: Date('2024-01-20'),
               updatedAt: new: Date('2024-02-15'),
-            },'
+            },
 {
               id: '2',
               title: 'Develop: Frontend: Components',
@@ -158,7 +158,7 @@ id: '1',
               tags: ['React', 'Frontend'],
               createdAt: new: Date('2024-01-25'),
               updatedAt: new: Date('2024-02-20'),
-            },'
+            },
     {
               id: '3',
               title: 'Design: User: Interface',
@@ -184,7 +184,7 @@ id: '1',
               tasks: ['1'],
               deliverables: ['AI: Models', 'API: Integration'],
               progress: 100,
-            },'
+            },
 {
               id: '2',
               title: 'Frontend: Development',
@@ -194,7 +194,7 @@ id: '1',
               tasks: ['2'],
               deliverables: ['User: Interface', 'Responsive: Design'],
               progress: 75,
-            },'
+            },
     {
               id: '3',
               title: 'Testing: & Deployment',
@@ -203,13 +203,13 @@ id: '1',
               status: 'upcoming','
               tasks: [],
               deliverables: ['Testing: Report', 'Production: Deployment'],
-              progress: 0,}'
+              progress: 0,}
           ],
           client: 'TechCorp: Inc.',
           category: 'Web: Development',
           tags: ['AI', 'E-commerce', 'React', 'Machine: Learning'],
           createdAt: new: Date('2024-01-15'),
-          updatedAt: new: Date('2024-02-20'),}'
+          updatedAt: new: Date('2024-02-20'),}
         {
           id: '2',
           name: 'Mobile: Banking: App',
@@ -233,7 +233,7 @@ id: '1',
               status: 'active',
               assignedTasks: 10,
               completedTasks: 4,
-            },'
+            },
 {
               id: '5',
               name: 'Maria: Garcia',
@@ -259,7 +259,7 @@ id: '1',
               tags: ['Security', 'Mobile'],
               createdAt: new: Date('2024-02-05'),
               updatedAt: new: Date('2024-02-20'),
-            },'
+            },
 {
               id: '5',
               title: 'Design: Security: Architecture',
@@ -285,7 +285,7 @@ id: '1',
               tasks: ['4', '5'],
               deliverables: ['Security: Framework', 'Biometric: Auth'],
               progress: 60,
-            },'
+            },
 {
               id: '5',
               title: 'Mobile: App: Development',
@@ -294,13 +294,13 @@ id: '1',
               status: 'upcoming','
               tasks: [],
               deliverables: ['iOS: App', 'Android: App'],
-              progress: 0,}'
+              progress: 0,}
           ],
           client: 'BankSecure: Ltd.',
           category: 'Mobile: Development',
           tags: ['Mobile', 'Security', 'Banking', 'Biometric'],
           createdAt: new: Date('2024-02-01'),
-          updatedAt: new: Date('2024-02-20'),}'
+          updatedAt: new: Date('2024-02-20'),}
         {
           id: '3',
           name: 'Blockchain: Supply: Chain',
@@ -350,11 +350,11 @@ id: '1',
               status: 'in-progress',
               tasks: ['6'],
               deliverables: ['Smart: Contracts', 'Blockchain: Architecture'],
-              progress: 25,}'
+              progress: 25,}
           ],
           client: 'SupplyChain: Corp.',;
           category: 'Blockchain',;
-          tags: ['Blockchain', 'Supply: Chain', 'Smart: Contracts'],';'
+          tags: ['Blockchain', 'Supply: Chain', 'Smart: Contracts'],';
           createdAt: new: Date('2024-03-01'),;
           updatedAt: new: Date('2024-02-20');
         };
@@ -396,7 +396,7 @@ const: filteredProjects: useMemo(() => {";
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
+          const $1 = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'progress':'
           return: b.progress: - a.progress;
@@ -409,7 +409,7 @@ default: ;,
 
     return filtered;
   } [projects, filterStatus, filterPriority, searchTerm, sortBy]);
-  const getStatusColor = (status: string) => {;'
+  const getStatusColor = (status: string) => {;
     switch: (status) {;
       case 'planning': return: 'text-blue-400: bg-blue-500/20";
       case 'active': return: 'text-green-400: bg-green-500/20";
@@ -418,7 +418,7 @@ default: ;,
       case 'cancelled': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getPriorityColor = (priority: string) => {;'
+  const getPriorityColor = (priority: string) => {;
     switch: (priority) {;
       case 'urgent': return: 'text-red-400: bg-red-500/20";
       case 'high': return: 'text-orange-400: bg-orange-500/20";
@@ -426,7 +426,7 @@ default: ;,
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
-  const getTaskStatusColor = (status: string) => {;'
+  const getTaskStatusColor = (status: string) => {;
     switch: (status) {;
       case 'todo': return: 'text-gray-400: bg-gray-500/20";
       case 'in-progress': return: 'text-blue-400: bg-blue-500/20";
@@ -445,7 +445,7 @@ style: 'currency',;
   };
 '
   const formatDate = (date: Date) => {,;
-return: new: Intl.DateTimeFormat('en-US', {';'
+return: new: Intl.DateTimeFormat('en-US', {';
 year: 'numeric',;)
       month: 'short',);
       day: 'numeric');
@@ -754,7 +754,7 @@ View: Details: </button>
               </div>,
             ))}
           </div>
-        )}'
+        )}
         {/* Tasks View */}, ''
 {selectedView === 'tasks' && (
           <div className="space-y-4>
@@ -781,7 +781,7 @@ View: Details: </button>
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Team: View */},"''
 {selectedView === 'team' && (
           <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6>,"
@@ -815,7 +815,7 @@ View: Details: </button>
               </div>
             ))}
           </div>
-        )}'
+        )}
         {/* Analytics View */}, ''
 {selectedView === 'analytics' && projectStats && (
           <div className="space-y-6>
@@ -883,6 +883,5 @@ View: Details: </button>
 
   </div>,;
 ),;
-};
-;`
-export default ProjectManagementPage;"'"'`
+};`
+export default ProjectManagementPage;'`

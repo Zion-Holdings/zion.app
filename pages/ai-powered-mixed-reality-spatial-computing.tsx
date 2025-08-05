@@ -1,4 +1,4 @@
-import type { NextPage } from 'next";
+import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -82,7 +82,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
   const [mixedRealityExperiences, setMixedRealityExperiences] = useState<MixedRealityExperience[]>([]
   const [spatialComputing, setSpatialComputing] = useState<SpatialComputing[]>([]
   const [digitalTwins, setDigitalTwins] = useState<DigitalTwin[]>([]
-  const [immersiveTechnology, setImmersiveTechnology] = useState<ImmersiveTechnology[]>([]'
+  const [immersiveTechnology, setImmersiveTechnology] = useState<ImmersiveTechnology[]>([]
   const [data, setData] = useState<MRData | null>(null
   const [selectedView, setSelectedView] = useState<'overview' | 'experiences' | 'spatial' | 'digital-twin' | 'technology' | 'insights'>('overview
   const [selectedType, setSelectedType] = useState<string>('all
@@ -102,7 +102,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         performanceScore: 9.3,'
         userImmersion: 8.9,
         experienceInsights: ['High engagement with interactive overlays', 'Spatial awareness improving user experience', 'AI recommendations increasing retention'],
-        recommendations: ['Expand interactive features', 'Enhance spatial awareness', 'Optimize AI recommendations']}}}'
+        recommendations: ['Expand interactive features', 'Enhance spatial awareness', 'Optimize AI recommendations']}}}
     {
       id: '2',
       name: 'VR Immersive Experience',
@@ -116,7 +116,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         performanceScore: 9.5,'
         userImmersion: 9.2,
         experienceInsights: ['Deep immersion driving user satisfaction', 'VR environments highly engaging', 'AI personalization effective'],
-        recommendations: ['Enhance VR environments', 'Improve personalization', 'Expand immersive content']}}'
+        recommendations: ['Enhance VR environments', 'Improve personalization', 'Expand immersive content']}}
     {
       id: '3',
       name: 'Mixed Reality Blend',
@@ -146,7 +146,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         mappingAccuracy: 9.6,'
         understandingDepth: 9.3,
         optimizationOpportunities: ['Improve mapping precision', 'Enhance spatial understanding', 'Expand coverage area'],
-        improvementStrategies: ['Implement advanced mapping', 'Enhance understanding algorithms', 'Expand spatial coverage']}}'
+        improvementStrategies: ['Implement advanced mapping', 'Enhance understanding algorithms', 'Expand spatial coverage']}}
     {
       id: '2',
       name: 'Environment Understanding',
@@ -160,7 +160,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         mappingAccuracy: 9.4,'
         understandingDepth: 9.1,
         optimizationOpportunities: ['Enhance environment recognition', 'Improve object understanding', 'Expand context awareness'],
-        improvementStrategies: ['Implement advanced recognition', 'Enhance understanding models', 'Expand context coverage']}}'
+        improvementStrategies: ['Implement advanced recognition', 'Enhance understanding models', 'Expand context coverage']}}
     {
       id: '3',
       name: 'Object Recognition System',
@@ -190,7 +190,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         syncAccuracy: 9.7,'
         predictionReliability: 9.4,
         improvementAreas: ['Enhance sync accuracy', 'Improve fidelity', 'Expand update frequency'],
-        recommendations: ['Optimize sync algorithms', 'Enhance fidelity models', 'Expand update capabilities']}}'
+        recommendations: ['Optimize sync algorithms', 'Enhance fidelity models', 'Expand update capabilities']}}
     {
       id: '2',
       name: 'Virtual Twin Environment',
@@ -204,7 +204,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         syncAccuracy: 9.5,'
         predictionReliability: 9.2,
         improvementAreas: ['Improve virtual accuracy', 'Enhance environment fidelity', 'Expand virtual capabilities'],
-        recommendations: ['Optimize virtual algorithms', 'Enhance environment models', 'Expand virtual features']}}'
+        recommendations: ['Optimize virtual algorithms', 'Enhance environment models', 'Expand virtual features']}}
     {
       id: '3',
       name: 'Predictive Twin Analytics',
@@ -230,12 +230,12 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         totalExperiences: 285,
         userSatisfaction: 91,
         performanceScore: 94,
-        innovationIndex: 88}'
+        innovationIndex: 88}
       aiAnalysis: {
         insights: ['AI optimization improved user satisfaction by 25%', 'Spatial computing enhanced performance by 30%'],
         trends: ['Improving user satisfaction', 'Enhancing performance', 'Increasing innovation'],
         recommendations: ['Expand AI optimization', 'Enhance spatial computing', 'Implement innovation features'],
-        impactScore: 9.2}}'
+        impactScore: 9.2}}
     {
       id: '2',
       name: 'Content Creation Platform',
@@ -245,12 +245,12 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         totalExperiences: 195,
         userSatisfaction: 89,
         performanceScore: 91,
-        innovationIndex: 92}'
+        innovationIndex: 92}
       aiAnalysis: {
         insights: ['AI content creation improved efficiency by 35%', 'Spatial content enhanced engagement by 40%'],
         trends: ['Improving content creation', 'Enhancing engagement', 'Increasing efficiency'],
         recommendations: ['Expand content creation', 'Enhance spatial content', 'Implement efficiency features'],
-        impactScore: 8.9}}'
+        impactScore: 8.9}}
     {
       id: '3',
       name: 'Interaction Design System',
@@ -260,7 +260,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         totalExperiences: 145,
         userSatisfaction: 93,
         performanceScore: 96,
-        innovationIndex: 90}'
+        innovationIndex: 90}
       aiAnalysis: {
         insights: ['AI interaction design improved usability by 28%', 'Spatial interactions enhanced user experience by 45%'],
         trends: ['Improving interaction design', 'Enhancing user experience', 'Increasing usability'],
@@ -281,7 +281,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         impact: 'positive','
         confidence: 0.95,
         recommendations: ['Expand AI optimization coverage', 'Implement spatial computing', 'Enhance immersive features']
-      },'
+      },
 {
         id: '2',
         title: 'Spatial Computing Boosting Digital Twin Accuracy',
@@ -351,14 +351,14 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
       case 'positive': return '🥽
       case 'negative': return '⚠️
       case 'neutral': return '📊
-      default: return '📊'}}'
+      default: return '📊'}}
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
-    }).format(value}'
+    }).format(value}
   const formatNumber = (value: number) => {
     return new Intl.NumberFormat('en-US').format(value}
   const filteredMixedRealityExperiences = useMemo(() => {'
@@ -474,7 +474,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
           ))}
         </div>
  '
-        {/* Content Sections */},''
+        {/* Content Sections */},
 {selectedView === 'overview' && ("
           <div className=" grid grid-cols-1 lg grid-cols-2 gap-8>
             {/* Mixed Reality Experiences Overview */}
@@ -520,14 +520,14 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
               </div>
             </div>
           </div>
-        )}'
+        )}
         {selectedView === 'experiences' && ("
           <div className="space-y-6>" 
             {/* Experience Type Filter */}
             </div><div className="flex space-x-2 overflow-x-auto" pb-2>'
               {['all', 'ar-overlay', 'vr-immersion', 'mr-blend', 'spatial-interaction', 'gesture-control', 'eye-tracking'].map((type) => (
                 "`
-                  onClick={() => setSelectedType(type)}'``
+                  onClick={() => setSelectedType(type)}``
                   className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
                       ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'`
@@ -649,7 +649,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
 '"'
         {selectedView === 'technology' && (
           <div className="space-y-6>" 
@@ -687,7 +687,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
               ))}
             </div>
           </div>
-        )}'
+        )}
  ''
         {selectedView === 'insights' && data && (
           <div className="space-y-6>

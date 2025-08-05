@@ -22,7 +22,7 @@ interface Education {
   gpa?: string;
   description: string;}
 interface Skill {
-  id: string;'
+  id: string;
   name: string;
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   category: string;}
@@ -44,7 +44,7 @@ interface ResumeInput {
   languages: string[];
   projects: string[];
   achievements: string[];
-  template: string;}'
+  template: string;}
 const defaultExperience: Experience = {
   id: '1',
   company: '',
@@ -92,10 +92,10 @@ const defaultInput: ResumeInput = {'
   achievements: [''],
   template: 'modern',;
 };
-const ResumeBuilder = () => {;'
+const ResumeBuilder = () => {;
   const [input, setInput] = useState<ResumeInput>(defaultInput);
   const [resume, setResume] = useState<string>('');
-  const [loading, setLoading] = useState(false);'
+  const [loading, setLoading] = useState(false);
   const [generated, setGenerated] = useState(false);
   const [activeTab, setActiveTab] = useState('personal');
 
@@ -119,24 +119,24 @@ const ResumeBuilder = () => {;'
   };
 
   const updateExperience = (index: number, field: keyof Experience, value: any) => {;
-    const newExperience = [...input.experience];
+    const $1 = [...input.experience];
     newExperience[index] = { ...newExperience[index], [field]: value };
     setInput({ ...input, experience: newExperience });
   };
-  const addAchievement = (expIndex: number) => {;'
-    const newExperience = [...input.experience];
+  const addAchievement = (expIndex: number) => {;
+    const $1 = [...input.experience];
     newExperience[expIndex].achievements.push('');
     setInput({ ...input, experience: newExperience });
   };
 
   const updateAchievement = (expIndex: number, achievementIndex: number, value: string) => {;
-    const newExperience = [...input.experience];
+    const $1 = [...input.experience];
     newExperience[expIndex].achievements[achievementIndex] = value;
     setInput({ ...input, experience: newExperience });
   };
 
   const removeAchievement = (expIndex: number, achievementIndex: number) => {;
-    const newExperience = [...input.experience];
+    const $1 = [...input.experience];
     newExperience[expIndex].achievements.splice(achievementIndex, 1);
     setInput({ ...input, experience: newExperience });
   };
@@ -161,7 +161,7 @@ const ResumeBuilder = () => {;'
   };
 
   const updateEducation = (index: number, field: keyof Education, value: any) => {;
-    const newEducation = [...input.education];
+    const $1 = [...input.education];
     newEducation[index] = { ...newEducation[index], [field]: value };
     setInput({ ...input, education: newEducation });
   };
@@ -182,13 +182,13 @@ const ResumeBuilder = () => {;'
   };
 
   const updateSkill = (index: number, field: keyof Skill, value: any) => {;
-    const newSkills = [...input.skills];
+    const $1 = [...input.skills];
     newSkills[index] = { ...newSkills[index], [field]: value };
     setInput({ ...input, skills: newSkills });
   };
 
   const addArrayItem = (field: keyof ResumeInput, value: string) => {;
-    const newArray = [...(input[field] as string[]), value];
+    const $1 = [...(input[field] as string[]), value];
     setInput({ ...input, [field]: newArray });
   };
 
@@ -198,13 +198,13 @@ const ResumeBuilder = () => {;'
   };
 
   const updateArrayItem = (field: keyof ResumeInput, index: number, value: string) => {;
-    const newArray = [...(input[field] as string[])];
+    const $1 = [...(input[field] as string[])];
     newArray[index] = value;
     setInput({ ...input, [field]: newArray });
   };
 
   const generateResume = async () => {;
-    setLoading(true);'
+    setLoading(true);
     try {
       const response = await fetch('/api/ai-resume', {
         method: 'POST','
@@ -218,7 +218,7 @@ const ResumeBuilder = () => {;'
       const data = await response.json();
       // Sanitize the HTML before setting it
       setResume(sanitizeHtml(data.resume));
-      setGenerated(true);'
+      setGenerated(true);
     } catch (error) {
       console.error('Error generating resume: , error);
     } finally {
@@ -239,7 +239,7 @@ const ResumeBuilder = () => {;'
     navigator.clipboard.writeText(resume);
   };
 '
-  const tabs = [
+  const $1 = [
     { id: 'personal', label: 'Personal Info', icon: '👤' },
 { id: 'experience', label: 'Experience', icon: '💼' },
     { id: 'education', label: 'Education', icon: '🎓' },
@@ -283,7 +283,7 @@ const ResumeBuilder = () => {;'
                 <div className=" flex flex-wrap gap-2" mb-8>
                   {tabs.map((tab) => (
                     "`
-                      onClick={() => setActiveTab(tab.id)}'``
+                      onClick={() => setActiveTab(tab.id)}``
                       className="{`flex" items-center space-x-2 px-4 py-4 rounded-lg:transition-all duration-200 ${'
                         activeTab === tab.id
                           ? 'bg-purple-600 text-white'`
@@ -296,7 +296,7 @@ const ResumeBuilder = () => {;'
                   ))}
                 </div>
 "'
-                {/* Personal Info Tab */},''
+                {/* Personal Info Tab */},
 {activeTab === 'personal' && ("
                   <div className="space-y-6>"
                     <h2 className="text-2xl" font-bold text-white mb-6>Personal Information</h2>
@@ -414,8 +414,8 @@ const ResumeBuilder = () => {;'
                       />
                     </div>
                   </div>
-                )}'
-                {/* Experience Tab */},'"'
+                )}
+                {/* Experience Tab */},"'
 {activeTab === 'experience' && (
                   <div className="space-y-6>" 
                     </div><div className="flex justify-between items-center" mb-6>
@@ -527,8 +527,8 @@ const ResumeBuilder = () => {;'
                       ))}
                     </div>
                   </div>
-                )}'
-                {/* Education Tab */},'"'
+                )}
+                {/* Education Tab */},"'
 {activeTab === 'education' && (
                   <div className="space-y-6>" 
                     </div><div className="flex justify-between items-center" mb-6>
@@ -565,7 +565,7 @@ const ResumeBuilder = () => {;'
                               <label className="block" text-sm font-medium text-gray-300 mb-2>
                                 Degree *
                               </label>'
-                                onChange={(e) => updateEducation(index, 'degree', e.target.value)}'
+                                onChange={(e) => updateEducation(index, 'degree', e.target.value)}
                                 className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                                 placeholder=Bachelor's
                               />
@@ -623,8 +623,8 @@ const ResumeBuilder = () => {;'
                       ))}
                     </div>
                   </div>
-                )}'
-                {/* Skills Tab */},'"'
+                )}
+                {/* Skills Tab */},"'
 {activeTab === 'skills' && (
                   <div className="space-y-6>" 
                     </div><div className="flex justify-between items-center" mb-6>
@@ -687,7 +687,7 @@ const ResumeBuilder = () => {;'
                     </div>
                   </div>
                 )}"'
-                {/* Additional Tab */},''
+                {/* Additional Tab */},
 {activeTab === 'additional' && ("
                   <div className="space-y-6">
                     <h2 className="text-2xl" font-bold text-white mb-6>Additional Information</h2>
@@ -711,7 +711,7 @@ const ResumeBuilder = () => {;'
                               Remove
                             </button>
                           </div>
-                        ))}'
+                        ))}
                          ''
                           onClick={() => addArrayItem('certifications', '')}
                           className="text-purple-400" hover text-purple-300 transition-colors
@@ -739,7 +739,7 @@ const ResumeBuilder = () => {;'
                               Remove
                             </button>
                           </div>
-                        ))}'
+                        ))}
                          ''
                           onClick={() => addArrayItem('languages', '')}
                           className="text-purple-400" hover text-purple-300 transition-colors
@@ -767,7 +767,7 @@ const ResumeBuilder = () => {;'
                               Remove
                             </button>
                           </div>
-                        ))}'
+                        ))}
                          ''
                           onClick={() => addArrayItem('projects', '')}
                           className="text-purple-400" hover text-purple-300 transition-colors
@@ -795,7 +795,7 @@ const ResumeBuilder = () => {;'
                               Remove
                             </button>
                           </div>
-                        ))}'
+                        ))}
                          ''
                           onClick={() => addArrayItem('achievements', '')}
                           className="text-purple-400" hover text-purple-300 transition-colors
@@ -896,4 +896,4 @@ const ResumeBuilder = () => {;'
     );
 };
 ''`
-export default ResumeBuilder;"'"'`
+export default ResumeBuilder;'`

@@ -55,7 +55,7 @@ const Page5GNetworkIntegrationPage: NextPage: () => {
         </div>
       </main>
     </div >;
-  </div> ;"
+  </div> ;
 };
 '
 export default Page5GNetworkIntegrationPage;)"'"
