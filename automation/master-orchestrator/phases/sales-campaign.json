@@ -1,7 +1,7 @@
 [
   {
-    "id": "campaign-1754391244800-0",
-    "solutionId": "trend-solution-1754391244789-0",
+    "id": "campaign-1754391509306-0",
+    "solutionId": "trend-solution-1754391509151-0",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -292,7 +292,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Finance",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -303,7 +303,7 @@
           },
           {
             "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
-            "industry": "Finance",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -314,7 +314,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
-            "industry": "Finance",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -325,7 +325,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Finance",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -375,7 +375,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.802Z",
+    "createdAt": "2025-08-05T10:58:29.315Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -403,8 +403,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244802-1",
-    "solutionId": "trend-solution-1754391244789-1",
+    "id": "campaign-1754391509315-1",
+    "solutionId": "trend-solution-1754391509152-1",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -695,28 +695,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Healthcare",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
             "industry": "Retail",
             "metrics": [
               "Efficiency",
@@ -727,8 +705,30 @@
             "testimonial": true
           },
           {
+            "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
+            "industry": "Retail",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Healthcare",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -778,7 +778,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.802Z",
+    "createdAt": "2025-08-05T10:58:29.315Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -806,8 +806,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244802-2",
-    "solutionId": "trend-solution-1754391244789-2",
+    "id": "campaign-1754391509315-2",
+    "solutionId": "trend-solution-1754391509152-2",
     "solutionName": "AI-Powered sustainability Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -1098,7 +1098,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered sustainability Solution",
-            "industry": "Technology",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1109,7 +1109,7 @@
           },
           {
             "title": "AI-Powered sustainability Solution Success Story: From Startup to Enterprise",
-            "industry": "Retail",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1120,7 +1120,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered sustainability Solution in the Manufacturing Industry",
-            "industry": "Education",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1131,7 +1131,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered sustainability Solution in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1181,7 +1181,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.803Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -1209,8 +1209,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244803-3",
-    "solutionId": "trend-solution-1754391244789-3",
+    "id": "campaign-1754391509316-3",
+    "solutionId": "trend-solution-1754391509152-3",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -1501,7 +1501,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Finance",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1523,7 +1523,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1534,7 +1534,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Retail",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1584,7 +1584,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.803Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -1612,8 +1612,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244803-4",
-    "solutionId": "trend-solution-1754391244789-4",
+    "id": "campaign-1754391509316-4",
+    "solutionId": "trend-solution-1754391509152-4",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -1904,7 +1904,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Manufacturing",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1915,7 +1915,7 @@
           },
           {
             "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
-            "industry": "Finance",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1926,7 +1926,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1937,7 +1937,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Retail",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1987,7 +1987,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.803Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -2015,8 +2015,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244803-5",
-    "solutionId": "opportunity-solution-1754391244790-0",
+    "id": "campaign-1754391509316-5",
+    "solutionId": "opportunity-solution-1754391509152-0",
     "solutionName": "AI-Powered business opportunity Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -2314,17 +2314,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered business opportunity Solution",
-            "industry": "Retail",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI-Powered business opportunity Solution Success Story: From Startup to Enterprise",
             "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
@@ -2335,8 +2324,19 @@
             "testimonial": true
           },
           {
+            "title": "AI-Powered business opportunity Solution Success Story: From Startup to Enterprise",
+            "industry": "Healthcare",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "ROI Case Study: AI-Powered business opportunity Solution in the Manufacturing Industry",
-            "industry": "Finance",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2347,7 +2347,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered business opportunity Solution in Healthcare",
-            "industry": "Education",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2397,7 +2397,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.803Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -2425,8 +2425,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244803-6",
-    "solutionId": "opportunity-solution-1754391244790-1",
+    "id": "campaign-1754391509316-6",
+    "solutionId": "opportunity-solution-1754391509152-1",
     "solutionName": "Intelligent business opportunity Platform",
     "targetMarket": "SMB",
     "channels": [
@@ -2735,7 +2735,7 @@
           },
           {
             "title": "Intelligent business opportunity Platform Success Story: From Startup to Enterprise",
-            "industry": "Retail",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2746,7 +2746,7 @@
           },
           {
             "title": "ROI Case Study: Intelligent business opportunity Platform in the Manufacturing Industry",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2807,7 +2807,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.803Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 330,
       "expectedRevenue": 222324,
@@ -2835,8 +2835,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244803-7",
-    "solutionId": "opportunity-solution-1754391244790-2",
+    "id": "campaign-1754391509316-7",
+    "solutionId": "opportunity-solution-1754391509152-2",
     "solutionName": "AI-Powered market gap Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -3134,7 +3134,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered market gap Solution",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3145,7 +3145,7 @@
           },
           {
             "title": "AI-Powered market gap Solution Success Story: From Startup to Enterprise",
-            "industry": "Retail",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3156,7 +3156,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered market gap Solution in the Manufacturing Industry",
-            "industry": "Retail",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3217,7 +3217,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.804Z",
+    "createdAt": "2025-08-05T10:58:29.316Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -3245,8 +3245,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244804-8",
-    "solutionId": "opportunity-solution-1754391244790-3",
+    "id": "campaign-1754391509316-8",
+    "solutionId": "opportunity-solution-1754391509152-3",
     "solutionName": "Intelligent market gap Platform",
     "targetMarket": "SMB",
     "channels": [
@@ -3544,28 +3544,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with Intelligent market gap Platform",
-            "industry": "Finance",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "Intelligent market gap Platform Success Story: From Startup to Enterprise",
-            "industry": "Finance",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "ROI Case Study: Intelligent market gap Platform in the Manufacturing Industry",
             "industry": "Healthcare",
             "metrics": [
               "Efficiency",
@@ -3576,8 +3554,30 @@
             "testimonial": true
           },
           {
+            "title": "Intelligent market gap Platform Success Story: From Startup to Enterprise",
+            "industry": "Manufacturing",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "ROI Case Study: Intelligent market gap Platform in the Manufacturing Industry",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "Customer Spotlight: Intelligent market gap Platform in Healthcare",
-            "industry": "Education",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3627,7 +3627,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.804Z",
+    "createdAt": "2025-08-05T10:58:29.317Z",
     "expectedROI": {
       "percentage": 330,
       "expectedRevenue": 222324,
@@ -3655,8 +3655,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244804-9",
-    "solutionId": "opportunity-solution-1754391244790-4",
+    "id": "campaign-1754391509317-9",
+    "solutionId": "opportunity-solution-1754391509153-4",
     "solutionName": "AI-Powered startup opportunity Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -3954,7 +3954,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered startup opportunity Solution",
-            "industry": "Education",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3976,7 +3976,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered startup opportunity Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3987,7 +3987,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered startup opportunity Solution in Healthcare",
-            "industry": "Healthcare",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4037,7 +4037,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.805Z",
+    "createdAt": "2025-08-05T10:58:29.317Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -4065,8 +4065,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244805-10",
-    "solutionId": "gap-solution-1754391244791-0",
+    "id": "campaign-1754391509317-10",
+    "solutionId": "gap-solution-1754391509153-0",
     "solutionName": "AI analytics Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -4375,7 +4375,7 @@
           },
           {
             "title": "AI analytics Solution Success Story: From Startup to Enterprise",
-            "industry": "Finance",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4397,7 +4397,7 @@
           },
           {
             "title": "Customer Spotlight: AI analytics Solution in Healthcare",
-            "industry": "Technology",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4447,7 +4447,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.805Z",
+    "createdAt": "2025-08-05T10:58:29.318Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -4475,8 +4475,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244805-11",
-    "solutionId": "gap-solution-1754391244791-1",
+    "id": "campaign-1754391509318-11",
+    "solutionId": "gap-solution-1754391509154-1",
     "solutionName": "AI automation Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -4785,7 +4785,7 @@
           },
           {
             "title": "AI automation Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4796,7 +4796,7 @@
           },
           {
             "title": "ROI Case Study: AI automation Solution in the Manufacturing Industry",
-            "industry": "Education",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4857,7 +4857,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.805Z",
+    "createdAt": "2025-08-05T10:58:29.318Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -4885,8 +4885,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244805-12",
-    "solutionId": "gap-solution-1754391244791-2",
+    "id": "campaign-1754391509318-12",
+    "solutionId": "gap-solution-1754391509154-2",
     "solutionName": "AI prediction Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -5184,7 +5184,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI prediction Solution",
-            "industry": "Healthcare",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5195,7 +5195,7 @@
           },
           {
             "title": "AI prediction Solution Success Story: From Startup to Enterprise",
-            "industry": "Healthcare",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5206,7 +5206,7 @@
           },
           {
             "title": "ROI Case Study: AI prediction Solution in the Manufacturing Industry",
-            "industry": "Education",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5217,7 +5217,7 @@
           },
           {
             "title": "Customer Spotlight: AI prediction Solution in Healthcare",
-            "industry": "Healthcare",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5267,7 +5267,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.805Z",
+    "createdAt": "2025-08-05T10:58:29.318Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -5295,8 +5295,8 @@
     ]
   },
   {
-    "id": "campaign-1754391244805-13",
-    "solutionId": "gap-solution-1754391244791-3",
+    "id": "campaign-1754391509318-13",
+    "solutionId": "gap-solution-1754391509154-3",
     "solutionName": "AI optimization Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -5605,7 +5605,7 @@
           },
           {
             "title": "AI optimization Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5616,7 +5616,7 @@
           },
           {
             "title": "ROI Case Study: AI optimization Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5677,7 +5677,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-05T10:54:04.805Z",
+    "createdAt": "2025-08-05T10:58:29.318Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
