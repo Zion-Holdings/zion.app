@@ -100,7 +100,8 @@ class EnhancedCronSystem extends EventEmitter {
       return interval.next().toDate();
     } catch (error) {
       console.error('Error calculating next run:', error);
-      return null;
+      // Fallback: return current time + 1 hour
+      return new Date(Date.now() + 60 * 60 * 1000);
     }
   }
 
