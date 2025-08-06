@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 interface FacilityPlan {
   id: string;
   name: string;
-  type: 'infrastructure' | '''workforce' | 'technology' | 'financial''';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
   currentCapacity: number;
   targetCapacity: number;
   utilization: number;

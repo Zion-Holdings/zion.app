@@ -215,208 +215,208 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
            {/* Tab Navigation */}
            <div className="mb-8">
              <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
-              {[
-                { id: 'dashboard', label: "Intelligence Dashboard", icon: 🧠 },
-                { id: 'assistants', label: 'Quantum AI Assistants', icon: 🤖 },
-                { id: 'intelligence', label: 'Quantum Intelligence', icon: 💡 },
-                { id: 'consciousness', label: 'Quantum Consciousness', icon: 🌟 },
-                { id: 'brains', label: 'Quantum Brains', icon: 🧬 },
-                { id: 'knowledge', label: 'Quantum Knowledge', icon: 📚 },
-                { id: 'communication', label: 'Quantum Communication', icon: 💬 }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
-                    activeTab === tab.id
-                      ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                  }`}
-                >
-                  <span>{tab.icon}</span>
-                  <span>{tab.label}</span>
-                </button>
-              ))}
-            </nav>
-          </div>
-          {/* Tab Content */}
-          <div className="""space-y-8">
-            {/* Intelligence Dashboard */}
-            {activeTab === 'dashboard' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Intelligence Dashboard</h2>
-                <div className="""grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  {/* System Status */}
-                  <div className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div className="""flex items-center space-x-3 mb-4">
-                      <div className="""w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                        <span className="""text-white text-lg">🧠</span>
-                      </div>
-                      <h3 className="""text-lg font-semibold text-white">Intelligence Status</h3>
-                    </div>
-                    <p className="""text-gray-400 text-sm">Quantum AI Hub</p>
-                  </div>
-                  {/* Quick Actions */}
-                  <div className="""lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <h3 className="""text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                    <div className="""grid grid-cols-1 md:grid-cols-4 gap-4">
-                      <button className="""p-4 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg text-white hover:from-emerald-700 hover:to-emerald-800 transition-all duration-200">
-                        <div className="""text-2xl mb-2">🤖</div>
-                        <div className="""font-semibold">AI Assistant</div>
-                      </button>
-                      <button className="""p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover:from-teal-700 hover:to-teal-800 transition-all duration-200">
-                        <div className="""text-2xl mb-2">💡</div>
-                        <div className="""font-semibold">Intelligence</div>
-                      </button>
-                      <button className="""p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
-                        <div className="""text-2xl mb-2">🌟</div>
-                        <div className="""font-semibold">Consciousness</div>
-                      </button>
-                      <button className="""p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
-                        <div className="""text-2xl mb-2">🧬</div>
-                        <div className="""font-semibold">Brain</div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {/* Quantum AI Assistants */}
-            {activeTab === 'assistants' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum AI Assistants</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {assistants.map((assistant) => (
-                    <div key={assistant.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{assistant.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{assistant.type}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{assistant.intelligence}%</div>
-                        <div className="""text-gray-400 text-sm">Intelligence</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {/* Quantum Intelligence */}
-            {activeTab === 'intelligence' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum Intelligence</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {intelligence.map((intel) => (
-                    <div key={intel.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{intel.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{intel.intelligence}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{intel.capability}%</div>
-                        <div className="""text-gray-400 text-sm">Capability</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {/* Quantum Consciousness */}
-            {activeTab === 'consciousness' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum Consciousness</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {consciousness.map((conscious) => (
-                    <div key={conscious.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{conscious.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{conscious.consciousness}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{conscious.awareness}%</div>
-                        <div className="""text-gray-400 text-sm">Awareness</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {/* Quantum Brains */}
-            {activeTab === 'brains' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum Brains</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {brains.map((brain) => (
-                    <div key={brain.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{brain.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{brain.brain}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{brain.neurons.toLocaleString()}</div>
-                        <div className="""text-gray-400 text-sm">Neurons</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {/* Quantum Knowledge */}
-            {activeTab === 'knowledge' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum Knowledge</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {knowledge.map((know) => (
-                    <div key={know.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{know.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{know.knowledge}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{know.facts.toLocaleString()}</div>
-                        <div className="""text-gray-400 text-sm">Facts</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {/* Quantum Communication */}
-            {activeTab === 'communication' && (
-              <div>
-                <h2 className="""text-2xl font-bold text-white">Quantum Communication</h2>
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {communication.map((comm) => (
-                    <div key={comm.id} className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                      <div className="""flex items-center justify-between mb-4">
-                        <h3 className="""text-lg font-semibold text-white">{comm.name}</h3>
-                        <p className="""text-gray-400 text-sm capitalize">{comm.communication}</p>
-                      </div>
-                      <div className="""text-right">
-                        <div className="""text-2xl font-bold text-white">{comm.language}%</div>
-                        <div className="""text-gray-400 text-sm">Language</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </main>
-      {/* Footer */}
-      <footer className="""relative z-10 mt-16">
-        <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="""text-center">
-            <p className="""text-gray-400">
-              AI-Powered Quantum AI Assistant & Intelligence | Zion Tech Group
-            </p>
-            <p className="""text-gray-500 text-sm mt-2">
-              Advanced quantum AI assistant, intelligence, consciousness, and brain capabilities
-            </p>
-          </div>
-        </div>
-      </footer>
+               {[
+                 { id: 'dashboard', label: "Intelligence Dashboard", icon: 🧠 },
+                 { id: 'assistants', label: 'Quantum AI Assistants', icon: 🤖 },
+                 { id: 'intelligence', label: 'Quantum Intelligence', icon: 💡 },
+                 { id: 'consciousness', label: 'Quantum Consciousness', icon: 🌟 },
+                 { id: 'brains', label: 'Quantum Brains', icon: 🧬 },
+                 { id: 'knowledge', label: 'Quantum Knowledge', icon: 📚 },
+                 { id: 'communication', label: 'Quantum Communication', icon: 💬 }
+               ].map((tab) => (
+                 <button
+                   key={tab.id}
+                   onClick={() => setActiveTab(tab.id)}
+                   className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
+                     activeTab === tab.id
+                       ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
+                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                   }`}
+                 >
+                   <span>{tab.icon}</span>
+                   <span>{tab.label}</span>
+                 </button>
+               ))}
+             </nav>
+           </div>
+           {/* Tab Content */}
+           <div className="space-y-8">
+             {/* Intelligence Dashboard */}
+             {activeTab === 'dashboard' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Intelligence Dashboard</h2>
+                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                   {/* System Status */}
+                   <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                     <div className="flex items-center space-x-3 mb-4">
+                       <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                         <span className="text-white text-lg">🧠</span>
+                       </div>
+                       <h3 className="text-lg font-semibold text-white">Intelligence Status</h3>
+                     </div>
+                     <p className="text-gray-400 text-sm">Quantum AI Hub</p>
+                   </div>
+                   {/* Quick Actions */}
+                   <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                     <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
+                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                       <button className="p-4 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg text-white hover:from-emerald-700 hover:to-emerald-800 transition-all duration-200">
+                         <div className="text-2xl mb-2">🤖</div>
+                         <div className="font-semibold">AI Assistant</div>
+                       </button>
+                       <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover:from-teal-700 hover:to-teal-800 transition-all duration-200">
+                         <div className="text-2xl mb-2">💡</div>
+                         <div className="font-semibold">Intelligence</div>
+                       </button>
+                       <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                         <div className="text-2xl mb-2">🌟</div>
+                         <div className="font-semibold">Consciousness</div>
+                       </button>
+                       <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                         <div className="text-2xl mb-2">🧬</div>
+                         <div className="font-semibold">Brain</div>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             )}
+             {/* Quantum AI Assistants */}
+             {activeTab === 'assistants' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum AI Assistants</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {assistants.map((assistant) => (
+                     <div key={assistant.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{assistant.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{assistant.type}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{assistant.intelligence}%</div>
+                         <div className="text-gray-400 text-sm">Intelligence</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+             {/* Quantum Intelligence */}
+             {activeTab === 'intelligence' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum Intelligence</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {intelligence.map((intel) => (
+                     <div key={intel.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{intel.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{intel.intelligence}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{intel.capability}%</div>
+                         <div className="text-gray-400 text-sm">Capability</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+             {/* Quantum Consciousness */}
+             {activeTab === 'consciousness' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum Consciousness</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {consciousness.map((conscious) => (
+                     <div key={conscious.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{conscious.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{conscious.consciousness}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{conscious.awareness}%</div>
+                         <div className="text-gray-400 text-sm">Awareness</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+             {/* Quantum Brains */}
+             {activeTab === 'brains' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum Brains</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {brains.map((brain) => (
+                     <div key={brain.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{brain.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{brain.brain}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{brain.neurons.toLocaleString()}</div>
+                         <div className="text-gray-400 text-sm">Neurons</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+             {/* Quantum Knowledge */}
+             {activeTab === 'knowledge' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum Knowledge</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {knowledge.map((know) => (
+                     <div key={know.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{know.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{know.knowledge}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{know.facts.toLocaleString()}</div>
+                         <div className="text-gray-400 text-sm">Facts</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+             {/* Quantum Communication */}
+             {activeTab === 'communication' && (
+               <div>
+                 <h2 className="text-2xl font-bold text-white">Quantum Communication</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {communication.map((comm) => (
+                     <div key={comm.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                       <div className="flex items-center justify-between mb-4">
+                         <h3 className="text-lg font-semibold text-white">{comm.name}</h3>
+                         <p className="text-gray-400 text-sm capitalize">{comm.communication}</p>
+                       </div>
+                       <div className="text-right">
+                         <div className="text-2xl font-bold text-white">{comm.language}%</div>
+                         <div className="text-gray-400 text-sm">Language</div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
+           </div>
+         </div>
+       </main>
+       {/* Footer */}
+       <footer className="relative z-10 mt-16">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+           <div className="text-center">
+             <p className="text-gray-400">
+               AI-Powered Quantum AI Assistant & Intelligence | Zion Tech Group
+             </p>
+             <p className="text-gray-500 text-sm mt-2">
+               Advanced quantum AI assistant, intelligence, consciousness, and brain capabilities
+             </p>
+           </div>
+         </div>
+       </footer>
     </div>
   );
 };

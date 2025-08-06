@@ -81,6 +81,76 @@ export default function;${componentName}() {
   return fixed;
 }
 
+// Files to fix with their specific issues
+const filesToFix = [
+  {
+    file: 'pages/api/ai-change-management.ts',
+    fixes: [
+      { pattern: /'technology' \| ''process' \| 'organizational' \| 'cultural''/g, replacement: "'technology' | 'process' | 'organizational' | 'cultural'" },
+      { pattern: /'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g, replacement: "'planned' | 'in-progress' | 'completed' | 'cancelled'" },
+      { pattern: /'low' \| ''medium' \| 'high' \| 'critical''/g, replacement: "'low' | 'medium' | 'high' | 'critical'" },
+      { pattern: /'low' \| ''medium' \| 'high''/g, replacement: "'low' | 'medium' | 'high'" }
+    ]
+  },
+  {
+    file: 'pages/api/ai-contract.ts',
+    fixes: [
+      { pattern: /'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g, replacement: "'service' | 'employment' | 'partnership' | 'nda' | 'license'" }
+    ]
+  },
+  {
+    file: 'pages/api/ai-hr-management.ts',
+    fixes: [
+      { pattern: /'active' \| ''inactive' \| 'on-leave''/g, replacement: "'active' | 'inactive' | 'on-leave'" }
+    ]
+  },
+  {
+    file: 'pages/api/ai-recommendations.ts',
+    fixes: [
+      { pattern: /'high' \| ''medium' \| 'low''/g, replacement: "'high' | 'medium' | 'low'" }
+    ]
+  },
+  {
+    file: 'pages/api/ai-service-matcher.ts',
+    fixes: [
+      { pattern: /};/g, replacement: "}" },
+      { pattern: /handler\(;/g, replacement: "handler(" },
+      { pattern: /req: NextApiRequest,;/g, replacement: "req: NextApiRequest," },
+      { pattern: /res: NextApiResponse;/g, replacement: "res: NextApiResponse)" }
+    ]
+  }
+];
+
+let totalFixed = 0;
+
+filesToFix.forEach(({ file, fixes }) => {
+  try {
+    const filePath = path.join(process.cwd(), file);
+    if (fs.existsSync(filePath)) {
+      let content = fs.readFileSync(filePath, 'utf8');
+      let fileFixed = false;
+      
+      fixes.forEach(({ pattern, replacement }) => {
+        const newContent = content.replace(pattern, replacement);
+        if (newContent !== content) {
+          content = newContent;
+          fileFixed = true;
+        }
+      });
+      
+      if (fileFixed) {
+        fs.writeFileSync(filePath, content);
+        console.log(`Fixed: ${file}`);
+        totalFixed++;
+      }
+    }
+  } catch (error) {
+    console.error(`Error fixing ${file}:`, error.message);
+  }
+});
+
+console.log(`\nTotal files fixed: ${totalFixed}`);
+
 // Function to process files
 function processFiles() {
   const patterns = [
