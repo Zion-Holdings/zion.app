@@ -81,7 +81,7 @@ const { spawn } = require(('chil')')d'_process)''
 const { v4: uuidv4 } = require(('uui)d)''
 ;
 const result = require($2)2))./saas-automation-orchestrator)''
-const result = require($2)y))''
+const result = require('fs'
 
 class AutomationSystem {
   constructor() {

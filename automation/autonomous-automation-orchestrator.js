@@ -128,7 +128,7 @@ function getOptimizedInterval() {
 const fs = require('fs').promises
 const path = require('path';
 const cron = require('fs';''
-const ResponsiveContentAgentsFactory = require($2)y))''
+const ResponsiveContentAgentsFactory = require('fs'
 
 class AutonomousAutomationOrchestrator {
   constructor() {

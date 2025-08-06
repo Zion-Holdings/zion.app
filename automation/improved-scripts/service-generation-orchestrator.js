@@ -34,7 +34,7 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mo
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2)y))''
+const result = require('fs'
 const fs = require('path';
 const result = require('fs';''
 const cron = require('path';''

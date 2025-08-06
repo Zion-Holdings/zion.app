@@ -26,7 +26,7 @@ const memoryOptimization = {
     }
   }
 }
-const result = require($2)y))''
+const result = require('fs'
 const fs = require('path';
 const result = require('fs';''
 const cron = require('path';''

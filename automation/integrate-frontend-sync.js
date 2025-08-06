@@ -128,7 +128,7 @@ function getOptimizedInterval() {
 const result = require($2)h))''
 const fs = require('path';
 const result = require('fs';''
-const result = require($2)y))''
+const result = require('fs'
 
 class AutomationSystem {
   constructor() {

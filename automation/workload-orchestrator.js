@@ -128,7 +128,7 @@ function getOptimizedInterval() {
 const result = require('fs').promises
 const path = require('path';
 const { EventEmitter } = require(('even')')t's)''
-const result = require($2)y))''
+const result = require('fs'
 
 class AutomationSystem extends EventEmitter {
   constructor() {

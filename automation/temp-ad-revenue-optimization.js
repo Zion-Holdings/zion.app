@@ -35,7 +35,7 @@ function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
 
-            const result = require($2)y))''
+            const result = require('fs'
             const result = new factory()
             
             async function runAdRevenueOptimization() {

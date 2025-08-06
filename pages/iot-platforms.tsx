@@ -1,283 +1,262 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-// Remove the problematic import
-// import Layout from '../components/Layout';
-import { motion } from 'framer-motion';
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import EnhancedButton from '../components/ui/EnhancedButton'
+import GlassmorphismCard from '../components/ui/GlassmorphismCard'
+import InteractiveStats from '../components/ui/InteractiveStats'
+import FuturisticHero from '../components/ui/FuturisticHero'
 
 const IoTPlatforms: NextPage = () => {
+  const stats = [
+    { value: 1000, label: 'Connected Devices', icon: '📱', color: 'blue' as const, suffix: '+' },
+    { value: 99.9, label: 'Uptime %', icon: '⚡', color: 'green' as const, suffix: '%' },
+    { value: 50, label: 'Protocols Supported', icon: '🔗', color: 'purple' as const, suffix: '+' },
+    { value: 24, label: 'Real-time Monitoring', icon: '📊', color: 'pink' as const, suffix: '/7' }
+  ]
+
+  const features = [
+    {
+      title: 'Advanced AI Capabilities',
+      description: 'Leverage cutting-edge AI technology for superior results and intelligent automation',
+      icon: '🤖',
+      color: 'blue' as const
+    },
+    {
+      title: 'Real-time Processing',
+      description: 'Process data and make decisions in real-time with sub-millisecond latency',
+      icon: '⚡',
+      color: 'purple' as const
+    },
+    {
+      title: 'Scalable Architecture',
+      description: 'Handle millions of devices with our cloud-native, auto-scaling platform',
+      icon: '📈',
+      color: 'green' as const
+    },
+    {
+      title: 'Secure Communication',
+      description: 'End-to-end encryption and secure protocols for all device communications',
+      icon: '🔒',
+      color: 'pink' as const
+    },
+    {
+      title: 'Edge Computing',
+      description: 'Process data at the edge for faster response times and reduced bandwidth',
+      icon: '🌐',
+      color: 'blue' as const
+    },
+    {
+      title: 'Analytics Dashboard',
+      description: 'Comprehensive analytics and insights for all your IoT devices and data',
+      icon: '📊',
+      color: 'purple' as const
+    }
+  ]
+
+  const solutions = [
+    {
+      title: 'Smart City Infrastructure',
+      description: 'Complete IoT solutions for modern smart cities including traffic management, environmental monitoring, and public safety',
+      price: '$50K-500K',
+      rating: 4.9,
+      icon: '🏙️',
+      color: 'blue' as const,
+      featured: true
+    },
+    {
+      title: 'Industrial IoT (IIoT)',
+      description: 'Manufacturing automation, predictive maintenance, and industrial monitoring solutions',
+      price: '$100K-1M',
+      rating: 4.8,
+      icon: '🏭',
+      color: 'purple' as const
+    },
+    {
+      title: 'Healthcare IoT',
+      description: 'Medical device monitoring, patient tracking, and healthcare facility management',
+      price: '$75K-750K',
+      rating: 4.9,
+      icon: '🏥',
+      color: 'green' as const
+    },
+    {
+      title: 'Agriculture IoT',
+      description: 'Precision farming, crop monitoring, and automated irrigation systems',
+      price: '$25K-250K',
+      rating: 4.7,
+      icon: '🌾',
+      color: 'pink' as const
+    }
+  ]
+
   return (
-    <>
-      <Head>
-        <title>IoT Platforms - Zion</title>
-        <meta name="description" content="Explore our comprehensive IoT platform solutions and services." />
-        <meta name="keywords" content="iot-platforms, AI, automation, technology, solutions" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Iot Platforms
-              </h1>
-              <p className="text-xl text-high-contrast-secondary mb-8 max-w-3xl mx-auto">
-                Comprehensive IoT platforms that connect and manage your smart devices and sensors.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Get Started
-                </button>
-                <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
+    <EnhancedLayout
+      title="IoT Platforms - Zion"
+      description="Comprehensive IoT platforms that connect and manage your smart devices and sensors with cutting-edge technology."
+    >
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-responsive-4xl lg:text-responsive-6xl font-bold text-white mb-8">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                IoT Platforms
+              </span>
+            </h1>
+            <p className="text-responsive-xl text-gray-300 mb-8 leading-relaxed">
+              Comprehensive IoT platforms that connect and manage your smart devices and sensors 
+              with cutting-edge AI technology and real-time processing capabilities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <EnhancedButton
+                href="/contact"
+                size="lg"
+                gradient="blue"
+                glow
+                icon="🚀"
+              >
+                Get Started
+              </EnhancedButton>
+              <EnhancedButton
+                href="/services"
+                variant="outline"
+                size="lg"
+                icon="📋"
+              >
+                View Solutions
+              </EnhancedButton>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      {/* Stats Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
+                Platform Statistics
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              Real-time metrics showcasing our IoT platform's capabilities and performance
+            </p>
+          </div>
+          
+          <InteractiveStats stats={stats} />
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
+
+        <div className="container-responsive relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
                 Key Features
-              </h2>
-              <p className="text-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                Discover the powerful capabilities that make our iot-platforms solution stand out
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              
-              <motion.div
-                key="0"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              Discover the powerful capabilities that make our IoT platform solution stand out
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <GlassmorphismCard key={index} gradient={feature.color} glow>
+                <div className="text-center">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced AI Capabilities</h3>
-                <p className="text-high-contrast-tertiary">Leverage cutting-edge AI technology for superior results</p>
-              </motion.div>
-              
-              <motion.div
-                key="1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+              </GlassmorphismCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-green">
+                IoT Solutions
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              Comprehensive IoT solutions tailored for different industries and use cases
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {solutions.map((solution, index) => (
+              <GlassmorphismCard key={index} gradient={solution.color} glow>
+                <div className="flex items-start space-x-4">
+                  <div className="text-4xl">{solution.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-semibold text-white">{solution.title}</h3>
+                      {solution.featured && (
+                        <span className="text-xs bg-neon-blue text-black px-2 py-1 rounded-full font-semibold">
+                          FEATURED
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-gray-300 mb-4">{solution.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-neon-green font-semibold">{solution.price}</span>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-yellow-400">⭐</span>
+                        <span className="text-white">{solution.rating}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Real-time Processing</h3>
-                <p className="text-high-contrast-tertiary">Process data and make decisions in real-time</p>
-              </motion.div>
-              
-              <motion.div
-                key="2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+              </GlassmorphismCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                Ready to Connect Your Devices?
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses already using our IoT platform to transform their operations 
+              and gain real-time insights from their connected devices.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <EnhancedButton
+                href="/contact"
+                size="lg"
+                gradient="blue"
+                glow
+                icon="🚀"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Architecture</h3>
-                <p className="text-high-contrast-tertiary">Scale your operations with flexible, cloud-native architecture</p>
-              </motion.div>
-              
-              <motion.div
-                key="3"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.30000000000000004 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                Start Your IoT Journey
+              </EnhancedButton>
+              <EnhancedButton
+                href="/services"
+                variant="outline"
+                size="lg"
+                icon="📋"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Comprehensive Analytics</h3>
-                <p className="text-high-contrast-tertiary">Get detailed insights and analytics for informed decisions</p>
-              </motion.div>
-              
-              <motion.div
-                key="4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure Implementation</h3>
-                <p className="text-high-contrast-tertiary">Enterprise-grade security for your sensitive data</p>
-              </motion.div>
-              
-              <motion.div
-                key="5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
-                <p className="text-high-contrast-tertiary">Round-the-clock support to ensure your success</p>
-              </motion.div>
-              
+                View All Solutions
+              </EnhancedButton>
             </div>
           </div>
-        </section>
-
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Our Iot Platforms
-              </h2>
-              <p className="text-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                Experience the benefits that transform your business operations
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              
-              <motion.div
-                key="0"
-                initial={{ opacity: 0, x: 0 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0 }}
-                className="flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Enhanced Productivity</h3>
-                  <p className="text-high-contrast-tertiary">Boost productivity with AI-powered tools and automation</p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                key="1"
-                initial={{ opacity: 0, x: 0 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Improved Accuracy</h3>
-                  <p className="text-high-contrast-tertiary">Reduce errors and improve accuracy with intelligent systems</p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                key="2"
-                initial={{ opacity: 0, x: 0 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Cost Optimization</h3>
-                  <p className="text-high-contrast-tertiary">Lower costs while maintaining or improving performance</p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                key="3"
-                initial={{ opacity: 0, x: 0 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.30000000000000004 }}
-                className="flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Competitive Advantage</h3>
-                  <p className="text-high-contrast-tertiary">Stay ahead of the competition with cutting-edge technology</p>
-                </div>
-              </motion.div>
-              
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-blue-100 mb-8">
-                Start your journey with our Iot Platforms solution today
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Start Free Trial
-                </button>
-                <button className="border border-white text-white hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Schedule Demo
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </EnhancedLayout>
   )
 }
 
