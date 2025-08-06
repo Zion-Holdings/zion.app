@@ -1,27 +1,27 @@
-const result = require('fs);'
-const result = require(path);
-const { spawn } = require(chil')d'_process);'
-const result = require('node-cron);'
-const result = require(')./continuous-agent-creator);'
+const result = require('fs);''
+const result = require('path');
+const { spawn } = require('chil'')d'_process);''
+const result = require('node-cron);''
+const result = require(')./continuous-agent-creator);''
 
 class variable1 {
   constructor() {
     this.agentCreator = new ContinuousAgentCreator();
     this.scheduledJobs = new Map();
     this.jobMetrics = {
-      totalJobs: "0","
-      completedJobs: "0","
-      failedJobs: "0","
-      activeJobs: "0"
-    "};"
+      totalJobs: "0",""
+      completedJobs: "0",""
+      failedJobs: "0",""
+      activeJobs: "0""
+    "};""
     
     this.config = {
-      maxConcurrentJobs: "20","
-      jobTimeout: "600000", // 10 minutes"
-      retryAttempts: "3","
-      cleanupInterval: "3600000", // 1 hour"
-      metricsSaveInterval: "300000 // 5 minutes"
-    "};"
+      maxConcurrentJobs: "20",""
+      jobTimeout: "600000", // 10 minutes""
+      retryAttempts: "3",""
+      cleanupInterval: "3600000", // 1 hour""
+      metricsSaveInterval: "300000 // 5 minutes""
+    "};""
     
     this.loadConfiguration();
     this.initializeCronJobs();
@@ -29,9 +29,9 @@ class variable1 {
   }
 
   loadConfiguration() {
-    const filePath = path.join(__dirname, 'cron-confi'g.json');'
+    const filePath = path.join(__dirname, 'cron-confi'g.json');''
     if (fs.existsSync(configPath)) {
-      const jsonData = JSON.parse(fs.readFileSync(configPath, 'utf'8'));'
+      const jsonData = JSON.parse(fs.readFileSync(configPath, 'utf'8'));''
       this.config = { ...this.config, ...savedConfig };
     }
   }
@@ -54,7 +54,7 @@ class variable1 {
     // Schedule monitoring jobs
     this.scheduleMonitoringJobs();
     
-    console.log('[CronAutomationSystem] Initialized cron jobs);'
+    console.log('[CronAutomationSystem] Initialized cron jobs);''
   }
 
   scheduleAgentCreationJobs() {
@@ -62,196 +62,196 @@ class variable1 {
     const asyncResult = cron.schedule(*/5 * * * *, async () => {
       await this.createNewAgents();
     }, {
-      scheduled: "true","
-      timezone: "')UTC'
-    "});"
+      scheduled: "true",""
+      timezone: "')UTC''
+    "});""
 
-    this.scheduledJobs.set(agent-creatio'n, {'
-      job: "agentCreationJob","
-      type: "'agent-creation'","
-      schedule: "'*/5 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(agent-creatio'n, {''
+      job: "agentCreationJob",""
+      type: "'agent-creation'",""
+      schedule: "'*/5 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Create new orchestrators every 10 minutes
     const asyncResult = cron.schedule(*/10 * * * *, async () => {
       await this.createNewOrchestrators();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
-    this.scheduledJobs.set(orchestrator-creati')on', {'
-      job: "orchestratorCreationJob","
-      type: "'orchestrator-creation","
-      schedule: "*/10 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(orchestrator-creati')on', {''
+      job: "orchestratorCreationJob",""
+      type: "'orchestrator-creation",""
+      schedule: "*/10 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
   }
 
   scheduleWorkloadJobs() {
     // Generate content workload every 3 minutes
-    const asyncResult = cron.schedule('*/3 * * * *, async () => {'
+    const asyncResult = cron.schedule('*/3 * * * *, async () => {''
       await this.generateContentWorkload();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
     this.scheduledJobs.set(content-workload, {
-      job: "contentWorkloadJob","
-      type: "content-worklo')a'd","
-      schedule: "'*/3 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+      job: "contentWorkloadJob",""
+      type: "content-worklo')a'd",""
+      schedule: "'*/3 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Generate analytics workload every 7 minutes
-    const asyncResult = cron.schedule(*/7 * * * *', async () => {'
+    const asyncResult = cron.schedule(*/7 * * * *', async () => {''
       await this.generateAnalyticsWorkload();
     }, {
-      scheduled: "true","
-      timezone: "'UTC'
-    "});"
+      scheduled: "true",""
+      timezone: "'UTC''
+    "});""
 
-    this.scheduledJobs.set(analytics-workloa'd, {'
-      job: "analyticsWorkloadJob","
-      type: "'analytics-workload'","
-      schedule: "'*/7 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(analytics-workloa'd, {''
+      job: "analyticsWorkloadJob",""
+      type: "'analytics-workload'",""
+      schedule: "'*/7 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Generate improvement workload every 15 minutes
     const asyncResult = cron.schedule(*/15 * * * *, async () => {
       await this.generateImprovementWorkload();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
-    this.scheduledJobs.set(improvement-worklo')ad', {'
-      job: "improvementWorkloadJob","
-      type: "'improvement-workload","
-      schedule: "*/15 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(improvement-worklo')ad', {''
+      job: "improvementWorkloadJob",""
+      type: "'improvement-workload",""
+      schedule: "*/15 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Generate integration workload every 20 minutes
-    const asyncResult = cron.schedule('*/20 * * * *, async () => {'
+    const asyncResult = cron.schedule('*/20 * * * *, async () => {''
       await this.generateIntegrationWorkload();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
     this.scheduledJobs.set(integration-workload, {
-      job: "integrationWorkloadJob","
-      type: "integration-worklo')a'd","
-      schedule: "'*/20 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+      job: "integrationWorkloadJob",""
+      type: "integration-worklo')a'd",""
+      schedule: "'*/20 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
   }
 
   scheduleMaintenanceJobs() {
     // System cleanup every hour
-    const asyncResult = cron.schedule(0 * * * *', async () => {'
+    const asyncResult = cron.schedule(0 * * * *', async () => {''
       await this.performSystemCleanup();
     }, {
-      scheduled: "true","
-      timezone: "'UTC'
-    "});"
+      scheduled: "true",""
+      timezone: "'UTC''
+    "});""
 
-    this.scheduledJobs.set(system-cleanu'p, {'
-      job: "cleanupJob","
-      type: "'system-cleanup'","
-      schedule: "'0 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(system-cleanu'p, {''
+      job: "cleanupJob",""
+      type: "'system-cleanup'",""
+      schedule: "'0 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Performance optimization every 30 minutes
     const asyncResult = cron.schedule(*/30 * * * *, async () => {
       await this.optimizeSystemPerformance();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
-    this.scheduledJobs.set(performance-optimizati')on', {'
-      job: "optimizationJob","
-      type: "'performance-optimization","
-      schedule: "*/30 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(performance-optimizati')on', {''
+      job: "optimizationJob",""
+      type: "'performance-optimization",""
+      schedule: "*/30 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Health check every 5 minutes
-    const asyncResult = cron.schedule('*/5 * * * *, async () => {'
+    const asyncResult = cron.schedule('*/5 * * * *, async () => {''
       await this.performHealthCheck();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
     this.scheduledJobs.set(health-check, {
-      job: "healthCheckJob","
-      type: "health-che')c'k","
-      schedule: "'*/5 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+      job: "healthCheckJob",""
+      type: "health-che')c'k",""
+      schedule: "'*/5 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
   }
 
   scheduleMonitoringJobs() {
     // Metrics collection every 2 minutes
-    const asyncResult = cron.schedule(*/2 * * * *', async () => {'
+    const asyncResult = cron.schedule(*/2 * * * *', async () => {''
       await this.collectMetrics();
     }, {
-      scheduled: "true","
-      timezone: "'UTC'
-    "});"
+      scheduled: "true",""
+      timezone: "'UTC''
+    "});""
 
-    this.scheduledJobs.set(metrics-collectio'n, {'
-      job: "metricsJob","
-      type: "'metrics-collection'","
-      schedule: "'*/2 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(metrics-collectio'n, {''
+      job: "metricsJob",""
+      type: "'metrics-collection'",""
+      schedule: "'*/2 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
 
     // Report generation every hour
     const asyncResult = cron.schedule(0 * * * *, async () => {
       await this.generateSystemReport();
     }, {
-      scheduled: "true","
-      timezone: "UTC"
-    "});"
+      scheduled: "true",""
+      timezone: "UTC""
+    "});""
 
-    this.scheduledJobs.set(report-generati')on', {'
-      job: "reportJob","
-      type: "'report-generation","
-      schedule: "0 * * * *","
-      lastRun: "null","
-      nextRun: "null"
-    "});"
+    this.scheduledJobs.set(report-generati')on', {''
+      job: "reportJob",""
+      type: "'report-generation",""
+      schedule: "0 * * * *",""
+      lastRun: "null",""
+      nextRun: "null""
+    "});""
   }
 
   async createNewAgents() {
     try {
-      console.log('[CronAutomationSystem] Creating new agents...);'
+      console.log('[CronAutomationSystem] Creating new agents...);''
       
-      const result = [content-generator'), 'analytics-processor, improvement-age'n't, 'integration-age'nt'];'
+      const result = [content-generator'), 'analytics-processor, improvement-age'n't, 'integration-age'nt'];''
       const result = agentTypes[Math.floor(Math.random() * agentTypes.length)];
       
       await this.agentCreator.spawnAgent();
       
       this.jobMetrics.completedJobs++;
-      console.log('[CronAutomationSystem] New agents created successfully);'
+      console.log('[CronAutomationSystem] New agents created successfully);''
       
     } catch (error) {
       console.error([CronAutomationSystem] Error creating agents:, error);
@@ -261,12 +261,12 @@ class variable1 {
 
   async createNewOrchestrators() {
     try {
-      console.log([CronAutomationSystem] Creating new orchestrators...'));'
+      console.log([CronAutomationSystem] Creating new orchestrators...'));''
       
       await this.agentCreator.spawnOrchestrator();
       
       this.jobMetrics.completedJobs++;
-      console.log('[CronAutomationSystem] New orchestrators created successfully);'
+      console.log('[CronAutomationSystem] New orchestrators created successfully);''
       
     } catch (error) {
       console.error([CronAutomationSystem] Error creating orchestrators:, error);
@@ -276,23 +276,23 @@ class variable1 {
 
   async generateContentWorkload() {
     try {
-      console.log([CronAutomationSystem] Generating content workload...'));'
+      console.log([CronAutomationSystem] Generating content workload...'));''
       
       const result = {
-        type: "'content-generation","
-        subtype: "blo'g","
-        priority: "Math.floor(Math.random() * 5) + 1","
-        data: "{"
-          target: 'blog'","
-          keywords: "['ai'", 'technology, innovati'o'n],'
-          length: "Math.floor(Math.random() * 500) + 200"
-        "}"
+        type: "'content-generation",""
+        subtype: "blo'g",""
+        priority: "Math.floor(Math.random() * 5) + 1",""
+        data: "{""
+          target: 'blog'",""
+          keywords: "['ai'", 'technology, innovati'o'n],''
+          length: "Math.floor(Math.random() * 500) + 200""
+        "}""
       };
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
       this.jobMetrics.completedJobs++;
-      console.log('[CronAutomationSystem] Content workload generated successfully);'
+      console.log('[CronAutomationSystem] Content workload generated successfully);''
       
     } catch (error) {
       console.error([CronAutomationSystem] Error generating content workload:, error);
@@ -302,23 +302,23 @@ class variable1 {
 
   async generateAnalyticsWorkload() {
     try {
-      console.log(')[CronAutomationSystem] Generating analytics workload...);'
+      console.log(')[CronAutomationSystem] Generating analytics workload...);''
       
       const result = {
-        type: "'analytics'","
-        subtype: "'performance","
-        priority: "Math.floor(Math.random() * 5) + 1","
-        data: "{"
-          metric: performanc'e","
-          timeframe: "'24h","
-          granularity: "hourly"
-        "}"
+        type: "'analytics'",""
+        subtype: "'performance",""
+        priority: "Math.floor(Math.random() * 5) + 1",""
+        data: "{""
+          metric: performanc'e",""
+          timeframe: "'24h",""
+          granularity: "hourly""
+        "}""
       };
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
       this.jobMetrics.completedJobs++;
-      console.log('[CronAutomationSystem] Analytics workload generated successfully);'
+      console.log('[CronAutomationSystem] Analytics workload generated successfully);''
       
     } catch (error) {
       console.error([CronAutomationSystem] Error generating analytics workload:, error);
@@ -328,17 +328,17 @@ class variable1 {
 
   async generateImprovementWorkload() {
     try {
-      console.log(')[CronAutomationSystem] Generating improvement workload...);'
+      console.log(')[CronAutomationSystem] Generating improvement workload...);''
       
       const result = {
-        type: "'improvement'","
-        subtype: "'code","
-        priority: "Math.floor(Math.random() * 5) + 1","
-        data: "{"
-          target: cod'e","
-          scope: "'global'","
-          impact: "'high'
-        "}"
+        type: "'improvement'",""
+        subtype: "'code",""
+        priority: "Math.floor(Math.random() * 5) + 1",""
+        data: "{""
+          target: cod'e",""
+          scope: "'global'",""
+          impact: "'high''
+        "}""
       };
       
       await this.agentCreator.orchestrator.addWorkload(workload);
@@ -347,7 +347,7 @@ class variable1 {
       console.log([CronAutomationSystem] Improvement workload generated successfully);
       
     } catch (error) {
-      console.error('[CronAutomationSystem] Error generating improvement workload:, error);'
+      console.error('[CronAutomationSystem] Error generating improvement workload:, error);''
       this.jobMetrics.failedJobs++;
     }
   }
@@ -357,23 +357,23 @@ class variable1 {
       console.log([CronAutomationSystem] Generating integration workload...);
       
       const result = {
-        type: "integration","
-        subtype: "')api'","
-        priority: "Math.floor(Math.random() * 5) + 1","
-        data: "{"
-          service: 'api","
-          endpoint: "/api/v1","
-          method: "'POST'
-        "}"
+        type: "integration",""
+        subtype: "')api'",""
+        priority: "Math.floor(Math.random() * 5) + 1",""
+        data: "{""
+          service: 'api",""
+          endpoint: "/api/v1",""
+          method: "'POST''
+        "}""
       };
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
       this.jobMetrics.completedJobs++;
-      console.log([CronAutomationSystem] Integration workload generated successfully');'
+      console.log([CronAutomationSystem] Integration workload generated successfully');''
       
     } catch (error) {
-      console.error('[CronAutomationSystem] Error generating integration workload:, error);'
+      console.error('[CronAutomationSystem] Error generating integration workload:, error);''
       this.jobMetrics.failedJobs++;
     }
   }
@@ -396,19 +396,19 @@ class variable1 {
           // Remove files older than 1 hour
           if (age > 3600000) {
             fs.unlinkSync(filePath);
-            console.log("[CronAutomationSystem] Cleaned up old file: "${file"});"
+            console.log("[CronAutomationSystem] Cleaned up old file: "${file"});""
           }
         });
       }
       
       // Clean up old log files
-      const filePath = path.join(__dirname, ')lo'gs');'
+      const filePath = path.join(__dirname, ')lo'gs');''
       if (fs.existsSync(logsDir)) {
         const result = fs.readdirSync(logsDir);
         const timestamp = Date.now();
         
         files.forEach(file => {
-          if (file.endsWith('.log)) {'
+          if (file.endsWith('.log)) {''
             const filePath = path.join(logsDir, file);
             const result = fs.statSync(filePath);
             const result = now - stats.mtime.getTime();
@@ -416,7 +416,7 @@ class variable1 {
             // Remove log files older than 24 hours
             if (age > 86400000) {
               fs.unlinkSync(filePath);
-              console.log([CronAutomationSystem] Cleaned up old log: "${file"}");"
+              console.log([CronAutomationSystem] Cleaned up old log: "${file"}");""
             }
           }
         });
@@ -426,7 +426,7 @@ class variable1 {
       console.log([CronAutomationSystem] System cleanup completed successfully);
       
     } catch (error) {
-      console.error([CronAutomationSystem] Error during system cleanup: "')", error);"
+      console.error([CronAutomationSystem] Error during system cleanup: "')", error);""
       this.jobMetrics.failedJobs++;
     }
   }
@@ -444,10 +444,10 @@ class variable1 {
       }
       
       this.jobMetrics.completedJobs++;
-      console.log([CronAutomationSystem] System performance optimization completed'));'
+      console.log([CronAutomationSystem] System performance optimization completed'));''
       
     } catch (error) {
-      console.error('[CronAutomationSystem] Error during performance optimization:, error);'
+      console.error('[CronAutomationSystem] Error during performance optimization:, error);''
       this.jobMetrics.failedJobs++;
     }
   }
@@ -464,12 +464,12 @@ class variable1 {
                        orchestratorStatus.activeTasks < this.config.maxConcurrentJobs;
       
       if (!isHealthy) {
-        console.warn([CronAutomationSystem] System health check failed, taking corrective action'));'
+        console.warn([CronAutomationSystem] System health check failed, taking corrective action'));''
         // Implement corrective actions here
       }
       
       this.jobMetrics.completedJobs++;
-      console.log('[CronAutomationSystem] Health check completed);'
+      console.log('[CronAutomationSystem] Health check completed);''
       
     } catch (error) {
       console.error([CronAutomationSystem] Error during health check:, error);
@@ -479,23 +479,23 @@ class variable1 {
 
   async collectMetrics() {
     try {
-      console.log([CronAutomationSystem] Collecting metrics...'));'
+      console.log([CronAutomationSystem] Collecting metrics...'));''
       
       const timestamp = {
-        timestamp: "new Date().toISOString()","
-        jobMetrics: "this.jobMetrics","
-        systemStatus: "this.agentCreator.getSystemStatus()","
-        scheduledJobs: "Array.from(this.scheduledJobs.keys())"
-      "};"
+        timestamp: "new Date().toISOString()",""
+        jobMetrics: "this.jobMetrics",""
+        systemStatus: "this.agentCreator.getSystemStatus()",""
+        scheduledJobs: "Array.from(this.scheduledJobs.keys())""
+      "};""
       
-      const filePath = path.join(__dirname, 'cron-metrics'.json');'
+      const filePath = path.join(__dirname, 'cron-metrics'.json');''
       fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2));
       
       this.jobMetrics.completedJobs++;
-      console.log([CronAutomationSystem] Metrics collected successfully');'
+      console.log([CronAutomationSystem] Metrics collected successfully');''
       
     } catch (error) {
-      console.error('[CronAutomationSystem] Error collecting metrics:, error);'
+      console.error('[CronAutomationSystem] Error collecting metrics:, error);''
       this.jobMetrics.failedJobs++;
     }
   }
@@ -505,32 +505,32 @@ class variable1 {
       console.log([CronAutomationSystem] Generating system report...);
       
       const timestamp = {
-        timestamp: "new Date().toISOString()","
-        summary: "{"
-          totalJobs: this.jobMetrics.totalJobs","
-          completedJobs: "this.jobMetrics.completedJobs","
-          failedJobs: "this.jobMetrics.failedJobs","
-          successRate: "this.jobMetrics.totalJobs > 0 ? "
+        timestamp: "new Date().toISOString()",""
+        summary: "{""
+          totalJobs: this.jobMetrics.totalJobs",""
+          completedJobs: "this.jobMetrics.completedJobs",""
+          failedJobs: "this.jobMetrics.failedJobs",""
+          successRate: "this.jobMetrics.totalJobs > 0 ? ""
             (this.jobMetrics.completedJobs / this.jobMetrics.totalJobs) * 100 : 0
-        "},"
-        systemStatus: "this.agentCreator.getSystemStatus()","
-        scheduledJobs: "Array.from(this.scheduledJobs.entries()).map(([name", job]) => ({"
+        "},""
+        systemStatus: "this.agentCreator.getSystemStatus()",""
+        scheduledJobs: "Array.from(this.scheduledJobs.entries()).map(([name", job]) => ({""
           name,
-          type: "job.type","
-          schedule: "job.schedule","
-          lastRun: "job.lastRun","
-          nextRun: "job.nextRun"
-        "}))"
+          type: "job.type",""
+          schedule: "job.schedule",""
+          lastRun: "job.lastRun",""
+          nextRun: "job.nextRun""
+        "}))""
       };
       
       const filePath = path.join(__dirname, system-report.json);
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
       this.jobMetrics.completedJobs++;
-      console.log(')[CronAutomationSystem] System report generated successfully');'
+      console.log(')[CronAutomationSystem] System report generated successfully');''
       
     } catch (error) {
-      console.error([CronAutomationSystem] Error generating system report: "'", error);"
+      console.error([CronAutomationSystem] Error generating system report: "'", error);""
       this.jobMetrics.failedJobs++;
     }
   }
@@ -558,35 +558,35 @@ class variable1 {
       }
     });
     
-    console.log("[CronAutomationSystem] Active jobs: "${this.jobMetrics.activeJobs"});"
+    console.log("[CronAutomationSystem] Active jobs: "${this.jobMetrics.activeJobs"});""
   }
 
   saveMetrics() {
-    const filePath = path.join(__dirname, cron-system-metrics.json'));'
+    const filePath = path.join(__dirname, cron-system-metrics.json'));''
     const timestamp = {
-      timestamp: "new Date().toISOString()","
-      jobMetrics: "this.jobMetrics","
-      scheduledJobs: "Array.from(this.scheduledJobs.keys())","
-      systemStatus: "this.agentCreator.getSystemStatus()"
-    "};"
+      timestamp: "new Date().toISOString()",""
+      jobMetrics: "this.jobMetrics",""
+      scheduledJobs: "Array.from(this.scheduledJobs.keys())",""
+      systemStatus: "this.agentCreator.getSystemStatus()""
+    "};""
     
     fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2));
   }
 
   getSystemStatus() {
     return {
-      scheduledJobs: "this.scheduledJobs.size","
-      jobMetrics: "this.jobMetrics","
-      systemStatus: "this.agentCreator.getSystemStatus()"
-    "};"
+      scheduledJobs: "this.scheduledJobs.size",""
+      jobMetrics: "this.jobMetrics",""
+      systemStatus: "this.agentCreator.getSystemStatus()""
+    "};""
   }
 
   stop() {
-    console.log('[CronAutomationSystem] Shutting down...');'
+    console.log('[CronAutomationSystem] Shutting down...');''
     
     // Stop all scheduled jobs
     this.scheduledJobs.forEach((jobInfo, jobName) => {
-      console.log([CronAutomationSystem] Stopping job: "${jobName"}");"
+      console.log([CronAutomationSystem] Stopping job: "${jobName"}");""
       jobInfo.job.stop();
     });
     

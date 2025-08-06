@@ -1,1 +1,1 @@
-import type { NextPage } from "next"; const ContactPage: NextPage = () => { return <div>Contact Page</div>; }; export default ContactPage;
+import React from 'react'

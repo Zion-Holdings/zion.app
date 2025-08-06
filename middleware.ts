@@ -1,6 +1,6 @@
-import { createServerClient } from '@supabase/ssr';
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import React from 'react'
+import React from 'react'
+import React from 'react'
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -35,16 +35,16 @@ export async function middleware(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // If user is not signed in and the current path is not /auth, redirect to /auth
-  if (!user && !request.nextUrl.pathname.startsWith('/auth')) {
+  if (!user && !request.nextUrl.pathname.startsWith('/auth')) {'
     const url = request.nextUrl.clone();
-    url.pathname = '/auth';
+    url.pathname = '/auth';'
     return NextResponse.redirect(url);
   }
 
   // If user is signed in and the current path is /auth, redirect to /
-  if (user && request.nextUrl.pathname.startsWith('/auth')) {
+  if (user && request.nextUrl.pathname.startsWith('/auth')) {'
     const url = request.nextUrl.clone();
-    url.pathname = '/';
+    url.pathname = '/';'
     return NextResponse.redirect(url);
   }
 
@@ -60,6 +60,6 @@ export const config = {
      * - favicon.ico (favicon file)
      * - public folder
      */
-    '/((?!_next/static|_next/image|favicon.ico|public).*)',
+    '/((?!_next/static|_next/image|favicon.ico|public).*)','
   ],
 };

@@ -1,24 +1,24 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 // Function to fix specific corrupted patterns
 function fixSpecificPatterns(content) {
   // Fix the specific patterns we found
-  content = content.replace(/import type \{ NextPage \} from "next/g, 'import type { NextPage } from "next"');
-  content = content.replace(/import.*from.*react";\}/g, "import React from 'react'");
-  content = content.replace(/import Link from next\/link"/g, "import Link from 'next/link'");
-  content = content.replace(/import.*from.*';next/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-  content = content.replace(/import.*from.*';react/g, "import React from 'react'");
-  content = content.replace(/import.*from.*';next\/head/g, "import Head from 'next/head'");
-  content = content.replace(/import.*from.*';next\/link/g, "import Link from 'next/link'");
-  content = content.replace(/import.*from.*';next\/image/g, "import Image from 'next/image'");
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
+  content = content.replace(/import React from 'react'
   
   // Fix other common patterns
-  content = content.replace(/from.*react";/g, "from 'react';");
-  content = content.replace(/from.*next";/g, "from 'next';");
-  content = content.replace(/from.*next\/head";/g, "from 'next/head';");
-  content = content.replace(/from.*next\/link";/g, "from 'next/link';");
-  content = content.replace(/from.*next\/image";/g, "from 'next/image';");
+  content = content.replace(/from.*react";/g, "from 'react';");"
+  content = content.replace(/from.*next";/g, "from 'next';");"
+  content = content.replace(/from.*next\/head";/g, "from 'next/head';");"
+  content = content.replace(/from.*next\/link";/g, "from 'next/link';");"
+  content = content.replace(/from.*next\/image";/g, "from 'next/image';");"
   
   return content;
 }
@@ -26,7 +26,7 @@ function fixSpecificPatterns(content) {
 // Function to fix a single file
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'utf8');'
     const originalContent = content;
     
     // Fix the content
@@ -34,7 +34,7 @@ function fixFile(filePath) {
     
     // Only write if content was actually changed
     if (content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'utf8');'
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -55,7 +55,7 @@ function processDirectory(dir) {
     
     if (stat.isDirectory()) {
       fixedCount += processDirectory(filePath);
-    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {'
       if (fixFile(filePath)) {
         fixedCount++;
       }
@@ -66,12 +66,12 @@ function processDirectory(dir) {
 }
 
 // Main execution
-console.log('Fixing specific corrupted patterns in all files...');
+console.log('Fixing specific corrupted patterns in all files...');'
 
 const directories = [
-  'pages',
-  'components',
-  'src'
+  'pages','
+  'components','
+  'src''
 ];
 
 let totalFixed = 0;

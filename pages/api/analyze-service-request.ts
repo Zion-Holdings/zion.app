@@ -5,27 +5,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { serviceRequest } = req.body;
+  const { serviceRequest, requirements, timeline } = req.body;
 
-  // Mock service analysis
+  // Mock service analysis response
   const analysis = {
-    id: `service-analysis-${Date.now()}`,
+    requestId: `service-${Date.now()}`,
     serviceRequest,
-    complexity: 'medium',
-    estimatedHours: 40,
-    priority: 'high',
-    dependencies: ['Database setup', 'API integration', 'UI development'],
-    recommendations: [
-      'Break down into smaller tasks',
-      'Allocate senior developer',
-      'Set up monitoring from start'
+    category: 'Web Development',
+    complexity: 'high',
+    estimatedDuration: '6-8 weeks',
+    teamSize: 3,
+    technologies: ['React', 'Node.js', 'MongoDB'],
+    deliverables: [
+      'Responsive web application',
+      'Admin dashboard',
+      'API documentation',
+      'Deployment guide'
     ],
-    risks: [
-      'Third-party API limitations',
-      'Data migration complexity',
-      'User adoption timeline'
-    ]
+    risks: ['Third-party integrations', 'Performance requirements'],
+    recommendations: ['Adopt Agile methodology', 'Schedule regular demos']
   };
 
-  res.status(200).json(analysis);
-} 
+  return res.status(200).json({ success: true, analysis });
+}

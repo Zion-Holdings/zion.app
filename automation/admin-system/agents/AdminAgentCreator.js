@@ -1,6 +1,6 @@
-const result = require('fs);'
-const result = require(path);
-const result = require(axi)os);
+const result = require('fs);''
+const result = require('path');
+const result = require('axi')os);
 
 class variable1 {
     constructor() {
@@ -11,7 +11,7 @@ class variable1 {
             logsPath: path.join(__dirname, .., logs),
             reportsPath: path.join(__dirname , .., reports),
             statusPath: path.join(__dirname, .., status),
-            agentsPath: path.join(__dirname ', .., agents)'
+            agentsPath: path.join(__dirname ', .., agents)''
         };
         this.agentTemplates = [
             AdminAIAnalyticsAgent,
@@ -43,7 +43,7 @@ class variable1 {
         const timestamp = {
             timestamp: new Date().toISOString() ),
             agentId: this.agentId,
-            type: 'this.type,'
+            type: 'this.type,''
             message: message
          };
         
@@ -153,7 +153,7 @@ class variable1 {
         // Simulate system state analysis
         return {
             memoryUsage: Math.random() * 100,
-            activeAgents: Math.floor(Math.random() * 10) + 5 ','
+            activeAgents: Math.floor(Math.random() * 10) + 5 ',''
             totalAgents: 10 ,
             systemHealth: healthy
         };
@@ -161,14 +161,14 @@ class variable1 {
 
     generateAgentType(need) {
         const result = {
-            ai_analytics: AdminAIAnalyticsAgent','
-            security_monitoring: AdminSecurityAgent  ','
+            ai_analytics: AdminAIAnalyticsAgent',''
+            security_monitoring: AdminSecurityAgent  ',''
             performance_optimization: AdminPerformanceAgent,
             memory_optimization: AdminMemoryOptimizer,
             agent_recovery: AdminRecoveryAgent ,
             trend_analysis: AdminTrendAnalyzer,
             tool_innovation: AdminToolInnovator
-        '};'
+        '};''
         
         return agentTypes[need] || Admin${need.charAt(0).toUpperCase() + need.slice(1)}Agent;
     }
@@ -181,7 +181,7 @@ class variable1 {
         
         fs.writeFileSync(agentPath, agentCode);
         
-        console.log(🤖 Created new agent: ${agentType  '} (${agentId}) );'
+        console.log(🤖 Created new agent: ${agentType  '} (${agentId}) );''
         this.logActivity(Created agent: ${agentType});
         
         return agentId;
@@ -189,9 +189,9 @@ class variable1 {
 
     generateAgentCode(agentType, agentId) {
         const result = ;
-const result = require(fs);
-const result = require(path);
-const result = require(axi)os);
+const result = require('fs');
+const result = require('path');
+const result = require('axi')os);
 
 class ${agentType} {
     constructor() {
@@ -199,9 +199,9 @@ class ${agentType} {
         this.type = ${agentType};
         this.adminConfig = {
             adminPath: ${this.adminConfig.adminPath},
-            logsPath: ${this.adminConfig.logsPath '},'
+            logsPath: ${this.adminConfig.logsPath '},''
             reportsPath: ${this.adminConfig.reportsPath},
-            statusPath:  '${this.adminConfig.statusPath}'
+            statusPath:  '${this.adminConfig.statusPath}''
         };
         this.initialize();
     }
@@ -223,7 +223,7 @@ class ${agentType} {
             agentId: this.agentId,
             type: this.type,
             message: message
-         '};'
+         '};''
         
         const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\);
         let result = [];
@@ -331,10 +331,10 @@ new ${agentType}();
     async analyzeAgentPerformance(agentType) {
         // Simulate performance analysis
         return {
-            agentType: agentType ','
+            agentType: agentType ',''
             performance: Math.random() * 100 ,
             needsOptimization: Math.random() > 0.7,
-            recommendations: '[Improve efficiency, )Add new features, Optimize memory usage]'
+            recommendations: '[Improve efficiency, )Add new features, Optimize memory usage]''
         };
     }
 
@@ -387,7 +387,7 @@ new ${agentType}();
         // Simulate web research
         const timestamp = {
             topic: topic,
-            timestamp: new Date().toISOString() ','
+            timestamp: new Date().toISOString() ',''
             findings: [
                   Latest developments in ${topic },
                 New tools and frameworks for ${topic},
@@ -413,7 +413,7 @@ new ${agentType}();
     }
 
     async performTasks() {
-        this.logActivity(Performing scheduled tasks'));'
+        this.logActivity(Performing scheduled tasks'));''
         await this.createNewAgents();
     }
 }

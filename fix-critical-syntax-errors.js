@@ -1,5 +1,5 @@
-const fs = require('fs');'
-const path = require('path');'
+const fs = require('fs');''
+const path = require('path');''
 
 // Critical patterns to fix based on the lint errors
 const criticalFixes = [
@@ -23,37 +23,37 @@ const criticalFixes = [
   // Fix malformed function declarations
   {
     pattern: /export default async function handler\\(req: NextApiRequest, res: NextApiResponse\\) \\{;/g,
-    replacement: 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {''
+    replacement: 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {'''
   },
   // Fix malformed interface declarations
   {
     pattern: /interface.*\\{;\\s*id: string;/g,
-    replacement: 'interface FacilityPlan {\n  id: string;''
+    replacement: 'interface FacilityPlan {\n  id: string;'''
   },
   // Fix malformed JSX attributes
   {
-    pattern: /style=\\{font-family: \"Arial, sans-serif\"; max-width: \"800px\"; margin: auto; padding: 20px; background: white; color: #333;\\}/g,"
-    replacement: 'style={{fontFamily: "Arial, sans-serif", maxWidth: "800px", margin: "auto", padding: "20px", background: "white", color: "#333"}}''
+    pattern: /style=\\{font-family: \"Arial, sans-serif\"; max-width: \"800px\"; margin: auto; padding: 20px; background: white; color: #333;\\}/g,""
+    replacement: 'style={{fontFamily: "Arial, sans-serif", maxWidth: "800px", margin: "auto", padding: "20px", background: "white", color: "#333"}}'''
   },
   // Fix malformed template literals
   {
     pattern: /const.*= `;\\s*<div style=font-family:/g,
-    replacement: 'const contractHtml = `\n    <div style="font-family:''
+    replacement: 'const contractHtml = `\n    <div style="font-family:'''
   },
   // Fix malformed object properties
   {
-    pattern: /images: "\\{/g,"
-    replacement: 'images: {''
+    pattern: /images: "\\{/g,""
+    replacement: 'images: {'''
   },
   {
-    pattern: /domains: \\['images\\.unsplash\\.com', 'via\\.placeholder\\.com', 'localhost'\\],/g,'
-    replacement: "domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],""
+    pattern: /domains: \\['images\\.unsplash\\.com', 'via\\.placeholder\\.com', 'localhost'\\],/g,''
+    replacement: "domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],"""
   }
 ];
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');'
+    let content = fs.readFileSync(filePath, 'utf8');''
     let originalContent = content;
     let fixed = false;
     
@@ -65,7 +65,7 @@ function fixFile(filePath) {
     }
     
     if (fixed) {
-      fs.writeFileSync(filePath, content, 'utf8');'
+      fs.writeFileSync(filePath, content, 'utf8');''
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -89,10 +89,10 @@ function processDirectory(dir) {
       
       if (stat.isDirectory()) {
         // Skip node_modules and .git
-        if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {'
+        if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {''
           fixedCount += processDirectory(fullPath);
         }
-      } else if (item.endsWith('.ts') || item.endsWith('.tsx') || item.endsWith('.js') || item.endsWith('.jsx')) {'
+      } else if (item.endsWith('.ts') || item.endsWith('.tsx') || item.endsWith('.js') || item.endsWith('.jsx')) {''
         if (fixFile(fullPath)) {
           fixedCount++;
         }
@@ -105,7 +105,7 @@ function processDirectory(dir) {
   return fixedCount;
 }
 
-console.log('Starting critical syntax error fixes...');'
-const totalFixed = processDirectory('.');'
+console.log('Starting critical syntax error fixes...');''
+const totalFixed = processDirectory('.');''
 console.log(`\nTotal files fixed: ${totalFixed}`);
-console.log('Critical syntax error fixes completed!'); '
+console.log('Critical syntax error fixes completed!'); 

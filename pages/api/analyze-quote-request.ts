@@ -1,37 +1,29 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { quoteRequest } = req.body;
+  const { quoteRequest, requirements, budget } = req.body;
 
-  // Mock quote analysis
+  // Mock quote analysis response
   const analysis = {
-    id: `analysis-${Date.now()}`,
+    requestId: `quote-${Date.now()}`,
     quoteRequest,
-    estimatedCost: 2500,
-    timeline: '2-3 weeks',
-    riskLevel: 'low',
-    recommendations: [
-      'Consider bulk pricing for better rates',
-      'Include contingency budget',
-      'Request detailed breakdown'
+    complexity: 'medium',
+    estimatedHours: 120,
+    recommendedRate: 85,
+    totalEstimate: 10200,
+    breakdown: [
+      { phase: 'Planning', hours: 20, cost: 1700 },
+      { phase: 'Development', hours: 80, cost: 6800 },
+      { phase: 'Testing', hours: 15, cost: 1275 },
+      { phase: 'Deployment', hours: 5, cost: 425 }
     ],
-    alternatives: [
-      {
-        option: 'Basic package',
-        cost: 1800,
-        timeline: '1-2 weeks'
-      },
-      {
-        option: 'Premium package',
-        cost: 3500,
-        timeline: '3-4 weeks'
-      }
-    ]
+    risks: ['Scope creep', 'Technical challenges'],
+    recommendations: ['Start with MVP', 'Regular check-ins']
   };
 
-  res.status(200).json(analysis);
-} 
+  return res.status(200).json({ success: true, analysis });
+}

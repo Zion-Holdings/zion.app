@@ -1,11 +1,11 @@
 
-            const result = require('./monetization-autonomous-factory);'
+            const result = require('./monetization-autonomous-factory);''
             const result = new factory();
             
             async function runSubscriptionOptimization() {
                 try {
                     const result = factoryInstance.createSubscriptionAgent();
-                    console.log(Subscription agent created: "')", agent.agentId);"
+                    console.log(Subscription agent created: "')", agent.agentId);""
                     
                     // Run optimization every 4 hours
                     setInterval(async () => {
@@ -18,7 +18,7 @@
                     }, 14400000); // 4 hours
                     
                 } catch (error) {
-                    console.error(')Erro'r in subscription optimization:', error);'
+                    console.error(')Erro'r in subscription optimization:', error);''
                 }
             }
             

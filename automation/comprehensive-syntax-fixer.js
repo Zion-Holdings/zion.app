@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 ;
-const fs = require('fs');'
-const path = require('path');'
-const { exec } = require('child_process');'
-const util = require('util');'
+const fs = require('fs');''
+const path = require('path');''
+const { exec } = require('child_process');''
+const util = require('util');''
 
 const execAsync = util.promisify(exec);
 
 class ComprehensiveSyntaxFixer {
     constructor() {
-        this.projectRoot = path.join(__dirname, '..');'
+        this.projectRoot = path.join(__dirname, '..');''
         this.fixedFiles = [];
         this.errors = [];
     }
 
     async fixAllSyntaxErrors() {
-        console.log('🔧 Starting comprehensive syntax fixing...');'
+        console.log('🔧 Starting comprehensive syntax fixing...');''
         
         try {
             // Fix automation files
@@ -39,13 +39,13 @@ class ComprehensiveSyntaxFixer {
             await this.testBuild();
             
         } catch (error) {
-            console.error('❌ Comprehensive syntax fixing failed:', error.message);'
+            console.error('❌ Comprehensive syntax fixing failed:', error.message);''
         }
     }
 
     async fixAutomationFiles() {
-        console.log('🔧 Fixing automation files...');'
-        const automationDir = path.join(this.projectRoot, 'automation');'
+        console.log('🔧 Fixing automation files...');''
+        const automationDir = path.join(this.projectRoot, 'automation');''
         const files = await this.getJSFiles(automationDir);
         
         for (const file of files) {
@@ -58,9 +58,9 @@ class ComprehensiveSyntaxFixer {
     }
 
     async fixPagesFiles() {
-        console.log('🔧 Fixing pages files...');'
-        const pagesDir = path.join(this.projectRoot, 'pages');'
-        const files = await this.getAllFiles(pagesDir, ['.tsx', '.ts', '.js']);'
+        console.log('🔧 Fixing pages files...');''
+        const pagesDir = path.join(this.projectRoot, 'pages');''
+        const files = await this.getAllFiles(pagesDir, ['.tsx', '.ts', '.js']);''
         
         for (const file of files) {
             try {
@@ -72,9 +72,9 @@ class ComprehensiveSyntaxFixer {
     }
 
     async fixComponentsFiles() {
-        console.log('🔧 Fixing components files...');'
-        const componentsDir = path.join(this.projectRoot, 'components');'
-        const files = await this.getAllFiles(componentsDir, ['.tsx', '.ts', '.js']);'
+        console.log('🔧 Fixing components files...');''
+        const componentsDir = path.join(this.projectRoot, 'components');''
+        const files = await this.getAllFiles(componentsDir, ['.tsx', '.ts', '.js']);''
         
         for (const file of files) {
             try {
@@ -86,9 +86,9 @@ class ComprehensiveSyntaxFixer {
     }
 
     async fixAPIFiles() {
-        console.log('🔧 Fixing API files...');'
-        const apiDir = path.join(this.projectRoot, 'pages', 'api');'
-        const files = await this.getAllFiles(apiDir, ['.ts', '.js']);'
+        console.log('🔧 Fixing API files...');''
+        const apiDir = path.join(this.projectRoot, 'pages', 'api');''
+        const files = await this.getAllFiles(apiDir, ['.ts', '.js']);''
         
         for (const file of files) {
             try {
@@ -100,9 +100,9 @@ class ComprehensiveSyntaxFixer {
     }
 
     async fixSrcFiles() {
-        console.log('🔧 Fixing src files...');'
-        const srcDir = path.join(this.projectRoot, 'src');'
-        const files = await this.getAllFiles(srcDir, ['.tsx', '.ts', '.js']);'
+        console.log('🔧 Fixing src files...');''
+        const srcDir = path.join(this.projectRoot, 'src');''
+        const files = await this.getAllFiles(srcDir, ['.tsx', '.ts', '.js']);''
         
         for (const file of files) {
             try {
@@ -114,7 +114,7 @@ class ComprehensiveSyntaxFixer {
     }
 
     async fixFile(filePath) {
-        let content = await fs.promises.readFile(filePath, 'utf8');'
+        let content = await fs.promises.readFile(filePath, 'utf8');''
         let originalContent = content;
         
         // Apply all fixes
@@ -130,29 +130,29 @@ class ComprehensiveSyntaxFixer {
         content = this.fixTypeScriptSyntax(content);
         
         if (content !== originalContent) {
-            await fs.promises.writeFile(filePath, content, 'utf8');'
+            await fs.promises.writeFile(filePath, content, 'utf8');''
             this.fixedFiles.push(filePath);
             console.log(`✅ Fixed ${path.basename(filePath)});
         }
     }
 
     fixMalformedStrings(content) {
-        // Fix strings with malformed quotes like 'resear'c'h' -> 'research''
-        const stringPattern = /'([^']*?)'([^']*?)'/g;'
+        // Fix strings with malformed quotes like 'resear'c'h' -> 'research'''
+        const stringPattern = /'([^']*?)'([^']*?)'/g;''
         content = content.replace(stringPattern, (match, part1, part2) => {
-            return `'${part1}${part2}'`'
+            return `'${part1}${part2}'`''
         });
         
         // Fix strings with single quotes in the middle
-        const malformedPattern = /'([^']*?)'([a-zA-Z])'([^']*?)'/g;'
+        const malformedPattern = /'([^']*?)'([a-zA-Z])'([^']*?)'/g;''
         content = content.replace(malformedPattern, (match, part1, letter, part2) => {
-            return '${part1}${letter}${part2}'`'
+            return '${part1}${letter}${part2}'`''
         });
         
         // Fix complex malformed strings
-        const complexPattern = /'([^']*?)'([a-zA-Z0-9_$])'([^']*?)'/g;'
+        const complexPattern = /'([^']*?)'([a-zA-Z0-9_$])'([^']*?)'/g;''
         content = content.replace(complexPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}''
+            return `'${part1}${letter}${part2}'''
         });
         
         return content;
@@ -162,13 +162,13 @@ class ComprehensiveSyntaxFixer {
         // Fix const variable1 = ... declarations
         const varPattern = /(const|let|var)\s+\$[0-9]+\s*=\s*([^;]+);/g;
         content = content.replace(varPattern, (match, declaration, value) => {
-            let varName = 'result''
-            if (value.includes('await')) varName = 'asyncResult''
-            else if (value.includes('path.join')) varName = 'filePath''
-            else if (value.includes('Date')) varName = 'timestamp''
-            else if (value.includes('JSON')) varName = 'jsonData''
-            else if (value.includes('require')) varName = 'module''
-            else if (value.includes('exec')) varName = 'command''
+            let varName = 'result'''
+            if (value.includes('await')) varName = 'asyncResult'''
+            else if (value.includes('path.join')) varName = 'filePath'''
+            else if (value.includes('Date')) varName = 'timestamp'''
+            else if (value.includes('JSON')) varName = 'jsonData'''
+            else if (value.includes('require')) varName = 'module'''
+            else if (value.includes('exec')) varName = 'command'''
             
             return `${declaration} ${varName} = ${value};`
         });
@@ -177,16 +177,16 @@ class ComprehensiveSyntaxFixer {
     }
 
     fixFunctionCalls(content) {
-        // Fix malformed function calls like execAsync('np'm' run build')'
-        const execPattern = /execAsync\('([^']*?)'([^']*?)'([^']*?)'/g;'
+        // Fix malformed function calls like execAsync('np'm' run build')''
+        const execPattern = /execAsync\('([^']*?)'([^']*?)'([^']*?)'/g;''
         content = content.replace(execPattern, (match, part1, part2, part3) => {
-            return execAsync('${part1}${part2}${part3}')`'
+            return execAsync('${part1}${part2}${part3}')`''
         });
         
         // Fix other malformed function calls
-        const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\('([^']*?)'([^']*?)'([^']*?)'/g;'
+        const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\('([^']*?)'([^']*?)'([^']*?)'/g;''
         content = content.replace(funcPattern, (match, funcName, part1, part2, part3) => {
-            return `${funcName}('${part1}${part2}${part3}')'
+            return `${funcName}('${part1}${part2}${part3}')''
         });
         
         return content;
@@ -194,9 +194,9 @@ class ComprehensiveSyntaxFixer {
 
     fixObjectProperties(content) {
         // Fix object properties with malformed strings
-        const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*'([^']*?)'([^']*?)'/g;'
+        const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*'([^']*?)'([^']*?)'/g;''
         content = content.replace(propPattern, (match, propName, part1, part2) => {
-            return `${propName}: '${part1}${part2}'`'
+            return `${propName}: '${part1}${part2}'`''
         });
         
         return content;
@@ -204,9 +204,9 @@ class ComprehensiveSyntaxFixer {
 
     fixArrayPatterns(content) {
         // Fix malformed array patterns
-        const arrayPattern = /\[([^\]]*?)'([^']*?)'([^\]]*?)\]/g;'
+        const arrayPattern = /\[([^\]]*?)'([^']*?)'([^\]]*?)\]/g;''
         content = content.replace(arrayPattern, (match, before, middle, after) => {
-            return [${before}'${middle}'${after}]`'
+            return [${before}'${middle}'${after}]`''
         });
         
         return content;
@@ -214,7 +214,7 @@ class ComprehensiveSyntaxFixer {
 
     fixTemplateLiterals(content) {
         // Fix malformed template literals
-        const templatePattern = /`([^]*?)'([^`]*?)'([^`]*?)/g;'
+        const templatePattern = /`([^]*?)'([^`]*?)'([^`]*?)/g;''
         content = content.replace(templatePattern, (match, part1, part2, part3) => {
             return `\`${part1}${part2}${part3}\`
         });
@@ -224,15 +224,15 @@ class ComprehensiveSyntaxFixer {
 
     fixJSXStrings(content) {
         // Fix malformed JSX strings
-        const jsxPattern = /"([^]*?)([^"]*?)"/g;"
+        const jsxPattern = /"([^]*?)([^"]*?)"/g;""
         content = content.replace(jsxPattern, (match, part1, part2) => {
             return `${part1}${part2}
         });
         
         // Fix JSX attributes with malformed strings
-        const jsxAttrPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)=["']([^"']*?)[']([^']*?)["']/g;'
+        const jsxAttrPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)=["']([^"']*?)[']([^']*?)["']/g;''
         content = content.replace(jsxAttrPattern, (match, attrName, part1, part2) => {
-            return `${attrName}="${part1}${part2}`"
+            return `${attrName}="${part1}${part2}`""
         });
         
         return content;
@@ -240,7 +240,7 @@ class ComprehensiveSyntaxFixer {
 
     fixImportStatements(content) {
         // Fix malformed import statements
-        const importPattern = /import\s+([^']*?)['"]([^'"]*?)[']([^']*?)['"]/g;"
+        const importPattern = /import\s+([^']*?)['"]([^'"]*?)[']([^']*?)['"]/g;""
         content = content.replace(importPattern, (match, imports, module, rest) => {
             return import React from 'react'
         });
@@ -250,9 +250,9 @@ class ComprehensiveSyntaxFixer {
 
     fixExportStatements(content) {
         // Fix malformed export statements
-        const exportPattern = /export\s+([^'"]*?)[']([^']*?)['"]([^'"]*?)[']/g;'
+        const exportPattern = /export\s+([^'"]*?)[']([^']*?)['"]([^'"]*?)[']/g;''
         content = content.replace(exportPattern, (match, exports, module, rest) => {
-            return `export ${exports} from '${module}${rest}''
+            return `export ${exports} from '${module}${rest}'''
         });
         
         return content;
@@ -260,9 +260,9 @@ class ComprehensiveSyntaxFixer {
 
     fixTypeScriptSyntax(content) {
         // Fix malformed TypeScript syntax
-        const tsPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^']*?)['"]([^'"]*?)[']([^']*?)['"]/g;"
+        const tsPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^']*?)['"]([^'"]*?)[']([^']*?)['"]/g;""
         content = content.replace(tsPattern, (match, propName, type, part1, part2) => {
-            return `${propName}: ${type} '${part1}${part2}'`'
+            return `${propName}: ${type} '${part1}${part2}'`''
         });
         
         return content;
@@ -278,12 +278,12 @@ class ComprehensiveSyntaxFixer {
                     const stat = await fs.promises.stat(fullPath);
                     if (stat.isDirectory()) {
                         await walkDir(fullPath);
-                    } else if (item.endsWith('.js')) {'
+                    } else if (item.endsWith('.js')) {''
                         files.push(fullPath);
                     }
                 }
             } catch (error) {
-                // Skip directories that can't be read'
+                // Skip directories that can't be read''
             }
         };
         
@@ -306,7 +306,7 @@ class ComprehensiveSyntaxFixer {
                     }
                 }
             } catch (error) {
-                // Skip directories that can't be read'
+                // Skip directories that can't be read''
             }
         };
         
@@ -315,19 +315,19 @@ class ComprehensiveSyntaxFixer {
     }
 
     async testBuild() {
-        console.log('🧪 Testing build...');'
+        console.log('🧪 Testing build...');''
         
         try {
             // Run type check
-            await execAsync('npm run type-check');'
-            console.log('✅ Type check passed');'
+            await execAsync('npm run type-check');''
+            console.log('✅ Type check passed');''
             
             // Run lint
-            await execAsync('npm run lint');'
-            console.log('✅ Lint passed');'
+            await execAsync('npm run lint');''
+            console.log('✅ Lint passed');''
             
         } catch (error) {
-            console.error('❌ Build test failed:', error.message);'
+            console.error('❌ Build test failed:', error.message);''
         }
     }
 }

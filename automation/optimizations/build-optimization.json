@@ -1,0 +1,13 @@
+{
+  "name": "build-optimization",
+  "description": "Optimize build process for faster deployment",
+  "config": {
+    "experimental": {
+      "optimizeCss": true,
+      "optimizePackageImports": [
+        "@mui/material",
+        "@emotion/react"
+      ]
+    }
+  }
+}

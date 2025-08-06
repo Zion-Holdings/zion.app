@@ -1,11 +1,11 @@
 
-            const result = require('./monetization-autonomous-factory);'
+            const result = require('./monetization-autonomous-factory);''
             const result = new factory();
             
             async function runAffiliateOptimization() {
                 try {
                     const result = factoryInstance.createAffiliateAgent();
-                    console.log(Affiliate agent created: "')", agent.agentId);"
+                    console.log(Affiliate agent created: "')", agent.agentId);""
                     
                     // Run optimization every 6 hours
                     setInterval(async () => {
@@ -18,7 +18,7 @@
                     }, 21600000); // 6 hours
                     
                 } catch (error) {
-                    console.error(')Erro'r in affiliate optimization:', error);'
+                    console.error(')Erro'r in affiliate optimization:', error);''
                 }
             }
             

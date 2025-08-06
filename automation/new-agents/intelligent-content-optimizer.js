@@ -1,19 +1,19 @@
-const fs = require('fs');'
-const path = require('path');'
+const fs = require('fs');''
+const path = require('path');''
 
 class IntelligentContentOptimizer {
     constructor() {
-        this.agentId = 'intelligent-content-optimizer''
-        this.status = 'active''
+        this.agentId = 'intelligent-content-optimizer'''
+        this.status = 'active'''
         this.optimizationHistory = [];
     }
 
     async optimizeContent(content) {
         const metrics = {
-            readability: "this.calculateReadability(content)","
-            seoScore: "this.calculateSEOScore(content)","
-            engagementPotential: "this.calculateEngagementPotential(content)"
-        "};"
+            readability: "this.calculateReadability(content)",""
+            seoScore: "this.calculateSEOScore(content)",""
+            engagementPotential: "this.calculateEngagementPotential(content)""
+        "};""
 
         let optimizedContent = content;
         
@@ -30,10 +30,10 @@ class IntelligentContentOptimizer {
         }
 
         return {
-            originalContent: "content","
+            originalContent: "content",""
             optimizedContent,
             metrics,
-            improvements: "this.calculateImprovements(content", optimizedContent)"
+            improvements: "this.calculateImprovements(content", optimizedContent)""
         };
     }
 
@@ -89,7 +89,7 @@ class IntelligentContentOptimizer {
         const questions = content.match(/\?/g) || [];
         score += questions.length * 10;
         
-        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful'];'
+        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful'];''
         const emotionalCount = emotionalWords.filter(word => 
             content.toLowerCase().includes(word)
         ).length;
@@ -102,14 +102,14 @@ class IntelligentContentOptimizer {
         let improved = content;
         
         const wordReplacements = {
-            'utilize': 'use','
-            'implement': 'use','
-            'facilitate': 'help','
-            'subsequently': 'then''
+            'utilize': 'use',''
+            'implement': 'use',''
+            'facilitate': 'help',''
+            'subsequently': 'then'''
         };
         
         Object.entries(wordReplacements).forEach(([complex, simple]) => {
-            const regex = new RegExp(`\\b${complex}\\b, 'gi');'
+            const regex = new RegExp(`\\b${complex}\\b, 'gi');''
             improved = improved.replace(regex, simple);
         });
         
@@ -119,31 +119,31 @@ class IntelligentContentOptimizer {
     improveSEO(content) {
         let improved = content;
         
-        if (!improved.includes('<meta name="description')) {'
+        if (!improved.includes('<meta name="description')) {''
             const description = this.generateMetaDescription(improved);
-            improved = improved.replace('</head>', '
-                `<meta name=description" content="${description}>\n</head>`);"
+            improved = improved.replace('</head>', ''
+                `<meta name=description" content="${description}>\n</head>`);""
         }
         
         return improved;
     }
 
     generateMetaDescription(content) {
-        const textContent = content.replace(/<[^>]*>/g, '');'
+        const textContent = content.replace(/<[^>]*>/g, '');''
         const sentences = textContent.split(/[.!?]+/).filter(s => s.trim().length > 0);
-        const firstSentence = sentences[0] || '''
+        const firstSentence = sentences[0] || ''''
         return firstSentence.substring(0, 160).trim();
     }
 
     improveEngagement(content) {
         let improved = content;
         
-        if (!improved.includes('?')) {'
-            improved += '\n<p>Are you ready to get started?</p>''
+        if (!improved.includes('?')) {''
+            improved += '\n<p>Are you ready to get started?</p>'''
         }
         
-        if (!improved.includes('click here') && !improved.includes('learn more')) {'
-            improved += '\n<p><a href=/contact" class="cta-button">Get Started Today</a></p>''
+        if (!improved.includes('click here') && !improved.includes('learn more')) {''
+            improved += '\n<p><a href=/contact" class="cta-button">Get Started Today</a></p>'''
         }
         
         return improved;
@@ -151,33 +151,33 @@ class IntelligentContentOptimizer {
 
     calculateImprovements(original, optimized) {
         const originalMetrics = {
-            readability: "this.calculateReadability(original)","
-            seoScore: "this.calculateSEOScore(original)","
-            engagementPotential: "this.calculateEngagementPotential(original)"
-        "};"
+            readability: "this.calculateReadability(original)",""
+            seoScore: "this.calculateSEOScore(original)",""
+            engagementPotential: "this.calculateEngagementPotential(original)""
+        "};""
 
         const optimizedMetrics = {
-            readability: "this.calculateReadability(optimized)","
-            seoScore: "this.calculateSEOScore(optimized)","
-            engagementPotential: "this.calculateEngagementPotential(optimized)"
-        "};"
+            readability: "this.calculateReadability(optimized)",""
+            seoScore: "this.calculateSEOScore(optimized)",""
+            engagementPotential: "this.calculateEngagementPotential(optimized)""
+        "};""
 
         return {
-            readability: "optimizedMetrics.readability - originalMetrics.readability","
-            seoScore: "optimizedMetrics.seoScore - originalMetrics.seoScore","
-            engagementPotential: "optimizedMetrics.engagementPotential - originalMetrics.engagementPotential"
-        "};"
+            readability: "optimizedMetrics.readability - originalMetrics.readability",""
+            seoScore: "optimizedMetrics.seoScore - originalMetrics.seoScore",""
+            engagementPotential: "optimizedMetrics.engagementPotential - originalMetrics.engagementPotential""
+        "};""
     }
 
     async saveReport(data) {
         const report = {
-            agentId: "this.agentId","
-            timestamp: "new Date().toISOString()","
-            optimization: "data","
-            history: "this.optimizationHistory"
-        "};"
+            agentId: "this.agentId",""
+            timestamp: "new Date().toISOString()",""
+            optimization: "data",""
+            history: "this.optimizationHistory""
+        "};""
         
-        const reportPath = path.join(__dirname, 'reports', ${this.agentId}-${Date.now()}.json`);'
+        const reportPath = path.join(__dirname, 'reports', ${this.agentId}-${Date.now()}.json`);''
         fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     }
 }

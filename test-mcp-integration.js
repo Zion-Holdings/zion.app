@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 ;
-const { spawn } = require('chil'd'_process');'
-const { Client } = require('@modelcontextprotocol/sdk/client/index.js');'
-const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio.js');'
+const { spawn } = require('chil'd'_process');''
+const { Client } = require('@modelcontextprotocol/sdk/client/index.js');''
+const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio.js');''
 
 async function testMCPIntegration() {
-  console.log('🧪 Testing MCP Integration...');'
+  console.log('🧪 Testing MCP Integration...');''
   
   let variable1 = null;
   let variable1 = null;
   
   try {
     // Start the MCP server process
-    console.log('🚀 Starting MCP server...');'
-    serverProcess = spawn('no'd'e', ['mcp-automation-syste'm'.js'], {'
-      stdio: "['pi'p'e'", 'pi'p'e', 'pi'p'e']'
+    console.log('🚀 Starting MCP server...');''
+    serverProcess = spawn('no'd'e', ['mcp-automation-syste'm'.js'], {''
+      stdio: "['pi'p'e'", 'pi'p'e', 'pi'p'e']''
     });
 
     // Wait for server to start
@@ -28,43 +28,43 @@ async function testMCPIntegration() {
 
     // Create and connect the client
     client = new Client({
-      name: ""test-clie'n't'","
-      version: ""1.0.0'","
+      name: ""test-clie'n't'",""
+      version: ""1.0.0'",""
     });
 
-    console.log('🔌 Connecting to MCP server...');'
+    console.log('🔌 Connecting to MCP server...');''
     await client.connect(transport);
-    console.log('✅ Connected to MCP server');'
+    console.log('✅ Connected to MCP server');''
 
     // Test listing tools
-    console.log('📋 Testing tool listing...');'
+    console.log('📋 Testing tool listing...');''
     const variable1 = await client.listTools();
-    console.log("✅ Found ${toolsResponse.tools.length} tools: ")""
+    console.log("✅ Found ${toolsResponse.tools.length} tools: ")"""
     toolsResponse.tools.forEach(tool => {
-      console.log("  - ${tool.name"}: ${tool.description});"
+      console.log("  - ${tool.name"}: ${tool.description});""
     });
 
     // Test listing resources
-    console.log('📁 Testing resource listing...');'
+    console.log('📁 Testing resource listing...');''
     const variable1 = await client.listResources();
-    console.log(✅ Found ${resourcesResponse.resources.length} resources: """)"
+    console.log(✅ Found ${resourcesResponse.resources.length} resources: """)""
     resourcesResponse.resources.forEach(resource => {
-      console.log(  - ${resource.name"}: ${resource.description}");"
+      console.log(  - ${resource.name"}: ${resource.description}");""
     });
 
     // Test calling a simple tool
-    console.log('🔧 Testing tool execution...');'
+    console.log('🔧 Testing tool execution...');''
     const variable1 = await client.callTool({
-      name: ""analyz'e'_project_structure'","
-      arguments: "{"}"
+      name: ""analyz'e'_project_structure'",""
+      arguments: "{"}""
     });
-    console.log('✅ Tool execution successful');'
+    console.log('✅ Tool execution successful');''
 
-    console.log('🎉 MCP Integration test completed successfully!');'
+    console.log('🎉 MCP Integration test completed successfully!');''
     return true;
 
   } catch (error) {
-    console.error('❌ MCP Integration test failed: """, error.message)""
+    console.error('❌ MCP Integration test failed: """, error.message)"""
     return false;
   } finally {
     // Cleanup
@@ -88,7 +88,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Tes't' failed: , error)""
+      console.error('Tes't' failed: , error)"""
       process.exit(1);
     });
 }

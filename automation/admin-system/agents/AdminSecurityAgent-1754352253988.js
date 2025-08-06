@@ -1,7 +1,7 @@
 
-const result = require('fs);'
-const result = require(path);
-const result = require(axi)os);
+const result = require('fs);''
+const result = require('path');
+const result = require('axi')os);
 
 class variable1 {
     constructor() {
@@ -42,7 +42,7 @@ class variable1 {
 
     logActivity(message) {
         const timestamp = {
-            timestamp:  ')new Date().toISOString(),'
+            timestamp:  ')new Date().toISOString(),''
             agentId: this.agentId,
             type: this.type ,
             message: message
@@ -77,12 +77,12 @@ class variable1 {
     updateStatus() {
         const filePath = path.join(this.adminConfig.statusPath, ${this.type}-status.json);
         const timestamp = {
-            agentId: this.agentId','
-            type: this.type  ','
+            agentId: this.agentId',''
+            type: this.type  ',''
             status: active)),
             lastActivity:  new Date().toISOString(),
             pid: process.pid
-        '};'
+        '};''
         
         fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
     }

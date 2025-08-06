@@ -1,16 +1,16 @@
-const fs = require('fs');'
-const path = require('path');'
+const fs = require('fs');''
+const path = require('path');''
 
 class AIPerformanceMonitor {
     constructor() {
-        this.monitorId = 'ai-performance-monitor''
+        this.monitorId = 'ai-performance-monitor'''
         this.metrics = {
-            responseTime: "[]","
-            accuracy: "[]","
-            userSatisfaction: "[]","
-            systemLoad: "[]","
-            errorRate: "[]"
-        "};"
+            responseTime: "[]",""
+            accuracy: "[]",""
+            userSatisfaction: "[]",""
+            systemLoad: "[]",""
+            errorRate: "[]""
+        "};""
         this.alerts = [];
         this.optimizations = [];
     }
@@ -30,12 +30,12 @@ class AIPerformanceMonitor {
 
     async collectMetrics() {
         return {
-            responseTime: "Math.random() * 1000 + 100","
-            accuracy: "Math.random() * 20 + 80","
-            userSatisfaction: "Math.random() * 30 + 70","
-            systemLoad: "Math.random() * 40 + 60","
-            errorRate: "Math.random() * 5"
-        "};"
+            responseTime: "Math.random() * 1000 + 100",""
+            accuracy: "Math.random() * 20 + 80",""
+            userSatisfaction: "Math.random() * 30 + 70",""
+            systemLoad: "Math.random() * 40 + 60",""
+            errorRate: "Math.random() * 5""
+        "};""
     }
 
     async analyzeTrends() {
@@ -43,20 +43,20 @@ class AIPerformanceMonitor {
         
         if (this.calculateAverage(recentMetrics.responseTime) > 800) {
             this.alerts.push({
-                type: "'performance'","
-                message: "'Response time is above optimal threshold'","
-                severity: "'high'","
-                timestamp: "new Date().toISOString()"
-            "});"
+                type: "'performance'",""
+                message: "'Response time is above optimal threshold'",""
+                severity: "'high'",""
+                timestamp: "new Date().toISOString()""
+            "});""
         }
 
         if (this.calculateAverage(recentMetrics.accuracy) < 85) {
             this.alerts.push({
-                type: "'quality'","
-                message: "'Accuracy is below target threshold'","
-                severity: "'medium'","
-                timestamp: "new Date().toISOString()"
-            "});"
+                type: "'quality'",""
+                message: "'Accuracy is below target threshold'",""
+                severity: "'medium'",""
+                timestamp: "new Date().toISOString()""
+            "});""
         }
     }
 
@@ -77,20 +77,20 @@ class AIPerformanceMonitor {
 
         if (this.calculateAverage(this.metrics.responseTime) > 600) {
             optimizations.push({
-                type: "'performance'","
-                action: "'Implement caching layer'","
-                priority: "'high'","
-                expectedImprovement: "'Reduce response time by 40%''
-            "});"
+                type: "'performance'",""
+                action: "'Implement caching layer'",""
+                priority: "'high'",""
+                expectedImprovement: "'Reduce response time by 40%'''
+            "});""
         }
 
         if (this.calculateAverage(this.metrics.accuracy) < 90) {
             optimizations.push({
-                type: "'quality'","
-                action: "'Retrain model with new data'","
-                priority: "'medium'","
-                expectedImprovement: "'Improve accuracy by 5-10%''
-            "});"
+                type: "'quality'",""
+                action: "'Retrain model with new data'",""
+                priority: "'medium'",""
+                expectedImprovement: "'Improve accuracy by 5-10%'''
+            "});""
         }
 
         this.optimizations.push(...optimizations);
@@ -98,14 +98,14 @@ class AIPerformanceMonitor {
 
     async saveMetrics() {
         const data = {
-            monitorId: "this.monitorId","
-            timestamp: "new Date().toISOString()","
-            metrics: "this.metrics","
-            alerts: "this.alerts","
-            optimizations: "this.optimizations"
-        "};"
+            monitorId: "this.monitorId",""
+            timestamp: "new Date().toISOString()",""
+            metrics: "this.metrics",""
+            alerts: "this.alerts",""
+            optimizations: "this.optimizations""
+        "};""
 
-        const filePath = path.join(__dirname, 'monitoring', `${this.monitorId}-${Date.now()}.json`);'
+        const filePath = path.join(__dirname, 'monitoring', `${this.monitorId}-${Date.now()}.json`);''
         fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     }
 }

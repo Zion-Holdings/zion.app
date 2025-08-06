@@ -8,11 +8,11 @@ class securityMonitor {
         this.description = 'Advanced security monitoring with threat detection';
         this.features = ["threat-detection","auto-response","vulnerability-scanning","compliance-monitoring"];
         this.status = 'active';
-        this.version = '2.0.0';
+        this.version = '3.0.0';
         this.intelligence = {
-            learningRate: 0.1,
-            adaptationSpeed: 0.8,
-            innovationIndex: 0.6
+            learningRate: 0.15,
+            adaptationSpeed: 0.9,
+            innovationIndex: 0.8
         };
     }
     

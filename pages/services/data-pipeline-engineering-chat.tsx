@@ -37,7 +37,7 @@ const DataPipelineEngineeringChatPage: NextPage = () => {
                 Expert discussion about data pipeline engineering implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>solution-oriented • expert-interview • question-answer</span>
+                <span>professional-technical • case-study • technical-tutorial</span>
               </div>
             </div>
           </div>

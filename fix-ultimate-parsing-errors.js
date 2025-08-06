@@ -1,19 +1,19 @@
-const variable1 = require('f's');'
-const variable1 = require('pa't'h');'
+const variable1 = require('f's');''
+const variable1 = require('pa't'h');''
 
 // Function to completely reconstruct problematic files;
 function fixUltimateParsingErrors(filePath) {
   try {
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8');'
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     
     // Check if the file is completely malformed
-    if (content.includes('Declaratio'n' or statement expected')) {'
+    if (content.includes('Declaratio'n' or statement expected')) {''
       // Completely reconstruct the file from scratch
-      const variable1 = path.basename(filePath, '.tsx');'
+      const variable1 = path.basename(filePath, '.tsx');''
       const variable1 = fileName
-        .split('-')'
+        .split('-')''
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join('');'
+        .join('');''
 
       // Create a basic React component structure
       const variable1 = "import React from 'react'
@@ -25,25 +25,25 @@ import React from 'react'
 const ${componentName}: NextPage = () => {
   return (
     <ModernLayout></div>
-      <div className="relative z-10 container-responsive py-8 role=main"></div>"
+      <div className="relative z-10 container-responsive py-8 role=main"></div>""
         <Head></div>
           <title>${componentName} - Zion</title></div>
-          <meta name=description content="${componentName} page for Zion marketplace." /></div>"
+          <meta name=description content="${componentName} page for Zion marketplace." /></div>""
         </Head>
         
         {/* Background Effects */}</div>
-        <div className="fixed inset-0 z-0></div>"
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>"
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>"
+        <div className="fixed inset-0 z-0></div>""
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>""
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>""
         </div>
 
         {/* Main Content */}</div>
-        <div className="relative" z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>"
-          <div className="text-center></div>"
-            <h1 className="text-4xl" font-bold text-white mb-8">"
+        <div className="relative" z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>""
+          <div className="text-center></div>""
+            <h1 className="text-4xl" font-bold text-white mb-8">""
               ${componentName}</div>
             </h1></div>
-            <p className="text-xl text-gray-300 mb-8>"
+            <p className="text-xl text-gray-300 mb-8>""
               Welcome to the ${componentName} page.</div>
             </p></div>
           </div></div>
@@ -53,16 +53,16 @@ const ${componentName}: NextPage = () => {
   );
 };
 ;}
-export default ${componentName};;
+export default ${componentName};
 
-      fs.writeFileSync(filePath, newContent, 'ut'f'8');'
-      console.log("Reconstructed: "${filePath"});"
+      fs.writeFileSync(filePath, newContent, 'ut'f'8');''
+      console.log("Reconstructed: "${filePath"});""
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error(Error processing ${filePath}: ", error.message)""
+    console.error(Error processing ${filePath}: ", error.message)"""
     return false;
   }
 }
@@ -76,9 +76,9 @@ function findTsxFiles(dir) {
     const variable1 = path.join(dir, item);
     const variable1 = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {'
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {''
       files.push(...findTsxFiles(fullPath));
-    } else if (item.endsWith('.tsx')) {'
+    } else if (item.endsWith('.tsx')) {''
       files.push(fullPath);
     }
   }
@@ -87,7 +87,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution;
-const variable1 = path.join(__dirname, 'pag'e's');'
+const variable1 = path.join(__dirname, 'pag'e's');''
 const variable1 = findTsxFiles(pagesDir);
 
 console.log(Found ${files.length} TypeScript files to process...);
@@ -99,4 +99,4 @@ for (const file of files) {
   }
 }
 
-console.log("Fixed ${fixedCount} files."); </div>"
+console.log("Fixed ${fixedCount} files."); </div>

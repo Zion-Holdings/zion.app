@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react'
 
 type Data = {
   success: boolean;
@@ -7,8 +7,8 @@ type Data = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ success: false, message: 'Method not allowed' });
+  if (req.method !== 'GET') {'
+    return res.status(405).json({ success: false, message: 'Method not allowed' });'
   }
 
   // Mock analytics data
@@ -17,9 +17,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     uniqueVisitors: 890,
     conversionRate: 12.5,
     topPages: [
-      { path: '/dashboard', views: 450 },
-      { path: '/analytics', views: 320 },
-      { path: '/reports', views: 280 }
+      { path: '/dashboard', views: 450 },'
+      { path: '/analytics', views: 320 },'
+      { path: '/reports', views: 280 }'
     ],
     trends: {
       daily: [120, 135, 142, 128, 156, 145, 138],

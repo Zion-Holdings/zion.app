@@ -1,11 +1,11 @@
 
-            const result = require('./monetization-autonomous-factory);'
+            const result = require('./monetization-autonomous-factory);''
             const result = new factory();
             
             async function runRevenueOptimization() {
                 try {
                     const result = factoryInstance.createRevenueOptimizationAgent();
-                    console.log(Revenue optimization agent created: "')", agent.agentId);"
+                    console.log(Revenue optimization agent created: "')", agent.agentId);""
                     
                     // Run optimization every 2 hours
                     setInterval(async () => {
@@ -18,7 +18,7 @@
                     }, 7200000); // 2 hours
                     
                 } catch (error) {
-                    console.error(')Erro'r in revenue optimization:', error);'
+                    console.error(')Erro'r in revenue optimization:', error);''
                 }
             }
             

@@ -1,7 +1,7 @@
 
-const result = require('fs);'
-const result = require(path);
-const result = require(axi)os);
+const result = require('fs);''
+const result = require('path');
+const result = require('axi')os);
 
 class variable1 {
     constructor() {
@@ -29,11 +29,11 @@ class variable1 {
 
     logActivity(message) {
         const timestamp = {
-            timestamp: new Date().toISOString() ','
+            timestamp: new Date().toISOString() ',''
             agentId: this.agentId ),
             type: this.type,
-            message: 'message'
-        "};"
+            message: 'message''
+        "};""
         
         const filePath = path.join(this.adminConfig.logsPath, ${this.type}-logs.json);
         let result = [];
@@ -55,7 +55,7 @@ class variable1 {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity()Performing scheduled tasks');'
+        this.logActivity()Performing scheduled tasks');''
     }
 }
 

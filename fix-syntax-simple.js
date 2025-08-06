@@ -1,49 +1,49 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 // Simple patterns to fix syntax errors
 const simpleFixes = [
   // Fix malformed imports
   {
-    pattern: /import type { NextApiRequest, NextApiResponse } from 'next'/g,
-    replacement: "import type { NextApiRequest, NextApiResponse } from 'next'"
+    pattern: /import React from 'react'
+    replacement: "import React from 'react'
   },
   {
-    pattern: /import.*from \";next\";/g,
-    replacement: 'import type { NextPage } from \"next\";'
+    pattern: /import React from 'react'
+    replacement: 'import React from 'react'
   },
   {
-    pattern: /import { useState, useEffect, useMemo } from "react";/g,
-    replacement: 'import { useState, useEffect, useMemo } from \"react\";'
+    pattern: /import React from 'react'
+    replacement: 'import React from 'react'
   },
   {
-    pattern: /import.*from \";react/g,
-    replacement: 'import { useState, useEffect, useMemo } from \"react\";'
+    pattern: /import React from 'react'
+    replacement: 'import React from 'react'
   },
   // Fix malformed function declarations
   {
     pattern: /export default async function handler\\(req: NextApiRequest, res: NextApiResponse\\) \\{;/g,
-    replacement: 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {'
+    replacement: 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {''
   },
   // Fix malformed JSX attributes
   {
-    pattern: /style=\\{font-family: \"Arial, sans-serif\"; max-width: \"800px\"; margin: auto; padding: 20px; background: white; color: #333;\\}/g,
-    replacement: 'style={{fontFamily: "Arial, sans-serif", maxWidth: "800px", margin: "auto", padding: "20px", background: "white", color: "#333"}}'
+    pattern: /style=\\{font-family: \"Arial, sans-serif\"; max-width: \"800px\"; margin: auto; padding: 20px; background: white; color: #333;\\}/g,"
+    replacement: 'style={{fontFamily: "Arial, sans-serif", maxWidth: "800px", margin: "auto", padding: "20px", background: "white", color: "#333"}}''
   },
   // Fix malformed object properties
   {
-    pattern: /images: "\\{/g,
-    replacement: 'images: {'
+    pattern: /images: "\\{/g,"
+    replacement: 'images: {''
   },
   {
-    pattern: /domains: \\['images\\.unsplash\\.com', 'via\\.placeholder\\.com', 'localhost'\\],/g,
-    replacement: "domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],"
+    pattern: /domains: \\['images\\.unsplash\\.com', 'via\\.placeholder\\.com', 'localhost'\\],/g,'
+    replacement: "domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],""
   }
 ];
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'utf8');'
     let originalContent = content;
     let fixed = false;
     
@@ -55,7 +55,7 @@ function fixFile(filePath) {
     }
     
     if (fixed) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'utf8');'
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -79,10 +79,10 @@ function processDirectory(dir) {
       
       if (stat.isDirectory()) {
         // Skip node_modules and .git
-        if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {
+        if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {'
           fixedCount += processDirectory(fullPath);
         }
-      } else if (item.endsWith('.ts') || item.endsWith('.tsx') || item.endsWith('.js') || item.endsWith('.jsx')) {
+      } else if (item.endsWith('.ts') || item.endsWith('.tsx') || item.endsWith('.js') || item.endsWith('.jsx')) {'
         if (fixFile(fullPath)) {
           fixedCount++;
         }
@@ -95,7 +95,7 @@ function processDirectory(dir) {
   return fixedCount;
 }
 
-console.log('Starting simple syntax error fixes...');
-const totalFixed = processDirectory('.');
+console.log('Starting simple syntax error fixes...');'
+const totalFixed = processDirectory('.');'
 console.log(`\nTotal files fixed: ${totalFixed}`);
 console.log('Simple syntax error fixes completed!'); 

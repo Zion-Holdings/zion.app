@@ -1,0 +1,9 @@
+{
+  "name": "caching-strategy",
+  "description": "Implement intelligent caching strategies",
+  "config": {
+    "static": "public, max-age=31536000, immutable",
+    "dynamic": "public, max-age=3600",
+    "api": "private, max-age=300"
+  }
+}
