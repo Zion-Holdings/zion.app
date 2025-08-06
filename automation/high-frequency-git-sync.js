@@ -1,73 +1,47 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
-const { spawn, exec, execSync } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
+const { spawn, execSync } = require('child_process');
 
 class HighFrequencyGitSync {
   constructor() {
-    this.id = 'high-frequency-git-sync';
-    this.version = '3.0.0';
-    this.status = 'initializing';
     this.projectRoot = process.cwd();
-    this.lastSync = null;
+    this.isRunning = false;
     this.syncCount = 0;
     this.errorCount = 0;
-    this.lastFileCheck = null;
-    this.fileWatchers = new Map();
+    this.lastSync = null;
+    
     this.config = {
       syncInterval: 5000, // 5 seconds
-      fileCheckInterval: 2000, // 2 seconds
-      maxFilesPerCommit: 20,
-      commitMessagePrefix: 'Auto-sync',
-      autoPush: true,
-      pushInterval: 10000, // 10 seconds
+      pushInterval: 30000, // 30 seconds
+      maxFilesPerCommit: 10,
       retryAttempts: 3,
-      retryDelay: 2000,
+      retryDelay: 1000,
+      commitMessagePrefix: 'Auto-sync',
+      includePatterns: [
+        'automation/**',
+        'pages/**',
+        'components/**',
+        'utils/**',
+        'styles/**',
+        'scripts/**'
+      ],
       excludePatterns: [
-        'node_modules/**',
-        '.git/**',
-        '*.log',
-        '*.tmp',
         'automation/logs/**',
         'automation/temp/**',
         'automation/backups/**',
-        'automation/reports/**'
-      ],
-      includePatterns: [
-        '**/*.js',
-        '**/*.ts',
-        '**/*.tsx',
-        '**/*.json',
-        '**/*.md',
-        '**/*.css',
-        '**/*.html',
-        '**/*.yml',
-        '**/*.yaml'
+        'automation/reports/**',
+        'node_modules/**',
+        '.git/**',
+        '*.log',
+        '*.pid'
       ]
     };
-    
-    this.ensureDirectories();
-  }
-
-  ensureDirectories() {
-    const directories = [
-      'high-frequency-sync-logs',
-      'high-frequency-sync-status',
-      'high-frequency-sync-reports'
-    ];
-
-    directories.forEach(dir => {
-      const dirPath = path.join(__dirname, dir);
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
-      }
-    });
   }
 
   async initialize() {
-    console.log('🚀 Initializing High Frequency Git Sync...');
+    console.log('🔄 Initializing High Frequency Git Sync...');
     
     try {
       // Check git status
@@ -79,45 +53,34 @@ class HighFrequencyGitSync {
       // Start sync processes
       this.startHighFrequencySync();
       this.startAutoPush();
-      this.startMonitoring();
       
-      this.status = 'running';
+      this.isRunning = true;
       console.log('✅ High Frequency Git Sync initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing High Frequency Git Sync:', error);
-      this.status = 'error';
+      console.error('❌ Failed to initialize High Frequency Git Sync:', error.message);
       throw error;
     }
   }
 
   async checkGitStatus() {
     try {
-      const status = execSync('git status --porcelain', { 
+      execSync('git status', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        stdio: 'pipe'
       });
-      
-      if (status.trim()) {
-        console.log('📝 Found uncommitted changes:', status.split('\n').length - 1, 'files');
-        return true;
-      } else {
-        console.log('✅ No uncommitted changes found');
-        return false;
-      }
+      console.log('✅ Git repository status OK');
     } catch (error) {
-      console.error('❌ Error checking git status:', error.message);
-      return false;
+      throw new Error(`Git repository not accessible: ${error.message}`);
     }
   }
 
   startFileWatching() {
     console.log('👀 Starting file watching...');
     
-    // Watch for file changes in key directories
     const watchDirs = [
       'pages',
-      'components',
+      'components', 
       'utils',
       'styles',
       'scripts',
@@ -125,77 +88,57 @@ class HighFrequencyGitSync {
     ];
     
     watchDirs.forEach(dir => {
-      const fullPath = path.join(this.projectRoot, dir);
-      if (fs.existsSync(fullPath)) {
-        this.watchDirectory(fullPath);
-      }
+      this.watchDirectory(dir);
     });
   }
 
   watchDirectory(dirPath) {
+    const fullPath = path.join(this.projectRoot, dirPath);
+    
     try {
-      const watcher = fs.watch(dirPath, { recursive: true }, (eventType, filename) => {
-        if (filename && this.shouldIncludeFile(filename)) {
-          console.log(`📁 File change detected: ${filename}`);
+      fs.watch(fullPath, { recursive: true }, (eventType, filename) => {
+        if (filename) {
+          console.log(`📁 File change detected: ${dirPath}/${filename}`);
           this.triggerSync();
         }
       });
-      
-      this.fileWatchers.set(dirPath, watcher);
-      console.log(`👀 Watching directory: ${dirPath}`);
-      
+      console.log(`👀 Watching: ${fullPath}`);
     } catch (error) {
-      console.error(`❌ Error watching directory ${dirPath}:`, error.message);
+      console.warn(`⚠️ Could not watch directory ${dirPath}:`, error.message);
     }
   }
 
   startHighFrequencySync() {
-    console.log('⏰ Starting high-frequency sync...');
+    console.log('🔄 Starting high-frequency sync...');
     
     setInterval(async () => {
-      await this.performSync();
+      if (this.isRunning) {
+        await this.performSync();
+      }
     }, this.config.syncInterval);
   }
 
   startAutoPush() {
-    if (!this.config.autoPush) return;
-    
-    console.log('⏰ Starting auto-push...');
+    console.log('🚀 Starting auto-push...');
     
     setInterval(async () => {
-      await this.performPush();
+      if (this.isRunning) {
+        await this.performPush();
+      }
     }, this.config.pushInterval);
   }
 
-  startMonitoring() {
-    console.log('👀 Starting monitoring...');
-    
-    // Monitor every 5 seconds
-    setInterval(() => {
-      this.monitorStatus();
-    }, 5000);
-    
-    // Generate reports every 10 minutes
-    setInterval(() => {
-      this.generateReport();
-    }, 600000);
-  }
-
   triggerSync() {
-    // Trigger immediate sync when file changes are detected
+    // Immediate sync on file change
     setTimeout(async () => {
-      await this.performSync();
-    }, 1000); // Wait 1 second to batch changes
+      if (this.isRunning) {
+        await this.performSync();
+      }
+    }, 100);
   }
 
   async performSync() {
     try {
-      const hasChanges = await this.checkGitStatus();
-      if (!hasChanges) return;
-
-      console.log('💾 Performing high-frequency sync...');
-      
-      // Get list of changed files
       const changedFiles = await this.getChangedFiles();
       
       if (changedFiles.length === 0) return;
@@ -391,83 +334,57 @@ class HighFrequencyGitSync {
     console.error(`❌ ${operation} failed after ${this.config.retryAttempts} attempts`);
   }
 
-  monitorStatus() {
-    const status = {
-      id: this.id,
-      version: this.version,
-      status: this.status,
-      lastSync: this.lastSync,
-      syncCount: this.syncCount,
-      errorCount: this.errorCount,
-      timestamp: new Date().toISOString()
-    };
-    
-    const statusPath = path.join(__dirname, 'high-frequency-sync-status', 'current-status.json');
-    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
-  }
-
-  generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      syncCount: this.syncCount,
-      errorCount: this.errorCount,
-      successRate: this.syncCount > 0 ? ((this.syncCount - this.errorCount) / this.syncCount * 100).toFixed(2) : 0,
-      lastSync: this.lastSync,
-      config: this.config
-    };
-    
-    const reportPath = path.join(__dirname, 'high-frequency-sync-reports', `report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    console.log('📊 Generated sync report');
-  }
-
   getStatus() {
     return {
-      id: this.id,
-      version: this.version,
-      status: this.status,
-      lastSync: this.lastSync,
+      isRunning: this.isRunning,
       syncCount: this.syncCount,
       errorCount: this.errorCount,
-      successRate: this.syncCount > 0 ? ((this.syncCount - this.errorCount) / this.syncCount * 100).toFixed(2) : 0
+      lastSync: this.lastSync,
+      uptime: Date.now() - this.startTime
     };
   }
 
   async shutdown() {
     console.log('🛑 Shutting down High Frequency Git Sync...');
-    
-    // Close file watchers
-    for (const [dirPath, watcher] of this.fileWatchers) {
-      watcher.close();
-      console.log(`👀 Stopped watching: ${dirPath}`);
-    }
-    
-    this.status = 'stopped';
+    this.isRunning = false;
     console.log('✅ High Frequency Git Sync shutdown complete');
   }
 }
 
-// Auto-start if run directly
-if (require.main === module) {
-  const highFreqSync = new HighFrequencyGitSync();
+// Main execution
+async function main() {
+  const sync = new HighFrequencyGitSync();
+  
+  // Handle graceful shutdown
+  process.on('SIGTERM', async () => {
+    console.log('🛑 Received SIGTERM, shutting down...');
+    await sync.shutdown();
+    process.exit(0);
+  });
   
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
-    await highFreqSync.shutdown();
+    console.log('🛑 Received SIGINT, shutting down...');
+    await sync.shutdown();
     process.exit(0);
   });
   
-  process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
-    await highFreqSync.shutdown();
-    process.exit(0);
-  });
-  
-  highFreqSync.initialize().catch(error => {
-    console.error('❌ High Frequency Git Sync initialization failed:', error);
+  try {
+    await sync.initialize();
+    
+    // Keep the process running
+    setInterval(() => {
+      const status = sync.getStatus();
+      console.log(`📊 Sync Status: ${status.syncCount} syncs, ${status.errorCount} errors`);
+    }, 60000); // Log status every minute
+    
+  } catch (error) {
+    console.error('❌ Failed to start High Frequency Git Sync:', error.message);
     process.exit(1);
-  });
+  }
+}
+
+if (require.main === module) {
+  main().catch(console.error);
 }
 
 module.exports = HighFrequencyGitSync;

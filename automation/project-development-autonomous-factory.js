@@ -14,11 +14,6 @@ class ProjectDevelopmentAutonomousFactory {
     this.logsDir = path.join(__dirname, 'project-development-logs');
     this.dataDir = path.join(__dirname, 'project-development-data');
     
-    this.ensureDirectories();
-    this.loadConfiguration();
-    this.initializeAgents();
-    this.setupCronJobs();
-    
     this.activeAgents = new Map();
     this.performanceMetrics = {
       agentsCreated: 0,
@@ -26,6 +21,11 @@ class ProjectDevelopmentAutonomousFactory {
       errors: 0,
       improvements: 0
     };
+    
+    this.ensureDirectories();
+    this.loadConfiguration();
+    this.initializeAgents();
+    this.setupCronJobs();
   }
 
   ensureDirectories() {
