@@ -4,12 +4,12 @@
   "status": "running",
   "lastSync": null,
   "syncCount": 0,
-  "errorCount": 78,
+  "errorCount": 170,
   "processes": [
     "ultra-high-freq",
     "high-freq",
     "standard",
     "backup"
   ],
-  "timestamp": "2025-08-06T13:54:09.698Z"
+  "timestamp": "2025-08-06T13:56:53.067Z"
 }
