@@ -1,5 +1,5 @@
 {
-  "isRunning": true,
+  "isRunning": false,
   "startTime": "2025-08-01T02:50:00.968Z",
   "agents": {
     "improvement": {
@@ -37,5 +37,6 @@
   "totalUptime": 5579.802,
   "restarts": 1,
   "lastLaunch": "2025-08-06T05:15:42.466Z",
-  "totalRuns": null
+  "totalRuns": null,
+  "successfulRuns": null
 }
