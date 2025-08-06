@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       title: 'AI Talents',
       description: 'Expert AI developers and consultants',
       icon: '🤖',
-      link: '/talents',
+      link: '/talent',
       color: 'purple' as const,
       category: 'Talent'
     },
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
       title: 'Equipment',
       description: 'High-performance computing hardware',
       icon: '⚙️',
-      link: '/equipment',
+      link: '/products',
       color: 'green' as const,
       category: 'Hardware'
     },
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
       description: 'Machine Learning Expert with 8+ years of experience in AI research',
       price: '$200/hr',
       rating: 4.9,
-      link: '/talents',
+      link: '/talent',
       color: 'blue' as const,
       featured: true
     },
@@ -98,210 +98,277 @@ const Home: NextPage = () => {
       description: 'Deep Learning Specialist specializing in neural networks and computer vision',
       price: '$180/hr',
       rating: 4.8,
-      link: '/talents',
+      link: '/talent',
       color: 'purple' as const
     },
     {
-      title: 'Dr. Michael Kim',
-      description: 'AI Research Scientist with 10+ years in quantum computing and AI',
-      price: '$250/hr',
+      title: 'Maria Johnson',
+      description: 'Cloud Architecture Expert with AWS, Azure, and GCP certifications',
+      price: '$220/hr',
       rating: 4.9,
-      link: '/talents',
+      link: '/talent',
       color: 'green' as const
     },
     {
-      title: 'Emma Thompson',
-      description: 'Computer Vision Engineer with expertise in autonomous systems',
-      price: '$160/hr',
-      rating: 4.7,
-      link: '/talents',
+      title: 'David Kim',
+      description: 'Cybersecurity Specialist with expertise in threat detection and prevention',
+      price: '$250/hr',
+      rating: 4.9,
+      link: '/talent',
       color: 'pink' as const
     }
   ]
 
-  const premiumEquipment = [
-    {
-      title: 'GPU Clusters',
-      description: 'High-performance computing clusters for AI and machine learning workloads',
-      price: '$5000-50000',
-      rating: 4.9,
-      link: '/equipment',
-      color: 'blue' as const,
-      featured: true
-    },
-    {
-      title: 'Quantum Computers',
-      description: 'Next-generation quantum processing units for advanced computations',
-      price: '$100000+',
-      rating: 4.8,
-      link: '/equipment',
-      color: 'purple' as const
-    },
-    {
-      title: 'Edge Computing Devices',
-      description: 'IoT and edge processing solutions for real-time applications',
-      price: '$1000-10000',
-      rating: 4.7,
-      link: '/equipment',
-      color: 'green' as const
-    },
-    {
-      title: 'Data Storage Systems',
-      description: 'Enterprise-grade storage solutions with high availability',
-      price: '$2000-25000',
-      rating: 4.8,
-      link: '/equipment',
-      color: 'pink' as const
-    }
+  const stats = [
+    { value: '10K+', label: 'Active Users' },
+    { value: '500+', label: 'AI Services' },
+    { value: '99.9%', label: 'Uptime' },
+    { value: '24/7', label: 'Support' }
   ]
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <Head>
         <title>Zion - The First Free AI-Powered Marketplace</title>
-        <meta name="description" content="Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Experience the future of commerce with Zion's cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products." />
+        <meta name="keywords" content="AI marketplace, IT services, AI talents, technology solutions, digital transformation" />
+        <meta property="og:title" content="Zion - The First Free AI-Powered Marketplace" />
+        <meta property="og:description" content="Experience the future of commerce with Zion's cutting-edge AI-powered marketplace." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.netlify.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion - The First Free AI-Powered Marketplace" />
+        <meta name="twitter:description" content="Experience the future of commerce with Zion's cutting-edge AI-powered marketplace." />
       </Head>
 
-      <main className="relative">
-        {/* Hero Section */}
-        <FuturisticHero />
-
-        {/* Marketplace Categories */}
-        <section className="relative py-20 lg:py-32">
-          <div className="container-responsive">
-            <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                  Marketplace Categories
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                Explore our comprehensive marketplace featuring cutting-edge technology solutions
-              </p>
+      {/* Navigation */}
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
+            >
+              Zion
+            </Link>
+            <div className="hidden md:flex gap-6 text-sm font-medium">
+              <Link href="/services" className="hover:text-purple-300 transition-colors">
+                Services
+              </Link>
+              <Link href="/products" className="hover:text-purple-300 transition-colors">
+                Products
+              </Link>
+              <Link href="/talent" className="hover:text-purple-300 transition-colors">
+                Talent
+              </Link>
+              <Link href="/blog" className="hover:text-purple-300 transition-colors">
+                Blog
+              </Link>
+              <Link href="/about" className="hover:text-purple-300 transition-colors">
+                About
+              </Link>
+              <Link href="/contact" className="hover:text-purple-300 transition-colors">
+                Contact
+              </Link>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {marketplaceCategories.map((category, index) => (
-                <FuturisticCard
-                  key={index}
-                  {...category}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Services */}
-        <section className="relative py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
-          <div className="container-responsive relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
-                  Featured IT Services
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                Professional IT services delivered by certified experts
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredServices.map((service, index) => (
-                <FuturisticCard
-                  key={index}
-                  {...service}
-                />
-              ))}
+            <div className="flex gap-4">
+              <Link
+                href="/auth"
+                className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/auth"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-200"
+              >
+                Get Started
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </nav>
 
-        {/* Top AI Talents */}
-        <section className="relative py-20 lg:py-32">
-          <div className="container-responsive">
-            <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
-                  Top AI Talents
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                Connect with world-class AI experts and developers
-              </p>
-            </div>
+      {/* Hero Section */}
+      <FuturisticHero />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {topTalents.map((talent, index) => (
-                <FuturisticCard
-                  key={index}
-                  {...talent}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Premium Equipment */}
-        <section className="relative py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50"></div>
-          <div className="container-responsive relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple">
-                  Premium Equipment
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
-                High-performance computing hardware and advanced technology solutions
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {premiumEquipment.map((equipment, index) => (
-                <FuturisticCard
-                  key={index}
-                  {...equipment}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="relative py-20 lg:py-32">
-          <div className="container-responsive">
-            <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                  Ready to Start Trading?
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-high-contrast-secondary mb-8 max-w-2xl mx-auto">
-                Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/auth/signup"
-                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover:shadow-neon-blue transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started Now
-                </Link>
-                <Link
-                  href="/marketplace"
-                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Marketplace
-                </Link>
+      {/* Stats Section */}
+      <section className="py-16 bg-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-gray-300 text-sm md:text-base">
+                  {stat.label}
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Marketplace Categories */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Explore Our Marketplace
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Discover a comprehensive ecosystem of technology solutions, from AI services to enterprise infrastructure.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {marketplaceCategories.map((category, index) => (
+              <FuturisticCard
+                key={index}
+                title={category.title}
+                description={category.description}
+                icon={category.icon}
+                link={category.link}
+                color={category.color}
+                category={category.category}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Services */}
+      <section className="py-16 bg-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Featured Services
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Top-rated services from our verified professionals and companies.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredServices.map((service, index) => (
+              <FuturisticCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                link={service.link}
+                color={service.color}
+                price={service.price}
+                rating={service.rating}
+                featured={service.featured}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Top Talents */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Top AI Talents
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Connect with world-class AI experts and technology professionals.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {topTalents.map((talent, index) => (
+              <FuturisticCard
+                key={index}
+                title={talent.title}
+                description={talent.description}
+                link={talent.link}
+                color={talent.color}
+                price={talent.price}
+                rating={talent.rating}
+                featured={talent.featured}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of businesses already leveraging Zion's AI-powered marketplace for their technology needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/auth"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+            >
+              Get Started Free
+            </Link>
+            <Link
+              href="/services"
+              className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
+                Zion
+              </h3>
+              <p className="text-gray-300 text-sm">
+                The first free AI-powered marketplace connecting businesses with top technology solutions.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><Link href="/services" className="hover:text-purple-300 transition-colors">IT Services</Link></li>
+                <li><Link href="/services" className="hover:text-purple-300 transition-colors">AI Development</Link></li>
+                <li><Link href="/services" className="hover:text-purple-300 transition-colors">Cloud Solutions</Link></li>
+                <li><Link href="/services" className="hover:text-purple-300 transition-colors">Security</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><Link href="/about" className="hover:text-purple-300 transition-colors">About</Link></li>
+                <li><Link href="/talent" className="hover:text-purple-300 transition-colors">Careers</Link></li>
+                <li><Link href="/blog" className="hover:text-purple-300 transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-purple-300 transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><Link href="/contact" className="hover:text-purple-300 transition-colors">Help Center</Link></li>
+                <li><Link href="/contact" className="hover:text-purple-300 transition-colors">Contact Support</Link></li>
+                <li><Link href="/auth" className="hover:text-purple-300 transition-colors">Sign In</Link></li>
+                <li><Link href="/auth" className="hover:text-purple-300 transition-colors">Sign Up</Link></li>
+              </ul>
             </div>
           </div>
-        </section>
-      </main>
-    </>
-  )
-}
+          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">
+            © {new Date().getFullYear()} Zion. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-export default Home 
+export default Home; 
