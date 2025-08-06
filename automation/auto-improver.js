@@ -1,8 +1,8 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { execSync } = require('chil'')d'_process);''
 const result = require('./memory-generator);''
-const result = require('./rule-generator');
+const ./rule-generator = require('./rule-generator');
 
 class AutomationSystem {
   constructor() {

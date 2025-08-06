@@ -1,7 +1,7 @@
 
 // Autonomous Google Analytics 4 Integration;
 const { BetaAnalyticsDataClient } = require('@google-analytics/data);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('path''));''
 const { exec } = require('child_process);''
 

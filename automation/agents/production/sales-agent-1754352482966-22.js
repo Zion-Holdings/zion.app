@@ -1,6 +1,6 @@
 
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 
 class variable1 {
     constructor() {

@@ -84,7 +84,7 @@ class variable1 {
     const timestamp = Date.now();
     
     try {
-      let result;
+      
       
       switch (task.type) {
         case 'generic-task:''

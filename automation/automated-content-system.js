@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('./content-orchestrator);''
-const result = require('./content-integration-agent');
-const result = require('fs');
+const ./content-integration-agent = require('./content-integration-agent');
+const fs = require('fs');
 const result = require('pa'')t'h);''
 
 class AutomationSystem {

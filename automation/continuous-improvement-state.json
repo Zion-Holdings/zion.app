@@ -1,10 +1,10 @@
 {
   "evolution": {
-    "evolutionCount": 4,
-    "intelligence": 3.5545406620748405,
-    "learningRate": 0.9398704943269028,
-    "adaptationSpeed": 0.8112549700349626,
-    "mutationRate": 0.024000000000000004
+    "evolutionCount": 6,
+    "intelligence": 6.281993680115598,
+    "learningRate": 1.3583514521633182,
+    "adaptationSpeed": 1.1112066049689784,
+    "mutationRate": 0.026000000000000006
   },
   "capabilities": {
     "mutation-1754479721395": {
@@ -85,7 +85,55 @@
       "isActive": true,
       "performance": 0.8,
       "evolutionCount": 0,
-      "createdAt": "2025-08-06T11:47:41.340Z"
+      "createdAt": "2025-08-06T11:57:41.315Z"
+    },
+    "mutation-1754480861349": {
+      "name": "mutation-1754480861349",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:47:41.349Z"
+    },
+    "mutation-1754480981345": {
+      "name": "mutation-1754480981345",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:49:41.345Z"
+    },
+    "mutation-1754481101342": {
+      "name": "mutation-1754481101342",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:51:41.342Z"
+    },
+    "mutation-1754481161341": {
+      "name": "mutation-1754481161341",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:52:41.341Z"
+    },
+    "mutation-1754481341338": {
+      "name": "mutation-1754481341338",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:55:41.338Z"
+    },
+    "mutation-1754481401336": {
+      "name": "mutation-1754481401336",
+      "type": "automated",
+      "isActive": true,
+      "performance": 0.8,
+      "evolutionCount": 0,
+      "createdAt": "2025-08-06T11:56:41.336Z"
     }
   },
   "performanceData": {
@@ -202,22 +250,82 @@
       "timestamp": "2025-08-06T11:46:41.351Z",
       "duration": 241.97863146796416,
       "success": true
+    },
+    "system-check-1754480861349": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:47:41.349Z",
+      "duration": 619.6987548012822,
+      "success": true
+    },
+    "system-check-1754480921347": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:48:41.347Z",
+      "duration": 262.150595066063,
+      "success": true
+    },
+    "system-check-1754480981345": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:49:41.345Z",
+      "duration": 838.5232914765104,
+      "success": true
+    },
+    "system-check-1754481041343": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:50:41.343Z",
+      "duration": 790.9486290234084,
+      "success": true
+    },
+    "system-check-1754481101343": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:51:41.343Z",
+      "duration": 579.3323407943399,
+      "success": true
+    },
+    "system-check-1754481161341": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:52:41.341Z",
+      "duration": 897.749381422799,
+      "success": true
+    },
+    "system-check-1754481221339": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:53:41.339Z",
+      "duration": 631.0332230469573,
+      "success": true
+    },
+    "system-check-1754481281339": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:54:41.339Z",
+      "duration": 304.26216735921787,
+      "success": true
+    },
+    "system-check-1754481341338": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:55:41.338Z",
+      "duration": 14.402157670146742,
+      "success": true
+    },
+    "system-check-1754481401336": {
+      "operation": "system-check",
+      "timestamp": "2025-08-06T11:56:41.336Z",
+      "duration": 154.52710170653705,
+      "success": true
     }
   },
   "monitoring": {
     "startTime": 1754479661391,
     "metrics": {
-      "uptime": 1169971,
+      "uptime": 1769965,
       "memoryUsage": {
-        "rss": 33435648,
+        "rss": 33787904,
         "heapTotal": 5836800,
-        "heapUsed": 4663032,
-        "external": 1688992,
-        "arrayBuffers": 30890
+        "heapUsed": 4996120,
+        "external": 1751099,
+        "arrayBuffers": 92997
       },
       "cpuUsage": {
-        "user": 83455,
-        "system": 26180
+        "user": 93543,
+        "system": 29736
       }
     },
     "health": "healthy",
@@ -871,8 +979,373 @@
         "timestamp": "2025-08-06T11:47:41.342Z",
         "level": "info",
         "message": "Evolution step 4: Intelligence 3.555"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754480861349 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.096"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754480861349 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.039"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.056"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.349Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:47:41.362Z",
+        "level": "info",
+        "message": "Health check: Uptime 1199s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:11.361Z",
+        "level": "info",
+        "message": "Health check: Uptime 1229s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:41.347Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.039"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:41.347Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.087"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:41.347Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.059"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:41.347Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:48:41.360Z",
+        "level": "info",
+        "message": "Health check: Uptime 1259s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:11.360Z",
+        "level": "info",
+        "message": "Health check: Uptime 1289s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.058"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754480981345 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.096"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754480981345 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.097"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.345Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:49:41.360Z",
+        "level": "info",
+        "message": "Health check: Uptime 1319s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:11.359Z",
+        "level": "info",
+        "message": "Health check: Uptime 1349s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:41.343Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.037"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:41.343Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.061"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:41.343Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.030"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:41.343Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:50:41.358Z",
+        "level": "info",
+        "message": "Health check: Uptime 1379s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:11.357Z",
+        "level": "info",
+        "message": "Health check: Uptime 1409s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.342Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481101342 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.342Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.032"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.342Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.039"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.342Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481101342 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.343Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.034"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.343Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:51:41.359Z",
+        "level": "info",
+        "message": "Health check: Uptime 1439s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:11.358Z",
+        "level": "info",
+        "message": "Health check: Uptime 1469s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.329Z",
+        "level": "info",
+        "message": "Evolution step 5: Intelligence 4.832"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.341Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.018"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.341Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.009"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.341Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481161341 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.341Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.037"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.341Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:52:41.358Z",
+        "level": "info",
+        "message": "Health check: Uptime 1499s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:11.359Z",
+        "level": "info",
+        "message": "Health check: Uptime 1529s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.053"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.014"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.070"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:41.339Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:53:41.358Z",
+        "level": "info",
+        "message": "Health check: Uptime 1559s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:11.359Z",
+        "level": "info",
+        "message": "Health check: Uptime 1589s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.011"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.086"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:41.339Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.061"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:41.339Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:54:41.360Z",
+        "level": "info",
+        "message": "Health check: Uptime 1619s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:11.360Z",
+        "level": "info",
+        "message": "Health check: Uptime 1649s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481341338 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.031"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Applied mutation: intelligence with value 0.030"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481341338 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.022"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.338Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:55:41.359Z",
+        "level": "info",
+        "message": "Health check: Uptime 1679s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:11.358Z",
+        "level": "info",
+        "message": "Health check: Uptime 1709s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.336Z",
+        "level": "info",
+        "message": "Applied mutation: performance with value 0.069"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.336Z",
+        "level": "info",
+        "message": "Applied mutation: adaptation with value 0.061"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.336Z",
+        "level": "info",
+        "message": "Added capability: mutation-1754481401336 (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.336Z",
+        "level": "info",
+        "message": "Applied mutation: capability with value 0.032"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.336Z",
+        "level": "info",
+        "message": "Performance tracked: system-check - SUCCESS"
+      },
+      {
+        "timestamp": "2025-08-06T11:56:41.356Z",
+        "level": "info",
+        "message": "Health check: Uptime 1739s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:57:11.356Z",
+        "level": "info",
+        "message": "Health check: Uptime 1769s, Health healthy"
+      },
+      {
+        "timestamp": "2025-08-06T11:57:41.315Z",
+        "level": "info",
+        "message": "Added capability: performance-optimization (automated)"
+      },
+      {
+        "timestamp": "2025-08-06T11:57:41.316Z",
+        "level": "info",
+        "message": "Evolution step 6: Intelligence 6.282"
       }
     ]
   },
-  "timestamp": "2025-08-06T11:47:41.342Z"
+  "timestamp": "2025-08-06T11:57:41.317Z"
 }
