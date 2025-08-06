@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
 
 class AdminAgentCreator {
     constructor() {
@@ -13,18 +12,6 @@ class AdminAgentCreator {
             statusPath: path.join(__dirname, '..', 'status'),
             agentsPath: path.join(__dirname, '..', 'agents')
         };
-        this.agentTemplates = [
-            'AdminAIAnalyticsAgent',
-            'AdminTrendAnalyzer',
-            'AdminToolInnovator',
-            'AdminSecurityAgent',
-            'AdminPerformanceAgent',
-            'AdminResearchAgent',
-            'AdminEvolutionAgent',
-            'AdminBackupAgent',
-            'AdminMonitoringAgent',
-            'AdminOptimizationAgent'
-        ];
         this.initialize();
     }
 
@@ -78,7 +65,20 @@ class AdminAgentCreator {
     async createInitialAgents() {
         console.log('🚀 Creating initial admin agents...');
         
-        for (const agentType of this.agentTemplates) {
+        const agentTemplates = [
+            'AdminAIAnalyticsAgent',
+            'AdminTrendAnalyzer',
+            'AdminToolInnovator',
+            'AdminSecurityAgent',
+            'AdminPerformanceAgent',
+            'AdminResearchAgent',
+            'AdminEvolutionAgent',
+            'AdminBackupAgent',
+            'AdminMonitoringAgent',
+            'AdminOptimizationAgent'
+        ];
+        
+        for (const agentType of agentTemplates) {
             await this.createAgent(agentType);
         }
         
@@ -88,10 +88,8 @@ class AdminAgentCreator {
     async createNewAgents() {
         console.log('🔄 Creating new specialized agents...');
         
-        // Analyze current system needs
         const systemNeeds = await this.analyzeSystemNeeds();
         
-        // Create agents based on needs
         for (const need of systemNeeds) {
             const agentType = this.generateAgentType(need);
             await this.createAgent(agentType);
@@ -191,7 +189,6 @@ class AdminAgentCreator {
         return `
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
 
 class ${agentType} {
     constructor() {
@@ -207,29 +204,28 @@ class ${agentType} {
     }
 
     async initialize() {
-        console.log(\🤖 Initializing \${this.type} agent...\ ));
+        console.log('🤖 Initializing ${agentType} agent...');
         await this.start();
     }
 
     async start() {
-        this.logActivity(Agent started);
+        this.logActivity('Agent started');
         this.scheduleTasks();
-        await this.performSpecializedTasks();
     }
 
     logActivity(message) {
-        const timestamp = {
-            timestamp: new Date().toISOString() ,
+        const logEntry = {
+            timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
             message: message
-         '};''
+        };
         
-        const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\);
-        let result = [];
+        const logPath = path.join(this.adminConfig.logsPath, \`\${this.type}-logs.json\`);
+        let logs = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, )utf8));
+            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'));
         }
         
         logs.push(logEntry);
@@ -237,72 +233,21 @@ class ${agentType} {
     }
 
     scheduleTasks() {
+        // Schedule agent-specific tasks
         setInterval(() => {
-            this.performSpecializedTasks();
-        }, 300000); // 5 minutes
+            this.performTasks();
+        }, 300000); // Every 5 minutes
     }
 
-    async performSpecializedTasks() {
-        // Agent-specific implementation
-        this.logActivity(Performing specialized tasks);
-        
-        // Add specialized functionality based on agent type
-        switch (this.type) {
-            case AdminAIAnalyticsAgent: await this.performAIAnalytics();
-                break;
-            case AdminSecurityAgent:
-                await this.performSecurityMonitoring();
-                break;
-            case AdminPerformanceAgent:
-                await this.performPerformanceOptimization();
-                break;
-            case AdminTrendAnalyzer:
-                await this.performTrendAnalysis();
-                break;
-            case AdminToolInnovator:
-                await this.performToolInnovation();
-                break;
-            default:
-                await this.performGeneralTasks();
-        }
-    }
-
-    async performAIAnalytics() {
-        this.logActivity(Performing AI analytics);
-        // AI-powered system analysis
-    }
-
-    async performSecurityMonitoring() {
-        this.logActivity(Performing security monitoring);
-        // Security analysis and threat detection
-    }
-
-    async performPerformanceOptimization() {
-        this.logActivity()Performing performance optimization);
-        // System performance analysis and optimization
-    }
-
-    async performTrendAnalysis() {
-        this.logActivity(Performing trend analysis);
-        // Trend analysis and prediction
-    }
-
-    async performToolInnovation() {
-        this.logActivity(Performing tool innovation);
-        // Tool development and innovation
-    }
-
-    async performGeneralTasks() {
-        this.logActivity()Performing general tasks);
-        // General administrative tasks
+    async performTasks() {
+        this.logActivity('Performing scheduled tasks');
+        // Agent-specific task implementation
     }
 }
 
 // Start the agent
 new ${agentType}();
- ;
-
-        return baseCode;
+`;
     }
 
     async analyzeAndOptimizeAgents() {
@@ -325,7 +270,7 @@ new ${agentType}();
             await this.updateAgentCode(agentType);
         }
         
-        this.logActivity(`Optimized agent: ${agentType}`);
+        this.logActivity('Optimized agent: ' + agentType);
     }
 
     async analyzeAgentPerformance(agentType) {
@@ -348,7 +293,7 @@ new ${agentType}();
             const optimizedCode = this.generateOptimizedAgentCode(agentType, agentFile.replace('.js', ''));
             fs.writeFileSync(filePath, optimizedCode);
             
-            console.log(`🔄 Optimized agent: ${agentType}`);
+            console.log('🔄 Optimized agent: ' + agentType);
         }
     }
 
@@ -389,14 +334,14 @@ new ${agentType}();
             topic: topic,
             timestamp: new Date().toISOString(),
             findings: [
-                `Latest developments in ${topic}`,
-                `New tools and frameworks for ${topic}`,
-                `Best practices for ${topic} implementation`
+                'Latest developments in ' + topic,
+                'New tools and frameworks for ' + topic,
+                'Best practices for ' + topic + ' implementation'
             ],
             potentialAgents: [
-                `Admin${topic.replace(/\s+/g, '')}Agent`,
-                `Admin${topic.split(' ')[0]}Optimizer`,
-                `Admin${topic.split(' ')[0]}Analyzer`
+                'Admin' + topic.replace(/\s+/g, '') + 'Agent',
+                'Admin' + topic.split(' ')[0] + 'Optimizer',
+                'Admin' + topic.split(' ')[0] + 'Analyzer'
             ]
         };
         

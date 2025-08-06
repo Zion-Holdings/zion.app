@@ -1,10 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 
-class AdminWebResearcher {
+const agents = [
+    'AdminStatusMonitor',
+    'AdminEvolutionAgent', 
+    'AdminSecurityAgent',
+    'AdminAnalyticsAgent',
+    'AdminBackupAgent'
+];
+
+const agentCode = (agentType) => `
+const fs = require('fs');
+const path = require('path');
+
+class ${agentType} {
     constructor() {
-        this.agentId = 'AdminWebResearcher-' + Date.now();
-        this.type = 'AdminWebResearcher';
+        this.agentId = '${agentType}-' + Date.now();
+        this.type = '${agentType}';
         this.adminConfig = {
             adminPath: path.join(__dirname, '..'),
             logsPath: path.join(__dirname, '..', 'logs'),
@@ -16,7 +28,7 @@ class AdminWebResearcher {
     }
 
     async initialize() {
-        console.log('🔍 Initializing AdminWebResearcher agent...');
+        console.log('🤖 Initializing ${agentType} agent...');
         await this.start();
     }
 
@@ -33,7 +45,7 @@ class AdminWebResearcher {
             message: message
         };
         
-        const logPath = path.join(this.adminConfig.logsPath, `${this.type}-logs.json`);
+        const logPath = path.join(this.adminConfig.logsPath, \`\${this.type}-logs.json\`);
         let logs = [];
         
         if (fs.existsSync(logPath)) {
@@ -45,22 +57,28 @@ class AdminWebResearcher {
     }
 
     scheduleTasks() {
-        // Research tasks every 10 minutes
+        // Agent-specific tasks every 5 minutes
         setInterval(() => {
-            this.performResearch();
-        }, 600000);
-    }
-
-    async performResearch() {
-        console.log('🔍 Performing web research...');
-        this.logActivity('Research task completed');
+            this.performTasks();
+        }, 300000);
     }
 
     async performTasks() {
         this.logActivity('Performing scheduled tasks');
-        await this.performResearch();
+        // Agent-specific task implementation
+        console.log('✅ ${agentType} task completed');
     }
 }
 
 // Start the agent
-new AdminWebResearcher(); 
+new ${agentType}();
+`;
+
+// Create all agents
+agents.forEach(agentType => {
+    const agentPath = path.join(__dirname, 'agents', `${agentType}.js`);
+    fs.writeFileSync(agentPath, agentCode(agentType));
+    console.log(`✅ Created ${agentType}.js`);
+});
+
+console.log('🎉 All simple agents created successfully!');

@@ -9,8 +9,7 @@
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "next dev",
-    "build": "node scripts/custom-build.js",
-    "build:standard": "next build",
+    "build": "next build",
     "export": "next build && next export",
     "start": "next start",
     "lint": "next lint",

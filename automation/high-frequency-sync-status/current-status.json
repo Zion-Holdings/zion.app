@@ -2,8 +2,8 @@
   "id": "high-frequency-git-sync",
   "version": "3.0.0",
   "status": "running",
-  "lastSync": "2025-08-06T10:50:46.450Z",
-  "syncCount": 1,
-  "errorCount": 208,
-  "timestamp": "2025-08-06T10:53:22.349Z"
+  "lastSync": null,
+  "syncCount": 0,
+  "errorCount": 38,
+  "timestamp": "2025-08-06T11:10:27.530Z"
 }

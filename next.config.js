@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  serverExternalPackages: ['@supabase/supabase-js'],
   images: {
     unoptimized: true,
     domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],

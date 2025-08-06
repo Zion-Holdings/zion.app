@@ -1,22 +1,22 @@
+
 const fs = require('fs');
 const path = require('path');
 
-class AdminWebResearcher {
+class AdminResearchAgent {
     constructor() {
-        this.agentId = 'AdminWebResearcher-' + Date.now();
-        this.type = 'AdminWebResearcher';
+        this.agentId = 'AdminResearchAgent-1754478470854';
+        this.type = 'AdminResearchAgent';
         this.adminConfig = {
-            adminPath: path.join(__dirname, '..'),
-            logsPath: path.join(__dirname, '..', 'logs'),
-            reportsPath: path.join(__dirname, '..', 'reports'),
-            statusPath: path.join(__dirname, '..', 'status'),
-            agentsPath: path.join(__dirname, '..', 'agents')
+            adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
+            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
+            reportsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
+            statusPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
         };
         this.initialize();
     }
 
     async initialize() {
-        console.log('🔍 Initializing AdminWebResearcher agent...');
+        console.log('🤖 Initializing AdminResearchAgent agent...');
         await this.start();
     }
 
@@ -45,22 +45,17 @@ class AdminWebResearcher {
     }
 
     scheduleTasks() {
-        // Research tasks every 10 minutes
+        // Schedule agent-specific tasks
         setInterval(() => {
-            this.performResearch();
-        }, 600000);
-    }
-
-    async performResearch() {
-        console.log('🔍 Performing web research...');
-        this.logActivity('Research task completed');
+            this.performTasks();
+        }, 300000); // Every 5 minutes
     }
 
     async performTasks() {
         this.logActivity('Performing scheduled tasks');
-        await this.performResearch();
+        // Agent-specific task implementation
     }
 }
 
 // Start the agent
-new AdminWebResearcher(); 
+new AdminResearchAgent();

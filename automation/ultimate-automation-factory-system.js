@@ -67,7 +67,7 @@ class UltimateAutomationFactorySystem {
         capabilities: ['performance-optimization', 'scalability-planning', 'resource-management', 'efficiency-improvement'],
         intelligence: 0.88,
         evolutionRate: 0.16
-      };
+      }
     };
   }
 
@@ -110,7 +110,7 @@ class UltimateAutomationFactorySystem {
       'health-logs',
       'intelligence-data',
       'capability-reports',
-      'factory-logs';
+      'factory-logs'
     ];
     
     for (const dir of directories) {
@@ -146,7 +146,7 @@ class UltimateAutomationFactorySystem {
       generatedScripts: 0,
       successfulScripts: 0,
       failedScripts: 0,
-      evolutionCount: 0;
+      evolutionCount: 0
     };
     
     this.factories.set(factoryType, factory);
@@ -953,7 +953,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Evolution;
       'intelligence-automation': ['sentiment-analysis', 'behavioral-prediction', 'anomaly-detection'],
       'diversification-automation': ['geographic-expansion', 'product-diversification', 'channel-expansion'],
       'innovation-automation': ['patent-research', 'technology-scouting', 'disruption-analysis'],
-      'scalability-automation': ['load-balancing', 'auto-scaling', 'capacity-planning'];
+      'scalability-automation': ['load-balancing', 'auto-scaling', 'capacity-planning']
     };
     
     const templates = capabilityTemplates[factoryType] || ['advanced-analysis', 'predictive-modeling', 'optimization-engine'];
@@ -964,7 +964,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Evolution;
     console.log(`🔄 Regenerating scripts for ${factoryType} factory...`);
     
     // Remove old scripts
-    const oldScripts = Array.from(this.generatedScripts.values());
+    const oldScripts = Array.from(this.generatedScripts.values())
       .filter(script => script.factoryType === factoryType);
     
     for (const script of oldScripts) {
@@ -1002,7 +1002,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Evolution;
       activeFactories: Array.from(this.factories.values()).filter(f => f.isActive).length,
       totalScripts: this.generatedScripts.size,
       averageIntelligence: 0,
-      totalEvolutionCount: 0;
+      totalEvolutionCount: 0
     };
     
     let totalIntelligence = 0;
@@ -1026,7 +1026,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Evolution;
       intelligenceLevels: Object.fromEntries(this.intelligenceLevels),
       evolutionData: Object.fromEntries(this.evolutionData),
       healthStatus: Object.fromEntries(this.healthStatus),
-      timestamp: new Date().toISOString();
+      timestamp: new Date().toISOString()
     };
     
     const statePath = path.join(__dirname, 'factory-system-state.json');
@@ -1037,7 +1037,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Evolution;
     const logEntry = {
       timestamp: new Date().toISOString(),
       level,
-      message;
+      message
     };
     
     this.logs.push(logEntry);

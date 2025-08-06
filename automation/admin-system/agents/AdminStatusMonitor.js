@@ -1,10 +1,11 @@
+
 const fs = require('fs');
 const path = require('path');
 
-class AdminWebResearcher {
+class AdminStatusMonitor {
     constructor() {
-        this.agentId = 'AdminWebResearcher-' + Date.now();
-        this.type = 'AdminWebResearcher';
+        this.agentId = 'AdminStatusMonitor-' + Date.now();
+        this.type = 'AdminStatusMonitor';
         this.adminConfig = {
             adminPath: path.join(__dirname, '..'),
             logsPath: path.join(__dirname, '..', 'logs'),
@@ -16,7 +17,7 @@ class AdminWebResearcher {
     }
 
     async initialize() {
-        console.log('🔍 Initializing AdminWebResearcher agent...');
+        console.log('🤖 Initializing AdminStatusMonitor agent...');
         await this.start();
     }
 
@@ -45,22 +46,18 @@ class AdminWebResearcher {
     }
 
     scheduleTasks() {
-        // Research tasks every 10 minutes
+        // Agent-specific tasks every 5 minutes
         setInterval(() => {
-            this.performResearch();
-        }, 600000);
-    }
-
-    async performResearch() {
-        console.log('🔍 Performing web research...');
-        this.logActivity('Research task completed');
+            this.performTasks();
+        }, 300000);
     }
 
     async performTasks() {
         this.logActivity('Performing scheduled tasks');
-        await this.performResearch();
+        // Agent-specific task implementation
+        console.log('✅ AdminStatusMonitor task completed');
     }
 }
 
 // Start the agent
-new AdminWebResearcher(); 
+new AdminStatusMonitor();
