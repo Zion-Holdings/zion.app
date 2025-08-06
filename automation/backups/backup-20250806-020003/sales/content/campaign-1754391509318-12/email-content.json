@@ -1,0 +1,31 @@
+{
+  "subject": "Transform Your Business with AI prediction Solution",
+  "body": "Dear {customer_name},\n\nWe're excited to introduce AI prediction Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Comprehensive Solution\n• Advanced AI Technology\n• User-Friendly Interface\n• Scalable Architecture\n• Integration Capabilities\n• Analytics and Reporting\n• Complete prediction solution\n• Market-leading features\n• Competitive pricing\n• Expert implementation\n• Enterprise Security\n• SSO Integration\n• Advanced Analytics\n\nPricing: Basic: $299/month\nProfessional: $598/month\nEnterprise: $1196/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team",
+  "segments": [
+    {
+      "name": "Enterprise Decision Makers",
+      "criteria": "C-level executives, IT directors, enterprise customers",
+      "content": "Dear Enterprise Leader,\n\nAI prediction Solution is designed specifically for enterprise organizations like yours.\n\nKey Enterprise Benefits:\n• Advanced security and compliance\n• Scalable architecture\n• Enterprise integrations\n• Dedicated support team\n\nROI: 100.0%\nPayback Period: 6.0 months\n\nReady to discuss enterprise implementation?"
+    }
+  ],
+  "automation": {
+    "welcome": {
+      "trigger": "Sign up",
+      "delay": "Immediate",
+      "subject": "Welcome to AI prediction Solution",
+      "content": "Dear {customer_name},\n\nWe're excited to introduce AI prediction Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Comprehensive Solution\n• Advanced AI Technology\n• User-Friendly Interface\n• Scalable Architecture\n• Integration Capabilities\n• Analytics and Reporting\n• Complete prediction solution\n• Market-leading features\n• Competitive pricing\n• Expert implementation\n• Enterprise Security\n• SSO Integration\n• Advanced Analytics\n\nPricing: Basic: $299/month\nProfessional: $598/month\nEnterprise: $1196/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team"
+    },
+    "nurture": {
+      "trigger": "No purchase after 3 days",
+      "delay": "3 days",
+      "subject": "Don't miss out on AI prediction Solution",
+      "content": "Hi there,\n\nI noticed you were interested in AI prediction Solution but haven't taken the next step yet.\n\nHere's what you might be missing:\n• High ROI potential\n• Fast payback period\n• Powerful features\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI prediction Solution Team"
+    },
+    "followUp": {
+      "trigger": "Website visit",
+      "delay": "1 day",
+      "subject": "Learn more about AI prediction Solution",
+      "content": "Hi there,\n\nThanks for visiting our website and learning about AI prediction Solution!\n\nI wanted to share some additional resources that might help:\n• Case studies from similar businesses\n• ROI calculator\n• Free consultation\n\nWould you like to schedule a quick call to discuss how AI prediction Solution can benefit your business?\n\nBest regards,\nThe AI prediction Solution Team"
+    }
+  }
+}

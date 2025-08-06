@@ -1,0 +1,34 @@
+{
+  "id": "competitor-specialized-agent-1754339015927",
+  "name": "Competitor Analysis Agent",
+  "type": "specialized",
+  "focus": "competitive intelligence",
+  "sources": [
+    "competitor websites",
+    "social media",
+    "news articles"
+  ],
+  "output": "competitive analysis",
+  "marketData": {
+    "tools": [
+      {
+        "name": "AI Analytics Tool",
+        "category": "Analytics",
+        "source": "test"
+      },
+      {
+        "name": "ML Platform",
+        "category": "Platform",
+        "source": "test"
+      }
+    ]
+  },
+  "status": "Active",
+  "createdAt": "2025-08-04T20:23:35.927Z",
+  "configuration": {
+    "monitoringScope": "comprehensive",
+    "updateFrequency": "weekly",
+    "outputFormat": "competitive-analysis",
+    "alertThreshold": 0.7
+  }
+}

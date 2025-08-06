@@ -1,0 +1,32 @@
+{
+  "id": "trend-solution-1754400207466-0",
+  "name": "AI-Powered AI Solution",
+  "description": "Innovative solution leveraging the latest trend: Perplexity accused of scraping websites that explicitly blocked AI scraping",
+  "category": "Trend-Based",
+  "pricing": {
+    "basic": "$79/month",
+    "professional": "$199/month",
+    "enterprise": "$599/month",
+    "custom": "Contact sales"
+  },
+  "features": [
+    "Advanced AI Algorithms",
+    "Real-time Processing",
+    "Scalable Architecture",
+    "API Integration",
+    "Analytics Dashboard",
+    "Custom Workflows",
+    "Trend-based AI",
+    "Market Intelligence",
+    "Predictive Analytics",
+    "Automated Insights"
+  ],
+  "targetMarket": "Mixed",
+  "roi": {
+    "developmentCost": 500000,
+    "annualRevenue": 2000000,
+    "roi": "300.0%",
+    "paybackPeriod": "3.0 months"
+  },
+  "createdAt": "2025-08-05T13:23:27.466Z"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "content-agent-1754399286920-3",
+  "name": "Platform Content Agent",
+  "type": "content",
+  "focus": "Platform",
+  "capabilities": [
+    "content generation",
+    "SEO optimization",
+    "multimedia creation"
+  ],
+  "output": "marketing content",
+  "frequency": "weekly",
+  "priority": "Medium",
+  "reasoning": "Tool category: Platform",
+  "status": "Active",
+  "createdAt": "2025-08-05T13:08:06.920Z",
+  "configuration": {
+    "sources": [
+      "content databases",
+      "templates",
+      "media libraries"
+    ],
+    "parameters": {
+      "area": "Platform",
+      "priority": "Medium",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 0 * * 0",
+    "outputFormat": "Markdown"
+  }
+}

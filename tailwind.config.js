@@ -192,6 +192,8 @@ module.exports = {
           'dark-blue': '#16213e',
           'blue': '#0f3460',
         },
+        'high-contrast': '#ffffff',
+        'high-contrast-secondary': '#e5e7eb',
       },
       boxShadow: {
         'neon-blue': '0 0 20px rgba(0, 212, 255, 0.5)',

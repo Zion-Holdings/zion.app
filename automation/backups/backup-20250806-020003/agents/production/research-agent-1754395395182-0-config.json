@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754395395182-0",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Perplexity accused of scraping websites that explicitly blocked AI scraping",
+  "status": "Active",
+  "createdAt": "2025-08-05T12:03:15.182Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.8100755293706978,
+    "accuracy": 0.9428016215642621,
+    "reliability": 0.9415933907668099,
+    "scalability": 0.6355468172667615
+  },
+  "recommendations": []
+}
