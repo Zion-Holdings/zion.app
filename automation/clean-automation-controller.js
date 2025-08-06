@@ -8,16 +8,18 @@ class CleanAutomationController {
   constructor() {
     this.runningProcesses = new Map();
     this.workingSystems = [
-      'working-automation-system.js',
-      'ultimate-automation-launcher.js',
-      'ultimate-automation-fixer.js',
-      'ultimate-automation-factory.js'
+      'continuous-working-automation.js'
     ];
     this.blockedSystems = [
       'deep-analysis-agent.js',
       'project-development-autonomous-factory.js',
       'automation-monitor-and-maintainer.js',
-      'variation-content-agents-factory.js'
+      'variation-content-agents-factory.js',
+      'ultimate-automation-launcher.js',
+      'ultimate-automation-fixer.js',
+      'ultimate-automation-factory.js',
+      'working-automation-system.js',
+      'simple-working-automation.js'
     ];
     this.logDir = path.join(__dirname, 'clean-logs');
     this.pidDir = path.join(__dirname, 'clean-pids');
@@ -31,6 +33,9 @@ class CleanAutomationController {
     
     // Clean up any existing processes
     await this.cleanupExistingProcesses();
+    
+    // Load existing running processes from PID files
+    await this.loadRunningProcesses();
     
     console.log('✅ Clean Automation Controller initialized');
   }
@@ -64,6 +69,41 @@ class CleanAutomationController {
     }
     
     console.log('✅ Existing processes cleaned up');
+  }
+
+  async loadRunningProcesses() {
+    if (!fs.existsSync(this.pidDir)) return;
+    
+    const pidFiles = fs.readdirSync(this.pidDir).filter(file => file.endsWith('.pid'));
+    
+    for (const pidFile of pidFiles) {
+      const systemName = pidFile.replace('.pid', '.js');
+      const pidPath = path.join(this.pidDir, pidFile);
+      
+      try {
+        const pid = parseInt(fs.readFileSync(pidPath, 'utf8').trim());
+        
+        // Check if process is still running
+        try {
+          process.kill(pid, 0); // This will throw if process doesn't exist
+          
+          // Process is running, add to tracking
+          this.runningProcesses.set(systemName, {
+            pid: pid,
+            startTime: Date.now() - 60000, // Approximate start time
+            process: null // We don't have the child process reference
+          });
+          
+          console.log(`📈 Loaded running process: ${systemName} (PID: ${pid})`);
+        } catch (error) {
+          // Process is not running, remove PID file
+          fs.unlinkSync(pidPath);
+          console.log(`🧹 Cleaned up dead process: ${systemName}`);
+        }
+      } catch (error) {
+        console.log(`⚠️  Error reading PID file ${pidFile}: ${error.message}`);
+      }
+    }
   }
 
   async startWorkingSystem(systemName) {
@@ -287,3 +327,4 @@ if (require.main === module) {
 }
 
 module.exports = CleanAutomationController;
+
