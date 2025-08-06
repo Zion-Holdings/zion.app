@@ -1,12 +1,12 @@
 {
-  "lastUpdate": "2025-08-06T12:29:06.711Z",
+  "lastUpdate": "2025-08-06T12:34:06.699Z",
   "activeAgents": 7,
   "totalAgents": 7,
   "systemHealth": "healthy",
   "evolutionPhase": "continuous",
   "webResearchStatus": "active",
   "adminTools": [],
-  "timestamp": "2025-08-06T12:28:36.780Z",
-  "memoryUsage": 35.88829145021026,
-  "cpuUsage": 31.076827580508915
+  "timestamp": "2025-08-06T12:33:36.776Z",
+  "memoryUsage": 74.83454999189871,
+  "cpuUsage": 10.654103609019682
 }
