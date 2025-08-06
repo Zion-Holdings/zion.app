@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,81 +13,81 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require($2);'););
-const path = require($2);'););
-const { EventEmitter } = require(('events)');
-const GoogleDocsInstructionAgent = require($2);'););
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}const fs = require('path';
+const path = require('path';
+const { EventEmitter } = require(('events)')
+const GoogleDocsInstructionAgent = require('path';
 
 class InstructionExecutionOrchestrator extends EventEmitter {
   constructor(config = {}) {
-    super();
+    super()
     this.config = {
       googleDocsUrl: config.googleDocsUrl || 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
       maxConcurrentTasks: config.maxConcurrentTasks || 5,
       retryAttempts: config.retryAttempts || 3,
       taskTimeout: config.taskTimeout || 200, // 5 minutes
       ...config
-    };
+    }
     
-    this.agents = new Map();
-    this.taskQueue = [];
-    this.runningTasks = new Map();
-    this.completedTasks = [];
-    this.failedTasks = [];
+    this.agents = new Map()
+    this.taskQueue = []
+    this.runningTasks = new Map()
+    this.completedTasks = []
+    this.failedTasks = []
     this.isRunning = false;
   }
 
   async initialize() {
-    console.log('🎼 Initializing Instruction Execution Orchestrator...');
+    console.log('🎼 Initializing Instruction Execution Orchestrator...')
     
     try {
       // Create necessary directories
-      await this.ensureDirectories();
+      await this.ensureDirectories()
       
       // Initialize Google Docs instruction agent
       const googleDocsAgent = new GoogleDocsInstructionAgent({
         googleDocsUrl: this.config.googleDocsUrl,
         checkInterval: 3000, // Check every minute
-        maxRetries: this.config.retryAttempts);
-      });
+        maxRetries: this.config.retryAttempts)
+      })
       
       // Set up event listeners for the agent
-      this.setupAgentEventListeners(googleDocsAgent);
+      this.setupAgentEventListeners(googleDocsAgent)
       
       // Initialize the agent
-      await googleDocsAgent.initialize();
+      await googleDocsAgent.initialize()
       
       // Store the agent
-      this.agents.set('google-docs', googleDocsAgent);
+      this.agents.set('google-docs', googleDocsAgent)
       
       // Start the orchestrator
-      this.start();
+      this.start()
       
-      console.log('✅ Instruction Execution Orchestrator initialized successfully');
+      console.log('✅ Instruction Execution Orchestrator initialized successfully')
       return true;
       
     } catch (error) {
-      console.error('❌ Failed to initialize Instruction Execution Orchestrator: ', error);
+      console.error('❌ Failed to initialize Instruction Execution Orchestrator: ', error)
       throw error;
     }
   }
@@ -96,53 +96,53 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     const directories = ['automation/orchestrators/instruction-execution',
       'automation/data/orchestration',
       'automation/logs/orchestration',
-      'automation/reports/orchestration'];
-    ];
+      'automation/reports/orchestration']
+    ]
     
     for (const dir of directories) {
-      await fs.ensureDir(path.join(process.cwd(), dir));
+      await fs.ensureDir(path.join(process.cwd(), dir))
     }
   }
 
   setupAgentEventListeners(agent) {
     agent.on('taskStarted', (task) => {
-      console.log(`🎯 Task started: ${task.title}`);
-      this.emit('taskStarted', task);
-    });
+      console.log(`🎯 Task started: ${task.title}`)
+      this.emit('taskStarted', task)
+    })
 
     agent.on('taskCompleted', (task) => {
-      console.log(`✅ Task completed: ${task.title}`);
-      this.completedTasks.push(task);
-      this.emit('taskCompleted', task);
-      this.processNextTask();
-    });
+      console.log(`✅ Task completed: ${task.title}`)
+      this.completedTasks.push(task)
+      this.emit('taskCompleted', task)
+      this.processNextTask()
+    })
 
     agent.on('taskFailed', (task) => {
-      console.log(`❌ Task failed: ${task.title}`);
-      this.failedTasks.push(task);
-      this.emit('taskFailed', task);
-      this.processNextTask();
-    });
+      console.log(`❌ Task failed: ${task.title}`)
+      this.failedTasks.push(task)
+      this.emit('taskFailed', task)
+      this.processNextTask()
+    })
 
     agent.on('error', (error) => {
-      console.error('🚨 Agent error: ', error);
-      this.emit('error', error);
-    });
+      console.error('🚨 Agent error: ', error)
+      this.emit('error', error)
+    })
   }
 
   start() {
     if (this.isRunning) return;
     
     this.isRunning = true;
-    console.log('🚀 Starting Instruction Execution Orchestrator...');
+    console.log('🚀 Starting Instruction Execution Orchestrator...')
     
     // Start processing tasks
-    this.processNextTask();
+    this.processNextTask()
     
     // Set up periodic status checks
     this.statusInterval = setInterval(() => {
-      this.checkSystemHealth();
-    }, 200); // Every 30 seconds
+      this.checkSystemHealth()
+    }, 200) // Every 30 seconds
   }
 
   async processNextTask() {
@@ -154,11 +154,11 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       return; // No tasks in queue
     }
     
-    const task = this.taskQueue.shift();
+    const task = this.taskQueue.shift()
     const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
     try {
-      console.log(`🎯 Processing task: ${task.title}`);
+      console.log(`🎯 Processing task: ${task.title}`)
       
       // Add to running tasks
       this.runningTasks.set(taskId, {
@@ -166,61 +166,61 @@ class InstructionExecutionOrchestrator extends EventEmitter {
         id: taskId,)
         startTime: new Date().toISOString(),
         status: 'running'
-      });
+      })
       
       // Execute task based on type
-      await this.executeTask(taskId, task);
+      await this.executeTask(taskId, task)
       
     } catch (error) {
-      console.error(`❌ Failed to process task ${task.title}:`, error);
+      console.error(`❌ Failed to process task ${task.title}:`, error)
       
-      const runningTask = this.runningTasks.get(taskId);
+      const runningTask = this.runningTasks.get(taskId)
       if (runningTask) {
         runningTask.status = 'failed';
         runningTask.error = error.message;
-        runningTask.endTime = new Date().toISOString();
-        this.failedTasks.push(runningTask);
-        this.runningTasks.delete(taskId);
+        runningTask.endTime = new Date().toISOString()
+        this.failedTasks.push(runningTask)
+        this.runningTasks.delete(taskId)
       }
     }
   }
 
   async executeTask(taskId, task) {
-    const agent = this.agents.get('google-docs');
+    const agent = this.agents.get('google-docs')
     if (!agent) {
-      throw new Error('Google Docs agent not available');
+      throw new Error('Google Docs agent not available')
     }
     
     // Set up timeout
     const timeout = setTimeout(() => {;
-      console.warn(`⏰ Task ${taskId} timed out`);
-      const runningTask = this.runningTasks.get(taskId);
+      console.warn(`⏰ Task ${taskId} timed out`)
+      const runningTask = this.runningTasks.get(taskId)
       if (runningTask) {
         runningTask.status = 'timeout';
-        runningTask.endTime = new Date().toISOString();
-        this.failedTasks.push(runningTask);
-        this.runningTasks.delete(taskId);
+        runningTask.endTime = new Date().toISOString()
+        this.failedTasks.push(runningTask)
+        this.runningTasks.delete(taskId)
       }
-    }, this.config.taskTimeout);
+    }, this.config.taskTimeout)
     
     try {
       // Execute the task using the agent
-      await agent.executeInstruction(taskId, task);
+      await agent.executeInstruction(taskId, task)
       
       // Clear timeout
-      clearTimeout(timeout);
+      clearTimeout(timeout)
       
       // Update task status
-      const runningTask = this.runningTasks.get(taskId);
+      const runningTask = this.runningTasks.get(taskId)
       if (runningTask) {
         runningTask.status = 'completed';
-        runningTask.endTime = new Date().toISOString();
-        this.completedTasks.push(runningTask);
-        this.runningTasks.delete(taskId);
+        runningTask.endTime = new Date().toISOString()
+        this.completedTasks.push(runningTask)
+        this.runningTasks.delete(taskId)
       }
       
     } catch (error) {
-      clearTimeout(timeout);
+      clearTimeout(timeout)
       throw error;
     }
   }
@@ -235,48 +235,48 @@ class InstructionExecutionOrchestrator extends EventEmitter {
         completedTasks: this.completedTasks.length,
         failedTasks: this.failedTasks.length
       },
-      agents: {};
-    };
+      agents: {}
+    }
     
     // Check agent health
     for (const [name, agent] of this.agents) {
-      health.agents[name] = agent.getStatus();
+      health.agents[name] = agent.getStatus()
     }
     
     // Save health report
-    const healthFile = path.join(process.cwd(), 'automation/logs/orchestration/health.json');
-    await fs.writeJson(healthFile, health, { spaces: 2 });
+    const healthFile = path.join(process.cwd(), 'automation/logs/orchestration/health.json')
+    await fs.writeJson(healthFile, health, { spaces: 2 })
     
     // Emit health event
-    this.emit('healthCheck', health);
+    this.emit('healthCheck', health)
     
     return health;
   }
 
   async addTask(task) {
-    console.log(`📝 Adding task to queue: ${task.title}`);
-    this.taskQueue.push(task);
+    console.log(`📝 Adding task to queue: ${task.title}`)
+    this.taskQueue.push(task)
     
     // Try to process next task
-    this.processNextTask();
+    this.processNextTask()
   }
 
   async stop() {
-    console.log('🛑 Stopping Instruction Execution Orchestrator...');
+    console.log('🛑 Stopping Instruction Execution Orchestrator...')
     
     this.isRunning = false;
     
     // Stop all agents
     for (const [name, agent] of this.agents) {
-      await agent.stop();
+      await agent.stop()
     }
     
     // Clear intervals
     if (this.statusInterval) {
-      clearInterval(this.statusInterval);
+      clearInterval(this.statusInterval)
     }
     
-    console.log('✅ Instruction Execution Orchestrator stopped');
+    console.log('✅ Instruction Execution Orchestrator stopped')
   }
 
   getStatus() {
@@ -289,7 +289,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       agents: Object.fromEntries()
         Array.from(this.agents.entries()).map(([name, agent]) => [name, agent.getStatus()])
       )
-    };
+    }
   }
 
   async generateReport() {
@@ -306,55 +306,55 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       recentTasks: {
         completed: this.completedTasks.slice(-10),
         failed: this.failedTasks.slice(-10)
-      };
-    };
+      }
+    }
     
-    const reportFile = path.join(process.cwd(), 'automation/reports/orchestration/report.json');
-    await fs.writeJson(reportFile, report, { spaces: 2 });
+    const reportFile = path.join(process.cwd(), 'automation/reports/orchestration/report.json')
+    await fs.writeJson(reportFile, report, { spaces: 2 })
     
     return report;
   }
 
   calculateAverageTaskTime() {
-    const completedTasks = this.completedTasks.filter(task => task.startTime && task.endTime);
+    const completedTasks = this.completedTasks.filter(task => task.startTime && task.endTime)
     
     if (completedTasks.length === 0) return 0;
     
     const totalTime = completedTasks.reduce((sum, task) => {;
-      const start = new Date(task.startTime);
-      const end = new Date(task.endTime);
-      return sum + (end - start);
-    }, 0);
+      const start = new Date(task.startTime)
+      const end = new Date(task.endTime)
+      return sum + (end - start)
+    }, 0)
     
     return totalTime / completedTasks.length;
   }
 
   async createSpecializedAgent(taskType, config = {}) {
-    console.log(`🤖 Creating specialized agent for: ${taskType}`);
+    console.log(`🤖 Creating specialized agent for: ${taskType}`)
     
     // Create agent based on task type
     let agent;
     
     switch (taskType) {
       case 'content-generation':
-        agent = await this.createContentGenerationAgent(config);
+        agent = await this.createContentGenerationAgent(config)
         break;
       case 'development':
-        agent = await this.createDevelopmentAgent(config);
+        agent = await this.createDevelopmentAgent(config)
         break;
       case 'deployment':
-        agent = await this.createDeploymentAgent(config);
+        agent = await this.createDeploymentAgent(config)
         break;
       case 'marketing':
-        agent = await this.createMarketingAgent(config);
+        agent = await this.createMarketingAgent(config)
         break;
-      default: agent = await this.createGenericAgent(taskType, config);
+      default: agent = await this.createGenericAgent(taskType, config)
     }
     
     if (agent) {
-      this.agents.set(taskType, agent);
-      this.setupAgentEventListeners(agent);
-      await agent.initialize();
+      this.agents.set(taskType, agent)
+      this.setupAgentEventListeners(agent)
+      await agent.initialize()
     }
     
     return agent;
@@ -362,31 +362,31 @@ class InstructionExecutionOrchestrator extends EventEmitter {
 
   async createContentGenerationAgent(config) {
     // Implementation for content generation agent
-    console.log('📝 Creating content generation agent...');
+    console.log('📝 Creating content generation agent...')
     return null; // Placeholder
   }
 
   async createDevelopmentAgent(config) {
     // Implementation for development agent
-    console.log('🔧 Creating development agent...');
+    console.log('🔧 Creating development agent...')
     return null; // Placeholder
   }
 
   async createDeploymentAgent(config) {
     // Implementation for deployment agent
-    console.log('🚀 Creating deployment agent...');
+    console.log('🚀 Creating deployment agent...')
     return null; // Placeholder
   }
 
   async createMarketingAgent(config) {
     // Implementation for marketing agent
-    console.log('📢 Creating marketing agent...');
+    console.log('📢 Creating marketing agent...')
     return null; // Placeholder
   }
 
   async createGenericAgent(taskType, config) {
     // Implementation for generic agent
-    console.log(`🤖 Creating generic agent for: ${taskType}`);
+    console.log(`🤖 Creating generic agent for: ${taskType}`)
     return null; // Placeholder
   }
 }
@@ -396,9 +396,9 @@ module.exports = InstructionExecutionOrchestrator;
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down instruction-execution-orchestrator gracefully...');
+  console.log('🛑 Shutting down instruction-execution-orchestrator gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})

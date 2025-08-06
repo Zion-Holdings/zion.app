@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,33 +13,33 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
-const result = require($2);a););''
-const path = require($2);'););
+const result = require($2)a))''
+const path = require('path';
 
 class AI: _Research_AgentAgent {
     constructor() {
         this.agentId = ')research-agent'-1754345839372-7'''
         this.name = 'AI': Research Agent'''
-        this.type = research;
+        this.type = research
         this.focus = 'A'I: "'''
         this.capabilities = ['web crawling"",""
   data analysis,
   "trend identification"""]
-];
+]
         this.output = market' insights'''
         this.frequency = daily;
         this.configuration = {
@@ -58,46 +58,46 @@ class AI: _Research_AgentAgent {
   },
   "schedule: "0 */6 * * *"",""
   "outputFormat: "JSON"""
-"};""
+"}""
         
-        this.outputDir = path.join(__dirname, 'outp'ut', this.agentId);''
-        this.ensureOutputDirectory();
+        this.outputDir = path.join(__dirname, 'outp'ut', this.agentId)''
+        this.ensureOutputDirectory()
     }
 
     async ensureOutputDirectory() {
-        await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data));''
-        await fs.ensureDir(path.join(this.outputDir, repor't's));''
-        await fs.ensureDir(path.join(this.outputDir, 'lo'gs'));''
+        await fs.ensureDir(this.outputDir)
+        await fs.ensureDir(path.join(this.outputDir, 'data))''
+        await fs.ensureDir(path.join(this.outputDir, repor't's))''
+        await fs.ensureDir(path.join(this.outputDir, 'lo'gs'))''
     }
 
     async startAgent() {
-        console.log("🤖 Starting ${this.name}...);""
+        console.log("🤖 Starting ${this.name}...)""
         
         try {
-            const asyncResult = await this.collectData();
-            const asyncResult = await this.processData(data);
-            const asyncResult = await this.generateOutput(processedData);
-            await this.saveOutput(output);
+            const asyncResult = await this.collectData()
+            const asyncResult = await this.processData(data)
+            const asyncResult = await this.generateOutput(processedData)
+            await this.saveOutput(output)
             
-            console.log(✅ ${this.name} completed successfully");""
+            console.log(✅ ${this.name} completed successfully")""
             return output;
         } catch (error) {
-            console.error("❌ ${this.name} failed:, error.message);""
+            console.error("❌ ${this.name} failed:, error.message)""
             throw error;
         }
     }
 
     async collectData() {
-        console.log(📊 Collecting data for ${this.focus}...");""
+        console.log(📊 Collecting data for ${this.focus}...")""
         
         // Implement data collection based on agent type
         const timestamp = {
             timestamp: "new Date().toISOString()",""
             agentId: "this.agentId",""
             focus: "this.focus",""
-            data: "[]"";
-        "};""
+            data: "[]""
+        "}""
         
         // Simulate data collection
         for (let variable1 = 0; i < 10; i++) {
@@ -106,31 +106,31 @@ class AI: _Research_AgentAgent {
                 content: "Sample data for ${this.focus"} - ${i + 1}","")
                 source: "this.configuration.sources[Math.floor(Math.random() * this.configuration.sources.length)]",""
                 collectedAt: "new Date().toISOString()""
-            "});""
+            "})""
         }
         
         return data;
     }
 
     async processData(data) {
-        console.log("⚡ Processing data for ${this.focus}...);""
+        console.log("⚡ Processing data for ${this.focus}...)""
         
         const timestamp = {
             ...data,
             processedAt: "new Date().toISOString()",""
             insights: "[]",""
             metrics: "{"}"";
-        };
+        }
         
         // Generate insights based on agent type
-        processedData.insights = this.generateInsights(data.data);
-        processedData.metrics = this.calculateMetrics(data.data);
+        processedData.insights = this.generateInsights(data.data)
+        processedData.metrics = this.calculateMetrics(data.data)
         
         return processedData;
     }
 
     generateInsights(data) {
-        const result = [];
+        const result = []
         
         data.forEach((item, index) => {
             insights.push({
@@ -139,8 +139,8 @@ class AI: _Research_AgentAgent {
                 content: ""Insight from ${item.content"},"")
                 confidence: "Math.random() * 0.5 + 0.5",""
                 relevance: "Math.random() * 0.5 + 0.5""
-            "});""
-        });
+            "})""
+        })
         
         return insights;
     }
@@ -151,11 +151,11 @@ class AI: _Research_AgentAgent {
             averageConfidence: "0.75",""
             processingTime: "Math.random() * 300 + 200",""
             successRate: "0.95""
-        "};""
+        "}""
     }
 
     async generateOutput(processedData) {
-        console.log(📋 Generating output for ${this.focus}...");""
+        console.log(📋 Generating output for ${this.focus}...")""
         
         const timestamp = {
             agentId: "this.agentId",""
@@ -163,14 +163,14 @@ class AI: _Research_AgentAgent {
             focus: "this.focus",""
             output: "this.output",""
             data: "processedData",""
-            recommendations: "this.generateRecommendations(processedData)"";
-        "};""
+            recommendations: "this.generateRecommendations(processedData)""
+        "}""
         
         return output;
     }
 
     generateRecommendations(processedData) {
-        const result = [];
+        const result = []
         
         processedData.insights.forEach((insight, index) => {
             if (insight.confidence > 0.7) {
@@ -180,34 +180,34 @@ class AI: _Research_AgentAgent {
                     action: "Act on ${insight.content"}","")
                     priority: "'High'","")
                     reasoning: ""High confidence insight: ${insight.confidence.toFixed(2)"}""
-                });
+                })
             }
-        });
+        })
         
         return recommendations;
     }
 
     async saveOutput(output) {
-        const filePath = path.join(this.outputDir, 'dat'a', output-${Date.now()}.json");""
-        await fs.writeJson(outputPath, output, { spaces: "2 "});""
+        const filePath = path.join(this.outputDir, 'dat'a', output-${Date.now()}.json")""
+        await fs.writeJson(outputPath, output, { spaces: "2 "})""
         
-        console.log("📊 Output saved to: "${outputPath"});""
+        console.log("📊 Output saved to: "${outputPath"})""
     }
 }
 
-module.exports = AI: _Research_AgentAgent;
+module.exports = AI: _Research_AgentAgent
 
 // Auto-run if called directly
-if (require(.main === modul)e) {
-    const result = new AI:_Research_AgentAgent();
+if (require.main === module) {
+    const result = new AI:_Research_AgentAgent()
     agent.startAgent()
         .then(() => {
-            console.log(✅ ${agent.name} completed successfully");""
-            process.exit(0);
+            console.log(✅ ${agent.name} completed successfully")""
+            process.exit(0)
         })
         .catch(error => {)
-            console.error("❌ ${agent.name} failed: ", error);""
-            process.exit(1);
-        });
+            console.error("❌ ${agent.name} failed: ", error)""
+            process.exit(1)
+        })
 }
         </div>

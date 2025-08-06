@@ -1,5 +1,5 @@
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class ProjectStatusDashboard {
     constructor() {
@@ -8,18 +8,18 @@ class ProjectStatusDashboard {
             adminPath: path.join(__dirname, '..'),
             logsPath: path.join(__dirname, '..', 'logs'),
             reportsPath: path.join(__dirname, '..', 'reports')
-        };
+        }
     }
 
     async execute() {
-        console.log('🛠️ Executing ProjectStatusDashboard...');
+        console.log('🛠️ Executing ProjectStatusDashboard...')
         
         try {
-            const result = await this.performTask();
-            this.saveResult(result);
+            const result = await this.performTask()
+            this.saveResult(result)
             return result;
         } catch (error) {
-            console.error('Error in ProjectStatusDashboard: ', error);
+            console.error('Error in ProjectStatusDashboard: ', error)
             throw error;
         }
     }
@@ -48,15 +48,15 @@ class ProjectStatusDashboard {
                     'System backup',
                     'Performance analysis']
                 ]
-            };
-        };
+            }
+        }
         
         return projectStatus;
     }
 
     saveResult(result) {
-        const resultPath = path.join(this.adminConfig.reportsPath, `${this.toolName}-result.json`);
-        fs.writeFileSync(resultPath, JSON.stringify(result, null, 2));
+        const resultPath = path.join(this.adminConfig.reportsPath, `${this.toolName}-result.json`)
+        fs.writeFileSync(resultPath, JSON.stringify(result, null, 2))
     }
 }
 

@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,68 +13,68 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
 
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class opportunityanalyzeragent {
   constructor() {
     this.agentName = 'opportunity-analyzer-agent';
     this.analyzer = 'opportunity-analyzer';
-    this.startTime = new Date().toISOString();
+    this.startTime = new Date().toISOString()
     this.analysisAccuracy = 0.5;
     this.insightsGenerated = 0;
     
-    this.initialize();
+    this.initialize()
   }
 
   async initialize() {
-    console.log(`📊 Initializing ${this.agentName}...`);
+    console.log(`📊 Initializing ${this.agentName}...`)
     
-    await this.initializeAnalysisCapabilities();
-    this.startContinuousAnalysis();
+    await this.initializeAnalysisCapabilities()
+    this.startContinuousAnalysis()
     
-    console.log(`✅ ${this.agentName} initialized successfully`);
+    console.log(`✅ ${this.agentName} initialized successfully`)
   }
 
   async initializeAnalysisCapabilities() {
-    console.log(`🔧 Initializing ${this.analyzer} capabilities...`);
+    console.log(`🔧 Initializing ${this.analyzer} capabilities...`)
     // Analysis capabilities initialization
   }
 
   startContinuousAnalysis() {
     setInterval(async () => {
-      await this.performAnalysis();
-      this.analysisAccuracy = Math.min(1.0, this.analysisAccuracy + 0.001);
+      await this.performAnalysis()
+      this.analysisAccuracy = Math.min(1.0, this.analysisAccuracy + 0.001)
       this.insightsGenerated++;
-    }, 30000); // Analyze every 2 minutes
+    }, 30000) // Analyze every 2 minutes
   }
 
   async performAnalysis() {
-    console.log(`📊 ${this.agentName} performing analysis...`);
+    console.log(`📊 ${this.agentName} performing analysis...`)
     // Analysis implementation
   }
 }
 
-new opportunityanalyzeragent();
+new opportunityanalyzeragent()

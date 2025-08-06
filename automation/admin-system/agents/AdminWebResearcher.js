@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,83 +54,83 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class AdminWebResearcher {
     constructor() {
-        this.agentId = 'AdminWebResearcher-' + Date.now();
+        this.agentId = 'AdminWebResearcher-' + Date.now()
         this.type = 'AdminWebResearcher';
         this.adminConfig = {
             adminPath: path.join(__dirname, '..'),
@@ -138,18 +138,18 @@ class AdminWebResearcher {
             reportsPath: path.join(__dirname, '..', 'reports'),
             statusPath: path.join(__dirname, '..', 'status'),
             agentsPath: path.join(__dirname, '..', 'agents')
-        };
-        this.initialize();
+        }
+        this.initialize()
     }
 
     async initialize() {
-        console.log('🔍 Initializing AdminWebResearcher agent...');
-        await this.start();
+        console.log('🔍 Initializing AdminWebResearcher agent...')
+        await this.start()
     }
 
     async start() {
-        this.logActivity('Agent started');
-        this.scheduleTasks();
+        this.logActivity('Agent started')
+        this.scheduleTasks()
     }
 
     logActivity(message) {
@@ -157,37 +157,37 @@ class AdminWebResearcher {
             timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
-            message: message;
-        };
-        
-        const logPath = path.join(this.adminConfig.logsPath, `${this.type}-logs.json`);
-        let logs = [];
-        
-        if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'));
+            message: message
         }
         
-        logs.push(logEntry);
-        fs.writeFileSync(logPath, JSON.stringify(logs, null, 2));
+        const logPath = path.join(this.adminConfig.logsPath, `${this.type}-logs.json`)
+        let logs = []
+        
+        if (fs.existsSync(logPath)) {
+            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'))
+        }
+        
+        logs.push(logEntry)
+        fs.writeFileSync(logPath, JSON.stringify(logs, null, 2))
     }
 
     scheduleTasks() {
         // Research tasks every 10 minutes
         setInterval(() => {
-            this.performResearch();
-        }, 3000);
+            this.performResearch()
+        }, 3000)
     }
 
     async performResearch() {
-        console.log('🔍 Performing web research...');
-        this.logActivity('Research task completed');
+        console.log('🔍 Performing web research...')
+        this.logActivity('Research task completed')
     }
 
     async performTasks() {
-        this.logActivity('Performing scheduled tasks');
-        await this.performResearch();
+        this.logActivity('Performing scheduled tasks')
+        await this.performResearch()
     }
 }
 
 // Start the agent
-new AdminWebResearcher(); 
+new AdminWebResearcher() 

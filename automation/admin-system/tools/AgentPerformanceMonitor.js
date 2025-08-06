@@ -1,5 +1,5 @@
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class AgentPerformanceMonitor {
     constructor() {
@@ -8,18 +8,18 @@ class AgentPerformanceMonitor {
             adminPath: path.join(__dirname, '..'),
             logsPath: path.join(__dirname, '..', 'logs'),
             reportsPath: path.join(__dirname, '..', 'reports')
-        };
+        }
     }
 
     async execute() {
-        console.log('🛠️ Executing AgentPerformanceMonitor...');
+        console.log('🛠️ Executing AgentPerformanceMonitor...')
         
         try {
-            const result = await this.performTask();
-            this.saveResult(result);
+            const result = await this.performTask()
+            this.saveResult(result)
             return result;
         } catch (error) {
-            console.error('Error in AgentPerformanceMonitor: ', error);
+            console.error('Error in AgentPerformanceMonitor: ', error)
             throw error;
         }
     }
@@ -61,15 +61,15 @@ class AgentPerformanceMonitor {
                     'Increase monitoring frequency for high-performance agents',
                     'Implement predictive maintenance for agents']
                 ]
-            };
-        };
+            }
+        }
         
         return performanceData;
     }
 
     saveResult(result) {
-        const resultPath = path.join(this.adminConfig.reportsPath, `${this.toolName}-result.json`);
-        fs.writeFileSync(resultPath, JSON.stringify(result, null, 2));
+        const resultPath = path.join(this.adminConfig.reportsPath, `${this.toolName}-result.json`)
+        fs.writeFileSync(resultPath, JSON.stringify(result, null, 2))
     }
 }
 
