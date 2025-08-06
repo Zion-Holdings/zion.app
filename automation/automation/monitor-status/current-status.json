@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "timestamp": "2025-08-06T16:10:06.722Z",
+=======
+  "timestamp": "2025-08-06T16:38:41.693Z",
+>>>>>>> 71c0d9c95 (Auto-commit: Sync all changes with main branch - Wed Aug  6 13:51:01 -03 2025)
   "systems": [
     [
       "rule-generator",
@@ -27,6 +31,7 @@
         "name": "rule-generator-backup-1754496519858",
         "status": "stopped"
       }
+<<<<<<< HEAD
     ]
   ],
   "healthMetrics": {
@@ -96,6 +101,2677 @@
       "timestamp": "2025-08-06T16:10:06.721Z",
       "message": "❌ Failed to fix rule-generator",
       "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at listOnTimeout (node:internal/timers:549:9)\n    at process.processTimers (node:internal/timers:523:7)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+=======
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593.js",
+        "name": "rule-generator-backup-1754496603593",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671.js",
+        "name": "rule-generator-backup-1754496606671",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235.js",
+        "name": "rule-generator-backup-1754496727235",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590.js",
+        "name": "rule-generator-backup-1754496734590",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496847460",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496847460.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496847460",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496868784",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496868784.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496868784",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496854184",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496854184.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496854184",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496877316",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496877316.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496877316",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496856485",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496856485.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496856485",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496880868",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496880868.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496880868",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496858887",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496858887.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496858887",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496884085",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496884085.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496884085",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496859682",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496859682.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496859682",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496885093",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496885093.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496885093",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496860501",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496860501.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496860501",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496886060",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496886060.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496886060",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496861289",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496861289.js",
+        "name": "rule-generator-backup-1754496861289",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496887022",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496887022.js",
+        "name": "rule-generator-backup-1754496887022",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754496961469",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754496961469.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754496961469",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754497038205",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754497038205.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496841529-backup-1754497038205",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754496962153",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754496962153.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754496962153",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754497039282",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754497039282.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496862103-backup-1754497039282",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496962863",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496962863.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754496962863",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754497040380",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754497040380.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496721260-backup-1754497040380",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754496963776",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754496963776.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754496963776",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754497041704",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754497041704.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496842223-backup-1754497041704",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754496964496",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754496964496.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754496964496",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754497043224",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754497043224.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496862916-backup-1754497043224",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496965197",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496965197.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754496965197",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754497044332",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754497044332.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496728142-backup-1754497044332",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754496965900",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754496965900.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754496965900",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754497045462",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754497045462.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496842932-backup-1754497045462",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754496966621",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754496966621.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754496966621",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754497046575",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754497046575.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496863743-backup-1754497046575",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496967341",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496967341.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754496967341",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754497047690",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496601763-backup-1754497047690.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496601763-backup-1754497047690",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754496968066",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754496968066.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754496968066",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754497048800",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754497048800.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496843831-backup-1754497048800",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754496968803",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754496968803.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754496968803",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754497049926",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754497049926.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496864575-backup-1754497049926",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496969961",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496969961.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754496969961",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754497051077",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754497051077.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496721956-backup-1754497051077",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754496970925",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754496970925.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754496970925",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754497052202",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754497052202.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496844569-backup-1754497052202",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754496971684",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754496971684.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754496971684",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754497053335",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754497053335.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496865414-backup-1754497053335",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496972434",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496972434.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754496972434",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754497054466",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754497054466.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496729221-backup-1754497054466",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754496973176",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754496973176.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754496973176",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754497055625",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754497055625.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496845290-backup-1754497055625",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754496973923",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754496973923.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754496973923",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754497056764",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754497056764.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496866260-backup-1754497056764",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496974727",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496974727.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754496974727",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754497058140",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496604442-backup-1754497058140.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496604442-backup-1754497058140",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754496975729",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754496975729.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754496975729",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754497059324",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754497059324.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496846019-backup-1754497059324",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754496976527",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754496976527.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754496976527",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754497060496",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754497060496.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496867102-backup-1754497060496",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496977310",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496977310.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754496977310",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754497061661",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496722659-backup-1754497061661.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496722659-backup-1754497061661",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754496978084",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754496978084.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754496978084",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754497062848",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754497062848.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496846739-backup-1754497062848",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754496978863",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754496978863.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754496978863",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754497064027",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754497064027.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496867946-backup-1754497064027",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496979652",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496979652.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754496979652",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754497065213",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496729985-backup-1754497065213.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496729985-backup-1754497065213",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496847460-backup-1754496980478",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496847460-backup-1754496980478.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496847460-backup-1754496980478",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496847460-backup-1754497066396",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496847460-backup-1754497066396.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496847460-backup-1754497066396",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496868784-backup-1754496981459",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496868784-backup-1754496981459.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496868784-backup-1754496981459",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496868784-backup-1754497067601",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496868784-backup-1754497067601.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496868784-backup-1754497067601",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754496982332",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754496982332.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754496982332",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496518849-backup-1754497069026",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496518849-backup-1754497069026.js",
+        "name": "rule-generator-backup-1754496518849-backup-1754497069026",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754496983141",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754496983141.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754496983141",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754497070249",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754497070249.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496848185-backup-1754497070249",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754496983957",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754496983957.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754496983957",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754497071455",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754497071455.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496869642-backup-1754497071455",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496984788",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496984788.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754496984788",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754497072667",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754497072667.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496723577-backup-1754497072667",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754496985630",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754496985630.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754496985630",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754497073916",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754497073916.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496848921-backup-1754497073916",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754496986460",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754496986460.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754496986460",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754497075153",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754497075153.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496870497-backup-1754497075153",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496987518",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496987518.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754496987518",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754497076545",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754497076545.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496730719-backup-1754497076545",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754496988368",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754496988368.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754496988368",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754497078424",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754497078424.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496849678-backup-1754497078424",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754496989205",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754496989205.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754496989205",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754497079751",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754497079751.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496871353-backup-1754497079751",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496990058",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496990058.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754496990058",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754497081173",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496602709-backup-1754497081173.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496602709-backup-1754497081173",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754496991014",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754496991014.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754496991014",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754497082813",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754497082813.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496850410-backup-1754497082813",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754496991870",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754496991870.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754496991870",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754497084125",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754497084125.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496872221-backup-1754497084125",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496992760",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496992760.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754496992760",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754497085436",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754497085436.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496724325-backup-1754497085436",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754496993798",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754496993798.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754496993798",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754497087383",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754497087383.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496851134-backup-1754497087383",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754496994697",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754496994697.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754496994697",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754497088981",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754497088981.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496873546-backup-1754497088981",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496995628",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496995628.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754496995628",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754497090313",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754497090313.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496731477-backup-1754497090313",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754496996503",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754496996503.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754496996503",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754497091622",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754497091622.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496851879-backup-1754497091622",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754496997389",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754496997389.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754496997389",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754497092902",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754497092902.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496874453-backup-1754497092902",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496998275",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496998275.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754496998275",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754497094510",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496605587-backup-1754497094510.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496605587-backup-1754497094510",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754496999223",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754496999223.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754496999223",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754497095910",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754497095910.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496852650-backup-1754497095910",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497000318",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497000318.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497000318",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497097257",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497097257.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754496875348-backup-1754497097257",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497001219",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497001219.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497001219",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497098584",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497098584.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496725047-backup-1754497098584",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497002141",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497002141.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497002141",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497099906",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497099906.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497099906",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497003083",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497003083.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497003083",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497101496",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497101496.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497101496",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497003998",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497003998.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497003998",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497102831",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497102831.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497102831",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497004934",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497004934.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497004934",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497104158",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497104158.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497104158",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497005920",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497005920.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497005920",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497105528",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497105528.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497105528",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754497007112",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754497007112.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754497007112",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496519858-backup-1754497107113",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496519858-backup-1754497107113.js",
+        "name": "rule-generator-backup-1754496519858-backup-1754497107113",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497008626",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497008626.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497008626",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497108471",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497108471.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497108471",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497009722",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497009722.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497009722",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497109830",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497109830.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497109830",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497010801",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497010801.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497010801",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497111207",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497111207.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497111207",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497011875",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497011875.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497011875",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497112878",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497112878.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497112878",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497013019",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497013019.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497013019",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497114239",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497114239.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497114239",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497014637",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497014637.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497014637",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497115603",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497115603.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497115603",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497015704",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497015704.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497015704",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497116986",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497116986.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497116986",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497017025",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497017025.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497017025",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497118885",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497118885.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497118885",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754497018032",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754497018032.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754497018032",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496603593-backup-1754497120463",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496603593-backup-1754497120463.js",
+        "name": "rule-generator-backup-1754496603593-backup-1754497120463",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497019033",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497019033.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497019033",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497121846",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497121846.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497121846",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497020044",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497020044.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497020044",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497123281",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497123281.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497123281",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497021082",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497021082.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497021082",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497125023",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497125023.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497125023",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497022123",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497022123.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497022123",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497126458",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497126458.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497126458",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497023161",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497023161.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497023161",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497127870",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497127870.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497127870",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497024232",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497024232.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497024232",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497129306",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497129306.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497129306",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497025276",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497025276.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497025276",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497130950",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497130950.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497130950",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497026293",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497026293.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497026293",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497132387",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497132387.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497132387",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754497027337",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754497027337.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754497027337",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496606671-backup-1754497133833",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496606671-backup-1754497133833.js",
+        "name": "rule-generator-backup-1754496606671-backup-1754497133833",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497028372",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497028372.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497028372",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497135293",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497135293.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497135293",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497029442",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497029442.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497029442",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497136975",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497136975.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497136975",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754497030749",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754497030749.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754497030749",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496727235-backup-1754497138399",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496727235-backup-1754497138399.js",
+        "name": "rule-generator-backup-1754496727235-backup-1754497138399",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497031792",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497031792.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497031792",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497139843",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497139843.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497139843",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497032839",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497032839.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497032839",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497141319",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497141319.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497141319",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754497033901",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754497033901.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754497033901",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496734590-backup-1754497143209",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496734590-backup-1754497143209.js",
+        "name": "rule-generator-backup-1754496734590-backup-1754497143209",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496861289-backup-1754497034964",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496861289-backup-1754497034964.js",
+        "name": "rule-generator-backup-1754496861289-backup-1754497034964",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496861289-backup-1754497145068",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496861289-backup-1754497145068.js",
+        "name": "rule-generator-backup-1754496861289-backup-1754497145068",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496887022-backup-1754497036034",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496887022-backup-1754497036034.js",
+        "name": "rule-generator-backup-1754496887022-backup-1754497036034",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754496887022-backup-1754497146712",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754496887022-backup-1754497146712.js",
+        "name": "rule-generator-backup-1754496887022-backup-1754497146712",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754497037112",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754497037112.js",
+        "name": "rule-generator-backup-1754497037112",
+        "status": "stopped"
+      }
+    ],
+    [
+      "rule-generator-backup-1754497149049",
+      {
+        "type": "factory",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation/backups/2025-08-06/rule-generator-backup-1754497149049.js",
+        "name": "rule-generator-backup-1754497149049",
+        "status": "stopped"
+      }
+    ]
+  ],
+  "healthMetrics": {
+    "totalSystems": 243,
+    "healthySystems": 0,
+    "problematicSystems": 243,
+    "fixedSystems": 0,
+    "lastCheck": "2025-08-06T16:38:41.693Z"
+  },
+  "errorLogs": [
+    {
+      "timestamp": "2025-08-06T16:33:39.540Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496725047",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:42.209Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497002141",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:44.795Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418-backup-1754497099906",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:48.047Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496853418",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:50.619Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497003083",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:53.530Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269-backup-1754497101496",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:56.185Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754496876269",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:33:59.125Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497003998",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:01.761Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250-backup-1754497102831",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:04.836Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496732250",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:07.471Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497004934",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:10.514Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496854184-backup-1754497104158",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:13.232Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496854184",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:15.992Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497005920",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:19.589Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496877316-backup-1754497105528",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:22.309Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754496877316",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:25.275Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754497007112",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:27.925Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858-backup-1754497107113",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:30.835Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496519858",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:34.266Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497008626",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:37.305Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948-backup-1754497108471",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:40.531Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496854948",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:43.934Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497009722",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:47.145Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355-backup-1754497109830",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:49.870Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754496878355",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:52.605Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497010801",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:55.622Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769-backup-1754497111207",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:34:58.561Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496725769",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:02.218Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497011875",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:05.058Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712-backup-1754497112878",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:07.895Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496855712",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:10.771Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497013019",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:14.395Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836-backup-1754497114239",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:17.311Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754496879836",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:20.362Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497014637",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:23.120Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032-backup-1754497115603",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:26.153Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496733032",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:28.938Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497015704",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:32.408Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496856485-backup-1754497116986",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:35.207Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496856485",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:38.322Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497017025",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:41.901Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496880868-backup-1754497118885",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:45.369Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754496880868",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:48.967Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754497018032",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:52.212Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593-backup-1754497120463",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:55.186Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496603593",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:35:58.219Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497019033",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:01.066Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305-backup-1754497121846",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:04.101Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496857305",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:07.157Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497020044",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:10.497Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838-backup-1754497123281",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:13.369Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754496881838",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:16.484Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497021082",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:19.302Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489-backup-1754497125023",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:22.375Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496726489",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:25.239Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497022123",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:28.328Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093-backup-1754497126458",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:31.248Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496858093",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:34.322Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497023161",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:37.193Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125-backup-1754497127870",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:40.310Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754496883125",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:43.216Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497024232",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:46.913Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797-backup-1754497129306",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:50.676Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496733797",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:54.449Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497025276",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:36:57.409Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496858887-backup-1754497130950",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:00.433Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496858887",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:03.387Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497026293",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:06.468Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496884085-backup-1754497132387",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:09.318Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754496884085",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:12.763Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754497027337",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:15.600Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671-backup-1754497133833",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:18.429Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496606671",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:21.520Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497028372",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:24.371Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496859682-backup-1754497135293",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:27.444Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496859682",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:30.315Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497029442",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:33.187Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496885093-backup-1754497136975",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:36.294Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754496885093",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:39.170Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754497030749",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:42.235Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235-backup-1754497138399",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:45.129Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496727235",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:48.264Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497031792",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:51.184Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496860501-backup-1754497139843",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:54.801Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496860501",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:37:57.965Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497032839",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:00.951Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496886060-backup-1754497141319",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:05.041Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754496886060",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:08.001Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754497033901",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:10.930Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590-backup-1754497143209",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:13.882Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496734590",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:17.061Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496861289-backup-1754497034964",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:20.016Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496861289-backup-1754497145068",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:23.140Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496861289",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:26.122Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496887022-backup-1754497036034",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:29.248Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496887022-backup-1754497146712",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:32.451Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754496887022",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:35.454Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754497037112",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:38.678Z",
+      "message": "❌ Failed to fix rule-generator-backup-1754497149049",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+    },
+    {
+      "timestamp": "2025-08-06T16:38:41.692Z",
+      "message": "❌ Failed to fix rule-generator",
+      "stack": "Error\n    at AutomationMonitorAndMaintainer.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:119:16)\n    at AutomationMonitorAndMaintainer.handleProblematicSystem (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:431:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async AutomationMonitorAndMaintainer.continuousMonitoring (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor-and-maintainer.js:398:11)"
+>>>>>>> 71c0d9c95 (Auto-commit: Sync all changes with main branch - Wed Aug  6 13:51:01 -03 2025)
     }
   ]
 }
