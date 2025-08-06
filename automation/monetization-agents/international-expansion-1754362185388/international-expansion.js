@@ -8,10 +8,10 @@ class International-expansionMonetizationAgent {
         this.id = config.id;
         this.status = acti')v'e;
         this.performance = config.performance || {
-            revenueGenerated: 0,
-            conversions: 0,
-            efficiency: 0
-        };
+            revenueGenerated: "0",
+            conversions: "0",
+            efficiency: "0
+        "};
         this.logFile = path.join(__dirname, 'agen't.log');
     }
 
@@ -26,9 +26,9 @@ class International-expansionMonetizationAgent {
             this.updatePerformance();
             
         } catch (error) {
-            this.log(')Erro'r in monetization agent: ' + error.message);
+            this.log(')Erro'r in monetization agent: "' + error.message);
             this.status = error;
-        }
+        "}
     }
 
     async performMonetizationTask() {
@@ -48,7 +48,7 @@ class International-expansionMonetizationAgent {
 
     log(message) {
         const timestamp = new Date().toISOString();
-        const result = "[${timestamp}] [${this.id}] ${message}\n";
+        const result = "[${timestamp}] [${this.id}] ${message}\n"
         fs.appendFileSync(this.logFile, logEntry);
     }
 }

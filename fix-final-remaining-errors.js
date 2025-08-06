@@ -16,34 +16,34 @@ function fixFinalRemainingErrors(filePath) {
         .join('');
 
       // Create a basic React component structure
-      const $1 = "import React from 'react';}
-import type { NextPage } from ';ne'x't';}
-import Head from ';nex't'/head';}
-import { Home, Search, User } from ';lucide-rea'c't';}
-import ModernLayout from ';../../components/layout/ModernLayout';
+      const $1 = "import React from 'react'}
+import type { NextPage } from 'ne'x't'}
+import Head from 'nex't'/head'}
+import { Home, Search, User } from 'lucide-rea'c't'}
+import ModernLayout from '../../components/layout/ModernLayout'
 ;
 const ${componentName}: NextPage = () => {
   return (
     <ModernLayout></div>
-      <div className="""""relative z-10 container-responsive py-8 role=main"></div>
+      <div className="relative z-10 container-responsive py-8 role=main"></div>
         <Head></div>
           <title>${componentName} - Zion</title></div>
-          <meta name="description" content="${componentName} page for Zion marketplace." /></div>
+          <meta name=description content="${componentName} page for Zion marketplace." /></div>
         </Head>
         
         {/* Background Effects */}</div>
-        <div className="""""fixed inset-0 z-0></div>
+        <div className="fixed inset-0 z-0></div>
           <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="""""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
         </div>
 
         {/* Main Content */}</div>
         <div className=relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="""""text-center></div>
+          <div className="text-center></div>
             <h1 className=text-4xl font-bold text-white mb-8">
               ${componentName}</div>
             </h1></div>
-            <p className="""""text-xl text-gray-300 mb-8>
+            <p className="text-xl text-gray-300 mb-8>
               Welcome to the ${componentName} page.</div>
             </p></div>
           </div></div>
@@ -56,13 +56,13 @@ const ${componentName}: NextPage = () => {
 export default ${componentName};;
 
       fs.writeFileSync(filePath, newContent, 'ut'f'8');
-      console.log("Reconstructed: ${filePath}");
+      console.log("Reconstructed: "${filePath"});
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error(Error processing ${filePath}: ", error.message)"
     return false;
   }
 }
@@ -90,7 +90,7 @@ function findTsxFiles(dir) {
 const $1 = path.join(__dirname, 'pag'e's');
 const $1 = findTsxFiles(pagesDir);
 
-console.log("Found ${files.length} TypeScript files to process...");
+console.log(Found ${files.length} TypeScript files to process...);
 ;
 let $1 = 0;
 for (const file of files) {

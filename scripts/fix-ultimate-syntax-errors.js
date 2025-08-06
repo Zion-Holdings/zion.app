@@ -5,53 +5,53 @@ function fixSyntaxErrors(content) {
   let fixed = content;
   
   // Fix all unterminated string literals in imports
-  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";";');
-  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";;/g, (match) => match.replace(/;$/, '";'));
-  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";;/g, (match) => match.replace(/;$/, '";'));
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react');
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";/g, (match) => match.replace(/;$/, ''));
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from react";/g, (match) => match.replace(/;$/, '"'));
   
   // Fix all unterminated string literals in JSX className
-  fixed = fixed.replace(/className="""""([^]*)$/gm, (match, className) => {
+  fixed = fixed.replace(/className="([^]*)$/gm, (match, className) => {
     if (!match.endsWith('')) {
-      return `className="""""${className}"`
+      return `className="${className}"
     }
     return match;
   });
   
   // Fix all unterminated string literals in JSX
-  fixed = fixed.replace(/className="""""([^>]*?)(?=\s|>)/g, (match, className) => {
+  fixed = fixed.replace(/className="([^>]*?)(?=\s|>)/g, (match, className) => {
     if (!className.includes('') && !className.includes("'")) {
-      return `className="""""${className.trim()}`
+      return `className="${className.trim()}`
     }
     return match;
   });
   
   // Fix specific patterns
-  fixed = fixed.replace(/className=fixed" inset-0 pointer-events-none z-0"/g, 'className="""""fixed inset-0 pointer-events-none z-0');
-  fixed = fixed.replace(/className=([^"]*)"([^"]*)"([^"]*)"/g, 'className="""""$1$2$3');
+  fixed = fixed.replace(/className=fixed" inset-0 pointer-events-none z-0/g, 'className=""fixed inset-0 pointer-events-none z-0');
+  fixed = fixed.replace(/className=([^]*)([^"]*)"([^]*)/g, 'className=""$1$2$3');
   
   // Fix style objects
-  fixed = fixed.replace(/style="""""{{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');
-  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) ="""""> {
-    if (bg.includes('") && !bg.endsWith("'")) {
-      return `style="""""{{ background: ""transparent' }}`
+  fixed = fixed.replace(/style=""{{ background: """transparent' "}}/g, 'style={{ background: "\'transparent\' "}}');
+  fixed = fixed.replace(/style={{ background: "([^"}]+) }}/g, (match, bg) =""> {
+    if (bg.includes(') && !bg.endsWith("'")) {
+      return style=""{{ background: ""transparent' "}}`
     }
     return match;
   });
   
   // Fix array syntax
-  fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, "['#00d4ff', '#8b5cf6', '#ec4899', '#10b981']");
+  fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, "['#00d4ff', '#8b5cf6', '#ec4899', '#10b981']);
   
   // Fix event listeners
-  fixed = fixed.replace(/addEventListener\(resi'z'e/g, "addEventListener('resize'");
-  fixed = fixed.replace(/removeEventListener\(resi'z'e/g, "removeEventListener('resize'");
+  fixed = fixed.replace(/addEventListener\(resi'z'e/g, addEventListener('resize'");
+  fixed = fixed.replace(/removeEventListener\(resi'z'e/g, "removeEventListener('resize');
   
   // Fix canvas context
-  fixed = fixed.replace(/getContext\('2d\)/g, "getContext('2d')");
+  fixed = fixed.replace(/getContext\('2d\)/g, getContext('2d')");
   
   // Fix export statements
-  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) ="""""> {
-    if (!match.endsWith(';')) {
-      return `${match};`
+  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) ="""> {
+    if (!match.endsWith('')) {
+      return `${match};
     }
     return match;
   });
@@ -69,8 +69,8 @@ function fixSyntaxErrors(content) {
 }, [])');
   
   // Fix specific string literal issues
-  fixed = fixed.replace(/import React from 'react';/g, "import React from 'react';");
-  fixed = fixed.replace(/import { [^}]+ } from ';rea'c't';/g, (match) => match.replace(/rea'c't'/, 'react'));
+  fixed = fixed.replace(/import React from 'react'/g, "import React from 'react'");
+  fixed = fixed.replace(/import { [^}]+ } from 'rea'c't'/g, (match) => match.replace(/rea'c't'/, 'react'));
   
   // Fix JSX fragment issues
   fixed = fixed.replace(/<>([\s\S]*?)<\/>/g, (match, innerContent) => {
@@ -93,12 +93,12 @@ function processFile(filePath) {
     
     if (content !== fixedContent) {
       fs.writeFileSync(filePath, fixedContent, 'utf8');
-      console.log(`Fixed: ${filePath}`);
+      console.log(Fixed: "${filePath"}`);
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error(`Error processing ${filePath}:, error.message);
     return false;
   }
 }

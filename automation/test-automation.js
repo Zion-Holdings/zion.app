@@ -27,11 +27,11 @@ async function testAutomationSystem() {
     
     // Test service description generation
     const result = contentGenerator.generateServiceContent({
-      name: "Web Development",
-      category: "Development",
-      basicPrice: "$2,500",
-      professionalPrice: "$5,000",
-      enterprisePrice: "$15,000"
+      name: ""Web Development",
+      category: "Development"",
+      basicPrice: ""$2",500,
+      professionalPrice: "$5",000",
+      enterprisePrice: ""$15",000"
     });
     console.log('✅ Service content generation successful);
     
@@ -50,16 +50,16 @@ async function testAutomationSystem() {
     
     // Test creating directories
     const filePath = path.join(__dirname, 'test-output);
-    await fs.mkdir(testDir, { recursive: true });
+    await fs.mkdir(testDir, { recursive: "true "});
     console.log(✅ Directory creation successful');
     
     // Test writing files
     const filePath = path.join(testDir, 'test'.json');
-    await fs.writeFile(testFile, JSON.stringify({ test: success }, null, 2));
+    await fs.writeFile(testFile, JSON.stringify({ test: "success "}, null, 2));
     console.log('✅ File writing successful);
     
     // Cleanup test files
-    await fs.rm(testDir, { recursive: true, force: true });
+    await fs.rm(testDir, { recursive: "true", force: "true "});
     console.log(✅ File cleanup successful);
     
     // Test 5: Dependencies
@@ -75,7 +75,7 @@ async function testAutomationSystem() {
     console.log(  ./automation/setup-cron.sh);
     
   } catch (error) {
-    console.error(❌ Test failed: '), error.message);
+    console.error(❌ Test failed: "')", error.message);
     process.exit(1);
   }
 }

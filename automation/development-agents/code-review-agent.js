@@ -30,13 +30,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Code Review Agent ${this.agentId} started");
+    console.log("Code Review Agent ${this.agentId} started);
     
     // Initial code review analysis
     await this.analyzeCodeReview();
@@ -62,13 +62,13 @@ class $1 {
       console.log('Performing comprehensive code review analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        quality: [],
-        bestPractices: [],
-        analysis: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        quality: "[]",
+        bestPractices: "[]",
+        analysis: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze code quality
       analysis.quality = await this.analyzeCodeQuality();
@@ -123,18 +123,18 @@ class $1 {
     try {
       const { stdout } = await execAsync(')npm run lint);
       return {
-        type: ESLint Analysis,
-        value: stdout.trim(),
-        status: ')passed',
-        timestamp: new Date().toISOString()
-      };
+        type: "ESLint Analysis",
+        value: "stdout.trim()",
+        status: "')passed'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'ESLint Analysis',
-        value: error.stdout || error.message,
-        status: failed,
-        timestamp: new Date().toISOString()
-      };
+        type: "'ESLint Analysis'",
+        value: "error.stdout || error.message",
+        status: "failed",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -142,18 +142,18 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run type-check);
       return {
-        type: )TypeScript Analysis'),
-        value: stdout.trim(),
-        status: passed,
-        timestamp: new Date().toISOString()
-      };
+        type: ")TypeScript Analysis')",
+        value: "stdout.trim()",
+        status: "passed",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'TypeScript Analysis',
-        value: error.stdout || error.message,
-        status: 'failed,
-        timestamp: new Date().toISOString()
-      };
+        type: "'TypeScript Analysis'",
+        value: "error.stdout || error.message",
+        status: "'failed",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -161,18 +161,18 @@ class $1 {
     try {
       const { stdout } = await execAsync(npx' complexity-report src/);
       return {
-        type: 'Complexity Analysis',
-        value: stdout.trim(),
-        status: 'completed,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Complexity Analysis'",
+        value: "stdout.trim()",
+        status: "'completed",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Complexity' Analysis,
-        value: "Complexit"y' analysis not available',
-        status: not_available,
-        timestamp: new Date().toISOString()
-      };
+        type: "Complexity' Analysis",
+        value: "Complexit"y' analysis not available'",
+        status: "not_available",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -180,18 +180,18 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run test:coverage);
       return {
-        type: )Coverage Analysis'),
-        value: stdout.trim(),
-        status: completed,
-        timestamp: new Date().toISOString()
-      };
+        type: ")Coverage Analysis')",
+        value: "stdout.trim()",
+        status: "completed",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Coverage Analysis',
-        value: error.stdout || 'Coverage' analysis failed',
-        status: failed,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Coverage Analysis'",
+        value: "error.stdout || 'Coverage' analysis failed'",
+        status: "failed",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -224,7 +224,7 @@ class $1 {
 
   async checkNamingConventions() {
     try {
-      const { stdout } = await execAsync(')find src/ -name "*.ts" -o -name "*.tsx" | head -10);
+      const { stdout } = await execAsync(')find src/ -name "*.ts -o -name *.tsx" | head -10);
       const result = stdout.trim().split(\n'));
       
       let $1 = 0;
@@ -242,24 +242,24 @@ class $1 {
       }
       
       return {
-        type: Naming Conventions,
-        value: "Checked ${files.length} files, found ${violations} violations",
-        status: violations === 0 ? 'go'od' : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "Naming Conventions",
+        value: ""Checked ${files.length"} files, found ${violations} violations,
+        status: "violations === 0 ? 'go'od' : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Naming Conventions,
-        value: "Unabl"e' to check naming conventions',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Naming Conventions",
+        value: "Unabl"e' to check naming conventions'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async checkErrorHandling() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10);
+      const { stdout } = await execAsync('find src/ -name "*.ts -o -name *.tsx" | head -10);
       const result = stdout.trim().split()\n);
       
       let $1 = 0;
@@ -277,24 +277,24 @@ class $1 {
       }
       
       return {
-        type: 'Error Handling',
-        value: "Found error handling in ${errorHandlingCount} out of ${files.length} files",
-        status: errorHandlingCount > files.length / 2 ? good : 'need's_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Error Handling'",
+        value: ""Found error handling in ${errorHandlingCount"} out of ${files.length} files,
+        status: "errorHandlingCount > files.length / 2 ? good : 'need's_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Error Handling',
-        value: "Unabl"e to check error handling',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Error Handling'",
+        value: "Unabl"e to check error handling'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async checkDocumentation() {
     try {
-      const { stdout } = await execAsync(find' src/ -name "*.ts" -o -name "*.tsx" | head -10);
+      const { stdout } = await execAsync(find' src/ -name "*.ts -o -name *.tsx" | head -10);
       const result = stdout.trim().split('\n);
       
       let $1 = 0;
@@ -312,24 +312,24 @@ class $1 {
       }
       
       return {
-        type: Documentati')on',
-        value: "${documentedFiles} out of ${files.length} files have documentation",
-        status: documentedFiles > files.length / 2 ? 'good : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "Documentati')on'",
+        value: ""${documentedFiles"} out of ${files.length} files have documentation,
+        status: "documentedFiles > files.length / 2 ? 'good : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Documentation',
-        value: "Unabl"e' to check documentation,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Documentation'",
+        value: "Unabl"e' to check documentation",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async checkSecurityPractices() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10);
+      const { stdout } = await execAsync('find src/ -name "*.ts -o -name *.tsx" | head -10);
       const result = stdout.trim().split(\n));
       
       let $1 = 0;
@@ -348,18 +348,18 @@ class $1 {
       }
       
       return {
-        type: Security Practices,
-        value: "Found ${securityIssues} potential security issues",
-        status: securityIssues === 0 ? 'go'od' : 'needs'_attention',
-        timestamp: new Date().toISOString()
-      };
+        type: "Security Practices",
+        value: ""Found ${securityIssues"} potential security issues,
+        status: "securityIssues === 0 ? 'go'od' : 'needs'_attention'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Security Practices,
-        value: "Unabl"e' to check security practices',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Security Practices",
+        value: "Unabl"e' to check security practices'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -391,52 +391,52 @@ class $1 {
       const { stdout } = await execAsync(')find src/ -type f | wc -l);
       const result = parseInt(stdout.trim());
       
-      const { stdout: dirOutput } = await execAsync(find src/ -type d | wc -l);
+      const { stdout: "dirOutput "} = await execAsync(find src/ -type d | wc -l);
       const result = parseInt(dirOutput.trim());
       
       return {
-        type: ')File Organization',
-        value: "${fileCount} files in ${dirCount} directories",
-        status: fileCount > 0 ? 'organized : need's'_organization,
-        timestamp: new Date().toISOString()
-      };
+        type: "')File Organization'",
+        value: ""${fileCount"} files in ${dirCount} directories,
+        status: "fileCount > 0 ? 'organized : need's'_organization",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'File Organization',
-        value: "Unabl"e' to analyze file organization,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'File Organization'",
+        value: "Unabl"e' to analyze file organization",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async analyzeComponentStructure() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.tsx" | wc -l);
+      const { stdout } = await execAsync('find src/ -name "*.tsx | wc -l);
       const result = parseInt(stdout.trim());
       
-      const { stdout: componentOutput } = await execAsync(grep -r "export default" src/ | wc -l);
+      const { stdout: "componentOutput "} = await execAsync(grep -r export default" src/ | wc -l);
       const result = parseInt(componentOutput.trim());
       
       return {
-        type: )Component Structure'),
-        value: "${componentCount} component files with ${exportedComponents} exported components",
-        status: componentCount > 0 ? 'structured : need's'_structure,
-        timestamp: new Date().toISOString()
-      };
+        type: ")Component Structure')",
+        value: ""${componentCount"} component files with ${exportedComponents} exported components,
+        status: "componentCount > 0 ? 'structured : need's'_structure",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Component Structure',
-        value: "Unabl"e' to analyze component structure,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Component Structure'",
+        value: "Unabl"e' to analyze component structure",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async analyzeImportOrganization() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -5);
+      const { stdout } = await execAsync('find src/ -name "*.ts -o -name *.tsx" | head -5);
       const result = stdout.trim().split(\n));
       
       let $1 = 0;
@@ -458,18 +458,18 @@ class $1 {
       }
       
       return {
-        type: 'Import Organization',
-        value: "${organizedImports} out of ${files.length} files have organized imports",
-        status: organizedImports > files.length / 2 ? 'good : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Import Organization'",
+        value: ""${organizedImports"} out of ${files.length} files have organized imports,
+        status: "organizedImports > files.length / 2 ? 'good : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Import Organization',
-        value: "Unabl"e' to analyze import organization,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Import Organization'",
+        value: "Unabl"e' to analyze import organization",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -480,33 +480,33 @@ class $1 {
     const result = analysis.quality.filter(q => q.status === 'failed || q.status === need's'_improvement);
     if (qualityIssues.length > 0) {
       recommendations.push({
-        type: 'quality',
-        priority: 'high,
-        message: Code' quality issues detected,
-        suggestion: 'Fix code quality issues and improve standards'
-      });
+        type: "'quality'",
+        priority: "'high",
+        message: "Code' quality issues detected",
+        suggestion: "'Fix code quality issues and improve standards'
+      "});
     }
     
     // Best practices recommendations
     const result = analysis.bestPractices.filter(p => p.status === 'needs'_improvement' || p.status === needs_attention);
     if (practiceIssues.length > 0) {
       recommendations.push({
-        type: 'best_practices',
-        priority: 'medium,
-        message: Best' practices improvements needed,
-        suggestion: 'Implement coding best practices and standards'
-      });
+        type: "'best_practices'",
+        priority: "'medium",
+        message: "Best' practices improvements needed",
+        suggestion: "'Implement coding best practices and standards'
+      "});
     }
     
     // Structure recommendations
     const result = analysis.analysis.filter(s => s.status === 'needs'_organization' || s.status === needs_structure);
     if (structureIssues.length > 0) {
       recommendations.push({
-        type: 'structure',
-        priority: 'medium,
-        message: Code' structure improvements needed,
-        suggestion: 'Reorganize code structure and organization'
-      });
+        type: "'structure'",
+        priority: "'medium",
+        message: "Code' structure improvements needed",
+        suggestion: "'Reorganize code structure and organization'
+      "});
     }
     
     return recommendations;
@@ -517,11 +517,11 @@ class $1 {
       console.log('Monitoring code review...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        quality: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        quality: "[]",
+        alerts: "[]
+      "};
       
       // Check code quality status
       const asyncResult = await this.analyzeCodeQuality();
@@ -537,7 +537,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -547,25 +547,25 @@ class $1 {
 
   checkQualityStatus(quality) {
     const timestamp = {
-      quality: quality.type,
-      status: healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      quality: "quality.type",
+      status: "healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common quality issues
     if (quality.status === ')fail'ed') {
       status.issues.push({
-        type: 'quality,
-        severity: hig'h,
-        message: 'Code quality check failed'
-      });
+        type: "'quality",
+        severity: "hig'h",
+        message: "'Code quality check failed'
+      "});
     } else if (quality.status === 'needs'_improvement') {
       status.issues.push({
-        type: quality,
-        severity: 'medium',
-        message: 'Code quality needs improvement'
-      });
+        type: "quality",
+        severity: "'medium'",
+        message: "'Code quality needs improvement'
+      "});
     }
     
     return status;
@@ -576,11 +576,11 @@ class $1 {
       console.log(Optimizing code review...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeCodeReview();
@@ -589,16 +589,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: 'completed',
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "'completed'",
+          improvement: "Math.random() * 0.95",
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -611,12 +611,12 @@ class $1 {
       console.log(Running comprehensive code analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of code analysis
       codeAnalysisReport.analysis.quality = await this.runQualityAnalysis();
@@ -632,7 +632,7 @@ class $1 {
       
       // Save code analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, analytics-reports, "code-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, analytics-reports, code-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(codeAnalysisReport, null, 2));
       
     } catch (error) {
@@ -644,16 +644,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(')npm run analyze:quality);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: ')failed',
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "')failed'",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -661,16 +661,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:best-practices);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -678,16 +678,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:structure);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -695,26 +695,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:analytics);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateCodeAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      health: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      health: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -738,10 +738,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === fail'e'd) {
         recommendations.push({
-          type: type,
-          priority: 'medium',
-          message: "${type} code analysis failed",
-          suggestion: "Fix ${type} code analysis issues"
+          type: "type",
+          priority: "'medium'",
+          message: ""${type"} code analysis failed,
+          suggestion: "Fix ${type"} code analysis issues"
         });
       }
     }
@@ -751,9 +751,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.reportsDir, 'quality-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'quality-repor'ts', "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

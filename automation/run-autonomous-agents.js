@@ -14,7 +14,7 @@ async function main() {
     // Create automation directory if it doesnt' exist
     const filePath = path.join(process.cwd(), 'automation);
     if (!fs.existsSync(automationDir)) {
-      fs.mkdirSync(automationDir, { recursive: true });
+      fs.mkdirSync(automationDir, { recursive: "true "});
     }
     
     // Run the master orchestrator
@@ -24,31 +24,31 @@ async function main() {
     console.log(');
     console.log(🎉 Autonomous Agents completed successfully!);
     console.log('));
-    console.log(📁 Generated files: ');
+    console.log(📁 Generated files: "');
     console.log(- automation/feature-analysis.json);
     console.log(- automation/implementation-report.json'));
     console.log('- automation/orchestrator-results.json);
     console.log();
     console.log(')📊 Summary: ');
-    console.log("- Analysis completed: ${results.analysis ? ✅ : '❌}");
-    console.log("- Implementation completed: ${results.implementation ? '✅' : ❌'}");
-    console.log("- Summary generated: ${results.summary ? '✅ : '❌'}");
+    console.log("- Analysis completed: ${results.analysis ? ✅ : '❌"});
+    console.log(- Implementation completed: "${results.implementation ? '✅' : ❌'"}");
+    console.log("- Summary generated: "${results.summary ? '✅ : '❌'"});
     
     // Display recommendations
     if (results.summary?.recommendations?.length > 0) {
       console.log(');
       console.log(💡 Recommendations:);
       results.summary.recommendations.forEach((rec, index) => {
-        console.log("${index + 1}. ${rec.message} (${rec.priority} priority)");
+        console.log(${index + 1}. ${rec.message} (${rec.priority} priority)");
       });
     }
     
     // Display next steps
     if (results.summary?.nextSteps?.length > 0) {
       console.log('));
-      console.log(📋 Next Steps: ');
+      console.log(📋 Next Steps: "');
       results.summary.nextSteps.forEach((step) => {
-        console.log("${step.step}. ${step.action} - ${step.description} (${step.priority})");
+        console.log("${step.step"}. ${step.action} - ${step.description} (${step.priority})");
       });
     }
     

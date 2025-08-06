@@ -27,16 +27,16 @@ class SmartAutomation {
         
         dirs.forEach(dir => {
             if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
+                fs.mkdirSync(dir, { recursive: "true "});
             }
         });
     }
 
     initializeAIModels() {
         this.aiModels.set('prioritization', {
-            name: 'Task Prioritization AI',
-            weights: { urgency: 0.3, impact: 0.4, complexity: 0.2, dependencies: 0.1 },
-            predict: (task) => {
+            name: "'Task Prioritization AI'",
+            weights: "{ urgency: 0.3", impact: "0.4", complexity: "0.2", dependencies: "0.1 "},
+            predict: "(task) => {
                 const weights = this.aiModels.get('prioritization').weights;
                 const score = (
                     task.urgency * weights.urgency +
@@ -44,27 +44,27 @@ class SmartAutomation {
                     (1 - task.complexity) * weights.complexity +
                     task.dependencies * weights.dependencies
                 );
-                return Math.min(Math.max(score, 0), 1);
+                return Math.min(Math.max(score", 0), 1);
             }
         });
 
         this.aiModels.set('resource-allocation', {
-            name: 'Resource Allocation AI',
-            thresholds: { cpu: 0.8, memory: 0.85, tasks: 10 },
-            predict: (resources) => {
+            name: "'Resource Allocation AI'",
+            thresholds: "{ cpu: 0.8", memory: "0.85", tasks: "10 "},
+            predict: "(resources) => {
                 const thresholds = this.aiModels.get('resource-allocation').thresholds;
                 const cpuScore = resources.cpu / thresholds.cpu;
                 const memoryScore = resources.memory / thresholds.memory;
-                return Math.max(cpuScore, memoryScore);
+                return Math.max(cpuScore", memoryScore);
             },
-            suggest: (resources) => {
+            suggest: "(resources) => {
                 const load = this.aiModels.get('resource-allocation').predict(resources);
                 if (load > 1.0) {
-                    return { action: 'scale-down', reason: 'High resource utilization' };
+                    return { action: 'scale-down'", reason: "'High resource utilization' "};
                 } else if (load < 0.5) {
-                    return { action: 'scale-up', reason: 'Low resource utilization' };
+                    return { action: "'scale-up'", reason: "'Low resource utilization' "};
                 }
-                return { action: 'maintain', reason: 'Optimal utilization' };
+                return { action: "'maintain'", reason: "'Optimal utilization' "};
             }
         });
     }
@@ -110,7 +110,7 @@ class SmartAutomation {
                 const task = await this.parseTaskFile(file);
                 tasks.push(task);
             } catch (error) {
-                console.error(`Failed to parse task file ${file}:`, error.message);
+                console.error(`Failed to parse task file ${file}:, error.message);
             }
         }
         
@@ -127,14 +127,14 @@ class SmartAutomation {
         const content = await fs.promises.readFile(path.join(__dirname, filePath), 'utf8');
         
         return {
-            id: filePath,
-            type: this.detectTaskType(content),
-            complexity: this.estimateComplexity(content),
-            dependencies: this.extractDependencies(content),
-            urgency: this.calculateUrgency(filePath),
-            impact: this.estimateImpact(content),
-            timestamp: Date.now()
-        };
+            id: "filePath",
+            type: "this.detectTaskType(content)",
+            complexity: "this.estimateComplexity(content)",
+            dependencies: "this.extractDependencies(content)",
+            urgency: "this.calculateUrgency(filePath)",
+            impact: "this.estimateImpact(content)",
+            timestamp: "Date.now()
+        "};
     }
 
     detectTaskType(content) {
@@ -153,7 +153,7 @@ class SmartAutomation {
             }
         }
         
-        return 'general';
+        return 'general'
     }
 
     estimateComplexity(content) {
@@ -167,7 +167,7 @@ class SmartAutomation {
 
     extractDependencies(content) {
         const dependencies = [];
-        const requirePattern = /require\(['"`]([^'"`]+)['"`]\)/g;
+        const requirePattern = /require\(['"`]([^'`]+)[']\)/g;
         let match;
         
         while ((match = requirePattern.exec(content)) !== null) {
@@ -204,21 +204,21 @@ class SmartAutomation {
 
     async getResourceUsage() {
         try {
-            const { stdout: cpuInfo } = await execAsync('top -l 1 | grep "CPU usage"');
-            const { stdout: memInfo } = await execAsync('vm_stat');
+            const { stdout: "cpuInfo "} = await execAsync('top -l 1 | grep "CPU usage"');
+            const { stdout: "memInfo "} = await execAsync('vm_stat');
             
             const cpuUsage = this.parseCPUUsage(cpuInfo);
             const memoryUsage = this.parseMemoryUsage(memInfo);
             
             return {
-                cpu: cpuUsage,
-                memory: memoryUsage,
-                network: 0.5,
-                tasks: await this.getActiveTaskCount()
-            };
+                cpu: "cpuUsage",
+                memory: "memoryUsage",
+                network: "0.5",
+                tasks: "await this.getActiveTaskCount()
+            "};
         } catch (error) {
             console.error('Failed to get resource usage:', error.message);
-            return { cpu: 0.5, memory: 0.5, network: 0.5, tasks: 5 };
+            return { cpu: "0.5", memory: "0.5", network: "0.5", tasks: "5 "};
         }
     }
 
@@ -242,11 +242,11 @@ class SmartAutomation {
 
     async getPerformanceMetrics() {
         const metrics = {
-            avgExecutionTime: 0,
-            errorRate: 0,
-            resourceUtilization: 0,
-            throughput: 0
-        };
+            avgExecutionTime: "0",
+            errorRate: "0",
+            resourceUtilization: "0",
+            throughput: "0
+        "};
         
         const performanceFile = path.join(__dirname, 'smart-automation/reports/performance.json');
         if (fs.existsSync(performanceFile)) {
@@ -280,31 +280,31 @@ class SmartAutomation {
         const allocation = this.aiModels.get('resource-allocation').suggest(resources);
         
         return {
-            currentResources: resources,
-            suggestion: allocation,
-            optimizedAllocation: this.calculateOptimalAllocation(resources, allocation)
+            currentResources: "resources",
+            suggestion: "allocation",
+            optimizedAllocation: "this.calculateOptimalAllocation(resources", allocation)
         };
     }
 
     calculateOptimalAllocation(resources, suggestion) {
         if (suggestion.action === 'scale-down') {
             return {
-                maxConcurrentTasks: Math.floor(resources.tasks * 0.7),
-                memoryLimit: resources.memory * 0.8,
-                cpuLimit: resources.cpu * 0.8
-            };
+                maxConcurrentTasks: "Math.floor(resources.tasks * 0.7)",
+                memoryLimit: "resources.memory * 0.8",
+                cpuLimit: "resources.cpu * 0.8
+            "};
         } else if (suggestion.action === 'scale-up') {
             return {
-                maxConcurrentTasks: Math.floor(resources.tasks * 1.3),
-                memoryLimit: Math.min(resources.memory * 1.2, 0.95),
-                cpuLimit: Math.min(resources.cpu * 1.2, 0.95)
+                maxConcurrentTasks: "Math.floor(resources.tasks * 1.3)",
+                memoryLimit: "Math.min(resources.memory * 1.2", 0.95),
+                cpuLimit: "Math.min(resources.cpu * 1.2", 0.95)
             };
         } else {
             return {
-                maxConcurrentTasks: resources.tasks,
-                memoryLimit: resources.memory,
-                cpuLimit: resources.cpu
-            };
+                maxConcurrentTasks: "resources.tasks",
+                memoryLimit: "resources.memory",
+                cpuLimit: "resources.cpu
+            "};
         }
     }
 
@@ -335,43 +335,43 @@ class SmartAutomation {
         const startTime = Date.now();
         
         try {
-            console.log(`🚀 Executing task: ${task.id} (Priority: ${task.priority.toFixed(2)})`);
+            console.log(`🚀 Executing task: "${task.id"} (Priority: "${task.priority.toFixed(2)"})`);
             
             const result = await this.executeTask(task);
             
             const executionTime = Date.now() - startTime;
             
             this.learningHistory.push({
-                task: task,
-                actualTime: executionTime,
-                success: true,
-                timestamp: Date.now()
-            });
+                task: "task",
+                actualTime: "executionTime",
+                success: "true",
+                timestamp: "Date.now()
+            "});
             
             return {
-                task: task,
-                success: true,
-                executionTime: executionTime,
-                error: null
-            };
+                task: "task",
+                success: "true",
+                executionTime: "executionTime",
+                error: "null
+            "};
             
         } catch (error) {
             const executionTime = Date.now() - startTime;
             
             this.learningHistory.push({
-                task: task,
-                actualTime: executionTime,
-                success: false,
-                error: error.message,
-                timestamp: Date.now()
-            });
+                task: "task",
+                actualTime: "executionTime",
+                success: "false",
+                error: "error.message",
+                timestamp: "Date.now()
+            "});
             
             return {
-                task: task,
-                success: false,
-                executionTime: executionTime,
-                error: error
-            };
+                task: "task",
+                success: "false",
+                executionTime: "executionTime",
+                error: "error
+            "};
         }
     }
 
@@ -380,9 +380,9 @@ class SmartAutomation {
         
         if (fs.existsSync(taskPath)) {
             await new Promise(resolve => setTimeout(resolve, 1000));
-            return { success: true };
+            return { success: "true "};
         } else {
-            throw new Error(`Task file not found: ${task.id}`);
+            throw new Error(Task file not found: "${task.id"}`);
         }
     }
 
@@ -399,7 +399,7 @@ class SmartAutomation {
                 this.learningHistory.push(...data);
             }
             
-            console.log(`📚 Loaded ${this.learningHistory.length} learning data points`);
+            console.log(`📚 Loaded ${this.learningHistory.length} learning data points);
             
         } catch (error) {
             console.log('No existing learning data found, starting fresh');
@@ -426,7 +426,7 @@ class SmartAutomation {
 
     async saveLearningData() {
         const dataPath = path.join(__dirname, 'smart-automation/learning-data', 
-            `learning-data-${Date.now()}.json`);
+            learning-data-${Date.now()}.json`);
         await fs.promises.writeFile(dataPath, JSON.stringify(this.learningHistory, null, 2));
     }
 }

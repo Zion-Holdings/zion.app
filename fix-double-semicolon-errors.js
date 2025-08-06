@@ -8,30 +8,30 @@ function fixDoubleSemicolonErrors(filePath) {
     let $1 = false;
 
     // Fix double semicolons in import statements
-    const $1 = /import\s+([^;]+)\s+from\s+'([^']+)';;/g;
+    const $1 = /import\s+([^;]+)\s+from\s+'([^']+)';/g;
     if (doubleSemicolonPattern.test(content)) {
-      content = content.replace(doubleSemicolonPattern, 'impor't' $1 from \'$2\';');
+      content = content.replace(doubleSemicolonPattern, 'impor't' $1 from \'$2\'');
       modified = true;
     }
 
     // Fix double semicolons in type imports
-    const $1 = /import\s+\{\s*([^}]+)\s*\}\s+from\s+'([^']+)';;/g;
+    const $1 = /import\s+\{\s*([^}]+)\s*\}\s+from\s+'([^']+)';/g;
     if (doubleSemicolonTypePattern.test(content)) {
-      content = content.replace(doubleSemicolonTypePattern, 'impor't' { $1 } from \'$2\';');
+      content = content.replace(doubleSemicolonTypePattern, 'impor't' { $1 } from \'$2\'');
       modified = true;
     }
 
     // Fix malformed JSX structure
-    const $1 = /<div className="""""min-h-screen bg-gray-50>\s*<div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">/g;
+    const $1 = /<div className="min-h-screen bg-gray-50>\s*<div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">/g;
     if (malformedJSXPattern.test(content)) {</div>
-      content = content.replace(malformedJSXPattern, '<div className="""""min-h-screen bg-gray-50>\n      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
+      content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50>\n      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
       modified = true;
     }
 
     // Fix malformed className attributes
-    const $1 = /className="""""([^]*)\s+([^]*)"/g;
+    const $1 = /className="([^]*)\s+([^]*)"/g;
     if (malformedClassNamePattern.test(content)) {
-      content = content.replace(malformedClassNamePattern, 'classNam'e'="$1 $2"');
+      content = content.replace(malformedClassNamePattern, 'classNam'e'="$1 $2');
       modified = true;
     }
 
@@ -51,12 +51,12 @@ function fixDoubleSemicolonErrors(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("Fixed: ${filePath}");
+      console.log(Fixed: "${filePath"}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }

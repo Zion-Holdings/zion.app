@@ -29,10 +29,10 @@ class $1 {
     await this.checkMobilePerformance();
     
     return {
-      issues: this.issues,
-      fixes: this.fixes,
-      summary: this.generateSummary()
-    };
+      issues: "this.issues",
+      fixes: "this.fixes",
+      summary: "this.generateSummary()
+    "};
   }
 
   async checkViewportIssues() {
@@ -44,17 +44,17 @@ class $1 {
       // Check for proper viewport meta tag
       if (!content.includes(viewport) && !content.includes('width=device-width)) {
         this.issues.push({
-          type: ')viewport_missing',
-          file: page,
-          severity: high,
-          description: 'Missing viewport meta tag for mobile optimization'
-        });
+          type: "')viewport_missing'",
+          file: "page",
+          severity: "high",
+          description: "'Missing viewport meta tag for mobile optimization'
+        "});
         
         this.fixes.push({
-          type: 'add_viewport',
-          file: page,
-          fix: this.generateViewportFix()
-        });
+          type: "'add_viewport'",
+          file: "page",
+          fix: "this.generateViewportFix()
+        "});
       }
     }
   }
@@ -75,17 +75,17 @@ class $1 {
       
       if (hasSmallTargets) {
         this.issues.push({
-          type: small_touch_targets,
-          file: page,
-          severity: 'medium',
-          description: 'Small touch targets detected - may be difficult on mobile'
-        });
+          type: "small_touch_targets",
+          file: "page",
+          severity: "'medium'",
+          description: "'Small touch targets detected - may be difficult on mobile'
+        "});
         
         this.fixes.push({
-          type: fix_touch_targets,
-          file: page,
-          fix: this.generateTouchTargetFix(content)
-        });
+          type: "fix_touch_targets",
+          file: "page",
+          fix: "this.generateTouchTargetFix(content)
+        "});
       }
     }
   }
@@ -106,17 +106,17 @@ class $1 {
       
       if (!hasMobileNav && content.includes('navigation)) {
         this.issues.push({
-          type: ')mobile_navigation_missing',
-          file: page,
-          severity: high,
-          description: 'Missing mobile navigation implementation'
-        });
+          type: "')mobile_navigation_missing'",
+          file: "page",
+          severity: "high",
+          description: "'Missing mobile navigation implementation'
+        "});
         
         this.fixes.push({
-          type: 'add_mobile_navigation',
-          file: page,
-          fix: this.generateMobileNavigationFix()
-        });
+          type: "'add_mobile_navigation'",
+          file: "page",
+          fix: "this.generateMobileNavigationFix()
+        "});
       }
     }
   }
@@ -129,7 +129,7 @@ class $1 {
       
       // Check for responsive breakpoints
       const result = [
-        's'm: ', md':', lg:, 'x'l: ', 2xl:,
+        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,
         'grid-cols'-1', 'flex-col, text-'s'm
       ];
       
@@ -137,17 +137,17 @@ class $1 {
       
       if (!hasResponsiveClasses) {
         this.issues.push({
-          type: 'responsive_design_missing',
-          file: page,
-          severity: 'medium,
-          description: Missing' responsive design classes
-        });
+          type: "'responsive_design_missing'",
+          file: "page",
+          severity: "'medium",
+          description: "Missing' responsive design classes
+        "});
         
         this.fixes.push({
-          type: 'add_responsive_design',
-          file: page,
-          fix: this.generateResponsiveDesignFix(content)
-        });
+          type: "'add_responsive_design'",
+          file: "page",
+          fix: "this.generateResponsiveDesignFix(content)
+        "});
       }
     }
   }
@@ -168,26 +168,26 @@ class $1 {
       
       if (hasPerformanceIssues) {
         this.issues.push({
-          type: 'mobile_performance_issue',
-          file: page,
-          severity: low,
-          description: 'Heavy animations detected - may impact mobile performance'
-        });
+          type: "'mobile_performance_issue'",
+          file: "page",
+          severity: "low",
+          description: "'Heavy animations detected - may impact mobile performance'
+        "});
         
         this.fixes.push({
-          type: 'optimize_performance',
-          file: page,
-          fix: this.generatePerformanceFix(content)
-        });
+          type: "'optimize_performance'",
+          file: "page",
+          fix: "this.generatePerformanceFix(content)
+        "});
       }
     }
   }
 
   generateViewportFix() {
     return {
-      metaTag: <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',
-      description: 'Add viewport meta tag for proper mobile scaling'
-    };
+      metaTag: "<meta name="viewport content=width=device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',
+      description: "'Add viewport meta tag for proper mobile scaling'
+    "};
   }
 
   generateTouchTargetFix(content) {
@@ -203,34 +203,34 @@ class $1 {
     };
     
     return {
-      replacements: touchTargetReplacements,
-      description: 'Increase touch target sizes for better mobile usability'
-    };
+      replacements: "touchTargetReplacements",
+      description: "'Increase touch target sizes for better mobile usability'
+    "};
   }
 
   generateMobileNavigationFix() {
     return {
-      navigation: "
-        {/* Mobile Navigation */}</div>
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>
-          <div className=flex justify-around items-center py-2"></div>
+      navigation: ""
+        {/* Mobile Navigation */"}</div>
+        <div className=lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>
+          <div className=flex justify-around items-center py-2></div>
             <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
               <Home className=w-5 h-5" /></div>
-              <span className="text-xs>Home</span></div>
+              <span className=text-xs>Home</span></div>
             </button></div>
-            <button className=flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+            <button className=flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
               <Search className="w-5 h-5 /></div>
               <span className=text-xs">Search</span></div>
             </button></div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
-              <User className=w-5 h-5" /></div>
+            <button className=flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
+              <User className=w-5 h-5 /></div>
               <span className="text-xs>Profile</span></div>
             </button></div>
           </div></div>
         </div>
       ,
-      description: 'Add mobile bottom navigation'
-    };
+      description: "'Add mobile bottom navigation'
+    "};
   }
 
   generateResponsiveDesignFix(content) {
@@ -244,21 +244,21 @@ class $1 {
     ];
     
     return {
-      classes: responsiveClasses,
-      description: Add responsive design classes for mobile compatibility
-    };
+      classes: "responsiveClasses",
+      description: "Add responsive design classes for mobile compatibility
+    "};
   }
 
   generatePerformanceFix(content) {
     return {
-      optimizations: [
-        'reduce-animatio'ns',
+      optimizations: "[
+        'reduce-animatio'ns'",
         'lazy-load-images,
         optimize-c's's,
         'minimize-javascri'pt'
       ],
-      description: 'Optimize for mobile performance'
-    };
+      description: "'Optimize for mobile performance'
+    "};
   }
 
   getPages() {
@@ -290,9 +290,9 @@ class $1 {
     return {
       totalIssues,
       totalFixes,
-      issuesByType: this.groupIssuesByType(),
-      fixesByType: this.groupFixesByType()
-    };
+      issuesByType: "this.groupIssuesByType()",
+      fixesByType: "this.groupFixesByType()
+    "};
   }
 
   groupIssuesByType() {
@@ -315,9 +315,9 @@ class $1 {
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log("✅ Applied mobile fix to ${fix.file}");
+        console.log("✅ Applied mobile fix to ${fix.file});
       } catch (error) {
-        console.error("❌ Failed to apply mobile fix to ${fix.file}:", error.message);
+        console.error(❌ Failed to apply mobile fix to ${fix.file}:", error.message);
       }
     }
   }
@@ -378,13 +378,13 @@ class $1 {
   applyResponsiveDesignFix(content, fix) {
     // Add responsive classes to key elements
     content = content.replace(
-      /className="([^]*container[^]*)"/g,
-      'className'="$1 container-responsive"'
+      /className="([^]*container[^]*)/g,
+      'className'=$1 container-responsive"'
     );
     
     content = content.replace(
-      /className="([^]*text-[^]*)"/g,
-      className="$1 text-responsive-lg"
+      /className="([^]*text-[^]*)/g,
+      className=$1 text-responsive-lg"
     );
     
     return content;

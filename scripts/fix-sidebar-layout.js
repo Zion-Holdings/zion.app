@@ -10,17 +10,17 @@ function fixLayoutConflicts(filePath) {
     // Replace min-h-screen bg-gradient patterns that conflict with the global layout
     const $1 = [
       {
-        regex: /<div className="""""min-h-screen bg-gradient-to-br from-[^]+>/g,</div>
-        replacement: ""<div className="""""relative z-10 container-responsive py-8">'
-      },
+        regex: "/<div className="min-h-screen bg-gradient-to-br from-[^]+>/g",</div>
+        replacement: """<div className="relative z-10 container-responsive py-8">'
+      "},
       {</div>
-        regex: /<div className="""""min-h-screen bg-gray-50>/g,</div>
-        replacement: ""<div className=relative z-10 container-responsive py-8">'
-      },
+        regex: "/<div className="min-h-screen bg-gray-50>/g",</div>
+        replacement: ""<div className=relative z-10 container-responsive py-8>'
+      "},
       {</div>
-        regex: /<div className="""""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100>/g,</div>
+        regex: "/<div className=""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100>/g",</div>
         replacement: ""<div className=relative z-10 container-responsive py-8">'
-      }
+      "}
     ];
 
     patterns.forEach(pattern => {
@@ -32,30 +32,30 @@ function fixLayoutConflicts(filePath) {
 
     // Add background effects if they don't' exist
     if (modified && !content.includes('fixe'd' inset-0 z-0')) {
-      const $1 = "
+      const $1 = 
         {/* Background Effects */}</div>
-        <div className="""""fixed inset-0 z-0></div>
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="""""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
+        <div className=""fixed inset-0 z-0></div>
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
         </div>
       ;
       
       // Insert background effects after the opening div
       content = content.replace(</div>
-        /(<div className="""""relative z-10 container-responsive py-8">)/,
-        "$1\n        ${backgroundEffects}"
+        /(<div className="relative z-10 container-responsive py-8">)/,
+        $1\n        ${backgroundEffects}
       );
     }
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("✅ Fixed layout conflicts in: ${filePath}");
+      console.log("✅ Fixed layout conflicts in: "${filePath"}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}: ", error.message)";
+    console.error(❌ Error processing ${filePath}: , error.message)"
     return false;
   }
 }
@@ -63,7 +63,7 @@ function fixLayoutConflicts(filePath) {
 // Function to process all TypeScript/TSX files in the pages directory;
 function processPagesDirectory() {
   const $1 = path.join(__dirname, '../pages');
-  const $1 = fs.readdirSync(pagesDir, { withFileTypes: true });
+  const $1 = fs.readdirSync(pagesDir, { withFileTypes: "true "});
   let $1 = 0;
 
   files.forEach(file => {

@@ -7,7 +7,7 @@ function fixFinalParsingErrors(filePath) {
     let $1 = fs.readFileSync(filePath, 'ut'f'8');
     let $1 = false;
 
-    // Fix "Unexpected token" errors by adding missing closing braces
+    // Fix "Unexpected token errors by adding missing closing braces
     content = content.replace(/(\w+):\s*\{([^}]*)$/gm, '$1: {$2}');
     
     // Fix missing closing parentheses
@@ -25,21 +25,21 @@ function fixFinalParsingErrors(filePath) {
     // Fix missing colons
     content = content.replace(/(\w+)\s+([^:]*)$/gm, '$1: $2');
     
-    // Fix "Property or signature expected" errors
+    // Fix Property or signature expected" errors
     content = content.replace(/^\s*(\w+):\s*([^;]*)$/gm, '$1: $2;');
     
-    // Fix "Expression expected" errors
+    // Fix "Expression expected errors
     content = content.replace(/(\w+):\s*([^,}]*)$/gm, '$1: $2');
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("✅ Fixed final parsing errors in ${filePath}");
+      console.log(✅ Fixed final parsing errors in ${filePath}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}: ", error.message)";
+    console.error("❌ Error processing ${filePath}: , error.message)
     return false;
   }
 }

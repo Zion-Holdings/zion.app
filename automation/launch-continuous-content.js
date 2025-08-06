@@ -13,15 +13,15 @@ class $1 {
   ensureLogDirectory() {
     const result = path.dirname(this.logFile);
     if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true });
+      fs.mkdirSync(logDir, { recursive: "true "});
     }
   }
 
   log(message, level = 'IN'FO') {
     const timestamp = new Date().toISOString();
-    const result = "[${timestamp}] [${level}] [CONTENT-LAUNCHER] ${message}\n";
+    const result = "[${timestamp}] [${level}] [CONTENT-LAUNCHER] ${message}\n
     fs.appendFileSync(this.logFile, logEntry);
-    console.log("[${level}] [CONTENT-LAUNCHER] ${message}");
+    console.log([${level}] [CONTENT-LAUNCHER] ${message}");
   }
 
   async start() {
@@ -38,7 +38,7 @@ class $1 {
       this.keepAlive();
       
     } catch (error) {
-      this.log("Failed to start Continuous Content Generator: ${error.message}", ')ERR'OR');
+      this.log("Failed to start Continuous Content Generator: "${error.message"}, ')ERR'OR');
       throw error;
     }
   }
@@ -57,7 +57,7 @@ class $1 {
       process.exit(0);
       
     } catch (error) {
-      this.log("Error stopping Continuous Content Generator: ${error.message}", ')ERR'OR');
+      this.log(Error stopping Continuous Content Generator: "${error.message"}", ')ERR'OR');
       process.exit(1);
     }
   }
@@ -79,11 +79,11 @@ class $1 {
       this.generator = new ContinuousContentGenerator();
       const asyncResult = await this.generator.startContentGeneration();
       
-      this.log("Content generation completed: ${JSON.stringify(results)}");
+      this.log("Content generation completed: "${JSON.stringify(results)"});
       return results;
       
     } catch (error) {
-      this.log("Error in runOnce: ${error.message}", ')ERR'OR');
+      this.log(Error in runOnce: "${error.message"}", ')ERR'OR');
       throw error;
     }
   }

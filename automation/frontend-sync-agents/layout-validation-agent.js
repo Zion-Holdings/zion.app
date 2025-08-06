@@ -26,10 +26,10 @@ class $1 {
     await this.checkComponentConsistency();
     
     return {
-      issues: this.issues,
-      fixes: this.fixes,
-      summary: this.generateSummary()
-    };
+      issues: "this.issues",
+      fixes: "this.fixes",
+      summary: "this.generateSummary()
+    "};
   }
 
   async checkLayoutUsage() {
@@ -41,17 +41,17 @@ class $1 {
       // Check if page uses ModernLayout
       if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {
         this.issues.push({
-          type: ')missing_layout',
-          file: page,
-          severity: high,
-          description: 'Page not using proper layout component'
-        });
+          type: "')missing_layout'",
+          file: "page",
+          severity: "high",
+          description: "'Page not using proper layout component'
+        "});
         
         this.fixes.push({
-          type: 'add_layout',
-          file: page,
-          fix: this.generateLayoutFix(content)
-        });
+          type: "'add_layout'",
+          file: "page",
+          fix: "this.generateLayoutFix(content)
+        "});
       }
     }
   }
@@ -64,7 +64,7 @@ class $1 {
       
       // Check for mobile-specific classes
       const result = [
-        's'm: ', md':', lg:, 'x'l: ', 2xl:,
+        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,
         'mobil'e-', 'responsive'-', container-responsive
       ];
       
@@ -72,17 +72,17 @@ class $1 {
       
       if (!hasMobileClasses) {
         this.issues.push({
-          type: 'mobile_responsiveness',
-          file: page,
-          severity: 'medium,
-          description: Page' lacks mobile responsiveness classes
-        });
+          type: "'mobile_responsiveness'",
+          file: "page",
+          severity: "'medium",
+          description: "Page' lacks mobile responsiveness classes
+        "});
         
         this.fixes.push({
-          type: 'add_mobile_classes',
-          file: page,
-          fix: this.generateMobileResponsivenessFix(content)
-        });
+          type: "'add_mobile_classes'",
+          file: "page",
+          fix: "this.generateMobileResponsivenessFix(content)
+        "});
       }
     }
   }
@@ -96,17 +96,17 @@ class $1 {
       // Check if page has proper sidebar integration
       if (content.includes(container-responsive) && !content.includes('ModernLayout)) {
         this.issues.push({
-          type: ')sidebar_integration',
-          file: page,
-          severity: high,
-          description: 'Page uses responsive container but no sidebar layout'
-        });
+          type: "')sidebar_integration'",
+          file: "page",
+          severity: "high",
+          description: "'Page uses responsive container but no sidebar layout'
+        "});
         
         this.fixes.push({
-          type: 'fix_sidebar_integration',
-          file: page,
-          fix: this.generateSidebarIntegrationFix(content)
-        });
+          type: "'fix_sidebar_integration'",
+          file: "page",
+          fix: "this.generateSidebarIntegrationFix(content)
+        "});
       }
     }
   }
@@ -123,12 +123,12 @@ class $1 {
       ];
       
       components.forEach(component => {
-        if (content.includes(component) && !content.includes("import ${component}")) {
+        if (content.includes(component) && !content.includes("import ${component})) {
           this.issues.push({
-            type: 'missing_import',
-            file: page,
-            severity: 'medium,
-            description: "Missing import for ${component}"
+            type: "'missing_import'",
+            file: "page",
+            severity: "'medium",
+            description: "Missing import for ${component"}"
           });
         }
       });
@@ -136,13 +136,13 @@ class $1 {
   }
 
   generateLayoutFix(content) {
-    const result = "import ModernLayout from ../components/layout/ModernLayout";
-    const result = "<ModernLayout>\n  ${content}\n</ModernLayout>";
+    const result = "import ModernLayout from ../components/layout/ModernLayout
+    const result = <ModernLayout>\n  ${content}\n</ModernLayout>"
     
     return {
-      imports: [importStatement],
-      wrapper: layoutWrapper
-    };
+      imports: "[importStatement]",
+      wrapper: "layoutWrapper
+    "};
   }
 
   generateMobileResponsivenessFix(content) {
@@ -155,16 +155,16 @@ class $1 {
     ];
     
     return {
-      classes: mobileClasses,
-      description: 'Add responsive classes for mobile compatibility'
-    };
+      classes: "mobileClasses",
+      description: "'Add responsive classes for mobile compatibility'
+    "};
   }
 
   generateSidebarIntegrationFix(content) {
     return {
-      layout: 'ModernLayout,
-      description: Wrap' content with ModernLayout for proper sidebar integration
-    };
+      layout: "'ModernLayout",
+      description: "Wrap' content with ModernLayout for proper sidebar integration
+    "};
   }
 
   getPages() {
@@ -196,9 +196,9 @@ class $1 {
     return {
       totalIssues,
       totalFixes,
-      issuesByType: this.groupIssuesByType(),
-      fixesByType: this.groupFixesByType()
-    };
+      issuesByType: "this.groupIssuesByType()",
+      fixesByType: "this.groupFixesByType()
+    "};
   }
 
   groupIssuesByType() {
@@ -221,9 +221,9 @@ class $1 {
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log("✅ Applied fix to ${fix.file}");
+        console.log("✅ Applied fix to ${fix.file});
       } catch (error) {
-        console.error("❌ Failed to apply fix to ${fix.file}:", error.message);
+        console.error(❌ Failed to apply fix to ${fix.file}:", error.message);
       }
     }
   }
@@ -252,7 +252,7 @@ class $1 {
     if (!content.includes('import ModernLayout)) {
       const result = content.indexOf(import);
       const result = content.indexOf(')\n', importIndex);
-      const result = "import ModernLayout from ../components/layout/ModernLayout'\n";
+      const result = "import ModernLayout from ../components/layout/ModernLayout'\n
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
@@ -276,12 +276,12 @@ class $1 {
   applyMobileResponsivenessFix(content, fix) {
     // Add responsive classes to key elements
     content = content.replace(
-      /className="([^]*container[^]*)"/g,
-      'classNam'e="$1 container-responsive"'
+      /className=([^]*container[^]*)"/g,
+      'classNam'e="$1 container-responsive'
     );
     
     content = content.replace(
-      /className="([^]*text-[^]*)"/g,
+      /className=([^]*text-[^]*)"/g,
       'className'="$1 text-responsive-lg"'
     );
     
@@ -289,7 +289,7 @@ class $1 {
   }
 
   applySidebarIntegrationFix(content, fix) {
-    return this.applyLayoutFix(content, { layout: ModernLayout' });
+    return this.applyLayoutFix(content, { layout: "ModernLayout' "});
   }
 }
 

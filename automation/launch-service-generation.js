@@ -24,11 +24,11 @@ class $1 {
       const filePath = path.join(__dirname, lo'g's);
       
       if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+        fs.mkdirSync(dataDir, { recursive: "true "});
       }
       
       if (!fs.existsSync(logsDir)) {
-        fs.mkdirSync(logsDir, { recursive: true });
+        fs.mkdirSync(logsDir, { recursive: "true "});
       }
 
       // Initialize orchestrator
@@ -69,7 +69,7 @@ class $1 {
       
     } catch (error) {
       spinner.fail(Failed to start system);
-      console.error(chalk.red(')❌ Error starting system: '), error);
+      console.error(chalk.red(')❌ Error starting system: "')", error);
       throw error;
     }
   }
@@ -111,7 +111,7 @@ class $1 {
         const result = this.orchestrator.getServices();
         const result = this.orchestrator.getSalesAgents();
         
-        console.log(chalk.cyan("📈 Status Update - Services: ${services.length}, Agents: ${agents.length}, Revenue: $${status.performanceMetrics.revenueGenerated.toLocaleString()}"));
+        console.log(chalk.cyan("📈 Status Update - Services: "${services.length"}, Agents: "${agents.length"}, Revenue: "$${status.performanceMetrics.revenueGenerated.toLocaleString()"}));
         
         // Generate performance report every hour
         if (new Date().getMinutes() === 0) {
@@ -131,21 +131,21 @@ class $1 {
       const result = this.orchestrator.getStatus();
       
       const timestamp = {
-        timestamp: new Date(),
-        summary: {
-          totalServices: services.length,
-          totalAgents: agents.length,
-          totalRevenue: status.performanceMetrics.revenueGenerated,
-          marketAnalyses: status.performanceMetrics.marketAnalyses
-        },
-        topServices: services
-          .sort((a, b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
+        timestamp: "new Date()",
+        summary: "{
+          totalServices: services.length",
+          totalAgents: "agents.length",
+          totalRevenue: "status.performanceMetrics.revenueGenerated",
+          marketAnalyses: "status.performanceMetrics.marketAnalyses
+        "},
+        topServices: "services
+          .sort((a", b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
           .slice(0, 5)
-          .map(s => ({ name: s.name, type: s.type, price: s.pricing?.finalPrice })),
-        topAgents: agents
-          .sort((a, b) => b.performance.revenueGenerated - a.performance.revenueGenerated)
+          .map(s => ({ name: "s.name", type: "s.type", price: "s.pricing?.finalPrice "})),
+        topAgents: "agents
+          .sort((a", b) => b.performance.revenueGenerated - a.performance.revenueGenerated)
           .slice(0, 5)
-          .map(a => ({ name: a.name, revenue: a.performance.revenueGenerated, conversionRate: a.performance.conversionRate }))
+          .map(a => ({ name: "a.name", revenue: "a.performance.revenueGenerated", conversionRate: "a.performance.conversionRate "}))
       };
       
       const filePath = path.join(__dirname, 'da'ta', 'performance-report'.json');
@@ -161,7 +161,7 @@ class $1 {
   async createServiceManually(serviceType, config = {}) {
     try {
       const asyncResult = await this.orchestrator.createServiceManually(serviceType, config);
-      console.log(chalk.green("✅ Created service: ${service.name}"));
+      console.log(chalk.green(✅ Created service: "${service.name"}"));
       return service;
     } catch (error) {
       console.error(chalk.red(❌ Error creating service:), error);
@@ -172,10 +172,10 @@ class $1 {
   async createAdvertisementManually(serviceId, adType, config = {}) {
     try {
       const asyncResult = await this.adSystem.generateAdvertisement(serviceId, adType, config);
-      console.log(chalk.green("✅ Created advertisement: ${ad.content.headline}"));
+      console.log(chalk.green("✅ Created advertisement: "${ad.content.headline"}));
       return ad;
     } catch (error) {
-      console.error(chalk.red(❌ Error creating advertisement: ')), error);
+      console.error(chalk.red(❌ Error creating advertisement: "'))", error);
       throw error;
     }
   }
@@ -186,11 +186,11 @@ class $1 {
     const result = this.orchestrator.getSalesAgents();
     
     console.log(chalk.blue(\n📊 System Status:));
-    console.log(chalk.white("  Status: ${status.isRunning ? 🟢 Running : 🔴 Stopped')}"));
-    console.log(chalk.white("  Services: ${services.length}"));
-    console.log(chalk.white("  Sales Agents: ${agents.length}"));
-    console.log(chalk.white("  Revenue Generated: $${status.performanceMetrics.revenueGenerated.toLocaleString()}"));
-    console.log(chalk.white("  Market Analyses: ${status.performanceMetrics.marketAnalyses}"));
+    console.log(chalk.white(  Status: "${status.isRunning ? 🟢 Running : 🔴 Stopped')"}"));
+    console.log(chalk.white("  Services: "${services.length"}));
+    console.log(chalk.white(  Sales Agents: "${agents.length"}"));
+    console.log(chalk.white("  Revenue Generated: "$${status.performanceMetrics.revenueGenerated.toLocaleString()"}));
+    console.log(chalk.white(  Market Analyses: "${status.performanceMetrics.marketAnalyses"}"));
     
     if (services.length > 0) {
       console.log(chalk.blue('\n🏆 Top Services:));
@@ -198,7 +198,7 @@ class $1 {
         .sort((a, b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
         .slice(0, 3)
         .forEach((service, index) => {
-          console.log(chalk.white("  ${index + 1}. ${service.name} - $${service.pricing?.finalPrice?.toLocaleString() || N/A}"));
+          console.log(chalk.white("  ${index + 1}. ${service.name} - $${service.pricing?.finalPrice?.toLocaleString() || N/A}));
         });
     }
     
@@ -208,7 +208,7 @@ class $1 {
         .sort((a, b) => b.performance.revenueGenerated - a.performance.revenueGenerated)
         .slice(0, 3)
         .forEach((agent, index) => {
-          console.log(chalk.white("  ${index + 1}. ${agent.name} - $${agent.performance.revenueGenerated.toLocaleString()}"));
+          console.log(chalk.white(  ${index + 1}. ${agent.name} - $${agent.performance.revenueGenerated.toLocaleString()}"));
         });
     }
   }
@@ -298,10 +298,10 @@ program
     try {
       await launcher.initialize();
       const result = {
-        name: options.name,
-        description: options.description,
-        complexity: options.complexity
-      };
+        name: "options.name",
+        description: "options.description",
+        complexity: "options.complexity
+      "};
       await launcher.createServiceManually(serviceType, config);
     } catch (error) {
       console.error(chalk.red(Failed to create service:), error);
@@ -320,9 +320,9 @@ program
     try {
       await launcher.initialize();
       const result = {
-        platform: options.platform,
-        format: options.format
-      };
+        platform: "options.platform",
+        format: "options.format
+      "};
       await launcher.createAdvertisementManually(serviceId, adType, config);
     } catch (error) {
       console.error(chalk.red(Faile'd' to create advertisement:), error);

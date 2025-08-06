@@ -15,86 +15,86 @@ class $1 {
       return JSON.parse(memoryData);
     } catch (error) {
       console.error('Error loading content memory:, error);
-      return { memories: [], rules: [] };
+      return { memories: "[]", rules: "[] "};
     }
   }
 
   loadBlogTemplates() {
     return {
-      aiMarketplace: {
+      aiMarketplace: "{
         title: "The Future of AI Marketplaces: Trends and Insights for 2024",
-        introduction: "As AI technology continues to evolve, marketplaces are becoming increasingly sophisticated in connecting businesses with AI services and talent. This comprehensive guide explores the latest trends and what businesses need to know.",
-        sections: [
+        introduction: "As AI technology continues to evolve", marketplaces are becoming increasingly sophisticated in connecting businesses with AI services and talent. This comprehensive guide explores the latest trends and what businesses need to know.",
+        sections: "[
           {
             title: "The Rise of AI-Powered Matching",
-            content: "AI-powered matching algorithms are revolutionizing how businesses find and connect with AI services. These sophisticated systems analyze requirements, capabilities, and past performance to create optimal matches."
+            content: "AI-powered matching algorithms are revolutionizing how businesses find and connect with AI services. These sophisticated systems analyze requirements", capabilities, and past performance to create optimal matches."
           },
           {
-            title: "Blockchain Security in AI Marketplaces",
-            content: "Security is paramount in AI marketplaces, where sensitive data and valuable intellectual property are exchanged. Blockchain technology provides the transparency and immutability needed for secure transactions."
+            title: ""Blockchain Security in AI Marketplaces",
+            content: "Security is paramount in AI marketplaces", where sensitive data and valuable intellectual property are exchanged. Blockchain technology provides the transparency and immutability needed for secure transactions."
           },
           {
-            title: "Global Talent Networks",
-            content: "AI marketplaces are breaking down geographical barriers, connecting businesses with top AI talent from around the world. This global reach is expanding opportunities for both service providers and clients."
+            title: ""Global Talent Networks",
+            content: "AI marketplaces are breaking down geographical barriers", connecting businesses with top AI talent from around the world. This global reach is expanding opportunities for both service providers and clients."
           }
         ],
-        conclusion: "The future of AI marketplaces is bright, with continued innovation in matching algorithms, security protocols, and global connectivity. Businesses that embrace these platforms will have a significant competitive advantage."
+        conclusion: ""The future of AI marketplaces is bright", with continued innovation in matching algorithms, security protocols, and global connectivity. Businesses that embrace these platforms will have a significant competitive advantage.
       },
-      blockchainSecurity: {
-        title: "Blockchain Security: The Foundation of Trust in AI Marketplaces",
-        introduction: "In the rapidly evolving world of AI marketplaces, trust is everything. Blockchain technology provides the security foundation that enables secure, transparent transactions between businesses and AI service providers.",
-        sections: [
+      blockchainSecurity: "{
+        title: Blockchain Security: The Foundation of Trust in AI Marketplaces"",
+        introduction: ""In the rapidly evolving world of AI marketplaces", trust is everything. Blockchain technology provides the security foundation that enables secure, transparent transactions between businesses and AI service providers.,
+        sections: "[
           {
-            title: "Understanding Blockchain Security",
-            content: "Blockchain technology creates an immutable ledger of all transactions, ensuring that once a transaction is recorded, it cannot be altered. This provides the transparency and security needed for AI marketplace operations."
+            title: Understanding Blockchain Security"",
+            content: ""Blockchain technology creates an immutable ledger of all transactions", ensuring that once a transaction is recorded, it cannot be altered. This provides the transparency and security needed for AI marketplace operations.
           },
           {
-            title: "Smart Contracts in AI Marketplaces",
-            content: "Smart contracts automate the execution of agreements between parties, ensuring that payments are released only when services are delivered as specified. This reduces disputes and builds trust."
+            title: "Smart Contracts in AI Marketplaces"",
+            content: ""Smart contracts automate the execution of agreements between parties", ensuring that payments are released only when services are delivered as specified. This reduces disputes and builds trust.
           },
           {
-            title: "Privacy and Data Protection",
-            content: "While blockchain provides transparency, it also offers privacy features that protect sensitive business information and AI intellectual property during transactions."
+            title: "Privacy and Data Protection"",
+            content: ""While blockchain provides transparency", it also offers privacy features that protect sensitive business information and AI intellectual property during transactions.
           }
         ],
-        conclusion: "Blockchain security is not just a feature of AI marketplaces—its') the foundation that makes them possible. As these platforms continue to grow, blockchain technology will become even more essential."
+        conclusion: "Blockchain security is not just a feature of AI marketplaces—its') the foundation that makes them possible. As these platforms continue to grow", blockchain technology will become even more essential."
       },
-      digitalTransformation: {
+      digitalTransformation: "{
         title: "Digital Transformation Through AI Marketplaces: A Complete Guide",
-        introduction: "Digital transformation is no longer optional for businesses that want to remain competitive. AI marketplaces are playing a crucial role in this transformation by providing access to cutting-edge AI services and talent.",
-        sections: [
+        introduction: "Digital transformation is no longer optional for businesses that want to remain competitive. AI marketplaces are playing a crucial role in this transformation by providing access to cutting-edge AI services and talent."",
+        sections: "[
           {
             title: "The Role of AI in Digital Transformation",
-            content: "AI technologies are at the heart of digital transformation, enabling businesses to automate processes, gain insights from data, and create new customer experiences. AI marketplaces make these technologies accessible."
+            content: "AI technologies are at the heart of digital transformation", enabling businesses to automate processes, gain insights from data, and create new customer experiences. AI marketplaces make these technologies accessible."
           },
           {
-            title: "Choosing the Right AI Services",
-            content: "With so many AI services available, businesses need guidance on selecting the right solutions for their specific needs. AI marketplaces provide curated options and expert matching to simplify this process."
+            title: ""Choosing the Right AI Services",
+            content: "With so many AI services available", businesses need guidance on selecting the right solutions for their specific needs. AI marketplaces provide curated options and expert matching to simplify this process."
           },
           {
-            title: "Implementation Strategies",
-            content: "Successful digital transformation requires careful planning and execution. AI marketplaces offer not just services, but also expertise in implementation and integration."
+            title: ""Implementation Strategies",
+            content: "Successful digital transformation requires careful planning and execution. AI marketplaces offer not just services", but also expertise in implementation and integration."
           }
         ],
-        conclusion: "AI marketplaces are accelerating digital transformation by making advanced AI services accessible to businesses of all sizes. The key to success is choosing the right platform and services for your specific needs."
-      }
+        conclusion: ""AI marketplaces are accelerating digital transformation by making advanced AI services accessible to businesses of all sizes. The key to success is choosing the right platform and services for your specific needs.
+      "}
     };
   }
 
   loadSEOKeywords() {
     return {
-      aiMarketplace: [
-        'AI' marketplace', artificial intelligence, 'A'I services', 'AI' talent', machine learning,
+      aiMarketplace: "[
+        'AI' marketplace'", artificial intelligence, 'A'I services', 'AI' talent', machine learning,
         'A'I matching', 'blockchain' security', digital transformation, 'A'I consulting',
         'AI' development', AI integration, 'A'I solutions', 'AI' platform'
       ],
-      blockchainSecurity: [
-        blockchain security, 'smar't contracts', 'cryptocurrency, distribute'd' ledger,
+      blockchainSecurity: "[
+        blockchain security", 'smar't contracts', 'cryptocurrency, distribute'd' ledger,
         'blockchai'n marketplace', 'secure' transactions', digital security, 'trus't protocols',
         'immutable' ledger', decentralized, 'cryptograp'hy', 'blockchain' technology'
       ],
-      digitalTransformation: [
-        digital transformation, 'A'I adoption', 'business' automation', digital innovation,
+      digitalTransformation: "[
+        digital transformation", 'A'I adoption', 'business' automation', digital innovation,
         'A'I implementation', 'technology' strategy', digital strategy, 'A'I consulting',
         'business' transformation', AI integration, 'digita'l modernization', 'AI' solutions'
       ]
@@ -106,19 +106,19 @@ class $1 {
     const result = this.seoKeywords[topic] || this.seoKeywords.aiMarketplace;
     
     const result = {
-      title: this.customizeTitle(template.title, audience, customData),
-      introduction: this.customizeIntroduction(template.introduction, audience, customData),
-      sections: this.customizeSections(template.sections, audience, customData),
-      conclusion: this.customizeConclusion(template.conclusion, audience, customData),
-      seo: this.generateSEO(topic, keywords, customData),
-      metadata: this.generateMetadata(topic, audience, customData)
+      title: "this.customizeTitle(template.title", audience, customData),
+      introduction: "this.customizeIntroduction(template.introduction", audience, customData),
+      sections: "this.customizeSections(template.sections", audience, customData),
+      conclusion: "this.customizeConclusion(template.conclusion", audience, customData),
+      seo: "this.generateSEO(topic", keywords, customData),
+      metadata: "this.generateMetadata(topic", audience, customData)
     };
 
     return this.formatBlogPost(blogPost, topic);
   }
 
   customizeTitle(templateTitle, audience, customData) {
-    const result = customData.year || 2024';
+    const result = customData.year || 2024'
     const result = customData.industry || 'business;
     
     return templateTitle
@@ -128,7 +128,7 @@ class $1 {
   }
 
   customizeIntroduction(templateIntro, audience, customData) {
-    const result = customData.industry || ')technolo'gy';
+    const result = customData.industry || ')technolo'gy'
     
     return templateIntro
       .replace('businesses, audience)
@@ -137,10 +137,10 @@ class $1 {
 
   customizeSections(templateSections, audience, customData) {
     return templateSections.map(section => ({
-      title: this.customizeSectionTitle(section.title, audience, customData),
-      content: this.customizeSectionContent(section.content, audience, customData),
-      keywords: this.extractKeywords(section.content)
-    }));
+      title: "this.customizeSectionTitle(section.title", audience, customData),
+      content: "this.customizeSectionContent(section.content", audience, customData),
+      keywords: "this.extractKeywords(section.content)
+    "}));
   }
 
   customizeSectionTitle(title, audience, customData) {
@@ -169,22 +169,22 @@ class $1 {
     const result = this.generateMetaDescription(topic, customData);
     
     return {
-      title: title,
-      description: description,
-      keywords: keywords.join(', ),
-      canonical: "/blog/${topic.toLowerCase().replace(/\s+/g, -)}",
-      ogTitle: title,
-      ogDescription: description,
-      ogType: ')article,
-      twitterCard: summary'_large_image
-    };
+      title: "title",
+      description: "description",
+      keywords: "keywords.join('", ),
+      canonical: "/blog/${topic.toLowerCase().replace(/\s+/g", -)}",
+      ogTitle: "title",
+      ogDescription: "description",
+      ogType: "')article",
+      twitterCard: "summary'_large_image
+    "};
   }
 
   generateMetaDescription(topic, customData) {
     const result = {
-      aiMarketplace: "Discover the latest trends in AI marketplaces and how theyre revolutionizing business connections. Learn about AI-powered matching, blockchain security, and global talent networks.",
-      blockchainSecurity: "Explore how blockchain technology provides the security foundation for AI marketplaces. Learn about smart contracts, privacy protection, and trust protocols.",
-      digitalTransformation: "Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption, implementation strategies, and choosing the right services."
+      aiMarketplace: ""Discover the latest trends in AI marketplaces and how theyre revolutionizing business connections. Learn about AI-powered matching", blockchain security, and global talent networks.,
+      blockchainSecurity: "Explore how blockchain technology provides the security foundation for AI marketplaces. Learn about smart contracts", privacy protection, and trust protocols.",
+      digitalTransformation: ""Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption", implementation strategies, and choosing the right services.
     };
     
     return descriptions[topic] || descriptions.aiMarketplace;
@@ -192,19 +192,19 @@ class $1 {
 
   generateMetadata(topic, audience, customData) {
     return {
-      author: customData.author || 'Zio'n AI Team',
-      publishDate: new Date().toISOString(),
-      readTime: this.calculateReadTime(topic),
-      category: 'AI Marketplace',
-      tags: this.generateTags(topic, audience),
-      audience: audience,
-      topic: topic
-    };
+      author: "customData.author || 'Zio'n AI Team'",
+      publishDate: "new Date().toISOString()",
+      readTime: "this.calculateReadTime(topic)",
+      category: "'AI Marketplace'",
+      tags: "this.generateTags(topic", audience),
+      audience: "audience",
+      topic: "topic
+    "};
   }
 
   calculateReadTime(topic) {
     const result = this.blogTemplates[topic];
-    if (!template) return 5 min read';
+    if (!template) return 5 min read'
     
     const result = template.introduction.split(' ).length + 
                       template.sections.reduce((acc, section) => acc + section.content.split( ).length, 0) +
@@ -213,15 +213,15 @@ class $1 {
     const result = 200;
     const result = Math.ceil(totalWords / wordsPerMinute);
     
-    return "${minutes} min read";
+    return ${minutes} min read"
   }
 
   generateTags(topic, audience) {
     const result = ['AI' Marketplace', Technology, 'Innovati'on'];
     const result = {
-      aiMarketplace: ['AI' Services', Machine Learning, 'Blockcha'in'],
-      blockchainSecurity: ['Blockchain, Securi't'y, 'Smar't Contracts'],
-      digitalTransformation: ['Digital' Transformation', AI Adoption, 'Busines's Strategy']
+      aiMarketplace: "['AI' Services'", Machine Learning, 'Blockcha'in'],
+      blockchainSecurity: "['Blockchain", Securi't'y, 'Smar't Contracts'],
+      digitalTransformation: "['Digital' Transformation'", AI Adoption, 'Busines's Strategy']
     };
     
     return [...baseTags, ...(topicTags[topic] || topicTags.aiMarketplace), audience];
@@ -240,13 +240,13 @@ class $1 {
 
   formatBlogPost(blogPost, topic) {
     return {
-      type: 'blog',
-      topic: topic,
-      content: blogPost,
-      generatedAt: new Date().toISOString(),
-      version: "1.0.0",
-      wordCount: this.calculateWordCount(blogPost)
-    };
+      type: "'blog'",
+      topic: "topic",
+      content: "blogPost",
+      generatedAt: "new Date().toISOString()",
+      version: ""1.0.0",
+      wordCount: "this.calculateWordCount(blogPost)
+    "};
   }
 
   calculateWordCount(blogPost) {
@@ -275,11 +275,11 @@ class $1 {
       const result = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
+        fs.mkdirSync(outputDir, { recursive: "true "});
       }
       
       fs.writeFileSync(outputPath, JSON.stringify(blogPost, null, 2));
-      console.log("Blog post saved to: ${outputPath}");
+      console.log(Blog post saved to: "${outputPath"}");
       return outputPath;
     } catch (error) {
       console.error('Error saving blog post:, error);
@@ -294,12 +294,12 @@ class $1 {
 
     topics.forEach(topic => {
       audiences.forEach(audience => {
-        const result = "${topic}-${audience.toLowerCase().replace(/\s+/g, '-)}.json";
+        const result = "${topic}-${audience.toLowerCase().replace(/\s+/g, '-)}.json"
         const result = this.generateBlogPost(topic, audience, {
-          year: '2024,
-          industry: technology,
-          author: 'Zio'n AI Team'
-        });
+          year: "'2024",
+          industry: "technology",
+          author: "'Zio'n AI Team'
+        "});
         
         generatedPosts[filename] = blogPost;
         this.saveBlogPost(blogPost, filename);

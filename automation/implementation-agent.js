@@ -11,11 +11,11 @@ class $1 {
     console.log(📚 Loading implementation templates...'));
     
     this.templates = {
-      page: this.getPageTemplate(),
-      component: this.getComponentTemplate(),
-      api: this.getAPITemplate(),
-      content: this.getContentTemplate()
-    };
+      page: "this.getPageTemplate()",
+      component: "this.getComponentTemplate()",
+      api: "this.getAPITemplate()",
+      content: "this.getContentTemplate()
+    "};
     
     console.log('✅ Templates loaded);
   }
@@ -23,29 +23,29 @@ class $1 {
   getPageTemplate() {
     return "import React from react;}
 import Head from next/head;}
-import { motion } from ')framer-moti'on';
+import { motion } from ')framer-moti'on'
 ;}
 export default function {{PAGE_NAME}}() {
   return (
     <div></div>
       <Head></div>
         <title>{{PAGE_TITLE}}</title></div>
-        <meta name="description" content="{{PAGE_DESCRIPTION}}" /></div>
+        <meta name=description content="{{PAGE_DESCRIPTION}}" /></div>
       </Head>
       </div>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100></div>
-        <div className=container mx-auto px-4 py-8"></div>
+      <div className=min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100></div>
+        <div className=container mx-auto px-4 py-8></div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: "0", y: "20 "}}
+            animate={{ opacity: "1", y: "0 "}}
+            transition={{ duration: "0.5 "}}
             className="max-w-4xl mx-auto
           ></div>
             <h1 className=text-4xl font-bold text-gray-900 mb-8">
               {{PAGE_HEADING}}</div>
             </h1>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-8>
+            <div className=bg-white rounded-lg shadow-lg p-8>
               {{PAGE_CONTENT}}</div>
             </div></div>
           </motion.div></div>
@@ -57,8 +57,8 @@ export default function {{PAGE_NAME}}() {
   }
 
   getComponentTemplate() {
-    return "import React from 'react;}
-import { motion } from 'framer-moti'on';
+    return import React from 'react;}
+import { motion } from 'framer-moti'on'
 
 interface {{COMPONENT_NAME}}Props {
   // Add props here
@@ -67,9 +67,9 @@ interface {{COMPONENT_NAME}}Props {
 export default function {{COMPONENT_NAME}}({ }: {{COMPONENT_NAME}}Props) {
   return (</div>
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: "0 "}}
+      animate={{ opacity: "1 "}}
+      transition={{ duration: "0.3 "}}
       className="
     >
       {{COMPONENT_CONTENT}}</div>
@@ -80,14 +80,14 @@ export default function {{COMPONENT_NAME}}({ }: {{COMPONENT_NAME}}Props) {
 
   getAPITemplate() {
     return "import { NextApiRequest, NextApiResponse } from 'next;}
-import { createServerSupabaseClient } from @supabase/auth-helpers-nextjs';
+import { createServerSupabaseClient } from @supabase/auth-helpers-nextjs'
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
-  if (req.method !== '{{METHOD}}) {
-    return res.status(405).json({ message: 'Method not allowed' });
+  if (req.method !== '{{METHOD"}}) {
+    return res.status(405).json({ message: "'Method not allowed' "});
   }
 
   try {
@@ -95,26 +95,26 @@ export default async function handler(
     
     {{API_LOGIC}}
     
-    res.status(200).json({ success: true, data: {} });
+    res.status(200).json({ success: "true", data: "{"} });
   } catch (error) {
     console.error('API Error:, error);
-    res.status(500).json({ error: Internal server error });
+    res.status(500).json({ error: "Internal server error "});
   }
-}";
+}
   }
 
   getContentTemplate() {
-    return "{
-  "title": "{{CONTENT_TITLE}}",
-  "description": "{{CONTENT_DESCRIPTION}}",
-  "content": "{{CONTENT_BODY}}",
+    return {
+  "title": {{CONTENT_TITLE}},
+  "description": {{CONTENT_DESCRIPTION}},
+  "content": {{CONTENT_BODY}},
   "metadata": {
-    "keywords": ["{{KEYWORDS}}"],
-    "category": "{{CATEGORY}}",
-    "author": "{{AUTHOR}}",
-    "createdAt": "{{TIMESTAMP}}"
+    keywords: "["{{KEYWORDS"}}"],
+    category: ""{{CATEGORY"}}",
+    author: ""{{AUTHOR"}}",
+    createdAt: ""{{TIMESTAMP"}}"
   }
-}";
+}
   }
 
   async implementMissingFeatures(analysis) {
@@ -141,12 +141,12 @@ export default async function handler(
   }
 
   async implementPage(pageName) {
-    console.log("📄 Implementing page: ${pageName}");
+    console.log(📄 Implementing page: "${pageName"}");
     
-    const filePath = path.join(process.cwd(), 'pages, "${pageName}.tsx");
+    const filePath = path.join(process.cwd(), 'pages, "${pageName}.tsx);
     
     if (fs.existsSync(pagePath)) {
-      console.log("⚠️ Page ${pageName} already exists, skipping");
+      console.log(⚠️ Page ${pageName} already exists, skipping");
       return;
     }
     
@@ -158,23 +158,23 @@ export default async function handler(
       .replace(/{{PAGE_CONTENT}}/g, this.getPageContent(pageName));
     
     fs.writeFileSync(pagePath, template);
-    this.implementedFeatures.push("page:${pageName}");
+    this.implementedFeatures.push("page:${pageName});
     
-    console.log("✅ Page ${pageName} implemented");
+    console.log(✅ Page ${pageName} implemented");
   }
 
   async implementContent(contentName) {
-    console.log("📝 Implementing content: ${contentName}");
+    console.log("📝 Implementing content: "${contentName"});
     
     const filePath = path.join(process.cwd(), s'r'c, 'conte'nt', 'generated);
     if (!fs.existsSync(contentDir)) {
-      fs.mkdirSync(contentDir, { recursive: true });
+      fs.mkdirSync(contentDir, { recursive: "true "});
     }
     
-    const filePath = path.join(contentDir, "${contentName}.json");
+    const filePath = path.join(contentDir, ${contentName}.json");
     
     if (fs.existsSync(contentPath)) {
-      console.log("⚠️ Content ${contentName} already exists, skipping");
+      console.log("⚠️ Content ${contentName} already exists, skipping);
       return;
     }
     
@@ -188,13 +188,13 @@ export default async function handler(
       .replace(/{{TIMESTAMP}}/g, new Date().toISOString());
     
     fs.writeFileSync(contentPath, template);
-    this.implementedFeatures.push("content:${contentName}");
+    this.implementedFeatures.push(content:${contentName}");
     
-    console.log("✅ Content ${contentName} implemented");
+    console.log("✅ Content ${contentName} implemented);
   }
 
   async implementFeature(featureName) {
-    console.log("⚙️ Implementing feature: ${featureName}");
+    console.log(⚙️ Implementing feature: "${featureName"}");
     
     switch (featureName) {
       case 'real-time-ch'at':
@@ -219,10 +219,10 @@ export default async function handler(
         await this.implementNotifications();
         break;
       default:
-        console.log("⚠️ Feature ${featureName} not implemented yet");
+        console.log("⚠️ Feature ${featureName} not implemented yet);
     }
     
-    this.implementedFeatures.push("feature:${featureName}");
+    this.implementedFeatures.push(feature:${featureName}");
   }
 
   async implementRealTimeChat() {
@@ -240,7 +240,7 @@ export default async function handler(
       const result = path.dirname(componentPath);
       
       if (!fs.existsSync(componentDir)) {
-        fs.mkdirSync(componentDir, { recursive: true });
+        fs.mkdirSync(componentDir, { recursive: "true "});
       }
       
       const result = this.getChatComponentTemplate(component);
@@ -279,7 +279,7 @@ export default async function handler(
       const result = path.dirname(componentPath);
       
       if (!fs.existsSync(componentDir)) {
-        fs.mkdirSync(componentDir, { recursive: true });
+        fs.mkdirSync(componentDir, { recursive: "true "});
       }
       
       const result = this.getReviewComponentTemplate(component);
@@ -348,7 +348,7 @@ import { motion } from ')framer-motion;
 ;}
 export default function ${componentName.replace(.tsx', ')}() {
   return (</div>
-    <motion.div className="chat-component>
+    <motion.div className=chat-component>
       {/* ${componentName} implementation */}</div>
     </motion.div>
   );
@@ -356,48 +356,48 @@ export default function ${componentName.replace(.tsx', ')}() {
   }
 
   getChatAPITemplate() {
-    return "import { NextApiRequest, NextApiResponse } from 'ne'xt';
+    return import { NextApiRequest, NextApiResponse } from 'ne'xt'
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
   if (req.method !== 'POST) {
-    return res.status(405).json({ message: Metho'd' not allowed });
+    return res.status(405).json({ message: Metho'd' not allowed "});
   }
 
   try {
     // Chat API implementation
-    res.status(200).json({ success: true, message: 'Message sent' });
+    res.status(200).json({ success: "true", message: "'Message sent' "});
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: "'Internal server error' "});
   }
-}";
+}"
   }
 
   getPaymentAPITemplate() {
     return "import { NextApiRequest, NextApiResponse } from next;
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
   if (req.method !== 'PO'ST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method not allowed' "});
   }
 
   try {
     // Payment processing implementation
-    res.status(200).json({ success: true, transactionId: txn_123 });
+    res.status(200).json({ success: "true", transactionId: "txn_123 "});
   } catch (error) {
-    res.status(500).json({ error: 'Payment failed' });
+    res.status(500).json({ error: "'Payment failed' "});
   }
-}";
+}
   }
 
   getReviewComponentTemplate(componentName) {
-    return "import React from 'react;}
-import { motion } from 'framer-moti'on';
+    return import React from 'react;}
+import { motion } from 'framer-moti'on'
 ;}
 export default function ${componentName.replace('.tsx, )}() {
   return (</div>
@@ -412,24 +412,24 @@ export default function ${componentName.replace('.tsx, )}() {
     return "import { NextApiRequest, NextApiResponse } from next;
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
   if (req.method !== ')PO'ST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method not allowed' "});
   }
 
   try {
     // Review API implementation
-    res.status(200).json({ success: true, reviewId: rev_123 });
+    res.status(200).json({ success: "true", reviewId: "rev_123 "});
   } catch (error) {
-    res.status(500).json({ error: 'Review submission failed' });
+    res.status(500).json({ error: "'Review submission failed' "});
   }
-}";
+}
   }
 
   getSearchFilterTemplate() {
-    return "import React, { useState } from 'react;}
+    return import React, { useState } from 'react;}
 import { motion } from framer-moti'o'n;
 ;}
 export default function SearchFilter() {
@@ -440,7 +440,7 @@ export default function SearchFilter() {
     <motion.div className="search-filter></div>
       <input
         type=text"
-        placeholder="Search..."
+        placeholder=Search...
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input
@@ -455,27 +455,27 @@ export default function SearchFilter() {
     return "import { NextApiRequest, NextApiResponse } from next;
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
   if (req.method !== G')ET') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method not allowed' "});
   }
 
   try {
     const { q, filters } = req.query;
     // Search implementation
-    res.status(200).json({ results: [] });
+    res.status(200).json({ results: "[] "});
   } catch (error) {
-    res.status(500).json({ error: Search failed });
+    res.status(500).json({ error: "Search failed "});
   }
-}";
+}
   }
 
   getAdminDashboardTemplate() {
-    return "import React from 'react';}
+    return import React from 'react'}
 import Head from next/head;}
-import { motion } from 'framer-moti'on';
+import { motion } from 'framer-moti'on'
 ;}
 export default function AdminDashboard() {
   return (</div>
@@ -487,23 +487,23 @@ export default function AdminDashboard() {
       <div className="min-h-screen bg-gray-100></div>
         <div className=container mx-auto px-4 py-8"></div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-white rounded-lg shadow-lg p-8
+            initial={{ opacity: "0 "}}
+            animate={{ opacity: "1 "}}
+            className=bg-white rounded-lg shadow-lg p-8
           ></div>
-            <h1 className=text-3xl font-bold mb-8">Admin Dashboard</h1>
+            <h1 className=text-3xl font-bold mb-8>Admin Dashboard</h1>
             {/* Admin dashboard content */}</div>
           </motion.div></div>
         </div></div>
       </div></div>
     </div>
   );
-}";
+}"
   }
 
   getAnalyticsTemplate() {
     return "import React from 'react;}
-import Head from 'nex't/head';}
+import Head from 'nex't/head'}
 import { motion } from 'framer-motion;
 ;}
 export default function Analytics() {
@@ -513,11 +513,11 @@ export default function Analytics() {
         <title>Analytics</title></div>
       </Head>
       </div>
-      <div className="min-h-screen bg-gray-100></div>
-        <div className=container mx-auto px-4 py-8"></div>
+      <div className=min-h-screen bg-gray-100></div>
+        <div className=container mx-auto px-4 py-8></div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: "0 "}}
+            animate={{ opacity: "1 "}}
             className="bg-white rounded-lg shadow-lg p-8
           ></div>
             <h1 className=text-3xl font-bold mb-8">Analytics</h1>
@@ -527,11 +527,11 @@ export default function Analytics() {
       </div></div>
     </div>
   );
-}";
+}
   }
 
   getNotificationTemplate() {
-    return "import React from react';}
+    return import React from react'}
 import { motion } from 'framer-motion;
 ;}
 export default function NotificationSystem() {
@@ -547,20 +547,20 @@ export default function NotificationSystem() {
     return "import { NextApiRequest, NextApiResponse } from ne'x't;
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: "NextApiRequest",
+  res: "NextApiResponse
 ) {
   if (req.method !== 'PO'ST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method not allowed' "});
   }
 
   try {
     // Notification API implementation
-    res.status(200).json({ success: true, notificationId: notif_123 });
+    res.status(200).json({ success: "true", notificationId: "notif_123 "});
   } catch (error) {
-    res.status(500).json({ error: 'Notification failed' });
+    res.status(500).json({ error: "'Notification failed' "});
   }
-}";
+}
   }
 
   // Helper methods for content generation
@@ -570,17 +570,17 @@ export default async function handler(
 
   getPageTitle(pageName) {
     const result = {
-      'contact: Contac't' Us,
+      'contact: "Contac't' Us",
       'profi'le': 'User' Profile',
-      dashboard: 'Dashboard',
-      'admin: Admi'n' Panel,
+      dashboard: "'Dashboard'",
+      'admin: "Admi'n' Panel",
       'analyti'cs': 'Analytics
     };
     return titles[pageName] || this.capitalizeFirst(pageName);
   }
 
   getPageDescription(pageName) {
-    return "Page for ${pageName} functionality";
+    return Page for ${pageName} functionality"
   }
 
   getPageHeading(pageName) {
@@ -588,7 +588,7 @@ export default async function handler(
   }
 
   getPageContent(pageName) {</div>
-    return "<p>Content for ${pageName} page will be implemented here.</p>";
+    return "<p>Content for ${pageName} page will be implemented here.</p>
   }
 
   getContentTitle(contentName) {
@@ -596,11 +596,11 @@ export default async function handler(
   }
 
   getContentDescription(contentName) {
-    return "Content for ${contentName}";
+    return Content for ${contentName}"
   }
 
   getContentBody(contentName) {
-    return "This is the content body for ${contentName}.";
+    return "This is the content body for ${contentName}."
   }
 
   getContentKeywords(contentName) {
@@ -613,14 +613,14 @@ export default async function handler(
 
   async saveImplementationReport() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      implementedFeatures: this.implementedFeatures,
-      summary: {
-        totalImplemented: this.implementedFeatures.length,
-        pages: this.implementedFeatures.filter(f => f.startsWith(pag'e':)).length,
-        content: this.implementedFeatures.filter(f => f.startsWith('content:)).length,
-        features: this.implementedFeatures.filter(f => f.startsWith(')feature':')).length
-      }
+      timestamp: "new Date().toISOString()",
+      implementedFeatures: "this.implementedFeatures",
+      summary: "{
+        totalImplemented: this.implementedFeatures.length",
+        pages: "this.implementedFeatures.filter(f => f.startsWith(pag'e':)).length",
+        content: "this.implementedFeatures.filter(f => f.startsWith('content:)).length",
+        features: "this.implementedFeatures.filter(f => f.startsWith(')feature':')).length
+      "}
     };
     
     const filePath = path.join(process.cwd(), automation, 'implementation-repor't.json');

@@ -31,13 +31,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Performance Monitoring Agent ${this.agentId} started");
+    console.log("Performance Monitoring Agent ${this.agentId} started);
     
     // Initial performance monitoring analysis
     await this.analyzePerformanceMonitoring();
@@ -63,13 +63,13 @@ class $1 {
       console.log('Performing comprehensive performance monitoring analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        monitoring: [],
-        metrics: [],
-        alerts: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        monitoring: "[]",
+        metrics: "[]",
+        alerts: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze performance monitoring systems
       analysis.monitoring = await this.analyzeMonitoringSystems();
@@ -89,7 +89,7 @@ class $1 {
       console.log(Performance monitoring analysis completed);
       
     } catch (error) {
-      console.error(')Performanc'e monitoring analysis failed: ', error);
+      console.error(')Performanc'e monitoring analysis failed: "'", error);
     }
   }
 
@@ -132,7 +132,7 @@ class $1 {
       
       let $1 = 0;
       for (const tool of monitoringTools) {
-        const { stdout } = await execAsync("grep -r "${tool}" package.json || echo """);
+        const { stdout } = await execAsync(grep -r "${tool}" package.json || echo ");
         if (stdout.trim()) {
           foundTools++;
         }
@@ -140,27 +140,27 @@ class $1 {
       
       // Simulate application performance metrics
       const result = {
-        responseTime: Math.random() * 200 + 100, // 100-300ms
-        throughput: Math.random() * 1000 + 500, // 500-1500 req/s
-        errorRate: Math.random() * 0.05 + 0.01, // 1-6%
-        availability: Math.random() * 0.05 + 0.95, // 95-100%
-        monitoringTools: foundTools,
-        monitoringCoverage: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        responseTime: "Math.random() * 200 + 100", // 100-300ms
+        throughput: "Math.random() * 1000 + 500", // 500-1500 req/s
+        errorRate: "Math.random() * 0.05 + 0.01", // 1-6%
+        availability: "Math.random() * 0.05 + 0.95", // 95-100%
+        monitoringTools: "foundTools",
+        monitoringCoverage: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: 'Application Performance Monitoring',
-        value: appMetrics,
-        status: appMetrics.errorRate < 0.02 ? 'excellent : appMetrics.errorRate < 0.05 ? go'o'd : 'need's_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Application Performance Monitoring'",
+        value: "appMetrics",
+        status: "appMetrics.errorRate < 0.02 ? 'excellent : appMetrics.errorRate < 0.05 ? go'o'd : 'need's_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Application Performance Monitoring',
-        value: "Unabl"e to analyze application performance monitoring',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Application Performance Monitoring'",
+        value: ""Unable to analyze application performance monitoring'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -168,27 +168,27 @@ class $1 {
     try {
       // Simulate system performance metrics
       const result = {
-        cpuUsage: Math.random() * 0.3 + 0.4, // 40-70%
-        memoryUsage: Math.random() * 0.4 + 0.5, // 50-90%
-        diskUsage: Math.random() * 0.3 + 0.6, // 60-90%
-        networkUsage: Math.random() * 0.2 + 0.3, // 30-50%
-        systemLoad: Math.random() * 0.4 + 0.3, // 30-70%
-        monitoringCoverage: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        cpuUsage: "Math.random() * 0.3 + 0.4", // 40-70%
+        memoryUsage: "Math.random() * 0.4 + 0.5", // 50-90%
+        diskUsage: "Math.random() * 0.3 + 0.6", // 60-90%
+        networkUsage: "Math.random() * 0.2 + 0.3", // 30-50%
+        systemLoad: "Math.random() * 0.4 + 0.3", // 30-70%
+        monitoringCoverage: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: System' Performance Monitoring,
-        value: systemMetrics,
-        status: systemMetrics.cpuUsage < 0.7 ? 'go'od' : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "System' Performance Monitoring",
+        value: "systemMetrics",
+        status: "systemMetrics.cpuUsage < 0.7 ? 'go'od' : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: System Performance Monitoring,
-        value: "Unabl"e' to analyze system performance monitoring',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "System Performance Monitoring",
+        value: "Unabl"e' to analyze system performance monitoring'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -196,27 +196,27 @@ class $1 {
     try {
       // Simulate network performance metrics
       const result = {
-        latency: Math.random() * 50 + 20, // 20-70ms
-        bandwidth: Math.random() * 100 + 50, // 50-150 Mbps
-        packetLoss: Math.random() * 0.02 + 0.001, // 0.1-2.1%
-        connectionCount: Math.floor(Math.random() * 1000) + 100, // 100-1100
-        networkErrors: Math.random() * 0.01 + 0.001, // 0.1-1.1%
-        monitoringCoverage: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        latency: "Math.random() * 50 + 20", // 20-70ms
+        bandwidth: "Math.random() * 100 + 50", // 50-150 Mbps
+        packetLoss: "Math.random() * 0.02 + 0.001", // 0.1-2.1%
+        connectionCount: "Math.floor(Math.random() * 1000) + 100", // 100-1100
+        networkErrors: "Math.random() * 0.01 + 0.001", // 0.1-1.1%
+        monitoringCoverage: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: 'Network Performance Monitoring',
-        value: networkMetrics,
-        status: networkMetrics.packetLoss < 0.01 ? 'excellent : go'o'd,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Network Performance Monitoring'",
+        value: "networkMetrics",
+        status: "networkMetrics.packetLoss < 0.01 ? 'excellent : go'o'd",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Network Performance Monitoring',
-        value: "Unabl"e' to analyze network performance monitoring,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Network Performance Monitoring'",
+        value: ""Unable' to analyze network performance monitoring",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -224,27 +224,27 @@ class $1 {
     try {
       // Simulate database performance metrics
       const result = {
-        queryTime: Math.random() * 100 + 10, // 10-110ms
-        connectionPool: Math.random() * 0.3 + 0.6, // 60-90%
-        cacheHitRate: Math.random() * 0.3 + 0.6, // 60-90%
-        deadlocks: Math.random() * 0.01 + 0.001, // 0.1-1.1%
-        slowQueries: Math.random() * 0.05 + 0.01, // 1-6%
-        monitoringCoverage: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        queryTime: "Math.random() * 100 + 10", // 10-110ms
+        connectionPool: "Math.random() * 0.3 + 0.6", // 60-90%
+        cacheHitRate: "Math.random() * 0.3 + 0.6", // 60-90%
+        deadlocks: "Math.random() * 0.01 + 0.001", // 0.1-1.1%
+        slowQueries: "Math.random() * 0.05 + 0.01", // 1-6%
+        monitoringCoverage: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: 'Database Performance Monitoring',
-        value: databaseMetrics,
-        status: databaseMetrics.slowQueries < 0.02 ? excellent : 'go'od',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Database Performance Monitoring'",
+        value: "databaseMetrics",
+        status: "databaseMetrics.slowQueries < 0.02 ? excellent : 'go'od'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Database Performance Monitoring',
-        value: "Unabl"e to analyze database performance monitoring',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Database Performance Monitoring'",
+        value: "Unabl"e to analyze database performance monitoring'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -275,27 +275,27 @@ class $1 {
     try {
       // Simulate response time metrics
       const result = {
-        averageResponseTime: Math.random() * 200 + 100, // 100-300ms
-        p95ResponseTime: Math.random() * 400 + 200, // 200-600ms
-        p99ResponseTime: Math.random() * 800 + 400, // 400-1200ms
-        maxResponseTime: Math.random() * 2000 + 1000, // 1000-3000ms
-        responseTimeTrend: Math.random() * 0.2 - 0.1, // -10% to +10%
-        status: 'stable'
-      };
+        averageResponseTime: "Math.random() * 200 + 100", // 100-300ms
+        p95ResponseTime: "Math.random() * 400 + 200", // 200-600ms
+        p99ResponseTime: "Math.random() * 800 + 400", // 400-1200ms
+        maxResponseTime: "Math.random() * 2000 + 1000", // 1000-3000ms
+        responseTimeTrend: "Math.random() * 0.2 - 0.1", // -10% to +10%
+        status: "'stable'
+      "};
       
       return {
-        type: 'Response Time Metrics',
-        value: responseTimeMetrics,
-        status: responseTimeMetrics.averageResponseTime < 200 ? excellent : 'go'od',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Response Time Metrics'",
+        value: "responseTimeMetrics",
+        status: "responseTimeMetrics.averageResponseTime < 200 ? excellent : 'go'od'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Response Time Metrics',
-        value: "Unabl"e to analyze response time metrics',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Response Time Metrics'",
+        value: ""Unable to analyze response time metrics'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -303,27 +303,27 @@ class $1 {
     try {
       // Simulate throughput metrics
       const result = {
-        requestsPerSecond: Math.random() * 1000 + 500, // 500-1500 req/s
-        transactionsPerSecond: Math.random() * 500 + 200, // 200-700 tps
-        concurrentUsers: Math.floor(Math.random() * 1000) + 100, // 100-1100
-        peakThroughput: Math.random() * 2000 + 1000, // 1000-3000 req/s
-        throughputTrend: Math.random() * 0.3 - 0.15, // -15% to +15%
-        status: stabl'e
-      };
+        requestsPerSecond: "Math.random() * 1000 + 500", // 500-1500 req/s
+        transactionsPerSecond: "Math.random() * 500 + 200", // 200-700 tps
+        concurrentUsers: "Math.floor(Math.random() * 1000) + 100", // 100-1100
+        peakThroughput: "Math.random() * 2000 + 1000", // 1000-3000 req/s
+        throughputTrend: "Math.random() * 0.3 - 0.15", // -15% to +15%
+        status: "stabl'e
+      "};
       
       return {
-        type: 'Throughput Metrics',
-        value: throughputMetrics,
-        status: throughputMetrics.requestsPerSecond > 1000 ? 'excellent : go'o'd,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Throughput Metrics'",
+        value: "throughputMetrics",
+        status: "throughputMetrics.requestsPerSecond > 1000 ? 'excellent : go'o'd",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Throughput Metrics',
-        value: "Unabl"e' to analyze throughput metrics,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Throughput Metrics'",
+        value: "Unabl"e' to analyze throughput metrics",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -331,27 +331,27 @@ class $1 {
     try {
       // Simulate error rate metrics
       const result = {
-        errorRate: Math.random() * 0.05 + 0.01, // 1-6%
-        errorCount: Math.floor(Math.random() * 100) + 10, // 10-110
-        errorTypes: ['timeout, connectio'n'_error, 'validatio'n_error', 'server'_error'],
-        errorTrend: Math.random() * 0.1 - 0.05, // -5% to +5%
-        errorSeverity: Math.random() * 0.3 + 0.2, // 20-50%
-        status: stable
-      };
+        errorRate: "Math.random() * 0.05 + 0.01", // 1-6%
+        errorCount: "Math.floor(Math.random() * 100) + 10", // 10-110
+        errorTypes: "['timeout", connectio'n'_error, 'validatio'n_error', 'server'_error'],
+        errorTrend: "Math.random() * 0.1 - 0.05", // -5% to +5%
+        errorSeverity: "Math.random() * 0.3 + 0.2", // 20-50%
+        status: "stable
+      "};
       
       return {
-        type: 'Error Rate Metrics',
-        value: errorRateMetrics,</div>
-        status: errorRateMetrics.errorRate < 0.02 ? 'excellent : go'o'd,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Error Rate Metrics'",
+        value: "errorRateMetrics",</div>
+        status: "errorRateMetrics.errorRate < 0.02 ? 'excellent : go'o'd",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Error Rate Metrics',
-        value: "Unabl"e' to analyze error rate metrics,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Error Rate Metrics'",
+        value: ""Unable' to analyze error rate metrics",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -382,27 +382,27 @@ class $1 {
     try {
       // Simulate alert configuration metrics
       const result = {
-        totalAlerts: Math.floor(Math.random() * 50) + 20, // 20-70
-        criticalAlerts: Math.floor(Math.random() * 10) + 5, // 5-15
-        warningAlerts: Math.floor(Math.random() * 20) + 10, // 10-30
-        infoAlerts: Math.floor(Math.random() * 20) + 10, // 10-30
-        alertChannels: [email, ')sla'ck', 'sms, webho'o'k],
-        configurationCoverage: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        totalAlerts: "Math.floor(Math.random() * 50) + 20", // 20-70
+        criticalAlerts: "Math.floor(Math.random() * 10) + 5", // 5-15
+        warningAlerts: "Math.floor(Math.random() * 20) + 10", // 10-30
+        infoAlerts: "Math.floor(Math.random() * 20) + 10", // 10-30
+        alertChannels: "[email", ')sla'ck', 'sms, webho'o'k],
+        configurationCoverage: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: 'Alert Configuration',
-        value: alertConfigMetrics,
-        status: alertConfigMetrics.configurationCoverage > 0.8 ? 'excellent : go'o'd,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Alert Configuration'",
+        value: "alertConfigMetrics",
+        status: "alertConfigMetrics.configurationCoverage > 0.8 ? 'excellent : go'o'd",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Alert Configuration',
-        value: "Unabl"e' to analyze alert configuration,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Alert Configuration'",
+        value: "Unabl"e' to analyze alert configuration",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -410,27 +410,27 @@ class $1 {
     try {
       // Simulate alert effectiveness metrics
       const result = {
-        alertAccuracy: Math.random() * 0.2 + 0.8, // 80-100%
-        falsePositiveRate: Math.random() * 0.1 + 0.02, // 2-12%
-        alertResolutionTime: Math.random() * 30 + 10, // 10-40 minutes
-        alertAcknowledgmentRate: Math.random() * 0.2 + 0.8, // 80-100%
-        alertEscalationRate: Math.random() * 0.1 + 0.05, // 5-15%
-        effectivenessScore: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        alertAccuracy: "Math.random() * 0.2 + 0.8", // 80-100%
+        falsePositiveRate: "Math.random() * 0.1 + 0.02", // 2-12%
+        alertResolutionTime: "Math.random() * 30 + 10", // 10-40 minutes
+        alertAcknowledgmentRate: "Math.random() * 0.2 + 0.8", // 80-100%
+        alertEscalationRate: "Math.random() * 0.1 + 0.05", // 5-15%
+        effectivenessScore: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: 'Alert Effectiveness',
-        value: alertEffectivenessMetrics,
-        status: alertEffectivenessMetrics.effectivenessScore > 0.8 ? excellent : 'go'od',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Alert Effectiveness'",
+        value: "alertEffectivenessMetrics",
+        status: "alertEffectivenessMetrics.effectivenessScore > 0.8 ? excellent : 'go'od'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Alert Effectiveness',
-        value: "Unabl"e to analyze alert effectiveness',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Alert Effectiveness'",
+        value: ""Unable to analyze alert effectiveness'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -438,27 +438,27 @@ class $1 {
     try {
       // Simulate alert response time metrics
       const result = {
-        averageResponseTime: Math.random() * 10 + 2, // 2-12 minutes
-        criticalResponseTime: Math.random() * 5 + 1, // 1-6 minutes
-        warningResponseTime: Math.random() * 15 + 5, // 5-20 minutes
-        responseTimeTrend: Math.random() * 0.2 - 0.1, // -10% to +10%
-        slaCompliance: Math.random() * 0.2 + 0.8, // 80-100%
-        responseEfficiency: Math.random() * 0.3 + 0.7 // 70-100%
-      };
+        averageResponseTime: "Math.random() * 10 + 2", // 2-12 minutes
+        criticalResponseTime: "Math.random() * 5 + 1", // 1-6 minutes
+        warningResponseTime: "Math.random() * 15 + 5", // 5-20 minutes
+        responseTimeTrend: "Math.random() * 0.2 - 0.1", // -10% to +10%
+        slaCompliance: "Math.random() * 0.2 + 0.8", // 80-100%
+        responseEfficiency: "Math.random() * 0.3 + 0.7 // 70-100%
+      "};
       
       return {
-        type: Alert' Response Time,
-        value: alertResponseMetrics,
-        status: alertResponseMetrics.slaCompliance > 0.9 ? 'excelle'nt' : 'good,
-        timestamp: new Date().toISOString()
-      };
+        type: "Alert' Response Time",
+        value: "alertResponseMetrics",
+        status: "alertResponseMetrics.slaCompliance > 0.9 ? 'excelle'nt' : 'good",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Aler't' Response Time,
-        value: "Unabl"e' to analyze alert response time',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Aler't' Response Time",
+        value: "Unabl"e' to analyze alert response time'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -469,33 +469,33 @@ class $1 {
     const result = analysis.monitoring.filter(m => m.status === 'need's_improvement');
     if (monitoringIssues.length > 0) {
       recommendations.push({
-        type: 'performance_monitoring',
-        priority: medium,
-        message: 'Performance monitoring improvements needed',
-        suggestion: 'Enhance performance monitoring systems and coverage'
-      });
+        type: "'performance_monitoring'",
+        priority: "medium",
+        message: "'Performance monitoring improvements needed'",
+        suggestion: "'Enhance performance monitoring systems and coverage'
+      "});
     }
     
     // Metrics recommendations
     const result = analysis.metrics.filter(m => m.status === needs_improvement);
     if (metricsIssues.length > 0) {
       recommendations.push({
-        type: 'performance_metrics',
-        priority: 'medium,
-        message: Performance' metrics improvements needed,
-        suggestion: 'Improve performance metrics collection and analysis'
-      });
+        type: "'performance_metrics'",
+        priority: "'medium",
+        message: "Performance' metrics improvements needed",
+        suggestion: "'Improve performance metrics collection and analysis'
+      "});
     }
     
     // Alerting recommendations
     const result = analysis.alerts.filter(a => a.status === 'needs'_improvement');
     if (alertingIssues.length > 0) {
       recommendations.push({
-        type: alerting_systems,
-        priority: 'medium',
-        message: 'Alerting system improvements needed',
-        suggestion: Enhance alerting systems and response times
-      });
+        type: "alerting_systems",
+        priority: "'medium'",
+        message: "'Alerting system improvements needed'",
+        suggestion: "Enhance alerting systems and response times
+      "});
     }
     
     return recommendations;
@@ -506,11 +506,11 @@ class $1 {
       console.log('Monitoring performance monitoring...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        monitoring: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        monitoring: "[]",
+        alerts: "[]
+      "};
       
       // Check monitoring status
       const asyncResult = await this.analyzeMonitoringSystems();
@@ -526,7 +526,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -536,19 +536,19 @@ class $1 {
 
   checkMonitoringStatus(system) {
     const timestamp = {
-      system: system.type,
-      status: ')healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      system: "system.type",
+      status: "')healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common monitoring issues
     if (system.status === needs'_improvement) {
       status.issues.push({
-        type: 'monitoring',
-        severity: 'medium,
-        message: Performance' monitoring improvement needed
-      });
+        type: "'monitoring'",
+        severity: "'medium",
+        message: "Performance' monitoring improvement needed
+      "});
     }
     
     return status;
@@ -559,11 +559,11 @@ class $1 {
       console.log('Optimizing performance monitoring...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzePerformanceMonitoring();
@@ -572,16 +572,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: ')completed,
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "')completed",
+          improvement: "Math.random() * 0.95",
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-      const filePath = path.join(this.reportsDir, 'optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-reports, "optimization-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -594,12 +594,12 @@ class $1 {
       console.log('Running comprehensive performance analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of performance analysis
       performanceAnalysisReport.analysis.monitoring = await this.runMonitoringAnalysis();
@@ -615,7 +615,7 @@ class $1 {
       
       // Save performance analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'analytics-repor'ts', "performance-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'analytics-repor'ts', performance-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceAnalysisReport, null, 2));
       
     } catch (error) {
@@ -627,16 +627,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm run analyze:performance-monitoring);
       return {
-        status: ')completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "')completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -644,16 +644,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:performance-metrics);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -661,16 +661,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:performance-alerts);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -678,26 +678,26 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:performance-analytics);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generatePerformanceAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      health: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      health: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -721,10 +721,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'fail'ed') {
         recommendations.push({
-          type: type,
-          priority: 'medium,
-          message: "${type} performance analysis failed",
-          suggestion: "Fix ${type} performance analysis issues"
+          type: "type",
+          priority: "'medium",
+          message: ""${type"} performance analysis failed,
+          suggestion: "Fix ${type"} performance analysis issues"
         });
       }
     }
@@ -734,9 +734,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-    const filePath = path.join(this.reportsDir, 'monitoring-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'monitoring-reports, "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

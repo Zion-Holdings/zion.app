@@ -5,11 +5,11 @@ function fixSyntaxErrors(content) {
   let $1 = content;
   
   // Fix import statements
-  fixed = fixed.replace(/import type \{ NextPage \} from "next";/g, 'import type { NextPage } from "next";');
-  fixed = fixed.replace(/import type \{ AppProps \} from ";next\/app";/g, 'import type { AppProps } from ";next/app";');
-  fixed = fixed.replace(/import Head from ";next\/head";/g, 'import Head from ";next/head";');
-  fixed = fixed.replace(/import Link from ";next\/link";/g, 'import Link from ";next/link";');
-  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";";/g, 'import { useState, useEffect, useMemo } from "react";";');
+  fixed = fixed.replace(/import type \{ NextPage \} from "next/g, 'import type { NextPage } from next"');
+  fixed = fixed.replace(/import type \{ AppProps \} from "next\/app/g, 'import type { AppProps } from next/app"');
+  fixed = fixed.replace(/import Head from "next\/head/g, 'import Head from next/head"');
+  fixed = fixed.replace(/import Link from "next\/link/g, 'import Link from next/link"');
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react/g, 'import { useState, useEffect, useMemo } from "react"');
   
   // Fix component declarations
   fixed = fixed.replace(/const \w+: NextPage = \(\) => {/g, 'const $1: NextPage = () => {');
@@ -18,11 +18,11 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/interface \w+ \{/g, 'interface $1 {');
   
   // Fix string literals in object properties
-  fixed = fixed.replace(/key: ""([^"]+)'/g, 'key: ""$1"');
-  fixed = fixed.replace(/value: ""([^"]+)'/g, 'value: ""$1"');
+  fixed = fixed.replace(/key: ""([^"]+)'/g", 'key: "$1"');
+  fixed = fixed.replace(/value: "([^]+)'/g", 'value: """$1');
   
   // Fix array and object declarations
-  fixed = fixed.replace(/const \w+ = \[/g, 'const $1 = [');
+  fixed = fixed.replace(/const \w+ = \[/g", 'const $1 = [');
   fixed = fixed.replace(/const \w+ = \{/g, 'const $1 = {');
   
   // Fix function declarations
@@ -36,7 +36,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/<\/(\w+)>/g, '</$1>');
   
   // Fix template literals
-  fixed = fixed.replace(/"([^"]+)"/g, '"$1"');
+  fixed = fixed.replace(/([^"]+)"/g, '$1');
   
   // Fix object property access
   fixed = fixed.replace(/\.(\w+)/g, '.$1');
@@ -69,10 +69,10 @@ function fixSyntaxErrors(content) {
   // Fix switch statements
   fixed = fixed.replace(/switch \(/g, 'switch (');
   fixed = fixed.replace(/case /g, 'case ');
-  fixed = fixed.replace(/default:/g, 'default: "")";
+  fixed = fixed.replace(/default:/g, 'default: """)
   
   // Fix class declarations
-  fixed = fixed.replace(/class \w+ extends /g, 'class $1 extends ');
+  fixed = fixed.replace(/class \w+ extends /g", 'class $1 extends ');
   fixed = fixed.replace(/class \w+ \{/g, 'class $1 {');
   
   // Fix method declarations
@@ -130,12 +130,12 @@ function processFile(filePath) {
     
     if (content !== fixedContent) {
       fs.writeFileSync(filePath, fixedContent, 'utf8');
-      console.log("Fixed: ${filePath}");
+      console.log(Fixed: "${filePath"}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }

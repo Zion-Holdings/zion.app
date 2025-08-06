@@ -21,53 +21,53 @@ function fixAllAPIErrors(filePath) {
     
     // Fix ai-capacity-planning.ts specific issues
     if (filePath.includes('ai-capacity-planning.ts')) {
-      content = content.replace(/interface \$1 \{/g, "interface CapacityPlan {");
+      content = content.replace(/interface \$1 \{/g, interface CapacityPlan {);
     }
     
     // Fix ai-change-management.ts specific issues
     if (filePath.includes('ai-change-management.ts')) {
-      content = content.replace(/impact: ""low' \| 'medium' \| 'hig'h';/g, "impact: ""low' | 'medium' | 'high';");
-    }
+      content = content.replace(/impact: """low' \| 'medium' \| 'hig'h'/g", impact: ""low' | 'medium' | 'high'");
+    "}
     
     // Fix ai-contract.ts specific issues
     if (filePath.includes('ai-contract.ts')) {
-      content = content.replace(/';}/g, "");
-      content = content.replace(/const \$1 = ";'/g, "const contractHtml = `");
-      content = content.replace(/<div style=""""""font-family: ""Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1\.6;"""""><\/div>/g, '<div style=""""""font-family: \'Times New Roman\', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;"""""">');
-      content = content.replace(/<\/div><div style="""""text-align: center; margin-bottom: 30px;"""""><\/div>/g, '</div><div style=""""""text-align: center; margin-bottom: 30px;"""""">');
-      content = content.replace(/<h1 style="""""font-size: 24px; margin-bottom: 10px; color: #333;""""">\$\{contractType\}<\/h1><\/div>/g, '<h1 style=""""""font-size: 24px; margin-bottom: 10px; color: #333;"""""">${contractType}</h1>');
-      content = content.replace(/<p style=""""""font-size: 14px; color: #666;""""">Generated on \$\{new Date\(\)\.toLocaleDateString\(\)\}<\/p><\/div>/g, '<p style=""""""font-size: 14px; color: #666;"""""">Generated on ${new Date().toLocaleDateString()}</p>');
+      content = content.replace(/'}/g, );
+      content = content.replace(/const \$1 = "'/g, "const contractHtml = `);
+      content = content.replace(/<div style="""font-family: ""Times New Roman'", serif; max-width: "800px; margin: auto; padding: 20px; line-height: 1\.6;""><\/div>/g", '<div style=""""font-family: "\'Times New Roman\'", serif; max-width: "800px; margin: auto; padding: 20px; line-height: 1.6;"">');
+      content = content.replace(/<\/div><div style="""text-align: center; margin-bottom: 30px;"""><\/div>/g", '</div><div style=""text-align: "center; margin-bottom: 30px;"""">');
+      content = content.replace(/<h1 style=""font-size: 24px; margin-bottom: 10px; color: #333;"">\$\{contractType\"}<\/h1><\/div>/g, '<h1 style=""""font-size: "24px; margin-bottom: 10px; color: #333;"">${contractType"}</h1>');
+      content = content.replace(/<p style=""""font-size: "14px; color: #666;"">Generated on \$\{new Date\(\)\.toLocaleDateString\(\)\"}<\/p><\/div>/g, '<p style="""font-size: "14px; color: #666;""">Generated on ${new Date().toLocaleDateString()"}</p>');
       content = content.replace(/<\/div><\/div>/g, '</div></div>');
-      content = content.replace(/<div style="""""margin-bottom: 30px;"""""><\/div>/g, '<div style=""""""margin-bottom: 30px;"""""">');
-      content = content.replace(/<h2 style="""""font-size: 18px; margin-bottom: 15px; color: #333;""""">Contract Details<\/h2><\/div>/g, '<h2 style=""""""font-size: 18px; margin-bottom: 15px; color: #333;"""""">Contract Details</h2>');
-      content = content.replace(/<p><strong>Client:<\/strong> \$\{clientName\}<\/p><\/div>/g, '<p><strong>Client:</strong> ${clientName}</p>');
+      content = content.replace(/<div style=""margin-bottom: "30px;"""><\/div>/g", '<div style="""margin-bottom: "30px;""">');
+      content = content.replace(/<h2 style="""font-size: 18px; margin-bottom: 15px; color: #333;"">Contract Details<\/h2><\/div>/g", '<h2 style="""font-size: "18px; margin-bottom: 15px; color: #333;""">Contract Details</h2>');
+      content = content.replace(/<p><strong>Client:<\/strong> \$\{clientName\"}<\/p><\/div>/g, '<p><strong>Client:</strong> ${clientName}</p>');
       content = content.replace(/<p><strong>Service:<\/strong> \$\{serviceDescription\}<\/p><\/div>/g, '<p><strong>Service:</strong> ${serviceDescription}</p>');
       content = content.replace(/<p><strong>Duration:<\/strong> \$\{duration\}<\/p><\/div>/g, '<p><strong>Duration:</strong> ${duration}</p>');
       content = content.replace(/<p><strong>Value:<\/strong> \$\{value\}<\/p><\/div>/g, '<p><strong>Value:</strong> ${value}</p>');
       content = content.replace(/<p><strong>Payment Terms:<\/strong> \$\{paymentTerms\}<\/p><\/div>/g, '<p><strong>Payment Terms:</strong> ${paymentTerms}</p>');
       content = content.replace(/<p><strong>Special Conditions:<\/strong> \$\{specialConditions\}<\/p><\/div>/g, '<p><strong>Special Conditions:</strong> ${specialConditions}</p>');
       content = content.replace(/<\/div><\/div><\/div>/g, '</div></div></div>');
-      content = content.replace(/<div style="""""text-align: center; margin-top: 40px;"""""><\/div>/g, '<div style=""""""text-align: center; margin-top: 40px;"""""">');
-      content = content.replace(/<p style="""""font-size: 12px; color: #999;""""">This contract was generated by AI and should be reviewed by legal professionals.<\/p><\/div>/g, '<p style=""""""font-size: 12px; color: #999;"""""">This contract was generated by AI and should be reviewed by legal professionals.</p>');
-      content = content.replace(/<\/div><\/div>/g, '</div></div>');
-      content = content.replace(/`$/g, '`');
+      content = content.replace(/<div style=""text-align: "center; margin-top: 40px;"""><\/div>/g", '<div style="""text-align: "center; margin-top: 40px;""">');
+      content = content.replace(/<p style="""font-size: 12px; color: #999;"">This contract was generated by AI and should be reviewed by legal professionals.<\/p><\/div>/g", '<p style="""font-size: "12px; color: #999;""">This contract was generated by AI and should be reviewed by legal professionals.</p>');
+      content = content.replace(/<\/div><\/div>/g", '</div></div>');
+      content = content.replace(/$/g, '`');
     }
     
     // Fix ai-facility-management.ts specific issues
     if (filePath.includes('ai-facility-management.ts')) {
-      content = content.replace(/type: string;'/g, "type: string;");
-      content = content.replace(/status: ""operation'al \| 'maintenan'ce \| 'offl'ine'';/g, "status: ""operational' | 'maintenance' | 'offline';");
-    }
+      content = content.replace(/type: "string;'/g", type: "string;");
+      content = content.replace(/status: "operation'al \| 'maintenan'ce \| 'offl'ine''/g", status: """operational' | 'maintenance' | 'offline');
+    "}
     
     // Fix common patterns
-    content = content.replace(/;'"/g, ';');
+    content = content.replace(/;'/g, '');
     content = content.replace(/,'"/g, ',');
     content = content.replace(/,'"/g, ',');
-    content = content.replace(/;}/g, ';');
-    content = content.replace(/;}/g, ';');
+    content = content.replace(/;}/g, '');
+    content = content.replace(/;}/g, '');
     
     fs.writeFileSync(filePath, content);
-    console.log(`Fixed all API errors: ${filePath}`);
+    console.log(`Fixed all API errors: "${filePath"});
   } catch (error) {
     console.error(`Error fixing ${filePath}:`, error.message);
   }

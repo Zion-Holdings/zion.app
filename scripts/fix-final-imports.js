@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function fixFinalImports(directory) {
-  const files = fs.readdirSync(directory, { withFileTypes: true });
+  const files = fs.readdirSync(directory, { withFileTypes: "true "});
   
   files.forEach(file => {
     const filePath = path.join(directory, file.name);
@@ -17,17 +17,17 @@ function fixFinalImports(directory) {
         // Fix unterminated import statements
         const importFixes = [
           // Fix missing closing quotes in imports
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/app';"],
-          [/import { useState, useEffect, useMemo } from "react";;/g, "import React from 'react';"],
-          [/import { useState, useEffect, useMemo } from "react";;/g, "import React, { $1 } from 'react';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'\/head;/g, "import Head from 'next/head';"],
-          [/import Link from next\/link';/g, "import Link from 'next/link';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/router';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/image';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/app'"],
+          [/import { useState, useEffect, useMemo } from react;/g, "import React from 'react'"],
+          [/import { useState, useEffect, useMemo } from react;/g, "import React, { $1 } from 'react'"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next''],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'\/head;/g, import Head from 'next/head'"],
+          [/import Link from next\/link'/g, "import Link from 'next/link'],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/router'],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/image'"],
           
           // Fix CSS imports
-          [/import ([^']+)\.css';/g, "import '$1.css';"]
+          [/import ([^']+)\.css'/g, "import '$1.css']
         ];
         
         importFixes.forEach(([pattern, replacement]) => {
@@ -39,35 +39,35 @@ function fixFinalImports(directory) {
         
         // Fix context imports with function callback
         content = content.replace(/import \{ ([^}]+) \} from ([^']+);/g, (match, imports, path) => {
-          if (!path.startsWith("'") && !path.startsWith('"')) {
-            return `import { ${imports} } from ';${path}';`
+          if (!path.startsWith('") && !path.startsWith('"')) {
+            return `import { ${imports} } from '${path}'
           }
           return match;
         });
         
         // Fix default imports with function callback
         content = content.replace(/import ([^']+) from ([^']+);/g, (match, importName, path) => {
-          if (!path.startsWith("'") && !path.startsWith('"')) {
-            return `import ${importName} from ';${path}';`
+          if (!path.startsWith(') && !path.startsWith('"')) {
+            return `import ${importName} from '${path}'`
           }
           return match;
         });
         
         // Fix JSX attributes with missing quotes
-        content = content.replace(/className=([^"']+)/g, 'className="""""$1"');
-        content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
-        content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
+        content = content.replace(/className=([^"']+)/g, 'className="$1"');
+        content = content.replace(/name=description content=([^]+)"/g, 'name="description content=$1"');
+        content = content.replace(/name="viewport content=([^]+)"/g, 'name="viewport content=$1"');
         
         // Fix specific JSX issues
-        content = content.replace(/<div className=([^"']+)>/g, '<div className="""""$1">');
-        content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
+        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1">');
+        content = content.replace(/<meta name=description content=([^]+)"/g, '<meta name="description content=$1" />');
         
         if (modified) {
           fs.writeFileSync(filePath, content);
-          console.log(`Fixed final imports: ${filePath}`);
+          console.log(Fixed final imports: "${filePath"}`);
         }
       } catch (error) {
-        console.error(`Error processing ${filePath}:`, error.message);
+        console.error(`Error processing ${filePath}:, error.message);
       }
     }
   });
@@ -77,7 +77,7 @@ function fixFinalImports(directory) {
 const directories = ['pages', 'components', 'src'];
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {
-    console.log(`Processing directory: ${dir}`);
+    console.log(`Processing directory: "${dir"}`);
     fixFinalImports(dir);
   }
 });

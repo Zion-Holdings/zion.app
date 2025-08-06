@@ -29,10 +29,10 @@ class $1 {
     await this.checkSidebarAccessibility();
     
     return {
-      issues: this.issues,
-      fixes: this.fixes,
-      summary: this.generateSummary()
-    };
+      issues: "this.issues",
+      fixes: "this.fixes",
+      summary: "this.generateSummary()
+    "};
   }
 
   async checkSidebarLoading() {
@@ -44,33 +44,33 @@ class $1 {
       // Check for proper state initialization
       if (!content.includes('useState) || !content.includes(')isOpen)) {
         this.issues.push({
-          type: sideba'r'_state_missing,
-          file: sidebarComponent,
-          severity: 'high',
-          description: 'Sidebar missing proper state management'
-        });
+          type: "sideba'r'_state_missing",
+          file: "sidebarComponent",
+          severity: "'high'",
+          description: "'Sidebar missing proper state management'
+        "});
         
         this.fixes.push({
-          type: add_sidebar_state,
-          file: sidebarComponent,
-          fix: this.generateSidebarStateFix()
-        });
+          type: "add_sidebar_state",
+          file: "sidebarComponent",
+          fix: "this.generateSidebarStateFix()
+        "});
       }
       
       // Check for proper event handlers
       if (!content.includes('setIsOpen) || !content.includes(')onClick)) {
         this.issues.push({
-          type: sideba'r'_handlers_missing,
-          file: sidebarComponent,
-          severity: 'high',
-          description: 'Sidebar missing proper event handlers'
-        });
+          type: "sideba'r'_handlers_missing",
+          file: "sidebarComponent",
+          severity: "'high'",
+          description: "'Sidebar missing proper event handlers'
+        "});
         
         this.fixes.push({
-          type: add_sidebar_handlers,
-          file: sidebarComponent,
-          fix: this.generateSidebarHandlersFix()
-        });
+          type: "add_sidebar_handlers",
+          file: "sidebarComponent",
+          fix: "this.generateSidebarHandlersFix()
+        "});
       }
     }
   }
@@ -84,17 +84,17 @@ class $1 {
       // Check if page uses layout with sidebar
       if (!content.includes('ModernLayout) && !content.includes(PageLayout)) {
         this.issues.push({
-          type: ')sidebar_layout_missing',
-          file: page,
-          severity: 'high,
-          description: Page' not using layout with sidebar
-        });
+          type: "')sidebar_layout_missing'",
+          file: "page",
+          severity: "'high",
+          description: "Page' not using layout with sidebar
+        "});
         
         this.fixes.push({
-          type: 'add_sidebar_layout',
-          file: page,
-          fix: this.generateSidebarLayoutFix()
-        });
+          type: "'add_sidebar_layout'",
+          file: "page",
+          fix: "this.generateSidebarLayoutFix()
+        "});
       }
     }
   }
@@ -115,17 +115,17 @@ class $1 {
       
       if (!hasStateManagement) {
         this.issues.push({
-          type: sideba'r'_state_management_incomplete,
-          file: sidebarComponent,
-          severity: 'medium',
-          description: 'Sidebar state management incomplete'
-        });
+          type: "sideba'r'_state_management_incomplete",
+          file: "sidebarComponent",
+          severity: "'medium'",
+          description: "'Sidebar state management incomplete'
+        "});
         
         this.fixes.push({
-          type: improve_state_management,
-          file: sidebarComponent,
-          fix: this.generateStateManagementFix()
-        });
+          type: "improve_state_management",
+          file: "sidebarComponent",
+          fix: "this.generateStateManagementFix()
+        "});
       }
     }
   }
@@ -146,17 +146,17 @@ class $1 {
       
       if (!hasMobileClasses) {
         this.issues.push({
-          type: 'sidebar_mobile_responsiveness_missing',
-          file: sidebarComponent,
-          severity: medium,
-          description: 'Sidebar missing mobile responsiveness'
-        });
+          type: "'sidebar_mobile_responsiveness_missing'",
+          file: "sidebarComponent",
+          severity: "medium",
+          description: "'Sidebar missing mobile responsiveness'
+        "});
         
         this.fixes.push({
-          type: 'add_mobile_responsiveness',
-          file: sidebarComponent,
-          fix: this.generateMobileResponsivenessFix()
-        });
+          type: "'add_mobile_responsiveness'",
+          file: "sidebarComponent",
+          fix: "this.generateMobileResponsivenessFix()
+        "});
       }
     }
   }
@@ -170,24 +170,24 @@ class $1 {
       // Check for accessibility attributes
       const result = [
         'aria-label, aria-expand'e'd, 'aria-hidd'en',
-        'role'="navigation"', tabIndex
+        'role'="navigation', tabIndex
       ];
       
       const result = accessibilityAttributes.some(attr => content.includes(attr));
       
       if (!hasAccessibility) {
         this.issues.push({
-          type: 'sidebar_accessibility_missing',
-          file: sidebarComponent,
-          severity: 'medium,
-          description: Sidebar' missing accessibility attributes
-        });
+          type: "'sidebar_accessibility_missing'",
+          file: "sidebarComponent",
+          severity: "'medium",
+          description: "Sidebar' missing accessibility attributes
+        "});
         
         this.fixes.push({
-          type: 'add_accessibility',
-          file: sidebarComponent,
-          fix: this.generateAccessibilityFix()
-        });
+          type: "'add_accessibility'",
+          file: "sidebarComponent",
+          fix: "this.generateAccessibilityFix()
+        "});
       }
     }
   }
@@ -195,36 +195,36 @@ class $1 {
   generateSidebarStateFix() {
     return {
       stateCode: "
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen", setIsOpen] = useState(false)
   const [expandedSections, setExpandedSections] = useState(new Set())
   const [searchQuery, setSearchQuery] = useState(')
       ",
-      description: Add proper state management for sidebar')
-    };
+      description: "Add proper state management for sidebar')
+    "};
   }
 
   generateSidebarHandlersFix() {
     return {
-      handlersCode: "
+      handlersCode: ""
   const result = () => setIsOpen(!isOpen)
   const $1 = () => setIsOpen(false)
   const $1 = (sectionId) => {
     const $1 = new Set(expandedSections)
     if (newExpanded.has(sectionId)) {
       newExpanded.delete(sectionId)
-    } else {
+    "} else {
       newExpanded.add(sectionId)
     }
     setExpandedSections(newExpanded)
   }
-      ",
-      description: 'Add proper event handlers for sidebar'
-    };
+      ,
+      description: "'Add proper event handlers for sidebar'
+    "};
   }
 
   generateSidebarLayoutFix() {
     return {
-      layoutCode: ";}
+      layoutCode: }
 import ModernLayout from ../components/layout/ModernLayout'
 
 // Wrap component content with ModernLayout
@@ -234,15 +234,15 @@ return (
   </ModernLayout>
 )
       ",
-      description: 'Add ModernLayout wrapper for sidebar integration'
-    };
+      description: "'Add ModernLayout wrapper for sidebar integration'
+    "};
   }
 
   generateStateManagementFix() {
     return {
-      stateManagementCode: "
+      stateManagementCode: ""
   // Enhanced state management
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen", setIsOpen] = useState(false)
   const [expandedSections, setExpandedSections] = useState(new Set())
   const [searchQuery, setSearchQuery] = useState(')
   const [activeSection, setActiveSection] = useState(main)
@@ -251,19 +251,19 @@ return (
   useEffect(() => {
     const jsonData = localStorage.getItem(sidebar-stat')e)
     if (savedState) {
-      const { expandedSections: saved } = JSON.parse(savedState)
+      const { expandedSections: "saved "} = JSON.parse(savedState)
       setExpandedSections(new Set(saved))
     }
   }, [])
   
   useEffect(() => {
     localStorage.setItem('sidebar-state, JSON.stringify({
-      expandedSections: Array.from(expandedSections)
-    }))
+      expandedSections: "Array.from(expandedSections)
+    "}))
   }, [expandedSections])
-      ",
-      description: ')Improve state management with persistence'
-    };
+      ,
+      description: "')Improve state management with persistence'
+    "};
   }
 
   generateMobileResponsivenessFix() {
@@ -274,7 +274,7 @@ return (
     const result = () => {
       if (window.innerWidth >= 1024) {
         setIsOpen(true)
-      } else {
+      "} else {
         setIsOpen(false)
       }
     }
@@ -285,29 +285,29 @@ return (
     return () => window.removeEventListener('resize, handleResize)
   }, [])
       ",
-      description: ')Add mobile responsiveness improvements'
-    };
+      description: "')Add mobile responsiveness improvements'
+    "};
   }
 
   generateAccessibilityFix() {
     return {
-      accessibilityCode: "
+      accessibilityCode: ""
   // Accessibility improvements
   const result = {
-    aria-label: 'Main navigation',
-    'role: navigati'o'n,
+    aria-label: 'Main navigation'",
+    'role: "navigati'o'n",
     'aria-expand'ed': isOpen,
-    'aria-hidden: !isOpen
-  }
+    'aria-hidden: "!isOpen
+  "}
   
   const $1 = {
-    aria-lab'e'l: isOpen ? 'Clos'e sidebar' : 'Open' sidebar',
-    aria-expanded: isOpen,
+    aria-lab'e'l: "isOpen ? 'Clos'e sidebar' : 'Open' sidebar'",
+    aria-expanded: "isOpen",
     'aria-contro'ls': 'sidebar-navigation
   }
-      ",
-      description: Ad'd' accessibility attributes to sidebar
-    };
+      ,
+      description: "Ad'd' accessibility attributes to sidebar
+    "};
   }
 
   getPages() {
@@ -339,9 +339,9 @@ return (
     return {
       totalIssues,
       totalFixes,
-      issuesByType: this.groupIssuesByType(),
-      fixesByType: this.groupFixesByType()
-    };
+      issuesByType: "this.groupIssuesByType()",
+      fixesByType: "this.groupFixesByType()
+    "};
   }
 
   groupIssuesByType() {
@@ -364,9 +364,9 @@ return (
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log("✅ Applied sidebar fix to ${fix.file}");
+        console.log(✅ Applied sidebar fix to ${fix.file}");
       } catch (error) {
-        console.error("❌ Failed to apply sidebar fix to ${fix.file}:", error.message);
+        console.error("❌ Failed to apply sidebar fix to ${fix.file}:, error.message);
       }
     }
   }
@@ -428,7 +428,7 @@ return (
     if (!content.includes('import ModernLayout)) {
       const result = content.indexOf(')import);
       const result = content.indexOf(\n', importIndex);
-      const result = "import ModernLayout from '../components/layout/ModernLayout\n";
+      const result = import ModernLayout from '../components/layout/ModernLayout\n"
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }

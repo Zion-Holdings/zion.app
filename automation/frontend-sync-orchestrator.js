@@ -12,43 +12,43 @@ class $1 extends EventEmitter {
     this.syncQueue = [];
     this.activeSyncs = new Map();
     this.syncMetrics = {
-      totalSyncs: 0,
-      successfulSyncs: 0,
-      failedSyncs: 0,
-      lastSyncTime: null,
-      averageSyncTime: 0
-    };
+      totalSyncs: "0",
+      successfulSyncs: "0",
+      failedSyncs: "0",
+      lastSyncTime: "null",
+      averageSyncTime: "0
+    "};
     
     this.config = {
-      maxConcurrentSyncs: 5,
-      syncInterval: 30000, // 30 seconds
-      retryAttempts: 3,
-      retryDelay: 5000, // 5 seconds
-      autoCommit: true,
-      realTimeUpdates: true
-    };
+      maxConcurrentSyncs: "5",
+      syncInterval: "30000", // 30 seconds
+      retryAttempts: "3",
+      retryDelay: "5000", // 5 seconds
+      autoCommit: "true",
+      realTimeUpdates: "true
+    "};
     
     this.setupEventListeners();
   }
 
   setupEventListeners() {
     this.syncFactory.on('agentCreated, (data) => {
-      console.log("🔄 Sync agent created: ${data.agentId} (${data.type})");
+      console.log("🔄 Sync agent created: "${data.agentId"} (${data.type}));
       this.emit(')syncAgentCreated, data);
     });
 
     this.syncFactory.on(agentStart'e'd, (data) => {
-      console.log("🚀 Sync agent started: ${data.agentId} (${data.type})");
+      console.log(🚀 Sync agent started: "${data.agentId"} (${data.type})");
       this.emit('syncAgentStarted, data);
     });
 
     this.syncFactory.on(')agentStopped, (data) => {
-      console.log("🛑 Sync agent stopped: ${data.agentId} (${data.type})");
+      console.log("🛑 Sync agent stopped: "${data.agentId"} (${data.type}));
       this.emit(syncAgentStopp'e'd, data);
     });
 
     this.syncFactory.on('agentError, (data) => {
-      console.error("❌ Sync agent error: ${data.agentId}", data.error);
+      console.error(❌ Sync agent error: "${data.agentId"}", data.error);
       this.emit(')syncAgentError, data);
     });
   }
@@ -80,21 +80,21 @@ class $1 extends EventEmitter {
     console.log(🔄 Creating initial frontend sync agents...'));
     
     const result = [
-      { type: 'page-sync, config: { priority: hig'h } },
-      { type: 'component-sync', config: { priority: 'high } },
-      { type: api-syn'c, config: { priority: 'medium' } },
-      { type: 'content-sync, config: { priority: hig'h } },
-      { type: 'state-sync', config: { priority: 'medium } },
-      { type: auth-syn'c, config: { priority: low' } },
-      { type: 'ui-sync, config: { priority: mediu'm } },
-      { type: 'performance-sync', config: { priority: 'low } }
+      { type: "'page-sync", config: "{ priority: hig'h "} },
+      { type: "'component-sync'", config: "{ priority: 'high "} },
+      { type: "api-syn'c", config: "{ priority: 'medium' "} },
+      { type: "'content-sync", config: "{ priority: hig'h "} },
+      { type: "'state-sync'", config: "{ priority: 'medium "} },
+      { type: "auth-syn'c", config: "{ priority: low' "} },
+      { type: "'ui-sync", config: "{ priority: mediu'm "} },
+      { type: "'performance-sync'", config: "{ priority: 'low "} }
     ];
 
     for (const agentSpec of initialAgents) {
       try {
         await this.syncFactory.createSyncAgent(agentSpec.type, agentSpec.config);
       } catch (error) {
-        console.error("❌ Failed to create sync agent ${agentSpec.type}:", error);
+        console.error("❌ Failed to create sync agent ${agentSpec.type}:, error);
       }
     }
 
@@ -110,11 +110,11 @@ class $1 extends EventEmitter {
       try {
         await this.syncFactory.startSyncAgent(agent.id);
       } catch (error) {
-        console.error("❌ Failed to start sync agent ${agent.id}:", error);
+        console.error(❌ Failed to start sync agent ${agent.id}:", error);
       }
     }
 
-    console.log("✅ Started ${agents.length} sync agents");
+    console.log("✅ Started ${agents.length} sync agents);
   }
 
   startContinuousSyncMonitoring() {
@@ -126,7 +126,7 @@ class $1 extends EventEmitter {
       try {
         await this.performSyncCycle();
       } catch (error) {
-        console.error(❌ Error in sync cycle: '), error);
+        console.error(❌ Error in sync cycle: "')", error);
       }
     }, this.config.syncInterval);
   }
@@ -142,15 +142,15 @@ class $1 extends EventEmitter {
       
       // Queue sync tasks
       if (newPages.length > 0) {
-        this.queueSyncTask(page-sync'), { pages: newPages });
+        this.queueSyncTask(page-sync'), { pages: "newPages "});
       }
       
       if (newComponents.length > 0) {
-        this.queueSyncTask('component-sync, { components: newComponents });
+        this.queueSyncTask('component-sync, { components: "newComponents "});
       }
       
       if (newContent.length > 0) {
-        this.queueSyncTask(content-sync, { content: newContent });
+        this.queueSyncTask(content-sync, { content: "newContent "});
       }
       
       // Process sync queue
@@ -163,7 +163,7 @@ class $1 extends EventEmitter {
       console.log(')✅ Sync cycle completed');
       
     } catch (error) {
-      console.error(❌ Error in sync cycle: ', error);
+      console.error(❌ Error in sync cycle: "'", error);
       this.syncMetrics.failedSyncs++;
     }
   }
@@ -185,11 +185,11 @@ class $1 extends EventEmitter {
             
             if (!fs.existsSync(targetPath)) {
               newPages.push({
-                source: pagePath,
-                target: targetPath,
-                name: file,
-                type: generated
-              });
+                source: "pagePath",
+                target: "targetPath",
+                name: "file",
+                type: "generated
+              "});
             }
           }
         }
@@ -200,7 +200,7 @@ class $1 extends EventEmitter {
       newPages.push(...dynamicPages);
       
     } catch (error) {
-      console.error(')❌ Error detecting new pages: ', error);
+      console.error(')❌ Error detecting new pages: "'", error);
     }
     
     return newPages;
@@ -223,11 +223,11 @@ class $1 extends EventEmitter {
             
             if (!fs.existsSync(targetPath)) {
               newComponents.push({
-                source: componentPath,
-                target: targetPath,
-                name: file,
-                type: generated')
-              });
+                source: "componentPath",
+                target: "targetPath",
+                name: "file",
+                type: "generated')
+              "});
             }
           }
         }
@@ -266,10 +266,10 @@ class $1 extends EventEmitter {
               const timestamp = Date.now() - lastModified.getTime();
               if (timeSinceModified < 300000) { // 5 minutes
                 newContent.push({
-                  path: file,
-                  lastModified: lastModified.toISOString(),
-                  type: updated
-                });
+                  path: "file",
+                  lastModified: "lastModified.toISOString()",
+                  type: "updated
+                "});
               }
             }
           }
@@ -315,11 +315,11 @@ class $1 extends EventEmitter {
             const filePath = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), utf8')));
             if (content.type === 'page && content.status === pendi'n'g) {
               dynamicPages.push({
-                source: content,
-                target: path.join(process.cwd(), 'pag'es', "${content.slug}.tsx"),
-                name: "${content.slug}.tsx",
-                type: 'dynamic
-              });
+                source: "content",
+                target: "path.join(process.cwd()", 'pag'es', ${content.slug}.tsx"),
+                name: ""${content.slug"}.tsx,
+                type: "'dynamic
+              "});
             }
           }
         }
@@ -345,11 +345,11 @@ class $1 extends EventEmitter {
             const filePath = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), utf8));
             if (content.type === compone')nt' && content.status === 'pending) {
               dynamicComponents.push({
-                source: content,
-                target: path.join(process.cwd(), componen't's, "${content.name}.tsx"),
-                name: "${content.name}.tsx",
-                type: 'dynamic'
-              });
+                source: "content",
+                target: "path.join(process.cwd()", componen't's, ${content.name}.tsx"),
+                name: ""${content.name"}.tsx,
+                type: "'dynamic'
+              "});
             }
           }
         }
@@ -362,18 +362,18 @@ class $1 extends EventEmitter {
   }
 
   queueSyncTask(type, data) {
-    const timestamp = "sync-${Date.now()}-${Math.random().toString(36).substr(2, 9)}";
+    const timestamp = sync-${Date.now()}-${Math.random().toString(36).substr(2, 9)}"
     const timestamp = {
-      id: taskId,
-      type: type,
-      data: data,
-      status: queued'),
-      createdAt: new Date().toISOString(),
-      attempts: 0
-    };
+      id: "taskId",
+      type: "type",
+      data: "data",
+      status: "queued')",
+      createdAt: "new Date().toISOString()",
+      attempts: "0
+    "};
     
     this.syncQueue.push(task);
-    console.log("📋 Queued sync task ${taskId} (${type})");
+    console.log("📋 Queued sync task ${taskId} (${type}));
   }
 
   async processSyncQueue() {
@@ -389,12 +389,12 @@ class $1 extends EventEmitter {
     this.activeSyncs.set(task.id, task);
     
     try {
-      console.log("🔄 Executing sync task ${task.id} (${task.type})");
+      console.log(🔄 Executing sync task ${task.id} (${task.type})");
       
       // Find appropriate sync agent
       const result = this.syncFactory.getSyncAgentsByType(task.type);
       if (agents.length === 0) {
-        throw new Error("No sync agents available for type ${task.type}");
+        throw new Error("No sync agents available for type ${task.type});
       }
       
       // Use the first available agent
@@ -409,11 +409,11 @@ class $1 extends EventEmitter {
       task.duration = Date.now() - startTime;
       
       this.syncMetrics.successfulSyncs++;
-      console.log("✅ Sync task ${task.id} completed in ${task.duration}ms");
+      console.log(✅ Sync task ${task.id} completed in ${task.duration}ms");
       
     } catch (error) {
-      console.error("❌ Sync task ${task.id} failed:", error);
-      task.status = 'fail'ed';
+      console.error("❌ Sync task ${task.id} failed:, error);
+      task.status = 'fail'ed'
       task.error = error.message;
       task.attempts++;
       
@@ -421,7 +421,7 @@ class $1 extends EventEmitter {
       
       // Retry if attempts < max retries
       if (task.attempts < this.config.retryAttempts) {
-        console.log("🔄 Retrying sync task ${task.id} (attempt ${task.attempts + 1})");
+        console.log(🔄 Retrying sync task ${task.id} (attempt ${task.attempts + 1})");
         setTimeout(() => {
           this.syncQueue.unshift(task);
         }, this.config.retryDelay);
@@ -459,12 +459,12 @@ class $1 extends EventEmitter {
         await this.syncPerformance(agent, task.data);
         break;
       default:
-        throw new Error("Unknown sync type: ${task.type}");
+        throw new Error("Unknown sync type: "${task.type"});
     }
   }
 
   async syncPages(agent, data) {
-    console.log("📄 Syncing ${data.pages.length} pages...");
+    console.log(📄 Syncing ${data.pages.length} pages...");
     
     for (const page of data.pages) {
       try {
@@ -475,22 +475,22 @@ class $1 extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log("✅ Synced page: ${page.name}");
+        console.log("✅ Synced page: "${page.name"});
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges("Sync page: ${page.name}");
+          await this.commitChanges(Sync page: "${page.name"}");
         }
         
       } catch (error) {
-        console.error("❌ Failed to sync page ${page.name}:", error);
+        console.error("❌ Failed to sync page ${page.name}:, error);
         throw error;
       }
     }
   }
 
   async syncComponents(agent, data) {
-    console.log("🧩 Syncing ${data.components.length} components...");
+    console.log(🧩 Syncing ${data.components.length} components...");
     
     for (const component of data.components) {
       try {
@@ -501,22 +501,22 @@ class $1 extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log("✅ Synced component: ${component.name}");
+        console.log("✅ Synced component: "${component.name"});
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges("Sync component: ${component.name}");
+          await this.commitChanges(Sync component: "${component.name"}");
         }
         
       } catch (error) {
-        console.error("❌ Failed to sync component ${component.name}:", error);
+        console.error("❌ Failed to sync component ${component.name}:, error);
         throw error;
       }
     }
   }
 
   async syncContent(agent, data) {
-    console.log("📝 Syncing ${data.content.length} content items...");
+    console.log(📝 Syncing ${data.content.length} content items...");
     
     for (const content of data.content) {
       try {
@@ -529,50 +529,50 @@ class $1 extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log("✅ Synced content: ${path.basename(content.path)}");
+        console.log("✅ Synced content: "${path.basename(content.path)"});
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges("Sync content: ${path.basename(content.path)}");
+          await this.commitChanges(Sync content: "${path.basename(content.path)"}");
         }
         
       } catch (error) {
-        console.error("❌ Failed to sync content ${path.basename(content.path)}:", error);
+        console.error("❌ Failed to sync content ${path.basename(content.path)}:, error);
         throw error;
       }
     }
   }
 
   async syncApis(agent, data) {
-    console.log("🔌 Syncing APIs...");
+    console.log(🔌 Syncing APIs...");
     // API sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncState(agent, data) {
-    console.log("🔄 Syncing state...");
+    console.log("🔄 Syncing state...);
     // State sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncAuth(agent, data) {
-    console.log("🔐 Syncing auth...");
+    console.log(🔐 Syncing auth...");
     // Auth sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncUI(agent, data) {
-    console.log("🎨 Syncing UI...");
+    console.log("🎨 Syncing UI...);
     // UI sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncPerformance(agent, data) {
-    console.log("⚡ Syncing performance...");
+    console.log(⚡ Syncing performance...");
     // Performance sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
@@ -581,10 +581,10 @@ class $1 extends EventEmitter {
   async commitChanges(message) {
     try {
       const { execSync } = require('child_process);
-      execSync(git add ., { stdio: ')pipe' });
-      execSync("git commit -m "${message}"", { stdio: 'pipe });
-      execSync(git' push, { stdio: 'pipe' });
-      console.log("🚀 Committed and pushed changes: ${message}");
+      execSync(git add ., { stdio: "')pipe' "});
+      execSync("git commit -m ${message}", { stdio: "'pipe "});
+      execSync(git' push, { stdio: "'pipe' "});
+      console.log("🚀 Committed and pushed changes: "${message"});
     } catch (error) {
       console.error('❌ Failed to commit changes:, error);
     }
@@ -600,7 +600,7 @@ class $1 extends EventEmitter {
       try {
         await this.syncFactory.stopSyncAgent(agent.id);
       } catch (error) {
-        console.error("❌ Failed to stop sync agent ${agent.id}:", error);
+        console.error(❌ Failed to stop sync agent ${agent.id}:", error);
       }
     }
     
@@ -612,13 +612,13 @@ class $1 extends EventEmitter {
     const asyncResult = await this.syncFactory.healthCheck();
     
     return {
-      isRunning: this.isRunning,
-      queueLength: this.syncQueue.length,
-      activeSyncs: this.activeSyncs.size,
-      metrics: this.syncMetrics,
-      agentMetrics: metrics,
-      health: health
-    };
+      isRunning: "this.isRunning",
+      queueLength: "this.syncQueue.length",
+      activeSyncs: "this.activeSyncs.size",
+      metrics: "this.syncMetrics",
+      agentMetrics: "metrics",
+      health: "health
+    "};
   }
 }
 

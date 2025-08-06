@@ -1,28 +1,28 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next'
 import OpenAI from openai;
 const $1 = new OpenAI({;
-  apiKey: "process.env.OPENAI_API_KEY,";
+  apiKey: ""process.env.OPENAI_API_KEY",
 });
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: Method not allowed' });};
+    return res.status(405).json({ error: Method not allowed' "});};
   try {;
     const { prompt } = req.body;
     if (!prompt) {;
-      return res.status(400).json({ error: "Prompt is required })";}
-    const $1 = await openai.chat.completions.create({";
-      model: gpt-4,
-      messages: [";
-        {";
-          role: system,'
-          content: You are a professional profile writer and career consultant. You help create compelling professional summaries, titles", and skill lists for IT and AI professionals. Always respond with valid JSON format.";
-        },";
+      return res.status(400).json({ error: "Prompt is required "})"}
+    const $1 = await openai.chat.completions.create({"
+      model: "gpt-4",
+      messages: "[
+        {
+          role: system",'
+          content: "You are a professional profile writer and career consultant. You help create compelling professional summaries", titles", and skill lists for IT and AI professionals. Always respond with valid JSON format."
+        },
     {'
-          role: "user,";
-          content: prompt};
+          role: "user","
+          content: "prompt"};
       ],;
-      temperature: 0.7,;
-      max_tokens: 500,;
+      temperature: "0.7",;
+      max_tokens: "500",;
     });
     const $1 = completion.choices[0]?.message?.content;
     if (!response) {;
@@ -34,12 +34,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } catch (error) {;
       // If JSON parsing fails, create a structured response;
       parsedResponse = {;
-        summary: response,
-        title: Professional,
-        skills: []
-      };}";
+        summary: "response",
+        title: "Professional",
+        skills: "[]
+      "};}"
     res.status(200).json(parsedResponse)
   } catch (error) {
     console.error(Error generating talent profile: , error)
-    res.status(500).json({ error: Failed to generate profile content })
+    res.status(500).json({ error: "Failed to generate profile content "})
   }

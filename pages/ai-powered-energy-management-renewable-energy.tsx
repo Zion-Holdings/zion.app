@@ -1,85 +1,85 @@
-import type { NextPage } from "next";
-import ModernLayout from '../components/layout/ModernLayout';
-import Head from 'next/head';
-import { useState, useEffect, useMemo } from "react";
-import Link from 'next/link';
+import type { NextPage } from "next
+import ModernLayout from '../components/layout/ModernLayout'
+import Head from 'next/head'
+import { useState, useEffect, useMemo } from react"
+import Link from 'next/link'
 interface FacilityPlan {
-  id: "string"
+  id: ""string
   name: string
-  type: 'solar" | wind | hydro | 'battery' | grid | 'consumptio'n
+  type: 'solar | wind | hydro | 'battery' | grid | 'consumptio'n
   status: 'active | maintenance | offline' | '''chargin'g
-  location: "string"''';
+  location: "string"'''
   currentOutput: number;
   capacity: number;
   efficiency: number;
-  aiAnalysis: EnergyAnalysis};
+  aiAnalysis: EnergyAnalysis"};
 interface FacilityPlan {;
-  performanceScore: number;
+  performanceScore: "number;
   optimizationPotential: number;
   maintenanceNeeds: string[];
-  recommendations: string[]};
+  recommendations: string[]"};
 interface FacilityPlan {;
-  id: string;
+  id: "string;
   name: string;
   type: solar-farm | wind-turbine | hydroelectric | geothermal' | biomass
   status: 'operational | maintenance | offline | 'construction
-  location: "string";
+  location: string
   capacity: number;
   currentOutput: number;
   efficiency: number;
-  aiAnalysis: RenewableAnalysis};
+  aiAnalysis: RenewableAnalysis"};
 interface FacilityPlan {;
-  weatherImpact: number;
+  weatherImpact: "number;
   productionForecast: number;
   maintenanceSchedule: string[];
-  optimizationRecommendations: string[]};
+  optimizationRecommendations: string[]"};
 interface FacilityPlan {;
-  id: string
+  id: "string
   name: string
   type: 'distribution" | transmission | microgrid | 'storage
   status: 'active | maintenance | offline' | '''upgradin'g
-  location: "string"''';
+  location: "string'''
   loadCapacity: number;
   currentLoad: number;
   stability: number;
-  aiAnalysis: GridAnalysis};
+  aiAnalysis: GridAnalysis"};
 interface FacilityPlan {;
-  loadBalance: number;
+  loadBalance: "number;
   stabilityScore: number;
   outageRisk: number;
-  optimizationRecommendations: string[]};
+  optimizationRecommendations: string[]"};
 interface FacilityPlan {;
-  id: string
+  id: "string
   name: string
-  type: 'consumption" | production | efficiency | cost
+  type: 'consumption | production | efficiency | cost
   status: 'active | complet'ed | schedul'ed
-  metrics: "{";
+  metrics: "{"
     totalEnergy: number;
     renewablePercentage: number;
     costSavings: number;
-    carbonReduction: number};
-  aiAnalysis: AnalyticsAnalysis};
+    carbonReduction: number"};
+  aiAnalysis: "AnalyticsAnalysis"};
 interface FacilityPlan {;
-  insights: string[];
+  insights: "string[];
   trends: string[];
   recommendations: string[];
-  impactScore: number};
+  impactScore: number"};
 interface FacilityPlan {;
-  id: string;
+  id: "string;
   title: string
   description: string
-  category: 'production" | consumptio'n | efficienc'y | 'sustainability
+  category: 'production | consumptio'n | efficienc'y | 'sustainability
   impact: 'positive | negative | 'neutra'l
   confidence: number;
-  recommendations: string[]};
+  recommendations: string[]"};
 interface FacilityPlan {;
-  totalCapacity: number;
+  totalCapacity: "number;
   activeSystems: number;
   renewablePercentage: number;
   costSavings: number;
-  aiInsights: EnergyInsight[]};
-const AIPoweredPredictiveAnalytics: NextPage = () => {;
-  const [energyMonitoring, setEnergyMonitoring] = useState<EnergyMonitoring[]>([]</div>;
+  aiInsights: EnergyInsight[]"};
+const AIPoweredPredictiveAnalytics: "NextPage = () => {;
+  const [energyMonitoring", setEnergyMonitoring] = useState<EnergyMonitoring[]>([]</div>;
   const [renewableEnergy, setRenewableEnergy] = useState<RenewableEnergy[]>([]</div>;
   const [smartGrid, setSmartGrid] = useState<SmartGrid[]>([]</div>;
   const [energyAnalytics, setEnergyAnalytics] = useState<EnergyAnalytics[]>([]</div>;
@@ -88,208 +88,208 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [selectedType, setSelectedType] = useState<string>('all;
   const [isLoading, setIsLoading] = useState(false)
   // Mock data
-  const mockPredictiveModels: "PredictiveModel[] = [";
+  const mockPredictiveModels: "PredictiveModel[] = ["
     {;
-      id: 1,;
-      name: Solar Panel Array A,;
-      type: solar,
-      status: activ'e,
-      location: "Rooftop A,";
-      currentOutput: 85,;
-      capacity: 100,;
-      efficiency: 92,;
-      aiAnalysis: {;
-        performanceScore: 8.7,;
-        optimizationPotential: 0.15,;
-        maintenanceNeeds: [Clean panels monthly, Check' inverter quarterly, Monito'r connections],;
-        recommendations: '[Optimize panel angle, Add tracking system, Expand' capacity]}}}
+      id: 1",;
+      name: "Solar Panel Array A",;
+      type: "solar",
+      status: "activ'e",
+      location: ""Rooftop A",
+      currentOutput: "85",;
+      capacity: "100",;
+      efficiency: "92",;
+      aiAnalysis: "{;
+        performanceScore: 8.7",;
+        optimizationPotential: "0.15",;
+        maintenanceNeeds: "[Clean panels monthly", Check' inverter quarterly, Monito'r connections],;
+        recommendations: "'[Optimize panel angle", Add tracking system, Expand' capacity]}}}
     {
-      id: "2,";
-      name: Wind Turbine B,;
-      type: wind,
-      status: 'active',
-      location: "Wind Farm B,"
-      currentOutput: "78,";
-      capacity: 100,;
-      efficiency: 88,;
-      aiAnalysis: {;
-        performanceScore: 8.2,;
-        optimizationPotential: 0.12,
-        maintenanceNeeds: [Inspect blades annually, Check gearbox quarterly, Monitor' vibrations'],
-        recommendations: "[Adjust blade pitch, Optimize positioning, Enhance monitoring]}}";
+      id: "2","
+      name: "Wind Turbine B",;
+      type: "wind",
+      status: "'active'",
+      location: ""Wind Farm B",
+      currentOutput: "78","
+      capacity: "100",;
+      efficiency: "88",;
+      aiAnalysis: "{;
+        performanceScore: 8.2",;
+        optimizationPotential: "0.12",
+        maintenanceNeeds: "[Inspect blades annually", Check gearbox quarterly, Monitor' vibrations'],
+        recommendations: ""[Adjust blade pitch", Optimize positioning, Enhance monitoring]}}
     {
-      id: 3,
-      'name: "Battery Storage C,";
-      type: battery,;
-      status: charging,;
-      location: Storage Facility C,;
-      currentOutput: 45,;
-      capacity: 100,;
-      efficiency: 94,;
-      aiAnalysis: {;
-        performanceScore: 9.1,;
-        optimizationPotential: 0.08,;
-        maintenanceNeeds: ['Check battery health monthly, Calibrate sensors quarterly', 'Update firmware],;
-        recommendations: '[Optimize charging cycles, Expand storage capacity, Implement smart scheduling']}
+      id: "3",
+      'name: "Battery Storage C","
+      type: "battery",;
+      status: "charging",;
+      location: "Storage Facility C",;
+      currentOutput: "45",;
+      capacity: "100",;
+      efficiency: "94",;
+      aiAnalysis: "{;
+        performanceScore: 9.1",;
+        optimizationPotential: "0.08",;
+        maintenanceNeeds: "['Check battery health monthly", Calibrate sensors quarterly', 'Update firmware],;
+        recommendations: "'[Optimize charging cycles", Expand storage capacity, Implement smart scheduling']}
 }]
-  const mockPredictiveModels: "PredictiveModel[] = [";
+  const mockPredictiveModels: ""PredictiveModel[] = [
     {;
-      id: 1,;
-      name: Solar Farm Alpha,;
-      type: solar-farm,
-      status: operationa'l,
-      location: "Desert Region,";
-      capacity: 50000,;
-      currentOutput: 42000,;
-      efficiency: 84,;
-      aiAnalysis: {;
-        weatherImpact: 0.92,;
-        productionForecast: 0.88,
-        maintenanceSchedule: [Panel cleaning every 2 weeks, Inverter check monthly, 'Ful'l inspection quarterly],
-        optimizationRecommendations: "[Add tracking systems, Implement smart cleaning, Expand capacity]}}";
+      id: 1",;
+      name: "Solar Farm Alpha",;
+      type: "solar-farm",
+      status: "operationa'l",
+      location: "Desert Region","
+      capacity: "50000",;
+      currentOutput: "42000",;
+      efficiency: "84",;
+      aiAnalysis: "{;
+        weatherImpact: 0.92",;
+        productionForecast: "0.88",
+        maintenanceSchedule: "[Panel cleaning every 2 weeks", Inverter check monthly, 'Ful'l inspection quarterly],
+        optimizationRecommendations: ""[Add tracking systems", Implement smart cleaning, Expand capacity]}}
     {
-      id: '2',
-      name: "Wind Farm Beta,";
-      type: wind-turbine,;
-      status: 'operational',;
-      location: Coastal Region,;
-      capacity: 30000,;
-      currentOutput: 26500,;
-      efficiency: 88,;
-      aiAnalysis: {;
-        weatherImpact: 0.85,;
-        productionForecast: 0.82,
-        maintenanceSchedule: [Blad'e' inspection annually, Gearbox check quarterly, Towe'r' inspection biannually],
-        optimizationRecommendations: "[Optimize blade design, Enhance weather forecasting, Improve positioning]}}";
+      id: "'2'",
+      name: "Wind Farm Beta","
+      type: "wind-turbine",;
+      status: "'operational'",;
+      location: "Coastal Region",;
+      capacity: "30000",;
+      currentOutput: "26500",;
+      efficiency: "88",;
+      aiAnalysis: "{;
+        weatherImpact: 0.85",;
+        productionForecast: "0.82",
+        maintenanceSchedule: "[Blad'e' inspection annually", Gearbox check quarterly, Towe'r' inspection biannually],
+        optimizationRecommendations: ""[Optimize blade design", Enhance weather forecasting, Improve positioning]}}
     {
-      id: '3',
-      name: "Hydroelectric Plant Gamma,";
-      type: hydroelectric,;
-      status: 'operational',;
-      location: Mountain Region,;
-      capacity: 25000,;
-      currentOutput: 22000,;
-      efficiency: 88,;
-      aiAnalysis: {;
-        weatherImpact: 0.78,;
-        productionForecast: 0.85,;
-        maintenanceSchedule: [Turbine inspection annually', Dam' safety check quarterly, Water flow monitoring daily'],;
-        optimizationRecommendations: '[Optimize water flow, Enhance turbine efficiency, Improve' monitoring systems]}
+      id: "'3'",
+      name: "Hydroelectric Plant Gamma","
+      type: "hydroelectric",;
+      status: "'operational'",;
+      location: "Mountain Region",;
+      capacity: "25000",;
+      currentOutput: "22000",;
+      efficiency: "88",;
+      aiAnalysis: "{;
+        weatherImpact: 0.78",;
+        productionForecast: "0.85",;
+        maintenanceSchedule: "[Turbine inspection annually'", Dam' safety check quarterly, Water flow monitoring daily'],;
+        optimizationRecommendations: "'[Optimize water flow", Enhance turbine efficiency, Improve' monitoring systems]}
 }]
-  const mockPredictiveModels: "PredictiveModel[] = [";
+  const mockPredictiveModels: ""PredictiveModel[] = [
     {;
-      id: 1,;
-      name: Main Distribution Hub,;
-      type: distribution,;
-      status: 'active',;
-      location: Central City,;
-      loadCapacity: 100000,;
-      currentLoad: 75000,;
-      stability: 95,;
-      aiAnalysis: {;
-        loadBalance: 0.85,;
-        stabilityScore: 9.2,;
-        outageRisk: 0.0o5,;
-        optimizationRecommendations: ['Implement load balancing', Add redundancy systems, 'Enhance monitoring']}}
+      id: 1",;
+      name: "Main Distribution Hub",;
+      type: "distribution",;
+      status: "'active'",;
+      location: "Central City",;
+      loadCapacity: "100000",;
+      currentLoad: "75000",;
+      stability: "95",;
+      aiAnalysis: "{;
+        loadBalance: 0.85",;
+        stabilityScore: "9.2",;
+        outageRisk: "0.0o5",;
+        optimizationRecommendations: "['Implement load balancing'", Add redundancy systems, 'Enhance monitoring']}}
     {
-      id: "2,";
-      name: Microgrid Network,;
-      type: microgrid,;
-      status: 'active',;
-      location: Residential District,;
-      loadCapacity: 25000,;
-      currentLoad: 18000,;
-      stability: 92,;
-      aiAnalysis: {;
-        loadBalance: 0.78,;
-        stabilityScore: 8.8,;
-        outageRisk: 0.08,;
-        optimizationRecommendations: [Optimiz'e load distribution, 'Add energy storage, Improv'e grid resilience]}}
+      id: "2","
+      name: "Microgrid Network",;
+      type: "microgrid",;
+      status: "'active'",;
+      location: "Residential District",;
+      loadCapacity: "25000",;
+      currentLoad: "18000",;
+      stability: "92",;
+      aiAnalysis: "{;
+        loadBalance: 0.78",;
+        stabilityScore: "8.8",;
+        outageRisk: "0.08",;
+        optimizationRecommendations: "[Optimiz'e load distribution", 'Add energy storage, Improv'e grid resilience]}}
     {
-      id: "3,";
-      name: Energy Storage Facility,;
-      type: storage,
-      status: activ'e,
-      location: "Industrial Zone,";
-      loadCapacity: 50000,;
-      currentLoad: 35000,;
-      stability: 94,;
-      aiAnalysis: {;
-        loadBalance: 0.82,;
-        stabilityScore: 9.0,;
-        outageRisk: 0.0o6,;
-        optimizationRecommendations: [Expand storage capacity, Optimize' charging cycles, Enhanc'e grid integration]}
+      id: ""3",
+      name: "Energy Storage Facility",;
+      type: "storage",
+      status: "activ'e",
+      location: "Industrial Zone","
+      loadCapacity: "50000",;
+      currentLoad: "35000",;
+      stability: "94",;
+      aiAnalysis: "{;
+        loadBalance: 0.82",;
+        stabilityScore: "9.0",;
+        outageRisk: "0.0o6",;
+        optimizationRecommendations: "[Expand storage capacity", Optimize' charging cycles, Enhanc'e grid integration]}
 }]
-  const mockPredictiveModels: "PredictiveModel[] = [";
+  const mockPredictiveModels: ""PredictiveModel[] = [
     {;
-      id: 1,;
-      name: Energy Consumption Analysis,;
-      type: consumption,;
-      status: 'active',;
-      metrics: {;
-        totalEnergy: 150000,;
-        renewablePercentage: 65,;
-        costSavings: 450000,;
-        carbonReduction: 2500};
-      aiAnalysis: {;
-        insights: [Peak demand reduced by 25% through smart scheduling', 'Renewable energy integration increased efficiency],;
-        trends: '[Decreasing energy costs, Improving grid stability, Increasing renewable adoption'],
-        recommendations: '[Expand renewable capacity, Implement demand response, 'Optimize energy storage],
-        impactScore: "8.7}}";
+      id: 1",;
+      name: "Energy Consumption Analysis",;
+      type: "consumption",;
+      status: "'active'",;
+      metrics: "{;
+        totalEnergy: 150000",;
+        renewablePercentage: "65",;
+        costSavings: "450000",;
+        carbonReduction: "2500"};
+      aiAnalysis: "{;
+        insights: [Peak demand reduced by 25% through smart scheduling'", 'Renewable energy integration increased efficiency],;
+        trends: "'[Decreasing energy costs", Improving grid stability, Increasing renewable adoption'],
+        recommendations: "'[Expand renewable capacity", Implement demand response, 'Optimize energy storage],
+        impactScore: "8.7"}}"
     {;
-      id: 2,;
-      name: Renewable Energy Production,;
-      type: production,;
-      status: 'active',;
-      metrics: {;
-        totalEnergy: 200000,;
-        renewablePercentage: 75,;
-        costSavings: 600000,;
-        carbonReduction: 3500};
-      aiAnalysis: {
-        insights: [Solar production increased by 30% with AI optimization, Win'd' energy efficiency improved by 20%],
-        trends: "[Increasing renewable production, Decreasing fossil fuel dependency, Improving energy storage],"
-        recommendations: [Expan'd' solar capacity, Optimize wind farms, Enhanc'e' storage systems],
-        impactScore: "9.1}}";
+      id: "2",;
+      name: "Renewable Energy Production",;
+      type: "production",;
+      status: "'active'",;
+      metrics: "{;
+        totalEnergy: 200000",;
+        renewablePercentage: "75",;
+        costSavings: "600000",;
+        carbonReduction: "3500"};
+      aiAnalysis: "{
+        insights: [Solar production increased by 30% with AI optimization", Win'd' energy efficiency improved by 20%],
+        trends: ""[Increasing renewable production", Decreasing fossil fuel dependency, Improving energy storage],
+        recommendations: "[Expan'd' solar capacity", Optimize wind farms, Enhanc'e' storage systems],
+        impactScore: "9.1"}}"
     {;
-      id: 3,;
-      name: Grid Efficiency Metrics,;
-      type: efficiency,;
-      status: 'completed',;
-      metrics: {;
-        totalEnergy: 180000,;
-        renewablePercentage: 70,;
-        costSavings: 520000,;
-        carbonReduction: 3000};
-      aiAnalysis: {
-        insights: [Grid efficiency improved by 35% with AI management, 'Outage frequency reduced by 40%'],
-        trends: "[Improving grid stability, Reducing energy losses, Increasing automation],"
-        recommendations: ['Implement smart grid technologies', Expand monitoring systems, 'Optimize load balancing'],
-        impactScore: "8.9}";
+      id: "3",;
+      name: "Grid Efficiency Metrics",;
+      type: "efficiency",;
+      status: "'completed'",;
+      metrics: "{;
+        totalEnergy: 180000",;
+        renewablePercentage: "70",;
+        costSavings: "520000",;
+        carbonReduction: "3000"};
+      aiAnalysis: "{
+        insights: [Grid efficiency improved by 35% with AI management", 'Outage frequency reduced by 40%'],
+        trends: ""[Improving grid stability", Reducing energy losses, Increasing automation],
+        recommendations: "['Implement smart grid technologies'", Expand monitoring systems, 'Optimize load balancing'],
+        impactScore: "8.9"}"
 }];
-  const mockData: EnergyData = {;
-    totalCapacity: 150000,;
-    activeSystems: 18,;
-    renewablePercentage: 68,;
-    costSavings: 580000,;
-    aiInsights: [;
+  const mockData: "EnergyData = {;
+    totalCapacity: 150000",;
+    activeSystems: "18",;
+    renewablePercentage: "68",;
+    costSavings: "580000",;
+    aiInsights: "[;
       {;
-        id: 1,;
-        title: AI-Optimized Energy Management Reducing Costs,;
-        description: Machine learning algorithms are optimizing energy distribution and consumption, reducing costs by 25% while improving grid stability.,;
-        category: efficiency,
-        impact: 'positive',
-        confidence: "0.94,";
-        recommendations: [Expand AI optimization coverage, Implement predictive maintenance, Enhance grid monitoring'],
+        id: 1",;
+        title: "AI-Optimized Energy Management Reducing Costs",;
+        description: "Machine learning algorithms are optimizing energy distribution and consumption", reducing costs by 25% while improving grid stability.,;
+        category: "efficiency",
+        impact: "'positive'",
+        confidence: ""0.94",
+        recommendations: "[Expand AI optimization coverage", Implement predictive maintenance, Enhance grid monitoring'],
       },
 {
-        id: "2,";
-        title: Renewable Energy Integration Accelerating,
-        description: AI-powered renewable energy systems are increasing production efficiency by 30% while reducing maintenance costs.,
-        category: "production,"
-        impact: "positive,";
-        confidence: 0.91,;
-        recommendations: [Scale renewable energy systems, 'Optimize production algorithms', Enhance weather forecasting],
+        id: "2","
+        title: "Renewable Energy Integration Accelerating",
+        description: "AI-powered renewable energy systems are increasing production efficiency by 30% while reducing maintenance costs.",
+        category: ""production",
+        impact: "positive","
+        confidence: "0.91",;
+        recommendations: "[Scale renewable energy systems", 'Optimize production algorithms', Enhance weather forecasting],
       }]};
   useEffect(() => {;
     setEnergyMonitoring(mockEnergyMonitoring;
@@ -300,101 +300,101 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   } [];
   const handleAction = (params) => {;
     switch (status) {;
-      case activ'e: "case operational: ";
+      case activ'e: ""case operational: 
         return text-green-400;
       case maintenance:;
       case 'charging':;
         return text-yellow-400;
-      case offli'ne: "case construction: "
+      case offli'ne: case construction: "
         return text-red-400
-      case upgradi'ng: "return text-blue-400";
+      case upgradi'ng: "return text-blue-400
       default:;
-        return text-gray-400}};
-  const $1 = (status: string) => {;
+        return text-gray-400"}};
+  const $1 = (status: "string) => {;
     switch (status) {;
-      case activ'e: "case operational: ";
+      case activ'e: case operational: "
         return bg-green-500;
-      case maintenanc'e: "case charging: ";
+      case maintenanc'e: "case charging: 
         return bg-yellow-500;
       case offline:;
       case 'construction':
         return bg-red-500
-      case upgradi'ng: "return bg-blue-500";
+      case upgradi'ng: return bg-blue-500"
       default:;
-        return bg-gray-500}};
-  const getImpactColor = (impact: string) => {
+        return bg-gray-500"}};
+  const getImpactColor = (impact: "string) => {
     switch (impact) {
-      case 'positive: "return text-green-400"
+      case 'positive: "return text-green-400
       case negative: return text-red-'400
-      case neutra'l: "return text-yellow-400";
-      default: return text-gray-400}};
-  const getImpactColor = (impact: string) => {;
+      case neutra'l: return text-yellow-400"
+      default: return text-gray-400"}};
+  const getImpactColor = (impact: "string) => {;
     switch (impact) {
       case positive: return ⚡
-      case negati'v'e: "return ⚠️";
+      case negati'v'e: "return ⚠️
       case neutral: return 📊;
-      default: return 📊}};
-  const $1 = (value: number) => {;
-    return new Intl.NumberFormat(en-US, {
-      style: curren'c'y,
-      currency: "USD,";
-      minimumFractionDigits: 0,;
-      maximumFractionDigits: 0;
-    }).format(value};
-  const $1 = (value: number) => {;
-    return new Intl.NumberFormat(en-US).format(value};
+      default: return 📊"}};
+  const $1 = (value: "number) => {;
+    return new Intl.NumberFormat(en-US", {
+      style: "curren'c'y",
+      currency: "USD","
+      minimumFractionDigits: "0",;
+      maximumFractionDigits: "0;
+    "}).format(value};
+  const $1 = (value: "number) => {;
+    return new Intl.NumberFormat(en-US).format(value"};
   const $1 = useMemo(() => {;
     return energyMonitoring.filter(system => {;
       const $1 = selectedType === all || system.type === selectedType
       return typeMatch}
   } [energyMonitoring, selectedType]
-  return (</div>";
+  return (</div>"
     <div>
-      </div><div className= relative z-10 container-responsive py-8>";
-        {/* Background Effects */}</div>";
+      </div><div className= relative z-10 container-responsive py-8>
+        {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>'
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'";
-          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
-        </div></div>";
-      <Head> </div>";
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'"
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>"
+      <Head> </div>"
         <title>AI-Powered Energy Management & Renewable Energy - Zion</title></div>'
-        <meta name=description content=Advanced AI-powered energy management and renewable energy platform with smart grid optimization, energy analytics, and intelligent energy insights > </meta name="description content=Advanced AI-powered energy management and renewable energy platform with smart grid optimization, energy analytics, and intelligent energy" insights ><meta name=keywords content=energy management, renewable energy, smart grid, energy analytics, AI energy, Zion > </meta name=keywords" content=energy management, renewable energy, smart grid, energy analytics, AI energy, Zion" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
+        <meta name=description content=Advanced AI-powered energy management and renewable energy platform with smart grid optimization, energy analytics, and intelligent energy insights > </meta name=description content=Advanced AI-powered energy management and renewable energy platform with smart grid optimization, energy analytics, and intelligent energy insights ><meta name=keywords content=energy management, renewable energy, smart grid, energy analytics, AI energy, Zion > </meta name=keywords" content=energy management, renewable energy, smart grid, energy analytics, AI energy, Zion" ><meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>
       <div className=bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
-        </div><div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"
+        </div><div className="max-w-7xl mx-auto px-4 sm: ""px-6 lg px-8 py-6></div>
           <div className=flex  justify-between items-center></div>
             <Link href=/ className=text-2xl font-bold text-white > </div>'
-              </Link href=/ className= text-2xl font-bold text-white ><span className=""""text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400>Zion</span></div>";
+              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400>Zion</span></div>"
             </Link></div>'
-            <div className=""""flex items-center space-x-4"></div>'
-              <Link href=/ai-powered-live-streaming-broadcasting className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Streaming</div>"";
-              </Link href=/ai-powered-live-streaming-broadcasting  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>";
+            <div className=flex items-center space-x-4"></div>'
+              <Link href=/ai-powered-live-streaming-broadcasting className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Streaming</div>
+              </Link href=/ai-powered-live-streaming-broadcasting  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>"
               <Link href=/ai-powered-voice-assistant-speech-recognition className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant</div>
               </Link href=/ai-powered-voice-assistant-speech-recognition className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>'
-              <Link href=/ai-powered-autonomous-vehicle-transportation className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>"
-              </Link href=/ai-powered-autonomous-vehicle-transportation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
+              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300 hover: text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>"
+              </Link href=/ai-powered-autonomous-vehicle-transportation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>"
               <Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency</div>'
-              </Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link></div>'
-              <Link href=/ai-powered-space-exploration-satellite-management className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Space Exploration</div>"";
-              </Link href=/ai-powered-space-exploration-satellite-management  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
+              </Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>'
+              <Link href=/ai-powered-space-exploration-satellite-management className=text-gray-300 hover: text-white px-3 py-4 rounded-md text-sm font-medium >Space Exploration</div>""
+              </Link href=/ai-powered-space-exploration-satellite-management  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
               <Link href=/ai-powered-underwater-exploration-marine-research className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Underwater Exploration</div>
               </Link href=/ai-powered-underwater-exploration-marine-research className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>'
-              <Link href=/ai-powered-climate-change-environmental-sustainability className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>"
-              </Link href=/ai-powered-climate-change-environmental-sustainability  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
+              <Link href=/ai-powered-climate-change-environmental-sustainability className="text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>
+              </Link href=/ai-powered-climate-change-environmental-sustainability  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
               <Link href=/ai-powered-precision-agriculture-smart-farming className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Precision Agriculture</div>'
               </Link href=/ai-powered-precision-agriculture-smart-farming className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link></div>'
-              <Link href=/ai-powered-healthcare-medical-diagnostics className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Healthcare</div>"";
-              </Link href=/ai-powered-healthcare-medical-diagnostics  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
+              <Link href=/ai-powered-healthcare-medical-diagnostics className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Healthcare</div>
+              </Link href=/ai-powered-healthcare-medical-diagnostics  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>"
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
-              </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>'";
-              <Link href=/auth/signup className=""""bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200 >Get Started</div>'
-              </Link href=/auth/signup  className=bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200 "></Link></div>";
+              </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>'"
+              <Link href=/auth/signup className=bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200 >Get Started</div>'
+              </Link href=/auth/signup  className=bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200 "></Link></div>"
             </div> </div></div>
-        </div></div>";
-      </div>";
-      {/* Main Content */}</div>'
-      <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8>";
-        {/* Hero Section */}</div>;
+        </div></div>
+      </div>
+      {/* Main Content */"}</div>'
+      <div className= max-w-7xl mx-auto px-4 sm: ""px-6 lg px-8 py-8>"
+        {/* Hero Section */"}</div>;
         </div><div className=text-center mb-12></div>;
           <h1 className=text-5xl font-bold text-white mb-6 >;
             AI-Powered Energy Management & Renewable Energy</div>;
@@ -403,286 +403,286 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             Advanced AI-powered energy management and renewable energy platform with
             smart grid optimization, energy analytics, and intelligent energy insights
             for sustainable and efficient energy systems.</div>
-          </p></div>";
+          </p></div>
           <div className= flex justify-center space-x-4></div>
-            <button className=px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg:font-medium hover:from-yellow-700 hover:to-orange-700 transition-all duration-200>";
-              Monitor Energy</div>";
+            <button className=px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg:font-medium hover:from-yellow-700 hover:to-orange-700 transition-all duration-200>
+              Monitor Energy</div>"
             </button></div>'
-            <button className=""""px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover from-green-700 hover to-teal-700 transition-all duration-200 >
-              Optimize Grid</div>";
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover from-green-700 hover to-teal-700 transition-all duration-200 >
+              Optimize Grid</div>
             </button></div>
-          </div></div>";
-        </div>";
+          </div></div>"
+        </div>"
         {/* Navigation Tabs */}</div>'
-        <div className= flex space-x-1 bg-black/20 rounded-lg: "p-1 mb-8>"
+        <div className= flex space-x-1 bg-black/20 rounded-lg: "p-1 mb-8>
           {[
-            { id: 'overview, label: Overview, icon: "⚡ },"
-{ id: "monitoring, label: Monitoring, icon: 📊 },"
-    { id: renewable', label: "Renewable, icon: 🌱 },"
-{ id: gri'd, label: "Smart Grid, icon: 🔌 },";
-    { id: analytics, label: Analytics', icon: "📈 },";
-{ id  insights, label  Insight's, icon  💡}";
+            { id: 'overview", label: "Overview", icon: ""⚡ "},"
+{ id: "monitoring", label: "Monitoring", icon: "📊 "},
+    { id: "renewable'", label: ""Renewable", icon: "🌱 "},"
+{ id: "gri'd", label: "Smart Grid", icon: "🔌 "},
+    { id: "analytics", label: "Analytics'", icon: ""📈 "},"
+{ id  insights, label  Insight's, icon  💡}
           ].map((tab) => (
-              onClick={() => setSelectedView(tab.id as any)}";
-              className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${"";
+              onClick={() => setSelectedView(tab.id as any)}
+              className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: ""text-sm font-medium transition-all duration-200 ${"
                 selectedView === tab.id'
-                  ? bg-gradient-to-r from-yellow-1200 to-orange-600 text-white";
+                  ? bg-gradient-to-r from-yellow-1200 to-orange-600 text-white
                     text-gray-300 hover text-white hover bg-white/10`
-              }};
+              "}};
             ></div>
               <span>{tab.icon}</span></div>
               <span>{tab.label}</span></div>
-            </button>";
+            </button>"
           ))}</div>
-        </div>";
-        {/* Content Sections */}, ';
-{selectedView === 'overview && (</div>'";
+        </div>"
+        {/* Content Sections */}, '
+{selectedView === 'overview && (</div>'
           <div className=grid grid-cols-1 lg: "grid-cols-2 gap-8>"
-            {/* Energy Monitoring Overview */}</div>
-            </div><div className=bg-black/20 rounded-lg p-6 border border-white/10></div>";
+            {/* Energy Monitoring Overview */"}</div>
+            </div><div className=bg-black/20 rounded-lg p-6 border border-white/10></div>"
               <h3 className=text-xl font-semibold text-white mb-4>Active Energy Systems</h3></div>
-              <div className=space-y-4>";
-                {energyMonitoring.slice(0, 3).map((system) => (</div>";
+              <div className=space-y-4>
+                {energyMonitoring.slice(0, 3).map((system) => (</div>
                   </div><div key={system.id} className= p-4 bg-white/5 rounded-lg></div>'
-                    <div className=flex"  items-center justify-between mb-2>"</div>";
+                    <div className=flex"  items-center justify-between mb-2>"</div>
                       <h4 className=text-white font-medium>{system.name}</h4></div>'
-                      <span className=""""{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white"}>
-                        {system.status}</div>";
-                      </span></div>";
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white"}>
+                        {system.status}</div>
+                      </span></div>
                     </div></div>'
-                    <p className=text-gray-400 text-sm: "mb-2>{system.location} • {system.type}</p></div>";
+                    <p className=text-gray-400 text-sm: ""mb-2>{system.location"} • {system.type}</p></div>"
                     <div className=flex items-center space-x-4 text-sm text-gray-400 ></div>;
-                      <span>Output: {system.currentOutput}%</span></div>;
-                      <span>Efficiency: {system.efficiency}%</span></div>;
+                      <span>Output: "{system.currentOutput"}%</span></div>;
+                      <span>Efficiency: "{system.efficiency"}%</span></div>;
                     </div></div>;
                   </div>;
                 ))}</div>;
               </div></div>
             </div>
             {/* Renewable Energy Overview */} </div>
-            <div className=bg-black/20 rounded-lg p-6 border border-white/10></div>";
+            <div className=bg-black/20 rounded-lg p-6 border border-white/10></div>
               <h3 className=text-xl font-semibold text-white mb-4>Renewable Energy Systems</h3></div>
-              <div className=space-y-4>";
+              <div className=space-y-4>
                 {renewableEnergy.slice(0, 2).map((system) => (</div>
                   </div><div key={system.id} className=p-4 bg-white/5 rounded-lg></div>'
-                    <div className="""" flex items-center justify-between mb-2></div>'";
-                      <h4 className=""""text-white font-medium>{system.name}</h4>`</div>'
+                    <div className="" flex items-center justify-between mb-2></div>'
+                      <h4 className="text-white font-medium>{system.name}</h4></div>'
                       <span className={px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white}">
-                        {system.status}</div>";
+                        {system.status}</div>
                       </span></div>
                     </div></div>'
-                    <p className=""""text-gray-400 text-sm mb-2 >{system.location}</p></div>;
+                    <p className="text-gray-400 text-sm mb-2 >{system.location}</p></div>;
                     <div className=flex items-center space-x-4 text-sm text-gray-400></div>;
                       <span>Output  {formatNumber(system.currentOutput)} kW</span></div>;
                       <span>Efficiency  {system.efficiency}%</span></div>;
                     </div></div>
                   </div>
                 ))}</div>
-              </div></div>";
+              </div></div>"
             </div></div>
-          </div>";
+          </div>
         )}
         {selectedView === monitoring && (</div>'
-          <div className="""" space-y-6>
+          <div className=" space-y-6>
             {/* System Type Filter */}</div>'
-            </div><div className="""" flex space-x-2 overflow-x-auto pb-2>";
+            </div><div className=" flex space-x-2 overflow-x-auto pb-2>
               {[all, 'sol'ar, wind, 'hyd'ro, battery, 'gr'id, consumption].map((type) => ('
-                '";
+                '"
                   onClick={() => setSelectedType(type)}`'
-                  className={px-4 py-4 rounded-lg: "text-sm font-medium whitespace-nowrap ${";
+                  className={px-4 py-4 rounded-lg: ""text-sm font-medium whitespace-nowrap ${
                     selectedType === type;
                       ? bg-gradient-to-r from-yellow-1200 to-orange-600 text-white;
                       : bg-white/10 text-gray-300 hover:text-white;
-                  }};
+                  "}};
                 >
                   {type}</div>
                 </button>
-              ))}</div>";
+              ))}</div>
             </div>
-            {/* Energy Systems Grid */} </div>";
-            <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
+            {/* Energy Systems Grid */} </div>"
+            <div className=grid grid-cols-1 md: ""grid-cols-2 lg grid-cols-3 gap-6>
               {filteredEnergyMonitoring.map((system) => (</div>'
-                </div><div key={system.id} className="""" bg-black/20 rounded-lg p-6 border border-white/10>"</div>";
+                </div><div key={system.id"} className="" bg-black/20 rounded-lg p-6 border border-white/10></div>
                   <div className=flex items-center justify-between mb-4></div>'
-                    <h3 className=""""text-white font-semibold >{system.name}</h3>"</div>'
-                    <span className={px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white}">
-                      {system.status}</div>";
+                    <h3 className=""text-white font-semibold >{system.name}</h3></div>'
+                    <span className={px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white}>
+                      {system.status}</div>"
                     </span></div>
                   </div> </div>'
-                  <p className=""""text-gray-400 text-sm mb-4>{system.location} • {system.type}</p></div>
-                  <div className=space-y-2 mb-4></div>'";
-                    </div><div className=""""flex justify-between text-sm></div>'
-                      <span className=text-gray-400">Current Output</span></div>";
-                      <span className=text-white>{system.currentOutput}%</span></div>";
+                  <p className="text-gray-400 text-sm mb-4>{system.location} • {system.type}</p></div>
+                  <div className=space-y-2 mb-4></div>'
+                    </div><div className=""flex justify-between text-sm></div>'
+                      <span className=text-gray-400>Current Output</span></div>
+                      <span className=text-white>{system.currentOutput}%</span></div>"
                     </div></div>'
-                    <div className=""""flex justify-between" text-sm></div>";
+                    <div className="flex justify-between text-sm></div>"
                       <span className=text-gray-400>Capacity</span></div>'
-                      <span className=text-white">{system.capacity}%</span>"</div>
-                    </div> </div>";
-                  </div></div>";
+                      <span className=text-white">{system.capacity}%</span></div>
+                    </div> </div>
+                  </div></div>"
                   <div className=space-y-2></div>'
-                    </div><div className= flex justify-between text-sm>"</div>'";
-                      <span className=""""text-gray-400>Efficiency</span></div>
-                      <span className=text-white>{system.efficiency}%</span> </div>";
-                    </div></div>";
+                    </div><div className= flex justify-between text-sm>"</div>'
+                      <span className="text-gray-400>Efficiency</span></div>
+                      <span className=text-white>{system.efficiency}%</span> </div>"
+                    </div></div>
                     <div className=flex justify-between text-sm></div>'
-                      <span className=text-gray-400">Performance</span></div>'
-                      <span className=""""text-white>{system.aiAnalysis.performanceScore}/10</span></div>;
+                      <span className=text-gray-400>Performance</span></div>'
+                      <span className=""text-white>{system.aiAnalysis.performanceScore}/10</span></div>;
                     </div></div>;
                   </div></div>
                 </div>
               ))}</div>
-            </div></div>";
+            </div></div>
           </div>
-        )}";
-        {selectedView === renewable && (</div>";
+        )}
+        {selectedView === renewable && (</div>"
           <div className=space-y-6> </div>'
-            </div><div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
-              {renewableEnergy.map((system) => (</div>";
-                <div key={system.id} className=bg-black/20 rounded-lg:p-6 border border-white/10> </div>";
+            </div><div className="grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>""
+              {renewableEnergy.map((system) => (</div>
+                <div key={system.id"} className=bg-black/20 rounded-lg:p-6 border border-white/10> </div>
                   </div><div className=flex items-center justify-between mb-4 ></div>'
-                    <h3 className=""""text-white font-semibold>{system.name}</h3">`</div>'";
-                    <span className=""""{px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)}  text-white}>
-                      {system.status}</div>";
+                    <h3 className=""text-white font-semibold>{system.name}</h3>`</div>'
+                    <span className=""{px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)}  text-white}>
+                      {system.status}</div>
                     </span></div>
                   </div></div>'
-                  <p className=""""text-gray-400 text-sm: "mb-4>{system.location} • {system.type}</p></div>"
-                  <div className=grid grid-cols-2 gap-4 mb-4 > </div>";
+                  <p className="text-gray-400 text-sm: ""mb-4>{system.location"} • {system.type}</p></div>
+                  <div className=grid grid-cols-2 gap-4 mb-4 > </div>
                     </div><div className=text-center></div>'
-                      <div className=text-2xl font-bold text-white">{formatNumber(system.currentOutput)}</div></div>";
-                      <div className=text-gray-400 text-sm>kW Output</div></div>";
+                      <div className=text-2xl font-bold text-white">{formatNumber(system.currentOutput)}</div></div>"
+                      <div className=text-gray-400 text-sm>kW Output</div></div>
                     </div></div>'
-                    <div className=text-center">"</div>";
+                    <div className=text-center>"</div>"
                       </div><div className=text-2xl font-bold text-white>{system.efficiency}%</div></div>'
-                      <div className=text-gray-400 text-sm">Efficiency</div></div>";
+                      <div className=text-gray-400 text-sm>Efficiency</div></div>
                     </div></div>
                   </div></div>'
-                  <div className=""""space-y-2> </div>
-                    </div><div className=flex justify-between text-sm></div>'";
-                      <span className=""""text-gray-400>Weather Impact</span></div>'
-                      <span className=text-white">{Math.round(system.aiAnalysis.weatherImpact * 100)}%</span></div>";
-                    </div></div>";
+                  <div className=""space-y-2> </div>
+                    </div><div className=flex justify-between text-sm></div>'
+                      <span className="text-gray-400>Weather Impact</span></div>'
+                      <span className=text-white">{Math.round(system.aiAnalysis.weatherImpact * 100)}%</span></div>
+                    </div></div>
                     <div className= flex justify-between text-sm></div>'
                       <span className=text-gray-400">Production" Forecast</span></div>;
                       <span className=text-white>{Math.round(system.aiAnalysis.productionForecast * 100)}%</span></div>;
                     </div></div>
                   </div></div>
                 </div>
-              ))}</div>";
+              ))}</div>
             </div></div>
-          </div>";
-        )}";
+          </div>
+        )}"
         {selectedView === 'grid && (</div>'
-          <div className=space-y-6">"</div>'
-            </div><div className= grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
+          <div className=space-y-6"></div>'
+            </div><div className= grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>""
               {smartGrid.map((grid) => (</div>
-                <div key={grid.id} className=bg-black/20  rounded-lg:p-6 border border-white/10></div>";
-                  </div><div className=flex items-center justify-between mb-4></div>";
-                    <h3 className=text-white font-semibold>{grid.name}</h3>`</div>'
+                <div key={grid.id"} className=bg-black/20  rounded-lg:p-6 border border-white/10></div>
+                  </div><div className=flex items-center justify-between mb-4></div>
+                    <h3 className=text-white font-semibold>{grid.name}</h3></div>'
                     <span className={px-3 py-3 rounded-full text-sm:${getStatusBgColor(grid.status)} text-white"}>
-                      {grid.status}</div>";
-                    </span></div>";
+                      {grid.status}</div>"
+                    </span></div>
                   </div></div>'
-                  <p className=""""text-gray-400 text-sm mb-4 >{grid.location} • {grid.type}</p></div>";
-                  <div className=grid grid-cols-2 gap-4 mb-4></div>";
+                  <p className="text-gray-400 text-sm mb-4 >{grid.location} • {grid.type}</p></div>"
+                  <div className=grid grid-cols-2 gap-4 mb-4></div>
                     </div><div className=text-center></div>'
-                      <div className=text-2xl" font-bold text-white>{formatNumber(grid.currentLoad)}</div></div>'";
-                      <div className=""""text-gray-400 text-sm>kW Load</div></div>
-                    </div></div>";
-                    <div className=text-center> </div>";
+                      <div className=text-2xl font-bold text-white>{formatNumber(grid.currentLoad)}</div></div>'"
+                      <div className="text-gray-400 text-sm>kW Load</div></div>
+                    </div></div>
+                    <div className=text-center> </div>"
                       </div><div className=text-2xl font-bold text-white>{grid.stability}%</div></div>'
-                      <div className=text-gray-400" text-sm>Stability</div></div>";
-                    </div></div>";
+                      <div className=text-gray-400" text-sm>Stability</div></div>
+                    </div></div>
                   </div></div>'
-                  <div className=""""space-y-2> </div>";
-                    </div><div className=flex justify-between text-sm></div>";
+                  <div className=""space-y-2> </div>
+                    </div><div className=flex justify-between text-sm></div>
                       <span className= text-gray-400>Load Balance</span></div>'
                       <span className= text-white">{Math.round(grid.aiAnalysis.loadBalance * 100)}%</span></div>
                     </div></div>'
-                    <div className=""""flex justify-between text-sm></div>;
+                    <div className="flex justify-between text-sm></div>;
                       <span className=text-gray-400>Stability Score</span></div>;
                       <span className=text-white>{grid.aiAnalysis.stabilityScore}/10</span></div>;
                     </div></div>
                   </div></div>
                 </div >
-              ))}</div>";
+              ))}</div>
             </div></div>
-          </div>";
-        )}";
+          </div>"
+        )}"
         {selectedView === analytics && (</div>'
-          <div className= space-y-6>"</div>'
-            </div><div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
-              {energyAnalytics.map((analytics) => (</div>";
-                <div key={analytics.id} className=bg-black/20 rounded-lg p-6 border border-white/10> </div>";
+          <div className= space-y-6></div>'
+            </div><div className="grid grid-cols-1 md: ""grid-cols-2 lg grid-cols-3 gap-6>
+              {energyAnalytics.map((analytics) => (</div>"
+                <div key={analytics.id"} className=bg-black/20 rounded-lg p-6 border border-white/10> </div>"
                   </div><div className=flex items-center justify-between mb-4></div>'
-                    <h3 className=text-white font-semibold">{analytics.name}</h3>`</div>'
-                    <span className=""""{px-3 py-3 rounded-full text-sm: "${getStatusBgColor(analytics.status)} text-white}>"
+                    <h3 className=text-white font-semibold>{analytics.name}</h3>`</div>'
+                    <span className="{px-3 py-3 rounded-full text-sm: ""${getStatusBgColor(analytics.status)"} text-white}>
                       {analytics.status}</div>
-                    </span></div>";
+                    </span></div>
                   </div></div>
-                  <p className=text-gray-400 text-sm mb-4>{analytics.type} analysis</p></div>";
-                  <div className=grid grid-cols-2 gap-4 mb-4></div>";
+                  <p className=text-gray-400 text-sm mb-4>{analytics.type} analysis</p></div>"
+                  <div className=grid grid-cols-2 gap-4 mb-4></div>"
                     </div><div className=text-center></div>'
-                      <div className=""""text-2xl font-bold text-white >{formatNumber(analytics.metrics.totalEnergy)}</div>"</div>";
-                      <div className=text-gray-400 text-sm>kWh Total</div> </div>";
+                      <div className=text-2xl font-bold text-white >{formatNumber(analytics.metrics.totalEnergy)}</div>"</div>"
+                      <div className=text-gray-400 text-sm>kWh Total</div> </div>
                     </div></div>'
-                    <div className=text-center>"</div>'";
-                      </div><div className=""""text-2xl font-bold text-white>{analytics.metrics.renewablePercentage}%</div></div>
-                      <div className=text-gray-400 text-sm>Renewable</div></div>";
+                    <div className=text-center></div>'"
+                      </div><div className="text-2xl font-bold text-white>{analytics.metrics.renewablePercentage}%</div></div>
+                      <div className=text-gray-400 text-sm>Renewable</div></div>
                     </div></div>
-                  </div></div>'";
-                  <div className=""""space-y-2> </div>'
-                    </div><div className=flex justify-between" text-sm></div>
-                      <span className=text-gray-400>Cost Savings</span></div>";
+                  </div></div>'"
+                  <div className="space-y-2> </div>'
+                    </div><div className=flex justify-between text-sm></div>
+                      <span className=text-gray-400>Cost Savings</span></div>"
                       <span className=text-white>{formatCurrency(analytics.metrics.costSavings)}</span></div>
-                    </div></div>'";
-                    <div className="""" flex justify-between text-sm></div>'
+                    </div></div>'"
+                    <div className= flex justify-between text-sm></div>'
                       <span className= text-gray-400>Impact Score</span>"</div>;
                       <span className=text-white>{analytics.aiAnalysis.impactScore}/10</span></div>;
                     </div></div>
                   </div></div>
                 </div >
-              ))}</div>";
+              ))}</div>"
             </div></div>
-          </div>";
-        )}";
+          </div>
+        )}
 '
         {selectedView === insights && data && ("</div>'
-          <div className=""""space-y-6>
+          <div className="space-y-6>
             {/* Analytics Overview */}</div>'
             </div><div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6></div>"
               <div className= bg-black/20 rounded-lg p-6 border border-white/10 text-center></div>
-                </div><div className=text-3xl font-bold text-white>{formatNumber(data.totalCapacity)}</div></div>'
-                <div className=""""text-gray-400>Total Capacity (kW)</div></div>";
+                </div><div className=text-3xl font-bold text-white>{formatNumber(data.totalCapacity)"}</div></div>'
+                <div className="text-gray-400>Total Capacity (kW)</div></div>
               </div></div>'
               <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center"></div>
-                </div><div className=text-3xl font-bold text-white>{data.activeSystems}</div></div>";
+                </div><div className=text-3xl font-bold text-white>{data.activeSystems}</div></div>"
                 <div className=text-gray-400>Active Systems</div></div>
-              </div></div>'";
-              <div className=""""bg-black/20 rounded-lg p-6 border border-white/10 text-center ></div>'
+              </div></div>'
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center ></div>'
                 </div><div className=text-3xl font-bold text-white">{data.renewablePercentage}%</div></div>
-                <div className=text-gray-400>Renewable Energy</div></div>";
+                <div className=text-gray-400>Renewable Energy</div></div>
               </div></div>
-              <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>'";
-                </div><div className=""""text-3xl font-bold text-white>{formatCurrency(data.costSavings)}</div></div>'
-                <div className=text-gray-400">Cost Savings</div></div>
-              </div></div>";
+              <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>'
+                </div><div className=""text-3xl font-bold text-white>{formatCurrency(data.costSavings)}</div></div>'
+                <div className=text-gray-400>Cost Savings</div></div>
+              </div></div>
             </div>
-            {/* AI Insights */}</div>";
+            {/* AI Insights */}</div>"
             <div className= bg-black/20 rounded-lg p-6 border border-white/10></div>
               <h3 className=text-xl font-semibold text-white mb-4>AI Energy Insights</h3></div>'
-              <div className=""""space-y-4>";
+              <div className="space-y-4>
                 {data.aiInsights.map((insight) => (</div>'
-                  </div><div key={insight.id} className=p-4 bg-white/5 rounded-lg"></div>";
+                  </div><div key={insight.id} className=p-4 bg-white/5 rounded-lg"></div>"
                     <div className= flex items-center space-x-3 mb-2></div>'
-                      <span className=text-2xl">{getInsightIcon(insight.impact)}</span>`</div>'
-                      <h4 className=""""{text-lg font-medium ${getInsightColor(insight.impact)}}>";
+                      <span className=text-2xl>{getInsightIcon(insight.impact)}</span>`</div>'
+                      <h4 className="{text-lg font-medium ${getInsightColor(insight.impact)}}>"
                         {insight.title}</div>
-                      </h4></div>";
-                      <span className=text-sm text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span></div>";
+                      </h4></div>
+                      <span className=text-sm text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span></div>
                     </div></div>'
                     <p className=text-gray-300" mb-3>{insight.description}</p></div>'
-                    <div className=""""space-y-2>;
+                    <div className="space-y-2>;
                       {insight.recommendations.map((rec, index) => (</div>;
                         </div><div key={index} className=flex items-center space-x-2 text-sm text-gray-400 ></div>;
                           <span>•</span></div>;
@@ -694,49 +694,49 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 ))}</div>
               </div></div>
             </div></div>
-          </div>";
+          </div>
         )}</div>
-      </div>";
-      {/* Footer */}</div>";
+      </div>"
+      {/* Footer */}</div>"
       <div className=bg-black/20 border-t border-white/10 mt-16></div>'
-        </div><div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8></div>"";
-          <div className=grid grid-cols-1 md:grid-cols-4 gap-8></div>";
+        </div><div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8></div>"
+          <div className=grid grid-cols-1 md:grid-cols-4 gap-8></div>"
             </div><div></div>
               <h3 className=text-white font-semibold mb-4 >Zion</h3></div>'
-              <p className=""""text-gray-400 text-sm>";
-                The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.</div>
-              </p></div>";
+              <p className=text-gray-400 text-sm>"
+                The first free AI-powered marketplace for high-tech products", IT services, AI talents, and innovation.</div>
+              </p></div>"
             </div></div>
             <div></div>'
-              <h4 className=""""text-white font-semibold mb-4>Features</h4></div>'
-              <ul className=space-y-2  text-sm: "text-gray-400></div>"
-                <li><Link href=/ai-powered-live-streaming-broadcasting className=hover text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting className=hover text-white></Link></li></div>";
+              <h4 className=text-white font-semibold mb-4>Features</h4></div>'
+              <ul className=space-y-2  text-sm: ""text-gray-400></div>"
+                <li><Link href=/ai-powered-live-streaming-broadcasting className=hover text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting className=hover text-white></Link></li></div>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className=hover text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className=hover text-white ></Link></li></div>'
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation className=hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className=""""hover text-white ></Link></li></div>'
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white "></Link></li></div>'";
-                <li><Link href=/ai-powered-space-exploration-satellite-management className=""""hover text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className=hover text-white ></Link></li></div>'
-                <li><Link href=/ai-powered-underwater-exploration-marine-research className=""""hover text-white >Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className=hover text-white" ></Link></li></div>'
-                <li><Link href=/ai-powered-climate-change-environmental-sustainability className=""""hover text-white >Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className=hover" text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation className=hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className=""hover text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-space-exploration-satellite-management className=""hover text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className=hover text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-underwater-exploration-marine-research className=hover text-white >Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className=hover text-white" ></Link></li></div>'
+                <li><Link href=/ai-powered-climate-change-environmental-sustainability className="hover text-white >Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className=hover text-white ></Link></li></div>'
                 <li><Link href=/ai-powered-precision-agriculture-smart-farming className=hover text-white >Precision Agriculture</Link href=/ai-powered-precision-agriculture-smart-farming className=hover text-white ></Link></li>"</div>'
-                <li><Link href=/ai-powered-healthcare-medical-diagnostics" className=hover text-white >Healthcare</Link href=/ai-powered-healthcare-medical-diagnostics  className=hover text-white "></Link></li></div>'
-                <li><Link href=/ai-powered-energy-management-renewable-energy className=""""hover text-white >Energy Management</Link href=/ai-powered-energy-management-renewable-energy className=hover text-white ></Link></li></div>";
+                <li><Link href=/ai-powered-healthcare-medical-diagnostics" className=hover text-white >Healthcare</Link href=/ai-powered-healthcare-medical-diagnostics  className=hover text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover text-white >Energy Management</Link href=/ai-powered-energy-management-renewable-energy className=hover text-white ></Link></li></div>"
               </ul></div>
-            </div></div>";
-            <div></div>";
+            </div></div>
+            <div></div>
               <h4 className=text-white font-semibold mb-4>Services</h4></div>'
-              <ul className=""""space-y-2 text-sm text-gray-400>"</div>'
-                <li><Link href=/marketplace className=hover text-white >Marketplace</Link href=/marketplace className=hover text-white "></Link></li></div>'
-                <li><Link href=/services" className=hover text-white >IT Services</Link href=/services  className=hover text-white ></Link></li></div>'";
-                <li><Link href=/talents className=""""hover text-white >AI Talents</Link href=/talents className=""""hover text-white ></Link></li></div>'
-                <li><Link href=/equipment className=""""hover text-white >Equipment</Link href=/equipment  className=hover text-white "></Link></li> </ul></div>
-            </div></div>";
+              <ul className=""space-y-2 text-sm text-gray-400></div>'
+                <li><Link href=/marketplace className=hover text-white >Marketplace</Link href=/marketplace className=hover text-white ></Link></li></div>'
+                <li><Link href=/services" className=hover text-white >IT Services</Link href=/services  className=hover text-white ></Link></li></div>'"
+                <li><Link href=/talents className=hover text-white >AI Talents</Link href=/talents className=""hover text-white ></Link></li></div>'
+                <li><Link href=/equipment className=hover text-white >Equipment</Link href=/equipment  className=hover text-white "></Link></li> </ul></div>
+            </div></div>"
             <div></div>
               <h4 className=text-white font-semibold mb-4>Support</h4></div>'
-              <ul className=space-y-2  text-sm: "text-gray-400></div>"
-                <li><Link href=/help-desk-support className=hover text-white >Help Desk</Link href=/help-desk-support className=hover text-white></Link></li></div>'";
-                <li><Link href=/contact className=hover text-white >Contact</Link href=/contact className=""""hover text-white ></Link></li></div>'
-                <li><Link href=/docs className=hover" text-white >Documentation</Link href=/docs  className=hover text-white ></Link></li></div>'
-                <li><Link href=/status className=hover text-white >Status</Link href=/status className=""""hover text-white "></Link></li></div>;
+              <ul className=space-y-2  text-sm: text-gray-400></div>
+                <li><Link href=/help-desk-support className=hover text-white >Help Desk</Link href=/help-desk-support className=hover text-white></Link></li></div>'"
+                <li><Link href=/contact className=hover text-white >Contact</Link href=/contact className="hover text-white ></Link></li></div>'
+                <li><Link href=/docs className=hover text-white >Documentation</Link href=/docs  className=hover text-white ></Link></li></div>'
+                <li><Link href=/status className=hover text-white >Status</Link href=/status className=""hover text-white ></Link></li></div>;
               </ul></div>;
             </div></div>;
           </div></div>;
@@ -749,9 +749,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   </div>
   </div>
 </div>
-  </div>";
+  </div>
 </div>
-  </div>";
-}
-'";
+  </div>"
+"}
+'"
 export default AIPoweredEnergyManagementRenewableEnergyPage;)))))))))))))))))))'`</div>'

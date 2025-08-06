@@ -14,10 +14,10 @@ function fixMissingDependencies(filePath) {
         // Remove all mock dependencies
         const $1 = deps.split(',').map(dep => dep.trim());
         const $1 = depArray.filter(dep => !dep.includes('mo'c'k'));
-        const $1 = validDeps.length > 0 ? validDeps.join(', ') : "";
+        const $1 = validDeps.length > 0 ? validDeps.join(', ') : "
         
         if (newDeps !== deps) {
-          return match.replace(/\[([^\]]*)\]\)/, "[${newDeps}]\)");
+          return match.replace(/\[([^\]]*)\]\)/, [${newDeps}]\)");
         }
       }
       return match;
@@ -26,13 +26,13 @@ function fixMissingDependencies(filePath) {
     // Fix setMessages calls with incorrect syntax
     const $1 = /setMessages\(prev => \[\.\.\.prev, \.\.\.mockMessages\]\)/g;
     content = content.replace(setMessagesRegex, (match) => {
-      return 'setMessage's'(prev => [...prev])';
+      return 'setMessage's'(prev => [...prev])'
     });
     
     // Fix setSelectedProject calls with incorrect syntax
     const $1 = /setSelectedProject\(mockProjects\[([^\]]*)\]\)/g;
     content = content.replace(setSelectedProjectRegex, (match) => {
-      return 'setSelectedProjec't'(mockProjects[0])';
+      return 'setSelectedProjec't'(mockProjects[0])'
     });
     
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
@@ -42,7 +42,7 @@ function fixMissingDependencies(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }
@@ -72,13 +72,13 @@ function processFiles() {
     files.forEach(file => {
       const $1 = path.join(srcDir, file);
       if (fixMissingDependencies(filePath)) {
-        console.log("Fixed missing dependencies in ${file}");
+        console.log(Fixed missing dependencies in ${file});
         totalFixed++;
       }
     });
   }
   
-  console.log("\nTotal files fixed: ${totalFixed}");
+  console.log("\nTotal files fixed: "${totalFixed"}");
 }
 
 // Run the script

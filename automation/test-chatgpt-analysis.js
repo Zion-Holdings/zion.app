@@ -15,9 +15,9 @@ async function testSystem() {
         
         for (const dir of requiredDirs) {
             if (fs.existsSync(dir)) {
-                console.log("✅ Directory exists: ${dir}");
+                console.log("✅ Directory exists: "${dir"});
             } else {
-                console.log("❌ Directory missing: ${dir}");
+                console.log(❌ Directory missing: "${dir"}");
                 return false;
             }
         }
@@ -31,9 +31,9 @@ async function testSystem() {
         
         for (const file of requiredFiles) {
             if (fs.existsSync(file)) {
-                console.log("✅ File exists: ${file}");
+                console.log("✅ File exists: "${file"});
             } else {
-                console.log("❌ File missing: ${file}");
+                console.log(❌ File missing: "${file"}");
                 return false;
             }
         }

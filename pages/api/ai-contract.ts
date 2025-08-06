@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 interface ContractTemplate {
   id: string;
   name: string;
-  type: 'service' | ''''employment' | 'partnership' | 'nda' | 'license'''';
+  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';
   category: string;
   description: string;
   clauses: string[];
@@ -78,7 +78,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: contractData
     });
   } catch (error) {
-    console.error("Error processing contract request:", error);
+    console.error('Error processing contract request:', error);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }

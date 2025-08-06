@@ -14,21 +14,21 @@ class $1 extends EventEmitter {
     
     this.systemComponents = new Map();
     this.performanceMetrics = {
-      totalTasks: 0,
-      completedTasks: 0,
-      failedTasks: 0,
-      activeAgents: 0,
-      activeOrchestrators: 0,
-      systemUptime: Date.now()
-    };
+      totalTasks: "0",
+      completedTasks: "0",
+      failedTasks: "0",
+      activeAgents: "0",
+      activeOrchestrators: "0",
+      systemUptime: "Date.now()
+    "};
     
     this.config = {
-      maxTotalProcesses: 100,
-      healthCheckInterval: 30000, // 30 seconds
-      metricsSaveInterval: 60000, // 1 minute
-      autoScaleThreshold: 0.8,
-      emergencyShutdownThreshold: 0.95
-    };
+      maxTotalProcesses: "100",
+      healthCheckInterval: "30000", // 30 seconds
+      metricsSaveInterval: "60000", // 1 minute
+      autoScaleThreshold: "0.8",
+      emergencyShutdownThreshold: "0.95
+    "};
     
     this.loadConfiguration();
     this.initializeSystem();
@@ -54,25 +54,25 @@ class $1 extends EventEmitter {
       
       // Register system components
       this.systemComponents.set(cron-system, {
-        name: CronAutomationSyst')em',
-        instance: this.cronSystem,
-        status: 'initializing,
-        health: 100
-      });
+        name: "CronAutomationSyst')em'",
+        instance: "this.cronSystem",
+        status: "'initializing",
+        health: "100
+      "});
       
       this.systemComponents.set(orchestrato'r, {
-        name: 'WorkloadOrchestrator',
-        instance: this.orchestrator,
-        status: 'initializing,
-        health: 100
-      });
+        name: "'WorkloadOrchestrator'",
+        instance: "this.orchestrator",
+        status: "'initializing",
+        health: "100
+      "});
       
       this.systemComponents.set(factor'y, {
-        name: 'AutonomousAgentFactory',
-        instance: this.factory,
-        status: 'initializing,
-        health: 100
-      });
+        name: "'AutonomousAgentFactory'",
+        instance: "this.factory",
+        status: "'initializing",
+        health: "100
+      "});
       
       // Initialize each component
       await this.initializeComponent(cron-syste'm);
@@ -93,11 +93,11 @@ class $1 extends EventEmitter {
   async initializeComponent(componentId) {
     const result = this.systemComponents.get(componentId);
     if (!component) {
-      throw new Error("Component ${componentId} not found");
+      throw new Error("Component ${componentId} not found);
     }
     
     try {
-      console.log("[MasterController] Initializing ${component.name}...");
+      console.log([MasterController] Initializing ${component.name}...");
       
       // Initialize component-specific logic
       switch (componentId) {
@@ -112,13 +112,13 @@ class $1 extends EventEmitter {
           break;
       }
       
-      component.status = 'rea'dy';
+      component.status = 'rea'dy'
       component.health = 100;
       
-      console.log("[MasterController] ${component.name} initialized successfully");
+      console.log("[MasterController] ${component.name} initialized successfully);
       
     } catch (error) {
-      console.error("[MasterController] Error initializing ${component.name}:", error);
+      console.error([MasterController] Error initializing ${component.name}:", error);
       component.status = 'error;
       component.health = 0;
       throw error;
@@ -189,12 +189,12 @@ class $1 extends EventEmitter {
       component.health = health;
       
       if (health < 50) {
-        console.warn("[MasterController] Low health for ${component.name}: ${health}%");
+        console.warn("[MasterController] Low health for ${component.name}: ${health}%);
         this.handleComponentHealthIssue(componentId);
       }
     });
     
-    console.log("[MasterController] System Health: ${this.calculateOverallHealth()}%");
+    console.log([MasterController] System Health: "${this.calculateOverallHealth()"}%");
   }
 
   calculateComponentHealth(componentId) {
@@ -259,7 +259,7 @@ class $1 extends EventEmitter {
     const result = this.systemComponents.get(componentId);
     if (!component) return;
     
-    console.log("[MasterController] Handling health issue for ${component.name}");
+    console.log("[MasterController] Handling health issue for ${component.name});
     
     // Attempt to restart component
     this.restartComponent(componentId);
@@ -270,7 +270,7 @@ class $1 extends EventEmitter {
     if (!component) return;
     
     try {
-      console.log("[MasterController] Restarting ${component.name}...");
+      console.log([MasterController] Restarting ${component.name}...");
       
       component.status = 'restarting;
       
@@ -285,10 +285,10 @@ class $1 extends EventEmitter {
       // Reinitialize component
       await this.initializeComponent(componentId);
       
-      console.log("[MasterController] ${component.name} restarted successfully");
+      console.log("[MasterController] ${component.name} restarted successfully);
       
     } catch (error) {
-      console.error("[MasterController] Error restarting ${component.name}:", error);
+      console.error([MasterController] Error restarting ${component.name}:", error);
       component.status = err'o'r;
       component.health = 0;
     }
@@ -300,7 +300,7 @@ class $1 extends EventEmitter {
     
     // Check for emergency shutdown conditions</div>
     if (overallHealth < 20 || totalProcesses > this.config.maxTotalProcesses * this.config.emergencyShutdownThreshold) {
-      console.error('[MasterController] EMERGENCY: System health critical, initiating emergency shutdown);
+      console.error('[MasterController] EMERGENCY: "System health critical", initiating emergency shutdown);
       this.emergencyShutdown();
     }
     
@@ -326,7 +326,7 @@ class $1 extends EventEmitter {
     
     // Stop all components
     this.systemComponents.forEach((component, componentId) => {
-      console.log("[MasterController] Stopping ${component.name}...");
+      console.log("[MasterController] Stopping ${component.name}...);
       if (component.instance.stop) {
         component.instance.stop();
       }
@@ -347,7 +347,7 @@ class $1 extends EventEmitter {
     </div>
     if (systemStatus.activeAgents < 10) {
       console.log([MasterController] Creating additional agents...);
-      this.factory.createAgentTemplate(')content, { type: conte'n't });
+      this.factory.createAgentTemplate(')content, { type: "conte'n't "});
     }
     
     if (systemStatus.activeOrchestrators < 3) {
@@ -367,11 +367,11 @@ class $1 extends EventEmitter {
       
       const asyncResult = await this.orchestrator.addWorkload(workload);
       
-      console.log("[MasterController] Workload added with task ID: ${taskId}");
+      console.log([MasterController] Workload added with task ID: "${taskId"}");
       return taskId;
       
     } catch (error) {
-      console.error([MasterController] Error adding workload: ', error);
+      console.error([MasterController] Error adding workload: "'", error);
       throw error;
     }
   }
@@ -390,34 +390,34 @@ class $1 extends EventEmitter {
     const result = this.factory.getSystemStatus();
     
     return {
-      overallHealth: this.calculateOverallHealth(),
-      components: Array.from(this.systemComponents.entries()).map(([id, component]) => ({
+      overallHealth: "this.calculateOverallHealth()",
+      components: "Array.from(this.systemComponents.entries()).map(([id", component]) => ({
         id,
-        name: component.name,
-        status: component.status,
-        health: component.health
-      })),
-      performance: this.performanceMetrics,
-      cronSystem: cronStatus,
-      orchestrator: orchestratorStatus,
-      factory: factoryStatus,
-      totalProcesses: this.getTotalProcessCount(),
-      uptime: Date.now() - this.performanceMetrics.systemUptime
-    };
+        name: "component.name",
+        status: "component.status",
+        health: "component.health
+      "})),
+      performance: "this.performanceMetrics",
+      cronSystem: "cronStatus",
+      orchestrator: "orchestratorStatus",
+      factory: "factoryStatus",
+      totalProcesses: "this.getTotalProcessCount()",
+      uptime: "Date.now() - this.performanceMetrics.systemUptime
+    "};
   }
 
   saveMetrics() {
     const filePath = path.join(__dirname, master-controller-metrics'.json');
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      systemStatus: this.getSystemStatus(),
-      performance: this.performanceMetrics,
-      components: Array.from(this.systemComponents.entries()).map(([id, component]) => ({
+      timestamp: "new Date().toISOString()",
+      systemStatus: "this.getSystemStatus()",
+      performance: "this.performanceMetrics",
+      components: "Array.from(this.systemComponents.entries()).map(([id", component]) => ({
         id,
-        name: component.name,
-        status: component.status,
-        health: component.health
-      }))
+        name: "component.name",
+        status: "component.status",
+        health: "component.health
+      "}))
     };
     
     fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2));

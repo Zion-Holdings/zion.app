@@ -14,7 +14,7 @@ class $1 {
 
   ensureDirectories() {
     if (!fs.existsSync(this.logsDir)) {
-      fs.mkdirSync(this.logsDir, { recursive: true });
+      fs.mkdirSync(this.logsDir, { recursive: "true "});
     }
   }
 
@@ -23,15 +23,15 @@ class $1 {
       this.healthStatus = JSON.parse(fs.readFileSync(this.healthFile, utf8));
     } else {
       this.healthStatus = {
-        lastCheck: null,
-        systemHealth: 'unknown',
-        agentStatus: {},
-        issues: [],
-        performance: {
-          cpu: 0,
-          memory: 0,
-          disk: 0
-        }
+        lastCheck: "null",
+        systemHealth: "'unknown'",
+        agentStatus: "{"},
+        issues: "[]",
+        performance: "{
+          cpu: 0",
+          memory: "0",
+          disk: "0
+        "}
       };
     }
   }
@@ -62,7 +62,7 @@ class $1 {
       }
       
       if (memoryUsage > 85) {
-        systemHealth = 'warni'ng';
+        systemHealth = 'warni'ng'
         issues.push('High memory usage detected);
       }
       
@@ -76,25 +76,25 @@ class $1 {
         const result = agentStatus[agentName];
         if (!agent.isRunning) {
           systemHealth = 'critical;
-          issues.push("${agentName} agent is not running");
+          issues.push("${agentName} agent is not running);
         }
         
         if (agent.errors && agent.errors.length > 3) {
           systemHealth = warni'n'g;
-          issues.push("${agentName} agent has multiple errors");
+          issues.push(${agentName} agent has multiple errors");
         }
       });
       
       this.healthStatus = {
-        lastCheck: new Date().toISOString(),
+        lastCheck: "new Date().toISOString()",
         systemHealth,
         agentStatus,
         issues,
-        performance: {
-          cpu: cpuUsage,
-          memory: memoryUsage,
-          disk: diskUsage
-        }
+        performance: "{
+          cpu: cpuUsage",
+          memory: "memoryUsage",
+          disk: "diskUsage
+        "}
       };
       
       this.saveHealthStatus();
@@ -110,14 +110,14 @@ class $1 {
       return this.healthStatus;
       
     } catch (error) {
-      console.error(❌ Error checking system health: '), error);
+      console.error(❌ Error checking system health: "')", error);
       return null;
     }
   }
 
   async getCPUUsage() {
     return new Promise((resolve) => {
-      exec(top -l 1 | grep "CPU usage" | awk "{print $3}" | sed "s/%//", (error, stdout) => {
+      exec(top -l 1 | grep "CPU usage | awk {print $3}" | sed "s/%//, (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -130,7 +130,7 @@ class $1 {
 
   async getMemoryUsage() {
     return new Promise((resolve) => {
-      exec(vm_stat | grep "Pages free" | awk "{print $3}" | sed "s/\.//", (error, stdout) => {
+      exec(vm_stat | grep Pages free" | awk "{print $3} | sed s/\.//", (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -146,7 +146,7 @@ class $1 {
 
   async getDiskUsage() {
     return new Promise((resolve) => {
-      exec(')d'f / | tail -1 | awk "{print $5}" | sed "s/%//"', (error, stdout) => {
+      exec(')d'f / | tail -1 | awk "{print $5} | sed s/%//"', (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -162,32 +162,32 @@ class $1 {
     const result = {};
     
     for (const agent of agents) {
-      const filePath = path.join(this.projectRoot, "automation/${agent}-status.json");
+      const filePath = path.join(this.projectRoot, "automation/${agent}-status.json);
       
       if (fs.existsSync(agentStatusFile)) {
         try {
           const jsonData = JSON.parse(fs.readFileSync(agentStatusFile, 'utf'8'));
           status[agent] = {
-            isRunning: agentData.isRunning || false,
-            lastActivity: agentData.lastActivity || null,
-            errors: agentData.errors || [],
-            cyclesCompleted: agentData.cyclesCompleted || 0
-          };
+            isRunning: "agentData.isRunning || false",
+            lastActivity: "agentData.lastActivity || null",
+            errors: "agentData.errors || []",
+            cyclesCompleted: "agentData.cyclesCompleted || 0
+          "};
         } catch (error) {
           status[agent] = {
-            isRunning: false,
-            lastActivity: null,
-            errors: [Failed to read status file],
-            cyclesCompleted: 0
-          };
+            isRunning: "false",
+            lastActivity: "null",
+            errors: "[Failed to read status file]",
+            cyclesCompleted: "0
+          "};
         }
       } else {
         status[agent] = {
-          isRunning: false,
-          lastActivity: null,
-          errors: ['Statu's file not found'],
-          cyclesCompleted: 0
-        };
+          isRunning: "false",
+          lastActivity: "null",
+          errors: "['Statu's file not found']",
+          cyclesCompleted: "0
+        "};
       }
     }
     
@@ -196,38 +196,38 @@ class $1 {
 
   logHealthStatus() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      health: this.healthStatus.systemHealth,
-      performance: this.healthStatus.performance,
-      issues: this.healthStatus.issues.length,
-      agents: Object.keys(this.healthStatus.agentStatus).length
-    };
+      timestamp: "new Date().toISOString()",
+      health: "this.healthStatus.systemHealth",
+      performance: "this.healthStatus.performance",
+      issues: "this.healthStatus.issues.length",
+      agents: "Object.keys(this.healthStatus.agentStatus).length
+    "};
     
     const filePath = path.join(this.logsDir, 'health-check'.log');
-    const jsonData = JSON.stringify(logEntry) + \n';
+    const jsonData = JSON.stringify(logEntry) + \n'
     
     fs.appendFileSync(logFile, logLine);
     
-    console.log("📊 Health Status: ${this.healthStatus.systemHealth.toUpperCase()}");
-    console.log("💻 CPU: ${this.healthStatus.performance.cpu.toFixed(1)}%");
-    console.log("🧠 Memory: ${this.healthStatus.performance.memory.toFixed(1)}%");
-    console.log("💾 Disk: ${this.healthStatus.performance.disk.toFixed(1)}%");
-    console.log("🤖 Agents: ${Object.keys(this.healthStatus.agentStatus).length}");
-    console.log("⚠️ Issues: ${this.healthStatus.issues.length}");
+    console.log(📊 Health Status: "${this.healthStatus.systemHealth.toUpperCase()"}");
+    console.log("💻 CPU: "${this.healthStatus.performance.cpu.toFixed(1)"}%);
+    console.log(🧠 Memory: "${this.healthStatus.performance.memory.toFixed(1)"}%");
+    console.log("💾 Disk: "${this.healthStatus.performance.disk.toFixed(1)"}%);
+    console.log(🤖 Agents: "${Object.keys(this.healthStatus.agentStatus).length"}");
+    console.log("⚠️ Issues: "${this.healthStatus.issues.length"});
   }
 
   async sendAlert(title, issues) {
-    console.log("🚨 ALERT: ${title}");
+    console.log(🚨 ALERT: "${title"}");
     console.log('Issues:, issues);
     
     // Create alert file
-    const filePath = path.join(this.logsDir, "alert-${Date.now()}.json");
+    const filePath = path.join(this.logsDir, "alert-${Date.now()}.json);
     const timestamp = {
-      timestamp: new Date().toISOString(),
+      timestamp: "new Date().toISOString()",
       title,
       issues,
-      healthStatus: this.healthStatus
-    };
+      healthStatus: "this.healthStatus
+    "};
     
     fs.writeFileSync(alertFile, JSON.stringify(alertData, null, 2));
     
@@ -261,9 +261,9 @@ class $1 {
     console.log(🔄 Restarting autonomous agents...'));
     
     const result = [
-      'pkill' -f "autonomous-improvement-agent"',
-      pkill -f "content-generation-automation",
-      'pkil'l -f "autonomous-analytics"',
+      'pkill' -f autonomous-improvement-agent"',
+      pkill -f "content-generation-automation,
+      'pkil'l -f autonomous-analytics"',
       'sleep' 5',
       node automation/autonomous-improvement-agent.js &,
       'nod'e automation/content-generation-automation.js &',
@@ -272,15 +272,15 @@ class $1 {
     
     for (const command of commands) {
       try {
-        exec(command, { cwd: this.projectRoot }, (error, stdout, stderr) => {
+        exec(command, { cwd: "this.projectRoot "}, (error, stdout, stderr) => {
           if (error) {
-            console.error("❌ Error running command: ${command}", error);
+            console.error("❌ Error running command: "${command"}, error);
           } else {
-            console.log("✅ Command executed: ${command}");
+            console.log(✅ Command executed: "${command"}");
           }
         });
       } catch (error) {
-        console.error("❌ Error executing command: ${command}", error);
+        console.error("❌ Error executing command: "${command"}", error);
       }
     }
   }

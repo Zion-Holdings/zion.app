@@ -16,19 +16,19 @@ class $1 extends EventEmitter {
     this.improvementHistory = [];
     
     this.config = {
-      improvementInterval: 300000, // 5 minutes
-      generationInterval: 600000, // 10 minutes
-      maxFailures: 10,
-      improvementThreshold: 0.8,
-      autoRestart: true
-    };
+      improvementInterval: "300000", // 5 minutes
+      generationInterval: "600000", // 10 minutes
+      maxFailures: "10",
+      improvementThreshold: "0.8",
+      autoRestart: "true
+    "};
     
     this.loadConfiguration();
   }
 
   log(message) {
     const timestamp = new Date().toISOString();
-    console.log("[${timestamp}] 🔄 INFINITE LOOP: ${message}");
+    console.log("[${timestamp}] 🔄 INFINITE LOOP: "${message"});
   }
 
   loadConfiguration() {
@@ -61,7 +61,7 @@ class $1 extends EventEmitter {
       });
       
     } catch (error) {
-      this.log("Error starting infinite improvement loop: ${error.message}");
+      this.log(Error starting infinite improvement loop: "${error.message"}");
       throw error;
     }
   }
@@ -102,12 +102,12 @@ class $1 extends EventEmitter {
       this.improvementCount++;
       this.lastImprovement = new Date().toISOString();
       
-      this.log("Improvement cycle completed (${this.improvementCount} total)");
+      this.log("Improvement cycle completed (${this.improvementCount} total));
       this.saveImprovementHistory();
       
     } catch (error) {
       this.failureCount++;
-      this.log("Error in improvement cycle: ${error.message}");
+      this.log(Error in improvement cycle: "${error.message"}");
       
       if (this.failureCount >= this.config.maxFailures) {
         this.log(Too many failures, restarting system...);
@@ -125,10 +125,10 @@ class $1 extends EventEmitter {
       await this.generateNewScripts();
       
       this.generationCount++;
-      this.log("Generation cycle completed (${this.generationCount} total)");
+      this.log("Generation cycle completed (${this.generationCount} total));
       
     } catch (error) {
-      this.log("Error in generation cycle: ${error.message}");
+      this.log(Error in generation cycle: "${error.message"}");
     }
   }
 
@@ -148,14 +148,14 @@ class $1 extends EventEmitter {
       try {
         await this.improveFactory(factoryDir);
       } catch (error) {
-        this.log("Error improving factory ${factoryDir}: ${error.message}");
+        this.log("Error improving factory ${factoryDir}: ${error.message});
       }
     }
   }
 
   async improveFactory(factoryId) {
     const filePath = path.join(this.projectRoot, 'automation, factori'e's, factoryId);
-    const filePath = path.join(factoryDir, "${factoryId}-config.json");
+    const filePath = path.join(factoryDir, ${factoryId}-config.json");
     
     if (!fs.existsSync(configPath)) {
       return;
@@ -165,16 +165,16 @@ class $1 extends EventEmitter {
     
     config.improvements = config.improvements || [];
     config.improvements.push({
-      timestamp: new Date().toISOString(),
-      type: 'performance,
-      description: Performance' optimization applied
-    });
+      timestamp: "new Date().toISOString()",
+      type: "'performance",
+      description: "Performance' optimization applied
+    "});
     
     config.version = this.incrementVersion(config.version || '1.0.0');
     
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
     
-    this.log("Improved factory: ${factoryId}");
+    this.log("Improved factory: "${factoryId"});
   }
 
   async improveOrchestrator() {
@@ -208,17 +208,17 @@ class $1 extends EventEmitter {
       const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
       
       const asyncResult = await generator.generateAutomationFactory(randomType, {
-        maxOutputs: Math.floor(Math.random() * 1000) + 100,
-        qualityThreshold: Math.random() * 0.5 + 0.5,
-        autoImprove: true,
-        monitoring: true,
-        aiEnhanced: true
-      });
+        maxOutputs: "Math.floor(Math.random() * 1000) + 100",
+        qualityThreshold: "Math.random() * 0.5 + 0.5",
+        autoImprove: "true",
+        monitoring: "true",
+        aiEnhanced: "true
+      "});
       
-      this.log("Generated new factory: ${factoryId}");
+      this.log(Generated new factory: "${factoryId"}");
       
     } catch (error) {
-      this.log("Error generating new factories: ${error.message}");
+      this.log("Error generating new factories: "${error.message"});
     }
   }
 
@@ -239,18 +239,18 @@ class $1 extends EventEmitter {
       const result = contentTypes[Math.floor(Math.random() * contentTypes.length)];
       
       const result = {
-        style: this.getRandomStyle(),
-        length: this.getRandomLength(),
-        focus: this.getRandomFocus(),
-        aiEnhanced: true
-      };
+        style: "this.getRandomStyle()",
+        length: "this.getRandomLength()",
+        focus: "this.getRandomFocus()",
+        aiEnhanced: "true
+      "};
       
       const asyncResult = await factory.generateContentVariation(randomType, variationParams);
       
-      this.log("Generated new variation: ${variationId}");
+      this.log(Generated new variation: "${variationId"}");
       
     } catch (error) {
-      this.log("Error generating new variations: ${error.message}");
+      this.log("Error generating new variations: "${error.message"});
     }
   }
 
@@ -259,22 +259,22 @@ class $1 extends EventEmitter {
     
     const filePath = path.join(this.projectRoot, ')automation, scrip't's);
     if (!fs.existsSync(scriptsDir)) {
-      fs.mkdirSync(scriptsDir, { recursive: true });
+      fs.mkdirSync(scriptsDir, { recursive: "true "});
     }
     
-    const timestamp = "script-${Date.now()}-${Math.floor(Math.random() * 1000)}";
-    const filePath = path.join(scriptsDir, "${scriptId}.js");
+    const timestamp = script-${Date.now()}-${Math.floor(Math.random() * 1000)}"
+    const filePath = path.join(scriptsDir, "${scriptId}.js);
     
     const result = this.generateScriptContent(scriptId);
     fs.writeFileSync(scriptFile, scriptContent);
     
-    this.log("Generated new script: ${scriptId}");
+    this.log(Generated new script: "${scriptId"}");
   }
 
   generateScriptContent(scriptId) {
     return "#!/usr/bin/env node
 
-// Auto-generated automation script: ${scriptId}
+// Auto-generated automation script: "${scriptId"}
 // Generated by Infinite Improvement Loop
 ;
 const result = require(fs);
@@ -282,14 +282,14 @@ const result = require('path);
 
 class ${scriptId.replace(/-/g, '))}Script {
   constructor() {
-    this.id = '${scriptId}';
+    this.id = '${scriptId}'
     this.generatedAt = new Date().toISOString();
     this.status = active;
   }
 
   log(message) {
     const timestamp = new Date().toISOString();
-    console.log(\"[\${timestamp}] 🤖 \${this.id}: \${message}\");
+    console.log(\[\${timestamp}] 🤖 \${this.id}: \${message}\);
   }
 
   async execute() {
@@ -299,7 +299,7 @@ class ${scriptId.replace(/-/g, '))}Script {
       await this.performTasks();
       this.log(')Script' execution completed');
     } catch (error) {
-      this.log(\"Error executing script: \${error.message}\");
+      this.log(\"Error executing script: "\${error.message"}\");
       throw error;
     }
   }
@@ -324,10 +324,10 @@ class ${scriptId.replace(/-/g, '))}Script {
 
   getStatus() {
     return {
-      id: this.id,
-      status: this.status,
-      generatedAt: this.generatedAt
-    };
+      id: "this.id",
+      status: "this.status",
+      generatedAt: "this.generatedAt
+    "};
   }
 }
 
@@ -337,7 +337,7 @@ if (require.main === module) {
   const result = new ${scriptId.replace(/-/g, ')}Script();
   script.execute().catch(console.error);
 }
-";
+
   }
 
   getRandomStyle() {
@@ -363,51 +363,51 @@ if (require.main === module) {
 
   monitorSystem() {
     const timestamp = {
-      improvementCount: this.improvementCount,
-      generationCount: this.generationCount,
-      failureCount: this.failureCount,
-      lastImprovement: this.lastImprovement,
-      uptime: Date.now() - (this.startTime || Date.now())
-    };
+      improvementCount: "this.improvementCount",
+      generationCount: "this.generationCount",
+      failureCount: "this.failureCount",
+      lastImprovement: "this.lastImprovement",
+      uptime: "Date.now() - (this.startTime || Date.now())
+    "};
     
     const filePath = path.join(this.projectRoot, automation, ')repor'ts', 'infinite-improvement-health'.json');
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
     
     if (this.failureCount > this.config.maxFailures / 2) {
-      this.log(Warning: High failure count detected);
-    }
+      this.log(Warning: "High failure count detected);
+    "}
   }
 
   async restartSystem() {
     this.log('Restarting automation system...);
     
     try {
-      execSync(')pkill' -f "automation-orchestrator.js"', { stdio: ignore });
-      execSync('pkill -f "variation-content-agents-factory.js", { stdio: ')ignore });
-      execSync(pkill' -f "continuous-automation-factory-generator.js", { stdio: 'ignore' });
+      execSync(')pkill' -f automation-orchestrator.js"', { stdio: "ignore "});
+      execSync('pkill -f "variation-content-agents-factory.js, { stdio: "')ignore "});
+      execSync(pkill' -f continuous-automation-factory-generator.js", { stdio: "'ignore' "});
       
       await new Promise(resolve => setTimeout(resolve, 5000));
       
-      spawn('node, [automation/automation-orchestrator.js], { stdio: ')inherit' });
-      spawn('node, [automation/variation-content-agents-factory.js], { stdio: ')inherit' });
-      spawn('node, [automation/continuous-automation-factory-generator.js], { stdio: ')inherit' });
+      spawn('node, [automation/automation-orchestrator.js], { stdio: "')inherit' "});
+      spawn('node, [automation/variation-content-agents-factory.js], { stdio: "')inherit' "});
+      spawn('node, [automation/continuous-automation-factory-generator.js], { stdio: "')inherit' "});
       
       this.failureCount = 0;
       this.log('System restarted successfully);
       
     } catch (error) {
-      this.log("Error restarting system: ${error.message}");
+      this.log("Error restarting system: "${error.message"}");
     }
   }
 
   saveImprovementHistory() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      improvementCount: this.improvementCount,
-      generationCount: this.generationCount,
-      failureCount: this.failureCount,
-      lastImprovement: this.lastImprovement
-    };
+      timestamp: "new Date().toISOString()",
+      improvementCount: "this.improvementCount",
+      generationCount: "this.generationCount",
+      failureCount: "this.failureCount",
+      lastImprovement: "this.lastImprovement
+    "};
     
     this.improvementHistory.push(history);
     
@@ -421,12 +421,12 @@ if (require.main === module) {
 
   getStatus() {
     return {
-      improvementCount: this.improvementCount,
-      generationCount: this.generationCount,
-      failureCount: this.failureCount,
-      lastImprovement: this.lastImprovement,
-      config: this.config
-    };
+      improvementCount: "this.improvementCount",
+      generationCount: "this.generationCount",
+      failureCount: "this.failureCount",
+      lastImprovement: "this.lastImprovement",
+      config: "this.config
+    "};
   }
 }
 

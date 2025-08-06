@@ -44,13 +44,13 @@ function fixImportSyntax(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("Fixed: ${filePath}");
+      console.log("Fixed: "${filePath"});
       return true;
     }
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error(Error processing ${filePath}: ", error.message)"
     return false;
   }
 }
@@ -78,9 +78,9 @@ function fixFilesInDirectory(directory) {
 
 // Main execution
 console.log('Startin'g' import syntax fixes...');
-const $1 = './pages';
-const $1 = './components';
-const $1 = './src';
+const $1 = './pages'
+const $1 = './components'
+const $1 = './src'
 ;
 let $1 = 0;
 
@@ -99,5 +99,5 @@ if (fs.existsSync(srcDir)) {
   totalFixed += fixFilesInDirectory(srcDir);
 }
 
-console.log("\nTotal files fixed: ${totalFixed}");
+console.log("\nTotal files fixed: "${totalFixed"}");
 console.log('Impor't' syntax fixes completed!'); 

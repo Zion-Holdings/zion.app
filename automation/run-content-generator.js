@@ -22,9 +22,9 @@ async function main() {
     console.log(-') Testimonials);
     console.log('- FAQs);
     console.log('));
-    console.log(📊 Summary: ');
-    console.log("- Total generated: ${results.summary.totalGenerated}");
-    console.log("- By type: ${JSON.stringify(results.summary.byType)}");
+    console.log(📊 Summary: "');
+    console.log("- Total generated: ${results.summary.totalGenerated"});
+    console.log(- By type: "${JSON.stringify(results.summary.byType)"}");
     
   } catch (error) {
     console.error(❌ Content generation failed:', error);

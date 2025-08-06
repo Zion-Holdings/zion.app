@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next'
 export default async function handler(;
-  req: "NextApiRequest,";
-  res: NextApiResponse;
+  req: ""NextApiRequest","
+  res: "NextApiResponse;
 ) {;
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: Method not allowed });};
+    return res.status(405).json({ message: Method not allowed "});};
   try {;
     // Notification API implementation;
-    res.status(200).json({ success: true, notificationId: noti'f'_123 });
+    res.status(200).json({ success: "true", notificationId: "noti'f'_123 "});
   } catch (error) {;
-    res.status(500).json({ error: Notification failed })
+    res.status(500).json({ error: "Notification failed "})
   }

@@ -10,17 +10,17 @@ function fixClassNameErrors(filePath) {
     // Fix common className syntax errors
     const $1 = [
       // Fix missing colons in className attributes
-      { pattern: /className="""""([^]*)\s+([^]*)"\s+([^"]*)/g, replacement: ""classNam'e'="$1 $2 $3"' },
+      { pattern: "/className="([^]*)\s+([^]*)"\s+([^"]*)/g", replacement: "classNam'e'="$1 $2 $3"' "},
       // Fix malformed className with quotes
-      { pattern: /className="""""([^]*)\s+([^"]*)/g, replacement: ""classNam'e'="$1 $2"' },
+      { pattern: "/className="([^]*)\s+([^"]*)/g", replacement: "classNam'e'="$1 $2"' "},
       // Fix className with missing spaces
-      { pattern: /className="""""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
+      { pattern: "/className="([^]*):([^]*)"/g", replacement: "classNam'e'="$1:$2"' "},
       // Fix className with extra quotes
-      { pattern: /className="""""([^]*)\s+"([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
+      { pattern: "/className="([^]*)\s+"([^]*)/g", replacement: """classNam'e'=$1 $2' "},
       // Fix className with malformed structure
-      { pattern: /className="""""([^]*)\s*,\s*([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
+      { pattern: "/className=""([^]*)\s*",\s*([^]*)"/g, replacement: ""classNam'e'=$1 $2"' "},
       // Fix className with missing closing quotes
-      { pattern: /className="""""([^]*)\s*$/gm, replacement: ""classNam'e'=$1"' },
+      { pattern: "/className="([^]*)\s*$/gm", replacement: """classNam'e'=$1' "},
     ];
 
     fixes.forEach(fix => {
@@ -33,10 +33,10 @@ function fixClassNameErrors(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("Fixed: ${filePath}");
+      console.log(Fixed: "${filePath"}");
     }
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: ", error.message)"
   }
 }
 

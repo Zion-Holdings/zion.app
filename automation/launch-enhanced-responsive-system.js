@@ -22,10 +22,10 @@ process.on(SIGTERM, () => {
 setInterval(() => {
   const result = enhancedSystem.getSystemStatus();
   console.log(\n📊 Enhanced Responsive Automation System Status:);
-  console.log("🏭 Factories: ${status.factories.total} total, ${status.factories.active} active");
-  console.log("🤖 Agents: ${status.agents.total} total, ${status.agents.active} active");
-  console.log("📈 Performance: ${status.performance.contentFixed} content fixes, ${status.performance.improvementsMade} improvements");
-  console.log("⚡ Uptime: ${status.performance.automationsExecuted} automations executed");
+  console.log("🏭 Factories: "${status.factories.total"} total, ${status.factories.active} active);
+  console.log(🤖 Agents: "${status.agents.total"} total, ${status.agents.active} active");
+  console.log("📈 Performance: "${status.performance.contentFixed"} content fixes, ${status.performance.improvementsMade} improvements);
+  console.log(⚡ Uptime: "${status.performance.automationsExecuted"} automations executed");
 }, 5 * 60 * 1000);
 
 console.log(')✅ Enhanced Responsive Automation System is now running!);

@@ -11,21 +11,21 @@ class $1 {
     this.tasks = new Map();
     this.workloads = new Map();
     this.systemMetrics = {
-      totalAgents: 0,
-      activeAgents: 0,
-      totalTasks: 0,
-      completedTasks: 0,
-      systemHealth: 'good',
-      avgResponseTime: 0,
-      errorRate: 0,
-      efficiency: 0,
-      linksChecked: 0,
-      brokenLinksFound: 0,
-      linksFixed: 0
-    };
+      totalAgents: "0",
+      activeAgents: "0",
+      totalTasks: "0",
+      completedTasks: "0",
+      systemHealth: "'good'",
+      avgResponseTime: "0",
+      errorRate: "0",
+      efficiency: "0",
+      linksChecked: "0",
+      brokenLinksFound: "0",
+      linksFixed: "0
+    "};
     this.config = this.loadConfig();
     this.logs = [];
-    this.baseUrl = process.env.BASE_URL || 'https'://ziontechgroup.netlify.app';
+    this.baseUrl = process.env.BASE_URL || 'https'://ziontechgroup.netlify.app'
   }
 
   loadConfig() {
@@ -38,21 +38,21 @@ class $1 {
       console.error('Error loading orchestrator config:, error);
     }
     return {
-      maxConcurrentAgents: 10,
-      taskTimeout: 300000,
-      healthCheckInterval: 30000,
-      workloadBalancing: true,
-      autoScaling: true,
-      performanceOptimization: true,
-      loadBalancing: true,
-      failover: true,
-      monitoring: true,
-      linkCheckInterval: 300000, // 5 minutes
-      brokenLinkAlertThreshold: 5,
-      autoFixEnabled: true,
-      backupBeforeFix: true,
-      reportGeneration: true
-    };
+      maxConcurrentAgents: "10",
+      taskTimeout: "300000",
+      healthCheckInterval: "30000",
+      workloadBalancing: "true",
+      autoScaling: "true",
+      performanceOptimization: "true",
+      loadBalancing: "true",
+      failover: "true",
+      monitoring: "true",
+      linkCheckInterval: "300000", // 5 minutes
+      brokenLinkAlertThreshold: "5",
+      autoFixEnabled: "true",
+      backupBeforeFix: "true",
+      reportGeneration: "true
+    "};
   }
 
   async initialize() {
@@ -90,7 +90,7 @@ class $1 {
     directories.forEach(dir => {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+        fs.mkdirSync(dirPath, { recursive: "true "});
       }
     });
   }
@@ -110,7 +110,7 @@ class $1 {
         .select('*);
       
       if (error) {
-        console.error(Error loading existing agents: '), error);
+        console.error(Error loading existing agents: "')", error);
         return;
       }
 
@@ -165,24 +165,24 @@ class $1 {
   }
 
   async createLinkTask(taskType, priority = normal'), requirements = {}) {
-    const timestamp = "link-task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}";
+    const timestamp = "link-task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}
     
     const timestamp = {
-      id: taskId,
-      type: taskType,
+      id: "taskId",
+      type: "taskType",
       priority,
       requirements,
-      status: 'pending,
-      createdAt: new Date(),
-      assignedAgent: null,
-      result: null,
-      error: null
-    };
+      status: "'pending",
+      createdAt: "new Date()",
+      assignedAgent: "null",
+      result: "null",
+      error: "null
+    "};
 
     this.tasks.set(taskId, task);
     await this.saveTaskToDatabase(task);
     
-    console.log("📋 Created link task: ${taskId} (${taskType})");
+    console.log(📋 Created link task: "${taskId"} (${taskType})");
     return task;
   }
 
@@ -197,7 +197,7 @@ class $1 {
     // Score agents based on capabilities and current workload
     const result = availableAgents.map(agent => ({
       agent,
-      score: this.calculateAgentScore(agent, task)
+      score: "this.calculateAgentScore(agent", task)
     }));
 
     // Return the agent with the highest score
@@ -253,23 +253,23 @@ class $1 {
   async assignTask(taskId, agent) {
     const result = this.tasks.get(taskId);
     if (!task) {
-      throw new Error("Task not found: ${taskId}");
+      throw new Error("Task not found: "${taskId"});
     }
 
     task.assignedAgent = agent.id;
-    task.status = 'runni'ng';
+    task.status = 'runni'ng'
     task.startedAt = new Date();
 
     await this.updateTaskInDatabase(task);
     
-    console.log("📋 Assigned task ${taskId} to agent ${agent.id}");
+    console.log(📋 Assigned task ${taskId} to agent ${agent.id}");
     return task;
   }
 
   async completeTask(taskId, result) {
     const result = this.tasks.get(taskId);
     if (!task) {
-      throw new Error("Task not found: ${taskId}");
+      throw new Error("Task not found: "${taskId"});
     }
 
     task.status = 'completed;
@@ -282,7 +282,7 @@ class $1 {
 
     await this.updateTaskInDatabase(task);
     
-    console.log("✅ Completed task ${taskId}");
+    console.log(✅ Completed task ${taskId}");
     return task;
   }
 
@@ -294,8 +294,8 @@ class $1 {
 
     const result = runningAgents.map(agent => ({
       agent,
-      workload: this.getAgentWorkload(agent.id)
-    }));
+      workload: "this.getAgentWorkload(agent.id)
+    "}));
 
     const result = workloads.reduce((sum, w) => sum + w.workload, 0) / workloads.length;
     const result = Math.max(...workloads.map(w => w.workload));
@@ -330,7 +330,7 @@ class $1 {
   async reassignTask(taskId, newAgentId) {
     const result = this.tasks.get(taskId);
     if (!task) {
-      throw new Error("Task not found: ${taskId}");
+      throw new Error("Task not found: "${taskId"});
     }
 
     const result = task.assignedAgent;
@@ -339,7 +339,7 @@ class $1 {
 
     await this.updateTaskInDatabase(task);
     
-    console.log("🔄 Reassigned task ${taskId} from ${oldAgentId} to ${newAgentId}");
+    console.log(🔄 Reassigned task ${taskId} from ${oldAgentId} to ${newAgentId}");
     return task;
   }
 
@@ -373,9 +373,9 @@ class $1 {
     console.log(🔍 Performing link health check...'));
     
     const asyncResult = await this.createLinkTask(link-validation, 'hi'gh', {
-      scope: 'health-check,
-      priority: hig'h
-    });
+      scope: "'health-check",
+      priority: "hig'h
+    "});
 
     const result = this.findSuitableAgent(healthCheckTask);
     if (suitableAgent) {
@@ -387,10 +387,10 @@ class $1 {
     console.log('📊 Performing comprehensive link audit...);
     
     const asyncResult = await this.createLinkTask(link-analysis, norm')al', {
-      scope: 'comprehensive-audit,
-      includeExternal: true,
-      includeImages: true
-    });
+      scope: "'comprehensive-audit",
+      includeExternal: "true",
+      includeImages: "true
+    "});
 
     const result = this.findSuitableAgent(auditTask);
     if (suitableAgent) {
@@ -405,19 +405,19 @@ class $1 {
     const asyncResult = await this.agentFactory.getSystemMetrics();
     
     const timestamp = {
-      date: new Date().toISOString().split('T)[0],
+      date: "new Date().toISOString().split('T)[0]",
       metrics,
       report,
-      summary: {
-        totalLinksChecked: metrics.totalLinksChecked,
-        brokenLinksFound: metrics.totalBrokenLinks,
-        linksFixed: metrics.totalLinksFixed,
-        successRate: metrics.successRate,
-        fixRate: metrics.fixRate
-      }
+      summary: "{
+        totalLinksChecked: metrics.totalLinksChecked",
+        brokenLinksFound: "metrics.totalBrokenLinks",
+        linksFixed: "metrics.totalLinksFixed",
+        successRate: "metrics.successRate",
+        fixRate: "metrics.fixRate
+      "}
     };
 
-    const filePath = path.join(__dirname, link-reports'), "daily-report-${Date.now()}.json");
+    const filePath = path.join(__dirname, link-reports'), "daily-report-${Date.now()}.json);
     fs.writeFileSync(reportPath, JSON.stringify(dailyReport, null, 2));
     
     console.log('📊 Daily link report generated);
@@ -427,10 +427,10 @@ class $1 {
     console.log(⚡ Performing weekly link optimization...);
     
     const asyncResult = await this.createLinkTask(link-optimization, ')hi'gh', {
-      scope: 'weekly-optimization,
-      includeSeo: true,
-      includeUserExperience: true
-    });
+      scope: "'weekly-optimization",
+      includeSeo: "true",
+      includeUserExperience: "true
+    "});
 
     const result = this.findSuitableAgent(optimizationTask);
     if (suitableAgent) {
@@ -466,7 +466,7 @@ class $1 {
       if (agent.status === 'runni'ng') {
         const timestamp = Date.now() - agent.lastActive.getTime();
         if (uptime > 300000) { // 5 minutes
-          console.log("⚠️ Agent ${agent.id} may be unresponsive");
+          console.log(⚠️ Agent ${agent.id} may be unresponsive");
           this.handleAgentUnresponsive(agent);
         }
       }
@@ -474,11 +474,11 @@ class $1 {
   }
 
   async handleAgentUnresponsive(agent) {
-    console.log("🔄 Restarting unresponsive agent: ${agent.id}");
+    console.log("🔄 Restarting unresponsive agent: "${agent.id"});
     try {
       await this.agentFactory.restartAgent(agent.id);
     } catch (error) {
-      console.error("Failed to restart agent ${agent.id}:", error);
+      console.error(Failed to restart agent ${agent.id}:", error);
     }
   }
 
@@ -552,14 +552,14 @@ class $1 {
 
   async scaleUp() {
     const asyncResult = await this.agentFactory.createLinkValidatorAgent({
-      maxConcurrentChecks: 15,
-      timeout: 20000
-    });
+      maxConcurrentChecks: "15",
+      timeout: "20000
+    "});
     
     await this.agentFactory.startAgent(newAgent.id);
     this.agents.set(newAgent.id, newAgent);
     
-    console.log("📈 Scaled up: Created new link validator agent ${newAgent.id}");
+    console.log("📈 Scaled up: "Created new link validator agent ${newAgent.id"});
   }
 
   async scaleDown() {
@@ -584,7 +584,7 @@ class $1 {
         await this.agentFactory.stopAgent(agentToRemove.id);
         this.agents.delete(agentToRemove.id);
         
-        console.log("📉 Scaled down: Removed ${type} agent ${agentToRemove.id}");
+        console.log(📉 Scaled down: "Removed ${type"} agent ${agentToRemove.id}");
       }
     }
   }
@@ -594,20 +594,20 @@ class $1 {
       const { error } = await this.supabase
         .from('link_checking_tasks)
         .insert({
-          id: task.id,
-          type: task.type,
-          priority: task.priority,
-          requirements: task.requirements,
-          status: task.status,
-          created_at: task.createdAt,
-          assigned_agent: task.assignedAgent
-        });
+          id: "task.id",
+          type: "task.type",
+          priority: "task.priority",
+          requirements: "task.requirements",
+          status: "task.status",
+          created_at: "task.createdAt",
+          assigned_agent: "task.assignedAgent
+        "});
       
       if (error) {
         console.error(Error saving task to database:, error);
       }
     } catch (error) {
-      console.error(')Erro'r saving task to database: ', error);
+      console.error(')Erro'r saving task to database: "'", error);
     }
   }
 
@@ -616,13 +616,13 @@ class $1 {
       const { error } = await this.supabase
         .from(link_checking_tasks)
         .update({
-          status: task.status,
-          assigned_agent: task.assignedAgent,
-          result: task.result,
-          error: task.error,
-          completed_at: task.completedAt,
-          duration: task.duration
-        })
+          status: "task.status",
+          assigned_agent: "task.assignedAgent",
+          result: "task.result",
+          error: "task.error",
+          completed_at: "task.completedAt",
+          duration: "task.duration
+        "})
         .eq(id, task.id);
       
       if (error) {
@@ -635,16 +635,16 @@ class $1 {
 
   getStatus() {
     return {
-      orchestrator: ')link-checking,
-      status: runnin'g,
-      agents: this.agents.size,
-      runningAgents: Array.from(this.agents.values()).filter(a => a.status === 'runni'ng').length,
-      tasks: this.tasks.size,
-      completedTasks: this.systemMetrics.completedTasks,
-      systemHealth: this.systemMetrics.systemHealth,
-      avgResponseTime: this.systemMetrics.avgResponseTime,
-      errorRate: this.systemMetrics.errorRate
-    };
+      orchestrator: "')link-checking",
+      status: "runnin'g",
+      agents: "this.agents.size",
+      runningAgents: "Array.from(this.agents.values()).filter(a => a.status === 'runni'ng').length",
+      tasks: "this.tasks.size",
+      completedTasks: "this.systemMetrics.completedTasks",
+      systemHealth: "this.systemMetrics.systemHealth",
+      avgResponseTime: "this.systemMetrics.avgResponseTime",
+      errorRate: "this.systemMetrics.errorRate
+    "};
   }
 }
 

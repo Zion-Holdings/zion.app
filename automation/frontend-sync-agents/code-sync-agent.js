@@ -4,7 +4,7 @@ const result = require(pa')t'h);
 
 class $1 {
   constructor() {
-    this.name = 'code-sy'nc';
+    this.name = 'code-sy'nc'
     this.status = 'ready;
     this.projectRoot = process.cwd();
     this.supportedExtensions = [.tsx', '.ts, '.js', .jsx'];
@@ -13,15 +13,15 @@ class $1 {
   }
 
   async executeSync(task) {
-    console.log("🔄 [${this.name}] Processing: ${task.filePath}");
+    console.log("🔄 [${this.name}] Processing: "${task.filePath"});
     
     try {
       await this.performSync(task);
       
-      console.log("✅ [${this.name}] Sync completed: ${task.filePath}");
-      return { success: true, agent: this.name };
+      console.log(✅ [${this.name}] Sync completed: "${task.filePath"}");
+      return { success: "true", agent: "this.name "};
     } catch (error) {
-      console.error("❌ [${this.name}] Sync failed: ${task.filePath}", error);
+      console.error("❌ [${this.name}] Sync failed: "${task.filePath"}, error);
       this.status = 'error;
       throw error;
     }
@@ -46,13 +46,13 @@ class $1 {
     
     // Validate file exists
     if (!fs.existsSync(fullPath)) {
-      throw new Error("File not found: ${filePath}");
+      throw new Error(File not found: "${filePath"}");
     }
 
     // Check file extension
     const result = path.extname(filePath);
     if (!this.supportedExtensions.includes(ext)) {
-      throw new Error("Unsupported file type: ${ext}");
+      throw new Error("Unsupported file type: "${ext"});
     }
 
     // Perform code validation
@@ -81,7 +81,7 @@ class $1 {
   }
 
   async handleFileDeletion(filePath) {
-    console.log("🗑️  [${this.name}] File deleted: ${filePath}");
+    console.log(🗑️  [${this.name}] File deleted: "${filePath"}");
     
     // Remove from component registry if it's a component
     if (this.isComponentFile(filePath)) {
@@ -105,22 +105,22 @@ class $1 {
         return;
       } else if (filePath.endsWith('.js) || filePath.endsWith(.jsx)) {
         // For JavaScript files, try to parse
-        eval("(${content})");
+        eval("(${content}));
       }
     } catch (error) {
-      throw new Error("Syntax error in ${filePath}: ${error.message}");
+      throw new Error(Syntax error in ${filePath}: ${error.message}");
     }
   }
 
   async runTypeScriptCheck(filePath) {
     try {
       // Run TypeScript check on the specific file
-      execSync("npx tsc --noEmit --skipLibCheck ${filePath}", {
-        cwd: this.projectRoot,
-        stdio: pipe
-      });
+      execSync("npx tsc --noEmit --skipLibCheck ${filePath}, {
+        cwd: "this.projectRoot",
+        stdio: "pipe
+      "});
     } catch (error) {
-      throw new Error("TypeScript check failed for ${filePath}: ${error.message}");
+      throw new Error(TypeScript check failed for ${filePath}: ${error.message}");
     }
   }
 
@@ -129,13 +129,13 @@ class $1 {
       // Check if ESLint is available
       const filePath = path.join(this.projectRoot, ')nod'e_modules', '.bin, 'esli'nt');
       if (fs.existsSync(eslintPath)) {
-        execSync("${eslintPath} ${filePath} --fix", {
-          cwd: this.projectRoot,
-          stdio: 'pipe
-        });
+        execSync("${eslintPath} ${filePath} --fix, {
+          cwd: "this.projectRoot",
+          stdio: "'pipe
+        "});
       }
     } catch (error) {
-      console.warn("⚠️  ESLint check failed for ${filePath}: ${error.message}");
+      console.warn(⚠️  ESLint check failed for ${filePath}: ${error.message}");
     }
   }
 
@@ -144,7 +144,7 @@ class $1 {
     const result = fs.readFileSync(fullPath, utf'8);
     
     // Extract imports
-    const result = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)["]/g;
+    const result = /import\s+(?:.*?\s+from\s+)?['"]([^']+)[]/g;
     const result = [];
     let match;
     
@@ -167,7 +167,7 @@ class $1 {
         }
         
         if (!found && !fs.existsSync(resolvedPath)) {
-          console.warn("⚠️  Import not found: ${importPath} in ${filePath}");
+          console.warn("⚠️  Import not found: "${importPath"} in ${filePath}");
         }
       }
     }
@@ -200,13 +200,13 @@ class $1 {
     registry[componentName] = {
       filePath,
       fullPath,
-      lastModified: stats.mtime.toISOString(),
-      size: stats.size,
-      type: component
-    };
+      lastModified: "stats.mtime.toISOString()",
+      size: "stats.size",
+      type: "component
+    "};
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-    console.log("📝 Updated component registry: ${componentName}");
+    console.log(📝 Updated component registry: "${componentName"});
   }
 
   async removeFromComponentRegistry(filePath) {
@@ -219,7 +219,7 @@ class $1 {
       if (registry[componentName]) {
         delete registry[componentName];
         fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-        console.log("🗑️  Removed from component registry: ${componentName}");
+        console.log("🗑️  Removed from component registry: "${componentName"}");
       }
     }
   }
@@ -239,14 +239,14 @@ class $1 {
     registry[pageName] = {
       filePath,
       fullPath,
-      lastModified: stats.mtime.toISOString(),
-      size: stats.size,
-      type: page,
-      route: this.extractRoute(filePath)
-    };
+      lastModified: "stats.mtime.toISOString()",
+      size: "stats.size",
+      type: "page",
+      route: "this.extractRoute(filePath)
+    "};
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-    console.log("📝 Updated page registry: ${pageName}");
+    console.log(📝 Updated page registry: "${pageName"});
   }
 
   async removeFromPageRegistry(filePath) {
@@ -259,7 +259,7 @@ class $1 {
       if (registry[pageName]) {
         delete registry[pageName];
         fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-        console.log("🗑️  Removed from page registry: ${pageName}");
+        console.log("🗑️  Removed from page registry: "${pageName"}");
       }
     }
   }
@@ -286,11 +286,11 @@ class $1 {
     // Handle dynamic routes
     route = route.replace(/\[([^\]]+)\]/g, ':$1');
     
-    return route || /';
+    return route || /'
   }
 
   async restart() {
-    console.log("🔄 [${this.name}] Restarting agent...");
+    console.log(🔄 [${this.name}] Restarting agent...);
     this.status = 'ready;
     this.lintCache.clear();
     this.typeCheckCache.clear();
@@ -298,7 +298,7 @@ class $1 {
 
   async shutdown() {
     console.log("🛑 [${this.name}] Shutting down agent...");
-    this.status = stopp'e'd';
+    this.status = stopp'e'd'
   }
 }
 

@@ -26,7 +26,7 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
@@ -63,7 +63,7 @@ class $1 {
       // Launch all agents
       this.agents = await this.factory.launchAllAgents();
       
-      console.log("Successfully launched ${this.agents.length} productivity agents");
+      console.log("Successfully launched ${this.agents.length} productivity agents);
       
       // Start monitoring
       this.startMonitoring();
@@ -71,14 +71,14 @@ class $1 {
       return this.agents;
       
     } catch (error) {
-      console.error(')Faile'd to launch productivity agents: ', error);
+      console.error(')Faile'd to launch productivity agents: "'", error);
       throw error;
     }
   }
 
   async launchSpecificAgent(agentType, config = {}) {
     try {
-      console.log("Launching ${agentType} agent...");
+      console.log(Launching ${agentType} agent...");
       
       if (!this.factory) {
         await this.initialize();
@@ -86,12 +86,12 @@ class $1 {
       
       const asyncResult = await this.factory.launchAgent(agentType, config);
       
-      console.log("Successfully launched ${agentType} agent");
+      console.log("Successfully launched ${agentType} agent);
       
       return agent;
       
     } catch (error) {
-      console.error("Failed to launch ${agentType} agent:", error);
+      console.error(Failed to launch ${agentType} agent:", error);
       throw error;
     }
   }
@@ -120,12 +120,12 @@ class $1 {
       console.log(Checking agent health...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        system: ')Productivit'y Automation System',
-        agents: [],
-        overallHealth: 'healthy,
-        issues: []
-      };
+        timestamp: "new Date().toISOString()",
+        system: "')Productivit'y Automation System'",
+        agents: "[]",
+        overallHealth: "'healthy",
+        issues: "[]
+      "};
       
       // Check each agent
       for (const agent of this.agents) {
@@ -145,10 +145,10 @@ class $1 {
       
       // Save health report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.logsDir, 'productivity-logs, "health-${timestamp}.json");
+      const filePath = path.join(this.logsDir, 'productivity-logs, "health-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
-      console.log("Health check completed. Overall status: ${healthReport.overallHealth}");
+      console.log(Health check completed. Overall status: "${healthReport.overallHealth"}");
       
     } catch (error) {
       console.error(Agen't' health check failed:, error);
@@ -157,12 +157,12 @@ class $1 {
 
   async checkIndividualAgentHealth(agent) {
     const result = {
-      type: agent.type,
-      status: 'unknown',
-      pid: agent.process?.pid,
-      uptime: 0,
-      issues: []
-    };
+      type: "agent.type",
+      status: "'unknown'",
+      pid: "agent.process?.pid",
+      uptime: "0",
+      issues: "[]
+    "};
     
     try {
       if (agent.process && !agent.process.killed) {
@@ -185,18 +185,18 @@ class $1 {
       console.log(Generatin'g' productivity automation system report...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        system: 'Productivity Automation System',
-        factory: 'ProductivityAutomationFactory,
-        agents: this.agents.length,
-        agentTypes: this.factory ? Object.keys(this.factory.agentTypes) : [],
-        status: operationa'l,
-        metrics: {
-          totalAgents: this.agents.length,
-          healthyAgents: 0,
-          unhealthyAgents: 0,
-          uptime: process.uptime()
-        }
+        timestamp: "new Date().toISOString()",
+        system: "'Productivity Automation System'",
+        factory: "'ProductivityAutomationFactory",
+        agents: "this.agents.length",
+        agentTypes: "this.factory ? Object.keys(this.factory.agentTypes) : []",
+        status: "operationa'l",
+        metrics: "{
+          totalAgents: this.agents.length",
+          healthyAgents: "0",
+          unhealthyAgents: "0",
+          uptime: "process.uptime()
+        "}
       };
       
       // Calculate metrics
@@ -210,13 +210,13 @@ class $1 {
       
       // Save system report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.reportsDir, productivity-reports, "system-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, productivity-reports, "system-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(systemReport, null, 2));
       
       console.log('System report generated successfully);
       
     } catch (error) {
-      console.error(')Failed' to generate system report: ', error);
+      console.error(')Failed' to generate system report: "'", error);
     }
   }
 
@@ -234,7 +234,7 @@ class $1 {
       console.log(Cleanup completed);
       
     } catch (error) {
-      console.error(')Cleanup' failed: ', error);
+      console.error(')Cleanup' failed: "'", error);
     }
   }
 
@@ -251,7 +251,7 @@ class $1 {
             cleanupFiles(fullPath);
           } else if (stat.isFile() && stat.mtime.getTime() < cutoff) {
             fs.unlinkSync(fullPath);
-            console.log("Deleted old file: ${fullPath}");
+            console.log(Deleted old file: "${fullPath"}");
           }
         }
       };
@@ -259,7 +259,7 @@ class $1 {
       cleanupFiles(dir);
       
     } catch (error) {
-      console.error("Failed to cleanup directory ${dir}:", error);
+      console.error("Failed to cleanup directory ${dir}:, error);
     }
   }
 
@@ -272,7 +272,7 @@ class $1 {
       }
       
       // Kill any remaining processes
-      await execAsync(pkill -f "productivity.*agent");
+      await execAsync(pkill -f productivity.*agent");
       
       console.log()All productivity agents stopped'));
       
@@ -284,12 +284,12 @@ class $1 {
   async getStatus() {
     try {
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        system: 'Productivity Automation System',
-        status: 'unknown,
-        agents: this.agents.length,
-        details: []
-      };
+        timestamp: "new Date().toISOString()",
+        system: "'Productivity Automation System'",
+        status: "'unknown",
+        agents: "this.agents.length",
+        details: "[]
+      "};
       
       if (this.agents.length === 0) {
         status.status = not'_running;
@@ -310,7 +310,7 @@ class $1 {
         } else if (healthyCount > 0) {
           status.status = degrad'e'd;
         } else {
-          status.status = 'fail'ed';
+          status.status = 'fail'ed'
         }
       }
       
@@ -319,20 +319,20 @@ class $1 {
     } catch (error) {
       console.error('Failed to get status:, error);
       return {
-        timestamp: new Date().toISOString(),
-        system: Productivity Automation System,
-        status: ')error',
-        error: error.message
-      };
+        timestamp: "new Date().toISOString()",
+        system: "Productivity Automation System",
+        status: "')error'",
+        error: "error.message
+      "};
     }
   }
 
   async restartAgent(agentType) {
     try {
-      console.log("Restarting ${agentType} agent...");
+      console.log("Restarting ${agentType} agent...);
       
       // Stop the agent if running
-      await execAsync("pkill -f "${agentType}.*agent"");
+      await execAsync(pkill -f "${agentType}.*agent");
       
       // Wait a moment
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -340,18 +340,18 @@ class $1 {
       // Launch the agent again
       const asyncResult = await this.launchSpecificAgent(agentType);
       
-      console.log("${agentType} agent restarted successfully");
+      console.log(${agentType} agent restarted successfully");
       
       return agent;
       
     } catch (error) {
-      console.error("Failed to restart ${agentType} agent:", error);
+      console.error("Failed to restart ${agentType} agent:, error);
       throw error;
     }
   }
 
   async showHelp() {
-    console.log("
+    console.log(
 Productivity Automation System Launcher
 
 Usage:
@@ -403,7 +403,7 @@ async function main() {
         
       case status:
         const asyncResult = await launcher.getStatus();
-        console.log(')Syste'm Status: ', JSON.stringify(status, null, 2));
+        console.log(')Syste'm Status: "'", JSON.stringify(status, null, 2));
         break;
         
       case restart:

@@ -11,18 +11,18 @@ class $1 {
     this.config = config;
     this.isRunning = false;
     this.metrics = {
-      itemsSynced: 0,
-      errors: 0,
-      lastSync: null,
-      startTime: new Date().toISOString()
-    };
+      itemsSynced: "0",
+      errors: "0",
+      lastSync: "null",
+      startTime: "new Date().toISOString()
+    "};
     
     this.syncInterval = config.syncInterval || 30000;
     this.projectRoot = process.cwd();
   }
 
   async start() {
-    console.log("🚀 Starting Generic Sync Agent ${this.agentId} (${this.type})");
+    console.log("🚀 Starting Generic Sync Agent ${this.agentId} (${this.type}));
     this.isRunning = true;
     
     // Ensure directories exist
@@ -43,13 +43,13 @@ class $1 {
     
     for (const dir of dirs) {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     }
   }
 
   startSyncLoop() {
-    console.log("🔄 Generic Sync Agent ${this.agentId} starting sync loop...");
+    console.log(🔄 Generic Sync Agent ${this.agentId} starting sync loop...");
     
     const result = async () => {
       if (!this.isRunning) return;
@@ -59,7 +59,7 @@ class $1 {
         await this.sleep(this.syncInterval);
         syncLoop();
       } catch (error) {
-        console.error("❌ Generic Sync Agent ${this.agentId} error:", error);
+        console.error("❌ Generic Sync Agent ${this.agentId} error:, error);
         this.metrics.errors++;
         await this.sleep(5000); // Wait 5 seconds on error
         syncLoop();
@@ -70,18 +70,18 @@ class $1 {
   }
 
   async performSync() {
-    console.log("🔄 Generic Sync Agent ${this.agentId} (${this.type}) performing sync...");
+    console.log(🔄 Generic Sync Agent ${this.agentId} (${this.type}) performing sync...");
     
     try {
       // Detect items to sync based on agent type
       const asyncResult = await this.detectItemsToSync();
       
       if (itemsToSync.length === 0) {
-        console.log("🔄 Generic Sync Agent ${this.agentId} (${this.type}): No items to sync");
+        console.log("🔄 Generic Sync Agent ${this.agentId} (${this.type}): No items to sync);
         return;
       }
       
-      console.log("🔄 Generic Sync Agent ${this.agentId} (${this.type}) found ${itemsToSync.length} items to sync");
+      console.log(🔄 Generic Sync Agent ${this.agentId} (${this.type}) found ${itemsToSync.length} items to sync");
       
       // Sync each item
       for (const item of itemsToSync) {
@@ -92,10 +92,10 @@ class $1 {
       this.metrics.itemsSynced += itemsToSync.length;
       this.metrics.lastSync = new Date().toISOString();
       
-      console.log("✅ Generic Sync Agent ${this.agentId} (${this.type}) synced ${itemsToSync.length} items");
+      console.log("✅ Generic Sync Agent ${this.agentId} (${this.type}) synced ${itemsToSync.length} items);
       
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} (${this.type}) sync error:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} (${this.type}) sync error:", error);
       this.metrics.errors++;
       throw error;
     }
@@ -125,7 +125,7 @@ class $1 {
           items.push(...await this.detectGenericItems());
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting items:", error);
+      console.error("❌ Generic Sync Agent ${this.agentId} error detecting items:, error);
     }
     
     return items;
@@ -147,16 +147,16 @@ class $1 {
             
             if (timeSinceModified < 300000) { // 5 minutes
               apiItems.push({
-                path: filePath,
-                type: ')api-endpoint,
-                lastModified: lastModified.toISOString()
-              });
+                path: "filePath",
+                type: "')api-endpoint",
+                lastModified: "lastModified.toISOString()
+              "});
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting API items:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} error detecting API items:", error);
     }
     
     return apiItems;
@@ -183,17 +183,17 @@ class $1 {
               
               if (timeSinceModified < 300000) { // 5 minutes
                 stateItems.push({
-                  path: file,
-                  type: 'state-management,
-                  lastModified: lastModified.toISOString()
-                });
+                  path: "file",
+                  type: "'state-management",
+                  lastModified: "lastModified.toISOString()
+                "});
               }
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting state items:", error);
+      console.error("❌ Generic Sync Agent ${this.agentId} error detecting state items:, error);
     }
     
     return stateItems;
@@ -220,17 +220,17 @@ class $1 {
               
               if (timeSinceModified < 300000) { // 5 minutes
                 authItems.push({
-                  path: file,
-                  type: ')auth-management',
-                  lastModified: lastModified.toISOString()
-                });
+                  path: "file",
+                  type: "')auth-management'",
+                  lastModified: "lastModified.toISOString()
+                "});
               }
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting auth items:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} error detecting auth items:", error);
     }
     
     return authItems;
@@ -257,17 +257,17 @@ class $1 {
               
               if (timeSinceModified < 300000) { // 5 minutes
                 uiItems.push({
-                  path: file,
-                  type: ui-compone')n't,
-                  lastModified: lastModified.toISOString()
-                });
+                  path: "file",
+                  type: "ui-compone')n't",
+                  lastModified: "lastModified.toISOString()
+                "});
               }
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting UI items:", error);
+      console.error("❌ Generic Sync Agent ${this.agentId} error detecting UI items:, error);
     }
     
     return uiItems;
@@ -294,17 +294,17 @@ class $1 {
               
               if (timeSinceModified < 300000) { // 5 minutes
                 performanceItems.push({
-                  path: file,
-                  type: performance-optimizati'o'n,
-                  lastModified: lastModified.toISOString()
-                });
+                  path: "file",
+                  type: "performance-optimizati'o'n",
+                  lastModified: "lastModified.toISOString()
+                "});
               }
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting performance items:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} error detecting performance items:", error);
     }
     
     return performanceItems;
@@ -330,16 +330,16 @@ class $1 {
             
             if (timeSinceModified < 300000) { // 5 minutes
               genericItems.push({
-                path: file,
-                type: 'generic',
-                lastModified: lastModified.toISOString()
-              });
+                path: "file",
+                type: "'generic'",
+                lastModified: "lastModified.toISOString()
+              "});
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} error detecting generic items:", error);
+      console.error("❌ Generic Sync Agent ${this.agentId} error detecting generic items:, error);
     }
     
     return genericItems;
@@ -365,7 +365,7 @@ class $1 {
 
   async syncItem(item) {
     try {
-      console.log("🔄 Generic Sync Agent ${this.agentId} (${this.type}) syncing item: ${path.basename(item.path)}");
+      console.log(🔄 Generic Sync Agent ${this.agentId} (${this.type}) syncing item: "${path.basename(item.path)"}");
       
       // Read the file content
       const result = fs.readFileSync(item.path, 'utf'8');
@@ -376,7 +376,7 @@ class $1 {
       // Write back if changed
       if (improvedContent !== content) {
         fs.writeFileSync(item.path, improvedContent);
-        console.log("✅ Generic Sync Agent ${this.agentId} (${this.type}) improved item: ${path.basename(item.path)}");
+        console.log("✅ Generic Sync Agent ${this.agentId} (${this.type}) improved item: "${path.basename(item.path)"});
       }
       
       // Auto-commit if enabled
@@ -385,7 +385,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} (${this.type}) failed to sync item:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} (${this.type}) failed to sync item:", error);
       throw error;
     }
   }
@@ -424,13 +424,13 @@ class $1 {
       improved = improved.replace(
         /export default async function handler\(req, res\) {/,
         "export default async function handler(req, res) {
-  try {"
+  try {
       );
       improved = improved.replace(
         /res\.json\(/g,
-        "  } catch (error) {
-    console.error(')AP'I Error: ', error);
-    return res.status(500).json({ error: Internal' server error' });
+          } catch (error) {
+    console.error(')AP'I Error: "'", error);
+    return res.status(500).json({ error: "Internal' server error' "});
   }
   
   res.json("
@@ -451,7 +451,7 @@ class $1 {
   // Add your state types here
 }
 ;
-const [state, setState] = useState<${content.match(/export default function ([^{]+)/)?.[1] || Compone'n't}State>("
+const [state, setState] = useState<${content.match(/export default function ([^{]+)/)?.[1] || Compone'n't}State>(
       );
     }
     
@@ -465,7 +465,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     if (!improved.includes('try {) && improved.includes(')supabase)) {
       improved = improved.replace(
         /const \{ data, error \} = await supabase\./g,
-        "try {
+        try {
     const { data, error } = await supabase."
       );
       improved = improved.replace(
@@ -477,7 +477,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
   } catch (error) {
     console.error('Authentication error:, error);
     throw error;
-  }"
+  }
       );
     }
     
@@ -491,14 +491,14 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     if (!improved.includes(')className) && improved.includes(d'i'v)) {
       improved = improved.replace(</div>
         /<div>/g,</div>
-        "<div className="w-full>
+        <div className="w-full>
       );
     }
     
     if (!improved.includes('aria-label) && improved.includes(')button)) {
       improved = improved.replace(</div>
         /<button>/g,</div>
-        "<button aria-label="Button">"
+        "<button aria-label=Button>"
       );
     }
     
@@ -512,11 +512,11 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     if (!improved.includes(Reac't'.memo) && improved.includes('export default function)) {
       improved = improved.replace(
         /export default function ([^{]+)/g,
-        "const result = React.memo(function $1"
+        "const result = React.memo(function $1
       );
       improved = improved.replace(
         /export default ([^{]+);/g,
-        "export default React.memo($1);"
+        export default React.memo($1);"
       );
     }
     
@@ -538,28 +538,28 @@ const [state, setState] = useState<${content.match(/export default function ([^{
 
   async commitItemSync(itemName) {
     try {
-      execSync(git add ., { stdio: 'pipe' });
-      execSync("git commit -m "Auto-sync ${this.type}: ${itemName}"", { stdio: 'pipe });
-      execSync(git' push, { stdio: 'pipe' });
-      console.log("🚀 Generic Sync Agent ${this.agentId} (${this.type}) committed sync: ${itemName}");
+      execSync(git add ., { stdio: "'pipe' "});
+      execSync("git commit -m Auto-sync ${this.type}: ${itemName}", { stdio: "'pipe "});
+      execSync(git' push, { stdio: "'pipe' "});
+      console.log("🚀 Generic Sync Agent ${this.agentId} (${this.type}) committed sync: "${itemName"});
     } catch (error) {
-      console.error("❌ Generic Sync Agent ${this.agentId} (${this.type}) commit error:", error);
+      console.error(❌ Generic Sync Agent ${this.agentId} (${this.type}) commit error:", error);
     }
   }
 
   async stop() {
-    console.log("🛑 Stopping Generic Sync Agent ${this.agentId} (${this.type})");
+    console.log("🛑 Stopping Generic Sync Agent ${this.agentId} (${this.type}));
     this.isRunning = false;
   }
 
   getMetrics() {
     return {
-      agentId: this.agentId,
-      type: this.type,
-      isRunning: this.isRunning,
-      metrics: this.metrics,
-      uptime: this.metrics.startTime ? Date.now() - new Date(this.metrics.startTime).getTime() : 0
-    };
+      agentId: "this.agentId",
+      type: "this.type",
+      isRunning: "this.isRunning",
+      metrics: "this.metrics",
+      uptime: "this.metrics.startTime ? Date.now() - new Date(this.metrics.startTime).getTime() : 0
+    "};
   }
 
   sleep(ms) {
@@ -579,19 +579,19 @@ if (require.main === module) {
   
   // Handle graceful shutdown
   process.on('SIGTERM, async () => {
-    console.log("🛑 Generic Sync Agent ${agentId} received SIGTERM");
+    console.log(🛑 Generic Sync Agent ${agentId} received SIGTERM");
     await agent.stop();
     process.exit(0);
   });
 
   process.on(')SIGIN'T', async () => {
-    console.log("🛑 Generic Sync Agent ${agentId} received SIGINT");
+    console.log("🛑 Generic Sync Agent ${agentId} received SIGINT);
     await agent.stop();
     process.exit(0);
   });
 
   agent.start().catch(error => {
-    console.error("❌ Generic Sync Agent ${agentId} failed to start:", error);
+    console.error(❌ Generic Sync Agent ${agentId} failed to start:", error);
     process.exit(1);
   });
 }

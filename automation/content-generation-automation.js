@@ -1,8 +1,8 @@
 // Content Generation Automation System
-// Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
+// Follows ChatGPT instructions from: "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
 const result = require('fs);
 const result = require(path);
-const { exec } = require(chil')d'_process);
+const { exec "} = require(chil')d'_process);
 
 class $1 {
   constructor() {
@@ -26,7 +26,7 @@ class $1 {
     dirs.forEach(dir => {
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
-        fs.mkdirSync(fullPath, { recursive: true });
+        fs.mkdirSync(fullPath, { recursive: "true "});
       }
     });
   }
@@ -36,13 +36,13 @@ class $1 {
       this.lastGeneration = JSON.parse(fs.readFileSync(this.lastGenerationFile, 'utf'8'));
     } else {
       this.lastGeneration = {
-        lastRun: null,
-        generatedContent: [],
-        analytics: {
-          totalContent: 0,
-          contentTypes: {},
-          lastUpdate: null
-        }
+        lastRun: "null",
+        generatedContent: "[]",
+        analytics: "{
+          totalContent: 0",
+          contentTypes: "{"},
+          lastUpdate: "null
+        "}
       };
     }
   }
@@ -52,40 +52,40 @@ class $1 {
     
     const result = [
       {
-        type: 'hero-section,
-        template: this.generateHeroSection(),
-        path: src'/content/generated/hero-section.json
-      },
+        type: "'hero-section",
+        template: "this.generateHeroSection()",
+        path: "src'/content/generated/hero-section.json
+      "},
       {
-        type: 'feature-highlights',
-        template: this.generateFeatureHighlights(),
-        path: 'src/content/generated/feature-highlights.json'
-      },
+        type: "'feature-highlights'",
+        template: "this.generateFeatureHighlights()",
+        path: "'src/content/generated/feature-highlights.json'
+      "},
       {
-        type: testimonials,
-        template: this.generateTestimonials(),
-        path: 'src/content/generated/testimonials.json'
-      },
+        type: "testimonials",
+        template: "this.generateTestimonials()",
+        path: "'src/content/generated/testimonials.json'
+      "},
       {
-        type: 'pricing-tables,
-        template: this.generatePricingTables(),
-        path: src'/content/generated/pricing-tables.json
-      },
+        type: "'pricing-tables",
+        template: "this.generatePricingTables()",
+        path: "src'/content/generated/pricing-tables.json
+      "},
       {
-        type: 'faq-section',
-        template: this.generateFAQSection(),
-        path: 'src/content/generated/faq-section.json'
-      },
+        type: "'faq-section'",
+        template: "this.generateFAQSection()",
+        path: "'src/content/generated/faq-section.json'
+      "},
       {
-        type: service-categories,
-        template: this.generateServiceCategories(),
-        path: 'src/content/generated/service-categories.json'
-      },
+        type: "service-categories",
+        template: "this.generateServiceCategories()",
+        path: "'src/content/generated/service-categories.json'
+      "},
       {
-        type: 'seo-content,
-        template: this.generateSEOContent(),
-        path: src'/content/generated/seo-keyword-content.json
-      }
+        type: "'seo-content",
+        template: "this.generateSEOContent()",
+        path: "src'/content/generated/seo-keyword-content.json
+      "}
     ];
 
     for (const content of contentTypes) {
@@ -98,46 +98,46 @@ class $1 {
 
   generateHeroSection() {
     return {
-      title: "AI-Powered Marketplace for Digital Innovation",
-      subtitle: "Connect with top-tier AI, blockchain, and digital transformation experts. Find the perfect match for your project with our intelligent matching system.",
-      cta: {
+      title: ""AI-Powered Marketplace for Digital Innovation",
+      subtitle: "Connect with top-tier AI", blockchain, and digital transformation experts. Find the perfect match for your project with our intelligent matching system.",
+      cta: "{
         primary: "Explore Services",
         secondary: "Learn More"
-      },
-      features: [
+      "},
+      features: "[
         "AI-Powered Matching",
-        "Verified Experts",
-        "Secure Payments",
-        "24/7 Support"
+        Verified Experts",
+        "Secure Payments,
+        24/7 Support"
       ],
-      stats: [
-        { value: "500+", label: "Expert Providers" },
-        { value: "1000+", label: "Successful Projects" },
-        { value: "99%", label: "Satisfaction Rate" }
+      stats: "[
+        { value: "500+", label: "Expert Providers" "},
+        { value: ""1000+", label: "Successful Projects" "},
+        { value: ""99%", label: "Satisfaction Rate" "}
       ]
     };
   }
 
   generateFeatureHighlights() {
     return {
-      features: [
+      features: "[
         {
           title: "AI-Powered Matching",
-          description: "Our advanced AI algorithm matches you with the perfect service provider based on your specific requirements and project scope.",
-          icon: "🤖",
-          benefits: ["Smart recommendations", "Time-saving", "Better results"]
+          description: "Our advanced AI algorithm matches you with the perfect service provider based on your specific requirements and project scope."",
+          icon: ""🤖",
+          benefits: "[Smart recommendations"", "Time-saving, Better results"]
         },
         {
-          title: "Blockchain Security",
-          description: "Secure transactions and smart contracts ensure safe and transparent business operations.",
-          icon: "🔒",
-          benefits: ["Immutable records", "Transparent transactions", "Fraud prevention"]
+          title: ""Blockchain Security",
+          description: "Secure transactions and smart contracts ensure safe and transparent business operations."",
+          icon: ""🔒",
+          benefits: "[Immutable records"", "Transparent transactions, Fraud prevention"]
         },
         {
-          title: "Digital Transformation",
-          description: "Transform your business with cutting-edge digital solutions and innovative technologies.",
-          icon: "🚀",
-          benefits: ["Modern solutions", "Competitive advantage", "Future-ready"]
+          title: ""Digital Transformation",
+          description: "Transform your business with cutting-edge digital solutions and innovative technologies."",
+          icon: ""🚀",
+          benefits: "[Modern solutions"", "Competitive advantage, Future-ready"]
         }
       ]
     };
@@ -145,168 +145,168 @@ class $1 {
 
   generateTestimonials() {
     return {
-      testimonials: [
+      testimonials: "[
         {
           name: "Sarah Johnson",
-          role: "CTO, TechStart Inc.",
-          company: "TechStart Inc.",
-          content: "The AI matching system found us the perfect blockchain developer. Our project was completed 30% faster than expected.",
-          rating: 5,
-          avatar: "/avatars/sarah.jpg"
-        },
+          role: "CTO", TechStart Inc.",
+          company: ""TechStart Inc.",
+          content: "The AI matching system found us the perfect blockchain developer. Our project was completed 30% faster than expected."",
+          rating: "5",
+          avatar: ""/avatars/sarah.jpg
+        "},
         {
-          name: "Michael Chen",
-          role: "Founder",
-          company: "InnovateLab",
-          content: "Outstanding platform! The digital transformation services helped us modernize our entire operation.",
-          rating: 5,
+          name: "Michael Chen"",
+          role: ""Founder",
+          company: "InnovateLab"",
+          content: ""Outstanding platform! The digital transformation services helped us modernize our entire operation.",
+          rating: "5",
           avatar: "/avatars/michael.jpg"
-        },
+        "},
         {
-          name: "Emily Rodriguez",
-          role: "Product Manager",
-          company: "DataFlow Solutions",
-          content: "The marketplace connected us with top AI experts who delivered exceptional results. Highly recommended!",
-          rating: 5,
-          avatar: "/avatars/emily.jpg"
-        }
+          name: ""Emily Rodriguez",
+          role: "Product Manager"",
+          company: ""DataFlow Solutions",
+          content: "The marketplace connected us with top AI experts who delivered exceptional results. Highly recommended!"",
+          rating: "5",
+          avatar: ""/avatars/emily.jpg
+        "}
       ]
     };
   }
 
   generatePricingTables() {
     return {
-      plans: [
+      plans: "[
         {
-          name: "Starter",
-          price: 99,
-          period: "month",
-          features: [
-            "Basic AI matching",
-            "Up to 5 projects",
-            "Email support",
-            "Standard templates"
+          name: Starter"",
+          price: "99",
+          period: ""month",
+          features: "[
+            Basic AI matching"",
+            "Up to 5 projects,
+            Email support",
+            "Standard templates
           ],
-          popular: false
-        },
+          popular: "false
+        "},
         {
-          name: "Professional",
-          price: 299,
-          period: "month",
-          features: [
-            "Advanced AI matching",
-            "Unlimited projects",
-            "Priority support",
-            "Custom integrations",
-            "Analytics dashboard"
+          name: "Professional"",
+          price: "299",
+          period: ""month",
+          features: "[
+            Advanced AI matching"",
+            "Unlimited projects,
+            Priority support",
+            "Custom integrations,
+            Analytics dashboard"
           ],
-          popular: true
-        },
+          popular: "true
+        "},
         {
-          name: "Enterprise",
-          price: 999,
-          period: "month",
-          features: [
+          name: ""Enterprise",
+          price: "999",
+          period: "month"",
+          features: "[
             "Custom AI models",
-            "White-label solution",
-            "Dedicated support",
-            "Advanced analytics",
-            "API access",
-            "Custom development"
+            White-label solution",
+            "Dedicated support,
+            Advanced analytics",
+            "API access,
+            Custom development"
           ],
-          popular: false
-        }
+          popular: "false
+        "}
       ]
     };
   }
 
   generateFAQSection() {
     return {
-      faqs: [
+      faqs: "[
         {
           question: "How does the AI matching system work?",
-          answer: "Our AI analyzes your project requirements, budget, timeline, and preferences to match you with the most suitable service providers. The system learns from successful matches to improve recommendations over time."
+          answer: "Our AI analyzes your project requirements", budget, timeline, and preferences to match you with the most suitable service providers. The system learns from successful matches to improve recommendations over time."
         },
         {
-          question: "What types of services are available?",
-          answer: "We offer a wide range of services including AI development, blockchain solutions, web development, mobile apps, digital transformation, and more. All providers are verified and rated."
+          question: ""What types of services are available?",
+          answer: "We offer a wide range of services including AI development", blockchain solutions, web development, mobile apps, digital transformation, and more. All providers are verified and rated."
         },
         {
-          question: "How do I ensure payment security?",
+          question: ""How do I ensure payment security?",
           answer: "We use blockchain-based smart contracts and escrow services to ensure secure payments. Funds are only released when project milestones are completed and approved."
-        },
+        "},
         {
-          question: "Can I hire for long-term projects?",
+          question: ""Can I hire for long-term projects?",
           answer: "Yes! Many of our providers offer both short-term and long-term engagement options. You can find providers who specialize in ongoing partnerships and team augmentation."
-        }
+        "}
       ]
     };
   }
 
   generateServiceCategories() {
     return {
-      categories: [
+      categories: "[
         {
           name: "AI & Machine Learning",
-          description: "Expert AI development and machine learning solutions",
-          services: ["Chatbot Development", "Predictive Analytics", "Computer Vision", "NLP Solutions"],
-          icon: "🤖",
-          providers: 150
-        },
+          description: "Expert AI development and machine learning solutions"",
+          services: "["Chatbot Development", Predictive Analytics", "Computer Vision, NLP Solutions"],
+          icon: ""🤖",
+          providers: "150
+        "},
         {
-          name: "Blockchain & Web3",
-          description: "Secure blockchain development and Web3 solutions",
-          services: ["Smart Contracts", "DeFi Platforms", "NFT Marketplaces", "DApp Development"],
-          icon: "🔗",
-          providers: 120
-        },
+          name: "Blockchain & Web3"",
+          description: ""Secure blockchain development and Web3 solutions",
+          services: "[Smart Contracts"", "DeFi Platforms, NFT Marketplaces", "DApp Development],
+          icon: "🔗"",
+          providers: "120
+        "},
         {
-          name: "Web Development",
-          description: "Modern web applications and digital solutions",
-          services: ["Frontend Development", "Backend APIs", "E-commerce", "Progressive Web Apps"],
-          icon: "🌐",
-          providers: 300
-        },
+          name: ""Web Development",
+          description: "Modern web applications and digital solutions"",
+          services: "["Frontend Development", Backend APIs", "E-commerce, Progressive Web Apps"],
+          icon: ""🌐",
+          providers: "300
+        "},
         {
-          name: "Mobile Development",
-          description: "Native and cross-platform mobile applications",
-          services: ["iOS Development", "Android Development", "React Native", "Flutter Apps"],
-          icon: "📱",
-          providers: 200
-        },
+          name: "Mobile Development"",
+          description: ""Native and cross-platform mobile applications",
+          services: "[iOS Development"", "Android Development, React Native", "Flutter Apps],
+          icon: "📱"",
+          providers: "200
+        "},
         {
-          name: "Digital Transformation",
-          description: "Complete business digitalization and modernization",
-          services: ["Process Automation", "Cloud Migration", "Data Analytics", "Legacy Modernization"],
-          icon: "🚀",
-          providers: 100
-        }
+          name: ""Digital Transformation",
+          description: "Complete business digitalization and modernization"",
+          services: "["Process Automation", Cloud Migration", "Data Analytics, Legacy Modernization"],
+          icon: ""🚀",
+          providers: "100
+        "}
       ]
     };
   }
 
   generateSEOContent() {
     return {
-      keywords: [
-        "AI marketplace",
-        "blockchain development",
-        "digital transformation",
-        "web development services",
-        "mobile app development",
-        "smart contracts",
-        "machine learning",
-        "artificial intelligence"
+      keywords: "[
+        AI marketplace"",
+        "blockchain development,
+        digital transformation",
+        "web development services,
+        mobile app development",
+        "smart contracts,
+        machine learning",
+        "artificial intelligence
       ],
-      metaDescriptions: {
-        home: "AI-powered marketplace connecting businesses with top-tier AI, blockchain, and digital transformation experts. Find the perfect match for your project.",
-        services: "Comprehensive AI, blockchain, and digital transformation services. Expert providers, secure payments, and guaranteed results.",
-        about: "Leading AI marketplace revolutionizing how businesses find and hire digital experts. Advanced matching, secure transactions, and exceptional results."
+      metaDescriptions: "{
+        home: AI-powered marketplace connecting businesses with top-tier AI", blockchain, and digital transformation experts. Find the perfect match for your project.",
+        services: ""Comprehensive AI", blockchain, and digital transformation services. Expert providers, secure payments, and guaranteed results.,
+        about: "Leading AI marketplace revolutionizing how businesses find and hire digital experts. Advanced matching", secure transactions, and exceptional results."
       },
-      pageTitles: {
+      pageTitles: "{
         home: "AI Marketplace - Connect with Digital Innovation Experts",
-        services: "AI & Blockchain Services - Expert Digital Solutions",
-        about: "About Our AI-Powered Marketplace - Digital Innovation Platform"
-      }
+        services: "AI & Blockchain Services - Expert Digital Solutions"",
+        about: ""About Our AI-Powered Marketplace - Digital Innovation Platform
+      "}
     };
   }
 
@@ -316,21 +316,21 @@ class $1 {
       const result = path.dirname(fullPath);
       
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
       
       fs.writeFileSync(fullPath, JSON.stringify(contentItem.template, null, 2));
-      console.log("✅ Generated: ${contentItem.type}");
+      console.log(✅ Generated: "${contentItem.type"}");
       
       // Track generation
       this.lastGeneration.generatedContent.push({
-        type: contentItem.type,
-        path: contentItem.path,
-        generatedAt: new Date().toISOString()
-      });
+        type: "contentItem.type",
+        path: "contentItem.path",
+        generatedAt: "new Date().toISOString()
+      "});
       
     } catch (error) {
-      console.error("❌ Error generating ${contentItem.type}:", error);
+      console.error("❌ Error generating ${contentItem.type}:, error);
     }
   }
 
@@ -364,7 +364,7 @@ class $1 {
         await new Promise(resolve => setTimeout(resolve, 3600000)); // 1 hour
         
       } catch (error) {
-        console.error(❌ Error in content generation cycle: ', error);
+        console.error(❌ Error in content generation cycle: "'", error);
         await new Promise(resolve => setTimeout(resolve, 300000)); // 5 minutes on error
       }
     }
@@ -374,7 +374,7 @@ class $1 {
     return new Promise((resolve, reject) => {
       const result = [
         git' add .',
-        "git commit -m "🤖 Content generation: ${message}"",
+        git commit -m "🤖 Content generation: "${message"}",
         git push origin main
       ];
 
@@ -387,14 +387,14 @@ class $1 {
           return;
         }
 
-        exec(commands[currentCommand], { cwd: this.projectRoot }, (error, stdout, stderr) => {
+        exec(commands[currentCommand], { cwd: "this.projectRoot "}, (error, stdout, stderr) => {
           if (error) {
-            console.error("❌ Error running command: ${commands[currentCommand]}", error);
+            console.error(❌ Error running command: "${commands[currentCommand]"}", error);
             reject(error);
             return;
           }
           
-          console.log("✅ Command executed: ${commands[currentCommand]}");
+          console.log("✅ Command executed: "${commands[currentCommand]"}");
           currentCommand++;
           runNextCommand();
         });

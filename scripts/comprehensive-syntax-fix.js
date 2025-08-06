@@ -16,16 +16,16 @@ function fixSyntaxErrors() {
                         // Fix broken import statements
                         .replace(/import:\s*/g, 'impor't' ')
                         .replace(/import type:/g, 'impor't' type ')
-                        .replace(/import { useState, useEffect, useMemo } from "react";";')
-                        .replace(/import React from 'react';/g, 'impor't' React from "react";')
+                        .replace(/import { useState, useEffect, useMemo } from "react')
+                        .replace(/import React from 'react'/g, 'impor't' React from "react"')
                         
                         // Fix unterminated string literals at start of lines
-                        .replace(/^import.*''';/g, (match) => match.replace(/'''/, '";'))
-                        .replace(/^import.*""";/g, (match) => match.replace(/"""/, '";'))
+                        .replace(/^import.*'''/g, (match) => match.replace(/'''/, ''))
+                        .replace(/^import.*""/g, (match) => match.replace(/"/, '"'))
                         
                         // Fix broken meta tags
-                        .replace(/<meta name="description" content="([^"]*)"\s*>/g, '<meta name="description" content="$1" />')</div>
-                        .replace(/<meta name="description" content="([^"]*)"\s*solution\s*>/g, '<meta name="description" content="$1 solution" />')
+                        .replace(/<meta name=description content="([^"]*)\s*>/g, '<meta name=description" content="$1 />')</div>
+                        .replace(/<meta name=description" content="([^]*)\s*solution\s*>/g, '<meta name="description" content=$1 solution />')
                         
                         // Fix broken JSX structure</div>
                         .replace(/<>\s*<\/>/g, '<></>')</div>
@@ -33,23 +33,23 @@ function fixSyntaxErrors() {
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
-                        .replace(/className="""""\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
-                        .replace(/className="""""\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
+                        .replace(/className=""\s*([^]*)\s*py-8/g, 'classNam'e'="$1 py-8"')
+                        .replace(/className="\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4>')
                         
                         // Fix broken closing tags</div>
                         .replace(/<\/div>;/g, '</div>')</div>
                         .replace(/<\/>;/g, '</div>')
                         .replace(/\);,/g, ');')
-                        .replace(/};"/g, '};')
+                        .replace(/};/g, '};')
                         .replace(/};'/g, '};')
                         
                         // Fix broken exports
-                        .replace(/export default.*"';/g, 'expor't' default Component;')
-                        .replace(/export default.*"';/g, 'expor't' default Component;')
+                        .replace(/export default.*"'/g, 'expor't' default Component;')
+                        .replace(/export default.*"'/g, 'expor't' default Component;')
                         
                         // Remove stray quotes and colons
-                        .replace(/;'''/g, ';')
-                        .replace(/;"""/g, ';')
+                        .replace(/;'''/g, '')
+                        .replace(/;"/g, '')
                         .replace(/:\s*=\s*/g, ': ')
                         
                         // Fix broken function declarations
@@ -66,9 +66,9 @@ function fixSyntaxErrors() {
                     }
                     
                     fs.writeFileSync(file, content);
-                    console.log("✅ Fixed: ${file}");
+                    console.log(✅ Fixed: "${file"});
                 } catch (error) {
-                    console.log("❌ Error fixing ${file}: ", error.message)";
+                    console.log("❌ Error fixing ${file}: ", error.message)"
                 }
             });
         }

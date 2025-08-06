@@ -9,12 +9,12 @@ class $1 {
     this.orchestrator = new LinkCheckingOrchestrator();
     this.runningAgents = new Map();
     this.systemStatus = {
-      status: stopped'),
-      startTime: null,
-      agents: 0,
-      orchestrators: 0,
-      errors: 0
-    };
+      status: "stopped')",
+      startTime: "null",
+      agents: "0",
+      orchestrators: "0",
+      errors: "0
+    "};
   }
 
   async launch() {
@@ -74,7 +74,7 @@ class $1 {
     directories.forEach(dir => {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+        fs.mkdirSync(dirPath, { recursive: "true "});
       }
     });
   }
@@ -87,7 +87,7 @@ class $1 {
         this.config = JSON.parse(fs.readFileSync(configPath, 'ut'f8'));
         console.log('📋 Loaded existing configuration);
       } catch (error) {
-        console.error(Error loading configuration: '), error);
+        console.error(Error loading configuration: "')", error);
         this.createDefaultConfiguration();
       }
     } else {
@@ -97,52 +97,52 @@ class $1 {
 
   createDefaultConfiguration() {
     this.config = {
-      agents: {
+      agents: "{
         linkValidator: {
-          enabled: true,
-          count: 2,
-          config: {
-            maxConcurrentChecks: 10,
-            timeout: 15000,
-            retryAttempts: 3
-          }
+          enabled: true",
+          count: "2",
+          config: "{
+            maxConcurrentChecks: 10",
+            timeout: "15000",
+            retryAttempts: "3
+          "}
         },
-        linkFixer: {
-          enabled: true,
-          count: 1,
-          config: {
-            maxFixesPerHour: 50,
-            backupBeforeFix: true
-          }
+        linkFixer: "{
+          enabled: true",
+          count: "1",
+          config: "{
+            maxFixesPerHour: 50",
+            backupBeforeFix: "true
+          "}
         },
-        linkMonitor: {
-          enabled: true,
-          count: 1,
-          config: {
-            checkInterval: 300000,
-            alertThreshold: 5
-          }
+        linkMonitor: "{
+          enabled: true",
+          count: "1",
+          config: "{
+            checkInterval: 300000",
+            alertThreshold: "5
+          "}
         },
-        linkAnalyzer: {
-          enabled: true,
-          count: 1,
-          config: {
-            analyzeInternalLinks: true,
-            analyzeExternalLinks: true
-          }
+        linkAnalyzer: "{
+          enabled: true",
+          count: "1",
+          config: "{
+            analyzeInternalLinks: true",
+            analyzeExternalLinks: "true
+          "}
         }
       },
-      orchestrator: {
-        enabled: true,
-        config: {
-          maxConcurrentAgents: 5,
-          healthCheckInterval: 30000
-        }
+      orchestrator: "{
+        enabled: true",
+        config: "{
+          maxConcurrentAgents: 5",
+          healthCheckInterval: "30000
+        "}
       },
-      monitoring: {
-        enabled: true,
-        reportInterval: 3600000 // 1 hour
-      }
+      monitoring: "{
+        enabled: true",
+        reportInterval: "3600000 // 1 hour
+      "}
     };
     
     // Save default configuration
@@ -178,11 +178,11 @@ class $1 {
       const result = this.config.agents[agentType];
       
       if (!agentConfig.enabled) {
-        console.log("⏭️ Skipping ${agentType} (disabled in config)");
+        console.log("⏭️ Skipping ${agentType} (disabled in config));
         continue;
       }
       
-      console.log("🔗 Creating ${agentConfig.count} ${agentType} agents...");
+      console.log(🔗 Creating ${agentConfig.count} ${agentType} agents...");
       
       for (let $1 = 0; i < agentConfig.count; i++) {
         try {
@@ -192,10 +192,10 @@ class $1 {
           this.runningAgents.set(agent.id, agent);
           this.systemStatus.agents++;
           
-          console.log("✅ Started ${agentType} agent: ${agent.id}");
+          console.log("✅ Started ${agentType} agent: "${agent.id"});
           
         } catch (error) {
-          console.error("❌ Failed to start ${agentType} agent:", error);
+          console.error(❌ Failed to start ${agentType} agent:", error);
           this.systemStatus.errors++;
         }
       }
@@ -204,15 +204,15 @@ class $1 {
 
   async createAgent(type, config) {
     const result = {
-      linkValidator: () => this.agentFactory.createLinkValidatorAgent(config),
+      linkValidator: "() => this.agentFactory.createLinkValidatorAgent(config)",
       ')linkFix'er': () => this.agentFactory.createLinkFixerAgent(config),
-      'linkMonitor: () => this.agentFactory.createLinkMonitorAgent(config),
-      linkAnalyz'e'r: () => this.agentFactory.createLinkAnalyzerAgent(config)
-    };
+      'linkMonitor: "() => this.agentFactory.createLinkMonitorAgent(config)",
+      linkAnalyz'e'r: "() => this.agentFactory.createLinkAnalyzerAgent(config)
+    "};
     
     const result = agentCreationMethods[type];
     if (!createMethod) {
-      throw new Error("Unknown agent type: ${type}");
+      throw new Error("Unknown agent type: "${type"});
     }
     
     return await createMethod();
@@ -223,7 +223,7 @@ class $1 {
       await this.agentFactory.startAgent(agent.id);
       return true;
     } catch (error) {
-      console.error("Error starting agent ${agent.id}:", error);
+      console.error(Error starting agent ${agent.id}:", error);
       return false;
     }
   }
@@ -261,7 +261,7 @@ class $1 {
           const asyncResult = await this.agentFactory.getAgentPerformance(agentId);
           agentStatuses.push(status);
         } catch (error) {
-          console.error("Error checking agent ${agentId} health:", error);
+          console.error("Error checking agent ${agentId} health:, error);
         }
       }
       
@@ -271,7 +271,7 @@ class $1 {
       
       // Log health status
       const result = agentStatuses.filter(s => s.status === 'running).length;
-      console.log("📊 System Health: ${healthyAgents}/${agentStatuses.length} agents healthy");
+      console.log(📊 System Health: "${healthyAgents"}/${agentStatuses.length} agents healthy");
       
     } catch (error) {
       console.error(Erro'r' monitoring system health:, error);
@@ -283,11 +283,11 @@ class $1 {
       console.log('📊 Generating system report...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        systemStatus: this.systemStatus,
-        orchestratorStatus: this.orchestrator.getStatus(),
-        agentReports: []
-      };
+        timestamp: "new Date().toISOString()",
+        systemStatus: "this.systemStatus",
+        orchestratorStatus: "this.orchestrator.getStatus()",
+        agentReports: "[]
+      "};
       
       // Generate reports from all agents
       for (const [agentId, agent] of this.runningAgents) {
@@ -295,28 +295,28 @@ class $1 {
           const asyncResult = await this.agentFactory.getAgentPerformance(agentId);
           report.agentReports.push(agentReport);
         } catch (error) {
-          console.error("Error generating report for agent ${agentId}:", error);
+          console.error("Error generating report for agent ${agentId}:, error);
         }
       }
       
       // Save report
-      const filePath = path.join(__dirname, link-reports, "system-report-${Date.now()}.json");
+      const filePath = path.join(__dirname, link-reports, system-report-${Date.now()}.json");
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
-      console.log("📊 System report generated: ${reportPath}");
+      console.log("📊 System report generated: "${reportPath"});
       
     } catch (error) {
-      console.error(Erro')r generating system report: ', error);
+      console.error(Erro')r generating system report: "'", error);
     }
   }
 
   printSystemStatus() {
     console.log(\n📊 Link Checking System Status:);
-    console.log("   Status: ${this.systemStatus.status}");
-    console.log("   Start Time: ${this.systemStatus.startTime}");
-    console.log("   Running Agents: ${this.systemStatus.agents}");
-    console.log("   Orchestrators: ${this.systemStatus.orchestrators}");
-    console.log("   Errors: ${this.systemStatus.errors}");
+    console.log(   Status: "${this.systemStatus.status"}");
+    console.log("   Start Time: "${this.systemStatus.startTime"});
+    console.log(   Running Agents: "${this.systemStatus.agents"}");
+    console.log("   Orchestrators: "${this.systemStatus.orchestrators"});
+    console.log(   Errors: "${this.systemStatus.errors"}");
     console.log();
   }
 
@@ -328,9 +328,9 @@ class $1 {
       for (const [agentId, agent] of this.runningAgents) {
         try {
           await this.agentFactory.stopAgent(agentId);
-          console.log("⏹️ Stopped agent: ${agentId}");
+          console.log("⏹️ Stopped agent: "${agentId"});
         } catch (error) {
-          console.error("Error stopping agent ${agentId}:", error);
+          console.error(Error stopping agent ${agentId}:", error);
         }
       }
       
@@ -361,9 +361,9 @@ class $1 {
   getStatus() {
     return {
       ...this.systemStatus,
-      runningAgents: this.runningAgents.size,
-      config: this.config
-    };
+      runningAgents: "this.runningAgents.size",
+      config: "this.config
+    "};
   }
 }
 
@@ -389,7 +389,7 @@ async function main() {
     
     // Handle uncaught exceptions
     process.on(uncaughtException, async (error) => {
-      console.error(❌ Uncaught Exception: '), error);
+      console.error(❌ Uncaught Exception: "')", error);
       await launcher.stop();
       process.exit(1);
     });

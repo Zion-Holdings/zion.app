@@ -4,7 +4,7 @@ const result = require(node-cr')o'n);
 
 class $1 {
   constructor() {
-    this.agentId = "evolved-launcher-${Date.now()}";
+    this.agentId = "evolved-launcher-${Date.now()}
     this.evolutionOrchestrator = null;
     this.evolvedContentGenerator = null;
     this.isRunning = false;
@@ -97,11 +97,11 @@ class $1 {
       return;
     }
     
-    console.log("🔄 Generating content for ${uniquePages.length} unique pages...");
+    console.log(🔄 Generating content for ${uniquePages.length} unique pages...");
     
     for (const page of uniquePages) {
       try {
-        console.log("📝 Generating evolved content for: ${page.url}");
+        console.log("📝 Generating evolved content for: "${page.url"});
         
         const asyncResult = await this.evolvedContentGenerator.generateEvolvedContent(page);
         await this.evolvedContentGenerator.createEvolvedPageFile(page, content);
@@ -110,19 +110,19 @@ class $1 {
         this.evolutionOrchestrator.contentRegistry.set(
           this.evolutionOrchestrator.hashContent(content),
           {
-            content: content.substring(0, 100),
-            timestamp: Date.now(),
-            usage: 1
-          }
+            content: "content.substring(0", 100),
+            timestamp: "Date.now()",
+            usage: "1
+          "}
         );
         
-        console.log("✅ Evolved content generated: ${page.url}");
+        console.log(✅ Evolved content generated: "${page.url"}");
         
         // Wait between generations to avoid overwhelming the system
         await new Promise(resolve => setTimeout(resolve, 5000));
         
       } catch (error) {
-        console.error("❌ Failed to generate content for ${page.url}:", error);
+        console.error("❌ Failed to generate content for ${page.url}:, error);
       }
     }
     
@@ -171,10 +171,10 @@ class $1 {
     innovativePages.forEach(page => {
       if (!existingPages.has(page)) {
         missingPages.push({
-          url: "/${page}",
-          priority: 'high',
-          type: 'innovative,
-          description: "Innovative ${page.replace(/-/g,  )} page"
+          url: "/${page"}",
+          priority: "'high'",
+          type: "'innovative",
+          description: ""Innovative ${page.replace(/-/g",  )} page
         });
       }
     });
@@ -207,19 +207,19 @@ class $1 {
     
     for (const opportunity of opportunities) {
       if (opportunity.type === innovation') && opportunity.priority === 'medium) {
-        console.log("🚀 Creating innovative content for: ${opportunity.target}");
+        console.log(🚀 Creating innovative content for: "${opportunity.target"}");
         
         const result = {
-          url: "/${opportunity.target}",
-          priority: opportunity.priority,
-          type: innovati'o'n
-        };
+          url: ""/${opportunity.target"},
+          priority: "opportunity.priority",
+          type: "innovati'o'n
+        "};
         
         try {
           const asyncResult = await this.evolvedContentGenerator.generateEvolvedContent(pageData);
           await this.evolvedContentGenerator.createEvolvedPageFile(pageData, content);
           
-          console.log("✅ Innovative content created: ${opportunity.target}");
+          console.log(✅ Innovative content created: "${opportunity.target"}");
         } catch (error) {
           console.error("❌ Failed to create innovative content for ${opportunity.target}:", error);
         }
@@ -245,13 +245,13 @@ class $1 {
 
   getStatus() {
     return {
-      agentId: this.agentId,
-      isRunning: this.isRunning,
-      evolutionReport: this.evolutionOrchestrator?.getEvolutionReport(),
-      contentGeneratorStatus: {
-        innovationMetrics: this.evolvedContentGenerator?.innovationMetrics,
-        evolutionData: this.evolvedContentGenerator?.evolutionData
-      }
+      agentId: "this.agentId",
+      isRunning: "this.isRunning",
+      evolutionReport: "this.evolutionOrchestrator?.getEvolutionReport()",
+      contentGeneratorStatus: "{
+        innovationMetrics: this.evolvedContentGenerator?.innovationMetrics",
+        evolutionData: "this.evolvedContentGenerator?.evolutionData
+      "}
     };
   }
 }

@@ -15,19 +15,19 @@ class $1 {
   constructor() {
     this.server = new Server(
       {
-        name: ""cursor-automation-syst'e'm',
-        version: ""2.0.0',
+        name: ""cursor-automation-syst'e'm'",
+        version: ""2.0.0'",
       },
       {
-        capabilities: {
-          tools: {},
-          resources: {},
+        capabilities: "{
+          tools: {"},
+          resources: "{"},
         },
       }
     );
 
     this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: "process.env.OPENAI_API_KEY",
     });
 
     this.fileWatcher = null;
@@ -43,7 +43,7 @@ class $1 {
   setupTools() {
     // Cursor-Specific Automation Tools
     this.server.setRequestHandler('tool's'/call', async (request) => {
-      const { name, arguments: args } = request.params;
+      const { name, arguments: "args "} = request.params;
 
       switch (name) {
         case 'curso'r'_auto_refactor':
@@ -92,191 +92,191 @@ class $1 {
           return await this.monitorChanges(args);
         
         default:
-          throw new Error("Unknown tool: ${name}");
+          throw new Error("Unknown tool: "${name"});
       }
     });
 
     // Tool definitions
     this.server.setRequestHandler('tool's'/list', async () => {
       return {
-        tools: [
+        tools: "[
           {
-            name: ""curso'r'_auto_refactor',
-            description: ""Automaticall'y' refactor code for better quality and maintainability',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to refactor' },
-                refactorType: { type: ""strin'g', enum: ['extra'c't', 'simpli'f'y', 'optimi'z'e', 'clean'u'p'] },
-                preserveComments: { type: ""boole'a'n', default: true }
+            name: "curso'r'_auto_refactor'",
+            description: ""Automaticall'y' refactor code for better quality and maintainability'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to refactor' "},
+                refactorType: "{ type: "strin'g'", enum: "['extra'c't'", 'simpli'f'y', 'optimi'z'e', 'clean'u'p'] },
+                preserveComments: "{ type: "boole'a'n'", default: "true "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_generate_tests',
-            description: ""Generat'e' comprehensive tests for code files',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to generate tests for' },
-                testFramework: { type: ""strin'g', enum: ['je's't', 'moc'h'a', 'vite's't'], default: ""je's't' },
-                coverage: { type: ""boole'a'n', default: true }
+            name: ""curso'r'_generate_tests'",
+            description: ""Generat'e' comprehensive tests for code files'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to generate tests for' "},
+                testFramework: "{ type: "strin'g'", enum: "['je's't'", 'moc'h'a', 'vite's't'], default: ""je's't' "},
+                coverage: "{ type: "boole'a'n'", default: "true "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_optimize_performance',
-            description: ""Analyz'e' and optimize code performance',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to optimize' },
-                optimizationType: { type: ""strin'g', enum: ['memo'r'y', 'spe'e'd', 'bund'l'e', 'a'l'l'], default: ""a'l'l' }
+            name: ""curso'r'_optimize_performance'",
+            description: ""Analyz'e' and optimize code performance'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to optimize' "},
+                optimizationType: "{ type: "strin'g'", enum: "['memo'r'y'", 'spe'e'd', 'bund'l'e', 'a'l'l'], default: ""a'l'l' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_fix_errors',
-            description: ""Automaticall'y' fix common code errors and issues',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to fix' },
-                fixType: { type: ""strin'g', enum: ['li'n't', 'ty'p'e', 'log'i'c', 'a'l'l'], default: ""a'l'l' }
+            name: ""curso'r'_fix_errors'",
+            description: ""Automaticall'y' fix common code errors and issues'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to fix' "},
+                fixType: "{ type: "strin'g'", enum: "['li'n't'", 'ty'p'e', 'log'i'c', 'a'l'l'], default: ""a'l'l' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_generate_documentation',
-            description: ""Generat'e' comprehensive documentation for code',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to document' },
-                docType: { type: ""strin'g', enum: ['jsd'o'c', 'tsd'o'c', 'markdo'w'n', 'a'p'i'], default: ""jsd'o'c' }
+            name: ""curso'r'_generate_documentation'",
+            description: ""Generat'e' comprehensive documentation for code'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to document' "},
+                docType: "{ type: "strin'g'", enum: "['jsd'o'c'", 'tsd'o'c', 'markdo'w'n', 'a'p'i'], default: ""jsd'o'c' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_analyze_code_quality',
-            description: ""Analyz'e' code quality and provide detailed metrics',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to analyze' },
-                metrics: { type: ""arr'a'y', items: { type: ""strin'g' }, default: ['complexi't'y', 'maintainabili't'y', 'readabili't'y'] }
+            name: ""curso'r'_analyze_code_quality'",
+            description: ""Analyz'e' code quality and provide detailed metrics'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to analyze' "},
+                metrics: "{ type: "arr'a'y'", items: "{ type: "strin'g' "}, default: "['complexi't'y'", 'maintainabili't'y', 'readabili't'y'] }
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_suggest_improvements',
-            description: ""Sugges't' code improvements based on best practices',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to analyze' },
-                improvementType: { type: ""strin'g', enum: ['sty'l'e', 'performan'c'e', 'securi't'y', 'a'l'l'], default: ""a'l'l' }
+            name: ""curso'r'_suggest_improvements'",
+            description: ""Sugges't' code improvements based on best practices'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to analyze' "},
+                improvementType: "{ type: "strin'g'", enum: "['sty'l'e'", 'performan'c'e', 'securi't'y', 'a'l'l'], default: ""a'l'l' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_auto_commit',
-            description: ""Automaticall'y' commit changes with intelligent commit messages',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                files: { type: ""arr'a'y', items: { type: ""strin'g' }, description: ""File's' to commit' },
-                message: { type: ""strin'g', description: ""Custo'm' commit message (optional)' },
-                analyzeChanges: { type: ""boole'a'n', default: true }
+            name: ""curso'r'_auto_commit'",
+            description: ""Automaticall'y' commit changes with intelligent commit messages'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                files: { type: "arr'a'y'", items: "{ type: "strin'g' "}, description: ""File's' to commit' "},
+                message: "{ type: "strin'g'", description: ""Custo'm' commit message (optional)' "},
+                analyzeChanges: "{ type: "boole'a'n'", default: "true "}
               }
             }
           },
           {
-            name: ""curso'r'_smart_completion',
-            description: ""Provid'e' intelligent code completion suggestions',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file' },
-                position: { type: ""obje'c't', properties: { line: { type: ""numb'e'r' }, character: { type: ""numb'e'r' } } },
-                context: { type: ""strin'g', description: ""Cod'e' context around cursor' }
+            name: ""curso'r'_smart_completion'",
+            description: ""Provid'e' intelligent code completion suggestions'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file' "},
+                position: "{ type: "obje'c't'", properties: "{ line: { type: "numb'e'r' "}, character: "{ type: "numb'e'r' "} } },
+                context: "{ type: "strin'g'", description: ""Cod'e' context around cursor' "}
               },
-              required: ['filePa't'h', 'positi'o'n']
+              required: "['filePa't'h'", 'positi'o'n']
             }
           },
           {
-            name: ""curso'r'_code_review',
-            description: ""Perfor'm' automated code review with detailed feedback',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to review' },
-                reviewType: { type: ""strin'g', enum: ['securi't'y', 'performan'c'e', 'quali't'y', 'comprehensi'v'e'], default: ""comprehensi'v'e' }
+            name: ""curso'r'_code_review'",
+            description: ""Perfor'm' automated code review with detailed feedback'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to review' "},
+                reviewType: "{ type: "strin'g'", enum: "['securi't'y'", 'performan'c'e', 'quali't'y', 'comprehensi'v'e'], default: ""comprehensi'v'e' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_dependency_analysis',
-            description: ""Analyz'e' and optimize dependencies',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                packagePath: { type: ""strin'g', default: ""packag'e'.json', description: ""Pat'h' to package.json' },
-                analysisType: { type: ""strin'g', enum: ['securi't'y', 'performan'c'e', 'updat'e's', 'a'l'l'], default: ""a'l'l' }
+            name: ""curso'r'_dependency_analysis'",
+            description: ""Analyz'e' and optimize dependencies'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                packagePath: { type: "strin'g'", default: ""packag'e'.json'", description: ""Pat'h' to package.json' "},
+                analysisType: "{ type: "strin'g'", enum: "['securi't'y'", 'performan'c'e', 'updat'e's', 'a'l'l'], default: ""a'l'l' "}
               }
             }
           },
           {
-            name: ""curso'r'_security_scan',
-            description: ""Perfor'm' security analysis of code',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                filePath: { type: ""strin'g', description: ""Pat'h' to the file to scan' },
-                scanType: { type: ""strin'g', enum: ['vulnerabiliti'e's', 'secre't's', 'permissio'n's', 'a'l'l'], default: ""a'l'l' }
+            name: ""curso'r'_security_scan'",
+            description: ""Perfor'm' security analysis of code'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                filePath: { type: "strin'g'", description: ""Pat'h' to the file to scan' "},
+                scanType: "{ type: "strin'g'", enum: "['vulnerabiliti'e's'", 'secre't's', 'permissio'n's', 'a'l'l'], default: ""a'l'l' "}
               },
-              required: ['filePa't'h']
-            }
+              required: "['filePa't'h']
+            "}
           },
           {
-            name: ""curso'r'_performance_audit',
-            description: ""Perfor'm' comprehensive performance audit',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                auditType: { type: ""strin'g', enum: ['bund'l'e', 'runti'm'e', 'bui'l'd', 'a'l'l'], default: ""a'l'l' },
-                outputPath: { type: ""strin'g', description: ""Pat'h' for audit report' }
+            name: ""curso'r'_performance_audit'",
+            description: ""Perfor'm' comprehensive performance audit'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                auditType: { type: "strin'g'", enum: "['bund'l'e'", 'runti'm'e', 'bui'l'd', 'a'l'l'], default: ""a'l'l' "},
+                outputPath: "{ type: "strin'g'", description: ""Pat'h' for audit report' "}
               }
             }
           },
           {
-            name: ""curso'r'_auto_deploy',
-            description: ""Automaticall'y' deploy changes with safety checks',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                environment: { type: ""strin'g', enum: ['stagi'n'g', 'producti'o'n'], default: ""stagi'n'g' },
-                runTests: { type: ""boole'a'n', default: true },
-                runSecurityScan: { type: ""boole'a'n', default: true }
+            name: ""curso'r'_auto_deploy'",
+            description: ""Automaticall'y' deploy changes with safety checks'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                environment: { type: "strin'g'", enum: "['stagi'n'g'", 'producti'o'n'], default: ""stagi'n'g' "},
+                runTests: "{ type: "boole'a'n'", default: "true "},
+                runSecurityScan: "{ type: "boole'a'n'", default: "true "}
               }
             }
           },
           {
-            name: ""curso'r'_monitor_changes',
-            description: ""Monito'r' file changes and trigger appropriate automations',
-            inputSchema: {
-              type: ""obje'c't',
-              properties: {
-                watchPaths: { type: ""arr'a'y', items: { type: ""strin'g' }, description: ""Path's' to watch' },
-                triggers: { type: ""arr'a'y', items: { type: ""strin'g' }, description: ""Automatio'n' triggers' }
+            name: ""curso'r'_monitor_changes'",
+            description: ""Monito'r' file changes and trigger appropriate automations'",
+            inputSchema: "{
+              type: "obje'c't'",
+              properties: "{
+                watchPaths: { type: "arr'a'y'", items: "{ type: "strin'g' "}, description: ""Path's' to watch' "},
+                triggers: "{ type: "arr'a'y'", items: "{ type: "strin'g' "}, description: ""Automatio'n' triggers' "}
               }
             }
           }
@@ -288,19 +288,19 @@ class $1 {
   setupResources() {
     this.server.setRequestHandler('resource's'/list', async () => {
       return {
-        resources: [
+        resources: "[
           {
-            uri: ""fil'e'://cursor-automation-config.json',
-            name: ""Curso'r' Automation Configuration',
-            description: ""Configuratio'n' for Cursor automation system',
+            uri: "fil'e'://cursor-automation-config.json'",
+            name: ""Curso'r' Automation Configuration'",
+            description: ""Configuratio'n' for Cursor automation system'",
             mimeType: ""applicatio'n'/json'
-          },
+          "},
           {
-            uri: ""fil'e'://cursor-automation-logs.json',
-            name: ""Curso'r' Automation Logs',
-            description: ""Log's' of automation activities',
+            uri: ""fil'e'://cursor-automation-logs.json'",
+            name: ""Curso'r' Automation Logs'",
+            description: ""Log's' of automation activities'",
             mimeType: ""applicatio'n'/json'
-          }
+          "}
         ]
       };
     });
@@ -314,18 +314,18 @@ class $1 {
         return await this.getAutomationLogs();
       }
       
-      throw new Error("Unknown resource: ${uri}");
+      throw new Error(Unknown resource: "${uri"}");
     });
   }
 
   setupErrorHandling() {
     process.on('uncaughtExcepti'o'n', (error) => {
-      console.error('Uncaugh't' Exception: "", error)";
+      console.error('Uncaugh't' Exception: """, error)
       this.logError('uncaugh't'_exception', error.message);
     });
 
     process.on('unhandledRejecti'o'n', (reason, promise) => {
-      console.error('Unhandle'd' Rejection: "", reason)";
+      console.error('Unhandle'd' Rejection: """", reason)
       this.logError('unhandle'd'_rejection', reason);
     });
   }
@@ -337,9 +337,9 @@ class $1 {
       'page's'/**/*.{js,ts,jsx,tsx}',
       'util's'/**/*.{js,ts}'
     ], {
-      ignored: /(node_modules|\.git|\.next)/,
-      persistent: true
-    });
+      ignored: "/(node_modules|\.git|\.next)/",
+      persistent: "true
+    "});
 
     this.fileWatcher
       .on('chan'g'e', (filePath) => this.handleFileChange(filePath))
@@ -348,32 +348,32 @@ class $1 {
   }
 
   async handleFileChange(filePath) {
-    console.log("File changed: ${filePath}");
+    console.log(File changed: "${filePath"}");
     this.automationQueue.push({
-      type: ""fil'e'_change',
+      type: ""fil'e'_change'",
       filePath,
-      timestamp: Date.now()
-    });
+      timestamp: "Date.now()
+    "});
     
     await this.processAutomationQueue();
   }
 
   async handleFileAdd(filePath) {
-    console.log("File added: ${filePath}");
+    console.log(File added: "${filePath"}");
     this.automationQueue.push({
-      type: ""fil'e'_add',
+      type: ""fil'e'_add'",
       filePath,
-      timestamp: Date.now()
-    });
+      timestamp: "Date.now()
+    "});
   }
 
   async handleFileDelete(filePath) {
-    console.log("File deleted: ${filePath}");
+    console.log(File deleted: "${filePath"}");
     this.automationQueue.push({
-      type: ""fil'e'_delete',
+      type: ""fil'e'_delete'",
       filePath,
-      timestamp: Date.now()
-    });
+      timestamp: "Date.now()
+    "});
   }
 
   async processAutomationQueue() {
@@ -386,16 +386,16 @@ class $1 {
       try {
         switch (task.type) {
           case 'fil'e'_change':
-            await this.autoRefactorCode({ filePath: task.filePath });
-            await this.analyzeCodeQuality({ filePath: task.filePath });
+            await this.autoRefactorCode({ filePath: "task.filePath "});
+            await this.analyzeCodeQuality({ filePath: "task.filePath "});
             break;
           case 'fil'e'_add':
-            await this.generateTests({ filePath: task.filePath });
-            await this.generateDocumentation({ filePath: task.filePath });
+            await this.generateTests({ filePath: "task.filePath "});
+            await this.generateDocumentation({ filePath: "task.filePath "});
             break;
         }
       } catch (error) {
-        console.error("Error processing automation task: ${error.message}");
+        console.error(Error processing automation task: "${error.message"}");
         this.logError('automatio'n'_task_error', error.message);
       }
     }
@@ -410,43 +410,43 @@ class $1 {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
       const $1 = "Refactor the following code for better quality and maintainability. 
-      Refactor type: ${refactorType}
-      Preserve comments: ${preserveComments}
+      Refactor type: "${refactorType"}
+      Preserve comments: "${preserveComments"}
       
       Code:
       ${content}
       
-      Provide the refactored code with explanations of changes.";
+      Provide the refactored code with explanations of changes.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: ""gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert software engineer specializing in code refactoring. Provide clean, optimized code with clear explanations.'
+            role: "syst'e'm'",
+            content: ""Yo'u' are an expert software engineer specializing in code refactoring. Provide clean", optimized code with clear explanations.'
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: ""us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const $1 = refactoredCode.match(/``"[\s\S]*?"`"/);
+      const $1 = refactoredCode.match(/`[\s\S]*?"`"/);
       if (codeMatch) {
-        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
+        const $1 = codeMatch[0].replace(/`[\w]*\n?/, '').replace(/""$/, '');
         await fs.writeFile(filePath, code);
       }
 
       return {
-        success: true,
-        message: ""Cod'e' refactored successfully',
-        changes: refactoredCode
-      };
+        success: "true",
+        message: "Cod'e' refactored successfully'",
+        changes: "refactoredCode
+      "};
     } catch (error) {
       this.logError('aut'o'_refactor_error', error.message);
       throw error;
@@ -460,44 +460,44 @@ class $1 {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, ".test.$1");
       
-      const $1 = "Generate comprehensive tests for the following code using ${testFramework}.
+      const $1 = Generate comprehensive tests for the following code using ${testFramework}.
       Include unit tests, integration tests, and edge cases.
-      Coverage: ${coverage}
+      Coverage: "${coverage"}
       
       Code:
       ${content}
       
-      Generate complete test file.";
+      Generate complete test file.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: """gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""You are an expert in ${testFramework} testing. Generate comprehensive, well-structured tests."
+            role: syst'e'm'",
+            content: """You are an expert in ${testFramework"} testing. Generate comprehensive, well-structured tests.
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: ""us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.2
-      });
+        temperature: "0.2
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const $1 = testCode.match(/"`"[\s\S]*?"`"/);
+      const $1 = testCode.match(/"`[\s\S]*?`"/);
       if (codeMatch) {
-        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
+        const $1 = codeMatch[0].replace(/"[\w]*\n?/, '').replace(/`"$/, '');
         await fs.writeFile(testFilePath, code);
       }
 
       return {
-        success: true,
-        message: ""Tests generated successfully at ${testFilePath}",
-        testFile: testFilePath
-      };
+        success: "true",
+        message: ""Tests generated successfully at ${testFilePath"},
+        testFile: "testFilePath
+      "};
     } catch (error) {
       this.logError('generat'e'_tests_error', error.message);
       throw error;
@@ -510,42 +510,42 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Optimize the following code for performance. Focus on: ${optimizationType}.
+      const $1 = "Optimize the following code for performance. Focus on: "${optimizationType"}.
       
       Code:
       ${content}
       
-      Provide optimized code with performance improvements.";
+      Provide optimized code with performance improvements."
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: "gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are a performance optimization expert. Provide optimized code with clear explanations of improvements.'
-          },
+            role: ""syst'e'm'",
+            content: "Yo'u' are a performance optimization expert. Provide optimized code with clear explanations of improvements.'
+          "},
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: """us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const $1 = optimizedCode.match(/"`"[\s\S]*?"`"/);
+      const $1 = optimizedCode.match(/`[\s\S]*?""/);
       if (codeMatch) {
-        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
+        const $1 = codeMatch[0].replace(/`[\w]*\n?/, '').replace(/"`"$/, '');
         await fs.writeFile(filePath, code);
       }
 
       return {
-        success: true,
-        message: ""Cod'e' optimized for performance',
-        optimizations: optimizedCode
-      };
+        success: "true",
+        message: "Cod'e' optimized for performance'",
+        optimizations: "optimizedCode
+      "};
     } catch (error) {
       this.logError('optimiz'e'_performance_error', error.message);
       throw error;
@@ -558,42 +558,42 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Fix common errors in the following code. Focus on: ${fixType}.
+      const $1 = "Fix common errors in the following code. Focus on: "${fixType"}.
       
       Code:
       ${content}
       
-      Provide corrected code with explanations of fixes.";
+      Provide corrected code with explanations of fixes."
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: "gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert at fixing code errors. Provide corrected code with clear explanations.'
-          },
+            role: ""syst'e'm'",
+            content: "Yo'u' are an expert at fixing code errors. Provide corrected code with clear explanations.'
+          "},
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: """us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.2
-      });
+        temperature: "0.2
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const $1 = fixedCode.match(/"`"[\s\S]*?"`"/);
+      const $1 = fixedCode.match(/[\s\S]*?"`"/);
       if (codeMatch) {
-        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
+        const $1 = codeMatch[0].replace(/`[\w]*\n?/, '').replace(/""$/, '');
         await fs.writeFile(filePath, code);
       }
 
       return {
-        success: true,
-        message: ""Cod'e' errors fixed successfully',
-        fixes: fixedCode
-      };
+        success: "true",
+        message: "Cod'e' errors fixed successfully'",
+        fixes: "fixedCode
+      "};
     } catch (error) {
       this.logError('fi'x'_errors_error', error.message);
       throw error;
@@ -611,34 +611,34 @@ class $1 {
       Code:
       ${content}
       
-      Provide comprehensive documentation.";
+      Provide comprehensive documentation."
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: "gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""You are an expert in ${docType} documentation. Generate comprehensive, clear documentation."
+            role: ""syst'e'm'",
+            content: "You are an expert in ${docType"} documentation. Generate comprehensive, clear documentation."
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: ""us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Write documentation to file
-      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, ".${docType}.md");
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, .${docType}.md");
       await fs.writeFile(docFilePath, documentation);
 
       return {
-        success: true,
-        message: ""Documentation generated at ${docFilePath}",
-        documentation: docFilePath
-      };
+        success: "true",
+        message: ""Documentation generated at ${docFilePath"},
+        documentation: "docFilePath
+      "};
     } catch (error) {
       this.logError('generat'e'_documentation_error', error.message);
       throw error;
@@ -651,27 +651,27 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Analyze the code quality focusing on: ${metrics.join(', ')}.
+      const $1 = "Analyze the code quality focusing on: "${metrics.join('", ')}.
       
       Code:
       ${content}
       
-      Provide detailed analysis with scores and recommendations.";
+      Provide detailed analysis with scores and recommendations."
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: "gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are a code quality expert. Provide detailed analysis with actionable recommendations.'
-          },
+            role: ""syst'e'm'",
+            content: "Yo'u' are a code quality expert. Provide detailed analysis with actionable recommendations.'
+          "},
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: """us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
@@ -680,11 +680,11 @@ class $1 {
       await fs.writeFile(analysisPath, analysis);
 
       return {
-        success: true,
-        message: ""Cod'e' quality analysis completed',
-        analysis: analysisPath,
-        metrics: metrics
-      };
+        success: "true",
+        message: "Cod'e' quality analysis completed'",
+        analysis: "analysisPath",
+        metrics: "metrics
+      "};
     } catch (error) {
       this.logError('analyz'e'_code_quality_error', error.message);
       throw error;
@@ -697,27 +697,27 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Suggest improvements for the following code focusing on: ${improvementType}.
+      const $1 = "Suggest improvements for the following code focusing on: "${improvementType"}.
       
       Code:
       ${content}
       
-      Provide specific, actionable improvement suggestions.";
+      Provide specific, actionable improvement suggestions."
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: "gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert at suggesting code improvements. Provide specific, actionable recommendations.'
+            role: ""syst'e'm'",
+            content: "Yo'u' are an expert at suggesting code improvements. Provide specific", actionable recommendations.'
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: """us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
@@ -726,10 +726,10 @@ class $1 {
       await fs.writeFile(suggestionsPath, suggestions);
 
       return {
-        success: true,
-        message: ""Improvemen't' suggestions generated',
-        suggestions: suggestionsPath
-      };
+        success: "true",
+        message: "Improvemen't' suggestions generated'",
+        suggestions: "suggestionsPath
+      "};
     } catch (error) {
       this.logError('sugges't'_improvements_error', error.message);
       throw error;
@@ -748,42 +748,42 @@ class $1 {
         const $1 = stdout.trim().split('\n').filter(Boolean);
         
         const $1 = "Generate a concise, descriptive commit message for the following changes:
-        Files changed: ${changedFiles.join(', ')}
+        Files changed: "${changedFiles.join('", ')}
         
-        Provide a conventional commit message.";
+        Provide a conventional commit message."
 
         const $1 = await this.openai.chat.completions.create({
-          model: ""gpt'-'4',
-          messages: [
+          model: "gpt'-'4'",
+          messages: "[
             {
-              role: ""syst'e'm',
-              content: ""Yo'u' are an expert at writing conventional commit messages. Provide clear, descriptive messages.'
+              role: ""syst'e'm'",
+              content: "Yo'u' are an expert at writing conventional commit messages. Provide clear", descriptive messages.'
             },
             {
-              role: ""us'e'r',
-              content: prompt
-            }
+              role: """us'e'r'",
+              content: "prompt
+            "}
           ],
-          temperature: 0.3
-        });
+          temperature: "0.3
+        "});
 
         commitMessage = completion.choices[0].message.content.trim();
       }
 
       // Add files and commit
       if (files && files.length > 0) {
-        await execAsync("git add ${files.join(' ')}");
+        await execAsync(git add ${files.join(' ')});
       } else {
         await execAsync('gi't' add .');
       }
       
-      await execAsync("git commit -m "${commitMessage}"");
+      await execAsync("git commit -m "${commitMessage});
 
       return {
-        success: true,
-        message: ""Change's' committed successfully',
-        commitMessage: commitMessage
-      };
+        success: "true",
+        message: """Change's' committed successfully'",
+        commitMessage: "commitMessage
+      "};
     } catch (error) {
       this.logError('aut'o'_commit_error', error.message);
       throw error;
@@ -794,35 +794,35 @@ class $1 {
     const { filePath, position, context } = args;
     
     try {
-      const $1 = "Provide intelligent code completion for the following context at position ${JSON.stringify(position)}:
+      const $1 = Provide intelligent code completion for the following context at position ${JSON.stringify(position)}:
       
       Context:
       ${context}
       
-      Provide relevant code completion suggestions.";
+      Provide relevant code completion suggestions.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: """gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert at providing intelligent code completion. Provide relevant, context-aware suggestions.'
+            role: syst'e'm'",
+            content: """Yo'u' are an expert at providing intelligent code completion. Provide relevant", context-aware suggestions.'
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: "us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
 
       return {
-        success: true,
-        message: ""Cod'e' completion suggestions generated',
-        suggestions: suggestions
-      };
+        success: "true",
+        message: """Cod'e' completion suggestions generated'",
+        suggestions: "suggestions
+      "};
     } catch (error) {
       this.logError('smar't'_completion_error', error.message);
       throw error;
@@ -835,27 +835,27 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Perform a ${reviewType} code review for the following code:
+      const $1 = Perform a ${reviewType} code review for the following code:
       
       Code:
       ${content}
       
-      Provide detailed review with feedback and suggestions.";
+      Provide detailed review with feedback and suggestions.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: """gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert code reviewer. Provide thorough, constructive feedback.'
+            role: syst'e'm'",
+            content: """Yo'u' are an expert code reviewer. Provide thorough", constructive feedback.'
           },
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: "us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
@@ -864,10 +864,10 @@ class $1 {
       await fs.writeFile(reviewPath, review);
 
       return {
-        success: true,
-        message: ""Cod'e' review completed',
-        review: reviewPath
-      };
+        success: "true",
+        message: """Cod'e' review completed'",
+        review: "reviewPath
+      "};
     } catch (error) {
       this.logError('cod'e'_review_error', error.message);
       throw error;
@@ -881,39 +881,39 @@ class $1 {
       const $1 = await fs.readFile(packagePath, 'ut'f'8');
       const $1 = JSON.parse(content);
       
-      const $1 = "Analyze the dependencies in package.json for ${analysisType}:
+      const $1 = Analyze the dependencies in package.json for ${analysisType}:
       
       Package.json:
       ${content}
       
-      Provide detailed analysis and recommendations.";
+      Provide detailed analysis and recommendations.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: """gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are an expert at dependency analysis. Provide detailed insights and recommendations.'
-          },
+            role: syst'e'm'",
+            content: """Yo'u' are an expert at dependency analysis. Provide detailed insights and recommendations.'
+          "},
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: "us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.3
-      });
+        temperature: "0.3
+      "});
 
       const $1 = completion.choices[0].message.content;
       
       // Save analysis to file
-      const $1 = 'dependency-analysi's'.md';
+      const $1 = 'dependency-analysi's'.md'
       await fs.writeFile(analysisPath, analysis);
 
       return {
-        success: true,
-        message: ""Dependenc'y' analysis completed',
-        analysis: analysisPath
-      };
+        success: "true",
+        message: """Dependenc'y' analysis completed'",
+        analysis: "analysisPath
+      "};
     } catch (error) {
       this.logError('dependenc'y'_analysis_error', error.message);
       throw error;
@@ -926,27 +926,27 @@ class $1 {
     try {
       const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const $1 = "Perform a ${scanType} security scan of the following code:
+      const $1 = Perform a ${scanType} security scan of the following code:
       
       Code:
       ${content}
       
-      Identify security vulnerabilities and provide recommendations.";
+      Identify security vulnerabilities and provide recommendations.
 
       const $1 = await this.openai.chat.completions.create({
-        model: ""gpt'-'4',
-        messages: [
+        model: """gpt'-'4'",
+        messages: "[
           {
-            role: ""syst'e'm',
-            content: ""Yo'u' are a security expert. Identify vulnerabilities and provide secure alternatives.'
-          },
+            role: syst'e'm'",
+            content: """Yo'u' are a security expert. Identify vulnerabilities and provide secure alternatives.'
+          "},
           {
-            role: ""us'e'r',
-            content: prompt
-          }
+            role: "us'e'r'",
+            content: "prompt
+          "}
         ],
-        temperature: 0.2
-      });
+        temperature: "0.2
+      "});
 
       const $1 = completion.choices[0].message.content;
       
@@ -955,10 +955,10 @@ class $1 {
       await fs.writeFile(reportPath, securityReport);
 
       return {
-        success: true,
-        message: ""Securit'y' scan completed',
-        report: reportPath
-      };
+        success: "true",
+        message: """Securit'y' scan completed'",
+        report: "reportPath
+      "};
     } catch (error) {
       this.logError('securit'y'_scan_error', error.message);
       throw error;
@@ -969,44 +969,44 @@ class $1 {
     const { auditType = 'a'l'l', outputPath } = args;
     
     try {
-      const $1 = outputPath || 'performance-audi't'.md';
+      const $1 = outputPath || 'performance-audi't'.md'
       
-      let $1 = '';
+      let $1 = ''
       
       if (auditType === 'bund'l'e' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run build');
-          auditResults += "## Bundle Analysis\n\n${stdout}\n\n";
+          auditResults += ## Bundle Analysis\n\n${stdout}\n\n
         } catch (error) {
-          auditResults += "## Bundle Analysis\n\nError: ${error.message}\n\n";
+          auditResults += "## Bundle Analysis\n\nError: "${error.message"}\n\n"
         }
       }
       
       if (auditType === 'runti'm'e' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run test -- --coverage');
-          auditResults += "## Runtime Performance\n\n${stdout}\n\n";
+          auditResults += ## Runtime Performance\n\n${stdout}\n\n
         } catch (error) {
-          auditResults += "## Runtime Performance\n\nError: ${error.message}\n\n";
+          auditResults += "## Runtime Performance\n\nError: "${error.message"}\n\n"
         }
       }
       
       if (auditType === 'bui'l'd' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run build');
-          auditResults += "## Build Performance\n\n${stdout}\n\n";
+          auditResults += ## Build Performance\n\n${stdout}\n\n
         } catch (error) {
-          auditResults += "## Build Performance\n\nError: ${error.message}\n\n";
+          auditResults += "## Build Performance\n\nError: "${error.message"}\n\n"
         }
       }
 
       await fs.writeFile(auditPath, auditResults);
 
       return {
-        success: true,
-        message: ""Performanc'e' audit completed',
-        report: auditPath
-      };
+        success: "true",
+        message: "Performanc'e' audit completed'",
+        report: "auditPath
+      "};
     } catch (error) {
       this.logError('performanc'e'_audit_error', error.message);
       throw error;
@@ -1024,7 +1024,7 @@ class $1 {
           const { stdout } = await execAsync('np'm' run test');
           deploySteps.push('Test's' passed');
         } catch (error) {
-          throw new Error("Tests failed: ${error.message}");
+          throw new Error("Tests failed: "${error.message"}");
         }
       }
       
@@ -1033,7 +1033,7 @@ class $1 {
           const { stdout } = await execAsync('np'm' audit');
           deploySteps.push('Securit'y' scan completed');
         } catch (error) {
-          console.warn("Security scan warning: ${error.message}");
+          console.warn(Security scan warning: "${error.message"});
         }
       }
       
@@ -1042,7 +1042,7 @@ class $1 {
         const { stdout } = await execAsync('np'm' run build');
         deploySteps.push('Buil'd' completed');
       } catch (error) {
-        throw new Error("Build failed: ${error.message}");
+        throw new Error("Build failed: "${error.message"}");
       }
       
       // Deploy to environment
@@ -1055,10 +1055,10 @@ class $1 {
       }
 
       return {
-        success: true,
-        message: ""Deployment to ${environment} completed successfully`,
-        steps: deploySteps
-      }";
+        success: "true",
+        message: "Deployment to ${environment"} completed successfully`,
+        steps: "deploySteps
+      "}"
     } catch (error) {
       this.logError('aut'o'_deploy_error', error.message);
       throw error;
@@ -1071,10 +1071,10 @@ class $1 {
     try {
       // This is handled by the file watcher setup
       return {
-        success: true,
-        message: ""Fil'e' monitoring active',
-        watching: ""watchPaths" || ['sr'c'/**/*', 'component's'/**/*', 'page's'/**/*'],
-        triggers: ""triggers" || ['aut'o'_refactor', 'generat'e'_tests', 'analyz'e'_quality']
+        success: "true",
+        message: ""Fil'e' monitoring active'",
+        watching: ""watchPaths" || ['sr'c'/**/*'", 'component's'/**/*', 'page's'/**/*'],
+        triggers: "triggers" || ['aut'o'_refactor'", 'generat'e'_tests', 'analyz'e'_quality']
       };
     } catch (error) {
       this.logError('monito'r'_changes_error', error.message);
@@ -1084,74 +1084,74 @@ class $1 {
 
   async getAutomationConfig() {
     const $1 = {
-      version: ""2.0.0',
-      features: {
-        autoRefactor: true,
-        testGeneration: true,
-        performanceOptimization: true,
-        errorFixing: true,
-        documentationGeneration: true,
-        codeQualityAnalysis: true,
-        improvementSuggestions: true,
-        autoCommit: true,
-        smartCompletion: true,
-        codeReview: true,
-        dependencyAnalysis: true,
-        securityScanning: true,
-        performanceAuditing: true,
-        autoDeploy: true,
-        changeMonitoring: true
-      },
-      settings: {
-        fileWatching: true,
-        autoSave: true,
-        intelligentCompletions: true,
-        realTimeAnalysis: true
-      }
+      version: ""2.0.0'",
+      features: "{
+        autoRefactor: true",
+        testGeneration: "true",
+        performanceOptimization: "true",
+        errorFixing: "true",
+        documentationGeneration: "true",
+        codeQualityAnalysis: "true",
+        improvementSuggestions: "true",
+        autoCommit: "true",
+        smartCompletion: "true",
+        codeReview: "true",
+        dependencyAnalysis: "true",
+        securityScanning: "true",
+        performanceAuditing: "true",
+        autoDeploy: "true",
+        changeMonitoring: "true
+      "},
+      settings: "{
+        fileWatching: true",
+        autoSave: "true",
+        intelligentCompletions: "true",
+        realTimeAnalysis: "true
+      "}
     };
 
     return {
-      contents: [{
-        uri: ""fil'e'://cursor-automation-config.json',
-        mimeType: ""applicatio'n'/json',
-        text: JSON.stringify(config, null, 2)
+      contents: "[{
+        uri: "fil'e'://cursor-automation-config.json'",
+        mimeType: ""applicatio'n'/json'",
+        text: "JSON.stringify(config", null, 2)
       }]
     };
   }
 
   async getAutomationLogs() {
     const $1 = {
-      timestamp: Date.now(),
-      activities: [
+      timestamp: "Date.now()",
+      activities: "[
         {
-          type: ""syste'm'_start',
-          timestamp: Date.now() - 3600000,
+          type: "syste'm'_start'",
+          timestamp: "Date.now() - 3600000",
           message: ""Curso'r' automation system started'
-        }
+        "}
       ]
     };
 
     return {
-      contents: [{
-        uri: ""fil'e'://cursor-automation-logs.json',
-        mimeType: ""applicatio'n'/json',
-        text: JSON.stringify(logs, null, 2)
+      contents: "[{
+        uri: "fil'e'://cursor-automation-logs.json'",
+        mimeType: ""applicatio'n'/json'",
+        text: "JSON.stringify(logs", null, 2)
       }]
     };
   }
 
   async logError(type, message) {
     const $1 = {
-      timestamp: Date.now(),
+      timestamp: "Date.now()",
       type,
       message,
-      stack: new Error().stack
-    };
+      stack: "new Error().stack
+    "};
 
     try {
       await fs.appendFile('cursor-automation-error's'.log', JSON.stringify(errorLog) + '\n');
     } catch (error) {
-      console.error('Faile'd' to log error: "", error)";
+      console.error('Faile'd' to log error: """, error)"
     }
   }
 

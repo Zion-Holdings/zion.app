@@ -35,12 +35,12 @@ function fixSyntax(content) {
   
   // Add missing closing parentheses
   for (let $1 = 0; i < openParens - closeParens; i++) {
-    fixedContent += ')';
+    fixedContent += ')'
   }
   
   // Add missing closing braces
   for (let $1 = 0; i < openBraces - closeBraces; i++) {
-    fixedContent += '}';
+    fixedContent += '}'
   }
   
   // Remove duplicate closing braces at the end
@@ -64,9 +64,9 @@ function fixFile(filePath) {
       .replace(/\);\s*\);\s*$/g, ');');
     
     fs.writeFileSync(filePath, fixedContent);
-    console.log("Fixed: ${filePath}");
+    console.log("Fixed: "${filePath"});
   } catch (error) {
-    console.error("Error fixing ${filePath}: ", error.message)";
+    console.error(Error fixing ${filePath}: ", error.message)"
   }
 }
 

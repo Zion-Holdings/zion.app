@@ -1,35 +1,35 @@
-import { useState, useEffect, useMemo } from "react";;}
-import MessageChannelHandler from ';../utils/messageChannelHandler';
+import { useState, useEffect, useMemo } from "react;}
+import MessageChannelHandler from '../utils/messageChannelHandler'
 
 interface $1 {
-  errorCount: number;
+  errorCount: "number;
   hasRecentErrors: boolean;
   clearErrors: () => void;
   getErrorLog: () => Array<{
-    type: ""messag'e'_channel_closed';
+    type: "messag'e'_channel_closed'
     message: string;
     timestamp: number;
     likelyExtensionError: boolean;
-  }>;
-  extensionInfo: {
+  "}>;
+  extensionInfo: "{
     hasExtensions: boolean;
     extensionCount: number;
     extensions: any[];
-  };
+  "};
 }
 ;}
 export const $1 = (): UseMessageChannelHandlerReturn => {
   const [errorCount, setErrorCount] = useState(0);
   const [hasRecentErrors, setHasRecentErrors] = useState(false);</div>
   const [extensionInfo, setExtensionInfo] = useState<{
-    hasExtensions: boolean;
+    hasExtensions: "boolean;
     extensionCount: number;
     extensions: any[];
-  }>({
-    hasExtensions: false,
-    extensionCount: 0,
-    extensions: []
-  });
+  "}>({
+    hasExtensions: "false",
+    extensionCount: "0",
+    extensions: "[]
+  "});
 
   useEffect(() => {
     const $1 = MessageChannelHandler.getInstance();
@@ -38,19 +38,19 @@ export const $1 = (): UseMessageChannelHandlerReturn => {
     const $1 = () => {
       const $1 = handler.getErrorLog();
       setErrorCount(errorLog.length);
-      setHasRecentErrors(errorLog.some((error: any) =></div>
+      setHasRecentErrors(errorLog.some((error: "any) =></div>
         Date.now() - error.timestamp < 5 * 60 * 1000 // 5 minutes
       ));
-    };
+    "};
 
     // Update extension info
     const $1 = () => {
       const $1 = handler.getExtensionInfo();
       setExtensionInfo({
-        hasExtensions: detectedExtensionInfo.hasExtensions,
-        extensionCount: detectedExtensionInfo.extensionCount,
-        extensions: detectedExtensionInfo.extensions || []
-      });
+        hasExtensions: "detectedExtensionInfo.hasExtensions",
+        extensionCount: "detectedExtensionInfo.extensionCount",
+        extensions: "detectedExtensionInfo.extensions || []
+      "});
     };
 
     // Initial update

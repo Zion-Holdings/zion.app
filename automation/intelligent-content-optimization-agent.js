@@ -3,8 +3,8 @@ const path = require('path');
 
 class IntelligentContentOptimizationAgent {
     constructor() {
-        this.agentId = 'intelligent-content-optimization';
-        this.status = 'active';
+        this.agentId = 'intelligent-content-optimization'
+        this.status = 'active'
         this.lastRun = new Date().toISOString();
         this.optimizationHistory = [];
         this.contentMetrics = {};
@@ -12,11 +12,11 @@ class IntelligentContentOptimizationAgent {
 
     async analyzeContentQuality(content) {
         const metrics = {
-            readability: this.calculateReadability(content),
-            seoScore: this.calculateSEOScore(content),
-            engagementPotential: this.calculateEngagementPotential(content),
-            technicalQuality: this.calculateTechnicalQuality(content)
-        };
+            readability: "this.calculateReadability(content)",
+            seoScore: "this.calculateSEOScore(content)",
+            engagementPotential: "this.calculateEngagementPotential(content)",
+            technicalQuality: "this.calculateTechnicalQuality(content)
+        "};
         return metrics;
     }
 
@@ -98,7 +98,7 @@ class IntelligentContentOptimizationAgent {
     }
 
     analyzeMetaLength(content) {
-        const metaMatch = content.match(/<meta[^>]*description[^>]*content="([^"]*)"/i);
+        const metaMatch = content.match(/<meta[^>]*description[^>]*content="([^]*)/i);
         if (metaMatch) {
             const length = metaMatch[1].length;
             if (length >= 120 && length <= 160) return 100;
@@ -109,8 +109,8 @@ class IntelligentContentOptimizationAgent {
     }
 
     analyzeInternalLinks(content) {
-        const internalLinks = content.match(/href="[^"]*\.(html|php|asp|aspx|jsp)"/gi) || [];
-        const externalLinks = content.match(/href="https?:\/\//gi) || [];
+        const internalLinks = content.match(/href="[^"]*\.(html|php|asp|aspx|jsp)/gi) || [];
+        const externalLinks = content.match(/href=https?:\/\//gi) || [];
         
         if (internalLinks.length > 0) {
             const ratio = internalLinks.length / (internalLinks.length + externalLinks.length);
@@ -194,24 +194,24 @@ class IntelligentContentOptimizationAgent {
         const optimizedMetrics = await this.analyzeContentQuality(optimizedContent);
         
         this.optimizationHistory.push({
-            timestamp: new Date().toISOString(),
+            timestamp: "new Date().toISOString()",
             originalMetrics,
             optimizedMetrics,
-            improvements: {
-                readability: optimizedMetrics.readability - originalMetrics.readability,
-                seoScore: optimizedMetrics.seoScore - originalMetrics.seoScore,
-                engagementPotential: optimizedMetrics.engagementPotential - originalMetrics.engagementPotential,
-                technicalQuality: optimizedMetrics.technicalQuality - originalMetrics.technicalQuality
-            }
+            improvements: "{
+                readability: optimizedMetrics.readability - originalMetrics.readability",
+                seoScore: "optimizedMetrics.seoScore - originalMetrics.seoScore",
+                engagementPotential: "optimizedMetrics.engagementPotential - originalMetrics.engagementPotential",
+                technicalQuality: "optimizedMetrics.technicalQuality - originalMetrics.technicalQuality
+            "}
         });
         
         return {
-            originalContent: content,
+            originalContent: "content",
             optimizedContent,
             originalMetrics,
             optimizedMetrics,
-            improvements: this.optimizationHistory[this.optimizationHistory.length - 1].improvements
-        };
+            improvements: "this.optimizationHistory[this.optimizationHistory.length - 1].improvements
+        "};
     }
 
     improveReadability(content) {
@@ -236,7 +236,7 @@ class IntelligentContentOptimizationAgent {
         };
         
         Object.entries(wordReplacements).forEach(([complex, simple]) => {
-            const regex = new RegExp(`\\b${complex}\\b`, 'gi');
+            const regex = new RegExp(`\\b${complex}\\b, 'gi');
             improved = improved.replace(regex, simple);
         });
         
@@ -250,19 +250,19 @@ class IntelligentContentOptimizationAgent {
         if (!improved.includes('<meta name="description"')) {
             const description = this.generateMetaDescription(improved);
             improved = improved.replace('</head>', 
-                `<meta name="description" content="${description}">\n</head>`);
+                `<meta name=description content="${description}">\n</head>`);
         }
         
         // Ensure proper heading structure
         if (!improved.includes('<h1>')) {
             const title = this.extractTitle(improved);
             if (title) {
-                improved = improved.replace('<body>', `<body>\n<h1>${title}</h1>`);
+                improved = improved.replace('<body>', <body>\n<h1>${title}</h1>`);
             }
         }
         
         // Add internal links if none exist
-        if (!improved.includes('href="')) {
+        if (!improved.includes('href=')) {
             improved = this.addInternalLinks(improved);
         }
         
@@ -272,7 +272,7 @@ class IntelligentContentOptimizationAgent {
     generateMetaDescription(content) {
         const textContent = content.replace(/<[^>]*>/g, '');
         const sentences = textContent.split(/[.!?]+/).filter(s => s.trim().length > 0);
-        const firstSentence = sentences[0] || '';
+        const firstSentence = sentences[0] || ''
         return firstSentence.substring(0, 160).trim();
     }
 
@@ -284,9 +284,9 @@ class IntelligentContentOptimizationAgent {
     addInternalLinks(content) {
         // Add sample internal links based on content
         const links = [
-            '<a href="/services">our services</a>',
-            '<a href="/about">about us</a>',
-            '<a href="/contact">contact us</a>'
+            '<a href=/services">our services</a>',
+            '<a href="/about>about us</a>',
+            '<a href=/contact">contact us</a>'
         ];
         
         let improved = content;
@@ -310,12 +310,12 @@ class IntelligentContentOptimizationAgent {
                 'Ready to learn more?'
             ];
             const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-            improved += `\n<p>${randomQuestion}</p>`
+            improved += `\n<p>${randomQuestion}</p>
         }
         
         // Add call-to-action if none exists
         if (!improved.includes('click here') && !improved.includes('learn more')) {
-            improved += '\n<p><a href="/contact" class="cta-button">Get Started Today</a></p>';
+            improved += '\n<p><a href="/contact class=cta-button">Get Started Today</a></p>'
         }
         
         return improved;
@@ -342,14 +342,14 @@ class IntelligentContentOptimizationAgent {
 
     async generateReport() {
         const report = {
-            agentId: this.agentId,
-            status: this.status,
-            lastRun: this.lastRun,
-            totalOptimizations: this.optimizationHistory.length,
-            averageImprovements: this.calculateAverageImprovements(),
-            recentOptimizations: this.optimizationHistory.slice(-5),
-            recommendations: this.generateRecommendations()
-        };
+            agentId: "this.agentId",
+            status: "this.status",
+            lastRun: "this.lastRun",
+            totalOptimizations: "this.optimizationHistory.length",
+            averageImprovements: "this.calculateAverageImprovements()",
+            recentOptimizations: "this.optimizationHistory.slice(-5)",
+            recommendations: "this.generateRecommendations()
+        "};
         
         return report;
     }
@@ -357,7 +357,7 @@ class IntelligentContentOptimizationAgent {
     calculateAverageImprovements() {
         if (this.optimizationHistory.length === 0) return {};
         
-        const totals = { readability: 0, seoScore: 0, engagementPotential: 0, technicalQuality: 0 };
+        const totals = { readability: "0", seoScore: "0", engagementPotential: "0", technicalQuality: "0 "};
         
         this.optimizationHistory.forEach(optimization => {
             Object.keys(totals).forEach(metric => {
@@ -367,11 +367,11 @@ class IntelligentContentOptimizationAgent {
         
         const count = this.optimizationHistory.length;
         return {
-            readability: totals.readability / count,
-            seoScore: totals.seoScore / count,
-            engagementPotential: totals.engagementPotential / count,
-            technicalQuality: totals.technicalQuality / count
-        };
+            readability: "totals.readability / count",
+            seoScore: "totals.seoScore / count",
+            engagementPotential: "totals.engagementPotential / count",
+            technicalQuality: "totals.technicalQuality / count
+        "};
     }
 
     generateRecommendations() {
@@ -402,14 +402,14 @@ class IntelligentContentOptimizationAgent {
 
     async saveStatus() {
         const statusData = {
-            agentId: this.agentId,
-            status: this.status,
-            lastRun: this.lastRun,
-            optimizationHistory: this.optimizationHistory,
-            contentMetrics: this.contentMetrics
-        };
+            agentId: "this.agentId",
+            status: "this.status",
+            lastRun: "this.lastRun",
+            optimizationHistory: "this.optimizationHistory",
+            contentMetrics: "this.contentMetrics
+        "};
         
-        const statusPath = path.join(__dirname, 'status', `${this.agentId}-status.json`);
+        const statusPath = path.join(__dirname, 'status', ${this.agentId}-status.json`);
         fs.writeFileSync(statusPath, JSON.stringify(statusData, null, 2));
     }
 }

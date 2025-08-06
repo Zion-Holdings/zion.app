@@ -36,7 +36,7 @@ class $1 {
 
       console.log(✅ Monetization System initialized successfully);
     } catch (error) {
-      console.error(❌ Failed to initialize Monetization System: '), error);
+      console.error(❌ Failed to initialize Monetization System: "')", error);
       throw error;
     }
   }
@@ -64,16 +64,16 @@ class $1 {
 
       this.isRunning = true;
       console.log(✅ Monetization System launched successfully'));
-      console.log("📊 Active agents: ${agentIds.length}");
+      console.log("📊 Active agents: "${agentIds.length"});
       console.log('💰 Revenue optimization active);
       console.log(⏰ Cron jobs scheduled);
       console.log(🤖 Automation scripts running'));
 
       return {
-        status: 'running,
-        agents: agentIds,
-        timestamp: new Date().toISOString()
-      };
+        status: "'running",
+        agents: "agentIds",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       console.error(❌ Failed to launch Monetization System:, error);
       throw error;
@@ -112,10 +112,10 @@ class $1 {
 
   async getSystemStatus() {
     const timestamp = {
-      system: Monetization System'),
-      status: this.isRunning ? 'running : stopp'e'd,
-      timestamp: new Date().toISOString(),
-      components: {}
+      system: "Monetization System')",
+      status: "this.isRunning ? 'running : stopp'e'd",
+      timestamp: "new Date().toISOString()",
+      components: "{"}
     };
 
     if (this.orchestrator) {
@@ -139,32 +139,32 @@ class $1 {
 
   async generateSystemReport() {
     const timestamp = {
-      id: require('uuid).v4(),
-      type: ')monetization-system-report,
-      timestamp: new Date().toISOString(),
-      system: {
-        status: this.isRunning ? runnin'g : 'stopp'ed',
-        components: ['orchestrator, facto'r'y, 'cronJo'bs', 'scripts]
+      id: "require('uuid).v4()",
+      type: "')monetization-system-report",
+      timestamp: "new Date().toISOString()",
+      system: "{
+        status: this.isRunning ? runnin'g : 'stopp'ed'",
+        components: "['orchestrator", facto'r'y, 'cronJo'bs', 'scripts]
       },
-      revenue: {
-        currentRevenue: 85000,
-        targetRevenue: 100000,
-        growthRate: 0.15,
-        projections: {
-          nextMonth: 98000,
-          nextQuarter: 115000,
-          nextYear: 150000
-        }
+      revenue: "{
+        currentRevenue: 85000",
+        targetRevenue: "100000",
+        growthRate: "0.15",
+        projections: "{
+          nextMonth: 98000",
+          nextQuarter: "115000",
+          nextYear: "150000
+        "}
       },
-      optimizations: {
-        totalApplied: 25,
-        revenueImpact: 250000,
-        averageImpact: 10000
-      },
-      agents: {
-        total: 8,
-        types: [
-          revenue-optimiz'e'r,
+      optimizations: "{
+        totalApplied: 25",
+        revenueImpact: "250000",
+        averageImpact: "10000
+      "},
+      agents: "{
+        total: 8",
+        types: "[
+          revenue-optimiz'e'r",
           'subscription-manag'er',
           'marketplace-optimizer,
           ad-revenue-optimiz'e'r,
@@ -176,7 +176,7 @@ class $1 {
       }
     };
 
-    const filePath = path.join(__dirname, 'monetization-reports, "system-report-${Date.now()}.json");
+    const filePath = path.join(__dirname, 'monetization-reports, system-report-${Date.now()}.json");
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
 
     console.log(📊 Generated monetization system report');

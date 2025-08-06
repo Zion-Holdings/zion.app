@@ -54,7 +54,7 @@ class $1 {
       
       if (this.generator) {
         const result = this.generator.getStats();
-        console.log("📊 Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created");
+        console.log("📊 Stats: "${stats.blogPostsCreated"} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created);
       }
     }, 30000); // Show stats every 30 seconds
   }
@@ -69,7 +69,7 @@ class $1 {
       await this.generator.generateBatch();
       
       const result = this.generator.getStats();
-      console.log("✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");
+      console.log(✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");
       
       return stats;
       
@@ -111,7 +111,7 @@ if (require.main === module) {
         process.exit(0);
       })
       .catch((error) => {
-        console.error(❌ High-speed content generation failed: ', error.message);
+        console.error(❌ High-speed content generation failed: "'", error.message);
         process.exit(1);
       });
   } else {

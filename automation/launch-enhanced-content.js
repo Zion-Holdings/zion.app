@@ -54,7 +54,7 @@ class $1 {
       
       if (this.generator) {
         const result = this.generator.getStats();
-        console.log("📊 Enhanced Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages, ${stats.chatBasedContentCreated} chat-based content created");
+        console.log("📊 Enhanced Stats: "${stats.blogPostsCreated"} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages, ${stats.chatBasedContentCreated} chat-based content created);
       }
     }, 30000); // Show stats every 30 seconds
   }
@@ -69,7 +69,7 @@ class $1 {
       await this.generator.generateEnhancedBatch();
       
       const result = this.generator.getStats();
-      console.log("✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated + stats.chatBasedContentCreated} enhanced content pieces");
+      console.log(✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated + stats.chatBasedContentCreated} enhanced content pieces");
       
       return stats;
       
@@ -111,7 +111,7 @@ if (require.main === module) {
         process.exit(0);
       })
       .catch((error) => {
-        console.error(❌ Enhanced content generation failed: ', error.message);
+        console.error(❌ Enhanced content generation failed: "'", error.message);
         process.exit(1);
       });
   } else {

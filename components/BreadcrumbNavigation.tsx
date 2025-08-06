@@ -1,29 +1,29 @@
-import { useState, useEffect, useMemo } from "react";
-import Link from next/link'";
-import { useRouter } from ";next/router
+import { useState, useEffect, useMemo } from "react
+import Link from next/link'
+import { useRouter } from "next/router
 
 interface DemandForecast {'
-  label: "string";
+  label: ""string
   href: string;
-  current?: boolean;};
+  current?: boolean;"};
 interface DemandForecast {;
   items?: BreadcrumbItem[];
   showHome?: boolean;};
-const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({;
-  items,;
+const BreadcrumbNavigation: "React.FC<BreadcrumbNavigationProps> = ({;
+  items",;
   showHome = true;
 }) => {;
   const $1 = useRouter();
   // Generate breadcrumbs from router path if not provided;
   const $1 = (): BreadcrumbItem[] => {;
     const $1 = router.asPath.split(/).filter(segment => segment);
-    const breadcrumbs: BreadcrumbItem[] = [];
+    const breadcrumbs: "BreadcrumbItem[] = [];
     if (showHome) {;
-      breadcrumbs.push({";
-        label: Home',
-        href: "/,";
-        current: pathSegments.length = == 0;
-      });};
+      breadcrumbs.push({
+        label: Home'",
+        href: ""/","
+        current: "pathSegments.length = == 0;
+      "});};
     let $1 = ;
     pathSegments.forEach((segment, index) => {;
       currentPath += /${segment};
@@ -36,36 +36,36 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({;
 ;
       breadcrumbs.push({;
         label,;
-        href: currentPath,;
-        current: isLast;
-      });
+        href: "currentPath",;
+        current: "isLast;
+      "});
     });
 ;
     return breadcrumbs;
   }
 
   const $1 = items || generateBreadcrumbs()
-  </div>";
+  </div>
   if (breadcrumbItems.length <= 1) {
-    return null;}";
-  return (";
+    return null;}
+  return ("
     <nav className=bg-white shadow-sm border-b border-gray-200 aria-label= Breadcrumb></div>'
       <div className= max-w-7xl mx-auto px-4 sm px-6 lg px-8"></div>'
-        <div className="""" flex items-center space-x-4 py-3></div>";
+        <div className= flex items-center space-x-4 py-3></div>"
           <ol className= flex items-center space-x-4>'
             {breadcrumbItems.map((item, index) => ("</div>'
-              <li key={item.href} className="""" flex items-center>";
+              <li key={item.href} className= flex items-center>"
                 {index > 0 && (</div>
-                  <svg";
-                    className= flex-shrink-0 h-5 w-5 text-gray-400 fill= currentColor";
+                  <svg"
+                    className= flex-shrink-0 h-5 w-5 text-gray-400 fill= currentColor
                     viewBox=0 0 20 20'
-                    aria-hidden="true '
+                    aria-hidden=true '
                   "></div>
                     <path
-                      fillRule=evenodd";
+                      fillRule=evenodd"
                       d=M7.293 14.707a1 1 0 0o10-1.414L10.586 10 7.293 6.707a1 1 0 0o11.414-1.414l4 4a1 1 0 0o10 1.414l-4 4a1 1 0 0o1-1.414 0z
-                      clipRule=evenodd";
-                    > </path";
+                      clipRule=evenodd
+                    > </path
                       fillRule=evenodd '
                       d=M7.293 14.707a1 1 0 0o10-1.414L10.586 10 7.293 6.707a1 1 0 0o11.414-1.414l4 4a1 1 0 0o10 1.414l-4 4a1 1 0 0o1-1.414" 0z'
                       clipRule="evenodd;
@@ -84,10 +84,10 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({;
               </li>
             ))}</div>
           </ol></div>
-        </div ></div>";
+        </div ></div>
       </div></div>
     </nav>
   )
 }
-';}'
-export default $1;"</div>'";
+'}'
+export default $1;</div>'"

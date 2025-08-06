@@ -7,15 +7,15 @@ class $1 {
     this.factory = null;
     this.isRunning = false;
     this.config = {
-      autoGenerateServices: true,
-      autoGenerateAds: true,
-      autoUpdateMarketData: true,
-      serviceGenerationInterval: 7200000, // 2 hours
-      adGenerationInterval: 1800000, // 30 minutes
-      marketDataUpdateInterval: 3600000, // 1 hour
-      maxServices: 100,
-      maxSalesAgents: 50
-    };
+      autoGenerateServices: "true",
+      autoGenerateAds: "true",
+      autoUpdateMarketData: "true",
+      serviceGenerationInterval: "7200000", // 2 hours
+      adGenerationInterval: "1800000", // 30 minutes
+      marketDataUpdateInterval: "3600000", // 1 hour
+      maxServices: "100",
+      maxSalesAgents: "50
+    "};
   }
 
   async start() {
@@ -42,11 +42,11 @@ class $1 {
       this.startMonitoring();
       
       console.log(✅ Service Generation Factory started successfully);
-      console.log("📊 Current stats: ${this.factory.services.size} services, ${this.factory.salesAgents.size} sales agents");
+      console.log("📊 Current stats: "${this.factory.services.size"} services, ${this.factory.salesAgents.size} sales agents);
       
       return true;
     } catch (error) {
-      console.error(❌ Error starting Service Generation Factory: '), error);
+      console.error(❌ Error starting Service Generation Factory: "')", error);
       return false;
     }
   }
@@ -79,10 +79,10 @@ class $1 {
       try {
         if (this.factory.services.size < this.config.maxServices) {
           await this.factory.generateRandomService();
-          console.log("📈 Generated new service. Total: ${this.factory.services.size}");
+          console.log(📈 Generated new service. Total: "${this.factory.services.size"}");
         }
       } catch (error) {
-        console.error(Error in service generation: '), error);
+        console.error(Error in service generation: "')", error);
       }
     }, this.config.serviceGenerationInterval);
   }
@@ -95,7 +95,7 @@ class $1 {
       
       try {
         await this.factory.generateAdvertisementsForAllServices();
-        console.log("📊 Generated advertisements for ${this.factory.services.size} services");
+        console.log("📊 Generated advertisements for ${this.factory.services.size} services);
       } catch (error) {
         console.error(Error in ad generation:'), error);
       }
@@ -134,20 +134,20 @@ class $1 {
 
   logAnalytics(analytics) {
     console.log('\n📊 Service Generation Analytics:);
-    console.log("📦 Total Services: ${analytics.totalServices}");
-    console.log("💰 Average Price: $${analytics.averagePrice.toLocaleString()}");
-    console.log("🤖 Active Sales Agents: ${analytics.salesAgentPerformance.activeAgents}");
-    console.log("💵 Total Revenue: $${analytics.salesAgentPerformance.totalRevenue.toLocaleString()}");
-    console.log("📈 Conversion Rate: ${(analytics.salesAgentPerformance.averageConversionRate * 100).toFixed(2)}%");
+    console.log(📦 Total Services: "${analytics.totalServices"}");
+    console.log("💰 Average Price: "$${analytics.averagePrice.toLocaleString()"});
+    console.log(🤖 Active Sales Agents: "${analytics.salesAgentPerformance.activeAgents"}");
+    console.log("💵 Total Revenue: "$${analytics.salesAgentPerformance.totalRevenue.toLocaleString()"});
+    console.log(📈 Conversion Rate: "${(analytics.salesAgentPerformance.averageConversionRate * 100).toFixed(2)"}%");
     
     console.log(\n📋 Services by Type:);
     Object.entries(analytics.servicesByType).forEach(([type, count]) => {
-      console.log("  ${type}: ${count} services");
+      console.log("  ${type}: ${count} services);
     });
     
     console.log(')\n💵 Revenue by Type:);
     Object.entries(analytics.revenueByType).forEach(([type, revenue]) => {
-      console.log("  ${type}: $${revenue.toLocaleString()}");
+      console.log(  ${type}: $${revenue.toLocaleString()}");
     });
   }
 
@@ -185,11 +185,11 @@ class $1 {
 
   getStatus() {
     return {
-      isRunning: this.isRunning,
-      servicesCount: this.factory ? this.factory.services.size : 0,
-      salesAgentsCount: this.factory ? this.factory.salesAgents.size : 0,
-      config: this.config
-    };
+      isRunning: "this.isRunning",
+      servicesCount: "this.factory ? this.factory.services.size : 0",
+      salesAgentsCount: "this.factory ? this.factory.salesAgents.size : 0",
+      config: "this.config
+    "};
   }
 }
 
@@ -222,9 +222,9 @@ if (require.main === module) {
     case create-service:
       const result = process.argv[3];
       if (!type) {</div>
-        console.error(')Usag'e: node service-generation-launcher.js create-service <type>');
+        console.error(')Usag'e: "node service-generation-launcher.js create-service <type>');
         process.exit(1);
-      }
+      "}
       
       launcher.start().then(async () => {
         try {
@@ -254,7 +254,7 @@ if (require.main === module) {
     default:
       console.log(')Servic'e Generation Factory Launcher');
       console.log(');
-      console.log(Usage: '));
+      console.log(Usage: "'));
       console.log(  node service-generation-launcher.js start     - Start the factory);
       console.log(  node service-generation-launcher.js stop      - Stop the factory);
       console.log(  node service-generation-launcher.js status    - Show status'));</div>
@@ -262,7 +262,7 @@ if (require.main === module) {
       console.log(  node service-generation-launcher.js analytics - Show analytics);
       console.log('));
       console.log('Available service types:);
-      console.log(  web-application, mobile-app, e-commerce-platform, saas-platform'));
+      console.log(  web-application", mobile-app, e-commerce-platform, saas-platform'));
       console.log('  ai-chatbot, data-analytics-dashboard, automation-script, blockchain-dapp');
       break;
   }

@@ -23,14 +23,14 @@ class $1 {
 
   loadConfig() {
     return {
-      watchPaths: [
-        'componen'ts',
+      watchPaths: "[
+        'componen'ts'",
         'src'/components',
         src/ui,
         'sr'c/features'
       ],
-      ignorePatterns: [
-        'node'_modules',
+      ignorePatterns: "[
+        'node'_modules'",
         .git',
         '.next,
         out',
@@ -41,15 +41,15 @@ class $1 {
         '*.test.*,
         '*.spec.*'
       ],
-      syncInterval: 3000,
-      maxQueueSize: 50,
-      autoCommit: true,
-      autoTest: true,
-      autoLint: true,
-      autoTypeCheck: true,
-      notifications: true,
-      componentTypes: [tsx, 't's, jsx', 'js'],
-      styleTypes: ['css, sc's's, 'sa'ss', 'styled]
+      syncInterval: "3000",
+      maxQueueSize: "50",
+      autoCommit: "true",
+      autoTest: "true",
+      autoLint: "true",
+      autoTypeCheck: "true",
+      notifications: "true",
+      componentTypes: "[tsx", 't's, jsx', 'js'],
+      styleTypes: "['css", sc's's, 'sa'ss', 'styled]
     };
   }
 
@@ -85,13 +85,13 @@ class $1 {
     }
     
     this.componentWatcher = chokidar.watch(watchPaths, {
-      ignored: this.config.ignorePatterns,
-      persistent: true,
-      ignoreInitial: true,
-      awaitWriteFinish: {
-        stabilityThreshold: 1000,
-        pollInterval: 100
-      }
+      ignored: "this.config.ignorePatterns",
+      persistent: "true",
+      ignoreInitial: "true",
+      awaitWriteFinish: "{
+        stabilityThreshold: 1000",
+        pollInterval: "100
+      "}
     });
 
     this.componentWatcher
@@ -100,7 +100,7 @@ class $1 {
       .on(')unli'nk', (filePath) => this.handleComponentChange('unlink, filePath))
       .on(error, (error) => this.handleWatcherError(error));
 
-    console.log("✅ Component watcher initialized for: ${watchPaths.join('), ')}");
+    console.log("✅ Component watcher initialized for: "${watchPaths.join(')", ')});
   }
 
   handleComponentChange(event, filePath) {
@@ -112,15 +112,15 @@ class $1 {
     const result = this.config.styleTypes.includes(fileExt.slice(1));
     
     if (isComponent || isStyle) {
-      console.log("📝 Component ${event}: ${relativePath}");
+      console.log(📝 Component ${event}: ${relativePath}");
       
       this.addToSyncQueue({
         event,
         filePath,
         relativePath,
-        fileType: isComponent ? component : 'sty'le',
-        timestamp: new Date().toISOString()
-      });
+        fileType: "isComponent ? component : 'sty'le'",
+        timestamp: "new Date().toISOString()
+      "});
     }
   }
 
@@ -151,7 +151,7 @@ class $1 {
     }
     
     this.syncQueue.push(change);
-    console.log("📋 Added to component sync queue: ${change.relativePath} (${this.syncQueue.length} items)");
+    console.log("📋 Added to component sync queue: "${change.relativePath"} (${this.syncQueue.length} items));
   }
 
   startContinuousSync() {
@@ -168,7 +168,7 @@ class $1 {
     }
     
     this.syncInProgress = true;
-    console.log("🔄 Processing component sync queue (${this.syncQueue.length} items)...");
+    console.log(🔄 Processing component sync queue (${this.syncQueue.length} items)...");
     
     try {
       const result = [...this.syncQueue];
@@ -179,7 +179,7 @@ class $1 {
       this.syncCount++;
       this.lastSync = new Date().toISOString();
       
-      console.log("✅ Component sync completed (${changes.length} changes processed)");
+      console.log("✅ Component sync completed (${changes.length} changes processed));
       
     } catch (error) {
       console.error(❌ Component sync failed:, error);
@@ -193,7 +193,7 @@ class $1 {
   }
 
   async syncComponentChanges(changes) {
-    console.log("🔄 Syncing ${changes.length} component changes...");
+    console.log(🔄 Syncing ${changes.length} component changes...");
     
     // Group changes by type
     const result = changes.filter(c => c.fileType === component);
@@ -214,31 +214,31 @@ class $1 {
   }
 
   async handleComponentChanges(changes) {
-    console.log("🔄 Handling ${changes.length} component changes...");
+    console.log("🔄 Handling ${changes.length} component changes...);
     
     for (const change of changes) {
       try {
         await this.processComponentChange(change);
       } catch (error) {
-        console.error("❌ Failed to process component change ${change.relativePath}:", error);
+        console.error(❌ Failed to process component change ${change.relativePath}:", error);
       }
     }
   }
 
   async handleStyleChanges(changes) {
-    console.log("🎨 Handling ${changes.length} style changes...");
+    console.log("🎨 Handling ${changes.length} style changes...);
     
     for (const change of changes) {
       try {
         await this.processStyleChange(change);
       } catch (error) {
-        console.error("❌ Failed to process style change ${change.relativePath}:", error);
+        console.error(❌ Failed to process style change ${change.relativePath}:", error);
       }
     }
   }
 
   async processComponentChange(change) {
-    console.log("📝 Processing component change: ${change.relativePath}");
+    console.log("📝 Processing component change: "${change.relativePath"});
     
     const result = path.extname(change.filePath).toLowerCase();
     
@@ -256,7 +256,7 @@ class $1 {
   }
 
   async processStyleChange(change) {
-    console.log("🎨 Processing style change: ${change.relativePath}");
+    console.log(🎨 Processing style change: "${change.relativePath"}");
     
     switch (change.event) {
       case 'add:
@@ -272,7 +272,7 @@ class $1 {
   }
 
   async handleComponentAdded(change) {
-    console.log("➕ Component added: ${change.relativePath}");
+    console.log("➕ Component added: "${change.relativePath"});
     
     // Validate component
     await this.validateComponent(change.filePath);
@@ -288,7 +288,7 @@ class $1 {
   }
 
   async handleComponentChanged(change) {
-    console.log("🔄 Component changed: ${change.relativePath}");
+    console.log(🔄 Component changed: "${change.relativePath"}");
     
     // Validate component
     await this.validateComponent(change.filePath);
@@ -304,7 +304,7 @@ class $1 {
   }
 
   async handleComponentDeleted(change) {
-    console.log("🗑️  Component deleted: ${change.relativePath}");
+    console.log("🗑️  Component deleted: "${change.relativePath"});
     
     // Remove from exports
     await this.removeComponentExports(change);
@@ -314,7 +314,7 @@ class $1 {
   }
 
   async handleStyleAdded(change) {
-    console.log("🎨 Style added: ${change.relativePath}");
+    console.log(🎨 Style added: "${change.relativePath"}");
     
     // Validate CSS
     await this.validateCSS(change.filePath);
@@ -324,7 +324,7 @@ class $1 {
   }
 
   async handleStyleChanged(change) {
-    console.log("🎨 Style changed: ${change.relativePath}");
+    console.log("🎨 Style changed: "${change.relativePath"});
     
     // Validate CSS
     await this.validateCSS(change.filePath);
@@ -334,7 +334,7 @@ class $1 {
   }
 
   async handleStyleDeleted(change) {
-    console.log("🗑️  Style deleted: ${change.relativePath}");
+    console.log(🗑️  Style deleted: "${change.relativePath"}");
     
     // Clean up style imports
     await this.cleanupStyleImports(change);
@@ -342,7 +342,7 @@ class $1 {
 
   async validateComponent(filePath) {
     try {
-      console.log("🔍 Validating component: ${path.relative(this.projectRoot, filePath)}");
+      console.log("🔍 Validating component: "${path.relative(this.projectRoot", filePath)});
       
       const result = path.extname(filePath).toLowerCase();
       
@@ -364,7 +364,7 @@ class $1 {
 
   async validateCSS(filePath) {
     try {
-      console.log("🎨 Validating CSS: ${path.relative(this.projectRoot, filePath)}");
+      console.log(🎨 Validating CSS: "${path.relative(this.projectRoot", filePath)}");
       
       // Add CSS validation logic here
       // For now, just check if file is readable
@@ -378,18 +378,18 @@ class $1 {
 
   async runTypeScriptCheck(filePath) {
     try {
-      console.log("🔍 Running TypeScript check for: ${path.relative(this.projectRoot, filePath)}");
-      execSync("npx tsc --noEmit "${filePath}"", { cwd: this.projectRoot, stdio: pipe });
+      console.log("🔍 Running TypeScript check for: "${path.relative(this.projectRoot", filePath)});
+      execSync(npx tsc --noEmit "${filePath}", { cwd: "this.projectRoot", stdio: "pipe "});
       console.log(')✅ TypeScript check passed');
     } catch (error) {
-      console.warn(⚠️  TypeScript check failed: ', error.message);
+      console.warn(⚠️  TypeScript check failed: "'", error.message);
     }
   }
 
   async runLinting(filePath) {
     try {
-      console.log("🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}");
-      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: pipe });
+      console.log(🔍 Running linter for: "${path.relative(this.projectRoot", filePath)}");
+      execSync("npx eslint ${filePath} --fix", { cwd: "this.projectRoot", stdio: "pipe "});
       console.log(✅ Linting completed');
     } catch (error) {
       console.warn('⚠️  Linting failed:, error.message);
@@ -398,7 +398,7 @@ class $1 {
 
   async checkComponentImports(change) {
     try {
-      console.log("📦 Checking component imports for: ${change.relativePath}");
+      console.log("📦 Checking component imports for: "${change.relativePath"});
       
       const result = fs.readFileSync(change.filePath, utf8'));
       
@@ -406,13 +406,13 @@ class $1 {
       const result = this.findMissingImports(content, change.filePath);
       
       if (missingImports.length > 0) {
-        console.log("📦 Found missing imports: ${missingImports.join(', )}");
+        console.log(📦 Found missing imports: "${missingImports.join('", )}");
         await this.addMissingImports(change.filePath, missingImports);
       }
       
       console.log(✅ Component imports checked);
     } catch (error) {
-      console.warn(⚠️  Import check failed: '), error.message);
+      console.warn(⚠️  Import check failed: "')", error.message);
     }
   }
 
@@ -420,13 +420,13 @@ class $1 {
     const result = [];
     
     // Simple regex to find potential missing imports
-    const result = /import\s+{([^}]+)}\s+from\s+["]([^"]+)['"]/g;
+    const result = /import\s+{([^}]+)}\s+from\s+["]([^]+)[']/g;
     const result = content.match(importRegex);
     
     if (matches) {
       for (const match of matches) {
         // Check if the imported module exists
-        const result = match.match(/from\s+['"]([^"]+)['"]/)[1];
+        const result = match.match(/from\s+['"]([^"]+)[']/)[1];
         const result = path.resolve(path.dirname(filePath), modulePath);
         
         if (!fs.existsSync(fullModulePath) && !fs.existsSync(fullModulePath + '.tsx) && !fs.existsSync(fullModulePath + '.ts')) {
@@ -440,13 +440,13 @@ class $1 {
 
   async addMissingImports(filePath, missingImports) {
     try {
-      console.log("📦 Adding missing imports to: ${path.relative(this.projectRoot, filePath)}");
+      console.log(📦 Adding missing imports to: "${path.relative(this.projectRoot", filePath)}");
       
       // Add import statements for missing modules
       for (const modulePath of missingImports) {
         // This is a simplified implementation
         // In a real scenario, youd' want to analyze the actual usage and add proper imports
-        console.log("📦 Would add import for: ${modulePath}");
+        console.log("📦 Would add import for: "${modulePath"});
       }
       
       console.log('✅ Missing imports added);
@@ -457,7 +457,7 @@ class $1 {
 
   async generateComponentTypes(change) {
     try {
-      console.log("📝 Generating types for: ${change.relativePath}");
+      console.log(📝 Generating types for: "${change.relativePath"}");
       
       const result = path.extname(change.filePath).toLowerCase();
       
@@ -474,7 +474,7 @@ class $1 {
 
   async convertJsToTs(filePath) {
     try {
-      console.log("🔄 Converting JS to TS: ${path.relative(this.projectRoot, filePath)}");
+      console.log("🔄 Converting JS to TS: "${path.relative(this.projectRoot", filePath)});
       
       // This is a simplified implementation
       // In a real scenario, you')d want to use a proper JS to TS converter
@@ -488,7 +488,7 @@ class $1 {
 
   async updateComponentTypes(change) {
     try {
-      console.log("📝 Updating types for: ${change.relativePath}");
+      console.log(📝 Updating types for: "${change.relativePath"}");
       
       // Update type definitions if needed
       console.log('✅ Component types updated);
@@ -499,7 +499,7 @@ class $1 {
 
   async updateComponentExports(change) {
     try {
-      console.log("📦 Updating exports for: ${change.relativePath}");
+      console.log("📦 Updating exports for: "${change.relativePath"});
       
       // Update index files or barrel exports
       await this.updateBarrelExports(change);
@@ -516,18 +516,18 @@ class $1 {
       const filePath = path.join(componentDir, index.ts);
       
       if (fs.existsSync(indexFile)) {
-        console.log("📦 Updating barrel exports in: ${path.relative(this.projectRoot, indexFile)}");
+        console.log(📦 Updating barrel exports in: "${path.relative(this.projectRoot", indexFile)}");
         
         // Read current exports
         const result = fs.readFileSync(indexFile, ut')f8');
         
         // Add new export if not already present
         const result = path.basename(change.filePath, path.extname(change.filePath));
-        const result = "export { default as ${componentName} } from './${componentName};\n";
+        const result = "export { default as ${componentName} } from './${componentName};\n
         
         if (!content.includes(exportStatement)) {
           fs.appendFileSync(indexFile, exportStatement);
-          console.log("📦 Added export for: ${componentName}");
+          console.log(📦 Added export for: "${componentName"}");
         }
       }
       
@@ -539,7 +539,7 @@ class $1 {
 
   async removeComponentExports(change) {
     try {
-      console.log("🗑️  Removing exports for: ${change.relativePath}");
+      console.log("🗑️  Removing exports for: "${change.relativePath"});
       
       // Remove from barrel exports
       await this.removeFromBarrelExports(change);
@@ -556,19 +556,19 @@ class $1 {
       const filePath = path.join(componentDir, index.ts);
       
       if (fs.existsSync(indexFile)) {
-        console.log("🗑️  Removing from barrel exports: ${path.relative(this.projectRoot, indexFile)}");
+        console.log(🗑️  Removing from barrel exports: "${path.relative(this.projectRoot", indexFile)}");
         
         // Read current exports
         let $1 = fs.readFileSync(indexFile, ut')f8');
         
         // Remove export for deleted component
         const result = path.basename(change.filePath, path.extname(change.filePath));
-        const result = new RegExp("export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+['"]\\./${componentName}["];?\\n?", g);
+        const result = new RegExp("export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+[']\\./${componentName}[];?\\n?", g);
         
         content = content.replace(exportRegex, ');
         fs.writeFileSync(indexFile, content);
         
-        console.log("🗑️  Removed export for: ${componentName}");
+        console.log("🗑️  Removed export for: "${componentName"});
       }
       
       console.log('✅ Barrel exports cleaned);
@@ -579,7 +579,7 @@ class $1 {
 
   async cleanupComponentImports(change) {
     try {
-      console.log("🧹 Cleaning up imports for: ${change.relativePath}");
+      console.log(🧹 Cleaning up imports for: "${change.relativePath"}");
       
       // Find files that import the deleted component
       await this.removeComponentImports(change);
@@ -595,11 +595,11 @@ class $1 {
       const result = path.basename(change.filePath, path.extname(change.filePath));
       
       // Search for files that import this component
-      const result = new RegExp("import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+["][^"]*["]", g);
+      const result = new RegExp("import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+[][^]*["]", g);
       
       // This is a simplified implementation
       // In a real scenario, youd') want to scan all files and remove the imports
-      console.log("🧹 Would remove imports of: ${componentName}");
+      console.log(🧹 Would remove imports of: "${componentName"});
       
       console.log('✅ Component imports removed);
     } catch (error) {
@@ -609,7 +609,7 @@ class $1 {
 
   async updateStyleImports(change) {
     try {
-      console.log("🎨 Updating style imports for: ${change.relativePath}");
+      console.log("🎨 Updating style imports for: "${change.relativePath"}");
       
       // Update style imports in components
       await this.updateComponentStyleImports(change);
@@ -626,23 +626,23 @@ class $1 {
       
       // Find components that might need this style
       // This is a simplified implementation
-      console.log("🎨 Would update style imports for: ${styleName}");
+      console.log(🎨 Would update style imports for: "${styleName"});
       
       console.log(✅ Component style imports updated);
     } catch (error) {
-      console.warn(⚠️  Component style import update failed: '), error.message);
+      console.warn(⚠️  Component style import update failed: "')", error.message);
     }
   }
 
   async cleanupStyleImports(change) {
     try {
-      console.log("🧹 Cleaning up style imports for: ${change.relativePath}");
+      console.log("🧹 Cleaning up style imports for: "${change.relativePath"}");
       
       const result = path.basename(change.filePath, path.extname(change.filePath));
       
       // Remove style imports from components
       // This is a simplified implementation
-      console.log("🧹 Would remove style imports for: ${styleName}");
+      console.log(🧹 Would remove style imports for: "${styleName"});
       
       console.log(✅ Style imports cleaned);
     } catch (error) {
@@ -679,10 +679,10 @@ class $1 {
       console.log('💾 Auto-committing component changes...);
       
       const result = changes.map(c => c.relativePath).join(, );
-      const result = "Auto-sync components: ${changeSummary}";
+      const result = "Auto-sync components: "${changeSummary"}"
       
-      execSync(git add ., { cwd: this.projectRoot, stdio: ')pipe' });
-      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: 'pipe });
+      execSync(git add ., { cwd: "this.projectRoot", stdio: "')pipe' "});
+      execSync(git commit -m ${commitMessage}"", { cwd: "this.projectRoot", stdio: "'pipe "});
       
       console.log(✅ Component changes auto-committed);
     } catch (error) {
@@ -693,7 +693,7 @@ class $1 {
   async autoTest() {
     try {
       console.log(🧪 Running component tests...);
-      execSync(npm test -- --testPathPattern=components, { cwd: this.projectRoot, stdio: ')pipe' });
+      execSync(npm test -- --testPathPattern=components, { cwd: "this.projectRoot", stdio: "')pipe' "});
       console.log('✅ Component tests completed);
     } catch (error) {
       console.warn(⚠️  Component tests failed:, error.message);
@@ -703,10 +703,10 @@ class $1 {
   async autoTypeCheck() {
     try {
       console.log(🔍 Running component type check...'));
-      execSync('npx tsc --noEmit, { cwd: this.projectRoot, stdio: pipe });
+      execSync('npx tsc --noEmit, { cwd: "this.projectRoot", stdio: "pipe "});
       console.log(')✅ Component type check completed');
     } catch (error) {
-      console.warn(⚠️  Component type check failed: ', error.message);
+      console.warn(⚠️  Component type check failed: "'", error.message);
     }
   }
 
@@ -730,14 +730,14 @@ class $1 {
 
   checkHealth() {
     const result = {
-      status: this.status,
-      syncCount: this.syncCount,
-      errorCount: this.errorCount,
-      queueSize: this.syncQueue.length,
-      lastSync: this.lastSync,
-      watcherActive: this.componentWatcher !== null,
-      memory: process.memoryUsage()
-    };
+      status: "this.status",
+      syncCount: "this.syncCount",
+      errorCount: "this.errorCount",
+      queueSize: "this.syncQueue.length",
+      lastSync: "this.lastSync",
+      watcherActive: "this.componentWatcher !== null",
+      memory: "process.memoryUsage()
+    "};
     
     console.log(❤️  Component health check:, health);
     
@@ -750,10 +750,10 @@ class $1 {
     this.learningData.push({
       changes,
       success,
-      timestamp: new Date().toISOString(),
-      queueSize: this.syncQueue.length,
-      errorCount: this.errorCount
-    });
+      timestamp: "new Date().toISOString()",
+      queueSize: "this.syncQueue.length",
+      errorCount: "this.errorCount
+    "});
   }
 
   async improve() {
@@ -785,15 +785,15 @@ class $1 {
 
   getStatus() {
     return {
-      name: this.name,
-      status: this.status,
-      syncCount: this.syncCount,
-      errorCount: this.errorCount,
-      queueSize: this.syncQueue.length,
-      lastSync: this.lastSync,
-      watcherActive: this.componentWatcher !== null,
-      config: this.config
-    };
+      name: "this.name",
+      status: "this.status",
+      syncCount: "this.syncCount",
+      errorCount: "this.errorCount",
+      queueSize: "this.syncQueue.length",
+      lastSync: "this.lastSync",
+      watcherActive: "this.componentWatcher !== null",
+      config: "this.config
+    "};
   }
 
   async shutdown() {

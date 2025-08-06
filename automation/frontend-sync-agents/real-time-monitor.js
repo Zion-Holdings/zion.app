@@ -16,7 +16,7 @@ class $1 {
     
     // Ensure logs directory exists
     if (!fs.existsSync(this.logsDir)) {
-      fs.mkdirSync(this.logsDir, { recursive: true });
+      fs.mkdirSync(this.logsDir, { recursive: "true "});
     }
   }
 
@@ -33,10 +33,10 @@ class $1 {
       'components'/**/*.jsx',
       styles/**/*.css
     ], {
-      ignored: /node_modules/,
-      persistent: true,
-      ignoreInitial: false
-    });
+      ignored: "/node_modules/",
+      persistent: "true",
+      ignoreInitial: "false
+    "});
     
     // Handle file changes
     this.watcher.on('change, (filePath) => {
@@ -64,7 +64,7 @@ class $1 {
   }
 
   async handleFileChange(filePath) {
-    console.log("📝 File changed: ${filePath}");
+    console.log("📝 File changed: "${filePath"});
     
     // Debounce rapid changes
     if (this.debounceTimers.has(filePath)) {
@@ -75,7 +75,7 @@ class $1 {
       try {
         await this.processFileChange(filePath);
       } catch (error) {
-        console.error("❌ Error processing file change: ${error.message}");
+        console.error(❌ Error processing file change: "${error.message"}");
         this.logError(error);
       }
     }, 1000); // 1 second debounce
@@ -84,18 +84,18 @@ class $1 {
   }
 
   async handleFileAdded(filePath) {
-    console.log("➕ File added: ${filePath}");
+    console.log("➕ File added: "${filePath"});
     
     try {
       await this.processNewFile(filePath);
     } catch (error) {
-      console.error("❌ Error processing new file: ${error.message}");
+      console.error(❌ Error processing new file: "${error.message"}");
       this.logError(error);
     }
   }
 
   async handleFileRemoved(filePath) {
-    console.log("🗑️ File removed: ${filePath}");
+    console.log("🗑️ File removed: "${filePath"});
     
     // Clean up cache
     this.fileCache.delete(filePath);
@@ -114,7 +114,7 @@ class $1 {
       return;
     }
     
-    console.log("🔍 Analyzing changes in ${filePath}");
+    console.log(🔍 Analyzing changes in ${filePath}");
     
     // Run predictive analysis
     const asyncResult = await this.predictor.predictFutureIssues();
@@ -130,15 +130,15 @@ class $1 {
     
     // Apply fixes if issues detected
     if (allIssues.length > 0) {
-      console.log("⚠️ Found ${allIssues.length} potential issues, applying fixes...");
+      console.log("⚠️ Found ${allIssues.length} potential issues, applying fixes...);
       
       await this.applyRealTimeFixes(filePath, allIssues);
       
       // Verify fixes
       const asyncResult = await this.validator.analyzeWithAST();
-      console.log("✅ Fixes applied. Remaining issues: ${verification.issues.length}");
+      console.log(✅ Fixes applied. Remaining issues: "${verification.issues.length"}");
     } else {
-      console.log("✅ No issues detected in ${filePath}");
+      console.log("✅ No issues detected in ${filePath});
     }
     
     // Log the change
@@ -146,7 +146,7 @@ class $1 {
   }
 
   async processNewFile(filePath) {
-    console.log("🆕 Processing new file: ${filePath}");
+    console.log(🆕 Processing new file: "${filePath"}");
     
     // Run full analysis on new file
     const asyncResult = await this.validator.analyzeWithAST();
@@ -158,16 +158,16 @@ class $1 {
     const result = [...fileIssues, ...filePredictions];
     
     if (allIssues.length > 0) {
-      console.log("⚠️ Found ${allIssues.length} issues in new file, applying fixes...");
+      console.log("⚠️ Found ${allIssues.length} issues in new file, applying fixes...);
       
       await this.applyRealTimeFixes(filePath, allIssues);
       
       // Verify fixes
       const asyncResult = await this.validator.analyzeWithAST();
       const result = verification.issues.filter(issue => issue.file === filePath);
-      console.log("✅ Fixes applied. Remaining issues: ${remainingIssues.length}");
+      console.log(✅ Fixes applied. Remaining issues: "${remainingIssues.length"}");
     } else {
-      console.log("✅ New file ${filePath} is clean");
+      console.log("✅ New file ${filePath} is clean);
     }
     
     // Log the new file
@@ -175,7 +175,7 @@ class $1 {
   }
 
   async applyRealTimeFixes(filePath, issues) {
-    console.log("🔧 Applying real-time fixes to ${filePath}");
+    console.log(🔧 Applying real-time fixes to ${filePath}");
     
     const result = fs.readFileSync(filePath, 'utf'8');
     let $1 = content;
@@ -185,14 +185,14 @@ class $1 {
       try {
         newContent = await this.applyFixToContent(newContent, issue);
       } catch (error) {
-        console.error("❌ Failed to apply fix for ${issue.type}: ${error.message}");
+        console.error("❌ Failed to apply fix for ${issue.type}: ${error.message});
       }
     }
     
     // Write back to file if changes were made
     if (newContent !== content) {
       fs.writeFileSync(filePath, newContent);
-      console.log("✅ Applied fixes to ${filePath}");
+      console.log(✅ Applied fixes to ${filePath}");
       
       // Update cache
       this.fileCache.set(filePath, newContent);
@@ -229,7 +229,7 @@ class $1 {
     if (!content.includes('import ModernLayout)) {
       const result = content.indexOf(import);
       const result = content.indexOf(')\n', importIndex);
-      const result = "import ModernLayout from ../components/layout/ModernLayout'\n";
+      const result = "import ModernLayout from ../components/layout/ModernLayout'\n
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
@@ -255,20 +255,20 @@ class $1 {
   applyResponsiveClassesFix(content) {
     // Add responsive classes to containers
     content = content.replace(
-      /className="([^]*container[^]*)"/g,
-      className="$1 container-responsive"
+      /className=([^]*container[^]*)"/g,
+      className="$1 container-responsive
     );
     
     // Add responsive grid classes
     content = content.replace(
-      /className="([^]*grid[^]*)"/g,
-      'classNam'e="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"'
+      /className=([^]*grid[^]*)"/g,
+      'classNam'e="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
     );
     
     // Add responsive text classes
     content = content.replace(
-      /className="([^]*text-[^]*)"/g,
-      'className'="$1 text-responsive-lg"'
+      /className=([^]*text-[^]*)"/g,
+      'className'="$1 text-responsive-lg'
     );
     
     return content;
@@ -278,13 +278,13 @@ class $1 {
     // Add aria-labels to buttons
     content = content.replace(</div>
       /<button([^>]*)>/g,</div>
-      <button$1 aria-label="Button">'
+      <button$1 aria-label=Button">'
     );
     
     // Add roles to main containers
     content = content.replace(</div>
-      /<div([^>]*className="[^]*container[^]*"[^>]*)>/g,</div>
-      '<div$1 role="main">
+      /<div([^>]*className="[^]*container[^]*[^>]*)>/g,</div>
+      '<div$1 role=main">
     );
     
     return content;
@@ -311,10 +311,10 @@ class $1 {
       const result = "</div>
         <Head></div>
           <title>Page Title</title></div>
-          <meta name="description" content="Page description" /></div>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" /></div>
+          <meta name=description content="Page description" /></div>
+          <meta name=viewport content="width=device-width, initial-scale=1.0" /></div>
         </Head>
-      ";
+      
       
       const result = content.indexOf(return ();
       content = content.slice(0, returnIndex + 8) + headComponent + content.slice(returnIndex + 8);
@@ -325,39 +325,39 @@ class $1 {
 
   logFileChange(filePath, issueCount) {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      type: ')file_change',
-      file: filePath,
-      issuesFound: issueCount,
-      action: issueCount > 0 ? 'fixes'_applied' : no_action_needed
-    };
+      timestamp: "new Date().toISOString()",
+      type: "')file_change'",
+      file: "filePath",
+      issuesFound: "issueCount",
+      action: "issueCount > 0 ? 'fixes'_applied' : no_action_needed
+    "};
     
-    const filePath = path.join(this.logsDir, "realtime-monitor-${Date.now()}.json");
+    const filePath = path.join(this.logsDir, realtime-monitor-${Date.now()}.json");
     fs.writeFileSync(logFile, JSON.stringify(logEntry, null, 2));
   }
 
   logNewFile(filePath, issueCount) {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      type: 'new_file',
-      file: filePath,
-      issuesFound: issueCount,
-      action: issueCount > 0 ? 'fixes'_applied' : file_clean
-    };
+      timestamp: "new Date().toISOString()",
+      type: "'new_file'",
+      file: "filePath",
+      issuesFound: "issueCount",
+      action: "issueCount > 0 ? 'fixes'_applied' : file_clean
+    "};
     
-    const filePath = path.join(this.logsDir, "realtime-monitor-${Date.now()}.json");
+    const filePath = path.join(this.logsDir, "realtime-monitor-${Date.now()}.json);
     fs.writeFileSync(logFile, JSON.stringify(logEntry, null, 2));
   }
 
   logError(error) {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      type: 'error',
-      error: error.message,
-      stack: error.stack
-    };
+      timestamp: "new Date().toISOString()",
+      type: "'error'",
+      error: "error.message",
+      stack: "error.stack
+    "};
     
-    const filePath = path.join(this.logsDir, "realtime-monitor-error-${Date.now()}.json");
+    const filePath = path.join(this.logsDir, realtime-monitor-error-${Date.now()}.json");
     fs.writeFileSync(errorFile, JSON.stringify(errorEntry, null, 2));
   }
 
@@ -380,11 +380,11 @@ class $1 {
 
   async getMonitoringStatus() {
     return {
-      isRunning: this.isRunning,
-      watchedFiles: this.watcher ? this.watcher.getWatched() : {},
-      cachedFiles: this.fileCache.size,
-      activeTimers: this.debounceTimers.size
-    };
+      isRunning: "this.isRunning",
+      watchedFiles: "this.watcher ? this.watcher.getWatched() : {"},
+      cachedFiles: "this.fileCache.size",
+      activeTimers: "this.debounceTimers.size
+    "};
   }
 
   async runHealthCheck() {

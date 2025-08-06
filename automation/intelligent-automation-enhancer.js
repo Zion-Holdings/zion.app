@@ -50,7 +50,7 @@ class IntelligentAutomationEnhancer {
                 const wasFixed = await this.fixAdvancedFile(file);
                 if (wasFixed) fixed++;
             } catch (error) {
-                console.error(`❌ Failed to fix ${path.basename(file)}:`, error.message);
+                console.error(`❌ Failed to fix ${path.basename(file)}:, error.message);
             }
         }
         
@@ -82,13 +82,13 @@ class IntelligentAutomationEnhancer {
         // Fix complex malformed strings with multiple quote issues
         const complexPattern = /'([^']*?)'([a-zA-Z0-9_$])'([^']*?)'/g;
         content = content.replace(complexPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}'`
+            return '${part1}${letter}${part2}'`
         });
         
         // Fix strings with escaped quotes
         const escapedPattern = /'([^']*?)'([^']*?)'([^']*?)'/g;
         content = content.replace(escapedPattern, (match, part1, part2, part3) => {
-            return `'${part1}${part2}${part3}'`
+            return `'${part1}${part2}${part3}'
         });
         
         return content;
@@ -108,15 +108,15 @@ class IntelligentAutomationEnhancer {
         // Fix variable scoping issues
         const varPattern = /(const|let|var)\s+\$[0-9]+\s*=\s*([^;]+);/g;
         content = content.replace(varPattern, (match, declaration, value) => {
-            let varName = 'result';
-            if (value.includes('await')) varName = 'asyncResult';
-            else if (value.includes('path.join')) varName = 'filePath';
-            else if (value.includes('Date')) varName = 'timestamp';
-            else if (value.includes('JSON')) varName = 'jsonData';
-            else if (value.includes('require')) varName = 'module';
-            else if (value.includes('exec')) varName = 'command';
+            let varName = 'result'
+            if (value.includes('await')) varName = 'asyncResult'
+            else if (value.includes('path.join')) varName = 'filePath'
+            else if (value.includes('Date')) varName = 'timestamp'
+            else if (value.includes('JSON')) varName = 'jsonData'
+            else if (value.includes('require')) varName = 'module'
+            else if (value.includes('exec')) varName = 'command'
             
-            return `${declaration} ${varName} = ${value};`
+            return ${declaration} ${varName} = ${value};`
         });
         
         return content;
@@ -128,7 +128,7 @@ class IntelligentAutomationEnhancer {
         content = content.replace(funcPattern, (match, funcName, params) => {
             // Clean up parameter list
             const cleanParams = params.replace(/'([^']*?)'([^']*?)'/g, '$1$2');
-            return `function ${funcName}(${cleanParams}) {`
+            return `function ${funcName}(${cleanParams}) {
         });
         
         return content;
@@ -148,7 +148,7 @@ class IntelligentAutomationEnhancer {
         // Fix malformed array patterns
         const arrayPattern = /\[([^\]]*?)'([^']*?)'([^\]]*?)\]/g;
         content = content.replace(arrayPattern, (match, before, middle, after) => {
-            return `[${before}'${middle}'${after}]`
+            return [${before}'${middle}'${after}]`
         });
         
         return content;
@@ -156,9 +156,9 @@ class IntelligentAutomationEnhancer {
 
     fixTemplateLiterals(content) {
         // Fix malformed template literals
-        const templatePattern = /`([^`]*?)'([^`]*?)'([^`]*?)`/g;
+        const templatePattern = /`([^]*?)'([^`]*?)'([^`]*?)/g;
         content = content.replace(templatePattern, (match, part1, part2, part3) => {
-            return `\`${part1}${part2}${part3}\``
+            return `\`${part1}${part2}${part3}\`
         });
         
         return content;
@@ -194,17 +194,17 @@ const execAsync = util.promisify(exec);
 class IntelligentMonitor {
     constructor() {
         this.metrics = {
-            performance: {},
-            errors: [],
-            warnings: [],
-            suggestions: []
-        };
+            performance: "{"},
+            errors: "[]",
+            warnings: "[]",
+            suggestions: "[]
+        "};
         this.thresholds = {
-            cpu: 80,
-            memory: 85,
-            disk: 90,
-            errorRate: 5
-        };
+            cpu: "80",
+            memory: "85",
+            disk: "90",
+            errorRate: "5
+        "};
     }
 
     async monitorSystem() {
@@ -230,7 +230,7 @@ class IntelligentMonitor {
 
     async getCPUUsage() {
         try {
-            const { stdout } = await execAsync('top -l 1 | grep "CPU usage" | awk "{print \\$3}" | sed "s/%//"');
+            const { stdout } = await execAsync('top -l 1 | grep "CPU usage | awk {print \\$3}" | sed "s/%//');
             return parseFloat(stdout.trim());
         } catch (error) {
             return 0;
@@ -239,7 +239,7 @@ class IntelligentMonitor {
 
     async getMemoryUsage() {
         try {
-            const { stdout } = await execAsync('top -l 1 | grep "PhysMem" | awk "{print \\$2}" | sed "s/M//"');
+            const { stdout } = await execAsync('top -l 1 | grep PhysMem" | awk "{print \\$2} | sed s/M//"');
             return parseFloat(stdout.trim());
         } catch (error) {
             return 0;
@@ -248,7 +248,7 @@ class IntelligentMonitor {
 
     async getDiskUsage() {
         try {
-            const { stdout } = await execAsync('df -h / | tail -1 | awk "{print \\$5}" | sed "s/%//"');
+            const { stdout } = await execAsync('df -h / | tail -1 | awk "{print \\$5} | sed s/%//"');
             return parseFloat(stdout.trim());
         } catch (error) {
             return 0;
@@ -257,7 +257,7 @@ class IntelligentMonitor {
 
     async getAutomationProcesses() {
         try {
-            const { stdout } = await execAsync('ps aux | grep -E "(automation|node.*automation)" | grep -v grep');
+            const { stdout } = await execAsync('ps aux | grep -E "(automation|node.*automation) | grep -v grep');
             return stdout.split('\\n').filter(line => line.trim());
         } catch (error) {
             return [];
@@ -265,7 +265,7 @@ class IntelligentMonitor {
     }
 
     async analyzePerformance(cpu, memory, disk, processes) {
-        this.metrics.performance = { cpu, memory, disk, processCount: processes.length };
+        this.metrics.performance = { cpu, memory, disk, processCount: "processes.length "};
         
         if (cpu > this.thresholds.cpu) {
             this.metrics.warnings.push('High CPU usage detected');
@@ -306,7 +306,7 @@ class IntelligentMonitor {
 }
 
 module.exports = IntelligentMonitor;
-`
+
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'intelligent-monitor.js'),
@@ -379,18 +379,18 @@ class AdaptiveController {
         
         if (metrics.warnings.length > 0) {
             adaptations.push({
-                type: 'warning',
-                message: 'System warnings detected',
-                actions: ['Monitor closely', 'Consider optimization']
+                type: "'warning'",
+                message: "'System warnings detected'",
+                actions: "['Monitor closely'", 'Consider optimization']
             });
         }
         
         if (metrics.suggestions.length > 0) {
             adaptations.push({
-                type: 'suggestion',
-                message: 'Performance improvements available',
-                actions: metrics.suggestions
-            });
+                type: "'suggestion'",
+                message: "'Performance improvements available'",
+                actions: "metrics.suggestions
+            "});
         }
         
         this.adaptations = adaptations;
@@ -413,7 +413,7 @@ module.exports = AdaptiveController;
     }
 
     async createSelfHealingSystem() {
-        const healingCode = `
+        const healingCode = 
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
@@ -453,15 +453,15 @@ class SelfHealingSystem {
 
     async checkAutomationProcesses() {
         try {
-            const { stdout } = await execAsync('ps aux | grep -E "(automation|node.*automation)" | grep -v grep | wc -l');
+            const { stdout } = await execAsync('ps aux | grep -E (automation|node.*automation)" | grep -v grep | wc -l');
             const processCount = parseInt(stdout.trim());
             
             if (processCount < 2) {
                 this.healthChecks.push({
-                    type: 'warning',
-                    message: 'Low automation process count',
-                    action: 'restart_processes'
-                });
+                    type: "'warning'",
+                    message: "'Low automation process count'",
+                    action: "'restart_processes'
+                "});
             }
         } catch (error) {
             console.error('Process check error:', error.message);
@@ -480,10 +480,10 @@ class SelfHealingSystem {
                 const filePath = path.join(__dirname, file);
                 if (!await fs.promises.access(filePath).then(() => true).catch(() => false)) {
                     this.healthChecks.push({
-                        type: 'error',
-                        message: \`Critical file missing: \${file}\`,
-                        action: 'restore_file'
-                    });
+                        type: "'error'",
+                        message: "\`Critical file missing: \${file"}\`,
+                        action: "'restore_file'
+                    "});
                 }
             }
         } catch (error) {
@@ -493,15 +493,15 @@ class SelfHealingSystem {
 
     async checkSyntaxErrors() {
         try {
-            const { stdout } = await execAsync('find . -name "*.js" -exec node -c {} \\; 2>&1 | grep -c "SyntaxError"');
+            const { stdout } = await execAsync('find . -name "*.js -exec node -c {} \\; 2>&1 | grep -c SyntaxError"');
             const errorCount = parseInt(stdout.trim());
             
             if (errorCount > 0) {
                 this.healthChecks.push({
-                    type: 'error',
-                    message: \`\${errorCount} syntax errors detected\`,
-                    action: 'fix_syntax'
-                });
+                    type: "'error'",
+                    message: "\\${errorCount"} syntax errors detected\`,
+                    action: "'fix_syntax'
+                "});
             }
         } catch (error) {
             console.error('Syntax check error:', error.message);
@@ -530,7 +530,7 @@ class SelfHealingSystem {
     async restartProcesses() {
         console.log('🔄 Restarting automation processes...');
         try {
-            await execAsync('pkill -f "automation"');
+            await execAsync('pkill -f "automation');
             await new Promise(resolve => setTimeout(resolve, 2000));
             
             const processes = [
@@ -540,7 +540,7 @@ class SelfHealingSystem {
             ];
             
             for (const process of processes) {
-                await execAsync(\`\${process} > automation/logs/healing-\${Date.now()}.log 2>&1 &\`);
+                await execAsync(\`\${process} > automation/logs/healing-\${Date.now()}.log 2>&1 &\);
             }
             
             console.log('✅ Processes restarted');
@@ -623,11 +623,11 @@ class PredictiveAnalytics {
             const { cpu, memory } = data.performance;
             
             if (cpu > 70) {
-                this.trends.cpu = 'increasing';
+                this.trends.cpu = 'increasing'
             }
             
             if (memory > 80) {
-                this.trends.memory = 'high';
+                this.trends.memory = 'high'
             }
         }
     }
@@ -637,20 +637,20 @@ class PredictiveAnalytics {
         
         if (this.trends.cpu === 'increasing') {
             predictions.push({
-                type: 'performance',
-                issue: 'CPU usage may exceed threshold',
-                probability: 'high',
-                timeframe: '24 hours'
-            });
+                type: "'performance'",
+                issue: "'CPU usage may exceed threshold'",
+                probability: "'high'",
+                timeframe: "'24 hours'
+            "});
         }
         
         if (this.trends.memory === 'high') {
             predictions.push({
-                type: 'performance',
-                issue: 'Memory usage may cause slowdown',
-                probability: 'medium',
-                timeframe: '12 hours'
-            });
+                type: "'performance'",
+                issue: "'Memory usage may cause slowdown'",
+                probability: "'medium'",
+                timeframe: "'12 hours'
+            "});
         }
         
         this.predictions = predictions;
@@ -663,9 +663,9 @@ class PredictiveAnalytics {
             switch (prediction.type) {
                 case 'performance':
                     recommendations.push({
-                        action: 'optimize_performance',
-                        priority: prediction.probability === 'high' ? 'urgent' : 'normal',
-                        description: \`Proactively address \${prediction.issue}\`
+                        action: "'optimize_performance'",
+                        priority: "prediction.probability === 'high' ? 'urgent' : 'normal'",
+                        description: "\Proactively address \${prediction.issue"}\`
                     });
                     break;
             }
@@ -677,10 +677,10 @@ class PredictiveAnalytics {
         await fs.promises.writeFile(
             path.join(__dirname, 'logs', 'predictions.json'),
             JSON.stringify({
-                predictions: this.predictions,
-                recommendations: this.recommendations,
-                timestamp: new Date().toISOString()
-            }, null, 2)
+                predictions: "this.predictions",
+                recommendations: "this.recommendations",
+                timestamp: "new Date().toISOString()
+            "}, null, 2)
         );
     }
 }
@@ -721,7 +721,7 @@ module.exports = PredictiveAnalytics;
         
         // Update cron configuration
         const cronConfig = Object.entries(optimizedSchedules)
-            .map(([name, schedule]) => `# ${name} - ${schedule}`)
+            .map(([name, schedule]) => # ${name} - ${schedule}`)
             .join('\n');
         
         await fs.promises.writeFile(
@@ -748,17 +748,17 @@ class ProcessManager {
         }
         
         const process = spawn(command, [], {
-            stdio: 'pipe',
+            stdio: "'pipe'",
             ...options
         });
         
         this.processes.set(name, {
             process,
-            startTime: Date.now(),
+            startTime: "Date.now()",
             command
         });
         
-        console.log(\`✅ Started process: \${name}\`);
+        console.log(\✅ Started process: "\${name"}\`);
         
         return process;
     }
@@ -771,7 +771,7 @@ class ProcessManager {
             if (now - data.startTime > maxAge) {
                 data.process.kill();
                 this.processes.delete(name);
-                console.log(\`🧹 Cleaned up old process: \${name}\`);
+                console.log(\`🧹 Cleaned up old process: "\${name"}\);
             }
         }
     }
@@ -830,7 +830,7 @@ class ResourceOptimizer {
                 
                 if (now - stats.mtime.getTime() > maxAge) {
                     await fs.promises.unlink(filePath);
-                    console.log(\`🧹 Cleaned up old log: \${file}\`);
+                    console.log(\🧹 Cleaned up old log: "\${file"}\`);
                 }
             }
         } catch (error) {
@@ -864,7 +864,7 @@ module.exports = ResourceOptimizer;
     }
 
     async createMonitoringDashboard() {
-        const dashboardCode = `
+        const dashboardCode = 
 const fs = require('fs');
 const path = require('path');
 
@@ -920,31 +920,31 @@ class MonitoringDashboard {
 <head>
     <title>Automation Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .metric { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
-        .warning { background: #fff3cd; border-left: 4px solid #ffc107; }
-        .error { background: #f8d7da; border-left: 4px solid #dc3545; }
-        .success { background: #d4edda; border-left: 4px solid #28a745; }
+        body { font-family: "Arial", sans-serif; margin: "20px; "}
+        .metric { background: "#f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; "}
+        .warning { background: "#fff3cd; border-left: 4px solid #ffc107; "}
+        .error { background: "#f8d7da; border-left: 4px solid #dc3545; "}
+        .success { background: "#d4edda; border-left: 4px solid #28a745; "}
     </style>
 </head>
 <body>
     <h1>🤖 Automation System Dashboard</h1>
     
-    <div class="metric">
+    <div class=metric">
         <h3>📊 System Performance</h3>
-        <p>CPU: \${this.metrics.intelligent?.performance?.cpu || 'N/A'}%</p>
-        <p>Memory: \${this.metrics.intelligent?.performance?.memory || 'N/A'}%</p>
-        <p>Disk: \${this.metrics.intelligent?.performance?.disk || 'N/A'}%</p>
+        <p>CPU: "\${this.metrics.intelligent?.performance?.cpu || 'N/A'"}%</p>
+        <p>Memory: "\${this.metrics.intelligent?.performance?.memory || 'N/A'"}%</p>
+        <p>Disk: "\${this.metrics.intelligent?.performance?.disk || 'N/A'"}%</p>
     </div>
     
-    <div class="metric">
+    <div class="metric>
         <h3>⚠️ Warnings</h3>
         <ul>
-            \${(this.metrics.intelligent?.warnings || []).map(w => \`<li>\${w}</li>\`).join('')}
+            \${(this.metrics.intelligent?.warnings || []).map(w => \`<li>\${w}</li>\).join('')}
         </ul>
     </div>
     
-    <div class="metric">
+    <div class=metric">
         <h3>💡 Suggestions</h3>
         <ul>
             \${(this.metrics.intelligent?.suggestions || []).map(s => \`<li>\${s}</li>\`).join('')}
@@ -954,7 +954,7 @@ class MonitoringDashboard {
     <div class="metric">
         <h3>🔮 Predictions</h3>
         <ul>
-            \${(this.metrics.predictions?.predictions || []).map(p => \`<li>\${p.issue} (\${p.probability} probability)</li>\`).join('')}
+            \${(this.metrics.predictions?.predictions || []).map(p => \<li>\${p.issue} (\${p.probability} probability)</li>\`).join('')}
         </ul>
     </div>
     
@@ -969,7 +969,7 @@ class MonitoringDashboard {
 }
 
 module.exports = MonitoringDashboard;
-`
+
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'monitoring-dashboard.js'),
@@ -977,7 +977,7 @@ module.exports = MonitoringDashboard;
         );
         
         // Create dashboard directory
-        await fs.promises.mkdir(path.join(this.automationDir, 'dashboard'), { recursive: true });
+        await fs.promises.mkdir(path.join(this.automationDir, 'dashboard'), { recursive: "true "});
     }
 
     async createAlertSystem() {
@@ -989,10 +989,10 @@ class AlertSystem {
     constructor() {
         this.alerts = [];
         this.thresholds = {
-            cpu: 80,
-            memory: 85,
-            errors: 5
-        };
+            cpu: "80",
+            memory: "85",
+            errors: "5
+        "};
     }
 
     async checkAlerts(metrics) {
@@ -1000,26 +1000,26 @@ class AlertSystem {
         
         if (metrics.performance?.cpu > this.thresholds.cpu) {
             alerts.push({
-                level: 'warning',
-                message: 'High CPU usage detected',
-                value: metrics.performance.cpu
-            });
+                level: "'warning'",
+                message: "'High CPU usage detected'",
+                value: "metrics.performance.cpu
+            "});
         }
         
         if (metrics.performance?.memory > this.thresholds.memory) {
             alerts.push({
-                level: 'warning',
-                message: 'High memory usage detected',
-                value: metrics.performance.memory
-            });
+                level: "'warning'",
+                message: "'High memory usage detected'",
+                value: "metrics.performance.memory
+            "});
         }
         
         if (metrics.errors?.length > this.thresholds.errors) {
             alerts.push({
-                level: 'error',
-                message: 'High error rate detected',
-                value: metrics.errors.length
-            });
+                level: "'error'",
+                message: "'High error rate detected'",
+                value: "metrics.errors.length
+            "});
         }
         
         this.alerts = alerts;
@@ -1044,7 +1044,7 @@ module.exports = AlertSystem;
     }
 
     async createReportingSystem() {
-        const reportingCode = `
+        const reportingCode = 
 const fs = require('fs');
 const path = require('path');
 
@@ -1056,11 +1056,11 @@ class ReportingSystem {
     async generateReport() {
         try {
             const report = {
-                timestamp: new Date().toISOString(),
-                summary: await this.generateSummary(),
-                details: await this.generateDetails(),
-                recommendations: await this.generateRecommendations()
-            };
+                timestamp: "new Date().toISOString()",
+                summary: "await this.generateSummary()",
+                details: "await this.generateDetails()",
+                recommendations: "await this.generateRecommendations()
+            "};
             
             this.reports.push(report);
             
@@ -1080,10 +1080,10 @@ class ReportingSystem {
     async generateSummary() {
         // Implementation for summary generation
         return {
-            status: 'healthy',
-            performance: 'good',
-            issues: 0
-        };
+            status: "'healthy'",
+            performance: "'good'",
+            issues: "0
+        "};
     }
 
     async generateDetails() {
@@ -1098,7 +1098,7 @@ class ReportingSystem {
 }
 
 module.exports = ReportingSystem;
-`
+
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'reporting-system.js'),
@@ -1106,7 +1106,7 @@ module.exports = ReportingSystem;
         );
         
         // Create reports directory
-        await fs.promises.mkdir(path.join(this.automationDir, 'logs', 'reports'), { recursive: true });
+        await fs.promises.mkdir(path.join(this.automationDir, 'logs', 'reports'), { recursive: "true "});
     }
 
     async restartAndTestSystems() {
@@ -1137,9 +1137,9 @@ module.exports = ReportingSystem;
         for (const system of systems) {
             try {
                 await execAsync(`${system} > automation/logs/intelligent-${Date.now()}.log 2>&1 &`);
-                console.log(`✅ Started: ${system}`);
+                console.log(✅ Started: "${system"}`);
             } catch (error) {
-                console.error(`❌ Failed to start: ${system}`, error.message);
+                console.error(`❌ Failed to start: "${system"}, error.message);
             }
         }
     }
@@ -1162,12 +1162,12 @@ module.exports = ReportingSystem;
                 await execAsync(test);
                 passed++;
             } catch (error) {
-                console.error(`❌ Test failed: ${test}`);
+                console.error(`❌ Test failed: "${test"}`);
                 failed++;
             }
         }
         
-        console.log(`✅ ${passed} tests passed, ${failed} failed`);
+        console.log(✅ ${passed} tests passed, ${failed} failed`);
     }
 
     async getJSFiles() {

@@ -34,7 +34,7 @@ function addImageImport(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }
@@ -47,8 +47,8 @@ function replaceImgTags(filePath) {
     
     // Replace img tags with Image components
     content = content.replace(
-      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className="""""([^>]+)\s*\/?>/g,</div>
-      '<Image src=$1 alt=$2 className=$3 width={400} height={300} /">'
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=""([^>]+)\s*\/?>/g,</div>
+      '<Image src=$1 alt=$2 className=$3 width={400} height={300} />'
     );
     
     content = content.replace(</div>
@@ -63,7 +63,7 @@ function replaceImgTags(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: ", error.message)
     return false;
   }
 }
@@ -88,10 +88,10 @@ function addUseCallback(filePath) {
     if (functionMatches) {
       for (const match of functionMatches) {
         const $1 = match.match(/const\s+(\w+)\s*=/)[1];
-        if (content.includes("}, [${funcName}]")) {
+        if (content.includes(}, [${funcName}]")) {
           // Wrap function with useCallback
-          const $1 = new RegExp("const\\s+${funcName}\\s*=\\s*\\([^)]*\\)\\s*=>\\s*{", 'g');
-          content = content.replace(funcRegex, "const ${funcName} = useCallback(([^)]*) => {");
+          const $1 = new RegExp("const\\s+${funcName}\\s*=\\s*\\([^)]*\\)\\s*=>\\s*{, 'g');
+          content = content.replace(funcRegex, const ${funcName} = useCallback(([^)]*) => {");
           modified = true;
         }
       }
@@ -104,7 +104,7 @@ function addUseCallback(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }
@@ -134,7 +134,7 @@ function processFiles() {
           
           // Replace img tags
           if (replaceImgTags(file)) {
-            console.log("Replaced img tags in ${file}");
+            console.log(Replaced img tags in ${file});
             fileModified = true;
           }
           
@@ -152,7 +152,7 @@ function processFiles() {
     }
   });
   
-  console.log("\nTotal files modified: ${totalModified}");
+  console.log("\nTotal files modified: "${totalModified"}");
 }
 
 // Helper function to get all files recursively;

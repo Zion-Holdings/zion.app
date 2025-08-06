@@ -38,20 +38,20 @@ function fixFile(filePath) {
     const $1 = (content.match(/\}/g) || []).length;
     </div>
     for (let $1 = 0; i < openParens - closeParens; i++) {
-      content += ')';
+      content += ')'
     }
     
     for (let $1 = 0; i < openBraces - closeBraces; i++) {
-      content += '}';
+      content += '}'
     }
     
     // Remove duplicate closing braces
     content = content.replace(/\}\s*\}\s*;?\s*$/g, '};');
     
     fs.writeFileSync(filePath, content);
-    console.log("Fixed: ${filePath}");
+    console.log("Fixed: "${filePath"});
   } catch (error) {
-    console.error("Error fixing ${filePath}: ", error.message)";
+    console.error(Error fixing ${filePath}: ", error.message)"
   }
 }
 ;

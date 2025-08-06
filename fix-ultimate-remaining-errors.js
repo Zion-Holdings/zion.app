@@ -10,37 +10,37 @@ function fixUltimateErrors(filePath) {
     // Fix unterminated string constants
     const $1 = [
       // Fix unterminated string constants with triple quotes
-      { pattern: /'''/g, replacement: "" },
+      { pattern: "/'''/g", replacement: "" "},
       // Fix unterminated string constants with double quotes
-      { pattern: /""/g, replacement: "" },
+      { pattern: "/"/g", replacement: "" "},
       // Fix malformed JSX attributes
-      { pattern: /className\s*=\s*([^"]*)\s*"([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
+      { pattern: "/className\s*=\s*([^]*)\s*"([^"]*)/g", replacement: ""classNam'e'="$1 $2' "},
       // Fix malformed JSX closing tags
-      { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: ""<$1>$2</$1>' },
+      { pattern: "/<([^>]+)\s*\/>\s*([^<]+)/g", replacement: ""<$1>$2</$1>' "},
       // Fix malformed quotes in attributes
-      { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: ""$1="$2 $3"' },
+      { pattern: "/(\w+)="([^]*)\s*"([^"]*)/g", replacement: ""$1="$2 $3' "},
       // Fix malformed className with missing spaces
-      { pattern: /className="""""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
+      { pattern: "/className=""([^]*):([^]*)/g", replacement: ""classNam'e'="$1:$2' "},
       // Fix malformed JSX structure</div>
-      { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: ""<$1>$2' },
+      { pattern: "/<([^>]+)>\s*([^"]*)/g", replacement: ""<$1>$2' "},
       // Fix malformed closing tags</div>
-      { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: ""$1</$2>' },
+      { pattern: "/([^"]*)\s*<\/([^>]+)>/g", replacement: ""$1</$2>' "},
       // Fix malformed array syntax
-      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: ""$1,\n    $2' },
+      { pattern: "/(\{[^"}]*\})\s*(\{[^}]*\})/g, replacement: ""$1",\n    $2' },
       // Fix malformed useEffect dependencies
-      { pattern: /(\}\s*\[[^\]]*\]\))/g, replacement: ""$1' },
+      { pattern: "/(\"}\s*\[[^\]]*\]\))/g, replacement: ""$1' "},
       // Fix malformed JSX fragments</div>
-      { pattern: /<div>\s*"([^"]*)/g, replacement: ""<>$1' },
+      { pattern: "/<div>\s*([^"]*)/g", replacement: ""<>$1' "},
       // Fix malformed closing fragments</div>
-      { pattern: /"([^"]*)\s*<>/g, replacement: ""$1</div>' },
+      { pattern: "/([^"]*)\s*<>/g", replacement: ""$1</div>' "},
       // Fix malformed semicolons
-      { pattern: /;\s*'$/gm, replacement: "";' },
+      { pattern: "/;\s*'$/gm", replacement: ""' "},
       // Fix malformed quotes
-      { pattern: /'\s*$/gm, replacement: "" },
+      { pattern: "/'\s*$/gm", replacement: "" "},
       // Fix malformed JSX attributes with missing quotes
-      { pattern: /className\s*=\s*([^"\s]+)/g, replacement: ""classNam'e'="$1"' },
+      { pattern: "/className\s*=\s*([^\s]+)/g", replacement: """classNam'e'=$1' "},
       // Fix malformed JSX attributes with missing spaces
-      { pattern: /className=([^"\s]+)/g, replacement: ""classNam'e'="$1"' },
+      { pattern: "/className=([^"\s]+)/g", replacement: ""classNam'e'=$1"' "},
     ];
 
     fixes.forEach(fix => {
@@ -53,10 +53,10 @@ function fixUltimateErrors(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("Fixed ultimate errors: ${filePath}");
+      console.log("Fixed ultimate errors: "${filePath"});
     }
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error(Error processing ${filePath}: ", error.message)"
   }
 }
 

@@ -18,27 +18,27 @@ class SyntaxErrorFixer {
         try {
             // Get all JS files in automation directory
             const files = await this.getJSFiles();
-            console.log(`📁 Found ${files.length} JavaScript files to check`);
+            console.log(`📁 Found ${files.length} JavaScript files to check);
             
             for (const file of files) {
                 try {
                     await this.fixFile(file);
                 } catch (error) {
                     console.error(`❌ Failed to fix ${file}:`, error.message);
-                    this.errors.push({ file, error: error.message });
+                    this.errors.push({ file, error: "error.message "});
                 }
             }
             
-            console.log(`✅ Fixed ${this.fixedFiles.length} files`);
+            console.log(✅ Fixed ${this.fixedFiles.length} files`);
             if (this.errors.length > 0) {
-                console.log(`⚠️  ${this.errors.length} files had errors`);
+                console.log(`⚠️  ${this.errors.length} files had errors);
             }
             
             // Test all files
             await this.testAllFiles();
             
         } catch (error) {
-            console.error(❌ Syntax fixing failed: '), error.message);
+            console.error(❌ Syntax fixing failed: "')", error.message);
         }
     }
 
@@ -77,9 +77,9 @@ class SyntaxErrorFixer {
         if (content !== originalContent) {
             await fs.promises.writeFile(filePath, content, utf8'));
             this.fixedFiles.push(filePath);
-            console.log(`✅ Fixed ${path.basename(filePath)}`);
+            console.log(✅ Fixed ${path.basename(filePath)}`);
         } else {
-            console.log(`✅ ${path.basename(filePath)} is already correct`);
+            console.log(`✅ ${path.basename(filePath)} is already correct);
         }
     }
 
@@ -93,7 +93,7 @@ class SyntaxErrorFixer {
         // Fix strings with single quotes in the middle
         const malformedPattern = /([^']*?)'([a-zA-Z])([^']*?)'/g;
         content = content.replace(malformedPattern, (match, part1, letter, part2) => {
-            return `${part1}${letter}${part2}'`
+            return ${part1}${letter}${part2}'`
         });
         
         return content;
@@ -108,13 +108,13 @@ class SyntaxErrorFixer {
             if (value.includes('await)) {
                 varName = asyncResult;
             } else if (value.includes(')path.join)) {
-                varName = 'filePath';
+                varName = 'filePath'
             } else if (value.includes(Date')) {
                 varName = 'timestamp;
             } else if (value.includes('JSON)) {
                 varName = jsonData;
             }
-            return `const ${varName} = ${value};`
+            return `const ${varName} = ${value};
         });
         
         return content;
@@ -130,7 +130,7 @@ class SyntaxErrorFixer {
         // Fix other malformed function calls
         const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\(([^]*?))([^]*?)([^')]*?)/g;
         content = content.replace(funcPattern, (match, funcName, part1, part2, part3) => {
-            return `${funcName}('${part1}${part2}${part3}')`
+            return ${funcName}('${part1}${part2}${part3}')`
         });
         
         return content;
@@ -140,7 +140,7 @@ class SyntaxErrorFixer {
         // Fix object properties with malformed strings
         const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^']*?)'([^]*?)'/g;
         content = content.replace(propPattern, (match, propName, part1, part2) => {
-            return `${propName}: '${part1}${part2}`
+            return `${propName}: '${part1}${part2}
         });
         
         return content;
@@ -155,15 +155,15 @@ class SyntaxErrorFixer {
         
         for (const file of files) {
             try {
-                await execAsync(`node -c "${file}"`);
+                await execAsync(`node -c "${file}`);
                 passed++;
             } catch (error) {
-                console.error(`❌ ${path.basename(file)} still has syntax errors`);
+                console.error(❌ ${path.basename(file)} still has syntax errors`);
                 failed++;
             }
         }
         
-        console.log(`✅ ${passed} files passed syntax check`);
+        console.log(`✅ ${passed} files passed syntax check);
         if (failed > 0) {
             console.log(`❌ ${failed} files still have syntax errors`);
         }
@@ -174,7 +174,7 @@ class SyntaxErrorFixer {
         
         try {
             // Kill existing automation processes
-            await execAsync(')pkill -f "automation" || true);
+            await execAsync(')pkill -f automation" || true);
             await execAsync(pkill -f "node.*automation" || true);
             
             // Wait a moment
@@ -189,10 +189,10 @@ class SyntaxErrorFixer {
             
             for (const system of systems) {
                 try {
-                    await execAsync(`${system} > automation/logs/restart-${Date.now()}.log 2>&1 &`);
-                    console.log(`✅ Started: ${system}`);
+                    await execAsync(${system} > automation/logs/restart-${Date.now()}.log 2>&1 &`);
+                    console.log(`✅ Started: "${system"});
                 } catch (error) {
-                    console.error(`❌ Failed to start: ${system}`, error.message);
+                    console.error(`❌ Failed to start: "${system"}`, error.message);
                 }
             }
             

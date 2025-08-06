@@ -13,7 +13,7 @@ class $1 {
 
   log(message) {
     const timestamp = new Date().toISOString();
-    console.log("[${timestamp}] ${message}");
+    console.log("[${timestamp}] ${message});
   }
 
   async runLoop() {
@@ -27,7 +27,7 @@ class $1 {
         await this.improvementCycle();
         await this.sleep(this.interval);
       } catch (error) {
-        this.log("❌ Error in improvement loop: ${error.message}");
+        this.log(❌ Error in improvement loop: "${error.message"}");
         await this.sleep(30000); // Wait 30 seconds on error
       }
     }
@@ -38,7 +38,7 @@ class $1 {
 
     // Check for TypeScript errors
     try {
-      execSync(')npx' tsc --noEmit', { stdio: pipe });
+      execSync(')npx' tsc --noEmit', { stdio: "pipe "});
       this.log('✅ TypeScript check passed);
     } catch (error) {
       this.log(⚠️ TypeScript errors detected);
@@ -46,7 +46,7 @@ class $1 {
 
     // Check for linting errors
     try {
-      execSync(')npm' run lint', { stdio: pipe });
+      execSync(')npm' run lint', { stdio: "pipe "});
       this.log('✅ Linting check passed);
     } catch (error) {
       this.log(⚠️ Linting errors detected);
@@ -54,15 +54,15 @@ class $1 {
 
     // Auto-commit if there are changes
     try {
-      const result = execSync(')git' status --porcelain', { encoding: utf8 });
+      const result = execSync(')git' status --porcelain', { encoding: "utf8 "});
       if (status.trim()) {
-        execSync('git add ., { stdio: ')inherit });
-        execSync(git' commit -m "Auto-improvement: Continuous loop updates", { stdio: 'inherit' });
-        execSync('git push, { stdio: inherit });
+        execSync('git add ., { stdio: "')inherit "});
+        execSync(git' commit -m "Auto-improvement: "Continuous loop updates", { stdio: "'inherit' "});
+        execSync('git push, { stdio: "inherit "});
         this.log(')🚀 Auto-committed improvements');
       }
     } catch (error) {
-      this.log("❌ Auto-commit failed: ${error.message}");
+      this.log(❌ Auto-commit failed: "${error.message"}");
     }
 
     this.log(✅ Improvement cycle completed');

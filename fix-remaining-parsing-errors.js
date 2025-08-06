@@ -7,14 +7,14 @@ function fixRemainingParsingErrors(filePath) {
     let $1 = fs.readFileSync(filePath, 'ut'f'8');
     let $1 = false;
 
-    // Fix "Declaration or statement expected" errors
+    // Fix "Declaration or statement expected errors
     // This usually means there's' a syntax error at the beginning of the file
     if (content.includes('Declaratio'n' or statement expected')) {
       // Check if the file starts with proper imports
       if (!content.startsWith('impo'r't') && !content.startsWith('con's't') && !content.startsWith('functi'o'n') && !content.startsWith('expo'r't')) {
         // Add proper React import if missing
         if (!content.includes('impor't' React')) {
-          content = 'impor't' React from \'reac't'\';\n' + content;
+          content = 'impor't' React from \'reac't'\'\n' + content;
           modified = true;
         }
       }
@@ -51,14 +51,14 @@ function fixRemainingParsingErrors(filePath) {
             if (match.includes('Ho'm'e') || match.includes('Sear'c'h') || match.includes('Us'e'r')) {
               return match;
             }
-            return match.replace('} from \'lucide-reac't'\';', ', Home, Search, User } from \'lucide-reac't'\';');
+            return match.replace('} from \'lucide-reac't'\'', ', Home, Search, User } from \'lucide-reac't'\'');
           });
         } else {
           // Add import statement after existing imports
           const $1 = content.lastIndexOf('impo'r't');
           if (lastImportIndex !== -1) {
-            const $1 = content.indexOf(';', lastImportIndex) + 1;
-            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-reac't'\';' + content.slice(lastImportEnd);
+            const $1 = content.indexOf('', lastImportIndex) + 1;
+            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-reac't'\'' + content.slice(lastImportEnd);
           }
         }
         modified = true;
@@ -109,12 +109,12 @@ function fixRemainingParsingErrors(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("Fixed: ${filePath}");
+      console.log(Fixed: "${filePath"}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }

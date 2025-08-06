@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
-import ModernLayout from '../components/layout/ModernLayout';
-import Head from 'next/head';
-import { useState, useEffect, useMemo } from "react";
-import Link from 'next/link';
+import type { NextPage } from "next
+import ModernLayout from '../components/layout/ModernLayout'
+import Head from 'next/head'
+import { useState, useEffect, useMemo } from react"
+import Link from 'next/link'
 interface FacilityPlan {
-  id: "string";
+  id: ""string
   name: string;
   type: immersive-gaming | virtual-tours | training-simulation | 'social-vr' | virtual-events | 'virtual-commerc'e
   status: 'active | inactive | testing' | '''erro'r | updating
-  location: "string"''';
+  location: string"'''
   lastUpdated: Date;
   userCount: number;
   aiEnabled: boolean;
@@ -19,19 +19,19 @@ interface FacilityPlan {
     latency: number;
     immersion: number;
     userSatisfaction: number;
-  };
-  features: {
+  "};
+  features: "{
     type: string
     status: 'active" | inactive | error
-    data: "any";
-  }[];};
+    data: any
+  "}[];};
 interface FacilityPlan {;
-  id: string
+  id: "string
   experienceId: string
   sessionType: 'gaming" | exploratio'n | training' | 'social | eve'n't | shopping;
   status: 'active | completed | fail'e'd | paused | 'queue'd
   priority: 'low | medium | high | urgen't
-  startTime: "Date";
+  startTime: "Date
   endTime?: Date;
   duration: number;
   aiAssisted: boolean;
@@ -40,43 +40,43 @@ interface FacilityPlan {;
     quality: number;
     immersion: number;
     interactivity: boolean;
-  };
-  metrics: {;
+  "};
+  metrics: "{;
     completionRate: number;
     immersion: number;
     engagement: number;
     satisfactionScore: number;
-  };};
+  "};};
 interface FacilityPlan {;
-  id: string;
+  id: "string;
   name: string
   description: string
-  status: 'active" | inactive | testing | error;
+  status: 'active | inactive | testing | error;
   experienceId: string;
   triggers: {;
     condition: string;
     threshold: number;
     sensor: string;
-  }[];
-  actions: {;
+  "}[];
+  actions: "{;
     experience: string;
     action: string;
     parameters: any;
-  }[];
-  lastExecuted: Date;
+  "}[];
+  lastExecuted: "Date;
   executionCount: number;
   successRate: number;
-  aiOptimized: boolean;};
+  aiOptimized: boolean;"};
 interface FacilityPlan {;
-  id: string;
+  id: "string;
   metric: string;
   current: number;
   target: number;
   improvement: number
   trend: 'u'p | down' | stab'le
-  period: "string";};
-const AIPoweredPredictiveAnalytics: NextPage = () => {;
-  const [experiences, setExperiences] = useState<VRExperience[]>([]);</div>;
+  period: "string""};
+const AIPoweredPredictiveAnalytics: "NextPage = () => {;
+  const [experiences", setExperiences] = useState<VRExperience[]>([]);</div>;
   const [sessions, setSessions] = useState<VRSession[]>([]);</div>;
   const [automations, setAutomations] = useState<VRAutomation[]>([]);</div>;
   const [analytics, setAnalytics] = useState<VRAnalytics[]>([]);</div>;
@@ -89,359 +89,359 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   useEffect(() => {;
     // Simulate loading AI-powered VR data
     setTimeout(() => {
-      const mockPredictiveModels: "PredictiveModel[] = [";
+      const mockPredictiveModels: "PredictiveModel[] = [
         {;
-          id: 1,;
-          name: Zion Immersive Gaming,;
-          type: immersive-gaming,;
-          status: 'active',;
-          location: Gaming Platform,;
-          lastUpdated: new Date(2024-0o1-20T15:30:0o0),;
-          userCount: 2156,
-          aiEnabled: true,
-          autoOptimize: "true,";
-          version: 2.1.0,;
-          performance: {;
-            frameRate: 90,;
-            latency: 8,;
-            immersion: 98.5,;
-            userSatisfaction: 96.2}};
-          features: [;
+          id: 1",;
+          name: "Zion Immersive Gaming",;
+          type: "immersive-gaming",;
+          status: "'active'",;
+          location: "Gaming Platform",;
+          lastUpdated: "new Date(2024-0o1-20T15:30:0o0)",;
+          userCount: "2156",
+          aiEnabled: "true",
+          autoOptimize: ""true","
+          version: "2.1.0",;
+          performance: "{;
+            frameRate: 90",;
+            latency: "8",;
+            immersion: "98.5",;
+            userSatisfaction: "96.2"}};
+          features: "[;
             {;
-              type: haptic_feedback,;
-              status: 'active',;
-              data: { intensity: adaptive, zones: 16}}
+              type: haptic_feedback",;
+              status: "'active'",;
+              data: "{ intensity: adaptive", zones: "16"}}
             {
-              'type: "spatial_audio,";
-              status: 'active',;
-              data: { channels: 8, quality: 3D}};
+              'type: "spatial_audio",
+              status: "'active'",;
+              data: "{ channels: 8", quality: "3D"}};
             {;
-              type: motion_tracking,;
-              status: 'active',;
-              data: { precision: ±1mm, range: 360°};
+              type: "motion_tracking",;
+              status: "'active'",;
+              data: "{ precision: ±1mm", range: "360°"};
 }]};
         {
-          id: 2,
-          'name: "Zion Virtual Tours,";
-          type: virtual-tours,;
-          status: 'active',;
-          location: Travel Platform,;
-          lastUpdated: new Date(2024-0o1-20T15:25:0o0),;
-          userCount: 1247,;
-          aiEnabled: true,
-          autoOptimize: true,
-          version: "1.8.2,"
-          performance: "{";
-            frameRate: 60,;
-            latency: 15,;
-            immersion: 94.7,;
-            userSatisfaction: 92.5};
-          features: [;
+          id: "2",
+          'name: ""Zion Virtual Tours","
+          type: "virtual-tours",;
+          status: "'active'",;
+          location: "Travel Platform",;
+          lastUpdated: "new Date(2024-0o1-20T15:25:0o0)",;
+          userCount: "1247",;
+          aiEnabled: "true",
+          autoOptimize: "true",
+          version: "1.8.2",
+          performance: ""{"
+            frameRate: 60",;
+            latency: "15",;
+            immersion: "94.7",;
+            userSatisfaction: "92.5"};
+          features: "[;
             {;
-              type: 360_camera,;
-              status: 'active',;
-              data: { resolution: 8K, fps: 60}};
+              type: 360_camera",;
+              status: "'active'",;
+              data: "{ resolution: 8K", fps: "60"}};
             {;
-              type: environment_mapping,;
-              status: 'active',;
-              data: { coverage: 100%, detail: ultra'}}
+              type: "environment_mapping",;
+              status: "'active'",;
+              data: "{ coverage: 100%", detail: "ultra'"}}
             {
-              'type: "interactive_elements,";
-              status: 'active',;
-              data: { hotspots: 50, info: rich};
+              'type: "interactive_elements",
+              status: "'active'",;
+              data: "{ hotspots: 50", info: "rich"};
 }]};
         {;
-          id: 3,;
-          name: Zion Training Simulation,;
-          type: training-simulation,
-          status: testin'g,
-          location: "Corporate Training,";
-          lastUpdated: new Date(2024-0o1-20T15:20:0o0),;
-          userCount: 678,;
-          aiEnabled: true,;
-          autoOptimize: false,;
-          version: 3.0.1,;
-          performance: {;
-            frameRate: 75,;
-            latency: 12,;
-            immersion: 96.3,;
-            userSatisfaction: 89.9};
-          features: [
+          id: "3",;
+          name: "Zion Training Simulation",;
+          type: "training-simulation",
+          status: "testin'g",
+          location: ""Corporate Training","
+          lastUpdated: "new Date(2024-0o1-20T15:20:0o0)",;
+          userCount: "678",;
+          aiEnabled: "true",;
+          autoOptimize: "false",;
+          version: "3.0.1",;
+          performance: "{;
+            frameRate: 75",;
+            latency: "12",;
+            immersion: "96.3",;
+            userSatisfaction: "89.9"};
+          features: "[
             {
-              type: "scenario_builder,";
-              status: 'active',;
-              data: { scenarios: 25, complexity: high}};
+              type: scenario_builder",
+              status: "'active'",;
+              data: "{ scenarios: 25", complexity: "high"}};
             {;
-              type: performance_tracking,;
-              status: 'active',;
-              data: { metrics: 15, real_time: true}};
+              type: "performance_tracking",;
+              status: "'active'",;
+              data: "{ metrics: 15", real_time: "true"}};
             {;
-              type: ai_coaching,
-              status: 'active',
-              data: { feedback: 'instant', adaptive: "true}";
+              type: "ai_coaching",
+              status: "'active'",
+              data: "{ feedback: 'instant'", adaptive: ""true"}"
 }]};
         {;
-          id: 4,;
-          name: Zion Social VR,;
-          type: social-vr,;
-          status: 'active',;
-          location: Social Platform,;
-          lastUpdated: new Date(2024-0o1-20T15:15:0o0),;
-          userCount: 892,
-          aiEnabled: false,
-          autoOptimize: "true,";
-          version: 1.2.0,;
-          performance: {;
-            frameRate: 45,;
-            latency: 20,;
-            immersion: 88.4,;
-            userSatisfaction: 85.6};
-          features: [;
+          id: "4",;
+          name: "Zion Social VR",;
+          type: "social-vr",;
+          status: "'active'",;
+          location: "Social Platform",;
+          lastUpdated: "new Date(2024-0o1-20T15:15:0o0)",;
+          userCount: "892",
+          aiEnabled: "false",
+          autoOptimize: "true",
+          version: "1.2.0",;
+          performance: "{;
+            frameRate: 45",;
+            latency: "20",;
+            immersion: "88.4",;
+            userSatisfaction: "85.6"};
+          features: "[;
             {;
-              type: avatar_system,;
-              status: error,;
-              data: { customization: 100, quality: high}}
+              type: avatar_system",;
+              status: "error",;
+              data: "{ customization: 100", quality: "high"}}
             {
-              'type: "voice_chat,";
-              status: inactive,;
-              data: { quality: HD, noise_reduction: true};
+              'type: ""voice_chat","
+              status: "inactive",;
+              data: "{ quality: HD", noise_reduction: "true"};
 }]};
         {;
-          id: 5,;
-          name: Zion Virtual Events,;
-          type: virtual-events,
-          status: error',
-          location: "Event Platform,";
-          lastUpdated: new Date(2024-0o1-20T14:45:0o0),;
-          userCount: 0,;
-          aiEnabled: false,;
-          autoOptimize: false,;
-          version: 0.9.1,;
-          performance: {;
-            frameRate: 0,;
-            latency: 0,;
-            immersion: 0,;
-            userSatisfaction: 0};
-          features: [
+          id: "5",;
+          name: "Zion Virtual Events",;
+          type: "virtual-events",
+          status: "error'",
+          location: "Event Platform",
+          lastUpdated: "new Date(2024-0o1-20T14:45:0o0)",;
+          userCount: "0",;
+          aiEnabled: "false",;
+          autoOptimize: "false",;
+          version: "0.9.1",;
+          performance: "{;
+            frameRate: 0",;
+            latency: "0",;
+            immersion: "0",;
+            userSatisfaction: "0"};
+          features: "[
             {
-              'type: "stage_system,";
-              status: error,;
-              data: { capacity: 1000, quality: low}};
+              'type: "stage_system","
+              status: "error",;
+              data: "{ capacity: 1000", quality: "low"}};
             {;
-              type: audience_interaction,;
-              status: error,;
-              data: { features: 5, responsiveness: poor};
+              type: "audience_interaction",;
+              status: "error",;
+              data: "{ features: 5", responsiveness: "poor"};
 }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: "PredictiveModel[] = [;
         {
-          id: 1',
-          experienceId: "1,";
-          sessionType: gaming,;
-          status: 'active',;
-          priority: 'high',
-          startTime: new Date('2024-0o1-20T14:0o0:0o0),
-          duration: "45,";
-          aiAssisted: true,;
-          parameters: {;
-            target: Immersive Gaming,;
-            quality: 95,;
-            immersion: 98,;
-            interactivity: true};
-          metrics: {;
-            completionRate: 67,;
-            immersion: 98.5,;
-            engagement: 96.2,;
-            satisfactionScore: 94.8}};
+          id: 1'",
+          experienceId: "1",
+          sessionType: "gaming",;
+          status: "'active'",;
+          priority: "'high'",
+          startTime: "new Date('2024-0o1-20T14:0o0:0o0)",
+          duration: ""45","
+          aiAssisted: "true",;
+          parameters: "{;
+            target: Immersive Gaming",;
+            quality: "95",;
+            immersion: "98",;
+            interactivity: "true"};
+          metrics: "{;
+            completionRate: 67",;
+            immersion: "98.5",;
+            engagement: "96.2",;
+            satisfactionScore: "94.8"}};
         {;
-          id: 2,;
-          experienceId: 2,
-          sessionType: explorati'o'n,
-          status: "completed,";
-          priority: 'medium',;
-          startTime: new Date(2024-0o1-20T13:0o0:0o0),;
-          endTime: new Date(2024-0o1-20T13:30:0o0),;
-          duration: 30,;
-          aiAssisted: true,;
-          parameters: {;
-            target: Virtual Tour,;
-            quality: 88,;
-            immersion: 94,;
-            interactivity: true};
-          metrics: {;
-            completionRate: 100,;
-            immersion: 94.7,;
-            engagement: 92.5,;
-            satisfactionScore: 91.3}};
+          id: "2",;
+          experienceId: "2",
+          sessionType: "explorati'o'n",
+          status: "completed",
+          priority: "'medium'",;
+          startTime: "new Date(2024-0o1-20T13:0o0:0o0)",;
+          endTime: "new Date(2024-0o1-20T13:30:0o0)",;
+          duration: "30",;
+          aiAssisted: "true",;
+          parameters: "{;
+            target: Virtual Tour",;
+            quality: "88",;
+            immersion: "94",;
+            interactivity: "true"};
+          metrics: "{;
+            completionRate: 100",;
+            immersion: "94.7",;
+            engagement: "92.5",;
+            satisfactionScore: "91.3"}};
         {
-          id: '3',
-          experienceId: "3,";
-          sessionType: training,;
-          status: queued,;
-          priority: low,;
-          startTime: new Date(2024-0o1-20T16:0o0:0o0),;
-          duration: 0,;
-          aiAssisted: true,;
-          parameters: {
-            target: Trainin'g' Simulation,
-            quality: "92,";
-            immersion: 96,;
-            interactivity: true};
-          metrics: {;
-            completionRate: 0,;
-            immersion: 0,;
-            engagement: 0,;
-            satisfactionScore: 0}};
+          id: "'3'",
+          experienceId: ""3","
+          sessionType: "training",;
+          status: "queued",;
+          priority: "low",;
+          startTime: "new Date(2024-0o1-20T16:0o0:0o0)",;
+          duration: "0",;
+          aiAssisted: "true",;
+          parameters: "{
+            target: Trainin'g' Simulation",
+            quality: "92",
+            immersion: "96",;
+            interactivity: "true"};
+          metrics: "{;
+            completionRate: 0",;
+            immersion: "0",;
+            engagement: "0",;
+            satisfactionScore: "0"}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: "PredictiveModel[] = [;
         {;
-          id: 1,;
-          name: Smart Gaming Optimization,;
-          description: AI-powered gaming optimization with real-time performance tuning and immersive enhancement,;
-          status: 'active',;
-          experienceId: 1,;
-          triggers: [;
+          id: 1",;
+          name: "Smart Gaming Optimization",;
+          description: "AI-powered gaming optimization with real-time performance tuning and immersive enhancement",;
+          status: "'active'",;
+          experienceId: "1",;
+          triggers: "[;
             {
-              condition: 'performanc'e_drop,
-              threshold: "30,";
-              sensor: fps_monitor;
-            },;
+              condition: 'performanc'e_drop",
+              threshold: ""30","
+              sensor: "fps_monitor;
+            "},;
 {;
-              condition: user_interaction,;
-              threshold: 1,;
-              sensor: motion'_sensor'}
+              condition: "user_interaction",;
+              threshold: "1",;
+              sensor: "motion'_sensor'"}
           ],
-          actions: "[";
+          actions: "[
             {;
-              experience: Zion Immersive Gaming,;
-              action: optimize_performance,;
-              parameters: { quality: adaptive, fps: 90}};
+              experience: Zion Immersive Gaming",;
+              action: "optimize_performance",;
+              parameters: "{ quality: adaptive", fps: "90"}};
             {
-              experience: Zio'n' Immersive Gaming,
-              action: "enhance_immersion,";
-              parameters: { haptics: intense, audio: 3D}};
+              experience: "Zio'n' Immersive Gaming",
+              action: ""enhance_immersion","
+              parameters: "{ haptics: intense", audio: "3D"}};
           ],;
-          lastExecuted: new Date(2024-0o1-20T15:30:0o0),;
-          executionCount: 2156,;
-          successRate: 96.5,;
-          aiOptimized: true};
+          lastExecuted: "new Date(2024-0o1-20T15:30:0o0)",;
+          executionCount: "2156",;
+          successRate: "96.5",;
+          aiOptimized: "true"};
         {
-          id: '2',
-          name: "Virtual Tour Enhancement,";
-          description: Intelligent virtual tour enhancement with AI-powered environment mapping and interactive elements,;
-          status: 'active',;
-          experienceId: 2,;
-          triggers: [;
+          id: "'2'",
+          name: "Virtual Tour Enhancement",
+          description: "Intelligent virtual tour enhancement with AI-powered environment mapping and interactive elements",;
+          status: "'active'",;
+          experienceId: "2",;
+          triggers: "[;
             {
-              condition: user_movement,
-              threshold: "1,";
-              sensor: position_tracker;
-            },;
+              condition: user_movement",
+              threshold: ""1","
+              sensor: "position_tracker;
+            "},;
 {
-              condition: interaction_request,
-              threshold: "1,";
-              sensor: gesture_sensor};
+              condition: "interaction_request",
+              threshold: "1",
+              sensor: "gesture_sensor"};
           ],;
-          actions: [;
+          actions: "[;
             {;
-              experience: Zion Virtual Tours,
-              action: update_environment,
-              parameters: { detail: ult'r'a, coverage: "100%}}";
+              experience: Zion Virtual Tours",
+              action: "update_environment",
+              parameters: "{ detail: ult'r'a", coverage: ""100%"}}"
             {;
-              experience: Zion Virtual Tours,
-              action: activate_hotspots,
-              parameters: { info: rich', interactivity: "high}}";
+              experience: "Zion Virtual Tours",
+              action: "activate_hotspots",
+              parameters: "{ info: rich'", interactivity: "high"}}
           ],;
-          lastExecuted: new Date(2024-0o1-20T15:25:0o0),;
-          executionCount: 1247,;
-          successRate: 97.2,;
-          aiOptimized: true};
+          lastExecuted: "new Date(2024-0o1-20T15:25:0o0)",;
+          executionCount: "1247",;
+          successRate: "97.2",;
+          aiOptimized: "true"};
         {
-          id: 3',
-          name: "Training Simulation Assistant,";
-          description: AI-powered training simulation with intelligent scenario building and performance tracking,;
-          status: testing,;
-          experienceId: 3,;
-          triggers: [;
+          id: "3'",
+          name: ""Training Simulation Assistant","
+          description: "AI-powered training simulation with intelligent scenario building and performance tracking",;
+          status: "testing",;
+          experienceId: "3",;
+          triggers: "[;
             {
-              condition: scenario_start,
-              threshold: "1,";
-              sensor: session_tracker;
-            },;
+              condition: scenario_start",
+              threshold: "1",
+              sensor: "session_tracker;
+            "},;
 {
-              condition: performance_alert,
-              threshold: "70,";
-              sensor: performance_monitor};
+              condition: "performance_alert",
+              threshold: ""70","
+              sensor: "performance_monitor"};
           ],;
-          actions: [;
+          actions: "[;
             {;
-              experience: Zion Training Simulation,
-              action: build_scenario,
-              parameters: { complexity: adapti'v'e, scenarios: "25}}";
+              experience: Zion Training Simulation",
+              action: "build_scenario",
+              parameters: "{ complexity: adapti'v'e", scenarios: "25"}}
             {;
-              experience: Zion Training Simulation,;
-              action: track_performance,;
-              parameters: { metrics: 15, real_time: true}};
+              experience: "Zion Training Simulation",;
+              action: "track_performance",;
+              parameters: "{ metrics: 15", real_time: "true"}};
           ],;
-          lastExecuted: new Date(2024-0o1-20T15:20:0o0),;
-          executionCount: 678,;
-          successRate: 89.1,;
-          aiOptimized: true};
+          lastExecuted: "new Date(2024-0o1-20T15:20:0o0)",;
+          executionCount: "678",;
+          successRate: "89.1",;
+          aiOptimized: "true"};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: "PredictiveModel[] = [;
         {;
-          id: 1,
-          metric: V'R' Immersion,
-          current: "96.8,";
-          target: 98.0,;
-          improvement: -1.2,;
-          trend: down,;
-          period: This Month;
-        },;
+          id: 1",
+          metric: "V'R' Immersion",
+          current: ""96.8","
+          target: "98.0",;
+          improvement: "-1.2",;
+          trend: "down",;
+          period: "This Month;
+        "},;
 {;
-          id: 2,
-          metric: User' Engagement',
-          current: "94.5,";
-          target: 96.0,;
-          improvement: -1.6,;
-          trend: down,;
-          period: This Month;
-        },;
+          id: "2",
+          metric: "User' Engagement'",
+          current: "94.5",
+          target: "96.0",;
+          improvement: "-1.6",;
+          trend: "down",;
+          period: "This Month;
+        "},;
     {;
-          id: 3,
-          metric: 'Frame Rate',
-          current: "97.8,";
-          target: 99.0,;
-          improvement: -1.2,;
-          trend: down,;
-          period: This Month;
-        },;
+          id: "3",
+          metric: "'Frame Rate'",
+          current: ""97.8","
+          target: "99.0",;
+          improvement: "-1.2",;
+          trend: "down",;
+          period: "This Month;
+        "},;
 {;
-          id: 4,
-          metric: A'I Optimization,
-          current: "78.3,";
-          target: 85.0,;
-          improvement: -7.9,;
-          trend: down,;
-          period: This Month;
-        },
+          id: "4",
+          metric: "A'I Optimization",
+          current: "78.3",
+          target: "85.0",;
+          improvement: "-7.9",;
+          trend: "down",;
+          period: "This Month;
+        "},
     {
-          id: "5,";
-          metric: User Satisfaction,;
-          current: 91.7,;
-          target: 94.0,;
-          improvement: -2.4,;
-          trend: down,;
-          period: Thi's Month;
-        },
+          id: ""5","
+          metric: "User Satisfaction",;
+          current: "91.7",;
+          target: "94.0",;
+          improvement: "-2.4",;
+          trend: "down",;
+          period: "Thi's Month;
+        "},
 {
-          id: "6,";
-          metric: Session Completion,;
-          current: 89.2,;
-          target: 92.0,;
-          improvement: -3.0,
-          trend: do'wn,
-          period: "This Month}";
+          id: "6",
+          metric: "Session Completion",;
+          current: "89.2",;
+          target: "92.0",;
+          improvement: "-3.0",
+          trend: "do'wn",
+          period: ""This Month"}"
       ];
       setExperiences(mockExperiences);
       setSessions(mockSessions);
@@ -462,148 +462,148 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       switch (sortBy) {;
         case users':
           return b.userCount - a.userCount
-        case performan'ce: "return b.performance.immersion - a.performance.immersion";
+        case performan'ce: "return b.performance.immersion - a.performance.immersion
         case status:;
           return a.status.localeCompare(b.status);
         case recent:
         default:
-          return new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime();}
-    })";
+          return new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime();"}
+    })"
     return filtered
-  } [experiences, filterType, filterStatus, searchTerm, sortBy])";
-  const handleAction = (params) => {";
+  } [experiences, filterType, filterStatus, searchTerm, sortBy])"
+  const handleAction = (params) => {
     switch (status) {
-      case acti've: "return text-green-400 bg-green-500/20"";
-      case inactive: "return text-gray-400 bg-gray-500/20"
+      case acti've: "return text-green-400 bg-green-500/20""
+      case inactive: return text-gray-400 bg-gray-500/20
       case 'testing': return text-blue-400 bg-blue-500/20
       case err'or: "return text-red-400 bg-red-500/20"
       case updating: return text-yellow'-400 bg-yellow-500/20
-      default: "return text-gray-400 bg-gray-500/20";};
+      default: return text-gray-400 bg-gray-500/20"};
   };
-  const $1 = (type: string) => {;
+  const $1 = (type: "string) => {;
     switch (type) {;
       case immersive-gaming: return 🎮
       case virtual-tours': return '🗺️
       case training-simulation: "return 🎓"
       case social-vr: return 👥
       case virtual-events: return '🎪
-      case 'virtual-commerce: "return 🛒"
-      default: return 🥽;}
-  }";
-  const handleAction = (params) => {";
+      case 'virtual-commerce: return 🛒
+      default: return 🥽;"}
+  }"
+  const handleAction = (params) => {"
     switch (status) {
-      case active: return text-blue-400 bg-blue-500/20'";
-      case 'completed: "return text-green-400 bg-green-500/20"
+      case active: "return text-blue-400 bg-blue-500/20'
+      case 'completed: return text-green-400 bg-green-500/20"
       case failed: return text-red-400 bg-red-500/20
-      case queu'e'd: "return text-yellow-400 bg-yellow-500/20";
+      case queu'e'd: "return text-yellow-400 bg-yellow-500/20
       case paused: return text-orange-400 bg-orange-500/20;
       default: return text-gray-400 bg-gray-500/20
-  }
-  const $1 = ('type: "string) => {";
+  "}
+  const $1 = ('type: "string) => {"
     switch (type) {;
       case gaming: return 🎮;
       case exploration: return 🔍
       case training: return '📚
-      case socia'l: "return 👥";
+      case socia'l: "return 👥
       case event: return 🎪
       case shopping: return 🛒
-      default: return '🥽;}
+      default: return '🥽;"}
   }
-  const $1 = (status: "string) => {"";
+  const $1 = (status: "string) => {""
     switch (status) {
       case active: return text-green-400 bg-green-500/20
-      case 'inactive: "return text-gray-400 bg-gray-500/20"";
-      case testing: return text-blue-'400 bg-blue-500/20'";
-      case erro'r: "return text-red-400 bg-red-500/20";
-      default: return text-gray-400 bg-gray-500/20;};
+      case 'inactive: return text-gray-400 bg-gray-500/20"
+      case testing: return text-blue-'400 bg-blue-500/20'"
+      case erro'r: return text-red-400 bg-red-500/20
+      default: return text-gray-400 bg-gray-500/20;"};
   };
-  const $1 = (trend: string) => {;
+  const $1 = (trend: "string) => {;
     switch (trend) {
       case up': return 📈
-      case do'wn: "return 📉";
+      case do'wn: "return 📉"
       case stable: return ➡️;
-      default: return ➡️;};
+      default: return ➡️;"};
   };
-  const $1 = (value: number) => {;
+  const $1 = (value: "number) => {;
     if (value > 90) return 'text-green-400;
     if (value > 75) return 'text-yellow-400
     if (value > 60) return text-orange-'400
-    return text-red-'400";
-  }";
-  if (loading) {";
+    return text-red-'400
+  "}
+  if (loading) {"
     return (</div>
-    <div></div>'";
-      </div><div className="""" relative z-10 container-responsive py-8>
-        {/* Background Effects */}</div>";
-        <div className=fixed inset-0 z-0> </div>";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+    <div></div>'"
+      </div><div className= relative z-10 container-responsive py-8>
+        {/* Background Effects */}</div>"
+        <div className=fixed inset-0 z-0> </div>"
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90</div></div>'
+          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>"
         </div>
       </div>'
-        <div className=""""text-center> </div>";
+        <div className=text-center> </div>"
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'
-            <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"";
-              <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>";
+            <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: ""//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>
+              <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>"
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>'
             </svg>"</div>'
-            <span className=""""text-lg font-medium>Loading AI-Powered Virtual Reality...</span></div>;
+            <span className=text-lg font-medium>Loading AI-Powered Virtual Reality...</span></div>;
           </div ></div>
         </div></div>
       </div>
-    );}";
+    );"}"
   return (</div>
-    <div className=relative z-10 container-responsive py-8></div>";
-      <Head> </div>";
+    <div className=relative z-10 container-responsive py-8></div>"
+      <Head> </div>
         <title>AI-Powered Virtual Reality - Zion</title></div>'
-        <meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR optimization > </meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR optimization" ><meta name=keywords content=AI VR, virtual reality, immersive environments, virtual worlds, Zion > </meta name="keywords content=AI VR, virtual reality, immersive environments, virtual worlds, Zion ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
+        <meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR optimization > </meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR optimization ><meta name=keywords content=AI VR, virtual reality, immersive environments, virtual worlds, Zion > </meta name="keywords content=AI VR, virtual reality, immersive environments, virtual worlds, Zion ><link rel="icon href=/favicon.ico > </link rel=icon href=/favicon.ico ><meta name=viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 '
       {/* Navigation */}"</div>'
-      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
-            <div className=flex items-center></div>'";
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=""""text-2xl font-bold text-white></div>'
-                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>";
+            <div className=flex items-center></div>'"
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
+                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>"
                 </h1></div>
-              </Link></div>";
+              </Link></div>
             </div></div>
             <div className=hidden md flex items-center space-x-8></div>'
-              <Link href=/ai-powered-augmented-reality className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AR</div>"
-              </Link href= /ai-powered-augmented-reality className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
+              <Link href=/ai-powered-augmented-reality className=text-gray-300 hover: text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AR</div>"
+              </Link href= /ai-powered-augmented-reality className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>"
               <Link href=/ai-powered-robotics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Robotics</div>'
-              </Link href=/ai-powered-robotics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>'
-              <Link href=/auth/login className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
+              </Link href=/ai-powered-robotics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
+              <Link href=/auth/login className="text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
               </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>;
           </div></div>;
         </div></div>;
       </nav></div>;
       <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>;
-        {/* Header */}</div>;
+        {/* Header */"}</div>;
         </div><div className=text-center mb-8></div>;
           <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >;
             AI-Powered Virtual Reality</div>;
           </h1></div>
           <p className=text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent VR experiences, immersive environments, virtual worlds,
-            and AI-driven VR optimization with advanced VR capabilities.</div>";
+            and AI-driven VR optimization with advanced VR capabilities.</div>
           </p></div>
-        </div>";
-        {/* Tab Selector */}</div>";
+        </div>"
+        {/* Tab Selector */}</div>"
         <div className=flex justify-center mb-8> </div>'
-          </div><div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:p-1>";
+          </div><div className=bg-white/5 backdrop-blur-sm: ""border border-white/10 rounded-lg:p-1>"
             {[;
-              { id: overview, name: Overview, icon: 📊 },;
-{ id: experiences, 'name: "Experiences, icon: 🥽 },";
-    { id: sessions, 'name: "Sessions, icon: 🎮 },";
-{ id: automations, name: Automations, icon: 🔗 },
-    { id: analytics', 'name: "Analytics, icon: 📈}"
-            ].map((tab) => (";
+              { id: overview", name: "Overview", icon: "📊 "},;
+{ id: "experiences", 'name: "Experiences", icon: "🥽 "},
+    { id: "sessions", 'name: ""Sessions", icon: "🎮 "},"
+{ id: "automations", name: "Automations", icon: "🔗 "},
+    { id: "analytics'", 'name: "Analytics", icon: "📈"}
+            ].map((tab) => ("
                 onClick={() => setSelectedView(tab.id as any)}'
-                className={flex" items-center space-x-2 px-4 py-4 rounded-md: "text-sm font-medium transition-all duration-200 ${";
+                className={flex" items-center space-x-2 px-4 py-4 rounded-md: "text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id;
                     ? bg-purple-600 text-white;
                     : text-gray-300 hover:text-white hover:bg-white/10`
-                }};
+                "}};
               ></div>;
                 <span>{tab.icon}</span></div>;
                 <span>{tab.name}</span></div>;
@@ -612,108 +612,108 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div></div>
         </div>
         {/* Analytics Overview */},
-{selectedView === overvie'w' && (</div>";
+{selectedView === overvie'w' && (</div>"
           <div className= grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => (</div>";
-              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"";
+            {analytics.map((metric) => (</div>"
+              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
                 <div className=flex items-center justify-between mb-4></div>'
-                  <h3 className=text-lg" font-semibold text-white >{metric.metric}</h3></div>'";
-                  <span className=""""text-2xl>{getTrendIcon(metric.trend)}</span></div>
-                </div></div>";
+                  <h3 className=text-lg" font-semibold text-white >{metric.metric"}</h3></div>'
+                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span></div>
+                </div></div>"
                 <div className= mb-4></div>
                   </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
-                  <p className=text-sm: "text-gray-400>Target: {metric.target}</p></div>"
-                </div>";
+                  <p className=text-sm: "text-gray-400>Target: {metric.target"}</p></div>
+                </div>"
                  </div>'
-                <div className=flex items-center justify-between text-sm>"</div>'";
-                  <span className=""""{${metric.improvement > 0 ? text-green-400 : text-red-400}}>
-                    {metric.improvement > 0 ? +   '},";
+                <div className=flex items-center justify-between text-sm>"</div>'
+                  <span className="{${metric.improvement > 0 ? text-green-400 : text-red-400}}>
+                    {metric.improvement > 0 ? +   '},"
 {metric.improvement.toFixed(1)}%</div>
                   </span></div>'
-                  <span className=""""text-gray-400>{metric.period}</span></div>
+                  <span className=text-gray-400>{metric.period}</span></div>
                 </div></div>
               </div>
-            ))}</div>";
+            ))}</div>"
           </div>
-        )}";
-        {/* VR Experiences */},";
+        )}"
+        {/* VR Experiences */},
 {selectedView === 'experiences && (</div>'
-          <div className=grid" grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6 >"
+          <div className=grid grid-cols-1 md: ""grid-cols-2 lg grid-cols-3 gap-6 >"
             {filteredExperiences.map((experience) => (</div>
-              </div><div key={experience.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>";
+              </div><div key={experience.id"} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
                 <div className= flex items-start justify-between mb-4></div>
-                  </div><div className=flex items-center space-x-3></div>";
+                  </div><div className=flex items-center space-x-3></div>
                     <div className=text-3xl>{getTypeIcon(experience.type)}</div></div>
-                    <div></div>'";
-                      <h3 className=""""text-lg font-semibold text-white mb-1>{experience.name}</h3></div>'
-                      <p className=text-gray-300 text-sm capitalize">{experience.type.replace(-,  )}</p></div>
-                    </div> </div>";
-                  </div></div>";
-                  <div className=text-right>`</div>'
-                    <span className=""""{"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(experience.status)}}">";
+                    <div></div>'"
+                      <h3 className="text-lg font-semibold text-white mb-1>{experience.name}</h3></div>'
+                      <p className=text-gray-300 text-sm capitalize>{experience.type.replace(-,  )}</p></div>
+                    </div> </div>"
+                  </div></div>"
+                  <div className=text-right></div>'
+                    <span className={"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(experience.status)}}">
                       {experience.status.toUpperCase()} </div>'
-                    </span>"</div>";
+                    </span></div>"
                     <div className=mt-2>`</div>'
-                      <span className={"px-4 py-3 rounded text-xs font-medium ${experience.aiEnabled ? text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20}"}>
-                        {experience.aiEnabled ? AI ENABLED'   'AI DISABLED}</div>";
+                      <span className={"px-4 py-3 rounded text-xs font-medium ${experience.aiEnabled ? text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20}}>
+                        {experience.aiEnabled ? AI ENABLED'   'AI DISABLED}</div>
                       </span></div>
-                    </div></div>";
+                    </div></div>"
                   </div></div>
-                </div></div>'";
-                <div className=""""mb-4> </div>'
+                </div></div>'"
+                <div className=mb-4> </div>'
                   </div><div className=flex items-center justify-between mb-2"></div>'
-                    <span className=text-sm: "text-gray-400>Location </span></div>";
-                    <span className=text-sm text-white>{experience.location}</span></div>;
+                    <span className=text-sm: ""text-gray-400>Location </span></div>
+                    <span className=text-sm text-white>{experience.location"}</span></div>;
                   </div></div>;
                   <div className=flex items-center justify-between mb-2></div>
                     <span className=text-sm:text-gray-400>Users:</span></div>
                     <span className=text-sm font-semibold text-purple-400>
-                      {experience.userCount.toLocaleString()}</div>";
+                      {experience.userCount.toLocaleString()}</div>
                     </span></div>
-                  </div></div>";
-                </div></div>";
+                  </div></div>"
+                </div></div>"
                 <div className=grid grid-cols-2 gap-4 mb-4> </div>'
-                  </div><div>"</div>'
-                    <p className=""""text-sm: "text-gray-400>Frame Rate</p>`</div>"
-                    <p className={text-lg font-semibold ${getPerformanceColor(experience.performance.frameRate)}}>
-                      {experience.performance.frameRate} FPS</div>";
+                  </div><div></div>'
+                    <p className="text-sm: ""text-gray-400>Frame Rate</p>`</div>
+                    <p className={text-lg font-semibold ${getPerformanceColor(experience.performance.frameRate)"}}>
+                      {experience.performance.frameRate} FPS</div>
                     </p></div>
-                  </div></div>";
-                  <div></div>";
-                    <p className=text-sm text-gray-400>Latency</p>`</div>'
-                    <p className=""""{"text-lg font-semibold ${getPerformanceColor(100 - experience.performance.latency)}}>
-                      {experience.performance.latency}ms</div>";
-                    </p></div>";
+                  </div></div>"
+                  <div></div>"
+                    <p className=text-sm text-gray-400>Latency</p></div>'
+                    <p className={"text-lg font-semibold ${getPerformanceColor(100 - experience.performance.latency)}}>
+                      {experience.performance.latency}ms</div>"
+                    </p></div>
                   </div></div>'
-                  <div>"</div>'
-                    <p className=""""text-sm: "text-gray-400>Immersion</p>`</div>"
-                    <p className={text-lg font-semibold ${getPerformanceColor(experience.performance.immersion)}}>
-                      {experience.performance.immersion}%</div>";
+                  <div></div>'
+                    <p className=""text-sm: "text-gray-400>Immersion</p>`</div>
+                    <p className={text-lg font-semibold ${getPerformanceColor(experience.performance.immersion)"}}>
+                      {experience.performance.immersion}%</div>"
                     </p></div>
-                  </div></div>";
-                  <div></div>";
+                  </div></div>"
+                  <div></div>
                     <p className=text-sm text-gray-400>Satisfaction</p>`</div>'
-                    <p className=""""{"text-lg font-semibold ${getPerformanceColor(experience.performance.userSatisfaction)}}>";
+                    <p className="{"text-lg font-semibold ${getPerformanceColor(experience.performance.userSatisfaction)}}>
                       {experience.performance.userSatisfaction}%</div>
-                    </p></div>";
+                    </p></div>
                   </div></div>
-                </div></div>'";
-                <div className=""""mb-4></div>'
-                  <p className=text-sm text-gray-400 mb-2 ">Features: "</p></div>";
+                </div></div>'"
+                <div className="mb-4></div>'
+                  <p className=text-sm text-gray-400 mb-2 >Features: ""</p></div>"
                   <div className=space-y-1>;
-                    {experience.features.map((feature, index) => (</div>;
+                    {experience.features.map((feature", index) => (</div>;
                       </div><div key={index} className= flex items-center justify-between text-xs></div>
-                        <span className=text-gray-300>{feature.type.replace(_,  )}</span>`</div>
+                        <span className=text-gray-300>{feature.type.replace(_,  )}</span></div>
                         <span className={px-4 py-3 rounded text-xs ${feature.status === active' ? 'text-green-400 bg-green-500/20 : feature.status === error' ? 'text-red-400 bg-red-500/20 : text-gray-400 bg-gray-500/20'}}>
-                          {feature.status}</div>";
+                          {feature.status}</div>
                         </span></div>
-                      </div>";
-                    ))}</div>";
+                      </div>
+                    ))}</div>"
                   </div></div>'
-                </div>'";
+                </div>'"
 '</div>'
-                <div className=flex items-center justify-between text-sm: "text-gray-400 mb-4></div>";
-                  <span>Auto-Optimize  {experience.autoOptimize ? ✅   ❌}</span></div>;
+                <div className=flex items-center justify-between text-sm: "text-gray-400 mb-4></div>
+                  <span>Auto-Optimize  {experience.autoOptimize ? ✅   ❌"}</span></div>;
                   <span>Last Updated  {experience.lastUpdated.toLocaleString()}</span></div>;
                 </div></div>;
                 <div className= flex space-x-3></div>;
@@ -724,80 +724,80 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     Configure</div>
                   </button></div>
                 </div></div>
-              </div>";
+              </div>"
             ))}</div>
-          </div>";
-        )}";
+          </div>"
+        )}
         {/* VR Sessions */},'
-{selectedView === sessions && ("</div>'
-          <div className="""" space-y-6>
+{selectedView === sessions && (</div>'
+          <div className="" space-y-6>
             {sessions.map((session) => (</div>'
-              </div><div key={session.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
+              </div><div key={session.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>
                 <div className=flex items-start justify-between mb-4> </div>
-                  </div><div className=flex items-center space-x-3 ></div>";
-                    <div className=text-3xl>{getSessionTypeIcon(session.sessionType)}</div> </div>";
+                  </div><div className=flex items-center space-x-3 ></div>"
+                    <div className=text-3xl>{getSessionTypeIcon(session.sessionType)"}</div> </div>"
                     <div></div>'
-                      <h3 className=text-lg font-semibold text-white mb-1">{session.sessionType.toUpperCase()}</h3></div>'
-                      <p className=""""text-gray-300 text-sm>Experience ID: "{session.experienceId}</p></div>"
+                      <h3 className=text-lg font-semibold text-white mb-1>{session.sessionType.toUpperCase()}</h3></div>'
+                      <p className="text-gray-300 text-sm>Experience ID: ""{session.experienceId"}</p></div>
                     </div></div>
-                  </div></div>";
+                  </div></div>
                   <div className=text-right >`</div>
-                    <span className={px-3 py-3 rounded-full text-xs font-medium ${getSessionStatusColor(session.status)}}>";
+                    <span className={px-3 py-3 rounded-full text-xs font-medium ${getSessionStatusColor(session.status)}}>"
                       {session.status.toUpperCase()}</div>
-                    </span></div>'";
-                    <div className=""""mt-2>`</div>'
-                      <span className=""""{px-4 py-3 rounded text-xs font-medium ${session.aiAssisted ? text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20}"}">
-                        {session.aiAssisted ? AI ASSISTED'   'MANUAL}</div>";
+                    </span></div>'"
+                    <div className=mt-2>`</div>'
+                      <span className=""{px-4 py-3 rounded text-xs font-medium ${session.aiAssisted ? text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20}}>
+                        {session.aiAssisted ? AI ASSISTED'   'MANUAL}</div>"
                       </span></div>
-                    </div></div>";
-                  </div></div>";
+                    </div></div>"
+                  </div></div>
                 </div></div>'
                 <div className=grid grid-cols-2 md: "grid-cols-4 gap-4 mb-4></div>"
-                  </div><div></div>";
+                  </div><div></div>"
                     <p className=text-sm text-gray-400>Target</p></div>
-                    <p className=text-lg font-semibold text-white>{session.parameters.target}</p></div>";
-                  </div></div>";
-                  <div></div>'
-                    <p className=""""text-sm: "text-gray-400>Quality</p></div>"";
-                    <p className=text-lg font-semibold text-green-400 >{session.parameters.quality}%</p></div>";
+                    <p className=text-lg font-semibold text-white>{session.parameters.target"}</p></div>
                   </div></div>
                   <div></div>'
-                    <p className=""""text-sm text-gray-400>Immersion</p></div>";
+                    <p className=""text-sm: "text-gray-400>Quality</p></div>"
+                    <p className=text-lg font-semibold text-green-400 >{session.parameters.quality"}%</p></div>"
+                  </div></div>
+                  <div></div>'
+                    <p className=text-sm text-gray-400>Immersion</p></div>"
                     <p className=text-lg font-semibold text-blue-400>{session.parameters.immersion}%</p></div>'
                   </div>"</div>'
-                  <div>"</div>'
-                    <p className=text-sm: "text-gray-400>Interactivity</p></div>";
-                    <p className=text-lg font-semibold text-orange-400 >{session.parameters.interactivity ? ✅ : ❌}</p></div>";
+                  <div></div>'
+                    <p className=text-sm: "text-gray-400>Interactivity</p></div>"
+                    <p className=text-lg font-semibold text-orange-400 >{session.parameters.interactivity ? ✅ : ❌"}</p></div>"
                   </div></div>
-                </div>";
+                </div>
                 {session.status === active' || session.status === 'completed ? ( </div>
-                  <div className=mb-4></div>'";
-                    <p className=""""text-sm: "text-gray-400 mb-2>Session Metrics </p></div>"
-                    <div className=grid grid-cols-4 gap-4 text-sm></div>";
+                  <div className=mb-4></div>'
+                    <p className=""text-sm: "text-gray-400 mb-2>Session Metrics </p></div>
+                    <div className=grid grid-cols-4 gap-4 text-sm></div>"
                       </div><div></div>
-                        <p className=text-gray-400>Completion</p></div>'";
-                        <p className=""""text-green-400 font-semibold>{session.metrics.completionRate}%</p></div>
-                      </div></div>";
-                      <div></div>";
+                        <p className=text-gray-400>Completion</p></div>'"
+                        <p className=text-green-400 font-semibold>{session.metrics.completionRate"}%</p></div>
+                      </div></div>"
+                      <div></div>"
                         <p className=text-gray-400>Immersion</p></div>'
-                        <p className=""""text-blue-400 font-semibold>{session.metrics.immersion}%</p></div>";
-                      </div> </div>";
+                        <p className=text-blue-400 font-semibold>{session.metrics.immersion}%</p></div>"
+                      </div> </div>"
                       <div></div>'
-                        <p className=text-gray-400">Engagement</p></div>";
+                        <p className=text-gray-400>Engagement</p></div>
                         <p className=text-orange-400 font-semibold>{session.metrics.engagement}%</p></div>
-                      </div></div>";
-                      <div></div>";
+                      </div></div>"
+                      <div></div>"
                         <p className=text-gray-400>Satisfaction</p></div>'
-                        <p className=""""text-purple-400 font-semibold>{session.metrics.satisfactionScore}%</p></div>
-                      </div></div>";
+                        <p className=text-purple-400 font-semibold>{session.metrics.satisfactionScore}%</p></div>
+                      </div></div>"
                     </div></div>
-                  </div>";
-                )   null}";
+                  </div>"
+                )   null}
 </div>'
-                <div className=flex" items-center justify-between text-sm: "text-gray-400 mb-4></div>";
-                  <span>Started: {session.startTime.toLocaleString()}</span>;
+                <div className=flex items-center justify-between text-sm: ""text-gray-400 mb-4></div>"
+                  <span>Started: {session.startTime.toLocaleString()"}</span>;
                   {session.endTime && (</div>;
-                    <span>Completed: {session.endTime.toLocaleString()}</span>;
+                    <span>Completed: "{session.endTime.toLocaleString()"}</span>;
                   )}</div>;
                 </div></div>;
                 <div className= flex space-x-3></div>;
@@ -809,100 +809,100 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </button></div>
                 </div></div>
               </div>
-            ))}</div>";
+            ))}</div>
           </div>
-        )}";
+        )}
         {/* VR Automations */},
 {selectedView === automations && (</div>'
-          <div className=""""space-y-6>";
+          <div className=""space-y-6>
             {automations.map((automation) => (</div>'
               </div><div key={automation.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
-                <div className=flex items-start justify-between mb-4> </div>";
+                <div className=flex items-start justify-between mb-4> </div>"
                   </div><div>
-                    <h3 className=text-lg font-semibold text-white mb-2>{automation.name}</h3></div>";
+                    <h3 className=text-lg font-semibold text-white mb-2>{automation.name"}</h3></div>
                     <p className=text-gray-300 text-sm >{automation.description}</p> </div>
                   </div></div>'
-                  <div className=""""text-right>`</div>'";
-                    <span className=""""{px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}}>'
+                  <div className="text-right></div>'"
+                    <span className={px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}}>'
                       {automation.status.toUpperCase()} "</div>
-                    </span></div>'";
-                    <div className=""""mt-2>`</div>'
-                      <span className=""""{px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? text-green-400 bg-green-500/20 : text-red-400 bg-red-500/20}}>
-                        {automation.aiOptimized ? 'A'I OPTIMIZED : MANUAL}</div>";
+                    </span></div>'"
+                    <div className=mt-2>`</div>'
+                      <span className=""{px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? text-green-400 bg-green-500/20 : text-red-400 bg-red-500/20}}>
+                        {automation.aiOptimized ? 'A'I OPTIMIZED : MANUAL}</div>
                       </span></div>
-                    </div></div>";
+                    </div></div>
                   </div></div>
                 </div></div>'
-                <div className=""""grid grid-cols-2 gap-4 mb-4></div>
-                  </div><div></div>'";
-                    <p className=""""text-sm text-gray-400>Executions</p></div>
-                    <p className=text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p></div>";
+                <div className=""grid grid-cols-2 gap-4 mb-4></div>
+                  </div><div></div>'
+                    <p className="text-sm text-gray-400>Executions</p></div>
+                    <p className=text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p></div>"
                   </div></div>
                   <div></div>'
-                    <p className=""""text-sm: "text-gray-400>Success Rate</p></div>"";
-                    <p className=text-lg font-semibold text-green-400>{automation.successRate}%</p></div>
-                  </div> </div>";
+                    <p className=text-sm: ""text-gray-400>Success Rate</p></div>"
+                    <p className=text-lg font-semibold text-green-400>{automation.successRate"}%</p></div>
+                  </div> </div>
                 </div></div>
                 <div className=mb-4></div>'
-                  <p className=""""text-sm: "text-gray-400 mb-2>Triggers </p></div>"
+                  <p className=""text-sm: "text-gray-400 mb-2>Triggers </p></div>
                   <div className=space-y-2>
-                    {automation.triggers.map((trigger, index) => (</div>";
-                      </div><div key={index} className= bg-white/5 rounded p-2></div>";
+                    {automation.triggers.map((trigger", index) => (</div>"
+                      </div><div key={index} className= bg-white/5 rounded p-2></div>"
                         <div className= flex items-center justify-between></div>'
-                          <span className=""""text-sm: "text-white>{trigger.condition}</span></div>"
-                          <span className=text-xs text-gray-400 >Sensor: {trigger.sensor}</span></div>
+                          <span className=text-sm: ""text-white>{trigger.condition"}</span></div>"
+                          <span className=text-xs text-gray-400 >Sensor: "{trigger.sensor"}</span></div>
                         </div></div>
-                        <p className=text-xs text-gray-400>Threshold  {trigger.threshold}</p></div>";
+                        <p className=text-xs text-gray-400>Threshold  {trigger.threshold}</p></div>
                       </div>
-                    ))}</div>";
+                    ))}</div>
                   </div></div>
-                </div></div>'";
-                <div className=""""mb-4></div>'
-                  <p className=text-sm: "text-gray-400 mb-2>Actions </p></div>"";
-                  <div className=space-y-2>";
-                    {automation.actions.map((action, index) => (</div>";
+                </div></div>'"
+                <div className="mb-4></div>'
+                  <p className=text-sm: "text-gray-400 mb-2>Actions </p></div>""
+                  <div className=space-y-2>
+                    {automation.actions.map((action", index) => (</div>
                       </div><div key={index} className= bg-white/5 rounded p-2></div>'
-                        <div className="""" flex items-center justify-between>"</div>'
-                          <span className=text-sm: "text-white>{action.experience}</span></div>";
+                        <div className="" flex items-center justify-between></div>'
+                          <span className=text-sm: "text-white>{action.experience"}</span></div>"
                           <span className=text-xs text-gray-400 >{action.action}</span></div>
                         </div></div>
                         <p className=text-xs text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p></div>
-                      </div>";
+                      </div>"
                     ))}</div>
-                  </div></div>";
-                </div></div>";
+                  </div></div>
+                </div></div>
                 <div className=flex items-center justify-between text-sm text-gray-400 mb-4></div>'
-                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span></div>'";
-                  <span>Experience ID  {automation.experienceId}</span>"</div>";
-                </div></div>";
+                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span></div>'"
+                  <span>Experience ID  {automation.experienceId}</span>"</div>
+                </div></div>
                 <div className=flex space-x-3></div>'
-                  <button className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
+                  <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
                     View Logs</div>;
                   </button></div>;
                   <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>;
                     Edit Automation</div>
                   </button></div>
                 </div></div>
-              </div>";
-            ))}</div>
-          </div>";
-        )}";
+              </div>"
+            ))"}</div>
+          </div>"
+        )}
  '
-        {/* Call to Action */}"</div>";
+        {/* Call to Action */}</div>"
         <div className=mt-12 text-center> </div>'
-          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: "p-8></div>";
+          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: ""p-8></div>
             <h2 className=text-3xl font-bold text-white mb-4 >
               Immerse with VR Intelligence</div>
             </h2></div>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>";
-              Leverage intelligent virtual reality technology to create immersive experiences,
-              virtual worlds, and AI-driven VR optimization.</div>";
-            </p></div>";
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+              Leverage intelligent virtual reality technology to create immersive experiences",
+              virtual worlds, and AI-driven VR optimization.</div>"
+            </p></div>"
             <div className= flex flex-col sm flex-row gap-4 justify-center></div>'
-              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>'";
-                Create Experience "</div>";
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>'
+                Create Experience </div>"
               </button></div>'
-              <Link href=/service-marketplace className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>";
+              <Link href=/service-marketplace className=border border-white/20 text-white hover: ""bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
               </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;
@@ -912,7 +912,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   </div>
   </div>
 </div>
-  </div> </div>";
+  </div> </div>
   </div>
-}";}'";
+"}"}'"
 export default AIPoweredVirtualRealityPage;)'`</div>'

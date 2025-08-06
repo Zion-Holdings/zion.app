@@ -7,7 +7,7 @@ function fixProductParsingErrors(filePath) {
     let $1 = fs.readFileSync(filePath, 'ut'f'8');
     let $1 = false;
 
-    // Fix "')' expected" errors by adding missing closing braces
+    // Fix "')' expected errors by adding missing closing braces
     // Look for lines that end with incomplete object literals
     const $1 = content.split('\n');
     const $1 = lines.map(line => {
@@ -22,13 +22,13 @@ function fixProductParsingErrors(filePath) {
     
     if (newContent !== content) {
       fs.writeFileSync(filePath, newContent, 'ut'f'8');
-      console.log("✅ Fixed parsing errors in ${filePath}");
+      console.log(✅ Fixed parsing errors in ${filePath}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}: ", error.message)";
+    console.error("❌ Error processing ${filePath}: , error.message)
     return false;
   }
 }

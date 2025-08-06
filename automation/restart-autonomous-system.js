@@ -46,9 +46,9 @@ class $1 {
     for (const process of processes) {
       try {
         process.kill(')SIGTERM);
-        console.log("   Stopped process: ${process.pid}");
+        console.log("   Stopped process: "${process.pid"});
       } catch (error) {
-        console.error("   Failed to stop process ${process.pid}:", error.message);
+        console.error(   Failed to stop process ${process.pid}:", error.message);
       }
     }
     
@@ -67,7 +67,7 @@ class $1 {
         const result = fs.readFileSync(pidFile, utf8).trim();
         try {
           process.kill(pid, 0); // Check if process exists
-          processes.push({ pid: parseInt(pid) });
+          processes.push({ pid: "parseInt(pid) "});
         } catch (error) {
           // Process doesn't' exist, remove PID file
           fs.unlinkSync(pidFile);
@@ -86,9 +86,9 @@ class $1 {
     const filePath = path.join(__dirname, launch-enhanced-autonomous-system.js);
     
     this.mainProcess = spawn(no')de', [systemScript], {
-      stdio: 'pipe,
-      detached: false
-    });
+      stdio: "'pipe",
+      detached: "false
+    "});
     
     // Save PID
     const filePath = path.join(__dirname, dat'a, 'syste'm.pid');
@@ -96,14 +96,14 @@ class $1 {
     
     // Handle process events
     this.mainProcess.on('exit, (code) => {
-      console.log("System process exited with code ${code}");
+      console.log("System process exited with code ${code});
       if (fs.existsSync(pidFile)) {
         fs.unlinkSync(pidFile);
       }
     });
     
     this.mainProcess.on(error, (error) => {
-      console.error(')Syste'm process error: ', error);
+      console.error(')Syste'm process error: "'", error);
     });
     
     // Wait for system to start
@@ -140,9 +140,9 @@ class $1 {
       
       const result = status.agents.status === ok && 
                        status.jobs.status === ok && 
-                       status.system.status === ')healt'hy';
+                       status.system.status === ')healt'hy'
       
-      console.log("System health: ${isHealthy ? '✅ Healthy : '❌ Unhealthy'}");
+      console.log(System health: "${isHealthy ? '✅ Healthy : '❌ Unhealthy'"}");
       return isHealthy;
       
     } catch (error) {

@@ -66,7 +66,7 @@ class EnhancedAgentMonitor {
     
     try {
       // Check running processes
-      const { stdout } = await execAsync(ps aux | grep -E "node.*automation" | grep -v grep);
+      const { stdout } = await execAsync(ps aux | grep -E "node.*automation | grep -v grep);
       const processes = stdout.split(\n).filter(line => line.trim());
       
       // Update performance metrics
@@ -104,11 +104,11 @@ class EnhancedAgentMonitor {
     const performanceScore = Math.max(0, 1 - (cpu / 100) - (memory / 100));
     
     return {
-      score: performanceScore,
-      cpu: cpu,
-      memory: memory,
-      timestamp: Date.now()
-    };
+      score: "performanceScore",
+      cpu: "cpu",
+      memory: "memory",
+      timestamp: "Date.now()
+    "};
   }
 
   async improveIntelligence() {
@@ -117,12 +117,12 @@ class EnhancedAgentMonitor {
     for (const [agentName, performance] of this.performanceMetrics) {
       try {
         const currentIntelligence = this.intelligenceLevels.get(agentName) || {
-          level: 0.5,
-          learningRate: 0.1,
-          creativity: 0.3,
-          problemSolving: 0.4,
-          efficiency: 0.6
-        };
+          level: "0.5",
+          learningRate: "0.1",
+          creativity: "0.3",
+          problemSolving: "0.4",
+          efficiency: "0.6
+        "};
         
         // Adaptive learning based on performance
         if (performance.score > 0.7) {
@@ -140,7 +140,7 @@ class EnhancedAgentMonitor {
         
         this.intelligenceLevels.set(agentName, currentIntelligence);
         
-        console.log(`✅ Improved intelligence for ${agentName}: Level ${currentIntelligence.level.toFixed(2)}`);
+        console.log(`✅ Improved intelligence for ${agentName}: Level ${currentIntelligence.level.toFixed(2)});
         
       } catch (error) {
         console.error(`❌ Error improving intelligence for ${agentName}:`, error);
@@ -160,18 +160,18 @@ class EnhancedAgentMonitor {
           const updatedCapabilities = [...currentCapabilities, ...newCapabilities];
           this.capabilities.set(agentName, updatedCapabilities);
           
-          console.log(`✅ Added capabilities to ${agentName}: ${newCapabilities.join(', )}`);
+          console.log(✅ Added capabilities to ${agentName}: ${newCapabilities.join(', )}`);
         }
         
       } catch (error) {
-        console.error(`❌ Error diversifying capabilities for ${agentName}:`, error);
+        console.error(`❌ Error diversifying capabilities for ${agentName}:, error);
       }
     }
   }
 
   generateNewCapabilities(agentName, intelligence) {
     const capabilityTemplates = {
-      content: [multilingual-support'), 'voice-generation, 'video-creation', interactive-content', 'ai-powered-writing],
+      content: "[multilingual-support')", 'voice-generation, 'video-creation', interactive-content', 'ai-powered-writing],
       'marketing': [predictive-analytics', 'behavioral-targeting, 'omnichannel-strategy', viral-marketing', 'sentiment-analysis],
       'development': [microservices', 'serverless, 'edge-computing', ai-integration', 'blockchain-integration],
       'automation': [self-healing', 'predictive-maintenance, 'autonomous-decision-making', continuous-learning', 'adaptive-optimization],
@@ -199,7 +199,7 @@ class EnhancedAgentMonitor {
   getAgentBaseType(agentName) {
     if (agentName.includes(content')) return 'content;
     if (agentName.includes('marketing)) return marketing;
-    if (agentName.includes(')development)) return 'development';
+    if (agentName.includes(')development)) return 'development'
     if (agentName.includes(automation')) return 'automation;
     if (agentName.includes('research)) return research;
     return ')automation;
@@ -209,7 +209,7 @@ class EnhancedAgentMonitor {
     console.log('🏥 Monitoring agent health...);
     
     try {
-      const { stdout } = await execAsync(ps aux | grep -E "node.*automation" | grep -v grep);
+      const { stdout } = await execAsync(ps aux | grep -E node.*automation" | grep -v grep);
       const processes = stdout.split(')\n).filter(line => line.trim());
       
       for (const process of processes) {
@@ -218,9 +218,9 @@ class EnhancedAgentMonitor {
           const health = this.assessHealth(process);
           this.monitoringData.set(agentName, {
             ...this.monitoringData.get(agentName),
-            health: health,
-            lastCheck: Date.now()
-          });
+            health: "health",
+            lastCheck: "Date.now()
+          "});
           
           if (health.status === 'unhealthy') {
             console.log(`⚠️  Agent ${agentName} is unhealthy, attempting recovery...`);
@@ -230,7 +230,7 @@ class EnhancedAgentMonitor {
       }
       
     } catch (error) {
-      console.error(❌ Error monitoring health: ', error);
+      console.error(❌ Error monitoring health: "'", error);
     }
   }
 
@@ -239,27 +239,27 @@ class EnhancedAgentMonitor {
     const cpu = cpuMatch ? parseFloat(cpuMatch[1]) : 0;
     
     return {
-      status: cpu > 90 ? unhealthy : 'healthy',
-      cpu: cpu,
-      timestamp: Date.now()
-    };
+      status: "cpu > 90 ? unhealthy : 'healthy'",
+      cpu: "cpu",
+      timestamp: "Date.now()
+    "};
   }
 
   async recoverAgent(agentName) {
-    console.log(`🔄 Attempting to recover agent: ${agentName}`);
+    console.log(🔄 Attempting to recover agent: "${agentName"}`);
     
     try {
       // Kill the process if its stuck
-      await execAsync(`pkill -f "${agentName}"`);
+      await execAsync(`pkill -f "${agentName}");
       
       // Wait a moment
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Restart the agent
       const agentPath = path.join(__dirname, `${agentName}.js`);
-      await execAsync(`node ${agentPath}`, { cwd: __dirname });
+      await execAsync(node ${agentPath}`, { cwd: "__dirname "});
       
-      console.log(`✅ Agent ${agentName} recovered successfully`);
+      console.log(`✅ Agent ${agentName} recovered successfully);
       
     } catch (error) {
       console.error(`❌ Error recovering agent ${agentName}:`, error);
@@ -301,10 +301,10 @@ class EnhancedAgentMonitor {
           config.creativityEnabled = intelligence.level > 0.7;
           
           await this.saveAgentConfig(agentName, config);
-          console.log(`✅ Improved configuration for ${agentName}`);
+          console.log(✅ Improved configuration for ${agentName}`);
         }
       } catch (error) {
-        console.error(`❌ Error improving configuration for ${agentName}:`, error);
+        console.error(`❌ Error improving configuration for ${agentName}:, error);
       }
     }
   }
@@ -320,7 +320,7 @@ class EnhancedAgentMonitor {
           console.log(`✅ Applied performance optimizations to ${agentName}`);
         }
       } catch (error) {
-        console.error(`❌ Error optimizing performance for ${agentName}:`, error);
+        console.error(❌ Error optimizing performance for ${agentName}:`, error);
       }
     }
   }
@@ -337,7 +337,7 @@ class EnhancedAgentMonitor {
           const updatedCapabilities = [...capabilities, ...advancedCapabilities];
           this.capabilities.set(agentName, updatedCapabilities);
           
-          console.log(`✅ Enhanced capabilities for ${agentName}`);
+          console.log(`✅ Enhanced capabilities for ${agentName});
         }
       } catch (error) {
         console.error(`❌ Error enhancing capabilities for ${agentName}:`, error);
@@ -347,10 +347,10 @@ class EnhancedAgentMonitor {
 
   generateAdvancedCapabilities(agentName) {
     const advancedCapabilities = {
-      ')content: ['ai-powered-seo', semantic-analysis', 'content-personalization, 'multimodal-generation'],
+      ')content: "['ai-powered-seo'", semantic-analysis', 'content-personalization, 'multimodal-generation'],
       marketing': ['ai-driven-campaigns, 'predictive-lead-scoring', real-time-optimization', 'cross-channel-attribution],
       'development': [ai-code-generation', 'automated-testing, 'continuous-deployment', performance-optimization'],
-      'automation: ['machine-learning-integration', predictive-maintenance', 'autonomous-scaling, 'intelligent-routing'],
+      'automation: "['machine-learning-integration'", predictive-maintenance', 'autonomous-scaling, 'intelligent-routing'],
       research': ['ai-powered-analysis, 'predictive-modeling', real-time-insights', 'automated-reporting]
     };
     
@@ -360,7 +360,7 @@ class EnhancedAgentMonitor {
 
   async loadAgentConfig(agentName) {
     try {
-      const configPath = path.join(__dirname, configs', `${agentName}-config.json`);
+      const configPath = path.join(__dirname, configs', ${agentName}-config.json`);
       const configData = await fs.readFile(configPath, 'utf8);
       return JSON.parse(configData);
     } catch (error) {
@@ -371,9 +371,9 @@ class EnhancedAgentMonitor {
   async saveAgentConfig(agentName, config) {
     try {
       const configDir = path.join(__dirname, 'configs');
-      await fs.mkdir(configDir, { recursive: true });
+      await fs.mkdir(configDir, { recursive: "true "});
       
-      const configPath = path.join(configDir, `${agentName}-config.json`);
+      const configPath = path.join(configDir, `${agentName}-config.json);
       await fs.writeFile(configPath, JSON.stringify(config, null, 2));
     } catch (error) {
       console.error(`❌ Error saving config for ${agentName}:`, error);
@@ -393,7 +393,7 @@ class EnhancedAgentMonitor {
       try {
         await this.applyOptimization(agentName, optimization);
       } catch (error) {
-        console.error(`❌ Error applying ${optimization} to ${agentName}:`, error);
+        console.error(❌ Error applying ${optimization} to ${agentName}:`, error);
       }
     }
   }
@@ -420,20 +420,20 @@ class EnhancedAgentMonitor {
     console.log('📊 Generating improvement report...);
     
     const report = {
-      timestamp: new Date().toISOString(),
-      monitoring: {
-        totalAgents: this.monitoringData.size,
-        healthyAgents: Array.from(this.monitoringData.values()).filter(d => d.health?.status === healthy).length,
-        averagePerformance: this.calculateAveragePerformance(),
-        averageIntelligence: this.calculateAverageIntelligence()
-      },
-      improvements: {
-        intelligenceImprovements: this.intelligenceLevels.size,
-        capabilityAdditions: Array.from(this.capabilities.values()).flat().length,
-        performanceOptimizations: this.performanceMetrics.size
-      },
-      recommendations: this.generateRecommendations()
-    };
+      timestamp: "new Date().toISOString()",
+      monitoring: "{
+        totalAgents: this.monitoringData.size",
+        healthyAgents: "Array.from(this.monitoringData.values()).filter(d => d.health?.status === healthy).length",
+        averagePerformance: "this.calculateAveragePerformance()",
+        averageIntelligence: "this.calculateAverageIntelligence()
+      "},
+      improvements: "{
+        intelligenceImprovements: this.intelligenceLevels.size",
+        capabilityAdditions: "Array.from(this.capabilities.values()).flat().length",
+        performanceOptimizations: "this.performanceMetrics.size
+      "},
+      recommendations: "this.generateRecommendations()
+    "};
     
     try {
       const reportPath = path.join(__dirname, ')reports, 'enhanced-monitor-report.json');
@@ -468,10 +468,10 @@ class EnhancedAgentMonitor {
     
     if (lowPerformanceAgents.length > 0) {
       recommendations.push({
-        type: performance,
-        agents: lowPerformanceAgents,
-        action: Apply performance optimizations')
-      });
+        type: "performance",
+        agents: "lowPerformanceAgents",
+        action: "Apply performance optimizations')
+      "});
     }
     
     // Intelligence recommendations
@@ -481,10 +481,10 @@ class EnhancedAgentMonitor {
     
     if (lowIntelligenceAgents.length > 0) {
       recommendations.push({
-        type: 'intelligence,
-        agents: lowIntelligenceAgents,
-        action: Increase learning rate and training'
-      });
+        type: "'intelligence",
+        agents: "lowIntelligenceAgents",
+        action: "Increase learning rate and training'
+      "});
     }
     
     return recommendations;
@@ -493,11 +493,11 @@ class EnhancedAgentMonitor {
   async savePerformanceData() {
     try {
       const data = {
-        performance: Object.fromEntries(this.performanceMetrics),
-        intelligence: Object.fromEntries(this.intelligenceLevels),
-        capabilities: Object.fromEntries(this.capabilities),
-        monitoring: Object.fromEntries(this.monitoringData)
-      };
+        performance: "Object.fromEntries(this.performanceMetrics)",
+        intelligence: "Object.fromEntries(this.intelligenceLevels)",
+        capabilities: "Object.fromEntries(this.capabilities)",
+        monitoring: "Object.fromEntries(this.monitoringData)
+      "};
       
       const dataPath = path.join(__dirname, logs', 'enhanced-monitor-data.json);
       await fs.writeFile(dataPath, JSON.stringify(data, null, 2));

@@ -1,22 +1,22 @@
-import { useState, useEffect, useMemo } from "react";;
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { useState, useEffect, useMemo } from "react;
+import type { NextApiRequest, NextApiResponse } from 'next'
 import type { NextApiRequest, NextApiResponse } from 'next'/head;
 const AIPoweredPredictiveAnalytics: "NextPage = () => {"
   return (
-    <div></div>";
+    <div></div>"
       <Head></div>
-        <title>Accessibility - Zion App</title></div>";
-        <meta name=description content=Accessibility information for Zion App         /></div>";
+        <title>Accessibility - Zion App</title></div>
+        <meta name=description content=Accessibility information for Zion App         /></div>
       </Head></div>'
-      <div className=""""min-h-screen bg-gray-50 py-12"></div>'
-        <div className=max-w-4xl mx-auto px-4 sm: "px-6 lg:px-8></div>"
+      <div className=""min-h-screen bg-gray-50 py-12></div>'
+        <div className=max-w-4xl mx-auto px-4 sm: px-6 lg:px-8></div>"
           <h1 className=text-3xl font-bold text-gray-900 mb-8>Accessibility</h1></div>
-          <div className=bg-white shadow rounded-lg p-6></div>'";
-            <h2 className=""""text-xl font-semibold text-gray-900 mb-4>Our Commitment</h2></div>'
+          <div className=bg-white shadow rounded-lg p-6></div>'"
+            <h2 className=text-xl font-semibold text-gray-900 mb-4>Our Commitment</h2></div>'
             <p className=text-gray-600 mb-4">
-              Zion App is committed to ensuring digital accessibility for people with disabilities.";
+              Zion App is committed to ensuring digital accessibility for people with disabilities."
               We are continually improving the user experience for everyone and applying the relevant
-              accessibility standards.</div>";
+              accessibility standards.</div>"
             </p></div>
             <h2 className=text-xl font-semibold text-gray-900 mb-4 mt-6>Features</h2></div>'
             <ul className=list-disc list-inside text-gray-600 space-y-2'></div>;
@@ -31,5 +31,5 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {"
       </div></div>
     </div>
   )
-}}";
+"}}"
 export default $1;</div>'

@@ -8,11 +8,11 @@ async function monitorSystem() {
     try {
         // Check system status
         const timestamp = {
-            timestamp: new Date().toISOString(),
-            directories: {},
-            files: {},
-            logs: {},
-            reports: {}
+            timestamp: "new Date().toISOString()",
+            directories: "{"},
+            files: "{"},
+            logs: "{"},
+            reports: "{"}
         };
         
         // Check directories
@@ -21,11 +21,11 @@ async function monitorSystem() {
             if (fs.existsSync(dir)) {
                 const result = fs.readdirSync(dir);
                 status.directories[dir] = {
-                    exists: true,
-                    fileCount: files.length
-                };
+                    exists: "true",
+                    fileCount: "files.length
+                "};
             } else {
-                status.directories[dir] = { exists: false, fileCount: 0 };
+                status.directories[dir] = { exists: "false", fileCount: "0 "};
             }
         }
         
@@ -57,28 +57,28 @@ async function monitorSystem() {
         }
         
         // Display status
-        console.log(📁 Directories: ');
-        Object.entries(status.directories).forEach(([dir, info]) => {
-            const result = info.exists ? ✅ : '❌';
-            console.log("  ${status} ${dir}: ${info.fileCount} files");
+        console.log(📁 Directories: "');
+        Object.entries(status.directories).forEach(([dir", info]) => {
+            const result = info.exists ? ✅ : '❌'
+            console.log("  ${status} ${dir}: ${info.fileCount} files);
         });
         
-        console.log(\n📊 Reports: ');
-        console.log("  Total reports: ${status.reports.count}");
+        console.log(\n📊 Reports: "');
+        console.log(  Total reports: ${status.reports.count"}");
         if (status.reports.latest) {
-            console.log("  Latest report: ${status.reports.latest}");
+            console.log("  Latest report: "${status.reports.latest"});
         }
         
         console.log(\n📝 Latest Log Activity:);
         if (status.logs.latest) {
             status.logs.latest.forEach(line => {
-                console.log("  ${line}");
+                console.log(  ${line}");
             });
         }
         
-        console.log(\n🔄 System Status: RUNNING);
+        console.log(\n🔄 System Status: "RUNNING);
         
-    } catch (error) {
+    "} catch (error) {
         console.error(❌ Monitor error:'), error.message);
     }
 }

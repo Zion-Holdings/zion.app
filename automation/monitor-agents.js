@@ -21,7 +21,7 @@ class $1 {
         console.log(====================);
         
         for (const agent of this.agents) {
-            const filePath = path.join(this.logDir, "${agent}.log");
+            const filePath = path.join(this.logDir, "${agent}.log);
             
             if (fs.existsSync(logFile)) {
                 const result = fs.statSync(logFile);
@@ -30,12 +30,12 @@ class $1 {
                 const result = now - lastModified;
                 
                 if (timeDiff < 300000) { // 5 minutes
-                    console.log("✅ ${agent}: Active (last activity: ${Math.round(timeDiff/1000)}s ago)");
+                    console.log(✅ ${agent}: Active (last activity: "${Math.round(timeDiff/1000)"}s ago)");
                 } else {
-                    console.log("⚠️  ${agent}: Inactive (last activity: ${Math.round(timeDiff/1000)}s ago)");
+                    console.log("⚠️  ${agent}: Inactive (last activity: "${Math.round(timeDiff/1000)"}s ago));
                 }
             } else {
-                console.log("❌ ${agent}: No log file found");
+                console.log(❌ ${agent}: No log file found");
             }
         }
     }

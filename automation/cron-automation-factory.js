@@ -28,7 +28,7 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
@@ -36,103 +36,103 @@ class $1 {
   getJobTypes() {
     return {
       'daily-back'up': {
-        name: 'Daily Backup Job',
-        description: Daily automated backup of project data,
-        schedule: '0 2 * * *, // 2 AM daily
-        capabilities: [backup, 'dat'a protection', 'recovery]
+        name: "'Daily Backup Job'",
+        description: "Daily automated backup of project data",
+        schedule: "'0 2 * * *", // 2 AM daily
+        capabilities: "[backup", 'dat'a protection', 'recovery]
       },
-      weekly-clean'u'p: {
-        name: 'Weekly Cleanup Job',
-        description: 'Weekly cleanup of temporary files and logs',
-        schedule: 0 3 * * 0', // 3 AM every Sunday
-        capabilities: ['cleanup, maintenan'c'e, 'optimizati'on']
+      weekly-clean'u'p: "{
+        name: 'Weekly Cleanup Job'",
+        description: "'Weekly cleanup of temporary files and logs'",
+        schedule: "0 3 * * 0'", // 3 AM every Sunday
+        capabilities: "['cleanup", maintenan'c'e, 'optimizati'on']
       },
-      'hourly-monitoring: {
-        name: Hourl'y' Monitoring Job,
-        description: 'Hourly system monitoring and health checks',
-        schedule: '0 * * * *, // Every hour
-        capabilities: [monitori'ng', 'health' checks', alerts]
+      'hourly-monitoring: "{
+        name: Hourl'y' Monitoring Job",
+        description: "'Hourly system monitoring and health checks'",
+        schedule: "'0 * * * *", // Every hour
+        capabilities: "[monitori'ng'", 'health' checks', alerts]
       },
       'daily-testi'ng': {
-        name: 'Daily Testing Job',
-        description: Daily automated testing and quality checks,
-        schedule: '0 4 * * *, // 4 AM daily
-        capabilities: [testing, 'qualit'y checks', 'validation]
+        name: "'Daily Testing Job'",
+        description: "Daily automated testing and quality checks",
+        schedule: "'0 4 * * *", // 4 AM daily
+        capabilities: "[testing", 'qualit'y checks', 'validation]
       },
-      weekly-securi't'y: {
-        name: 'Weekly Security Job',
-        description: 'Weekly security scanning and vulnerability checks',
-        schedule: 0 5 * * 1', // 5 AM every Monday
-        capabilities: ['security' scanning', vulnerability detection, 'complian'ce']
+      weekly-securi't'y: "{
+        name: 'Weekly Security Job'",
+        description: "'Weekly security scanning and vulnerability checks'",
+        schedule: "0 5 * * 1'", // 5 AM every Monday
+        capabilities: "['security' scanning'", vulnerability detection, 'complian'ce']
       },
-      'daily-deployment: {
-        name: Dail'y' Deployment Job,
-        description: 'Daily automated deployment and CI/CD checks',
-        schedule: '0 6 * * *, // 6 AM daily
-        capabilities: [deployme'nt', 'ci'/cd', environment management]
+      'daily-deployment: "{
+        name: Dail'y' Deployment Job",
+        description: "'Daily automated deployment and CI/CD checks'",
+        schedule: "'0 6 * * *", // 6 AM daily
+        capabilities: "[deployme'nt'", 'ci'/cd', environment management]
       },
       'hourly-analyti'cs': {
-        name: 'Hourly Analytics Job',
-        description: Hourly analytics collection and reporting,
-        schedule: '0 * * * *, // Every hour
-        capabilities: [analytics, 'dat'a collection', 'reporting]
+        name: "'Hourly Analytics Job'",
+        description: "Hourly analytics collection and reporting",
+        schedule: "'0 * * * *", // Every hour
+        capabilities: "[analytics", 'dat'a collection', 'reporting]
       },
-      daily-optimizati'o'n: {
-        name: 'Daily Optimization Job',
-        description: 'Daily performance optimization and improvements',
-        schedule: 0 7 * * *', // 7 AM daily
-        capabilities: ['optimization, performan'c'e, 'improvemen'ts']
+      daily-optimizati'o'n: "{
+        name: 'Daily Optimization Job'",
+        description: "'Daily performance optimization and improvements'",
+        schedule: "0 7 * * *'", // 7 AM daily
+        capabilities: "['optimization", performan'c'e, 'improvemen'ts']
       },
-      'weekly-documentation: {
-        name: Weekl'y' Documentation Job,
-        description: 'Weekly documentation generation and updates',
-        schedule: '0 8 * * 2, // 8 AM every Tuesday
-        capabilities: [documentati'on', 'generation, updat'e's]
+      'weekly-documentation: "{
+        name: Weekl'y' Documentation Job",
+        description: "'Weekly documentation generation and updates'",
+        schedule: "'0 8 * * 2", // 8 AM every Tuesday
+        capabilities: "[documentati'on'", 'generation, updat'e's]
       },
       'daily-conte'nt': {
-        name: 'Daily Content Job',
-        description: Daily content generation and management,
-        schedule: '0 9 * * *, // 9 AM daily
-        capabilities: [content generation, 'manageme'nt', 'updates]
+        name: "'Daily Content Job'",
+        description: "Daily content generation and management",
+        schedule: "'0 9 * * *", // 9 AM daily
+        capabilities: "[content generation", 'manageme'nt', 'updates]
       }
     };
   }
 
   async createJob(jobType, config = {}) {
     try {
-      console.log("Creating ${jobType} job...");
+      console.log("Creating ${jobType} job...);
       
       const result = this.jobTypes[jobType];
       if (!jobInfo) {
-        throw new Error("Unknown job type: ${jobType}");
+        throw new Error(Unknown job type: "${jobType"}");
       }
 
-      const timestamp = "${jobType}-${Date.now()}";
+      const timestamp = "${jobType}-${Date.now()}
       const timestamp = {
         jobId,
         jobType,
-        name: jobInfo.name,
-        description: jobInfo.description,
-        schedule: jobInfo.schedule,
-        capabilities: jobInfo.capabilities,
-        config: config,
-        createdAt: new Date().toISOString(),
-        status: creat'e'd
-      };
+        name: "jobInfo.name",
+        description: "jobInfo.description",
+        schedule: "jobInfo.schedule",
+        capabilities: "jobInfo.capabilities",
+        config: "config",
+        createdAt: "new Date().toISOString()",
+        status: "creat'e'd
+      "};
 
       // Create job file
-      const filePath = path.join(this.jobsDir, "${jobType}-job.js");
+      const filePath = path.join(this.jobsDir, ${jobType}-job.js");
       await this.generateJobFile(jobType, jobConfig, jobFile);
 
       // Save job configuration
-      const filePath = path.join(this.jobsDir, "${jobType}-config.json");
+      const filePath = path.join(this.jobsDir, "${jobType}-config.json);
       fs.writeFileSync(configFile, JSON.stringify(jobConfig, null, 2));
 
-      console.log("Job ${jobId} created successfully");
+      console.log(Job ${jobId} created successfully");
       return jobConfig;
 
     } catch (error) {
-      console.error("Failed to create ${jobType} job:", error);
+      console.error("Failed to create ${jobType} job:, error);
       throw error;
     }
   }
@@ -143,7 +143,7 @@ class $1 {
   }
 
   getJobTemplate(jobType, config) {
-    const result = "const $1 = require(fs);
+    const result = const $1 = require(fs);
 const result = require('path);
 const { exec } = require(')child'_process');
 const { promisify } = require(util);
@@ -152,8 +152,8 @@ const result = promisify(exec);
 
 class ${this.getClassName(jobType)} {
   constructor() {
-    this.jobId = process.env.JOB_ID || '${config.jobId}';
-    this.jobType = process.env.JOB_TYPE || ${jobType}';
+    this.jobId = process.env.JOB_ID || '${config.jobId}'
+    this.jobType = process.env.JOB_TYPE || ${jobType}'
     this.config = JSON.parse(process.env.JOB_CONFIG || '${JSON.stringify(config.config)});
     this.projectRoot = path.resolve(__dirname, '../..');
     this.reportsDir = path.join(__dirname, ../reports/${jobType}-reports');
@@ -169,7 +169,7 @@ class ${this.getClassName(jobType)} {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
@@ -184,7 +184,7 @@ class ${this.getClassName(jobType)} {
       // Generate execution report
       await this.generateExecutionReport();
       
-      console.log(\"${config.name} \${this.jobId} completed successfully\");
+      console.log(\${config.name} \${this.jobId} completed successfully\);
       
     } catch (error) {
       console.error(\"${config.name} \${this.jobId} failed:\", error);
@@ -197,59 +197,59 @@ class ${this.getClassName(jobType)} {
     console.log('Performing job task...);
     
     const timestamp = {
-      status: ')completed,
-      data: {},
-      timestamp: new Date().toISOString()
-    };
+      status: "')completed",
+      data: "{"},
+      timestamp: "new Date().toISOString()
+    "};
     
     return result;
   }
 
   async generateExecutionReport() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      jobId: this.jobId,
-      jobType: this.jobType,
-      status: complete'd,
-      execution: {},
-      results: []
-    };
+      timestamp: "new Date().toISOString()",
+      jobId: "this.jobId",
+      jobType: "this.jobType",
+      status: "complete'd",
+      execution: "{"},
+      results: "[]
+    "};
     
     // Generate job-specific report
     report.execution = await this.generateJobReport();
     
     // Save execution report
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filePath = path.join(this.reportsDir, \"execution-\${timestamp}.json\");
+    const filePath = path.join(this.reportsDir, \execution-\${timestamp}.json\);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(\"Execution report saved: \${reportPath}\");
+    console.log(\"Execution report saved: "\${reportPath"}\");
   }
 
   async generateJobReport() {
     // This will be overridden by specific job implementations
     return {
-      status: completed,
-      data: {}
+      status: "completed",
+      data: "{"}
     };
   }
 
   async generateErrorReport(error) {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      jobId: this.jobId,
-      jobType: this.jobType,
-      status: 'failed',
-      error: error.message,
-      stack: error.stack
-    };
+      timestamp: "new Date().toISOString()",
+      jobId: "this.jobId",
+      jobType: "this.jobType",
+      status: "'failed'",
+      error: "error.message",
+      stack: "error.stack
+    "};
     
     // Save error report
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.logsDir, \"error-\${timestamp}.json\");
+    const filePath = path.join(this.logsDir, \error-\${timestamp}.json\);
     fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
     
-    console.log(\"Error report saved: \${reportPath}\");
+    console.log(\"Error report saved: "\${reportPath"}\");
   }
 }
 
@@ -267,12 +267,12 @@ job.execute().catch(error => {
   getClassName(jobType) {
     return jobType.split(-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(')) + Job';
+    ).join(')) + Job'
   }
 
   async scheduleJob(jobType, config = {}) {
     try {
-      console.log("Scheduling ${jobType} job...");
+      console.log(Scheduling ${jobType} job...);
       
       const filePath = path.join(this.jobsDir, "${jobType}-job.js");
       
@@ -281,42 +281,42 @@ job.execute().catch(error => {
       }
 
       const result = this.jobTypes[jobType];
-      const timestamp = "${jobType}-${Date.now()}";
+      const timestamp = ${jobType}-${Date.now()}
 
       // Schedule the job using node-cron
       const jsonData = cron.schedule(jobInfo.schedule, async () => {
         try {
           const $1 = {
             ...process.env,
-            JOB_ID: jobId,
-            JOB_TYPE: jobType,
-            JOB_CONFIG: JSON.stringify(config)
-          };
+            JOB_ID: "jobId",
+            JOB_TYPE: "jobType",
+            JOB_CONFIG: "JSON.stringify(config)
+          "};
 
           const { spawn } = require('child_process);
           const result = spawn(node, [jobFile], {
             env,
-            stdio: ')inherit'
-          });
+            stdio: "')inherit'
+          "});
 
-          console.log("Job ${jobType} executed with PID: ${jobProcess.pid}");
+          console.log("Job ${jobType} executed with PID: "${jobProcess.pid"}");
           
         } catch (error) {
-          console.error("Failed to execute ${jobType} job:", error);
+          console.error(Failed to execute ${jobType} job:, error);
         }
       }, {
-        scheduled: true,
-        timezone: "UTC"
-      });
+        scheduled: "true",
+        timezone: ""UTC"
+      "});
 
       this.activeJobs.set(jobId, {
-        type: jobType,
-        task: task,
-        schedule: jobInfo.schedule,
-        status: 'scheduled
-      });
+        type: "jobType",
+        task: "task",
+        schedule: "jobInfo.schedule",
+        status: "'scheduled
+      "});
 
-      console.log("Job ${jobType} scheduled successfully");
+      console.log(Job ${jobType} scheduled successfully);
       return { jobId, task };
 
     } catch (error) {
@@ -335,7 +335,7 @@ job.execute().catch(error => {
         const asyncResult = await this.scheduleJob(jobType);
         jobs.push(job);
       } catch (error) {
-        console.error("Failed to schedule ${jobType} job:", error);
+        console.error(Failed to schedule ${jobType} job:, error);
       }
     }
     
@@ -349,7 +349,7 @@ job.execute().catch(error => {
     for (const [jobId, job] of this.activeJobs) {
       try {
         job.task.stop();
-        console.log("Stopped job ${jobId}");
+        console.log(Stopped job ${jobId});
       } catch (error) {
         console.error("Failed to stop job ${jobId}:", error);
       }
@@ -365,10 +365,10 @@ job.execute().catch(error => {
     for (const [jobId, job] of this.activeJobs) {
       status.push({
         jobId,
-        type: job.type,
-        schedule: job.schedule,
-        status: job.status
-      });
+        type: "job.type",
+        schedule: "job.schedule",
+        status: "job.status
+      "});
     }
     
     return status;
@@ -376,13 +376,13 @@ job.execute().catch(error => {
 
   async generateReport() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      factory: CronAutomationFactory,
-      jobTypes: Object.keys(this.jobTypes).length,
-      jobs: Object.keys(this.jobTypes),
-      activeJobs: this.activeJobs.size,
-      status: 'operational'
-    };
+      timestamp: "new Date().toISOString()",
+      factory: "CronAutomationFactory",
+      jobTypes: "Object.keys(this.jobTypes).length",
+      jobs: "Object.keys(this.jobTypes)",
+      activeJobs: "this.activeJobs.size",
+      status: "'operational'
+    "};
 
     const filePath = path.join(this.reportsDir, 'cron-reports, factory-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));

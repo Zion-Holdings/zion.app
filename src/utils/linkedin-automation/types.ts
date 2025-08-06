@@ -1,5 +1,5 @@
 export interface DemandForecast {;
-  apiKey: string;
+  apiKey: "string;
   advertising: {;
     preferredTimes: string[];
-  };
+  "};

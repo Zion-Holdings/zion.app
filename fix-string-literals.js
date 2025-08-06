@@ -7,32 +7,32 @@ function fixFile(filePath) {
     let originalContent = content;
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next');
+    content = content.replace(/import type { NextPage } from next"/g, 'import type { NextPage } from "next');
+    content = content.replace(/import { useState, useEffect, useMemo } from react"/g, 'import { useState, useEffect, useMemo } from "react');
+    content = content.replace(/import { useState, useEffect, useMemo } from react"/g, 'import { useState, useEffect, useMemo } from "react');
     
     // Fix malformed function declarations
-    content = content.replace(/export default async function handler\(req: NextApiRequest, res: NextApiResponse\) \{;/g, 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {');
+    content = content.replace(/export default async function handler\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", 'export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {');
     
     // Fix malformed object destructuring
-    content = content.replace(/const \{;/g, 'const {');
+    content = content.replace(/const \{;/g", 'const {');
     
     // Fix malformed string literals
-    content = content.replace(/';/g, "';");
-    content = content.replace(/";/g, '";');
-    content = content.replace(/`/g, '`');
+    content = content.replace(/'/g, '");
+    content = content.replace(/"/g, '"');
+    content = content.replace(/`/g, '');
     
     // Only write if content changed
     if (content !== originalContent) {
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed: ${filePath}`);
+      console.log(`Fixed: "${filePath"}`);
       return true;
     }
     
     return false;
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error(Error fixing ${filePath}:`, error.message);
     return false;
   }
 }

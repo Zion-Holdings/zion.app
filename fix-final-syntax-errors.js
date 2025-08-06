@@ -8,68 +8,68 @@ function fixFile(filePath) {
     let originalContent = content;
     
     // Fix malformed imports - very specific patterns
-    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'';/g, "import type { NextPage } from 'next';");
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import ModernLayout from ';\.\.\/components\/layout\/ModernLayout'/g, "import ModernLayout from '../components/layout/ModernLayout';");
-    content = content.replace(/import Link from next\/link';/g, "import Link from 'next/link';");
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'\/head';/g, "import Head from 'next/head';");
+    content = content.replace(/import type { NextPage } from "next/g, 'import type { NextPage } from next"');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next''/g, "import type { NextPage } from 'next');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, import type { NextApiRequest, NextApiResponse } from 'next'");
+    content = content.replace(/import type { NextPage } from "next/g, 'import type { NextPage } from next"');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react/g, 'import { useState, useEffect, useMemo } from react"');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react/g, 'import { useState, useEffect, useMemo } from react"');
+    content = content.replace(/import ModernLayout from '\.\.\/components\/layout\/ModernLayout'/g, "import ModernLayout from '../components/layout/ModernLayout');
+    content = content.replace(/import Link from next\/link'/g, import Link from 'next/link'");
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'\/head'/g, "import Head from 'next/head');
     
     // Fix malformed function declarations
-    content = content.replace(/export default async function handler\(req: NextApiRequest, res: NextApiResponse\) \{;/g, 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {');
-    content = content.replace(/export default function.*\{;/g, (match) => match.replace('{;', '{'));
+    content = content.replace(/export default async function handler\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", 'export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {');
+    content = content.replace(/export default function.*\{;/g", (match) => match.replace('{;', '{'));
     
     // Fix malformed object destructuring
     content = content.replace(/const \{;/g, 'const {');
     content = content.replace(/const \{([^}]*);/g, 'const {$1');
     
     // Fix malformed string literals in JSX
-    content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => `style="${styleContent}">`);
+    content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => `style=${styleContent}">);
     
     // Fix malformed template literals
     content = content.replace(/const contractHtml = `/g, 'const contractHtml = `');
-    content = content.replace(/const html = `/g, 'const html = `');
+    content = content.replace(/const html = /g, 'const html = `');
     
     // Fix malformed JSX closing tags
-    content = content.replace(/<\/div>';/g, '</div>');
-    content = content.replace(/<\/div>";/g, '</div>');
+    content = content.replace(/<\/div>'/g, '</div>');
+    content = content.replace(/<\/div>"/g, '</div>');
     
     // Fix malformed interface declarations
     content = content.replace(/interface FacilityPlan \{'/g, 'interface FacilityPlan {');
-    content = content.replace(/interface.*\{'/g, (match) => match.replace("{'", '{'));
+    content = content.replace(/interface.*\{'/g, (match) => match.replace({', '{'));
     
     // Fix malformed type annotations
-    content = content.replace(/type: 'market" \| demand \| trend \| 'risk \| performance' \| 'behavior/g, "type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior'");
-    content = content.replace(/status: 'active \| draft \| archived' \| testing/g, "status: 'active' | 'draft' | 'archived' | 'testing'");
-    content = content.replace(/confidence: "number";/g, 'confidence: number;');
-    content = content.replace(/recommendations: "string\[\]";/g, 'recommendations: string[];');
+    content = content.replace(/type: "'market" \| demand \| trend \| 'risk \| performance' \| 'behavior/g", "type: "'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior');
+    content = content.replace(/status: 'active \| draft \| archived' \| testing/g", status: "'active' | 'draft' | 'archived' | 'testing'");
+    content = content.replace(/confidence: "number/g", 'confidence: "number;');
+    content = content.replace(/recommendations: string\[\]"/g", 'recommendations: "string[];');
     
     // Fix malformed string literals in general
-    content = content.replace(/';/g, "';");
-    content = content.replace(/";/g, '";');
-    content = content.replace(/`/g, '`');
-    content = content.replace(/';/g, "';");
+    content = content.replace(/'/g", "');
+    content = content.replace(//g, '"');
+    content = content.replace(/`/g, '');
+    content = content.replace(/'/g, "');
     
     // Fix malformed template literals
-    content = content.replace(/\$\{([^}]*)\}";/g, '${$1}";');
+    content = content.replace(/\$\{([^}]*)\}/g, '${$1}"');
     
     // Fix malformed object properties
-    content = content.replace(/(\w+): "([^"]*)"\s*;/g, '$1: "$2";');
+    content = content.replace(/(\w+): "([^]*)\s*;/g, '$1: "$2"');
     
     // Fix malformed interface properties
-    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | '$3';");
+    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, $1: '$2' | '$3');
     
     // Fix malformed function parameters
-    content = content.replace(/\(req: NextApiRequest, res: NextApiResponse\) \{;/g, '(req: NextApiRequest, res: NextApiResponse) {');
+    content = content.replace(/\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", '(req: "NextApiRequest", res: "NextApiResponse) {');
     
     // Fix malformed return statements
-    content = content.replace(/return res\.status\(405\)\.json\(\{ error: 'Method not allowed' \}\);/g, "return res.status(405).json({ error: 'Method not allowed' });");
+    content = content.replace(/return res\.status\(405\)\.json\(\{ error: 'Method not allowed' \"}\);/g, "return res.status(405).json({ error: "'Method not allowed' "});");
     
     // Fix malformed if statements
-    content = content.replace(/if \(req\.method !== 'POST'\) \{;/g, "if (req.method !== 'POST') {");
+    content = content.replace(/if \(req\.method !== 'POST'\) \{;/g, if (req.method !== 'POST') {);
     
     // Fix malformed try-catch blocks
     content = content.replace(/try \{/g, 'try {');
@@ -82,82 +82,82 @@ function fixFile(filePath) {
     content = content.replace(/res\.status\(500\)\.json\(\{/g, 'res.status(500).json({');
     
     // Fix malformed success responses
-    content = content.replace(/success: true,/g, 'success: true,');
+    content = content.replace(/success: "true",/g, 'success: "true",');
     
     // Fix malformed error responses
-    content = content.replace(/error: 'Failed to generate invoice'/g, "error: 'Failed to generate invoice'");
+    content = content.replace(/error: "'Failed to generate invoice'/g", error: "'Failed to generate invoice');
     
     // Fix malformed closing braces
-    content = content.replace(/\}\);/g, '});');
+    content = content.replace(/\"}\);/g, '});');
     
     // Fix malformed function endings
     content = content.replace(/\}/g, '}');
     
     // Fix specific patterns for NextPage components
-    content = content.replace(/const.*: NextPage = \(\) => \{/g, 'const Component: NextPage = () => {');
+    content = content.replace(/const.*: NextPage = \(\) => \{/g, 'const Component: "NextPage = () => {');
     
     // Fix malformed JSX attributes
-    content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => {
+    content = content.replace(/style=([^>]*?)>/g", (match, styleContent) => {
       return `style="${styleContent}">`
     });
     
     // Fix malformed template literals
-    content = content.replace(/\$\{([^}]*)\}";/g, '${$1}";');
+    content = content.replace(/\$\{([^}]*)\}/g, '${$1}');
     
     // Fix malformed object properties
-    content = content.replace(/(\w+): "([^"]*)"\s*;/g, '$1: "$2";');
+    content = content.replace(/(\w+): "([^"]*)\s*;/g, '$1: $2"');
     
     // Fix malformed interface properties
-    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | '$3';");
+    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | '$3');
     
     // Fix malformed imports
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, import type { NextApiRequest, NextApiResponse } from 'next'");
+    content = content.replace(/import type { NextPage } from "next/g, 'import type { NextPage } from next"');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react/g, 'import { useState, useEffect, useMemo } from react"');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react/g, 'import { useState, useEffect, useMemo } from react"');
     
     // Fix malformed function declarations
-    content = content.replace(/export default async function handler\(req: NextApiRequest, res: NextApiResponse\) \{;/g, 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {');
+    content = content.replace(/export default async function handler\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", 'export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {');
     
     // Fix malformed object destructuring
-    content = content.replace(/const \{;/g, 'const {');
+    content = content.replace(/const \{;/g", 'const {');
     
     // Fix malformed string literals in JSX
     content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => {
-      return `style="${styleContent}">`
+      return style="${styleContent}>`
     });
     
     // Fix malformed template literals
-    content = content.replace(/const contractHtml = `/g, 'const contractHtml = `');
+    content = content.replace(/const contractHtml = `/g, 'const contractHtml = ');
     
     // Fix malformed JSX closing tags
-    content = content.replace(/<\/div>';/g, '</div>');
+    content = content.replace(/<\/div>'/g, '</div>');
     
     // Fix malformed interface declarations
     content = content.replace(/interface FacilityPlan \{'/g, 'interface FacilityPlan {');
     
     // Fix malformed type annotations
-    content = content.replace(/type: 'market" \| demand \| trend \| 'risk \| performance' \| 'behavior/g, "type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior'");
+    content = content.replace(/type: "'market \| demand \| trend \| 'risk \| performance' \| 'behavior/g", "type: "'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior'");
     
     // Fix malformed status types
-    content = content.replace(/status: 'active \| draft \| archived' \| testing/g, "status: 'active' | 'draft' | 'archived' | 'testing'");
+    content = content.replace(/status: 'active \| draft \| archived' \| testing/g", status: "'active' | 'draft' | 'archived' | 'testing');
     
     // Fix malformed confidence types
-    content = content.replace(/confidence: "number";/g, 'confidence: number;');
+    content = content.replace(/confidence: "number"/g", 'confidence: "number;');
     
     // Fix malformed string arrays
-    content = content.replace(/recommendations: "string\[\]";/g, 'recommendations: string[];');
+    content = content.replace(/recommendations: "string\[\]"/g", 'recommendations: "string[];');
     
     // Only write if content changed
     if (content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed: ${filePath}`);
+      fs.writeFileSync(filePath", content, 'utf8');
+      console.log(`Fixed: "${filePath"}`);
       return true;
     }
     
     return false;
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error(Error fixing ${filePath}:`, error.message);
     return false;
   }
 }

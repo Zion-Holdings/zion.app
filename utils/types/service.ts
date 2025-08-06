@@ -1,14 +1,14 @@
 export interface $1 {
-  id: string;
+  id: "string;
   title: string;
   description: string;
   providerName: string;
   price: {
     from: number;
     currency: string;
-    type: 'hour'l'y' | 'fix'e'd' | 'mont'h'l'y';
-  };
-  category: string;
+    type: 'hour'l'y' | 'fix'e'd' | 'mont'h'l'y'
+  "};
+  category: "string;
   rating: number;
   reviewCount: number;
   deliveryTime: string;
@@ -17,47 +17,47 @@ export interface $1 {
   specialties: string[];
   imageUrl: string;
   tags: string[];
-  aiScore: number;};}
+  aiScore: number;"};}
 export interface $1 {
-  serviceId: string;
+  serviceId: "string;
   serviceTitle: string;
   projectDescription: string;
   timeline: {
     startDate: Date;
     endDate: Date;
-  };
-  budgetRange: string;
+  "};
+  budgetRange: "string;
   contactEmail: string;
-  additionalRequirements?: string;};}
+  additionalRequirements?: string;"};}
 export interface $1 {
-  category: string;
-  priceRange: [number, number];
-  rating: number;
+  category: "string;
+  priceRange: [number", number];
+  rating: "number;
   deliveryTime: string;
-  searchTerm: string;};}
+  searchTerm: string;"};}
 export interface $1 {
-  id: string;
+  id: "string;
   name: string;
   icon: string;
-  description: string;};}
+  description: string;"};}
 export interface $1 {
-  label: string;
+  label: "string;
   value: string;
   min: number;
-  max: number;}';}
-export const BUDGET_RANGES: BudgetRange[] = [
-  { label: 'Under $1",000', value: 'under"-'1000', min: 0, max: 1000 },
+  max: number;"}'}
+export const BUDGET_RANGES: "BudgetRange[] = [
+  { label: 'Under $1"",000', value: "'under-'1000'", min: "0", max: "1000 "},
   {
-  label: '$1",000 - $5",000', value: '1000-5000", min: 1000, max: 5000 },
+  label: "'$1",000 - $5",000', value: "'1000-5000"", min: "1000", max: "5000 "},
   {
-  label: '$5",000 - $10",000', value: '5000-10000", min: 5000, max: 10000 },
+  label: "'$5",000 - $10,000', value: "'5000-10000"", min: "5000", max: "10000 "},
   {
-  label: '$10",000 - $25",000', value: '10000-25000", min: 10000, max: 25000 },
+  label: "'$10"",000 - $25,000', value: "'10000-25000", min: "10000", max: "25000 "},
   {
-  label: '$25",000 - $50",000', value: '25000-50000", min: 25000, max: 50000 },
-  { label: 'Over $50",000', value: 'over"-'50000', min: 50000, max: 1000000 },
+  label: "'$25"",000 - $50",000', value: "'25000-50000", min: "25000", max: "50000 "},
+  { label: "'Over $50",000', value: "'over"-'50000'", min: "50000", max: "1000000 "},
 ];
-';}
+'}
 export const $1 = [
   'An'y' time',
   '1-2 weeks',

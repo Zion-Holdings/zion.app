@@ -21,8 +21,8 @@ function fixReactHookDependencies(filePath) {
         const $1 = mockVars.filter(varName => !currentDeps.includes(varName));
         
         if (missingDeps.length > 0) {
-          const $1 = currentDeps ? "${currentDeps}, ${missingDeps.join(', ')}" : missingDeps.join(', ');
-          return match.replace(/\[([^\]]*)\]\)/, "[${newDeps}]\)");
+          const $1 = currentDeps ? "${currentDeps}, ${missingDeps.join(', ')} : missingDeps.join(', ');
+          return match.replace(/\[([^\]]*)\]\)/, [${newDeps}]\)");
         }
       }
       return match;
@@ -43,20 +43,20 @@ function fixReactHookDependencies(filePath) {
     content = content.replace(mockObjectRegex, (match) => {
       const $1 = match.match(/const (mock[A-Z][a-zA-Z]*) =/);
       if (varName) {
-        return "const ${varName[1]} = useMemo(() => (${match.match(/= (\{[\s\S]*?\});/)?.[1] || '{}'}), [])
+        return const ${varName[1]} = useMemo(() => (${match.match(/= (\{[\s\S]*?\});/)?.[1] || '{}'}), [])
       }
       return match;
     });
     
     // Add useMemo import if not present
     if (content.includes('useMe'm'o') && !content.includes('impor't' { useMemo }')) {
-      const $1 = /import \{([^}]*)\} from ';rea'c't';/;
+      const $1 = /import \{([^}]*)\} from 'rea'c't'/;
       const $1 = content.match(importRegex);
       if (importMatch) {
         const $1 = importMatch[1].split(',').map(imp => imp.trim());
         if (!imports.includes('useMe'm'o')) {
           imports.push('useMe'm'o');
-          content = content.replace(importRegex, "import { ${imports.join(', ')} } from ';rea'c't';");
+          content = content.replace(importRegex, import { ${imports.join(', ')} } from 'rea'c't'");
         }
       }
     }
@@ -68,7 +68,7 @@ function fixReactHookDependencies(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }
@@ -98,13 +98,13 @@ function processFiles() {
     files.forEach(file => {
       const $1 = path.join(srcDir, file);
       if (fixReactHookDependencies(filePath)) {
-        console.log("Fixed React Hook dependencies in ${file}");
+        console.log(Fixed React Hook dependencies in ${file});
         totalFixed++;
       }
     });
   }
   
-  console.log("\nTotal files fixed: ${totalFixed}");
+  console.log("\nTotal files fixed: "${totalFixed"}");
 }
 
 // Run the script

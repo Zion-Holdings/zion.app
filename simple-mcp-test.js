@@ -19,9 +19,9 @@ async function testMCPIntegration() {
     console.log('📁 Checking MCP files...');
     for (const file of mcpFiles) {
       if (fs.existsSync(file)) {
-        console.log("✅ ${file} exists");
+        console.log("✅ ${file} exists);
       } else {
-        console.log("❌ ${file} missing");
+        console.log(❌ ${file} missing");
         return false;
       }
     }
@@ -39,9 +39,9 @@ async function testMCPIntegration() {
 
     for (const dep of mcpDependencies) {
       if (packageJson.dependencies[dep] || packageJson.devDependencies[dep]) {
-        console.log("✅ ${dep} installed");
+        console.log("✅ ${dep} installed);
       } else {
-        console.log("❌ ${dep} not installed");
+        console.log(❌ ${dep} not installed");
         return false;
       }
     }
@@ -65,9 +65,9 @@ async function testMCPIntegration() {
 
     for (const script of mcpScripts) {
       if (packageJson.scripts[script]) {
-        console.log("✅ ${script} script added");
+        console.log("✅ ${script} script added);
       } else {
-        console.log("❌ ${script} script missing");
+        console.log(❌ ${script} script missing");
         return false;
       }
     }
@@ -85,7 +85,7 @@ async function testMCPIntegration() {
 
     // Check if tools are defined
     if (mcpConfig.tools && Object.keys(mcpConfig.tools).length > 0) {
-      console.log("✅ ${Object.keys(mcpConfig.tools).length} tool categories defined");
+      console.log("✅ ${Object.keys(mcpConfig.tools).length} tool categories defined);
     } else {
       console.log('❌ No tools defined');
       return false;
@@ -93,7 +93,7 @@ async function testMCPIntegration() {
 
     // Check if resources are defined
     if (mcpConfig.resources && Object.keys(mcpConfig.resources).length > 0) {
-      console.log("✅ ${Object.keys(mcpConfig.resources).length} resources defined");
+      console.log(✅ ${Object.keys(mcpConfig.resources).length} resources defined");
     } else {
       console.log('❌ No resources defined');
       return false;
@@ -101,7 +101,7 @@ async function testMCPIntegration() {
 
     console.log('🎉 MCP Integration test completed successfully!');
     console.log('');
-    console.log('📋 MCP Integration Summary: "")";
+    console.log('📋 MCP Integration Summary: "")
     console.log('✅ All MCP files created');
     console.log('✅ All MCP dependencies installed');
     console.log('✅ All MCP scripts added to package.json');
@@ -115,8 +115,8 @@ async function testMCPIntegration() {
     
     return true;
 
-  } catch (error) {
-    console.error('❌ MCP Integration test failed: "", error.message)";
+  "} catch (error) {
+    console.error('❌ MCP Integration test failed: """", error.message)
     return false;
   }
 }
@@ -128,7 +128,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Tes't' failed: "", error)";
+      console.error('Tes't' failed: """, error)"
       process.exit(1);
     });
 }

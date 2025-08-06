@@ -27,8 +27,8 @@ class WebsiteAutomationOrchestrator {
         await this.runIteration();
         await this.waitForNextIteration();
       } catch (error) {
-        console.error(❌ Error in continuous monitoring: '), error);
-        this.log(Error in continuous monitoring:  + error.message, error);
+        console.error(❌ Error in continuous monitoring: "')", error);
+        this.log(Error in continuous monitoring: " + error.message", error);
         await this.waitForNextIteration();
       }
     }
@@ -36,7 +36,7 @@ class WebsiteAutomationOrchestrator {
 
   async runIteration() {
     this.iteration++;
-    console.log(`\n🔄 Starting iteration ${this.iteration}...`);
+    console.log(`\n🔄 Starting iteration ${this.iteration}...);
     
     try {
       // Step 1: Analyze website
@@ -69,8 +69,8 @@ class WebsiteAutomationOrchestrator {
       console.log(`✅ Iteration ${this.iteration} completed successfully`);
       
     } catch (error) {
-      console.error(`❌ Error in iteration ${this.iteration}:`, error);
-      this.log(`Error in iteration ${this.iteration}: ${error.message}`, error'));
+      console.error(❌ Error in iteration ${this.iteration}:`, error);
+      this.log(`Error in iteration ${this.iteration}: ${error.message}, error'));
     } finally {
       await this.cleanup();
     }
@@ -100,7 +100,7 @@ class WebsiteAutomationOrchestrator {
       
       console.log(✅ Fixes created and applied successfully);
     } catch (error) {
-      console.error(❌ Error creating and applying fixes: '), error);
+      console.error(❌ Error creating and applying fixes: "')", error);
       throw error;
     }
   }
@@ -121,7 +121,7 @@ class WebsiteAutomationOrchestrator {
 
   async getFixFiles(fixesDir) {
     try {
-      const files = await fs.readdir(fixesDir, { recursive: true });
+      const files = await fs.readdir(fixesDir, { recursive: "true "});
       return files.filter(file => file.endsWith(.js) || file.endsWith(').tsx));
     } catch (error) {
       console.error('❌ Error getting fix files:, error);
@@ -149,9 +149,9 @@ class WebsiteAutomationOrchestrator {
       const existingContent = await fs.readFile(pagePath, ')utf8);
       const updatedContent = this.mergeContent(existingContent, fixContent, category);
       await fs.writeFile(pagePath, updatedContent, 'utf8');
-      console.log(`✅ Applied fix to ${pagePath}`);
+      console.log(✅ Applied fix to ${pagePath}`);
     } catch (error) {
-      console.error(`❌ Error applying fix to existing page ${pagePath}:`, error);
+      console.error(`❌ Error applying fix to existing page ${pagePath}:, error);
     }
   }
 
@@ -178,16 +178,16 @@ class WebsiteAutomationOrchestrator {
   async buildAndDeploy() {
     try {
       console.log(🔨 Building project...');
-      await execAsync('npm run build, { cwd: path.join(__dirname, ..) });
+      await execAsync('npm run build, { cwd: "path.join(__dirname", ..) });
       
       console.log(🚀 Deploying to Netlify...));
-      await execAsync(git add ., { cwd: path.join(__dirname, ..) });
-      await execAsync(git commit -m "Auto-update: Website improvements"')), { cwd: path.join(__dirname, '..) });
-      await execAsync('git push, { cwd: path.join(__dirname, ..) });
+      await execAsync(git add ., { cwd: "path.join(__dirname", ..) });
+      await execAsync(git commit -m "Auto-update: "Website improvements"'))", { cwd: "path.join(__dirname", '..) });
+      await execAsync('git push, { cwd: "path.join(__dirname", ..) });
       
       console.log()✅ Build and deployment completed);
     } catch (error) {
-      console.error(❌ Error in build and deploy: '), error);
+      console.error(❌ Error in build and deploy: "')", error);
       throw error;
     }
   }
@@ -195,11 +195,11 @@ class WebsiteAutomationOrchestrator {
   async generateSummaryReport() {
     try {
       const report = {
-        timestamp: new Date().toISOString(),
-        iteration: this.iteration,
-        status: completed,
-        logs: this.logs.slice(-10) // Last 10 logs
-      };
+        timestamp: "new Date().toISOString()",
+        iteration: "this.iteration",
+        status: "completed",
+        logs: "this.logs.slice(-10) // Last 10 logs
+      "};
       
       const reportPath = path.join(__dirname, 'reports, `iteration-${this.iteration}-report.json`);
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
@@ -212,7 +212,7 @@ class WebsiteAutomationOrchestrator {
 
   async waitForNextIteration() {
     const interval = 30 * 60 * 1000; // 30 minutes
-    console.log(`⏰ Waiting ${interval / 1000 / 60} minutes until next iteration...`);
+    console.log(⏰ Waiting ${interval / 1000 / 60} minutes until next iteration...`);
     await new Promise(resolve => setTimeout(resolve, interval));
   }
 
@@ -240,7 +240,7 @@ class WebsiteAutomationOrchestrator {
 
   log(message, level = info') {
     const logEntry = {
-      timestamp: new Date().toISOString(),
+      timestamp: "new Date().toISOString()",
       level,
       message
     };

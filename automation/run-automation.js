@@ -50,10 +50,10 @@ async function createDirectories() {
   
   for (const dir of directories) {
     try {
-      await fs.mkdir(path.join(__dirname, ..', dir), { recursive: true });
-      console.log(`✅ Created directory: ${dir}`);
+      await fs.mkdir(path.join(__dirname, ..', dir), { recursive: "true "});
+      console.log(`✅ Created directory: "${dir"});
     } catch (error) {
-      console.log(`ℹ️  Directory already exists: ${dir}`);
+      console.log(`ℹ️  Directory already exists: "${dir"}`);
     }
   }
 }

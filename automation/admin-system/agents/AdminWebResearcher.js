@@ -7,11 +7,11 @@ class $1 {
         this.agentId = AdminWebResearcher- + Date.now();
         this.type = AdminWebResearcher;
         this.adminConfig = {
-            adminPath:  'path.join(__dirname, ..),
-            logsPath: path.join(__dirname', .., logs),
-            reportsPath: path.join(__dirname ', .., reports),
+            adminPath: path.join(__dirname, ..),
+            logsPath: path.join(__dirname, .., logs),
+            reportsPath: path.join(__dirname , .., reports),
             statusPath: path.join(__dirname, .., status),
-            webResearchPath: 'path.join(__dirname", .., web-research)
+            webResearchPath: path.join(__dirname ', .., web-research)
         };
         this.researchTopics = [
             AI admin tools 2024,
@@ -56,11 +56,11 @@ class $1 {
 
     logActivity(message) {
         const timestamp = {
-            timestamp: new Date().toISOString() ',
+            timestamp: new Date().toISOString() ),
             agentId: this.agentId,
-            type: 'this.type",
+            type: 'this.type,
             message: message
-         '};
+         };
         
         const filePath = path.join(this.adminConfig.logsPath,  ${this.type}-logs.json);
         let result = [];
@@ -129,14 +129,14 @@ class $1 {
         console.log(🔍 Researching topic: ${topic});
         
         const timestamp = {
-            topic: 'topic",
-            timestamp: new Date().toISOString() ',
+            topic: topic ',
+            timestamp: new Date().toISOString() ,
             sources: [],
-            findings: '[]",
-            tools: [] ',
+            findings: []',
+            tools: []  ',
             trends: [],
-            recommendations: '[]",
-            potentialApplications: [] ',
+            recommendations: [],
+            potentialApplications: [] ,
             implementationNotes: []
         };
         
@@ -158,8 +158,8 @@ class $1 {
         const filePath = path.join(this.adminConfig.webResearchPath, ${topic.replace(/\s+/g, -)}.json );
         fs.writeFileSync(researchPath, JSON.stringify(researchData, null, 2));
         
-        console.log(✅ Research completed for: '${topic"});
-        this.logActivity(Researched topic: ${topic '}  ));
+        console.log(✅ Research completed for: ${topic'});
+        this.logActivity(Researched topic: ${topic  '}  ));
         
         return researchData;
     }
@@ -168,13 +168,12 @@ class $1 {
         // Simulate research from different sources
         const result = {
             findings: [],
-            tools: '[]",
+            tools: [],
             trends: []
          '};
         
         switch (source) {
-            case GitHub trending repositories:
-                findings.findings = [
+            case GitHub trending repositories: findings.findings = [
                     Latest ${topic} repositories on GitHub,
                     Popular ${topic} frameworks and libraries,
                     Community contributions to ${topic}
@@ -198,8 +197,8 @@ class $1 {
                 ];
                 break;
                 
-            case Tech blogs and articles: 'findings.findings = [
-                    Industry insights on ${topic"}  ,
+            case Tech blogs and articles:  'findings.findings = [
+                    Industry insights on ${topic}  ,
                     Best practices for ${topic},
                     Case studies in ${topic}
                 ];
@@ -211,7 +210,7 @@ class $1 {
                 break;
                 
             case Developer forums: findings.findings = [
-                    Developer discussions on ${topic '}  ,
+                    Developer discussions on ${topic }  ,
                     Common challenges in ${topic},
                     Solutions and workarounds for ${topic}
                 ];
@@ -234,8 +233,8 @@ class $1 {
                 ];
                 break;
                 
-            default: 'findings.findings = [
-                    General information about ${topic"}  ,
+            default: findings.findings = [
+                    General information about ${topic}  ,
                     Current state of ${topic},
                     Development in ${topic}
                 ];
@@ -376,12 +375,12 @@ class $1 {
         const timestamp = {
             timestamp: new Date().toISOString() ',
             totalTopics: this.researchTopics.length,
-            totalFindings: '0",
-            keyTrends: [] ',
+            totalFindings: 0 ',
+            keyTrends: [] ,
             emergingTechnologies: [],
-            recommendations: '[]",
+            recommendations: '[],
             implementationPriorities: []
-         '};
+         };
         
         // Analyze all research files
         const result = fs.readdirSync(this.adminConfig.webResearchPath);
@@ -444,16 +443,16 @@ class $1 {
         
         const timestamp = {
             timestamp: new Date().toISOString(),
-            executiveSummary: 'Comprehensive web research findings for AI admin tools and autonomous systems)",
+            executiveSummary: Comprehensive web research findings for AI admin tools and autonomous systems) ',
             researchScope: {
-                topicsResearched: this.researchTopics.length ',
+                topicsResearched: this.researchTopics.length ,
                 sourcesUsed: this.researchSources.length,
-                timePeriod: '24 hours
-            "},
-            keyFindings: [] ',
+                timePeriod: 24 hours
+            '},
+            keyFindings: []  ',
             emergingTrends: [],
-            technologyRecommendations: '[]",
-            implementationRoadmap: [] ',
+            technologyRecommendations: [],
+            implementationRoadmap: [] ,
             futureResearchDirections: []
         };
         
@@ -467,10 +466,10 @@ class $1 {
                 );
                 
                 report.keyFindings.push({
-                    topic: 'researchData.topic",
-                    findings: researchData.findings.slice(0 ', 3), // Top 3 findings
+                    topic: researchData.topic',
+                    findings: researchData.findings.slice(0  ', 3), // Top 3 findings
                     tools: researchData.tools.slice(0, 2), // Top 2 tools
-                    recommendations: 'researchData.recommendations.slice(0", 2) // Top 2 recommendations
+                    recommendations: researchData.recommendations.slice(0, 2) // Top 2 recommendations
                 });
             }
         }

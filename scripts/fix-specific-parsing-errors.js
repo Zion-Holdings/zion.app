@@ -20,24 +20,24 @@ function fixSpecificParsingErrors(filePath) {
     content = content.replace(/(\w+)\[([^\]]*)$/gm, '$1[$2]');
 
     // Fix specific parsing patterns
-    // Fix "Property or signature expected" errors
+    // Fix "Property or signature expected errors
     content = content.replace(/^\s*(\w+):\s*([^;]*)$/gm, '$1: $2;');
     
-    // Fix "Expression expected" errors
+    // Fix Expression expected" errors
     content = content.replace(/(\w+):\s*([^,}]*)$/gm, '$1: $2');
     
-    // Fix "Unexpected token" errors</div>
+    // Fix "Unexpected token errors</div>
     content = content.replace(/<([^>]+)\s*\/\s*([^>]*)\s*\/>/g, '<$1 $2 />');
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("✅ Fixed parsing errors in ${filePath}");
+      console.log(✅ Fixed parsing errors in ${filePath}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}: ", error.message)";
+    console.error("❌ Error processing ${filePath}: , error.message)
     return false;
   }
 }

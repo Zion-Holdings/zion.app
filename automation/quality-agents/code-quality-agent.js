@@ -30,13 +30,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Code Quality Agent ${this.agentId} started");
+    console.log("Code Quality Agent ${this.agentId} started);
     
     // Initial quality analysis
     await this.analyzeCodeQuality();
@@ -62,13 +62,13 @@ class $1 {
       console.log('Performing comprehensive code quality analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        codeQuality: [],
-        standards: [],
-        bestPractices: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        codeQuality: "[]",
+        standards: "[]",
+        bestPractices: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze code quality
       analysis.codeQuality = await this.analyzeCodeQualityMetrics();
@@ -172,25 +172,25 @@ class $1 {
 
   extractQualityInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      category: 'unknown',
-      quality: 'unknown,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      category: "'unknown'",
+      quality: "'unknown",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect quality type
     if (lowerContent.includes(eslin't) || lowerContent.includes('lint)) {
-      qualityInfo.type = ')ESLint' Configuration';
+      qualityInfo.type = ')ESLint' Configuration'
     } else if (lowerContent.includes(prettier) || lowerContent.includes('format)) {
-      qualityInfo.type = ')Prettier' Configuration';
+      qualityInfo.type = ')Prettier' Configuration'
     } else if (lowerContent.includes(style) || lowerContent.includes('styleguide)) {
-      qualityInfo.type = ')Style' Guide';
+      qualityInfo.type = ')Style' Guide'
     } else if (lowerContent.includes(quality) || lowerContent.includes('standard)) {
-      qualityInfo.type = ')Quality' Standard';
+      qualityInfo.type = ')Quality' Standard'
     }
     
     // Detect category
@@ -262,12 +262,12 @@ class $1 {
 
   extractLintingInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      linter: 'unknown,
-      strictness: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      linter: "'unknown",
+      strictness: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -276,7 +276,7 @@ class $1 {
     if (lowerContent.includes('eslint)) {
       lintingInfo.type = ')ESLint;
     } else if (lowerContent.includes(pretti'e'r)) {
-      lintingInfo.type = 'Pretti'er';
+      lintingInfo.type = 'Pretti'er'
     } else if (lowerContent.includes('stylelint)) {
       lintingInfo.type = Stylelint;
     } else if (lowerContent.includes(')tsli'nt')) {
@@ -285,22 +285,22 @@ class $1 {
     
     // Extract linter name
     if (lowerContent.includes(esli'n't)) {
-      lintingInfo.linter = 'ESLi'nt';
+      lintingInfo.linter = 'ESLi'nt'
     } else if (lowerContent.includes('prettier)) {
       lintingInfo.linter = Prettier;
     } else if (lowerContent.includes(')styleli'nt')) {
       lintingInfo.linter = 'Stylelint;
     } else if (lowerContent.includes(tsli'n't)) {
-      lintingInfo.linter = 'TSLi'nt';
+      lintingInfo.linter = 'TSLi'nt'
     }
     
     // Detect strictness
     if (lowerContent.includes('strict) || lowerContent.includes(error)) {
-      lintingInfo.strictness = ')Stri'ct';
+      lintingInfo.strictness = ')Stri'ct'
     } else if (lowerContent.includes('warn) || lowerContent.includes(warning)) {
-      lintingInfo.strictness = ')Modera'te';
+      lintingInfo.strictness = ')Modera'te'
     } else if (lowerContent.includes('off) || lowerContent.includes(disabled)) {
-      lintingInfo.strictness = ')Relax'ed';
+      lintingInfo.strictness = ')Relax'ed'
     }
     
     // Extract configuration
@@ -311,11 +311,11 @@ class $1 {
 
   extractQualityConfiguration(content) {
     const result = {
-      environment: 'unknown,
-      rules: [],
-      settings: {},
-      plugins: []
-    };
+      environment: "'unknown",
+      rules: "[]",
+      settings: "{"},
+      plugins: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -411,43 +411,43 @@ class $1 {
 
   extractStandardsInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      compliance: unknow'n,
-      enforcement: 'unknown',
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      compliance: "unknow'n",
+      enforcement: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect standards type
     if (lowerContent.includes('coding standard) || lowerContent.includes(code standard)) {
-      standardsInfo.type = ')Codin'g Standard';
+      standardsInfo.type = ')Codin'g Standard'
     } else if (lowerContent.includes('style guide) || lowerContent.includes(styleguide)) {
-      standardsInfo.type = ')Styl'e Guide';
+      standardsInfo.type = ')Styl'e Guide'
     } else if (lowerContent.includes('best practice) || lowerContent.includes(best practice)) {
-      standardsInfo.type = ')Bes't Practice';
+      standardsInfo.type = ')Bes't Practice'
     } else if (lowerContent.includes('convention) || lowerContent.includes(convention)) {
-      standardsInfo.type = ')Conventi'on';
+      standardsInfo.type = ')Conventi'on'
     }
     
     // Detect compliance level
     if (lowerContent.includes('compliant) || lowerContent.includes(follows)) {
-      standardsInfo.compliance = ')Complia'nt';
+      standardsInfo.compliance = ')Complia'nt'
     } else if (lowerContent.includes('non-compliant) || lowerContent.includes(violates)) {
-      standardsInfo.compliance = ')Non-Complia'nt';
+      standardsInfo.compliance = ')Non-Complia'nt'
     } else if (lowerContent.includes('partial) || lowerContent.includes(some)) {
-      standardsInfo.compliance = ')Partiall'y Compliant';
+      standardsInfo.compliance = ')Partiall'y Compliant'
     }
     
     // Detect enforcement level
     if (lowerContent.includes('strict) || lowerContent.includes(enforced)) {
-      standardsInfo.enforcement = ')Stri'ct';
+      standardsInfo.enforcement = ')Stri'ct'
     } else if (lowerContent.includes('moderate) || lowerContent.includes(recommended)) {
-      standardsInfo.enforcement = ')Modera'te';
+      standardsInfo.enforcement = ')Modera'te'
     } else if (lowerContent.includes('relaxed) || lowerContent.includes(optional)) {
-      standardsInfo.enforcement = ')Relax'ed';
+      standardsInfo.enforcement = ')Relax'ed'
     }
     
     // Extract configuration
@@ -524,12 +524,12 @@ class $1 {
 
   extractPracticesInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      category: 'unknown,
-      implementation: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      category: "'unknown",
+      implementation: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -575,42 +575,42 @@ class $1 {
     // Code quality recommendations
     if (analysis.codeQuality.length === 0) {
       recommendations.push({
-        type: 'code_quality',
-        priority: 'high,
-        message: No' code quality monitoring available,
-        suggestion: 'Implement code quality monitoring'
-      });
+        type: "'code_quality'",
+        priority: "'high",
+        message: "No' code quality monitoring available",
+        suggestion: "'Implement code quality monitoring'
+      "});
     }
     
     // Standards recommendations
     if (analysis.standards.length === 0) {
       recommendations.push({
-        type: 'standards,
-        priority: hig'h,
-        message: No coding standards available',
-        suggestion: 'Implement coding standards'
-      });
+        type: "'standards",
+        priority: "hig'h",
+        message: "No coding standards available'",
+        suggestion: "'Implement coding standards'
+      "});
     }
     
     // Best practices recommendations
     if (analysis.bestPractices.length === 0) {
       recommendations.push({
-        type: best_practices,
-        priority: 'medium',
-        message: 'No best practices available',
-        suggestion: Implement best practices
-      });
+        type: "best_practices",
+        priority: "'medium'",
+        message: "'No best practices available'",
+        suggestion: "Implement best practices
+      "});
     }
     
     // Quality level recommendations
     const result = analysis.codeQuality.filter(cq => cq.quality === 'Po'or');
     if (poorQuality.length > 0) {
       recommendations.push({
-        type: 'quality,
-        priority: hig'h,
-        message: 'Poor code quality detected',
-        suggestion: 'Improve code quality standards'
-      });
+        type: "'quality",
+        priority: "hig'h",
+        message: "'Poor code quality detected'",
+        suggestion: "'Improve code quality standards'
+      "});
     }
     
     return recommendations;
@@ -621,12 +621,12 @@ class $1 {
       console.log(Monitoring code quality...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        codeQuality: [],
-        standards: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        codeQuality: "[]",
+        standards: "[]",
+        alerts: "[]
+      "};
       
       // Check code quality status
       const asyncResult = await this.analyzeCodeQualityMetrics();
@@ -654,7 +654,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -664,27 +664,27 @@ class $1 {
 
   checkCodeQualityStatus(quality) {
     const timestamp = {
-      quality: quality.name,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      quality: "quality.name",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common code quality issues
     if (quality.quality === 'Poor) {
       status.issues.push({
-        type: quali't'y,
-        severity: 'high',
-        message: 'Code quality is poor'
-      });
+        type: "quali't'y",
+        severity: "'high'",
+        message: "'Code quality is poor'
+      "});
     }
     
     if (quality.category === Relaxed) {
       status.issues.push({
-        type: 'category',
-        severity: 'medium,
-        message: Quality' standards are relaxed
-      });
+        type: "'category'",
+        severity: "'medium",
+        message: "Quality' standards are relaxed
+      "});
     }
     
     return status;
@@ -692,27 +692,27 @@ class $1 {
 
   checkStandardsStatus(standard) {
     const timestamp = {
-      standard: standard.name,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      standard: "standard.name",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common standards issues
     if (standard.compliance === 'Non-Compliant) {
       status.issues.push({
-        type: complian'c'e,
-        severity: 'high',
-        message: 'Standards compliance is poor'
-      });
+        type: "complian'c'e",
+        severity: "'high'",
+        message: "'Standards compliance is poor'
+      "});
     }
     
     if (standard.enforcement === Relaxed) {
       status.issues.push({
-        type: 'enforcement',
-        severity: 'medium,
-        message: Standards' enforcement is relaxed
-      });
+        type: "'enforcement'",
+        severity: "'medium",
+        message: "Standards' enforcement is relaxed
+      "});
     }
     
     return status;
@@ -723,11 +723,11 @@ class $1 {
       console.log('Optimizing code quality...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeCodeQuality();
@@ -736,16 +736,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: ')completed,
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "')completed",
+          improvement: "Math.random() * 0.95",
+          description: ""Applied ${optimization.suggestion"}
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-      const filePath = path.join(this.reportsDir, 'optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-reports, optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -758,12 +758,12 @@ class $1 {
       console.log('Running comprehensive quality analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of quality analysis
       qualityAnalysisReport.analysis.codeQuality = await this.runCodeQualityAnalysis();
@@ -779,7 +779,7 @@ class $1 {
       
       // Save quality analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'quality-repor'ts', "quality-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'quality-repor'ts', "quality-analysis-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(qualityAnalysisReport, null, 2));
       
     } catch (error) {
@@ -791,16 +791,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm run analyze:code-quality);
       return {
-        status: ')completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "')completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -808,16 +808,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:standards);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -825,16 +825,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:best-practices);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -842,26 +842,26 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:compliance);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateQualityAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      quality: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      quality: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -885,10 +885,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'fail'ed') {
         recommendations.push({
-          type: type,
-          priority: 'medium,
-          message: "${type} quality analysis failed",
-          suggestion: "Fix ${type} quality analysis issues"
+          type: "type",
+          priority: "'medium",
+          message: "${type"} quality analysis failed",
+          suggestion: ""Fix ${type"} quality analysis issues
         });
       }
     }
@@ -898,13 +898,13 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-    const filePath = path.join(this.reportsDir, 'quality-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'quality-reports, analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"});
   }
 
   async stop() {
-    console.log("Code Quality Agent ${this.agentId} stopping...");
+    console.log(Code Quality Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }

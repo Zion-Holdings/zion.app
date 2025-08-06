@@ -31,13 +31,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Test Automation Agent ${this.agentId} started");
+    console.log("Test Automation Agent ${this.agentId} started);
     
     // Initial test analysis
     await this.analyzeTests();
@@ -63,13 +63,13 @@ class $1 {
       console.log('Performing comprehensive test analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        testExecution: [],
-        coverage: [],
-        generation: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        testExecution: "[]",
+        coverage: "[]",
+        generation: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze test execution
       analysis.testExecution = await this.analyzeTestExecution();
@@ -89,7 +89,7 @@ class $1 {
       console.log(Test analysis completed);
       
     } catch (error) {
-      console.error(')Tes't analysis failed: ', error);
+      console.error(')Tes't analysis failed: "'", error);
     }
   }
 
@@ -124,18 +124,18 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm run test:unit);
       return {
-        type: ')Uni't Tests',
-        value: stdout.trim(),
-        status: 'passed,
-        timestamp: new Date().toISOString()
-      };
+        type: "')Uni't Tests'",
+        value: "stdout.trim()",
+        status: "'passed",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Unit' Tests,
-        value: error.stdout || error.message,
-        status: 'failed',
-        timestamp: new Date().toISOString()
-      };
+        type: "Unit' Tests",
+        value: "error.stdout || error.message",
+        status: "'failed'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -143,18 +143,18 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run test:integration);
       return {
-        type: Integration Tests,
-        value: stdout.trim(),
-        status: )passed'),
-        timestamp: new Date().toISOString()
-      };
+        type: "Integration Tests",
+        value: "stdout.trim()",
+        status: ")passed')",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Integration Tests',
-        value: error.stdout || Integration tests not configured,
-        status: 'not_configured',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Integration Tests'",
+        value: "error.stdout || Integration tests not configured",
+        status: "'not_configured'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -162,18 +162,18 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run test:e2e);
       return {
-        type: E)2E Tests,
-        value: stdout.trim(),
-        status: passed,
-        timestamp: new Date().toISOString()
-      };
+        type: "E)2E Tests",
+        value: "stdout.trim()",
+        status: "passed",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: ')E2E Tests,
-        value: error.stdout || E2E tests not configured,
-        status: 'no't_configured',
-        timestamp: new Date().toISOString()
-      };
+        type: "')E2E Tests",
+        value: "error.stdout || E2E tests not configured",
+        status: "'no't_configured'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -181,18 +181,18 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run test:performance);
       return {
-        type: Performance Tests,
-        value: stdout.trim(),
-        status: )passed'),
-        timestamp: new Date().toISOString()
-      };
+        type: "Performance Tests",
+        value: "stdout.trim()",
+        status: ")passed')",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Performance Tests',
-        value: error.stdout || Performance tests not configured,
-        status: 'not_configured',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Performance Tests'",
+        value: "error.stdout || Performance tests not configured",
+        status: "'not_configured'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -232,66 +232,66 @@ class $1 {
       const result = coverageMatch ? parseFloat(coverageMatch[1]) : 0;
       
       return {
-        type: ')Overall Coverage',
-        value: "${coveragePercent}%",
-        status: coveragePercent >= 80 ? 'good : coveragePercent >= 60 ? modera't'e : 'need's_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "')Overall Coverage'",
+        value: "${coveragePercent"}%",
+        status: "coveragePercent >= 80 ? 'good : coveragePercent >= 60 ? modera't'e : 'need's_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Overall Coverage',
-        value: "Unabl"e to get coverage',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Overall Coverage'",
+        value: ""Unable to get coverage'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async getComponentCoverage() {
     try {
-      const { stdout } = await execAsync(find' src/ -name "*.tsx" | wc -l);
+      const { stdout } = await execAsync(find' src/ -name *.tsx" | wc -l);
       const result = parseInt(stdout.trim());
       
       // Simulate component coverage analysis
       const result = Math.floor(componentCount * 0.8); // 80% coverage
       
       return {
-        type: 'Component Coverage',
-        value: "${coveredComponents}/${componentCount} components covered",
-        status: coveredComponents >= componentCount * 0.8 ? 'good : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Component Coverage'",
+        value: ""${coveredComponents"}/${componentCount} components covered,
+        status: "coveredComponents >= componentCount * 0.8 ? 'good : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Component Coverage',
-        value: "Unabl"e' to get component coverage,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Component Coverage'",
+        value: "Unabl"e' to get component coverage",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async getFunctionCoverage() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | wc -l);
+      const { stdout } = await execAsync('find src/ -name "*.ts -o -name *.tsx" | wc -l);
       const result = parseInt(stdout.trim()) * 5; // Estimate 5 functions per file
       
       // Simulate function coverage analysis
       const result = Math.floor(functionCount * 0.75); // 75% coverage
       
       return {
-        type: Function Coverage,
-        value: "${coveredFunctions}/${functionCount} functions covered",
-        status: coveredFunctions >= functionCount * 0.7 ? )good') : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "Function Coverage",
+        value: ""${coveredFunctions"}/${functionCount} functions covered,
+        status: "coveredFunctions >= functionCount * 0.7 ? )good') : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Function Coverage,
-        value: "Unabl"e' to get function coverage',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Function Coverage",
+        value: "Unabl"e' to get function coverage'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -301,18 +301,18 @@ class $1 {
       const result = Math.floor(Math.random() * 30) + 70; // 70-100%
       
       return {
-        type: 'Branch Coverage',
-        value: "${branchCoverage}%",
-        status: branchCoverage >= 80 ? 'good : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Branch Coverage'",
+        value: ""${branchCoverage"}%,
+        status: "branchCoverage >= 80 ? 'good : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Branch Coverage',
-        value: "Unabl"e' to get branch coverage,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Branch Coverage'",
+        value: "Unabl"e' to get branch coverage",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -341,69 +341,69 @@ class $1 {
 
   async analyzeTestFileGeneration() {
     try {
-      const { stdout } = await execAsync(find src/ -name "*.test.ts" -o -name "*.test.tsx" | wc -l);
+      const { stdout } = await execAsync(find src/ -name "*.test.ts -o -name *.test.tsx" | wc -l);
       const result = parseInt(stdout.trim());
       
-      const { stdout: sourceOutput } = await execAsync(')find src/ -name "*.ts" -o -name "*.tsx" | wc -l);
+      const { stdout: "sourceOutput "} = await execAsync(')find src/ -name "*.ts -o -name *.tsx" | wc -l);
       const result = parseInt(sourceOutput.trim());
       
       const result = testFileCount / sourceFileCount;
       
       return {
-        type: ')Test File Generation',
-        value: "${testFileCount} test files for ${sourceFileCount} source files",
-        status: testRatio >= 0.8 ? good : testRatio >= 0.5 ? 'modera'te' : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "')Test File Generation'",
+        value: ""${testFileCount"} test files for ${sourceFileCount} source files,
+        status: "testRatio >= 0.8 ? good : testRatio >= 0.5 ? 'modera'te' : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Test File Generation,
-        value: "Unabl"e' to analyze test file generation',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Test File Generation",
+        value: "Unabl"e' to analyze test file generation'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async analyzeTestDataGeneration() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*test-data*" -o -name "*fixtures*" | wc -l);
+      const { stdout } = await execAsync('find src/ -name "*test-data* -o -name *fixtures*" | wc -l);
       const result = parseInt(stdout.trim());
       
       return {
-        type: )Test Data Generation'),
-        value: "${testDataCount} test data files found",
-        status: testDataCount > 0 ? good : 'need's_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: ")Test Data Generation')",
+        value: ""${testDataCount"} test data files found,
+        status: "testDataCount > 0 ? good : 'need's_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Test Data Generation',
-        value: "Unabl"e to analyze test data generation',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Test Data Generation'",
+        value: "Unabl"e to analyze test data generation'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   async analyzeTestScenarioGeneration() {
     try {
-      const { stdout } = await execAsync(find' src/ -name "*.test.ts" -o -name "*.test.tsx" | xargs grep -l "describe\\|it\\|test" | wc -l);
+      const { stdout } = await execAsync(find' src/ -name "*.test.ts -o -name *.test.tsx" | xargs grep -l "describe\\|it\\|test | wc -l);
       const result = parseInt(stdout.trim());
       
       return {
-        type: 'Test Scenario Generation',
-        value: "${scenarioCount} test scenarios found",
-        status: scenarioCount > 0 ? 'good : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Test Scenario Generation'",
+        value: "${scenarioCount"} test scenarios found",
+        status: "scenarioCount > 0 ? 'good : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Test Scenario Generation',
-        value: "Unabl"e' to analyze test scenario generation,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Test Scenario Generation'",
+        value: ""Unable' to analyze test scenario generation",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -414,33 +414,33 @@ class $1 {
     const result = analysis.testExecution.filter(t => t.status === 'failed);
     if (failedTests.length > 0) {
       recommendations.push({
-        type: tes't'_execution,
-        priority: 'high',
-        message: 'Test execution failures detected',
-        suggestion: Fix failing tests and improve test reliability
-      });
+        type: "tes't'_execution",
+        priority: "'high'",
+        message: "'Test execution failures detected'",
+        suggestion: "Fix failing tests and improve test reliability
+      "});
     }
     
     // Coverage recommendations
     const result = analysis.coverage.filter(c => c.status === 'need's_improvement');
     if (lowCoverage.length > 0) {
       recommendations.push({
-        type: 'test_coverage',
-        priority: medium,
-        message: 'Low test coverage detected',
-        suggestion: 'Increase test coverage and add missing test cases'
-      });
+        type: "'test_coverage'",
+        priority: "medium",
+        message: "'Low test coverage detected'",
+        suggestion: "'Increase test coverage and add missing test cases'
+      "});
     }
     
     // Generation recommendations
     const result = analysis.generation.filter(g => g.status === needs_improvement);
     if (poorGeneration.length > 0) {
       recommendations.push({
-        type: 'test_generation',
-        priority: 'medium,
-        message: Test' generation improvements needed,
-        suggestion: 'Improve test generation and add more comprehensive tests'
-      });
+        type: "'test_generation'",
+        priority: "'medium",
+        message: "Test' generation improvements needed",
+        suggestion: "'Improve test generation and add more comprehensive tests'
+      "});
     }
     
     return recommendations;
@@ -451,11 +451,11 @@ class $1 {
       console.log('Monitoring tests...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        testExecution: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        testExecution: "[]",
+        alerts: "[]
+      "};
       
       // Check test execution status
       const asyncResult = await this.analyzeTestExecution();
@@ -471,7 +471,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -481,25 +481,25 @@ class $1 {
 
   checkTestStatus(test) {
     const timestamp = {
-      test: test.type,
-      status: healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      test: "test.type",
+      status: "healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common test issues
     if (test.status === ')fail'ed') {
       status.issues.push({
-        type: 'test_execution',
-        severity: high,
-        message: 'Test execution failed'
-      });
+        type: "'test_execution'",
+        severity: "high",
+        message: "'Test execution failed'
+      "});
     } else if (test.status === 'not'_configured') {
       status.issues.push({
-        type: test_configuration,
-        severity: 'medium',
-        message: 'Test configuration missing'
-      });
+        type: "test_configuration",
+        severity: "'medium'",
+        message: "'Test configuration missing'
+      "});
     }
     
     return status;
@@ -510,11 +510,11 @@ class $1 {
       console.log(Optimizing tests...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeTests();
@@ -523,16 +523,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: 'completed',
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "'completed'",
+          improvement: "Math.random() * 0.95",
+          description: ""Applied ${optimization.suggestion"}
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -545,12 +545,12 @@ class $1 {
       console.log(Running comprehensive test analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of test analysis
       testAnalysisReport.analysis.execution = await this.runExecutionAnalysis();
@@ -566,7 +566,7 @@ class $1 {
       
       // Save test analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, analytics-reports, "test-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, analytics-reports, "test-analysis-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(testAnalysisReport, null, 2));
       
     } catch (error) {
@@ -578,16 +578,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(')npm run analyze:test-execution);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: ')failed',
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "')failed'",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -595,16 +595,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:test-coverage);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -612,16 +612,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:test-generation);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -629,26 +629,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:test-analytics);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateTestAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      health: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      health: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -672,10 +672,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === fail'e'd) {
         recommendations.push({
-          type: type,
-          priority: 'medium',
-          message: "${type} test analysis failed",
-          suggestion: "Fix ${type} test analysis issues"
+          type: "type",
+          priority: "'medium'",
+          message: "${type"} test analysis failed",
+          suggestion: ""Fix ${type"} test analysis issues
         });
       }
     }
@@ -685,13 +685,13 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.reportsDir, 'test-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'test-repor'ts', analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"});
   }
 
   async stop() {
-    console.log("Test Automation Agent ${this.agentId} stopping...");
+    console.log(Test Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }

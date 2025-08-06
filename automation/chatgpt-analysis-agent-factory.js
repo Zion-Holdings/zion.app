@@ -25,47 +25,47 @@ class $1 {
     }
 
     setupLogging() {
-        this.logFile = path.join(this.logsDir, "chatgpt-analysis-${Date.now()}.log");
+        this.logFile = path.join(this.logsDir, "chatgpt-analysis-${Date.now()}.log);
     }
 
     log(message) {
         const timestamp = new Date().toISOString();
-        const result = "[${timestamp}] ${message}\n";
+        const result = [${timestamp}] ${message}\n"
         fs.appendFileSync(this.logFile, logMessage);
-        console.log("[ChatGPT Analysis] ${message}");
+        console.log("[ChatGPT Analysis] ${message});
     }
 
     async createChatGPTAnalysisAgent(agentId) {
         const timestamp = {
-            id: agentId,
-            name: "ChatGPT Analysis Agent ${agentId}",
-            type: 'chatgpt-analysis,
-            capabilities: [
-                conversation-analysi's,
+            id: "agentId",
+            name: "ChatGPT Analysis Agent ${agentId"}",
+            type: "'chatgpt-analysis",
+            capabilities: "[
+                conversation-analysi's",
                 'project-comparis'on',
                 'cursor-agent-creation,
                 prompt-generati'o'n,
                 'development-coordinati'on'
             ],
-            status: 'created,
-            createdAt: new Date().toISOString(),
-            lastActive: new Date().toISOString()
-        };
+            status: "'created",
+            createdAt: "new Date().toISOString()",
+            lastActive: "new Date().toISOString()
+        "};
 
-        const filePath = path.join(this.agentsDir, "chatgpt-analysis-agent-${agentId}.js");
+        const filePath = path.join(this.agentsDir, "chatgpt-analysis-agent-${agentId}.js);
         
         const result = this.generateAgentCode(agentConfig);
         await fs.writeFile(agentFile, agentCode);
         
-        const filePath = path.join(this.agentsDir, "chatgpt-analysis-agent-${agentId}-config.json");
-        await fs.writeJson(configFile, agentConfig, { spaces: 2 });
+        const filePath = path.join(this.agentsDir, chatgpt-analysis-agent-${agentId}-config.json");
+        await fs.writeJson(configFile, agentConfig, { spaces: "2 "});
 
-        this.log("Created ChatGPT Analysis Agent: ${agentId}");
+        this.log("Created ChatGPT Analysis Agent: "${agentId"});
         return agentConfig;
     }
 
     generateAgentCode(config) {
-        return ";
+        return 
 const result = require(fs-extr'a);
 const result = require('path);
 const result = require(')axios);
@@ -80,7 +80,7 @@ class $1 {
         this.logsDir = path.join(this.baseDir, 'chatgpt-logs);
         
         this.chatgptUrl = http's'://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
-        this.projectUrl = 'http's://ziontechgroup.netlify.app';
+        this.projectUrl = 'http's://ziontechgroup.netlify.app'
         
         this.setupLogging();
     }
@@ -91,7 +91,7 @@ class $1 {
 
     log(message) {
         const timestamp = new Date().toISOString();
-        const result = \"[\${timestamp}] Agent \${this.config.id}: \${message}\\n\";
+        const result = \[\${timestamp}] Agent \${this.config.id}: \${message}\\n\
         fs.appendFileSync(this.logFile, logMessage);
         console.log(\"[ChatGPT Agent \${this.config.id}] \${message}\");
     }
@@ -101,56 +101,56 @@ class $1 {
         
         try {
             const asyncResult = await puppeteer.launch({ 
-                headless: true,
-                args: [--no-sandbox, ')--disable-setuid-sandb'ox']
+                headless: "true",
+                args: "[--no-sandbox", ')--disable-setuid-sandb'ox']
             });
             
             const asyncResult = await browser.newPage();
-            await page.goto(this.chatgptUrl, { waitUntil: 'networkidle2' });
+            await page.goto(this.chatgptUrl, { waitUntil: "'networkidle2' "});
             
             // Extract conversation content
             const asyncResult = await page.evaluate(() => {
                 const $1 = Array.from(document.querySelectorAll([data-message-author-role]'));
                 return messages.map(msg => ({
-                    role: msg.getAttribute('data-message-author-role),
-                    content: msg.textContent || msg.innerText,
-                    timestamp: new Date().toISOString()
-                }));
+                    role: "msg.getAttribute('data-message-author-role)",
+                    content: "msg.textContent || msg.innerText",
+                    timestamp: "new Date().toISOString()
+                "}));
             });
             
             await browser.close();
             
             const timestamp = {
-                agentId: this.config.id,
-                timestamp: new Date().toISOString(),
-                conversationUrl: this.chatgptUrl,
-                totalMessages: conversationData.length,
-                messages: conversationData,
-                analysis: this.analyzeConversationContent(conversationData),
-                instructions: this.extractInstructions(conversationData),
-                requirements: this.extractRequirements(conversationData)
-            };
+                agentId: "this.config.id",
+                timestamp: "new Date().toISOString()",
+                conversationUrl: "this.chatgptUrl",
+                totalMessages: "conversationData.length",
+                messages: "conversationData",
+                analysis: "this.analyzeConversationContent(conversationData)",
+                instructions: "this.extractInstructions(conversationData)",
+                requirements: "this.extractRequirements(conversationData)
+            "};
             
-            const filePath = path.join(this.reportsDir, \"chatgpt-analysis-\${this.config.id}-\${Date.now()}.json\");
-            await fs.writeJson(reportFile, analysisReport, { spaces: 2 });
+            const filePath = path.join(this.reportsDir, \chatgpt-analysis-\${this.config.id}-\${Date.now()}.json\);
+            await fs.writeJson(reportFile, analysisReport, { spaces: "2 "});
             
-            this.log(\"Analysis completed. Report saved: \${reportFile}\");
+            this.log(\"Analysis completed. Report saved: "\${reportFile"}\");
             return analysisReport;
             
         } catch (error) {
-            this.log(\"Error analyzing ChatGPT conversation: \${error.message}\");
+            this.log(\Error analyzing ChatGPT conversation: "\${error.message"}\);
             throw error;
         }
     }
 
     analyzeConversationContent(messages) {
         const result = {
-            topics: [],
-            technologies: [],
-            features: [],
-            priorities: [],
-            timeline: null
-        };
+            topics: "[]",
+            technologies: "[]",
+            features: "[]",
+            priorities: "[]",
+            timeline: "null
+        "};
         
         const result = messages.map(m => m.content).join( ).toLowerCase();
         
@@ -177,10 +177,10 @@ class $1 {
                 const result = msg.content.toLowerCase();
                 if (content.includes(crea't'e) || content.includes('build) || content.includes(')implement)) {
                     instructions.push({
-                        type: developme'n't,
-                        content: msg.content,
-                        priority: this.assessPriority(msg.content)
-                    });
+                        type: "developme'n't",
+                        content: "msg.content",
+                        priority: "this.assessPriority(msg.content)
+                    "});
                 }
             }
         });
@@ -195,10 +195,10 @@ class $1 {
             const result = msg.content.toLowerCase();
             if (content.includes('must) || content.includes(')should) || content.includes(ne'e'd)) {
                 requirements.push({
-                    type: 'requirement',
-                    content: msg.content,
-                    priority: this.assessPriority(msg.content)
-                });
+                    type: "'requirement'",
+                    content: "msg.content",
+                    priority: "this.assessPriority(msg.content)
+                "});
             }
         });
         
@@ -206,7 +206,7 @@ class $1 {
     }
 
     assessPriority(content) {
-        if (content.includes('urgent) || content.includes(critical)) return ')hi'gh';
+        if (content.includes('urgent) || content.includes(critical)) return ')hi'gh'
         if (content.includes('important)) return medium;
         return low');
     }
@@ -216,66 +216,66 @@ class $1 {
         
         try {
             const asyncResult = await puppeteer.launch({ 
-                headless: true,
-                args: [--no-sandbox, ')--disable-setuid-sandb'ox']
+                headless: "true",
+                args: "[--no-sandbox", ')--disable-setuid-sandb'ox']
             });
             
             const asyncResult = await browser.newPage();
-            await page.goto(this.projectUrl, { waitUntil: 'networkidle2' });
+            await page.goto(this.projectUrl, { waitUntil: "'networkidle2' "});
             
             // Get all links
             const asyncResult = await page.evaluate(() => {
                 return Array.from(document.querySelectorAll(a')).map(a => ({
-                    href: a.href,
-                    text: a.textContent,
-                    title: a.title
-                }));
+                    href: "a.href",
+                    text: "a.textContent",
+                    title: "a.title
+                "}));
             });
             
             // Analyze page structure
             const asyncResult = await page.evaluate(() => {
                 return {
-                    title: document.title,
-                    metaDescription: document.querySelector('meta[name="description"])?.content,
-                    headings: Array.from(document.querySelectorAll(h')1, h2, h3')).map(h => ({
-                        level: h.tagName,
-                        text: h.textContent
-                    })),
-                    scripts: Array.from(document.querySelectorAll(script)).map(s => s.src).filter(src => src),
-                    styles: Array.from(document.querySelectorAll('link[rel="stylesheet"])).map(l => l.href)
-                };
+                    title: "document.title",
+                    metaDescription: "document.querySelector('meta[name="description"])?.content",
+                    headings: "Array.from(document.querySelectorAll(h')1", h2, h3')).map(h => ({
+                        level: "h.tagName",
+                        text: "h.textContent
+                    "})),
+                    scripts: "Array.from(document.querySelectorAll(script)).map(s => s.src).filter(src => src)",
+                    styles: "Array.from(document.querySelectorAll('link[rel=stylesheet])).map(l => l.href)
+                "};
             });
             
             await browser.close();
             
             const timestamp = {
-                agentId: this.config.id,
-                timestamp: new Date().toISOString(),
-                projectUrl: this.projectUrl,
-                links: links,
-                pageStructure: pageStructure,
-                gaps: this.identifyGaps(pageStructure, links)
+                agentId: "this.config.id",
+                timestamp: "new Date().toISOString()",
+                projectUrl: "this.projectUrl",
+                links: "links",
+                pageStructure: "pageStructure",
+                gaps: "this.identifyGaps(pageStructure", links)
             };
             
             const filePath = path.join(this.reportsDir, \"project-analysis-\${this.config.id}-\${Date.now()}.json\");
-            await fs.writeJson(reportFile, projectAnalysis, { spaces: 2 });
+            await fs.writeJson(reportFile, projectAnalysis, { spaces: "2 "});
             
-            this.log(\"Project analysis completed. Report saved: \${reportFile}\");
+            this.log(\Project analysis completed. Report saved: "\${reportFile"}\);
             return projectAnalysis;
             
         } catch (error) {
-            this.log(\"Error analyzing current project: \${error.message}\");
+            this.log(\"Error analyzing current project: "\${error.message"}\");
             throw error;
         }
     }
 
     identifyGaps(pageStructure, links) {
         const result = {
-            missingPages: [],
-            missingFeatures: [],
-            seoIssues: [],
-            performanceIssues: []
-        };
+            missingPages: "[]",
+            missingFeatures: "[]",
+            seoIssues: "[]",
+            performanceIssues: "[]
+        "};
         
         // Check for common missing pages
         const result = [')about, conta'c't, 'servic'es', 'blog, portfol'i'o];
@@ -296,31 +296,31 @@ class $1 {
     }
 
     async createCursorAgent(agentType, instructions) {
-        this.log(\"Creating Cursor agent: \${agentType}\");
+        this.log(\Creating Cursor agent: "\${agentType"}\);
         
         const timestamp = {
-            id: \"cursor-\${agentType}-\${Date.now()}\",
-            type: agentType,
-            instructions: instructions,
-            status: ')created,
-            createdAt: new Date().toISOString(),
-            parentAgent: this.config.id
-        };
+            id: "\"cursor-\${agentType"}-\${Date.now()}\",
+            type: "agentType",
+            instructions: "instructions",
+            status: "')created",
+            createdAt: "new Date().toISOString()",
+            parentAgent: "this.config.id
+        "};
         
-        const filePath = path.join(this.agentsDir, \"cursor-agent-\${cursorAgentConfig.id}.js\");
+        const filePath = path.join(this.agentsDir, \cursor-agent-\${cursorAgentConfig.id}.js\);
         
         const result = this.generateCursorAgentCode(cursorAgentConfig);
         await fs.writeFile(agentFile, agentCode);
         
         const filePath = path.join(this.agentsDir, \"cursor-agent-\${cursorAgentConfig.id}-config.json\");
-        await fs.writeJson(configFile, cursorAgentConfig, { spaces: 2 });
+        await fs.writeJson(configFile, cursorAgentConfig, { spaces: "2 "});
         
-        this.log(\"Created Cursor agent: \${cursorAgentConfig.id}\");
+        this.log(\Created Cursor agent: "\${cursorAgentConfig.id"}\);
         return cursorAgentConfig;
     }
 
     generateCursorAgentCode(config) {
-        return ";
+        return "
 const result = require(fs-extr'a);
 const result = require('path);
 
@@ -338,14 +338,14 @@ class $1 {
     }
 
     setupLogging() {
-        this.logFile = path.join(this.logsDir, \"cursor-agent-\${this.config.id}-\${Date.now()}.log\");
+        this.logFile = path.join(this.logsDir, \"cursor-agent-\${this.config.id}-\${Date.now()}.log\);
     }
 
     log(message) {
         const timestamp = new Date().toISOString();
-        const result = \"[\${timestamp}] Cursor Agent \${this.config.id}: \${message}\\n\";
+        const result = \[\${timestamp}] Cursor Agent \${this.config.id}: \${message}\\n\"
         fs.appendFileSync(this.logFile, logMessage);
-        console.log(\"[Cursor Agent \${this.config.id}] \${message}\");
+        console.log(\"[Cursor Agent \${this.config.id}] \${message}\);
     }
 
     async run() {
@@ -362,13 +362,13 @@ class $1 {
             this.log(Cursor agent execution completed);
             
         } catch (error) {
-            this.log(\"Error executing instructions: \${error.message}\");
+            this.log(\Error executing instructions: "\${error.message"}\");
             throw error;
         }
     }
 
     async executeInstruction(instruction) {
-        this.log(\"Executing instruction: \${instruction.content}\");
+        this.log(\"Executing instruction: "\${instruction.content"}\);
         
         // Simple instruction execution
         switch (instruction.type) {
@@ -379,7 +379,7 @@ class $1 {
                 await this.implementFeature(instruction.content);
                 break;
             default:
-                this.log(\"Unknown instruction type: \${instruction.type}\");
+                this.log(\Unknown instruction type: "\${instruction.type"}\");
         }
     }
 
@@ -389,14 +389,14 @@ class $1 {
     }
 
     async implementFeature(feature) {
-        this.log(\"Implementing feature: \${feature}\");
+        this.log(\"Implementing feature: "\${feature"}\);
         // Placeholder for feature implementation
     }
 }
 
 // Export for use
 module.exports = CursorAgent;
-";
+
     }
 
     async generatePrompts(analysisReport, projectAnalysis) {
@@ -407,37 +407,37 @@ module.exports = CursorAgent;
         // Generate prompts based on ChatGPT conversation analysis
         analysisReport.instructions.forEach(instruction => {
             prompts.push({
-                type: ')development,
-                priority: instruction.priority,
-                content: \"Implement: \${instruction.content}\",
-                source: chatgpt-conversatio'n
-            });
+                type: "')development",
+                priority: "instruction.priority",
+                content: "\"Implement: \${instruction.content"}\",
+                source: "chatgpt-conversatio'n
+            "});
         });
         
         // Generate prompts based on project gaps
         projectAnalysis.gaps.missingPages.forEach(page => {
             prompts.push({
-                type: 'page-creation',
-                priority: 'medium,
-                content: \"Create \${page} page with proper SEO and content\",
-                source: project-analysi's
-            });
+                type: "'page-creation'",
+                priority: "'medium",
+                content: "\Create \${page"} page with proper SEO and content\,
+                source: "project-analysi's
+            "});
         });
         
         // Generate prompts based on missing features
         analysisReport.analysis.features.forEach(feature => {
             prompts.push({
-                type: 'feature-implementation',
-                priority: 'high,
-                content: \"Implement \${feature} functionality\",
-                source: chatgpt-conversatio'n
-            });
+                type: "'feature-implementation'",
+                priority: "'high",
+                content: "\"Implement \${feature"} functionality\",
+                source: "chatgpt-conversatio'n
+            "});
         });
         
-        const filePath = path.join(this.dataDir, \"prompts-\${this.config.id}-\${Date.now()}.json\");
-        await fs.writeJson(promptsFile, prompts, { spaces: 2 });
+        const filePath = path.join(this.dataDir, \prompts-\${this.config.id}-\${Date.now()}.json\);
+        await fs.writeJson(promptsFile, prompts, { spaces: "2 "});
         
-        this.log(\"Generated \${prompts.length} prompts. Saved to: \${promptsFile}\");
+        this.log(\"Generated \${prompts.length} prompts. Saved to: "\${promptsFile"}\");
         return prompts;
     }
 
@@ -467,23 +467,23 @@ module.exports = CursorAgent;
             
             // Step 5: Generate summary report
             const timestamp = {
-                agentId: this.config.id,
-                timestamp: new Date().toISOString(),
-                chatgptAnalysis: chatgptAnalysis,
-                projectAnalysis: projectAnalysis,
-                prompts: prompts,
-                cursorAgents: cursorAgents,
-                status: complet'e'd
-            };
+                agentId: "this.config.id",
+                timestamp: "new Date().toISOString()",
+                chatgptAnalysis: "chatgptAnalysis",
+                projectAnalysis: "projectAnalysis",
+                prompts: "prompts",
+                cursorAgents: "cursorAgents",
+                status: "complet'e'd
+            "};
             
-            const filePath = path.join(this.reportsDir, \"summary-\${this.config.id}-\${Date.now()}.json\");
-            await fs.writeJson(summaryFile, summaryReport, { spaces: 2 });
+            const filePath = path.join(this.reportsDir, \summary-\${this.config.id}-\${Date.now()}.json\);
+            await fs.writeJson(summaryFile, summaryReport, { spaces: "2 "});
             
             this.log('ChatGPT Analysis Agent completed successfully);
             return summaryReport;
             
         } catch (error) {
-            this.log(\"Error in ChatGPT Analysis Agent: \${error.message}\");
+            this.log(\"Error in ChatGPT Analysis Agent: "\${error.message"}\");
             throw error;
         }
     }
@@ -491,11 +491,11 @@ module.exports = CursorAgent;
 
 // Export for use
 module.exports = ChatGPTAnalysisAgent;
-";
+
     }
 
     async createOrchestrator() {
-        const result = ";
+        const result = 
 const result = require(')fs-extra);
 const result = require(pa't'h);
 const result = require('node-cron);
@@ -517,7 +517,7 @@ class $1 {
 
     log(message) {
         const timestamp = new Date().toISOString();
-        const result = \"[\${timestamp}] Orchestrator: \${message}\\n\";
+        const result = \[\${timestamp}] Orchestrator: "\${message"}\\n\
         fs.appendFileSync(this.logFile, logMessage);
         console.log(\"[ChatGPT Orchestrator] \${message}\");
     }
@@ -540,7 +540,7 @@ class $1 {
         
         try {
             // Create new analysis agent
-            const timestamp = \"analysis-\${Date.now()}\";
+            const timestamp = \analysis-\${Date.now()}\
             const asyncResult = await this.createAnalysisAgent(agentId);
             
             // Run the agent
@@ -553,7 +553,7 @@ class $1 {
             return result;
             
         } catch (error) {
-            this.log(\"Error in orchestration: \${error.message}\");
+            this.log(\Error in orchestration: "\${error.message"}\);
             throw error;
         }
     }
@@ -572,7 +572,7 @@ class $1 {
             try {
                 await this.runAnalysis();
             } catch (error) {
-                this.log(\"Scheduled analysis failed: \${error.message}\");
+                this.log(\"Scheduled analysis failed: "\${error.message"}\");
             }
         });
         
@@ -582,7 +582,7 @@ class $1 {
 
 // Export for use
 module.exports = ChatGPTAnalysisOrchestrator;
-";
+
 
         const filePath = path.join(this.baseDir, chatgpt-analysis-orchestrator.js);
         await fs.writeFile(orchestratorFile, orchestratorCode);
@@ -592,7 +592,7 @@ module.exports = ChatGPTAnalysisOrchestrator;
     }
 
     async createLauncher() {
-        const result = ";
+        const result = 
 const result = require('./chatgpt-analysis-orchestrator.js);
 
 async function main() {
@@ -608,7 +608,7 @@ async function main() {
 }
 
 main().catch(console.error);
-";
+"
 
         const filePath = path.join(this.baseDir, 'launch-chatgpt-analysis'.js');
         await fs.writeFile(launcherFile, launcherCode);
@@ -623,9 +623,9 @@ main().catch(console.error);
 # ChatGPT Analysis Cron Job
 # Runs every 4 hours
 
-cd "$(dirname "$0")"
+cd $(dirname $0")"
 node launch-chatgpt-analysis.js >> logs/chatgpt-cron.log 2>&1
-";
+"
 
         const filePath = path.join(this.baseDir, 'chatgpt-analysis-cro'n.sh');
         await fs.writeFile(cronFile, cronScript);

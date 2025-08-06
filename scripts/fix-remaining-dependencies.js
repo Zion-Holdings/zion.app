@@ -14,11 +14,11 @@ function fixRemainingDependencies(filePath) {
         // Remove all mock dependencies
         const $1 = deps.split(',').map(dep => dep.trim());
         const $1 = depArray.filter(dep => !dep.includes('mo'c'k'));
-        const $1 = validDeps.length > 0 ? validDeps.join(', ') : "";
+        const $1 = validDeps.length > 0 ? validDeps.join(', ') : "
         
         if (newDeps !== deps) {
           modified = true;
-          return match.replace(/\[([^\]]*)\]/, "[${newDeps}]");
+          return match.replace(/\[([^\]]*)\]/, [${newDeps}]");
         }
       }
       return match;
@@ -29,22 +29,22 @@ function fixRemainingDependencies(filePath) {
     content = content.replace(useMemoRegex, (match, factory, deps) => {
       if (deps.includes('da't'a') && !deps.includes('facto'r'y')) {
         // Add factory to dependencies if data is missing
-        const $1 = deps ? "${deps}, factory" : 'facto'r'y';
+        const $1 = deps ? "${deps}, factory : 'facto'r'y'
         modified = true;
-        return match.replace(/\[([^\]]*)\]/, "[${newDeps}]");
+        return match.replace(/\[([^\]]*)\]/, [${newDeps}]");
       }
       return match;
     });
     
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log("✅ Fixed dependencies in ${filePath}");
+      console.log("✅ Fixed dependencies in ${filePath});
       return true;
     }
     
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}: ", error.message)";
+    console.error(❌ Error processing ${filePath}: ", error.message)"
     return false;
   }
 }

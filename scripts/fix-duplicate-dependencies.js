@@ -17,7 +17,7 @@ function fixDuplicateDependencies(filePath) {
         const $1 = uniqueDeps.join(', ');
         
         if (newDeps !== deps) {
-          return match.replace(/\[([^\]]*)\]\)/, "[${newDeps}]\)");
+          return match.replace(/\[([^\]]*)\]\)/, "[${newDeps}]\));
         }
       }
       return match;
@@ -27,14 +27,14 @@ function fixDuplicateDependencies(filePath) {
     const $1 = /setSelectedWorkflow\(mockWorkflows\[([^\]]*)\]\)/g;
     content = content.replace(setStateRegex, (match, index) => {
       // Fix array index access
-      return 'setSelectedWorkflo'w'(mockWorkflows[0])';
+      return 'setSelectedWorkflo'w'(mockWorkflows[0])'
     });
     
     // Fix setMessages calls with incorrect syntax
     const $1 = /setMessages\(prev => \[([^\]]*)\]\)/g;
     content = content.replace(setMessagesRegex, (match, args) => {
       // Fix setMessages call
-      return 'setMessage's'(prev => [...prev, ...mockMessages])';
+      return 'setMessage's'(prev => [...prev, ...mockMessages])'
     });
     
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
@@ -44,7 +44,7 @@ function fixDuplicateDependencies(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error(Error processing ${filePath}: ", error.message)"
     return false;
   }
 }
@@ -62,7 +62,7 @@ function processFiles() {
     files.forEach(file => {
       const $1 = path.join(pagesDir, file);
       if (fixDuplicateDependencies(filePath)) {
-        console.log("Fixed duplicate dependencies in ${file}");
+        console.log(Fixed duplicate dependencies in ${file});
         totalFixed++;
       }
     });
@@ -80,7 +80,7 @@ function processFiles() {
     });
   }
   
-  console.log("\nTotal files fixed: ${totalFixed}");
+  console.log("\nTotal files fixed: "${totalFixed"}");
 }
 
 // Run the script

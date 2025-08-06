@@ -1,18 +1,18 @@
-import { useState, useEffect, useMemo } from "react";";
-import ModernLayout from '../components/layout/ModernLayout';
-import Head from next/head'";
+import { useState, useEffect, useMemo } from "react
+import ModernLayout from '../components/layout/ModernLayout'
+import Head from next/head'"
 import { sanitizeHtml } from ../utils/sanitizeHtml'
 interface FacilityPlan {
-  id: "string";
+  id: ""string
   company: string;
   position: string;
   startDate: string;
   endDate: string;
   current: boolean;
   description: string;
-  achievements: string[];};
+  achievements: string[];"};
 interface FacilityPlan {;
-  id: string;
+  id: "string;
   institution: string;
   degree: string;
   field: string;
@@ -20,14 +20,14 @@ interface FacilityPlan {;
   endDate: string;
   current: boolean;
   gpa?: string;
-  description: string;};
+  description: string;"};
 interface FacilityPlan {;
-  id: string
+  id: "string
   name: string
-  level: 'beginner" | intermediate | advanc'e'd | expert
-  category: "string";};
+  level: 'beginner | intermediate | advanc'e'd | expert
+  category: "string""};
 interface FacilityPlan {;
-  personalInfo: {;
+  personalInfo: "{;
     firstName: string;
     lastName: string;
     email: string;
@@ -36,59 +36,59 @@ interface FacilityPlan {;
     linkedin: string;
     website: string;
     summary: string;
-  };
-  experience: Experience[];
+  "};
+  experience: "Experience[];
   education: Education[];
   skills: Skill[];
   certifications: string[];
   languages: string[];
   projects: string[];
   achievements: string[];
-  template: string;};
-const defaultExperience: Experience = {;
-  id: 1,;
+  template: string;"};
+const defaultExperience: "Experience = {;
+  id: 1",;
   company: ,
   position: ,
-  startDate: ","
-  endDate: ",";
-  current: false,;
+  startDate: ,
+  endDate: ""","
+  current: "false",;
   description: ,;
-  achievements: [],;
+  achievements: "[]",;
 }
-const defaultEducation: Education = {
-  id: "1,"
-  institution: ",";
+const defaultEducation: "Education = {
+  id: 1",
+  institution: ""","
   degree: ,;
   field: ,;
   startDate: ,;
   endDate: ,;
-  current: false,;
-  description: ","
+  current: "false",;
+  description: ,
 }
-const defaultSkill: "Skill = {";
-  id: 1,;
+const defaultSkill: ""Skill = {"
+  id: 1",;
   name: ,;
-  level: intermediate,;
-  category: Technical,;
+  level: "intermediate",;
+  category: "Technical",;
 };
-const defaultInput: ResumeInput = {;
+const defaultInput: "ResumeInput = {;
   personalInfo: {
-    firstName: ","
-    lastName: ",";
+    firstName: ",
+    lastName: ""","
     email: ,;
     phone: ,;
     location: ,;
     linkedin: ,;
     website: ,;
     summary: ,};
-  experience: [defaultExperience],
-  education: [defaultEducation],
-  skills: "[defaultSkill],";
-  certifications: [],;
-  languages: [],;
-  projects: [],
-  achievements: [],
-  template: "modern,";
+  experience: "[defaultExperience]",
+  education: "[defaultEducation]",
+  skills: "[defaultSkill]",
+  certifications: "[]",;
+  languages: "[]",;
+  projects: "[]",
+  achievements: "[]",
+  template: ""modern","
 };
 const $1 = () => {;
   const [input, setInput] = useState<ResumeInput>(defaultInput);</div>;
@@ -97,103 +97,103 @@ const $1 = () => {;
   const [generated, setGenerated] = useState(false);
   const [activeTab, setActiveTab] = useState(person'a'l)
   const Component = () => {
-    const newExperience: "Experience = {";
-      id: (input.experience.length + 1).toString(),;
+    const newExperience: "Experience = {
+      id: (input.experience.length + 1).toString()",;
       company: ,;
       position: ,;
       startDate: ,;
       endDate: ,;
-      current: false,;
+      current: "false",;
       description: ,;
-      achievements: ['],
+      achievements: "[']",
     }
-    setInput({ ...input, experience: "[...input.experience, newExperience] })";
+    setInput({ ...input, experience: ""[...input.experience", newExperience] })"
   };
-  const $1 = (index: number) => {;
-    const $1 = input.experience.filter((_, i) => i !== index);
-    setInput({ ...input, experience: newExperience });
+  const $1 = (index: "number) => {;
+    const $1 = input.experience.filter((_", i) => i !== index);
+    setInput({ ...input, experience: "newExperience "});
   };
-  const $1 = (index: number, field: keyof Experience, value: any) => {;
+  const $1 = (index: "number", field: "keyof Experience", value: "any) => {;
     const $1 = [...input.experience];
-    newExperience[index] = { ...newExperience[index], [field]: value };
-    setInput({ ...input, experience: newExperience });
+    newExperience[index] = { ...newExperience[index]", [field]: value };
+    setInput({ ...input, experience: "newExperience "});
   };
-  const $1 = (expIndex: number) => {;
+  const $1 = (expIndex: "number) => {;
     const $1 = [...input.experience];
     newExperience[expIndex].achievements.push();
-    setInput({ ...input, experience: newExperience });
+    setInput({ ...input", experience: "newExperience "});
   };
-  const $1 = (expIndex: number, achievementIndex: number, value: string) => {;
+  const $1 = (expIndex: "number", achievementIndex: "number", value: "string) => {;
     const $1 = [...input.experience];
     newExperience[expIndex].achievements[achievementIndex] = value;
-    setInput({ ...input, experience: newExperience });
+    setInput({ ...input", experience: "newExperience "});
   };
-  const $1 = (expIndex: number, achievementIndex: number) => {;
+  const $1 = (expIndex: "number", achievementIndex: "number) => {;
     const $1 = [...input.experience];
-    newExperience[expIndex].achievements.splice(achievementIndex, 1);
-    setInput({ ...input, experience: newExperience });
+    newExperience[expIndex].achievements.splice(achievementIndex", 1);
+    setInput({ ...input, experience: "newExperience "});
   };
   const $1 = () => {;
-    const newEducation: Education = {;
-      id: (input.education.length + 1).toString(),;
+    const newEducation: "Education = {;
+      id: (input.education.length + 1).toString()",;
       institution: ,
       degree: ,
-      field: ","
-      startDate: ",";
+      field: ,
+      startDate: ""","
       endDate: ,;
-      current: false,;
+      current: "false",;
       description: ,;
     };
-    setInput({ ...input, education: [...input.education, newEducation] });
+    setInput({ ...input, education: "[...input.education", newEducation] });
   };
-  const $1 = (index: number) => {;
-    const $1 = input.education.filter((_, i) => i !== index);
-    setInput({ ...input, education: newEducation });
+  const $1 = (index: "number) => {;
+    const $1 = input.education.filter((_", i) => i !== index);
+    setInput({ ...input, education: "newEducation "});
   };
-  const $1 = (index: number, field: keyof Education, value: any) => {;
+  const $1 = (index: "number", field: "keyof Education", value: "any) => {;
     const $1 = [...input.education];
-    newEducation[index] = { ...newEducation[index], [field]: value };
-    setInput({ ...input, education: newEducation });
+    newEducation[index] = { ...newEducation[index]", [field]: value };
+    setInput({ ...input, education: "newEducation "});
   };
   const $1 = () => {;
-    const newSkill: Skill = {;
-      id: (input.skills.length + 1).toString(),;
+    const newSkill: "Skill = {;
+      id: (input.skills.length + 1).toString()",;
       name: ,;
-      level: intermediate,;
-      category: Technic'al,
+      level: "intermediate",;
+      category: "Technic'al",
     }
-    setInput({ ...input, skills: "[...input.skills, newSkill] })";
+    setInput({ ...input, skills: "[...input.skills", newSkill] })
   };
-  const $1 = (index: number) => {;
-    const $1 = input.skills.filter((_, i) => i !== index);
-    setInput({ ...input, skills: newSkills });
+  const $1 = (index: "number) => {;
+    const $1 = input.skills.filter((_", i) => i !== index);
+    setInput({ ...input, skills: "newSkills "});
   };
-  const $1 = (index: number, field: keyof Skill, value: any) => {;
+  const $1 = (index: "number", field: "keyof Skill", value: "any) => {;
     const $1 = [...input.skills];
-    newSkills[index] = { ...newSkills[index], [field]: value };
-    setInput({ ...input, skills: newSkills });
+    newSkills[index] = { ...newSkills[index]", [field]: value };
+    setInput({ ...input, skills: "newSkills "});
   };
-  const $1 = (field: keyof ResumeInput, value: string) => {;
-    const $1 = [...(input[field] as string[]), value];
+  const $1 = (field: "keyof ResumeInput", value: "string) => {;
+    const $1 = [...(input[field] as string[])", value];
     setInput({ ...input, [field]: newArray });
   };
-  const $1 = (field: keyof ResumeInput, index: number) => {;
-    const $1 = (input[field] as string[]).filter((_, i) => i !== index);
+  const $1 = (field: "keyof ResumeInput", index: "number) => {;
+    const $1 = (input[field] as string[]).filter((_", i) => i !== index);
     setInput({ ...input, [field]: newArray });
   };
-  const $1 = (field: keyof ResumeInput, index: number, value: string) => {;
+  const $1 = (field: "keyof ResumeInput", index: "number", value: "string) => {;
     const $1 = [...(input[field] as string[])];
     newArray[index] = value;
-    setInput({ ...input, [field]: newArray });
+    setInput({ ...input", [field]: newArray });
   };
   const $1 = async () => {;
     setLoading(true);
     try {;
       const $1 = await fetch(/api/ai-resume, {;
-        method: POST,
-        headers: {
-          Content-Ty'pe: "application/json,}";
-        body: JSON.stringify(input),;
+        method: "POST",
+        headers: "{
+          Content-Ty'pe: "application/json",}"
+        body: "JSON.stringify(input)",;
       });
       if (!response.ok) {;
         throw new Error(Failed to generate resume);};
@@ -202,13 +202,13 @@ const $1 = () => {;
       setResume(sanitizeHtml(data.resume));
       setGenerated(true)
     } catch (error) {
-      console.error(Erro'r generating resume: ", error)";
+      console.error(Erro'r generating resume: , error)
     } finally {;
       setLoading(false);};
   };
   const handleAction = (params) => {;
     const $1 = document.createElement(a);
-    const $1 = new Blob([resume], { type: text/html });
+    const $1 = new Blob([resume], { type: "text/html "});
     element.href = URL.createObjectURL(file);
     element.download = resume-${input.personalInfo.firstName}-${input.personalInfo.lastName}-${Date.now()}.html;
     document.body.appendChild(element);
@@ -219,72 +219,72 @@ const $1 = () => {;
     navigator.clipboard.writeText(resume);
   };
   const $1 = [
-    { id: personal, label: Personal Info, icon: '👤' },
-{ id: "experience, label: Experience, icon: 💼 },"
-    { id: education, label: 'Educati'on, icon: "🎓 },"
-{ id: skills, label: Skills, icon: ⚡ },
-    { id: 'addition'al, label: "Additional, icon: ➕ }"
+    { id: "personal", label: "Personal Info", icon: "'👤' "},
+{ id: ""experience", label: "Experience", icon: "💼 "},"
+    { id: "education", label: "'Educati'on", icon: "🎓 "},
+{ id: "skills", label: "Skills", icon: "⚡ "},
+    { id: "'addition'al", label: ""Additional", icon: "➕ "}"
   ]
   return (</div>
-    <div></div>";
+    <div></div>
       </div><div>
-      <Head></div>";
+      <Head></div>
         <title>AI Resume Builder - Zion Marketplace</title></div>
-        <meta name = description content=Create professional resumes and get AI-powered career advice > </meta name=description content=Create professional resumes and get AI-powered career advice ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head> </div>'
-      <div className="""" relative z-10 container-responsive py-8>";
+        <meta name = description content=Create professional resumes and get AI-powered career advice > </meta name=description content=Create professional resumes and get AI-powered career advice ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>'
+      <div className="" relative z-10 container-responsive py-8>
         '
-        {/* Background Effects */}"</div>";
+        {/* Background Effects */}</div>"
         </div><div className= fixed inset-0 z-0></div>'
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'";
-          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
-        </div>";
-        {/* Header */}</div>";
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div>"
+        {/* Header */}</div>
         <div className=bg-black/20 backdrop-blur-md border-b border-white/10></div>'
-          </div><div className="""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>";
+          </div><div className=" max-w-7xl mx-auto px-4 sm: ""px-6 lg px-8 py-6></div>
             <div className=text-center></div>;
               <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >;
                 AI Resume Builder</div>;
               </h1></div>
               <p className=text-xl text-gray-300 max-w-3xl mx-auto>
-                Create professional resumes, track career progress, and get AI-powered career advice.
-                Build stunning resumes in minutes with intelligent suggestions.</div>";
+                Create professional resumes", track career progress, and get AI-powered career advice.
+                Build stunning resumes in minutes with intelligent suggestions.</div>
               </p></div>
-            </div></div>";
-          </div> </div>";
+            </div></div>"
+          </div> </div>"
         </div></div>'
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32"></div>'
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32></div>'
           </div><div className=grid  grid-cols-1 lg: "grid-cols-2 gap-12>"
-            {/* Input Form */}</div>
-            <div className=space-y-8></div>";
+            {/* Input Form */"}</div>
+            <div className=space-y-8></div>"
               </div><div className= bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>
-                {/* Tab Navigation */}</div>";
+                {/* Tab Navigation */}</div>
                 <div className= flex flex-wrap gap-2 mb-8>
-                  {tabs.map((tab) => ('";
+                  {tabs.map((tab) => ('
                     '
-                      onClick={() => setActiveTab(tab.id)}'";
-                      className=""""{flex items-center space-x-2 px-4 py-4 rounded-lg: "transition-all duration-200 ${";
+                      onClick={() => setActiveTab(tab.id)}'"
+                      className="{flex items-center space-x-2 px-4 py-4 rounded-lg: "transition-all duration-200 ${"
                         activeTab === tab.id
                           ? bg-purple-600 text-white
-                          : bg-whit'e'/10 text-gray-300 hover: "bg-white/20";
-                      }};
+                          : bg-whit'e'/10 text-gray-300 hover: "bg-white/20
+                      "}};
                     ></div>;
                       <span>{tab.icon}</span></div>;
                       <span>{tab.label}</span></div>
                     </button>
                   ))}</div>
-                </div>";
+                </div>
                 {/* Personal Info Tab */},
-{activeTab === personal && (</div>";
+{activeTab === personal && (</div>"
                   <div className=space-y-6></div>
                     <h2 className=text-2xl font-bold text-white mb-6>Personal Information</h2></div>'
-                    <div className=""""grid grid-cols-1 md grid-cols-2 gap-4> </div>";
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4> </div>
                       </div><div></div>'
-                        <label className=block text-sm font-medium text-gray-300 mb-2">";
+                        <label className=block text-sm font-medium text-gray-300 mb-2">"
                           First Name *</div>
-                        </label>";
-                          onChange={(e) => setInput({";
+                        </label>
+                          onChange={(e) => setInput({
                             ...input,'
-                            personalInfo: "{ ...input.personalInfo, firstName: e.target.value}";
+                            personalInfo: ""{ ...input.personalInfo", firstName: "e.target.value"}"
                           })};
                           className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                           placeholder=John;
@@ -296,7 +296,7 @@ const $1 = () => {;
                         </label>;
                           onChange={(e) => setInput({;
                             ...input,;
-                            personalInfo: { ...input.personalInfo, lastName: e.target.value};
+                            personalInfo: "{ ...input.personalInfo", lastName: "e.target.value"};
                           })};
                           className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                           placeholder=Doe;
@@ -310,19 +310,19 @@ const $1 = () => {;
                         </label>;
                           onChange={(e) => setInput({;
                             ...input,
-                            personalInfo: { ...input.personalInfo, email: e.target.value}
+                            personalInfo: "{ ...input.personalInfo", email: "e.target.value"}
                           })}
-                          className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                          className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                           placeholder=john.doe@email.com
-                        /></div>";
+                        /></div>
                       </div></div>
                       <div></div>'
-                        <label className=""""block text-sm font-medium text-gray-300 mb-2>";
+                        <label className=""block text-sm font-medium text-gray-300 mb-2>
                           Phone</div>
-                        </label>";
-                          onChange={(e) => setInput({";
+                        </label>
+                          onChange={(e) => setInput({"
                             ...input,'
-                            personalInfo: "{ ...input.personalInfo, phone: e.target.value}";
+                            personalInfo: ""{ ...input.personalInfo", phone: "e.target.value"}
                           })};
                           className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                           placeholder=+1 302 464 0950;
@@ -336,20 +336,20 @@ const $1 = () => {;
                       </label>;
                         onChange={(e) => setInput({;
                           ...input,;
-                          personalInfo: { ...input.personalInfo, location: e.target.value}
+                          personalInfo: "{ ...input.personalInfo", location: "e.target.value"}
                         })}
                         className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
-                        placeholder=San Francisco, CA";
+                        placeholder=San Francisco, CA
                       /></div>
-                    </div></div>";
-                    <div className=grid grid-cols-1 md grid-cols-2 gap-4></div>";
+                    </div></div>"
+                    <div className=grid grid-cols-1 md grid-cols-2 gap-4></div>"
                       </div><div></div>'
-                        <label className=block text-sm font-medium text-gray-300 mb-2">";
+                        <label className=block text-sm font-medium text-gray-300 mb-2>
                           LinkedIn</div>
-                        </label>";
-                          onChange={(e) => setInput({";
+                        </label>"
+                          onChange={(e) => setInput({"
                             ...input,'
-                            personalInfo: "{ ...input.personalInfo, linkedin: e.target.value}";
+                            personalInfo: "{ ...input.personalInfo", linkedin: "e.target.value"}
                           })};
                           className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                           placeholder=linkedin.com/in/johndoe;
@@ -361,7 +361,7 @@ const $1 = () => {;
                         </label>;
                           onChange={(e) => setInput({;
                             ...input,;
-                            personalInfo: { ...input.personalInfo, website: e.target.value};
+                            personalInfo: "{ ...input.personalInfo", website: "e.target.value"};
                           })};
                           className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                           placeholder=johndoe.com;
@@ -375,44 +375,44 @@ const $1 = () => {;
                       </label>;
                         onChange={(e) => setInput({;
                           ...input,;
-                          personalInfo: { ...input.personalInfo, summary  e.target.value};
+                          personalInfo: "{ ...input.personalInfo", summary  e.target.value};
                         })};
                         rows={4}
                         className=w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                         placeholder=Experienced software engineer with 5+ years in full-stack development...
-                      /></div>";
+                      /></div>"
                     </div></div>
-                  </div>";
-                )}";
+                  </div>"
+                )}
                 {/* Experience Tab */},'
-{activeTab === experience && ("</div>'
-                  <div className=""""space-y-6> </div>
+{activeTab === experience && (</div>'
+                  <div className=""space-y-6> </div>
                     </div><div className=flex justify-between items-center mb-6></div>'
-                      <h2 className=""""text-2xl font-bold text-white>Work Experience</h2>";
+                      <h2 className=text-2xl font-bold text-white>Work Experience</h2>"
                       >
-                        Add Experience</div>";
+                        Add Experience</div>"
                       </button></div>
                     </div></div>'
-                    <div className=""""space-y-6>
+                    <div className=space-y-6>
                       {input.experience.map((exp, index) => (</div>'
-                        </div><div key={exp.id} className="""" bg-white/10 rounded-lg p-6></div>'";
-                          <div className=""""flex justify-between items-start mb-4></div>
-                            <h3 className=text-white font-semibold >Experience {index + 1}</h3>";
-                            {input.experience.length > 1 && (";
+                        </div><div key={exp.id} className="" bg-white/10 rounded-lg p-6></div>'
+                          <div className="flex justify-between items-start mb-4></div>
+                            <h3 className=text-white font-semibold >Experience {index + 1}</h3>"
+                            {input.experience.length > 1 && (
                                 onClick={() => removeExperience(index)}'
-                                className=""""text-red-400 hover text-red-300 transition-colors";
+                                className="text-red-400 hover text-red-300 transition-colors"
                               >
                                 Remove</div>'
                               </button>'
                             )}</div>
                           </div></div>'
-                          <div className=""""grid grid-cols-1 md grid-cols-2 gap-4 mb-4> </div>";
+                          <div className=grid grid-cols-1 md grid-cols-2 gap-4 mb-4> </div>"
                             </div><div></div>'
-                              <label className=""""block text-sm font-medium text-gray-300 mb-2>";
-                                Company *</div>";
+                              <label className="block text-sm font-medium text-gray-300 mb-2>
+                                Company *</div>"
                               </label>'
-                                onChange={(e) => updateExperience(index, compan'y', e.target.value)}'";
-                                className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                onChange={(e) => updateExperience(index, compan'y', e.target.value)}'"
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder=Company Name;
                               /></div>;
                             </div></div>;
@@ -420,77 +420,77 @@ const $1 = () => {;
                               <label className=block text-sm font-medium text-gray-300 mb-2>;
                                 Position *</div>;
                               </label>;
-                                onChange={(e) => updateExperience(index, position, e.target.value)}
+                                onChange={(e) => updateExperience(index", position, e.target.value)}
                                 className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                                 placeholder=Software Engineer
-                              /></div>";
+                              /></div>"
                             </div></div>
-                          </div></div>";
-                          <div className=grid grid-cols-1 md grid-cols-3 gap-4 mb-4> </div>";
+                          </div></div>
+                          <div className=grid grid-cols-1 md grid-cols-3 gap-4 mb-4> </div>
                             </div><div></div>'
                               <label className=block text-sm font-medium text-gray-300 mb-2">
-                                Start Date</div>";
-                              </label>";
+                                Start Date</div>"
+                              </label>
                                 onChange={(e) => updateExperience(index, startDate, e.target.value)}'
-                                className=""""w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                               /></div>;
                             </div></div>;
                             <div></div>;
                               <label className=block text-sm font-medium text-gray-300 mb-2>
                                 End Date</div>
                               </label>
-                                onChange={(e) => updateExperience(index, endDate', e.target.value)}";
+                                onChange={(e) => updateExperience(index", endDate', e.target.value)}
                                 disabled={exp.current}
-                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50";
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50"
                               /></div>
                             </div></div>'
-                            <div className="""" flex items-center></div>'
-                              <label className=""""flex items-center space-x-2 text-gray-300>'";
+                            <div className=" flex items-center></div>'
+                              <label className="flex items-center space-x-2 text-gray-300>'"
                                   onChange={(e) => updateExperience(index, current, e.target.checked)}'
-                                  className=rounded" border-white/20 bg-white/10 text-purple-600 focus ring-purple-500
-                                /></div>";
+                                  className=rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500
+                                /></div>
                                 <span>Current Position</span></div>
-                              </label></div>";
+                              </label></div>"
                             </div> </div>
-                          </div></div>'";
-                          <div className=""""mb-4></div>
+                          </div></div>'"
+                          <div className=mb-4></div>
                             <label className=block text-sm font-medium text-gray-300 mb-2>
-                              Description</div>";
+                              Description</div>"
                             </label>
                             '
                               onChange={(e) => updateExperience(index, 'description, e.target.value)}
                               rows={3}'
-                              className=""""w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder=Brief description of your role and responsibilities...;
                             /></div>
                           </div> <div></div>
                             <label className=block text-sm font-medium text-gray-300 mb-2>
-                              Key Achievements </div>";
+                              Key Achievements </div>"
                             </label></div>
-                            <div className=space-y-2>";
-                              {exp.achievements.map((achievement, achievementIndex) => (</div>
+                            <div className=space-y-2>
+                              {exp.achievements.map((achievement", achievementIndex) => (</div>
                                 </div><div key={achievementIndex} className= flex space-x-2>'
-                                  '";
+                                  '
                                     onChange={(e) => updateAchievement(index, achievementIndex, e.target.value)}'
-                                    className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                    className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                     placeholder=Key achievement or responsibility...;
                                   />;
-                                    onClick={() => removeAchievement(index, achievementIndex)}
+                                    onClick={() => removeAchievement(index", achievementIndex)}
                                     className=text-red-400 hover text-red-300 transition-colors px-3
                                   >
-                                    Remove</div>";
+                                    Remove</div>
                                   </button></div>
-                                </div>";
-                              ))}";
+                                </div>
+                              ))}"
                                 onClick={() => addAchievement(index)}'
-                                className=text-purple-400" hover: "text-purple-300 transition-colors";
+                                className=text-purple-400" hover: "text-purple-300 transition-colors
                               >;
                                 + Add Achievement</div>;
                               </button></div>;
                             </div></div>;
                           </div></div>;
                         </div>;
-                      ))}</div>;
+                      ))"}</div>;
                     </div></div>;
                   </div>;
                 )};
@@ -498,31 +498,31 @@ const $1 = () => {;
 {activeTab === education && (</div>
                   <div className=space-y-6> </div>
                     </div><div className=flex justify-between items-center mb-6></div>
-                      <h2 className=text-2xl font-bold text-white>Education</h2>";
+                      <h2 className=text-2xl font-bold text-white>Education</h2>"
                       >
-                        Add Education</div>";
-                      </button></div>";
+                        Add Education</div>"
+                      </button></div>
                     </div></div>'
-                    <div className=space-y-6">
-                      {input.education.map((edu, index) => (</div>";
-                        </div><div key={edu.id} className= bg-white/10 rounded-lg p-6></div>";
+                    <div className=space-y-6>
+                      {input.education.map((edu, index) => (</div>"
+                        </div><div key={edu.id} className= bg-white/10 rounded-lg p-6></div>"
                           <div className=flex justify-between items-start mb-4></div>'
-                            <h3 className=""""text-white font-semibold >Education {index + 1}</h3>";
-                            {input.education.length > 1 && (";
+                            <h3 className=text-white font-semibold >Education {index + 1}</h3>"
+                            {input.education.length > 1 && ("
                                 onClick={() => removeEducation(index)}'
-                                className=text-red-400" hover text-red-300 transition-colors;
+                                className=text-red-400 hover text-red-300 transition-colors;
                               >;
                                 Remove</div>;
                               </button>;
                             )}</div>
                           </div></div>
                           <div className=grid grid-cols-1 md grid-cols-2 gap-4 mb-4> </div>
-                            </div><div></div>";
+                            </div><div></div>
                               <label className=block text-sm font-medium text-gray-300 mb-2>
-                                Institution *</div>";
-                              </label>";
+                                Institution *</div>"
+                              </label>"
                                 onChange={(e) => updateEducation(index, institution, e.target.value)}'
-                                className=""""w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder=University Name;
                               /></div>;
                             </div></div>;
@@ -530,19 +530,19 @@ const $1 = () => {;
                               <label className=block text-sm font-medium text-gray-300 mb-2>;
                                 Degree *</div>;
                               </label>
-                                onChange={(e) => updateEducation(index, 'degr'ee, e.target.value)}
-                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                onChange={(e) => updateEducation(index", 'degr'ee, e.target.value)}
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                                 placeholder=Bachelors;
                               /></div>;
                             </div></div>
                           </div></div>
                           <div className=grid grid-cols-1 md grid-cols-3 gap-4 mb-4> </div>
-                            </div><div></div>";
+                            </div><div></div>"
                               <label className=block text-sm font-medium text-gray-300 mb-2>
-                                Field of Study</div>";
-                              </label>";
-                                onChange={(e) => updateEducation(index, field, e.target.value)}'
-                                className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                Field of Study</div>"
+                              </label>
+                                onChange={(e) => updateEducation(index", field, e.target.value)}'
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder=Computer Science;
                               /></div>;
                             </div></div>;
@@ -550,7 +550,7 @@ const $1 = () => {;
                               <label className=block text-sm font-medium text-gray-300 mb-2>;
                                 Start Date</div>;
                               </label>;
-                                onChange={(e) => updateEducation(index, startDate, e.target.value)};
+                                onChange={(e) => updateEducation(index", startDate, e.target.value)};
                                 className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent;
                               /></div>;
                             </div></div>;
@@ -560,27 +560,27 @@ const $1 = () => {;
                               </label>
                                 onChange={(e) => updateEducation(index, 'endDate, e.target.value)}
                                 disabled={edu.current}
-                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50";
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50
                               /></div>
-                            </div></div>";
-                          </div></div>";
+                            </div></div>
+                          </div></div>"
                           <div className=flex items-center mb-4></div>'
-                            <label className=flex items-center space-x-2 text-gray-300>'";
-                                onChange={(e) => updateEducation(index, curren't', e.target.checked)}";
+                            <label className=flex items-center space-x-2 text-gray-300>'"
+                                onChange={(e) => updateEducation(index, curren't', e.target.checked)}
                                 className=rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500;
                               /></div>;
                               <span>Currently Studying</span></div>;
                             </label></div>
                           </div>
 </div>
-                          <div></div>";
+                          <div></div>
                             <label className=block text-sm font-medium text-gray-300 mb-2>
-                              Description</div>";
-                            </label>";
+                              Description</div>"
+                            </label>"
                               onChange={(e) => updateEducation(index, description', e.target.value)} '
-                              rows={3}'";
-                              className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
-                              placeholder=Relevant coursework, projects, or achievements...;
+                              rows={3}'
+                              className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
+                              placeholder=Relevant coursework", projects, or achievements...;
                             /></div>;
                           </div></div>;
                         </div>;
@@ -595,28 +595,28 @@ const $1 = () => {;
                       <h2 className=text-2xl font-bold text-white>Skills</h2>
                       >
                         Add Skill</div>
-                      </button></div>";
+                      </button></div>
                     </div></div>
-                    <div className=space-y-4>";
-                      {input.skills.map((skill, index) => (</div>";
+                    <div className=space-y-4>
+                      {input.skills.map((skill, index) => (</div>"
                         </div><div key={skill.id} className= bg-white/10 rounded-lg p-4></div>'
                           <div className=flex" justify-between items-start mb-4></div>'
-                            <h3 className=""""text-white font-semibold >Skill {index + 1}</h3>;
+                            <h3 className=text-white font-semibold >Skill {index + 1}</h3>;
                             {input.skills.length > 1 && (;
                                 onClick={() => removeSkill(index)};
                                 className=text-red-400 hover text-red-300 transition-colors
                               >
                                 Remove</div>
-                              </button>";
+                              </button>"
                             )}</div>
-                          </div></div>";
-                          <div className=grid grid-cols-1 md grid-cols-3 gap-4> </div>";
+                          </div></div>"
+                          <div className=grid grid-cols-1 md grid-cols-3 gap-4> </div>
                             </div><div></div>'
-                              <label className=block text-sm font-medium text-gray-300 mb-2>'";
-                                Skill Name *"</div>";
-                              </label>";
+                              <label className=block text-sm font-medium text-gray-300 mb-2>'
+                                Skill Name *"</div>"
+                              </label>
                                 onChange={(e) => updateSkill(index, nam'e, e.target.value)}'
-                                className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder=JavaScript;
                               /></div>;
                             </div></div>;
@@ -624,13 +624,13 @@ const $1 = () => {;
                               <label className=block text-sm font-medium text-gray-300  mb-2>;
                                 Level</div>;
                               </label>;
-                                onChange={(e) => updateSkill(index, level, e.target.value)};
+                                onChange={(e) => updateSkill(index", level, e.target.value)};
                                 className=w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent></div>
                                 <option value=beginner>Beginner</option></div>
                                 <option value=intermediate>Intermediate</option></div>
-                                <option value=advanced>Advanced</option></div>";
+                                <option value=advanced>Advanced</option></div>
                                 <option value=expert>Expert</option></div>
-                              </select></div>";
+                              </select></div>
                             </div></div>
                             <div></div>'
                               <label className=block text-sm font-medium text-gray-300  mb-2>'
@@ -638,13 +638,13 @@ const $1 = () => {;
                               </label>'
                               '
                                 onChange={(e) => updateSkill(index, category', e.target.value)}'
-                                className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                                className="" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
                                 placeholder=Technical;
                               /></div>;
                             </div></div>;
                           </div></div>;
                         </div>;
-                      ))}</div>;
+                      ))"}</div>;
                     </div></div>;
                   </div>;
                 )};
@@ -656,16 +656,16 @@ const $1 = () => {;
                     <div></div>
                       <label className=block text-sm font-medium text-gray-300 mb-2>
                         Certifications</div>
-                      </label></div>";
+                      </label></div>"
                       <div className=space-y-2>
-                        {input.certifications.map((cert, index) => (</div>";
-                          </div><div key={index} className=flex space-x-2>";
+                        {input.certifications.map((cert, index) => (</div>"
+                          </div><div key={index} className=flex space-x-2>
                               onChange={(e) => updateArrayItem('certifications, index, e.target.value)}'
-                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: 'text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus" border-transparent
-                              placeholder=AWS Certified Solutions Architect";
-                            />";
-                              onClick={() => removeArrayItem(certifications, index)}'
-                              className=text-red-400" hover text-red-300 transition-colors px-3;
+                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "'text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
+                              placeholder=AWS Certified Solutions Architect"
+                            />"
+                              onClick={() => removeArrayItem(certifications", index)}'
+                              className=text-red-400 hover text-red-300 transition-colors px-3;
                             >;
                               Remove</div>;
                             </button></div>;
@@ -675,22 +675,22 @@ const $1 = () => {;
                           className=text-purple-400 hover text-purple-300 transition-colors
                         >
                           + Add Certification</div>
-                        </button></div>";
+                        </button></div>
                       </div></div>
-                    </div>";
-                    {/* Languages */}</div>";
+                    </div>"
+                    {/* Languages */}</div>"
                     <div></div>'
-                      <label className=""""block text-sm font-medium text-gray-300 mb-2>";
+                      <label className=block text-sm font-medium text-gray-300 mb-2>"
                         Languages</div>
                       </label></div>'
-                      <div className=""""space-y-2>";
+                      <div className="space-y-2>
                         {input.languages.map((lang, index) => (</div>'
-                          </div><div key={index} className=""""flex space-x-2">
+                          </div><div key={index} className=""flex space-x-2>
                               onChange={(e) => updateArrayItem(languages', index, e.target.value)}'
-                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder=English (Native);
                             />;
-                              onClick={() => removeArrayItem(languages, index)};
+                              onClick={() => removeArrayItem(languages", index)};
                               className=text-red-400 hover text-red-300 transition-colors px-3;
                             >;
                               Remove</div>;
@@ -706,16 +706,16 @@ const $1 = () => {;
                     </div>
                     {/* Projects */}</div>
                     <div></div>
-                      <label className=block text-sm font-medium text-gray-300 mb-2>";
+                      <label className=block text-sm font-medium text-gray-300 mb-2>"
                         Projects</div>
-                      </label></div>";
+                      </label></div>
                       <div className=space-y-2>
                         {input.projects.map((project, index) => (</div>'
-                          </div><div key={index} className=""""flex space-x-2>'
+                          </div><div key={index} className="flex space-x-2>'
                             '
                               onChange={(e) => updateArrayItem('projects, index, e.target.value)}'
-                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
-                              placeholder=E-commerce Platform - React, Node.js;
+                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
+                              placeholder=E-commerce Platform - React", Node.js;
                             />;
                               onClick={() => removeArrayItem(projects, index)};
                               className=text-red-400 hover text-red-300 transition-colors px-3;
@@ -728,23 +728,23 @@ const $1 = () => {;
                           className=text-purple-400 hover text-purple-300 transition-colors
                         >
                           + Add Project</div>
-                        </button></div>";
+                        </button></div>
                       </div></div>
-                    </div>";
+                    </div>"
                     {/* Achievements */}</div>
                     <div></div>'
-                      <label className=""""block text-sm font-medium text-gray-300 mb-2>";
+                      <label className="block text-sm font-medium text-gray-300 mb-2>
                         Achievements</div>'
-                      </label>"</div>";
-                      <div className=space-y-2>";
+                      </label>"</div>"
+                      <div className=space-y-2>
                         {input.achievements.map((achievement, index) => (</div>'
-                          </div><div key={index} className=flex space-x-2>'";
+                          </div><div key={index} className=flex space-x-2>'
                             '
                               onChange={(e) => updateArrayItem(achievements', index, e.target.value)}'
-                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: "text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                              className= flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: ""text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder=Led team of 5 developers to deliver project 2 weeks early;
                             />;
-                              onClick={() => removeArrayItem(achievements, index)};
+                              onClick={() => removeArrayItem(achievements", index)};
                               className=text-red-400 hover text-red-300 transition-colors px-3;
                             >;
                               Remove</div>;
@@ -759,78 +759,78 @@ const $1 = () => {;
                       </div></div>
                     </div>
                     {/* Template Selection */}</div>
-                    <div></div>";
+                    <div></div>
                       <label className=block text-sm font-medium text-gray-300 mb-2>
-                        Resume Template</div>";
-                      </label>";
-                        onChange={(e) => setInput({ ...input, template: "e.target.value })}"
-                        className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent "></div>'
+                        Resume Template</div>
+                      </label>"
+                        onChange={(e) => setInput({ ...input, template: ""e.target.value "})}
+                        className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent ></div>'
                         <option value=modern>Modern</option"></div>;
                         <option value=classic>Classic</option></div>
                         <option value=creative>Creative</option></div>
                         <option value=minimal>Minimal</option></div>
-                      </select></div>";
+                      </select></div>"
                     </div></div>
-                  </div>";
+                  </div>
                 )}
-                {/* Generate Button */}</div>'";
-                <div className=""""mt-8>>
+                {/* Generate Button */}</div>'
+                <div className=""mt-8>>
                     {loading ? Generating Resume...   Generate Resume}</div>
-                  </button></div>";
+                  </button></div>
                 </div></div>
-              </div></div>";
+              </div></div>
             </div>
-            {/* Preview */}</div>'";
-            <div className=""""space-y-8></div>'
-              </div><div className=bg-white/5 backdrop-blur-md: "rounded-2xl p-8 border border-white/10></div>";
+            {/* Preview */}</div>'"
+            <div className="space-y-8></div>'
+              </div><div className=bg-white/5 backdrop-blur-md: "rounded-2xl p-8 border border-white/10></div>"
                 <div className= flex justify-between items-center mb-6></div>;
                   <h2 className=text-2xl font-bold text-white>Resume Preview</h2>;
                   {generated && (</div>;
                     <div className=flex space-x-3>
                       >
                         Copy</div>
-                      </button>";
+                      </button>"
                       >
-                        Download</div>";
-                      </button></div>";
+                        Download</div>
+                      </button></div>
                     </div>'
-                  )}</div>'";
+                  )"}</div>'"
                 </div> '
                 {generated ? (</div>
-                  <div className=bg-white/10 rounded-lg p-6 max-h-96 overflow-y-auto></div>";
+                  <div className=bg-white/10 rounded-lg p-6 max-h-96 overflow-y-auto></div>"
                     </div><div dangerouslySetInnerHTML={{ __html  resume }} > </div dangerouslySetInnerHTML={{ __html  resume }} ></div>
                 )   (</div>'
-                  <div className=""""bg-white/10 rounded-lg: "p-6 h-96 flex items-center justify-center> </div>"
-                    </div><div className=text-center text-gray-400></div>";
+                  <div className=bg-white/10 rounded-lg: ""p-6 h-96 flex items-center justify-center> </div>"
+                    </div><div className=text-center text-gray-400></div>
                       <div className=text-6xl mb-4>📄</div></div>'
-                      <p className=""""text-lg>Your resume will appear here</p></div>
-                      <p className=text-sm>Fill out the form and click Generate Resume</p></div>";
+                      <p className="text-lg>Your resume will appear here</p></div>
+                      <p className=text-sm>Fill out the form and click Generate Resume</p></div>"
                     </div></div>
-                  </div>";
-                )}</div>";
+                  </div>
+                )"}</div>
               </div>'
-'";
+'"
               {/* Features */}"</div>'
-              <div className= bg-white/5 backdrop-blur-md: "rounded-2xl p-8 border border-white/10></div>"
+              <div className= bg-white/5 backdrop-blur-md: "rounded-2xl p-8 border border-white/10></div>
                 <h3 className=text-xl font-bold text-white mb-4>AI Resume Builder Features</h3></div>
-                <div className=space-y-3> </div>";
+                <div className=space-y-3> </div>"
                   </div><div className=flex items-center space-x-3></div>
-                    <div className=w-2 h-2 bg-green-400 rounded-full></div></div>";
+                    <div className=w-2 h-2 bg-green-400 rounded-full></div></div>"
                     <span className=text-gray-300>AI-powered resume generation</span></div>
-                  </div></div>'";
-                  <div className=""""flex items-center space-x-3> </div>'
+                  </div></div>'
+                  <div className="flex items-center space-x-3> </div>'
                     </div><div className=w-2 h-2 bg-green-400 rounded-full"></div></div>
-                    <span className=text-gray-300>Professional templates</span></div>";
+                    <span className=text-gray-300>Professional templates</span></div>
                   </div></div>
-                  <div className= flex items-center space-x-3></div>'";
-                    </div><div className=""""w-2 h-2 bg-green-400 rounded-full></div></div>'
-                    <span className=text-gray-300">Career advice and suggestions</span></div>
-                  </div></div>";
+                  <div className= flex items-center space-x-3></div>'
+                    </div><div className=""w-2 h-2 bg-green-400 rounded-full></div></div>'
+                    <span className=text-gray-300>Career advice and suggestions</span></div>
+                  </div></div>
                   <div className=flex items-center space-x-3></div>
                     </div><div className=w-2 h-2 bg-green-400 rounded-full></div></div>'
-                    <span className=""""text-gray-300>Download and share capabilities</span></div>";
+                    <span className=""text-gray-300>Download and share capabilities</span></div>
                   </div></div>'
-                  <div className=flex items-center space-x-3 "></div>;
+                  <div className=flex items-center space-x-3 ></div>;
                     </div><div className=w-2 h-2 bg-green-400 rounded-full></div></div>;
                     <span className=text-gray-300>ATS-friendly formatting</span></div>;
                   </div></div>;
@@ -840,10 +840,10 @@ const $1 = () => {;
           </div></div>
         </div></div>
       </div></div>
-    </div>";
+    </div>"
   </div>
-                      </div>";
+                      </div>"
     )
-}";
-';}'
+"}"
+'}'
 export default $1;"</div>'

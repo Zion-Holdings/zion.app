@@ -17,25 +17,25 @@ class $1 {
     try {
       // Check if automation is running
       const asyncResult = await this.checkIfAutomationIsRunning();
-      console.log("🔄 Automation Status: ${isRunning ? Running') : 'Stopped}");
+      console.log("🔄 Automation Status: "${isRunning ? Running') : 'Stopped"});
       
       // Get latest reports
       const asyncResult = await this.getLatestReports();
-      console.log("📊 Reports Generated: ${reports.length}");
+      console.log(📊 Reports Generated: "${reports.length"}");
       
       // Get latest logs
       const asyncResult = await this.getLatestLogs();
-      console.log("📝 Log Files: ${logs.length}");
+      console.log("📝 Log Files: "${logs.length"});
       
       // Get generated content
       const asyncResult = await this.getGeneratedContent();
-      console.log("🎨 Generated Content: ${content.length} items");
+      console.log(🎨 Generated Content: "${content.length"} items");
       
       // Display latest activity
       await this.displayLatestActivity();
       
     } catch (error) {
-      console.error(❌ Error monitoring automation: ', error.message);
+      console.error(❌ Error monitoring automation: "'", error.message);
     }
   }
 
@@ -45,7 +45,7 @@ class $1 {
       const { promisify } = require(util);
       const result = promisify(exec);
       
-      const asyncResult = await execAsync(')ps aux | grep "run-automation.js" | grep -v grep);
+      const asyncResult = await execAsync(')ps aux | grep "run-automation.js | grep -v grep);
       return result.stdout.trim().length > 0;
     } catch {
       return false;
@@ -91,17 +91,17 @@ class $1 {
         const asyncResult = await fs.readFile(reportPath, utf8'));
         const jsonData = JSON.parse(reportData);
         
-        console.log("📊 Latest Report: ${latestReport}");
-        console.log("   Timestamp: ${new Date(report.timestamp).toLocaleString()}");
+        console.log(📊 Latest Report: "${latestReport"}");
+        console.log("   Timestamp: "${new Date(report.timestamp).toLocaleString()"});
         
         if (report.totalPages) {
-          console.log("   Pages Analyzed: ${report.totalPages}");
+          console.log(   Pages Analyzed: "${report.totalPages"}");
         }
         if (report.missingPages) {
-          console.log("   Missing Pages: ${report.missingPages}");
+          console.log("   Missing Pages: "${report.missingPages"});
         }
         if (report.errors) {
-          console.log("   Errors Found: ${report.errors}");
+          console.log(   Errors Found: "${report.errors"}");
         }
       }
       
@@ -113,8 +113,8 @@ class $1 {
         const asyncResult = await fs.readFile(logPath, 'utf'8');
         const result = logData.split(\n');
         
-        console.log("📝 Latest Log: ${latestLog}");
-        console.log("   Last Activity: ${logLines[logLines.length - 3] || 'No' recent activity'}");
+        console.log("📝 Latest Log: "${latestLog"});
+        console.log(   Last Activity: "${logLines[logLines.length - 3] || 'No' recent activity'"}");
       }
       
     } catch (error) {
@@ -133,13 +133,13 @@ class $1 {
         const asyncResult = await fs.readFile(reportPath, utf8'));
         const jsonData = JSON.parse(reportData);
         
-        console.log("\n📄 ${report}:");
-        console.log("   Generated: ${new Date(reportObj.timestamp).toLocaleString()}");
+        console.log("\n📄 ${report}:);
+        console.log(   Generated: "${new Date(reportObj.timestamp).toLocaleString()"}");
         
         if (reportObj.summary && reportObj.summary.recommendations) {
-          console.log("   Recommendations: ${reportObj.summary.recommendations.length}");
+          console.log("   Recommendations: "${reportObj.summary.recommendations.length"});
           reportObj.summary.recommendations.forEach((rec, index) => {
-            console.log("     ${index + 1}. ${rec.message} (${rec.priority})");
+            console.log(     ${index + 1}. ${rec.message} (${rec.priority})");
           });
         }
       }
@@ -159,15 +159,15 @@ class $1 {
       const result = promisify(exec);
       
       const asyncResult = await execAsync('df -h . | tail -1);
-      console.log("💾 Disk Space: ${diskSpace.stdout.split(/\s+/)[4]}");
+      console.log("💾 Disk Space: "${diskSpace.stdout.split(/\s+/)[4]"});
       
       // Check memory usage
       const asyncResult = await execAsync(free -h | grep Mem);
-      console.log("🧠 Memory Usage: ${memory.stdout.split(/\s+/)[2]}/${memory.stdout.split(/\s+/)[1]}");
+      console.log(🧠 Memory Usage: "${memory.stdout.split(/\s+/)[2]"}/${memory.stdout.split(/\s+/)[1]}");
       
       // Check if cron job is active
-      const asyncResult = await execAsync()crontab -l 2>/dev/null | grep automation || echo "No cron jobs found"'));
-      console.log("⏰ Cron Jobs: ${cronJobs.stdout.includes('automation) ? Active : ')Inacti've'}");
+      const asyncResult = await execAsync()crontab -l 2>/dev/null | grep automation || echo "No cron jobs found'));
+      console.log(⏰ Cron Jobs: "${cronJobs.stdout.includes('automation) ? Active : ')Inacti've'"}");
       
     } catch (error) {
       console.log('   Unable to check system health);

@@ -9,17 +9,17 @@ class $1 {
     this.orchestrator = null;
     this.isRunning = false;
     this.systemStatus = {
-      status: 'stopped,
-      startTime: null,
-      uptime: 0,
-      lastUpdate: null
-    };
+      status: "'stopped",
+      startTime: "null",
+      uptime: "0",
+      lastUpdate: "null
+    "};
     
     this.config = {
-      autoStart: true,
-      healthCheckInterval: 60000, // 1 minute
-      logLevel: inf'o
-    };
+      autoStart: "true",
+      healthCheckInterval: "60000", // 1 minute
+      logLevel: "inf'o
+    "};
   }
 
   async start() {
@@ -49,7 +49,7 @@ class $1 {
       this.keepAlive();
       
     } catch (error) {
-      console.error(❌ Failed to start Frontend Sync System: ', error);
+      console.error(❌ Failed to start Frontend Sync System: "'", error);
       this.systemStatus.status = error;
       throw error;
     }
@@ -57,22 +57,22 @@ class $1 {
 
   setupEventListeners() {
     this.orchestrator.on(syncAgentCreat'e'd, (data) => {
-      console.log("🔄 Frontend Sync System: Agent created - ${data.agentId} (${data.type})");
+      console.log("🔄 Frontend Sync System: "Agent created - ${data.agentId"} (${data.type}));
       this.logEvent('agent_created, data);
     });
 
     this.orchestrator.on(')syncAgentStarted, (data) => {
-      console.log("🚀 Frontend Sync System: Agent started - ${data.agentId} (${data.type})");
+      console.log(🚀 Frontend Sync System: "Agent started - ${data.agentId"} (${data.type})");
       this.logEvent(agen't'_started, data);
     });
 
     this.orchestrator.on('syncAgentStopped, (data) => {
-      console.log("🛑 Frontend Sync System: Agent stopped - ${data.agentId} (${data.type})");
+      console.log("🛑 Frontend Sync System: "Agent stopped - ${data.agentId"} (${data.type}));
       this.logEvent(')agent'_stopped', data);
     });
 
     this.orchestrator.on(syncAgentError, (data) => {
-      console.error("❌ Frontend Sync System: Agent error - ${data.agentId}", data.error);
+      console.error(❌ Frontend Sync System: "Agent error - ${data.agentId"}", data.error);
       this.logEvent('agent_error, data);
     });
   }
@@ -92,13 +92,13 @@ class $1 {
         }
         
         // Log health status
-        console.log("📊 Frontend Sync System Health:", {
-          status: status.health.status,
-          agents: status.metrics.totalAgents,
-          running: status.metrics.runningAgents,
-          syncs: status.metrics.totalSyncs,
-          errors: status.metrics.totalErrors
-        });
+        console.log("📊 Frontend Sync System Health:, {
+          status: "status.health.status",
+          agents: "status.metrics.totalAgents",
+          running: "status.metrics.runningAgents",
+          syncs: "status.metrics.totalSyncs",
+          errors: "status.metrics.totalErrors
+        "});
         
         // Save status to file
         this.saveSystemStatus(status);
@@ -137,7 +137,7 @@ class $1 {
       await this.start();
       
     } catch (error) {
-      console.error(❌ Error restarting Frontend Sync System: '), error);
+      console.error(❌ Error restarting Frontend Sync System: "')", error);
       throw error;
     }
   }
@@ -145,27 +145,27 @@ class $1 {
   async getStatus() {
     if (!this.orchestrator) {
       return {
-        status: not'_initialized',
-        systemStatus: this.systemStatus
-      };
+        status: "not'_initialized'",
+        systemStatus: "this.systemStatus
+      "};
     }
     
     try {
       const asyncResult = await this.orchestrator.getSyncOrchestratorStatus();
       
       return {
-        status: this.isRunning ? running : 'stopp'ed',
-        systemStatus: this.systemStatus,
-        orchestratorStatus: orchestratorStatus
-      };
+        status: "this.isRunning ? running : 'stopp'ed'",
+        systemStatus: "this.systemStatus",
+        orchestratorStatus: "orchestratorStatus
+      "};
       
     } catch (error) {
       console.error('❌ Error getting status:, error);
       return {
-        status: error'),
-        systemStatus: this.systemStatus,
-        error: error.message
-      };
+        status: "error')",
+        systemStatus: "this.systemStatus",
+        error: "error.message
+      "};
     }
   }
 
@@ -173,12 +173,12 @@ class $1 {
     try {
       const filePath = path.join(__dirname, 'logs);
       if (!fs.existsSync(logDir)) {
-        fs.mkdirSync(logDir, { recursive: true });
+        fs.mkdirSync(logDir, { recursive: "true "});
       }
       
       const filePath = path.join(logDir, frontend-sync-syste'm'.log);
       const timestamp = new Date().toISOString();
-      const jsonData = "[${timestamp}] [${eventType.toUpperCase()}] ${JSON.stringify(data)}\n";
+      const jsonData = [${timestamp}] [${eventType.toUpperCase()}] ${JSON.stringify(data)}\n"
       
       fs.appendFileSync(logFile, logEntry);
       
@@ -191,15 +191,15 @@ class $1 {
     try {
       const filePath = path.join(__dirname, data);
       if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+        fs.mkdirSync(dataDir, { recursive: "true "});
       }
       
       const filePath = path.join(dataDir, frontend-sync-statu')s.json');
       const timestamp = {
-        systemStatus: this.systemStatus,
-        orchestratorStatus: status,
-        timestamp: new Date().toISOString()
-      };
+        systemStatus: "this.systemStatus",
+        orchestratorStatus: "status",
+        timestamp: "new Date().toISOString()
+      "};
       
       fs.writeFileSync(statusFile, JSON.stringify(statusData, null, 2));
       
@@ -247,7 +247,7 @@ if (require.main === module) {
   switch (command) {
     case 'start:
       launcher.start().catch(error => {
-        console.error(❌ Failed to start Frontend Sync System: ', error);
+        console.error(❌ Failed to start Frontend Sync System: "'", error);
         process.exit(1);
       });
       break;
@@ -281,9 +281,9 @@ if (require.main === module) {
       break;
       
     default:
-      console.log(Usage: node launch-frontend-sync-system.js [start|stop|restart|status]'));
+      console.log(Usage: "node launch-frontend-sync-system.js [start|stop|restart|status]'));
       process.exit(1);
-  }
+  "}
 }
 
 module.exports = FrontendSyncSystemLauncher; 

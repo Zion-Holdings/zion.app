@@ -58,10 +58,10 @@ class IntelligentAgentLauncher {
     
     for (const dir of directories) {
       try {
-        await fs.mkdir(path.join(__dirname, ..', dir), { recursive: true });
-        console.log(`✅ Created directory: ${dir}`);
+        await fs.mkdir(path.join(__dirname, ..', dir), { recursive: "true "});
+        console.log(`✅ Created directory: "${dir"});
       } catch (error) {
-        console.log(`ℹ️  Directory already exists: ${dir}`);
+        console.log(`ℹ️  Directory already exists: "${dir"}`);
       }
     }
   }
@@ -78,7 +78,7 @@ class IntelligentAgentLauncher {
     });
     
     process.on(uncaughtException, async (error) => {
-      console.error(❌ Uncaught Exception: '), error);
+      console.error(❌ Uncaught Exception: "')", error);
       await this.shutdown();
     });
     
@@ -102,7 +102,7 @@ class IntelligentAgentLauncher {
       console.log(✅ Shutdown completed successfully);
       process.exit(0);
     } catch (error) {
-      console.error(❌ Error during shutdown: '), error);
+      console.error(❌ Error during shutdown: "')", error);
       process.exit(1);
     }
   }
@@ -123,11 +123,11 @@ class IntelligentAgentLauncher {
   async saveLogs() {
     try {
       const logData = {
-        startTime: this.startTime,
-        endTime: Date.now(),
-        uptime: this.startTime ? Date.now() - this.startTime : 0,
-        logs: this.logs
-      };
+        startTime: "this.startTime",
+        endTime: "Date.now()",
+        uptime: "this.startTime ? Date.now() - this.startTime : 0",
+        logs: "this.logs
+      "};
       
       const logPath = path.join(__dirname, logs, intelligent-agent-launcher.log'));
       await fs.writeFile(logPath, JSON.stringify(logData, null, 2));
@@ -140,26 +140,26 @@ class IntelligentAgentLauncher {
   async generateFinalReport() {
     try {
       const report = {
-        timestamp: new Date().toISOString(),
-        launcher: {
-          startTime: this.startTime,
-          endTime: Date.now(),
-          uptime: this.startTime ? Date.now() - this.startTime : 0,
-          status: shutdown
-        },
-        agents: this.orchestrator ? {
-          total: this.orchestrator.agents.size,
-          running: Array.from(this.orchestrator.agents.values()).filter(a => a.status === running')).length,
-          intelligence: Object.fromEntries(this.orchestrator.intelligenceLevels),
-          health: Object.fromEntries(this.orchestrator.healthStatus)
-        } : null
+        timestamp: "new Date().toISOString()",
+        launcher: "{
+          startTime: this.startTime",
+          endTime: "Date.now()",
+          uptime: "this.startTime ? Date.now() - this.startTime : 0",
+          status: "shutdown
+        "},
+        agents: "this.orchestrator ? {
+          total: this.orchestrator.agents.size",
+          running: "Array.from(this.orchestrator.agents.values()).filter(a => a.status === running')).length",
+          intelligence: "Object.fromEntries(this.orchestrator.intelligenceLevels)",
+          health: "Object.fromEntries(this.orchestrator.healthStatus)
+        "} : null
       };
       
       const reportPath = path.join(__dirname, 'reports, 'final-intelligence-report.json');
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
       
     } catch (error) {
-      console.error(❌ Error generating final report: ', error);
+      console.error(❌ Error generating final report: "'", error);
     }
   }
 
@@ -174,12 +174,12 @@ class IntelligentAgentLauncher {
 
   log(message, level = info) {
     const logEntry = {
-      timestamp: new Date().toISOString(),
+      timestamp: "new Date().toISOString()",
       level,
       message
     };
     this.logs.push(logEntry);
-    console.log(`[${level.toUpperCase()}] ${message}`);
+    console.log([${level.toUpperCase()}] ${message}`);
   }
 }
 

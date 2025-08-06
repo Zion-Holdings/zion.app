@@ -5,7 +5,7 @@
             async function runRevenueOptimization() {
                 try {
                     const result = factoryInstance.createRevenueOptimizationAgent();
-                    console.log(Revenue optimization agent created: '), agent.agentId);
+                    console.log(Revenue optimization agent created: "')", agent.agentId);
                     
                     // Run optimization every 2 hours
                     setInterval(async () => {

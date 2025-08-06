@@ -31,13 +31,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("CI/CD Automation Agent ${this.agentId} started");
+    console.log("CI/CD Automation Agent ${this.agentId} started);
     
     // Initial CI/CD analysis
     await this.analyzeCiCd();
@@ -63,13 +63,13 @@ class $1 {
       console.log('Performing comprehensive CI/CD analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        pipeline: [],
-        deployment: [],
-        build: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        pipeline: "[]",
+        deployment: "[]",
+        build: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze CI/CD pipeline
       analysis.pipeline = await this.analyzePipeline();
@@ -89,7 +89,7 @@ class $1 {
       console.log(CI/CD analysis completed);
       
     } catch (error) {
-      console.error(')C'I/CD analysis failed: ', error);
+      console.error(')C'I/CD analysis failed: "'", error);
     }
   }
 
@@ -141,18 +141,18 @@ class $1 {
       }
       
       return {
-        type: 'Pipeline Configuration',
-        value: "Found ${foundConfigs} CI/CD configuration files",
-        status: foundConfigs > 0 ? configured : 'no't_configured',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Configuration'",
+        value: "Found ${foundConfigs"} CI/CD configuration files",
+        status: "foundConfigs > 0 ? configured : 'no't_configured'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Pipeline Configuration',
-        value: "Unabl"e to analyze pipeline configuration',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Configuration'",
+        value: ""Unable to analyze pipeline configuration'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -160,25 +160,25 @@ class $1 {
     try {
       // Simulate pipeline performance metrics
       const result = {
-        buildTime: Math.random() * 10 + 2, // 2-12 minutes
-        deploymentTime: Math.random() * 5 + 1, // 1-6 minutes
-        successRate: Math.random() * 0.2 + 0.8, // 80-100%
-        failureRate: Math.random() * 0.1 + 0.02 // 2-12%
-      };
+        buildTime: "Math.random() * 10 + 2", // 2-12 minutes
+        deploymentTime: "Math.random() * 5 + 1", // 1-6 minutes
+        successRate: "Math.random() * 0.2 + 0.8", // 80-100%
+        failureRate: "Math.random() * 0.1 + 0.02 // 2-12%
+      "};
       
       return {
-        type: Pipeline' Performance,
-        value: performanceMetrics,
-        status: performanceMetrics.successRate > 0.9 ? 'go'od' : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "Pipeline' Performance",
+        value: "performanceMetrics",
+        status: "performanceMetrics.successRate > 0.9 ? 'go'od' : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Pipeline Performance,
-        value: "Unabl"e' to analyze pipeline performance',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Pipeline Performance",
+        value: "Unabl"e' to analyze pipeline performance'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -186,25 +186,25 @@ class $1 {
     try {
       // Simulate pipeline reliability metrics
       const result = {
-        uptime: Math.random() * 0.1 + 0.95, // 95-100%
-        meanTimeToRecovery: Math.random() * 30 + 5, // 5-35 minutes
-        meanTimeBetweenFailures: Math.random() * 100 + 50, // 50-150 builds
-        availability: Math.random() * 0.05 + 0.98 // 98-100%
-      };
+        uptime: "Math.random() * 0.1 + 0.95", // 95-100%
+        meanTimeToRecovery: "Math.random() * 30 + 5", // 5-35 minutes
+        meanTimeBetweenFailures: "Math.random() * 100 + 50", // 50-150 builds
+        availability: "Math.random() * 0.05 + 0.98 // 98-100%
+      "};
       
       return {
-        type: 'Pipeline Reliability',
-        value: reliabilityMetrics,
-        status: reliabilityMetrics.uptime > 0.98 ? 'reliable : need's'_improvement,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Reliability'",
+        value: "reliabilityMetrics",
+        status: "reliabilityMetrics.uptime > 0.98 ? 'reliable : need's'_improvement",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Pipeline Reliability',
-        value: "Unabl"e' to analyze pipeline reliability,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Reliability'",
+        value: ""Unable' to analyze pipeline reliability",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -212,27 +212,27 @@ class $1 {
     try {
       // Check for security configurations
       const result = {
-        secretsManagement: Math.random() > 0.5,
-        vulnerabilityScanning: Math.random() > 0.5,
-        accessControl: Math.random() > 0.5,
-        auditLogging: Math.random() > 0.5
-      };
+        secretsManagement: "Math.random() > 0.5",
+        vulnerabilityScanning: "Math.random() > 0.5",
+        accessControl: "Math.random() > 0.5",
+        auditLogging: "Math.random() > 0.5
+      "};
       
       const result = Object.values(securityChecks).filter(Boolean).length / 4;
       
       return {
-        type: 'Pipeline Security',
-        value: securityChecks,
-        status: securityScore > 0.75 ? secure : 'need's_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Security'",
+        value: "securityChecks",
+        status: "securityScore > 0.75 ? secure : 'need's_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Pipeline Security',
-        value: "Unabl"e to analyze pipeline security',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Pipeline Security'",
+        value: "Unabl"e to analyze pipeline security'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -263,25 +263,25 @@ class $1 {
     try {
       // Simulate deployment frequency metrics
       const result = {
-        dailyDeployments: Math.floor(Math.random() * 10) + 1,
-        weeklyDeployments: Math.floor(Math.random() * 50) + 10,
-        leadTime: Math.random() * 2 + 0.5, // 0.5-2.5 hours
-        deploymentWindow: Math.random() * 4 + 1 // 1-5 hours
-      };
+        dailyDeployments: "Math.floor(Math.random() * 10) + 1",
+        weeklyDeployments: "Math.floor(Math.random() * 50) + 10",
+        leadTime: "Math.random() * 2 + 0.5", // 0.5-2.5 hours
+        deploymentWindow: "Math.random() * 4 + 1 // 1-5 hours
+      "};
       
       return {
-        type: 'Deployment Frequency',
-        value: frequencyMetrics,
-        status: frequencyMetrics.dailyDeployments > 5 ? 'frequent : modera't'e,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Deployment Frequency'",
+        value: "frequencyMetrics",
+        status: "frequencyMetrics.dailyDeployments > 5 ? 'frequent : modera't'e",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Deployment Frequency',
-        value: "Unabl"e' to analyze deployment frequency,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Deployment Frequency'",
+        value: ""Unable' to analyze deployment frequency",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -289,25 +289,25 @@ class $1 {
     try {
       // Simulate deployment success metrics
       const result = {
-        successRate: Math.random() * 0.15 + 0.85, // 85-100%
-        failureRate: Math.random() * 0.1 + 0.02, // 2-12%
-        meanTimeToRecovery: Math.random() * 20 + 5, // 5-25 minutes
-        rollbackRate: Math.random() * 0.05 + 0.01 // 1-6%
-      };
+        successRate: "Math.random() * 0.15 + 0.85", // 85-100%
+        failureRate: "Math.random() * 0.1 + 0.02", // 2-12%
+        meanTimeToRecovery: "Math.random() * 20 + 5", // 5-25 minutes
+        rollbackRate: "Math.random() * 0.05 + 0.01 // 1-6%
+      "};
       
       return {
-        type: 'Deployment Success',
-        value: successMetrics,
-        status: successMetrics.successRate > 0.95 ? excellent : 'go'od',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Deployment Success'",
+        value: "successMetrics",
+        status: "successMetrics.successRate > 0.95 ? excellent : 'go'od'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Deployment Success',
-        value: "Unabl"e to analyze deployment success',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Deployment Success'",
+        value: "Unabl"e to analyze deployment success'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -315,25 +315,25 @@ class $1 {
     try {
       // Simulate deployment rollback metrics
       const result = {
-        rollbackFrequency: Math.random() * 0.1 + 0.02, // 2-12%
-        rollbackTime: Math.random() * 10 + 2, // 2-12 minutes
-        rollbackSuccess: Math.random() * 0.2 + 0.8, // 80-100%
-        automatedRollback: Math.random() > 0.5
-      };
+        rollbackFrequency: "Math.random() * 0.1 + 0.02", // 2-12%
+        rollbackTime: "Math.random() * 10 + 2", // 2-12 minutes
+        rollbackSuccess: "Math.random() * 0.2 + 0.8", // 80-100%
+        automatedRollback: "Math.random() > 0.5
+      "};
       
       return {
-        type: Deployment' Rollback,
-        value: rollbackMetrics,
-        status: rollbackMetrics.rollbackFrequency < 0.05 ? 'go'od' : 'needs'_improvement',
-        timestamp: new Date().toISOString()
-      };
+        type: "Deployment' Rollback",
+        value: "rollbackMetrics",
+        status: "rollbackMetrics.rollbackFrequency < 0.05 ? 'go'od' : 'needs'_improvement'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Deployment Rollback,
-        value: "Unabl"e' to analyze deployment rollback',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Deployment Rollback",
+        value: ""Unable' to analyze deployment rollback'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -364,25 +364,25 @@ class $1 {
     try {
       // Simulate build performance metrics
       const result = {
-        buildTime: Math.random() * 8 + 2, // 2-10 minutes
-        buildSuccessRate: Math.random() * 0.15 + 0.85, // 85-100%
-        buildCacheHitRate: Math.random() * 0.3 + 0.7, // 70-100%
-        parallelBuilds: Math.floor(Math.random() * 5) + 1
-      };
+        buildTime: "Math.random() * 8 + 2", // 2-10 minutes
+        buildSuccessRate: "Math.random() * 0.15 + 0.85", // 85-100%
+        buildCacheHitRate: "Math.random() * 0.3 + 0.7", // 70-100%
+        parallelBuilds: "Math.floor(Math.random() * 5) + 1
+      "};
       
       return {
-        type: ')Build Performance',
-        value: performanceMetrics,
-        status: performanceMetrics.buildTime < 5 ? fast : 'modera'te',
-        timestamp: new Date().toISOString()
-      };
+        type: "')Build Performance'",
+        value: "performanceMetrics",
+        status: "performanceMetrics.buildTime < 5 ? fast : 'modera'te'",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Build Performance',
-        value: "Unabl"e to analyze build performance',
-        status: 'error,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Build Performance'",
+        value: "Unabl"e to analyze build performance'",
+        status: "'error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -390,25 +390,25 @@ class $1 {
     try {
       // Simulate build quality metrics
       const result = {
-        codeCoverage: Math.random() * 0.2 + 0.8, // 80-100%
-        testPassRate: Math.random() * 0.1 + 0.9, // 90-100%
-        lintingScore: Math.random() * 0.15 + 0.85, // 85-100%
-        securityScanPass: Math.random() > 0.8
-      };
+        codeCoverage: "Math.random() * 0.2 + 0.8", // 80-100%
+        testPassRate: "Math.random() * 0.1 + 0.9", // 90-100%
+        lintingScore: "Math.random() * 0.15 + 0.85", // 85-100%
+        securityScanPass: "Math.random() > 0.8
+      "};
       
       return {
-        type: Build' Quality,
-        value: qualityMetrics,
-        status: qualityMetrics.codeCoverage > 0.9 ? 'excelle'nt' : 'good,
-        timestamp: new Date().toISOString()
-      };
+        type: "Build' Quality",
+        value: "qualityMetrics",
+        status: "qualityMetrics.codeCoverage > 0.9 ? 'excelle'nt' : 'good",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: Buil'd' Quality,
-        value: "Unabl"e' to analyze build quality',
-        status: error,
-        timestamp: new Date().toISOString()
-      };
+        type: "Buil'd' Quality",
+        value: ""Unable' to analyze build quality'",
+        status: "error",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -432,18 +432,18 @@ class $1 {
       }
       
       return {
-        type: 'Build Artifacts',
-        value: "Found ${foundArtifacts} build artifact directories",
-        status: foundArtifacts > 0 ? 'present : missi'n'g,
-        timestamp: new Date().toISOString()
-      };
+        type: "'Build Artifacts'",
+        value: "Found ${foundArtifacts"} build artifact directories",
+        status: "foundArtifacts > 0 ? 'present : missi'n'g",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        type: 'Build Artifacts',
-        value: "Unabl"e' to analyze build artifacts,
-        status: 'error',
-        timestamp: new Date().toISOString()
-      };
+        type: "'Build Artifacts'",
+        value: ""Unable' to analyze build artifacts",
+        status: "'error'",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -454,33 +454,33 @@ class $1 {
     const result = analysis.pipeline.filter(p => p.status === 'not'_configured' || p.status === needs_improvement);
     if (pipelineIssues.length > 0) {
       recommendations.push({
-        type: 'pipeline',
-        priority: 'high,
-        message: CI'/CD pipeline improvements needed,
-        suggestion: 'Configure and optimize CI/CD pipeline'
-      });
+        type: "'pipeline'",
+        priority: "'high",
+        message: "CI'/CD pipeline improvements needed",
+        suggestion: "'Configure and optimize CI/CD pipeline'
+      "});
     }
     
     // Deployment recommendations
     const result = analysis.deployment.filter(d => d.status === 'needs'_improvement');
     if (deploymentIssues.length > 0) {
       recommendations.push({
-        type: deployment,
-        priority: 'medium',
-        message: 'Deployment process improvements needed',
-        suggestion: Optimize deployment processes and reliability
-      });
+        type: "deployment",
+        priority: "'medium'",
+        message: "'Deployment process improvements needed'",
+        suggestion: "Optimize deployment processes and reliability
+      "});
     }
     
     // Build recommendations
     const result = analysis.build.filter(b => b.status === 'need's_improvement');
     if (buildIssues.length > 0) {
       recommendations.push({
-        type: 'build,
-        priority: mediu'm,
-        message: 'Build process improvements needed',
-        suggestion: 'Optimize build performance and quality'
-      });
+        type: "'build",
+        priority: "mediu'm",
+        message: "'Build process improvements needed'",
+        suggestion: "'Optimize build performance and quality'
+      "});
     }
     
     return recommendations;
@@ -491,11 +491,11 @@ class $1 {
       console.log(Monitoring CI/CD...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        pipeline: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        pipeline: "[]",
+        alerts: "[]
+      "};
       
       // Check pipeline status
       const asyncResult = await this.analyzePipeline();
@@ -511,7 +511,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -521,25 +521,25 @@ class $1 {
 
   checkPipelineStatus(pipeline) {
     const timestamp = {
-      pipeline: pipeline.type,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      pipeline: "pipeline.type",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common pipeline issues
     if (pipeline.status === 'not'_configured') {
       status.issues.push({
-        type: pipeline,
-        severity: 'high',
-        message: 'CI/CD pipeline not configured'
-      });
+        type: "pipeline",
+        severity: "'high'",
+        message: "'CI/CD pipeline not configured'
+      "});
     } else if (pipeline.status === needs_improvement) {
       status.issues.push({
-        type: 'pipeline',
-        severity: 'medium,
-        message: CI'/CD pipeline needs improvement
-      });
+        type: "'pipeline'",
+        severity: "'medium",
+        message: "CI'/CD pipeline needs improvement
+      "});
     }
     
     return status;
@@ -550,11 +550,11 @@ class $1 {
       console.log('Optimizing CI/CD...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeCiCd();
@@ -563,16 +563,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: ')completed,
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "')completed",
+          improvement: "Math.random() * 0.95",
+          description: ""Applied ${optimization.suggestion"}
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-      const filePath = path.join(this.reportsDir, 'optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-reports, optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -585,12 +585,12 @@ class $1 {
       console.log('Running comprehensive CI/CD analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of CI/CD analysis
       ciCdAnalysisReport.analysis.pipeline = await this.runPipelineAnalysis();
@@ -606,7 +606,7 @@ class $1 {
       
       // Save CI/CD analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'analytics-repor'ts', "ci-cd-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'analytics-repor'ts', "ci-cd-analysis-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(ciCdAnalysisReport, null, 2));
       
     } catch (error) {
@@ -618,16 +618,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm run analyze:pipeline);
       return {
-        status: ')completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "')completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -635,16 +635,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:deployment);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -652,16 +652,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:build);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -669,26 +669,26 @@ class $1 {
     try {
       const { stdout } = await execAsync(npm' run analyze:analytics);
       return {
-        status: 'completed',
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "'completed'",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: 'failed,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "'failed",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateCiCdAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      health: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      health: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -712,10 +712,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'fail'ed') {
         recommendations.push({
-          type: type,
-          priority: 'medium,
-          message: "${type} CI/CD analysis failed",
-          suggestion: "Fix ${type} CI/CD analysis issues"
+          type: "type",
+          priority: "'medium",
+          message: "${type"} CI/CD analysis failed",
+          suggestion: ""Fix ${type"} CI/CD analysis issues
         });
       }
     }
@@ -725,13 +725,13 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-    const filePath = path.join(this.reportsDir, 'pipeline-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'pipeline-reports, analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"});
   }
 
   async stop() {
-    console.log("CI/CD Automation Agent ${this.agentId} stopping...");
+    console.log(CI/CD Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }

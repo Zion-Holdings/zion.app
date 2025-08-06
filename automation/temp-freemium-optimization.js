@@ -5,7 +5,7 @@
             async function runFreemiumOptimization() {
                 try {
                     const result = factoryInstance.createFreemiumAgent();
-                    console.log(Freemium agent created: '), agent.agentId);
+                    console.log(Freemium agent created: "')", agent.agentId);
                     
                     // Run optimization every 4 hours
                     setInterval(async () => {

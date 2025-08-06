@@ -8,7 +8,7 @@ function fixImageComponents(filePath) {
     let $1 = false;
     
     // Fix Image components with incorrect syntax
-    // Pattern: <Image ... / width={400} height={300} />
+    // Pattern: "<Image ... / width={400"} height={300} />
     content = content.replace(</div>
       /<Image\s+([^>]+)\s*\/\s*width=\{400\}\s*height=\{300\}\s*\/>/g,</div>
       '<Image $1 width={32} height={32} />'
@@ -33,7 +33,7 @@ function fixImageComponents(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)";
+    console.error("Error processing ${filePath}: , error.message)
     return false;
   }
 }
@@ -61,7 +61,7 @@ function fixSpecificFiles() {
     }
   });
   
-  console.log("\nTotal files fixed: ${totalFixed}");
+  console.log("\nTotal files fixed: "${totalFixed"}");
 }
 
 // Run the script

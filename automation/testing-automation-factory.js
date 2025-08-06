@@ -26,100 +26,100 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   getAgentTypes() {
     return {
-      unit-testi'n'g: {
-        name: 'Unit Testing Agent',
-        description: 'Automated unit testing and test coverage analysis',
-        capabilities: [unit testing, 'tes't coverage', 'code' quality']
+      unit-testi'n'g: "{
+        name: 'Unit Testing Agent'",
+        description: "'Automated unit testing and test coverage analysis'",
+        capabilities: "[unit testing", 'tes't coverage', 'code' quality']
       },
-      integration-testing: {
-        name: 'Integration Testing Agent',
-        description: 'Automated integration testing and API testing',
-        capabilities: [integration testing, 'ap'i testing', 'system' testing']
+      integration-testing: "{
+        name: 'Integration Testing Agent'",
+        description: "'Automated integration testing and API testing'",
+        capabilities: "[integration testing", 'ap'i testing', 'system' testing']
       },
       e'2e-testing': {
-        name: End-to-End Testing Agent,
-        description: 'Automated end-to-end testing and user journey testing',
-        capabilities: ['e2e testing', 'user' journey testing', ui testing]
+        name: "End-to-End Testing Agent",
+        description: "'Automated end-to-end testing and user journey testing'",
+        capabilities: "['e2e testing'", 'user' journey testing', ui testing]
       },
       'performance-testi'ng': {
-        name: 'Performance Testing Agent',
-        description: Automated performance testing and load testing,
-        capabilities: ['performanc'e testing', 'load' testing', stress testing]
+        name: "'Performance Testing Agent'",
+        description: "Automated performance testing and load testing",
+        capabilities: "['performanc'e testing'", 'load' testing', stress testing]
       },
       'security-testi'ng': {
-        name: 'Security Testing Agent',
-        description: Automated security testing and vulnerability testing,
-        capabilities: ['securit'y testing', 'vulnerability' testing', penetration testing]
+        name: "'Security Testing Agent'",
+        description: "Automated security testing and vulnerability testing",
+        capabilities: "['securit'y testing'", 'vulnerability' testing', penetration testing]
       },
       'accessibility-testi'ng': {
-        name: 'Accessibility Testing Agent',
-        description: Automated accessibility testing and compliance testing,
-        capabilities: ['accessibilit'y testing', 'wcag' compliance', usability testing]
+        name: "'Accessibility Testing Agent'",
+        description: "Automated accessibility testing and compliance testing",
+        capabilities: "['accessibilit'y testing'", 'wcag' compliance', usability testing]
       },
       'mobile-testi'ng': {
-        name: 'Mobile Testing Agent',
-        description: Automated mobile testing and cross-platform testing,
-        capabilities: ['mobil'e testing', 'cross-platform' testing', device testing]
+        name: "'Mobile Testing Agent'",
+        description: "Automated mobile testing and cross-platform testing",
+        capabilities: "['mobil'e testing'", 'cross-platform' testing', device testing]
       },
       'visual-testi'ng': {
-        name: 'Visual Testing Agent',
-        description: Automated visual testing and regression testing,
-        capabilities: ['visua'l testing', 'regression' testing', ui comparison]
+        name: "'Visual Testing Agent'",
+        description: "Automated visual testing and regression testing",
+        capabilities: "['visua'l testing'", 'regression' testing', ui comparison]
       },
       'test-automati'on': {
-        name: 'Test Automation Agent',
-        description: Test automation framework and CI/CD integration,
-        capabilities: ['tes't automation', 'ci'/cd integration', test orchestration]
+        name: "'Test Automation Agent'",
+        description: "Test automation framework and CI/CD integration",
+        capabilities: "['tes't automation'", 'ci'/cd integration', test orchestration]
       },
       'test-analyti'cs': {
-        name: 'Test Analytics Agent',
-        description: Test analytics and quality metrics analysis,
-        capabilities: ['tes't analytics', 'quality' metrics', test insights]
+        name: "'Test Analytics Agent'",
+        description: "Test analytics and quality metrics analysis",
+        capabilities: "['tes't analytics'", 'quality' metrics', test insights]
       }
     };
   }
 
   async createAgent(agentType, config = {}) {
     try {
-      console.log("Creating ${agentType} agent...");
+      console.log("Creating ${agentType} agent...);
       
       const result = this.agentTypes[agentType];
       if (!agentInfo) {
-        throw new Error("Unknown agent type: ${agentType}");
+        throw new Error(Unknown agent type: "${agentType"}");
       }
 
-      const timestamp = "${agentType}-${Date.now()}";
+      const timestamp = "${agentType}-${Date.now()}
       const timestamp = {
         agentId,
         agentType,
-        name: agentInfo.name,
-        description: agentInfo.description,
-        capabilities: agentInfo.capabilities,
-        config: config,
-        createdAt: new Date().toISOString(),
-        status: 'created'
-      };
+        name: "agentInfo.name",
+        description: "agentInfo.description",
+        capabilities: "agentInfo.capabilities",
+        config: "config",
+        createdAt: "new Date().toISOString()",
+        status: "'created'
+      "};
 
       // Create agent file
-      const filePath = path.join(this.agentsDir, "${agentType}-agent.js");
+      const filePath = path.join(this.agentsDir, ${agentType}-agent.js");
       await this.generateAgentFile(agentType, agentConfig, agentFile);
 
       // Save agent configuration
-      const filePath = path.join(this.agentsDir, "${agentType}-config.json");
+      const filePath = path.join(this.agentsDir, "${agentType}-config.json);
       fs.writeFileSync(configFile, JSON.stringify(agentConfig, null, 2));
 
-      console.log("Agent ${agentId} created successfully");
+      console.log(Agent ${agentId} created successfully");
       return agentConfig;
 
     } catch (error) {
-      console.error("Failed to create ${agentType} agent:", error);
+      console.error("Failed to create ${agentType} agent:, error);
       throw error;
     }
   }
@@ -130,7 +130,7 @@ class $1 {
   }
 
   getAgentTemplate(agentType, config) {
-    const result = "const $1 = require('fs);
+    const result = const $1 = require('fs);
 const result = require(path);
 const { exec } = require(chil')d'_process);
 const { promisify } = require('util);
@@ -140,7 +140,7 @@ const result = promisify(exec);
 class ${this.getClassName(agentType)} {
   constructor() {
     this.agentId = process.env.AGENT_ID || ')${config.agentId};
-    this.agentType = process.env.AGENT_TYPE || '${agentType}';
+    this.agentType = process.env.AGENT_TYPE || '${agentType}'
     this.config = JSON.parse(process.env.AGENT_CONFIG || ${JSON.stringify(config.config)}');
     this.projectRoot = path.resolve(__dirname, '../..);
     this.reportsDir = path.join(__dirname, '../reports/${agentType}-reports');
@@ -156,7 +156,7 @@ class ${this.getClassName(agentType)} {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
@@ -183,12 +183,12 @@ class ${this.getClassName(agentType)} {
       console.log('Performing testing analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        agentType: this.agentType,
-        analysis: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        agentType: "this.agentType",
+        analysis: "{"},
+        recommendations: "[]
+      "};
       
       // Perform specific analysis based on agent type
       analysis.analysis = await this.performSpecificAnalysis();
@@ -202,26 +202,26 @@ class ${this.getClassName(agentType)} {
       console.log(Testing analysis completed);
       
     } catch (error) {
-      console.error(')Testin'g analysis failed: ', error);
+      console.error(')Testin'g analysis failed: "'", error);
     }
   }
 
   async performSpecificAnalysis() {
     // This will be overridden by specific agent implementations
     return {
-      status: analysis'_completed',
-      data: {}
+      status: "analysis'_completed'",
+      data: "{"}
     };
   }
 
   generateRecommendations(analysis) {
     return [
       {
-        type: testing,
-        priority: 'medium',
-        message: 'Testing improvement opportunity detected',
-        suggestion: Implement testing enhancement measures
-      }
+        type: "testing",
+        priority: "'medium'",
+        message: "'Testing improvement opportunity detected'",
+        suggestion: "Implement testing enhancement measures
+      "}
     ];
   }
 
@@ -230,12 +230,12 @@ class ${this.getClassName(agentType)} {
       console.log('Monitoring testing...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        agentType: this.agentType,
-        metrics: {},
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        agentType: "this.agentType",
+        metrics: "{"},
+        alerts: "[]
+      "};
       
       // Perform monitoring
       monitoring.metrics = await this.performMonitoring();
@@ -245,7 +245,7 @@ class ${this.getClassName(agentType)} {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.logsDir, \"monitoring-\${timestamp}.json\");
+      const filePath = path.join(this.logsDir, \monitoring-\${timestamp}.json\);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -256,8 +256,8 @@ class ${this.getClassName(agentType)} {
   async performMonitoring() {
     // This will be overridden by specific agent implementations
     return {
-      status: ')monitoring_completed',
-      metrics: {}
+      status: "')monitoring_completed'",
+      metrics: "{"}
     };
   }
 
@@ -270,12 +270,12 @@ class ${this.getClassName(agentType)} {
       console.log(Optimizing testing...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        agentType: this.agentType,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        agentType: "this.agentType",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeTesting();
@@ -284,16 +284,16 @@ class ${this.getClassName(agentType)} {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: 'completed',
-          improvement: Math.random() * 0.95,
-          description: \"Applied \${optimization.suggestion}\"
+          type: "optimization.type",
+          status: "'completed'",
+          improvement: "Math.random() * 0.95",
+          description: "\"Applied \${optimization.suggestion"}\"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, \"optimization-\${timestamp}.json\");
+      const filePath = path.join(this.reportsDir, \optimization-\${timestamp}.json\);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -305,7 +305,7 @@ class ${this.getClassName(agentType)} {
     const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
     const filePath = path.join(this.reportsDir, \"analysis-\${timestamp}.json\");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(\"Analysis report saved: \${reportPath}\");
+    console.log(\Analysis report saved: "\${reportPath"}\);
   }
 
   async stop() {
@@ -326,7 +326,7 @@ process.on(')SIGINT, () => {
 });
 
 agent.start().catch(error => {
-  console.error(${config.name} failed to start: ', error);
+  console.error(${config.name} failed to start: "'", error);
   process.exit(1);
 })
 
@@ -341,7 +341,7 @@ agent.start().catch(error => {
 
   async launchAgent(agentType, config = {}) {
     try {
-      console.log("Launching ${agentType} agent...");
+      console.log(Launching ${agentType} agent...);
       
       const filePath = path.join(this.agentsDir, "${agentType}-agent.js");
       
@@ -351,22 +351,22 @@ agent.start().catch(error => {
 
       const timestamp = {
         ...process.env,
-        AGENT_ID: "${agentType}-${Date.now()}",
-        AGENT_TYPE: agentType,
-        AGENT_CONFIG: JSON.stringify(config)
-      };
+        AGENT_ID: "${agentType"}-${Date.now()},
+        AGENT_TYPE: "agentType",
+        AGENT_CONFIG: "JSON.stringify(config)
+      "};
 
       const { spawn } = require(')chil'd_process');
       const result = spawn('node, [agentFile], {
         env,
-        stdio: inherit
-      });
+        stdio: "inherit
+      "});
 
-      console.log("Agent ${agentType} launched with PID: ${agentProcess.pid}");
+      console.log("Agent ${agentType} launched with PID: "${agentProcess.pid"}");
       return agentProcess;
 
     } catch (error) {
-      console.error("Failed to launch ${agentType} agent:", error);
+      console.error(Failed to launch ${agentType} agent:, error);
       throw error;
     }
   }
@@ -379,13 +379,13 @@ agent.start().catch(error => {
     for (const agentType of Object.keys(this.agentTypes)) {
       try {
         const asyncResult = await this.launchAgent(agentType);
-        agents.push({ type: agentType, process: agent });
+        agents.push({ type: "agentType", process: "agent "});
       } catch (error) {
         console.error("Failed to launch ${agentType} agent:", error);
       }
     }
     
-    console.log("Launched ${agents.length} testing agents");
+    console.log(Launched ${agents.length} testing agents);
     return agents;
   }
 
@@ -412,12 +412,12 @@ agent.start().catch(error => {
 
   async generateReport() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      factory: TestingAutomationFactory'),
-      agentTypes: Object.keys(this.agentTypes).length,
-      agents: Object.keys(this.agentTypes),
-      status: 'operational
-    };
+      timestamp: "new Date().toISOString()",
+      factory: "TestingAutomationFactory')",
+      agentTypes: "Object.keys(this.agentTypes).length",
+      agents: "Object.keys(this.agentTypes)",
+      status: "'operational
+    "};
 
     const filePath = path.join(this.reportsDir, testing-report's, 'factory-repor't.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));

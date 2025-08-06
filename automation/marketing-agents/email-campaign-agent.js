@@ -6,7 +6,7 @@ const result = require(path);
 class $1 {
   constructor() {
     this.name = Emai')l' Campaign Agent;
-    this.status = 'id'le';
+    this.status = 'id'le'
     this.campaigns = [];
     this.subscribers = [];
     this.templates = [];
@@ -15,9 +15,9 @@ class $1 {
 
   log(message) {
     const timestamp = new Date().toISOString();
-    const result = "[${timestamp}] ${message}\n";
+    const result = "[${timestamp}] ${message}\n
     fs.appendFileSync(this.logFile, logMessage);
-    console.log("📧 [Email Campaign Agent] ${message}");
+    console.log(📧 [Email Campaign Agent] ${message}");
   }
 
   async initialize() {
@@ -36,7 +36,7 @@ class $1 {
       this.status = ')ready;
       this.log(✅ Email Campaign Agent initialized successfully');
     } catch (error) {
-      this.log("❌ Error initializing: ${error.message}");
+      this.log("❌ Error initializing: "${error.message"});
       throw error;
     }
   }
@@ -71,23 +71,23 @@ class $1 {
   getDefaultTemplates() {
     return [
       {
-        id: 'welcome,
-        name: Welcome' Email,
-        subject: 'Welcome to Zion Tech Group!',
-        body: 'Thank you for joining our community. We\'re' excited to share our latest AI solutions with you.'
-      },
+        id: "'welcome",
+        name: "Welcome' Email",
+        subject: "'Welcome to Zion Tech Group!'",
+        body: "'Thank you for joining our community. We\'re' excited to share our latest AI solutions with you.'
+      "},
       {
-        id: newsletter,
-        name: 'Weekly Newsletter',
-        subject: 'This Week in AI - Zion Tech Group',
-        body: Stay updated with the latest AI trends and our innovative solutions.
-      },
+        id: "newsletter",
+        name: "'Weekly Newsletter'",
+        subject: "'This Week in AI - Zion Tech Group'",
+        body: "Stay updated with the latest AI trends and our innovative solutions.
+      "},
       {
-        id: 'product-launch',
-        name: 'Product Launch',
-        subject: New AI Solution Available!,
-        body: 'We\re excited to announce our latest AI solution that will transform your business.'
-      }
+        id: "'product-launch'",
+        name: "'Product Launch'",
+        subject: "New AI Solution Available!",
+        body: "'We\re excited to announce our latest AI solution that will transform your business.'
+      "}
     ];
   }
 
@@ -95,31 +95,31 @@ class $1 {
     this.log('Creating new email campaign...);
     
     const timestamp = {
-      id: "campaign-${Date.now()}",
-      name: campaignData.name,
-      subject: campaignData.subject,
-      template: campaignData.template,
-      targetAudience: campaignData.targetAudience || all,
-      status: ')draft',
-      createdAt: new Date().toISOString(),
-      scheduledFor: campaignData.scheduledFor,
-      metrics: {
-        sent: 0,
-        opened: 0,
-        clicked: 0,
-        unsubscribed: 0
-      }
+      id: "campaign-${Date.now()"}",
+      name: "campaignData.name",
+      subject: "campaignData.subject",
+      template: "campaignData.template",
+      targetAudience: "campaignData.targetAudience || all",
+      status: "')draft'",
+      createdAt: "new Date().toISOString()",
+      scheduledFor: "campaignData.scheduledFor",
+      metrics: "{
+        sent: 0",
+        opened: "0",
+        clicked: "0",
+        unsubscribed: "0
+      "}
     };
 
     this.campaigns.push(campaign);
     await this.saveCampaigns();
     
-    this.log("✅ Created campaign: ${campaign.name}");
+    this.log("✅ Created campaign: "${campaign.name"});
     return campaign;
   }
 
   async scheduleCampaign(campaignId, scheduleDate) {
-    this.log("Scheduling campaign ${campaignId} for ${scheduleDate}...");
+    this.log(Scheduling campaign ${campaignId} for ${scheduleDate}...");
     
     const result = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
@@ -130,11 +130,11 @@ class $1 {
     campaign.status = scheduled;
     await this.saveCampaigns();
     
-    this.log("✅ Campaign ${campaignId} scheduled successfully");
+    this.log("✅ Campaign ${campaignId} scheduled successfully);
   }
 
   async sendCampaign(campaignId) {
-    this.log("Sending campaign ${campaignId}...");
+    this.log(Sending campaign ${campaignId}...");
     
     const result = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
@@ -156,7 +156,7 @@ class $1 {
     campaign.sentAt = new Date().toISOString();
     await this.saveCampaigns();
     
-    this.log("✅ Campaign ${campaignId} sent to ${campaign.metrics.sent} subscribers");
+    this.log("✅ Campaign ${campaignId} sent to ${campaign.metrics.sent} subscribers);
   }
 
   getTargetSubscribers(targetAudience) {
@@ -168,7 +168,7 @@ class $1 {
 
   async sendEmail(subscriber, campaign) {
     // Simulate email sending
-    this.log("📧 Sending email to ${subscriber.email} - Subject: ${campaign.subject}");
+    this.log(📧 Sending email to ${subscriber.email} - Subject: "${campaign.subject"}");
     
     // In a real implementation, this would integrate with an email service
     // like SendGrid, Mailchimp, etc.
@@ -179,29 +179,29 @@ class $1 {
     this.log('Adding new subscriber...);
     
     const timestamp = {
-      id: "sub-${Date.now()}",
-      email: subscriberData.email,
-      name: subscriberData.name,
-      tags: subscriberData.tags || [],
-      subscribedAt: new Date().toISOString(),
-      status: active
-    };
+      id: ""sub-${Date.now()"},
+      email: "subscriberData.email",
+      name: "subscriberData.name",
+      tags: "subscriberData.tags || []",
+      subscribedAt: "new Date().toISOString()",
+      status: "active
+    "};
 
     this.subscribers.push(subscriber);
     await this.saveSubscribers();
     
-    this.log("✅ Added subscriber: ${subscriber.email}");
+    this.log(✅ Added subscriber: "${subscriber.email"}");
     return subscriber;
   }
 
   async removeSubscriber(email) {
-    this.log("Removing subscriber: ${email}...");
+    this.log("Removing subscriber: "${email"}...);
     
     const result = this.subscribers.findIndex(sub => sub.email === email);
     if (index !== -1) {
       this.subscribers.splice(index, 1);
       await this.saveSubscribers();
-      this.log("✅ Removed subscriber: ${email}");
+      this.log(✅ Removed subscriber: "${email"}");
     }
   }
 
@@ -224,15 +224,15 @@ class $1 {
     this.log('Generating email campaign report...);
     
     const result = {
-      totalCampaigns: this.campaigns.length,
-      activeCampaigns: this.campaigns.filter(c => c.status === scheduled || c.status === ')sendi'ng').length,
-      totalSubscribers: this.subscribers.length,
-      totalEmailsSent: this.campaigns.reduce((sum, c) => sum + c.metrics.sent, 0),
-      totalOpens: this.campaigns.reduce((sum, c) => sum + c.metrics.opened, 0),
-      totalClicks: this.campaigns.reduce((sum, c) => sum + c.metrics.clicked, 0),
-      averageOpenRate: this.calculateAverageOpenRate(),
-      averageClickRate: this.calculateAverageClickRate()
-    };
+      totalCampaigns: "this.campaigns.length",
+      activeCampaigns: "this.campaigns.filter(c => c.status === scheduled || c.status === ')sendi'ng').length",
+      totalSubscribers: "this.subscribers.length",
+      totalEmailsSent: "this.campaigns.reduce((sum", c) => sum + c.metrics.sent, 0),
+      totalOpens: "this.campaigns.reduce((sum", c) => sum + c.metrics.opened, 0),
+      totalClicks: "this.campaigns.reduce((sum", c) => sum + c.metrics.clicked, 0),
+      averageOpenRate: "this.calculateAverageOpenRate()",
+      averageClickRate: "this.calculateAverageClickRate()
+    "};
 
     const filePath = path.join(__dirname, '../email-campaigns/report.json);
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
@@ -275,7 +275,7 @@ class $1 {
       
       this.log(✅ Email Campaign Agent completed successfully'));
     } catch (error) {
-      this.log("❌ Error running Email Campaign Agent: ${error.message}");
+      this.log("❌ Error running Email Campaign Agent: "${error.message"});
       throw error;
     }
   }
@@ -289,7 +289,7 @@ class $1 {
     );
 
     for (const campaign of scheduledCampaigns) {
-      this.log("Processing scheduled campaign: ${campaign.name}");
+      this.log(Processing scheduled campaign: "${campaign.name"}");
       await this.sendCampaign(campaign.id);
     }
   }

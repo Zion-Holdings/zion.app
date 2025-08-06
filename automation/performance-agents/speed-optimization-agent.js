@@ -29,13 +29,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Speed Optimization Agent ${this.agentId} started");
+    console.log("Speed Optimization Agent ${this.agentId} started);
     
     // Initial speed analysis
     await this.analyzeSpeed();
@@ -61,13 +61,13 @@ class $1 {
       console.log(Performin'g' comprehensive speed analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        responseTimes: [],
-        bottlenecks: [],
-        optimizations: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        responseTimes: "[]",
+        bottlenecks: "[]",
+        optimizations: "[]",
+        recommendations: "[]
+      "};
       
       // Analyze response times
       analysis.responseTimes = await this.analyzeResponseTimes();
@@ -87,7 +87,7 @@ class $1 {
       console.log('Speed analysis completed);
       
     } catch (error) {
-      console.error(')Speed' analysis failed: ', error);
+      console.error(')Speed' analysis failed: "'", error);
     }
   }
 
@@ -171,12 +171,12 @@ class $1 {
 
   extractPerformanceInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      category: 'unknown,
-      performance: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      category: "'unknown",
+      performance: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -261,45 +261,45 @@ class $1 {
 
   extractBuildInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      bundler: 'unknown',
-      optimization: 'unknown,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      bundler: "'unknown'",
+      optimization: "'unknown",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect build type
     if (lowerContent.includes(webpac'k) || lowerContent.includes('webpack.config)) {
-      buildInfo.type = ')Webpack' Build';
+      buildInfo.type = ')Webpack' Build'
     } else if (lowerContent.includes(rollup) || lowerContent.includes('rollup.config)) {
-      buildInfo.type = ')Rollup' Build';
+      buildInfo.type = ')Rollup' Build'
     } else if (lowerContent.includes(vite) || lowerContent.includes('vite.config)) {
-      buildInfo.type = ')Vite' Build';
+      buildInfo.type = ')Vite' Build'
     } else if (lowerContent.includes(parcel) || lowerContent.includes('parcel.config)) {
-      buildInfo.type = ')Parcel' Build';
+      buildInfo.type = ')Parcel' Build'
     }
     
     // Extract bundler
     if (lowerContent.includes(webpack)) {
-      buildInfo.bundler = 'Webpa'ck';
+      buildInfo.bundler = 'Webpa'ck'
     } else if (lowerContent.includes('rollup)) {
       buildInfo.bundler = Rollup;
     } else if (lowerContent.includes(')vi'te')) {
       buildInfo.bundler = 'Vite;
     } else if (lowerContent.includes(parc'e'l)) {
-      buildInfo.bundler = 'Parc'el';
+      buildInfo.bundler = 'Parc'el'
     }
     
     // Detect optimization level
     if (lowerContent.includes('optimization) || lowerContent.includes(minify)) {
-      buildInfo.optimization = ')Optimiz'ed';
+      buildInfo.optimization = ')Optimiz'ed'
     } else if (lowerContent.includes('development) || lowerContent.includes(debug)) {
-      buildInfo.optimization = ')Developme'nt';
+      buildInfo.optimization = ')Developme'nt'
     } else if (lowerContent.includes('production) || lowerContent.includes(release)) {
-      buildInfo.optimization = ')Producti'on';
+      buildInfo.optimization = ')Producti'on'
     }
     
     // Extract configuration
@@ -310,37 +310,37 @@ class $1 {
 
   extractPerformanceConfiguration(content) {
     const result = {
-      environment: 'unknown,
-      target: unknow'n,
-      optimization: 'unknown',
-      settings: {}
+      environment: "'unknown",
+      target: "unknow'n",
+      optimization: "'unknown'",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Extract environment
     if (lowerContent.includes('production) || lowerContent.includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     }
     
     // Extract target
     if (lowerContent.includes('browser) || lowerContent.includes(client)) {
-      config.target = ')brows'er';
+      config.target = ')brows'er'
     } else if (lowerContent.includes('server) || lowerContent.includes(node)) {
-      config.target = ')serv'er';
+      config.target = ')serv'er'
     } else if (lowerContent.includes('mobile) || lowerContent.includes(app)) {
-      config.target = ')mobi'le';
+      config.target = ')mobi'le'
     }
     
     // Extract optimization
     if (lowerContent.includes('optimization) || lowerContent.includes(minify)) {
-      config.optimization = ')enabl'ed';
+      config.optimization = ')enabl'ed'
     } else if (lowerContent.includes('no optimization) || lowerContent.includes(debug)) {
-      config.optimization = ')disabl'ed';
+      config.optimization = ')disabl'ed'
     }
     
     return config;
@@ -414,12 +414,12 @@ class $1 {
 
   extractBottleneckInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      severity: 'unknown,
-      impact: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      severity: "'unknown",
+      impact: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -527,41 +527,41 @@ class $1 {
 
   extractOptimizationInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      category: unknow'n,
-      effectiveness: 'unknown',
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      category: "unknow'n",
+      effectiveness: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect optimization type
     if (lowerContent.includes('minify) || lowerContent.includes(compress)) {
-      optimizationInfo.type = ')Minificati'on';
+      optimizationInfo.type = ')Minificati'on'
     } else if (lowerContent.includes('bundle) || lowerContent.includes(split)) {
-      optimizationInfo.type = ')Bundli'ng';
+      optimizationInfo.type = ')Bundli'ng'
     } else if (lowerContent.includes('cache) || lowerContent.includes(caching)) {
-      optimizationInfo.type = ')Cachi'ng';
+      optimizationInfo.type = ')Cachi'ng'
     } else if (lowerContent.includes('lazy) || lowerContent.includes(loading)) {
-      optimizationInfo.type = ')Laz'y Loading';
+      optimizationInfo.type = ')Laz'y Loading'
     }
     
     // Detect category
     if (lowerContent.includes('enabled) || lowerContent.includes(active)) {
-      optimizationInfo.category = ')Enabl'ed';
+      optimizationInfo.category = ')Enabl'ed'
     } else if (lowerContent.includes('disabled) || lowerContent.includes(inactive)) {
-      optimizationInfo.category = ')Disabl'ed';
+      optimizationInfo.category = ')Disabl'ed'
     } else if (lowerContent.includes('partial) || lowerContent.includes(limited)) {
-      optimizationInfo.category = ')Parti'al';
+      optimizationInfo.category = ')Parti'al'
     }
     
     // Detect effectiveness
     if (lowerContent.includes('high) || lowerContent.includes(effective)) {
-      optimizationInfo.effectiveness = ')Hi'gh';
+      optimizationInfo.effectiveness = ')Hi'gh'
     } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {
-      optimizationInfo.effectiveness = ')Medi'um';
+      optimizationInfo.effectiveness = ')Medi'um'
     } else if (lowerContent.includes('low) || lowerContent.includes(minimal)) {
       optimizationInfo.effectiveness = Low');
     }
@@ -578,42 +578,42 @@ class $1 {
     // Response time recommendations
     if (analysis.responseTimes.length === 0) {
       recommendations.push({
-        type: 'response_time',
-        priority: high,
-        message: 'No response time monitoring available',
-        suggestion: 'Implement response time monitoring'
-      });
+        type: "'response_time'",
+        priority: "high",
+        message: "'No response time monitoring available'",
+        suggestion: "'Implement response time monitoring'
+      "});
     }
     
     // Bottleneck recommendations
     if (analysis.bottlenecks.length === 0) {
       recommendations.push({
-        type: bottleneck,
-        priority: 'medium',
-        message: 'No bottleneck detection available',
-        suggestion: Implement bottleneck detection system
-      });
+        type: "bottleneck",
+        priority: "'medium'",
+        message: "'No bottleneck detection available'",
+        suggestion: "Implement bottleneck detection system
+      "});
     }
     
     // Optimization recommendations
     if (analysis.optimizations.length === 0) {
       recommendations.push({
-        type: 'optimization',
-        priority: 'high,
-        message: No' optimizations available,
-        suggestion: 'Implement performance optimizations'
-      });
+        type: "'optimization'",
+        priority: "'high",
+        message: "No' optimizations available",
+        suggestion: "'Implement performance optimizations'
+      "});
     }
     
     // Performance recommendations
     const result = analysis.responseTimes.filter(rt => rt.performance === 'Poor);
     if (slowPerformance.length > 0) {
       recommendations.push({
-        type: performan'c'e,
-        priority: 'high',
-        message: 'Slow performance detected',
-        suggestion: Optimize slow performance areas
-      });
+        type: "performan'c'e",
+        priority: "'high'",
+        message: "'Slow performance detected'",
+        suggestion: "Optimize slow performance areas
+      "});
     }
     
     return recommendations;
@@ -624,12 +624,12 @@ class $1 {
       console.log('Monitoring speed...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        responseTimes: [],
-        bottlenecks: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        responseTimes: "[]",
+        bottlenecks: "[]",
+        alerts: "[]
+      "};
       
       // Check response time status
       const asyncResult = await this.analyzeResponseTimes();
@@ -657,7 +657,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.logsDir, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -667,27 +667,27 @@ class $1 {
 
   checkResponseTimeStatus(responseTime) {
     const timestamp = {
-      responseTime: responseTime.name,
-      status: ')healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      responseTime: "responseTime.name",
+      status: "')healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common response time issues
     if (responseTime.performance === Poo'r) {
       status.issues.push({
-        type: 'performance',
-        severity: 'high,
-        message: Response' time is poor
-      });
+        type: "'performance'",
+        severity: "'high",
+        message: "Response' time is poor
+      "});
     }
     
     if (responseTime.category === 'Sl'ow') {
       status.issues.push({
-        type: 'category,
-        severity: mediu'm,
-        message: 'Response time category is slow'
-      });
+        type: "'category",
+        severity: "mediu'm",
+        message: "'Response time category is slow'
+      "});
     }
     
     return status;
@@ -695,27 +695,27 @@ class $1 {
 
   checkBottleneckStatus(bottleneck) {
     const timestamp = {
-      bottleneck: bottleneck.name,
-      status: 'healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      bottleneck: "bottleneck.name",
+      status: "'healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common bottleneck issues
     if (bottleneck.severity === Critica'l) {
       status.issues.push({
-        type: 'severity',
-        severity: 'high,
-        message: Bottleneck' is critical
-      });
+        type: "'severity'",
+        severity: "'high",
+        message: "Bottleneck' is critical
+      "});
     }
     
     if (bottleneck.impact === 'Hi'gh') {
       status.issues.push({
-        type: 'impact,
-        severity: mediu'm,
-        message: 'Bottleneck has high impact'
-      });
+        type: "'impact",
+        severity: "mediu'm",
+        message: "'Bottleneck has high impact'
+      "});
     }
     
     return status;
@@ -726,11 +726,11 @@ class $1 {
       console.log('Optimizing speed...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeSpeed();
@@ -739,16 +739,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: completed,
-          improvement: Math.random() * 0.95,
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "completed",
+          improvement: "Math.random() * 0.95",
+          description: ""Applied ${optimization.suggestion"}
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, optimization-reports, optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -761,12 +761,12 @@ class $1 {
       console.log(')Running' comprehensive speed analysis...');
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of speed analysis
       speedAnalysisReport.analysis.responseTime = await this.runResponseTimeAnalysis();
@@ -782,7 +782,7 @@ class $1 {
       
       // Save speed analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'speed-reports, "speed-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'speed-reports, "speed-analysis-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(speedAnalysisReport, null, 2));
       
     } catch (error) {
@@ -794,16 +794,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:response-time);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -811,16 +811,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:bottleneck);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -828,16 +828,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:optimization);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -845,26 +845,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:performance);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateSpeedAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      performance: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      performance: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -888,10 +888,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'failed) {
         recommendations.push({
-          type: type,
-          priority: medi'u'm,
-          message: "${type} speed analysis failed",
-          suggestion: "Fix ${type} speed analysis issues"
+          type: "type",
+          priority: "medi'u'm",
+          message: "${type"} speed analysis failed",
+          suggestion: ""Fix ${type"} speed analysis issues
         });
       }
     }
@@ -901,13 +901,13 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filePath = path.join(this.reportsDir, speed-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, speed-reports, analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"});
   }
 
   async stop() {
-    console.log("Speed Optimization Agent ${this.agentId} stopping...");
+    console.log(Speed Optimization Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }

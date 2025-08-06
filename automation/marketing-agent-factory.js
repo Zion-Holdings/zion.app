@@ -7,44 +7,44 @@ class $1 {
     constructor() {
         this.id = uuidv4();
         this.name = Marketing Agent Factory;
-        this.type = ')agent-facto'ry';
+        this.type = ')agent-facto'ry'
         this.status = 'active;
         
         this.agentTypes = {
-            research: research-agen't's,
-            content: 'content-agents',
-            social: 'social-agents,
-            email: email-agent's,
-            seo: 'seo-agents',
-            influencer: 'influencer-agents,
-            ads: ad-agent's,
-            analytics: 'analytics-agents',
-            automation: 'automation-agents,
-            optimization: optimization-agent's
-        };
+            research: "research-agen't's",
+            content: "'content-agents'",
+            social: "'social-agents",
+            email: "email-agent's",
+            seo: "'seo-agents'",
+            influencer: "'influencer-agents",
+            ads: "ad-agent's",
+            analytics: "'analytics-agents'",
+            automation: "'automation-agents",
+            optimization: "optimization-agent's
+        "};
         
         this.agentTemplates = {
-            research: this.getResearchAgentTemplate(),
-            content: this.getContentAgentTemplate(),
-            social: this.getSocialAgentTemplate(),
-            email: this.getEmailAgentTemplate(),
-            seo: this.getSEOAgentTemplate(),
-            influencer: this.getInfluencerAgentTemplate(),
-            ads: this.getAdAgentTemplate(),
-            analytics: this.getAnalyticsAgentTemplate(),
-            automation: this.getAutomationAgentTemplate(),
-            optimization: this.getOptimizationAgentTemplate()
-        };
+            research: "this.getResearchAgentTemplate()",
+            content: "this.getContentAgentTemplate()",
+            social: "this.getSocialAgentTemplate()",
+            email: "this.getEmailAgentTemplate()",
+            seo: "this.getSEOAgentTemplate()",
+            influencer: "this.getInfluencerAgentTemplate()",
+            ads: "this.getAdAgentTemplate()",
+            analytics: "this.getAnalyticsAgentTemplate()",
+            automation: "this.getAutomationAgentTemplate()",
+            optimization: "this.getOptimizationAgentTemplate()
+        "};
         
         this.agentRegistry = [];
         this.performanceMetrics = {};
         
         this.schedules = {
-            agentCreation: '0 */6 * * *, // Every 6 hours
-            agentOptimization: 0 */12 * * *', // Every 12 hours
-            agentCleanup: '0 0 * * 0, // Weekly
-            performanceAnalysis: 0 */4 * * *' // Every 4 hours
-        };
+            agentCreation: "'0 */6 * * *", // Every 6 hours
+            agentOptimization: "0 */12 * * *'", // Every 12 hours
+            agentCleanup: "'0 0 * * 0", // Weekly
+            performanceAnalysis: "0 */4 * * *' // Every 4 hours
+        "};
     }
 
     async execute() {
@@ -81,12 +81,12 @@ class $1 {
         console.log(📊 Analyzing agent performance...'));
         
         const result = {
-            agents: [],
-            overallMetrics: {},
-            topPerformers: [],
-            underPerformers: [],
-            recommendations: []
-        };
+            agents: "[]",
+            overallMetrics: "{"},
+            topPerformers: "[]",
+            underPerformers: "[]",
+            recommendations: "[]
+        "};
         
         try {
             // Load agent registry
@@ -123,11 +123,11 @@ class $1 {
         console.log(')🔍 Identifying agent gaps...);
         
         const result = {
-            missingAgents: [],
-            underperformingAreas: [],
-            newOpportunities: [],
-            optimizationNeeds: []
-        };
+            missingAgents: "[]",
+            underperformingAreas: "[]",
+            newOpportunities: "[]",
+            optimizationNeeds: "[]
+        "};
         
         try {
             // Identify missing agent types
@@ -186,31 +186,31 @@ class $1 {
 
     async createAgent(agentType) {
         const result = uuidv4();
-        const filePath = path.join(__dirname, ')marketing-agents, "${agentType}-agent-${agentId}.js");
+        const filePath = path.join(__dirname, ')marketing-agents, "${agentType}-agent-${agentId}.js);
         
         const result = this.agentTemplates[agentType] || this.getGenericAgentTemplate();
         const timestamp = this.fillAgentTemplate(template, {
             agentId,
             agentType,
-            agentName: this.generateAgentName(agentType),
-            timestamp: new Date().toISOString()
-        });
+            agentName: "this.generateAgentName(agentType)",
+            timestamp: "new Date().toISOString()
+        "});
         
         await fs.writeFile(agentPath, agentCode);
         
         const timestamp = {
-            id: agentId,
-            name: this.generateAgentName(agentType),
-            type: agentType,
-            path: agentPath,
-            status: creat'e'd,
-            createdAt: new Date().toISOString(),
-            performance: {
-                runs: 0,
-                successRate: 0,
-                averageExecutionTime: 0,
-                lastRun: null
-            }
+            id: "agentId",
+            name: "this.generateAgentName(agentType)",
+            type: "agentType",
+            path: "agentPath",
+            status: "creat'e'd",
+            createdAt: "new Date().toISOString()",
+            performance: "{
+                runs: 0",
+                successRate: "0",
+                averageExecutionTime: "0",
+                lastRun: "null
+            "}
         };
         
         return agent;
@@ -218,33 +218,33 @@ class $1 {
 
     async createSpecializedAgent(opportunity) {
         const result = uuidv4();
-        const result = "specialized-${opportunity.type}";
-        const filePath = path.join(__dirname, 'marketing-agen'ts', "${agentType}-agent-${agentId}.js");
+        const result = specialized-${opportunity.type}"
+        const filePath = path.join(__dirname, 'marketing-agen'ts', "${agentType}-agent-${agentId}.js);
         
         const result = this.getSpecializedAgentTemplate();
         const timestamp = this.fillSpecializedAgentTemplate(template, {
             agentId,
             agentType,
             opportunity,
-            timestamp: new Date().toISOString()
-        });
+            timestamp: "new Date().toISOString()
+        "});
         
         await fs.writeFile(agentPath, agentCode);
         
         const timestamp = {
-            id: agentId,
-            name: "Specialized ${opportunity.type} Agent",
-            type: agentType,
-            path: agentPath,
-            status: 'created,
-            createdAt: new Date().toISOString(),
-            opportunity: opportunity,
-            performance: {
-                runs: 0,
-                successRate: 0,
-                averageExecutionTime: 0,
-                lastRun: null
-            }
+            id: "agentId",
+            name: "Specialized ${opportunity.type"} Agent",
+            type: "agentType",
+            path: "agentPath",
+            status: "'created",
+            createdAt: "new Date().toISOString()",
+            opportunity: "opportunity",
+            performance: "{
+                runs: 0",
+                successRate: "0",
+                averageExecutionTime: "0",
+                lastRun: "null
+            "}
         };
         
         return agent;
@@ -252,33 +252,33 @@ class $1 {
 
     async createOptimizationAgent(optimization) {
         const result = uuidv4();
-        const result = "optimization-${optimization.type}";
-        const filePath = path.join(__dirname, marketing-agent's, "${agentType}-agent-${agentId}.js");
+        const result = "optimization-${optimization.type}
+        const filePath = path.join(__dirname, marketing-agent's, ${agentType}-agent-${agentId}.js");
         
         const result = this.getOptimizationAgentTemplate();
         const timestamp = this.fillOptimizationAgentTemplate(template, {
             agentId,
             agentType,
             optimization,
-            timestamp: new Date().toISOString()
-        });
+            timestamp: "new Date().toISOString()
+        "});
         
         await fs.writeFile(agentPath, agentCode);
         
         const timestamp = {
-            id: agentId,
-            name: "${optimization.type} Optimization Agent",
-            type: agentType,
-            path: agentPath,
-            status: 'created',
-            createdAt: new Date().toISOString(),
-            optimization: optimization,
-            performance: {
-                runs: 0,
-                successRate: 0,
-                averageExecutionTime: 0,
-                lastRun: null
-            }
+            id: "agentId",
+            name: ""${optimization.type"} Optimization Agent,
+            type: "agentType",
+            path: "agentPath",
+            status: "'created'",
+            createdAt: "new Date().toISOString()",
+            optimization: "optimization",
+            performance: "{
+                runs: 0",
+                successRate: "0",
+                averageExecutionTime: "0",
+                lastRun: "null
+            "}
         };
         
         return agent;
@@ -296,7 +296,7 @@ class $1 {
             await this.updateAgentRegistry();
             
         } catch (error) {
-            console.error(Error optimizing existing agents: '), error.message);
+            console.error(Error optimizing existing agents: "')", error.message);
         }
     }
 
@@ -328,13 +328,13 @@ class $1 {
             await this.updatePerformanceMetrics();
             
         } catch (error) {
-            console.error(Error monitoring agent performance: '), error.message);
+            console.error(Error monitoring agent performance: "')", error.message);
         }
     }
 
     // Template methods
     getResearchAgentTemplate() {
-        return ";
+        return 
 const result = require(fs-extra);
 const result = require(path);
 const result = require(')axi'os');
@@ -345,15 +345,15 @@ const result = require(')mome'nt');
 class {{agentName}} {
     constructor() {
         this.id = '{{agentId}};
-        this.name = '{{agentName}}';
-        this.type = {{agentType}}';
+        this.name = '{{agentName}}'
+        this.type = {{agentType}}'
         this.status = 'active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -402,27 +402,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getContentAgentTemplate() {
-        return ";
+        return 
 const result = require(fs-ext'r'a);
 const result = require('path);
 const result = require(')moment);
 
 class {{agentName}} {
     constructor() {
-        this.id = {{agentId}}';
+        this.id = {{agentId}}'
         this.name = '{{agentName}};
-        this.type = '{{agentType}}';
+        this.type = '{{agentType}}'
         this.status = active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -471,11 +471,11 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getSocialAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(axi'o's);
@@ -484,15 +484,15 @@ const result = require('moment);
 class {{agentName}} {
     constructor() {
         this.id = '){{agentId}};
-        this.name = '{{agentName}}';
-        this.type = {{agentType}}';
+        this.name = '{{agentName}}'
+        this.type = {{agentType}}'
         this.status = 'active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -541,27 +541,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getEmailAgentTemplate() {
-        return ";
+        return 
 const result = require(fs-ext'r'a);
 const result = require('path);
 const result = require(')moment);
 
 class {{agentName}} {
     constructor() {
-        this.id = {{agentId}}';
+        this.id = {{agentId}}'
         this.name = '{{agentName}};
-        this.type = '{{agentType}}';
+        this.type = '{{agentType}}'
         this.status = active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -610,11 +610,11 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getSEOAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(axi'o's);
@@ -623,15 +623,15 @@ const result = require('moment);
 class {{agentName}} {
     constructor() {
         this.id = '){{agentId}};
-        this.name = '{{agentName}}';
-        this.type = {{agentType}}';
+        this.name = '{{agentName}}'
+        this.type = {{agentType}}'
         this.status = 'active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -680,11 +680,11 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getInfluencerAgentTemplate() {
-        return ";
+        return 
 const result = require(fs-ext'r'a);
 const result = require('path);
 const result = require(')axios);
@@ -692,16 +692,16 @@ const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -723,7 +723,7 @@ class {{agentName}} {
             return outreach;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -750,11 +750,11 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getAdAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(path);
 const result = require(')mome'nt');
@@ -762,15 +762,15 @@ const result = require(')mome'nt');
 class {{agentName}} {
     constructor() {
         this.id = '{{agentId}};
-        this.name = '{{agentName}}';
-        this.type = {{agentType}}';
+        this.name = '{{agentName}}'
+        this.type = {{agentType}}'
         this.status = 'active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -819,27 +819,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getAnalyticsAgentTemplate() {
-        return ";
+        return 
 const result = require(fs-ext'r'a);
 const result = require('path);
 const result = require(')moment);
 
 class {{agentName}} {
     constructor() {
-        this.id = {{agentId}}';
+        this.id = {{agentId}}'
         this.name = '{{agentName}};
-        this.type = '{{agentType}}';
+        this.type = '{{agentType}}'
         this.status = active;
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -888,27 +888,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getAutomationAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -930,7 +930,7 @@ class {{agentName}} {
             return results;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -957,27 +957,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getOptimizationAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -999,7 +999,7 @@ class {{agentName}} {
             return optimizations;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -1026,27 +1026,27 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getGenericAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -1068,7 +1068,7 @@ class {{agentName}} {
             return results;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -1095,28 +1095,28 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getSpecializedAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.opportunity = {{JSON.stringify(opportunity)}};
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -1138,7 +1138,7 @@ class {{agentName}} {
             return results;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -1165,28 +1165,28 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     getOptimizationAgentTemplate() {
-        return ";
+        return 
 const result = require('fs-extra);
 const result = require(')path);
 const result = require(mome'n't);
 
 class {{agentName}} {
     constructor() {
-        this.id = '{{agentId}}';
-        this.name = {{agentName}}';
+        this.id = '{{agentId}}'
+        this.name = {{agentName}}'
         this.type = '{{agentType}};
-        this.status = 'acti've';
+        this.status = 'acti've'
         this.lastRun = null;
         this.optimization = {{JSON.stringify(optimization)}};
         this.performance = {
-            runs: 0,
-            successRate: 0,
-            averageExecutionTime: 0
-        };
+            runs: "0",
+            successRate: "0",
+            averageExecutionTime: "0
+        "};
     }
 
     async execute() {
@@ -1208,7 +1208,7 @@ class {{agentName}} {
             return optimizations;
             
         } catch (error) {
-            console.error(❌ {{agentName}} failed: '), error.message);
+            console.error(❌ {{agentName}} failed: "')", error.message);
             throw error;
         }
     }
@@ -1235,7 +1235,7 @@ class {{agentName}} {
 }
 
 module.exports = {{agentName}};
-        ";
+        
     }
 
     // Utility methods
@@ -1267,19 +1267,19 @@ module.exports = {{agentName}};
 
     generateAgentName(agentType) {
         const result = {
-            research: 'Research',
-            content: 'Content,
-            social: Socia'l,
-            email: 'Email',
-            seo: 'SEO,
-            influencer: Influence'r,
-            ads: Ad,
-            analytics: 'Analytics',
-            automation: 'Automation,
-            optimization: Optimizatio'n
-        };
+            research: "'Research'",
+            content: "'Content",
+            social: "Socia'l",
+            email: "'Email'",
+            seo: "'SEO",
+            influencer: "Influence'r",
+            ads: "Ad",
+            analytics: "'Analytics'",
+            automation: "'Automation",
+            optimization: "Optimizatio'n
+        "};
         
-        return "${names[agentType] || 'Gener'ic'} Agent";
+        return ${names[agentType] || 'Gener'ic'} Agent"
     }
 
     // Placeholder methods for implementation
@@ -1313,7 +1313,7 @@ module.exports = {{agentName}};
                 try {
                     await this.executeTask(task);
                 } catch (error) {
-                    console.error("Error executing ${task}:", error.message);
+                    console.error("Error executing ${task}:, error.message);
                 }
             });
         });
@@ -1322,7 +1322,7 @@ module.exports = {{agentName}};
     }
 
     async executeTask(task) {
-        console.log("🔄 Executing agent factory task: ${task}");
+        console.log(🔄 Executing agent factory task: "${task"}");
         
         switch (task) {
             case agentCreation'):

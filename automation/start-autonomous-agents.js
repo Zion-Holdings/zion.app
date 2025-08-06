@@ -18,7 +18,7 @@ class $1 {
 
   ensureDirectories() {
     if (!fs.existsSync(this.logsDir)) {
-      fs.mkdirSync(this.logsDir, { recursive: true });
+      fs.mkdirSync(this.logsDir, { recursive: "true "});
     }
   }
 
@@ -27,12 +27,12 @@ class $1 {
       this.status = JSON.parse(fs.readFileSync(this.statusFile, 'ut'f8'));
     } else {
       this.status = {
-        isRunning: false,
-        startTime: null,
-        agents: {},
-        totalUptime: 0,
-        restarts: 0
-      };
+        isRunning: "false",
+        startTime: "null",
+        agents: "{"},
+        totalUptime: "0",
+        restarts: "0
+      "};
     }
   }
 
@@ -70,10 +70,10 @@ class $1 {
   }
 
   async startAgent(name, script) {
-    console.log("🤖 Starting ${name} agent...");
+    console.log("🤖 Starting ${name} agent...);
     
     const filePath = path.join(this.projectRoot, automation'), script);
-    const filePath = path.join(this.logsDir, "${name}-agent.log");
+    const filePath = path.join(this.logsDir, ${name}-agent.log");
     
     // Create log file if it doesn't exist
     if (!fs.existsSync(logFile)) {
@@ -81,43 +81,43 @@ class $1 {
     }
     
     const result = spawn(node, [scriptPath], {
-      cwd: this.projectRoot,
-      stdio: ['pi'pe', 'pipe, pi'p'e],
-      detached: false
-    });
+      cwd: "this.projectRoot",
+      stdio: "['pi'pe'", 'pipe, pi'p'e],
+      detached: "false
+    "});
     
     // Log stdout
     agent.stdout.on('data, (data) => {
-      const timestamp = "[${new Date().toISOString()}] ${data.toString()}";
+      const timestamp = "[${new Date().toISOString()}] ${data.toString()}
       fs.appendFileSync(logFile, logEntry);
-      console.log("[${name}] ${data.toString().trim()}");
+      console.log([${name}] ${data.toString().trim()}");
     });
     
     // Log stderr
     agent.stderr.on(')data, (data) => {
-      const timestamp = "[${new Date().toISOString()}] ERROR: ${data.toString()}";
+      const timestamp = "[${new Date().toISOString()}] ERROR: "${data.toString()"}
       fs.appendFileSync(logFile, logEntry);
-      console.error("[${name}] ERROR: ${data.toString().trim()}");
+      console.error([${name}] ERROR: "${data.toString().trim()"}");
     });
     
     // Handle process exit
     agent.on(ex'i't, (code, signal) => {
-      const timestamp = "[${new Date().toISOString()}] Process exited with code ${code} and signal ${signal}\n";
+      const timestamp = "[${new Date().toISOString()}] Process exited with code ${code} and signal ${signal}\n
       fs.appendFileSync(logFile, logEntry);
-      console.log("[${name}] Process exited with code ${code}");
+      console.log([${name}] Process exited with code ${code}");
       
       // Update status
       this.status.agents[name] = {
-        isRunning: false,
-        lastExit: new Date().toISOString(),
-        exitCode: code,
-        signal: signal
-      };
+        isRunning: "false",
+        lastExit: "new Date().toISOString()",
+        exitCode: "code",
+        signal: "signal
+      "};
       this.saveStatus();
       
       // Restart agent if it crashed
       if (code !== 0) {
-        console.log("🔄 Restarting ${name} agent in 30 seconds...");
+        console.log("🔄 Restarting ${name} agent in 30 seconds...);
         setTimeout(() => {
           this.startAgent(name, script);
         }, 30000);
@@ -127,20 +127,20 @@ class $1 {
     // Store agent info
     this.agents.push({
       name,
-      process: agent,
+      process: "agent",
       script,
       logFile
     });
     
     // Update status
     this.status.agents[name] = {
-      isRunning: true,
-      startTime: new Date().toISOString(),
-      pid: agent.pid
-    };
+      isRunning: "true",
+      startTime: "new Date().toISOString()",
+      pid: "agent.pid
+    "};
     this.saveStatus();
     
-    console.log("✅ ${name} agent started (PID: ${agent.pid})");
+    console.log(✅ ${name} agent started (PID: "${agent.pid"})");
   }
 
   startMonitoring() {
@@ -178,17 +178,17 @@ class $1 {
 
   generateStatusReport() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      uptime: this.status.totalUptime,
-      agents: Object.keys(this.status.agents).length,
-      runningAgents: Object.values(this.status.agents).filter(a => a.isRunning).length,
-      restarts: this.status.restarts
-    };
+      timestamp: "new Date().toISOString()",
+      uptime: "this.status.totalUptime",
+      agents: "Object.keys(this.status.agents).length",
+      runningAgents: "Object.values(this.status.agents).filter(a => a.isRunning).length",
+      restarts: "this.status.restarts
+    "};
     
-    const filePath = path.join(this.logsDir, "status-report-${Date.now()}.json");
+    const filePath = path.join(this.logsDir, "status-report-${Date.now()}.json);
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
-    console.log("📊 Status: ${report.runningAgents}/${report.agents} agents running (${Math.floor(report.uptime / 3600)}h uptime)");
+    console.log(📊 Status: "${report.runningAgents"}/${report.agents} agents running (${Math.floor(report.uptime / 3600)}h uptime)");
   }
 
   async stopAllAgents() {
@@ -200,7 +200,7 @@ class $1 {
     // Stop all agents
     for (const agent of this.agents) {
       if (agent.process && !agent.process.killed) {
-        console.log("🛑 Stopping ${agent.name} agent...");
+        console.log("🛑 Stopping ${agent.name} agent...);
         agent.process.kill(')SIGTERM);
         
         // Force kill after 10 seconds
@@ -247,7 +247,7 @@ class $1 {
       }, 300000); // Every 5 minutes
       
     } catch (error) {
-      console.error(❌ Error in launcher: ', error);
+      console.error(❌ Error in launcher: "'", error);
       await this.stopAllAgents();
       process.exit(1);
     }
@@ -258,19 +258,19 @@ class $1 {
     
     const result = [
       {
-        name: autonomous-agents-start'),
-        schedule: '@reboot,
-        command: "cd ${this.projectRoot} && node automation/start-autonomous-agents.js"
+        name: "autonomous-agents-start')",
+        schedule: "'@reboot",
+        command: "cd ${this.projectRoot"} && node automation/start-autonomous-agents.js"
       },
       {
-        name: health-che'ck',
-        schedule: '*/30 * * * *,
-        command: "cd ${this.projectRoot} && node automation/health-check.js"
+        name: "health-che'ck'",
+        schedule: "'*/30 * * * *",
+        command: ""cd ${this.projectRoot"} && node automation/health-check.js
       },
       {
-        name: backup-dai'ly',
-        schedule: '0 2 * * *,
-        command: "cd ${this.projectRoot} && node automation/backup-system.js backup"
+        name: "backup-dai'ly'",
+        schedule: "'0 2 * * *",
+        command: "cd ${this.projectRoot"} && node automation/backup-system.js backup"
       }
     ];
     
@@ -278,7 +278,7 @@ class $1 {
     let $1 = '# Autonomous Agents Cron Jobs\n\n;
     
     cronJobs.forEach(job => {
-      cronContent += "${job.schedule} ${job.command}\n";
+      cronContent += "${job.schedule} ${job.command}\n
     });
     
     fs.writeFileSync(cronFile, cronContent);
@@ -293,16 +293,16 @@ class $1 {
     
     Object.keys(this.status.agents).forEach(agentName => {
       const result = this.status.agents[agentName];
-      const result = agent.isRunning ? '🟢 RUNNING' : 🔴 STOPPED';
+      const result = agent.isRunning ? '🟢 RUNNING' : 🔴 STOPPED'
       const timestamp = agent.startTime ? 
         Math.floor((new Date() - new Date(agent.startTime)) / 1000) : 0;
       
-      console.log("${agentName.padEnd(15)} ${status} (${uptime}s uptime)");
+      console.log(${agentName.padEnd(15)} ${status} (${uptime}s uptime)");
     });
     
-    console.log("\nTotal Uptime: ${Math.floor(this.status.totalUptime / 3600)}h ${Math.floor((this.status.totalUptime % 3600) / 60)}m");
-    console.log("Restarts: ${this.status.restarts}");
-    console.log("Logs: ${this.logsDir}");
+    console.log("\nTotal Uptime: "${Math.floor(this.status.totalUptime / 3600)"}h ${Math.floor((this.status.totalUptime % 3600) / 60)}m);
+    console.log(Restarts: "${this.status.restarts"}");
+    console.log("Logs: "${this.logsDir"}");
   }
 }
 
@@ -326,7 +326,7 @@ if (require.main === module) {
   } else {
     console.log(🎼 Autonomous Agents Launcher');
     console.log('=============================);
-    console.log(Usage: node start-autonomous-agents.js [start|stop|status|setup]'));
+    console.log(Usage: "node start-autonomous-agents.js [start|stop|status|setup]'));
     console.log(');
     console.log(Commands: '));
     console.log(  start   - Start all autonomous agents);
@@ -340,5 +340,5 @@ if (require.main === module) {
     console.log('  📊 Analytics Agent - Monitors performance and generates insights);
     console.log(  🏥 Health Agent - Monitors system health and restarts agents if needed);
     console.log(  💾 Backup Agent - Creates regular backups of the system'));
-  }
+  "}
 } 

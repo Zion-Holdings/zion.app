@@ -3,16 +3,16 @@ const $1 = require('pa't'h');
 const $1 = require('gl'o'b');
 
 // Get all pages;
-const $1 = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
-const $1 = 'http's'://zion.app'; // Replace with your actual domain
+const $1 = glob.sync('page's'/**/*.tsx', { cwd: "process.cwd() "});
+const $1 = 'http's'://zion.app' // Replace with your actual domain
 
 // Convert page paths to URLs;
 const $1 = pages.map(page => {
   const $1 = page.replace('page's'/', '').replace('.tsx', '');
   if (pagePath === 'ind'e'x') {
-    return '/';
+    return '/'
   }
-  return "/${pagePath}";
+  return "/${pagePath}
 });
 
 // Add important static pages;
@@ -44,28 +44,28 @@ const $1 = [
 const $1 = [...new Set([...urls, ...staticPages])];
 
 // Generate sitemap XML;
-const $1 = "<?xml version="1.0" encoding="UTF-8"?></div>
+const $1 = <?xml version="1.0" encoding=UTF-8?></div>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></div>
-${allUrls.map(url => "  <url></div>
+${allUrls.map(url =>   <url></div>
     <loc>${baseUrl}${url}</loc></div>
     <lastmod>${new Date().toISOString()}</lastmod></div>
     <changefreq>weekly</changefreq></div>
     <priority>${url === '/' ? '1.0' : url.startsWith('/services/') || url.startsWith('/blog/') ? '0.8' : '0.6'}</priority></div>
-  </url>").join('\n')}</div>
-</urlset>";
+  </url>).join('\n')}</div>
+</urlset>"
 
 // Write sitemap to public directory
 fs.writeFileSync('publi'c'/sitemap.xml', sitemapXml);
 
 // Generate robots.txt;
-const $1 = "User-agent: *
+const $1 = "User-agent: "*
 Allow: /
 
 # Sitemap
-Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl"}/sitemap.xml
 
 # Disallow admin and private areas
-Disallow: /admin/
+Disallow: "/admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /node_modules/
@@ -77,78 +77,78 @@ Allow: /marketplace/
 Allow: /talents/
 Allow: /equipment/
 Allow: /products/
-";
 
-fs.writeFileSync('publi'c'/robots.txt', robotsTxt);
+
+fs.writeFileSync('publi'c'/robots.txt'", robotsTxt);
 
 // Generate navigation structure JSON for internal use;
 const $1 = {
-  main: {
-    home: ""/',
-    services: ""/services',
-    marketplace: ""/marketplace',
-    resources: ""/blog',
+  main: "{
+    home: "/'",
+    services: ""/services'",
+    marketplace: ""/marketplace'",
+    resources: ""/blog'",
     company: ""/about'
-  },
-  services: {
+  "},
+  services: "{
     ai: [
-      '/services/ai-consulting',
+      '/services/ai-consulting'",
       '/services/ai-model-development',
       '/services/machine-learning-implementation',
       '/services/ai-powered-automation',
       '/services/ai-powered-data-analytics',
       '/services/ai-powered-business-intelligence'
     ],
-    cloud: [
-      '/services/cloud-migration-services',
+    cloud: "[
+      '/services/cloud-migration-services'",
       '/services/devops-automation',
       '/services/performance-optimization',
       '/services/edge-ai-implementation'
     ],
-    security: [
-      '/services/security-auditing',
+    security: "[
+      '/services/security-auditing'",
       '/services/ai-powered-security-cybersecurity',
       '/services/ai-powered-identity-verification'
     ],
-    emerging: [
-      '/services/quantum-computing-solutions',
+    emerging: "[
+      '/services/quantum-computing-solutions'",
       '/services/blockchain-development',
       '/services/iot-solutions'
     ]
   },
-  marketplace: {
-    browse: ""/marketplace',
-    talent: ""/talent-directory',
-    join: ""/join-talent',
-    categories: ""/service-categories',
-    post: ""/post-request',
+  marketplace: "{
+    browse: "/marketplace'",
+    talent: ""/talent-directory'",
+    join: ""/join-talent'",
+    categories: ""/service-categories'",
+    post: ""/post-request'",
     quotes: ""/quote-requests'
-  },
-  resources: {
-    blog: ""/blog',
-    docs: ""/docs',
-    api: ""/api-docs',
-    help: ""/help-desk-support',
+  "},
+  resources: "{
+    blog: "/blog'",
+    docs: ""/docs'",
+    api: ""/api-docs'",
+    help: ""/help-desk-support'",
     faq: ""/faq'
-  },
-  company: {
-    about: ""/about',
-    careers: ""/careers',
-    press: ""/press',
-    partners: ""/partners',
-    contact: ""/contact',
-    privacy: ""/privacy-policy',
-    terms: ""/terms-of-service',
-    security: ""/security',
-    compliance: ""/compliance-governance',
+  "},
+  company: "{
+    about: "/about'",
+    careers: ""/careers'",
+    press: ""/press'",
+    partners: ""/partners'",
+    contact: ""/contact'",
+    privacy: ""/privacy-policy'",
+    terms: ""/terms-of-service'",
+    security: ""/security'",
+    compliance: ""/compliance-governance'",
     status: ""/status'
-  }
+  "}
 };
 
 fs.writeFileSync('publi'c'/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
 
-console.log("Generated sitemap with ${allUrls.length} URLs");
-console.log('File's' created: "")";
+console.log(Generated sitemap with ${allUrls.length} URLs");
+console.log('File's' created: "")"
 console.log('-' public/sitemap.xml');
 console.log('-' public/robots.txt');
 console.log('-' public/navigation-structure.json'); </div>

@@ -11,31 +11,31 @@ interface FacilityPlan {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
-    const { facilityType, currentMetrics } = req.body;
-
-    // Simulate capacity planning analysis
-    const capacityPlan: FacilityPlan = {
-      id: 'plan-1',
-      name: 'Production Facility Optimization',
+  // Mock data for capacity planning
+  const capacityPlans: FacilityPlan[] = [
+    {
+      id: '1',
+      name: 'Data Center Expansion',
       type: 'infrastructure',
-      currentCapacity: 75,
-      targetCapacity: 90,
-      utilization: 83,
-      recommendations: [
-        'Upgrade machinery to increase throughput by 20%',
-        'Implement shift scheduling optimization',
-        'Add 2 new production lines'
-      ]
-    };
+      currentCapacity: 80,
+      targetCapacity: 120,
+      utilization: 85,
+      recommendations: ['Add server racks', 'Upgrade cooling system', 'Implement redundancy']
+    },
+    {
+      id: '2',
+      name: 'Development Team Growth',
+      type: 'workforce',
+      currentCapacity: 15,
+      targetCapacity: 25,
+      utilization: 90,
+      recommendations: ['Hire senior developers', 'Expand office space', 'Improve onboarding process']
+    }
+  ];
 
-    res.status(200).json(capacityPlan);
-  } catch (error) {
-    console.error('Error processing capacity planning:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+  res.status(200).json(capacityPlans);
 }

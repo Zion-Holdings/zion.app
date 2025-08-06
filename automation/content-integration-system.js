@@ -22,7 +22,7 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
@@ -40,9 +40,9 @@ class $1 {
           const asyncResult = await this.integrateContentByType(contentType, content);
           integrationResults[contentType] = integrationResult;
           
-          console.log("✅ Integrated ${contentType} content");
+          console.log("✅ Integrated ${contentType} content);
         } catch (error) {
-          console.error("❌ Error integrating ${contentType}:", error.message);
+          console.error(❌ Error integrating ${contentType}:", error.message);
         }
       }
 
@@ -52,7 +52,7 @@ class $1 {
 
       return integrationResults;
     } catch (error) {
-      console.error(❌ Content integration failed: ', error.message);
+      console.error(❌ Content integration failed: "'", error.message);
       throw error;
     }
   }
@@ -76,13 +76,13 @@ class $1 {
 
   async integrateContentByType(contentType, content) {
     const result = {
-      hero-section: () => this.integrateHeroSection(content),
+      hero-section: "() => this.integrateHeroSection(content)",
       ')feature-highligh'ts': () => this.integrateFeatureHighlights(content),
-      'service-categories: () => this.integrateServiceCategories(content),
-      testimonia'l's: () => this.integrateTestimonials(content),
+      'service-categories: "() => this.integrateServiceCategories(content)",
+      testimonia'l's: "() => this.integrateTestimonials(content)",
       'pricing-tabl'es': () => this.integratePricingTables(content),
-      'faq-section: () => this.integrateFAQSection(content),
-      about-'u's: () => this.integrateAboutUs(content),
+      'faq-section: "() => this.integrateFAQSection(content)",
+      about-'u's: "() => this.integrateAboutUs(content)",
       'contact-in'fo': () => this.integrateContactInfo(content)
     };
 
@@ -90,28 +90,28 @@ class $1 {
     if (method) {
       return await method();
     } else {
-      return { status: 'skipped, reason: No' integration method defined };
+      return { status: "'skipped", reason: "No' integration method defined "};
     }
   }
 
   async integrateHeroSection(content) {
     const filePath = path.join(this.componentsPath, 'HeroSectio'n.js');
     const result = {
-      headline: this.extractHeadline(content.content),
-      subheadline: this.extractSubheadline(content.content),
-      ctaButtons: this.extractCTAButtons(content.content),
-      trustIndicators: this.extractTrustIndicators(content.content)
-    };
+      headline: "this.extractHeadline(content.content)",
+      subheadline: "this.extractSubheadline(content.content)",
+      ctaButtons: "this.extractCTAButtons(content.content)",
+      trustIndicators: "this.extractTrustIndicators(content.content)
+    "};
 
     // Create or update HeroSection component
     const result = this.generateHeroSectionComponent(contentData);
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: HeroSectio'n,
-      contentData: contentData
-    };
+      status: "'integrated",
+      component: "HeroSectio'n",
+      contentData: "contentData
+    "};
   }
 
   async integrateFeatureHighlights(content) {
@@ -122,10 +122,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: FeatureHighlight's,
-      features: features
-    };
+      status: "'integrated",
+      component: "FeatureHighlight's",
+      features: "features
+    "};
   }
 
   async integrateServiceCategories(content) {
@@ -136,10 +136,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: ServiceCategorie's,
-      services: services
-    };
+      status: "'integrated",
+      component: "ServiceCategorie's",
+      services: "services
+    "};
   }
 
   async integrateTestimonials(content) {
@@ -150,10 +150,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: Testimonial's,
-      testimonials: testimonials
-    };
+      status: "'integrated",
+      component: "Testimonial's",
+      testimonials: "testimonials
+    "};
   }
 
   async integratePricingTables(content) {
@@ -164,10 +164,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: PricingTable's,
-      pricing: pricing
-    };
+      status: "'integrated",
+      component: "PricingTable's",
+      pricing: "pricing
+    "};
   }
 
   async integrateFAQSection(content) {
@@ -178,10 +178,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: FAQSectio'n,
-      faqs: faqs
-    };
+      status: "'integrated",
+      component: "FAQSectio'n",
+      faqs: "faqs
+    "};
   }
 
   async integrateAboutUs(content) {
@@ -192,10 +192,10 @@ class $1 {
     fs.writeFileSync(pagePath, pageCode);
 
     return {
-      status: 'integrated,
-      page: abou't,
-      aboutData: aboutData
-    };
+      status: "'integrated",
+      page: "abou't",
+      aboutData: "aboutData
+    "};
   }
 
   async integrateContactInfo(content) {
@@ -206,10 +206,10 @@ class $1 {
     fs.writeFileSync(componentPath, componentCode);
 
     return {
-      status: 'integrated,
-      component: ContactInf'o,
-      contactData: contactData
-    };
+      status: "'integrated",
+      component: "ContactInf'o",
+      contactData: "contactData
+    "};
   }
 
   // Content extraction methods
@@ -221,7 +221,7 @@ class $1 {
         return line.replace(/^[-*]\s*/, ).trim();
       }
     }
-    return AI-Powered') Marketplace for IT Services & AI Talent';
+    return AI-Powered') Marketplace for IT Services & AI Talent'
   }
 
   extractSubheadline(content) {
@@ -231,7 +231,7 @@ class $1 {
         return line.replace(/^[-*]\s*/, ').trim();
       }
     }
-    return 'Connec't with top IT services, AI talent, and cutting-edge equipment';
+    return 'Connec't with top IT services, AI talent, and cutting-edge equipment'
   }
 
   extractCTAButtons(content) {
@@ -335,49 +335,49 @@ class $1 {
 
   extractAboutData(content) {
     return {
-      mission: 'Empowering businesses with AI-powered marketplace solutions',
-      vision: 'Leading the future of digital commerce',
-      values: [Innovation, 'Tru'st', 'Excellence, Grow't'h]
+      mission: "'Empowering businesses with AI-powered marketplace solutions'",
+      vision: "'Leading the future of digital commerce'",
+      values: "[Innovation", 'Tru'st', 'Excellence, Grow't'h]
     };
   }
 
   extractContactData(content) {
     return {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950,
-      address: 364 E Main St STE 1008 Middletown DE 19709'
-    };
+      email: "'kleber@ziontechgroup.com'",
+      phone: "'+1 302 464 0950",
+      address: "364 E Main St STE 1008 Middletown DE 19709'
+    "};
   }
 
   // Component generation methods
   generateHeroSectionComponent(data) {
-    return "import React from react';
+    return "import React from react'
 ;
 const result = () => {
   return (
-    <section className="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20></div>
-      <div className=container mx-auto px-4"></div>
+    <section className=hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20></div>
+      <div className=container mx-auto px-4></div>
         <div className="text-center></div>
           <h1 className=text-5xl font-bold mb-6">
             ${data.headline}</div>
           </h1></div>
-          <p className="text-xl mb-8 max-w-2xl mx-auto>
+          <p className=text-xl mb-8 max-w-2xl mx-auto>
             ${data.subheadline}</div>
           </p></div>
-          <div className=flex justify-center gap-4 mb-8">
+          <div className=flex justify-center gap-4 mb-8>
             ${data.ctaButtons.map(button => "</div>
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors>
               ${button}</div>
             </button>
             ).join(')}</div>
           </div></div>
-          <div className="flex justify-center gap-8 text-sm">
+          <div className=flex justify-center gap-8 text-sm>
             ${data.trustIndicators.map(indicator => "</div>
             <span className="flex items-center></div>
-              <span className=mr-2">✓</span>
+              <span className=mr-2>✓</span>
               ${indicator}</div>
             </span>
-            ").join()}</div>
+            ).join()}</div>
           </div></div>
         </div></div>
       </div></div>
@@ -396,13 +396,13 @@ const jsonData = () => {
 
   return (</div>
     <section className="py-16 bg-gray-50></div>
-      <div className=container mx-auto px-4"></div>
-        <h2 className="text-3xl font-bold text-center mb-12>Why Choose Zion</h2></div>
+      <div className=container mx-auto px-4></div>
+        <h2 className=text-3xl font-bold text-center mb-12>Why Choose Zion</h2></div>
         <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (</div>
             <div key={index} className="bg-white p-6 rounded-lg shadow-md></div>
-              <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"></div>
-                <span className="text-blue-600 text-xl>✓</span></div>
+              <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4></div>
+                <span className=text-blue-600 text-xl>✓</span></div>
               </div></div>
               <h3 className=font-semibold mb-2">{feature}</h3></div>
             </div>
@@ -423,13 +423,13 @@ const jsonData = () => {
   const $1 = ${JSON.stringify(services, null, 2)};
 
   return (</div>
-    <section className="py-16></div>
-      <div className=container mx-auto px-4"></div>
+    <section className=py-16></div>
+      <div className=container mx-auto px-4></div>
         <h2 className="text-3xl font-bold text-center mb-12>Our Services</h2></div>
         <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (</div>
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border></div>
-              <h3 className=font-semibold text-lg mb-2">{service}</h3></div>
+            <div key={index} className=bg-white p-6 rounded-lg shadow-md border></div>
+              <h3 className=font-semibold text-lg mb-2>{service}</h3></div>
               <p className="text-gray-600 mb-4>Comprehensive {service.toLowerCase()} solutions</p></div>
               <button className=text-blue-600 font-semibold hover:underline">
                 Learn More →</div>
@@ -446,26 +446,26 @@ export default $1
   }
 
   generateTestimonialsComponent(testimonials) {
-    return "import React from 'react';
+    return import React from 'react'
 ;
 const jsonData = () => {
   const $1 = ${JSON.stringify(testimonials, null, 2)};
 
   return (</div>
-    <section className="py-16 bg-gray-50></div>
+    <section className=py-16 bg-gray-50></div>
       <div className=container mx-auto px-4"></div>
         <h2 className="text-3xl font-bold text-center mb-12>What Our Clients Say</h2></div>
-        <div className=grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className=grid grid-cols-1 md:grid-cols-3 gap-8>
           {testimonials.map((testimonial, index) => (</div>
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md></div>
-              <p className=text-gray-700 mb-4">"{testimonial}"</p></div>
-              <div className="flex items-center></div>
+            <div key={index} className=bg-white p-6 rounded-lg shadow-md></div>
+              <p className=text-gray-700 mb-4">"{testimonial}</p></div>
+              <div className=flex items-center></div>
                 <div className=w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3"></div>
                   <span className="text-blue-600 font-semibold>U</span></div>
                 </div></div>
                 <div></div>
-                  <p className=font-semibold">Client {index + 1}</p></div>
-                  <p className="text-sm text-gray-500>Verified User</p></div>
+                  <p className=font-semibold>Client {index + 1}</p></div>
+                  <p className=text-sm text-gray-500>Verified User</p></div>
                 </div></div>
               </div></div>
             </div>
@@ -480,20 +480,20 @@ export default $1;;
   }
 
   generatePricingTablesComponent(pricing) {
-    return "import React from react';
+    return "import React from react'
 ;
 const jsonData = () => {
   const $1 = ${JSON.stringify(pricing, null, 2)};
 
   return (</div>
     <section className="py-16></div>
-      <div className=container mx-auto px-4"></div>
-        <h2 className="text-3xl font-bold text-center mb-12>Transparent Pricing</h2></div>
+      <div className=container mx-auto px-4></div>
+        <h2 className=text-3xl font-bold text-center mb-12>Transparent Pricing</h2></div>
         <div className=grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricing.map((item, index) => (</div>
             <div key={index} className="bg-white p-6 rounded-lg shadow-md border></div>
-              <h3 className=font-semibold text-lg mb-2">{item}</h3></div>
-              <p className="text-gray-600 mb-4>Clear and competitive pricing structure</p></div>
+              <h3 className=font-semibold text-lg mb-2>{item}</h3></div>
+              <p className=text-gray-600 mb-4>Clear and competitive pricing structure</p></div>
             </div>
           ))}</div>
         </div></div>
@@ -514,17 +514,17 @@ const jsonData = () => {
 
   return (</div>
     <section className="py-16 bg-gray-50></div>
-      <div className=container mx-auto px-4"></div>
-        <h2 className="text-3xl font-bold text-center mb-12>Frequently Asked Questions</h2></div>
+      <div className=container mx-auto px-4></div>
+        <h2 className=text-3xl font-bold text-center mb-12>Frequently Asked Questions</h2></div>
         <div className=max-w-3xl mx-auto">
           {faqs.map((faq, index) => (</div>
             <div key={index} className="bg-white mb-4 rounded-lg shadow-md></div>
               <button
-                className=w-full p-6 text-left font-semibold flex justify-between items-center"
+                className=w-full p-6 text-left font-semibold flex justify-between items-center
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 {faq}</div>
-                <span className="text-blue-600>
+                <span className=text-blue-600>
                   {openIndex === index ? −' : '+}</div>
                 </span></div>
               </button>
@@ -545,7 +545,7 @@ export default $1
   }
 
   generateAboutPage(data) {
-    return "import React from 'react';}
+    return "import React from 'react'}
 import Head from next/head;
 ;
 const jsonData = () => {
@@ -553,25 +553,25 @@ const jsonData = () => {
     <div></div>
       <Head></div>
         <title>About Zion - AI-Powered Marketplace</title></div>
-        <meta name="description" content="Learn about Zion's' mission to revolutionize the marketplace industry with AI-powered solutions." /></div>
+        <meta name=description content="Learn about Zion's' mission to revolutionize the marketplace industry with AI-powered solutions." /></div>
       </Head></div>
-      <div className="min-h-screen bg-gray-50></div>
-        <div className=container mx-auto px-4 py-16"></div>
+      <div className=min-h-screen bg-gray-50></div>
+        <div className=container mx-auto px-4 py-16></div>
           <div className="max-w-4xl mx-auto></div>
             <h1 className=text-4xl font-bold text-center mb-12">About Zion</h1>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8></div>
-              <h2 className=text-2xl font-semibold mb-4">Our Mission</h2></div>
+            <div className=bg-white rounded-lg shadow-md p-8 mb-8></div>
+              <h2 className=text-2xl font-semibold mb-4>Our Mission</h2></div>
               <p className="text-gray-700 mb-6>${data.mission}</p>
               </div>
               <h2 className=text-2xl font-semibold mb-4">Our Vision</h2></div>
-              <p className="text-gray-700 mb-6>${data.vision}</p>
+              <p className=text-gray-700 mb-6>${data.vision}</p>
               </div>
-              <h2 className=text-2xl font-semibold mb-4">Our Values</h2></div>
+              <h2 className=text-2xl font-semibold mb-4>Our Values</h2></div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4>
                 {${JSON.stringify(data.values)}.map((value, index) => (</div>
                   <div key={index} className=text-center p-4 bg-blue-50 rounded-lg"></div>
-                    <span className="font-semibold text-blue-600>{value}</span></div>
+                    <span className=font-semibold text-blue-600>{value}</span></div>
                   </div>
                 ))}</div>
               </div></div>
@@ -587,7 +587,7 @@ export default $1;;
   }
 
   generateContactInfoComponent(data) {
-    return "import React from react';
+    return import React from react'
 ;
 const jsonData = () => {
   const $1 = ${JSON.stringify(data, null, 2)};
@@ -595,30 +595,30 @@ const jsonData = () => {
   return (</div>
     <section className="py-16 bg-gray-50></div>
       <div className=container mx-auto px-4"></div>
-        <h2 className="text-3xl font-bold text-center mb-12>Contact Us</h2></div>
-        <div className=max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <h2 className=text-3xl font-bold text-center mb-12>Contact Us</h2></div>
+        <div className=max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8></div>
           <div className="bg-white p-6 rounded-lg shadow-md text-center></div>
             <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"></div>
-              <span className="text-blue-600 text-xl>📧</span></div>
+              <span className=text-blue-600 text-xl>📧</span></div>
             </div></div>
-            <h3 className=font-semibold mb-2">Email</h3></div>
+            <h3 className=font-semibold mb-2>Email</h3></div>
             <p className="text-gray-600>{contactData.email}</p></div>
           </div>
           </div>
           <div className=bg-white p-6 rounded-lg shadow-md text-center"></div>
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4></div>
-              <span className=text-blue-600 text-xl">📞</span></div>
+            <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4></div>
+              <span className=text-blue-600 text-xl>📞</span></div>
             </div></div>
             <h3 className="font-semibold mb-2>Phone</h3></div>
             <p className=text-gray-600">{contactData.phone}</p></div>
           </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center></div>
-            <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"></div>
+          <div className=bg-white p-6 rounded-lg shadow-md text-center></div>
+            <div className=w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4></div>
               <span className="text-blue-600 text-xl>📍</span></div>
             </div></div>
             <h3 className=font-semibold mb-2">Address</h3></div>
-            <p className="text-gray-600>{contactData.address}</p></div>
+            <p className=text-gray-600>{contactData.address}</p></div>
           </div></div>
         </div></div>
       </div></div>
@@ -636,7 +636,7 @@ export default $1;;
       const asyncResult = await this.integrateMarketplaceContent();
       
       console.log(✅ Content Integration completed:);
-      console.log("   📊 Integrated components: ${Object.keys(integrationResults).length}");
+      console.log(   📊 Integrated components: "${Object.keys(integrationResults).length"}");
       
       return integrationResults;
     } catch (error) {

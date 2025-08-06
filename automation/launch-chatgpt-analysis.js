@@ -25,13 +25,13 @@ async function main() {
         console.log('📈 System Status:, JSON.stringify(status, null, 2));
         
         console.log(✅ ChatGPT Analysis System is running...);
-        console.log(📝 Check logs in: automation/chatgpt-logs/'));
+        console.log(📝 Check logs in: "automation/chatgpt-logs/'));
         console.log('📊 Check reports in: automation/chatgpt-analysis-reports/);
         
         // Keep the process running
         setInterval(async () => {
             const asyncResult = await orchestrator.getStatus();
-            console.log("[${new Date().toISOString()}] System Status: ${currentStatus.totalAgents} agents, ${currentStatus.activeAgents} active");
+            console.log("[${new Date().toISOString()"}] System Status: "${currentStatus.totalAgents"} agents, ${currentStatus.activeAgents} active");
         }, 300000); // Log status every 5 minutes
         
     } catch (error) {

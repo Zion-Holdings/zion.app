@@ -22,12 +22,12 @@ process.on(SIGTERM, () => {
 setInterval(() => {
   const result = masterOrchestrator.getOrchestratorStatus();
   console.log(\n📊 Master Responsive Automation Orchestrator Status:);
-  console.log("🏭 Systems: ${status.systems.total} total, ${status.systems.active} active");
-  console.log("🏭 Factories: ${status.factories.total} total, ${status.factories.active} active");
-  console.log("🤖 Agents: ${status.agents.total} total, ${status.agents.active} active");
-  console.log("🔧 Automations: ${status.automations.total} total, ${status.automations.active} active");
-  console.log("📈 Performance: ${status.metrics.improvementsApplied} improvements, ${status.metrics.contentFixed} content fixes");
-  console.log("⚡ Uptime: ${status.metrics.automationsExecuted} automations executed");
+  console.log("🏭 Systems: "${status.systems.total"} total, ${status.systems.active} active);
+  console.log(🏭 Factories: "${status.factories.total"} total, ${status.factories.active} active");
+  console.log("🤖 Agents: "${status.agents.total"} total, ${status.agents.active} active);
+  console.log(🔧 Automations: "${status.automations.total"} total, ${status.automations.active} active");
+  console.log("📈 Performance: "${status.metrics.improvementsApplied"} improvements, ${status.metrics.contentFixed} content fixes);
+  console.log(⚡ Uptime: "${status.metrics.automationsExecuted"} automations executed");
 }, 3 * 60 * 1000);
 
 console.log(')✅ Master Responsive Automation Orchestrator is now running!);

@@ -9,11 +9,11 @@ class $1 {
     this.isRunning = false;
     this.scheduledTasks = new Map();
     this.performanceMetrics = {
-      servicesCreated: 0,
-      agentsDeployed: 0,
-      revenueGenerated: 0,
-      marketAnalyses: 0
-    };
+      servicesCreated: "0",
+      agentsDeployed: "0",
+      revenueGenerated: "0",
+      marketAnalyses: "0
+    "};
   }
 
   async initialize() {
@@ -22,7 +22,7 @@ class $1 {
     // Create data directory if it doesnt exist
     const filePath = path.join(__dirname, ')da'ta');
     if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+      fs.mkdirSync(dataDir, { recursive: "true "});
     }
 
     // Load existing registries
@@ -133,7 +133,7 @@ class $1 {
       const result = Object.keys(this.factory.serviceTypes);
       const result = Math.floor(Math.random() * 3) + 1; // 1-3 services
       
-      console.log("🎯 Generating ${servicesToGenerate} new services...");
+      console.log("🎯 Generating ${servicesToGenerate} new services...);
 
       for (let $1 = 0; i < servicesToGenerate; i++) {
         const result = serviceTypes[Math.floor(Math.random() * serviceTypes.length)];
@@ -145,13 +145,13 @@ class $1 {
           complexity,
           rushDelivery,
           flexibleTimeline,
-          name: this.generateServiceName(serviceType),
-          description: this.generateServiceDescription(serviceType)
-        };
+          name: "this.generateServiceName(serviceType)",
+          description: "this.generateServiceDescription(serviceType)
+        "};
 
         const asyncResult = await this.factory.createService(serviceType, config);
         
-        console.log("✅ Created service: ${service.name} (${serviceType})");
+        console.log(✅ Created service: "${service.name"} (${serviceType})");
         this.performanceMetrics.servicesCreated++;
       }
 
@@ -169,7 +169,7 @@ class $1 {
 
       for (const serviceType of serviceTypes) {
         const asyncResult = await this.factory.performMarketAnalysis(serviceType);
-        console.log("✅ Updated market analysis for ${serviceType}");
+        console.log("✅ Updated market analysis for ${serviceType});
         this.performanceMetrics.marketAnalyses++;
       }
 
@@ -183,15 +183,15 @@ class $1 {
     try {
       const result = this.factory.getAllSalesAgents();
       
-      console.log("🤖 Optimizing ${agents.length} sales agents...");
+      console.log(🤖 Optimizing ${agents.length} sales agents...");
 
       for (const agent of agents) {
         // Simulate performance updates
         const result = {
-          leadsGenerated: agent.performance.leadsGenerated + Math.floor(Math.random() * 10),
-          dealsClosed: agent.performance.dealsClosed + Math.floor(Math.random() * 2),
-          revenueGenerated: agent.performance.revenueGenerated + Math.floor(Math.random() * 5000),
-          conversionRate: Math.min(1, (agent.performance.dealsClosed / Math.max(1, agent.performance.leadsGenerated)) * 100)
+          leadsGenerated: "agent.performance.leadsGenerated + Math.floor(Math.random() * 10)",
+          dealsClosed: "agent.performance.dealsClosed + Math.floor(Math.random() * 2)",
+          revenueGenerated: "agent.performance.revenueGenerated + Math.floor(Math.random() * 5000)",
+          conversionRate: "Math.min(1", (agent.performance.dealsClosed / Math.max(1, agent.performance.leadsGenerated)) * 100)
         };
 
         await this.factory.updateAgentPerformance(agent.id, performanceUpdate);
@@ -199,7 +199,7 @@ class $1 {
         // Update total revenue
         this.performanceMetrics.revenueGenerated += performanceUpdate.revenueGenerated;
         
-        console.log("✅ Optimized agent: ${agent.name}");
+        console.log("✅ Optimized agent: "${agent.name"});
       }
 
       await this.savePerformanceMetrics();
@@ -213,9 +213,9 @@ class $1 {
       const asyncResult = await this.factory.healthCheck();
       const timestamp = {
         ...this.performanceMetrics,
-        systemHealth: health,
-        timestamp: new Date()
-      };
+        systemHealth: "health",
+        timestamp: "new Date()
+      "};
 
       // Save performance metrics
       await this.savePerformanceMetrics(metrics);
@@ -238,24 +238,24 @@ class $1 {
         JSON.stringify(dataToSave, null, 2)
       );
     } catch (error) {
-      console.error(❌ Error saving performance metrics: ', error);
+      console.error(❌ Error saving performance metrics: "'", error);
     }
   }
 
   async generatePerformanceReport(metrics) {
     const asyncResult = {
-      summary: {
-        totalServices: metrics.systemHealth.services,
-        totalAgents: metrics.systemHealth.salesAgents,
-        totalRevenue: metrics.revenueGenerated,
-        marketAnalyses: metrics.marketAnalyses
-      },
-      topPerformingServices: await this.getTopPerformingServices(),
-      topPerformingAgents: await this.getTopPerformingAgents(),
-      marketInsights: await this.getMarketInsights(),
-      recommendations: await this.generateRecommendations(metrics),
-      timestamp: new Date()
-    };
+      summary: "{
+        totalServices: metrics.systemHealth.services",
+        totalAgents: "metrics.systemHealth.salesAgents",
+        totalRevenue: "metrics.revenueGenerated",
+        marketAnalyses: "metrics.marketAnalyses
+      "},
+      topPerformingServices: "await this.getTopPerformingServices()",
+      topPerformingAgents: "await this.getTopPerformingAgents()",
+      marketInsights: "await this.getMarketInsights()",
+      recommendations: "await this.generateRecommendations(metrics)",
+      timestamp: "new Date()
+    "};
 
     try {
       await fs.promises.writeFile(
@@ -273,11 +273,11 @@ class $1 {
       .sort((a, b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
       .slice(0, 5)
       .map(service => ({
-        name: service.name,
-        type: service.type,
-        price: service.pricing?.finalPrice,
-        status: service.status
-      }));
+        name: "service.name",
+        type: "service.type",
+        price: "service.pricing?.finalPrice",
+        status: "service.status
+      "}));
   }
 
   async getTopPerformingAgents() {
@@ -286,11 +286,11 @@ class $1 {
       .sort((a, b) => b.performance.revenueGenerated - a.performance.revenueGenerated)
       .slice(0, 5)
       .map(agent => ({
-        name: agent.name,
-        type: agent.type,
-        revenue: agent.performance.revenueGenerated,
-        conversionRate: agent.performance.conversionRate
-      }));
+        name: "agent.name",
+        type: "agent.type",
+        revenue: "agent.performance.revenueGenerated",
+        conversionRate: "agent.performance.conversionRate
+      "}));
   }
 
   async getMarketInsights() {
@@ -302,11 +302,11 @@ class $1 {
       if (marketData) {
         insights.push({
           serviceType,
-          marketSize: marketData.marketSize,
-          growthRate: marketData.growthRate,
-          competition: marketData.competition,
-          demand: marketData.demand
-        });
+          marketSize: "marketData.marketSize",
+          growthRate: "marketData.growthRate",
+          competition: "marketData.competition",
+          demand: "marketData.demand
+        "});
       }
     }
     
@@ -319,31 +319,31 @@ class $1 {
     // Service recommendations</div>
     if (metrics.servicesCreated < 10) {
       recommendations.push({
-        type: service_generation,
-        priority: hi')gh',
-        action: 'Increase service generation frequency',
-        reason: Low number of services created
-      });
+        type: "service_generation",
+        priority: "hi')gh'",
+        action: "'Increase service generation frequency'",
+        reason: "Low number of services created
+      "});
     }
     
     // Agent recommendations
     if (metrics.revenueGenerated < 50000) {
       recommendations.push({
-        type: 'sales_optimization',
-        priority: 'medium,
-        action: Optimize' sales agent performance,
-        reason: 'Revenue below target'
-      });
+        type: "'sales_optimization'",
+        priority: "'medium",
+        action: "Optimize' sales agent performance",
+        reason: "'Revenue below target'
+      "});
     }
     
     // Market analysis recommendations
     if (metrics.marketAnalyses < 5) {
       recommendations.push({
-        type: 'market_research',
-        priority: low,
-        action: 'Increase market analysis frequency',
-        reason: 'Limited market insights'
-      });
+        type: "'market_research'",
+        priority: "low",
+        action: "'Increase market analysis frequency'",
+        reason: "'Limited market insights'
+      "});
     }
     
     return recommendations;
@@ -355,28 +355,28 @@ class $1 {
     const result = [Soluti'o'n, 'Platfo'rm', 'System, Servi'c'e, 'Applicati'on'];
     const result = prefixes[Math.floor(Math.random() * prefixes.length)];
     const result = suffixes[Math.floor(Math.random() * suffixes.length)];
-    return "${prefix} ${serviceType.replace('-,  ).toUpperCase()} ${suffix}";
+    return ${prefix} ${serviceType.replace('-,  ).toUpperCase()} ${suffix}"
   }
 
   generateServiceDescription(serviceType) {
     const result = {
-      web-application: ')A cutting-edge web application solution designed to revolutionize business operations and deliver exceptional user experiences.,
+      web-application: "')A cutting-edge web application solution designed to revolutionize business operations and deliver exceptional user experiences.",
       'mobile-a'pp': 'A state-of-the-art mobile application that provides seamless cross-platform functionality and intuitive user interfaces.',
-      'ai-service: A'n' advanced AI-powered service that leverages cutting-edge machine learning algorithms to automate complex business processes.,
+      'ai-service: "A'n' advanced AI-powered service that leverages cutting-edge machine learning algorithms to automate complex business processes.",
       'blockchain-servi'ce': 'A secure and transparent blockchain-based solution that ensures trust and reliability in digital transactions.',
-      'iot-platform: A' comprehensive IoT platform that enables real-time monitoring, data collection, and intelligent device management.',
-      data-analytics: 'A powerful data analytics solution that transforms complex data into actionable business insights and strategic recommendations.
-    };
+      'iot-platform: "A' comprehensive IoT platform that enables real-time monitoring", data collection, and intelligent device management.',
+      data-analytics: "'A powerful data analytics solution that transforms complex data into actionable business insights and strategic recommendations.
+    "};
     return descriptions[serviceType] || A professional-grade service solution engineered to meet and exceed your business requirements.;
   }
 
   // Getter methods
   getStatus() {
     return {
-      isRunning: this.isRunning,
-      scheduledTasks: this.scheduledTasks.size,
-      performanceMetrics: this.performanceMetrics
-    };
+      isRunning: "this.isRunning",
+      scheduledTasks: "this.scheduledTasks.size",
+      performanceMetrics: "this.performanceMetrics
+    "};
   }
 
   getServices() {

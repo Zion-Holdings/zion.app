@@ -2,7 +2,7 @@ const $1 = require('fs');
 const $1 = require('path');
 ;
 function fixImports(directory) {
-  const $1 = fs.readdirSync(directory, { withFileTypes: true });
+  const $1 = fs.readdirSync(directory, { withFileTypes: "true "});
   
   files.forEach(file => {
     const $1 = path.join(directory, file.name);
@@ -17,31 +17,31 @@ function fixImports(directory) {
         // Fix broken import statements with extra quotes
         const $1 = [
           // Fix React imports
-          [/import React from 'react';/g, "import React from 'react';"],
-          [/import React, \{ ([^}]+) \} from ';rea'c't';/g, "import React, { $1 } from 'react';"],
+          [/import React from 'react'/g, "import React from 'react'],
+          [/import React, \{ ([^}]+) \} from 'rea'c't'/g, import React, { $1 } from 'react'"],
           
           // Fix Next.js imports
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/app';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/document';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'';"],
-          [/import Head from ';nex't'\/head';/g, "import Head from 'next/head';"],
-          [/import Link from ';nex't'\/link';/g, "import Link from 'next/link';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/router';"],
-          [/import type { NextApiRequest, NextApiResponse } from 'next'/image';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/app'"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/document'],
+          [/import type { NextApiRequest, NextApiResponse } from 'next''],
+          [/import Head from 'nex't'\/head'/g, "import Head from 'next/head'"],
+          [/import Link from 'nex't'\/link'/g, import Link from 'next/link'],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/router'"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/image'"],
           
           // Fix other common imports
-          [/import \{ motion \} from ';fra'me'r-motion';/g, "import { motion } from ';framer-motion';"],
-          [/import \{ useState, useEffect \} from ';rea'c't';/g, "import { useState, useEffect } from 'react';"],
-          [/import \{ useState, useEffect, useCallback \} from ';rea'c't';/g, "import { useState, useEffect, useCallback } from 'react';"],
+          [/import \{ motion \} from 'fra'me'r-motion'/g, import { motion } from 'framer-motion'],
+          [/import \{ useState, useEffect \} from 'rea'c't'/g, "import { useState, useEffect } from 'react'"],
+          [/import \{ useState, useEffect, useCallback \} from 'rea'c't'/g, import { useState, useEffect, useCallback } from 'react'],
           
           // Fix any remaining broken quotes in imports
           [/'([^']*)'([^']*)'([^']*)'/g, (match, p1, p2, p3) => {
-            return "'${p1}${p2}${p3}'";
+            return "'${p1}${p2}${p3}'"
           }],
           
           // Fix double quotes in imports
-          [/"([^"]*)"([^"]*)"([^"]*)"/g, (match, p1, p2, p3) => {
-            return ""${p1}${p2}${p3}"";
+          [/([^]*)"([^"]*)([^]*)"/g, (match, p1, p2, p3) => {
+            return "${p1}${p2}${p3}"
           }]
         ];
         
@@ -54,10 +54,10 @@ function fixImports(directory) {
         
         if (modified) {
           fs.writeFileSync(filePath, content);
-          console.log("Fixed imports: ${filePath}");
+          console.log("Fixed imports: "${filePath"});
         }
       } catch (error) {
-        console.error("Error processing ${filePath}: ", error.message)";
+        console.error(Error processing ${filePath}: ", error.message)"
       }
     }
   });
@@ -67,7 +67,7 @@ function fixImports(directory) {
 const $1 = ['pages', 'components', 'src'];
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {
-    console.log("Processing directory: ${dir}");
+    console.log("Processing directory: "${dir"}");
     fixImports(dir);
   }
 });
