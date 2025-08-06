@@ -1,1 +1,1 @@
-console.log("LinkedIn automation script");"
+console.log('LinkedIn automation script');
