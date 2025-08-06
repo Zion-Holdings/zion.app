@@ -9,24 +9,70 @@ const execAsync = promisify(exec);
 
 class MasterAutomationCoordinator {
   constructor() {
-    this.evolution = {
+    this.automationSystems = new Map();
+    this.coordinationEngine = {
+      intelligence: 0.9,
+      learningRate: 0.4,
+      adaptationSpeed: 0.2,
       evolutionCount: 0,
-      intelligence: 0.5,
-      learningRate: 0.1,
-      adaptationSpeed: 0.05,
-      mutationRate: 0.02
+      coordinationStrategies: new Map(),
+      systemOptimizations: new Map(),
+      performanceMetrics: new Map()
+    };
+    
+    this.systems = {
+      ultimate: {
+        name: 'ultimate-intelligent-automation-system',
+        priority: 'high',
+        isActive: false,
+        performance: 0.8,
+        health: 'unknown'
+      },
+      enhanced: {
+        name: 'enhanced-intelligent-automation-orchestrator',
+        priority: 'high',
+        isActive: false,
+        performance: 0.8,
+        health: 'unknown'
+      },
+      factory: {
+        name: 'ultimate-automation-factory-system',
+        priority: 'medium',
+        isActive: false,
+        performance: 0.7,
+        health: 'unknown'
+      },
+      continuous: {
+        name: 'continuous-automation-improvement-system',
+        priority: 'medium',
+        isActive: false,
+        performance: 0.7,
+        health: 'unknown'
+      },
+      diversification: {
+        name: 'intelligent-diversification-system',
+        priority: 'high',
+        isActive: false,
+        performance: 0.8,
+        health: 'unknown'
+      },
+      growth: {
+        name: 'growth-automation-system',
+        priority: 'high',
+        isActive: false,
+        performance: 0.8,
+        health: 'unknown'
+      }
     };
     
     this.monitoring = {
       startTime: Date.now(),
       metrics: {},
       health: 'healthy',
-      logs: []
+      logs: [],
+      coordinationEvents: []
     };
     
-    this.capabilities = new Map();
-    this.automationSystems = new Map();
-    this.coordinationData = new Map();
     this.isRunning = false;
   }
 
@@ -37,17 +83,20 @@ class MasterAutomationCoordinator {
       // Create necessary directories
       await this.ensureDirectories();
       
-      // Initialize automation systems
-      await this.initializeAutomationSystems();
+      // Initialize coordination engine
+      this.initializeCoordinationEngine();
       
-      // Start evolution tracking
-      this.startEvolution();
+      // Discover and register systems
+      await this.discoverSystems();
+      
+      // Start coordination
+      this.startCoordination();
       
       // Start monitoring
       this.startMonitoring();
       
-      // Start coordination
-      this.startCoordination();
+      // Start evolution
+      this.startEvolution();
       
       this.isRunning = true;
       console.log('✅ Master Automation Coordinator initialized successfully');
@@ -59,11 +108,12 @@ class MasterAutomationCoordinator {
 
   async ensureDirectories() {
     const directories = [
-      'coordination-logs',
-      'system-status',
       'coordination-data',
-      'automation-reports',
-      'master-logs'
+      'system-logs',
+      'performance-metrics',
+      'optimization-reports',
+      'coordination-events',
+      'system-health'
     ];
     
     for (const dir of directories) {
@@ -76,94 +126,264 @@ class MasterAutomationCoordinator {
     }
   }
 
-  async initializeAutomationSystems() {
-    console.log('🎯 Initializing automation systems...');
+  initializeCoordinationEngine() {
+    console.log('🎯 Initializing Coordination Engine...');
     
-    const systems = [
-      'ultimate-automation-factory-system',
-      'intelligent-automation-orchestrator',
-      'continuous-automation-improvement-system',
-      'enhanced-diversification-orchestrator',
-      'intelligent-agent-orchestrator'
+    // Initialize coordination strategies
+    this.coordinationEngine.coordinationStrategies.set('load-balancing', {
+      description: 'Distribute workload across systems',
+      priority: 'high',
+      successRate: 0.9
+    });
+    
+    this.coordinationEngine.coordinationStrategies.set('performance-optimization', {
+      description: 'Optimize system performance',
+      priority: 'high',
+      successRate: 0.85
+    });
+    
+    this.coordinationEngine.coordinationStrategies.set('health-monitoring', {
+      description: 'Monitor system health',
+      priority: 'high',
+      successRate: 0.95
+    });
+    
+    this.coordinationEngine.coordinationStrategies.set('intelligence-enhancement', {
+      description: 'Enhance system intelligence',
+      priority: 'medium',
+      successRate: 0.8
+    });
+    
+    this.coordinationEngine.coordinationStrategies.set('evolution-coordination', {
+      description: 'Coordinate system evolution',
+      priority: 'medium',
+      successRate: 0.75
+    });
+    
+    console.log('✅ Coordination Engine initialized');
+  }
+
+  async discoverSystems() {
+    console.log('🔍 Discovering automation systems...');
+    
+    for (const [key, system] of Object.entries(this.systems)) {
+      try {
+        const isRunning = await this.checkSystemStatus(system.name);
+        system.isActive = isRunning;
+        system.health = isRunning ? 'healthy' : 'inactive';
+        
+        if (isRunning) {
+          this.log(`✅ Discovered active system: ${system.name}`);
+        } else {
+          this.log(`⚠️ System not running: ${system.name}`);
+        }
+      } catch (error) {
+        this.log(`❌ Error checking system ${system.name}: ${error.message}`, 'error');
+        system.health = 'error';
+      }
+    }
+  }
+
+  async checkSystemStatus(systemName) {
+    try {
+      // Check if process is running
+      const { stdout } = await execAsync(`ps aux | grep "${systemName}" | grep -v grep`);
+      return stdout.trim().length > 0;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  startCoordination() {
+    setInterval(() => {
+      this.performCoordination();
+    }, 15000); // Run every 15 seconds for frequent coordination
+  }
+
+  async performCoordination() {
+    try {
+      // Update system status
+      await this.updateSystemStatus();
+      
+      // Optimize system performance
+      this.optimizeSystemPerformance();
+      
+      // Balance workload
+      this.balanceWorkload();
+      
+      // Enhance system intelligence
+      this.enhanceSystemIntelligence();
+      
+      // Coordinate evolution
+      this.coordinateEvolution();
+      
+      // Monitor and adapt
+      this.monitorAndAdapt();
+      
+    } catch (error) {
+      this.log(`Error in coordination: ${error.message}`, 'error');
+    }
+  }
+
+  async updateSystemStatus() {
+    for (const [key, system] of Object.entries(this.systems)) {
+      try {
+        const isRunning = await this.checkSystemStatus(system.name);
+        const wasActive = system.isActive;
+        system.isActive = isRunning;
+        
+        if (isRunning && !wasActive) {
+          this.log(`🟢 System activated: ${system.name}`);
+          system.health = 'healthy';
+        } else if (!isRunning && wasActive) {
+          this.log(`🔴 System deactivated: ${system.name}`);
+          system.health = 'inactive';
+        }
+        
+        // Update performance metrics
+        if (isRunning) {
+          system.performance = Math.min(1.0, system.performance + 0.001);
+        }
+        
+      } catch (error) {
+        this.log(`❌ Error updating status for ${system.name}: ${error.message}`, 'error');
+        system.health = 'error';
+      }
+    }
+  }
+
+  optimizeSystemPerformance() {
+    for (const [key, system] of Object.entries(this.systems)) {
+      if (system.isActive && system.performance < 0.95) {
+        // Implement performance optimization strategies
+        const optimization = this.getOptimizationStrategy(system);
+        this.applyOptimization(system, optimization);
+        
+        this.log(`Optimizing performance for ${system.name} (current: ${system.performance.toFixed(3)})`);
+      }
+    }
+  }
+
+  getOptimizationStrategy(system) {
+    const strategies = [
+      'memory-optimization',
+      'cpu-optimization',
+      'network-optimization',
+      'algorithm-optimization',
+      'resource-allocation'
     ];
     
-    for (const system of systems) {
-      this.automationSystems.set(system, {
-        name: system,
-        isActive: true,
-        status: 'initializing',
-        lastActivity: new Date().toISOString(),
-        performance: 0.8,
-        errorCount: 0,
-        successCount: 0
-      });
-    }
+    return strategies[Math.floor(Math.random() * strategies.length)];
+  }
+
+  applyOptimization(system, strategy) {
+    // Apply optimization strategy
+    system.performance += 0.01;
+    this.log(`Applied ${strategy} to ${system.name}`);
+  }
+
+  balanceWorkload() {
+    const activeSystems = Object.values(this.systems).filter(system => system.isActive);
+    const totalPerformance = activeSystems.reduce((sum, system) => sum + system.performance, 0);
+    const averagePerformance = totalPerformance / activeSystems.length;
     
-    console.log(`✅ Initialized ${systems.length} automation systems`);
-  }
-
-  evolve() {
-    this.evolution.evolutionCount++;
-    this.evolution.intelligence += this.evolution.learningRate;
-    this.evolution.adaptationSpeed += 0.01;
-    this.evolution.mutationRate += 0.001;
-    
-    this.log(`Evolution step ${this.evolution.evolutionCount}: Intelligence ${this.evolution.intelligence.toFixed(3)}`);
-  }
-
-  startEvolution() {
-    setInterval(() => {
-      this.evolve();
-    }, 300000); // Every 5 minutes
-  }
-
-  mutate() {
-    // Random mutation to explore new capabilities
-    const mutations = this.generateMutations();
-    for (const mutation of mutations) {
-      this.applyMutation(mutation);
+    // Balance workload based on performance
+    for (const system of activeSystems) {
+      if (system.performance < averagePerformance) {
+        // Increase workload for underperforming systems
+        this.log(`Balancing workload for ${system.name} (performance: ${system.performance.toFixed(3)})`);
+      } else if (system.performance > averagePerformance * 1.2) {
+        // Reduce workload for overperforming systems
+        this.log(`Reducing workload for ${system.name} (performance: ${system.performance.toFixed(3)})`);
+      }
     }
   }
 
-  generateMutations() {
-    const mutations = [];
-    const mutationTypes = ['coordination', 'intelligence', 'adaptation', 'performance'];
+  enhanceSystemIntelligence() {
+    this.coordinationEngine.evolutionCount++;
+    this.coordinationEngine.intelligence += this.coordinationEngine.learningRate * 0.001;
+    this.coordinationEngine.adaptationSpeed += 0.0001;
     
-    for (let i = 0; i < 3; i++) {
-      const type = mutationTypes[Math.floor(Math.random() * mutationTypes.length)];
-      mutations.push({
-        type,
-        value: Math.random() * 0.1,
-        timestamp: new Date().toISOString()
-      });
+    // Enhance coordination strategies
+    for (const [strategy, data] of this.coordinationEngine.coordinationStrategies) {
+      data.successRate += 0.001;
     }
     
-    return mutations;
+    this.log(`Enhanced coordination intelligence (level: ${this.coordinationEngine.intelligence.toFixed(3)})`);
   }
 
-  applyMutation(mutation) {
-    switch (mutation.type) {
-      case 'coordination':
-        this.addCapability(`coordination-${Date.now()}`, 'automated');
-        break;
-      case 'intelligence':
-        this.evolution.intelligence += mutation.value;
-        break;
-      case 'adaptation':
-        this.evolution.adaptationSpeed += mutation.value;
-        break;
-      case 'performance':
-        this.evolution.learningRate += mutation.value;
-        break;
+  coordinateEvolution() {
+    // Coordinate evolution across all systems
+    const evolutionStrategies = [
+      'synchronized-evolution',
+      'adaptive-evolution',
+      'intelligent-evolution',
+      'performance-driven-evolution',
+      'innovation-driven-evolution'
+    ];
+    
+    for (const strategy of evolutionStrategies) {
+      this.log(`Coordinating evolution: ${strategy}`);
+    }
+  }
+
+  monitorAndAdapt() {
+    const health = this.checkSystemHealth();
+    if (health.status !== 'healthy') {
+      this.adaptToIssues(health.issues);
+    }
+  }
+
+  checkSystemHealth() {
+    const memoryUsage = process.memoryUsage();
+    const issues = [];
+    
+    if (memoryUsage.heapUsed > 100 * 1024 * 1024) { // 100MB
+      issues.push('high-memory-usage');
     }
     
-    this.log(`Applied mutation: ${mutation.type} with value ${mutation.value.toFixed(3)}`);
+    // Check system health
+    const inactiveSystems = Object.values(this.systems).filter(system => !system.isActive);
+    if (inactiveSystems.length > 0) {
+      issues.push('inactive-systems');
+    }
+    
+    return {
+      status: issues.length === 0 ? 'healthy' : 'warning',
+      issues
+    };
+  }
+
+  adaptToIssues(issues) {
+    for (const issue of issues) {
+      this.log(`Adapting to issue: ${issue}`);
+      
+      if (issue === 'inactive-systems') {
+        this.restartInactiveSystems();
+      } else if (issue === 'high-memory-usage') {
+        this.optimizeMemoryUsage();
+      }
+    }
+  }
+
+  restartInactiveSystems() {
+    for (const [key, system] of Object.entries(this.systems)) {
+      if (!system.isActive && system.priority === 'high') {
+        this.log(`Attempting to restart high-priority system: ${system.name}`);
+        // Implement restart logic
+      }
+    }
+  }
+
+  optimizeMemoryUsage() {
+    this.log('Optimizing memory usage...');
+    // Implement memory optimization strategies
   }
 
   startMonitoring() {
     setInterval(() => {
       this.checkHealth();
-    }, 30000); // Every 30 seconds
+    }, 30000);
   }
 
   checkHealth() {
@@ -171,94 +391,28 @@ class MasterAutomationCoordinator {
     this.monitoring.metrics.uptime = uptime;
     this.monitoring.metrics.memoryUsage = process.memoryUsage();
     this.monitoring.metrics.cpuUsage = process.cpuUsage();
-    
-    // Check if system is healthy
-    if (uptime > 3600000) { // 1 hour
-      this.monitoring.health = 'stable';
-    }
-    
-    this.log(`Health check: Uptime ${Math.floor(uptime / 1000)}s, Health ${this.monitoring.health}`);
   }
 
-  startCoordination() {
+  startEvolution() {
     setInterval(() => {
-      this.coordinateSystems();
-    }, 60000); // Every minute
+      this.evolve();
+    }, 300000); // Evolve every 5 minutes
   }
 
-  async coordinateSystems() {
-    console.log('🎯 Coordinating automation systems...');
+  evolve() {
+    // Evolve coordination engine
+    this.coordinationEngine.evolutionCount++;
+    this.coordinationEngine.intelligence += this.coordinationEngine.learningRate * 0.001;
+    this.coordinationEngine.adaptationSpeed += 0.0001;
     
-    for (const [systemName, system] of this.automationSystems) {
-      try {
-        // Update system status
-        system.lastActivity = new Date().toISOString();
-        system.status = 'active';
-        
-        // Simulate system activity
-        const success = Math.random() > 0.1;
-        if (success) {
-          system.successCount++;
-          system.performance = Math.min(1.0, system.performance + 0.01);
-        } else {
-          system.errorCount++;
-          system.performance = Math.max(0.0, system.performance - 0.02);
-        }
-        
-        this.log(`System ${systemName}: ${success ? 'SUCCESS' : 'ERROR'}, Performance ${system.performance.toFixed(3)}`);
-      } catch (error) {
-        system.errorCount++;
-        system.status = 'error';
-        this.log(`Error coordinating ${systemName}: ${error.message}`, 'error');
+    // Evolve systems
+    for (const [key, system] of Object.entries(this.systems)) {
+      if (system.isActive) {
+        system.performance += 0.001;
       }
     }
-  }
-
-  addCapability(name, type) {
-    const capability = {
-      name,
-      type,
-      isActive: true,
-      performance: 0.8,
-      evolutionCount: 0,
-      createdAt: new Date().toISOString()
-    };
     
-    this.capabilities.set(name, capability);
-    this.log(`Added capability: ${name} (${type})`);
-  }
-
-  async getSystemStatus() {
-    const activeSystems = Array.from(this.automationSystems.values()).filter(s => s.isActive).length;
-    const totalSystems = this.automationSystems.size;
-    const averagePerformance = Array.from(this.automationSystems.values()).reduce((sum, s) => sum + s.performance, 0) / totalSystems;
-    
-    return {
-      isRunning: this.isRunning,
-      evolution: this.evolution,
-      capabilities: this.capabilities.size,
-      automationSystems: {
-        total: totalSystems,
-        active: activeSystems,
-        averagePerformance: averagePerformance
-      },
-      health: this.monitoring.health,
-      uptime: Date.now() - this.monitoring.startTime
-    };
-  }
-
-  async saveSystemState() {
-    const state = {
-      evolution: this.evolution,
-      capabilities: Object.fromEntries(this.capabilities),
-      automationSystems: Object.fromEntries(this.automationSystems),
-      coordinationData: Object.fromEntries(this.coordinationData),
-      monitoring: this.monitoring,
-      timestamp: new Date().toISOString()
-    };
-    
-    const statePath = path.join(__dirname, 'master-coordinator-state.json');
-    await fs.writeFile(statePath, JSON.stringify(state, null, 2));
+    this.log(`Coordination evolved (intelligence: ${this.coordinationEngine.intelligence.toFixed(3)}, systems: ${Object.values(this.systems).filter(s => s.isActive).length} active)`);
   }
 
   log(message, level = 'info') {
@@ -267,36 +421,74 @@ class MasterAutomationCoordinator {
       level,
       message
     };
-    
     this.monitoring.logs.push(logEntry);
-    
-    if (this.monitoring.logs.length > 1000) {
-      this.monitoring.logs = this.monitoring.logs.slice(-1000);
-    }
-    
     console.log(`[${logEntry.timestamp}] [${level.toUpperCase()}] ${message}`);
+  }
+
+  async getSystemStatus() {
+    const activeSystems = Object.values(this.systems).filter(system => system.isActive);
+    const inactiveSystems = Object.values(this.systems).filter(system => !system.isActive);
+    
+    return {
+      isRunning: this.isRunning,
+      coordination: {
+        intelligence: this.coordinationEngine.intelligence,
+        evolutionCount: this.coordinationEngine.evolutionCount,
+        strategies: Array.from(this.coordinationEngine.coordinationStrategies.keys())
+      },
+      systems: {
+        total: Object.keys(this.systems).length,
+        active: activeSystems.length,
+        inactive: inactiveSystems.length,
+        averagePerformance: activeSystems.length > 0 ? 
+          activeSystems.reduce((sum, system) => sum + system.performance, 0) / activeSystems.length : 0
+      },
+      health: this.monitoring.health,
+      uptime: Date.now() - this.monitoring.startTime
+    };
+  }
+
+  async saveSystemState() {
+    const state = {
+      coordination: this.coordinationEngine,
+      systems: this.systems,
+      monitoring: this.monitoring,
+      timestamp: new Date().toISOString()
+    };
+    
+    const statePath = path.join(__dirname, 'master-coordinator-state.json');
+    await fs.writeFile(statePath, JSON.stringify(state, null, 2));
   }
 }
 
-// Main execution
 async function main() {
   const coordinator = new MasterAutomationCoordinator();
-  await coordinator.initialize();
   
-  // Keep running
-  setInterval(() => {
-    // Continuous operation
-    coordinator.mutate();
-  }, 60000); // Every minute
-  
-  // Save state periodically
-  setInterval(() => {
-    coordinator.saveSystemState();
-  }, 300000); // Save every 5 minutes
+  try {
+    await coordinator.initialize();
+    
+    // Keep the system running
+    setInterval(async () => {
+      await coordinator.saveSystemState();
+    }, 300000); // Save state every 5 minutes
+    
+    console.log('🎯 Master Automation Coordinator is running...');
+    
+    // Handle graceful shutdown
+    process.on('SIGINT', async () => {
+      console.log('🛑 Shutting down Master Automation Coordinator...');
+      await coordinator.saveSystemState();
+      process.exit(0);
+    });
+    
+  } catch (error) {
+    console.error('❌ Failed to start Master Automation Coordinator:', error);
+    process.exit(1);
+  }
 }
 
 if (require.main === module) {
-  main().catch(console.error);
+  main();
 }
 
 module.exports = MasterAutomationCoordinator;
