@@ -1,4 +1,0 @@
-404.tsx
-about.tsx
-contact.tsx
-index.tsx

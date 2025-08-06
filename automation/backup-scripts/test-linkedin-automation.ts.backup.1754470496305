@@ -1,1 +1,0 @@
-console.log('Test LinkedIn automation script');

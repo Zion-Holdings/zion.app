@@ -1,7 +1,0 @@
-{
-  "type": "funnel-optimization",
-  "strategy": "checkout-optimization",
-  "impact": 35000,
-  "timestamp": "2025-08-05T02:09:02.617Z",
-  "status": "applied"
-}
