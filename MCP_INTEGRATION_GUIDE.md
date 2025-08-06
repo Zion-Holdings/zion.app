@@ -7,21 +7,25 @@ This project now includes a comprehensive MCP (Model Context Protocol) integrati
 ## 🚀 Quick Start
 
 ### 1. Test MCP Integration
+
 ```bash
 npm run mcp:test
 ```
 
 ### 2. Start MCP Server
+
 ```bash
 npm run mcp:start
 ```
 
 ### 3. Run MCP Client
+
 ```bash
 npm run mcp:client analyze
 ```
 
 ### 4. Use MCP Orchestrator
+
 ```bash
 npm run mcp:orchestrator enhance
 ```
@@ -29,6 +33,7 @@ npm run mcp:orchestrator enhance
 ## 📦 Components
 
 ### Core Files
+
 - `mcp-automation-system.js` - MCP Server with tools and resources
 - `mcp-client-integration.js` - MCP Client for automation
 - `automation/mcp-integration-orchestrator.js` - Integration orchestrator
@@ -38,33 +43,40 @@ npm run mcp:orchestrator enhance
 ### Available Tools
 
 #### Project Analysis
+
 - `analyze_project_structure` - Analyze project structure and identify optimization opportunities
 - `generate_automation_report` - Generate comprehensive automation system reports
 
 #### Optimization
+
 - `optimize_build_process` - Analyze and optimize build process performance
 - `performance_optimization` - Analyze and optimize performance bottlenecks
 
 #### Monitoring
+
 - `monitor_performance` - Monitor application performance and generate recommendations
 - `monitor_errors` - Monitor and analyze error logs for patterns
 
 #### Deployment
+
 - `deploy_automation` - Deploy automation scripts and configurations
 - `backup_system` - Create comprehensive system backups
 - `restore_system` - Restore system from backups
 
 #### Maintenance
+
 - `update_dependencies` - Update dependencies and check for vulnerabilities
 - `run_tests` - Run comprehensive project tests
 - `generate_documentation` - Generate project documentation
 - `cleanup_project` - Clean up temporary files and optimize structure
 
 #### Security & SEO
+
 - `security_audit` - Perform comprehensive security audits
 - `optimize_seo` - Analyze and optimize SEO settings
 
 ### Available Resources
+
 - `file://project-structure` - Current project structure and organization
 - `file://automation-status` - Status of all automation systems
 - `file://performance-metrics` - Performance metrics and optimization data
@@ -138,16 +150,19 @@ node automation/mcp-integration-orchestrator.js setup-cron
 The MCP integration is configured through `mcp-config.json`:
 
 ### Workflows
+
 - **Daily Workflow** - Runs at 2 AM daily
 - **Weekly Audit** - Runs on Sundays at 3 AM
 - **Deployment Workflow** - Manual trigger for deployments
 
 ### Monitoring
+
 - **Performance Monitoring** - Every 30 minutes
 - **Error Monitoring** - Every 5 minutes
 - **Security Monitoring** - Every hour
 
 ### Integrations
+
 - **Existing Automation** - Enhanced with MCP capabilities
 - **CI/CD** - Ready for GitHub, Netlify, Vercel integration
 - **Monitoring** - Ready for Sentry, Datadog, New Relic integration
@@ -155,6 +170,7 @@ The MCP integration is configured through `mcp-config.json`:
 ## 🔄 Workflows
 
 ### Daily Workflow
+
 1. Analyze project structure
 2. Generate automation report
 3. Optimize build process
@@ -165,12 +181,14 @@ The MCP integration is configured through `mcp-config.json`:
 8. Cleanup project
 
 ### Weekly Audit
+
 1. Security audit
 2. Performance optimization
 3. Update dependencies
 4. Generate documentation
 
 ### Deployment Workflow
+
 1. Backup system
 2. Run tests
 3. Deploy automation
@@ -179,18 +197,21 @@ The MCP integration is configured through `mcp-config.json`:
 ## 📊 Benefits
 
 ### Enhanced Automation
+
 - **Intelligent Analysis** - AI-powered project analysis
 - **Predictive Maintenance** - Proactive issue detection
 - **Automated Optimization** - Continuous performance improvement
 - **Comprehensive Monitoring** - Real-time system health tracking
 
 ### Improved Development Workflow
+
 - **Automated Testing** - Comprehensive test execution
 - **Documentation Generation** - Automatic documentation updates
 - **Dependency Management** - Smart dependency updates
 - **Code Quality** - Automated code quality checks
 
 ### Production Readiness
+
 - **Deployment Automation** - Streamlined deployment processes
 - **Performance Monitoring** - Real-time performance tracking
 - **Error Tracking** - Comprehensive error monitoring
@@ -215,6 +236,7 @@ The MCP integration is configured through `mcp-config.json`:
 ### Common Issues
 
 1. **MCP Server Not Starting**
+
    ```bash
    # Check Node.js version
    node --version
@@ -227,6 +249,7 @@ The MCP integration is configured through `mcp-config.json`:
    ```
 
 2. **Client Connection Failed**
+
    ```bash
    # Ensure server is running
    npm run mcp:start
@@ -236,6 +259,7 @@ The MCP integration is configured through `mcp-config.json`:
    ```
 
 3. **Tool Execution Errors**
+
    ```bash
    # Check tool permissions
    chmod +x mcp-automation-system.js
@@ -245,6 +269,7 @@ The MCP integration is configured through `mcp-config.json`:
    ```
 
 ### Log Files
+
 - **MCP Automation Log** - `automation/logs/mcp-automation.log`
 - **Integration Report** - `automation/mcp-integration-report.json`
 - **Performance Metrics** - `automation/monitoring-reports/`
@@ -312,6 +337,7 @@ const status = await orchestrator.getStatus();
 ## 🔮 Future Enhancements
 
 ### Planned Features
+
 - **AI-Powered Analysis** - Machine learning for project optimization
 - **Predictive Maintenance** - Proactive issue detection
 - **Advanced Monitoring** - Real-time performance analytics
@@ -322,6 +348,7 @@ const status = await orchestrator.getStatus();
 - **Plugin System** - Extensible automation capabilities
 
 ### Roadmap
+
 - **Q1 2024** - Enhanced AI capabilities
 - **Q2 2024** - Cloud integration
 - **Q3 2024** - Team collaboration features
@@ -332,22 +359,26 @@ const status = await orchestrator.getStatus();
 ### Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd bolt.new.zion.app
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Test MCP integration**
+
    ```bash
    npm run mcp:test
    ```
 
 4. **Start development**
+
    ```bash
    npm run mcp:start
    ```
@@ -355,6 +386,7 @@ const status = await orchestrator.getStatus();
 ### Adding New Tools
 
 1. **Define tool in MCP server**
+
    ```javascript
    // In mcp-automation-system.js
    case 'new_tool':
@@ -362,6 +394,7 @@ const status = await orchestrator.getStatus();
    ```
 
 2. **Add tool definition**
+
    ```javascript
    {
      name: 'new_tool',
@@ -375,6 +408,7 @@ const status = await orchestrator.getStatus();
    ```
 
 3. **Add client method**
+
    ```javascript
    // In mcp-client-integration.js
    async newTool() {
@@ -386,6 +420,7 @@ const status = await orchestrator.getStatus();
    ```
 
 4. **Update configuration**
+
    ```json
    // In mcp-config.json
    "new_tool": {
@@ -411,4 +446,4 @@ For support and questions:
 
 **MCP Integration Version:** 1.0.0  
 **Last Updated:** January 2024  
-**Compatibility:** Node.js >= 20.18.1, npm >= 10.0.0 
+**Compatibility:** Node.js >= 20.18.1, npm >= 10.0.0

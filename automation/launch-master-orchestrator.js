@@ -34,7 +34,7 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mo
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const { MasterResponsiveAutomationOrchestrator } = require(('./master-responsive-automation-orchestrator)')
+const { MasterResponsiveAutomationOrchestrator } = require('./master-responsive-automation-orchestrator')
 
 console.log('🚀 Launching Master Responsive Automation Orchestrator...')
 

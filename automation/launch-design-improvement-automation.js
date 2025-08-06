@@ -70,7 +70,7 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
-const os = require('path';
+const os = require('path;
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return []
@@ -117,13 +117,13 @@ async function parallelReadFiles() {
   
   return results.filter(result => result !== null)
 }
-const fs = require('path';
-const path = require('path';
-const cron = require('path';
-const DesignImprovementAutomationSystem = require('path';
-const LayoutOptimizationAgent = require('path';
-const NavigationEnhancementAgent = require('path';
-const VisualDesignEnhancementAgent = require('path';
+const fs = require('fs').promises;
+const path = require('path;
+const cron = require('path;
+const DesignImprovementAutomationSystem = require('path;
+const LayoutOptimizationAgent = require('path;
+const NavigationEnhancementAgent = require('path;
+const VisualDesignEnhancementAgent = require('path;
 
 class DesignImprovementLauncher {
   constructor() {
@@ -176,10 +176,10 @@ class DesignImprovementLauncher {
       logs.push(logEntry)
       fs.writeFileSync(logFile, JSON.stringify(logs, null, 2))
     } catch (error) {
-      console.error('Failed to write log: ', error)
+      console.error('Failed to write log: ', error');
     }
 
-    console.log(`[${timestamp}] [${type.toUpperCase()}] ${message}`)
+    console.log(`[${timestamp}] [${type.toUpperCase(');}] ${message}`)
   }
 
   async startAgent(agentName, agent) {
@@ -299,15 +299,15 @@ class DesignImprovementLauncher {
     switch (improvementType) {
       case 'layout':
         agent = this.config.agents.layout;
-        agentName = 'layout';
+        agentName = 'layout;
         break;
       case 'navigation':
         agent = this.config.agents.navigation;
-        agentName = 'navigation';
+        agentName = 'navigation;
         break;
       case 'visual-design':
         agent = this.config.agents.visualDesign;
-        agentName = 'visualDesign';
+        agentName = 'visualDesign;
         break;
       default: this.log(`Unknown improvement type: ${improvementType}`, 'error')
         return;
@@ -376,7 +376,7 @@ if (args.length === 0) {
       break;
     case 'status':
       launcher.getStatus().then(status => {)
-        console.log(JSON.stringify(status, null, 2))
+        console.log(JSON.stringify(status, null, 2');)
       })
       break;
     case 'stop':
@@ -399,7 +399,7 @@ Commands:
 
 Examples:
   node launch-design-improvement-automation.js start
-  node launch-design-improvement-automation.js layout)
+  node launch-design-improvement-automation.js layout')
   node launch-design-improvement-automation.js status)
       `)
       break

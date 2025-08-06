@@ -78,7 +78,7 @@ A comprehensive autonomous AI agent system with real-time monitoring, self-impro
 
 ### Prerequisites
 
-- Node.js 16+ 
+- Node.js 16+
 - PostgreSQL database
 - Supabase account
 - Git
@@ -86,12 +86,14 @@ A comprehensive autonomous AI agent system with real-time monitoring, self-impro
 ### Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd bolt.new.zion.app
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    cd automation
@@ -100,6 +102,7 @@ A comprehensive autonomous AI agent system with real-time monitoring, self-impro
 
 3. **Environment Configuration**
    Create a `.env.local` file in the root directory:
+
    ```env
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -107,11 +110,13 @@ A comprehensive autonomous AI agent system with real-time monitoring, self-impro
 
 4. **Database Setup**
    Run the database schema:
+
    ```bash
    psql -d your_database -f database-schema.sql
    ```
 
 5. **Initialize the System**
+
    ```bash
    cd automation
    node launch-enhanced-autonomous-system.js
@@ -120,7 +125,8 @@ A comprehensive autonomous AI agent system with real-time monitoring, self-impro
 ## 📊 Admin Dashboard
 
 Access the admin dashboard at `/admin-dashboard` with credentials:
-- **Username**: kleber@ziontechgroup.com
+
+- **Username**: <kleber@ziontechgroup.com>
 - **Password**: Tw2.R5u&2!sDfeW
 
 ### Dashboard Features
@@ -138,6 +144,7 @@ Access the admin dashboard at `/admin-dashboard` with credentials:
 ### System Configuration
 
 Edit `automation/config.json`:
+
 ```json
 {
   "maxAgents": 50,
@@ -153,6 +160,7 @@ Edit `automation/config.json`:
 ### Cron Configuration
 
 Edit `automation/cron-config.json`:
+
 ```json
 {
   "maxConcurrentJobs": 10,
@@ -200,6 +208,7 @@ const agentId = await factory.createAgent('content-generation', {
 ### Agent Configuration
 
 Each agent can be configured with:
+
 - **Capabilities**: Array of agent abilities
 - **Services**: Array of services the agent provides
 - **Dependencies**: Required external services
@@ -291,21 +300,25 @@ Each agent can be configured with:
 ### Regular Maintenance
 
 1. **Database Cleanup**
+
    ```bash
    node automation/data-cleanup.js
    ```
 
 2. **Log Rotation**
+
    ```bash
    node automation/log-rotation.js
    ```
 
 3. **Performance Optimization**
+
    ```bash
    node automation/optimize-performance.js
    ```
 
 4. **System Backup**
+
    ```bash
    node automation/backup-system.js
    ```
@@ -313,16 +326,19 @@ Each agent can be configured with:
 ### Troubleshooting
 
 1. **Check Agent Status**
+
    ```bash
    node automation/check-autonomous-status.js
    ```
 
 2. **View System Logs**
+
    ```bash
    tail -f automation/logs/system_*.log
    ```
 
 3. **Restart System**
+
    ```bash
    node automation/restart-autonomous-system.js
    ```
@@ -352,17 +368,20 @@ node automation/generate-performance-report.js
 ### Production Deployment
 
 1. **Environment Setup**
+
    ```bash
    npm run build
    npm start
    ```
 
 2. **Process Management**
+
    ```bash
    pm2 start ecosystem.config.js
    ```
 
 3. **Monitoring**
+
    ```bash
    pm2 monit
    ```
@@ -395,6 +414,7 @@ This project is licensed under the MIT License.
 ## 🆘 Support
 
 For support and questions:
+
 - Create an issue in the repository
 - Contact the development team
 - Check the documentation
@@ -410,4 +430,4 @@ For support and questions:
 
 ---
 
-**Note**: This system is designed for continuous operation and self-improvement. Monitor the system regularly and adjust configurations as needed for optimal performance. 
+**Note**: This system is designed for continuous operation and self-improvement. Monitor the system regularly and adjust configurations as needed for optimal performance.

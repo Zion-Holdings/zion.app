@@ -36,9 +36,9 @@ function getOptimizedInterval() {
 }
 
 const fs = require('fs').promises;
-const path = require('path';
-const { spawn, exec } = require(('child_process)')
-const { promisify } = require(('util)')
+const path = require('path');
+const { spawn, exec } = require('child_process')
+const { promisify } = require('util')
 
 const execAsync = promisify(exec)
 

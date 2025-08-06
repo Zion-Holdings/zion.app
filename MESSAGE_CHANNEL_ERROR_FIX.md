@@ -1,6 +1,7 @@
 # Message Channel Error Fix
 
 ## Problem
+
 The console error `"A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received"` was occurring on ziontechgroup.com. This error typically happens when:
 
 1. **Browser Extensions** use message passing and the channel closes before a response is sent
@@ -10,6 +11,7 @@ The console error `"A listener indicated an asynchronous response by returning t
 ## Solution
 
 ### 1. Message Channel Handler (`utils/messageChannelHandler.ts`)
+
 - **Purpose**: Intercepts and handles message channel errors without affecting user experience
 - **Features**:
   - Overrides `console.error` to catch message channel errors
@@ -19,6 +21,7 @@ The console error `"A listener indicated an asynchronous response by returning t
   - Maintains error history (last 10 errors)
 
 ### 2. Browser Extension Detector (`utils/browserExtensionDetector.ts`)
+
 - **Purpose**: Detects browser extensions that might be causing the errors
 - **Features**:
   - Detects Chrome and Firefox extensions
@@ -27,6 +30,7 @@ The console error `"A listener indicated an asynchronous response by returning t
   - Provides extension information for debugging
 
 ### 3. React Hook (`hooks/useMessageChannelHandler.ts`)
+
 - **Purpose**: Provides React components with error handling capabilities
 - **Features**:
   - Real-time error count tracking
@@ -35,6 +39,7 @@ The console error `"A listener indicated an asynchronous response by returning t
   - Recent error detection
 
 ### 4. Error Boundary (`components/MessageChannelErrorBoundary.tsx`)
+
 - **Purpose**: Catches message channel errors at the React component level
 - **Features**:
   - Prevents errors from affecting UI
@@ -42,6 +47,7 @@ The console error `"A listener indicated an asynchronous response by returning t
   - Allows other errors to propagate normally
 
 ### 5. Debug Component (`components/MessageChannelDebugger.tsx`)
+
 - **Purpose**: Provides visual debugging interface in development
 - **Features**:
   - Shows error counts and types
@@ -52,6 +58,7 @@ The console error `"A listener indicated an asynchronous response by returning t
 ## Implementation
 
 ### App Integration (`pages/_app.tsx`)
+
 ```tsx
 import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary'
 import MessageChannelDebugger from '../components/MessageChannelDebugger'
@@ -75,7 +82,9 @@ export default function App({ Component, pageProps }: AppProps) {
 ## Usage
 
 ### In Development
+
 The debugger component will automatically appear in the bottom-right corner showing:
+
 - Total error count
 - Extension error count
 - Other error count
@@ -83,6 +92,7 @@ The debugger component will automatically appear in the bottom-right corner show
 - Detailed error log with timestamps
 
 ### In Production
+
 - Errors are silently handled without affecting user experience
 - No debug components are shown
 - Error logging is disabled
@@ -90,11 +100,13 @@ The debugger component will automatically appear in the bottom-right corner show
 ## Error Categories
 
 ### Extension Errors
+
 - Likely caused by browser extensions
 - Marked with red background in debugger
 - Tagged as "Extension" in error log
 
 ### Other Errors
+
 - Non-extension related message channel errors
 - Marked with gray background in debugger
 - May indicate other external scripts
@@ -121,4 +133,4 @@ The solution provides several ways to monitor message channel errors:
 1. **Analytics Integration**: Send error data to analytics for monitoring
 2. **User Notification**: Option to notify users about problematic extensions
 3. **Auto-Recovery**: Automatic retry mechanisms for failed message channels
-4. **Extension Whitelist**: Allow specific extensions to bypass error handling 
+4. **Extension Whitelist**: Allow specific extensions to bypass error handling

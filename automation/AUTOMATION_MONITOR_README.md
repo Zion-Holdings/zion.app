@@ -183,6 +183,7 @@ The system is configured via `automation-monitor-config.json`:
 ## Support
 
 For issues and questions:
+
 1. Check the logs and reports
 2. Review the configuration
 3. Test individual components

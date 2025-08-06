@@ -64,12 +64,14 @@ This system automatically monitors and executes instructions from Google Docs do
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd bolt.new.zion.app
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -83,6 +85,7 @@ npm install
 ### Quick Start
 
 Start the automation system:
+
 ```bash
 npm run google-docs:start
 ```
@@ -90,6 +93,7 @@ npm run google-docs:start
 ### Development Mode
 
 Run with auto-restart on file changes:
+
 ```bash
 npm run google-docs:dev
 ```
@@ -97,6 +101,7 @@ npm run google-docs:dev
 ### Check Status
 
 View system status and health:
+
 ```bash
 npm run google-docs:status
 ```
@@ -104,6 +109,7 @@ npm run google-docs:status
 ### Generate Reports
 
 Create comprehensive system reports:
+
 ```bash
 npm run google-docs:report
 ```
@@ -111,6 +117,7 @@ npm run google-docs:report
 ### Run Tests
 
 Execute the test suite:
+
 ```bash
 npm run google-docs:test
 ```
@@ -144,6 +151,7 @@ Use the cron script for scheduled execution:
 ### System Metrics
 
 The system tracks various metrics:
+
 - **Uptime**: System running time
 - **Total Instructions**: Number of instructions processed
 - **Success Rate**: Percentage of successful executions
@@ -153,6 +161,7 @@ The system tracks various metrics:
 ### Reports
 
 Reports are generated in the following locations:
+
 - **System Reports**: `automation/reports/google-docs-automation/system-report.json`
 - **Health Reports**: `automation/logs/google-docs-automation/health.json`
 - **Test Reports**: `automation/reports/google-docs-automation/test-report.json`
@@ -161,6 +170,7 @@ Reports are generated in the following locations:
 ### Logs
 
 Log files are stored in:
+
 - **System Logs**: `automation/logs/google-docs-automation/system.log`
 - **Cron Logs**: `automation/logs/google-docs-automation/cron.log`
 - **Health Logs**: `automation/logs/google-docs-automation/health.json`
@@ -221,6 +231,7 @@ The system expects Google Docs documents with the following format:
 ### Test Suite
 
 The system includes comprehensive tests:
+
 - System initialization
 - Status checking
 - Instruction processing
@@ -262,6 +273,7 @@ node automation/test-google-docs-automation.js
 ### Debug Mode
 
 Enable debug logging:
+
 ```bash
 LOG_LEVEL=debug npm run google-docs:start
 ```
@@ -269,6 +281,7 @@ LOG_LEVEL=debug npm run google-docs:start
 ### Health Checks
 
 Run health checks:
+
 ```bash
 ./automation/cron/google-docs-automation-cron.sh status
 ```
@@ -286,6 +299,7 @@ Run health checks:
 ### Scaling
 
 For high-volume scenarios:
+
 - Increase `maxConcurrentTasks` in orchestrator config
 - Adjust `checkInterval` for more frequent monitoring
 - Implement load balancing for multiple instances
@@ -329,6 +343,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For support and questions:
+
 - Check the troubleshooting section
 - Review the logs and reports
 - Create an issue in the repository
@@ -337,6 +352,7 @@ For support and questions:
 ## 🔄 Changelog
 
 ### Version 1.0.0
+
 - Initial release
 - Google Docs instruction monitoring
 - Specialized task agents
@@ -348,7 +364,3 @@ For support and questions:
 ---
 
 **Note**: This system is designed to work autonomously and continuously monitor Google Docs for instructions. Ensure proper permissions and access controls are in place before deployment.
-
-
-
-

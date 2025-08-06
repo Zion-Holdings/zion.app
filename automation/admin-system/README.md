@@ -15,16 +15,19 @@ A comprehensive autonomous agent system for continuous project administration an
 ## Quick Start
 
 1. **Setup the system**:
+
    ```bash
    ./setup-admin-system.sh
    ```
 
 2. **Start the system**:
+
    ```bash
    ./admin-cron-system.sh start
    ```
 
 3. **Check status**:
+
    ```bash
    ./admin-cron-system.sh status
    ```
@@ -34,7 +37,7 @@ A comprehensive autonomous agent system for continuous project administration an
 
 ## Admin Credentials
 
-- **Username**: kleber@ziontechgroup.com
+- **Username**: <kleber@ziontechgroup.com>
 - **Password**: Tw2.R5u&2!sDfeW
 
 ## System Components
@@ -92,18 +95,21 @@ admin-system/
 ## Commands
 
 ### System Management
+
 - `./admin-cron-system.sh start` - Start all agents
 - `./admin-cron-system.sh stop` - Stop all agents
 - `./admin-cron-system.sh restart` - Restart all agents
 - `./admin-cron-system.sh status` - Show system status
 
 ### Maintenance
+
 - `./admin-cron-system.sh health` - Perform health check
 - `./admin-cron-system.sh backup` - Create system backup
 - `./admin-cron-system.sh cleanup` - Clean up old files
 - `./admin-cron-system.sh report` - Generate status report
 
 ### Monitoring
+
 - `./admin-cron-system.sh monitor` - Start continuous monitoring
 
 ## Configuration

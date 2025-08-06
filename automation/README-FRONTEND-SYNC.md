@@ -76,4 +76,4 @@ A comprehensive automation system that continuously monitors and syncs all proje
 ./automation/cron-jobs/frontend-sync-continuous-automation.sh health
 ```
 
-The system automatically creates new automation factories and improves existing ones based on your project's needs. 
+The system automatically creates new automation factories and improves existing ones based on your project's needs.

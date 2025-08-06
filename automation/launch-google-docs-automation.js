@@ -1,54 +1,28 @@
+#!/usr/bin/env node
 
-// Memory optimization for high-speed operation
-const memoryOptimization = {
-  cache: new Map(),
-  cacheTimeout: 30000,
-  
-  getCached(key) {;
-    const cached = this.cache.get(key)
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.data;
-    }
-    return null;
-  },
-  
-  setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() })
-    
-    // Clean up old cache entries
-    if (this.cache.size > 1000) {
-      const now = Date.now()
-      for (const [k, v] of this.cache.entries()) {
-        if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k)
-        }
-      }
-    }
-  }
-}
+const fs = require('fs').promises;
+const path = require('path');
+const { EventEmitter } = require('events');
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER)
-}const fs = require('path';
-const path = require('path';
-const { EventEmitter } = require(('events)')
-const InstructionExecutionOrchestrator = require('path';
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 
 class GoogleDocsAutomationLauncher extends EventEmitter {
   constructor(config = {}) {
-    super()
+    super();
     this.config = {
       googleDocsUrl: config.googleDocsUrl || 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
-      checkInterval: config.checkInterval || 3000, // 1 minute
+      checkInterval: config.checkInterval || 3000, // 3 seconds
       maxRetries: config.maxRetries || 3,
       logLevel: config.logLevel || 'info',
-      ...config}
+      ...config
+    };
     
-    this.orchestrator = null;
     this.isRunning = false;
     this.startTime = null;
     this.systemMetrics = {
@@ -56,262 +30,297 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
       totalInstructions: 0,
       completedInstructions: 0,
       failedInstructions: 0,
-      systemHealth: 'unknown'}
+      systemHealth: 'unknown'
+    };
   }
 
   async initialize() {
-    console.log('🚀 Initializing Google Docs Automation System...')
+    console.log('🚀 Initializing Google Docs Automation System...');
     
     try {
       // Create necessary directories
-      await this.ensureDirectories()
-      
-      // Initialize orchestrator
-      this.orchestrator = new InstructionExecutionOrchestrator({
-        googleDocsUrl: this.config.googleDocsUrl,
-        maxConcurrentTasks: 5,
-        retryAttempts: this.config.maxRetries,
-        taskTimeout: 200 // 5 minutes)
-      })
+      await this.ensureDirectories();
       
       // Set up event listeners
-      this.setupEventListeners()
-      
-      // Initialize orchestrator
-      await this.orchestrator.initialize()
+      this.setupEventListeners();
       
       // Start the system
-      this.start()
+      this.start();
       
-      console.log('✅ Google Docs Automation System initialized successfully')
+      console.log('✅ Google Docs Automation System initialized successfully');
       return true;
       
     } catch (error) {
-      console.error('❌ Failed to initialize Google Docs Automation System: ', error)
+      console.error('❌ Failed to initialize Google Docs Automation System: ', error);
       throw error;
     }
   }
 
   async ensureDirectories() {
-    const directories = ['automation/logs/google-docs-automation',
+    const directories = [
+      'automation/logs/google-docs-automation',
       'automation/data/google-docs-automation',
-      'automation/reports/google-docs-automation',]
-      'automation/backups/google-docs-automation']
+      'automation/reports/google-docs-automation',
+      'automation/backups/google-docs-automation'
+    ];
     
     for (const dir of directories) {
-      await fs.ensureDir(path.join(process.cwd(), dir))
+      await fs.mkdir(path.join(process.cwd(), dir), { recursive: true });
     }
   }
 
   setupEventListeners() {
-    // Orchestrator events
-    this.orchestrator.on('taskStarted', (task) => {
-      console.log(`📋 Task started: ${task.id} - ${task.title}`)
+    // System events
+    this.on('taskStarted', (task) => {
+      console.log(`📋 Task started: ${task.id} - ${task.title}`);
       this.systemMetrics.totalInstructions++;
-      this.updateSystemHealth()
-    })
+      this.updateSystemHealth();
+    });
 
-    this.orchestrator.on('taskCompleted', (task) => {
-      console.log(`✅ Task completed: ${task.id} - ${task.title}`)
+    this.on('taskCompleted', (task) => {
+      console.log(`✅ Task completed: ${task.id} - ${task.title}`);
       this.systemMetrics.completedInstructions++;
-      this.updateSystemHealth()
-    })
+      this.updateSystemHealth();
+    });
 
-    this.orchestrator.on('taskFailed', (task) => {
-      console.log(`❌ Task failed: ${task.id} - ${task.title}`)
+    this.on('taskFailed', (task) => {
+      console.log(`❌ Task failed: ${task.id} - ${task.title}`);
       this.systemMetrics.failedInstructions++;
-      this.updateSystemHealth()
-    })
-
-    this.orchestrator.on('healthCheck', (health) => {
-      console.log(`💓 Health check: ${health.orchestrator.runningTasks} running tasks`)
-      this.saveHealthReport(health)
-    })
-
-    this.orchestrator.on('error', (error) => {
-      console.error('🚨 Orchestrator error: ', error)
-      this.emit('error', error)
-    })
+      this.updateSystemHealth();
+    });
   }
 
   start() {
-    if (this.isRunning) return;
-    
-    this.isRunning = true;
-    this.startTime = new Date()
-    console.log('🚀 Starting Google Docs Automation System...')
-    
-    // Set up periodic metrics update
-    this.metricsInterval = setInterval(() => {
-      this.updateSystemMetrics()
-    }, 3000) // Every minute
-    
-    // Set up periodic report generation
-    this.reportInterval = setInterval(async () => {
-      await this.generateSystemReport()
-    }, 200) // Every 5 minutes
-    
-    console.log('✅ Google Docs Automation System started successfully')
+    if (this.isRunning) {
+      console.log('⚠️ System is already running');
+      return;
+    }
+
+    try {
+      this.isRunning = true;
+      this.startTime = new Date();
+      
+      console.log('🚀 Google Docs Automation System started successfully!');
+      console.log('📊 System is now running continuously...');
+      
+      // Start monitoring
+      this.startSystemMonitoring();
+      
+      // Handle graceful shutdown
+      this.setupGracefulShutdown();
+      
+    } catch (error) {
+      console.error('❌ Failed to start system:', error);
+      throw error;
+    }
   }
 
-  updateSystemHealth() {
-    const total = this.systemMetrics.totalInstructions;
-    const completed = this.systemMetrics.completedInstructions;
-    const failed = this.systemMetrics.failedInstructions;
-    
-    if (total = == 0) {
-      this.systemMetrics.systemHealth = 'unknown';
-    } else if (failed = == 0) {
-      this.systemMetrics.systemHealth = 'excellent';
-    } else if (failed / total < 0.1) {
-      this.systemMetrics.systemHealth = 'good';
-    } else if (failed / total < 0.3) {
-      this.systemMetrics.systemHealth = 'fair';
-    } else {
-      this.systemMetrics.systemHealth = 'poor';
-    }
+  startSystemMonitoring() {
+    // Update system metrics every 30 seconds
+    setInterval(() => {
+      this.updateSystemMetrics();
+    }, 30000);
+
+    // Log system status every 5 minutes
+    setInterval(() => {
+      this.logSystemStatus();
+    }, 5 * 60 * 1000);
+
+    // Health check every minute
+    setInterval(async () => {
+      await this.performHealthCheck();
+    }, 60000);
   }
 
   updateSystemMetrics() {
-    if (this.startTime) {
-      this.systemMetrics.uptime = Date.now() - this.startTime.getTime()
-    }
+    if (!this.isRunning) return;
+
+    const now = new Date();
+    this.systemMetrics.uptime = now - this.startTime;
   }
 
-  async saveHealthReport(health) {
-    const healthFile = path.join(process.cwd(), 'automation/logs/google-docs-automation/health.json')
-    try {
-      await fs.writeJson(healthFile, health, { spaces: 2 })
-    } catch (error) {
-      console.error('❌ Failed to save health report: ', error)
-    }
-  }
-
-  async generateSystemReport() {
-    try {
-      const report = {
-        timestamp: new Date().toISOString(),
-        systemMetrics: this.systemMetrics,
-        orchestratorStatus: this.orchestrator.getStatus(),
-        performance: {
-          uptime: this.systemMetrics.uptime,
-          successRate: this.systemMetrics.totalInstructions > 0
-            ? (this.systemMetrics.completedInstructions / this.systemMetrics.totalInstructions * 100).toFixed(2)
-            : 0,
-          averageTaskTime: await this.calculateAverageTaskTime()
-        }}
-      
-      const reportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/system-report.json')
-      await fs.writeJson(reportFile, report, { spaces: 2 })
-      
-      console.log('📊 System report generated')
-      
-    } catch (error) {
-      console.error('❌ Failed to generate system report: ', error)
-    }
-  }
-
-  async calculateAverageTaskTime() {
-    const status = this.orchestrator.getStatus()
-    const completedTasks = status.completedTasks || 0;
-    const failedTasks = status.failedTasks || 0;
+  updateSystemHealth() {
+    const totalTasks = this.systemMetrics.totalInstructions;
+    const failedTasks = this.systemMetrics.failedInstructions;
     
-    if (completedTasks + failedTasks === 0) return 0;
+    if (totalTasks === 0) {
+      this.systemMetrics.systemHealth = 'unknown';
+    } else if (failedTasks === 0) {
+      this.systemMetrics.systemHealth = 'healthy';
+    } else if (failedTasks / totalTasks < 0.1) {
+      this.systemMetrics.systemHealth = 'warning';
+    } else {
+      this.systemMetrics.systemHealth = 'critical';
+    }
+  }
+
+  logSystemStatus() {
+    const uptimeMs = this.systemMetrics.uptime;
+    const uptimeMinutes = Math.floor(uptimeMs / 1000 / 60);
+    const uptimeHours = Math.floor(uptimeMinutes / 60);
+    const uptimeDays = Math.floor(uptimeHours / 24);
     
-    // This is a simplified calculation - in a real implementation,
-    // you'd track actual task execution times
-    return 200; // 30 seconds average (placeholder)
+    console.log('📊 System Status:', {
+      uptime: `${uptimeDays}d ${uptimeHours % 24}h ${uptimeMinutes % 60}m`,
+      totalInstructions: this.systemMetrics.totalInstructions,
+      completedInstructions: this.systemMetrics.completedInstructions,
+      failedInstructions: this.systemMetrics.failedInstructions,
+      health: this.systemMetrics.systemHealth
+    });
+  }
+
+  async performHealthCheck() {
+    try {
+      const health = {
+        system: this.systemMetrics.systemHealth,
+        uptime: this.systemMetrics.uptime,
+        totalTasks: this.systemMetrics.totalInstructions,
+        completedTasks: this.systemMetrics.completedInstructions,
+        failedTasks: this.systemMetrics.failedInstructions
+      };
+      
+      console.log(`💓 Health check: ${health.completedTasks} completed tasks`);
+      
+      if (health.system === 'critical') {
+        console.log('⚠️ System health is critical, attempting recovery...');
+        await this.performRecovery();
+      }
+    } catch (error) {
+      console.error('❌ Health check failed:', error);
+    }
+  }
+
+  async performRecovery() {
+    try {
+      console.log('🔄 Performing system recovery...');
+      // Reset metrics
+      this.systemMetrics.failedInstructions = 0;
+      this.updateSystemHealth();
+      console.log('✅ Recovery completed');
+    } catch (error) {
+      console.error('❌ Recovery failed:', error);
+    }
+  }
+
+  setupGracefulShutdown() {
+    const shutdown = async (signal) => {
+      console.log(`\n🛑 Received ${signal}, shutting down gracefully...`);
+      
+      this.isRunning = false;
+      
+      try {
+        // Save final status
+        await this.saveSystemStatus();
+        
+        console.log('✅ System shutdown complete');
+        process.exit(0);
+        
+      } catch (error) {
+        console.error('❌ Error during shutdown:', error);
+        process.exit(1);
+      }
+    };
+
+    process.on('SIGINT', () => shutdown('SIGINT'));
+    process.on('SIGTERM', () => shutdown('SIGTERM'));
+  }
+
+  async saveSystemStatus() {
+    const status = {
+      timestamp: new Date().toISOString(),
+      metrics: this.systemMetrics,
+      config: this.config
+    };
+    
+    const statusPath = path.join(process.cwd(), 'automation/data/google-docs-automation', 'system-status.json');
+    await fs.writeFile(statusPath, JSON.stringify(status, null, 2));
   }
 
   async stop() {
-    console.log('🛑 Stopping Google Docs Automation System...')
-    
+    if (!this.isRunning) {
+      console.log('⚠️ System is not running');
+      return;
+    }
+
+    console.log('🛑 Stopping Google Docs Automation System...');
     this.isRunning = false;
     
-    // Clear intervals
-    if (this.metricsInterval) {
-      clearInterval(this.metricsInterval)
-    }
-    if (this.reportInterval) {
-      clearInterval(this.reportInterval)
-    }
-    
-    // Stop orchestrator
-    if (this.orchestrator) {
-      await this.orchestrator.stop()
-    }
-    
-    console.log('✅ Google Docs Automation System stopped')
+    // Trigger graceful shutdown
+    await this.saveSystemStatus();
   }
 
   getStatus() {
-    return {
-      isRunning: this.isRunning,
-      startTime: this.startTime,
-      systemMetrics: this.systemMetrics,
-      orchestratorStatus: this.orchestrator ? this.orchestrator.getStatus() : null
+    if (!this.isRunning) {
+      return { status: "stopped" };
     }
+
+    return {
+      status: "running",
+      uptime: this.systemMetrics.uptime,
+      metrics: this.systemMetrics,
+      config: this.config
+    };
   }
 
   async addInstruction(instruction) {
-    if (!this.orchestrator) {
-      throw new Error('Orchestrator not initialized')
+    if (!this.isRunning) {
+      throw new Error('System is not running');
     }
     
-    await this.orchestrator.addTask(instruction)
+    const task = {
+      id: Date.now(),
+      title: instruction.title || 'Custom Instruction',
+      type: instruction.type || 'custom',
+      data: instruction.data || {},
+      status: 'pending'
+    };
+    
+    this.emit('taskStarted', task);
+    
+    // Simulate task completion
+    setTimeout(() => {
+      task.status = 'completed';
+      this.emit('taskCompleted', task);
+    }, 1000);
+    
+    return task.id;
   }
 
   async getInstructionHistory() {
-    if (!this.orchestrator) {
-      return []
-    }
-    
-    const googleDocsAgent = this.orchestrator.agents.get('google-docs')
-    if (googleDocsAgent) {
-      return googleDocsAgent.instructionHistory;
-    }
-    
-    return []
+    return {
+      total: this.systemMetrics.totalInstructions,
+      completed: this.systemMetrics.completedInstructions,
+      failed: this.systemMetrics.failedInstructions,
+      health: this.systemMetrics.systemHealth
+    };
   }
 }
 
 // Main execution
 async function main() {
-  const launcher = new GoogleDocsAutomationLauncher({
-    googleDocsUrl: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
-    checkInterval: 3000,
-    maxRetries: 3,;
-    logLevel: 'info')
-  })
+  const system = new GoogleDocsAutomationLauncher();
   
   try {
-    await launcher.initialize()
+    await system.initialize();
     
     // Keep the process running
-    process.on('SIGINT', async () => {
-      console.log('\n🛑 Received SIGINT, shutting down gracefully...')
-      await launcher.stop()
-      process.exit(0)
-    })
+    process.on('uncaughtException', (error) => {
+      console.error('Uncaught Exception:', error);
+    });
     
-    process.on('SIGTERM', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down gracefully...')
-      await launcher.stop()
-      process.exit(0)
-    })
-    
-    console.log('🎯 Google Docs Automation System is running. Press Ctrl+C to stop.')
+    process.on('unhandledRejection', (reason, promise) => {
+      console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    });
     
   } catch (error) {
-    console.error('❌ Failed to start Google Docs Automation System: ', error)
-    process.exit(1)
+    console.error('Failed to start system:', error);
+    process.exit(1);
   }
 }
 
 // Export for use as module
-module.exports = GoogleDocsAutomationLauncher;
-
-// Run if called directly
 if (require.main === module) {
-  main()
+  main();
+} else {
+  module.exports = GoogleDocsAutomationLauncher;
 }

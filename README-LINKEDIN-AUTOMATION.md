@@ -35,16 +35,19 @@ export const LINKEDIN_CONFIG = {
 ### Quick Start
 
 1. **Run immediate automation:**
+
    ```bash
    npm run linkedin:run
    ```
 
 2. **Start cron jobs for continuous automation:**
+
    ```bash
    npm run linkedin:cron
    ```
 
 3. **Generate content without posting:**
+
    ```bash
    npm run linkedin:generate
    ```
@@ -52,6 +55,7 @@ export const LINKEDIN_CONFIG = {
 ### Advanced Usage
 
 #### Manual Bot Control
+
 ```typescript
 import { LinkedInBot } from './src/utils/linkedin-automation';
 
@@ -63,6 +67,7 @@ await bot.cleanup();
 ```
 
 #### Content Generation
+
 ```typescript
 import { generatePostContent, generateCustomPost } from './src/utils/linkedin-automation';
 
@@ -74,6 +79,7 @@ const customPost = generateCustomPost("Your custom topic");
 ```
 
 #### Cron Job Management
+
 ```typescript
 import { linkedInCronManager } from './src/utils/linkedin-automation';
 
@@ -99,6 +105,7 @@ linkedInCronManager.stopAllJobs();
 ## 🎯 Content Strategy
 
 ### Post Types
+
 1. **Secure Authentication Solution** - Highlights security features
 2. **Modern Web Development** - Showcases technical capabilities
 3. **Professional SaaS Solution** - Business-focused messaging
@@ -106,6 +113,7 @@ linkedInCronManager.stopAllJobs();
 5. **Startup Innovation** - Startup ecosystem positioning
 
 ### Hashtags Used
+
 - #TechInnovation
 - #Authentication
 - #WebDevelopment
@@ -138,11 +146,13 @@ src/utils/linkedin-automation/
 ## 📈 Monitoring & Analytics
 
 ### Logging
+
 - All automation activities are logged
 - Error tracking and reporting
 - Post success/failure monitoring
 
 ### Status Checking
+
 ```bash
 # Check cron job status
 npm run linkedin:status
@@ -168,6 +178,7 @@ npm run linkedin:status
    - Check system permissions
 
 ### Debug Mode
+
 ```typescript
 // Enable debug logging
 const bot = new LinkedInBot();
@@ -177,6 +188,7 @@ bot.debug = true;
 ## 🔄 Continuous Improvement
 
 The system automatically:
+
 - Generates varied content
 - Rotates posting times
 - Adapts to LinkedIn interface changes
@@ -185,6 +197,7 @@ The system automatically:
 ## 📞 Support
 
 For issues or improvements:
+
 1. Check the logs for error details
 2. Verify LinkedIn account status
 3. Test with manual posting first
@@ -200,4 +213,4 @@ For issues or improvements:
 
 ---
 
-**Note**: This system operates autonomously according to your preferences. It will continuously advertise your app at https://ziontechgroup.com with professional content highlighting the authentication and user management features. 
+**Note**: This system operates autonomously according to your preferences. It will continuously advertise your app at <https://ziontechgroup.com> with professional content highlighting the authentication and user management features.

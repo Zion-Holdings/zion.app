@@ -7,18 +7,21 @@ The Zion AI Marketplace now features an AI-powered chat assistant that provides 
 ## Features
 
 ### 🤖 AI-Powered Responses
+
 - Powered by OpenAI GPT-4 for natural language understanding
 - Context-aware conversations with conversation history
 - Knowledge base specific to Zion AI Marketplace features
 - Professional and helpful responses
 
 ### 📱 Responsive Design
+
 - Mobile-first design approach
 - Optimized for all screen sizes
 - Touch-friendly interface
 - Accessible design with proper ARIA labels
 
 ### 🔧 Easy Integration
+
 - Global chat state management
 - Reusable chat trigger components
 - Custom hooks for easy access
@@ -27,7 +30,9 @@ The Zion AI Marketplace now features an AI-powered chat assistant that provides 
 ## Components
 
 ### ChatAssistant (`src/components/ChatAssistant.tsx`)
+
 The main chat interface component that handles:
+
 - Message display and formatting
 - User input and message sending
 - Loading states and error handling
@@ -35,19 +40,25 @@ The main chat interface component that handles:
 - Accessibility features
 
 ### ChatContext (`src/contexts/ChatContext.tsx`)
+
 Global state management for chat functionality:
+
 - Chat open/close state
 - Toggle, open, and close functions
 - Provider wrapper for app-wide access
 
 ### ChatTrigger (`src/components/ChatTrigger.tsx`)
+
 Reusable component for triggering the chat assistant:
+
 - Multiple variants (button, link, icon)
 - Customizable styling
 - Optional pre-defined messages
 
 ### useChatAssistant (`src/hooks/useChatAssistant.ts`)
+
 Custom hook for easy chat integration:
+
 - Access to all chat functions
 - Trigger chat with optional messages
 - Clean API for components
@@ -55,7 +66,9 @@ Custom hook for easy chat integration:
 ## API Integration
 
 ### Chat API (`src/pages/api/chat.ts`)
+
 Backend endpoint for handling chat requests:
+
 - OpenAI GPT-4 integration
 - Conversation history management
 - Error handling and rate limiting
@@ -64,9 +77,11 @@ Backend endpoint for handling chat requests:
 ## Usage
 
 ### Basic Implementation
+
 The chat assistant is automatically available on all pages through the `_app.tsx` wrapper.
 
 ### Adding Chat Triggers
+
 ```tsx
 import ChatTrigger from '../components/ChatTrigger';
 
@@ -87,6 +102,7 @@ import ChatTrigger from '../components/ChatTrigger';
 ```
 
 ### Using the Hook
+
 ```tsx
 import { useChatAssistant } from '../hooks/useChatAssistant';
 
@@ -116,6 +132,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 ## Knowledge Base
 
 The chat assistant includes comprehensive knowledge about:
+
 - Platform features and capabilities
 - User authentication and registration
 - Tool browsing and discovery
@@ -158,6 +175,7 @@ The chat assistant includes comprehensive knowledge about:
 ## Future Enhancements
 
 Potential improvements for future versions:
+
 - Message persistence across sessions
 - File upload support
 - Voice input/output
@@ -177,7 +195,9 @@ Potential improvements for future versions:
 4. **Context errors**: Ensure components are within ChatProvider
 
 ### Debug Mode
+
 Enable console logging for debugging:
+
 ```tsx
 // In ChatAssistant component
 console.log('Chat state:', { isOpen, messages, isLoading });
@@ -194,6 +214,7 @@ console.log('Chat state:', { isOpen, messages, isLoading });
 ## Contributing
 
 When adding new features to the chat assistant:
+
 1. Update the knowledge base in the API
 2. Test on mobile devices
 3. Ensure accessibility compliance
@@ -202,4 +223,4 @@ When adding new features to the chat assistant:
 
 ## Support
 
-For technical support or feature requests related to the chat assistant, please contact the development team or create an issue in the project repository. 
+For technical support or feature requests related to the chat assistant, please contact the development team or create an issue in the project repository.

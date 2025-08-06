@@ -73,12 +73,14 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 ## Features Implemented
 
 ### Password Reset
+
 - ✅ Forgot password page (`/auth/forgot-password`)
 - ✅ Password reset page (`/auth/reset-password`)
 - ✅ Email-based password reset flow
 - ✅ Secure password update functionality
 
 ### Social Login
+
 - ✅ Google OAuth integration
 - ✅ GitHub OAuth integration
 - ✅ LinkedIn OAuth integration
@@ -88,6 +90,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 - ✅ Consistent UI across login and signup pages
 
 ### Authentication Flow
+
 - ✅ Email/password authentication
 - ✅ Social login authentication
 - ✅ Email verification
@@ -99,6 +102,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 ## Usage
 
 ### Password Reset Flow
+
 1. User clicks "Forgot your password?" on login page
 2. User enters email address
 3. User receives password reset email
@@ -108,6 +112,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 7. User is redirected to login page
 
 ### Social Login Flow
+
 1. User clicks social login button
 2. User is redirected to provider's OAuth page
 3. User authorizes the application
@@ -148,4 +153,4 @@ To test the authentication system:
 2. Verify environment variables
 3. Test with different browsers
 4. Check Supabase logs for authentication events
-5. Verify provider configurations in Supabase dashboard 
+5. Verify provider configurations in Supabase dashboard

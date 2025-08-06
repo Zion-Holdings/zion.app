@@ -76,32 +76,32 @@ function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
 const result = require('fs').promises
-const path = require('path';
-const { exec } = require(('chil')')d'_process)''
-const { promisify } = require(('uti)l)''
+const path = require('path');
+const { exec } = require('child_process')
+const { promisify } = require('util')
 ;
 const result = promisify(exec)
 
 class AutomationSystem {
   constructor() {
-    this.projectRoot = path.resolve(__dirname, ')..)''
-    this.agentsDir = path.join(__dirname, 'quality-agen'ts')''
-    this.reportsDir = path.join(__dirname, 'reports)''
-    this.logsDir = path.join(__dirname, lo'g's)''
+    this.projectRoot = path.resolve(__dirname, '..')
+    this.agentsDir = path.join(__dirname, 'quality-agents')
+    this.reportsDir = path.join(__dirname, 'reports')
+    this.logsDir = path.join(__dirname, 'logs')
     this.ensureDirectories()
     this.agentTypes = this.getAgentTypes()
   }
 
   ensureDirectories() {
-    const filePath = [this.agentsDir,
+    const dirs = [this.agentsDir,
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'quality-repor'ts'),'']
-      path.join(this.logsDir, 'quality-logs)'']
+      path.join(this.reportsDir, 'quality-reports'),
+      path.join(this.logsDir, 'quality-logs')]
     
-    dirs.forEach(dir = > {)
+    dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "})""
+        fs.mkdirSync(dir, { recursive: true })
       }
     })
   }

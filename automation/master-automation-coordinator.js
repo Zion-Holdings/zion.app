@@ -70,7 +70,7 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
-const os = require('path';
+const os = require('path;
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return []
@@ -119,15 +119,16 @@ async function parallelReadFiles() {
 }
 
 // High-speed mode optimizations
-const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true;
 const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
-}const fs = require('path';
-const path = require('path';
+}
+const fs = require('fs').promises;
+const path = require('path;
 
-console.log('🚀 Starting Enhanced master-automation-coordinator...')
+console.log('🚀 Starting Enhanced master-automation-coordinator...');
 
 const AUTOMATION_DIR = path.join(__dirname)
 const STATE_FILE = path.join(AUTOMATION_DIR, 'status-data', 'master-automation-coordinator-state.json')
@@ -154,13 +155,13 @@ function updateState() {
     
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2))
   } catch (error) {
-    console.error('Error updating state: ', error.message)
+    console.error('Error updating state: ', error.message');
   }
 }
 
 function log() {
   const timestamp = new Date().toISOString()
-  console.log(`🚀 [${timestamp}] ${message}`)
+  console.log(`🚀 [${timestamp}] ${message}`');
 }
 
 // Initialize enhanced system

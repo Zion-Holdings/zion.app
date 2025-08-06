@@ -7,18 +7,21 @@ The Cursor Memory Learning Automation System is an intelligent system that autom
 ## Features
 
 ### 🤖 Intelligent Knowledge Extraction
+
 - **Pattern Recognition**: Automatically identifies common patterns in your development workflow
 - **Preference Learning**: Learns your coding preferences and automation strategies
 - **Solution Mining**: Extracts technical solutions and best practices from past interactions
 - **Error Analysis**: Identifies common issues and their resolutions
 
 ### 📊 Comprehensive Memory Management
+
 - **Memory Index**: Structured index of all learned knowledge with confidence scores
 - **Knowledge Graph**: Relationship mapping between different concepts and solutions
 - **Learning History**: Track of all learning sessions and their outcomes
 - **Category Classification**: Automatic categorization of knowledge into relevant domains
 
 ### 🔄 Automated Workflow
+
 - **File Scanning**: Recursively scans project directories for chat logs and conversations
 - **Content Analysis**: Uses AI (when available) or pattern-based extraction
 - **Memory Generation**: Creates Cursor-compatible memory files
@@ -55,6 +58,7 @@ The automation creates several files in the `cursor-memory/` directory:
 ### 3. Integration with Cursor
 
 The generated `cursor-memory.json` file contains:
+
 - **Rules**: Extracted workflow rules and preferences
 - **Memories**: Specific insights and solutions
 - **Context**: Project patterns, user preferences, and technical solutions
@@ -166,6 +170,7 @@ await fs.writeFile('./custom-config.json', JSON.stringify(config, null, 2));
 ## Memory Structure
 
 ### Rules
+
 ```json
 {
   "id": "work-autonomously",
@@ -176,6 +181,7 @@ await fs.writeFile('./custom-config.json', JSON.stringify(config, null, 2));
 ```
 
 ### Memories
+
 ```json
 {
   "id": "supabase-authentication",
@@ -188,6 +194,7 @@ await fs.writeFile('./custom-config.json', JSON.stringify(config, null, 2));
 ```
 
 ### Context
+
 ```json
 {
   "projectPatterns": [
@@ -255,16 +262,19 @@ npm run cursor:memory:status
 ## Integration with Existing Systems
 
 ### Git Integration
+
 - Automatic commits after memory updates
 - Version control for memory files
 - Branch-specific memory contexts
 
 ### CI/CD Integration
+
 - Run memory learning in CI pipeline
 - Generate memory reports
 - Track learning metrics over time
 
 ### IDE Integration
+
 - Cursor plugin for real-time memory updates
 - VSCode extension for memory visualization
 - JetBrains plugin for memory management
@@ -325,6 +335,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 For support and questions:
+
 - Create an issue in the repository
 - Check the troubleshooting section
 - Review the configuration examples
