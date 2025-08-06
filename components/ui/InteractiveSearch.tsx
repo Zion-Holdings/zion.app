@@ -16,7 +16,7 @@ const InteractiveSearch: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  const searchData: SearchResult[] = [
+  const searchData = React.useMemo<SearchResult[]>(() => [
     {
       title: 'AI Development Services',
       description: 'Custom AI solutions and machine learning models',
@@ -66,7 +66,7 @@ const InteractiveSearch: React.FC = () => {
       category: 'Products',
       icon: '⚡'
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

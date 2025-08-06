@@ -306,20 +306,20 @@ new ${agentType}();
     }
 
     async analyzeAndOptimizeAgents() {
-        console.log(🔍 Analyzing and optimizing existing agents...);
+        console.log('🔍 Analyzing and optimizing existing agents...');
         
-        const result = this.getExistingAgents();
+        const existingAgents = this.getExistingAgents();
         
         for (const agentType of existingAgents) {
             await this.optimizeAgent(agentType);
         }
         
-        this.logActivity(Agent optimization completed);
+        this.logActivity('Agent optimization completed');
     }
 
     async optimizeAgent(agentType) {
         // Analyze agent performance and optimize
-        const asyncResult = await this.analyzeAgentPerformance(agentType);
+        const performanceReport = await this.analyzeAgentPerformance(agentType);
         
         if (performanceReport.needsOptimization) {
             await this.updateAgentCode(agentType);
