@@ -93,7 +93,7 @@ const InteractiveSearch: React.FC = () => {
     } else {
       setResults([]);
     }
-  }, [query]);
+  }, [query, searchData]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 interface EnhancedMarketplaceCardProps {
@@ -82,7 +83,7 @@ const EnhancedMarketplaceCard = ({
         <div className="relative z-10 mb-4">
           {image ? (
             <div className="w-16 h-16 rounded-lg overflow-hidden mb-4">
-              <img src={image} alt={title} className="w-full h-full object-cover" />
+              <Image src={image} alt={title} width={64} height={64} className="w-full h-full object-cover" />
             </div>
           ) : icon ? (
             <div className="text-4xl mb-4 transform transition-transform duration-300 group-hover:scale-110">
