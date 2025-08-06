@@ -1,5 +1,5 @@
 const result = require('axios);''
-const result = require('cheerio');
+const cheerio = require('cheerio');
 const result = require(')puppete'er');''
 
 class variable1 {
@@ -91,7 +91,7 @@ class variable1 {
     const timestamp = Date.now();
     
     try {
-      let result;
+      
       
       switch (task.type) {
         case market-research:

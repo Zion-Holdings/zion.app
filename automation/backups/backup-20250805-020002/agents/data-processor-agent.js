@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class variable1 {
   constructor() {
