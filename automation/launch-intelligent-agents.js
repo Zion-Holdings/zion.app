@@ -53,8 +53,7 @@ class IntelligentAgentLauncher {
       'automation/agents',''
       automation/agents/generated',''
       'automation/agents/production,''
-      'automation/monetization-agents''';
-    ];
+      'automation/monetization-agents'''];
     
     for (const dir of directories) {
       try {
@@ -152,8 +151,7 @@ class IntelligentAgentLauncher {
           running: "Array.from(this.orchestrator.agents.values()).filter(a => a.status === running\')).length",""
           intelligence: "Object.fromEntries(this.orchestrator.intelligenceLevels)",""
           health: "Object.fromEntries(this.orchestrator.healthStatus)""
-        "} : null"";
-      };
+        "} : null""};
       
       const reportPath = path.join(__dirname, \'reports, \'final-intelligence-report.json\');\'\'
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
@@ -176,8 +174,7 @@ class IntelligentAgentLauncher {
     const logEntry = {
       timestamp: "new Date().toISOString()",""
       level,
-      message;
-    };
+      message};
     this.logs.push(logEntry);
     console.log([${level.toUpperCase()}] ${message}`);
   }
@@ -195,7 +192,7 @@ async function main() {
   }
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }
 

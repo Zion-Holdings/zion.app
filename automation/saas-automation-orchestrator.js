@@ -45,8 +45,7 @@ class AutomationSystem {
       'performance-enhanceme'nt': {''
         triggers: "[\'slow-performance", high-error-ra't'e, 'poor-user-experien'ce'],''
         actions: "[\'code-optimization", infrastructure-scali'n'g, 'caching-implementati'on']''
-      };
-    };
+      }};
   }
 
   async start() {
@@ -168,8 +167,7 @@ class AutomationSystem {
     const filePath = {
       \')saas-ideation-agent: "path.join(__dirname", agen\'t\'s, \'saas-ideation-agen\'t.js\'),\'\'
       \'saas-development-agent: "path.join(__dirname", agen\'t\'s, \'saas-development-agen\'t.js\'),\'\'
-      \'saas-marketing-agent: "path.join(__dirname", agen\'t\'s, \'saas-marketing-agen\'t.js\')\'\';
-    };
+      \'saas-marketing-agent: "path.join(__dirname", agen\'t\'s, \'saas-marketing-agen\'t.js\')\'\'};
     
     return scripts[type] || path.join(__dirname, \'agents, generic-agen\'t\'.js);\'\'
   }
@@ -342,8 +340,7 @@ class AutomationSystem {
       \'Parallel\' feature development\',\'\'
       Automated testing implementation,
       \'Cod\'e generation acceleration\',\'\'
-      \'Resource\' allocation optimization\'\'\';
-    ];
+      \'Resource\' allocation optimization\'\'\'];
     
     const result = optimizations[Math.floor(Math.random() * optimizations.length)];
     
@@ -434,8 +431,7 @@ class AutomationSystem {
       A/B testing implementation,
       \'Audienc\'e targeting refinement\',\'\'
       \'Channel\' performance optimization\',\'\'
-      Content personalization;
-    ];
+      Content personalization];
     
     const result = strategies[Math.floor(Math.random() * strategies.length)];
     
@@ -513,7 +509,7 @@ class AutomationSystem {
 
   calculateServiceCreationRate() {
     const timestamp = Array.from(this.services.values())
-      .filter(service => {;
+      .filter(service => {
         const variable1 = new Date(service.createdAt);
         const timestamp = new Date();</div>
         return (now - created) < 24 * 60 * 60 * 1000; // Last 24 hours
@@ -544,7 +540,7 @@ class AutomationSystem {
     return Math.min(1.0, averageROI / 3); // Normalize to 0-1 (3x ROI = 1.0)
   }
 
-  async triggerImprovements() {;
+  async triggerImprovements() {
     const result = this.performanceMetrics.get(system-heal\'t\'h);\'\'
     </div>
     if (health && health.overallHealth < 0.6) {
@@ -583,7 +579,7 @@ class AutomationSystem {
 
   async implementImprovements() {
     const timestamp = this.improvementLoops
-      .filter(loop => {;
+      .filter(loop => {
         const variable1 = new Date(loop.appliedAt);
         const timestamp = new Date();</div>
         return (now - applied) < 60 * 60 * 1000; // Last hour
@@ -735,7 +731,7 @@ class AutomationSystem {
 }
 
 // Start the orchestrator if this file is run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new SaaSAutomationOrchestrator();
   orchestrator.start().catch(console.error);
   

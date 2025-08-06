@@ -16,8 +16,7 @@ class AutonomousSystemLauncher {
       automationsExecuted: 0,
       contentGenerated: 0,
       improvementsMade: 0,
-      uptime: 100;
-    };
+      uptime: 100};
     
     this.initializeSystem();
   }
@@ -61,8 +60,7 @@ class AutonomousSystemLauncher {
         enabled: true,
         learningRate: 0.1,
         evolutionEnabled: true
-      };
-    };
+      }};
   }
 
   async startAutonomousSystem() {
@@ -102,7 +100,7 @@ class AutonomousSystemLauncher {
           agents: { total: this.orchestrator.agents.size },
           status: 'active'
         }),
-        optimizeOrchestrator: () => {;
+        optimizeOrchestrator: () => {
           console.log('🔧 Optimizing orchestrator...');
         }
       };
@@ -165,8 +163,7 @@ class AutonomousSystemLauncher {
         name: 'ai-enhancement',
         createFunction: this.createAIEnhancementFactory.bind(this),
         priority: 'critical'
-      };
-    ];
+      }];
     
     for (const config of factoryConfigs) {
       try {
@@ -267,8 +264,7 @@ class AutonomousSystemLauncher {
       orchestrator: this.orchestrator ? 'active' : 'inactive',
       factories: this.factories.size,
       activeFactories: Array.from(this.factories.values()).filter(f => f.status === 'active').length,
-      evolvedGenerator: this.evolvedGenerator ? 'active' : 'inactive';
-    };
+      evolvedGenerator: this.evolvedGenerator ? 'active' : 'inactive'};
     
     const healthScore = this.calculateHealthScore(health);
     
@@ -288,8 +284,7 @@ class AutonomousSystemLauncher {
       agentsCreated: this.getTotalAgents(),
       automationsExecuted: this.performanceMetrics.automationsExecuted,
       contentGenerated: this.performanceMetrics.contentGenerated,
-      improvementsMade: this.performanceMetrics.improvementsMade;
-    };
+      improvementsMade: this.performanceMetrics.improvementsMade};
     
     console.log('📊 Performance metrics:', performance);
   }
@@ -316,7 +311,7 @@ class AutonomousSystemLauncher {
     // Optimize factories
     this.factories.forEach((factory, name) => {
       if (factory.instance && typeof factory.instance.optimize = == 'function') {
-        try {;
+        try {
           factory.instance.optimize();
           factory.successCount++;
         } catch (error) {
@@ -327,7 +322,7 @@ class AutonomousSystemLauncher {
     });
     
     // Optimize orchestrator
-    if (this.orchestrator && typeof this.orchestrator.optimizeOrchestrator = == 'function') {;
+    if (this.orchestrator && typeof this.orchestrator.optimizeOrchestrator = == 'function') {
       this.orchestrator.optimizeOrchestrator();
     }
     
@@ -340,7 +335,7 @@ class AutonomousSystemLauncher {
     // Evolve factories
     this.factories.forEach((factory, name) => {
       if (factory.instance && typeof factory.instance.evolve = == 'function') {
-        try {;
+        try {
           factory.instance.evolve();
           console.log(`🧬 Evolved factory: ${name}`);
         } catch (error) {
@@ -371,10 +366,9 @@ class AutonomousSystemLauncher {
         name: 'edge-computing-factory',
         description: 'Edge computing and IoT automation',
         priority: 'experimental'
-      };
-    ];
+      }];
     
-    newTypes.forEach(type = > {;
+    newTypes.forEach(type = > {
       console.log(`🔧 Created new automation type: ${type.name}`);
     });
   }
@@ -394,7 +388,7 @@ class AutonomousSystemLauncher {
             agents: { total: this.orchestrator.agents.size },
             status: 'active'
           }),
-          optimizeOrchestrator: () => {;
+          optimizeOrchestrator: () => {
             console.log('🔧 Optimizing orchestrator...');
           }
         };
@@ -424,7 +418,7 @@ class AutonomousSystemLauncher {
     
     // Restart critical factories
     this.factories.forEach((factory, name) => {
-      if (factory.config.priority = == 'critical') {;
+      if (factory.config.priority = == 'critical') {
         console.log(`🔄 Restarting critical factory: ${name}`);
         factory.status = 'restarting';
         
@@ -456,7 +450,7 @@ class AutonomousSystemLauncher {
     // Create backup factories
     const backupFactories = ['backup-responsive-content', 'backup-performance'];
     
-    backupFactories.forEach(name = > {;
+    backupFactories.forEach(name = > {
       console.log(`🔄 Creating backup factory: ${name}`);
     });
   }
@@ -488,7 +482,7 @@ class AutonomousSystemLauncher {
     
     // Count agents from individual factories
     this.factories.forEach(factory = > {
-      if (factory.instance && factory.instance.agents) {;
+      if (factory.instance && factory.instance.agents) {
         total += factory.instance.agents.size;
       }
     });
@@ -513,8 +507,7 @@ class AutonomousSystemLauncher {
       context,
       error: error.message,
       stack: error.stack,
-      systemId: this.systemId;
-    };
+      systemId: this.systemId};
     
     const errorLogPath = path.join(this.systemPath, 'error-logs.json');
     let errorLogs = [];
@@ -552,8 +545,7 @@ class AutonomousSystemLauncher {
         factories: this.factories.size,
         activeFactories: Array.from(this.factories.values()).filter(f => f.status === 'active').length,
         evolvedGenerator: this.evolvedGenerator ? 'active' : 'inactive'
-      });
-    };
+      })};
   }
 
   calculateUptime() {

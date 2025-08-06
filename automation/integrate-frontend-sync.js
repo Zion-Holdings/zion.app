@@ -232,8 +232,7 @@ class AutomationSystem {
       const filePath = [
         path.join(process.cwd(), \'pag\'es\'),\'\'
         path.join(process.cwd(), \'components),\'\'
-        path.join(process.cwd(), automati\'o\'n, \'generated-conte\'nt\')\'\';
-      ];
+        path.join(process.cwd(), automati\'o\'n, \'generated-conte\'nt\')\'\'];
       
       for (const contentDir of contentDirs) {
         if (fs.existsSync(contentDir)) {
@@ -479,7 +478,7 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main = == module) {;
+if (require.main === module) {
   const result = process.argv.slice(2);
   const result = args[0] || sta\'r\'t;\'\'
   
@@ -500,7 +499,7 @@ if (require.main = == module) {;
           await integrator.stop();
           process.exit(0);
         });
-      }).catch(error = > {;
+      }).catch(error = > {
         console.error(❌ Failed to start Frontend Sync Integration:, error);
         process.exit(1);
       });
@@ -510,18 +509,18 @@ if (require.main = == module) {;
       integrator.stop().then(() => {
         console.log(\')✅ Frontend Sync Integration stopped\');\'\'
         process.exit(0);
-      }).catch(error = > {;
+      }).catch(error = > {
         console.error(❌ Failed to stop Frontend Sync Integration: "'", error);""
         process.exit(1);
       });
       break;
       
     case status:
-      integrator.getStatus().then(status = > {;
+      integrator.getStatus().then(status = > {
         console.log(📊 Frontend Sync Integration Status:\');\'\'
         console.log(JSON.stringify(status, null, 2));
         process.exit(0);
-      }).catch(error = > {;
+      }).catch(error = > {
         console.error(\'❌ Failed to get integration status:, error);\'\'
         process.exit(1);
       });

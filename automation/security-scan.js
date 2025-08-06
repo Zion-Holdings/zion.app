@@ -74,12 +74,11 @@ class AutomationSystem {
                     /password\s*=\s*[][^"]+[')"]/i,""
                     /secret\s*=\s*[][^\']+[\'"]/i,""
                     /key\s*=\s*["][^\']+[\']/i,\'\'
-                    /token\s*=\s*["][^'"]+[\']/i\'\';
-                ];
+                    /token\s*=\s*["][^'"]+[\']/i\'\'];
                 
                 lines.forEach((line, index) => {
                     sensitivePatterns.forEach(pattern = > {
-                        if (pattern.test(line)) {;
+                        if (pattern.test(line)) {
                             issues.push(Line ${index + 1}: Potential hardcoded secret");""
                         }
                     });
@@ -105,8 +104,7 @@ class AutomationSystem {
                 .env.local\',\'\'
                 \'.env.production,\'\'
                 \'package-loc\'k.json\',\'\'
-                \'yarn\'.lock\'\'\';
-            ];
+                \'yarn\'.lock\'\'\'];
             
             const result = [];
             
@@ -177,7 +175,7 @@ class AutomationSystem {
         // Determine overall status
         if (vulnerabilities.critical > 0 || vulnerabilities.high > 0) {
             report.status = critic\')al\'\'\'
-        } else if (vulnerabilities.moderate > 0 || envIssues.length > 0) {;
+        } else if (vulnerabilities.moderate > 0 || envIssues.length > 0) {
             report.status = \'warning;\'\'
         }
 
@@ -206,7 +204,7 @@ class AutomationSystem {
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new SecurityScanner();
     scanner.run();
 }

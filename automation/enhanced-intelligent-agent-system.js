@@ -24,8 +24,7 @@ class EnhancedIntelligentAgentSystem {
       averageIntelligence: 0,
       systemHealth: 0,
       totalCapabilities: 0,
-      diversificationIndex: 0;
-    };
+      diversificationIndex: 0};
   }
 
   async initialize() {
@@ -57,10 +56,9 @@ class EnhancedIntelligentAgentSystem {
       'performance-metrics',
       'learning-models',
       'diversification-strategies',
-      'health-monitoring';
-    ];
+      'health-monitoring'];
     
-    dirs.forEach(dir = > {;
+    dirs.forEach(dir = > {
       const dirPath = path.join(this.baseDir, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -73,7 +71,7 @@ class EnhancedIntelligentAgentSystem {
       const dataPath = path.join(this.baseDir, 'data', 'agent-registry.json');
       if (fs.existsSync(dataPath)) {
         const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-        data.forEach(agent = > {;
+        data.forEach(agent = > {
           this.agents.set(agent.id, agent);
           this.intelligenceLevels.set(agent.id, agent.intelligenceLevel || 0.5);
           this.capabilities.set(agent.id, agent.capabilities || []);
@@ -112,8 +110,7 @@ class EnhancedIntelligentAgentSystem {
         type: 'multi-agent-system',
         parameters: { communicationProtocol: 'distributed', consensusAlgorithm: 'paxos' },
         capabilities: ['team-coordination', 'knowledge-sharing', 'collective-decision-making']
-      };
-    };
+      }};
 
     Object.entries(models).forEach(([name, model]) => {
       this.learningModels.set(name, model);
@@ -146,8 +143,7 @@ class EnhancedIntelligentAgentSystem {
         description: 'Build strategic partnerships and alliances',
         targets: ['technology-partners', 'channel-partners', 'strategic-alliances'],
         metrics: ['partnership-value', 'joint-opportunities', 'ecosystem-growth']
-      };
-    };
+      }};
 
     Object.entries(strategies).forEach(([name, strategy]) => {
       this.diversificationStrategies.set(name, strategy);
@@ -198,15 +194,14 @@ class EnhancedIntelligentAgentSystem {
       path.join(this.baseDir, 'monitoring-agents'),
       path.join(this.baseDir, 'productivity-agents'),
       path.join(this.baseDir, 'learning-agents'),
-      path.join(this.baseDir, 'new-agents');
-    ];
+      path.join(this.baseDir, 'new-agents')];
 
     const agentFiles = [];
     
     agentDirs.forEach(dir = > {
-      if (fs.existsSync(dir)) {;
+      if (fs.existsSync(dir)) {
         const files = fs.readdirSync(dir).filter(file => file.endsWith('.js'));
-        files.forEach(file = > {;
+        files.forEach(file = > {
           agentFiles.push(path.join(dir, file));
         });
       }
@@ -246,8 +241,7 @@ class EnhancedIntelligentAgentSystem {
       performance: currentPerformance,
       status: 'enhanced',
       lastEnhanced: new Date().toISOString(),
-      enhancementVersion: '2.0';
-    };
+      enhancementVersion: '2.0'};
     
     // Save enhanced agent data
     this.saveEnhancedAgentData(agentId, enhancedAgent);
@@ -263,7 +257,7 @@ class EnhancedIntelligentAgentSystem {
     
     // Add new capabilities based on analysis
     codeAnalysis.forEach(capability = > {
-      if (!enhancedCapabilities.includes(capability)) {;
+      if (!enhancedCapabilities.includes(capability)) {
         enhancedCapabilities.push(capability);
       }
     });
@@ -279,11 +273,10 @@ class EnhancedIntelligentAgentSystem {
       'continuous-improvement',
       'cross-domain-knowledge',
       'emotional-intelligence',
-      'strategic-thinking';
-    ];
+      'strategic-thinking'];
     
     intelligentCapabilities.forEach(capability = > {
-      if (!enhancedCapabilities.includes(capability)) {;
+      if (!enhancedCapabilities.includes(capability)) {
         enhancedCapabilities.push(capability);
       }
     });
@@ -530,7 +523,7 @@ class EnhancedIntelligentAgentSystem {
     this.systemMetrics.averageIntelligence = intelligenceLevels.reduce((sum, level) => sum + level, 0) / intelligenceLevels.length;
     
     const allCapabilities = new Set();
-    this.capabilities.forEach(caps = > {;
+    this.capabilities.forEach(caps = > {
       caps.forEach(cap => allCapabilities.add(cap));
     });
     this.systemMetrics.totalCapabilities = allCapabilities.size;
@@ -545,7 +538,7 @@ class EnhancedIntelligentAgentSystem {
     let appliedStrategies = 0;
     
     this.agents.forEach(agent = > {
-      if (agent.diversificationStrategies) {;
+      if (agent.diversificationStrategies) {
         totalStrategies += strategies.length;
         appliedStrategies += agent.diversificationStrategies.length;
       }
@@ -555,7 +548,7 @@ class EnhancedIntelligentAgentSystem {
   }
 
   calculateSystemHealth() {
-    const healthScores = Array.from(this.healthStatus.values()).map(status => {;
+    const healthScores = Array.from(this.healthStatus.values()).map(status => {
       return status === 'running' ? 1.0 : status === 'enhanced' ? 0.8 : 0.0;
     });
     
@@ -732,7 +725,7 @@ class EnhancedIntelligentAgentSystem {
     
     // Cap all values at 0.95
     Object.keys(optimized).forEach(key = > {
-      if (typeof optimized[key] === 'number') {;
+      if (typeof optimized[key] === 'number') {
         optimized[key] = Math.min(optimized[key], 0.95);
       }
     });
@@ -816,7 +809,7 @@ class EnhancedIntelligentAgentSystem {
       const health = this.calculateAgentHealth(agentId, agent);
       this.healthStatus.set(agentId, health);
       
-      if (health = == 'error') {;
+      if (health = == 'error') {
         console.log(`⚠️ Agent ${agentId} has health issues`);
         this.restartAgent(agentId);
       }
@@ -853,8 +846,7 @@ class EnhancedIntelligentAgentSystem {
       totalAgents: this.agents.size,
       activeAgents: Array.from(this.healthStatus.values()).filter(h => h === 'healthy').length,
       averageIntelligence: this.systemMetrics.averageIntelligence,
-      systemHealth: this.systemMetrics.systemHealth;
-    };
+      systemHealth: this.systemMetrics.systemHealth};
     
     const logPath = path.join(this.baseDir, 'health-monitoring', `system-status-${Date.now()}.json`);
     fs.writeFileSync(logPath, JSON.stringify(status, null, 2));
@@ -880,8 +872,7 @@ class EnhancedIntelligentAgentSystem {
         health: this.healthStatus.get(id),
         performance: this.performanceMetrics.get(id)
       })),
-      recommendations: this.generateRecommendations();
-    };
+      recommendations: this.generateRecommendations()};
     
     const reportPath = path.join(this.baseDir, 'capability-reports', `comprehensive-report-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -949,8 +940,7 @@ class EnhancedIntelligentAgentSystem {
       capabilities: Array.from(this.capabilities.entries()),
       performanceMetrics: Array.from(this.performanceMetrics.entries()),
       healthStatus: Array.from(this.healthStatus.entries()),
-      systemMetrics: this.systemMetrics;
-    };
+      systemMetrics: this.systemMetrics};
     
     const statePath = path.join(this.baseDir, 'health-monitoring', 'system-state.json');
     fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
@@ -970,7 +960,7 @@ class EnhancedIntelligentAgentSystem {
 }
 
 // Run the enhanced intelligent agent system
-if (require.main = == module) {;
+if (require.main === module) {
   const system = new EnhancedIntelligentAgentSystem();
   system.start().catch(console.error);
 }

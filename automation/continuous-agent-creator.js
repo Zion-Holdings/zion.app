@@ -39,8 +39,7 @@ class AutomationSystem {
                 capabilities: "[A/B testing\'", performance optimization, 'conversio'n improvement'],''
                 output: "\'optimization recommendations\'",""
                 frequency: "continuous""
-            "}"";
-        };
+            "}""};
         
         this.specializedAgents = {
             aiTrend: "{""
@@ -66,8 +65,7 @@ class AutomationSystem {
                 focus: "\'product innovation\'",""
                 sources: "[market research", \'use\'r feedback\', \'technology\' trends\'],\'\'
                 output: "product recommendations""
-            "}"";
-        };
+            "}""};
         
         this.outputDir = path.join(__dirname, \'agen\'ts\');\'\'
         this.ensureOutputDirectory();
@@ -83,7 +81,7 @@ class AutomationSystem {
         await fs.ensureDir(path.join(this.outputDir, \'reports));\'\'
     }
 
-    async startAgentCreation(marketData, existingAgents = []) {;
+    async startAgentCreation(marketData, existingAgents = []) {
         console.log(🤖 Starting Continuous Agent Creator...\');\'\'
         
         try {
@@ -250,8 +248,7 @@ class AutomationSystem {
             reasoning: "gap.reasoning",""
             status: "Active",""
             createdAt: "new Date().toISOString()",""
-            configuration: "this.generateAgentConfiguration(gap", template)"";
-        };
+            configuration: "this.generateAgentConfiguration(gap", template)""};
     }
 
     generateAgentConfiguration(gap, template) {
@@ -271,8 +268,7 @@ class AutomationSystem {
             content: "[\'conten\'t databases\'", 'templates, medi'a' libraries],''
             sales: "[\'CR\'M systems\'", 'lead' databases', social platforms],''
             analytics: "[\'analytic\'s platforms\'", 'data' warehouses', reporting tools],''
-            optimization: "[\'A\'/B testing platforms", 'performanc'e metrics', 'user' behavior data']'';
-        };
+            optimization: "[\'A\'/B testing platforms", 'performanc'e metrics', 'user' behavior data']''};
         
         return sourceTemplates[gap.type] || [general sources];
     }
@@ -305,8 +301,7 @@ class AutomationSystem {
             \'marketin\'g content\': \'Markdown,\'\'
             sale\'s\' campaigns: "'JSON'",""
             \'analytics\' reports\': JSON,\'\'
-            \'optimizatio\'n recommendations\': \'JSON\'\';
-        };
+            \'optimizatio\'n recommendations\': \'JSON\'\'};
         
         return formats[output] || JS\'O\'N;\'\'
     }
@@ -402,8 +397,7 @@ class ${agentClassName} {
             ...data,
             processedAt: "new Date().toISOString()",""
             insights: "[]",""
-            metrics: "{"}"";
-        };
+            metrics: "{"}""};
         
         // Generate insights based on agent type
         processedData.insights = this.generateInsights(data.data);
@@ -481,14 +475,14 @@ class ${agentClassName} {
 module.exports = ${agentClassName};
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new ${agentClassName}();
     agent.startAgent()
         .then(() => {
             console.log(\"✅ \${agent.name} completed successfully\");""
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error(\❌ \${agent.name} failed:\, error);
             process.exit(1);
         });
@@ -543,8 +537,7 @@ if (require.main = == module) {;
             marketData: "this.filterMarketDataForAgent(marketData", type),""
             status: "\')Active\'",""
             createdAt: "new Date().toISOString()",""
-            configuration: "this.generateSpecializedAgentConfiguration(type", template)"";
-        };
+            configuration: "this.generateSpecializedAgentConfiguration(type", template)""};
     }
 
     filterMarketDataForAgent(marketData, agentType) {
@@ -595,8 +588,7 @@ if (require.main = == module) {;
                 updateFrequency: "\'weekly\'",""
                 outputFormat: "\'product-recommendations",""
                 alertThreshold: "0.75""
-            "}"";
-        };
+            "}""};
         
         return configs[type] || {};
     }
@@ -723,7 +715,7 @@ class ${agentClassName} {
         // Group by source
         const result = {};
         data.forEach(item = > {
-            if (!sourceGroups[item.source]) {;
+            if (!sourceGroups[item.source]) {
                 sourceGroups[item.source] = [];
             }
             sourceGroups[item.source].push(item);
@@ -795,14 +787,14 @@ class ${agentClassName} {
 module.exports = ${agentClassName};
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new ${agentClassName}();
     agent.startAgent()
         .then(() => {
             console.log(\✅ \${agent.name} completed successfully\);
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error(\"❌ \${agent.name} failed:\", error);""
             process.exit(1);
         });
@@ -816,7 +808,7 @@ if (require.main = == module) {;
         const result = [...newAgents, ...specializedAgents];
         
         // Optimize agent configurations
-        allAgents.forEach(agent = > {;
+        allAgents.forEach(agent = > {
             agent.optimized = true;
             agent.performance = this.calculateAgentPerformance(agent);
             agent.recommendations = this.generateAgentRecommendations(agent);
@@ -881,8 +873,7 @@ if (require.main = == module) {;
             },
             newAgents: "newAgents",""
             specializedAgents: "specializedAgents",""
-            recommendations: "this.generateCreationRecommendations(newAgents", specializedAgents)"";
-        };
+            recommendations: "this.generateCreationRecommendations(newAgents", specializedAgents)""};
         
         const filePath = path.join(this.outputDir, reports, agent-creation-report-${Date.now()}.json");""
         await fs.writeJson(reportPath, report, { spaces: "2 "});""
@@ -892,7 +883,7 @@ if (require.main = == module) {;
 
     groupAgentsByType(agents) {
         const result = {};
-        agents.forEach(agent = > {;
+        agents.forEach(agent = > {
             types[agent.type] = (types[agent.type] || 0) + 1;
         });
         return types;
@@ -930,7 +921,7 @@ if (require.main = == module) {;
         const result = text.split( \');\'\'
         
         for (const word of words) {
-            if (areas.some(area = > word.toLowerCase().includes(area.toLowerCase()))) {;
+            if (areas.some(area = > word.toLowerCase().includes(area.toLowerCase()))) {
                 return word;
             }
         }
@@ -942,7 +933,7 @@ if (require.main = == module) {;
 module.exports = ContinuousAgentCreator;
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new ContinuousAgentCreator();
     
     // Mock market data for testing
@@ -957,15 +948,14 @@ if (require.main = == module) {;
         ],
         opportunities: "[""
             { title: AI Market Gap Solution\'", keyword: "\'AI automation\'", marketSize: "High", potential: "\'High\' "}""
-        ];
-    };
+        ]};
     
     creator.startAgentCreation(mockMarketData)
         .then(() => {
             console.log('✅ Agent creator completed successfully);''
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Agent creator failed:', error);''
             process.exit(1);
         });

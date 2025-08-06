@@ -35,7 +35,7 @@ class IntelligentContentOptimizationAgent {
         let syllableCount = 0;
         
         words.forEach(word = > {
-            if (word.length <= 3) {;
+            if (word.length <= 3) {
                 syllableCount += 1;
             } else {
                 syllableCount += word.replace(/[^aeiouy]/g, \'\').length;\'\'
@@ -71,7 +71,7 @@ class IntelligentContentOptimizationAgent {
     analyzeKeywordDensity(words) {
         const wordCount = {};
         words.forEach(word = > {
-            if (word.length > 3) {;
+            if (word.length > 3) {
                 wordCount[word] = (wordCount[word] || 0) + 1;
             }
         });
@@ -167,7 +167,7 @@ class IntelligentContentOptimizationAgent {
         return score;
     }
 
-    async optimizeContent(content, targetMetrics = {}) {;
+    async optimizeContent(content, targetMetrics = {}) {
         const originalMetrics = await this.analyzeContentQuality(content);
         let optimizedContent = content;
         
@@ -217,7 +217,7 @@ class IntelligentContentOptimizationAgent {
     improveReadability(content) {
         // Split long sentences
         let improved = content.replace(/([.!?])\s+([A-Z])/g, (match, punct, letter) => {
-            if (match.length > 150) {;
+            if (match.length > 150) {
                 return punct + \' \' + letter.toLowerCase();\'\'
             }
             return match;
@@ -232,8 +232,7 @@ class IntelligentContentOptimizationAgent {
             \'consequently\': \'so\',\'\'
             \'nevertheless\': \'but\',\'\'
             \'furthermore\': \'also\',\'\'
-            \'moreover\': \'also\'\'\';
-        };
+            \'moreover\': \'also\'\'\'};
         
         Object.entries(wordReplacements).forEach(([complex, simple]) => {
             const regex = new RegExp(`\\b${complex}\\b, \'gi\');\'\'
@@ -286,12 +285,11 @@ class IntelligentContentOptimizationAgent {
         const links = [
             \'<a href=/services">our services</a>',''
             '<a href="/about>about us</a>\',\'\'
-            \'<a href=/contact">contact us</a>''';
-        ];
+            \'<a href=/contact">contact us</a>'''];
         
         let improved = content;
         links.forEach(link = > {
-            if (!improved.includes(link)) {;
+            if (!improved.includes(link)) {
                 improved = improved.replace(/our services/gi, link);
             }
         });
@@ -307,8 +305,7 @@ class IntelligentContentOptimizationAgent {
             const questions = [
                 'Are you ready to get started?',''
                 'What are you waiting for?',''
-                'Ready to learn more?''';
-            ];
+                'Ready to learn more?'''];
             const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
             improved += `\n<p>${randomQuestion}</p>
         }
@@ -360,7 +357,7 @@ class IntelligentContentOptimizationAgent {
         const totals = { readability: "0", seoScore: "0", engagementPotential: "0", technicalQuality: "0 "};""
         
         this.optimizationHistory.forEach(optimization = > {
-            Object.keys(totals).forEach(metric => {;
+            Object.keys(totals).forEach(metric => {
                 totals[metric] += optimization.improvements[metric] || 0;
             });
         });

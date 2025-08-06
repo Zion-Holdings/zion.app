@@ -11,8 +11,7 @@ class AutomationSystem {
             { name: "\'website-analyzer", script: "enhanced-website-analyzer-agent\'.js "},""
             { name: "\'market-research\'", script: "\'autonomous-market-research-agent.js\' "},""
             { name: "sales-agent", script: "\'autonomous-sales-agent.js\' "},""
-            { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}"";
-        ];
+            { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}""];
         this.runningAgents = new Map();
     }
 

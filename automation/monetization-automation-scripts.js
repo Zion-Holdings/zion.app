@@ -67,8 +67,7 @@ class AutomationSystem {
         optimizationsApplied: "5",""
         expectedRevenueIncrease: "25000",""
         timeToImpact: "\'30 days\'\'
-      "}"";
-    };
+      "}""};
 
     // Simulate script execution
     for (const step of script.steps) {
@@ -103,8 +102,7 @@ class AutomationSystem {
           { tier: p\'r\'o", adjustment: "\'+12%", impact: "8000 "},""
           { tier: "enterprise", adjustment: "\'+8%\'", impact: "10000 "}""
         ]
-      };
-    };
+      }};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, pricing-automation);
@@ -136,8 +134,7 @@ class AutomationSystem {
         targetConversionRate: "0.12",""
         optimizationsApplied: "4",""
         expectedRevenueIncrease: "30000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'conversion-optimization);\'\'
@@ -169,8 +166,7 @@ class AutomationSystem {
         targetChurnRate: "0.03",""
         ltvImprovement: "0.15",""
         expectedRevenueIncrease: "20000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'subscription-manageme\'nt\');\'\'
@@ -202,8 +198,7 @@ class AutomationSystem {
         targetRevenue: "35000",""
         commissionOptimizations: "2",""
         expectedRevenueIncrease: "10000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, marketplace-optimizati\'o\'n);\'\'
@@ -235,8 +230,7 @@ class AutomationSystem {
         targetAdRevenue: "22000",""
         placementOptimizations: "3",""
         expectedRevenueIncrease: "7000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'ad-revenue-optimization);\'\'
@@ -268,8 +262,7 @@ class AutomationSystem {
         targetPipeline: "400000",""
         leadQualification: "0.75",""
         expectedRevenueIncrease: "50000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'enterprise-sal\'es\');\'\'
@@ -301,8 +294,7 @@ class AutomationSystem {
         targetDataRevenue: "45000",""
         dataProducts: "3",""
         expectedRevenueIncrease: "15000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, data-monetizati\'o\'n);\'\'
@@ -334,8 +326,7 @@ class AutomationSystem {
         targetAffiliateRevenue: "20000",""
         activePartners: "45",""
         expectedRevenueIncrease: "8000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'affiliate-management);\'\'
@@ -367,8 +358,7 @@ class AutomationSystem {
         targetConversionRate: "0.08",""
         freemiumUsers: "50000",""
         expectedRevenueIncrease: "25000""
-      "}"";
-    };
+      "}""};
 
     for (const step of script.steps) {
       await this.executeScriptStep(step, \'freemium-conversi\'on\');\'\'
@@ -392,8 +382,7 @@ class AutomationSystem {
       scriptType,
       timestamp: "new Date().toISOString()",""
       status: "completed\')",""
-      impact: "this.calculateStepImpact(step", scriptType)"";
-    };
+      impact: "this.calculateStepImpact(step", scriptType)""};
 
     // Save step result
     const filePath = path.join(this.resultsDir, step-${Date.now()}.json");""
@@ -472,8 +461,7 @@ class AutomationSystem {
         \'improve-feature-gati\'ng\': 10000,\'\'
         \'enhance-upgrade-promotion: "12000",""
         increase-paid-conversio\'n\'s: "15000""
-      "}"";
-    };
+      "}""};
 
     return impactMap[scriptType]?.[step] || 5000;
   }
@@ -500,8 +488,7 @@ class AutomationSystem {
         totalRevenueImpact: "250000",""
         averageRevenuePerScript: "25000",""
         executionTime: "2 hours\'\'\'
-      "}"";
-    };
+      "}""};
 
     const filePath = path.join(this.resultsDir, "automation-report-${Date.now()}.json");""
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));

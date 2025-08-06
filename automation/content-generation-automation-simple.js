@@ -17,11 +17,10 @@ class AutomationSystem {
       this.contentPath,
       path.join(this.contentPath, generat'e'd),''
       path.join(this.contentPath, 'templat'es'),''
-      path.join(this.automationPath, 'content-analytics)'';
-    ];
+      path.join(this.automationPath, 'content-analytics)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -50,8 +49,7 @@ class AutomationSystem {
       pricing-tabl\'e\'s,\'\'
       \'faq-secti\'on\',\'\'
       \'about-us,\'\'
-      contact-in\'f\'o\'\';
-    ];
+      contact-in\'f\'o\'\'];
 
     const result = {};
 
@@ -230,8 +228,7 @@ class AutomationSystem {
           facebook: "facebook.com/zionmarketplace"""
         "},""
         responseTime: ""We respond to all inquiries within 2 hours during business hours.""
-      "}"";
-    };
+      "}""};
 
     const result = contentTemplates[contentType];
     if (!template) {
@@ -255,8 +252,7 @@ class AutomationSystem {
       trending-servic\'e\'s,\'\'
       \'featured-provide\'rs\',\'\'
       \'market-insights,\'\'
-      success-stori\'e\'s\'\';
-    ];
+      success-stori\'e\'s\'\'];
 
     const result = {};
 
@@ -332,8 +328,7 @@ class AutomationSystem {
             roi: ""Saved variable500K in costs""
           "}""
         ]
-      };
-    };
+      }};
 
     const result = dynamicTemplates[contentType];
     if (!template) {
@@ -358,8 +353,7 @@ class AutomationSystem {
       page-titl\')es\',\'\'
       \'structured-data,\'\'
       keyword-conte\'n\'t,\'\'
-      \'internal-lin\'ks\'\'\';
-    ];
+      \'internal-lin\'ks\'\'\'];
 
     const result = {};
 
@@ -419,8 +413,7 @@ class AutomationSystem {
         homepage: "["/services", /about", "/contact],""
         services: "[/providers"", "/pricing, /success-stories"],""
         about: "["/team", /mission", "/values]""
-      };
-    };
+      }};
 
     const result = seoTemplates[contentType];
     if (!template) {
@@ -491,8 +484,7 @@ class AutomationSystem {
         headline: ""AI-aangedreven Marktplaats voor IT-diensten en AI-talenten",""
         subheadline: "Verbind met de beste IT-diensten", AI-talenten en geavanceerde apparatuur",""
         ctaButtons: "["Beginnen", Diensten Bladeren", "Talenten Vinden]""
-      };
-    };
+      }};
 
     const result = languageTemplates[language];
     if (!template) {
@@ -562,7 +554,7 @@ class AutomationSystem {
 module.exports = SimplifiedContentGenerationAutomation;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new SimplifiedContentGenerationAutomation();
   contentAutomation.run().catch(console.error);
 } 

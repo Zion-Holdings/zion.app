@@ -64,12 +64,11 @@ class AutomationSystem {
       \'mixed-reali\'ty\',\'\'
       \'spatial-computing,\'\'
       autonomous-syste\'m\'s,\'\'
-      \'digital-twi\'ns\'\'\';
-    ];
+      \'digital-twi\'ns\'\'\'];
     
     for (const pageType of pageTypes) {
       const result = "pages/${pageType}.tsx""
-      if (!fs.existsSync(pagePath)) {;
+      if (!fs.existsSync(pagePath)) {
         const result = this.generatePageContent(pageType);
         fs.writeFileSync(pagePath, content);
         this.newPages.push(pagePath);
@@ -92,8 +91,7 @@ class AutomationSystem {
       \'machine-learning-pipeli\'ne\',\'\'
       \'natural-language-interface,\'\'
       computer-vision-analys\'i\'s,\'\'
-      \'blockchain-integrati\'on\'\'\';
-    ];
+      \'blockchain-integrati\'on\'\'\'];
     
     for (const featureType of featureTypes) {
       const result = "components/features/${featureType}.tsx"";
@@ -125,8 +123,7 @@ class AutomationSystem {
       \'machine-learning-implementati\'on\',\'\'
       \'blockchain-development,\'\'
       iot-solutio\'n\'s,\'\'
-      \'quantum-computing-servic\'es\'\'\';
-    ];
+      \'quantum-computing-servic\'es\'\'\'];
     
     for (const serviceType of serviceTypes) {
       const result = "pages/services/${serviceType}.tsx"";
@@ -158,12 +155,11 @@ class AutomationSystem {
       \'data-visualizati\'on\',\'\'
       \'notification-center,\'\'
       search-interfa\'c\'e,\'\'
-      \'analytics-widg\'et\'\'\';
-    ];
+      \'analytics-widg\'et\'\'\'];
     
     for (const componentType of componentTypes) {
       const result = "components/${componentType}.tsx""
-      if (!fs.existsSync(componentPath)) {;
+      if (!fs.existsSync(componentPath)) {
         const result = this.generateComponent(componentType);
         fs.writeFileSync(componentPath, content);
         this.generatedCount++;
@@ -185,8 +181,7 @@ class AutomationSystem {
       \'machine-learning-a\'pi\',\'\'
       \'blockchain-api,\'\'
       iot-a\'p\'i,\'\'
-      \'quantum-a\'pi\'\'\';
-    ];
+      \'quantum-a\'pi\'\'\'];
     
     for (const apiType of apiTypes) {
       const result = "pages/api/${apiType}.ts"";
@@ -355,8 +350,7 @@ const ${this.formatComponentName(pageType)} = () => {
         </section></div>
       </div></div>
     </Layout>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(pageType)};
 ;
@@ -397,8 +391,7 @@ export default ${this.formatComponentName(pageType)};
       \'mixed-reali\'ty\': \'Mixed\' reality experiences that blend physical and digital worlds.\',\'\'
       spatial-computing: "'Spatial computing solutions that understand and interact with 3D space.'",""
       \'autonomous-systems: "Autonomou's' systems that operate independently and make intelligent decisions.",""
-      \'digital-twi\'ns\': \'Digital\' twin technology that creates virtual replicas of physical systems.\'\'\';
-    };
+      \'digital-twi\'ns\': \'Digital\' twin technology that creates virtual replicas of physical systems.\'\'\'};
     
     return descriptions[pageType] || "Advanced ${this.formatTitle(pageType)} solutions that transform your business operations.""
   }
@@ -412,8 +405,7 @@ export default ${this.formatComponentName(pageType)};
         { title: "\'Smart Integration\'", description: "\'Seamlessly integrate with existing systems and workflows\' "},""
         { title: "Custom Workflows", description: "\'Create custom automation workflows tailored to your needs\' "},""
         { title: "\'Performance Analytics\'", description: "Track and optimize automation performance with detailed metrics "}""
-      ];
-    };
+      ]};
     
     return featureSets[pageType] || [
       { title: "\'Advanced AI Capabilities\'", description: "\'Leverage cutting-edge AI technology for superior results\' "},""
@@ -432,8 +424,7 @@ export default ${this.formatComponentName(pageType)};
         { title: "\'Cost Savings\'", description: "Lower operational costs while improving productivity "},""
         { title: "\'Error Reduction\'", description: "\'Minimize human errors with AI-driven accuracy\' "},""
         { title: "Scalability", description: "\'Scale operations without proportional cost increases\' "}""
-      ];
-    };
+      ]};
     
     return benefitSets[pageType] || [
       { title: "\'Enhanced Productivity\'", description: "Boost productivity with AI-powered tools and automation "},""
@@ -480,8 +471,7 @@ const ${this.formatComponentName(featureType)}: React.FC<${this.formatComponentN
         </button></div>
       </div></div>
     </motion.div>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(featureType)};
 ;
@@ -522,8 +512,7 @@ const ${this.formatComponentName(serviceType)} = () => {
         </section></div>
       </div></div>
     </Layout>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(serviceType)};
 
@@ -564,8 +553,7 @@ const ${this.formatComponentName(componentType)}: React.FC<${this.formatComponen
         <div className="h-4" bg-gray-200 rounded animate-pulse w-1/2></div></div>""
       </div></div>
     </motion.div>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(componentType)};
 """
@@ -575,7 +563,7 @@ export default ${this.formatComponentName(componentType)};
     const result = this.formatTitle(apiType);
     return "import React from \'react\'
 
-type Data = {;
+type Data = {
   success: "boolean;""
   data?: any;
   message?: string;
@@ -642,7 +630,7 @@ export default async function handler(
 }
 
 // Start the generator if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new NewContentGenerator();
   generator.start();
 }

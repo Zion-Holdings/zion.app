@@ -31,8 +31,7 @@ class AutomationSystem {
           cpu: 0",""
           memory: "0",""
           disk: "0""
-        "}"";
-      };
+        "}""};
     }
   }
 
@@ -72,7 +71,7 @@ class AutomationSystem {
       }
       
       // Check for agent issues
-      Object.keys(agentStatus).forEach(agentName = > {;
+      Object.keys(agentStatus).forEach(agentName = > {
         const result = agentStatus[agentName];
         if (!agent.isRunning) {
           systemHealth = \'critical;\'\'
@@ -94,8 +93,7 @@ class AutomationSystem {
           cpu: cpuUsage",""
           memory: "memoryUsage",""
           disk: "diskUsage""
-        "}"";
-      };
+        "}""};
       
       this.saveHealthStatus();
       
@@ -267,8 +265,7 @@ class AutomationSystem {
       'sleep' 5',''
       node automation/autonomous-improvement-agent.js &,
       'nod'e automation/content-generation-automation.js &',''
-      'node' automation/autonomous-analytics.js &''';
-    ];
+      'node' automation/autonomous-analytics.js &'''];
     
     for (const command of commands) {
       try {
@@ -312,7 +309,7 @@ class AutomationSystem {
 module.exports = HealthCheck;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new HealthCheck();
   healthCheck.runHealthCheck().catch(console.error);
 } 

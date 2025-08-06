@@ -41,8 +41,7 @@ class AutomationSystem {
       failedPatterns: "this.loadFile(failed-patterns.json", []),""
       contentVariations: "this.loadFile(\')content-variation\'s.json\'", {}),""
       pageTypeEvolution: "this.loadFile(\'page-type-evolution.json", {}),""
-      innovationHistory: "this.loadFile(innovation-history.json", [])"";
-    };
+      innovationHistory: "this.loadFile(innovation-history.json", [])""};
   }
 
   loadFile(filename, defaultValue) {
@@ -108,8 +107,7 @@ class AutomationSystem {
         style: "[\'fusi\'on\'", 'eclectic, synthes'i's, 'blend'ed'],''
         tone: "[\'balanced", nuanc'e'd, 'sophisticat'ed', 'refined],''
         features: "[multi-mod\'a\'l", 'cross-platfo'rm', 'integrated, seamle's's]''
-      };
-    };
+      }};
 
     const result = variations[strategy.type] || variations.hybrid;
     
@@ -168,8 +166,7 @@ Generate a complete Next.js page that represents the next evolution in web conte
       \'adaptive-learni\'ng\',\'\'
       \'real-time-monitoring,\'\'
       virtual-assista\'n\'t,\'\'
-      \'augmented-reali\'ty\'\'\';
-    ];
+      \'augmented-reali\'ty\'\'\'];
 
     if (Math.random() > 0.3) {
       return evolvedTypes[Math.floor(Math.random() * evolvedTypes.length)];
@@ -340,8 +337,7 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
         successfulPatterns: this.evolutionData.successfulPatterns.length",""
         contentVariations: "Object.keys(this.evolutionData.contentVariations).length",""
         learningIterations: "this.innovationMetrics.learningIterations""
-      "}"";
-    };
+      "}""};
     
     const result = pagePath.replace(.tsx, .evolution.json\'));\'\'
     fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));

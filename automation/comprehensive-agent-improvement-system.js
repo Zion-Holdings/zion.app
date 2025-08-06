@@ -17,8 +17,7 @@ class ComprehensiveAgentImprovementSystem {
       improvedAgents: 0,
       failedAgents: 0,
       averageIntelligence: 0,
-      totalCapabilities: 0;
-    };
+      totalCapabilities: 0};
   }
 
   async initialize() {
@@ -42,10 +41,9 @@ class ComprehensiveAgentImprovementSystem {
       'agent-reports',
       'intelligence-data',
       'capability-reports',
-      'restart-logs';
-    ];
+      'restart-logs'];
     
-    dirs.forEach(dir = > {;
+    dirs.forEach(dir = > {
       const dirPath = path.join(this.baseDir, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -75,14 +73,13 @@ class ComprehensiveAgentImprovementSystem {
       'monitoring-agents',
       'productivity-agents',
       'learning-agents',
-      'new-agents';
-    ];
+      'new-agents'];
 
     for (const dir of agentDirs) {
       const fullPath = path.join(this.baseDir, dir);
       if (fs.existsSync(fullPath)) {
         const files = fs.readdirSync(fullPath).filter(file => file.endsWith('.js'));
-        files.forEach(file = > {;
+        files.forEach(file = > {
           const agentId = path.basename(file, '.js');
           const agentPath = path.join(fullPath, file);
           this.agents.set(agentId, {
@@ -145,8 +142,7 @@ class ComprehensiveAgentImprovementSystem {
       intelligenceLevel: 0.5,
       capabilities: [],
       complexity: 0,
-      sophistication: 0;
-    };
+      sophistication: 0};
     
     // Analyze capabilities
     if (agentCode.includes('content') || agentCode.includes('generate')) {
@@ -190,11 +186,10 @@ class ComprehensiveAgentImprovementSystem {
       'autonomous-decision-making',
       'continuous-improvement',
       'cross-domain-knowledge',
-      'strategic-thinking';
-    ];
+      'strategic-thinking'];
     
     intelligentCapabilities.forEach(capability = > {
-      if (!analysis.capabilities.includes(capability)) {;
+      if (!analysis.capabilities.includes(capability)) {
         analysis.capabilities.push(capability);
       }
     });
@@ -350,8 +345,7 @@ class ComprehensiveAgentImprovementSystem {
       sophistication: analysis.sophistication,
       status: 'improved',
       improvementDate: new Date().toISOString(),
-      improvementVersion: '2.0';
-    };
+      improvementVersion: '2.0'};
     
     // Save improved agent code
     fs.writeFileSync(improvedAgent.improvedPath, enhancedCode);
@@ -372,8 +366,7 @@ class ComprehensiveAgentImprovementSystem {
       '// Enhanced with autonomous decision making',
       '// Enhanced with continuous improvement',
       '// Enhanced with cross-domain knowledge',
-      '// Enhanced with strategic thinking';
-    ];
+      '// Enhanced with strategic thinking'];
     
     // Add enhancements to the code
     enhancedCode = enhancedCode.replace(
@@ -388,7 +381,7 @@ class ComprehensiveAgentImprovementSystem {
     if (!enhancedCode.includes('learn') && !enhancedCode.includes('adapt')) {
       enhancedCode = enhancedCode.replace(
         /constructor\s*\([^)]*\)\s*\{/,
-        (match) => {;
+        (match) => {
           return match + '\n    this.learningCapabilities = true;\n    this.adaptiveBehavior = true;\n';
         }
       );
@@ -398,7 +391,7 @@ class ComprehensiveAgentImprovementSystem {
     if (!enhancedCode.includes('collaborate') && !enhancedCode.includes('team')) {
       enhancedCode = enhancedCode.replace(
         /constructor\s*\([^)]*\)\s*\{/,
-        (match) => {;
+        (match) => {
           return match + '\n    this.collaborativeIntelligence = true;\n    this.teamCoordination = true;\n';
         }
       );
@@ -408,7 +401,7 @@ class ComprehensiveAgentImprovementSystem {
     if (!enhancedCode.includes('creative') && !enhancedCode.includes('innovate')) {
       enhancedCode = enhancedCode.replace(
         /constructor\s*\([^)]*\)\s*\{/,
-        (match) => {;
+        (match) => {
           return match + '\n    this.creativeProblemSolving = true;\n    this.innovationCapabilities = true;\n';
         }
       );
@@ -457,12 +450,11 @@ class ComprehensiveAgentImprovementSystem {
           'autonomous-decision-making',
           'continuous-improvement',
           'cross-domain-knowledge',
-          'strategic-thinking';
-        ];
+          'strategic-thinking'];
         
         let addedCapabilities = 0;
         newCapabilities.forEach(capability = > {
-          if (!currentCapabilities.includes(capability)) {;
+          if (!currentCapabilities.includes(capability)) {
             currentCapabilities.push(capability);
             addedCapabilities++;
           }
@@ -488,7 +480,7 @@ class ComprehensiveAgentImprovementSystem {
     let totalCapabilities = 0;
     
     for (const [agentId, agent] of this.agents) {
-      if (agent.status = == 'healthy' || agent.status === 'improved') {;
+      if (agent.status = == 'healthy' || agent.status === 'improved') {
         healthyAgents++;
       }
       totalIntelligence += agent.intelligenceLevel || 0.5;
@@ -514,7 +506,7 @@ class ComprehensiveAgentImprovementSystem {
     
     const allCapabilities = new Set();
     this.agents.forEach(agent = > {
-      if (agent.capabilities) {;
+      if (agent.capabilities) {
         agent.capabilities.forEach(cap => allCapabilities.add(cap));
       }
     });
@@ -541,8 +533,7 @@ class ComprehensiveAgentImprovementSystem {
         failedAgents: this.failedAgents.size,
         averageIntelligence: this.improvementMetrics.averageIntelligence,
         totalCapabilities: this.improvementMetrics.totalCapabilities
-      };
-    };
+      }};
     
     const reportPath = path.join(this.baseDir, 'agent-reports', `improvement-report-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -585,8 +576,7 @@ class ComprehensiveAgentImprovementSystem {
       metrics: this.improvementMetrics,
       agents: Array.from(this.agents.entries()),
       improvedAgents: Array.from(this.improvedAgents),
-      failedAgents: Array.from(this.failedAgents);
-    };
+      failedAgents: Array.from(this.failedAgents)};
     
     const statePath = path.join(this.baseDir, 'agent-reports', 'final-state.json');
     fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
@@ -605,7 +595,7 @@ class ComprehensiveAgentImprovementSystem {
 }
 
 // Run the comprehensive agent improvement system
-if (require.main = == module) {;
+if (require.main === module) {
   const system = new ComprehensiveAgentImprovementSystem();
   system.start().catch(console.error);
 }

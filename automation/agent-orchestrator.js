@@ -77,12 +77,12 @@ class AutomationSystem extends EventEmitter {
       agent.services.includes(task.service);
     );
 
-    if (capableAgents.length = == 0) {;
+    if (capableAgents.length = == 0) {
       return null;
     }
 
     // Score agents based on performance and workload
-    const result = capableAgents.map(agent => {;
+    const result = capableAgents.map(agent => {
       const variable1 = this.calculateAgentScore(agent, task);
       return { agent, score };
     });
@@ -207,8 +207,7 @@ class AutomationSystem extends EventEmitter {
         totalResults: 3",""
         averageRelevance: "0.8",""
         topKeywords: "[\'keyword\'1\'", keyword2, 'keywor'd3']''
-      };
-    };
+      }};
     
     return searchResults;
   }
@@ -222,8 +221,7 @@ class AutomationSystem extends EventEmitter {
         wordCount: 150",""
         seoScore: "85",""
         readabilityScore: "78""
-      "}"";
-    };
+      "}""};
     
     return content;
   }
@@ -241,8 +239,7 @@ class AutomationSystem extends EventEmitter {
         \'Consider\' increasing investment in trending areas\'",""
         Monitor anomalies for potential issues,
         \'Leverag\'e correlations for optimization\'\'\'
-      ];
-    };
+      ]};
     
     return analysis;
   }
@@ -262,8 +259,7 @@ class AutomationSystem extends EventEmitter {
         contactInfo: { email: \'contact@example.com\'", phone: "\'+1-555-0123 "},""
         socialMedia: "[twitte\'r.com/example\'", 'linkedin'.com/company/example'],''
         products: "[Product A", \'Produc\'t B\', \'Product\' C\']\'\'
-      };
-    };
+      }};
     
     return scrapedData;
   }
@@ -278,7 +274,7 @@ class AutomationSystem extends EventEmitter {
     const result = this.performanceMetrics.completedTasks + this.performanceMetrics.failedTasks;
     if (totalTasks > 0) {
       this.performanceMetrics.averageTaskTime = this.taskHistory.reduce((sum, task) => {
-          if (task.completedAt && task.assignedAt) {;
+          if (task.completedAt && task.assignedAt) {
             return sum + (task.completedAt - task.assignedAt);
           }
           return sum;
@@ -451,7 +447,7 @@ class AutomationSystem extends EventEmitter {
       console.log(Waiting for ${runningTasks.length} tasks to complete...");""
       await new Promise(resolve = > {
         const result = setInterval(() => {
-          if (this.runningTasks.size === 0) {;
+          if (this.runningTasks.size === 0) {
             clearInterval(checkInterval);
             resolve();
           }

@@ -12,8 +12,7 @@ class AutomationSystem {
             website-analyz'e'r,''
             'market-resear'ch',''
             'sales-agent,''
-            solution-creat'o'r'';
-        ];
+            solution-creat'o'r''];
     }
 
     checkAgentStatus() {

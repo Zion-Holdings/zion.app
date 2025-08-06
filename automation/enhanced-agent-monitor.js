@@ -175,8 +175,7 @@ class EnhancedAgentMonitor {
       \'marketing\': [predictive-analytics\', \'behavioral-targeting, \'omnichannel-strategy\', viral-marketing\', \'sentiment-analysis],\'\'
       \'development\': [microservices\', \'serverless, \'edge-computing\', ai-integration\', \'blockchain-integration],\'\'
       \'automation\': [self-healing\', \'predictive-maintenance, \'autonomous-decision-making\', continuous-learning\', \'adaptive-optimization],\'\'
-      \'research\': [sentiment-analysis\', \'trend-prediction, \'market-simulation\', competitive-intelligence\', \'real-time-analytics]\'\';
-    };
+      \'research\': [sentiment-analysis\', \'trend-prediction, \'market-simulation\', competitive-intelligence\', \'real-time-analytics]\'\'};
     
     const newCapabilities = [];
     const baseType = this.getAgentBaseType(agentName);
@@ -351,8 +350,7 @@ class EnhancedAgentMonitor {
       marketing\': [\'ai-driven-campaigns, \'predictive-lead-scoring\', real-time-optimization\', \'cross-channel-attribution],\'\'
       \'development\': [ai-code-generation\', \'automated-testing, \'continuous-deployment\', performance-optimization\'],\'\'
       \'automation: "['machine-learning-integration'", predictive-maintenance\', \'autonomous-scaling, \'intelligent-routing\'],\'\'
-      research\': [\'ai-powered-analysis, \'predictive-modeling\', real-time-insights\', \'automated-reporting]\'\';
-    };
+      research\': [\'ai-powered-analysis, \'predictive-modeling\', real-time-insights\', \'automated-reporting]\'\'};
     
     const baseType = this.getAgentBaseType(agentName);
     return advancedCapabilities[baseType] || advancedCapabilities[\'automation\'];\'\'
@@ -386,8 +384,7 @@ class EnhancedAgentMonitor {
       memory-optimization\',\'\'
       \'cpu-optimization,\'\'
       \'network-optimization\',\'\'
-      cache-optimization\'\'\';
-    ];
+      cache-optimization\'\'\'];
     
     for (const optimization of optimizations) {
       try {
@@ -538,7 +535,7 @@ async function main() {
   }
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }
 

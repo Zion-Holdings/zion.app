@@ -198,8 +198,8 @@ async function main() {
   console.log('  ./automation/setup-cron.sh                       # Setup cron job);''
 }
 
-if (require.main = == module) {
-  main().catch(error => {;
+if (require.main === module) {
+  main().catch(error => {
     console.error('❌ Error:', error);''
     process.exit(1);
   });

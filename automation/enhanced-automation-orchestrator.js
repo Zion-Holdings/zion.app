@@ -58,8 +58,7 @@ class EnhancedAutomationOrchestrator {
                 lastRun: "null",""
                 errors: "[]",""
                 performance: "{"}""
-            };
-        };
+            }};
         
         this.ensureDirectories();
         this.loadStatus();
@@ -202,7 +201,7 @@ class EnhancedAutomationOrchestrator {
             // Check recent log files
             const logFiles = await fs.readdir(this.logsDir);
             const contentLogs = logFiles.filter(f => f.includes('content-generation'));''
-            const recentLogs = contentLogs.filter(f => {;
+            const recentLogs = contentLogs.filter(f => {
                 const stats = fs.statSync(path.join(this.logsDir, f));
                 return Date.now() - stats.mtime.getTime() < 24 * 60 * 60 * 1000; // Last 24 hours
             });
@@ -346,7 +345,7 @@ class EnhancedAutomationOrchestrator {
             
             if (exists) {
                 const files = await fs.readdir(researchDir);
-                const recentFiles = files.filter(f => {;
+                const recentFiles = files.filter(f => {
                     const stats = fs.statSync(path.join(researchDir, f));
                     return Date.now() - stats.mtime.getTime() < 7 * 24 * 60 * 60 * 1000; // Last 7 days
                 });
@@ -506,8 +505,7 @@ module.exports = {
   experimental: "{""
     optimizeCss: true",""
     optimizePackageImports: "[\'@mui/material\'", '@emotion/react', '@emotion/styled']''
-  };
-};`
+  }};`
                     await fs.writeFile(nextConfigPath, config);
                 }
             }
@@ -544,8 +542,7 @@ module.exports = {
                     cpuThreshold: 80",""
                     memoryThreshold: "85",""
                     diskThreshold: "90""
-                "}"";
-            };
+                "}""};
             
             await fs.writeJson(path.join(this.automationDir, \'monitoring-config.json\'), monitoringConfig, { spaces: "2 "});""
         } catch (error) {
@@ -585,8 +582,7 @@ module.exports = {
                 name: \'Adaptive Security Monitoring\'",""
                 description: "\'Adaptive security monitoring with threat detection\'",""
                 features: "[\'threat-detection\'", 'auto-response', 'vulnerability-scanning']''
-            };
-        };
+            }};
         
         await fs.writeJson(path.join(this.automationDir, 'enhancements.json'), enhancements, { spaces: "2 "});""
     }
@@ -609,8 +605,7 @@ module.exports = {
                 performance: true",""
                 security: "true",""
                 content: "true""
-            "}"";
-        };
+            "}""};
         
         await fs.writeJson(path.join(this.automationDir, \'advanced-monitoring.json\'), monitoringSystem, { spaces: "2 "});""
     }
@@ -631,8 +626,7 @@ module.exports = {
                 model: \'anomaly-detection\'",""
                 features: "[\'vulnerability-count\'", 'dependency-age', 'update-frequency'],''
                 prediction: "\'security-risk\'\'\'
-            "}"";
-        };
+            "}""};
         
         await fs.writeJson(path.join(this.automationDir, \'predictive-analytics.json\'), analytics, { spaces: "2 "});""
     }
@@ -671,8 +665,7 @@ module.exports = {
                 name: "\'content-generation\'",""
                 schedule: "\'*/30 * * * *\'",""
                 command: "\'node automation/enhanced-automation-orchestrator.js generate-content\'\'\'
-            "}"";
-        ];
+            "}""];
         
         await fs.writeJson(path.join(this.automationDir, \'monitoring-cron.json\'), cronJobs, { spaces: "2 "});""
     }
@@ -693,8 +686,7 @@ module.exports = {
                 title: \'Content Performance\'",""
                 metrics: "[\'generation-rate\'", 'quality-score', 'engagement-rate'],''
                 refreshInterval: "300000""
-            "}"";
-        };
+            "}""};
         
         await fs.writeJson(path.join(this.automationDir, \'performance-dashboards.json\'), dashboards, { spaces: "2 "});""
     }
@@ -797,7 +789,7 @@ module.exports = {
 }
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const orchestrator = new EnhancedAutomationOrchestrator();
     orchestrator.startEnhancedOrchestration()
         .then(() => {

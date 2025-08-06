@@ -187,8 +187,7 @@ class AutonomousSystemLauncher {
       { name: 'Content Generator', script: 'enhanced-content-generator-agent.js' },
       { name: 'Error Fixer', script: 'error-fixer-agent.js' },
       { name: 'Improvement Agent', script: 'autonomous-improvement-agent.js' },
-      { name: 'Content Integrator', script: 'content-integration-agent.js' };
-    ];
+      { name: 'Content Integrator', script: 'content-integration-agent.js' }];
     
     for (const agent of agents) {
       await this.startAgent(agent.name, agent.script);
@@ -313,8 +312,7 @@ class AutonomousSystemLauncher {
       },
       logFiles: 0,
       generatedContent: 0,
-      analysisResults: 0;
-    };
+      analysisResults: 0};
     
     // Check agent PIDs
     const agentTypes = [
@@ -323,8 +321,7 @@ class AutonomousSystemLauncher {
       'content-generator',
       'error-fixer',
       'improvement-agent',
-      'content-integrator';
-    ];
+      'content-integrator'];
     
     for (const agentType of agentTypes) {
       const pidFile = path.join(this.pidDir, `${agentType}.pid`);

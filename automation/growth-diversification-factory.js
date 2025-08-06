@@ -31,7 +31,7 @@ class AutomationSystem {
     
     // Create directories
     [this.agentsPath, this.strategiesPath, this.plansPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -239,8 +239,7 @@ class AutomationSystem {
         tasksCompleted: 0",""
         successRate: "100",""
         avgResponseTime: "0""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
@@ -402,8 +401,7 @@ class AutomationSystem {
       original: "content",""
       adapted: "this.performCulturalAdaptation(content", targetCulture),""
       culture: "targetCulture",""
-      changes: "this.identifyCulturalChanges(content", targetCulture)"";
-    };
+      changes: "this.identifyCulturalChanges(content", targetCulture)""};
     
     return adaptation;
   }
@@ -414,8 +412,7 @@ class AutomationSystem {
       content: "content",""
       region: "region",""
       compliant: "this.checkCompliance(content", region),""
-      requiredChanges: "this.identifyRequiredChanges(content", region)"";
-    };
+      requiredChanges: "this.identifyRequiredChanges(content", region)""};
     
     return compliance;
   }
@@ -1442,7 +1439,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   getOrCreateAgent(type) {
     // Find existing agent or create new one
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, ${agentId}.js"'));""
       }
     }
@@ -1567,7 +1564,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 module.exports = GrowthDiversificationFactory;
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new GrowthDiversificationFactory();
   console.log(🏭 Growth Diversification Factory started successfully');''
   console.log(📊 Factory Status:', factory.getFactoryStatus());''

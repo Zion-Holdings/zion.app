@@ -18,11 +18,10 @@ class AutomationSystem {
   ensureDirectories() {
     const filePath = [
       path.join(this.automationPath, 'master-analytics),''
-      path.join(this.automationPath, lo'g's)'';
-    ];
+      path.join(this.automationPath, lo'g's)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -211,8 +210,7 @@ class AutomationSystem {
           contentFiles: 0",""
           componentFiles: "0",""
           validationPassed: "true""
-        "}"";
-      };
+        "}""};
 
       // Count actual files
       const filePath = path.join(this.projectRoot, src, \')conte\'nt\', \'generated);\'\'
@@ -291,7 +289,7 @@ class AutomationSystem {
 module.exports = SimplifiedMasterContentAutomation;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new SimplifiedMasterContentAutomation();
   masterAutomation.run().catch(console.error);
 } 

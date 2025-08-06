@@ -1,0 +1,28 @@
+{
+  "id": "paid-advertising-1754479200631",
+  "platform": "facebook-ads",
+  "strategy": {
+    "targeting": [
+      "interest targeting",
+      "lookalike audiences",
+      "custom audiences"
+    ],
+    "creative": [
+      "image ads",
+      "video ads",
+      "carousel ads"
+    ],
+    "budget": "$1,500-6,000 monthly",
+    "optimization": [
+      "audience optimization",
+      "creative testing",
+      "placement optimization"
+    ]
+  },
+  "expectedResults": {
+    "impressions": "150,000-750,000 monthly",
+    "clicks": "3,000-15,000 monthly",
+    "conversions": "150-750 monthly",
+    "roas": "2.5:1 to 4:1"
+  }
+}

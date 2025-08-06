@@ -82,10 +82,9 @@ class AutomationSystem {
       \'frontend-sync-pi\'ds\',\'\'
       \'frontend-sync-templates,\'\'
       frontend-sync-improvemen\'t\'s,\'\'
-      \'frontend-sync-learni\'ng\'\'\';
-    ];
+      \'frontend-sync-learni\'ng\'\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -136,8 +135,7 @@ class AutomationSystem {
       { name: "scaling-generato\'r", type: "\'ScalingGenerator\' "},""
       { name: "\'testing-generator", type: "TestingGenerato\'r "},""
       { name: "\'deployment-generator\'", type: "\'DeploymentGenerator "},""
-      { name: "monitoring-generato\'r", type: "\'MonitoringGenerator\' "}"";
-    ];
+      { name: "monitoring-generato\'r", type: "\'MonitoringGenerator\' "}""];
     
     for (const generator of generators) {
       await this.createGenerator(generator.name, generator.type);
@@ -173,7 +171,7 @@ class ${type} {
     this.learningData = [];
   }
 
-  async generate(config = {}) {;
+  async generate(config = {}) {
     console.log(\🏭 [\${this.name}] Generating autonomous system...\);
     
     try {
@@ -234,8 +232,7 @@ module.exports = ${type};
       { name: "\'resource-monitor\'", type: "\'ResourceMonitor "},""
       { name: "quality-monito\'r", type: "\'QualityMonitor\' "},""
       { name: "\'security-monitor", type: "SecurityMonito\'r "},""
-      { name: "\'compliance-monitor\'", type: "\'ComplianceMonitor "}"";
-    ];
+      { name: "\'compliance-monitor\'", type: "\'ComplianceMonitor "}""];
     
     for (const monitor of monitors) {
       await this.createMonitor(monitor.name, monitor.type);
@@ -333,8 +330,7 @@ module.exports = ${type};
       performance-sync-age\'n\'t,\'\'
       \'security-sync-age\'nt\',\'\'
       \'quality-sync-agent,\'\'
-      compliance-sync-age\'n\'t\'\';
-    ];
+      compliance-sync-age\'n\'t\'\'];
     
     for (const template of templates) {
       await this.createTemplate(template);
@@ -368,7 +364,7 @@ class ${className} {
     this.config = {};
   }
 
-  async generate(config = {}) {;
+  async generate(config = {}) {
     console.log(\"📋 [\${this.name}] Generating from template...\");""
     
     try {
@@ -456,8 +452,7 @@ module.exports = ${className};
       performance-sy\'n\'c,\'\'
       \'security-sy\'nc\',\'\'
       \'quality-sync,\'\'
-      compliance-sy\'n\'c\'\';
-    ];
+      compliance-sy\'n\'c\'\'];
     
     for (const agentType of requiredAgents) {
       if (!this.hasAgentFor(agentType)) {
@@ -540,8 +535,7 @@ module.exports = ${className};
       \'deployment-automati\'on\',\'\'
       \'performance-monitoring,\'\'
       security-scanni\'n\'g,\'\'
-      \'quality-assuran\'ce\'\'\';
-    ];
+      \'quality-assuran\'ce\'\'\'];
     
     for (const automationType of requiredAutomations) {
       if (!this.hasAutomationFor(automationType)) {
@@ -1250,7 +1244,7 @@ module.exports = \${className};
   }
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new FrontendSyncAutonomousAgentsFactory();
   
   process.on(SIGINT, async () => {
@@ -1265,7 +1259,7 @@ if (require.main = == module) {;
     process.exit(0);
   });
   
-  factory.initialize().catch(error = > {;
+  factory.initialize().catch(error = > {
     console.error(❌ Factory initialization failed:', error);''
     process.exit(1);
   });

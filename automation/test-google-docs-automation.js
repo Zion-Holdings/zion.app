@@ -13,8 +13,7 @@ async function testGoogleDocsAutomation() {
       googleDocsUrl: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
       checkInterval: 10000, // 10 seconds for testing
       maxRetries: 2,
-      logLevel: 'debug';
-    };
+      logLevel: 'debug'};
     
     console.log('🚀 Initializing test system...');
     const launcher = new GoogleDocsAutomationLauncher(testConfig);
@@ -36,8 +35,7 @@ async function testGoogleDocsAutomation() {
       type: 'content-management',
       title: 'Test Blog Post Creation',
       instructions: ['Create a test blog post about automation'],
-      timestamp: new Date().toISOString();
-    };
+      timestamp: new Date().toISOString()};
     
     await launcher.addInstruction(testInstruction);
     console.log('✅ Instruction processing passed');
@@ -123,8 +121,7 @@ async function testGoogleDocsAutomation() {
         socialContent,
         report
       },
-      summary: 'All tests passed successfully';
-    };
+      summary: 'All tests passed successfully'};
     
     const testReportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/test-report.json');
     await fs.writeJson(testReportFile, testReport, { spaces: 2 });
@@ -139,7 +136,7 @@ async function testGoogleDocsAutomation() {
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   testGoogleDocsAutomation();
 }
 

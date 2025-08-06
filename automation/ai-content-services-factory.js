@@ -30,7 +30,7 @@ class AutomationSystem {
     this.reportsPath = path.join(__dirname, \'ai-reports);\'\'
     
     [this.agentsPath, this.contentPath, this.servicesPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -223,8 +223,7 @@ class AutomationSystem {
         tasksCompleted: 0",""
         successRate: "100",""
         avgResponseTime: "0""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
@@ -371,8 +370,7 @@ class AutomationSystem {
       title: "this.generateTitle(topic", research),""
       content: "this.generateContent(topic", research),""
       seoOptimized: "this.optimizeForSEO(topic", research),""
-      qualityChecked: "this.qualityCheck(topic", research)"";
-    };
+      qualityChecked: "this.qualityCheck(topic", research)""};
     
     return blogPost;
   }
@@ -465,8 +463,7 @@ class AutomationSystem {
       content: "content",""
       optimizedContent: "this.applyKeywordOptimization(content", keywords),""
       keywordDensity: "this.analyzeKeywordDensity(content", keywords),""
-      keywordPlacement: "this.optimizeKeywordPlacement(content", keywords)"";
-    };
+      keywordPlacement: "this.optimizeKeywordPlacement(content", keywords)""};
     
     return optimization;
   }
@@ -476,8 +473,7 @@ class AutomationSystem {
       title: "this.generateTitleTag(content", keywords),""
       description: "this.generateDescriptionTag(content", keywords),""
       keywords: "this.generateKeywordsTag(keywords)",""
-      ogTags: "this.generateOGTags(content", keywords)"";
-    };
+      ogTags: "this.generateOGTags(content", keywords)""};
     
     return metaTags;
   }
@@ -649,8 +645,7 @@ class AutomationSystem {
       product: "product",""
       compellingCopy: "this.createCompellingCopy(product", analysis),""
       conversionOptimized: "this.optimizeForConversion(product", analysis),""
-      brandAligned: "this.alignWithBrand(product", analysis)"";
-    };
+      brandAligned: "this.alignWithBrand(product", analysis)""};
     
     return description;
   }
@@ -671,8 +666,7 @@ class AutomationSystem {
       content: "content",""
       aligned: "this.alignWithBrandVoice(content", brandGuidelines),""
       tone: "this.adjustTone(content", brandGuidelines),""
-      messaging: "this.adjustMessaging(content", brandGuidelines)"";
-    };
+      messaging: "this.adjustMessaging(content", brandGuidelines)""};
     
     return brandAlignment;
   }
@@ -820,8 +814,7 @@ class AutomationSystem {
       platform: "platform",""
       post: "this.generatePost(topic", platform),""
       hashtags: "this.generateHashtags(topic", platform),""
-      media: "this.suggestMedia(topic", platform)"";
-    };
+      media: "this.suggestMedia(topic", platform)""};
     
     return content;
   }
@@ -832,8 +825,7 @@ class AutomationSystem {
       platform: "platform",""
       optimized: "this.applyPlatformOptimization(content", platform),""
       timing: "this.optimizeTiming(content", platform),""
-      format: "this.optimizeFormat(content", platform)"";
-    };
+      format: "this.optimizeFormat(content", platform)""};
     
     return optimization;
   }
@@ -1253,7 +1245,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, ${agentId}.js"'));""
       }
     }
@@ -1360,7 +1352,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = AIContentServicesFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AIContentServicesFactory();
   console.log(🏭 AI Content Services Factory started successfully');''
   console.log(📊 Factory Status:', factory.getFactoryStatus());''

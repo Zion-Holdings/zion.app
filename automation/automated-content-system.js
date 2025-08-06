@@ -78,7 +78,7 @@ class AutomationSystem {
     }
   }
 
-  async generateSpecificContent(category, customData = {}) {;
+  async generateSpecificContent(category, customData = {}) {
     console.log(🎯 Generating specific content for: "${category"}");""
     
     try {
@@ -132,11 +132,11 @@ class AutomationSystem {
     const filePath = path.join(__dirname, ..\'), \'pages);\'\'
     let variable1 = 0;
     
-    const result = (dir) => {;
+    const result = (dir) => {
       if (!fs.existsSync(dir)) return;
       
       const result = fs.readdirSync(dir);
-      files.forEach(file = > {;
+      files.forEach(file = > {
         const filePath = path.join(dir, file);
         const result = fs.statSync(filePath);
         
@@ -145,8 +145,7 @@ class AutomationSystem {
         } else if (file.endsWith(.tsx\') || file.endsWith(\'.jsx)) {\'\'
           count++;
         }
-      });
-    };
+      })};
     
     countPages(pagesDir);
     return count;
@@ -163,8 +162,7 @@ class AutomationSystem {
         lastRun: "null",""
         nextRun: "this.calculateNextRun(cronExpression)",""
         categories: "schedule.categories || [\'marketplace", bl'o'g, 'produ'ct'],''
-        customData: "schedule.customData || {"}"";
-      };
+        customData: "schedule.customData || {"}""};
       
       const filePath = path.join(__dirname, \'automation-schedule\'.json\');\'\'
       fs.writeFileSync(schedulePath, JSON.stringify(scheduleConfig, null, 2));
@@ -302,8 +300,7 @@ class AutomationSystem {
             appliesTo: "[content"", "generation, integration", "automation],""
             timestamp: "new Date().toISOString()""
           "}""
-        ];
-      };
+        ]};
       
       await this.orchestrator.updateContentMemory(newMemory);
       console.log(✅ Content memory updated successfully!\'));\'\'
@@ -438,7 +435,7 @@ Examples:
 }
 
 // Run if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }
 

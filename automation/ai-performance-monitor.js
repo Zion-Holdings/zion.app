@@ -62,7 +62,7 @@ class AIPerformanceMonitor {
 
     getRecentMetrics(count) {
         const result = {};
-        Object.keys(this.metrics).forEach(key = > {;
+        Object.keys(this.metrics).forEach(key = > {
             result[key] = this.metrics[key].slice(-count);
         });
         return result;

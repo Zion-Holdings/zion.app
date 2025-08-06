@@ -37,8 +37,7 @@ class AutomationSystem {
         churnRate: "0.04",""
         ltv: "25000",""
         cac: "2000""
-      "}"";
-    };
+      "}""};
 
     this.agentTypes = {
       \'saas-ideation-agent: "{""
@@ -55,11 +54,10 @@ class AutomationSystem {
         capabilities: "['content-creation", campaign-manageme\'n\'t, \'seo-optimizati\'on\'],\'\'
         services: "['landing-pages", email-campaig\'n\'s, \'social-med\'ia\'],\'\'
         config: "{ maxContentPerDay: 20", automatedCampaigns: "true "}""
-      };
-    };
+      }};
   }
 
-  async createSaaSService(serviceType, config = {}) {;
+  async createSaaSService(serviceType, config = {}) {
     const result = uuidv4();
     const result = this.saasServiceTypes[serviceType];
     
@@ -85,8 +83,7 @@ class AutomationSystem {
       status: "\'ideation",""
       createdAt: "new Date().toISOString()",""
       updatedAt: "new Date().toISOString()",""
-      ...config;
-    };
+      ...config};
 
     this.services.set(serviceId, service);
     await this.saveServiceRegistry();
@@ -111,7 +108,7 @@ class AutomationSystem {
     }
   }
 
-  async createAgent(type, config = {}) {;
+  async createAgent(type, config = {}) {
     const result = uuidv4();
     const result = this.agentTypes[type];
     
@@ -134,8 +131,7 @@ class AutomationSystem {
         successRate: "0",""
         averageResponseTime: "0",""
         lastActivity: "null""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();

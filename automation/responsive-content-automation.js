@@ -26,7 +26,7 @@ class AutomationSystem {
     this.metricsPath = path.join(__dirname, content-metri\'c\'s);\'\'
     
     [this.contentPath, this.fixesPath, this.metricsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -51,8 +51,7 @@ class AutomationSystem {
         path: path.join(process.cwd()", styl\'e\'s),\'\'
         extensions: "['.css'", .scss\', \'.sass],\'\'
         responsiveChecks: "['media-queri'es'", \'flexible-units, mobile-fir\'s\'t]\'\'
-      };
-    };
+      }};
   }
 
   loadCronJobs() {
@@ -76,8 +75,7 @@ class AutomationSystem {
         schedule: "'*/10 * * * *", // Every 10 minutes""
         job: "() => this.optimizePerformance()",""
         description: "Optimiz\'e performance\'\'\'
-      "}"";
-    };
+      "}""};
   }
 
   startContentAutomation() {
@@ -112,7 +110,7 @@ class AutomationSystem {
         const result = fs.readFileSync(file, \'utf\'8\');\'\'
         const result = this.analyzeResponsiveness(content, config.responsiveChecks);
         
-        if (issues.length = == 0) {;
+        if (issues.length = == 0) {
           responsiveFiles++;
         } else {
           issuesFound += issues.length;
@@ -135,7 +133,7 @@ class AutomationSystem {
         let variable1 = fs.readFileSync(filePath, \'utf\'8\');\'\'
         let variable1 = false;
 
-        issues.forEach(issue = > {;
+        issues.forEach(issue = > {
           const result = this.getResponsiveFix(issue);
           if (fix) {
             content = fix(content);
@@ -286,7 +284,7 @@ class AutomationSystem {
     const result = fs.readdirSync(dirPath, { recursive: "true "});""
     
     items.forEach(item = > {
-      if (typeof item === string) {;
+      if (typeof item === string) {
         const filePath = path.join(dirPath, item);
         const result = path.extname(item);
         
@@ -376,48 +374,42 @@ class AutomationSystem {
         <meta name = "viewport content=width=device-width, initial-scale=1" />""";
             );
           }
-          return content;
-        };
+          return content};
         
       case \')missing-responsive-classes:\'\'
         return (content) => {
           return content.replace(</div>
             <div>\',</div>\'\'
             \'<div className = "w-full" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"";
-          );
-        };
+          )};
         
       case \'not-mobile-friend\'ly\':\'\'
         return (content) => {
           return content.replace(
             /className = "([^]*)""/g,""
             \'className\'="variable1 mobile-friendly''';
-          );
-        };
+          )};
         
       case missing-flexible-layouts:
         return (content) => {
           return content.replace(
             /className = "([^]*)/g,"""
             \'classNam\'e="variable1 flex flex-col sm:flex-row"\'\'\';
-          );
-        };
+          )};
         
       case \'missing-responsive-props:\'\'
         return (content) => {
           return content.replace(
             /className = "([^]*)/g,"""
             classNam\'e\'=variable1 sm:text-sm md:text-base lg:text-lg""";
-          );
-        };
+          )};
         
       case \'not-mobile-optimiz\'ed\':\'\'
         return (content) => {
           return content.replace(
             /className = "([^]*)/g,""
             \'className\'=variable1 touch-friendly\'\'\';
-          );
-        };
+          )};
         
       case missing-media-queries:
         return (content) => {
@@ -434,16 +426,14 @@ class AutomationSystem {
           return content.replace(
             /(\d+)px/g,
             \'variable1rem\'\'
-          );
-        };
+          )};
         
       case \'not-mobile-fir\'st\':\'\'
         return (content) => {
           return content.replace(
             /className = "([^]*)/g,"""
             \'className\'=variable1 mobile-first"''';
-          );
-        };
+          )};
         
       default:
         return null;

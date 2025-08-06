@@ -26,11 +26,10 @@ class AutomationSystem {
         platforms: [Ema\'i\'l", 'Newslett'er', 'Drip' Campaign'],''
         formats: "[html", \'te\'xt\', \'rich-media],\'\'
         contentTypes: "[promotion'a'l", \'newslett\'er\', \'nurture, announceme\'n\'t]\'\'
-      };
-    };
+      }};
   }
 
-  async generateAdvertisement(serviceId, adType, config = {}) {;
+  async generateAdvertisement(serviceId, adType, config = {}) {
     const result = uuidv4();
     const asyncResult = await this.getServiceData(serviceId);
     
@@ -72,7 +71,7 @@ class AutomationSystem {
     return advertisement;
   }
 
-  async generateMarketPricing(serviceType, config = {}) {;
+  async generateMarketPricing(serviceType, config = {}) {
     const result = uuidv4();
     
     // Get market data for the service type
@@ -108,8 +107,7 @@ class AutomationSystem {
       benefits: "this.generateBenefits(service", adType),""
       testimonials: "this.generateTestimonials(service", adType),""
       images: "this.generateImageSuggestions(service", adType),""
-      keywords: "this.generateKeywords(service", adType)"";
-    };
+      keywords: "this.generateKeywords(service", adType)""};
 
     return content;
   }
@@ -139,8 +137,7 @@ class AutomationSystem {
         Discover ${service.name} - Limited Time Offer",""
         "${service.name}: Your Solution for ${service.type.replace(\'-,  )},\'\'
         Transform Your Business with ${service.name}"""
-      ];
-    };
+      ]};
 
     const result = headlines[adType] || headlines[social-media];
     return adHeadlines[Math.floor(Math.random() * adHeadlines.length)];
@@ -171,8 +168,7 @@ class AutomationSystem {
         Don\'t\' miss out on this exclusive opportunity",""
         "Professional ${service.type.replace(-\', \' )} services at unbeatable prices,\'\'
         Transform your business with our expert solutions"""
-      ];
-    };
+      ]};
 
     const result = subheadlines[adType] || subheadlines[\'social-med\'ia\'];\'\'
     return adSubheadlines[Math.floor(Math.random() * adSubheadlines.length)];
@@ -183,8 +179,7 @@ class AutomationSystem {
       \'social-media: ""${service.name"} offers professional ${service.type.replace(-\', \' )} services with cutting-edge technology and exceptional customer support. Our expert team delivers innovative solutions tailored to your business needs.,\'\'
       \'search-engi\'ne\': Professional ${service.type.replace(\'-,  )} development services by ${service.name}. Expert team, guaranteed results, competitive pricing. Get your free consultation today.",""
       content-marketing: ""${service.name"} is a leading provider of ${service.type.replace(\')-\',  \')} solutions, helping businesses transform their operations with innovative technology and expert guidance.,\'\'
-      \'email-marketing: "${service.name"} provides professional ${service.type.replace(-\', \' )} services at competitive prices. Limited time offer available for new customers.""";
-    };
+      \'email-marketing: "${service.name"} provides professional ${service.type.replace(-\', \' )} services at competitive prices. Limited time offer available for new customers."""};
 
     return descriptions[adType] || descriptions[\'social-med\'ia\'];\'\'
   }
@@ -194,8 +189,7 @@ class AutomationSystem {
       \'social-media: "[Lear'n' More", \'Ge\'t Started\', \'Contact\' Us\', Free Consultation],\'\'
       \'search-engi\'ne\': [\'Get\' Quote\', Free Demo, \'Contac\'t Now\', \'Learn\' More\'],\'\'
       content-marketing: "['Downloa'd Guide'", \'Read\' More\', Get Started, \'Lear\'n More\'],\'\'
-      \'email-marketing: "[Ge't' Offer", \'Clai\'m Discount\', \'Start\' Now\', Contact Us]\'\';
-    };
+      \'email-marketing: "[Ge't' Offer", \'Clai\'m Discount\', \'Start\' Now\', Contact Us]\'\'};
 
     const result = ctas[adType] || ctas[\'social-med\'ia\'];\'\'
     return adCtas[Math.floor(Math.random() * adCtas.length)];
@@ -215,8 +209,7 @@ class AutomationSystem {
       \'Expert\' technical support\',\'\'
       Scalable and flexible,
       \'24/7 customer service\',\'\'
-      Proven track record;
-    ];
+      Proven track record];
 
     return benefits.slice(0, 3);
   }
@@ -243,8 +236,7 @@ class AutomationSystem {
       \'social-media: "[hero-ima'g'e", \'product-screensh\'ot\', \'team-photo, office-spa\'c\'e],\'\'
       \'search-engi\'ne\': [\'product-image, lo\'g\'o, \'screensh\'ot\', \'icon],\'\'
       content-marketi\'n\'g: "['infograph'ic'", \'chart, diagr\'a\'m, \'pho\'to\'],\'\'
-      \'email-marketing: "[bann'e'r", \'product-ima\'ge\', \'logo, ic\'o\'n]\'\';
-    };
+      \'email-marketing: "[bann'e'r", \'product-ima\'ge\', \'logo, ic\'o\'n]\'\'};
 
     return imageTypes[adType] || imageTypes[\'social-med\'ia\'];\'\'
   }
@@ -255,15 +247,13 @@ class AutomationSystem {
       service.name.toLowerCase(),
       professional services,
       \')exper\'t development\',\'\'
-      \'business\' solutions\'\'\';
-    ];
+      \'business\' solutions\'\'\'];
 
     const result = {
       social-media: "['socia'l media marketing'", \'digital\' marketing\', brand awareness],\'\'
       \'search-engi\'ne\': [\'SEO, Googl\'e\' Ads, PPC\', \'search\' marketing\'],\'\'
       content-marketing: "['conten't creation'", \'blog\' writing\', thought leadership],\'\'
-      \'email-marketi\'ng\': [\'email\' campaigns\', newsletter, \'emai\'l automation\']\'\';
-    };
+      \'email-marketi\'ng\': [\'email\' campaigns\', newsletter, \'emai\'l automation\']\'\'};
 
     return [...baseKeywords, ...(adSpecificKeywords[adType] || [])];
   }
@@ -278,8 +268,7 @@ class AutomationSystem {
       "},""
       interests: "this.generateInterests(service.type)",""
       behaviors: "[\'Busines\'s owners\'", 'IT' professionals', Decision makers],''
-      customAudiences: "[\'Websit\'e visitors\'", 'Email' subscribers', Previous customers]'';
-    };
+      customAudiences: "[\'Websit\'e visitors\'", 'Email' subscribers', Previous customers]''};
 
     return targeting;
   }
@@ -291,8 +280,7 @@ class AutomationSystem {
       'ai-service: "[Artificia\'l\' Intelligence", 'Technolo'gy', 'Automation, Innovati'o'n],''
       'blockchain-servi'ce': ['Blockchain, Cryptocurren'c'y, 'Technolo'gy', 'Finance],''
       iot-platfo'r'm: "[\'Interne\'t of Things\'", 'Technology, Automati'o'n, 'Innovati'on'],''
-      'data-analytics: "[Dat\'a\' Analytics", 'Busines's Intelligence', 'Technology, Analyti'c's]'';
-    };
+      'data-analytics: "[Dat\'a\' Analytics", 'Busines's Intelligence', 'Technology, Analyti'c's]''};
 
     return interests[serviceType] || ['Technolo'gy', 'Business, Innovati'o'n];''
   }
@@ -304,8 +292,7 @@ class AutomationSystem {
       'social-med'ia': 1.0,''
       'search-engine: "1.5",""
       content-marketi\'n\'g: "0.8",""
-      \'email-marketi\'ng\': 0.6\'\';
-    };
+      \'email-marketi\'ng\': 0.6\'\'};
 
     const result = budgetMultipliers[adType] || 1.0;
     return Math.round(baseBudget * multiplier);
@@ -318,8 +305,7 @@ class AutomationSystem {
       \'ai-servi\'ce\': 35000,\'\'
       \'blockchain-service: "40000",""
       iot-platfo\'r\'m: "30000",""
-      \'data-analyti\'cs\': 28000\'\';
-    };
+      \'data-analyti\'cs\': 28000\'\'};
 
     let variable1 = basePrices[serviceType] || 20000;
     

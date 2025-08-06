@@ -18,7 +18,7 @@ class ContinuousAutomationSystem {
 
     ensureDirectories() {
         [this.logsDir, this.reportsDir].forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -26,12 +26,11 @@ class ContinuousAutomationSystem {
 
     setupLogging() {
         this.logFile = path.join(this.logsDir, `continuous-automation-${Date.now()}.log`);
-        this.log = (message) => {;
+        this.log = (message) => {
             const timestamp = new Date().toISOString();
             const logMessage = `[${timestamp}] ${message}\n`;
             fs.appendFileSync(this.logFile, logMessage);
-            console.log(message);
-        };
+            console.log(message)};
     }
 
     async start() {
@@ -95,8 +94,7 @@ class ContinuousAutomationSystem {
             this.checkTestStatus(),
             this.checkLintStatus(),
             this.checkFileCount(),
-            this.checkAutomationStatus();
-        ];
+            this.checkAutomationStatus()];
         
         await Promise.all(checks);
     }
@@ -108,8 +106,7 @@ class ContinuousAutomationSystem {
             this.cleanupLogs(),
             this.generateDailyReport(),
             this.backupProject(),
-            this.updateDependencies();
-        ];
+            this.updateDependencies()];
         
         await Promise.all(tasks);
     }
@@ -120,8 +117,7 @@ class ContinuousAutomationSystem {
         const tasks = [
             this.checkForUpdates(),
             this.optimizePerformance(),
-            this.validateCode();
-        ];
+            this.validateCode()];
         
         await Promise.all(tasks);
     }
@@ -186,8 +182,7 @@ class ContinuousAutomationSystem {
         const automationFiles = [
             \'automation/agents\',
             \'automation/reports\',
-            \'automation/logs\';
-        ];
+            \'automation/logs\'];
         
         const status = automationFiles.every(file => 
             fs.existsSync(path.join(this.projectRoot, file));
@@ -209,8 +204,7 @@ class ContinuousAutomationSystem {
             buildStatus: await this.getBuildStatus(),
             testStatus: await this.getTestStatus(),
             fileCount: await this.getFileCount(),
-            automationStatus: await this.getAutomationStatus();
-        };
+            automationStatus: await this.getAutomationStatus()};
         
         const reportFile = path.join(this.reportsDir, `daily-report-${Date.now()}.json`);
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
@@ -295,8 +289,7 @@ class ContinuousAutomationSystem {
         const automationFiles = [
             'automation/agents',
             'automation/reports',
-            'automation/logs';
-        ];
+            'automation/logs'];
         
         return automationFiles.every(file = > 
             fs.existsSync(path.join(this.projectRoot, file));

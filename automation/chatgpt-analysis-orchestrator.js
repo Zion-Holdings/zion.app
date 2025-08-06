@@ -32,7 +32,7 @@ class AutomationSystem {
                 .filter(file => file.endsWith(-confi\'g\'.json));\'\'
             
             agentFiles.forEach(file = > {
-                try {;
+                try {
                     const filePath = fs.readJsonSync(path.join(this.agentsDir, file));
                     this.agents.push(config);
                 } catch (error) {
@@ -134,8 +134,7 @@ class AutomationSystem {
                 \'Creat\'e development prompts\',\'\'
                 \'Execute\' Cursor agents\',\'\'
                 Monitor and report
-            ];
-        };
+            ]};
         
         const filePath = path.join(this.dataDir, development-plan-${Date.now()}.json");""
         await fs.writeJson(planFile, plan, { spaces: "2 "});""

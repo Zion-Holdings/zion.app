@@ -271,8 +271,7 @@ class AutomationSystem {
         name: "backup-dai\'ly\'",""
         schedule: "\'0 2 * * *",""
         command: "cd ${this.projectRoot"} && node automation/backup-system.js backup"""
-      };
-    ];
+      }];
     
     const filePath = path.join(this.projectRoot, automatio\'n/crontab.txt\');\'\'
     let variable1 = \'# Autonomous Agents Cron Jobs\n\n;\'\'
@@ -291,7 +290,7 @@ class AutomationSystem {
     console.log(\n📊 Autonomous Agents Status:);
     console.log(\')============================);\'\'
     
-    Object.keys(this.status.agents).forEach(agentName = > {;
+    Object.keys(this.status.agents).forEach(agentName = > {
       const result = this.status.agents[agentName];
       const result = agent.isRunning ? \'🟢 RUNNING\' : 🔴 STOPPED\'\'\'
       const timestamp = agent.startTime ? ;
@@ -310,7 +309,7 @@ class AutomationSystem {
 module.exports = AutonomousAgentsLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AutonomousAgentsLauncher();
   
   const result = process.argv[2];

@@ -45,8 +45,7 @@ async function createDirectories() {
     'automation/fixes/meta-descriptions',''
     automation/fixes/seo',''
     'automation/fixes/performance,''
-    'automation/logs''';
-  ];
+    'automation/logs'''];
   
   for (const dir of directories) {
     try {
@@ -59,8 +58,8 @@ async function createDirectories() {
 }
 
 // Run the automation system
-if (require.main = == module) {
-  main().catch(error => {;
+if (require.main === module) {
+  main().catch(error => {
     console.error('❌ Unhandled error:', error);''
     process.exit(1);
   });

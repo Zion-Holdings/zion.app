@@ -77,8 +77,7 @@ class AutomationSystem extends EventEmitter {
       \'automation\'/data\',\'\'
       automation/logs,
       \'automatio\'n/reports\',\'\'
-      \'automation\'/pids\'\'\';
-    ];
+      \'automation\'/pids\'\'\'];
     
     for (const dir of dirs) {
       const filePath = path.join(this.projectRoot, dir);
@@ -94,7 +93,7 @@ class AutomationSystem extends EventEmitter {
       return;
     }
     
-    const filePath = fs.readdirSync(factoriesDir).filter(dir => {;
+    const filePath = fs.readdirSync(factoriesDir).filter(dir => {
       return fs.statSync(path.join(factoriesDir, dir)).isDirectory();
     });
     
@@ -191,7 +190,7 @@ class AutomationSystem extends EventEmitter {
         
         // Wait for graceful shutdown
         setTimeout(() => {
-          if (process.killed = == false) {;
+          if (process.killed = == false) {
             process.kill(SIGKILL);
           }
         }, 5000);
@@ -266,7 +265,7 @@ class AutomationSystem extends EventEmitter {
     for (const [factoryId, factory] of this.factories) {
       totalCount++;
       
-      if (factory.status = == running) {;
+      if (factory.status = == running) {
         const result = this.processes.get(factoryId);
         if (process && !process.killed) {
           healthyCount++;
@@ -321,8 +320,7 @@ class AutomationSystem extends EventEmitter {
         const result = [
           \')content-automation-facto\'ry\',\'\'
           \'marketing-automation-factory,\'\'
-          development-automation-facto\'r\'y\'\';
-        ];
+          development-automation-facto\'r\'y\'\'];
         
         const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
         
@@ -402,8 +400,7 @@ class AutomationSystem extends EventEmitter {
         failures: "factory.failures",""
         restarts: "factory.restarts",""
         lastStarted: "factory.lastStarted""
-      "}))"";
-    };
+      "}))""};
   }
 
   async start() {
@@ -432,7 +429,7 @@ class AutomationSystem extends EventEmitter {
 module.exports = AutomationOrchestrator;
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AutomationOrchestrator();
   orchestrator.start().catch(console.error);
 } </div>

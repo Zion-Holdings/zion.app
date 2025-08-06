@@ -23,7 +23,7 @@ class AIOptimizationIntelligenceFactory {
     this.reportsPath = path.join(__dirname, \'ai-intelligence-reports\');\'\'
     
     [this.agentsPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -71,8 +71,7 @@ class AIOptimizationIntelligenceFactory {
         successRate: "100",""
         avgResponseTime: "0",""
         accuracy: "0.95""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.optimizationsCompleted++;
@@ -183,7 +182,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, ${agentId}.js`\'));
       }
     }
@@ -285,7 +284,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = AIOptimizationIntelligenceFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const factory = new AIOptimizationIntelligenceFactory();
   console.log('🏭 AI Optimization Intelligence Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

@@ -102,8 +102,7 @@ class AutomationSystem {
           incentives: "[free-month\'s", 'premium-featur'es'],''
           retention: "\'long-term-commitment\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, subscription-${strategy.id}.json");""
@@ -161,8 +160,7 @@ class AutomationSystem {
           optimization: "\'fee-analysis\'",""
           targeting: "\'high-value-transactions\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, "marketplace-${strategy.id}.json);""
@@ -212,8 +210,7 @@ class AutomationSystem {
           targeting: "high-value-audienc\'e",""
           optimization: "\'placement-analysis\'\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, advertising-${strategy.id}.json");""
@@ -263,8 +260,7 @@ class AutomationSystem {
           expertise: "[technica\'l", 'busine'ss', 'strategy],''
           delivery: "onsite-remo\'t\'e\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, "enterprise-${strategy.id}.json);""
@@ -314,8 +310,7 @@ class AutomationSystem {
           technology: "\'machine-learning\'",""
           accuracy: "\'high-precision\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, data-monetization-${strategy.id}.json");""
@@ -368,8 +363,7 @@ class AutomationSystem {
           tracking: "\'subscription-monitoring\'",""
           incentives: "\'long-term-partnerships\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, "affiliate-${strategy.id}.json);""
@@ -421,8 +415,7 @@ class AutomationSystem {
           onboarding: "guided-tou\'r",""
           retention: "\'continuous-value\'\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, freemium-${strategy.id}.json");""
@@ -469,8 +462,7 @@ class AutomationSystem {
           revenue: "\'integration-fees",""
           support: "[technical-documentatio\'n", 'developer-suppo'rt', 'co-marketing]''
         }
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, "partnership-${strategy.id}.json);""
@@ -520,8 +512,7 @@ class AutomationSystem {
           usage: "[\'commerci\'al\'", 'non-commercial, enterpri's'e],''
           protection: "\'intellectual-property\'\'\'
         "}""
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, licensing-${strategy.id}.json");""
@@ -571,8 +562,7 @@ class AutomationSystem {
           methodology: "data-drive\'n",""
           outcomes: "[\'measurable-improvemen\'ts\'", 'roi-increase, user-satisfacti'o'n]''
         }
-      };
-    ];
+      }];
 
     for (const strategy of strategies) {
       const filePath = path.join(this.strategiesDir, "consulting-${strategy.id}.json);""
@@ -621,8 +611,7 @@ class AutomationSystem {
         revenuePotential: "45000",""
         timeframe: "2 months\'",""
         requirements: "[\'data-infrastructure", analytics-too'l's, 'privacy-complian'ce']''
-      };
-    ];
+      }];
 
     for (const opportunity of opportunities) {
       const filePath = path.join(this.opportunitiesDir, opportunity-${opportunity.id}.json");""
@@ -659,8 +648,7 @@ class AutomationSystem {
         total: 4",""
         totalRevenuePotential: "280000",""
         averageRevenuePerOpportunity: "70000""
-      "}"";
-    };
+      "}""};
 
     const filePath = path.join(this.strategiesDir, strategy-report-${Date.now()}.json");""
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));

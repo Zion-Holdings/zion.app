@@ -118,11 +118,10 @@ class AutomationSystem {
       path.join(this.pagesDir, \'produc\'ts\'),\'\'
       path.join(this.componentsDir, \'content),\'\'
       path.join(__dirname, generated-conte\'n\'t),\'\'
-      path.join(__dirname, \'lo\'gs\')\'\';
-    ];
+      path.join(__dirname, \'lo\'gs\')\'\'];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -292,7 +291,7 @@ Include:
 Make it informative, engaging, and valuable for technology professionals and business leaders.
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -493,7 +492,7 @@ Include:
 Make it engaging and informative for potential buyers and sellers in the ${category} space.
     
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -699,7 +698,7 @@ Include:
 Make it compelling and informative for potential clients seeking ${service.toLowerCase()} services.
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -891,7 +890,7 @@ To learn more about our ${service.toLowerCase()} capabilities and discuss how we
 module.exports = ContinuousContentGenerator;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousContentGenerator();
   generator.initialize().catch(console.error);
 } </div>

@@ -238,7 +238,7 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main = == module) {;
+if (require.main === module) {
   const result = process.argv.slice(2);
   const result = args[0] || start\');\'\'
   
@@ -246,7 +246,7 @@ if (require.main = == module) {;
   
   switch (command) {
     case \'start:\'\'
-      launcher.start().catch(error = > {;
+      launcher.start().catch(error = > {
         console.error(❌ Failed to start Frontend Sync System: "'", error);""
         process.exit(1);
       });
@@ -256,25 +256,25 @@ if (require.main = == module) {;
       launcher.stop().then(() => {
         console.log(✅ Frontend Sync System stopped\');\'\'
         process.exit(0);
-      }).catch(error = > {;
+      }).catch(error = > {
         console.error(\'❌ Failed to stop Frontend Sync System:, error);\'\'
         process.exit(1);
       });
       break;
       
     case restart\'):\'\'
-      launcher.restart().catch(error = > {;
+      launcher.restart().catch(error = > {
         console.error(\'❌ Failed to restart Frontend Sync System:, error);\'\'
         process.exit(1);
       });
       break;
       
     case status\'):\'\'
-      launcher.getStatus().then(status = > {;
+      launcher.getStatus().then(status = > {
         console.log(\'📊 Frontend Sync System Status:);\'\'
         console.log(JSON.stringify(status, null, 2));
         process.exit(0);
-      }).catch(error = > {;
+      }).catch(error = > {
         console.error(❌ Failed to get status:, error);
         process.exit(1);
       });

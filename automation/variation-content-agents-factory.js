@@ -97,8 +97,7 @@ class AutomationSystem {
         variations: "[web-analytics", \'business-intelligen\'ce\', \'user-behavior, performan\'c\'e, \'conversi\'on\'],\'\'
         capabilities: "['data-collection", reporti\'n\'g, \'alerti\'ng\', \'prediction],\'\'
         template: "this.getAnalyticsFactoryVariationTemplate()""
-      "}"";
-    };
+      "}""};
   }
 
   async generateContentVariation(contentType, variationParams) {
@@ -322,8 +321,7 @@ class ${variation.id.replace(/-/g, )}Agent {
       Transforming Business with Advanced Technology,
       \'Revolutionar\'y Approaches to Success\',\'\'
       \'Next-Generation\' Strategies for Growth\',\'\'
-      Cutting-Edge Solutions for Tomorrow;
-    ];
+      Cutting-Edge Solutions for Tomorrow];
     return titles[Math.floor(Math.random() * titles.length)];
   }
 
@@ -372,7 +370,7 @@ class ${variation.id.replace(/-/g, )}Agent {
 module.exports = ${variation.id.replace(/-/g, \')\')}Agent;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${variation.id.replace(/-/g, \')}Agent();\'\'
   agent.generateContent().then(() => {
     console.log(\'Content variation generated successfully);\'\'
@@ -488,7 +486,7 @@ class ${variation.id.replace(/-/g, \'))}Orchestrator extends EventEmitter {\'\'
 module.exports = ${variation.id.replace(/-/g, \'))}Orchestrator;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${variation.id.replace(/-/g, \'\')}Orchestrator();\'\'
   orchestrator.start().catch(console.error);
 }
@@ -556,7 +554,7 @@ class ${variation.id.replace(/-/g, \'\')}Monitor {\'\'
 module.exports = ${variation.id.replace(/-/g, \'))}Monitor;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${variation.id.replace(/-/g, \')}Monitor();\'\'
   monitor.startMonitoring().catch(console.error);
 }
@@ -682,7 +680,7 @@ class ${factory.id.replace(/-/g, \')}Factory extends EventEmitter {\'\'
 module.exports = ${factory.id.replace(/-/g, \'))}Factory;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${factory.id.replace(/-/g, \'\')}Factory();\'\'
   factory.start().catch(console.error);
 }
@@ -751,8 +749,7 @@ class ${factory.id.replace(/-/g, \'))}${agentType.replace(/-/g, \'\')}Agent {\'\
       human-curat\'e\'d: "['content-curati'on'", \'quality-control, editorial-revi\'e\'w],\'\'
       \'hybr\'id\': [\'ai-generation, human-revi\'e\'w, \'quality-assuran\'ce\'],\'\'
       \'multilingual: "[translati'o'n", \'localizati\'on\', \'cultural-adaptation],\'\'
-      niche-specif\'i\'c: "['industry-experti'se'", \'specialized-content, target-audien\'c\'e]\'\';
-    };
+      niche-specif\'i\'c: "['industry-experti'se'", \'specialized-content, target-audien\'c\'e]\'\'};
     
     return capabilities[this.type] || [\'general-purpo\'se\'];\'\'
   }
@@ -904,7 +901,7 @@ class ${factory.id.replace(/-/g, \'\')}Orchestrator extends EventEmitter {\'\'
 module.exports = ${factory.id.replace(/-/g, \')}Orchestrator;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${factory.id.replace(/-/g, \'\')}Orchestrator();\'\'
   orchestrator.start().catch(console.error);
 }
@@ -1213,7 +1210,7 @@ if (require.main = == module) {;
 module.exports = VariationContentAgentsFactory;
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new VariationContentAgentsFactory();
   factory.start().catch(console.error);
 } </div>

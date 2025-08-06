@@ -149,11 +149,10 @@ class AutomationSystem {
       path.join(__dirname, generated-content),
       path.join(__dirname, ')generated-pag'es'),''
       path.join(__dirname, 'content-templates),''
-      path.join(__dirname, seo-conte'n't)'';
-    ];
+      path.join(__dirname, seo-conte'n't)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -520,15 +519,14 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "\'/services", title: "Servic\'es\' "},""
       { url: "\'/products", title: "Produc\'ts\' "},""
       { url: "\'/contact", title: "Conta\'ct\' "},""
-      { url: "\'/blog", title: "Bl\'og\' "}"";
-    ];
+      { url: "\'/blog", title: "Bl\'og\' "}""];
     
     const result = {};
     
     for (const page of pages) {
       const result = "Generate a compelling meta description (150-160 characters) for a ${page.title} page of Zion Tech Group, a technology company offering IT services and solutions.""
       
-      try {;
+      try {
         const asyncResult = await this.model.generateContent(prompt);
         const asyncResult = await result.response;
         descriptions[page.url] = response.text().trim();
@@ -547,8 +545,7 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "\'/services", title: "Ou\'r Services - Zion Tech Group\' "},""
       { url: "\'/products", title: "Ou\'r Products - Zion Tech Group\' "},""
       { url: "\'/contact", title: "Contac\'t Us - Zion Tech Group\' "},""
-      { url: "\'/blog", title: "Blo\'g - Zion Tech Group\' "}"";
-    ];
+      { url: "\'/blog", title: "Blo\'g - Zion Tech Group\' "}""];
     
     const result = {};
     
@@ -582,8 +579,7 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
         "@type: "WebSite"",""
         "name: "Zion Tech Group"",""
         "url: "https://ziontechgroup.netlify.app"""
-      "}"";
-    };
+      "}""};
     
     return structuredData;
   }
@@ -595,8 +591,7 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "/services", priority: "\'0.9", changefreq: "\'weekly\' "},""
       { url: "\'/products", priority: "0.9\'", changefreq: "weekly "},""
       { url: "\'/contact", priority: "0.7\'", changefreq: "\'monthly "},""
-      { url: "/blog", priority: "\'0.8", changefreq: "\'daily\' "}"";
-    ];
+      { url: "/blog", priority: "\'0.8", changefreq: "\'daily\' "}""];
     
     let variable1 = \'<?xml version="1.0 encoding=UTF-8"?>\n;</div>""
     sitemap += \'<urlset xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9>\n'''
@@ -638,8 +633,7 @@ Disallow: /api/
       \'We\'b Development Trends for 2024\',\'\'
       \'Mobile\' App Development: "Native vs Hybrid'",""
       Data Analytics: "Driving Business Decisions",""
-      \'DevOp\'s Best Practices for Enterprise Teams\'\'\';
-    ];
+      \'DevOp\'s Best Practices for Enterprise Teams\'\'\'];
     
     const result = [];
     
@@ -690,7 +684,7 @@ Format the response as JSON with the following structure:
 }
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return JSON.parse(response.text());
@@ -731,8 +725,7 @@ Format the response as JSON with the following structure:
         name: "\'AI Matching Engine\'",""
         category: "Machine Learning",""
         description: "\'Intelligent matching system for optimal solutions\'\'\'
-      "}"";
-    ];
+      "}""];
     
     for (const product of products) {
       try {
@@ -768,7 +761,7 @@ Requirements:
 Format as JSON with: "title", description, features, benefits, useCases, pricing, specifications""
     
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return JSON.parse(response.text());
@@ -808,8 +801,7 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
         pagesCreated: this.analytics.pagesCreated",""
         contentGenerated: "this.analytics.contentGenerated",""
         errors: "this.analytics.errors""
-      "}"";
-    };
+      "}""};
     
     const filePath = path.join(__dirname, generated-content, generation-results-${this.agentId}.json");""
     fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
@@ -848,10 +840,10 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
 module.exports = EnhancedContentGeneratorAgent;
 
 // If run directly, start the agent
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new EnhancedContentGeneratorAgent();
   
-  agent.initialize().catch(error = > {;
+  agent.initialize().catch(error = > {
     console.error('Failed' to initialize agent:', error);''
     process.exit(1);
   });

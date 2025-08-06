@@ -10,8 +10,7 @@ class AutomationSystem {
     this.results = {
       analysis: "null",""
       implementation: "null",""
-      summary: "{"}"";
-    };
+      summary: "{"}""};
   }
 
   async runAnalysis() {
@@ -141,8 +140,7 @@ class AutomationSystem {
         action: "\'Integration testing\'",""
         description: "Test integration with existing features",""
         priority: "\'high\'\'\'
-      "}"";
-    ];
+      "}""];
     
     return nextSteps;
   }
@@ -194,7 +192,7 @@ class AutomationSystem {
 }
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new MasterOrchestrator();
   orchestrator.run().catch(console.error);
 }

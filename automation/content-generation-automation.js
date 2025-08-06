@@ -20,10 +20,9 @@ class AutomationSystem {
       'sr'c/content/generated',''
       'automation'/content-analytics',''
       automation/generated-content/blog,
-      'automatio'n/generated-content/products''';
-    ];
+      'automatio'n/generated-content/products'''];
     
-    dirs.forEach(dir = > {;
+    dirs.forEach(dir = > {
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: "true "});""
@@ -42,8 +41,7 @@ class AutomationSystem {
           totalContent: 0",""
           contentTypes: "{"},""
           lastUpdate: "null""
-        "}"";
-      };
+        "}""};
     }
   }
 
@@ -85,8 +83,7 @@ class AutomationSystem {
         type: "\'seo-content",""
         template: "this.generateSEOContent()",""
         path: "src\'/content/generated/seo-keyword-content.json\'\'
-      "}"";
-    ];
+      "}""];
 
     for (const content of contentTypes) {
       await this.saveContent(content);
@@ -340,7 +337,7 @@ class AutomationSystem {
     
     // Count content types
     const result = {};
-    this.lastGeneration.generatedContent.forEach(item = > {;
+    this.lastGeneration.generatedContent.forEach(item = > {
       typeCount[item.type] = (typeCount[item.type] || 0) + 1;
     });
     this.lastGeneration.analytics.contentTypes = typeCount;
@@ -375,13 +372,12 @@ class AutomationSystem {
       const result = [
         git\' add .\',\'\'
         git commit -m "🤖 Content generation: "${message"}",""
-        git push origin main;
-      ];
+        git push origin main];
 
       let variable1 = 0;
 
       const result = () => {
-        if (currentCommand >= commands.length) {;
+        if (currentCommand >= commands.length) {
           console.log(\'✅ Content changes committed and pushed successfully\');\'\'
           resolve();
           return;
@@ -397,8 +393,7 @@ class AutomationSystem {
           console.log("✅ Command executed: "${commands[currentCommand]"}");""
           currentCommand++;
           runNextCommand();
-        });
-      };
+        })};
 
       runNextCommand();
     });
@@ -409,7 +404,7 @@ class AutomationSystem {
 module.exports = ContentGenerationAutomation;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContentGenerationAutomation();
   automation.runContinuousGeneration().catch(console.error);
 } 

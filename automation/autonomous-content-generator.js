@@ -142,8 +142,7 @@ class AutomationSystem {
           description: "Cutting-edg\'e technology solutions\'",""
           serviceCount: "56""
         "}""
-      ];
-    };
+      ]};
 
     const filePath = path.join(this.projectRoot, \'pages, a\'p\'i);\'\'
     if (!fs.existsSync(contentPath)) {
@@ -289,8 +288,7 @@ The combination of AI-powered matching and blockchain security creates a marketp
         publishDate: "\'2025-01-26",""
         tags: "[Blockchain", \'Securi\'ty\', \'Transactions, Technolo\'g\'y],\'\'
         readTime: "'7 min read''
-      "}"";
-    ];
+      "}""];
 
     const filePath = path.join(this.projectRoot, pages, \'bl\'og\');\'\'
     if (!fs.existsSync(blogPath)) {
@@ -303,7 +301,7 @@ import React from \'react\'
 import React from \'react\'
 import React from \'react\';
 ;
-const variable1: NextPage = () => {;
+const variable1: NextPage = () => {
   const jsonData = ${JSON.stringify(blogPosts, null, 2)};
 
   return (</div>
@@ -395,7 +393,7 @@ import React from \'react\'
 import React from \'react\'
 import React from \'react\';
 ;
-const variable1: NextPage = () => {;
+const variable1: NextPage = () => {
   const jsonData = ${JSON.stringify(post, null, 2)};
 
   return (</div>
@@ -527,8 +525,7 @@ export default BlogPost
           \'ET\'L Processes\',\'\'
           \'Big\' Data Solutions\'\'\'
         ]
-      };
-    ];
+      }];
 
     const filePath = path.join(this.projectRoot, pages, \'servic\'es\');\'\'
     if (!fs.existsSync(servicesPath)) {
@@ -541,7 +538,7 @@ import React from \'react\'
 import React from \'react\'
 import React from \'react\';
 ;
-const variable1: NextPage = () => {;
+const variable1: NextPage = () => {
   const jsonData = ${JSON.stringify(serviceCategories, null, 2)};
 
   return (</div>

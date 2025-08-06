@@ -110,8 +110,7 @@ class AutomationSystem {
                 marketing-research/trends,
                 \'marketing-researc\'h/competitors\',\'\'
                 \'marketing-research\'/keywords\',\'\'
-                logs;
-            ];
+                logs];
             
             for (const dir of dirs) {
                 await fs.ensureDir(path.join(this.baseDir, dir));
@@ -552,8 +551,7 @@ class AutomationSystem {
                     seo: "['onpa'ge'", \'technical, conte\'n\'t, \'loc\'al\'],\'\'
                     influencer: "['micro", mac\'r\'o, \'na\'no\', \'celebrity]\'\'
                 }
-            };
-        };
+            }};
         
         await fs.writeJson(this.configPath, config, { spaces: "2 "});""
     }
@@ -572,8 +570,7 @@ class AutomationSystem {
                 engagement: "0",""
                 conversions: "0",""
                 roi: "0""
-            "}"";
-        };
+            "}""};
         
         await fs.writeJson(this.statusPath, status, { spaces: "2 "});""
     }
@@ -644,6 +641,6 @@ async function main() {
 module.exports = MarketingAutomationLauncher;
 
 // Run if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
     main();
 } </div>

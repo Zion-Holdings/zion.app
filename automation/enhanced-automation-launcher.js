@@ -23,11 +23,10 @@ class EnhancedAutomationLauncher {
             path.join(__dirname, 'enhanced-automation/systems'),'
             path.join(__dirname, 'enhanced-automation/integration'),'
             path.join(__dirname, 'enhanced-automation/reports'),'
-            path.join(__dirname, 'enhanced-automation/logs')';
-        ];
+            path.join(__dirname, 'enhanced-automation/logs')'];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -241,8 +240,7 @@ class EnhancedAutomationLauncher {
             sharedDataPath: sharedLearningPath,
             crossSystemLearning: true,
             learningInterval: 60000,
-            dataRetention: 30 // days;
-        };
+            dataRetention: 30 // days};
         
         await this.saveIntegrationData('cross-system-learning', learningConfig);'
     }
@@ -259,8 +257,7 @@ class EnhancedAutomationLauncher {
             sharedDataPath: sharedDataPath,
             dataTypes: ['performance', 'errors', 'predictions', 'adaptations'],'
             syncInterval: 30000,
-            dataFormat: 'json'';
-        };
+            dataFormat: 'json''};
         
         await this.saveIntegrationData('shared-data', sharedDataConfig);'
     }
@@ -273,8 +270,7 @@ class EnhancedAutomationLauncher {
             taskDistribution: 'intelligent','
             resourceSharing: true,
             conflictResolution: 'priority-based','
-            executionOrder: ['predictive', 'adaptive', 'smart', 'ai-powered', 'intelligent']';
-        };
+            executionOrder: ['predictive', 'adaptive', 'smart', 'ai-powered', 'intelligent']'};
         
         await this.saveIntegrationData('coordinated-execution', coordinationConfig);'
     }
@@ -294,8 +290,7 @@ class EnhancedAutomationLauncher {
                 enabled: true,
                 interval: 300000,
                 format: 'json''
-            };
-        };
+            }};
         
         await this.saveIntegrationData('unified-monitoring', monitoringConfig);'
     }
@@ -384,8 +379,7 @@ class EnhancedAutomationLauncher {
                 unifiedMonitoring: this.integrationConfig.integration.unifiedMonitoring
             },
             performance: await this.getOverallPerformance(),
-            recommendations: await this.generateRecommendations();
-        };
+            recommendations: await this.generateRecommendations()};
         
         for (const [systemName, system] of this.systems) {
             const status = this.systemStatus.get(systemName);
@@ -413,8 +407,7 @@ class EnhancedAutomationLauncher {
             runningSystems: 0,
             healthySystems: 0,
             totalUptime: 0,
-            averageUptime: 0;
-        };
+            averageUptime: 0};
         
         for (const [systemName, status] of this.systemStatus) {
             if (status.status = == 'running') {';
@@ -495,12 +488,11 @@ class EnhancedAutomationLauncher {
         // Collect data from all systems
         const sharedData = {
             timestamp: Date.now(),
-            systems: {};
-        };
+            systems: {}};
         
         for (const [systemName, system] of this.systems) {
             if (system.status = == 'running' && system.instance) {'
-                try {;
+                try {
                     const systemData = await this.collectSystemData(systemName, system.instance);
                     sharedData.systems[systemName] = systemData;
                 } catch (error) {
@@ -518,8 +510,7 @@ class EnhancedAutomationLauncher {
         // Collect data from system instance
         const data = {
             name: systemName,
-            timestamp: Date.now();
-        };
+            timestamp: Date.now()};
         
         // Try to get performance metrics
         try {
@@ -550,12 +541,11 @@ class EnhancedAutomationLauncher {
         // Collect learning data from all systems
         const learningData = {
             timestamp: Date.now(),
-            systems: {};
-        };
+            systems: {}};
         
         for (const [systemName, system] of this.systems) {
             if (system.status = == 'running' && system.instance) {'
-                try {;
+                try {
                     const systemLearningData = await this.collectLearningData(systemName, system.instance);
                     learningData.systems[systemName] = systemLearningData;
                 } catch (error) {
@@ -572,8 +562,7 @@ class EnhancedAutomationLauncher {
     async collectLearningData(systemName, systemInstance) {
         const learningData = {
             name: systemName,
-            timestamp: Date.now();
-        };
+            timestamp: Date.now()};
         
         // Try to get learning data from system instance
         try {
@@ -603,7 +592,7 @@ class EnhancedAutomationLauncher {
         
         for (const [systemName, system] of this.systems) {
             if (system.status = == 'running' && system.instance) {'
-                try {;
+                try {
                     const usage = await this.getSystemResourceUsage(systemName, system.instance);
                     resourceUsage[systemName] = usage;
                 } catch (error) {
@@ -635,8 +624,7 @@ class EnhancedAutomationLauncher {
         const optimization = {
             highUsageSystems: [],
             lowUsageSystems: [],
-            recommendations: [];
-        };
+            recommendations: []};
         
         for (const [systemName, usage] of Object.entries(resourceUsage)) {
             if (usage.cpu > 0.8 || usage.memory > 0.8) {
@@ -699,7 +687,7 @@ class EnhancedAutomationLauncher {
         
         for (const [systemName, system] of this.systems) {
             if (system.status = == 'running' && system.instance) {'
-                try {;
+                try {
                     console.log(`🛑 Stopping ${system.name}...`);
                     
                     if (typeof system.instance.stop = == 'function') {';
@@ -752,7 +740,7 @@ class EnhancedAutomationLauncher {
 
 module.exports = EnhancedAutomationLauncher;
 
-if (require.main = == module) {;
+if (require.main === module) {
     const launcher = new EnhancedAutomationLauncher();
     
     launcher.startEnhancedAutomation()
@@ -772,7 +760,7 @@ if (require.main = == module) {;
                 process.exit(0);
             });
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Failed to start enhanced automation launcher:', error.message);'
         });
 } 

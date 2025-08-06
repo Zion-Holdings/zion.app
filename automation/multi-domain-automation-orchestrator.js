@@ -17,8 +17,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
       factoriesActive: 0,
       crossDomainOperations: 0,
       integrationsCreated: 0,
-      efficiency: 0.95;
-    };
+      efficiency: 0.95};
     
     this.initializeOrchestrator();
     this.loadDomainFactories();
@@ -108,10 +107,9 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
         factories: ['greentech-automation-factory', 'environmental-monitoring-factory'],''
         priority: 'high',''
         capabilities: ['renewable-energy', 'environmental-monitoring', 'sustainability-automation']''
-      };
-    ];
+      }];
 
-    domains.forEach(domain = > {;
+    domains.forEach(domain = > {
       this.domains.set(domain.key, domain);
     });
   }
@@ -149,10 +147,9 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
         domains: ['ai-automation', 'cybersecurity-automation'],''
         purpose: 'AI-powered cybersecurity',''
         capabilities: ['ai-threat-detection', 'automated-response', 'security-ml']''
-      };
-    ];
+      }];
 
-    integrations.forEach(integration = > {;
+    integrations.forEach(integration = > {
       this.crossDomainIntegrations.set(integration.name, integration);
     });
   }
@@ -212,8 +209,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
             status: 'active',''
             capabilities: domain.capabilities,
             priority: domain.priority,
-            createdAt: new Date().toISOString();
-          };
+            createdAt: new Date().toISOString()};
           
           this.factories.set(factoryName, factoryData);
           console.log(`✅ [${this.orchestratorId}] Loaded factory: ${factoryName}`);
@@ -246,7 +242,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
     console.log(`🔗 [${this.orchestratorId}] Executing integration: ${integration.name}`);
     
     try {
-      const domainFactories = integration.domains.map(domainKey => {;
+      const domainFactories = integration.domains.map(domainKey => {
         const domain = this.domains.get(domainKey);
         return domain ? domain.factories : [];
       }).flat();
@@ -283,8 +279,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
           efficiency: 0.95 + Math.random() * 0.05,
           throughput: Math.floor(Math.random() * 1000) + 500,
           accuracy: 0.98 + Math.random() * 0.02
-        };
-      };
+        }};
       
       console.log(`✅ [${this.orchestratorId}] Factory operation completed: ${factory.id}`);
       
@@ -327,7 +322,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
     const averageEfficiency = totalEfficiency / totalFactories;
     
     // Calculate load distribution
-    const loadDistribution = performanceMetrics.reduce((acc, metric) => {;
+    const loadDistribution = performanceMetrics.reduce((acc, metric) => {
       acc[metric.domain] = (acc[metric.domain] || 0) + metric.load;
       return acc;
     }, {});
@@ -366,7 +361,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
     if (domainFactories.length === 0) return 0;
     
     const activeFactories = domainFactories.filter(factory => factory.status === 'active');''
-    const efficiency = activeFactories.reduce((sum, factory) => {;
+    const efficiency = activeFactories.reduce((sum, factory) => {
       return sum + (factory.instance?.metrics?.efficiency || 0.8);
     }, 0) / activeFactories.length;
     
@@ -446,8 +441,7 @@ class MultiDomainAutomationOrchestrator extends EventEmitter {
             name: `${domain1}-${domain2}-integration-${Date.now()}`,
             domains: [domain1, domain2],
             purpose: `Integration between ${domain1} and ${domain2} domains`,
-            capabilities: ['cross-domain-communication', 'data-sharing', 'coordinated-operations']'';
-          };
+            capabilities: ['cross-domain-communication', 'data-sharing', 'coordinated-operations']''};
           
           this.crossDomainIntegrations.set(newIntegration.name, newIntegration);
           this.metrics.integrationsCreated++;

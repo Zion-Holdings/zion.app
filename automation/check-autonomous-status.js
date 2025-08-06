@@ -15,8 +15,7 @@ class AutonomousStatusChecker {
       agents: this.checkAgents(),
       jobs: this.checkJobs(),
       system: this.checkSystemHealth(),
-      logs: this.checkLogs();
-    };
+      logs: this.checkLogs()};
     
     this.displayStatus(status);
     return status;
@@ -48,8 +47,7 @@ class AutonomousStatusChecker {
           type: a.type,
           status: a.status,
           lastActive: a.lastActive
-        }));
-      };
+        }))};
     } catch (error) {
       return { status: 'error', error: error.message };
     }
@@ -80,8 +78,7 @@ class AutonomousStatusChecker {
           enabled: j.enabled,
           lastRun: j.lastRun,
           nextRun: j.nextRun
-        }));
-      };
+        }))};
     } catch (error) {
       return { status: 'error', error: error.message };
     }
@@ -92,8 +89,7 @@ class AutonomousStatusChecker {
       dataDirectory: fs.existsSync(this.dataPath),
       logDirectory: fs.existsSync(path.join(__dirname, 'logs')),
       agentsDirectory: fs.existsSync(path.join(__dirname, 'agents')),
-      templatesDirectory: fs.existsSync(path.join(__dirname, 'templates'));
-    };
+      templatesDirectory: fs.existsSync(path.join(__dirname, 'templates'))};
     
     const isHealthy = Object.values(health).every(h => h);
     
@@ -133,7 +129,7 @@ class AutonomousStatusChecker {
 
     // Agents Status
     console.log('🤖 AGENTS:');
-    if (status.agents.status = == 'ok') {;
+    if (status.agents.status = == 'ok') {
       console.log(`   Total: ${status.agents.total}`);
       console.log(`   Running: ${status.agents.running} ✅`);
       console.log(`   Stopped: ${status.agents.stopped} ⏸️`);
@@ -155,14 +151,14 @@ class AutonomousStatusChecker {
     }
 
     console.log('\n⏰ JOBS:');
-    if (status.jobs.status = == 'ok') {;
+    if (status.jobs.status = == 'ok') {
       console.log(`   Total: ${status.jobs.total}`);
       console.log(`   Enabled: ${status.jobs.enabled} ✅`);
       console.log(`   Disabled: ${status.jobs.disabled} ⏸️`);
       
       if (status.jobs.jobs.length > 0) {
         console.log('\n   Job Details:');
-        status.jobs.jobs.forEach(job = > {;
+        status.jobs.jobs.forEach(job = > {
           const statusIcon = job.enabled ? '✅' : '⏸️';
           console.log(`     ${statusIcon} ${job.name} (${job.schedule})`);
         });
@@ -184,11 +180,11 @@ class AutonomousStatusChecker {
     });
 
     console.log('\n📝 LOGS:');
-    if (status.logs.status = == 'ok') {;
+    if (status.logs.status = == 'ok') {
       console.log(`   Total Log Files: ${status.logs.total}`);
       if (status.logs.recent.length > 0) {
         console.log('\n   Recent Logs:');
-        status.logs.recent.forEach(log = > {;
+        status.logs.recent.forEach(log = > {
           const sizeKB = Math.round(log.size / 1024);
           console.log(`     📄 ${log.name} (${sizeKB}KB)`);
         });
@@ -211,8 +207,7 @@ class AutonomousStatusChecker {
       const summary = {
         timestamp: new Date().toISOString(),
         overall: this.calculateOverallStatus(status),
-        recommendations: this.generateRecommendations(status);
-      };
+        recommendations: this.generateRecommendations(status)};
 
       console.log('\n📋 SUMMARY:');
       console.log(`Overall Status: ${summary.overall}`);
@@ -272,7 +267,7 @@ class AutonomousStatusChecker {
 }
 
 // Run the status checker
-if (require.main = == module) {;
+if (require.main === module) {
   const checker = new AutonomousStatusChecker();
   checker.run().catch(console.error);
 }

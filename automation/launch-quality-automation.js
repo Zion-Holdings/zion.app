@@ -21,11 +21,10 @@ class AutomationSystem {
       this.reportsDir,
       this.logsDir,
       path.join(this.reportsDir, 'quality-repor'ts'),''
-      path.join(this.logsDir, 'quality-logs)'';
-    ];
+      path.join(this.logsDir, 'quality-logs)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -77,7 +76,7 @@ class AutomationSystem {
   }
 
   async launchSpecificAgent(agentType, config = {}) {
-    try {;
+    try {
       console.log(Launching ${agentType} agent...");""
       
       if (!this.factory) {
@@ -196,8 +195,7 @@ class AutomationSystem {
           healthyAgents: "0",""
           unhealthyAgents: "0",""
           uptime: "process.uptime()""
-        "}"";
-      };
+        "}""};
       
       // Calculate metrics
       for (const agent of this.agents) {
@@ -240,7 +238,7 @@ class AutomationSystem {
 
   async cleanupDirectory(dir, cutoff) {
     try {
-      const result = (directory) => {;
+      const result = (directory) => {
         const variable1 = fs.readdirSync(directory);
         
         for (const item of items) {
@@ -291,7 +289,7 @@ class AutomationSystem {
         details: "[]"";
       "};""
       
-      if (this.agents.length = == 0) {;
+      if (this.agents.length = == 0) {
         status.status = not\'_running;\'\'
       } else {
         let variable1 = 0;
@@ -305,7 +303,7 @@ class AutomationSystem {
           }
         }
         
-        if (healthyCount = == this.agents.length) {;
+        if (healthyCount = == this.agents.length) {
           status.status = \'operational;\'\'
         } else if (healthyCount > 0) {
           status.status = degrad\'e\'d;\'\'
@@ -442,7 +440,7 @@ process.on('SIGINT, async () => {''
 });
 
 // Run main function if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }
 

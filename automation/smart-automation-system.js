@@ -36,8 +36,7 @@ class SmartAutomationSystem {
             securityMonitoring: "{ level: 1", efficiency: "0.9", growth: "0.8 "},""
             marketAnalysis: "{ level: 1", efficiency: "0.6", growth: "0.9 "},""
             userExperience: "{ level: 1", efficiency: "0.7", growth: "0.8 "},""
-            businessIntelligence: "{ level: 1", efficiency: "0.5", growth: "0.9 "}"";
-        };
+            businessIntelligence: "{ level: 1", efficiency: "0.5", growth: "0.9 "}""};
     }
 
     async startSmartAutomation() {
@@ -140,8 +139,7 @@ class SmartAutomationSystem {
             securityMonitoring: "{ name: \'Adaptive Security\'", type: "\'ai-driven\' "},""
             marketAnalysis: "{ name: \'Real-time Analytics\'", type: "\'data-driven\' "},""
             userExperience: "{ name: \'Personalization Engine\'", type: "\'ai-driven\' "},""
-            businessIntelligence: "{ name: \'Advanced Analytics\'", type: "\'data-driven\' "}"";
-        };
+            businessIntelligence: "{ name: \'Advanced Analytics\'", type: "\'data-driven\' "}""};
         
         return enhancements[capability] || { name: "\'Generic Enhancement\'", type: "\'standard\' "};""
     }
@@ -163,8 +161,7 @@ class SmartAutomationSystem {
         const newCapabilities = {
             predictiveAnalytics: "{ level: 1", efficiency: "0.6", growth: "0.9 "},""
             automatedTesting: "{ level: 1", efficiency: "0.7", growth: "0.7 "},""
-            dataVisualization: "{ level: 1", efficiency: "0.5", growth: "0.8 "}"";
-        };
+            dataVisualization: "{ level: 1", efficiency: "0.5", growth: "0.8 "}""};
         
         Object.assign(this.capabilities, newCapabilities);
         
@@ -194,8 +191,7 @@ class SmartAutomationSystem {
             { name: "'Adaptive Learning'", type: "\'ai-driven\'", impact: "\'high\' "},""
             { name: "\'Predictive UI\'", type: "\'ml-powered\'", impact: "\'medium\' "},""
             { name: "\'Intelligent Curation\'", type: "\'ai-driven\'", impact: "\'high\' "},""
-            { name: "\'Automated Testing\'", type: "\'automation\'", impact: "\'medium\' "}"";
-        ];
+            { name: "\'Automated Testing\'", type: "\'automation\'", impact: "\'medium\' "}""];
         
         await fs.writeJson(path.join(this.smartDir, \'innovations.json\'), innovations, { spaces: "2 "});""
         console.log(\'  🚀 Innovations created\');\'\'
@@ -215,7 +211,7 @@ class SmartAutomationSystem {
 }
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const smartSystem = new SmartAutomationSystem();
     smartSystem.startSmartAutomation()
         .then(() => {

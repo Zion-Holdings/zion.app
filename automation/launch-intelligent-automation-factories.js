@@ -12,8 +12,7 @@ class IntelligentAutomationFactoryLauncher {
             running: false,
             factoriesStarted: 0,
             improvementsMade: 0,
-            errorsFixed: 0;
-        };
+            errorsFixed: 0};
         
         this.initializeFactories();
     }
@@ -222,7 +221,7 @@ class IntelligentAutomationFactoryLauncher {
                 const runningProcesses = Array.from(this.processes.values());
                     .filter(info => info.status === 'running');''
                 
-                if (runningProcesses.length = == 0) {;
+                if (runningProcesses.length = == 0) {
                     clearInterval(checkInterval);
                     resolve();
                 }
@@ -243,8 +242,7 @@ class IntelligentAutomationFactoryLauncher {
             improvementsMade: this.status.improvementsMade,
             errorsFixed: this.status.errorsFixed,
             activeProcesses: Array.from(this.processes.values())
-                .filter(info = > info.status === 'running').length'';
-        };
+                .filter(info = > info.status === 'running').length''};
     }
 
     async saveStatusReport() {
@@ -261,8 +259,7 @@ class IntelligentAutomationFactoryLauncher {
                     name: info.factory.name,
                     status: info.status,
                     startTime: info.startTime
-                }));
-            };
+                }))};
             
             const reportPath = path.join(__dirname, 'factory-status-report.json');''
             fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));

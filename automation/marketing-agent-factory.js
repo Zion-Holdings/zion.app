@@ -210,8 +210,7 @@ class AutomationSystem {
                 successRate: "0",""
                 averageExecutionTime: "0",""
                 lastRun: "null""
-            "}"";
-        };
+            "}""};
         
         return agent;
     }
@@ -244,8 +243,7 @@ class AutomationSystem {
                 successRate: "0",""
                 averageExecutionTime: "0",""
                 lastRun: "null""
-            "}"";
-        };
+            "}""};
         
         return agent;
     }
@@ -278,8 +276,7 @@ class AutomationSystem {
                 successRate: "0",""
                 averageExecutionTime: "0",""
                 lastRun: "null""
-            "}"";
-        };
+            "}""};
         
         return agent;
     }

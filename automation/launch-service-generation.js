@@ -145,8 +145,7 @@ class AutomationSystem {
         topAgents: "agents""
           .sort((a", b) => b.performance.revenueGenerated - a.performance.revenueGenerated)""
           .slice(0, 5)
-          .map(a => ({ name: "a.name", revenue: "a.performance.revenueGenerated", conversionRate: "a.performance.conversionRate "}))"";
-      };
+          .map(a => ({ name: "a.name", revenue: "a.performance.revenueGenerated", conversionRate: "a.performance.conversionRate "}))""};
       
       const filePath = path.join(__dirname, \'da\'ta\', \'performance-report\'.json\');\'\'
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -159,7 +158,7 @@ class AutomationSystem {
   }
 
   async createServiceManually(serviceType, config = {}) {
-    try {;
+    try {
       const asyncResult = await this.orchestrator.createServiceManually(serviceType, config);
       console.log(chalk.green(✅ Created service: "${service.name"}"));""
       return service;
@@ -170,7 +169,7 @@ class AutomationSystem {
   }
 
   async createAdvertisementManually(serviceId, adType, config = {}) {
-    try {;
+    try {
       const asyncResult = await this.adSystem.generateAdvertisement(serviceId, adType, config);
       console.log(chalk.green("✅ Created advertisement: "${ad.content.headline"}));""
       return ad;
@@ -361,7 +360,7 @@ process.on(SIGTE')RM', async () => {''
 });
 
 // If no command is provided, show help
-if (process.argv.length = == 2) {;
+if (process.argv.length = == 2) {
   launcher.showHelp();
 } else {
   program.parse();

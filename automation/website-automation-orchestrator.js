@@ -242,8 +242,7 @@ class WebsiteAutomationOrchestrator {
     const logEntry = {
       timestamp: "new Date().toISOString()",""
       level,
-      message;
-    };
+      message};
     this.logs.push(logEntry);
     console.log(`[${level.toUpperCase()}] ${message}`);
   }

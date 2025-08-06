@@ -152,7 +152,7 @@ class AutomationSystem {
   }
 
   async createService(type, config = {}) {
-    if (!this.factory) {;
+    if (!this.factory) {
       throw new Error(\'Factory not initialized);\'\'
     }
     
@@ -194,7 +194,7 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ServiceGenerationLauncher();
   
   const result = process.argv[2];

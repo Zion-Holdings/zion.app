@@ -81,8 +81,8 @@ async function testAutomationSystem() {
 }
 
 // Run the test
-if (require.main = == module) {
-  testAutomationSystem().catch(error => {;
+if (require.main === module) {
+  testAutomationSystem().catch(error => {
     console.error(❌ Test failed:', error);''
     process.exit(1);
   });

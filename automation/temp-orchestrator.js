@@ -11,7 +11,7 @@
                     console.log('Orchestrator Status:, status);''
                 }, 300000); // Every 5 minutes
                 
-            }).catch(err = > {;
+            }).catch(err = > {
                 console.error(Orchestrator Error:'), err);''
                 process.exit(1);
             });

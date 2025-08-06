@@ -42,11 +42,10 @@ class IntelligentAutomationFactorySystem {
             path.join(__dirname, \'intelligent-factories/monitoring\'),\'\'
             path.join(__dirname, \'intelligent-factories/self-healing\'),\'\'
             path.join(__dirname, \'intelligent-factories/analytics\'),\'\'
-            path.join(__dirname, \'intelligent-factories/reports\')\'\';
-        ];
+            path.join(__dirname, \'intelligent-factories/reports\')\'\'];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
@@ -640,7 +639,7 @@ class IntelligentAutomationFactorySystem {
         const files = [];
         const automationDir = path.join(__dirname);
         
-        const readDir = (dir) => {;
+        const readDir = (dir) => {
             const items = fs.readdirSync(dir);
             for (const item of items) {
                 const fullPath = path.join(dir, item);

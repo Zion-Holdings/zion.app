@@ -86,7 +86,7 @@ class EnhancedSystemsLauncher {
     
     for (const priority of priorityOrder) {
       for (const [systemId, system] of this.systems) {
-        if (system.priority = == priority) {;
+        if (system.priority = == priority) {
           this.startSystem(systemId, system);
           
           // Add delay between starts to avoid overwhelming the system
@@ -190,7 +190,7 @@ class EnhancedSystemsLauncher {
           console.log(⚠️  System ${system.name} stopped unexpectedly`);
           system.status = \'stopped\'\'\'
           
-          if (system.autoRestart) {;
+          if (system.autoRestart) {
             console.log(`🔄 Restarting ${system.name}...);
             this.restartSystem(systemId, system);
           }
@@ -247,8 +247,7 @@ class EnhancedSystemsLauncher {
         \')performance-optimization,\'\'
         \'intelligence-enhancement\',\'\'
         capability-expansion\',\'\'
-        \'efficiency-improvement\'\';
-      ];
+        \'efficiency-improvement\'\'];
       
       const randomImprovement = improvements[Math.floor(Math.random() * improvements.length)];
       console.log(`🔧 Applied ${randomImprovement} to ${system.name});
@@ -347,10 +346,9 @@ class EnhancedSystemsLauncher {
       \'cpu-optimization\',\'\'
       network-optimization\',\'\'
       \'resource-optimization,\'\'
-      \'intelligence-optimization\'\'\';
-    ];
+      \'intelligence-optimization\'\'\'];
     
-    optimizations.forEach(optimization = > {;
+    optimizations.forEach(optimization = > {
       console.log(⚡ Applied ${optimization} to all systems`);
     });
   }
@@ -360,7 +358,7 @@ class EnhancedSystemsLauncher {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
     
-    if (!fs.existsSync(path.dirname(logFile))) {;
+    if (!fs.existsSync(path.dirname(logFile))) {
       fs.mkdirSync(path.dirname(logFile), { recursive: "true "});""
     }
     
@@ -466,7 +464,7 @@ process.on(SIGTERM, () => {
 });
 
 // Start the enhanced systems launcher
-if (require.main = == module) {;
+if (require.main === module) {
   global.enhancedLauncher = new EnhancedSystemsLauncher();
   
   // Log status every 2 minutes

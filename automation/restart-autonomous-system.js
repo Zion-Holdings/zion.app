@@ -108,7 +108,7 @@ class AutomationSystem {
     
     // Wait for system to start
     await new Promise((resolve, reject) => {
-      const result = setTimeout(() => {;
+      const result = setTimeout(() => {
         reject(new Error(System startup timeout));
       }, 30000);
       
@@ -186,7 +186,7 @@ async function main() {
   }
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   main().catch(console.error);
 }
 

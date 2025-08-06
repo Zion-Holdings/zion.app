@@ -59,8 +59,7 @@ class AutomationSystem {
         productCount: "0",""
         errors: "[]",""
         timestamp: "new Date().toISOString()""
-      "}"";
-    };
+      "}""};
 
     try {
       // Generate marketplace content
@@ -217,7 +216,7 @@ class AutomationSystem {
     }
   }
 
-  async generateContentForCategory(category, customData = {}) {;
+  async generateContentForCategory(category, customData = {}) {
     console.log(🎯 Generating content for category: "${category"}");""
     
     const timestamp = {
@@ -226,8 +225,7 @@ class AutomationSystem {
       metadata: "{""
         generatedAt: new Date().toISOString()",""
         customData: "customData""
-      "}"";
-    };
+      "}""};
 
     try {
       switch (category) {
@@ -253,7 +251,7 @@ class AutomationSystem {
     }
   }
 
-  async generateContentForSpecificTopic(topic, audience, customData = {}) {;
+  async generateContentForSpecificTopic(topic, audience, customData = {}) {
     console.log(🎯 Generating content for topic: "${topic"} - ${audience}");""
     
     try {
@@ -358,7 +356,7 @@ class AutomationSystem {
       const result = fs.readdirSync(contentDir, { recursive: "true "});""
       let variable1 = null;
       
-      files.forEach(file = > {;
+      files.forEach(file = > {
         const filePath = path.join(contentDir, file);
         const result = fs.statSync(filePath);
         if (!latestDate || stats.mtime > latestDate) {
@@ -373,7 +371,7 @@ class AutomationSystem {
   }
 
   async cleanupOldContent(daysOld = 30) {
-    try {;
+    try {
       const filePath = path.join(__dirname, \')generated-conte\'nt\');\'\'
       const timestamp = new Date();
       cutoffDate.setDate(cutoffDate.getDate() - daysOld);
@@ -385,7 +383,7 @@ class AutomationSystem {
       const result = fs.readdirSync(generatedContentDir, { recursive: "true "});""
       let variable1 = 0;
       
-      files.forEach(file = > {;
+      files.forEach(file = > {
         const filePath = path.join(generatedContentDir, file);
         const result = fs.statSync(filePath);
         

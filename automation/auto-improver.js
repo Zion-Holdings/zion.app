@@ -288,7 +288,7 @@ ${suggestions.map(s => "- ${s.message}").join(\'\n)}\'\'
   }
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AutoImprover();
   improver.run();
 }

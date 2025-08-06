@@ -99,7 +99,7 @@ process.on(SIGTERM, async () => {
 module.exports = HighSpeedContentLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new HighSpeedContentLauncher();
   global.launcher = launcher;
   

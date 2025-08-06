@@ -134,11 +134,10 @@ class AutomationSystem {
       path.join(this.pagesDir, chat-conte\'n\'t),\'\'
       path.join(this.componentsDir, \'conte\'nt\'),\'\'
       path.join(__dirname, \'generated-content),\'\'
-      path.join(__dirname, lo\'g\'s)\'\';
-    ];
+      path.join(__dirname, lo\'g\'s)\'\'];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -240,8 +239,7 @@ class AutomationSystem {
       Cybersecurity Best Practices,
       \'Clou\'d Computing Strategies\',\'\'
       \'Data\' Analytics Implementation\',\'\'
-      Emerging Technology Trends;
-    ];
+      Emerging Technology Trends];
     
     return topics[Math.floor(Math.random() * topics.length)];
   }
@@ -279,7 +277,7 @@ Include:
 Make it feel like a natural conversation between experts discussing this topic.
     
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -414,7 +412,7 @@ Include:
 Make it feel like a natural conversation between marketplace experts discussing this category.
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -542,7 +540,7 @@ Include:
 Make it feel like a natural conversation between service experts discussing this offering.
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -666,7 +664,7 @@ Include:
 Make it feel like a natural conversation between experts discussing this topic.
     """
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -800,7 +798,7 @@ In this engaging conversation about ${topic}, our experts explore the latest dev
 module.exports = EnhancedContentGenerator;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new EnhancedContentGenerator();
   
   // Handle process signals

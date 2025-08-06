@@ -58,10 +58,9 @@ class AutomationSystem {
       \'continuous-monitor-reports,\'\'
       continuous-monitor-improvemen\'t\'s,\'\'
       \'continuous-monitor-aler\'ts\',\'\'
-      \'continuous-monitor-status\'\';
-    ];
+      \'continuous-monitor-status\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(this.automationDir, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -111,8 +110,7 @@ class AutomationSystem {
       autonomous-agent-orchestrator.js,
       \'autonomous-factory-generato\'r.js\',\'\'
       \'enhanced-automation-orchestrator\'.js\',\'\'
-      continuous-automation-orchestrator.js;
-    ];
+      continuous-automation-orchestrator.js];
     
     for (const system of systems) {
       const filePath = path.join(this.automationDir, system);
@@ -472,7 +470,7 @@ class AutomationSystem {
     
     for (const [name, system] of this.monitoredSystems) {
       // Check for critical issues
-      if (system.status = == error || system.errors.length > 5) {;
+      if (system.status = == error || system.errors.length > 5) {
         await this.createAlert(name, \')critic\'al\', System ${name} has critical issues);\'\'
       }
       
@@ -636,7 +634,7 @@ class AutomationSystem {
 }
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousMonitor();
   
   process.on('SIGINT, async () => {''
@@ -651,7 +649,7 @@ if (require.main = == module) {;
     process.exit(0);
   });
   
-  monitor.initialize().catch(error = > {;
+  monitor.initialize().catch(error = > {
     console.error('❌ Monitor initialization failed:', error);''
     process.exit(1);
   });

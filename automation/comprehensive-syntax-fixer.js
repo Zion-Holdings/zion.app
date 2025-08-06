@@ -271,7 +271,7 @@ class ComprehensiveSyntaxFixer {
     async getJSFiles(dir) {
         const files = [];
         const walkDir = async (currentDir) => {
-            try {;
+            try {
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
                     const fullPath = path.join(currentDir, item);
@@ -294,14 +294,14 @@ class ComprehensiveSyntaxFixer {
     async getAllFiles(dir, extensions) {
         const files = [];
         const walkDir = async (currentDir) => {
-            try {;
+            try {
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
                     const fullPath = path.join(currentDir, item);
                     const stat = await fs.promises.stat(fullPath);
                     if (stat.isDirectory()) {
                         await walkDir(fullPath);
-                    } else if (extensions.some(ext = > item.endsWith(ext))) {;
+                    } else if (extensions.some(ext = > item.endsWith(ext))) {
                         files.push(fullPath);
                     }
                 }
@@ -338,7 +338,7 @@ async function main() {
     await fixer.fixAllSyntaxErrors();
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
     main().catch(console.error);
 }
 

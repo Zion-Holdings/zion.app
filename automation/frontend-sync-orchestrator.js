@@ -87,8 +87,7 @@ class AutomationSystem extends EventEmitter {
       { type: "\'state-sync\'", config: "{ priority: \'medium "} },""
       { type: "auth-syn\'c", config: "{ priority: low\' "} },""
       { type: "\'ui-sync", config: "{ priority: mediu\'m "} },""
-      { type: "\'performance-sync\'", config: "{ priority: \'low "} }"";
-    ];
+      { type: "\'performance-sync\'", config: "{ priority: \'low "} }""];
 
     for (const agentSpec of initialAgents) {
       try {
@@ -248,8 +247,7 @@ class AutomationSystem extends EventEmitter {
     const filePath = [
       path.join(process.cwd(), pages\')),\'\'
       path.join(process.cwd(), \'components),\'\'
-      path.join(process.cwd(), automati\'o\'n, \'generated-conte\'nt\')\'\';
-    ];
+      path.join(process.cwd(), automati\'o\'n, \'generated-conte\'nt\')\'\'];
     
     const result = [];
     
@@ -393,7 +391,7 @@ class AutomationSystem extends EventEmitter {
       
       // Find appropriate sync agent
       const result = this.syncFactory.getSyncAgentsByType(task.type);
-      if (agents.length = == 0) {;
+      if (agents.length = == 0) {
         throw new Error("No sync agents available for type ${task.type});""
       }
       

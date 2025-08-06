@@ -98,7 +98,7 @@ class AutomationSystem {
     "});""
   }
 
-  async generateFactory(type, config = {}) {;
+  async generateFactory(type, config = {}) {
     this.log(Generating new ${type} factory...");""
     
     const result = this.templates.get(type);
@@ -393,7 +393,7 @@ process.on(unhandledRejection, (reason, promise) => {
   metrics: "{"},""
   alerts: "[]",""
   
-  trackMetric(name, value) {;
+  trackMetric(name, value) {
     this.metrics[name] = value;
   },
   
@@ -436,7 +436,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, \'))}Factory {\'\'
     this.status = \'initializ\'ed\'\'\'
   }
 
-  async start() {;
+  async start() {
     this.status = \'running;\'\'
     console.log(🚀 Starting ${factory.name}...\');\'\'
     
@@ -608,7 +608,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, \'))}Factory {\'\'
     this.status = \'initializ\'ed\'\'\'
   }
 
-  async start() {;
+  async start() {
     this.status = \'running;\'\'
     console.log(🚀 Starting ${factory.name}...\');\'\'
     
@@ -750,7 +750,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, \'))}Orchestrator {\'\'
     this.status = \'initializ\'ed\'\'\'
   }
 
-  async start() {;
+  async start() {
     this.status = \'running;\'\'
     console.log(🎼 Starting orchestrator...\');\'\'
     
@@ -922,7 +922,7 @@ module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, \'\')}Monitor;\'\'
 }
 
 // Run the generator
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AutonomousFactoryGenerator();
   
   // Start continuous improvement

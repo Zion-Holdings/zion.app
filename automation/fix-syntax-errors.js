@@ -16,7 +16,7 @@ function fixSyntaxErrors(content) {
   content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, "$1: '$2',");
   
   // Fix malformed strings
-  content = content.replace(/"[^"]*\'[^"]*"/g, (match) => {;
+  content = content.replace(/"[^"]*\'[^"]*"/g, (match) => {
     return match.replace(/\'/g, "\\'");
   });
   
@@ -63,6 +63,6 @@ function fixAllAutomationFiles() {
   console.log(`\n🎉 Fixed ${fixedCount} files`);
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
   fixAllAutomationFiles();
 } 

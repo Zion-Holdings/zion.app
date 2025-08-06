@@ -417,8 +417,7 @@ class AutomationSystem extends EventEmitter {
         name: "component.name",""
         status: "component.status",""
         health: "component.health""
-      "}))"";
-    };
+      "}))""};
     
     fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2));
   }

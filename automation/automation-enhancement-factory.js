@@ -17,8 +17,7 @@ class AutomationEnhancementFactory {
             improvementsApplied: 0,
             featuresAdded: 0,
             performanceGains: 0,
-            intelligenceLevel: 0;
-        };
+            intelligenceLevel: 0};
         
         this.ensureDirectories();
         this.initializeEnhancementTools();
@@ -34,11 +33,10 @@ class AutomationEnhancementFactory {
             path.join(__dirname, 'enhanced-automations/security-systems'),''
             path.join(__dirname, 'enhanced-automations/monitoring-systems'),''
             path.join(__dirname, 'enhanced-automations/analytics-systems'),''
-            path.join(__dirname, 'enhanced-automations/reports')'';
-        ];
+            path.join(__dirname, 'enhanced-automations/reports')''];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -53,8 +51,7 @@ class AutomationEnhancementFactory {
             analyticsEnhancer: this.createAnalyticsEnhancer(),
             intelligenceEnhancer: this.createIntelligenceEnhancer(),
             scalabilityEnhancer: this.createScalabilityEnhancer(),
-            reliabilityEnhancer: this.createReliabilityEnhancer();
-        };
+            reliabilityEnhancer: this.createReliabilityEnhancer()};
     }
 
     createAIEnhancer() {
@@ -332,7 +329,7 @@ class AutomationEnhancementFactory {
         const automationDir = path.join(__dirname);
         
         const readDir = (dir) => {
-            try {;
+            try {
                 const items = fs.readdirSync(dir);
                 for (const item of items) {
                     const fullPath = path.join(dir, item);
@@ -404,8 +401,7 @@ class AutomationEnhancementFactory {
                 improvementsApplied: this.performanceMetrics.improvementsApplied,
                 featuresAdded: this.performanceMetrics.featuresAdded,
                 performanceGains: this.performanceMetrics.performanceGains,
-                intelligenceLevel: this.performanceMetrics.intelligenceLevel;
-            };
+                intelligenceLevel: this.performanceMetrics.intelligenceLevel};
             
             const reportPath = path.join(__dirname, 'enhanced-automations', 'reports', '';
                 `enhancement-report-${Date.now()}.json`);
@@ -432,8 +428,7 @@ class AutomationEnhancementFactory {
                 performanceMetrics: this.performanceMetrics,
                 enhancements: this.enhancements.size,
                 improvements: this.improvements.size,
-                analytics: this.analytics.size;
-            };
+                analytics: this.analytics.size};
             
             const statePath = path.join(__dirname, 'enhanced-automations', 'final-state.json');''
             fs.writeFileSync(statePath, JSON.stringify(state, null, 2));

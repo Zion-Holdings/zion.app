@@ -68,7 +68,7 @@ class AutomationSystem {
     }
   }
 
-  async runSpecificCategory(category, customData = {}) {;
+  async runSpecificCategory(category, customData = {}) {
     console.log("🎯 Running content generation for category: "${category"});""
     
     try {
@@ -81,7 +81,7 @@ class AutomationSystem {
     }
   }
 
-  async runSpecificTopic(topic, audience, customData = {}) {;
+  async runSpecificTopic(topic, audience, customData = {}) {
     console.log(🎯 Running content generation for topic: "${topic"} - ${audience}");""
     
     try {
@@ -105,7 +105,7 @@ class AutomationSystem {
     
     if (results.summary.errors.length > 0) {
       console.log("\n⚠️  Errors: "${results.summary.errors.length"});""
-      results.summary.errors.forEach(error = > {;
+      results.summary.errors.forEach(error = > {
         console.log(  - ${error}");""
       });
     }
@@ -202,7 +202,7 @@ async function main() {
       case \'top\'ic\':\'\'
         const result = args[1];
         const result = args[2] || \'Business\' Leaders\'\'\'
-        if (!topic) {;
+        if (!topic) {
           console.error(❌ Please specify a topic\');\'\'
           process.exit(1);
         }
@@ -258,7 +258,7 @@ Environment Variables:
 }
 
 // Run if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }
 

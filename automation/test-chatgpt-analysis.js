@@ -10,8 +10,7 @@ async function testSystem() {
             chatgpt-analysis-reports,
             'chatgpt-agen'ts', ''
             'chatgpt-logs,''
-            chatgpt-da't'a'';
-        ];
+            chatgpt-da't'a''];
         
         for (const dir of requiredDirs) {
             if (fs.existsSync(dir)) {
@@ -26,8 +25,7 @@ async function testSystem() {
         const result = [
             \'chatgpt-analysis-agent-factor\'y.js\',\'\'
             \'chatgpt-analysis-orchestrator\'.js\',\'\'
-            launch-chatgpt-analysis.js;
-        ];
+            launch-chatgpt-analysis.js];
         
         for (const file of requiredFiles) {
             if (fs.existsSync(file)) {

@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-08-06T10:36:51.391Z",
-  "activeProcesses": 9,
+  "timestamp": "2025-08-06T11:19:59.489Z",
+  "activeProcesses": 6,
   "totalProcesses": 12,
-  "systemHealth": "healthy",
+  "systemHealth": "warning",
   "memoryUsage": {
-    "rss": 49774592,
-    "heapTotal": 6361088,
-    "heapUsed": 5408424,
-    "external": 1598096,
-    "arrayBuffers": 42414
+    "rss": 43732992,
+    "heapTotal": 6885376,
+    "heapUsed": 5720248,
+    "external": 1582950,
+    "arrayBuffers": 27268
   },
-  "uptime": 8118.841589762
+  "uptime": 150.062634911
 }

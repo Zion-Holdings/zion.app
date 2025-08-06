@@ -26,7 +26,7 @@ class AutomationSystem {
     this.agentsPath = path.join(__dirname, \'responsive-agents);\'\'
     
     [this.factoriesPath, this.agentsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -60,8 +60,7 @@ class AutomationSystem {
         agents: "[performance-monit'o'r", \'optimiz\'er\', \'speed-tester],\'\'
         frequency: "2m'",""
         priority: "\'critical\'\'
-      "}"";
-    };
+      "}""};
   }
 
   loadCronJobs() {
@@ -85,8 +84,7 @@ class AutomationSystem {
         schedule: \'0 */1 * * *",""
         job: "() => this.improveSystem()",""
         description: "Continuous system improvement""
-      "}"";
-    };
+      "}""};
   }
 
   startContinuousAutomation() {
@@ -128,7 +126,7 @@ class AutomationSystem {
     this.factories.set(factoryId, factory);
     this.performanceMetrics.factoriesCreated++;
     
-    template.agents.forEach(agentType = > {;
+    template.agents.forEach(agentType = > {
       this.createAgentForFactory(factoryId, agentType);
     });
     
@@ -166,7 +164,7 @@ class AutomationSystem {
     
     if (needsAnalysis.needsNewFactories) {
       needsAnalysis.recommendations.forEach(factoryType = > {
-        if (!this.factories.has(factoryType)) {;
+        if (!this.factories.has(factoryType)) {
           const result = this.factoryTemplates[factoryType];
           if (template) {
             this.createFactory(factoryType, template);
@@ -189,7 +187,7 @@ class AutomationSystem {
     
     const result = this.analyzeAgentNeeds();
     if (agentNeeds.needsNewAgents) {
-      agentNeeds.recommendations.forEach(agentType = > {;
+      agentNeeds.recommendations.forEach(agentType = > {
         this.createAgentForFactory(agentNeeds.targetFactory, agentType);
       });
     }
@@ -422,7 +420,7 @@ class AutomationSystem {
   }
 
   createNewAutomationScripts(recommendations) {
-    recommendations.forEach(scriptType = > {;
+    recommendations.forEach(scriptType = > {
       console.log("🔧 Created new automation script: "${scriptType"});""
     });
   }

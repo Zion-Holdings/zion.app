@@ -40,17 +40,16 @@ class AutomationSystem {
     const result = [
       this.config.reportsDir,
       this.config.logsDir,
-      this.config.backupDir;
-    ];
+      this.config.backupDir];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
   }
 
-  log(message, level = INFO) {;
+  log(message, level = INFO) {
     const timestamp = new Date().toISOString();
     const result = "[${timestamp}] [${level}] ${message}""
     ;
@@ -72,7 +71,7 @@ class AutomationSystem {
       // Backup key directories
       const result = [\'pag\'es\', \'components, scrip\'t\'s];\'\'
       dirsToBackup.forEach(dir = > {
-        if (fs.existsSync(dir)) {;
+        if (fs.existsSync(dir)) {
           execSync(cp -r ${dir} ${backupPath}/", { stdio: "\'pipe\' "});""
         }
       });
@@ -247,8 +246,7 @@ class AutomationSystem {
         totalIssues: this.stats.brokenLinks + this.stats.syntaxErrors + this.stats.navigationIssues",""
         fixesApplied: "this.stats.fixesApplied",""
         buildSuccess: "this.buildSuccess""
-      "}"";
-    };
+      "}""};
     
     const filePath = path.join(this.config.reportsDir, health-report-${new Date().toISOString().split(\'T)[0]}.json");""
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
@@ -306,13 +304,13 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new LinkHealthMonitor();
   
   const result = process.argv.slice(2);
   
   if (args.includes(\'--check)) {\'\'
-    monitor.runFullHealthCheck().then(result = > {;
+    monitor.runFullHealthCheck().then(result = > {
       process.exit(result.success ? 0 : 1);
     });
   } else if (args.includes(--schedule)) {
@@ -335,7 +333,7 @@ Examples:
     ");""
   } else {
     // Default: "run health check""
-    monitor.runFullHealthCheck().then(result = > {;
+    monitor.runFullHealthCheck().then(result = > {
       process.exit(result.success ? 0 : 1);
     "});""
   }

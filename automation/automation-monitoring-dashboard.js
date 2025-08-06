@@ -28,7 +28,7 @@ class AutomationSystem {
     this.alertsPath = path.join(__dirname, \'monitoring-aler\'ts\');\'\'
     
     [this.dashboardPath, this.reportsPath, this.alertsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -409,7 +409,7 @@ class AutomationSystem {
       const result = fs.readdirSync(this.alertsPath).filter(file => file.endsWith(\'.json));\'\'
       
       alertFiles.forEach(file = > {
-        try {;
+        try {
           const filePath = JSON.parse(fs.readFileSync(path.join(this.alertsPath, file), utf8\')));\'\'
           alerts.push(...alertData);
         } catch (error) {

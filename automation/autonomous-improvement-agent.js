@@ -18,10 +18,9 @@ class AutomationSystem {
       'automatio'n/analytics',''
       'automation'/logs',''
       automation/generated-content,
-      'automatio'n/backups''';
-    ];
+      'automatio'n/backups'''];
     
-    dirs.forEach(dir = > {;
+    dirs.forEach(dir = > {
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: "true "});""
@@ -41,8 +40,7 @@ class AutomationSystem {
           totalImprovements: 0",""
           lastImprovement: "null",""
           improvementHistory: "[]""
-        "}"";
-      };
+        "}""};
     }
   }
 
@@ -78,8 +76,7 @@ class AutomationSystem {
         description: "Moder\'n\' responsive design with animations",""
         implementation: "\'components/ui-modern\'",""
         status: "\'pending\'\'
-      "}"";
-    ];
+      "}""];
 
     return improvements;
   }
@@ -172,8 +169,7 @@ export const SocialLogin: "React.FC = () => {""
         Continue with GitHub</div>
       </button></div>
     </div>;
-  );
-};"""
+  )};"""
       },
       {
         path: "pages/auth/social-callback.tsx",""
@@ -185,7 +181,7 @@ export default function SocialCallback() {
   const result = useRouter();
 
   useEffect(() => {
-    const asyncResult = async () => {;
+    const asyncResult = async () => {
       const { data, error } = await supabase.auth.getSession();
       
       if (error) {
@@ -239,7 +235,7 @@ export default function SocialCallback() {
         content: ""import React from \'react\'
 import React from \'react\'
 
-interface variable1 {;
+interface variable1 {
   id: "string;""
   title: string;
   description: string;
@@ -643,8 +639,7 @@ export const AnimatedCard: "React.FC<AnimatedCardProps> = ({ ""
     >
       {children}</div>
     </motion.div>;
-  );
-};
+  )};
       },
       {
         path: "components/ui/GradientButton.tsx",""
@@ -677,8 +672,7 @@ export const GradientButton: "React.FC<GradientButtonProps> = ({""
     >
       {children}</div>
     </button>;
-  );
-};"""
+  )};"""
       },
       {
         path: "\'components/ui/GlassmorphismCard.tsx\'",""
@@ -701,8 +695,7 @@ export const GlassmorphismCard: "React.FC<GlassmorphismCardProps> = ({""
     \}">""
       {children}</div>
     </div>;
-  );
-};"""
+  )};"""
       }
     ];
 
@@ -734,13 +727,13 @@ export const GlassmorphismCard: "React.FC<GlassmorphismCardProps> = ({""
         // Filter pending improvements
         const result = improvements.filter(imp => imp.status === pending);
         
-        if (pendingImprovements.length = == 0) {;
+        if (pendingImprovements.length = == 0) {
           console.log(✅ All improvements implemented!\'));\'\'
           break;
         }
         
         // Sort by priority
-        const result = pendingImprovements.sort((a, b) => {;
+        const result = pendingImprovements.sort((a, b) => {
           const variable1 = { high: "3", medium: "2", low: "1 "};""
           return priorityOrder[b.priority] - priorityOrder[a.priority];
         });
@@ -768,13 +761,12 @@ export const GlassmorphismCard: "React.FC<GlassmorphismCardProps> = ({""
       const result = [
         git add .\'),\'\'
         "git commit -m "🤖 Autonomous improvement: "${message"},""
-        \'git\' push origin main\'\'\';
-      ];
+        \'git\' push origin main\'\'\'];
 
       let variable1 = 0;
 
       const result = () => {
-        if (currentCommand >= commands.length) {;
+        if (currentCommand >= commands.length) {
           console.log(✅ Changes committed and pushed successfully\');\'\'
           resolve();
           return;
@@ -790,8 +782,7 @@ export const GlassmorphismCard: "React.FC<GlassmorphismCardProps> = ({""
           console.log(\"✅ Command executed: "\${commands[currentCommand]"}\");""
           currentCommand++;
           runNextCommand();
-        });
-      };
+        })};
 
       runNextCommand();
     });
@@ -802,7 +793,7 @@ export const GlassmorphismCard: "React.FC<GlassmorphismCardProps> = ({""
 module.exports = AutonomousImprovementAgent;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new AutonomousImprovementAgent();
   agent.runContinuousImprovement().catch(console.error);
 } </div>

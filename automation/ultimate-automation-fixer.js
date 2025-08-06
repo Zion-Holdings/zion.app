@@ -93,7 +93,7 @@ class UltimateAutomationFixer {
                 replacement: \'\' \'
             },
             // Fix malformed semicolons
-            { ;
+            {
                 pattern: /;+/g, 
                 replacement: \';\' \'
             }
@@ -226,8 +226,7 @@ class UltimateAutomationFixer {
                 name: \'user-experience-enhancer\',\'
                 description: \'Intelligent UX optimization with personalization\',\'
                 features: [\'personalization\', \'a-b-testing\', \'user-feedback-analysis\', \'conversion-optimization\']\'
-            };
-        ];
+            }];
         
         for (const system of advancedSystems) {
             await this.createAdvancedSystem(system);
@@ -263,8 +262,7 @@ class ${className} {
         this.intelligence = {
             learningRate: 0.15,
             adaptationSpeed: 0.9,
-            innovationIndex: 0.8;
-        };
+            innovationIndex: 0.8};
     }
     
     async start() {
@@ -290,8 +288,7 @@ class ${className} {
         this.metrics = {
             processed: 0,
             optimized: 0,
-            errors: 0;
-        };
+            errors: 0};
     }
     
     async analyze() {
@@ -351,8 +348,7 @@ module.exports = ${className};
                 name: \'smart-monitoring\',\'
                 description: \'Intelligent system monitoring and alerting\',\'
                 capabilities: [\'real-time-monitoring\', \'predictive-alerts\', \'auto-remediation\']\'
-            };
-        ];
+            }];
         
         for (const feature of intelligentFeatures) {
             await this.createIntelligentFeature(feature);
@@ -386,8 +382,7 @@ class ${className} {
         this.ai = {
             model: \'advanced\',\'
             learningRate: 0.05,
-            confidence: 0.85;
-        };
+            confidence: 0.85};
     }
     
     async start() {
@@ -461,8 +456,7 @@ module.exports = ${className};
                         reviews: [\'service_id\', \'rating\']\'
                     }
                 }
-            };
-        ];
+            }];
         
         for (const optimization of optimizations) {
             await this.createOptimization(optimization);
@@ -509,8 +503,7 @@ module.exports = ${className};
             timestamp: new Date().toISOString(),
             type,
             message,
-            stack: new Error().stack;
-        };
+            stack: new Error().stack};
         
         const errorLogPath = path.join(this.automationDir, 'logs', `error-${Date.now()}.json`);'
         await fs.writeJson(errorLogPath, errorLog, { spaces: 2 });
@@ -518,7 +511,7 @@ module.exports = ${className};
 }
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const fixer = new UltimateAutomationFixer();
     fixer.start()
         .then(() => {

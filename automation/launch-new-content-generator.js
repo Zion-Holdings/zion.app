@@ -67,7 +67,7 @@ class AutomationSystem {
 }
 
 // Start the launcher if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new NewContentGeneratorLauncher();
   launcher.start();
 }

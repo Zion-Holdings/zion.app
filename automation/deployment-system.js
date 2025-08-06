@@ -74,8 +74,7 @@ class DeploymentSystem {
         const checks = [
             this.checkBuildOutput(),
             this.checkDeploymentStatus(),
-            this.checkPerformance();
-        ];
+            this.checkPerformance()];
         
         await Promise.all(checks);
     }

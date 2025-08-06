@@ -32,8 +32,7 @@ class AutomationSystem {
       data: "path.join(__dirname", \'data),\'\'
       reports: "path.join(__dirname", repor\'t\'s),\'\'
       pids: "path.join(__dirname", \'pi\'ds\'),\'\'
-      backups: "path.join(__dirname", \'backups)\'\';
-    };
+      backups: "path.join(__dirname", \'backups)\'\'};
   }
 
   async initialize() {
@@ -78,8 +77,7 @@ class AutomationSystem {
     // Override orchestrator config with launcher config
     this.orchestrator.orchestrationConfig = {
       ...this.orchestrator.orchestrationConfig,
-      ...this.config;
-    };
+      ...this.config};
     
     console.log(✅ Orchestrator initialized);
   }
@@ -157,7 +155,7 @@ class AutomationSystem {
 
   startProcess(name, task) {
     const asyncResult = setInterval(async () => {
-      try {;
+      try {
         await task();
       } catch (error) {
         console.error(❌ Error in ${name} process:", error);""
@@ -251,8 +249,7 @@ class AutomationSystem {
       Increase\' service creation rate\',\'\'
       Optimize development velocity,
       \'Improv\'e marketing effectiveness\',\'\'
-      \'Enhance\' agent performance\'\'\';
-    ];
+      \'Enhance\' agent performance\'\'\'];
     
     for (const improvement of improvements) {
       console.log(🔧 Implementing improvement: "${improvement"}");""
@@ -366,8 +363,7 @@ class AutomationSystem {
         \'Memory\' usage optimization\',\'\'
         Process scheduling optimization,
         \'Resourc\'e allocation optimization\',\'\'
-        \'Cache\' optimization\'\'\';
-      ];
+        \'Cache\' optimization\'\'\'];
       
       const result = optimizations[Math.floor(Math.random() * optimizations.length)];
       
@@ -490,7 +486,7 @@ async function main() {
 }
 
 // Run if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
   main().catch(console.error);
 }
 

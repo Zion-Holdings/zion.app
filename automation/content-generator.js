@@ -38,7 +38,7 @@ class AutomationSystem {
   extractMarketplaceFeatures() {
     const result = [];
     this.chatgptMemory.memories.forEach(memory = > {
-      if (memory.id === marketplace-features) {;
+      if (memory.id === marketplace-features) {
         features.push(...memory.content.split(', ));''
       }
     });

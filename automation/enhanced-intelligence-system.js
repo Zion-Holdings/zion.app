@@ -25,7 +25,7 @@ class EnhancedIntelligenceSystem {
     
     // Create necessary directories
     [this.intelligencePath, this.learningPath, this.adaptationPath, this.enhancementPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -92,8 +92,7 @@ class EnhancedIntelligenceSystem {
         capabilities: "[threat-detection\'", vulnerability-assessment', 'incident-response],''
         intelligence: "0.9",""
         adaptation: "0.85""
-      "}"";
-    };
+      "}""};
 
     for (const [key, model] of Object.entries(learningModels)) {
       this.learningModels.set(key, model);
@@ -131,8 +130,7 @@ class EnhancedIntelligenceSystem {
         description: "Adapts based on environmental changes\'",""
         strategy: "respond-to-environment\'",""
         intelligence: "0.75""
-      "}"";
-    };
+      "}""};
 
     for (const [key, strategy] of Object.entries(adaptationStrategies)) {
       this.adaptationStrategies.set(key, strategy);
@@ -292,7 +290,7 @@ class EnhancedIntelligenceSystem {
       if (!agentCode.includes(intelligence-enhancement\')) {\'\'
         const intelligenceEnhancement = `
   // Enhanced Intelligence Capabilities
-  enhanceIntelligence() {;
+  enhanceIntelligence() {
     this.intelligenceLevel = Math.min(this.intelligenceLevel + 0.01, 1.0);
     this.learningRate = Math.min(this.learningRate + 0.005, 1.0);
     this.adaptationSpeed = Math.min(this.adaptationSpeed + 0.005, 1.0);
@@ -366,7 +364,7 @@ class EnhancedIntelligenceSystem {
       if (!agentCode.includes(\'collaborative-intelligence)) {\'\'
         const collaborativeCapabilities = `
   // Collaborative Intelligence Capabilities
-  collaborateWithOtherAgents() {;
+  collaborateWithOtherAgents() {
     this.collaborationPartners = this.collaborationPartners || [];
     this.sharedKnowledge = this.sharedKnowledge || new Map();
     
@@ -438,10 +436,9 @@ class EnhancedIntelligenceSystem {
       memory-optimization,
       \')cpu-optimization,\'\'
       \'network-optimization\',\'\'
-      storage-optimization\'\'\';
-    ];
+      storage-optimization\'\'\'];
     
-    optimizations.forEach(optimization = > {;
+    optimizations.forEach(optimization = > {
       console.log(`⚡ Applied ${optimization} to system);
     });
   }
@@ -452,10 +449,9 @@ class EnhancedIntelligenceSystem {
       \'response-time-optimization,\'\'
       \'resource-usage-optimization\',\'\'
       efficiency-optimization\',\'\'
-      \'accuracy-optimization\'\';
-    ];
+      \'accuracy-optimization\'\'];
     
-    agentOptimizations.forEach(optimization = > {;
+    agentOptimizations.forEach(optimization = > {
       console.log(`⚡ Applied ${optimization} to agents`);
     });
   }
@@ -466,10 +462,9 @@ class EnhancedIntelligenceSystem {
       \'learning-rate-optimization\',\'\'
       model-accuracy-optimization\',\'\'
       \'prediction-optimization,\'\'
-      \'adaptation-optimization\'\'\';
-    ];
+      \'adaptation-optimization\'\'\'];
     
-    learningOptimizations.forEach(optimization = > {;
+    learningOptimizations.forEach(optimization = > {
       console.log(⚡ Applied ${optimization} to learning models`);
     });
   }
@@ -495,10 +490,9 @@ class EnhancedIntelligenceSystem {
       content-generation-network,
       optimization-network\'),\'\'
       \'analysis-network,\'\'
-      \'innovation-network\'\'\';
-    ];
+      \'innovation-network\'\'\'];
     
-    collaborationNetworks.forEach(network = > {;
+    collaborationNetworks.forEach(network = > {
       console.log(`🤝 Created ${network} for agent collaboration);
     });
   }
@@ -511,10 +505,9 @@ class EnhancedIntelligenceSystem {
       \'distributed-knowledge-base,\'\'
       \'real-time-knowledge-sync\',\'\'
       intelligent-knowledge-routing\',\'\'
-      \'adaptive-knowledge-filtering\'\';
-    ];
+      \'adaptive-knowledge-filtering\'\'];
     
-    knowledgeEnhancements.forEach(enhancement = > {;
+    knowledgeEnhancements.forEach(enhancement = > {
       console.log(`📚 Enhanced ${enhancement} for knowledge sharing`);
     });
   }
@@ -527,10 +520,9 @@ class EnhancedIntelligenceSystem {
       swarm-intelligence,
       \')emergent-behavior,\'\'
       \'collective-decision-making\',\'\'
-      distributed-problem-solving\'\'\';
-    ];
+      distributed-problem-solving\'\'\'];
     
-    collectiveEnhancements.forEach(enhancement = > {;
+    collectiveEnhancements.forEach(enhancement = > {
       console.log(🧠 Enhanced ${enhancement} for collective intelligence`);
     });
   }
@@ -584,8 +576,7 @@ class EnhancedIntelligenceSystem {
       this.calculateSystemIntelligence(),
       this.getLearningModelCount() / 10,
       this.getAdaptationStrategyCount() / 5,
-      this.getCapabilityCount() / 20;
-    ];
+      this.getCapabilityCount() / 20];
     
     return enhancementFactors.reduce((sum, factor) => sum + factor, 0) / enhancementFactors.length;
   }
@@ -641,7 +632,7 @@ process.on(SIGTERM, () => {
 });
 
 // Start the enhanced intelligence system
-if (require.main = == module) {;
+if (require.main === module) {
   global.intelligenceSystem = new EnhancedIntelligenceSystem();
   
   // Log metrics every 10 minutes

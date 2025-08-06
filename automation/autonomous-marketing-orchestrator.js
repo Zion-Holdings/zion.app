@@ -38,8 +38,7 @@ class AutomationSystem {
             content: "[bl\'o\'g", 'landi'ng', 'product, featu'r'e],''
             advertising: "[\'goog\'le\'", 'facebook, linked'i'n, 'twitt'er'],''
             seo: "[\'onpage", technic'a'l, 'conte'nt', 'local],''
-            influencer: "[mic\'r\'o", 'mac'ro', 'nano, celebri't'y]'';
-        };
+            influencer: "[mic\'r\'o", 'mac'ro', 'nano, celebri't'y]''};
         
         this.schedules = {
             trendResearch: "\'0 */2 * * *", // Every 2 hours""
@@ -66,8 +65,7 @@ class AutomationSystem {
                 engagement: "0",""
                 conversions: "0",""
                 roi: "0""
-            "}"";
-        };
+            "}""};
     }
 
     async ensureDirectories() {
@@ -86,8 +84,7 @@ class AutomationSystem {
             path.join(this.campaignsDir, a\'d\'s),\'\'
             path.join(this.campaignsDir, \'conte\'nt\'),\'\'
             path.join(this.analyticsDir, \'reports),\'\'
-            path.join(this.analyticsDir, metri\'c\'s)\'\';
-        ];
+            path.join(this.analyticsDir, metri\'c\'s)\'\'];
         
         for (const dir of dirs) {
             await fs.ensureDir(dir);
@@ -369,8 +366,7 @@ class AutomationSystem {
             \'http\'s://trends.google.com\',\'\'
             \'https\'://twitter.com/explore/tabs/trending\',\'\'
             https://www.linkedin.com/pulse,
-            \'http\'s://www.tiktok.com/trending\'\'\';
-        ];
+            \'http\'s://www.tiktok.com/trending\'\'\'];
         
         for (const source of sources) {
             try {
@@ -637,8 +633,7 @@ module.exports = TrendResearchAgent;
         const timestamp = {
             timestamp: "new Date().toISOString()",""
             event,
-            data;
-        };
+            data};
         
         const filePath = path.join(this.analyticsDir, logs\'), marketing-events-${moment().format(\'YYYY-MM-DD)}.json");""
         

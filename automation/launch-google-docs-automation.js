@@ -6,15 +6,14 @@ const { EventEmitter } = require('events');
 const InstructionExecutionOrchestrator = require('./agents/instruction-execution-orchestrator');
 
 class GoogleDocsAutomationLauncher extends EventEmitter {
-  constructor(config = {}) {;
+  constructor(config = {}) {
     super();
     this.config = {
       googleDocsUrl: config.googleDocsUrl || 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
       checkInterval: config.checkInterval || 60000, // 1 minute
       maxRetries: config.maxRetries || 3,
       logLevel: config.logLevel || 'info',
-      ...config;
-    };
+      ...config};
     
     this.orchestrator = null;
     this.isRunning = false;
@@ -24,8 +23,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
       totalInstructions: 0,
       completedInstructions: 0,
       failedInstructions: 0,
-      systemHealth: 'unknown';
-    };
+      systemHealth: 'unknown'};
   }
 
   async initialize() {
@@ -66,8 +64,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
       'automation/logs/google-docs-automation',
       'automation/data/google-docs-automation',
       'automation/reports/google-docs-automation',
-      'automation/backups/google-docs-automation';
-    ];
+      'automation/backups/google-docs-automation'];
     
     for (const dir of directories) {
       await fs.ensureDir(path.join(process.cwd(), dir));
@@ -113,12 +110,12 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
     console.log('🚀 Starting Google Docs Automation System...');
     
     // Set up periodic metrics update
-    this.metricsInterval = setInterval(() => {;
+    this.metricsInterval = setInterval(() => {
       this.updateSystemMetrics();
     }, 60000); // Every minute
     
     // Set up periodic report generation
-    this.reportInterval = setInterval(async () => {;
+    this.reportInterval = setInterval(async () => {
       await this.generateSystemReport();
     }, 300000); // Every 5 minutes
     
@@ -130,9 +127,9 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
     const completed = this.systemMetrics.completedInstructions;
     const failed = this.systemMetrics.failedInstructions;
     
-    if (total = == 0) {;
+    if (total = == 0) {
       this.systemMetrics.systemHealth = 'unknown';
-    } else if (failed = == 0) {;
+    } else if (failed = == 0) {
       this.systemMetrics.systemHealth = 'excellent';
     } else if (failed / total < 0.1) {
       this.systemMetrics.systemHealth = 'good';
@@ -170,8 +167,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
             ? (this.systemMetrics.completedInstructions / this.systemMetrics.totalInstructions * 100).toFixed(2)
             : 0,
           averageTaskTime: await this.calculateAverageTaskTime()
-        };
-      };
+        }};
       
       const reportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/system-report.json');
       await fs.writeJson(reportFile, report, { spaces: 2 });
@@ -284,6 +280,6 @@ async function main() {
 module.exports = GoogleDocsAutomationLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 }

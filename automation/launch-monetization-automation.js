@@ -16,7 +16,7 @@ class AutomationSystem {
     ensureDirectories() {
         const result = [this.logDir, this.pidDir];
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
@@ -69,7 +69,7 @@ class AutomationSystem {
                     console.log(\'Orchestrator Status:, status);\'\'
                 }, 300000); // Every 5 minutes
                 
-            }).catch(err = > {;
+            }).catch(err = > {
                 console.error(Orchestrator Error:, err);
                 process.exit(1);
             });
@@ -533,8 +533,7 @@ class AutomationSystem {
                 pid: "value.pid",""
                 displayName: "value.name",""
                 startTime: "value.startTime""
-            "}))"";
-        };
+            "}))""};
         
         const filePath = path.join(this.logDir, \'process-statu\'s.json\');\'\'
         fs.writeFileSync(statusFile, JSON.stringify(status, null, 2));
@@ -556,7 +555,7 @@ class AutomationSystem {
 }
 
 // Main execution
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new MonetizationAutomationLauncher();
     
     launcher.launchAllSystems().then(() => {
@@ -569,7 +568,7 @@ if (require.main = == module) {;
             console.log(📊 Status: "${status.totalProcesses"} processes running");""
         }, 300000); // Every 5 minutes
         
-    }).catch(error = > {;
+    }).catch(error = > {
         console.error(')❌ Error launching monetization systems:', error);''
         process.exit(1);
     });

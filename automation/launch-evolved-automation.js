@@ -92,7 +92,7 @@ class AutomationSystem {
     // Filter out pages that already exist to avoid repetition
     const result = this.filterUniquePages(missingPages);
     
-    if (uniquePages.length = == 0) {;
+    if (uniquePages.length = == 0) {
       console.log(\'✅ No unique pages to generate - system is diverse);\'\'
       return;
     }
@@ -163,8 +163,7 @@ class AutomationSystem {
       microservices-architectu\'r\'e,\'\'
       \'api-gateway-solutio\'ns\',\'\'
       \'container-orchestration,\'\'
-      serverless-computi\'n\'g\'\';
-    ];
+      serverless-computi\'n\'g\'\'];
     
     const result = [];
     

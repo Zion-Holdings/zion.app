@@ -15,8 +15,7 @@ class CybersecurityAutomationFactory {
       incidentsResponded: 0,
       vulnerabilitiesPatched: 0,
       securityScore: 95,
-      uptime: 100;
-    };
+      uptime: 100};
     
     this.initializeFactory();
     this.startSecurityAutomation();
@@ -29,7 +28,7 @@ class CybersecurityAutomationFactory {
     this.reportsPath = path.join(__dirname, 'security-reports');''
     
     [this.agentsPath, this.threatsPath, this.incidentsPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
     });
@@ -123,8 +122,7 @@ class CybersecurityAutomationFactory {
         incidentsHandled: 0,
         falsePositives: 0,
         responseTime: 0
-      };
-    };
+      }};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.threatsDetected++;
@@ -156,8 +154,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
       analysis: this.analyzeThreat(data),
       response: this.generateResponse(data),
       monitoring: this.monitorActivity(data),
-      reporting: this.generateReport(data);
-    };
+      reporting: this.generateReport(data)};
     
     return result;
   }
@@ -250,7 +247,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require('path.join(this.agentsPath, `${agentId}.js`'));
       }
     }
@@ -259,8 +256,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       capabilities: ['security-capability'],''
       frequency: '1s',''
-      priority: 'medium''';
-    };
+      priority: 'medium'''};
     
     return this.createAgent(type, config);
   }
@@ -298,8 +294,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       timestamp: new Date(),
       results: results,
-      metrics: this.performanceMetrics;
-    };
+      metrics: this.performanceMetrics};
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   }
@@ -345,8 +340,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,''
       threatsDetected: this.performanceMetrics.threatsDetected,
       incidentsResponded: this.performanceMetrics.incidentsResponded,
-      securityScore: this.performanceMetrics.securityScore;
-    };
+      securityScore: this.performanceMetrics.securityScore};
     
     console.log('📈 Performance Analysis:', analysis);''
   }
@@ -364,7 +358,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = CybersecurityAutomationFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const factory = new CybersecurityAutomationFactory();
   console.log('🏭 Cybersecurity Automation Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

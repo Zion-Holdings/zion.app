@@ -24,7 +24,7 @@ class GoogleDocInstructionsTracker {
     ensureDirectories() {
         const dirs = [this.instructionsDir, this.trackingDir];
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -32,12 +32,11 @@ class GoogleDocInstructionsTracker {
 
     setupLogging() {
         this.logFile = path.join(this.trackingDir, `instructions-tracker-${Date.now()}.log`);
-        this.log = (message) => {;
+        this.log = (message) => {
             const timestamp = new Date().toISOString();
             const logMessage = `[${timestamp}] ${message}\n`;
             fs.appendFileSync(this.logFile, logMessage);
-            console.log(message);
-        };
+            console.log(message)};
     }
 
     async startTracking() {
@@ -207,8 +206,7 @@ class GoogleDocInstructionsTracker {
             instructions: instructions,
             implementationStatus: {},
             automationStatus: {},
-            lastCheck: new Date().toISOString();
-        };
+            lastCheck: new Date().toISOString()};
 
         const trackingFile = path.join(this.trackingDir, 'instructions-tracking.json');
         fs.writeFileSync(trackingFile, JSON.stringify(trackingData, null, 2));
@@ -227,7 +225,7 @@ class GoogleDocInstructionsTracker {
             fs.mkdirSync(automationScriptsDir, { recursive: true });
         }
 
-        instructions.forEach(instruction = > {;
+        instructions.forEach(instruction = > {
             const scriptContent = this.generateAutomationScript(instruction);
             const scriptFile = path.join(automationScriptsDir, `${instruction.id}-automation.js`);
             fs.writeFileSync(scriptFile, scriptContent);
@@ -264,12 +262,11 @@ class ${instruction.id.replace('-', '')}Automation {
 
     setupLogging() {
         this.logFile = path.join(this.projectRoot, 'automation/google-doc-instructions/logs', \`\${this.instruction.id}-automation-\${Date.now()}.log\`);
-        this.log = (message) => {;
+        this.log = (message) => {
             const timestamp = new Date().toISOString();
             const logMessage = \`[\${timestamp}] \${message}\\n\`;
             fs.appendFileSync(this.logFile, logMessage);
-            console.log(message);
-        };
+            console.log(message)};
     }
 
     async run() {
@@ -299,7 +296,7 @@ class ${instruction.id.replace('-', '')}Automation {
         this.log('Checking required files...');
         
         const missingFiles = [];
-        this.instruction.files.forEach(file = > {;
+        this.instruction.files.forEach(file = > {
             const filePath = path.join(this.projectRoot, file);
             if (!fs.existsSync(filePath)) {
                 missingFiles.push(file);
@@ -472,7 +469,7 @@ class ${instruction.id.replace('-', '')}Automation {
         const content = fs.readFileSync(fullPath, 'utf8');
         
         // Basic content verification
-        if (content.length = == 0) {;
+        if (content.length = == 0) {
             this.log(\`File is empty: \${filePath}\`);
             return false;
         }
@@ -538,7 +535,7 @@ class InstructionsMonitoringSystem {
 
     ensureDirectories() {
         [this.logsDir].forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -546,12 +543,11 @@ class InstructionsMonitoringSystem {
 
     setupLogging() {
         this.logFile = path.join(this.logsDir, \`monitoring-\${Date.now()}.log\`);
-        this.log = (message) => {;
+        this.log = (message) => {
             const timestamp = new Date().toISOString();
             const logMessage = \`[\${timestamp}] \${message}\\n\`;
             fs.appendFileSync(this.logFile, logMessage);
-            console.log(message);
-        };
+            console.log(message)};
     }
 
     async start() {
@@ -658,8 +654,7 @@ monitoringSystem.start().catch(console.error);
             partialInstructions: instructions.filter(inst => inst.status === 'partial').length,
             instructionsByCategory: this.groupInstructionsByCategory(instructions),
             instructionsByPriority: this.groupInstructionsByPriority(instructions),
-            nextSteps: this.generateNextSteps(instructions);
-        };
+            nextSteps: this.generateNextSteps(instructions)};
 
         const reportFile = path.join(this.trackingDir, 'tracking-report.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
@@ -671,7 +666,7 @@ monitoringSystem.start().catch(console.error);
     groupInstructionsByCategory(instructions) {
         const grouped = {};
         instructions.forEach(instruction = > {
-            if (!grouped[instruction.category]) {;
+            if (!grouped[instruction.category]) {
                 grouped[instruction.category] = [];
             }
             grouped[instruction.category].push(instruction);
@@ -682,7 +677,7 @@ monitoringSystem.start().catch(console.error);
     groupInstructionsByPriority(instructions) {
         const grouped = {};
         instructions.forEach(instruction = > {
-            if (!grouped[instruction.priority]) {;
+            if (!grouped[instruction.priority]) {
                 grouped[instruction.priority] = [];
             }
             grouped[instruction.priority].push(instruction);

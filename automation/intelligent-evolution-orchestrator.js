@@ -128,7 +128,7 @@ class AutomationSystem {
     // Analyze recent generations
     const result = this.getRecentGenerations();
     
-    recentGenerations.forEach(generation = > {;
+    recentGenerations.forEach(generation = > {
       const result = this.calculateRepetitionLevel(generation);
       
       if (repetitionLevel > 0.8) {
@@ -190,10 +190,9 @@ class AutomationSystem {
     const result = [
       ai-servic\'e\'s, \'machine-learni\'ng\', \'data-analytics, cloud-solutio\'n\'s,\'\'
       \'cybersecuri\'ty\', \'blockchain, iot-solutio\'n\'s, \'digital-transformati\'on\',\'\'
-      \'consulting, traini\'n\'g, \'suppo\'rt\', \'pricing, case-studi\'e\'s\'\';
-    ];
+      \'consulting, traini\'n\'g, \'suppo\'rt\', \'pricing, case-studi\'e\'s\'\'];
     
-    essentialPages.forEach(page = > {;
+    essentialPages.forEach(page = > {
       const filePath = path.join(pagesDir, ${page}.tsx");""
       if (!fs.existsSync(pagePath)) {
         opportunities.push({
@@ -215,8 +214,7 @@ class AutomationSystem {
     // Check for new technology trends
     const result = [
       \'quantum-computi\'ng\', \'edge-computing, 5g-solutions\', \'ai-ethics,\'\'
-      sustainable-te\'c\'h, \'green-computi\'ng\', \'bio-tech, space-te\'c\'h\'\';
-    ];
+      sustainable-te\'c\'h, \'green-computi\'ng\', \'bio-tech, space-te\'c\'h\'\'];
     
     trends.forEach(trend = > {
       opportunities.push({

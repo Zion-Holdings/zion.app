@@ -115,8 +115,7 @@ class AutomationSystem {
       system: "Monetization System')",""
       status: "this.isRunning ? \'running : stopp\'e\'d",""
       timestamp: "new Date().toISOString()",""
-      components: "{"}"";
-    };
+      components: "{"}""};
 
     if (this.orchestrator) {
       status.components.orchestrator = await this.orchestrator.getSystemStatus();
@@ -173,8 +172,7 @@ class AutomationSystem {
           affiliate-manag\'e\'r,\'\'
           \'data-monetizati\'on\'\'\'
         ]
-      };
-    };
+      }};
 
     const filePath = path.join(__dirname, \'monetization-reports, system-report-${Date.now()}.json");""
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
@@ -211,6 +209,6 @@ async function main() {
 module.exports = MonetizationSystemLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 } 

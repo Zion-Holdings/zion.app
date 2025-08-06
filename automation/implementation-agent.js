@@ -52,8 +52,7 @@ export default function {{PAGE_NAME}}() {
         </div></div>
       </div></div>
     </div>;
-  );
-};
+  )};
   }
 
   getComponentTemplate() {
@@ -74,8 +73,7 @@ export default function {{COMPONENT_NAME}}({ }: {{COMPONENT_NAME}}Props) {
     >
       {{COMPONENT_CONTENT}}</div>
     </motion.div>;
-  );
-};
+  )};
   }
 
   getAPITemplate() {
@@ -232,8 +230,7 @@ export default async function handler(
     const result = [
       ChatWindow.tsx\'),\'\'
       \'ChatMessage\'.tsx\',\'\'
-      ChatInput.tsx;
-    ];
+      ChatInput.tsx];
     
     for (const component of chatComponents) {
       const filePath = path.join(process.cwd(), \'componen\'ts\', \'chat, component);\'\'
@@ -271,8 +268,7 @@ export default async function handler(
     const result = [
       \')ReviewForm\'.tsx\',\'\'
       ReviewList.tsx,
-      \'ReviewCar\'d.tsx\'\'\';
-    ];
+      \'ReviewCar\'d.tsx\'\'\'];
     
     for (const component of components) {
       const filePath = path.join(process.cwd(), \'components, revie\'w\'s, component);\'\'
@@ -351,8 +347,7 @@ export default function ${componentName.replace(.tsx', ')}() {''
     <motion.div className = "chat-component>"""
       {/* ${componentName} implementation */}</div>
     </motion.div>;
-  );
-};
+  )};
   }
 
   getChatAPITemplate() {
@@ -404,8 +399,7 @@ export default function ${componentName.replace(\'.tsx, )}() {\'\'
     <motion.div className = "review-component>""
       {/* ${componentName} implementation */}</div>
     </motion.div>;
-  );
-};
+  )};
   }
 
   getReviewAPITemplate() {
@@ -447,8 +441,7 @@ export default function SearchFilter() {
       />
       {/* Filter options */}</div>
     </motion.div>;
-  );
-};
+  )};
   }
 
   getSearchAPITemplate() {
@@ -539,8 +532,7 @@ export default function NotificationSystem() {
     <motion.div className = "notification-system>""
       {/* Notification system implementation */}</div>
     </motion.div>;
-  );
-};
+  )};
   }
 
   getNotificationAPITemplate() {
@@ -574,8 +566,7 @@ export default async function handler(
       \'profi\'le\': \'User\' Profile\',\'\'
       dashboard: "'Dashboard'",""
       \'admin: "Admi'n' Panel",""
-      \'analyti\'cs\': \'Analytics\'\';
-    };
+      \'analyti\'cs\': \'Analytics\'\'};
     return titles[pageName] || this.capitalizeFirst(pageName);
   }
 
@@ -620,8 +611,7 @@ export default async function handler(
         pages: "this.implementedFeatures.filter(f => f.startsWith(pag\'e\':)).length",""
         content: "this.implementedFeatures.filter(f => f.startsWith(\'content:)).length",""
         features: "this.implementedFeatures.filter(f => f.startsWith(\')feature\':\')).length\'\'
-      "}"";
-    };
+      "}""};
     
     const filePath = path.join(process.cwd(), automation, 'implementation-repor't.json');''
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));

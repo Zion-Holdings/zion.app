@@ -126,8 +126,7 @@ class AutomationSystem {
         basicPrice: ""variable8",000,""
         professionalPrice: "variable20",000",""
         enterprisePrice: ""variable50",000""
-      };
-    ];
+      }];
 
     for (const service of services) {
       const result = this.generateServiceContent(service);
@@ -160,8 +159,7 @@ class AutomationSystem {
         estimatedDelivery: "2-4 weeks"",""
         supportLevel: ""24/7",""
         revisionPolicy: "Unlimited revisions"""
-      "}"";
-    };
+      "}""};
   }
 
   async generateTalentProfiles() {
@@ -215,8 +213,7 @@ class AutomationSystem {
         availability: "Open"",""
         rating: ""4.9",""
         reviews: "203"""
-      "}"";
-    ];
+      "}""];
 
     for (const talent of talents) {
       const result = this.generateTalentContent(talent);
@@ -248,8 +245,7 @@ class AutomationSystem {
         availableForHire: "talent.availability = == "Open",""
         responseTime: "2-4 hours"",""
         completionRate: ""98%""
-      "}"";
-    };
+      "}""};
   }
 
   async generateBlogPosts() {
@@ -282,8 +278,7 @@ class AutomationSystem {
         category: "DevOps"",""
         tags: "["DevOps", Enterprise", "Automation, CI/CD"],""
         date: ""2024-01-05""
-      "}"";
-    ];
+      "}""];
 
     for (const post of blogPosts) {
       const result = this.generateBlogContent(post);
@@ -339,8 +334,7 @@ class AutomationSystem {
         content: ""Professional", responsive, and delivered exactly what we needed. Will definitely work with again.,""
         rating: "5"",""
         project: ""Mobile App Development""
-      "}"";
-    ];
+      "}""];
 
     for (const testimonial of testimonials) {
       const result = this.generateTestimonialContent(testimonial);
@@ -391,8 +385,7 @@ class AutomationSystem {
       {
         question: "What technologies do you specialize in?"",""
         answer: ""We specialize in modern technologies including React", Node.js, Python, AI/ML, cloud platforms, and blockchain.""
-      };
-    ];
+      }];
 
     for (const faq of faqTemplates) {
       const result = ## ${faq.question}\n\n${faq.answer}""";
@@ -468,8 +461,7 @@ Get in touch to learn more about our ${page.title} services.
     const result = {
       servi\'ce\': ## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.",""
       \'product: ""## ${contentItem.title"}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.,""
-      bl\'o\'g: "## ${contentItem.title"}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.""";
-    };
+      bl\'o\'g: "## ${contentItem.title"}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices."""};
     
     return templates[contentItem.type] || "## ${contentItem.title}\n\n${contentItem.description || \'Comprehensiv\'e content about this topic.\'}\'\'
   }

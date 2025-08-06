@@ -30,7 +30,7 @@ class AutomationSystem {
     this.reportsPath = path.join(__dirname, \'mobile-reports);\'\'
     
     [this.agentsPath, this.appsPath, this.featuresPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -233,8 +233,7 @@ class AutomationSystem {
         tasksCompleted: 0",""
         successRate: "100",""
         avgResponseTime: "0""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
@@ -259,8 +258,7 @@ class AutomationSystem {
       \'mobile-testi\'ng\': this.generateMobileTestingAgent(),\'\'
       \'performance-optimization: "this.generatePerformanceOptimizationAgent()",""
       app-store-deployme\'n\'t: "this.generateAppStoreDeploymentAgent()",""
-      \'google-play-deployme\'nt\': this.generateGooglePlayDeploymentAgent()\'\';
-    };
+      \'google-play-deployme\'nt\': this.generateGooglePlayDeploymentAgent()\'\'};
 
     return agentTemplates[type] || this.generateGenericAgent(type, config);
   }
@@ -1333,7 +1331,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, "${agentId}.js'));""
       }
     }
@@ -1440,7 +1438,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = MobileAppDevelopmentFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new MobileAppDevelopmentFactory();
   console.log(🏭 Mobile App Development Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

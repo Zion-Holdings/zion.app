@@ -59,8 +59,7 @@ class AutomationSystem {
                     targetingAccuracy: "\'high",""
                     lookalikePercentage: "1""
                 "}""
-            };
-        };
+            }};
         
         this.schedules = {
             adCreation: "0 */4 * * *", // Every 4 hours""
@@ -142,8 +141,7 @@ class AutomationSystem {
                 budget: "400",""
                 duration: "28",""
                 adFormat: "\'DYNAMIC_AD\'\'\'
-            "}"";
-        ];
+            "}""];
         
         return campaigns;
     }
@@ -172,8 +170,7 @@ class AutomationSystem {
                 \'Explore\' Solutions\',\'\'
                 Contact Us,
                 \'Discove\'r More\'\'\'
-            ];
-        };
+            ]};
         
         return adContent;
     }

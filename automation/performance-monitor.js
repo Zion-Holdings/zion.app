@@ -78,8 +78,7 @@ class AutomationSystem {
             const result = [
                 \')no\'de\',\'\'
                 \'npm,\'\'
-                g\'i\'t\'\';
-            ];
+                g\'i\'t\'\'];
 
             const result = {};
             for (const process of processes) {
@@ -187,7 +186,7 @@ class AutomationSystem {
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new PerformanceMonitor();
     monitor.run();
 }

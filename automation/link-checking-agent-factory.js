@@ -65,8 +65,7 @@ class AutomationSystem {
           resultAggregation: "true",""
           performanceOptimization: "true""
         "}""
-      };
-    };
+      }};
     this.baseUrl = process.env.BASE_URL || http\'s\'://ziontechgroup.netlify.app;\'\'
     this.ensureDirectories();
   }
@@ -77,10 +76,9 @@ class AutomationSystem {
       \'link-reports,\'\'
       link-backu\'p\'s,\'\'
       \'link-lo\'gs\',\'\'
-      \'link-data\'\';
-    ];
+      \'link-data\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -89,7 +87,7 @@ class AutomationSystem {
   }
 
   async createAgent(type, config = {}) {
-    if (!this.agentTypes[type]) {;
+    if (!this.agentTypes[type]) {
       throw new Error("Unknown agent type: "${type"});""
     }
 
@@ -117,8 +115,7 @@ class AutomationSystem {
         brokenLinksFound: "0",""
         linksFixed: "0",""
         errors: "0""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();
@@ -146,8 +143,7 @@ class AutomationSystem {
       AGENT_ID: "agentId",""
       AGENT_TYPE: "agent.type",""
       BASE_URL: "this.baseUrl",""
-      ...agent.config;
-    };
+      ...agent.config};
 
     const result = spawn(\'node, [scriptPath], {\'\'
       env,
@@ -208,28 +204,27 @@ class AutomationSystem {
       \'link-fix\'er\': path.join(__dirname, \'link-checking-agents, link-fixer-agen\'t\'.js),\'\'
       \'link-monit\'or\': path.join(__dirname, \'link-checking-agents, link-monitor-agen\'t\'.js),\'\'
       \'link-analyz\'er\': path.join(__dirname, \'link-checking-agents, link-analyzer-agen\'t\'.js),\'\'
-      \'link-orchestrat\'or\': path.join(__dirname, \'link-checking-agents, link-orchestrator-agen\'t\'.js)\'\';
-    };
+      \'link-orchestrat\'or\': path.join(__dirname, \'link-checking-agents, link-orchestrator-agen\'t\'.js)\'\'};
     return scripts[type];
   }
 
-  async createLinkValidatorAgent(config = {}) {;
+  async createLinkValidatorAgent(config = {}) {
     return await this.createAgent(\'link-validator, config);\'\'
   }
 
-  async createLinkFixerAgent(config = {}) {;
+  async createLinkFixerAgent(config = {}) {
     return await this.createAgent(\')link-fixer, config);\'\'
   }
 
-  async createLinkMonitorAgent(config = {}) {;
+  async createLinkMonitorAgent(config = {}) {
     return await this.createAgent(link-monit\'o\'r, config);\'\'
   }
 
-  async createLinkAnalyzerAgent(config = {}) {;
+  async createLinkAnalyzerAgent(config = {}) {
     return await this.createAgent(\'link-analyzer, config);\'\'
   }
 
-  async createLinkOrchestratorAgent(config = {}) {;
+  async createLinkOrchestratorAgent(config = {}) {
     return await this.createAgent(\')link-orchestrator, config);\'\'
   }
 

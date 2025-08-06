@@ -79,7 +79,7 @@ class AutomationSystem {
 }
 
 // Run the loop
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousLoop();
   loop.runLoop();
 

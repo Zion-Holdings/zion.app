@@ -11,8 +11,7 @@ async function generateGoogleDocsReport() {
       timestamp: new Date().toISOString(),
       summary: {},
       details: {},
-      recommendations: [];
-    };
+      recommendations: []};
     
     // Gather instruction history
     const historyFile = path.join(process.cwd(), 'automation/data/instructions/history.json');
@@ -28,12 +27,11 @@ async function generateGoogleDocsReport() {
         completedInstructions: completed.length,
         failedInstructions: failed.length,
         pendingInstructions: pending.length,
-        successRate: history.length > 0 ? ((completed.length / history.length) * 100).toFixed(2) : 0;
-      };
+        successRate: history.length > 0 ? ((completed.length / history.length) * 100).toFixed(2) : 0};
       
       // Analyze by instruction type
       const typeAnalysis = {};
-      history.forEach(instruction = > {;
+      history.forEach(instruction = > {
         const type = instruction.type || 'unknown';
         if (!typeAnalysis[type]) {
           typeAnalysis[type] = { total: 0, completed: 0, failed: 0 };
@@ -59,7 +57,7 @@ async function generateGoogleDocsReport() {
       // Performance analysis
       const completedWithTime = completed.filter(c => c.createdAt && c.completedAt);
       if (completedWithTime.length > 0) {
-        const executionTimes = completedWithTime.map(c => {;
+        const executionTimes = completedWithTime.map(c => {
           const start = new Date(c.createdAt);
           const end = new Date(c.completedAt);
           return end - start;
@@ -73,8 +71,7 @@ async function generateGoogleDocsReport() {
           averageExecutionTime: avgExecutionTime,
           minExecutionTime,
           maxExecutionTime,
-          totalExecutionTime: executionTimes.reduce((sum, time) => sum + time, 0);
-        };
+          totalExecutionTime: executionTimes.reduce((sum, time) => sum + time, 0)};
       }
     }
     
@@ -146,7 +143,7 @@ async function generateGoogleDocsReport() {
     
     if (report.recommendations.length > 0) {
       console.log('\n💡 Recommendations:');
-      report.recommendations.forEach(rec = > {;
+      report.recommendations.forEach(rec = > {
         const priorityIcon = rec.priority === 'high' ? '🔴' : rec.priority === 'medium' ? '🟡' : '🟢';
         console.log(`  ${priorityIcon} ${rec.message}`);
       });
@@ -161,7 +158,7 @@ async function generateGoogleDocsReport() {
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   generateGoogleDocsReport();
 }
 

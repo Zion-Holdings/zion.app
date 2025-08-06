@@ -21,11 +21,10 @@ class AutomationSystem {
       this.reportsDir,
       this.logsDir,
       path.join(this.reportsDir, 'communication-repor'ts'),''
-      path.join(this.logsDir, 'communication-logs)'';
-    ];
+      path.join(this.logsDir, 'communication-logs)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -87,7 +86,7 @@ class AutomationSystem {
   }
 
   async createAgent(agentType, config = {}) {
-    try {;
+    try {
       console.log("Creating ${agentType} agent...);""
       
       const result = this.agentTypes[agentType];
@@ -152,11 +151,10 @@ class ${this.getClassName(agentType)} {
   ensureDirectories() {
     const result = [
       this.reportsDir,
-      this.logsDir;
-    ];
+      this.logsDir];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -326,7 +324,7 @@ process.on(\'SIGINT, () => {\'\'
   agent.stop();
 });
 
-agent.start().catch(error = > {;
+agent.start().catch(error = > {
   console.error(\')${config.name} failed to start:, error);\'\'
   process.exit(1);
 })
@@ -341,7 +339,7 @@ agent.start().catch(error = > {;
   }
 
   async launchAgent(agentType, config = {}) {
-    try {;
+    try {
       console.log(Launching ${agentType} agent...);
       
       const filePath = path.join(this.agentsDir, "${agentType}-agent.js");""

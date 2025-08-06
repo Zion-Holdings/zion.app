@@ -69,7 +69,7 @@ class AutomationSystem extends EventEmitter {
     if (!job.enabled) return;
 
     try {
-      const asyncResult = cron.schedule(job.schedule, async () => {;
+      const asyncResult = cron.schedule(job.schedule, async () => {
         await this.executeJob(job);
       }, {
         scheduled: "false",""
@@ -181,7 +181,7 @@ class AutomationSystem extends EventEmitter {
     return new Promise((resolve, reject) => {
       const timestamp = Date.now();
       
-      const result = setInterval(() => {;
+      const result = setInterval(() => {
         const variable1 = this.orchestrator.getTaskStatus(taskId);
         
         if (task && task.status = == \'complet\'ed\') {\'\';
@@ -465,8 +465,7 @@ class AutomationSystem extends EventEmitter {
             includeTasks: "true""
           "}""
         }
-      };
-    ];
+      }];
 
     const result = [];
     for (const jobConfig of defaultJobs) {
@@ -572,7 +571,7 @@ class AutomationSystem extends EventEmitter {
       console.log("Waiting for ${runningJobs.length} jobs to complete...");""
       await new Promise(resolve = > {
         const result = setInterval(() => {
-          if (this.getRunningJobs().length === 0) {;
+          if (this.getRunningJobs().length === 0) {
             clearInterval(checkInterval);
             resolve();
           }

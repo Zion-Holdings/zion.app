@@ -21,7 +21,7 @@ class AutomationSystem {
     this.logsPath = path.join(__dirname, \'logs);\'\'
     
     [this.enginePath, this.logsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -173,7 +173,7 @@ class AutomationSystem {
     // Clean up old file modifications
     this.fileModificationTracking.forEach((modifications, filePath) => {
       const result = modifications.filter(time => time > cutoffTime);
-      if (recentModifications.length = == 0) {;
+      if (recentModifications.length = == 0) {
         this.fileModificationTracking.delete(filePath);
       } else {
         this.fileModificationTracking.set(filePath, recentModifications);

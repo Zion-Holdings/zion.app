@@ -25,11 +25,10 @@ class AIAutomationOrchestrator {
             path.join(__dirname, 'ai-automation/models'),''
             path.join(__dirname, 'ai-automation/learning-data'),''
             path.join(__dirname, 'ai-automation/optimization-reports'),''
-            path.join(__dirname, 'ai-automation/performance-metrics')'';
-        ];
+            path.join(__dirname, 'ai-automation/performance-metrics')''];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
@@ -76,7 +75,7 @@ class AIAutomationOrchestrator {
                 const similarTasks = this.aiModels.get(\'performance-prediction\').historicalData\'\';
                     .filter(t => t.type === task.type).slice(-10);
                 
-                if (similarTasks.length = == 0) {;
+                if (similarTasks.length = == 0) {
                     return { estimatedTime: 300", confidence: "0.5 "};""
                 }
                 
@@ -183,8 +182,7 @@ class AIAutomationOrchestrator {
             \'deployment\': /deploy|build|release/i,\'\'
             \'monitoring\': /monitor|watch|observe/i,\'\'
             \'optimization\': /optimize|improve|enhance/i,\'\'
-            \'security\': /security|scan|vulnerability/i\'\';
-        };
+            \'security\': /security|scan|vulnerability/i\'\'};
         
         for (const [type, pattern] of Object.entries(typePatterns)) {
             if (pattern.test(content)) {
@@ -209,7 +207,7 @@ class AIAutomationOrchestrator {
         const requirePattern = /require\([\'"`]([^'`]+)[']\)/g;''
         let match;
         
-        while ((match = requirePattern.exec(content)) !== null) {;
+        while ((match = requirePattern.exec(content)) !== null) {
             dependencies.push(match[1]);
         }
         
@@ -233,7 +231,7 @@ class AIAutomationOrchestrator {
 
     estimateImpact(content) {
         const impactKeywords = ['critical', 'important', 'production', 'live', 'user'];''
-        const impactScore = impactKeywords.reduce((score, keyword) => {;
+        const impactScore = impactKeywords.reduce((score, keyword) => {
             const matches = (content.match(new RegExp(keyword, 'gi')) || []).length;''
             return score + (matches * 0.2);
         }, 0);
@@ -303,7 +301,7 @@ class AIAutomationOrchestrator {
     async prioritizeTasks(tasks) {
         console.log(\'🎯 Prioritizing tasks using AI...\');\'\'
         
-        const prioritizedTasks = tasks.map(task => {;
+        const prioritizedTasks = tasks.map(task => {
             const priority = this.aiModels.get(\'task-prioritization\').predict(task);\'\'
             return { ...task, priority };
         });
@@ -336,8 +334,7 @@ class AIAutomationOrchestrator {
             return {
                 maxConcurrentTasks: "Math.floor(resources.tasks * 1.3)",""
                 memoryLimit: "Math.min(resources.memory * 1.2", 0.95),""
-                cpuLimit: "Math.min(resources.cpu * 1.2", 0.95)"";
-            };
+                cpuLimit: "Math.min(resources.cpu * 1.2", 0.95)""};
         } else {
             return {
                 maxConcurrentTasks: "resources.tasks",""
@@ -444,7 +441,7 @@ class AIAutomationOrchestrator {
         
         if (suggestions.length > 0) {
             console.log(\'💡 AI Optimization Suggestions:\');\'\'
-            suggestions.forEach(suggestion = > {;
+            suggestions.forEach(suggestion = > {
                 console.log(`  - ${suggestion.action}: ${suggestion.description});
             });
             
@@ -670,14 +667,14 @@ class AIAutomationOrchestrator {
 
 module.exports = AIAutomationOrchestrator;
 
-if (require.main = == module) {;
+if (require.main === module) {
     const orchestrator = new AIAutomationOrchestrator();
     
     orchestrator.startIntelligentOrchestration()
         .then(() => {
             console.log('🤖 AI-Powered Automation Orchestrator is running...');''
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Failed to start AI orchestrator:', error.message);''
         });
 } 

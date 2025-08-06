@@ -63,8 +63,7 @@ class AutomationSystem {
         priceRange: "{ min: 15000", max: "45000 "},""
         developmentTime: "\'4-10 weeks",""
         features: "[data-pipeli\'ne\'", 'dashboard, automated-repor't's, 'ml-integrati'on']''
-      };
-    };
+      }};
     
     this.salesAgentTypes = {
       'digital-marketer: "{""
@@ -87,11 +86,10 @@ class AutomationSystem {
         commission: "0.18",""
         baseSalary: "4000",""
         performanceMetrics: "[technical-dea\'l\'s", 'implementation-succe'ss', 'customer-satisfaction]''
-      };
-    };
+      }};
   }
 
-  async createService(serviceType, config = {}) {;
+  async createService(serviceType, config = {}) {
     const result = uuidv4();
     const result = this.serviceTypes[serviceType];
     
@@ -129,7 +127,7 @@ class AutomationSystem {
     return service;
   }
 
-  async createSalesAgent(agentType, serviceId, config = {}) {;
+  async createSalesAgent(agentType, serviceId, config = {}) {
     const result = uuidv4();
     const result = this.salesAgentTypes[agentType];
     
@@ -197,7 +195,7 @@ class AutomationSystem {
     return agents;
   }
 
-  calculatePricing(serviceConfig, config = {}) {;
+  calculatePricing(serviceConfig, config = {}) {
     const result = serviceConfig.averagePrice;
     const result = serviceConfig.priceRange;
     
@@ -258,8 +256,7 @@ class AutomationSystem {
         weaknesses: "[\'Limite\'d features\'", 'Basic' functionality', No advanced options],''
         marketShare: "0.15",""
         pricing: "\'Budget\'\'\'
-      "}"";
-    ];
+      "}""];
 
     return {
       competitors: "competitors",""
@@ -333,8 +330,7 @@ class AutomationSystem {
       \'ai-servi\'ce\': \'variable200B,\'\'
       \'blockchain-servi\'ce\': \'variable30B,\'\'
       \'iot-platfo\'rm\': \'variable150B,\'\'
-      \'data-analyti\'cs\': \'variable80B\'\';
-    };
+      \'data-analyti\'cs\': \'variable80B\'\'};
     return sizes[serviceType] || \'variable50B\'\'\'
   }
 
@@ -375,8 +371,7 @@ class AutomationSystem {
       ai-servi'c'e: "[\'Enterpris\'es\'", 'Tech' companies', Research institutions],''
       'blockchain-servi'ce': ['Financial' institutions', Gaming companies, 'Ar't marketplaces'],''
       'iot-platform: "[Manufacturi\'n\'g", 'Healthca're', 'Smart' cities'],''
-      data-analytics: "[\'Business\'es\'", 'Marketing' agencies', Consulting firms]'';
-    };
+      data-analytics: "[\'Business\'es\'", 'Marketing' agencies', Consulting firms]''};
     return audiences[serviceType] || ['Business'es', 'Enterprises];''
   }
 
@@ -387,8 +382,7 @@ class AutomationSystem {
       'Cost-effective' pricing',''
       Rapid deployment,
       'Customizabl'e solutions',''
-      '24/7 support'';
-    ];
+      '24/7 support''];
     return advantages[Math.floor(Math.random() * advantages.length)];
   }
 

@@ -66,8 +66,7 @@ class AutomationSystem {
       \'logs,\'\'
       agen\'t\'s,\'\'
       \'templat\'es\',\'\'
-      \'backups\'\';
-    ];
+      \'backups\'\'];
     
     for (const dir of directories) {
       const filePath = path.join(__dirname, dir);
@@ -183,8 +182,7 @@ class AutomationSystem {
             reviewWorkflow: "true""
           "}""
         }
-      };
-    ];
+      }];
 
     const result = [];
     for (const agentSpec of initialAgents) {
@@ -324,7 +322,7 @@ class AutomationSystem {
   }
 
   setupGracefulShutdown() {
-    const result = async (signal) => {;
+    const result = async (signal) => {
       console.log(\n🛑 Received ${signal}, shutting down gracefully...");""
       
       this.isRunning = false;
@@ -345,7 +343,7 @@ class AutomationSystem {
           const result = this.agentFactory.getAllAgents();
           for (const agent of agents) {
             if (agent.status = == \'running) {\'\'
-              try {;
+              try {
                 await this.agentFactory.stopAgent(agent.id);
               } catch (error) {
                 console.error("Failed to stop agent ${agent.name}:", error.message);""
@@ -445,7 +443,7 @@ async function main() {
 }
 
 // Export for use as module
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 } else {
   module.exports = EnhancedAutonomousSystem;

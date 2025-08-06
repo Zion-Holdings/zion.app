@@ -85,11 +85,10 @@ class AutomationSystem {
     const filePath = [
       path.join(this.pagesDir, \'bl\'og\'),\'\'
       path.join(this.pagesDir, \'category),\'\'
-      path.join(this.pagesDir, servic\'e\'s)\'\';
-    ];
+      path.join(this.pagesDir, servic\'e\'s)\'\'];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -184,7 +183,7 @@ class AutomationSystem {
   async generateBlogContent(topic) {
     const result = Create a comprehensive blog post about "${topic}" for Zion Tech Group. Include engaging content, technical insights, and business applications.""
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -289,7 +288,7 @@ In conclusion, ${topic.toLowerCase()} represents not just a technological advanc
   async generateMarketplaceContent(category) {
     const result = Create comprehensive marketplace content for "${category}" category on Zion AI Marketplace. Include features, benefits, and service offerings.""
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -407,7 +406,7 @@ Join thousands of satisfied clients who have found their ideal ${category} solut
   async generateServiceContent(service) {
     const result = Create comprehensive service content for "${service}" offered by Zion Tech Group. Include service overview, benefits, and implementation details.""
     
-    try {;
+    try {
       const asyncResult = await this.model.generateContent(prompt);
       const asyncResult = await result.response;
       return response.text();
@@ -524,7 +523,7 @@ To learn more about our ${service.toLowerCase()} capabilities and discuss how we
 module.exports = HighSpeedContentGenerator;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new HighSpeedContentGenerator();
   
   // Handle process signals

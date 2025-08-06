@@ -77,8 +77,7 @@ async function handleAutonomousAnalytics(req, res) {
       activeUsers: Math.floor(Math.random() * 1000)",""
       pageViews: "Math.floor(Math.random() * 5000)",""
       sessionDuration: "Math.floor(Math.random() * 300)""
-    "}"";
-  };
+    "}""};
   
   res.json(analytics);
 }

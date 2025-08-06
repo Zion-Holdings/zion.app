@@ -33,8 +33,7 @@ class AutomationSystem {
                 priority: "Medium",""
                 reach: "\'Network-based\'",""
                 cost: "\'Medium\'\'
-            "}"";
-        };
+            "}""};
         
         this.marketingTemplates = {
             website: "{""
@@ -64,8 +63,7 @@ Ready to get started? Click here to learn more.
 
 Best regards,
 The AI Solutions Team
-            };
-        };
+            }};
         
         this.outputDir = path.join(__dirname, \'sales);\'\'
         this.ensureOutputDirectory();
@@ -284,8 +282,7 @@ The AI Solutions Team
             "5 Ways ${solution.name} Can Transform Your Business,""
             The ROI of Implementing ${solution.name} in Your Organization",""
             "Case Study: "Success Stories with ${solution.name"},""
-            Future of AI: "What ${solution.name"} Means for Your Industry""";
-        ];
+            Future of AI: "What ${solution.name"} Means for Your Industry"""];
         
         return ideas.map(idea = > ({
             title: "idea",""
@@ -300,8 +297,7 @@ The AI Solutions Team
             The Complete Guide to ${solution.name} Implementation",""
             "${solution.name}: A Comprehensive ROI Analysis,""
             Industry Trends and ${solution.name}: What You Need to Know",""
-            "Security and Compliance in ${solution.name} Solutions"";
-        ];
+            "Security and Compliance in ${solution.name} Solutions""];
         
         return ideas.map(idea = > ({
             title: "idea",""
@@ -316,8 +312,7 @@ The AI Solutions Team
             How Company X Increased Efficiency by 300% with ${solution.name}",""
             "${solution.name} Success Story: "From Startup to Enterprise",""
             ROI Case Study: "${solution.name"} in the Manufacturing Industry",""
-            "Customer Spotlight: "${solution.name"} in Healthcare"";
-        ];
+            "Customer Spotlight: "${solution.name"} in Healthcare""];
         
         return ideas.map(idea = > ({
             title: "idea",""
@@ -395,8 +390,7 @@ The AI Solutions Team
                 conversions: "\'5-10%",""
                 revenue: "solution.estimatedRevenue",""
                 roi: "300-500%\'\'\'
-            "}"";
-        };
+            "}""};
     }
 
     async generateMarketingContent(campaigns) {
@@ -444,8 +438,7 @@ The AI Solutions Team
                     ROI: "${campaign.content.website.roi.roi"}",""
                     "Payback Period: "${campaign.content.website.roi.paybackPeriod"}""
                 ]
-            };
-        };
+            }};
         
         await fs.writeJson(path.join(contentDir, website-content.json), websiteContent, { spaces: "2 "});""
     }
@@ -713,7 +706,7 @@ The AI Solutions Team
 
     groupByTargetMarket(campaigns) {
         const result = {};
-        campaigns.forEach(campaign = > {;
+        campaigns.forEach(campaign = > {
             markets[campaign.targetMarket] = (markets[campaign.targetMarket] || 0) + 1;
         });
         return markets;
@@ -768,8 +761,7 @@ The AI Solutions Team
         const result = {
             basic: "[Cor\'e features\'", 'Email' support', Basic analytics],''
             professional: "[\'Al\'l basic features\'", 'Priority' support', Advanced analytics, 'AP'I access'],''
-            enterprise: "[\'All\' professional features\'", 24/7 support', 'Custom' integrations', Dedicated account manager]'';
-        };
+            enterprise: "[\'All\' professional features\'", 24/7 support', 'Custom' integrations', Dedicated account manager]''};
         
         return tierFeatures[tier] || tierFeatures.basic;
     }
@@ -790,8 +782,7 @@ The AI Solutions Team
             reduce costs,
             \'improv\'e productivity\',\'\'
             \'automate\' processes\',\'\'
-            gain insights;
-        ];
+            gain insights];
         
         for (const benefit of benefits) {
             if (description.toLowerCase().includes(benefit)) {
@@ -927,7 +918,7 @@ The ${campaign.solutionName} Team"""
 module.exports = AutonomousSalesAgent;
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new AutonomousSalesAgent();
     
     // Mock solutions data for testing
@@ -941,15 +932,14 @@ if (require.main = == module) {;
             targetMarket: "Enterprise",""
             roi: "{ roi: \'350%", paybackPeriod: "8 months\' "},""
             estimatedRevenue: "\'variable2M annually\'\'
-        "}"";
-    ];
+        "}""];
     
     agent.startSalesCampaign(mockSolutions)
         .then(() => {
             console.log(✅ Sales agent completed successfully');''
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error(❌ Sales agent failed:', error);''
             process.exit(1);
         });

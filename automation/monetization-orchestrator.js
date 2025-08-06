@@ -16,7 +16,7 @@ class AutomationSystem {
     ensureDirectories() {
         const result = [this.orchestratorDir, this.statusDir];
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
@@ -43,8 +43,7 @@ class AutomationSystem {
             subscripti\'o\'n,\'\'
             \'affilia\'te\',\'\'
             \'ecommerce,\'\'
-            freemi\'u\'m\'\';
-        ];
+            freemi\'u\'m\'\'];
 
         for (const agentType of agentTypes) {
             try {
@@ -136,8 +135,7 @@ class AutomationSystem {
                 revenue: "agent.performance?.revenueGenerated || 0",""
                 conversions: "agent.performance?.conversions || 0",""
                 efficiency: "agent.performance?.efficiency || 0""
-            "}))"";
-        };
+            "}))""};
 
         // Save performance report
         const filePath = path.join(this.orchestratorDir, performance-report-${Date.now()}.json");""
@@ -239,8 +237,7 @@ class AutomationSystem {
             subscripti'o'n: "{""
                 tiers: [\'bas\'ic\'", 'premium, enterpri's'e, 'cust'om'],''
                 metrics: "[\'mrr", churn-ra't'e, 'expansion-reven'ue', 'net-revenue-retention]''
-            };
-        };
+            }};
 
         return optimizationConfigs[agentType] || {};
     }
@@ -252,8 +249,7 @@ class AutomationSystem {
             'enterprise-sal'es',''
             'data-monetization,''
             marketplace-optimizati'o'n,''
-            'partnership-reven'ue''';
-        ];
+            'partnership-reven'ue'''];
 
         for (const agentType of newAgentTypes) {
             try {
@@ -274,8 +270,7 @@ class AutomationSystem {
             { strategy: "landing-page-optimization", impact: "25000 "},""
             { strategy: "\')checkout-optimization\'", impact: "35000 "},""
             { strategy: "\'form-optimization", impact: "20000 "},""
-            { strategy: "mobile-optimizatio\'n", impact: "30000 "}"";
-        ];
+            { strategy: "mobile-optimizatio\'n", impact: "30000 "}""];
 
         for (const optimization of funnelOptimizations) {
             await this.applyFunnelOptimization(optimization);
@@ -308,8 +303,7 @@ class AutomationSystem {
                 \'high-value-customer-targeti\'ng\',\'\'
                 \'premium-service-optimization,\'\'
                 enterprise-upselli\'n\'g,\'\'
-                \'international-expansi\'on\'\'\';
-            ];
+                \'international-expansi\'on\'\'\'];
 
             for (const agentType of newAgents) {
                 try {

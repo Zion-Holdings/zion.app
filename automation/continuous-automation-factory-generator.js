@@ -69,7 +69,7 @@ class AutomationSystem {
     });
   }
 
-  async generateAutomationFactory(factoryType, variationParams = {}) {;
+  async generateAutomationFactory(factoryType, variationParams = {}) {
     const timestamp = Date.now();
     const result = automation-factory-${timestamp}-${Math.floor(Math.random() * 1000)}"""
     ;
@@ -240,7 +240,7 @@ class ${factory.id.replace(/-/g, \'))}Factory extends EventEmitter {\'\'
 module.exports = ${factory.id.replace(/-/g, \')}Factory;\'\'
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${factory.id.replace(/-/g, \'\')}Factory();\'\'
   factory.start().catch(console.error);
 }
@@ -425,7 +425,7 @@ module.exports = ${factory.id.replace(/-/g, \')}${capability.replace(/-/g, \'\')
 module.exports = ContinuousAutomationFactoryGenerator;
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousAutomationFactoryGenerator();
   generator.start().catch(console.error);
 } 

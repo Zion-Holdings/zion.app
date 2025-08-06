@@ -153,7 +153,7 @@ class AutomationSystem {
         const timestamp = "${variation}-${Date.now()}""
         const result = pages/${variation}.tsx"""
         
-        if (!fs.existsSync(pagePath)) {;
+        if (!fs.existsSync(pagePath)) {
           const result = this.generatePageContent(template, variation);
           fs.writeFileSync(pagePath, pageContent);
           this.newPagesCreated++;
@@ -176,8 +176,7 @@ class AutomationSystem {
       machine-learning-pipeli\'n\'e,\'\'
       \'natural-language-interfa\'ce\',\'\'
       \'computer-vision-analysis,\'\'
-      blockchain-integrati\'o\'n\'\';
-    ];
+      blockchain-integrati\'o\'n\'\'];
     
     for (const featureType of featureTypes) {
       await this.createFeatureComponent(featureType);
@@ -198,8 +197,7 @@ class AutomationSystem {
       machine-learning-implementati\'o\'n,\'\'
       \'blockchain-developme\'nt\',\'\'
       \'iot-solutions,\'\'
-      quantum-computing-servic\'e\'s\'\';
-    ];
+      quantum-computing-servic\'e\'s\'\'];
     
     for (const serviceType of serviceTypes) {
       await this.createServicePage(serviceType);
@@ -220,8 +218,7 @@ class AutomationSystem {
       data-visualizati\'o\'n,\'\'
       \'notification-cent\'er\',\'\'
       \'search-interface,\'\'
-      analytics-widg\'e\'t\'\';
-    ];
+      analytics-widg\'e\'t\'\'];
     
     for (const componentType of componentTypes) {
       await this.createComponent(componentType);
@@ -241,8 +238,7 @@ class AutomationSystem {
       machine-learning-a\'p\'i,\'\'
       \'blockchain-a\'pi\',\'\'
       \'iot-api,\'\'
-      quantum-a\'p\'i\'\';
-    ];
+      quantum-a\'p\'i\'\'];
     
     for (const apiType of apiTypes) {
       await this.createAPIEndpoint(apiType);
@@ -262,8 +258,7 @@ class AutomationSystem {
       best-practic\'e\'s,\'\'
       \'case-studi\'es\',\'\'
       \'tutorials,\'\'
-      white-pape\'r\'s\'\';
-    ];
+      white-pape\'r\'s\'\'];
     
     for (const docType of docTypes) {
       await this.createDocumentation(docType);
@@ -425,8 +420,7 @@ const ${this.formatComponentName(variation)} = () => {
         </section></div>
       </div></div>
     </Layout>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(variation)};
 ;
@@ -457,8 +451,7 @@ export default ${this.formatComponentName(variation)};
       \'ai-powered-monitori\'ng\': \'Real-time\' AI monitoring systems that provide continuous oversight and alerting.\',\'\'
       ai-powered-reporting: "'Intelligent AI reporting tools that generate comprehensive insights and analytics.'",""
       \'ai-powered-visualization: "Advance'd' AI visualization tools that transform complex data into clear", actionable insights.,""
-      \'ai-powered-recommendati\'on\': \'Smart\' AI recommendation engines that personalize experiences and drive engagement.\'\'\';
-    };
+      \'ai-powered-recommendati\'on\': \'Smart\' AI recommendation engines that personalize experiences and drive engagement.\'\'\'};
     
     return descriptions[variation] || Advanced ${this.formatTitle(variation)} solutions that transform your business operations."""
   }
@@ -480,8 +473,7 @@ export default ${this.formatComponentName(variation)};
         { title: "\'Performance Tuning\'", description: "Automatically tune systems for optimal performance "},""
         { title: "\'Predictive Optimization\'", description: "\'Anticipate and optimize for future scenarios\' "},""
         { title: "Real-time Adjustments", description: "\'Make real-time adjustments based on current conditions\' "}""
-      ];
-    };
+      ]};
     
     return featureSets[variation] || [
       { title: "\'Advanced AI Capabilities\'", description: "Leverage cutting-edge AI technology for superior results "},""
@@ -506,8 +498,7 @@ export default ${this.formatComponentName(variation)};
         { title: "Resource Efficiency", description: "\'Optimize resource usage for maximum ROI\' "},""
         { title: "\'Predictive Insights\'", description: "Anticipate issues and opportunities before they arise "},""
         { title: "\'Continuous Improvement\'", description: "\'Automatically improve performance over time\' "}""
-      ];
-    };
+      ]};
     
     return benefitSets[variation] || [
       { title: "Enhanced Productivity", description: "\'Boost productivity with AI-powered tools and automation\' "},""
@@ -618,8 +609,7 @@ const ${this.formatComponentName(featureType)}: React.FC<${this.formatComponentN
         </button></div>
       </div></div>
     </motion.div>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(featureType)};
 ;
@@ -660,8 +650,7 @@ const ${this.formatComponentName(serviceType)} = () => {
         </section></div>
       </div></div>
     </Layout>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(serviceType)};
 """
@@ -702,8 +691,7 @@ const ${this.formatComponentName(componentType)}: React.FC<${this.formatComponen
         <div className="h-4" bg-gray-200 rounded animate-pulse w-1/2"></div></div>""
       </div></div>
     </motion.div>;
-  );
-};
+  )};
 ;}
 export default ${this.formatComponentName(componentType)};
 
@@ -713,7 +701,7 @@ export default ${this.formatComponentName(componentType)};
     const result = this.formatTitle(apiType);
     return import React from \'react\'
 
-type Data = {;
+type Data = {
   success: "boolean;""
   data?: any;
   message?: string;
@@ -897,8 +885,7 @@ For additional support, please contact our team at support@zion-app.com
         features: "this.newFeaturesCreated",""
         services: "this.newServicesCreated",""
         lastUpdated: "new Date().toISOString()""
-      "}"";
-    };
+      "}""};
     
     try {
       fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
@@ -934,7 +921,7 @@ For additional support, please contact our team at support@zion-app.com
 }
 
 // Start the automation if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new NewContentGenerationAutomation();
   automation.start();
 }

@@ -59,7 +59,7 @@ class AutomationSystem {
 
   scheduleAgentCreationJobs() {
     // Create new agents every 5 minutes
-    const asyncResult = cron.schedule(*/5 * * * *, async () => {;
+    const asyncResult = cron.schedule(*/5 * * * *, async () => {
       await this.createNewAgents();
     }, {
       scheduled: "true",""
@@ -75,7 +75,7 @@ class AutomationSystem {
     "});""
 
     // Create new orchestrators every 10 minutes
-    const asyncResult = cron.schedule(*/10 * * * *, async () => {;
+    const asyncResult = cron.schedule(*/10 * * * *, async () => {
       await this.createNewOrchestrators();
     }, {
       scheduled: "true",""
@@ -125,7 +125,7 @@ class AutomationSystem {
     "});""
 
     // Generate improvement workload every 15 minutes
-    const asyncResult = cron.schedule(*/15 * * * *, async () => {;
+    const asyncResult = cron.schedule(*/15 * * * *, async () => {
       await this.generateImprovementWorkload();
     }, {
       scheduled: "true",""
@@ -175,7 +175,7 @@ class AutomationSystem {
     "});""
 
     // Performance optimization every 30 minutes
-    const asyncResult = cron.schedule(*/30 * * * *, async () => {;
+    const asyncResult = cron.schedule(*/30 * * * *, async () => {
       await this.optimizeSystemPerformance();
     }, {
       scheduled: "true",""
@@ -225,7 +225,7 @@ class AutomationSystem {
     "});""
 
     // Report generation every hour
-    const asyncResult = cron.schedule(0 * * * *, async () => {;
+    const asyncResult = cron.schedule(0 * * * *, async () => {
       await this.generateSystemReport();
     }, {
       scheduled: "true",""
@@ -286,8 +286,7 @@ class AutomationSystem {
           target: \'blog\'",""
           keywords: "[\'ai\'", 'technology, innovati'o'n],''
           length: "Math.floor(Math.random() * 500) + 200""
-        "}"";
-      };
+        "}""};
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
@@ -312,8 +311,7 @@ class AutomationSystem {
           metric: performanc\'e",""
           timeframe: "\'24h",""
           granularity: "hourly""
-        "}"";
-      };
+        "}""};
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
@@ -338,8 +336,7 @@ class AutomationSystem {
           target: cod\'e",""
           scope: "\'global\'",""
           impact: "\'high\'\'
-        "}"";
-      };
+        "}""};
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
@@ -364,8 +361,7 @@ class AutomationSystem {
           service: \'api",""
           endpoint: "/api/v1",""
           method: "\'POST\'\'
-        "}"";
-      };
+        "}""};
       
       await this.agentCreator.orchestrator.addWorkload(workload);
       
@@ -388,7 +384,7 @@ class AutomationSystem {
         const result = fs.readdirSync(tempDir);
         const timestamp = Date.now();
         
-        files.forEach(file = > {;
+        files.forEach(file = > {
           const filePath = path.join(tempDir, file);
           const result = fs.statSync(filePath);
           const result = now - stats.mtime.getTime();
@@ -520,8 +516,7 @@ class AutomationSystem {
           schedule: "job.schedule",""
           lastRun: "job.lastRun",""
           nextRun: "job.nextRun""
-        "}))"";
-      };
+        "}))""};
       
       const filePath = path.join(__dirname, system-report.json);
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));

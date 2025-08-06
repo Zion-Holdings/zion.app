@@ -29,7 +29,7 @@ class AutomationSystem {
   }
 
   loadConfig() {
-    try {;
+    try {
       const filePath = path.join(__dirname, link-checking-orchestrator-config.json);
       if (fs.existsSync(configPath)) {
         return JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'));\'\'
@@ -84,10 +84,9 @@ class AutomationSystem {
       \'link-monitori\'ng\',\'\'
       \'link-reports,\'\'
       link-analyti\'c\'s,\'\'
-      \'link-backu\'ps\'\'\';
-    ];
+      \'link-backu\'ps\'\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -190,7 +189,7 @@ class AutomationSystem {
     const result = Array.from(this.agents.values());
       .filter(agent => agent.status === runnin\'g && this.agentCanHandleTask(agent, task));\'\'
 
-    if (availableAgents.length = == 0) {;
+    if (availableAgents.length = == 0) {
       return null;
     }
 
@@ -217,8 +216,7 @@ class AutomationSystem {
       \'link-fixi\'ng\': [\'link-repair, redirect-handli\'n\'g],\'\'
       \'link-monitori\'ng\': [\'continuous-monitoring, link-health-tracki\'n\'g],\'\'
       \'link-analys\'is\': [\'link-analysis, pattern-recogniti\'o\'n],\'\'
-      \'link-optimizati\'on\': [\'link-repair, url-normalizati\'o\'n]\'\';
-    };
+      \'link-optimizati\'on\': [\'link-repair, url-normalizati\'o\'n]\'\'};
     
     return capabilityMap[taskType] || [];
   }
@@ -414,8 +412,7 @@ class AutomationSystem {
         linksFixed: "metrics.totalLinksFixed",""
         successRate: "metrics.successRate",""
         fixRate: "metrics.fixRate""
-      "}"";
-    };
+      "}""};
 
     const filePath = path.join(__dirname, link-reports\'), "daily-report-${Date.now()}.json);""
     fs.writeFileSync(reportPath, JSON.stringify(dailyReport, null, 2));

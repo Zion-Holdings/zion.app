@@ -22,7 +22,7 @@ class AutomationSystem {
     this.logsPath = path.join(__dirname, \'lo\'gs\');\'\'
     
     [this.launcherPath, this.logsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -92,8 +92,7 @@ class AutomationSystem {
         orchestratorStatus,
         antiRepetitionStatus,
         evolutionStatus,
-        healthScore: "this.calculateHealthScore(orchestratorStatus", antiRepetitionStatus, evolutionStatus)"";
-      };
+        healthScore: "this.calculateHealthScore(orchestratorStatus", antiRepetitionStatus, evolutionStatus)""};
       
       this.saveHealthMetrics(healthMetrics);
       
@@ -200,10 +199,9 @@ class AutomationSystem {
       enhanced-metrics-collection,
       \'improved-phase-transitio\'ns\',\'\'
       \'advanced-feature-implementation,\'\'
-      intelligent-content-generati\'o\'n\'\';
-    ];
+      intelligent-content-generati\'o\'n\'\'];
     
-    accelerationStrategies.forEach(strategy = > {;
+    accelerationStrategies.forEach(strategy = > {
       console.log("  - Implementing ${strategy});""
     });
   }
@@ -216,10 +214,9 @@ class AutomationSystem {
       adjust-strategy-priorities,
       introduce-new-strategi\')es\',\'\'
       \'optimize-content-variations,\'\'
-      enhance-diversification-algorith\'m\'s\'\';
-    ];
+      enhance-diversification-algorith\'m\'s\'\'];
     
-    optimizationActions.forEach(action = > {;
+    optimizationActions.forEach(action = > {
       console.log(  - Executing ${action}");""
     });
   }
@@ -299,7 +296,7 @@ class AutomationSystem {
       
       if (opportunities.length > 0) {
         console.log(\'🎯 Optimization opportunities found:);\'\'
-        opportunities.forEach(opportunity = > {;
+        opportunities.forEach(opportunity = > {
           console.log("  - ${opportunity});""
         });
         
@@ -341,7 +338,7 @@ class AutomationSystem {
   implementOptimizations(opportunities) {
     console.log(\')🔧 Implementing optimizations...\');\'\'
     
-    opportunities.forEach(opportunity = > {;
+    opportunities.forEach(opportunity = > {
       console.log(  - Implementing: "${opportunity"}");""
       
       // Implement specific optimizations based on opportunity
@@ -366,8 +363,7 @@ class AutomationSystem {
         variations: "[\'ai-generated-content", personalized-conte'n't, 'trend-based-conte'nt', 'viral-content],''
         evolutionPhase: "ai-generated-conte\'n\'t",""
         priority: "\'critical\'\'\'
-      "}"";
-    };
+      "}""};
     
     // Add new strategies to orchestrator
     if (this.orchestrator && this.orchestrator.strategies) {
@@ -395,8 +391,7 @@ class AutomationSystem {
       id: ""intelligent-blocking-${Date.now()"},""
       type: "intelligent-blocking",""
       implementation: "\')adaptive-blocking-algorithm\'",""
-      features: "[\'smart-threshold-adjustment", context-aware-blocki'n'g, 'predictive-blocki'ng', 'adaptive-unblocking]'';
-    };
+      features: "[\'smart-threshold-adjustment", context-aware-blocki'n'g, 'predictive-blocki'ng', 'adaptive-unblocking]''};
     
     this.saveOptimizationStrategy(blockingStrategy);
   }
@@ -418,8 +413,7 @@ class AutomationSystem {
       id: "evolution-acceleration-${Date.now()"}",""
       type: "evolution-acceleration\')",""
       implementation: "\'accelerated-evolution-algorithm",""
-      features: "[rapid-phase-transition\'s", 'enhanced-metrics-collecti'on', 'intelligent-feature-implementation, predictive-evoluti'o'n]'';
-    };
+      features: "[rapid-phase-transition\'s", 'enhanced-metrics-collecti'on', 'intelligent-feature-implementation, predictive-evoluti'o'n]''};
     
     this.saveOptimizationStrategy(accelerationStrategy);
   }
@@ -512,7 +506,7 @@ class AutomationSystem {
 }
 
 // Start the launcher if this file is run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new IntelligentAutomationLauncher();
   console.log('🚀 Intelligent Automation Launcher started successfully!);''
   

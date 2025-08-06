@@ -108,7 +108,7 @@ process.on(SIGTERM, async () => {
 module.exports = ContinuousContentLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousContentLauncher();
   global.launcher = launcher;
   

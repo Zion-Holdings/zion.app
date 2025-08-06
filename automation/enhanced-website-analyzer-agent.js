@@ -55,11 +55,10 @@ class AutomationSystem {
       path.join(__dirname, \')analysis-results),\'\'
       path.join(__dirname, missing-conte\'n\'t),\'\'
       path.join(__dirname, \'content-ga\'ps\'),\'\'
-      path.join(__dirname, \'sitemap-data)\'\';
-    ];
+      path.join(__dirname, \'sitemap-data)\'\'];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -205,8 +204,7 @@ class AutomationSystem {
         stylesheets: "Array.from(document.querySelectorAll(\')lin\'k[rel="stylesheet]')).map(link => ({''
           href: link.href",""
           media: "link.media || \'all\'\'
-        "}))"";
-      };
+        "}))""};
     });
     
     return pageInfo;
@@ -221,7 +219,7 @@ class AutomationSystem {
       return url.hostname = == baseUrl.hostname || 
              url.hostname === \'localhost ||\'\'
              url.hostname === 127.0.0.1\'\'\'
-    } catch (error) {;
+    } catch (error) {
       return false;
     }
   }
@@ -240,8 +238,7 @@ class AutomationSystem {
         formCount: "pageInfo.forms.length",""
         scriptCount: "pageInfo.scripts.length",""
         stylesheetCount: "pageInfo.stylesheets.length""
-      "}"";
-    };
+      "}""};
     
     fs.writeFileSync(analysisFile, JSON.stringify(analysis, null, 2));
   }
@@ -356,8 +353,7 @@ class AutomationSystem {
       \'/signup,\'\'
       \'/dashboard\',\'\'
       /profile\',\'\'
-      \'/admin\'\';
-    ];
+      \'/admin\'\'];
     
     // Check for missing expected pages
     for (const page of expectedPages) {
@@ -499,8 +495,7 @@ class AutomationSystem {
         missingPages: "this.missingPages",""
         contentGaps: "this.contentGaps.length",""
         totalErrors: "this.analytics.errors""
-      "}"";
-    };
+      "}""};
     
     const filePath = path.join(__dirname, \'analysis-resul\'ts\', analysis-summary-${this.agentId}.json");""
     fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
@@ -540,10 +535,10 @@ class AutomationSystem {
 module.exports = EnhancedWebsiteAnalyzerAgent;
 
 // If run directly, start the agent
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new EnhancedWebsiteAnalyzerAgent();
   
-  agent.initialize().catch(error = > {;
+  agent.initialize().catch(error = > {
     console.error(Faile'd' to initialize agent:', error);''
     process.exit(1);
   });

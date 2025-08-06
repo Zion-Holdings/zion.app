@@ -23,11 +23,10 @@ class AutomationSystem {
       this.reportsDir,
       this.logsDir,
       path.join(this.reportsDir, 'cron-reports),''
-      path.join(this.logsDir, cron-lo'g's)'';
-    ];
+      path.join(this.logsDir, cron-lo'g's)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -99,7 +98,7 @@ class AutomationSystem {
   }
 
   async createJob(jobType, config = {}) {
-    try {;
+    try {
       console.log("Creating ${jobType} job...);""
       
       const result = this.jobTypes[jobType];
@@ -164,11 +163,10 @@ class ${this.getClassName(jobType)} {
   ensureDirectories() {
     const result = [
       this.reportsDir,
-      this.logsDir;
-    ];
+      this.logsDir];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -256,7 +254,7 @@ class ${this.getClassName(jobType)} {
 // Execute the job;
 const result = new ${this.getClassName(jobType)}();
 
-job.execute().catch(error = > {;
+job.execute().catch(error = > {
   console.error(\'${config.name} failed to execute:, error);\'\'
   process.exit(1);
 })
@@ -271,7 +269,7 @@ job.execute().catch(error = > {;
   }
 
   async scheduleJob(jobType, config = {}) {
-    try {;
+    try {
       console.log(Scheduling ${jobType} job...);
       
       const filePath = path.join(this.jobsDir, "${jobType}-job.js");""

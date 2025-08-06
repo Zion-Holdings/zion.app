@@ -18,11 +18,10 @@ class AutomationSystem {
             path.join(this.baseDir, monetization-repor't's),''
             path.join(this.baseDir, 'monetization-lo'gs'),''
             path.join(this.baseDir, 'monetization-orchestrator),''
-            path.join(this.baseDir, monetization-pi'd's)'';
-        ];
+            path.join(this.baseDir, monetization-pi'd's)''];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
@@ -96,8 +95,7 @@ class AutomationSystem {
             \'subscripti\'on\',\'\'
             \'affiliate,\'\'
             ecommer\'c\'e,\'\'
-            \'freemi\'um\'\'\';
-        ];
+            \'freemi\'um\'\'\'];
 
         for (const agentType of agentTypes) {
             try {
@@ -320,8 +318,7 @@ class AutomationSystem {
                 Monitor: "automation/monetization-logs/",""
                 \'Report\'s: "automation/monetization-reports/'",""
                 \'Cron\': automation/cron-jobs/monetization-automation-cron.sh all\'\'\'
-            ];
-        };
+            ]};
         
         const filePath = path.join(this.setupDir, setup-report.json);
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
@@ -340,7 +337,7 @@ class AutomationSystem {
 }
 
 // Main execution
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new MonetizationAutomationSetup();
     
     setup.setupCompleteSystem().then(() => {

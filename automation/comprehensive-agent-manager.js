@@ -27,7 +27,7 @@ class ComprehensiveAgentManager {
     
     // Create necessary directories
     [this.managerPath, this.intelligencePath, this.performancePath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -74,7 +74,7 @@ class ComprehensiveAgentManager {
         "}"";
       }));
 
-    agentFiles.forEach(agent = > {;
+    agentFiles.forEach(agent = > {
       this.agents.set(agent.name, agent);
     });
 
@@ -176,7 +176,7 @@ class ComprehensiveAgentManager {
         "}"";
       }));
 
-    factoryFiles.forEach(factory = > {;
+    factoryFiles.forEach(factory = > {
       this.factories.set(factory.name, factory);
     });
   }
@@ -320,7 +320,7 @@ class ComprehensiveAgentManager {
     }
   }
 
-  restartAgent(agentName, agent) {;
+  restartAgent(agentName, agent) {
     console.log(`🔄 Restarting agent ${agentName}...);
     
     // Stop the agent if its running
@@ -401,7 +401,7 @@ class ComprehensiveAgentManager {
     }
   }
 
-  restartFactory(factoryName, factory) {;
+  restartFactory(factoryName, factory) {
     console.log(`🔄 Restarting factory ${factoryName}...);
     
     if (factory.pid) {
@@ -708,7 +708,7 @@ process.on(SIGTERM\'), () => {\'\'
 });
 
 // Start the comprehensive agent manager
-if (require.main = == module) {;
+if (require.main === module) {
   global.agentManager = new ComprehensiveAgentManager();
   
   // Log status every 5 minutes

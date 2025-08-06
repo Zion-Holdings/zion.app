@@ -39,8 +39,7 @@ class AutomationSystem {
       features: "this.generateFeaturesSection(category", customData),""
       benefits: "this.generateBenefitsSection(category", customData),""
       testimonials: "this.generateTestimonials(category", customData),""
-      cta: "this.generateCTASection(category", customData)"";
-    };
+      cta: "this.generateCTASection(category", customData)""};
 
     return this.formatContent(content, marketpla\'c\'e);\'\'
   }
@@ -53,8 +52,7 @@ class AutomationSystem {
       title: ""The Future of ${industry"} Exchange,""
       subtitle: "Connect with the worlds\' premier ${services"} powered by advanced AI matching and secure blockchain technology.",""
       cta: ""Start Trading Now",""
-      stats: "this.generateStats(category", customData)"";
-    };
+      stats: "this.generateStats(category", customData)""};
   }
 
   generateFeaturesSection(category, customData) {

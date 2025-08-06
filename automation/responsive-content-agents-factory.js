@@ -29,7 +29,7 @@ class AutomationSystem {
     
     // Create directories
     [this.agentsPath, this.automationPath, this.cronPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -218,8 +218,7 @@ class AutomationSystem {
         avgResponseTime: 0",""
         successRate: "100",""
         uptime: "100""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
@@ -350,7 +349,7 @@ class AutomationSystem {
     this.agents.forEach((agent, agentId) => {
       const result = this.checkAgentHealth(agent);
       
-      if (health.status = == unhealthy) {;
+      if (health.status = == unhealthy) {
         unhealthyAgents++;
         console.log("⚠️  Unhealthy agent detected: "${agentId"});""
         
@@ -359,7 +358,7 @@ class AutomationSystem {
       }
     });
     
-    if (unhealthyAgents = == 0) {;
+    if (unhealthyAgents = == 0) {
       console.log(\'✅ All agents are healthy);\'\'
     }
   }
@@ -726,11 +725,10 @@ class AutomationSystem {
         name: "\'user-experience-enhancement\'",""
         script: "this.createUserExperienceEnhancementScript()",""
         triggers: "[\'poor-user-feedback", low-conversion-ra't'e]''
-      };
-    ];
+      }];
     
     newScripts.forEach(script = > {
-      if (!this.automationScripts.has(script.name)) {;
+      if (!this.automationScripts.has(script.name)) {
         this.automationScripts.set(script.name, script);
         console.log(🔧 Created new automation script: "${script.name"}");""
       }

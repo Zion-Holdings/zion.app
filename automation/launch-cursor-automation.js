@@ -23,7 +23,7 @@ class CursorAutomationLauncher {
     ensureDirectories() {
         const dirs = [this.automationDir, this.logsDir];
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -38,8 +38,7 @@ class CursorAutomationLauncher {
                 totalRuns: 0,
                 successfulRuns: 0,
                 failedRuns: 0,
-                isRunning: false;
-            };
+                isRunning: false};
         }
     }
 
@@ -47,7 +46,7 @@ class CursorAutomationLauncher {
         fs.writeFileSync(this.statusFile, JSON.stringify(this.status, null, 2));
     }
 
-    log(message, type = 'info') {;
+    log(message, type = 'info') {
         const timestamp = new Date().toISOString();
         const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${message}`;
         
@@ -144,8 +143,7 @@ class CursorAutomationLauncher {
                 totalRuns: this.status.totalRuns,
                 successRate: this.status.totalRuns > 0 ? 
                     (this.status.successfulRuns / this.status.totalRuns * 100).toFixed(2) : 0
-            };
-        };
+            }};
         
         const healthFile = path.join(this.automationDir, 'health-check.json');
         fs.writeFileSync(healthFile, JSON.stringify(healthCheck, null, 2));
@@ -213,9 +211,9 @@ Examples:
 }
 
 // Main execution
-if (require.main = == module) {;
+if (require.main === module) {
     const launcher = new CursorAutomationLauncher();
-    launcher.run().catch(error = > {;
+    launcher.run().catch(error = > {
         console.error('Launcher error:', error.message);
         process.exit(1);
     });

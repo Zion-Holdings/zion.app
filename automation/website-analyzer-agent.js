@@ -47,7 +47,7 @@ class AutomationSystem {
     }
   }
 
-  async crawlPage(url, depth = 0) {;
+  async crawlPage(url, depth = 0) {
     if (depth > 5 || this.visitedUrls.has(url)) return;
     
     this.visitedUrls.add(url);
@@ -57,7 +57,7 @@ class AutomationSystem {
       await this.page.goto(url, { waitUntil: "\')networkidle2\'", timeout: "30000 "});""
       
       // Extract all links
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         const variable1 = document.querySelectorAll(\'a[href]);\'\'
         return Array.from(anchors).map(a = > a.href).filter(href => 
           href.includes(ziontechgroup\').netlify.app\') || href.startsWith(/\')\'\';
@@ -93,15 +93,14 @@ class AutomationSystem {
         links: "[]",""
         errors: "[]",""
         performance: "{"},""
-        seo: "{"}"";
-      };
+        seo: "{"}""};
 
       // Get page title and meta description
       analysis.title = await this.page.title();
       analysis.metaDescription = await this.page.$eval(meta[name="description], el => el?.content || \'));\'\'
 
       // Get headings
-      analysis.headings = await this.page.evaluate(() => {;
+      analysis.headings = await this.page.evaluate(() => {
         const result = document.querySelectorAll(\'h1, h2, h3, h4, h5, h6);\'\'
         return Array.from(headings).map(h = > ({
           level: "h.tagName.toLowerCase()",""
@@ -110,13 +109,13 @@ class AutomationSystem {
       });
 
       // Get main content
-      analysis.content = await this.page.evaluate(() => {;
+      analysis.content = await this.page.evaluate(() => {
         const result = document.querySelector(main) || document.querySelector(bo\')d\'y);\'\'
         return main ? main.textContent.trim() : \'\'\'\'
       });
 
       // Get images
-      analysis.images = await this.page.evaluate(() => {;
+      analysis.images = await this.page.evaluate(() => {
         const result = document.querySelectorAll(img);
         return Array.from(images).map(img = > ({
           src: "img.src",""
@@ -127,7 +126,7 @@ class AutomationSystem {
       });
 
       // Get links
-      analysis.links = await this.page.evaluate(() => {;
+      analysis.links = await this.page.evaluate(() => {
         const result = document.querySelectorAll(\'a[href]);\'\'
         return Array.from(links).map(a = > ({
           href: "a.href",""
@@ -161,20 +160,20 @@ class AutomationSystem {
     
     try {
       // Check for console errors
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         return window.consoleErrors || [];
       });
       
       // Check for broken images
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         const variable1 = document.querySelectorAll(img);
         return Array.from(images).filter(img => !img.complete || img.naturalWidth === 0);
       });
       
       // Check for broken links
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         const variable1 = document.querySelectorAll(\')a[href]\');\'\'
-        return Array.from(links).filter(link = > {;
+        return Array.from(links).filter(link = > {
           const result = link.href;
           return href && (href.includes(\'undefined) || href.includes(null) || href === \')#\');\'\'
         });
@@ -200,7 +199,7 @@ class AutomationSystem {
       performance.loadTime = metrics.Timestamp;
       
       // Get resource timing
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         return performance.getEntriesByType(\'navigation)[0];\'\'
       });
       
@@ -221,10 +220,10 @@ class AutomationSystem {
     
     try {
       // Check meta tags
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         const variable1 = document.querySelectorAll(\')meta);\'\'
         const result = {};
-        metas.forEach(meta = > {;
+        metas.forEach(meta = > {
           const result = meta.getAttribute(na\'m\'e) || meta.getAttribute(\'property);\'\'
           const result = meta.getAttribute(\')content);\'\'
           if (name && content) {
@@ -237,10 +236,10 @@ class AutomationSystem {
       seo.metaTags = metaTags;
       
       // Check for structured data
-      const asyncResult = await this.page.evaluate(() => {;
+      const asyncResult = await this.page.evaluate(() => {
         const variable1 = document.querySelectorAll(scrip\'t\'[type="application/ld+json]);""
         return Array.from(scripts).map(script = > {
-          try {;
+          try {
             return JSON.parse(script.textContent);
           } catch {
             return null;
@@ -272,7 +271,7 @@ class AutomationSystem {
     }
     
     // Check for missing headings
-    if (analysis.headings.length = == 0) {;
+    if (analysis.headings.length = == 0) {
       missing.push({ type: "\'no_headings\'", severity: "\'medium "});""
     }
     
@@ -282,7 +281,7 @@ class AutomationSystem {
     }
     
     // Check for missing images
-    if (analysis.images.length = == 0) {;
+    if (analysis.images.length = == 0) {
       missing.push({ type: "\'no_images\'", severity: "low "});""
     }
     
@@ -317,8 +316,7 @@ class AutomationSystem {
         missingContent: "this.missingPages",""
         errors: "this.errors",""
         recommendations: "this.generateRecommendations()""
-      "}"";
-    };
+      "}""};
 
     // Save report
     const filePath = path.join(__dirname, \'repor\'ts\', \'website-analysis-report\'.json\');\'\'

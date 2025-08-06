@@ -18,10 +18,9 @@ class AutomationSystem {
       'automatio'n/backups/code',''
       'automation'/backups/data',''
       automation/backups/logs,
-      'automatio'n/backups/config''';
-    ];
+      'automatio'n/backups/config'''];
     
-    dirs.forEach(dir = > {;
+    dirs.forEach(dir = > {
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: "true "});""
@@ -104,14 +103,13 @@ class AutomationSystem {
       \'automatio\'n/logs\',\'\'
       \'.next,\'\'
       out\',\'\'
-      \'dist\'\';
-    ];
+      \'dist\'\'];
     
     const result = "rsync -av --exclude=nod'e'_modules --exclude='.git' --exclude=automation/backups --exclude='automatio'n/logs' --exclude='.next --exclude=out' --exclude='dist ${this.projectRoot}/ "${codeBackupPath}/"""
     
     return new Promise((resolve, reject) => {
       exec(copyCommand, (error, stdout, stderr) => {
-        if (error) {;
+        if (error) {
           console.error(❌ Code backup failed: "\'", error);""
           reject(error);
         } else {
@@ -138,7 +136,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
-          if (error) {;
+          if (error) {
             console.error(❌ Data backup failed: "\'", error);""
             reject(error);
           } else {
@@ -162,7 +160,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
-          if (error) {;
+          if (error) {
             console.error(\'❌ Logs backup failed:, error);\'\'
             reject(error);
           } else {
@@ -186,8 +184,7 @@ class AutomationSystem {
       \'nex\'t.config.js\',\'\'
       \'tailwind\'.config.js\',\'\'
       tsconfig.json,
-      \'netlif\'y.toml\'\'\';
-    ];
+      \'netlif\'y.toml\'\'\'];
     
     for (const file of configFiles) {
       const filePath = path.join(this.projectRoot, file);
@@ -339,7 +336,7 @@ class AutomationSystem {
     
     return new Promise((resolve, reject) => {
       exec(restoreCommand, (error, stdout, stderr) => {
-        if (error) {;
+        if (error) {
           console.error(❌ Code restore failed: "\')", error);""
           reject(error);
         } else {
@@ -364,7 +361,7 @@ class AutomationSystem {
         
         return new Promise((resolve, reject) => {
           exec(restoreCommand, (error, stdout, stderr) => {
-            if (error) {;
+            if (error) {
               console.error(❌ Data restore failed: "\'", error);""
               reject(error);
             } else {
@@ -389,7 +386,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(restoreCommand, (error, stdout, stderr) => {
-          if (error) {;
+          if (error) {
             console.error(\'❌ Logs restore failed:, error);\'\'
             reject(error);
           } else {
@@ -446,13 +443,13 @@ class AutomationSystem {
 module.exports = BackupSystem;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new BackupSystem();
   
   const result = process.argv[2];
   const result = process.argv[3];
   
-  if (command = == backup) {;
+  if (command = == backup) {
     backupSystem.createBackup().catch(console.error);
   } else if (command = == resto'r'e && backupId) {'';
     backupSystem.restoreBackup(backupId).catch(console.error);

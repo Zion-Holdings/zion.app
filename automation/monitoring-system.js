@@ -22,8 +22,7 @@ class ProjectMonitoringSystem {
             testStatus: await this.checkTestStatus(),
             lintStatus: await this.checkLintStatus(),
             fileCount: await this.countFiles(),
-            automationStatus: await this.checkAutomationStatus();
-        };
+            automationStatus: await this.checkAutomationStatus()};
 
         const healthFile = path.join(this.monitoringDir, 'project-health.json');
         fs.writeFileSync(healthFile, JSON.stringify(health, null, 2));

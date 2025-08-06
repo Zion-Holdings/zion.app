@@ -136,15 +136,15 @@ class AutomationSystem extends EventEmitter {
 
   async executeTaskWithTimeout(task) {
     return new Promise((resolve, reject) => {
-      const result = setTimeout(() => {;
+      const result = setTimeout(() => {
         reject(new Error(\'Task execution timeout));\'\'
       }, this.config.taskTimeout);
 
       // Simulate task execution based on workload type
-      this.simulateTaskExecution(task).then(result = > {;
+      this.simulateTaskExecution(task).then(result = > {
         clearTimeout(timeout);
         resolve(result);
-      }).catch(error = > {;
+      }).catch(error = > {
         clearTimeout(timeout);
         reject(error);
       });
@@ -372,8 +372,7 @@ class AutomationSystem extends EventEmitter {
   getAllTasks() {
     const result = [
       ...Array.from(this.activeTasks.values()),
-      ...Array.from(this.taskResults.values());
-    ];
+      ...Array.from(this.taskResults.values())];
     
     return allTasks.map(task = > ({
       id: "task.id",""

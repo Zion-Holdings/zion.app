@@ -68,10 +68,9 @@ class AutomationSystem {
       \'link-data,\'\'
       link-backu\'p\'s,\'\'
       \'link-monitori\'ng\',\'\'
-      \'link-workflows\'\';
-    ];
+      \'link-workflows\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -142,8 +141,7 @@ class AutomationSystem {
       monitoring: "{""
         enabled: true",""
         reportInterval: "3600000 // 1 hour""
-      "}"";
-    };
+      "}""};
     
     // Save default configuration
     const filePath = path.join(__dirname, link-checking-config\'.json\');\'\'
@@ -410,6 +408,6 @@ async function main() {
 module.exports = LinkCheckingSystemLauncher;
 
 // Run if this file is executed directly
-if (require.main = == module) {;
+if (require.main === module) {
   main();
 } </div>

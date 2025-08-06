@@ -137,13 +137,12 @@ class AutomationSystem {
           alertThresholds: "true",""
           autoRecovery: "true""
         "}""
-      };
-    };
+      }};
     this.loadAgentRegistry();
   }
 
   async createAgent(type, config = {}) {
-    if (!this.agentTypes[type]) {;
+    if (!this.agentTypes[type]) {
       throw new Error("Unknown agent type: "${type"});""
     }
 
@@ -172,8 +171,7 @@ class AutomationSystem {
         status: \'healthy",""
         lastCheck: "new Date()",""
         errors: "[]""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();
@@ -512,7 +510,7 @@ class AutomationSystem {
     return template;
   }
 
-  async createAgentFromTemplate(templateName, config = {}) {;
+  async createAgentFromTemplate(templateName, config = {}) {
     const filePath = path.join(__dirname, templat\'e\'s, ${templateName}-template.json");""
     if (!fs.existsSync(templatePath)) {
       throw new Error("Template not found: "${templateName"});""

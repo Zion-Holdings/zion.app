@@ -29,7 +29,7 @@ class AutomationSystem {
     
     // Create directories
     [this.diversificationPath, this.variationsPath, this.evolutionPath, this.antiRepetitionPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -76,8 +76,7 @@ class AutomationSystem {
         frequency: "continuous",""
         priority: "\'high\'",""
         variations: "[\'ui-improvements", ux-enhancemen't's, 'accessibility-featur'es', 'mobile-optimizations]''
-      };
-    };
+      }};
   }
 
   loadContentVariations() {
@@ -310,8 +309,7 @@ class AutomationSystem {
             createdAt: new Date().toISOString()",""
             diversificationScore: "this.calculateDiversificationScore(strategyKey", variation),""
             evolutionPhase: "this.getCurrentEvolutionPhase(strategyKey)""
-          "}"";
-        };
+          "}""};
         
         return content;
       }
@@ -348,8 +346,7 @@ class AutomationSystem {
           \'Ne\'w [component] for [purpose]\',\'\'
           \'Advanced\' [component] with [capability]\'\'\'
         ]
-      };
-    };
+      }};
     
     return templates[strategyKey]?.[variation] || [Default template for [topic]];
   }
@@ -382,8 +379,7 @@ class AutomationSystem {
       \'[component]\': this.getRandomComponent(),\'\'
       [feature]\': this.getRandomFeature(),\'\'
       \'[purpose]: this.getRandomPurpose(),\'\'
-      \'[capability]\': this.getRandomCapability()\'\';
-    };
+      \'[capability]\': this.getRandomCapability()\'\'};
     
     let variable1 = template;
     Object.entries(placeholders).forEach(([placeholder, value]) => {
@@ -396,8 +392,7 @@ class AutomationSystem {
   getRandomTopic(strategyKey, variation) {
     const result = {
       \'blog-posts: "[A'I' Automation", \'Digita\'l Transformation\', \'Cloud\' Computing\', Cybersecurity, \'Dat\'a Analytics\', \'Machine\' Learning\', DevOps, \'Agil\'e Development\'],\'\'
-      \'product-descriptions: "[Busines's' Process Automation", \'Custome\'r Relationship Management\', \'Project\' Management\', Data Visualization, \'AP\'I Integration\', \'Mobile\' Development\']\'\';
-    };
+      \'product-descriptions: "[Busines's' Process Automation", \'Custome\'r Relationship Management\', \'Project\' Management\', Data Visualization, \'AP\'I Integration\', \'Mobile\' Development\']\'\'};
     
     const result = topics[variation] || topics[blog-posts];
     return topicList[Math.floor(Math.random() * topicList.length)];
@@ -531,8 +526,7 @@ class AutomationSystem {
         userRetention: "0.75",""
         taskCompletion: "0.9",""
         userFeedback: "0.8""
-      "}"";
-    };
+      "}""};
     
     return criteria[trackKey] || {};
   }
@@ -827,7 +821,7 @@ class AutomationSystem {
 module.exports = IntelligentDiversificationOrchestrator;
 
 // Start the orchestrator if this file is run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new IntelligentDiversificationOrchestrator();
   console.log(🚀 Intelligent Diversification Orchestrator started successfully!');''
 } 

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-08-06T11:15:14.097Z",
+  "totalSystems": 6,
+  "successfulRestarts": 1,
+  "failedRestarts": 5,
+  "results": [
+    {
+      "system": "ultimate-automation-factory-system",
+      "success": false,
+      "timestamp": "2025-08-06T11:14:37.458Z",
+      "error": "System failed to start"
+    },
+    {
+      "system": "intelligent-automation-orchestrator",
+      "success": false,
+      "timestamp": "2025-08-06T11:14:44.765Z",
+      "error": "System failed to start"
+    },
+    {
+      "system": "continuous-automation-improvement-system",
+      "success": true,
+      "timestamp": "2025-08-06T11:14:52.068Z",
+      "error": null
+    },
+    {
+      "system": "master-automation-coordinator",
+      "success": false,
+      "timestamp": "2025-08-06T11:14:59.424Z",
+      "error": "System failed to start"
+    },
+    {
+      "system": "enhanced-diversification-orchestrator",
+      "success": false,
+      "timestamp": "2025-08-06T11:15:06.765Z",
+      "error": "System failed to start"
+    },
+    {
+      "system": "intelligent-agent-orchestrator",
+      "success": false,
+      "timestamp": "2025-08-06T11:15:14.097Z",
+      "error": "System failed to start"
+    }
+  ]
+}

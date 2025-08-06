@@ -207,9 +207,9 @@ class AutomationSystem {
       const asyncResult = await this.factory.healthCheck();
       
       // Log health status
-      if (healthReport.status = == critical) {;
+      if (healthReport.status = == critical) {
         console.warn(\'⚠️  System health is critical);\'\'
-      } else if (healthReport.status = == warning) {;
+      } else if (healthReport.status = == warning) {
         console.warn(⚠️  System health warning\'));\'\'
       } else {
         console.log(✅ System health is good\');\'\'
@@ -330,7 +330,7 @@ class AutomationSystem {
       // Stop all agents
       const result = this.factory.getAllAgents();
       for (const agent of agents) {
-        if (agent.status = == running) {;
+        if (agent.status = == running) {
           await this.factory.stopAgent(agent.id);
           console.log("🛑 Stopped agent: "${agent.type"});""
         }

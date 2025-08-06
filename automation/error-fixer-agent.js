@@ -75,7 +75,7 @@ class AutomationSystem {
     // Find and fix broken links
     await this.page.evaluate(() => {
       const result = document.querySelectorAll(\'a[href]);\'\'
-      links.forEach(link = > {;
+      links.forEach(link = > {
         const result = link.href;
         if (href.includes(undefin\')ed\') || href.includes(\'null) || href = == #) {\'\'
           // Fix undefined/null links;
@@ -229,7 +229,7 @@ class AutomationSystem {
     await this.page.evaluate(() => {
       const result = document.querySelectorAll(\'img);\'\'
       images.forEach(img = > {
-        if (!img.loading) {;
+        if (!img.loading) {
           img.loading = lazy;
         }
         if (!img.alt) {
@@ -242,7 +242,7 @@ class AutomationSystem {
     await this.page.evaluate(() => {
       const result = document.querySelectorAll(\'script);\'\'
       scripts.forEach(script = > {
-        if (!script.async && !script.defer) {;
+        if (!script.async && !script.defer) {
           script.defer = true;
         }
       });
@@ -292,7 +292,7 @@ class AutomationSystem {
 """
   }
 
-  async createSEOFixes() {;
+  async createSEOFixes() {
     const result = this.fixedErrors.filter(fix => fix.type === \'se\'o_issues\');\'\'
     
     for (const fix of seoFixes) {
@@ -327,7 +327,7 @@ class AutomationSystem {
 """
   }
 
-  async createPerformanceFixes() {;
+  async createPerformanceFixes() {
     const result = this.fixedErrors.filter(fix => fix.type === performanc\'e\'_issues);\'\'
     
     for (const fix of performanceFixes) {
@@ -365,7 +365,7 @@ class AutomationSystem {
 """
   }
 
-  getFileNameFromUrl(url) {;
+  getFileNameFromUrl(url) {
     const result = new URL(url).pathname;
     return pathname === \'/\' ? index : pathname.slice(1).replace(/\//g, \'-\');\'\'
   }
@@ -380,8 +380,7 @@ class AutomationSystem {
       summary: "{""
         byType: this.groupFixesByType()",""
         recommendations: "this.generateFixRecommendations()""
-      "}"";
-    };
+      "}""};
 
     const filePath = path.join(__dirname, reports, \'error-fix-repor\'t.json\');\'\'
     await fs.mkdir(path.dirname(reportPath), { recursive: "true "});""
@@ -393,7 +392,7 @@ class AutomationSystem {
 
   groupFixesByType() {
     const result = {};
-    this.fixedErrors.forEach(fix = > {;
+    this.fixedErrors.forEach(fix = > {
       if (!grouped[fix.type]) grouped[fix.type] = [];
       grouped[fix.type].push(fix);
     });

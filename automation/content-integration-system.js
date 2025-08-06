@@ -17,11 +17,10 @@ class AutomationSystem {
   ensureDirectories() {
     const filePath = [
       path.join(this.contentPath, 'integrated),''
-      path.join(this.automationPath, integration-analyti'c's)'';
-    ];
+      path.join(this.automationPath, integration-analyti'c's)''];
     
     dirs.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -83,8 +82,7 @@ class AutomationSystem {
       \'pricing-tabl\'es\': () => this.integratePricingTables(content),\'\'
       \'faq-section: "() => this.integrateFAQSection(content)",""
       about-\'u\'s: "() => this.integrateAboutUs(content)",""
-      \'contact-in\'fo\': () => this.integrateContactInfo(content)\'\';
-    };
+      \'contact-in\'fo\': () => this.integrateContactInfo(content)\'\'};
 
     const result = integrationMethods[contentType];
     if (method) {
@@ -382,8 +380,7 @@ const result = () => {
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1
   }
@@ -391,7 +388,7 @@ export default variable1
   generateFeatureHighlightsComponent(features) {
     return "import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(features, null, 2)};
 
   return (</div>
@@ -410,8 +407,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1
   }
@@ -419,7 +415,7 @@ export default variable1
   generateServiceCategoriesComponent(services) {
     return "import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(services, null, 2)};
 
   return (</div>
@@ -439,8 +435,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1
   }
@@ -448,7 +443,7 @@ export default variable1
   generateTestimonialsComponent(testimonials) {
     return import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(testimonials, null, 2)};
 
   return (</div>
@@ -473,8 +468,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1;
   }
@@ -482,7 +476,7 @@ export default variable1;
   generatePricingTablesComponent(pricing) {
     return "import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(pricing, null, 2)};
 
   return (</div>
@@ -499,8 +493,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1;
   }
@@ -508,7 +501,7 @@ export default variable1;
   generateFAQSectionComponent(faqs) {
     return "import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(faqs, null, 2)};
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -538,8 +531,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1
   }
@@ -580,8 +572,7 @@ const jsonData = () => {
         </div></div>
       </div></div>
     </div>;
-  );
-};
+  )};
 ;}
 export default variable1;
   }
@@ -589,7 +580,7 @@ export default variable1;
   generateContactInfoComponent(data) {
     return import React from \'react\'
 ;
-const jsonData = () => {;
+const jsonData = () => {
   const variable1 = ${JSON.stringify(data, null, 2)};
 
   return (</div>
@@ -623,8 +614,7 @@ const jsonData = () => {;
         </div></div>
       </div></div>
     </section>;
-  );
-};
+  )};
 ;}
 export default variable1;
   }
@@ -649,7 +639,7 @@ export default variable1;
 module.exports = ContentIntegrationSystem;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContentIntegrationSystem();
   integrationSystem.run().catch(console.error);
 } </div>

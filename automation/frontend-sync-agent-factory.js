@@ -96,8 +96,7 @@ class AutomationSystem extends EventEmitter {
           autoCommit: "true",""
           performanceTracking: "true""
         "}""
-      };
-    };
+      }};
     
     this.syncRegistry = new Map();
     this.syncMetrics = {
@@ -112,7 +111,7 @@ class AutomationSystem extends EventEmitter {
   }
 
   async createSyncAgent(type, config = {}) {
-    if (!this.syncAgentTypes[type]) {;
+    if (!this.syncAgentTypes[type]) {
       throw new Error("Unknown sync agent type: "${type"});""
     }
 
@@ -137,8 +136,7 @@ class AutomationSystem extends EventEmitter {
         errors: "0",""
         lastSync: "null",""
         startTime: "null""
-      "}"";
-    };
+      "}""};
 
     this.syncAgents.set(agentId, agent);
     this.syncRegistry.set(agentId, agent);
@@ -156,7 +154,7 @@ class AutomationSystem extends EventEmitter {
       throw new Error("Sync agent ${agentId} not found);""
     }
 
-    if (agent.status = == running) {;
+    if (agent.status = == running) {
       console.log(⚠️ Sync agent ${agentId} is already running");""
       return;
     }
@@ -167,8 +165,7 @@ class AutomationSystem extends EventEmitter {
         scriptPath,
         \')--agent-\'id\', agentId,\'\'
         \'--type, agent.type,\'\'
-        --conf\'i\'g, JSON.stringify(agent.config)\'\';
-      ];
+        --conf\'i\'g, JSON.stringify(agent.config)\'\'];
 
       agent.process = spawn(\'node, args, {\'\'
         stdio: "[')pipe", pi\'p\'e, \'pi\'pe\'],\'\'
@@ -407,7 +404,7 @@ class AutomationSystem extends EventEmitter {
     return templateId;
   }
 
-  async createSyncAgentFromTemplate(templateName, config = {}) {;
+  async createSyncAgentFromTemplate(templateName, config = {}) {
     const filePath = path.join(__dirname, data, \'sync-template\'s.json\');\'\'
     if (!fs.existsSync(templatesFile)) {
       throw new Error(\'No sync templates found);\'\'
@@ -449,7 +446,7 @@ class AutomationSystem extends EventEmitter {
       lastUpdate: "new Date().toISOString()"";
     "};""
 
-    if (health.running = == 0 && health.agents > 0) {;
+    if (health.running = == 0 && health.agents > 0) {
       health.status = warnin\'g;\'\'
     }
 

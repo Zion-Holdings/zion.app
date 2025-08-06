@@ -76,10 +76,9 @@ class AutomationSystem {
       frontend-sync-backu\'p\'s,\'\'
       \'frontend-sync-repor\'ts\',\'\'
       \'frontend-sync-status,\'\'
-      frontend-sync-pi\'d\'s\'\';
-    ];
+      frontend-sync-pi\'d\'s\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -124,7 +123,7 @@ class AutomationSystem {
   startFileWatchers() {
     console.log(👀 Starting file watchers...\');\'\'
     
-    this.config.watchDirectories.forEach(dir = > {;
+    this.config.watchDirectories.forEach(dir = > {
       const filePath = path.join(this.projectRoot, dir);
       if (fs.existsSync(fullPath)) {
         const result = chokidar.watch(fullPath, {
@@ -159,8 +158,7 @@ class AutomationSystem {
         filePath: "relativePath",""
         fullPath: "filePath",""
         timestamp: "new Date().toISOString()",""
-        priority: "this.getPriorityForFile(relativePath", eventType)"";
-      };
+        priority: "this.getPriorityForFile(relativePath", eventType)""};
       
       this.addToSyncQueue(syncTask);
     }
@@ -191,7 +189,7 @@ class AutomationSystem {
   }
 
   async processSyncQueue() {
-    if (this.processingQueue || this.syncQueue.length = == 0) {;
+    if (this.processingQueue || this.syncQueue.length = == 0) {
       return;
     }
     
@@ -373,7 +371,7 @@ class AutomationSystem {
     }
   }
 
-  updateSyncStats(success, syncTime, error = null) {;
+  updateSyncStats(success, syncTime, error = null) {
     this.syncStats.totalSyncs++;
     
     if (success) {
@@ -400,8 +398,7 @@ class AutomationSystem {
       { name: "page-syn\'c", type: "\'PageSyncAgent\' "},""
       { name: "\'api-sync", type: "ApiSyncAgen\'t "},""
       { name: "\'test-sync\'", type: "\'TestSyncAgent "},""
-      { name: "build-syn\'c", type: "\'BuildSyncAgent\' "}"";
-    ];
+      { name: "build-syn\'c", type: "\'BuildSyncAgent\' "}""];
     
     for (const agent of agents) {
       await this.createSyncAgent(agent.name, agent.type);
@@ -434,7 +431,7 @@ class ${type} {
     this.status = \'rea\'dy\'\'\'
   }
 
-  async executeSync(task) {;
+  async executeSync(task) {
     console.log(\"🔄 [\${this.name}] Processing: "\${task.filePath"}\");""
     
     try {
@@ -665,7 +662,7 @@ module.exports = ${type};
   checkSystemHealth() {
     // Check if all agents are healthy
     for (const [name, agent] of this.syncAgents) {
-      if (agent.status = == error) {;
+      if (agent.status = == error) {
         console.warn(⚠️  Agent ${name} is in error state");""
         this.restartAgent(name);
       }
@@ -755,7 +752,7 @@ module.exports = ${type};
 }
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new FrontendSyncAutonomousFactory();
   
   process.on(SIGINT'), async () => {''
@@ -770,7 +767,7 @@ if (require.main = == module) {;
     process.exit(0);
   });
   
-  factory.initialize().catch(error = > {;
+  factory.initialize().catch(error = > {
     console.error('❌ Factory initialization failed:', error);''
     process.exit(1);
   });

@@ -140,7 +140,7 @@ class AutomationSystem extends EventEmitter {
       return;
     }
     
-    const filePath = fs.readdirSync(factoriesDir).filter(dir => {;
+    const filePath = fs.readdirSync(factoriesDir).filter(dir => {
       return fs.statSync(path.join(factoriesDir, dir)).isDirectory();
     });
     
@@ -202,8 +202,7 @@ class AutomationSystem extends EventEmitter {
       const result = [
         content-automation-factory,
         marketing-automation-facto\')ry\',\'\'
-        \'development-automation-factory\'\';
-      ];
+        \'development-automation-factory\'\'];
       
       const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
       
@@ -233,8 +232,7 @@ class AutomationSystem extends EventEmitter {
         blog-variations,
         product-variatio\')ns\',\'\'
         \'service-variations,\'\'
-        social-variatio\'n\'s\'\';
-      ];
+        social-variatio\'n\'s\'\'];
       
       const result = contentTypes[Math.floor(Math.random() * contentTypes.length)];
       
@@ -333,7 +331,7 @@ class ${scriptId.replace(/-/g, \'))}Script {\'\'
 
 module.exports = ${scriptId.replace(/-/g, \')}Script;\'\'
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ${scriptId.replace(/-/g, \')}Script();\'\'
   script.execute().catch(console.error);
 }
@@ -432,7 +430,7 @@ if (require.main = == module) {;
 
 module.exports = InfiniteImprovementLoop;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new InfiniteImprovementLoop();
   loop.start().catch(console.error);
 } 

@@ -16,8 +16,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       orchestratorsStarted: 0,
       successfulLaunches: 0,
       failedLaunches: 0,
-      uptime: 0;
-    };
+      uptime: 0};
     
     this.initializeLauncher();
     this.loadFactoryDefinitions();
@@ -57,11 +56,10 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       'automation/factory-logs',''
       'automation/factory-configs',''
       'automation/factory-backups',''
-      'automation/factory-monitoring''';
-    ];
+      'automation/factory-monitoring'''];
     
     directories.forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
     });
@@ -140,8 +138,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
         priority: 'high',''
         capabilities: ['renewable-energy', 'environmental-monitoring', 'sustainability-automation'],''
         dependencies: ['node-cron', 'events']''
-      };
-    ];
+      }];
     
     console.log(`✅ [${this.launcherId}] Loaded ${this.factoryDefinitions.length} factory definitions`);
   }
@@ -200,8 +197,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
             uptime: 0,
             efficiency: 0.95,
             errors: 0
-          };
-        };
+          }};
         
         this.factories.set(factoryDef.name, factoryData);
         this.metrics.factoriesLaunched++;
@@ -414,7 +410,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
 }
 
 // Start the launcher if this file is run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const launcher = new EnhancedAutomationFactoryLauncher();
   
   // Handle shutdown signals

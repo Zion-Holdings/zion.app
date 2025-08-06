@@ -30,7 +30,7 @@ class AutonomousAutomationOrchestrator {
     
     // Create directories
     [this.orchestratorPath, this.factoriesPath, this.improvementsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -210,8 +210,7 @@ class AutonomousAutomationOrchestrator {
           agentsCreated: 0",""
           automationsExecuted: "0",""
           errors: "0""
-        "}"";
-      };
+        "}""};
       
       this.factories.set(factoryId, factory);
       this.performanceMetrics.factoriesCreated++;
@@ -328,10 +327,9 @@ class AutonomousAutomationOrchestrator {
       \'memory-optimization\',\'\'
       \'cpu-optimization\',\'\'
       \'network-optimization\',\'\'
-      \'storage-optimization\'\'\';
-    ];
+      \'storage-optimization\'\'\'];
     
-    optimizations.forEach(optimization = > {;
+    optimizations.forEach(optimization = > {
       console.log(⚡ Applied ${optimization}`);
     });
   }
@@ -343,10 +341,9 @@ class AutonomousAutomationOrchestrator {
       \'memory-management\',\'\'
       \'cpu-allocation\',\'\'
       \'network-bandwidth\',\'\'
-      \'storage-efficiency\'\'\';
-    ];
+      \'storage-efficiency\'\'\'];
     
-    resourceOptimizations.forEach(optimization = > {;
+    resourceOptimizations.forEach(optimization = > {
       console.log(`⚡ Applied ${optimization});
     });
   }
@@ -358,10 +355,9 @@ class AutonomousAutomationOrchestrator {
       \'learning-rate-optimization\',\'\'
       \'decision-making-optimization\',\'\'
       \'pattern-recognition-optimization\',\'\'
-      \'adaptation-optimization\'\'\';
-    ];
+      \'adaptation-optimization\'\'\'];
     
-    intelligenceOptimizations.forEach(optimization = > {;
+    intelligenceOptimizations.forEach(optimization = > {
       console.log(`🧠 Applied ${optimization}`);
     });
   }
@@ -373,10 +369,9 @@ class AutonomousAutomationOrchestrator {
       \'advanced-ai-automation\',\'\'
       \'predictive-analytics-automation\',\'\'
       \'machine-learning-automation\',\'\'
-      \'natural-language-automation\'\'\';
-    ];
+      \'natural-language-automation\'\'\'];
     
-    newTypes.forEach(type = > {;
+    newTypes.forEach(type = > {
       console.log(🔧 Created new automation type: "${type"}`);""
     });
   }
@@ -493,7 +488,7 @@ process.on(\'SIGTERM\', () => {\'\'
 });
 
 // Start the orchestrator
-if (require.main = == module) {;
+if (require.main === module) {
   global.orchestrator = new AutonomousAutomationOrchestrator();
   
   // Log status every 2 minutes

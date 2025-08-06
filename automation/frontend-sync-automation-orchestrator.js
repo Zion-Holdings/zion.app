@@ -69,10 +69,9 @@ class AutomationSystem {
       frontend-sync-backu\'p\'s,\'\'
       \'frontend-sync-stat\'us\',\'\'
       \'frontend-sync-logs,\'\'
-      frontend-sync-pi\'d\'s\'\';
-    ];
+      frontend-sync-pi\'d\'s\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -125,8 +124,7 @@ class AutomationSystem {
       { name: "\'scaling-generator\'", type: "\'ScalingGenerator "},""
       { name: "optimization-generato\'r", type: "\'OptimizationGenerator\' "},""
       { name: "\'testing-generator", type: "TestingGenerato\'r "},""
-      { name: "\'deployment-generator\'", type: "\'DeploymentGenerator "}"";
-    ];
+      { name: "\'deployment-generator\'", type: "\'DeploymentGenerator "}""];
     
     for (const generator of generators) {
       await this.createGenerator(generator.name, generator.type);
@@ -161,7 +159,7 @@ class ${type} {
     this.generatedCount = 0;
   }
 
-  async generate(config = {}) {;
+  async generate(config = {}) {
     console.log(\🏭 [\${this.name}] Generating automation...\);
     
     try {
@@ -308,7 +306,7 @@ module.exports = ${type};
     
     const result = [component\'s, \'pag\'es\', \'api, __tests__\', \'styles, uti\'l\'s];\'\'
     
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(this.projectRoot, dir);
       if (fs.existsSync(fullPath)) {
         const result = this.countFiles(fullPath);
@@ -456,7 +454,7 @@ class ${className} {
     this.status = \'rea\'dy\'\'\'
   }
 
-  async shutdown() {;
+  async shutdown() {
     console.log(\"🛑 [\${this.name}] Shutting down automation...\");""
     this.status = \'stopped;\'\'
   }
@@ -724,7 +722,7 @@ module.exports = ${className};
 }
 
 // Auto-start if run directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new FrontendSyncAutomationOrchestrator();
   
   process.on(SIGINT'), async () => {''
@@ -739,7 +737,7 @@ if (require.main = == module) {;
     process.exit(0);
   });
   
-  orchestrator.initialize().catch(error = > {;
+  orchestrator.initialize().catch(error = > {
     console.error('❌ Orchestrator initialization failed:', error);''
     process.exit(1);
   });

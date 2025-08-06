@@ -24,7 +24,7 @@ class QuantumComputingAutomationFactory {
     this.reportsPath = path.join(__dirname, \'quantum-reports\');\'\'
     
     [this.agentsPath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -65,8 +65,7 @@ class QuantumComputingAutomationFactory {
         simulationsCompleted: 0",""
         algorithmsOptimized: "0",""
         accuracy: "0.98""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.quantumSimulations++;
@@ -164,7 +163,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, ${agentId}.js`\'));
       }
     }
@@ -265,7 +264,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = QuantumComputingAutomationFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const factory = new QuantumComputingAutomationFactory();
   console.log('🏭 Quantum Computing Automation Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

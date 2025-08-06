@@ -66,8 +66,7 @@ class AutomationSystem {
         description: "Monetizes data assets and analytics capabilities",""
         targetRevenue: "30000",""
         agents: "[\'data-monetizati\'on\']\'\'
-      "}"";
-    };
+      "}""};
 
     for (const [key, strategy] of Object.entries(strategies)) {
       this.strategies.set(key, strategy);
@@ -107,8 +106,7 @@ class AutomationSystem {
         c\'a\'c,\'\'
         \'churn-ra\'te\',\'\'
         \'conversion-rate\'\'
-      ];
-    };
+      ]};
 
     const filePath = path.join(__dirname, monetization-repor\'t\'s, \'revenue-trackin\'g.json\');\'\'
     await fs.writeFile(trackingPath, JSON.stringify(trackingConfig, null, 2));
@@ -256,8 +254,7 @@ class AutomationSystem {
       \'implement-churn-prevention-algorithm,\'\'
       optimize-pricing-tie\'r\'s,\'\'
       \'improve-customer-succe\'ss\',\'\'
-      \'enhance-onboarding-process\'\';
-    ];
+      \'enhance-onboarding-process\'\'];
 
     for (const strategy of strategies) {
       await this.executeStrategy(strategy, optimization);
@@ -269,8 +266,7 @@ class AutomationSystem {
       optimize-landing-pag\'e\'s,\'\'
       \'improve-signup-funn\'el\',\'\'
       \'enhance-cta-placement,\'\'
-      implement-a-b-testi\'n\'g\'\';
-    ];
+      implement-a-b-testi\'n\'g\'\'];
 
     for (const strategy of strategies) {
       await this.executeStrategy(strategy, optimization);
@@ -282,8 +278,7 @@ class AutomationSystem {
       \'analyze-competitor-prici\'ng\',\'\'
       \'implement-dynamic-pricing,\'\'
       optimize-feature-gati\'n\'g,\'\'
-      \'enhance-value-propositi\'on\'\'\';
-    ];
+      \'enhance-value-propositi\'on\'\'\'];
 
     for (const strategy of strategies) {
       await this.executeStrategy(strategy, optimization);
@@ -295,8 +290,7 @@ class AutomationSystem {
       \'optimize-commission-structure,\'\'
       increase-vendor-retenti\'o\'n,\'\'
       \'expand-category-covera\'ge\',\'\'
-      \'improve-transaction-flow\'\';
-    ];
+      \'improve-transaction-flow\'\'];
 
     for (const strategy of strategies) {
       await this.executeStrategy(strategy, optimization);
@@ -308,8 +302,7 @@ class AutomationSystem {
       optimize-ad-placement-algorit\'h\'m,\'\'
       \'increase-ad-invento\'ry\',\'\'
       \'improve-ad-targeting,\'\'
-      enhance-ad-performance-tracki\'n\'g\'\';
-    ];
+      enhance-ad-performance-tracki\'n\'g\'\'];
 
     for (const strategy of strategies) {
       await this.executeStrategy(strategy, optimization);

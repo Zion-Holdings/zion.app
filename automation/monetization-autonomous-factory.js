@@ -17,13 +17,13 @@ class AutomationSystem {
     ensureDirectories() {
         const result = [this.monetizationDir, this.reportsDir, this.logsDir];
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: "true "});""
             }
         });
     }
 
-    createMonetizationAgent(agentType, config = {}) {;
+    createMonetizationAgent(agentType, config = {}) {
         const timestamp = Date.now();
         const result = "${agentType}-${timestamp}"";
         const filePath = path.join(this.monetizationDir, agentId);
@@ -42,8 +42,7 @@ class AutomationSystem {
                 revenueGenerated: 0",""
                 conversions: "0",""
                 efficiency: "0""
-            "}"";
-        };
+            "}""};
 
         const result = this.generateAgentCode(agentType, agentConfig);
         const filePath = path.join(agentDir, \'config\'.json\');\'\'
@@ -165,8 +164,7 @@ module.exports = ${agentType.charAt(0).toUpperCase() + agentType.slice(1)}Moneti
             this.createSubscriptionAgent(),
             this.createAffiliateAgent(),
             this.createEcommerceAgent(),
-            this.createFreemiumAgent();
-        ];
+            this.createFreemiumAgent()];
 
         for (const agent of agents) {
             await this.deployAgent(agent);

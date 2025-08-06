@@ -74,10 +74,9 @@ class AutomationSystem {
       content-generati\'o\'n,\'\'
       \'marketing-agen\'ts\',\'\'
       \'sales-agents,\'\'
-      analytics-agen\'t\'s\'\';
-    ];
+      analytics-agen\'t\'s\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -193,8 +192,7 @@ class AutomationSystem {
         status: "\'active",""
         schedule: "0 0 * * 0",""
         priority: "\'low\'\'
-      "}"";
-    ];
+      "}""];
 
     for (const agentConfig of initialAgents) {
       try {
@@ -232,8 +230,7 @@ class AutomationSystem {
         maxRetries: "3",""
         timeout: "300000",""
         priority: "\'normal\'\'
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     
@@ -432,8 +429,7 @@ module.exports = agent;
       completedTasks: "totalTasks",""
       systemHealth: "errorRate > 20 ? \'critical : errorRate > 10 ? warni\'n\'g : \'go\'od\'",""
       avgResponseTime,
-      errorRate;
-    };
+      errorRate};
 
     // Save metrics to database
     await this.saveSystemMetrics();
@@ -468,7 +464,7 @@ module.exports = agent;
       console.log(⚠️  Found ${errorAgents.length} agents with errors");""
       
       errorAgents.forEach(agent = > {
-        if (agent.config.autoRestart) {;
+        if (agent.config.autoRestart) {
           console.log("🔄 Restarting agent: "${agent.name"});""
           this.restartAgent(agent.id);
         }
@@ -514,7 +510,7 @@ module.exports = agent;
         .filter(a => a.status === active && a.workload < 10);
         .slice(0, 1);
       
-      idleAgents.forEach(agent = > {;
+      idleAgents.forEach(agent = > {
         console.log(🛑 Stopping idle agent: "${agent.name"}");""
         agent.status = stopp\')ed\'\'\';
         this.saveAgentToDatabase(agent);
@@ -555,7 +551,7 @@ module.exports = agent;
   }
 
   checkAgentHealth() {
-    Array.from(this.agents.values()).forEach(agent = > {;
+    Array.from(this.agents.values()).forEach(agent = > {
       const filePath = path.join(__dirname, \'lo\'gs\', ${agent.id}_status.json");""
       
       if (fs.existsSync(statusPath)) {
@@ -575,7 +571,7 @@ module.exports = agent;
     
     // Analyze agent performance and optimize
     Array.from(this.agents.values()).forEach(agent = > {</div>
-      if (agent.performance.successRate < 80) {;
+      if (agent.performance.successRate < 80) {
         console.log(🔧 Optimizing agent: "${agent.name"}");""
         // Implement optimization logic
       }
@@ -590,8 +586,7 @@ module.exports = agent;
       timestamp: "new Date().toISOString()",""
       trends: "[AI automation", Content\') marketing\', Digital transformation],\'\'
       opportunities: "['Ne'w market segments'", \'Emerging\' technologies\', Competitive gaps],\'\'
-      recommendations: "['Expan'd AI capabilities'", \'Enhance\' content generation\', Improve analytics]\'\';
-    };
+      recommendations: "['Expan'd AI capabilities'", \'Enhance\' content generation\', Improve analytics]\'\'};
 
     const filePath = path.join(__dirname, \'market-resear\'ch\', "research_${Date.now()}.json);""
     fs.writeFileSync(researchPath, JSON.stringify(researchData, null, 2));
@@ -634,7 +629,7 @@ module.exports = agent;
 module.exports = EnhancedAutonomousSystem;
 
 // If run directly, start the system
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new EnhancedAutonomousSystem();
   system.initialize().catch(console.error);
 } </div>

@@ -19,8 +19,7 @@ class EnhancedIntelligentSystemLauncher {
         enabled: true,
         healthCheckInterval: '2m',
         performanceCheckInterval: '5m'
-      };
-    };
+      }};
     
     this.initializeLauncher();
   }
@@ -140,8 +139,7 @@ class EnhancedIntelligentSystemLauncher {
     const performance = {
       activeProcesses: Array.from(this.processes.values()).filter(p => p.status === 'running').length,
       totalProcesses: this.processes.size,
-      uptime: this.calculateUptime();
-    };
+      uptime: this.calculateUptime()};
     
     console.log('📊 Enhanced system performance:', performance);
   }
@@ -186,7 +184,7 @@ class EnhancedIntelligentSystemLauncher {
       }
       
       // Restart the process
-      if (processName = == 'enhanced-orchestrator') {;
+      if (processName = == 'enhanced-orchestrator') {
         this.startEnhancedOrchestrator();
       }
       
@@ -211,8 +209,7 @@ class EnhancedIntelligentSystemLauncher {
       context,
       error: error.message,
       stack: error.stack,
-      systemId: this.systemId;
-    };
+      systemId: this.systemId};
     
     const errorLogPath = path.join(this.systemPath, 'launcher-error-logs.json');
     let errorLogs = [];
@@ -241,8 +238,7 @@ class EnhancedIntelligentSystemLauncher {
         stopped: Array.from(this.processes.values()).filter(p => p.status === 'stopped').length,
         error: Array.from(this.processes.values()).filter(p => p.status === 'error').length
       },
-      config: this.config;
-    };
+      config: this.config};
   }
 
   calculateUptime() {

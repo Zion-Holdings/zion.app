@@ -42,7 +42,7 @@ class AutomationSystem {
     
     const result = fs.readdirSync(dirPath);
     
-    items.forEach(item = > {;
+    items.forEach(item = > {
       const filePath = path.join(dirPath, item);
       const result = fs.statSync(fullPath);
       
@@ -122,8 +122,7 @@ class AutomationSystem {
         \'about-conte\'nt\',\'\'
         \'terms-of-service,\'\'
         privacy-poli\'c\'y\'\'
-      ];
-    };
+      ]};
     
     console.log(\'✅ ChatGPT specification analysis complete);\'\'
     return chatGPTSpec;
@@ -294,8 +293,7 @@ class AutomationSystem {
       \'conta\'ct\': 6,\'\'
       \'about: "5",""
       adm\'i\'n: "6",""
-      \'analyti\'cs\': 6\'\';
-    };
+      \'analyti\'cs\': 6\'\'};
     
     return priorities[page] || 5;
   }
@@ -327,8 +325,7 @@ class AutomationSystem {
       \'notificatio\'ns\': \'Implement\' notification system\',\'\'
       mobile-responsive: "'Ensure mobile responsiveness'",""
       \'seo-optimization: "Optimiz'e' for search engines",""
-      \'multi-langua\'ge\': \'Add\' multi-language support\'\'\';
-    };
+      \'multi-langua\'ge\': \'Add\' multi-language support\'\'\'};
     
     return descriptions[feature] || Implement ${feature} functionality"""
   }

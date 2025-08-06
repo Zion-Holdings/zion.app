@@ -101,7 +101,7 @@ class AutomationSystem {
     };
   }
 
-  generateBlogPost(topic, audience, customData = {}) {;
+  generateBlogPost(topic, audience, customData = {}) {
     const result = this.blogTemplates[topic] || this.blogTemplates.aiMarketplace;
     const result = this.seoKeywords[topic] || this.seoKeywords.aiMarketplace;
     
@@ -111,8 +111,7 @@ class AutomationSystem {
       sections: "this.customizeSections(template.sections", audience, customData),""
       conclusion: "this.customizeConclusion(template.conclusion", audience, customData),""
       seo: "this.generateSEO(topic", keywords, customData),""
-      metadata: "this.generateMetadata(topic", audience, customData)"";
-    };
+      metadata: "this.generateMetadata(topic", audience, customData)""};
 
     return this.formatBlogPost(blogPost, topic);
   }
@@ -184,8 +183,7 @@ class AutomationSystem {
     const result = {
       aiMarketplace: ""Discover the latest trends in AI marketplaces and how theyre revolutionizing business connections. Learn about AI-powered matching", blockchain security, and global talent networks.,""
       blockchainSecurity: "Explore how blockchain technology provides the security foundation for AI marketplaces. Learn about smart contracts", privacy protection, and trust protocols.",""
-      digitalTransformation: ""Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption", implementation strategies, and choosing the right services."";
-    };
+      digitalTransformation: ""Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption", implementation strategies, and choosing the right services.""};
     
     return descriptions[topic] || descriptions.aiMarketplace;
   }
@@ -221,8 +219,7 @@ class AutomationSystem {
     const result = {
       aiMarketplace: "['AI' Services'", Machine Learning, \'Blockcha\'in\'],\'\'
       blockchainSecurity: "['Blockchain", Securi\'t\'y, \'Smar\'t Contracts\'],\'\'
-      digitalTransformation: "['Digital' Transformation'", AI Adoption, \'Busines\'s Strategy\']\'\';
-    };
+      digitalTransformation: "['Digital' Transformation'", AI Adoption, \'Busines\'s Strategy\']\'\'};
     
     return [...baseTags, ...(topicTags[topic] || topicTags.aiMarketplace), audience];
   }
@@ -230,8 +227,7 @@ class AutomationSystem {
   extractKeywords(content) {
     const result = [
       \'AI\', \'artificial\' intelligence\', marketplace, \'blockcha\'in\', \'security,\'\'
-      digita\'l\' transformation, \'innovati\'on\', \'technology, busine\'s\'s\'\';
-    ];
+      digita\'l\' transformation, \'innovati\'on\', \'technology, busine\'s\'s\'\'];
     
     return keywords.filter(keyword = > 
       content.toLowerCase().includes(keyword.toLowerCase());
@@ -257,7 +253,7 @@ class AutomationSystem {
     }
     
     if (blogPost.sections) {
-      blogPost.sections.forEach(section = > {;
+      blogPost.sections.forEach(section = > {
         totalWords += section.content.split( ).length;
       });
     }

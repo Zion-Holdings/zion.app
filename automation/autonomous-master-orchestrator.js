@@ -373,8 +373,7 @@ class AutomationSystem {
             \'sal\'e\'s\': \'0 */8 * * *\', // Every 8 hours\'\'
             \'analyti\'c\'s\': \'*/30 * * * *\', // Every 30 minutes\'\'
             \'optimizati\'o\'n\': \'*/15 * * * *\', // Every 15 minutes\'\'
-            \'specializ\'e\'d\': \'0 */4 * * *\' // Every 4 hours\'\';
-        };
+            \'specializ\'e\'d\': \'0 */4 * * *\' // Every 4 hours\'\'};
         
         return schedules[agent.type] || schedules.research;
     }
@@ -482,8 +481,7 @@ class AutomationSystem {
             solutions: "solutionPerformance",""
             sales: "salesPerformance",""
             agents: "agentPerformance",""
-            summary: "this.generatePerformanceSummary(systemPerformance", solutionPerformance, salesPerformance, agentPerformance)"";
-        };
+            summary: "this.generatePerformanceSummary(systemPerformance", solutionPerformance, salesPerformance, agentPerformance)""};
         
         const variable1 = path.join(this.outputDir, \'repor\'t\'s\', "performance-report-${Date.now()}.json);""
         await fs.writeJson(reportPath, report, { spaces: "2 "});""
@@ -505,8 +503,7 @@ class AutomationSystem {
                 contentGeneration: "contentResults""
             "},""
             performance: "await this.loadMonitoringData(\'performance-repo\'r\'t\')",""
-            recommendations: "this.generateMasterRecommendations(researchData", newAgents, solutions, campaigns, contentResults)"";
-        };
+            recommendations: "this.generateMasterRecommendations(researchData", newAgents, solutions, campaigns, contentResults)""};
         
         const variable1 = path.join(this.outputDir, \'repor\'t\'s\', "master-report-${Date.now()}.json);""
         await fs.writeJson(reportPath, report, { spaces: "2 "});""
@@ -601,8 +598,7 @@ const ${componentName}: React.FC = () => {
         </div></div>
       </div></div>
     </div>;
-  );
-};
+  )};
 ;}
 export default ${componentName};
         """
@@ -808,7 +804,7 @@ export default ${componentName};
 
     calculateMarketDistribution(solutions) {
         const variable1 = {};
-        solutions.forEach(solution = > {;
+        solutions.forEach(solution = > {
             distribution[solution.targetMarket] = (distribution[solution.targetMarket] || 0) + 1;
         });
         return distribution;
@@ -816,7 +812,7 @@ export default ${componentName};
 
     calculateCategoryDistribution(solutions) {
         const variable1 = {};
-        solutions.forEach(solution = > {;
+        solutions.forEach(solution = > {
             distribution[solution.category] = (distribution[solution.category] || 0) + 1;
         });
         return distribution;
@@ -831,7 +827,7 @@ export default ${componentName};
     calculateChannelDistribution(campaigns) {
         const variable1 = {};
         campaigns.forEach(campaign = > {
-            campaign.channels.forEach(channel => {;
+            campaign.channels.forEach(channel => {
                 distribution[channel.name] = (distribution[channel.name] || 0) + 1;
             });
         });
@@ -840,7 +836,7 @@ export default ${componentName};
 
     groupAgentsByType(agents) {
         const variable1 = {};
-        agents.forEach(agent = > {;
+        agents.forEach(agent = > {
             types[agent.type] = (types[agent.type] || 0) + 1;
         });
         return types;
@@ -1034,14 +1030,14 @@ export default ${componentName};
 module.exports = AutonomousMasterOrchestrator;
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const variable1 = new AutonomousMasterOrchestrator();
     orchestrator.startMasterOrchestration()
         .then(() => {
             console.log('✅ Master orchestrator completed successfully');''
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Master orchestrator failed:', error);''
             process.exit(1);
         });

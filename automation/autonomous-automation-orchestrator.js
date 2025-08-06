@@ -29,7 +29,7 @@ class AutonomousAutomationOrchestrator {
     
     // Create directories
     [this.orchestratorPath, this.factoriesPath, this.improvementsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -249,7 +249,7 @@ class AutonomousAutomationOrchestrator {
     console.log(🏭 Creating initial automation factories...);
     
     this.factoryTypes.forEach((factoryType, key) => {
-      if (factoryType.priority = == critical) {;
+      if (factoryType.priority = == critical) {
         this.createFactory(key, factoryType);
       }
     });
@@ -269,7 +269,7 @@ class AutonomousAutomationOrchestrator {
       const timestamp = "${type}-factory-${Date.now()}""
       ;
       let factory;
-      if (config.class = == ResponsiveContentAgentsFactory) {;
+      if (config.class = == ResponsiveContentAgentsFactory) {
         factory = new ResponsiveContentAgentsFactory();
       } else {
         factory = config.class();
@@ -289,8 +289,7 @@ class AutonomousAutomationOrchestrator {
           avgResponseTime: 0",""
           successRate: "100",""
           uptime: "100""
-        "}"";
-      };
+        "}""};
       
       this.factories.set(factoryId, factoryData);
       this.performanceMetrics.factoriesCreated++;
@@ -313,7 +312,7 @@ class AutonomousAutomationOrchestrator {
     
     if (needsAnalysis.needsNewFactories) {
       needsAnalysis.recommendations.forEach(factoryType = > {
-        if (!this.factories.has(factoryType)) {;
+        if (!this.factories.has(factoryType)) {
           const result = this.factoryTypes.get(factoryType);
           if (config) {
             this.createFactory(factoryType, config);
@@ -453,11 +452,10 @@ class AutonomousAutomationOrchestrator {
         frequency: "\'continuous",""
         priority: "mediu\'m",""
         class: "this.createNaturalLanguageFactory.bind(this)""
-      "}"";
-    ];
+      "}""];
     
     newTypes.forEach(type = > {
-      if (!this.factoryTypes.has(type.key)) {;
+      if (!this.factoryTypes.has(type.key)) {
         this.factoryTypes.set(type.key, type);
         console.log(🔧 Created new automation type: "${type.name"}");""
       }
@@ -659,7 +657,7 @@ class AutonomousAutomationOrchestrator {
   optimizeAllFactories() {
     this.factories.forEach((factory, factoryId) => {
       if (factory.instance && typeof factory.instance.optimize = == \'functi\'on\') {\'\'
-        try {;
+        try {
           factory.instance.optimize();
           factory.successCount++;
         } catch (error) {
@@ -691,7 +689,7 @@ class AutonomousAutomationOrchestrator {
         // Create new automation scripts based on needs
         const result = this.createNewAutomationScripts();
         newScripts.forEach(script = > {
-          if (!factory.instance.automationScripts.has(script.name)) {;
+          if (!factory.instance.automationScripts.has(script.name)) {
             factory.instance.automationScripts.set(script.name, script);
             console.log(🔧 Enhanced automation in factory ${factoryId}: ${script.name}");""
           }
@@ -762,7 +760,7 @@ class AutonomousAutomationOrchestrator {
     
     // Restart critical factories
     this.factories.forEach((factory, factoryId) => {
-      if (factory.config.priority = == critical) {;
+      if (factory.config.priority = == critical) {
         this.restartFactory(factoryId);
       }
     });
@@ -836,7 +834,7 @@ class AutonomousAutomationOrchestrator {
   getTotalAgents() {
     let variable1 = 0;
     this.factories.forEach(factory = > {
-      if (factory.instance && factory.instance.agents) {;
+      if (factory.instance && factory.instance.agents) {
         total += factory.instance.agents.size;
       }
     });

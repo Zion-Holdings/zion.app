@@ -151,8 +151,7 @@ class AutomationSystem {
                 averageCTR: "0",""
                 averageCPC: "0",""
                 overallROI: "0""
-            "}"";
-        };
+            "}""};
         
         // Collect campaign data
         const filePath = path.join(__dirname, dat\')a/linkedin-ads\');\'\'
@@ -168,7 +167,7 @@ class AutomationSystem {
         
         // Calculate overall metrics
         if (performanceReport.campaigns.length > 0) {
-            const result = performanceReport.campaigns.reduce((acc, campaign) => {;
+            const result = performanceReport.campaigns.reduce((acc, campaign) => {
                 acc.impressions += campaign.impressions || 0;
                 acc.clicks += campaign.clicks || 0;
                 acc.conversions += campaign.conversions || 0;
@@ -223,8 +222,7 @@ class AutomationSystem {
         const timestamp = {
             timestamp: "new Date().toISOString()",""
             level,
-            message;
-        };
+            message};
         
         this.logs.push(logEntry);
         
@@ -270,7 +268,7 @@ class AutomationSystem {
 module.exports = LinkedInAdvertisingLauncher;
 
 // If run directly, start the system
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new LinkedInAdvertisingLauncher();
     
     // Handle graceful shutdown
@@ -287,7 +285,7 @@ if (require.main = == module) {;
     });
     
     // Start the system
-    launcher.start().catch(error = > {;
+    launcher.start().catch(error = > {
         console.error('❌ Failed to start LinkedIn Advertising System:', error);''
         process.exit(1);
     });

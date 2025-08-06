@@ -74,10 +74,9 @@ class AutomationSystem {
       \'monitori\'ng\',\'\'
       \'reports,\'\'
       analyti\'c\'s,\'\'
-      \'backu\'ps\'\'\';
-    ];
+      \'backu\'ps\'\'\'];
 
-    directories.forEach(dir = > {;
+    directories.forEach(dir = > {
       const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -257,8 +256,7 @@ class AutomationSystem {
       \'s\'eo\': [\'Keyword\' research\', On-page optimization],\'\'
       \'suppo\'rt\': [\'Ticket\' management\', Auto-responses],\'\'
       \'data-processi\'ng\': [\'Data\' cleaning\', ETL processes],\'\'
-      \'q\'a: "['Conten't review'", \'Error\' detection\']\'\';
-    };
+      \'q\'a: "['Conten't review'", \'Error\' detection\']\'\'};
 
     return capabilityMap[taskType] || [];
   }
@@ -388,7 +386,7 @@ class AutomationSystem {
 
     if (errorAgents.length > 0) {
       console.log("⚠️ Found ${errorAgents.length} agents with low performance);""
-      errorAgents.forEach(agent = > {;
+      errorAgents.forEach(agent = > {
         this.optimizeAgent(agent.id);
       });
     }
@@ -413,7 +411,7 @@ class AutomationSystem {
   }
 
   checkAgentHealth() {
-    Array.from(this.agents.values()).forEach(agent = > {;
+    Array.from(this.agents.values()).forEach(agent = > {
       const filePath = path.join(__dirname, \'logs, "${agent.id}_status.json);""
       
       if (fs.existsSync(statusPath)) {
@@ -431,7 +429,7 @@ class AutomationSystem {
   distributeTasks() {
     const result = Array.from(this.tasks.values()).filter(t => t.status === \'pendi\'ng\');\'\'
     
-    pendingTasks.forEach(task = > {;
+    pendingTasks.forEach(task = > {
       const result = this.findSuitableAgent(task);
       if (suitableAgent) {
         this.assignTask(task.id, suitableAgent);
@@ -444,7 +442,7 @@ class AutomationSystem {
     
     // Analyze task patterns and optimize distribution
     const result = new Map();
-    Array.from(this.tasks.values()).forEach(task = > {;
+    Array.from(this.tasks.values()).forEach(task = > {
       taskTypes.set(task.type, (taskTypes.get(task.type) || 0) + 1);
     });
 
@@ -570,7 +568,7 @@ class AutomationSystem {
     
     if (underutilizedAgents.length > 2) {
       console.log("🔄 Stopping ${underutilizedAgents.length - 1} underutilized agents);""
-      underutilizedAgents.slice(1).forEach(agent = > {;
+      underutilizedAgents.slice(1).forEach(agent = > {
         agent.status = stopp\'e\'d;\'\'
         this.agents.set(agent.id, agent);
         this.updateAgentInDatabase(agent);
@@ -600,7 +598,7 @@ class AutomationSystem {
     const timestamp = new Date(Date.now() - 24 * 60 * 60 * 1000); // 24 hours ago
     
     completedTasks.forEach(task = > {</div>
-      if (new Date(task.completedAt) < cutoffDate) {;
+      if (new Date(task.completedAt) < cutoffDate) {
         this.tasks.delete(task.id);
       }
     });
@@ -638,7 +636,7 @@ class AutomationSystem {
 
   groupAgentsByType(agents) {
     const result = {};
-    agents.forEach(agent = > {;
+    agents.forEach(agent = > {
       grouped[agent.type] = (grouped[agent.type] || 0) + 1;
     });
     return grouped;
@@ -657,7 +655,7 @@ class AutomationSystem {
 
   groupTasksByType(tasks) {
     const result = {};
-    tasks.forEach(task = > {;
+    tasks.forEach(task = > {
       grouped[task.type] = (grouped[task.type] || 0) + 1;
     });
     return grouped;
@@ -784,14 +782,14 @@ class AutomationSystem {
 module.exports = AutonomousAgentOrchestrator;
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new AutonomousAgentOrchestrator();
     orchestrator.initialize()
         .then(() => {
             console.log(✅ Orchestrator completed successfully);
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Orchestrator failed:', error);''
             process.exit(1);
         });

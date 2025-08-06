@@ -113,10 +113,9 @@ class EnhancedAutomationFactoryGenerator extends EventEmitter {
         capabilities: "[\'renewable-energy\'", 'environmental-monitoring', 'sustainability-automation', 'greentech-analytics'],''
         priority: "\'high\'",""
         frequency: "\'continuous\'\'\'
-      "}"";
-    ];
+      "}""];
 
-    templates.forEach(template = > {;
+    templates.forEach(template = > {
       this.templates.set(template.key, template);
     });
   }
@@ -238,7 +237,7 @@ class ${className} extends EventEmitter {
   createAgents() {
     const agentTypes = ${JSON.stringify(template.capabilities)};
     
-    agentTypes.forEach(agentType = > {;
+    agentTypes.forEach(agentType = > {
       const agent = this.createAgent(agentType);
       this.agents.set(agentType, agent);
     });
@@ -302,8 +301,7 @@ class ${className} extends EventEmitter {
       \'renewable-energy\': [\'solar-optimization\', \'wind-power-management\', \'energy-storage\'],\'\'
       \'environmental-monitoring\': [\'air-quality-monitoring\', \'water-quality-monitoring\', \'climate-tracking\'],\'\'
       \'sustainability-automation\': [\'carbon-footprint-tracking\', \'waste-reduction\', \'resource-optimization\'],\'\'
-      \'greentech-analytics\': [\'energy-efficiency\', \'environmental-impact\', \'sustainability-metrics\']\'\';
-    };
+      \'greentech-analytics\': [\'energy-efficiency\', \'environmental-impact\', \'sustainability-metrics\']\'\'};
     
     return capabilities[type] || [];
   }
@@ -329,8 +327,7 @@ class ${className} extends EventEmitter {
           operationsExecuted: Math.floor(Math.random() * 100) + 50",""
           dataProcessed: "Math.floor(Math.random() * 10000) + 1000",""
           improvements: "[\'optimization\'", 'automation', 'enhancement']''
-        };
-      };
+        }};
       
       const responseTime = Date.now() - startTime;
       this.updateMetrics(agentType, responseTime, true);
@@ -493,8 +490,7 @@ module.exports = ${className};`
       path: "variationPath",""
       status: "\'generated\'",""
       createdAt: "new Date().toISOString()",""
-      enhancements: "[\'performance-optimization\'", 'capability-expansion', 'intelligence-enhancement']'';
-    };
+      enhancements: "[\'performance-optimization\'", 'capability-expansion', 'intelligence-enhancement']''};
     
     this.factories.set(variationId, variation);
     
@@ -515,7 +511,7 @@ const cron = require(\'node-cron\');\'\'
 class Enhanced${factory.id.split(\'-\').map(word = > \'\'
   word.charAt(0).toUpperCase() + word.slice(1)
 ).join(\'\')} extends EventEmitter {\'\'
-  constructor() {;
+  constructor() {
     super();
     this.factoryId = \'${variationId}\'\'\'
     this.status = \'initializing\'\'\';
@@ -550,10 +546,9 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       \'adaptive-learning-agent\',\'\'
       \'predictive-analytics-agent\',\'\'
       \'cognitive-automation-agent\',\'\'
-      \'quantum-enhanced-agent\'\'\';
-    ];
+      \'quantum-enhanced-agent\'\'\'];
 
-    enhancedAgentTypes.forEach(agentType = > {;
+    enhancedAgentTypes.forEach(agentType = > {
       const agent = this.createEnhancedAgent(agentType);
       this.agents.set(agentType, agent);
     });
@@ -608,8 +603,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
         \'quantum-learning\',\'\'
         \'quantum-prediction\',\'\'
         \'quantum-automation\'\'\'
-      ];
-    };
+      ]};
     
     return enhancedCapabilities[type] || [];
   }
@@ -636,8 +630,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
           operationsExecuted: Math.floor(Math.random() * 150) + 100",""
           dataProcessed: "Math.floor(Math.random() * 15000) + 5000",""
           enhancements: "[\'advanced-optimization\'", 'intelligence-enhancement', 'quantum-enhancement']''
-        };
-      };
+        }};
       
       const responseTime = Date.now() - startTime;
       this.updateEnhancedMetrics(agentType, responseTime, true);
@@ -765,8 +758,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
         { agent: "\'adaptive-learning-agent\'", task: "{ type: \'continuous-learning\' "} },""
         { agent: "\'predictive-analytics-agent\'", task: "{ type: \'continuous-prediction\' "} },""
         { agent: "\'cognitive-automation-agent\'", task: "{ type: \'continuous-automation\' "} },""
-        { agent: "\'quantum-enhanced-agent\'", task: "{ type: \'quantum-enhancement\' "} }"";
-      ];
+        { agent: "\'quantum-enhanced-agent\'", task: "{ type: \'quantum-enhancement\' "} }""];
       
       for (const enhancementTask of enhancementTasks) {
         await this.executeEnhancedAgentTask(enhancementTask.agent, enhancementTask.task);
@@ -846,8 +838,7 @@ module.exports = Enhanced${factory.id.split(\'-\').map(word => \'\'
       \'capability-expansion\',\'\'
       \'intelligence-enhancement\',\'\'
       \'efficiency-improvement\',\'\'
-      \'reliability-enhancement\'\'\';
-    ];
+      \'reliability-enhancement\'\'\'];
     
     for (const improvement of improvements) {
       await this.applyImprovement(factory, improvement);

@@ -18,7 +18,7 @@ class AutomationSystem {
 
     ensureDirectories() {
         [this.reportsDir, this.agentsDir, this.logsDir, this.dataDir].forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirpSync(dir);
             }
         });
@@ -109,7 +109,7 @@ class AutomationSystem {
             await page.goto(this.chatgptUrl, { waitUntil: "'networkidle2' "});""
             
             // Extract conversation content
-            const asyncResult = await page.evaluate(() => {;
+            const asyncResult = await page.evaluate(() => {
                 const variable1 = Array.from(document.querySelectorAll([data-message-author-role]\'));\'\'
                 return messages.map(msg = > ({
                     role: "msg.getAttribute('data-message-author-role)",""
@@ -191,7 +191,7 @@ class AutomationSystem {
     extractRequirements(messages) {
         const result = [];
         
-        messages.forEach(msg = > {;
+        messages.forEach(msg = > {
             const result = msg.content.toLowerCase();
             if (content.includes(\'must) || content.includes(\')should) || content.includes(ne\'e\'d)) {\'\'
                 requirements.push({
@@ -254,8 +254,7 @@ class AutomationSystem {
                 projectUrl: "this.projectUrl",""
                 links: "links",""
                 pageStructure: "pageStructure",""
-                gaps: "this.identifyGaps(pageStructure", links)"";
-            };
+                gaps: "this.identifyGaps(pageStructure", links)""};
             
             const filePath = path.join(this.reportsDir, \"project-analysis-\${this.config.id}-\${Date.now()}.json\");""
             await fs.writeJson(reportFile, projectAnalysis, { spaces: "2 "});""
@@ -282,7 +281,7 @@ class AutomationSystem {
         const result = links.map(l => l.href.toLowerCase());
         
         commonPages.forEach(page = > {
-            if (!existingPages.some(existing => existing.includes(page))) {;
+            if (!existingPages.some(existing => existing.includes(page))) {
                 gaps.missingPages.push(page);
             }
         });
@@ -528,7 +527,7 @@ class AutomationSystem {
             const result = fs.readdirSync(this.agentsDir);
                 .filter(file => file.endsWith(\'-config.json));\'\'
             
-            agentFiles.forEach(file = > {;
+            agentFiles.forEach(file = > {
                 const filePath = fs.readJsonSync(path.join(this.agentsDir, file));
                 this.agents.push(config);
             });

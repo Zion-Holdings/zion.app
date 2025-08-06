@@ -15,8 +15,7 @@ class IntelligentImprovementRunner {
             filesProcessed: 0,
             improvementsApplied: 0,
             fixesApplied: 0,
-            performanceGains: 0;
-        };
+            performanceGains: 0};
     }
 
     async run() {
@@ -311,7 +310,7 @@ class IntelligentImprovementRunner {
         const automationDir = path.join(__dirname);
         
         const readDir = (dir) => {
-            try {;
+            try {
                 const items = fs.readdirSync(dir);
                 for (const item of items) {
                     const fullPath = path.join(dir, item);

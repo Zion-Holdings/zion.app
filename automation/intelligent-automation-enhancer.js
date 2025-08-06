@@ -473,8 +473,7 @@ class SelfHealingSystem {
             const criticalFiles = [
                 \'run-automation.js\',\'\'
                 \'enhanced-content-generator.js\',\'\'
-                \'autonomous-master-orchestrator.js\'\'\';
-            ];
+                \'autonomous-master-orchestrator.js\'\'\'];
             
             for (const file of criticalFiles) {
                 const filePath = path.join(__dirname, file);
@@ -536,8 +535,7 @@ class SelfHealingSystem {
             const processes = [
                 'node automation/run-automation.js',''
                 'node automation/enhanced-content-generator.js',''
-                'node automation/autonomous-master-orchestrator.js''';
-            ];
+                'node automation/autonomous-master-orchestrator.js'''];
             
             for (const process of processes) {
                 await execAsync(\`\${process} > automation/logs/healing-\${Date.now()}.log 2>&1 &\);
@@ -632,7 +630,7 @@ class PredictiveAnalytics {
         }
     }
 
-    async predictFutureIssues(data) {;
+    async predictFutureIssues(data) {
         const predictions = [];
         
         if (this.trends.cpu = == 'increasing') {''
@@ -716,8 +714,7 @@ module.exports = PredictiveAnalytics;
             \'performance-monitoring\': \'*/10 * * * *\', // Every 10 minutes\'\'
             \'health-check\': \'*/5 * * * *\', // Every 5 minutes\'\'
             \'backup\': \'0 2 * * *\', // Daily at 2 AM\'\'
-            \'cleanup\': \'0 3 * * 0\' // Weekly on Sunday\'\';
-        };
+            \'cleanup\': \'0 3 * * 0\' // Weekly on Sunday\'\'};
         
         // Update cron configuration
         const cronConfig = Object.entries(optimizedSchedules)
@@ -743,7 +740,7 @@ class ProcessManager {
     }
 
     async startProcess(name, command, options = {}) {
-        if (this.processes.size >= this.maxProcesses) {;
+        if (this.processes.size >= this.maxProcesses) {
             await this.cleanupOldProcesses();
         }
         
@@ -900,8 +897,7 @@ class MonitoringDashboard {
         const metricsFiles = [
             \'intelligent-metrics.json\',\'\'
             \'adaptations.json\',\'\'
-            \'predictions.json\'\'\';
-        ];
+            \'predictions.json\'\'\'];
         
         for (const file of metricsFiles) {
             const filePath = path.join(__dirname, \'logs\', file);\'\'
@@ -1131,8 +1127,7 @@ module.exports = ReportingSystem;
             \'node automation/intelligent-monitor.js\',\'\'
             \'node automation/adaptive-controller.js\',\'\'
             \'node automation/self-healing-system.js\',\'\'
-            \'node automation/predictive-analytics.js\'\'\';
-        ];
+            \'node automation/predictive-analytics.js\'\'\'];
         
         for (const system of systems) {
             try {
@@ -1151,8 +1146,7 @@ module.exports = ReportingSystem;
             \'node -c automation/intelligent-monitor.js\',\'\'
             \'node -c automation/adaptive-controller.js\',\'\'
             \'node -c automation/self-healing-system.js\',\'\'
-            \'node -c automation/predictive-analytics.js\'\'\';
-        ];
+            \'node -c automation/predictive-analytics.js\'\'\'];
         
         let passed = 0;
         let failed = 0;
@@ -1172,7 +1166,7 @@ module.exports = ReportingSystem;
 
     async getJSFiles() {
         const files = [];
-        const walkDir = async (dir) => {;
+        const walkDir = async (dir) => {
             const items = await fs.promises.readdir(dir);
             for (const item of items) {
                 const fullPath = path.join(dir, item);
@@ -1196,7 +1190,7 @@ async function main() {
     await enhancer.enhanceAllAutomation();
 }
 
-if (require.main = == module) {;
+if (require.main === module) {
     main().catch(console.error);
 }
 

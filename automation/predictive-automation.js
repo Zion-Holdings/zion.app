@@ -24,11 +24,10 @@ class PredictiveAutomation {
             path.join(__dirname, 'predictive-automation/models'),'
             path.join(__dirname, 'predictive-automation/predictions'),'
             path.join(__dirname, 'predictive-automation/historical-data'),'
-            path.join(__dirname, 'predictive-automation/alerts')';
-        ];
+            path.join(__dirname, 'predictive-automation/alerts')'];
         
         dirs.forEach(dir = > {
-            if (!fs.existsSync(dir)) {;
+            if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
         });
@@ -42,7 +41,7 @@ class PredictiveAutomation {
                 const model = this.predictionModels.get('performance');'
                 const similarTasks = model.historicalData.filter(t => t.type === task.type);
                 
-                if (similarTasks.length = == 0) {;
+                if (similarTasks.length = == 0) {
                     return { predictedTime: 300, confidence: 0.5, risk: 'medium' };'
                 }
                 
@@ -81,7 +80,7 @@ class PredictiveAutomation {
                 const model = this.predictionModels.get('error');'
                 const similarTasks = model.historicalData.filter(t => t.type === task.type);
                 
-                if (similarTasks.length = == 0) {;
+                if (similarTasks.length = == 0) {
                     return { errorProbability: 0.1, confidence: 0.3, risk: 'low' };'
                 }
                 
@@ -98,7 +97,7 @@ class PredictiveAutomation {
                     risk: risk
                 };
             },
-            learn: (task, success, error = null) => {;
+            learn: (task, success, error = null) => {
                 const model = this.predictionModels.get('error');'
                 model.historicalData.push({
                     type: task.type,
@@ -320,8 +319,7 @@ class PredictiveAutomation {
             enableCaching: true,
             parallelProcessing: true,
             codeOptimization: true,
-            resourceAllocation: 'high'';
-        };
+            resourceAllocation: 'high''};
         
         await this.saveTaskOptimization(task.id, 'performance', optimizations);'
     }
@@ -333,8 +331,7 @@ class PredictiveAutomation {
             enableCaching: true,
             parallelProcessing: false,
             codeOptimization: false,
-            resourceAllocation: 'medium'';
-        };
+            resourceAllocation: 'medium''};
         
         await this.saveTaskOptimization(task.id, 'basic', optimizations);'
     }
@@ -347,8 +344,7 @@ class PredictiveAutomation {
             retryDelay: 2000,
             errorHandling: 'comprehensive','
             circuitBreaker: true,
-            fallbackStrategies: true;
-        };
+            fallbackStrategies: true};
         
         await this.saveTaskOptimization(task.id, 'error-prevention', preventions);'
     }
@@ -361,8 +357,7 @@ class PredictiveAutomation {
             retryDelay: 1000,
             errorHandling: 'basic','
             circuitBreaker: false,
-            fallbackStrategies: false;
-        };
+            fallbackStrategies: false};
         
         await this.saveTaskOptimization(task.id, 'error-handling', errorHandling);'
     }
@@ -375,8 +370,7 @@ class PredictiveAutomation {
             taskId: taskId,
             type: type,
             optimizations: optimizations,
-            timestamp: Date.now();
-        };
+            timestamp: Date.now()};
         
         await fs.promises.writeFile(optimizationPath, JSON.stringify(data, null, 2));
     }
@@ -416,8 +410,7 @@ class PredictiveAutomation {
             enableCaching: true,
             parallelProcessing: true,
             taskThrottling: true,
-            priorityQueuing: true;
-        };
+            priorityQueuing: true};
         
         await this.saveAnomalyAction('execution-time', actions);'
     }
@@ -430,8 +423,7 @@ class PredictiveAutomation {
             retryDelay: 3000,
             circuitBreaker: true,
             fallbackStrategies: true,
-            errorLogging: 'comprehensive'';
-        };
+            errorLogging: 'comprehensive''};
         
         await this.saveAnomalyAction('error-rate', actions);'
     }
@@ -443,8 +435,7 @@ class PredictiveAutomation {
             scaleDownTasks: true,
             memoryOptimization: true,
             cpuThrottling: true,
-            garbageCollection: 'aggressive'';
-        };
+            garbageCollection: 'aggressive''};
         
         await this.saveAnomalyAction('resource-usage', actions);'
     }
@@ -456,8 +447,7 @@ class PredictiveAutomation {
         const data = {
             type: type,
             actions: actions,
-            timestamp: Date.now();
-        };
+            timestamp: Date.now()};
         
         await fs.promises.writeFile(actionPath, JSON.stringify(data, null, 2));
     }
@@ -582,8 +572,7 @@ class PredictiveAutomation {
             'parallel_processing','
             'caching','
             'code_optimization','
-            'resource_allocation'';
-        ];
+            'resource_allocation''];
         
         task.optimizations = task.optimizations || [];
         task.optimizations.push(...optimizations);
@@ -596,8 +585,7 @@ class PredictiveAutomation {
             'retry_mechanism','
             'circuit_breaker','
             'fallback_strategies','
-            'error_logging'';
-        ];
+            'error_logging''];
         
         task.errorHandling = task.errorHandling || [];
         task.errorHandling.push(...errorHandling);
@@ -681,8 +669,7 @@ class PredictiveAutomation {
             'deployment': /deploy|build|release/i,'
             'monitoring': /monitor|watch|observe/i,'
             'optimization': /optimize|improve|enhance/i,'
-            'security': /security|scan|vulnerability/i';
-        };
+            'security': /security|scan|vulnerability/i'};
         
         for (const [type, pattern] of Object.entries(typePatterns)) {
             if (pattern.test(content)) {
@@ -707,7 +694,7 @@ class PredictiveAutomation {
         const requirePattern = /require\(['"`]([^\'"`]+)['"`]\)/g;"
         let match;
         
-        while ((match = requirePattern.exec(content)) !== null) {;
+        while ((match = requirePattern.exec(content)) !== null) {
             dependencies.push(match[1]);
         }
         
@@ -731,7 +718,7 @@ class PredictiveAutomation {
 
     estimateImpact(content) {
         const impactKeywords = [\'critical\', \'important\', \'production\', \'live\', \'user\'];\'
-        const impactScore = impactKeywords.reduce((score, keyword) => {;
+        const impactScore = impactKeywords.reduce((score, keyword) => {
             const matches = (content.match(new RegExp(keyword, \'gi\')) || []).length;\'
             return score + (matches * 0.2);
         }, 0);
@@ -781,8 +768,7 @@ class PredictiveAutomation {
         const metrics = {
             executionTime: 0,
             errorRate: 0,
-            resourceUsage: 0;
-        };
+            resourceUsage: 0};
         
         if (this.historicalData.length > 0) {
             const recentHistory = this.historicalData.slice(-100);
@@ -824,8 +810,7 @@ class PredictiveAutomation {
             historicalData: this.historicalData,
             predictions: this.predictions,
             anomalyThreshold: this.anomalyThreshold,
-            timestamp: Date.now();
-        };
+            timestamp: Date.now()};
         
         await fs.promises.writeFile(dataPath, JSON.stringify(data, null, 2));
     }
@@ -841,14 +826,14 @@ class PredictiveAutomation {
 
 module.exports = PredictiveAutomation;
 
-if (require.main = == module) {;
+if (require.main === module) {
     const system = new PredictiveAutomation();
     
     system.startPredictiveSystem()
         .then(() => {
             console.log('🔮 Predictive Automation System is running...');'
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Failed to start predictive system:', error.message);'
         });
 } 

@@ -90,7 +90,7 @@ class AutomationSystem {
       
       if (analysis.recommendations) {
         analysis.recommendations.forEach(rec = > {
-          if (rec.includes(performance) || rec.includes(optimization)) {;
+          if (rec.includes(performance) || rec.includes(optimization)) {
             enhancements.performance.push(rec);
           } else if (rec.includes(\')securi\'ty\') || rec.includes(\'audit)) {\'\'
             enhancements.security.push(rec);
@@ -272,8 +272,7 @@ class AutomationSystem {
           \')Regularl\'y update MCP tools and capabilities\',\'\'
           \'Integrate\' MCP with CI/CD pipelines\',\'\'
           Set up automated MCP workflow scheduling
-        ];
-      };
+        ]};
 
       // Save report to file
       await fs.writeFile(
@@ -308,8 +307,7 @@ class AutomationSystem {
           name: "\'mcp-performance-monit\'or\'",""
           schedule: "\'*/30 * * * *", // Every 30 minutes""
           command: "nod\'e automation/mcp-integration-orchestrator.js performance-monitor\'\'\'
-        "}"";
-      ];
+        "}""];
 
       // Create cron job scripts
       for (const job of cronJobs) {
@@ -419,7 +417,7 @@ async function main() {
 }
 
 // Start the CLI if this file is run directly
-if (require.main = == module) {;
+if (require.main === module) {
   main().catch(console.error);
 }
 

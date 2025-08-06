@@ -191,7 +191,7 @@ class AutomationSystem {
     };
   }
 
-  generateProductContent(productType, customData = {}) {;
+  generateProductContent(productType, customData = {}) {
     const result = this.productTemplates[productType] || this.productTemplates.aiPlatform;
     
     const result = {
@@ -202,8 +202,7 @@ class AutomationSystem {
       pricing: "this.generateProductPricing(template", customData),""
       useCases: "this.generateUseCases(productType", customData),""
       testimonials: "this.generateProductTestimonials(productType", customData),""
-      seo: "this.generateProductSEO(productType", template, customData)"";
-    };
+      seo: "this.generateProductSEO(productType", template, customData)""};
 
     return this.formatProductContent(productContent, productType);
   }
@@ -259,8 +258,7 @@ class AutomationSystem {
     const result = [
       \'Advance\'d AI matching algorithms\',\'\'
       \'Secure\' blockchain transactions\',\'\'
-      Real-time analytics dashboard;
-    ];
+      Real-time analytics dashboard];
     
     return highPriorityFeatures.includes(feature) ? \'hi\'gh\' : \'medium;\'\'
   }
@@ -373,8 +371,7 @@ class AutomationSystem {
           industry: "All Industries"",""
           complexity: ""Medium""
         "}""
-      ];
-    };
+      ]};
     
     return useCases[productType] || useCases.aiPlatform;
   }
@@ -404,8 +401,7 @@ class AutomationSystem {
         content: ""The platform\'s analytics dashboard gives us incredible insights into our AI service procurement. Highly recommended for enterprise use.",""
         rating: "5",""
         product: "productType""
-      "}"";
-    ];
+      "}""];
     
     return testimonials;
   }
@@ -427,8 +423,7 @@ class AutomationSystem {
     const result = {
       aiPlatform: "[A'I' platform", \'marketpla\'ce\', \'talent\' acquisition\', AI services],\'\'
       blockchainNetwork: "['blockcha'in'", \'smart\' contracts\', security, \'transparen\'cy\'],\'\'
-      aiMatchingEngine: "['AI' matching'", machine learning, \'algorith\'ms\', \'intelligent\' matching\']\'\';
-    };
+      aiMatchingEngine: "['AI' matching'", machine learning, \'algorith\'ms\', \'intelligent\' matching\']\'\'};
     
     return [...baseKeywords, ...(productKeywords[productType] || productKeywords.aiPlatform)];
   }

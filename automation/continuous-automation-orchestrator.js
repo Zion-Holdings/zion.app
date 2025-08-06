@@ -88,8 +88,7 @@ class AutomationSystem {
         script: "\'monetization-autonomous-factory.js\'",""
         type: "automation",""
         priority: "\'low\'\'\'
-      "}"";
-    ];
+      "}""];
 
     for (const system of systems) {
       await this.startAutomationSystem(system);
@@ -136,8 +135,7 @@ class AutomationSystem {
           status: health\'y",""
           lastCheck: "new Date()",""
           errors: "[]""
-        "}"";
-      };
+        "}""};
 
       // Handle process events
       process.on(\'exit, (code) => {\'\'
@@ -581,7 +579,7 @@ module.exports = PerformanceOptimizer;
     "};""
 
     if (system.status = == \'runni\'ng\' && system.process) {\'\'
-      try {;
+      try {
         const result = !system.process.killed;
         health.status = isAlive ? \'healthy : de\'a\'d;\'\'
         health.uptime = Date.now() - system.startTime.getTime();
@@ -682,7 +680,7 @@ module.exports = PerformanceOptimizer;
     
     // Stop all automation systems
     for (const [systemId, system] of this.automationSystems) {
-      if (system.process && typeof system.process.kill = == function) {;
+      if (system.process && typeof system.process.kill = == function) {
         system.process.kill(')SIGTE'RM');''
       }
     }
@@ -690,7 +688,7 @@ module.exports = PerformanceOptimizer;
 }
 
 // Run the orchestrator
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new ContinuousAutomationOrchestrator();
   orchestrator.start();
 

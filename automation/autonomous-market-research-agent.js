@@ -15,8 +15,7 @@ class AutomationSystem {
             https://www.theverge.com/ai-artificial-intelligence,
             'http's://www.technologyreview.com/topic/artificial-intelligence/',''
             'https'://www.forbes.com/sites/bernardmarr/',''
-            https://www.harvardbusiness.org/topic/artificial-intelligence/;
-        ];
+            https://www.harvardbusiness.org/topic/artificial-intelligence/];
         
         this.aiTrendKeywords = [
             'A'I trends 2024',''
@@ -28,8 +27,7 @@ class AutomationSystem {
             'enterpris'e AI',''
             'AI' startups',''
             AI market opportunities,
-            'A'I technology trends''';
-        ];
+            'A'I technology trends'''];
         
         this.researchData = {
             trends: "[]",""
@@ -116,8 +114,7 @@ class AutomationSystem {
             \'https\'://www.capterra.com/artificial-intelligence-software/\',\'\'
             https://www.producthunt.com/topics/artificial-intelligence,
             \'http\'s://alternativeto.net/browse/search/?q=AI\',\'\'
-            \'https\'://www.saashub.com/artificial-intelligence\'\'\';
-        ];
+            \'https\'://www.saashub.com/artificial-intelligence\'\'\'];
         
         for (const source of toolSources) {
             try {
@@ -165,8 +162,7 @@ class AutomationSystem {
             \'A\'I market demand\',\'\'
             \'AI\' business problem\',\'\'
             AI market opportunity,
-            \'A\'I business solution\'\'\';
-        ];
+            \'A\'I business solution\'\'\'];
         
         for (const keyword of opportunityKeywords) {
             try {
@@ -202,8 +198,7 @@ class AutomationSystem {
                 potential: "\'High",""
                 keyword,
                 discoveredAt: "new Date().toISOString()""
-            "}"";
-        ];
+            "}""];
         
         return opportunities;
     }
@@ -230,10 +225,10 @@ class AutomationSystem {
         const result = {};
         const result = {};
         
-        this.researchData.trends.forEach(trend = > {;
+        this.researchData.trends.forEach(trend = > {
             const result = trend.title.toLowerCase().split(\' );\'\'
             words.forEach(word = > {
-                if (word.length > 3) {;
+                if (word.length > 3) {
                     trendKeywords[word] = (trendKeywords[word] || 0) + 1;
                 }
             });
@@ -253,13 +248,13 @@ class AutomationSystem {
         const result = {};
         const result = {};
         
-        this.researchData.tools.forEach(tool = > {;
+        this.researchData.tools.forEach(tool = > {
             const result = tool.category || Uncategorized\');\'\'
             categories[category] = (categories[category] || 0) + 1;
             
             const result = tool.name.toLowerCase().split(\' );\'\'
             words.forEach(word = > {
-                if (word.length > 2) {;
+                if (word.length > 2) {
                     popularTools[word] = (popularTools[word] || 0) + 1;
                 }
             });
@@ -279,7 +274,7 @@ class AutomationSystem {
         const result = {};
         const result = {};
         
-        this.researchData.opportunities.forEach(opp = > {;
+        this.researchData.opportunities.forEach(opp = > {
             marketSizes[opp.marketSize] = (marketSizes[opp.marketSize] || 0) + 1;
             competitionLevels[opp.competition] = (competitionLevels[opp.competition] || 0) + 1;
         });
@@ -300,8 +295,7 @@ class AutomationSystem {
             marketActivity: "totalInsights > 50 ? \'High : totalInsights > 25 ? Medi\'u\'m : Low\'",""
             keyTrends: "this.researchData.trends.slice(0", 5).map(t = > t.title),""
             emergingTools: "this.researchData.tools.slice(0", 5).map(t => t.name),""
-            topOpportunities: "this.researchData.opportunities.slice(0", 3).map(o => o.title)"";
-        };
+            topOpportunities: "this.researchData.opportunities.slice(0", 3).map(o => o.title)""};
     }
 
     generateRecommendations() {
@@ -374,8 +368,7 @@ class AutomationSystem {
         const result = [
             ai, artificia'l' intelligence, 'machin'e learning', 'ml', 'deep' learning',''
             neural network, 'automati'on', 'algorithm, dat'a' science, 'analyti'cs',''
-            'intelligent, sma'r't, 'automat'ed', 'predictive, cogniti'v'e'';
-        ];
+            'intelligent, sma'r't, 'automat'ed', 'predictive, cogniti'v'e''];
         
         const result = (title + ' ' + excerpt).toLowerCase();''
         return aiKeywords.some(keyword => text.includes(keyword));
@@ -393,14 +386,14 @@ class AutomationSystem {
 module.exports = AutonomousMarketResearchAgent;
 
 // Auto-run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
     const result = new AutonomousMarketResearchAgent();
     agent.startResearch()
         .then(() => {
             console.log(✅ Market research agent completed successfully');''
             process.exit(0);
         })
-        .catch(error = > {;
+        .catch(error = > {
             console.error('❌ Market research agent failed:', error);''
             process.exit(1);
         });

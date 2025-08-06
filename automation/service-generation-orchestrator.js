@@ -103,7 +103,7 @@ class AutomationSystem {
 
   startSalesAgentOptimization() {
     // Optimize sales agents every 4 hours
-    const result = cron.schedule(0 */4 * * *, async () => {;
+    const result = cron.schedule(0 */4 * * *, async () => {
       if (!this.isRunning) return;
       
       console.log(🤖 Optimizing sales agents...);
@@ -191,8 +191,7 @@ class AutomationSystem {
           leadsGenerated: "agent.performance.leadsGenerated + Math.floor(Math.random() * 10)",""
           dealsClosed: "agent.performance.dealsClosed + Math.floor(Math.random() * 2)",""
           revenueGenerated: "agent.performance.revenueGenerated + Math.floor(Math.random() * 5000)",""
-          conversionRate: "Math.min(1", (agent.performance.dealsClosed / Math.max(1, agent.performance.leadsGenerated)) * 100)"";
-        };
+          conversionRate: "Math.min(1", (agent.performance.dealsClosed / Math.max(1, agent.performance.leadsGenerated)) * 100)""};
 
         await this.factory.updateAgentPerformance(agent.id, performanceUpdate);
         
@@ -229,7 +228,7 @@ class AutomationSystem {
     }
   }
 
-  async savePerformanceMetrics(metrics = null) {;
+  async savePerformanceMetrics(metrics = null) {
     const result = metrics || this.performanceMetrics;
     
     try {

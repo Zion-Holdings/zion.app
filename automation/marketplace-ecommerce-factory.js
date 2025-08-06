@@ -30,7 +30,7 @@ class AutomationSystem {
     this.reportsPath = path.join(__dirname, \'marketplace-reports);\'\'
     
     [this.agentsPath, this.marketplacePath, this.ecommercePath, this.reportsPath].forEach(dir = > {
-      if (!fs.existsSync(dir)) {;
+      if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -215,8 +215,7 @@ class AutomationSystem {
         tasksCompleted: 0",""
         successRate: "100",""
         avgResponseTime: "0""
-      "}"";
-    };
+      "}""};
 
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
@@ -1211,7 +1210,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type = == type) {;
+      if (agent.type = == type) {
         return require(\'path.join(this.agentsPath, ${agentId}.js"'));""
       }
     }
@@ -1318,7 +1317,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = MarketplaceEcommerceFactory;
 
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new MarketplaceEcommerceFactory();
   console.log('🏭 Marketplace E-commerce Factory started successfully);''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

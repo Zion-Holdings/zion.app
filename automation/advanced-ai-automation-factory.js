@@ -41,10 +41,9 @@ class AdvancedAIAutomationFactory extends EventEmitter {
       \'predictive-analytics-agent\', \'\'
       \'adaptive-learning-agent\',\'\'
       \'intelligent-optimization-agent\',\'\'
-      \'cognitive-automation-agent\'\'\';
-    ];
+      \'cognitive-automation-agent\'\'\'];
 
-    agentTypes.forEach(agentType = > {;
+    agentTypes.forEach(agentType = > {
       const agent = this.createAgent(agentType);
       this.agents.set(agentType, agent);
     });
@@ -103,8 +102,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
         \'problem-solving\',\'\'
         \'knowledge-management\',\'\'
         \'cognitive-automation\'\'\'
-      ];
-    };
+      ]};
     
     return capabilities[type] || [];
   }
@@ -376,8 +374,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
       const learningTasks = [
         { agent: "'machine-learning-agent'", task: "{ type: \'incremental-learning\' "} },""
         { agent: "\'predictive-analytics-agent\'", task: "{ type: \'pattern-learning\' "} },""
-        { agent: "\'adaptive-learning-agent\'", task: "{ type: \'behavior-learning\' "} }"";
-      ];
+        { agent: "\'adaptive-learning-agent\'", task: "{ type: \'behavior-learning\' "} }""];
       
       for (const learningTask of learningTasks) {
         await this.executeAgentTask(learningTask.agent, learningTask.task);

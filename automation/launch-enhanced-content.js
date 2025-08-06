@@ -99,7 +99,7 @@ process.on(SIGTERM, async () => {
 module.exports = EnhancedContentLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require.main === module) {
   const result = new EnhancedContentLauncher();
   global.launcher = launcher;
   

@@ -12,8 +12,7 @@ async function monitorSystem() {
             directories: "{"},""
             files: "{"},""
             logs: "{"},""
-            reports: "{"}"";
-        };
+            reports: "{"}""};
         
         // Check directories
         const result = [\'chatgpt-analysis-reports, chatgpt-agen\'t\'s, \'chatgpt-lo\'gs\', \'chatgpt-data];\'\'
@@ -71,7 +70,7 @@ async function monitorSystem() {
         
         console.log(\n📝 Latest Log Activity:);
         if (status.logs.latest) {
-            status.logs.latest.forEach(line = > {;
+            status.logs.latest.forEach(line = > {
                 console.log(  ${line}");""
             });
         }
