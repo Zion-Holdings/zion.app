@@ -178,7 +178,7 @@ class CleanAutomationController {
 
   getSystemStatus() {
     console.log('\n📊 Current System Status:');
-    console.log('=' * 50);
+    console.log('==================================================');
     
     console.log('\n🟢 Working Systems:');
     this.workingSystems.forEach(system => {
@@ -192,10 +192,14 @@ class CleanAutomationController {
     });
     
     console.log('\n📈 Running Processes:');
-    this.runningProcesses.forEach((info, system) => {
-      const uptime = Math.floor((Date.now() - info.startTime) / 1000);
-      console.log(`🟢 ${system} (PID: ${info.pid}, Uptime: ${uptime}s)`);
-    });
+    if (this.runningProcesses.size === 0) {
+      console.log('No processes currently running');
+    } else {
+      this.runningProcesses.forEach((info, system) => {
+        const uptime = Math.floor((Date.now() - info.startTime) / 1000);
+        console.log(`🟢 ${system} (PID: ${info.pid}, Uptime: ${uptime}s)`);
+      });
+    }
   }
 
   async monitorSystems() {
