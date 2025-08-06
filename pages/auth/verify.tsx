@@ -1,92 +1,98 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import AuthLayout from '../../components/layout/AuthLayout'
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
 
-const Verify: NextPage = () => {
-  const router = useRouter()
-  const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
-  const [message, setMessage] = useState('')
+export default function VerifyEmail() {
+  const router = useRouter();
+  const [verificationStatus, setVerificationStatus] = useState('verifying');
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const { token } = router.query
-    
-    if (token) {
-      // Simulate verification process
-      setTimeout(() => {
-        setStatus('success')
-        setMessage('Email verified successfully! You can now login to your account.')
-      }, 2000)
-    } else {
-      setStatus('error')
-      setMessage('Invalid verification link. Please check your email for the correct link.')
+    const { token_hash, type } = router.query;
+
+    if (token_hash && type) {
+      verifyEmail(token_hash as string, type as string);
     }
-  }, [router.query])
+  }, [router.query]);
+
+  const verifyEmail = async (token_hash: string, type: string) => {
+    try {
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      );
+
+      const { error } = await supabase.auth.verifyOtp({
+        token_hash,
+        type: type as any,
+      });
+
+      if (error) {
+        setError(error.message);
+        setVerificationStatus('error');
+      } else {
+        setVerificationStatus('success');
+      }
+    } catch (error) {
+      setError('An unexpected error occurred');
+      setVerificationStatus('error');
+    }
+  };
 
   return (
-    <AuthLayout>
-      <Head>
-        <title>Email Verification - Zion</title>
-        <meta name="description" content="Verify your email address to complete your Zion account setup." />
-      </Head>
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Email Verification
+        </h2>
+      </div>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">
-            Email <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Verification</span>
-          </h1>
-          <p className="text-gray-300">
-            Verifying your email address...
-          </p>
-        </div>
-
-        <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
-          {status === 'loading' && (
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          {verificationStatus === 'verifying' && (
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
-              <p className="text-gray-300">Verifying your email address...</p>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <p className="mt-4 text-gray-600">Verifying your email...</p>
             </div>
           )}
-          
-          {status === 'success' && (
+
+          {verificationStatus === 'success' && (
             <div className="text-center">
-              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="text-green-300 mb-4">{message}</p>
-              <Link 
-                href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              <h3 className="mt-4 text-lg font-medium text-gray-900">Email Verified!</h3>
+              <p className="mt-2 text-gray-600">Your email has been successfully verified.</p>
+              <button
+                onClick={() => router.push('/auth/login')}
+                className="mt-4 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Continue to Login
-              </Link>
+              </button>
             </div>
           )}
-          
-          {status === 'error' && (
+
+          {verificationStatus === 'error' && (
             <div className="text-center">
-              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                <svg className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
-              <p className="text-red-300 mb-4">{message}</p>
-              <Link 
-                href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              <h3 className="mt-4 text-lg font-medium text-gray-900">Verification Failed</h3>
+              <p className="mt-2 text-gray-600">{error}</p>
+              <button
+                onClick={() => router.push('/auth/login')}
+                className="mt-4 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Back to Login
-              </Link>
+              </button>
             </div>
           )}
         </div>
       </div>
-    </AuthLayout>
-  )
+    </div>
+  );
 }
-
-export default Verify

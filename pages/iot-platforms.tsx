@@ -1,17 +1,18 @@
-import React from 'react';
-import Head from 'next/head';
-import Layout from '../components/Layout';
+import type { NextPage } from 'next'
+import Head from 'next/head'
+// Remove the problematic import
+// import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 
-const IotPlatforms = () => {
+const IoTPlatforms: NextPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Iot Platforms - Zion App</title>
-        <meta name="description" content="Comprehensive IoT platforms that connect and manage your smart devices and sensors." />
+        <title>IoT Platforms - Zion</title>
+        <meta name="description" content="Explore our comprehensive IoT platform solutions and services." />
         <meta name="keywords" content="iot-platforms, AI, automation, technology, solutions" />
       </Head>
-      
+
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -276,8 +277,8 @@ const IotPlatforms = () => {
           </div>
         </section>
       </div>
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default IotPlatforms;
+export default IoTPlatforms
