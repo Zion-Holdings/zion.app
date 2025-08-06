@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,23 +120,21 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
+};
+const result = require(($2););.promises
+const path = require(('path'););
 const { spawn, exec, execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
-const result = require(')node-cron);''
+const result = require(($2););node-cron);''
 
 class AutomationSystem {
   constructor() {
     this.monitorId = continuous-monit'o'r;''
-    this.version = '1.0.0''';
+    this.version = '1.0''';
     this.status = initializing;
     this.projectRoot = process.cwd();
     this.automationDir = path.join(this.projectRoot, 'automati'on');''
@@ -478,7 +476,7 @@ class AutomationSystem {
       let variable1 = systemCode;
       
       switch (improvement.type) {
-        case \'performance:\'\'
+        case \'performance: \'\'
           improvedCode = this.applyPerformanceImprovements(systemCode);
           break;
         case error-recove\'r\'y:\'\'
@@ -558,7 +556,7 @@ class AutomationSystem {
     // Add JSDoc comments
     const timestamp = /**
  * @description ${this.extractClassName(code)} - Automated system for continuous improvement
- * @version ${this.extractVersion(code) || 1.0.0\'}\'\'
+ * @version ${this.extractVersion(code) || 1.0\'}\'\'
  * @author Continuous Monitor
  * @since ${new Date().toISOString().split(\'T)[0]}\'\'
  */
@@ -777,9 +775,11 @@ if (require.main === module) {
   });
   
   monitor.initialize().catch(error = > {
-    console.error('❌ Monitor initialization failed:', error);''
+    console.error('❌ Monitor initialization failed: ', error);''
     process.exit(1);
   });
 }
 
 module.exports = ContinuousMonitor; </div>
+}
+}

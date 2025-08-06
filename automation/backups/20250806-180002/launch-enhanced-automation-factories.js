@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');''
-const path = require('path');''
+}const fs = require(('fs'););''
+const path = require(('path'););''
 const { EventEmitter } = require('events');''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class EnhancedAutomationFactoryLauncher extends EventEmitter {
   constructor() {
@@ -207,7 +204,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       console.log(`✅ [${this.launcherId}] Initial factories launched successfully`);
       
     } catch (error) {
-      console.error(`❌ [${this.launcherId}] Error launching initial factories:`, error);
+      console.error(`❌ [${this.launcherId}] Error launching initial factories: `, error);
     }
   }
 
@@ -218,7 +215,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       const factoryPath = path.join(__dirname, `${factoryDef.name}.js`);
       
       if (fs.existsSync(factoryPath)) {
-        const factoryModule = require('factoryPath');
+        const factoryModule = require(('factoryPath'););
         const factory = new factoryModule();
         
         const factoryData = {
@@ -257,7 +254,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
     
     try {
       // Start the multi-domain orchestrator
-      const MultiDomainOrchestrator = require('./multi-domain-automation-orchestrator.js');''
+      const MultiDomainOrchestrator = require(('./multi-domain-automation-orchestrator.js'););''
       const orchestrator = new MultiDomainOrchestrator();
       
       this.orchestrators.set('multi-domain-orchestrator', {''
@@ -271,7 +268,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       console.log(`✅ [${this.launcherId}] Multi-domain orchestrator started successfully`);
       
       // Start the enhanced factory generator
-      const EnhancedFactoryGenerator = require('./enhanced-automation-factory-generator.js');''
+      const EnhancedFactoryGenerator = require(('./enhanced-automation-factory-generator.js'););''
       const generator = new EnhancedFactoryGenerator();
       
       this.orchestrators.set('enhanced-factory-generator', {''
@@ -285,7 +282,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       console.log(`✅ [${this.launcherId}] Enhanced factory generator started successfully`);
       
     } catch (error) {
-      console.error(`❌ [${this.launcherId}] Error starting orchestrators:`, error);
+      console.error(`❌ [${this.launcherId}] Error starting orchestrators: `, error);
     }
   }
 
@@ -303,7 +300,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       }
       
     } catch (error) {
-      console.error(`❌ [${this.launcherId}] Error launching new factories:`, error);
+      console.error(`❌ [${this.launcherId}] Error launching new factories: `, error);
     }
   }
 
@@ -318,7 +315,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       this.updateLauncherMetrics();
       
     } catch (error) {
-      console.error(`❌ [${this.launcherId}] Error monitoring factory health:`, error);
+      console.error(`❌ [${this.launcherId}] Error monitoring factory health: `, error);
     }
   }
 
@@ -358,7 +355,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       }
       
     } catch (error) {
-      console.error(`❌ [${this.launcherId}] Error restarting failed factories:`, error);
+      console.error(`❌ [${this.launcherId}] Error restarting failed factories: `, error);
     }
   }
 
@@ -388,7 +385,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       .filter(factory => factory.status === 'active').length;''
     
     const totalFactories = this.factories.size;
-    const successRate = totalFactories > 0 ? this.metrics.successfulLaunches / totalFactories : 0;
+    const successRate = totalFactories > 0 ? this.metrics.successfulLaunches / totalFactories: 0;
     
     this.metrics.uptime = Date.now() - parseInt(this.launcherId.split('-').pop());''
     this.metrics.activeFactories = activeFactories;

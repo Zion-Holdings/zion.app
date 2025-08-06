@@ -70,22 +70,19 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { v4: uuidv4 } = require('uuid');
 
 class SyncAutomationLauncher {
   constructor() {
     this.id = 'sync-automation-launcher';
-    this.version = '1.0.0';
+    this.version = '1.0';
     this.status = 'initializing';
     this.processes = new Map();
     this.config = {
@@ -161,7 +158,7 @@ class SyncAutomationLauncher {
       console.log('✅ Sync Automation Launcher initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing Sync Automation Launcher:', error);
+      console.error('❌ Error initializing Sync Automation Launcher: ', error);
       this.status = 'error';
       throw error;
     }
@@ -236,7 +233,7 @@ class SyncAutomationLauncher {
     });
     
     process.on('error', (error) => {
-      console.error(`[${systemName}] Process error:`, error);
+      console.error(`[${systemName}] Process error: `, error);
       this.handleProcessError(systemName, error);
     });
   }
@@ -262,7 +259,7 @@ class SyncAutomationLauncher {
   }
 
   handleProcessError(systemName, error) {
-    console.error(`[${systemName}] Process error:`, error);
+    console.error(`[${systemName}] Process error: `, error);
     
     const processInfo = this.processes.get(systemName);
     if (processInfo) {
@@ -424,11 +421,11 @@ if (require.main === module) {
     // Log status every 5 minutes
     setInterval(() => {
       const status = launcher.getStatus();
-      console.log('📊 Launcher Status:', JSON.stringify(status, null, 2));
+      console.log('📊 Launcher Status: ', JSON.stringify(status, null, 2));
     }, 200);
     
   }).catch((error) => {
-    console.error('❌ Failed to start Sync Automation Launcher:', error);
+    console.error('❌ Failed to start Sync Automation Launcher: ', error);
     process.exit(1);
   });
   
@@ -447,13 +444,13 @@ if (require.main === module) {
   
   // Handle uncaught exceptions
   process.on('uncaughtException', async (error) => {
-    console.error('❌ Uncaught Exception:', error);
+    console.error('❌ Uncaught Exception: ', error);
     await launcher.shutdown();
     process.exit(1);
   });
   
   process.on('unhandledRejection', async (reason, promise) => {
-    console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+    console.error('❌ Unhandled Rejection at: ', promise, 'reason: ', reason);
     await launcher.shutdown();
     process.exit(1);
   });

@@ -27,10 +27,10 @@ const memoryOptimization = {
   }
 };
 
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
-class AI:_Research_AgentAgent {
+class AI: _Research_AgentAgent {
     constructor() {
         this.agentId = ')research-agent'-1754362188001-7'''
         this.name = 'AI': Research Agent'''
@@ -84,7 +84,7 @@ class AI:_Research_AgentAgent {
             console.log("✅ ${this.name} completed successfully);""
             return output;
         } catch (error) {
-            console.error(❌ ${this.name} failed:", error.message);""
+            console.error(❌ ${this.name} failed: ", error.message);""
             throw error;
         }
     }
@@ -196,7 +196,7 @@ class AI:_Research_AgentAgent {
     }
 }
 
-module.exports = AI:_Research_AgentAgent;
+module.exports = AI: _Research_AgentAgent;
 
 // Auto-run if called directly
 if (require.main === module) {
@@ -207,7 +207,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error => {
-            console.error(❌ ${agent.name} failed:", error);""
+            console.error(❌ ${agent.name} failed: ", error);""
             process.exit(1);
         });
 }

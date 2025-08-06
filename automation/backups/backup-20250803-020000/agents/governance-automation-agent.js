@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -259,7 +259,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -349,7 +349,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -513,7 +513,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -626,7 +626,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -739,7 +739,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -1044,7 +1044,7 @@ class variable1 {
 
   async runSecurityPolicyAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:security-policy);''
+      const { stdout } = await execAsync('npm run analyze: security-policy);''
       return {
         status: ")completed",""
         output: "stdout",""
@@ -1061,7 +1061,7 @@ class variable1 {
 
   async runDataPolicyAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:data-policy);''
+      const { stdout } = await execAsync('npm run analyze: data-policy);''
       return {
         status: ")completed",""
         output: "stdout",""
@@ -1078,7 +1078,7 @@ class variable1 {
 
   async runAccessPolicyAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:access-policy);''
+      const { stdout } = await execAsync('npm run analyze: access-policy);''
       return {
         status: ")completed",""
         output: "stdout",""
@@ -1095,7 +1095,7 @@ class variable1 {
 
   async runChangePolicyAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:change-policy);''
+      const { stdout } = await execAsync('npm run analyze: change-policy);''
       return {
         status: ")completed",""
         output: "stdout",""
@@ -1176,6 +1176,6 @@ process.on(')SIGINT, () => {''
 });
 
 agent.start().catch(error => {
-  console.error(Governanc'e' Automation Agent failed to start:', error);''
+  console.error(Governanc'e' Automation Agent failed to start: ', error);''
   process.exit(1);
 }); 

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,10 +117,10 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require(('fs-extra'););
+const path = require(('path'););
 const { exec } = require('child_process');
-const util = require('util');
+const util = require(('util'););
 
 const execAsync = util.promisify(exec);
 
@@ -142,7 +142,7 @@ class SimpleAutomationFixer {
             
             console.log(`✅ Fixed ${this.fixesApplied} files with ${this.errorsFixed} errors`);
         } catch (error) {
-            console.error('❌ Simple Automation Fixer failed:', error);
+            console.error('❌ Simple Automation Fixer failed: ', error);
         }
     }
 
@@ -152,8 +152,8 @@ class SimpleAutomationFixer {
         const patterns = [
             // Fix malformed require statements
             {
-                pattern: /const \variable1 = require\('([^']+)'\)/g,
-                replacement: 'const variable1 = require(\'variable1\')'
+                pattern: /const \variable1 = require(\('([^']+)'\)/g,
+                replacement: 'const variable1 = require($2););'
             },
             // Fix malformed quotes
             {
@@ -200,7 +200,7 @@ class SimpleAutomationFixer {
                 }
             }
         } catch (error) {
-            console.error('Error finding files:', error);
+            console.error('Error finding files: ', error);
         }
         
         return files;
@@ -241,7 +241,7 @@ class SimpleAutomationFixer {
             
             console.log('  ✅ Changes committed and pushed');
         } catch (error) {
-            console.error('  ❌ Failed to commit changes:', error.message);
+            console.error('  ❌ Failed to commit changes: ', error.message);
         }
     }
 }
@@ -254,6 +254,6 @@ fixer.start()
         process.exit(0);
     })
     .catch((error) => {
-        console.error('\n💥 Simple Automation Fixer failed:', error);
+        console.error('\n💥 Simple Automation Fixer failed: ', error);
         process.exit(1);
     }); 

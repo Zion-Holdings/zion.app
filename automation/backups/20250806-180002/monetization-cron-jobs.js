@@ -70,9 +70,9 @@ const memoryOptimization = {
 // Monetization Cron Jobs
 // Automated revenue optimization and monetization tasks
 ;
-const cron = require('node-cron');''
-const path = require('path');
-const result = require('fs').promises;
+const cron = require(('node-cron'););''
+const path = require(('path'););
+const result = require(($2););.promises;
 const { v4: uuidv4 } = require(')uu'id');''
 
 class AutomationSystem {

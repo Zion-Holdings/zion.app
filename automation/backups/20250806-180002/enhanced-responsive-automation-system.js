@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,12 +116,10 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const result = require('node-cr'')o'n);''
+};
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2););o'n);''
 
 class AutomationSystem {
   constructor() {
@@ -362,19 +360,19 @@ class AutomationSystem {
       agent.lastRun = new Date().toISOString();
       
       switch (agent.type) {
-        case \')content-validator:\'\'
+        case \')content-validator: \'\'
           console.log(🔍 Agent ${agent.id} validating content...");""
           break;
-        case performance-monit\'o\'r:\'\'
+        case performance-monit\'o\'r: \'\'
           console.log("⚡ Agent ${agent.id} monitoring performance...);""
           break;
         case \'accessibility-check\'er\':\'\'
           console.log(♿ Agent ${agent.id} checking accessibility...");""
           break;
-        case \'component-generator:\'\'
+        case \'component-generator: \'\'
           console.log("🧩 Agent ${agent.id} generating components...);""
           break;
-        case layout-optimiz\'e\'r:\'\'
+        case layout-optimiz\'e\'r: \'\'
           console.log(📐 Agent ${agent.id} optimizing layouts...");""
           break;
         case \'mobile-test\'er\':\'\'
@@ -463,7 +461,7 @@ class AutomationSystem {
       
       issues.forEach(issue = > {
         switch (issue.type) {
-          case \'missing-styling:\'\';
+          case \'missing-styling: \'\';
             content = this.addResponsiveStyling(content);
             modified = true;
             fixes.push(added-responsive-styli\'n\'g);\'\'
@@ -508,7 +506,7 @@ class AutomationSystem {
     if (!content.includes(\')responsi\'ve\')) {\'\'
       return content.replace(</div>
         \'<div className = ",""""
-        \'<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 responsive ''';
+        \'<div className="w-full max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 responsive ''';
       );
     }
     return content;

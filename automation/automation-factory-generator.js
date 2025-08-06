@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+}const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -167,7 +164,7 @@ class AutomationFactoryGenerator {
       this.isRunning = true;
       console.log('✅ Automation Factory Generator initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing Automation Factory Generator:', error);
+      console.error('❌ Error initializing Automation Factory Generator: ', error);
       throw error;
     }
   }
@@ -221,10 +218,8 @@ class AutomationFactoryGenerator {
   }
 
   generateFactoryTemplate(factoryType, config) {
-    return `#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+    return `const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -255,7 +250,7 @@ class ${this.capitalizeFirst(factoryType)}Factory {
       this.isRunning = true;
       console.log('✅ ${factoryType} factory initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing ${factoryType} factory:', error);
+      console.error('❌ Error initializing ${factoryType} factory: ', error);
       throw error;
     }
   }
@@ -274,8 +269,7 @@ class ${this.capitalizeFirst(factoryType)}Factory {
     // Initialize capability-specific logic
     switch (capability) {
       ${this.generateCapabilityCases(config.capabilities)}
-      default:
-        console.log('Initializing generic capability:', capability);
+      default: console.log('Initializing generic capability:', capability);
     }
   }
 
@@ -315,10 +309,8 @@ class ${this.capitalizeFirst(factoryType)}Factory {
   }
 
   generateCapabilityFactoryContent(capability) {
-    return \`#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+    return \`const fs = require(($2););.promises;
+const path = require(('path'););
 
 class ${this.capitalizeFirst(capability)}Factory {
   constructor() {
@@ -342,7 +334,7 @@ class ${this.capitalizeFirst(capability)}Factory {
       this.isRunning = true;
       console.log('✅ ${capability} factory initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing ${capability} factory:', error);
+      console.error('❌ Error initializing ${capability} factory: ', error);
       throw error;
     }
   }
@@ -373,7 +365,7 @@ class ${this.capitalizeFirst(capability)}Factory {
       console.log('✅ Produced ${capability} item');
     } catch (error) {
       this.metrics.itemsFailed++;
-      console.error('❌ Failed to produce ${capability} item:', error);
+      console.error('❌ Failed to produce ${capability} item: ', error);
     }
   }
 
@@ -543,7 +535,7 @@ module.exports = ${this.capitalizeFirst(capability)}Factory;
       if (!this.capabilities.includes(capability)) {
         this.capabilities.push(capability);
         await this.initializeCapability(capability);
-        console.log('✅ Added new capability:', capability);
+        console.log('✅ Added new capability: ', capability);
       }
     }
   }
@@ -614,7 +606,7 @@ module.exports = ${this.capitalizeFirst(factoryType)}Factory;
         template.generationCount++;
         template.lastUsed = new Date().toISOString();
       } catch (error) {
-        console.error(`❌ Failed to generate ${factoryType} factory:`, error);
+        console.error(`❌ Failed to generate ${factoryType} factory: `, error);
       }
     }
   }

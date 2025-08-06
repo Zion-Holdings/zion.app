@@ -70,16 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+}const fs = require(('fs'););
+const path = require(('path'););
+const cron = require(('node-cron'););
 
 class UltimateGrowthAutomationAgent {
   constructor() {
@@ -170,7 +167,7 @@ class UltimateGrowthAutomationAgent {
       
       console.log('✅ Ultimate Growth Automation Agent started successfully');
     } catch (error) {
-      console.error('❌ Error starting agent:', error);
+      console.error('❌ Error starting agent: ', error);
       this.handleAgentError(error);
     }
   }
@@ -275,7 +272,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ SEO optimization completed: ${strategy}`);
       
     } catch (error) {
-      console.error('❌ Error optimizing SEO:', error);
+      console.error('❌ Error optimizing SEO: ', error);
     }
   }
 
@@ -412,7 +409,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ Social media expansion completed: ${platform}`);
       
     } catch (error) {
-      console.error('❌ Error expanding social media:', error);
+      console.error('❌ Error expanding social media: ', error);
     }
   }
 
@@ -555,7 +552,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ Content marketing completed: ${format}`);
       
     } catch (error) {
-      console.error('❌ Error executing content marketing:', error);
+      console.error('❌ Error executing content marketing: ', error);
     }
   }
 
@@ -683,7 +680,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ Email marketing completed: ${campaign}`);
       
     } catch (error) {
-      console.error('❌ Error executing email marketing:', error);
+      console.error('❌ Error executing email marketing: ', error);
     }
   }
 
@@ -818,7 +815,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ Paid advertising completed: ${platform}`);
       
     } catch (error) {
-      console.error('❌ Error executing paid advertising:', error);
+      console.error('❌ Error executing paid advertising: ', error);
     }
   }
 
@@ -916,13 +913,13 @@ class UltimateGrowthAutomationAgent {
 
   generateROASEstimate(platform) {
     const roasEstimates = {
-      'google-ads': '3:1 to 5:1',
-      'facebook-ads': '2.5:1 to 4:1',
-      'linkedin-ads': '4:1 to 6:1',
-      'twitter-ads': '2:1 to 3.5:1'
+      'google-ads': '3: 1 to 5:1',
+      'facebook-ads': '2.5: 1 to 4:1',
+      'linkedin-ads': '4: 1 to 6:1',
+      'twitter-ads': '2: 1 to 3.5:1'
     };
     
-    return roasEstimates[platform] || '3:1 to 5:1 ROAS';
+    return roasEstimates[platform] || '3: 1 to 5:1 ROAS';
   }
 
   async executeInfluencerMarketing() {
@@ -943,7 +940,7 @@ class UltimateGrowthAutomationAgent {
       console.log(`✅ Influencer marketing completed: ${type}`);
       
     } catch (error) {
-      console.error('❌ Error executing influencer marketing:', error);
+      console.error('❌ Error executing influencer marketing: ', error);
     }
   }
 
@@ -1039,13 +1036,13 @@ class UltimateGrowthAutomationAgent {
 
   generateInfluencerROI(type) {
     const roiEstimates = {
-      'micro-influencers': '5:1 to 10:1',
-      'macro-influencers': '3:1 to 6:1',
-      'industry-experts': '8:1 to 15:1',
-      'thought-leaders': '6:1 to 12:1'
+      'micro-influencers': '5: 1 to 10:1',
+      'macro-influencers': '3: 1 to 6:1',
+      'industry-experts': '8: 1 to 15:1',
+      'thought-leaders': '6: 1 to 12:1'
     };
     
-    return roiEstimates[type] || '5:1 to 10:1 ROI';
+    return roiEstimates[type] || '5: 1 to 10:1 ROI';
   }
 
   async monitorPerformance() {
@@ -1068,7 +1065,7 @@ class UltimateGrowthAutomationAgent {
       fs.writeFileSync(performanceFile, JSON.stringify(performance, null, 2));
       
     } catch (error) {
-      console.error('❌ Error monitoring performance:', error);
+      console.error('❌ Error monitoring performance: ', error);
     }
   }
 
@@ -1097,7 +1094,7 @@ class UltimateGrowthAutomationAgent {
       console.log('✅ Growth strategies evolved');
       
     } catch (error) {
-      console.error('❌ Error evolving strategies:', error);
+      console.error('❌ Error evolving strategies: ', error);
     }
   }
 
@@ -1159,7 +1156,7 @@ class UltimateGrowthAutomationAgent {
   }
 
   handleAgentError(error) {
-    console.error('❌ Agent error:', error);
+    console.error('❌ Agent error: ', error);
     
     // Record error
     const errorLog = {

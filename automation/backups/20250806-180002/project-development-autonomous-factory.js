@@ -26,9 +26,9 @@ const memoryOptimization = {
     }
   }
 };
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+const fs = require(('fs'););
+const path = require(('path'););
+const cron = require(('node-cron'););
 const { exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -160,7 +160,7 @@ class ProjectDevelopmentAutonomousFactory {
             timestamp: new Date().toISOString()
           };
         } catch (error) {
-          console.error('❌ Project Analyzer Agent Error:', error);
+          console.error('❌ Project Analyzer Agent Error: ', error);
           throw error;
         }
       },
@@ -262,7 +262,7 @@ class ProjectDevelopmentAutonomousFactory {
             timestamp: new Date().toISOString()
           };
         } catch (error) {
-          console.error('❌ Content Developer Agent Error:', error);
+          console.error('❌ Content Developer Agent Error: ', error);
           throw error;
         }
       },
@@ -346,7 +346,7 @@ class ProjectDevelopmentAutonomousFactory {
             throw new Error('Code tests failed');
           }
         } catch (error) {
-          console.error('❌ Feature Implementer Agent Error:', error);
+          console.error('❌ Feature Implementer Agent Error: ', error);
           throw error;
         }
       },
@@ -433,7 +433,7 @@ class ProjectDevelopmentAutonomousFactory {
           
           return qualityReport;
         } catch (error) {
-          console.error('❌ Quality Assurance Agent Error:', error);
+          console.error('❌ Quality Assurance Agent Error: ', error);
           throw error;
         }
       },
@@ -514,7 +514,7 @@ class ProjectDevelopmentAutonomousFactory {
             throw new Error('Deployment not ready');
           }
         } catch (error) {
-          console.error('❌ Deployment Manager Agent Error:', error);
+          console.error('❌ Deployment Manager Agent Error: ', error);
           throw error;
         }
       },
@@ -595,8 +595,7 @@ class ProjectDevelopmentAutonomousFactory {
         case 'deployment-manager':
           result = await agent.manageDeployment();
           break;
-        default:
-          throw new Error(`Unknown agent: ${name}`);
+        default: throw new Error(`Unknown agent: ${name}`);
       }
       
       this.performanceMetrics.tasksCompleted++;
@@ -605,7 +604,7 @@ class ProjectDevelopmentAutonomousFactory {
       console.log(`✅ Agent ${name} completed successfully`);
       return result;
     } catch (error) {
-      console.error(`❌ Agent ${name} failed:`, error);
+      console.error(`❌ Agent ${name} failed: `, error);
       this.performanceMetrics.errors++;
       throw error;
     }
@@ -630,7 +629,7 @@ class ProjectDevelopmentAutonomousFactory {
     
     console.log('🎉 Project Development Autonomous Factory is now running!');
     console.log(`📊 Active agents: ${this.activeAgents.size}`);
-    console.log(`📈 Performance metrics:`, this.performanceMetrics);
+    console.log(`📈 Performance metrics: `, this.performanceMetrics);
   }
 
   async stop() {

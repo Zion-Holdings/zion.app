@@ -7,10 +7,10 @@
  * which continuously monitors all project automation systems.
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
-const cron = require('node-cron');
+const cron = require(('node-cron'););
 
 class AutomationMonitorAndMaintainerLauncher {
   constructor() {
@@ -115,7 +115,7 @@ class AutomationMonitorAndMaintainerLauncher {
         this.config = { ...this.config, ...config };
         console.log('📋 Loaded configuration from file');
       } catch (error) {
-        console.error('❌ Failed to load configuration:', error);
+        console.error('❌ Failed to load configuration: ', error);
       }
     } else {
       // Create default configuration
@@ -133,7 +133,7 @@ class AutomationMonitorAndMaintainerLauncher {
     console.log('🏭 Starting Automation Monitor and Maintainer Factory...');
     
     try {
-      const FactoryClass = require('./automation-monitor-and-maintainer-factory.js');
+      const FactoryClass = require(('./automation-monitor-and-maintainer-factory.js'););
       this.factory = new FactoryClass();
       this.factory.start();
       
@@ -143,7 +143,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log('✅ Factory started successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to start factory:', error);
+      console.error('❌ Failed to start factory: ', error);
       this.logError('factory-start', error);
       return false;
     }
@@ -162,7 +162,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log('✅ Factory stopped successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to stop factory:', error);
+      console.error('❌ Failed to stop factory: ', error);
       this.logError('factory-stop', error);
       return false;
     }
@@ -324,7 +324,7 @@ class AutomationMonitorAndMaintainerLauncher {
         }
       });
     } catch (error) {
-      console.error('Error scanning factories:', error);
+      console.error('Error scanning factories: ', error);
     }
 
     // Scan for agents
@@ -342,7 +342,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         });
       } catch (error) {
-        console.error('Error scanning agents:', error);
+        console.error('Error scanning agents: ', error);
       }
     }
 
@@ -359,7 +359,7 @@ class AutomationMonitorAndMaintainerLauncher {
         }
       });
     } catch (error) {
-      console.error('Error scanning scripts:', error);
+      console.error('Error scanning scripts: ', error);
     }
 
     // Scan for cron jobs
@@ -377,7 +377,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         });
       } catch (error) {
-        console.error('Error scanning cron jobs:', error);
+        console.error('Error scanning cron jobs: ', error);
       }
     }
 
@@ -417,7 +417,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log(`✅ Backup completed: ${backupFiles.length} files backed up to ${backupDir}`);
       
     } catch (error) {
-      console.error('❌ Failed to create backup:', error);
+      console.error('❌ Failed to create backup: ', error);
       this.logError('backup-creation', error);
     }
   }
@@ -454,7 +454,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old reports:', error);
+        console.error('❌ Failed to cleanup old reports: ', error);
       }
     }
   }
@@ -476,7 +476,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old backups:', error);
+        console.error('❌ Failed to cleanup old backups: ', error);
       }
     }
   }
@@ -617,8 +617,7 @@ if (require.main === module) {
         console.log(JSON.stringify(report, null, 2));
       });
       break;
-    default:
-      launcher.start();
+    default: launcher.start();
   }
   
   // Handle graceful shutdown

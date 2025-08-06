@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
+}const fs = require(('fs-extra'););
+const path = require(('path'););
 const { EventEmitter } = require('events');
-const InstructionExecutionOrchestrator = require('./agents/instruction-execution-orchestrator');
+const InstructionExecutionOrchestrator = require(('./agents/instruction-execution-orchestrator'););
 
 class GoogleDocsAutomationLauncher extends EventEmitter {
   constructor(config = {}) {
@@ -90,7 +87,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
       return true;
       
     } catch (error) {
-      console.error('❌ Failed to initialize Google Docs Automation System:', error);
+      console.error('❌ Failed to initialize Google Docs Automation System: ', error);
       throw error;
     }
   }
@@ -133,7 +130,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
     });
 
     this.orchestrator.on('error', (error) => {
-      console.error('🚨 Orchestrator error:', error);
+      console.error('🚨 Orchestrator error: ', error);
       this.emit('error', error);
     });
   }
@@ -187,7 +184,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
     try {
       await fs.writeJson(healthFile, health, { spaces: 2 });
     } catch (error) {
-      console.error('❌ Failed to save health report:', error);
+      console.error('❌ Failed to save health report: ', error);
     }
   }
 
@@ -211,7 +208,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
       console.log('📊 System report generated');
       
     } catch (error) {
-      console.error('❌ Failed to generate system report:', error);
+      console.error('❌ Failed to generate system report: ', error);
     }
   }
 
@@ -307,7 +304,7 @@ async function main() {
     console.log('🎯 Google Docs Automation System is running. Press Ctrl+C to stop.');
     
   } catch (error) {
-    console.error('❌ Failed to start Google Docs Automation System:', error);
+    console.error('❌ Failed to start Google Docs Automation System: ', error);
     process.exit(1);
   }
 }

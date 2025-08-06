@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+}const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -157,7 +154,7 @@ class UltimateAutomationFactory {
       this.isRunning = true;
       console.log('✅ Ultimate Automation Factory initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing Ultimate Automation Factory:', error);
+      console.error('❌ Error initializing Ultimate Automation Factory: ', error);
       throw error;
     }
   }
@@ -250,10 +247,8 @@ class UltimateAutomationFactory {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join('');
     
-    return `#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+    return `const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -411,10 +406,8 @@ module.exports = automation;
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join('');
     
-    return `#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+    return `const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -443,7 +436,7 @@ class ${className}Orchestrator {
       this.isRunning = true;
       console.log(\`✅ \${this.factoryType} orchestrator initialized successfully\`);
     } catch (error) {
-      console.error(\`❌ Error initializing \${this.factoryType} orchestrator:\`, error);
+      console.error(\`❌ Error initializing \${this.factoryType} orchestrator: \`, error);
       throw error;
     }
   }
@@ -454,7 +447,7 @@ class ${className}Orchestrator {
     for (const capability of this.capabilities) {
       try {
         const scriptPath = path.join(__dirname, \`\${this.factoryType}-\${capability}.js\`);
-        const automation = require(scriptPath);
+        const automation = require(('scriptPath););
         
         this.activeProcesses.set(capability, automation);
         console.log(\`✅ Loaded capability: \${capability}\`);
@@ -479,7 +472,7 @@ class ${className}Orchestrator {
     
     for (const [capability, automation] of this.activeProcesses) {
       try {
-        const status = await automation.getStatus();
+        const status = await automation.getStatus(');
         results.push({
           capability,
           status: status.isRunning ? 'running' : 'stopped',
@@ -643,7 +636,7 @@ async function main() {
     
     setInterval(async () => {
       const status = await factory.getFactoryStatus();
-      console.log('📊 Factory Status:', status);
+      console.log('📊 Factory Status: ', status);
     }, 200);
     
     process.on('SIGINT', async () => {
@@ -653,7 +646,7 @@ async function main() {
     });
     
   } catch (error) {
-    console.error('❌ Error in main:', error);
+    console.error('❌ Error in main: ', error);
     process.exit(1);
   }
 }

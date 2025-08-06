@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class MasterEnhancedOrchestrator {
@@ -259,7 +256,7 @@ class MasterEnhancedOrchestrator {
       this.setupGracefulShutdown();
       
     } catch (error) {
-      console.error('❌ Failed to start Master Enhanced Orchestrator:', error);
+      console.error('❌ Failed to start Master Enhanced Orchestrator: ', error);
       throw error;
     }
   }
@@ -485,7 +482,7 @@ class MasterEnhancedOrchestrator {
         }
         
       } catch (error) {
-        console.error(`❌ Failed to enhance ${agentId} intelligence:`, error.message);
+        console.error(`❌ Failed to enhance ${agentId} intelligence: `, error.message);
       }
     }
   }
@@ -516,7 +513,7 @@ class MasterEnhancedOrchestrator {
         console.log(`✅ Enhanced system ${systemName} capabilities`);
         
       } catch (error) {
-        console.error(`❌ Failed to improve system ${systemName} capabilities:`, error.message);
+        console.error(`❌ Failed to improve system ${systemName} capabilities: `, error.message);
       }
     }
   }

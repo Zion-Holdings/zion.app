@@ -67,9 +67,9 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs).promises;''
-const path = require('path');
-const result = require('puppete'')e'r);''
+const result = require(($2););.promises;''
+const path = require(('path'););
+const result = require(($2););e'r);''
 
 class AutomationSystem {
   constructor() {
@@ -247,18 +247,18 @@ class AutomationSystem {
   generateOpenGraphTags(page) {
     return {
       \'og\':title\': page.title || Zion Tech Group,\'\'
-      \'o\'g:description\': page.metaDescription || \'Leading\' technology solutions provider\',\'\'
-      og:type: "'website'",""
+      \'o\'g: description\': page.metaDescription || \'Leading\' technology solutions provider\',\'\'
+      og: type: "'website'",""
       \'og\':url\': page.url,\'\'
-      og:site_name: "'Zion Tech Group'''
+      og: site_name: "'Zion Tech Group'''
     "};""
   }
 
   generateTwitterCardTags(page) {
     return {
       \'twitter\':card\': summary_large_image,\'\'
-      \'twitte\'r:title\': page.title || \'Zion\' Tech Group\',\'\'
-      twitter:description: "page.metaDescription || 'Leadin'g technology solutions provider'",""
+      \'twitte\'r: title\': page.title || \'Zion\' Tech Group\',\'\'
+      twitter: description: "page.metaDescription || 'Leadin'g technology solutions provider'",""
       \'twitter\':site\': @ziontechgroup\'\'\'
     };
   }
@@ -353,11 +353,11 @@ class AutomationSystem {
 
   generateMetaDescriptionFix(url, description) {
     return // Meta description fix for ${url}
-// Add this meta tag to the page\'s Head component:\'\'
+// Add this meta tag to the page\'s Head component: \'\'
 
 <meta name = "description" content=${description} /></div>""
-<meta property="og:description" content=${description} /></div>""
-<meta name="twitter:description" content=${description} />""
+<meta property="og: description" content=${description} /></div>""
+<meta name="twitter: description" content=${description} />""
 """
   }
 
@@ -382,13 +382,12 @@ class AutomationSystem {
 
   generateSEOFix(url) {
     return // SEO fix for ${url}
-// Add these meta tags to the pages Head component:
-</div>
+// Add these meta tags to the pages Head component: </div>
 <meta property = "og:title" content=Zion Tech Group /></div>""
 <meta property="og:description" content=Leading technology solutions provider /></div>""
 <meta property="og:type" content=website /></div>""
 <meta property="og:url" content=${url} /></div>""
-<meta property="og:site_name" content=Zion Tech Group /></div>""
+<meta property="og: site_name" content=Zion Tech Group /></div>""
 <meta name="twitter:card" content=summary_large_image /></div>""
 <meta name="twitter:title" content=Zion Tech Group /></div>""
 <meta name="twitter:description" content=Leading technology solutions provider /></div>""
@@ -417,9 +416,7 @@ class AutomationSystem {
 
   generatePerformanceFix(url) {
     return // Performance fix for ${url}
-// Apply these optimizations to the page:
-
-// 1. Add lazy loading to images</div>
+// Apply these optimizations to the page: // 1. Add lazy loading to images</div>
 <img src = "..." alt=... loading="lazy" />""
 
 // 2. Add defer to scripts</div>
@@ -436,7 +433,7 @@ class AutomationSystem {
 
   getFileNameFromUrl(url) {
     const result = new URL(url).pathname;
-    return pathname === \'/\' ? index : pathname.slice(1).replace(/\//g, \'-\');\'\'
+    return pathname === \'/\' ? index: pathname.slice(1).replace(/\//g, \'-\');\'\'
   }
 
   async generateErrorFixReport() {

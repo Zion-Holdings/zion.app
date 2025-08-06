@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
+}const fs = require(('fs-extra'););
+const path = require(('path'););
 const { EventEmitter } = require('events');
-const GoogleDocsInstructionAgent = require('./google-docs-instruction-agent');
+const GoogleDocsInstructionAgent = require(('./google-docs-instruction-agent'););
 
 class InstructionExecutionOrchestrator extends EventEmitter {
   constructor(config = {}) {
@@ -90,7 +87,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       return true;
       
     } catch (error) {
-      console.error('❌ Failed to initialize Instruction Execution Orchestrator:', error);
+      console.error('❌ Failed to initialize Instruction Execution Orchestrator: ', error);
       throw error;
     }
   }
@@ -129,7 +126,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     });
 
     agent.on('error', (error) => {
-      console.error('🚨 Agent error:', error);
+      console.error('🚨 Agent error: ', error);
       this.emit('error', error);
     });
   }
@@ -352,8 +349,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       case 'marketing':
         agent = await this.createMarketingAgent(config);
         break;
-      default:
-        agent = await this.createGenericAgent(taskType, config);
+      default: agent = await this.createGenericAgent(taskType, config);
     }
     
     if (agent) {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class SimpleWorkingAutomation {
   constructor() {
@@ -35,10 +35,10 @@ class SimpleWorkingAutomation {
       await this.performHealthCheck();
       
       console.log('\n✅ Simple Working Automation completed!');
-      console.log('📊 Final Metrics:', this.metrics);
+      console.log('📊 Final Metrics: ', this.metrics);
       
     } catch (error) {
-      console.error('❌ Error in Simple Working Automation:', error.message);
+      console.error('❌ Error in Simple Working Automation: ', error.message);
     }
   }
 
@@ -146,7 +146,7 @@ if (require.main === module) {
   
   automation.run()
     .then(() => {
-      console.log('\n📊 Final Status:', JSON.stringify(automation.getStatus(), null, 2));
+      console.log('\n📊 Final Status: ', JSON.stringify(automation.getStatus(), null, 2));
     })
     .catch(console.error);
 }

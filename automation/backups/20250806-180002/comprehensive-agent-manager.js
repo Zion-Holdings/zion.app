@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs);''
-const path = require('path');
+}const fs = require(($2););.promises
+const path = require(('path'););
 const { spawn } = require('child_process''));''
 const { v4: uuidv4 } = require('uuid);''
 
@@ -284,7 +281,7 @@ class ComprehensiveAgentManager {
     if (filename.includes(\'git)) capabilities.push(version-control, branch-management\'), \'code-review);\'\'
     if (filename.includes(\'documentation)) capabilities.push(documentation-generation, \')knowledge-management, \'content-organization\');\'\'
     
-    return capabilities.length > 0 ? capabilities : [general-automation\'];\'\'
+    return capabilities.length > 0 ? capabilities: [general-automation\'];\'\'
   }
 
   loadFactoryRegistry() {
@@ -409,7 +406,7 @@ class ComprehensiveAgentManager {
 
   isAgentRunning(agentName) {
     try {
-      const result = require(\'child_process).execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
+      const result = require(($2););.execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -490,7 +487,7 @@ class ComprehensiveAgentManager {
 
   isFactoryRunning(factoryName) {
     try {
-      const result = require(\'child_process).execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
+      const result = require(($2););.execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -558,7 +555,7 @@ class ComprehensiveAgentManager {
     
     // Calculate success rate
     const totalTasks = performance.tasksCompleted + performance.tasksFailed;
-    const successRate = totalTasks > 0 ? performance.tasksCompleted / totalTasks : 0.5;
+    const successRate = totalTasks > 0 ? performance.tasksCompleted / totalTasks: 0.5;
     
     // Improve intelligence based on performance
     let newIntelligence = currentIntelligence;
@@ -628,7 +625,7 @@ class ComprehensiveAgentManager {
       if (factory.status === \'running) runningFactories++;\'\'
     }
     
-    const agentHealth = totalAgents > 0 ? (runningAgents / totalAgents) * 100 : 0;
+    const agentHealth = totalAgents > 0 ? (runningAgents / totalAgents) * 100: 0;
     const factoryHealth = totalFactories > 0 ? (runningFactories / totalFactories) * 100 : 0;
     
     return {
@@ -841,7 +838,7 @@ if (require.main === module) {
   // Log status every 5 minutes
   setInterval(() => {
     const status = global.agentManager.getSystemStatus();
-    console.log(\'\n📊 System Status:\');\'\'
+    console.log(\'\n📊 System Status: \');\'\'
     console.log(`Agents: "${status.agents.running"}/${status.agents.total} running`);""
     console.log(Factories: "${status.factories.running"}/${status.factories.total} running`);""
     console.log(`Overall Health: "${status.health.overallHealth.toFixed(1)"}%`);""

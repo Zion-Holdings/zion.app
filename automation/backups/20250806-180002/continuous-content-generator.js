@@ -70,14 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('axi'')o's);''
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2););o's);''
 const { GoogleGenerativeAI } = require('@google/generative-ai);''
 
 class AutomationSystem {
@@ -356,8 +356,7 @@ class AutomationSystem {
   async generateBlogContent(topic) {
     const result = """
 Create comprehensive blog content about ${topic} for Zion Tech Group, an AI-powered marketplace company. 
-Include:
-- Engaging introduction
+Include: - Engaging introduction
 - Main content sections with detailed explanations
 - Real-world examples and use cases
 - Technical insights and trends
@@ -398,7 +397,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -433,7 +432,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Blog Content */}</div>
       <main className="flex-1></div>"""
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+        <article className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
           <div className="mb-8""></div>""
             <Link href=/blog className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block>""
               ← Back to Blog</div>
@@ -459,7 +458,7 @@ const ${pageName}Page: "NextPage = () => {""
           </div>
           </div>
           <div className="mt-12" pt-8 border-t border-white/10></div>""
-            <div className="flex" flex-col sm:flex-row gap-4></div>""
+            <div className="flex" flex-col sm: flex-row gap-4></div>""
               <Link href="/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Explore Our Services</div>
               </Link></div>
@@ -473,7 +472,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Footer */}</div>
       <footer className="bg-black/20" border-t border-white/10"></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
           <div className="grid" grid-cols-1 md:grid-cols-4 gap-8></div>""
             <div></div>
               <h3 className="text-white font-semibold mb-4>Zion</h3></div>""
@@ -558,8 +557,7 @@ In conclusion, ${topic.toLowerCase()} represents not just a technological advanc
 
   async generateMarketplaceContent(category) {
     const result = Create comprehensive marketplace content for "${category}" category on Zion AI Marketplace. ""
-Include:
-- Hero section with compelling title and description
+Include: - Hero section with compelling title and description
 - Key features and benefits
 - Service offerings and pricing
 - Success stories and testimonials
@@ -601,7 +599,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Navigation */}</div>
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8"></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8"></div>""
           <div className="flex" justify-between h-16></div>""
             <div className="flex" items-center></div>""
               <div className="flex-shrink-0></div>""
@@ -636,7 +634,7 @@ const ${pageName}Page: "NextPage = () => {""
         <div className="relative overflow-hidden></div>""
           <div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>""
           </div>
-          <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>""
+          <div className="relative" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-24 lg:py-32></div>""
             <div className="text-center></div>"""
               <div className="mb-8></div>""
                 <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6"></div>""
@@ -649,7 +647,7 @@ const ${pageName}Page: "NextPage = () => {""
                 </p></div>
               </div>
               </div>
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>""
+              <div className="mt-12 flex flex-col sm: flex-row gap-4 justify-center></div>""
                 <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   Browse Services</div>
                 </Link></div>
@@ -662,7 +660,7 @@ const ${pageName}Page: "NextPage = () => {""
         </div>
         
         {/* Content Section */}</div>
-        <div className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>""
+        <div className="max-w-4xl" mx-auto px-4 sm: px-6 lg:px-8 py-16"></div>""
           <div className="prose" prose-invert prose-lg max-w-none></div>""
             <div className="text-gray-300" leading-relaxed>""
               ${content.split(\'\n).slice(1).map(paragraph => </div>\'\'
@@ -675,7 +673,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Footer */}</div>
       <footer className="bg-black/20" border-t border-white/10></div>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
           <div className="grid" grid-cols-1 md:grid-cols-4 gap-8"></div>""
             <div></div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3></div>""
@@ -728,8 +726,7 @@ Discover top professionals and services in the ${category} space on Zion AI Mark
 
 Our ${category} category features a diverse range of services including consulting, development, implementation, and ongoing support. Whether you\'re\' a startup looking to scale or an enterprise seeking optimization, we have the right professionals for your needs.\'\'
 
-Key benefits of our ${category} marketplace include:
-- Verified professionals with proven track records
+Key benefits of our ${category} marketplace include: - Verified professionals with proven track records
 - Transparent pricing and project management
 - AI-powered matching for optimal client-provider fit
 - Secure payment processing and dispute resolution
@@ -764,8 +761,7 @@ Join thousands of satisfied clients who have found their ideal ${category} solut
   async generateServiceContent(service) {
     const result = """
 Create comprehensive service content for ${service} offered by Zion Tech Group. 
-Include:
-- Service overview and benefits
+Include: - Service overview and benefits
 - Technical capabilities and expertise
 - Implementation process and timeline
 - Pricing information and packages
@@ -803,7 +799,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -841,7 +837,7 @@ const ${pageName}Page: "NextPage = () => {""
         <div className="relative overflow-hidden></div>""
           <div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>""
           </div>
-          <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>""
+          <div className="relative" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-24 lg:py-32></div>""
             <div className="text-center></div>"""
               <div className="mb-8></div>""
                 <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6"></div>""
@@ -854,7 +850,7 @@ const ${pageName}Page: "NextPage = () => {""
                 </p></div>
               </div>
               </div>
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>""
+              <div className="mt-12 flex flex-col sm: flex-row gap-4 justify-center></div>""
                 <Link href=/contact" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   Get Started</div>
                 </Link></div>
@@ -867,7 +863,7 @@ const ${pageName}Page: "NextPage = () => {""
         </div>
         
         {/* Content Section */}</div>
-        <div className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>""
+        <div className="max-w-4xl" mx-auto px-4 sm: px-6 lg:px-8 py-16"></div>""
           <div className="prose" prose-invert prose-lg max-w-none></div>""
             <div className="text-gray-300" leading-relaxed>""
               ${content.split(\'\n).slice(1).map(paragraph => </div>\'\'
@@ -880,7 +876,7 @@ const ${pageName}Page: "NextPage = () => {""
 
       {/* Footer */}</div>
       <footer className="bg-black/20" border-t border-white/10></div>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
           <div className="grid" grid-cols-1 md:grid-cols-4 gap-8"></div>""
             <div></div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3></div>""

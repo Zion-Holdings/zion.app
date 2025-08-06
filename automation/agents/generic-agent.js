@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 class variable1 {
@@ -172,7 +172,7 @@ class variable1 {
       
       
       switch (task.type) {
-        case 'generic-task:''
+        case 'generic-task: ''
           result = await this.performGenericTask(task.data);
           break;
         case data-processi'n'g:''
@@ -196,7 +196,7 @@ class variable1 {
       
     } catch (error) {
       const timestamp = Date.now() - startTime;
-      console.error(❌ Task failed:", error.message);""
+      console.error(❌ Task failed: ", error.message);""
       
       this.updatePerformanceMetrics(executionTime, false);
       throw error;

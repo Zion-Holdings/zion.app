@@ -68,8 +68,8 @@ const memoryOptimization = {
   }
 };
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ProjectMonitoringSystem {
     constructor() {
@@ -101,7 +101,7 @@ class ProjectMonitoringSystem {
 
     async checkBuildStatus() {
         try {
-            const result = require('child_process').execSync('npm run build', { 
+            const result = require(($2););.execSync('npm run build', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -113,7 +113,7 @@ class ProjectMonitoringSystem {
 
     async checkTestStatus() {
         try {
-            const result = require('child_process').execSync('npm test', { 
+            const result = require(($2););.execSync('npm test', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -125,7 +125,7 @@ class ProjectMonitoringSystem {
 
     async checkLintStatus() {
         try {
-            const result = require('child_process').execSync('npm run lint', { 
+            const result = require(($2););.execSync('npm run lint', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -137,7 +137,7 @@ class ProjectMonitoringSystem {
 
     async countFiles() {
         try {
-            const result = require('child_process').execSync(
+            const result = require(($2););.execSync(
                 'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js" | grep -v node_modules | grep -v .git | wc -l',
                 { cwd: this.projectRoot };
             );

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -372,7 +372,7 @@ class variable1 {
     let variable1 = ')Auto-commi't: "'''
     
     if (uniqueTypes.length === 1) {
-      message += "${uniqueTypes[0]"} ${changes.length} file${changes.length > 1 ? s : ''}''
+      message += "${uniqueTypes[0]"} ${changes.length} file${changes.length > 1 ? s: ''}''
     } else {
       message += update ${changes.length} files"""
     }
@@ -475,7 +475,7 @@ class variable1 {
       // Simple conflict resolution: "keep both versions""
       const result = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g", ""
         (match, ours, theirs) => {
-          return // Resolved conflict - keeping both versions\n// Ours:\n${ours}\n// Theirs:\n${theirs}"""
+          return // Resolved conflict - keeping both versions\n// Ours: \n${ours}\n// Theirs: \n${theirs}"""
         }
       );
       
@@ -572,7 +572,7 @@ class variable1 {
     
     try {
       // Get branches that havent been updated in 30 days
-      const { stdout } = await execAsync('git for-each-ref --format=%(refname:short) %(committerdate:iso)" refs/heads, {""
+      const { stdout } = await execAsync('git for-each-ref --format=%(refname: short) %(committerdate:iso)" refs/heads, {""
         cwd: "this.projectRoot""
       "});""
       
@@ -803,6 +803,6 @@ process.on(SIGINT, () => {
 });
 
 agent.start().catch(error => {
-  console.error(')Gi't Automation Agent failed to start:', error);''
+  console.error(')Gi't Automation Agent failed to start: ', error);''
   process.exit(1);
 }); </div>

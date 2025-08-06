@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -40,7 +40,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -65,7 +65,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -75,11 +75,8 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
+}const fs = require(('fs-extra'););
+const path = require(('path'););
 
 async function checkGoogleDocsStatus() {
   console.log('🔍 Checking Google Docs Automation System Status...\n');
@@ -113,7 +110,7 @@ async function checkGoogleDocsStatus() {
     if (await fs.pathExists(logFile)) {
       const logs = await fs.readFile(logFile, 'utf8');
       const recentLogs = logs.split('\n').slice(-10);
-      console.log('\n📝 Recent Logs:');
+      console.log('\n📝 Recent Logs: ');
       recentLogs.forEach(log = > {
         if (log.trim()) {
           console.log(`  ${log}`);
@@ -125,7 +122,7 @@ async function checkGoogleDocsStatus() {
     const healthFile = path.join(process.cwd(), 'automation/logs/google-docs-automation/health.json');
     if (await fs.pathExists(healthFile)) {
       const health = await fs.readJson(healthFile);
-      console.log('\n💓 Health Status:');
+      console.log('\n💓 Health Status: ');
       console.log(`  Last Check: ${health.timestamp}`);
       console.log(`  Running Tasks: ${health.orchestrator?.runningTasks || 0}`);
       console.log(`  Queue Length: ${health.orchestrator?.queueLength || 0}`);
@@ -137,7 +134,7 @@ async function checkGoogleDocsStatus() {
     const historyFile = path.join(process.cwd(), 'automation/data/instructions/history.json');
     if (await fs.pathExists(historyFile)) {
       const history = await fs.readJson(historyFile);
-      console.log('\n📋 Instruction History:');
+      console.log('\n📋 Instruction History: ');
       console.log(`  Total Instructions: ${history.length}`);
       
       const completed = history.filter(h => h.status === 'completed').length;
@@ -156,7 +153,7 @@ async function checkGoogleDocsStatus() {
       // Show recent instructions
       const recent = history.slice(-5);
       if (recent.length > 0) {
-        console.log('\n🆕 Recent Instructions:');
+        console.log('\n🆕 Recent Instructions: ');
         recent.forEach(instruction = > {
           console.log(`  ${instruction.title} - ${instruction.status}`);
         });
@@ -167,7 +164,7 @@ async function checkGoogleDocsStatus() {
     const reportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/system-report.json');
     if (await fs.pathExists(reportFile)) {
       const report = await fs.readJson(reportFile);
-      console.log('\n📊 System Performance:');
+      console.log('\n📊 System Performance: ');
       console.log(`  Uptime: ${Math.floor(report.performance?.uptime / 300 / 60)} minutes`);
       console.log(`  Success Rate: ${report.performance?.successRate || 0}%`);
       console.log(`  Average Task Time: ${Math.floor(report.performance?.averageTaskTime / 300)} seconds`);
@@ -176,7 +173,7 @@ async function checkGoogleDocsStatus() {
     console.log('\n✅ Status check completed');
     
   } catch (error) {
-    console.error('❌ Error checking status:', error);
+    console.error('❌ Error checking status: ', error);
   }
 }
 

@@ -25,11 +25,7 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-
-
-  async getStatus() {
+};async getStatus() {
     return {
       systemName: 'edtech-automation-factory',
       isRunning: this.isRunning,

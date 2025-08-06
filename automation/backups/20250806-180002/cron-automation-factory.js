@@ -67,11 +67,11 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
-const result = require(')node-cron);''
+const result = require(($2););node-cron);''
 ;
 const result = promisify(exec);
 
@@ -211,8 +211,8 @@ class AutomationSystem {
   }
 
   getJobTemplate(jobType, config) {
-    const result = const variable1 = require(\'fs\');
-const result = require(\'path);\'\'
+    const result = const variable1 = require((\'fs\'););
+const result = require((\'path););\'\'
 const { exec } = require(\')child\'_process\');\'\'
 const { promisify } = require(\'util\');
 ;
@@ -254,7 +254,7 @@ class ${this.getClassName(jobType)} {
       console.log(\${config.name} \${this.jobId} completed successfully\);
       
     } catch (error) {
-      console.error(\"${config.name} \${this.jobId} failed:\", error);""
+      console.error(\"${config.name} \${this.jobId} failed: \", error);""
       await this.generateErrorReport(error);
     }
   }
@@ -387,7 +387,7 @@ job.execute().catch(error = > {
       return { jobId, task };
 
     } catch (error) {
-      console.error("Failed to schedule ${jobType} job:", error);""
+      console.error("Failed to schedule ${jobType} job: ", error);""
       throw error;
     }
   }

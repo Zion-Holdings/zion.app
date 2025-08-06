@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 // Batch processing for high-speed file operations
 const writeBatch = {
@@ -74,9 +74,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -85,7 +85,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -129,16 +129,16 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
 // State management
 const STATE_FILE = path.join(__dirname, 'status-data', 'ultimate-automation-factory-state.json');
 
-function updateState(data) {
+function updateState() {
   try {
     let state = {
       isRunning: false,
@@ -170,11 +170,11 @@ function updateState(data) {
     
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
   } catch (error) {
-    console.error('Error updating state:', error.message);
+    console.error('Error updating state: ', error.message);
   }
 }
 
-function log(message) {
+function log() {
   const timestamp = new Date().toISOString();
   console.log(`🚀 [${timestamp}] ${message}`);
 }

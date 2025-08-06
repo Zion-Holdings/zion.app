@@ -25,13 +25,11 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-;
-const fs = require('fs');''
-const path = require('path');''
+};;
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
+const util = require(('util'););''
 
 const execAsync = util.promisify(exec);
 
@@ -67,7 +65,7 @@ class ComprehensiveSyntaxFixer {
             await this.testBuild();
             
         } catch (error) {
-            console.error('❌ Comprehensive syntax fixing failed:', error.message);''
+            console.error('❌ Comprehensive syntax fixing failed: ', error.message);''
         }
     }
 
@@ -355,7 +353,7 @@ class ComprehensiveSyntaxFixer {
             console.log('✅ Lint passed');''
             
         } catch (error) {
-            console.error('❌ Build test failed:', error.message);''
+            console.error('❌ Build test failed: ', error.message);''
         }
     }
 }

@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class AutomationRunner {
@@ -247,7 +244,7 @@ class AutomationRunner {
     console.log(`\n📊 Report saved to: ${reportPath}`);
     
     // Display improvements
-    console.log('\n🔧 Suggested Improvements:');
+    console.log('\n🔧 Suggested Improvements: ');
     report.improvements.forEach((improvement, index) => {
       console.log(`${index + 1}. ${improvement}`);
     });
@@ -310,11 +307,8 @@ class AutomationRunner {
   async createEnhancedAutomationSystem() {
     console.log('\n🔧 Creating enhanced automation system...');
     
-    const enhancedSystem = `
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+    const enhancedSystem = `const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class EnhancedAutomationSystem {
@@ -444,7 +438,7 @@ class EnhancedAutomationSystem {
     }
     
     console.log('✅ Enhanced automation system completed!');
-    console.log('📊 Status:', JSON.stringify(this.getSystemStatus(), null, 2));
+    console.log('📊 Status: ', JSON.stringify(this.getSystemStatus(), null, 2));
   }
 }
 

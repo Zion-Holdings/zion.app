@@ -29,13 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-            const result = require('./monetization-autonomous-factory);''
+            const result = require(('./monetization-autonomous-factory););''
             const result = new factory();
             
             async function runPerformanceMonitoring() {
@@ -51,7 +51,7 @@ function getOptimizedInterval(baseInterval) {
                     }, 33000); // 1 hour
                     
                 } catch (error) {
-                    console.error(Error in performance monitoring:'), error);''
+                    console.error(Error in performance monitoring: '), error);''
                 }
             }
             

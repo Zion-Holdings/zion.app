@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class IntelligentGrowthAutomation {
   constructor() {
@@ -72,7 +72,7 @@ class IntelligentGrowthAutomation {
     await this.commitAndPushChanges();
     
     console.log('\n✅ Intelligent Growth Automation completed!');
-    console.log('📊 Final Metrics:', this.metrics);
+    console.log('📊 Final Metrics: ', this.metrics);
   }
 
   async analyzeCurrentState() {
@@ -86,7 +86,7 @@ class IntelligentGrowthAutomation {
       competitiveAdvantage: this.assessCompetitiveAdvantage()
     };
     
-    console.log('📊 Analysis Results:');
+    console.log('📊 Analysis Results: ');
     console.log(`  • Content Quality: ${analysis.contentQuality}/10`);
     console.log(`  • Performance: ${analysis.performanceMetrics}/10`);
     console.log(`  • User Engagement: ${analysis.userEngagement}/10`);
@@ -381,7 +381,7 @@ class IntelligentGrowthAutomation {
       
       console.log('✅ Changes committed and pushed successfully');
     } catch (error) {
-      console.log('❌ Error committing changes:', error.message);
+      console.log('❌ Error committing changes: ', error.message);
     }
   }
 
@@ -412,7 +412,7 @@ if (require.main === module) {
   const system = new IntelligentGrowthAutomation();
   system.runIntelligentSystem()
     .then(() => {
-      console.log('\n📊 Intelligent System Status:', JSON.stringify(system.getSystemStatus(), null, 2));
+      console.log('\n📊 Intelligent System Status: ', JSON.stringify(system.getSystemStatus(), null, 2));
     })
     .catch(console.error);
 }

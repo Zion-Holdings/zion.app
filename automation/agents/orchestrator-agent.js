@@ -1,15 +1,12 @@
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 
 class OrchestratorAgent {
   constructor() {
@@ -71,7 +68,7 @@ class OrchestratorAgent {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 1200)); // 15 seconds
       } catch (error) {
-        console.error('❌ Error in orchestration loop:', error.message);
+        console.error('❌ Error in orchestration loop: ', error.message);
         await new Promise(resolve => setTimeout(resolve, 200)); // Wait 5 seconds on error
       }
     }
@@ -90,7 +87,7 @@ class OrchestratorAgent {
         timestamp: new Date().toISOString()
       };
       
-      console.log('📊 Health metrics:', healthMetrics);
+      console.log('📊 Health metrics: ', healthMetrics);
       
       // Check for unhealthy agents
       const unhealthyAgents = Array.from(this.agentRegistry.values())
@@ -102,7 +99,7 @@ class OrchestratorAgent {
       }
       
     } catch (error) {
-      console.error('Health monitoring error:', error.message);
+      console.error('Health monitoring error: ', error.message);
     }
   }
 
@@ -122,7 +119,7 @@ class OrchestratorAgent {
       }
       
     } catch (error) {
-      console.error('Task distribution error:', error.message);
+      console.error('Task distribution error: ', error.message);
     }
   }
 
@@ -154,7 +151,7 @@ class OrchestratorAgent {
     const bestAgent = availableAgents.reduce((best, current) => {
       const bestScore = best.intelligenceLevel * best.performance;
       const currentScore = current.intelligenceLevel * current.performance;
-      return currentScore > bestScore ? current : best;
+      return currentScore > bestScore ? current: best;
     });
     
     return bestAgent;
@@ -182,7 +179,7 @@ class OrchestratorAgent {
       
     } catch (error) {
       this.performance.tasksFailed++;
-      console.error(`❌ Task ${task.id} failed:`, error.message);
+      console.error(`❌ Task ${task.id} failed: `, error.message);
       this.learnFromExperience(task, { success: false, error: error.message });
     }
   }
@@ -215,10 +212,10 @@ class OrchestratorAgent {
         timestamp: new Date().toISOString()
       };
       
-      console.log('📈 Optimization metrics:', optimizationMetrics);
+      console.log('📈 Optimization metrics: ', optimizationMetrics);
       
     } catch (error) {
-      console.error('Resource optimization error:', error.message);
+      console.error('Resource optimization error: ', error.message);
     }
   }
 
@@ -275,7 +272,7 @@ class OrchestratorAgent {
 
   calculateAccuracy(prediction, actual) {
     // Simple accuracy calculation
-    return prediction.confidence > 0.5 ? 0.9 : 0.3;
+    return prediction.confidence > 0.5 ? 0.9: 0.3;
   }
 
   // Collaborative Intelligence Capabilities
@@ -371,7 +368,7 @@ class OrchestratorAgent {
       shutdownTime: new Date().toISOString()
     };
     
-    console.log('📊 Final metrics:', metrics);
+    console.log('📊 Final metrics: ', metrics);
     process.exit(0);
   }
 }
@@ -379,7 +376,7 @@ class OrchestratorAgent {
 // Start the agent
 const agent = new OrchestratorAgent();
 agent.initialize().catch(error => {
-  console.error('Failed to initialize orchestrator agent:', error);
+  console.error('Failed to initialize orchestrator agent: ', error);
   process.exit(1);
 });
 

@@ -70,21 +70,18 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 
 class SyncEnsurance {
   constructor() {
     this.id = 'sync-ensurance';
-    this.version = '1.0.0';
+    this.version = '1.0';
     this.status = 'running';
     this.checkInterval = 200; // 30 seconds
     this.processes = new Map();
@@ -115,7 +112,7 @@ class SyncEnsurance {
       console.log('✅ Sync Ensurance initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing Sync Ensurance:', error);
+      console.error('❌ Error initializing Sync Ensurance: ', error);
       this.status = 'error';
       throw error;
     }
@@ -174,7 +171,7 @@ class SyncEnsurance {
     });
     
     process.on('error', (error) => {
-      console.error(`[${scriptName}] Process error:`, error);
+      console.error(`[${scriptName}] Process error: `, error);
       this.handleProcessError(scriptName, error);
     });
   }
@@ -195,7 +192,7 @@ class SyncEnsurance {
   }
 
   handleProcessError(scriptName, error) {
-    console.error(`❌ ${scriptName} process error:`, error.message);
+    console.error(`❌ ${scriptName} process error: `, error.message);
     this.handleProcessExit(scriptName, 1);
   }
 
@@ -311,7 +308,7 @@ if (require.main === module) {
   });
   
   ensurance.initialize().catch(error => {
-    console.error('❌ Sync Ensurance initialization failed:', error);
+    console.error('❌ Sync Ensurance initialization failed: ', error);
     process.exit(1);
   });
 }

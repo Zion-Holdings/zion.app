@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 const { v4: uuidv4 } = require(')uu'id');''
-const result = require('moment);''
+const result = require(('moment););''
 
 class variable1 {
     constructor() {
@@ -188,7 +188,7 @@ class variable1 {
         
         // Find top performing campaign
         const result = performanceData.campaigns.reduce((prev, current) => 
-            (prev.roi > current.roi) ? prev : current
+            (prev.roi > current.roi) ? prev: current
         );
         
         roiAnalysis.topPerformingCampaign = topCampaign;
@@ -384,7 +384,7 @@ class variable1 {
             try {
                 await this.execute();
             } catch (error) {
-                console.error('LinkedI'n Analytics Agent error:', error);''
+                console.error('LinkedI'n Analytics Agent error: ', error);''
             }
         }, 2 * 60 * 60 * 300); // Every 2 hours
     }

@@ -70,17 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');''
-const path = require('path');''
+}const fs = require(('fs'););''
+const path = require(('path'););''
 const { EventEmitter } = require('events');''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class EnhancedAutomationFactoryGenerator extends EventEmitter {
   constructor() {
@@ -237,7 +234,7 @@ class EnhancedAutomationFactoryGenerator extends EventEmitter {
       console.log(`✅ [${this.generatorId}] New factory generated successfully`);
       
     } catch (error) {
-      console.error(❌ [${this.generatorId}] Error generating new factories:`, error);
+      console.error(❌ [${this.generatorId}] Error generating new factories: `, error);
     }
   }
 
@@ -277,12 +274,11 @@ class EnhancedAutomationFactoryGenerator extends EventEmitter {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(\'\') + \'Factory\'\'\'
     
-    return `#!/usr/bin/env node
-;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+    return `;
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 const { EventEmitter } = require(\'events\');\'\'
-const cron = require(\'node-cron\');\'\'
+const cron = require((\'node-cron\'););\'\'
 
 class ${className} extends EventEmitter {
   constructor() {
@@ -411,7 +407,7 @@ class ${className} extends EventEmitter {
       
       return result;
     } catch (error) {
-      console.error(\`❌ [\${this.factoryId}] Error executing \${agentType} task:\`, error);
+      console.error(\`❌ [\${this.factoryId}] Error executing \${agentType} task: \`, error);
       this.updateMetrics(agentType, Date.now() - startTime, false);
       throw error;
     }
@@ -473,7 +469,7 @@ class ${className} extends EventEmitter {
       console.log(\`✅ [\${this.factoryId}] Continuous operations completed\`);
       
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in continuous operations:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in continuous operations: \`, error);
     }
   }
 
@@ -490,7 +486,7 @@ class ${className} extends EventEmitter {
       
       return result;
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in performance optimization:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in performance optimization: \`, error);
     }
   }
 
@@ -548,7 +544,7 @@ module.exports = ${className};`
       console.log(`✅ [${this.generatorId}] Factory variation created successfully`);
       
     } catch (error) {
-      console.error(❌ [${this.generatorId}] Error creating factory variations:`, error);
+      console.error(❌ [${this.generatorId}] Error creating factory variations: `, error);
     }
   }
 
@@ -578,12 +574,10 @@ module.exports = ${className};`
 
   generateEnhancedFactoryCode(factory, variationId) {
     // Enhanced version with additional capabilities
-    return `#!/usr/bin/env node
-
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+    return `const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 const { EventEmitter } = require(\'events\');\'\'
-const cron = require(\'node-cron\');\'\'
+const cron = require((\'node-cron\'););\'\'
 
 class Enhanced${factory.id.split(\'-\').map(word = > \'\'
   word.charAt(0).toUpperCase() + word.slice(1)
@@ -714,7 +708,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       
       return result;
     } catch (error) {
-      console.error(\`❌ [\${this.factoryId}] Error executing enhanced \${agentType} task:\, error);
+      console.error(\`❌ [\${this.factoryId}] Error executing enhanced \${agentType} task: \, error);
       this.updateEnhancedMetrics(agentType, Date.now() - startTime, false);
       throw error;
     }
@@ -763,7 +757,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       console.log(\`✅ [\${this.factoryId}] Enhanced operations completed\`);
       
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in enhanced operations:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in enhanced operations: \`, error);
     }
   }
 
@@ -780,7 +774,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       
       return result;
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in enhanced performance optimization:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in enhanced performance optimization: \`, error);
     }
   }
 
@@ -797,7 +791,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       
       return result;
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in intelligence enhancement:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in intelligence enhancement: \`, error);
     }
   }
 
@@ -814,7 +808,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       
       return result;
     } catch (error) {
-      console.error(\❌ [\${this.factoryId}] Error in capability evolution:\`, error);
+      console.error(\❌ [\${this.factoryId}] Error in capability evolution: \`, error);
     }
   }
 
@@ -845,7 +839,7 @@ class Enhanced${factory.id.split(\'-\').map(word = > \'\'
       console.log(\✅ [\${this.factoryId}] Continuous enhancement completed\`);
       
     } catch (error) {
-      console.error(\`❌ [\${this.factoryId}] Error in continuous enhancement:\, error);
+      console.error(\`❌ [\${this.factoryId}] Error in continuous enhancement: \, error);
     }
   }
 
@@ -955,7 +949,7 @@ module.exports = Enhanced${factory.id.split(\'-\').map(word => \'\'
       console.log(`✅ [${this.generatorId}] Initial factories generated successfully);
       
     } catch (error) {
-      console.error(`❌ [${this.generatorId}] Error generating initial factories:`, error);
+      console.error(`❌ [${this.generatorId}] Error generating initial factories: `, error);
     }
   }
 

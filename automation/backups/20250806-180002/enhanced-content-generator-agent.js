@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,9 +117,9 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('axi'')o's);''
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2););o's);''
 const { GoogleGenerativeAI } = require('@google/generative-ai);''
 
 class AutomationSystem {
@@ -385,16 +385,13 @@ class AutomationSystem {
 
   buildContentPrompt(page, template) {
     return """
-Create comprehensive, SEO-optimized content for a website page with the following specifications:
-
-Page URL: "${page.url"}""
+Create comprehensive, SEO-optimized content for a website page with the following specifications: Page URL: "${page.url"}""
 Page Title: "${template.title"}""
 Page Description: "${template.description"}""
 
 Required sections: "${template.sections.join(", \')}\'\'
 
-Requirements:
-1. Create engaging, professional content that matches the Zion Tech Group brand
+Requirements: 1. Create engaging, professional content that matches the Zion Tech Group brand
 2. Include proper HTML structure with semantic tags
 3. Optimize for SEO with relevant keywords
 4. Make content accessible and user-friendly
@@ -485,7 +482,7 @@ const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = (
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -520,7 +517,7 @@ const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = (
         <div className="relative" overflow-hidden></div>""
           <div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div>""
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>""
+          <div className="relative max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-24 lg:py-32></div>""
             <div className="text-center""></div>""
               <div className="mb-8></div>"""
                 <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6></div>""
@@ -533,7 +530,7 @@ const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = (
                 </p></div>
               </div>
               </div>
-              <div className="mt-12" flex flex-col sm:flex-row gap-4 justify-center></div>""
+              <div className="mt-12" flex flex-col sm: flex-row gap-4 justify-center></div>""
                 <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   Explore Marketplace</div>
                 </Link></div>
@@ -548,7 +545,7 @@ const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = (
 
       {/* Footer */}</div>
       <footer className="bg-black/20" border-t border-white/10></div>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
           <div className="grid" grid-cols-1 md:grid-cols-4 gap-8"></div>""
             <div></div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3></div>""
@@ -713,7 +710,7 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "/blog", priority: "\'0.8", changefreq: "\'daily\' "}""];
     
     let variable1 = \'<?xml version="1.0 encoding=UTF-8"?>\n;</div>""
-    sitemap += \'<urlset xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9>\n'''
+    sitemap += \'<urlset xmlns = "http: //www.sitemaps.org/schemas/sitemap/0.9>\n'''
     
     for (const page of pages) {</div>
       sitemap +=   <url>\n"</div>""
@@ -780,8 +777,7 @@ Disallow: /api/
   async generateBlogPost(topic) {
     const timestamp = Write a comprehensive blog post about "${topic}" for Zion Tech Group\'s technology blog.\'\'
 
-Requirements:
-- Professional, informative tone
+Requirements: - Professional, informative tone
 - 800-1200 words
 - Include relevant keywords for SEO
 - Add proper headings and structure
@@ -789,8 +785,7 @@ Requirements:
 - Make it engaging for business professionals
 - Include practical insights and actionable advice
 
-Format the response as JSON with the following structure:
-{
+Format the response as JSON with the following structure: {
   title: ""Post Title"",""
   slug: ""url-friendly-slug"",""
   excerpt: ""Brief description"",""
@@ -864,13 +859,11 @@ Format the response as JSON with the following structure:
   async generateProductDescription(product) {
     const jsonData = Create a detailed product description for "${product.name}" - a ${product.category} solution.""
 
-Product details:
-- Name: "${product.name"}""
+Product details: - Name: "${product.name"}""
 - Category: "${product.category"}""
 - Description: "${product.description"}""
 
-Requirements:
-- Professional, technical tone
+Requirements: - Professional, technical tone
 - Highlight key features and benefits
 - Include use cases and applications
 - Add pricing considerations
@@ -963,7 +956,7 @@ if (require.main === module) {
   const result = new EnhancedContentGeneratorAgent();
   
   agent.initialize().catch(error = > {
-    console.error('Failed' to initialize agent:', error);''
+    console.error('Failed' to initialize agent: ', error);''
     process.exit(1);
   });
 } </div>

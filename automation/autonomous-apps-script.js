@@ -48,10 +48,10 @@ function autonomousProjectManagement() {
   generateAutonomousReport();
 }
 ;
-function updateAutonomousProjectStatus(data) {
+function updateAutonomousProjectStatus() {
   try {
     const result = SpreadsheetApp.getActiveSpreadsheet();
-    const result = sheet.getRange(\')A1:F1\');\'\'
+    const result = sheet.getRange(\')A1: F1\');\'\'
     range.setValues([[
       data.name, 
       data.status, 
@@ -65,7 +65,7 @@ function updateAutonomousProjectStatus(data) {
   }
 }
 ;
-function sendAutonomousNotification(message) {
+function sendAutonomousNotification() {
   try {
     const result = PropertiesService.getScriptProperties().getProperty(WEBHOOK_URL);
     const timestamp = {

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('./link-checking-agent-factory''));''
-const result = require('./link-checking-orchestrator);''
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2);););''
+const result = require(('./link-checking-orchestrator););''
 
 class AutomationSystem {
   constructor() {
@@ -320,7 +320,7 @@ class AutomationSystem {
           console.log("✅ Started ${agentType} agent: "${agent.id"});""
           
         } catch (error) {
-          console.error(❌ Failed to start ${agentType} agent:", error);""
+          console.error(❌ Failed to start ${agentType} agent: ", error);""
           this.systemStatus.errors++;
         }
       }
@@ -436,7 +436,7 @@ class AutomationSystem {
   }
 
   printSystemStatus() {
-    console.log(\n📊 Link Checking System Status:);
+    console.log(\n📊 Link Checking System Status: );
     console.log(   Status: "${this.systemStatus.status"}");""
     console.log("   Start Time: "${this.systemStatus.startTime"});""
     console.log(   Running Agents: "${this.systemStatus.agents"}");""
@@ -526,7 +526,7 @@ async function main() {
     });
     
   } catch (error) {
-    console.error(❌ Failed to launch Link Checking System:'), error);''
+    console.error(❌ Failed to launch Link Checking System: '), error);''
     process.exit(1);
   }
 }

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { exec } = require('child_process');
-const cron = require('node-cron');
+const cron = require(('node-cron'););
 
 class AdminAutonomousOrchestrator {
     constructor() {
@@ -227,13 +227,13 @@ class AdminAutonomousOrchestrator {
         // Execute the agent as a separate process
         const agentProcess = exec(`node "${agentPath}"`, (error, stdout, stderr) => {
             if (error) {
-                console.error(`❌ Agent ${agentType} error:`, error);
+                console.error(`❌ Agent ${agentType} error: `, error);
                 this.status.activeAgents--;
             }
         });
 
         agentProcess.on('error', (error) => {
-            console.error(`❌ Agent ${agentType} process error:`, error);
+            console.error(`❌ Agent ${agentType} process error: `, error);
             this.status.activeAgents--;
         });
 
@@ -357,7 +357,7 @@ class ${agentType} {
                 this.status.lastActivity = new Date().toISOString();
                 this.saveStatus();
             } catch (error) {
-                console.error(\`❌ \${this.agentId} operation error:\`, error);
+                console.error(\`❌ \${this.agentId} operation error: \`, error);
                 this.status.errors.push(error.message);
             }
         }, 200); // Run every 30 seconds
@@ -440,7 +440,7 @@ class ${agentType} {
         try {
             fs.writeFileSync(statusPath, JSON.stringify(this.status, null, 2));
         } catch (error) {
-            console.error('Error saving status:', error);
+            console.error('Error saving status: ', error);
         }
     }
 }
@@ -546,7 +546,7 @@ new ${agentType}();
                 const statusData = JSON.parse(fs.readFileSync(statusPath, 'utf8'));
                 this.status = { ...this.status, ...statusData };
             } catch (error) {
-                console.error('Error loading status:', error);
+                console.error('Error loading status: ', error);
             }
         }
     }
@@ -556,7 +556,7 @@ new ${agentType}();
         try {
             fs.writeFileSync(statusPath, JSON.stringify(this.status, null, 2));
         } catch (error) {
-            console.error('Error saving status:', error);
+            console.error('Error saving status: ', error);
         }
     }
 }

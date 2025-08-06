@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class AgentPerformanceMonitor {
     constructor() {
@@ -19,7 +19,7 @@ class AgentPerformanceMonitor {
             this.saveResult(result);
             return result;
         } catch (error) {
-            console.error('Error in AgentPerformanceMonitor:', error);
+            console.error('Error in AgentPerformanceMonitor: ', error);
             throw error;
         }
     }

@@ -67,10 +67,10 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 const { v4: uuidv4 } = require(')uu'id');''
-const result = require('moment);''
+const result = require(('moment););''
 
 class AutomationSystem {
     constructor() {
@@ -378,7 +378,7 @@ class AutomationSystem {
             await this.registerAgents(newAgents);
             
         } catch (error) {
-            console.error(Error deploying agents:\'), error.message);\'\'
+            console.error(Error deploying agents: \'), error.message);\'\'
         }
     }
 
@@ -401,12 +401,12 @@ class AutomationSystem {
     // Template methods
     getResearchAgentTemplate() {
         return 
-const result = require(\'fs-extra\');
-const result = require(\'path\');
-const result = require(\')axi\'os\');\'\'
-const result = require(\'cheerio);\'\'
-const result = require(\'puppeteer\');
-const result = require(\')mome\'nt\');\'\'
+const result = require((\'fs-extra\'););
+const result = require((\'path\'););
+const result = require(($2););axi\'os\');\'\'
+const result = require((\'cheerio););\'\'
+const result = require((\'puppeteer\'););
+const result = require(($2););mome\'nt\');\'\'
 
 class {{agentName}} {
     constructor() {
@@ -452,8 +452,8 @@ class {{agentName}} {
     }
 
     async saveResults(results) {
-        const result = require(\'fs-extra\');
-        const result = require(\')pa\'th\');\'\'
+        const result = require((\'fs-extra\'););
+        const result = require(($2););pa\'th\');\'\'
         
         const filePath = path.join(__dirname, \'.., \'marketing-resear\'ch\', \'research, \"research-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, results);
@@ -473,9 +473,9 @@ module.exports = {{agentName}};
 
     getContentAgentTemplate() {
         return 
-const result = require(\'fs-ext\'r\'a\');\'\'
-const result = require(\'path);\'\'
-const result = require(\')moment);\'\'
+const result = require((\'fs-ext\'r\'a\'););\'\'
+const result = require((\'path););\'\'
+const result = require(($2););moment);\'\'
 
 class {{agentName}} {
     constructor() {
@@ -521,8 +521,8 @@ class {{agentName}} {
     }
 
     async saveContent(content) {
-        const result = require(\'fs-extra);\'\'
-        const result = require(\')path);\'\'
+        const result = require((\'fs-extra););\'\'
+        const result = require(($2););path);\'\'
         
         const filePath = path.join(__dirname, ..\', \'marketing-campaigns, conte\'n\'t, \"content-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, content);
@@ -542,10 +542,10 @@ module.exports = {{agentName}};
 
     getSocialAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'axi\'o\'s\');\'\'
-const result = require(\'moment);\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'axi\'o\'s\'););\'\'
+const result = require((\'moment););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -591,8 +591,8 @@ class {{agentName}} {
     }
 
     async saveResults(results) {
-        const result = require(\'fs-extra\');
-        const result = require(\')pa\'th\');\'\'
+        const result = require((\'fs-extra\'););
+        const result = require(($2););pa\'th\');\'\'
         
         const filePath = path.join(__dirname, \'.., \'marketing-campaig\'ns\', \'social, \"social-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, results);
@@ -612,9 +612,9 @@ module.exports = {{agentName}};
 
     getEmailAgentTemplate() {
         return 
-const result = require(\'fs-ext\'r\'a\');\'\'
-const result = require(\'path);\'\'
-const result = require(\')moment);\'\'
+const result = require((\'fs-ext\'r\'a\'););\'\'
+const result = require((\'path););\'\'
+const result = require(($2););moment);\'\'
 
 class {{agentName}} {
     constructor() {
@@ -660,8 +660,8 @@ class {{agentName}} {
     }
 
     async saveCampaigns(campaigns) {
-        const result = require(\'fs-extra);\'\'
-        const result = require(\')path);\'\'
+        const result = require((\'fs-extra););\'\'
+        const result = require(($2););path);\'\'
         
         const filePath = path.join(__dirname, ..\', \'marketing-campaigns, ema\'i\'l, \"email-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, campaigns);
@@ -681,10 +681,10 @@ module.exports = {{agentName}};
 
     getSEOAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'axi\'o\'s\');\'\'
-const result = require(\'moment);\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'axi\'o\'s\'););\'\'
+const result = require((\'moment););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -730,8 +730,8 @@ class {{agentName}} {
     }
 
     async saveOptimizations(optimizations) {
-        const result = require(\'fs-extra\');
-        const result = require(\')pa\'th\');\'\'
+        const result = require((\'fs-extra\'););
+        const result = require(($2););pa\'th\');\'\'
         
         const filePath = path.join(__dirname, \'.., \'marketing-campaig\'ns\', \'seo, \"seo-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, optimizations);
@@ -751,10 +751,10 @@ module.exports = {{agentName}};
 
     getInfluencerAgentTemplate() {
         return 
-const result = require(\'fs-ext\'r\'a\');\'\'
-const result = require(\'path);\'\'
-const result = require(\')axios);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-ext\'r\'a\'););\'\'
+const result = require((\'path););\'\'
+const result = require(($2););axios);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -800,8 +800,8 @@ class {{agentName}} {
     }
 
     async saveOutreach(outreach) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-campaigns, \'influenc\'er\', \"influencer-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, outreach);
@@ -821,9 +821,9 @@ module.exports = {{agentName}};
 
     getAdAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\'path\');
-const result = require(\')mome\'nt\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require((\'path\'););
+const result = require(($2););mome\'nt\');\'\'
 
 class {{agentName}} {
     constructor() {
@@ -869,8 +869,8 @@ class {{agentName}} {
     }
 
     async saveCampaigns(campaigns) {
-        const result = require(\'fs-extra\');
-        const result = require(\')pa\'th\');\'\'
+        const result = require((\'fs-extra\'););
+        const result = require(($2););pa\'th\');\'\'
         
         const filePath = path.join(__dirname, \'.., \'marketing-campaig\'ns\', \'ads, \"ads-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, campaigns);
@@ -890,9 +890,9 @@ module.exports = {{agentName}};
 
     getAnalyticsAgentTemplate() {
         return 
-const result = require(\'fs-ext\'r\'a\');\'\'
-const result = require(\'path);\'\'
-const result = require(\')moment);\'\'
+const result = require((\'fs-ext\'r\'a\'););\'\'
+const result = require((\'path););\'\'
+const result = require(($2););moment);\'\'
 
 class {{agentName}} {
     constructor() {
@@ -938,8 +938,8 @@ class {{agentName}} {
     }
 
     async saveAnalytics(analytics) {
-        const result = require(\'fs-extra);\'\'
-        const result = require(\')path);\'\'
+        const result = require((\'fs-extra););\'\'
+        const result = require(($2););path);\'\'
         
         const filePath = path.join(__dirname, ..\', \'marketing-analytics, metri\'c\'s, \"analytics-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, analytics);
@@ -959,9 +959,9 @@ module.exports = {{agentName}};
 
     getAutomationAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -1007,8 +1007,8 @@ class {{agentName}} {
     }
 
     async saveResults(results) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-automation, \"automation-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, results);
@@ -1028,9 +1028,9 @@ module.exports = {{agentName}};
 
     getOptimizationAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -1076,8 +1076,8 @@ class {{agentName}} {
     }
 
     async saveOptimizations(optimizations) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-optimization, \"optimization-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, optimizations);
@@ -1097,9 +1097,9 @@ module.exports = {{agentName}};
 
     getGenericAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -1145,8 +1145,8 @@ class {{agentName}} {
     }
 
     async saveResults(results) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-results, \"results-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, results);
@@ -1166,9 +1166,9 @@ module.exports = {{agentName}};
 
     getSpecializedAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -1215,8 +1215,8 @@ class {{agentName}} {
     }
 
     async saveResults(results) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-results, \"specialized-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, results);
@@ -1236,9 +1236,9 @@ module.exports = {{agentName}};
 
     getOptimizationAgentTemplate() {
         return 
-const result = require(\'fs-extra);\'\'
-const result = require(\')path);\'\'
-const result = require(\'mome\'n\'t\');\'\'
+const result = require((\'fs-extra););\'\'
+const result = require(($2););path);\'\'
+const result = require((\'mome\'n\'t\'););\'\'
 
 class {{agentName}} {
     constructor() {
@@ -1285,8 +1285,8 @@ class {{agentName}} {
     }
 
     async saveOptimizations(optimizations) {
-        const result = require(\'fs-extra\');
-        const result = require(\'path\');
+        const result = require((\'fs-extra\'););
+        const result = require((\'path\'););
         
         const filePath = path.join(__dirname, \')..\', marketing-optimization, \"optimization-\${this.id}-\${Date.now()}.json\");""
         await fs.writeJson(outputPath, optimizations);
@@ -1374,7 +1374,7 @@ module.exports = {{agentName}};
         
         // Schedule all agent factory tasks
         Object.entries(this.schedules).forEach(([task, schedule]) => {
-            const result = require(\'node-cron\'\'));\'\'
+            const result = require(($2);););\'\'
             cron.schedule(schedule, async () => {
                 try {
                     await this.executeTask(task);
@@ -1394,10 +1394,10 @@ module.exports = {{agentName}};
             case agentCreation'):''
                 await this.execute();
                 break;
-            case 'agentOptimization:''
+            case 'agentOptimization: ''
                 await this.optimizeExistingAgents({});
                 break;
-            case agentClean'u'p:''
+            case agentClean'u'p: ''
                 await this.cleanupOldAgents();
                 break;
             case 'performanceAnalys'is':''

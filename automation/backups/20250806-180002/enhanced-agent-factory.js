@@ -29,15 +29,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 
 class EnhancedAgentFactory {
   constructor() {
@@ -160,10 +157,10 @@ class EnhancedAgentFactory {
       this.startQualityControl();
       
       console.log('🎉 Enhanced Agent Factory is now running!');
-      console.log('📊 Factory Status:', this.getFactoryStatus());
+      console.log('📊 Factory Status: ', this.getFactoryStatus());
       
     } catch (error) {
-      console.error('❌ Error starting agent generation:', error);
+      console.error('❌ Error starting agent generation: ', error);
       this.handleFactoryError(error);
     }
   }
@@ -372,7 +369,7 @@ class EnhancedAgentFactory {
       timestamp: new Date().toISOString()
     };
     
-    console.log('📊 Factory Health:', health);
+    console.log('📊 Factory Health: ', health);
   }
 
   performQualityControl() {
@@ -421,7 +418,7 @@ class EnhancedAgentFactory {
   }
 
   handleFactoryError(error) {
-    console.error('❌ Factory error:', error);
+    console.error('❌ Factory error: ', error);
     
     // Implement error recovery
     setTimeout(() => {

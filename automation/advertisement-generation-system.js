@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { v4: uuidv4 } = require('uu'')i'd);''
 
 class AutomationSystem {

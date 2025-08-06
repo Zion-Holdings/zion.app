@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ContinuousWorkingAutomation {
   constructor() {
@@ -55,7 +55,7 @@ class ContinuousWorkingAutomation {
       await this.performHealthCheck();
       
       console.log(`✅ Cycle ${this.metrics.cycles} completed!`);
-      console.log('📊 Current Metrics:', this.metrics);
+      console.log('📊 Current Metrics: ', this.metrics);
       
     } catch (error) {
       console.error(`❌ Error in cycle ${this.metrics.cycles}:`, error.message);
@@ -183,7 +183,7 @@ if (require.main === module) {
   
   automation.start()
     .then(() => {
-      console.log('\n📊 Initial Status:', JSON.stringify(automation.getStatus(), null, 2));
+      console.log('\n📊 Initial Status: ', JSON.stringify(automation.getStatus(), null, 2));
     })
     .catch(console.error);
 }

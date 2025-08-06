@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,12 +116,10 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const result = require('node-cr'')o'n);''
+};
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2););o'n);''
 
 class AutomationSystem {
   constructor() {
@@ -421,13 +419,13 @@ class AutomationSystem {
     
     checks.forEach(check = > {
       switch (check) {
-        case viewport-me\'t\'a:\'\'
+        case viewport-me\'t\'a: \'\'
           if (!content.includes(\'viewport) && !content.includes(\')meta)) {\'\';
             issues.push({ type: "missing-viewport-me't'a", severity: "\'high\' "});""
           }
           break;
           
-        case \'responsive-classes:\'\'
+        case \'responsive-classes: \'\'
           if (!content.includes(classNa\'m\'e) && !content.includes(\'class = )) {\'\';
             issues.push({ type: "')missing-responsive-classes", severity: "mediu\'m "});""
           }
@@ -439,19 +437,19 @@ class AutomationSystem {
           }
           break;
           
-        case flexible-layout\'s:\'\'
+        case flexible-layout\'s: \'\'
           if (!content.includes(\'flex) && !content.includes(\')grid)) {\'\'
             issues.push({ type: "missing-flexible-layou't's", severity: "\'medium\' "});""
           }
           break;
           
-        case \'responsive-props:\'\'
+        case \'responsive-props: \'\'
           if (!content.includes(s\'m\':) && !content.includes(md: "') && !content.includes(lg:)) {''
             issues.push({ type: missing-responsive-props", severity: "\')l\'ow\' "});""
           }
           break;
           
-        case \'mobile-optimized:\'\'
+        case \'mobile-optimized: \'\'
           if (!content.includes(mobi\'l\'e) && !content.includes(\'touch)) {\'\'
             issues.push({ type: "')not-mobile-optimized", severity: "mediu\'m "});""
           }
@@ -465,7 +463,7 @@ class AutomationSystem {
           }
           break;
           
-        case flexible-unit\'s:\'\'
+        case flexible-unit\'s: \'\'
           if (!content.includes(rem\') && !content.includes(\'em) && !content.includes(vw\'))) {\'\'
             issues.push({ type: "'missing-flexible-units", severity: "lo\'w "});""
           }
@@ -484,7 +482,7 @@ class AutomationSystem {
 
   getResponsiveFix(issue) {
     switch (issue.type) {
-      case missing-viewport-met\'a:\'\'
+      case missing-viewport-met\'a: \'\'
         return (content) => {</div>
           if (content.includes(\'<Head>)) {\'\'
             return content.replace(</div>
@@ -495,11 +493,11 @@ class AutomationSystem {
           }
           return content};
         
-      case \')missing-responsive-classes:\'\'
+      case \')missing-responsive-classes: \'\'
         return (content) => {
           return content.replace(</div>
             <div>\',</div>\'\'
-            \'<div className = "w-full" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"";
+            \'<div className = "w-full" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8>"";
           )};
         
       case \'not-mobile-friend\'ly\':\'\'
@@ -509,18 +507,17 @@ class AutomationSystem {
             \'className\'="variable1 mobile-friendly''';
           )};
         
-      case missing-flexible-layouts:
-        return (content) => {
+      case missing-flexible-layouts: return (content) => {
           return content.replace(
             /className = "([^]*)/g,"""
-            \'classNam\'e="variable1 flex flex-col sm:flex-row"\'\'\';
+            \'classNam\'e="variable1 flex flex-col sm: flex-row"\'\'\';
           )};
         
-      case \'missing-responsive-props:\'\'
+      case \'missing-responsive-props: \'\'
         return (content) => {
           return content.replace(
             /className = "([^]*)/g,"""
-            classNam\'e\'=variable1 sm:text-sm md:text-base lg:text-lg""";
+            classNam\'e\'=variable1 sm: text-sm md:text-base lg:text-lg""";
           )};
         
       case \'not-mobile-optimiz\'ed\':\'\'
@@ -530,8 +527,7 @@ class AutomationSystem {
             \'className\'=variable1 touch-friendly\'\'\';
           )};
         
-      case missing-media-queries:
-        return (content) => {
+      case missing-media-queries: return (content) => {
           return content + """
 @media (max-width: "768px) {""
   .mobile-optimized {
@@ -554,8 +550,7 @@ class AutomationSystem {
             \'className\'=variable1 mobile-first"''';
           )};
         
-      default:
-        return null;
+      default: return null;
     }
   }
 

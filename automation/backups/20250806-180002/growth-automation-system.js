@@ -25,12 +25,8 @@ const memoryOptimization = {
       }
     }
   }
-};
-
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+};const fs = require(('fs'););
+const path = require(('path'););
 
 class GrowthAutomationSystem {
   constructor() {
@@ -69,7 +65,7 @@ class GrowthAutomationSystem {
     await this.optimizePartnerships();
     
     console.log('✅ Growth automation completed!');
-    console.log('📊 Growth metrics:', this.metrics);
+    console.log('📊 Growth metrics: ', this.metrics);
   }
 
   async optimizeOrganicSearch() {

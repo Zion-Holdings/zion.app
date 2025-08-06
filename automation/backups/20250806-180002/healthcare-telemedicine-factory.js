@@ -70,15 +70,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class AutomationSystem {
   constructor() {
@@ -314,8 +314,8 @@ class AutomationSystem {
 
   generatePatientCareAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -399,8 +399,8 @@ module.exports = PatientCareAgent;
 
   generateTelemedicineAgent() {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -484,8 +484,8 @@ module.exports = TelemedicineAgent;
 
   generateHealthMonitoringAgent() {
     return """
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -569,8 +569,8 @@ module.exports = HealthMonitoringAgent;
 
   generatePharmacyAgent() {
     return 
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -654,8 +654,8 @@ module.exports = PharmacyAgent;
 
   generateMentalHealthAgent() {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -739,8 +739,8 @@ module.exports = MentalHealthAgent;
 
   generatePreventiveCareAgent() {
     return 
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -824,8 +824,8 @@ module.exports = PreventiveCareAgent;
 
   generateHIPAAComplianceAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -909,8 +909,8 @@ module.exports = HIPAAComplianceAgent;
 
   generateMedicalRecordsAgent() {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -994,8 +994,8 @@ module.exports = MedicalRecordsAgent;
 
   generateHealthAnalyticsAgent() {
     return """
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -1079,8 +1079,8 @@ module.exports = HealthAnalyticsAgent;
 
   generateClinicalDecisionAgent() {
     return 
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -1164,8 +1164,8 @@ module.exports = ClinicalDecisionAgent;
 
   generateGenericAgent(type, config) {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -1405,7 +1405,7 @@ module.exports = HealthcareTelemedicineFactory;
 if (require.main === module) {
   const result = new HealthcareTelemedicineFactory();
   console.log('🏭 Healthcare Telemedicine Factory started successfully);''
-  console.log('📊 Factory Status:', factory.getFactoryStatus());''
+  console.log('📊 Factory Status: ', factory.getFactoryStatus());''
 } 
 
   async getStatus() {

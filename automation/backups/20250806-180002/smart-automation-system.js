@@ -26,11 +26,11 @@ const memoryOptimization = {
     }
   }
 };
-const fs = require('fs-extra');''
-const path = require('path');''
+const fs = require(('fs-extra'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
-const cron = require('node-cron');''
+const util = require(('util'););''
+const cron = require(('node-cron'););''
 
 const execAsync = util.promisify(exec);
 
@@ -81,7 +81,7 @@ class SmartAutomationSystem {
             
             console.log(\'✅ Smart Automation System completed successfully\');\'\'
         } catch (error) {
-            console.error(\'❌ Smart Automation System failed:\', error);\'\'
+            console.error(\'❌ Smart Automation System failed: \', error);\'\'
             throw error;
         }
     }
@@ -104,8 +104,7 @@ class SmartAutomationSystem {
                 return await this.measureBuildPerformance();
             case \'securityMonitoring\':\'\'
                 return await this.measureSecurityPerformance();
-            default:
-                return 0.7;
+            default: return 0.7;
         }
     }
 
@@ -138,7 +137,7 @@ class SmartAutomationSystem {
         try {
             const { stdout } = await execAsync(\'npm audit --audit-level=high\', { cwd: "this.projectRoot "});""
             const hasVulnerabilities = stdout.includes(\'found\') && !stdout.includes(\'0 vulnerabilities found\');\'\'
-            return hasVulnerabilities ? 0.3 : 0.9;
+            return hasVulnerabilities ? 0.3: 0.9;
         } catch (error) {
             return 0.5;
         }
@@ -247,7 +246,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch((error) => {
-            console.error('\n💥 Smart Automation System failed:', error);''
+            console.error('\n💥 Smart Automation System failed: ', error);''
             process.exit(1);
         });
 }

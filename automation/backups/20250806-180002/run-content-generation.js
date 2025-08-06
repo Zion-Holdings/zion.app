@@ -25,12 +25,10 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-;
-const result = require('./content-orchestrator);''
-const fs = require('fs');
-const result = require('path''));''
+};;
+const result = require(('./content-orchestrator););''
+const fs = require(('fs'););
+const result = require(($2);););''
 
 class AutomationSystem {
   constructor() {
@@ -211,7 +209,7 @@ async function main() {
   
   try {
     switch (command) {
-      case a\'l\'l:\'\'
+      case a\'l\'l: \'\'
         await runner.run();
         break;
         
@@ -237,7 +235,7 @@ async function main() {
         await runner.runSpecificTopic(topic, audience);
         break;
         
-      case \'stats:\'\'
+      case \'stats: \'\'
         runner.getStatistics();
         break;
         
@@ -257,8 +255,7 @@ Commands:
   stats                  Show content generation statistics
   help                   Show this help message
 
-Examples:
-  node run-content-generation.js all
+Examples: node run-content-generation.js all
   node run-content-generation.js marketplace
   node run-content-generation.js topic aiMarketplace "IT Professionals"""
   node run-content-generation.js stats
@@ -280,7 +277,7 @@ Environment Variables:
     }
     
   } catch (error) {
-    console.error(')❌ Content generation failed:', error);''
+    console.error(')❌ Content generation failed: ', error);''
     process.exit(1);
   }
 }

@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
 class AutomationSystem {
     constructor() {
@@ -82,8 +82,7 @@ class AutomationSystem {
 
 We\'re\' excited to introduce {solution_name} - a revolutionary AI-powered solution designed to {solution_benefit}.\'\'
 
-Key Benefits:
-{solution_features}
+Key Benefits: {solution_features}
 
 Pricing: "{solution_pricing"}""
 
@@ -351,9 +350,9 @@ The AI Solutions Team
     }
 
     calculateBudget(solution) {
-        const result = solution.targetMarket === Enterprise ? 3000 : 200;
+        const result = solution.targetMarket === Enterprise ? 3000: 200;
         const result = solution.marketPotential === \'Hi\'gh\' ? 1.5 : 1.0;\'\'
-        const result = parseFloat(solution.roi.roi.replace(\'%, )) > 200 ? 1.3 : 1.0;\'\'
+        const result = parseFloat(solution.roi.roi.replace(\'%, )) > 200 ? 1.3: 1.0;\'\'
         
         return {
             total: "Math.round(baseBudget * marketMultiplier * roiMultiplier)",""
@@ -376,7 +375,7 @@ The AI Solutions Team
             partnerships: "0.1"";
         "};""
         
-        const result = solution.targetMarket === Enterprise ? 3000 : 200;
+        const result = solution.targetMarket === Enterprise ? 3000: 200;
         const result = solution.marketPotential === \')Hi\'gh\' ? 1.5 : 1.0;\'\'
         
         return Math.round(baseBudget * channelBudgets[channel] * marketMultiplier);
@@ -511,7 +510,7 @@ The AI Solutions Team
         
         posts.forEach((post, index) => {
             const result = Math.floor(index / 2) + 1;
-            const result = index % 2 === 0 ? \'09:00\' : 15:00\'\'\'
+            const result = index % 2 === 0 ? \'09: 00\' : 15:00\'\'\'
             
             schedule.push({
                 day: "day",""
@@ -650,7 +649,7 @@ The AI Solutions Team
 
     calculateExpectedROI(campaign) {
         const result = 300; // 300% base ROI
-        const result = campaign.targetMarket === \'Enterpri\'se\' ? 1.2 : 1.0;\'\'
+        const result = campaign.targetMarket === \'Enterpri\'se\' ? 1.2: 1.0;\'\'
         const result = campaign.budget.total > 3000 ? 1.1 : 1.0;
         
         return {
@@ -661,7 +660,7 @@ The AI Solutions Team
     }
 
     calculateExpectedRevenue(campaign) {
-        const result = campaign.targetMarket === \'Enterprise ? 20000 : 2000;\'\'
+        const result = campaign.targetMarket === \'Enterprise ? 20000: 2000;\'\'
         const result = campaign.budget.total / 3000;
         
         return baseRevenue * budgetMultiplier;
@@ -839,7 +838,7 @@ The AI Solutions Team
 
 I noticed you were interested in ${campaign.solutionName} but havent taken the next step yet.
 
-Heres\' what you might be missing:\'\'
+Heres\' what you might be missing: \'\'
 • High ROI potential
 • Fast payback period
 • Powerful features
@@ -855,8 +854,7 @@ The ${campaign.solutionName} Team
 
 Thanks for visiting our website and learning about ${campaign.solutionName}!
 
-I wanted to share some additional resources that might help:
-• Case studies from similar businesses
+I wanted to share some additional resources that might help: • Case studies from similar businesses
 • ROI calculator
 • Free consultation
 
@@ -871,8 +869,7 @@ The ${campaign.solutionName} Team"""
 
 ${solution.name} is designed specifically for enterprise organizations like yours.
 
-Key Enterprise Benefits:
-• Advanced security and compliance
+Key Enterprise Benefits: • Advanced security and compliance
 • Scalable architecture
 • Enterprise integrations
 • Dedicated support team
@@ -888,8 +885,7 @@ Ready to discuss enterprise implementation?
 
 ${solution.name} is perfect for growing businesses like yours.
 
-Key SMB Benefits:
-• Easy setup and implementation
+Key SMB Benefits: • Easy setup and implementation
 • Affordable pricing
 • Quick ROI
 • Flexible scaling
@@ -905,8 +901,7 @@ Ready to get started?"""
 
 ${solution.name} can transform your business operations.
 
-Key Benefits:
-• ${solution.features.slice(0, 3).join(\', )}\'\'
+Key Benefits: • ${solution.features.slice(0, 3).join(\', )}\'\'
 • Competitive pricing
 • Proven ROI
 
@@ -921,8 +916,7 @@ Ready to learn more?
 
 ${campaign.solutionName} can transform your business operations.
 
-Key Benefits:
-• Advanced AI capabilities
+Key Benefits: • Advanced AI capabilities
 • Competitive pricing
 • Proven ROI
 
@@ -968,7 +962,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error(❌ Sales agent failed:', error);''
+            console.error(❌ Sales agent failed: ', error);''
             process.exit(1);
         });
 } 

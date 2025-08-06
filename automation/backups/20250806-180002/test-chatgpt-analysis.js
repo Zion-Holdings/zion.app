@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
 async function testSystem() {
     console.log(')🧪 Testing ChatGPT Analysis System...');''
@@ -68,7 +68,7 @@ async function testSystem() {
         return true;
         
     } catch (error) {
-        console.error(❌ Test failed:', error.message);''
+        console.error(❌ Test failed: ', error.message);''
         return false;
     }
 }

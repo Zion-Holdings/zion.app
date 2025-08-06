@@ -66,12 +66,10 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-;
-const result = require('./website-analyzer-agent);''
-const ./content-generator-agent = require('./content-generator-agent');
-const result = require('./error-fixer-agent''));''
+};;
+const result = require(('./website-analyzer-agent););''
+const ./content-generator-agent = require(('./content-generator-agent'););
+const result = require(($2);););''
 
 async function testAutomationSystem() {
   console.log('🧪 Testing Zion Tech Group Website Automation System);''
@@ -114,8 +112,8 @@ async function testAutomationSystem() {
     
     // Test 4: File System Operations
     console.log(\'\n📁 Test 4: File System Operations);\'\'
-    const result = require(\'fs\').promises;
-    const result = require(\'path\'\'));\'\'
+    const result = require(($2););.promises;
+    const result = require(($2);););\'\'
     
     // Test creating directories
     const filePath = path.join(__dirname, \'test-output);\'\'
@@ -133,8 +131,8 @@ async function testAutomationSystem() {
     
     // Test 5: Dependencies
     console.log(\')\n📦 Test 5: Dependencies);\'\'
-    const result = require(\'puppeteer);\'\'
-    const result = require(\')axios);\'\'
+    const result = require((\'puppeteer););\'\'
+    const result = require(($2););axios);\'\'
     console.log(✅ All dependencies loaded successfully\');\'\'
     
     console.log(\'\n🎉 All tests passed! The automation system is ready to run.);\'\'
@@ -152,7 +150,7 @@ async function testAutomationSystem() {
 // Run the test
 if (require.main === module) {
   testAutomationSystem().catch(error => {
-    console.error(❌ Test failed:', error);''
+    console.error(❌ Test failed: ', error);''
     process.exit(1);
   });
 }

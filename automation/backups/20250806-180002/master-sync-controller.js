@@ -70,22 +70,19 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec, execSync } = require('child_process');
 const { v4: uuidv4 } = require('uuid');
 
 class MasterSyncController {
   constructor() {
     this.id = 'master-sync-controller';
-    this.version = '5.0.0';
+    this.version = '5.0';
     this.status = 'initializing';
     this.projectRoot = process.cwd();
     this.lastSync = null;
@@ -225,7 +222,7 @@ class MasterSyncController {
       console.log('✅ Master Sync Controller initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing Master Sync Controller:', error);
+      console.error('❌ Error initializing Master Sync Controller: ', error);
       this.status = 'error';
       throw error;
     }
@@ -239,14 +236,14 @@ class MasterSyncController {
       });
       
       if (status.trim()) {
-        console.log('📝 Found uncommitted changes:', status.split('\n').length - 1, 'files');
+        console.log('📝 Found uncommitted changes: ', status.split('\n').length - 1, 'files');
         return true;
       } else {
         console.log('✅ No uncommitted changes found');
         return false;
       }
     } catch (error) {
-      console.error('❌ Error checking git status:', error.message);
+      console.error('❌ Error checking git status: ', error.message);
       return false;
     }
   }
@@ -361,7 +358,7 @@ class MasterSyncController {
       console.log(`✅ ${type} sync successful: ${changedFiles.length} files`);
       
     } catch (error) {
-      console.error(`❌ ${type} sync failed:`, error.message);
+      console.error(`❌ ${type} sync failed: `, error.message);
       this.errorCount++;
       
       // Update process stats
@@ -390,7 +387,7 @@ class MasterSyncController {
       console.log(`✅ ${type} push successful`);
       
     } catch (error) {
-      console.error(`❌ ${type} push failed:`, error.message);
+      console.error(`❌ ${type} push failed: `, error.message);
       this.errorCount++;
       await this.handleError('push', error, type);
     }
@@ -412,7 +409,7 @@ class MasterSyncController {
       });
       
     } catch (error) {
-      console.error('❌ Error getting changed files:', error.message);
+      console.error('❌ Error getting changed files: ', error.message);
       return [];
     }
   }
@@ -500,7 +497,7 @@ class MasterSyncController {
       return result.trim().length > 0;
       
     } catch (error) {
-      console.error('❌ Error checking commits to push:', error.message);
+      console.error('❌ Error checking commits to push: ', error.message);
       return false;
     }
   }
@@ -718,7 +715,7 @@ if (require.main === module) {
   });
   
   controller.initialize().catch(error => {
-    console.error('❌ Master Sync Controller initialization failed:', error);
+    console.error('❌ Master Sync Controller initialization failed: ', error);
     process.exit(1);
   });
 }

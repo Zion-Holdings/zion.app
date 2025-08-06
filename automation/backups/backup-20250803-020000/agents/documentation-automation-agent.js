@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -378,7 +378,7 @@ class variable1 {
     const result = [];
     
     // Look for example usage in comments
-    const result = content.match(/\/\/\s*Example:\s*(.+)/g);
+    const result = content.match(/\/\/\s*Example: \s*(.+)/g);
     if (exampleMatches) {
       for (const match of exampleMatches) {
         examples.push(match.replace(// Example: "'", ).trim());""
@@ -390,10 +390,10 @@ class variable1 {
 
   async generateOpenAPISpec(apiDocs) {
     const result = {
-      openapi: "'3.0.0'",""
+      openapi: "'3.0'",""
       info: "{""
         title: Zion App API",""
-        version: "'1.0.0",""
+        version: "'1.0",""
         description: "API documentation for Zion App""
       "},""
       paths: "{"},""
@@ -645,7 +645,7 @@ class variable1 {
       content += "${endpoint.description}\n\n""
       
       if (endpoint.parameters.length > 0) {
-        content += '**Parameters:**\n'''
+        content += '**Parameters: **\n'''
         for (const param of endpoint.parameters) {
           content += - \"${param.name}\" (${param.type})${param.required ?  - required' : ' - optional}\n''
         }
@@ -653,7 +653,7 @@ class variable1 {
       }
       
       if (endpoint.examples.length > 0) {
-        content += **Example:**\n'''
+        content += **Example: **\n'''
         content += '`bash\n;''
         content += endpoint.examples[0];
         content += '\n"`"\n\n'''
@@ -666,7 +666,7 @@ class variable1 {
   generateInstallationSection() {
     return \\"\"bash""
 # Clone the repository
-git clone https://github.com/Zion-Holdings/zion.app.git
+git clone https: //github.com/Zion-Holdings/zion.app.git
 cd zion.app
 
 # Install dependencies
@@ -850,7 +850,7 @@ npm start
     const result = [];
     
     // Look for example usage in comments
-    const result = content.match(/\/\/\s*Example:\s*(.+)/g);
+    const result = content.match(/\/\/\s*Example: \s*(.+)/g);
     if (exampleMatches) {
       for (const match of exampleMatches) {
         examples.push(match.replace(// Example:, ')).trim());''
@@ -1094,6 +1094,6 @@ process.on('SIGINT, () => {''
 });
 
 agent.start().catch(error => {
-  console.error(')Documentation' Automation Agent failed to start:', error);''
+  console.error(')Documentation' Automation Agent failed to start: ', error);''
   process.exit(1);
 }); </div>

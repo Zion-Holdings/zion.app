@@ -29,16 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
-const axios = require('axios');
+}const fs = require(('fs-extra'););
+const path = require(('path'););
+const axios = require(('axios'););
 const { EventEmitter } = require('events');
 
 class GoogleDocsInstructionAgent extends EventEmitter {
@@ -75,7 +72,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
       console.log('✅ Google Docs Instruction Agent initialized successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize Google Docs Instruction Agent:', error);
+      console.error('❌ Failed to initialize Google Docs Instruction Agent: ', error);
       throw error;
     }
   }
@@ -100,7 +97,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
         this.instructionHistory = await fs.readJson(historyFile);
       }
     } catch (error) {
-      console.warn('⚠️ Could not load instruction history:', error.message);
+      console.warn('⚠️ Could not load instruction history: ', error.message);
     }
   }
 
@@ -109,7 +106,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
     try {
       await fs.writeJson(historyFile, this.instructionHistory, { spaces: 2 });
     } catch (error) {
-      console.error('❌ Failed to save instruction history:', error);
+      console.error('❌ Failed to save instruction history: ', error);
     }
   }
 
@@ -150,7 +147,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
       this.lastCheck = new Date();
       
     } catch (error) {
-      console.error('❌ Error checking for instructions:', error);
+      console.error('❌ Error checking for instructions: ', error);
       this.emit('error', error);
     }
   }
@@ -294,8 +291,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
         case 'marketing':
           await this.executeMarketing(instruction);
           break;
-        default:
-          await this.executeGenericInstruction(instruction);
+        default: await this.executeGenericInstruction(instruction);
       }
       
       // Update task status

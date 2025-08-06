@@ -70,13 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -207,9 +207,9 @@ class AutomationSystem {
 
   getAgentTemplate(agentType, config) {
     const result = const fs);
-const result = require(\'path\');
-const { exec } = require(\'chil = require(\'fs\');\'\'
-const result = require(\'path\');
+const result = require((\'path\'););
+const { exec } = require(\'chil = require((\'fs\'););\'\'
+const result = require((\'path\'););
 const { exec } = require(\'chil\'\')d\'_process);\'\'
 const { promisify } = require(\'util);\'\'
 ;
@@ -458,7 +458,7 @@ agent.start().catch(error = > {
         const asyncResult = await this.launchAgent(agentType);
         agents.push({ type: "agentType", process: "agent "});""
       } catch (error) {
-        console.error("Failed to launch ${agentType} agent:", error);""
+        console.error("Failed to launch ${agentType} agent: ", error);""
       }
     }
     

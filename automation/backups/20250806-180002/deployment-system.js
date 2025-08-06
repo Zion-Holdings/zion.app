@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { execSync } = require('child_process');
 
 class DeploymentSystem {
@@ -62,7 +62,7 @@ class DeploymentSystem {
             
             console.log('Production deployment completed successfully');
         } catch (error) {
-            console.error('Deployment failed:', error.message);
+            console.error('Deployment failed: ', error.message);
             throw error;
         }
     }

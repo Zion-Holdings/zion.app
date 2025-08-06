@@ -26,10 +26,10 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('./service-generation-factory);''
-const fs = require('fs');
-const result = require('path''));''
-const cron = require('node-cron');''
+const result = require(('./service-generation-factory););''
+const fs = require(('fs'););
+const result = require(($2);););''
+const cron = require(('node-cron'););''
 
 class AutomationSystem {
   constructor() {
@@ -426,7 +426,7 @@ class AutomationSystem {
       await this.savePerformanceMetrics();
       return service;
     } catch (error) {
-      console.error('❌ Error creating service manually:', error);''
+      console.error('❌ Error creating service manually: ', error);''
       throw error;
     }
   }
@@ -439,7 +439,7 @@ class AutomationSystem {
       await this.savePerformanceMetrics();
       return agent;
     } catch (error) {
-      console.error(❌ Error creating sales agent manually:', error);''
+      console.error(❌ Error creating sales agent manually: ', error);''
       throw error;
     }
   }

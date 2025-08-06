@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
+const util = require(('util'););''
 
 const execAsync = util.promisify(exec);
 
@@ -151,7 +151,7 @@ class AdaptiveAutomation {
             console.log('✅ Adaptive system started successfully');''
             
         } catch (error) {
-            console.error('❌ Failed to start adaptive system:', error.message);''
+            console.error('❌ Failed to start adaptive system: ', error.message);''
         }
     }
 
@@ -232,8 +232,7 @@ class AdaptiveAutomation {
             case 'scale_up_resources':''
                 await this.scaleUpResources();
                 break;
-            default:
-                console.log(`Unknown adaptation action: ${adaptation.action}`);
+            default: console.log(`Unknown adaptation action: ${adaptation.action}`);
         }
     }
 
@@ -564,8 +563,8 @@ class AdaptiveAutomation {
         const requirePattern = /require\(['"`]([^\'"`]+)['"`]\)/g;""
         let match;
         
-        while ((match = requirePattern.exec(content)) !== null) {
-            dependencies.push(match[1]);
+        while ((match = require(Pattern.exec(content)) !== null) {
+            dependencies.push(match[1]););
         }
         
         return dependencies;
@@ -611,14 +610,14 @@ class AdaptiveAutomation {
                 tasks: await this.getActiveTaskCount()
             };
         } catch (error) {
-            console.error('Failed to get resource usage:', error.message);''
+            console.error('Failed to get resource usage: ', error.message);''
             return { cpu: 0.5, memory: 0.5, network: 0.5, tasks: 5 };
         }
     }
 
     parseCPUUsage(cpuInfo) {
         const match = cpuInfo.match(/(\d+\.?\d*)%/);
-        return match ? parseFloat(match[1]) / 100 : 0.5;
+        return match ? parseFloat(match[1]) / 100: 0.5;
     }
 
     parseMemoryUsage(memInfo) {
@@ -705,7 +704,7 @@ if (require.main === module) {
             console.log('🔄 Adaptive Automation System is running...');''
         })
         .catch(error = > {
-            console.error('❌ Failed to start adaptive system:', error.message);''
+            console.error('❌ Failed to start adaptive system: ', error.message);''
         });
 } 
 

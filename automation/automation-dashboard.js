@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -40,7 +40,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -65,7 +65,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -79,15 +79,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 
 console.log('📊 Starting Automation Dashboard...');
 
@@ -101,13 +98,13 @@ const SYSTEMS = [
   'intelligent-agent-orchestrator'
 ];
 
-function log(message, type = 'info') {
+function log() {
   const timestamp = new Date().toISOString();
   const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊';
   console.log(`${prefix} [${timestamp}] ${message}`);
 }
 
-function getSystemStatus(systemName) {
+function getSystemStatus() {
   const stateFile = path.join(AUTOMATION_DIR, 'status-data', `${systemName}-state.json`);
   
   if (!fs.existsSync(stateFile)) {
@@ -192,14 +189,14 @@ function displayDashboard() {
     }
   }
   
-  console.log(`║ Performance:  [${performanceBar}] ${performanceLevel.toString().padStart(3)}% ║`);
+  console.log(`║ Performance: [${performanceBar}] ${performanceLevel.toString().padStart(3)}% ║`);
   console.log(`║ Intelligence: [${intelligenceBar}] ${intelligenceLevel.toString().padStart(3)}% ║`);
-  console.log(`║ Overall:      ${overallLevel >= 90 ? '🚀 EXCELLENT' : overallLevel >= 75 ? '✅ GOOD' : overallLevel >= 50 ? '⚠️  FAIR' : '❌ POOR'} (${overallLevel}%) ║`);
+  console.log(`║ Overall: ${overallLevel >= 90 ? '🚀 EXCELLENT' : overallLevel >= 75 ? '✅ GOOD' : overallLevel >= 50 ? '⚠️  FAIR' : '❌ POOR'} (${overallLevel}%) ║`);
   
   console.log('╚══════════════════════════════════════════════════════════════════════════════╝');
   
   // System recommendations
-  console.log('\n📋 System Recommendations:');
+  console.log('\n📋 System Recommendations: ');
   
   const lowPerformanceSystems = systems.filter(s => (s.performance || 0) < 70);
   const lowIntelligenceSystems = systems.filter(s => (s.intelligence || 0) < 70);

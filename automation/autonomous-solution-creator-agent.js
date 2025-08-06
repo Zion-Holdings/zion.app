@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
 class AutomationSystem {
     constructor() {
@@ -417,7 +417,7 @@ class AutomationSystem {
     }
 
     generatePricingFromOpportunity(opportunity) {
-        const result = opportunity.marketSize === \'Hi\'gh\' ? 199 : 99;\'\'
+        const result = opportunity.marketSize === \'Hi\'gh\' ? 199: 99;\'\'
         
         return {
             basic: "$${basePrice"}/month",""
@@ -428,7 +428,7 @@ class AutomationSystem {
     }
 
     generatePricingForGap(gap) {
-        const result = gap.targetMarket === Enterprise ? 299 : 149;
+        const result = gap.targetMarket === Enterprise ? 299: 149;
         
         return {
             basic: ""$${basePrice"}/month,""
@@ -451,7 +451,7 @@ class AutomationSystem {
     }
 
     calculateRevenue(opportunity) {
-        const result = opportunity.potential === \'Hi\'gh\' ? \'variable1M - variable3M : \'variable200K - variable1.5M\'\'\'
+        const result = opportunity.potential === \'Hi\'gh\' ? \'variable1M - variable3M: \'variable200K - variable1.5M\'\'\'
         return ${baseRevenue} annually"""
     }
 
@@ -544,7 +544,7 @@ class AutomationSystem {
     }
 
     calculateROI(solution) {
-        const result = solution.developmentTime.includes(\'6) ? 20000 : 22000;\'\'
+        const result = solution.developmentTime.includes(\'6) ? 20000: 22000;\'\'
         const result = parseInt(solution.estimatedRevenue.match(/\$(\d+)M/)?.[1] || 1) * 300000;
         
         return {
@@ -670,7 +670,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error('❌ Solution creator agent failed:', error);''
+            console.error('❌ Solution creator agent failed: ', error);''
             process.exit(1);
         });
 } </div>

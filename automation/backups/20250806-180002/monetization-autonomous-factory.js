@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,8 +120,8 @@ async function parallelReadFiles(filePaths) {
 // Monetization Autonomous Agents Factory
 // Creates and manages autonomous agents focused on revenue generation and monetization strategies
 ;
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 
 class AutomationSystem {
@@ -174,8 +174,8 @@ class AutomationSystem {
 
     generateAgentCode(agentType, config) {
         const result = """;
-const result = require(\'fs\');
-const result = require(\'pa\'t\'h\');\'\'
+const result = require((\'fs\'););
+const result = require((\'pa\'t\'h\'););\'\'
 
 class ${agentType.charAt(0).toUpperCase() + agentType.slice(1)}MonetizationAgent {
     constructor(config) {
@@ -297,7 +297,7 @@ module.exports = ${agentType.charAt(0).toUpperCase() + agentType.slice(1)}Moneti
         const filePath = path.join(agentDir, "${agent.config.type}.js);""
         
         if (fs.existsSync(agentFile)) {
-            const result = require(\'agentFile\');
+            const result = require((\'agentFile\'););
             const result = new AgentClass(agent.config);
             await agentInstance.execute();
             

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -119,8 +119,8 @@ async function parallelReadFiles(filePaths) {
 }
 // Simplified Content Generation Automation System
 // Follows ChatGPT instructions from: "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;""
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -648,7 +648,7 @@ class AutomationSystem {
       const filePath = path.join(this.automationPath, content-analytics, \')generation-analytic\'s.json\');\'\'
       fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
 
-      console.log(\'✅ Simplified Content Generation Automation completed:);\'\'
+      console.log(\'✅ Simplified Content Generation Automation completed: );\'\'
       console.log("   📊 Marketplace content: "${analytics.marketplaceContent"} types);""
       console.log(   🔄 Dynamic content: "${analytics.dynamicContent"} types");""
       console.log("   🔍 SEO content: "${analytics.seoContent"} types);""
@@ -664,7 +664,7 @@ class AutomationSystem {
       };
 
     } catch (error) {
-      console.error('❌ Simplified Content Generation Automation failed:', error.message);''
+      console.error('❌ Simplified Content Generation Automation failed: ', error.message);''
       throw error;
     }
   }

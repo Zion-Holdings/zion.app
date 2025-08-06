@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,8 +117,8 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const result = require('path);''
-const fs = require('fs');
+const result = require(('path););''
+const fs = require(('fs'););
 const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper''));''
 
 class AutomationSystem {
@@ -236,7 +236,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -271,7 +271,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
         <div className="relative" overflow-hidden></div>""
           <div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div>""
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>""
+          <div className="relative max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-24 lg:py-32></div>""
             <div className="text-center""></div>""
               <div className="mb-8></div>"""
                 <div className="inline-flex" items-center px-4 py-2 rounded-full bg-purple-200/10 border border-purple-200/20 text-purple-300 text-sm font-medium mb-6></div>""
@@ -282,25 +282,25 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
                 </div></div>
               </div>
               </div>
-              <h1 className="text-5xl" md:text-7xl font-bold text-white mb-6 leading-tight>""
+              <h1 className="text-5xl" md: text-7xl font-bold text-white mb-6 leading-tight>""
                 ${content.content.hero.title}</div>
               </h1>
               </div>
-              <p className="text-xl" md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed>""
+              <p className="text-xl" md: text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed>""
                 ${content.content.hero.subtitle}</div>
               </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16></div>""
+              <div className="flex flex-col sm: flex-row gap-6 justify-center mb-16></div>""
                 <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   ${content.content.hero.cta}</div>
                 </Link></div>
-                <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
+                <Link href=/marketplace className="border border-white/20 text-white hover: bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
                   Explore Marketplace</div>
                 </Link></div>
               </div>
               
               {/* Stats */}</div>
-              <div className="grid" grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">""
+              <div className="grid" grid-cols-2 md: grid-cols-4 gap-8 max-w-4xl mx-auto">""
                 ${content.content.hero.stats.map(stat => </div>
                   <div className="text-center></div>"""
                     <div className="text-3xl" md:text-4xl font-bold text-white mb-2">${stat.value}</div></div>""
@@ -313,7 +313,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
         </div>
 
         {/* Features Section */}</div>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-24></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-24></div>""
           <div className="text-center mb-16></div>""
             <h2 className="text-4xl" md:text-5xl font-bold text-white mb-6">""
               Key Features</div>
@@ -345,18 +345,18 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
 
         {/* CTA Section */}</div>
         <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 py-24 border-t border-white/10></div>""
-          <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 text-center"></div>""
+          <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 text-center"></div>""
             <h2 className="text-4xl" md:text-5xl font-bold text-white mb-6>""
               ${content.content.cta.title}</div>
             </h2></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>""
               ${content.content.cta.subtitle}</div>
             </p></div>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center></div>""
+            <div className="flex flex-col sm: flex-row gap-6 justify-center></div>""
               <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                 ${content.content.cta.primaryCTA}</div>
               </Link></div>
-              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
+              <Link href=/marketplace className="border border-white/20 text-white hover: bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
                 ${content.content.cta.secondaryCTA}</div>
               </Link></div>
             </div></div>
@@ -400,7 +400,7 @@ const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -432,7 +432,7 @@ const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
 
       {/* Blog Content */}</div>
       <main className="flex-1""></div>""
-        <div className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-24></div>""
+        <div className="max-w-4xl" mx-auto px-4 sm: px-6 lg:px-8 py-24></div>""
           <article className="prose" prose-invert prose-lg max-w-none></div>""
             <header className="mb-12></div>""
               <h1 className="text-5xl" md:text-6xl font-bold text-white mb-6">""
@@ -468,7 +468,7 @@ const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
                 ${content.content.conclusion}</div>
               </p></div>
               <div className="mt-8""></div>""
-                <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
+                <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                   Explore AI Marketplace</div>
                 </Link></div>
               </div></div>
@@ -513,7 +513,7 @@ const ${componentName}: NextPage = () => {
 
       {/* Navigation */}</div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <div className="flex-shrink-0></div>"""
@@ -545,7 +545,7 @@ const ${componentName}: NextPage = () => {
 
       {/* Product Content */}</div>
       <main className="flex-1""></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-24></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-24></div>""
           <div className="text-center" mb-16></div>""
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6>""
               ${content.content.overview.title}</div>
@@ -556,7 +556,7 @@ const ${componentName}: NextPage = () => {
           </div>
 
           {/* Features */}</div>
-          <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16>""
+          <div className="grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-8 mb-16>""
             ${content.content.features.map(feature => </div>
               <div className="bg-gradient-to-br" from-purple-200/10 to-pink-200/10 p-8 rounded-2xl border border-white/10"></div>""
                 <h3 className="text-xl font-bold text-white mb-4>${feature.name}</h3></div>""
@@ -566,7 +566,7 @@ const ${componentName}: NextPage = () => {
           </div>
 
           {/* Benefits */}</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16>""
+          <div className="grid grid-cols-1 md: grid-cols-2 gap-8 mb-16>""
             ${content.content.benefits.map(benefit => </div>
               <div className="bg-gradient-to-br from-green-200/10 to-blue-200/10 p-8 rounded-2xl border border-white/10></div>""
                 <h3 className="text-xl" font-bold text-white mb-4>${benefit.description}</h3></div>""
@@ -578,7 +578,7 @@ const ${componentName}: NextPage = () => {
           {/* Pricing */}</div>
           <div className="text-center mb-16></div>""
             <h2 className="text-4xl" font-bold text-white mb-8">Pricing Plans</h2></div>""
-            <div className="grid" grid-cols-1 md:grid-cols-3 gap-8>""
+            <div className="grid" grid-cols-1 md: grid-cols-3 gap-8>""
               ${content.content.pricing.plans.map(plan => </div>
                 <div className="bg-gradient-to-br" from-purple-200/10 to-pink-200/10 p-8 rounded-2xl border border-white/10 ${plan.recommended ? \'border-purple-\'200/50\' : \'}"></div>""
                   <h3 className="text-2xl font-bold text-white mb-4>${plan.name}</h3></div>""
@@ -593,7 +593,7 @@ const ${componentName}: NextPage = () => {
                       </li>
                     ").join(\')}</div>\'\'
                   </ul></div>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>""
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>""
                     Get Started</div>
                   </button></div>
                 </div>

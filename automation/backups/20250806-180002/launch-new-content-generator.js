@@ -25,11 +25,9 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-;
+};;
 const { spawn } = require('child_process);''
-const path = require('path');
+const path = require(('path'););
 
 class AutomationSystem {
   constructor() {

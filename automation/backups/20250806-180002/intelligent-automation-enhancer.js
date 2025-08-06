@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
+const util = require(('util'););''
 
 const execAsync = util.promisify(exec);
 
@@ -71,7 +71,7 @@ class IntelligentAutomationEnhancer {
             console.log('✅ Intelligent automation enhancement completed');''
             
         } catch (error) {
-            console.error('❌ Enhancement failed:', error.message);''
+            console.error('❌ Enhancement failed: ', error.message);''
         }
     }
 
@@ -220,10 +220,10 @@ class IntelligentAutomationEnhancer {
 
     async createIntelligentMonitor() {
         const monitorCode = `;
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
+const util = require(('util'););''
 
 const execAsync = util.promisify(exec);
 
@@ -260,7 +260,7 @@ class IntelligentMonitor {
             await this.generateRecommendations();
             
         } catch (error) {
-            console.error(\'Monitoring error:\', error.message);\'\'
+            console.error(\'Monitoring error: \', error.message);\'\'
         }
     }
 
@@ -352,9 +352,9 @@ module.exports = IntelligentMonitor;
 
     async createAdaptiveController() {
         const controllerCode = `;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
-const cron = require(\'node-cron\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
+const cron = require((\'node-cron\'););\'\'
 
 class AdaptiveController {
     constructor() {
@@ -377,7 +377,7 @@ class AdaptiveController {
                 
             }
         } catch (error) {
-            console.error(\'Adaptation error:\', error.message);\'\'
+            console.error(\'Adaptation error: \', error.message);\'\'
         }
     }
 
@@ -450,10 +450,10 @@ module.exports = AdaptiveController;
 
     async createSelfHealingSystem() {
         const healingCode =  ;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 const { exec } = require(\'child_process\');\'\'
-const util = require(\'util\');\'\'
+const util = require((\'util\'););\'\'
 
 const execAsync = util.promisify(exec);
 
@@ -483,7 +483,7 @@ class SelfHealingSystem {
             this.lastCheck = new Date().toISOString();
             
         } catch (error) {
-            console.error(\'Health check error:\', error.message);\'\'
+            console.error(\'Health check error: \', error.message);\'\'
         }
     }
 
@@ -500,7 +500,7 @@ class SelfHealingSystem {
                 "});""
             }
         } catch (error) {
-            console.error(\'Process check error:\', error.message);\'\'
+            console.error(\'Process check error: \', error.message);\'\'
         }
     }
 
@@ -522,7 +522,7 @@ class SelfHealingSystem {
                 }
             }
         } catch (error) {
-            console.error(\'File integrity check error:\', error.message);\'\'
+            console.error(\'File integrity check error: \', error.message);\'\'
         }
     }
 
@@ -539,7 +539,7 @@ class SelfHealingSystem {
                 "});""
             }
         } catch (error) {
-            console.error(\'Syntax check error:\', error.message);\'\'
+            console.error(\'Syntax check error: \', error.message);\'\'
         }
     }
 
@@ -579,7 +579,7 @@ class SelfHealingSystem {
             
             console.log('✅ Processes restarted');''
         } catch (error) {
-            console.error('❌ Failed to restart processes:', error.message);''
+            console.error('❌ Failed to restart processes: ', error.message);''
         }
     }
 
@@ -594,7 +594,7 @@ class SelfHealingSystem {
             await execAsync('node automation/fix-syntax-errors.js');''
             console.log('✅ Syntax errors fixed');''
         } catch (error) {
-            console.error('❌ Failed to fix syntax errors:', error.message);''
+            console.error('❌ Failed to fix syntax errors: ', error.message);''
         }
     }
 }
@@ -610,8 +610,8 @@ module.exports = SelfHealingSystem;
 
     async createPredictiveAnalytics() {
         const analyticsCode = `;
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 
 class PredictiveAnalytics {
     constructor() {
@@ -635,7 +635,7 @@ class PredictiveAnalytics {
             await this.generateProactiveRecommendations();
             
         } catch (error) {
-            console.error('Analytics error:', error.message);''
+            console.error('Analytics error: ', error.message);''
         }
     }
 
@@ -767,7 +767,7 @@ module.exports = PredictiveAnalytics;
         // Create process manager
         const processManagerCode = `;
 const { spawn } = require(\'child_process\');\'\'
-const path = require(\'path\');\'\'
+const path = require((\'path\'););\'\'
 
 class ProcessManager {
     constructor() {
@@ -831,8 +831,8 @@ module.exports = ProcessManager;
     async optimizeResourceUsage() {
         // Create resource optimizer
         const resourceOptimizerCode = `;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 
 class ResourceOptimizer {
     constructor() {
@@ -867,7 +867,7 @@ class ResourceOptimizer {
                 }
             }
         } catch (error) {
-            console.error(\'Log cleanup error:\', error.message);\'\'
+            console.error(\'Log cleanup error: \', error.message);\'\'
         }
     }
 }
@@ -898,8 +898,8 @@ module.exports = ResourceOptimizer;
 
     async createMonitoringDashboard() {
         const dashboardCode =  ;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 
 class MonitoringDashboard {
     constructor() {
@@ -925,7 +925,7 @@ class MonitoringDashboard {
             console.log(\'📊 Dashboard generated\');\'\'
             
         } catch (error) {
-            console.error(\'Dashboard error:\', error.message);\'\'
+            console.error(\'Dashboard error: \', error.message);\'\'
         }
     }
 
@@ -1014,8 +1014,8 @@ module.exports = MonitoringDashboard;
 
     async createAlertSystem() {
         const alertCode = `;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 
 class AlertSystem {
     constructor() {
@@ -1077,8 +1077,8 @@ module.exports = AlertSystem;
 
     async createReportingSystem() {
         const reportingCode =  ;
-const fs = require(\'fs\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs\'););\'\'
+const path = require((\'path\'););\'\'
 
 class ReportingSystem {
     constructor() {
@@ -1105,7 +1105,7 @@ class ReportingSystem {
             console.log(\'📋 Report generated\');\'\'
             
         } catch (error) {
-            console.error(\'Reporting error:\', error.message);\'\'
+            console.error(\'Reporting error: \', error.message);\'\'
         }
     }
 
@@ -1154,7 +1154,7 @@ module.exports = ReportingSystem;
             console.log(\'✅ Systems restarted and tested\');\'\'
             
         } catch (error) {
-            console.error(\'❌ System restart failed:\', error.message);\'\'
+            console.error(\'❌ System restart failed: \', error.message);\'\'
         }
     }
 
@@ -1231,3 +1231,5 @@ if (require.main === module) {
 }
 
 module.exports = IntelligentAutomationEnhancer; 
+}
+}

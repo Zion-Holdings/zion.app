@@ -6,18 +6,17 @@
  * This system continuously monitors all project automation factories, agents, scripts, and cron jobs.
  * It keeps running systems that are working fine and stops/fixes those with errors.
  * 
- * Features:
- * - Comprehensive health monitoring of all automation systems
+ * Features: * - Comprehensive health monitoring of all automation systems
  * - Automatic error detection and recovery
  * - Performance optimization
  * - System maintenance and cleanup
  * - Real-time reporting and alerting
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
-const cron = require('node-cron');
+const cron = require(('node-cron'););
 const { EventEmitter } = require('events');
 
 class AutomationMonitorAndMaintainerFactory extends EventEmitter {
@@ -126,8 +125,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
         return await this.performCleanup();
       case 'report-generator':
         return await this.generateReport();
-      default:
-        throw new Error(`Unknown agent type: ${type}`);
+      default: throw new Error(`Unknown agent type: ${type}`);
     }
   }
 
@@ -210,7 +208,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
         }
       });
     } catch (error) {
-      console.error('Error scanning for factories:', error);
+      console.error('Error scanning for factories: ', error);
     }
     
     return factories;
@@ -234,7 +232,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
         });
       }
     } catch (error) {
-      console.error('Error scanning for agents:', error);
+      console.error('Error scanning for agents: ', error);
     }
     
     return agents;
@@ -256,7 +254,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
         }
       });
     } catch (error) {
-      console.error('Error scanning for scripts:', error);
+      console.error('Error scanning for scripts: ', error);
     }
     
     return scripts;
@@ -280,7 +278,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
         });
       }
     } catch (error) {
-      console.error('Error scanning for cron jobs:', error);
+      console.error('Error scanning for cron jobs: ', error);
     }
     
     return cronJobs;
@@ -763,7 +761,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to rotate log files:', error);
+        console.error('❌ Failed to rotate log files: ', error);
       }
     }
   }
@@ -785,7 +783,7 @@ class AutomationMonitorAndMaintainerFactory extends EventEmitter {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old backups:', error);
+        console.error('❌ Failed to cleanup old backups: ', error);
       }
     }
   }

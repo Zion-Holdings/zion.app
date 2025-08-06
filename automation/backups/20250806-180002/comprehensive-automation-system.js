@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,11 +117,11 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const fs = require('fs-extra');''
-const path = require('path');''
+const fs = require(('fs-extra'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
-const glob = require('glob');''
+const util = require(('util'););''
+const glob = require(('glob'););''
 
 const execAsync = util.promisify(exec);
 
@@ -165,7 +165,7 @@ class ComprehensiveAutomationSystem {
             console.log('✅ Comprehensive Automation System completed successfully');''
             
         } catch (error) {
-            console.error('❌ Comprehensive Automation System failed:', error);''
+            console.error('❌ Comprehensive Automation System failed: ', error);''
             await this.logError('system_failure', error.message);''
         }
     }
@@ -177,8 +177,8 @@ class ComprehensiveAutomationSystem {
         const syntaxPatterns = [
             // Fix malformed require statements
             { 
-                pattern: /const \variable1 = require\('([^']+)'\)/g, ''
-                replacement: 'const variable1 = require('\'variable1\'')' ''
+                pattern: /const \variable1 = require(\('([^']+)'\)/g, ''
+                replacement: 'const variable1 = require($2););' ''
             },
             // Fix malformed className attributes
             { 
@@ -251,12 +251,12 @@ class ComprehensiveAutomationSystem {
 
     hasSyntaxErrors(content) {
         const errorPatterns = [
-            /const \variable1 = require\(\'/,\'\'
+            /const \variable1 = require(\(\'/,\'\'
             /className="[^""\'\s]/,\'\'
             /[\'"][^'"]*?(?=\n|$)/,""
             /import React from \'react\'
             /\$(\d+)/,
-            /const \$(\d+) = require\(\'/\'\'];
+            /const \$(\d+) = require\(\'/\'\');];
         
         return errorPatterns.some(pattern => pattern.test(content));
     }
@@ -338,8 +338,8 @@ class ComprehensiveAutomationSystem {
         const className = system.name.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
         
         return `
-const fs = require(\'fs-extra\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs-extra\'););\'\'
+const path = require((\'path\'););\'\'
 
 class ${className} {
     constructor() {
@@ -347,7 +347,7 @@ class ${className} {
         this.description = \'${system.description}\';\'\'
         this.features = ${JSON.stringify(system.features)};
         this.status = \'active\';\'\'
-        this.version = \'2.0.0\';\'\'
+        this.version = \'2.0\';\'\'
         this.intelligence = {
             learningRate: 0.1,
             adaptationSpeed: 0.8,
@@ -366,7 +366,7 @@ class ${className} {
             
             console.log(\`✅ \${this.name} completed successfully\`);
         } catch (error) {
-            console.error(\`❌ \${this.name} failed:\`, error);
+            console.error(\`❌ \${this.name} failed: \`, error);
             throw error;
         }
     }
@@ -460,8 +460,8 @@ module.exports = ${className};
         const className = feature.name.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
         
         return `
-const fs = require(\'fs-extra\');\'\'
-const path = require(\'path\');\'\'
+const fs = require((\'fs-extra\'););\'\'
+const path = require((\'path\'););\'\'
 
 class ${className} {
     constructor() {
@@ -485,7 +485,7 @@ class ${className} {
             
             console.log(\`✅ \${this.name} completed successfully\`);
         } catch (error) {
-            console.error(\`❌ \${this.name} failed:\`, error);
+            console.error(\`❌ \${this.name} failed: \`, error);
             throw error;
         }
     }
@@ -583,7 +583,7 @@ module.exports = ${className};
             console.log('  ✅ Changes committed and deployed successfully');''
             
         } catch (error) {
-            console.error('  ❌ Failed to commit/deploy:', error.message);''
+            console.error('  ❌ Failed to commit/deploy: ', error.message);''
         }
     }
 
@@ -608,7 +608,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch((error) => {
-            console.error('\n💥 Comprehensive Automation System failed:', error);''
+            console.error('\n💥 Comprehensive Automation System failed: ', error);''
             process.exit(1);
         });
 }

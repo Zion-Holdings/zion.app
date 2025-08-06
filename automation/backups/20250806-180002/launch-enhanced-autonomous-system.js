@@ -29,18 +29,16 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const result = require('./autonomous-agent-factory);''
-const ./agent-orchestrator = require('./agent-orchestrator');
-const result = require('./enhanced-cron-system''));''
-const result = require('fs);''
-const path = require('path');
+};
+const result = require(('./autonomous-agent-factory););''
+const ./agent-orchestrator = require(('./agent-orchestrator'););
+const result = require(($2);););''
+const result = require(($2););.promises
+const path = require(('path'););
 
 class AutomationSystem {
   constructor() {
@@ -353,7 +351,7 @@ class AutomationSystem {
         }
       }
     } catch (error) {
-      console.error(❌ Health check failed:\', error);\'\'
+      console.error(❌ Health check failed: \', error);\'\'
     }
   }
 
@@ -473,7 +471,7 @@ async function main() {
     });
     
   } catch (error) {
-    console.error(Failed to start system:', error);''
+    console.error(Failed to start system: ', error);''
     process.exit(1);
   }
 }

@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class WorkingAutomationSystem {
   constructor() {
@@ -58,7 +58,7 @@ class WorkingAutomationSystem {
     await this.generateGrowthStrategies();
     
     console.log('\n✅ Working Automation System completed!');
-    console.log('📊 Final Metrics:', this.metrics);
+    console.log('📊 Final Metrics: ', this.metrics);
   }
 
   async generateContent() {
@@ -219,7 +219,7 @@ if (require.main === module) {
   const system = new WorkingAutomationSystem();
   system.runCompleteSystem()
     .then(() => {
-      console.log('\n📊 System Status:', JSON.stringify(system.getSystemStatus(), null, 2));
+      console.log('\n📊 System Status: ', JSON.stringify(system.getSystemStatus(), null, 2));
     })
     .catch(console.error);
 }

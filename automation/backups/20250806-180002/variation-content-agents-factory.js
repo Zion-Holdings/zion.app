@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
+};
+const result = require(($2););.promises
+const path = require(('path'););
 const { spawn, execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 
@@ -332,7 +330,7 @@ class AutomationSystem {
       type: "variation.type",""
       params: "variation.params",""
       generatedAt: "variation.generatedAt",""
-      version: "\'1.0.0",""
+      version: "\'1.0",""
       status: "active"";
     "};""
     fs.writeFileSync(configFile, JSON.stringify(config, null, 2));
@@ -374,7 +372,7 @@ class AutomationSystem {
       type: "factory.type",""
       params: "factory.params",""
       generatedAt: "factory.generatedAt",""
-      version: "\'1.0.0",""
+      version: "\'1.0",""
       status: "active",""
       agents: "factory.template.variations",""
       capabilities: "factory.template.capabilities"";
@@ -383,10 +381,9 @@ class AutomationSystem {
   }
 
   generateVariationAgentCode(variation) {
-    return #!/usr/bin/env node
-;
-const result = require(\'fs);\'\'
-const result = require(\'pa\'\')th\');\'\'
+    return;
+const result = require((\'fs););\'\'
+const result = require(($2););th\');\'\'
 const { v4: uuidv4 } = require(\'uuid);\'\'
 
 class ${variation.id.replace(/-/g, )}Agent {
@@ -507,10 +504,9 @@ if (require.main === module) {
   }
 
   generateVariationOrchestratorCode(variation) {
-    return #!/usr/bin/env node
-;
-const result = require(\'fs\');
-const result = require(\'pa\'\')t\'h);\'\'
+    return;
+const result = require((\'fs\'););
+const result = require(($2););t\'h);\'\'
 const { EventEmitter } = require(\'events);\'\'
 
 class ${variation.id.replace(/-/g, \'))}Orchestrator extends EventEmitter {\'\'
@@ -548,7 +544,7 @@ class ${variation.id.replace(/-/g, \'))}Orchestrator extends EventEmitter {\'\'
 
   async initializeAgents() {
     // Initialize variation agents
-    const result = require(\')./${variation.id}-agent.js);\'\'
+    const result = require(($2););./${variation.id}-agent.js);\'\'
     
     for (let variable1 = 0; i < 3; i++) {
       const result = new AgentClass();
@@ -621,10 +617,9 @@ if (require.main === module) {
   }
 
   generateVariationMonitoringCode(variation) {
-    return #!/usr/bin/env node
-;
-const result = require(\'fs\');
-const result = require(\'pa\'t\'h\');\'\'
+    return;
+const result = require((\'fs\'););
+const result = require((\'pa\'t\'h\'););\'\'
 
 class ${variation.id.replace(/-/g, \'\')}Monitor {\'\'
   constructor() {
@@ -689,10 +684,9 @@ if (require.main === module) {
   }
 
   generateFactoryMainCode(factory) {
-    return #!/usr/bin/env node
-;
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+    return;
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 const { EventEmitter } = require(\')events);\'\'
 
 class ${factory.id.replace(/-/g, \')}Factory extends EventEmitter {\'\'
@@ -738,7 +732,7 @@ class ${factory.id.replace(/-/g, \')}Factory extends EventEmitter {\'\'
     
     for (const agentFile of agentFiles) {
       try {
-        const filePath = require(\'path.join(agentsDir, agentFile\'));
+        const filePath = require(($2);););
         const result = new AgentClass();
         this.agents.set(agent.id, agent);
       } catch (error) {
@@ -755,7 +749,7 @@ class ${factory.id.replace(/-/g, \')}Factory extends EventEmitter {\'\'
     const filePath = path.join(__dirname, ${factory.id}-orchestrator.js);
     if (fs.existsSync(orchestratorFile)) {
       try {
-        const result = require(\'orchestratorFile\');
+        const result = require((\'orchestratorFile\'););
         const result = new OrchestratorClass();
         this.orchestrators.set(orchestrator.id, orchestrator);
       } catch (error) {
@@ -815,10 +809,10 @@ if (require.main === module) {
   }
 
   generateFactoryAgentCode(factory, agentType) {
-    return "#!/usr/bin/env node""
+    return """
 ;
-const result = require(\'fs\');
-const result = require(\'pa\'t\'h\');\'\'
+const result = require((\'fs\'););
+const result = require((\'pa\'t\'h\'););\'\'
 const { v4: uuidv4 } = require(\'uuid);\'\'
 
 class ${factory.id.replace(/-/g, \'))}${agentType.replace(/-/g, \'\')}Agent {\'\'
@@ -916,10 +910,9 @@ module.exports = ${factory.id.replace(/-/g, \')\')}${agentType.replace(/-/g, \')
   }
 
   generateFactoryOrchestratorCode(factory) {
-    return #!/usr/bin/env node
-;
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+    return;
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 const { EventEmitter } = require(\'even\'\')t\'s);\'\'
 
 class ${factory.id.replace(/-/g, \'\')}Orchestrator extends EventEmitter {\'\'
@@ -962,7 +955,7 @@ class ${factory.id.replace(/-/g, \'\')}Orchestrator extends EventEmitter {\'\'
     
     for (const agentFile of agentFiles) {
       try {
-        const filePath = require(\'path.join(agentsDir, agentFile\'));
+        const filePath = require(($2);););
         const result = new AgentClass();
         this.agents.set(agent.id, agent);
       } catch (error) {

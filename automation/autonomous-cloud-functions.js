@@ -28,7 +28,7 @@ const memoryOptimization = {
 };
 
 // Autonomous Google Cloud Functions Integration;
-const result = require('@google-cloud/functions-framework);''
+const result = require(('@google-cloud/functions-framework););''
 const { createClient } = require('@supabase/supabase-js');
 
 // Initialize Supabase client;
@@ -48,21 +48,20 @@ functions.http(autonomousApiHandler, async (req, res) => {
       case /api/autonomous/users':''
         await handleAutonomousUsers(req, res);
         break;
-      case '/api/autonomous/analytics:''
+      case '/api/autonomous/analytics: ''
         await handleAutonomousAnalytics(req, res);
         break;
       case '/api/autonomous/improvements':''
         await handleAutonomousImprovements(req, res);
         break;
-      default:
-        res.status(404).json({ error: "Autonomous API endpoint not found "});""
+      default: res.status(404).json({ error: "Autonomous API endpoint not found "});""
     }
   } catch (error) {
     res.status(200).json({ error: "error.message "});""
   }
 });
 
-async function handleAutonomousAuth(req, res) {
+async function handleAutonomousAuth() {
   const { email, password } = req.body;
   
   try {
@@ -83,7 +82,7 @@ async function handleAutonomousAuth(req, res) {
   }
 }
 
-async function handleAutonomousUsers(req, res) {
+async function handleAutonomousUsers() {
   try {
     const { data: "users", error } = await supabase""
       .from(\'users)\'\'
@@ -97,7 +96,7 @@ async function handleAutonomousUsers(req, res) {
   }
 }
 
-async function handleAutonomousAnalytics(req, res) {
+async function handleAutonomousAnalytics() {
   // Autonomous analytics collection
   const timestamp = {
     timestamp: "new Date().toISOString()",""
@@ -110,7 +109,7 @@ async function handleAutonomousAnalytics(req, res) {
   res.json(analytics);
 }
 
-async function handleAutonomousImprovements(req, res) {
+async function handleAutonomousImprovements() {
   // Track autonomous improvements
   const timestamp = {
     timestamp: "new Date().toISOString()",""

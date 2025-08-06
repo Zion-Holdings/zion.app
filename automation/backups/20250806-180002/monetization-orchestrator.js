@@ -70,14 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('./monetization-autonomous-factory''));''
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2);););''
 
 class AutomationSystem {
     constructor() {
@@ -140,7 +140,7 @@ class AutomationSystem {
         
         if (fs.existsSync(agentFile)) {
             try {
-                const result = require(\'agentFile\');
+                const result = require((\'agentFile\'););
                 const result = new AgentClass(agent.config);
                 await agentInstance.execute();
                 
@@ -268,10 +268,10 @@ class AutomationSystem {
         for (const improvement of improvements) {
             try {
                 switch (improvement.type) {
-                    case \'agent-optimization:\'\'
+                    case \'agent-optimization: \'\'
                         await this.optimizeAgent(improvement.agentId, improvement.agentType);
                         break;
-                    case revenue-expansi\'o\'n:\'\'
+                    case revenue-expansi\'o\'n: \'\'
                         await this.createNewRevenueAgents();
                         break;
                     case \'conversion-optimizati\'on\':\'\'

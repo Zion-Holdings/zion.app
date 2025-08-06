@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,13 +116,10 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
+}const fs = require(('fs'););
+const path = require(('path'););
 
-const fs = require('fs');
-const path = require('path');
-
-function fixSyntaxErrors(content) {
+function fixSyntaxErrors() {
   // Fix missing quotes in require statements
   content = content.replace(/require\('([^']+)'\)/g, "require(\'variable1\')");
   content = content.replace(/require\("([^"]+)"\)/g, \'require("variable1")\');
@@ -148,7 +145,7 @@ function fixSyntaxErrors(content) {
   return content;
 }
 
-function fixFile(filePath) {
+function fixFile() {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
     const fixedContent = fixSyntaxErrors(content);

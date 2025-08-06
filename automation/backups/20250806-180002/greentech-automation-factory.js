@@ -25,11 +25,7 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-
-
-  async getStatus() {
+};async getStatus() {
     return {
       systemName: 'greentech-automation-factory',
       isRunning: this.isRunning,

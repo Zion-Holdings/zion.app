@@ -37,11 +37,10 @@ class AutomationSystem {
   }
 
   async analyzeCode(code) {
-    const result = "Analyze this code for improvements, bugs, security issues, and best practices:""
+    const result = "Analyze this code for improvements, bugs, security issues, and best practices: ""
 ${code}
 
-Provide specific recommendations for:
-1. Performance optimization
+Provide specific recommendations for: 1. Performance optimization
 2. Security improvements
 3. Code quality enhancements
 4. Best practices implementation
@@ -51,8 +50,7 @@ Provide specific recommendations for:
   }
 
   async optimizeCode(code) {
-    const result = Optimize this code for maximum performance, readability, and maintainability:
-${code}
+    const result = Optimize this code for maximum performance, readability, and maintainability: ${code}
 
 Return the optimized version with explanations for each improvement."""
     ;
@@ -61,11 +59,10 @@ Return the optimized version with explanations for each improvement."""
   }
 
   async generateTests(code) {
-    const result = "Generate comprehensive unit tests for this code:""
+    const result = "Generate comprehensive unit tests for this code: ""
 ${code}
 
-Include tests for:
-1. Happy path scenarios
+Include tests for: 1. Happy path scenarios
 2. Edge cases
 3. Error handling
 4. Performance tests
@@ -75,11 +72,9 @@ Include tests for:
   }
 
   async suggestArchitecture(requirements) {
-    const result = Suggest the best architecture for these requirements:
-${requirements}
+    const result = Suggest the best architecture for these requirements: ${requirements}
 
-Consider:
-1. Scalability
+Consider: 1. Scalability
 2. Performance
 3. Security
 4. Maintainability

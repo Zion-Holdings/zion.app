@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class EnhancedIntelligentSystemLauncher {
@@ -173,10 +170,10 @@ class EnhancedIntelligentSystemLauncher {
       this.startMonitoring();
       
       console.log('🎉 Enhanced Intelligent System Launcher is now running!');
-      console.log('📊 Launcher Status:', this.getLauncherStatus());
+      console.log('📊 Launcher Status: ', this.getLauncherStatus());
       
     } catch (error) {
-      console.error('❌ Error starting enhanced intelligent system:', error);
+      console.error('❌ Error starting enhanced intelligent system: ', error);
       this.handleLauncherError(error);
     }
   }
@@ -219,14 +216,14 @@ class EnhancedIntelligentSystemLauncher {
       });
       
       process.on('error', (error) => {
-        console.error('❌ Enhanced Orchestrator process error:', error);
+        console.error('❌ Enhanced Orchestrator process error: ', error);
         this.handleProcessError('enhanced-orchestrator', error);
       });
       
       console.log('✅ Enhanced Intelligent Orchestrator started successfully');
       
     } catch (error) {
-      console.error('❌ Error starting enhanced orchestrator:', error);
+      console.error('❌ Error starting enhanced orchestrator: ', error);
       throw error;
     }
   }
@@ -268,7 +265,7 @@ class EnhancedIntelligentSystemLauncher {
       totalProcesses: this.processes.size,
       uptime: this.calculateUptime()};
     
-    console.log('📊 Enhanced system performance:', performance);
+    console.log('📊 Enhanced system performance: ', performance);
   }
 
   handleProcessExit(processName, code) {
@@ -290,7 +287,7 @@ class EnhancedIntelligentSystemLauncher {
   }
 
   handleProcessError(processName, error) {
-    console.error(`❌ Process ${processName} error:`, error);
+    console.error(`❌ Process ${processName} error: `, error);
     
     const procInfo = this.processes.get(processName);
     if (procInfo) {
@@ -321,7 +318,7 @@ class EnhancedIntelligentSystemLauncher {
   }
 
   handleLauncherError(error) {
-    console.error('🚨 Enhanced launcher error detected:', error);
+    console.error('🚨 Enhanced launcher error detected: ', error);
     this.recordLauncherError('launcher-error', error);
     
     setTimeout(() => {

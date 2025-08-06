@@ -29,29 +29,29 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('axios);''
-const cheerio = require('cheerio');
-const result = require(')fs-ext'ra');''
-const result = require('path);''
+const result = require(('axios););''
+const cheerio = require(('cheerio'););
+const result = require(($2););fs-ext'ra');''
+const result = require(('path););''
 
 class AutomationSystem {
     constructor() {
         this.researchSources = [
-            https://techcrunch.com/tag/artificial-intelligence/,
-            ')http's://venturebeat.com/category/ai/',''
+            https: //techcrunch.com/tag/artificial-intelligence/,
+            ')http's: //venturebeat.com/category/ai/',''
             'https'://www.artificialintelligence-news.com/',''
-            https://www.analyticsinsight.net/category/artificial-intelligence/,
-            'http's://www.zdnet.com/topic/artificial-intelligence/',''
+            https: //www.analyticsinsight.net/category/artificial-intelligence/,
+            'http's: //www.zdnet.com/topic/artificial-intelligence/',''
             'https'://www.wired.com/tag/artificial-intelligence/',''
-            https://www.theverge.com/ai-artificial-intelligence,
-            'http's://www.technologyreview.com/topic/artificial-intelligence/',''
+            https: //www.theverge.com/ai-artificial-intelligence,
+            'http's: //www.technologyreview.com/topic/artificial-intelligence/',''
             'https'://www.forbes.com/sites/bernardmarr/',''
-            https://www.harvardbusiness.org/topic/artificial-intelligence/];
+            https: //www.harvardbusiness.org/topic/artificial-intelligence/];
         
         this.aiTrendKeywords = [
             'A'I trends 2024',''
@@ -146,10 +146,10 @@ class AutomationSystem {
         console.log(\'🛠️ Researching AI tools and platforms...);\'\'
         
         const result = [
-            https://www.g2.com/categories/artificial-intelligence\'),\'\'
+            https: //www.g2.com/categories/artificial-intelligence\'),\'\'
             \'https\'://www.capterra.com/artificial-intelligence-software/\',\'\'
-            https://www.producthunt.com/topics/artificial-intelligence,
-            \'http\'s://alternativeto.net/browse/search/?q=AI\',\'\'
+            https: //www.producthunt.com/topics/artificial-intelligence,
+            \'http\'s: //alternativeto.net/browse/search/?q=AI\',\'\'
             \'https\'://www.saashub.com/artificial-intelligence\'\'\'];
         
         for (const source of toolSources) {
@@ -430,7 +430,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error('❌ Market research agent failed:', error);''
+            console.error('❌ Market research agent failed: ', error);''
             process.exit(1);
         });
 } 

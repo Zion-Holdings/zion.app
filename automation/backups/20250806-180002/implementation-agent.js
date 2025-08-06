@@ -67,8 +67,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 
 class AutomationSystem {
   constructor() {
@@ -149,10 +149,7 @@ export default function {{COMPONENT_NAME}}({ }: {{COMPONENT_NAME}}Props) {
     return "import React from \'react\'
 import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== \'{{METHOD"}}) {""
     return res.status(405).json({ message: "\'Method not allowed\' "});""
   }
@@ -225,7 +222,7 @@ export default async function handler(
       .replace(/{{PAGE_CONTENT}}/g, this.getPageContent(pageName));
     
     fs.writeFileSync(pagePath, template);
-    this.implementedFeatures.push("page:${pageName});""
+    this.implementedFeatures.push("page: ${pageName});""
     
     console.log(✅ Page ${pageName} implemented");""
   }
@@ -255,7 +252,7 @@ export default async function handler(
       .replace(/{{TIMESTAMP}}/g, new Date().toISOString());
     
     fs.writeFileSync(contentPath, template);
-    this.implementedFeatures.push(content:${contentName}");""
+    this.implementedFeatures.push(content: ${contentName}");""
     
     console.log("✅ Content ${contentName} implemented);""
   }
@@ -267,7 +264,7 @@ export default async function handler(
       case \'real-time-ch\'at\':\'\'
         await this.implementRealTimeChat();
         break;
-      case \'payment-processing:\'\'
+      case \'payment-processing: \'\'
         await this.implementPaymentProcessing();
         break;
       case review-syst\'e\'m:\'\'
@@ -289,7 +286,7 @@ export default async function handler(
         console.log("⚠️ Feature ${featureName} not implemented yet);""
     }
     
-    this.implementedFeatures.push(feature:${featureName}");""
+    this.implementedFeatures.push(feature: ${featureName}");""
   }
 
   async implementRealTimeChat() {
@@ -422,10 +419,7 @@ export default function ${componentName.replace(.tsx', ')}() {''
   getChatAPITemplate() {
     return import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== \'POST) {\'\'
     return res.status(405).json({ message: Metho\'d\' not allowed "});""
   }
@@ -442,10 +436,7 @@ export default async function handler(
   getPaymentAPITemplate() {
     return "import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== \'PO\'ST\') {\'\'
     return res.status(405).json({ message: \'Method not allowed\' "});""
   }
@@ -474,10 +465,7 @@ export default function ${componentName.replace(\'.tsx, )}() {\'\'
   getReviewAPITemplate() {
     return "import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== \')PO\'ST\') {\'\'
     return res.status(405).json({ message: \'Method not allowed\' "});""
   }
@@ -516,10 +504,7 @@ export default function SearchFilter() {
   getSearchAPITemplate() {
     return "import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== G\')ET\') {\'\'
     return res.status(405).json({ message: \'Method not allowed\' "});""
   }
@@ -607,10 +592,7 @@ export default function NotificationSystem() {
   getNotificationAPITemplate() {
     return "import React from \'react\'
 ;}
-export default async function handler(
-  req: "NextApiRequest",""
-  res: "NextApiResponse""
-) {
+export default async function handler() {
   if (req.method !== \'PO\'ST\') {\'\'
     return res.status(405).json({ message: \'Method not allowed\' "});""
   }
@@ -700,7 +682,7 @@ export default async function handler(
       console.log(✅ Implementation Agent completed successfully'));''
       return report;
     } catch (error) {
-      console.error('❌ Implementation Agent failed:', error);''
+      console.error('❌ Implementation Agent failed: ', error);''
       throw error;
     }
   }

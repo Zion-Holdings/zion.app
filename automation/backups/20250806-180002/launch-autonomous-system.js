@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,13 +116,10 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
-const chalk = require('chalk');
+const chalk = require(('chalk'););
 const { default: ora } = require('ora');
 const { default: inquirer } = require('inquirer');
 
@@ -395,25 +392,25 @@ class AutonomousSystemLauncher {
     
     const status = await this.getSystemStatus();
     
-    console.log(chalk.green('✅ Active Agents:'));
+    console.log(chalk.green('✅ Active Agents: '));
     status.activeAgents.forEach(agent => {
       console.log(`  • ${agent.name} (PID: ${agent.pid})`);
     });
     
     if (status.inactiveAgents.length > 0) {
-      console.log(chalk.red('❌ Inactive Agents:'));
+      console.log(chalk.red('❌ Inactive Agents: '));
       status.inactiveAgents.forEach(agent => {
         console.log(`  • ${agent.name}`);
       });
     }
     
-    console.log(chalk.yellow('\n📈 Analytics:'));
+    console.log(chalk.yellow('\n📈 Analytics: '));
     console.log(`  • Pages Analyzed: ${status.analytics.pagesAnalyzed}`);
     console.log(`  • Content Generated: ${status.analytics.contentGenerated}`);
     console.log(`  • Errors Fixed: ${status.analytics.errorsFixed}`);
     console.log(`  • Improvements Made: ${status.analytics.improvementsMade}`);
     
-    console.log(chalk.cyan('\n💾 System Info:'));
+    console.log(chalk.cyan('\n💾 System Info: '));
     console.log(`  • Log Files: ${status.logFiles}`);
     console.log(`  • Generated Content: ${status.generatedContent}`);
     console.log(`  • Analysis Results: ${status.analysisResults}`);
@@ -467,9 +464,9 @@ class AutonomousSystemLauncher {
     // Count files
     status.logFiles = fs.readdirSync(this.logDir).length;
     status.generatedContent = fs.existsSync(path.join(this.scriptDir, 'generated-content')) 
-      ? fs.readdirSync(path.join(this.scriptDir, 'generated-content')).length : 0;
+      ? fs.readdirSync(path.join(this.scriptDir, 'generated-content')).length: 0;
     status.analysisResults = fs.existsSync(path.join(this.scriptDir, 'analysis-results')) 
-      ? fs.readdirSync(path.join(this.scriptDir, 'analysis-results')).length : 0;
+      ? fs.readdirSync(path.join(this.scriptDir, 'analysis-results')).length: 0;
     
     // Load analytics
     const analyticsFile = path.join(this.scriptDir, 'master-analytics.json');
@@ -594,7 +591,7 @@ class AutonomousSystemLauncher {
 
   async run() {
     console.log(chalk.blue('🤖 Autonomous Agent System Launcher'));
-    console.log(chalk.gray('Version 1.0.0\n'));
+    console.log(chalk.gray('Version 1.0\n'));
     
     // Check dependencies
     const depsOk = await this.checkDependencies();

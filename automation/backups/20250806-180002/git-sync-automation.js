@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,23 +120,20 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn, exec, execSync } = require('child_process');
 const { v4: uuidv4 } = require('uuid');
-const cron = require('node-cron');
+const cron = require(('node-cron'););
 
 class GitSyncAutomation {
   constructor() {
     this.id = 'git-sync-automation';
-    this.version = '2.0.0';
+    this.version = '2.0';
     this.status = 'initializing';
     this.projectRoot = process.cwd();
     this.lastSync = null;
@@ -214,7 +211,7 @@ class GitSyncAutomation {
       console.log('✅ Git Sync Automation initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing Git Sync Automation:', error);
+      console.error('❌ Error initializing Git Sync Automation: ', error);
       this.status = 'error';
       throw error;
     }
@@ -228,14 +225,14 @@ class GitSyncAutomation {
       });
       
       if (status.trim()) {
-        console.log('📝 Found uncommitted changes:', status.split('\n').length - 1, 'files');
+        console.log('📝 Found uncommitted changes: ', status.split('\n').length - 1, 'files');
         return true;
       } else {
         console.log('✅ No uncommitted changes found');
         return false;
       }
     } catch (error) {
-      console.error('❌ Error checking git status:', error.message);
+      console.error('❌ Error checking git status: ', error.message);
       return false;
     }
   }
@@ -304,7 +301,7 @@ class GitSyncAutomation {
       console.log(`✅ Auto-commit successful: ${changedFiles.length} files`);
       
     } catch (error) {
-      console.error('❌ Auto-commit failed:', error.message);
+      console.error('❌ Auto-commit failed: ', error.message);
       this.errorCount++;
       await this.handleError('commit', error);
     }
@@ -327,7 +324,7 @@ class GitSyncAutomation {
       console.log('✅ Auto-push successful');
       
     } catch (error) {
-      console.error('❌ Auto-push failed:', error.message);
+      console.error('❌ Auto-push failed: ', error.message);
       this.errorCount++;
       await this.handleError('push', error);
     }
@@ -349,7 +346,7 @@ class GitSyncAutomation {
       });
       
     } catch (error) {
-      console.error('❌ Error getting changed files:', error.message);
+      console.error('❌ Error getting changed files: ', error.message);
       return [];
     }
   }
@@ -425,7 +422,7 @@ class GitSyncAutomation {
       return result.trim().length > 0;
       
     } catch (error) {
-      console.error('❌ Error checking commits to push:', error.message);
+      console.error('❌ Error checking commits to push: ', error.message);
       return false;
     }
   }
@@ -464,12 +461,12 @@ class GitSyncAutomation {
       console.log('💾 Backup created');
       
     } catch (error) {
-      console.error('❌ Failed to create backup:', error.message);
+      console.error('❌ Failed to create backup: ', error.message);
     }
   }
 
   async handleError(operation, error) {
-    console.error(`❌ ${operation} error:`, error.message);
+    console.error(`❌ ${operation} error: `, error.message);
     
     // Retry logic
     for (let attempt = 1; attempt <= this.config.retryAttempts; attempt++) {
@@ -488,7 +485,7 @@ class GitSyncAutomation {
         return;
         
       } catch (retryError) {
-        console.error(`❌ ${operation} retry ${attempt} failed:`, retryError.message);
+        console.error(`❌ ${operation} retry ${attempt} failed: `, retryError.message);
       }
     }
     
@@ -562,7 +559,7 @@ if (require.main === module) {
   });
   
   gitSync.initialize().catch(error => {
-    console.error('❌ Git Sync Automation initialization failed:', error);
+    console.error('❌ Git Sync Automation initialization failed: ', error);
     process.exit(1);
   });
 }

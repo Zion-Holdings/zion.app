@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -40,7 +40,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -65,7 +65,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -75,14 +75,11 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+}const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
-const os = require('os');
+const os = require(('os'););
 
 const execAsync = promisify(exec);
 
@@ -124,7 +121,7 @@ class HighSpeedAutomationOptimizer {
       console.log('✅ High-Speed Automation Optimizer initialized successfully');
       console.log(`🚀 Running with ${this.parallelProcesses} parallel processes`);
     } catch (error) {
-      console.error('❌ Error initializing High-Speed Automation Optimizer:', error);
+      console.error('❌ Error initializing High-Speed Automation Optimizer: ', error);
       throw error;
     }
   }
@@ -173,7 +170,7 @@ class HighSpeedAutomationOptimizer {
   async getAllJsFiles(dir) {
     const files = [];
     
-    async function scanDirectory(currentDir) {
+    async function scanDirectory() {
       try {
         const entries = await fs.readdir(currentDir, { withFileTypes: true });
         
@@ -226,7 +223,7 @@ class HighSpeedAutomationOptimizer {
         const parallelProcessingCode = `
 // High-speed parallel processing
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
 if (isMainThread) {
   const numCPUs = os.cpus().length;
@@ -240,8 +237,8 @@ if (isMainThread) {
 `;
         
         if (!content.includes('worker_threads')) {
-          content = content.replace(/const fs = require\('fs'\)\.promises;/g, 
-            `const fs = require('fs').promises;\nconst { Worker, isMainThread, parentPort, workerData } = require('worker_threads');`);
+          content = content.replace(/const fs = require(\('fs'\)\.promise);s;/g, 
+            `const fs = require(($2););.promises;\nconst { Worker, isMainThread, parentPort, workerData } = require('worker_threads');`);
           optimized = true;
         }
       }
@@ -253,7 +250,7 @@ if (isMainThread) {
 const cache = new Map();
 const cacheTimeout = 200; // 30 seconds
 
-async function cachedReadFile(filePath) {
+async function cachedReadFile() {
   const cacheKey = filePath;
   const cached = cache.get(cacheKey);
   
@@ -278,7 +275,7 @@ async function cachedReadFile(filePath) {
 const writeQueue = [];
 let writeTimeout = null;
 
-async function batchWriteFile(filePath, data) {
+async function batchWriteFile() {
   writeQueue.push({ filePath, data });
   
   if (!writeTimeout) {
@@ -392,7 +389,7 @@ async function batchWriteFile(filePath, data) {
     const reportPath = path.join(__dirname, 'speed-reports', `speed-report-${Date.now()}.json`);
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     
-    console.log('📊 Speed report generated:', reportPath);
+    console.log('📊 Speed report generated: ', reportPath);
   }
 
   async stopAllSystems() {
@@ -441,7 +438,7 @@ async function main() {
     });
     
   } catch (error) {
-    console.error('❌ Fatal error in High-Speed Automation Optimizer:', error);
+    console.error('❌ Fatal error in High-Speed Automation Optimizer: ', error);
     process.exit(1);
   }
 }

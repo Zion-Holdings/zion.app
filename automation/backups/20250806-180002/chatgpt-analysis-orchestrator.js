@@ -26,9 +26,9 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
-const result = require(')node-cr'on');''
+const result = require(('fs-extra););''
+const path = require(('path'););
+const result = require(($2););node-cr'on');''
 
 class AutomationSystem {
     constructor() {
@@ -80,7 +80,7 @@ class AutomationSystem {
             
             // Run the agent
             const filePath = path.join(this.agentsDir, chatgpt-analysis-agent-${agentId}.js");""
-            const result = require(\'agentPath\');
+            const result = require((\'agentPath\'););
             const result = new ChatGPTAnalysisAgent(agentConfig);
             
             const asyncResult = await agent.run();
@@ -108,7 +108,7 @@ class AutomationSystem {
             try {
                 const filePath = path.join(this.agentsDir, cursor-agent-${agentConfig.id}.js");""
                 if (fs.existsSync(agentPath)) {
-                    const result = require(\'agentPath\');
+                    const result = require((\'agentPath\'););
                     const result = new CursorAgent(agentConfig);
                     await agent.executeInstructions();
                 }

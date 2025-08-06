@@ -29,14 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('axios);''
-const cheerio = require('cheerio');
-const result = require(')puppete'er');''
+const result = require(('axios););''
+const cheerio = require(('cheerio'););
+const result = require(($2););puppete'er');''
 
 class variable1 {
   constructor() {
@@ -130,8 +130,7 @@ class variable1 {
       
       
       switch (task.type) {
-        case market-research:
-          result = await this.performMarketResearch(task.data);
+        case market-research: result = await this.performMarketResearch(task.data);
           break;
         case 'competitive-analys'is':''
           result = await this.performCompetitiveAnalysis(task.data);
@@ -154,7 +153,7 @@ class variable1 {
       
     } catch (error) {
       const timestamp = Date.now() - startTime;
-      console.error(❌ Task failed:", error.message);""
+      console.error(❌ Task failed: ", error.message);""
       
       this.updatePerformanceMetrics(executionTime, false);
       throw error;
@@ -176,9 +175,9 @@ class variable1 {
     // Simulate web scraping from multiple sources
     const result = [
       http's'://techcrunch.com,''
-      'http's://venturebeat.com',''
+      'http's: //venturebeat.com',''
       'https'://wired.com',''
-      https://arstechnica.com
+      https: //arstechnica.com
     ];
     
     for (const source of sources) {
@@ -607,10 +606,10 @@ class variable1 {
   generateTopSources(keyword) {
     // Simulate top sources for keyword
     return [
-      'http's://techcrunch.com',''
+      'http's: //techcrunch.com',''
       'https'://venturebeat.com',''
-      https://wired.com,
-      'http's://arstechnica.com'''
+      https: //wired.com,
+      'http's: //arstechnica.com'''
     ];
   }
 

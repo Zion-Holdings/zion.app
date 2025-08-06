@@ -67,8 +67,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 const { createValidComponentName, createDisplayTitle } = require(')./utils/component-name-helper');''
 
 class AutomationSystem {
@@ -393,8 +393,8 @@ class AutomationSystem {
         const result = createValidComponentName(agent.name).replace(Pa\'g\'e, \'Age\'nt\');\'\'
         
         return """
-const result = require(\'fs-extra);\'\'
-const result = require(\'path\');
+const result = require((\'fs-extra););\'\'
+const result = require((\'path\'););
 
 class ${agentClassName} {
     constructor() {
@@ -430,7 +430,7 @@ class ${agentClassName} {
             console.log(\"✅ \${this.name} completed successfully\");""
             return output;
         } catch (error) {
-            console.error(\❌ \${this.name} failed:\, error.message);
+            console.error(\❌ \${this.name} failed: \, error.message);
             throw error;
         }
     }
@@ -552,7 +552,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error(\❌ \${agent.name} failed:\, error);
+            console.error(\❌ \${agent.name} failed: \, error);
             process.exit(1);
         });
 }
@@ -613,7 +613,7 @@ if (require.main === module) {
         const result = {};
         
         switch (agentType) {
-            case \'aiTrend:\'\'
+            case \'aiTrend: \'\'
                 filteredData.trends = marketData.trends || [];
                 break;
             case competit\'o\'r:\'\'
@@ -679,8 +679,8 @@ if (require.main === module) {
         const result = createValidComponentName(agent.name).replace(\'Page, Agent);\'\'
         
         return """
-const result = require(\')fs-ext\'ra\');\'\'
-const result = require(\'path);\'\'
+const result = require(($2););fs-ext\'ra\');\'\'
+const result = require((\'path););\'\'
 
 class ${agentClassName} {
     constructor() {
@@ -714,7 +714,7 @@ class ${agentClassName} {
             console.log(\"✅ \${this.name} completed successfully\");""
             return output;
         } catch (error) {
-            console.error(\❌ \${this.name} failed:\, error.message);
+            console.error(\❌ \${this.name} failed: \, error.message);
             throw error;
         }
     }
@@ -864,7 +864,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error(\"❌ \${agent.name} failed:\", error);""
+            console.error(\"❌ \${agent.name} failed: \", error);""
             process.exit(1);
         });
 }
@@ -1025,7 +1025,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error('❌ Agent creator failed:', error);''
+            console.error('❌ Agent creator failed: ', error);''
             process.exit(1);
         });
 } </div>

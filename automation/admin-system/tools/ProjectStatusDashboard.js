@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ProjectStatusDashboard {
     constructor() {
@@ -19,7 +19,7 @@ class ProjectStatusDashboard {
             this.saveResult(result);
             return result;
         } catch (error) {
-            console.error('Error in ProjectStatusDashboard:', error);
+            console.error('Error in ProjectStatusDashboard: ', error);
             throw error;
         }
     }

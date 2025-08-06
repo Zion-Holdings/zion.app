@@ -70,13 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { GoogleGenerativeAI } = require('@google/generative-ai''));''
 
 class AutomationSystem {
@@ -291,7 +291,7 @@ const ${safePageName}Page: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <h1 className="text-2xl" font-bold text-white></div>""
@@ -397,7 +397,7 @@ const ${safePageName}Page: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <h1 className="text-2xl" font-bold text-white></div>""
@@ -426,7 +426,7 @@ const ${safePageName}Page: "NextPage = () => {""
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+        <div className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
           <div className="prose" prose-invert prose-lg max-w-none"></div>""
             <div className="text-gray-300" leading-relaxed>""
               ${content.split(\n\').slice(1).map(paragraph => </div>\'\'
@@ -449,8 +449,7 @@ Discover top professionals and services in the ${category} space on Zion AI Mark
 
 Our ${category} category features a diverse range of services including consulting, development, implementation, and ongoing support. Whether youre a startup looking to scale or an enterprise seeking optimization, we have the right professionals for your needs.
 
-Key benefits of our ${category} marketplace include:
-- Verified professionals with proven track records
+Key benefits of our ${category} marketplace include: - Verified professionals with proven track records
 - Transparent pricing and project management
 - AI-powered matching for optimal client-provider fit
 - Secure payment processing and dispute resolution
@@ -512,7 +511,7 @@ const ${safePageName}Page: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <h1 className="text-2xl" font-bold text-white></div>""
@@ -541,7 +540,7 @@ const ${safePageName}Page: "NextPage = () => {""
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+        <div className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
           <div className="prose" prose-invert prose-lg max-w-none"></div>""
             <div className="text-gray-300" leading-relaxed>""
               ${content.split(\'\n).slice(1).map(paragraph => </div>\'\'

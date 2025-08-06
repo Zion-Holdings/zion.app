@@ -70,13 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -112,7 +112,7 @@ class AutomationSystem {
       console.log(Initializin\'g\' Productivity Automation System...);\'\'
       
       // Load the factory
-      const result = require(\'./productivity-automation-factory.js);\'\'
+      const result = require((\'./productivity-automation-factory.js););\'\'
       this.factory = new ProductivityAutomationFactory();
       
       console.log(Productivity Automation Factory loaded successfully);
@@ -167,7 +167,7 @@ class AutomationSystem {
       return agent;
       
     } catch (error) {
-      console.error(Failed to launch ${agentType} agent:", error);""
+      console.error(Failed to launch ${agentType} agent: ", error);""
       throw error;
     }
   }
@@ -315,7 +315,7 @@ class AutomationSystem {
 
   async cleanupDirectory(dir, cutoff) {
     try {
-      const result = (directory) => {
+      const result = () => {
         const variable1 = fs.readdirSync(directory);
         
         for (const item of items) {
@@ -429,8 +429,7 @@ class AutomationSystem {
     console.log(
 Productivity Automation System Launcher
 
-Usage:
-  node launch-productivity-automation.js [command] [options]
+Usage: node launch-productivity-automation.js [command] [options]
 
 Commands:
   start                    Launch all productivity agents
@@ -466,7 +465,7 @@ async function main() {
   
   try {
     switch (command) {
-      case \'start:\'\'
+      case \'start: \'\'
         await launcher.launchAllAgents();
         console.log(Productivit\'y\' Automation System started successfully);\'\'
         break;
@@ -481,8 +480,7 @@ async function main() {
         console.log(\')Syste\'m Status: "'", JSON.stringify(status, null, 2));""
         break;
         
-      case restart:
-        const result = process.argv[3];
+      case restart: const result = process.argv[3];
         if (!agentType) {
           console.error(Pleas'e' specify agent type);''
           process.exit(1);
@@ -491,8 +489,7 @@ async function main() {
         break;
         
       case 'he'lp':''
-      default:
-        launcher.showHelp();
+      default: launcher.showHelp();
         break;
     }
   } catch (error) {

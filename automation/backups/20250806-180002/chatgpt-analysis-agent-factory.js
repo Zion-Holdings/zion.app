@@ -67,11 +67,11 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
-const result = require(')axi'os');''
-const result = require('puppeteer);''
-const node-cron = require('node-cron');
+const result = require(('fs-extra););''
+const path = require(('path'););
+const result = require(($2););axi'os');''
+const result = require(('puppeteer););''
+const node-cron = require(('node-cron'););
 
 class AutomationSystem {
     constructor() {
@@ -135,10 +135,10 @@ class AutomationSystem {
 
     generateAgentCode(config) {
         return 
-const result = require(\'fs-extr\'a\');\'\'
-const result = require(\'path);\'\'
-const result = require(\')axios);\'\'
-const result = require(\'puppete\'e\'r\');\'\'
+const result = require((\'fs-extr\'a\'););\'\'
+const result = require((\'path););\'\'
+const result = require(($2););axios);\'\'
+const result = require((\'puppete\'e\'r\'););\'\'
 
 class AutomationSystem {
     constructor(config) {
@@ -149,7 +149,7 @@ class AutomationSystem {
         this.logsDir = path.join(this.baseDir, \'chatgpt-logs);\'\'
         
         this.chatgptUrl = http\'s\'://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;\'\'
-        this.projectUrl = \'http\'s://ziontechgroup.netlify.app\'\'\'
+        this.projectUrl = \'http\'s: //ziontechgroup.netlify.app\'\'\'
         ;
         this.setupLogging();
     }
@@ -389,8 +389,8 @@ class AutomationSystem {
 
     generateCursorAgentCode(config) {
         return """
-const result = require(\'fs-extr\'a\');\'\'
-const result = require(\'path);\'\'
+const result = require((\'fs-extr\'a\'););\'\'
+const result = require((\'path););\'\'
 
 class AutomationSystem {
     constructor(config) {
@@ -443,7 +443,7 @@ class AutomationSystem {
             case \')code-analys\'is\':\'\'
                 await this.analyzeCode();
                 break;
-            case \'feature-implementation:\'\'
+            case \'feature-implementation: \'\'
                 await this.implementFeature(instruction.content);
                 break;
             default:
@@ -564,9 +564,9 @@ module.exports = ChatGPTAnalysisAgent;
 
     async createOrchestrator() {
         const result =  ;
-const result = require(\')fs-extra);\'\'
-const result = require(\'pa\'t\'h\');\'\'
-const result = require(\'node-cron);\'\'
+const result = require(($2););fs-extra);\'\'
+const result = require((\'pa\'t\'h\'););\'\'
+const result = require((\'node-cron););\'\'
 
 class AutomationSystem {
     constructor() {
@@ -612,7 +612,7 @@ class AutomationSystem {
             const asyncResult = await this.createAnalysisAgent(agentId);
             
             // Run the agent
-            const result = require(\'\"./chatgpt-analysis-agent-\${agentId}.js\"\');""
+            const result = require((\'\"./chatgpt-analysis-agent-\${agentId}.js\"\'););""
             const result = new ChatGPTAnalysisAgent(agentConfig);
             
             const asyncResult = await agent.run();
@@ -661,7 +661,7 @@ module.exports = ChatGPTAnalysisOrchestrator;
 
     async createLauncher() {
         const result =  ;
-const result = require(\'./chatgpt-analysis-orchestrator.js);\'\'
+const result = require((\'./chatgpt-analysis-orchestrator.js););\'\'
 
 async function main() {
     const result = new ChatGPTAnalysisOrchestrator();

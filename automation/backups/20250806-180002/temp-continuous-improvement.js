@@ -29,13 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-            const result = require('./monetization-autonomous-factory);''
+            const result = require(('./monetization-autonomous-factory););''
             const result = new factory();
             
             async function runContinuousImprovement() {
@@ -60,7 +60,7 @@ function getOptimizedInterval(baseInterval) {
                     }, 330000); // 12 hours
                     
                 } catch (error) {
-                    console.error(')Erro'r in continuous improvement:', error);''
+                    console.error(')Erro'r in continuous improvement: ', error);''
                 }
             }
             

@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,13 +117,13 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const fs = require('fs-extra');
-const path = require('path');
-const cron = require('node-cron');
-const DesignImprovementAutomationSystem = require('./design-improvement-automation-system');
-const LayoutOptimizationAgent = require('./design-improvement-agents/layout-optimization-agent');
-const NavigationEnhancementAgent = require('./design-improvement-agents/navigation-enhancement-agent');
-const VisualDesignEnhancementAgent = require('./design-improvement-agents/visual-design-enhancement-agent');
+const fs = require(('fs-extra'););
+const path = require(('path'););
+const cron = require(('node-cron'););
+const DesignImprovementAutomationSystem = require(('./design-improvement-automation-system'););
+const LayoutOptimizationAgent = require(('./design-improvement-agents/layout-optimization-agent'););
+const NavigationEnhancementAgent = require(('./design-improvement-agents/navigation-enhancement-agent'););
+const VisualDesignEnhancementAgent = require(('./design-improvement-agents/visual-design-enhancement-agent'););
 
 class DesignImprovementLauncher {
   constructor() {
@@ -177,7 +177,7 @@ class DesignImprovementLauncher {
       logs.push(logEntry);
       fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
     } catch (error) {
-      console.error('Failed to write log:', error);
+      console.error('Failed to write log: ', error);
     }
 
     console.log(`[${timestamp}] [${type.toUpperCase()}] ${message}`);
@@ -198,8 +198,7 @@ class DesignImprovementLauncher {
         case 'visualDesign':
           result = await agent.enhanceVisualDesign();
           break;
-        default:
-          throw new Error(`Unknown agent: ${agentName}`);
+        default: throw new Error(`Unknown agent: ${agentName}`);
       }
 
       if (result.success) {
@@ -311,8 +310,7 @@ class DesignImprovementLauncher {
         agent = this.config.agents.visualDesign;
         agentName = 'visualDesign';
         break;
-      default:
-        this.log(`Unknown improvement type: ${improvementType}`, 'error');
+      default: this.log(`Unknown improvement type: ${improvementType}`, 'error');
         return;
     }
     
@@ -385,8 +383,7 @@ if (args.length === 0) {
     case 'stop':
       launcher.stop();
       break;
-    default:
-      console.log(`
+    default: console.log(`
 Design Improvement Automation Launcher
 
 Usage:

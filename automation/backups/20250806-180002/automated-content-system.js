@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,13 +116,11 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('./content-orchestrator);''
-const ./content-integration-agent = require('./content-integration-agent');
-const fs = require('fs');
-const result = require('pa'')t'h);''
+};
+const result = require(('./content-orchestrator););''
+const ./content-integration-agent = require(('./content-integration-agent'););
+const fs = require(('fs'););
+const result = require(($2););t'h);''
 
 class AutomationSystem {
   constructor() {
@@ -192,7 +190,7 @@ class AutomationSystem {
       return generationResults;
       
     } catch (error) {
-      console.error(❌ Generate & Integrate failed:\'), error);\'\'
+      console.error(❌ Generate & Integrate failed: \'), error);\'\'
       throw error;
     }
   }
@@ -251,7 +249,7 @@ class AutomationSystem {
     const filePath = path.join(__dirname, ..\'), \'pages);\'\'
     let variable1 = 0;
     
-    const result = (dir) => {
+    const result = () => {
       if (!fs.existsSync(dir)) return;
       
       const result = fs.readdirSync(dir);
@@ -360,7 +358,7 @@ class AutomationSystem {
       return cleanupResults;
       
     } catch (error) {
-      console.error(❌ Cleanup and optimization failed:\'), error);\'\'
+      console.error(❌ Cleanup and optimization failed: \'), error);\'\'
       throw error;
     }
   }
@@ -469,7 +467,7 @@ async function main() {
   
   try {
     switch (command) {
-      case \'full:\'\'
+      case \'full: \'\'
         await system.runFullWorkflow();
         break;
         
@@ -498,7 +496,7 @@ async function main() {
         await system.runScheduledAutomation();
         break;
         
-      case \'cleanup:\'\'
+      case \'cleanup: \'\'
         await system.cleanupAndOptimize();
         break;
         
@@ -508,8 +506,7 @@ async function main() {
         console.log(JSON.stringify(status, null, 2));
         break;
         
-      case help:
-        console.log("""
+      case help: console.log("""
 🤖 Automated Content System
 
 Usage:
@@ -527,17 +524,15 @@ Commands:
   status                  Show system status
   help                    Show this help message
 
-Examples:
-  node automated-content-system.js full
+Examples: node automated-content-system.js full
   node automated-content-system.js generate
   node automated-content-system.js marketplace
-  node automated-content-system.js schedule {cron: "0 2 * * *",categories:["marketplace",blog]}\')\'\'
+  node automated-content-system.js schedule {cron: "0 2 * * *",categories: ["marketplace",blog]}\')\'\'
   node automated-content-system.js status
         ");""
         break;
         
-      default:
-        if (!command) {
+      default: if (!command) {
           // Default to full workflow
           await system.runFullWorkflow();
         } else {
@@ -548,7 +543,7 @@ Examples:
     }
     
   } catch (error) {
-    console.error('❌ Automated content system failed:', error);''
+    console.error('❌ Automated content system failed: ', error);''
     process.exit(1);
   }
 }

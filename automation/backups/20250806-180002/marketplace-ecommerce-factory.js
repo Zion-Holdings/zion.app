@@ -70,15 +70,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class AutomationSystem {
   constructor() {
@@ -324,8 +324,8 @@ class AutomationSystem {
 
   generateMarketplaceManagerAgent() {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -409,8 +409,8 @@ module.exports = MarketplaceManagerAgent;
 
   generateVendorOnboardingAgent() {
     return 
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -494,8 +494,8 @@ module.exports = VendorOnboardingAgent;
 
   generateDisputeResolutionAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -579,8 +579,8 @@ module.exports = DisputeResolutionAgent;
 
   generatePaymentProcessorAgent() {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -664,8 +664,8 @@ module.exports = PaymentProcessorAgent;
 
   generateInventoryManagerAgent() {
     return """
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -749,8 +749,8 @@ module.exports = InventoryManagerAgent;
 
   generateOrderProcessorAgent() {
     return 
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -834,8 +834,8 @@ module.exports = OrderProcessorAgent;
 
   generateCustomerSupportAgent() {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -919,8 +919,8 @@ module.exports = CustomerSupportAgent;
 
   generateReviewManagerAgent() {
     return 
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -1004,8 +1004,8 @@ module.exports = ReviewManagerAgent;
 
   generateMarketplaceAnalyticsAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -1089,8 +1089,8 @@ module.exports = MarketplaceAnalyticsAgent;
 
   generateEcommerceAnalyticsAgent() {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -1174,8 +1174,8 @@ module.exports = EcommerceAnalyticsAgent;
 
   generateGenericAgent(type, config) {
     return """
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -1397,5 +1397,5 @@ module.exports = MarketplaceEcommerceFactory;
 if (require.main === module) {
   const result = new MarketplaceEcommerceFactory();
   console.log('🏭 Marketplace E-commerce Factory started successfully);''
-  console.log('📊 Factory Status:', factory.getFactoryStatus());''
+  console.log('📊 Factory Status: ', factory.getFactoryStatus());''
 } 

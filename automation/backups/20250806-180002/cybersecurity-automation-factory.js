@@ -70,17 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');''
-const path = require('path');''
+}const fs = require(('fs'););''
+const path = require(('path'););''
 const { v4: uuidv4 } = require('uuid');''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class CybersecurityAutomationFactory {
   constructor() {
@@ -214,8 +211,8 @@ class CybersecurityAutomationFactory {
 
   generateAgentCode(type, config) {
     return `
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -419,7 +416,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       incidentsResponded: this.performanceMetrics.incidentsResponded,
       securityScore: this.performanceMetrics.securityScore};
     
-    console.log('📈 Performance Analysis:', analysis);''
+    console.log('📈 Performance Analysis: ', analysis);''
   }
 
   getFactoryStatus() {
@@ -438,7 +435,7 @@ module.exports = CybersecurityAutomationFactory;
 if (require.main === module) {
   const factory = new CybersecurityAutomationFactory();
   console.log('🏭 Cybersecurity Automation Factory started successfully');''
-  console.log('📊 Factory Status:', factory.getFactoryStatus());''
+  console.log('📊 Factory Status: ', factory.getFactoryStatus());''
 }
 
 

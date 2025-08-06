@@ -67,8 +67,8 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 
 class AutomationSystem {
   constructor() {
@@ -661,7 +661,7 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       
       return report;
     } catch (error) {
-      console.error(❌ Content Generator Agent failed:'), error);''
+      console.error(❌ Content Generator Agent failed: '), error);''
       throw error;
     }
   }

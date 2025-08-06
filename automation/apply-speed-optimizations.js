@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require(($2););.promises;
+const path = require(('path'););
 const { exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -50,7 +50,7 @@ class SpeedOptimizationApplier {
       await this.generateOptimizationReport();
       
     } catch (error) {
-      console.error('❌ Fatal error during optimization:', error);
+      console.error('❌ Fatal error during optimization: ', error);
       throw error;
     }
   }
@@ -58,7 +58,7 @@ class SpeedOptimizationApplier {
   async getAllJsFiles(dir) {
     const files = [];
     
-    async function scanDirectory(currentDir) {
+    async function scanDirectory() {
       try {
         const entries = await fs.readdir(currentDir, { withFileTypes: true });
         
@@ -125,9 +125,9 @@ class SpeedOptimizationApplier {
           const speedModeCode = `
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 `;
@@ -145,9 +145,9 @@ function getOptimizedInterval(baseInterval) {
         const parallelCode = `
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -156,7 +156,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(\`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -181,7 +181,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -326,7 +326,7 @@ async function main() {
     await optimizer.applyOptimizations();
     console.log('\n🚀 All automation scripts have been optimized for maximum speed!');
   } catch (error) {
-    console.error('❌ Fatal error:', error);
+    console.error('❌ Fatal error: ', error);
     process.exit(1);
   }
 }

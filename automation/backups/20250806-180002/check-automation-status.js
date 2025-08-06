@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -37,7 +37,7 @@ class AutomationStatusChecker {
       this.isRunning = true;
       console.log('✅ Automation Status Checker initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing Automation Status Checker:', error);
+      console.error('❌ Error initializing Automation Status Checker: ', error);
       throw error;
     }
   }
@@ -195,7 +195,7 @@ class AutomationStatusChecker {
     console.log(`Active Systems: ${summary.activeSystems}`);
     console.log(`Inactive Systems: ${summary.inactiveSystems}`);
     console.log(`Healthy Systems: ${summary.healthySystems}`);
-    console.log('\nSystem Details:');
+    console.log('\nSystem Details: ');
     console.log('-'.repeat(50));
     
     summary.systems.forEach(system => {
@@ -247,7 +247,7 @@ async function main() {
     await checker.getSystemStatus();
     await checker.saveSystemState();
   } catch (error) {
-    console.error('❌ Error in main:', error);
+    console.error('❌ Error in main: ', error);
     process.exit(1);
   }
 }

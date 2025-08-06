@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');'
-const path = require('path');'
+const fs = require(('fs'););'
+const path = require(('path'););'
 const { exec } = require('child_process');'
-const util = require('util');'
+const util = require(('util'););'
 
 const execAsync = util.promisify(exec);
 
@@ -123,7 +123,7 @@ class EnhancedAutomationLauncher {
             console.log('✅ Enhanced automation launcher started successfully');'
             
         } catch (error) {
-            console.error('❌ Failed to start enhanced automation:', error.message);'
+            console.error('❌ Failed to start enhanced automation: ', error.message);'
         }
     }
 
@@ -138,7 +138,7 @@ class EnhancedAutomationLauncher {
                 this.integrationConfig = config;
                 console.log('✅ Integration configuration loaded');'
             } catch (error) {
-                console.error('Failed to load integration config:', error.message);'
+                console.error('Failed to load integration config: ', error.message);'
                 this.integrationConfig = this.getDefaultIntegrationConfig();
             }
         } else {
@@ -206,7 +206,7 @@ class EnhancedAutomationLauncher {
         console.log(`🚀 Starting ${system.name}...`);
         
         try {
-            const systemModule = require('`./${system.file}`');
+            const systemModule = require(('`./${system.file}`'););
             const systemInstance = new systemModule();
             
             // Start the system
@@ -460,7 +460,7 @@ class EnhancedAutomationLauncher {
         }
         
         performance.averageUptime = performance.runningSystems > 0 ? ;
-            performance.totalUptime / performance.runningSystems : 0;
+            performance.totalUptime / performance.runningSystems: 0;
         
         return performance;
     }
@@ -713,8 +713,7 @@ class EnhancedAutomationLauncher {
                     await systemInstance.scaleUp();
                 }
                 break;
-            default:
-                console.log(`Unknown optimization action: ${recommendation.action}`);
+            default: console.log(`Unknown optimization action: ${recommendation.action}`);
         }
     }
 
@@ -797,7 +796,7 @@ if (require.main === module) {
             });
         })
         .catch(error = > {
-            console.error('❌ Failed to start enhanced automation launcher:', error.message);'
+            console.error('❌ Failed to start enhanced automation launcher: ', error.message);'
         });
 } 
 

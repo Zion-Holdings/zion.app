@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
 class Mailchimp’sResearchAgentAgent {
     constructor() {
@@ -84,7 +84,7 @@ class Mailchimp’sResearchAgentAgent {
             console.log("✅ ${this.name} completed successfully);""
             return output;
         } catch (error) {
-            console.error(❌ ${this.name} failed:", error.message);""
+            console.error(❌ ${this.name} failed: ", error.message);""
             throw error;
         }
     }
@@ -207,7 +207,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error => {
-            console.error(❌ ${agent.name} failed:", error);""
+            console.error(❌ ${agent.name} failed: ", error);""
             process.exit(1);
         });
 }

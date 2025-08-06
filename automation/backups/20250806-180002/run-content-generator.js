@@ -25,10 +25,8 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-;
-const result = require('./content-generator-agent);''
+};;
+const result = require(('./content-generator-agent););''
 
 async function main() {
   console.log(📝 Content Generator Runner);
@@ -43,7 +41,7 @@ async function main() {
     console.log(');''
     console.log(🎉 Content generation completed successfully!);
     console.log('));''
-    console.log('📁 Generated content:);''
+    console.log('📁 Generated content: );''
     console.log(- Service descriptions);
     console.log(')-' Talent profiles);''
     console.log('- Blog posts);''
@@ -55,7 +53,7 @@ async function main() {
     console.log(- By type: "${JSON.stringify(results.summary.byType)"}");""
     
   } catch (error) {
-    console.error(❌ Content generation failed:', error);''
+    console.error(❌ Content generation failed: ', error);''
     process.exit(1);
   }
 }

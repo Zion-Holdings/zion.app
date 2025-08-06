@@ -29,17 +29,17 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs-extra);''
-const path = require('path');
-const )./linkedin-advertising-factory = require(')./linkedin-advertising-factory');''
-const result = require('./agents/linkedin-ad-manager-agent'');''
-const result = require('./agents/linkedin-content-creator-agent);''
-const ./agents/linkedin-analytics-agent = require('./agents/linkedin-analytics-agent');
+const result = require(('fs-extra););''
+const path = require(('path'););
+const )./linkedin-advertising-factory = require(($2););./linkedin-advertising-factory');''
+const result = require(('./agents/linkedin-ad-manager-agent''););''
+const result = require(('./agents/linkedin-content-creator-agent););''
+const ./agents/linkedin-analytics-agent = require(('./agents/linkedin-analytics-agent'););
 
 class AutomationSystem {
     constructor() {
@@ -105,7 +105,7 @@ class AutomationSystem {
                 await agent.execute();
                 console.log("✅ Agent ${agent.name} executed successfully);""
             } catch (error) {
-                console.error(❌ Agent ${agent.name} failed:", error.message);""
+                console.error(❌ Agent ${agent.name} failed: ", error.message);""
                 this.log("Agent ${agent.name} failed: "${error.message"}, \'err\'or\');\'\'
             }
         }
@@ -322,7 +322,7 @@ if (require.main === module) {
     
     // Start the system
     launcher.start().catch(error = > {
-        console.error('❌ Failed to start LinkedIn Advertising System:', error);''
+        console.error('❌ Failed to start LinkedIn Advertising System: ', error);''
         process.exit(1);
     });
 } 

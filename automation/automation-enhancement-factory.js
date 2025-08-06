@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { exec } = require('child_process');''
-const util = require('util');''
+const util = require(('util'););''
 
 const execAsync = util.promisify(exec);
 
@@ -447,7 +447,7 @@ class AutomationEnhancementFactory {
             await this.saveEnhancementReport(totalEnhancements);
             
         } catch (error) {
-            console.error('❌ Error in automation enhancement:', error.message);''
+            console.error('❌ Error in automation enhancement: ', error.message);''
         }
     }
 
@@ -455,7 +455,7 @@ class AutomationEnhancementFactory {
         const files = [];
         const automationDir = path.join(__dirname);
         
-        const readDir = (dir) => {
+        const readDir = () => {
             try {
                 const items = fs.readdirSync(dir);
                 for (const item of items) {
@@ -535,7 +535,7 @@ class AutomationEnhancementFactory {
             fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
             
         } catch (error) {
-            console.error('❌ Error saving enhancement report:', error.message);''
+            console.error('❌ Error saving enhancement report: ', error.message);''
         }
     }
 
@@ -561,7 +561,7 @@ class AutomationEnhancementFactory {
             fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
             
         } catch (error) {
-            console.error('❌ Error saving final state:', error.message);''
+            console.error('❌ Error saving final state: ', error.message);''
         }
     }
 }

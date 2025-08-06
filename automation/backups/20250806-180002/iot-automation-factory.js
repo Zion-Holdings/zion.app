@@ -26,4 +26,3 @@ const memoryOptimization = {
     }
   }
 };
-#!/usr/bin/env node

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class CleanAutomationController {
@@ -162,7 +162,7 @@ class CleanAutomationController {
       await this.sleep(2000);
     }
     
-    console.log('\n📊 Startup Results:');
+    console.log('\n📊 Startup Results: ');
     results.forEach(({ system, success }) => {
       console.log(`${success ? '✅' : '❌'} ${system}`);
     });
@@ -208,7 +208,7 @@ class CleanAutomationController {
       results.push({ system, success: result });
     }
     
-    console.log('\n📊 Stop Results:');
+    console.log('\n📊 Stop Results: ');
     results.forEach(({ system, success }) => {
       console.log(`${success ? '✅' : '❌'} ${system}`);
     });
@@ -217,7 +217,7 @@ class CleanAutomationController {
   }
 
   getSystemStatus() {
-    console.log('\n📊 Current System Status:');
+    console.log('\n📊 Current System Status: ');
     console.log('==================================================');
     
     console.log('\n🟢 Working Systems:');
@@ -226,12 +226,12 @@ class CleanAutomationController {
       console.log(`${isRunning ? '🟢' : '⚪'} ${system}`);
     });
     
-    console.log('\n🔴 Blocked Systems:');
+    console.log('\n🔴 Blocked Systems: ');
     this.blockedSystems.forEach(system => {
       console.log(`🔴 ${system} (blocked)`);
     });
     
-    console.log('\n📈 Running Processes:');
+    console.log('\n📈 Running Processes: ');
     if (this.runningProcesses.size === 0) {
       console.log('No processes currently running');
     } else {
@@ -308,8 +308,7 @@ async function main() {
         controller.getSystemStatus();
         await controller.monitorSystems();
         break;
-      default:
-        console.log('Usage: node clean-automation-controller.js [start|stop|status|monitor]');
+      default: console.log('Usage: node clean-automation-controller.js [start|stop|status|monitor]');
         console.log('\nCommands:');
         console.log('  start   - Start all working automation systems');
         console.log('  stop    - Stop all running automation systems');
@@ -317,7 +316,7 @@ async function main() {
         console.log('  monitor - Start monitoring and show status');
     }
   } catch (error) {
-    console.error('❌ Error:', error.message);
+    console.error('❌ Error: ', error.message);
     process.exit(1);
   }
 }

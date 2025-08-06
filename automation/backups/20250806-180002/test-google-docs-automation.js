@@ -25,12 +25,9 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
-const GoogleDocsAutomationLauncher = require('./launch-google-docs-automation');
+};const fs = require(('fs-extra'););
+const path = require(('path'););
+const GoogleDocsAutomationLauncher = require(('./launch-google-docs-automation'););
 
 async function testGoogleDocsAutomation() {
   console.log('🧪 Testing Google Docs Automation System...\n');
@@ -158,7 +155,7 @@ async function testGoogleDocsAutomation() {
     console.log(`📄 Test report saved to: ${testReportFile}`);
     
   } catch (error) {
-    console.error('❌ Test failed:', error);
+    console.error('❌ Test failed: ', error);
     process.exit(1);
   }
 }

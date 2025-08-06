@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -116,17 +116,14 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Cursor Automation Launcher
  * Launches the comprehensive automation system
  */
 
 const { CursorChatAutomationSystem, ContinuousCursorAutomation } = require('./cursor-chat-automation-system.js');
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class CursorAutomationLauncher {
     constructor() {
@@ -290,8 +287,7 @@ class CursorAutomationLauncher {
             console.log(`
 Cursor Automation Launcher
 
-Usage:
-  node launch-cursor-automation.js [options]
+Usage: node launch-cursor-automation.js [options]
 
 Options:
   --single, -s          Run single execution
@@ -300,8 +296,7 @@ Options:
   --status              Show current status
   --help                Show this help message
 
-Examples:
-  node launch-cursor-automation.js --single
+Examples: node launch-cursor-automation.js --single
   node launch-cursor-automation.js --continuous
   node launch-cursor-automation.js --health
   node launch-cursor-automation.js --status
@@ -333,7 +328,7 @@ Examples:
 if (require.main === module) {
     const launcher = new CursorAutomationLauncher();
     launcher.run().catch(error = > {
-        console.error('Launcher error:', error.message);
+        console.error('Launcher error: ', error.message);
         process.exit(1);
     });
 }

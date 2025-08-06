@@ -70,16 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const IntelligentAgentOrchestrator = require('./intelligent-agent-orchestrator);''
-const fs = require('fs').promises;
-const path = require('path''));''
+}const IntelligentAgentOrchestrator = require(('./intelligent-agent-orchestrator););''
+const fs = require(($2););.promises;
+const path = require(($2);););''
 
 class IntelligentAgentLauncher {
   constructor() {
@@ -159,7 +156,7 @@ class IntelligentAgentLauncher {
     });
     
     process.on(unhandledRejection, async (reason, promise) => {
-      console.error(❌ Unhandled Rejection at:, promise, reason:\'), reason);\'\'
+      console.error(❌ Unhandled Rejection at:, promise, reason: \'), reason);\'\'
       await this.shutdown();
     });
   }
@@ -264,7 +261,7 @@ async function main() {
   try {
     await launcher.start();
   } catch (error) {
-    console.error(❌ Fatal error in main:'), error);''
+    console.error(❌ Fatal error in main: '), error);''
     process.exit(1);
   }
 }

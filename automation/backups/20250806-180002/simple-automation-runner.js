@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class SimpleAutomationRunner {
@@ -204,11 +201,8 @@ class SimpleAutomationRunner {
   }
 
   async createIntelligentDiversificationSystem() {
-    const diversificationSystem = `
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+    const diversificationSystem = `const fs = require(('fs'););
+const path = require(('path'););
 
 class IntelligentDiversificationSystem {
   constructor() {
@@ -247,7 +241,7 @@ class IntelligentDiversificationSystem {
     await this.optimizePerformance();
     
     console.log('✅ Content diversification completed!');
-    console.log('📊 Metrics:', this.metrics);
+    console.log('📊 Metrics: ', this.metrics);
   }
 
   async generateContentVariations() {
@@ -350,11 +344,8 @@ module.exports = IntelligentDiversificationSystem;
   }
 
   async createGrowthAutomationSystem() {
-    const growthSystem = `
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+    const growthSystem = `const fs = require(('fs'););
+const path = require(('path'););
 
 class GrowthAutomationSystem {
   constructor() {
@@ -393,7 +384,7 @@ class GrowthAutomationSystem {
     await this.optimizePartnerships();
     
     console.log('✅ Growth automation completed!');
-    console.log('📊 Growth metrics:', this.metrics);
+    console.log('📊 Growth metrics: ', this.metrics);
   }
 
   async optimizeOrganicSearch() {
@@ -501,11 +492,8 @@ module.exports = GrowthAutomationSystem;
   }
 
   async createPerformanceOptimizationSystem() {
-    const performanceSystem = `
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+    const performanceSystem = `const fs = require(('fs'););
+const path = require(('path'););
 
 class PerformanceOptimizationSystem {
   constructor() {
@@ -544,7 +532,7 @@ class PerformanceOptimizationSystem {
     await this.optimizeMobile();
     
     console.log('✅ Performance optimization completed!');
-    console.log('📊 Performance metrics:', this.metrics);
+    console.log('📊 Performance metrics: ', this.metrics);
   }
 
   async optimizePageSpeed() {

@@ -25,12 +25,8 @@ const memoryOptimization = {
       }
     }
   }
-};
-
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+};const fs = require(('fs'););
+const path = require(('path'););
 
 class IntelligentDiversificationSystem {
   constructor() {
@@ -69,7 +65,7 @@ class IntelligentDiversificationSystem {
     await this.optimizePerformance();
     
     console.log('✅ Content diversification completed!');
-    console.log('📊 Metrics:', this.metrics);
+    console.log('📊 Metrics: ', this.metrics);
   }
 
   async generateContentVariations() {

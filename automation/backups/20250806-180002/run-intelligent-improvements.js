@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,10 +117,10 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const fs = require('fs');'
-const path = require('path');'
+const fs = require(('fs'););'
+const path = require(('path'););'
 const { exec } = require('child_process');'
-const util = require('util');'
+const util = require(('util'););'
 
 const execAsync = util.promisify(exec);
 
@@ -165,7 +165,7 @@ class IntelligentImprovementRunner {
             console.log('✅ Intelligent Automation Improvements completed successfully');'
             
         } catch (error) {
-            console.error('❌ Error in intelligent improvements:', error.message);'
+            console.error('❌ Error in intelligent improvements: ', error.message);'
         }
     }
 
@@ -428,7 +428,7 @@ class IntelligentImprovementRunner {
         const files = [];
         const automationDir = path.join(__dirname);
         
-        const readDir = (dir) => {
+        const readDir = () => {
             try {
                 const items = fs.readdirSync(dir);
                 for (const item of items) {
@@ -466,7 +466,7 @@ class IntelligentImprovementRunner {
             console.log('✅ Changes committed and pushed successfully');'
             
         } catch (error) {
-            console.error('❌ Failed to commit changes:', error.message);'
+            console.error('❌ Failed to commit changes: ', error.message);'
         }
     }
 }
@@ -479,6 +479,17 @@ runner.run()
         process.exit(0);
     })
     .catch((error) => {
-        console.error('\n💥 Intelligent Automation Improvements failed:', error);'
+        console.error('\n💥 Intelligent Automation Improvements failed: ', error);'
         process.exit(1);
     }); 
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

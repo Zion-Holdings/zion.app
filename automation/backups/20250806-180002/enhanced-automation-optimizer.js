@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { execSync, spawn } = require('child_process');
 
 console.log('🚀 Starting Enhanced Automation Optimizer...');
@@ -143,13 +140,13 @@ const SYSTEMS = [
   'intelligent-agent-orchestrator'
 ];
 
-function log(message, type = 'info') {
+function log() {
   const timestamp = new Date().toISOString();
   const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '🚀';
   console.log(`${prefix} [${timestamp}] ${message}`);
 }
 
-function getSystemStatus(systemName) {
+function getSystemStatus() {
   const stateFile = path.join(AUTOMATION_DIR, 'status-data', `${systemName}-state.json`);
   
   if (!fs.existsSync(stateFile)) {
@@ -164,7 +161,7 @@ function getSystemStatus(systemName) {
   }
 }
 
-function updateSystemPerformance(systemName, performance, intelligence) {
+function updateSystemPerformance() {
   const stateFile = path.join(AUTOMATION_DIR, 'status-data', `${systemName}-state.json`);
   
   if (fs.existsSync(stateFile)) {
@@ -181,7 +178,7 @@ function updateSystemPerformance(systemName, performance, intelligence) {
   }
 }
 
-function optimizeSystem(systemName) {
+function optimizeSystem() {
   return new Promise((resolve) => {
     log(`🔧 Optimizing ${systemName}...`);
     
@@ -242,20 +239,18 @@ function createOptimizationReport() {
   return report;
 }
 
-function createEnhancedSystemScript(systemName) {
+function createEnhancedSystemScript() {
   const scriptPath = path.join(AUTOMATION_DIR, `${systemName}.js`);
   
-  const enhancedScript = `#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+  const enhancedScript = `const fs = require(('fs'););
+const path = require(('path'););
 
 console.log('🚀 Starting Enhanced ${systemName}...');
 
 const AUTOMATION_DIR = path.join(__dirname);
 const STATE_FILE = path.join(AUTOMATION_DIR, 'status-data', '${systemName}-state.json');
 
-function updateState(data) {
+function updateState() {
   try {
     const state = fs.existsSync(STATE_FILE) 
       ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))
@@ -277,11 +272,11 @@ function updateState(data) {
     
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
   } catch (error) {
-    console.error('Error updating state:', error.message);
+    console.error('Error updating state: ', error.message);
   }
 }
 
-function log(message) {
+function log() {
   const timestamp = new Date().toISOString();
   console.log(\`🚀 [\${timestamp}] \${message}\`);
 }

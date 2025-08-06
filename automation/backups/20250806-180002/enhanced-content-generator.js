@@ -70,13 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { GoogleGenerativeAI } = require('@google/generative-ai''));''
 
 class AutomationSystem {
@@ -343,8 +343,7 @@ class AutomationSystem {
   async generateChatBasedBlogContent(topic, pattern) {
     const result = Create a comprehensive blog post about "${topic}" following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.""
 
-Include:
-- Engaging conversation flow
+Include: - Engaging conversation flow
 - Expert insights and analysis
 - Real-world applications and examples
 - Interactive elements and questions
@@ -384,7 +383,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8></div>""
           <div className="flex justify-between h-16></div>""
             <div className="flex" items-center"></div>""
               <h1 className="text-2xl" font-bold text-white></div>""
@@ -422,7 +421,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
           </div>
           </div>
           <div className="mt-12" pt-8 border-t border-white/10></div>""
-            <div className="flex flex-col sm:flex-row gap-4></div>""
+            <div className="flex flex-col sm: flex-row gap-4></div>""
               <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Explore Our Services</div>
               </Link></div>
@@ -479,8 +478,7 @@ The conversation concludes with actionable recommendations for organizations loo
     const result = """
 Create comprehensive marketplace content for ${category} category following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.
 
-Include:
-- Expert discussion about the category
+Include: - Expert discussion about the category
 - Service offerings and benefits
 - Success stories and case studies
 - Interactive elements and questions
@@ -519,7 +517,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8"></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8"></div>""
           <div className="flex" justify-between h-16></div>""
             <div className="flex" items-center></div>""
               <h1 className="text-2xl font-bold text-white></div>""
@@ -551,7 +549,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+        <div className="max-w-4xl" mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
           <div className="prose prose-invert prose-lg max-w-none></div>""
             <div className="text-gray-300" leading-relaxed">""
               ${content.split(\'\n).map(paragraph => </div>\'\'
@@ -607,8 +605,7 @@ The discussion concludes with practical advice for both buyers and sellers in th
     const result = """
 Create comprehensive service content for ${service} following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.
 
-Include:
-- Expert discussion about the service
+Include: - Expert discussion about the service
 - Implementation strategies and best practices
 - Real-world applications and case studies
 - Interactive elements and expert advice
@@ -644,7 +641,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8"></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8"></div>""
           <div className="flex" justify-between h-16></div>""
             <div className="flex" items-center></div>""
               <h1 className="text-2xl font-bold text-white></div>""
@@ -676,7 +673,7 @@ const ${safePageName}ChatPage: "NextPage = () => {""
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+        <div className="max-w-4xl" mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
           <div className="prose prose-invert prose-lg max-w-none></div>""
             <div className="text-gray-300" leading-relaxed">""
               ${content.split(\'\n).map(paragraph => </div>\'\'
@@ -731,8 +728,7 @@ The discussion concludes with practical advice for organizations looking to leve
     const result = """
 Create engaging chat-based content about ${topic} that follows natural conversation patterns.
 
-Include:
-- Multiple conversation participants with different perspectives
+Include: - Multiple conversation participants with different perspectives
 - Questions and answers that flow naturally
 - Expert insights and practical advice
 - Real-world examples and case studies
@@ -771,7 +767,7 @@ const ${safePageName}ChatContentPage: "NextPage = () => {""
       </Head>
 </div>
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8"></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8"></div>""
           <div className="flex" justify-between h-16></div>""
             <div className="flex" items-center></div>""
               <h1 className="text-2xl font-bold text-white></div>""
@@ -809,7 +805,7 @@ const ${safePageName}ChatContentPage: "NextPage = () => {""
           </div>
           </div>
           <div className="mt-12 pt-8 border-t border-white/10"></div>""
-            <div className="flex" flex-col sm:flex-row gap-4></div>""
+            <div className="flex" flex-col sm: flex-row gap-4></div>""
               <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Explore Our Services</div>
               </Link></div>
@@ -831,21 +827,21 @@ export default ${safePageName}ChatContentPage
     return 
 In this engaging conversation about ${topic}, our experts explore the latest developments and their implications.
 
-**Expert 1:** "Lets start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you\')re\' seeing in the market?"""
+**Expert 1: ** "Lets start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you\')re\' seeing in the market?"""
 
-**Expert 2:** Great question. I\'m observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly.\'\'
+**Expert 2: ** Great question. I\'m observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly.\'\'
 
-**Expert 1:** "Thats fascinating. Can you share some specific examples of how organizations are adapting to these changes?"""
+**Expert 1: ** "Thats fascinating. Can you share some specific examples of how organizations are adapting to these changes?"""
 
 **Expert 2:** Absolutely. Iv\'e\' seen several successful implementations where companies have taken a strategic approach to ${topic.toLowerCase()}, focusing on alignment with broader business objectives.\'\'
 
-**Expert 1:** "What challenges are organizations facing when implementing ${topic.toLowerCase()} solutions?"""
+**Expert 1: ** "What challenges are organizations facing when implementing ${topic.toLowerCase()} solutions?"""
 
-**Expert 2:** The main challenges Im\' seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people.\'\'
+**Expert 2: ** The main challenges Im\' seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people.\'\'
 
-**Expert 1:** "Excellent points. What advice would you give to organizations looking to get started with ${topic.toLowerCase()}?"""
+**Expert 1: ** "Excellent points. What advice would you give to organizations looking to get started with ${topic.toLowerCase()}?"""
 
-**Expert 2:** Start with a clear strategy, invest in the right expertise, and focus on measurable outcomes. Success comes from taking a systematic approach.
+**Expert 2: ** Start with a clear strategy, invest in the right expertise, and focus on measurable outcomes. Success comes from taking a systematic approach.
     """
   }
 

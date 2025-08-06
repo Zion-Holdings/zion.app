@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');''
-const path = require('path');''
+}const fs = require(('fs'););''
+const path = require(('path'););''
 const { EventEmitter } = require('events');''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class AdvancedAIAutomationFactory extends EventEmitter {
   constructor() {
@@ -167,8 +164,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
         case \'cognitive-automation-agent\':\'\'
           result = await this.executeCognitiveAutomationTask(task);
           break;
-        default:
-          throw new Error(Unknown agent type: "${agentType"}`);""
+        default: throw new Error(Unknown agent type: "${agentType"}`);""
       }
       
       const responseTime = Date.now() - startTime;
@@ -420,7 +416,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
       console.log(`✅ [${this.factoryId}] Continuous learning cycle completed);
       
     } catch (error) {
-      console.error(`❌ [${this.factoryId}] Error in continuous learning:`, error);
+      console.error(`❌ [${this.factoryId}] Error in continuous learning: `, error);
     }
   }
 
@@ -437,7 +433,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
       
       return result;
     } catch (error) {
-      console.error(`❌ [${this.factoryId}] Error in performance optimization:`, error);
+      console.error(`❌ [${this.factoryId}] Error in performance optimization: `, error);
     }
   }
 

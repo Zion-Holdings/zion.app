@@ -7,18 +7,17 @@
  * agents, scripts, cron jobs, etc. and maintains them without modifying existing
  * autonomous agents factories.
  * 
- * Capabilities:
- * - Monitors all running automation systems
+ * Capabilities: * - Monitors all running automation systems
  * - Identifies and fixes automation errors
  * - Stops problematic automation
  * - Maintains healthy automation systems
  * - Generates comprehensive reports
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { exec, execSync } = require('child_process');
-const cron = require('node-cron');
+const cron = require(('node-cron'););
 
 class AutomationMonitorAndMaintainer {
   constructor() {
@@ -229,8 +228,8 @@ class AutomationMonitorAndMaintainer {
 
   findFiles(pattern) {
     try {
-      const fs = require('fs');
-      const path = require('path');
+      const fs = require(('fs'););
+      const path = require(('path'););
       const files = [];
       
       // Simple pattern matching without glob
@@ -239,7 +238,7 @@ class AutomationMonitorAndMaintainer {
         return files;
       }
       
-      const searchRecursively = (dir, pattern) => {
+      const searchRecursively = () => {
         const items = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -468,8 +467,7 @@ class AutomationMonitorAndMaintainer {
           return await this.fixSystemError(system);
         case 'missing':
           return await this.recreateMissingSystem(system);
-        default:
-          this.log(`Unknown status for ${system.name}: ${system.status}`, 'warn');
+        default: this.log(`Unknown status for ${system.name}: ${system.status}`, 'warn');
           return false;
       }
     } catch (error) {
@@ -496,7 +494,7 @@ class AutomationMonitorAndMaintainer {
         .replace(/\s*{\s*\n\s*}/g, ' {}') // Fix empty blocks
         .replace(/function\s*\(\s*\)\s*{\s*}/g, 'function() {}') // Fix empty functions
         .replace(/\(\s*\)\s*=>\s*{\s*}/g, '() => {}') // Fix empty arrow functions
-        .replace(/const\s+(\w+)\s*=\s*require\s*\(\s*['"]([^'"]+)['"]\s*\)\s*;\s*const\s+\1\s*=\s*require\s*\(\s*['"]\2['"]\s*\)/g, 'const $1 = require(\'$2\')') // Fix duplicate requires
+        .replace(/const\s+(\w+)\s*=\s*require\s*\(\s*['"]([^'"]+)['"]\s*\)\s*;\s*const\s+\1\s*=\s*require\s*\(\s*['"]\2['"]\s*\)/g, 'const $1 = require(($2););') // Fix duplicate requires
         .replace(/module\.exports\s*=\s*[^;]+;\s*module\.exports\s*=\s*[^;]+/g, (match) => {
           // Keep only the last module.exports
           const parts = match.split(';');
@@ -846,7 +844,7 @@ class AutomationMonitorAndMaintainer {
         const requires = [...new Set(requireOptimizations)];
         const nonRequireContent = optimizedContent.replace(/const\s+\w+\s*=\s*require\s*\(\s*['"][^'"]+['"]\s*\)\s*;\s*/g, '');
         
-        optimizedContent = requires.join('\n') + '\n\n' + nonRequireContent;
+        optimizedContent = require(s.join('\n') + '\n\n' + nonRequireConten);t;
         optimized = true;
       }
       
@@ -950,7 +948,7 @@ class AutomationMonitorAndMaintainer {
       });
     }
     
-    const healthPercentage = systems.length > 0 ? (systems.filter(s => s.status === 'healthy').length / systems.length) * 100 : 0;
+    const healthPercentage = systems.length > 0 ? (systems.filter(s => s.status === 'healthy').length / systems.length) * 100: 0;
     if (healthPercentage < 90) {
       recommendations.push({
         priority: 'medium',
@@ -967,20 +965,17 @@ class AutomationMonitorAndMaintainer {
 Generated: ${report.timestamp}
 =====================================
 
-SUMMARY:
-- Total Systems: ${report.summary.totalSystems}
+SUMMARY: - Total Systems: ${report.summary.totalSystems}
 - Healthy Systems: ${report.summary.healthySystems}
 - Problematic Systems: ${report.summary.problematicSystems}
 - Health Percentage: ${report.summary.healthPercentage.toFixed(1)}%
 
-SYSTEMS BY TYPE:
-- Factories: ${report.systemsByType.factories.length}
+SYSTEMS BY TYPE: - Factories: ${report.systemsByType.factories.length}
 - Agents: ${report.systemsByType.agents.length}
 - Scripts: ${report.systemsByType.scripts.length}
 - Cron Jobs: ${report.systemsByType.cron.length}
 
-PROBLEMATIC SYSTEMS:
-`;
+PROBLEMATIC SYSTEMS: `;
 
     for (const system of report.problematicSystems) {
       humanReport += `- ${system.name} (${system.type}): ${system.status}\n`;
@@ -990,15 +985,14 @@ PROBLEMATIC SYSTEMS:
       humanReport += '\n';
     }
 
-    humanReport += `ERROR SUMMARY:
-- Total Errors: ${report.errorSummary.totalErrors}
-- Error Categories:\n`;
+    humanReport += `ERROR SUMMARY: - Total Errors: ${report.errorSummary.totalErrors}
+- Error Categories: \n`;
 
     for (const [category, count] of Object.entries(report.errorSummary.errorCategories)) {
       humanReport += `  - ${category}: ${count}\n`;
     }
 
-    humanReport += `\nRECOMMENDATIONS:\n`;
+    humanReport += `\nRECOMMENDATIONS: \n`;
     for (const rec of report.recommendations) {
       humanReport += `- [${rec.priority.toUpperCase()}] ${rec.description}\n`;
     }

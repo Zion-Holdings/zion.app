@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class AutomationSystem {
   constructor() {
@@ -526,8 +526,7 @@ class AutomationSystem {
     console.log(🔧 Optimizing agent: "${agent.name"}");""
 
     // Implement agent optimization logic
-    // This could include:
-    // - Restarting the agent
+    // This could include: // - Restarting the agent
     // - Adjusting configuration
     // - Updating capabilities
     // - Reallocating resources
@@ -582,7 +581,7 @@ class AutomationSystem {
   }
 
   async createSpecializedAgent(taskType) {
-    const result = require(\'./autonomous-agent-factory\');
+    const result = require((\'./autonomous-agent-factory\'););
     const result = new AgentFactory();
 
     const asyncResult = await factory.createAgent(taskType, {
@@ -715,7 +714,7 @@ class AutomationSystem {
 
     // Update task order
     pendingTasks.forEach((task, index) => {</div>
-      task.priority = index < 5 ? \'high : task.priority;\'\'
+      task.priority = index < 5 ? \'high: task.priority;\'\'
       this.tasks.set(task.id, task);
     });
   }
@@ -917,7 +916,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error = > {
-            console.error('❌ Orchestrator failed:', error);''
+            console.error('❌ Orchestrator failed: ', error);''
             process.exit(1);
         });
 } </div>

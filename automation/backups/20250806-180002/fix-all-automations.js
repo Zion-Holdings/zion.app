@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { execSync, spawn } = require('child_process');
 
 console.log('🔧 Starting Comprehensive Automation Fix System...');
@@ -145,20 +142,20 @@ const SYSTEMS = [
 ];
 
 // Utility functions
-function log(message, type = 'info') {
+function log() {
   const timestamp = new Date().toISOString();
   const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : '📊';
   console.log(`${prefix} [${timestamp}] ${message}`);
 }
 
-function ensureDirectory(dirPath) {
+function ensureDirectory() {
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
     log(`Created directory: ${dirPath}`);
   }
 }
 
-function createStateFile(systemName) {
+function createStateFile() {
   const stateFile = path.join(AUTOMATION_DIR, 'status-data', `${systemName}-state.json`);
   const stateData = {
     name: systemName,
@@ -239,7 +236,7 @@ function createRequiredDirectories() {
   });
 }
 
-function startSystem(systemName) {
+function startSystem() {
   return new Promise((resolve, reject) => {
     const scriptPath = path.join(AUTOMATION_DIR, `${systemName}.js`);
     
@@ -292,24 +289,22 @@ function startSystem(systemName) {
   });
 }
 
-function createSystemScript(systemName) {
+function createSystemScript() {
   const scriptPath = path.join(AUTOMATION_DIR, `${systemName}.js`);
   
   if (fs.existsSync(scriptPath)) {
     return scriptPath;
   }
 
-  const scriptContent = `#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+  const scriptContent = `const fs = require(('fs'););
+const path = require(('path'););
 
 console.log('🚀 Starting ${systemName}...');
 
 const AUTOMATION_DIR = path.join(__dirname);
 const STATE_FILE = path.join(AUTOMATION_DIR, 'status-data', '${systemName}-state.json');
 
-function updateState(data) {
+function updateState() {
   try {
     const state = fs.existsSync(STATE_FILE) 
       ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))
@@ -331,11 +326,11 @@ function updateState(data) {
     
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
   } catch (error) {
-    console.error('Error updating state:', error.message);
+    console.error('Error updating state: ', error.message);
   }
 }
 
-function log(message) {
+function log() {
   const timestamp = new Date().toISOString();
   console.log(\`📊 [\${timestamp}] \${message}\`);
 }

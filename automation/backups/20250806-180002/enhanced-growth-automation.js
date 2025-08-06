@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+}const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -147,7 +144,7 @@ class EnhancedGrowthAutomation {
       this.isRunning = true;
       console.log('✅ Enhanced Growth Automation initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing Enhanced Growth Automation:', error);
+      console.error('❌ Error initializing Enhanced Growth Automation: ', error);
       throw error;
     }
   }
@@ -313,8 +310,8 @@ class EnhancedGrowthAutomation {
 
   generateGrowthAgentCode(agentName, agentType) {
     return `
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ${agentName.replace(/[^a-zA-Z0-9]/g, '')} {
   constructor() {
@@ -685,8 +682,8 @@ new ${agentName.replace(/[^a-zA-Z0-9]/g, '')}();
 
   generateMonitoringAgentCode(agentName, agentType) {
     return `
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ${agentName.replace(/[^a-zA-Z0-9]/g, '')} {
   constructor() {
@@ -733,8 +730,8 @@ new ${agentName.replace(/[^a-zA-Z0-9]/g, '')}();
 
   generateOptimizationAgentCode(agentName, agentType) {
     return `
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ${agentName.replace(/[^a-zA-Z0-9]/g, '')} {
   constructor() {
@@ -781,8 +778,8 @@ new ${agentName.replace(/[^a-zA-Z0-9]/g, '')}();
 
   generateGrowthStrategyCode(strategy, data) {
     return `
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 
 class ${strategy.replace(/[^a-zA-Z0-9]/g, '')}Strategy {
   constructor() {

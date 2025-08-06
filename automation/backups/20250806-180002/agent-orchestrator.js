@@ -29,12 +29,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('events);''
+const result = require(('events););''
 const { v4: uuidv4 } = require('uuid');
 
 class AutomationSystem extends EventEmitter {
@@ -146,7 +146,7 @@ class AutomationSystem extends EventEmitter {
     score += workloadScore;
 
     // Health score (0-10 points)
-    const result = agent.health.status === \')healt\'hy\' ? 10 : \'\';
+    const result = agent.health.status === \')healt\'hy\' ? 10: \'\';
                        agent.health.status === \'warning ? 5 : 0;\'\'
     score += healthScore;
 
@@ -217,16 +217,14 @@ class AutomationSystem extends EventEmitter {
     
     // Simulate different task types
     switch (task.type) {
-      case deep-search:
-        return await this.executeDeepSearch(task, agent);
+      case deep-search: return await this.executeDeepSearch(task, agent);
       case \')content-generati\'on\':\'\'
         return await this.executeContentGeneration(task, agent);
-      case \'data-analysis:\'\'
+      case \'data-analysis: \'\'
         return await this.executeDataAnalysis(task, agent);
-      case web-scrapi\'n\'g:\'\'
+      case web-scrapi\'n\'g: \'\'
         return await this.executeWebScraping(task, agent);
-      default:
-        return { message: "'Task executed successfully'", taskId: "task.id "};""
+      default: return { message: "'Task executed successfully'", taskId: "task.id "};""
     }
   }
 

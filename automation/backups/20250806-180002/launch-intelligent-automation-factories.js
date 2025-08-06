@@ -70,13 +70,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');''
-const path = require('path');''
+const fs = require(('fs'););''
+const path = require(('path'););''
 const { spawn } = require('child_process');''
 
 class IntelligentAutomationFactoryLauncher {
@@ -132,7 +132,7 @@ class IntelligentAutomationFactoryLauncher {
             console.log('✅ All Intelligent Automation Factories started successfully');''
             
         } catch (error) {
-            console.error('❌ Error starting factories:', error.message);''
+            console.error('❌ Error starting factories: ', error.message);''
             this.status.running = false;
         }
     }
@@ -178,7 +178,7 @@ class IntelligentAutomationFactoryLauncher {
             });
             
             process.on('error', (error) => {''
-                console.error(`[${factory.name}] Process error:`, error.message);
+                console.error(`[${factory.name}] Process error: `, error.message);
                 this.processes.get(id).status = 'error';''
             });
             
@@ -262,7 +262,7 @@ class IntelligentAutomationFactoryLauncher {
             console.log(`📈 Total improvements made: ${this.status.improvementsMade}`);
             
         } catch (error) {
-            console.error('❌ Error checking improvements:', error.message);''
+            console.error('❌ Error checking improvements: ', error.message);''
         }
     }
 
@@ -288,7 +288,7 @@ class IntelligentAutomationFactoryLauncher {
             console.log('✅ All Intelligent Automation Factories stopped');''
             
         } catch (error) {
-            console.error('❌ Error stopping factories:', error.message);''
+            console.error('❌ Error stopping factories: ', error.message);''
         }
     }
 
@@ -342,7 +342,7 @@ class IntelligentAutomationFactoryLauncher {
             fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
             
         } catch (error) {
-            console.error('❌ Error saving status report:', error.message);''
+            console.error('❌ Error saving status report: ', error.message);''
         }
     }
 }

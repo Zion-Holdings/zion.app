@@ -25,12 +25,8 @@ const memoryOptimization = {
       }
     }
   }
-};
-
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+};const fs = require(('fs'););
+const path = require(('path'););
 
 class PerformanceOptimizationSystem {
   constructor() {
@@ -69,7 +65,7 @@ class PerformanceOptimizationSystem {
     await this.optimizeMobile();
     
     console.log('✅ Performance optimization completed!');
-    console.log('📊 Performance metrics:', this.metrics);
+    console.log('📊 Performance metrics: ', this.metrics);
   }
 
   async optimizePageSpeed() {

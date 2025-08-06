@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class UltimateAutomationLauncher {
@@ -138,7 +135,7 @@ class UltimateAutomationLauncher {
       console.log('✅ Ultimate Automation System started successfully');
       
     } catch (error) {
-      console.error('❌ Error starting Ultimate System:', error);
+      console.error('❌ Error starting Ultimate System: ', error);
       this.handleSystemError(error);
     }
   }
@@ -252,7 +249,7 @@ class UltimateAutomationLauncher {
       }
       
     } catch (error) {
-      console.error('❌ Error monitoring system health:', error);
+      console.error('❌ Error monitoring system health: ', error);
     }
   }
 
@@ -270,7 +267,7 @@ class UltimateAutomationLauncher {
       fs.writeFileSync(performanceFile, JSON.stringify(performance, null, 2));
       
     } catch (error) {
-      console.error('❌ Error monitoring system performance:', error);
+      console.error('❌ Error monitoring system performance: ', error);
     }
   }
 
@@ -287,7 +284,7 @@ class UltimateAutomationLauncher {
       fs.writeFileSync(statusFile, JSON.stringify(status, null, 2));
       
     } catch (error) {
-      console.error('❌ Error saving system status:', error);
+      console.error('❌ Error saving system status: ', error);
     }
   }
 
@@ -307,12 +304,12 @@ class UltimateAutomationLauncher {
       console.log('✅ System recovery completed');
       
     } catch (error) {
-      console.error('❌ Error during system recovery:', error);
+      console.error('❌ Error during system recovery: ', error);
     }
   }
 
   handleSystemError(error) {
-    console.error('❌ System error:', error);
+    console.error('❌ System error: ', error);
     
     // Record error
     const errorLog = {

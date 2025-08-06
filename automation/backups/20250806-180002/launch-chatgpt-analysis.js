@@ -29,14 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('./chatgpt-analysis-orchestrator.js);''
-const result = require('fs-extra''));''
-const result = require('path);''
+const result = require(('./chatgpt-analysis-orchestrator.js););''
+const result = require(($2);););''
+const result = require(('path););''
 
 async function main() {
     console.log(🚀 Starting ChatGPT Analysis System...);

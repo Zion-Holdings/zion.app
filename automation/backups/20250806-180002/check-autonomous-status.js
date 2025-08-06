@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -40,7 +40,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -65,7 +65,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -75,11 +75,8 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 
 class AutonomousStatusChecker {
   constructor() {
@@ -206,7 +203,7 @@ class AutonomousStatusChecker {
     console.log('========================\n');
 
     // Agents Status
-    console.log('🤖 AGENTS:');
+    console.log('🤖 AGENTS: ');
     if (status.agents.status = == 'ok') {
       console.log(`   Total: ${status.agents.total}`);
       console.log(`   Running: ${status.agents.running} ✅`);
@@ -214,7 +211,7 @@ class AutonomousStatusChecker {
       console.log(`   Errors: ${status.agents.error} ❌`);
       
       if (status.agents.agents.length > 0) {
-        console.log('\n   Agent Details:');
+        console.log('\n   Agent Details: ');
         status.agents.agents.forEach(agent = > {
           const statusIcon = agent.status === 'running' ? '✅' : ;
                            agent.status === 'stopped' ? '⏸️' : '❌';
@@ -228,14 +225,14 @@ class AutonomousStatusChecker {
       }
     }
 
-    console.log('\n⏰ JOBS:');
+    console.log('\n⏰ JOBS: ');
     if (status.jobs.status = == 'ok') {
       console.log(`   Total: ${status.jobs.total}`);
       console.log(`   Enabled: ${status.jobs.enabled} ✅`);
       console.log(`   Disabled: ${status.jobs.disabled} ⏸️`);
       
       if (status.jobs.jobs.length > 0) {
-        console.log('\n   Job Details:');
+        console.log('\n   Job Details: ');
         status.jobs.jobs.forEach(job = > {
           const statusIcon = job.enabled ? '✅' : '⏸️';
           console.log(`     ${statusIcon} ${job.name} (${job.schedule})`);
@@ -248,7 +245,7 @@ class AutonomousStatusChecker {
       }
     }
 
-    console.log('\n🏥 SYSTEM HEALTH:');
+    console.log('\n🏥 SYSTEM HEALTH: ');
     const healthIcon = status.system.status === 'healthy' ? '✅' : '⚠️';
     console.log(`   Overall: ${status.system.status} ${healthIcon}`);
     
@@ -257,11 +254,11 @@ class AutonomousStatusChecker {
       console.log(`     ${icon} ${check}`);
     });
 
-    console.log('\n📝 LOGS:');
+    console.log('\n📝 LOGS: ');
     if (status.logs.status = == 'ok') {
       console.log(`   Total Log Files: ${status.logs.total}`);
       if (status.logs.recent.length > 0) {
-        console.log('\n   Recent Logs:');
+        console.log('\n   Recent Logs: ');
         status.logs.recent.forEach(log = > {
           const sizeKB = Math.round(log.size / 1024);
           console.log(`     📄 ${log.name} (${sizeKB}KB)`);
@@ -287,11 +284,11 @@ class AutonomousStatusChecker {
         overall: this.calculateOverallStatus(status),
         recommendations: this.generateRecommendations(status)};
 
-      console.log('\n📋 SUMMARY:');
+      console.log('\n📋 SUMMARY: ');
       console.log(`Overall Status: ${summary.overall}`);
       
       if (summary.recommendations.length > 0) {
-        console.log('\n💡 RECOMMENDATIONS:');
+        console.log('\n💡 RECOMMENDATIONS: ');
         summary.recommendations.forEach((rec, index) => {
           console.log(`   ${index + 1}. ${rec}`);
         });
@@ -299,7 +296,7 @@ class AutonomousStatusChecker {
 
       return status;
     } catch (error) {
-      console.error('❌ Error checking system status:', error.message);
+      console.error('❌ Error checking system status: ', error.message);
       throw error;
     }
   }

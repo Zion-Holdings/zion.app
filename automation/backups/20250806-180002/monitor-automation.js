@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -40,7 +40,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -65,7 +65,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -75,11 +75,9 @@ async function parallelReadFiles(filePaths) {
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs).promises;''
-const path = require('path');
+};
+const result = require(($2););.promises;''
+const path = require(('path'););
 
 class AutomationSystem {
   constructor() {
@@ -158,7 +156,7 @@ class AutomationSystem {
   }
 
   async displayLatestActivity() {
-    console.log(\'\n📈 Latest Activity:);\'\'
+    console.log(\'\n📈 Latest Activity: );\'\'
     
     try {
       // Get the most recent report
@@ -201,7 +199,7 @@ class AutomationSystem {
   }
 
   async displayDetailedReport() {
-    console.log(\'\n📋 Detailed Report:);\'\'
+    console.log(\'\n📋 Detailed Report: );\'\'
     
     try {
       const asyncResult = await this.getLatestReports();
@@ -228,7 +226,7 @@ class AutomationSystem {
   }
 
   async displaySystemHealth() {
-    console.log(\n🏥 System Health:);
+    console.log(\n🏥 System Health: );
     
     try {
       // Check disk space
@@ -269,7 +267,7 @@ async function main() {
     await monitor.displaySystemHealth();
   }
   
-  console.log(\n📞 Commands:);
+  console.log(\n📞 Commands: );
   console.log(  node automation/monitor-automation.js --detailed  # Show detailed reports);
   console.log(')  node automation/monitor-automation.js --health    # Show system health');''
   console.log(  node automation/run-automation.js                 # Start automation');''
@@ -278,7 +276,7 @@ async function main() {
 
 if (require.main === module) {
   main().catch(error => {
-    console.error('❌ Error:', error);''
+    console.error('❌ Error: ', error);''
     process.exit(1);
   });
 }

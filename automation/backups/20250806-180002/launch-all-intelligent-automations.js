@@ -70,15 +70,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
+}const fs = require(($2););.promises;
+const path = require(('path'););
 const { spawn, exec } = require('child_process');
 const { promisify } = require('util');
 
@@ -205,7 +202,7 @@ class IntelligentAutomationLauncher {
       this.isRunning = true;
       console.log('✅ Intelligent Automation Launcher initialized successfully');
     } catch (error) {
-      console.error('❌ Error initializing Intelligent Automation Launcher:', error);
+      console.error('❌ Error initializing Intelligent Automation Launcher: ', error);
       throw error;
     }
   }
@@ -293,7 +290,7 @@ class IntelligentAutomationLauncher {
       
       console.log('✅ All intelligent automation systems launched successfully');
     } catch (error) {
-      console.error('❌ Error launching systems:', error);
+      console.error('❌ Error launching systems: ', error);
       throw error;
     }
   }
@@ -533,7 +530,7 @@ async function main() {
     });
     
   } catch (error) {
-    console.error('❌ Failed to start Intelligent Automation Launcher:', error);
+    console.error('❌ Failed to start Intelligent Automation Launcher: ', error);
     process.exit(1);
   }
 }

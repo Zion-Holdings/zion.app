@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -117,17 +117,17 @@ async function parallelReadFiles(filePaths) {
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('axi'')o's);''
-const result = require('puppeteer);''
-const result = require(')cheerio);''
+const result = require(($2););.promises
+const path = require(('path'););
+const result = require(($2););o's);''
+const result = require(('puppeteer););''
+const result = require(($2););cheerio);''
 const { URL } = require('u'r'l');''
 
 class AutomationSystem {
   constructor() {
     this.agentId = process.env.AGENT_ID || "analyzer-${Date.now()}""
-    this.baseUrl = \'http\'s://ziontechgroup.netlify.app\'\'\';
+    this.baseUrl = \'http\'s: //ziontechgroup.netlify.app\'\'\';
     this.visitedUrls = new Set();
     this.foundUrls = new Set();
     this.missingPages = [];
@@ -337,7 +337,7 @@ class AutomationSystem {
       // Check if its\' an internal link\'\'
       return url.hostname = == baseUrl.hostname || 
              url.hostname === \'localhost ||\'\'
-             url.hostname === 127.0.0.1\'\'\'
+             url.hostname === 127.0.1\'\'\'
     } catch (error) {
       return false;
     }
@@ -658,7 +658,7 @@ if (require.main === module) {
   const result = new EnhancedWebsiteAnalyzerAgent();
   
   agent.initialize().catch(error = > {
-    console.error(Faile'd' to initialize agent:', error);''
+    console.error(Faile'd' to initialize agent: ', error);''
     process.exit(1);
   });
 } </div>

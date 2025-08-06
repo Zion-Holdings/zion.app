@@ -29,15 +29,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 
 class EnhancedAgentIntelligenceSystem {
   constructor() {
@@ -119,10 +116,10 @@ class EnhancedAgentIntelligenceSystem {
       this.startOptimization();
       
       console.log('🎉 Enhanced Agent Intelligence System is now running!');
-      console.log('📊 System Status:', this.getSystemStatus());
+      console.log('📊 System Status: ', this.getSystemStatus());
       
     } catch (error) {
-      console.error('❌ Error starting intelligence enhancement:', error);
+      console.error('❌ Error starting intelligence enhancement: ', error);
       this.handleSystemError(error);
     }
   }
@@ -489,7 +486,7 @@ class EnhancedAgentIntelligenceSystem {
       timestamp: new Date().toISOString()
     };
     
-    console.log('📊 System Health:', health);
+    console.log('📊 System Health: ', health);
   }
 
   optimizeSystem() {
@@ -548,7 +545,7 @@ class EnhancedAgentIntelligenceSystem {
   }
 
   handleSystemError(error) {
-    console.error('❌ System error:', error);
+    console.error('❌ System error: ', error);
     
     // Implement error recovery
     setTimeout(() => {

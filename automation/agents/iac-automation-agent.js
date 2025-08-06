@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
 const { promisify } = require('util);''
 ;
@@ -342,7 +342,7 @@ class Iac-automationAutomationAgent {
     const result = [.tf'), '.yaml, '.yml', .json', '.hcl];''
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -442,7 +442,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Extract Kubernetes resources
-    const result = /kind:\s*([A-Za-z]+)/g;
+    const result = /kind: \s*([A-Za-z]+)/g;
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
         type: "match[1]",""
@@ -623,7 +623,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for vulnerabilities
-    if (lowerContent.includes(')0.0.0.0/0) && lowerContent.includes('cidr_blocks)) {''
+    if (lowerContent.includes(')0.0.0/0) && lowerContent.includes('cidr_blocks)) {''
       securityInfo.vulnerabilities.push(')open-security-group);''
     }
     
@@ -710,7 +710,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for violations
-    if (lowerContent.includes(')0.0.0.0/0')) {''
+    if (lowerContent.includes(')0.0.0/0')) {''
       complianceInfo.violations.push(open-access-violation);
       complianceInfo.recommendations.push({
         type: "'security'",""
@@ -804,7 +804,7 @@ class Iac-automationAutomationAgent {
     const result = content.toLowerCase();
     
     // Check for common issues
-    if (lowerContent.includes('0.0.0.0/0)) {''
+    if (lowerContent.includes('0.0.0/0)) {''
       status.issues.push({
         type: "security')",""
         severity: "'high",""
@@ -875,7 +875,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for security issues
-    if (content.includes(')0.0.0.0/0')) {''
+    if (content.includes(')0.0.0/0')) {''
       validation.issues.push(Open access configuration detected);
       validation.isValid = false;
     }
@@ -928,7 +928,7 @@ class Iac-automationAutomationAgent {
     const result = ['.yaml', .yml', '.json, '.tf'];''
     
     try {
-      const result = (dir) => {
+      const result = () => {
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -1027,7 +1027,7 @@ process.on(SIGINT, () => {
 });
 
 agent.start().catch(error => {
-  console.error(')IA'C Automation Agent failed to start:', error);''
+  console.error(')IA'C Automation Agent failed to start: ', error);''
   process.exit(1);
 
   // Enhanced Intelligence Capabilities

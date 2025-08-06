@@ -29,12 +29,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('./enhanced-content-generator.js);''
+const result = require(('./enhanced-content-generator.js););''
 
 class AutomationSystem {
   constructor() {
@@ -153,7 +153,7 @@ if (require.main === module) {
   } else {
     launcher.start()
       .catch((error) => {
-        console.error(❌ Failed to start enhanced content generator:', error.message);''
+        console.error(❌ Failed to start enhanced content generator: ', error.message);''
         process.exit(1);
       });
   }

@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const result = require('fs-extra);''
-const path = require('path');
+const result = require(('fs-extra););''
+const path = require(('path'););
 
 class variable1 {
     constructor() {
@@ -221,7 +221,7 @@ if (require.main === module) {
             process.exit(0);
         })
         .catch(error => {
-            console.error(❌ ${agent.name} failed:", error);""
+            console.error(❌ ${agent.name} failed: ", error);""
             process.exit(1);
         });
 }

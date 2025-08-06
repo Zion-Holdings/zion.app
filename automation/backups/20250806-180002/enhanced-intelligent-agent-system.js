@@ -70,9 +70,9 @@ const memoryOptimization = {
 
 // Parallel file reading for speed
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const os = require(('os'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -81,7 +81,7 @@ async function parallelReadFiles(filePaths) {
   
   for (let i = 0; i < numWorkers; i++) {
     const worker = new Worker(`
-      const fs = require('fs').promises;
+      const fs = require(($2););.promises;
       const { parentPort } = require('worker_threads');
       
       parentPort.on('message', async (data) => {
@@ -106,7 +106,7 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
@@ -120,15 +120,12 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class EnhancedIntelligentAgentSystem {
@@ -671,12 +668,12 @@ class EnhancedIntelligentAgentSystem {
       }
     });
     
-    return totalStrategies > 0 ? appliedStrategies / totalStrategies : 0;
+    return totalStrategies > 0 ? appliedStrategies / totalStrategies: 0;
   }
 
   calculateSystemHealth() {
     const healthScores = Array.from(this.healthStatus.values()).map(status => {
-      return status === 'running' ? 1.0 : status === 'enhanced' ? 0.8 : 0.0;
+      return status === 'running' ? 1.0: status === 'enhanced' ? 0.8 : 0.0;
     });
     
     return healthScores.reduce((sum, score) => sum + score, 0) / healthScores.length;
@@ -695,7 +692,7 @@ class EnhancedIntelligentAgentSystem {
       this.startTime = new Date();
       
       console.log('🚀 Enhanced Intelligent Agent System started successfully!');
-      console.log(`📊 System Metrics:`);
+      console.log(`📊 System Metrics: `);
       console.log(`   Total Agents: ${this.systemMetrics.totalAgents}`);
       console.log(`   Active Agents: ${this.systemMetrics.activeAgents}`);
       console.log(`   Average Intelligence: ${(this.systemMetrics.averageIntelligence * 100).toFixed(1)}%`);
@@ -712,7 +709,7 @@ class EnhancedIntelligentAgentSystem {
       this.setupGracefulShutdown();
       
     } catch (error) {
-      console.error('❌ Failed to start Enhanced Intelligent Agent System:', error);
+      console.error('❌ Failed to start Enhanced Intelligent Agent System: ', error);
       throw error;
     }
   }
@@ -787,7 +784,7 @@ class EnhancedIntelligentAgentSystem {
           console.log(`✅ Improved ${agentId} intelligence: ${(currentIntelligence * 100).toFixed(1)}% → ${(improvedIntelligence * 100).toFixed(1)}%`);
         }
       } catch (error) {
-        console.error(`❌ Failed to improve ${agentId} intelligence:`, error.message);
+        console.error(`❌ Failed to improve ${agentId} intelligence: `, error.message);
       }
     }
   }
@@ -808,7 +805,7 @@ class EnhancedIntelligentAgentSystem {
           console.log(`✅ Enhanced ${agentId} capabilities: +${newCapabilities.length} new capabilities`);
         }
       } catch (error) {
-        console.error(`❌ Failed to enhance ${agentId} capabilities:`, error.message);
+        console.error(`❌ Failed to enhance ${agentId} capabilities: `, error.message);
       }
     }
   }
@@ -826,7 +823,7 @@ class EnhancedIntelligentAgentSystem {
         
         console.log(`✅ Optimized ${agentId} performance`);
       } catch (error) {
-        console.error(`❌ Failed to optimize ${agentId} performance:`, error.message);
+        console.error(`❌ Failed to optimize ${agentId} performance: `, error.message);
       }
     }
   }
@@ -1093,3 +1090,5 @@ if (require.main === module) {
 }
 
 module.exports = EnhancedIntelligentAgentSystem;
+
+}

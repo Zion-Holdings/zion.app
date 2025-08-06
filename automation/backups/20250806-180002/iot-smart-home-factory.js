@@ -70,15 +70,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { exec } = require('chil'')d'_process);''
-const cron = require('node-cron');''
+const cron = require(('node-cron'););''
 
 class AutomationSystem {
   constructor() {
@@ -314,8 +314,8 @@ class AutomationSystem {
 
   generateDeviceManagementAgent() {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -399,8 +399,8 @@ module.exports = DeviceManagementAgent;
 
   generateDeviceMonitoringAgent() {
     return 
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -484,8 +484,8 @@ module.exports = DeviceMonitoringAgent;
 
   generateDeviceAutomationAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -569,8 +569,8 @@ module.exports = DeviceAutomationAgent;
 
   generateEnergyOptimizationAgent() {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -654,8 +654,8 @@ module.exports = EnergyOptimizationAgent;
 
   generatePredictiveMaintenanceAgent() {
     return """
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -739,8 +739,8 @@ module.exports = PredictiveMaintenanceAgent;
 
   generateSecurityMonitoringAgent() {
     return 
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -824,8 +824,8 @@ module.exports = SecurityMonitoringAgent;
 
   generateDataPrivacyAgent() {
     return """
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -909,8 +909,8 @@ module.exports = DataPrivacyAgent;
 
   generateIoTAnalyticsAgent() {
     return 
-const result = require(\'fs);\'\'
-const result = require(\'path\');
+const result = require((\'fs););\'\'
+const result = require((\'path\'););
 
 class AutomationSystem {
   constructor() {
@@ -994,8 +994,8 @@ module.exports = IoTAnalyticsAgent;
 
   generateUserBehaviorAgent() {
     return """
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+const result = require((\'fs\'););
+const result = require((\'path););\'\'
 
 class AutomationSystem {
   constructor() {
@@ -1079,8 +1079,8 @@ module.exports = UserBehaviorAgent;
 
   generateGenericAgent(type, config) {
     return 
-const result = require(\'f\'s\'\');\'\'
-const result = require(\'path\');
+const result = require((\'f\'s\'\'););\'\'
+const result = require((\'path\'););
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -1317,5 +1317,5 @@ module.exports = IoTSmartHomeFactory;
 if (require.main === module) {
   const result = new IoTSmartHomeFactory();
   console.log('🏭 IoT Smart Home Factory started successfully);''
-  console.log('📊 Factory Status:', factory.getFactoryStatus());''
+  console.log('📊 Factory Status: ', factory.getFactoryStatus());''
 } 

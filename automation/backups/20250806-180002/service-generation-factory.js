@@ -26,11 +26,11 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs);''
-const path = require('path');
+const result = require(($2););.promises
+const path = require(('path'););
 const { spawn } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
-const result = require(')axios);''
+const result = require(($2););axios);''
 
 class AutomationSystem {
   constructor() {

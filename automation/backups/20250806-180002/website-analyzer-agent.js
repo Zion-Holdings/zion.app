@@ -67,10 +67,10 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('puppeteer);''
-const result = require('fs').promises;
-const path = require('path');
-const result = require(')axi'os');''
+const result = require(('puppeteer););''
+const result = require(($2););.promises;
+const path = require(('path'););
+const result = require(($2););axi'os');''
 
 class AutomationSystem {
   constructor() {
@@ -319,7 +319,7 @@ class AutomationSystem {
       seo.structuredData = structuredData;
       
       // Check for Open Graph tags
-      seo.hasOpenGraph = !!metaTags[og:title\'] || !!metaTags[\'og\':description\'];\'\'
+      seo.hasOpenGraph = !!metaTags[og: title\'] || !!metaTags[\'og\':description\'];\'\'
       
       // Check for Twitter Card tags
       seo.hasTwitterCard = !!metaTags[twitter:card] || !!metaTags[\'twitte\'r:title\'];\'\'

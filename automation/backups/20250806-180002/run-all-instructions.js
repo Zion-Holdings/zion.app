@@ -70,22 +70,19 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Master Script to Run All Google Doc Instructions
  * 
  * This script runs all the automation systems to implement
  * every instruction from the Google Doc comprehensively.
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require(('fs'););
+const path = require(('path'););
 const { execSync } = require('child_process');
 
 class MasterInstructionsRunner {
@@ -336,11 +333,9 @@ class MasterInstructionsRunner {
         this.log('Starting continuous monitoring...');
         
         // Create continuous monitoring script
-        const monitoringScript = `
-#!/usr/bin/env node
-;
-const fs = require('fs');
-const path = require('path');
+        const monitoringScript = `;
+const fs = require(('fs'););
+const path = require(('path'););
 const { execSync } = require('child_process');
 
 class ContinuousMonitoringSystem {

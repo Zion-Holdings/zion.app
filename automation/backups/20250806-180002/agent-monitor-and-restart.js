@@ -29,15 +29,12 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
+}const fs = require(('fs'););
+const path = require(('path'););
 const { spawn } = require('child_process');
 
 class AgentMonitorAndRestart {
@@ -276,7 +273,7 @@ class AgentMonitorAndRestart {
       });
       
       childProcess.on('error', (error) => {
-        console.error(`Agent ${agent.id} error:`, error.message);
+        console.error(`Agent ${agent.id} error: `, error.message);
         agent.monitoring.errorHistory.push({
           timestamp: Date.now(),
           error: error.message
@@ -340,7 +337,7 @@ class AgentMonitorAndRestart {
       timestamp: new Date().toISOString()
     };
     
-    console.log('📊 Performance Metrics:', performanceMetrics);
+    console.log('📊 Performance Metrics: ', performanceMetrics);
     
     // Update system intelligence based on performance
     this.updateSystemIntelligence(performanceMetrics);
@@ -409,7 +406,7 @@ class AgentMonitorAndRestart {
       }
     }
     
-    console.log('📊 Final System Status:', this.getSystemStatus());
+    console.log('📊 Final System Status: ', this.getSystemStatus());
     process.exit(0);
   }
 }
