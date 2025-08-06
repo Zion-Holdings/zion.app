@@ -1,0 +1,296 @@
+{
+  "timestamp": "2025-08-06T05:16:07.009Z",
+  "componentAnalysis": {
+    "components": [
+      {
+        "file": "EnhancedButton.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedButton.tsx",
+        "size": 1174,
+        "lines": 47
+      },
+      {
+        "file": "EnhancedCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedCard.tsx",
+        "size": 460,
+        "lines": 24
+      },
+      {
+        "file": "EnhancedLoading.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedLoading.tsx",
+        "size": 4990,
+        "lines": 171
+      },
+      {
+        "file": "EnhancedMarketplaceCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+        "size": 5558,
+        "lines": 168
+      },
+      {
+        "file": "FuturisticCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticCard.tsx",
+        "size": 4977,
+        "lines": 144
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticHero.tsx",
+        "size": 9196,
+        "lines": 177
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveNavigation.tsx",
+        "size": 6216,
+        "lines": 150
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveSearch.tsx",
+        "size": 8947,
+        "lines": 264
+      },
+      {
+        "file": "NotificationSystem.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/NotificationSystem.tsx",
+        "size": 4736,
+        "lines": 171
+      }
+    ],
+    "issues": [
+      {
+        "file": "EnhancedButton.tsx",
+        "type": "accessibility_issues",
+        "count": 1,
+        "message": "Interactive elements missing accessibility attributes"
+      },
+      {
+        "file": "EnhancedLoading.tsx",
+        "type": "inline_styles",
+        "count": 5,
+        "message": "Too many inline styles, consider using CSS classes"
+      },
+      {
+        "file": "EnhancedLoading.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "EnhancedMarketplaceCard.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "FuturisticCard.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "type": "inline_styles",
+        "count": 4,
+        "message": "Too many inline styles, consider using CSS classes"
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "type": "accessibility_issues",
+        "count": 1,
+        "message": "Interactive elements missing accessibility attributes"
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "type": "accessibility_issues",
+        "count": 1,
+        "message": "Interactive elements missing accessibility attributes"
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "type": "large_component",
+        "lines": 264,
+        "message": "Component is too large, consider breaking it down"
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "type": "accessibility_issues",
+        "count": 3,
+        "message": "Interactive elements missing accessibility attributes"
+      },
+      {
+        "file": "NotificationSystem.tsx",
+        "type": "missing_memoization",
+        "message": "Component with props and state should use React.memo"
+      },
+      {
+        "file": "NotificationSystem.tsx",
+        "type": "accessibility_issues",
+        "count": 2,
+        "message": "Interactive elements missing accessibility attributes"
+      }
+    ]
+  },
+  "reusabilityAnalysis": {
+    "reusableComponents": [
+      {
+        "file": "EnhancedButton.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedButton.tsx",
+        "reusabilityScore": 6
+      },
+      {
+        "file": "EnhancedCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedCard.tsx",
+        "reusabilityScore": 3
+      },
+      {
+        "file": "EnhancedLoading.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedLoading.tsx",
+        "reusabilityScore": 4
+      },
+      {
+        "file": "EnhancedMarketplaceCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+        "reusabilityScore": 1
+      },
+      {
+        "file": "FuturisticCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticCard.tsx",
+        "reusabilityScore": 1
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticHero.tsx",
+        "reusabilityScore": 1
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveNavigation.tsx",
+        "reusabilityScore": 1
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveSearch.tsx",
+        "reusabilityScore": 1
+      },
+      {
+        "file": "NotificationSystem.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/NotificationSystem.tsx",
+        "reusabilityScore": 1
+      }
+    ],
+    "nonReusableComponents": []
+  },
+  "recommendations": [
+    {
+      "type": "component_optimization",
+      "priority": "high",
+      "message": "Fix 15 component optimization issues",
+      "issues": [
+        {
+          "file": "EnhancedButton.tsx",
+          "type": "accessibility_issues",
+          "count": 1,
+          "message": "Interactive elements missing accessibility attributes"
+        },
+        {
+          "file": "EnhancedLoading.tsx",
+          "type": "inline_styles",
+          "count": 5,
+          "message": "Too many inline styles, consider using CSS classes"
+        },
+        {
+          "file": "EnhancedLoading.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "EnhancedMarketplaceCard.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "FuturisticCard.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "FuturisticHero.tsx",
+          "type": "inline_styles",
+          "count": 4,
+          "message": "Too many inline styles, consider using CSS classes"
+        },
+        {
+          "file": "FuturisticHero.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "FuturisticHero.tsx",
+          "type": "accessibility_issues",
+          "count": 1,
+          "message": "Interactive elements missing accessibility attributes"
+        },
+        {
+          "file": "InteractiveNavigation.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "InteractiveNavigation.tsx",
+          "type": "accessibility_issues",
+          "count": 1,
+          "message": "Interactive elements missing accessibility attributes"
+        },
+        {
+          "file": "InteractiveSearch.tsx",
+          "type": "large_component",
+          "lines": 264,
+          "message": "Component is too large, consider breaking it down"
+        },
+        {
+          "file": "InteractiveSearch.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "InteractiveSearch.tsx",
+          "type": "accessibility_issues",
+          "count": 3,
+          "message": "Interactive elements missing accessibility attributes"
+        },
+        {
+          "file": "NotificationSystem.tsx",
+          "type": "missing_memoization",
+          "message": "Component with props and state should use React.memo"
+        },
+        {
+          "file": "NotificationSystem.tsx",
+          "type": "accessibility_issues",
+          "count": 2,
+          "message": "Interactive elements missing accessibility attributes"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalComponents": 9,
+    "optimizationIssues": 15,
+    "reusableComponents": 9,
+    "nonReusableComponents": 0,
+    "reusabilityRatio": 1,
+    "recommendationsCount": 1
+  }
+}
