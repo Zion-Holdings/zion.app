@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 
 const ForgotPassword: React.FC = () => {
@@ -7,7 +7,7 @@ const ForgotPassword: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const supabase = createClient(
+  const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
@@ -16,7 +16,6 @@ const ForgotPassword: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    setMessage('');
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {

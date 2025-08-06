@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext, useContext, ReactNode } from 'react'
 
-interface Notification {
+export interface Notification {
   id: string
-  type: 'success' | 'error' | 'warning' | 'info'
+  type: 'success' | 'error' | 'warning' | 'info' | 'loading'
   title: string
   message: string
   duration?: number
@@ -10,103 +10,32 @@ interface Notification {
     label: string
     onClick: () => void
   }
+  dismissible?: boolean
+  icon?: string
 }
 
-interface NotificationSystemProps {
+interface NotificationContextType {
   notifications: Notification[]
-  onRemove: (id: string) => void
+  addNotification: (notification: Omit<Notification, 'id'>) => void
+  removeNotification: (id: string) => void
+  clearAll: () => void
 }
 
-const NotificationSystem = ({ notifications, onRemove }: NotificationSystemProps) => {
-  const getNotificationStyles = (type: string) => {
-    switch (type) {
-      case 'success':
-        return {
-          bg: 'bg-green-500/20',
-          border: 'border-green-500/30',
-          icon: '✅',
-          text: 'text-green-400',
-          glow: 'shadow-green-500/25'
-        }
-      case 'error':
-        return {
-          bg: 'bg-red-500/20',
-          border: 'border-red-500/30',
-          icon: '❌',
-          text: 'text-red-400',
-          glow: 'shadow-red-500/25'
-        }
-      case 'warning':
-        return {
-          bg: 'bg-yellow-500/20',
-          border: 'border-yellow-500/30',
-          icon: '⚠️',
-          text: 'text-yellow-400',
-          glow: 'shadow-yellow-500/25'
-        }
-      case 'info':
-        return {
-          bg: 'bg-blue-500/20',
-          border: 'border-blue-500/30',
-          icon: 'ℹ️',
-          text: 'text-blue-400',
-          glow: 'shadow-blue-500/25'
-        }
-      default:
-        return {
-          bg: 'bg-gray-500/20',
-          border: 'border-gray-500/30',
-          icon: '📢',
-          text: 'text-gray-400',
-          glow: 'shadow-gray-500/25'
-        }
-    }
-  }
+const NotificationContext = createContext<NotificationContextType | undefined>(undefined)
 
-  return (
-    <div className="fixed top-20 right-4 z-50 space-y-2">
-      {notifications.map((notification) => {
-        const styles = getNotificationStyles(notification.type)
-        
-        return (
-          <div
-            key={notification.id}
-            className={`${styles.bg} ${styles.border} border rounded-lg p-4 backdrop-blur-md shadow-lg ${styles.glow} animate-slide-in-right max-w-sm`}
-          >
-            <div className="flex items-start gap-3">
-              <div className="text-xl">{styles.icon}</div>
-              <div className="flex-1 min-w-0">
-                <h4 className={`font-semibold ${styles.text} mb-1`}>
-                  {notification.title}
-                </h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {notification.message}
-                </p>
-                {notification.action && (
-                  <button
-                    onClick={notification.action.onClick}
-                    className="mt-2 text-xs bg-white/10 hover:bg-white/20 px-3 py-1 rounded transition-colors"
-                  >
-                    {notification.action.label}
-                  </button>
-                )}
-              </div>
-              <button
-                onClick={() => onRemove(notification.id)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
-
-// Hook for managing notifications
 export const useNotifications = () => {
+  const context = useContext(NotificationContext)
+  if (!context) {
+    throw new Error('useNotifications must be used within a NotificationProvider')
+  }
+  return context
+}
+
+interface NotificationProviderProps {
+  children: ReactNode
+}
+
+export const NotificationProvider = ({ children }: NotificationProviderProps) => {
   const [notifications, setNotifications] = useState<Notification[]>([])
 
   const addNotification = (notification: Omit<Notification, 'id'>) => {
@@ -115,56 +44,177 @@ export const useNotifications = () => {
     
     setNotifications(prev => [...prev, newNotification])
 
-    // Auto-remove after duration (default 5 seconds)
-    const duration = notification.duration || 5000
-    setTimeout(() => {
-      removeNotification(id)
-    }, duration)
+    // Auto-remove after duration (default: 5 seconds)
+    if (notification.duration !== 0) {
+      setTimeout(() => {
+        removeNotification(id)
+      }, notification.duration || 5000)
+    }
   }
 
   const removeNotification = (id: string) => {
-    setNotifications(prev => prev.filter(n => n.id !== id))
+    setNotifications(prev => prev.filter(notification => notification.id !== id))
   }
 
   const clearAll = () => {
     setNotifications([])
   }
 
-  return {
-    notifications,
-    addNotification,
-    removeNotification,
-    clearAll
-  }
+  return (
+    <NotificationContext.Provider value={{ notifications, addNotification, removeNotification, clearAll }}>
+      {children}
+      <NotificationContainer />
+    </NotificationContext.Provider>
+  )
 }
 
-// Predefined notification functions
-export const createSuccessNotification = (title: string, message: string, action?: { label: string; onClick: () => void }) => ({
-  type: 'success' as const,
-  title,
-  message,
-  action
-})
+const NotificationContainer = () => {
+  const { notifications, removeNotification } = useNotifications()
 
-export const createErrorNotification = (title: string, message: string, action?: { label: string; onClick: () => void }) => ({
-  type: 'error' as const,
-  title,
-  message,
-  action
-})
+  const getNotificationStyles = (type: Notification['type']) => {
+    const baseStyles = 'relative overflow-hidden rounded-lg shadow-lg border-l-4 p-4 mb-4 transform transition-all duration-300'
+    
+    switch (type) {
+      case 'success':
+        return `${baseStyles} bg-green-900/90 border-green-500 text-green-100`
+      case 'error':
+        return `${baseStyles} bg-red-900/90 border-red-500 text-red-100`
+      case 'warning':
+        return `${baseStyles} bg-yellow-900/90 border-yellow-500 text-yellow-100`
+      case 'info':
+        return `${baseStyles} bg-blue-900/90 border-blue-500 text-blue-100`
+      case 'loading':
+        return `${baseStyles} bg-purple-900/90 border-purple-500 text-purple-100`
+      default:
+        return `${baseStyles} bg-gray-900/90 border-gray-500 text-gray-100`
+    }
+  }
 
-export const createWarningNotification = (title: string, message: string, action?: { label: string; onClick: () => void }) => ({
-  type: 'warning' as const,
-  title,
-  message,
-  action
-})
+  const getIcon = (type: Notification['type'], customIcon?: string) => {
+    if (customIcon) return customIcon
+    
+    switch (type) {
+      case 'success':
+        return '✅'
+      case 'error':
+        return '❌'
+      case 'warning':
+        return '⚠️'
+      case 'info':
+        return 'ℹ️'
+      case 'loading':
+        return '⏳'
+      default:
+        return '📢'
+    }
+  }
 
-export const createInfoNotification = (title: string, message: string, action?: { label: string; onClick: () => void }) => ({
-  type: 'info' as const,
-  title,
-  message,
-  action
-})
+  return (
+    <div className="fixed top-4 right-4 z-50 w-96 max-h-screen overflow-y-auto">
+      {notifications.map((notification, index) => (
+        <div
+          key={notification.id}
+          className={`${getNotificationStyles(notification.type)} animate-slide-in`}
+          style={{
+            animationDelay: `${index * 100}ms`,
+            transform: 'translateX(100%)',
+            animation: 'slideIn 0.3s ease-out forwards'
+          }}
+        >
+          {/* Progress Bar for timed notifications */}
+          {notification.duration && notification.duration > 0 && (
+            <div className="absolute top-0 left-0 h-1 bg-white/20 w-full">
+              <div 
+                className="h-full bg-white/40 transition-all duration-100"
+                style={{
+                  width: '100%',
+                  animation: `shrink ${notification.duration}ms linear forwards`
+                }}
+              />
+            </div>
+          )}
 
-export default NotificationSystem
+          <div className="flex items-start space-x-3">
+            {/* Icon */}
+            <div className="flex-shrink-0 text-xl">
+              {getIcon(notification.type, notification.icon)}
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <h4 className="text-sm font-semibold mb-1">
+                {notification.title}
+              </h4>
+              <p className="text-sm opacity-90">
+                {notification.message}
+              </p>
+              
+              {/* Action Button */}
+              {notification.action && (
+                <button
+                  onClick={notification.action.onClick}
+                  className="mt-2 text-xs font-medium hover:opacity-80 transition-opacity"
+                >
+                  {notification.action.label}
+                </button>
+              )}
+            </div>
+
+            {/* Dismiss Button */}
+            {notification.dismissible !== false && (
+              <button
+                onClick={() => removeNotification(notification.id)}
+                className="flex-shrink-0 text-lg opacity-60 hover:opacity-100 transition-opacity"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
+          {/* Loading Animation */}
+          {notification.type === 'loading' && (
+            <div className="absolute bottom-0 left-0 h-1 bg-white/20 w-full">
+              <div className="h-full bg-white/40 animate-pulse" style={{ width: '30%' }} />
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+// CSS Animations
+const styles = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes shrink {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+`
+
+// Add styles to document head
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style')
+  styleSheet.textContent = styles
+  document.head.appendChild(styleSheet)
+}
+
+export default NotificationContainer
