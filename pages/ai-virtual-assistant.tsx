@@ -1,39 +1,39 @@
-import type { NextPage } from "next";
-import ModernLayout from '../components/layout/ModernLayout'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from react";}"
+import React from 'react'
+import React from 'react'
+import React from 'react'
+import React from 'react'
 import Link from next/link
 import { Home, Search, User }  from lucide-react
 interface FacilityPlan {
-  id: ""string"
+  id: ""string""
   content: string
-  role: 'user | assistant;
+  role: 'user | assistant;'
   timestamp: Date;
-  type?: 'text' | quick-actions | 'recommendatio'n;
+  type?: 'text' | quick-actions | 'recommendatio'n;'
   actions?: Array
-  "}>;}
-const AIPoweredPredictiveAnalytics: "NextPage = () => {"
-  const [messages", setMessages] = useState<Message[]>([;
+  "}>;}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {""
+  const [messages", setMessages] = useState<Message[]>([;"
     {;
-      id: "1",;
-      content: "Welcome to Zions AI Virtual Assistant! Im here to help you navigate our marketplace", find the perfect services, and connect you with expert AI talent. I can assist with:\n\n• Product & Service Recommendations\n• Marketplace Navigation\n• Technical Guidance\n• Quote Requests\n• Expert Connections\n\nWhat would you like to explore today?,
-      role: "assistant'",
-      timestamp: ""new Date()",
-      type: "text",;
-      actions: "[;
-"},
-    { label: "Find IT Services", action: "Show me IT services", link: "/services "},
-{ label: "'Browse AI Talent'", action: "Show me AI experts", link: "/talents "},"
-    { label: "Get a Quote", action: "I need a quote for a project'", link: ""/quote-request "},
-{ label: "Explore Equipment", action: "Show me computing equipment", link: "/equipment "}]"
+      id: "1",;"
+      content: "Welcome to Zions AI Virtual Assistant! Im here to help you navigate our marketplace", find the perfect services, and connect you with expert AI talent. I can assist with:\n\n• Product & Service Recommendations\n• Marketplace Navigation\n• Technical Guidance\n• Quote Requests\n• Expert Connections\n\nWhat would you like to explore today?,"
+      role: "assistant'","
+      timestamp: ""new Date()","
+      type: "text",;"
+      actions: "[;"
+"},"
+    { label: "Find IT Services", action: "Show me IT services", link: "/services "},"
+{ label: "'Browse AI Talent'", action: "Show me AI experts", link: "/talents "},""
+    { label: "Get a Quote", action: "I need a quote for a project'", link: ""/quote-request "},"
+{ label: "Explore Equipment", action: "Show me computing equipment", link: "/equipment "}]""
     };
   ]);
   const [inputValue, setInputValue] = useState();
   const [isLoading, setIsLoading] = useState(false));</div>;
-  const $1 = useRef<HTMLDivElement>(null);</div>;
-  const $1 = useRef<HTMLInputElement>(null)
+  const variable1 = useRef<HTMLDivElement>(null);</div>;
+  const variable1 = useRef<HTMLInputElement>(null)
   const handleAction = (params) => {
-    messagesEndRef.current?.scrollIntoView({ behavior: ""smooth "})
+    messagesEndRef.current?.scrollIntoView({ behavior: ""smooth "})"
   };
   useEffect(() => {;
     scrollToBottom();
@@ -42,123 +42,123 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {"
     if (inputRef.current) {;
       inputRef.current.focus();};
   }, []);
-  const $1 = async (action: "string) => {;
+  const variable1 = async (action: "string) => {;"
     const userMessage: Message = {;
-      id: Date.now().toString()",;
-      content: "action",;
-      role: "user",
-      timestamp: "new Date()",
-      'type: "text"
-    "};
+      id: Date.now().toString()",;"
+      content: "action",;"
+      role: "user","
+      timestamp: "new Date()","
+      'type: "text""
+    "};"
     setMessages(prev => [...prev]);
     setInputValue();
     setIsLoading(true);
     try {;
-      const $1 = await fetch(/api/chat, {;
-        method: "POST",;
-        headers: "{
-          Content-Type: application'/json'",}
-        body: ""JSON.stringify({
-          message: action",;
-          conversationHistory: "messages.map(msg => ({;
-            role: msg.role",;
-            content: "msg.content;
-          "});
+      const variable1 = await fetch(/api/chat, {;
+        method: "POST",;"
+        headers: "{"
+          Content-Type: application'/json'",}"
+        body: ""JSON.stringify({"
+          message: action",;"
+          conversationHistory: "messages.map(msg => ({;"
+            role: msg.role",;"
+            content: "msg.content;"
+          "});"
         }),;
       });
       if (!response.ok) {;
         throw new Error(Failed to get response);};
-      const $1 = await response.json();
-      const assistantMessage: "Message = {;
-        id: (Date.now() + 1).toString()",;
-        content: "data.response",;
-        role: "assistant",;
-        timestamp: "new Date()",;
-        type: "text;
-      "};
+      const variable1 = await response.json();
+      const assistantMessage: "Message = {;"
+        id: (Date.now() + 1).toString()",;"
+        content: "data.response",;"
+        role: "assistant",;"
+        timestamp: "new Date()",;"
+        type: "text;"
+      "};"
       setMessages(prev => [...prev]);
     } catch (error) {;
       console.error(Error sending message: , error);
-      const errorMessage: "Message = {
-        id: (Date.now() + 1).toString()",
-        content: "Im sorry", Im having trouble connecting right now. Please try again in a moment.,"
-        role: "assistant",
-        timestamp: "new Date()",
-        'type: ""text
-      "};
+      const errorMessage: "Message = {"
+        id: (Date.now() + 1).toString()","
+        content: "Im sorry", Im having trouble connecting right now. Please try again in a moment.,""
+        role: "assistant","
+        timestamp: "new Date()","
+        'type: ""text"
+      "};"
       setMessages(prev => [...prev]);
     } finally {;
       setIsLoading(false);};
   }
-  const $1 = async () => {
+  const variable1 = async () => {
     if (!inputValue.trim() || isLoading) return
-    const userMessage: "Message = {
-      id: Date.now().toString()",
-      content: "inputValue.trim()","
-      role: "user","
-      timestamp: "new Date()",'
-      type: "text
-    "}
+    const userMessage: "Message = {"
+      id: Date.now().toString()","
+      content: "inputValue.trim()",""
+      role: "user",""
+      timestamp: "new Date()",''
+      type: "text"
+    "}"
     setMessages(prev => [...prev])
     setInputValue()
     setIsLoading(true)
     try {
-      const $1 = await fetch(/api/chat, {'
-        method: ""POST","
-        headers: "{
-          Content-Type: application/json",};
-        body: "JSON.stringify({;
-          message: userMessage.content",;
-          conversationHistory: "messages.map(msg => ({;
-            role: msg.role",;
-            content: "msg.content;
-          "});
+      const variable1 = await fetch(/api/chat, {''
+        method: ""POST",""
+        headers: "{"
+          Content-Type: application/json",};"
+        body: "JSON.stringify({;"
+          message: userMessage.content",;"
+          conversationHistory: "messages.map(msg => ({;"
+            role: msg.role",;"
+            content: "msg.content;"
+          "});"
         }),;
       });
       if (!response.ok) {;
-        throw new Error(Faile'd to get response);}
-      const $1 = await response.json()
-      const assistantMessage: ""Message = {"
-        id: (Date.now() + 1).toString()",;
-        content: "data.response",;
-        role: "assistant",;
-        timestamp: "new Date()",;
-        type: "text;
-      "};
+        throw new Error(Faile'd to get response);}'
+      const variable1 = await response.json()
+      const assistantMessage: ""Message = {""
+        id: (Date.now() + 1).toString()",;"
+        content: "data.response",;"
+        role: "assistant",;"
+        timestamp: "new Date()",;"
+        type: "text;"
+      "};"
       setMessages(prev => [...prev]);
     } catch (error) {;
       console.error(Error sending message: , error);
-      const errorMessage: "Message = {;
-        id: (Date.now() + 1).toString()",
-        content: "Im sorry", I'm' having trouble connecting right now. Please try again in a moment.,
-        role: "assistant",
-        timestamp: "new Date()",;
-        type: "text;
-      "};
+      const errorMessage: "Message = {;"
+        id: (Date.now() + 1).toString()","
+        content: "Im sorry", I'm' having trouble connecting right now. Please try again in a moment.,'
+        role: "assistant","
+        timestamp: "new Date()",;"
+        type: "text;"
+      "};"
       setMessages(prev => [...prev]);
     } finally {;
       setIsLoading(false);};
   };
-  const $1 = (e: "React.KeyboardEvent) => {;
+  const variable1 = (e: "React.KeyboardEvent) => {;"
     if (e.key === Enter && !e.shiftKey) {;
       e.preventDefault();
-      handleSendMessage();"};
+      handleSendMessage();"};"
   }
-  const $1 = (date: "Date) => {
-    return date.toLocaleTimeString([]", { hour: "'2-digit", minute: ""2-digit "})"
+  const variable1 = (date: "Date) => {"
+    return date.toLocaleTimeString([]", { hour: "'2-digit", minute: ""2-digit "})""
   };
-  const $1 = (message: "Message) => {;
+  const variable1 = (message: "Message) => {;"
     return (</div>;
     <div></div>;
       </div>;
       >;
         ></div>;
-          </div><div className=whitespace-pre-wrap text-sm:leading-relaxed>{message.content"}</div>;
+          </div><div className="whitespace-pre-wrap" text-sm:leading-relaxed>{message.content"}</div>;"
           {message.actions && message.role === assistant && (</div>;
-            <div className=mt-4 grid grid-cols-1 md grid-cols-2 gap-2 >;
+            <div className="mt-4" grid grid-cols-1 md grid-cols-2 gap-2 >;"
               {message.actions.map((action, index) => (;
                   onClick={() => handleQuickAction(action.action)};
-                  className=text-left px-4 py-4 text-sm bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200;
+                  className="text-left" px-4 py-4 text-sm bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200;"
                 >;
                   {action.label}</div>;
                 </button>;
@@ -171,158 +171,158 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {"
         </div ></div>
       </div>
     )
-  }'
-  return (</div>'
-    <div className=relative z-10 container-responsive py-8>"
-        {/* Background Effects */}</div>'
-        </div><div className=fixed inset-0 z-0 "></div>
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90</div></div>"
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div ></div>
-        </div></div>"
-      <Head>'</div>
-        <title>AI Virtual Assistant - Zion</title></div>'
-        <meta name=description content=Experience Zions AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation. > </meta name=description content=Experience" Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation. ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>"
+  }''
+  return (</div>''
+    <div className="relative" z-10 container-responsive py-8>""
+        {/* Background Effects */}</div>''
+        </div><div className="fixed" inset-0 z-0 "></div>"
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90</div></div>""
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div ></div>"
+        </div></div>""
+      <Head>'</div>'
+        <title>AI Virtual Assistant - Zion</title></div>''
+        <meta name=description content=Experience Zions AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation. > </meta name=description content=Experience" Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation. ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>""
       {/* Header */}</div>
-      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
-        </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"
-          <div className=flex  justify-between items-center></div>'
-            <Link href=/ className=text-2xl font-bold text-white "> </div>'
-              </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
-            </Link></div>'"
-            <div className="flex items-center space-x-4></div>'
-              <Link href=/marketplace className=text-gray-300 hover: text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>"
-              </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
-              </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>"
+      <div className="bg-black/20" backdrop-blur-md border-b border-white/10> </div>''
+        </div><div className="max-w-7xl" mx-auto px-4 sm: "px-6 lg px-8 py-6></div>""
+          <div className="flex"  justify-between items-center></div>''
+            <Link href=/ className="text-2xl" font-bold text-white "> </div>''
+              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>"
+            </Link></div>'""
+            <div className="flex items-center space-x-4></div>''
+              <Link href=/marketplace className="text-gray-300" hover: text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>""
+              </Link href=/marketplace  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>"
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>"
+              </Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>""
             </div> </div></div>
         </div></div>
       </div>
-      {/* Hero Section */"}</div>'
-      <div className="max-w-7xl  mx-auto px-4 sm: ""px-6 lg:px-8 py-32></div>
+      {/* Hero Section */"}</div>''
+      <div className="max-w-7xl  mx-auto px-4 sm: ""px-6 lg:px-8 py-32></div>"
         </div><div className= text-center mb-12></div>
-          <h1 className= text-4xl md text-6xlfont-bold text-white mb-6></div>'
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>;
+          <h1 className= text-4xl md text-6xlfont-bold text-white mb-6></div>''
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>;"
               AI Virtual Assistant</div>;
             </span></div>;
           </h1></div>
-          <p className=text-xl text-gray-300 max-w-3xl mx-auto >
+          <p className="text-xl" text-gray-300 max-w-3xl mx-auto >"
             Experience the future of marketplace interaction with our intelligent AI assistant.
-            Get personalized recommendations", expert guidance, and seamless navigation through our high-tech marketplace.</div>"
+            Get personalized recommendations", expert guidance, and seamless navigation through our high-tech marketplace.</div>""
           </p></div>
         </div>
         {/* Features Grid */}</div>
-        <div className=grid grid-cols-1 md grid-cols-3 gap-8 mb-12></div>'
-          </div><div className= bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>"
-            <div className=text-3xl:mb-4>🤖</div></div>
-            <h3 className=text-xl font-semibold text-white mb-2 >Intelligent Recommendations</h3></div>'
-            <p className="text-gray-300>Get personalized suggestions for services", talents, and equipment based on your specific needs.</p></div>
-          </div></div>'
-          <div className="bg-white/10 backdrop-blur-md: ""rounded-lg p-6 border border-white/20></div>
-            </div><div className=text-3xl:mb-4>💡</div></div>
-            <h3 className=text-xl font-semibold text-white mb-2 >Expert Guidance</h3></div>
-            <p className=text-gray-300>Receive technical advice and implementation guidance from our AI-powered knowledge base.</p></div>"
-          </div></div>"
-          <div className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>'
-            </div><div className=text-3xl: "mb-4>🚀</div></div>"
-            <h3 className=text-xl font-semibold text-white mb-2 >Seamless Navigation</h3></div>
-            <p className=text-gray-300>Navigate our marketplace effortlessly with intelligent routing and quick access to all features.</p></div>
+        <div className="grid" grid-cols-1 md grid-cols-3 gap-8 mb-12></div>''
+          </div><div className= bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>""
+            <div className="text-3xl:mb-4>🤖</div></div>""
+            <h3 className="text-xl" font-semibold text-white mb-2 >Intelligent Recommendations</h3></div>''
+            <p className="text-gray-300>Get personalized suggestions for services", talents, and equipment based on your specific needs.</p></div>"
+          </div></div>''
+          <div className="bg-white/10 backdrop-blur-md: ""rounded-lg p-6 border border-white/20></div>"
+            </div><div className="text-3xl:mb-4>💡</div></div>""
+            <h3 className="text-xl" font-semibold text-white mb-2 >Expert Guidance</h3></div>"
+            <p className="text-gray-300>Receive" technical advice and implementation guidance from our AI-powered knowledge base.</p></div>""
+          </div></div>""
+          <div className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>''
+            </div><div className="text-3xl:" "mb-4>🚀</div></div>""
+            <h3 className="text-xl" font-semibold text-white mb-2 >Seamless Navigation</h3></div>"
+            <p className="text-gray-300>Navigate" our marketplace effortlessly with intelligent routing and quick access to all features.</p></div>"
           </div></div>
         </div>
-        {/* Chat Interface */"}</div>
+        {/* Chat Interface */"}</div>"
         <div className= max-w-4xl mx-auto></div>
-          </div><div className= bg-white rounded-lg:shadow-xl border border-gray-200 flex flex-col h-[600px]>"
-            {/* Chat Header */}</div>'
-            <div className=bg-gradient-to-r"  from-blue-600 to-purple-600 text-white px-6 py-4 rounded-t-lg></div>
+          </div><div className= bg-white rounded-lg:shadow-xl border border-gray-200 flex flex-col h-[600px]>""
+            {/* Chat Header */}</div>''
+            <div className="bg-gradient-to-r""  from-blue-600 to-purple-600 text-white px-6 py-4 rounded-t-lg></div>"
               </div><div className= flex items-center space-x-3></div>
-                <div className= w-10 h-10 bg-white/20 rounded-full flex items-center justify-center></div>'
-                  <svg className=""w-12  h-12 fill=none stroke="currentColor" viewBox=0 0 24 24"></div>'
-                    <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.0o72 0l-.548.547A3.374 3.374 0 0o14 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z > </path" strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.0o72 0l-.548.547A3.374 3.374 0 0o14 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z ></svg></div>
+                <div className= w-10 h-10 bg-white/20 rounded-full flex items-center justify-center></div>''
+                  <svg className=""w-12  h-12 fill=none stroke="currentColor" viewBox=0 0 24 24"></div>''
+                    <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.0o72 0l-.548.547A3.374 3.374 0 0o14 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z > </path" strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.0o72 0l-.548.547A3.374 3.374 0 0o14 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z ></svg></div>"
                 </div></div>
-                <div></div>'"
-                  <h3 className="text-xl font-semibold>Zion AI Assistant</h3></div>'
-                  <p className=text-blue-100>Online • Ready to help you explore our marketplace</p></div>
+                <div></div>'""
+                  <h3 className="text-xl font-semibold>Zion AI Assistant</h3></div>''
+                  <p className="text-blue-100>Online" • Ready to help you explore our marketplace</p></div>"
                 </div ></div>
               </div></div>
-            </div>"
+            </div>""
             {/* Messages Container */}</div>
-            <div className= flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50>"
+            <div className= flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50>""
               {messages.map(renderMessage)},
-{isLoading && (</div>'
-                </div><div className="flex  justify-start"></div>
-                  <div className=bg-white text-gray-800 border border-gray-200 px-4 py-3 rounded-lg shadow-sm> </div>'
-                    </div><div className=flex space-x-1></div>'"
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce></div></div>'
-                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce  style=""{{ animationDelay: ""0.1s "}}"""></div></div>
-                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style=""{{ animationDelay  0.2s }}"""></div></div>;
+{isLoading && (</div>''
+                </div><div className="flex  justify-start"></div>"
+                  <div className="bg-white" text-gray-800 border border-gray-200 px-4 py-3 rounded-lg shadow-sm> </div>''
+                    </div><div className="flex" space-x-1></div>'""
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce></div></div>''
+                      <div className="w-2" h-2 bg-gray-400 rounded-full animate-bounce  style=""{{ animationDelay: ""0.1s "}}"""></div></div>"
+                      <div className="w-2" h-2 bg-gray-400 rounded-full animate-bounce style=""{{ animationDelay  0.2s }}"""></div></div>;"
                     </div></div>;
                   </div></div>;
                 </div>
               )}</div>
               <div ref={messagesEndRef} > </div ref={messagesEndRef} ></div>
-            {/* Input Area */}</div>"
-            <div className=p-6 border-t border-gray-200 bg-white rounded-b-lg> </div>
-              </div><div className=flex space-x-4>
+            {/* Input Area */}</div>""
+            <div className="p-6" border-t border-gray-200 bg-white rounded-b-lg> </div>"
+              </div><div className="flex" space-x-4>"
                   onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}'
-                  placeholder="Ask me about services, talents, equipment, or anything else...'
-                  className=" flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg: "focus outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
-                  disabled={isLoading"}
-                />"
+                  onKeyPress={handleKeyPress}''
+                  placeholder="Ask me about services, talents, equipment, or anything else...''
+                  className=" flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg: "focus outline-none focus ring-2 focus ring-blue-500 focus border-transparent""
+                  disabled={isLoading"}"
+                />""
                 ></div>
-                  <svg className= w-5 h-5 fill=none stroke=currentColor viewBox= 0 0 24 24></div>'
+                  <svg className= w-5 h-5 fill=none stroke=currentColor viewBox= 0 0 24 24></div>''
                     <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M12 19l9 2-9-18-9 18 9-2zm0 0v-8 > </path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M12 19l9 2-9-18-9 18 9-2zm0 0v-8 ></svg></div>
                 </button></div>
-              </div></div>"
+              </div></div>""
             </div></div>
-          </div></div>"
+          </div></div>""
         </div>
-        {/* Additional Features */}</div>'
-        <div className="mt-16 grid grid-cols-1 md grid-cols-2 gap-8> </div>'
-          </div><div className=bg-white/5 backdrop-blur-md: ""rounded-lg p-8 border border-white/10></div>
-            <h3 className=text-2xl font-bold text-white mb-4>Why Choose Our AI Assistant?</h3></div>
-            <ul className=space-y-3 text-gray-300></div>
-              <li className=flex items-center space-x-3></div>
-                <div className=w-2 h-2 bg-purple-400 rounded-full></div></div>
-                <span>24/7 availability for instant support</span></div>"
-              </li></div>"
-              <li className=flex items-center space-x-3></div>'
-                <div className=w-2 h-2 bg-purple-400 rounded-full ></div></div>
+        {/* Additional Features */}</div>''
+        <div className="mt-16 grid grid-cols-1 md grid-cols-2 gap-8> </div>''
+          </div><div className="bg-white/5" backdrop-blur-md: ""rounded-lg p-8 border border-white/10></div>"
+            <h3 className="text-2xl" font-bold text-white mb-4>Why Choose Our AI Assistant?</h3></div>"
+            <ul className="space-y-3" text-gray-300></div>"
+              <li className="flex" items-center space-x-3></div>"
+                <div className="w-2" h-2 bg-purple-400 rounded-full></div></div>"
+                <span>24/7 availability for instant support</span></div>""
+              </li></div>""
+              <li className="flex" items-center space-x-3></div>''
+                <div className="w-2" h-2 bg-purple-400 rounded-full ></div></div>"
                 <span>Intelligent product matching based on your needs</span></div>
-              </li></div>'
-              <li className=""flex items-center space-x-3></div>
-                <div className=w-2 h-2 bg-purple-400 rounded-full></div></div>
+              </li></div>''
+              <li className=""flex items-center space-x-3></div>"
+                <div className="w-2" h-2 bg-purple-400 rounded-full></div></div>"
                 <span>Expert technical guidance and implementation advice</span></div>
-              </li></div>"
-              <li className=flex items-center space-x-3></div>'
-                <div className=w-2" h-2 bg-purple-400 rounded-full ></div></div>
+              </li></div>""
+              <li className="flex" items-center space-x-3></div>''
+                <div className="w-2"" h-2 bg-purple-400 rounded-full ></div></div>"
                 <span>Seamless integration with our marketplace ecosystem</span></div>
               </li></div>
             </ul></div>
-          </div></div>'
-          <div className="" bg-white/5 backdrop-blur-md: rounded-lg p-8 border border-white/10></div>
-            <h3 className=text-2xl font-bold text-white mb-4>Get Started</h3></div>
-            <div className=space-y-4></div>"
-              <Link href=/marketplace className=block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors >Explore Marketplace</div>"
-              </Link href=/marketplace  className=block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors></Link></div>'
-              <Link href=/quote-request className=block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 >Request a Quote</div>'
-              </Link href=/quote-request className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg: "hover bg-white/20 transition-colors border border-white/20 ></Link></div>
-              <Link href=/auth/signup className=block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Join Zion</div>
-              </Link href=/auth/signup  className=block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors ></Link></div>
+          </div></div>''
+          <div className="" bg-white/5 backdrop-blur-md: rounded-lg p-8 border border-white/10></div>"
+            <h3 className="text-2xl" font-bold text-white mb-4>Get Started</h3></div>"
+            <div className="space-y-4></div>"""
+              <Link href=/marketplace className="block" w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors >Explore Marketplace</div>""
+              </Link href=/marketplace  className="block" w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors></Link></div>''
+              <Link href=/quote-request className="block" w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 >Request a Quote</div>''
+              </Link href=/quote-request className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg: "hover bg-white/20 transition-colors border border-white/20 ></Link></div>"
+              <Link href=/auth/signup className="block" w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Join Zion</div>"
+              </Link href=/auth/signup  className="block" w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors ></Link></div>"
             </div> </div></div>
         </div></div>
       </div>
-        {/* Mobile Navigation */"}</div>"
-        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>
-          </div><div className=flex justify-around items-center py-2></div>'"
-            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'
-              <Home className=w-5 h-5 "> </div>"
-              </Home className=w-5 h-5 ><span className=text-xs>Home</span> </div>
-            </button></div>'
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white></div>'
-              <Search className=w-5" h-5 > </Search className=w-5  h-5 ><span className=text-xs>Search</span></div>
-            </button></div>'
-            <button className="flex flex-col items-center p-2 text-gray-400 hover" text-white></div>'
-              <User className=w-5 h-5 > </User className=w-5 h-5 ><span className=text-xs>Profile</span></div>;
+        {/* Mobile Navigation */"}</div>""
+        <div className="lg" hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>"
+          </div><div className="flex" justify-around items-center py-2></div>'""
+            <button className="flex" flex-col items-center p-2 text-gray-400 hover text-white></div>''
+              <Home className="w-5" h-5 "> </div>""
+              </Home className="w-5" h-5 ><span className="text-xs>Home</span>" </div>"
+            </button></div>''
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white></div>''
+              <Search className="w-5"" h-5 > </Search className="w-5"  h-5 ><span className="text-xs>Search</span></div>""
+            </button></div>''
+            <button className="flex flex-col items-center p-2 text-gray-400 hover" text-white></div>''
+              <User className="w-5" h-5 > </User className="w-5" h-5 ><span className="text-xs>Profile</span></div>;""
             </button></div>;
           </div></div>;
         </div></div>;
@@ -331,7 +331,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {"
   </div>
 </div>
   </div>
-</div>"
+</div>""
   </div>
-};'
-export default AiVirtualAssistant;)))'`</div>'
+};''
+export default AiVirtualAssistant;)))'`</div>''

@@ -1,35 +1,35 @@
-import { useState, useEffect, useMemo } from "react
+import React from 'react'
 import { motion } from framer-motion
-"
-interface DemandForecast {"
-  className?: string;}'
-const PredictiveAnalytics: "'React.FC<PredictiveAnalyticsProps> = ({ className= "}) => {
-  return (</div>"
+""
+interface DemandForecast {""
+  className?: string;}''
+const PredictiveAnalytics: "'React.FC<PredictiveAnalyticsProps> = ({ className= "}) => {"
+  return (</div>""
     <motion.div
-      initial={{ opacity: "0", y: "20"}}"
-      animate={{ opacity: "1", y: "0"}}
-      transition={{ duration: "0.6"}}'
-      className={bg-white rounded-lg shadow-lg p-6 ${className}}'
-    "></div>"
-      <div className=flex items-center mb-4></div>'
-        <div className= w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4></div>'
-          <svg className=" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24 24"></div>'
-            <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z ></svg></div>
-        </div></div>"
+      initial={{ opacity: "0", y: "20"}}""
+      animate={{ opacity: "1", y: "0"}}"
+      transition={{ duration: "0.6"}}''
+      className="{bg-white" rounded-lg shadow-lg p-6 ${className}}''
+    "></div>""
+      <div className="flex" items-center mb-4></div>''
+        <div className= w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4></div>''
+          <svg className=" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24 24"></div>''
+            <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z ></svg></div>"
+        </div></div>""
         <h3 className= text-xl font-semibold text-gray-900>Predictive Analytics</h3></div>
-      </div></div>'
-      <p className=text-gray-600 mb-4'>
+      </div></div>''
+      <p className="text-gray-600" mb-4'>'
         Advanced predictive analytics capabilities that enhance your business operations and drive growth.</div>
       </p></div>
       <div className= flex space-x-2></div>
-        <button className= bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors>"
+        <button className= bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors>""
           Learn More</div>
-        </button></div>'"
-        <button className=border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>
+        </button></div>'""
+        <button className="border" border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>"
           Demo</div>
-        </button></div>"
+        </button></div>""
       </div></div>
-    </motion.div >;  )"
+    </motion.div >;  )""
 }
-'}'
-export default $1;</div>'"
+'}''
+export default variable1;</div>'""

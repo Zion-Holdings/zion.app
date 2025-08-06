@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react'
 
 interface ContractTemplate {
   id: string;
   name: string;
-  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';
+  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';'
   category: string;
   description: string;
   clauses: string[];
@@ -22,8 +22,8 @@ interface ContractAnalysis {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -32,36 +32,36 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const contractData = {
       templates: [
         {
-          id: 'template-1',
-          name: 'Service Agreement',
-          type: 'service',
-          category: 'Business Services',
-          description: 'Standard service agreement template for business services',
+          id: 'template-1','
+          name: 'Service Agreement','
+          type: 'service','
+          category: 'Business Services','
+          description: 'Standard service agreement template for business services','
           clauses: [
-            'Scope of Services',
-            'Payment Terms',
-            'Termination Clause',
-            'Confidentiality',
-            'Liability Limitations'
+            'Scope of Services','
+            'Payment Terms','
+            'Termination Clause','
+            'Confidentiality','
+            'Liability Limitations''
           ],
-          variables: ['ServiceProvider', 'Client', 'ServiceDescription', 'PaymentAmount'],
-          lastUpdated: '2024-01-15'
+          variables: ['ServiceProvider', 'Client', 'ServiceDescription', 'PaymentAmount'],'
+          lastUpdated: '2024-01-15''
         },
         {
-          id: 'template-2',
-          name: 'Employment Contract',
-          type: 'employment',
-          category: 'Human Resources',
-          description: 'Standard employment contract template',
+          id: 'template-2','
+          name: 'Employment Contract','
+          type: 'employment','
+          category: 'Human Resources','
+          description: 'Standard employment contract template','
           clauses: [
-            'Position and Duties',
-            'Compensation',
-            'Benefits',
-            'Termination',
-            'Non-Compete'
+            'Position and Duties','
+            'Compensation','
+            'Benefits','
+            'Termination','
+            'Non-Compete''
           ],
-          variables: ['EmployeeName', 'Position', 'Salary', 'StartDate'],
-          lastUpdated: '2024-02-01'
+          variables: ['EmployeeName', 'Position', 'Salary', 'StartDate'],'
+          lastUpdated: '2024-02-01''
         }
       ],
       analysis: {
@@ -78,7 +78,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: contractData
     });
   } catch (error) {
-    console.error('Error processing contract request:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('Error processing contract request:', error);'
+    return res.status(500).json({ error: 'Internal server error' });'
   }
 }

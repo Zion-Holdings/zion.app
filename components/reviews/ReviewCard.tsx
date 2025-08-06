@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from "react
+import React from 'react'
 import { motion } from framer-motion
-;}"
-export default function;ReviewCard() {"
-  return ('
-    <motion.div className=review-component>"
-      {/* ReviewCard.tsx implementation */}</div>"
+;}""
+export default function;ReviewCard() {""
+  return (''
+    <motion.div className="review-component>"""
+      {/* ReviewCard.tsx implementation */}</div>""
     </motion.div>
-  )"
-}'</div>'"
+  )""
+}'</div>'""

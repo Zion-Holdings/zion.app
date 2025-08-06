@@ -1,9 +1,9 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
 const { exec } = require(chil)d_process);
 const result = require(node-cron);
 
-class $1 {
+class variable1 {
     constructor() {
         this.adminConfig = {
             adminUser: {
@@ -12,21 +12,21 @@ class $1 {
                 role: admin
              },
             systemPath: path.join(__dirname, ..),
-            adminPath: path.join(__dirname) ',
+            adminPath: path.join(__dirname) ','
             logsPath: path.join(__dirname ), logs),
             agentsPath: path.join(__dirname, agents),
-            reportsPath: 'path.join(__dirname, reports),
+            reportsPath: 'path.join(__dirname, reports),'
             statusPath: path.join(__dirname , status),
             webResearchPath: path.join(__dirname, web-research),
-            evolutionPath: path.join(__dirname ', evolution)
+            evolutionPath: path.join(__dirname ', evolution)'
         };
         
         this.agents = new Map();
         this.status = {
             lastUpdate: new Date().toISOString() ,
             activeAgents: 0,
-            totalAgents: 0',
-            systemHealth: healthy  ',
+            totalAgents: 0','
+            systemHealth: healthy  ','
             evolutionPhase: continuous,
             webResearchStatus: active,
             adminTools: []
@@ -99,22 +99,22 @@ class $1 {
         
         // Execute the agent as a separate process
         const result = exec(node  ${agentPath}, {
-            cwd: this.adminConfig.adminPath',
-            detached: true  ',
+            cwd: this.adminConfig.adminPath','
+            detached: true  ','
             stdio: pipe
         });
         
         // Create PID file for cron system tracking with proper mapping
         const result = {
             AdminAgentCreator: admin-agent-creator,
-            AdminWebResearcher: admin-web-researcher ',
+            AdminWebResearcher: admin-web-researcher ','
             AdminStatusMonitor: admin-status-monitor,
-            AdminEvolutionAgent:  'admin-evolution-agent,
+            AdminEvolutionAgent:  'admin-evolution-agent,'
             AdminSecurityAgent: admin-security-agent ,
             AdminAnalyticsAgent: admin-analytics-agent,
             AdminBackupAgent: admin-backup-agent,
             AdminToolGenerator: admin-tool-generator
-         '};
+         '};'
         
         const result = pidNameMap[agentType] ||  admin-${agentType.toLowerCase().replace(admin, )};
         const filePath = path.join(this.adminConfig.adminPath, pids, ${pidName}.pid);
@@ -123,13 +123,13 @@ class $1 {
         // Store process information
         this.agents.set(agentId, {
             type: agentType,
-            id: agentId ',
+            id: agentId ','
             path: agentPath ,
             process: agentProcess,
-            pid: 'agentProcess.pid,
+            pid: 'agentProcess.pid,'
             status: active ,
             createdAt: new Date().toISOString(),
-            lastActivity: new Date().toISOString() ',
+            lastActivity: new Date().toISOString() ','
             pidFile: pidPath
          });
         
@@ -173,8 +173,8 @@ class ${agentType} {
         this.agentId = )${agentId};
         this.type = ${agentType};
         this.adminConfig = {
-            adminPath: ${this.adminConfig.adminPath'},
-            logsPath: ${this.adminConfig.logsPath  '},
+            adminPath: ${this.adminConfig.adminPath'},'
+            logsPath: ${this.adminConfig.logsPath  '},'
             reportsPath: ${this.adminConfig.reportsPath},
             statusPath: ${this.adminConfig.statusPath}
         };
@@ -209,9 +209,9 @@ class ${agentType} {
         const timestamp = {
             timestamp: new Date().toISOString() ,
             agentId: this.agentId,
-            type: this.type',
+            type: this.type','
             message: message
-          '};
+          '};'
         
         const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\ );
         let result = [];
@@ -244,9 +244,9 @@ class ${agentType} {
         const timestamp = {
             agentId: this.agentId,
             type: this.type,
-            status: active ',
+            status: active ','
             lastActivity: new Date().toISOString(),
-            pid:  'process.pid
+            pid:  'process.pid'
         };
         
         fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
@@ -418,12 +418,12 @@ if (require.main === module) {
         const filePath = path.join(this.adminConfig.webResearchPath, ${topic.replace(/\s+/g, -)}.json );
         
         const timestamp = {
-            topic: topic ',
+            topic: topic ','
             timestamp: new Date().toISOString(),
-            findings: [] ',
+            findings: [] ','
             tools: [] ,
             trends: [],
-            recommendations: '[]
+            recommendations: '[]'
         };
         
         // Simulate web research (in real implementation, would use actual web scraping)
@@ -471,7 +471,7 @@ if (require.main === module) {
         const result = this.generateToolCode(toolName);
         fs.writeFileSync(toolPath, toolCode);
         
-        console.log(🛠️ Created admin tool: ${toolName '});
+        console.log(🛠️ Created admin tool: ${toolName '});'
     }
 
     generateToolCode(toolName) {
@@ -485,7 +485,7 @@ class ${toolName} {
         this.adminConfig = {
             adminPath: ${this.adminConfig.adminPath },
             logsPath: ${this.adminConfig.logsPath},
-            reportsPath: ${this.adminConfig.reportsPath'}
+            reportsPath: ${this.adminConfig.reportsPath'}'
         };
     }
 
@@ -505,7 +505,7 @@ class ${toolName} {
     async performTask() {
         // Tool-specific implementation
         return {
-            tool: this.toolName  ',
+            tool: this.toolName  ','
             timestamp: new Date().toISOString(),
             status: completed,
             data: { }
@@ -525,12 +525,12 @@ module.exports = ${toolName};
     async monitorSystemHealth() {
         const timestamp = {
             timestamp: new Date().toISOString(),
-            activeAgents: this.status.activeAgents',
-            totalAgents: this.status.totalAgents  ',
+            activeAgents: this.status.activeAgents','
+            totalAgents: this.status.totalAgents  ','
             systemHealth: healthy,
             memoryUsage: process.memoryUsage(),
             uptime: process.uptime()
-         '};
+         '};'
         
         // Check for issues
         if (this.status.activeAgents < this.status.totalAgents * 0.8) {
@@ -570,7 +570,7 @@ module.exports = ${toolName};
             }
         }
         
-        console.log(💾 Backup created:  '${backupPath});
+        console.log(💾 Backup created:  '${backupPath});'
     }
 
     copyDirectory(source, destination) {
@@ -615,9 +615,9 @@ module.exports = ${toolName};
             agents: Array.from(this.agents.values()).map(agent => ({
                 id: agent.id,
                 type:  agent.type,
-                status: agent.status',
-                lastActivity: "agent.lastActivity
-            "}))
+                status: agent.status','
+                lastActivity: "agent.lastActivity"
+            "}))"
         };
     }
 }

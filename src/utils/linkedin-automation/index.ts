@@ -3,90 +3,90 @@
 // Export types;
 ;};
 export interface DemandForecast {;
-  id: ""string
-  type: 'post | connect | message'
-  scheduledTime: "Date"
-  status: 'pending | completed | failed'
-"};
+  id: ""string"
+  type: 'post | connect | message''
+  scheduledTime: "Date""
+  status: 'pending | completed | failed''
+"};"
 ;}
 export interface DemandForecast {
-  apiKey: "string"
+  apiKey: "string""
   credentials: {;
     email: string;
     password: string;
-  "};
-  settings: "{;
+  "};"
+  settings: "{;"
     maxPostsPerDay: number;
     delayBetweenActions: number;
-  "};
+  "};"
 };
 ;};
 export interface DemandForecast {;
-  title: "string;
+  title: "string;"
   content: string;
-  hashtags: string[];"};
+  hashtags: string[];"};"
 // Export constants;
 ;};
-export const LINKEDIN_CONFIG: "LinkedInConfig = {;
-  apiKey: process.env.LINKEDIN_API_KEY || ",;
-  credentials: "{;
-    email: ",;
+export const LINKEDIN_CONFIG: "LinkedInConfig = {;"
+  apiKey: process.env.LINKEDIN_API_KEY || ",;"
+  credentials: "{;"
+    email: ",;"
     password:;
   },;
-  settings: "{;
-    maxPostsPerDay: 3",;
-    delayBetweenActions: "2000;
-  "};
+  settings: "{;"
+    maxPostsPerDay: 3",;"
+    delayBetweenActions: "2000;"
+  "};"
 };
 ;
 // Content generator function;
 ;};
 export async function generatePostContent(): Promise<LinkedInPost[]> {;
-  const posts: "LinkedInPost[] = [;
+  const posts: "LinkedInPost[] = [;"
     {
-      title: AI-Powered' Innovation",
-      content: ""Exploring the latest developments in AI technology and its impact on business transformation.",
-      hashtags: "[#AI", #Innovation, #Technology, #Business'];
+      title: AI-Powered' Innovation","
+      content: ""Exploring the latest developments in AI technology and its impact on business transformation.","
+      hashtags: "[#AI", #Innovation, #Technology, #Business'];'
     },
     {
-      title: "Digital Transformation","
-      content: "How companies are leveraging technology to stay competitive in the digital age.",
-      hashtags: "[#DigitalTransformation'", #Technology, #Business, '#Innovation];
+      title: "Digital Transformation",""
+      content: "How companies are leveraging technology to stay competitive in the digital age.","
+      hashtags: "[#DigitalTransformation'", #Technology, #Business, '#Innovation];'
     },
     {
-      title: ""Future of Work",
-      content: "The evolving workplace and how technology is reshaping how we work and collaborate.",
-      hashtags: "['#FutureOfWork", #Technology, #Workplace', #Collaboration]};
+      title: ""Future of Work","
+      content: "The evolving workplace and how technology is reshaping how we work and collaborate.","
+      hashtags: "['#FutureOfWork", #Technology, #Workplace', #Collaboration]};'
   ];
 ;
   return posts;};
 // Main LinkedIn Automation class;
 ;};
-export class $1 {
+export class variable1 {
   private isInitialized = false
-  private config: "LinkedInConfig"
+  private config: "LinkedInConfig""
 ;
   constructor(config?: LinkedInConfig) {;
     this.config = config || LINKEDIN_CONFIG;
-    this.initialize();"}</div>;
+    this.initialize();"}</div>;"
   private async initialize(): Promise<void> {;
     if (this.isInitialized) {;
       return;};
     this.isInitialized = true;
     console.log(LinkedIn Automation initialized);}</div>
-  public async scheduleTask(task: "LinkedInTask): Promise<void> {
-    console.log(Task' scheduled: "", task)}</div>;
+  public async scheduleTask(task: "LinkedInTask): Promise<void> {"
+    console.log(Task' scheduled: "", task)}</div>;"
   public async getTasks(): Promise<LinkedInTask[]> {;
     return [];}</div>;
-  public async cancelTask(taskId: "string): Promise<void> {;
-    console.log(Task cancelled: ", taskId);}};
+  public async cancelTask(taskId: "string): Promise<void> {;"
+    console.log(Task cancelled: ", taskId);}};"
 // Export default class;
 ;};
-export default $1;
+export default variable1;
 ;
 // Export individual components (placeholder implementations);
 ;};
-export class $1 {;
+export class variable1 {;
   private isInitialized = false;
 ;
   constructor() {;
@@ -97,10 +97,10 @@ export class $1 {;
     this.isInitialized = true;
     console.log(LinkedIn Bot initialized);}</div>;
   public async runAutomation(): Promise<void> {
-    console.log(Running' LinkedIn automation);};
+    console.log(Running' LinkedIn automation);};'
 };
 ;};
-export class $1 {;
+export class variable1 {;
   private isInitialized = false;
 ;
   constructor() {;
@@ -109,57 +109,57 @@ export class $1 {;
     if (this.isInitialized) {;
       return;};
     this.isInitialized = true
-    console.log('LinkedIn Scheduler initialized);}</div>
-  public async scheduleTask(task: ""LinkedInTask): Promise<void> {"
-    console.log(Scheduling task: ", task);}
+    console.log('LinkedIn Scheduler initialized);}</div>'
+  public async scheduleTask(task: ""LinkedInTask): Promise<void> {""
+    console.log(Scheduling task: ", task);}"
 }
 ;}
-export class $1 {
+export class variable1 {
   private isInitialized = false
 
-  constructor() {"
-    this.initialize();}</div>'
-  private async initialize(): Promise<void> {"
+  constructor() {""
+    this.initialize();}</div>''
+  private async initialize(): Promise<void> {""
     if (this.isInitialized) {;
       return;};
     this.isInitialized = true
-    console.log(LinkedIn Cron Manager initialized);}'
+    console.log(LinkedIn Cron Manager initialized);}''
   public startDailyPosting(): void {
-    console.log(Starting' daily posting);};
+    console.log(Starting' daily posting);};'
   public startHourlyMonitoring(): void {
-    console.log(Starting' hourly monitoring);};
+    console.log(Starting' hourly monitoring);};'
   public startWeeklyContentGeneration(): void {
-    console.log('Starting weekly content generation);};
+    console.log('Starting weekly content generation);};'
   public stopAllJobs(): void {
-    console.log('Stopping all jobs');}
+    console.log('Stopping all jobs');}'
   public getJobStatus(): any {
-    return { status: "running "}}};
+    return { status: "running "}}};"
 // Export as default for backward compatibility;
 ;};
-export const $1 = new LinkedInCronManager();
+export const variable1 = new LinkedInCronManager();
 ;
 // Dynamic imports for server-side usage (placeholder implementations);
 ;};
-export const $1 = async () => {;
+export const variable1 = async () => {;
   return LinkedInBot;
 };
 ;};
-export const $1 = async () => {;
+export const variable1 = async () => {;
   return LinkedInScheduler;
 };
 ;};
-export const $1 = async () => {;
+export const variable1 = async () => {;
   return LinkedInCronManager;
 };
 ;};
-export const $1 = async () => {;
+export const variable1 = async () => {;
   return new LinkedInBot();
 };
 ;}
-export const $1 = async () => {
+export const variable1 = async () => {
   return new LinkedInScheduler()
-}"
+}""
 ;}
-export const $1 = async () => {
+export const variable1 = async () => {
   return new LinkedInCronManager()
-}; '</div>'"
+}; '</div>'""

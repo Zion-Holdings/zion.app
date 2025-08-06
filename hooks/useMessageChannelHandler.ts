@@ -1,56 +1,56 @@
-import { useState, useEffect, useMemo } from "react;}
-import MessageChannelHandler from '../utils/messageChannelHandler'
+import React from 'react'
+import React from 'react'
 
-interface $1 {
-  errorCount: "number;
+interface variable1 {
+  errorCount: "number;"
   hasRecentErrors: boolean;
   clearErrors: () => void;
   getErrorLog: () => Array<{
-    type: "messag'e'_channel_closed'
+    type: "messag'e'_channel_closed''
     message: string;
     timestamp: number;
     likelyExtensionError: boolean;
-  "}>;
-  extensionInfo: "{
+  "}>;"
+  extensionInfo: "{"
     hasExtensions: boolean;
     extensionCount: number;
     extensions: any[];
-  "};
+  "};"
 }
 ;}
-export const $1 = (): UseMessageChannelHandlerReturn => {
+export const variable1 = (): UseMessageChannelHandlerReturn => {
   const [errorCount, setErrorCount] = useState(0);
   const [hasRecentErrors, setHasRecentErrors] = useState(false);</div>
   const [extensionInfo, setExtensionInfo] = useState<{
-    hasExtensions: "boolean;
+    hasExtensions: "boolean;"
     extensionCount: number;
     extensions: any[];
-  "}>({
-    hasExtensions: "false",
-    extensionCount: "0",
-    extensions: "[]
-  "});
+  "}>({"
+    hasExtensions: "false","
+    extensionCount: "0","
+    extensions: "[]"
+  "});"
 
   useEffect(() => {
-    const $1 = MessageChannelHandler.getInstance();
+    const variable1 = MessageChannelHandler.getInstance();
     
     // Update error count and recent errors status
-    const $1 = () => {
-      const $1 = handler.getErrorLog();
+    const variable1 = () => {
+      const variable1 = handler.getErrorLog();
       setErrorCount(errorLog.length);
-      setHasRecentErrors(errorLog.some((error: "any) =></div>
+      setHasRecentErrors(errorLog.some((error: "any) =></div>"
         Date.now() - error.timestamp < 5 * 60 * 1000 // 5 minutes
       ));
-    "};
+    "};"
 
     // Update extension info
-    const $1 = () => {
-      const $1 = handler.getExtensionInfo();
+    const variable1 = () => {
+      const variable1 = handler.getExtensionInfo();
       setExtensionInfo({
-        hasExtensions: "detectedExtensionInfo.hasExtensions",
-        extensionCount: "detectedExtensionInfo.extensionCount",
-        extensions: "detectedExtensionInfo.extensions || []
-      "});
+        hasExtensions: "detectedExtensionInfo.hasExtensions","
+        extensionCount: "detectedExtensionInfo.extensionCount","
+        extensions: "detectedExtensionInfo.extensions || []"
+      "});"
     };
 
     // Initial update
@@ -58,7 +58,7 @@ export const $1 = (): UseMessageChannelHandlerReturn => {
     updateExtensionInfo();
 
     // Set up interval to check for new errors
-    const $1 = setInterval(() => {
+    const variable1 = setInterval(() => {
       updateErrorStatus();
       updateExtensionInfo();
     }, 1000); // Check every second
@@ -66,15 +66,15 @@ export const $1 = (): UseMessageChannelHandlerReturn => {
     return () => clearInterval(interval);
   }, []);
 
-  const $1 = () => {
-    const $1 = MessageChannelHandler.getInstance();
+  const variable1 = () => {
+    const variable1 = MessageChannelHandler.getInstance();
     handler.clearErrorLog();
     setErrorCount(0);
     setHasRecentErrors(false);
   };
 
-  const $1 = () => {
-    const $1 = MessageChannelHandler.getInstance();
+  const variable1 = () => {
+    const variable1 = MessageChannelHandler.getInstance();
     return handler.getErrorLog();
   };
 

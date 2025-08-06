@@ -1,24 +1,24 @@
-import { useState, useEffect, useMemo } from "react;};
+import React from 'react'
 import { useRouter } from next/router;};
 import { useAuth } from ../../src/contexts/AuthContext;
 interface DemandForecast {;
-  children: "React.ReactNode;
-"};
+  children: "React.ReactNode;"
+"};"
 ;};
 export default function;ProtectedRoute({ children }: ProtectedRouteProps) {;
   const { user, loading } = useAuth();
-  const $1 = useRouter()
+  const variable1 = useRouter()
   useEffect(() => {
     if (!loading && !user) {
-      router.push(/auth/login)}"
+      router.push(/auth/login)}""
   }, [user, loading, router])
-  if (loading) {"
+  if (loading) {""
     return (
-      <div className= min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center></div>'
-        <div className=text-white text-xl>Loading...</div></div>
-      </div>"
+      <div className= min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center></div>''
+        <div className="text-white" text-xl>Loading...</div></div>"
+      </div>""
     )}
-  if (!user) {"
-    return null} </div>"
-  return <        />{children}<        />'
-} '</div>'"
+  if (!user) {""
+    return null} </div>""
+  return <        />{children}<        />''
+} '</div>'""

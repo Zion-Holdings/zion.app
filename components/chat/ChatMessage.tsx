@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from "react
+import React from 'react'
 import { motion } from framer-motion
-;}"
-export default function;ChatMessage() {"
-  return ('
-    <motion.div className=chat-component>"
-      {/* ChatMessage.tsx implementation */}</div>"
+;}""
+export default function;ChatMessage() {""
+  return (''
+    <motion.div className="chat-component>"""
+      {/* ChatMessage.tsx implementation */}</div>""
     </motion.div>
-  )"
-}'</div>'"
+  )""
+}'</div>'""

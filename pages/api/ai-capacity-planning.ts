@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react'
 
 interface FacilityPlan {
   id: string;
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';'
   currentCapacity: number;
   targetCapacity: number;
   utilization: number;
@@ -11,29 +11,29 @@ interface FacilityPlan {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'GET') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   // Mock data for capacity planning
   const capacityPlans: FacilityPlan[] = [
     {
-      id: '1',
-      name: 'Data Center Expansion',
-      type: 'infrastructure',
+      id: '1','
+      name: 'Data Center Expansion','
+      type: 'infrastructure','
       currentCapacity: 80,
       targetCapacity: 120,
       utilization: 85,
-      recommendations: ['Add server racks', 'Upgrade cooling system', 'Implement redundancy']
+      recommendations: ['Add server racks', 'Upgrade cooling system', 'Implement redundancy']'
     },
     {
-      id: '2',
-      name: 'Development Team Growth',
-      type: 'workforce',
+      id: '2','
+      name: 'Development Team Growth','
+      type: 'workforce','
       currentCapacity: 15,
       targetCapacity: 25,
       utilization: 90,
-      recommendations: ['Hire senior developers', 'Expand office space', 'Improve onboarding process']
+      recommendations: ['Hire senior developers', 'Expand office space', 'Improve onboarding process']'
     }
   ];
 

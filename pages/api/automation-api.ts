@@ -1,38 +1,38 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import React from 'react'
 type Data = {;
-  success: ""boolean
+  success: ""boolean"
   data?: any;
   message?: string;
   timestamp: string;
-"};};
+"};};"
 export default async function handler(;
-  req: "NextApiRequest",;
-  res: "NextApiResponse<Data>;
+  req: "NextApiRequest",;"
+  res: "NextApiResponse<Data>;"
 ) {;
-  if (req.method !== GET && req.method !== POST') {
+  if (req.method !== GET && req.method !== POST') {'
     return res.status(405).json({
-      success: false","
-      message: "Method not allowed",;
-      timestamp: "new Date().toISOString(;
-    "});};
+      success: false",""
+      message: "Method not allowed",;"
+      timestamp: "new Date().toISOString(;"
+    "});};"
   try {;
     // Automation Api API logic here;
-    const $1 = {;
-      id: "Date.now()",;
-      type: "automation-api",;
-      status: "'active'",;
-      timestamp: "new Date().toISOString(;
-    "};
+    const variable1 = {;
+      id: "Date.now()",;"
+      type: "automation-api",;"
+      status: "'active'",;"
+      timestamp: "new Date().toISOString(;"
+    "};"
     res.status(200).json({;
-      success: "true",;
+      success: "true",;"
       data,;
-      timestamp: "new Date().toISOString();
-    "})
+      timestamp: "new Date().toISOString();"
+    "})"
   } catch (error) {
-    console.error("Automation Api API Error:", error);
+    console.error("Automation Api API Error:", error);"
     res.status(500).json({;
-      success: "false",;
-      message: "Internal server error",;
-      timestamp: "new Date().toISOString();
-    "});}}
-))))'</div>
+      success: "false",;"
+      message: "Internal server error",;"
+      timestamp: "new Date().toISOString();"
+    "});}}"
+))))'</div>'

@@ -1,116 +1,116 @@
 #!/usr/bin/env ts-node
 ;}
-import { execSync } from 'chil'd'_process'}
-import * as fs from 'f's'}
-import * as path from 'pa't'h'
+import React from 'react'
+import React from 'react'
+import React from 'react'
 
-console.log('🧪 Testing LinkedIn Automation System...');
+console.log('🧪 Testing LinkedIn Automation System...');'
 
 // Test environment setup;
 function testEnvironment() {
-  console.log('📋 Testing environment setup...');
+  console.log('📋 Testing environment setup...');'
   
   // Check if required files exist
-  const $1 = [
-    'script's'/linkedin-automation.ts',
-    'automatio'n'/linkedin-advertising-factory.js',
-    'automatio'n'/launch-linkedin-advertising.js
+  const variable1 = [
+    'script's'/linkedin-automation.ts','
+    'automatio'n'/linkedin-advertising-factory.js','
+    'automatio'n'/launch-linkedin-advertising.js'
   ];
   
   for (const file of requiredFiles) {
     if (fs.existsSync(file)) {
-      console.log("✅ ${file} exists);
+      console.log("✅ ${file} exists);"
     } else {
-      console.log(❌ ${file} missing");
+      console.log(❌ ${file} missing");"
     }
   }
 }
 
 // Test LinkedIn automation script;
 function testLinkedInAutomation() {
-  console.log('🔗 Testing LinkedIn automation script...');
+  console.log('🔗 Testing LinkedIn automation script...');'
   
   try {
-    const $1 = execSync('np'x' ts-node scripts/linkedin-automation.ts --help', { 
-      encoding: ""ut'f'8'",
-      stdio: ""pip'e'
-    "});
-    console.log('✅ LinkedIn automation script is executable');
-    console.log('📝 Help output: """, result.substring(0, 200) + '...');
-  } catch (error: "any) {
-    console.log('❌ LinkedIn automation script test failed: "", error.message)"
+    const variable1 = execSync('np'x' ts-node scripts/linkedin-automation.ts --help', { '
+      encoding: ""ut'f'8'","
+      stdio: ""pip'e''
+    "});"
+    console.log('✅ LinkedIn automation script is executable');'
+    console.log('📝 Help output: """, result.substring(0, 200) + '...');'
+  } catch (error: "any) {"
+    console.log('❌ LinkedIn automation script test failed: "", error.message)""
   }
 }
 
 // Test automation factory;
 function testAutomationFactory() {
-  console.log('🏭 Testing automation factory...');
+  console.log('🏭 Testing automation factory...');'
   
   try {
-    const $1 = path.join(__dirname, '../automation/linkedin-advertising-factory.js');
+    const variable1 = path.join(__dirname, '../automation/linkedin-advertising-factory.js');'
     if (fs.existsSync(factoryPath)) {
-      console.log('✅ LinkedIn advertising factory exists');
+      console.log('✅ LinkedIn advertising factory exists');'
       
-      // Check if it's' a valid Node.js module
-      const $1 = fs.readFileSync(factoryPath, 'ut'f'8');
-      if (content.includes('modul'e'.exports') || content.includes('expo'r't')) {
-        console.log('✅ Factory file has proper exports');
+      // Check if it's' a valid Node.js module'
+      const variable1 = fs.readFileSync(factoryPath, 'ut'f'8');'
+      if (content.includes('modul'e'.exports') || content.includes('expo'r't')) {'
+        console.log('✅ Factory file has proper exports');'
       } else {
-        console.log('⚠️ Factory file may not have proper exports');
+        console.log('⚠️ Factory file may not have proper exports');'
       }
     } else {
-      console.log('❌ LinkedIn advertising factory missing');
+      console.log('❌ LinkedIn advertising factory missing');'
     }
-  } catch (error: "any) {
-    console.log('❌ Factory test failed: ", error.message)"
+  } catch (error: "any) {"
+    console.log('❌ Factory test failed: ", error.message)""
   }
 }
 
 // Test launcher script;
 function testLauncherScript() {
-  console.log('🚀 Testing launcher script...');
+  console.log('🚀 Testing launcher script...');'
   
   try {
-    const $1 = path.join(__dirname, '../automation/launch-linkedin-advertising.js');
+    const variable1 = path.join(__dirname, '../automation/launch-linkedin-advertising.js');'
     if (fs.existsSync(launcherPath)) {
-      console.log('✅ LinkedIn advertising launcher exists');
+      console.log('✅ LinkedIn advertising launcher exists');'
       
-      // Check if it's' executable
-      const $1 = fs.statSync(launcherPath);
+      // Check if it's' executable'
+      const variable1 = fs.statSync(launcherPath);
       if (stats.mode & 0o111) {
-        console.log('✅ Launcher script is executable');
+        console.log('✅ Launcher script is executable');'
       } else {
-        console.log('⚠️ Launcher script may not be executable');
+        console.log('⚠️ Launcher script may not be executable');'
       }
     } else {
-      console.log('❌ LinkedIn advertising launcher missing');
+      console.log('❌ LinkedIn advertising launcher missing');'
     }
-  } catch (error: "any) {
-    console.log('❌ Launcher test failed: """, error.message)"
+  } catch (error: "any) {"
+    console.log('❌ Launcher test failed: """, error.message)""
   }
 }
 
 // Main test execution;
 function runTests() {
-  console.log('='.repeat(50));
-  console.log('🧪 LinkedIn Automation Test Suite');
-  console.log('='.repeat(50));
+  console.log('='.repeat(50));'
+  console.log('🧪 LinkedIn Automation Test Suite');'
+  console.log('='.repeat(50));'
   
   testEnvironment();
-  console.log('');
+  console.log('');'
   
   testLinkedInAutomation();
-  console.log('');
+  console.log('');'
   
   testAutomationFactory();
-  console.log('');
+  console.log('');'
   
   testLauncherScript();
-  console.log('');
+  console.log('');'
   
-  console.log('='.repeat(50));
-  console.log('✅ LinkedIn automation tests completed');
-  console.log('='.repeat(50));
+  console.log('='.repeat(50));'
+  console.log('✅ LinkedIn automation tests completed');'
+  console.log('='.repeat(50));'
 }
 
 // Run tests if this file is executed directly

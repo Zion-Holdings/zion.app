@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 ;
 interface Particle {;
-  x: "number;
+  x: "number;"
   y: number;
   vx: number;
   vy: number;
   size: number;
   opacity: number;
-"};
+"};"
 interface ParticleEffectProps {;
   className?: string;
   particleCount?: number;
@@ -15,12 +15,12 @@ interface ParticleEffectProps {;
   size?: number;
   color?: string;
 };
-const ParticleEffect: "React.FC<ParticleEffectProps> = ({;
-  className="",;
+const ParticleEffect: "React.FC<ParticleEffectProps> = ({;"
+  className="",;"
   particleCount = 50,;
   speed = 1,;
   size = 2,;
-  color = '#ffffff'
+  color = '#ffffff''
 }) => {;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -30,7 +30,7 @@ const ParticleEffect: "React.FC<ParticleEffectProps> = ({;
     const canvas = canvasRef.current;
     if (!canvas) return;
 ;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d');'
     if (!ctx) return;
 ;
     // Set canvas size;
@@ -40,19 +40,19 @@ const ParticleEffect: "React.FC<ParticleEffectProps> = ({;
     };
 ;
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);'
 ;
     // Initialize particles;
-    const particles: "Particle[] = [];
+    const particles: "Particle[] = [];"
     for (let i = 0; i < particleCount; i++) {;
       particles.push({;
-        x: Math.random() * canvas.width",;
-        y: "Math.random() * canvas.height",;
-        vx: "(Math.random() - 0.5) * speed",;
-        vy: "(Math.random() - 0.5) * speed",;
-        size: "Math.random() * size + 1",;
-        opacity: "Math.random() * 0.5 + 0.3;
-      "});
+        x: Math.random() * canvas.width",;"
+        y: "Math.random() * canvas.height",;"
+        vx: "(Math.random() - 0.5) * speed",;"
+        vy: "(Math.random() - 0.5) * speed",;"
+        size: "Math.random() * size + 1",;"
+        opacity: "Math.random() * 0.5 + 0.3;"
+      "});"
     };
     particlesRef.current = particles;
 ;
@@ -85,7 +85,7 @@ const ParticleEffect: "React.FC<ParticleEffectProps> = ({;
     animate();
 ;
     return () => {;
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);'
       if (animationRef.current) {;
         cancelAnimationFrame(animationRef.current);
       };
@@ -95,9 +95,9 @@ const ParticleEffect: "React.FC<ParticleEffectProps> = ({;
   return (;
     <canvas;
       ref={canvasRef};
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`};
-      style=""{{ background: "'transparent' "}};
-       /""">;
+      className="{`fixed" inset-0 pointer-events-none z-0 ${className}`};"
+      style=""{{ background: "'transparent' "}};"
+       /""">;"
   );
 };
 ;

@@ -1,57 +1,57 @@
-import { useState, useEffect, useMemo } from "react
-import type { NextPage } from next'
-import Head from "next/head
-import Link from next/link'
-import ModernLayout from '../components/layout/ModernLayout';
-interface AutonomousVehicle {'
-  id: ""string
+import React from 'react'
+import React from 'react'
+import React from 'react'
+import React from 'react'
+import React from 'react'
+interface AutonomousVehicle {''
+  id: ""string"
   name: string
-  type: 'passenger | cargo | emergency | delivery
-  status: "active | maintenance | offline | charging"
+  type: 'passenger | cargo | emergency | delivery'
+  status: "active | maintenance | offline | charging""
   location: {
     lat: number;
     lng: number;
     address: string;
-  "};
-  battery: "number;
+  "};"
+  battery: "number;"
   speed: number;
   destination: string;
   eta: number;
   lastUpdated: string;
-"};
+"};"
 interface TransportationRoute {;
-  id: "string;
+  id: "string;"
   origin: string;
   destination: string;
   distance: number
   estimatedTime: number
-  status: 'scheduled" | in-progress | completed | cancelled
-  vehicleId: "string
-  priority: 'low | medium | high | 'urgent;
+  status: 'scheduled" | in-progress | completed | cancelled"
+  vehicleId: "string"
+  priority: 'low | medium | high | 'urgent;'
   passengers?: number;
   cargo?: string;
-"}
-interface TransportationAnalytics {"
-  totalVehicles: ""number
+"}"
+interface TransportationAnalytics {""
+  totalVehicles: ""number"
   activeRoutes: number;
   completedToday: number;
   averageTripTime: number;
   successRate: number;
   fuelEfficiency: number;
   aiOptimizationScore: number;
-"};
-const AIPoweredAutonomousVehicleTransportation: "NextPage = () => {;
-  const [vehicles", setVehicles] = useState<AutonomousVehicle[]>([]);
+"};"
+const AIPoweredAutonomousVehicleTransportation: "NextPage = () => {;"
+  const [vehicles", setVehicles] = useState<AutonomousVehicle[]>([]);"
   const [routes, setRoutes] = useState<TransportationRoute[]>([]);
   const [analytics, setAnalytics] = useState<TransportationAnalytics>({;
-    totalVehicles: "0",;
-    activeRoutes: "0",;
-    completedToday: "0",;
-    averageTripTime: "0",;
-    successRate: "0",;
-    fuelEfficiency: "0",;
-    aiOptimizationScore: "0;
-  "});
+    totalVehicles: "0",;"
+    activeRoutes: "0",;"
+    completedToday: "0",;"
+    averageTripTime: "0",;"
+    successRate: "0",;"
+    fuelEfficiency: "0",;"
+    aiOptimizationScore: "0;"
+  "});"
   const [loading, setLoading] = useState(true);
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>(null);
   useEffect(() => {;
@@ -59,356 +59,356 @@ const AIPoweredAutonomousVehicleTransportation: "NextPage = () => {;
     setTimeout(() => {;
       setVehicles([;
         {;
-          id: "1",;
-          name: "Vehicle Alpha-0o1",;
-          type: "passenger",;
-          status: "'active'",;
-          location: "{;
-            lat: 40.7128",;
-            lng: "-74.0o60",;
-            address: "Manhattan", NY
+          id: "1",;"
+          name: "Vehicle Alpha-0o1",;"
+          type: "passenger",;"
+          status: "'active'",;"
+          location: "{;"
+            lat: 40.7128",;"
+            lng: "-74.0o60",;"
+            address: "Manhattan", NY"
           },
-          battery: "85","
-          speed: "35",;
-          destination: "Brooklyn Bridge",;
-          eta: "12",;
-          lastUpdated: "2 min ago;
-        "},
+          battery: "85",""
+          speed: "35",;"
+          destination: "Brooklyn Bridge",;"
+          eta: "12",;"
+          lastUpdated: "2 min ago;"
+        "},"
         {
-          id: ""2",
-          name: "Vehicle Beta-0o2","
-          type: "cargo",;
-          status: "'active'",;
-          location: "{;
-            lat: 40.7589",;
-            lng: "-73.9851",;
-            address: "Times Square", NY;
+          id: ""2","
+          name: "Vehicle Beta-0o2",""
+          type: "cargo",;"
+          status: "'active'",;"
+          location: "{;"
+            lat: 40.7589",;"
+            lng: "-73.9851",;"
+            address: "Times Square", NY;"
           },;
-          battery: "72",;
-          speed: "28",
-          destination: "JFK Airport'",
-          eta: ""25",
-          lastUpdated: "1 min ago;
-        "},;
+          battery: "72",;"
+          speed: "28","
+          destination: "JFK Airport'","
+          eta: ""25","
+          lastUpdated: "1 min ago;"
+        "},;"
         {
-          id: "3",
-          'name: "Vehicle Gamma-0o3","
-          type: "emergency",;
-          status: "'active'",;
-          location: "{;
-            lat: 40.7505",;
-            lng: "-73.9934",;
-            address: "Central Park", NY;
+          id: "3","
+          'name: "Vehicle Gamma-0o3",""
+          type: "emergency",;"
+          status: "'active'",;"
+          location: "{;"
+            lat: 40.7505",;"
+            lng: "-73.9934",;"
+            address: "Central Park", NY;"
           },;
-          battery: "95",;
-          speed: "45",;
-          destination: "Emergency Response",;
-          eta: "8",;
-          lastUpdated: "30 sec ago;
-        "};
+          battery: "95",;"
+          speed: "45",;"
+          destination: "Emergency Response",;"
+          eta: "8",;"
+          lastUpdated: "30 sec ago;"
+        "};"
       ]);
       setRoutes([
         {
-          id: ""1",
-          origin: "Manhattan",
-          destination: "Brooklyn Bridge","
-          distance: ""8.5",
-          estimatedTime: "12",;
-          status: "in-progress",;
-          vehicleId: "1",;
-          priority: "'medium'",;
-          passengers: "2;
-        "},;
+          id: ""1","
+          origin: "Manhattan","
+          destination: "Brooklyn Bridge",""
+          distance: ""8.5","
+          estimatedTime: "12",;"
+          status: "in-progress",;"
+          vehicleId: "1",;"
+          priority: "'medium'",;"
+          passengers: "2;"
+        "},;"
         {;
-          id: "2",
-          origin: "Times Square'",
-          destination: "JFK Airport","
-          distance: "18.2",;
-          estimatedTime: "25",;
-          status: "in-progress",;
-          vehicleId: "2",
-          priority: "'high'",
-          cargo: ""Electronics
-        "};
+          id: "2","
+          origin: "Times Square'","
+          destination: "JFK Airport",""
+          distance: "18.2",;"
+          estimatedTime: "25",;"
+          status: "in-progress",;"
+          vehicleId: "2","
+          priority: "'high'","
+          cargo: ""Electronics"
+        "};"
       ]);
       setAnalytics({;
-        totalVehicles: "25",;
-        activeRoutes: "18",;
-        completedToday: "234",;
-        averageTripTime: "22.5",;
-        successRate: "99.2",;
-        fuelEfficiency: "96.8",;
-        aiOptimizationScore: "94.5;
-      "});
+        totalVehicles: "25",;"
+        activeRoutes: "18",;"
+        completedToday: "234",;"
+        averageTripTime: "22.5",;"
+        successRate: "99.2",;"
+        fuelEfficiency: "96.8",;"
+        aiOptimizationScore: "94.5;"
+      "});"
       setLoading(false);
     }, 2000);
   }, []);
-  const getStatusColor = (status: "string) => {;
+  const getStatusColor = (status: "string) => {;"
     switch (status) {;
       case active: return bg-green-500;
-      case maintenance': return 'bg-yellow-500;
-      case offline': return 'bg-red-500
-      case charging': return 'bg-purple-500
-      default: return bg-gray-500"
-    "};
+      case maintenance': return 'bg-yellow-500;'
+      case offline': return 'bg-red-500'
+      case charging': return 'bg-purple-500'
+      default: return bg-gray-500""
+    "};"
   };
-  const getPriorityColor = (priority: "string) => {;
+  const getPriorityColor = (priority: "string) => {;"
     switch (priority) {
       case low: return bg-green-100 text-green-800
-      case 'medium: "return bg-yellow-100 text-yellow-800
+      case 'medium: "return bg-yellow-100 text-yellow-800"
       case high: return bg-orange-100 text-orange-800
-      case 'urgent: return bg-red-100 text-red-800"
+      case 'urgent: return bg-red-100 text-red-800""
       default: return bg-gray-100 text-gray-800;
-    "};
+    "};"
   };
-  const getBatteryColor = (battery: "number) => {;
+  const getBatteryColor = (battery: "number) => {;"
     if (battery >= 80) return text-green-600;
-    if (battery >= 60) return 'text-yellow-600;
+    if (battery >= 60) return 'text-yellow-600;'
     return text-red-600
-  "}
-  const getVehicleTypeIcon = ('type: ""string) => {
+  "}"
+  const getVehicleTypeIcon = ('type: ""string) => {"
     switch (type) {;
       case passenger: return 🚗;
       case cargo: return 🚛;
-      case 'emergency': return 🚑;
-      case 'delivery': return 📦;
-      default: return '🚗;
-    "};
+      case 'emergency': return 🚑;'
+      case 'delivery': return 📦;'
+      default: return '🚗;'
+    "};"
   }
   return (
     <ModernLayout>
       <Head></Head>
         <title>AI-Powered Autonomous Vehicle Transportation - Zion</title>
-        <meta name=description content=Advanced AI-powered autonomous vehicle transportation and fleet management system         />"
+        <meta name=description content=Advanced AI-powered autonomous vehicle transportation and fleet management system         />""
       </Head>
-'"
-      <div className=min-h-screen bg-gradient-to-br from-green-50 to-blue-100>'
-        <div className=container mx-auto px-4 py-8">
-          {/* Header */}'"
-          <div className=text-center mb-12>'
-            <h1 className=text-4xl font-bold text-gray-900 mb-4">"
+'""
+      <div className="min-h-screen" bg-gradient-to-br from-green-50 to-blue-100>''
+        <div className="container" mx-auto px-4 py-8">"
+          {/* Header */}'""
+          <div className="text-center" mb-12>''
+            <h1 className="text-4xl" font-bold text-gray-900 mb-4">""
               AI-Powered Autonomous Vehicle Transportation
-            </h1>'
-            <p className=text-xl text-gray-600 max-w-3xl mx-auto>"
+            </h1>''
+            <p className="text-xl" text-gray-600 max-w-3xl mx-auto>""
               Intelligent autonomous vehicle fleet management and transportation optimization powered by advanced AI
-            </p>"
+            </p>""
           </div>
-          {/* Analytics Overview */}'
-          <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-4 gap-6 mb-8>"
-            <div className=bg-white rounded-lg shadow-md p-6>'
-              <div className=flex items-center justify-between">
-                <div>'
-                  <p className="text-sm font-medium text-gray-600>Total Vehicles</p>'
-                  <p className=text-2xl font-bold text-gray-900">{analytics.totalVehicles"}</p>
-                </div>'
-                <div className="text-3xl>🚗</div>"
+          {/* Analytics Overview */}''
+          <div className="grid" grid-cols-1 md: "grid-cols-2 lg:grid-cols-4 gap-6 mb-8>""
+            <div className="bg-white" rounded-lg shadow-md p-6>''
+              <div className="flex" items-center justify-between">"
+                <div>''
+                  <p className="text-sm font-medium text-gray-600>Total Vehicles</p>''
+                  <p className="text-2xl" font-bold text-gray-900">{analytics.totalVehicles"}</p>"
+                </div>''
+                <div className="text-3xl>🚗</div>""
               </div>
-            </div>'
-            <div className=bg-white rounded-lg shadow-md p-6>'
-              <div className=""flex items-center justify-between>
-                <div>'
-                  <p className=text-sm font-medium text-gray-600>Active Routes</p>'
-                  <p className=""text-2xl font-bold text-gray-900>{analytics.activeRoutes}</p>
-                </div>'
-                <div className=text-3xl>🛣️</div>"
+            </div>''
+            <div className="bg-white" rounded-lg shadow-md p-6>''
+              <div className=""flex items-center justify-between>"
+                <div>''
+                  <p className="text-sm" font-medium text-gray-600>Active Routes</p>''
+                  <p className=""text-2xl font-bold text-gray-900>{analytics.activeRoutes}</p>"
+                </div>''
+                <div className="text-3xl>🛣️</div>"""
               </div>
-            </div>'"
-            <div className=bg-white rounded-lg shadow-md p-6>'
-              <div className=flex items-center justify-between">
-                <div>'"
-                  <p className=text-sm font-medium text-gray-600>Completed Today</p>'
-                  <p className=text-2xl font-bold text-gray-900">{analytics.completedToday}</p>"
-                </div>'
-                <div className=text-3xl>✅</div>"
-              </div>"
-            </div>'
-            <div className=bg-white rounded-lg shadow-md p-6>'
-              <div className="flex items-center justify-between>"
-                <div>'
-                  <p className=text-sm font-medium text-gray-600>Success Rate</p>'
-                  <p className="text-2xl font-bold text-gray-900>{analytics.successRate}%</p>"
-                </div>'
-                <div className=text-3xl>📈</div>
+            </div>'""
+            <div className="bg-white" rounded-lg shadow-md p-6>''
+              <div className="flex" items-center justify-between">"
+                <div>'""
+                  <p className="text-sm" font-medium text-gray-600>Completed Today</p>''
+                  <p className="text-2xl" font-bold text-gray-900">{analytics.completedToday}</p>""
+                </div>''
+                <div className="text-3xl>✅</div>"""
+              </div>""
+            </div>''
+            <div className="bg-white" rounded-lg shadow-md p-6>''
+              <div className="flex items-center justify-between>""
+                <div>''
+                  <p className="text-sm" font-medium text-gray-600>Success Rate</p>''
+                  <p className="text-2xl font-bold text-gray-900>{analytics.successRate}%</p>""
+                </div>''
+                <div className="text-3xl>📈</div>""
               </div>
-            </div>"
+            </div>""
           </div>
-          {/* Vehicle Fleet */}'"
-          <div className=bg-white rounded-lg shadow-md p-6 mb-8>'
-            <div className=flex justify-between items-center mb-6">'
-              <h2 className="text-2xl font-bold text-gray-900>Vehicle Fleet</h2>'
-              <button className=bg-blue-500 text-white px-4 py-2 rounded-lg hover: "bg-blue-600>"
+          {/* Vehicle Fleet */}'""
+          <div className="bg-white" rounded-lg shadow-md p-6 mb-8>''
+            <div className="flex" justify-between items-center mb-6">''
+              <h2 className="text-2xl font-bold text-gray-900>Vehicle Fleet</h2>''
+              <button className="bg-blue-500" text-white px-4 py-2 rounded-lg hover: "bg-blue-600>""
                 Add Vehicle
-              </button>"
+              </button>""
             </div>
-            <div className=overflow-x-auto>'
-              <table className=min-w-full divide-y divide-gray-200>'
-                <thead className=""bg-gray-50>
-                  <tr>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
-                      Vehicle"
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
-                      Type"
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
-                      Status"
-                    </th>'
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
-                      Battery"
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Location
-                    </th>'
+            <div className="overflow-x-auto>'""
+              <table className="min-w-full" divide-y divide-gray-200>''
+                <thead className=""bg-gray-50>"
+                  <tr>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>""
+                      Vehicle""
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>""
+                      Type""
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
+                      Status""
+                    </th>''
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
+                      Battery""
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">"
+                      Location
+                    </th>''
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>""
                       Actions
                     </th>
                   </tr>
-                </thead>'
-                <tbody className=bg-white divide-y divide-gray-200">
-                  {vehicles.map((vehicle) => ('
-                    <tr key={vehicle.id"} className="hover: "bg-gray-50>"
-                      <td className=px-6 py-4 whitespace-nowrap>"
-                        <div className=flex items-center>'
-                          <span className=text-2xl mr-3>{getVehicleTypeIcon(vehicle.type)"}</span>
-                          <div>'
-                            <div className=""text-sm font-medium text-gray-900>{vehicle.name}</div>'
-                            <div className=text-sm text-gray-500>Speed: "{vehicle.speed"} mph</div>"
+                </thead>''
+                <tbody className="bg-white" divide-y divide-gray-200">"
+                  {vehicles.map((vehicle) => (''
+                    <tr key={vehicle.id"} className="hover: "bg-gray-50>""
+                      <td className="px-6" py-4 whitespace-nowrap>""
+                        <div className="flex" items-center>''
+                          <span className="text-2xl" mr-3>{getVehicleTypeIcon(vehicle.type)"}</span>"
+                          <div>''
+                            <div className=""text-sm font-medium text-gray-900>{vehicle.name}</div>''
+                            <div className="text-sm" text-gray-500>Speed: "{vehicle.speed"} mph</div>""
                           </div>
                         </div>
                       </td>
-                      <td className=px-6 py-4 whitespace-nowrap>"
-                        <span className=inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800>
+                      <td className="px-6" py-4 whitespace-nowrap>""
+                        <span className="inline-flex" items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800>"
                           {vehicle.type}
                         </span>
-                      </td>'
-                      <td className="px-6 py-4 whitespace-nowrap>"
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(vehicle.status)} text-white}>
+                      </td>''
+                      <td className="px-6 py-4 whitespace-nowrap>""
+                        <span className="{`inline-flex" items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(vehicle.status)} text-white}>"
                           {vehicle.status}
                         </span>
-                      </td>'
-                      <td className=px-6 py-4 whitespace-nowrap">"
-                        <span className={`text-sm font-medium ${getBatteryColor(vehicle.battery)}`}>
+                      </td>''
+                      <td className="px-6" py-4 whitespace-nowrap">""
+                        <span className="{`text-sm" font-medium ${getBatteryColor(vehicle.battery)}`}>"
                           {vehicle.battery}%
                         </span>
-                      </td>'
-                      <td className=""px-6 py-4 whitespace-nowrap text-sm text-gray-500>
+                      </td>''
+                      <td className=""px-6 py-4 whitespace-nowrap text-sm text-gray-500>"
                         {vehicle.location.address}
-                      </td>'
-                      <td className=px-6 py-4 whitespace-nowrap text-sm font-medium">'
-                        <button className="text-blue-600 hover: "text-blue-900 mr-3>Track</button>"
-                        <button className=text-gray-600 hover:text-gray-900 mr-3>Control</button>;
-                        <button className=text-red-600 hover:text-red-900>Emergency</button>;
+                      </td>''
+                      <td className="px-6" py-4 whitespace-nowrap text-sm font-medium">''
+                        <button className="text-blue-600 hover: "text-blue-900 mr-3>Track</button>""
+                        <button className="text-gray-600" hover:text-gray-900 mr-3>Control</button>;"
+                        <button className="text-red-600" hover:text-red-900>Emergency</button>;"
                       </td>
                     </tr>
-                  ))"}
-                </tbody>"
+                  ))"}"
+                </tbody>""
               </table>
             </div>
           </div>
-          {/* Transportation Routes */}'
-          <div className=bg-white rounded-lg shadow-md p-6 mb-8">'"
-            <div className=flex justify-between items-center mb-6>'
-              <h2 className=text-2xl font-bold text-gray-900">Transportation Routes</h2>'
-              <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover: "bg-green-600>"
-                Create Route"
+          {/* Transportation Routes */}''
+          <div className="bg-white" rounded-lg shadow-md p-6 mb-8">'""
+            <div className="flex" justify-between items-center mb-6>''
+              <h2 className="text-2xl" font-bold text-gray-900">Transportation Routes</h2>''
+              <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover: "bg-green-600>""
+                Create Route""
               </button>
             </div>
-            <div className=overflow-x-auto>
-              <table className=min-w-full divide-y divide-gray-200>'
-                <thead className=bg-gray-50">"
-                  <tr>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
-                      Route"
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
-                      Distance"
-                    </th>'
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
-                      ETA"
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <div className="overflow-x-auto>""
+              <table className="min-w-full" divide-y divide-gray-200>''
+                <thead className="bg-gray-50"">""
+                  <tr>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>""
+                      Route""
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
+                      Distance""
+                    </th>''
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
+                      ETA""
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">"
                       Status
-                    </th>'
-                    <th className=""px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                    </th>''
+                    <th className=""px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>"
                       Priority
-                    </th>'
-                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">"
+                    </th>''
+                    <th className="px-6" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">""
                       Actions
                     </th>
                   </tr>
-                </thead>'
-                <tbody className="bg-white divide-y divide-gray-200>
-                  {routes.map((route) => ('
-                    <tr key={route.id"} className=hover: ""bg-gray-50>
-                      <td className=px-6 py-4 whitespace-nowrap>'
-                        <div className=text-sm font-medium text-gray-900">{route.origin"} → {route.destination}</div>'"
-                        <div className=text-sm text-gray-500>'
-                          Vehicle: ""{route.vehicleId"}"
+                </thead>''
+                <tbody className="bg-white divide-y divide-gray-200>"
+                  {routes.map((route) => (''
+                    <tr key={route.id"} className="hover:" ""bg-gray-50>"
+                      <td className="px-6" py-4 whitespace-nowrap>''
+                        <div className="text-sm" font-medium text-gray-900">{route.origin"} → {route.destination}</div>'""
+                        <div className="text-sm" text-gray-500>''
+                          Vehicle: ""{route.vehicleId"}""
                           {route.passengers &&  • ${route.passengers} passengers`};
                           {route.cargo && ` • ${route.cargo}};
                         </div>
                       </td>
-                      <td className=px-6 py-4 whitespace-nowrap text-sm text-gray-900>
+                      <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-900>"
                         {route.distance} miles
                       </td>
-                      <td className=px-6 py-4 whitespace-nowrap text-sm text-gray-900>
-                        {route.estimatedTime} min"
-                      </td>'
-                      <td className=px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(route.status)} text-white`}>
+                      <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-900>"
+                        {route.estimatedTime} min""
+                      </td>''
+                      <td className="px-6" py-4 whitespace-nowrap">"
+                        <span className="{`inline-flex" items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(route.status)} text-white`}>"
                           {route.status}
                         </span>
-                      </td>'
-                      <td className=""px-6 py-4 whitespace-nowrap>
-                        <span className={inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getPriorityColor(route.priority)}`}>
+                      </td>''
+                      <td className=""px-6 py-4 whitespace-nowrap>"
+                        <span className="{inline-flex" items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getPriorityColor(route.priority)}`}>"
                           {route.priority}
-                        </span>"
-                      </td>'
-                      <td className=px-6 py-4 whitespace-nowrap text-sm font-medium">'
-                        <button className=text-blue-600 hover: ""text-blue-900 mr-3>Track</button>"
-                        <button className=text-gray-600 hover:text-gray-900 mr-3>Edit</button>;
-                        <button className=text-red-600 hover:text-red-900>Cancel</button>;
+                        </span>""
+                      </td>''
+                      <td className="px-6" py-4 whitespace-nowrap text-sm font-medium">''
+                        <button className="text-blue-600" hover: ""text-blue-900 mr-3>Track</button>""
+                        <button className="text-gray-600" hover:text-gray-900 mr-3>Edit</button>;"
+                        <button className="text-red-600" hover:text-red-900>Cancel</button>;"
                       </td>
                     </tr>
-                  ))"}
+                  ))"}"
                 </tbody>
               </table>
             </div>
-          </div>"
-          {/* Performance Metrics */}'
-          <div className=grid grid-cols-1 lg:grid-cols-2 gap-6">'
-            <div className="bg-white rounded-lg shadow-md p-6>'
-              <h3 className=text-lg font-semibold text-gray-900 mb-4">Performance Metrics</h3>'
-              <div className="space-y-4>'
-                <div className=flex justify-between items-center">'
-                  <span className="text-sm text-gray-600>Average Trip Time</span>'
-                  <span className=text-lg font-semibold text-blue-600">{analytics.averageTripTime} min</span>
-                </div>'
-                <div className="flex justify-between items-center>'
-                  <span className=text-sm text-gray-600">Fuel Efficiency</span>'
-                  <span className=text-lg font-semibold text-green-600>{analytics.fuelEfficiency}%</span>"
-                </div>'
-                <div className=flex justify-between items-center">'
-                  <span className="text-sm text-gray-600>AI Optimization Score</span>'
-                  <span className=text-lg font-semibold text-purple-600">{analytics.aiOptimizationScore}%</span>
+          </div>""
+          {/* Performance Metrics */}''
+          <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6">''
+            <div className="bg-white rounded-lg shadow-md p-6>''
+              <h3 className="text-lg" font-semibold text-gray-900 mb-4">Performance Metrics</h3>''
+              <div className="space-y-4>''
+                <div className="flex" justify-between items-center">''
+                  <span className="text-sm text-gray-600>Average Trip Time</span>''
+                  <span className="text-lg" font-semibold text-blue-600">{analytics.averageTripTime} min</span>"
+                </div>''
+                <div className="flex justify-between items-center>''
+                  <span className="text-sm" text-gray-600">Fuel Efficiency</span>''
+                  <span className="text-lg" font-semibold text-green-600>{analytics.fuelEfficiency}%</span>""
+                </div>''
+                <div className="flex" justify-between items-center">''
+                  <span className="text-sm text-gray-600>AI Optimization Score</span>''
+                  <span className="text-lg" font-semibold text-purple-600">{analytics.aiOptimizationScore}%</span>"
                 </div>
               </div>
             </div>
-            '"
-            <div className="bg-white rounded-lg shadow-md p-6>'
-              <h3 className=text-lg font-semibold text-gray-900 mb-4>Real-time Alerts</h3>'"
-              <div className="space-y-3>'
-                <div className=flex items-center space-x-3>'"
-                  <div className="w-2 h-2 bg-green-500 rounded-full></div>'
-                  <span className=text-sm text-gray-600>Vehicle Alpha-0o1 completed passenger pickup</span>
-                </div>'"
-                <div className="flex items-center space-x-3>'
-                  <div className=w-2 h-2 bg-yellow-500 rounded-full></div>'
-                  <span className=""text-sm text-gray-600>Vehicle Beta-0o2 battery level at 72%</span>
-                </div>'
-                <div className=flex items-center space-x-3>'"
-                  <div className=""w-2 h-2 bg-blue-500 rounded-full></div>'
-                  <span className=text-sm text-gray-600">New route optimized by AI for traffic conditions</span>;
+            '""
+            <div className="bg-white rounded-lg shadow-md p-6>''
+              <h3 className="text-lg" font-semibold text-gray-900 mb-4>Real-time Alerts</h3>'""
+              <div className="space-y-3>''
+                <div className="flex" items-center space-x-3>'""
+                  <div className="w-2 h-2 bg-green-500 rounded-full></div>''
+                  <span className="text-sm" text-gray-600>Vehicle Alpha-0o1 completed passenger pickup</span>"
+                </div>'""
+                <div className="flex items-center space-x-3>''
+                  <div className="w-2" h-2 bg-yellow-500 rounded-full></div>''
+                  <span className=""text-sm text-gray-600>Vehicle Beta-0o2 battery level at 72%</span>"
+                </div>''
+                <div className="flex" items-center space-x-3>'""
+                  <div className=""w-2 h-2 bg-blue-500 rounded-full></div>''
+                  <span className="text-sm" text-gray-600">New route optimized by AI for traffic conditions</span>;"
                 </div>;
               </div>;
             </div>;
@@ -417,5 +417,5 @@ const AIPoweredAutonomousVehicleTransportation: "NextPage = () => {;
       </div>
     </ModernLayout>
   )
-}'
+}''
 export default AIPoweredAutonomousVehicleTransportation

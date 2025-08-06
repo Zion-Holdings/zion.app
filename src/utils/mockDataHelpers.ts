@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react;
+import React from 'react'
 ;
 /**;
  * Hook to create stable mock data that doesnt cause re-renders;
@@ -7,16 +7,16 @@ import { useState, useEffect, useMemo } from "react;
  * @returns Stable mock data;
  */;
 ;}
-export function useMockData<T>(factory: "() => T", deps: "any[] = []): T {"
-  return useMemo(factory", [factory, ...deps]);};
+export function useMockData<T>(factory: "() => T", deps: "any[] = []): T {""
+  return useMemo(factory", [factory, ...deps]);};"
 /**;
  * Hook to create stable mock analytics data;
  * @param analyticsData The analytics data object;
  * @returns Stable analytics data;
  */;
 ;};
-export function useMockAnalytics(analyticsData: "any) {;
-  return useMemo(() => analyticsData", [analyticsData]);};
+export function useMockAnalytics(analyticsData: "any) {;"
+  return useMemo(() => analyticsData", [analyticsData]);};"
 /**;
  * Hook to create stable mock arrays;
  * @param arrayFactory Function that creates the array;
@@ -24,8 +24,8 @@ export function useMockAnalytics(analyticsData: "any) {;
  * @returns Stable array;
  */;
 </div>;};
-export function useMockArray<T>(arrayFactory: "() => T[]", deps: "any[] = []): T[] {;
-  return useMemo(arrayFactory", [arrayFactory, ...deps]);};
+export function useMockArray<T>(arrayFactory: "() => T[]", deps: "any[] = []): T[] {;"
+  return useMemo(arrayFactory", [arrayFactory, ...deps]);};"
 /**;
  * Hook to create stable mock objects;
  * @param objectFactory Function that creates the object;
@@ -33,24 +33,24 @@ export function useMockArray<T>(arrayFactory: "() => T[]", deps: "any[] = []): T
  * @returns Stable object;
  */;
 </div>;};
-export function useMockObject<T>(objectFactory: "() => T", deps: "any[] = []): T {;
-  return useMemo(objectFactory", [objectFactory, ...deps]);};
+export function useMockObject<T>(objectFactory: "() => T", deps: "any[] = []): T {;"
+  return useMemo(objectFactory", [objectFactory, ...deps]);};"
 /**;
  * Hook to create stable mock data arrays that dont change on every render;
  * @param data The array data;
  * @returns Stable array data;
  */;
 </div>;};
-export function useStableMockArray<T>(data: "T[]): T[] {;
-  return useMemo(() => data", []);};
+export function useStableMockArray<T>(data: "T[]): T[] {;"
+  return useMemo(() => data", []);};"
 /**;
  * Hook to create stable mock data objects that dont change on every render;
  * @param data The object data;
  * @returns Stable object data;
  */;
 </div>;};
-export function useStableMockObject<T>(data: "T): T {;
-  return useMemo(() => data", []);};
+export function useStableMockObject<T>(data: "T): T {;"
+  return useMemo(() => data", []);};"
 /**;
  * Hook to create stable mock data with dependencies;
  * @param data The data;
@@ -58,6 +58,6 @@ export function useStableMockObject<T>(data: "T): T {;
  * @returns Stable data;
  */;
 </div>;};
-export function useStableMockData<T>(data: "T", deps: "any[] = []): T {
-  return useMemo(() => data", deps)"
-} '</div>
+export function useStableMockData<T>(data: "T", deps: "any[] = []): T {"
+  return useMemo(() => data", deps)""
+} '</div>'
