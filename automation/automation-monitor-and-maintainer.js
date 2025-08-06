@@ -128,10 +128,10 @@ class AutomationMonitorAndMaintainer {
     
     // Discover automation factories
     const factoryPatterns = [
-      '**/automation/**/*factory*.js',
-      '**/automation/**/*Factory*.js',
-      '**/automation/**/*-factory.js',
-      '**/automation/**/*Factory.js'
+      'factory',
+      'Factory',
+      'generator',
+      'Generator'
     ];
     
     for (const pattern of factoryPatterns) {
@@ -152,10 +152,8 @@ class AutomationMonitorAndMaintainer {
     
     // Discover automation agents
     const agentPatterns = [
-      '**/automation/**/*agent*.js',
-      '**/automation/**/*Agent*.js',
-      '**/automation/**/*-agent.js',
-      '**/automation/**/*Agent.js'
+      'agent',
+      'Agent'
     ];
     
     for (const pattern of agentPatterns) {
@@ -176,9 +174,9 @@ class AutomationMonitorAndMaintainer {
     
     // Discover cron jobs
     const cronPatterns = [
-      '**/automation/**/*cron*.sh',
-      '**/automation/**/*Cron*.sh',
-      '**/automation/cron-jobs/*.sh'
+      'cron',
+      'Cron',
+      'setup'
     ];
     
     for (const pattern of cronPatterns) {
@@ -199,9 +197,14 @@ class AutomationMonitorAndMaintainer {
     
     // Discover automation scripts
     const scriptPatterns = [
-      '**/automation/**/*automation*.js',
-      '**/automation/**/*Automation*.js',
-      '**/automation/**/*-automation.js'
+      'automation',
+      'Automation',
+      'orchestrator',
+      'Orchestrator',
+      'launcher',
+      'Launcher',
+      'system',
+      'System'
     ];
     
     for (const pattern of scriptPatterns) {
@@ -225,8 +228,55 @@ class AutomationMonitorAndMaintainer {
   }
 
   findFiles(pattern) {
-    const glob = require('glob');
-    return glob.sync(pattern, { cwd: this.projectRoot, absolute: true });
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      const files = [];
+      
+      // Simple pattern matching without glob
+      const searchDir = path.join(this.projectRoot, 'automation');
+      if (!fs.existsSync(searchDir)) {
+        return files;
+      }
+      
+      const searchRecursively = (dir, pattern) => {
+        const items = fs.readdirSync(dir);
+        
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+          
+          if (stat.isDirectory()) {
+            searchRecursively(fullPath, pattern);
+          } else if (stat.isFile()) {
+            // Only process .js and .sh files for automation
+            if (item.endsWith('.js') || item.endsWith('.sh')) {
+              // Simple pattern matching
+              if (pattern.includes('*')) {
+                const regexPattern = pattern
+                  .replace(/\*/g, '.*')
+                  .replace(/\./g, '\\.');
+                const regex = new RegExp(regexPattern, 'i');
+                if (regex.test(item)) {
+                  files.push(fullPath);
+                }
+              } else if (item.toLowerCase().includes(pattern.toLowerCase())) {
+                files.push(fullPath);
+              }
+            }
+          }
+        }
+      };
+      
+      // Extract the pattern part after 'automation/'
+      const patternPart = pattern.replace('automation/', '');
+      searchRecursively(searchDir, patternPart);
+      
+      return files;
+    } catch (error) {
+      this.log(`Error with file pattern ${pattern}: ${error.message}`, 'error');
+      return [];
+    }
   }
 
   async checkSystemHealth(system) {
