@@ -25,8 +25,33 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Redirect unauthenticated users to /auth (except for auth callback)
-  if (!user && !request.nextUrl.pathname.startsWith('/auth') && !request.nextUrl.pathname.startsWith('/auth/callback')) {
+  // Define public routes that don't require authentication
+  const publicRoutes = [
+    '/',
+    '/about',
+    '/contact',
+    '/blog',
+    '/services',
+    '/products',
+    '/talent',
+    '/auth',
+    '/auth/callback',
+    '/404',
+    '/api'
+  ];
+
+  // Check if the current path is a public route
+  const isPublicRoute = publicRoutes.some(route => 
+    request.nextUrl.pathname === route || 
+    request.nextUrl.pathname.startsWith(route + '/') ||
+    request.nextUrl.pathname.startsWith('/blog/') ||
+    request.nextUrl.pathname.startsWith('/category/') ||
+    request.nextUrl.pathname.startsWith('/chat-content/') ||
+    request.nextUrl.pathname.startsWith('/services/')
+  );
+
+  // Only redirect unauthenticated users if they're trying to access protected routes
+  if (!user && !isPublicRoute) {
     const url = request.nextUrl.clone();
     url.pathname = '/auth';
     return NextResponse.redirect(url);
