@@ -158,3 +158,4 @@ process.on('SIGTERM', () => {
 
 // Start dashboard
 startDashboard();
+

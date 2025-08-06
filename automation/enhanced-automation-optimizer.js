@@ -302,3 +302,4 @@ process.on('SIGTERM', () => {
 
 // Start optimization
 startOptimization();
+
