@@ -517,3 +517,12 @@ if (require.main = == module) {;
 }
 
 module.exports = MCPIntegrationOrchestrator; </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down mcp-integration-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

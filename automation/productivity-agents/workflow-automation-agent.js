@@ -892,3 +892,12 @@ agent.start().catch(error => {
   console.error(')Workflo'w Automation Agent failed to start:', error);''
   process.exit(1);
 }); </div>
+
+  async getStatus() {
+    return {
+      systemName: 'workflow-automation-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

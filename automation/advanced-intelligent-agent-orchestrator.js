@@ -980,3 +980,12 @@ if (require.main === module) {
 }
 
 module.exports = AdvancedIntelligentAgentOrchestrator; </div>
+
+  async getStatus() {
+    return {
+      systemName: 'advanced-intelligent-agent-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

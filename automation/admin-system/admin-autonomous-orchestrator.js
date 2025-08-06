@@ -437,3 +437,21 @@ new ${agentType}();
 // Initialize the orchestrator
 const orchestrator = new AdminAutonomousOrchestrator();
 orchestrator.initialize().catch(console.error);
+
+  async getStatus() {
+    return {
+      systemName: 'admin-autonomous-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down admin-autonomous-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

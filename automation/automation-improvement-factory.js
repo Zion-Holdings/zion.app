@@ -524,3 +524,12 @@ process.on('SIGTERM', async () => {''
 });
 
 module.exports = AutomationImprovementFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'automation-improvement-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

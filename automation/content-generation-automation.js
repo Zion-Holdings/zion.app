@@ -408,3 +408,21 @@ if (require.main === module) {
   const result = new ContentGenerationAutomation();
   automation.runContinuousGeneration().catch(console.error);
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'content-generation-automation',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down content-generation-automation gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

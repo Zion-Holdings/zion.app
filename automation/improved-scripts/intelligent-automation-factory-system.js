@@ -1163,3 +1163,12 @@ process.on('SIGTERM', async () => {''
 });
 
 module.exports = IntelligentAutomationFactorySystem; 
+
+  async getStatus() {
+    return {
+      systemName: 'intelligent-automation-factory-system',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

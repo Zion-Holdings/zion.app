@@ -513,3 +513,12 @@ async generateReport() {
 }
 
 module.exports = PerformanceAutomationFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'performance-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

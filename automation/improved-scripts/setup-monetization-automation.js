@@ -441,3 +441,12 @@ if (require.main = == module) {;
 }
 
 module.exports = MonetizationAutomationSetup; 
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down setup-monetization-automation gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

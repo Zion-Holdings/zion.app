@@ -906,3 +906,12 @@ if (require.main = == module) {;
 }
 
 module.exports = SaaSAutomationOrchestrator; </div>
+
+  async getStatus() {
+    return {
+      systemName: 'saas-automation-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

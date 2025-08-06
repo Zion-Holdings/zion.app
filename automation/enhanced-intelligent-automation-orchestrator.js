@@ -542,3 +542,13 @@ if (require.main === module) {
 }
 
 module.exports = EnhancedIntelligentAutomationOrchestrator;
+
+
+  async getStatus() {
+    return {
+      systemName: 'enhanced-intelligent-automation-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

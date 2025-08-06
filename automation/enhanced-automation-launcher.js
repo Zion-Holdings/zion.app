@@ -764,3 +764,12 @@ if (require.main === module) {
             console.error('❌ Failed to start enhanced automation launcher:', error.message);'
         });
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'enhanced-automation-launcher',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

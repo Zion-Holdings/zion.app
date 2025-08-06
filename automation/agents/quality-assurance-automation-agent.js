@@ -6017,3 +6017,12 @@ agent.start().catch(error => {
   }
 
 }); </div>
+
+  async getStatus() {
+    return {
+      systemName: 'quality-assurance-automation-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

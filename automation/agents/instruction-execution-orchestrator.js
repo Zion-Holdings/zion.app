@@ -361,3 +361,13 @@ class InstructionExecutionOrchestrator extends EventEmitter {
 }
 
 module.exports = InstructionExecutionOrchestrator;
+
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down instruction-execution-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

@@ -466,3 +466,13 @@ if (require.main === module) {
 }
 
 module.exports = IntelligentAutomationLauncher;
+
+
+  async getStatus() {
+    return {
+      systemName: 'launch-all-intelligent-automations',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

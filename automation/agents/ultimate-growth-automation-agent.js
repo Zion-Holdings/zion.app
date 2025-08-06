@@ -1124,3 +1124,13 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = UltimateGrowthAutomationAgent;
+
+
+  async getStatus() {
+    return {
+      systemName: 'ultimate-growth-automation-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

@@ -322,3 +322,13 @@ if (require.main = == module) {;
 }
 
 module.exports = CursorAutomationLauncher;
+
+
+  async getStatus() {
+    return {
+      systemName: 'launch-cursor-automation',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

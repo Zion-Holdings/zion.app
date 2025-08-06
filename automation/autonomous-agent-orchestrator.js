@@ -794,3 +794,12 @@ if (require.main === module) {
             process.exit(1);
         });
 } </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down autonomous-agent-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

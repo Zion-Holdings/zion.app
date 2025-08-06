@@ -1735,3 +1735,21 @@ if (require.main = == module) {;
   this.log('🏭 Marketplace E-commerce Factory started successfully, 'info');''
   this.log('📊 Factory Status:', factory.getFactoryStatus(, 'info'));''
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'marketplace-ecommerce-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down marketplace-ecommerce-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

@@ -502,3 +502,12 @@ if (require.main === module) {
 }
 
 module.exports = AutonomousAutomationOrchestrator; 
+
+  async getStatus() {
+    return {
+      systemName: 'autonomous-automation-orchestrator-fixed',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

@@ -533,3 +533,13 @@ process.on('SIGTERM', () => {
 });
 
 this.log('🔄 Enhanced Automation System Restarter ready!', 'info');
+
+
+  async getStatus() {
+    return {
+      systemName: 'restart-enhanced-automation-system',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

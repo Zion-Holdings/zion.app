@@ -73,3 +73,12 @@ if (require.main = == module) {
 }
 
 module.exports = { main }; 
+
+  async getStatus() {
+    return {
+      systemName: 'run-automation',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

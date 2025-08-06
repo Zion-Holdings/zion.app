@@ -391,3 +391,21 @@ if (require.main = == module) {;
   const result = new SimplifiedMasterContentAutomation();
   masterAutomation.run().catch(console.error);
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'master-content-automation-simple',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down master-content-automation-simple gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

@@ -1524,3 +1524,21 @@ if (require.main = == module) {;
   this.log(🏭 Quantum AI Research Factory started successfully', 'info');''
   this.log('📊 Factory Status:', factory.getFactoryStatus(, 'info'));''
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'quantum-ai-research-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down quantum-ai-research-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

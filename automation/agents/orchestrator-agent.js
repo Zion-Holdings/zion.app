@@ -374,3 +374,12 @@ agent.initialize().catch(error => {
   console.error('Failed to initialize orchestrator agent:', error);
   process.exit(1);
 });
+
+  async getStatus() {
+    return {
+      systemName: 'orchestrator-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

@@ -692,3 +692,13 @@ console.log('📈 Intelligent Growth Automation Agent ready!');
 
 
 
+
+
+  async getStatus() {
+    return {
+      systemName: 'intelligent-growth-automation-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

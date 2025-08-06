@@ -751,3 +751,12 @@ agent.start().catch(error => {
   console.error(')CI'/CD Automation Agent failed to start:', error);''
   process.exit(1);
 }); </div>
+
+  async getStatus() {
+    return {
+      systemName: 'ci-cd-automation-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

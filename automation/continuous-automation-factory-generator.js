@@ -429,3 +429,12 @@ if (require.main === module) {
   const result = new ContinuousAutomationFactoryGenerator();
   generator.start().catch(console.error);
 } 
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down continuous-automation-factory-generator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

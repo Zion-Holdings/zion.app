@@ -900,3 +900,12 @@ module.exports = Enhanced${factory.id.split(\'-\').map(word => \'\'
 }
 
 module.exports = EnhancedAutomationFactoryGenerator; 
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down enhanced-automation-factory-generator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

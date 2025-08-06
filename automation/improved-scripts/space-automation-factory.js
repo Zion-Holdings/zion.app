@@ -94,3 +94,22 @@ async collectSatelliteData() { return { satelliteId: "SAT001", orbit: "LEO", alt
  * @returns {Promise<void>}
  */
 async collectMissionData() { return { missionType: "exploration", target: "Mars", duration: "2 years", resources: "adequate" }; } saveResults(type, results) { const reportPath = path.join(this.reportsPath, `${type}-${Date.now()}.json`); const report = { type: type, timestamp: new Date(), results: results, metrics: this.performanceMetrics }; fs.writeFileSync(reportPath, JSON.stringify(report, null, 2)); } startMonitoring() { setInterval(() => { this.monitorPerformance(); }, 60000); } monitorPerformance() { this.log("📊 Monitoring Space Automation Performance...", 'info'); for (const [agentId, agent] of this.agents) { this.checkAgentHealth(agent); } this.analyzePerformance(); } checkAgentHealth(agent) { const now = new Date(); const timeSinceLastActivity = now - agent.lastActivity; if (timeSinceLastActivity > 3600000) { this.log(`⚠️ Agent ${agent.id} may be inactive`, 'info'); this.restartAgent(agent.id); } } restartAgent(agentId) { const agent = this.agents.get(agentId); if (agent) { agent.status = "restarting"; agent.lastActivity = new Date(); this.log(`🔄 Restarting agent: ${agentId}`, 'info'); } } analyzePerformance() { const analysis = { totalAgents: this.agents.size, activeAgents: Array.from(this.agents.values()).filter(a => a.status === "active").length, missionsCompleted: this.performanceMetrics.missionsCompleted, satelliteOperations: this.performanceMetrics.satelliteOperations }; this.log("📈 Performance Analysis:", analysis, 'info'); } getFactoryStatus() { return { factoryId: this.factoryId, agents: this.agents.size, metrics: this.performanceMetrics, status: "active" }; } } module.exports = SpaceAutomationFactory; if (require.main === module) { const factory = new SpaceAutomationFactory(); this.log("🏭 Space Automation Factory started successfully", 'info'); this.log("📊 Factory Status:", factory.getFactoryStatus(, 'info')); }""
+
+
+  async getStatus() {
+    return {
+      systemName: 'space-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down space-automation-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

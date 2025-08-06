@@ -1382,3 +1382,12 @@ if (require.main = == module) {;
   const result = new VariationContentAgentsFactory();
   factory.start().catch(console.error);
 } </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down variation-content-agents-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

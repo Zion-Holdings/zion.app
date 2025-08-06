@@ -187,3 +187,12 @@ class AutomationSystem {
 }
 
 module.exports = ChatGPTAnalysisOrchestrator; 
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down chatgpt-analysis-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

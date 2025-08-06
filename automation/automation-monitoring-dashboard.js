@@ -506,3 +506,12 @@ console.log(📊 Dashboard will display every 2 minutes...\n'));''
 setTimeout(() => {
   dashboard.displayDashboard();
 }, 5000); </div>
+
+  async getStatus() {
+    return {
+      systemName: 'automation-monitoring-dashboard',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

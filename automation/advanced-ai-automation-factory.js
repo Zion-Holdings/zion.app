@@ -443,3 +443,13 @@ class AdvancedAIAutomationFactory extends EventEmitter {
 }
 
 module.exports = AdvancedAIAutomationFactory;
+
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down advanced-ai-automation-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

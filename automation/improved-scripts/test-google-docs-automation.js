@@ -162,3 +162,13 @@ if (require.main = == module) {;
 }
 
 module.exports = testGoogleDocsAutomation;
+
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down test-google-docs-automation gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

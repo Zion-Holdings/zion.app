@@ -354,3 +354,13 @@ async function fixAllAutomations() {
 
 // Run the fix
 fixAllAutomations();
+
+
+  async getStatus() {
+    return {
+      systemName: 'fix-all-automations',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

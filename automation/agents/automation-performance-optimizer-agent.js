@@ -14,6 +14,7 @@ class automationperformanceoptimizeragent {
   }
 
   async initialize() {
+    try {
     console.log(`⚡ Initializing ${this.agentName}...`);
     
     await this.initializeOptimizationCapabilities();
@@ -42,3 +43,22 @@ class automationperformanceoptimizeragent {
 }
 
 new automationperformanceoptimizeragent();
+
+
+  async getStatus() {
+    return {
+      systemName: 'automation-performance-optimizer-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down automation-performance-optimizer-agent gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

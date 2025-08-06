@@ -778,3 +778,13 @@ if (require.main = == module) {;
 }
 
 module.exports = MasterEnhancedOrchestrator;
+
+
+  async getStatus() {
+    return {
+      systemName: 'master-enhanced-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

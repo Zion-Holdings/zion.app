@@ -456,3 +456,12 @@ process.on('SIGTERM', async () => {''
 });
 
 module.exports = AutomationEnhancementFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'automation-enhancement-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

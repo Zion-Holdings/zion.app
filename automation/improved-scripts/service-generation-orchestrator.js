@@ -504,3 +504,12 @@ async createSalesAgentManually() {
 }
 
 module.exports = ServiceGenerationOrchestrator; 
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down service-generation-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

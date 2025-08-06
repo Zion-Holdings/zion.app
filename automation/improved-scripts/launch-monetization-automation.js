@@ -668,3 +668,12 @@ if (require.main = == module) {;
 }
 
 module.exports = MonetizationAutomationLauncher; </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down launch-monetization-automation gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

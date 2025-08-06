@@ -492,3 +492,12 @@ async generateReport() {
 }
 
 module.exports = IntelligenceAutomationFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'intelligence-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

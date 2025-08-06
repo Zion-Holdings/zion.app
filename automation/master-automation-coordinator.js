@@ -495,3 +495,13 @@ module.exports = MasterAutomationCoordinator;
 
 
 
+
+
+  async getStatus() {
+    return {
+      systemName: 'master-coordinator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

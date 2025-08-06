@@ -683,3 +683,21 @@ module.exports = ${scriptType.charAt(0).toUpperCase() + scriptType.slice(1)}Scri
 }
 
 module.exports = ContinuousImprovementAutomation; </div>
+
+  async getStatus() {
+    return {
+      systemName: 'continuous-improvement-automation',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down continuous-improvement-automation gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

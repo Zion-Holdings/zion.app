@@ -407,3 +407,12 @@ class AutomationSystem {
 }
 
 module.exports = MonetizationOrchestrator; </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down monetization-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

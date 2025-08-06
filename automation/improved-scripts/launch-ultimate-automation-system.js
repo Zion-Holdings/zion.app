@@ -369,3 +369,13 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = UltimateAutomationLauncher;
+
+
+  async getStatus() {
+    return {
+      systemName: 'launch-ultimate-automation-system',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

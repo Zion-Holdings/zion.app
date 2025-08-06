@@ -426,3 +426,12 @@ agent.start().catch(error = > {
 }
 
 module.exports = CommunicationAutomationFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'communication-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

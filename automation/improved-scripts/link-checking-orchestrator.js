@@ -775,3 +775,12 @@ async updateTaskInDatabase() {
 }
 
 module.exports = LinkCheckingOrchestrator; </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down link-checking-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

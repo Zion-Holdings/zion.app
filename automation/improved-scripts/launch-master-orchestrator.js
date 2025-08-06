@@ -32,3 +32,12 @@ setInterval(() => {
 
 this.log('✅ Master Responsive Automation Orchestrator is now running!', 'info');
 this.log('Press Ctrl+C to stop the orchestrator.', 'info'); 
+
+  async getStatus() {
+    return {
+      systemName: 'launch-master-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

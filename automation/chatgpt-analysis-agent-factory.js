@@ -638,3 +638,21 @@ node launch-chatgpt-analysis.js >> logs/chatgpt-cron.log 2>&1
 }
 
 module.exports = ChatGPTAnalysisAgentFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'chatgpt-analysis-agent-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down chatgpt-analysis-agent-factory gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

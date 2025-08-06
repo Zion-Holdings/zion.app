@@ -425,3 +425,12 @@ agent.start().catch(error = > {
 }
 
 module.exports = DevelopmentAutomationFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'development-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

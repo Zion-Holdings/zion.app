@@ -654,3 +654,21 @@ if (require.main = == module) {;
 }
 
 module.exports = UltimateAutomationFixer; 
+
+  async getStatus() {
+    return {
+      systemName: 'ultimate-automation-fixer',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down ultimate-automation-fixer gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

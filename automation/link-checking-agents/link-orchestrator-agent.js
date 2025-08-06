@@ -547,3 +547,12 @@ if (require.main === module) {
 }
 
 module.exports = LinkOrchestratorAgent; </div>
+
+  async getStatus() {
+    return {
+      systemName: 'link-orchestrator-agent',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

@@ -433,3 +433,12 @@ if (require.main === module) {
   const result = new AutomationOrchestrator();
   orchestrator.start().catch(console.error);
 } </div>
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down automation-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

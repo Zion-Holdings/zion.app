@@ -1473,3 +1473,21 @@ if (require.main = == module) {;
 }
 
 module.exports = IntelligentAutomationEnhancer; 
+
+  async getStatus() {
+    return {
+      systemName: 'intelligent-automation-enhancer',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down intelligent-automation-enhancer gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

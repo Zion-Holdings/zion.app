@@ -836,3 +836,21 @@ if (require.main = == module) {;
   const result = new IntelligentDiversificationOrchestrator();
   this.log(🚀 Intelligent Diversification Orchestrator started successfully!', 'info');''
 } 
+
+  async getStatus() {
+    return {
+      systemName: 'intelligent-diversification-orchestrator',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('🛑 Shutting down intelligent-diversification-orchestrator gracefully...');
+  if (this.isRunning) {
+    this.isRunning = false;
+  }
+  process.exit(0);
+});

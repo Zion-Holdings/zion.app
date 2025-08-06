@@ -794,3 +794,13 @@ process.on('SIGTERM', () => {
 });
 
 module.exports = UltimateIntelligentAutomationSystem;
+
+
+  async getStatus() {
+    return {
+      systemName: 'ultimate-intelligent-automation-system',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }

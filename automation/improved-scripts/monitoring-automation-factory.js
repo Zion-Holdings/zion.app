@@ -514,3 +514,12 @@ async generateReport() {
 }
 
 module.exports = MonitoringAutomationFactory; 
+
+  async getStatus() {
+    return {
+      systemName: 'monitoring-automation-factory',
+      isRunning: this.isRunning,
+      startTime: this.startTime,
+      uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
+    };
+  }
