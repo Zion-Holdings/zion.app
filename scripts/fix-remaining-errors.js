@@ -51,7 +51,19 @@ function fixRemainingErrors(filePath) {
     
     // Fix specific patterns for different files
     if (filePath.includes('ai-powered-api-integration.tsx')) {
-      content = content.replace(/type: "unit' \| 'integration' \| 'load' \| 'security' \| 'performance' \| 'regression"/g", "type: "unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression'");
+      content = content.replace(/type: "unit' \| 'integration' \| 'load' \| 'security' \|interface FacilityPlan {
+  id: string;
+  title: string;
+  description: string;
+  type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  confidence: number;
+  accuracy: number;
+  timeframe: string;
+  dataPoints: number;
+  lastUpdated: Date;
+  aiAnalysis: AIPredictionAnalysis;
+}| 'regression"/g", "type: "unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression'");
       content = content.replace(/status: "running' \| 'passed' \| 'failed' \| 'skipped' \| 'pending/g", "status: ""running' | 'passed' | 'failed' | 'skipped' | 'pending');
     "}
     
