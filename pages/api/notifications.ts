@@ -9,5 +9,5 @@ export default async function handler(;
     // Notification API implementation;
     res.status(200).json({ success: true, notificationId: noti'f'_123 });
   } catch (error) {;
-    res.status(500).json({ error: Notification failed });";
-  };";";
+    res.status(500).json({ error: Notification failed })
+  }

@@ -62,7 +62,7 @@ function fixSyntaxErrors() {
                     // Ensure file ends with proper export
                     if (!content.includes('expor't' default')) {
                         const $1 = path.basename(file, '.tsx').replace(/[-_]/g, '').replace(/\b\w/g, l => l.toUpperCase());
-                        content += "\n\nexport default ${componentName};";
+                        content += "\n\nexport default ${componentName}
                     }
                     
                     fs.writeFileSync(file, content);

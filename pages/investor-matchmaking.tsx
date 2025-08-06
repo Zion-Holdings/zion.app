@@ -1,9 +1,9 @@
-import type { NextPage } from ";next;';";
-import ModernLayout from ';../components/layout/ModernLayout';";";
-import Head from next/head';';";";";
-import { useState, useEffect }  from ";react;};';
-import Link from next/link;';';';
-interface FacilityPlan {';';
+import type { NextPage } from ";next";
+import ModernLayout from ';../components/layout/ModernLayout'
+import Head from 'next/head';
+import { useState, useEffect }  from ";react;}
+import Link from next/link';
+interface FacilityPlan {'
   id: "string";
   name: string;
   company: string;
@@ -33,8 +33,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     stage: ,;
     location: ,;
     teamSize: ,;
-    fundingNeeded: ,;";
-    pitchSummary: ",";";";
+    fundingNeeded: ,
+    pitchSummary: ","
     website: "}}</div>";
   const [investors, setInvestors] = useState<Investor[]>([];
   const [isLoading, setIsLoading] = useState(false);
@@ -49,65 +49,65 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const $1 = [;
     '1-5, 6-10, 11-25, 26-50', '50+];
   const $1 = [;
-    $10K-$50K, $50K-$200K, $200K-$1M', '$1M-$5M, $5M+];";
-  // Mock investor data;";";
+    $10K-$50K, $50K-$200K, $200K-$1M', '$1M-$5M, $5M+]
+  // Mock investor data
   const mockPredictiveModels: "PredictiveModel[] = [";
     {;
       id: 1,;
       name: Sarah Chen,;
       company: TechVentures Capital,;
       website: https'://techventures.com,;
-      industry: '[AI/ML, SaaS, Finte'ch],;";
-      investmentStage: '[MVP, Early Revenue, Growth' Stage],;";";
+      industry: '[AI/ML, SaaS, Finte'ch],
+      investmentStage: '[MVP, Early Revenue, Growth' Stage],
       investmentRange: "$200K-$1M,";
       location: San Francisco, CA,;
-      description: Early-stage investor focused on AI and SaaS companies with strong technical teams.,;";
-      portfolio: [DataFlow' AI, SecurePay', CloudSyn'c],;";";
+      description: Early-stage investor focused on AI and SaaS companies with strong technical teams.,
+      portfolio: [DataFlow' AI, SecurePay', CloudSyn'c],
       contactEmail: "sarah@techventures.com,";
       matchScore: 95,;
       reason: Perfect match for AI/ML startup with MVP stage;
     },;
-{;";
-      id: 2',;";";
+{
+      id: 2',
       'name: "Michael Rodriguez,";
       company: Innovation Fund,;
-      website: https://innovationfund.com,;";
-      industry: [Healthcare, 'Biotech', AI/ML],;";";
-      investmentStage: "[Early Revenue, Growth Stage],";";";
-      investmentRange: "$1M-$5M,";";";
+      website: https://innovationfund.com,
+      industry: [Healthcare, 'Biotech', AI/ML],
+      investmentStage: "[Early Revenue, Growth Stage],"
+      investmentRange: "$1M-$5M,"
       location: "Boston, MA,";
-      description: Healthcare and biotech specialist with deep industry connections.,;";
-      portfolio: [MedTech Solutions, 'BioAI Labs, HealthClo'ud],;";";
+      description: Healthcare and biotech specialist with deep industry connections.,
+      portfolio: [MedTech Solutions, 'BioAI Labs, HealthClo'ud],
       contactEmail: "michael@innovationfund.com,";
       matchScore: 88,;
       reason: Strong healthcare focus with growth-stage investment;
-    },;";
-    {;";";
+    },
+    {
       id: "3,";
       name: Emma Thompson,;
       company: GreenTech Ventures,;
-      website: https://greentechventures.com,;";
-      industry: [CleanTe'c'h, IoT, A'I'/ML],;";";
+      website: https://greentechventures.com,
+      industry: [CleanTe'c'h, IoT, A'I'/ML],
       investmentStage: "[MVP, Early Revenue],";
       investmentRange: $50K-$200K,;
-      location: Austin, TX,;";
-      description: Sustainability-focused' investor supporting clean technology innovations.',;";";
-      portfolio: "[EcoSmart, GreenIoT, CleanAI],";";
-      contactEmail: emma'@greentechventures.com',;";";
+      location: Austin, TX,
+      description: Sustainability-focused' investor supporting clean technology innovations.',
+      portfolio: "[EcoSmart, GreenIoT, CleanAI],"
+      contactEmail: emma'@greentechventures.com',
       matchScore: "82,";
       reason: CleanTech focus with early-stage investment range;
     },;
 {;
       id: 4,;
-      name: David Kim,;";
-      company: CyberSec Capital',;";";
-      website: "https://cyberseccapital.com,";";
-      industry: [Cybersecurity, 'AI/ML, SaaS'],;";";
-      investmentStage: "[Growth Stage, Scale Up],";";";
-      investmentRange: "$1M-$5M,";";";
+      name: David Kim,
+      company: CyberSec Capital',
+      website: "https://cyberseccapital.com,"
+      industry: [Cybersecurity, 'AI/ML, SaaS'],
+      investmentStage: "[Growth Stage, Scale Up],"
+      investmentRange: "$1M-$5M,"
       location: "New York, NY,";
-      description: Cybersecurity expert investing in enterprise security solutions.,;";
-      portfolio: [SecureNet, AI Defense, 'CyberClo'ud],;";";
+      description: Cybersecurity expert investing in enterprise security solutions.,
+      portfolio: [SecureNet, AI Defense, 'CyberClo'ud],
       contactEmail: "david@cyberseccapital.com,";
       matchScore: 78,;
       reason: Cybersecurity focus with growth-stage investment;
@@ -141,9 +141,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       if (startupProfile.teamSize === 1-5 || startupProfile.teamSize === 6-10) {;
         score += 10;
         reason += 'Team size appropriate. };
-      return {;";
-        ...investor,;";";
-        matchScore: "score,";";";
+      return {
+        ...investor,
+        matchScore: "score,"
         reason: 'reason" || General fit based on profile};
     }).filter(investor => investor.matchScore > 50;
     .sort((a, b) => b.matchScore - a.matchScore;
@@ -154,14 +154,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     const $1 = Subject: Investment Opportunity - ${startupProfile.name};
 Dear ${investor.name};
 I hope this email finds you well. Im reaching out regarding an investment opportunity that I believe aligns with ${investor.company}s investment thesis.;
-About ${startupProfile.name}:;";
-- Industry: ${startupProfile.industry};";";
-- Stage: ${startupProfile.stage};";
-- Location: ${startupProfile.location};';";
-- Team Size: ${startupProfile.teamSize};';";";
-- Funding Needed: ${startupProfile.fundingNeeded};';";
-${startupProfile.pitchSummary};';';";
-`';';";";
+About ${startupProfile.name}:
+- Industry: ${startupProfile.industry}
+- Stage: ${startupProfile.stage}
+- Location: ${startupProfile.location}";
+- Team Size: ${startupProfile.teamSize}
+- Funding Needed: ${startupProfile.fundingNeeded}";
+${startupProfile.pitchSummary}";
+`'
 ${startupProfile.website ? "You can learn more about us at: "${startupProfile.website} : }";
 I would welcome the opportunity to discuss this further and would be happy to schedule a call at your convenience.;
 Best regards,;
@@ -172,64 +172,64 @@ Best regards,;
   const $1 = (score: number) => {;
     if (score >= 90) return text-green-'500;
     if (score >= 80) return 'text-yellow-500;
-    if (score >= 70) return text-orange-500;";
-    return text-red'-'500};";";
-  const $1 = (score: "number) => {";";
-    if (score >= 90) return Excellent Match;";";
-    if (score >= 80) return Great Match;";
-    if (score >= 70) return Good Match;';";
-    return Fair Match};';";";
-  return (</div>;';";
-    <div></div>;';';
-      </div><div className= relative z-10 container-responsive py-8>';';
-        ';';
-        {/* Background Effects */}</div>;';';";
-        <div className=fixed inset-0 z-0> </div>';';";";
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>';';";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>;';";";
-        </div></div>;';";
-      <Head> </div>;';';";
-        <title>Investor Matchmaking - Zion</title></div>';';";";
-        <meta name=description content="Connect with the right investors for your startup using AI-powered matchmaking > </meta name=description" content=Connect with the right investors for your startup using AI-powered matchmaking ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>;';';
-      {/* Header */}</div>';';
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>';';
+    if (score >= 70) return text-orange-500
+    return text-red'-'500}
+  const $1 = (score: "number) => {"
+    if (score >= 90) return Excellent Match
+    if (score >= 80) return Great Match
+    if (score >= 70) return Good Match";
+    return Fair Match}
+  return (</div>";
+    <div></div>
+      </div><div className= relative z-10 container-responsive py-8>'
+        '
+        {/* Background Effects */}</div>";
+        <div className=fixed inset-0 z-0> </div>'
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>'";
+          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>";
+      <Head> </div>";
+        <title>Investor Matchmaking - Zion</title></div>'
+        <meta name=description content="Connect with the right investors for your startup using AI-powered matchmaking > </meta name=description" content=Connect with the right investors for your startup using AI-powered matchmaking ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
+      {/* Header */}</div>'
+      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>";
-          <div className=flex  justify-between items-center></div>;';";
-            <Link href=/ className=text-2xl font-bold text-white > </div>;';";";
-              </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>;';";
-            </Link></div>;';';";
-            <div className=flex items-center space-x-4></div>';';";";
-              <Link href=/marketplace" className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>";";";
-              </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>;";
-              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Services</div>;';";
-              </Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>;';";";
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>;';";
-              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link> </div></div>;';';";
-          </div></div>';';";";
-        </div>"</div>';';";";
-      </div>"</div>';';
-      <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32>";";
-        {/* Hero Section */}</div>;';";";
-        </div><div className=text-center  mb-12></div>;';";
-          <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>;';';";
-            AI-Powered <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span></div>';';";";
-          </h1>"</div>';';";";
-          <p className="""text-xl text-gray-300 max-w-3xl mx-auto>;";
-            Connect with the perfect investors for your startup using our intelligent matching algorithm</div>;';";
-          </p></div>;';";";
-        </div>;';";
-        {showForm ? (;';';
-          /* Startup Profile Form */</div>';';
-          <div className=max-w-4xl: "mx-auto> </div>";';
-            </div><div className=bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10></div>;';';";
-              <h2 className=text-2xl font-bold text-white mb-6>Tell Us About Your Startup</h2></div>';';";";
-              <form onSubmit={handleProfileSubmit} className=space-y-6>"</div>';';";";
-                <div className="""grid grid-cols-1 md grid-cols-2 gap-6> </div>;";
-                  </div><div></div>;';";
-                    <label className=block text-sm font-medium text-gray-300 mb-2>;';";";
-                      Startup Name *</div>;';";
-                    </label>;';';
-                    ';';
+          <div className=flex  justify-between items-center></div>";
+            <Link href=/ className=text-2xl font-bold text-white > </div>
+              </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
+            </Link></div>";
+            <div className=flex items-center space-x-4></div>'
+              <Link href=/marketplace" className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>"
+              </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>
+              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Services</div>";
+              </Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>";
+              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link> </div></div>";
+          </div></div>'
+        </div>"</div>'
+      </div>"</div>'
+      <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32>"
+        {/* Hero Section */}</div>
+        </div><div className=text-center  mb-12></div>";
+          <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>";
+            AI-Powered <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span></div>'
+          </h1>"</div>'
+          <p className="""text-xl text-gray-300 max-w-3xl mx-auto>
+            Connect with the perfect investors for your startup using our intelligent matching algorithm</div>";
+          </p></div>
+        </div>";
+        {showForm ? (
+          /* Startup Profile Form */</div>'
+          <div className=max-w-4xl: "mx-auto> </div>"
+            </div><div className=bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10></div>";
+              <h2 className=text-2xl font-bold text-white mb-6>Tell Us About Your Startup</h2></div>'
+              <form onSubmit={handleProfileSubmit} className=space-y-6>"</div>'
+                <div className="""grid grid-cols-1 md grid-cols-2 gap-6> </div>
+                  </div><div></div>";
+                    <label className=block text-sm font-medium text-gray-300 mb-2>
+                      Startup Name *</div>";
+                    </label>
+                    '
                       onChange={(e) => setStartupProfile({...startupProfile, 'name: "e.target.value})}";
                       className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500;
                       placeholder=Enter your startup name;
@@ -244,50 +244,50 @@ Best regards,;
                       className=w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500></div>;
                       <option value=>Select Industry</option>;
                       {industries.map(industry => (</div>;
-                        <option key={industry} value={industry}>{industry}</option>;";
-                      ))}</div>;";";
-                    </select></div>;";
-                  </div>;';";
-</div>;';";";
-                  <div></div>;';";
-                    <label className=block text-sm font-medium text-gray-300  mb-2>;';';
-                      Development Stage *</div>';';
-                    </label>';';
-                      onChange={(e) => setStartupProfile({...startupProfile, stage  e.target.value})}';';
+                        <option key={industry} value={industry}>{industry}</option>
+                      ))}</div>
+                    </select></div>
+                  </div>";
+</div>
+                  <div></div>";
+                    <label className=block text-sm font-medium text-gray-300  mb-2>
+                      Development Stage *</div>'
+                    </label>'
+                      onChange={(e) => setStartupProfile({...startupProfile, stage  e.target.value})}'
                       className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
                     ></div>;
                       <option value=>Select Stage</option>;
                       {stages.map(stage => (</div>;
                         <option key={stage} value={stage}>{stage}</option>;
-                      ))}</div>;";
-                    </select></div>;";";
-                  </div>;";
-</div>;';";
-                  <div></div>;';";";
-                    <label className=block text-sm font-medium text-gray-300  mb-2>;';";
-                      Location</div>;';';
-                    </label>';';
-                    ';';
-                      onChange={(e) => setStartupProfile({...startupProfile, location  e.target.value})}';';
+                      ))}</div>
+                    </select></div>
+                  </div>
+</div>";
+                  <div>
+                    <label className=block text-sm font-medium text-gray-300  mb-2>";
+                      Location</div>
+                    </label>'
+                    '
+                      onChange={(e) => setStartupProfile({...startupProfile, location  e.target.value})}'
                       className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500;
                       placeholder=City, State/Country;
-                    /></div>;";
-                  </div>;";";
-</div>;";
-                  <div></div>;';";
-                    <label className=block text-sm font-medium text-gray-300 mb-2>;';";";
-                      Team Size</div>;';";
-                    </label>;';';
-                      onChange={(e) => setStartupProfile({...startupProfile, teamSize  e.target.value})}';';
+                    /></div>
+                  </div>
+</div>
+                  <div></div>";
+                    <label className=block text-sm font-medium text-gray-300 mb-2>
+                      Team Size</div>";
+                    </label>
+                      onChange={(e) => setStartupProfile({...startupProfile, teamSize  e.target.value})}'
                       className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
-                    ></div>;";
-                      <option value=>Select Team Size</option>;";";
-                      {teamSizes.map(size => (</div>;";
-                        <option key={size} value={size}>{size} people</option>;';";
-                      ))}</div>;';";";
-                    </select></div>;';";
-                  </div>;';';";
-</div>';';";";
+                    ></div>
+                      <option value=>Select Team Size</option>
+                      {teamSizes.map(size => (</div>
+                        <option key={size} value={size}>{size} people</option>";
+                      ))}</div>
+                    </select></div>";
+                  </div>";
+</div>'
                   <div>"</div>;
                     <label className=block text-sm font-medium text-gray-300  mb-2>;
                       Funding Needed *</div>;
@@ -296,19 +296,19 @@ Best regards,;
                       className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
                     ></div>;
                       <option value=>Select Funding Range</option>;
-                      {fundingRanges.map(range => (</div>;";
-                        <option key={range} value={range}>{range}</option>;";";
-                      ))}</div>;";
-                    </select></div>;';";
-                  </div></div>;';";";
-                </div>;';";
-</div>;';';
-                <div></div>';';
-                  <label className="""block text-sm font-medium text-gray-300  mb-2>;';';
-                    Website</div>';';
-                  </label>';';
-                    onChange={(e) => setStartupProfile({...startupProfile, website  e.target.value})};';';";
-                    className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500';';";";
+                      {fundingRanges.map(range => (</div>
+                        <option key={range} value={range}>{range}</option>
+                      ))}</div>
+                    </select></div>";
+                  </div></div>
+                </div>";
+</div>
+                <div></div>'
+                  <label className="""block text-sm font-medium text-gray-300  mb-2>
+                    Website</div>'
+                  </label>'
+                    onChange={(e) => setStartupProfile({...startupProfile, website  e.target.value})}";
+                    className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500'
                     placeholder=https: "//yourstartup.com";
                   /></div>;
                 </div>;
@@ -326,64 +326,64 @@ Best regards,;
                 <div className=flex justify-center>;
                   >;
                     {isLoading ? Finding Investors...   Find' Investors}</div>;
-                  </button></div>;";
-                </div></div>;";";
-              </form></div>;";
-            </div></div>;';";
-          </div>;';";";
-        )   (;';";
-          /* Investor Results */</div>;';';";
-          <div className=space-y-8></div>';';";";
-            </div><div className=flex" justify-between items-center"></div>;';";
-              <h2 className=text-2xl font-bold text-white>Matched Investors</h2>;';';
-                onClick={() => setShowForm(true)}';';
-                className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg: "text-white hover:bg-white/20";";
-              >;";";
-                Update Profile</div>;";
-              </button></div>;';";
-            </div></div>;';";";
-            <div className=grid grid-cols-1 lg grid-cols-2 gap-6 >;';";
-              {investors.map((investor) => (</div>;';';
-                </div><div key={investor.id} className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10></div>';';
-                  <div className="""flex justify-between items-start mb-4> </div>;';';
-                    </div><div></div>';';
-                      <h3 className="""text-xl font-semibold text-white>{investor.name}</h3></div>';';";
-                      <p className="""text-purple-400>{investor.company}</p></div>';';";";
-                    </div>"</div>';';";";
-                    <div className=text-right>"</div>';';";";
-                      </div><div className="""{text-lg font-bold ${getMatchScoreColor(investor.matchScore)}}>;';";
-                        {investor.matchScore}% </div>;';';";
-                      </div></div>';';";";
-                      <div className="""text-sm: "text-gray-400>{getMatchScoreText(investor.matchScore)}</div></div>";";";
-                    </div></div>;";
-                  </div>;';";
-</div>;';";";
-                  <p className=text-gray-300 mb-4 >{investor.description}</p>;';";
-</div>;';';
-                  <div className=space-y-2 mb-4> </div>';';";
-                    </div><div className="""flex items-center text-sm></div>';';";";
-                      <span className=text-gray-400 w-20>Industries: "</span></div>";";";";
-                      <span className=text-white>{investor.industry.join(, )}</span></div>;';";
-                    </div></div>;';';";
-                    <div className=flex items-center text-sm></div>';';";";
-                      <span className="""text-gray-400 w-20>Stages </span>"</div>;';";
-                      <span className=text-white>{investor.investmentStage.join(, )}</span></div>;';';";
-                    </div></div>';';";";
-                    <div className=flex items-center text-sm>"</div>';';
-                      <span className="""text-gray-400 w-20>Investment </span></div>;';';";
-                      <span className=text-white>{investor.investmentRange}</span></div>';';";";
-                    </div>"</div>';';
-                    <div className="""flex items-center text-sm></div>';';
+                  </button></div>
+                </div></div>
+              </form></div>
+            </div></div>";
+          </div>
+        )   (";
+          /* Investor Results */</div>";
+          <div className=space-y-8></div>'
+            </div><div className=flex" justify-between items-center"></div>";
+              <h2 className=text-2xl font-bold text-white>Matched Investors</h2>
+                onClick={() => setShowForm(true)}'
+                className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg: "text-white hover:bg-white/20"
+              >
+                Update Profile</div>
+              </button></div>";
+            </div></div>
+            <div className=grid grid-cols-1 lg grid-cols-2 gap-6 >";
+              {investors.map((investor) => (</div>
+                </div><div key={investor.id} className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10></div>'
+                  <div className="""flex justify-between items-start mb-4> </div>
+                    </div><div></div>'
+                      <h3 className="""text-xl font-semibold text-white>{investor.name}</h3></div>'";
+                      <p className="""text-purple-400>{investor.company}</p></div>'
+                    </div>"</div>'
+                    <div className=text-right>"</div>'
+                      </div><div className="""{text-lg font-bold ${getMatchScoreColor(investor.matchScore)}}>";
+                        {investor.matchScore}% </div>";
+                      </div></div>'
+                      <div className="""text-sm: "text-gray-400>{getMatchScoreText(investor.matchScore)}</div></div>"
+                    </div></div>
+                  </div>";
+</div>
+                  <p className=text-gray-300 mb-4 >{investor.description}</p>";
+</div>
+                  <div className=space-y-2 mb-4> </div>'";
+                    </div><div className="""flex items-center text-sm></div>'
+                      <span className=text-gray-400 w-20>Industries: "</span></div>"";
+                      <span className=text-white>{investor.industry.join(, )}</span></div>";
+                    </div></div>";
+                    <div className=flex items-center text-sm></div>'
+                      <span className="""text-gray-400 w-20>Stages </span>"</div>";
+                      <span className=text-white>{investor.investmentStage.join(, )}</span></div>";
+                    </div></div>'
+                    <div className=flex items-center text-sm>"</div>'
+                      <span className="""text-gray-400 w-20>Investment </span></div>";
+                      <span className=text-white>{investor.investmentRange}</span></div>'
+                    </div>"</div>'
+                    <div className="""flex items-center text-sm></div>'
                       <span className=text-gray-400 w-20>Location: "</span></div>";
-                      <span className=text-white>{investor.location}</span></div>;';";
-                    </div> </div>;';";";
-                  </div></div>;';";
-                  <div className=mb-4></div>;';';";
-                    <p className=text-sm:text-gray-400 mb-2>Why this match </p></div>';';";";
-                    <p className="""text-sm: "text-white>{investor.reason}</p></div>";";";";
-                  </div>;';";
- </div>;';';";
-                  <div className=flex space-x-3>';';";";
+                      <span className=text-white>{investor.location}</span></div>";
+                    </div> </div>
+                  </div></div>";
+                  <div className=mb-4></div>";
+                    <p className=text-sm:text-gray-400 mb-2>Why this match </p></div>'
+                    <p className="""text-sm: "text-white>{investor.reason}</p></div>"";
+                  </div>";
+ </div>";
+                  <div className=flex space-x-3>'
                     ";
                       onClick={() => generatePitchEmail(investor)};
                       className=flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover from-purple-700 hover to-pink-700;
@@ -391,43 +391,43 @@ Best regards,;
                       Generate Pitch Email</div>;
                     </button>;
                     >;
-                      Visit Website</div>;";
-                    </Link></div>;";";
-                  </div></div>;";
-                </div>;';";
-              ))}</div>;';";";
-            </div>;';";
-            {investors.length === 0 && (</div>;';';
-              <div className= text-center py-32></div>';';";
-                <p className="""text-gray-400 text-lg>No investors matched your criteria. Try updating your profile.</p></div>;";";
-              </div>;";
-            )}</div>;';";
-          </div>;';";";
-        )};';";
-        {/* Pitch Email Modal */},;';';
-{selectedInvestor && (</div>';';
-          <div className="""fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > </div>;';';";
-            </div><div className=bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto></div>';';";";
+                      Visit Website</div>
+                    </Link></div>
+                  </div></div>
+                </div>";
+              ))}</div>
+            </div>";
+            {investors.length === 0 && (</div>
+              <div className= text-center py-32></div>'";
+                <p className="""text-gray-400 text-lg>No investors matched your criteria. Try updating your profile.</p></div>
+              </div>
+            )}</div>";
+          </div>
+        )}";
+        {/* Pitch Email Modal */},
+{selectedInvestor && (</div>'
+          <div className="""fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > </div>";
+            </div><div className=bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto></div>'
               <div className="""flex justify-between items-center mb-4>"</div>;
-                <h3 className=text-xl font-semibold text-white>;";
-                  Pitch Email to {selectedInvestor.name}</div>;";";
-                </h3>;";
-                  onClick={() => setSelectedInvestor(null)};';";
-                  className=text-gray-400 hover text-white;';";";
-                >;';";
-                  ✕</div>;';';";
-                </button></div>';';";";
-              </div>';';";
-                onChange={(e) => setPitchEmail(e.target.value)}';";
-                rows={15};';";";
-                className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4;';";
-              />;';';";
-              </div>';';";";
-              <div className= flex" space-x-3">;';";
-                  onClick={() => {;';";";
-                    navigator.clipboard.writeText(pitchEmail;';";
-                    alert(Email' copied to clipboard!;';';
-                  }}';';
+                <h3 className=text-xl font-semibold text-white>
+                  Pitch Email to {selectedInvestor.name}</div>
+                </h3>
+                  onClick={() => setSelectedInvestor(null)}";
+                  className=text-gray-400 hover text-white
+                >";
+                  ✕</div>";
+                </button></div>'
+              </div>'";
+                onChange={(e) => setPitchEmail(e.target.value)}'
+                rows={15}
+                className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4";
+              />";
+              </div>'
+              <div className= flex" space-x-3">";
+                  onClick={() => {
+                    navigator.clipboard.writeText(pitchEmail";
+                    alert(Email' copied to clipboard!
+                  }}'
                   className=px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg: "hover:from-purple-700 hover:to-pink-700";
                 >;
                   Copy to Clipboard</div>;
@@ -446,10 +446,10 @@ Best regards,;
       </div></div>;
     </div>;
   </div>;
-  </div>;";
-</div>;";";
-  </div>;";
-</div>;';";
-  </div>;';';";";
-};';";}';';";
-export default InvestorMatchmakingPage;))))))))))))))))))))'`</div>';';";";
+  </div>
+</div>
+  </div>
+</div>";
+  </div>
+}";}'";
+export default InvestorMatchmakingPage;))))))))))))))))))))'`</div>'

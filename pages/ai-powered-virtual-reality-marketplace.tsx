@@ -1,10 +1,10 @@
-import type { NextPage } from ";next;';";
-import ModernLayout from ';../components/layout/ModernLayout';";";
-import Head from next/head';';";";";
-import { useState, useEffect, useRef }  from ";react;};';";
-import Link from next/link;';';";";
-import { Home, Search, User }  from ";lucide-react;';";
-interface FacilityPlan {';';
+import type { NextPage } from ";next";
+import ModernLayout from ';../components/layout/ModernLayout'
+import Head from 'next/head';
+import { useState, useEffect, useRef }  from ";react;}";
+import Link from next/link
+import { Home, Search, User }  from ";lucide-react";
+interface FacilityPlan {'
   id: "string";
   name: string;
   description: string;
@@ -42,78 +42,78 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     {;
       id: tech-showroom,;
       name: AI Tech Showroom,;
-      description: Explore cutting-edge AI products in a futuristic showroom,;";
-      environment: futuristic-showro'o'm,;";";
+      description: Explore cutting-edge AI products in a futuristic showroom,
+      environment: futuristic-showro'o'm,
       lighting: "dynamic-led,";
       atmosphere: high-tech,;
       products: [;
-        {;";
-          id: ai-robot-1,;";";
+        {
+          id: ai-robot-1,
           'name: "AI Assistant Robot,";
           description: Advanced AI-powered robot with natural language processing,;
-          price: 2500,;";
-          category: AI Hardware',;";";
+          price: 2500,
+          category: AI Hardware',
           vrModel: "/models/ai-robot.glb,";
           dimensions: { x: 0.5, y: 1.2, z: 0.3};
           position: { x: 2, y: 0, z: 3};
           rotation: { x: 0, y: 0, z: 0};
-          scale: { x: 1, y: 1, z: 1 };";
-          features: [Voice Recognition, Facial Recognition, Autonomous' Navigation],;";";
+          scale: { x: 1, y: 1, z: 1 }
+          features: [Voice Recognition, Facial Recognition, Autonomous' Navigation],
           rating: "4.8,";
           reviews: 127};
         {;
           id: quantum-computer,;
-          name: Quantum Computing System,;";
-          description: Next-generation' quantum computing hardware,;";";
+          name: Quantum Computing System,
+          description: Next-generation' quantum computing hardware,
           price: "50000,";
           category: Computing,;
           vrModel: /models/quantum-computer.glb,;
           dimensions: { x: 1.5, y: 1.8, z: 1.2};
           position: { x: -2, y: 0, z: 4};
           rotation: { x: 0, y: 0.3, z: 0};
-          scale: { x: 1, y: 1, z: 1 };";
-          features: [Quantum Processing, Superposition' States', Entanglement],;";";
+          scale: { x: 1, y: 1, z: 1 }
+          features: [Quantum Processing, Superposition' States', Entanglement],
           rating: "4.9,";
           reviews: 89;
         }]};
     {;
       id: smart-home,;
-      name: Smart Home Experience,;";
-      description: Experience AI-powered smart home devices in a realistic environment',;";";
+      name: Smart Home Experience,
+      description: Experience AI-powered smart home devices in a realistic environment',
       environment: "modern-home,";
-      lighting: natural-daylight,;";
-      atmosphere: comfortabl'e,;";";
+      lighting: natural-daylight,
+      atmosphere: comfortabl'e,
       products: "[";
         {;
           id: smart-speaker,;
           name: AI Smart Speaker,;
           description: Intelligent speaker with voice control and home automation,;
-          price: 299,;";
-          category: 'Smar't Home,;";";
+          price: 299,
+          category: 'Smar't Home,
           vrModel: "/models/smart-speaker.glb,";
           dimensions: { x: 0.15, y: 0.25, z: 0.15};
           position: { x: 1, y: 0.8, z: 2};
           rotation: { x: 0, y: 0, z: 0};
-          scale: { x: 1, y: 1, z: 1 };";
-          features: [Voice Control, Music Streaming, Home' Automation'],;";";
+          scale: { x: 1, y: 1, z: 1 }
+          features: [Voice Control, Music Streaming, Home' Automation'],
           rating: "4.6,";
           reviews: 234;
         }]};
     {;
       id: industrial-ai,;
       name: Industrial AI Hub,;
-      description: Explore industrial AI solutions and automation systems,;";
-      environment: industrial-facility',;";";
+      description: Explore industrial AI solutions and automation systems,
+      environment: industrial-facility',
       lighting: "industrial-led,";
       atmosphere: professional,;
       products: [;
-        {;";
-          id: industrial-rob'ot,;";";
+        {
+          id: industrial-rob'ot,
           name: "Industrial AI Robot,";
           description: Advanced industrial robot with AI-powered automation,;
           price: 15000,;
-          category: Industrial AI,;";
-          vrModel: '/models/industrial-robot.glb',;";";
+          category: Industrial AI,
+          vrModel: '/models/industrial-robot.glb',
           dimensions: "{ x: 1.2, y: 2.1, z: 0.8}";
           position: { x: 0, y: 0, z: 5};
           rotation: { x: 0, y: 0, z: 0};
@@ -127,8 +127,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     // Check VR support;
     if (getVRDispla'y's in navigator || getVRDevices in navigator) {;
       setVrSupported(true;
-      // Detect VR devices;";
-      if ('getVRDispla'ys in navigator) {;";";
+      // Detect VR devices
+      if ('getVRDispla'ys in navigator) {
         (navigator as any).getVRDisplays().then((displays: "any[]) => {";
           setVrDevices(displays.map((d: any) => d.displayName)}}};
     // Initialize VR experience;
@@ -166,24 +166,24 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         const $1 = await (navigator as any).getVRDisplays(;
         if (displays.length > 0) {;
           setIsVRMode(true;
-          setCurrentExperience(vrExperiences[0]}};";
-    } catch (error) {;";";
+          setCurrentExperience(vrExperiences[0]}}
+    } catch (error) {
       console.error(VR not available: ", error";
       // Fallback to immersive mode;
       setIsVRMode(true;
       setCurrentExperience(vrExperiences[0]};
-    setIsLoading(false};";
-  const $1 = () => {;";";
-    setIsVRMode(false;";
-    setCurrentExperience(null;';";
-    setSelectedProduct(null};';";";
-  const $1 = (product: VRProduct) => {;';";
-    setSelectedProduct(product};';';
-  const $1 = (product: VRProduct) => {';';
-    // Handle product purchase';';";
-    console.log(Purchasing ${product.name} for $${product.price}`';';";";
-    // Navigate to checkout';';";";
-    window.location.href="""/checkout?product=${product.id}}';';";";
+    setIsLoading(false}
+  const Component = () => {
+    setIsVRMode(false
+    setCurrentExperience(null";
+    setSelectedProduct(null}
+  const $1 = (product: VRProduct) => {";
+    setSelectedProduct(product}
+  const $1 = (product: VRProduct) => {'
+    // Handle product purchase'";
+    console.log(Purchasing ${product.name} for $${product.price}`'
+    // Navigate to checkout'
+    window.location.href="""/checkout?product=${product.id}}'
   const $1 = (experience: "VRExperience) => {";
     setCurrentExperience(experience;
     setSelectedProduct(null};
@@ -194,115 +194,115 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         setUserPosition(prev => ({ ...prev, z: prev.z - speed });
         break;
       case backward:;
-        setUserPosition(prev => ({ ...prev, z: prev.z + speed });";
-        break;";";
+        setUserPosition(prev => ({ ...prev, z: prev.z + speed })
+        break
       case 'le'ft: "setUserPosition(prev => ({ ...prev, x: prev.x - speed })";
         break;
       case right:;
-        setUserPosition(prev => ({ ...prev, x: prev.x + speed });";
-        break}};";";
-  return (</div>;";
-    <div></div>;';";
-      </div><div className= relative z-10 container-responsive py-8>;';";";
-        {/* Background Effects */}</div>;';";
-        <div className=fixed inset-0 z-0> </div>;';';
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>';';";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>;';";";
-        </div></div>;';";
-      <Head> </div>;';';";
-        <title>AI-Powered Virtual Reality Marketplace - Zion</title></div>';';";";
-        <meta name="description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. > </meta name=description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. ><meta name=keywords content=VR marketplace, AI shopping, virtual reality, 3D products, immersive shopping > </meta name=keywords content="VR marketplace, AI shopping, virtual reality, 3D products, immersive" shopping ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>;';';
-      {/* Navigation */}</div>';';
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>';';
-        <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>";';
-          </div><div className=flex  justify-between h-16></div>;';';
-            <div className=flex items-center></div>';';";
-              <Link href=/ className="""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>';';";";
-                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>;';";";
-                </h1></div>;';";
-              </Link></div>;';';
-            </div></div>';';
-            <div className="""flex items-center space-x-4 >;';';";
-                onClick={() => setIsVRMode(!isVRMode)}';';";";
+        setUserPosition(prev => ({ ...prev, x: prev.x + speed })
+        break}}
+  return (</div>
+    <div></div>";
+      </div><div className= relative z-10 container-responsive py-8>
+        {/* Background Effects */}</div>";
+        <div className=fixed inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>";
+      <Head> </div>";
+        <title>AI-Powered Virtual Reality Marketplace - Zion</title></div>'
+        <meta name="description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. > </meta name=description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. ><meta name=keywords content=VR marketplace, AI shopping, virtual reality, 3D products, immersive shopping > </meta name=keywords content="VR marketplace, AI shopping, virtual reality, 3D products, immersive" shopping ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+      {/* Navigation */}</div>'
+      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+        <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
+          </div><div className=flex  justify-between h-16></div>
+            <div className=flex items-center></div>'";
+              <Link href=/ className="""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
+                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+                </h1></div>";
+              </Link></div>
+            </div></div>'
+            <div className="""flex items-center space-x-4 >";
+                onClick={() => setIsVRMode(!isVRMode)}'
                 className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25";
               >;
                 {isVRMode ? Exit VR   Enter VR'}</div>;
-              </button></div>;";
-            </div></div>;";";
-          </div></div>;";
-        </div> </div>;';";
-      </nav></div>;';";";
-      <main className=flex-1>;';";
-        {!isVRMode ? (;';';
-          /* VR Experience Selection */</div>';';";
-          <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>";";";
-            </div><div className=text-center mb-12></div>;";
-              <h1 className=text-4xl md text-6xlfont-bold text-white mb-6>;';";
-                AI-Powered Virtual Reality Marketplace</div>;';";";
-              </h1></div>;';";
-              <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>;';';";
-                Experience the future of shopping with immersive AI-powered virtual reality.  ';';";";
+              </button></div>
+            </div></div>
+          </div></div>
+        </div> </div>";
+      </nav></div>
+      <main className=flex-1>";
+        {!isVRMode ? (
+          /* VR Experience Selection */</div>'";
+          <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
+            </div><div className=text-center mb-12></div>
+              <h1 className=text-4xl md text-6xlfont-bold text-white mb-6>";
+                AI-Powered Virtual Reality Marketplace</div>
+              </h1></div>";
+              <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>";
+                Experience the future of shopping with immersive AI-powered virtual reality.  '
                 Explore products in stunning 3D environments and interact with AI assistants."</div>;
               </p></div>;
               <div className=flex justify-center space-x-4>;
-                >;";
-                  {isLoading ? Loading VR... : Enter Virtual Reality'}</div>;";";
-                </button>;";
-                 />;';";
-                  Browse Traditional Marketplace</div>;';";";
-                </Link></div>;';";
-              </div></div>;';';";
-            </div>';';";";
-            {/* VR Features */}"</div>';';
-            <div className="""grid grid-cols-1 md grid-cols-3 gap-8 mb-12> </div>';';
-              </div><div className=bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg: "border border-white/10></div>";';";
-                <div className=text-4xl:mb-4>🥽</div> </div>;';";";
-                <h3 className=text-xl font-semibold text-white mb-2>Immersive Experience</h3></div>;';";
-                <p className=text-gray-300>Explore products in stunning 3D environments with realistic lighting and physics.</p></div>;';';";
-              </div></div>';';";";
-              <div className=bg-gradient-to-br from-blue-900/50 to-cyan-900/50 p-6 rounded-lg border border-white/10"> "</div>';';
+                >
+                  {isLoading ? Loading VR... : Enter Virtual Reality'}</div>
+                </button>
+                 />";
+                  Browse Traditional Marketplace</div>
+                </Link></div>";
+              </div></div>";
+            </div>'
+            {/* VR Features */}"</div>'
+            <div className="""grid grid-cols-1 md grid-cols-3 gap-8 mb-12> </div>'
+              </div><div className=bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg: "border border-white/10></div>"";
+                <div className=text-4xl:mb-4>🥽</div> </div>
+                <h3 className=text-xl font-semibold text-white mb-2>Immersive Experience</h3></div>";
+                <p className=text-gray-300>Explore products in stunning 3D environments with realistic lighting and physics.</p></div>";
+              </div></div>'
+              <div className=bg-gradient-to-br from-blue-900/50 to-cyan-900/50 p-6 rounded-lg border border-white/10"> "</div>'
                 </div><div className=text-4xl: "mb-4>🤖</div></div>";
-                <h3 className=text-xl font-semibold text-white mb-2>AI Assistant</h3></div>;';";
-                <p className=text-gray-300>Interact with AI-powered virtual assistants for personalized recommendations.</p></div>;';";";
-              </div></div>;';";
-              <div className=bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-lg border border-white/10> </div>;';';";
-                </div><div className=text-4xl:mb-4>🎯</div></div>';';";";
-                <h3 className="""text-xl font-semibold text-white mb-2>Smart Navigation</h3>"</div>;';";
-                <p className=text-gray-300>Intelligent navigation and product discovery powered by AI algorithms.</p></div>;';";";
-              </div></div>;';";
-            </div>;';';
-            {/* VR Experiences */}</div>';';
-            <div className="""mb-12></div>';';";
-              <h2 className="""text-3xl font-bold text-white mb-8 text-center >Available VR Experiences</h2></div>;';";";
-              <div className=grid grid-cols-1 md grid-cols-3 gap-8>;';";
-                {vrExperiences.map((experience) => (</div>;';';
-                  </div>';';
-                    onClick={() => changeExperience(experience)}';';
-                  ></div>';';
-                    <h3 className="""text-xl font-semibold text-white mb-2>{experience.name}</h3></div>;';';";
-                    <p className=text-gray-300 mb-4 >{experience.description}</p></div>';';";";
+                <h3 className=text-xl font-semibold text-white mb-2>AI Assistant</h3></div>";
+                <p className=text-gray-300>Interact with AI-powered virtual assistants for personalized recommendations.</p></div>
+              </div></div>";
+              <div className=bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-lg border border-white/10> </div>";
+                </div><div className=text-4xl:mb-4>🎯</div></div>'
+                <h3 className="""text-xl font-semibold text-white mb-2>Smart Navigation</h3>"</div>";
+                <p className=text-gray-300>Intelligent navigation and product discovery powered by AI algorithms.</p></div>
+              </div></div>";
+            </div>
+            {/* VR Experiences */}</div>'
+            <div className="""mb-12></div>'";
+              <h2 className="""text-3xl font-bold text-white mb-8 text-center >Available VR Experiences</h2></div>
+              <div className=grid grid-cols-1 md grid-cols-3 gap-8>";
+                {vrExperiences.map((experience) => (</div>
+                  </div>'
+                    onClick={() => changeExperience(experience)}'
+                  ></div>'
+                    <h3 className="""text-xl font-semibold text-white mb-2>{experience.name}</h3></div>";
+                    <p className=text-gray-300 mb-4 >{experience.description}</p></div>'
                     <div className=flex items-center justify-between text-sm: "text-gray-400></div>";
                       <span>Environment  {experience.environment}</span></div>;
                       <span>{experience.products.length} products</span></div>;
                     </div></div>;
                   </div>;
                 ))}</div>;
-              </div></div>;";
-            </div>;";";
-            {/* VR Requirements */}</div>;";
-            <div className= bg-gradient-to-br from-orange-900/50 to-red-900/50 p-8 rounded-lg border border-white/10></div>;';";
-              <h3 className=text-2xl font-bold text-white mb-4>VR Requirements</h3></div>;';";";
-              <div className=grid grid-cols-1 md grid-cols-2 gap-6 ></div>;';";
-                </div><div></div>;';';";
-                  <h4 className=text-lg font-semibold text-white mb-2>Hardware</h4></div>';';";";
-                  <ul className=text-gray-300" space-y-1></div>;";
-                    <li>• VR Headset (Oculus Quest, HTC Vive, etc.)</li></div>;";";
-                    <li>• Motion Controllers</li></div>;";
-                    <li>• High-performance computer (for PC VR)</li></div>;';";
-                    <li>• Stable internet connection</li></div>;';";";
-                  </ul></div>;';";
-                </div></div>;';';
-                <div></div>';';
+              </div></div>
+            </div>
+            {/* VR Requirements */}</div>
+            <div className= bg-gradient-to-br from-orange-900/50 to-red-900/50 p-8 rounded-lg border border-white/10></div>";
+              <h3 className=text-2xl font-bold text-white mb-4>VR Requirements</h3></div>
+              <div className=grid grid-cols-1 md grid-cols-2 gap-6 ></div>";
+                </div><div></div>";
+                  <h4 className=text-lg font-semibold text-white mb-2>Hardware</h4></div>'
+                  <ul className=text-gray-300" space-y-1></div>
+                    <li>• VR Headset (Oculus Quest, HTC Vive, etc.)</li></div>
+                    <li>• Motion Controllers</li></div>
+                    <li>• High-performance computer (for PC VR)</li></div>";
+                    <li>• Stable internet connection</li></div>
+                  </ul></div>";
+                </div></div>
+                <div></div>'
                   <h4 className="""text-lg font-semibold text-white mb-2>Software</h4></div>;
                   <ul className=text-gray-300 space-y-1 ></div>;
                     <li>• WebVR-compatible browser</li></div>;
@@ -311,146 +311,146 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <li>• Latest graphics drivers</li></div>;
                   </ul></div>;
                 </div></div>;
-              </div></div>;";
-            </div></div>;";";
-          </div>;";
-        ) : (;';";
-          /* VR Experience Interface */ </div>;';";";
-          <div className=relative h-screen>;';";
-            {/* VR Canvas */};';';
-            />';';
-';';";
-            {/* VR UI Overlay */}</div>';';";";
-            <div className="""absolute top-0 left-0 w-full h-full pointer-events-none>;';";
-              {/* VR Controls */}</div>;';';";
-              </div><div className=absolute bottom-4 left-4 pointer-events-auto></div>';';";";
+              </div></div>
+            </div></div>
+          </div>
+        ) : (";
+          /* VR Experience Interface */ </div>
+          <div className=relative h-screen>";
+            {/* VR Canvas */}
+            />'
+'";
+            {/* VR UI Overlay */}</div>'
+            <div className="""absolute top-0 left-0 w-full h-full pointer-events-none>";
+              {/* VR Controls */}</div>";
+              </div><div className=absolute bottom-4 left-4 pointer-events-auto></div>'
                 <div className=bg-black/50 backdrop-blur-md: "rounded-lg p-4 border border-white/20> </div>";
                   </div><div className=grid grid-cols-3 gap-2>;
                       onClick={() => handleVRMovement(forward)};
                       className=bg-purple-600 hover:bg-purple-700 text-white p-2 rounded;
                     >;
-                      ↑</div>;";
-                    </button>;";";
-                      onClick={() => handleVRMovement(left)};";
-                      className=bg-purple-600 hover bg-purple-700 text-white p-2 rounded;';";
-                    >;';";";
-                      ←</div>;';";
-                    </button>;';";
-                      onClick={() => handleVRMovement(rig'h't)}';';";";
-                      className=bg-purple-600" hover bg-purple-700 text-white p-2 rounded;';";";
-                    >;';";
-                      →</div>;';';";
-                    </button>';';";";
+                      ↑</div>
+                    </button>
+                      onClick={() => handleVRMovement(left)}
+                      className=bg-purple-600 hover bg-purple-700 text-white p-2 rounded";
+                    >
+                      ←</div>";
+                    </button>";
+                      onClick={() => handleVRMovement(rig'h't)}'
+                      className=bg-purple-600" hover bg-purple-700 text-white p-2 rounded
+                    >";
+                      →</div>";
+                    </button>'
                     ";
                       onClick={() => handleVRMovement(backwar'd')};
                       className=bg-purple-600 hover bg-purple-700 text-white p-2 rounded col-start-2;
                     >;
-                      ↓</div>;";
-                    </button></div>;";";
-                  </div></div>;";
-                </div></div>;';";
-              </div>;';";";
-              {/* Product Info Panel */},;';";
-{selectedProduct && (</div>;';';";
-                <div className=absolute top-4 right-4 pointer-events-auto></div>';';";";
-                  </div><div className="""bg-black/80 backdrop-blur-md: "rounded-lg p-6 border border-white/20 max-w-sm ></div>";";
-                    <h3 className=text-xl font-bold text-white mb-2>{selectedProduct.name}</h3></div>;';";
-                    <p className=text-gray-300 mb-4>{selectedProduct.description}</p></div>;';";";
-                    <div className=mb-4></div>;';";
-                      <span className=text-2xl font-bold text-green-400 >${selectedProduct.price}</span></div>;';';";
-                    </div></div>';';";";
-                    <div className=mb-4>" </div>;';";";
-                      </div><div className=flex items-center mb-2></div>;';";
-                        <div className=flex text-yellow-400>;';';
-                          {[...Array(5)].map((_, i) => (</div>';';
-                            <span key={i} className="""{i < Math.floor(selectedProduct.rating) ? text-yellow-400 : text-gray-600}>;';";
-                              ★</div>;';";";
-                            </span>;';";
-                          ))}</div>;';';";
-                        </div></div>';';";";
-                        <span className=text-gray-400" ml-2>({selectedProduct.reviews} reviews)</span></div>;';";
-                      </div> </div>;';";";
-                    </div></div>;';";
-                    <div className=space-y-2 mb-4>;';';
-                      {selectedProduct.features.map((feature, index) => (</div>';';
-                        </div><div key={index} className=text-sm: "text-gray-300>• {feature}</div>";";
-                      ))}</div>;';";";
-                    </div></div>;';";
-                    <div className=flex space-x-2 >;';';";
-                        onClick={() => purchaseProduct(selectedProduct)}';';";";
-                        className=bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300 ';';";";";
+                      ↓</div>
+                    </button></div>
+                  </div></div>
+                </div></div>";
+              </div>
+              {/* Product Info Panel */},";
+{selectedProduct && (</div>";
+                <div className=absolute top-4 right-4 pointer-events-auto></div>'
+                  </div><div className="""bg-black/80 backdrop-blur-md: "rounded-lg p-6 border border-white/20 max-w-sm ></div>"
+                    <h3 className=text-xl font-bold text-white mb-2>{selectedProduct.name}</h3></div>";
+                    <p className=text-gray-300 mb-4>{selectedProduct.description}</p></div>
+                    <div className=mb-4></div>";
+                      <span className=text-2xl font-bold text-green-400 >${selectedProduct.price}</span></div>";
+                    </div></div>'
+                    <div className=mb-4>" </div>
+                      </div><div className=flex items-center mb-2></div>";
+                        <div className=flex text-yellow-400>
+                          {[...Array(5)].map((_, i) => (</div>'
+                            <span key={i} className="""{i < Math.floor(selectedProduct.rating) ? text-yellow-400 : text-gray-600}>";
+                              ★</div>
+                            </span>";
+                          ))}</div>";
+                        </div></div>'
+                        <span className=text-gray-400" ml-2>({selectedProduct.reviews} reviews)</span></div>";
+                      </div> </div>
+                    </div></div>";
+                    <div className=space-y-2 mb-4>
+                      {selectedProduct.features.map((feature, index) => (</div>'
+                        </div><div key={index} className=text-sm: "text-gray-300>• {feature}</div>"
+                      ))}</div>
+                    </div></div>";
+                    <div className=flex space-x-2 >";
+                        onClick={() => purchaseProduct(selectedProduct)}'
+                        className=bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300 '";
                      ">;
                         Purchase</div>;
                       </button>;
                         onClick={() => setSelectedProduct(null)};
                         className=bg-gray-600 hover bg-gray-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300;
-                      >;";
-                        Close</div>;";";
-                      </button></div>;";
-                    </div></div>;';";
-                  </div></div>;';";";
-                </div>;';";
-              )};';';";
-              {/* Experience Selector */}</div>';';";";
-              <div className=absolute" top-4 left-4 pointer-events-auto></div>';';";";
+                      >
+                        Close</div>
+                      </button></div>
+                    </div></div>";
+                  </div></div>
+                </div>";
+              )}";
+              {/* Experience Selector */}</div>'
+              <div className=absolute" top-4 left-4 pointer-events-auto></div>'
                 </div><div className="""bg-black/50 backdrop-blur-md: "rounded-lg p-4 border border-white/20></div>";
-                  <h4 className=text-white font-semibold mb-2>VR Experiences</h4></div>;";
-                  <div className=space-y-2>;";";
-                    {vrExperiences.map((experience) => (;";
-                        onClick={() => changeExperience(experience)}`;';";
-                        className={block w-full text-left px-3 py-4 rounded text-sm:transition-all duration-300 ${;';";";
-                          currentExperience?.id === experience.id;';";
-                            ? bg-purple-600 text-white;';";
-                              'text-gray'-300 hover text-white hover bg-gray-700';';";";
+                  <h4 className=text-white font-semibold mb-2>VR Experiences</h4></div>
+                  <div className=space-y-2>
+                    {vrExperiences.map((experience) => (
+                        onClick={() => changeExperience(experience)}`";
+                        className={block w-full text-left px-3 py-4 rounded text-sm:transition-all duration-300 ${
+                          currentExperience?.id === experience.id";
+                            ? bg-purple-600 text-white";
+                              'text-gray'-300 hover text-white hover bg-gray-700'
                         }"};
-                      >;";
-                        {experience.name}</div>;";";
-                      </button>;";
-                    ))}</div>;';";
-                  </div></div>;';";";
-                </div></div>;';";
-              </div>;';';
-              {/* Exit VR Button */}</div>';';
+                      >
+                        {experience.name}</div>
+                      </button>
+                    ))}</div>";
+                  </div></div>
+                </div></div>";
+              </div>
+              {/* Exit VR Button */}</div>'
               <div className="""absolute top-4 right-4 pointer-events-auto>;
                 >;
                   Exit VR</div>;
                 </button></div>;
-              </div></div>;";
-            </div></div>;";";
-          </div>;";
-        )}</div>;';";
-      </main>;';";";
-      {/* Footer */},;';";
-{!isVRMode && (</div>;';';";
-        <footer className=bg-black/40 backdrop-blur-md border-t border-white/10></div>';';";";
+              </div></div>
+            </div></div>
+          </div>
+        )}</div>";
+      </main>
+      {/* Footer */},";
+{!isVRMode && (</div>";
+        <footer className=bg-black/40 backdrop-blur-md border-t border-white/10></div>'
           <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-8></div>";
             </div><div className=text-center text-gray-400 ></div>;
-              <p>© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p></div>;";
-            </div></div>;";";
-          </div></div>;";
-        </footer>;';";
-      )},;';";";
-    {/* Mobile Navigation */}</div>;';";
-        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>;';';
-          </div><div className=flex justify-around items-center py-2></div>';';
-            <button className="""flex  flex-col items-center p-2 text-gray-400 hover: "text-white></div>";';";
-              <Home className=w-5 h-5  > </Home className=w-5 h-5  ><span className=text-xs>Home</span></div>';';";";
-            </button>"</div>;';';";
-            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>';';";";
-              <Search className=w-5 h-5 > </Search className="""w-5 h-5 "><span className=text-xs>Search</span></div>;';";
-            </button></div>;';';
-            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>';';";
-              <User className=""" w-5 h-5 ></div>';';";";
+              <p>© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p></div>
+            </div></div>
+          </div></div>
+        </footer>";
+      )},
+    {/* Mobile Navigation */}</div>";
+        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>
+          </div><div className=flex justify-around items-center py-2></div>'
+            <button className="""flex  flex-col items-center p-2 text-gray-400 hover: "text-white></div>"";
+              <Home className=w-5 h-5  > </Home className=w-5 h-5  ><span className=text-xs>Home</span></div>'
+            </button>"</div>";
+            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'
+              <Search className=w-5 h-5 > </Search className="""w-5 h-5 "><span className=text-xs>Search</span></div>";
+            </button></div>
+            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'";
+              <User className=""" w-5 h-5 ></div>'
               </User className= w-5 h-5 ><span" className=text-xs>Profile</span></div>;
             </button></div>;
           </div></div>;
         </div></div>;
       </div>;
   </div>;
-  </div>;";
-</div>;";";
-  </div>;";
-</div>;';";
-  </div>;';';";";
-};';';';";";
-export default AIPoweredVirtualRealityMarketplace;))))))))))))))))))))))))))))))))))))))))))))'</div>';';";";
+  </div>
+</div>
+  </div>
+</div>";
+  </div>
+};'
+export default AIPoweredVirtualRealityMarketplace;))))))))))))))))))))))))))))))))))))))))))))'</div>'

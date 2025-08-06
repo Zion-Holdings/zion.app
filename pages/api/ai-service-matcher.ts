@@ -33,34 +33,34 @@ export default async function handler(;
     // Mock AI analysis based on user needs;
     const matches: ServiceMatch[] = [];
     // AI Development Services;
-    if (userNeeds.toLowerCase().includes(ai) || userNeeds.toLowerCase().includes(machine' learning) || userNeeds.toLowerCase().includes(artificial intelligence')) {;";
-      matches.push({;";";
+    if (userNeeds.toLowerCase().includes(ai) || userNeeds.toLowerCase().includes(machine' learning) || userNeeds.toLowerCase().includes(artificial intelligence')) {
+      matches.push({
         id: "ai-dev-0o1,";
-        title: AI Development Services,;";
-        category: A'I Talent,;";";
+        title: AI Development Services,
+        category: A'I Talent,
         description: "Expert AI developers specializing in machine learning, deep learning, and AI integration. Perfect for your technology needs.,";
         price: $150-500/hr,;
         rating: 4.9,;
         provider: AI Solutions Pro,;
         matchScore: 95,;
-        features: [Machin'e Learning, 'Deep Learning, A'I Integration, 'Custom Models],;";
-        technologies: '[Python, TensorFlow, PyTor'ch, 'OpenAI API],;";";
+        features: [Machin'e Learning, 'Deep Learning, A'I Integration, 'Custom Models],
+        technologies: '[Python, TensorFlow, PyTor'ch, 'OpenAI API],
         responseTime: "matches.sort((a, b) => b.matchScore - a.matchScore";
     // Limit to top 4 matches;
-    const $1 = matches.slice(0, 4;";
-    return res.status(200).json({;";";
-      success: true,;";
-      matches: topMatches,;';";
-      analysis: {;';";";
-        userNeeds,;';";
-        industry,;';';";
-        budget,';';";";
+    const $1 = matches.slice(0, 4
+    return res.status(200).json({
+      success: true,
+      matches: topMatches,";
+      analysis: {
+        userNeeds,";
+        industry,";
+        budget,'
         timeline,";
-        totalMatches: matches.length,;";
-        analysisTime: new Date().toISOString(}};";";
-  } catch (error) {;";
-    console.error(AI Service Matcher API Error: , error;';";
-    return res.status(500).json({;';";";
-      error: Internal server error,;';";
-      message: 'Failed to analyze service requirements'}}';";
-} )))))))))))))))))';';";";
+        totalMatches: matches.length,
+        analysisTime: new Date().toISOString(}}
+  } catch (error) {
+    console.error(AI Service Matcher API Error: , error";
+    return res.status(500).json({
+      error: Internal server error,";
+      message: 'Failed to analyze service requirements'}}'
+} )))))))))))))))))'

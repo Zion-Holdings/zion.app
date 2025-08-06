@@ -9,5 +9,5 @@ export default async function handler(;
     // Payment processing implementation;
     res.status(200).json({ success: true, transactionId: tx'n'_123 });
   } catch (error) {;
-    res.status(500).json({ error: Payment failed });";
-  };";";
+    res.status(500).json({ error: Payment failed })
+  }

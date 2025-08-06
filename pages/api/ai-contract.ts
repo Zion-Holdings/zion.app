@@ -1,15 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface Contract {
+interface ContractTemplate {
   id: string;
   name: string;
-  type: 'service' | 'product' | 'partnership' | 'employment';
-  status: 'draft' | 'pending' | 'active' | 'expired' | 'terminated';
-  value: number;
-  startDate: string;
-  endDate: string;
-  parties: string[];
-  terms: string[];
+  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';
+  category: string;
+  description: string;
+  clauses: string[];
+  variables: string[];
+  lastUpdated: string;
+}
+
+interface ContractAnalysis {
+  id: string;
+  contractId: string;
+  riskScore: number;
+  complianceScore: number;
+  completenessScore: number;
+  recommendations: string[];
+  issues: string[];
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -18,68 +27,58 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { contractType, status } = req.body;
+    const { contractType, action } = req.body;
 
     const contractData = {
-      contracts: [
+      templates: [
         {
-          id: 'contract-1',
-          name: 'Software Development Agreement',
+          id: 'template-1',
+          name: 'Service Agreement',
           type: 'service',
-          status: 'active',
-          value: 50000,
-          startDate: '2024-01-01',
-          endDate: '2024-12-31',
-          parties: ['Zion Tech', 'Client Corp'],
-          terms: [
-            'Monthly deliverables',
-            'Quality assurance requirements',
-            'Intellectual property rights'
-          ]
+          category: 'Business Services',
+          description: 'Standard service agreement template for business services',
+          clauses: [
+            'Scope of Services',
+            'Payment Terms',
+            'Termination Clause',
+            'Confidentiality',
+            'Liability Limitations'
+          ],
+          variables: ['ServiceProvider', 'Client', 'ServiceDescription', 'PaymentAmount'],
+          lastUpdated: '2024-01-15'
         },
         {
-          id: 'contract-2',
-          name: 'Cloud Infrastructure Partnership',
-          type: 'partnership',
-          status: 'pending',
-          value: 25000,
-          startDate: '2024-03-01',
-          endDate: '2025-02-28',
-          parties: ['Zion Tech', 'Cloud Provider'],
-          terms: [
-            'Service level agreements',
-            'Data security requirements',
-            'Cost sharing arrangements'
-          ]
-        },
-        {
-          id: 'contract-3',
-          name: 'Employment Agreement',
+          id: 'template-2',
+          name: 'Employment Contract',
           type: 'employment',
-          status: 'active',
-          value: 80000,
-          startDate: '2024-01-15',
-          endDate: '2024-12-31',
-          parties: ['Zion Tech', 'Senior Developer'],
-          terms: [
-            'Full-time employment',
-            'Benefits package',
-            'Non-compete clause'
-          ]
+          category: 'Human Resources',
+          description: 'Standard employment contract template',
+          clauses: [
+            'Position and Duties',
+            'Compensation',
+            'Benefits',
+            'Termination',
+            'Non-Compete'
+          ],
+          variables: ['EmployeeName', 'Position', 'Salary', 'StartDate'],
+          lastUpdated: '2024-02-01'
         }
       ],
-      summary: {
-        totalContracts: 3,
-        activeContracts: 2,
-        totalValue: 155000,
-        averageValue: 51667,
-        expiringSoon: 1
+      analysis: {
+        totalTemplates: 15,
+        activeTemplates: 12,
+        averageRiskScore: 23,
+        averageComplianceScore: 87,
+        recentUpdates: 3
       }
     };
 
-    res.status(200).json(contractData);
+    return res.status(200).json({
+      success: true,
+      data: contractData
+    });
   } catch (error) {
     console.error('Error processing contract request:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }

@@ -33,7 +33,7 @@ function fixReactHookDependencies(filePath) {
     content = content.replace(mockArrayRegex, (match) => {
       const $1 = match.match(/const (mock[A-Z][a-zA-Z]*) =/);
       if (varName) {
-        return "const ${varName[1]} = useMemo(() => [${match.match(/= \[([\s\S]*?)\];/)?.[1] || ''}], []);";
+        return "const ${varName[1]} = useMemo(() => [${match.match(/= \[([\s\S]*?)\];/)?.[1] || ''}], [])
       }
       return match;
     });
@@ -43,7 +43,7 @@ function fixReactHookDependencies(filePath) {
     content = content.replace(mockObjectRegex, (match) => {
       const $1 = match.match(/const (mock[A-Z][a-zA-Z]*) =/);
       if (varName) {
-        return "const ${varName[1]} = useMemo(() => (${match.match(/= (\{[\s\S]*?\});/)?.[1] || '{}'}), []);";
+        return "const ${varName[1]} = useMemo(() => (${match.match(/= (\{[\s\S]*?\});/)?.[1] || '{}'}), [])
       }
       return match;
     });

@@ -843,7 +843,7 @@ export const Component: React.FC<ComponentProps> = ({ children, ...props }) => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   getComponentTestTemplate() {
@@ -856,7 +856,7 @@ describe('Component, () => {
     render(<Component>Test content</Component>);
     expect(screen.getByText(Test content)).toBeInTheDocument();
   });
-});";
+})
   }
 
   getComponentStylesTemplate() {
@@ -864,12 +864,12 @@ describe('Component, () => {
 ;}
 export const result = styled.div\"
   // Add your styles here
-\";";
+\"
   }
 
   getComponentIndexTemplate() {
     return "export { default } from './component;}
-export * from './component.types';";
+export * from './component.types'
   }
 
   getPageTemplate() {
@@ -885,7 +885,7 @@ const Page: NextPage<PageProps> = ({ ...props }) => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   getPageTestTemplate() {
@@ -898,7 +898,7 @@ describe('Page, () => {
     render(<Page />);
     expect(screen.getByText(')Pag'e Content')).toBeInTheDocument();
   });
-});";
+})
   }
 
   getPageMetaTemplate() {
@@ -907,13 +907,13 @@ describe('Page, () => {
   description: Page description,
   keywords: ['keywor'd1', 'keyword'2'],
   ogImage: /og-image.jpg'
-};";
+}
   }
 
   getPageIndexTemplate() {
     return "export { default } from './page;}
 export * from './page.types';}
-export * from ./page.meta';";
+export * from ./page.meta'
   }
 
   getApiEndpointTemplate() {
@@ -950,7 +950,7 @@ describe('API Endpoint, () => {
 
     expect(res._getStatusCode()).toBe(200);
   });
-});";
+})
   }
 
   getApiValidationTemplate() {
@@ -962,7 +962,7 @@ export const result = (req) => {
   });
   
   return schema.validate(req.body);
-};";
+}
   }
 
   getApiDocumentationTemplate() {
@@ -984,7 +984,7 @@ export const result = {
       schema: {}
     }
   }
-};";
+}
   }
 
   getUnitTestTemplate() {
@@ -996,7 +996,7 @@ describe(Component Unit Tests, () => {
     render(<Component />);
     expect(screen.getByText(')Test)).toBeInTheDocument();
   });
-});";
+})
   }
 
   getIntegrationTestTemplate() {
@@ -1008,7 +1008,7 @@ describe('Component Integration Tests, () => {
     render(<Component />);
     // Add integration test logic
   });
-});";
+})
   }
 
   getE2ETestTemplate() {
@@ -1017,7 +1017,7 @@ describe('Component Integration Tests, () => {
     cy.visit('/);
     cy.get([data-testid="component"]).should(')be'.visible');
   });
-});";
+})
   }
 
   getTestUtilsTemplate() {
@@ -1029,7 +1029,7 @@ export const result = (component, options = {}) => {
 ;}
 export const result = {
   // Add mock data here
-};";
+}
   }
 
   getGenericTemplate(factoryType) {
@@ -1038,7 +1038,7 @@ export const result = {
   name: '${factoryType},
   description: Generate'd template for ${factoryType}',
   version: '1.0.0
-};";
+}
   }
 
   getGenericTestTemplate(factoryType) {
@@ -1047,7 +1047,7 @@ describe(${factoryType}, () => {
   it(should work correctly, () => {
     expect(true).toBe(true);
   });
-});";
+})
   }
 
   getGenericConfigTemplate(factoryType) {
@@ -1124,7 +1124,7 @@ describe(${template.name}'), () => {
     await factory.improve();
     expect(factory.improvementCount).toBeGreaterThan(0);
   });
-});";
+})
   }
 
   camelCase(str) {

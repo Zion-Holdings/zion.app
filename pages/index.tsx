@@ -1,10 +1,10 @@
-import type { NextPage } from ";next;';";
-import ModernLayout from ';../components/layout/ModernLayout';";";
-import Head from next/head';';";";";
-import { useState, useEffect }  from ";react;};';
-import Link from next/link;';';";
-import FuturisticHero from ../components/ui/FuturisticHero';';";";
-import FuturisticCard from ../components/ui/FuturisticCard;';';';";
+import type { NextPage } from ";next";
+import ModernLayout from ';../components/layout/ModernLayout'
+import Head from 'next/head';
+import { useState, useEffect }  from ";react;}
+import Link from next/link";
+import FuturisticHero from ../components/ui/FuturisticHero'
+import FuturisticCard from ../components/ui/FuturisticCard'
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   const [isVisible, setIsVisible] = useState(false;
   useEffect(() => {;
@@ -12,179 +12,179 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   } [];
   const $1 = [;
     {;
-      title: IT Services,;";
-      description: Professional IT consulting and development services',;";";
+      title: IT Services,
+      description: Professional IT consulting and development services',
       icon: "💻,";
       link: /services,;
       color: blue as const,;
       category: Service's;
-    },;";
-{;";";
+    },
+{
       title: "AI Talents,";
       description: Expert AI developers and consultants,;
-      icon: 🤖,;";
-      link: /talents',;";";
+      icon: 🤖,
+      link: /talents',
       color: "purple as const,";
       category: Talent;
     },;
-    {;";
-      title: Equipmen't,;";";
+    {
+      title: Equipmen't,
       description: "High-performance computing hardware,";
       icon: ⚙️,;
-      link: /equipment,;";
-      color: green' as const,;";";
+      link: /equipment,
+      color: green' as const,
       category: "Hardware";
     },;
 {;
-      title: Innovation,;";
-      description: Cutting-edge' technology solutions,;";";
+      title: Innovation,
+      description: Cutting-edge' technology solutions,
       icon: "🚀,";
       link: /products,;
       color: pink as const,;
       category: Products;
     }];
-  const $1 = [;";
-    {;";";
+  const $1 = [
+    {
       title: "AI Development,";
-      description: Custom AI solutions and machine learning models for your business needs,;";
-      price: $150-500/hr,;";";
+      description: Custom AI solutions and machine learning models for your business needs,
+      price: $150-500/hr,
       rating: "4.9,";
       link: /services/ai-model-development,;
       color: blue as const,;
       featured: true;
     },;
 {;
-      title: Cloud Migration,;";
-      description: Seamless' cloud infrastructure setup and migration services,;";";
+      title: Cloud Migration,
+      description: Seamless' cloud infrastructure setup and migration services,
       price: "$2000-15000,";
       rating: 4.8,;
       link: /services/cloud-migration-services,;
       color: purple as const;
-    },;";
-    {;";";
-      title: "Security Auditing,";";";
+    },
+    {
+      title: "Security Auditing,"
       description: "Comprehensive security assessments and penetration testing,";
       price: $1000-8000,;
       rating: 4.9,;
       link: /services/security-auditing,;
       color: 'green' as const;
-    },;";
-{;";";
+    },
+{
       title: "Performance Optimization,";
       description: System and application optimization for maximum efficiency,;
       price: $800-3000,;
-      rating: 4.7,;";
-      link: /services/performance-optimization',;";";
+      rating: 4.7,
+      link: /services/performance-optimization',
       color: "pink as const";
     }];
   const $1 = [;
     {;
-      title: Dr. Sarah Chen,;";
-      description: Machin'e Learning Expert with 8+ years of experience in AI research,;";";
+      title: Dr. Sarah Chen,
+      description: Machin'e Learning Expert with 8+ years of experience in AI research,
       price: "$200/hr,";
       rating: 4.9,;
       link: /talents,;
       color: blue as const,;
       featured: true;
     },;
-{;";
-      title: Ale'x Rodriguez,;";";
+{
+      title: Ale'x Rodriguez,
       description: "Deep Learning Specialist specializing in neural networks and computer vision,";
       price: $180/hr,;
-      rating: 4.8,;";
-      link: /talents',;";";
+      rating: 4.8,
+      link: /talents',
       color: "purple as const";
     },;
     {;
-      title: Dr. Michael Kim,;";
-      description: AI Research Scientist with 10+ years in quantum computing and AI,;";";
-      price: "$250/hr,";";";
+      title: Dr. Michael Kim,
+      description: AI Research Scientist with 10+ years in quantum computing and AI,
+      price: "$250/hr,"
       rating: "4.9,";
       link: /talents,;
       color: green as const;
     },;
-{;";
-      title: Emma' Thompson,;";";
+{
+      title: Emma' Thompson,
       description: "Computer Vision Engineer with expertise in autonomous systems,";
       price: $160/hr,;
       rating: 4.7,;
       link: /talents,;
       color: pin'k as const;
     }];
-  const $1 = [;";
-    {;";";
-      title: "GPU Clusters,";";
-      description: High-performance computing clusters for AI and machine learning workloads,;";";
-      price: "$5000-50000,";";";
+  const $1 = [
+    {
+      title: "GPU Clusters,"
+      description: High-performance computing clusters for AI and machine learning workloads,
+      price: "$5000-50000,"
       rating: "4.9,";
       link: /equipment,;
       color: blue as const,;
       featured: true;
     },;
 {;
-      title: Quantum Computers,;";
-      description: 'Next-generation quantum processing units for advanced computations',;";";
+      title: Quantum Computers,
+      description: 'Next-generation quantum processing units for advanced computations',
       price: "$100000+,";
       rating: 4.8,;
       link: /equipment,;
       color: purple as const;
     },;
-    {;";
-      title: Edge Computing Devices',;";";
+    {
+      title: Edge Computing Devices',
       description: "IoT and edge processing solutions for real-time applications,";
       price: $1000-10000,;
       rating: 4.7,;
       link: /equipment,;
       color: gre'en as const;
-    },;";
-{;";";
+    },
+{
       title: "Data Storage Systems,";
       description: Enterprise-grade storage solutions with high availability,;
       price: $2000-25000,;
-      rating: 4.8,;";
-      link: /equipment,;";";
-      color: "pink as const";";";
-    }];";
-  return (;';";
-    <div></div>;';";";
-      </div><div></div>;';";
-      <Head></div>;';';";
-        <title>Zion - The First Free AI-Powered Marketplace</title></div>';';";";
-        <meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. > </meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. ><meta name=viewport content=width=device-width, initial-scale=1 > </meta name="viewport content=width=device-width, initial-scale=1 ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ></Head>;';';
-</div>';';
-      <main className=""" relative>;';';";
-        {/* Hero Section */}</div>';';";";
-        <FuturisticHero >{/* Marketplace Categories */}"</div>;';';";
-        </FuturisticHero ><section className= relative py-40 lg py-32></div>';';";";
-          <div className=container-responsive>" </div>';';
-            </div><div className="""text-center mb-16></div>;';';";
-              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>';';";";
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-blue  to-neon-purple>;';";
-                  Marketplace Categories</div>;';';";
-                </span></div>';';";";
-              </h2>"</div>';';";";
+      rating: 4.8,
+      link: /equipment,
+      color: "pink as const"
+    }]
+  return (";
+    <div>
+      </div><div></div>";
+      <Head></div>";
+        <title>Zion - The First Free AI-Powered Marketplace</title></div>'
+        <meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. > </meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. ><meta name=viewport content=width=device-width, initial-scale=1 > </meta name="viewport content=width=device-width, initial-scale=1 ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ></Head>
+</div>'
+      <main className=""" relative>";
+        {/* Hero Section */}</div>'
+        <FuturisticHero >{/* Marketplace Categories */}"</div>";
+        </FuturisticHero ><section className= relative py-40 lg py-32></div>'
+          <div className=container-responsive>" </div>'
+            </div><div className="""text-center mb-16></div>";
+              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>'
+                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-blue  to-neon-purple>";
+                  Marketplace Categories</div>";
+                </span></div>'
+              </h2>"</div>'
               <p className=text-responsive-lg: "text-high-contrast-secondary max-w-2xl:mx-auto>";
                 Explore our comprehensive marketplace featuring cutting-edge technology solutions</div>;
               </p></div>;
             </div>;
 </div>;
             <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >;
-              {marketplaceCategories.map((category, index) => (;";
-                />;";";
-              ))}</div>;";
-            </div></div>;';";
-          </div></div>;';";";
-        </section>;';";
-        {/* Featured Services */}</div>;';';";
-        <section className= relative py-40 lg py-32></div>';';";";
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div></div>';';";";
-          <div className="""container-responsive relative z-10> </div>;';";
-            </div><div className=text-center mb-16></div>;';';";
-              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>';';";";
-                <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-purple  to-neon-pink">;';";";
-                  Featured IT Services</div>;';";
-                </span></div>;';';";
-              </h2></div>';';";";
+              {marketplaceCategories.map((category, index) => (
+                />
+              ))}</div>
+            </div></div>";
+          </div></div>
+        </section>";
+        {/* Featured Services */}</div>";
+        <section className= relative py-40 lg py-32></div>'
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div></div>'
+          <div className="""container-responsive relative z-10> </div>";
+            </div><div className=text-center mb-16></div>";
+              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>'
+                <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-purple  to-neon-pink">
+                  Featured IT Services</div>";
+                </span></div>";
+              </h2></div>'
               <p className="""text-responsive-lg: "text-high-contrast-secondary max-w-2xl:mx-auto>";
                 Professional IT services delivered by certified experts</div>;
               </p></div>;
@@ -193,60 +193,60 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >;
               {featuredServices.map((service, index) => (;
                 />;
-              ))}</div>;";
-            </div></div>;";";
-          </div></div>;";
-        </section>;';";
-        {/* Top AI Talents */}</div>;';";";
-        <section className= relative py-40 lg py-32></div>;';";
-          <div className= container-responsive></div>;';';";
-            </div><div className= text-center mb-16></div>';';";";
-              <h2 className=text-responsive-3xl:lg:text-responsive-4xl:font-bold  text-high-contrast mb-6"></div>';';";
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>;';";";
-                  Top AI Talents</div>;';";
-                </span></div>;';';";
-              </h2></div>';';";";
+              ))}</div>
+            </div></div>
+          </div></div>
+        </section>";
+        {/* Top AI Talents */}</div>
+        <section className= relative py-40 lg py-32></div>";
+          <div className= container-responsive></div>";
+            </div><div className= text-center mb-16></div>'
+              <h2 className=text-responsive-3xl:lg:text-responsive-4xl:font-bold  text-high-contrast mb-6"></div>'";
+                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>
+                  Top AI Talents</div>";
+                </span></div>";
+              </h2></div>'
               <p className=text-responsive-lg: "text-high-contrast-secondary max-w-2xl mx-auto>";
                 Connect with world-class AI experts and developers</div>;
               </p></div>;
             </div></div>;
             <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>;
               {topTalents.map((talent, index) => (;
-                />;";
-              ))}</div>;";";
-            </div></div>;";
-          </div></div>;';";
-        </section>;';";";
-        {/* Premium Equipment */}</div>;';";
-        <section className=relative py-40 lg py-32></div>;';';";
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div></div>';';";";
-          <div className=container-responsive relative z-10"></div>';';
-            </div><div className="""text-center  mb-16></div>;';';";
-              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6 ></div>';';";";
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>;';";
-                  Premium Equipment</div>;';';";
-                </span></div>';';";";
-              </h2>"</div>';';";";
+                />
+              ))}</div>
+            </div></div>
+          </div></div>";
+        </section>
+        {/* Premium Equipment */}</div>";
+        <section className=relative py-40 lg py-32></div>";
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div></div>'
+          <div className=container-responsive relative z-10"></div>'
+            </div><div className="""text-center  mb-16></div>";
+              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6 ></div>'
+                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>";
+                  Premium Equipment</div>";
+                </span></div>'
+              </h2>"</div>'
               <p className=text-responsive-lg: "text-high-contrast-secondary max-w-2xl  mx-auto>";
                 High-performance computing hardware and advanced technology solutions</div>;
               </p></div>;
             </div></div>;
             <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>;
               {premiumEquipment.map((equipment, index) => (;
-                />;";
-              ))}</div>;";";
-            </div></div>;";
-          </div></div>;';";
-        </section>;';";";
-        {/* CTA Section */}</div>;';";
-        <section className=relative py-40 lg py-32></div>;';';
-          <div className=container-responsive> </div>';';
-            </div><div className="""glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center></div>';';
-              <h2 className=text-responsive-3xl: "lg:text-responsive-4xl:font-bold text-high-contrast mb-6></div>";";
-                <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >;';";";
-                  Ready to Start Trading?</div>;';";
-                </span></div>;';';";
-              </h2></div>';';";";
+                />
+              ))}</div>
+            </div></div>
+          </div></div>";
+        </section>
+        {/* CTA Section */}</div>";
+        <section className=relative py-40 lg py-32></div>
+          <div className=container-responsive> </div>'
+            </div><div className="""glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center></div>'
+              <h2 className=text-responsive-3xl: "lg:text-responsive-4xl:font-bold text-high-contrast mb-6></div>"
+                <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >
+                  Ready to Start Trading?</div>";
+                </span></div>";
+              </h2></div>'
               <p className="""text-responsive-lg: "text-high-contrast-secondary mb-8 max-w-2xl mx-auto>";
                 Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.</div>;
               </p></div>;
@@ -267,10 +267,10 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </main></div>;
     </div>;
   </div>;
-  </div>;";
-</div>;";";
-  </div>;";
-</div>;';";
-  </div>;';';";";
-};';";}';';";
-export default Home;))))'</div>';';";";
+  </div>
+</div>
+  </div>
+</div>";
+  </div>
+}";}'";
+export default Home;))))'</div>'

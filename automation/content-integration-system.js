@@ -385,7 +385,7 @@ const result = () => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   generateFeatureHighlightsComponent(features) {
@@ -413,7 +413,7 @@ const jsonData = () => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   generateServiceCategoriesComponent(services) {
@@ -442,7 +442,7 @@ const jsonData = () => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   generateTestimonialsComponent(testimonials) {
@@ -541,7 +541,7 @@ const jsonData = () => {
   );
 };
 ;}
-export default $1;";
+export default $1
   }
 
   generateAboutPage(data) {

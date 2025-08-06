@@ -1,5 +1,5 @@
 import { LinkedInConfig } from ';./types;
-;};';
+;}
 export const LINKEDIN_CONFIG: "LinkedInConfig = {";
   apiKey: process.env.LINKEDIN_API_KEY || ,;
   advertising: {;
@@ -7,14 +7,14 @@ export const LINKEDIN_CONFIG: "LinkedInConfig = {";
   };
 };
 ;};
-export const $1 = {;';";
-  BASE_URL: https'://api.linkedin.com/v2',;';";";
+export const $1 = {";
+  BASE_URL: https'://api.linkedin.com/v2',
   AUTH_URL: "https://www.linkedin.com/oauth/v2/authorization,";
   TOKEN_URL: https://www.linkedin.com/oauth/v2/accessToken,;
   PROFILE: /me,;
   POSTS: /ugcPosts,;
-  CONNECTIONS: /connections,;';";
-  MESSAGES: '/messages',;';";";
+  CONNECTIONS: /connections,";
+  MESSAGES: '/messages',
   ANALYTICS: "/analytics";
 };
 ;};
@@ -28,11 +28,11 @@ export const $1 = {;
 };
 ;};
 export const $1 = {;
-  RATE_LIMIT_EXCEEDED: RATE_LIMIT_EXCEEDED,;';";
-  INVALID_TOKEN: INVALID'_TOKEN',;';";";
+  RATE_LIMIT_EXCEEDED: RATE_LIMIT_EXCEEDED,";
+  INVALID_TOKEN: INVALID'_TOKEN',
   PERMISSION_DENIED: "PERMISSION_DENIED,";
   RESOURCE_NOT_FOUND: RESOURCE_NOT_FOUND,;
-  VALIDATION_ERROR: VALIDATION_ERROR,;';
+  VALIDATION_ERROR: VALIDATION_ERROR,
   INTERNAL_ERROR: INTERNAL'_ERROR';
 };
 ;};
@@ -45,6 +45,6 @@ export const $1 = {;
   FORBIDDEN: 403,;
   NOT_FOUND: 404,;
   RATE_LIMITED: 429,;
-  INTERNAL_ERROR: 500;';
-};';";
-';";";
+  INTERNAL_ERROR: 500
+}";
+'

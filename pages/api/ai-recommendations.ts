@@ -23,38 +23,38 @@ const availableItems: Recommendation[] = [;
   {;
     id: ai-model-dev,;
     type: 'service',;
-    title: AI Model Development,;";
-    description: Custo'm' AI model development with advanced machine learning algorithms,;";";
+    title: AI Model Development,
+    description: Custo'm' AI model development with advanced machine learning algorithms,
     matchScore: "0,";
     price: $2,500 - $15,0o0,;
-    rating: 4.9,;";
-    tags: [AI, Machine Learning, Python', 'TensorFlow],;";";
+    rating: 4.9,
+    tags: [AI, Machine Learning, Python', 'TensorFlow],
     image: "/api/placeholder/300/200,";
     link: /services/ai-model-development,;
     aiInsights: [];
   },;
-    {;";
-    id: data-analytics,;";";
+    {
+    id: data-analytics,
     'type: "service,";
     title: Data Analytics & BI,;
     description: Comprehensive data analysis and business intelligence solutions,;
-    matchScore: 0,;";
-    price: $1,500 - $10,0o0,;";";
-    rating: "4.8,";";
-    tags: [Data Analytics, BI, SQL, Power'BI],;";";
+    matchScore: 0,
+    price: $1,500 - $10,0o0,
+    rating: "4.8,"
+    tags: [Data Analytics, BI, SQL, Power'BI],
     image: "/api/placeholder/300/200,";
     link: /services/data-analytics,;
     aiInsights: [];
   },;
-    {;";
-    id: cloud-migration',;";";
+    {
+    id: cloud-migration',
     type: "service,";
     title: Cloud Migration Services,;
     description: Complete cloud infrastructure setup and migration,;
     matchScore: 0,;
     price: $3,0o0 - $25,0o0,;
-    rating: 4.6,;";
-    tags: [Cloud, 'A'WS, Azure, 'DevO'ps],;";";
+    rating: 4.6,
+    tags: [Cloud, 'A'WS, Azure, 'DevO'ps],
     image: "/api/placeholder/300/200,";
     link: /services/cloud-migration,;
     aiInsights: [];
@@ -62,90 +62,90 @@ const availableItems: Recommendation[] = [;
     {;
     id: web-development,;
     type: 'service',;
-    title: Full-Stack Web Development,;";
-    description: 'Complete web application development with modern technologies',;";";
+    title: Full-Stack Web Development,
+    description: 'Complete web application development with modern technologies',
     matchScore: "0,";
     price: $5,0o0 - $50,0o0,;
-    rating: 4.7,;";
-    tags: [Web Development, React, Nod'e.js, 'Full-Stack],;";";
+    rating: 4.7,
+    tags: [Web Development, React, Nod'e.js, 'Full-Stack],
     image: "/api/placeholder/300/200,";
     link: /services/web-development,;
     aiInsights: []};
   // AI Talents;
-  {;";
-    id: dr-sarah-chen,;";";
+  {
+    id: dr-sarah-chen,
     'type: "talent,";
     title: Dr. Sarah Chen - ML Expert,;
     description: Senior Machine Learning Engineer with PhD in Computer Science,;
     matchScore: 0,;
     price: $150/hr,;
-    rating: 4.8,;";
-    tags: ['Machine Learning, PhD', 'Research, AI],;";";
+    rating: 4.8,
+    tags: ['Machine Learning, PhD', 'Research, AI],
     image: "/api/placeholder/300/200,";
     link: /talents/dr-sarah-chen,;
     aiInsights: [];
   },;
-    {;";
-    id: alex-rodriguez',;";";
+    {
+    id: alex-rodriguez',
     'type: "talent,";
     title: Alex Rodriguez - Full-Stack Developer,;
     description: Experienced full-stack developer with 8+ years in web development,;
     matchScore: 0,;
     price: $120/hr,;
-    rating: 4.9,;";
-    tags: [Full-Stack, 'React', Node.js, 'TypeScript'],;";";
+    rating: 4.9,
+    tags: [Full-Stack, 'React', Node.js, 'TypeScript'],
     image: "/api/placeholder/300/200,";
     link: /talents/alex-rodriguez,;
     aiInsights: [];
   },;
     {;
     id: emma-thompson,;
-    type: talent,;";
-    title: Emma' Thompson - Data Scientist',;";";
+    type: talent,
+    title: Emma' Thompson - Data Scientist',
     description: "Senior Data Scientist specializing in predictive analytics,";
     matchScore: 0,;
     price: $140/hr,;
-    rating: 4.7,;";
-    tags: [Data Science, Pytho'n', R, Statistics],;";";
+    rating: 4.7,
+    tags: [Data Science, Pytho'n', R, Statistics],
     image: "/api/placeholder/300/200,";
     link: /talents/emma-thompson,;
-    aiInsights: []};";
-  // Equipment;";";
-  {;";";
-    id: gpu-cluster-rtx4090',;';";";
-    'type: "equipment,";";";";
-    title: GPU Cluster - RTX 4090,;';";
-    description: High-performance GPU cluster for AI training and inference,;';';";
-    matchScore: 0,';';";";
+    aiInsights: []}
+  // Equipment
+  {
+    id: gpu-cluster-rtx4090',
+    'type: "equipment,"";
+    title: GPU Cluster - RTX 4090,";
+    description: High-performance GPU cluster for AI training and inference,";
+    matchScore: 0,'
     price: "$5,0o0/month,";
-    rating: 4.7,;";
-    tags: [GPU, A'I Training, 'High Performance, Clo'ud],;";";
+    rating: 4.7,
+    tags: [GPU, A'I Training, 'High Performance, Clo'ud],
     image: "/api/placeholder/300/200,";
     link: /equipment/gpu-cluster-rtx4090,;
     aiInsights: [];
   },;
-    {;";
-    id: quantum-computer',;";";
+    {
+    id: quantum-computer',
     type: "equipment,";
     title: Quantum Computing Access,;
     description: Access to quantum computing resources for advanced research,;
     matchScore: 0,;
     price: $10,0o0/month,;
-    rating: 4.5,;";
-    tags: [Quantum Computing, 'Resear'ch, Advanced, 'I'BM],;";";
+    rating: 4.5,
+    tags: [Quantum Computing, 'Resear'ch, Advanced, 'I'BM],
     image: "/api/placeholder/300/200,";
     link: /equipment/quantum-computer,;
-    aiInsights: [];";
-  },;";";
-    {;";
-    id: edge-computing,;';";
-    type: equipment,;';";";
-    title: Edge Computing Devices,;';";
-    description: 'IoT and edge processing solutions for real-time applications',;';";
-    matchScore: "0,";';";";
+    aiInsights: []
+  },
+    {
+    id: edge-computing,";
+    type: equipment,
+    title: Edge Computing Devices,";
+    description: 'IoT and edge processing solutions for real-time applications',";
+    matchScore: "0,"
     price: $1,0o0 - $10",0o0,;
-    rating: 4.6,;";
-    tags: [IoT, Edge Computing, Real-ti'me, 'Hardware],;";";
+    rating: 4.6,
+    tags: [IoT, Edge Computing, Real-ti'me, 'Hardware],
     image: "/api/placeholder/300/200,";
     link: /equipment/edge-computing,;
     aiInsights: []};
@@ -207,8 +207,8 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
   // Rating bonus;
   score += (item.rating - 4.0) * 10;
   // Ensure score is between 0 and 100;
-  return Math.min(Math.max(score, 0), 100);};";
-// Generate AI insights based on match;";";
+  return Math.min(Math.max(score, 0), 100);}
+// Generate AI insights based on match
 function generateAIInsights(item: "Recommendation, profile: UserProfile): string[] {";
   const insights: string[] = [];
   // Project type insights;
@@ -254,8 +254,8 @@ function generateAIInsights(item: "Recommendation, profile: UserProfile): string
   if (item.tags.some(tag = > [Rea'ct, Node'.js, Pyth'on, TensorFlo'w].includes(tag))) {;
     insights.push(Uses modern, in-demand technologies);};
   return insights.length > 0 ? insights : [Good' match for your project requirements];
-};};";
-export default async function handler(;";";
+};}
+export default async function handler(
   req: "NextApiRequest,";
   res: NextApiResponse;
 ) {;
@@ -280,17 +280,17 @@ export default async function handler(;";";
       .sort((a, b) => b.matchScore - a.matchScore;
       .slice(0, 8);
     // Simulate processing time;
-    await new Promise(resolve => setTimeout(resolve, 1000));";
-    res.status(200).json({;";";
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    res.status(200).json({
       success: "true,";
       recommendations: topRecommendations,;
       totalAnalyzed: availableItems.length,;
       analysisTimestamp: new Date().toISOString();
-    });";
-  } catch (error) {;";";
-    console.error(AI Recommendations API Error: , error);";
-    res.status(500).json({;';
-      error: Internal server error',;';
-      message: Failed to generate AI recommendations;';";
-    });}';";";
-} ))';';";";";
+    })
+  } catch (error) {
+    console.error(AI Recommendations API Error: , error)
+    res.status(500).json({
+      error: Internal server error',
+      message: Failed to generate AI recommendations";
+    });}'
+} ))'";

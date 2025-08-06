@@ -259,7 +259,7 @@ const result = new ${this.getClassName(jobType)}();
 job.execute().catch(error => {
   console.error('${config.name} failed to execute:, error);
   process.exit(1);
-});";
+})
 
     return baseTemplate;
   }

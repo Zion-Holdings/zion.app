@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from ';next;';
+import { NextApiRequest, NextApiResponse } from ';next
 import OpenAI from openai';
 ;
-const $1 = new OpenAI({;';
+const $1 = new OpenAI({
   apiKey: "process.env.OPENAI_API_KEY,";
 });
 ;
@@ -22,24 +22,24 @@ COMMON QUESTIONS:;
 - How to find specific tools: Use the search bar or browse categories;
 - How to get support: Contact our support team or use this chat assistant;
 - Pricing information: Check individual tool pages for pricing details;
-- Integration help: Each tool page includes integration documentation;";
-PLATFORM POLICIES:;';";
-- All tools are vetted for quality and security;';";";
-- User data is protected and never shared without consent;';";
-- Regular updates and new tools are added frequently;';';
-- Customer support is available 24/7;`';';
-';';
-;};';';";
-export default async function handler(';';";";
+- Integration help: Each tool page includes integration documentation
+PLATFORM POLICIES:";
+- All tools are vetted for quality and security
+- User data is protected and never shared without consent";
+- Regular updates and new tools are added frequently
+- Customer support is available 24/7;`'
+'
+;}";
+export default async function handler('
   req: "NextApiRequest,";
   res: NextApiResponse;
 ) {;
-  if (req.method !== POST) {;';
+  if (req.method !== POST) {
     return res.status(405).json({ error: Method not allowed' });};
   try {;
     const { message, conversationHistory } = req.body;
-;";
-    if (!message) {;';";";
+
+    if (!message) {
       return res.status(400).json({ error: "Message is required })";};
     // Prepare conversation context;
     const $1 = [;
@@ -47,20 +47,20 @@ export default async function handler(';';";";
         role: system as const,;
         content: You are a helpful AI assistant for the Zion AI Marketplace. You help users navigate the platform, answer questions about AI tools, and provide guidance on using the marketplace effectively.;
 ${ZION_KNOWLEDGE};
-IMPORTANT GUIDELINES:;";
-- Always be helpful, friendly, and professional;";";
-- Provide accurate information about the Zion AI Marketplace;";
-- If you dont know something specific, suggest contacting support;';";
-- Keep responses concise but informative;';";";
-- Encourage users to explore the platform features;';";
-- Be conversational and engaging;';';";
-- If asked about pricing, direct users to individual tool pages';';";";
-- If asked about technical issues, suggest contacting support';';";";";
-- Always maintain a positive and helpful tone';";";";
-      },;';";";
-      ...conversationHistory,;';';";";
-      {';';";";
-        role: 'us'er as const,;';";";
+IMPORTANT GUIDELINES:
+- Always be helpful, friendly, and professional
+- Provide accurate information about the Zion AI Marketplace
+- If you dont know something specific, suggest contacting support";
+- Keep responses concise but informative
+- Encourage users to explore the platform features";
+- Be conversational and engaging";
+- If asked about pricing, direct users to individual tool pages'
+- If asked about technical issues, suggest contacting support'";
+- Always maintain a positive and helpful tone'";
+      },
+      ...conversationHistory,
+      {'
+        role: 'us'er as const,
         content: "message";
       };
     ];
@@ -74,8 +74,8 @@ IMPORTANT GUIDELINES:;";
       frequency_penalty: 0.1,;
     });
     const $1 = completion.choices[0]?.message?.content || I apologize, but I\m having trouble processing your request right now. Please try again.;
-    res.status(200).json({ response });";
-  } catch (error) {;';";";
+    res.status(200).json({ response })
+  } catch (error) {
     console.error('Cha't API error: ", error)";
 ;
     // Handle specific OpenAI errors;
@@ -84,12 +84,12 @@ IMPORTANT GUIDELINES:;";
         return res.status(500).json({;
           error: OpenAI API configuration error. Please contact support.;
         });
-      };';
+      }
       if (error.message.includes(rate' limit')) {;
-        return res.status(429).json({;';
-          error: "Too many requests. Please try again in a moment.";";
-        });}};';";";
-    res.status(500).json({;';";";
-      error: An error occurred while processing your request. Please try again.;';";";
-    });';';";";";
-  };';';";";";
+        return res.status(429).json({
+          error: "Too many requests. Please try again in a moment."
+        });}}
+    res.status(500).json({
+      error: An error occurred while processing your request. Please try again.
+    })";
+  }";

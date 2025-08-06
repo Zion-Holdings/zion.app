@@ -1,78 +1,84 @@
-import type { NextApiRequest, NextApiResponse } from ';next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface FacilityPlan {
+interface CapacityForecast {
   id: string;
-  name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
+  resource: string;
   currentCapacity: number;
-  targetCapacity: number;
+  currentDemand: number;
+  predictedDemand: number;
+  confidence: number;
+  trend: 'increasing' | 'decreasing' | 'stable';
+  factors: string[];
+  lastUpdated: string;
+}
+
+interface ResourceAllocation {
+  id: string;
+  resource: string;
+  allocated: number;
+  available: number;
   utilization: number;
   recommendations: string[];
-};
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
-  };
-  try {
-    const { timeframe, facilityType } = req.body;
+  }
 
+  try {
+    const { timeframe, action } = req.body;
     const capacityData = {
-      facilities: [
+      forecasts: [
         {
-          id: 'facility-1',
-          name: 'Data Center',
-          type: 'infrastructure',
-          currentCapacity: 75,
-          targetCapacity: 90,
-          utilization: 83.3,
-          recommendations: [
-            'Add 2 new server racks',
-            'Upgrade cooling system',
-            'Implement load balancing';
-          ];
+          id: 'forecast-1',
+          resource: 'Server Capacity',
+          currentCapacity: 1000,
+          currentDemand: 850,
+          predictedDemand: 1200,
+          confidence: 0.89,
+          trend: 'increasing',
+          factors: ['User growth', 'Feature adoption', 'Seasonal patterns'],
+          lastUpdated: new Date().toISOString()
         },
         {
-          id: 'facility-2',
-          name: 'Development Team',
-          type: 'workforce',
-          currentCapacity: 12,
-          targetCapacity: 20,
-          utilization: 60,
-          recommendations: [
-            'Hire 8 additional developers',
-            'Implement training program',
-            'Optimize workflow processes';
-          ];
-        },
-        {
-          id: 'facility-3',
-          name: 'Cloud Infrastructure',
-          type: 'technology',
-          currentCapacity: 60,
-          targetCapacity: 85,
-          utilization: 70.6,
-          recommendations: [
-            'Scale up cloud resources',
-            'Implement auto-scaling',
-            'Optimize resource allocation';
-          ];
-        };
+          id: 'forecast-2',
+          resource: 'Storage',
+          currentCapacity: 5000,
+          currentDemand: 3200,
+          predictedDemand: 4800,
+          confidence: 0.92,
+          trend: 'increasing',
+          factors: ['Data growth', 'Backup requirements', 'Compliance needs'],
+          lastUpdated: new Date().toISOString()
+        }
       ],
-      summary: {
-        totalFacilities: 3,
-        averageUtilization: 71.3,
-        criticalFacilities: 1,
-        recommendations: [
-          'Prioritize workforce expansion',
-          'Upgrade infrastructure capacity',
-          'Implement monitoring systems';
-        ];
-      };
+      allocations: [
+        {
+          id: 'alloc-1',
+          resource: 'CPU',
+          allocated: 75,
+          available: 25,
+          utilization: 75,
+          recommendations: ['Scale horizontally', 'Optimize workloads', 'Add capacity']
+        },
+        {
+          id: 'alloc-2',
+          resource: 'Memory',
+          allocated: 60,
+          available: 40,
+          utilization: 60,
+          recommendations: ['Monitor usage patterns', 'Optimize memory allocation']
+        }
+      ]
     };
 
-    res.status(200).json(capacityData);
+    return res.status(200).json({
+      success: true,
+      data: capacityData
+    });
   } catch (error) {
-    console.error('Error processing capacity planning request: ", error)";
-    res.status(500).json({ error: 'Internal server error' });
-  };
-};
+    console.error('Error processing capacity planning request:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

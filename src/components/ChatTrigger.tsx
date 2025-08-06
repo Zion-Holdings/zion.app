@@ -1,18 +1,18 @@
-import React from ";react';";";
+import React from 'react';
 import Head from ";next/head";
 import Layout from ';../components/layout/Layout';
 ;
-export default function;ChatTrigger() {;";
-  return (;";";
-    <Layout>;";
-      <Head>;';";
-        <title>ChatTrigger</title>';";";
-        <meta name="description" content="ChatTrigger - Professional services and solutions"      />;';";
-      </Head>';";";
-      <div className="""container mx-auto px-4 py-8">';";";
+export default function;ChatTrigger() {
+  return (
+    <Layout>
+      <Head>";
+        <title>ChatTrigger</title>'
+        <meta name="description" content="ChatTrigger - Professional services and solutions"      />";
+      </Head>'
+      <div className="""container mx-auto px-4 py-8">'
         <h1 className="""text-3xl font-bold mb-6">ChatTrigger</h1>;
-        <p>This page is under construction.</p>;";
-      </div>;";";
-    </Layout>;";";
-  );';";";
-}';";";";
+        <p>This page is under construction.</p>
+      </div>
+    </Layout>
+  )
+}'";

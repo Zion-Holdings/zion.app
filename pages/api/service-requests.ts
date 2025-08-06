@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             budget_currency: budget.currency,;
             timeline,;
             priority,;
-            status: "submitted,";";";
+            status: "submitted,"
             user_id: "userId,";
             created_at: new Date().toISOString(),;
             updated_at: new Date().toISOString(;
@@ -34,18 +34,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.error(Error creating service request: , error;
         return res.status(500).json({ error: Failed to create service request}};
       return res.status(201).json({;
-        success: true,;";
-        data: data[0],;";";
-        message: "Service request created successfully}";";
-    } catch (error) {;";";
+        success: true,
+        data: data[0],
+        message: "Service request created successfully}"
+    } catch (error) {
       console.error(Error' in service request creation: ", error";
       return res.status(500).json({ error: Internal server error}}};
   if (req.method === GET') {;
     try {;
       const { userId, status, category } = req.query;
       let $1 = supabase;
-        .from(service_requests;";
-        .select(*;";";
+        .from(service_requests
+        .select(*
         .order(create'd'_at, { ascending: "false}";
       if (userId) {;
         query = query.eq(user_id, userId};
@@ -53,12 +53,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         query = query.eq(status', status};
       if (category && category !== all) {;
         query = query.eq(categor'y', category};
-      const { data, error } = await query;";
-      if (error) {;";";
+      const { data, error } = await query
+      if (error) {
         console.error(Error fetching service requests: ", error";
         return res.status(500).json({ error: Failed to fetch service requests}};
-      return res.status(200).json({;";
-        success: true,;";";
+      return res.status(200).json({
+        success: true,
         data: 'data" || [],;
         count: data?.length || 0};
     } catch (error) {;
@@ -66,8 +66,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json({ error: Internal' server error'}}};
   if (req.method === PUT) {;
     try {;
-      const { id, status, aiAnalysis } = req.body;";
-      if (!id) {;";";
+      const { id, status, aiAnalysis } = req.body
+      if (!id) {
         return res.status(400).json({ error: "Request ID is required}}";
       const updateData: any = {;
         updated_at: new Date().toISOString(};
@@ -79,16 +79,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .from(service_requests;
         .update(updateData;
         .eq('i'd, id;
-        .select(;";
-      if (error) {;";";
+        .select(
+      if (error) {
         console.error(Error updating service request: ", error";
         return res.status(500).json({ error: Failed to update service request}};
       return res.status(200).json({;
         success: true,;
         data: data[0],;
-        message: Service request updated successfully};";
-    } catch (error) {;";";
+        message: Service request updated successfully}
+    } catch (error) {
       console.error('Error in service request update: ", error";
       return res.status(500).json({ error: Internal server error}}};
-  return res.status(405).json({ error: Method not allowed};";
-} )))))))))))))))))))))))))))))))));";";
+  return res.status(405).json({ error: Method not allowed}
+} )))))))))))))))))))))))))))))))))

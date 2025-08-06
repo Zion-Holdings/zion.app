@@ -4,47 +4,47 @@ import Head from nex't/head;};
 import Link from nex't/link;};
 import ModernLayout from ../components/layout/ModernLayout;};
 import FuturisticCard from ../components/ui/FuturisticCard;
-import FuturisticDataTable from ';../components/ui/FuturisticDataTable';';";
+import FuturisticDataTable from ';../components/ui/FuturisticDataTable'";
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   const $1 = [;
     {;
       title: AI Services,;
-      description: Professional AI development and consulting services,;";
-      icon: 🤖',;";";
+      description: Professional AI development and consulting services,
+      icon: 🤖',
       price: "From $50/hr,";
       rating: 4.8,;
       link: /services,;
-      category: Services,;";
-      color: bl'ue as const,;";";
+      category: Services,
+      color: bl'ue as const,
       featured: "true}";
     },;
 {;
-      title: AI Talent,;";
-      description: Expert AI professionals and developers,;";";
-      icon: "👥,";";";
+      title: AI Talent,
+      description: Expert AI professionals and developers,
+      icon: "👥,"
       price: "From $75/hr,";
       rating: 4.9,;
       link: /talents,;
-      category: Talent,;";
-      color: 'purple' as const,;";";
+      category: Talent,
+      color: 'purple' as const,
       featured: "true";
     },;
     {;
       title: Computing Equipment,;
       description: High-performance AI hardware and servers,;
-      icon: ⚙️,;";
-      price: From' $100/day,;";";
+      icon: ⚙️,
+      price: From' $100/day,
       rating: "4.7,";
       link: /equipment,;
-      category: Equipment,;";
-      color: gree'n as const,;";";
+      category: Equipment,
+      color: gree'n as const,
       featured: "false";
     },;
 {;
       title: AI Products,;
       description: Cutting-edge AI software and tools,;
-      icon: 🚀,;";
-      price: Fro'm $99,;";";
+      icon: 🚀,
+      price: Fro'm $99,
       rating: "4.6,";
       link: /products,;
       category: Products,;
@@ -55,92 +55,92 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   const $1 = [;
     {;
       id: 1,;
-      name: AI Model Training,;";
-      provider: 'TechCor'p AI,;";";
+      name: AI Model Training,
+      provider: 'TechCor'p AI,
       price: "$150/hr,";
       rating: 4.9,;
       category: Development,;
       status: Available;
     },;
-{;";
-      id: 2,;";";
+{
+      id: 2,
       'name: "Data Analysis,";
       provider: DataFlow Solutions,;
       price: $120/hr,;
-      rating: 4.8,;";
-      category: Analytic's,;";";
+      rating: 4.8,
+      category: Analytic's,
       status: "Available";
     },;
     {;
       id: 3,;
       name: ML Infrastructure,;
-      provider: CloudTech Systems,;";
-      price: $200/hr,;";";
+      provider: CloudTech Systems,
+      price: $200/hr,
       rating: "4.7,";
       category: Infrastructure,;
       status: Available;
     },;
 {;
       id: 4,;
-      name: AI Consulting,;";
-      provider: AI Advisors',;";";
+      name: AI Consulting,
+      provider: AI Advisors',
       price: "$180/hr,";
       rating: 4.9,;
-      category: Consulting,;";
-      status: Available;";";
-    };";
-  ];';";
-  const $1 = [;';";";
-    { key: name, label: Service Name, sortable: true },;';";
-{ key: provider, label: Provid'er, sortable: "true },";';";
-    { key: category, label: Category, sortable: true },';';";";
+      category: Consulting,
+      status: Available
+    }
+  ]";
+  const $1 = [
+    { key: name, label: Service Name, sortable: true },";
+{ key: provider, label: Provid'er, sortable: "true },"";
+    { key: category, label: Category, sortable: true },'
 { key: 'pri"ce, label: "Price, sortable: true },";
     { key: rating, label: 'Rating, sortable: "true },";
-{ key: status, label: Status, sortable: true },;';";
-    {;';";";
-      key: actions,;';";
-      label: Actions,;';';
-      render: (value: any, row: any) => (';';
+{ key: status, label: Status, sortable: true },";
+    {
+      key: actions,";
+      label: Actions,
+      render: (value: any, row: any) => ('
         <button className="""px-4 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white text-sm hover shadow-neon-blue transition-all duration-300 text-responsive-lg>;
           View Details</div>;
-        </button>;";
-    };";";
-  ];";
-  return (</div>;';";
-    <div></div>;';";";
-      <Head></div>;';";
-        <title>Marketplace - Zion</title></div>;';";
-        <meta name = description content=Explore Zion's AI-powered marketplace for services, talents, equipment, and products. ></div>';';";";
-        </meta name=description content=Explore Zions' AI-powered marketplace for services, talents, equipment, and products. ><meta name=viewport  content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no ></Head>;';';
-</div>';';
-      <div className=""" relative z-10 container-responsive py-4 sm: "py-6 lg py-8 container-responsive>";";
-        {/* Background Effects */}</div>;";";
-        </div><div className= fixed inset-0 z-0></div>;";
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>;';";
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>;';";";
-        </div>;';";
-        {/* Hero Section */}</div>;';';";
-        <div className= text-center mb-8 sm:mb-12 lg mb-16 text-responsive-lg></div>';';";";
-          <h1 className=""" text-responsive-3xl: "sm:text-responsive-4xl:lg text-responsive-5xl font-bold text-white mb-4 sm mb-6 text-responsive-lg></div>";";
-            <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-responsive-lg>;";";
-              Zion Marketplace</div>;";
-            </span></div>;';";
-          </h1></div>;';";";
-          <p className=text-responsive-base sm text-responsive-lg text-gray-400 max-w-3xl mx-auto mb-6 sm mb-8 px-4 text-responsive-lg >;';";
-            The worlds first free AI-powered marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.</div>;';';
-          </p></div>';';";
-          <div className=""" flex flex-col sm flex-row gap-3 sm gap-4 justify-center px-4 flex-col sm flex-row></div>';';";";
+        </button>
+    }
+  ]
+  return (</div>";
+    <div>
+      <Head></div>";
+        <title>Marketplace - Zion</title></div>";
+        <meta name = description content=Explore Zion's AI-powered marketplace for services, talents, equipment, and products. ></div>'
+        </meta name=description content=Explore Zions' AI-powered marketplace for services, talents, equipment, and products. ><meta name=viewport  content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no ></Head>
+</div>'
+      <div className=""" relative z-10 container-responsive py-4 sm: "py-6 lg py-8 container-responsive>"
+        {/* Background Effects */}</div>
+        </div><div className= fixed inset-0 z-0></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div>";
+        {/* Hero Section */}</div>";
+        <div className= text-center mb-8 sm:mb-12 lg mb-16 text-responsive-lg></div>'
+          <h1 className=""" text-responsive-3xl: "sm:text-responsive-4xl:lg text-responsive-5xl font-bold text-white mb-4 sm mb-6 text-responsive-lg></div>"
+            <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-responsive-lg>
+              Zion Marketplace</div>
+            </span></div>";
+          </h1></div>
+          <p className=text-responsive-base sm text-responsive-lg text-gray-400 max-w-3xl mx-auto mb-6 sm mb-8 px-4 text-responsive-lg >";
+            The worlds first free AI-powered marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.</div>
+          </p></div>'";
+          <div className=""" flex flex-col sm flex-row gap-3 sm gap-4 justify-center px-4 flex-col sm flex-row></div>'
             <button className=px-6 sm: "px-8 py-3 sm:py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg:text-white font-semibold text-base sm:text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105 text-responsive-lg>";
               Start Trading</div>;
-            </button></div>;";
-            <button className=px-6 sm:px-8 py-3 sm:py-4 glass border border-neon-blue/30 rounded-lg:text-white font-semibold text-base sm:text-lg:hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105 text-responsive-lg>;";";
-              Learn More</div>;";
-            </button></div>;';";
-          </div></div>;';";";
-        </div>;';";
-        {/* Marketplace Categories */}</div>;';';";
-        <section className=mb-8 sm:mb-12 lg mb-16></div>';';";";
-          <div className= text-center mb-8 sm mb-12" text-responsive-lg></div>';';";";
+            </button></div>
+            <button className=px-6 sm:px-8 py-3 sm:py-4 glass border border-neon-blue/30 rounded-lg:text-white font-semibold text-base sm:text-lg:hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105 text-responsive-lg>
+              Learn More</div>
+            </button></div>";
+          </div></div>
+        </div>";
+        {/* Marketplace Categories */}</div>";
+        <section className=mb-8 sm:mb-12 lg mb-16></div>'
+          <div className= text-center mb-8 sm mb-12" text-responsive-lg></div>'
             <h2 className= text-responsive-2xl: "sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-3 sm mb-4 text-responsive-lg></div>";
               <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink text-responsive-lg>;
                 Marketplace Categories</div>;
@@ -152,56 +152,56 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div>;
           </div>;
           <div className=grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm gap-6 px-4 grid-cols-1 md grid-cols-2 lg grid-cols-4>;
-            {marketplaceCategories.map((category, index) => (;";
-{...category} />;";";
-            ))}</div>;";
-          </div></div>;';";
-        </section>;';";";
-        {/* Trending Services */}</div>;';";
-        <section className= mb-8 sm:mb-12 lg mb-16></div>;';';";
-          <div className=text-center  mb-8 sm:mb-12 text-responsive-lg></div>';';";";
+            {marketplaceCategories.map((category, index) => (
+{...category} />
+            ))}</div>
+          </div></div>";
+        </section>
+        {/* Trending Services */}</div>";
+        <section className= mb-8 sm:mb-12 lg mb-16></div>";
+          <div className=text-center  mb-8 sm:mb-12 text-responsive-lg></div>'
             <h2 className="""text-responsive-2xl: "sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-3 sm mb-4 text-responsive-lg ></div>";
               <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue text-responsive-lg>;
                 Trending Services</div>;
               </span></div>;
             </h2></div>;
-            <p className=text-responsive-base sm text-responsive-lg text-gray-400 max-w-2xl mx-auto px-4  text-responsive-lg>;";
-              Most popular AI services this week</div>;";";
-            </p></div>;";
-          </div></div>;';";
-          <div className=px-4>;';";";
-            /></div>;';";
-          </div></div>;';';
-        </section>';';
-';';";
-        {/* Stats Section */}</div>';';";";
-        <section className= mb-8 sm: "mb-12 lg mb-16></div>";";";";
-          <div className= grid grid-cols-1 sm:grid-cols-3 gap-4 sm gap-6 px-4 grid-cols-1 md grid-cols-2 lg grid-cols-4></div>;';";
-            </div><div className=glass-dark border border-neon-blue/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>;';';";
-              <div className=text-3xl:sm text-4xl mb-3 sm mb-4 text-responsive-lg >📈</div></div>';';";";
-              <h3 className="""text-xl: "sm text-2xl font-bold text-white mb-2 text-responsive-lg>10,0o0+</h3></div>";";";";
-              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Active Users</p> </div>;';";
-            </div></div>;';';
-            <div className=glass-dark border border-neon-purple/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>';';
-              </div><div className="""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >🛍️</div></div>";";
-              <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>5,0o0+</h3></div>;';";";
-              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Services Available</p> </div>;';";
-            </div></div>;';';
-            <div className=glass-dark border border-neon-pink/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>';';
+            <p className=text-responsive-base sm text-responsive-lg text-gray-400 max-w-2xl mx-auto px-4  text-responsive-lg>
+              Most popular AI services this week</div>
+            </p></div>
+          </div></div>";
+          <div className=px-4>
+            /></div>";
+          </div></div>
+        </section>'
+'";
+        {/* Stats Section */}</div>'
+        <section className= mb-8 sm: "mb-12 lg mb-16></div>"";
+          <div className= grid grid-cols-1 sm:grid-cols-3 gap-4 sm gap-6 px-4 grid-cols-1 md grid-cols-2 lg grid-cols-4></div>";
+            </div><div className=glass-dark border border-neon-blue/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>";
+              <div className=text-3xl:sm text-4xl mb-3 sm mb-4 text-responsive-lg >📈</div></div>'
+              <h3 className="""text-xl: "sm text-2xl font-bold text-white mb-2 text-responsive-lg>10,0o0+</h3></div>"";
+              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Active Users</p> </div>";
+            </div></div>
+            <div className=glass-dark border border-neon-purple/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>'
+              </div><div className="""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >🛍️</div></div>"
+              <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>5,0o0+</h3></div>
+              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Services Available</p> </div>";
+            </div></div>
+            <div className=glass-dark border border-neon-pink/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>'
               </div><div className="""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >⭐</div></div>";
-              <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>4.8</h3></div>;';";
-              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Average Rating</p></div>;';";";
-            </div></div>;';";
-          </div></div>;';';";
-        </section>';';";";
-        {/* CTA Section */}"</div>;';';
-        <section></div>';';
+              <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>4.8</h3></div>";
+              <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Average Rating</p></div>
+            </div></div>";
+          </div></div>";
+        </section>'
+        {/* CTA Section */}"</div>
+        <section></div>'
           <div className=glass-dark  border border-neon-blue/30 rounded-2xl: "p-6 sm:p-8 lg:p-12 text-center mx-4 text-responsive-lg></div>";
-            <h2 className=text-responsive-2xl:sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-4 sm mb-6 text-responsive-lg ></div>;';";
-              <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-responsive-lg>;';";";
-                Ready to Start Trading?</div>;';";
-              </span></div>;';';";
-            </h2></div>';';";";
+            <h2 className=text-responsive-2xl:sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-4 sm mb-6 text-responsive-lg ></div>";
+              <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-responsive-lg>
+                Ready to Start Trading?</div>";
+              </span></div>";
+            </h2></div>'
             <p className="""text-responsive-base sm: "text-responsive-lg text-gray-400 mb-6 sm mb-8 max-w-2xl mx-auto text-responsive-lg>";
               Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.</div>;
             </p></div>;
@@ -209,20 +209,20 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                />;
                 Get Started Now</div>;
               </Link>;
-               />;";
-                Learn More</div>;";";
-              </Link></div>;";
-            </div></div>;';";
-          </div></div>;';";";
-        </section>;';";
-        {/* Floating Elements */}</div>;';';";
-        <div className=fixed top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-xl:md:blur-3xl:animate-pulse md:animate-pulse></div> </div>';';";";
+               />
+                Learn More</div>
+              </Link></div>
+            </div></div>";
+          </div></div>
+        </section>";
+        {/* Floating Elements */}</div>";
+        <div className=fixed top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-xl:md:blur-3xl:animate-pulse md:animate-pulse></div> </div>'
         <div className=fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-xl:md:blur-3xl animate-pulse md animate-pulse style={{ animationDelay  1s }}"></div></div>;
         <div className=fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-124 h-124 bg-neon-pink/5 rounded-full blur-xl:md blur-3xl animate-pulse md animate-pulse style={{ animationDelay: 2s' }}></div></div>;
-      </div></div>;";
-    </div>;";";
-  </div>;";";";
-  </div>;';";
-};';};';';
-export default $1;';';";
-))'</div>';';";";
+      </div></div>
+    </div>
+  </div>";
+  </div>";
+}}
+export default $1";
+))'</div>'

@@ -6,13 +6,13 @@ export default async function handler(;
   if (req.method !== 'POST') {;
     return res.status(405).json({ error: Method not allowed' });};
   try {;
-    const { action } = req.body;";
-    const $1 = {;";";
+    const { action } = req.body
+    const $1 = {
       vendors: "[";
         {;
           id: 1,;
-          name: TechCorp Solutions,;";
-          category: Technology',;";";
+          name: TechCorp Solutions,
+          category: Technology',
           rating: "4.8,";
           performance: 95,;
           riskScore: 12,;
@@ -21,8 +21,8 @@ export default async function handler(;
         },;
     {;
           id: 2,;
-          name: Global Logistics Ltd,;";
-          category: 'Logistics',;";";
+          name: Global Logistics Ltd,
+          category: 'Logistics',
           rating: "4.2,";
           performance: 87,;
           riskScore: 28,;
@@ -40,8 +40,8 @@ export default async function handler(;
       return res.status(200).json({;
         success: true,;
         data: mockData,;
-        analysis: {;";
-          summary: Vendo'r management system shows positive trends,;";";
+        analysis: {
+          summary: Vendo'r management system shows positive trends,
           recommendations: "[";
             Expand partnership with TechCorp Solutions,;
             Monitor Global Logistics performance];
@@ -55,5 +55,5 @@ export default async function handler(;
     return res.status(500).json({;
       success: false,;
       error: Internal server error;
-    });";
-  };";";
+    })
+  }

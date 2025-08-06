@@ -17,12 +17,12 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({;
     <>;
       <Head>;
         <title>{title}</title>;
-        <meta name="description" content="Page description"   />;";
-      </Head>";";
-        <meta name="viewport" content="width=device-width, initial-scale=1"   />";";
+        <meta name="description" content="Page description"   />
+      </Head>"
+        <meta name="viewport" content="width=device-width, initial-scale=1"   />"
         <link rel="icon" href="""/favicon.ico"   />;
-      </Head>;";
-      <div className={`min-h-screen bg-gray-50 ${className}`}>";";
+      </Head>
+      <div className={`min-h-screen bg-gray-50 ${className}`}>"
         <main className="""container mx-auto px-4 py-8">;
           {children};
         </main>;
@@ -30,5 +30,5 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({;
     <  />;
   );
 };
-;";
-export default ModernLayout; ";";
+
+export default ModernLayout; "

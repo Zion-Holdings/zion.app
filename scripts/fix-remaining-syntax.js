@@ -8,7 +8,7 @@ function fixRemainingSyntax(content) {
   // Fix unterminated string literals in import statements
   fixed = fixed.replace(/import\s+.*?from\s+["']([^"']*?)["']?;?/g, (match, p1) => {
     if (!match.endsWith(';')) {
-      return match + ';';
+      return match + '
     }
     return match;
   });

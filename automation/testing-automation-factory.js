@@ -328,7 +328,7 @@ process.on(')SIGINT, () => {
 agent.start().catch(error => {
   console.error(${config.name} failed to start: ', error);
   process.exit(1);
-});";
+})
 
     return baseTemplate;
   }

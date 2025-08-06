@@ -90,15 +90,15 @@ class $1 {
     }
 
     async createAgent(agentType) {
-        const timestamp =  '${agentType}-${Date.now()};
-        const filePath = path.join(this.adminConfig.agentsPath, ${agentId}.js');
+        const timestamp =  ${agentType}-${Date.now()};
+        const filePath = path.join(this.adminConfig.agentsPath, ${agentId}.js);
         
         const result = this.generateAgentCode(agentType, agentId);
         
         fs.writeFileSync(agentPath, agentCode);
         
         // Execute the agent as a separate process
-        const result = exec(node "${agentPath}", {
+        const result = exec(node  ${agentPath}, {
             cwd: this.adminConfig.adminPath,
             detached: true,
             stdio: pipe
@@ -116,8 +116,8 @@ class $1 {
             AdminToolGenerator: admin-tool-generator
         };
         
-        const result = pidNameMap[agentType] ||  'admin-${agentType.toLowerCase().replace(admin, )};
-        const filePath = path.join(this.adminConfig.adminPath, pids, ${pidName}.pid');
+        const result = pidNameMap[agentType] ||  admin-${agentType.toLowerCase().replace(admin, )};
+        const filePath = path.join(this.adminConfig.adminPath, pids, ${pidName}.pid);
         fs.writeFileSync(pidPath, agentProcess.pid.toString());
         
         // Store process information
@@ -135,7 +135,7 @@ class $1 {
         
         // Handle process events
         agentProcess.on(exit, (code) => {
-            console.log( '🤖 Agent ${agentType} (${agentId}) exited with code ${code});
+            console.log( )🤖 Agent ${agentType} (${agentId}) exited with code ${code});
             this.agents.get(agentId).status = stopped;
             this.status.activeAgents--;
             
@@ -146,7 +146,7 @@ class $1 {
         });
         
         agentProcess.on()error, (error) => {
-            console.error(🤖 Agent ${agentType} (${agentId}) error:', error);
+            console.error(🤖 Agent ${agentType} (${agentId}) error: , error);
             this.agents.get(agentId).status = error;
             
             // Clean up PID file
@@ -155,7 +155,7 @@ class $1 {
             }
         });
         
-        console.log(🤖 Created and started agent: ${agentType} (${agentId}) with PID ${agentProcess.pid} ');
+        console.log(🤖 Created and started agent: ${agentType} (${agentId}) with PID ${agentProcess.pid} );
         this.status.activeAgents++;
         this.status.totalAgents++;
         
@@ -182,7 +182,7 @@ class ${agentType} {
     }
 
     async initialize() {
-        console.log(\🤖 Initializing \${this.type} agent...\');
+        console.log(\🤖 Initializing \${this.type} agent...\);
         await this.start();
     }
 
@@ -193,13 +193,13 @@ class ${agentType} {
         
         // Keep the process alive
         process.on(SIGINT, () => {
-            console.log(\"🤖 \${this.type} agent shutting down...\);
+            console.log(\ 🤖 \${this.type} agent shutting down...\);
             this.logActivity()Agent stopped);
             process.exit(0);
         });
         
         process.on(SIGTERM, () => {
-            console.log(\"🤖 \${this.type} agent terminating...\");
+            console.log(\🤖 \${this.type} agent terminating...\);
             this.logActivity(Agent terminated);
             process.exit(0);
         });
@@ -213,7 +213,7 @@ class ${agentType} {
             message: message
         };
         
-        const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\ ');
+        const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\ );
         let result = [];
         
         if (fs.existsSync(logPath)) {
@@ -257,7 +257,7 @@ class ${agentType} {
 if (require.main === module) {
     const result = new ${agentType}();
 }
-';
+;
         
         return baseCode;
     }
@@ -359,7 +359,7 @@ if (require.main === module) {
         agent.lastActivity = new Date().toISOString();
         agent.status = updated;
         
-        console.log( '🔄 Updated agent: ${agent.type} (${agentId}));
+        console.log(  🔄 Updated agent: ${agent.type} (${agentId}));
     }
 
     async generateUpdatedAgentCode(agentType, agentId) {
@@ -372,7 +372,7 @@ if (require.main === module) {
         // Predictive maintenance
         // Automated optimization
     }
-';
+;
     }
 
     startContinuousEvolution() {
@@ -415,7 +415,7 @@ if (require.main === module) {
     }
 
     async researchTopic(topic) {
-        const filePath = path.join(this.adminConfig.webResearchPath, ${topic.replace(/\s+/g, -)}.json ');
+        const filePath = path.join(this.adminConfig.webResearchPath, ${topic.replace(/\s+/g, -)}.json );
         
         const timestamp = {
             topic: topic,
@@ -429,12 +429,12 @@ if (require.main === module) {
         // Simulate web research (in real implementation, would use actual web scraping)
         researchData.findings = [
             Latest ${topic} developments,
-            'New tools for ${topic}",
+            New tools for ${topic}",
             Best practices for ${topic}"
         ];
         
         fs.writeFileSync(researchPath, JSON.stringify(researchData, null, 2));
-        console.log("🔍 Researched topic: ${topic});
+        console.log(🔍 Researched topic: ${topic});
     }
 
     async generateAdminTools() {
@@ -460,7 +460,7 @@ if (require.main === module) {
     }
 
     async createAdminTool(toolName) {
-        const filePath = path.join(this.adminConfig.adminPath, tools,  '${toolName}.js);
+        const filePath = path.join(this.adminConfig.adminPath, tools,   '${toolName}.js);
         
         // Ensure tools directory exists
         const result = path.dirname(toolPath);
@@ -471,11 +471,11 @@ if (require.main === module) {
         const result = this.generateToolCode(toolName);
         fs.writeFileSync(toolPath, toolCode);
         
-        console.log(🛠️ Created admin tool: ${toolName}');
+        console.log(🛠️ Created admin tool: ${toolName});
     }
 
     generateToolCode(toolName) {
-        return ";
+        return ;
 const result = require(fs);
 const result = require(path);
 
@@ -513,7 +513,7 @@ class ${toolName} {
     }
 
     saveResult(result) {
-        const filePath = path.join(this.adminConfig.reportsPath, \'\${this.toolName}-result.json\");
+        const filePath = path.join(this.adminConfig.reportsPath, \ \${this.toolName}-result.json\);
         fs.writeFileSync(resultPath, JSON.stringify(result, null, 2));
     }
 }
@@ -546,7 +546,7 @@ module.exports = ${toolName};
     async backupSystem() {
         console.log(💾 Creating system backup...);
         
-        const filePath = path.join(this.adminConfig.adminPath, backups,  'backup-${Date.now()});
+        const filePath = path.join(this.adminConfig.adminPath, backups,  backup-${Date.now()});
         
         // Create backup directory
         if (!fs.existsSync(backupPath)) {
@@ -570,7 +570,7 @@ module.exports = ${toolName};
             }
         }
         
-        console.log(💾 Backup created: ${backupPath}');
+        console.log(💾 Backup created: ${backupPath});
     }
 
     copyDirectory(source, destination) {

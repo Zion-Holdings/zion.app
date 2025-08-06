@@ -1,6 +1,6 @@
-import type { NextPage } from ";next';";";
-import Head from ";next/head';";";
-import { useState, useEffect } from ";react';";";
+import type { NextPage } from ";next'
+import Head from ";next/head'
+import { useState, useEffect } from ";react'
 import Link from ";next/link";
 interface Nanotechnology {;
   id: string;
@@ -114,58 +114,58 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
       case 'nanomedicine': return 'bg-pink-500/20 text-pink-400;
       case 'nanoelectronics': return 'bg-yellow-500/20 text-yellow-400;
       case 'nanophotonics': return 'bg-orange-500/20 text-orange-400;
-      default: return 'bg-gray-500/20 text-gray-400;";
-    };";";
-  };";";
-  return (';";";
-    <div className="""min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">;";";
-      <Head>;";";
-        <title>AI-Powered Nanotechnology System | Zion Tech Group</title>';";";
-        <meta name="description" content="Nanotechnology, molecular engineering, nanoscale devices, molecular computing, nanorobotics, and automated nanotechnology management powered by AI."     />';";";
-        <meta name="keywords" content="nanotechnology, molecular engineering, nanoscale devices, molecular computing, nanorobotics, AI nanotechnology"     />';";";
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"     />;";";
-      </Head>;";";
-      {/* Header */}';";";
-      <div className="""relative overflow-hidden">';";";
-        <div className="""absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>';";";
-        <div className="""relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">';";";
-          <div className="""text-center">';";";
-            <h1 className="""text-5xl md:text-6xl font-bold text-white mb-6">;";";
-              AI-Powered Nanotechnology System;";";
-            </h1>';";";
-            <p className="""text-xl text-gray-300 mb-8 max-w-3xl mx-auto">;";
-              Nanotechnology, molecular engineering, nanoscale devices,;";";
-              molecular computing, nanorobotics, and automated nanotechnology management powered by AI.;";";
-            </p>';";";
-            <div className="""flex flex-wrap justify-center gap-4">';";";
-              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">';";";
-                <span className="""text-white font-semibold">🔬 Nanotechnology</span>;";";
-              </div>';";";
-              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">';";";
-                <span className="""text-white font-semibold">🧬 Molecular Engineering</span>;";";
-              </div>';";";
-              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">';";";
+      default: return 'bg-gray-500/20 text-gray-400
+    }
+  }
+  return ('
+    <div className="""min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <Head>
+        <title>AI-Powered Nanotechnology System | Zion Tech Group</title>'
+        <meta name="description" content="Nanotechnology, molecular engineering, nanoscale devices, molecular computing, nanorobotics, and automated nanotechnology management powered by AI."     />'
+        <meta name="keywords" content="nanotechnology, molecular engineering, nanoscale devices, molecular computing, nanorobotics, AI nanotechnology"     />'
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"     />
+      </Head>
+      {/* Header */}'
+      <div className="""relative overflow-hidden">'
+        <div className="""absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>'
+        <div className="""relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">'
+          <div className="""text-center">'
+            <h1 className="""text-5xl md:text-6xl font-bold text-white mb-6">
+              AI-Powered Nanotechnology System
+            </h1>'
+            <p className="""text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Nanotechnology, molecular engineering, nanoscale devices,
+              molecular computing, nanorobotics, and automated nanotechnology management powered by AI.
+            </p>'
+            <div className="""flex flex-wrap justify-center gap-4">'
+              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">'
+                <span className="""text-white font-semibold">🔬 Nanotechnology</span>
+              </div>'
+              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">'
+                <span className="""text-white font-semibold">🧬 Molecular Engineering</span>
+              </div>'
+              <div className="""bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">'
                 <span className="""text-white font-semibold">⚛️ Nanoscale Devices</span>;
               </div>;
             </div>;
-          </div>;";
-        </div>;";";
-      </div>;";";
-      {/* Main Content */}';";";
-      <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">;";";
-        {isLoading ? (';";";
-          <div className="""flex justify-center items-center py-40">';";";
+          </div>
+        </div>
+      </div>
+      {/* Main Content */}'
+      <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {isLoading ? ('
+          <div className="""flex justify-center items-center py-40">'
             <div className="""animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>;
-          </div>;";
-        ) : (;";";
-          <div>;";";
-            {/* Tabs */}';";";
+          </div>
+        ) : (
+          <div>
+            {/* Tabs */}'
             <div className="""flex flex-wrap justify-center mb-8">;
               <button;
                 onClick={() => setActiveTab('nanotechnology')};
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${;
-                  activeTab === 'nanotechnology;";
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white;";";
+                  activeTab === 'nanotechnology
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white
                     : "bg-white/10 text-gray-300 hover:bg-white/20";
                 }`};
               >;
@@ -174,111 +174,111 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
               <button;
                 onClick={() => setActiveTab('overview')};
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${;
-                  activeTab === 'overview;";
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white;";";
+                  activeTab === 'overview
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white
                     : "bg-white/10 text-gray-300 hover:bg-white/20";
                 }`};
               >;
                 Overview;
-              </button>;";
-            </div>;";";
-            {/* Nanotechnology Tab */};";";
-            {activeTab === 'nanotechnology' && (';";";
-              <div className="""space-y-8">;";";
-                {/* Controls */}';";";
-                <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6">';";";
-                  <div className="""flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">';";";
-                    <div className="""flex items-center space-x-4">';";";
-                      <label className="""text-white font-medium">Filter by Type:</label>;";
-                      <select;";";
-                        value={selectedType};";
+              </button>
+            </div>
+            {/* Nanotechnology Tab */}
+            {activeTab === 'nanotechnology' && ('
+              <div className="""space-y-8">
+                {/* Controls */}'
+                <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6">'
+                  <div className="""flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">'
+                    <div className="""flex items-center space-x-4">'
+                      <label className="""text-white font-medium">Filter by Type:</label>
+                      <select
+                        value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}';
-                        className="""bg-slate-800 text-white rounded-lg px-4 py-2 border border-white/20';";
-                      >';";";
-                        <option value="all" className="""bg-slate-800">All Types</option>';";";
-                        <option value="nanomaterials" className="""bg-slate-800">Nanomaterials</option>';";";
-                        <option value="nanodevices" className="""bg-slate-800">Nanodevices</option>';";";
-                        <option value="nanosensors" className="""bg-slate-800">Nanosensors</option>';";";
-                        <option value="nanomedicine" className="""bg-slate-800">Nanomedicine</option>';";";
-                        <option value="nanoelectronics" className="""bg-slate-800">Nanoelectronics</option>';";";
-                        <option value="nanophotonics" className="""bg-slate-800">Nanophotonics</option>;";";
-                      </select>;";";
-                    </div>';";";
+                        className="""bg-slate-800 text-white rounded-lg px-4 py-2 border border-white/20'
+                      >'
+                        <option value="all" className="""bg-slate-800">All Types</option>'
+                        <option value="nanomaterials" className="""bg-slate-800">Nanomaterials</option>'
+                        <option value="nanodevices" className="""bg-slate-800">Nanodevices</option>'
+                        <option value="nanosensors" className="""bg-slate-800">Nanosensors</option>'
+                        <option value="nanomedicine" className="""bg-slate-800">Nanomedicine</option>'
+                        <option value="nanoelectronics" className="""bg-slate-800">Nanoelectronics</option>'
+                        <option value="nanophotonics" className="""bg-slate-800">Nanophotonics</option>
+                      </select>
+                    </div>'
                     <button className="""bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">;
                       Create Nanotechnology System;
-                    </button>;";
-                  </div>;";";
-                </div>;";";
-                {/* Nanotechnology Grid */}';";";
-                <div className="""grid grid-cols-1 lg:grid-cols-2 gap-6">;";";
-                  {filteredNanotechnology.map((tech) => (';";";
-                    <div key={tech.id} className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                      <div className="""flex items-start justify-between mb-4">;";";
-                        <div>';";";
-                          <h3 className="""text-xl font-semibold text-white mb-2">{tech.name}</h3>';";";
-                          <p className="""text-gray-300 text-sm capitalize">{tech.type.replace('_', ' ')} System</p>;";";
-                        </div>';";";
-                        <div className="""text-right">;";
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(tech.status)}`}>;";";
-                            {tech.status};";";
-                          </span>';";";
+                    </button>
+                  </div>
+                </div>
+                {/* Nanotechnology Grid */}'
+                <div className="""grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {filteredNanotechnology.map((tech) => ('
+                    <div key={tech.id} className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                      <div className="""flex items-start justify-between mb-4">
+                        <div>'
+                          <h3 className="""text-xl font-semibold text-white mb-2">{tech.name}</h3>'
+                          <p className="""text-gray-300 text-sm capitalize">{tech.type.replace('_', ' ')} System</p>
+                        </div>'
+                        <div className="""text-right">
+                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(tech.status)}`}>
+                            {tech.status}
+                          </span>'
                           <div className="""mt-2">;
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeColor(tech.type)}`}>;
                               {tech.scale}nm scale;
                             </span>;
-                          </div>;";
-                        </div>;";";
-                      </div>;";";
-                      ';";";
-                      <div className="""mb-4">';";";
-                        <p className="""text-gray-300 text-sm">{tech.description}</p>;";";
-                      </div>;";";
-';";";
-                      <div className="""grid grid-cols-3 gap-4 mb-4">';";";
-                        <div className="""bg-white/5 rounded-lg p-4">';";";
-                          <div className="""text-sm text-gray-400 mb-1">Scale</div>';";";
-                          <div className="""text-2xl font-bold text-white">{tech.scale}nm</div>;";";
-                        </div>';";";
-                        <div className="""bg-white/5 rounded-lg p-4">';";";
-                          <div className="""text-sm text-gray-400 mb-1">Precision</div>';";";
-                          <div className="""text-2xl font-bold text-white">{tech.precision}%</div>;";";
-                        </div>';";";
-                        <div className="""bg-white/5 rounded-lg p-4">';";";
-                          <div className="""text-sm text-gray-400 mb-1">Efficiency</div>';";";
-                          <div className="""text-2xl font-bold text-white">{tech.efficiency}%</div>;";
-                        </div>;";";
-                      </div>;";";
-                      {/* AI Analysis */}';";";
-                      <div className="""mb-4">';";";
-                        <h4 className="""text-lg font-semibold text-white mb-3">AI Analysis</h4>';";";
-                        <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">';";";
-                          <div className="""grid grid-cols-3 gap-4 text-sm">;";";
-                            <div>';";";
-                              <div className="""text-gray-400 mb-1">Performance</div>';";";
-                              <div className="""text-white font-semibold">{tech.aiAnalysis.performanceScore}%</div>;";";
-                            </div>;";";
-                            <div>';";";
-                              <div className="""text-gray-400 mb-1">Precision</div>';";";
-                              <div className="""text-white font-semibold">{tech.aiAnalysis.precisionScore}%</div>;";";
-                            </div>;";";
-                            <div>';";";
-                              <div className="""text-gray-400 mb-1">Innovation</div>';";";
-                              <div className="""text-white font-semibold">{tech.aiAnalysis.innovationScore}%</div>;";";
-                            </div>;";";
-                          </div>';";";
-                          <div className="""mt-3">';";";
-                            <div className="""text-sm font-medium text-gray-400 mb-1">Recommendations</div>';";";
+                          </div>
+                        </div>
+                      </div>
+                      '
+                      <div className="""mb-4">'
+                        <p className="""text-gray-300 text-sm">{tech.description}</p>
+                      </div>
+'
+                      <div className="""grid grid-cols-3 gap-4 mb-4">'
+                        <div className="""bg-white/5 rounded-lg p-4">'
+                          <div className="""text-sm text-gray-400 mb-1">Scale</div>'
+                          <div className="""text-2xl font-bold text-white">{tech.scale}nm</div>
+                        </div>'
+                        <div className="""bg-white/5 rounded-lg p-4">'
+                          <div className="""text-sm text-gray-400 mb-1">Precision</div>'
+                          <div className="""text-2xl font-bold text-white">{tech.precision}%</div>
+                        </div>'
+                        <div className="""bg-white/5 rounded-lg p-4">'
+                          <div className="""text-sm text-gray-400 mb-1">Efficiency</div>'
+                          <div className="""text-2xl font-bold text-white">{tech.efficiency}%</div>
+                        </div>
+                      </div>
+                      {/* AI Analysis */}'
+                      <div className="""mb-4">'
+                        <h4 className="""text-lg font-semibold text-white mb-3">AI Analysis</h4>'
+                        <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">'
+                          <div className="""grid grid-cols-3 gap-4 text-sm">
+                            <div>'
+                              <div className="""text-gray-400 mb-1">Performance</div>'
+                              <div className="""text-white font-semibold">{tech.aiAnalysis.performanceScore}%</div>
+                            </div>
+                            <div>'
+                              <div className="""text-gray-400 mb-1">Precision</div>'
+                              <div className="""text-white font-semibold">{tech.aiAnalysis.precisionScore}%</div>
+                            </div>
+                            <div>'
+                              <div className="""text-gray-400 mb-1">Innovation</div>'
+                              <div className="""text-white font-semibold">{tech.aiAnalysis.innovationScore}%</div>
+                            </div>
+                          </div>'
+                          <div className="""mt-3">'
+                            <div className="""text-sm font-medium text-gray-400 mb-1">Recommendations</div>'
                             <div className="""text-xs text-gray-300">;
                               {tech.aiAnalysis.recommendations.join(', ')};
                             </div>;
-                          </div>;";
-                        </div>;";";
-                      </div>;";";
-';";";
-                      <div className="""flex space-x-2">';";";
-                        <button className="""flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">;";";
-                          View Details;";";
-                        </button>';";";
+                          </div>
+                        </div>
+                      </div>
+'
+                      <div className="""flex space-x-2">'
+                        <button className="""flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                          View Details
+                        </button>'
                         <button className="""flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">;
                           Configure;
                         </button>;
@@ -286,49 +286,49 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
                     </div>;
                   ))};
                 </div>;
-              </div>;";
-            )};";";
-            {/* Overview Tab */};";";
-            {activeTab === 'overview' && analytics && (';";";
-              <div className="""space-y-8">';";";
-                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">';";";
-                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                    <div className="""text-3xl font-bold text-white mb-2">{analytics.totalNanodevices.toLocaleString()}</div>';";";
-                    <div className="""text-gray-400 text-sm">Total Nanodevices</div>;";";
-                  </div>';";";
-                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                    <div className="""text-3xl font-bold text-white mb-2">{analytics.averageScale.toLocaleString()}nm</div>';";";
-                    <div className="""text-gray-400 text-sm">Avg Scale</div>;";";
-                  </div>';";";
-                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                    <div className="""text-3xl font-bold text-white mb-2">{analytics.activeMolecularSystems.toLocaleString()}</div>';";";
-                    <div className="""text-gray-400 text-sm">Active Molecular Systems</div>;";";
-                  </div>';";";
-                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                    <div className="""text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>';";";
-                    <div className="""text-gray-400 text-sm">AI Optimization Score</div>;";
-                  </div>;";";
-                </div>;";";
-';";";
-                <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">';";";
-                  <h3 className="""text-xl font-semibold text-white mb-6">AI Insights</h3>';";";
-                  <div className="""space-y-4">;";";
-                    {analytics.aiInsights.map((insight) => (';";";
-                      <div key={insight.id} className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">';";";
-                        <div className="""flex items-start justify-between mb-2">';";";
+              </div>
+            )}
+            {/* Overview Tab */}
+            {activeTab === 'overview' && analytics && ('
+              <div className="""space-y-8">'
+                <div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">'
+                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                    <div className="""text-3xl font-bold text-white mb-2">{analytics.totalNanodevices.toLocaleString()}</div>'
+                    <div className="""text-gray-400 text-sm">Total Nanodevices</div>
+                  </div>'
+                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                    <div className="""text-3xl font-bold text-white mb-2">{analytics.averageScale.toLocaleString()}nm</div>'
+                    <div className="""text-gray-400 text-sm">Avg Scale</div>
+                  </div>'
+                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                    <div className="""text-3xl font-bold text-white mb-2">{analytics.activeMolecularSystems.toLocaleString()}</div>'
+                    <div className="""text-gray-400 text-sm">Active Molecular Systems</div>
+                  </div>'
+                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                    <div className="""text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>'
+                    <div className="""text-gray-400 text-sm">AI Optimization Score</div>
+                  </div>
+                </div>
+'
+                <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">'
+                  <h3 className="""text-xl font-semibold text-white mb-6">AI Insights</h3>'
+                  <div className="""space-y-4">
+                    {analytics.aiInsights.map((insight) => ('
+                      <div key={insight.id} className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">'
+                        <div className="""flex items-start justify-between mb-2">'
                           <h4 className="""text-white font-semibold">{insight.title}</h4>;
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${;
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-400' :;
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-400' :;
                             'bg-yellow-500/20 text-yellow-400;
-                          }`}>;";
-                            {insight.impact};";";
-                          </span>;";";
-                        </div>';";";
-                        <p className="""text-gray-300 text-sm mb-3">{insight.description}</p>';";";
-                        <div className="""text-xs text-gray-400 mb-2">;";";
-                          Confidence: {Math.round(insight.confidence * 100)}%;";";
-                        </div>';";";
+                          }`}>
+                            {insight.impact}
+                          </span>
+                        </div>'
+                        <p className="""text-gray-300 text-sm mb-3">{insight.description}</p>'
+                        <div className="""text-xs text-gray-400 mb-2">
+                          Confidence: {Math.round(insight.confidence * 100)}%
+                        </div>'
                         <div className="""text-xs text-gray-400">;
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')};
                         </div>;
@@ -338,24 +338,24 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
                 </div>;
               </div>;
             )};
-          </div>;";
-        )};";";
-      </div>;";";
-      {/* CTA Section */}';";";
-      <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16">';";";
-        <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">';";";
-          <div className="""text-center">';";";
-            <h2 className="""text-3xl font-bold text-white mb-4">;";";
-              Ready to Explore Nanotechnology?;";";
-            </h2>';";";
-            <p className="""text-xl text-gray-300 mb-8 max-w-2xl mx-auto">;";
-              Start your nanotechnology journey with our AI-powered system;";";
-              and ensure comprehensive nanotechnology management.;";";
-            </p>';";";
-            <div className="""flex flex-col sm:flex-row gap-4 justify-center">';";";
-              <Link href="""/ai-service-matcher" className="""bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">;";";
-                Start Exploring;";";
-              </Link>';";";
+          </div>
+        )}
+      </div>
+      {/* CTA Section */}'
+      <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16">'
+        <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">'
+          <div className="""text-center">'
+            <h2 className="""text-3xl font-bold text-white mb-4">
+              Ready to Explore Nanotechnology?
+            </h2>'
+            <p className="""text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Start your nanotechnology journey with our AI-powered system
+              and ensure comprehensive nanotechnology management.
+            </p>'
+            <div className="""flex flex-col sm:flex-row gap-4 justify-center">'
+              <Link href="""/ai-service-matcher" className="""bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
+                Start Exploring
+              </Link>'
               <Link href="""/talent-directory" className="""border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">;
                 Learn More;
               </Link>;
@@ -363,7 +363,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
           </div>;
         </div>;
       </div>;
-    </div>;";
-  );";";
-};";";
-export default AIPoweredNanotechnologyPage;';";";
+    </div>
+  )
+}
+export default AIPoweredNanotechnologyPage

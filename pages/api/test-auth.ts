@@ -31,5 +31,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {;
     return res.status(500).json({;
       success: false,;
-      error: error instanceof Error ? error.message : Unknown error}};";
-} ))));";";
+      error: error instanceof Error ? error.message : Unknown error}}
+} ))))

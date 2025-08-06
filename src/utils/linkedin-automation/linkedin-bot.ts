@@ -1,1 +1,1 @@
-export default class;$1 { constructor() {} async initialize() { console.log("LinkedIn bot initialized); } async runAutomation() { console.log(LinkedIn automation running"); };';';";";
+export default class;$1 { constructor() {} async initialize() { console.log("LinkedIn bot initialized); } async runAutomation() { console.log(LinkedIn automation running"); }

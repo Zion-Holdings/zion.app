@@ -17,7 +17,7 @@ class $1 {
     }
 
     async initialize() {
-        console.log( '🤖 Initializing ${this.type} agent...);
+        console.log( 🤖 Initializing ${this.type} agent...);
         await this.start();
     }
 
