@@ -168,7 +168,7 @@ class AutonomousSystemLauncher {
       });
       
       process.on('close', (code) => {
-        if (code = == 0) {;
+        if (code === 0) {
           resolve();
         } else {
           reject(new Error(`Orchestrator exited with code ${code}`));
@@ -224,7 +224,7 @@ class AutonomousSystemLauncher {
       });
       
       process.on('close', (code) => {
-        if (code = == 0) {;
+        if (code === 0) {
           resolve();
         } else {
           reject(new Error(`${agentName} exited with code ${code}`));
@@ -263,7 +263,7 @@ class AutonomousSystemLauncher {
       });
       
       process.on('close', (code) => {
-        if (code = == 0) {;
+        if (code === 0) {
           resolve();
         } else {
           reject(new Error(`Cron system exited with code ${code}`));
@@ -278,13 +278,13 @@ class AutonomousSystemLauncher {
     const status = await this.getSystemStatus();
     
     console.log(chalk.green('✅ Active Agents:'));
-    status.activeAgents.forEach(agent = > {;
+    status.activeAgents.forEach(agent => {
       console.log(`  • ${agent.name} (PID: ${agent.pid})`);
     });
     
     if (status.inactiveAgents.length > 0) {
       console.log(chalk.red('❌ Inactive Agents:'));
-      status.inactiveAgents.forEach(agent = > {;
+      status.inactiveAgents.forEach(agent => {
         console.log(`  • ${agent.name}`);
       });
     }
@@ -333,26 +333,26 @@ class AutonomousSystemLauncher {
         try {
           process.kill(pid, 0); // Check if process exists
           status.activeAgents.push({
-            name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l = > l.toUpperCase()),
+            name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
             pid: pid;
           });
         } catch (error) {
           status.inactiveAgents.push({
-            name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l = > l.toUpperCase());
+            name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
           });
         }
       } else {
         status.inactiveAgents.push({
-          name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l = > l.toUpperCase());
+          name: agentType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         });
       }
     }
     
     // Count files
     status.logFiles = fs.readdirSync(this.logDir).length;
-    status.generatedContent = fs.existsSync(path.join(this.scriptDir, 'generated-content')) ;
+    status.generatedContent = fs.existsSync(path.join(this.scriptDir, 'generated-content')) 
       ? fs.readdirSync(path.join(this.scriptDir, 'generated-content')).length : 0;
-    status.analysisResults = fs.existsSync(path.join(this.scriptDir, 'analysis-results')) ;
+    status.analysisResults = fs.existsSync(path.join(this.scriptDir, 'analysis-results')) 
       ? fs.readdirSync(path.join(this.scriptDir, 'analysis-results')).length : 0;
     
     // Load analytics
@@ -374,7 +374,7 @@ class AutonomousSystemLauncher {
     
     const logFiles = fs.readdirSync(this.logDir).filter(file => file.endsWith('.log'));
     
-    if (logFiles.length = == 0) {;
+    if (logFiles.length === 0) {
       console.log(chalk.yellow('No log files found.'));
       return;
     }
@@ -384,8 +384,8 @@ class AutonomousSystemLauncher {
         type: 'list',
         name: 'logFile',
         message: 'Select log file to view:',
-        choices: logFiles.map(file = > ({ name: file, value: file }))
-      };
+        choices: logFiles.map(file => ({ name: file, value: file }))
+      }
     ]);
     
     const logPath = path.join(this.logDir, logFile);
@@ -548,9 +548,9 @@ class AutonomousSystemLauncher {
 }
 
 // Run the launcher
-if (require.main = == module) {;
+if (require.main === module) {
   const launcher = new AutonomousSystemLauncher();
-  launcher.run().catch(error = > {;
+  launcher.run().catch(error => {
     console.error(chalk.red(`❌ Fatal error: ${error.message}`));
     process.exit(1);
   });
