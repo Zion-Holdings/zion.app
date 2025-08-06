@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FuturisticHero from '../components/ui/FuturisticHero';
 import FuturisticCard from '../components/ui/FuturisticCard';
+import InteractiveNavigation from '../components/ui/InteractiveNavigation';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -141,67 +142,22 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="Experience the future of commerce with Zion's cutting-edge AI-powered marketplace." />
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
-            >
-              Zion
-            </Link>
-            <div className="hidden md:flex gap-6 text-sm font-medium">
-              <Link href="/services" className="hover:text-purple-300 transition-colors">
-                Services
-              </Link>
-              <Link href="/products" className="hover:text-purple-300 transition-colors">
-                Products
-              </Link>
-              <Link href="/talent" className="hover:text-purple-300 transition-colors">
-                Talent
-              </Link>
-              <Link href="/blog" className="hover:text-purple-300 transition-colors">
-                Blog
-              </Link>
-              <Link href="/about" className="hover:text-purple-300 transition-colors">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-purple-300 transition-colors">
-                Contact
-              </Link>
-            </div>
-            <div className="flex gap-4">
-              <Link
-                href="/auth"
-                className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/auth"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-200"
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Interactive Navigation */}
+      <InteractiveNavigation />
 
       {/* Hero Section */}
       <FuturisticHero />
 
-      {/* Stats Section */}
+      {/* Stats Section with Enhanced Animation */}
       <section className="py-16 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
+              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2 group-hover:from-purple-300 group-hover:to-pink-300 transition-all duration-300">
                   {stat.value}
                 </div>
-                <div className="text-gray-300 text-sm md:text-base">
+                <div className="text-gray-300 text-sm md:text-base group-hover:text-white transition-colors duration-300">
                   {stat.label}
                 </div>
               </div>
@@ -210,111 +166,114 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* Marketplace Categories */}
+      {/* Marketplace Categories with Enhanced Layout */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Explore Our Marketplace
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
               Discover a comprehensive ecosystem of technology solutions, from AI services to enterprise infrastructure.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {marketplaceCategories.map((category, index) => (
-              <FuturisticCard
-                key={index}
-                title={category.title}
-                description={category.description}
-                icon={category.icon}
-                link={category.link}
-                color={category.color}
-                category={category.category}
-              />
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <FuturisticCard
+                  title={category.title}
+                  description={category.description}
+                  icon={category.icon}
+                  link={category.link}
+                  color={category.color}
+                  category={category.category}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Services */}
+      {/* Featured Services with Enhanced Animation */}
       <section className="py-16 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Featured Services
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
               Top-rated services from our verified professionals and companies.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredServices.map((service, index) => (
-              <FuturisticCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                link={service.link}
-                color={service.color}
-                price={service.price}
-                rating={service.rating}
-                featured={service.featured}
-              />
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <FuturisticCard
+                  title={service.title}
+                  description={service.description}
+                  link={service.link}
+                  color={service.color}
+                  price={service.price}
+                  rating={service.rating}
+                  featured={service.featured}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Top Talents */}
+      {/* Top Talents with Enhanced Animation */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Top AI Talents
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
               Connect with world-class AI experts and technology professionals.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {topTalents.map((talent, index) => (
-              <FuturisticCard
-                key={index}
-                title={talent.title}
-                description={talent.description}
-                link={talent.link}
-                color={talent.color}
-                price={talent.price}
-                rating={talent.rating}
-                featured={talent.featured}
-              />
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <FuturisticCard
+                  title={talent.title}
+                  description={talent.description}
+                  link={talent.link}
+                  color={talent.color}
+                  price={talent.price}
+                  rating={talent.rating}
+                  featured={talent.featured}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Enhanced CTA Section */}
       <section className="py-16 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in delay-200">
             Join thousands of businesses already leveraging Zion's AI-powered marketplace for their technology needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-400">
             <Link
               href="/auth"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
             >
               Get Started Free
             </Link>
             <Link
               href="/services"
-              className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+              className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
               Explore Services
             </Link>
@@ -322,7 +281,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Enhanced Footer */}
       <footer className="border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

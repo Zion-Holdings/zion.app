@@ -202,6 +202,26 @@ module.exports = {
         'neon-green': '0 0 20px rgba(16, 185, 129, 0.5)',
         'neon-glow': '0 0 30px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1)',
       },
+      container: {
+        'responsive': {
+          center: true,
+          padding: {
+            DEFAULT: '1rem',
+            sm: '2rem',
+            lg: '4rem',
+            xl: '5rem',
+            '2xl': '6rem',
+          },
+        },
+      },
+      utilities: {
+        '.typewriter-text': {
+          'border-right': '2px solid',
+          'white-space': 'nowrap',
+          'overflow': 'hidden',
+          'animation': 'typewriter 3s steps(40) infinite',
+        },
+      },
     },
   },
   plugins: [],
