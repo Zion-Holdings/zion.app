@@ -1,0 +1,122 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-recommendation-engine/",
+  "timestamp": "2025-08-04T16:16:27.421Z",
+  "pageInfo": {
+    "title": "AI Recommendation Engine - Zion",
+    "description": "Intelligent AI-powered recommendation engine that matches you with the perfect services, talents, and equipment based on your specific needs and preferences.",
+    "keywords": "AI recommendations, intelligent matching, personalized suggestions, marketplace AI, Zion",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI Recommendation Engine"
+      },
+      {
+        "level": "h2",
+        "text": "Tell Us About Your Project"
+      },
+      {
+        "level": "h3",
+        "text": "Intelligent Matching"
+      },
+      {
+        "level": "h3",
+        "text": "Detailed Insights"
+      },
+      {
+        "level": "h3",
+        "text": "Instant Results"
+      },
+      {
+        "level": "h2",
+        "text": "Ready to Get Started?"
+      }
+    ],
+    "content": "ZionMarketplaceAI AssistantLoginAI Recommendation EngineOur intelligent AI analyzes your needs and preferences to find the perfect services, talents, and equipment for your projects. Get personalized recommendations with advanced matching algorithms and detailed insights.Tell Us About Your ProjectProject TypeSelect project typeAI/ML DevelopmentWeb DevelopmentMobile AppCloud InfrastructureData AnalyticsCybersecurityIoT/Edge ComputingBlockchainVR/AROtherBudget RangeSelect budget rangeUnder $1,000$1,000 - $5,000$5,000 - $15,000$15,000 - $50,000$50,000+TimelineSelect timeline1-2 weeks1-2 months3-6 months6+ monthsYour Expertise LevelSelect expertise levelBeginnerIntermediateAdvancedExpertKey Preferences (Optional)Get AI Recommendations🧠Intelligent MatchingOur AI analyzes your requirements, budget, and preferences to find the perfect matches from our extensive marketplace.📊Detailed InsightsGet comprehensive AI insights explaining why each recommendation is perfect for your specific needs and project requirements.⚡Instant ResultsReceive personalized recommendations in seconds with our advanced AI algorithms and real-time analysis.Ready to Get Started?Our AI recommendation engine is here to help you find the perfect services, talents, and equipment for your next project.Explore MarketplaceChat with AI Assistant{\"props\":{\"pageProps\":{}},\"page\":\"/ai-recommendation-engine\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-recommendation-engine-ddd3d02a5c909233.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-virtual-assistant-99c9bc73863ff466.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1505,
+    "headingCount": 6,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 17,
+    "stylesheetCount": 1
+  }
+}

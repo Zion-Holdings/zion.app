@@ -1,0 +1,17 @@
+{
+  "id": "analytics-collection",
+  "name": "Analytics Collection",
+  "description": "Collect analytics data every hour",
+  "cron": "0 * * * *",
+  "command": "node automation/collect-analytics.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": "2025-08-01T22:00:00.596Z",
+  "nextRun": "2025-08-01T22:01:00.598Z",
+  "runCount": 11,
+  "successCount": 0,
+  "failureCount": 11,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.300Z"
+}

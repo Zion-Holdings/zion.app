@@ -1,0 +1,32 @@
+{
+  "id": "aiTrend-specialized-agent-1754349363218",
+  "name": "AI Trend Analysis Agent",
+  "type": "specialized",
+  "focus": "AI technology trends",
+  "sources": [
+    "research papers",
+    "tech blogs",
+    "conference proceedings"
+  ],
+  "output": "AI trend reports",
+  "marketData": {
+    "trends": [
+      {
+        "title": "AI Automation Trends",
+        "source": "test"
+      },
+      {
+        "title": "Machine Learning Platforms",
+        "source": "test"
+      }
+    ]
+  },
+  "status": "Active",
+  "createdAt": "2025-08-04T23:16:03.218Z",
+  "configuration": {
+    "analysisDepth": "deep",
+    "updateFrequency": "daily",
+    "outputFormat": "trend-report",
+    "alertThreshold": 0.8
+  }
+}

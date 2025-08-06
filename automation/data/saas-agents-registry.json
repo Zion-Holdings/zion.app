@@ -1,0 +1,4735 @@
+[
+  {
+    "id": "5c1784d3-ead1-412f-8da1-762c4ffb6858",
+    "type": "saas-ideation-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.182Z",
+    "updatedAt": "2025-08-05T02:19:20.182Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "4fa07277-1d09-4f00-aa67-bc8cf090a6fe",
+    "type": "saas-development-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.185Z",
+    "updatedAt": "2025-08-05T02:19:20.185Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "8d1d2be5-99c4-41d9-bf88-7c6e95ca3411",
+    "type": "saas-marketing-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.187Z",
+    "updatedAt": "2025-08-05T02:19:20.187Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "70e80a1d-d99d-4efa-a2e6-b70d6f3d8614",
+    "type": "saas-ideation-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.190Z",
+    "updatedAt": "2025-08-05T02:19:20.190Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25014
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "70e80a1d-d99d-4efa-a2e6-b70d6f3d8614"
+      ],
+      "pid": 25014,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25014
+  },
+  {
+    "id": "13022a7f-d5f9-4f59-9f54-f775fa457d2f",
+    "type": "saas-development-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "stopped",
+    "createdAt": "2025-08-05T02:19:20.202Z",
+    "updatedAt": "2025-08-05T02:19:22.013Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 3,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": 1,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": null,
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "13022a7f-d5f9-4f59-9f54-f775fa457d2f"
+      ],
+      "pid": 25015,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25015
+  },
+  {
+    "id": "49c0d125-b6c8-4033-9414-a126fb71b4de",
+    "type": "saas-marketing-agent",
+    "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "f417abfd-1ed9-4fda-b278-c0d79baadf78",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.208Z",
+    "updatedAt": "2025-08-05T02:19:20.208Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25016
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-marketing-agent.js",
+        "49c0d125-b6c8-4033-9414-a126fb71b4de"
+      ],
+      "pid": 25016,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25016
+  },
+  {
+    "id": "5ba3b7c2-5efb-4758-93f8-8a39db816460",
+    "type": "saas-ideation-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.216Z",
+    "updatedAt": "2025-08-05T02:19:20.216Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "359cf07d-b4e9-4711-8c78-ca7bd16bd775",
+    "type": "saas-development-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.217Z",
+    "updatedAt": "2025-08-05T02:19:20.217Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "9199699a-97cb-402d-973e-ce049dbf7a80",
+    "type": "saas-marketing-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.219Z",
+    "updatedAt": "2025-08-05T02:19:20.219Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "481d5c88-9364-4d8b-b03f-1dc5d2eb2381",
+    "type": "saas-ideation-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.221Z",
+    "updatedAt": "2025-08-05T02:19:20.221Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25017
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "481d5c88-9364-4d8b-b03f-1dc5d2eb2381"
+      ],
+      "pid": 25017,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25017
+  },
+  {
+    "id": "9bab8e04-2ec3-43ae-8500-eb9901301919",
+    "type": "saas-development-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "stopped",
+    "createdAt": "2025-08-05T02:19:20.226Z",
+    "updatedAt": "2025-08-05T02:19:21.254Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 3,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": 1,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": null,
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "9bab8e04-2ec3-43ae-8500-eb9901301919"
+      ],
+      "pid": 25018,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25018
+  },
+  {
+    "id": "f6531fc4-e019-49ab-83f1-8fb5d8418995",
+    "type": "saas-marketing-agent",
+    "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "07c295e2-6457-4820-b62f-d3a2ceec64b4",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "entertainment"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.230Z",
+    "updatedAt": "2025-08-05T02:19:20.230Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25019
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-marketing-agent.js",
+        "f6531fc4-e019-49ab-83f1-8fb5d8418995"
+      ],
+      "pid": 25019,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25019
+  },
+  {
+    "id": "f7d576cf-12f4-43d5-add1-b1f70bb1a018",
+    "type": "saas-ideation-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "market-research",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.509Z",
+    "updatedAt": "2025-08-05T02:19:20.509Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "69663f91-9b48-4a8b-9dcb-95194ef29af2",
+    "type": "saas-development-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "mvp-development",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.830Z",
+    "updatedAt": "2025-08-05T02:19:20.830Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "c88504cc-e365-4748-8131-197b66dc578e",
+    "type": "saas-marketing-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "launch-campaign",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:19:20.842Z",
+    "updatedAt": "2025-08-05T02:19:20.842Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "cf99b4dd-d667-42f5-b32f-5427b6d5f16f",
+    "type": "saas-ideation-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "market-research",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.845Z",
+    "updatedAt": "2025-08-05T02:19:20.845Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25023
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "cf99b4dd-d667-42f5-b32f-5427b6d5f16f"
+      ],
+      "pid": 25023,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25023
+  },
+  {
+    "id": "a6921d36-96ce-4cfc-8ae0-3743439d4c01",
+    "type": "saas-development-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "mvp-development",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "stopped",
+    "createdAt": "2025-08-05T02:19:20.868Z",
+    "updatedAt": "2025-08-05T02:19:22.684Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 3,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": 1,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": null,
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "a6921d36-96ce-4cfc-8ae0-3743439d4c01"
+      ],
+      "pid": 25024,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25024
+  },
+  {
+    "id": "11428f9e-8e42-4a09-ae3b-0d1a8d2bcae6",
+    "type": "saas-marketing-agent",
+    "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "47c1cb14-bc87-49cb-859a-0e22477635b3",
+      "focus": "launch-campaign",
+      "targetAudience": "enterprise",
+      "category": "accounting"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:19:20.873Z",
+    "updatedAt": "2025-08-05T02:19:20.873Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 25025
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-marketing-agent.js",
+        "11428f9e-8e42-4a09-ae3b-0d1a8d2bcae6"
+      ],
+      "pid": 25025,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 25025
+  },
+  {
+    "id": "001c1489-0d6e-4c6e-83e8-1b2a4d7462d8",
+    "type": "saas-ideation-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "market-research",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:20.235Z",
+    "updatedAt": "2025-08-05T02:24:20.236Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "228b6365-4370-4757-be6c-6b7942fa427a",
+    "type": "saas-development-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "mvp-development",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:20.254Z",
+    "updatedAt": "2025-08-05T02:24:20.254Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "fe683420-7509-415c-b949-3b00fc51f07d",
+    "type": "saas-marketing-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "launch-campaign",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:20.268Z",
+    "updatedAt": "2025-08-05T02:24:20.268Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "7d024cc0-244d-49a8-bd54-bee3ad47f87e",
+    "type": "saas-ideation-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "market-research",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:20.270Z",
+    "updatedAt": "2025-08-05T02:24:20.270Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26955
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "7d024cc0-244d-49a8-bd54-bee3ad47f87e"
+      ],
+      "pid": 26955,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26955
+  },
+  {
+    "id": "3ce2cffe-1c3a-49fa-98ee-31b4284c0404",
+    "type": "saas-development-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "mvp-development",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:21.003Z",
+    "updatedAt": "2025-08-05T02:24:21.003Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26956
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "3ce2cffe-1c3a-49fa-98ee-31b4284c0404"
+      ],
+      "pid": 26956,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26956
+  },
+  {
+    "id": "f5f5a9d1-1d1e-4a0c-9d40-62c4963c0eb9",
+    "type": "saas-marketing-agent",
+    "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "282e0c8d-56a2-4beb-a556-22b767a82c33",
+      "focus": "launch-campaign",
+      "targetAudience": "small-business",
+      "category": "project-management"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:21.017Z",
+    "updatedAt": "2025-08-05T02:24:21.017Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26957
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-marketing-agent.js",
+        "f5f5a9d1-1d1e-4a0c-9d40-62c4963c0eb9"
+      ],
+      "pid": 26957,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26957
+  },
+  {
+    "id": "8d5f1465-1834-40bf-9cb9-ef1305e34ac2",
+    "type": "saas-ideation-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "market-research",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:21.387Z",
+    "updatedAt": "2025-08-05T02:24:21.387Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "f9ffb48b-75a5-4abd-a425-e408e081c253",
+    "type": "saas-development-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "mvp-development",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:21.785Z",
+    "updatedAt": "2025-08-05T02:24:21.785Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "1461a613-24ee-4cba-831e-5afe3a51a008",
+    "type": "saas-marketing-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "launch-campaign",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:22.353Z",
+    "updatedAt": "2025-08-05T02:24:22.353Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "c38796dd-b202-41c4-8d8b-1d1708711170",
+    "type": "saas-ideation-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "market-research",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:22.790Z",
+    "updatedAt": "2025-08-05T02:24:22.790Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26970
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "c38796dd-b202-41c4-8d8b-1d1708711170"
+      ],
+      "pid": 26970,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26970
+  },
+  {
+    "id": "e2d5cc10-2655-4ed1-9093-6079cc3ab923",
+    "type": "saas-development-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "mvp-development",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:22.860Z",
+    "updatedAt": "2025-08-05T02:24:22.860Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26972
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "e2d5cc10-2655-4ed1-9093-6079cc3ab923"
+      ],
+      "pid": 26972,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26972
+  },
+  {
+    "id": "e490eacf-509a-48bd-be32-0eefa75412de",
+    "type": "saas-marketing-agent",
+    "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "aab9c061-b119-44dc-8b7c-78df088d2e5a",
+      "focus": "launch-campaign",
+      "targetAudience": "businesses",
+      "category": "image-processing"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:23.461Z",
+    "updatedAt": "2025-08-05T02:24:23.461Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26975
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-marketing-agent.js",
+        "e490eacf-509a-48bd-be32-0eefa75412de"
+      ],
+      "pid": 26975,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26975
+  },
+  {
+    "id": "ab74ee94-4732-4732-bfdf-338e130ca9ca",
+    "type": "saas-ideation-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:23.911Z",
+    "updatedAt": "2025-08-05T02:24:23.911Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "9457b25a-7f95-43a0-87d4-ab32a882651d",
+    "type": "saas-development-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:23.990Z",
+    "updatedAt": "2025-08-05T02:24:23.990Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "eef75a69-1261-4d62-a7d2-be5643ca7a8b",
+    "type": "saas-marketing-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:24.413Z",
+    "updatedAt": "2025-08-05T02:24:24.414Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  },
+  {
+    "id": "d8ea8a38-541d-4b8f-9c68-5b3eae4d9da9",
+    "type": "saas-ideation-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "market-research",
+      "trend-analysis",
+      "opportunity-identification"
+    ],
+    "services": [
+      "idea-generation",
+      "market-validation",
+      "competitive-analysis"
+    ],
+    "config": {
+      "maxIdeasPerDay": 50,
+      "validationDepth": 3,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "market-research",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:24.435Z",
+    "updatedAt": "2025-08-05T02:24:24.435Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26979
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-ideation-agent.js",
+        "d8ea8a38-541d-4b8f-9c68-5b3eae4d9da9"
+      ],
+      "pid": 26979,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26979
+  },
+  {
+    "id": "92e95b9a-31b3-4a2b-a59f-9606cf2fa6c2",
+    "type": "saas-development-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "code-generation",
+      "architecture-design",
+      "testing-automation"
+    ],
+    "services": [
+      "mvp-development",
+      "feature-implementation",
+      "quality-assurance"
+    ],
+    "config": {
+      "maxFeaturesPerDay": 10,
+      "automatedTesting": true,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "mvp-development",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "running",
+    "createdAt": "2025-08-05T02:24:24.447Z",
+    "updatedAt": "2025-08-05T02:24:24.447Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    },
+    "process": {
+      "_events": {},
+      "_eventsCount": 2,
+      "_closesNeeded": 3,
+      "_closesGot": 0,
+      "connected": false,
+      "signalCode": null,
+      "exitCode": null,
+      "killed": false,
+      "spawnfile": "node",
+      "_handle": {
+        "pid": 26980
+      },
+      "spawnargs": [
+        "node",
+        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/saas-development-agent.js",
+        "92e95b9a-31b3-4a2b-a59f-9606cf2fa6c2"
+      ],
+      "pid": 26980,
+      "stdin": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null,
+          "readable": false
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 1,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdout": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stderr": {
+        "connecting": false,
+        "_hadError": false,
+        "_parent": null,
+        "_host": null,
+        "_closeAfterHandlingError": false,
+        "_events": {},
+        "_readableState": {
+          "highWaterMark": 65536,
+          "buffer": [],
+          "bufferIndex": 0,
+          "length": 0,
+          "pipes": [],
+          "awaitDrainWriters": null
+        },
+        "_writableState": {
+          "highWaterMark": 65536,
+          "length": 0,
+          "corked": 0,
+          "writelen": 0,
+          "bufferedIndex": 0,
+          "pendingcb": 0
+        },
+        "allowHalfOpen": false,
+        "_eventsCount": 3,
+        "_sockname": null,
+        "_pendingData": null,
+        "_pendingEncoding": "",
+        "server": null,
+        "_server": null
+      },
+      "stdio": [
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null,
+            "readable": false
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 1,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        },
+        {
+          "connecting": false,
+          "_hadError": false,
+          "_parent": null,
+          "_host": null,
+          "_closeAfterHandlingError": false,
+          "_events": {},
+          "_readableState": {
+            "highWaterMark": 65536,
+            "buffer": [],
+            "bufferIndex": 0,
+            "length": 0,
+            "pipes": [],
+            "awaitDrainWriters": null
+          },
+          "_writableState": {
+            "highWaterMark": 65536,
+            "length": 0,
+            "corked": 0,
+            "writelen": 0,
+            "bufferedIndex": 0,
+            "pendingcb": 0
+          },
+          "allowHalfOpen": false,
+          "_eventsCount": 3,
+          "_sockname": null,
+          "_pendingData": null,
+          "_pendingEncoding": "",
+          "server": null,
+          "_server": null
+        }
+      ]
+    },
+    "processId": 26980
+  },
+  {
+    "id": "afff493d-2915-4de1-a3be-fb974bdaf242",
+    "type": "saas-marketing-agent",
+    "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+    "capabilities": [
+      "content-creation",
+      "campaign-management",
+      "seo-optimization"
+    ],
+    "services": [
+      "landing-pages",
+      "email-campaigns",
+      "social-media"
+    ],
+    "config": {
+      "maxContentPerDay": 20,
+      "automatedCampaigns": true,
+      "serviceId": "3c9255d2-6751-4712-ae4c-b086d37684b7",
+      "focus": "launch-campaign",
+      "targetAudience": "individuals",
+      "category": "education"
+    },
+    "status": "created",
+    "createdAt": "2025-08-05T02:24:24.467Z",
+    "updatedAt": "2025-08-05T02:24:24.467Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "successRate": 0,
+      "averageResponseTime": 0,
+      "lastActivity": null
+    }
+  }
+]

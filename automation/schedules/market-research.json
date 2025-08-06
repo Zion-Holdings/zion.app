@@ -1,0 +1,17 @@
+{
+  "id": "market-research",
+  "name": "Market Research",
+  "description": "Perform market research every 6 hours",
+  "cron": "0 */6 * * *",
+  "command": "node automation/market-research.js",
+  "enabled": true,
+  "priority": "low",
+  "lastRun": "2025-08-01T21:00:00.657Z",
+  "nextRun": "2025-08-01T21:01:00.673Z",
+  "runCount": 2,
+  "successCount": 0,
+  "failureCount": 2,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.302Z"
+}

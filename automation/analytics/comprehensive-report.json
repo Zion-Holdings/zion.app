@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-08-04T21:10:37-03:00",
+  "system": {
+    "uptime": "21:10  up 56 mins, 1 user, load averages: 41.70 25.67 18.25",
+    "memory": "",
+    "disk": "47%"
+  },
+  "agents": {
+    "total": "      12",
+    "running": "      50"
+  },
+  "logs": {
+    "total_size": "737M",
+    "recent_errors": " 8168233"
+  },
+  "content": {
+    "generated_pages": "       0",
+    "generated_content": "      39"
+  }
+}

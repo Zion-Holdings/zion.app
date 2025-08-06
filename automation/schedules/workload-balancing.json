@@ -1,0 +1,17 @@
+{
+  "id": "workload-balancing",
+  "name": "Workload Balancing",
+  "description": "Balance workload every 5 minutes",
+  "cron": "*/5 * * * *",
+  "command": "node automation/balance-workload.js",
+  "enabled": true,
+  "priority": "high",
+  "lastRun": "2025-08-01T22:10:00.178Z",
+  "nextRun": "2025-08-01T22:11:00.182Z",
+  "runCount": 123,
+  "successCount": 0,
+  "failureCount": 123,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.314Z"
+}

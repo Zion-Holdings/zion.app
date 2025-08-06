@@ -1,0 +1,86 @@
+{
+  "url": "https://ziontechgroup.netlify.app/analytics-dashboard/",
+  "timestamp": "2025-08-04T16:17:02.062Z",
+  "pageInfo": {
+    "title": "Analytics Dashboard - Zion Marketplace",
+    "description": "Comprehensive analytics dashboard for marketplace performance, revenue tracking, and business intelligence",
+    "keywords": "analytics, dashboard, marketplace analytics, business intelligence, Zion",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Zion"
+      },
+      {
+        "level": "h1",
+        "text": "Analytics Dashboard"
+      },
+      {
+        "level": "h3",
+        "text": "Revenue Trend"
+      },
+      {
+        "level": "h2",
+        "text": "Get Deeper Insights"
+      }
+    ],
+    "content": "ZionMarketplaceReviewsPaymentsLoginAnalytics DashboardComprehensive insights into your marketplace performance, revenue tracking, and business intelligence.7 Days30 Days90 Days1 Year📊Overview💰Revenue📈Performance👥User Behavior🔍Market InsightsTotal Revenue$284,750↗ 15.4%💰Total Orders1,247+12.5% from last period📦Active Users8,920+8.3% from last period👥Avg Order Value$229+5.2% from last period📊Conversion Rate3.2%+0.8% from last period🎯Growth Rate15.4%+2.1% from last period📈Revenue Trend01-0101-0201-0301-0401-0501-0601-07Get Deeper InsightsAccess advanced analytics, custom reports, and real-time monitoring to optimize your marketplace performance.Explore MarketplaceAdvanced Search{\"props\":{\"pageProps\":{}},\"page\":\"/analytics-dashboard\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/analytics-dashboard-bb4d481106b2111e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 869,
+    "headingCount": 4,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 10,
+    "stylesheetCount": 1
+  }
+}

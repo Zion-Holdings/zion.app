@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "totalServices": 10,
+    "totalAgents": 21,
+    "totalRevenue": 90408,
+    "marketAnalyses": 6
+  },
+  "topPerformingServices": [
+    {
+      "name": "NextGen BLOCKCHAIN SERVICE Service",
+      "type": "blockchain-service",
+      "price": 62400,
+      "status": "created"
+    },
+    {
+      "name": "Enterprise BLOCKCHAIN SERVICE Application",
+      "type": "blockchain-service",
+      "price": 48000,
+      "status": "created"
+    },
+    {
+      "name": "Enterprise IOT PLATFORM Solution",
+      "type": "iot-platform",
+      "price": 39000,
+      "status": "created"
+    },
+    {
+      "name": "Pro DATA ANALYTICS Solution",
+      "type": "data-analytics",
+      "price": 36400,
+      "status": "created"
+    },
+    {
+      "name": "Smart MOBILE APP Application",
+      "type": "mobile-app",
+      "price": 32500,
+      "status": "created"
+    }
+  ],
+  "topPerformingAgents": [
+    {
+      "name": "AI-Powered DATA ANALYTICS Platform Sales Representative",
+      "type": "sales-representative",
+      "revenue": 10809,
+      "conversionRate": 1
+    },
+    {
+      "name": "Pro IOT PLATFORM Application Digital Marketer",
+      "type": "digital-marketer",
+      "revenue": 10793,
+      "conversionRate": 1
+    },
+    {
+      "name": "AI-Powered DATA ANALYTICS Platform Digital Marketer",
+      "type": "digital-marketer",
+      "revenue": 10236,
+      "conversionRate": 1
+    },
+    {
+      "name": "Enterprise BLOCKCHAIN SERVICE Application Digital Marketer",
+      "type": "digital-marketer",
+      "revenue": 7641,
+      "conversionRate": 0
+    },
+    {
+      "name": "Enterprise IOT PLATFORM Solution Digital Marketer",
+      "type": "digital-marketer",
+      "revenue": 6817,
+      "conversionRate": 0
+    }
+  ],
+  "marketInsights": [
+    {
+      "serviceType": "web-application",
+      "marketSize": "$50B",
+      "growthRate": "12%",
+      "competition": "High",
+      "demand": "Growing"
+    },
+    {
+      "serviceType": "mobile-app",
+      "marketSize": "$100B",
+      "growthRate": "15%",
+      "competition": "High",
+      "demand": "High"
+    },
+    {
+      "serviceType": "ai-service",
+      "marketSize": "$200B",
+      "growthRate": "25%",
+      "competition": "Medium",
+      "demand": "Stable"
+    },
+    {
+      "serviceType": "blockchain-service",
+      "marketSize": "$30B",
+      "growthRate": "20%",
+      "competition": "Low",
+      "demand": "Growing"
+    },
+    {
+      "serviceType": "iot-platform",
+      "marketSize": "$150B",
+      "growthRate": "18%",
+      "competition": "High",
+      "demand": "Growing"
+    },
+    {
+      "serviceType": "data-analytics",
+      "marketSize": "$80B",
+      "growthRate": "14%",
+      "competition": "Medium",
+      "demand": "Stable"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "service_generation",
+      "priority": "high",
+      "action": "Increase service generation frequency",
+      "reason": "Low number of services created"
+    }
+  ],
+  "timestamp": "2025-08-05T02:00:00.704Z"
+}

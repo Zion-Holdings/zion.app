@@ -1,0 +1,15 @@
+{
+  "id": "analysis-1754359849207",
+  "name": "ChatGPT Analysis Agent analysis-1754359849207",
+  "type": "chatgpt-analysis",
+  "capabilities": [
+    "conversation-analysis",
+    "project-comparison",
+    "cursor-agent-creation",
+    "prompt-generation",
+    "development-coordination"
+  ],
+  "status": "created",
+  "createdAt": "2025-08-05T02:10:49.727Z",
+  "lastActive": "2025-08-05T02:10:49.727Z"
+}

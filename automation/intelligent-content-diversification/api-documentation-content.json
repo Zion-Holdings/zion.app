@@ -1,0 +1,23 @@
+{
+  "type": "api-documentation",
+  "title": "Comprehensive Guide to api documentation",
+  "description": "Learn everything about api documentation and its applications",
+  "sections": [
+    "Introduction and Overview",
+    "Key Concepts and Principles",
+    "Implementation Strategies",
+    "Best Practices and Tips",
+    "Case Studies and Examples",
+    "Future Trends and Developments"
+  ],
+  "keywords": [
+    "api-documentation",
+    "guide",
+    "tutorial",
+    "best-practices"
+  ],
+  "targetAudience": "developers, architects, decision-makers",
+  "estimatedReadingTime": "15-20 minutes",
+  "difficulty": "intermediate",
+  "generatedAt": "2025-08-06T11:26:31.282Z"
+}

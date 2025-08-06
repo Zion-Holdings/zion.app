@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rule-nextjs-1753919889184",
+    "category": "framework",
+    "rule": "Always use Next.js best practices: use Image component for images, Link for navigation, and follow the routing conventions.",
+    "priority": "high",
+    "appliesTo": [
+      "components",
+      "pages",
+      "routing"
+    ],
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "rule-quality-1753919889184",
+    "category": "quality",
+    "rule": "Follow TypeScript best practices. Use proper typing, avoid any types, and maintain clean, readable code.",
+    "priority": "high",
+    "appliesTo": [
+      "typescript",
+      "code-quality",
+      "typing"
+    ],
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "rule-performance-1753919889184",
+    "category": "performance",
+    "rule": "Optimize for performance: use proper image optimization, implement lazy loading, and minimize bundle size.",
+    "priority": "medium",
+    "appliesTo": [
+      "performance",
+      "optimization",
+      "images"
+    ],
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "rule-security-1753919889184",
+    "category": "security",
+    "rule": "Never commit sensitive data. Use environment variables for configuration and ensure .env files are in .gitignore.",
+    "priority": "high",
+    "appliesTo": [
+      "security",
+      "environment",
+      "git"
+    ],
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  }
+]

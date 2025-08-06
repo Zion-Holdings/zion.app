@@ -1,0 +1,102 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-invoice-generator/",
+  "timestamp": "2025-08-04T16:16:31.485Z",
+  "pageInfo": {
+    "title": "AI Invoice Generator - Zion Marketplace",
+    "description": "Generate professional invoices and manage billing with AI assistance",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI Invoice Generator"
+      },
+      {
+        "level": "h2",
+        "text": "Invoice Details"
+      },
+      {
+        "level": "h3",
+        "text": "Your Company Details"
+      },
+      {
+        "level": "h3",
+        "text": "Client Details"
+      },
+      {
+        "level": "h3",
+        "text": "Invoice Items"
+      },
+      {
+        "level": "h4",
+        "text": "Item 1"
+      },
+      {
+        "level": "h3",
+        "text": "Totals"
+      },
+      {
+        "level": "h2",
+        "text": "Invoice Preview"
+      },
+      {
+        "level": "h3",
+        "text": "AI Invoice Generator Features"
+      }
+    ],
+    "content": "AI Invoice GeneratorCreate professional invoices, manage billing, and track payments with AI assistance. Generate beautiful invoices in minutes.Invoice DetailsInvoice Number *Issue Date *Due Date *Your Company DetailsCompany Name *Company Email *Company Address *Client DetailsClient Name *Client Email *Client Address *Invoice ItemsAdd ItemItem 1Description *QuantityUnit PriceAmount: $0.00TotalsTax Rate (%)Payment TermsSubtotal:$0.00Tax (0%):$0.00Total:$0.00NotesGenerate InvoiceInvoice Preview📄Your invoice will appear hereFill out the form and click \"Generate Invoice\"AI Invoice Generator FeaturesProfessional invoice templatesAI-powered invoice generationAutomatic calculations and totalsDownload and share capabilitiesProfessional formatting and layout{\"props\":{\"pageProps\":{}},\"page\":\"/ai-invoice-generator\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-invoice-generator-4994faed204a6e87.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 935,
+    "headingCount": 9,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 9,
+    "stylesheetCount": 1
+  }
+}

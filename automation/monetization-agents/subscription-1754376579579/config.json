@@ -1,0 +1,23 @@
+{
+  "id": "subscription-1754376579579",
+  "type": "subscription",
+  "created": "2025-08-05T06:49:39.579Z",
+  "status": "active",
+  "config": {
+    "tiers": [
+      "basic",
+      "premium",
+      "enterprise"
+    ],
+    "metrics": [
+      "mrr",
+      "churn-rate",
+      "expansion-revenue"
+    ]
+  },
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

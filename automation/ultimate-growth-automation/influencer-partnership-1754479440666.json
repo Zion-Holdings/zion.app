@@ -1,0 +1,32 @@
+{
+  "id": "influencer-partnership-1754479440665",
+  "type": "macro-influencers",
+  "strategy": {
+    "selection": [
+      "50K-500K followers",
+      "broad reach",
+      "established audience"
+    ],
+    "collaboration": [
+      "sponsored content",
+      "product integration",
+      "brand storytelling"
+    ],
+    "content": [
+      "sponsored posts",
+      "product reviews",
+      "lifestyle integration"
+    ],
+    "promotion": [
+      "sponsored posts",
+      "stories",
+      "live content"
+    ]
+  },
+  "expectedResults": {
+    "reach": "50,000-500,000 per post",
+    "engagement": "3-8%",
+    "conversions": "2-8%",
+    "roi": "3:1 to 6:1"
+  }
+}

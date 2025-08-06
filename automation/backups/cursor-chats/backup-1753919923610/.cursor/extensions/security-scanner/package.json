@@ -1,0 +1,17 @@
+{
+  "name": "cursor-security-scanner",
+  "version": "1.0.0",
+  "description": "Security scanning extension for vulnerability detection and fixes",
+  "main": "extension.js",
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "axios": "^1.6.0"
+  },
+  "keywords": [
+    "cursor",
+    "security",
+    "vulnerabilities",
+    "scanning"
+  ],
+  "license": "MIT"
+}

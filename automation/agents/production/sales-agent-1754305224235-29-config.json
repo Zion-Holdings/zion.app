@@ -1,0 +1,42 @@
+{
+  "id": "sales-agent-1754305224235-29",
+  "name": "AI business solution Sales Agent",
+  "type": "sales",
+  "focus": "AI business solution",
+  "capabilities": [
+    "lead generation",
+    "campaign management",
+    "conversion optimization"
+  ],
+  "output": "sales campaigns",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Opportunity identified: AI business solution",
+  "status": "Active",
+  "createdAt": "2025-08-04T11:00:24.235Z",
+  "configuration": {
+    "sources": [
+      "CRM systems",
+      "lead databases",
+      "social platforms"
+    ],
+    "parameters": {
+      "area": "AI business solution",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9455536557712781,
+    "accuracy": 0.980293506772465,
+    "reliability": 0.9472327150242373,
+    "scalability": 0.8381121170306643
+  },
+  "recommendations": []
+}

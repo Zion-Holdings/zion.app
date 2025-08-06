@@ -1,0 +1,19 @@
+{
+  "technology": "blockchain-ai",
+  "title": "blockchain ai: A Complete Guide",
+  "description": "Comprehensive guide to blockchain ai and its applications",
+  "contentSections": [
+    "Technology Overview and Fundamentals",
+    "Current State and Capabilities",
+    "Implementation and Integration",
+    "Use Cases and Applications",
+    "Challenges and Limitations",
+    "Future Developments and Roadmap"
+  ],
+  "technicalLevel": "advanced",
+  "prerequisites": [
+    "basic understanding of related technologies"
+  ],
+  "estimatedLearningTime": "2-3 hours",
+  "generatedAt": "2025-08-06T11:26:31.290Z"
+}

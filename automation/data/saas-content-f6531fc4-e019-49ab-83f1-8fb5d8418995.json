@@ -1,0 +1,473 @@
+[
+  {
+    "id": "8a3586fa-fb22-4261-95d9-4021a45d90fe",
+    "type": "landing-page",
+    "title": "Transform Your Business with AI-Powered Automation",
+    "description": "Discover how our platform can transform your business operations and drive growth.",
+    "createdAt": "2025-08-05T02:24:23.333Z",
+    "updatedAt": "2025-08-05T02:24:23.654Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "landingPage": {
+      "sections": {
+        "hero": {
+          "headline": "The ultimate business solution for modern teams",
+          "subheadline": "Streamline your operations and boost productivity with our innovative platform.",
+          "content": "Our platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes."
+        },
+        "features": {
+          "headline": "Enterprise-grade automation security",
+          "subheadline": "Discover powerful features designed to transform your business workflow.",
+          "content": "From advanced analytics to seamless integrations, our platform provides everything you need to succeed in today's competitive market."
+        }
+      },
+      "cta": {
+        "primary": "Start Free Trial",
+        "secondary": "Schedule Demo"
+      },
+      "pricing": {
+        "plans": [
+          {
+            "name": "Starter",
+            "price": 29,
+            "features": [
+              "Basic features",
+              "Email support",
+              "5 users"
+            ]
+          },
+          {
+            "name": "Professional",
+            "price": 99,
+            "features": [
+              "Advanced features",
+              "Priority support",
+              "Unlimited users"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": 299,
+            "features": [
+              "Custom features",
+              "Dedicated support",
+              "Custom integrations"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "6dd4e5e5-9a8f-4a99-bb9f-fb3ab4e5c9af",
+    "type": "landing-page",
+    "title": "The Ultimate Solution for Modern Teams",
+    "description": "Discover how our platform can transform your business operations and drive growth.",
+    "createdAt": "2025-08-05T02:24:24.004Z",
+    "updatedAt": "2025-08-05T02:24:24.004Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "landingPage": {
+      "sections": {
+        "hero": {
+          "headline": "Streamline business with AI-powered automation",
+          "subheadline": "Streamline your operations and boost productivity with our innovative platform.",
+          "content": "Our platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes."
+        },
+        "features": {
+          "headline": "Advanced automation with real-time analytics",
+          "subheadline": "Discover powerful features designed to transform your business workflow.",
+          "content": "From advanced analytics to seamless integrations, our platform provides everything you need to succeed in today's competitive market."
+        }
+      },
+      "cta": {
+        "primary": "Start Free Trial",
+        "secondary": "Schedule Demo"
+      },
+      "pricing": {
+        "plans": [
+          {
+            "name": "Starter",
+            "price": 29,
+            "features": [
+              "Basic features",
+              "Email support",
+              "5 users"
+            ]
+          },
+          {
+            "name": "Professional",
+            "price": 99,
+            "features": [
+              "Advanced features",
+              "Priority support",
+              "Unlimited users"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": 299,
+            "features": [
+              "Custom features",
+              "Dedicated support",
+              "Custom integrations"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "a2b14e07-78fa-482a-a0e1-a8c90b16629a",
+    "type": "landing-page",
+    "title": "The Ultimate Solution for Modern Teams",
+    "description": "Discover how our platform can transform your business operations and drive growth.",
+    "createdAt": "2025-08-05T02:24:24.004Z",
+    "updatedAt": "2025-08-05T02:24:24.004Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "landingPage": {
+      "sections": {
+        "hero": {
+          "headline": "Transform your business with Our Platform",
+          "subheadline": "Streamline your operations and boost productivity with our innovative platform.",
+          "content": "Our platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes."
+        },
+        "features": {
+          "headline": "Seamless automation integration",
+          "subheadline": "Discover powerful features designed to transform your business workflow.",
+          "content": "From advanced analytics to seamless integrations, our platform provides everything you need to succeed in today's competitive market."
+        }
+      },
+      "cta": {
+        "primary": "Start Free Trial",
+        "secondary": "Schedule Demo"
+      },
+      "pricing": {
+        "plans": [
+          {
+            "name": "Starter",
+            "price": 29,
+            "features": [
+              "Basic features",
+              "Email support",
+              "5 users"
+            ]
+          },
+          {
+            "name": "Professional",
+            "price": 99,
+            "features": [
+              "Advanced features",
+              "Priority support",
+              "Unlimited users"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": 299,
+            "features": [
+              "Custom features",
+              "Dedicated support",
+              "Custom integrations"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "86705856-ce21-446d-813f-3febad592a2e",
+    "type": "landing-page",
+    "title": "Transform Your Business with AI-Powered Automation",
+    "description": "Discover how our platform can transform your business operations and drive growth.",
+    "createdAt": "2025-08-05T02:24:24.154Z",
+    "updatedAt": "2025-08-05T02:24:24.160Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "landingPage": {
+      "sections": {
+        "hero": {
+          "headline": "Streamline business with AI-powered automation",
+          "subheadline": "Streamline your operations and boost productivity with our innovative platform.",
+          "content": "Our platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes."
+        },
+        "features": {
+          "headline": "Seamless automation integration",
+          "subheadline": "Discover powerful features designed to transform your business workflow.",
+          "content": "From advanced analytics to seamless integrations, our platform provides everything you need to succeed in today's competitive market."
+        }
+      },
+      "cta": {
+        "primary": "Start Free Trial",
+        "secondary": "Schedule Demo"
+      },
+      "pricing": {
+        "plans": [
+          {
+            "name": "Starter",
+            "price": 29,
+            "features": [
+              "Basic features",
+              "Email support",
+              "5 users"
+            ]
+          },
+          {
+            "name": "Professional",
+            "price": 99,
+            "features": [
+              "Advanced features",
+              "Priority support",
+              "Unlimited users"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": 299,
+            "features": [
+              "Custom features",
+              "Dedicated support",
+              "Custom integrations"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "93558b37-3275-42b1-b8eb-9e9d5ddc7a95",
+    "type": "email-campaign",
+    "title": "Welcome to the Future of Business",
+    "description": "Learn about the latest features and how they can benefit your organization.",
+    "createdAt": "2025-08-05T02:24:24.185Z",
+    "updatedAt": "2025-08-05T02:24:24.185Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "emailCampaign": {
+      "type": "onboarding",
+      "subject": "Get started with Our Platform",
+      "body": "Here's your complete guide to getting the most out of Our Platform.",
+      "targetAudience": "startup-founders",
+      "sendDate": "2025-08-05T11:17:02.842Z",
+      "metrics": {
+        "openRate": 0,
+        "clickRate": 0,
+        "conversionRate": 0
+      }
+    }
+  },
+  {
+    "id": "181d4f7d-bc0d-4aea-944a-e615913c08e5",
+    "type": "email-campaign",
+    "title": "Unlock Your Business Potential",
+    "description": "Learn about the latest features and how they can benefit your organization.",
+    "createdAt": "2025-08-05T02:24:24.189Z",
+    "updatedAt": "2025-08-05T02:24:24.189Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "emailCampaign": {
+      "type": "onboarding",
+      "subject": "Get started with Our Platform",
+      "body": "Here's your complete guide to getting the most out of Our Platform.",
+      "targetAudience": "enterprise-decision-makers",
+      "sendDate": "2025-08-11T19:27:49.953Z",
+      "metrics": {
+        "openRate": 0,
+        "clickRate": 0,
+        "conversionRate": 0
+      }
+    }
+  },
+  {
+    "id": "e4effae3-3eff-4dfc-b1aa-27bfb0d80903",
+    "type": "email-campaign",
+    "title": "Welcome to the Future of Business",
+    "description": "Learn about the latest features and how they can benefit your organization.",
+    "createdAt": "2025-08-05T02:24:24.190Z",
+    "updatedAt": "2025-08-05T02:24:24.190Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "emailCampaign": {
+      "type": "welcome",
+      "subject": "Welcome to Our Platform!",
+      "body": "Thank you for choosing Our Platform. We're excited to help you succeed!",
+      "targetAudience": "small-business-owners",
+      "sendDate": "2025-08-10T23:36:10.741Z",
+      "metrics": {
+        "openRate": 0,
+        "clickRate": 0,
+        "conversionRate": 0
+      }
+    }
+  },
+  {
+    "id": "6118c445-55f9-4538-b029-8e10eb4d490a",
+    "type": "social-media",
+    "title": "The Future of Work is Here",
+    "description": "Share insights and tips for modern business success.",
+    "createdAt": "2025-08-05T02:24:24.190Z",
+    "updatedAt": "2025-08-05T02:24:24.190Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "socialMedia": {
+      "platform": "twitter",
+      "contentType": "user-spotlight",
+      "content": "Amazing results from our users! 📈 #SuccessStory",
+      "hashtags": [
+        "#Business",
+        "#AI",
+        "#Productivity",
+        "#Innovation"
+      ],
+      "scheduledTime": "2025-08-05T23:18:46.166Z",
+      "engagement": {
+        "likes": 0,
+        "shares": 0,
+        "comments": 0
+      }
+    }
+  },
+  {
+    "id": "9d8bcbd0-af7c-4c0e-9963-efa319e4134d",
+    "type": "social-media",
+    "title": "The Future of Work is Here",
+    "description": "Share insights and tips for modern business success.",
+    "createdAt": "2025-08-05T02:24:24.198Z",
+    "updatedAt": "2025-08-05T02:24:24.198Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "socialMedia": {
+      "platform": "twitter",
+      "contentType": "educational",
+      "content": "5 ways AI is changing business operations 🚀 #AI #Business #Innovation",
+      "hashtags": [
+        "#Business",
+        "#AI",
+        "#Productivity",
+        "#Innovation"
+      ],
+      "scheduledTime": "2025-08-06T02:05:32.341Z",
+      "engagement": {
+        "likes": 0,
+        "shares": 0,
+        "comments": 0
+      }
+    }
+  },
+  {
+    "id": "2adbbbff-cdb2-4517-bf67-5a3400e3ed24",
+    "type": "blog-post",
+    "title": "How AI is Revolutionizing Business Operations",
+    "description": "In-depth analysis and guides for business transformation and growth.",
+    "createdAt": "2025-08-05T02:24:24.198Z",
+    "updatedAt": "2025-08-05T02:24:24.198Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "blogPost": {
+      "category": "case-study",
+      "structure": "story",
+      "outline": [
+        "Setting the scene",
+        "The challenge",
+        "The solution",
+        "The implementation",
+        "The results",
+        "Lessons learned"
+      ],
+      "estimatedReadTime": 5,
+      "seoKeywords": [
+        "case study",
+        "success story",
+        "results",
+        "transformation"
+      ],
+      "publishDate": "2025-08-15T17:13:48.262Z"
+    }
+  },
+  {
+    "id": "8e1cc80d-0723-40e9-80b4-def34b0f6ce0",
+    "type": "blog-post",
+    "title": "10 Tips for Successful Digital Transformation",
+    "description": "In-depth analysis and guides for business transformation and growth.",
+    "createdAt": "2025-08-05T02:24:24.213Z",
+    "updatedAt": "2025-08-05T02:24:24.213Z",
+    "status": "draft",
+    "performance": {
+      "views": 0,
+      "clicks": 0,
+      "conversions": 0,
+      "engagement": 0
+    },
+    "blogPost": {
+      "category": "tutorial",
+      "structure": "story",
+      "outline": [
+        "Setting the scene",
+        "The challenge",
+        "The solution",
+        "The implementation",
+        "The results",
+        "Lessons learned"
+      ],
+      "estimatedReadTime": 4,
+      "seoKeywords": [
+        "how to",
+        "guide",
+        "tutorial",
+        "step by step"
+      ],
+      "publishDate": "2025-08-18T18:36:06.043Z"
+    }
+  }
+]

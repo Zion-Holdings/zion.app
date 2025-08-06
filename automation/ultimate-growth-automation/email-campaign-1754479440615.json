@@ -1,0 +1,16 @@
+{
+  "id": "email-campaign-1754479440615",
+  "campaign": "newsletter",
+  "strategy": {
+    "subject": "Your Weekly Automation Insights",
+    "content": "Weekly insights on automation trends, tips, and strategies for business growth.",
+    "audience": "Subscribers and interested prospects",
+    "timing": "Weekly on Tuesday at 10 AM"
+  },
+  "expectedResults": {
+    "openRate": "25-35%",
+    "clickRate": "3-5%",
+    "conversionRate": "1-3%",
+    "revenue": "$2,000-8,000 monthly"
+  }
+}

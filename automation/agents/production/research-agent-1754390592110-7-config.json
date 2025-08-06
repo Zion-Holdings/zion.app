@@ -1,0 +1,49 @@
+{
+  "id": "research-agent-1754390592110-7",
+  "name": "AI: Research Agent",
+  "type": "research",
+  "focus": "AI:",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Digital Twins and AI: Powering the future of creativity at Nestlé",
+  "status": "Active",
+  "createdAt": "2025-08-05T10:43:12.110Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI:",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.789382237820014,
+    "accuracy": 0.9783540982517954,
+    "reliability": 0.9125275317631492,
+    "scalability": 0.6777682285035126
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "strategy": "blog-content",
+  "description": "Create valuable blog content",
+  "contentTypes": [
+    "How-to guides",
+    "Industry insights",
+    "Case studies",
+    "Expert interviews"
+  ],
+  "distribution": [
+    "Website",
+    "Social media",
+    "Email newsletters",
+    "Industry publications"
+  ],
+  "status": "implemented",
+  "implementedAt": "2025-08-06T11:52:50.812Z"
+}

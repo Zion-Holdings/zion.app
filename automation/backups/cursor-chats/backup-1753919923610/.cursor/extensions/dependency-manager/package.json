@@ -1,0 +1,20 @@
+{
+  "name": "cursor-dependency-manager",
+  "version": "1.0.0",
+  "description": "Manages dependencies and security updates",
+  "main": "extension.js",
+  "scripts": {
+    "start": "node extension.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.0",
+    "axios": "^3.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "automation",
+    "extension"
+  ],
+  "license": "MIT"
+}

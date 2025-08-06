@@ -1,0 +1,12 @@
+{
+  "platform": "facebook",
+  "strategy": "community-building",
+  "targetAudience": "General audience and potential customers",
+  "contentTypes": [
+    "educational-content",
+    "behind-the-scenes",
+    "user-stories"
+  ],
+  "status": "implemented",
+  "implementedAt": "2025-08-06T11:52:50.816Z"
+}

@@ -1,0 +1,323 @@
+[
+  {
+    "id": "2537def8-e0a8-4749-afa6-e0922dc57827",
+    "name": "Collaborative crm workflow tool",
+    "serviceType": "b2b-saas",
+    "category": "crm",
+    "description": "A comprehensive crm solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$50M-$100M",
+    "competitionLevel": "High",
+    "revenuePotential": 9279,
+    "developmentComplexity": "Medium",
+    "timeToMarket": "6-8 months",
+    "createdAt": "2025-08-05T02:24:23.354Z",
+    "score": 0.7,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.199Z",
+    "nextSteps": [
+      "Launch beta version",
+      "Develop business plan",
+      "Conduct detailed market research",
+      "Assemble development team"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "CrmPro",
+        "CrmHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Provide superior customer support"
+    }
+  },
+  {
+    "id": "47010899-689b-4472-95a1-8a5dacb57c47",
+    "name": "Real-time customer-support analytics dashboard",
+    "serviceType": "b2b-saas",
+    "category": "customer-support",
+    "description": "A comprehensive customer-support solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$10M-$50M",
+    "competitionLevel": "Medium",
+    "revenuePotential": 7943,
+    "developmentComplexity": "Medium",
+    "timeToMarket": "6-8 months",
+    "createdAt": "2025-08-05T02:24:23.970Z",
+    "score": 0.73,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.216Z",
+    "nextSteps": [
+      "Design user experience",
+      "Create MVP prototype",
+      "Conduct detailed market research",
+      "Assemble development team"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "Customer-supportPro",
+        "Customer-supportHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Focus on underserved market segment"
+    }
+  },
+  {
+    "id": "6e9388d6-441b-4ee0-b632-a86eede1cc79",
+    "name": "Cloud-based accounting management system",
+    "serviceType": "b2b-saas",
+    "category": "accounting",
+    "description": "A comprehensive accounting solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$50M-$100M",
+    "competitionLevel": "High",
+    "revenuePotential": 6200,
+    "developmentComplexity": "Low",
+    "timeToMarket": "8-12 months",
+    "createdAt": "2025-08-05T02:24:23.970Z",
+    "score": 0.72,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.216Z",
+    "nextSteps": [
+      "Assemble development team",
+      "Create MVP prototype",
+      "Design user experience",
+      "Secure initial funding"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises",
+        "Large corporations"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "Medium",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "AccountingPro",
+        "AccountingHub",
+        "AccountingSuite"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Offer unique feature set"
+    }
+  },
+  {
+    "id": "81a4f6de-a0af-4728-bf4e-1ccb093a95b3",
+    "name": "Personal fitness assistant app",
+    "serviceType": "b2c-saas",
+    "category": "fitness",
+    "description": "Transform your daily fitness experience with our user-friendly app. Designed for individuals and families, our platform makes fitness easier and more enjoyable.",
+    "marketSize": "$20M-$50M",
+    "competitionLevel": "Low",
+    "revenuePotential": 1853,
+    "developmentComplexity": "Medium",
+    "timeToMarket": "5-7 months",
+    "createdAt": "2025-08-05T02:24:23.971Z",
+    "score": 0.73,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.217Z",
+    "nextSteps": [
+      "Develop business plan",
+      "Secure initial funding",
+      "Conduct detailed market research"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Individual users",
+        "Families"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "Medium",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "FitnessPro",
+        "FitnessHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Offer unique feature set"
+    }
+  },
+  {
+    "id": "66d19526-79c0-4ba6-b7da-d5c4fe20441c",
+    "name": "Intelligent image-processing automation",
+    "serviceType": "ai-saas",
+    "category": "image-processing",
+    "description": "Leverage the power of artificial intelligence to revolutionize image-processing. Our AI-powered platform delivers intelligent insights and automation for better results.",
+    "marketSize": "$100M-$500M",
+    "competitionLevel": "Medium",
+    "revenuePotential": 9063,
+    "developmentComplexity": "Medium",
+    "timeToMarket": "6-9 months",
+    "createdAt": "2025-08-05T02:24:24.187Z",
+    "score": 0.74,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.217Z",
+    "nextSteps": [
+      "Plan marketing strategy",
+      "Secure initial funding",
+      "Develop business plan"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Developers",
+        "Businesses",
+        "Content creators"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "Image-processingPro",
+        "Image-processingHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Provide superior customer support"
+    }
+  },
+  {
+    "id": "60b998d2-792a-40e3-a975-b3c95a1cb272",
+    "name": "Intelligent data-analysis automation",
+    "serviceType": "ai-saas",
+    "category": "data-analysis",
+    "description": "Leverage the power of artificial intelligence to revolutionize data-analysis. Our AI-powered platform delivers intelligent insights and automation for better results.",
+    "marketSize": "$100M-$500M",
+    "competitionLevel": "High",
+    "revenuePotential": 10186,
+    "developmentComplexity": "Low",
+    "timeToMarket": "6-9 months",
+    "createdAt": "2025-08-05T02:24:24.193Z",
+    "score": 0.75,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.217Z",
+    "nextSteps": [
+      "Conduct detailed market research",
+      "Create MVP prototype",
+      "Secure initial funding"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Developers",
+        "Businesses"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation"
+      ],
+      "growthPotential": "Low",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "Data-analysisPro",
+        "Data-analysisHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Build strong community"
+    }
+  }
+]

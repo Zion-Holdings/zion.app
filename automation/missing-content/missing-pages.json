@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://ziontechgroup.netlify.app/about",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /about"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/contact",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /contact"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/services",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /services"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/products",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /products"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/blog",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /blog"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/privacy-policy",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /privacy-policy"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/terms-of-service",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /terms-of-service"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/sitemap",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /sitemap"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/robots.txt",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /robots.txt"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/404",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /404"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/login",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /login"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/signup",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /signup"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/dashboard",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /dashboard"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/profile",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /profile"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/admin",
+    "type": "expected-page",
+    "priority": "high",
+    "description": "Missing expected page: /admin"
+  }
+]

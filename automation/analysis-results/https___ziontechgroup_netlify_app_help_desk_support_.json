@@ -1,0 +1,98 @@
+{
+  "url": "https://ziontechgroup.netlify.app/help-desk-support/",
+  "timestamp": "2025-08-04T16:16:02.325Z",
+  "pageInfo": {
+    "title": "Help Desk & Support Ticket System - Zion Tech Group",
+    "description": "Comprehensive help desk and support ticket system for customer support management",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Help Desk & Support Ticket System"
+      },
+      {
+        "level": "h3",
+        "text": "Payment Processing Issue"
+      },
+      {
+        "level": "h3",
+        "text": "Feature Request: Dark Mode"
+      }
+    ],
+    "content": "Zion Tech GroupHomeDashboardHelp Desk & Support Ticket SystemComprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently and provide excellent service.Total Tickets2🎫Open Tickets1🔓Support Agents2👥Avg Response Time2.8h⏱️🎫Support Tickets👥Support Agents📊Analytics📂CategoriesAll StatusOpenIn ProgressResolvedClosedAll PrioritiesUrgentHighMediumLowAll CategoriesTechnicalBillingAccountFeature RequestBug ReportPayment Processing Issuein-progresshighUnable to complete payment transaction. Getting error code 500.Customer: John SmithPlan: premiumCreated: 8/4/2025, 12:16:01 PMAssigned: agent-1paymenterror-500📎 2 attachments2 responsesView DetailsFeature Request: Dark ModeopenmediumWould like to request dark mode theme for the mobile app.Customer: Alice BrownPlan: basicCreated: 8/4/2025, 11:16:01 AMfeature-requestdark-modemobile1 responsesView Details{\"props\":{\"pageProps\":{}},\"page\":\"/help-desk-support\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/help-desk-support-75257bc880ef612c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/dashboard-0f86657c9d6630b2.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1123,
+    "headingCount": 3,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 14,
+    "stylesheetCount": 1
+  }
+}

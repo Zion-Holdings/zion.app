@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754305224234-4",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
+  "status": "Active",
+  "createdAt": "2025-08-04T11:00:24.234Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.8881835812922455,
+    "accuracy": 0.9563419733674885,
+    "reliability": 0.937305882156133,
+    "scalability": 0.8653774854332894
+  },
+  "recommendations": []
+}

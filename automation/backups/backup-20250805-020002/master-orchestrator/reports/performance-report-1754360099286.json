@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-08-05T02:14:59.286Z",
+  "system": {
+    "timestamp": "2025-08-05T02:14:56.457Z",
+    "cpu": "CPU usage: 24.81% user, 19.77% sys, 55.41% idle",
+    "memory": "Mach Virtual Memory Statistics: (page size of 4096 bytes)\nPages free:                             7468938.\nPages active:                           4077284.\nPages inactive:                         3304005.\nPages speculative:                       855437.\nPages throttled:                              0.\nPages wired down:                       1069840.\nPages purgeable:                          30173.\n\"Translation faults\":                1948960965.\nPages copy-on-write:                  116264280.\nPages zero filled:                    831457247.\nPages reactivated:                       166502.\nPages purged:                              6121.\nFile-backed pages:                      2461311.\nAnonymous pages:                        5775415.\nPages stored in compressor:                   0.\nPages occupied by compressor:                 0.\nDecompressions:                               0.\nCompressions:                                 0.\nPageins:                                1185057.\nPageouts:                                     0.\nSwapins:                                      0.\nSwapouts:                                     0.",
+    "disk": "Filesystem       Size   Used  Avail Capacity iused      ifree %iused  Mounted on\n/dev/disk1s5s1  932Gi   14Gi  497Gi     3%  502388 4292286623    0%   /\ndevfs           242Ki  242Ki    0Bi   100%     836          0  100%   /dev\n/dev/disk1s4    932Gi  2.0Gi  497Gi     1%       2 5216122080    0%   /System/Volumes/VM\n/dev/disk1s2    932Gi  583Mi  497Gi     1%    3922 5216122080    0%   /System/Volumes/Preboot\n/dev/disk1s6    932Gi  8.8Mi  497Gi     1%      18 5216122080    0%   /System/Volumes/Update\n/dev/disk1s1    932Gi  416Gi  497Gi    46% 5100031 5216122080    0%   /System/Volumes/Data\nmap auto_home     0Bi    0Bi    0Bi   100%       0          0  100%   /System/Volumes/Data/home",
+    "network": "Name       Mtu   Network       Address            Ipkts Ierrs    Opkts Oerrs  Coll\nlo0        16384 <Link#1>                          8486     0     8486     0     0\nlo0        16384 127           localhost           8486     -     8486     -     -\nlo0        16384 localhost   ::1                   8486     -     8486     -     -\nlo0        16384 miami2-2.lo fe80:1::1             8486     -     8486     -     -\ngif0*      1280  <Link#2>                             0     0        0     0     0\nstf0*      1280  <Link#3>                             0     0        0     0     0\nen0        1500  <Link#4>    00:3e:e1:ce:6d:56        0     0        0     0     0\nen1        1500  <Link#5>    00:3e:e1:ce:6d:55  1392553     0   977380     0     0\nen1        1500  miami2-2.lo fe80:5::8fc:b415:  1392553     -   977380     -     -\nen1        1500  192.168.68/22 192.168.68.54    1392553     -   977380     -     -\nen9        1500  <Link#6>    10:dd:b1:c9:03:14        0     0        0     0     0\nen11       1500  <Link#7>    ac:87:a3:00:42:d3        0     0        0     0     0\nen10       1500  <Link#8>    0c:4d:e9:c2:cc:e1        0     0        0     0     0\nen2        1500  <Link#9>    1c:36:bb:41:4f:76    30655     0      710     0     0\nen2        1500  miami2-2.lo fe80:9::457:88b4:    30655     -      710     -     -\nen2        1500  192.168.68/22 192.168.68.64      30655     -      710     -     -\nen5        1500  <Link#10>   82:0e:06:a5:66:84        0     0        0     0     0\nen6        1500  <Link#11>   82:0e:06:a5:66:88        0     0        0     0     0\nen3        1500  <Link#12>   82:0e:06:a5:66:85        0     0        0     0     0\nen4        1500  <Link#13>   82:0e:06:a5:66:89        0     0        0     0     0\nen7        1500  <Link#14>   82:0e:06:a5:66:81        0     0        0     0     0\nen8        1500  <Link#15>   82:0e:06:a5:66:80        0     0        0     0     0\nbridge0    1500  <Link#16>   82:0e:06:a5:66:85        0     0        0     0     0\np2p0       2304  <Link#17>   0e:36:bb:41:4f:76        0     0        0     0     0\nawdl0      1484  <Link#18>   b6:d2:04:7d:06:2d        0     0       16     0     0\nawdl0      1484  fe80::b4d2: fe80:12::b4d2:4ff        0     -       16     -     -\nllw0       1500  <Link#19>   b6:d2:04:7d:06:2d        0     0        0     0     0\nllw0       1500  fe80::b4d2: fe80:13::b4d2:4ff        0     -        0     -     -\nutun0      1380  <Link#20>                            0     0       18     0     0\nutun0      1380  miami2-2.lo fe80:14::7fb9:cab        0     -       18     -     -\nutun1      2000  <Link#21>                            0     0       18     0     0\nutun1      2000  miami2-2.lo fe80:15::c6b2:a08        0     -       18     -     -\nutun2      1000  <Link#22>                            0     0       18     0     0\nutun2      1000  miami2-2.lo fe80:16::ce81:b1c        0     -       18     -     -",
+    "activeAgents": 33
+  },
+  "solutions": {
+    "timestamp": "2025-08-05T02:14:59.275Z",
+    "totalSolutions": 14,
+    "averageROI": "242.9%",
+    "marketDistribution": {
+      "Mixed": 5,
+      "Enterprise": 7,
+      "SMB": 2
+    },
+    "categoryDistribution": {
+      "Trend-Based": 5,
+      "Opportunity-Based": 5,
+      "Gap-Based": 4
+    }
+  },
+  "sales": {
+    "timestamp": "2025-08-05T02:14:59.278Z",
+    "totalCampaigns": 14,
+    "totalBudget": 200744.9,
+    "averageExpectedROI": "352%",
+    "channelDistribution": {
+      "Website Marketplace": 14,
+      "Social Media Marketing": 7,
+      "Email Marketing Campaigns": 7,
+      "Content Marketing": 12,
+      "Strategic Partnerships": 12
+    }
+  },
+  "agents": {
+    "timestamp": "2025-08-05T02:14:59.280Z",
+    "totalAgents": 33,
+    "activeAgents": 33,
+    "byType": {
+      "research": 14,
+      "sales": 16,
+      "specialized": 3
+    },
+    "averagePerformance": {
+      "efficiency": "0.85",
+      "accuracy": "0.89"
+    }
+  },
+  "summary": {
+    "systemHealth": "Good",
+    "solutionsCreated": 14,
+    "averageROI": "242.9%",
+    "totalBudget": 200744.9,
+    "expectedROI": "352%",
+    "activeAgents": 33,
+    "totalAgents": 33
+  }
+}

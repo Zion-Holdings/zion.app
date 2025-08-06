@@ -1,0 +1,51 @@
+{
+  "name": "cursor-ai-assistant",
+  "version": "1.0.0",
+  "description": "Advanced AI assistant extension for Cursor with code generation, analysis, and improvement suggestions",
+  "main": "dist/extension.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "npm run build && node dist/extension.js"
+  },
+  "dependencies": {
+    "@types/node": "^20.8.0",
+    "chokidar": "^3.5.3",
+    "glob": "^10.3.10",
+    "fs-extra": "^11.2.0",
+    "simple-git": "^3.22.0",
+    "execa": "^7.2.0",
+    "ora": "^8.0.1",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.15",
+    "node-cron": "^3.0.3",
+    "ws": "^8.16.0",
+    "axios": "^1.6.0",
+    "openai": "^4.20.0",
+    "langchain": "^0.0.200",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.5.0",
+    "marked": "^9.1.0",
+    "highlight.js": "^11.9.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "@types/marked": "^5.0.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "ai",
+    "assistant",
+    "code-generation",
+    "analysis",
+    "improvement",
+    "openai",
+    "langchain"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT"
+}

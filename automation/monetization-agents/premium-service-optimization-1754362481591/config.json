@@ -1,0 +1,12 @@
+{
+  "id": "premium-service-optimization-1754362481591",
+  "type": "premium-service-optimization",
+  "created": "2025-08-05T02:54:41.591Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

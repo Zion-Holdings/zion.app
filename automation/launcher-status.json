@@ -1,0 +1,42 @@
+{
+  "isRunning": false,
+  "startTime": "2025-08-01T02:50:00.968Z",
+  "agents": {
+    "improvement": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:23:15.013Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    "content": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:23:09.634Z",
+      "exitCode": null,
+      "signal": "SIGTERM"
+    },
+    "analytics": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:23:15.014Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    "health": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:23:09.633Z",
+      "exitCode": null,
+      "signal": "SIGTERM"
+    },
+    "backup": {
+      "isRunning": true,
+      "lastExit": "2025-08-01T02:50:01.070Z",
+      "exitCode": 0,
+      "signal": null,
+      "lastActivity": "2025-08-01T04:23:00.770Z"
+    }
+  },
+  "totalUptime": 5579.802,
+  "restarts": 1,
+  "lastLaunch": "2025-08-06T05:15:42.466Z",
+  "totalRuns": null,
+  "successfulRuns": null
+}

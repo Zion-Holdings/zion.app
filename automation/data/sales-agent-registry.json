@@ -1,0 +1,800 @@
+{
+  "agents": [
+    [
+      "059b1be1-962e-418a-937f-3a2dd13078b4",
+      {
+        "id": "059b1be1-962e-418a-937f-3a2dd13078b4",
+        "type": "digital-marketer",
+        "serviceId": "1510f5a2-ff3b-4ea0-8fa9-60578dbde87b",
+        "name": "Pro IOT PLATFORM Application Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 16,
+          "dealsClosed": 1,
+          "revenueGenerated": 10793,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.226Z",
+        "updatedAt": "2025-08-05T00:14:07.771Z"
+      }
+    ],
+    [
+      "57ba7999-5612-46d8-b1cc-65d66ca5e58b",
+      {
+        "id": "57ba7999-5612-46d8-b1cc-65d66ca5e58b",
+        "type": "sales-representative",
+        "serviceId": "1510f5a2-ff3b-4ea0-8fa9-60578dbde87b",
+        "name": "Pro IOT PLATFORM Application Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 9,
+          "dealsClosed": 1,
+          "revenueGenerated": 4217,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.227Z",
+        "updatedAt": "2025-08-05T00:14:07.778Z"
+      }
+    ],
+    [
+      "e8b61c3a-33db-47a1-a314-6f3f26ecfa12",
+      {
+        "id": "e8b61c3a-33db-47a1-a314-6f3f26ecfa12",
+        "type": "digital-marketer",
+        "serviceId": "88a3ee7a-891c-4320-bcfb-21dce074c6a7",
+        "name": "AI-Powered DATA ANALYTICS Platform Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 8,
+          "dealsClosed": 3,
+          "revenueGenerated": 10236,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.232Z",
+        "updatedAt": "2025-08-05T00:14:07.779Z"
+      }
+    ],
+    [
+      "b7ea4960-a2e0-4750-8d66-71c607f5ef9d",
+      {
+        "id": "b7ea4960-a2e0-4750-8d66-71c607f5ef9d",
+        "type": "sales-representative",
+        "serviceId": "88a3ee7a-891c-4320-bcfb-21dce074c6a7",
+        "name": "AI-Powered DATA ANALYTICS Platform Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 17,
+          "dealsClosed": 2,
+          "revenueGenerated": 10809,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.233Z",
+        "updatedAt": "2025-08-05T00:14:07.780Z"
+      }
+    ],
+    [
+      "ce28099c-762f-4d41-a8da-81d43f0bc338",
+      {
+        "id": "ce28099c-762f-4d41-a8da-81d43f0bc338",
+        "type": "digital-marketer",
+        "serviceId": "0d68978b-8219-4cfe-84b4-c32b4bc1db2c",
+        "name": "NextGen DATA ANALYTICS System Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 13,
+          "dealsClosed": 3,
+          "revenueGenerated": 6468,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.235Z",
+        "updatedAt": "2025-08-05T00:14:07.782Z"
+      }
+    ],
+    [
+      "d867edec-4aa1-4e10-a67b-5a8a8252d5a6",
+      {
+        "id": "d867edec-4aa1-4e10-a67b-5a8a8252d5a6",
+        "type": "sales-representative",
+        "serviceId": "0d68978b-8219-4cfe-84b4-c32b4bc1db2c",
+        "name": "NextGen DATA ANALYTICS System Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 17,
+          "dealsClosed": 2,
+          "revenueGenerated": 5163,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T15:39:37.237Z",
+        "updatedAt": "2025-08-05T00:14:07.783Z"
+      }
+    ],
+    [
+      "4056d8a3-b6e6-4f08-923e-c48af3a256a2",
+      {
+        "id": "4056d8a3-b6e6-4f08-923e-c48af3a256a2",
+        "type": "digital-marketer",
+        "serviceId": "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+        "name": "Enterprise BLOCKCHAIN SERVICE Application Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 5,
+          "dealsClosed": 1,
+          "revenueGenerated": 7641,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.243Z",
+        "updatedAt": "2025-08-05T00:14:07.785Z"
+      }
+    ],
+    [
+      "8f9b5cea-1d79-4d21-8600-00c9016acb2f",
+      {
+        "id": "8f9b5cea-1d79-4d21-8600-00c9016acb2f",
+        "type": "sales-representative",
+        "serviceId": "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+        "name": "Enterprise BLOCKCHAIN SERVICE Application Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 9,
+          "dealsClosed": 1,
+          "revenueGenerated": 1301,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.244Z",
+        "updatedAt": "2025-08-05T00:14:07.786Z"
+      }
+    ],
+    [
+      "f445d290-6609-4556-84dd-383cd8e12ff5",
+      {
+        "id": "f445d290-6609-4556-84dd-383cd8e12ff5",
+        "type": "digital-marketer",
+        "serviceId": "31db072d-9e9c-4bfb-87ef-84703108f536",
+        "name": "Enterprise IOT PLATFORM Solution Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 16,
+          "dealsClosed": 0,
+          "revenueGenerated": 6817,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.247Z",
+        "updatedAt": "2025-08-05T00:14:07.787Z"
+      }
+    ],
+    [
+      "2f0f045c-2f83-4484-9102-38420b403bec",
+      {
+        "id": "2f0f045c-2f83-4484-9102-38420b403bec",
+        "type": "sales-representative",
+        "serviceId": "31db072d-9e9c-4bfb-87ef-84703108f536",
+        "name": "Enterprise IOT PLATFORM Solution Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 5,
+          "dealsClosed": 2,
+          "revenueGenerated": 4451,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T16:13:26.247Z",
+        "updatedAt": "2025-08-05T00:14:07.788Z"
+      }
+    ],
+    [
+      "807ab614-4ea8-4b51-95e3-025f3410786a",
+      {
+        "id": "807ab614-4ea8-4b51-95e3-025f3410786a",
+        "type": "digital-marketer",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 9,
+          "dealsClosed": 2,
+          "revenueGenerated": 4186,
+          "conversionRate": 1
+        },
+        "createdAt": "2025-08-04T19:56:16.685Z",
+        "updatedAt": "2025-08-05T00:14:07.788Z"
+      }
+    ],
+    [
+      "fb839084-dd79-4723-8844-aeac1f6b1d35",
+      {
+        "id": "fb839084-dd79-4723-8844-aeac1f6b1d35",
+        "type": "sales-representative",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 8,
+          "dealsClosed": 0,
+          "revenueGenerated": 4019,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.686Z",
+        "updatedAt": "2025-08-05T00:14:07.789Z"
+      }
+    ],
+    [
+      "458313a7-e7bd-48b0-9420-bb10fc5474c2",
+      {
+        "id": "458313a7-e7bd-48b0-9420-bb10fc5474c2",
+        "type": "technical-sales",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Technical Sales",
+        "capabilities": [
+          "technical-demos",
+          "solution-architecture",
+          "integration-support"
+        ],
+        "expertise": [
+          "api-integration",
+          "customization",
+          "technical-support"
+        ],
+        "commission": 0.18,
+        "baseSalary": 4000,
+        "performanceMetrics": [
+          "technical-deals",
+          "implementation-success",
+          "customer-satisfaction"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 17,
+          "dealsClosed": 1,
+          "revenueGenerated": 6201,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.687Z",
+        "updatedAt": "2025-08-05T00:14:07.790Z"
+      }
+    ],
+    [
+      "bf8c6201-a0ba-49a4-9840-cc80ca3fd35f",
+      {
+        "id": "bf8c6201-a0ba-49a4-9840-cc80ca3fd35f",
+        "type": "digital-marketer",
+        "serviceId": "c7959b66-1171-4847-b178-861b237ca78a",
+        "name": "Smart MOBILE APP Application Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 1,
+          "dealsClosed": 1,
+          "revenueGenerated": 1656,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.067Z",
+        "updatedAt": "2025-08-05T00:14:07.791Z"
+      }
+    ],
+    [
+      "e5c08f9b-9ea9-40e6-92e5-c93505c8fdf4",
+      {
+        "id": "e5c08f9b-9ea9-40e6-92e5-c93505c8fdf4",
+        "type": "sales-representative",
+        "serviceId": "c7959b66-1171-4847-b178-861b237ca78a",
+        "name": "Smart MOBILE APP Application Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 6,
+          "dealsClosed": 0,
+          "revenueGenerated": 2706,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.068Z",
+        "updatedAt": "2025-08-05T00:14:07.792Z"
+      }
+    ],
+    [
+      "e8258e55-92e0-415c-bb61-9ddac09278be",
+      {
+        "id": "e8258e55-92e0-415c-bb61-9ddac09278be",
+        "type": "digital-marketer",
+        "serviceId": "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+        "name": "NextGen BLOCKCHAIN SERVICE Service Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 5,
+          "dealsClosed": 1,
+          "revenueGenerated": 2709,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.071Z",
+        "updatedAt": "2025-08-05T00:14:07.792Z"
+      }
+    ],
+    [
+      "625502c6-4c94-4106-bb08-82f0d2e22b41",
+      {
+        "id": "625502c6-4c94-4106-bb08-82f0d2e22b41",
+        "type": "sales-representative",
+        "serviceId": "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+        "name": "NextGen BLOCKCHAIN SERVICE Service Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 7,
+          "dealsClosed": 1,
+          "revenueGenerated": 1035,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.073Z",
+        "updatedAt": "2025-08-05T00:14:07.793Z"
+      }
+    ],
+    [
+      "80aeaff8-6e27-4b78-8d20-2dc7b9dd81bf",
+      {
+        "id": "80aeaff8-6e27-4b78-8d20-2dc7b9dd81bf",
+        "type": "digital-marketer",
+        "serviceId": "28f57cd2-6f78-4a89-9260-cd29482aa9b7",
+        "name": "Enterprise MOBILE APP Service Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:14:07.778Z",
+        "updatedAt": "2025-08-05T00:14:07.778Z"
+      }
+    ],
+    [
+      "8d35bdd9-dad9-45fc-888c-8ca97c392c8e",
+      {
+        "id": "8d35bdd9-dad9-45fc-888c-8ca97c392c8e",
+        "type": "sales-representative",
+        "serviceId": "28f57cd2-6f78-4a89-9260-cd29482aa9b7",
+        "name": "Enterprise MOBILE APP Service Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:14:07.779Z",
+        "updatedAt": "2025-08-05T00:14:07.779Z"
+      }
+    ],
+    [
+      "866ee580-ea5f-447d-8b0c-3ab3d1607c0a",
+      {
+        "id": "866ee580-ea5f-447d-8b0c-3ab3d1607c0a",
+        "type": "digital-marketer",
+        "serviceId": "02011ce8-17e3-47cf-b52c-2ced970f1017",
+        "name": "Pro DATA ANALYTICS Solution Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:14:07.782Z",
+        "updatedAt": "2025-08-05T00:14:07.782Z"
+      }
+    ],
+    [
+      "9bf46e38-894b-4058-bb5c-05fd58b57997",
+      {
+        "id": "9bf46e38-894b-4058-bb5c-05fd58b57997",
+        "type": "sales-representative",
+        "serviceId": "02011ce8-17e3-47cf-b52c-2ced970f1017",
+        "name": "Pro DATA ANALYTICS Solution Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:14:07.783Z",
+        "updatedAt": "2025-08-05T00:14:07.783Z"
+      }
+    ]
+  ],
+  "lastUpdated": "2025-08-05T00:14:07.793Z"
+}

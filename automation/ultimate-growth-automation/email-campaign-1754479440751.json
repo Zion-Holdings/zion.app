@@ -1,0 +1,16 @@
+{
+  "id": "email-campaign-1754479440751",
+  "campaign": "promotional",
+  "strategy": {
+    "subject": "Exclusive Automation Offer - Limited Time",
+    "content": "Exclusive offer on automation solutions to help your business grow faster.",
+    "audience": "Qualified leads and existing customers",
+    "timing": "Monthly on first Monday at 9 AM"
+  },
+  "expectedResults": {
+    "openRate": "20-30%",
+    "clickRate": "5-8%",
+    "conversionRate": "3-6%",
+    "revenue": "$5,000-15,000 monthly"
+  }
+}

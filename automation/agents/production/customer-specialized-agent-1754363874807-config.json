@@ -1,0 +1,192 @@
+{
+  "id": "customer-specialized-agent-1754363874807",
+  "name": "Customer Insight Agent",
+  "type": "specialized",
+  "focus": "customer behavior analysis",
+  "sources": [
+    "customer feedback",
+    "usage data",
+    "social media"
+  ],
+  "output": "customer insights",
+  "marketData": {
+    "opportunities": [
+      {
+        "title": "AI-Powered business opportunity Solution",
+        "description": "Automated solution for AI business opportunity using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI business opportunity",
+        "discoveredAt": "2025-08-05T03:17:50.740Z"
+      },
+      {
+        "title": "Intelligent business opportunity Platform",
+        "description": "Comprehensive platform addressing AI business opportunity with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI business opportunity",
+        "discoveredAt": "2025-08-05T03:17:50.740Z"
+      },
+      {
+        "title": "AI-Powered market gap Solution",
+        "description": "Automated solution for AI market gap using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI market gap",
+        "discoveredAt": "2025-08-05T03:17:51.240Z"
+      },
+      {
+        "title": "Intelligent market gap Platform",
+        "description": "Comprehensive platform addressing AI market gap with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI market gap",
+        "discoveredAt": "2025-08-05T03:17:51.240Z"
+      },
+      {
+        "title": "AI-Powered startup opportunity Solution",
+        "description": "Automated solution for AI startup opportunity using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI startup opportunity",
+        "discoveredAt": "2025-08-05T03:17:51.741Z"
+      },
+      {
+        "title": "Intelligent startup opportunity Platform",
+        "description": "Comprehensive platform addressing AI startup opportunity with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI startup opportunity",
+        "discoveredAt": "2025-08-05T03:17:51.741Z"
+      },
+      {
+        "title": "AI-Powered industry needs Solution",
+        "description": "Automated solution for AI industry needs using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI industry needs",
+        "discoveredAt": "2025-08-05T03:17:52.241Z"
+      },
+      {
+        "title": "Intelligent industry needs Platform",
+        "description": "Comprehensive platform addressing AI industry needs with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI industry needs",
+        "discoveredAt": "2025-08-05T03:17:52.242Z"
+      },
+      {
+        "title": "AI-Powered market demand Solution",
+        "description": "Automated solution for AI market demand using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI market demand",
+        "discoveredAt": "2025-08-05T03:17:52.742Z"
+      },
+      {
+        "title": "Intelligent market demand Platform",
+        "description": "Comprehensive platform addressing AI market demand with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI market demand",
+        "discoveredAt": "2025-08-05T03:17:52.742Z"
+      },
+      {
+        "title": "AI-Powered business problem Solution",
+        "description": "Automated solution for AI business problem using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI business problem",
+        "discoveredAt": "2025-08-05T03:17:53.243Z"
+      },
+      {
+        "title": "Intelligent business problem Platform",
+        "description": "Comprehensive platform addressing AI business problem with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI business problem",
+        "discoveredAt": "2025-08-05T03:17:53.243Z"
+      },
+      {
+        "title": "AI-Powered market opportunity Solution",
+        "description": "Automated solution for AI market opportunity using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI market opportunity",
+        "discoveredAt": "2025-08-05T03:17:53.744Z"
+      },
+      {
+        "title": "Intelligent market opportunity Platform",
+        "description": "Comprehensive platform addressing AI market opportunity with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI market opportunity",
+        "discoveredAt": "2025-08-05T03:17:53.744Z"
+      },
+      {
+        "title": "AI-Powered business solution Solution",
+        "description": "Automated solution for AI business solution using advanced AI algorithms",
+        "marketSize": "High",
+        "competition": "Medium",
+        "entryBarrier": "Low",
+        "potential": "High",
+        "keyword": "AI business solution",
+        "discoveredAt": "2025-08-05T03:17:54.244Z"
+      },
+      {
+        "title": "Intelligent business solution Platform",
+        "description": "Comprehensive platform addressing AI business solution with machine learning",
+        "marketSize": "Medium",
+        "competition": "Low",
+        "entryBarrier": "Medium",
+        "potential": "High",
+        "keyword": "AI business solution",
+        "discoveredAt": "2025-08-05T03:17:54.244Z"
+      }
+    ]
+  },
+  "status": "Active",
+  "createdAt": "2025-08-05T03:17:54.808Z",
+  "configuration": {
+    "analysisScope": "behavioral",
+    "updateFrequency": "real-time",
+    "outputFormat": "customer-insights",
+    "alertThreshold": 0.6
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9559712342927322,
+    "accuracy": 0.902030917296254,
+    "reliability": 0.937823739281293,
+    "scalability": 0.6566091430314868
+  },
+  "recommendations": []
+}

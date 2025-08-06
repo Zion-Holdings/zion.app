@@ -1,0 +1,1658 @@
+{
+  "timestamp": "2025-08-06T05:16:26.124Z",
+  "buildResult": {
+    "success": false,
+    "error": "Command failed: npm run build\n<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (108kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)\n ⚠ Compiled with warnings in 9.0s\n\n./node_modules/@supabase/supabase-js/dist/module/index.js\nA Node.js API is used (process.version at line: 17) which is not supported in the Edge Runtime.\nLearn more: https://nextjs.org/docs/api-reference/edge-runtime\n\nImport trace for requested module:\n./node_modules/@supabase/supabase-js/dist/module/index.js\n./node_modules/@supabase/ssr/dist/module/createBrowserClient.js\n./node_modules/@supabase/ssr/dist/module/index.js\n\n./node_modules/@supabase/supabase-js/dist/module/index.js\nA Node.js API is used (process.version at line: 18) which is not supported in the Edge Runtime.\nLearn more: https://nextjs.org/docs/api-reference/edge-runtime\n\nImport trace for requested module:\n./node_modules/@supabase/supabase-js/dist/module/index.js\n./node_modules/@supabase/ssr/dist/module/createBrowserClient.js\n./node_modules/@supabase/ssr/dist/module/index.js\n\n./node_modules/@supabase/supabase-js/dist/module/index.js\nA Node.js API is used (process.version at line: 21) which is not supported in the Edge Runtime.\nLearn more: https://nextjs.org/docs/api-reference/edge-runtime\n\nImport trace for requested module:\n./node_modules/@supabase/supabase-js/dist/module/index.js\n./node_modules/@supabase/ssr/dist/module/createBrowserClient.js\n./node_modules/@supabase/ssr/dist/module/index.js\n\nReferenceError: window is not defined\n    at B (.next/server/pages/index.js:1:18353)\nError occurred prerendering page \"/\". Read more: https://nextjs.org/docs/messages/prerender-error\nReferenceError: window is not defined\n    at B (.next/server/pages/index.js:1:18353)\nExport encountered an error on /, exiting the build.\n ⨯ Next.js build worker exited with code: 1 and signal: null\n",
+    "timestamp": "2025-08-06T05:16:26.097Z"
+  },
+  "validationResult": {
+    "buildDirExists": true,
+    "staticFiles": [
+      {
+        "path": ".next/BUILD_ID",
+        "size": 21,
+        "sizeKB": "0.02"
+      },
+      {
+        "path": ".next/build-manifest.json",
+        "size": 23774,
+        "sizeKB": "23.22"
+      },
+      {
+        "path": ".next/cache/.previewinfo",
+        "size": 262,
+        "sizeKB": "0.26"
+      },
+      {
+        "path": ".next/cache/.rscinfo",
+        "size": 102,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/cache/webpack/client-production/0.pack",
+        "size": 25145653,
+        "sizeKB": "24556.30"
+      },
+      {
+        "path": ".next/cache/webpack/client-production/index.pack",
+        "size": 1345123,
+        "sizeKB": "1313.60"
+      },
+      {
+        "path": ".next/cache/webpack/edge-server-production/0.pack",
+        "size": 16210289,
+        "sizeKB": "15830.36"
+      },
+      {
+        "path": ".next/cache/webpack/edge-server-production/index.pack",
+        "size": 676817,
+        "sizeKB": "660.95"
+      },
+      {
+        "path": ".next/cache/webpack/server-production/0.pack",
+        "size": 61841957,
+        "sizeKB": "60392.54"
+      },
+      {
+        "path": ".next/cache/webpack/server-production/index.pack",
+        "size": 896172,
+        "sizeKB": "875.17"
+      },
+      {
+        "path": ".next/diagnostics/build-diagnostics.json",
+        "size": 94,
+        "sizeKB": "0.09"
+      },
+      {
+        "path": ".next/diagnostics/framework.json",
+        "size": 37,
+        "sizeKB": "0.04"
+      },
+      {
+        "path": ".next/dynamic-css-manifest.json",
+        "size": 2,
+        "sizeKB": "0.00"
+      },
+      {
+        "path": ".next/export/404.html",
+        "size": 1694,
+        "sizeKB": "1.65"
+      },
+      {
+        "path": ".next/export/about.html",
+        "size": 11223,
+        "sizeKB": "10.96"
+      },
+      {
+        "path": ".next/export/blog/5g-technology-and-its-impact-on-iot-chat.html",
+        "size": 4678,
+        "sizeKB": "4.57"
+      },
+      {
+        "path": ".next/export/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.html",
+        "size": 4904,
+        "sizeKB": "4.79"
+      },
+      {
+        "path": ".next/export/blog/api-first-development-building-scalable-systems-chat.html",
+        "size": 4824,
+        "sizeKB": "4.71"
+      },
+      {
+        "path": ".next/export/blog/augmented-reality-in-enterprise-applications-chat.html",
+        "size": 4772,
+        "sizeKB": "4.66"
+      },
+      {
+        "path": ".next/export/blog/blockchain-technology-in-modern-business-solutions-chat.html",
+        "size": 4850,
+        "sizeKB": "4.74"
+      },
+      {
+        "path": ".next/export/blog/cloud-native-architecture-best-practices-chat.html",
+        "size": 4734,
+        "sizeKB": "4.62"
+      },
+      {
+        "path": ".next/export/blog/cybersecurity-trends-for-2024-and-beyond-chat.html",
+        "size": 4736,
+        "sizeKB": "4.63"
+      },
+      {
+        "path": ".next/export/blog/data-analytics-in-digital-transformation-chat.html",
+        "size": 4734,
+        "sizeKB": "4.62"
+      },
+      {
+        "path": ".next/export/blog/devops-automation-strategies-for-modern-teams-chat.html",
+        "size": 4792,
+        "sizeKB": "4.68"
+      },
+      {
+        "path": ".next/export/blog/digital-twins-revolutionizing-industry-4-0-chat.html",
+        "size": 4766,
+        "sizeKB": "4.65"
+      },
+      {
+        "path": ".next/export/blog/machine-learning-applications-in-enterprise-software-chat.html",
+        "size": 4866,
+        "sizeKB": "4.75"
+      },
+      {
+        "path": ".next/export/blog/sustainable-technology-green-computing-solutions-chat.html",
+        "size": 4829,
+        "sizeKB": "4.72"
+      },
+      {
+        "path": ".next/export/blog/the-rise-of-edge-computing-in-iot-applications-chat.html",
+        "size": 4801,
+        "sizeKB": "4.69"
+      },
+      {
+        "path": ".next/export/blog.html",
+        "size": 4179,
+        "sizeKB": "4.08"
+      },
+      {
+        "path": ".next/export/category/ai-consulting-chat.html",
+        "size": 4086,
+        "sizeKB": "3.99"
+      },
+      {
+        "path": ".next/export/category/business-intelligence-chat.html",
+        "size": 4166,
+        "sizeKB": "4.07"
+      },
+      {
+        "path": ".next/export/category/cloud-architecture-chat.html",
+        "size": 4138,
+        "sizeKB": "4.04"
+      },
+      {
+        "path": ".next/export/category/cybersecurity-chat.html",
+        "size": 4081,
+        "sizeKB": "3.99"
+      },
+      {
+        "path": ".next/export/category/data-science-chat.html",
+        "size": 4073,
+        "sizeKB": "3.98"
+      },
+      {
+        "path": ".next/export/category/database-administration-chat.html",
+        "size": 4198,
+        "sizeKB": "4.10"
+      },
+      {
+        "path": ".next/export/category/devops-automation-chat.html",
+        "size": 4131,
+        "sizeKB": "4.03"
+      },
+      {
+        "path": ".next/export/category/mobile-development-chat.html",
+        "size": 4132,
+        "sizeKB": "4.04"
+      },
+      {
+        "path": ".next/export/category/network-engineering-chat.html",
+        "size": 4155,
+        "sizeKB": "4.06"
+      },
+      {
+        "path": ".next/export/category/product-management-chat.html",
+        "size": 4142,
+        "sizeKB": "4.04"
+      },
+      {
+        "path": ".next/export/category/quality-assurance-chat.html",
+        "size": 4130,
+        "sizeKB": "4.03"
+      },
+      {
+        "path": ".next/export/category/system-administration-chat.html",
+        "size": 4168,
+        "sizeKB": "4.07"
+      },
+      {
+        "path": ".next/export/category/technical-writing-chat.html",
+        "size": 4126,
+        "sizeKB": "4.03"
+      },
+      {
+        "path": ".next/export/category/ui-ux-design-chat.html",
+        "size": 4072,
+        "sizeKB": "3.98"
+      },
+      {
+        "path": ".next/export/category/web-development-chat.html",
+        "size": 4094,
+        "sizeKB": "4.00"
+      },
+      {
+        "path": ".next/export/chat-content/ai-powered-business-solutions-discussion.html",
+        "size": 4986,
+        "sizeKB": "4.87"
+      },
+      {
+        "path": ".next/export/chat-content/cloud-computing-strategies.html",
+        "size": 4846,
+        "sizeKB": "4.73"
+      },
+      {
+        "path": ".next/export/chat-content/cybersecurity-best-practices.html",
+        "size": 4866,
+        "sizeKB": "4.75"
+      },
+      {
+        "path": ".next/export/chat-content/data-analytics-implementation.html",
+        "size": 4876,
+        "sizeKB": "4.76"
+      },
+      {
+        "path": ".next/export/chat-content/digital-transformation-insights.html",
+        "size": 4896,
+        "sizeKB": "4.78"
+      },
+      {
+        "path": ".next/export/chat-content/emerging-technology-trends.html",
+        "size": 4846,
+        "sizeKB": "4.73"
+      },
+      {
+        "path": ".next/export/chat-content/future-of-work-and-automation.html",
+        "size": 4876,
+        "sizeKB": "4.76"
+      },
+      {
+        "path": ".next/export/chat-content/innovation-in-enterprise-technology.html",
+        "size": 4936,
+        "sizeKB": "4.82"
+      },
+      {
+        "path": ".next/export/chat-content/sustainable-technology-practices.html",
+        "size": 4906,
+        "sizeKB": "4.79"
+      },
+      {
+        "path": ".next/export/chat-content/technology-implementation-strategies.html",
+        "size": 4946,
+        "sizeKB": "4.83"
+      },
+      {
+        "path": ".next/export/contact.html",
+        "size": 11160,
+        "sizeKB": "10.90"
+      },
+      {
+        "path": ".next/export/enhanced-home.html",
+        "size": 2481,
+        "sizeKB": "2.42"
+      },
+      {
+        "path": ".next/export/services/technical-documentation-chat.html",
+        "size": 4238,
+        "sizeKB": "4.14"
+      },
+      {
+        "path": ".next/export/services/ui-ux-design-chat.html",
+        "size": 4095,
+        "sizeKB": "4.00"
+      },
+      {
+        "path": ".next/export/services/web-application-development-chat.html",
+        "size": 4286,
+        "sizeKB": "4.19"
+      },
+      {
+        "path": ".next/export/talent.html",
+        "size": 20622,
+        "sizeKB": "20.14"
+      },
+      {
+        "path": ".next/export-detail.json",
+        "size": 121,
+        "sizeKB": "0.12"
+      },
+      {
+        "path": ".next/package.json",
+        "size": 20,
+        "sizeKB": "0.02"
+      },
+      {
+        "path": ".next/react-loadable-manifest.json",
+        "size": 512,
+        "sizeKB": "0.50"
+      },
+      {
+        "path": ".next/required-server-files.json",
+        "size": 8868,
+        "sizeKB": "8.66"
+      },
+      {
+        "path": ".next/routes-manifest.json",
+        "size": 16726,
+        "sizeKB": "16.33"
+      },
+      {
+        "path": ".next/server/chunks/1583.js",
+        "size": 11422,
+        "sizeKB": "11.15"
+      },
+      {
+        "path": ".next/server/chunks/7169.js",
+        "size": 45808,
+        "sizeKB": "44.73"
+      },
+      {
+        "path": ".next/server/chunks/7190.js",
+        "size": 47726,
+        "sizeKB": "46.61"
+      },
+      {
+        "path": ".next/server/chunks/9243.js",
+        "size": 54800,
+        "sizeKB": "53.52"
+      },
+      {
+        "path": ".next/server/chunks/9616.js",
+        "size": 68796,
+        "sizeKB": "67.18"
+      },
+      {
+        "path": ".next/server/chunks/9918.js",
+        "size": 5960,
+        "sizeKB": "5.82"
+      },
+      {
+        "path": ".next/server/dynamic-css-manifest.js",
+        "size": 33,
+        "sizeKB": "0.03"
+      },
+      {
+        "path": ".next/server/edge-runtime-webpack.js",
+        "size": 1519,
+        "sizeKB": "1.48"
+      },
+      {
+        "path": ".next/server/edge-runtime-webpack.js.map",
+        "size": 6153,
+        "sizeKB": "6.01"
+      },
+      {
+        "path": ".next/server/functions-config-manifest.json",
+        "size": 37,
+        "sizeKB": "0.04"
+      },
+      {
+        "path": ".next/server/interception-route-rewrite-manifest.js",
+        "size": 48,
+        "sizeKB": "0.05"
+      },
+      {
+        "path": ".next/server/middleware-build-manifest.js",
+        "size": 20581,
+        "sizeKB": "20.10"
+      },
+      {
+        "path": ".next/server/middleware-manifest.json",
+        "size": 1064,
+        "sizeKB": "1.04"
+      },
+      {
+        "path": ".next/server/middleware-react-loadable-manifest.js",
+        "size": 469,
+        "sizeKB": "0.46"
+      },
+      {
+        "path": ".next/server/middleware.js",
+        "size": 229117,
+        "sizeKB": "223.75"
+      },
+      {
+        "path": ".next/server/middleware.js.map",
+        "size": 821377,
+        "sizeKB": "802.13"
+      },
+      {
+        "path": ".next/server/next-font-manifest.js",
+        "size": 106,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/next-font-manifest.json",
+        "size": 77,
+        "sizeKB": "0.08"
+      },
+      {
+        "path": ".next/server/pages/404.js",
+        "size": 11587,
+        "sizeKB": "11.32"
+      },
+      {
+        "path": ".next/server/pages/404.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/_app.js",
+        "size": 3357,
+        "sizeKB": "3.28"
+      },
+      {
+        "path": ".next/server/pages/_app.js.nft.json",
+        "size": 119,
+        "sizeKB": "0.12"
+      },
+      {
+        "path": ".next/server/pages/_document.js",
+        "size": 371,
+        "sizeKB": "0.36"
+      },
+      {
+        "path": ".next/server/pages/_document.js.nft.json",
+        "size": 144,
+        "sizeKB": "0.14"
+      },
+      {
+        "path": ".next/server/pages/_error.js",
+        "size": 16308,
+        "sizeKB": "15.93"
+      },
+      {
+        "path": ".next/server/pages/_error.js.nft.json",
+        "size": 87,
+        "sizeKB": "0.08"
+      },
+      {
+        "path": ".next/server/pages/about.js",
+        "size": 25078,
+        "sizeKB": "24.49"
+      },
+      {
+        "path": ".next/server/pages/about.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/api/admin/automation-status.js",
+        "size": 2717,
+        "sizeKB": "2.65"
+      },
+      {
+        "path": ".next/server/pages/api/admin/automation-status.js.nft.json",
+        "size": 113,
+        "sizeKB": "0.11"
+      },
+      {
+        "path": ".next/server/pages/api/ai-capacity-planning.js",
+        "size": 2847,
+        "sizeKB": "2.78"
+      },
+      {
+        "path": ".next/server/pages/api/ai-capacity-planning.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/ai-change-management.js",
+        "size": 2988,
+        "sizeKB": "2.92"
+      },
+      {
+        "path": ".next/server/pages/api/ai-change-management.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/ai-contract.js",
+        "size": 2777,
+        "sizeKB": "2.71"
+      },
+      {
+        "path": ".next/server/pages/api/ai-contract.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/ai-workspace-suggestions.js",
+        "size": 3066,
+        "sizeKB": "2.99"
+      },
+      {
+        "path": ".next/server/pages/api/ai-workspace-suggestions.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/analytics-api.js",
+        "size": 2506,
+        "sizeKB": "2.45"
+      },
+      {
+        "path": ".next/server/pages/api/analytics-api.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/analyze-quote-request.js",
+        "size": 2764,
+        "sizeKB": "2.70"
+      },
+      {
+        "path": ".next/server/pages/api/analyze-quote-request.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/api/analyze-service-request.js",
+        "size": 2797,
+        "sizeKB": "2.73"
+      },
+      {
+        "path": ".next/server/pages/api/analyze-service-request.js.nft.json",
+        "size": 104,
+        "sizeKB": "0.10"
+      },
+      {
+        "path": ".next/server/pages/auth/callback.js",
+        "size": 12292,
+        "sizeKB": "12.00"
+      },
+      {
+        "path": ".next/server/pages/auth/callback.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/auth/forgot-password.js",
+        "size": 14304,
+        "sizeKB": "13.97"
+      },
+      {
+        "path": ".next/server/pages/auth/forgot-password.js.nft.json",
+        "size": 192,
+        "sizeKB": "0.19"
+      },
+      {
+        "path": ".next/server/pages/auth/reset-password.js",
+        "size": 15736,
+        "sizeKB": "15.37"
+      },
+      {
+        "path": ".next/server/pages/auth/reset-password.js.nft.json",
+        "size": 192,
+        "sizeKB": "0.19"
+      },
+      {
+        "path": ".next/server/pages/auth.js",
+        "size": 17757,
+        "sizeKB": "17.34"
+      },
+      {
+        "path": ".next/server/pages/auth.js.nft.json",
+        "size": 171,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/5g-technology-and-its-impact-on-iot-chat.js",
+        "size": 18486,
+        "sizeKB": "18.05"
+      },
+      {
+        "path": ".next/server/pages/blog/5g-technology-and-its-impact-on-iot-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.js",
+        "size": 18731,
+        "sizeKB": "18.29"
+      },
+      {
+        "path": ".next/server/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/api-first-development-building-scalable-systems-chat.js",
+        "size": 18642,
+        "sizeKB": "18.21"
+      },
+      {
+        "path": ".next/server/pages/blog/api-first-development-building-scalable-systems-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/augmented-reality-in-enterprise-applications-chat.js",
+        "size": 18589,
+        "sizeKB": "18.15"
+      },
+      {
+        "path": ".next/server/pages/blog/augmented-reality-in-enterprise-applications-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/blockchain-technology-in-modern-business-solutions-chat.js",
+        "size": 18671,
+        "sizeKB": "18.23"
+      },
+      {
+        "path": ".next/server/pages/blog/blockchain-technology-in-modern-business-solutions-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/cloud-native-architecture-best-practices-chat.js",
+        "size": 18547,
+        "sizeKB": "18.11"
+      },
+      {
+        "path": ".next/server/pages/blog/cloud-native-architecture-best-practices-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.js",
+        "size": 18549,
+        "sizeKB": "18.11"
+      },
+      {
+        "path": ".next/server/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/data-analytics-in-digital-transformation-chat.js",
+        "size": 18547,
+        "sizeKB": "18.11"
+      },
+      {
+        "path": ".next/server/pages/blog/data-analytics-in-digital-transformation-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/devops-automation-strategies-for-modern-teams-chat.js",
+        "size": 18610,
+        "sizeKB": "18.17"
+      },
+      {
+        "path": ".next/server/pages/blog/devops-automation-strategies-for-modern-teams-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.js",
+        "size": 18581,
+        "sizeKB": "18.15"
+      },
+      {
+        "path": ".next/server/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/machine-learning-applications-in-enterprise-software-chat.js",
+        "size": 18691,
+        "sizeKB": "18.25"
+      },
+      {
+        "path": ".next/server/pages/blog/machine-learning-applications-in-enterprise-software-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/microservices-architecture-benefits-and-challenges-chat.js",
+        "size": 18674,
+        "sizeKB": "18.24"
+      },
+      {
+        "path": ".next/server/pages/blog/microservices-architecture-benefits-and-challenges-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/quantum-computing-implications-for-business-chat.js",
+        "size": 18591,
+        "sizeKB": "18.16"
+      },
+      {
+        "path": ".next/server/pages/blog/quantum-computing-implications-for-business-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/sustainable-technology-green-computing-solutions-chat.js",
+        "size": 18648,
+        "sizeKB": "18.21"
+      },
+      {
+        "path": ".next/server/pages/blog/sustainable-technology-green-computing-solutions-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.js",
+        "size": 18620,
+        "sizeKB": "18.18"
+      },
+      {
+        "path": ".next/server/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/blog.js",
+        "size": 18143,
+        "sizeKB": "17.72"
+      },
+      {
+        "path": ".next/server/pages/blog.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/category/ai-consulting-chat.js",
+        "size": 17825,
+        "sizeKB": "17.41"
+      },
+      {
+        "path": ".next/server/pages/category/ai-consulting-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/business-intelligence-chat.js",
+        "size": 17913,
+        "sizeKB": "17.49"
+      },
+      {
+        "path": ".next/server/pages/category/business-intelligence-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/cloud-architecture-chat.js",
+        "size": 17878,
+        "sizeKB": "17.46"
+      },
+      {
+        "path": ".next/server/pages/category/cloud-architecture-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/cybersecurity-chat.js",
+        "size": 17820,
+        "sizeKB": "17.40"
+      },
+      {
+        "path": ".next/server/pages/category/cybersecurity-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/data-science-chat.js",
+        "size": 17811,
+        "sizeKB": "17.39"
+      },
+      {
+        "path": ".next/server/pages/category/data-science-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/database-administration-chat.js",
+        "size": 17947,
+        "sizeKB": "17.53"
+      },
+      {
+        "path": ".next/server/pages/category/database-administration-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/devops-automation-chat.js",
+        "size": 17874,
+        "sizeKB": "17.46"
+      },
+      {
+        "path": ".next/server/pages/category/devops-automation-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/mobile-development-chat.js",
+        "size": 17876,
+        "sizeKB": "17.46"
+      },
+      {
+        "path": ".next/server/pages/category/mobile-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/network-engineering-chat.js",
+        "size": 17900,
+        "sizeKB": "17.48"
+      },
+      {
+        "path": ".next/server/pages/category/network-engineering-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/product-management-chat.js",
+        "size": 17886,
+        "sizeKB": "17.47"
+      },
+      {
+        "path": ".next/server/pages/category/product-management-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/quality-assurance-chat.js",
+        "size": 17873,
+        "sizeKB": "17.45"
+      },
+      {
+        "path": ".next/server/pages/category/quality-assurance-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/system-administration-chat.js",
+        "size": 17915,
+        "sizeKB": "17.50"
+      },
+      {
+        "path": ".next/server/pages/category/system-administration-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/technical-writing-chat.js",
+        "size": 17869,
+        "sizeKB": "17.45"
+      },
+      {
+        "path": ".next/server/pages/category/technical-writing-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/ui-ux-design-chat.js",
+        "size": 17810,
+        "sizeKB": "17.39"
+      },
+      {
+        "path": ".next/server/pages/category/ui-ux-design-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/category/web-development-chat.js",
+        "size": 17835,
+        "sizeKB": "17.42"
+      },
+      {
+        "path": ".next/server/pages/category/web-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/ai-powered-business-solutions-discussion.js",
+        "size": 18776,
+        "sizeKB": "18.34"
+      },
+      {
+        "path": ".next/server/pages/chat-content/ai-powered-business-solutions-discussion.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/cloud-computing-strategies.js",
+        "size": 18622,
+        "sizeKB": "18.19"
+      },
+      {
+        "path": ".next/server/pages/chat-content/cloud-computing-strategies.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/cybersecurity-best-practices.js",
+        "size": 18644,
+        "sizeKB": "18.21"
+      },
+      {
+        "path": ".next/server/pages/chat-content/cybersecurity-best-practices.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/data-analytics-implementation.js",
+        "size": 18655,
+        "sizeKB": "18.22"
+      },
+      {
+        "path": ".next/server/pages/chat-content/data-analytics-implementation.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/digital-transformation-insights.js",
+        "size": 18677,
+        "sizeKB": "18.24"
+      },
+      {
+        "path": ".next/server/pages/chat-content/digital-transformation-insights.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/emerging-technology-trends.js",
+        "size": 18622,
+        "sizeKB": "18.19"
+      },
+      {
+        "path": ".next/server/pages/chat-content/emerging-technology-trends.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/future-of-work-and-automation.js",
+        "size": 18653,
+        "sizeKB": "18.22"
+      },
+      {
+        "path": ".next/server/pages/chat-content/future-of-work-and-automation.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/innovation-in-enterprise-technology.js",
+        "size": 18721,
+        "sizeKB": "18.28"
+      },
+      {
+        "path": ".next/server/pages/chat-content/innovation-in-enterprise-technology.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/sustainable-technology-practices.js",
+        "size": 18688,
+        "sizeKB": "18.25"
+      },
+      {
+        "path": ".next/server/pages/chat-content/sustainable-technology-practices.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/chat-content/technology-implementation-strategies.js",
+        "size": 18730,
+        "sizeKB": "18.29"
+      },
+      {
+        "path": ".next/server/pages/chat-content/technology-implementation-strategies.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/contact.js",
+        "size": 25849,
+        "sizeKB": "25.24"
+      },
+      {
+        "path": ".next/server/pages/contact.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/enhanced-home.js",
+        "size": 16325,
+        "sizeKB": "15.94"
+      },
+      {
+        "path": ".next/server/pages/enhanced-home.js.nft.json",
+        "size": 111,
+        "sizeKB": "0.11"
+      },
+      {
+        "path": ".next/server/pages/index.js",
+        "size": 39615,
+        "sizeKB": "38.69"
+      },
+      {
+        "path": ".next/server/pages/index.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/products.js",
+        "size": 20350,
+        "sizeKB": "19.87"
+      },
+      {
+        "path": ".next/server/pages/products.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/services/ai-model-development-chat.js",
+        "size": 17948,
+        "sizeKB": "17.53"
+      },
+      {
+        "path": ".next/server/pages/services/ai-model-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/api-development-chat.js",
+        "size": 17880,
+        "sizeKB": "17.46"
+      },
+      {
+        "path": ".next/server/pages/services/api-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/business-intelligence-chat.js",
+        "size": 17961,
+        "sizeKB": "17.54"
+      },
+      {
+        "path": ".next/server/pages/services/business-intelligence-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/cloud-migration-services-chat.js",
+        "size": 17998,
+        "sizeKB": "17.58"
+      },
+      {
+        "path": ".next/server/pages/services/cloud-migration-services-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/data-pipeline-engineering-chat.js",
+        "size": 18004,
+        "sizeKB": "17.58"
+      },
+      {
+        "path": ".next/server/pages/services/data-pipeline-engineering-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/database-design-chat.js",
+        "size": 17879,
+        "sizeKB": "17.46"
+      },
+      {
+        "path": ".next/server/pages/services/database-design-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/mobile-app-development-chat.js",
+        "size": 17972,
+        "sizeKB": "17.55"
+      },
+      {
+        "path": ".next/server/pages/services/mobile-app-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/network-security-chat.js",
+        "size": 17892,
+        "sizeKB": "17.47"
+      },
+      {
+        "path": ".next/server/pages/services/network-security-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/performance-optimization-chat.js",
+        "size": 18006,
+        "sizeKB": "17.58"
+      },
+      {
+        "path": ".next/server/pages/services/performance-optimization-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/quality-assurance-testing-chat.js",
+        "size": 18005,
+        "sizeKB": "17.58"
+      },
+      {
+        "path": ".next/server/pages/services/quality-assurance-testing-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/security-auditing-chat.js",
+        "size": 17910,
+        "sizeKB": "17.49"
+      },
+      {
+        "path": ".next/server/pages/services/security-auditing-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/system-administration-chat.js",
+        "size": 17969,
+        "sizeKB": "17.55"
+      },
+      {
+        "path": ".next/server/pages/services/system-administration-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/technical-documentation-chat.js",
+        "size": 17987,
+        "sizeKB": "17.57"
+      },
+      {
+        "path": ".next/server/pages/services/technical-documentation-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/ui-ux-design-chat.js",
+        "size": 17829,
+        "sizeKB": "17.41"
+      },
+      {
+        "path": ".next/server/pages/services/ui-ux-design-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services/web-application-development-chat.js",
+        "size": 18039,
+        "sizeKB": "17.62"
+      },
+      {
+        "path": ".next/server/pages/services/web-application-development-chat.js.nft.json",
+        "size": 169,
+        "sizeKB": "0.17"
+      },
+      {
+        "path": ".next/server/pages/services.js",
+        "size": 26123,
+        "sizeKB": "25.51"
+      },
+      {
+        "path": ".next/server/pages/services.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages/talent.js",
+        "size": 25403,
+        "sizeKB": "24.81"
+      },
+      {
+        "path": ".next/server/pages/talent.js.nft.json",
+        "size": 151,
+        "sizeKB": "0.15"
+      },
+      {
+        "path": ".next/server/pages-manifest.json",
+        "size": 6717,
+        "sizeKB": "6.56"
+      },
+      {
+        "path": ".next/server/webpack-api-runtime.js",
+        "size": 956,
+        "sizeKB": "0.93"
+      },
+      {
+        "path": ".next/server/webpack-runtime.js",
+        "size": 1029,
+        "sizeKB": "1.00"
+      },
+      {
+        "path": ".next/static/5TvKllYTtz2pg_o0s8hW8/_buildManifest.js",
+        "size": 11338,
+        "sizeKB": "11.07"
+      },
+      {
+        "path": ".next/static/5TvKllYTtz2pg_o0s8hW8/_ssgManifest.js",
+        "size": 77,
+        "sizeKB": "0.08"
+      },
+      {
+        "path": ".next/static/chunks/2560-61cffaaa99672bd7.js",
+        "size": 137193,
+        "sizeKB": "133.98"
+      },
+      {
+        "path": ".next/static/chunks/8230-572a5b65a670309c.js",
+        "size": 6346,
+        "sizeKB": "6.20"
+      },
+      {
+        "path": ".next/static/chunks/framework-22de46e587aabe73.js",
+        "size": 182721,
+        "sizeKB": "178.44"
+      },
+      {
+        "path": ".next/static/chunks/main-3770d7b92a04d70c.js",
+        "size": 117748,
+        "sizeKB": "114.99"
+      },
+      {
+        "path": ".next/static/chunks/pages/404-3a84c984c8f4a310.js",
+        "size": 952,
+        "sizeKB": "0.93"
+      },
+      {
+        "path": ".next/static/chunks/pages/_app-d3b15a069dc1d50f.js",
+        "size": 234,
+        "sizeKB": "0.23"
+      },
+      {
+        "path": ".next/static/chunks/pages/_error-f4b907ff4b98c080.js",
+        "size": 221,
+        "sizeKB": "0.22"
+      },
+      {
+        "path": ".next/static/chunks/pages/about-7143fbfdf21c4c91.js",
+        "size": 11151,
+        "sizeKB": "10.89"
+      },
+      {
+        "path": ".next/static/chunks/pages/auth/callback-b0cb306f70bdcfcb.js",
+        "size": 1463,
+        "sizeKB": "1.43"
+      },
+      {
+        "path": ".next/static/chunks/pages/auth/forgot-password-42c1c3cc501f7cc0.js",
+        "size": 3477,
+        "sizeKB": "3.40"
+      },
+      {
+        "path": ".next/static/chunks/pages/auth/reset-password-c872f626f780c788.js",
+        "size": 4904,
+        "sizeKB": "4.79"
+      },
+      {
+        "path": ".next/static/chunks/pages/auth-302def10b9eda7e5.js",
+        "size": 6981,
+        "sizeKB": "6.82"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/5g-technology-and-its-impact-on-iot-chat-e1677454c9a4c85b.js",
+        "size": 4472,
+        "sizeKB": "4.37"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat-d8c5a770aad63c76.js",
+        "size": 4681,
+        "sizeKB": "4.57"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/api-first-development-building-scalable-systems-chat-6a9906bc0fda01b7.js",
+        "size": 4607,
+        "sizeKB": "4.50"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/augmented-reality-in-enterprise-applications-chat-67227ef60b1829c3.js",
+        "size": 4557,
+        "sizeKB": "4.45"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/blockchain-technology-in-modern-business-solutions-chat-85ce179ddda40bb6.js",
+        "size": 4630,
+        "sizeKB": "4.52"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/cloud-native-architecture-best-practices-chat-7074b51108ecbc5a.js",
+        "size": 4525,
+        "sizeKB": "4.42"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat-df8761ace40361b6.js",
+        "size": 4527,
+        "sizeKB": "4.42"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/data-analytics-in-digital-transformation-chat-ad5db7a5fc3fd103.js",
+        "size": 4525,
+        "sizeKB": "4.42"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/devops-automation-strategies-for-modern-teams-chat-6519b8358e307476.js",
+        "size": 4578,
+        "sizeKB": "4.47"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/digital-twins-revolutionizing-industry-4-0-chat-df45b7072568c960.js",
+        "size": 4555,
+        "sizeKB": "4.45"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/machine-learning-applications-in-enterprise-software-chat-bff56a3a7cf7469c.js",
+        "size": 4645,
+        "sizeKB": "4.54"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/microservices-architecture-benefits-and-challenges-chat-cc7d3a32b829fc80.js",
+        "size": 4632,
+        "sizeKB": "4.52"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/quantum-computing-implications-for-business-chat-aaa36dffd4eb050e.js",
+        "size": 4561,
+        "sizeKB": "4.45"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/sustainable-technology-green-computing-solutions-chat-38ae0a972683f08c.js",
+        "size": 4612,
+        "sizeKB": "4.50"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat-36fd2516bdb5c735.js",
+        "size": 4586,
+        "sizeKB": "4.48"
+      },
+      {
+        "path": ".next/static/chunks/pages/blog-880dc6152c7453a9.js",
+        "size": 4216,
+        "sizeKB": "4.12"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/ai-consulting-chat-ecbe01c0bd3412a5.js",
+        "size": 3847,
+        "sizeKB": "3.76"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/business-intelligence-chat-742e98a30fa939c3.js",
+        "size": 3919,
+        "sizeKB": "3.83"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/cloud-architecture-chat-e8726919bfc53d44.js",
+        "size": 3896,
+        "sizeKB": "3.80"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/cybersecurity-chat-3fdc0325a7487ad5.js",
+        "size": 3842,
+        "sizeKB": "3.75"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/data-science-chat-0696bcbbb99b59e0.js",
+        "size": 3837,
+        "sizeKB": "3.75"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/database-administration-chat-bea4e63e3cc4d370.js",
+        "size": 3951,
+        "sizeKB": "3.86"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/devops-automation-chat-905ed4ec0250f07f.js",
+        "size": 3890,
+        "sizeKB": "3.80"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/mobile-development-chat-029ecfe68f3cbea6.js",
+        "size": 3890,
+        "sizeKB": "3.80"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/network-engineering-chat-0d4b77ca61414e2d.js",
+        "size": 3912,
+        "sizeKB": "3.82"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/product-management-chat-ebfe4828924397e4.js",
+        "size": 3900,
+        "sizeKB": "3.81"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/quality-assurance-chat-c1a32f256f58a6a2.js",
+        "size": 3889,
+        "sizeKB": "3.80"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/system-administration-chat-cd96850ee4645399.js",
+        "size": 3923,
+        "sizeKB": "3.83"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/technical-writing-chat-44a82c8aef94b6fd.js",
+        "size": 3885,
+        "sizeKB": "3.79"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/ui-ux-design-chat-47bca0f6401b8607.js",
+        "size": 3836,
+        "sizeKB": "3.75"
+      },
+      {
+        "path": ".next/static/chunks/pages/category/web-development-chat-f8a81e32ff04f689.js",
+        "size": 3855,
+        "sizeKB": "3.76"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/ai-powered-business-solutions-discussion-8a4773060e647ee8.js",
+        "size": 4748,
+        "sizeKB": "4.64"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/cloud-computing-strategies-625b761a5f88af4d.js",
+        "size": 4622,
+        "sizeKB": "4.51"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/cybersecurity-best-practices-1999834a584fc635.js",
+        "size": 4640,
+        "sizeKB": "4.53"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/data-analytics-implementation-c84f8bb7005b701d.js",
+        "size": 4647,
+        "sizeKB": "4.54"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/digital-transformation-insights-f09967bd5595ca9f.js",
+        "size": 4667,
+        "sizeKB": "4.56"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/emerging-technology-trends-ed114ad63e4f3d08.js",
+        "size": 4620,
+        "sizeKB": "4.51"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/future-of-work-and-automation-431846ebf3cb7c07.js",
+        "size": 4648,
+        "sizeKB": "4.54"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/innovation-in-enterprise-technology-e246f1e60e774766.js",
+        "size": 4703,
+        "sizeKB": "4.59"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/sustainable-technology-practices-3417a357251f13ca.js",
+        "size": 4672,
+        "sizeKB": "4.56"
+      },
+      {
+        "path": ".next/static/chunks/pages/chat-content/technology-implementation-strategies-de89dc2a9a23a491.js",
+        "size": 4712,
+        "sizeKB": "4.60"
+      },
+      {
+        "path": ".next/static/chunks/pages/contact-73c12c736440d1ff.js",
+        "size": 11928,
+        "sizeKB": "11.65"
+      },
+      {
+        "path": ".next/static/chunks/pages/enhanced-home-804a4ed87020d13f.js",
+        "size": 2446,
+        "sizeKB": "2.39"
+      },
+      {
+        "path": ".next/static/chunks/pages/index-255681c68457df34.js",
+        "size": 25949,
+        "sizeKB": "25.34"
+      },
+      {
+        "path": ".next/static/chunks/pages/products-a6ffc01dd4418ea5.js",
+        "size": 6421,
+        "sizeKB": "6.27"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/ai-model-development-chat-7be97812644cc8e7.js",
+        "size": 3958,
+        "sizeKB": "3.87"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/api-development-chat-8f967a744dc5889f.js",
+        "size": 3903,
+        "sizeKB": "3.81"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/business-intelligence-chat-ef8e4b0f009e7279.js",
+        "size": 3969,
+        "sizeKB": "3.88"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/cloud-migration-services-chat-76aa18631c458ae2.js",
+        "size": 4000,
+        "sizeKB": "3.91"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/data-pipeline-engineering-chat-0ac1fdb01186d543.js",
+        "size": 4004,
+        "sizeKB": "3.91"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/database-design-chat-dd4c0636b4d8b0f6.js",
+        "size": 3899,
+        "sizeKB": "3.81"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/mobile-app-development-chat-1367fa8243d49234.js",
+        "size": 3978,
+        "sizeKB": "3.88"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/network-security-chat-8379eee86a5c1469.js",
+        "size": 3906,
+        "sizeKB": "3.81"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/performance-optimization-chat-9721457ad1a0e3f6.js",
+        "size": 4008,
+        "sizeKB": "3.91"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/quality-assurance-testing-chat-4b405706ecae15ee.js",
+        "size": 4005,
+        "sizeKB": "3.91"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/security-auditing-chat-da3d72477fea5ce4.js",
+        "size": 3926,
+        "sizeKB": "3.83"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/system-administration-chat-47e9944f41d805a1.js",
+        "size": 3977,
+        "sizeKB": "3.88"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/technical-documentation-chat-3f4ed94a44412182.js",
+        "size": 3991,
+        "sizeKB": "3.90"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/ui-ux-design-chat-ebb676a700a9140d.js",
+        "size": 3857,
+        "sizeKB": "3.77"
+      },
+      {
+        "path": ".next/static/chunks/pages/services/web-application-development-chat-36b32071ee22e095.js",
+        "size": 4033,
+        "sizeKB": "3.94"
+      },
+      {
+        "path": ".next/static/chunks/pages/services-8b3416a7dd2a6d66.js",
+        "size": 12194,
+        "sizeKB": "11.91"
+      },
+      {
+        "path": ".next/static/chunks/pages/talent-88ae58d6f15797c3.js",
+        "size": 11478,
+        "sizeKB": "11.21"
+      },
+      {
+        "path": ".next/static/chunks/polyfills-42372ed130431b0a.js",
+        "size": 112594,
+        "sizeKB": "109.96"
+      },
+      {
+        "path": ".next/static/chunks/webpack-73c202d500686ac1.js",
+        "size": 1475,
+        "sizeKB": "1.44"
+      },
+      {
+        "path": ".next/trace",
+        "size": 418446,
+        "sizeKB": "408.64"
+      }
+    ],
+    "pagesGenerated": 275,
+    "totalSize": 110379357,
+    "issues": []
+  },
+  "performanceIssues": [
+    {
+      "type": "large_build",
+      "size": 110379357,
+      "sizeMB": "105.27",
+      "message": "Build size is large, consider optimization"
+    },
+    {
+      "type": "large_files",
+      "count": 4,
+      "files": [
+        ".next/cache/webpack/client-production/0.pack",
+        ".next/cache/webpack/client-production/index.pack",
+        ".next/cache/webpack/edge-server-production/0.pack",
+        ".next/cache/webpack/server-production/0.pack"
+      ],
+      "message": "Large files found in build output"
+    }
+  ],
+  "summary": {
+    "buildSuccess": false,
+    "buildDuration": 0,
+    "pagesGenerated": 275,
+    "totalSize": 110379357,
+    "totalSizeMB": "105.27",
+    "issues": 2
+  }
+}

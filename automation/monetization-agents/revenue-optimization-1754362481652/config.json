@@ -1,0 +1,25 @@
+{
+  "id": "revenue-optimization-1754362481652",
+  "type": "revenue-optimization",
+  "created": "2025-08-05T02:54:41.652Z",
+  "status": "active",
+  "config": {
+    "strategies": [
+      "pricing",
+      "upselling",
+      "cross-selling",
+      "dynamic-pricing"
+    ],
+    "targets": [
+      "conversion-rate",
+      "average-order-value",
+      "customer-lifetime-value",
+      "revenue-per-visitor"
+    ]
+  },
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

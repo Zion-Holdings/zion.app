@@ -1,0 +1,17 @@
+{
+  "id": "content-generation",
+  "name": "Content Generation",
+  "description": "Generate content every 2 hours",
+  "cron": "0 */2 * * *",
+  "command": "node automation/content-generation.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": "2025-08-01T21:00:00.660Z",
+  "nextRun": "2025-08-01T21:01:00.674Z",
+  "runCount": 5,
+  "successCount": 0,
+  "failureCount": 5,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.304Z"
+}

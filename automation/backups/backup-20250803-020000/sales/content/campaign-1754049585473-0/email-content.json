@@ -1,0 +1,31 @@
+{
+  "subject": "Transform Your Business with AI-Powered AI Solution",
+  "body": "Dear {customer_name},\n\nWe're excited to introduce AI-Powered AI Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Advanced AI Algorithms\n• Real-time Processing\n• Scalable Architecture\n• API Integration\n• Analytics Dashboard\n• Custom Workflows\n• Trend-based AI\n• Market Intelligence\n• Predictive Analytics\n• Automated Insights\n\nPricing: Basic: $79/month\nProfessional: $199/month\nEnterprise: $599/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team",
+  "segments": [
+    {
+      "name": "General Business",
+      "criteria": "Business professionals, managers, decision makers",
+      "content": "Dear Business Professional,\n\nAI-Powered AI Solution can transform your business operations.\n\nKey Benefits:\n• Advanced AI Algorithms, Real-time Processing, Scalable Architecture\n• Competitive pricing\n• Proven ROI\n\nROI: 300.0%\nPayback Period: 3.0 months\n\nReady to learn more?"
+    }
+  ],
+  "automation": {
+    "welcome": {
+      "trigger": "Sign up",
+      "delay": "Immediate",
+      "subject": "Welcome to AI-Powered AI Solution",
+      "content": "Dear {customer_name},\n\nWe're excited to introduce AI-Powered AI Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Advanced AI Algorithms\n• Real-time Processing\n• Scalable Architecture\n• API Integration\n• Analytics Dashboard\n• Custom Workflows\n• Trend-based AI\n• Market Intelligence\n• Predictive Analytics\n• Automated Insights\n\nPricing: Basic: $79/month\nProfessional: $199/month\nEnterprise: $599/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team"
+    },
+    "nurture": {
+      "trigger": "No purchase after 3 days",
+      "delay": "3 days",
+      "subject": "Don't miss out on AI-Powered AI Solution",
+      "content": "Hi there,\n\nI noticed you were interested in AI-Powered AI Solution but haven't taken the next step yet.\n\nHere's what you might be missing:\n• High ROI potential\n• Fast payback period\n• Powerful features\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI-Powered AI Solution Team"
+    },
+    "followUp": {
+      "trigger": "Website visit",
+      "delay": "1 day",
+      "subject": "Learn more about AI-Powered AI Solution",
+      "content": "Hi there,\n\nThanks for visiting our website and learning about AI-Powered AI Solution!\n\nI wanted to share some additional resources that might help:\n• Case studies from similar businesses\n• ROI calculator\n• Free consultation\n\nWould you like to schedule a quick call to discuss how AI-Powered AI Solution can benefit your business?\n\nBest regards,\nThe AI-Powered AI Solution Team"
+    }
+  }
+}

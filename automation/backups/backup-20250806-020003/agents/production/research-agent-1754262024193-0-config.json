@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754262024193-0",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Obvio’s stop sign cameras use AI to root out unsafe drivers",
+  "status": "Active",
+  "createdAt": "2025-08-03T23:00:24.193Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.8898297251215186,
+    "accuracy": 0.9387370125209281,
+    "reliability": 0.9373237289440604,
+    "scalability": 0.789360789798623
+  },
+  "recommendations": []
+}

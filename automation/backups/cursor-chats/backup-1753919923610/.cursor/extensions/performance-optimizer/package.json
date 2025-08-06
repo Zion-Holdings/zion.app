@@ -1,0 +1,16 @@
+{
+  "name": "cursor-performance-optimizer",
+  "version": "1.0.0",
+  "description": "Performance optimization extension for automatic code optimization",
+  "main": "extension.js",
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "glob": "^10.3.10"
+  },
+  "keywords": [
+    "cursor",
+    "performance",
+    "optimization"
+  ],
+  "license": "MIT"
+}
