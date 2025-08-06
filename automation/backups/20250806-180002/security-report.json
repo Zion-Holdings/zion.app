@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-08-06T05:16:06.686Z",
+  "securityChecks": {
+    "hardcodedSecrets": 0,
+    "environmentSecurity": 1,
+    "dependencySecurity": 0,
+    "contentSecurityPolicy": 1,
+    "authenticationSecurity": 6
+  },
+  "totalIssues": 8,
+  "securityIssues": [],
+  "summary": {
+    "passed": false,
+    "totalChecks": 5,
+    "failedChecks": 8
+  }
+}
