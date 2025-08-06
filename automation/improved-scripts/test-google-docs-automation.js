@@ -1,3 +1,31 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
 #!/usr/bin/env node
 
 let fs;
@@ -29,7 +57,7 @@ async function testGoogleDocsAutomation() {
     // Create test configuration
     const testConfig = {
       googleDocsUrl: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
-      checkInterval: 10000, // 10 seconds for testing
+      checkInterval: 3000, // 10 seconds for testing
       maxRetries: 2,
       logLevel: 'debug';
     };

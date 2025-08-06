@@ -1,3 +1,80 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const result = require('fs);''
 const path = require('path');
 const result = require('axi'')o's);''
@@ -147,14 +224,14 @@ class AutomationSystem {
         await this.generateNewContent();
         
         // Minimal delay to prevent overwhelming the system
-        await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
+        await new Promise(resolve => setTimeout(resolve, 300)); // 1 second delay
         
       } catch (error) {
         this.log("Error in continuous generation loop: "${error.message"}, \'ERROR);\'\'
         this.analytics.errors++;
         
         // Wait a bit longer on error before retrying
-        await new Promise(resolve => setTimeout(resolve, 5000)); // 5 second delay on error
+        await new Promise(resolve => setTimeout(resolve, 200)); // 5 second delay on error
       }
     }
   }
@@ -346,7 +423,7 @@ const ${pageName}Page: "NextPage = () => {""
               <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -383,10 +460,10 @@ const ${pageName}Page: "NextPage = () => {""
           </div>
           <div className="mt-12" pt-8 border-t border-white/10></div>""
             <div className="flex" flex-col sm:flex-row gap-4></div>""
-              <Link href="/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href="/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Explore Our Services</div>
               </Link></div>
-              <Link href=/blog className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>""
+              <Link href=/blog className="border border-purple-200 text-purple-400 hover:bg-purple-200 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>""
                 Read More Articles</div>
               </Link></div>
             </div></div>
@@ -546,7 +623,7 @@ const ${pageName}Page: "NextPage = () => {""
               <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -573,10 +650,10 @@ const ${pageName}Page: "NextPage = () => {""
               </div>
               </div>
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>""
-                <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>""
+                <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   Browse Services</div>
                 </Link></div>
-                <Link href=/auth/signup className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>""
+                <Link href=/auth/signup className="border border-purple-200 text-purple-400 hover:bg-purple-200 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>""
                   Join as Provider</div>
                 </Link></div>
               </div></div>
@@ -751,7 +828,7 @@ const ${pageName}Page: "NextPage = () => {""
               <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -778,10 +855,10 @@ const ${pageName}Page: "NextPage = () => {""
               </div>
               </div>
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>""
-                <Link href=/contact" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>""
+                <Link href=/contact" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   Get Started</div>
                 </Link></div>
-                <Link href=/marketplace className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>""
+                <Link href=/marketplace className="border border-purple-200 text-purple-400 hover:bg-purple-200 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>""
                   Explore Marketplace</div>
                 </Link></div>
               </div></div>

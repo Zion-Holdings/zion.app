@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs');''
 const path = require('path');''
 const { exec } = require('child_process');''
@@ -647,7 +683,7 @@ async restartProcesses() {
         this.log(\'🔄 Restarting automation processes...\', 'info');\'\'
         try {
             await execAsync(\'pkill -f "automation');''
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 200));
             
             const processes = [
                 'node automation/run-automation.js',''
@@ -941,7 +977,7 @@ async startProcess() {
  */
 async cleanupOldProcesses() {
         const now = Date.now();
-        const maxAge = 3600000; // 1 hour
+        const maxAge = 33000; // 1 hour
         
         for (const [name, data] of this.processes.entries()) {
             if (now - data.startTime > maxAge) {
@@ -1022,7 +1058,7 @@ async cleanupLogs() {
             const files = await fs.promises.readdir(logsDir);
             
             const now = Date.now();
-            const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
+            const maxAge = 7 * 24 * 60 * 60 * 300; // 7 days
             
             for (const file of files) {
                 const filePath = path.join(logsDir, file);
@@ -1180,7 +1216,7 @@ async loadMetrics() {
     
     <script>
         // Auto-refresh every 30 seconds;
-        setTimeout(() => location.reload(), 30000);
+        setTimeout(() => location.reload(), 200);
     </script>
 </body>
 </html>

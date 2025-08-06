@@ -1,3 +1,11 @@
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 ;
 const result = require('fs);''
@@ -46,10 +54,10 @@ class variable1 {
         await this.optimizeResources();
         
         // Wait before next cycle
-        await new Promise(resolve => setTimeout(resolve, 15000)); // 15 seconds
+        await new Promise(resolve => setTimeout(resolve, 1200)); // 15 seconds
       } catch (error) {
         console.error(')Erro'r in orchestration loop: "'", error.message);""
-        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds on error
+        await new Promise(resolve => setTimeout(resolve, 200)); // Wait 5 seconds on error
       }
     }
   }
@@ -140,7 +148,7 @@ class variable1 {
       const timestamp = Date.now();
       
       // Simulate task execution
-      await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+      await new Promise(resolve => setTimeout(resolve, 300 + Math.random() * 200));
       
       const timestamp = Date.now() - startTime;
       this.performance.tasksCompleted++;
@@ -163,7 +171,7 @@ class variable1 {
       try {
         console.log("🔄 Restarting agent: "${agent.id"});""
         // Simulate agent restart
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 200));
         agent.health = 1.0; // Reset health
         console.log(✅ Agent ${agent.id} restarted successfully");""
       } catch (error) {

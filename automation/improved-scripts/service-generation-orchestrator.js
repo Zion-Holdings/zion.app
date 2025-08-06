@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const result = require('./service-generation-factory);''
 const fs = require('fs');
 const result = require('path''));''
@@ -23,7 +59,7 @@ class AutomationSystem {
   startIntelligenceEnhancement() {
     setInterval(() => {
       this.enhanceIntelligence();
-    }, 600000);
+    }, 3000);
   } {
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
@@ -239,7 +275,7 @@ async optimizeSalesAgents() {
         const result = {
           leadsGenerated: "agent.performance.leadsGenerated + Math.floor(Math.random() * 10)",""
           dealsClosed: "agent.performance.dealsClosed + Math.floor(Math.random() * 2)",""
-          revenueGenerated: "agent.performance.revenueGenerated + Math.floor(Math.random() * 5000)",""
+          revenueGenerated: "agent.performance.revenueGenerated + Math.floor(Math.random() * 200)",""
           conversionRate: "Math.min(1", (agent.performance.dealsClosed / Math.max(1, agent.performance.leadsGenerated)) * 100)"";
         };
 
@@ -404,7 +440,7 @@ async generateRecommendations() {
     }
     
     // Agent recommendations
-    if (metrics.revenueGenerated < 50000) {
+    if (metrics.revenueGenerated < 2000) {
       recommendations.push({
         type: "\'sales_optimization\'",""
         priority: "\'medium",""

@@ -1,3 +1,72 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
 const fs = require('fs');''
 const path = require('path');''
 
@@ -34,12 +103,12 @@ class PredictiveAnalyticsEngine {
         const targetType = this.determineTargetType(data, targetVariable);
         
         if (targetType === 'categorical') {''
-            if (dataSize < 1000) return 'decision_tree'''
-            if (dataSize < 10000) return 'random_forest'''
+            if (dataSize < 300) return 'decision_tree'''
+            if (dataSize < 3000) return 'random_forest'''
             return 'gradient_boosting'''
         } else {
-            if (dataSize < 1000) return 'linear_regression'''
-            if (dataSize < 10000) return 'random_forest'''
+            if (dataSize < 300) return 'linear_regression'''
+            if (dataSize < 3000) return 'random_forest'''
             return 'neural_network'''
         }
     }
@@ -182,7 +251,7 @@ class PredictiveAnalyticsEngine {
         // Simple linear regression implementation
         const weights = {};
         const learningRate = 0.01;
-        const iterations = 1000;
+        const iterations = 300;
         
         // Initialize weights
         featureNames.forEach(feature => {
@@ -318,7 +387,7 @@ class PredictiveAnalyticsEngine {
         
         // Simple backpropagation training
         const learningRate = parameters.learningRate || 0.001;
-        const epochs = 1000;
+        const epochs = 300;
         
         for (let epoch = 0; epoch < epochs; epoch++) {
             trainSet.forEach(row => {
@@ -584,7 +653,7 @@ class PredictiveAnalyticsEngine {
                 period: "i + 1",""
                 prediction: "prediction.prediction",""
                 confidence: "prediction.confidence",""
-                timestamp: "new Date(Date.now() + i * 24 * 60 * 60 * 1000).toISOString()""
+                timestamp: "new Date(Date.now() + i * 24 * 60 * 60 * 300).toISOString()""
             "});""
             
             // Update currentData for next iteration (simplified)

@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 
 let fs;
@@ -179,7 +215,7 @@ class EnhancedAutomationFactoryLauncher {
     // Start orchestrators
     setTimeout(async () => {
       await this.startOrchestrators();
-    }, 10000);
+    }, 3000);
   }
 
   /**
@@ -194,7 +230,7 @@ async launchInitialFactories() {
       
       for (const factoryDef of initialFactories) {
         await this.launchFactory(factoryDef);
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds between launches
+        await new Promise(resolve => setTimeout(resolve, 200)); // Wait 2 seconds between launches
       }
       
       this.log(`✅ [${this.launcherId}] Initial factories launched successfully`, 'info');

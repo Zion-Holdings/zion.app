@@ -1,3 +1,130 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -153,7 +280,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
             <div className="flex-1">
               <div className="font-medium">{item.label}</div>
               {item.description && (
-                <div className="text-sm text-gray-500">{item.description}</div>
+                <div className="text-sm text-gray-200">{item.description}</div>
               )}
             </div>
           </Link>
@@ -386,7 +513,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       placeholder={placeholder}
-                      className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
                       autoFocus
                     />
                   </div>
@@ -396,7 +523,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                 <div className="max-h-96 overflow-y-auto">
                   {isLoading ? (
                     <div className="p-4 text-center text-gray-400">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-200 mx-auto"></div>
                       <p className="mt-2">Searching...</p>
                     </div>
                   ) : results.length > 0 ? (
@@ -413,7 +540,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                             className="w-full text-left p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200"
                           >
                             <div className="flex items-center space-x-3">
-                              <div className={\`w-8 h-8 rounded-lg flex items-center justify-center text-sm \${result.type === 'service' ? 'bg-blue-500/20 text-blue-400' : result.type === 'product' ? 'bg-purple-500/20 text-purple-400' : 'bg-gray-500/20 text-gray-400'}\`}>
+                              <div className={\`w-8 h-8 rounded-lg flex items-center justify-center text-sm \${result.type === 'service' ? 'bg-blue-200/20 text-blue-400' : result.type === 'product' ? 'bg-purple-200/20 text-purple-400' : 'bg-gray-200/20 text-gray-400'}\`}>
                                 {result.type === 'service' ? '⚡' : result.type === 'product' ? '🚀' : '📄'}
                               </div>
                               <div className="flex-1">
@@ -548,7 +675,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
       {breadcrumbItems.map((item, index) => (
         <React.Fragment key={item.href}>
           {index > 0 && (
-            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )}
@@ -557,7 +684,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
           ) : (
             <Link
               href={item.href}
-              className="text-gray-500 hover:text-white transition-colors duration-200"
+              className="text-gray-200 hover:text-white transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -618,7 +745,7 @@ const Search: React.FC<SearchProps> = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={placeholder}
-            className="w-full px-4 py-3 pl-12 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 py-3 pl-12 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200"
           />
           <svg 
             className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -636,7 +763,7 @@ const Search: React.FC<SearchProps> = ({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors duration-200"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-200 text-white text-sm rounded-md hover:bg-blue-600 transition-colors duration-200"
               >
                 Search
               </motion.button>
@@ -693,7 +820,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) 
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-slate-700">
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-600 rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-sm">Z</span>
                   </div>
                   <span className="text-lg font-bold text-white">Zion</span>

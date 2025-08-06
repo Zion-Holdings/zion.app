@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
@@ -13,11 +49,11 @@ class HighFrequencyGitSync {
     this.lastSync = null;
     
     this.config = {
-      syncInterval: 5000, // 5 seconds
-      pushInterval: 30000, // 30 seconds
+      syncInterval: 200, // 5 seconds
+      pushInterval: 200, // 30 seconds
       maxFilesPerCommit: 10,
       retryAttempts: 3,
-      retryDelay: 1000,
+      retryDelay: 300,
       commitMessagePrefix: 'Auto-sync',
       includePatterns: [
         'automation/**',
@@ -375,7 +411,7 @@ async function main() {
     setInterval(() => {
       const status = sync.getStatus();
       console.log(`📊 Sync Status: ${status.syncCount} syncs, ${status.errorCount} errors`);
-    }, 60000); // Log status every minute
+    }, 3000); // Log status every minute
     
   } catch (error) {
     console.error('❌ Failed to start High Frequency Git Sync:', error.message);

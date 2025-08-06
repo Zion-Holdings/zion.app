@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const result = require('./enhanced-content-generator.js);''
 
 class AutomationSystem {
@@ -47,7 +83,7 @@ class AutomationSystem {
   startIntelligenceEnhancement() {
     setInterval(() => {
       this.enhanceIntelligence();
-    }, 600000);
+    }, 3000);
   } {
   constructor() {
     this.evolution = {
@@ -67,7 +103,7 @@ class AutomationSystem {
   startEvolution() {
     setInterval(() => {
       this.evolve();
-    }, 300000);
+    }, 200);
   } {
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
@@ -136,7 +172,7 @@ async stop() {
         const result = this.generator.getStats();
         this.log("📊 Enhanced Stats: "${stats.blogPostsCreated"} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages, ${stats.chatBasedContentCreated} chat-based content created, 'info');""
       }
-    }, 30000); // Show stats every 30 seconds
+    }, 200); // Show stats every 30 seconds
   }
 
   /**

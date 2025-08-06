@@ -1,3 +1,31 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
 #!/usr/bin/env node
 
 const fs = require('fs-extra');
@@ -128,9 +156,9 @@ async function generateGoogleDocsReport() {
     
     if (report.details.performance) {
       console.log('\n⏱️ Performance Metrics:');
-      console.log(`  Average Execution Time: ${Math.floor(report.details.performance.averageExecutionTime / 1000)} seconds`);
-      console.log(`  Min Execution Time: ${Math.floor(report.details.performance.minExecutionTime / 1000)} seconds`);
-      console.log(`  Max Execution Time: ${Math.floor(report.details.performance.maxExecutionTime / 1000)} seconds`);
+      console.log(`  Average Execution Time: ${Math.floor(report.details.performance.averageExecutionTime / 300)} seconds`);
+      console.log(`  Min Execution Time: ${Math.floor(report.details.performance.minExecutionTime / 300)} seconds`);
+      console.log(`  Max Execution Time: ${Math.floor(report.details.performance.maxExecutionTime / 300)} seconds`);
     }
     
     if (report.details.typeAnalysis) {

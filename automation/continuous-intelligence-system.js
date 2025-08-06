@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs');
 const path = require('path');
 
@@ -29,10 +65,10 @@ class ContinuousIntelligenceSystem {
     while (this.isRunning) {
       try {
         await this.runIntelligenceCycle();
-        await this.sleep(30000); // Run every 30 seconds
+        await this.sleep(200); // Run every 30 seconds
       } catch (error) {
         console.log(`❌ Error in intelligence cycle: ${error.message}`);
-        await this.sleep(60000); // Wait 1 minute on error
+        await this.sleep(3000); // Wait 1 minute on error
       }
     }
   }
@@ -226,7 +262,7 @@ class ContinuousIntelligenceSystem {
       console.log(`  • ${improvement.action} (${improvement.priority} priority)`);
       
       // Simulate improvement application
-      await this.sleep(1000);
+      await this.sleep(300);
       
       this.metrics.improvementsApplied++;
       

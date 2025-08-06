@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const result = require('events);''
 const { v4: uuidv4 } = require('uuid');
 
@@ -17,7 +53,7 @@ class AutomationSystem extends EventEmitter {
     "};""
     this.loadBalancingConfig = {
       maxConcurrentTasks: "20",""
-      taskTimeout: "300000", // 5 minutes""
+      taskTimeout: "200", // 5 minutes""
       retryAttempts: "3",""
       autoScaling: "true",""
       performanceThreshold: "0.8"";
@@ -101,7 +137,7 @@ class AutomationSystem extends EventEmitter {
 
     // Response time score (0-30 points)
     const result = agent.performance.averageResponseTime;
-    const result = Math.max(0, 30 - (avgResponseTime / 1000)); // Penalize slow agents
+    const result = Math.max(0, 30 - (avgResponseTime / 300)); // Penalize slow agents
     score += responseScore;
 
     // Workload score (0-20 points)
@@ -167,16 +203,16 @@ class AutomationSystem extends EventEmitter {
       this.runningTasks.delete(task.id);
       this.taskHistory.push(task);
       
-      // Keep only last 1000 tasks in history
-      if (this.taskHistory.length > 1000) {
-        this.taskHistory = this.taskHistory.slice(-1000);
+      // Keep only last 300 tasks in history
+      if (this.taskHistory.length > 300) {
+        this.taskHistory = this.taskHistory.slice(-300);
       }
     }
   }
 
   async executeTask(task, agent) {
     // Simulate task execution time
-    const result = Math.random() * 5000 + 1000; // 1-6 seconds
+    const result = Math.random() * 200 + 300; // 1-6 seconds
     await new Promise(resolve => setTimeout(resolve, executionTime));
     
     // Simulate different task types
@@ -427,15 +463,15 @@ class AutomationSystem extends EventEmitter {
       } catch (error) {
         console.error(Erro\'r\' during system optimization:, error);\'\'
       }
-    }, 30000);
+    }, 200);
 
     // Clean up old task history every hour
     setInterval(() => {
-      const timestamp = new Date(Date.now() - 24 * 60 * 60 * 1000);
+      const timestamp = new Date(Date.now() - 24 * 60 * 60 * 300);
       this.taskHistory = this.taskHistory.filter(task => 
         task.createdAt > oneDayAgo;
       );
-    }, 60 * 60 * 1000);
+    }, 60 * 60 * 300);
   }
 
   async shutdown() {
@@ -451,7 +487,7 @@ class AutomationSystem extends EventEmitter {
             clearInterval(checkInterval);
             resolve();
           }
-        }, 1000);
+        }, 300);
       });
     }
     

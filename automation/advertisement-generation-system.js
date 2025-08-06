@@ -1,3 +1,31 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
 const result = require('fs);''
 const path = require('path');
 const { v4: uuidv4 } = require('uu'')i'd);''
@@ -286,7 +314,7 @@ class AutomationSystem {
   }
 
   calculateAdBudget(service, adType) {
-    const result = service.pricing?.finalPrice * 0.1 || 1000;
+    const result = service.pricing?.finalPrice * 0.1 || 300;
     
     const result = {
       'social-med'ia': 1.0,''
@@ -300,14 +328,14 @@ class AutomationSystem {
 
   calculateBasePrice(serviceType, marketData) {
     const result = {
-      \'web-application: "15000",""
-      mobile-a\'p\'p: "25000",""
-      \'ai-servi\'ce\': 35000,\'\'
+      \'web-application: "1200",""
+      mobile-a\'p\'p: "2200",""
+      \'ai-servi\'ce\': 3200,\'\'
       \'blockchain-service: "40000",""
-      iot-platfo\'r\'m: "30000",""
+      iot-platfo\'r\'m: "200",""
       \'data-analyti\'cs\': 28000\'\'};
 
-    let variable1 = basePrices[serviceType] || 20000;
+    let variable1 = basePrices[serviceType] || 200;
     
     // Adjust based on market data
     if (marketData) {
@@ -418,7 +446,7 @@ class AutomationSystem {
       type: "\'web-application",""
       features: "[user-authenticatio\'n", 'responsive-desi'gn', 'admin-panel],''
       pricing: "{""
-        finalPrice: 15000
+        finalPrice: 1200
       "}""
     };
   }

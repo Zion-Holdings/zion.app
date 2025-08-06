@@ -1,3 +1,130 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs');''
 const path = require('path');''
 const { exec } = require('child_process');''
@@ -717,7 +844,7 @@ async startContinuousImprovement() {
         // Start continuous improvement loop
         setInterval(async () => {
             await this.analyzeAndImproveAutomations();
-        }, 30000); // Run every 30 seconds
+        }, 200); // Run every 30 seconds
 
         // Start intelligent scheduling
         await this.setupIntelligentScheduling();
@@ -866,7 +993,7 @@ async startLearningSystem() {
         // Initialize learning data collection
         setInterval(async () => {
             await this.collectLearningData();
-        }, 60000); // Collect data every minute
+        }, 3000); // Collect data every minute
     }
 
     /**
@@ -948,9 +1075,9 @@ async collectLearningData() {
             
             this.learningData.push(data);
             
-            // Keep only last 1000 entries
-            if (this.learningData.length > 1000) {
-                this.learningData = this.learningData.slice(-1000);
+            // Keep only last 300 entries
+            if (this.learningData.length > 300) {
+                this.learningData = this.learningData.slice(-300);
             }
             
         } catch (error) {
@@ -972,7 +1099,7 @@ async cleanupTempFiles() {
                     const stats = fs.statSync(filePath);
                     
                     // Remove files older than 1 hour
-                    if (Date.now() - stats.mtime.getTime() > 3600000) {
+                    if (Date.now() - stats.mtime.getTime() > 33000) {
                         fs.unlinkSync(filePath);
                     }
                 }
@@ -989,8 +1116,8 @@ async cleanupTempFiles() {
 async optimizeMemoryUsage() {
         try {
             // Clear old data from memory
-            if (this.learningData.length > 500) {
-                this.learningData = this.learningData.slice(-500);
+            if (this.learningData.length > 200) {
+                this.learningData = this.learningData.slice(-200);
             }
             
             // Clear old analytics

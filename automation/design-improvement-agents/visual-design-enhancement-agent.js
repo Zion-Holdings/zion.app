@@ -1,3 +1,122 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -75,7 +194,7 @@ class VisualDesignEnhancementAgent {
         200: '#bae6fd',
         300: '#7dd3fc',
         400: '#38bdf8',
-        500: '#0ea5e9',
+        200: '#0ea5e9',
         600: '#0284c7',
         700: '#0369a1',
         800: '#075985',
@@ -88,7 +207,7 @@ class VisualDesignEnhancementAgent {
         200: '#e9d5ff',
         300: '#d8b4fe',
         400: '#c084fc',
-        500: '#a855f7',
+        200: '#a855f7',
         600: '#9333ea',
         700: '#7c3aed',
         800: '#6b21a8',
@@ -101,12 +220,12 @@ class VisualDesignEnhancementAgent {
         200: '#fbcfe8',
         300: '#f9a8d4',
         400: '#f472b6',
-        500: '#ec4899',
+        200: '#ec4899',
         600: '#db2777',
         700: '#be185d',
         800: '#9d174d',
         900: '#831843',
-        950: '#500724',
+        950: '#200724',
       },
       cyber: {
         50: '#f0f9ff',
@@ -114,7 +233,7 @@ class VisualDesignEnhancementAgent {
         200: '#bae6fd',
         300: '#7dd3fc',
         400: '#38bdf8',
-        500: '#0ea5e9',
+        200: '#0ea5e9',
         600: '#0284c7',
         700: '#0369a1',
         800: '#075985',
@@ -243,11 +362,11 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 focus:ring-blue-500 shadow-lg hover:shadow-xl',
-    secondary: 'bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 focus:ring-purple-500 shadow-lg hover:shadow-xl',
-    accent: 'bg-gradient-to-r from-pink-500 to-red-600 text-white hover:from-pink-600 hover:to-red-700 focus:ring-pink-500 shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white focus:ring-blue-500',
-    ghost: 'text-gray-300 hover:text-white hover:bg-slate-800/50 focus:ring-slate-500',
+    primary: 'bg-gradient-to-r from-blue-200 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 focus:ring-blue-200 shadow-lg hover:shadow-xl',
+    secondary: 'bg-gradient-to-r from-purple-200 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 focus:ring-purple-200 shadow-lg hover:shadow-xl',
+    accent: 'bg-gradient-to-r from-pink-200 to-red-600 text-white hover:from-pink-600 hover:to-red-700 focus:ring-pink-200 shadow-lg hover:shadow-xl',
+    outline: 'border-2 border-blue-200 text-blue-400 hover:bg-blue-200 hover:text-white focus:ring-blue-200',
+    ghost: 'text-gray-300 hover:text-white hover:bg-slate-800/50 focus:ring-slate-200',
     neon: 'bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 focus:ring-cyan-400 animate-pulse-neon'
   };
   
@@ -363,11 +482,11 @@ const Badge: React.FC<BadgeProps> = ({
   
   const variantClasses = {
     default: 'bg-slate-700 text-slate-300',
-    success: 'bg-green-500/20 text-green-400 border border-green-500/30',
-    warning: 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30',
-    error: 'bg-red-500/20 text-red-400 border border-red-500/30',
-    info: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
-    neon: 'bg-cyan-500/20 text-cyan-400 border border-cyan-400/50 animate-pulse-neon'
+    success: 'bg-green-200/20 text-green-400 border border-green-200/30',
+    warning: 'bg-yellow-200/20 text-yellow-400 border border-yellow-200/30',
+    error: 'bg-red-200/20 text-red-400 border border-red-200/30',
+    info: 'bg-blue-200/20 text-blue-400 border border-blue-200/30',
+    neon: 'bg-cyan-200/20 text-cyan-400 border border-cyan-400/50 animate-pulse-neon'
   };
   
   const sizeClasses = {
@@ -457,7 +576,7 @@ export default Badge;
   }
   
   blockquote {
-    @apply border-l-4 border-blue-500 pl-4 italic text-gray-300;
+    @apply border-l-4 border-blue-200 pl-4 italic text-gray-300;
   }
   
   ul, ol {
@@ -549,7 +668,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   );
 
   const renderGrid = () => (
-    <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+    <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
   );
 
   const renderWaves = () => (
@@ -623,9 +742,9 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   };
 
   const variantClasses = {
-    default: 'border-blue-500',
+    default: 'border-blue-200',
     neon: 'border-cyan-400',
-    gradient: 'border-gradient-to-r from-blue-500 to-purple-600'
+    gradient: 'border-gradient-to-r from-blue-200 to-purple-600'
   };
 
   return (

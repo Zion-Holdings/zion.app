@@ -1,3 +1,11 @@
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 let fs;
 try {
   fs = require('fs');
@@ -70,7 +78,7 @@ class PredictiveAutomation {
   startIntelligenceEnhancement() {
     setInterval(() => {
       this.enhanceIntelligence();
-    }, 600000);
+    }, 3000);
   } {
   constructor() {
     this.evolution = {
@@ -90,7 +98,7 @@ class PredictiveAutomation {
   startEvolution() {
     setInterval(() => {
       this.evolve();
-    }, 300000);
+    }, 200);
   } {
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
@@ -165,8 +173,8 @@ class PredictiveAutomation {
                     timestamp: Date.now()
                 });
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -205,8 +213,8 @@ class PredictiveAutomation {
                     timestamp: Date.now()
                 });
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -267,8 +275,8 @@ class PredictiveAutomation {
                     model.baseline.avgResourceUsage = recentData.reduce((sum, d) => sum + d.resourceUsage, 0) / recentData.length;
                 }
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -302,11 +310,11 @@ async startPredictiveMonitoring() {
         
         setInterval(async () => {
             await this.analyzeAndPredict();
-        }, 5 * 60 * 1000);
+        }, 5 * 60 * 300);
         
         setInterval(async () => {
             await this.learnFromPredictions();
-        }, 60 * 60 * 1000);
+        }, 60 * 60 * 300);
     }
 
     /**
@@ -489,7 +497,7 @@ async applyErrorPrevention() {
         
         const preventions = {
             retryAttempts: 5,
-            retryDelay: 2000,
+            retryDelay: 200,
             errorHandling: 'comprehensive','
             circuitBreaker: true,
             fallbackStrategies: true;
@@ -507,7 +515,7 @@ async applyBasicErrorHandling() {
         
         const errorHandling = {
             retryAttempts: 3,
-            retryDelay: 1000,
+            retryDelay: 300,
             errorHandling: 'basic','
             circuitBreaker: false,
             fallbackStrategies: false;
@@ -812,7 +820,7 @@ async executeTask() {
         const taskPath = path.join(__dirname, task.id);
         
         if (fs.existsSync(taskPath)) {
-            await new Promise(resolve => setTimeout($1, 5000));
+            await new Promise(resolve => setTimeout($1, 200));
             return { success: true };
         } else {
             throw new Error(`Task file not found: ${task.id}`);
@@ -944,7 +952,7 @@ async parseTaskFile() {
 
     calculateUrgency(filePath) {
         const stats = fs.statSync(path.join(__dirname, filePath));
-        const ageHours = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
+        const ageHours = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60);
         
         if (filePath.includes(\'critical\') || filePath.includes(\'urgent\')) {\'
             return 1.0;

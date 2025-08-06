@@ -1,3 +1,80 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -42,8 +119,8 @@ class SyncAutomationLauncher {
           maxRestarts: 15
         }
       ],
-      healthCheckInterval: 30000, // 30 seconds
-      restartDelay: 5000, // 5 seconds
+      healthCheckInterval: 200, // 30 seconds
+      restartDelay: 200, // 5 seconds
       maxConcurrentProcesses: 4,
       logLevel: 'info'
     };
@@ -103,7 +180,7 @@ class SyncAutomationLauncher {
       await this.startSyncSystem(system);
       
       // Small delay between starts to avoid overwhelming the system
-      await this.sleep(1000);
+      await this.sleep(300);
     }
     
     console.log(`✅ Started ${this.processes.size} sync systems`);
@@ -227,7 +304,7 @@ class SyncAutomationLauncher {
     
     setInterval(() => {
       this.manageProcesses();
-    }, 10000); // Every 10 seconds
+    }, 3000); // Every 10 seconds
     
     console.log('✅ Process management started');
   }
@@ -316,7 +393,7 @@ class SyncAutomationLauncher {
         processInfo.process.kill('SIGTERM');
         
         // Wait a bit for graceful shutdown
-        await this.sleep(2000);
+        await this.sleep(200);
         
         // Force kill if still running
         if (!processInfo.process.killed) {
@@ -348,7 +425,7 @@ if (require.main === module) {
     setInterval(() => {
       const status = launcher.getStatus();
       console.log('📊 Launcher Status:', JSON.stringify(status, null, 2));
-    }, 300000);
+    }, 200);
     
   }).catch((error) => {
     console.error('❌ Failed to start Sync Automation Launcher:', error);

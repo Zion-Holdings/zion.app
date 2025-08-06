@@ -1,3 +1,122 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -104,7 +223,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-x"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
       </div>
 
       {/* Header */}
@@ -122,7 +241,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-200 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
@@ -221,7 +340,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">Z</span>
                 </div>
                 <span className="text-xl font-bold text-white">Zion</span>
@@ -473,17 +592,17 @@ export default Section;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-500;
+  @apply bg-slate-200;
 }
 
 /* Selection styles */
 ::selection {
-  @apply bg-blue-500/20 text-white;
+  @apply bg-blue-200/20 text-white;
 }
 
 /* Focus styles */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-slate-900;
 }
 `;
 

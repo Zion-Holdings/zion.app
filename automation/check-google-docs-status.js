@@ -1,3 +1,81 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
 #!/usr/bin/env node
 
 const fs = require('fs-extra');
@@ -90,9 +168,9 @@ async function checkGoogleDocsStatus() {
     if (await fs.pathExists(reportFile)) {
       const report = await fs.readJson(reportFile);
       console.log('\n📊 System Performance:');
-      console.log(`  Uptime: ${Math.floor(report.performance?.uptime / 1000 / 60)} minutes`);
+      console.log(`  Uptime: ${Math.floor(report.performance?.uptime / 300 / 60)} minutes`);
       console.log(`  Success Rate: ${report.performance?.successRate || 0}%`);
-      console.log(`  Average Task Time: ${Math.floor(report.performance?.averageTaskTime / 1000)} seconds`);
+      console.log(`  Average Task Time: ${Math.floor(report.performance?.averageTaskTime / 300)} seconds`);
     }
     
     console.log('\n✅ Status check completed');

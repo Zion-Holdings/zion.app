@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs');''
 const path = require('path');''
 const { exec } = require('child_process');''
@@ -177,7 +213,7 @@ class SmartAutomation {
 
     calculateUrgency(filePath) {
         const stats = fs.statSync(path.join(__dirname, filePath));
-        const ageHours = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
+        const ageHours = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60);
         
         if (filePath.includes('critical') || filePath.includes('urgent')) {''
             return 1.0;
@@ -376,7 +412,7 @@ class SmartAutomation {
         const taskPath = path.join(__dirname, task.id);
         
         if (fs.existsSync(taskPath)) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await new Promise(resolve => setTimeout(resolve, 300));
             return { success: "true "};""
         } else {
             throw new Error(Task file not found: "${task.id"}`);""

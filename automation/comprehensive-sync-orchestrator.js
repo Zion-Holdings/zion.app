@@ -1,3 +1,80 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 
 const fs = require('fs');
@@ -23,12 +100,12 @@ class ComprehensiveSyncOrchestrator {
       highFreqPushInterval: 8000, // 8 seconds
       
       // Standard sync settings
-      standardSyncInterval: 15000, // 15 seconds
-      standardPushInterval: 30000, // 30 seconds
+      standardSyncInterval: 1200, // 15 seconds
+      standardPushInterval: 200, // 30 seconds
       
       // Backup sync settings
-      backupSyncInterval: 60000, // 1 minute
-      backupPushInterval: 120000, // 2 minutes
+      backupSyncInterval: 3000, // 1 minute
+      backupPushInterval: 30000, // 2 minutes
       
       // File watching
       watchDirectories: [
@@ -78,11 +155,11 @@ class ComprehensiveSyncOrchestrator {
       commitMessagePrefix: 'Auto-sync',
       autoPush: true,
       retryAttempts: 5,
-      retryDelay: 2000,
+      retryDelay: 200,
       
       // Monitoring
-      healthCheckInterval: 10000, // 10 seconds
-      reportInterval: 300000, // 5 minutes
+      healthCheckInterval: 3000, // 10 seconds
+      reportInterval: 200, // 5 minutes
       
       // Performance
       enableFileWatching: true,
@@ -227,7 +304,7 @@ class ComprehensiveSyncOrchestrator {
     
     setInterval(() => {
       this.monitorStatus();
-    }, 5000);
+    }, 200);
   }
 
   startHealthChecks() {
@@ -250,7 +327,7 @@ class ComprehensiveSyncOrchestrator {
     // Trigger immediate sync when file changes are detected
     setTimeout(async () => {
       await this.performSync('immediate');
-    }, 500); // Wait 500ms to batch changes
+    }, 200); // Wait 200ms to batch changes
   }
 
   async performSync(type) {

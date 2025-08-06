@@ -1,3 +1,39 @@
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 #!/usr/bin/env node
 
 const fs = require('fs-extra');
@@ -12,7 +48,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       googleDocsUrl: config.googleDocsUrl || 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
       maxConcurrentTasks: config.maxConcurrentTasks || 5,
       retryAttempts: config.retryAttempts || 3,
-      taskTimeout: config.taskTimeout || 300000, // 5 minutes
+      taskTimeout: config.taskTimeout || 200, // 5 minutes
       ...config
     };
     
@@ -34,7 +70,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       // Initialize Google Docs instruction agent
       const googleDocsAgent = new GoogleDocsInstructionAgent({
         googleDocsUrl: this.config.googleDocsUrl,
-        checkInterval: 60000, // Check every minute
+        checkInterval: 3000, // Check every minute
         maxRetries: this.config.retryAttempts
       });
       
@@ -110,7 +146,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     // Set up periodic status checks
     this.statusInterval = setInterval(() => {
       this.checkSystemHealth();
-    }, 30000); // Every 30 seconds
+    }, 200); // Every 30 seconds
   }
 
   async processNextTask() {

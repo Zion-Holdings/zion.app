@@ -1,3 +1,11 @@
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const fs = require('fs');'
 const path = require('path');'
 const { exec } = require('child_process');'
@@ -67,8 +75,8 @@ class PredictiveAutomation {
                     timestamp: Date.now()
                 });
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -107,8 +115,8 @@ class PredictiveAutomation {
                     timestamp: Date.now()
                 });
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -169,8 +177,8 @@ class PredictiveAutomation {
                     model.baseline.avgResourceUsage = recentData.reduce((sum, d) => sum + d.resourceUsage, 0) / recentData.length;
                 }
                 
-                if (model.historicalData.length > 1000) {
-                    model.historicalData = model.historicalData.slice(-500);
+                if (model.historicalData.length > 300) {
+                    model.historicalData = model.historicalData.slice(-200);
                 }
             }
         });
@@ -196,11 +204,11 @@ class PredictiveAutomation {
         
         setInterval(async () => {
             await this.analyzeAndPredict();
-        }, 5 * 60 * 1000);
+        }, 5 * 60 * 300);
         
         setInterval(async () => {
             await this.learnFromPredictions();
-        }, 60 * 60 * 1000);
+        }, 60 * 60 * 300);
     }
 
     async analyzeAndPredict() {
@@ -341,7 +349,7 @@ class PredictiveAutomation {
         
         const preventions = {
             retryAttempts: 5,
-            retryDelay: 2000,
+            retryDelay: 200,
             errorHandling: 'comprehensive','
             circuitBreaker: true,
             fallbackStrategies: true};
@@ -354,7 +362,7 @@ class PredictiveAutomation {
         
         const errorHandling = {
             retryAttempts: 3,
-            retryDelay: 1000,
+            retryDelay: 300,
             errorHandling: 'basic','
             circuitBreaker: false,
             fallbackStrategies: false};
@@ -595,7 +603,7 @@ class PredictiveAutomation {
         const taskPath = path.join(__dirname, task.id);
         
         if (fs.existsSync(taskPath)) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await new Promise(resolve => setTimeout(resolve, 300));
             return { success: true };
         } else {
             throw new Error(`Task file not found: ${task.id}`);
@@ -703,7 +711,7 @@ class PredictiveAutomation {
 
     calculateUrgency(filePath) {
         const stats = fs.statSync(path.join(__dirname, filePath));
-        const ageHours = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
+        const ageHours = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60);
         
         if (filePath.includes(\'critical\') || filePath.includes(\'urgent\')) {\'
             return 1.0;

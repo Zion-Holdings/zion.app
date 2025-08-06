@@ -1,3 +1,130 @@
+
+// Batch processing for high-speed file operations
+const writeBatch = {
+  queue: [],
+  timeout: null,
+  batchSize: 10,
+  batchTimeout: 1000,
+  
+  add(filePath, data) {
+    this.queue.push({ filePath, data });
+    
+    if (this.queue.length >= this.batchSize) {
+      this.flush();
+    } else if (!this.timeout) {
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+    }
+  },
+  
+  async flush() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
+    }
+    
+    if (this.queue.length === 0) return;
+    
+    const batch = [...this.queue];
+    this.queue = [];
+    
+    await Promise.all(batch.map(({ filePath, data }) => 
+      fs.writeFile(filePath, data).catch(console.error)
+    ));
+  }
+};
+
+// Replace fs.writeFile with batched version
+const originalWriteFile = fs.writeFile;
+fs.writeFile = function(filePath, data, options) {
+  writeBatch.add(filePath, data);
+  return Promise.resolve();
+};
+
+// Memory optimization for high-speed operation
+const memoryOptimization = {
+  cache: new Map(),
+  cacheTimeout: 30000,
+  
+  getCached(key) {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
+    }
+    return null;
+  },
+  
+  setCached(key, data) {
+    this.cache.set(key, { data, timestamp: Date.now() });
+    
+    // Clean up old cache entries
+    if (this.cache.size > 1000) {
+      const now = Date.now();
+      for (const [k, v] of this.cache.entries()) {
+        if (now - v.timestamp > this.cacheTimeout) {
+          this.cache.delete(k);
+        }
+      }
+    }
+  }
+};
+
+// Parallel file reading for speed
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const os = require('os');
+
+async function parallelReadFiles(filePaths) {
+  if (filePaths.length === 0) return [];
+  
+  const numWorkers = Math.min(filePaths.length, os.cpus().length);
+  const workers = [];
+  const results = new Array(filePaths.length);
+  
+  for (let i = 0; i < numWorkers; i++) {
+    const worker = new Worker(`
+      const fs = require('fs').promises;
+      const { parentPort } = require('worker_threads');
+      
+      parentPort.on('message', async (data) => {
+        try {
+          const content = await fs.readFile(data.filePath, 'utf8');
+          parentPort.postMessage({ index: data.index, content, error: null });
+        } catch (error) {
+          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+        }
+      });
+    `, { eval: true });
+    
+    workers.push(worker);
+  }
+  
+  // Distribute work among workers
+  for (let i = 0; i < filePaths.length; i++) {
+    const worker = workers[i % numWorkers];
+    worker.postMessage({ filePath: filePaths[i], index: i });
+  }
+  
+  // Collect results
+  for (const worker of workers) {
+    worker.on('message', (data) => {
+      results[data.index] = data.error ? null : data.content;
+    });
+  }
+  
+  // Wait for all workers to complete
+  await Promise.all(workers.map(worker => new Promise(resolve => {
+    worker.on('exit', resolve);
+  })));
+  
+  return results.filter(result => result !== null);
+}
+
+// High-speed mode optimizations
+const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+
+function getOptimizedInterval(baseInterval) {
+  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+}
 const result = require('path);''
 const fs = require('fs');
 const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper''));''
@@ -22,7 +149,7 @@ class AutomationSystem {
   startIntelligenceEnhancement() {
     setInterval(() => {
       this.enhanceIntelligence();
-    }, 600000);
+    }, 3000);
   } {
   constructor() {
     this.evolution = {
@@ -42,7 +169,7 @@ class AutomationSystem {
   startEvolution() {
     setInterval(() => {
       this.evolve();
-    }, 300000);
+    }, 200);
   } {
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
@@ -211,7 +338,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
               <Link href=/auth/login" className="text-gray-300" hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -227,7 +354,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>""
             <div className="text-center""></div>""
               <div className="mb-8></div>"""
-                <div className="inline-flex" items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium mb-6></div>""
+                <div className="inline-flex" items-center px-4 py-2 rounded-full bg-purple-200/10 border border-purple-200/20 text-purple-300 text-sm font-medium mb-6></div>""
                   <svg className="w-4 h-4 mr-2 fill=currentColor" viewBox=0 0 20 20></div>""
                     <path fillRule="evenodd" d=M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z clipRule="evenodd" /></div>""
                   </svg>
@@ -244,7 +371,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
               </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16></div>""
-                <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>""
+                <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                   ${content.content.hero.cta}</div>
                 </Link></div>
                 <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
@@ -278,10 +405,10 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
 </div>
           <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8>""
             ${content.content.features.map(feature => "</div>""
-              <div className="group relative bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:transform hover:scale-105></div>""
-                <div className="absolute" inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300></div></div>""
+              <div className="group relative bg-gradient-to-br from-purple-200/10 to-pink-200/10 p-8 rounded-2xl border border-white/10 hover:border-purple-200/30 transition-all duration-300 hover:transform hover:scale-105></div>""
+                <div className="absolute" inset-0 bg-gradient-to-br from-purple-200/5 to-pink-200/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300></div></div>""
                 <div className="relative></div>"""
-                  <div className="w-16" h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6"></div>""
+                  <div className="w-16" h-16 bg-gradient-to-br from-purple-200 to-pink-600 rounded-xl flex items-center justify-center mb-6"></div>""
                     <svg className="w-8 h-8 text-white fill=none stroke=currentColor" viewBox="0 0 24 24></div>""
                       <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></div>""
                     </svg></div>
@@ -306,7 +433,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
               ${content.content.cta.subtitle}</div>
             </p></div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center></div>""
-              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>""
+              <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25 transform hover:scale-105>""
                 ${content.content.cta.primaryCTA}</div>
               </Link></div>
               <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>""
@@ -379,7 +506,7 @@ const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
               <Link href=/auth/login" className="text-gray-300" hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -425,7 +552,7 @@ const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
                 ${content.content.conclusion}</div>
               </p></div>
               <div className="mt-8""></div>""
-                <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+                <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                   Explore AI Marketplace</div>
                 </Link></div>
               </div></div>
@@ -496,7 +623,7 @@ const ${componentName}: NextPage = () => {
               <Link href=/auth/login" className="text-gray-300" hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>""
                 Login</div>
               </Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>""
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -519,7 +646,7 @@ const ${componentName}: NextPage = () => {
           {/* Features */}</div>
           <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16>""
             ${content.content.features.map(feature => </div>
-              <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10"></div>""
+              <div className="bg-gradient-to-br" from-purple-200/10 to-pink-200/10 p-8 rounded-2xl border border-white/10"></div>""
                 <h3 className="text-xl font-bold text-white mb-4>${feature.name}</h3></div>""
                 <p className="text-gray-300>${feature.description}</p></div>"""
               </div>
@@ -529,7 +656,7 @@ const ${componentName}: NextPage = () => {
           {/* Benefits */}</div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16>""
             ${content.content.benefits.map(benefit => </div>
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10></div>""
+              <div className="bg-gradient-to-br from-green-200/10 to-blue-200/10 p-8 rounded-2xl border border-white/10></div>""
                 <h3 className="text-xl" font-bold text-white mb-4>${benefit.description}</h3></div>""
                 ${benefit.metric ? <div className="text-3xl font-bold text-green-400">${benefit.metric}</div> : }</div>""
               </div>
@@ -541,7 +668,7 @@ const ${componentName}: NextPage = () => {
             <h2 className="text-4xl" font-bold text-white mb-8">Pricing Plans</h2></div>""
             <div className="grid" grid-cols-1 md:grid-cols-3 gap-8>""
               ${content.content.pricing.plans.map(plan => </div>
-                <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ${plan.recommended ? \'border-purple-\'500/50\' : \'}"></div>""
+                <div className="bg-gradient-to-br" from-purple-200/10 to-pink-200/10 p-8 rounded-2xl border border-white/10 ${plan.recommended ? \'border-purple-\'200/50\' : \'}"></div>""
                   <h3 className="text-2xl font-bold text-white mb-4>${plan.name}</h3></div>""
                   <div className="text-4xl" font-bold text-white mb-6>${plan.price}</div></div>""
                   <ul className="space-y-3" mb-8>""
