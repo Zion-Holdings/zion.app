@@ -1,82 +1,8 @@
 {
-  "timestamp": "2025-08-06T13:24:47.976Z",
+  "timestamp": "2025-08-06T13:26:05.962Z",
   "overallHealth": "healthy",
   "totalSystems": 6,
   "activeSystems": 6,
   "failedSystems": 0,
-  "successRate": 100,
-  "systems": [
-    {
-      "name": "ultimate-automation-factory-system",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:32.763Z",
-      "performance": 95,
-      "intelligence": 91,
-      "evolutionCount": 36,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.604Z",
-      "pid": 36254
-    },
-    {
-      "name": "intelligent-automation-orchestrator",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:32.740Z",
-      "performance": 94,
-      "intelligence": 91,
-      "evolutionCount": 36,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.604Z",
-      "pid": 36238
-    },
-    {
-      "name": "continuous-automation-improvement-system",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:32.735Z",
-      "performance": 97,
-      "intelligence": 91,
-      "evolutionCount": 36,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.605Z",
-      "pid": 36237
-    },
-    {
-      "name": "master-automation-coordinator",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:32.763Z",
-      "performance": 94,
-      "intelligence": 90,
-      "evolutionCount": 36,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.606Z",
-      "pid": 36271
-    },
-    {
-      "name": "enhanced-diversification-orchestrator",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:31.808Z",
-      "performance": 96,
-      "intelligence": 90,
-      "evolutionCount": 37,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.607Z",
-      "pid": 34188
-    },
-    {
-      "name": "intelligent-agent-orchestrator",
-      "isRunning": true,
-      "health": "excellent",
-      "lastActivity": "2025-08-06T13:24:36.591Z",
-      "performance": 95,
-      "intelligence": 91,
-      "evolutionCount": 37,
-      "errors": [],
-      "startTime": "2025-08-06T12:43:05.607Z",
-      "pid": 34464
-    }
-  ]
+  "successRate": 100
 }
