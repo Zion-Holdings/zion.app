@@ -1,27 +1,27 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+const fs = require('fs');'
+const path = require('path');'
+const glob = require('glob');'
 
 // Function to fix common syntax errors
 function fixSyntaxErrors(content, filePath) {
   let fixed = content;
   
   // Fix unterminated string literals at the beginning of files
-  if (fixed.startsWith('"') && !fixed.includes('\n')) {
+  if (fixed.startsWith('"') && !fixed.includes('\n')) {'
     // This is likely a malformed file, try to fix it
     fixed = `import React from 'react'
-import Head from 'next/head'
-import Layout from '../components/layout/Layout'
+import React from 'react'
+import React from 'react'
 
 export default function;Page() {
   return (
     <Layout>
       <Head>
         <title>Page Title</title>
-        <meta name=description content="Page description" />
+        <meta name=description content="Page description" />"
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Page Content</h1>
+      <div className="container mx-auto px-4 py-8">"
+        <h1 className="text-3xl font-bold mb-6">Page Content</h1>"
         <p>This page is under construction.</p>
       </div>
     </Layout>
@@ -31,14 +31,14 @@ export default function;Page() {
   
   // Fix common JSX syntax errors
   fixed = fixed.replace(/<Head>\s*<title>([^<]*)<\/title>\s*<meta[^>]*>\s*<\/Head>/g, 
-    '<Head>\n        <title>$1</title>\n        <meta name=description content="Page description" />\n      </Head>');
+    '<Head>\n        <title>variable1</title>\n        <meta name=description content="Page description" />\n      </Head>');'
   
   // Fix unterminated string literals in JSX
-  fixed = fixed.replace(/([^]*)$/gm, '"$1"');
+  fixed = fixed.replace(/([^]*)$/gm, '"variable1"');'
   
   // Fix missing closing tags
   fixed = fixed.replace(/<Head>\s*<title>([^<]*)<\/title>\s*<meta[^>]*>/g, 
-    '<Head>\n        <title>$1</title>\n        <meta name=description content="Page description" />\n      </Head>');
+    '<Head>\n        <title>variable1</title>\n        <meta name=description content="Page description" />\n      </Head>');'
   
   // Fix octal literals
   fixed = fixed.replace(/\b0[0-7]+\b/g, (match) => {
@@ -46,16 +46,16 @@ export default function;Page() {
   });
   
   // Fix unexpected tokens in JSX
-  fixed = fixed.replace(/<([^>]*)\s*\/>/g, '<$1 />');
+  fixed = fixed.replace(/<([^>]*)\s*\/>/g, '<variable1 />');'
   
   // Fix missing semicolons
-  fixed = fixed.replace(/([^;])\s*$/gm, '$1;');
+  fixed = fixed.replace(/([^;])\s*$/gm, 'variable1;');'
   
   // Fix import statements
-  fixed = fixed.replace(/import\s+([^;]+);?\s*$/gm, 'import $1;');
+  fixed = fixed.replace(/import\s+([^;]+);?\s*$/gm, 'import variable1;');'
   
   // Fix export statements
-  fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default $1;');
+  fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default variable1;');'
   
   return fixed;
 }
@@ -63,30 +63,30 @@ export default function;Page() {
 // Function to process files
 function processFiles() {
   const patterns = [
-    'pages/**/*.tsx',
-    'pages/**/*.ts',
-    'components/**/*.tsx',
-    'components/**/*.ts',
-    'src/**/*.tsx',
-    'src/**/*.ts',
-    'src/**/*.js'
+    'pages/**/*.tsx','
+    'pages/**/*.ts','
+    'components/**/*.tsx','
+    'components/**/*.ts','
+    'src/**/*.tsx','
+    'src/**/*.ts','
+    'src/**/*.js''
   ];
   
   let totalFiles = 0;
   let fixedFiles = 0;
   
   patterns.forEach(pattern => {
-    const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] });
+    const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] });'
     
     files.forEach(filePath => {
       totalFiles++;
       try {
-        const content = fs.readFileSync(filePath, 'utf8');
+        const content = fs.readFileSync(filePath, 'utf8');'
         const fixedContent = fixSyntaxErrors(content, filePath);
         
         if (content !== fixedContent) {
           fs.writeFileSync(filePath, fixedContent);
-          console.log(Fixed: "${filePath"}`);
+          console.log(Fixed: "${filePath"}`);"
           fixedFiles++;
         }
       } catch (error) {
@@ -96,8 +96,8 @@ function processFiles() {
   });
   
   console.log(`\nProcessing complete:`);
-  console.log(Total files processed: "${totalFiles"}`);
-  console.log(`Files fixed: "${fixedFiles"}`);
+  console.log(Total files processed: "${totalFiles"}`);"
+  console.log(`Files fixed: "${fixedFiles"}`);"
 }
 
 // Run the script

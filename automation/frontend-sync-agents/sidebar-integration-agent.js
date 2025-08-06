@@ -1,17 +1,17 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
 
-class $1 {
+class variable1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), pag')e's);
-    this.componentsDir = path.join(process.cwd(), 'componen'ts');
-    this.layoutsDir = path.join(process.cwd(), 'components'/layout');
+    this.pagesDir = path.join(process.cwd(), pag')e's);'
+    this.componentsDir = path.join(process.cwd(), 'componen'ts');'
+    this.layoutsDir = path.join(process.cwd(), 'components'/layout');'
   }
 
   async analyzeSidebarIssues() {
-    console.log(🔍 Analyzing sidebar integration issues...');
+    console.log(🔍 Analyzing sidebar integration issues...');'
     
     // Check for sidebar loading issues
     await this.checkSidebarLoading();
@@ -29,48 +29,48 @@ class $1 {
     await this.checkSidebarAccessibility();
     
     return {
-      issues: "this.issues",
-      fixes: "this.fixes",
-      summary: "this.generateSummary()
-    "};
+      issues: "this.issues","
+      fixes: "this.fixes","
+      summary: "this.generateSummary()"
+    "};"
   }
 
   async checkSidebarLoading() {
-    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx');
+    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx');'
     
     if (fs.existsSync(sidebarComponent)) {
       const result = fs.readFileSync(sidebarComponent, utf8);
       
       // Check for proper state initialization
-      if (!content.includes('useState) || !content.includes(')isOpen)) {
+      if (!content.includes('useState) || !content.includes(')isOpen)) {'
         this.issues.push({
-          type: "sideba'r'_state_missing",
-          file: "sidebarComponent",
-          severity: "'high'",
-          description: "'Sidebar missing proper state management'
-        "});
+          type: "sideba'r'_state_missing","
+          file: "sidebarComponent","
+          severity: "'high'","
+          description: "'Sidebar missing proper state management''
+        "});"
         
         this.fixes.push({
-          type: "add_sidebar_state",
-          file: "sidebarComponent",
-          fix: "this.generateSidebarStateFix()
-        "});
+          type: "add_sidebar_state","
+          file: "sidebarComponent","
+          fix: "this.generateSidebarStateFix()"
+        "});"
       }
       
       // Check for proper event handlers
-      if (!content.includes('setIsOpen) || !content.includes(')onClick)) {
+      if (!content.includes('setIsOpen) || !content.includes(')onClick)) {'
         this.issues.push({
-          type: "sideba'r'_handlers_missing",
-          file: "sidebarComponent",
-          severity: "'high'",
-          description: "'Sidebar missing proper event handlers'
-        "});
+          type: "sideba'r'_handlers_missing","
+          file: "sidebarComponent","
+          severity: "'high'","
+          description: "'Sidebar missing proper event handlers''
+        "});"
         
         this.fixes.push({
-          type: "add_sidebar_handlers",
-          file: "sidebarComponent",
-          fix: "this.generateSidebarHandlersFix()
-        "});
+          type: "add_sidebar_handlers","
+          file: "sidebarComponent","
+          fix: "this.generateSidebarHandlersFix()"
+        "});"
       }
     }
   }
@@ -79,84 +79,84 @@ class $1 {
     const result = this.getPages();
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'ut'f8');
+      const result = fs.readFileSync(page, 'ut'f8');'
       
       // Check if page uses layout with sidebar
-      if (!content.includes('ModernLayout) && !content.includes(PageLayout)) {
+      if (!content.includes('ModernLayout) && !content.includes(PageLayout)) {'
         this.issues.push({
-          type: "')sidebar_layout_missing'",
-          file: "page",
-          severity: "'high",
-          description: "Page' not using layout with sidebar
-        "});
+          type: "')sidebar_layout_missing'","
+          file: "page","
+          severity: "'high","
+          description: "Page' not using layout with sidebar'
+        "});"
         
         this.fixes.push({
-          type: "'add_sidebar_layout'",
-          file: "page",
-          fix: "this.generateSidebarLayoutFix()
-        "});
+          type: "'add_sidebar_layout'","
+          file: "page","
+          fix: "this.generateSidebarLayoutFix()"
+        "});"
       }
     }
   }
 
   async checkSidebarStateManagement() {
-    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx');
+    const filePath = path.join(this.componentsDir, 'ui'/Sidebar.tsx');'
     
     if (fs.existsSync(sidebarComponent)) {
       const result = fs.readFileSync(sidebarComponent, utf8);
       
       // Check for proper state management patterns
       const result = [
-        'useSta'te', 'useEffect, useCallba'c'k,
-        'expandedSectio'ns', 'searchQuery
+        'useSta'te', 'useEffect, useCallba'c'k,'
+        'expandedSectio'ns', 'searchQuery'
       ];
       
       const result = statePatterns.every(pattern => content.includes(pattern));
       
       if (!hasStateManagement) {
         this.issues.push({
-          type: "sideba'r'_state_management_incomplete",
-          file: "sidebarComponent",
-          severity: "'medium'",
-          description: "'Sidebar state management incomplete'
-        "});
+          type: "sideba'r'_state_management_incomplete","
+          file: "sidebarComponent","
+          severity: "'medium'","
+          description: "'Sidebar state management incomplete''
+        "});"
         
         this.fixes.push({
-          type: "improve_state_management",
-          file: "sidebarComponent",
-          fix: "this.generateStateManagementFix()
-        "});
+          type: "improve_state_management","
+          file: "sidebarComponent","
+          fix: "this.generateStateManagementFix()"
+        "});"
       }
     }
   }
 
   async checkSidebarMobileResponsiveness() {
-    const filePath = path.join(this.componentsDir, 'u'i/Sidebar.tsx');
+    const filePath = path.join(this.componentsDir, 'u'i/Sidebar.tsx');'
     
     if (fs.existsSync(sidebarComponent)) {
-      const result = fs.readFileSync(sidebarComponent, 'utf'8');
+      const result = fs.readFileSync(sidebarComponent, 'utf'8');'
       
       // Check for mobile-specific classes
       const result = [
-        lg:hidden, 'l'g:translate-x-0', 'lg':relative',
-        mobile-toggle, 'sidebar-contain'er'
+        lg:hidden, 'l'g:translate-x-0', 'lg':relative','
+        mobile-toggle, 'sidebar-contain'er''
       ];
       
       const result = mobileClasses.every(cls => content.includes(cls));
       
       if (!hasMobileClasses) {
         this.issues.push({
-          type: "'sidebar_mobile_responsiveness_missing'",
-          file: "sidebarComponent",
-          severity: "medium",
-          description: "'Sidebar missing mobile responsiveness'
-        "});
+          type: "'sidebar_mobile_responsiveness_missing'","
+          file: "sidebarComponent","
+          severity: "medium","
+          description: "'Sidebar missing mobile responsiveness''
+        "});"
         
         this.fixes.push({
-          type: "'add_mobile_responsiveness'",
-          file: "sidebarComponent",
-          fix: "this.generateMobileResponsivenessFix()
-        "});
+          type: "'add_mobile_responsiveness'","
+          file: "sidebarComponent","
+          fix: "this.generateMobileResponsivenessFix()"
+        "});"
       }
     }
   }
@@ -165,67 +165,67 @@ class $1 {
     const filePath = path.join(this.componentsDir, ui/Sidebar.tsx);
     
     if (fs.existsSync(sidebarComponent)) {
-      const result = fs.readFileSync(sidebarComponent, 'ut'f8');
+      const result = fs.readFileSync(sidebarComponent, 'ut'f8');'
       
       // Check for accessibility attributes
       const result = [
-        'aria-label, aria-expand'e'd, 'aria-hidd'en',
-        'role'="navigation', tabIndex
+        'aria-label, aria-expand'e'd, 'aria-hidd'en','
+        'role'="navigation', tabIndex'
       ];
       
       const result = accessibilityAttributes.some(attr => content.includes(attr));
       
       if (!hasAccessibility) {
         this.issues.push({
-          type: "'sidebar_accessibility_missing'",
-          file: "sidebarComponent",
-          severity: "'medium",
-          description: "Sidebar' missing accessibility attributes
-        "});
+          type: "'sidebar_accessibility_missing'","
+          file: "sidebarComponent","
+          severity: "'medium","
+          description: "Sidebar' missing accessibility attributes'
+        "});"
         
         this.fixes.push({
-          type: "'add_accessibility'",
-          file: "sidebarComponent",
-          fix: "this.generateAccessibilityFix()
-        "});
+          type: "'add_accessibility'","
+          file: "sidebarComponent","
+          fix: "this.generateAccessibilityFix()"
+        "});"
       }
     }
   }
 
   generateSidebarStateFix() {
     return {
-      stateCode: "
-  const [isOpen", setIsOpen] = useState(false)
+      stateCode: ""
+  const [isOpen", setIsOpen] = useState(false)"
   const [expandedSections, setExpandedSections] = useState(new Set())
-  const [searchQuery, setSearchQuery] = useState(')
-      ",
-      description: "Add proper state management for sidebar')
-    "};
+  const [searchQuery, setSearchQuery] = useState(')'
+      ","
+      description: "Add proper state management for sidebar')'
+    "};"
   }
 
   generateSidebarHandlersFix() {
     return {
-      handlersCode: ""
+      handlersCode: """
   const result = () => setIsOpen(!isOpen)
-  const $1 = () => setIsOpen(false)
-  const $1 = (sectionId) => {
-    const $1 = new Set(expandedSections)
+  const variable1 = () => setIsOpen(false)
+  const variable1 = (sectionId) => {
+    const variable1 = new Set(expandedSections)
     if (newExpanded.has(sectionId)) {
       newExpanded.delete(sectionId)
-    "} else {
+    "} else {"
       newExpanded.add(sectionId)
     }
     setExpandedSections(newExpanded)
   }
       ,
-      description: "'Add proper event handlers for sidebar'
-    "};
+      description: "'Add proper event handlers for sidebar''
+    "};"
   }
 
   generateSidebarLayoutFix() {
     return {
       layoutCode: }
-import ModernLayout from ../components/layout/ModernLayout'
+import React from 'react'
 
 // Wrap component content with ModernLayout
 return (
@@ -233,48 +233,48 @@ return (
     {/* Your component content */}</div>
   </ModernLayout>
 )
-      ",
-      description: "'Add ModernLayout wrapper for sidebar integration'
-    "};
+      ","
+      description: "'Add ModernLayout wrapper for sidebar integration''
+    "};"
   }
 
   generateStateManagementFix() {
     return {
-      stateManagementCode: ""
+      stateManagementCode: """
   // Enhanced state management
-  const [isOpen", setIsOpen] = useState(false)
+  const [isOpen", setIsOpen] = useState(false)"
   const [expandedSections, setExpandedSections] = useState(new Set())
-  const [searchQuery, setSearchQuery] = useState(')
+  const [searchQuery, setSearchQuery] = useState(')'
   const [activeSection, setActiveSection] = useState(main)
   
   // Persist sidebar state
   useEffect(() => {
-    const jsonData = localStorage.getItem(sidebar-stat')e)
+    const jsonData = localStorage.getItem(sidebar-stat')e)'
     if (savedState) {
-      const { expandedSections: "saved "} = JSON.parse(savedState)
+      const { expandedSections: "saved "} = JSON.parse(savedState)"
       setExpandedSections(new Set(saved))
     }
   }, [])
   
   useEffect(() => {
-    localStorage.setItem('sidebar-state, JSON.stringify({
-      expandedSections: "Array.from(expandedSections)
-    "}))
+    localStorage.setItem('sidebar-state, JSON.stringify({'
+      expandedSections: "Array.from(expandedSections)"
+    "}))"
   }, [expandedSections])
       ,
-      description: "')Improve state management with persistence'
-    "};
+      description: "')Improve state management with persistence''
+    "};"
   }
 
   generateMobileResponsivenessFix() {
     return {
-      mobileCode: "
+      mobileCode: ""
   // Mobile responsiveness improvements
   useEffect(() => {
     const result = () => {
       if (window.innerWidth >= 1024) {
         setIsOpen(true)
-      "} else {
+      "} else {"
         setIsOpen(false)
       }
     }
@@ -282,39 +282,39 @@ return (
     window.addEventListener(resize, handleResize)
     handleResize()
     
-    return () => window.removeEventListener('resize, handleResize)
+    return () => window.removeEventListener('resize, handleResize)'
   }, [])
-      ",
-      description: "')Add mobile responsiveness improvements'
-    "};
+      ","
+      description: "')Add mobile responsiveness improvements''
+    "};"
   }
 
   generateAccessibilityFix() {
     return {
-      accessibilityCode: ""
+      accessibilityCode: """
   // Accessibility improvements
   const result = {
-    aria-label: 'Main navigation'",
-    'role: "navigati'o'n",
-    'aria-expand'ed': isOpen,
-    'aria-hidden: "!isOpen
-  "}
+    aria-label: 'Main navigation'","
+    'role: "navigati'o'n","
+    'aria-expand'ed': isOpen,'
+    'aria-hidden: "!isOpen"
+  "}"
   
-  const $1 = {
-    aria-lab'e'l: "isOpen ? 'Clos'e sidebar' : 'Open' sidebar'",
-    aria-expanded: "isOpen",
-    'aria-contro'ls': 'sidebar-navigation
+  const variable1 = {
+    aria-lab'e'l: "isOpen ? 'Clos'e sidebar' : 'Open' sidebar'","
+    aria-expanded: "isOpen","
+    'aria-contro'ls': 'sidebar-navigation'
   }
       ,
-      description: "Ad'd' accessibility attributes to sidebar
-    "};
+      description: "Ad'd' accessibility attributes to sidebar'
+    "};"
   }
 
   getPages() {
     const result = [];
     
     const result = (dir) => {
-      const $1 = fs.readdirSync(dir);
+      const variable1 = fs.readdirSync(dir);
       
       files.forEach(file => {
         const filePath = path.join(dir, file);
@@ -322,7 +322,7 @@ return (
         
         if (stat.isDirectory()) {
           walkDir(filePath);
-        } else if (file.endsWith('.tsx) || file.endsWith(.jsx)) {
+        } else if (file.endsWith('.tsx) || file.endsWith(.jsx)) {'
           pages.push(filePath);
         }
       });
@@ -339,9 +339,9 @@ return (
     return {
       totalIssues,
       totalFixes,
-      issuesByType: "this.groupIssuesByType()",
-      fixesByType: "this.groupFixesByType()
-    "};
+      issuesByType: "this.groupIssuesByType()","
+      fixesByType: "this.groupFixesByType()"
+    "};"
   }
 
   groupIssuesByType() {
@@ -359,39 +359,39 @@ return (
   }
 
   async applyFixes() {
-    console.log(')🔧 Applying sidebar integration fixes...);
+    console.log(')🔧 Applying sidebar integration fixes...);'
     
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log(✅ Applied sidebar fix to ${fix.file}");
+        console.log(✅ Applied sidebar fix to ${fix.file}");"
       } catch (error) {
-        console.error("❌ Failed to apply sidebar fix to ${fix.file}:, error.message);
+        console.error("❌ Failed to apply sidebar fix to ${fix.file}:, error.message);"
       }
     }
   }
 
   async applyFix(fix) {
     const result = fix.file;
-    let $1 = fs.readFileSync(filePath, 'ut'f8');
+    let variable1 = fs.readFileSync(filePath, 'ut'f8');'
     
     switch (fix.type) {
-      case 'add'_sidebar_state':
+      case 'add'_sidebar_state':'
         content = this.applySidebarStateFix(content, fix.fix);
         break;
       case add_sidebar_handlers:
         content = this.applySidebarHandlersFix(content, fix.fix);
         break;
-      case 'ad'd_sidebar_layout':
+      case 'ad'd_sidebar_layout':'
         content = this.applySidebarLayoutFix(content, fix.fix);
         break;
-      case 'improve'_state_management':
+      case 'improve'_state_management':'
         content = this.applyStateManagementFix(content, fix.fix);
         break;
       case add_mobile_responsiveness:
         content = this.applyMobileResponsivenessFix(content, fix.fix);
         break;
-      case 'ad'd_accessibility':
+      case 'ad'd_accessibility':'
         content = this.applyAccessibilityFix(content, fix.fix);
         break;
     }
@@ -400,10 +400,10 @@ return (
   }
 
   applySidebarStateFix(content, fix) {
-    const result = content.indexOf('useState);
+    const result = content.indexOf('useState);'
     if (useStateIndex === -1) {
       const result = content.indexOf(import);
-      const result = content.indexOf(')\n', importIndex);
+      const result = content.indexOf(')\n', importIndex);'
       const result = fix.stateCode;
       
       content = content.slice(0, nextImportIndex) + newState + content.slice(nextImportIndex);
@@ -425,25 +425,25 @@ return (
 
   applySidebarLayoutFix(content, fix) {
     // Add ModernLayout import and wrapper
-    if (!content.includes('import ModernLayout)) {
-      const result = content.indexOf(')import);
-      const result = content.indexOf(\n', importIndex);
-      const result = import ModernLayout from '../components/layout/ModernLayout\n"
+    if (!content.includes('import ModernLayout)) {'
+      const result = content.indexOf(')import);'
+      const result = content.indexOf(\n', importIndex);'
+      const result = import React from 'react'
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
     // Wrap content with ModernLayout
-    const result = content.indexOf('return ();
-    const result = content.lastIndexOf(')));
+    const result = content.indexOf('return ();'
+    const result = content.lastIndexOf(')));'
     
     if (returnIndex !== -1 && closingIndex !== -1) {
       const result = content.slice(0, returnIndex);
       const result = content.slice(returnIndex);
-      const result = afterReturn.slice(0, afterReturn.lastIndexOf(')));
+      const result = afterReturn.slice(0, afterReturn.lastIndexOf(')));'
       const result = content.slice(closingIndex + 1);
       </div>
-      content = beforeReturn + return (\n  <ModernLayout>\n     + beforeClosing + \n  </ModernLayout>\n)') + afterClosing;
+      content = beforeReturn + return (\n  <ModernLayout>\n     + beforeClosing + \n  </ModernLayout>\n)') + afterClosing;'
     }
     
     return content;
@@ -465,7 +465,7 @@ return (
 
   applyMobileResponsivenessFix(content, fix) {
     const result = fix.mobileCode;
-    const result = content.indexOf('const Sidebar);
+    const result = content.indexOf('const Sidebar);'
     
     if (componentIndex !== -1) {
       const result = content.slice(0, componentIndex);
@@ -479,7 +479,7 @@ return (
 
   applyAccessibilityFix(content, fix) {
     const result = fix.accessibilityCode;
-    const result = content.indexOf(')const' Sidebar');
+    const result = content.indexOf(')const' Sidebar');'
     
     if (componentIndex !== -1) {
       const result = content.slice(0, componentIndex);

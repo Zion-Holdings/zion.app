@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 // Function to recursively find all TypeScript and JavaScript files
-function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
+function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {'
   let results = [];
   const list = fs.readdirSync(dir);
   
@@ -10,7 +10,7 @@ function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     
-    if (stat && stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
+    if (stat && stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {'
       results = results.concat(findFiles(filePath, extensions));
     } else {
       const ext = path.extname(file);
@@ -27,96 +27,96 @@ function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
 const syntaxFixes = [
   // Fix unterminated string literals in import statements
   {
-    pattern: /import.*from\s+['"][^'"]*['"];?['"]/g,
+    pattern: /import React from 'react'
     replacement: (match) => {
-      return match.replace(/['"];?['"]$/, "'");
+      return match.replace(/['"];?['"]$/, "'");"
     }
   },
   // Fix unterminated string literals in general
   {
-    pattern: /['"][^'"]*['"];?['"]/g,
+    pattern: /['"][^'"]*['"];?['"]/g,"
     replacement: (match) => {
-      return match.replace(/['"];?['"]$/, "'");
+      return match.replace(/['"];?['"]$/, "'");"
     }
   },
   // Fix extra semicolons after interface definitions
   {
     pattern: /interface\s+\w+\s*\{[^}]*\};/g,
     replacement: (match) => {
-      return match.replace(/;$/, '');
+      return match.replace(/;$/, '');'
     }
   },
   // Fix malformed async function declarations
   {
     pattern: /export default async function handler\(;/g,
-    replacement: 'export default async function handler('
+    replacement: 'export default async function handler(''
   },
   // Fix malformed parameter declarations
   {
     pattern: /req: NextApiRequest,;/g,
-    replacement: 'req: NextApiRequest,'
+    replacement: 'req: NextApiRequest,''
   },
   {
     pattern: /res: NextApiResponse;/g,
-    replacement: 'res: NextApiResponse)'
+    replacement: 'res: NextApiResponse)''
   },
   // Fix malformed object property assignments
   {
-    pattern: /apiKey: "process\.env\.OPENAI_API_KEY,"/g,
-    replacement: 'apiKey: process.env.OPENAI_API_KEY,'
+    pattern: /apiKey: "process\.env\.OPENAI_API_KEY,"/g,"
+    replacement: 'apiKey: process.env.OPENAI_API_KEY,''
   },
   // Fix malformed type definitions
   {
     pattern: /type Data = {;/g,
-    replacement: 'type Data = {'
+    replacement: 'type Data = {''
   },
   {
-    pattern: /success: "boolean";/g,
-    replacement: 'success: boolean;'
+    pattern: /success: "boolean";/g,"
+    replacement: 'success: boolean;''
   },
   // Fix malformed import statements
   {
-    pattern: /import OpenAI from open'ai;/g,
-    replacement: "import OpenAI from 'openai';"
+    pattern: /import React from 'react'
+    replacement: "import React from 'react'
   },
   {
     pattern: /import OpenAI from openai;/g,
-    replacement: "import OpenAI from 'openai';"
+    replacement: "import React from 'react'
   },
   // Fix malformed interface property definitions
   {
-    pattern: /type: 'technology' \| ''process' \| 'organizational' \| 'cultural''/g,
-    replacement: "type: 'technology' | 'process' | 'organizational' | 'cultural'"
+    pattern: /type: 'technology' \| ''process' \| 'organizational' \| 'cultural''/g,'
+    replacement: "type: 'technology' | 'process' | 'organizational' | 'cultural'""
   },
   {
-    pattern: /status: 'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g,
-    replacement: "status: 'planned' | 'in-progress' | 'completed' | 'cancelled'"
+    pattern: /status: 'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g,'
+    replacement: "status: 'planned' | 'in-progress' | 'completed' | 'cancelled'""
   },
   {
-    pattern: /priority: 'low' \| ''medium' \| 'high' \| 'critical''/g,
-    replacement: "priority: 'low' | 'medium' | 'high' | 'critical'"
+    pattern: /priority: 'low' \| ''medium' \| 'high' \| 'critical''/g,'
+    replacement: "priority: 'low' | 'medium' | 'high' | 'critical'""
   },
   {
-    pattern: /impact: 'low' \| ''medium' \| 'high''/g,
-    replacement: "impact: 'low' | 'medium' | 'high'"
+    pattern: /impact: 'low' \| ''medium' \| 'high''/g,'
+    replacement: "impact: 'low' | 'medium' | 'high'""
   },
   {
-    pattern: /type: 'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g,
-    replacement: "type: 'service' | 'employment' | 'partnership' | 'nda' | 'license'"
+    pattern: /type: 'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g,'
+    replacement: "type: 'service' | 'employment' | 'partnership' | 'nda' | 'license'""
   },
   {
-    pattern: /status: 'active' \| ''inactive' \| 'on-leave''/g,
-    replacement: "status: 'active' | 'inactive' | 'on-leave'"
+    pattern: /status: 'active' \| ''inactive' \| 'on-leave''/g,'
+    replacement: "status: 'active' | 'inactive' | 'on-leave'""
   },
   {
-    pattern: /priority: 'high' \| ''medium' \| 'low''/g,
-    replacement: "priority: 'high' | 'medium' | 'low'"
+    pattern: /priority: 'high' \| ''medium' \| 'low''/g,'
+    replacement: "priority: 'high' | 'medium' | 'low'""
   },
   // Fix malformed JSX closing tags
   {
     pattern: /<h1>.*<\/h2>/g,
     replacement: (match) => {
-      return match.replace(/<\/h2>$/, '</h1>');
+      return match.replace(/<\/h2>$/, '</h1>');'
     }
   }
 ];
@@ -131,7 +131,7 @@ try {
   
   files.forEach(filePath => {
     try {
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(filePath, 'utf8');'
       let fileFixed = false;
       
       syntaxFixes.forEach(({ pattern, replacement }) => {
@@ -159,5 +159,5 @@ try {
   console.log(`Total files fixed: ${totalFixed}`);
   
 } catch (error) {
-  console.error('Error during processing:', error.message);
+  console.error('Error during processing:', error.message);'
 } 

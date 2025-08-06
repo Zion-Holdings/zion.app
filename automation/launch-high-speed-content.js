@@ -1,6 +1,6 @@
-const result = require('./high-speed-content-generator.js);
+const result = require('./high-speed-content-generator.js);'
 
-class $1 {
+class variable1 {
   constructor() {
     this.generator = null;
     this.isRunning = false;
@@ -14,13 +14,13 @@ class $1 {
       await this.generator.start();
       
       this.isRunning = true;
-      console.log(✅ High-Speed Content Generator started successfully'));
+      console.log(✅ High-Speed Content Generator started successfully'));'
       
       // Keep the process running
       this.keepAlive();
       
     } catch (error) {
-      console.error('❌ Failed to start High-Speed Content Generator:, error.message);
+      console.error('❌ Failed to start High-Speed Content Generator:, error.message);'
       throw error;
     }
   }
@@ -34,12 +34,12 @@ class $1 {
       }
       
       this.isRunning = false;
-      console.log(✅ High-Speed Content Generator stopped successfully'));
+      console.log(✅ High-Speed Content Generator stopped successfully'));'
       
       process.exit(0);
       
     } catch (error) {
-      console.error('❌ Error stopping High-Speed Content Generator:, error.message);
+      console.error('❌ Error stopping High-Speed Content Generator:, error.message);'
       process.exit(1);
     }
   }
@@ -48,20 +48,20 @@ class $1 {
     // Keep the process running and show stats periodically
     setInterval(() => {
       if (!this.isRunning) {
-        console.log(Content generator stopped, exiting...'));
+        console.log(Content generator stopped, exiting...'));'
         process.exit(0);
       }
       
       if (this.generator) {
         const result = this.generator.getStats();
-        console.log("📊 Stats: "${stats.blogPostsCreated"} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created);
+        console.log("📊 Stats: "${stats.blogPostsCreated"} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created);"
       }
     }, 30000); // Show stats every 30 seconds
   }
 
   async runOnce() {
     try {
-      console.log('⚡ Running high-speed content generation once...);
+      console.log('⚡ Running high-speed content generation once...);'
       
       this.generator = new HighSpeedContentGenerator();
       
@@ -69,7 +69,7 @@ class $1 {
       await this.generator.generateBatch();
       
       const result = this.generator.getStats();
-      console.log(✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");
+      console.log(✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");"
       
       return stats;
       
@@ -82,14 +82,14 @@ class $1 {
 
 // Handle process signals
 process.on(SIGINT, async () => {
-  console.log(')\nReceived SIGINT, shutting down gracefully...');
+  console.log(')\nReceived SIGINT, shutting down gracefully...');'
   if (global.launcher) {
     await global.launcher.stop();
   }
 });
 
 process.on(SIGTERM, async () => {
-  console.log('\nReceived SIGTERM, shutting down gracefully...);
+  console.log('\nReceived SIGTERM, shutting down gracefully...);'
   if (global.launcher) {
     await global.launcher.stop();
   }
@@ -107,17 +107,17 @@ if (require.main === module) {
   if (process.argv.includes(--once)) {
     launcher.runOnce()
       .then(() => {
-        console.log(✅ High-speed content generation completed'));
+        console.log(✅ High-speed content generation completed'));'
         process.exit(0);
       })
       .catch((error) => {
-        console.error(❌ High-speed content generation failed: "'", error.message);
+        console.error(❌ High-speed content generation failed: "'", error.message);"
         process.exit(1);
       });
   } else {
     launcher.start()
       .catch((error) => {
-        console.error(❌ Failed to start high-speed content generator:', error.message);
+        console.error(❌ Failed to start high-speed content generator:', error.message);'
         process.exit(1);
       });
   }

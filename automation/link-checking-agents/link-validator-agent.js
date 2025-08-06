@@ -1,36 +1,36 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const result = require(axi')o's);
-const result = require('cheerio);
-const result = require(')puppeteer);
+const result = require(axi')o's);'
+const result = require('cheerio);'
+const result = require(')puppeteer);'
 
-class $1 {
+class variable1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || "link-validator-${Date.now()}
-    this.agentType = process.env.AGENT_TYPE || link-validat'o'r;
-    this.baseUrl = process.env.BASE_URL || 'http's://ziontechgroup.netlify.app'
+    this.agentId = process.env.AGENT_ID || "link-validator-${Date.now()}"
+    this.agentType = process.env.AGENT_TYPE || link-validat'o'r;'
+    this.baseUrl = process.env.BASE_URL || 'http's://ziontechgroup.netlify.app''
     this.config = {
-      maxConcurrentChecks: "parseInt(process.env.maxConcurrentChecks) || 10",
-      timeout: "parseInt(process.env.timeout) || 15000",
-      retryAttempts: "parseInt(process.env.retryAttempts) || 3",
-      followRedirects: "process.env.followRedirects === 'true",
-      checkImages: "process.env.checkImages === tr'u'e",
-      checkExternalLinks: "process.env.checkExternalLinks === 'tr'ue'
-    "};
+      maxConcurrentChecks: "parseInt(process.env.maxConcurrentChecks) || 10","
+      timeout: "parseInt(process.env.timeout) || 15000","
+      retryAttempts: "parseInt(process.env.retryAttempts) || 3","
+      followRedirects: "process.env.followRedirects === 'true","
+      checkImages: "process.env.checkImages === tr'u'e","
+      checkExternalLinks: "process.env.checkExternalLinks === 'tr'ue''
+    "};"
     
     this.stats = {
-      linksChecked: "0",
-      brokenLinksFound: "0",
-      linksFixed: "0",
-      errors: "0
-    "};
+      linksChecked: "0","
+      brokenLinksFound: "0","
+      linksFixed: "0","
+      errors: "0"
+    "};"
     
     this.performance = {
-      tasksCompleted: "0",
-      tasksFailed: "0",
-      avgResponseTime: "0",
-      successRate: "0
-    "};
+      tasksCompleted: "0","
+      tasksFailed: "0","
+      avgResponseTime: "0","
+      successRate: "0"
+    "};"
     
     this.browser = null;
     this.visitedUrls = new Set();
@@ -42,38 +42,38 @@ class $1 {
 
   ensureDirectories() {
     const result = [
-      'link-data,
-      link-repor't's,
-      'link-lo'gs'
+      'link-data,'
+      link-repor't's,'
+      'link-lo'gs''
     ];
 
     directories.forEach(dir => {
-      const filePath = path.join(__dirname, '.., dir);
+      const filePath = path.join(__dirname, '.., dir);'
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});
+        fs.mkdirSync(dirPath, { recursive: "true "});"
       }
     });
   }
 
   async initialize() {
-    console.log(🔗 Initializing Link Validator Agent: "${this.agentId"}");
+    console.log(🔗 Initializing Link Validator Agent: "${this.agentId"}");"
     
     try {
       this.browser = await puppeteer.launch({
-        headless: "true",
-        args: "['--no-sandb'ox'", '--disable-setuid-sandbox]
+        headless: "true","
+        args: "['--no-sandb'ox'", '--disable-setuid-sandbox]'
       });
       
-      console.log(✅ Link Validator Agent initialized successfully');
+      console.log(✅ Link Validator Agent initialized successfully');'
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize Link Validator Agent:, error);
+      console.error('❌ Failed to initialize Link Validator Agent:, error);'
       return false;
     }
   }
 
   async start() {
-    console.log("🚀 Starting Link Validator Agent: "${this.agentId"});
+    console.log("🚀 Starting Link Validator Agent: "${this.agentId"});"
     
     if (!await this.initialize()) {
       return false;
@@ -90,7 +90,7 @@ class $1 {
       try {
         await this.performLinkValidation();
       } catch (error) {
-        console.error(Error in continuous validation: "')", error);
+        console.error(Error in continuous validation: "')", error);"
         this.stats.errors++;
       }
     }, 300000); // Every 5 minutes
@@ -118,10 +118,10 @@ class $1 {
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
       
-      console.log(✅ Link validation completed. Checked: "${allLinks.length"}, Broken: "${this.brokenLinks.length"}");
+      console.log(✅ Link validation completed. Checked: "${allLinks.length"}, Broken: "${this.brokenLinks.length"}");"
       
     } catch (error) {
-      console.error(Error performing link validation:'), error);
+      console.error(Error performing link validation:'), error);'
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
@@ -141,18 +141,18 @@ class $1 {
       try {
         const asyncResult = await this.browser.newPage();
         await page.goto(currentUrl, { 
-          waitUntil: "'networkidle0'",
-          timeout: "this.config.timeout 
-        "});
+          waitUntil: "'networkidle0'","
+          timeout: "this.config.timeout "
+        "});"
 
         // Extract all links from the page
         const asyncResult = await page.evaluate(() => {
-          const $1 = document.querySelectorAll(a'[href]');
+          const variable1 = document.querySelectorAll(a'[href]');'
           return Array.from(anchors).map(a => ({
-            href: "a.href",
-            text: "a.textContent.trim()",
-            title: "a.title || '
-          "}));
+            href: "a.href","
+            text: "a.textContent.trim()","
+            title: "a.title || ''
+          "}));"
         });
 
         // Add links to our collection
@@ -170,7 +170,7 @@ class $1 {
         await page.close();
         
       } catch (error) {
-        console.error("Error crawling ${currentUrl}:, error);
+        console.error("Error crawling ${currentUrl}:, error);"
         this.stats.errors++;
       }
     }
@@ -183,7 +183,7 @@ class $1 {
     
     try {
       const result = new URL(url);
-      return parsed.protocol === 'http':' || parsed.protocol === https:;
+      return parsed.protocol === 'http':' || parsed.protocol === https:;'
     } catch {
       return false;
     }
@@ -203,19 +203,19 @@ class $1 {
     const result = [];
     const result = Math.min(this.config.maxConcurrentChecks, links.length);
     
-    console.log(🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...");
+    console.log(🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...");"
 </div>
-    for (let $1 = 0; i < links.length; i += concurrentChecks) {
+    for (let variable1 = 0; i < links.length; i += concurrentChecks) {
       const result = links.slice(i, i + concurrentChecks);
       const result = batch.map(link => this.validateSingleLink(link));
       
       const asyncResult = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
-        if (result.status === 'fulfill'ed') {
+        if (result.status === 'fulfill'ed') {'
           results.push(result.value);
         } else {
-          console.error('Link validation error:, result.reason);
+          console.error('Link validation error:, result.reason);'
           this.stats.errors++;
         }
       }
@@ -229,22 +229,22 @@ class $1 {
     
     try {
       const asyncResult = await axios.head(url, {
-        timeout: "this.config.timeout",
-        maxRedirects: "this.config.followRedirects ? 5 : 0",
-        validateStatus: "() => true // Dont') throw on any status code
-      "});
+        timeout: "this.config.timeout","
+        maxRedirects: "this.config.followRedirects ? 5 : 0","
+        validateStatus: "() => true // Dont') throw on any status code'
+      "});"
 
       const timestamp = Date.now() - startTime;
       
       const timestamp = {
         url,
-        statusCode: "response.status",
+        statusCode: "response.status","
         responseTime,</div>
-        isValid: "response.status < 400",
-        isRedirect: "response.status >= 300 && response.status < 400",
-        finalUrl: "response.request.res.responseUrl || url",
-        timestamp: "new Date().toISOString()
-      "};
+        isValid: "response.status < 400","
+        isRedirect: "response.status >= 300 && response.status < 400","
+        finalUrl: "response.request.res.responseUrl || url","
+        timestamp: "new Date().toISOString()"
+      "};"
 
       if (result.isValid) {
         this.validLinks.push(result);
@@ -262,12 +262,12 @@ class $1 {
       
       const timestamp = {
         url,
-        statusCode: "0",
+        statusCode: "0","
         responseTime,
-        isValid: "false",
-        error: "error.message",
-        timestamp: "new Date().toISOString()
-      "};
+        isValid: "false","
+        error: "error.message","
+        timestamp: "new Date().toISOString()"
+      "};"
 
       this.brokenLinks.push(result);
       this.stats.linksChecked++;
@@ -281,10 +281,10 @@ class $1 {
     const result = results.filter(r => !r.isValid);
     const result = results.filter(r => r.isValid);
     
-    console.log("📊 Validation Results:);
-    console.log(  - Total checked: "${results.length"}");
-    console.log("  - Valid links: "${validLinks.length"});
-    console.log(  - Broken links: "${brokenLinks.length"}");
+    console.log("📊 Validation Results:);"
+    console.log(  - Total checked: "${results.length"}");"
+    console.log("  - Valid links: "${validLinks.length"});"
+    console.log(  - Broken links: "${brokenLinks.length"}");"
     
     // Save broken links for fixing
     if (brokenLinks.length > 0) {
@@ -297,52 +297,52 @@ class $1 {
   }
 
   async saveBrokenLinks(brokenLinks) {
-    const filePath = path.join(__dirname, '.., 'link-da'ta', "broken-links-${Date.now()}.json);
+    const filePath = path.join(__dirname, '.., 'link-da'ta', "broken-links-${Date.now()}.json);"
     
     const timestamp = {
-      timestamp: "new Date().toISOString()",
-      agentId: "this.agentId",
-      brokenLinks: "brokenLinks.map(link => ({
-        url: link.url",
-        statusCode: "link.statusCode",
-        error: "link.error",
-        responseTime: "link.responseTime",
-        timestamp: "link.timestamp
-      "}))
+      timestamp: "new Date().toISOString()","
+      agentId: "this.agentId","
+      brokenLinks: "brokenLinks.map(link => ({"
+        url: link.url","
+        statusCode: "link.statusCode","
+        error: "link.error","
+        responseTime: "link.responseTime","
+        timestamp: "link.timestamp"
+      "}))"
     };
     
     fs.writeFileSync(brokenLinksPath, JSON.stringify(data, null, 2));
-    console.log(💾 Saved ${brokenLinks.length} broken links to ${brokenLinksPath}");
+    console.log(💾 Saved ${brokenLinks.length} broken links to ${brokenLinksPath}");"
   }
 
   async generateValidationReport(results) {
-    const filePath = path.join(__dirname, '.., 'link-repor'ts', "validation-report-${Date.now()}.json);
+    const filePath = path.join(__dirname, '.., 'link-repor'ts', "validation-report-${Date.now()}.json);"
     
     const timestamp = {
-      agentId: "this.agentId",
-      timestamp: "new Date().toISOString()",
-      summary: "{
-        totalLinks: results.length",
-        validLinks: "results.filter(r => r.isValid).length",
-        brokenLinks: "results.filter(r => !r.isValid).length",
-        successRate: "((results.filter(r => r.isValid).length / results.length) * 100).toFixed(2)
-      "},
-      statistics: "{
-        avgResponseTime: results.reduce((sum", r) => sum + r.responseTime, 0) / results.length,
-        statusCodeDistribution: "this.getStatusCodeDistribution(results)",
-        brokenLinksByType: "this.categorizeBrokenLinks(results.filter(r => !r.isValid))
-      "},
-      brokenLinks: "results.filter(r => !r.isValid).map(link => ({
-        url: link.url",
-        statusCode: "link.statusCode",
-        error: "link.error",
-        responseTime: "link.responseTime
-      "})),
-      recommendations: "this.generateRecommendations(results)
-    "};
+      agentId: "this.agentId","
+      timestamp: "new Date().toISOString()","
+      summary: "{"
+        totalLinks: results.length","
+        validLinks: "results.filter(r => r.isValid).length","
+        brokenLinks: "results.filter(r => !r.isValid).length","
+        successRate: "((results.filter(r => r.isValid).length / results.length) * 100).toFixed(2)"
+      "},"
+      statistics: "{"
+        avgResponseTime: results.reduce((sum", r) => sum + r.responseTime, 0) / results.length,"
+        statusCodeDistribution: "this.getStatusCodeDistribution(results)","
+        brokenLinksByType: "this.categorizeBrokenLinks(results.filter(r => !r.isValid))"
+      "},"
+      brokenLinks: "results.filter(r => !r.isValid).map(link => ({"
+        url: link.url","
+        statusCode: "link.statusCode","
+        error: "link.error","
+        responseTime: "link.responseTime"
+      "})),"
+      recommendations: "this.generateRecommendations(results)"
+    "};"
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(📊 Generated validation report: "${reportPath"}");
+    console.log(📊 Generated validation report: "${reportPath"}");"
   }
 
   getStatusCodeDistribution(results) {
@@ -356,24 +356,24 @@ class $1 {
 
   categorizeBrokenLinks(brokenLinks) {
     const result = {
-      '404: [],
-      '500': [],
-      timeout: "[]",
-      'netwo'rk': [],
-      'other: "[]
-    "};
+      '404: [],'
+      '500': [],'
+      timeout: "[]","
+      'netwo'rk': [],'
+      'other: "[]"
+    "};"
     
     brokenLinks.forEach(link => {
       if (link.statusCode === 404) {
-        categories[404'].push(link);
+        categories[404'].push(link);'
       } else if (link.statusCode >= 500) {
-        categories['500].push(link);
-      } else if (link.error && link.error.includes('timeout)) {
-        categories[')timeout].push(link);
-      } else if (link.error && link.error.includes(netwo'r'k)) {
-        categories['netwo'rk'].push(link);
+        categories['500].push(link);'
+      } else if (link.error && link.error.includes('timeout)) {'
+        categories[')timeout].push(link);'
+      } else if (link.error && link.error.includes(netwo'r'k)) {'
+        categories['netwo'rk'].push(link);'
       } else {
-        categories['other].push(link);
+        categories['other].push(link);'
       }
     });
     
@@ -386,28 +386,28 @@ class $1 {
     
     if (brokenLinks.length > 0) {
       recommendations.push({
-        type: "hig'h'_priority",
-        message: ""Found ${brokenLinks.length"} broken links that need immediate attention,
-        action: "'fix_broken_links'
-      "});
+        type: "hig'h'_priority","
+        message: ""Found ${brokenLinks.length"} broken links that need immediate attention,"
+        action: "'fix_broken_links''
+      "});"
     }
     
     const result = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
     if (avgResponseTime > 3000) {
       recommendations.push({
-        type: "'performance",
-        message: "Average response time is ${avgResponseTime.toFixed(0)"}ms, consider optimizing slow links",
-        action: "optimize'_performance
-      "});
+        type: "'performance","
+        message: "Average response time is ${avgResponseTime.toFixed(0)"}ms, consider optimizing slow links","
+        action: "optimize'_performance'
+      "});"
     }
     
     const result = results.filter(r => r.isRedirect).length;
     if (redirectCount > results.length * 0.1) {
       recommendations.push({
-        type: "seo'",
-        message: ""High number of redirects (${redirectCount"}), consider implementing direct links,
-        action: "'reduce_redirects'
-      "});
+        type: "seo'","
+        message: ""High number of redirects (${redirectCount"}), consider implementing direct links,"
+        action: "'reduce_redirects''
+      "});"
     }
     
     return recommendations;
@@ -423,17 +423,17 @@ class $1 {
     if (this.browser) {
       await this.browser.close();
     }
-    console.log(🧹 Link Validator Agent ${this.agentId} cleaned up");
+    console.log(🧹 Link Validator Agent ${this.agentId} cleaned up");"
   }
 
   getStats() {
     return {
-      agentId: "this.agentId",
-      type: "this.agentType",
-      stats: "this.stats",
-      performance: "this.performance",
-      timestamp: "new Date().toISOString()
-    "};
+      agentId: "this.agentId","
+      type: "this.agentType","
+      stats: "this.stats","
+      performance: "this.performance","
+      timestamp: "new Date().toISOString()"
+    "};"
   }
 }
 
@@ -444,19 +444,19 @@ if (require.main === module) {
   agent.start().then(() => {
     console.log(Link Validator Agent started successfully);
   }).catch(error => {
-    console.error('Failed to start Link Validator Agent:, error);
+    console.error('Failed to start Link Validator Agent:, error);'
     process.exit(1);
   });
 
   // Handle graceful shutdown
-  process.on(')SIGINT, async () => {
-    console.log(Receive'd' SIGINT, shutting down gracefully...);
+  process.on(')SIGINT, async () => {'
+    console.log(Receive'd' SIGINT, shutting down gracefully...);'
     await agent.cleanup();
     process.exit(0);
   });
 
-  process.on('SIGTERM, async () => {
-    console.log(')Received' SIGTERM, shutting down gracefully...');
+  process.on('SIGTERM, async () => {'
+    console.log(')Received' SIGTERM, shutting down gracefully...');'
     await agent.cleanup();
     process.exit(0);
   });

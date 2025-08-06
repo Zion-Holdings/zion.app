@@ -1,16 +1,16 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 // Function to fix specific API files with known issues
 function fixSpecificApiFiles() {
   const fixes = [
     {
-      file: 'pages/api/ai-resume.ts',
-      content: `import type { NextApiRequest, NextApiResponse } from 'next';
+      file: 'pages/api/ai-resume.ts','
+      content: `import React from 'react'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -31,14 +31,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json(resume);
   } catch (error) {
-    console.error('Error generating resume:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error generating resume:', error);'
+    res.status(500).json({ error: 'Internal server error' });'
   }
 }`
     },
     {
-      file: 'pages/api/ai-service-matcher.ts',
-      content: `import type { NextApiRequest, NextApiResponse } from 'next';
+      file: 'pages/api/ai-service-matcher.ts','
+      content: `import React from 'react'
 
 interface ServiceRequest {
   serviceType: string;
@@ -48,8 +48,8 @@ interface ServiceRequest {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -58,37 +58,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Simulate service matching
     const matches = [
       {
-        id: 'service-1',
-        name: 'Web Development',
-        description: 'Custom web application development',
-        price: '$5000-15000',
-        duration: '4-8 weeks',
+        id: 'service-1','
+        name: 'Web Development','
+        description: 'Custom web application development','
+        price: 'variable5000-15000','
+        duration: '4-8 weeks','
         matchScore: 95
       },
       {
-        id: 'service-2',
-        name: 'Mobile App Development',
-        description: 'iOS and Android app development',
-        price: '$8000-25000',
-        duration: '6-12 weeks',
+        id: 'service-2','
+        name: 'Mobile App Development','
+        description: 'iOS and Android app development','
+        price: 'variable8000-25000','
+        duration: '6-12 weeks','
         matchScore: 88
       }
     ];
 
     res.status(200).json({ matches });
   } catch (error) {
-    console.error('Error matching services:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error matching services:', error);'
+    res.status(500).json({ error: 'Internal server error' });'
   }
 }`
     },
     {
-      file: 'pages/api/ai-vendor-management.ts',
-      content: `import type { NextApiRequest, NextApiResponse } from 'next';
+      file: 'pages/api/ai-vendor-management.ts','
+      content: `import React from 'react'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -97,35 +97,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Simulate vendor management
     const vendors = [
       {
-        id: 'vendor-1',
-        name: 'Tech Solutions Inc',
-        category: 'Technology',
+        id: 'vendor-1','
+        name: 'Tech Solutions Inc','
+        category: 'Technology','
         rating: 4.5,
-        status: 'active'
+        status: 'active''
       },
       {
-        id: 'vendor-2',
-        name: 'Design Studio Pro',
-        category: 'Design',
+        id: 'vendor-2','
+        name: 'Design Studio Pro','
+        category: 'Design','
         rating: 4.8,
-        status: 'active'
+        status: 'active''
       }
     ];
 
     res.status(200).json({ vendors });
   } catch (error) {
-    console.error('Error managing vendors:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error managing vendors:', error);'
+    res.status(500).json({ error: 'Internal server error' });'
   }
 }`
     },
     {
-      file: 'pages/api/ai-workspace-suggestions.ts',
-      content: `import type { NextApiRequest, NextApiResponse } from 'next';
+      file: 'pages/api/ai-workspace-suggestions.ts','
+      content: `import React from 'react'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -134,35 +134,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Simulate workspace suggestions
     const suggestions = [
       {
-        id: 'workspace-1',
-        name: 'Modern Office Suite',
-        type: 'office',
-        features: ['Ergonomic furniture', 'Natural lighting', 'Meeting rooms'],
-        price: '$2000/month'
+        id: 'workspace-1','
+        name: 'Modern Office Suite','
+        type: 'office','
+        features: ['Ergonomic furniture', 'Natural lighting', 'Meeting rooms'],'
+        price: 'variable2000/month''
       },
       {
-        id: 'workspace-2',
-        name: 'Creative Studio',
-        type: 'creative',
-        features: ['Large work surfaces', 'Storage solutions', 'Collaboration areas'],
-        price: '$1500/month'
+        id: 'workspace-2','
+        name: 'Creative Studio','
+        type: 'creative','
+        features: ['Large work surfaces', 'Storage solutions', 'Collaboration areas'],'
+        price: 'variable1500/month''
       }
     ];
 
     res.status(200).json({ suggestions });
   } catch (error) {
-    console.error('Error generating workspace suggestions:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error generating workspace suggestions:', error);'
+    res.status(500).json({ error: 'Internal server error' });'
   }
 }`
     },
     {
-      file: 'pages/api/analytics-api.ts',
-      content: `import type { NextApiRequest, NextApiResponse } from 'next';
+      file: 'pages/api/analytics-api.ts','
+      content: `import React from 'react'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'GET') {'
+    return res.status(405).json({ error: 'Method not allowed' });'
   }
 
   try {
@@ -187,8 +187,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json(analytics);
   } catch (error) {
-    console.error('Error fetching analytics:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error fetching analytics:', error);'
+    res.status(500).json({ error: 'Internal server error' });'
   }
 }`
     }
@@ -196,7 +196,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   fixes.forEach(fix => {
     try {
-      fs.writeFileSync(fix.file, fix.content, 'utf8');
+      fs.writeFileSync(fix.file, fix.content, 'utf8');'
       console.log(`Fixed: ${fix.file}`);
     } catch (error) {
       console.error(`Error fixing ${fix.file}:`, error.message);
@@ -207,15 +207,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 // Function to temporarily deactivate severely corrupted files
 function deactivateCorruptedFiles() {
   const corruptedFiles = [
-    'pages/api/ai-hr-management.ts',
-    'pages/api/ai-portfolio.ts',
-    'pages/api/ai-recommendations.ts'
+    'pages/api/ai-hr-management.ts','
+    'pages/api/ai-portfolio.ts','
+    'pages/api/ai-recommendations.ts''
   ];
 
   corruptedFiles.forEach(file => {
     try {
       if (fs.existsSync(file)) {
-        const backupName = file.replace('.ts', '.ts.bak');
+        const backupName = file.replace('.ts', '.ts.bak');'
         fs.renameSync(file, backupName);
         console.log(`Deactivated (backed up): ${file}`);
       }
@@ -226,7 +226,7 @@ function deactivateCorruptedFiles() {
 }
 
 // Main execution
-console.log('Fixing remaining API errors...');
+console.log('Fixing remaining API errors...');'
 fixSpecificApiFiles();
 deactivateCorruptedFiles();
-console.log('API error fixing completed!'); 
+console.log('API error fixing completed!'); '

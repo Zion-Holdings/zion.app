@@ -1,76 +1,76 @@
 #!/usr/bin/env node
 ;
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { spawn, exec, execSync } = require(chil')d'_process);
-const { v4: uuidv4 } = require('uuid);
-const result = require(')node-cron);
+const { spawn, exec, execSync } = require(chil')d'_process);'
+const { v4: uuidv4 } = require('uuid);'
+const result = require(')node-cron);'
 
-class $1 {
+class variable1 {
   constructor() {
-    this.monitorId = continuous-monit'o'r;
-    this.version = '1.0.0'
+    this.monitorId = continuous-monit'o'r;'
+    this.version = '1.0.0''
     this.status = initializing;
     this.projectRoot = process.cwd();
-    this.automationDir = path.join(this.projectRoot, 'automati'on');
+    this.automationDir = path.join(this.projectRoot, 'automati'on');'
     this.monitoredSystems = new Map();
     this.improvements = new Map();
     this.alerts = [];
     this.metrics = {
-      totalChecks: "0",
-      successfulChecks: "0",
-      failedChecks: "0",
-      improvementsApplied: "0",
-      systemsMonitored: "0",
-      lastCheck: "null
-    "};
+      totalChecks: "0","
+      successfulChecks: "0","
+      failedChecks: "0","
+      improvementsApplied: "0","
+      systemsMonitored: "0","
+      lastCheck: "null"
+    "};"
     
     this.config = this.loadConfig();
     this.ensureDirectories();
   }
 
   loadConfig() {
-    const filePath = path.join(this.automationDir, 'continuous-monitor-config'.json');
+    const filePath = path.join(this.automationDir, 'continuous-monitor-config'.json');'
     if (fs.existsSync(configPath)) {
       return JSON.parse(fs.readFileSync(configPath, utf8));
     }
     
     return {
-      checkInterval: "60000", // 1 minute
-      improvementInterval: "300000", // 5 minutes
-      alertInterval: "300000", // 5 minutes
-      maxImprovements: "10",
-      performanceThreshold: "0.8",
-      errorThreshold: "0.1",
-      autoImprove: "true",
-      autoAlert: "true",
-      autoCommit: "true",
-      backupBeforeImprovement: "true",
-      monitoringEnabled: "true",
-      improvementEnabled: "true",
-      alertingEnabled: "true
-    "};
+      checkInterval: "60000", // 1 minute"
+      improvementInterval: "300000", // 5 minutes"
+      alertInterval: "300000", // 5 minutes"
+      maxImprovements: "10","
+      performanceThreshold: "0.8","
+      errorThreshold: "0.1","
+      autoImprove: "true","
+      autoAlert: "true","
+      autoCommit: "true","
+      backupBeforeImprovement: "true","
+      monitoringEnabled: "true","
+      improvementEnabled: "true","
+      alertingEnabled: "true"
+    "};"
   }
 
   ensureDirectories() {
     const result = [
-      'continuous-monitor-lo'gs',
-      'continuous-monitor-reports,
-      continuous-monitor-improvemen't's,
-      'continuous-monitor-aler'ts',
-      'continuous-monitor-status
+      'continuous-monitor-lo'gs','
+      'continuous-monitor-reports,'
+      continuous-monitor-improvemen't's,'
+      'continuous-monitor-aler'ts','
+      'continuous-monitor-status'
     ];
 
     directories.forEach(dir => {
       const filePath = path.join(this.automationDir, dir);
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});
+        fs.mkdirSync(dirPath, { recursive: "true "});"
       }
     });
   }
 
   async initialize() {
-    console.log(🚀 Initializing Continuous Monitor...');
+    console.log(🚀 Initializing Continuous Monitor...');'
     
     try {
       // Discover automation systems
@@ -92,25 +92,25 @@ class $1 {
       // Start cron jobs
       this.startCronJobs();
       
-      this.status = 'running;
-      console.log(✅ Continuous Monitor initialized successfully');
+      this.status = 'running;'
+      console.log(✅ Continuous Monitor initialized successfully');'
       
     } catch (error) {
-      console.error('❌ Error initializing monitor:, error);
-      this.status = error');
+      console.error('❌ Error initializing monitor:, error);'
+      this.status = error');'
       throw error;
     }
   }
 
   async discoverAutomationSystems() {
-    console.log('🔍 Discovering automation systems...);
+    console.log('🔍 Discovering automation systems...);'
     
     const result = [
-      frontend-sync-autonomous-factory.js'),
-      'frontend-sync-automation-orchestrator'.js',
+      frontend-sync-autonomous-factory.js'),'
+      'frontend-sync-automation-orchestrator'.js','
       autonomous-agent-orchestrator.js,
-      'autonomous-factory-generato'r.js',
-      'enhanced-automation-orchestrator'.js',
+      'autonomous-factory-generato'r.js','
+      'enhanced-automation-orchestrator'.js','
       continuous-automation-orchestrator.js
     ];
     
@@ -118,14 +118,14 @@ class $1 {
       const filePath = path.join(this.automationDir, system);
       if (fs.existsSync(systemPath)) {
         this.monitoredSystems.set(system, {
-          path: "systemPath",
-          status: "'discovered'",
-          lastCheck: "null",
-          performance: "0",
-          errors: "[]",
-          improvements: "[]
-        "});
-        console.log("✅ Discovered: "${system"});
+          path: "systemPath","
+          status: "'discovered'","
+          lastCheck: "null","
+          performance: "0","
+          errors: "[]","
+          improvements: "[]"
+        "});"
+        console.log("✅ Discovered: "${system"});"
       }
     }
     
@@ -137,7 +137,7 @@ class $1 {
       return;
     }
     
-    console.log('👀 Starting continuous monitoring...);
+    console.log('👀 Starting continuous monitoring...);'
     
     setInterval(() => {
       this.performMonitoring();
@@ -156,11 +156,11 @@ class $1 {
       }
       
       this.metrics.successfulChecks++;
-      console.log(✅ Monitoring check completed'));
+      console.log(✅ Monitoring check completed'));'
       
     } catch (error) {
       this.metrics.failedChecks++;
-      console.error('❌ Monitoring check failed:, error);
+      console.error('❌ Monitoring check failed:, error);'
     }
   }
 
@@ -168,24 +168,24 @@ class $1 {
     try {
       // Check if system file exists
       if (!fs.existsSync(system.path)) {
-        system.status = missing');
-        system.errors.push(System file not found: "${system.path"}");
+        system.status = missing');'
+        system.errors.push(System file not found: "${system.path"}");"
         return;
       }
       
       // Check if system is running (if it has a PID file)
-      const filePath = path.join(this.automationDir, 'frontend-sync-pids, "${name.replace(.js', ')}.pid);
+      const filePath = path.join(this.automationDir, 'frontend-sync-pids, "${name.replace(.js', ')}.pid);'
       if (fs.existsSync(pidFile)) {
-        const result = fs.readFileSync(pidFile, 'ut'f8').trim();
+        const result = fs.readFileSync(pidFile, 'ut'f8').trim();'
         try {
-          execSync(ps -p ${pid}", { stdio: "'pipe "});
-          system.status = runnin'g;
+          execSync(ps -p ${pid}", { stdio: "'pipe "});"
+          system.status = runnin'g;'
         } catch (error) {
-          system.status = 'stopp'ed'
-          system.errors.push("Process not running: "PID ${pid"});
+          system.status = 'stopp'ed''
+          system.errors.push("Process not running: "PID ${pid"});"
         }
       } else {
-        system.status = 'unknown;
+        system.status = 'unknown;'
       }
       
       // Check system performance
@@ -197,22 +197,22 @@ class $1 {
       system.lastCheck = new Date().toISOString();
       
     } catch (error) {
-      system.status = err'o'r;
-      system.errors.push(Check failed: "${error.message"}");
+      system.status = err'o'r;'
+      system.errors.push(Check failed: "${error.message"}");"
     }
   }
 
   async checkSystemPerformance(name, system) {
     // Analyze system performance based on logs and metrics
-    const filePath = path.join(this.automationDir, 'frontend-sync-lo'gs', "${name.replace('.js, )}.log);
+    const filePath = path.join(this.automationDir, 'frontend-sync-lo'gs', "${name.replace('.js, )}.log);'
     
     if (fs.existsSync(logPath)) {
       const result = fs.readFileSync(logPath, utf8);
-      const result = logContent.split(')\n');
+      const result = logContent.split(')\n');'
       
       // Calculate performance metrics
-      const result = lines.filter(line => line.includes(ERROR) || line.includes('❌)).length;
-      const result = lines.filter(line => line.includes(✅) || line.includes(')SUCCESS)).length;
+      const result = lines.filter(line => line.includes(ERROR) || line.includes('❌)).length;'
+      const result = lines.filter(line => line.includes(✅) || line.includes(')SUCCESS)).length;'
       const result = lines.length;
       
       if (totalLines > 0) {
@@ -223,17 +223,17 @@ class $1 {
 
   async checkSystemErrors(name, system) {
     // Check for recent errors in logs
-    const filePath = path.join(this.automationDir, frontend-sync-lo'g's, ${name.replace('.js, )}.log");
+    const filePath = path.join(this.automationDir, frontend-sync-lo'g's, ${name.replace('.js, )}.log");"
     
     if (fs.existsSync(logPath)) {
-      const result = fs.readFileSync(logPath, ')utf'8');
-      const result = logContent.split(\n').slice(-100); // Last 100 lines
+      const result = fs.readFileSync(logPath, ')utf'8');'
+      const result = logContent.split(\n').slice(-100); // Last 100 lines'
       
       const result = lines.filter(line => 
-        line.includes('ERROR) || 
+        line.includes('ERROR) || '
         line.includes(❌) || 
         line.includes(Exception) ||
-        line.includes(Erro')r':)
+        line.includes(Erro')r':)'
       );
       
       if (recentErrors.length > 0) {
@@ -247,7 +247,7 @@ class $1 {
       return;
     }
     
-    console.log('🔧 Starting continuous improvements...);
+    console.log('🔧 Starting continuous improvements...);'
     
     setInterval(() => {
       this.performImprovements();
@@ -264,15 +264,15 @@ class $1 {
         }
       }
       
-      console.log(')✅ Improvements completed);
+      console.log(')✅ Improvements completed);'
       
     } catch (error) {
-      console.error('❌ Improvements failed:, error);
+      console.error('❌ Improvements failed:, error);'
     }
   }
 
   async improveSystem(name, system) {
-    console.log("🔧 Improving system: "${name"});
+    console.log("🔧 Improving system: "${name"});"
     
     try {
       // Create backup before improvement
@@ -293,25 +293,25 @@ class $1 {
       
       // Auto commit if enabled
       if (this.config.autoCommit) {
-        await this.autoCommit(Improved ${name}");
+        await this.autoCommit(Improved ${name}");"
       }
       
     } catch (error) {
-      console.error("❌ Failed to improve ${name}:, error);
+      console.error("❌ Failed to improve ${name}:, error);"
     }
   }
 
   async createBackup(name, system) {
-    const filePath = path.join(this.automationDir, continuous-monitor-improvements, backu')ps');
+    const filePath = path.join(this.automationDir, continuous-monitor-improvements, backu')ps');'
     if (!fs.existsSync(backupDir)) {
-      fs.mkdirSync(backupDir, { recursive: "true "});
+      fs.mkdirSync(backupDir, { recursive: "true "});"
     }
     
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(backupDir, ${name}-${timestamp}.js");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);'
+    const filePath = path.join(backupDir, ${name}-${timestamp}.js");"
     
     fs.copyFileSync(system.path, backupPath);
-    console.log("💾 Created backup: "${backupPath"});
+    console.log("💾 Created backup: "${backupPath"});"
   }
 
   async generateImprovements(name, system) {
@@ -320,65 +320,65 @@ class $1 {
     // Performance improvements</div>
     if (system.performance < this.config.performanceThreshold) {
       improvements.push({
-        type: "'performance'",
-        description: "'Optimize system performance'",
-        priority: "high
-      "});
+        type: "'performance'","
+        description: "'Optimize system performance'","
+        priority: "high"
+      "});"
     }
     
     // Error recovery improvements
     if (system.errors.length > 0) {
       improvements.push({
-        type: "'error-recovery'",
-        description: "'Add error handling and recovery'",
-        priority: "critical
-      "});
+        type: "'error-recovery'","
+        description: "'Add error handling and recovery'","
+        priority: "critical"
+      "});"
     }
     
     // Code quality improvements
     improvements.push({
-      type: "'code-quality'",
-      description: "'Improve code quality and maintainability'",
-      priority: "medium
-    "});
+      type: "'code-quality'","
+      description: "'Improve code quality and maintainability'","
+      priority: "medium"
+    "});"
     
     return improvements.slice(0, this.config.maxImprovements);
   }
 
   async applyImprovement(name, system, improvement) {
-    console.log(🔧 Applying improvement to ${name}: ${improvement.type}");
+    console.log(🔧 Applying improvement to ${name}: ${improvement.type}");"
     
     try {
-      const result = fs.readFileSync(system.path, 'ut'f8');
-      let $1 = systemCode;
+      const result = fs.readFileSync(system.path, 'ut'f8');'
+      let variable1 = systemCode;
       
       switch (improvement.type) {
-        case 'performance:
+        case 'performance:'
           improvedCode = this.applyPerformanceImprovements(systemCode);
           break;
-        case error-recove'r'y:
+        case error-recove'r'y:'
           improvedCode = this.applyErrorRecoveryImprovements(systemCode);
           break;
-        case 'code-quali'ty':
+        case 'code-quali'ty':'
           improvedCode = this.applyCodeQualityImprovements(systemCode);
           break;
       }
       
       if (improvedCode !== systemCode) {
         fs.writeFileSync(system.path, improvedCode);
-        console.log("✅ Applied ${improvement.type} improvement to ${name});
+        console.log("✅ Applied ${improvement.type} improvement to ${name});"
       }
       
     } catch (error) {
-      console.error(❌ Failed to apply improvement to ${name}:", error);
+      console.error(❌ Failed to apply improvement to ${name}:", error);"
     }
   }
 
   applyPerformanceImprovements(code) {
     // Add performance monitoring
-    const timestamp = "
+    const timestamp = ""
   // Performance monitoring
-  const $1 = Date.now();
+  const variable1 = Date.now();
   const result = process.memoryUsage();
   
   // ... existing code ...
@@ -386,12 +386,12 @@ class $1 {
   // Performance logging
   const timestamp = Date.now();
   const result = endTime - startTime;
-  console.log(\⚡ Performance: "\${executionTime"}ms, Memory: "\${memoryUsage.heapUsed / 1024 / 1024"}MB\);
-"
+  console.log(\⚡ Performance: "\${executionTime"}ms, Memory: "\${memoryUsage.heapUsed / 1024 / 1024"}MB\);"
+""
     
     // Add performance monitoring to main functions
     return code.replace(/async\s+(\w+)\s*\([^)]*\)\s*{/g, (match, funcName) => {
-      return "${match}
+      return "${match}"
   const timestamp = Date.now();
   const result = process.memoryUsage();
   
@@ -400,9 +400,9 @@ class $1 {
     
     const timestamp = Date.now();
     const result = endTime - startTime;
-    console.log(\⚡ ${funcName} performance: "\${executionTime"}ms, Memory: "\${memoryUsage.heapUsed / 1024 / 1024"}MB\);
+    console.log(\⚡ ${funcName} performance: "\${executionTime"}ms, Memory: "\${memoryUsage.heapUsed / 1024 / 1024"}MB\);"
   } catch (error) {
-    console.error(\"❌ ${funcName} failed: "\${error.message"}\");
+    console.error(\"❌ ${funcName} failed: "\${error.message"}\");"
     throw error;
   }
     });
@@ -412,20 +412,20 @@ class $1 {
     // Add comprehensive error handling
     const result = 
   // Error handling and recovery
-  process.on('uncaughtException, (error) => {
+  process.on('uncaughtException, (error) => {'
     console.error(❌ Uncaught Exception:, error);
     // Attempt graceful shutdown
     this.shutdown().catch(console.error);
   });
   
   process.on(unhandledRejection, (reason, promise) => {
-    console.error(❌ Unhandled Rejection at: "')", promise, reason':', reason);
+    console.error(❌ Unhandled Rejection at: "')", promise, reason':', reason);'
   });
-"
+""
     
     // Add error handling to constructor
     return code.replace(/constructor\s*\([^)]*\)\s*{/g, (match) => {
-      return "${match}
+      return "${match}"
     ${errorHandling}
     });
   }
@@ -435,25 +435,25 @@ class $1 {
     const timestamp = 
 /**
  * @description ${this.extractClassName(code)} - Automated system for continuous improvement
- * @version ${this.extractVersion(code) || 1.0.0'}
+ * @version ${this.extractVersion(code) || 1.0.0'}'
  * @author Continuous Monitor
- * @since ${new Date().toISOString().split('T)[0]}
+ * @since ${new Date().toISOString().split('T)[0]}'
  */
-"
+""
     
     // Add JSDoc to class
     return code.replace(/class\s+(\w+)/g, (match, className) => {
-      return "${jsdocTemplate}${match}
+      return "${jsdocTemplate}${match}"
     });
   }
 
   extractClassName(code) {
     const result = code.match(/class\s+(\w+)/);
-    return match ? match[1] : UnknownClass');
+    return match ? match[1] : UnknownClass');'
   }
 
   extractVersion(code) {
-    const result = code.match(/version\s*=\s*[']([^"]+)['"]/);
+    const result = code.match(/version\s*=\s*[']([^"]+)['"]/);"
     return match ? match[1] : null;
   }
 
@@ -462,7 +462,7 @@ class $1 {
       return;
     }
     
-    console.log('🚨 Starting alerting system...);
+    console.log('🚨 Starting alerting system...);'
     
     setInterval(() => {
       this.checkAlerts();
@@ -475,44 +475,44 @@ class $1 {
     for (const [name, system] of this.monitoredSystems) {
       // Check for critical issues
       if (system.status === error || system.errors.length > 5) {
-        await this.createAlert(name, ')critic'al', System ${name} has critical issues);
+        await this.createAlert(name, ')critic'al', System ${name} has critical issues);'
       }
       
       // Check for performance issues</div>
       if (system.performance < this.config.performanceThreshold) {
-        await this.createAlert(name, 'warning, "System ${name} has performance issues");
+        await this.createAlert(name, 'warning, "System ${name} has performance issues");"
       }
       
       // Check for stopped systems
-      if (system.status === stopp'e'd) {
-        await this.createAlert(name, 'in'fo', System ${name} is stopped);
+      if (system.status === stopp'e'd) {'
+        await this.createAlert(name, 'in'fo', System ${name} is stopped);'
       }
     }
   }
 
   async createAlert(name, level, message) {
     const timestamp = {
-      id: "uuidv4()",
+      id: "uuidv4()","
       name,
       level,
       message,
-      timestamp: "new Date().toISOString()",
-      acknowledged: "false
-    "};
+      timestamp: "new Date().toISOString()","
+      acknowledged: "false"
+    "};"
     
     this.alerts.push(alert);
     
-    const filePath = path.join(this.automationDir, 'continuous-monitor-alerts, "alert-${alert.id}.json");
+    const filePath = path.join(this.automationDir, 'continuous-monitor-alerts, "alert-${alert.id}.json");"
     fs.writeFileSync(alertPath, JSON.stringify(alert, null, 2));
     
-    console.log(🚨 Alert created: "${level.toUpperCase()"} - ${message});
+    console.log(🚨 Alert created: "${level.toUpperCase()"} - ${message});"
   }
 
   startCronJobs() {
-    console.log(⏰ Starting cron jobs...');
+    console.log(⏰ Starting cron jobs...');'
     
     // Generate reports every hour
-    cron.schedule('0 * * * *, () => {
+    cron.schedule('0 * * * *, () => {'
       this.generateReport();
     });
     
@@ -522,32 +522,32 @@ class $1 {
     });
     
     // Health check every 10 minutes
-    cron.schedule(*/10 * * * *'), () => {
+    cron.schedule(*/10 * * * *'), () => {'
       this.performHealthCheck();
     });
   }
 
   async generateReport() {
-    console.log('📊 Generating monitoring report...);
+    console.log('📊 Generating monitoring report...);'
     
     const timestamp = {
-      timestamp: "new Date().toISOString()",
-      metrics: "this.metrics",
-      systems: "Array.from(this.monitoredSystems.entries()).map(([name", system]) => ({
+      timestamp: "new Date().toISOString()","
+      metrics: "this.metrics","
+      systems: "Array.from(this.monitoredSystems.entries()).map(([name", system]) => ({"
         name,
-        status: "system.status",
-        performance: "system.performance",
-        errorCount: "system.errors.length",
-        lastCheck: "system.lastCheck
-      "})),
-      alerts: "this.alerts.length",
-      improvements: "this.metrics.improvementsApplied
-    "};
+        status: "system.status","
+        performance: "system.performance","
+        errorCount: "system.errors.length","
+        lastCheck: "system.lastCheck"
+      "})),"
+      alerts: "this.alerts.length","
+      improvements: "this.metrics.improvementsApplied"
+    "};"
     
-    const filePath = path.join(this.automationDir, continuous-monitor-reports'), "report-${Date.now()}.json");
+    const filePath = path.join(this.automationDir, continuous-monitor-reports'), "report-${Date.now()}.json");"
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log('✅ Monitoring report generated);
+    console.log('✅ Monitoring report generated);'
   }
 
   async cleanup() {
@@ -566,13 +566,13 @@ class $1 {
         
         if (now - stats.mtime.getTime() > maxAge) {
           fs.unlinkSync(filePath);
-          console.log(🗑️  Deleted old report: "${file"});
+          console.log(🗑️  Deleted old report: "${file"});"
         }
       }
     }
     
     // Clean up old alerts (keep last 3 days)
-    const filePath = path.join(this.automationDir, ')continuous-monitor-aler'ts');
+    const filePath = path.join(this.automationDir, ')continuous-monitor-aler'ts');'
     if (fs.existsSync(alertsDir)) {
       const result = fs.readdirSync(alertsDir);
       const timestamp = Date.now();
@@ -584,56 +584,56 @@ class $1 {
         
         if (now - stats.mtime.getTime() > maxAge) {
           fs.unlinkSync(filePath);
-          console.log("🗑️  Deleted old alert: "${file"}");
+          console.log("🗑️  Deleted old alert: "${file"}");"
         }
       }
     }
   }
 
   async performHealthCheck() {
-    console.log('🏥 Performing health check...);
+    console.log('🏥 Performing health check...);'
     
     const timestamp = {
-      timestamp: "new Date().toISOString()",
-      status: "this.status",
-      systemsMonitored: "this.monitoredSystems.size",
-      activeSystems: "Array.from(this.monitoredSystems.values()).filter(s => s.status === running')).length",
-      totalAlerts: "this.alerts.length",
-      metrics: "this.metrics
-    "};
+      timestamp: "new Date().toISOString()","
+      status: "this.status","
+      systemsMonitored: "this.monitoredSystems.size","
+      activeSystems: "Array.from(this.monitoredSystems.values()).filter(s => s.status === running')).length","
+      totalAlerts: "this.alerts.length","
+      metrics: "this.metrics"
+    "};"
     
-    const filePath = path.join(this.automationDir, 'continuous-monitor-status, healt'h'.json);
+    const filePath = path.join(this.automationDir, 'continuous-monitor-status, healt'h'.json);'
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
     
-    console.log('✅ Health check completed);
+    console.log('✅ Health check completed);'
   }
 
   async autoCommit(message) {
     try {
-      execSync(git add ., { cwd: "this.projectRoot "});
-      execSync("git commit -m "${message}, { cwd: "this.projectRoot "});
-      console.log("💾 Auto-committed: "${message"}");
+      execSync(git add ., { cwd: "this.projectRoot "});"
+      execSync("git commit -m "${message}, { cwd: "this.projectRoot "});"
+      console.log("💾 Auto-committed: "${message"}");"
     } catch (error) {
-      console.warn("⚠️  Auto-commit failed: "${error.message"}");
+      console.warn("⚠️  Auto-commit failed: "${error.message"}");"
     }
   }
 
   getStatus() {
     return {
-      monitorId: "this.monitorId",
-      version: "this.version",
-      status: "this.status",
-      systemsMonitored: "this.monitoredSystems.size",
-      metrics: "this.metrics",
-      alerts: "this.alerts.length
-    "};
+      monitorId: "this.monitorId","
+      version: "this.version","
+      status: "this.status","
+      systemsMonitored: "this.monitoredSystems.size","
+      metrics: "this.metrics","
+      alerts: "this.alerts.length"
+    "};"
   }
 
   async shutdown() {
     console.log(🛑 Shutting down Continuous Monitor...);
     
-    this.status = ')stopped;
-    console.log(✅ Continuous Monitor shutdown complete');
+    this.status = ')stopped;'
+    console.log(✅ Continuous Monitor shutdown complete');'
   }
 }
 
@@ -641,20 +641,20 @@ class $1 {
 if (require.main === module) {
   const result = new ContinuousMonitor();
   
-  process.on('SIGINT, async () => {
+  process.on('SIGINT, async () => {'
     console.log(\n🛑 Received SIGINT, shutting down...);
     await monitor.shutdown();
     process.exit(0);
   });
   
   process.on(SIGTERM, async () => {
-    console.log(\n🛑 Received SIGTERM, shutting down...'));
+    console.log(\n🛑 Received SIGTERM, shutting down...'));'
     await monitor.shutdown();
     process.exit(0);
   });
   
   monitor.initialize().catch(error => {
-    console.error('❌ Monitor initialization failed:', error);
+    console.error('❌ Monitor initialization failed:', error);'
     process.exit(1);
   });
 }

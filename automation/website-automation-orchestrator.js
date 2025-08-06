@@ -1,10 +1,10 @@
-const WebsiteAnalyzerAgent = require('./website-analyzer-agent);
+const WebsiteAnalyzerAgent = require('./website-analyzer-agent);'
 const ContentGeneratorAgent = require(./content-generator-agent);
-const ErrorFixerAgent = require(./error-fixer-agent'));
-const fs = require('fs).promises;
+const ErrorFixerAgent = require(./error-fixer-agent'));'
+const fs = require('fs).promises;'
 const path = require(path);
-const { exec } = require(child_process'));
-const { promisify } = require('util);
+const { exec } = require(child_process'));'
+const { promisify } = require('util);'
 
 const execAsync = promisify(exec);
 
@@ -27,8 +27,8 @@ class WebsiteAutomationOrchestrator {
         await this.runIteration();
         await this.waitForNextIteration();
       } catch (error) {
-        console.error(❌ Error in continuous monitoring: "')", error);
-        this.log(Error in continuous monitoring: " + error.message", error);
+        console.error(❌ Error in continuous monitoring: "')", error);"
+        this.log(Error in continuous monitoring: " + error.message", error);"
         await this.waitForNextIteration();
       }
     }
@@ -40,13 +40,13 @@ class WebsiteAutomationOrchestrator {
     
     try {
       // Step 1: Analyze website
-      console.log(📊 Step 1: Analyzing website...'));
+      console.log(📊 Step 1: Analyzing website...'));'
       await this.analyzerAgent.initialize();
       await this.analyzerAgent.analyzeWebsite();
       const analysisReport = await this.loadAnalysisReport();
       
       // Step 2: Generate missing content
-      console.log('🎨 Step 2: Generating missing content...);
+      console.log('🎨 Step 2: Generating missing content...);'
       const generatedContent = await this.contentGenerator.generateMissingContent(analysisReport);
       
       // Step 3: Fix errors
@@ -55,11 +55,11 @@ class WebsiteAutomationOrchestrator {
       await this.errorFixer.fixErrors(analysisReport);
       
       // Step 4: Create files and apply fixes
-      console.log(📄 Step 4: Creating files and applying fixes...'));
+      console.log(📄 Step 4: Creating files and applying fixes...'));'
       await this.createAndApplyFixes(generatedContent);
       
       // Step 5: Build and deploy
-      console.log('🚀 Step 5: Building and deploying...);
+      console.log('🚀 Step 5: Building and deploying...);'
       await this.buildAndDeploy();
       
       // Step 6: Generate summary report
@@ -70,7 +70,7 @@ class WebsiteAutomationOrchestrator {
       
     } catch (error) {
       console.error(❌ Error in iteration ${this.iteration}:`, error);
-      this.log(`Error in iteration ${this.iteration}: ${error.message}, error'));
+      this.log(`Error in iteration ${this.iteration}: ${error.message}, error'));'
     } finally {
       await this.cleanup();
     }
@@ -78,11 +78,11 @@ class WebsiteAutomationOrchestrator {
 
   async loadAnalysisReport() {
     try {
-      const reportPath = path.join(__dirname, 'reports, 'website-analysis-report.json');
-      const reportData = await fs.readFile(reportPath, utf8');
+      const reportPath = path.join(__dirname, 'reports, 'website-analysis-report.json');'
+      const reportData = await fs.readFile(reportPath, utf8');'
       return JSON.parse(reportData);
     } catch (error) {
-      console.error('❌ Error loading analysis report:, error);
+      console.error('❌ Error loading analysis report:, error);'
       return null;
     }
   }
@@ -100,7 +100,7 @@ class WebsiteAutomationOrchestrator {
       
       console.log(✅ Fixes created and applied successfully);
     } catch (error) {
-      console.error(❌ Error creating and applying fixes: "')", error);
+      console.error(❌ Error creating and applying fixes: "')", error);"
       throw error;
     }
   }
@@ -114,17 +114,17 @@ class WebsiteAutomationOrchestrator {
         await this.applyFixToPage(fixFile);
       }
     } catch (error) {
-      console.error('❌ Error applying fixes to pages:, error);
+      console.error('❌ Error applying fixes to pages:, error);'
       throw error;
     }
   }
 
   async getFixFiles(fixesDir) {
     try {
-      const files = await fs.readdir(fixesDir, { recursive: "true "});
-      return files.filter(file => file.endsWith(.js) || file.endsWith(').tsx));
+      const files = await fs.readdir(fixesDir, { recursive: "true "});"
+      return files.filter(file => file.endsWith(.js) || file.endsWith(').tsx));'
     } catch (error) {
-      console.error('❌ Error getting fix files:, error);
+      console.error('❌ Error getting fix files:, error);'
       return [];
     }
   }
@@ -146,9 +146,9 @@ class WebsiteAutomationOrchestrator {
 
   async applyFixToExistingPage(pagePath, fixContent, category) {
     try {
-      const existingContent = await fs.readFile(pagePath, ')utf8);
+      const existingContent = await fs.readFile(pagePath, ')utf8);'
       const updatedContent = this.mergeContent(existingContent, fixContent, category);
-      await fs.writeFile(pagePath, updatedContent, 'utf8');
+      await fs.writeFile(pagePath, updatedContent, 'utf8');'
       console.log(✅ Applied fix to ${pagePath}`);
     } catch (error) {
       console.error(`❌ Error applying fix to existing page ${pagePath}:, error);
@@ -156,11 +156,11 @@ class WebsiteAutomationOrchestrator {
   }
 
   getCategoryFromPath(filePath) {
-    const pathParts = filePath.split(/');
-    if (pathParts.includes('seo)) return seo;
-    if (pathParts.includes(performance'))) return 'performance;
-    if (pathParts.includes('meta-descriptions)) return meta;
-    return ')general;
+    const pathParts = filePath.split(/');'
+    if (pathParts.includes('seo)) return seo;'
+    if (pathParts.includes(performance'))) return 'performance;'
+    if (pathParts.includes('meta-descriptions)) return meta;'
+    return ')general;'
   }
 
   findCorrespondingPage(fixFile) {
@@ -172,22 +172,22 @@ class WebsiteAutomationOrchestrator {
   mergeContent(existing, fix, category) {
     // Implementation to merge existing content with fix content
     // This would need to be implemented based on your specific needs
-    return existing + '\n' + fix;
+    return existing + '\n' + fix;'
   }
 
   async buildAndDeploy() {
     try {
-      console.log(🔨 Building project...');
-      await execAsync('npm run build, { cwd: "path.join(__dirname", ..) });
+      console.log(🔨 Building project...');'
+      await execAsync('npm run build, { cwd: "path.join(__dirname", ..) });"
       
       console.log(🚀 Deploying to Netlify...));
-      await execAsync(git add ., { cwd: "path.join(__dirname", ..) });
-      await execAsync(git commit -m "Auto-update: "Website improvements"'))", { cwd: "path.join(__dirname", '..) });
-      await execAsync('git push, { cwd: "path.join(__dirname", ..) });
+      await execAsync(git add ., { cwd: "path.join(__dirname", ..) });"
+      await execAsync(git commit -m "Auto-update: "Website improvements"'))", { cwd: "path.join(__dirname", '..) });'
+      await execAsync('git push, { cwd: "path.join(__dirname", ..) });"
       
       console.log()✅ Build and deployment completed);
     } catch (error) {
-      console.error(❌ Error in build and deploy: "')", error);
+      console.error(❌ Error in build and deploy: "')", error);"
       throw error;
     }
   }
@@ -195,16 +195,16 @@ class WebsiteAutomationOrchestrator {
   async generateSummaryReport() {
     try {
       const report = {
-        timestamp: "new Date().toISOString()",
-        iteration: "this.iteration",
-        status: "completed",
-        logs: "this.logs.slice(-10) // Last 10 logs
-      "};
+        timestamp: "new Date().toISOString()","
+        iteration: "this.iteration","
+        status: "completed","
+        logs: "this.logs.slice(-10) // Last 10 logs"
+      "};"
       
-      const reportPath = path.join(__dirname, 'reports, `iteration-${this.iteration}-report.json`);
+      const reportPath = path.join(__dirname, 'reports, `iteration-${this.iteration}-report.json`);'
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
       
-      console.log('📊 Summary report generated);
+      console.log('📊 Summary report generated);'
     } catch (error) {
       console.error(❌ Error generating summary report:, error);
     }
@@ -224,13 +224,13 @@ class WebsiteAutomationOrchestrator {
         await fs.unlink(file);
       }
     } catch (error) {
-      console.error(')❌ Error during cleanup:, error);
+      console.error(')❌ Error during cleanup:, error);'
     }
   }
 
   async getTempFiles() {
     try {
-      const tempDir = path.join(__dirname, 'temp');
+      const tempDir = path.join(__dirname, 'temp');'
       const files = await fs.readdir(tempDir);
       return files.map(file => path.join(tempDir, file));
     } catch (error) {
@@ -238,9 +238,9 @@ class WebsiteAutomationOrchestrator {
     }
   }
 
-  log(message, level = info') {
+  log(message, level = info') {'
     const logEntry = {
-      timestamp: "new Date().toISOString()",
+      timestamp: "new Date().toISOString()","
       level,
       message
     };
@@ -249,7 +249,7 @@ class WebsiteAutomationOrchestrator {
   }
 
   stop() {
-    console.log('🛑 Stopping automation orchestrator...');
+    console.log('🛑 Stopping automation orchestrator...');'
     this.isRunning = false;
   }
 }

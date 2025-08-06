@@ -1,39 +1,39 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { exec } = require(chil')d'_process);
-const { promisify } = require('util);
+const { exec } = require(chil')d'_process);'
+const { promisify } = require('util);'
 ;
 const result = promisify(exec);
 
-class $1 {
+class variable1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
-    this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, ../reports/compliance-automation');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});'
+    this.projectRoot = path.resolve(__dirname, '../..');'
+    this.reportsDir = path.join(__dirname, ../reports/compliance-automation');'
     this.ensureDirectories();
   }
 
   ensureDirectories() {
     const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'compliance-reports),
-      path.join(this.reportsDir, audit-repor't's),
-      path.join(this.reportsDir, 'validation-repor'ts'),
-      path.join(this.reportsDir, 'monitoring-reports),
-      path.join(this.reportsDir, optimization-repor't's)
+      path.join(this.reportsDir, 'compliance-reports),'
+      path.join(this.reportsDir, audit-repor't's),'
+      path.join(this.reportsDir, 'validation-repor'ts'),'
+      path.join(this.reportsDir, 'monitoring-reports),'
+      path.join(this.reportsDir, optimization-repor't's)'
     ];
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});
+        fs.mkdirSync(dir, { recursive: "true "});"
       }
     });
   }
 
   async start() {
-    console.log("Compliance Automation Agent ${this.agentId} started);
+    console.log("Compliance Automation Agent ${this.agentId} started);"
     
     // Initial compliance analysis
     await this.analyzeCompliance();
@@ -56,18 +56,18 @@ class $1 {
 
   async analyzeCompliance() {
     try {
-      console.log('Performing comprehensive compliance analysis...);
+      console.log('Performing comprehensive compliance analysis...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        standards: "[]",
-        regulations: "[]",
-        policies: "[]",
-        audits: "[]",
-        violations: "[]",
-        recommendations: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        standards: "[]","
+        regulations: "[]","
+        policies: "[]","
+        audits: "[]","
+        violations: "[]","
+        recommendations: "[]"
+      "};"
       
       // Discover compliance standards
       analysis.standards = await this.discoverComplianceStandards();
@@ -90,7 +90,7 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log(')Compliance' analysis completed');
+      console.log(')Compliance' analysis completed');'
       
     } catch (error) {
       console.error(Compliance analysis failed:, error);
@@ -105,7 +105,7 @@ class $1 {
       const result = this.findComplianceFiles();
       
       for (const file of complianceFiles) {
-        const result = fs.readFileSync(file, 'ut'f8');
+        const result = fs.readFileSync(file, 'ut'f8');'
         const result = this.extractStandardInfo(file, content);
         
         if (standardInfo) {
@@ -117,7 +117,7 @@ class $1 {
       const result = this.findRegulatoryFiles();
       
       for (const file of regulatoryFiles) {
-        const result = fs.readFileSync(file, 'utf'8');
+        const result = fs.readFileSync(file, 'utf'8');'
         const result = this.extractRegulatoryInfo(file, content);
         
         if (regulatoryInfo) {
@@ -137,18 +137,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {'
             findComplianceFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
-              const result = fs.readFileSync(fullPath, 'utf'8');
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {'
+              const result = fs.readFileSync(fullPath, 'utf'8');'
               if (this.containsComplianceCode(content)) {
                 complianceFiles.push(fullPath);
               }
@@ -168,8 +168,8 @@ class $1 {
 
   containsComplianceCode(content) {
     const result = [
-      'complian'ce', 'gdpr, hip'a'a, sox', 'pci, i's'o, 'aud'it',
-      'regulation, poli'c'y, 'standa'rd', 'certification
+      'complian'ce', 'gdpr, hip'a'a, sox', 'pci, i's'o, 'aud'it','
+      'regulation, poli'c'y, 'standa'rd', 'certification'
     ];
     
     return complianceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -177,36 +177,36 @@ class $1 {
 
   extractStandardInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "unkno'w'n",
-      framework: "'unknown'",
-      requirements: "[]",
-      configuration: "{"}
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "unkno'w'n","
+      framework: "'unknown'","
+      requirements: "[]","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect compliance type
-    if (lowerContent.includes('gdpr) || lowerContent.includes(data protection)) {
-      standardInfo.type = ')GD'PR'
-    } else if (lowerContent.includes('hipaa) || lowerContent.includes(health)) {
-      standardInfo.type = ')HIP'AA'
-    } else if (lowerContent.includes('sox) || lowerContent.includes(sarbanes)) {
-      standardInfo.type = SOX');
-    } else if (lowerContent.includes('pci) || lowerContent.includes(payment)) {
-      standardInfo.type = ')PC'I DSS'
-    } else if (lowerContent.includes('iso) || lowerContent.includes(27001)) {
-      standardInfo.type = ISO') 27001'
+    if (lowerContent.includes('gdpr) || lowerContent.includes(data protection)) {'
+      standardInfo.type = ')GD'PR''
+    } else if (lowerContent.includes('hipaa) || lowerContent.includes(health)) {'
+      standardInfo.type = ')HIP'AA''
+    } else if (lowerContent.includes('sox) || lowerContent.includes(sarbanes)) {'
+      standardInfo.type = SOX');'
+    } else if (lowerContent.includes('pci) || lowerContent.includes(payment)) {'
+      standardInfo.type = ')PC'I DSS''
+    } else if (lowerContent.includes('iso) || lowerContent.includes(27001)) {'
+      standardInfo.type = ISO') 27001''
     }
     
     // Detect framework
-    if (lowerContent.includes(nist) || lowerContent.includes('cybersecurity)) {
-      standardInfo.framework = ')NIST;
-    } else if (lowerContent.includes(cob'i't) || lowerContent.includes(it governance')) {
-      standardInfo.framework = 'COBIT;
-    } else if (lowerContent.includes(it'i'l) || lowerContent.includes('service management)) {
-      standardInfo.framework = ')ITIL;
+    if (lowerContent.includes(nist) || lowerContent.includes('cybersecurity)) {'
+      standardInfo.framework = ')NIST;'
+    } else if (lowerContent.includes(cob'i't) || lowerContent.includes(it governance')) {'
+      standardInfo.framework = 'COBIT;'
+    } else if (lowerContent.includes(it'i'l) || lowerContent.includes('service management)) {'
+      standardInfo.framework = ')ITIL;'
     }
     
     // Extract requirements
@@ -223,18 +223,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(.') && item !== 'node'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.') && item !== 'node'_modules') {'
             findRegulatoryFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsRegulatoryCode(content)) {
                 regulatoryFiles.push(fullPath);
               }
@@ -246,7 +246,7 @@ class $1 {
       findRegulatoryFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find regulatory files:, error);
+      console.error('Failed to find regulatory files:, error);'
     }
     
     return regulatoryFiles;
@@ -254,8 +254,8 @@ class $1 {
 
   containsRegulatoryCode(content) {
     const result = [
-      regulation, ')l'aw', 'act, statu't'e, 'complian'ce',
-      'legal, regulato'r'y, 'governme'nt', 'federal, sta't'e
+      regulation, ')l'aw', 'act, statu't'e, 'complian'ce','
+      'legal, regulato'r'y, 'governme'nt', 'federal, sta't'e'
     ];
     
     return regulatoryKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -263,26 +263,26 @@ class $1 {
 
   extractRegulatoryInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "'unknown'",
-      jurisdiction: "'unknown",
-      requirements: "[]",
-      configuration: "{"}
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "'unknown'","
+      jurisdiction: "'unknown","
+      requirements: "[]","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect regulatory type
-    if (lowerContent.includes(ccp'a) || lowerContent.includes('california)) {
-      regulatoryInfo.type = ')CCPA;
-      regulatoryInfo.jurisdiction = Californ'i'a;
-    } else if (lowerContent.includes('lgpd) || lowerContent.includes(')brazil)) {
-      regulatoryInfo.type = LG'P'D;
-      regulatoryInfo.jurisdiction = 'Braz'il'
-    } else if (lowerContent.includes('popi) || lowerContent.includes(south africa)) {
-      regulatoryInfo.type = ')PO'PI'
-      regulatoryInfo.jurisdiction = 'South' Africa'
+    if (lowerContent.includes(ccp'a) || lowerContent.includes('california)) {'
+      regulatoryInfo.type = ')CCPA;'
+      regulatoryInfo.jurisdiction = Californ'i'a;'
+    } else if (lowerContent.includes('lgpd) || lowerContent.includes(')brazil)) {'
+      regulatoryInfo.type = LG'P'D;'
+      regulatoryInfo.jurisdiction = 'Braz'il''
+    } else if (lowerContent.includes('popi) || lowerContent.includes(south africa)) {'
+      regulatoryInfo.type = ')PO'PI''
+      regulatoryInfo.jurisdiction = 'South' Africa''
     }
     
     // Extract requirements
@@ -298,7 +298,7 @@ class $1 {
     const result = [];
     
     // Extract requirement definitions
-    const result = /requirement\s*[:=]\s*["]([^'"]+)['"]/gi;
+    const result = /requirement\s*[:=]\s*["]([^'"]+)['"]/gi;"
     let match;
     
     while ((match = requirementRegex.exec(content)) !== null) {
@@ -306,7 +306,7 @@ class $1 {
     }
     
     // Also look for policy definitions
-    const result = /policy\s*[:=]\s*["]([^'"]+)['"]/gi;
+    const result = /policy\s*[:=]\s*["]([^'"]+)['"]/gi;"
     while ((match = policyRegex.exec(content)) !== null) {
       requirements.push(match[1]);
     }
@@ -316,39 +316,39 @@ class $1 {
 
   extractComplianceConfiguration(content) {
     const result = {
-      environment: "unknown",
-      enforcement: "'unknown'",
-      monitoring: "'unknown",
-      settings: "{"}
+      environment: "unknown","
+      enforcement: "'unknown'","
+      monitoring: "'unknown","
+      settings: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes(productio'n) || lowerContent.includes('prod)) {
-      config.environment = ')production;
-    } else if (lowerContent.includes(stagi'n'g) || lowerContent.includes('stage)) {
-      config.environment = ')staging;
-    } else if (lowerContent.includes(developme'n't) || lowerContent.includes(dev')) {
-      config.environment = 'development;
+    if (lowerContent.includes(productio'n) || lowerContent.includes('prod)) {'
+      config.environment = ')production;'
+    } else if (lowerContent.includes(stagi'n'g) || lowerContent.includes('stage)) {'
+      config.environment = ')staging;'
+    } else if (lowerContent.includes(developme'n't) || lowerContent.includes(dev')) {'
+      config.environment = 'development;'
     }
     
     // Extract enforcement level
-    if (lowerContent.includes(stri'c't) || lowerContent.includes('enforced)) {
-      config.enforcement = ')strict;
-    } else if (lowerContent.includes(modera't'e) || lowerContent.includes('flexible)) {
-      config.enforcement = ')moderate;
-    } else if (lowerContent.includes(adviso'r'y) || lowerContent.includes('guidance)) {
-      config.enforcement = ')advisory;
+    if (lowerContent.includes(stri'c't) || lowerContent.includes('enforced)) {'
+      config.enforcement = ')strict;'
+    } else if (lowerContent.includes(modera't'e) || lowerContent.includes('flexible)) {'
+      config.enforcement = ')moderate;'
+    } else if (lowerContent.includes(adviso'r'y) || lowerContent.includes('guidance)) {'
+      config.enforcement = ')advisory;'
     }
     
     // Extract monitoring level
-    if (lowerContent.includes(continuo'u's) || lowerContent.includes('real-time)) {
-      config.monitoring = ')continuous;
-    } else if (lowerContent.includes(period'i'c) || lowerContent.includes('scheduled)) {
-      config.monitoring = ')periodic;
-    } else if (lowerContent.includes(manu'a'l) || lowerContent.includes('on-demand)) {
-      config.monitoring = ')manual;
+    if (lowerContent.includes(continuo'u's) || lowerContent.includes('real-time)) {'
+      config.monitoring = ')continuous;'
+    } else if (lowerContent.includes(period'i'c) || lowerContent.includes('scheduled)) {'
+      config.monitoring = ')periodic;'
+    } else if (lowerContent.includes(manu'a'l) || lowerContent.includes('on-demand)) {'
+      config.monitoring = ')manual;'
     }
     
     return config;
@@ -362,7 +362,7 @@ class $1 {
       const result = this.findRegulationFiles();
       
       for (const file of regulationFiles) {
-        const result = fs.readFileSync(file, ut'f'8);
+        const result = fs.readFileSync(file, ut'f'8);'
         const result = this.extractRegulationInfo(file, content);
         
         if (regulationInfo) {
@@ -371,7 +371,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to analyze regulations:, error);
+      console.error('Failed to analyze regulations:, error);'
     }
     
     return regulations;
@@ -382,17 +382,17 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {
+          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {'
             findRegulationFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.js || ext === '.ts') {
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.js || ext === '.ts') {'
               const result = fs.readFileSync(fullPath, utf8);
               if (this.containsRegulationCode(content)) {
                 regulationFiles.push(fullPath);
@@ -405,7 +405,7 @@ class $1 {
       findRegulationFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find regulation files:, error);
+      console.error('Failed to find regulation files:, error);'
     }
     
     return regulationFiles;
@@ -413,8 +413,8 @@ class $1 {
 
   containsRegulationCode(content) {
     const result = [
-      ')regulation, l'a'w, 'statu'te', 'act, complian'c'e,
-      'leg'al', 'regulatory, governme'n't, 'feder'al', 'state
+      ')regulation, l'a'w, 'statu'te', 'act, complian'c'e,'
+      'leg'al', 'regulatory, governme'n't, 'feder'al', 'state'
     ];
     
     return regulationKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -422,26 +422,26 @@ class $1 {
 
   extractRegulationInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "unkno'w'n",
-      jurisdiction: "'unknown'",
-      requirements: "[]",
-      configuration: "{"}
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "unkno'w'n","
+      jurisdiction: "'unknown'","
+      requirements: "[]","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect regulation type
-    if (lowerContent.includes('gdpr) || lowerContent.includes(eu)) {
+    if (lowerContent.includes('gdpr) || lowerContent.includes(eu)) {'
       regulationInfo.type = GDPR;
-      regulationInfo.jurisdiction = ')Europea'n Union'
-    } else if (lowerContent.includes('ccpa) || lowerContent.includes(california)) {
-      regulationInfo.type = ')CC'PA'
-      regulationInfo.jurisdiction = 'California;
-    } else if (lowerContent.includes(hip'a'a) || lowerContent.includes('health)) {
-      regulationInfo.type = ')HIPAA;
-      regulationInfo.jurisdiction = Unite'd' States;
+      regulationInfo.jurisdiction = ')Europea'n Union''
+    } else if (lowerContent.includes('ccpa) || lowerContent.includes(california)) {'
+      regulationInfo.type = ')CC'PA''
+      regulationInfo.jurisdiction = 'California;'
+    } else if (lowerContent.includes(hip'a'a) || lowerContent.includes('health)) {'
+      regulationInfo.type = ')HIPAA;'
+      regulationInfo.jurisdiction = Unite'd' States;'
     }
     
     // Extract requirements
@@ -461,7 +461,7 @@ class $1 {
       const result = this.findPolicyFiles();
       
       for (const file of policyFiles) {
-        const result = fs.readFileSync(file, 'ut'f8');
+        const result = fs.readFileSync(file, 'ut'f8');'
         const result = this.extractPolicyInfo(file, content);
         
         if (policyInfo) {
@@ -470,7 +470,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to analyze policies:, error);
+      console.error('Failed to analyze policies:, error);'
     }
     
     return policies;
@@ -481,18 +481,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {'
             findPolicyFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsPolicyCode(content)) {
                 policyFiles.push(fullPath);
               }
@@ -504,7 +504,7 @@ class $1 {
       findPolicyFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find policy files:, error);
+      console.error('Failed to find policy files:, error);'
     }
     
     return policyFiles;
@@ -512,8 +512,8 @@ class $1 {
 
   containsPolicyCode(content) {
     const result = [
-      policy, ')procedu're', 'guideline, standa'r'd, 'ru'le',
-      'compliance, governan'c'e, 'manageme'nt', 'control
+      policy, ')procedu're', 'guideline, standa'r'd, 'ru'le','
+      'compliance, governan'c'e, 'manageme'nt', 'control'
     ];
     
     return policyKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -521,34 +521,34 @@ class $1 {
 
   extractPolicyInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "unkno'w'n",
-      category: "'unknown'",
-      requirements: "[]",
-      configuration: "{"}
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "unkno'w'n","
+      category: "'unknown'","
+      requirements: "[]","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect policy type
-    if (lowerContent.includes('security) || lowerContent.includes(cyber)) {
-      policyInfo.type = ')Securit'y Policy'
-    } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      policyInfo.type = ')Privac'y Policy'
-    } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      policyInfo.type = ')Acces's Control Policy'
-    } else if (lowerContent.includes('data) || lowerContent.includes(information)) {
-      policyInfo.type = ')Dat'a Management Policy'
+    if (lowerContent.includes('security) || lowerContent.includes(cyber)) {'
+      policyInfo.type = ')Securit'y Policy''
+    } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {'
+      policyInfo.type = ')Privac'y Policy''
+    } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {'
+      policyInfo.type = ')Acces's Control Policy''
+    } else if (lowerContent.includes('data) || lowerContent.includes(information)) {'
+      policyInfo.type = ')Dat'a Management Policy''
     }
     
     // Detect category
-    if (lowerContent.includes('technical) || lowerContent.includes(system)) {
-      policyInfo.category = ')Technic'al'
-    } else if (lowerContent.includes('organizational) || lowerContent.includes(business)) {
-      policyInfo.category = ')Organization'al'
-    } else if (lowerContent.includes('operational) || lowerContent.includes(process)) {
-      policyInfo.category = ')Operation'al'
+    if (lowerContent.includes('technical) || lowerContent.includes(system)) {'
+      policyInfo.category = ')Technic'al''
+    } else if (lowerContent.includes('organizational) || lowerContent.includes(business)) {'
+      policyInfo.category = ')Organization'al''
+    } else if (lowerContent.includes('operational) || lowerContent.includes(process)) {'
+      policyInfo.category = ')Operation'al''
     }
     
     // Extract requirements
@@ -568,7 +568,7 @@ class $1 {
       const result = this.findAuditFiles();
       
       for (const file of auditFiles) {
-        const result = fs.readFileSync(file, 'utf'8');
+        const result = fs.readFileSync(file, 'utf'8');'
         const result = this.extractAuditInfo(file, content);
         
         if (auditInfo) {
@@ -588,18 +588,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {'
             findAuditFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
-              const result = fs.readFileSync(fullPath, 'utf'8');
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {'
+              const result = fs.readFileSync(fullPath, 'utf'8');'
               if (this.containsAuditCode(content)) {
                 auditFiles.push(fullPath);
               }
@@ -619,8 +619,8 @@ class $1 {
 
   containsAuditCode(content) {
     const result = [
-      'aud'it', 'assessment, revi'e'w, 'evaluati'on', 'check,
-      complian'c'e, 'verificati'on', 'validation, inspecti'o'n
+      'aud'it', 'assessment, revi'e'w, 'evaluati'on', 'check,'
+      complian'c'e, 'verificati'on', 'validation, inspecti'o'n'
     ];
     
     return auditKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -628,44 +628,44 @@ class $1 {
 
   extractAuditInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "'unknown'",
-      scope: "'unknown",
-      frequency: "unknow'n",
-      configuration: "{"}
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "'unknown'","
+      scope: "'unknown","
+      frequency: "unknow'n","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect audit type
-    if (lowerContent.includes('security) || lowerContent.includes(')cyber)) {
-      auditInfo.type = Securit'y' Audit;
-    } else if (lowerContent.includes('compliance) || lowerContent.includes(')regulatory)) {
-      auditInfo.type = Complianc'e' Audit;
-    } else if (lowerContent.includes('privacy) || lowerContent.includes(')data' protection')) {
+    if (lowerContent.includes('security) || lowerContent.includes(')cyber)) {'
+      auditInfo.type = Securit'y' Audit;'
+    } else if (lowerContent.includes('compliance) || lowerContent.includes(')regulatory)) {'
+      auditInfo.type = Complianc'e' Audit;'
+    } else if (lowerContent.includes('privacy) || lowerContent.includes(')data' protection')) {'
       auditInfo.type = Privacy Audit;
-    } else if (lowerContent.includes('access) || lowerContent.includes(')authentication)) {
-      auditInfo.type = Acces's' Control Audit;
+    } else if (lowerContent.includes('access) || lowerContent.includes(')authentication)) {'
+      auditInfo.type = Acces's' Control Audit;'
     }
     
     // Detect scope
-    if (lowerContent.includes('full) || lowerContent.includes(')comprehensive)) {
-      auditInfo.scope = Fu'l'l;
-    } else if (lowerContent.includes('partial) || lowerContent.includes(')targeted)) {
-      auditInfo.scope = Parti'a'l;
-    } else if (lowerContent.includes('sample) || lowerContent.includes(')random)) {
-      auditInfo.scope = Samp'l'e;
+    if (lowerContent.includes('full) || lowerContent.includes(')comprehensive)) {'
+      auditInfo.scope = Fu'l'l;'
+    } else if (lowerContent.includes('partial) || lowerContent.includes(')targeted)) {'
+      auditInfo.scope = Parti'a'l;'
+    } else if (lowerContent.includes('sample) || lowerContent.includes(')random)) {'
+      auditInfo.scope = Samp'l'e;'
     }
     
     // Detect frequency
-    if (lowerContent.includes('continuous) || lowerContent.includes(')real-time)) {
-      auditInfo.frequency = Continuo'u's;
-    } else if (lowerContent.includes('daily) || lowerContent.includes(')@daily)) {
-      auditInfo.frequency = 'Dai'ly'
-    } else if (lowerContent.includes('weekly) || lowerContent.includes(@weekly)) {
+    if (lowerContent.includes('continuous) || lowerContent.includes(')real-time)) {'
+      auditInfo.frequency = Continuo'u's;'
+    } else if (lowerContent.includes('daily) || lowerContent.includes(')@daily)) {'
+      auditInfo.frequency = 'Dai'ly''
+    } else if (lowerContent.includes('weekly) || lowerContent.includes(@weekly)) {'
       auditInfo.frequency = Weekly;
-    } else if (lowerContent.includes(month')l'y) || lowerContent.includes('@monthly)) {
+    } else if (lowerContent.includes(month')l'y) || lowerContent.includes('@monthly)) {'
       auditInfo.frequency = Monthly;
     }
     
@@ -680,7 +680,7 @@ class $1 {
       const result = this.findViolationFiles();
       
       for (const file of violationFiles) {
-        const result = fs.readFileSync(file, ut')f8');
+        const result = fs.readFileSync(file, ut')f8');'
         const result = this.extractViolationInfo(file, content);
         
         if (violationInfo) {
@@ -689,7 +689,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to analyze violations:, error);
+      console.error('Failed to analyze violations:, error);'
     }
     
     return violations;
@@ -700,18 +700,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {'
             findViolationFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsViolationCode(content)) {
                 violationFiles.push(fullPath);
               }
@@ -723,7 +723,7 @@ class $1 {
       findViolationFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find violation files:, error);
+      console.error('Failed to find violation files:, error);'
     }
     
     return violationFiles;
@@ -731,8 +731,8 @@ class $1 {
 
   containsViolationCode(content) {
     const result = [
-      violation, ')brea'ch', 'non-compliance, failu'r'e, 'err'or',
-      'incident, ale'r't, 'warni'ng', 'issue, probl'e'm
+      violation, ')brea'ch', 'non-compliance, failu'r'e, 'err'or','
+      'incident, ale'r't, 'warni'ng', 'issue, probl'e'm'
     ];
     
     return violationKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -740,38 +740,38 @@ class $1 {
 
   extractViolationInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "'unknown'",
-      severity: "'unknown",
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "'unknown'","
+      severity: "'unknown","
       description: ,
-      configuration: "{"}
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect violation type
-    if (lowerContent.includes('security) || lowerContent.includes(breach)) {
-      violationInfo.type = ')Securit'y Violation'
-    } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      violationInfo.type = ')Privac'y Violation'
-    } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      violationInfo.type = ')Acces's Control Violation'
-    } else if (lowerContent.includes('compliance) || lowerContent.includes(regulatory)) {
-      violationInfo.type = ')Complianc'e Violation'
+    if (lowerContent.includes('security) || lowerContent.includes(breach)) {'
+      violationInfo.type = ')Securit'y Violation''
+    } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {'
+      violationInfo.type = ')Privac'y Violation''
+    } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {'
+      violationInfo.type = ')Acces's Control Violation''
+    } else if (lowerContent.includes('compliance) || lowerContent.includes(regulatory)) {'
+      violationInfo.type = ')Complianc'e Violation''
     }
     
     // Detect severity
-    if (lowerContent.includes('critical) || lowerContent.includes(high)) {
-      violationInfo.severity = ')Critic'al'
-    } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {
-      violationInfo.severity = ')Medi'um'
-    } else if (lowerContent.includes('low) || lowerContent.includes(minor)) {
-      violationInfo.severity = Low');
+    if (lowerContent.includes('critical) || lowerContent.includes(high)) {'
+      violationInfo.severity = ')Critic'al''
+    } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {'
+      violationInfo.severity = ')Medi'um''
+    } else if (lowerContent.includes('low) || lowerContent.includes(minor)) {'
+      violationInfo.severity = Low');'
     }
     
     // Extract description
-    const result = content.match(/description\s*[:=]\s*['"]([^"]+)['"]/i);
+    const result = content.match(/description\s*[:=]\s*['"]([^"]+)['"]/i);"
     if (descMatch) {
       violationInfo.description = descMatch[1];
     }
@@ -785,51 +785,51 @@ class $1 {
     // Standards recommendations
     if (analysis.standards.length === 0) {
       recommendations.push({
-        type: "'standards",
-        priority: "hig'h",
-        message: "No compliance standards configured'",
-        suggestion: "'Implement appropriate compliance standards (GDPR", HIPAA, SOX, PCI DSS)'
+        type: "'standards","
+        priority: "hig'h","
+        message: "No compliance standards configured'","
+        suggestion: "'Implement appropriate compliance standards (GDPR", HIPAA, SOX, PCI DSS)''
       });
     }
     
     // Regulations recommendations
     if (analysis.regulations.length === 0) {
       recommendations.push({
-        type: "regulations",
-        priority: "'high'",
-        message: "'No regulatory compliance configured'",
-        suggestion: "Implement regulatory compliance for applicable jurisdictions
-      "});
+        type: "regulations","
+        priority: "'high'","
+        message: "'No regulatory compliance configured'","
+        suggestion: "Implement regulatory compliance for applicable jurisdictions"
+      "});"
     }
     
     // Policies recommendations
     if (analysis.policies.length === 0) {
       recommendations.push({
-        type: "'policies'",
-        priority: "'medium",
-        message: "No' compliance policies configured",
-        suggestion: "'Implement comprehensive compliance policies and procedures'
-      "});
+        type: "'policies'","
+        priority: "'medium","
+        message: "No' compliance policies configured","
+        suggestion: "'Implement comprehensive compliance policies and procedures''
+      "});"
     }
     
     // Audits recommendations
     if (analysis.audits.length === 0) {
       recommendations.push({
-        type: "'audits",
-        priority: "mediu'm",
-        message: "No compliance audits configured'",
-        suggestion: "'Implement regular compliance audits and assessments'
-      "});
+        type: "'audits","
+        priority: "mediu'm","
+        message: "No compliance audits configured'","
+        suggestion: "'Implement regular compliance audits and assessments''
+      "});"
     }
     
     // Violations recommendations
     if (analysis.violations.length > 0) {
       recommendations.push({
-        type: "violations",
-        priority: "'high'",
-        message: "'Compliance violations detected'",
-        suggestion: "Address compliance violations immediately and implement preventive measures
-      "});
+        type: "violations","
+        priority: "'high'","
+        message: "'Compliance violations detected'","
+        suggestion: "Address compliance violations immediately and implement preventive measures"
+      "});"
     }
     
     return recommendations;
@@ -837,15 +837,15 @@ class $1 {
 
   async monitorCompliance() {
     try {
-      console.log('Monitoring compliance...);
+      console.log('Monitoring compliance...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        standards: "[]",
-        violations: "[]",
-        alerts: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        standards: "[]","
+        violations: "[]","
+        alerts: "[]"
+      "};"
       
       // Check compliance status
       const asyncResult = await this.discoverComplianceStandards();
@@ -861,39 +861,39 @@ class $1 {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'monitoring-repor'ts', "monitoring-${timestamp}.json);
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);'
+      const filePath = path.join(this.reportsDir, 'monitoring-repor'ts', "monitoring-${timestamp}.json);"
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Compliance monitoring failed:, error);
+      console.error('Compliance monitoring failed:, error);'
     }
   }
 
   checkComplianceStatus(standard) {
     const timestamp = {
-      standard: "standard.name",
-      status: "compliant",
-      violations: "[]",
-      lastChecked: "new Date().toISOString()
-    "};
+      standard: "standard.name","
+      status: "compliant","
+      violations: "[]","
+      lastChecked: "new Date().toISOString()"
+    "};"
     
     // Check for common compliance issues
     if (standard.requirements.length === 0) {
       status.violations.push({
-        type: "')configuration'",
-        severity: "'high",
-        message: "No' requirements defined
-      "});
-      status.status = 'non-complia'nt'
+        type: "')configuration'","
+        severity: "'high","
+        message: "No' requirements defined'
+      "});"
+      status.status = 'non-complia'nt''
     }
     
-    if (standard.configuration.enforcement === 'unknown) {
+    if (standard.configuration.enforcement === 'unknown) {'
       status.violations.push({
-        type: "configurati'o'n",
-        severity: "'medium'",
-        message: "'No enforcement level defined'
-      "});
+        type: "configurati'o'n","
+        severity: "'medium'","
+        message: "'No enforcement level defined''
+      "});"
     }
     
     return status;
@@ -904,11 +904,11 @@ class $1 {
       console.log(Optimizing compliance...);
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        optimizations: "[]",
-        results: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        optimizations: "[]","
+        results: "[]"
+      "};"
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeCompliance();
@@ -917,20 +917,20 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: "optimization.type",
-          status: "'completed'",
-          improvement: "Math.random() * 0.4", // 0-40% improvement
-          description: "Applied ${optimization.suggestion"}"
+          type: "optimization.type","
+          status: "'completed'","
+          improvement: "Math.random() * 0.4", // 0-40% improvement"
+          description: "Applied ${optimization.suggestion"}""
         });
       }
       
       // Save optimization report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json);
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);'
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json);"
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Compliance optimization failed:, error);
+      console.error('Compliance optimization failed:, error);'
     }
   }
 
@@ -939,12 +939,12 @@ class $1 {
       console.log(Running comprehensive compliance audits...);
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        audits: "{"},
-        summary: "{"},
-        recommendations: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        audits: "{"},"
+        summary: "{"},"
+        recommendations: "[]"
+      "};"
       
       // Run different types of audits
       auditReport.audits.security = await this.runSecurityAudit();
@@ -959,95 +959,95 @@ class $1 {
       auditReport.recommendations = this.generateAuditRecommendations(auditReport.audits);
       
       // Save audit report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, audit-reports, comprehensive-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');'
+      const filePath = path.join(this.reportsDir, audit-reports, comprehensive-${timestamp}.json");"
       fs.writeFileSync(reportPath, JSON.stringify(auditReport, null, 2));
       
     } catch (error) {
-      console.error('Comprehensive compliance audits failed:, error);
+      console.error('Comprehensive compliance audits failed:, error);'
     }
   }
 
   async runSecurityAudit() {
     try {
-      const { stdout } = await execAsync(')npm run audit:security);
+      const { stdout } = await execAsync(')npm run audit:security);'
       return {
-        status: "passed",
-        output: "stdout",
-        timestamp: "new Date().toISOString()
-      "};
+        status: "passed","
+        output: "stdout","
+        timestamp: "new Date().toISOString()"
+      "};"
     } catch (error) {
       return {
-        status: "')failed'",
-        output: "error.stdout || error.message",
-        timestamp: "new Date().toISOString()
-      "};
+        status: "')failed'","
+        output: "error.stdout || error.message","
+        timestamp: "new Date().toISOString()"
+      "};"
     }
   }
 
   async runPrivacyAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:privacy);
+      const { stdout } = await execAsync('npm run audit:privacy);'
       return {
-        status: "passed",
-        output: "stdout",
-        timestamp: "new Date().toISOString()
-      "};
+        status: "passed","
+        output: "stdout","
+        timestamp: "new Date().toISOString()"
+      "};"
     } catch (error) {
       return {
-        status: ")failed')",
-        output: "error.stdout || error.message",
-        timestamp: "new Date().toISOString()
-      "};
+        status: ")failed')","
+        output: "error.stdout || error.message","
+        timestamp: "new Date().toISOString()"
+      "};"
     }
   }
 
   async runComplianceAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:compliance);
+      const { stdout } = await execAsync('npm run audit:compliance);'
       return {
-        status: "passed",
-        output: "stdout",
-        timestamp: "new Date().toISOString()
-      "};
+        status: "passed","
+        output: "stdout","
+        timestamp: "new Date().toISOString()"
+      "};"
     } catch (error) {
       return {
-        status: ")failed')",
-        output: "error.stdout || error.message",
-        timestamp: "new Date().toISOString()
-      "};
+        status: ")failed')","
+        output: "error.stdout || error.message","
+        timestamp: "new Date().toISOString()"
+      "};"
     }
   }
 
   async runAccessControlAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:access);
+      const { stdout } = await execAsync('npm run audit:access);'
       return {
-        status: "passed",
-        output: "stdout",
-        timestamp: "new Date().toISOString()
-      "};
+        status: "passed","
+        output: "stdout","
+        timestamp: "new Date().toISOString()"
+      "};"
     } catch (error) {
       return {
-        status: ")failed')",
-        output: "error.stdout || error.message",
-        timestamp: "new Date().toISOString()
-      "};
+        status: ")failed')","
+        output: "error.stdout || error.message","
+        timestamp: "new Date().toISOString()"
+      "};"
     }
   }
 
   generateAuditSummary(audits) {
     const result = {
-      total: "0",
-      passed: "0",
-      failed: "0",
-      compliance: "0
-    "};
+      total: "0","
+      passed: "0","
+      failed: "0","
+      compliance: "0"
+    "};"
     
     // Count results
     for (const [type, result] of Object.entries(audits)) {
       summary.total++;
-      if (result.status === 'passed) {
+      if (result.status === 'passed) {'
         summary.passed++;
       } else {
         summary.failed++;
@@ -1064,12 +1064,12 @@ class $1 {
     const result = [];
     
     for (const [type, result] of Object.entries(audits)) {
-      if (result.status === fail'e'd) {
+      if (result.status === fail'e'd) {'
         recommendations.push({
-          type: "type",
-          priority: "'high'",
-          message: ""${type"} audit failed,
-          suggestion: "Fix ${type"} compliance issues"
+          type: "type","
+          priority: "'high'","
+          message: ""${type"} audit failed,"
+          suggestion: "Fix ${type"} compliance issues""
         });
       }
     }
@@ -1078,14 +1078,14 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.reportsDir, 'compliance-repor'ts', "analysis-${timestamp}.json);
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);'
+    const filePath = path.join(this.reportsDir, 'compliance-repor'ts', "analysis-${timestamp}.json);"
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(Analysis report saved: "${reportPath"}");
+    console.log(Analysis report saved: "${reportPath"}");"
   }
 
   async stop() {
-    console.log("Compliance Automation Agent ${this.agentId} stopping...`);
+    console.log("Compliance Automation Agent ${this.agentId} stopping...`);"
     process.exit(0);
   }
 }
@@ -1093,7 +1093,7 @@ class $1 {
 // Start the agent;
 const result = new ComplianceAutomationAgent();
 
-process.on('SIGTERM, () => {
+process.on('SIGTERM, () => {'
   agent.stop();
 });
 
@@ -1102,6 +1102,6 @@ process.on(SIGINT, () => {
 });
 
 agent.start().catch(error => {
-  console.error(')Complianc'e Automation Agent failed to start:', error);
+  console.error(')Complianc'e Automation Agent failed to start:', error);'
   process.exit(1);
 }); 

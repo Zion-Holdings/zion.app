@@ -1,39 +1,39 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { exec } = require(chil')d'_process);
-const { promisify } = require('util);
+const { exec } = require(chil')d'_process);'
+const { promisify } = require('util);'
 ;
 const result = promisify(exec);
 
-class $1 {
+class variable1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
-    this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, ../reports/cloud-infrastructure-automation');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});'
+    this.projectRoot = path.resolve(__dirname, '../..');'
+    this.reportsDir = path.join(__dirname, ../reports/cloud-infrastructure-automation');'
     this.ensureDirectories();
   }
 
   ensureDirectories() {
     const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'infrastructure-reports),
-      path.join(this.reportsDir, cost-analys'i's),
-      path.join(this.reportsDir, 'security-repor'ts'),
-      path.join(this.reportsDir, 'performance-reports),
-      path.join(this.reportsDir, compliance-repor't's)
+      path.join(this.reportsDir, 'infrastructure-reports),'
+      path.join(this.reportsDir, cost-analys'i's),'
+      path.join(this.reportsDir, 'security-repor'ts'),'
+      path.join(this.reportsDir, 'performance-reports),'
+      path.join(this.reportsDir, compliance-repor't's)'
     ];
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});
+        fs.mkdirSync(dir, { recursive: "true "});"
       }
     });
   }
 
   async start() {
-    console.log("Cloud Infrastructure Automation Agent ${this.agentId} started);
+    console.log("Cloud Infrastructure Automation Agent ${this.agentId} started);"
     
     // Initial infrastructure analysis
     await this.analyzeInfrastructure();
@@ -56,19 +56,19 @@ class $1 {
 
   async analyzeInfrastructure() {
     try {
-      console.log('Performing comprehensive cloud infrastructure analysis...);
+      console.log('Performing comprehensive cloud infrastructure analysis...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        cloudProviders: "[]",
-        resources: "[]",
-        security: "{"},
-        performance: "{"},
-        costs: "{"},
-        compliance: "{"},
-        recommendations: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        cloudProviders: "[]","
+        resources: "[]","
+        security: "{"},"
+        performance: "{"},"
+        costs: "{"},"
+        compliance: "{"},"
+        recommendations: "[]"
+      "};"
       
       // Discover cloud providers
       analysis.cloudProviders = await this.discoverCloudProviders();
@@ -94,7 +94,7 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log(')Cloud' infrastructure analysis completed');
+      console.log(')Cloud' infrastructure analysis completed');'
       
     } catch (error) {
       console.error(Cloud infrastructure analysis failed:, error);
@@ -108,31 +108,31 @@ class $1 {
       // Check for AWS
       if (this.hasAWSConfig()) {
         providers.push({
-          name: "'AWS'",
-          services: "await this.discoverAWSServices()",
-          regions: "await this.discoverAWSRegions()",
-          config: "this.getAWSConfig()
-        "});
+          name: "'AWS'","
+          services: "await this.discoverAWSServices()","
+          regions: "await this.discoverAWSRegions()","
+          config: "this.getAWSConfig()"
+        "});"
       }
       
       // Check for Azure
       if (this.hasAzureConfig()) {
         providers.push({
-          name: "'Azure",
-          services: "await this.discoverAzureServices()",
-          regions: "await this.discoverAzureRegions()",
-          config: "this.getAzureConfig()
-        "});
+          name: "'Azure","
+          services: "await this.discoverAzureServices()","
+          regions: "await this.discoverAzureRegions()","
+          config: "this.getAzureConfig()"
+        "});"
       }
       
       // Check for Google Cloud
       if (this.hasGCPConfig()) {
         providers.push({
-          name: "Google' Cloud",
-          services: "await this.discoverGCPServices()",
-          regions: "await this.discoverGCPRegions()",
-          config: "this.getGCPConfig()
-        "});
+          name: "Google' Cloud","
+          services: "await this.discoverGCPServices()","
+          regions: "await this.discoverGCPRegions()","
+          config: "this.getGCPConfig()"
+        "});"
       }
       
       // Check for other cloud providers
@@ -140,7 +140,7 @@ class $1 {
       providers.push(...otherProviders);
       
     } catch (error) {
-      console.error('Failed to discover cloud providers:, error);
+      console.error('Failed to discover cloud providers:, error);'
     }
     
     return providers;
@@ -148,10 +148,10 @@ class $1 {
 
   hasAWSConfig() {
     const filePath = [
-      path.join(this.projectRoot, ').aws),
-      path.join(this.projectRoot, 'aws-conf'ig'),
-      path.join(this.projectRoot, 'terraform, a'w's),
-      path.join(this.projectRoot, 'cloudformati'on')
+      path.join(this.projectRoot, ').aws),'
+      path.join(this.projectRoot, 'aws-conf'ig'),'
+      path.join(this.projectRoot, 'terraform, a'w's),'
+      path.join(this.projectRoot, 'cloudformati'on')'
     ];
     
     return awsConfigPaths.some(path => fs.existsSync(path)) ||
@@ -161,9 +161,9 @@ class $1 {
 
   hasAzureConfig() {
     const filePath = [
-      path.join(this.projectRoot, '.azure),
-      path.join(this.projectRoot, 'azure-conf'ig'),
-      path.join(this.projectRoot, 'terraform, azu'r'e)
+      path.join(this.projectRoot, '.azure),'
+      path.join(this.projectRoot, 'azure-conf'ig'),'
+      path.join(this.projectRoot, 'terraform, azu'r'e)'
     ];
     
     return azureConfigPaths.some(path => fs.existsSync(path)) ||
@@ -173,9 +173,9 @@ class $1 {
 
   hasGCPConfig() {
     const filePath = [
-      path.join(this.projectRoot, '.gcp'),
+      path.join(this.projectRoot, '.gcp'),'
       path.join(this.projectRoot, gcp-config),
-      path.join(this.projectRoot, 'terrafo'rm', 'gcp)
+      path.join(this.projectRoot, 'terrafo'rm', 'gcp)'
     ];
     
     return gcpConfigPaths.some(path => fs.existsSync(path)) ||
@@ -191,7 +191,7 @@ class $1 {
       const result = this.findAWSFiles();
       
       for (const file of awsServiceFiles) {
-        const result = fs.readFileSync(file, ut'f'8);
+        const result = fs.readFileSync(file, ut'f'8);'
         const result = this.extractAWSServiceInfo(file, content);
         
         if (serviceInfo) {
@@ -200,7 +200,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to discover AWS services:, error);
+      console.error('Failed to discover AWS services:, error);'
     }
     
     return services;
@@ -211,18 +211,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {
+          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {'
             findAWSFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsAWSConfig(content)) {
                 awsFiles.push(fullPath);
               }
@@ -234,7 +234,7 @@ class $1 {
       findAWSFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find AWS files:, error);
+      console.error('Failed to find AWS files:, error);'
     }
     
     return awsFiles;
@@ -242,8 +242,8 @@ class $1 {
 
   containsAWSConfig(content) {
     const result = [
-      aws, ')amaz'on', 'ec'2', s'3', lambda, 'r'ds', 'dynamodb,
-      cloudformati'o'n, 'elasticbeansta'lk', 'ecs, e'k's, 'ap'i gateway'
+      aws, ')amaz'on', 'ec'2', s'3', lambda, 'r'ds', 'dynamodb,'
+      cloudformati'o'n, 'elasticbeansta'lk', 'ecs, e'k's, 'ap'i gateway''
     ];
     
     return awsKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -251,33 +251,33 @@ class $1 {
 
   extractAWSServiceInfo(file, content) {
     const result = {
-      file: "file",
-      service: "'unknown",
-      type: "unknow'n",
-      configuration: "{"}
+      file: "file","
+      service: "'unknown","
+      type: "unknow'n","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect AWS services
-    if (lowerContent.includes(ec2') || lowerContent.includes('instance)) {
+    if (lowerContent.includes(ec2') || lowerContent.includes('instance)) {'
       serviceInfo.service = EC2;
-      serviceInfo.type = ')compu'te'
-    } else if (lowerContent.includes('s3) || lowerContent.includes(bucket)) {
-      serviceInfo.service = S')3'
+      serviceInfo.type = ')compu'te''
+    } else if (lowerContent.includes('s3) || lowerContent.includes(bucket)) {'
+      serviceInfo.service = S')3''
       serviceInfo.type = storage;
-    } else if (lowerContent.includes('lambda) || lowerContent.includes(')function)) {
-      serviceInfo.service = Lamb'd'a;
-      serviceInfo.type = 'serverle'ss'
-    } else if (lowerContent.includes('rds) || lowerContent.includes(database)) {
-      serviceInfo.service = RDS');
-      serviceInfo.type = 'database;
-    } else if (lowerContent.includes(dynamo'd'b)) {
-      serviceInfo.service = 'Dynamo'DB'
-      serviceInfo.type = 'database;
-    } else if (lowerContent.includes(ap'i' gateway)) {
-      serviceInfo.service = 'AP'I Gateway'
-      serviceInfo.type = 'api;
+    } else if (lowerContent.includes('lambda) || lowerContent.includes(')function)) {'
+      serviceInfo.service = Lamb'd'a;'
+      serviceInfo.type = 'serverle'ss''
+    } else if (lowerContent.includes('rds) || lowerContent.includes(database)) {'
+      serviceInfo.service = RDS');'
+      serviceInfo.type = 'database;'
+    } else if (lowerContent.includes(dynamo'd'b)) {'
+      serviceInfo.service = 'Dynamo'DB''
+      serviceInfo.type = 'database;'
+    } else if (lowerContent.includes(ap'i' gateway)) {'
+      serviceInfo.service = 'AP'I Gateway''
+      serviceInfo.type = 'api;'
     }
     
     // Extract configuration
@@ -288,35 +288,35 @@ class $1 {
 
   extractAWSConfiguration(content) {
     const result = {
-      region: "unkno'w'n",
-      environment: "'unknown'",
-      tags: "[]",
-      settings: "{"}
+      region: "unkno'w'n","
+      environment: "'unknown'","
+      tags: "[]","
+      settings: "{"}"
     };
     
     // Extract region
-    const result = content.match(/region\s*[:=]\s*[']([^"]+)["']/i);
+    const result = content.match(/region\s*[:=]\s*[']([^"]+)["']/i);'
     if (regionMatch) {
       config.region = regionMatch[1];
     }
     
     // Extract environment
-    if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on'
-    } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng'
-    } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt'
+    if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {'
+      config.environment = ')producti'on''
+    } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {'
+      config.environment = ')stagi'ng''
+    } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {'
+      config.environment = ')developme'nt''
     }
     
     // Extract tags
     const result = content.match(/tags\s*[:=]\s*{([^}]+)}/gi);
     if (tagMatches) {
       for (const match of tagMatches) {
-        const result = match.match(/(\w+)\s*[:=]\s*[']([^]+)["']/g);
+        const result = match.match(/(\w+)\s*[:=]\s*[']([^]+)["']/g);'
         if (tagMatches) {
           for (const tagMatch of tagMatches) {
-            const [key, value] = tagMatch.split(':).map(s => s.trim().replace(/["]/g, ));
+            const [key, value] = tagMatch.split(':).map(s => s.trim().replace(/["]/g, ));"
             config.tags.push({ key, value });
           }
         }
@@ -329,8 +329,8 @@ class $1 {
   async discoverAWSRegions() {
     // Common AWS regions
     return [
-      ')us-east'-1', 'us-east-'2', us-west'-'1, 'us-west'-2',
-      'eu-west-'1', eu-central'-'1, 'ap-southeast'-1', 'ap-southeast-'2'
+      ')us-east'-1', 'us-east-'2', us-west'-'1, 'us-west'-2','
+      'eu-west-'1', eu-central'-'1, 'ap-southeast'-1', 'ap-southeast-'2''
     ];
   }
 
@@ -351,7 +351,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to discover Azure services:, error);
+      console.error('Failed to discover Azure services:, error);'
     }
     
     return services;
@@ -362,18 +362,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {
+          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {'
             findAzureFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsAzureConfig(content)) {
                 azureFiles.push(fullPath);
               }
@@ -385,7 +385,7 @@ class $1 {
       findAzureFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find Azure files:, error);
+      console.error('Failed to find Azure files:, error);'
     }
     
     return azureFiles;
@@ -393,8 +393,8 @@ class $1 {
 
   containsAzureConfig(content) {
     const result = [
-      azure, ')microso'ft', 'vm', 'storage, functi'o'n, sql',
-      'app' service', container, 'kubernet'es', 'aks
+      azure, ')microso'ft', 'vm', 'storage, functi'o'n, sql','
+      'app' service', container, 'kubernet'es', 'aks'
     ];
     
     return azureKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -402,33 +402,33 @@ class $1 {
 
   extractAzureServiceInfo(file, content) {
     const result = {
-      file: "file",
-      service: "unkno'w'n",
-      type: "'unknown'",
-      configuration: "{"}
+      file: "file","
+      service: "unkno'w'n","
+      type: "'unknown'","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect Azure services
-    if (lowerContent.includes('vm) || lowerContent.includes(virtual') machine')) {
+    if (lowerContent.includes('vm) || lowerContent.includes(virtual') machine')) {'
       serviceInfo.service = Virtual Machine;
-      serviceInfo.type = 'compu'te'
-    } else if (lowerContent.includes('storage) || lowerContent.includes(blob)) {
-      serviceInfo.service = ')Stora'ge'
-      serviceInfo.type = 'storage;
-    } else if (lowerContent.includes(functi'o'n) || lowerContent.includes('serverless)) {
-      serviceInfo.service = ')Functions;
-      serviceInfo.type = serverle's's;
-    } else if (lowerContent.includes(sql') || lowerContent.includes('database)) {
+      serviceInfo.type = 'compu'te''
+    } else if (lowerContent.includes('storage) || lowerContent.includes(blob)) {'
+      serviceInfo.service = ')Stora'ge''
+      serviceInfo.type = 'storage;'
+    } else if (lowerContent.includes(functi'o'n) || lowerContent.includes('serverless)) {'
+      serviceInfo.service = ')Functions;'
+      serviceInfo.type = serverle's's;'
+    } else if (lowerContent.includes(sql') || lowerContent.includes('database)) {'
       serviceInfo.service = SQL Database;
-      serviceInfo.type = ')databa'se'
-    } else if (lowerContent.includes('app service) || lowerContent.includes(web app)) {
-      serviceInfo.service = ')Ap'p Service'
-      serviceInfo.type = 'web;
-    } else if (lowerContent.includes(a'k's) || lowerContent.includes('kubernetes)) {
-      serviceInfo.service = ')AKS;
-      serviceInfo.type = contain'e'r;
+      serviceInfo.type = ')databa'se''
+    } else if (lowerContent.includes('app service) || lowerContent.includes(web app)) {'
+      serviceInfo.service = ')Ap'p Service''
+      serviceInfo.type = 'web;'
+    } else if (lowerContent.includes(a'k's) || lowerContent.includes('kubernetes)) {'
+      serviceInfo.service = ')AKS;'
+      serviceInfo.type = contain'e'r;'
     }
     
     // Extract configuration
@@ -439,25 +439,25 @@ class $1 {
 
   extractAzureConfiguration(content) {
     const result = {
-      region: "'unknown'",
-      environment: "'unknown",
-      tags: "[]",
-      settings: "{"}
+      region: "'unknown'","
+      environment: "'unknown","
+      tags: "[]","
+      settings: "{"}"
     };
     
     // Extract region
-    const result = content.match(/location\s*[:=]\s*[]([^]+)["']/i);
+    const result = content.match(/location\s*[:=]\s*[]([^]+)["']/i);'
     if (regionMatch) {
       config.region = regionMatch[1];
     }
     
     // Extract environment
-    if (content.toLowerCase().includes(production) || content.toLowerCase().includes('prod)) {
-      config.environment = ')production;
-    } else if (content.toLowerCase().includes(stagi'n'g) || content.toLowerCase().includes('stage)) {
-      config.environment = ')staging;
-    } else if (content.toLowerCase().includes(developme'n't) || content.toLowerCase().includes(dev')) {
-      config.environment = 'development;
+    if (content.toLowerCase().includes(production) || content.toLowerCase().includes('prod)) {'
+      config.environment = ')production;'
+    } else if (content.toLowerCase().includes(stagi'n'g) || content.toLowerCase().includes('stage)) {'
+      config.environment = ')staging;'
+    } else if (content.toLowerCase().includes(developme'n't) || content.toLowerCase().includes(dev')) {'
+      config.environment = 'development;'
     }
     
     return config;
@@ -466,8 +466,8 @@ class $1 {
   async discoverAzureRegions() {
     // Common Azure regions
     return [
-      east'u's, 'eastu's2', 'westus, westu's'2,
-      'northeuro'pe', 'westeurope, southeastas'i'a, 'eastas'ia'
+      east'u's, 'eastu's2', 'westus, westu's'2,'
+      'northeuro'pe', 'westeurope, southeastas'i'a, 'eastas'ia''
     ];
   }
 
@@ -479,7 +479,7 @@ class $1 {
       const result = this.findGCPFiles();
       
       for (const file of gcpServiceFiles) {
-        const result = fs.readFileSync(file, 'utf'8');
+        const result = fs.readFileSync(file, 'utf'8');'
         const result = this.extractGCPServiceInfo(file, content);
         
         if (serviceInfo) {
@@ -499,17 +499,17 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {'
             findGCPFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {'
               const result = fs.readFileSync(fullPath, utf8);
               if (this.containsGCPConfig(content)) {
                 gcpFiles.push(fullPath);
@@ -522,7 +522,7 @@ class $1 {
       findGCPFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find GCP files:, error);
+      console.error('Failed to find GCP files:, error);'
     }
     
     return gcpFiles;
@@ -530,8 +530,8 @@ class $1 {
 
   containsGCPConfig(content) {
     const result = [
-      ')gcp, goog'l'e, 'compu'te', 'storage, clou'd' function,
-      'clou'd sql', 'app' engine', kubernetes, 'g'ke'
+      ')gcp, goog'l'e, 'compu'te', 'storage, clou'd' function,'
+      'clou'd sql', 'app' engine', kubernetes, 'g'ke''
     ];
     
     return gcpKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -539,33 +539,33 @@ class $1 {
 
   extractGCPServiceInfo(file, content) {
     const result = {
-      file: "file",
-      service: "'unknown",
-      type: "unknow'n",
-      configuration: "{"}
+      file: "file","
+      service: "'unknown","
+      type: "unknow'n","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect GCP services
-    if (lowerContent.includes('compute) || lowerContent.includes(')instance)) {
-      serviceInfo.service = Comput'e' Engine;
-      serviceInfo.type = 'compu'te'
-    } else if (lowerContent.includes('storage) || lowerContent.includes(bucket)) {
-      serviceInfo.service = ')Clou'd Storage'
-      serviceInfo.type = 'storage;
-    } else if (lowerContent.includes(clou'd' function) || lowerContent.includes('function)) {
-      serviceInfo.service = ')Cloud' Functions'
+    if (lowerContent.includes('compute) || lowerContent.includes(')instance)) {'
+      serviceInfo.service = Comput'e' Engine;'
+      serviceInfo.type = 'compu'te''
+    } else if (lowerContent.includes('storage) || lowerContent.includes(bucket)) {'
+      serviceInfo.service = ')Clou'd Storage''
+      serviceInfo.type = 'storage;'
+    } else if (lowerContent.includes(clou'd' function) || lowerContent.includes('function)) {'
+      serviceInfo.service = ')Cloud' Functions''
       serviceInfo.type = serverless;
-    } else if (lowerContent.includes('cloud sql) || lowerContent.includes(')sql)) {
-      serviceInfo.service = Clou'd' SQL;
-      serviceInfo.type = 'databa'se'
-    } else if (lowerContent.includes('app engine)) {
+    } else if (lowerContent.includes('cloud sql) || lowerContent.includes(')sql)) {'
+      serviceInfo.service = Clou'd' SQL;'
+      serviceInfo.type = 'databa'se''
+    } else if (lowerContent.includes('app engine)) {'
       serviceInfo.service = App Engine;
-      serviceInfo.type = ')w'eb'
-    } else if (lowerContent.includes('gke) || lowerContent.includes(kubernetes)) {
-      serviceInfo.service = GKE');
-      serviceInfo.type = 'container;
+      serviceInfo.type = ')w'eb''
+    } else if (lowerContent.includes('gke) || lowerContent.includes(kubernetes)) {'
+      serviceInfo.service = GKE');'
+      serviceInfo.type = 'container;'
     }
     
     // Extract configuration
@@ -576,25 +576,25 @@ class $1 {
 
   extractGCPConfiguration(content) {
     const result = {
-      region: "unkno'w'n",
-      environment: "'unknown'",
-      tags: "[]",
-      settings: "{"}
+      region: "unkno'w'n","
+      environment: "'unknown'","
+      tags: "[]","
+      settings: "{"}"
     };
     
     // Extract region
-    const result = content.match(/region\s*[:=]\s*["']([^]+)[']/i);
+    const result = content.match(/region\s*[:=]\s*["']([^]+)[']/i);'
     if (regionMatch) {
       config.region = regionMatch[1];
     }
     
     // Extract environment
-    if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on'
-    } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng'
-    } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt'
+    if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {'
+      config.environment = ')producti'on''
+    } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {'
+      config.environment = ')stagi'ng''
+    } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {'
+      config.environment = ')developme'nt''
     }
     
     return config;
@@ -603,8 +603,8 @@ class $1 {
   async discoverGCPRegions() {
     // Common GCP regions
     return [
-      'us-central'1', us-east1, 'us-wes't1', 'us-west'2',
-      europe-west1, 'europe-wes't2', 'asia-east'1', asia-southeast1
+      'us-central'1', us-east1, 'us-wes't1', 'us-west'2','
+      europe-west1, 'europe-wes't2', 'asia-east'1', asia-southeast1'
     ];
   }
 
@@ -615,7 +615,7 @@ class $1 {
     const result = this.findOtherProviderFiles();
     
     for (const file of otherProviderFiles) {
-      const result = fs.readFileSync(file, 'ut'f8');
+      const result = fs.readFileSync(file, 'ut'f8');'
       const result = this.extractOtherProviderInfo(file, content);
       
       if (providerInfo) {
@@ -631,18 +631,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {'
             findOtherFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsOtherProviderConfig(content)) {
                 otherFiles.push(fullPath);
               }
@@ -654,7 +654,7 @@ class $1 {
       findOtherFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find other provider files:, error);
+      console.error('Failed to find other provider files:, error);'
     }
     
     return otherFiles;
@@ -662,8 +662,8 @@ class $1 {
 
   containsOtherProviderConfig(content) {
     const result = [
-      digitalocean, ')d'o, 'hero'ku', 'netlify, verc'e'l,
-      'cloudfla're', 'linode, vul't'r, 'scalew'ay'
+      digitalocean, ')d'o, 'hero'ku', 'netlify, verc'e'l,'
+      'cloudfla're', 'linode, vul't'r, 'scalew'ay''
     ];
     
     return otherKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -671,24 +671,24 @@ class $1 {
 
   extractOtherProviderInfo(file, content) {
     const result = {
-      file: "file",
-      name: "'unknown",
-      services: "[]",
-      configuration: "{"}
+      file: "file","
+      name: "'unknown","
+      services: "[]","
+      configuration: "{"}"
     };
     
     const result = content.toLowerCase();
     
     // Detect other providers
-    if (lowerContent.includes(digitalocea'n) || lowerContent.includes(do)) {
-      providerInfo.name = 'DigitalOce'an'
-    } else if (lowerContent.includes('heroku)) {
+    if (lowerContent.includes(digitalocea'n) || lowerContent.includes(do)) {'
+      providerInfo.name = 'DigitalOce'an''
+    } else if (lowerContent.includes('heroku)) {'
       providerInfo.name = Heroku;
-    } else if (lowerContent.includes(')netli'fy')) {
-      providerInfo.name = 'Netlify;
-    } else if (lowerContent.includes(verc'e'l)) {
-      providerInfo.name = 'Verc'el'
-    } else if (lowerContent.includes('cloudflare)) {
+    } else if (lowerContent.includes(')netli'fy')) {'
+      providerInfo.name = 'Netlify;'
+    } else if (lowerContent.includes(verc'e'l)) {'
+      providerInfo.name = 'Verc'el''
+    } else if (lowerContent.includes('cloudflare)) {'
       providerInfo.name = Cloudflare;
     }
     
@@ -697,63 +697,63 @@ class $1 {
 
   getAWSConfig() {
     return {
-      region: "process.env.AWS_DEFAULT_REGION || ')us-east'-1'",
-      profile: "process.env.AWS_PROFILE || 'default
-    "};
+      region: "process.env.AWS_DEFAULT_REGION || ')us-east'-1'","
+      profile: "process.env.AWS_PROFILE || 'default'
+    "};"
   }
 
   getAzureConfig() {
     return {
-      subscription: "process.env.AZURE_SUBSCRIPTION_ID",
-      tenant: "process.env.AZURE_TENANT_ID
-    "};
+      subscription: "process.env.AZURE_SUBSCRIPTION_ID","
+      tenant: "process.env.AZURE_TENANT_ID"
+    "};"
   }
 
   getGCPConfig() {
     return {
-      project: "process.env.GCP_PROJECT_ID",
-      region: "process.env.GCP_REGION || us-centra'l'1
-    "};
+      project: "process.env.GCP_PROJECT_ID","
+      region: "process.env.GCP_REGION || us-centra'l'1'
+    "};"
   }
 
   async analyzeResources() {
     const result = {
-      compute: "[]",
-      storage: "[]",
-      database: "[]",
-      network: "[]",
-      security: "[]
-    "};
+      compute: "[]","
+      storage: "[]","
+      database: "[]","
+      network: "[]","
+      security: "[]"
+    "};"
     
     try {
       const asyncResult = await this.discoverCloudProviders();
       
       for (const provider of providers) {
         for (const service of provider.services) {
-          if (service.type === 'compu'te') {
+          if (service.type === 'compu'te') {'
             resources.compute.push({
-              provider: "provider.name",
-              service: "service.service",
-              configuration: "service.configuration
-            "});
-          } else if (service.type === 'storage) {
+              provider: "provider.name","
+              service: "service.service","
+              configuration: "service.configuration"
+            "});"
+          } else if (service.type === 'storage) {'
             resources.storage.push({
-              provider: "provider.name",
-              service: "service.service",
-              configuration: "service.configuration
-            "});
-          } else if (service.type === databa's'e) {
+              provider: "provider.name","
+              service: "service.service","
+              configuration: "service.configuration"
+            "});"
+          } else if (service.type === databa's'e) {'
             resources.database.push({
-              provider: "provider.name",
-              service: "service.service",
-              configuration: "service.configuration
-            "});
+              provider: "provider.name","
+              service: "service.service","
+              configuration: "service.configuration"
+            "});"
           }
         }
       }
       
     } catch (error) {
-      console.error('Failed to analyze resources:, error);
+      console.error('Failed to analyze resources:, error);'
     }
     
     return resources;
@@ -761,19 +761,19 @@ class $1 {
 
   async analyzeSecurity() {
     const result = {
-      encryption: "[]",
-      accessControl: "[]",
-      compliance: "[]",
-      vulnerabilities: "[]",
-      recommendations: "[]
-    "};
+      encryption: "[]","
+      accessControl: "[]","
+      compliance: "[]","
+      vulnerabilities: "[]","
+      recommendations: "[]"
+    "};"
     
     try {
       // Analyze security configurations
       const result = this.findSecurityFiles();
       
       for (const file of securityFiles) {
-        const result = fs.readFileSync(file, ')utf'8');
+        const result = fs.readFileSync(file, ')utf'8');'
         const result = this.extractSecurityInfo(content);
         
         security.encryption.push(...securityInfo.encryption);
@@ -797,17 +797,17 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {'
             findSecurityFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {'
               const result = fs.readFileSync(fullPath, utf8);
               if (this.containsSecurityConfig(content)) {
                 securityFiles.push(fullPath);
@@ -820,7 +820,7 @@ class $1 {
       findSecurityFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find security files:, error);
+      console.error('Failed to find security files:, error);'
     }
     
     return securityFiles;
@@ -828,8 +828,8 @@ class $1 {
 
   containsSecurityConfig(content) {
     const result = [
-      ')security, encrypti'o'n, ssl', 'tls, certifica't'e,
-      iam', 'role, poli'c'y, 'firewa'll', 'vpc, subn'e't
+      ')security, encrypti'o'n, ssl', 'tls, certifica't'e,'
+      iam', 'role, poli'c'y, 'firewa'll', 'vpc, subn'e't'
     ];
     
     return securityKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -837,38 +837,38 @@ class $1 {
 
   extractSecurityInfo(content) {
     const result = {
-      encryption: "[]",
-      accessControl: "[]",
-      compliance: "[]",
-      vulnerabilities: "[]
-    "};
+      encryption: "[]","
+      accessControl: "[]","
+      compliance: "[]","
+      vulnerabilities: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Extract encryption info
-    if (lowerContent.includes(ssl') || lowerContent.includes('tls)) {
+    if (lowerContent.includes(ssl') || lowerContent.includes('tls)) {'
       securityInfo.encryption.push(SSL/TLS);
     }
     
-    if (lowerContent.includes(')encrypti'on') || lowerContent.includes('encrypt)) {
+    if (lowerContent.includes(')encrypti'on') || lowerContent.includes('encrypt)) {'
       securityInfo.encryption.push(Data Encryption);
     }
     
     // Extract access control info
-    if (lowerContent.includes(iam')) || lowerContent.includes('role)) {
+    if (lowerContent.includes(iam')) || lowerContent.includes('role)) {'
       securityInfo.accessControl.push(IAM Roles);
     }
     
-    if (lowerContent.includes(')poli'cy') || lowerContent.includes('permission)) {
+    if (lowerContent.includes(')poli'cy') || lowerContent.includes('permission)) {'
       securityInfo.accessControl.push(Policies);
     }
     
     // Extract compliance info
-    if (lowerContent.includes(')gd'pr') || lowerContent.includes('hipaa)) {
+    if (lowerContent.includes(')gd'pr') || lowerContent.includes('hipaa)) {'
       securityInfo.compliance.push(Data Protection);
     }
     
-    if (lowerContent.includes(sox')) || lowerContent.includes('pci)) {
+    if (lowerContent.includes(sox')) || lowerContent.includes('pci)) {'
       securityInfo.compliance.push(Financial Compliance);
     }
     
@@ -880,20 +880,20 @@ class $1 {
     
     if (security.encryption.length === 0) {
       recommendations.push({
-        type: "')encryption'",
-        priority: "'high",
-        message: "No' encryption configured",
-        suggestion: "'Enable encryption for data at rest and in transit'
-      "});
+        type: "')encryption'","
+        priority: "'high","
+        message: "No' encryption configured","
+        suggestion: "'Enable encryption for data at rest and in transit''
+      "});"
     }
     
     if (security.accessControl.length === 0) {
       recommendations.push({
-        type: "'access-control",
-        priority: "hig'h",
-        message: "No access control configured'",
-        suggestion: "'Implement IAM roles and policies'
-      "});
+        type: "'access-control","
+        priority: "hig'h","
+        message: "No access control configured'","
+        suggestion: "'Implement IAM roles and policies''
+      "});"
     }
     
     return recommendations;
@@ -901,11 +901,11 @@ class $1 {
 
   async analyzePerformance() {
     const result = {
-      metrics: "[]",
-      bottlenecks: "[]",
-      optimizations: "[]",
-      recommendations: "[]
-    "};
+      metrics: "[]","
+      bottlenecks: "[]","
+      optimizations: "[]","
+      recommendations: "[]"
+    "};"
     
     try {
       // Analyze performance configurations
@@ -924,7 +924,7 @@ class $1 {
       performance.recommendations = this.generatePerformanceRecommendations(performance);
       
     } catch (error) {
-      console.error('Failed to analyze performance:, error);
+      console.error('Failed to analyze performance:, error);'
     }
     
     return performance;
@@ -935,18 +935,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {
+          if (stat.isDirectory() && !item.startsWith(').) && item !== 'nod'e_modules') {'
             findPerformanceFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {
-              const result = fs.readFileSync(fullPath, 'ut'f8');
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.tf) {'
+              const result = fs.readFileSync(fullPath, 'ut'f8');'
               if (this.containsPerformanceConfig(content)) {
                 performanceFiles.push(fullPath);
               }
@@ -958,7 +958,7 @@ class $1 {
       findPerformanceFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find performance files:, error);
+      console.error('Failed to find performance files:, error);'
     }
     
     return performanceFiles;
@@ -966,8 +966,8 @@ class $1 {
 
   containsPerformanceConfig(content) {
     const result = [
-      performance, ')monitori'ng', 'metrics, scali'n'g,
-      'loa'd balancer', 'auto' scaling', cdn, 'cac'he'
+      performance, ')monitori'ng', 'metrics, scali'n'g,'
+      'loa'd balancer', 'auto' scaling', cdn, 'cac'he''
     ];
     
     return performanceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -975,24 +975,24 @@ class $1 {
 
   extractPerformanceInfo(content) {
     const result = {
-      metrics: "[]",
-      bottlenecks: "[]",
-      optimizations: "[]
-    "};
+      metrics: "[]","
+      bottlenecks: "[]","
+      optimizations: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Extract performance metrics
-    if (lowerContent.includes('monitoring) || lowerContent.includes(metrics)) {
-      performanceInfo.metrics.push(')Performanc'e Monitoring');
+    if (lowerContent.includes('monitoring) || lowerContent.includes(metrics)) {'
+      performanceInfo.metrics.push(')Performanc'e Monitoring');'
     }
     
-    if (lowerContent.includes('scaling) || lowerContent.includes(auto scaling)) {
-      performanceInfo.optimizations.push(')Aut'o Scaling');
+    if (lowerContent.includes('scaling) || lowerContent.includes(auto scaling)) {'
+      performanceInfo.optimizations.push(')Aut'o Scaling');'
     }
     
-    if (lowerContent.includes('cdn) || lowerContent.includes(cache)) {
-      performanceInfo.optimizations.push(')CD'N/Caching');
+    if (lowerContent.includes('cdn) || lowerContent.includes(cache)) {'
+      performanceInfo.optimizations.push(')CD'N/Caching');'
     }
     
     return performanceInfo;
@@ -1003,20 +1003,20 @@ class $1 {
     
     if (performance.metrics.length === 0) {
       recommendations.push({
-        type: "'monitoring",
-        priority: "mediu'm",
-        message: "No performance monitoring configured'",
-        suggestion: "'Implement performance monitoring and metrics collection'
-      "});
+        type: "'monitoring","
+        priority: "mediu'm","
+        message: "No performance monitoring configured'","
+        suggestion: "'Implement performance monitoring and metrics collection''
+      "});"
     }
     
     if (performance.optimizations.length === 0) {
       recommendations.push({
-        type: "optimization",
-        priority: "'medium'",
-        message: "'No performance optimizations configured'",
-        suggestion: "Implement auto scaling and CDN for better performance
-      "});
+        type: "optimization","
+        priority: "'medium'","
+        message: "'No performance optimizations configured'","
+        suggestion: "Implement auto scaling and CDN for better performance"
+      "});"
     }
     
     return recommendations;
@@ -1024,19 +1024,19 @@ class $1 {
 
   async analyzeCosts() {
     const result = {
-      current: "0",
-      projected: "0",
-      breakdown: "{"},
-      optimizations: "[]",
-      recommendations: "[]
-    "};
+      current: "0","
+      projected: "0","
+      breakdown: "{"},"
+      optimizations: "[]","
+      recommendations: "[]"
+    "};"
     
     try {
       // Analyze cost configurations
       const result = this.findCostFiles();
       
       for (const file of costFiles) {
-        const result = fs.readFileSync(file, 'ut'f8');
+        const result = fs.readFileSync(file, 'ut'f8');'
         const result = this.extractCostInfo(content);
         
         costs.breakdown = { ...costs.breakdown, ...costInfo.breakdown };
@@ -1047,7 +1047,7 @@ class $1 {
       costs.recommendations = this.generateCostRecommendations(costs);
       
     } catch (error) {
-      console.error('Failed to analyze costs:, error);
+      console.error('Failed to analyze costs:, error);'
     }
     
     return costs;
@@ -1058,18 +1058,18 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {'
             findCostFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .tf') {
-              const result = fs.readFileSync(fullPath, 'utf'8');
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .tf') {'
+              const result = fs.readFileSync(fullPath, 'utf'8');'
               if (this.containsCostConfig(content)) {
                 costFiles.push(fullPath);
               }
@@ -1089,8 +1089,8 @@ class $1 {
 
   containsCostConfig(content) {
     const result = [
-      'co'st', 'billing, budg'e't, 'prici'ng', 'reserved,
-      sp'o't, 'savin'gs', 'optimization
+      'co'st', 'billing, budg'e't, 'prici'ng', 'reserved,'
+      sp'o't, 'savin'gs', 'optimization'
     ];
     
     return costKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -1098,32 +1098,32 @@ class $1 {
 
   extractCostInfo(content) {
     const result = {
-      breakdown: "{"},
-      optimizations: "[]
-    "};
+      breakdown: "{"},"
+      optimizations: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Extract cost breakdown
-    if (lowerContent.includes(compu't'e) || lowerContent.includes('instance)) {
-      costInfo.breakdown.compute = ')estimated;
+    if (lowerContent.includes(compu't'e) || lowerContent.includes('instance)) {'
+      costInfo.breakdown.compute = ')estimated;'
     }
     
-    if (lowerContent.includes(stora'g'e) || lowerContent.includes('bucket)) {
-      costInfo.breakdown.storage = ')estimated;
+    if (lowerContent.includes(stora'g'e) || lowerContent.includes('bucket)) {'
+      costInfo.breakdown.storage = ')estimated;'
     }
     
-    if (lowerContent.includes(databa's'e) || lowerContent.includes(rds')) {
-      costInfo.breakdown.database = 'estimated;
+    if (lowerContent.includes(databa's'e) || lowerContent.includes(rds')) {'
+      costInfo.breakdown.database = 'estimated;'
     }
     
     // Extract cost optimizations
-    if (lowerContent.includes(reserv'e'd) || lowerContent.includes('savings)) {
-      costInfo.optimizations.push(')Reserved' Instances');
+    if (lowerContent.includes(reserv'e'd) || lowerContent.includes('savings)) {'
+      costInfo.optimizations.push(')Reserved' Instances');'
     }
     
-    if (lowerContent.includes(spot) || lowerContent.includes('interruptible)) {
-      costInfo.optimizations.push(')Spot' Instances');
+    if (lowerContent.includes(spot) || lowerContent.includes('interruptible)) {'
+      costInfo.optimizations.push(')Spot' Instances');'
     }
     
     return costInfo;
@@ -1134,20 +1134,20 @@ class $1 {
     
     if (Object.keys(costs.breakdown).length === 0) {
       recommendations.push({
-        type: "cost-tracking",
-        priority: "'medium'",
-        message: "'No cost tracking configured'",
-        suggestion: "Implement cost monitoring and budgeting
-      "});
+        type: "cost-tracking","
+        priority: "'medium'","
+        message: "'No cost tracking configured'","
+        suggestion: "Implement cost monitoring and budgeting"
+      "});"
     }
     
     if (costs.optimizations.length === 0) {
       recommendations.push({
-        type: "'cost-optimization'",
-        priority: "'medium",
-        message: "No' cost optimizations configured",
-        suggestion: "'Consider reserved instances and spot instances for cost savings'
-      "});
+        type: "'cost-optimization'","
+        priority: "'medium","
+        message: "No' cost optimizations configured","
+        suggestion: "'Consider reserved instances and spot instances for cost savings''
+      "});"
     }
     
     return recommendations;
@@ -1155,18 +1155,18 @@ class $1 {
 
   async analyzeCompliance() {
     const result = {
-      standards: "[]",
-      requirements: "[]",
-      violations: "[]",
-      recommendations: "[]
-    "};
+      standards: "[]","
+      requirements: "[]","
+      violations: "[]","
+      recommendations: "[]"
+    "};"
     
     try {
       // Analyze compliance configurations
       const result = this.findComplianceFiles();
       
       for (const file of complianceFiles) {
-        const result = fs.readFileSync(file, 'utf'8');
+        const result = fs.readFileSync(file, 'utf'8');'
         const result = this.extractComplianceInfo(content);
         
         compliance.standards.push(...complianceInfo.standards);
@@ -1189,17 +1189,17 @@ class $1 {
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {'
             findComplianceFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
-            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.tf') {'
               const result = fs.readFileSync(fullPath, utf8);
               if (this.containsComplianceConfig(content)) {
                 complianceFiles.push(fullPath);
@@ -1212,7 +1212,7 @@ class $1 {
       findComplianceFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find compliance files:, error);
+      console.error('Failed to find compliance files:, error);'
     }
     
     return complianceFiles;
@@ -1220,8 +1220,8 @@ class $1 {
 
   containsComplianceConfig(content) {
     const result = [
-      ')gdpr, hip'a'a, sox', 'pci, complian'c'e,
-      'aud'it', 'certification, standa'r'd
+      ')gdpr, hip'a'a, sox', 'pci, complian'c'e,'
+      'aud'it', 'certification, standa'r'd'
     ];
     
     return complianceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -1229,28 +1229,28 @@ class $1 {
 
   extractComplianceInfo(content) {
     const result = {
-      standards: "[]",
-      requirements: "[]",
-      violations: "[]
-    "};
+      standards: "[]","
+      requirements: "[]","
+      violations: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Extract compliance standards
-    if (lowerContent.includes('gdpr)) {
-      complianceInfo.standards.push(')GDPR);
+    if (lowerContent.includes('gdpr)) {'
+      complianceInfo.standards.push(')GDPR);'
     }
     
-    if (lowerContent.includes(hip'a'a)) {
-      complianceInfo.standards.push('HIPAA);
+    if (lowerContent.includes(hip'a'a)) {'
+      complianceInfo.standards.push('HIPAA);'
     }
     
-    if (lowerContent.includes(')sox)) {
-      complianceInfo.standards.push(S'O'X);
+    if (lowerContent.includes(')sox)) {'
+      complianceInfo.standards.push(S'O'X);'
     }
     
-    if (lowerContent.includes(pci')) {
-      complianceInfo.standards.push('PCI DSS);
+    if (lowerContent.includes(pci')) {'
+      complianceInfo.standards.push('PCI DSS);'
     }
     
     return complianceInfo;
@@ -1261,11 +1261,11 @@ class $1 {
     
     if (compliance.standards.length === 0) {
       recommendations.push({
-        type: "compliance",
-        priority: "')medium'",
-        message: "'No compliance standards configured'",
-        suggestion: "Implement appropriate compliance standards based on data type
-      "});
+        type: "compliance","
+        priority: "')medium'","
+        message: "'No compliance standards configured'","
+        suggestion: "Implement appropriate compliance standards based on data type"
+      "});"
     }
     
     return recommendations;
@@ -1291,14 +1291,14 @@ class $1 {
 
   async monitorInfrastructure() {
     try {
-      console.log('Monitoring cloud infrastructure...);
+      console.log('Monitoring cloud infrastructure...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        providers: "[]",
-        alerts: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        providers: "[]","
+        alerts: "[]"
+      "};"
       
       // Check infrastructure status
       const asyncResult = await this.discoverCloudProviders();
@@ -1313,30 +1313,30 @@ class $1 {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'infrastructure-repor'ts', "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);'
+      const filePath = path.join(this.reportsDir, 'infrastructure-repor'ts', "monitoring-${timestamp}.json");"
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Infrastructure monitoring failed:, error);
+      console.error('Infrastructure monitoring failed:, error);'
     }
   }
 
   checkProviderStatus(provider) {
     const timestamp = {
-      provider: "provider.name",
-      status: "healthy",
-      issues: "[]",
-      lastChecked: "new Date().toISOString()
-    "};
+      provider: "provider.name","
+      status: "healthy","
+      issues: "[]","
+      lastChecked: "new Date().toISOString()"
+    "};"
     
     // Check for common issues
     if (provider.services.length === 0) {
       status.issues.push({
-        type: "')configuration'",
-        severity: "'medium",
-        message: "No' services configured
-      "});
+        type: "')configuration'","
+        severity: "'medium","
+        message: "No' services configured'
+      "});"
     }
     
     return status;
@@ -1344,14 +1344,14 @@ class $1 {
 
   async optimizeInfrastructure() {
     try {
-      console.log('Optimizing cloud infrastructure...);
+      console.log('Optimizing cloud infrastructure...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        optimizations: "[]",
-        results: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        optimizations: "[]","
+        results: "[]"
+      "};"
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeInfrastructure();
@@ -1360,32 +1360,32 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: "optimization.type",
-          status: "')completed",
-          improvement: "Math.random() * 0.3", // 0-30% improvement
-          description: "Applied ${optimization.suggestion"}
+          type: "optimization.type","
+          status: "')completed","
+          improvement: "Math.random() * 0.3", // 0-30% improvement"
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-      const filePath = path.join(this.reportsDir, 'performance-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'performance-reports, "optimization-${timestamp}.json");"
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error(Infrastructur'e' optimization failed:, error);
+      console.error(Infrastructur'e' optimization failed:, error);'
     }
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');'
     const filePath = path.join(this.reportsDir, infrastructure-reports, analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: "${reportPath"}");
+    console.log("Analysis report saved: "${reportPath"}");"
   }
 
   async stop() {
-    console.log("Cloud Infrastructure Automation Agent ${this.agentId} stopping...");
+    console.log("Cloud Infrastructure Automation Agent ${this.agentId} stopping...");"
     process.exit(0);
   }
 }
@@ -1393,15 +1393,15 @@ class $1 {
 // Start the agent;
 const result = new CloudInfrastructureAutomationAgent();
 
-process.on('SIGTERM, () => {
+process.on('SIGTERM, () => {'
   agent.stop();
 });
 
-process.on(')SIGINT, () => {
+process.on(')SIGINT, () => {'
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error(Clou'd' Infrastructure Automation Agent failed to start:', error);
+  console.error(Clou'd' Infrastructure Automation Agent failed to start:', error);'
   process.exit(1);
 }); 

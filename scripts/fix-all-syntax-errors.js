@@ -1,62 +1,62 @@
 #!/usr/bin/env node
 ;
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 // Common syntax error patterns and their fixes
 const syntaxFixes = [
   // Fix unterminated string literals in import statements
   {
-    pattern: "/import.*from\s+['"][^']*['];?['"]/g",
-    replacement: "(match) => {
+    pattern: "/import React from 'react'
+    replacement: "(match) => {"
       // Remove extra quotes and semicolons
-      return match.replace(/['"];?[']$/", '");
+      return match.replace(/['"];?[']$/", '");"
     }
   },
   // Fix unterminated string literals in general
   {
-    pattern: "/['"][^']*['];?['"]/g",
-    replacement: "(match) => {
-      return match.replace(/['"];?[']$/", '");
+    pattern: "/['"][^']*['];?['"]/g","
+    replacement: "(match) => {"
+      return match.replace(/['"];?[']$/", '");"
     }
   },
   // Fix extra semicolons after interface definitions {
-    pattern: "/interface\s+\w+\s*\{[^"}]*\};/g,
-    replacement: "(match) => {
-      return match.replace(/;$/", '');
+    pattern: "/interface\s+\w+\s*\{[^"}]*\};/g,"
+    replacement: "(match) => {"
+      return match.replace(/;$/", '');'
     }
   },
   // Fix malformed async function declarations
   {
-    pattern: "/export\s+default\s+async;function/g",
-    replacement: "'export default async function'
-  "},
+    pattern: "/export\s+default\s+async;function/g","
+    replacement: "'export default async function''
+  "},"
   // Fix malformed await statements
   {
-    pattern: "/const\s+\{[^"}]*\}\s*=\s*await\s+[^;]*;?['"]/g,
-    replacement: "(match) => {
-      return match.replace(/;?[']$/", '');
+    pattern: "/const\s+\{[^"}]*\}\s*=\s*await\s+[^;]*;?['"]/g,"
+    replacement: "(match) => {"
+      return match.replace(/;?[']$/", '');'
     }
   },
   // Fix malformed console.error statements
   {
-    pattern: "/console\.error\([^)]*['];?['"]/g",
-    replacement: "(match) => {
-      return match.replace(/['"];?[']$/", '");
+    pattern: "/console\.error\([^)]*['];?['"]/g","
+    replacement: "(match) => {"
+      return match.replace(/['"];?[']$/", '");"
     }
   },
   // Fix malformed res.status statements
   {
-    pattern: "/res\.status\([^)]*\)\.json\([^)]*['"];?[']/g",
-    replacement: "(match) => {
-      return match.replace(/['];?['"]$/", "');
+    pattern: "/res\.status\([^)]*\)\.json\([^)]*['"];?[']/g","
+    replacement: "(match) => {"
+      return match.replace(/['];?['"]$/", "');'
     }
   }
 ];
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'utf8');'
     let originalContent = content;
     let fixed = false;
 
@@ -70,16 +70,16 @@ function fixFile(filePath) {
     }
 
     // Additional specific fixes for common patterns
-    content = content.replace(/['];?['"]/g, "');
-    content = content.replace(/;{2,}/g, '');
-    content = content.replace(/[']{2,}/g, "'");
-    content = content.replace(/import\s+.*from\s+['][^']*['"];?['"]/g, (match) => {
-      return match.replace(/['];?[']$/, "'");
+    content = content.replace(/['];?['"]/g, "');'
+    content = content.replace(/;{2,}/g, '');'
+    content = content.replace(/[']{2,}/g, "'");"
+    content = content.replace(/import React from 'react'
+      return match.replace(/['];?[']$/, "'");"
     });
 
     if (fixed || content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed: "${filePath"});
+      fs.writeFileSync(filePath, content, 'utf8');'
+      console.log(`Fixed: "${filePath"});"
       return true;
     }
   } catch (error) {
@@ -98,7 +98,7 @@ function processDirectory(dir) {
 
     if (stat.isDirectory()) {
       fixedCount += processDirectory(filePath);
-    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {'
       if (fixFile(filePath)) {
         fixedCount++;
       }
@@ -109,23 +109,23 @@ function processDirectory(dir) {
 }
 
 // Main execution
-console.log('Starting syntax error fixes...');
+console.log('Starting syntax error fixes...');'
 
 const directories = [
-  'pages',
-  'components',
-  'src',
-  'utils'
+  'pages','
+  'components','
+  'src','
+  'utils''
 ];
 
 let totalFixed = 0;
 
 for (const dir of directories) {
   if (fs.existsSync(dir)) {
-    console.log(Processing directory: "${dir"}`);
+    console.log(Processing directory: "${dir"}`);"
     totalFixed += processDirectory(dir);
   }
 }
 
-console.log(`\nTotal files fixed: "${totalFixed"}`);
-console.log('Syntax error fixes completed!');
+console.log(`\nTotal files fixed: "${totalFixed"}`);"
+console.log('Syntax error fixes completed!');'

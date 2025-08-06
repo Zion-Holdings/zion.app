@@ -9,10 +9,10 @@
  */;
 function createValidComponentName(name) {
   return name
-    .replace(/[-_\s]+/g, '_) // Replace hyphens, underscores, and spaces with underscores
-    .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
-    .replace(/^[0-9]/, _$&') // Add underscore prefix if starts with number
-    + 'Page;
+    .replace(/[-_\s]+/g, '_) // Replace hyphens, underscores, and spaces with underscores'
+    .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores'
+    .replace(/^[0-9]/, _$&') // Add underscore prefix if starts with number'
+    + 'Page;'
 }
 
 /**
@@ -24,7 +24,7 @@ function createDisplayTitle(name) {
   return name
     .split(/[-_\s]+/) // Split on hyphens, underscores, and spaces
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join( ');
+    .join( ');'
 }
 
 module.exports = {

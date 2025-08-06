@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
+const fs = require('fs');'
+const path = require('path');'
+const { spawn } = require('child_process');'
 
 class IntelligentAutomationFactoryLauncher {
     constructor() {
-        this.projectRoot = path.resolve(__dirname, '..');
+        this.projectRoot = path.resolve(__dirname, '..');'
         this.automationDir = path.join(__dirname);
         this.factories = new Map();
         this.processes = new Map();
@@ -20,27 +20,27 @@ class IntelligentAutomationFactoryLauncher {
 
     initializeFactories() {
         // Initialize all intelligent automation factories
-        this.factories.set('smart-fixer', {
-            name: 'Smart Automation Fixer',
-            file: 'smart-automation-fixer.js',
-            description: 'Fixes syntax errors and improves automation systems'
+        this.factories.set('smart-fixer', {'
+            name: 'Smart Automation Fixer','
+            file: 'smart-automation-fixer.js','
+            description: 'Fixes syntax errors and improves automation systems''
         });
         
-        this.factories.set('enhancement-factory', {
-            name: 'Automation Enhancement Factory',
-            file: 'automation-enhancement-factory.js',
-            description: 'Adds advanced features and intelligence to automations'
+        this.factories.set('enhancement-factory', {'
+            name: 'Automation Enhancement Factory','
+            file: 'automation-enhancement-factory.js','
+            description: 'Adds advanced features and intelligence to automations''
         });
         
-        this.factories.set('intelligent-factory-system', {
-            name: 'Intelligent Automation Factory System',
-            file: 'intelligent-automation-factory-system.js',
-            description: 'Comprehensive intelligent automation improvement system'
+        this.factories.set('intelligent-factory-system', {'
+            name: 'Intelligent Automation Factory System','
+            file: 'intelligent-automation-factory-system.js','
+            description: 'Comprehensive intelligent automation improvement system''
         });
     }
 
     async startAllFactories() {
-        console.log('🚀 Launching Intelligent Automation Factories...');
+        console.log('🚀 Launching Intelligent Automation Factories...');'
         
         try {
             this.status.running = true;
@@ -53,10 +53,10 @@ class IntelligentAutomationFactoryLauncher {
             // Start monitoring
             this.startMonitoring();
             
-            console.log('✅ All Intelligent Automation Factories started successfully');
+            console.log('✅ All Intelligent Automation Factories started successfully');'
             
         } catch (error) {
-            console.error('❌ Error starting factories:', error.message);
+            console.error('❌ Error starting factories:', error.message);'
             this.status.running = false;
         }
     }
@@ -73,9 +73,9 @@ class IntelligentAutomationFactoryLauncher {
             console.log(`🚀 Starting ${factory.name}...`);
             
             // Start factory process
-            const process = spawn('node', [factoryPath], {
+            const process = spawn('node', [factoryPath], {'
                 cwd: this.automationDir,
-                stdio: ['pipe', 'pipe', 'pipe'],
+                stdio: ['pipe', 'pipe', 'pipe'],'
                 detached: false
             });
             
@@ -84,26 +84,26 @@ class IntelligentAutomationFactoryLauncher {
                 process: process,
                 factory: factory,
                 startTime: Date.now(),
-                status: 'running'
+                status: 'running''
             });
             
             // Handle process events
-            process.stdout.on('data', (data) => {
+            process.stdout.on('data', (data) => {'
                 console.log(`[${factory.name}] ${data.toString().trim()}`);
             });
             
-            process.stderr.on('data', (data) => {
+            process.stderr.on('data', (data) => {'
                 console.error(`[${factory.name}] ERROR: ${data.toString().trim()}`);
             });
             
-            process.on('close', (code) => {
+            process.on('close', (code) => {'
                 console.log(`[${factory.name}] Process exited with code ${code}`);
-                this.processes.get(id).status = 'stopped';
+                this.processes.get(id).status = 'stopped';'
             });
             
-            process.on('error', (error) => {
+            process.on('error', (error) => {'
                 console.error(`[${factory.name}] Process error:`, error.message);
-                this.processes.get(id).status = 'error';
+                this.processes.get(id).status = 'error';'
             });
             
             this.status.factoriesStarted++;
@@ -126,18 +126,18 @@ class IntelligentAutomationFactoryLauncher {
     }
 
     monitorFactories() {
-        console.log('📊 Monitoring factory status...');
+        console.log('📊 Monitoring factory status...');'
         
         for (const [id, factoryInfo] of this.processes) {
             const { process, factory, status } = factoryInfo;
             
-            if (status === 'running') {
+            if (status === 'running') {'
                 console.log(`✅ ${factory.name} is running`);
-            } else if (status === 'stopped') {
+            } else if (status === 'stopped') {'
                 console.log(`🛑 ${factory.name} has stopped`);
                 // Restart if needed
                 this.restartFactory(id, factory);
-            } else if (status === 'error') {
+            } else if (status === 'error') {'
                 console.log(`❌ ${factory.name} encountered an error`);
                 // Restart if needed
                 this.restartFactory(id, factory);
@@ -167,31 +167,31 @@ class IntelligentAutomationFactoryLauncher {
 
     async checkImprovements() {
         try {
-            console.log('🔍 Checking for improvements...');
+            console.log('🔍 Checking for improvements...');'
             
             // Check improvement reports
-            const reportsDir = path.join(__dirname, 'smart-fixes', 'reports');
+            const reportsDir = path.join(__dirname, 'smart-fixes', 'reports');'
             if (fs.existsSync(reportsDir)) {
-                const reports = fs.readdirSync(reportsDir).filter(file => file.endsWith('.json'));
+                const reports = fs.readdirSync(reportsDir).filter(file => file.endsWith('.json'));'
                 this.status.improvementsMade += reports.length;
             }
             
             // Check enhancement reports
-            const enhancementReportsDir = path.join(__dirname, 'enhanced-automations', 'reports');
+            const enhancementReportsDir = path.join(__dirname, 'enhanced-automations', 'reports');'
             if (fs.existsSync(enhancementReportsDir)) {
-                const reports = fs.readdirSync(enhancementReportsDir).filter(file => file.endsWith('.json'));
+                const reports = fs.readdirSync(enhancementReportsDir).filter(file => file.endsWith('.json'));'
                 this.status.improvementsMade += reports.length;
             }
             
             console.log(`📈 Total improvements made: ${this.status.improvementsMade}`);
             
         } catch (error) {
-            console.error('❌ Error checking improvements:', error.message);
+            console.error('❌ Error checking improvements:', error.message);'
         }
     }
 
     async stopAllFactories() {
-        console.log('🛑 Stopping all Intelligent Automation Factories...');
+        console.log('🛑 Stopping all Intelligent Automation Factories...');'
         
         try {
             this.status.running = false;
@@ -209,10 +209,10 @@ class IntelligentAutomationFactoryLauncher {
             // Wait for processes to stop
             await this.waitForProcessesToStop();
             
-            console.log('✅ All Intelligent Automation Factories stopped');
+            console.log('✅ All Intelligent Automation Factories stopped');'
             
         } catch (error) {
-            console.error('❌ Error stopping factories:', error.message);
+            console.error('❌ Error stopping factories:', error.message);'
         }
     }
 
@@ -220,7 +220,7 @@ class IntelligentAutomationFactoryLauncher {
         return new Promise((resolve) => {
             const checkInterval = setInterval(() => {
                 const runningProcesses = Array.from(this.processes.values())
-                    .filter(info => info.status === 'running');
+                    .filter(info => info.status === 'running');'
                 
                 if (runningProcesses.length === 0) {
                     clearInterval(checkInterval);
@@ -243,7 +243,7 @@ class IntelligentAutomationFactoryLauncher {
             improvementsMade: this.status.improvementsMade,
             errorsFixed: this.status.errorsFixed,
             activeProcesses: Array.from(this.processes.values())
-                .filter(info => info.status === 'running').length
+                .filter(info => info.status === 'running').length'
         };
     }
 
@@ -264,11 +264,11 @@ class IntelligentAutomationFactoryLauncher {
                 }))
             };
             
-            const reportPath = path.join(__dirname, 'factory-status-report.json');
+            const reportPath = path.join(__dirname, 'factory-status-report.json');'
             fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
             
         } catch (error) {
-            console.error('❌ Error saving status report:', error.message);
+            console.error('❌ Error saving status report:', error.message);'
         }
     }
 }
@@ -280,15 +280,15 @@ const launcher = new IntelligentAutomationFactoryLauncher();
 launcher.startAllFactories();
 
 // Handle graceful shutdown
-process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+process.on('SIGINT', async () => {'
+    console.log('\n🛑 Received SIGINT, shutting down gracefully...');'
     await launcher.stopAllFactories();
     await launcher.saveStatusReport();
     process.exit(0);
 });
 
-process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+process.on('SIGTERM', async () => {'
+    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');'
     await launcher.stopAllFactories();
     await launcher.saveStatusReport();
     process.exit(0);

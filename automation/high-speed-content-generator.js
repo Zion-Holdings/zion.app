@@ -1,24 +1,24 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { GoogleGenerativeAI } = require(@google/generative-ai'));
+const { GoogleGenerativeAI } = require(@google/generative-ai'));'
 
-class $1 {
+class variable1 {
   constructor() {
-    this.agentId = "high-speed-content-${Date.now()}
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-key);
-    this.model = this.genAI.getGenerativeModel({ model: "gemini-p'r'o "});
+    this.agentId = "high-speed-content-${Date.now()}"
+    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-key);'
+    this.model = this.genAI.getGenerativeModel({ model: "gemini-p'r'o "});"
     
-    this.projectRoot = path.join(__dirname, '..');
+    this.projectRoot = path.join(__dirname, '..');'
     this.pagesDir = path.join(this.projectRoot, pages);
     
     this.analytics = {
-      pagesCreated: "0",
-      blogPostsCreated: "0",
-      marketplacePagesCreated: "0",
-      servicePagesCreated: "0",
-      errors: "0",
-      startTime: "Date.now()
-    "};
+      pagesCreated: "0","
+      blogPostsCreated: "0","
+      marketplacePagesCreated: "0","
+      servicePagesCreated: "0","
+      errors: "0","
+      startTime: "Date.now()"
+    "};"
     
     this.isRunning = false;
     this.contentIdeas = this.loadContentIdeas();
@@ -27,55 +27,55 @@ class $1 {
 
   loadContentIdeas() {
     return {
-      blogTopics: "[
-        'Quantu'm Computing Applications in Business'",
-        'Edge' AI: "The Future of Distributed Computing'",
-        5G Networks and IoT Integration',
-        'Cybersecurity' in the Age of AI',
+      blogTopics: "["
+        'Quantu'm Computing Applications in Business'","
+        'Edge' AI: "The Future of Distributed Computing'","
+        5G Networks and IoT Integration','
+        'Cybersecurity' in the Age of AI','
         Sustainable Technology Solutions,
-        'Digita'l Transformation Strategies',
-        'Cloud-Native' Architecture Patterns',
+        'Digita'l Transformation Strategies','
+        'Cloud-Native' Architecture Patterns','
         Machine Learning in Healthcare,
-        'Blockchai'n for Supply Chain Management',
-        'Augmented' Reality in Enterprise',
+        'Blockchai'n for Supply Chain Management','
+        'Augmented' Reality in Enterprise','
         Data Privacy and GDPR Compliance,
-        'Microservice's Best Practices',
-        'DevOps' Automation Tools',
+        'Microservice's Best Practices','
+        'DevOps' Automation Tools','
         API Security and Authentication,
-        'Serverles's Computing Benefits'
+        'Serverles's Computing Benefits''
       ],
-      marketplaceCategories: "[
-        'quantum-computing",
-        edge-'a'i,
-        '5g-networks',
+      marketplaceCategories: "["
+        'quantum-computing","
+        edge-'a'i,'
+        '5g-networks','
         cybersecurity-ai,
-        'sustainable-te'ch',
-        'digital-transformation,
-        cloud-nati'v'e,
-        'healthcare-'ml',
-        'blockchain-supply-chain,
-        ar-enterpri's'e,
-        'data-priva'cy',
-        'microservices,
-        devops-too'l's,
-        'api-securi'ty',
-        'serverless-computing
+        'sustainable-te'ch','
+        'digital-transformation,'
+        cloud-nati'v'e,'
+        'healthcare-'ml','
+        'blockchain-supply-chain,'
+        ar-enterpri's'e,'
+        'data-priva'cy','
+        'microservices,'
+        devops-too'l's,'
+        'api-securi'ty','
+        'serverless-computing'
       ],
-      serviceTypes: "[
-        Quantu'm' Computing Solutions",
-        'Edg'e AI Implementation',
-        '5G Network Integration,
-        'AI-Powere'd Cybersecurity',
-        'Sustainable' Technology Consulting',
+      serviceTypes: "["
+        Quantu'm' Computing Solutions","
+        'Edg'e AI Implementation','
+        '5G Network Integration,'
+        'AI-Powere'd Cybersecurity','
+        'Sustainable' Technology Consulting','
         Digital Transformation Services,
-        'Cloud-Nativ'e Development',
-        'Healthcare' ML Solutions',
+        'Cloud-Nativ'e Development','
+        'Healthcare' ML Solutions','
         Blockchain Supply Chain,
-        'A'R Enterprise Solutions',
-        'Data' Privacy Compliance',
+        'A'R Enterprise Solutions','
+        'Data' Privacy Compliance','
         Microservices Architecture,
-        'DevOp's Automation',
-        'API' Security Services',
+        'DevOp's Automation','
+        'API' Security Services','
         Serverless Computing
       ]
     };
@@ -83,20 +83,20 @@ class $1 {
 
   ensureDirectories() {
     const filePath = [
-      path.join(this.pagesDir, 'bl'og'),
-      path.join(this.pagesDir, 'category),
-      path.join(this.pagesDir, servic'e's)
+      path.join(this.pagesDir, 'bl'og'),'
+      path.join(this.pagesDir, 'category),'
+      path.join(this.pagesDir, servic'e's)'
     ];
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});
+        fs.mkdirSync(dir, { recursive: "true "});"
       }
     });
   }
 
   async start() {
-    console.log('🚀 Starting High-Speed Content Generator...);
+    console.log('🚀 Starting High-Speed Content Generator...);'
     this.isRunning = true;
     
     // Start continuous generation immediately
@@ -115,7 +115,7 @@ class $1 {
         await new Promise(resolve => setTimeout(resolve, 500)); // 500ms delay
         
       } catch (error) {
-        console.error(')Error' in continuous generation: "'", error.message);
+        console.error(')Error' in continuous generation: "'", error.message);"
         this.analytics.errors++;
         
         // Short delay on error
@@ -128,19 +128,19 @@ class $1 {
     const result = [];
     
     // Generate 5 blog posts simultaneously
-    for (let $1 = 0; i < 5; i++) {
+    for (let variable1 = 0; i < 5; i++) {
       const result = this.getRandomTopic();
       promises.push(this.generateBlogPost(topic));
     }
     
     // Generate 5 marketplace pages simultaneously
-    for (let $1 = 0; i < 5; i++) {
+    for (let variable1 = 0; i < 5; i++) {
       const result = this.getRandomCategory();
       promises.push(this.generateMarketplacePage(category));
     }
     
     // Generate 5 service pages simultaneously
-    for (let $1 = 0; i < 5; i++) {
+    for (let variable1 = 0; i < 5; i++) {
       const result = this.getRandomService();
       promises.push(this.generateServicePage(service));
     }
@@ -148,7 +148,7 @@ class $1 {
     // Execute all in parallel
     await Promise.all(promises);
     
-    console.log(⚡ Generated ${promises.length} content pieces in this batch");
+    console.log(⚡ Generated ${promises.length} content pieces in this batch");"
   }
 
   getRandomTopic() {
@@ -167,22 +167,22 @@ class $1 {
     try {
       const asyncResult = await this.generateBlogContent(topic);
       const result = this.sanitizeFilename(topic);
-      const filePath = path.join(this.pagesDir, blog, "${filename}.tsx);
+      const filePath = path.join(this.pagesDir, blog, "${filename}.tsx);"
       
       const result = this.generateBlogPageContent(topic, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.blogPostsCreated++;
-      console.log(📝 Created blog post: "${filename"}");
+      console.log(📝 Created blog post: "${filename"}");"
       
     } catch (error) {
-      console.error("Error generating blog post: "${error.message"});
+      console.error("Error generating blog post: "${error.message"});"
       this.analytics.errors++;
     }
   }
 
   async generateBlogContent(topic) {
-    const result = Create a comprehensive blog post about "${topic}" for Zion Tech Group. Include engaging content, technical insights, and business applications.
+    const result = Create a comprehensive blog post about "${topic}" for Zion Tech Group. Include engaging content, technical insights, and business applications."
     
     try {
       const asyncResult = await this.model.generateContent(prompt);
@@ -199,27 +199,27 @@ class $1 {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join();
     
-    // Ensure component name doesn')t start with a number
-    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;
+    // Ensure component name doesn')t start with a number'
+    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;"
     
-    return "import type { NextPage } from 'ne'xt'}
-import Head from 'next'/head'}
+    return "import React from 'react'
+import React from 'react'
 import Link from next/link
 ;
-const ${safePageName}Page: "NextPage = () => {
+const ${safePageName}Page: "NextPage = () => {"
   return (</div>
-    <div className=min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
+    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>"
       <Head></div>
-        <title>${topic"} - Zion Tech Blog</title></div>
-        <meta name=description content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>
+        <title>${topic"} - Zion Tech Blog</title></div>"
+        <meta name=description content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>"
       </Head>
 </div>
-      <nav className=bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8></div>
-          <div className="flex justify-between h-16></div>
-            <div className=flex items-center"></div>
-              <h1 className=text-2xl font-bold text-white></div>
-                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>"
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>"
+          <div className="flex justify-between h-16></div>"
+            <div className="flex" items-center"></div>"
+              <h1 className="text-2xl" font-bold text-white></div>"
+                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
                   Zion</div>
                 </Link></div>
               </h1></div>
@@ -228,19 +228,19 @@ const ${safePageName}Page: "NextPage = () => {
         </div></div>
       </nav>
 </div>
-      <main className=flex-1"></div>
-        <article className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>
-          <h1 className=text-4xl md:text-5xl font-bold text-white mb-6></div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <main className="flex-1""></div>"
+        <article className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8 py-12></div>"
+          <h1 className="text-4xl" md:text-5xl font-bold text-white mb-6></div>"
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
               ${topic}</div>
             </span></div>
           </h1>
           </div>
-          <div className=prose prose-invert prose-lg max-w-none"></div>
-            <div className=text-gray-300 leading-relaxed>
-              ${content.split('\n).map(paragraph => </div>
-                paragraph.trim() ? <p className=mb-6">${paragraph}</p>" : 
-              ).join(')\n)}</div>
+          <div className="prose" prose-invert prose-lg max-w-none"></div>"
+            <div className="text-gray-300" leading-relaxed>"
+              ${content.split('\n).map(paragraph => </div>'
+                paragraph.trim() ? <p className="mb-6"">${paragraph}</p>" : "
+              ).join(')\n)}</div>'
             </div></div>
           </div></div>
         </article></div>
@@ -265,29 +265,29 @@ As we look toward the future, ${topic.toLowerCase()} will continue to evolve and
 The key to successful implementation lies in understanding both the technical requirements and the business objectives. By aligning technology solutions with strategic goals, companies can maximize the value they derive from these innovations.
 
 In conclusion, ${topic.toLowerCase()} represents not just a technological advancement, but a fundamental shift in how we approach business challenges and opportunities. The organizations that embrace these changes today will be the leaders of tomorrow.
-    "
+    ""
   }
 
   async generateMarketplacePage(category) {
     try {
       const asyncResult = await this.generateMarketplaceContent(category);
       const result = this.sanitizeFilename(category);
-      const filePath = path.join(this.pagesDir, 'catego'ry', "${filename}.tsx);
+      const filePath = path.join(this.pagesDir, 'catego'ry', "${filename}.tsx);"
       
       const result = this.generateMarketplacePageContent(category, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.marketplacePagesCreated++;
-      console.log(🏪 Created marketplace page: "${filename"}");
+      console.log(🏪 Created marketplace page: "${filename"}");"
       
     } catch (error) {
-      console.error("Error generating marketplace page: "${error.message"});
+      console.error("Error generating marketplace page: "${error.message"});"
       this.analytics.errors++;
     }
   }
 
   async generateMarketplaceContent(category) {
-    const result = Create comprehensive marketplace content for "${category}" category on Zion AI Marketplace. Include features, benefits, and service offerings.
+    const result = Create comprehensive marketplace content for "${category}" category on Zion AI Marketplace. Include features, benefits, and service offerings."
     
     try {
       const asyncResult = await this.model.generateContent(prompt);
@@ -299,33 +299,33 @@ In conclusion, ${topic.toLowerCase()} represents not just a technological advanc
   }
 
   generateMarketplacePageContent(category, content) {
-    const result = category.split('-).map(word => 
+    const result = category.split('-).map(word => '
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join( );
     
-    const result = categoryTitle.replace(/\s+/g, '));
+    const result = categoryTitle.replace(/\s+/g, '));'
     
-    // Ensure component name doesn't start with a number
-    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;
+    // Ensure component name doesn't start with a number'
+    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;"
     
-    return "import type { NextPage } from 'ne'xt'}
-import Head from 'next'/head'}
+    return "import React from 'react'
+import React from 'react'
 import Link from next/link
 ;
-const ${safePageName}Page: "NextPage = () => {
+const ${safePageName}Page: "NextPage = () => {"
   return (</div>
-    <div className=min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
+    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>"
       <Head></div>
-        <title>${categoryTitle"} - Zion AI Marketplace</title></div>
-        <meta name=description content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
+        <title>${categoryTitle"} - Zion AI Marketplace</title></div>"
+        <meta name=description content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>"
       </Head>
 </div>
-      <nav className=bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8></div>
-          <div className="flex justify-between h-16></div>
-            <div className=flex items-center"></div>
-              <h1 className=text-2xl font-bold text-white></div>
-                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>"
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>"
+          <div className="flex justify-between h-16></div>"
+            <div className="flex" items-center"></div>"
+              <h1 className="text-2xl" font-bold text-white></div>"
+                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
                   Zion</div>
                 </Link></div>
               </h1></div>
@@ -334,28 +334,28 @@ const ${safePageName}Page: "NextPage = () => {
         </div></div>
       </nav>
 </div>
-      <main className=flex-1"></div>
-        <div className=relative overflow-hidden></div>
-          <div className=relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>
-            <div className="text-center></div>
-              <h1 className=text-4xl md:text-6xl font-bold text-white mb-6"></div>
-                <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <main className="flex-1""></div>"
+        <div className="relative" overflow-hidden></div>"
+          <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>"
+            <div className="text-center></div>"
+              <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6"></div>"
+                <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
                   ${categoryTitle}</div>
                 </span></div>
               </h1></div>
-              <p className=text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed>
-                ${content.split('\n)[0] || Discover top professionals and services in the  + categoryTitle.toLowerCase() +  space.')}</div>
+              <p className="text-xl" text-gray-300 max-w-3xl mx-auto leading-relaxed>"
+                ${content.split('\n)[0] || Discover top professionals and services in the  + categoryTitle.toLowerCase() +  space.')}</div>'
               </p></div>
             </div></div>
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>
-          <div className=prose prose-invert prose-lg max-w-none"></div>
-            <div className=text-gray-300 leading-relaxed>
-              ${content.split(\n').slice(1).map(paragraph => </div>
-                paragraph.trim() ? <p className=mb-6">${paragraph}</p>" : '
-              ).join('\n)}</div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>"
+          <div className="prose" prose-invert prose-lg max-w-none"></div>"
+            <div className="text-gray-300" leading-relaxed>"
+              ${content.split(\n').slice(1).map(paragraph => </div>'
+                paragraph.trim() ? <p className="mb-6"">${paragraph}</p>" : ''
+              ).join('\n)}</div>'
             </div></div>
           </div></div>
         </div></div>
@@ -383,29 +383,29 @@ Key benefits of our ${category} marketplace include:
 Success stories from our ${category} marketplace demonstrate the value our platform delivers. Clients report significant improvements in efficiency, cost savings, and project outcomes when working with Zion-verified professionals.
 
 Join thousands of satisfied clients who have found their ideal ${category} solutions through our marketplace. Start your project today and experience the difference that professional expertise makes.
-    "
+    ""
   }
 
   async generateServicePage(service) {
     try {
       const asyncResult = await this.generateServiceContent(service);
       const result = this.sanitizeFilename(service);
-      const filePath = path.join(this.pagesDir, service')s, "${filename}.tsx);
+      const filePath = path.join(this.pagesDir, service')s, "${filename}.tsx);"
       
       const result = this.generateServicePageContent(service, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.servicePagesCreated++;
-      console.log(🔧 Created service page: "${filename"}");
+      console.log(🔧 Created service page: "${filename"}");"
       
     } catch (error) {
-      console.error("Error generating service page: "${error.message"});
+      console.error("Error generating service page: "${error.message"});"
       this.analytics.errors++;
     }
   }
 
   async generateServiceContent(service) {
-    const result = Create comprehensive service content for "${service}" offered by Zion Tech Group. Include service overview, benefits, and implementation details.
+    const result = Create comprehensive service content for "${service}" offered by Zion Tech Group. Include service overview, benefits, and implementation details."
     
     try {
       const asyncResult = await this.model.generateContent(prompt);
@@ -418,29 +418,29 @@ Join thousands of satisfied clients who have found their ideal ${category} solut
 
   generateServicePageContent(service, content) {
     const result = this.sanitizeFilename(service);
-    const result = service.replace(/[^a-zA-Z0-9]/g, '');
+    const result = service.replace(/[^a-zA-Z0-9]/g, '');'
     
-    // Ensure component name doesnt' start with a number
-    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;
+    // Ensure component name doesnt' start with a number'
+    const result = pageName.match(/^\d/) ? Page${pageName}" : pageName;"
     
-    return "import type { NextPage } from 'next;}
-import Head from nex't'/head;}
-import Link from 'nex't/link'
+    return "import React from 'react'
+import React from 'react'
+import React from 'react'
 ;
-const ${safePageName}Page: "NextPage = () => {
+const ${safePageName}Page: "NextPage = () => {"
   return (</div>
-    <div className=min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
+    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>"
       <Head></div>
-        <title>${service"} - Zion Tech Group</title></div>
-        <meta name=description content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>
+        <title>${service"} - Zion Tech Group</title></div>"
+        <meta name=description content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>"
       </Head>
 </div>
-      <nav className=bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8></div>
-          <div className="flex justify-between h-16></div>
-            <div className=flex items-center"></div>
-              <h1 className=text-2xl font-bold text-white></div>
-                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <nav className="bg-black/20" backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>"
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8></div>"
+          <div className="flex justify-between h-16></div>"
+            <div className="flex" items-center"></div>"
+              <h1 className="text-2xl" font-bold text-white></div>"
+                <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
                   Zion</div>
                 </Link></div>
               </h1></div>
@@ -449,28 +449,28 @@ const ${safePageName}Page: "NextPage = () => {
         </div></div>
       </nav>
 </div>
-      <main className=flex-1"></div>
-        <div className=relative overflow-hidden></div>
-          <div className=relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>
-            <div className="text-center></div>
-              <h1 className=text-4xl md:text-6xl font-bold text-white mb-6"></div>
-                <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+      <main className="flex-1""></div>"
+        <div className="relative" overflow-hidden></div>"
+          <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>"
+            <div className="text-center></div>"
+              <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6"></div>"
+                <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>"
                   ${service}</div>
                 </span></div>
               </h1></div>
-              <p className=text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed>
-                ${content.split('\n)[0] || Professional ') + service.toLowerCase() + ' services tailored to your business needs.}</div>
+              <p className="text-xl" text-gray-300 max-w-3xl mx-auto leading-relaxed>"
+                ${content.split('\n)[0] || Professional ') + service.toLowerCase() + ' services tailored to your business needs.}</div>'
               </p></div>
             </div></div>
           </div></div>
         </div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>
-          <div className=prose prose-invert prose-lg max-w-none"></div>
-            <div className=text-gray-300 leading-relaxed>
-              ${content.split('\n).slice(1).map(paragraph => </div>
-                paragraph.trim() ? <p className=mb-6">${paragraph}</p>" : 
-              ).join(')\n)}</div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>"
+          <div className="prose" prose-invert prose-lg max-w-none"></div>"
+            <div className="text-gray-300" leading-relaxed>"
+              ${content.split('\n).slice(1).map(paragraph => </div>'
+                paragraph.trim() ? <p className="mb-6"">${paragraph}</p>" : "
+              ).join(')\n)}</div>'
             </div></div>
           </div></div>
         </div></div>
@@ -488,35 +488,35 @@ ${service} represents a comprehensive solution designed to address the complex c
 
 Our approach to ${service.toLowerCase()} combines deep technical expertise with strategic business understanding. We work closely with clients to understand their unique requirements and develop tailored solutions that align with their organizational goals and constraints.
 
-The implementation process for ${service.toLowerCase()} services typically involves several key phases: "initial assessment and planning", solution design and development, testing and quality assurance, deployment and integration, and ongoing support and optimization.
+The implementation process for ${service.toLowerCase()} services typically involves several key phases: "initial assessment and planning", solution design and development, testing and quality assurance, deployment and integration, and ongoing support and optimization."
 
 Pricing for ${service.toLowerCase()} services is structured to provide maximum value while maintaining transparency. We offer flexible engagement models including project-based pricing, retainer arrangements, and performance-based compensation structures.
 
 Our track record in ${service.toLowerCase()} includes numerous successful implementations across diverse industries. Case studies demonstrate significant improvements in efficiency, cost reduction, and competitive advantage for our clients.
 
 To learn more about our ${service.toLowerCase()} capabilities and discuss how we can help your organization, contact our team for a complimentary consultation and assessment.
-    "
+    ""
   }
 
   sanitizeFilename(filename) {
     return filename
       .toLowerCase()
-      .replace(/[^a-z0-9]/g, '-')
-      .replace(/-+/g, -')
-      .replace(/^-|-$/g, ');
+      .replace(/[^a-z0-9]/g, '-')'
+      .replace(/-+/g, -')'
+      .replace(/^-|-$/g, ');'
   }
 
   stop() {
-    console.log('🛑 Stopping High-Speed Content Generator...);
+    console.log('🛑 Stopping High-Speed Content Generator...);'
     this.isRunning = false;
   }
 
   getStats() {
     return {
       ...this.analytics,
-      uptime: "Date.now() - this.analytics.startTime",
-      isRunning: "this.isRunning
-    "};
+      uptime: "Date.now() - this.analytics.startTime","
+      isRunning: "this.isRunning"
+    "};"
   }
 }
 
@@ -529,13 +529,13 @@ if (require.main === module) {
   
   // Handle process signals
   process.on(SIGINT, () => {
-    console.log(\nReceived SIGINT, shutting down gracefully...'));
+    console.log(\nReceived SIGINT, shutting down gracefully...'));'
     generator.stop();
     process.exit(0);
   });
   
   process.on(SIGTERM, () => {
-    console.log('\nReceived SIGTERM, shutting down gracefully...');
+    console.log('\nReceived SIGTERM, shutting down gracefully...');'
     generator.stop();
     process.exit(0);
   });

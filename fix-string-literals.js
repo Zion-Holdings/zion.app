@@ -1,32 +1,32 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs');'
+const path = require('path');'
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'utf8');'
     let originalContent = content;
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next');
-    content = content.replace(/import type { NextPage } from next"/g, 'import type { NextPage } from "next');
-    content = content.replace(/import { useState, useEffect, useMemo } from react"/g, 'import { useState, useEffect, useMemo } from "react');
-    content = content.replace(/import { useState, useEffect, useMemo } from react"/g, 'import { useState, useEffect, useMemo } from "react');
+    content = content.replace(/import React from 'react'
+    content = content.replace(/import React from 'react'
+    content = content.replace(/import React from 'react'
+    content = content.replace(/import React from 'react'
     
     // Fix malformed function declarations
-    content = content.replace(/export default async function handler\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", 'export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {');
+    content = content.replace(/export default async function handler\(req: "NextApiRequest", res: "NextApiResponse\) \{;/g", 'export default async function handler(req: "NextApiRequest", res: "NextApiResponse) {');'
     
     // Fix malformed object destructuring
-    content = content.replace(/const \{;/g", 'const {');
+    content = content.replace(/const \{;/g", 'const {');'
     
     // Fix malformed string literals
-    content = content.replace(/'/g, '");
-    content = content.replace(/"/g, '"');
-    content = content.replace(/`/g, '');
+    content = content.replace(/'/g, '");"
+    content = content.replace(/"/g, '"');'
+    content = content.replace(/`/g, '');'
     
     // Only write if content changed
     if (content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed: "${filePath"}`);
+      fs.writeFileSync(filePath, content, 'utf8');'
+      console.log(`Fixed: "${filePath"}`);"
       return true;
     }
     
@@ -46,10 +46,10 @@ function fixDirectory(dir) {
     const stat = fs.statSync(fullPath);
     
     if (stat.isDirectory()) {
-      if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {
+      if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {'
         fixedCount += fixDirectory(fullPath);
       }
-    } else if (item.endsWith('.tsx') || item.endsWith('.ts') || item.endsWith('.js')) {
+    } else if (item.endsWith('.tsx') || item.endsWith('.ts') || item.endsWith('.js')) {'
       if (fixFile(fullPath)) {
         fixedCount++;
       }
@@ -59,10 +59,10 @@ function fixDirectory(dir) {
   return fixedCount;
 }
 
-console.log('Starting string literal fixes...');
+console.log('Starting string literal fixes...');'
 const startTime = Date.now();
-const fixedCount = fixDirectory('.');
+const fixedCount = fixDirectory('.');'
 const endTime = Date.now();
 
 console.log(`\n✅ Fixed ${fixedCount} files in ${endTime - startTime}ms`);
-console.log('String literal fixes completed!'); 
+console.log('String literal fixes completed!'); '

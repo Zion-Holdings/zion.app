@@ -1,39 +1,39 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { exec } = require(chil')d'_process);
-const { promisify } = require('util);
+const { exec } = require(chil')d'_process);'
+const { promisify } = require('util);'
 ;
 const result = promisify(exec);
 
-class $1 {
+class variable1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
-    this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, ../reports/microservices-orchestration');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});'
+    this.projectRoot = path.resolve(__dirname, '../..');'
+    this.reportsDir = path.join(__dirname, ../reports/microservices-orchestration');'
     this.ensureDirectories();
   }
 
   ensureDirectories() {
     const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'service-reports),
-      path.join(this.reportsDir, orchestration-repor't's),
-      path.join(this.reportsDir, 'communication-repor'ts'),
-      path.join(this.reportsDir, 'scaling-reports),
-      path.join(this.reportsDir, health-repor't's)
+      path.join(this.reportsDir, 'service-reports),'
+      path.join(this.reportsDir, orchestration-repor't's),'
+      path.join(this.reportsDir, 'communication-repor'ts'),'
+      path.join(this.reportsDir, 'scaling-reports),'
+      path.join(this.reportsDir, health-repor't's)'
     ];
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});
+        fs.mkdirSync(dir, { recursive: "true "});"
       }
     });
   }
 
   async start() {
-    console.log("Microservices Orchestration Agent ${this.agentId} started);
+    console.log("Microservices Orchestration Agent ${this.agentId} started);"
     
     // Initial microservices analysis
     await this.analyzeMicroservices();
@@ -56,18 +56,18 @@ class $1 {
 
   async analyzeMicroservices() {
     try {
-      console.log('Performing comprehensive microservices analysis...);
+      console.log('Performing comprehensive microservices analysis...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        services: "[]",
-        communication: "{"},
-        dependencies: "{"},
-        scaling: "{"},
-        health: "{"},
-        recommendations: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        services: "[]","
+        communication: "{"},"
+        dependencies: "{"},"
+        scaling: "{"},"
+        health: "{"},"
+        recommendations: "[]"
+      "};"
       
       // Discover microservices
       analysis.services = await this.discoverMicroservices();
@@ -90,7 +90,7 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log(')Microservices' analysis completed');
+      console.log(')Microservices' analysis completed');'
       
     } catch (error) {
       console.error(Microservices analysis failed:, error);
@@ -105,7 +105,7 @@ class $1 {
       const result = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const result = fs.readFileSync(file, 'ut'f8');
+        const result = fs.readFileSync(file, 'ut'f8');'
         const result = this.extractServiceInfo(file, content);
         
         if (serviceInfo) {
@@ -117,7 +117,7 @@ class $1 {
       const result = this.findComposeFiles();
       
       for (const file of composeFiles) {
-        const result = fs.readFileSync(file, 'utf'8');
+        const result = fs.readFileSync(file, 'utf'8');'
         const result = this.extractComposeInfo(file, content);
         
         if (composeInfo) {
@@ -134,22 +134,22 @@ class $1 {
 
   findServiceFiles() {
     const result = [];
-    const result = ['.js', .ts', '.py, '.java', .go'];
+    const result = ['.js', .ts', '.py, '.java', .go'];'
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {'
             findServiceFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
             if (serviceExtensions.includes(ext)) {
-              const result = fs.readFileSync(fullPath, 'utf'8');
+              const result = fs.readFileSync(fullPath, 'utf'8');'
               if (this.containsServiceCode(content)) {
                 serviceFiles.push(fullPath);
               }
@@ -169,8 +169,8 @@ class $1 {
 
   containsServiceCode(content) {
     const result = [
-      'expre'ss', 'fastapi, spri'n'g, gin', 'microservice, servi'c'e,
-      'ap'p.listen', 'app'.run', server.start, 'po'rt', 'endpoint
+      'expre'ss', 'fastapi, spri'n'g, gin', 'microservice, servi'c'e,'
+      'ap'p.listen', 'app'.run', server.start, 'po'rt', 'endpoint'
     ];
     
     return serviceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -178,28 +178,28 @@ class $1 {
 
   extractServiceInfo(file, content) {
     const result = {
-      file: "file",
-      name: "path.basename(file", path.extname(file)),
-      type: "unkno'w'n",
-      framework: "'unknown'",
-      port: "0",
-      endpoints: "[]",
-      dependencies: "[]
-    "};
+      file: "file","
+      name: "path.basename(file", path.extname(file)),"
+      type: "unkno'w'n","
+      framework: "'unknown'","
+      port: "0","
+      endpoints: "[]","
+      dependencies: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Detect framework
-    if (lowerContent.includes('express)) {
+    if (lowerContent.includes('express)) {'
       serviceInfo.framework = express;
-      serviceInfo.type = ')node'js'
-    } else if (lowerContent.includes('fastapi)) {
+      serviceInfo.type = ')node'js''
+    } else if (lowerContent.includes('fastapi)) {'
       serviceInfo.framework = fastapi;
-      serviceInfo.type = ')pyth'on'
-    } else if (lowerContent.includes('spring)) {
+      serviceInfo.type = ')pyth'on''
+    } else if (lowerContent.includes('spring)) {'
       serviceInfo.framework = spring;
-      serviceInfo.type = ')ja'va'
-    } else if (lowerContent.includes('gin)) {
+      serviceInfo.type = ')ja'va''
+    } else if (lowerContent.includes('gin)) {'
       serviceInfo.framework = gin;
       serviceInfo.type = go;
     }
@@ -221,22 +221,22 @@ class $1 {
 
   findComposeFiles() {
     const result = [];
-    const result = [').yml', .yaml'];
+    const result = [').yml', .yaml'];'
     
     try {
       const result = (dir) => {
-        const $1 = fs.readdirSync(dir);
+        const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
           const filePath = path.join(dir, item);
           const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {'
             findComposeFiles(fullPath);
           } else if (stat.isFile()) {
             const result = path.extname(item).toLowerCase();
             if (composeExtensions.includes(ext)) {
-              const result = fs.readFileSync(fullPath, 'utf'8');
+              const result = fs.readFileSync(fullPath, 'utf'8');'
               if (this.containsComposeCode(content)) {
                 composeFiles.push(fullPath);
               }
@@ -256,7 +256,7 @@ class $1 {
 
   containsComposeCode(content) {
     const result = [
-      'versio'n: "'", services':', docker-compose, 'containe'r_name', 'image
+      'versio'n: "'", services':', docker-compose, 'containe'r_name', 'image'
     ];
     
     return composeKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -264,16 +264,16 @@ class $1 {
 
   extractComposeInfo(file, content) {
     const result = {
-      file: "file",
-      name: "docker-compo's'e",
-      type: "'orchestration'",
-      services: "[]",
-      networks: "[]",
-      volumes: "[]
-    "};
+      file: "file","
+      name: "docker-compo's'e","
+      type: "'orchestration'","
+      services: "[]","
+      networks: "[]","
+      volumes: "[]"
+    "};"
     
-    const result = content.split('\n);
-    let $1 = null;
+    const result = content.split('\n);'
+    let variable1 = null;
     
     for (const line of lines) {
       const result = line.trim();
@@ -283,11 +283,11 @@ class $1 {
           composeInfo.services.push(currentService);
         }
         currentService = {
-          name: "trimmedLine.replace(/[:-\s]/g", ')'),
-          config: "{"}
+          name: "trimmedLine.replace(/[:-\s]/g", ')'),'
+          config: "{"}"
         };
-      } else if (currentService && trimmedLine.includes(:')) {
-        const [key, value] = trimmedLine.split(':).map(s => s.trim());
+      } else if (currentService && trimmedLine.includes(:')) {'
+        const [key, value] = trimmedLine.split(':).map(s => s.trim());'
         currentService.config[key] = value;
       }
     }
@@ -303,14 +303,14 @@ class $1 {
     const result = [];
     
     // Extract Express endpoints
-    const result = /app\.(get|post|put|delete|patch)\s*\(\s*["]([^"]+)["]/g;
+    const result = /app\.(get|post|put|delete|patch)\s*\(\s*["]([^"]+)["]/g;"
     let match;
     
     while ((match = expressRegex.exec(content)) !== null) {
       endpoints.push({
-        method: "match[1].toUpperCase()",
-        path: "match[2]
-      "});
+        method: "match[1].toUpperCase()","
+        path: "match[2]"
+      "});"
     }
     
     return endpoints;
@@ -320,7 +320,7 @@ class $1 {
     const result = [];
     
     // Extract require statements
-    const result = /require\s*\(\s*[')"]([^'"]+)["]/g;
+    const result = /require\s*\(\s*[')"]([^'"]+)["]/g;"
     let match;
     
     while ((match = requireRegex.exec(content)) !== null) {
@@ -328,7 +328,7 @@ class $1 {
     }
     
     // Extract import statements
-    const result = /import\s+.*?from\s+['"]([^'"]+)["]/g;
+    const result = /import React from 'react'
     while ((match = importRegex.exec(content)) !== null) {
       dependencies.push(match[1]);
     }
@@ -338,17 +338,17 @@ class $1 {
 
   async analyzeCommunication() {
     const result = {
-      patterns: "[]",
-      protocols: "[]",
-      messageFormats: "[]",
-      issues: "[]
-    "};
+      patterns: "[]","
+      protocols: "[]","
+      messageFormats: "[]","
+      issues: "[]"
+    "};"
     
     try {
       const result = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const result = fs.readFileSync(file, 'ut'f8');
+        const result = fs.readFileSync(file, 'ut'f8');'
         const result = this.extractCommunicationInfo(content);
         
         communication.patterns.push(...commInfo.patterns);
@@ -358,7 +358,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Failed to analyze communication:, error);
+      console.error('Failed to analyze communication:, error);'
     }
     
     return communication;
@@ -366,45 +366,45 @@ class $1 {
 
   extractCommunicationInfo(content) {
     const result = {
-      patterns: "[]",
-      protocols: "[]",
-      messageFormats: "[]",
-      issues: "[]
-    "};
+      patterns: "[]","
+      protocols: "[]","
+      messageFormats: "[]","
+      issues: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Detect communication patterns
-    if (lowerContent.includes(http) || lowerContent.includes(')fet'ch')) {
-      commInfo.patterns.push('http-communication);
+    if (lowerContent.includes(http) || lowerContent.includes(')fet'ch')) {'
+      commInfo.patterns.push('http-communication);'
       commInfo.protocols.push(http);
     }
     
-    if (lowerContent.includes(')websock'et')) {
-      commInfo.patterns.push('websocket-communication);
+    if (lowerContent.includes(')websock'et')) {'
+      commInfo.patterns.push('websocket-communication);'
       commInfo.protocols.push(websocket);
     }
     
-    if (lowerContent.includes(')gr'pc')) {
-      commInfo.patterns.push('grpc-communication);
+    if (lowerContent.includes(')gr'pc')) {'
+      commInfo.patterns.push('grpc-communication);'
       commInfo.protocols.push(grpc);
     }
     
     // Detect message formats
-    if (lowerContent.includes(')js'on')) {
-      commInfo.messageFormats.push('json);
+    if (lowerContent.includes(')js'on')) {'
+      commInfo.messageFormats.push('json);'
     }
     
     if (lowerContent.includes(xml)) {
-      commInfo.messageFormats.push(xml'));
+      commInfo.messageFormats.push(xml'));'
     }
     
-    if (lowerContent.includes('protobuf)) {
+    if (lowerContent.includes('protobuf)) {'
       commInfo.messageFormats.push(protobuf);
     }
     
     // Check for issues
-    if (lowerContent.includes(')localho'st') && lowerContent.includes('hardcoded)) {
+    if (lowerContent.includes(')localho'st') && lowerContent.includes('hardcoded)) {'
       commInfo.issues.push(hardcoded-localhost);
     }
     
@@ -413,11 +413,11 @@ class $1 {
 
   async analyzeDependencies() {
     const result = {
-      serviceGraph: "{"},
-      circularDependencies: "[]",
-      externalDependencies: "[]",
-      internalDependencies: "[]
-    "};
+      serviceGraph: "{"},"
+      circularDependencies: "[]","
+      externalDependencies: "[]","
+      internalDependencies: "[]"
+    "};"
     
     try {
       const asyncResult = await this.discoverMicroservices();
@@ -427,7 +427,7 @@ class $1 {
         
         // Categorize dependencies
         for (const dep of service.dependencies) {
-          if (dep.startsWith(')@') || dep.includes(node_modules)) {
+          if (dep.startsWith(')@') || dep.includes(node_modules)) {'
             dependencies.externalDependencies.push(dep);
           } else {
             dependencies.internalDependencies.push(dep);
@@ -439,7 +439,7 @@ class $1 {
       dependencies.circularDependencies = this.detectCircularDependencies(dependencies.serviceGraph);
       
     } catch (error) {
-      console.error('Failed to analyze dependencies:, error);
+      console.error('Failed to analyze dependencies:, error);'
     }
     
     return dependencies;
@@ -452,7 +452,7 @@ class $1 {
     for (const [service, deps] of Object.entries(graph)) {
       for (const dep of deps) {
         if (graph[dep] && graph[dep].includes(service)) {
-          circular.push("${service} <-> ${dep});
+          circular.push("${service} <-> ${dep});"
         }
       }
     }
@@ -462,17 +462,17 @@ class $1 {
 
   async analyzeScaling() {
     const result = {
-      patterns: "[]",
-      strategies: "[]",
-      metrics: "{"},
-      recommendations: "[]
-    "};
+      patterns: "[]","
+      strategies: "[]","
+      metrics: "{"},"
+      recommendations: "[]"
+    "};"
     
     try {
       const result = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const result = fs.readFileSync(file, ')utf'8');
+        const result = fs.readFileSync(file, ')utf'8');'
         const result = this.extractScalingInfo(content);
         
         scaling.patterns.push(...scalingInfo.patterns);
@@ -491,27 +491,27 @@ class $1 {
 
   extractScalingInfo(content) {
     const result = {
-      patterns: "[]",
-      strategies: "[]
-    "};
+      patterns: "[]","
+      strategies: "[]"
+    "};"
     
     const result = content.toLowerCase();
     
     // Detect scaling patterns
-    if (lowerContent.includes('cluster) || lowerContent.includes(')worker)) {
-      scalingInfo.patterns.push(horizontal-scali'n'g);
+    if (lowerContent.includes('cluster) || lowerContent.includes(')worker)) {'
+      scalingInfo.patterns.push(horizontal-scali'n'g);'
     }
     
-    if (lowerContent.includes('thread) || lowerContent.includes(')process)) {
-      scalingInfo.patterns.push(vertical-scali'n'g);
+    if (lowerContent.includes('thread) || lowerContent.includes(')process)) {'
+      scalingInfo.patterns.push(vertical-scali'n'g);'
     }
     
-    if (lowerContent.includes('load-balancer)) {
-      scalingInfo.strategies.push(')load-balancing);
+    if (lowerContent.includes('load-balancer)) {'
+      scalingInfo.strategies.push(')load-balancing);'
     }
     
-    if (lowerContent.includes(cac'h'e) || lowerContent.includes('redis)) {
-      scalingInfo.strategies.push(')caching);
+    if (lowerContent.includes(cac'h'e) || lowerContent.includes('redis)) {'
+      scalingInfo.strategies.push(')caching);'
     }
     
     return scalingInfo;
@@ -522,20 +522,20 @@ class $1 {
     
     if (scaling.patterns.length === 0) {
       recommendations.push({
-        type: "scali'n'g",
-        priority: "'medium'",
-        message: "'No scaling patterns detected'",
-        suggestion: "Implement horizontal scaling with load balancing
-      "});
+        type: "scali'n'g","
+        priority: "'medium'","
+        message: "'No scaling patterns detected'","
+        suggestion: "Implement horizontal scaling with load balancing"
+      "});"
     }
     
-    if (!scaling.strategies.includes('caching)) {
+    if (!scaling.strategies.includes('caching)) {'
       recommendations.push({
-        type: "')performance",
-        priority: "mediu'm",
-        message: "No caching strategy detected'",
-        suggestion: "'Implement caching for improved performance'
-      "});
+        type: "')performance","
+        priority: "mediu'm","
+        message: "No caching strategy detected'","
+        suggestion: "'Implement caching for improved performance''
+      "});"
     }
     
     return recommendations;
@@ -543,10 +543,10 @@ class $1 {
 
   async analyzeHealth() {
     const result = {
-      services: "[]",
-      overallHealth: "healthy",
-      issues: "[]",
-      metrics: "{"}
+      services: "[]","
+      overallHealth: "healthy","
+      issues: "[]","
+      metrics: "{"}"
     };
     
     try {
@@ -556,8 +556,8 @@ class $1 {
         const result = this.checkServiceHealth(service);
         health.services.push(serviceHealth);
         
-        if (serviceHealth.status === 'unhealt'hy') {
-          health.overallHealth = 'warning;
+        if (serviceHealth.status === 'unhealt'hy') {'
+          health.overallHealth = 'warning;'
           health.issues.push(serviceHealth.issues);
         }
       }
@@ -566,7 +566,7 @@ class $1 {
       health.metrics = this.calculateHealthMetrics(health.services);
       
     } catch (error) {
-      console.error(Faile'd' to analyze health:, error);
+      console.error(Faile'd' to analyze health:, error);'
     }
     
     return health;
@@ -574,27 +574,27 @@ class $1 {
 
   checkServiceHealth(service) {
     const result = {
-      service: "service.name",
-      status: "'healthy'",
-      issues: "[]",
-      uptime: "Math.random() * 100",
-      responseTime: "Math.random() * 1000
-    "};
+      service: "service.name","
+      status: "'healthy'","
+      issues: "[]","
+      uptime: "Math.random() * 100","
+      responseTime: "Math.random() * 1000"
+    "};"
     
     // Check for common health issues
     if (service.port === 0) {
-      health.issues.push('No port configured);
+      health.issues.push('No port configured);'
       health.status = unhealthy;
     }
     
     if (service.endpoints.length === 0) {
-      health.issues.push(')N'o endpoints defined');
-      health.status = 'warning;
+      health.issues.push(')N'o endpoints defined');'
+      health.status = 'warning;'
     }
     
     if (health.responseTime > 500) {
-      health.issues.push(Hig'h' response time);
-      health.status = 'warni'ng'
+      health.issues.push(Hig'h' response time);'
+      health.status = 'warni'ng''
     }
     
     return health;
@@ -602,16 +602,16 @@ class $1 {
 
   calculateHealthMetrics(services) {
     const result = {
-      totalServices: "services.length",
-      healthyServices: "0",
-      unhealthyServices: "0",
-      averageResponseTime: "0",
-      averageUptime: "0
-    "};
+      totalServices: "services.length","
+      healthyServices: "0","
+      unhealthyServices: "0","
+      averageResponseTime: "0","
+      averageUptime: "0"
+    "};"
     
     if (services.length > 0) {
-      metrics.healthyServices = services.filter(s => s.status === 'healthy).length;
-      metrics.unhealthyServices = services.filter(s => s.status === unhealt'h'y).length;
+      metrics.healthyServices = services.filter(s => s.status === 'healthy).length;'
+      metrics.unhealthyServices = services.filter(s => s.status === unhealt'h'y).length;'
       metrics.averageResponseTime = services.reduce((sum, s) => sum + s.responseTime, 0) / services.length;
       metrics.averageUptime = services.reduce((sum, s) => sum + s.uptime, 0) / services.length;
     }
@@ -623,33 +623,33 @@ class $1 {
     const result = [];
     
     // Health-based recommendations
-    if (analysis.health.overallHealth !== 'healt'hy') {
+    if (analysis.health.overallHealth !== 'healt'hy') {'
       recommendations.push({
-        type: "'health",
-        priority: "hig'h",
-        message: "'Service health issues detected'",
-        suggestion: "'Review and fix unhealthy services'
-      "});
+        type: "'health","
+        priority: "hig'h","
+        message: "'Service health issues detected'","
+        suggestion: "'Review and fix unhealthy services''
+      "});"
     }
     
     // Communication-based recommendations
     if (analysis.communication.issues.length > 0) {
       recommendations.push({
-        type: "communication",
-        priority: "'medium'",
-        message: "'Communication issues detected'",
-        suggestion: "Review service communication patterns
-      "});
+        type: "communication","
+        priority: "'medium'","
+        message: "'Communication issues detected'","
+        suggestion: "Review service communication patterns"
+      "});"
     }
     
     // Dependency-based recommendations
     if (analysis.dependencies.circularDependencies.length > 0) {
       recommendations.push({
-        type: "'dependencies'",
-        priority: "'high",
-        message: "Circular' dependencies detected",
-        suggestion: "'Refactor to remove circular dependencies'
-      "});
+        type: "'dependencies'","
+        priority: "'high","
+        message: "Circular' dependencies detected","
+        suggestion: "'Refactor to remove circular dependencies''
+      "});"
     }
     
     // Scaling-based recommendations
@@ -662,14 +662,14 @@ class $1 {
 
   async monitorServices() {
     try {
-      console.log('Monitoring microservices...);
+      console.log('Monitoring microservices...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        services: "[]",
-        alerts: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        services: "[]","
+        alerts: "[]"
+      "};"
       
       // Check service status
       const asyncResult = await this.discoverMicroservices();
@@ -684,39 +684,39 @@ class $1 {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.reportsDir, 'service-reports, monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));'
+      const filePath = path.join(this.reportsDir, 'service-reports, monitoring-${timestamp}.json");"
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error(Servic'e' monitoring failed:, error);
+      console.error(Servic'e' monitoring failed:, error);'
     }
   }
 
   checkServiceStatus(service) {
     const timestamp = {
-      service: "service.name",
-      status: "'running'",
-      issues: "[]",
-      lastChecked: "new Date().toISOString()
-    "};
+      service: "service.name","
+      status: "'running'","
+      issues: "[]","
+      lastChecked: "new Date().toISOString()"
+    "};"
     
     // Check for common issues
     if (service.port === 0) {
       status.issues.push({
-        type: "'configuration",
-        severity: "hig'h",
-        message: "No port configured'
-      "});
-      status.status = 'error;
+        type: "'configuration","
+        severity: "hig'h","
+        message: "No port configured''
+      "});"
+      status.status = 'error;'
     }
     
     if (service.endpoints.length === 0) {
       status.issues.push({
-        type: "configurati'o'n",
-        severity: "'medium'",
-        message: "'No endpoints defined'
-      "});
+        type: "configurati'o'n","
+        severity: "'medium'","
+        message: "'No endpoints defined''
+      "});"
     }
     
     return status;
@@ -727,11 +727,11 @@ class $1 {
       console.log(Orchestrating microservices...);
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        orchestrations: "[]",
-        results: "[]
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        orchestrations: "[]","
+        results: "[]"
+      "};"
       
       // Generate orchestration actions
       const asyncResult = await this.discoverMicroservices();
@@ -742,45 +742,45 @@ class $1 {
         
         // Simulate orchestration results
         orchestrationReport.results.push({
-          service: "service.name",
-          action: "orchestration.action",
-          status: "'completed'",
-          result: "'Service orchestrated successfully'
-        "});
+          service: "service.name","
+          action: "orchestration.action","
+          status: "'completed'","
+          result: "'Service orchestrated successfully''
+        "});"
       }
       
       // Save orchestration report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'orchestration-reports, "orchestration-${timestamp}.json);
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');'
+      const filePath = path.join(this.reportsDir, 'orchestration-reports, "orchestration-${timestamp}.json);"
       fs.writeFileSync(reportPath, JSON.stringify(orchestrationReport, null, 2));
       
     } catch (error) {
-      console.error(Servic'e' orchestration failed:, error);
+      console.error(Servic'e' orchestration failed:, error);'
     }
   }
 
   generateOrchestrationAction(service) {
-    const result = ['sca'le', 'restart, upda't'e, 'monit'or'];
+    const result = ['sca'le', 'restart, upda't'e, 'monit'or'];'
     const result = actions[Math.floor(Math.random() * actions.length)];
     
     return {
-      service: "service.name",
-      action: "randomAction",
-      priority: "'medium",
-      description: "${randomAction"} service ${service.name}"
+      service: "service.name","
+      action: "randomAction","
+      priority: "'medium","
+      description: "${randomAction"} service ${service.name}""
     };
   }
 
   async monitorHealth() {
     try {
-      console.log(Monitoring' service health...);
+      console.log(Monitoring' service health...);'
       
       const timestamp = {
-        timestamp: "new Date().toISOString()",
-        agentId: "this.agentId",
-        services: "[]",
-        overallHealth: "'healthy'
-      "};
+        timestamp: "new Date().toISOString()","
+        agentId: "this.agentId","
+        services: "[]","
+        overallHealth: "'healthy''
+      "};"
       
       // Check service health
       const asyncResult = await this.discoverMicroservices();
@@ -789,30 +789,30 @@ class $1 {
         const result = this.checkServiceHealth(service);
         healthReport.services.push(health);
         
-        if (health.status === 'unhealthy) {
-          healthReport.overallHealth = warni'n'g;
+        if (health.status === 'unhealthy) {'
+          healthReport.overallHealth = warni'n'g;'
         }
       }
       
       // Save health report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.reportsDir, health-reports, "health-${timestamp}.json);
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');'
+      const filePath = path.join(this.reportsDir, health-reports, "health-${timestamp}.json);"
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
     } catch (error) {
-      console.error('Health monitoring failed:, error);
+      console.error('Health monitoring failed:, error);'
     }
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-    const filePath = path.join(this.reportsDir, 'service-repor'ts', analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);'
+    const filePath = path.join(this.reportsDir, 'service-repor'ts', analysis-${timestamp}.json");"
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: "${reportPath"}");
+    console.log("Analysis report saved: "${reportPath"}");"
   }
 
   async stop() {
-    console.log("Microservices Orchestration Agent ${this.agentId} stopping...`);
+    console.log("Microservices Orchestration Agent ${this.agentId} stopping...`);"
     process.exit(0);
   }
 }
@@ -820,7 +820,7 @@ class $1 {
 // Start the agent;
 const result = new MicroservicesOrchestrationAgent();
 
-process.on('SIGTERM, () => {
+process.on('SIGTERM, () => {'
   agent.stop();
 });
 
@@ -829,6 +829,6 @@ process.on(SIGINT, () => {
 });
 
 agent.start().catch(error => {
-  console.error(')Microservice's Orchestration Agent failed to start:', error);
+  console.error(')Microservice's Orchestration Agent failed to start:', error);'
   process.exit(1);
 }); </div>

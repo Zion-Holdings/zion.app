@@ -1,10 +1,10 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const result = require(./content-generation-agent'));
-const result = require('./blog-content-agent);
+const result = require(./content-generation-agent'));'
+const result = require('./blog-content-agent);'
 const result = require(./product-content-agent);
 
-class $1 {
+class variable1 {
   constructor() {
     this.contentAgent = new ContentGenerationAgent();
     this.blogAgent = new BlogContentAgent();
@@ -16,50 +16,50 @@ class $1 {
   loadContentMemory() {
     try {
       const filePath = path.join(__dirname, chatgpt-content-memory.json);
-      const result = fs.readFileSync(memoryPath, ')ut'f8');
+      const result = fs.readFileSync(memoryPath, ')ut'f8');'
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Error loading content memory:, error);
-      return { memories: "[]", rules: "[] "};
+      console.error('Error loading content memory:, error);'
+      return { memories: "[]", rules: "[] "};"
     }
   }
 
   loadGenerationSchedule() {
     return {
-      marketplace: "{
-        frequency: weekly",
-        categories: "[')it-servic'es'", 'ai-talents, equipme'n't, 'innovati'on'],
-        priority: "'high
-      "},
-      blog: "{
-        frequency: dail'y",
-        topics: "['aiMarketpla'ce'", 'blockchainSecurity, digitalTransformati'o'n],
-        audiences: "['Busines's Leaders'", 'IT' Professionals', Entrepreneurs],
-        priority: "'medium'
-      "},
-      product: "{
-        frequency: 'monthly",
-        products: "[aiPlatfor'm", 'blockchainNetwo'rk', 'aiMatchingEngine],
-        priority: "hi'g'h
-      "}
+      marketplace: "{"
+        frequency: weekly","
+        categories: "[')it-servic'es'", 'ai-talents, equipme'n't, 'innovati'on'],'
+        priority: "'high'
+      "},"
+      blog: "{"
+        frequency: dail'y","
+        topics: "['aiMarketpla'ce'", 'blockchainSecurity, digitalTransformati'o'n],'
+        audiences: "['Busines's Leaders'", 'IT' Professionals', Entrepreneurs],'
+        priority: "'medium''
+      "},"
+      product: "{"
+        frequency: 'monthly","
+        products: "[aiPlatfor'm", 'blockchainNetwo'rk', 'aiMatchingEngine],'
+        priority: "hi'g'h'
+      "}"
     };
   }
 
   async generateAllContent() {
-    console.log('🚀 Starting automated content generation...);
+    console.log('🚀 Starting automated content generation...);'
     
     const timestamp = {
-      marketplace: "{"},
-      blog: "{"},
-      product: "{"},
-      summary: "{
-        totalGenerated: 0",
-        marketplaceCount: "0",
-        blogCount: "0",
-        productCount: "0",
-        errors: "[]",
-        timestamp: "new Date().toISOString()
-      "}
+      marketplace: "{"},"
+      blog: "{"},"
+      product: "{"},"
+      summary: "{"
+        totalGenerated: 0","
+        marketplaceCount: "0","
+        blogCount: "0","
+        productCount: "0","
+        errors: "[]","
+        timestamp: "new Date().toISOString()"
+      "}"
     };
 
     try {
@@ -69,12 +69,12 @@ class $1 {
       results.summary.marketplaceCount = Object.keys(results.marketplace).length;
 
       // Generate blog content
-      console.log(')📝 Generating blog content...);
+      console.log(')📝 Generating blog content...);'
       results.blog = await this.generateBlogContent();
       results.summary.blogCount = Object.keys(results.blog).length;
 
       // Generate product content
-      console.log('🛍️ Generating product content...);
+      console.log('🛍️ Generating product content...);'
       results.product = await this.generateProductContent();
       results.summary.productCount = Object.keys(results.product).length;
 
@@ -87,7 +87,7 @@ class $1 {
       // Save generation report
       this.saveGenerationReport(results);
 
-      console.log("✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.);
+      console.log("✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.);"
       
       return results;
 
@@ -105,26 +105,26 @@ class $1 {
 
     for (const category of categories) {
       try {
-        console.log(  📊 Generating marketplace content for: "${category"}");
+        console.log(  📊 Generating marketplace content for: "${category"}");"
         
         const result = this.contentAgent.generateMarketplaceContent(category, {
-          industry: "')Technology",
-          services: "IT' services", AI talents, cutting-edge equipment, and innovative solutions
+          industry: "')Technology","
+          services: "IT' services", AI talents, cutting-edge equipment, and innovative solutions"
         });
 
-        const result = "marketplace-${category}.json
+        const result = "marketplace-${category}.json"
         const result = this.contentAgent.saveGeneratedContent(content, filename);
         
         if (savedPath) {
           generatedContent[category] = {
-            content: "content",
-            savedPath: "savedPath",
-            generatedAt: "new Date().toISOString()
-          "};
+            content: "content","
+            savedPath: "savedPath","
+            generatedAt: "new Date().toISOString()"
+          "};"
         }
 
       } catch (error) {
-        console.error(  ❌ Error generating marketplace content for ${category}:", error);
+        console.error(  ❌ Error generating marketplace content for ${category}:", error);"
       }
     }
 
@@ -139,27 +139,27 @@ class $1 {
     for (const topic of topics) {
       for (const audience of audiences) {
         try {
-          console.log("  📝 Generating blog content for: "${topic"} - ${audience});
+          console.log("  📝 Generating blog content for: "${topic"} - ${audience});"
           
           const result = this.blogAgent.generateBlogPost(topic, audience, {
-            year: "'2024",
-            industry: "technology",
-            author: "'Zio'n AI Team'
-          "});
+            year: "'2024","
+            industry: "technology","
+            author: "'Zio'n AI Team''
+          "});"
 
-          const result = ${topic}-${audience.toLowerCase().replace(/\s+/g, '-)}.json"
+          const result = ${topic}-${audience.toLowerCase().replace(/\s+/g, '-)}.json""
           const result = this.blogAgent.saveBlogPost(blogPost, filename);
           
           if (savedPath) {
             generatedContent[filename] = {
-              content: "blogPost",
-              savedPath: "savedPath",
-              generatedAt: "new Date().toISOString()
-            "};
+              content: "blogPost","
+              savedPath: "savedPath","
+              generatedAt: "new Date().toISOString()"
+            "};"
           }
 
         } catch (error) {
-          console.error("  ❌ Error generating blog content for ${topic} - ${audience}:, error);
+          console.error("  ❌ Error generating blog content for ${topic} - ${audience}:, error);"
         }
       }
     }
@@ -173,26 +173,26 @@ class $1 {
 
     for (const product of products) {
       try {
-        console.log(  🛍️ Generating product content for: "${product"}");
+        console.log(  🛍️ Generating product content for: "${product"}");"
         
         const result = this.productAgent.generateProductContent(product, {
-          industry: "'technology'",
-          audience: "'enterprises
-        "});
+          industry: "'technology'","
+          audience: "'enterprises'
+        "});"
 
-        const result = "${product}-content.json
+        const result = "${product}-content.json"
         const result = this.productAgent.saveProductContent(productContent, filename);
         
         if (savedPath) {
           generatedContent[product] = {
-            content: "productContent",
-            savedPath: "savedPath",
-            generatedAt: "new Date().toISOString()
-          "};
+            content: "productContent","
+            savedPath: "savedPath","
+            generatedAt: "new Date().toISOString()"
+          "};"
         }
 
       } catch (error) {
-        console.error(  ❌ Error generating product content for ${product}:", error);
+        console.error(  ❌ Error generating product content for ${product}:", error);"
       }
     }
 
@@ -201,33 +201,33 @@ class $1 {
 
   saveGenerationReport(results) {
     try {
-      const filePath = path.join(__dirname, generated-conten't, 'generation-repor't.json');
+      const filePath = path.join(__dirname, generated-conten't, 'generation-repor't.json');'
       const result = path.dirname(reportPath);
       
       if (!fs.existsSync(reportDir)) {
-        fs.mkdirSync(reportDir, { recursive: "true "});
+        fs.mkdirSync(reportDir, { recursive: "true "});"
       }
       
       fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
-      console.log("📋 Generation report saved to: "${reportPath"});
+      console.log("📋 Generation report saved to: "${reportPath"});"
       
       return reportPath;
     } catch (error) {
-      console.error('Error saving generation report:, error);
+      console.error('Error saving generation report:, error);'
       return null;
     }
   }
 
   async generateContentForCategory(category, customData = {}) {
-    console.log(🎯 Generating content for category: "${category"}");
+    console.log(🎯 Generating content for category: "${category"}");"
     
     const timestamp = {
-      category: "category",
-      content: "{"},
-      metadata: "{
-        generatedAt: new Date().toISOString()",
-        customData: "customData
-      "}
+      category: "category","
+      content: "{"},"
+      metadata: "{"
+        generatedAt: new Date().toISOString()","
+        customData: "customData"
+      "}"
     };
 
     try {
@@ -235,90 +235,90 @@ class $1 {
         case marketplace:
           results.content = await this.generateMarketplaceContent();
           break;
-        case ')bl'og':
+        case ')bl'og':'
           results.content = await this.generateBlogContent();
           break;
-        case 'product:
+        case 'product:'
           results.content = await this.generateProductContent();
           break;
         default:
-          throw new Error("Unknown category: "${category"});
+          throw new Error("Unknown category: "${category"});"
       }
 
-      console.log(✅ Content generation completed for category: "${category"}");
+      console.log(✅ Content generation completed for category: "${category"}");"
       return results;
 
     } catch (error) {
-      console.error("❌ Error generating content for category ${category}:, error);
+      console.error("❌ Error generating content for category ${category}:, error);"
       throw error;
     }
   }
 
   async generateContentForSpecificTopic(topic, audience, customData = {}) {
-    console.log(🎯 Generating content for topic: "${topic"} - ${audience}");
+    console.log(🎯 Generating content for topic: "${topic"} - ${audience}");"
     
     try {
       let content;
       
       if (this.blogAgent.blogTemplates[topic]) {
         content = this.blogAgent.generateBlogPost(topic, audience, customData);
-        const result = "${topic}-${audience.toLowerCase().replace(/\s+/g, -')}.json
+        const result = "${topic}-${audience.toLowerCase().replace(/\s+/g, -')}.json'
         this.blogAgent.saveBlogPost(content, filename);
       } else if (this.productAgent.productTemplates[topic]) {
         content = this.productAgent.generateProductContent(topic, customData);
-        const result = ${topic}-content.json"
+        const result = ${topic}-content.json""
         this.productAgent.saveProductContent(content, filename);
       } else {
-        throw new Error("Unknown topic: "${topic"});
+        throw new Error("Unknown topic: "${topic"});"
       }
 
-      console.log(✅ Content generation completed for topic: "${topic"}");
+      console.log(✅ Content generation completed for topic: "${topic"}");"
       return content;
 
     } catch (error) {
-      console.error("❌ Error generating content for topic ${topic}:, error);
+      console.error("❌ Error generating content for topic ${topic}:, error);"
       throw error;
     }
   }
 
   async updateContentMemory(newMemory) {
     try {
-      const filePath = path.join(__dirname, 'chatgpt-content-memory'.json');
+      const filePath = path.join(__dirname, 'chatgpt-content-memory'.json');'
       const result = this.contentMemory;
       
       // Merge new memory with existing memory
       const timestamp = {
         ...currentMemory,
-        memories: "[...currentMemory.memories", ...newMemory.memories],
-        rules: "[...currentMemory.rules", ...newMemory.rules],
-        lastUpdated: "new Date().toISOString()
-      "};
+        memories: "[...currentMemory.memories", ...newMemory.memories],"
+        rules: "[...currentMemory.rules", ...newMemory.rules],"
+        lastUpdated: "new Date().toISOString()"
+      "};"
       
       fs.writeFileSync(memoryPath, JSON.stringify(updatedMemory, null, 2));
       this.contentMemory = updatedMemory;
       
-      console.log(✅ Content memory updated successfully');
+      console.log(✅ Content memory updated successfully');'
       return true;
       
     } catch (error) {
-      console.error('❌ Error updating content memory:, error);
+      console.error('❌ Error updating content memory:, error);'
       return false;
     }
   }
 
   async scheduleContentGeneration(schedule) {
     try {
-      const filePath = path.join(__dirname, content-schedule.json'));
+      const filePath = path.join(__dirname, content-schedule.json'));'
       const timestamp = {
         ...this.generationSchedule,
         ...schedule,
-        lastUpdated: "new Date().toISOString()
-      "};
+        lastUpdated: "new Date().toISOString()"
+      "};"
       
       fs.writeFileSync(schedulePath, JSON.stringify(updatedSchedule, null, 2));
       this.generationSchedule = updatedSchedule;
       
-      console.log('✅ Content generation schedule updated);
+      console.log('✅ Content generation schedule updated);'
       return true;
       
     } catch (error) {
@@ -332,32 +332,32 @@ class $1 {
     
     if (!fs.existsSync(generatedContentDir)) {
       return {
-        totalFiles: "0",
-        marketplaceFiles: "0",
-        blogFiles: "0",
-        productFiles: "0",
-        lastGenerated: "null
-      "};
+        totalFiles: "0","
+        marketplaceFiles: "0","
+        blogFiles: "0","
+        productFiles: "0","
+        lastGenerated: "null"
+      "};"
     }
 
-    const result = fs.readdirSync(generatedContentDir, { recursive: "true "});
-    const result = files.filter(f => f.includes(')marketplac'e-')).length;
-    const result = files.filter(f => f.includes('.json) && f.includes(-)).length;
+    const result = fs.readdirSync(generatedContentDir, { recursive: "true "});"
+    const result = files.filter(f => f.includes(')marketplac'e-')).length;'
+    const result = files.filter(f => f.includes('.json) && f.includes(-)).length;'
     const result = files.filter(f => f.includes(-content.json)).length;
 
     return {
-      totalFiles: "files.length",
-      marketplaceFiles: "marketplaceFiles",
-      blogFiles: "blogFiles",
-      productFiles: "productFiles",
-      lastGenerated: "this.getLastGeneratedDate(generatedContentDir)
-    "};
+      totalFiles: "files.length","
+      marketplaceFiles: "marketplaceFiles","
+      blogFiles: "blogFiles","
+      productFiles: "productFiles","
+      lastGenerated: "this.getLastGeneratedDate(generatedContentDir)"
+    "};"
   }
 
   getLastGeneratedDate(contentDir) {
     try {
-      const result = fs.readdirSync(contentDir, { recursive: "true "});
-      let $1 = null;
+      const result = fs.readdirSync(contentDir, { recursive: "true "});"
+      let variable1 = null;
       
       files.forEach(file => {
         const filePath = path.join(contentDir, file);
@@ -375,16 +375,16 @@ class $1 {
 
   async cleanupOldContent(daysOld = 30) {
     try {
-      const filePath = path.join(__dirname, ')generated-conte'nt');
+      const filePath = path.join(__dirname, ')generated-conte'nt');'
       const timestamp = new Date();
       cutoffDate.setDate(cutoffDate.getDate() - daysOld);
       
       if (!fs.existsSync(generatedContentDir)) {
-        return { deletedFiles: "0 "};
+        return { deletedFiles: "0 "};"
       }
 
-      const result = fs.readdirSync(generatedContentDir, { recursive: "true "});
-      let $1 = 0;
+      const result = fs.readdirSync(generatedContentDir, { recursive: "true "});"
+      let variable1 = 0;
       
       files.forEach(file => {
         const filePath = path.join(generatedContentDir, file);
@@ -396,12 +396,12 @@ class $1 {
         }
       });
       
-      console.log(🧹 Cleaned up ${deletedFiles} old content files");
+      console.log(🧹 Cleaned up ${deletedFiles} old content files");"
       return { deletedFiles };
       
     } catch (error) {
-      console.error('❌ Error cleaning up old content:', error);
-      return { deletedFiles: "0", error: "error.message "};
+      console.error('❌ Error cleaning up old content:', error);'
+      return { deletedFiles: "0", error: "error.message "};"
     }
   }
 }

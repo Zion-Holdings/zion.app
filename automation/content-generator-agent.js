@@ -1,7 +1,7 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
 
-class $1 {
+class variable1 {
   constructor() {
     this.generatedContent = [];
     this.contentTemplates = this.loadContentTemplates();
@@ -9,129 +9,129 @@ class $1 {
 
   loadContentTemplates() {
     return {
-      serviceDescription: "this.getServiceDescriptionTemplate()",
-      talentProfile: "this.getTalentProfileTemplate()",
-      blogPost: "this.getBlogPostTemplate()",
-      testimonial: "this.getTestimonialTemplate()",
-      faq: "this.getFAQTemplate()
-    "};
+      serviceDescription: "this.getServiceDescriptionTemplate()","
+      talentProfile: "this.getTalentProfileTemplate()","
+      blogPost: "this.getBlogPostTemplate()","
+      testimonial: "this.getTestimonialTemplate()","
+      faq: "this.getFAQTemplate()"
+    "};"
   }
 
   getServiceDescriptionTemplate() {
     return {
-      title: ""{{SERVICE_NAME"}} - Professional {{SERVICE_CATEGORY}} Services,
-      description: "Expert {{SERVICE_CATEGORY"}} services delivered by certified professionals. Get high-quality results with our proven methodology and industry best practices.",
-      features: "[
-        "Professional {{SERVICE_CATEGORY"}} expertise,
-        Industry best practices",
-        "Quality assurance,
-        Timely delivery",
-        "Ongoing support
+      title: ""{{SERVICE_NAME"}} - Professional {{SERVICE_CATEGORY}} Services,"
+      description: "Expert {{SERVICE_CATEGORY"}} services delivered by certified professionals. Get high-quality results with our proven methodology and industry best practices.","
+      features: "["
+        "Professional {{SERVICE_CATEGORY"}} expertise,"
+        Industry best practices","
+        "Quality assurance,"
+        Timely delivery","
+        "Ongoing support"
       ],
-      benefits: "[
-        Improved efficiency and productivity"",
-        "Cost-effective solutions,
-        Scalable architecture",
-        "24/7 support available
+      benefits: "["
+        Improved efficiency and productivity"","
+        "Cost-effective solutions,"
+        Scalable architecture","
+        "24/7 support available"
       ],
-      pricing: "{
-        basic: {{BASIC_PRICE"}}",
-        professional: ""{{PROFESSIONAL_PRICE"}},
-        enterprise: "{{ENTERPRISE_PRICE"}}"
+      pricing: "{"
+        basic: {{BASIC_PRICE"}}","
+        professional: ""{{PROFESSIONAL_PRICE"}},"
+        enterprise: "{{ENTERPRISE_PRICE"}}""
       }
     };
   }
 
   getTalentProfileTemplate() {
     return {
-      name: ""{{FULL_NAME"}},
-      title: "{{JOB_TITLE"}}",
-      summary: ""Experienced {{JOB_TITLE"}} with {{YEARS_EXPERIENCE}} years of expertise in {{TECHNOLOGIES}}. Specialized in delivering high-quality solutions for enterprise clients.,
-      skills: "[{{SKILL_1"}}", "{{SKILL_2}}, {{SKILL_3}}", "{{SKILL_4}}, {{SKILL_5}}"],
-      experience: ""{{YEARS_EXPERIENCE"}} years,
-      hourly_rate: "{{HOURLY_RATE"}}",
-      location: ""{{LOCATION"}},
-      availability: "{{AVAILABILITY"}}",
-      rating: ""{{RATING"}},
-      review_count: "{{REVIEW_COUNT"}}"
+      name: ""{{FULL_NAME"}},"
+      title: "{{JOB_TITLE"}}","
+      summary: ""Experienced {{JOB_TITLE"}} with {{YEARS_EXPERIENCE}} years of expertise in {{TECHNOLOGIES}}. Specialized in delivering high-quality solutions for enterprise clients.,"
+      skills: "[{{SKILL_1"}}", "{{SKILL_2}}, {{SKILL_3}}", "{{SKILL_4}}, {{SKILL_5}}"],"
+      experience: ""{{YEARS_EXPERIENCE"}} years,"
+      hourly_rate: "{{HOURLY_RATE"}}","
+      location: ""{{LOCATION"}},"
+      availability: "{{AVAILABILITY"}}","
+      rating: ""{{RATING"}},"
+      review_count: "{{REVIEW_COUNT"}}""
     };
   }
 
   getBlogPostTemplate() {
     return {
-      title: ""{{BLOG_TITLE"}},
-      excerpt: "{{BLOG_EXCERPT"}}",
-      content: ""{{BLOG_CONTENT"}},
-      author: "{{AUTHOR"}}",
-      category: ""{{CATEGORY"}},
-      tags: "[{{TAG_1"}}", "{{TAG_2}}, {{TAG_3}}"],
-      publishedAt: ""{{PUBLISH_DATE"}}
+      title: ""{{BLOG_TITLE"}},"
+      excerpt: "{{BLOG_EXCERPT"}}","
+      content: ""{{BLOG_CONTENT"}},"
+      author: "{{AUTHOR"}}","
+      category: ""{{CATEGORY"}},"
+      tags: "[{{TAG_1"}}", "{{TAG_2}}, {{TAG_3}}"],"
+      publishedAt: ""{{PUBLISH_DATE"}}"
     };
   }
 
   getTestimonialTemplate() {
     return {
-      name: "{{CLIENT_NAME"}}",
-      company: ""{{COMPANY_NAME"}},
-      role: "{{CLIENT_ROLE"}}",
-      content: ""{{TESTIMONIAL_CONTENT"}},
-      rating: "{{RATING"}}",
-      project: ""{{PROJECT_TYPE"}}
+      name: "{{CLIENT_NAME"}}","
+      company: ""{{COMPANY_NAME"}},"
+      role: "{{CLIENT_ROLE"}}","
+      content: ""{{TESTIMONIAL_CONTENT"}},"
+      rating: "{{RATING"}}","
+      project: ""{{PROJECT_TYPE"}}"
     };
   }
 
   getFAQTemplate() {
     return {
-      question: "{{FAQ_QUESTION"}}",
-      answer: ""{{FAQ_ANSWER"}},
-      category: "{{FAQ_CATEGORY"}}"
+      question: "{{FAQ_QUESTION"}}","
+      answer: ""{{FAQ_ANSWER"}},"
+      category: "{{FAQ_CATEGORY"}}""
     };
   }
 
   async generateServiceDescriptions() {
-    console.log(📝 Generating service descriptions...'));
+    console.log(📝 Generating service descriptions...'));'
     
     const result = [
       {
-        name: ""Web Development",
-        category: "Development"",
-        basicPrice: ""$2",500,
-        professionalPrice: "$5",000",
-        enterprisePrice: ""$15",000
+        name: ""Web Development","
+        category: "Development"","
+        basicPrice: ""variable2",500,"
+        professionalPrice: "variable5",000","
+        enterprisePrice: ""variable15",000"
       },
       {
-        name: "Mobile App Development"",
-        category: ""Development",
-        basicPrice: "$5",000",
-        professionalPrice: ""$12",000,
-        enterprisePrice: "$25",000"
+        name: "Mobile App Development"","
+        category: ""Development","
+        basicPrice: "variable5",000","
+        professionalPrice: ""variable12",000,"
+        enterprisePrice: "variable25",000""
       },
       {
-        name: ""Cloud Infrastructure",
-        category: "DevOps"",
-        basicPrice: ""$1",500,
-        professionalPrice: "$3",500",
-        enterprisePrice: ""$8",000
+        name: ""Cloud Infrastructure","
+        category: "DevOps"","
+        basicPrice: ""variable1",500,"
+        professionalPrice: "variable3",500","
+        enterprisePrice: ""variable8",000"
       },
       {
-        name: "Data Analytics"",
-        category: ""Analytics",
-        basicPrice: "$3",000",
-        professionalPrice: ""$7",000,
-        enterprisePrice: "$18",000"
+        name: "Data Analytics"","
+        category: ""Analytics","
+        basicPrice: "variable3",000","
+        professionalPrice: ""variable7",000,"
+        enterprisePrice: "variable18",000""
       },
       {
-        name: ""AI/ML Solutions",
-        category: "AI"",
-        basicPrice: ""$8",000,
-        professionalPrice: "$20",000",
-        enterprisePrice: ""$50",000
+        name: ""AI/ML Solutions","
+        category: "AI"","
+        basicPrice: ""variable8",000,"
+        professionalPrice: "variable20",000","
+        enterprisePrice: ""variable50",000"
       }
     ];
 
     for (const service of services) {
       const result = this.generateServiceContent(service);
-      await this.saveContent('service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content);
+      await this.saveContent('service-descriptions, service.name.toLowerCase().replace(/\s+/g, -), content);'
     }
     
     console.log(✅ Service descriptions generated);
@@ -141,86 +141,86 @@ class $1 {
     const result = this.contentTemplates.serviceDescription;
     
     return {
-      title: "template.title
-        .replace('){{SERVICE_NAME"}}', service.name)
-        .replace({{SERVICE_CATEGORY}}', service.category),
-      description: "template.description
-        .replace('{{SERVICE_CATEGORY"}}, service.category),
-      features: "template.features.map(feature => 
-        feature.replace({{SERVICE_CATEGORY"}}, service.category)
+      title: "template.title"
+        .replace('){{SERVICE_NAME"}}', service.name)'
+        .replace({{SERVICE_CATEGORY}}', service.category),'
+      description: "template.description"
+        .replace('{{SERVICE_CATEGORY"}}, service.category),"
+      features: "template.features.map(feature => "
+        feature.replace({{SERVICE_CATEGORY"}}, service.category)"
       ),
-      benefits: "template.benefits",
-      pricing: "{
-        basic: template.pricing.basic.replace({{BASIC_PRICE"}}'), service.basicPrice),
-        professional: "template.pricing.professional.replace('{{PROFESSIONAL_PRICE"}}, service.professionalPrice),
-        enterprise: "template.pricing.enterprise.replace({{ENTERPRISE_PRICE"}}, service.enterprisePrice)
+      benefits: "template.benefits","
+      pricing: "{"
+        basic: template.pricing.basic.replace({{BASIC_PRICE"}}'), service.basicPrice),'
+        professional: "template.pricing.professional.replace('{{PROFESSIONAL_PRICE"}}, service.professionalPrice),"
+        enterprise: "template.pricing.enterprise.replace({{ENTERPRISE_PRICE"}}, service.enterprisePrice)"
       },
-      metadata: "{
-        category: service.category",
-        estimatedDelivery: "2-4 weeks"",
-        supportLevel: ""24/7",
-        revisionPolicy: "Unlimited revisions"
-      "}
+      metadata: "{"
+        category: service.category","
+        estimatedDelivery: "2-4 weeks"","
+        supportLevel: ""24/7","
+        revisionPolicy: "Unlimited revisions""
+      "}"
     };
   }
 
   async generateTalentProfiles() {
-    console.log(👥 Generating talent profiles...'));
+    console.log(👥 Generating talent profiles...'));'
     
     const result = [
       {
-        name: ""Sarah Johnson",
-        title: "Senior Full-Stack Developer"",
-        years: ""8",
-        technologies: "React", Node.js, TypeScript, AWS",
-        skills: "["React", Node.js", "TypeScript, AWS", "Docker],
-        rate: "85"",
-        location: ""San Francisco", CA,
-        availability: "Open"",
-        rating: ""4.9",
-        reviews: "127"
-      "},
+        name: ""Sarah Johnson","
+        title: "Senior Full-Stack Developer"","
+        years: ""8","
+        technologies: "React", Node.js, TypeScript, AWS","
+        skills: "["React", Node.js", "TypeScript, AWS", "Docker],"
+        rate: "85"","
+        location: ""San Francisco", CA,"
+        availability: "Open"","
+        rating: ""4.9","
+        reviews: "127""
+      "},"
       {
-        name: ""Michael Chen",
-        title: "DevOps Engineer"",
-        years: ""6",
-        technologies: "Kubernetes", Docker, AWS, Terraform",
-        skills: "["Kubernetes", Docker", "AWS, Terraform", "Jenkins],
-        rate: "95"",
-        location: ""New York", NY,
-        availability: "Part-time"",
-        rating: ""4.8",
-        reviews: "89"
-      "},
+        name: ""Michael Chen","
+        title: "DevOps Engineer"","
+        years: ""6","
+        technologies: "Kubernetes", Docker, AWS, Terraform","
+        skills: "["Kubernetes", Docker", "AWS, Terraform", "Jenkins],"
+        rate: "95"","
+        location: ""New York", NY,"
+        availability: "Part-time"","
+        rating: ""4.8","
+        reviews: "89""
+      "},"
       {
-        name: ""Emily Rodriguez",
-        title: "UI/UX Designer"",
-        years: ""5",
-        technologies: "Figma", Sketch, Adobe Creative Suite",
-        skills: "["Figma", Sketch", "Adobe XD, Prototyping", "User Research],
-        rate: "75"",
-        location: ""Austin", TX,
-        availability: "Open"",
-        rating: ""4.7",
-        reviews: "156"
-      "},
+        name: ""Emily Rodriguez","
+        title: "UI/UX Designer"","
+        years: ""5","
+        technologies: "Figma", Sketch, Adobe Creative Suite","
+        skills: "["Figma", Sketch", "Adobe XD, Prototyping", "User Research],"
+        rate: "75"","
+        location: ""Austin", TX,"
+        availability: "Open"","
+        rating: ""4.7","
+        reviews: "156""
+      "},"
       {
-        name: ""David Kim",
-        title: "Data Scientist"",
-        years: ""7",
-        technologies: "Python", TensorFlow, PyTorch, SQL",
-        skills: "["Python", TensorFlow", "PyTorch, SQL", "Machine Learning],
-        rate: "120"",
-        location: ""Seattle", WA,
-        availability: "Open"",
-        rating: ""4.9",
-        reviews: "203"
-      "}
+        name: ""David Kim","
+        title: "Data Scientist"","
+        years: ""7","
+        technologies: "Python", TensorFlow, PyTorch, SQL","
+        skills: "["Python", TensorFlow", "PyTorch, SQL", "Machine Learning],"
+        rate: "120"","
+        location: ""Seattle", WA,"
+        availability: "Open"","
+        rating: ""4.9","
+        reviews: "203""
+      "}"
     ];
 
     for (const talent of talents) {
       const result = this.generateTalentContent(talent);
-      await this.saveContent('talent-profiles, talent.name.toLowerCase().replace(/\s+/g, -), content);
+      await this.saveContent('talent-profiles, talent.name.toLowerCase().replace(/\s+/g, -), content);'
     }
     
     console.log(✅ Talent profiles generated);
@@ -230,85 +230,85 @@ class $1 {
     const result = this.contentTemplates.talentProfile;
     
     return {
-      name: "template.name.replace('){{FULL_NAME"}}', talent.name),
-      title: "template.title.replace({{JOB_TITLE"}}', talent.title),
-      summary: "template.summary
-        .replace('{{JOB_TITLE"}}, talent.title)
+      name: "template.name.replace('){{FULL_NAME"}}', talent.name),'
+      title: "template.title.replace({{JOB_TITLE"}}', talent.title),'
+      summary: "template.summary"
+        .replace('{{JOB_TITLE"}}, talent.title)"
         .replace({{YEARS_EXPERIENCE}}, talent.years)
-        .replace({{TECHNOLOGIES}}'), talent.technologies),
-      skills: "talent.skills",
-      experience: "template.experience.replace('{{YEARS_EXPERIENCE"}}, talent.years),
-      hourly_rate: "template.hourly_rate.replace({{HOURLY_RATE"}}, talent.rate),
-      location: "template.location.replace({{LOCATION"}}'), talent.location),
-      availability: "template.availability.replace('{{AVAILABILITY"}}, talent.availability),
-      rating: "template.rating.replace({{RATING"}}, talent.rating),
-      review_count: "template.review_count.replace({{REVIEW_COUNT"}}'), talent.reviews),
-      metadata: "{
-        verified: true",
-        availableForHire: "talent.availability === "Open",
-        responseTime: "2-4 hours"",
-        completionRate: ""98%
-      "}
+        .replace({{TECHNOLOGIES}}'), talent.technologies),'
+      skills: "talent.skills","
+      experience: "template.experience.replace('{{YEARS_EXPERIENCE"}}, talent.years),"
+      hourly_rate: "template.hourly_rate.replace({{HOURLY_RATE"}}, talent.rate),"
+      location: "template.location.replace({{LOCATION"}}'), talent.location),'
+      availability: "template.availability.replace('{{AVAILABILITY"}}, talent.availability),"
+      rating: "template.rating.replace({{RATING"}}, talent.rating),"
+      review_count: "template.review_count.replace({{REVIEW_COUNT"}}'), talent.reviews),'
+      metadata: "{"
+        verified: true","
+        availableForHire: "talent.availability === "Open","
+        responseTime: "2-4 hours"","
+        completionRate: ""98%"
+      "}"
     };
   }
 
   async generateBlogPosts() {
-    console.log('📰 Generating blog posts...);
+    console.log('📰 Generating blog posts...);'
     
     const result = [
       {
-        title: "The Future of AI in Business: 2024 Trends"",
-        excerpt: ""Discover how artificial intelligence is transforming business operations and what trends to watch in 2024.",
-        content: "Artificial intelligence continues to revolutionize how businesses operate..."",
-        author: ""AI Expert Team",
-        category: "Technology"",
-        tags: "["AI", Business", "Technology, Trends"],
-        date: ""2024-01-15
-      "},
+        title: "The Future of AI in Business: 2024 Trends"","
+        excerpt: ""Discover how artificial intelligence is transforming business operations and what trends to watch in 2024.","
+        content: "Artificial intelligence continues to revolutionize how businesses operate..."","
+        author: ""AI Expert Team","
+        category: "Technology"","
+        tags: "["AI", Business", "Technology, Trends"],"
+        date: ""2024-01-15"
+      "},"
       {
-        title: "Building Scalable Web Applications with Modern Frameworks"",
-        excerpt: ""Learn the best practices for creating scalable web applications using modern frameworks and tools.",
-        content: "Modern web development requires careful consideration of scalability..."",
-        author: ""Development Team",
-        category: "Development"",
-        tags: "["Web Development", Scalability", "Frameworks, Best Practices"],
-        date: ""2024-01-10
-      "},
+        title: "Building Scalable Web Applications with Modern Frameworks"","
+        excerpt: ""Learn the best practices for creating scalable web applications using modern frameworks and tools.","
+        content: "Modern web development requires careful consideration of scalability..."","
+        author: ""Development Team","
+        category: "Development"","
+        tags: "["Web Development", Scalability", "Frameworks, Best Practices"],"
+        date: ""2024-01-10"
+      "},"
       {
-        title: "DevOps Best Practices for Enterprise Teams"",
-        excerpt: ""Essential DevOps practices that every enterprise team should implement for better efficiency.",
-        content: "DevOps has become essential for modern software development..."",
-        author: ""DevOps Specialist",
-        category: "DevOps"",
-        tags: "["DevOps", Enterprise", "Automation, CI/CD"],
-        date: ""2024-01-05
-      "}
+        title: "DevOps Best Practices for Enterprise Teams"","
+        excerpt: ""Essential DevOps practices that every enterprise team should implement for better efficiency.","
+        content: "DevOps has become essential for modern software development..."","
+        author: ""DevOps Specialist","
+        category: "DevOps"","
+        tags: "["DevOps", Enterprise", "Automation, CI/CD"],"
+        date: ""2024-01-05"
+      "}"
     ];
 
     for (const post of blogPosts) {
       const result = this.generateBlogContent(post);
-      await this.saveContent(blog-posts'), post.title.toLowerCase().replace(/\s+/g, '-), content);
+      await this.saveContent(blog-posts'), post.title.toLowerCase().replace(/\s+/g, '-), content);'
     }
     
-    console.log('✅ Blog posts generated);
+    console.log('✅ Blog posts generated);'
   }
 
   generateBlogContent(post) {
     const result = this.contentTemplates.blogPost;
     
     return {
-      title: "template.title.replace({{BLOG_TITLE"}}, post.title),
-      excerpt: "template.excerpt.replace('){{BLOG_EXCERPT"}}, post.excerpt),
-      content: "template.content.replace('{{BLOG_CONTENT"}}, post.content),
-      author: "template.author.replace({{AUTHOR"}}, post.author),
-      category: "template.category.replace('){{CATEGORY"}}, post.category),
-      tags: "post.tags",
-      publishedAt: "template.publishedAt.replace('{{PUBLISH_DATE"}}, post.date),
-      metadata: "{
-        readTime: 5-7 minutes"",
-        difficulty: ""Intermediate",
-        views: "Math.floor(Math.random() * 1000) + 100
-      "}
+      title: "template.title.replace({{BLOG_TITLE"}}, post.title),"
+      excerpt: "template.excerpt.replace('){{BLOG_EXCERPT"}}, post.excerpt),"
+      content: "template.content.replace('{{BLOG_CONTENT"}}, post.content),"
+      author: "template.author.replace({{AUTHOR"}}, post.author),"
+      category: "template.category.replace('){{CATEGORY"}}, post.category),"
+      tags: "post.tags","
+      publishedAt: "template.publishedAt.replace('{{PUBLISH_DATE"}}, post.date),"
+      metadata: "{"
+        readTime: 5-7 minutes"","
+        difficulty: ""Intermediate","
+        views: "Math.floor(Math.random() * 1000) + 100"
+      "}"
     };
   }
 
@@ -317,54 +317,54 @@ class $1 {
     
     const result = [
       {
-        name: "Jennifer Smith"",
-        company: ""TechStart Inc.",
-        role: "CTO"",
-        content: ""The team delivered our project ahead of schedule with exceptional quality. Highly recommended!",
-        rating: "5"",
-        project: ""Web Application
-      "},
+        name: "Jennifer Smith"","
+        company: ""TechStart Inc.","
+        role: "CTO"","
+        content: ""The team delivered our project ahead of schedule with exceptional quality. Highly recommended!","
+        rating: "5"","
+        project: ""Web Application"
+      "},"
       {
-        name: "Robert Johnson"",
-        company: ""DataFlow Solutions",
-        role: "CEO"",
-        content: ""Outstanding expertise in cloud infrastructure. They helped us scale our operations efficiently.",
-        rating: "5"",
-        project: ""Cloud Migration
-      "},
+        name: "Robert Johnson"","
+        company: ""DataFlow Solutions","
+        role: "CEO"","
+        content: ""Outstanding expertise in cloud infrastructure. They helped us scale our operations efficiently.","
+        rating: "5"","
+        project: ""Cloud Migration"
+      "},"
       {
-        name: "Maria Garcia"",
-        company: ""InnovateCorp",
-        role: "Product Manager"",
-        content: ""Professional", responsive, and delivered exactly what we needed. Will definitely work with again.,
-        rating: "5"",
-        project: ""Mobile App Development
-      "}
+        name: "Maria Garcia"","
+        company: ""InnovateCorp","
+        role: "Product Manager"","
+        content: ""Professional", responsive, and delivered exactly what we needed. Will definitely work with again.,"
+        rating: "5"","
+        project: ""Mobile App Development"
+      "}"
     ];
 
     for (const testimonial of testimonials) {
       const result = this.generateTestimonialContent(testimonial);
-      await this.saveContent(')testimonials, testimonial.name.toLowerCase().replace(/\s+/g, -'), content);
+      await this.saveContent(')testimonials, testimonial.name.toLowerCase().replace(/\s+/g, -'), content);'
     }
     
-    console.log('✅ Testimonials generated);
+    console.log('✅ Testimonials generated);'
   }
 
   generateTestimonialContent(testimonial) {
     const result = this.contentTemplates.testimonial;
     
     return {
-      name: "template.name.replace({{CLIENT_NAME"}}, testimonial.name),
-      company: "template.company.replace({{COMPANY_NAME"}}'), testimonial.company),
-      role: "template.role.replace('{{CLIENT_ROLE"}}, testimonial.role),
-      content: "template.content.replace({{TESTIMONIAL_CONTENT"}}, testimonial.content),
-      rating: "template.rating.replace({{RATING"}}'), testimonial.rating),
-      project: "template.project.replace('{{PROJECT_TYPE"}}, testimonial.project),
-      metadata: "{
-        verified: true",
-        projectValue: "$25",000 - $50,000",
-        duration: ""3-6 months
-      "}
+      name: "template.name.replace({{CLIENT_NAME"}}, testimonial.name),"
+      company: "template.company.replace({{COMPANY_NAME"}}'), testimonial.company),'
+      role: "template.role.replace('{{CLIENT_ROLE"}}, testimonial.role),"
+      content: "template.content.replace({{TESTIMONIAL_CONTENT"}}, testimonial.content),"
+      rating: "template.rating.replace({{RATING"}}'), testimonial.rating),'
+      project: "template.project.replace('{{PROJECT_TYPE"}}, testimonial.project),"
+      metadata: "{"
+        verified: true","
+        projectValue: "variable25",000 - variable50,000","
+        duration: ""3-6 months"
+      "}"
     };
   }
 
@@ -373,35 +373,35 @@ class $1 {
     
     const result = [
       {
-        question: "What services does Zion Tech Group offer?"",
-        answer: ""We offer comprehensive AI-powered solutions including web development", mobile apps, cloud services, data analytics, and blockchain development.
+        question: "What services does Zion Tech Group offer?"","
+        answer: ""We offer comprehensive AI-powered solutions including web development", mobile apps, cloud services, data analytics, and blockchain development."
       },
       {
-        question: "How can I get started with your services?"",
-        answer: ""Contact us through our website or call us directly. Well schedule a consultation to discuss your project requirements.
-      "},
+        question: "How can I get started with your services?"","
+        answer: ""Contact us through our website or call us directly. Well schedule a consultation to discuss your project requirements."
+      "},"
       {
-        question: "What is your typical project timeline?"",
-        answer: ""Project timelines vary based on complexity. Simple websites take 2-4 weeks", while complex applications can take 3-6 months.
+        question: "What is your typical project timeline?"","
+        answer: ""Project timelines vary based on complexity. Simple websites take 2-4 weeks", while complex applications can take 3-6 months."
       },
       {
-        question: "Do you provide ongoing support?"",
-        answer: ""Yes", we offer comprehensive maintenance and support packages to ensure your systems run smoothly.
+        question: "Do you provide ongoing support?"","
+        answer: ""Yes", we offer comprehensive maintenance and support packages to ensure your systems run smoothly."
       },
       {
-        question: "What technologies do you specialize in?"",
-        answer: ""We specialize in modern technologies including React", Node.js, Python, AI/ML, cloud platforms, and blockchain.
+        question: "What technologies do you specialize in?"","
+        answer: ""We specialize in modern technologies including React", Node.js, Python, AI/ML, cloud platforms, and blockchain."
       }
     ];
 
     for (const faq of faqTemplates) {
-      const result = ## ${faq.question}\n\n${faq.answer}"
-      await this.saveContent(f')a'q, "faq-${Date.now()}, content);
+      const result = ## ${faq.question}\n\n${faq.answer}""
+      await this.saveContent(f')a'q, "faq-${Date.now()}, content);"
     }
   }
 
   async generateMissingContent(analysisReport) {
-    console.log('🎨 Generating missing content based on analysis...);
+    console.log('🎨 Generating missing content based on analysis...);'
     
     try {
       const result = [];
@@ -410,11 +410,11 @@ class $1 {
         for (const page of analysisReport.missingPages) {
           const asyncResult = await this.generatePageContent(page);
           missingContent.push({
-            url: "page.url",
-            title: "page.title",
-            content: "content",
-            type: "page
-          "});
+            url: "page.url","
+            title: "page.title","
+            content: "content","
+            type: "page"
+          "});"
         }
       }
       
@@ -422,24 +422,24 @@ class $1 {
         for (const contentItem of analysisReport.missingContent) {
           const asyncResult = await this.generateContentItem(contentItem);
           missingContent.push({
-            type: "contentItem.type",
-            title: "contentItem.title",
-            content: "content
-          "});
+            type: "contentItem.type","
+            title: "contentItem.title","
+            content: "content"
+          "});"
         }
       }
       
-      console.log(✅ Generated ${missingContent.length} missing content pieces");
+      console.log(✅ Generated ${missingContent.length} missing content pieces");"
       return missingContent;
       
     } catch (error) {
-      console.error(❌ Error generating missing content: "')", error);
+      console.error(❌ Error generating missing content: "')", error);"
       return [];
     }
   }
 
   async generatePageContent(page) {
-    const result = "
+    const result = ""
 # ${page.title}
 
 ## Overview
@@ -466,25 +466,25 @@ Get in touch to learn more about our ${page.title} services.
 
   async generateContentItem(contentItem) {
     const result = {
-      servi'ce': ## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.",
-      'product: ""## ${contentItem.title"}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.,
-      bl'o'g: "## ${contentItem.title"}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices."
+      servi'ce': ## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.","
+      'product: ""## ${contentItem.title"}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.,"
+      bl'o'g: "## ${contentItem.title"}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.""
     };
     
-    return templates[contentItem.type] || "## ${contentItem.title}\n\n${contentItem.description || 'Comprehensiv'e content about this topic.'}
+    return templates[contentItem.type] || "## ${contentItem.title}\n\n${contentItem.description || 'Comprehensiv'e content about this topic.'}'
   }
 
   async createPageFiles(generatedContent) {
-    console.log('📄 Creating page files for generated content...);
+    console.log('📄 Creating page files for generated content...);'
     
     try {
       for (const item of generatedContent) {
-        if (item.type === page')) {
+        if (item.type === page')) {'
           await this.createPageFile(item);
         }
       }
     } catch (error) {
-      console.error('❌ Error creating page files:, error);
+      console.error('❌ Error creating page files:, error);'
     }
   }
 
@@ -495,96 +495,96 @@ Get in touch to learn more about our ${page.title} services.
       
       const result = this.generatePageFileContent(pageItem);
       
-      await fs.writeFile(filePath, fileContent, ')ut'f8');
-      console.log(✅ Created page file: "${fileName"}");
+      await fs.writeFile(filePath, fileContent, ')ut'f8');'
+      console.log(✅ Created page file: "${fileName"}");"
       
     } catch (error) {
-      console.error("❌ Error creating page file for ${pageItem.url}:, error);
+      console.error("❌ Error creating page file for ${pageItem.url}:, error);"
     }
   }
 
   generateFileName(url) {
-    const result = url.replace(/^https?:\/\/[^\/]+/, ').replace(/\/$/, '');
-    if (path === ') return 'index'.tsx'
+    const result = url.replace(/^https?:\/\/[^\/]+/, ').replace(/\/$/, '');'
+    if (path === ') return 'index'.tsx''
     
-    const result = path.split(/').filter(segment => segment);
-    const result = segments[segments.length - 1] || 'index;
-    return ${fileName}.tsx"
+    const result = path.split(/').filter(segment => segment);'
+    const result = segments[segments.length - 1] || 'index;'
+    return ${fileName}.tsx""
   }
 
   generatePageFileContent(pageItem) {
-    return "import React from react'}
-import Head from 'next'/head'}
-import Layout from ../components/Layout'
+    return "import React from 'react'
+import React from 'react'
+import React from 'react'
 ;}
 export default function ${this.generateComponentName(pageItem.title)}() {
   return (
     <Layout></div>
       <Head></div>
         <title>${pageItem.title} - Zion Tech Group</title></div>
-        <meta name=description content="${pageItem.title} services and solutions" /></div>
+        <meta name=description content="${pageItem.title} services and solutions" /></div>"
       </Head>
       </div>
-      <div className=container mx-auto px-4 py-8></div>
-        <div className=prose max-w-none>
-          ${pageItem.content.replace(/\n/g, '\n          )}</div>
+      <div className="container" mx-auto px-4 py-8></div>"
+        <div className="prose" max-w-none>"
+          ${pageItem.content.replace(/\n/g, '\n          )}</div>'
         </div></div>
       </div></div>
     </Layout>
   );
 }
-    "
+    ""
   }
 
   generateComponentName(title) {
     return title
-      .replace(/[^a-zA-Z0-9\s]/g, '')
-      .split( ')
+      .replace(/[^a-zA-Z0-9\s]/g, '')'
+      .split( ')'
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(') + Page');
+      .join(') + Page');'
   }
 
   async saveContent(type, name, content) {
-    const filePath = path.join(process.cwd(), 'src, conte'n't, 'generat'ed');
+    const filePath = path.join(process.cwd(), 'src, conte'n't, 'generat'ed');'
     if (!fs.existsSync(contentDir)) {
-      fs.mkdirSync(contentDir, { recursive: "true "});
+      fs.mkdirSync(contentDir, { recursive: "true "});"
     }
     
     // Sanitize the filename to avoid path issues
-    const result = name.replace(/[^a-zA-Z0-9-]/g, '-).toLowerCase();
-    const filePath = path.join(contentDir, "${sanitizedName}.json);
+    const result = name.replace(/[^a-zA-Z0-9-]/g, '-).toLowerCase();'
+    const filePath = path.join(contentDir, "${sanitizedName}.json);"
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
     
     this.generatedContent.push({
       type,
       name,
-      path: "filePath",
-      timestamp: "new Date().toISOString()
-    "});
+      path: "filePath","
+      timestamp: "new Date().toISOString()"
+    "});"
   }
 
   async saveGenerationReport() {
     const timestamp = {
-      timestamp: "new Date().toISOString()",
-      generatedContent: "this.generatedContent",
-      summary: "{
-        totalGenerated: this.generatedContent.length",
-        byType: "this.generatedContent.reduce((acc", item) => {
+      timestamp: "new Date().toISOString()","
+      generatedContent: "this.generatedContent","
+      summary: "{"
+        totalGenerated: this.generatedContent.length","
+        byType: "this.generatedContent.reduce((acc", item) => {"
           acc[item.type] = (acc[item.type] || 0) + 1;
           return acc;
         }, {})
       }
     };
     
-    const filePath = path.join(process.cwd(), 'automati'on', 'content-generation-report'.json');
+    const filePath = path.join(process.cwd(), 'automati'on', 'content-generation-report'.json');'
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(💾 Content generation report saved');
+    console.log(💾 Content generation report saved');'
     return report;
   }
 
   async run() {
-    console.log('🚀 Starting Content Generator Agent...);
+    console.log('🚀 Starting Content Generator Agent...);'
     
     try {
       await this.generateServiceDescriptions();
@@ -596,11 +596,11 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       const asyncResult = await this.saveGenerationReport();
       
       console.log(✅ Content Generator Agent completed successfully);
-      console.log(📊 Generated ${this.generatedContent.length} content pieces");
+      console.log(📊 Generated ${this.generatedContent.length} content pieces");"
       
       return report;
     } catch (error) {
-      console.error(❌ Content Generator Agent failed:'), error);
+      console.error(❌ Content Generator Agent failed:'), error);'
       throw error;
     }
   }

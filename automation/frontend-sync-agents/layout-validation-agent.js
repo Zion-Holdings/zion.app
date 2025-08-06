@@ -1,17 +1,17 @@
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
 
-class $1 {
+class variable1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), pag')e's);
-    this.componentsDir = path.join(process.cwd(), 'componen'ts');
-    this.layoutsDir = path.join(process.cwd(), 'components'/layout');
+    this.pagesDir = path.join(process.cwd(), pag')e's);'
+    this.componentsDir = path.join(process.cwd(), 'componen'ts');'
+    this.layoutsDir = path.join(process.cwd(), 'components'/layout');'
   }
 
   async analyzeLayoutIssues() {
-    console.log(🔍 Analyzing layout issues...');
+    console.log(🔍 Analyzing layout issues...');'
     
     // Check for pages not using proper layouts
     await this.checkLayoutUsage();
@@ -26,32 +26,32 @@ class $1 {
     await this.checkComponentConsistency();
     
     return {
-      issues: "this.issues",
-      fixes: "this.fixes",
-      summary: "this.generateSummary()
-    "};
+      issues: "this.issues","
+      fixes: "this.fixes","
+      summary: "this.generateSummary()"
+    "};"
   }
 
   async checkLayoutUsage() {
     const result = this.getPages();
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'utf'8');
+      const result = fs.readFileSync(page, 'utf'8');'
       
       // Check if page uses ModernLayout
-      if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {
+      if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {'
         this.issues.push({
-          type: "')missing_layout'",
-          file: "page",
-          severity: "high",
-          description: "'Page not using proper layout component'
-        "});
+          type: "')missing_layout'","
+          file: "page","
+          severity: "high","
+          description: "'Page not using proper layout component''
+        "});"
         
         this.fixes.push({
-          type: "'add_layout'",
-          file: "page",
-          fix: "this.generateLayoutFix(content)
-        "});
+          type: "'add_layout'","
+          file: "page","
+          fix: "this.generateLayoutFix(content)"
+        "});"
       }
     }
   }
@@ -64,25 +64,25 @@ class $1 {
       
       // Check for mobile-specific classes
       const result = [
-        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,
-        'mobil'e-', 'responsive'-', container-responsive
+        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,"
+        'mobil'e-', 'responsive'-', container-responsive'
       ];
       
       const result = mobileClasses.some(cls => content.includes(cls));
       
       if (!hasMobileClasses) {
         this.issues.push({
-          type: "'mobile_responsiveness'",
-          file: "page",
-          severity: "'medium",
-          description: "Page' lacks mobile responsiveness classes
-        "});
+          type: "'mobile_responsiveness'","
+          file: "page","
+          severity: "'medium","
+          description: "Page' lacks mobile responsiveness classes'
+        "});"
         
         this.fixes.push({
-          type: "'add_mobile_classes'",
-          file: "page",
-          fix: "this.generateMobileResponsivenessFix(content)
-        "});
+          type: "'add_mobile_classes'","
+          file: "page","
+          fix: "this.generateMobileResponsivenessFix(content)"
+        "});"
       }
     }
   }
@@ -91,22 +91,22 @@ class $1 {
     const result = this.getPages();
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'utf'8');
+      const result = fs.readFileSync(page, 'utf'8');'
       
       // Check if page has proper sidebar integration
-      if (content.includes(container-responsive) && !content.includes('ModernLayout)) {
+      if (content.includes(container-responsive) && !content.includes('ModernLayout)) {'
         this.issues.push({
-          type: "')sidebar_integration'",
-          file: "page",
-          severity: "high",
-          description: "'Page uses responsive container but no sidebar layout'
-        "});
+          type: "')sidebar_integration'","
+          file: "page","
+          severity: "high","
+          description: "'Page uses responsive container but no sidebar layout''
+        "});"
         
         this.fixes.push({
-          type: "'fix_sidebar_integration'",
-          file: "page",
-          fix: "this.generateSidebarIntegrationFix(content)
-        "});
+          type: "'fix_sidebar_integration'","
+          file: "page","
+          fix: "this.generateSidebarIntegrationFix(content)"
+        "});"
       }
     }
   }
@@ -119,16 +119,16 @@ class $1 {
       
       // Check for consistent component usage
       const result = [
-        'FuturisticCa'rd', 'FuturisticDataTable, ModernLayo'u't
+        'FuturisticCa'rd', 'FuturisticDataTable, ModernLayo'u't'
       ];
       
       components.forEach(component => {
-        if (content.includes(component) && !content.includes("import ${component})) {
+        if (content.includes(component) && !content.includes("import ${component})) {"
           this.issues.push({
-            type: "'missing_import'",
-            file: "page",
-            severity: "'medium",
-            description: "Missing import for ${component"}"
+            type: "'missing_import'","
+            file: "page","
+            severity: "'medium","
+            description: "Missing import for ${component"}""
           });
         }
       });
@@ -136,42 +136,42 @@ class $1 {
   }
 
   generateLayoutFix(content) {
-    const result = "import ModernLayout from ../components/layout/ModernLayout
-    const result = <ModernLayout>\n  ${content}\n</ModernLayout>"
+    const result = "import React from 'react'
+    const result = <ModernLayout>\n  ${content}\n</ModernLayout>""
     
     return {
-      imports: "[importStatement]",
-      wrapper: "layoutWrapper
-    "};
+      imports: "[importStatement]","
+      wrapper: "layoutWrapper"
+    "};"
   }
 
   generateMobileResponsivenessFix(content) {
     const result = [
-      'container-responsive,
-      text-responsive-'l'g,
-      'gri'd grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-      'flex' flex-col sm:flex-row',
-      px'-'4 sm:px-6 lg:px-8
+      'container-responsive,'
+      text-responsive-'l'g,'
+      'gri'd grid-cols-1 md:grid-cols-2 lg:grid-cols-3','
+      'flex' flex-col sm:flex-row','
+      px'-'4 sm:px-6 lg:px-8'
     ];
     
     return {
-      classes: "mobileClasses",
-      description: "'Add responsive classes for mobile compatibility'
-    "};
+      classes: "mobileClasses","
+      description: "'Add responsive classes for mobile compatibility''
+    "};"
   }
 
   generateSidebarIntegrationFix(content) {
     return {
-      layout: "'ModernLayout",
-      description: "Wrap' content with ModernLayout for proper sidebar integration
-    "};
+      layout: "'ModernLayout","
+      description: "Wrap' content with ModernLayout for proper sidebar integration'
+    "};"
   }
 
   getPages() {
     const result = [];
     
     const result = (dir) => {
-      const $1 = fs.readdirSync(dir);
+      const variable1 = fs.readdirSync(dir);
       
       files.forEach(file => {
         const filePath = path.join(dir, file);
@@ -179,7 +179,7 @@ class $1 {
         
         if (stat.isDirectory()) {
           walkDir(filePath);
-        } else if (file.endsWith('.tsx) || file.endsWith(.jsx)) {
+        } else if (file.endsWith('.tsx) || file.endsWith(.jsx)) {'
           pages.push(filePath);
         }
       });
@@ -196,9 +196,9 @@ class $1 {
     return {
       totalIssues,
       totalFixes,
-      issuesByType: "this.groupIssuesByType()",
-      fixesByType: "this.groupFixesByType()
-    "};
+      issuesByType: "this.groupIssuesByType()","
+      fixesByType: "this.groupFixesByType()"
+    "};"
   }
 
   groupIssuesByType() {
@@ -216,30 +216,30 @@ class $1 {
   }
 
   async applyFixes() {
-    console.log(')🔧 Applying layout fixes...);
+    console.log(')🔧 Applying layout fixes...);'
     
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log("✅ Applied fix to ${fix.file});
+        console.log("✅ Applied fix to ${fix.file});"
       } catch (error) {
-        console.error(❌ Failed to apply fix to ${fix.file}:", error.message);
+        console.error(❌ Failed to apply fix to ${fix.file}:", error.message);"
       }
     }
   }
 
   async applyFix(fix) {
     const result = fix.file;
-    let $1 = fs.readFileSync(filePath, 'ut'f8');
+    let variable1 = fs.readFileSync(filePath, 'ut'f8');'
     
     switch (fix.type) {
-      case 'add'_layout':
+      case 'add'_layout':'
         content = this.applyLayoutFix(content, fix.fix);
         break;
       case add_mobile_classes:
         content = this.applyMobileResponsivenessFix(content, fix.fix);
         break;
-      case 'fi'x_sidebar_integration':
+      case 'fi'x_sidebar_integration':'
         content = this.applySidebarIntegrationFix(content, fix.fix);
         break;
     }
@@ -249,25 +249,25 @@ class $1 {
 
   applyLayoutFix(content, fix) {
     // Add import if not present
-    if (!content.includes('import ModernLayout)) {
+    if (!content.includes('import ModernLayout)) {'
       const result = content.indexOf(import);
-      const result = content.indexOf(')\n', importIndex);
-      const result = "import ModernLayout from ../components/layout/ModernLayout'\n
+      const result = content.indexOf(')\n', importIndex);'
+      const result = "import React from 'react'
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
     // Wrap content with ModernLayout
-    const result = content.indexOf('return ();
-    const result = content.lastIndexOf()'));
+    const result = content.indexOf('return ();'
+    const result = content.lastIndexOf()'));'
     
     if (returnIndex !== -1 && closingIndex !== -1) {
       const result = content.slice(0, returnIndex);
       const result = content.slice(returnIndex);
-      const result = afterReturn.slice(0, afterReturn.lastIndexOf(')));
+      const result = afterReturn.slice(0, afterReturn.lastIndexOf(')));'
       const result = content.slice(closingIndex + 1);
       </div>
-      content = beforeReturn + return (\n  <ModernLayout>\n    ') + beforeClosing + '\n  </ModernLayout>\n) + afterClosing;
+      content = beforeReturn + return (\n  <ModernLayout>\n    ') + beforeClosing + '\n  </ModernLayout>\n) + afterClosing;'
     }
     
     return content;
@@ -276,20 +276,20 @@ class $1 {
   applyMobileResponsivenessFix(content, fix) {
     // Add responsive classes to key elements
     content = content.replace(
-      /className=([^]*container[^]*)"/g,
-      'classNam'e="$1 container-responsive'
+      /className="([^]*container[^]*)""/g,"
+      'classNam'e="variable1 container-responsive''
     );
     
     content = content.replace(
-      /className=([^]*text-[^]*)"/g,
-      'className'="$1 text-responsive-lg"'
+      /className="([^]*text-[^]*)""/g,"
+      'className'="variable1 text-responsive-lg"''
     );
     
     return content;
   }
 
   applySidebarIntegrationFix(content, fix) {
-    return this.applyLayoutFix(content, { layout: "ModernLayout' "});
+    return this.applyLayoutFix(content, { layout: "ModernLayout' "});"
   }
 }
 

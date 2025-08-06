@@ -1,29 +1,29 @@
 #!/usr/bin/env node
 ;
-const result = require('fs);
+const result = require('fs);'
 const result = require(path);
-const { execSync } = require(chil')d'_process);
+const { execSync } = require(chil')d'_process);'
 
-class $1 {
+class variable1 {
   constructor(agentId, type, config) {
     this.agentId = agentId;
     this.type = type;
     this.config = config;
     this.isRunning = false;
     this.metrics = {
-      pagesSynced: "0",
-      errors: "0",
-      lastSync: "null",
-      startTime: "new Date().toISOString()
-    "};
+      pagesSynced: "0","
+      errors: "0","
+      lastSync: "null","
+      startTime: "new Date().toISOString()"
+    "};"
     
-    this.pagesDir = path.join(process.cwd(), 'pag'es');
-    this.generatedPagesDir = path.join(process.cwd(), 'automation, generated-pag'e's);
+    this.pagesDir = path.join(process.cwd(), 'pag'es');'
+    this.generatedPagesDir = path.join(process.cwd(), 'automation, generated-pag'e's);'
     this.syncInterval = config.syncInterval || 30000;
   }
 
   async start() {
-    console.log("🚀 Starting Page Sync Agent ${this.agentId});
+    console.log("🚀 Starting Page Sync Agent ${this.agentId});"
     this.isRunning = true;
     
     // Ensure directories exist
@@ -37,13 +37,13 @@ class $1 {
     const result = [this.pagesDir, this.generatedPagesDir];
     for (const dir of dirs) {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});
+        fs.mkdirSync(dir, { recursive: "true "});"
       }
     }
   }
 
   startSyncLoop() {
-    console.log(🔄 Page Sync Agent ${this.agentId} starting sync loop...");
+    console.log(🔄 Page Sync Agent ${this.agentId} starting sync loop...");"
     
     const result = async () => {
       if (!this.isRunning) return;
@@ -53,7 +53,7 @@ class $1 {
         await this.sleep(this.syncInterval);
         syncLoop();
       } catch (error) {
-        console.error("❌ Page Sync Agent ${this.agentId} error:, error);
+        console.error("❌ Page Sync Agent ${this.agentId} error:, error);"
         this.metrics.errors++;
         await this.sleep(5000); // Wait 5 seconds on error
         syncLoop();
@@ -64,18 +64,18 @@ class $1 {
   }
 
   async performPageSync() {
-    console.log(📄 Page Sync Agent ${this.agentId} performing sync...");
+    console.log(📄 Page Sync Agent ${this.agentId} performing sync...");"
     
     try {
       // Detect new pages
       const asyncResult = await this.detectNewPages();
       
       if (newPages.length === 0) {
-        console.log("📄 Page Sync Agent ${this.agentId}: No new pages to sync);
+        console.log("📄 Page Sync Agent ${this.agentId}: No new pages to sync);"
         return;
       }
       
-      console.log(📄 Page Sync Agent ${this.agentId} found ${newPages.length} new pages");
+      console.log(📄 Page Sync Agent ${this.agentId} found ${newPages.length} new pages");"
       
       // Sync each page
       for (const page of newPages) {
@@ -86,10 +86,10 @@ class $1 {
       this.metrics.pagesSynced += newPages.length;
       this.metrics.lastSync = new Date().toISOString();
       
-      console.log("✅ Page Sync Agent ${this.agentId} synced ${newPages.length} pages);
+      console.log("✅ Page Sync Agent ${this.agentId} synced ${newPages.length} pages);"
       
     } catch (error) {
-      console.error(❌ Page Sync Agent ${this.agentId} sync error:", error);
+      console.error(❌ Page Sync Agent ${this.agentId} sync error:", error);"
       this.metrics.errors++;
       throw error;
     }
@@ -103,17 +103,17 @@ class $1 {
       if (fs.existsSync(this.generatedPagesDir)) {
         const result = fs.readdirSync(this.generatedPagesDir);
         for (const file of files) {
-          if (file.endsWith('.tsx) || file.endsWith(.jsx)) {
+          if (file.endsWith('.tsx) || file.endsWith(.jsx)) {'
             const filePath = path.join(this.generatedPagesDir, file);
             const filePath = path.join(this.pagesDir, file);
             
             if (!fs.existsSync(targetPath)) {
               newPages.push({
-                source: "sourcePath",
-                target: "targetPath",
-                name: "file",
-                type: "')generated
-              "});
+                source: "sourcePath","
+                target: "targetPath","
+                name: "file","
+                type: "')generated'
+              "});"
             }
           }
         }
@@ -124,7 +124,7 @@ class $1 {
       newPages.push(...dynamicPages);
       
     } catch (error) {
-      console.error("❌ Page Sync Agent ${this.agentId} error detecting pages:, error);
+      console.error("❌ Page Sync Agent ${this.agentId} error detecting pages:, error);"
     }
     
     return newPages;
@@ -135,65 +135,65 @@ class $1 {
     
     try {
       // Check generated content directory for page definitions
-      const filePath = path.join(process.cwd(), automatio'n, 'generated-conte'nt');
+      const filePath = path.join(process.cwd(), automatio'n, 'generated-conte'nt');'
       if (fs.existsSync(generatedContentDir)) {
         const result = fs.readdirSync(generatedContentDir);
         for (const file of files) {
-          if (file.endsWith('.json)) {
+          if (file.endsWith('.json)) {'
             const filePath = path.join(generatedContentDir, file);
-            const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8')));
+            const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8')));'
             
-            if (content.type === 'page && content.status === pendi'n'g) {
+            if (content.type === 'page && content.status === pendi'n'g) {'
               const result = this.generatePageContent(content);
-              const filePath = path.join(this.pagesDir, ${content.slug}.tsx");
+              const filePath = path.join(this.pagesDir, ${content.slug}.tsx");"
               
               if (!fs.existsSync(targetPath)) {
                 dynamicPages.push({
-                  content: "pageContent",
-                  target: "targetPath",
-                  name: ""${content.slug"}.tsx,
-                  type: "'dynamic'",
-                  metadata: "content
-                "});
+                  content: "pageContent","
+                  target: "targetPath","
+                  name: ""${content.slug"}.tsx,"
+                  type: "'dynamic'","
+                  metadata: "content"
+                "});"
               }
             }
           }
         }
       }
     } catch (error) {
-      console.error(❌ Page Sync Agent ${this.agentId} error detecting dynamic pages:", error);
+      console.error(❌ Page Sync Agent ${this.agentId} error detecting dynamic pages:", error);"
     }
     
     return dynamicPages;
   }
 
   generatePageContent(pageData) {
-    const { title, description, content, slug, layout = 'default } = pageData;
+    const { title, description, content, slug, layout = 'default } = pageData;'
     
-    return "import React from react'}
-import Head from 'next'/head'}
+    return "import React from 'react'
+import React from 'react'
 import { NextPage } from next;
 
-interface ${title.replace(/\s+/g, '')}PageProps {
+interface ${title.replace(/\s+/g, '')}PageProps {'
   // Add your props here
 }
 ;
-const ${title.replace(/\s+/g, ')}Page: "NextPage<${title.replace(/\s+/g", ')}PageProps> = () => {
+const ${title.replace(/\s+/g, ')}Page: "NextPage<${title.replace(/\s+/g", ')}PageProps> = () => {'
   return (</div>
     <div></div>
       <Head></div>
         <title>${title}</title></div>
-        <meta name=description content="${description}" /></div>
-        <meta name=viewport content="width=device-width, initial-scale=1" /></div>
+        <meta name=description content="${description}" /></div>"
+        <meta name=viewport content="width=device-width, initial-scale=1" /></div>"
       </Head>
       </div>
-      <main className=min-h-screen bg-white></div>
-        <div className=container mx-auto px-4 py-8></div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6>
+      <main className="min-h-screen" bg-white></div>"
+        <div className="container" mx-auto px-4 py-8></div>"
+          <h1 className="text-4xl font-bold text-gray-900 mb-6>"
             ${title}</div>
           </h1>
           </div>
-          <div className=prose prose-lg max-w-none">
+          <div className="prose" prose-lg max-w-none">"
             ${content}</div>
           </div></div>
         </div></div>
@@ -202,26 +202,26 @@ const ${title.replace(/\s+/g, ')}Page: "NextPage<${title.replace(/\s+/g", ')}Pag
   );
 };
 ;}
-export default ${title.replace(/\s+/g, '')}Page;
+export default ${title.replace(/\s+/g, '')}Page;'
 
   }
 
   async syncPage(page) {
     try {
-      console.log(📄 Page Sync Agent ${this.agentId} syncing page: "${page.name"}");
+      console.log(📄 Page Sync Agent ${this.agentId} syncing page: "${page.name"}");"
       
       if (page.type === generated) {
         // Copy file from source to target
         fs.copyFileSync(page.source, page.target);
-        console.log("✅ Page Sync Agent ${this.agentId} copied page: "${page.name"});
-      } else if (page.type === 'dynam'ic') {
+        console.log("✅ Page Sync Agent ${this.agentId} copied page: "${page.name"});"
+      } else if (page.type === 'dynam'ic') {'
         // Write generated content to target
         fs.writeFileSync(page.target, page.content);
-        console.log(✅ Page Sync Agent ${this.agentId} generated page: "${page.name"}");
+        console.log(✅ Page Sync Agent ${this.agentId} generated page: "${page.name"}");"
         
         // Update metadata status
         if (page.metadata) {
-          await this.updatePageStatus(page.metadata, 'synced);
+          await this.updatePageStatus(page.metadata, 'synced);'
         }
       }
       
@@ -231,52 +231,52 @@ export default ${title.replace(/\s+/g, '')}Page;
       }
       
     } catch (error) {
-      console.error("❌ Page Sync Agent ${this.agentId} failed to sync page ${page.name}:, error);
+      console.error("❌ Page Sync Agent ${this.agentId} failed to sync page ${page.name}:, error);"
       throw error;
     }
   }
 
   async updatePageStatus(pageData, status) {
     try {
-      const filePath = path.join(process.cwd(), automati'o'n, 'generated-conte'nt');
-      const filePath = path.join(generatedContentDir, ${pageData.slug}-metadata.json");
+      const filePath = path.join(process.cwd(), automati'o'n, 'generated-conte'nt');'
+      const filePath = path.join(generatedContentDir, ${pageData.slug}-metadata.json");"
       
       const timestamp = {
         ...pageData,
-        status: "status",
-        syncedAt: "new Date().toISOString()
-      "};
+        status: "status","
+        syncedAt: "new Date().toISOString()"
+      "};"
       
       fs.writeFileSync(metadataFile, JSON.stringify(updatedData, null, 2));
     } catch (error) {
-      console.error("❌ Page Sync Agent ${this.agentId} error updating page status:, error);
+      console.error("❌ Page Sync Agent ${this.agentId} error updating page status:, error);"
     }
   }
 
   async commitPageSync(pageName) {
     try {
-      execSync('git add ., { stdio: "pipe "});
-      execSync(git commit -m "Auto-sync page: "${pageName"}", { stdio: "')pipe' "});
-      execSync('git push, { stdio: "pipe "});
-      console.log(🚀 Page Sync Agent ${this.agentId} committed page sync: "${pageName"}");
+      execSync('git add ., { stdio: "pipe "});"
+      execSync(git commit -m "Auto-sync page: "${pageName"}", { stdio: "')pipe' "});"
+      execSync('git push, { stdio: "pipe "});"
+      console.log(🚀 Page Sync Agent ${this.agentId} committed page sync: "${pageName"}");"
     } catch (error) {
-      console.error("❌ Page Sync Agent ${this.agentId} commit error:, error);
+      console.error("❌ Page Sync Agent ${this.agentId} commit error:, error);"
     }
   }
 
   async stop() {
-    console.log(🛑 Stopping Page Sync Agent ${this.agentId}");
+    console.log(🛑 Stopping Page Sync Agent ${this.agentId}");"
     this.isRunning = false;
   }
 
   getMetrics() {
     return {
-      agentId: "this.agentId",
-      type: "this.type",
-      isRunning: "this.isRunning",
-      metrics: "this.metrics",
-      uptime: "this.metrics.startTime ? Date.now() - new Date(this.metrics.startTime).getTime() : 0
-    "};
+      agentId: "this.agentId","
+      type: "this.type","
+      isRunning: "this.isRunning","
+      metrics: "this.metrics","
+      uptime: "this.metrics.startTime ? Date.now() - new Date(this.metrics.startTime).getTime() : 0"
+    "};"
   }
 
   sleep(ms) {
@@ -287,28 +287,28 @@ export default ${title.replace(/\s+/g, '')}Page;
 // CLI interface
 if (require.main === module) {
   const result = process.argv.slice(2);
-  const result = args[args.indexOf(')--agent-'id') + 1];
-  const result = args[args.indexOf('--type) + 1];
+  const result = args[args.indexOf(')--agent-'id') + 1];'
+  const result = args[args.indexOf('--type) + 1];'
   const result = args[args.indexOf(--config) + 1];
-  const jsonData = JSON.parse(configArg || '){}');
+  const jsonData = JSON.parse(configArg || '){}');'
 
   const result = new PageSyncAgent(agentId, type, config);
   
   // Handle graceful shutdown
   process.on(SIGTERM, async () => {
-    console.log("🛑 Page Sync Agent ${agentId} received SIGTERM);
+    console.log("🛑 Page Sync Agent ${agentId} received SIGTERM);"
     await agent.stop();
     process.exit(0);
   });
 
-  process.on('SIGI'NT', async () => {
-    console.log(🛑 Page Sync Agent ${agentId} received SIGINT");
+  process.on('SIGI'NT', async () => {'
+    console.log(🛑 Page Sync Agent ${agentId} received SIGINT");"
     await agent.stop();
     process.exit(0);
   });
 
   agent.start().catch(error => {
-    console.error("❌ Page Sync Agent ${agentId} failed to start:", error);
+    console.error("❌ Page Sync Agent ${agentId} failed to start:", error);"
     process.exit(1);
   });
 }
