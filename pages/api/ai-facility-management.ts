@@ -46,7 +46,7 @@ const mockFacilities: Facility[] = [
       energyScore: 88,
       securityScore: 92,
       efficiencyScore: 85,
-      recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors'];
+      recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']
     };
   },
   {

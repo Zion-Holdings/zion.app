@@ -37,7 +37,7 @@ const AIModelDevelopmentChatPage: NextPage = () => {
                 Expert discussion about ai model development implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>expert-consultation • future-predictions • expert-advice</span>
+                <span>professional-technical • expert-interview • step-by-step-guide</span>
               </div>
             </div>
           </div>

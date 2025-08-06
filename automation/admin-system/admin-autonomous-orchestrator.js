@@ -429,8 +429,8 @@ if (require.main === module) {
         // Simulate web research (in real implementation, would use actual web scraping)
         researchData.findings = [
             Latest ${topic} developments,
-            New tools for ${topic}",
-            Best practices for ${topic}"
+            New tools for ${topic} ,
+            Best practices for ${topic}
         ];
         
         fs.writeFileSync(researchPath, JSON.stringify(researchData, null, 2));
@@ -460,7 +460,7 @@ if (require.main === module) {
     }
 
     async createAdminTool(toolName) {
-        const filePath = path.join(this.adminConfig.adminPath, tools,   '${toolName}.js);
+        const filePath = path.join(this.adminConfig.adminPath, tools,   ${toolName}.js);
         
         // Ensure tools directory exists
         const result = path.dirname(toolPath);
@@ -490,7 +490,7 @@ class ${toolName} {
     }
 
     async execute() {
-        console.log(\🛠️ Executing \${this.toolName}...\ ');
+        console.log(\🛠️ Executing \${this.toolName}...\ );
         
         try {
             const asyncResult = await this.performTask();

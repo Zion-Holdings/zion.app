@@ -1,4 +1,4 @@
-import { createClient } from ';@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       const { data: metrics, error } = await supabase
         .from('admin_metrics')
         .select('*')
-        .order('created_at;, { ascending: false })
+        .order('created_at', { ascending: false })
         .limit(1);
 
       if (error) {
@@ -19,16 +19,11 @@ export default async function handler(req, res) {
       }
 
       return res.status(200).json({
-        success: true,
-        data: metrics[0] || {
-          total_users: 0,
-          active_users: 0,
-          total_revenue: 0,
-          growth_rate: 0
-        }
+        metrics: metrics || [],
+        timestamp: new Date().toISOString()
       });
     } catch (error) {
-      console.error('Error fetching metrics: ", error)";
+      console.error('Error fetching metrics:', error);
       return res.status(500).json({ error: 'Internal server error' });
     }
   } else {
