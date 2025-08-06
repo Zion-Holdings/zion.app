@@ -200,6 +200,7 @@ module.exports = {
         'neon-purple': '0 0 20px rgba(139, 92, 246, 0.5)',
         'neon-pink': '0 0 20px rgba(236, 72, 153, 0.5)',
         'neon-green': '0 0 20px rgba(16, 185, 129, 0.5)',
+        'neon-glow': '0 0 30px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1)',
       },
     },
   },

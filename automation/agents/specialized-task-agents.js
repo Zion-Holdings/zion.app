@@ -119,7 +119,6 @@ class DevelopmentAgent extends EventEmitter {
     
     for (const file of files) {
       feature.files.push(file);
-      // In a real implementation, you'd create these files
     }
     
     feature.status = 'completed';
