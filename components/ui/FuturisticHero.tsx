@@ -44,19 +44,19 @@ const FuturisticHero: React.FC = () => {
         <div 
           className="absolute top-1/4 left-1/4 w-72 h-72 bg-neon-blue/20 rounded-full blur-3xl animate-pulse"
           style={{
-            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.02}px, ${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`
+            transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth : 1200) / 2) * 0.02}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight : 800) / 2) * 0.02}px)`
           }}
         ></div>
         <div 
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-pulse delay-1000"
           style={{
-            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * -0.01}px, ${(mousePosition.y - window.innerHeight / 2) * -0.01}px)`
+            transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth : 1200) / 2) * -0.01}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight : 800) / 2) * -0.01}px)`
           }}
         ></div>
         <div 
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-green/20 rounded-full blur-3xl animate-pulse delay-2000"
           style={{
-            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.015}px, ${(mousePosition.y - window.innerHeight / 2) * 0.015}px)`
+            transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth : 1200) / 2) * 0.015}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight : 800) / 2) * 0.015}px)`
           }}
         ></div>
       </div>
