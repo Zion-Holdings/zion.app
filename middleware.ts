@@ -25,15 +25,15 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Redirect unauthenticated users to /auth
-  if (!user && !request.nextUrl.pathname.startsWith('/auth')) {
+  // Redirect unauthenticated users to /auth (except for auth callback)
+  if (!user && !request.nextUrl.pathname.startsWith('/auth') && !request.nextUrl.pathname.startsWith('/auth/callback')) {
     const url = request.nextUrl.clone();
     url.pathname = '/auth';
     return NextResponse.redirect(url);
   }
 
-  // Redirect authenticated users away from /auth
-  if (user && request.nextUrl.pathname.startsWith('/auth')) {
+  // Redirect authenticated users away from /auth (except for auth callback)
+  if (user && request.nextUrl.pathname.startsWith('/auth') && !request.nextUrl.pathname.startsWith('/auth/callback')) {
     const url = request.nextUrl.clone();
     url.pathname = '/';
     return NextResponse.redirect(url);
@@ -44,7 +44,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Exclude static and public assets
-    '/((?!_next/static|_next/image|favicon.ico|public).*)',
+    // Exclude static and public assets, and auth callback
+    '/((?!_next/static|_next/image|favicon.ico|public|auth/callback).*)',
   ],
 };
