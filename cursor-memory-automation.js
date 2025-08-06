@@ -8,7 +8,7 @@ const OpenAI = require('openai');
 
 const execAsync = promisify(exec);
 
-class CursorMemoryLearningAutomation {
+class CursorMemoryAutomation {
   constructor() {
     this.openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
@@ -17,13 +17,6 @@ class CursorMemoryLearningAutomation {
     this.memoryDir = './cursor-memory';
     this.chatLogsDir = './chat-logs';
     this.knowledgeBaseDir = './knowledge-base';
-    this.learningConfig = {
-      maxTokens: 4000,
-      temperature: 0.3,
-      model: 'gpt-4',
-      batchSize: 10,
-      learningRate: 0.1
-    };
     
     this.memoryIndex = new Map();
     this.knowledgeGraph = new Map();
@@ -198,7 +191,7 @@ ${content.substring(0, 3000)}`;
 
     try {
       const completion = await this.openai.chat.completions.create({
-        model: this.learningConfig.model,
+        model: 'gpt-4',
         messages: [
           {
             role: 'system',
@@ -209,8 +202,8 @@ ${content.substring(0, 3000)}`;
             content: prompt
           }
         ],
-        temperature: this.learningConfig.temperature,
-        max_tokens: this.learningConfig.maxTokens
+        temperature: 0.3,
+        max_tokens: 4000
       });
 
       const response = completion.choices[0].message.content;
@@ -688,8 +681,8 @@ ${content.substring(0, 3000)}`;
 
 // Run the automation
 if (require.main === module) {
-  const automation = new CursorMemoryLearningAutomation();
+  const automation = new CursorMemoryAutomation();
   automation.run().catch(console.error);
 }
 
-module.exports = CursorMemoryLearningAutomation;
+module.exports = CursorMemoryAutomation;
