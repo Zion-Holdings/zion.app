@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from ';next';
-interface Employee {
+interface Employee {;
   id: string;
   name: string;
   position: string;
@@ -10,40 +10,40 @@ interface Employee {
   satisfaction: number;
   retentionRisk: number;
   aiAnalysis: EmployeeAnalysis;
-}
-interface EmployeeAnalysis {
+};
+interface EmployeeAnalysis {;
   id: string;
   performanceScore: number;
   satisfactionScore: number;
   retentionScore: number;
   recommendations: string[];
-}
-interface JobPosting {
+};
+interface JobPosting {;
   id: string;
   title: string;
   department: string;
   location: string;
-  type: 'full-time' | 'part-time' | 'contract' | 'internship
-  status: 'open' | 'in-review' | 'closed' | 'filled
+  type: 'full-time' | 'part-time' | 'contract' | 'internship;
+  status: 'open' | 'in-review' | 'closed' | 'filled;
   applications: number;
   aiOptimization: JobOptimization;
-}
-interface JobOptimization {
+};
+interface JobOptimization {;
   id: string;
   visibilityScore: number;
   applicationQuality: number;
   diversityScore: number;
   recommendations: string[];
-}
-interface HRAnalytics {
+};
+interface HRAnalytics {;
   totalEmployees: number;
   activeJobPostings: number;
   averagePerformance: number;
   employeeSatisfaction: number;
   retentionRate: number;
   aiOptimizationScore: number;
-}
-const mockEmployees: Employee[] = [
+};
+const mockEmployees: Employee[] = [;
   {;
     id: 'emp-1',;
     name: 'John Smith',;
@@ -117,7 +117,7 @@ const mockEmployees: Employee[] = [
     };
   };
 ];
-const mockJobPostings: JobPosting[] = [
+const mockJobPostings: JobPosting[] = [;
   {;
     id: 'job-1',;
     title: 'Frontend Developer',;
@@ -238,7 +238,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           return res.status(404).json({ error: 'Employee not found' });
         };
         // Simulate AI analysis;
-        const analysis = {
+        const analysis = {;
           performanceInsights: [;
             'Consistent high performance in technical tasks',;
             'Strong collaboration with team members',;
@@ -266,5 +266,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {;
     console.error('AI HR Management API Error: ', error)";
     return res.status(500).json({ error: 'Internal server error' });
-  };
-};
+  };";
+};";";

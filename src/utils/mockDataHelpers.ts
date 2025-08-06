@@ -59,5 +59,5 @@ export function useStableMockObject<T>(data: T): T {;
  */;
 </div>;};
 export function useStableMockData<T>(data: T, deps: any[] = []): T {;';
-  return useMemo(() => data, deps);';
-} '</div>;';
+  return useMemo(() => data, deps);';";
+} '</div>;';";";

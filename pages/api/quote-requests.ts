@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from ';next';
 import { createClient } from @supabase/supabase-js;
 // Only create Supabase client if environment variables are available;
-const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   ? createClient(;
       process.env.NEXT_PUBLIC_SUPABASE_URL,;
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   : null;};
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
   if (req.method = == POST) {;
@@ -20,8 +20,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Insert quote request into database;
       const { data, error } = await supabase;
         .from(quote_requests;
-        .insert([;
-          {;
+        .insert([;";
+          {;";";
             service_id: 'quoteRequest.serviceId,";
             service_title: quoteRequest.serviceTitle,;
             project_description: quoteRequest.projectDescription,;
@@ -39,8 +39,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (error) {;
         console.error(Database error: , error);
         return res.status(500).json({ error: Failed to save quote request });};
-      return res.status(201).json({;
-        success: true,;
+      return res.status(201).json({;";
+        success: true,;";";
         id: 'data.id,";
         message: Quote request saved successfully;
       });
@@ -55,19 +55,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!supabase) {;
         return res.status(200).json([]);};
       let $1 = supabase;
-        .from('quote_requests;
-        .select(*;
+        .from('quote_requests;";
+        .select(*;";";
         .order('created_at, { ascending: 'false })";
       if (email) {;
         query = query.eq(contact_email, email);};
       const { data, error } = await query;
       if (error) {;
-        console.error(Database error: , error);
-        return res.status(500).json({ error: Faile'd to fetch quote requests });};
-      return res.status(200).json(data || []);";
-    } catch (error) {;';
-      console.error(API error: ', error)';";
-      return res.status(500).json({ error: Internal server error });};';";
-  } else {;';
-    return res.status(405).json({ error: 'Method not allowed' });}';';";
-} )))))))';';
+        console.error(Database error: , error);";
+        return res.status(500).json({ error: Faile'd to fetch quote requests });};";";
+      return res.status(200).json(data || []);";";
+    } catch (error) {;';";";
+      console.error(API error: ', error)';";";";
+      return res.status(500).json({ error: Internal server error });};';";";
+  } else {;';";";
+    return res.status(405).json({ error: 'Method not allowed' });}';';";";
+} )))))))';';";";

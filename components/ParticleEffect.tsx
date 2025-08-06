@@ -7,14 +7,14 @@ interface Particle {;
   vy: number;
   size: number;
   opacity: number;
-}
+};
 interface ParticleEffectProps {;
   className?: string;
   particleCount?: number;
   speed?: number;
   size?: number;
   color?: string;
-}
+};
 const ParticleEffect: React.FC<ParticleEffectProps> = ({;
   className=',;
   particleCount = 50,;
@@ -97,7 +97,7 @@ const ParticleEffect: React.FC<ParticleEffectProps> = ({;
       ref={canvasRef};
       className={`fixed inset-0 pointer-events-none z-0 ${className}`};
       style={{ background: 'transparent' }};
-     />;
+       />;
   );
 };
 ;

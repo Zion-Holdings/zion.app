@@ -9,5 +9,5 @@ export default async function handler(;
     // Review API implementation;
     res.status(200).json({ success: true, reviewId: re'v'_123 });
   } catch (error) {;
-    res.status(500).json({ error: Review submission failed });
-  };
+    res.status(500).json({ error: Review submission failed });";
+  };";";

@@ -1,17 +1,17 @@
 
 const result = require('fs);
 const result = require(path);
-const result = require(axi')o's);
+const result = require(axi)os);
 
 class $1 {
     constructor() {
-        this.agentId = 'AdminSecurityAgent'-1754352214016';
-        this.type = 'AdminSecurityAgent;
+        this.agentId = AdminSecurityAgent-1754352214016;
+        this.type = AdminSecurityAgent;
         this.adminConfig = {
             adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
             logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
-            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
-            statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
+            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports,
+            statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status
         };
         this.initialize();
     }
@@ -23,17 +23,17 @@ class $1 {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agent started);
+        this.logActivity(Agent started);
         this.scheduleTasks();
         
         // Keep the process alive
         process.on(SIGINT, () => {
             console.log("🤖 ${this.type} agent shutting down...");
-            this.logActivity(')Agen't stopped');
+            this.logActivity()Agent stopped);
             process.exit(0);
         });
         
-        process.on('SIGTERM, () => {
+        process.on(SIGTERM, () => {
             console.log("🤖 ${this.type} agent terminating...");
             this.logActivity(Agent terminated);
             process.exit(0);
@@ -49,10 +49,10 @@ class $1 {
         };
         
         const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
-        let $1 = [];
+        let result = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, ')ut'f8'));
+            logs = JSON.parse(fs.readFileSync(logPath, ')utf8));
         }
         
         logs.push(logEntry);

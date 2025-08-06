@@ -1,10 +1,10 @@
-import React from ";react;';
-import { motion } from framer-motion;';
+import React from ";react;';";
+import { motion } from framer-motion;';";";
 ;};';";
-export default function;ChatMessage() {;';';
-  return (';';
+export default function;ChatMessage() {;';';";
+  return (';';";";
     <motion.div className='chat-component>;';";
-      {/* ChatMessage.tsx implementation */}</div>;';';
-    </motion.div>;';';
-  );';';";
-}'</div>';';";
+      {/* ChatMessage.tsx implementation */}</div>;';';";
+    </motion.div>;';';";";
+  );';';";";";
+}'</div>';';";";";

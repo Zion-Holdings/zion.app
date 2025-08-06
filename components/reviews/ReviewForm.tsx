@@ -1,10 +1,10 @@
-import React from ";react;';
-import { motion } from framer-motion;';
+import React from ";react;';";
+import { motion } from framer-motion;';";";
 ;};';";
-export default function;ReviewForm() {;';';
-  return (';';
+export default function;ReviewForm() {;';';";
+  return (';';";";
     <motion.div className='review-component>;';";
-      {/* ReviewForm.tsx implementation */}</div>;';';
-    </motion.div>;';';
-  );';';";
-}'</div>';';";
+      {/* ReviewForm.tsx implementation */}</div>;';';";
+    </motion.div>;';';";";
+  );';';";";";
+}'</div>';';";";";

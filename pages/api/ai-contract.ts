@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from ';next';
-interface Contract {
+interface Contract {;
   id: string;
   name: string;
   type: 'service' | 'product' | 'partnership' | 'employment';
@@ -12,23 +12,23 @@ interface Contract {
   risks: string[];
   compliance: string[];
   aiAnalysis: ContractAnalysis;
-}
-interface ContractAnalysis {
+};
+interface ContractAnalysis {;
   id: string;
   riskScore: number;
   complianceScore: number;
   valueScore: number;
   recommendations: string[];
-}
-interface ContractAnalytics {
+};
+interface ContractAnalytics {;
   totalContracts: number;
   activeContracts: number;
   totalValue: number;
   averageRiskScore: number;
   complianceRate: number;
   aiOptimizationScore: number;
-}
-const mockContracts: Contract[] = [
+};
+const mockContracts: Contract[] = [;
   {;
     id: 'contract-1',;
     name: 'Cloud Services Agreement',;
@@ -166,7 +166,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       case 'analyzeContract':;
         const { contractText } = req.body;
         // Simulate AI contract analysis;
-        const analysis = {
+        const analysis = {;
           riskScore: Math.floor(Math.random() * 100),;
           complianceScore: Math.floor(Math.random() * 20) + 80,;
           valueScore: Math.floor(Math.random() * 30) + 70,;
@@ -192,5 +192,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {;
     console.error('AI Contract API Error: ', error)";
     return res.status(500).json({ error: 'Internal server error' });
-  };
-};
+  };";
+};";";

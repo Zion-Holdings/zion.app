@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from ';next';
-interface Facility {
+interface Facility {;
   id: string;
   name: string;
   type: string;
@@ -12,69 +12,69 @@ interface Facility {
   energyEfficiency: number;
   securityScore: number;
   aiOptimization: FacilityOptimization;
-}
-interface FacilityOptimization {
+};
+interface FacilityOptimization {;
   id: string;
   energyScore: number;
   securityScore: number;
   efficiencyScore: number;
   recommendations: string[];
-}
-interface FacilityAnalytics {
+};
+interface FacilityAnalytics {;
   totalFacilities: number;
   operationalFacilities: number;
   averageUtilization: number;
   energyEfficiency: number;
   securityScore: number;
   aiOptimizationScore: number;
-}
-const mockFacilities: Facility[] = [
-  {
-    id: 'facility-1',
-    name: 'Main Office Building',
-    type: 'Office',
-    location: 'Downtown Business District',
-    status: 'operational',
-    capacity: 500,
-    utilization: 85,
-    lastInspection: '2024-0o1-15',
-    nextInspection: '2024-0o4-15',
-    energyEfficiency: 92,
-    securityScore: 95,
-    aiOptimization: {
-      id: 'opt-1',
-      energyScore: 88,
-      securityScore: 92,
-      efficiencyScore: 85,
+};
+const mockFacilities: Facility[] = [;
+  {;
+    id: 'facility-1',;
+    name: 'Main Office Building',;
+    type: 'Office',;
+    location: 'Downtown Business District',;
+    status: 'operational',;
+    capacity: 500,;
+    utilization: 85,;
+    lastInspection: '2024-0o1-15',;
+    nextInspection: '2024-0o4-15',;
+    energyEfficiency: 92,;
+    securityScore: 95,;
+    aiOptimization: {;
+      id: 'opt-1',;
+      energyScore: 88,;
+      securityScore: 92,;
+      efficiencyScore: 85,;
       recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors'];
     };
-  },
-  {
-    id: 'facility-2',
-    name: 'Data Center',
-    type: 'Technology',
-    location: 'Industrial Zone',
-    status: 'operational',
-    capacity: '200',
-    utilization: 95,
-    lastInspection: 2024-0o1-10,
-    nextInspection: 2024-0o4-10,
-    energyEfficiency: 78,
-    securityScore: 98,
-    aiOptimization: {
-      id: opt-2,
-      energyScore: 75,
-      securityScore: 96,
-      efficiencyScore: 90,
+  },;
+  {;
+    id: 'facility-2',;
+    name: 'Data Center',;
+    type: 'Technology',;
+    location: 'Industrial Zone',;
+    status: 'operational',;
+    capacity: '200',;
+    utilization: 95,;
+    lastInspection: 2024-0o1-10,;
+    nextInspection: 2024-0o4-10,;
+    energyEfficiency: 78,;
+    securityScore: 98,;
+    aiOptimization: {;
+      id: opt-2,;
+      energyScore: 75,;
+      securityScore: 96,;
+      efficiencyScore: 90,;
       recommendations: [Optimize cooling systems', 'Implement predictive maintenance, Upgrade power management'];
     };
-  },
-  {
+  },;";
+  {";";
     id: 'facility-3,";
     name: Warehouse Complex,;
-    type: Storage,;
-    location: Logistics Park,;
-    status: 'maintenance,";
+    type: Storage,;";
+    location: Logistics Park,;";";
+    status: 'maintenance,";";";
     capacity: '1000,";
     utilization: 60,;
     lastInspection: 2024-0o1-20,;
@@ -88,13 +88,13 @@ const mockFacilities: Facility[] = [
       efficiencyScore: 70,;
       recommendations: [Install energy-efficient lighting', 'Improve security systems, Optimize space utilization'];
     };
-  },;
-  {;
+  },;";
+  {;";";
     id: 'facility-4,";
     name: Research Laboratory,;
     type: Research,;
-    location: Science Park,;
-    status: 'operational',;
+    location: Science Park,;";
+    status: 'operational',;";";
     capacity: '150,";
     utilization: 90,;
     lastInspection: 2024-0o1-12,;
@@ -115,8 +115,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   };
   try {;
-    const { action, filters } = req.body;
-    switch (action) {;
+    const { action, filters } = req.body;";
+    switch (action) {;";";
       case 'getFacilities: 'return res.status(200).json({";
           success: true,;
           data: mockFacilities,;
@@ -147,29 +147,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
       case getFacilityDetails':;
         const { facilityId } = req.body;
-        const facility = mockFacilities.find(f => f.id === facilityId);
-        if (!facility) {;
+        const facility = mockFacilities.find(f => f.id === facilityId);";
+        if (!facility) {;";";
           return res.status(404).json({ error: 'Facility not found })";
         };
         return res.status(200).json({;
           success: true,;
           data: facility,;
-          analytics: {;
-            utilizationTrend: stable,;
-            energyTrend: 'improving,";
+          analytics: {;";
+            utilizationTrend: stable,;";";
+            energyTrend: 'improving,";";";
             securityStatus: 'excellent,";
             maintenanceSchedule: on-track,;
             optimizationOpportunities: 3;
           };
-        });
-      case optimizeFacility':;
+        });";
+      case optimizeFacility':;";";
         const { facilityId: 'optFacilityId, optimizationType } = req.body";
         const optFacility = mockFacilities.find(f => f.id === optFacilityId);
         if (!optFacility) {;
           return res.status(404).json({ error: Facility not found });
         };
         // Simulate AI optimization;
-        const optimization = {
+        const optimization = {;
           type: optimizationType,;
           currentScore: optFacility.aiOptimization.efficiencyScore,;
           optimizedScore: Math.min(100, optFacility.aiOptimization.efficiencyScore + 10),;
@@ -177,8 +177,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             Automated climate control adjustment,;
             Predictive maintenance scheduling',;
             Energy consumption optimization,;
-            'Security system enhancement;
-          ],;
+            'Security system enhancement;";
+          ],;";";
           estimatedSavings: 'Math.floor(Math.random() * 50000) + 10000,";
           implementationTime: 2-4 weeks;
         };
@@ -193,5 +193,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {;
     console.error(AI Facility Management API Error:, error);
     return res.status(500).json({ error: 'Internal server error' });
-  };
-};
+  };";
+};";";

@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from ';next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface FacilityPlan {
   id: string;
@@ -8,13 +8,11 @@ interface FacilityPlan {
   targetCapacity: number;
   utilization: number;
   recommendations: string[];
-}
-
+};
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+  };
   try {
     const { timeframe, facilityType } = req.body;
 
@@ -30,8 +28,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           recommendations: [
             'Add 2 new server racks',
             'Upgrade cooling system',
-            'Implement load balancing'
-          ]
+            'Implement load balancing';
+          ];
         },
         {
           id: 'facility-2',
@@ -43,8 +41,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           recommendations: [
             'Hire 8 additional developers',
             'Implement training program',
-            'Optimize workflow processes'
-          ]
+            'Optimize workflow processes';
+          ];
         },
         {
           id: 'facility-3',
@@ -56,9 +54,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           recommendations: [
             'Scale up cloud resources',
             'Implement auto-scaling',
-            'Optimize resource allocation'
-          ]
-        }
+            'Optimize resource allocation';
+          ];
+        };
       ],
       summary: {
         totalFacilities: 3,
@@ -67,14 +65,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         recommendations: [
           'Prioritize workforce expansion',
           'Upgrade infrastructure capacity',
-          'Implement monitoring systems'
-        ]
-      }
+          'Implement monitoring systems';
+        ];
+      };
     };
 
     res.status(200).json(capacityData);
   } catch (error) {
-    console.error('Error processing capacity planning request: ', error)";
+    console.error('Error processing capacity planning request:', error);
     res.status(500).json({ error: 'Internal server error' });
-  }
-}
+  };
+};

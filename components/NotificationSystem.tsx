@@ -1,10 +1,10 @@
-import React from ";react;';
-import { motion } from framer-motion;';
+import React from ";react;';";
+import { motion } from framer-motion;';";";
 ;};';";
-export default function;NotificationSystem() {;';';
-  return (';';
+export default function;NotificationSystem() {;';';";
+  return (';';";";
     <motion.div className='notification-system>;';";
-      {/* Notification system implementation */}</div>;';';
-    </motion.div>;';';
-  );';';";
-}'</div>';';";
+      {/* Notification system implementation */}</div>;';';";
+    </motion.div>;';';";";
+  );';';";";";
+}'</div>';';";";";

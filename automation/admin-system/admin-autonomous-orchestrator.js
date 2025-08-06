@@ -1,24 +1,24 @@
 const result = require('fs);
 const result = require(path);
-const { exec } = require(chil')d'_process);
-const result = require('node-cron);
+const { exec } = require(chil)d_process);
+const result = require(node-cron);
 
 class $1 {
     constructor() {
         this.adminConfig = {
             adminUser: {
-                username: ')kleber@ziontechgroup.com',
+                username: )kleber@ziontechgroup.com,
                 password: Tw2.R5u&2!sDfeW,
-                role: 'admin'
+                role: admin'
             },
             systemPath: path.join(__dirname, '..),
             adminPath: path.join(__dirname),
-            logsPath: path.join(__dirname, 'lo'gs'),
-            agentsPath: path.join(__dirname, 'agents),
-            reportsPath: path.join(__dirname, repor't's),
-            statusPath: path.join(__dirname, 'stat'us'),
+            logsPath: path.join(__dirname, logs),
+            agentsPath: path.join(__dirname, agents),
+            reportsPath: path.join(__dirname, reports),
+            statusPath: path.join(__dirname, status'),
             webResearchPath: path.join(__dirname, 'web-research),
-            evolutionPath: path.join(__dirname, evoluti'o'n)
+            evolutionPath: path.join(__dirname, evolution)
         };
         
         this.agents = new Map();
@@ -26,9 +26,9 @@ class $1 {
             lastUpdate: new Date().toISOString(),
             activeAgents: 0,
             totalAgents: 0,
-            systemHealth: 'healthy',
-            evolutionPhase: 'continuous,
-            webResearchStatus: activ'e,
+            systemHealth: healthy,
+            evolutionPhase: continuous,
+            webResearchStatus: active,
             adminTools: []
         };
         
@@ -54,7 +54,7 @@ class $1 {
     }
 
     async initialize() {
-        console.log('🚀 Initializing Admin Autonomous Orchestrator...);
+        console.log(🚀 Initializing Admin Autonomous Orchestrator...);
         
         // Start core admin agents
         await this.startCoreAgents();
@@ -74,14 +74,14 @@ class $1 {
 
     async startCoreAgents() {
         const result = [
-            ')AdminAgentCreator,
-            AdminToolGenerat'o'r,
-            'AdminStatusMonit'or',
-            'AdminWebResearcher,
-            AdminEvolutionAge'n't,
-            'AdminSecurityAge'nt',
-            'AdminAnalyticsAgent,
-            AdminBackupAge'n't
+            )AdminAgentCreator,
+            AdminToolGenerator,
+            'AdminStatusMonit'or,
+            AdminWebResearcher,
+            AdminEvolutionAgent,
+            AdminSecurityAgent,
+            AdminAnalyticsAgent,
+            AdminBackupAgent
         ];
 
         for (const agentName of coreAgents) {
@@ -101,22 +101,22 @@ class $1 {
         const result = exec("node "${agentPath}"", {
             cwd: this.adminConfig.adminPath,
             detached: true,
-            stdio: 'pipe'
+            stdio: 'pipe
         });
         
         // Create PID file for cron system tracking with proper mapping
         const result = {
-            'AdminAgentCreator: admin-agent-creat'o'r,
-            'AdminWebResearch'er': 'admin-web-researcher,
-            AdminStatusMonit'o'r: 'admin-status-monitor',
-            'AdminEvolutionAgent: admin-evolution-age'n't,
-            'AdminSecurityAge'nt': 'admin-security-agent,
-            AdminAnalyticsAge'n't: 'admin-analytics-agent',
-            'AdminBackupAgent: admin-backup-age'n't,
-            'AdminToolGenerat'or': 'admin-tool-generator
+            AdminAgentCreator: admin-agent-creator,
+            AdminWebResearcher: admin-web-researcher,
+            AdminStatusMonitor: admin-status-monitor',
+            'AdminEvolutionAgent: admin-evolution-agent,
+            AdminSecurityAgent: admin-security-agent,
+            AdminAnalyticsAgent: admin-analytics-agent,
+            'AdminBackupAgent: admin-backup-agent,
+            'AdminToolGenerator: admin-tool-generator
         };
         
-        const result = pidNameMap[agentType] || "admin-${agentType.toLowerCase().replace(adm'i'n, '')}";
+        const result = pidNameMap[agentType] || "admin-${agentType.toLowerCase().replace(admin, )}";
         const filePath = path.join(this.adminConfig.adminPath, pids, "${pidName}.pid");
         fs.writeFileSync(pidPath, agentProcess.pid.toString());
         
@@ -127,7 +127,7 @@ class $1 {
             path: agentPath,
             process: agentProcess,
             pid: agentProcess.pid,
-            status: 'active',
+            status: active',
             createdAt: new Date().toISOString(),
             lastActivity: new Date().toISOString(),
             pidFile: pidPath
@@ -145,9 +145,9 @@ class $1 {
             }
         });
         
-        agentProcess.on(')err'or', (error) => {
+        agentProcess.on()error, (error) => {
             console.error("🤖 Agent ${agentType} (${agentId}) error:", error);
-            this.agents.get(agentId).status = 'error;
+            this.agents.get(agentId).status = error;
             
             // Clean up PID file
             if (fs.existsSync(pidPath)) {
@@ -164,19 +164,19 @@ class $1 {
 
     generateAgentCode(agentType, agentId) {
         const result = ";
-const result = require(f's');
+const result = require(fs);
 const result = require(path);
-const result = require('axios);
+const result = require(axios);
 
 class ${agentType} {
     constructor() {
-        this.agentId = ')${agentId};
+        this.agentId = )${agentId};
         this.type = '${agentType}';
         this.adminConfig = {
-            adminPath: ${this.adminConfig.adminPath}',
-            logsPath: '${this.adminConfig.logsPath},
-            reportsPath: ${this.adminConfig.reportsPath}',
-            statusPath: ${this.adminConfig.statusPath}'
+            adminPath: ${this.adminConfig.adminPath},
+            logsPath: ${this.adminConfig.logsPath},
+            reportsPath: ${this.adminConfig.reportsPath},
+            statusPath: ${this.adminConfig.statusPath}
         };
         this.initialize();
     }
@@ -188,17 +188,17 @@ class ${agentType} {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agent started);
+        this.logActivity(Agent started);
         this.scheduleTasks();
         
         // Keep the process alive
         process.on(SIGINT, () => {
             console.log(\"🤖 \${this.type} agent shutting down...\");
-            this.logActivity(')Agen't stopped');
+            this.logActivity()Agen't stopped');
             process.exit(0);
         });
         
-        process.on('SIGTERM, () => {
+        process.on(SIGTERM, () => {
             console.log(\"🤖 \${this.type} agent terminating...\");
             this.logActivity(Agent terminated);
             process.exit(0);
@@ -214,10 +214,10 @@ class ${agentType} {
         };
         
         const filePath = path.join(this.adminConfig.logsPath, \"\${this.type}-logs.json\");
-        let $1 = [];
+        let result = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, ')ut'f8'));
+            logs = JSON.parse(fs.readFileSync(logPath, )utf8));
         }
         
         logs.push(logEntry);
@@ -233,7 +233,7 @@ class ${agentType} {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performing scheduled tasks);
+        this.logActivity(Performing scheduled tasks);
         
         // Update status
         this.updateStatus();
@@ -264,7 +264,7 @@ if (require.main === module) {
 
     setupCronJobs() {
         // Continuous agent creation and evolution
-        cron.schedule(')*/15 * * * *', () => {
+        cron.schedule()*/15 * * * *', () => {
             this.evolveAgents();
         });
 
@@ -274,7 +274,7 @@ if (require.main === module) {
         });
 
         // Web research updates
-        cron.schedule('0 */2 * * *, () => {
+        cron.schedule(0 */2 * * *, () => {
             this.updateWebResearch();
         });
 
@@ -284,11 +284,11 @@ if (require.main === module) {
         });
 
         // System backup
-        cron.schedule(0 2 * * *'), () => {
+        cron.schedule(0 2 * * *), () => {
             this.backupSystem();
         });
 
-        console.log('⏰ Cron jobs scheduled for admin system);
+        console.log(⏰ Cron jobs scheduled for admin system);
     }
 
     async evolveAgents() {
@@ -310,7 +310,7 @@ if (require.main === module) {
             }
         }
         
-        this.status.evolutionPhase = ')complet'ed';
+        this.status.evolutionPhase = )completed;
         this.saveStatus();
     }
 
@@ -328,12 +328,12 @@ if (require.main === module) {
             needs.newAgentsNeeded.push(AdminAIAnalyticsAgent);
         }
         
-        if (!this.hasAgent(')AdminTrendAnalyz'er')) {
-            needs.newAgentsNeeded.push('AdminTrendAnalyzer);
+        if (!this.hasAgent(')AdminTrendAnalyzer)) {
+            needs.newAgentsNeeded.push(AdminTrendAnalyzer);
         }
         
         if (!this.hasAgent(AdminToolInnovator)) {
-            needs.newAgentsNeeded.push(')AdminToolInnovat'or');
+            needs.newAgentsNeeded.push()AdminToolInnovator);
         }
         
         return needs;
@@ -384,7 +384,7 @@ if (require.main === module) {
     }
 
     startWebResearch() {
-        console.log('🌐 Starting web research system...);
+        console.log(🌐 Starting web research system...);
         
         setInterval(async () => {
             await this.performWebResearch();
@@ -395,27 +395,27 @@ if (require.main === module) {
         try {
             const result = [
                 AI admin tools 2024,
-                autonomous') agent systems',
+                autonomous) agent systems,
                 project management automation,
-                'AI-powere'd analytics',
-                'continuous' evolution systems',
+                AI-powered analytics,
+                'continuous' evolution systems,
                 web scraping tools,
-                'automatio'n frameworks'
+                automation frameworks
             ];
             
             for (const topic of researchTopics) {
                 await this.researchTopic(topic);
             }
             
-            this.status.webResearchStatus = 'updated;
+            this.status.webResearchStatus = updated;
             this.saveStatus();
         } catch (error) {
-            console.error(We'b' research error:, error);
+            console.error(Web research error:, error);
         }
     }
 
     async researchTopic(topic) {
-        const filePath = path.join(this.adminConfig.webResearchPath, "${topic.replace(/\s+/g, '-')}.json");
+        const filePath = path.join(this.adminConfig.webResearchPath, "${topic.replace(/\s+/g, -')}.json");
         
         const timestamp = {
             topic: topic,
@@ -441,14 +441,14 @@ if (require.main === module) {
         console.log(🛠️ Generating new admin tools...');
         
         const result = [
-            'ProjectStatusDashboard,
-            AgentPerformanceMonit'o'r,
-            'SystemHealthCheck'er',
-            'AutomationAnalyzer,
-            TrendPredict'o'r,
-            'SecurityAudit'or',
-            'BackupManager,
-            AnalyticsVisualiz'e'r
+            ProjectStatusDashboard,
+            AgentPerformanceMonitor,
+            SystemHealthChecker,
+            AutomationAnalyzer,
+            TrendPredictor,
+            SecurityAudit'or',
+            BackupManager,
+            AnalyticsVisualizer
         ];
         
         for (const tool of tools) {
@@ -460,7 +460,7 @@ if (require.main === module) {
     }
 
     async createAdminTool(toolName) {
-        const filePath = path.join(this.adminConfig.adminPath, 'too'ls', "${toolName}.js");
+        const filePath = path.join(this.adminConfig.adminPath, tools, "${toolName}.js");
         
         // Ensure tools directory exists
         const result = path.dirname(toolPath);
@@ -476,16 +476,16 @@ if (require.main === module) {
 
     generateToolCode(toolName) {
         return ";
-const result = require('fs);
+const result = require(fs);
 const result = require(path);
 
 class ${toolName} {
     constructor() {
-        this.toolName = ${toolName}');
+        this.toolName = ${toolName});
         this.adminConfig = {
             adminPath: '${this.adminConfig.adminPath},
-            logsPath: ${this.adminConfig.logsPath}',
-            reportsPath: ${this.adminConfig.reportsPath}'
+            logsPath: ${this.adminConfig.logsPath},
+            reportsPath: ${this.adminConfig.reportsPath}
         };
     }
 
@@ -507,7 +507,7 @@ class ${toolName} {
         return {
             tool: this.toolName,
             timestamp: new Date().toISOString(),
-            status: 'completed,
+            status: completed,
             data: {}
         };
     }
@@ -527,26 +527,26 @@ module.exports = ${toolName};
             timestamp: new Date().toISOString(),
             activeAgents: this.status.activeAgents,
             totalAgents: this.status.totalAgents,
-            systemHealth: health'y,
+            systemHealth: healthy,
             memoryUsage: process.memoryUsage(),
             uptime: process.uptime()
         };
         
         // Check for issues
         if (this.status.activeAgents < this.status.totalAgents * 0.8) {
-            health.systemHealth = 'warni'ng';
+            health.systemHealth = warning;
         }
         
         this.status.systemHealth = health.systemHealth;
         
-        const filePath = path.join(this.adminConfig.statusPath, 'system-health'.json');
+        const filePath = path.join(this.adminConfig.statusPath, 'system-health'.json);
         fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
     }
 
     async backupSystem() {
-        console.log(💾 Creating system backup...');
+        console.log(💾 Creating system backup...);
         
-        const filePath = path.join(this.adminConfig.adminPath, 'backups, "backup-${Date.now()}");
+        const filePath = path.join(this.adminConfig.adminPath, backups, "backup-${Date.now()}");
         
         // Create backup directory
         if (!fs.existsSync(backupPath)) {
@@ -555,10 +555,10 @@ module.exports = ${toolName};
         
         // Copy important files
         const result = [
-            agen't's,
-            'repor'ts',
+            agents,
+            reports,
             'status,
-            lo'g's
+            logs
         ];
         
         for (const dir of filesToBackup) {
@@ -593,19 +593,19 @@ module.exports = ${toolName};
     }
 
     saveStatus() {
-        const filePath = path.join(this.adminConfig.statusPath, 'orchestrator-statu's.json');
+        const filePath = path.join(this.adminConfig.statusPath, 'orchestrator-status.json);
         fs.writeFileSync(statusPath, JSON.stringify(this.status, null, 2));
     }
 
     loadStatus() {
-        const filePath = path.join(this.adminConfig.statusPath, 'orchestrator-status'.json');
+        const filePath = path.join(this.adminConfig.statusPath, orchestrator-status.json);
         if (fs.existsSync(statusPath)) {
             this.status = JSON.parse(fs.readFileSync(statusPath, utf8));
         }
     }
 
     async updateWebResearch() {
-        console.log('🌐 Updating web research...');
+        console.log(🌐 Updating web research...');
         await this.performWebResearch();
     }
 

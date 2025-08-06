@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {;
     // Test environment variables;
     const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const $1 = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    const $1 = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     // Test session retrieval;
     const { data: { session } error: sessionError } = await supabase.auth.getSession(;
     // Test user retrieval;
@@ -31,5 +31,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {;
     return res.status(500).json({;
       success: false,;
-      error: error instanceof Error ? error.message : Unknown error}};
-} ))));
+      error: error instanceof Error ? error.message : Unknown error}};";
+} ))));";";

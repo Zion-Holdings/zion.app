@@ -10,5 +10,5 @@ export default async function handler(;
     // Search implementation;
     res.status(200).json({ results: [] });
   } catch (error) {;
-    res.status(500).json({ error: Searc'h' failed });
-  };
+    res.status(500).json({ error: Searc'h' failed });";
+  };";";
