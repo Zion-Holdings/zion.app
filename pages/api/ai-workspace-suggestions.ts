@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from open'ai;
 const $1 = new OpenAI({;
   apiKey: "process.env.OPENAI_API_KEY,";
 });
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {;
     return res.status(405).json({ error: Method not allowed'}};
   try {;
@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let $1 =;
     switch (suggestionType) {;
       case task_optimization:;
-        systemPrompt = You are an AI project management assistant. Analyze the project data and provide intelligent suggestions for task optimization, resource allocation, and deadline management. Focus on practical, actionable recommendations.`;
+        systemPrompt = You are an AI project management assistant. Analyze the project data and provide intelligent suggestions for task optimization, resource allocation, and deadline management. Focus on practical, actionable recommendations.`
         prompt =
 Analyze the following project data and provide task optimization suggestions:
 **Project Information:**

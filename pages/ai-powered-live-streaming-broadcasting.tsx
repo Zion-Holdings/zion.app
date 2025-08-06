@@ -1,19 +1,19 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import Image from next'/image'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   title: string;
   description: string;
   streamer: string
   category: string
-  status: 'live" | scheduled | ended' | offline
+  status: 'live" | scheduled | ended' | 'offline
   viewerCount: "number"
   duration: number
-  quality: '1080p" | 720p | 480p | 360p;
+  quality: '1080p" | 720p | 480p | 360p';
   thumbnail: string;
   tags: string[];
   aiAnalysis: StreamAnalysis};
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negativ'e | neut'ral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [streams, setStreams] = useState<LiveStream[]>([]</div>;

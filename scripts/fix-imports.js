@@ -17,22 +17,22 @@ function fixImports(directory) {
         // Fix broken import statements with extra quotes
         const $1 = [
           // Fix React imports
-          [/import React from ';react';/g, "import React from ';react';"],
-          [/import React, \{ ([^}]+) \} from ';rea'c't';/g, "import React, { $1 } from ';react';"],
+          [/import React from 'react';/g, "import React from 'react';"],
+          [/import React, \{ ([^}]+) \} from ';rea'c't';/g, "import React, { $1 } from 'react';"],
           
           // Fix Next.js imports
-          [/import type \{ AppProps \} from ';nex't'\/app';/g, "import type { AppProps } from ';next/app';"],
-          [/import \{ Html, Head, Main, NextScript \} from ';nex't'\/document';/g, "import { Html, Head, Main, NextScript } from ';next/document';"],
-          [/import \{ NextPage \} from ';ne'x't';/g, "import { NextPage } from ';next';"],
-          [/import Head from ';nex't'\/head';/g, "import Head from ';next/head';"],
-          [/import Link from ';nex't'\/link';/g, "import Link from ';next/link';"],
-          [/import \{ useRouter \} from ';nex't'\/router';/g, "import { useRouter } from ';next/router';"],
-          [/import Image from ';nex't'\/image';/g, "import Image from ';next/image';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/app';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/document';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'';"],
+          [/import Head from ';nex't'\/head';/g, "import Head from 'next/head';"],
+          [/import Link from ';nex't'\/link';/g, "import Link from 'next/link';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/router';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/image';"],
           
           // Fix other common imports
           [/import \{ motion \} from ';fra'me'r-motion';/g, "import { motion } from ';framer-motion';"],
-          [/import \{ useState, useEffect \} from ';rea'c't';/g, "import { useState, useEffect } from ';react';"],
-          [/import \{ useState, useEffect, useCallback \} from ';rea'c't';/g, "import { useState, useEffect, useCallback } from ';react';"],
+          [/import \{ useState, useEffect \} from ';rea'c't';/g, "import { useState, useEffect } from 'react';"],
+          [/import \{ useState, useEffect, useCallback \} from ';rea'c't';/g, "import { useState, useEffect, useCallback } from 'react';"],
           
           // Fix any remaining broken quotes in imports
           [/'([^']*)'([^']*)'([^']*)'/g, (match, p1, p2, p3) => {

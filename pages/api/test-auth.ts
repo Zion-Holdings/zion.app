@@ -1,10 +1,10 @@
-import { NextApiRequest, NextApiResponse } from ';next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from @supabase/supabase-js;
 const $1 = createClient(;
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,;
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-key;
 );};
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {;
     // Test environment variables;
     const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL;

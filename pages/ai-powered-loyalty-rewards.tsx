@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
   avatar: string;
@@ -25,7 +25,7 @@ interface FacilityPlan {;
   description: string
   icon: string
   category: 'transaction" | social | skil'l' | milestone | specia'l;
-  rarity: 'common | rare | epic' | legendary;
+  rarity: 'common | rare | epic' | 'legendary';
   unlockedAt?: Date;
   progress?: number;
   maxProgress?: number;};
@@ -44,7 +44,7 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  type: 'discount" | bonus | feature | exclusive' | 'cashback;
+  type: 'discount" | bonus | feature | exclusive' | ''cashback';
   value: number;
   currency?: string;
   pointsCost: number;
@@ -57,8 +57,8 @@ interface FacilityPlan {;
   id: string
   name: string
   category: 'points" | transactions | strea'k | 'reviews | referral's
-  period: 'daily | weekly' | monthly' | all-tim'e
-  entries: "LeaderboardEntry[]";
+  period: 'daily | weekly' | 'monthly' | all-tim'e
+  entries: "LeaderboardEntry[]"';
   userRank: number;
   totalParticipants: number;};
 interface FacilityPlan {;
@@ -566,7 +566,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-white>{userProfile.experience.toLocaleString()} / 20,0o0</span></div>'
                     </div>"</div>'";
                     <div className=""""w-full bg-gray-700 rounded-full h-3></div>'
-                      </div><div className=bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full style={{ width  ${(userProfile.experience / 20000) * 100}%" }}"></div></div>
+                      </div><div className=bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full style="{{ width  ${(userProfile.experience / 20000) * 100}%" }}""></div></div>
                     </div></div>";
                   </div>
                   {/* Recent Badges */}</div>";
@@ -638,7 +638,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             <span className=""""text-white>{badge.progress} / {badge.maxProgress}</span></div>'
                           </div>"</div>";
                           <div className=w-full bg-gray-700 rounded-full h-2> `</div>'
-                            </div><div className=bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style={{ width: "${(badge.progress / badge.maxProgress!) * 100}% }}></div></div>";
+                            </div><div className=bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style="{{ width: "${(badge.progress / badge.maxProgress!) * 100}% }}"></div></div>";
                           </div></div>;
                         </div>;
                       )};
@@ -680,7 +680,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <span className=text-white>{achievement.progress}" / {achievement.maxProgress}</span></div>";
                         </div></div>";
                         <div className=w-full bg-gray-700 rounded-full h-2 >`</div>'
-                          </div><div className=""""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style={{ width  ${(achievement.progress / achievement.maxProgress) * 100}% }}></div></div>
+                          </div><div className=""""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style="{{ width  ${(achievement.progress / achievement.maxProgress) * 100}% }}"></div></div>
                         </div></div>";
                       </div>
                       {achievement.unlockedAt && (</div>'
@@ -727,7 +727,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div>;
                       )}</div>;
                     </div>;
-                    `;
+                    `
                     }}>;
                       {reward.available ? Redeem Reward   'No't Available}</div>;
                     </button></div>;

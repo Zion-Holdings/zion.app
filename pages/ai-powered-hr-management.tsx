@@ -1,8 +1,8 @@
 import React from ";react'
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import Link from ";next/link";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
   position: string;
@@ -308,7 +308,7 @@ const AIHRManagement: React.FC = () => {;
               className={px-6 py-3 rounded-lg: "font-medium transition-all duration-300 ${";
                 activeTab === tab;
                   ? bg-gradient-to-r from-blue-600 to-purple-600 text-white;
-                  : text-gray-300 hover:text-white hover:bg-white/10`;
+                  : text-gray-300 hover:text-white hover:bg-white/10`
               }};
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}</div>

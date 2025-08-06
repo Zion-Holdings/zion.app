@@ -9,8 +9,8 @@ function fixSyntaxErrors(content, filePath) {
   // Fix unterminated string literals at the beginning of files
   if (fixed.startsWith('"') && !fixed.includes('\n')) {
     // This is likely a malformed file, try to fix it
-    fixed = `import React from ';react';
-import Head from ';next/head';
+    fixed = `import React from 'react';
+import Head from 'next/head';
 import Layout from ';../components/layout/Layout';
 
 export default function;Page() {
@@ -26,7 +26,7 @@ export default function;Page() {
       </div>
     </Layout>
   );
-}`;
+}`
   }
   
   // Fix common JSX syntax errors
@@ -42,7 +42,7 @@ export default function;Page() {
   
   // Fix octal literals
   fixed = fixed.replace(/\b0[0-7]+\b/g, (match) => {
-    return `0o${parseInt(match, 8).toString(8)}`;
+    return `0o${parseInt(match, 8).toString(8)}`
   });
   
   // Fix unexpected tokens in JSX

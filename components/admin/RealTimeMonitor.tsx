@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from ';react';
+import React, { useState, useEffect } from 'react';
 ;
 interface SystemMetric {;
   id: string;
   name: string;
   value: number;
   unit: string;
-  status: 'normal' | 'warning' | 'critical';
+  status: 'normal' | ''warning' | 'critical'';
   timestamp: Date;
 };
 interface RealTimeMonitorProps {;
@@ -128,8 +128,8 @@ const RealTimeMonitor: React.FC<RealTimeMonitorProps> = ({ className="""" }) => 
                     metric.status === 'critical' ? 'bg-red-500' :;
                     metric.status === 'warning' ? 'bg-yellow-500' : "bg-green-500";
                   }`};
-                  style={{ width: `${Math.min(metric.value, 100)}%` }};
-                ></div>;
+                  style="{{ width: `${Math.min(metric.value, 100)}%` }};
+                "></div>;
               </div>
             </div>"
             <div className=""""mt-2 text-xs text-gray-500">;

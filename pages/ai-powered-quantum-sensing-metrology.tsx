@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: gravitational-wave | magnetic-field | electric-field | temperatur'e | pressur'e
@@ -11,8 +11,8 @@ interface FacilityPlan {'
   resolution: number;
   bandwidth: number
   dynamicRange: number
-  status: 'active" | calibrating | measuring' | standb'y
-  timestamp: "string}";
+  status: 'active" | calibrating | measuring' | 'standb'y
+  timestamp: "string}"';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -25,8 +25,8 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   name: string
-  measurement: 'frequency" | time | length' | mas's | current
-  precision: "number";
+  measurement: 'frequency" | time | length' | 'mas's | current
+  precision: "number"';
   accuracy: number;
   stability: number
   uncertainty: number
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   darkCount: number;
   deadTime: number
   jitter: number
-  status: 'detecting" | calibrating | optimizing' | standby};
+  status: 'detecting" | calibrating | optimizing' | 'standby}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -48,12 +48,12 @@ interface FacilityPlan {;
   phaseSensitivity: number;
   pathLength: number
   wavelength: number
-  status: 'interfering" | aligning | measuring' | standb'y};
+  status: 'interfering" | aligning | measuring' | 'standb'y}';
 interface FacilityPlan {;
   id: string
   name: string
-  spectroscopy: 'absorption" | emission | raman' | fluorescence | coherent
-  spectralRange: "number";
+  spectroscopy: 'absorption" | emission | raman' | 'fluorescence | coherent
+  spectralRange: "number"';
   resolution: number;
   signalToNoise: number
   integrationTime: number
@@ -226,7 +226,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-teal-600 to-cyan-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;
@@ -573,7 +573,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredQuantumSensingMetrology;))))))))))))))))))))))'`</div>'

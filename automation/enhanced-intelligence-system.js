@@ -6,7 +6,7 @@ const { spawn } = require(child_process'));
 
 class EnhancedIntelligenceSystem {
   constructor() {
-    this.systemId = `enhanced-intelligence-${Date.now()}`;
+    this.systemId = `enhanced-intelligence-${Date.now()}`
     this.learningModels = new Map();
     this.adaptationStrategies = new Map();
     this.intelligenceMetrics = new Map();
@@ -312,7 +312,7 @@ class EnhancedIntelligenceSystem {
       this.enhanceIntelligence();
     }
   }
-`;
+`
         
         // Insert intelligence enhancement before the last closing brace
         const lastBraceIndex = agentCode.lastIndexOf('});
@@ -353,7 +353,7 @@ class EnhancedIntelligenceSystem {
       this.mlModel.accuracy = (this.mlModel.accuracy + accuracy) / 2;
     }
   }
-`;
+`
         
         // Insert ML capabilities
         const lastBraceIndex = agentCode.lastIndexOf(}');
@@ -400,7 +400,7 @@ class EnhancedIntelligenceSystem {
       improvements: this.suggestImprovements()
     };
   }
-`;
+`
         
         // Insert collaborative capabilities
         const lastBraceIndex = agentCode.lastIndexOf(});

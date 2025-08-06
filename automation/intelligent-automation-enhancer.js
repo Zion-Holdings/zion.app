@@ -82,13 +82,13 @@ class IntelligentAutomationEnhancer {
         // Fix complex malformed strings with multiple quote issues
         const complexPattern = /'([^']*?)'([a-zA-Z0-9_$])'([^']*?)'/g;
         content = content.replace(complexPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}'`;
+            return `'${part1}${letter}${part2}'`
         });
         
         // Fix strings with escaped quotes
         const escapedPattern = /'([^']*?)'([^']*?)'([^']*?)'/g;
         content = content.replace(escapedPattern, (match, part1, part2, part3) => {
-            return `'${part1}${part2}${part3}'`;
+            return `'${part1}${part2}${part3}'`
         });
         
         return content;
@@ -98,7 +98,7 @@ class IntelligentAutomationEnhancer {
         // Fix nested quote issues
         const nestedPattern = /'([^']*?)'([^']*?)'([^']*?)'/g;
         content = content.replace(nestedPattern, (match, part1, part2, part3) => {
-            return `'${part1}${part2}${part3}'`;
+            return `'${part1}${part2}${part3}'`
         });
         
         return content;
@@ -116,7 +116,7 @@ class IntelligentAutomationEnhancer {
             else if (value.includes('require')) varName = 'module';
             else if (value.includes('exec')) varName = 'command';
             
-            return `${declaration} ${varName} = ${value};`;
+            return `${declaration} ${varName} = ${value};`
         });
         
         return content;
@@ -128,7 +128,7 @@ class IntelligentAutomationEnhancer {
         content = content.replace(funcPattern, (match, funcName, params) => {
             // Clean up parameter list
             const cleanParams = params.replace(/'([^']*?)'([^']*?)'/g, '$1$2');
-            return `function ${funcName}(${cleanParams}) {`;
+            return `function ${funcName}(${cleanParams}) {`
         });
         
         return content;
@@ -138,7 +138,7 @@ class IntelligentAutomationEnhancer {
         // Fix malformed object structures
         const objPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*'([^']*?)'([^']*?)'/g;
         content = content.replace(objPattern, (match, key, part1, part2) => {
-            return `${key}: '${part1}${part2}'`;
+            return `${key}: '${part1}${part2}'`
         });
         
         return content;
@@ -148,7 +148,7 @@ class IntelligentAutomationEnhancer {
         // Fix malformed array patterns
         const arrayPattern = /\[([^\]]*?)'([^']*?)'([^\]]*?)\]/g;
         content = content.replace(arrayPattern, (match, before, middle, after) => {
-            return `[${before}'${middle}'${after}]`;
+            return `[${before}'${middle}'${after}]`
         });
         
         return content;
@@ -158,7 +158,7 @@ class IntelligentAutomationEnhancer {
         // Fix malformed template literals
         const templatePattern = /`([^`]*?)'([^`]*?)'([^`]*?)`/g;
         content = content.replace(templatePattern, (match, part1, part2, part3) => {
-            return `\`${part1}${part2}${part3}\``;
+            return `\`${part1}${part2}${part3}\``
         });
         
         return content;
@@ -306,7 +306,7 @@ class IntelligentMonitor {
 }
 
 module.exports = IntelligentMonitor;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'intelligent-monitor.js'),
@@ -404,7 +404,7 @@ class AdaptiveController {
 }
 
 module.exports = AdaptiveController;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'adaptive-controller.js'),
@@ -566,7 +566,7 @@ class SelfHealingSystem {
 }
 
 module.exports = SelfHealingSystem;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'self-healing-system.js'),
@@ -686,7 +686,7 @@ class PredictiveAnalytics {
 }
 
 module.exports = PredictiveAnalytics;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'predictive-analytics.js'),
@@ -787,7 +787,7 @@ class ProcessManager {
 }
 
 module.exports = ProcessManager;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'process-manager.js'),
@@ -840,7 +840,7 @@ class ResourceOptimizer {
 }
 
 module.exports = ResourceOptimizer;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'resource-optimizer.js'),
@@ -964,12 +964,12 @@ class MonitoringDashboard {
     </script>
 </body>
 </html>
-        \`;
+        \`
     }
 }
 
 module.exports = MonitoringDashboard;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'monitoring-dashboard.js'),
@@ -1035,7 +1035,7 @@ class AlertSystem {
 }
 
 module.exports = AlertSystem;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'alert-system.js'),
@@ -1098,7 +1098,7 @@ class ReportingSystem {
 }
 
 module.exports = ReportingSystem;
-`;
+`
 
         await fs.promises.writeFile(
             path.join(this.automationDir, 'reporting-system.js'),

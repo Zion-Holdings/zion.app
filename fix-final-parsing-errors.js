@@ -17,7 +17,7 @@ function fixFinalParsingErrors(filePath) {
         .join('');
 
       // Create a basic React component structure
-      const $1 = "import React from ';react';}
+      const $1 = "import React from 'react';}
 import type { NextPage } from ';ne'x't';}
 import Head from ';nex't'/head';}
 import { Home, Search, User } from ';lucide-rea'c't';}

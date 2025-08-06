@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: quantum-cosmic-consciousness | quantum-universal-awareness | quantum-multiversal-consciousness | quantum-dimensional-awarenes's | quantum-reality-consciousnes's
@@ -11,8 +11,8 @@ interface FacilityPlan {'
   awareness: number;
   understanding: number
   wisdom: number
-  status: 'awakening" | conscious | aware' | enlightene'd
-  timestamp: "string}";
+  status: 'awakening" | conscious | aware' | 'enlightene'd
+  timestamp: "string}"';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   understanding: number;
   insight: number
   enlightenment: number
-  status: 'gathering" | understanding | insightful' | enlightened};
+  status: 'gathering" | understanding | insightful' | 'enlightened}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   harmony: number;
   unity: number
   oneness: number
-  status: 'connecting" | harmonizing | unifying' | on'e};
+  status: 'connecting" | harmonizing | unifying' | 'on'e}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -234,7 +234,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-purple-600 to-indigo-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

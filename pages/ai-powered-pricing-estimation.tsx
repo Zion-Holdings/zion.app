@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   projectType: string
   category: string

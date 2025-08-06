@@ -9,7 +9,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/import type \{ AppProps \} from ";next\/app";/g, 'import type { AppProps } from ";next/app";');
   fixed = fixed.replace(/import Head from ";next\/head";/g, 'import Head from ";next/head";');
   fixed = fixed.replace(/import Link from ";next\/link";/g, 'import Link from ";next/link";');
-  fixed = fixed.replace(/import \{ useState, useEffect, useMemo \} from ";react";/g, 'import { useState, useEffect, useMemo } from ";react";');
+  fixed = fixed.replace(/import \{ useState, useEffect, useMemo \} from ";react";/g, 'import { useState, useEffect, useMemo } from "react";";');
   
   // Fix component declarations
   fixed = fixed.replace(/const \w+: NextPage = \(\) => {/g, 'const $1: NextPage = () => {');

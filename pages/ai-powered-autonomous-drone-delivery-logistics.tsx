@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from ";react
 import type { NextPage } from next'";
 import Head from ";next/head
 import Link from next/link'
-import ModernLayout from ';../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout';;
 interface DroneFleet {'
   id: "string"
   name: string

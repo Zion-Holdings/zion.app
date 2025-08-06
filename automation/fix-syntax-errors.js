@@ -87,13 +87,13 @@ class SyntaxErrorFixer {
         // Fix strings with malformed quotes like 'research -> research'
         const stringPattern = /'([^]*?)'([^']*?)/g;
         content = content.replace(stringPattern, (match, part1, part2) => {
-            return `'${part1}${part2}'`;
+            return `'${part1}${part2}'`
         });
         
         // Fix strings with single quotes in the middle
         const malformedPattern = /([^']*?)'([a-zA-Z])([^']*?)'/g;
         content = content.replace(malformedPattern, (match, part1, letter, part2) => {
-            return `${part1}${letter}${part2}'`;
+            return `${part1}${letter}${part2}'`
         });
         
         return content;
@@ -114,7 +114,7 @@ class SyntaxErrorFixer {
             } else if (value.includes('JSON)) {
                 varName = jsonData;
             }
-            return `const ${varName} = ${value};`;
+            return `const ${varName} = ${value};`
         });
         
         return content;
@@ -124,13 +124,13 @@ class SyntaxErrorFixer {
         // Fix malformed function calls like execAsync(')npm run build)
         const execPattern = /execAsync\(([^')]*?)'([^]*?)'([^']*?)/g;
         content = content.replace(execPattern, (match, part1, part2, part3) => {
-            return `execAsync('${part1}${part2}${part3})`;
+            return `execAsync('${part1}${part2}${part3})`
         });
         
         // Fix other malformed function calls
         const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\(([^]*?))([^]*?)([^')]*?)/g;
         content = content.replace(funcPattern, (match, funcName, part1, part2, part3) => {
-            return `${funcName}('${part1}${part2}${part3}')`;
+            return `${funcName}('${part1}${part2}${part3}')`
         });
         
         return content;
@@ -140,7 +140,7 @@ class SyntaxErrorFixer {
         // Fix object properties with malformed strings
         const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^']*?)'([^]*?)'/g;
         content = content.replace(propPattern, (match, propName, part1, part2) => {
-            return `${propName}: '${part1}${part2}`;
+            return `${propName}: '${part1}${part2}`
         });
         
         return content;

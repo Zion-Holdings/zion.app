@@ -112,7 +112,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                   </div>";
                 ) : (</div>'
                   <motion.div whileHover={{ scale: "1.0o5 }}></div>";
-                    <Link href={item.href}`;
+                    <Link href={item.href}`
                       className={${textColor} ${hoverColor} transition-colors font-medium};
                     >
                       {item.label}</div>

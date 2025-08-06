@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string;
   company: string;
@@ -165,7 +165,7 @@ ${startupProfile.pitchSummary}";
 ${startupProfile.website ? "You can learn more about us at: "${startupProfile.website} : }";
 I would welcome the opportunity to discuss this further and would be happy to schedule a call at your convenience.;
 Best regards,;
-[Your Name]`;
+[Your Name]`
 [Your Contact Information];
     setPitchEmail(email;
     setSelectedInvestor(investor};

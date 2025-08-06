@@ -1,6 +1,6 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import Link from ";next/link
 import ContrastDemo from ../components/ui/ContrastDemo'
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";

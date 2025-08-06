@@ -1,9 +1,9 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect, useMemo } from react
 import Link from ";next/link
-interface FacilityPlan {'";
+interface FacilityPlan {";
   id: "string"
   type: 'message" | project | paymen't | syste'm' | recommendation | ale'r't | reminder | 'updat'e;
   priority: 'low | medium | high | urgen't;
@@ -482,7 +482,7 @@ default: ;,;
                 className={flex items-center space-x-2 px-4 py-4 rounded-md: text-sm: font-medium transition-all duration-200 ${;
                   selectedTab === tab.id;
                     ? bg-purple-600 text-white,;
-                    : text-gray-300 hover: text-white hover:bg-white/10',`;
+                    : text-gray-300 hover: text-white hover:bg-white/10',`
                 }};
               ></div>;
                 <span>{tab.icon}</span></div>

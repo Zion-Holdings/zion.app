@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'transportation" | energy | water | 'waste' | communication | 'public-safet'y
-  status: 'operational | maintenance | upgrade' | critica'l | planned
-  location: "string";
+  status: 'operational | maintenance | upgrade' | 'critica'l | planned
+  location: "string"';
   capacity: number;
   utilization: number;
   efficiency: number;
@@ -39,9 +39,9 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   name: string
-  type: 'emergency" | utilities | transportation | healthcare' | 'education | recreatio'n
+  type: 'emergency" | utilities | transportation | healthcare' | ''education | recreatio'n
   status: "active | maintenance | overloaded | planned"
-  responseTime: "number";
+  responseTime: "number"';
   satisfaction: number;
   aiOptimization: {;
     efficiencyScore: number;
@@ -67,12 +67,12 @@ interface FacilityPlan {;
     energyDemand: string;
     recommendations: string[]}}
 interface FacilityPlan {"
-  type: 'optimization" | sustainability | efficiency' | prediction;
+  type: 'optimization" | sustainability | efficiency' | 'prediction';
   title: string;
   description: string
   confidence: number
-  impact: 'positive" | negative' | neutr'al
-  actionItems: "string[]}";
+  impact: 'positive" | negative' | 'neutr'al
+  actionItems: "string[]}"';
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [infrastructure, setInfrastructure] = useState<CityInfrastructure[]>([]</div>;
   const [planning, setPlanning] = useState<UrbanPlanning[]>([]</div>;

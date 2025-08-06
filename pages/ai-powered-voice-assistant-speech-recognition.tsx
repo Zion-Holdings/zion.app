@@ -1,16 +1,16 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   command: string;
   description: string
   category: string
-  status: 'active" | inactive | processing' | erro'r
-  accuracy: "number";
+  status: 'active" | inactive | processing' | 'erro'r
+  accuracy: "number"';
   responseTime: number;
   usageCount: number;
   aiAnalysis: CommandAnalysis};
@@ -76,7 +76,7 @@ interface FacilityPlan {;
   title: string;
   description: string
   impact: positiv'e' | negative | neutr'a'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [commands, setCommands] = useState<VoiceCommand[]>([]</div>;
@@ -741,7 +741,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredVoiceAssistantSpeechRecognitionPage;))))))))))))))))))))'`</div>'

@@ -12,7 +12,7 @@ function fixSyntaxErrors(content) {
   // Fix all unterminated string literals in JSX className
   fixed = fixed.replace(/className="""""([^]*)$/gm, (match, className) => {
     if (!match.endsWith('')) {
-      return `className="""""${className}"`;
+      return `className="""""${className}"`
     }
     return match;
   });
@@ -20,7 +20,7 @@ function fixSyntaxErrors(content) {
   // Fix all unterminated string literals in JSX
   fixed = fixed.replace(/className="""""([^>]*?)(?=\s|>)/g, (match, className) => {
     if (!className.includes('') && !className.includes("'")) {
-      return `className="""""${className.trim()}`;
+      return `className="""""${className.trim()}`
     }
     return match;
   });
@@ -30,10 +30,10 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/className=([^"]*)"([^"]*)"([^"]*)"/g, 'className="""""$1$2$3');
   
   // Fix style objects
-  fixed = fixed.replace(/style={{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');
-  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) => {
+  fixed = fixed.replace(/style="{{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');
+  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) ="> {
     if (bg.includes('") && !bg.endsWith("'")) {
-      return `style={{ background: ""transparent' }}`;
+      return `style="{{ background: ""transparent' }}`
     }
     return match;
   });
@@ -49,9 +49,9 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/getContext\('2d\)/g, "getContext('2d')");
   
   // Fix export statements
-  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) => {
+  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) ="> {
     if (!match.endsWith(';')) {
-      return `${match};`;
+      return `${match};`
     }
     return match;
   });
@@ -69,7 +69,7 @@ function fixSyntaxErrors(content) {
 }, [])');
   
   // Fix specific string literal issues
-  fixed = fixed.replace(/import React from ';react';/g, "import React from ';react';");
+  fixed = fixed.replace(/import React from 'react';/g, "import React from 'react';");
   fixed = fixed.replace(/import { [^}]+ } from ';rea'c't';/g, (match) => match.replace(/rea'c't'/, 'react'));
   
   // Fix JSX fragment issues
@@ -78,7 +78,7 @@ function fixSyntaxErrors(content) {
     const closeTags = (innerContent.match(/<\/([a-zA-Z][a-zA-Z0-9]*)/g) || []).length;
     
     if (openTags !== closeTags) {
-      return `<div>${innerContent}</div>`;
+      return `<div>${innerContent}</div>`
     }
     return match;
   });

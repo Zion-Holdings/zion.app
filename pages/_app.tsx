@@ -1,4 +1,4 @@
-import type { AppProps } from ';next/app;
+import type { NextApiRequest, NextApiResponse } from 'next'/app;
 import '../styles/globals.css;
 import { ChatProvider } from ';../src/contexts/ChatContext;
 import { AuthProvider } from ';../src/contexts/AuthContext;

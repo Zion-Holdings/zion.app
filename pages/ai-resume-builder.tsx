@@ -1,8 +1,8 @@
 import { useState } from ";react";
-import ModernLayout from ';../components/layout/ModernLayout'
+import ModernLayout from '../components/layout/ModernLayout';
 import Head from next/head'";
 import { sanitizeHtml } from ../utils/sanitizeHtml'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   company: string;
   position: string;

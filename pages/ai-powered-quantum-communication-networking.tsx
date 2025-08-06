@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: quantum-teleportation | quantum-key-distribution | quantum-secure-communication | quantum-entanglement-swappin'g | quantum-repeate'r
@@ -11,13 +11,13 @@ interface FacilityPlan {'
   fidelity: number;
   distance: number
   latency: number
-  status: 'active" | establishing | transmitting' | standb'y
-  timestamp: "string}";
+  status: 'active" | establishing | transmitting' | 'standb'y
+  timestamp: "string}"';
 interface FacilityPlan {;
   id: string
   name: string
-  topology: 'star" | mesh | ring' | tree | hybrid
-  nodes: "number";
+  topology: 'star" | mesh | ring' | 'tree | hybrid
+  nodes: "number"';
   connections: number;
   capacity: number
   throughput: number
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   switchingSpeed: number;
   quantumCapacity: number
   errorRate: number
-  status: 'switching" | configuring | optimizing' | standby};
+  status: 'switching" | configuring | optimizing' | 'standby}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -48,17 +48,17 @@ interface FacilityPlan {;
   loss: number;
   noise: number
   coherence: number
-  status: 'transmitting" | establishing | maintaining' | standb'y};
+  status: 'transmitting" | establishing | maintaining' | 'standb'y}';
 interface FacilityPlan {;
   id: string
   name: string
-  protocol: 'bb84" | ekert91 | b92 | six-state' | 'continuous-variable
-  security: "number";
+  protocol: 'bb84" | ekert91 | b92 | six-state' | ''continuous-variable
+  security: "number"';
   efficiency: number;
   keyRate: number
   errorCorrection: number
-  status: 'active" | testing | optimizing' | 'standby}"
-const AIPoweredPredictiveAnalytics: "NextPage = () => {";
+  status: 'active" | testing | optimizing' | ''standby}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {"';
   const [activeTab, setActiveTab] = useState(dashboard;
   const [isCommunicating, setIsCommunicating] = useState(false;
   const [currentCommunication, setCurrentCommunication] = useState<any>(null</div>;
@@ -225,7 +225,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-blue-600 to-cyan-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;
@@ -571,7 +571,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredQuantumCommunicationNetworking;))))))))))))))))))))))'`</div>'

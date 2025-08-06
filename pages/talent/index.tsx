@@ -1,6 +1,6 @@
 import React from ";react';
-import { createClient } from ';@supabase/supabase-js'
-interface FacilityPlan {'
+import { createClient } from '@supabase/supabase-js'
+interface FacilityPlan {
   id: "string";
   name: string;
   title: string;

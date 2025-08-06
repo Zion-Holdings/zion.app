@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   userId: string
-  status: 'pending" | verified | rejected' | expire'd
+  status: 'pending" | verified | rejected' | 'expire'd
   verificationType: 'identity | background | busin'ess' | skill' | comprehensive
-  documents: "VerificationDocument[]";
+  documents: "VerificationDocument[]"';
   aiAnalysis: AIVerificationAnalysis;
   trustScore: number;
   reputation: ReputationScore;
@@ -130,7 +130,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutra'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [userVerifications, setUserVerifications] = useState<UserVerification[]>([]</div>;

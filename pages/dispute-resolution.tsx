@@ -1,16 +1,16 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   title: string
   description: string
-  status: 'open" | mediation | arbitration' | resolv'ed | closed;
-  priority: 'low | medium | high' | urgent
+  status: 'open" | mediation | arbitration' | 'resolv'ed | closed';
+  priority: 'low | medium | high' | 'urgent
   'type: 'payment | service | quality | 'delivery | communication
-  parties: "{";
+  parties: "{"';
     complainant: string;
     respondent: string;
   };
@@ -49,11 +49,11 @@ interface FacilityPlan {;
   id: string;
   disputeId: string
   proposedBy: string
-  type: 'refund" | partial_refund | service_redo | compensation' | 'apology | othe'r
+  type: 'refund" | partial_refund | service_redo | compensation' | ''apology | othe'r
   amount?: number
   description: "string"
   status: 'pending" | accepted | rejected | modified
-  createdAt: "Date";
+  createdAt: "Date"';
   responses: ResolutionResponse[];};
 interface FacilityPlan {;
   id: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from ';react';
+import React, { useEffect, useRef } from 'react';
 ;
 interface Particle {;
   x: number;
@@ -96,8 +96,8 @@ const ParticleEffect: React.FC<ParticleEffectProps> = ({;
     <canvas;
       ref={canvasRef};
       className={`fixed inset-0 pointer-events-none z-0 ${className}`};
-      style={{ background: 'transparent' }};
-       />;
+      style="{{ background: 'transparent' }};
+       /">;
   );
 };
 ;

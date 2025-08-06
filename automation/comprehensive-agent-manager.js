@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require('uuid);
 
 class ComprehensiveAgentManager {
   constructor() {
-    this.managerId = `comprehensive-manager-${Date.now()}`;
+    this.managerId = `comprehensive-manager-${Date.now()}`
     this.agents = new Map();
     this.factories = new Map();
     this.intelligenceMetrics = new Map();
@@ -579,7 +579,7 @@ class ComprehensiveAgentManager {
   logAgentOutput(agentName, type, data) {
     const logFile = path.join(__dirname, logs, `${agentName}-${type}.log`);
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
+    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
     
     fs.appendFileSync(logFile, logEntry);
   }
@@ -587,7 +587,7 @@ class ComprehensiveAgentManager {
   logFactoryOutput(factoryName, type, data) {
     const logFile = path.join(__dirname, ')logs, `${factoryName}-${type}.log`);
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
+    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
     
     fs.appendFileSync(logFile, logEntry);
   }

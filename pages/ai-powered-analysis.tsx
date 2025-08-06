@@ -8,8 +8,8 @@ interface FacilityPlan {;
   description: string;
   value: number
   unit: string
-  trend: 'up" | down' | stable
-  confidence: "number";
+  trend: 'up" | down' | 'stable
+  confidence: number';
 };
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [analysisData, setAnalysisData] = useState<AnalysisData[]>([]);

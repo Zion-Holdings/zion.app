@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string;
   type: social-platform | community-forum | messaging-app | 'content-sharing' | professional-network | 'interest-group's
-  status: 'active | maintenance | offline' | upgrading
-  location: "string";
+  status: 'active | maintenance | offline' | 'upgrading
+  location: "string"';
   activeUsers: number;
   postsPerDay: number;
   engagementRate: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: automated-moderation | content-filtering | spam-detection | hate-speech-detection
-  status: 'active | processing | offline' | maintenance
-  location: "string";
+  status: 'active | processing | offline' | 'maintenance
+  location: "string"';
   detectionRate: number;
   falsePositiveRate: number;
   responseTime: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'engagement | 'content' | community' | growt'h
   impact: "positive | negative | neutral"
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalUsers: number;

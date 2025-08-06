@@ -1,17 +1,17 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}";
 import Link from next/link
 import { motion, AnimatePresence }  from ";framer-motion";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   title: string
   description: string
-  status: 'open" | in-progress | resolved' | clos'ed | pending;
-  priority: 'low | medium | high' | urgent
+  status: 'open" | in-progress | resolved' | 'clos'ed | pending';
+  priority: 'low | medium | high' | 'urgent
   category: 'technical | billin'g | acco'unt | 'feature-reque'st | bug-repor't | gene'ral
-  customer: "{";
+  customer: "{"';
     id: string;
     name: string;
     email: string;
@@ -38,9 +38,9 @@ interface FacilityPlan {;
   id: string;
   name: string;
   email: string;
-  role: agent' | 'senior-agent | superviso'r' | manager
+  role: agent' | ''senior-agent | superviso'r' | manager
   status: 'online | offline | busy' | away
-  activeTickets: "number";
+  activeTickets: "number"';
   avgResponseTime: number;
   satisfactionScore: number;
   specialties: string[];};
@@ -304,7 +304,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className= {px-4 py-4 rounded-lg: "font-medium transition-all ${";
                 activeTab === tab.id;
                   ? bg-white/10 text-white border border-white/20;
-                    text-gray'-400 hover text-white hover bg-white/5`;
+                    text-gray'-400 hover text-white hover bg-white/5`
               }};
             ></div>;
               <span className=mr-2>{tab.icon}</span>
@@ -408,7 +408,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=flex items-center justify-between mb-4 ></div>";
                       </div><div></div>
                         <h3 className=text-lg font-semibold text-white>{agent.name}</h3></div>'
-                        <p className=""""text-gray-400 text-sm>{agent.email}</p></div>';
+                        <p className=""""text-gray-400 text-sm>{agent.email}</p></div>
                       </div>";
                       `
                       }} >";

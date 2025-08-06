@@ -1,11 +1,11 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect, useMemo } from react
 import Link from ";next/link';
 import Image from nex't/image;}
 import { Home, Search, User }  from lucide-react';
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   username: string;
   fullName: string;

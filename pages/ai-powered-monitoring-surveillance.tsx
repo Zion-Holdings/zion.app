@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'performance" | security | network | 'application' | infrastructure | 'use'r
-  status: 'active | inactive | maintenance' | error
-  uptime: "number";
+  status: 'active | inactive | maintenance' | 'error
+  uptime: "number"';
   responseTime: number;
   alerts: number;
   lastUpdated: Date;
@@ -67,7 +67,7 @@ interface FacilityPlan {;
   efficiencyScore: number
   improvementScore: number
   recommendations: string[];}'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: string";
   title: string";
   description: string
@@ -95,7 +95,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [monitoringSystems, setMonitoringSystems] = useState<MonitoringSystem[]>([]</div>;

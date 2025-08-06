@@ -1,4 +1,4 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import Head from next/head;
 const AIPoweredPredictiveAnalytics: "NextPage = () => {"
   return (

@@ -1,7 +1,7 @@
 import React from ";react';
-import ModernLayout from ';../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout';;
 import { useRouter } from next/router'
-interface FacilityPlan {'
+interface FacilityPlan {
   services: "string[]";
   talent: string[];
   equipment: string[];

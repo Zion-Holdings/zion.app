@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: surface-code | stabilizer-code | css-code | color-cod'e | toric-cod'e
@@ -12,8 +12,8 @@ interface FacilityPlan {'
   physicalQubits: number;
   errorThreshold: number
   correctionRate: number
-  status: 'active" | testing | optimizing' | deprecate'd
-  timestamp: "string}";
+  status: 'active" | testing | optimizing' | 'deprecate'd
+  timestamp: "string}"';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   errorRate: number;
   runtime: number
   overhead: number
-  status: 'running" | completed | failed' | scheduled};
+  status: 'running" | completed | failed' | 'scheduled}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   detectionTime: number;
   falsePositiveRate: number
   coverage: number
-  status: 'monitoring" | analyzing | reporting' | idl'e};
+  status: 'monitoring" | analyzing | reporting' | 'idl'e}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -58,8 +58,8 @@ interface FacilityPlan {;
   recoveryTime: number;
   resourceOverhead: number
   reliability: number
-  status: 'ready" | executing | completed' | failed}"
-const AIPoweredPredictiveAnalytics: "NextPage = () => {";
+  status: 'ready" | executing | completed' | 'failed}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {"';
   const [activeTab, setActiveTab] = useState(dashboard;
   const [isErrorCorrection, setIsErrorCorrection] = useState(false;
   const [currentCode, setCurrentCode] = useState<any>(null</div>;
@@ -577,7 +577,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredQuantumErrorCorrectionFaultTolerance;))))))))))))))))))))))'`</div>'

@@ -1,19 +1,19 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect }  from react
 import Link from ";next/link";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   title: string
   category: string
-  difficulty: 'beginner" | intermediate' | advanced' | exper't
-  duration: "number"; // minutes;
+  difficulty: 'beginner" | intermediate' | 'advanced' | exper't
+  duration: "number"'; // minutes;
   questions: number;
   passingScore: number;
   description: string
   skills: string[]
-  status: 'available" | in_progress' | complete'd | certifie'd;
+  status: 'available" | in_progress' | 'complete'd | certifie'd';
   lastAttempt?: Date
   bestScore?: number
   attempts: "number";,;
@@ -341,7 +341,7 @@ id: TEST'-'0o1,
               className={px-6 py-3 rounded-lg: "font-medium: transition-all duration-300 ${";
                 activeTab === tab.id;
                   ? bg-gradient-to-r from-blue-600 to-cyan-600 text-white,;
-                  : bg-white/5 text-gray-300 hover: bg-white/10,`;
+                  : bg-white/5 text-gray-300 hover: bg-white/10,`
               }};
             >;
               {tab.label}</div>

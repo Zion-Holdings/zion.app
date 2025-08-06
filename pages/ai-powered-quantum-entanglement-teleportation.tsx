@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'qubit" | entangled-pair | quantum-register | quantum-memory
@@ -21,16 +21,16 @@ interface FacilityPlan {;
   fidelity: "number";
   distance: number
   creationTime: string
-  status: 'active" | decohered | measured' | teleporte'd};
+  status: 'active" | decohered | measured' | 'teleporte'd}';
 interface FacilityPlan {;
   id: string;
   name: string;
   source: string;
   destination: string
   qubit: string
-  protocol: 'standard" | entanglement-swapping | quantum-repeater' | multi-hop
+  protocol: 'standard" | entanglement-swapping | quantum-repeater' | 'multi-hop
   status: 'preparing | entangling | measuring' | 'reconstructing | completed
-  fidelity: "number";
+  fidelity: "number"';
   duration: number;
   successRate: number};
 interface FacilityPlan {;
@@ -38,8 +38,8 @@ interface FacilityPlan {;
   name: string;
   nodes: string[]
   connections: { from: string; to: string; fidelity: number }[]
-  topology: 'linear" | star' | me'sh | hierarchica'l
-  totalQubits: "number";
+  topology: 'linear" | star' | 'me'sh | hierarchica'l
+  totalQubits: "number"';
   activeEntanglements: number;
   averageFidelity: number};
 interface FacilityPlan {;
@@ -204,7 +204,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-purple-600 to-blue-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

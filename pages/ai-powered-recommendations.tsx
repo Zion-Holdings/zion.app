@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react
-interface FacilityPlan {'";
+interface FacilityPlan {";
   id: "string"
   type: 'product" | service | talent | 'equipmen't;
   title: string;
@@ -456,7 +456,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white>{Math.round(engine.accuracy * 100)}%</span></div>'
                       </div>"</div>'";
                       <div className=""""w-full bg-gray-700 rounded-full h-2 mt-1> </div>'
-                        </div><div className=bg-green-500 h-2 rounded-full style={{ width: "${engine.accuracy * 100}% }}></div></div>";
+                        </div><div className=bg-green-500 h-2 rounded-full style="{{ width: "${engine.accuracy * 100}% }}"></div></div>";
                       </div></div>
                     </div>
                     </div>
@@ -466,7 +466,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white>{Math.round(engine.coverage * 100)}%</span></div>";
                       </div></div>'
                       <div className=""""w-full" bg-gray-700 rounded-full h-2 mt-1 >`</div>";
-                        </div><div className=bg-blue-500 h-2 rounded-full style={{ width  ${engine.coverage * 100}% }}></div></div>
+                        </div><div className=bg-blue-500 h-2 rounded-full style="{{ width  ${engine.coverage * 100}% }}"></div></div>
                       </div></div>";
                     </div></div>
                   </div></div>'";

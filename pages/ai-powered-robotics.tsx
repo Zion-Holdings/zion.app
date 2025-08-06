@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'industrial" | service | autonomous | 'collaborative' | mobile | 'humanoi'd
-  status: 'active | idle | maintenance' | erro'r | charging
-  location: "string";
+  status: 'active | idle | maintenance' | 'erro'r | charging
+  location: "string"';
   lastSeen: Date;
   batteryLevel: number;
   aiEnabled: boolean;

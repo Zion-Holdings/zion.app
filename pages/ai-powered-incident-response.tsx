@@ -1,16 +1,16 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   title: string
   description: string
   type: 'malware" | phishing | ddos | dat'a'_breach | insider_threat | zer'o'_day;
-  severity: 'critical | high | medium' | low
+  severity: 'critical | high | medium' | 'low
   status: 'detected | investigating | contained' | 'resolved | false_positive
-  timestamp: "Date";
+  timestamp: "Date"';
   affectedSystems: string[];
   aiAnalysis: IncidentAnalysis;};
 interface FacilityPlan {;
@@ -40,9 +40,9 @@ interface FacilityPlan {;
   caseNumber: string;
   title: string
   description: string
-  type: 'network" | memory | disk' | 'mobile | clo'ud | 'malware
+  type: 'network" | memory | disk' | ''mobile | clo'ud | 'malware
   status: 'active | completed | pendi'ng' | cancelled
-  investigator: "string";
+  investigator: "string"';
   evidenceCount: number;
   aiAnalysis: ForensicsAnalysis;};
 interface FacilityPlan {;
@@ -73,8 +73,8 @@ interface FacilityPlan {;
   title: string
   description: string
   huntType: 'proactive" | reactiv'e | inte'l_driven | 'hypothesis_driven | threa't_led | 'anomaly_based
-  status: 'active | completed | paused' | schedule'd
-  hunter: "string";
+  status: 'active | completed | paused' | 'schedule'd
+  hunter: "string"';
   findings: string[];
   aiAnalysis: HuntingAnalysis;};
 interface FacilityPlan {;
@@ -114,7 +114,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [incidentDetections, setIncidentDetections] = useState<IncidentDetection[]>([]</div>;
@@ -124,7 +124,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [threatHunting, setThreatHunting] = useState<ThreatHunting[]>([]</div>;
   const [incidentManagement, setIncidentManagement] = useState<IncidentManagement[]>([]</div>;
   const [analytics, setAnalytics] = useState<IncidentResponseAnalytics | null>(null</div>;
-  const [activeTab, setActiveTab] = useState<detections | coordination | forensics' | breaches | 'hunti'ng | management' | analytics>(detections'</div>;
+  const [activeTab, setActiveTab] = useState<detections | coordination | forensics' | 'breaches | 'hunti'ng | management' | analytics>(detections'</div>';
   const [selectedType, setSelectedType] = useState<string>('all;
   const [isLoading, setIsLoading] = useState(true
   // Mock data

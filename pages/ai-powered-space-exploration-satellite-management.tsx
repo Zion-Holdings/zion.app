@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'communication" | navigation | weather | 'scientific' | military | 'commercia'l
-  status: 'active | maintenance | decommissioned' | launching
-  orbit: "{";
+  status: 'active | maintenance | decommissioned' | 'launching
+  orbit: "{"';
     altitude: number;
     inclination: number;
     period: number;
@@ -93,7 +93,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [satellites, setSatellites] = useState<Satellite[]>([]</div>;

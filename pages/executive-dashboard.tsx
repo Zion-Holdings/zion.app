@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { motion, AnimatePresence }  from ";framer-motion";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
   value: number;
@@ -12,7 +12,7 @@ interface FacilityPlan {'
   unit: string
   trend: 'up" | down | stable
   changePercent: "number"
-  category: 'financial" | operational | customer' | market | 'technolo'gy | strategic;
+  category: 'financial" | operational | customer' | 'market | 'technolo'gy | strategic';
   priority: 'high | medium | lo'w;
   target?: number;
   status: 'on-track | at-risk | behind | 'exceedi'ng;};
@@ -28,15 +28,15 @@ interface FacilityPlan {;
   budget: number;
   spent: number
   owner: string
-  priority: 'critical" | high | medium' | low
-  kpis: "string[]";};
+  priority: 'critical" | high | medium' | 'low
+  kpis: "string[]"';};
 interface FacilityPlan {;
   id: string;
   title: string
   description: string
   category: 'opportunity" | threa't | tr'end | 'competition
   impact: 'high | mediu'm | low
-  confidence: "number";
+  confidence: number;
   source: string;
   date: Date;
   recommendations: string[];};
@@ -696,7 +696,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white" font-semibold>{operations.efficiency.productivity}%</span></div>
                       </div></div>'
                       <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=""""bg-green-500 h-2 rounded-full  style={{ width: "${operations.efficiency.productivity}% }}></div></div>"
+                        </div><div className=""""bg-green-500 h-2 rounded-full  style="{{ width: "${operations.efficiency.productivity}% }}"></div></div>"
                       </div></div>
                     </div></div>";
                     <div> </div>";
@@ -705,7 +705,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=""""text-white font-semibold>{operations.efficiency.utilization}%</span></div>";
                       </div></div>
                       <div className=w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=""""bg-blue-500 h-2 rounded-full style={{ width  ${operations.efficiency.utilization}% }}></div></div>";
+                        </div><div className=""""bg-blue-500 h-2 rounded-full style="{{ width  ${operations.efficiency.utilization}% }}"></div></div>";
                       </div></div>'
                     </div>"</div>";
                     <div> </div>";
@@ -714,7 +714,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white font-semibold >{operations.efficiency.quality}%</span></div>
                       </div></div>'";
                       <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=""""bg-purple-500 h-2 rounded-full style={{ width  ${operations.efficiency.quality}%" }}"></div></div>
+                        </div><div className=""""bg-purple-500 h-2 rounded-full style="{{ width  ${operations.efficiency.quality}%" }}""></div></div>
                       </div></div>";
                     </div></div>
                   </div></div>";
@@ -729,7 +729,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white font-semibold >{operations.technology.uptime}%</span></div>'
                       </div>"</div>'";
                       <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=bg-green-500 h-2 rounded-full style={{ width  "${operations.technology.uptime}%" }}></div></div>";
+                        </div><div className=bg-green-500 h-2 rounded-full style="{{ width  "${operations.technology.uptime}%" }}"></div></div>";
                       </div></div>
                     </div></div>";
                     <div></div>";
@@ -738,7 +738,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white font-semibold>{operations.technology.performance}%</span> </div>
                       </div></div>'";
                       <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=""""bg-blue-500 h-2 rounded-full style={{ width: "${operations.technology.performance}% }}></div></div>";
+                        </div><div className=""""bg-blue-500 h-2 rounded-full style="{{ width: "${operations.technology.performance}% }}"></div></div>";
                       </div></div>
                     </div></div>
                     <div></div>
@@ -747,7 +747,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white font-semibold>{operations.technology.security}%</span></div>";
                       </div></div>";
                       <div className=w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className=""""bg-purple-500 h-2 rounded-full  style={{ width: "${operations.technology.security}% }}></div></div>";
+                        </div><div className=""""bg-purple-500 h-2 rounded-full  style="{{ width: "${operations.technology.security}% }}"></div></div>";
                       </div></div>;
                     </div></div>
                   </div></div>

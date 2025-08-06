@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string;
   type: online-courses | virtual-classrooms | adaptive-learning | 'skill-assessment' | certification | 'microlearnin'g
-  status: 'active | maintenance | offline' | upgrading
-  location: "string";
+  status: 'active | maintenance | offline' | 'upgrading
+  location: "string"';
   enrollment: number;
   completionRate: number;
   studentSatisfaction: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: adaptive-curriculum | personalized-pathways | skill-gap-analysis | competency-mapping
-  status: 'active | processing | offline' | maintenance
-  location: "string";
+  status: 'active | processing | offline' | 'maintenance
+  location: "string"';
   personalizationAccuracy: number;
   adaptationSpeed: number;
   effectivenessScore: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'learning | 'performance' | engagement' | outcome's
   impact: "positive | negative | neutral"
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalStudents: number;
@@ -434,7 +434,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'";
                 selectedView === tab.id'
                   ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white";
-                    text-gray-300 hover text-white hover bg-white/10'`;
+                    text-gray-300 hover text-white hover bg-white/10'`
               }};
             ></div>;
               <span>{tab.icon}</span></div>

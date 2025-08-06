@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   invoiceNumber: string;
   client: string
   amount: number
-  status: 'draft" | sent | paid' | overd'ue | cancelled
-  dueDate: "Date";
+  status: 'draft" | sent | paid' | 'overd'ue | cancelled
+  dueDate: "Date"';
   issueDate: Date;
   items: InvoiceItem[];
   tax: number;
@@ -245,7 +245,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={"px-6 py-3 rounded-lg: "font-medium transition-all duration-300 ${";
                 activeTab === tab.id;
                   ? bg-gradient-to-r from-green-600 to-emerald-600 text-white;
-                  : bg-white/5 text-gray-300 hover:bg-white/10'`;
+                  : bg-white/5 text-gray-300 hover:bg-white/10'`
               }};
             >;
               {tab.label}</div>

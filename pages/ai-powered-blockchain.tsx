@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'defi" | nft | dao | gami'ng | 'supply-chain | ident'ity
@@ -43,8 +43,8 @@ interface FacilityPlan {;
   name: string
   category: 'defi" | nft | gam'ing' | soci'al | 'utility | governa'nce
   description: "string"
-  status: 'active" | development | maintenance' | archived
-  users: "number";
+  status: 'active" | development | maintenance' | 'archived
+  users: "number"';
   tvl: number;
   transactions: number;
   lastUpdated: Date;

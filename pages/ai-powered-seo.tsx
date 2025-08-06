@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   url: string;
   title: string;
@@ -30,8 +30,8 @@ interface FacilityPlan {
   title: string
   description: string
   impact: 'high" | mediu'm | low
-  effort: 'easy | medium' | 'hard
-  estimatedImprovement: "number";
+  effort: 'easy | medium' | ''hard
+  estimatedImprovement: "number"';
   aiGenerated: boolean;};
 interface FacilityPlan {;
   id: string;
@@ -419,7 +419,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <span className=text-lg font-medium>Loading AI-Powered SEO...</span></div>";
           </div ></div>
         </div></div>'
-      </div>';
+      </div>
     );}";
   return (</div>
     <div className=relative z-10 container-responsive py-8></div>";
@@ -790,7 +790,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredSEOPage;))))))))))'`</div>'

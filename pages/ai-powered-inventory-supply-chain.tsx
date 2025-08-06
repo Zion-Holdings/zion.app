@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   category: 'physical" | digital | servic'e' | talent
@@ -60,9 +60,9 @@ interface FacilityPlan {;
   orderNumber: string;
   customer: string
   items: LogisticsOrderItem[]
-  status: 'pending" | processing | shipped' | deliver'ed | cancelled
+  status: 'pending" | processing | shipped' | 'deliver'ed | cancelled
   priority: 'low | medium | high' | urgent
-  orderDate: "Date";
+  orderDate: "Date"';
   estimatedDelivery: Date;
   actualDelivery?: Date;
   totalValue: number;
@@ -97,7 +97,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutr'al
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [inventoryItems, setInventoryItems] = useState<InventoryItem[]>([]</div>;

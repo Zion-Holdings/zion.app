@@ -17,7 +17,7 @@ function fixSyntaxErrors() {
                         .replace(/import:\s*/g, 'impor't' ')
                         .replace(/import type:/g, 'impor't' type ')
                         .replace(/import React from react;/g, 'impor't' React from ";react";')
-                        .replace(/import React from ';react';/g, 'impor't' React from "react";')
+                        .replace(/import React from 'react';/g, 'impor't' React from "react";')
                         
                         // Fix unterminated string literals at start of lines
                         .replace(/^import.*''';/g, (match) => match.replace(/'''/, '";'))

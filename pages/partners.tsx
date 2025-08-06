@@ -1,6 +1,6 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import Link from ";next/link
 import { useState } from react
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
@@ -198,7 +198,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 className={px-6 py-3 rounded-lg: "border transition-all duration-200 ${";
                   activeCategory === category.id;
                     ? bg-purple-600/20 border-purple-500 text-purple-300;
-                      bg-white/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20`;
+                      bg-white/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20`
                 }};
               >;
                 {category.name}</div>;

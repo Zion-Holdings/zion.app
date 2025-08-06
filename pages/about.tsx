@@ -1,7 +1,7 @@
 import React from ';react;
-import { NextPage } from ';next;
-import Head from ';next/head;
-import Link from ';next/link;
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next'/head;
+import type { NextApiRequest, NextApiResponse } from 'next'/link;
 import ModernLayout from ';../components/layout/ModernLayout;
 import ResponsiveNavigation from ../components/ResponsiveNavigation;
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";

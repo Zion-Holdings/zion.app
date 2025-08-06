@@ -1,6 +1,6 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import Link from ";next/link
 import { useState, useEffect }  from react'
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
@@ -255,7 +255,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredBiddingAuction;))))))))'</div>'

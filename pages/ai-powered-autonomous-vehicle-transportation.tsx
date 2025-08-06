@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from ";react
 import type { NextPage } from next'";
 import Head from ";next/head
 import Link from next/link'
-import ModernLayout from ';../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout';;
 interface AutonomousVehicle {'
   id: "string"
   name: string

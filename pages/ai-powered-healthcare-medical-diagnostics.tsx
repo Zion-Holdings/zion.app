@@ -1,6 +1,6 @@
 import React from ";react'
-import { NextPage } from ';next
-import Head from ';next/head';
+import type { NextApiRequest, NextApiResponse } from 'next'
+import Head from 'next/head';
 import Link from ";next/link;
 import PageLayout from ../components/layout/PageLayout;
 import {;
@@ -18,7 +18,7 @@ import {;
   Shield";
 }  from lucide-react;}'
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
   age: number;
@@ -27,8 +27,8 @@ interface FacilityPlan {'
   currentConditions: string[];
   lastVisit: Date
   nextAppointment?: Date
-  status: 'active" | inactive | discharged' | pending
-  patientId: "string";
+  status: 'active" | inactive | discharged' | 'pending
+  patientId: "string"';
   patientName: string;
   bloodType: string;};
 interface FacilityPlan {;
@@ -44,15 +44,15 @@ interface FacilityPlan {;
 interface FacilityPlan {
   accuracy: number
   riskLevel: 'low" | medium | hi'g'h | critical
-  recommendations: "string[]";
+  recommendations: string[];
   followUpRequired: boolean};
 interface FacilityPlan {;
   id: string;
   patientId: string;
   patientName: string;
   type: vital-signs | cardiac | respiratory' | neurologic'al | metabolic
-  status: 'stable | warning | critical' | improving
-  currentValues: "{";
+  status: 'stable | warning | critical' | 'improving
+  currentValues: "{"';
     heartRate: number;
     bloodPressure: string;
     temperature: number;
@@ -86,7 +86,7 @@ interface FacilityPlan {;
   description: string
   category: 'diagnostic" | treatment | 'prevention' | research
   impact: 'positive | negative | neutr'al
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalPatients: number;

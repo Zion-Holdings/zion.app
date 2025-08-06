@@ -1,6 +1,6 @@
-import React from ';react';
+import React from 'react';
 import { useRouter } from next/router";
-import { createClient } from ';@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 // Only create Supabase client if environment variables are available
 const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY"
   ? createClient(

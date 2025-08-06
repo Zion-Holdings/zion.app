@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
@@ -50,7 +50,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'low" | medium | h'igh
-  confidence: "number";
+  confidence: number;
   actionItems: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [projects, setProjects] = useState<Project[]>([]</div>;

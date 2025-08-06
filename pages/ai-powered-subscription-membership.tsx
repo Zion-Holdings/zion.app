@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'free" | basic | premium | enterpris'e | v'ip
@@ -20,8 +20,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  category: 'core" | ai | premium' | 'enterprise
-  included: "boolean";
+  category: 'core" | ai | premium' | ''enterprise
+  included: "boolean"';
   usage?: {;
     current: number;
     limit: number;
@@ -38,8 +38,8 @@ interface FacilityPlan {;
   id: string;
   userId: string
   tierId: string
-  status: 'active" | cancelled | expired' | suspende'd
-  startDate: "Date";
+  status: 'active" | cancelled | expired' | 'suspende'd
+  startDate: "Date"';
   endDate?: Date;
   autoRenew: boolean;
   paymentMethod: PaymentMethod;
@@ -98,7 +98,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutr'al
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {</div>;
   const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]</div>;
@@ -678,7 +678,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {</div>;
                           ))}</div>;
                         </div></div>;
                       </div>;
-                      `;
+                      `
                       }}>;
                         {tier.type === free ? Current Plan'   'Choose Plan}</div>;
                       </button></div>;

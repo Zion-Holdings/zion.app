@@ -1,17 +1,17 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   title: string
   description: string
   category: 'guide" | tutorial | 'manua'l | 'faq' | wiki | 'documentatio'n;
-  status: 'draft | published | archived' | review
+  status: 'draft | published | archived' | 'review
   priority: 'low' | 'medium' | 'high' | 'critical'
-  views: "number";
+  views: "number"';
   helpfulVotes: number;
   lastUpdated: Date;
   aiAnalysis: AIKnowledgeAnalysis;};
@@ -80,8 +80,8 @@ interface FacilityPlan {;
   question: string
   answer: string
   category: 'general" | technical | 'billin'g | accoun't | feature's
-  status: 'draft | published | archived' | review
-  helpfulVotes: "number";
+  status: 'draft | published | archived' | 'review
+  helpfulVotes: "number"';
   views: number;
   aiAnalysis: AIFAQAnalysis;};
 interface FacilityPlan {;
@@ -124,7 +124,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutra'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [articles, setArticles] = useState<KnowledgeArticle[]>([]</div>;

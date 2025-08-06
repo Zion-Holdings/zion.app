@@ -8,7 +8,7 @@ function fixImportStatementErrors(filePath) {
     let $1 = false;
 
     // Fix malformed import statements
-    const $1 = /import React from ';react';import ModernLayout from ';([^']+)'/g;
+    const $1 = /import React from 'react';import ModernLayout from ';([^']+)'/g;
     if (malformedImportPattern.test(content)) {
       content = content.replace(malformedImportPattern, 'impor't' React from \'reac't'\';\nimport ModernLayout from \'$1\';');
       modified = true;

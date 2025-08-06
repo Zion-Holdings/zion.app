@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   protocol: 'bb84" | b92 | ekert91 | bennett-brassard-'1984
@@ -57,8 +57,8 @@ interface FacilityPlan {;
   security: number;
   efficiency: number;
   applications: string[]
-  status: 'research' | implementation | deployme'n't | production}"
-const AIPoweredPredictiveAnalytics: "NextPage = () => {";
+  status: 'research' | 'implementation | deployme'n't | production}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {"';
   const [activeTab, setActiveTab] = useState(dashboard;
   const [isKeyExchange, setIsKeyExchange] = useState(false;
   const [currentProtocol, setCurrentProtocol] = useState<any>(null</div>;
@@ -222,7 +222,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-blue-600 to-indigo-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

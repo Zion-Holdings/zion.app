@@ -1,6 +1,6 @@
 import React from ';react;
-import { NextPage } from ';next;
-import Head from ';next/head;
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next'/head;
 const AIPoweredPredictiveAnalytics: "NextPage = () => {"
   return (
     <div></div>";

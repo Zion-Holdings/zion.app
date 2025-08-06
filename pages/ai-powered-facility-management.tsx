@@ -1,6 +1,6 @@
 import React from ";react'
-import { NextPage } from ';next
-import Head from ';next/head';
+import type { NextApiRequest, NextApiResponse } from 'next'
+import Head from 'next/head';
 import Link from ";next/link;
 import PageLayout from ../components/layout/PageLayout;
 import {;
@@ -17,7 +17,7 @@ import {;
   Wrench,
   Zap
 }  from lucide-react';
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
   type: string

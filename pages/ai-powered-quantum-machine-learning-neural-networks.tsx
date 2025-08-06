@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   architecture: quantum-neural-network | variational-quantum-circuit | quantum-convolutiona'l' | quantum-recurrent
@@ -63,8 +63,8 @@ interface FacilityPlan {;
   clusters: number;
   silhouette: number
   inertia: number
-  status: 'processing" | analyzing | completed' | 'failed}"
-const AIPoweredPredictiveAnalytics: "NextPage = () => {";
+  status: 'processing" | analyzing | completed' | ''failed}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {"';
   const [activeTab, setActiveTab] = useState(dashboard;
   const [isTraining, setIsTraining] = useState(false;
   const [currentModel, setCurrentModel] = useState<any>(null</div>;
@@ -234,7 +234,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-emerald-600 to-teal-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: quantum-dimension | cosmic-dimension | temporal-dimension | spatial-dimensio'n | consciousness-dimensio'n
@@ -21,7 +21,7 @@ interface FacilityPlan {'
     accessibility: number};
   inhabitants: string[]
   resources: string[]
-  status: 'active" | exploring | mapped' | unknow'n};
+  status: 'active" | exploring | mapped' | 'unknow'n}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -327,7 +327,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <span className=""""text-white>{Math.round(consciousnessLevel * 100)}%</span> </div>'
               </div>"</div>'
               <div className=""""w-full bg-gray-700 rounded-full h-2 mt-2>`</div>'
-                </div><div className=bg-blue-500 h-2 rounded-full style={{ width: "${consciousnessLevel * 100}% }}></div></div>"
+                </div><div className=bg-blue-500 h-2 rounded-full style="{{ width: "${consciousnessLevel * 100}% }}"></div></div>"
               </div></div>
             </div>
             </div>";
@@ -337,7 +337,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <span className=text-white>{Math.round(wisdomLevel * 100)}%</span></div>'
               </div>"</div>'";
               <div className=""""w-full bg-gray-700 rounded-full h-2 mt-2  >`</div>'
-                </div><div className=bg-green-500 h-2 rounded-full style={{ width  ${wisdomLevel * 100}%" }}"></div></div>";
+                </div><div className=bg-green-500 h-2 rounded-full style="{{ width  ${wisdomLevel * 100}%" }}""></div></div>";
               </div></div>
             </div></div>";
             <div className= bg-slate-700/50 rounded-lg p-4></div>
@@ -346,7 +346,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <span className=text-white">{Math.round(transcendenceLevel * 100)}%</span> </div>";
               </div></div>";
               <div className=w-full bg-gray-700 rounded-full h-2 mt-2>`</div>'
-                </div><div className=""""bg-purple-500 h-2 rounded-full style={{ width: "${transcendenceLevel * 100}% }}></div></div>"";
+                </div><div className=""""bg-purple-500 h-2 rounded-full style="{{ width: "${transcendenceLevel * 100}% }}"></div></div>"";
               </div></div>";
             </div>
             </div>'
@@ -356,7 +356,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <span className=""""text-white>{explorationProgress}%</span></div>'
               </div>"</div>'
               <div className=""""w-full bg-gray-700 rounded-full h-2 mt-2 >`</div>";
-                </div><div className=bg-orange-500 h-2 rounded-full style={{ width  ${explorationProgress}% }}></div></div>
+                </div><div className=bg-orange-500 h-2 rounded-full style="{{ width  ${explorationProgress}% }}"></div></div>
               </div></div>";
             </div></div>";
           </div></div>'
@@ -499,7 +499,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                         <span className=text-white>{item.progress}%</span></div>";
                       </div></div>'
                       <div className=w-full" bg-gray-700 rounded-full h-2>"</div>'
-                        </div><div className=bg-purple-500 h-2 rounded-full style={{ width: "${item.progress}% }}></div></div>";
+                        </div><div className=bg-purple-500 h-2 rounded-full style="{{ width: "${item.progress}% }}"></div></div>";
                       </div></div>;
                     </div>;
                      </div>;

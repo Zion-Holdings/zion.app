@@ -1,10 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from @supabase/supabase-js;
 const $1 = createClient(;
   process.env.NEXT_PUBLIC_SUPABASE_URL!,;
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 );
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method = == GET) {;
     try {;
       const { projectId, userId } = req.query;
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             *,;
             team:workspace_members(*),;
             tasks:workspace_tasks(*),;
-            documents:workspace_documents(*'`;
+            documents:workspace_documents(*'`
           .eq(id, projectId;
           .single(;
         if (error) {;

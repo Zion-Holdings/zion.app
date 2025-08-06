@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: quantum-editor | quantum-compiler | quantum-debugger | quantum-simulato'r | quantum-visualize'r
@@ -11,8 +11,8 @@ interface FacilityPlan {'
   performance: number;
   compatibility: number
   plugins: number
-  status: 'active" | running | debugging' | standb'y
-  timestamp: "string}";
+  status: 'active" | running | debugging' | 'standb'y
+  timestamp: "string}"';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   resources: number;
   scalability: number
   monitoring: number
-  status: 'deploying" | running | scaling' | maintenance};
+  status: 'deploying" | running | scaling' | 'maintenance}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   speed: number;
   memory: number
   visualization: number
-  status: 'debugging" | analyzing | profiling' | complete'd};
+  status: 'debugging" | analyzing | profiling' | 'complete'd}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -228,7 +228,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-violet-600 to-purple-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50'`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;
@@ -574,7 +574,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 </div>
   </div>
 </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredQuantumDevelopmentPlatform;))))))))))))))))))))))'`</div>'

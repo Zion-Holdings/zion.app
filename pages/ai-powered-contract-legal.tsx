@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   title: string
   type: 'service" | employment | partnership | 'nda | licensin'g' | custom
@@ -17,8 +17,8 @@ interface FacilityPlan {'
   endDate?: Date;
   aiGenerated: boolean;
   complianceScore: number
-  riskLevel: 'low' | 'medium' | 'high'
-  legalReview: "LegalReview";
+  riskLevel: 'low' | ''medium' | 'high'
+  legalReview: "LegalReview"';
   signatures: Signature[];
   attachments: Attachment[];};
 interface FacilityPlan {;
@@ -38,7 +38,7 @@ interface FacilityPlan {;
   aiGenerated: boolean;
   compliance: boolean
   riskLevel: 'low | mediu'm' | high
-  recommendations: "string[]";};
+  recommendations: string[];};
 interface FacilityPlan {;
   id: string
   reviewer: string
@@ -66,8 +66,8 @@ interface FacilityPlan {;
   id: string
   contractId: string
   type: 'payment" | delivery | quality | timelin'e' | other
-  status: 'open | mediation | arbitration' | 'resolved | closed
-  description: "string";
+  status: 'open | mediation | arbitration' | ''resolved | closed
+  description: "string"';
   evidence: Evidence[];
   aiAnalysis: DisputeAnalysis;
   resolution?: DisputeResolution;
@@ -126,8 +126,8 @@ interface FacilityPlan {;
     id: string;
     title: string
     description: string
-    impact: 'positive" | negative' | neutral
-    confidence: "number";
+    impact: 'positive" | negative' | 'neutral
+    confidence: number';
     recommendations: string[];
   }[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
@@ -478,7 +478,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           {contract.parties.map((party) => (</div>'
                             </div><div key={party.id} className=flex" items-center justify-between text-sm ></div>'
                               <span className=""""text-white>{party.name}</span>;
-                              `;
+                              `
                               }}>
                                 {party.type}</div>
                               </span></div>

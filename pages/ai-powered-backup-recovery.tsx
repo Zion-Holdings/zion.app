@@ -1,16 +1,16 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'full" | incremental | differential | 'snapsho't | archive' | replicati'on
-  status: 'running | completed | failed' | schedul'ed | paused
-  size: "number";
+  status: 'running | completed | failed' | 'schedul'ed | paused
+  size: "number"';
   duration: number;
   lastRun: Date;
   nextRun: Date;
@@ -26,11 +26,11 @@ interface FacilityPlan {;
   name: string
   description: string
   category: 'disaster" | system | d'ata | 'applicati'on | infrastructure | 'busin'ess
-  status: 'active | draft | archived' | 'testing
-  rto: "number"; // Recovery Time Objective in minutes
+  status: 'active | draft | archived' | ''testing
+  rto: "number"'; // Recovery Time Objective in minutes
   rpo: number; // Recovery Point Objective in minutes
-  priority: 'critical" | high | medium' | 'low
-  aiOptimization: "AIRecoveryOptimization";};
+  priority: 'critical" | high | medium' | ''low
+  aiOptimization: "AIRecoveryOptimization"';};
 interface FacilityPlan {;
   id: string;
   optimizationScore: number;
@@ -43,9 +43,9 @@ interface FacilityPlan {;
   description: string
   scenario: 'natural_disaster" | cyber_attack | hardware_failure | 'huma'n_error | power_outage | 'networ'k_failure;
   status: 'active | draft | archived | testin'g;
-  severity: 'critical | high | medium' | low
+  severity: 'critical | high | medium' | 'low
   impact: 'business_critical | high_impact | medium_impact' | 'low_impact
-  recoverySteps: "string[]";
+  recoverySteps: "string[]"';
   aiAnalysis: AIDisasterAnalysis;};
 interface FacilityPlan {;
   id: string;
@@ -73,9 +73,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  system: 'database" | application | server' | network | 'stora'ge | service
+  system: 'database" | application | server' | 'network | 'stora'ge | service
   status: 'in_progress | completed | 'failed | schedul'e'd | cancelled
-  progress: "number";
+  progress: "number"';
   estimatedTime: number;
   startTime: Date;
   aiAnalysis: AIRestorationAnalysis;};
@@ -99,7 +99,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [backupJobs, setBackupJobs] = useState<BackupJob[]>([]</div>;
@@ -274,7 +274,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <div className= relative max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-44></div>"";
           </div><div className=text-center></div>
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>'
-              AI-Powered Backup & Recovery System</div>';
+              AI-Powered Backup & Recovery System</div>
             </h1></div>";
             <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Data backup, disaster recovery, system restoration,";

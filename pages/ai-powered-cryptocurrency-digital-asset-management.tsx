@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   symbol: string;
   name: string;
@@ -18,8 +18,8 @@ interface FacilityPlan {;
   sentimentScore: number
   volatilityIndex: number
   riskLevel: 'low" | medium | hi'g'h | extreme
-  trendPrediction: 'bullish | bearish' | 'neutral
-  recommendations: "string[]}";
+  trendPrediction: 'bullish | bearish' | ''neutral
+  recommendations: "string[]}"';
 interface FacilityPlan {;
   id: string
   name: string
@@ -67,7 +67,7 @@ interface FacilityPlan {;
   title: string;
   description: string
   impact: 'positive | negativ'e' | neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalAssets: number;

@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'combinatorial" | optimization | sampling | machine-learning
@@ -25,7 +25,7 @@ interface FacilityPlan {;
   convergence: number;
   bestEnergy: number
   runtime: number
-  status: 'preparing" | annealing | measuring' | 'completed};
+  status: 'preparing" | annealing | measuring' | ''completed}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -55,7 +55,7 @@ interface FacilityPlan {;
   timeSteps: number;
   precision: number
   results: string
-  status: 'running" | completed | analyzing' | 'failed};
+  status: 'running" | completed | analyzing' | ''failed}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -237,7 +237,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-indigo-600 to-purple-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

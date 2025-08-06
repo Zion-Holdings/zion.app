@@ -19,9 +19,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       stars.push(</div>
         </ fullStars; i++) {
       stars.push(";
-        <Star key={i} className= w-4 h-4 text-yellow-400 fill-current ><Star key= half className=w-4 h-4 text-yellow-400 fill-current style={{ clipPath: inset(0 50% 0 0) }} >);}
+        <Star key={i} className= w-4 h-4 text-yellow-400 fill-current ><Star key= half className=w-4 h-4 text-yellow-400 fill-current style="{{ clipPath: inset(0 50% 0 0) }} ">);}
     const $1 = 5 - fullStars - (hasHalfStar ? 1 : 0); </div>";
-    for (let $1 = 0; i </Star key= half className= w-4 h-4 text-yellow-400 fill-current style={{ clipPath: inset(0 50% 0 0) }} >< emptyStars; i++) {";
+    for (let $1 = 0; i </Star key= half className= w-4 h-4 text-yellow-400 fill-current style="{{ clipPath: inset(0 50% 0 0) }} ">< emptyStars; i++) {";
       stars.push('
         <Star key={"empty-${i}"} className=w-4 h-4 text-gray-300 >);}
     return stars

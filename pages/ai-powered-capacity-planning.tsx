@@ -1,7 +1,7 @@
 import React from ";react';
-import ModernLayout from ';../components/layout/ModernLayout'
-import { NextPage } from ';next'
-import Head from ';next/head';
+import ModernLayout from '../components/layout/ModernLayout';
+import type { NextApiRequest, NextApiResponse } from 'next''
+import Head from 'next/head';
 import Link from ";next/link;
 import {;
   TrendingUp,;
@@ -17,11 +17,11 @@ import {;
   PieChart,
   TrendingDown
 }  from lucide-react';
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial'
-  status: 'draft" | acti'v'e | completed' | 'archived;
+  type: 'infrastructure' | ''workforce' | 'technology' | 'financial'
+  status: 'draft" | acti'v'e | completed' | 'archived';
   priority: 'low | medium | high | 'critica'l;
   startDate: string;
   endDate: string;
@@ -55,8 +55,8 @@ interface FacilityPlan {;
   nextMaintenance: string;};
 interface FacilityPlan {;
   id: string;
-  type: 'scaling' | 'efficiency' | 'cost' | 'timing';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'scaling' | ''efficiency' | 'cost' | 'timing'';
+  priority: 'low' | ''medium' | 'high' | 'critical'';
   title: string;
   description: string;
   impact: string;

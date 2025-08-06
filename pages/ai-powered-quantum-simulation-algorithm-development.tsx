@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   type: circuit-simulation | state-simulation | gate-simulation | algorithm-simulation
@@ -21,7 +21,7 @@ interface FacilityPlan {;
   qubits: number;
   gates: number
   successRate: number
-  status: 'development" | testing | optimized' | deployed};
+  status: 'development" | testing | optimized' | 'deployed}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -30,7 +30,7 @@ interface FacilityPlan {;
   matrix: number[][];
   fidelity: number
   duration: number
-  status: 'active" | calibrating | optimizing' | deprecated};
+  status: 'active" | calibrating | optimizing' | 'deprecated}';
 interface FacilityPlan {;
   id: string
   name: string
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   depth: number;
   width: number
   optimization: number
-  status: 'designing" | compiling | executing' | completed};
+  status: 'designing" | compiling | executing' | 'completed}';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -222,7 +222,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   className={flex items-center space-x-2 px-4 py-4 rounded-md: "font-medium transition-all duration-200 ${";
                     activeTab === tab.id;
                       ? bg-gradient-to-r from-indigo-600 to-purple-600 text-white;
-                      : text-gray-300 hover:text-white hover:bg-gray-700/50`;
+                      : text-gray-300 hover:text-white hover:bg-gray-700/50`
                   }};
                 ></div>;
                   <span>{tab.icon}</span></div>;

@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'shor" | grover | quantum_fourier | quantum'_phase | quantu'm_walk | variational
-  status: 'running | completed | failed' | queued' | cancelled
-  qubits: "number";
+  status: 'running | completed | failed' | 'queued' | cancelled
+  qubits: "number"';
   depth: number;
   executionTime: number;
   aiAnalysis: AlgorithmAnalysis;};
@@ -39,8 +39,8 @@ interface FacilityPlan {;
   name: string
   description: string
   type: 'quantum_circuit" | quantum_dynamics | quantum_chemistry | quantu'm_materials | quantum'_optics | quantu'm_biology
-  status: 'running | completed | failed' | scheduled
-  qubits: "number";
+  status: 'running | completed | failed' | 'scheduled
+  qubits: "number"';
   iterations: number;
   aiAnalysis: SimulationAnalysis;};
 interface FacilityPlan {;
@@ -53,9 +53,9 @@ interface FacilityPlan {;
   id: string;
   protocol: string
   description: string
-  type: 'qkd" | quantum_key | quantum_signature | quantum_commitment | quantum_zero_knowledge' | 'post_quantum
+  type: 'qkd" | quantum_key | quantum_signature | quantum_commitment | quantum_zero_knowledge' | ''post_quantum
   status: 'active | inactive | testing | 'deploye'd
-  keyLength: "number";
+  keyLength: "number"';
   securityLevel: number;
   aiAnalysis: CryptographyAnalysis;};
 interface FacilityPlan {;
@@ -64,13 +64,13 @@ interface FacilityPlan {;
   efficiencyScore: number
   reliabilityScore: number
   recommendations: string[];}'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: string";
   model: string";
   description: string
   type: 'quantum_neural_network" | quantum_kernel | quantum_feature_map | quantum'_boltzmann | quantu'm_gan | quantum'_autoencoder'
-  status: 'training | trained | failed' | evaluating
-  parameters: "number";
+  status: 'training | trained | failed' | 'evaluating
+  parameters: "number"';
   accuracy: number;
   aiAnalysis: MLAnalysis;};
 interface FacilityPlan {;
@@ -110,7 +110,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutra'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [quantumAlgorithms, setQuantumAlgorithms] = useState<QuantumAlgorithm[]>([]</div>;

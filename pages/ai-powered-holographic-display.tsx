@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'volumetric" | light_field | holographic_projection | spatial'_computing | mixe'd_reality | augmented'_reality
-  status: 'active | inactive | rendering' | error' | offline
-  resolution: "number";
+  status: 'active | inactive | rendering' | 'error' | offline
+  resolution: "number"';
   refreshRate: number;
   fieldOfView: number;
   aiAnalysis: DisplayAnalysis;};
@@ -39,8 +39,8 @@ interface FacilityPlan {;
   name: string
   description: string
   type: 'spatial_mapping" | spatial_tracking | spatial_interaction | spatial_audio | spatia'l'_gestures | spatial_environment
-  status: 'active | inactive | mapping' | error | offline
-  sensors: "number";
+  status: 'active | inactive | mapping' | 'error | offline
+  sensors: "number"';
   accuracy: number;
   aiAnalysis: SpatialAnalysis;};
 interface FacilityPlan {;
@@ -54,9 +54,9 @@ interface FacilityPlan {;
   projectionId: string;
   title: string
   description: string
-  type: 'laser_projection" | led_projection | lcd_projection | dlp_projection' | lcos_projection | 'microled_projection
+  type: 'laser_projection" | led_projection | lcd_projection | dlp_projection' | 'lcos_projection | 'microled_projection
   status: 'active | inactive | projecti'ng | err'or | 'offline
-  brightness: "number";
+  brightness: "number"';
   contrast: number;
   aiAnalysis: ProjectionAnalysis;};
 interface FacilityPlan {;
@@ -65,7 +65,7 @@ interface FacilityPlan {;
   contrastScore: number
   clarityScore: number
   recommendations: string[];}";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: string
   displayId: string";
   title: string";
@@ -112,7 +112,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutra'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [holographicDisplays, setHolographicDisplays] = useState<HolographicDisplay[]>([]</div>;

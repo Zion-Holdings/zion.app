@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link
-interface FacilityPlan {'";
+interface FacilityPlan {";
   id: "string"
   type: 'card" | paypal | crypto | 'ban'k
   name: "string";
@@ -463,7 +463,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-lg>{getTypeIcon(transaction.type)}</span></div>'
                         <span className=text-white">{transaction.description}</span>"</div>;
                       </div>;
-                        transaction.amount >= 0 ? text-green-400' : text-red-400`;
+                        transaction.amount >= 0 ? text-green-400' : text-red-400`
                       }}>;
                         {transaction.amount >= 0 ? +'   }${transaction.amount.toLocaleString()}</div>;
                       </span></div>;

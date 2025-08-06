@@ -1,9 +1,9 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect }  from react
 import Link from ";next/link";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   referrerId: string;
   referredId: string
@@ -46,8 +46,8 @@ interface: "PerformanceMetrics: {";
   topPerformingMonths: string[];,};
 interface: ReferralBonus: {
   id: string
-  type: 'signup" | first_purchase' | mileston'e | specia'l
-  amount: "number";
+  type: 'signup" | first_purchase' | 'mileston'e | specia'l
+  amount: "number"';
   currency: string;
   conditions: string[];
   validFrom: Date;

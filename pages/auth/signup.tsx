@@ -1,5 +1,5 @@
 import type { NextPage } from ";next
-import Head from ';next/head';
+import Head from 'next/head';
 import Link from ";next/link";
 import { useState, useEffect } from react
 import { useRouter } from ";next/router;}'
@@ -10,7 +10,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
-  const {;
+  const {
     signUp,;
     signInWithProvider,;
     user,;

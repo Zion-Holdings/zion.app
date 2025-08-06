@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'unit" | integration | e2e | performance | 'securit'y | accessibility
-  status: 'running | passed | failed' | pending' | skipped
-  totalTests: "number";
+  status: 'running | passed | failed' | 'pending' | skipped
+  totalTests: "number"';
   passedTests: number;
   failedTests: number;
   skippedTests: number;

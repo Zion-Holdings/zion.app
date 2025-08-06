@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useRef, useEffect }  from ";react;}";
 import Link from next/link
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   content: string
   role: 'user" | assistant;
@@ -252,8 +252,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <div className=bg-white text-gray-800 border border-gray-200 px-4 py-3 rounded-lg shadow-sm> </div>'
                     </div><div className=flex space-x-1"></div>'";
                       <div className=""""w-2 h-2 bg-gray-400 rounded-full animate-bounce></div></div>'
-                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce  style={{ animationDelay: "0.1s }}></div></div>";
-                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay  0.2s }}></div></div>;
+                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce  style="{{ animationDelay: "0.1s }}"></div></div>";
+                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style="{{ animationDelay  0.2s }}"></div></div>;
                     </div></div>;
                   </div></div>;
                 </div>

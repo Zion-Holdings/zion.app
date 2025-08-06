@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from ';next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from openai;
 // Check if OpenAI API key is available;
 const $1 = process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY.trim() !== ;
@@ -12,7 +12,7 @@ export default async function handler(;
   if (req.method !== 'POST') {;
     return res.status(405).json({ error: 'Method not allowed' });};
   try {;
-    const {;
+    const {
       title,;
       keyFeatures,;
       targetAudience,;
@@ -26,7 +26,7 @@ export default async function handler(;
     if (!hasOpenAIKey) {;
       const $1 = Looking for professional ${title}? We specialize in delivering exceptional ${keyFeatures.toLowerCase()} to help your business thrive.;
 Our team of experienced professionals understands the unique challenges faced by ${targetAudience || businesses} in the ${industry || mode'r'n} industry. We offer ${pricing || competitive} pricing models to ensure you get the best value for your investment.;
-Whether you'r'e looking for ${location || comprehensive} solutions or need ongoing support, wer'e' here to help you achieve your goals. Our commitment to quality, reliability, and customer satisfaction sets us apart from the competition.;`;
+Whether you'r'e looking for ${location || comprehensive} solutions or need ongoing support, wer'e' here to help you achieve your goals. Our commitment to quality, reliability, and customer satisfaction sets us apart from the competition.;`
 Ready to take your business to the next level? Contact us today to discuss how our ${title.toLowerCase()} can benefit your organization.;
       return res.status(200).json({
         description: "mockDescription,"

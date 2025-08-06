@@ -8,8 +8,8 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  type: 'market' | ''demand' | 'trend' | 'risk' | 'performance' | 'behavior'';
+  status: 'active' | ''draft' | 'archived' | 'testing'';
   confidence: number;
   accuracy: number;
   timeframe: string;
@@ -30,8 +30,8 @@ interface ForecastPrediction {
   id: string;
   title: string;
   description: string;
-  category: 'sales' | 'inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  category: 'sales' | ''inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend'';
+  status: 'active' | ''draft' | 'archived' | 'testing'';
   period: string;
   confidence: number;
   accuracy: number;
@@ -45,7 +45,7 @@ interface AIForecastOptimization {
   date: Date;
   value: number;
   confidence: number;
-  status: 'predicted' | 'actual' | 'pending';
+  status: 'predicted' | ''actual' | 'pending'';
 }
 
 interface ForecastDataPoint {
@@ -59,10 +59,10 @@ interface TrendAnalysis {
   id: string;
   title: string;
   description: string;
-  category: 'market' | 'technology' | 'consumer' | 'industry' | 'global' | 'local';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  category: 'market' | ''technology' | 'consumer' | 'industry' | 'global' | 'local'';
+  status: 'active' | ''draft' | 'archived' | 'testing'';
   confidence: number;
-  impact: 'high' | 'medium' | 'low';
+  impact: 'high' | ''medium' | 'low'';
   timeframe: string;
   dataPoints: number;
   aiAnalysis: AITrendAnalysis;
@@ -80,11 +80,11 @@ interface RiskAssessment {
   id: string;
   title: string;
   description: string;
-  category: 'market' | 'operational' | 'financial' | 'regulatory' | 'technology' | 'competitive';
-  status: 'active' | 'draft' | 'archived' | 'testing';
-  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  category: 'market' | ''operational' | 'financial' | 'regulatory' | 'technology' | 'competitive'';
+  status: 'active' | ''draft' | 'archived' | 'testing'';
+  riskLevel: 'low' | ''medium' | 'high' | 'critical'';
   probability: number;
-  impact: 'low' | 'medium' | 'high' | 'critical';
+  impact: 'low' | ''medium' | 'high' | 'critical'';
   mitigationStrategies: string[];
   aiAnalysis: AIRiskAnalysis;
 }
@@ -101,8 +101,8 @@ interface MarketPrediction {
   id: string;
   title: string;
   description: string;
-  sector: 'technology' | 'healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  sector: 'technology' | ''healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services'';
+  status: 'active' | ''draft' | 'archived' | 'testing'';
   timeframe: string;
   confidence: number;
   accuracy: number;
@@ -142,7 +142,7 @@ interface PredictionInsight {
   id: string;
   title: string;
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | ''negative' | 'neutral'';
   confidence: number;
   recommendations: string[];
 }

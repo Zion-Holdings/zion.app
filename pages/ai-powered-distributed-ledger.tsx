@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
@@ -55,8 +55,8 @@ interface FacilityPlan {;
   title: string
   description: string
   type: 'dao" | on_chain_governance | off_chain_governance | hybrid_governance | consensu's_governance | 'stakeholder_governance
-  status: 'active | inactive | voting' | err'or | offline
-  proposals: "number";
+  status: 'active | inactive | voting' | 'err'or | offline
+  proposals: "number"';
   participants: number;
   aiAnalysis: GovernanceAnalysis;};
 interface FacilityPlan {;
@@ -65,14 +65,14 @@ interface FacilityPlan {;
   participationScore: number
   transparencyScore: number
   recommendations: string[];}";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: string
   appId: string";
   title: string";
   description: string
-  type: 'defi_application" | gaming_application | social_application' | enterprise_application | identity'_application' | supply_chain_application'
+  type: 'defi_application" | gaming_application | social_application' | 'enterprise_application | identity'_application' | supply_chain_application'
   status: 'active | inactive | developing' | 'error | offline
-  users: "number";
+  users: "number"';
   transactions: number;
   aiAnalysis: DAppAnalysis;};
 interface FacilityPlan {;
@@ -112,7 +112,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [distributedLedgers, setDistributedLedgers] = useState<DistributedLedger[]>([]</div>;

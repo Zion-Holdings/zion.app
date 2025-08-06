@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'lending" | investment | insurance | 'payments' | wealth-management | 'tradin'g
-  status: 'active | pending | completed' | suspended
-  location: "string";
+  status: 'active | pending | completed' | 'suspended
+  location: "string"';
   performance: number;
   riskScore: number;
   roi: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: credit-risk | market-risk | operational-risk | 'liquidity-risk | 'compliance-risk' | cybersecurity-risk
-  status: 'active | monitoring | alert' | critical
-  location: "string";
+  status: 'active | monitoring | alert' | 'critical
+  location: "string"';
   riskLevel: number;
   exposure: number;
   mitigationScore: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'investment | 'risk' | performance' | complianc'e
   impact: "positive | negative | neutral"
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalAssets: number;
@@ -437,7 +437,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${";
                 selectedView === tab.id;
                   ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white;
-                    text-gray-300 hover text-white hover bg-white/10'`;
+                    text-gray-300 hover text-white hover bg-white/10'`
               }};
             ></div>;
               <span>{tab.icon}</span></div>;

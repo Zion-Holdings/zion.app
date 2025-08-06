@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link
-interface FacilityPlan {'";
+interface FacilityPlan {";
   id: "string"
   type: 'malware" | phishing | ddos | 'brute-force | sql-injectio'n' | xss | data-brea'c'h | insider-threat
   severity: 'low | medium | 'h'igh | critica'l
@@ -22,8 +22,8 @@ interface FacilityPlan {'";
   }};
 interface FacilityPlan {;
   id: string
-  type: login-attempt | data-access | system-change' | network-traff'ic | 'file-access | api-c'all
-  user: "string";
+  type: login-attempt | data-access | system-change' | 'network-traff'ic | 'file-access | api-c'all
+  user: "string"';
   ipAddress: string;
   location: string;
   timestamp: Date;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   aiAnalysis: {
     suspicious: boolean
     threatLevel: 'low" | medium | h'igh' | critical
-    confidence: "number";
+    confidence: number;
     recommendations: string[]
   }"
   action: 'allowed" | blocke'd | flag'ged | 'investigated;
@@ -56,8 +56,8 @@ interface FacilityPlan {;
   current: number;
   target: number;
   improvement: number
-  trend: 'up' | down | 'stabl'e
-  period: "string";};
+  trend: 'up' | 'down | 'stabl'e
+  period: "string"';};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [threats, setThreats] = useState<SecurityThreat[]>([]);</div>;
   const [events, setEvents] = useState<SecurityEvent[]>([]);</div>;

@@ -1,28 +1,28 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'wheat" | corn | soybeans | 'rice' | cotton | 'vegetable's | fruits
-  status: 'growing | harvesting | dormant' | planning
-  location: "string";
+  status: 'growing | harvesting | dormant' | 'planning
+  location: "string"';
   area: number;
   healthScore: number;
   yieldPrediction: number;
   aiAnalysis: CropAnalysis}
 interface FacilityPlan {"
   growthStage: 'seedling" | vegetativ'e | flower'ing | 'fruiting' | harvest
-  diseaseRisk: 'low | medium' | hi'gh | critica'l
-  nutrientDeficiency: "string[]";
+  diseaseRisk: 'low | medium' | 'hi'gh | critica'l
+  nutrientDeficiency: "string[]"';
   recommendations: string[]};
 interface FacilityPlan {;
   id: string
   location: string
-  type: 'sandy" | clay | loamy' | silty
-  ph: "number";
+  type: 'sandy" | clay | loamy' | 'silty
+  ph: "number"';
   moisture: number;
   temperature: number;
   nutrients: {;
@@ -75,7 +75,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [cropMonitoring, setCropMonitoring] = useState<CropMonitoring[]>([]</div>;
@@ -427,7 +427,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${";
                 selectedView === tab.id;
                   ? bg-gradient-to-r from-green-600 to-emerald-600 text-white;
-                    text-gray-300 hover text-white hover bg-white/10'`;
+                    text-gray-300 hover text-white hover bg-white/10'`
               }};
             ></div>;
               <span>{tab.icon}</span></div>;

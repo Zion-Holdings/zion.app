@@ -1,16 +1,16 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers'
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'facial_recognition" | fingerprint_scanning | voice_recognition | iris_scanning | gai't_analysis | 'behavioral_biometrics
-  status: 'active | inactive | training' | err'or | offline
-  accuracy: "number";
+  status: 'active | inactive | training' | 'err'or | offline
+  accuracy: "number"';
   falsePositiveRate: number;
   processingTime: number;
   aiAnalysis: BiometricAnalysis;};
@@ -24,9 +24,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  type: 'face_detection" | face_verification | face_identification' | emotion_recognition | age'_estimation' | gender_detection
+  type: 'face_detection" | face_verification | face_identification' | 'emotion_recognition | age'_estimation' | gender_detection
   status: 'active | inactive | training' | 'error | offline
-  confidence: "number";
+  confidence: number';
   livenessScore: number;
   aiOptimization: FacialOptimization;};
 interface FacilityPlan {;
@@ -55,9 +55,9 @@ interface FacilityPlan {;
   voiceId: string;
   title: string
   description: string
-  type: 'speaker_identification" | speaker_verification | voice_biometrics | emotion_detection' | language'_detection | accent_recognition
+  type: 'speaker_identification" | speaker_verification | voice_biometrics | emotion_detection' | 'language'_detection | accent_recognition
   status: 'active | inactive | traini'ng' | error | 'offline
-  samples: "number";
+  samples: "number"';
   confidence: number;
   aiAnalysis: VoiceAnalysis;};
 interface FacilityPlan {;
@@ -88,8 +88,8 @@ interface FacilityPlan {;
   title: string
   description: string
   category: 'hardware" | software | 'netw'ork | 'securi'ty | performance | 'maintena'nce
-  status: 'operational | maintenance | error' | 'offline
-  devices: "number";
+  status: 'operational | maintenance | error' | ''offline
+  devices: "number"';
   securityLevel: number;
   aiAnalysis: SecurityAnalysis;};
 interface FacilityPlan {;
@@ -113,7 +113,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neutr'a'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [biometricAuthentications, setBiometricAuthentications] = useState<BiometricAuthentication[]>([]</div>;

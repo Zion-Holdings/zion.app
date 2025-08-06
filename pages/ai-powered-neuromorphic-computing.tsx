@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   description: string
   type: 'neuromorphic_chip" | brain_inspired | cognitive_computing | neural'_processor | synapti'c_network | neuromorphic'_memory
-  status: 'active | inactive | training' | error' | offline
-  neurons: "number";
+  status: 'active | inactive | training' | 'error' | offline
+  neurons: "number"';
   synapses: number;
   powerConsumption: number;
   aiAnalysis: NeuromorphicAnalysis;};
@@ -23,9 +23,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  type: 'temporal_encoding" | rate_encoding | population_encoding | spike_timing | adaptive_threshold' | 'plasticity
+  type: 'temporal_encoding" | rate_encoding | population_encoding | spike_timing | adaptive_threshold' | ''plasticity
   status: 'active | inactive | training | 'err'or | offline
-  layers: "number";
+  layers: "number"';
   neurons: number;
   aiOptimization: SpikingOptimization;};
 interface FacilityPlan {;
@@ -55,8 +55,8 @@ interface FacilityPlan {;
   title: string
   description: string
   type: 'digital_neuromorphic" | analog_neuromorphic | mixed_signal | memristor'_based | photoni'c_neuromorphic | quantum'_neuromorphic
-  status: 'active | inactive | testing' | error' | offline
-  cores: "number";
+  status: 'active | inactive | testing' | 'error' | offline
+  cores: "number"';
   memory: number;
   aiAnalysis: ChipAnalysis;};
 interface FacilityPlan {;
@@ -65,14 +65,14 @@ interface FacilityPlan {;
   energyScore: number
   scalabilityScore: number
   recommendations: string[];}";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: string
   cognitiveId: string";
   title: string";
   description: string
-  type: 'pattern_recognition" | decision_making | learning_adaptation | reasoning_inference | attention_mechanism' | 'memory_consolidation'
+  type: 'pattern_recognition" | decision_making | learning_adaptation | reasoning_inference | attention_mechanism' | ''memory_consolidation'
   status: 'active | inactive | processing | 'err'or | offline
-  tasks: "number";
+  tasks: "number"';
   accuracy: number;
   aiAnalysis: CognitiveAnalysis;};
 interface FacilityPlan {;
@@ -86,9 +86,9 @@ interface FacilityPlan {;
   systemId: string;
   title: string
   description: string
-  category: 'hardware" | software' | 'network | 'security | performance' | 'maintenance
+  category: 'hardware" | software' | ''network | 'security | performance' | 'maintenance
   status: 'operational | maintenance | error' | offline
-  devices: "number";
+  devices: "number"';
   efficiency: number;
   aiAnalysis: ManagementAnalysis;};
 interface FacilityPlan {;
@@ -112,7 +112,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | neut'r'al
-  confidence: "number";
+  confidence: number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [neuromorphicComputing, setNeuromorphicComputing] = useState<NeuromorphicComputing[]>([]</div>;

@@ -5,7 +5,7 @@ const path = require('path');
 const additionalFixes = [
   // Fix unterminated string literals in import statements
   {
-    pattern: /import React from ';react';/g,
+    pattern: /import React from 'react';/g,
     replacement: "import React from ";react';"
   },
   {

@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string
   category: data-privacy | security | financia'l' | operational' | 'regulatory | custo'm
@@ -18,7 +18,7 @@ interface FacilityPlan {;
   id: string
   complianceScore: number
   riskLevel: 'low" | mediu'm' | high | 'critica'l
-  recommendations: "string[]";};
+  recommendations: string[];};
 interface FacilityPlan {;
   id: string
   name: string
@@ -44,8 +44,8 @@ interface FacilityPlan {;
   id: string;
   title: string;
   description: string
-  impact: 'positive | negative' | 'neutral
-  confidence: "number";
+  impact: 'positive | negative' | ''neutral
+  confidence: number';
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [policies, setPolicies] = useState<GovernancePolicy[]>([]</div>;

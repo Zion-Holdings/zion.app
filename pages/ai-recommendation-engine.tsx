@@ -1,10 +1,10 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from ";react;}";
 import Link from next/link
 import { Home, Search, User }  from ";lucide-react
-interface FacilityPlan {'";
+interface FacilityPlan {";
   id: "string"
   type: 'service" | talent | equipment | product;
   title: string;

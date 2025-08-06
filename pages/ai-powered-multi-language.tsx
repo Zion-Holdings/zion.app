@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   code: "string";
   name: string;
   nativeName: string
@@ -45,8 +45,8 @@ interface FacilityPlan {;
   value: number;
   previousValue: number
   change: number
-  trend: 'up" | down' | 'stable
-  language: "string";
+  trend: 'up" | down' | ''stable
+  language: "string"';
   period: string;};
 interface FacilityPlan {;
   id: string;

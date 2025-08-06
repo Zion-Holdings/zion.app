@@ -17,14 +17,14 @@ function fixFinalImports(directory) {
         // Fix unterminated import statements
         const importFixes = [
           // Fix missing closing quotes in imports
-          [/import type \{ AppProps \} from ';next\/app;/g, "import type { AppProps } from ';next/app';"],
-          [/import React from ';react;/g, "import React from ';react';"],
-          [/import React, \{ ([^}]+) \} from ';react;/g, "import React, { $1 } from ';react';"],
-          [/import \{ NextPage \} from next';/g, "import { NextPage } from ';next';"],
-          [/import Head from ';next\/head;/g, "import Head from ';next/head';"],
-          [/import Link from next\/link';/g, "import Link from ';next/link';"],
-          [/import \{ useRouter \} from next\/router';/g, "import { useRouter } from ';next/router';"],
-          [/import Image from ';next\/image;/g, "import Image from ';next/image';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/app';"],
+          [/import React from ';react;/g, "import React from 'react';"],
+          [/import React, \{ ([^}]+) \} from ';react;/g, "import React, { $1 } from 'react';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'\/head;/g, "import Head from 'next/head';"],
+          [/import Link from next\/link';/g, "import Link from 'next/link';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/router';"],
+          [/import type { NextApiRequest, NextApiResponse } from 'next'/image';"],
           
           // Fix CSS imports
           [/import ([^']+)\.css';/g, "import '$1.css';"]
@@ -40,7 +40,7 @@ function fixFinalImports(directory) {
         // Fix context imports with function callback
         content = content.replace(/import \{ ([^}]+) \} from ([^']+);/g, (match, imports, path) => {
           if (!path.startsWith("'") && !path.startsWith('"')) {
-            return `import { ${imports} } from ';${path}';`;
+            return `import { ${imports} } from ';${path}';`
           }
           return match;
         });
@@ -48,7 +48,7 @@ function fixFinalImports(directory) {
         // Fix default imports with function callback
         content = content.replace(/import ([^']+) from ([^']+);/g, (match, importName, path) => {
           if (!path.startsWith("'") && !path.startsWith('"')) {
-            return `import ${importName} from ';${path}';`;
+            return `import ${importName} from ';${path}';`
           }
           return match;
         });

@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string;
   type: city-planning | land-use-optimization | zoning-management | 'development-strategy' | sustainability-planning | 'growth-managemen't
-  status: 'active | planning | implementation' | completed
-  location: "string";
+  status: 'active | planning | implementation' | 'completed
+  location: "string"';
   population: number;
   areaCovered: number;
   efficiencyScore: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: urban-analytics | traffic-monitoring | environmental-monitoring | resource-optimizatio'n
-  status: 'active | processing | offline' | maintenance
-  location: "string";
+  status: 'active | processing | offline' | 'maintenance
+  location: "string"';
   dataPoints: number;
   accuracy: number;
   responseTime: number;
@@ -52,8 +52,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   type: development-projects | construction-management | sustainability-initiatives | community-development
-  status: 'active" | completed' | 'scheduled
-  metrics: "{";
+  status: 'active" | completed' | ''scheduled
+  metrics: "{"';
     totalProjects: number;
     completionRate: number;
     costSavings: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'planning" | infrastructure | 'developmen't | sustainability
   impact: 'positive | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalPopulation: number;
@@ -440,7 +440,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${"";
                 selectedView === tab.id'
                   ? bg-gradient-to-r from-indigo-600 to-blue-600 text-white";
-                    text-gray-300 hover text-white hover bg-white/10`;
+                    text-gray-300 hover text-white hover bg-white/10`
               }};
             ></div>
               <span>{tab.icon}</span></div>

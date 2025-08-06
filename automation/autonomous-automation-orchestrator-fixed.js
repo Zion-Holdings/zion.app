@@ -6,7 +6,7 @@ const cron = require('node-cron');
 
 class AutonomousAutomationOrchestrator {
   constructor() {
-    this.orchestratorId = `autonomous-orchestrator-${Date.now()}`;
+    this.orchestratorId = `autonomous-orchestrator-${Date.now()}`
     this.factories = new Map();
     this.automationFactories = new Map();
     this.continuousImprovement = new Map();
@@ -199,7 +199,7 @@ class AutonomousAutomationOrchestrator {
 
   createFactory(type, config) {
     try {
-      const factoryId = `${type}-${Date.now()}`;
+      const factoryId = `${type}-${Date.now()}`
       const factory = {
         id: factoryId,
         type: type,

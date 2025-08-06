@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   title: string
   type: 'blog" | service | product | 'landing | social' | 'email
-  status: 'draft | published | scheduled' | archived
-  author: "string";
+  status: 'draft | published | scheduled' | 'archived
+  author: "string"';
   createdAt: Date;
   updatedAt: Date;
   publishDate?: Date;
@@ -830,7 +830,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   </div>
 </div>
   </div> </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredContentManagementPage;))))'`</div>'

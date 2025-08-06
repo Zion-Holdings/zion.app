@@ -140,19 +140,19 @@ class ComprehensiveSyntaxFixer {
         // Fix strings with malformed quotes like 'resear'c'h' -> 'research'
         const stringPattern = /'([^']*?)'([^']*?)'/g;
         content = content.replace(stringPattern, (match, part1, part2) => {
-            return `'${part1}${part2}'`;
+            return `'${part1}${part2}'`
         });
         
         // Fix strings with single quotes in the middle
         const malformedPattern = /'([^']*?)'([a-zA-Z])'([^']*?)'/g;
         content = content.replace(malformedPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}'`;
+            return `'${part1}${letter}${part2}'`
         });
         
         // Fix complex malformed strings
         const complexPattern = /'([^']*?)'([a-zA-Z0-9_$])'([^']*?)'/g;
         content = content.replace(complexPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}'`;
+            return `'${part1}${letter}${part2}'`
         });
         
         return content;
@@ -170,7 +170,7 @@ class ComprehensiveSyntaxFixer {
             else if (value.includes('require')) varName = 'module';
             else if (value.includes('exec')) varName = 'command';
             
-            return `${declaration} ${varName} = ${value};`;
+            return `${declaration} ${varName} = ${value};`
         });
         
         return content;
@@ -180,13 +180,13 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed function calls like execAsync('np'm' run build')
         const execPattern = /execAsync\('([^']*?)'([^']*?)'([^']*?)'/g;
         content = content.replace(execPattern, (match, part1, part2, part3) => {
-            return `execAsync('${part1}${part2}${part3}')`;
+            return `execAsync('${part1}${part2}${part3}')`
         });
         
         // Fix other malformed function calls
         const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\('([^']*?)'([^']*?)'([^']*?)'/g;
         content = content.replace(funcPattern, (match, funcName, part1, part2, part3) => {
-            return `${funcName}('${part1}${part2}${part3}')`;
+            return `${funcName}('${part1}${part2}${part3}')`
         });
         
         return content;
@@ -196,7 +196,7 @@ class ComprehensiveSyntaxFixer {
         // Fix object properties with malformed strings
         const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*'([^']*?)'([^']*?)'/g;
         content = content.replace(propPattern, (match, propName, part1, part2) => {
-            return `${propName}: '${part1}${part2}'`;
+            return `${propName}: '${part1}${part2}'`
         });
         
         return content;
@@ -206,7 +206,7 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed array patterns
         const arrayPattern = /\[([^\]]*?)'([^']*?)'([^\]]*?)\]/g;
         content = content.replace(arrayPattern, (match, before, middle, after) => {
-            return `[${before}'${middle}'${after}]`;
+            return `[${before}'${middle}'${after}]`
         });
         
         return content;
@@ -216,7 +216,7 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed template literals
         const templatePattern = /`([^`]*?)'([^`]*?)'([^`]*?)`/g;
         content = content.replace(templatePattern, (match, part1, part2, part3) => {
-            return `\`${part1}${part2}${part3}\``;
+            return `\`${part1}${part2}${part3}\``
         });
         
         return content;
@@ -226,13 +226,13 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed JSX strings
         const jsxPattern = /"([^"]*?)"([^"]*?)"/g;
         content = content.replace(jsxPattern, (match, part1, part2) => {
-            return `"${part1}${part2}"`;
+            return `"${part1}${part2}"`
         });
         
         // Fix JSX attributes with malformed strings
         const jsxAttrPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)=["']([^"']*?)["']([^"']*?)["']/g;
         content = content.replace(jsxAttrPattern, (match, attrName, part1, part2) => {
-            return `${attrName}="${part1}${part2}"`;
+            return `${attrName}="${part1}${part2}"`
         });
         
         return content;
@@ -242,7 +242,7 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed import statements
         const importPattern = /import\s+([^'"]*?)['"]([^'"]*?)['"]([^'"]*?)['"]/g;
         content = content.replace(importPattern, (match, imports, module, rest) => {
-            return `import ${imports} from '${module}${rest}'`;
+            return `import ${imports} from '${module}${rest}'`
         });
         
         return content;
@@ -252,7 +252,7 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed export statements
         const exportPattern = /export\s+([^'"]*?)['"]([^'"]*?)['"]([^'"]*?)['"]/g;
         content = content.replace(exportPattern, (match, exports, module, rest) => {
-            return `export ${exports} from '${module}${rest}'`;
+            return `export ${exports} from '${module}${rest}'`
         });
         
         return content;
@@ -262,7 +262,7 @@ class ComprehensiveSyntaxFixer {
         // Fix malformed TypeScript syntax
         const tsPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^'"]*?)['"]([^'"]*?)['"]([^'"]*?)['"]/g;
         content = content.replace(tsPattern, (match, propName, type, part1, part2) => {
-            return `${propName}: ${type} '${part1}${part2}'`;
+            return `${propName}: ${type} '${part1}${part2}'`
         });
         
         return content;

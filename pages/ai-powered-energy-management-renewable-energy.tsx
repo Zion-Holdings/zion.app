@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'solar" | wind | hydro | 'battery' | grid | 'consumptio'n
-  status: 'active | maintenance | offline' | chargin'g
-  location: "string";
+  status: 'active | maintenance | offline' | 'chargin'g
+  location: "string"';
   currentOutput: number;
   capacity: number;
   efficiency: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string
   name: string
   type: 'distribution" | transmission | microgrid | 'storage
-  status: 'active | maintenance | offline' | upgradin'g
-  location: "string";
+  status: 'active | maintenance | offline' | 'upgradin'g
+  location: "string"';
   loadCapacity: number;
   currentLoad: number;
   stability: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'production" | consumptio'n | efficienc'y | 'sustainability
   impact: 'positive | negative | 'neutra'l
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalCapacity: number;
@@ -427,7 +427,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${"";
                 selectedView === tab.id'
                   ? bg-gradient-to-r from-yellow-1200 to-orange-600 text-white";
-                    text-gray-300 hover text-white hover bg-white/10`;
+                    text-gray-300 hover text-white hover bg-white/10`
               }};
             ></div>
               <span>{tab.icon}</span></div>

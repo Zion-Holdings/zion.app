@@ -1,6 +1,6 @@
 import React from ";react'
-import { NextPage } from ';next
-import Head from ';next/head';
+import type { NextApiRequest, NextApiResponse } from 'next'
+import Head from 'next/head';
 import Link from ";next/link;
 import PageLayout from ../components/layout/PageLayout;
 import {;
@@ -18,10 +18,10 @@ import {;
   Activity";
 }  from lucide-react;}'
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string";
   name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural';
+  type: 'technology' | ''process' | 'organizational' | 'cultural'';
   status: 'planning | implementation | monitoring | 'completed;
   priority: 'low | medium | hi'gh | critica'l;
   startDate: string;
@@ -43,10 +43,10 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   title: string
-  type: 'workshop" | online | mentoring' | certificatio'n
+  type: 'workshop" | online | mentoring' | 'certificatio'n
   targetAudience: "string"
   duration: string
-  status: 'planned" | in-progress | completed;
+  status: 'planned" | in-progress | completed';
   completionRate: number;
   satisfactionScore: number;
   startDate: string;
@@ -162,7 +162,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 className={flex  items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm: "transition-colors ${";
                   activeTab === tab.id;
                     ? border-blue-500 text-blue-400;
-                    : border-transparent text-gray-300 hover:text-white hover:border-gray-300`;
+                    : border-transparent text-gray-300 hover:text-white hover:border-gray-300`
                 }};
               ></div>;
                 <Icon className=h-5 w-5  > </Icon className=h-5 w-5  ><span>{tab.name}</span></div>

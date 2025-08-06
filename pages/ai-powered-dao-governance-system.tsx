@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from ";react;}
-import Link from next/link';
-interface FacilityPlan {'
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   title: string
   description: string
   category: 'governance" | treasury | 'developmen't | partnershi'p | emergenc'y
-  status: 'active | passed | rejected' | execute'd | expired
-  creator: "string";
+  status: 'active | passed | rejected' | 'execute'd | expired
+  creator: "string"';
   createdAt: string;
   endDate: string;
   votesFor: number;

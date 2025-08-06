@@ -16,8 +16,8 @@ function fixAllRemainingErrors(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import \{ createClient \} from ';@supabase\/supabase-js;/g, "import { createClient } from ';@supabase/supabase-js';");
-    content = content.replace(/import \{ NextApiRequest, NextApiResponse \} from ';next';}/g, "import { NextApiRequest, NextApiResponse } from ';next';");
+    content = content.replace(/import \{ createClient \} from ';@supabase\/supabase-js;/g, "import { createClient } from '@supabase/supabase-js';");
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'';");
     content = content.replace(/import fs from ';fs;/g, "import fs from ';fs';");
     content = content.replace(/import path from ';pa'th;/g, "import path from ';path';");
     
@@ -30,7 +30,7 @@ function fixAllRemainingErrors(filePath) {
     }
     
     if (filePath.includes('automation-status.ts')) {
-      content = content.replace(/import \{ NextApiRequest, NextApiResponse \} from ';next';}/g, "import { NextApiRequest, NextApiResponse } from ';next';");
+      content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'';");
       content = content.replace(/import fs from ';fs;/g, "import fs from ';fs';");
       content = content.replace(/import path from ';pa'th;/g, "import path from ';path';");
     }
@@ -50,8 +50,8 @@ function fixAllRemainingErrors(filePath) {
     
     // Fix cloud-services.tsx specifically
     if (filePath.includes('cloud-services.tsx')) {
-      content = content.replace(/import type \{ NextPage \} from ';next';}/g, "import type { NextPage } from ';next';");
-      content = content.replace(/import ModernLayout from ';\.\.\/components\/layout\/ModernLayout';}/g, "import ModernLayout from ';../components/layout/ModernLayout';");
+      content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'';");
+      content = content.replace(/import ModernLayout from ';\.\.\/components\/layout\/ModernLayout';}/g, "import ModernLayout from '../components/layout/ModernLayout';;");
       content = content.replace(/import Head from ";next\/head;}/g, "import Head from \"next/head\";");
       content = content.replace(/import Link from next\/link";/g, "import Link from \"next/link\";");
       content = content.replace(/;/g, "");

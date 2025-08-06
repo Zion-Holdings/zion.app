@@ -310,7 +310,7 @@ class IntelligentContentOptimizationAgent {
                 'Ready to learn more?'
             ];
             const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-            improved += `\n<p>${randomQuestion}</p>`;
+            improved += `\n<p>${randomQuestion}</p>`
         }
         
         // Add call-to-action if none exists
@@ -332,7 +332,7 @@ class IntelligentContentOptimizationAgent {
         const textBlocks = improved.split(/\n\s*\n/);
         improved = textBlocks.map(block => {
             if (block.trim() && !block.includes('<') && !block.includes('>')) {
-                return `<p>${block.trim()}</p>`;
+                return `<p>${block.trim()}</p>`
             }
             return block;
         }).join('\n\n');

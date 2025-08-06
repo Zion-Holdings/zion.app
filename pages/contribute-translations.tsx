@@ -1,6 +1,6 @@
 import React from ";react'
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import Link from ";next/link";
 const $1 = ['";
   { code: "en, name: English },"

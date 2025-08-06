@@ -6,7 +6,7 @@ const { spawn } = require(child_process'));
 
 class EnhancedSystemsLauncher {
   constructor() {
-    this.launcherId = `enhanced-launcher-${Date.now()}`;
+    this.launcherId = `enhanced-launcher-${Date.now()}`
     this.systems = new Map();
     this.processes = new Map();
     this.status = 'initializing;
@@ -358,7 +358,7 @@ class EnhancedSystemsLauncher {
   logSystemOutput(systemId, type, data) {
     const logFile = path.join(__dirname, logs', `${systemId}-${type}.log`);
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
+    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
     
     if (!fs.existsSync(path.dirname(logFile))) {
       fs.mkdirSync(path.dirname(logFile), { recursive: true });

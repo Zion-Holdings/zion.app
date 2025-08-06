@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
-  type: 'regression" | classification | clustering | time-series | anomaly-detection' | 'recommendation
+  type: 'regression" | classification | clustering | time-series | anomaly-detection' | ''recommendation
   status: "active | training | evaluating | deployed"
-  location: "string";
+  location: "string"';
   accuracy: number;
   precision: number;
   recall: number;
@@ -36,9 +36,9 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   name: string
-  type: 'cnn" | rnn | lstm | transformer | gan' | 'autoencoder
+  type: 'cnn" | rnn | lstm | transformer | gan' | ''autoencoder
   status: "active | processing | training | deployed"
-  location: "string";
+  location: "string"';
   layers: number;
   parameters: number;
   trainingTime: number;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   description: string
   category: 'model" | algorithm | 'deep-learning | optimization
   impact: 'positive | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 interface FacilityPlan {;
   totalModels: number;
@@ -455,7 +455,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               className={flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${";
                 selectedView === tab.id;
                   ? bg-gradient-to-r from-emerald-600 to-green-600 text-white;
-                    text-gray-300 hover text-white hover bg-white/10`;
+                    text-gray-300 hover text-white hover bg-white/10`
               }};
             ></div>;
               <span>{tab.icon}</span></div>;

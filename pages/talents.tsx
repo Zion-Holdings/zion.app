@@ -1,5 +1,5 @@
 
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head
 import Link from next/link'

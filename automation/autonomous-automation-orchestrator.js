@@ -5,7 +5,7 @@ const ResponsiveContentAgentsFactory = require('./responsive-content-agents-fact
 
 class AutonomousAutomationOrchestrator {
   constructor() {
-    this.orchestratorId = `autonomous-orchestrator-${Date.now()}`;
+    this.orchestratorId = `autonomous-orchestrator-${Date.now()}`
     this.factories = new Map();
     this.automationFactories = new Map();
     this.continuousImprovement = new Map();

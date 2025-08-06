@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string"
   name: string
   type: 'classification" | regression | clustering | 'nlp' | computer-vision | 'recommendatio'n
-  status: 'training | deployed | failed' | archive'd | monitoring
-  accuracy: "number";
+  status: 'training | deployed | failed' | 'archive'd | monitoring
+  accuracy: "number"';
   precision: number;
   recall: number;
   f1Score: number;
@@ -28,8 +28,8 @@ interface FacilityPlan {;
   id: string;
   modelName: string
   type: string
-  status: 'queued" | running | completed' | 'failed | cancelled
-  progress: "number";
+  status: 'queued" | running | completed' | ''failed | cancelled
+  progress: "number"';
   startTime: Date;
   endTime?: Date;
   dataset: string;
@@ -51,8 +51,8 @@ interface FacilityPlan {;
   current: number;
   target: number
   improvement: number
-  trend: 'up" | down' | 'stable
-  period: "string";};
+  trend: 'up" | down' | ''stable
+  period: "string"';};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [models, setModels] = useState<MLModel[]>([]);</div>;
   const [trainingJobs, setTrainingJobs] = useState<TrainingJob[]>([]);</div>;
@@ -336,7 +336,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 className={flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${;
                   selectedView === tab.id;
                     ? bg-purple-600 text-white;
-                    : text-gray-300 hover:text-white hover:bg-white/10`;
+                    : text-gray-300 hover:text-white hover:bg-white/10`
                 }};
               ></div>;
                 <span>{tab.icon}</span></div>
@@ -525,7 +525,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   </div>
 </div>
   </div> </div>
-  </div>';
+  </div>
 }
 ';}'";
 export default AIPoweredMachineLearningPage;)'`</div>'

@@ -106,10 +106,10 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
                     className=""""{w-full rounded-t transition-all duration-1000 ease-out ${'
                       colorClass.bg'";
                     }"}'
-                    style={{'";
+                    style="{{'";
                       height: "${(value / maxValue) * 100}%,"
                       animationDelay: '${index * 100}ms"}};
-                  ></div></div>;
+                  "></div></div>;
                   <span className=text-xs text-gray-400 mt-1>{chart.labels[index]}</span></div>
                 </div>
               ))}</div>
@@ -149,8 +149,8 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
                 className=""""{glass-dark border border-neon-blue/20 rounded-xl p-6 hover: "border-neon-blue/40 transition-all duration-500 transform hover:scale-105 ${"
                   isVisible ? opacity-100 translate-y-0 : opacity-0 translate-y-10'
                 }} `'";
-                style={{ animationDelay: "${index * 100}ms}}"";
-              >"</div>'
+                style="{{ animationDelay: "${index * 100}ms}}"";
+              ">"</div>'
                 <div className=flex items-center justify-between mb-4>`"</div>'
                   <div className=""""{w-12 h-12 rounded-lg ${colorClass.bg} flex items-center justify-center text-2xl  text-white}>";
                     {metric.icon}</div>'
@@ -181,16 +181,16 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
               className={${'
                 isVisible ? opacity-100 translate-y-0 : opacity-0 translate-y-10'
               } transition-all duration-500}`'
-              style={{ animationDelay: "${(index + metrics.length) * 100}ms}}"
-            >
+              style="{{ animationDelay: "${(index + metrics.length) * 100}ms}}"
+            ">
               {renderChart(chart)}</div>
             </div>";
           ))}</div>
         </div>";
         {/* Floating Elements */} </div>
         <div className=fixed top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-3xl animate-pulse></div>'</div>'
-        <div className=fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-3xl animate-pulse style={{ animationDelay: 1s }}'></div></div>
-        <div className=fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/5 rounded-full blur-3xl animate-pulse style={{ animationDelay: "2s }}></div></div>"
+        <div className=fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-3xl animate-pulse style="{{ animationDelay: 1s }}'"></div></div>
+        <div className=fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/5 rounded-full blur-3xl animate-pulse style="{{ animationDelay: "2s }}"></div></div>"
       </div></div>
     </div>
   )

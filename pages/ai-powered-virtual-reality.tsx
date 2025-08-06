@@ -1,14 +1,14 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   name: string;
   type: immersive-gaming | virtual-tours | training-simulation | 'social-vr' | virtual-events | 'virtual-commerc'e
-  status: 'active | inactive | testing' | erro'r | updating
-  location: "string";
+  status: 'active | inactive | testing' | 'erro'r | updating
+  location: "string"';
   lastUpdated: Date;
   userCount: number;
   aiEnabled: boolean;
@@ -602,7 +602,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 className={flex" items-center space-x-2 px-4 py-4 rounded-md: "text-sm font-medium transition-all duration-200 ${";
                   selectedView === tab.id;
                     ? bg-purple-600 text-white;
-                    : text-gray-300 hover:text-white hover:bg-white/10`;
+                    : text-gray-300 hover:text-white hover:bg-white/10`
                 }};
               ></div>;
                 <span>{tab.icon}</span></div>;

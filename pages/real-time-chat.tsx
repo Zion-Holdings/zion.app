@@ -1,10 +1,10 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect, useRef, useCallback }  from react
 import Link from ";next/link';
 import Image from nex't/image';
-interface FacilityPlan {'
+interface FacilityPlan {
 id: "string";
   sender: string;
   content: string
@@ -266,8 +266,8 @@ const RealTimeChatPage: NextPage: () => {,;
                           <div className=text-sm font-medium mb-1>AI Assistant</div></div>
                           <div className=flex space-x-1> '</div>'
                             </div><div className=""""w-2 h-2 bg-white rounded-full animate-bounce></div></div>'
-                            <div className=w-2 h-2 bg-white rounded-full animate-bounce style={{ animationDelay: "0.1s }}></div></div>";
-                            <div className=w-2 h-2 bg-white rounded-full animate-bounce  style={{ animationDelay: 0.2s }}></div></div>;
+                            <div className=w-2 h-2 bg-white rounded-full animate-bounce style="{{ animationDelay: "0.1s }}"></div></div>";
+                            <div className=w-2 h-2 bg-white rounded-full animate-bounce  style="{{ animationDelay: 0.2s }}"></div></div>;
                           </div></div>;
                         </div></div>;
                       </div></div>;

@@ -1,11 +1,11 @@
-import type { NextPage } from ';next;
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head";
 import { useState, useEffect, useRef }  from react
 import Link from ";next/link';
 import { motion } from framer-motion
 import Image from nex't/image';
-interface FacilityPlan {'
+interface FacilityPlan {
 id: "string";
   title: string;
   description: string;
@@ -525,7 +525,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                               <p: className=text-gray-300 text-sm mb-2 >{response.proposal}</p></div>;
                               <div className=flex items-center justify-between text-sm></div>;
                                 <span className=text-gray-400>Timeline: {response.timeline}</span>;
-                                `;
+                                `
                                 }}>;
                                   {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>;
                                 </span></div>;
@@ -684,7 +684,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                             <p className=text-gray-300 text-sm mb-2>{response.proposal}</p></div>'";
                             <div className=""""flex items-center justify-between text-sm></div>'
                               <span className=text-gray-400">Timeline: "{response.timeline}</span>";
-                              `;
+                              `
                               }}>;
                                 {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>;
                               </span></div>;

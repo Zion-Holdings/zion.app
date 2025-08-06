@@ -12,8 +12,8 @@ function fixSyntaxErrors(content, filePath) {
     const fileName = path.basename(filePath, path.extname(filePath));
     const title = fileName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     
-    fixed = `import React from ';react';
-import Head from ';next/head';
+    fixed = `import React from 'react';
+import Head from 'next/head';
 import Layout from ';../components/layout/Layout';
 
 export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}() {
@@ -29,14 +29,14 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
       </div>
     </Layout>
   );
-}`;
+}`
   }
   
   // Fix API files that have syntax errors
   if (filePath.includes('/api/') && (fixed.includes('export default') || fixed.includes('export async'))) {
     // Fix API route files
     if (!fixed.includes('export default')) {
-      fixed = `import { NextApiRequest, NextApiResponse } from ';next';
+      fixed = `import type { NextApiRequest, NextApiResponse } from 'next'';
 
 export default async;function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -44,14 +44,14 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {
     res.status(500).json({ error: ""Internal server error' });
   }
-}`;
+}`
     }
   }
   
   // Fix component files with syntax errors
   if (filePath.includes('/components/') && !fixed.includes('export default')) {
     const componentName = path.basename(filePath, path.extname(filePath));
-    fixed = `import React from ';react';
+    fixed = `import React from 'react';
 
 export default function;${componentName}() {
   return (
@@ -60,7 +60,7 @@ export default function;${componentName}() {
       <p>Component under development</p>
     </div>
   );
-}`;
+}`
   }
   
   // Fix specific patterns

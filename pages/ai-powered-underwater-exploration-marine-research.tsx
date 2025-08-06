@@ -1,15 +1,15 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
-interface FacilityPlan {'
+interface FacilityPlan {
   id: "string"
   name: string
-  type: 'ROV" | AUV | HOV | Glider' | Drone
+  type: 'ROV" | AUV | HOV | Glider' | 'Drone
   status: 'active | maintenance | decommissioned | 'deployed
-  depth: "number";
+  depth: "number"';
   mission: string;
   location: {;
     lat: number;
@@ -25,8 +25,8 @@ interface FacilityPlan {;
   id: string
   name: string
   type: 'biodiversity" | oceanography | climate | conservati'on | 'archaeology
-  status: 'active | planning | completed' | suspende'd
-  location: "string";
+  status: 'active | planning | completed' | 'suspende'd
+  location: "string"';
   duration: number;
   team: number;
   budget: number;
@@ -39,8 +39,8 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   name: string
-  type: 'temperature" | salinity | currents | pollution' | biodiversity
-  status: "active | maintenance | offline";
+  type: 'temperature" | salinity | currents | pollution' | 'biodiversity
+  status: "active | maintenance | offline"';
   depth: number;
   dataFrequency: string;
   aiAnalysis: MonitoringAnalysis};
@@ -73,7 +73,7 @@ interface FacilityPlan {;
   title: string
   description: string
   impact: 'positive" | negative | 'neutral
-  confidence: "number";
+  confidence: number;
   recommendations: string[]};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [robots, setRobots] = useState<UnderwaterRobot[]>([]</div>;

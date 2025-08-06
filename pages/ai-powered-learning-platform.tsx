@@ -1,9 +1,9 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+interface FacilityPlan {
   id: "string";
   title: string;
   description: string
@@ -30,8 +30,8 @@ interface FacilityPlan {;
   title: string;
   description: string
   duration: number; // minutes
-  type: 'video" | interactive | quiz' | project | ai-simulation
-  content: "string[]";
+  type: 'video" | interactive | quiz' | 'project | ai-simulation
+  content: "string[]"';
   aiFeatures: string[];
   progress: number;
   completed: boolean;};
@@ -66,7 +66,7 @@ interface FacilityPlan {;
   aiGenerated: boolean;}
 interface FacilityPlan {"
   skillLevel: 'novice" | beginner | intermedia't'e | advanced | 'exper't
-  confidence: "number";
+  confidence: number;
   strengths: string[];
   weaknesses: string[];
   recommendations: string[];

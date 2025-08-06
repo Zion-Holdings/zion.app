@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from ';next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface ContractTemplate {
   id: string;
   name: string;
-  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';
+  type: 'service' | ''employment' | 'partnership' | 'nda' | 'license'';
   category: string;
   description: string;
   clauses: string[];
