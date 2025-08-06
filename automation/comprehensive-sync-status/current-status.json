@@ -2,9 +2,9 @@
   "id": "comprehensive-sync-orchestrator",
   "version": "4.0.0",
   "status": "running",
-  "lastSync": null,
-  "syncCount": 0,
-  "errorCount": 34,
+  "lastSync": "2025-08-06T10:50:12.982Z",
+  "syncCount": 3,
+  "errorCount": 241,
   "fileWatchers": 7,
-  "timestamp": "2025-08-06T10:46:17.803Z"
+  "timestamp": "2025-08-06T10:54:20.671Z"
 }
