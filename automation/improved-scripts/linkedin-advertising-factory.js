@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,31 +13,31 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);a););''
-const path = require($2);'););
-const { v4: uuidv4 } = require(()')uu'id');''
-const result = require($2);t););''
+const result = require($2)a))''
+const path = require('path';
+const { v4: uuidv4 } = require(()')uu'id')''
+const result = require($2)t))''
 
 class AutomationSystem {
   constructor() {
@@ -46,7 +46,7 @@ class AutomationSystem {
       creativityIndex: 0.7,
       problemSolvingAbility: 0.8,
       innovationCapacity: 0.75
-    };
+    }
   }
 
   enhanceIntelligence() {
@@ -58,15 +58,15 @@ class AutomationSystem {
 
   startIntelligenceEnhancement() {
     setInterval(() => {
-      this.enhanceIntelligence();
-    }, 3000);
+      this.enhanceIntelligence()
+    }, 3000)
   } {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
     constructor() {
-        this.id = uuidv4();
+        this.id = uuidv4()
         this.name = LinkedIn Advertising Factory;
         this.type = ')linkedin-advertising-facto'ry''';
         this.status = 'active;''
@@ -74,8 +74,8 @@ class AutomationSystem {
         // Instagram credentials for LinkedIn advertising
         this.credentials = {
             username: "klebe\'r\'@ziontechgroup.com",""
-            password: "\'Krewjw#2425GHr45!\'\'\';
-        "};""
+            password: "\'Krewjw#2425GHr45!\'\'\'
+        "}""
         
         this.appUrl = \'https\'://ziontechgroup.com\'\'\'
         
@@ -120,19 +120,19 @@ class AutomationSystem {
                     targetingAccuracy: "\'high",""
                     lookalikePercentage: "1""
                 "}""
-            };
-        };
+            }
+        }
         
         this.schedules = {
             adCreation: "0 */4 * * *", // Every 4 hours""
             performanceAnalysis: "\'0 */2 * * *", // Every 2 hours""
             budgetOptimization: "\'0 */6 * * *", // Every 6 hours""
             audienceRefresh: "0 0 * * *\'", // Daily""
-            campaignOptimization: "\'0 */8 * * * // Every 8 hours\'\';
-        "};""
+            campaignOptimization: "\'0 */8 * * * // Every 8 hours\'\'
+        "}""
         
-        this.agentRegistry = [];
-        this.performanceMetrics = {};
+        this.agentRegistry = []
+        this.performanceMetrics = {}
     }
 
     /**
@@ -140,31 +140,31 @@ class AutomationSystem {
  * @returns {Promise<void>}
  */
 async execute() {
-        this.log(🏭 LinkedIn Advertising Factory executing..., 'info');
+        this.log(🏭 LinkedIn Advertising Factory executing..., 'info')
         
         try {
             // Phase 1: Analyze Current Campaigns
-            const asyncResult = await this.analyzeCurrentCampaigns();
+            const asyncResult = await this.analyzeCurrentCampaigns()
             
             // Phase 2: Create New Ad Campaigns
-            const asyncResult = await this.createNewAdCampaigns();
+            const asyncResult = await this.createNewAdCampaigns()
             
             // Phase 3: Optimize Existing Campaigns
-            await this.optimizeExistingCampaigns(campaignAnalysis);
+            await this.optimizeExistingCampaigns(campaignAnalysis)
             
             // Phase 4: Generate Ad Content
-            const asyncResult = await this.generateAdContent();
+            const asyncResult = await this.generateAdContent()
             
             // Phase 5: Deploy Campaigns
-            await this.deployCampaigns(newCampaigns, adContent);
+            await this.deployCampaigns(newCampaigns, adContent)
             
             // Phase 6: Monitor Performance
-            await this.monitorCampaignPerformance();
+            await this.monitorCampaignPerformance()
             
-            this.log(✅ LinkedIn Advertising Factory completed successfully, 'info');
+            this.log(✅ LinkedIn Advertising Factory completed successfully, 'info')
             
         } catch (error) {
-            console.error(\')❌ LinkedIn Advertising Factory failed:, error.message);\'\'
+            console.error(\')❌ LinkedIn Advertising Factory failed:, error.message)\'\'
             throw error;
         }
     }
@@ -174,14 +174,14 @@ async execute() {
  * @returns {Promise<void>}
  */
 async analyzeCurrentCampaigns() {
-        this.log(\'📊 Analyzing current LinkedIn campaigns..., 'info');\'\'
+        this.log(\'📊 Analyzing current LinkedIn campaigns..., 'info')\'\'
         
         return {
             activeCampaigns: "[]",""
             performanceMetrics: "{"},""
             budgetUtilization: "0",""
             recommendations: "[]""
-        "};""
+        "}""
     }
 
     /**
@@ -189,7 +189,7 @@ async analyzeCurrentCampaigns() {
  * @returns {Promise<void>}
  */
 async createNewAdCampaigns() {
-        this.log(🎯 Creating new LinkedIn ad campaigns..., 'info');
+        this.log(🎯 Creating new LinkedIn ad campaigns..., 'info')
         
         const result = [{
                 name: "\')ZionTech AI Solutions Campaign\'",""
@@ -213,9 +213,9 @@ async createNewAdCampaigns() {
                 audience: "innovation-leaders",""
                 budget: "400",""
                 duration: "28",""
-                adFormat: "\'DYNAMIC_AD\'\'\';
+                adFormat: "\'DYNAMIC_AD\'\'\'
             "}"";]
-        ];
+        ]
         
         return campaigns;
     }
@@ -225,7 +225,7 @@ async createNewAdCampaigns() {
  * @returns {Promise<void>}
  */
 async generateAdContent() {
-        this.log(\'✍️ Generating LinkedIn ad content..., 'info');\'\'
+        this.log(\'✍️ Generating LinkedIn ad content..., 'info')\'\'
         
         const result = {
             headlines: "[""
@@ -247,9 +247,9 @@ async generateAdContent() {
                 \'Ge\'t Started\',\'\'
                 \'Explore\' Solutions\',\'\'
                 Contact Us,
-                \'Discove\'r More\'\'\'];
-            ];
-        };
+                \'Discove\'r More\'\'\']
+            ]
+        }
         
         return adContent;
     }
@@ -259,7 +259,7 @@ async generateAdContent() {
  * @returns {Promise<void>}
  */
 async optimizeExistingCampaigns() {
-        this.log(\'⚡ Optimizing existing LinkedIn campaigns..., 'info');\'\'
+        this.log(\'⚡ Optimizing existing LinkedIn campaigns..., 'info')\'\'
         
         // Implement campaign optimization logic
         return true;
@@ -270,10 +270,10 @@ async optimizeExistingCampaigns() {
  * @returns {Promise<void>}
  */
 async deployCampaigns() {
-        this.log(🚀 Deploying LinkedIn ad campaigns..., 'info');
+        this.log(🚀 Deploying LinkedIn ad campaigns..., 'info')
         
         for (const campaign of campaigns) {
-            this.log("Deploying campaign: "${campaign.name"}", 'info');""
+            this.log("Deploying campaign: "${campaign.name"}", 'info')""
             // Implement campaign deployment logic
         }
         
@@ -285,22 +285,22 @@ async deployCampaigns() {
  * @returns {Promise<void>}
  */
 async monitorCampaignPerformance() {
-        this.log(📈 Monitoring LinkedIn campaign performance...', 'info'));''
+        this.log(📈 Monitoring LinkedIn campaign performance...', 'info'))''
         
         // Implement performance monitoring logic
         return true;
     }
 
     startContinuousOperation() {
-        this.log('🔄 Starting continuous LinkedIn advertising operation..., 'info');''
+        this.log('🔄 Starting continuous LinkedIn advertising operation..., 'info')''
         
         setInterval(async () => {
             try {
-                await this.execute();
+                await this.execute()
             } catch (error) {
-                console.error(LinkedIn Advertising Factory error: '), error);''
+                console.error(LinkedIn Advertising Factory error: '), error)''
             }
-        }, 4 * 60 * 60 * 300); // Every 4 hours
+        }, 4 * 60 * 60 * 300) // Every 4 hours
     }
 }
 
@@ -312,16 +312,16 @@ module.exports = LinkedInAdvertisingFactory;
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down linkedin-advertising-factory gracefully...');
+  console.log('🛑 Shutting down linkedin-advertising-factory gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})
 }
 }

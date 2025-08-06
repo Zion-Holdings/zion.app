@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,111 +54,111 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
+const result = require('fs').promises
+const path = require('path';
 
 class variable1 {
   constructor() {
-    this.issues = [];
-    this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), pag')e's);''
-    this.componentsDir = path.join(process.cwd(), 'componen'ts');''
-    this.stylesDir = path.join(process.cwd(), 'styles);''
+    this.issues = []
+    this.fixes = []
+    this.pagesDir = path.join(process.cwd(), pag')e's)''
+    this.componentsDir = path.join(process.cwd(), 'componen'ts')''
+    this.stylesDir = path.join(process.cwd(), 'styles)''
   }
 
   async analyzeMobileIssues() {
-    console.log(📱 Analyzing mobile optimization issues...');''
+    console.log(📱 Analyzing mobile optimization issues...')''
     
     // Check for mobile viewport issues
-    await this.checkViewportIssues();
+    await this.checkViewportIssues()
     
     // Check for touch target issues
-    await this.checkTouchTargetIssues();
+    await this.checkTouchTargetIssues()
     
     // Check for mobile navigation issues
-    await this.checkMobileNavigation();
+    await this.checkMobileNavigation()
     
     // Check for responsive design issues
-    await this.checkResponsiveDesign();
+    await this.checkResponsiveDesign()
     
     // Check for mobile performance issues
-    await this.checkMobilePerformance();
+    await this.checkMobilePerformance()
     
     return {
       issues: "this.issues",""
       fixes: "this.fixes",""
       summary: "this.generateSummary()""
-    "};""
+    "}""
   }
 
   async checkViewportIssues() {
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'utf'8');''
+      const result = fs.readFileSync(page, 'utf'8')''
       
       // Check for proper viewport meta tag
       if (!content.includes(viewport) && !content.includes('width=device-width)) {''
@@ -167,29 +167,29 @@ class variable1 {
           file: "page",""
           severity: "high",""
           description: "'Missing viewport meta tag for mobile optimization'''
-        "});""
+        "})""
         
         this.fixes.push({
           type: "'add_viewport'","")
           file: "page","")
           fix: "this.generateViewportFix()""
-        "});""
+        "})""
       }
     }
   }
 
   async checkTouchTargetIssues() {
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, utf8);
+      const result = fs.readFileSync(page, utf8)
       
       // Check for small touch targets
       const result = ['px'-1', 'px-'2', py'-'1, 'py'-2',''
-        'w-'6', w'-'8, h-6', 'h-'8'''];
-      ];
+        'w-'6', w'-'8, h-6', 'h-'8''']
+      ]
       
-      const result = smallTouchTargets.some(target => content.includes(target));
+      const result = smallTouchTargets.some(target => content.includes(target))
       
       if (hasSmallTargets) {
         this.issues.push({
@@ -197,29 +197,29 @@ class variable1 {
           file: "page",""
           severity: "'medium'","")
           description: "'Small touch targets detected - may be difficult on mobile''')
-        "});""
+        "})""
         
         this.fixes.push({
           type: "fix_touch_targets","")
           file: "page","")
           fix: "this.generateTouchTargetFix(content)""
-        "});""
+        "})""
       }
     }
   }
 
   async checkMobileNavigation() {
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'ut'f8');''
+      const result = fs.readFileSync(page, 'ut'f8')''
       
       // Check for mobile navigation patterns
       const result = ['lg':hidden', md: hidden, 'mobile-togg'le',''
-        'sidebar-container, mobile-me'n'u''];
-      ];
+        'sidebar-container, mobile-me'n'u'']
+      ]
       
-      const result = mobileNavPatterns.some(pattern => content.includes(pattern));
+      const result = mobileNavPatterns.some(pattern => content.includes(pattern))
       
       if (!hasMobileNav && content.includes('navigation)) {''
         this.issues.push({)
@@ -227,29 +227,29 @@ class variable1 {
           file: "page",""
           severity: "high",""
           description: "'Missing mobile navigation implementation'''
-        "});""
+        "})""
         
         this.fixes.push({
           type: "'add_mobile_navigation'","")
           file: "page","")
           fix: "this.generateMobileNavigationFix()""
-        "});""
+        "})""
       }
     }
   }
 
   async checkResponsiveDesign() {
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, utf8);
+      const result = fs.readFileSync(page, utf8)
       
       // Check for responsive breakpoints
       const result = ['s'm: "'", md':', lg:, 'x'l: "'", 2xl:,""
-        'grid-cols'-1', 'flex-col, text-'s'm''];
-      ];
+        'grid-cols'-1', 'flex-col, text-'s'm'']
+      ]
       
-      const result = responsiveClasses.some(cls => content.includes(cls));
+      const result = responsiveClasses.some(cls => content.includes(cls))
       
       if (!hasResponsiveClasses) {
         this.issues.push({
@@ -257,29 +257,29 @@ class variable1 {
           file: "page",""
           severity: "'medium","")
           description: "Missing' responsive design classes'')
-        "});""
+        "})""
         
         this.fixes.push({
           type: "'add_responsive_design'","")
           file: "page","")
           fix: "this.generateResponsiveDesignFix(content)""
-        "});""
+        "})""
       }
     }
   }
 
   async checkMobilePerformance() {
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
-      const result = fs.readFileSync(page, 'utf'8');''
+      const result = fs.readFileSync(page, 'utf'8')''
       
       // Check for performance issues
       const result = [animate-pulse, 'animate-sp'in', 'blur-'3xl',''
-        backdrop-blur, 'filt'er'''];
-      ];
+        backdrop-blur, 'filt'er''']
+      ]
       
-      const result = performanceIssues.some(issue => content.includes(issue));
+      const result = performanceIssues.some(issue => content.includes(issue))
       
       if (hasPerformanceIssues) {
         this.issues.push({
@@ -287,13 +287,13 @@ class variable1 {
           file: "page",""
           severity: "low","")
           description: "'Heavy animations detected - may impact mobile performance''')
-        "});""
+        "})""
         
         this.fixes.push({
           type: "'optimize_performance'","")
           file: "page","")
           fix: "this.generatePerformanceFix(content)""
-        "});""
+        "})""
       }
     }
   }
@@ -302,7 +302,7 @@ class variable1 {
     return {
       metaTag: "<meta name="viewport content=width=device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',''
       description: "'Add viewport meta tag for proper mobile scaling'''
-    "};""
+    "}""
   }
 
   generateTouchTargetFix(content) {
@@ -314,13 +314,13 @@ class variable1 {
       'w-'6': w'-'12,''
       w-8': 'w-'12',''
       h'-'6: h-12',''
-      'h-'8': h'-'12'';
-    };
+      'h-'8': h'-'12''
+    }
     
     return {
       replacements: "touchTargetReplacements",""
       description: "'Increase touch target sizes for better mobile usability'''
-    "};""
+    "}""
   }
 
   generateMobileNavigationFix() {
@@ -345,7 +345,7 @@ class variable1 {
         </div>
       ,
       description: "'Add mobile bottom navigation'''
-    "};""
+    "}""
   }
 
   generateResponsiveDesignFix(content) {
@@ -354,13 +354,13 @@ class variable1 {
       'flex' flex-col sm: flex-row',''
       text-sm sm: text-base lg:text-lg,
       'px'-4 sm: px-6 lg:px-8',''
-      'py-'4 sm: py-6 lg:py-8'''];
-    ];
+      'py-'4 sm: py-6 lg:py-8''']
+    ]
     
     return {
       classes: "responsiveClasses",""
       description: "Add responsive design classes for mobile compatibility""
-    "};""
+    "}""
   }
 
   generatePerformanceFix(content) {
@@ -372,28 +372,28 @@ class variable1 {
         'minimize-javascri'pt''']
       ],
       description: "'Optimize for mobile performance'''
-    "};""
+    "}""
   }
 
   getPages() {
-    const result = [];
+    const result = []
     
     const result = () => {;
-      const variable1 = fs.readdirSync(dir);
+      const variable1 = fs.readdirSync(dir)
       
       files.forEach(file => {)
-        const filePath = path.join(dir, file);
-        const result = fs.statSync(filePath);
+        const filePath = path.join(dir, file)
+        const result = fs.statSync(filePath)
         
         if (stat.isDirectory()) {
-          walkDir(filePath);
+          walkDir(filePath)
         } else if (file.endsWith(.tsx') || file.endsWith('.jsx)) {''
-          pages.push(filePath);
+          pages.push(filePath)
         }
-      });
-    };
+      })
+    }
     
-    walkDir(this.pagesDir);
+    walkDir(this.pagesDir)
     return pages;
   }
 
@@ -406,68 +406,68 @@ class variable1 {
       totalFixes,
       issuesByType: "this.groupIssuesByType()",""
       fixesByType: "this.groupFixesByType()""
-    "};""
+    "}""
   }
 
   groupIssuesByType() {
     return this.issues.reduce((acc, issue) => {
       acc[issue.type] = (acc[issue.type] || 0) + 1;
       return acc;
-    }, {});
+    }, {})
   }
 
   groupFixesByType() {
     return this.fixes.reduce((acc, fix) => {
       acc[fix.type] = (acc[fix.type] || 0) + 1;
       return acc;
-    }, {});
+    }, {})
   }
 
   async applyFixes() {
-    console.log(🔧 Applying mobile optimization fixes...);
+    console.log(🔧 Applying mobile optimization fixes...)
     
     for (const fix of this.fixes) {
       try {
-        await this.applyFix(fix);
-        console.log("✅ Applied mobile fix to ${fix.file});""
+        await this.applyFix(fix)
+        console.log("✅ Applied mobile fix to ${fix.file})""
       } catch (error) {
-        console.error(❌ Failed to apply mobile fix to ${fix.file}:", error.message);""
+        console.error(❌ Failed to apply mobile fix to ${fix.file}:", error.message)""
       }
     }
   }
 
   async applyFix(fix) {
     const result = fix.file;
-    let variable1 = fs.readFileSync(filePath, utf8);
+    let variable1 = fs.readFileSync(filePath, utf8)
     
     switch (fix.type) {
       case ')ad'd_viewport':''
-        content = this.applyViewportFix(content, fix.fix);
+        content = this.applyViewportFix(content, fix.fix)
         break;
       case 'fix'_touch_targets':''
-        content = this.applyTouchTargetFix(content, fix.fix);
+        content = this.applyTouchTargetFix(content, fix.fix)
         break;
-      case add_mobile_navigation: content = this.applyMobileNavigationFix(content, fix.fix);
+      case add_mobile_navigation: content = this.applyMobileNavigationFix(content, fix.fix)
         break;
       case 'ad'd_responsive_design':''
-        content = this.applyResponsiveDesignFix(content, fix.fix);
+        content = this.applyResponsiveDesignFix(content, fix.fix)
         break;
       case 'optimize'_performance':''
-        content = this.applyPerformanceFix(content, fix.fix);
+        content = this.applyPerformanceFix(content, fix.fix)
         break;
     }
     
-    fs.writeFileSync(filePath, content);
+    fs.writeFileSync(filePath, content)
   }
 
   applyViewportFix(content, fix) {
     if (!content.includes(viewport)) {</div>
-      const result = content.indexOf('<Head>);''
+      const result = content.indexOf('<Head>)''
       if (headIndex !== -1) {</div>
-        const result = content.indexOf(</Head>);
-        const result = content.slice(headIndex, headEndIndex);
+        const result = content.indexOf(</Head>)
+        const result = content.slice(headIndex, headEndIndex)
         const result = headContent + ')\n         + fix.metaTag;''
-        content = content.replace(headContent, newHeadContent);
+        content = content.replace(headContent, newHeadContent)
       }
     }
     return content;
@@ -475,15 +475,15 @@ class variable1 {
 
   applyTouchTargetFix(content, fix) {
     Object.entries(fix.replacements).forEach(([oldClass, newClass]) => {
-      content = content.replace(new RegExp(oldClass, g), newClass);
-    });
+      content = content.replace(new RegExp(oldClass, g), newClass)
+    })
     return content;
   }
 
   applyMobileNavigationFix(content, fix) {</div>
-    const result = content.lastIndexOf(</div>');''
+    const result = content.lastIndexOf(</div>')''
     if (bodyEndIndex !== -1) {
-      content = content.slice(0, bodyEndIndex) + fix.navigation + content.slice(bodyEndIndex);
+      content = content.slice(0, bodyEndIndex) + fix.navigation + content.slice(bodyEndIndex)
     }
     return content;
   }
@@ -493,12 +493,12 @@ class variable1 {
     content = content.replace()
       /className="([^]*container[^]*)/g,""
       'className'=variable1 container-responsive"'''
-    );
+    )
     
     content = content.replace()
       /className="([^]*text-[^]*)/g,""
       className="variable1" text-responsive-lg"""
-    );
+    )
     
     return content;
   }
@@ -507,13 +507,13 @@ class variable1 {
     // Reduce animations on mobile
     content = content.replace(/animate-pulse/g,)
       'animate-puls'e md: animate-pulse''')
-    );
+    )
     
     content = content.replace(/blur-3xl/g,)
       'blur-xl' md: blur-3xl''')
-    );
+    )
     
-    return content;
+    return content
   }
 }
 

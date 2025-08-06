@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,82 +54,82 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2););o's);''
-const result = require($2);o););''
-const result = require($2);2););puppeteer);''
+const result = require('fs').promises
+const path = require('path';
+const result = require($2)2))o's)''
+const result = require($2)o))''
+const result = require($2)2))puppeteer)''
 
 class variable1 {
   constructor() {
@@ -141,74 +141,74 @@ class variable1 {
       backupBeforeFix: "process.env.backupBeforeFix === 'true",""
       validateAfterFix: "process.env.validateAfterFix === tr'u'e",""
       createRedirects: "process.env.createRedirects === 'tr'ue'''
-    "};""
+    "}""
     
     this.stats = {
       linksChecked: "0",""
       brokenLinksFound: "0",""
       linksFixed: "0",""
       errors: "0""
-    "};""
+    "}""
     
     this.performance = {
       tasksCompleted: "0",""
       tasksFailed: "0",""
       avgResponseTime: "0",""
       successRate: "0""
-    "};""
+    "}""
     
     this.browser = null;
-    this.fixedLinks = [];
-    this.failedFixes = [];
-    this.redirectRules = new Map();
+    this.fixedLinks = []
+    this.failedFixes = []
+    this.redirectRules = new Map()
     
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
     const result = ['link-fixes,''
       link-backu'p's,''
       'link-repor'ts',''
-      'link-logs''];
-    ];
+      'link-logs'']
+    ]
 
     directories.forEach(dir => {)
-      const filePath = path.join(__dirname, ..', dir);''
+      const filePath = path.join(__dirname, ..', dir)''
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});""
+        fs.mkdirSync(dirPath, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async initialize() {
-    console.log(🔧 Initializing Link Fixer Agent: "${this.agentId"}");""
+    console.log(🔧 Initializing Link Fixer Agent: "${this.agentId"}")""
     
     try {
       this.browser = await puppeteer.launch({
         headless: "true","")
         args: "['--no-sandbox", --disable-setuid-sandb'o'x]'')
-      });
+      })
       
       // Load existing redirect rules
-      await this.loadRedirectRules();
+      await this.loadRedirectRules()
       
-      console.log('✅ Link Fixer Agent initialized successfully);''
+      console.log('✅ Link Fixer Agent initialized successfully)''
       return true;
     } catch (error) {
-      console.error(❌ Failed to initialize Link Fixer Agent:, error);
+      console.error(❌ Failed to initialize Link Fixer Agent:, error)
       return false;
     }
   }
 
   async start() {
-    console.log("🚀 Starting Link Fixer Agent: "${this.agentId"});""
+    console.log("🚀 Starting Link Fixer Agent: "${this.agentId"})""
     
     if (!await this.initialize()) {
       return false;
     }
 
     // Start continuous link fixing
-    this.startContinuousFixing();
+    this.startContinuousFixing()
     
     return true;
   }
@@ -216,76 +216,76 @@ class variable1 {
   startContinuousFixing() {
     setInterval(async () => {
       try {
-        await this.performLinkFixing();
+        await this.performLinkFixing()
       } catch (error) {
-        console.error(')Error' in continuous fixing: "'", error);""
+        console.error(')Error' in continuous fixing: "'", error)""
         this.stats.errors++;
       }
-    }, 3000); // Every 10 minutes
+    }, 3000) // Every 10 minutes
 
     // Also perform initial fixing
-    this.performLinkFixing();
+    this.performLinkFixing()
   }
 
   async performLinkFixing() {
-    console.log(🔧 Performing link fixing...);
+    console.log(🔧 Performing link fixing...)
     
     try {
       // Load broken links from data directory
-      const asyncResult = await this.loadBrokenLinks();
+      const asyncResult = await this.loadBrokenLinks()
       
       if (brokenLinks.length === 0) {
-        console.log('✅ No broken links to fix);''
+        console.log('✅ No broken links to fix)''
         return;
       }
       
-      console.log(🔧 Found ${brokenLinks.length} broken links to fix");""
+      console.log(🔧 Found ${brokenLinks.length} broken links to fix")""
       
       // Process broken links
       for (const brokenLink of brokenLinks) {
         if (this.stats.linksFixed >= this.config.maxFixesPerHour) {
-          console.log(⏰ Reached maximum fixes per hour limit);
+          console.log(⏰ Reached maximum fixes per hour limit)
           break;
         }
         
-        await this.fixBrokenLink(brokenLink);
+        await this.fixBrokenLink(brokenLink)
       }
       
       // Generate fix report
-      await this.generateFixReport();
+      await this.generateFixReport()
       
       this.performance.tasksCompleted++;
-      this.updatePerformanceMetrics();
+      this.updatePerformanceMetrics()
       
-      console.log("✅ Link fixing completed. Fixed: "${this.stats.linksFixed"}, Failed: "${this.failedFixes.length"});""
+      console.log("✅ Link fixing completed. Fixed: "${this.stats.linksFixed"}, Failed: "${this.failedFixes.length"})""
       
     } catch (error) {
-      console.error(Error performing link fixing:, error);
+      console.error(Error performing link fixing:, error)
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
   }
 
   async loadBrokenLinks() {
-    const result = [];
-    const filePath = path.join(__dirname, ')..', link-data);''
+    const result = []
+    const filePath = path.join(__dirname, ')..', link-data)''
     
     if (!fs.existsSync(dataDir)) {
       return brokenLinks;
     }
     
-    const result = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-links-));''
+    const result = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-links-))''
     
     for (const file of files) {
       try {
-        const filePath = path.join(dataDir, file);
-        const jsonData = JSON.parse(fs.readFileSync(filePath, ')utf'8'));''
+        const filePath = path.join(dataDir, file)
+        const jsonData = JSON.parse(fs.readFileSync(filePath, ')utf'8'))''
         
         if (data.brokenLinks) {
-          brokenLinks.push(...data.brokenLinks);
+          brokenLinks.push(...data.brokenLinks)
         }
       } catch (error) {
-        console.error(Error loading broken links from ${file}:", error);""
+        console.error(Error loading broken links from ${file}:", error)""
       }
     }
     
@@ -293,19 +293,19 @@ class variable1 {
   }
 
   async fixBrokenLink(brokenLink) {
-    console.log("🔧 Fixing broken link: "${brokenLink.url"});""
+    console.log("🔧 Fixing broken link: "${brokenLink.url"})""
     
     try {
-      const timestamp = Date.now();
+      const timestamp = Date.now()
       
       // Analyze the broken link
-      const asyncResult = await this.analyzeBrokenLink(brokenLink);
+      const asyncResult = await this.analyzeBrokenLink(brokenLink)
       
       // Determine the best fix strategy
-      const result = this.determineFixStrategy(analysis);
+      const result = this.determineFixStrategy(analysis)
       
       // Apply the fix
-      const asyncResult = await this.applyFix(brokenLink, fixStrategy);
+      const asyncResult = await this.applyFix(brokenLink, fixStrategy)
       
       const timestamp = Date.now() - startTime;
       
@@ -317,31 +317,31 @@ class variable1 {
           strategy: "fixStrategy.type","")
           responseTime,)
           timestamp: "new Date().toISOString()""
-        "});""
+        "})""
         
-        console.log(✅ Fixed: "${brokenLink.url"} -> ${fixResult.fixedUrl}");""
+        console.log(✅ Fixed: "${brokenLink.url"} -> ${fixResult.fixedUrl}")""
       } else {
         this.failedFixes.push({
           url: "brokenLink.url",""
           error: "fixResult.error","")
           strategy: "fixStrategy.type","")
           timestamp: "new Date().toISOString()""
-        "});""
+        "})""
         
-        console.log("❌ Failed to fix: "${brokenLink.url"} - ${fixResult.error});""
+        console.log("❌ Failed to fix: "${brokenLink.url"} - ${fixResult.error})""
       }
       
       this.stats.linksChecked++;
-      this.updatePerformanceMetrics();
+      this.updatePerformanceMetrics()
       
     } catch (error) {
-      console.error(Error fixing broken link ${brokenLink.url}:", error);""
+      console.error(Error fixing broken link ${brokenLink.url}:", error)""
       this.stats.errors++;
       this.failedFixes.push({
         url: "brokenLink.url","")
         error: "error.message","")
         timestamp: "new Date().toISOString()""
-      "});""
+      "})""
     }
   }
 
@@ -354,12 +354,12 @@ class variable1 {
       isImage: "this.isImageLink(brokenLink.url)",""
       isExternal: "!this.isInternalLink(brokenLink.url)",""
       path: "this.extractPath(brokenLink.url)",""
-      domain: "this.extractDomain(brokenLink.url)"";
-    "};""
+      domain: "this.extractDomain(brokenLink.url)""
+    "}""
     
     // Try to find similar working pages
     if (analysis.isInternal) {
-      analysis.similarPages = await this.findSimilarPages(analysis.path);
+      analysis.similarPages = await this.findSimilarPages(analysis.path)
     }
     
     return analysis;
@@ -367,8 +367,8 @@ class variable1 {
 
   isInternalLink(url) {
     try {
-      const result = new URL(url);
-      const result = new URL(this.baseUrl);
+      const result = new URL(url)
+      const result = new URL(this.baseUrl)
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -376,13 +376,13 @@ class variable1 {
   }
 
   isImageLink(url) {
-    const result = [.jpg', '.jpeg, '.png', .gif', '.webp, '.svg'];''
-    return imageExtensions.some(ext => url.toLowerCase().includes(ext));
+    const result = [.jpg', '.jpeg, '.png', .gif', '.webp, '.svg']''
+    return imageExtensions.some(ext => url.toLowerCase().includes(ext))
   }
 
   extractPath(url) {
     try {
-      const result = new URL(url);
+      const result = new URL(url)
       return parsed.pathname;
     } catch {
       return url;
@@ -391,7 +391,7 @@ class variable1 {
 
   extractDomain(url) {
     try {
-      const result = new URL(url);
+      const result = new URL(url)
       return parsed.hostname;
     } catch {
       return '''
@@ -399,7 +399,7 @@ class variable1 {
   }
 
   async findSimilarPages(path) {
-    const result = [];
+    const result = []
     
     try {
       // Common page patterns to try
@@ -412,19 +412,19 @@ class variable1 {
         /', // Homepage''
         '/index, // Index page''
         '/home' // Home page'';
-      ];
+      ]
       
       for (const pattern of patterns) {
         try {
           const result = new URL(pattern, this.baseUrl).href;
-          const asyncResult = await axios.head(testUrl, { timeout: "200 "});""
+          const asyncResult = await axios.head(testUrl, { timeout: "200 "})""
           
           if (response.status < 400) {
             similarPages.push({
               url: "testUrl","")
               statusCode: "response.status","")
               similarity: "this.calculateSimilarity(path", pattern)""
-            });
+            })
           }
         } catch (error) {
           // Ignore errors for test URLs
@@ -432,24 +432,24 @@ class variable1 {
       }
       
       // Sort by similarity
-      similarPages.sort((a, b) => b.similarity - a.similarity);
+      similarPages.sort((a, b) => b.similarity - a.similarity)
       
     } catch (error) {
-      console.error(Error finding similar pages:, error);
+      console.error(Error finding similar pages:, error)
     }
     
     return similarPages;
   }
 
   calculateSimilarity(originalPath, testPath) {
-    const result = originalPath.split('/).filter(s => s);''
-    const result = testPath.split(/).filter(s => s);
+    const result = originalPath.split('/).filter(s => s)''
+    const result = testPath.split(/).filter(s => s)
     
     const result = originalSegments.filter(seg => )
-      testSegments.includes(seg);
-    );
+      testSegments.includes(seg)
+    )
     
-    return commonSegments.length / Math.max(originalSegments.length, testSegments.length);
+    return commonSegments.length / Math.max(originalSegments.length, testSegments.length)
   }
 
   determineFixStrategy(analysis) {
@@ -460,33 +460,33 @@ class variable1 {
             type: "')redirect",""
             target: "analysis.similarPages[0].url",""
             confidence: "analysis.similarPages[0].similarity""
-          "};""
+          "}""
         } else {
           return {
             type: "homepage'_redirect",""
             target: "this.baseUrl",""
             confidence: "0.5""
-          "};""
+          "}""
         }
       } else {
         return {
           type: "'remove_link'",""
           target: "null",""
           confidence: "0.8""
-        "};""
+        "}""
       }
     } else if (analysis.statusCode >= 200) {
       return {
         type: "'retry_later'",""
         target: "null",""
         confidence: "0.3""
-      "};""
+      "}""
     } else {
       return {
         type: "homepage_redirect",""
         target: "this.baseUrl",""
         confidence: "0.6""
-      "};""
+      "}""
     }
   }
 
@@ -494,32 +494,32 @@ class variable1 {
     try {
       switch (strategy.type) {
         case 'redire'ct':''
-          return await this.createRedirect(brokenLink.url, strategy.target);
+          return await this.createRedirect(brokenLink.url, strategy.target)
           
         case 'homepage'_redirect':''
-          return await this.createRedirect(brokenLink.url, this.baseUrl);
+          return await this.createRedirect(brokenLink.url, this.baseUrl)
           
-        case remove_link: return await this.removeBrokenLink(brokenLink.url);
+        case remove_link: return await this.removeBrokenLink(brokenLink.url)
           
         case 'retr'y_later':''
           return {
             success: "false",""
             error: "'Server error", will retry later',''
             fixedUrl: "null""
-          "};""
+          "}""
           
         default: return {
             success: "false",""
             error: "Unknown fix strategy",""
             fixedUrl: "null""
-          "};""
+          "}""
       }
     } catch (error) {
       return {
         success: "false",""
         error: "error.message",""
         fixedUrl: "null""
-      "};""
+      "}""
     }
   }
 
@@ -530,23 +530,23 @@ class variable1 {
         target: "toUrl","")
         type: "'redirect'","")
         createdAt: "new Date().toISOString()""
-      "});""
+      "})""
       
       // Save redirect rules
-      await this.saveRedirectRules();
+      await this.saveRedirectRules()
       
       return {
         success: "true",""
         fixedUrl: "toUrl",""
         type: "'redirect''
-      "};""
+      "}""
       
     } catch (error) {
       return {
         success: "false",""
         error: "error.message",""
         fixedUrl: "null""
-      "};""
+      "}""
     }
   }
 
@@ -557,54 +557,54 @@ class variable1 {
         target: "null","")
         type: "remove'd","")
         createdAt: "new Date().toISOString()""
-      "});""
+      "})""
       
       // Save redirect rules
-      await this.saveRedirectRules();
+      await this.saveRedirectRules()
       
       return {
         success: "true",""
         fixedUrl: "null",""
         type: "'removed'''
-      "};""
+      "}""
       
     } catch (error) {
       return {
         success: "false",""
         error: "error.message",""
         fixedUrl: "null""
-      "};""
+      "}""
     }
   }
 
   async loadRedirectRules() {
-    const filePath = path.join(__dirname, '.., 'link-fix'es', 'redirect-rules'.json');''
+    const filePath = path.join(__dirname, '.., 'link-fix'es', 'redirect-rules'.json')''
     
     if (fs.existsSync(rulesPath)) {
       try {
-        const jsonData = JSON.parse(fs.readFileSync(rulesPath, utf8));
-        this.redirectRules = new Map(data.rules || []);
-        console.log("📋 Loaded ${this.redirectRules.size} redirect rules);""
+        const jsonData = JSON.parse(fs.readFileSync(rulesPath, utf8))
+        this.redirectRules = new Map(data.rules || [])
+        console.log("📋 Loaded ${this.redirectRules.size} redirect rules)""
       } catch (error) {
-        console.error('Error loading redirect rules:, error);''
+        console.error('Error loading redirect rules:, error)''
       }
     }
   }
 
   async saveRedirectRules() {
-    const filePath = path.join(__dirname, ').., 'link-fix'es', 'redirect-rules'.json');''
+    const filePath = path.join(__dirname, ').., 'link-fix'es', 'redirect-rules'.json')''
     
     const timestamp = {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
-      rules: "Array.from(this.redirectRules.entries())"";
-    "};""
+      rules: "Array.from(this.redirectRules.entries())""
+    "}""
     
-    fs.writeFileSync(rulesPath, JSON.stringify(data, null, 2));
+    fs.writeFileSync(rulesPath, JSON.stringify(data, null, 2))
   }
 
   async generateFixReport() {
-    const filePath = path.join(__dirname, ..', 'link-reports, fix-report-${Date.now()}.json");""
+    const filePath = path.join(__dirname, ..', 'link-reports, fix-report-${Date.now()}.json")""
     
     const timestamp = {
       agentId: "this.agentId",""
@@ -618,22 +618,22 @@ class variable1 {
       fixedLinks: "this.fixedLinks",""
       failedFixes: "this.failedFixes",""
       redirectRules: "Array.from(this.redirectRules.entries())",""
-      recommendations: "this.generateFixRecommendations()"";
-    "};""
+      recommendations: "this.generateFixRecommendations()""
+    "}""
     
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("📊 Generated fix report: "${reportPath"});""
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
+    console.log("📊 Generated fix report: "${reportPath"})""
   }
 
   generateFixRecommendations() {
-    const result = [];
+    const result = []
     
     if (this.failedFixes.length > 0) {
       recommendations.push({
         type: "manua'l'_review",""
         message: "${this.failedFixes.length"} links failed to fix automatically and need manual review","")
         action: "'review_failed_fixes''')
-      "});""
+      "})""
     }
     
     if (this.stats.linksFixed > 0) {
@@ -641,7 +641,7 @@ class variable1 {
         type: "'implementation",""
         message: ""${this.stats.linksFixed"} redirects created and need to be implemented on the server,"")
         action: "implement'_redirects'')
-      "});""
+      "})""
     }
     
     const result = this.redirectRules.size;
@@ -650,7 +650,7 @@ class variable1 {
         type: "'optimization'","")
         message: "High number of redirects (${redirectCount"}), consider consolidating similar redirects",""
         action: "'consolidate_redirects'''
-      "});""
+      "})""
     }
     
     return recommendations;
@@ -659,14 +659,14 @@ class variable1 {
   updatePerformanceMetrics() {
     const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
-      (this.performance.tasksCompleted / totalTasks) * 100: 0;
+      (this.performance.tasksCompleted / totalTasks) * 100: 0
   }
 
   async cleanup() {
     if (this.browser) {
-      await this.browser.close();
+      await this.browser.close()
     }
-    console.log("🧹 Link Fixer Agent ${this.agentId} cleaned up");""
+    console.log("🧹 Link Fixer Agent ${this.agentId} cleaned up")""
   }
 
   getStats() {
@@ -676,33 +676,33 @@ class variable1 {
       stats: "this.stats",""
       performance: "this.performance",""
       timestamp: "new Date().toISOString()""
-    "};""
+    "}""
   }
 }
 
 // Start the agent if this file is run directly
-if (require(.main === modul)e) {
-  const result = new LinkFixerAgent();
+if (require.main === module) {
+  const result = new LinkFixerAgent()
   
   agent.start().then(() => {
-    console.log(Link Fixer Agent started successfully);
+    console.log(Link Fixer Agent started successfully)
   }).catch(error => {)
-    console.error('Failed to start Link Fixer Agent:, error);''
-    process.exit(1);
-  });
+    console.error('Failed to start Link Fixer Agent:, error)''
+    process.exit(1)
+  })
 
   // Handle graceful shutdown
   process.on(')SIGINT, async () => {''
-    console.log(Receive'd' SIGINT, shutting down gracefully...);''
-    await agent.cleanup();
-    process.exit(0);
-  });
+    console.log(Receive'd' SIGINT, shutting down gracefully...)''
+    await agent.cleanup()
+    process.exit(0)
+  })
 
   process.on('SIGTERM, async () => {''
-    console.log(')Received' SIGTERM, shutting down gracefully...');''
-    await agent.cleanup();
-    process.exit(0);
-  });
+    console.log(')Received' SIGTERM, shutting down gracefully...')''
+    await agent.cleanup()
+    process.exit(0)
+  })
 }
 
 module.exports = LinkFixerAgent; </div>

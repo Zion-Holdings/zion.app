@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,86 +54,86 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-};
-const result = require($2);2););.promises
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}
+const result = require('fs').promises
 
-const path = require($2);'););
-const { spawn, execSync } = require(('chil')')d'_process);''
-const { EventEmitter } = require(('event)s);''
+const path = require('path';
+const { spawn, execSync } = require(('chil')')d'_process)''
+const { EventEmitter } = require(('event)s)''
 
 class AutomationSystem {
   constructor() {
-    this.capabilities = new Map();
+    this.capabilities = new Map()
     this.capabilityFactory = {
       createCapability: (name, type) => {
         return {
@@ -142,21 +142,21 @@ class AutomationSystem {
           isActive: true,
           performance: 0.8,
           evolutionCount: 0
-        };
+        }
       }
-    };
+    }
   }
 
   addCapability(name, type) {
-    const capability = this.capabilityFactory.createCapability(name, type);
-    this.capabilities.set(name, capability);
+    const capability = this.capabilityFactory.createCapability(name, type)
+    this.capabilities.set(name, capability)
   }
 
   expandCapabilities() {
     // Add new capabilities based on current performance
-    const newCapabilities = this.identifyNewCapabilities();
+    const newCapabilities = this.identifyNewCapabilities()
     for (const capability of newCapabilities) {
-      this.addCapability(capability.name, capability.type);
+      this.addCapability(capability.name, capability.type)
     }
   } {
   constructor() {
@@ -165,7 +165,7 @@ class AutomationSystem {
       creativityIndex: 0.7,
       problemSolvingAbility: 0.8,
       innovationCapacity: 0.75
-    };
+    }
   }
 
   enhanceIntelligence() {
@@ -177,8 +177,8 @@ class AutomationSystem {
 
   startIntelligenceEnhancement() {
     setInterval(() => {
-      this.enhanceIntelligence();
-    }, 3000);
+      this.enhanceIntelligence()
+    }, 3000)
   } {
   constructor() {
     this.evolution = {
@@ -186,7 +186,7 @@ class AutomationSystem {
       intelligence: 0.5,
       learningRate: 0.1,
       adaptationSpeed: 0.05
-    };
+    }
   }
 
   evolve() {
@@ -197,59 +197,59 @@ class AutomationSystem {
 
   startEvolution() {
     setInterval(() => {
-      this.evolve();
-    }, 200);
+      this.evolve()
+    }, 200)
   } {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
     this.performanceMetrics = {
       startTime: Date.now(),
       operationsCompleted: 0,
       averageResponseTime: 0
-    };
+    }
   } extends EventEmitter {
   constructor() {
-    super();
-    this.projectRoot = process.cwd();
-    this.factories = new Map();
-    this.processes = new Map();
+    super()
+    this.projectRoot = process.cwd()
+    this.factories = new Map()
+    this.processes = new Map()
     this.health = {
       totalFactories: "0",""
       activeFactories: "0",""
       failedFactories: "0",""
-      uptime: "Date.now()"";
-    "};""
+      uptime: "Date.now()""
+    "}""
     
     this.config = {
       maxFactories: "100",""
       healthCheckInterval: "200", // 30 seconds""
       restartThreshold: "3", // Restart after 3 failures""
-      maxRestarts: "5"";
-    "};""
+      maxRestarts: "5""
+    "}""
     
-    this.loadConfiguration();
-    this.initializeSystem();
+    this.loadConfiguration()
+    this.initializeSystem()
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    this.log("[${timestamp}] 🎼 ORCHESTRATOR: "${message"}, 'info');""
+    const timestamp = new Date().toISOString()
+    this.log("[${timestamp}] 🎼 ORCHESTRATOR: "${message"}, 'info')""
   }
 
   loadConfiguration() {
-    const filePath = path.join(__dirname, \')data, orchestrator-confi\'g\'.json);\'\'
+    const filePath = path.join(__dirname, \')data, orchestrator-confi\'g\'.json)\'\'
     if (fs.existsSync(configPath)) {
-      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'));\'\'
-      this.config = { ...this.config, ...savedConfig };
+      const jsonData = JSON.parse(fs.readFileSync(configPath, \'ut\'f8\'))\'\'
+      this.config = { ...this.config, ...savedConfig }
     }
   }
 
   saveConfiguration() {
-    const filePath = path.join(__dirname, \'data, orchestrator-confi\'g\'.json);\'\'
-    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
+    const filePath = path.join(__dirname, \'data, orchestrator-confi\'g\'.json)\'\'
+    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2))
   }
 
   /**
@@ -257,24 +257,24 @@ class AutomationSystem {
  * @returns {Promise<void>}
  */
 async initializeSystem() {
-    this.log(\'Initializing automation orchestrator...);\'\'
+    this.log(\'Initializing automation orchestrator...)\'\'
     
     try {
       // Create necessary directories
-      this.createDirectories();
+      this.createDirectories()
       
       // Load existing factories
-      await this.loadFactories();
+      await this.loadFactories()
       
       // Start health monitoring
-      this.startHealthMonitoring();
+      this.startHealthMonitoring()
       
       // Start continuous factory generation
-      this.startContinuousGeneration();
+      this.startContinuousGeneration()
       
-      this.log(\')Automation\' orchestrator initialized successfully\');\'\'
+      this.log(\')Automation\' orchestrator initialized successfully\')\'\'
     } catch (error) {
-      this.log(Error initializing system: "${error.message"}");""
+      this.log(Error initializing system: "${error.message"}")""
       throw error;
     }
   }
@@ -286,12 +286,12 @@ async initializeSystem() {
       automation/logs,
       \'automatio\'n/reports\',\'\';
       \'automation\'/pids\'\'\';]
-    ];
+    ]
     
     for (const dir of dirs) {
-      const filePath = path.join(this.projectRoot, dir);
+      const filePath = path.join(this.projectRoot, dir)
       if (!fs.existsSync(fullPath)) {
-        fs.mkdirSync(fullPath, { recursive: "true "});""
+        fs.mkdirSync(fullPath, { recursive: "true "})""
       }
     }
   }
@@ -301,22 +301,22 @@ async initializeSystem() {
  * @returns {Promise<void>}
  */
 async loadFactories() {
-    const filePath = path.join(this.projectRoot, automation, \'factori\'es\');\'\'
+    const filePath = path.join(this.projectRoot, automation, \'factori\'es\')\'\'
     if (!fs.existsSync(factoriesDir)) {
       return;
     }
     
     const filePath = fs.readdirSync(factoriesDir).filter(dir => {;)
-      return fs.statSync(path.join(factoriesDir, dir)).isDirectory();
-    });
+      return fs.statSync(path.join(factoriesDir, dir)).isDirectory()
+    })
     
     for (const factoryDir of factoryDirs) {
       const result = factoryDir;
-      const filePath = path.join(factoriesDir, factoryDir, "${factoryId}-config.json);""
+      const filePath = path.join(factoriesDir, factoryDir, "${factoryId}-config.json)""
       
       if (fs.existsSync(configPath)) {
         try {
-          const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'));\'\'
+          const jsonData = JSON.parse(fs.readFileSync(configPath, \'utf\'8\'))\'\'
           this.factories.set(factoryId, {
             id: "factoryId",""
             config: "config",""
@@ -324,15 +324,15 @@ async loadFactories() {
             failures: "0",""
             restarts: "0","")
             lastStarted: "null"")
-          "});""
+          "})""
         } catch (error) {
-          this.log(Error loading factory ${factoryId}: ${error.message}");""
+          this.log(Error loading factory ${factoryId}: ${error.message}")""
         }
       }
     }
     
     this.health.totalFactories = this.factories.size;
-    this.log("Loaded ${this.factories.size} factories);""
+    this.log("Loaded ${this.factories.size} factories)""
   }
 
   /**
@@ -340,55 +340,55 @@ async loadFactories() {
  * @returns {Promise<void>}
  */
 async startFactory() {
-    const result = this.factories.get(factoryId);
+    const result = this.factories.get(factoryId)
     if (!factory) {
-      throw new Error(Factory ${factoryId} not found");""
+      throw new Error(Factory ${factoryId} not found")""
     }
     
     if (factory.status = == \'runni\'ng\') {\'\';
-      this.log("Factory ${factoryId} is already running);""
+      this.log("Factory ${factoryId} is already running)""
       return;
     }
     
-    this.log(Starting factory ${factoryId}...");""
+    this.log(Starting factory ${factoryId}...")""
     
     try {
-      const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId);\'\'
-      const filePath = path.join(factoryDir, "${factoryId}-main.js);""
+      const filePath = path.join(this.projectRoot, \'automation, factori\'e\'s, factoryId)\'\'
+      const filePath = path.join(factoryDir, "${factoryId}-main.js)""
       
       if (!fs.existsSync(mainFile)) {
-        throw new Error(Main file not found: "${mainFile"}");""
+        throw new Error(Main file not found: "${mainFile"}")""
       }
       
       // Start factory process
       const result = spawn(\'node, [mainFile], {\'\'
-        cwd: "factoryDir","");
+        cwd: "factoryDir","")
         stdio: "[\')pipe", pi'p'e, 'pi'pe']'';
-      });
+      })
       
       // Store process reference
-      this.processes.set(factoryId, process);
+      this.processes.set(factoryId, process)
       
       // Set up event handlers
       process.on('error, (error) => {''
-        this.handleFactoryError(factoryId, error);
-      });
+        this.handleFactoryError(factoryId, error)
+      })
       
       process.on(exit, (code) => {
-        this.handleFactoryExit(factoryId, code);
-      });
+        this.handleFactoryExit(factoryId, code)
+      })
       
       // Update factory status
       factory.status = ')runni'ng''';
-      factory.lastStarted = new Date().toISOString();
+      factory.lastStarted = new Date().toISOString()
       factory.failures = 0;
       
       this.health.activeFactories++;
       
-      this.log("Factory ${factoryId} started successfully);""
+      this.log("Factory ${factoryId} started successfully)""
       
     } catch (error) {
-      this.handleFactoryError(factoryId, error);
+      this.handleFactoryError(factoryId, error)
     }
   }
 
@@ -397,33 +397,33 @@ async startFactory() {
  * @returns {Promise<void>}
  */
 async stopFactory() {
-    const result = this.factories.get(factoryId);
+    const result = this.factories.get(factoryId)
     if (!factory) {
       return;
     }
     
-    const result = this.processes.get(factoryId);
+    const result = this.processes.get(factoryId)
     if (process) {
-      this.log(Stopping factory ${factoryId}...");""
+      this.log(Stopping factory ${factoryId}...")""
       
       try {
-        process.kill(\'SIGTERM);\'\'
+        process.kill(\'SIGTERM)\'\'
         
         // Wait for graceful shutdown
         setTimeout(() => {
           if (process.killed = == false) {;
-            process.kill(SIGKILL);
+            process.kill(SIGKILL)
           }
-        }, 200);
+        }, 200)
         
         factory.status = \')stopp\'ed\'\'\';
         this.health.activeFactories--;
         
-        this.processes.delete(factoryId);
+        this.processes.delete(factoryId)
         
-        this.log("Factory ${factoryId} stopped);""
+        this.log("Factory ${factoryId} stopped)""
       } catch (error) {
-        this.log(Error stopping factory ${factoryId}: ${error.message}");""
+        this.log(Error stopping factory ${factoryId}: ${error.message}")""
       }
     }
   }
@@ -433,52 +433,52 @@ async stopFactory() {
  * @returns {Promise<void>}
  */
 async restartFactory() {
-    this.log("Restarting factory ${factoryId}...);""
+    this.log("Restarting factory ${factoryId}...)""
     
-    await this.stopFactory(factoryId);
-    await new Promise(resolve => setTimeout(resolve, 200)); // Wait 2 seconds
-    await this.startFactory(factoryId);
+    await this.stopFactory(factoryId)
+    await new Promise(resolve => setTimeout(resolve, 200)) // Wait 2 seconds
+    await this.startFactory(factoryId)
   }
 
   handleFactoryError(factoryId, error) {
-    const result = this.factories.get(factoryId);
+    const result = this.factories.get(factoryId)
     if (factory) {
       factory.failures++;
       factory.status = \'failed;\'\'
       this.health.failedFactories++;
       this.health.activeFactories--;
       
-      this.log(Factory ${factoryId} error: "${error.message"}");""
+      this.log(Factory ${factoryId} error: "${error.message"}")""
       
       // Auto-restart if within threshold
       if (factory.failures <= this.config.restartThreshold && factory.restarts < this.config.maxRestarts) {
         factory.restarts++;
         setTimeout(() => {
-          this.restartFactory(factoryId);
-        }, 200); // Wait 5 seconds before restart
+          this.restartFactory(factoryId)
+        }, 200) // Wait 5 seconds before restart
       }
     }
   }
 
   handleFactoryExit(factoryId, code) {
-    const result = this.factories.get(factoryId);
+    const result = this.factories.get(factoryId)
     if (factory) {
       factory.status = stopp\'e\'d;\'\'
       this.health.activeFactories--;
       
-      this.log("Factory ${factoryId} exited with code: "${code"});""
+      this.log("Factory ${factoryId} exited with code: "${code"})""
       
       // Remove process reference
-      this.processes.delete(factoryId);
+      this.processes.delete(factoryId)
     }
   }
 
   startHealthMonitoring() {
     setInterval(() => {
-      this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.performHealthCheck()
+    }, this.config.healthCheckInterval)
     
-    this.log(\'Health monitoring started);\'\'
+    this.log(\'Health monitoring started)\'\'
   }
 
   /**
@@ -486,7 +486,7 @@ async restartFactory() {
  * @returns {Promise<void>}
  */
 async performHealthCheck() {
-    this.log(\')Performing\' health check...\');\'\'
+    this.log(\')Performing\' health check...\')\'\'
     
     let variable1 = 0;
     let variable1 = 0;
@@ -495,7 +495,7 @@ async performHealthCheck() {
       totalCount++;
       
       if (factory.status = == running) {;
-        const result = this.processes.get(factoryId);
+        const result = this.processes.get(factoryId)
         if (process && !process.killed) {
           healthyCount++;
         } else {
@@ -506,16 +506,16 @@ async performHealthCheck() {
       }
     }
     
-    const result = totalCount > 0 ? (healthyCount / totalCount) * 100: 0;
+    const result = totalCount > 0 ? (healthyCount / totalCount) * 100: 0
     
-    this.log(Health check: "${healthyCount"}/${totalCount} factories healthy (${healthPercentage.toFixed(1)}%)");""
+    this.log(Health check: "${healthyCount"}/${totalCount} factories healthy (${healthPercentage.toFixed(1)}%)")""
     
     // Save health report
-    this.saveHealthReport(healthyCount, totalCount, healthPercentage);
+    this.saveHealthReport(healthyCount, totalCount, healthPercentage)
   }
 
   saveHealthReport(healthyCount, totalCount, healthPercentage) {
-    const filePath = path.join(this.projectRoot, \'automation, repor\'t\'s, \'health-repor\'t.json\');\'\'
+    const filePath = path.join(this.projectRoot, \'automation, repor\'t\'s, \'health-repor\'t.json\')\'\'
     const timestamp = {
       timestamp: "new Date().toISOString()",""
       health: "{""
@@ -526,18 +526,18 @@ async performHealthCheck() {
         failedFactories: "this.health.failedFactories""
       "},""
       uptime: "Date.now() - this.health.uptime","";
-      config: "this.config"";
-    "};""
+      config: "this.config""
+    "}""
     
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
   }
 
   startContinuousGeneration() {
     setInterval(async () => {
-      await this.generateNewFactories();
-    }, 200); // Every 5 minutes
+      await this.generateNewFactories()
+    }, 200) // Every 5 minutes
     
-    this.log(\'Continuous factory generation started);\'\'
+    this.log(\'Continuous factory generation started)\'\'
   }
 
   /**
@@ -545,7 +545,7 @@ async performHealthCheck() {
  * @returns {Promise<void>}
  */
 async generateNewFactories() {
-    this.log(Generating new automation factories...);
+    this.log(Generating new automation factories...)
     
     try {
       // Check if we need more factories</div>
@@ -553,20 +553,20 @@ async generateNewFactories() {
         const result = [\')content-automation-facto\'ry\',\'\'
           \'marketing-automation-factory,\'\';
           development-automation-facto\'r\'y\'\';]
-        ];
+        ]
         
-        const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
+        const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)]
         
         // Generate new factory
-        const result = require($2);s););\'\'
-        const result = new factoryGenerator();
+        const result = require($2)s))\'\'
+        const result = new factoryGenerator()
         
         const asyncResult = await generator.generateAutomationFactory(randomType, {)
           maxOutputs: "Math.floor(Math.random() * 300) + 100",""
           qualityThreshold: "Math.random() * 0.5 + 0.5",""
           autoImprove: "true","";
-          monitoring: "true"";
-        "});""
+          monitoring: "true""
+        "})""
         
         // Add to orchestrator
         const timestamp = {
@@ -578,19 +578,19 @@ async generateNewFactories() {
           status: "stopped",""
           failures: "0",""
           restarts: "0","";
-          lastStarted: "null"";
-        "};""
+          lastStarted: "null""
+        "}""
         
-        this.factories.set(factoryId, factory);
+        this.factories.set(factoryId, factory)
         this.health.totalFactories++;
         
         // Start the new factory
-        await this.startFactory(factoryId);
+        await this.startFactory(factoryId)
         
-        this.log("Generated and started new factory: "${factoryId"});""
+        this.log("Generated and started new factory: "${factoryId"})""
       }
     } catch (error) {
-      this.log(Error generating new factories: "${error.message"}");""
+      this.log(Error generating new factories: "${error.message"}")""
     }
   }
 
@@ -599,16 +599,16 @@ async generateNewFactories() {
  * @returns {Promise<void>}
  */
 async startAllFactories() {
-    this.log(Startin\')g all factories...\');\'\'
+    this.log(Startin\')g all factories...\')\'\'
     
     for (const [factoryId, factory] of this.factories) {
       if (factory.status !== \'running) {\'\'
-        await this.startFactory(factoryId);
-        await new Promise(resolve => setTimeout($1, 200)); // Wait 1 second between starts
+        await this.startFactory(factoryId)
+        await new Promise(resolve => setTimeout($1, 200)) // Wait 1 second between starts
       }
     }
     
-    this.log(Al\'l\' factories started);\'\'
+    this.log(Al\'l\' factories started)\'\'
   }
 
   /**
@@ -616,15 +616,15 @@ async startAllFactories() {
  * @returns {Promise<void>}
  */
 async stopAllFactories() {
-    this.log(\'Stopping all factories...);\'\'
+    this.log(\'Stopping all factories...)\'\'
     
     for (const [factoryId, factory] of this.factories) {
       if (factory.status = == \')running) {\'\';
-        await this.stopFactory(factoryId);
+        await this.stopFactory(factoryId)
       }
     }
     
-    this.log(Al\'l\' factories stopped);\'\'
+    this.log(Al\'l\' factories stopped)\'\'
   }
 
   getStatus() {
@@ -642,7 +642,7 @@ async stopAllFactories() {
         restarts: "factory.restarts",""
         lastStarted: "factory.lastStarted"")
       "}))"";
-    };
+    }
   }
 
   /**
@@ -650,23 +650,23 @@ async stopAllFactories() {
  * @returns {Promise<void>}
  */
 async start() {
-    this.log(\'Starting automation orchestrator...);\'\'
+    this.log(\'Starting automation orchestrator...)\'\'
     
     try {
-      await this.initializeSystem();
-      await this.startAllFactories();
+      await this.initializeSystem()
+      await this.startAllFactories()
       
-      this.log(Automation orchestrator started successfully);
+      this.log(Automation orchestrator started successfully)
       
       // Keep the process running
       process.on(\')SIGI\'NT\', async () => {\'\'
-        this.log(\'Shutting\' down orchestrator...\');\'\'
-        await this.stopAllFactories();
-        process.exit(0);
-      });
+        this.log(\'Shutting\' down orchestrator...\')\'\'
+        await this.stopAllFactories()
+        process.exit(0)
+      })
       
     } catch (error) {
-      this.log("Error starting orchestrator: "${error.message"}");""
+      this.log("Error starting orchestrator: "${error.message"}")""
       throw error;
     }
   }
@@ -676,8 +676,8 @@ module.exports = AutomationOrchestrator;
 
 // Auto-start if run directly
 if (require(.main = == modul)e) {;
-  const result = new AutomationOrchestrator();
-  orchestrator.start().catch(console.error);
+  const result = new AutomationOrchestrator()
+  orchestrator.start().catch(console.error)
 } </div>
 }
 }

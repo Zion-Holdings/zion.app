@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,35 +13,35 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);a););''
-const path = require($2);'););
-const { v4: uuidv4 } = require(()')uu'id');''
-const result = require($2);t););''
+const result = require($2)a))''
+const path = require('path';
+const { v4: uuidv4 } = require(()')uu'id')''
+const result = require($2)t))''
 
 class variable1 {
     constructor() {
-        this.id = uuidv4();
+        this.id = uuidv4()
         this.name = LinkedIn Ad Manager Agent;
         this.type = ')linkedin-ad-manag'er'''
         this.status = 'active;''
@@ -49,7 +49,7 @@ class variable1 {
         this.credentials = {
             username: "klebe'r'@ziontechgroup.com",""
             password: "'Krewjw#2425GHr45!'''
-        "};""
+        "}""
         
         this.appUrl = 'https'://ziontechgroup.com'''
         
@@ -58,56 +58,56 @@ class variable1 {
             'audience-targeting,''
             budget-optimizati'o'n,''
             'performance-tracki'ng''']
-        ];
+        ]
         
         this.schedules = {
             adCreation: "'0 */4 * * *",""
             performanceAnalysis: "0 */2 * * *'",""
             budgetOptimization: "0 */6 * * *'''
-        "};""
+        "}""
     }
 
     async execute() {
-        console.log('🎯 LinkedIn Ad Manager Agent executing...);''
+        console.log('🎯 LinkedIn Ad Manager Agent executing...)''
         
         try {
             // Phase 1: Analyze Current Campaigns
-            await this.analyzeCurrentCampaigns();
+            await this.analyzeCurrentCampaigns()
             
             // Phase 2: Create New Ads
-            await this.createNewAds();
+            await this.createNewAds()
             
             // Phase 3: Optimize Budget Allocation
-            await this.optimizeBudgetAllocation();
+            await this.optimizeBudgetAllocation()
             
             // Phase 4: Monitor Performance
-            await this.monitorPerformance();
+            await this.monitorPerformance()
             
-            console.log(✅ LinkedIn Ad Manager Agent completed successfully);
+            console.log(✅ LinkedIn Ad Manager Agent completed successfully)
             
         } catch (error) {
-            console.error(❌ LinkedIn Ad Manager Agent failed: "')", error.message);""
+            console.error(❌ LinkedIn Ad Manager Agent failed: "')", error.message)""
             throw error;
         }
     }
 
     async analyzeCurrentCampaigns() {
-        console.log(📊 Analyzing current LinkedIn ad campaigns...);
+        console.log(📊 Analyzing current LinkedIn ad campaigns...)
         
         const result = {
             activeCampaigns: "0",""
             totalSpend: "0",""
             averageCTR: "0",""
             averageCPC: "0",""
-            recommendations: "[]"";
-        "};""
+            recommendations: "[]""
+        "}""
         
         // Implement campaign analysis logic
         return analysis;
     }
 
     async createNewAds() {
-        console.log(✍️ Creating new LinkedIn ads...);
+        console.log(✍️ Creating new LinkedIn ads...)
         
         const result = [{
                 name: "AI Solutions Ad",""
@@ -132,16 +132,16 @@ class variable1 {
                 cta: "Explore Solutions",""
                 audience: "'innovation-leaders'",""
                 budget: "180""
-            "}""];
-        ];
+            "}""]
+        ]
         
         for (const template of adTemplates) {
-            await this.createAd(template);
+            await this.createAd(template)
         }
     }
 
     async createAd(template) {
-        console.log("Creating ad: "${template.name"});""
+        console.log("Creating ad: "${template.name"})""
         
         // Implement ad creation logic
         const result = {
@@ -153,47 +153,47 @@ class variable1 {
             audience: "template.audience",""
             budget: "template.budget",""
             status: "'active",""
-            createdAt: "moment().toISOString()"";
-        "};""
+            createdAt: "moment().toISOString()""
+        "}""
         
         // Save ad data
-        await this.saveAdData(adData);
+        await this.saveAdData(adData)
         
         return adData;
     }
 
     async optimizeBudgetAllocation() {
-        console.log(💰 Optimizing budget allocation...);
+        console.log(💰 Optimizing budget allocation...)
         
         // Implement budget optimization logic
         return true;
     }
 
     async monitorPerformance() {
-        console.log('📈 Monitoring ad performance...);''
+        console.log('📈 Monitoring ad performance...)''
         
         // Implement performance monitoring logic
         return true;
     }
 
     async saveAdData(adData) {
-        const filePath = path.join(__dirname, ../data/linkedin-ads);
-        await fs.ensureDir(adsDir);
+        const filePath = path.join(__dirname, ../data/linkedin-ads)
+        await fs.ensureDir(adsDir)
         
-        const filePath = path.join(adsDir, ${adData.id}.json");""
-        await fs.writeJson(filePath, adData);
+        const filePath = path.join(adsDir, ${adData.id}.json")""
+        await fs.writeJson(filePath, adData)
     }
 
     startContinuousOperation() {
-        console.log(🔄 Starting continuous LinkedIn ad management...'));''
+        console.log(🔄 Starting continuous LinkedIn ad management...'))''
         
         setInterval(async () => {
             try {
-                await this.execute();
+                await this.execute()
             } catch (error) {
-                console.error('LinkedIn' Ad Manager Agent error: ', error);''
+                console.error('LinkedIn' Ad Manager Agent error: ', error)''
             }
-        }, 4 * 60 * 60 * 300); // Every 4 hours
+        }, 4 * 60 * 60 * 300) // Every 4 hours
     }
 }
 

@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,61 +54,61 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require($2);2););.promises;
-const path = require($2);'););
-const { spawn, exec } = require(('child_process)');
-const { promisify } = require(('util)');
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}const fs = require('fs').promises;
+const path = require('path';
+const { spawn, exec } = require(('child_process)')
+const { promisify } = require(('util)')
 
-const execAsync = promisify(exec);
+const execAsync = promisify(exec)
 
 class Intelligence-automationMonitor {
   constructor() {
     this.factoryType = 'intelligence-automation';
-    this.capabilities = ["machine-learning","predictive-analytics","natural-language-processing","pattern-recognition"];
+    this.capabilities = ["machine-learning","predictive-analytics","natural-language-processing","pattern-recognition"]
     this.intelligenceLevel = 0.95;
     this.evolutionRate = 0.25;
     this.isRunning = false;
-    this.logs = [];
+    this.logs = []
     this.healthMetrics = {
       overallHealth: 1.0,
       capabilityHealth: new Map(),
       lastCheck: null,
       uptime: 0
-    };
+    }
     
-    this.initializeMonitor();
+    this.initializeMonitor()
   }
 
   async initializeMonitor() {
-    console.log(`📊 Initializing ${this.factoryType} monitor...`);
+    console.log(`📊 Initializing ${this.factoryType} monitor...`)
     
     try {
-      this.startMonitoring();
+      this.startMonitoring()
       
       this.isRunning = true;
-      console.log(`✅ ${this.factoryType} monitor initialized successfully`);
+      console.log(`✅ ${this.factoryType} monitor initialized successfully`)
     } catch (error) {
-      console.error(`❌ Error initializing ${this.factoryType} monitor: `, error);
+      console.error(`❌ Error initializing ${this.factoryType} monitor: `, error)
       throw error;
     }
   }
@@ -116,48 +116,48 @@ class Intelligence-automationMonitor {
   startMonitoring() {
     setInterval(async () => {
       if (this.isRunning) {
-        await this.checkHealth();
+        await this.checkHealth()
       }
-    }, 200);
+    }, 200)
   }
 
   async checkHealth() {
-    console.log(`🏥 Checking health of ${this.factoryType} factory...`);
+    console.log(`🏥 Checking health of ${this.factoryType} factory...`)
     
-    const healthResults = [];
+    const healthResults = []
     let overallHealth = 1.0;
     
     for (const capability of this.capabilities) {
       try {
-        const scriptPath = path.join(__dirname, `${this.factoryType}-${capability}-automation.js`);
+        const scriptPath = path.join(__dirname, `${this.factoryType}-${capability}-automation.js`)
         
-        const scriptExists = await fs.access(scriptPath).then(() => true).catch(() => false);
+        const scriptExists = await fs.access(scriptPath).then(() => true).catch(() => false)
         
         if (scriptExists) {
           try {
-            const automation = require($2);h););
-            const status = await automation.getStatus(');
+            const automation = require($2)h))
+            const status = await automation.getStatus(')
             
             const health = {
               capability,
               status: 'healthy',
               isRunning: status.isRunning,
               performance: status.performanceMetrics,
-              lastCheck: new Date();
-            };
+              lastCheck: new Date()
+            }
             
-            healthResults.push(health);
-            this.healthMetrics.capabilityHealth.set(capability, health);
+            healthResults.push(health)
+            this.healthMetrics.capabilityHealth.set(capability, health)
           } catch (error) {
             const health = {
               capability,
               status: 'error',
               error: error.message,
-              lastCheck: new Date();
-            };
+              lastCheck: new Date()
+            }
             
-            healthResults.push(health);
-            this.healthMetrics.capabilityHealth.set(capability, health);
+            healthResults.push(health)
+            this.healthMetrics.capabilityHealth.set(capability, health)
             overallHealth -= 0.1;
           }
         } else {
@@ -165,63 +165,63 @@ class Intelligence-automationMonitor {
             capability,
             status: 'missing',
             error: 'Script not found',
-            lastCheck: new Date();
-          };
+            lastCheck: new Date()
+          }
           
-          healthResults.push(health);
-          this.healthMetrics.capabilityHealth.set(capability, health);
+          healthResults.push(health)
+          this.healthMetrics.capabilityHealth.set(capability, health)
           overallHealth -= 0.1;
         }
       } catch (error) {
-        console.error(`❌ Error checking capability ${capability}:`, error);
+        console.error(`❌ Error checking capability ${capability}:`, error)
         
         const health = {
           capability,
           status: 'error',
           error: error.message,
-          lastCheck: new Date();
-        };
+          lastCheck: new Date()
+        }
         
-        healthResults.push(health);
-        this.healthMetrics.capabilityHealth.set(capability, health);
+        healthResults.push(health)
+        this.healthMetrics.capabilityHealth.set(capability, health)
         overallHealth -= 0.1;
       }
     }
     
-    this.healthMetrics.overallHealth = Math.max(0, overallHealth);
-    this.healthMetrics.lastCheck = new Date();
+    this.healthMetrics.overallHealth = Math.max(0, overallHealth)
+    this.healthMetrics.lastCheck = new Date()
     
-    this.log(`Health check completed: ${this.healthMetrics.overallHealth.toFixed(2)} overall health`, 'info');
-    await this.saveHealthMetrics(healthResults);
+    this.log(`Health check completed: ${this.healthMetrics.overallHealth.toFixed(2)} overall health`, 'info')
+    await this.saveHealthMetrics(healthResults)
   }
 
   async saveHealthMetrics(healthResults) {
-    const metricsPath = path.join(__dirname, 'health-metrics.json');
+    const metricsPath = path.join(__dirname, 'health-metrics.json')
     const data = {
       timestamp: new Date().toISOString(),
       factoryType: this.factoryType,
       overallHealth: this.healthMetrics.overallHealth,
-      healthResults: healthResults;
-    };
+      healthResults: healthResults
+    }
     
     try {
-      await fs.writeFile(metricsPath, JSON.stringify(data, null, 2));
+      await fs.writeFile(metricsPath, JSON.stringify(data, null, 2))
     } catch (error) {
-      console.error('❌ Error saving health metrics: ', error);
+      console.error('❌ Error saving health metrics: ', error)
     }
   }
 
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().toISOString()
     const logEntry = {
       timestamp,
       level,
       message,
-      factoryType: this.factoryType;
-    };
+      factoryType: this.factoryType
+    }
     
-    this.logs.push(logEntry);
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    this.logs.push(logEntry)
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   }
 
   async getStatus() {
@@ -231,16 +231,16 @@ class Intelligence-automationMonitor {
       healthMetrics: this.healthMetrics,
       intelligenceLevel: this.intelligenceLevel,
       evolutionRate: this.evolutionRate
-    };
+    }
   }
 }
 
-const monitor = new Intelligence-automationMonitor();
+const monitor = new Intelligence-automationMonitor()
 
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down monitor gracefully...');
+  console.log('🛑 Shutting down monitor gracefully...')
   monitor.isRunning = false;
-  process.exit(0);
-});
+  process.exit(0)
+})
 
 module.exports = monitor;

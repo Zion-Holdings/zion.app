@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,102 +54,102 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }let fs;
 try {
-  fs = require($2);'););
+  fs = require('path';
 } catch (error) {
-  console.error('Failed to require(fs: ', erro)r);
-  process.exit(1);
-};
+  console.error('Failed to require(fs: ', erro)r)
+  process.exit(1)
+}
 let path;
 try {
-  path = require($2);'););
+  path = require('path';
 } catch (error) {
-  console.error('Failed to require(path: ', erro)r);
-  process.exit(1);
-};
-const { spawn } = require(('child_process)');
+  console.error('Failed to require(path: ', erro)r)
+  process.exit(1)
+}
+const { spawn } = require(('child_process)')
 
 class ComprehensiveAgentImprovementSystem {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
     this.baseDir = __dirname;
-    this.agents = new Map();
-    this.failedAgents = new Set();
-    this.improvedAgents = new Set();
+    this.agents = new Map()
+    this.failedAgents = new Set()
+    this.improvedAgents = new Set()
     this.isRunning = false;
     this.startTime = null;
     this.improvementMetrics = {
@@ -157,8 +157,8 @@ class ComprehensiveAgentImprovementSystem {
       improvedAgents: 0,
       failedAgents: 0,
       averageIntelligence: 0,
-      totalCapabilities: 0;
-    };
+      totalCapabilities: 0
+    }
   }
 
   /**
@@ -166,18 +166,18 @@ class ComprehensiveAgentImprovementSystem {
  * @returns {Promise<void>}
  */
 async initialize() {
-    this.log('🚀 Initializing Comprehensive Agent Improvement System...', 'info');
+    this.log('🚀 Initializing Comprehensive Agent Improvement System...', 'info')
     
     // Create directories
-    this.ensureDirectories();
+    this.ensureDirectories()
     
     // Discover all agents
-    await this.discoverAllAgents();
+    await this.discoverAllAgents()
     
     // Analyze current agent status
-    await this.analyzeAgentStatus();
+    await this.analyzeAgentStatus()
     
-    this.log('✅ Comprehensive Agent Improvement System initialized!', 'info');
+    this.log('✅ Comprehensive Agent Improvement System initialized!', 'info')
   }
 
   ensureDirectories() {
@@ -186,14 +186,14 @@ async initialize() {
       'intelligence-data',
       'capability-reports',;
       'restart-logs';]
-    ];
+    ]
     
     dirs.forEach(dir = > {;)
-      const dirPath = path.join(this.baseDir, dir);
+      const dirPath = path.join(this.baseDir, dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+        fs.mkdirSync(dirPath, { recursive: true })
       }
-    });
+    })
   }
 
   /**
@@ -201,7 +201,7 @@ async initialize() {
  * @returns {Promise<void>}
  */
 async discoverAllAgents() {
-    this.log('🔍 Discovering all agents...', 'info');
+    this.log('🔍 Discovering all agents...', 'info')
     
     const agentDirs = ['agents',
       'admin-system/agents',
@@ -222,15 +222,15 @@ async discoverAllAgents() {
       'productivity-agents',
       'learning-agents',;
       'new-agents';]
-    ];
+    ]
 
     for (const dir of agentDirs) {
-      const fullPath = path.join(this.baseDir, dir);
+      const fullPath = path.join(this.baseDir, dir)
       if (fs.existsSync(fullPath)) {
-        const files = fs.readdirSync(fullPath).filter(file => file.endsWith('.js'));
+        const files = fs.readdirSync(fullPath).filter(file => file.endsWith('.js'))
         files.forEach(file = > {;)
-          const agentId = path.basename(file, '.js');
-          const agentPath = path.join(fullPath, file);
+          const agentId = path.basename(file, '.js')
+          const agentPath = path.join(fullPath, file)
           this.agents.set(agentId, {
             id: agentId,
             path: agentPath,
@@ -239,12 +239,12 @@ async discoverAllAgents() {
             intelligenceLevel: 0.5,)
             capabilities: [],)
             lastActivity: new Date().toISOString()
-          });
-        });
+          })
+        })
       }
     }
     
-    this.log(`📊 Discovered ${this.agents.size} agents`, 'info');
+    this.log(`📊 Discovered ${this.agents.size} agents`, 'info')
   }
 
   /**
@@ -252,20 +252,20 @@ async discoverAllAgents() {
  * @returns {Promise<void>}
  */
 async analyzeAgentStatus() {
-    this.log('🔍 Analyzing agent status...', 'info');
+    this.log('🔍 Analyzing agent status...', 'info')
     
     for (const [agentId, agent] of this.agents) {
       try {
         // Check if agent file exists and is readable
         if (!fs.existsSync(agent.path)) {
           agent.status = 'missing';
-          this.failedAgents.add(agentId);
+          this.failedAgents.add(agentId)
           continue;
         }
 
         // Analyze agent code
-        const agentCode = fs.readFileSync(agent.path, 'utf8');
-        const analysis = this.analyzeAgentCode(agentCode);
+        const agentCode = fs.readFileSync(agent.path, 'utf8')
+        const analysis = this.analyzeAgentCode(agentCode)
         
         agent.intelligenceLevel = analysis.intelligenceLevel;
         agent.capabilities = analysis.capabilities;
@@ -275,19 +275,19 @@ async analyzeAgentStatus() {
         // Determine if agent needs improvement
         if (analysis.intelligenceLevel < 0.6 || analysis.capabilities.length < 5) {
           agent.status = 'needs-improvement';
-          this.failedAgents.add(agentId);
+          this.failedAgents.add(agentId)
         } else {
           agent.status = 'healthy';
         }
         
       } catch (error) {
-        console.error(`❌ Error analyzing agent ${agentId}:`, error.message);
+        console.error(`❌ Error analyzing agent ${agentId}:`, error.message)
         agent.status = 'error';
-        this.failedAgents.add(agentId);
+        this.failedAgents.add(agentId)
       }
     }
     
-    this.log(`📊 Analysis complete: ${this.failedAgents.size} agents need improvement`, 'info');
+    this.log(`📊 Analysis complete: ${this.failedAgents.size} agents need improvement`, 'info')
   }
 
   analyzeAgentCode(agentCode) {
@@ -295,39 +295,39 @@ async analyzeAgentStatus() {
       intelligenceLevel: 0.5,
       capabilities: [],
       complexity: 0,;
-      sophistication: 0;
-    };
+      sophistication: 0
+    }
     
     // Analyze capabilities
     if (agentCode.includes('content') || agentCode.includes('generate')) {
-      analysis.capabilities.push('content-generation');
+      analysis.capabilities.push('content-generation')
     }
     if (agentCode.includes('market') || agentCode.includes('research')) {
-      analysis.capabilities.push('market-research');
+      analysis.capabilities.push('market-research')
     }
     if (agentCode.includes('analyze') || agentCode.includes('data')) {
-      analysis.capabilities.push('data-analysis');
+      analysis.capabilities.push('data-analysis')
     }
     if (agentCode.includes('optimize') || agentCode.includes('performance')) {
-      analysis.capabilities.push('performance-optimization');
+      analysis.capabilities.push('performance-optimization')
     }
     if (agentCode.includes('monitor') || agentCode.includes('health')) {
-      analysis.capabilities.push('health-monitoring');
+      analysis.capabilities.push('health-monitoring')
     }
     if (agentCode.includes('security')) {
-      analysis.capabilities.push('security-management');
+      analysis.capabilities.push('security-management')
     }
     if (agentCode.includes('backup')) {
-      analysis.capabilities.push('backup-management');
+      analysis.capabilities.push('backup-management')
     }
     if (agentCode.includes('orchestrate') || agentCode.includes('coordinate')) {
-      analysis.capabilities.push('orchestration');
+      analysis.capabilities.push('orchestration')
     }
     if (agentCode.includes('automate')) {
-      analysis.capabilities.push('automation');
+      analysis.capabilities.push('automation')
     }
     if (agentCode.includes('intelligence') || agentCode.includes('ai')) {
-      analysis.capabilities.push('artificial-intelligence');
+      analysis.capabilities.push('artificial-intelligence')
     }
     
     // Add intelligent capabilities
@@ -340,16 +340,16 @@ async analyzeAgentStatus() {
       'continuous-improvement',
       'cross-domain-knowledge',;
       'strategic-thinking';]
-    ];
+    ]
     
     intelligentCapabilities.forEach(capability = > {)
       if (!analysis.capabilities.includes(capability)) {;
-        analysis.capabilities.push(capability);
+        analysis.capabilities.push(capability)
       }
-    });
+    })
     
     // Analyze complexity
-    const functionMatches = agentCode.match(/function\s+\w+|=>\s*{|class\s+\w+/g);
+    const functionMatches = agentCode.match(/function\s+\w+|=>\s*{|class\s+\w+/g)
     if (functionMatches) {
       analysis.complexity = functionMatches.length * 0.1;
     }
@@ -377,7 +377,7 @@ async analyzeAgentStatus() {
     // Calculate intelligence level
     analysis.intelligenceLevel = Math.min(0.5 + analysis.complexity + analysis.sophistication,)
       0.95;)
-    );
+    )
     
     return analysis;
   }
@@ -388,29 +388,29 @@ async analyzeAgentStatus() {
  */
 async start() {
     if (this.isRunning) {
-      this.log('⚠️ Comprehensive Agent Improvement System is already running', 'info');
+      this.log('⚠️ Comprehensive Agent Improvement System is already running', 'info')
       return;
     }
 
     try {
-      await this.initialize();
+      await this.initialize()
       
       this.isRunning = true;
-      this.startTime = new Date();
+      this.startTime = new Date()
       
-      this.log('🚀 Comprehensive Agent Improvement System started successfully!', 'info');
-      this.log(`📊 Total agents: ${this.agents.size}`, 'info');
-      this.log(`🔧 Agents needing improvement: ${this.failedAgents.size}`, 'info');
+      this.log('🚀 Comprehensive Agent Improvement System started successfully!', 'info')
+      this.log(`📊 Total agents: ${this.agents.size}`, 'info')
+      this.log(`🔧 Agents needing improvement: ${this.failedAgents.size}`, 'info')
       
       // Start improvement processes
-      this.startImprovementLoops();
-      this.startMonitoring();
+      this.startImprovementLoops()
+      this.startMonitoring()
       
       // Handle graceful shutdown
-      this.setupGracefulShutdown();
+      this.setupGracefulShutdown()
       
     } catch (error) {
-      console.error('❌ Failed to start Comprehensive Agent Improvement System: ', error);
+      console.error('❌ Failed to start Comprehensive Agent Improvement System: ', error)
       throw error;
     }
   }
@@ -418,35 +418,35 @@ async start() {
   startImprovementLoops() {
     // Restart failed agents every 30 seconds
     setInterval(async () => {
-      await this.restartFailedAgents();
-    }, 200);
+      await this.restartFailedAgents()
+    }, 200)
     
     // Improve agent intelligence every 2 minutes
     setInterval(async () => {
-      await this.improveAgentIntelligence();
-    }, 30000);
+      await this.improveAgentIntelligence()
+    }, 30000)
     
     // Enhance agent capabilities every 3 minutes
     setInterval(async () => {
-      await this.enhanceAgentCapabilities();
-    }, 180000);
+      await this.enhanceAgentCapabilities()
+    }, 180000)
     
     // Generate improvement reports every 5 minutes
     setInterval(async () => {
-      await this.generateImprovementReport();
-    }, 200);
+      await this.generateImprovementReport()
+    }, 200)
   }
 
   startMonitoring() {
     // Monitor system health every minute
     setInterval(() => {
-      this.monitorSystemHealth();
-    }, 3000);
+      this.monitorSystemHealth()
+    }, 3000)
     
     // Update metrics every 2 minutes
     setInterval(() => {
-      this.updateImprovementMetrics();
-    }, 30000);
+      this.updateImprovementMetrics()
+    }, 30000)
   }
 
   /**
@@ -454,34 +454,34 @@ async start() {
  * @returns {Promise<void>}
  */
 async restartFailedAgents() {
-    this.log('🔄 Restarting failed agents...', 'info');
+    this.log('🔄 Restarting failed agents...', 'info')
     
     for (const agentId of this.failedAgents) {
       try {
-        const agent = this.agents.get(agentId);
+        const agent = this.agents.get(agentId)
         if (!agent) continue;
         
-        this.log(`🔄 Restarting agent: ${agentId}`, 'info');
+        this.log(`🔄 Restarting agent: ${agentId}`, 'info')
         
         // Create improved version of the agent
-        const improvedAgent = await this.createImprovedAgent(agent);
+        const improvedAgent = await this.createImprovedAgent(agent)
         
         // Save improved agent
-        this.saveImprovedAgent(agentId, improvedAgent);
+        this.saveImprovedAgent(agentId, improvedAgent)
         
         // Update agent status
         agent.status = 'improved';
         agent.intelligenceLevel = improvedAgent.intelligenceLevel;
         agent.capabilities = improvedAgent.capabilities;
-        agent.lastActivity = new Date().toISOString();
+        agent.lastActivity = new Date().toISOString()
         
-        this.improvedAgents.add(agentId);
-        this.failedAgents.delete(agentId);
+        this.improvedAgents.add(agentId)
+        this.failedAgents.delete(agentId)
         
-        this.log(`✅ Successfully improved agent: ${agentId}`, 'info');
+        this.log(`✅ Successfully improved agent: ${agentId}`, 'info')
         
       } catch (error) {
-        console.error(`❌ Failed to restart agent ${agentId}:`, error.message);
+        console.error(`❌ Failed to restart agent ${agentId}:`, error.message)
       }
     }
   }
@@ -491,13 +491,13 @@ async restartFailedAgents() {
  * @returns {Promise<void>}
  */
 async createImprovedAgent() {
-    const agentCode = fs.readFileSync(agent.path, 'utf8');
+    const agentCode = fs.readFileSync(agent.path, 'utf8')
     
     // Enhance the agent code
-    const enhancedCode = this.enhanceAgentCode(agentCode);
+    const enhancedCode = this.enhanceAgentCode(agentCode)
     
     // Analyze enhanced capabilities
-    const analysis = this.analyzeAgentCode(enhancedCode);
+    const analysis = this.analyzeAgentCode(enhancedCode)
     
     // Create improved agent data
     const improvedAgent = {
@@ -510,11 +510,11 @@ async createImprovedAgent() {
       sophistication: analysis.sophistication,
       status: 'improved',
       improvementDate: new Date().toISOString(),;
-      improvementVersion: '2.0';
-    };
+      improvementVersion: '2.0'
+    }
     
     // Save improved agent code
-    fs.writeFileSync(improvedAgent.improvedPath, enhancedCode);
+    fs.writeFileSync(improvedAgent.improvedPath, enhancedCode)
     
     return improvedAgent;
   }
@@ -532,7 +532,7 @@ async createImprovedAgent() {
       '// Enhanced with continuous improvement',
       '// Enhanced with cross-domain knowledge',;
       '// Enhanced with strategic thinking';]
-    ];
+    ]
     
     // Add enhancements to the code
     enhancedCode = enhancedCode.replace(/class\s+\w+\s*\{/,)
@@ -540,7 +540,7 @@ async createImprovedAgent() {
         return match + '\n  // Enhanced with intelligent capabilities\n' + ;
                intelligentEnhancements.map(enh => '  ' + enh).join('\n') + '\n';
       }
-    );
+    )
     
     // Add learning capabilities
     if (!enhancedCode.includes('learn') && !enhancedCode.includes('adapt')) {
@@ -549,7 +549,7 @@ async createImprovedAgent() {
         (match) => {;
           return match + '\n    this.learningCapabilities = true;\n    this.adaptiveBehavior = true;\n';
         }
-      );
+      )
     }
     
     // Add collaborative capabilities
@@ -559,7 +559,7 @@ async createImprovedAgent() {
         (match) => {;
           return match + '\n    this.collaborativeIntelligence = true;\n    this.teamCoordination = true;\n';
         }
-      );
+      )
     }
     
     // Add creative capabilities
@@ -569,15 +569,15 @@ async createImprovedAgent() {
         (match) => {;
           return match + '\n    this.creativeProblemSolving = true;\n    this.innovationCapabilities = true;\n';
         }
-      );
+      )
     }
     
     return enhancedCode;
   }
 
   saveImprovedAgent(agentId, improvedAgent) {
-    const dataPath = path.join(this.baseDir, 'improved-agents', `${agentId}-data.json`);
-    fs.writeFileSync(dataPath, JSON.stringify(improvedAgent, null, 2));
+    const dataPath = path.join(this.baseDir, 'improved-agents', `${agentId}-data.json`)
+    fs.writeFileSync(dataPath, JSON.stringify(improvedAgent, null, 2))
   }
 
   /**
@@ -585,21 +585,21 @@ async createImprovedAgent() {
  * @returns {Promise<void>}
  */
 async improveAgentIntelligence() {
-    this.log('🧠 Improving agent intelligence...', 'info');
+    this.log('🧠 Improving agent intelligence...', 'info')
     
     for (const [agentId, agent] of this.agents) {
       try {
         const currentIntelligence = agent.intelligenceLevel || 0.5;
-        const improvedIntelligence = Math.min(currentIntelligence + 0.02, 0.95);
+        const improvedIntelligence = Math.min(currentIntelligence + 0.02, 0.95)
         
         agent.intelligenceLevel = improvedIntelligence;
         
         if (improvedIntelligence > currentIntelligence) {
-          this.log(`✅ Improved ${agentId} intelligence: ${(currentIntelligence * 100, 'info').toFixed(1)}% → ${(improvedIntelligence * 100).toFixed(1)}%`);
+          this.log(`✅ Improved ${agentId} intelligence: ${(currentIntelligence * 100, 'info').toFixed(1)}% → ${(improvedIntelligence * 100).toFixed(1)}%`)
         }
         
       } catch (error) {
-        console.error(`❌ Failed to improve ${agentId} intelligence: `, error.message);
+        console.error(`❌ Failed to improve ${agentId} intelligence: `, error.message)
       }
     }
   }
@@ -609,11 +609,11 @@ async improveAgentIntelligence() {
  * @returns {Promise<void>}
  */
 async enhanceAgentCapabilities() {
-    this.log('🔧 Enhancing agent capabilities...', 'info');
+    this.log('🔧 Enhancing agent capabilities...', 'info')
     
     for (const [agentId, agent] of this.agents) {
       try {
-        const currentCapabilities = agent.capabilities || [];
+        const currentCapabilities = agent.capabilities || []
         const newCapabilities = ['adaptive-learning',
           'pattern-recognition',
           'predictive-analysis',
@@ -623,30 +623,30 @@ async enhanceAgentCapabilities() {
           'continuous-improvement',
           'cross-domain-knowledge',;
           'strategic-thinking';]
-        ];
+        ]
         
         let addedCapabilities = 0;
         newCapabilities.forEach(capability = > {)
           if (!currentCapabilities.includes(capability)) {;
-            currentCapabilities.push(capability);
+            currentCapabilities.push(capability)
             addedCapabilities++;
           }
-        });
+        })
         
         agent.capabilities = currentCapabilities;
         
         if (addedCapabilities > 0) {
-          this.log(`✅ Enhanced ${agentId} capabilities: +${addedCapabilities} new capabilities`, 'info');
+          this.log(`✅ Enhanced ${agentId} capabilities: +${addedCapabilities} new capabilities`, 'info')
         }
         
       } catch (error) {
-        console.error(`❌ Failed to enhance ${agentId} capabilities: `, error.message);
+        console.error(`❌ Failed to enhance ${agentId} capabilities: `, error.message)
       }
     }
   }
 
   monitorSystemHealth() {
-    this.log('🏥 Monitoring system health...', 'info');
+    this.log('🏥 Monitoring system health...', 'info')
     
     let healthyAgents = 0;
     let totalIntelligence = 0;
@@ -657,16 +657,16 @@ async enhanceAgentCapabilities() {
         healthyAgents++;
       }
       totalIntelligence += agent.intelligenceLevel || 0.5;
-      totalCapabilities += agent.capabilities ? agent.capabilities.length: 0;
+      totalCapabilities += agent.capabilities ? agent.capabilities.length: 0
     }
     
     const averageIntelligence = totalIntelligence / this.agents.size;
     const systemHealth = healthyAgents / this.agents.size;
     const averageCapabilities = totalCapabilities / this.agents.size;
     
-    this.log(`📊 System Health: ${(systemHealth * 100, 'info').toFixed(1)}% (${healthyAgents}/${this.agents.size} agents healthy)`);
-    this.log(`🧠 Average Intelligence: ${(averageIntelligence * 100, 'info').toFixed(1)}%`);
-    this.log(`🔧 Average Capabilities: ${averageCapabilities.toFixed(1, 'info')} per agent`);
+    this.log(`📊 System Health: ${(systemHealth * 100, 'info').toFixed(1)}% (${healthyAgents}/${this.agents.size} agents healthy)`)
+    this.log(`🧠 Average Intelligence: ${(averageIntelligence * 100, 'info').toFixed(1)}%`)
+    this.log(`🔧 Average Capabilities: ${averageCapabilities.toFixed(1, 'info')} per agent`)
   }
 
   updateImprovementMetrics() {
@@ -674,15 +674,15 @@ async enhanceAgentCapabilities() {
     this.improvementMetrics.improvedAgents = this.improvedAgents.size;
     this.improvementMetrics.failedAgents = this.failedAgents.size;
     
-    const totalIntelligence = Array.from(this.agents.values()).reduce((sum, agent) => sum + (agent.intelligenceLevel || 0.5), 0);
+    const totalIntelligence = Array.from(this.agents.values()).reduce((sum, agent) => sum + (agent.intelligenceLevel || 0.5), 0)
     this.improvementMetrics.averageIntelligence = totalIntelligence / this.agents.size;
     
-    const allCapabilities = new Set();
+    const allCapabilities = new Set()
     this.agents.forEach(agent = > {)
       if (agent.capabilities) {;
-        agent.capabilities.forEach(cap => allCapabilities.add(cap));
+        agent.capabilities.forEach(cap => allCapabilities.add(cap))
       }
-    });
+    })
     this.improvementMetrics.totalCapabilities = allCapabilities.size;
   }
 
@@ -709,28 +709,28 @@ async generateImprovementReport() {
         improvedAgents: this.improvedAgents.size,
         failedAgents: this.failedAgents.size,
         averageIntelligence: this.improvementMetrics.averageIntelligence,
-        totalCapabilities: this.improvementMetrics.totalCapabilities;
-      };
-    };
+        totalCapabilities: this.improvementMetrics.totalCapabilities
+      }
+    }
     
-    const reportPath = path.join(this.baseDir, 'agent-reports', `improvement-report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const reportPath = path.join(this.baseDir, 'agent-reports', `improvement-report-${Date.now()}.json`)
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
-    this.log('📊 Generated improvement report', 'info');
+    this.log('📊 Generated improvement report', 'info')
   }
 
   setupGracefulShutdown() {
     process.on('SIGINT', () => {
-      this.log('\n🛑 Shutting down Comprehensive Agent Improvement System...', 'info');
-      this.stop();
-      process.exit(0);
-    });
+      this.log('\n🛑 Shutting down Comprehensive Agent Improvement System...', 'info')
+      this.stop()
+      process.exit(0)
+    })
     
     process.on('SIGTERM', () => {
-      this.log('\n🛑 Shutting down Comprehensive Agent Improvement System...', 'info');
-      this.stop();
-      process.exit(0);
-    });
+      this.log('\n🛑 Shutting down Comprehensive Agent Improvement System...', 'info')
+      this.stop()
+      process.exit(0)
+    })
   }
 
   /**
@@ -739,17 +739,17 @@ async generateImprovementReport() {
  */
 async stop() {
     if (!this.isRunning) {
-      this.log('⚠️ Comprehensive Agent Improvement System is not running', 'info');
+      this.log('⚠️ Comprehensive Agent Improvement System is not running', 'info')
       return;
     }
 
-    this.log('🛑 Stopping Comprehensive Agent Improvement System...', 'info');
+    this.log('🛑 Stopping Comprehensive Agent Improvement System...', 'info')
     this.isRunning = false;
     
     // Save final state
-    this.saveFinalState();
+    this.saveFinalState()
     
-    this.log('✅ Comprehensive Agent Improvement System stopped successfully', 'info');
+    this.log('✅ Comprehensive Agent Improvement System stopped successfully', 'info')
   }
 
   saveFinalState() {
@@ -758,11 +758,11 @@ async stop() {
       metrics: this.improvementMetrics,
       agents: Array.from(this.agents.entries()),
       improvedAgents: Array.from(this.improvedAgents),;
-      failedAgents: Array.from(this.failedAgents);
-    };
+      failedAgents: Array.from(this.failedAgents)
+    }
     
-    const statePath = path.join(this.baseDir, 'agent-reports', 'final-state.json');
-    fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+    const statePath = path.join(this.baseDir, 'agent-reports', 'final-state.json')
+    fs.writeFileSync(statePath, JSON.stringify(state, null, 2))
   }
 
   getSystemStatus() {
@@ -773,14 +773,14 @@ async stop() {
       improvedAgents: this.improvedAgents.size,
       failedAgents: this.failedAgents.size,
       metrics: this.improvementMetrics
-    };
+    }
   }
 }
 
 // Run the comprehensive agent improvement system
 if (require(.main = == modul)e) {;
-  const system = new ComprehensiveAgentImprovementSystem();
-  system.start().catch(console.error);
+  const system = new ComprehensiveAgentImprovementSystem()
+  system.start().catch(console.error)
 }
 
 module.exports = ComprehensiveAgentImprovementSystem;

@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,79 +54,79 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class NavigationEnhancementAgent {
   constructor() {
@@ -135,46 +135,46 @@ class NavigationEnhancementAgent {
       componentsDir: path.join(process.cwd(), 'components'),
       pagesDir: path.join(process.cwd(), 'pages'),
       backupDir: path.join(process.cwd(), 'automation/design-improvement-backups')
-    };
+    }
   }
 
   async enhanceNavigation() {
     try {
-      console.log('Starting navigation enhancement...');
+      console.log('Starting navigation enhancement...')
       
       // Create backup
-      await this.createBackup();
+      await this.createBackup()
       
       // Create enhanced navigation components
-      await this.createNavigationComponents();
+      await this.createNavigationComponents()
       
       // Update layout with enhanced navigation
-      await this.updateLayoutNavigation();
+      await this.updateLayoutNavigation()
       
       // Create breadcrumb component
-      await this.createBreadcrumbComponent();
+      await this.createBreadcrumbComponent()
       
       // Create search component
-      await this.createSearchComponent();
+      await this.createSearchComponent()
       
       // Create mobile navigation
-      await this.createMobileNavigation();
+      await this.createMobileNavigation()
       
-      console.log('Navigation enhancement completed successfully');
-      return { success: true, changes: ['Enhanced navigation menu', 'Added mobile navigation', 'Created search functionality', 'Added breadcrumbs'] };
+      console.log('Navigation enhancement completed successfully')
+      return { success: true, changes: ['Enhanced navigation menu', 'Added mobile navigation', 'Created search functionality', 'Added breadcrumbs'] }
     } catch (error) {
-      console.error('Navigation enhancement failed: ', error);
-      return { success: false, error: error.message };
+      console.error('Navigation enhancement failed: ', error)
+      return { success: false, error: error.message }
     }
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.backupDir, `navigation-backup-${Date.now()}`);
-    await fs.ensureDir(backupPath);
+    const backupPath = path.join(this.config.backupDir, `navigation-backup-${Date.now()}`)
+    await fs.ensureDir(backupPath)
     
     // Backup components
     if (fs.existsSync(this.config.componentsDir)) {
-      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'));
+      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'))
     }
   }
 
@@ -191,19 +191,19 @@ interface NavItem {
   href: string;
   label: string;
   icon: string;
-  description?: string;
-  children?: NavItem[];
+  description?: string
+  children?: NavItem[]
 }
 
 interface NavigationProps {
   className?: string;
-  variant?: 'header' | 'sidebar' | 'mobile';
+  variant?: 'header' | 'sidebar' | 'mobile'
 }
 
 const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'header' }) => {
-  const router = useRouter();
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const router = useRouter()
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   const navItems: NavItem[] = [{
       href: '/',
@@ -245,21 +245,21 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
       icon: '📧',
       description: 'Get in touch'
     }
-  ];
+  ]
 
   const isActive = () => {
     if (href === '/') {;
       return router.pathname === '/';
     }
-    return router.pathname.startsWith(href);
-  };
+    return router.pathname.startsWith(href)
+  }
 
   const handleDropdownToggle = () => {;
-    setActiveDropdown(activeDropdown === label ? null: label);
-  };
+    setActiveDropdown(activeDropdown === label ? null: label)
+  }
 
   const renderNavItem = () => {;
-    const isItemActive = isActive(item.href);
+    const isItemActive = isActive(item.href)
     const hasChildren = item.children && item.children.length > 0;
 
     if (variant === 'mobile') {
@@ -296,7 +296,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
             </div>
           )}
         </motion.div>
-      );
+      )
     }
 
     return(<motion.div
@@ -353,21 +353,21 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
           </AnimatePresence>
         )}
       </motion.div>
-    );
-  };
+    )
+  }
 
   return(<nav className={\`\${className}\`}>
       <div className="flex items-center space-x-8">)
         {navItems.map((item, index) => renderNavItem(item, index))}
       </div>
     </nav>
-  );
-};
+  )
+}
 
 export default Navigation;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Navigation.tsx'), navigationComponent);
+    await fs.writeFile(path.join(componentsDir, 'Navigation.tsx'), navigationComponent)
 
     // Create SearchBar component
     const searchBarComponent = `import React, { useState, useEffect, useRef } from 'react';
@@ -377,30 +377,30 @@ interface SearchResult {
   title: string;
   description: string;
   href: string;
-  type: 'page' | 'service' | 'product';
+  type: 'page' | 'service' | 'product'
 }
 
 interface SearchBarProps {
   className?: string;
-  placeholder?: string;
+  placeholder?: string
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ 
   className = '', 
   placeholder = 'Search Zion...' 
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const searchRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState<SearchResult[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  const searchRef = useRef<HTMLDivElement>(null)
 
   // Mock search results - in a real app, this would call an API
-  const mockSearch = async (searchQuery: string) => {;
-    setIsLoading(true);
+  const mockSearch = async (searchQuery: string) => {
+    setIsLoading(true)
     
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise(resolve => setTimeout(resolve, 300))
     
     const mockResults: SearchResult[] = [{
         title: 'AI Development Services',
@@ -429,40 +429,40 @@ const SearchBar: React.FC<SearchBarProps> = ({
     ].filter(result => )
       result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       result.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    )
     
-    setResults(mockResults);
-    setIsLoading(false);
-  };
+    setResults(mockResults)
+    setIsLoading(false)
+  }
 
   useEffect(() => {
     if (query.length > 2) {
-      mockSearch(query);
+      mockSearch(query)
     } else {
-      setResults([]);
+      setResults([])
     }
-  }, [query]);
+  }, [query])
 
   useEffect(() => {
     const handleClickOutside = () => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {;
-        setIsOpen(false);
+        setIsOpen(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const handleSearchClick = () => {;
-    setIsOpen(true);
-  };
+    setIsOpen(true)
+  }
 
   const handleResultClick = () => {;
     window.location.href = href;
-    setIsOpen(false);
-    setQuery('');
-  };
+    setIsOpen(false)
+    setQuery('')
+  }
 
   return(<div ref={searchRef} className={\`relative \${className}\`}>
       {/* Search Button */}
@@ -557,53 +557,53 @@ const SearchBar: React.FC<SearchBarProps> = ({
         )}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
 export default SearchBar;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'SearchBar.tsx'), searchBarComponent);
+    await fs.writeFile(path.join(componentsDir, 'SearchBar.tsx'), searchBarComponent)
 
-    console.log('Navigation components created');
+    console.log('Navigation components created')
   }
 
   async updateLayoutNavigation() {
-    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx');
+    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx')
     
     if (!fs.existsSync(layoutPath)) {
-      console.log('Layout component not found, skipping navigation update');
+      console.log('Layout component not found, skipping navigation update')
       return;
     }
 
-    const layoutContent = fs.readFileSync(layoutPath, 'utf8');
+    const layoutContent = fs.readFileSync(layoutPath, 'utf8')
     
     // Add imports for new navigation components
     let updatedContent = layoutContent;
     if (!updatedContent.includes('import Navigation')) {
       updatedContent = updatedContent.replace("import { motion, AnimatePresence } from 'framer-motion';",)
         "import { motion, AnimatePresence } from 'framer-motion';\nimport Navigation from './Navigation';\nimport SearchBar from './SearchBar';")
-      );
+      )
     }
 
     // Replace the navigation section with enhanced navigation
     const navigationPattern = /<nav className="hidden lg: flex space-x-8">[\s\S]*?<\/nav>/;
-    const enhancedNavigation = `<Navigation variant="header" className="hidden lg:flex space-x-8" />`;
+    const enhancedNavigation = `<Navigation variant="header" className="hidden lg:flex space-x-8" />`
     
     if (navigationPattern.test(updatedContent)) {
-      updatedContent = updatedContent.replace(navigationPattern, enhancedNavigation);
+      updatedContent = updatedContent.replace(navigationPattern, enhancedNavigation)
     }
 
     // Add search bar to header
     const headerButtonPattern = /<button[\s\S]*?className="lg: hidden[\s\S]*?<\/button>/;
-    const searchBarButton = `<SearchBar className="mr-2" />\n            <button`;
+    const searchBarButton = `<SearchBar className="mr-2" />\n            <button`
     
     if (headerButtonPattern.test(updatedContent)) {
-      updatedContent = updatedContent.replace(headerButtonPattern, searchBarButton);
+      updatedContent = updatedContent.replace(headerButtonPattern, searchBarButton)
     }
 
-    fs.writeFileSync(layoutPath, updatedContent);
-    console.log('Layout navigation updated');
+    fs.writeFileSync(layoutPath, updatedContent)
+    console.log('Layout navigation updated')
   }
 
   async createBreadcrumbComponent() {
@@ -617,43 +617,43 @@ import { motion } from 'framer-motion';
 interface BreadcrumbItem {
   label: string;
   href: string;
-  isCurrent?: boolean;
+  isCurrent?: boolean
 }
 
 interface BreadcrumbProps {
-  items?: BreadcrumbItem[];
-  className?: string;
+  items?: BreadcrumbItem[]
+  className?: string
 }
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const generateBreadcrumbs = (): BreadcrumbItem[] => {;
-    if (items) return items;
+    if (items) return items
 
-    const pathSegments = router.asPath.split('/').filter(segment => segment);
+    const pathSegments = router.asPath.split('/').filter(segment => segment)
     const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: '/' }]
-    ];
+    ]
 
     let currentPath = '';
     pathSegments.forEach((segment, index) => {
       currentPath += \`/\${segment}\`;
       const label = segment
         .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1));
-        .join(' ');
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
       
       breadcrumbs.push({
         label,
         href: currentPath,)
         isCurrent: index === pathSegments.length - 1)
-      });
-    });
+      })
+    })
 
     return breadcrumbs;
-  };
+  }
 
-  const breadcrumbItems = generateBreadcrumbs();
+  const breadcrumbItems = generateBreadcrumbs()
 
   return(<motion.nav
       className={\`flex items-center space-x-2 text-sm \${className}\`}
@@ -682,14 +682,14 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
         </React.Fragment>
       ))}
     </motion.nav>
-  );
-};
+  )
+}
 
 export default Breadcrumb;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Breadcrumb.tsx'), breadcrumbComponent);
-    console.log('Breadcrumb component created');
+    await fs.writeFile(path.join(componentsDir, 'Breadcrumb.tsx'), breadcrumbComponent)
+    console.log('Breadcrumb component created')
   }
 
   async createSearchComponent() {
@@ -701,7 +701,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface SearchProps {
   onSearch?: (query: string) => void;
   placeholder?: string;
-  className?: string;
+  className?: string
 }
 
 const Search: React.FC<SearchProps> = ({ 
@@ -709,15 +709,15 @@ const Search: React.FC<SearchProps> = ({
   placeholder = 'Search...', 
   className = '' 
 }) => {
-  const [query, setQuery] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const [query, setQuery] = useState('')
+  const [isFocused, setIsFocused] = useState(false)
 
   const handleSearch = () => {;
-    e.preventDefault();
+    e.preventDefault()
     if (onSearch && query.trim()) {
-      onSearch(query.trim());
+      onSearch(query.trim())
     }
-  };
+  }
 
   return(<motion.div
       className={\`relative \${className}\`}
@@ -761,14 +761,14 @@ const Search: React.FC<SearchProps> = ({
         </div>
       </form>
     </motion.div>
-  );
-};
+  )
+}
 
 export default Search;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Search.tsx'), searchComponent);
-    console.log('Search component created');
+    await fs.writeFile(path.join(componentsDir, 'Search.tsx'), searchComponent)
+    console.log('Search component created')
   }
 
   async createMobileNavigation() {
@@ -780,7 +780,7 @@ import Navigation from './Navigation';
 
 interface MobileNavigationProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: () => void
 }
 
 const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) => {
@@ -840,14 +840,14 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) 
         </>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
 export default MobileNavigation;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'MobileNavigation.tsx'), mobileNavigationComponent);
-    console.log('Mobile navigation component created');
+    await fs.writeFile(path.join(componentsDir, 'MobileNavigation.tsx'), mobileNavigationComponent)
+    console.log('Mobile navigation component created')
   }
 }
 

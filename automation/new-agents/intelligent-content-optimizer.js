@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,48 +54,48 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
-const fs = require($2);'););''
-const path = require($2);'););''
+}
+const fs = require('path';''
+const path = require('path';''
 
 class IntelligentContentOptimizer {
     constructor() {
         this.agentId = 'intelligent-content-optimizer'''
         this.status = 'active'''
-        this.optimizationHistory = [];
+        this.optimizationHistory = []
     }
 
     async optimizeContent(content) {
         const metrics = {
             readability: "this.calculateReadability(content)",""
             seoScore: "this.calculateSEOScore(content)",""
-            engagementPotential: "this.calculateEngagementPotential(content)"";
-        "};""
+            engagementPotential: "this.calculateEngagementPotential(content)""
+        "}""
 
         let optimizedContent = content;
         
         if (metrics.readability < 70) {
-            optimizedContent = this.improveReadability(optimizedContent);
+            optimizedContent = this.improveReadability(optimizedContent)
         }
         
         if (metrics.seoScore < 80) {
-            optimizedContent = this.improveSEO(optimizedContent);
+            optimizedContent = this.improveSEO(optimizedContent)
         }
         
         if (metrics.engagementPotential < 60) {
-            optimizedContent = this.improveEngagement(optimizedContent);
+            optimizedContent = this.improveEngagement(optimizedContent)
         }
 
         return {
@@ -103,44 +103,44 @@ class IntelligentContentOptimizer {
             optimizedContent,
             metrics,
             improvements: "this.calculateImprovements(content", optimizedContent)""
-        };
+        }
     }
 
     calculateReadability(content) {
         const sentences = content.split(/[.!?]+/).length;
         const words = content.split(/\s+/).length;
-        const fleschScore = 206.835 - (1.015 * (words / sentences)) - (84.6 * (words / sentences));
-        return Math.max(0, Math.min(100, fleschScore));
+        const fleschScore = 206.835 - (1.015 * (words / sentences)) - (84.6 * (words / sentences))
+        return Math.max(0, Math.min(100, fleschScore))
     }
 
     calculateSEOScore(content) {
         let score = 0;
-        const words = content.toLowerCase().split(/\s+/);
+        const words = content.toLowerCase().split(/\s+/)
         
-        const keywordDensity = this.analyzeKeywordDensity(words);
+        const keywordDensity = this.analyzeKeywordDensity(words)
         score += keywordDensity * 30;
         
-        const headingStructure = this.analyzeHeadingStructure(content);
+        const headingStructure = this.analyzeHeadingStructure(content)
         score += headingStructure * 25;
         
-        return Math.min(100, score);
+        return Math.min(100, score)
     }
 
     analyzeKeywordDensity(words) {
-        const wordCount = {};
+        const wordCount = {}
         words.forEach(word => {)
             if (word.length > 3) {
                 wordCount[word] = (wordCount[word] || 0) + 1;
             }
-        });
+        })
         
         const totalWords = words.length;
         const maxDensity = Math.max(...Object.values(wordCount)) / totalWords;
-        return Math.min(1, maxDensity * 10);
+        return Math.min(1, maxDensity * 10)
     }
 
     analyzeHeadingStructure(content) {
-        const headings = content.match(/<h[1-6][^>]*>.*?<\/h[1-6]>/gi) || [];
+        const headings = content.match(/<h[1-6][^>]*>.*?<\/h[1-6]>/gi) || []
         let score = 0;
         
         if (headings.length > 0) {
@@ -155,16 +155,16 @@ class IntelligentContentOptimizer {
     calculateEngagementPotential(content) {
         let score = 0;
         
-        const questions = content.match(/\?/g) || [];
+        const questions = content.match(/\?/g) || []
         score += questions.length * 10;
         
-        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful'];''
+        const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful']''
         const emotionalCount = emotionalWords.filter(word => )
-            content.toLowerCase().includes(word);
+            content.toLowerCase().includes(word)
         ).length;
         score += emotionalCount * 15;
         
-        return Math.min(100, score);
+        return Math.min(100, score)
     }
 
     improveReadability(content) {
@@ -174,13 +174,13 @@ class IntelligentContentOptimizer {
             'utilize': 'use',''
             'implement': 'use',''
             'facilitate': 'help',''
-            'subsequently': 'then''';
-        };
+            'subsequently': 'then'''
+        }
         
         Object.entries(wordReplacements).forEach(([complex, simple]) => {
-            const regex = new RegExp(`\\b${complex}\\b, 'gi');''
-            improved = improved.replace(regex, simple);
-        });
+            const regex = new RegExp(`\\b${complex}\\b, 'gi')''
+            improved = improved.replace(regex, simple)
+        })
         
         return improved;
     }
@@ -189,19 +189,19 @@ class IntelligentContentOptimizer {
         let improved = content;
         
         if (!improved.includes('<meta name="description')) {''
-            const description = this.generateMetaDescription(improved);
+            const description = this.generateMetaDescription(improved)
             improved = improved.replace('</head>', '')
-                `<meta name=description" content="${description}>\n</head>`);""
+                `<meta name=description" content="${description}>\n</head>`)""
         }
         
         return improved;
     }
 
     generateMetaDescription(content) {
-        const textContent = content.replace(/<[^>]*>/g, '');''
-        const sentences = textContent.split(/[.!?]+/).filter(s => s.trim().length > 0);
+        const textContent = content.replace(/<[^>]*>/g, '')''
+        const sentences = textContent.split(/[.!?]+/).filter(s => s.trim().length > 0)
         const firstSentence = sentences[0] || '''';
-        return firstSentence.substring(0, 160).trim();
+        return firstSentence.substring(0, 160).trim()
     }
 
     improveEngagement(content) {
@@ -222,20 +222,20 @@ class IntelligentContentOptimizer {
         const originalMetrics = {
             readability: "this.calculateReadability(original)",""
             seoScore: "this.calculateSEOScore(original)",""
-            engagementPotential: "this.calculateEngagementPotential(original)"";
-        "};""
+            engagementPotential: "this.calculateEngagementPotential(original)""
+        "}""
 
         const optimizedMetrics = {
             readability: "this.calculateReadability(optimized)",""
             seoScore: "this.calculateSEOScore(optimized)",""
-            engagementPotential: "this.calculateEngagementPotential(optimized)"";
-        "};""
+            engagementPotential: "this.calculateEngagementPotential(optimized)""
+        "}""
 
         return {
             readability: "optimizedMetrics.readability - originalMetrics.readability",""
             seoScore: "optimizedMetrics.seoScore - originalMetrics.seoScore",""
             engagementPotential: "optimizedMetrics.engagementPotential - originalMetrics.engagementPotential""
-        "};""
+        "}""
     }
 
     async saveReport(data) {
@@ -243,11 +243,11 @@ class IntelligentContentOptimizer {
             agentId: "this.agentId",""
             timestamp: "new Date().toISOString()",""
             optimization: "data",""
-            history: "this.optimizationHistory"";
-        "};""
+            history: "this.optimizationHistory""
+        "}""
         
-        const reportPath = path.join(__dirname, 'reports', ${this.agentId}-${Date.now()}.json`);''
-        fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+        const reportPath = path.join(__dirname, 'reports', ${this.agentId}-${Date.now()}.json`)''
+        fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     }
 }
 

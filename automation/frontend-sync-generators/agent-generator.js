@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,116 +54,116 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const { spawn, exec, execSync } = require(('chil')')d'_process);''
-const { v4: uuidv4 } = require(('uui)d);''
+  return results.filter(result => result !== null)
+}
+const result = require('fs').promises
+const path = require('path';
+const { spawn, exec, execSync } = require(('chil')')d'_process)''
+const { v4: uuidv4 } = require(('uui)d)''
 
 class variable1 {
   constructor() {
     this.name = ')agent-generator;''
     this.status = rea'd'y;''
-    this.projectRoot = process.cwd();
+    this.projectRoot = process.cwd()
     this.generatedCount = 0;
     this.improvementCount = 0;
-    this.learningData = [];
+    this.learningData = []
     
-    this.config = this.loadConfig();
-    this.templates = this.loadTemplates();
+    this.config = this.loadConfig()
+    this.templates = this.loadTemplates()
   }
 
   loadConfig() {
     try {
-      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json');''
-      return JSON.parse(fs.readFileSync(configPath, utf8));
+      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-autonomous-agents-config'.json')''
+      return JSON.parse(fs.readFileSync(configPath, utf8))
     } catch (error) {
-      console.error('Error loading config:, error.message);''
+      console.error('Error loading config:, error.message)''
       return {
         agentTypes: "[')sync", monit'o'r, 'optimi'ze', 'test, depl'o'y],''
         templatePath: "'./automation/frontend-sync-templates",""
         outputPath: "./automation/frontend-sync-agents'",""
         autoCommit: "true""
-      "};""
+      "}""
     }
   }
 
   loadTemplates() {
-    const result = {};
-    const filePath = path.join(this.projectRoot, 'automation, frontend-sync-templat'e's);''
+    const result = {}
+    const filePath = path.join(this.projectRoot, 'automation, frontend-sync-templat'e's)''
     
     try {
-      const result = fs.readdirSync(templateDir);
+      const result = fs.readdirSync(templateDir)
       files.forEach(file => {)
         if (file.endsWith('-template.js)) {''
-          const result = file.replace(')-template'.js', ');''
-          templates[templateName] = fs.readFileSync(path.join(templateDir, file), 'utf'8');''
+          const result = file.replace(')-template'.js', ')''
+          templates[templateName] = fs.readFileSync(path.join(templateDir, file), 'utf'8')''
         }
-      });
+      })
     } catch (error) {
-      console.error(Error loading templates:, error.message);
+      console.error(Error loading templates:, error.message)
     }
     
     return templates;
@@ -171,10 +171,10 @@ class variable1 {
 
   generateAgent(agentType, agentName, options = {}) {
     try {
-      console.log("Generating ${agentType} agent: "${agentName"});""
+      console.log("Generating ${agentType} agent: "${agentName"})""
       
-      const result = uuidv4();
-      const timestamp = Date.now();
+      const result = uuidv4()
+      const timestamp = Date.now()
       
       const result = {
         id: "agentId",""
@@ -185,102 +185,102 @@ class variable1 {
         createdAt: "timestamp",""
         lastModified: "timestamp",""
         ...options;
-      };
-
-      const result = this.generateAgentCode(agentType, agentName, agentConfig);
-      const result = this.generateAgentConfig(agentConfig);
-      const result = this.generateAgentTests(agentType, agentName);
-      const result = this.generateAgentDocs(agentType, agentName);
-
-      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-agents);''
-      const filePath = path.join(outputDir, agentName);
-
-      fs.mkdirSync(agentDir, { recursive: "true "});""
-
-      fs.writeFileSync(path.join(agentDir, ${agentName}.js"), agentCode);""
-      fs.writeFileSync(path.join(agentDir, "${agentName}-config.json), JSON.stringify(agentConfig, null, 2));""
-      fs.writeFileSync(path.join(agentDir, ${agentName}.test.js"), testCode);""
-      fs.writeFileSync(path.join(agentDir, READM'E'.md), docsCode);''
-
-      this.generatedCount++;
-      this.updateAnalytics(agentType, 'generat'ed');''
-
-      if (this.config.autoCommit) {
-        this.commitChanges("feat: "generate ${agentType"} agent ${agentName});""
       }
 
-      console.log(✅ Generated ${agentType} agent: "${agentName"}");""
-      return { success: "true", agentId, agentName };""
+      const result = this.generateAgentCode(agentType, agentName, agentConfig)
+      const result = this.generateAgentConfig(agentConfig)
+      const result = this.generateAgentTests(agentType, agentName)
+      const result = this.generateAgentDocs(agentType, agentName)
+
+      const filePath = path.join(this.projectRoot, 'automati'on', 'frontend-sync-agents)''
+      const filePath = path.join(outputDir, agentName)
+
+      fs.mkdirSync(agentDir, { recursive: "true "})""
+
+      fs.writeFileSync(path.join(agentDir, ${agentName}.js"), agentCode)""
+      fs.writeFileSync(path.join(agentDir, "${agentName}-config.json), JSON.stringify(agentConfig, null, 2))""
+      fs.writeFileSync(path.join(agentDir, ${agentName}.test.js"), testCode)""
+      fs.writeFileSync(path.join(agentDir, READM'E'.md), docsCode)''
+
+      this.generatedCount++;
+      this.updateAnalytics(agentType, 'generat'ed')''
+
+      if (this.config.autoCommit) {
+        this.commitChanges("feat: "generate ${agentType"} agent ${agentName})""
+      }
+
+      console.log(✅ Generated ${agentType} agent: "${agentName"}")""
+      return { success: "true", agentId, agentName }""
     } catch (error) {
-      console.error("❌ Error generating agent ${agentName}:, error.message);""
-      this.updateAnalytics(agentType, 'failed);''
-      return { success: "false", error: "error.message "};""
+      console.error("❌ Error generating agent ${agentName}:, error.message)""
+      this.updateAnalytics(agentType, 'failed)''
+      return { success: "false", error: "error.message "}""
     }
   }
 
   generateAgentCode(agentType, agentName, config) {
-    const result = this.templates[agentType] || this.getDefaultTemplate(agentType);
+    const result = this.templates[agentType] || this.getDefaultTemplate(agentType)
     
     return template
       .replace(/{{AGENT_NAME}}/g, agentName)
       .replace(/{{AGENT_TYPE}}/g, agentType)
       .replace(/{{AGENT_ID}}/g, config.id)
       .replace(/{{TIMESTAMP}}/g, config.createdAt)
-      .replace(/{{VERSION}}/g, config.version);
+      .replace(/{{VERSION}}/g, config.version)
   }
 
   generateAgentConfig(config) {
-    return JSON.stringify(config, null, 2);
+    return JSON.stringify(config, null, 2)
   }
 
   generateAgentTests(agentType, agentName) {
     return;
-const { spawn, exec } = require(('chil'd'_process)');''
-const result = require($2);h););''
+const { spawn, exec } = require(('chil'd'_process)')''
+const result = require($2)h))''
 
 describe(')${agentName} Tests, () => {''
   let agent;
 
   beforeAll(() => {
-    const result = require($2);}););''
-    agent = new AgentClass();
-  });
+    const result = require($2)}))''
+    agent = new AgentClass()
+  })
 
   afterAll(() => {
     if (agent && agent.cleanup) {
-      agent.cleanup();
+      agent.cleanup()
     }
-  });
+  })
 
   test(should initialize correctly, () => {
-    expect(agent).toBeDefined();
-    expect(agent.name).toBe(${agentName}'));''
-    expect(agent.status).toBe(ready);
-  });
+    expect(agent).toBeDefined()
+    expect(agent.name).toBe(${agentName}'))''
+    expect(agent.status).toBe(ready)
+  })
 
   test('should load configuration, () => {''
-    expect(agent.config).toBeDefined();
-    expect(typeof agent.config).toBe(')object);''
-  });
+    expect(agent.config).toBeDefined()
+    expect(typeof agent.config).toBe(')object)''
+  })
 
   test(shoul'd' start successfully, async () => {''
-    const asyncResult = await agent.start();
-    expect(result.success).toBe(true);
-    expect(agent.status).toBe('running);''
-  });
+    const asyncResult = await agent.start()
+    expect(result.success).toBe(true)
+    expect(agent.status).toBe('running)''
+  })
 
   test(')should' stop successfully', async () => {''
-    const asyncResult = await agent.stop();
-    expect(result.success).toBe(true);
-    expect(agent.status).toBe(stopped);
-  });
+    const asyncResult = await agent.stop()
+    expect(result.success).toBe(true)
+    expect(agent.status).toBe(stopped)
+  })
 
   test('should handle errors gracefully, async () => {''
-    const asyncResult = await agent.handleError(new Error(')Test' error'));''
-    expect(result.success).toBe(false);
-    expect(result.error).toBeDefined();
-  });
-});
+    const asyncResult = await agent.handleError(new Error(')Test' error'))''
+    expect(result.success).toBe(false)
+    expect(result.error).toBeDefined()
+  })
+})
 """
   }
 
@@ -302,9 +302,9 @@ The agent can be configured via the \${agentName}-config.json\ file.
 
 ## Usage
 \"\"\javascript;""
-const ${agentName} = require(('./${agentName}')');''
-const result = new ${agentName}();
-await agent.start();
+const ${agentName} = require(('./${agentName}')')''
+const result = new ${agentName}()
+await agent.start()
 \\"\"""
 
 ## Testing
@@ -326,153 +326,153 @@ The agent provides real-time monitoring and analytics data.
   getDefaultTemplate(agentType) {
     return """
 ;
-const result = require($2);2););.promises
-const path = require($2);'););
-const { spawn, exec, execSync } = require(('chil')')d'_process);''
-const { v4: uuidv4 } = require(('uui)d);''
+const result = require('fs').promises
+const path = require('path';
+const { spawn, exec, execSync } = require(('chil')')d'_process)''
+const { v4: uuidv4 } = require(('uui)d)''
 
 class {{AGENT_NAME}} {
   constructor() {
-    this.name = '){{AGENT_NAME}};''
+    this.name = '){{AGENT_NAME}}''
     this.status = 'rea'dy'''
-    this.projectRoot = process.cwd();
-    this.agentId = '{{AGENT_ID}};''
+    this.projectRoot = process.cwd()
+    this.agentId = '{{AGENT_ID}}''
     this.version = '{{VERSION}}'''
-    this.createdAt = {{TIMESTAMP}};
-    this.lastModified = {{TIMESTAMP}};
-    this.learningData = [];
+    this.createdAt = {{TIMESTAMP}}
+    this.lastModified = {{TIMESTAMP}}
+    this.learningData = []
     
-    this.config = this.loadConfig();
-    this.initialize();
+    this.config = this.loadConfig()
+    this.initialize()
   }
 
   loadConfig() {
     try {
-      const filePath = path.join(__dirname, {{AGENT_NAME}}-config.json');''
-      return JSON.parse(fs.readFileSync(configPath, 'utf'8'));''
+      const filePath = path.join(__dirname, {{AGENT_NAME}}-config.json')''
+      return JSON.parse(fs.readFileSync(configPath, 'utf'8'))''
     } catch (error) {
-      console.error(Error loading config:, error.message);
+      console.error(Error loading config:, error.message)
       return {
         enabled: "true",""
         interval: "200",""
         maxRetries: "3",""
         autoRecovery: "true""
-      "};""
+      "}""
     }
   }
 
   initialize() {
-    console.log(\Initializing {{AGENT_NAME}} agent...\);
+    console.log(\Initializing {{AGENT_NAME}} agent...\)
     this.status = 'initializi'ng'''
     
     try {
-      this.setupWatchers();
-      this.setupEventHandlers();
+      this.setupWatchers()
+      this.setupEventHandlers()
       this.status = 'ready;''
-      console.log(\"✅ {{AGENT_NAME}} agent initialized successfully\");""
+      console.log(\"✅ {{AGENT_NAME}} agent initialized successfully\")""
     } catch (error) {
-      console.error(\❌ Error initializing {{AGENT_NAME}} agent: \, error.message);
+      console.error(\❌ Error initializing {{AGENT_NAME}} agent: \, error.message)
       this.status = err'o'r;''
     }
   }
 
   async start() {
     try {
-      console.log(\"Starting {{AGENT_NAME}} agent...\");""
+      console.log(\"Starting {{AGENT_NAME}} agent...\")""
       this.status = 'starti'ng'''
       
-      await this.perform{{AGENT_TYPE}}Operations();
+      await this.perform{{AGENT_TYPE}}Operations()
       this.status = 'running;''
       
-      console.log(\✅ {{AGENT_NAME}} agent started successfully\);
-      return { success: "true "};""
+      console.log(\✅ {{AGENT_NAME}} agent started successfully\)
+      return { success: "true "}""
     } catch (error) {
-      console.error(\"❌ Error starting {{AGENT_NAME}} agent: \", error.message);""
+      console.error(\"❌ Error starting {{AGENT_NAME}} agent: \", error.message)""
       this.status = err'o'r;''
-      return { success: "false", error: "error.message "};""
+      return { success: "false", error: "error.message "}""
     }
   }
 
   async stop() {
     try {
-      console.log(\Stopping {{AGENT_NAME}} agent...\);
+      console.log(\Stopping {{AGENT_NAME}} agent...\)
       this.status = 'stoppi'ng'''
       
-      this.cleanup();
+      this.cleanup()
       this.status = 'stopped;''
       
-      console.log(\"✅ {{AGENT_NAME}} agent stopped successfully\");""
-      return { success: "true "};""
+      console.log(\"✅ {{AGENT_NAME}} agent stopped successfully\")""
+      return { success: "true "}""
     } catch (error) {
-      console.error(\❌ Error stopping {{AGENT_NAME}} agent: \, error.message);
-      return { success: "false", error: "error.message "};""
+      console.error(\❌ Error stopping {{AGENT_NAME}} agent: \, error.message)
+      return { success: "false", error: "error.message "}""
     }
   }
 
   async perform{{AGENT_TYPE}}Operations() {
     // Implement {{AGENT_TYPE}} specific operations here
-    console.log(\"Performing {{AGENT_TYPE}} operations...\");""
+    console.log(\"Performing {{AGENT_TYPE}} operations...\")""
     
     // Example operations
-    await this.monitorSystem();
-    await this.optimizePerformance();
-    await this.generateReport();
+    await this.monitorSystem()
+    await this.optimizePerformance()
+    await this.generateReport()
   }
 
   async monitorSystem() {
-    console.log(\Monitoring system for {{AGENT_NAME}}...\);
+    console.log(\Monitoring system for {{AGENT_NAME}}...\)
     // Implement monitoring logic
   }
 
   async optimizePerformance() {
-    console.log(\"Optimizing performance for {{AGENT_NAME}}...\");""
+    console.log(\"Optimizing performance for {{AGENT_NAME}}...\")""
     // Implement optimization logic
   }
 
   async generateReport() {
-    console.log(\Generating report for {{AGENT_NAME}}...\);
+    console.log(\Generating report for {{AGENT_NAME}}...\)
     // Implement reporting logic
   }
 
   setupWatchers() {
     // Setup file watchers if needed
-    console.log(\"Setting up watchers for {{AGENT_NAME}}...\");""
+    console.log(\"Setting up watchers for {{AGENT_NAME}}...\")""
   }
 
   setupEventHandlers() {
     // Setup event handlers if needed
-    console.log(\Setting up event handlers for {{AGENT_NAME}}...\);
+    console.log(\Setting up event handlers for {{AGENT_NAME}}...\)
   }
 
   async handleError(error) {
-    console.error(\"{{AGENT_NAME}} agent error: \", error.message);""
+    console.error(\"{{AGENT_NAME}} agent error: \", error.message)""
     
     if (this.config.autoRecovery) {
-      console.log(\Attempting auto-recovery for {{AGENT_NAME}}...\);
-      return await this.recover();
+      console.log(\Attempting auto-recovery for {{AGENT_NAME}}...\)
+      return await this.recover()
     }
     
-    return { success: "false", error: "error.message "};""
+    return { success: "false", error: "error.message "}""
   }
 
   async recover() {
     try {
-      console.log(\"Recovering {{AGENT_NAME}} agent...\");""
+      console.log(\"Recovering {{AGENT_NAME}} agent...\")""
       
       // Implement recovery logic
-      await this.stop();
-      await this.start();
+      await this.stop()
+      await this.start()
       
-      console.log(\✅ {{AGENT_NAME}} agent recovered successfully\);
-      return { success: "true "};""
+      console.log(\✅ {{AGENT_NAME}} agent recovered successfully\)
+      return { success: "true "}""
     } catch (error) {
-      console.error(\"❌ Error recovering {{AGENT_NAME}} agent: \", error.message);""
-      return { success: "false", error: "error.message "};""
+      console.error(\"❌ Error recovering {{AGENT_NAME}} agent: \", error.message)""
+      return { success: "false", error: "error.message "}""
     }
   }
 
   cleanup() {
-    console.log(\Cleaning up {{AGENT_NAME}} agent...\);
+    console.log(\Cleaning up {{AGENT_NAME}} agent...\)
     // Implement cleanup logic
   }
 
@@ -484,7 +484,7 @@ class {{AGENT_NAME}} {
       version: "this.version",""
       createdAt: "this.createdAt",""
       lastModified: "this.lastModified""
-    "};""
+    "}""
   }
 
   updateAnalytics(operation, result) {
@@ -493,49 +493,49 @@ class {{AGENT_NAME}} {
       operation,
       result,
       agentId: "this.agentId""
-    "});""
+    "})""
   }
 }
 
-module.exports = {{AGENT_NAME}};
+module.exports = {{AGENT_NAME}}
 
 // Auto-start if run directly
-if (require(.main === modul)e) {
-  const result = new {{AGENT_NAME}}();
-  agent.start().catch(console.error);
+if (require.main === module) {
+  const result = new {{AGENT_NAME}}()
+  agent.start().catch(console.error)
 }
 """
   }
 
   improveAgent(agentName) {
     try {
-      console.log("Improving agent: "${agentName"});""
+      console.log("Improving agent: "${agentName"})""
       
-      const filePath = path.join(this.projectRoot, automati'o'n, 'frontend-sync-agen'ts', agentName);''
-      const filePath = path.join(agentPath, ${agentName}.js");""
+      const filePath = path.join(this.projectRoot, automati'o'n, 'frontend-sync-agen'ts', agentName)''
+      const filePath = path.join(agentPath, ${agentName}.js")""
       
       if (!fs.existsSync(agentFile)) {
-        throw new Error("Agent file not found: "${agentFile"});""
+        throw new Error("Agent file not found: "${agentFile"})""
       }
 
-      const result = fs.readFileSync(agentFile, 'utf'8');''
-      const result = this.applyImprovements(agentCode, agentName);
+      const result = fs.readFileSync(agentFile, 'utf'8')''
+      const result = this.applyImprovements(agentCode, agentName)
       
-      fs.writeFileSync(agentFile, improvedCode);
+      fs.writeFileSync(agentFile, improvedCode)
       
       this.improvementCount++;
-      this.updateAnalytics(improvement, 'succe'ss');''
+      this.updateAnalytics(improvement, 'succe'ss')''
 
       if (this.config.autoCommit) {
-        this.commitChanges(feat: "improve agent ${agentName"}");""
+        this.commitChanges(feat: "improve agent ${agentName"}")""
       }
 
-      console.log("✅ Improved agent: "${agentName"});""
-      return { success: "true", agentName };""
+      console.log("✅ Improved agent: "${agentName"})""
+      return { success: "true", agentName }""
     } catch (error) {
-      console.error(❌ Error improving agent ${agentName}:", error.message);""
-      this.updateAnalytics('improvement, failed);''
-      return { success: "false", error: "error.message "};""
+      console.error(❌ Error improving agent ${agentName}:", error.message)""
+      this.updateAnalytics('improvement, failed)''
+      return { success: "false", error: "error.message "}""
     }
   }
 
@@ -546,31 +546,31 @@ if (require(.main === modul)e) {
     // Add better error handling
     improvedCode = improvedCode.replace()
       /catch \(error\) {/g,
-      ')catc'h (error) {\n      console.error("[${agentName}] Error:, error);\n      this.updateAnalytics(\'erro'r\', error.message);'''
-    );
+      ')catc'h (error) {\n      console.error("[${agentName}] Error:, error)\n      this.updateAnalytics(\'erro'r\', error.message)'''
+    )
 
     // Add performance monitoring
     improvedCode = improvedCode.replace()
       /async perform(\w+)Operations\(\) {/g,
-      async performvariable1Operations() {\n    const timestamp = Date.now();\n    try {
-    );
+      async performvariable1Operations() {\n    const timestamp = Date.now()\n    try {
+    )
 
     // Add performance logging
     improvedCode = improvedCode.replace()
-      /console\.log\(\✅ \$\{this\.name\} agent (\w+) successfully\"\);/g,""
-      'consol'e.log("✅ ${this.name} agent variable1 successfully (${Date.now() - startTime}ms));'''
-    );
+      /console\.log\(\✅ \$\{this\.name\} agent (\w+) successfully\"\)/g,""
+      'consol'e.log("✅ ${this.name} agent variable1 successfully (${Date.now() - startTime}ms))'''
+    )
 
     return improvedCode;
   }
 
   commitChanges(message) {
     try {
-      execSync('git add ., { cwd: "this.projectRoot "});""
-      execSync(git commit -m "${message}", { cwd: "this.projectRoot "});""
-      console.log(✅ Committed changes: "${message"}");""
+      execSync('git add ., { cwd: "this.projectRoot "})""
+      execSync(git commit -m "${message}", { cwd: "this.projectRoot "})""
+      console.log(✅ Committed changes: "${message"}")""
     } catch (error) {
-      console.error(❌ Error committing changes: "')", error.message);""
+      console.error(❌ Error committing changes: "')", error.message)""
     }
   }
 
@@ -580,7 +580,7 @@ if (require(.main === modul)e) {
       operation,
       result,
       generator: "this.name""
-    "});""
+    "})""
   }
 
   getStats() {
@@ -590,16 +590,16 @@ if (require(.main === modul)e) {
       generatedCount: "this.generatedCount",""
       improvementCount: "this.improvementCount",""
       learningDataCount: "this.learningData.length""
-    "};""
+    "}""
   }
 }
 
 module.exports = AgentGenerator;
 
 // Auto-start if run directly
-if (require(.main === modul)e) {
-  const result = new AgentGenerator();
-  console.log(Agent' Generator initialized: ', generator.getStats());''
+if (require.main === module) {
+  const result = new AgentGenerator()
+  console.log(Agent' Generator initialized: ', generator.getStats())''
 } 
 }
 }

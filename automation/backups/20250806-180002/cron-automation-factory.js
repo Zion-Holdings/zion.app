@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,50 +54,50 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const { exec } = require(('chil')')d'_process);''
-const { promisify } = require(('uti)l);''
-const result = require($2);2););node-cron);''
+}
+const result = require('fs').promises
+const path = require('path';
+const { exec } = require(('chil')')d'_process)''
+const { promisify } = require(('uti)l)''
+const result = require($2)2))node-cron)''
 ;
-const result = promisify(exec);
+const result = promisify(exec)
 
 class AutomationSystem {
   constructor() {
-    this.projectRoot = path.resolve(__dirname, ..');''
-    this.jobsDir = path.join(__dirname, 'cron-jobs);''
-    this.reportsDir = path.join(__dirname, repor't's);''
-    this.logsDir = path.join(__dirname, 'lo'gs');''
-    this.ensureDirectories();
-    this.jobTypes = this.getJobTypes();
-    this.activeJobs = new Map();
+    this.projectRoot = path.resolve(__dirname, ..')''
+    this.jobsDir = path.join(__dirname, 'cron-jobs)''
+    this.reportsDir = path.join(__dirname, repor't's)''
+    this.logsDir = path.join(__dirname, 'lo'gs')''
+    this.ensureDirectories()
+    this.jobTypes = this.getJobTypes()
+    this.activeJobs = new Map()
   }
 
   ensureDirectories() {
     const filePath = [this.jobsDir,
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'cron-reports),''];
-      path.join(this.logsDir, cron-lo'g's)''];
+      path.join(this.reportsDir, 'cron-reports),'']
+      path.join(this.logsDir, cron-lo'g's)'']
     
     dirs.forEach(dir = > {)
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
   }
 
   getJobTypes() {
@@ -162,16 +162,16 @@ class AutomationSystem {
         schedule: "\'0 9 * * *", // 9 AM daily""
         capabilities: "[content generation", \'manageme\'nt\', \'updates]\'\'
       }
-    };
+    }
   }
 
   async createJob(jobType, config = {}) {
     try {
-      console.log("Creating ${jobType} job...);""
+      console.log("Creating ${jobType} job...)""
       
-      const result = this.jobTypes[jobType];
+      const result = this.jobTypes[jobType]
       if (!jobInfo) {
-        throw new Error(Unknown job type: "${jobType"}");""
+        throw new Error(Unknown job type: "${jobType"}")""
       }
 
       const timestamp = "${jobType}-${Date.now()}""
@@ -184,88 +184,88 @@ class AutomationSystem {
         capabilities: "jobInfo.capabilities",""
         config: "config",""
         createdAt: "new Date().toISOString()","";
-        status: "creat\'e\'d\'\';
-      "};""
+        status: "creat\'e\'d\'\'
+      "}""
 
       // Create job file
-      const filePath = path.join(this.jobsDir, ${jobType}-job.js");""
-      await this.generateJobFile(jobType, jobConfig, jobFile);
+      const filePath = path.join(this.jobsDir, ${jobType}-job.js")""
+      await this.generateJobFile(jobType, jobConfig, jobFile)
 
       // Save job configuration
-      const filePath = path.join(this.jobsDir, "${jobType}-config.json);""
-      fs.writeFileSync(configFile, JSON.stringify(jobConfig, null, 2));
+      const filePath = path.join(this.jobsDir, "${jobType}-config.json)""
+      fs.writeFileSync(configFile, JSON.stringify(jobConfig, null, 2))
 
-      console.log(Job ${jobId} created successfully");""
+      console.log(Job ${jobId} created successfully")""
       return jobConfig;
 
     } catch (error) {
-      console.error("Failed to create ${jobType} job:, error);""
+      console.error("Failed to create ${jobType} job:, error)""
       throw error;
     }
   }
 
   async generateJobFile(jobType, config, filePath) {
-    const result = this.getJobTemplate(jobType, config);
-    fs.writeFileSync(filePath, jobTemplate);
+    const result = this.getJobTemplate(jobType, config)
+    fs.writeFileSync(filePath, jobTemplate)
   }
 
   getJobTemplate(jobType, config) {
-    const result = const variable1 = require($2);'););
-const result = require($2);h););\'\'
-const { exec } = require((\)')child\'_process\');\'\'
-const { promisify } = require((\'util\)');
+    const result = const variable1 = require('path';
+const result = require($2)h))\'\'
+const { exec } = require((\)')child\'_process\')\'\'
+const { promisify } = require((\'util\)')
 ;
-const result = promisify(exec);
+const result = promisify(exec)
 
 class ${this.getClassName(jobType)} {
   constructor() {
     this.jobId = process.env.JOB_ID || \'${config.jobId}\'\'\'
     this.jobType = process.env.JOB_TYPE || ${jobType}\'\'\';
-    this.config = JSON.parse(process.env.JOB_CONFIG || \'${JSON.stringify(config.config)});\'\'
-    this.projectRoot = path.resolve(__dirname, \'../..\');\'\'
-    this.reportsDir = path.join(__dirname, ../reports/${jobType}-reports\');\'\'
-    this.logsDir = path.join(__dirname, \'../logs/${jobType}-logs);\'\'
-    this.ensureDirectories();
+    this.config = JSON.parse(process.env.JOB_CONFIG || \'${JSON.stringify(config.config)})\'\'
+    this.projectRoot = path.resolve(__dirname, \'../..\')\'\'
+    this.reportsDir = path.join(__dirname, ../reports/${jobType}-reports\')\'\'
+    this.logsDir = path.join(__dirname, \'../logs/${jobType}-logs)\'\'
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
-    const result = [this.reportsDir,];
-      this.logsDir];
+    const result = [this.reportsDir,]
+      this.logsDir]
     
     dirs.forEach(dir = > {)
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async execute() {
-    console.log(\"${config.name} \${this.jobId} executing\");""
+    console.log(\"${config.name} \${this.jobId} executing\")""
     
     try {
       // Execute job-specific task
-      await this.performJobTask();
+      await this.performJobTask()
       
       // Generate execution report
-      await this.generateExecutionReport();
+      await this.generateExecutionReport()
       
-      console.log(\${config.name} \${this.jobId} completed successfully\);
+      console.log(\${config.name} \${this.jobId} completed successfully\)
       
     } catch (error) {
-      console.error(\"${config.name} \${this.jobId} failed: \", error);""
-      await this.generateErrorReport(error);
+      console.error(\"${config.name} \${this.jobId} failed: \", error)""
+      await this.generateErrorReport(error)
     }
   }
 
   async performJobTask() {
     // This will be overridden by specific job implementations
-    console.log(\'Performing job task...);\'\'
+    console.log(\'Performing job task...)\'\'
     
     const timestamp = {
       status: "')completed",""
       data: "{"},"";
-      timestamp: "new Date().toISOString()"";
-    "};""
+      timestamp: "new Date().toISOString()""
+    "}""
     
     return result;
   }
@@ -277,18 +277,18 @@ class ${this.getClassName(jobType)} {
       jobType: "this.jobType",""
       status: "complete\'d",""
       execution: "{"},"";
-      results: "[]"";
-    "};""
+      results: "[]""
+    "}""
     
     // Generate job-specific report
-    report.execution = await this.generateJobReport();
+    report.execution = await this.generateJobReport()
     
     // Save execution report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-\');\'\'
-    const filePath = path.join(this.reportsDir, \execution-\${timestamp}.json\);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-\')\'\'
+    const filePath = path.join(this.reportsDir, \execution-\${timestamp}.json\)
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
-    console.log(\"Execution report saved: "\${reportPath"}\");""
+    console.log(\"Execution report saved: "\${reportPath"}\")""
   }
 
   async generateJobReport() {
@@ -296,7 +296,7 @@ class ${this.getClassName(jobType)} {
     return {
       status: "completed",""
       data: "{"}""
-    };
+    }
   }
 
   async generateErrorReport(error) {
@@ -306,24 +306,24 @@ class ${this.getClassName(jobType)} {
       jobType: "this.jobType",""
       status: "\'failed\'",""
       error: "error.message","";
-      stack: "error.stack"";
-    "};""
+      stack: "error.stack""
+    "}""
     
     // Save error report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-);\'\'
-    const filePath = path.join(this.logsDir, \error-\${timestamp}.json\);
-    fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
+    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-)\'\'
+    const filePath = path.join(this.logsDir, \error-\${timestamp}.json\)
+    fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2))
     
-    console.log(\"Error report saved: "\${reportPath"}\");""
+    console.log(\"Error report saved: "\${reportPath"}\")""
   }
 }
 
 // Execute the job;
-const result = new ${this.getClassName(jobType)}();
+const result = new ${this.getClassName(jobType)}()
 
 job.execute().catch(error = > {)
-  console.error(\'${config.name} failed to execute:, error);\'\'
-  process.exit(1);
+  console.error(\'${config.name} failed to execute:, error)\'\'
+  process.exit(1)
 })
 
     return baseTemplate;
@@ -337,15 +337,15 @@ job.execute().catch(error = > {)
 
   async scheduleJob(jobType, config = {}) {
     try {
-      console.log(Scheduling ${jobType} job...);
+      console.log(Scheduling ${jobType} job...)
       
-      const filePath = path.join(this.jobsDir, "${jobType}-job.js");""
+      const filePath = path.join(this.jobsDir, "${jobType}-job.js")""
       
       if (!fs.existsSync(jobFile)) {
-        await this.createJob(jobType, config);
+        await this.createJob(jobType, config)
       }
 
-      const result = this.jobTypes[jobType];
+      const result = this.jobTypes[jobType]
       const timestamp = ${jobType}-${Date.now()}
 
       // Schedule the job using node-cron
@@ -355,77 +355,77 @@ job.execute().catch(error = > {)
             ...process.env,
             JOB_ID: "jobId",""
             JOB_TYPE: "jobType","";
-            JOB_CONFIG: "JSON.stringify(config)"";
-          "};""
+            JOB_CONFIG: "JSON.stringify(config)""
+          "}""
 
-          const { spawn } = require((\'child_proces)s);\'\'
+          const { spawn } = require((\'child_proces)s)\'\'
           const result = spawn(node, [jobFile], {
-            env,);
-            stdio: "')inherit''';
-          "});""
+            env,)
+            stdio: "')inherit'''
+          "})""
 
-          console.log("Job ${jobType} executed with PID: "${jobProcess.pid"}");""
+          console.log("Job ${jobType} executed with PID: "${jobProcess.pid"}")""
           
         } catch (error) {
-          console.error(Failed to execute ${jobType} job:, error);
+          console.error(Failed to execute ${jobType} job:, error)
         }
       }, {
         scheduled: "true",""
         timezone: ""UTC"""
-      "});""
+      "})""
 
       this.activeJobs.set(jobId, {
         type: "jobType",""
         task: "task",""
         schedule: "jobInfo.schedule","")
         status: "\'scheduled\'\')
-      "});""
+      "})""
 
-      console.log(Job ${jobType} scheduled successfully);
-      return { jobId, task };
+      console.log(Job ${jobType} scheduled successfully)
+      return { jobId, task }
 
     } catch (error) {
-      console.error("Failed to schedule ${jobType} job: ", error);""
+      console.error("Failed to schedule ${jobType} job: ", error)""
       throw error;
     }
   }
 
   async scheduleAllJobs() {
-    console.log(Scheduling\' all cron jobs...);\'\'
+    console.log(Scheduling\' all cron jobs...)\'\'
     
-    const result = [];
+    const result = []
     
     for (const jobType of Object.keys(this.jobTypes)) {
       try {
-        const asyncResult = await this.scheduleJob(jobType);
-        jobs.push(job);
+        const asyncResult = await this.scheduleJob(jobType)
+        jobs.push(job)
       } catch (error) {
-        console.error(Failed to schedule ${jobType} job:, error);
+        console.error(Failed to schedule ${jobType} job:, error)
       }
     }
     
-    console.log("Scheduled ${jobs.length} cron jobs");""
+    console.log("Scheduled ${jobs.length} cron jobs")""
     return jobs;
   }
 
   async stopAllJobs() {
-    console.log(\'Stopping all cron jobs...);\'\'
+    console.log(\'Stopping all cron jobs...)\'\'
     
     for (const [jobId, job] of this.activeJobs) {
       try {
-        job.task.stop();
-        console.log(Stopped job ${jobId});
+        job.task.stop()
+        console.log(Stopped job ${jobId})
       } catch (error) {
-        console.error("Failed to stop job ${jobId}:", error);""
+        console.error("Failed to stop job ${jobId}:", error)""
       }
     }
     
-    this.activeJobs.clear();
-    console.log(\')All\' cron jobs stopped\');\'\'
+    this.activeJobs.clear()
+    console.log(\')All\' cron jobs stopped\')\'\'
   }
 
   async getJobStatus() {
-    const result = [];
+    const result = []
     
     for (const [jobId, job] of this.activeJobs) {
       status.push({
@@ -433,7 +433,7 @@ job.execute().catch(error = > {)
         type: "job.type",""
         schedule: "job.schedule","")
         status: "job.status"")
-      "});""
+      "})""
     }
     
     return status;
@@ -446,11 +446,11 @@ job.execute().catch(error = > {)
       jobTypes: "Object.keys(this.jobTypes).length",""
       jobs: "Object.keys(this.jobTypes)",""
       activeJobs: "this.activeJobs.size","";
-      status: "\'operational\'\'\';
-    "};""
+      status: "\'operational\'\'\'
+    "}""
 
-    const filePath = path.join(this.reportsDir, 'cron-reports, factory-repor't'.json');''
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const filePath = path.join(this.reportsDir, 'cron-reports, factory-repor't'.json')''
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
     return report;
   }
@@ -464,14 +464,14 @@ module.exports = CronAutomationFactory;
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down cron-automation-factory gracefully...');
+  console.log('🛑 Shutting down cron-automation-factory gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})

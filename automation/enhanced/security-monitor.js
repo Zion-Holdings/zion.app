@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,81 +13,81 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class securityMonitor {
     constructor() {
         this.name = 'security-monitor';
         this.description = 'Advanced security monitoring with threat detection';
-        this.features = ["threat-detection","auto-response","vulnerability-scanning","compliance-monitoring"];
+        this.features = ["threat-detection","auto-response","vulnerability-scanning","compliance-monitoring"]
         this.status = 'active';
         this.version = '3.0';
         this.intelligence = {
             learningRate: 0.15,
             adaptationSpeed: 0.9,
             innovationIndex: 0.8
-        };
+        }
     }
     
     async start() {
-        console.log(`🚀 Starting ${this.name}...`);
+        console.log(`🚀 Starting ${this.name}...`)
         
         try {
-            await this.initialize();
-            await this.analyze();
-            await this.process();
-            await this.optimize();
-            await this.learn();
+            await this.initialize()
+            await this.analyze()
+            await this.process()
+            await this.optimize()
+            await this.learn()
             
-            console.log(`✅ ${this.name} completed successfully`);
+            console.log(`✅ ${this.name} completed successfully`)
         } catch (error) {
-            console.error(`❌ ${this.name} failed: `, error);
+            console.error(`❌ ${this.name} failed: `, error)
             throw error;
         }
     }
     
     async initialize() {
-        console.log(`  📋 Initializing ${this.name}...`);
-        this.startTime = Date.now();
+        console.log(`  📋 Initializing ${this.name}...`)
+        this.startTime = Date.now()
         this.metrics = {
             processed: 0,
             optimized: 0,
             errors: 0
-        };
+        }
     }
     
     async analyze() {
-        console.log(`  🔍 Analyzing with ${this.name}...`);
+        console.log(`  🔍 Analyzing with ${this.name}...`)
         // Implement intelligent analysis
     }
     
     async process() {
-        console.log(`  ⚙️ Processing with ${this.name}...`);
+        console.log(`  ⚙️ Processing with ${this.name}...`)
         // Implement intelligent processing
     }
     
     async optimize() {
-        console.log(`  🎯 Optimizing with ${this.name}...`);
+        console.log(`  🎯 Optimizing with ${this.name}...`)
         // Implement intelligent optimization
     }
     
     async learn() {
-        console.log(`  🧠 Learning with ${this.name}...`);
+        console.log(`  🧠 Learning with ${this.name}...`)
         // Implement machine learning
     }
     
@@ -96,7 +96,7 @@ class securityMonitor {
             ...this.metrics,
             duration: Date.now() - this.startTime,
             efficiency: this.metrics.processed > 0 ? this.metrics.optimized / this.metrics.processed : 0
-        };
+        }
     }
 }
 

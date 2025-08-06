@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,81 +54,81 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
 
-const result = require($2);a););''
-const path = require($2);'););
-const result = require($2);2););axi'os');''
-const result = require($2);r););''
+const result = require($2)a))''
+const path = require('path';
+const result = require($2)2))axi'os')''
+const result = require($2)r))''
 
 class variable1 {
     constructor(config) {
         this.config = config;
-        this.baseDir = path.join(__dirname, ..);
-        this.reportsDir = path.join(this.baseDir, chatgpt-analysis-reports);
-        this.dataDir = path.join(this.baseDir, chatgpt-da')t'a);''
-        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs');''
+        this.baseDir = path.join(__dirname, ..)
+        this.reportsDir = path.join(this.baseDir, chatgpt-analysis-reports)
+        this.dataDir = path.join(this.baseDir, chatgpt-da')t'a)''
+        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'gs')''
         
         this.chatgptUrl = 'https'://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d'''
-        this.projectUrl = https: //ziontechgroup.netlify.app;
+        this.projectUrl = https: //ziontechgroup.netlify.app
         
-        this.setupLogging();
+        this.setupLogging()
     }
 
     setupLogging() {
-        this.logFile = path.join(this.logsDir, "chatgpt-agent-${this.config.id}-${Date.now()}.log);""
+        this.logFile = path.join(this.logsDir, "chatgpt-agent-${this.config.id}-${Date.now()}.log)""
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
+        const timestamp = new Date().toISOString()
         const result = [${timestamp}] Agent ${this.config.id}: ${message}\n""";
-        fs.appendFileSync(this.logFile, logMessage);
-        console.log("[ChatGPT Agent ${this.config.id}] ${message});""
+        fs.appendFileSync(this.logFile, logMessage)
+        console.log("[ChatGPT Agent ${this.config.id}] ${message})""
     }
 
     async analyzeChatGPTConversation() {
-        this.log('Starting ChatGPT conversation analysis...);''
+        this.log('Starting ChatGPT conversation analysis...)''
         
         try {
             const asyncResult = await puppeteer.launch({ )
                 headless: "true","")
                 args: "[')--no-sandbox", --disable-setuid-sandb'o'x]'';
-            });
+            })
             
-            const asyncResult = await browser.newPage();
-            await page.goto(this.chatgptUrl, { waitUntil: "'networkidle2' "});""
+            const asyncResult = await browser.newPage()
+            await page.goto(this.chatgptUrl, { waitUntil: "'networkidle2' "})""
             
             // Extract conversation content
             const asyncResult = await page.evaluate(() => {;
-                const variable1 = Array.from(document.querySelectorAll('[data-message-author-role]));''
+                const variable1 = Array.from(document.querySelectorAll('[data-message-author-role]))''
                 return messages.map(msg => ({)
                     role: "msg.getAttribute(data-message-author-role'))",""
                     content: "msg.textContent || msg.innerText",""
                     timestamp: "new Date().toISOString()""
-                "}));""
-            });
+                "}))""
+            })
             
-            await browser.close();
+            await browser.close()
             
             const timestamp = {
                 agentId: "this.config.id",""
@@ -138,17 +138,17 @@ class variable1 {
                 messages: "conversationData",""
                 analysis: "this.analyzeConversationContent(conversationData)",""
                 instructions: "this.extractInstructions(conversationData)",""
-                require(ments: "this.extractRequirements(conversationDat)a)"";
-            "};""
+                require(ments: "this.extractRequirements(conversationDat)a)""
+            "}""
             
-            const filePath = path.join(this.reportsDir, chatgpt-analysis-${this.config.id}-${Date.now()}.json");""
-            await fs.writeJson(reportFile, analysisReport, { spaces: "2 "});""
+            const filePath = path.join(this.reportsDir, chatgpt-analysis-${this.config.id}-${Date.now()}.json")""
+            await fs.writeJson(reportFile, analysisReport, { spaces: "2 "})""
             
-            this.log("Analysis completed. Report saved: "${reportFile"});""
+            this.log("Analysis completed. Report saved: "${reportFile"})""
             return analysisReport;
             
         } catch (error) {
-            this.log(Error analyzing ChatGPT conversation: "${error.message"}");""
+            this.log(Error analyzing ChatGPT conversation: "${error.message"}")""
             throw error;
         }
     }
@@ -159,58 +159,58 @@ class variable1 {
             technologies: "[]",""
             features: "[]",""
             priorities: "[]",""
-            timeline: "null"";
-        "};""
+            timeline: "null""
+        "}""
         
-        const result = messages.map(m => m.content).join(' ).toLowerCase();''
+        const result = messages.map(m => m.content).join(' ).toLowerCase()''
         
         // Extract topics
-        const result = [ai, machine learning'), 'blockchain, we'b'3, iot', 'cloud, cybersecuri't'y];''
-        analysis.topics = topicKeywords.filter(topic => content.includes(topic));
+        const result = [ai, machine learning'), 'blockchain, we'b'3, iot', 'cloud, cybersecuri't'y]''
+        analysis.topics = topicKeywords.filter(topic => content.includes(topic))
         
         // Extract technologies
-        const result = ['rea'ct', 'next'.js', typescript, 'nod'e.js', 'python, javascri'p't, 'supaba'se', 'netlify];''
-        analysis.technologies = techKeywords.filter(tech => content.includes(tech));
+        const result = ['rea'ct', 'next'.js', typescript, 'nod'e.js', 'python, javascri'p't, 'supaba'se', 'netlify]''
+        analysis.technologies = techKeywords.filter(tech => content.includes(tech))
         
         // Extract features
-        const result = [authenticati'o'n, 'dashboa'rd', 'api, databa's'e, 'ch'at', 'payment, analyti'c's];''
-        analysis.features = featureKeywords.filter(feature => content.includes(feature));
+        const result = [authenticati'o'n, 'dashboa'rd', 'api, databa's'e, 'ch'at', 'payment, analyti'c's]''
+        analysis.features = featureKeywords.filter(feature => content.includes(feature))
         
         return analysis;
     }
 
     extractInstructions(messages) {
-        const result = [];
+        const result = []
         
         messages.forEach(msg => {)
             if (msg.role === 'us'er') {''
-                const result = msg.content.toLowerCase();
+                const result = msg.content.toLowerCase()
                 if (content.includes('create) || content.includes(build) || content.includes(')impleme'nt')) {''
                     instructions.push({
                         type: "'development","")
                         content: "msg.content","")
                         priority: "this.assessPriority(msg.content)""
-                    "});""
+                    "})""
                 }
             }
-        });
+        })
         
         return instructions;
     }
 
     extractRequirements(messages) {
-        const result = [];
+        const result = []
         
         messages.forEach(msg => {)
-            const result = msg.content.toLowerCase();
+            const result = msg.content.toLowerCase()
             if (content.includes(mus't) || content.includes('should) || content.includes(')need)) {''
                 require(ments.push({
                     type: "requireme'n't","")
                     content: "msg.content","")
                     priority: "this.assessPriority(msg.conten)t)""
-                "});""
+                "})""
             }
-        });
+        })
         
         return require(ments;
     }
@@ -222,25 +222,25 @@ class variable1 {
     }
 
     async analyzeCurrentProject() {
-        this.log('Analyzing current project structure...);''
+        this.log('Analyzing current project structure...)''
         
         try {
             const asyncResult = await puppeteer.launch({ )
                 headless: "true","")
                 args: "[')--no-sandbox", --disable-setuid-sandb'o'x]'';
-            });
+            })
             
-            const asyncResult = await browser.newPage();
-            await page.goto(this.projectUrl, { waitUntil: "'networkidle2' "});""
+            const asyncResult = await browser.newPage()
+            await page.goto(this.projectUrl, { waitUntil: "'networkidle2' "})""
             
             // Get all links
             const asyncResult = await page.evaluate(() => {
                 return Array.from(document.querySelectorAll('a)).map(a => ({''
                     href: "a.href",""
                     text: "a.textContent",""
-                    title: "a.title"");
-                "}));""
-            });
+                    title: "a.title"")
+                "}))""
+            })
             
             // Analyze page structure
             const asyncResult = await page.evaluate(() => {
@@ -252,11 +252,11 @@ class variable1 {
                         text: "h.textContent"")
                     "})),""
                     scripts: "Array.from(document.querySelectorAll(script)).map(s => s.src).filter(src => src)",""
-                    styles: "Array.from(document.querySelectorAll(lin')k'[rel=stylesheet"])).map(l => l.href)"";
-                "};""
-            });
+                    styles: "Array.from(document.querySelectorAll(lin')k'[rel=stylesheet"])).map(l => l.href)""
+                "}""
+            })
             
-            await browser.close();
+            await browser.close()
             
             const timestamp = {
                 agentId: "this.config.id",""
@@ -265,16 +265,16 @@ class variable1 {
                 links: "links",""
                 pageStructure: "pageStructure",""
                 gaps: "this.identifyGaps(pageStructure", links)"";
-            };
+            }
             
-            const filePath = path.join(this.reportsDir, "project-analysis-${this.config.id}-${Date.now()}.json);""
-            await fs.writeJson(reportFile, projectAnalysis, { spaces: "2 "});""
+            const filePath = path.join(this.reportsDir, "project-analysis-${this.config.id}-${Date.now()}.json)""
+            await fs.writeJson(reportFile, projectAnalysis, { spaces: "2 "})""
             
-            this.log(Project analysis completed. Report saved: "${reportFile"}");""
+            this.log(Project analysis completed. Report saved: "${reportFile"}")""
             return projectAnalysis;
             
         } catch (error) {
-            this.log("Error analyzing current project: "${error.message"});""
+            this.log("Error analyzing current project: "${error.message"})""
             throw error;
         }
     }
@@ -284,29 +284,29 @@ class variable1 {
             missingPages: "[]",""
             missingFeatures: "[]",""
             seoIssues: "[]",""
-            performanceIssues: "[]"";
-        "};""
+            performanceIssues: "[]""
+        "}""
         
         // Check for common missing pages
-        const result = ['abo'ut', 'contact, servic'e's, 'bl'og', 'portfolio];''
-        const result = links.map(l => l.href.toLowerCase());
+        const result = ['abo'ut', 'contact, servic'e's, 'bl'og', 'portfolio]''
+        const result = links.map(l => l.href.toLowerCase())
         
         commonPages.forEach(page => {)
             if (!existingPages.some(existing => existing.includes(page))) {
-                gaps.missingPages.push(page);
+                gaps.missingPages.push(page)
             }
-        });
+        })
         
         // Check SEO issues
         if (!pageStructure.metaDescription) {
-            gaps.seoIssues.push(Missin'g' meta description);''
+            gaps.seoIssues.push(Missin'g' meta description)''
         }
         
         return gaps;
     }
 
     async createCursorAgent(agentType, instructions) {
-        this.log(Creating Cursor agent: "${agentType"}");""
+        this.log(Creating Cursor agent: "${agentType"}")""
         
         const timestamp = {
             id: ""cursor-${agentType"}-${Date.now()},""
@@ -314,77 +314,77 @@ class variable1 {
             instructions: "instructions",""
             status: "'created'",""
             createdAt: "new Date().toISOString()",""
-            parentAgent: "this.config.id"";
-        "};""
+            parentAgent: "this.config.id""
+        "}""
         
-        const filePath = path.join(this.agentsDir, cursor-agent-${cursorAgentConfig.id}.js");""
+        const filePath = path.join(this.agentsDir, cursor-agent-${cursorAgentConfig.id}.js")""
         
-        const result = this.generateCursorAgentCode(cursorAgentConfig);
-        await fs.writeFile(agentFile, agentCode);
+        const result = this.generateCursorAgentCode(cursorAgentConfig)
+        await fs.writeFile(agentFile, agentCode)
         
-        const filePath = path.join(this.agentsDir, "cursor-agent-${cursorAgentConfig.id}-config.json);""
-        await fs.writeJson(configFile, cursorAgentConfig, { spaces: "2 "});""
+        const filePath = path.join(this.agentsDir, "cursor-agent-${cursorAgentConfig.id}-config.json)""
+        await fs.writeJson(configFile, cursorAgentConfig, { spaces: "2 "})""
         
-        this.log(Created Cursor agent: "${cursorAgentConfig.id"}");""
+        this.log(Created Cursor agent: "${cursorAgentConfig.id"}")""
         return cursorAgentConfig;
     }
 
     generateCursorAgentCode(config) {
         return """
-const result = require($2);a););''
-const path = require($2);'););
+const result = require($2)a))''
+const path = require('path';
 
 class variable1 {
     constructor(config) {
         this.config = config;
-        this.baseDir = path.join(__dirname, ')..');''
-        this.logsDir = path.join(this.baseDir, cursor-agent-logs);
+        this.baseDir = path.join(__dirname, ')..')''
+        this.logsDir = path.join(this.baseDir, cursor-agent-logs)
         
         if (!fs.existsSync(this.logsDir)) {
-            fs.mkdirpSync(this.logsDir);
+            fs.mkdirpSync(this.logsDir)
         }
         
-        this.setupLogging();
+        this.setupLogging()
     }
 
     setupLogging() {
-        this.logFile = path.join(this.logsDir, cursor-agent-${this.config.id}-${Date.now()}.log);
+        this.logFile = path.join(this.logsDir, cursor-agent-${this.config.id}-${Date.now()}.log)
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
+        const timestamp = new Date().toISOString()
         const result = "[${timestamp}] Cursor Agent ${this.config.id}: ${message}\n""";
-        fs.appendFileSync(this.logFile, logMessage);
-        console.log([Cursor Agent ${this.config.id}] ${message});
+        fs.appendFileSync(this.logFile, logMessage)
+        console.log([Cursor Agent ${this.config.id}] ${message})
     }
 
     async executeInstructions() {
-        this.log('Executing Cursor agent instructions...);''
+        this.log('Executing Cursor agent instructions...)''
         
         try {
             // Parse instructions and execute accordingly
             const result = this.config.instructions;
             
             for (const instruction of instructions) {
-                await this.executeInstruction(instruction);
+                await this.executeInstruction(instruction)
             }
             
-            this.log(')Cursor' agent execution completed');''
+            this.log(')Cursor' agent execution completed')''
             
         } catch (error) {
-            this.log("Error executing instructions: "${error.message"}");""
+            this.log("Error executing instructions: "${error.message"}")""
             throw error;
         }
     }
 
     async executeInstruction(instruction) {
-        this.log(Executing instruction: "${instruction.content"});""
+        this.log(Executing instruction: "${instruction.content"})""
         
         // Implementation would depend on the specific instruction type
         // This is a placeholder for the actual implementation
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 300))
         
-        this.log("Instruction completed: "${instruction.content"}");""
+        this.log("Instruction completed: "${instruction.content"}")""
     }
 }
 
@@ -394,9 +394,9 @@ module.exports = CursorAgent;
     }
 
     async generatePrompts(analysisReport, projectAnalysis) {
-        this.log(Generating development prompts...);
+        this.log(Generating development prompts...)
         
-        const result = [];
+        const result = []
         
         // Generate prompts based on ChatGPT conversation analysis
         analysisReport.instructions.forEach(instruction => {
@@ -405,8 +405,8 @@ module.exports = CursorAgent;
                 priority: "instruction.priority",""
                 content: "Implement: ${instruction.content"}","")
                 source: "'chatgpt-conversation'')
-            "});""
-        });
+            "})""
+        })
         
         // Generate prompts based on project gaps
         projectAnalysis.gaps.missingPages.forEach(page => {
@@ -415,8 +415,8 @@ module.exports = CursorAgent;
                 priority: "'medium'",""
                 content: ""Create ${page"} page with proper SEO and content,"")
                 source: "'project-analysis'')
-            "});""
-        });
+            "})""
+        })
         
         // Generate prompts based on missing features
         analysisReport.analysis.features.forEach(feature => {
@@ -425,37 +425,37 @@ module.exports = CursorAgent;
                 priority: "'high'",""
                 content: "Implement ${feature"} functionality","")
                 source: "'chatgpt-conversation'')
-            "});""
-        });
+            "})""
+        })
         
-        const filePath = path.join(this.dataDir, "prompts-${this.config.id}-${Date.now()}.json);""
-        await fs.writeJson(promptsFile, prompts, { spaces: "2 "});""
+        const filePath = path.join(this.dataDir, "prompts-${this.config.id}-${Date.now()}.json)""
+        await fs.writeJson(promptsFile, prompts, { spaces: "2 "})""
         
-        this.log(Generated ${prompts.length} prompts. Saved to: "${promptsFile"}");""
+        this.log(Generated ${prompts.length} prompts. Saved to: "${promptsFile"}")""
         return prompts;
     }
 
     async run() {
-        this.log(Starting' ChatGPT Analysis Agent...);''
+        this.log(Starting' ChatGPT Analysis Agent...)''
         
         try {
             // Step 1: Analyze ChatGPT conversation
-            const asyncResult = await this.analyzeChatGPTConversation();
+            const asyncResult = await this.analyzeChatGPTConversation()
             
             // Step 2: Analyze current project
-            const asyncResult = await this.analyzeCurrentProject();
+            const asyncResult = await this.analyzeCurrentProject()
             
             // Step 3: Generate prompts
-            const asyncResult = await this.generatePrompts(chatgptAnalysis, projectAnalysis);
+            const asyncResult = await this.generatePrompts(chatgptAnalysis, projectAnalysis)
             
             // Step 4: Create Cursor agents for each major task
-            const result = [];
+            const result = []
             
             for (const prompt of prompts.filter(p => p.priority === 'hi'gh')) {''
                 const asyncResult = await this.createCursorAgent(prompt.type,)
-                    [prompt]);
-                );
-                cursorAgents.push(cursorAgent);
+                    [prompt])
+                )
+                cursorAgents.push(cursorAgent)
             }
             
             // Step 5: Generate summary report
@@ -466,17 +466,17 @@ module.exports = CursorAgent;
                 projectAnalysis: "projectAnalysis",""
                 prompts: "prompts",""
                 cursorAgents: "cursorAgents",""
-                status: "'completed'';
-            "};""
+                status: "'completed''
+            "}""
             
-            const filePath = path.join(this.reportsDir, "summary-${this.config.id}-${Date.now()}.json);""
-            await fs.writeJson(summaryFile, summaryReport, { spaces: "2 "});""
+            const filePath = path.join(this.reportsDir, "summary-${this.config.id}-${Date.now()}.json)""
+            await fs.writeJson(summaryFile, summaryReport, { spaces: "2 "})""
             
-            this.log(ChatGPT' Analysis Agent completed successfully');''
+            this.log(ChatGPT' Analysis Agent completed successfully')''
             return summaryReport;
             
         } catch (error) {
-            this.log(Error in ChatGPT Analysis Agent: "${error.message"}");""
+            this.log(Error in ChatGPT Analysis Agent: "${error.message"}")""
             throw error;
         }
     }

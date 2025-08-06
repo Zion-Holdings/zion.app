@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,103 +54,103 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const variable1 = require($2);'););''
-const variable1 = require($2);'););''
+const variable1 = require('path';''
+const variable1 = require('path';''
 
 // Function to fix specific parsing errors;
 function fixSpecificParsingErrors() {
   try {
-    let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
+    let variable1 = fs.readFileSync(filePath, 'ut'f'8')''
     let variable1 = false;
 
     // Fix duplicate closing tags
-    content = content.replace(/<\/ModernLayout>\s*<\/ModernLayout>/g, '</ModernLayout>');''
+    content = content.replace(/<\/ModernLayout>\s*<\/ModernLayout>/g, '</ModernLayout>')''
     
     // Fix missing closing braces in object literals
-    content = content.replace(/(\w+):\s*\{([^}]*)$/gm, 'variable1: {variable2}');''
+    content = content.replace(/(\w+):\s*\{([^}]*)$/gm, 'variable1: {variable2}')''
     
     // Fix missing closing parentheses
-    content = content.replace(/(\w+)\(([^)]*)$/gm, 'variable1(variable2)');''
+    content = content.replace(/(\w+)\(([^)]*)$/gm, 'variable1(variable2)')''
     
     // Fix missing closing brackets
-    content = content.replace(/(\w+)\[([^\]]*)$/gm, 'variable1[variable2]');''
+    content = content.replace(/(\w+)\[([^\]]*)$/gm, 'variable1[variable2]')''
 
     // Fix specific parsing patterns
     // Fix "Property or signature expected errors""
-    content = content.replace(/^\s*(\w+):\s*([^;]*)$/gm, 'variable1: variable2;');''
+    content = content.replace(/^\s*(\w+):\s*([^;]*)$/gm, 'variable1: variable2')''
     
     // Fix Expression expected" errors""
-    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2');''
+    content = content.replace(/(\w+):\s*([^,}]*)$/gm, 'variable1: variable2')''
     
     // Fix "Unexpected token errors</div>""
-    content = content.replace(/<([^>]+)\s*\/\s*([^>]*)\s*\/>/g, '<variable1 variable2 />');''
+    content = content.replace(/<([^>]+)\s*\/\s*([^>]*)\s*\/>/g, '<variable1 variable2 />')''
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {''
-      fs.writeFileSync(filePath, content, 'ut'f'8');''
-      this.log(✅ Fixed parsing errors in ${filePath}", 'info');""
+      fs.writeFileSync(filePath, content, 'ut'f'8')''
+      this.log(✅ Fixed parsing errors in ${filePath}", 'info')""
       return true;
     }
 
@@ -163,19 +163,19 @@ function fixSpecificParsingErrors() {
 
 // Function to fix all product files with parsing errors;
 function fixAllProductFiles() {
-  const variable1 = path.join(__dirname, '..', 'pag'e's', 'produc't's');''
+  const variable1 = path.join(__dirname, '..', 'pag'e's', 'produc't's')''
   let variable1 = 0;
 
   if (fs.existsSync(productsDir)) {
-    const variable1 = fs.readdirSync(productsDir);
+    const variable1 = fs.readdirSync(productsDir)
     files.forEach(file => {)
       if (file.endsWith('.tsx') && file.includes('trend-soluti'o'n')) {''
-        const variable1 = path.join(productsDir, file);
+        const variable1 = path.join(productsDir, file)
         if (fixSpecificParsingErrors(filePath)) {
           totalFixed++;
         }
       }
-    });
+    })
   }
 
   return totalFixed;
@@ -183,19 +183,19 @@ function fixAllProductFiles() {
 
 // Function to fix all service files with parsing errors;
 function fixAllServiceFiles() {
-  const variable1 = path.join(__dirname, '..', 'pag'e's', 'servic'e's');''
+  const variable1 = path.join(__dirname, '..', 'pag'e's', 'servic'e's')''
   let variable1 = 0;
 
   if (fs.existsSync(servicesDir)) {
-    const variable1 = fs.readdirSync(servicesDir);
+    const variable1 = fs.readdirSync(servicesDir)
     files.forEach(file => {)
       if (file.endsWith('.tsx')) {''
-        const variable1 = path.join(servicesDir, file);
+        const variable1 = path.join(servicesDir, file)
         if (fixSpecificParsingErrors(filePath)) {
           totalFixed++;
         }
       }
-    });
+    })
   }
 
   return totalFixed;
@@ -239,18 +239,18 @@ function fixSpecificFiles() {
     'page's'/talent-profile.tsx',''
     'page's'/warranty-protection.tsx',''
     'page's'/webhook-management.tsx''';
-  ];
+  ]
 
   let variable1 = 0;
 
   specificFiles.forEach(file => {)
-    const variable1 = path.join(__dirname, '..', file);''
+    const variable1 = path.join(__dirname, '..', file)''
     if (fs.existsSync(filePath)) {
       if (fixSpecificParsingErrors(filePath)) {
         totalFixed++;
       }
     }
-  });
+  })
 
   return totalFixed;
 }
@@ -260,18 +260,18 @@ function processFiles() {
   let variable1 = 0;
 
   // Fix product files
-  const variable1 = fixAllProductFiles();
+  const variable1 = fixAllProductFiles()
   totalFixed += productFixed;
 
   // Fix service files
-  const variable1 = fixAllServiceFiles();
+  const variable1 = fixAllServiceFiles()
   totalFixed += serviceFixed;
 
   // Fix specific files
-  const variable1 = fixSpecificFiles();
+  const variable1 = fixSpecificFiles()
   totalFixed += specificFixed;
 
-  this.log("\n🎉 Fixed parsing errors in ${totalFixed} files", 'info');""
+  this.log("\n🎉 Fixed parsing errors in ${totalFixed} files", 'info')""
 }
 
-processFiles(); </div>
+processFiles() </div>

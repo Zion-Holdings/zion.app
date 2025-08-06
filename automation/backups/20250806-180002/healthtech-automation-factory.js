@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,32 +13,32 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};async getStatus() {
+}async getStatus() {
     return {
       systemName: 'healthtech-automation-factory',
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down healthtech-automation-factory gracefully...');
+  console.log('🛑 Shutting down healthtech-automation-factory gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})

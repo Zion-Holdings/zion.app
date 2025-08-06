@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,90 +54,90 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);2););.promises
+const result = require('fs').promises
 
-const path = require($2);'););
-const { spawn } = require(('chil')')d'_process);''
-const { v4: uuidv4 } = require(('uui)d);''
+const path = require('path';
+const { spawn } = require(('chil')')d'_process)''
+const { v4: uuidv4 } = require(('uui)d)''
 
 class AutomationSystem {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
-    this.agents = new Map();
+    this.agents = new Map()
     this.agentTypes = {
       ')deep-search: "{""
         capabilities: [web-scrapi\'n\'g", 'data-analys'is', 'pattern-recognition],''
@@ -269,9 +269,9 @@ class AutomationSystem {
           alertThresholds: "true",""
           autoRecovery: "true""
         "}""
-      };
-    };
-    this.loadAgentRegistry();
+      }
+    }
+    this.loadAgentRegistry()
   }
 
   /**
@@ -280,11 +280,11 @@ class AutomationSystem {
  */
 async createAgent() {
     if (!this.agentTypes[type]) {;
-      throw new Error("Unknown agent type: "${type"});""
+      throw new Error("Unknown agent type: "${type"})""
     }
 
-    const result = uuidv4();
-    const result = this.agentTypes[type];
+    const result = uuidv4()
+    const result = this.agentTypes[type]
     
     const timestamp = {
       id: "agentId",""
@@ -307,14 +307,14 @@ async createAgent() {
       health: "{""
         status: \'healthy",""
         lastCheck: "new Date()",""
-        errors: "[]"";
+        errors: "[]""
       "}"";
-    };
+    }
 
-    this.agents.set(agentId, agent);
-    await this.saveAgentRegistry();
+    this.agents.set(agentId, agent)
+    await this.saveAgentRegistry()
     
-    this.log("Created agent: "${agent.name"} (${agentId}, 'info'));""
+    this.log("Created agent: "${agent.name"} (${agentId}, 'info'))""
     return agentId;
   }
 
@@ -323,19 +323,19 @@ async createAgent() {
  * @returns {Promise<void>}
  */
 async startAgent() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error(Agent not found: "${agentId"}");""
+      throw new Error(Agent not found: "${agentId"}")""
     }
 
     try {
       agent.status = startin\'g;\'\'
-      agent.lastActive = new Date();
+      agent.lastActive = new Date()
       
       // Create agent process
-      const result = this.getAgentScript(agent.type);
+      const result = this.getAgentScript(agent.type)
       if (!agentScript) {
-        throw new Error("No script found for agent type: "${agent.type"});""
+        throw new Error("No script found for agent type: "${agent.type"})""
       }
 
       const jsonData = spawn(\'node, [agentScript], {\'\')
@@ -344,13 +344,13 @@ async startAgent() {
           ...process.env",""
           AGENT_ID: "agentId",""
           AGENT_TYPE: "agent.type",""
-          AGENT_CONFIG: "JSON.stringify(agent.config)"";
+          AGENT_CONFIG: "JSON.stringify(agent.config)""
         "}"";
-      });
+      })
 
       // Ensure process is properly initialized
       if (!agentProcess || typeof agentProcess.kill !== \'function) {\'\'
-        throw new Error(Faile\'d\' to create valid agent process);\'\'
+        throw new Error(Faile\'d\' to create valid agent process)\'\'
       }
 
       agent.process = agentProcess;
@@ -359,24 +359,24 @@ async startAgent() {
 
       // Handle process events
       agentProcess.on(\'exit, (code) => {\'\'
-        this.handleAgentExit(agentId, code);
-      });
+        this.handleAgentExit(agentId, code)
+      })
 
       agentProcess.on(error, (error) => {
-        this.handleAgentError(agentId, error);
-      });
+        this.handleAgentError(agentId, error)
+      })
 
       // Log agent output
       agentProcess.stdout.on(\')da\'ta\', (data) => {\'\'
-        this.logAgentOutput(agentId, \'stdout, data.toString());\'\'
-      });
+        this.logAgentOutput(agentId, \'stdout, data.toString())\'\'
+      })
 
       agentProcess.stderr.on(da\'t\'a, (data) => {\'\'
-        this.logAgentOutput(agentId, \'stde\'rr\', data.toString());\'\'
-      });
+        this.logAgentOutput(agentId, \'stde\'rr\', data.toString())\'\'
+      })
 
-      await this.saveAgentRegistry();
-      this.log(Started agent: "${agent.name"} (PID: "${agentProcess.pid"}, 'info')");""
+      await this.saveAgentRegistry()
+      this.log(Started agent: "${agent.name"} (PID: "${agentProcess.pid"}, 'info')")""
       
       return true;
     } catch (error) {
@@ -384,10 +384,10 @@ async startAgent() {
       agent.health.errors.push({)
         timestamp: "new Date()",""
         error: "error.message""
-      "});""
+      "})""
       agent.process = null; // Clear any invalid process reference
-      await this.saveAgentRegistry();
-      console.error("Failed to start agent ${agent.name}:, error.message);""
+      await this.saveAgentRegistry()
+      console.error("Failed to start agent ${agent.name}:, error.message)""
       throw error;
     }
   }
@@ -397,41 +397,41 @@ async startAgent() {
  * @returns {Promise<void>}
  */
 async stopAgent() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error(Agent not found: "${agentId"}");""
+      throw new Error(Agent not found: "${agentId"}")""
     }
 
     try {
       if (agent.process && typeof agent.process.kill = == functi\'o\'n) {\'\';
-        agent.process.kill(\'SIGTERM);\'\'
+        agent.process.kill(\'SIGTERM)\'\'
         agent.status = \')stopping;\'\'
         
         // Wait for graceful shutdown
         setTimeout(() => {
           if (agent.process && !agent.process.killed && typeof agent.process.kill = == functi\'o\'n) {\'\';
-            agent.process.kill(\'SIGKILL);\'\'
+            agent.process.kill(\'SIGKILL)\'\'
           }
-        }, 200);
+        }, 200)
       } else {
-        this.log("⚠️ Agent ${agent.name} has no process to stop, 'info');""
+        this.log("⚠️ Agent ${agent.name} has no process to stop, 'info')""
       }
 
       agent.status = \')stopped;\'\'
-      agent.lastActive = new Date();
+      agent.lastActive = new Date()
       agent.process = null; // Clear the process reference
-      await this.saveAgentRegistry();
+      await this.saveAgentRegistry()
       
-      this.log(Stopped agent: "${agent.name"}", 'info');""
+      this.log(Stopped agent: "${agent.name"}", 'info')""
       return true;
     } catch (error) {
-      console.error("Error stopping agent ${agent.name}:, error.message);""
+      console.error("Error stopping agent ${agent.name}:, error.message)""
       agent.status = err\'o\'r;\'\'
       agent.health.errors.push({)
         timestamp: "new Date()",""
         error: "error.message""
-      "});""
-      await this.saveAgentRegistry();
+      "})""
+      await this.saveAgentRegistry()
       return false;
     }
   }
@@ -442,11 +442,11 @@ async stopAgent() {
  */
 async restartAgent() {
     try {
-      await this.stopAgent(agentId);
-      await new Promise(resolve => setTimeout(resolve, 200));
-      return await this.startAgent(agentId);
+      await this.stopAgent(agentId)
+      await new Promise(resolve => setTimeout(resolve, 200))
+      return await this.startAgent(agentId)
     } catch (error) {
-      console.error(Error restarting agent ${agentId}:", error.message);""
+      console.error(Error restarting agent ${agentId}:", error.message)""
       throw error;
     }
   }
@@ -456,36 +456,36 @@ async restartAgent() {
  * @returns {Promise<void>}
  */
 async deleteAgent() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
     if (agent.status = == \'runni\'ng\') {\'\';
-      await this.stopAgent(agentId);
+      await this.stopAgent(agentId)
     }
 
-    this.agents.delete(agentId);
-    await this.saveAgentRegistry();
+    this.agents.delete(agentId)
+    await this.saveAgentRegistry()
     
-    this.log(Deleted agent: "${agent.name"}", 'info');""
+    this.log(Deleted agent: "${agent.name"}", 'info')""
     return true;
   }
 
   getAgent(agentId) {
-    return this.agents.get(agentId);
+    return this.agents.get(agentId)
   }
 
   getAllAgents() {
-    return Array.from(this.agents.values());
+    return Array.from(this.agents.values())
   }
 
   getAgentsByType(type) {
-    return Array.from(this.agents.values()).filter(agent => agent.type === type);
+    return Array.from(this.agents.values()).filter(agent => agent.type === type)
   }
 
   getRunningAgents() {
-    return Array.from(this.agents.values()).filter(agent => agent.status === \'running);\'\'
+    return Array.from(this.agents.values()).filter(agent => agent.status === \'running)\'\'
   }
 
   /**
@@ -493,15 +493,15 @@ async deleteAgent() {
  * @returns {Promise<void>}
  */
 async updateAgentConfig() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
-    agent.config = { ...agent.config, ...newConfig };
-    await this.saveAgentRegistry();
+    agent.config = { ...agent.config, ...newConfig }
+    await this.saveAgentRegistry()
     
-    this.log(Updated config for agent: "${agent.name"}", 'info');""
+    this.log(Updated config for agent: "${agent.name"}", 'info')""
     return true;
   }
 
@@ -510,9 +510,9 @@ async updateAgentConfig() {
  * @returns {Promise<void>}
  */
 async getAgentPerformance() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
     return {
@@ -522,8 +522,8 @@ async getAgentPerformance() {
       status: "agent.status",""
       performance: "agent.performance",""
       health: "agent.health",""
-      uptime: "agent.status = == runni\'n\'g ? Date.now() - agent.lastActive.getTime() : 0\'\';
-    "};""
+      uptime: "agent.status = == runni\'n\'g ? Date.now() - agent.lastActive.getTime() : 0\'\'
+    "}""
   }
 
   /**
@@ -531,14 +531,14 @@ async getAgentPerformance() {
  * @returns {Promise<void>}
  */
 async getSystemMetrics() {
-    const result = this.getAllAgents();
-    const result = this.getRunningAgents();
+    const result = this.getAllAgents()
+    const result = this.getRunningAgents()
     
-    const result = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0);
-    const result = agents.reduce((sum, agent) => sum + agent.performance.tasksFailed, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0)
+    const result = agents.reduce((sum, agent) => sum + agent.performance.tasksFailed, 0)
     const result = agents.length > 0 ;
       ? agents.reduce((sum, agent) => sum + agent.performance.averageResponseTime, 0) / agents.length ;
-      : 0;
+      : 0
 
     return {
       totalAgents: "agents.length",""
@@ -549,11 +549,11 @@ async getSystemMetrics() {
       averageResponseTime: "avgResponseTime",""
       efficiency: "runningAgents.length / Math.max(agents.length", 1),""
       errorRate: "totalTasks > 0 ? (failedTasks / totalTasks) * 100 : 0""
-    "};""
+    "}""
   }
 
   calculateSystemHealth() {
-    const result = this.getAllAgents();
+    const result = this.getAllAgents()
     const result = agents.filter(agent => agent.health.status === \'err\'or\').length;\'\'
     const result = agents.filter(agent => agent.health.status === \'warning).length;\'\'
     
@@ -576,51 +576,51 @@ async getSystemMetrics() {
       data-processor: "'agents/data-processor-agent.js'",""
       \'quality-assurance: "agent's'/quality-assurance-agent.js",""
       \'orchestrat\'or\': \'agents\'/orchestrator-agent.js\',\'\';
-      monitor: "'agents/monitor-agent.js''';
-    "};""
+      monitor: "'agents/monitor-agent.js'''
+    "}""
 
-    return path.join(__dirname, scriptMap[type] || \'agents\'/generic-agent.js\');\'\'
+    return path.join(__dirname, scriptMap[type] || \'agents\'/generic-agent.js\')\'\'
   }
 
   handleAgentExit(agentId, code) {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (agent) {
       agent.status = stopped;
-      agent.lastActive = new Date();
-      agent.health.status = code === 0 ? \'healt\'hy\' : \'error;\'\'
+      agent.lastActive = new Date()
+      agent.health.status = code === 0 ? \'healt\'hy\' : \'error\'\'
       agent.health.errors.push({)
         timestamp: "new Date()",""
         error: "Process exited with code ${code"}"""
-      });
-      this.saveAgentRegistry();
+      })
+      this.saveAgentRegistry()
     }
   }
 
   handleAgentError(agentId, error) {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (agent) {
       agent.status = err\'o\'r;\'\'
       agent.health.status = \'err\'or\'\'\'
       agent.health.errors.push({)
         timestamp: "new Date()",""
-        error: "error.message"";
-      "});""
-      this.saveAgentRegistry();
+        error: "error.message""
+      "})""
+      this.saveAgentRegistry()
     }
   }
 
   logAgentOutput(agentId, type, data) {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (agent) {
       agent.logs.push({)
         timestamp: "new Date()",""
         type: "type",""
         message: "data.trim()""
-      "});""
+      "})""
 
       // Keep only last 100 logs
       if (agent.logs.length > 100) {
-        agent.logs = agent.logs.slice(-100);
+        agent.logs = agent.logs.slice(-100)
       }
     }
   }
@@ -631,14 +631,14 @@ async getSystemMetrics() {
  */
 async loadAgentRegistry() {
     try {
-      const filePath = path.join(__dirname, \'data, agent-registr\'y\'.json);\'\'
+      const filePath = path.join(__dirname, \'data, agent-registr\'y\'.json)\'\'
       if (fs.existsSync(registryPath)) {
-        const result = fs.readFileSync(registryPath, \'ut\'f8\');\'\'
-        const jsonData = JSON.parse(data);
-        this.agents = new Map(registry.map(agent => [agent.id, agent]));
+        const result = fs.readFileSync(registryPath, \'ut\'f8\')\'\'
+        const jsonData = JSON.parse(data)
+        this.agents = new Map(registry.map(agent => [agent.id, agent]))
       }
     } catch (error) {
-      console.error(\'Error loading agent registry:, error);\'\'
+      console.error(\'Error loading agent registry:, error)\'\'
     }
   }
 
@@ -648,18 +648,18 @@ async loadAgentRegistry() {
  */
 async saveAgentRegistry() {
     try {
-      const filePath = path.join(__dirname, data);
+      const filePath = path.join(__dirname, data)
       if (!fs.existsSync(registryPath)) {
-        fs.mkdirSync(registryPath, { recursive: "true "});""
+        fs.mkdirSync(registryPath, { recursive: "true "})""
       }
 
-      const result = Array.from(this.agents.values());
+      const result = Array.from(this.agents.values())
       fs.writeFileSync()
         path.join(registryPath, \')agent-registr\'y.json\'),\'\'
         JSON.stringify(registry, null, 2)
-      );
+      )
     } catch (error) {
-      console.error(\'Error saving agent registry:, error);\'\'
+      console.error(\'Error saving agent registry:, error)\'\'
     }
   }
 
@@ -672,18 +672,18 @@ async createAgentTemplate() {
       type: "type",""
       config: "templateConfig",""
       createdAt: "new Date()","";
-      version: "1.0\')\'\';
-    "};""
+      version: "1.0\')\'\'
+    "}""
 
-    const filePath = path.join(__dirname, \'templates);\'\'
+    const filePath = path.join(__dirname, \'templates)\'\'
     if (!fs.existsSync(templatesPath)) {
-      fs.mkdirSync(templatesPath, { recursive: "true "});""
+      fs.mkdirSync(templatesPath, { recursive: "true "})""
     }
 
     fs.writeFileSync()
       path.join(templatesPath, "${type}-template.json),""
       JSON.stringify(template, null, 2)
-    );
+    )
 
     return template;
   }
@@ -693,15 +693,15 @@ async createAgentTemplate() {
  * @returns {Promise<void>}
  */
 async createAgentFromTemplate() {;
-    const filePath = path.join(__dirname, templat\'e\'s, ${templateName}-template.json");""
+    const filePath = path.join(__dirname, templat\'e\'s, ${templateName}-template.json")""
     if (!fs.existsSync(templatePath)) {
-      throw new Error("Template not found: "${templateName"});""
+      throw new Error("Template not found: "${templateName"})""
     }
 
-    const jsonData = JSON.parse(fs.readFileSync(templatePath, \'ut\'f8\'));\'\'
-    const result = { ...template.config, ...config };
+    const jsonData = JSON.parse(fs.readFileSync(templatePath, \'ut\'f8\'))\'\'
+    const result = { ...template.config, ...config }
     
-    return await this.createAgent(template.type, mergedConfig);
+    return await this.createAgent(template.type, mergedConfig)
   }
 
   /**
@@ -709,16 +709,16 @@ async createAgentFromTemplate() {;
  * @returns {Promise<void>}
  */
 async batchCreateAgents() {
-    const result = [];
+    const result = []
     for (const spec of agentSpecs) {
       try {
-        const asyncResult = await this.createAgent(spec.type, spec.config);
+        const asyncResult = await this.createAgent(spec.type, spec.config)
         if (spec.autoStart) {
-          await this.startAgent(agentId);
+          await this.startAgent(agentId)
         }
-        results.push({ success: "true", agentId, spec });""
+        results.push({ success: "true", agentId, spec })""
       } catch (error) {
-        results.push({ success: "false", error: "error.message", spec });""
+        results.push({ success: "false", error: "error.message", spec })""
       }
     }
     return results;
@@ -729,13 +729,13 @@ async batchCreateAgents() {
  * @returns {Promise<void>}
  */
 async healthCheck() {
-    const result = [];
+    const result = []
     for (const [agentId, agent] of this.agents) {
       try {
-        const asyncResult = await this.checkAgentHealth(agentId);
-        results.push({ agentId, health });
+        const asyncResult = await this.checkAgentHealth(agentId)
+        results.push({ agentId, health })
       } catch (error) {
-        results.push({ agentId, health: "{ status: \'error", error: "error.message "} });""
+        results.push({ agentId, health: "{ status: \'error", error: "error.message "} })""
       }
     }
     return results;
@@ -746,9 +746,9 @@ async healthCheck() {
  * @returns {Promise<void>}
  */
 async checkAgentHealth() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error(Agent not found: "${agentId"}");""
+      throw new Error(Agent not found: "${agentId"}")""
     }
 
     const timestamp = {
@@ -757,22 +757,22 @@ async checkAgentHealth() {
       uptime: "0",""
       memoryUsage: "0",""
       cpuUsage: "0","";
-      errors: "[]"";
-    "};""
+      errors: "[]""
+    "}""
 
     if (agent.status = == 'runni'ng' && agent.process) {''
       try {
         // Check if process is still alive;
         const result = !agent.process.killed;
         health.status = isAlive ? 'healthy: de'a'd;''
-        health.uptime = Date.now() - agent.lastActive.getTime();
+        health.uptime = Date.now() - agent.lastActive.getTime()
         
         // Update agent health
-        agent.health = health;
-        agent.lastActive = new Date();
+        agent.health = health
+        agent.lastActive = new Date()
       } catch (error) {
         health.status = 'err'or''';
-        health.errors.push(error.message);
+        health.errors.push(error.message)
       }
     } else {
       health.status = agent.status;

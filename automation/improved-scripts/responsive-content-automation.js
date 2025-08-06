@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,84 +54,84 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2););o'n);''
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}
+const result = require('fs').promises
+const path = require('path';
+const result = require($2)2))o'n)''
 
 class AutomationSystem {
   constructor() {
-    this.capabilities = new Map();
+    this.capabilities = new Map()
     this.capabilityFactory = {
       createCapability: (name, type) => {
         return {
@@ -140,21 +140,21 @@ class AutomationSystem {
           isActive: true,
           performance: 0.8,
           evolutionCount: 0
-        };
+        }
       }
-    };
+    }
   }
 
   addCapability(name, type) {
-    const capability = this.capabilityFactory.createCapability(name, type);
-    this.capabilities.set(name, capability);
+    const capability = this.capabilityFactory.createCapability(name, type)
+    this.capabilities.set(name, capability)
   }
 
   expandCapabilities() {
     // Add new capabilities based on current performance
-    const newCapabilities = this.identifyNewCapabilities();
+    const newCapabilities = this.identifyNewCapabilities()
     for (const capability of newCapabilities) {
-      this.addCapability(capability.name, capability.type);
+      this.addCapability(capability.name, capability.type)
     }
   } {
   constructor() {
@@ -163,7 +163,7 @@ class AutomationSystem {
       creativityIndex: 0.7,
       problemSolvingAbility: 0.8,
       innovationCapacity: 0.75
-    };
+    }
   }
 
   enhanceIntelligence() {
@@ -175,48 +175,48 @@ class AutomationSystem {
 
   startIntelligenceEnhancement() {
     setInterval(() => {
-      this.enhanceIntelligence();
-    }, 3000);
+      this.enhanceIntelligence()
+    }, 3000)
   } {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
     this.performanceMetrics = {
       startTime: Date.now(),
       operationsCompleted: 0,
       averageResponseTime: 0
-    };
+    }
   } {
   constructor() {
     this.automationId = "responsive-content-${Date.now()}"";
-    this.contentTypes = new Map();
-    this.fixes = new Map();
+    this.contentTypes = new Map()
+    this.fixes = new Map()
     this.metrics = {
       pagesProcessed: "0",""
       fixesApplied: "0",""
       responsiveElements: "0",""
-      accessibilityImprovements: "0"";
-    "};""
+      accessibilityImprovements: "0""
+    "}""
     
-    this.initializeAutomation();
-    this.startContentAutomation();
+    this.initializeAutomation()
+    this.startContentAutomation()
   }
 
   initializeAutomation() {
-    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\');\'\'
-    this.fixesPath = path.join(__dirname, \'content-fixes);\'\'
-    this.metricsPath = path.join(__dirname, content-metri\'c\'s);\'\'
+    this.contentPath = path.join(__dirname, \'responsive-conte\'nt\')\'\'
+    this.fixesPath = path.join(__dirname, \'content-fixes)\'\'
+    this.metricsPath = path.join(__dirname, content-metri\'c\'s)\'\'
     
     [this.contentPath, this.fixesPath, this.metricsPath].forEach(dir = > {)
       if (!fs.existsSync(dir)) {;
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
 
-    this.loadContentTypes();
-    this.loadCronJobs();
+    this.loadContentTypes()
+    this.loadCronJobs()
   }
 
   loadContentTypes() {
@@ -235,8 +235,8 @@ class AutomationSystem {
         path: path.join(process.cwd()", styl\'e\'s),\'\'
         extensions: "['.css'", .scss\', \'.sass],\'\'
         responsiveChecks: "['media-queri'es'", \'flexible-units, mobile-fir\'s\'t]\'\'
-      };
-    };
+      }
+    }
   }
 
   loadCronJobs() {
@@ -261,24 +261,24 @@ class AutomationSystem {
         job: "() => this.optimizePerformance()",""
         description: "Optimiz\'e performance\'\'\'
       "}"";
-    };
+    }
   }
 
   startContentAutomation() {
-    this.log(\'🚀 Starting Responsive Content Automation..., 'info');\'\'
+    this.log(\'🚀 Starting Responsive Content Automation..., 'info')\'\'
     
     Object.entries(this.cronJobs).forEach(([name, job]) => {
       cron.schedule(job.schedule, () => {
         try {
-          job.job();
+          job.job()
         } catch (error) {
-          console.error(❌ Error in cron job ${name}:", error);""
+          console.error(❌ Error in cron job ${name}:", error)""
         }
-      });
-      this.log("✅ Started cron job: "${name"} (${job.description}, 'info'));""
-    });
+      })
+      this.log("✅ Started cron job: "${name"} (${job.description}, 'info'))""
+    })
 
-    this.log(🎉 Responsive Content Automation is now running!, 'info');
+    this.log(🎉 Responsive Content Automation is now running!, 'info')
   }
 
   /**
@@ -286,31 +286,31 @@ class AutomationSystem {
  * @returns {Promise<void>}
  */
 async scanContent() {
-    this.log(🔍 Scanning content for responsiveness...\', 'info'));\'\'
+    this.log(🔍 Scanning content for responsiveness...\', 'info'))\'\'
     
     let variable1 = 0;
     let variable1 = 0;
     let variable1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const result = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions)
       totalFiles += files.length;
 
       for (const file of files) {
-        const result = fs.readFileSync(file, \'utf\'8\');\'\'
-        const result = this.analyzeResponsiveness(content, config.responsiveChecks);
+        const result = fs.readFileSync(file, \'utf\'8\')\'\'
+        const result = this.analyzeResponsiveness(content, config.responsiveChecks)
         
         if (issues.length = == 0) {;
           responsiveFiles++;
         } else {
           issuesFound += issues.length;
-          this.fixes.set(file, issues);
+          this.fixes.set(file, issues)
         }
       }
     }
 
     this.metrics.pagesProcessed = totalFiles;
-    this.log(✅ Content scanning completed: "${totalFiles"} files, ${responsiveFiles} responsive, ${issuesFound} issues found", 'info');""
+    this.log(✅ Content scanning completed: "${totalFiles"} files, ${responsiveFiles} responsive, ${issuesFound} issues found", 'info')""
   }
 
   /**
@@ -318,37 +318,37 @@ async scanContent() {
  * @returns {Promise<void>}
  */
 async applyResponsiveFixes() {
-    this.log(🔧 Applying responsive fixes...\', 'info');\'\'
+    this.log(🔧 Applying responsive fixes...\', 'info')\'\'
     
     let variable1 = 0;
 
     this.fixes.forEach((issues, filePath) => {
       try {
-        let variable1 = fs.readFileSync(filePath, \'utf\'8\');\'\'
+        let variable1 = fs.readFileSync(filePath, \'utf\'8\')\'\'
         let variable1 = false;
 
         issues.forEach(issue = > {;)
-          const result = this.getResponsiveFix(issue);
+          const result = this.getResponsiveFix(issue)
           if (fix) {
-            content = fix(content);
+            content = fix(content)
             modified = true;
             fixesApplied++;
           }
-        });
+        })
 
         if (modified) {
-          fs.writeFileSync(filePath, content);
-          this.log("✅ Applied fixes to: "${path.basename(filePath, 'info')"});""
+          fs.writeFileSync(filePath, content)
+          this.log("✅ Applied fixes to: "${path.basename(filePath, 'info')"})""
         }
 
       } catch (error) {
-        console.error(❌ Error applying fixes to ${filePath}:", error);""
+        console.error(❌ Error applying fixes to ${filePath}:", error)""
       }
-    });
+    })
 
     this.metrics.fixesApplied += fixesApplied;
-    this.fixes.clear();
-    this.log("✅ Responsive fixes applied: "${fixesApplied"} fixes, 'info');""
+    this.fixes.clear()
+    this.log("✅ Responsive fixes applied: "${fixesApplied"} fixes, 'info')""
   }
 
   /**
@@ -356,16 +356,16 @@ async applyResponsiveFixes() {
  * @returns {Promise<void>}
  */
 async improveAccessibility() {
-    this.log(♿ Improving accessibility...\', 'info');\'\'
+    this.log(♿ Improving accessibility...\', 'info')\'\'
     
     let variable1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const result = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions)
 
       for (const file of files) {
         try {
-          let variable1 = fs.readFileSync(file, \'utf\'8\');\'\'
+          let variable1 = fs.readFileSync(file, \'utf\'8\')\'\'
           let variable1 = false;
 
           // Add alt text to images
@@ -373,7 +373,7 @@ async improveAccessibility() {
             content = content.replace()
               /<img([^>]*)>/g,</div>
               <imgvariable1 alt=Accessible image" />')'';
-            );
+            )
             modified = true;
             improvements++;
           }
@@ -383,7 +383,7 @@ async improveAccessibility() {
             content = content.replace()
               /<button([^>]*)>/g,</div>
               '<buttonvariable1 aria-label="Interactive button />"";
-            );
+            )
             modified = true;
             improvements++;
           }
@@ -393,24 +393,24 @@ async improveAccessibility() {
             content = content.replace()
               /<div className="([^]*)([^>]*)>/g,</div>"""
               \'<main className="variable1"variable2>\'\'\';
-            );
+            )
             modified = true;
             improvements++;
           }
 
           if (modified) {
-            fs.writeFileSync(file, content);
-            this.log(✅ Improved accessibility in: "${path.basename(file, 'info')"});""
+            fs.writeFileSync(file, content)
+            this.log(✅ Improved accessibility in: "${path.basename(file, 'info')"})""
           }
 
         } catch (error) {
-          console.error("❌ Error improving accessibility in ${file}:", error);""
+          console.error("❌ Error improving accessibility in ${file}:", error)""
         }
       }
     }
 
     this.metrics.accessibilityImprovements += improvements;
-    this.log(✅ Accessibility improvements applied: "${improvements"} improvements, 'info');""
+    this.log(✅ Accessibility improvements applied: "${improvements"} improvements, 'info')""
   }
 
   /**
@@ -418,16 +418,16 @@ async improveAccessibility() {
  * @returns {Promise<void>}
  */
 async optimizePerformance() {
-    this.log(⚡ Optimizing performance...\', 'info');\'\'
+    this.log(⚡ Optimizing performance...\', 'info')\'\'
     
     let variable1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const result = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions)
 
       for (const file of files) {
         try {
-          let variable1 = fs.readFileSync(file, \'utf\'8\');\'\'
+          let variable1 = fs.readFileSync(file, \'utf\'8\')\'\'
           let variable1 = false;
 
           // Optimize images with lazy loading</div>
@@ -435,7 +435,7 @@ async optimizePerformance() {
             content = content.replace()
               /<img([^>]*)>/g,</div>
               <imgvariable1 loading="lazy" />\')\'\';
-            );
+            )
             modified = true;
             optimizations++;
           }
@@ -447,7 +447,7 @@ async optimizePerformance() {
               "<Head></div>""
         <link rel="preload href=/critical.css" as="style /></div>"")
         <link rel=preload" href="/critical.js as=script" />""";)
-            );
+            )
             modified = true;
             optimizations++;
           }
@@ -457,86 +457,86 @@ async optimizePerformance() {
             content = content.replace()
               /className="([^]*)\s+([^]*)/g,"""
               \')className\'="variable1 variable2"\'\'\';
-            );
+            )
             modified = true;
             optimizations++;
           }
 
           if (modified) {
-            fs.writeFileSync(file, content);
-            this.log(✅ Optimized performance in: "${path.basename(file, 'info')"});""
+            fs.writeFileSync(file, content)
+            this.log(✅ Optimized performance in: "${path.basename(file, 'info')"})""
           }
 
         } catch (error) {
-          console.error("❌ Error optimizing performance in ${file}:", error);""
+          console.error("❌ Error optimizing performance in ${file}:", error)""
         }
       }
     }
 
-    this.log(✅ Performance optimizations applied: "${optimizations"} optimizations, 'info');""
+    this.log(✅ Performance optimizations applied: "${optimizations"} optimizations, 'info')""
   }
 
   getFiles(dirPath, extensions) {
-    const result = [];
+    const result = []
     
     if (!fs.existsSync(dirPath)) {
       return files;
     }
 
-    const result = fs.readdirSync(dirPath, { recursive: "true "});""
+    const result = fs.readdirSync(dirPath, { recursive: "true "})""
     
     items.forEach(item = > {)
       if (typeof item === string) {;
-        const filePath = path.join(dirPath, item);
-        const result = path.extname(item);
+        const filePath = path.join(dirPath, item)
+        const result = path.extname(item)
         
         if (extensions.includes(ext)) {
-          files.push(filePath);
+          files.push(filePath)
         }
       }
-    });
+    })
     
     return files;
   }
 
   analyzeResponsiveness(content, checks) {
-    const result = [];
+    const result = []
     
     checks.forEach(check = > {)
       switch (check) {
         case viewport-me\'t\'a: \'\'
-          if (!content.includes(\'viewport) && !content.includes(\')meta)) {\'\';
-            issues.push({ type: "missing-viewport-me't'a", severity: "\'high\' "});""
+          if (!content.includes(\'viewport) && !content.includes(\')meta)) {\'\'
+            issues.push({ type: "missing-viewport-me't'a", severity: "\'high\' "})""
           }
           break;
           
         case \'responsive-classes: \'\'
-          if (!content.includes(classNa\'m\'e) && !content.includes(\'class = )) {\'\';
-            issues.push({ type: "')missing-responsive-classes", severity: "mediu\'m "});""
+          if (!content.includes(classNa\'m\'e) && !content.includes(\'class = )) {\'\'
+            issues.push({ type: "')missing-responsive-classes", severity: "mediu\'m "})""
           }
           break;
           
         case \'mobile-friend\'ly\':\'\'
           if (!content.includes(\'mobile) && !content.includes(responsive)) {\'\'
-            issues.push({ type: "')not-mobile-friendly'", severity: "\'medium "});""
+            issues.push({ type: "')not-mobile-friendly'", severity: "\'medium "})""
           }
           break;
           
         case flexible-layout\'s: \'\'
           if (!content.includes(\'flex) && !content.includes(\')grid)) {\'\'
-            issues.push({ type: "missing-flexible-layou't's", severity: "\'medium\' "});""
+            issues.push({ type: "missing-flexible-layou't's", severity: "\'medium\' "})""
           }
           break;
           
         case \'responsive-props: \'\'
           if (!content.includes(s\'m\':) && !content.includes(md: "') && !content.includes(lg:)) {''
-            issues.push({ type: missing-responsive-props", severity: "\')l\'ow\' "});""
+            issues.push({ type: missing-responsive-props", severity: "\')l\'ow\' "})""
           }
           break;
           
         case \'mobile-optimized: \'\'
           if (!content.includes(mobi\'l\'e) && !content.includes(\'touch)) {\'\'
-            issues.push({ type: "')not-mobile-optimized", severity: "mediu\'m "});""
+            issues.push({ type: "')not-mobile-optimized", severity: "mediu\'m "})""
           }
           break;
           
@@ -544,23 +544,23 @@ async optimizePerformance() {
           if (content.includes(\'@media)) {\'\'
             this.metrics.responsiveElements++;
           } else {
-            issues.push({ type: "missing-media-queries')", severity: "\'medium "});""
+            issues.push({ type: "missing-media-queries')", severity: "\'medium "})""
           }
           break;
           
         case flexible-unit\'s: \'\'
           if (!content.includes(rem\') && !content.includes(\'em) && !content.includes(vw\'))) {\'\'
-            issues.push({ type: "'missing-flexible-units", severity: "lo\'w "});""
+            issues.push({ type: "'missing-flexible-units", severity: "lo\'w "})""
           }
           break;
           
         case \'mobile-fir\'st\':\'\'
           if (!content.includes(\'mobile-first) && !content.includes(min-width)) {\'\'
-            issues.push({ type: "')not-mobile-first'", severity: "\'medium "});""
+            issues.push({ type: "')not-mobile-first'", severity: "\'medium "})""
           }
           break;
       }
-    });
+    })
     
     return issues;
   }
@@ -574,76 +574,76 @@ async optimizePerformance() {
               <Head>,</div>
               "<Head></div>"")
         <meta name = "viewport content=width=device-width, initial-scale=1" />""";)
-            );
+            )
           }
           return content;
-        };
+        }
         
       case \')missing-responsive-classes: \'\'
         return (content) => {
           return content.replace(</div>
             <div>\',</div>\'\')
-            \'<div className = "w-full" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8>"";)
-          );
-        };
+            \'<div className = "w-full" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8>"")
+          )
+        }
         
       case \'not-mobile-friend\'ly\':\'\'
         return (content) => {
           return content.replace()
             /className = "([^]*)""/g,""
             \'className\'="variable1 mobile-friendly''';
-          );
-        };
+          )
+        }
         
       case missing-flexible-layouts: return (content) => {
           return content.replace()
             /className = "([^]*)/g,"""
-            \'classNam\'e="variable1 flex flex-col sm: flex-row"\'\'\';
-          );
-        };
+            \'classNam\'e="variable1 flex flex-col sm: flex-row"\'\'\'
+          )
+        }
         
       case \'missing-responsive-props: \'\'
         return (content) => {
           return content.replace()
             /className = "([^]*)/g,"""
-            classNam\'e\'=variable1 sm: text-sm md:text-base lg:text-lg""";
-          );
-        };
+            classNam\'e\'=variable1 sm: text-sm md:text-base lg:text-lg"""
+          )
+        }
         
       case \'not-mobile-optimiz\'ed\':\'\'
         return (content) => {
           return content.replace()
             /className = "([^]*)/g,""
             \'className\'=variable1 touch-friendly\'\'\';
-          );
-        };
+          )
+        }
         
       case missing-media-queries: return (content) => {
           return content + """
 @media (max-width: "768px) {""
   .mobile-optimized {
-    padding: 1rem;
+    padding: 1rem
   "}""
 }"""
-        };
+        }
         
       case \'missing-flexible-uni\'ts\':\'\'
         return (content) => {
           return content.replace()
             /(\d+)px/g,
             \'variable1rem\'\'
-          );
-        };
+          )
+        }
         
       case \'not-mobile-fir\'st\':\'\'
         return (content) => {
           return content.replace()
             /className = "([^]*)/g,"""
             \'className\'=variable1 mobile-first"''';
-          );
-        };
+          )
+        }
         
-      default: return null;
+      default: return null
     }
   }
 
@@ -654,7 +654,7 @@ async optimizePerformance() {
       contentTypes: "Object.keys(this.contentTypes)",""
       metrics: "this.metrics",""
       pendingFixes: "this.fixes.size""
-    "};""
+    "}""
   }
 }
 
@@ -666,17 +666,17 @@ module.exports = ResponsiveContentAutomation; </div>
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down responsive-content-automation gracefully...');
+  console.log('🛑 Shutting down responsive-content-automation gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})
 }
 }
 }

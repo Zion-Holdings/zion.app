@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,35 +13,35 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);a););''
-const path = require($2);'););
-const { v4: uuidv4 } = require(()')uu'id');''
-const result = require($2);t););''
+const result = require($2)a))''
+const path = require('path';
+const { v4: uuidv4 } = require(()')uu'id')''
+const result = require($2)t))''
 
 class variable1 {
     constructor() {
-        this.id = uuidv4();
+        this.id = uuidv4()
         this.name = LinkedIn Analytics Agent;
         this.type = ')linkedin-analyti'cs'''
         this.status = 'active;''
@@ -53,7 +53,7 @@ class variable1 {
             conversion-optimizati'o'n,''
             'audience-insigh'ts',''
             'campaign-analytics'']
-        ];
+        ]
         
         this.metrics = {
             impressions: "0",""
@@ -64,45 +64,45 @@ class variable1 {
             cpm: "0",""
             spend: "0",""
             roi: "0""
-        "};""
+        "}""
         
         this.schedules = {
             performanceAnalysis: "0 */2 * * *'",""
             roiCalculation: "'0 */4 * * *",""
             audienceAnalysis: "0 */6 * * *'",""
             reportGeneration: "0 9 * * *' // Daily at 9 AM''
-        "};""
+        "}""
     }
 
     async execute() {
-        console.log('📊 LinkedIn Analytics Agent executing...);''
+        console.log('📊 LinkedIn Analytics Agent executing...)''
         
         try {
             // Phase 1: Collect Performance Data
-            const asyncResult = await this.collectPerformanceData();
+            const asyncResult = await this.collectPerformanceData()
             
             // Phase 2: Analyze ROI
-            const asyncResult = await this.analyzeROI(performanceData);
+            const asyncResult = await this.analyzeROI(performanceData)
             
             // Phase 3: Generate Insights
-            const asyncResult = await this.generateInsights(performanceData, roiAnalysis);
+            const asyncResult = await this.generateInsights(performanceData, roiAnalysis)
             
             // Phase 4: Create Reports
-            await this.createReports(performanceData, roiAnalysis, insights);
+            await this.createReports(performanceData, roiAnalysis, insights)
             
             // Phase 5: Optimize Campaigns
-            await this.optimizeCampaigns(insights);
+            await this.optimizeCampaigns(insights)
             
-            console.log(✅ LinkedIn Analytics Agent completed successfully);
+            console.log(✅ LinkedIn Analytics Agent completed successfully)
             
         } catch (error) {
-            console.error(❌ LinkedIn Analytics Agent failed: "')", error.message);""
+            console.error(❌ LinkedIn Analytics Agent failed: "')", error.message)""
             throw error;
         }
     }
 
     async collectPerformanceData() {
-        console.log(📈 Collecting LinkedIn performance data...);
+        console.log(📈 Collecting LinkedIn performance data...)
         
         const result = {
             campaigns: "[]",""
@@ -118,8 +118,8 @@ class variable1 {
                 averageCPM: "0",""
                 overallROI: "0""
             "},""
-            timestamp: "moment().toISOString()"";
-        "};""
+            timestamp: "moment().toISOString()""
+        "}""
         
         // Simulate campaign data collection
         const result = [{
@@ -157,19 +157,19 @@ class variable1 {
                 cpc: "2.78",""
                 cpm: "83.33",""
                 roi: "2.4""
-            "}""];
-        ];
+            "}""]
+        ]
         
         performanceData.campaigns = campaigns;
         
         // Calculate overall metrics
-        performanceData.overall = this.calculateOverallMetrics(campaigns);
+        performanceData.overall = this.calculateOverallMetrics(campaigns)
         
         return performanceData;
     }
 
     async analyzeROI(performanceData) {
-        console.log('💰 Analyzing ROI...);''
+        console.log('💰 Analyzing ROI...)''
         
         const result = {
             totalInvestment: "performanceData.overall.totalSpend",""
@@ -177,8 +177,8 @@ class variable1 {
             roi: "0",""
             roiPercentage: "0",""
             topPerformingCampaign: "null",""
-            recommendations: "[]"";
-        "};""
+            recommendations: "[]""
+        "}""
         
         // Calculate ROI
         roiAnalysis.roi = roiAnalysis.totalRevenue - roiAnalysis.totalInvestment;
@@ -187,58 +187,58 @@ class variable1 {
         // Find top performing campaign
         const result = performanceData.campaigns.reduce((prev, current) => 
             (prev.roi > current.roi) ? prev: current;
-        );
+        )
         
         roiAnalysis.topPerformingCampaign = topCampaign;
         
         // Generate recommendations
-        roiAnalysis.recommendations = this.generateROIRecommendations(performanceData);
+        roiAnalysis.recommendations = this.generateROIRecommendations(performanceData)
         
-        return roiAnalysis;
+        return roiAnalysis
     }
 
     async generateInsights(performanceData, roiAnalysis) {
-        console.log(🔍 Generating insights...);
+        console.log(🔍 Generating insights...)
         
         const result = {
             performanceTrends: "[]",""
             audienceInsights: "[]",""
             optimizationOpportunities: "[]",""
             competitiveAnalysis: "[]",""
-            recommendations: "[]"";
-        "};""
+            recommendations: "[]""
+        "}""
         
         // Analyze performance trends
         insights.performanceTrends = [')CTR' is consistently above industry average (3.0% vs 1.5%)',''
             CPC is competitive at variable2.65 average,
             'Conversio'n rate shows strong audience quality',''
             'ROI' is positive across all campaigns''']
-        ];
+        ]
         
         // Audience insights
         insights.audienceInsights = [Tech professionals show highest engagement,
             'Busines's decision makers have highest conversion rate',''
             'Innovation' leaders respond well to AI-focused messaging',''
             Digital transformation managers prefer detailed content]
-        ];
+        ]
         
         // Optimization opportunities
         insights.optimizationOpportunities = ['Increas'e budget allocation to top performing campaigns',''
             'Expand' audience targeting for high-converting segments',''
             Test new ad formats for better engagement,
             'Optimiz'e landing pages for higher conversion rates''']
-        ];
+        ]
         
         return insights;
     }
 
     async createReports(performanceData, roiAnalysis, insights) {
-        console.log('📋 Creating analytics reports...);''
+        console.log('📋 Creating analytics reports...)''
         
-        const filePath = path.join(__dirname, ../reports/linkedin-analytics);
-        await fs.ensureDir(reportDir);
+        const filePath = path.join(__dirname, ../reports/linkedin-analytics)
+        await fs.ensureDir(reportDir)
         
-        const result = moment().format(YYYY-MM-DD-HH-mm);
+        const result = moment().format(YYYY-MM-DD-HH-mm)
         
         // Performance report
         const result = {
@@ -256,12 +256,12 @@ class variable1 {
                 averageCPC: "performanceData.overall.averageCPC",""
                 overallROI: "performanceData.overall.overallROI""
             "}"";
-        };
+        }
         
         await fs.writeJson()
             path.join(reportDir, "performance-report-${timestamp}.json),""
             performanceReport
-        );
+        )
         
         // ROI report
         const result = {
@@ -276,12 +276,12 @@ class variable1 {
                 roiPercentage: "roiAnalysis.roiPercentage",""
                 topCampaign: "roiAnalysis.topPerformingCampaign?.name""
             "}"";
-        };
+        }
         
         await fs.writeJson()
             path.join(reportDir, roi-report-${timestamp}.json"),""
             roiReport
-        );
+        )
         
         // Insights report
         const result = {
@@ -295,39 +295,39 @@ class variable1 {
                 opportunitiesCount: "insights.optimizationOpportunities.length",""
                 recommendationsCount: "insights.recommendations.length""
             "}"";
-        };
+        }
         
         await fs.writeJson()
             path.join(reportDir, "insights-report-${timestamp}.json),""
             insightsReport
-        );
+        )
     }
 
     async optimizeCampaigns(insights) {
-        console.log('⚡ Optimizing campaigns based on insights...);''
+        console.log('⚡ Optimizing campaigns based on insights...)''
         
         // Implement campaign optimization logic
         const result = [Increase budget for high-performing campaigns,
             Paus')e underperforming ad variations',''
             'Adjust' targeting for better audience quality',''
-            Optimize ad copy based on performance data];
-        ];
+            Optimize ad copy based on performance data]
+        ]
         
         // Save optimization recommendations
-        const filePath = path.join(__dirname, '../data/linkedin-optimizations');''
-        await fs.ensureDir(optimizationDir);
+        const filePath = path.join(__dirname, '../data/linkedin-optimizations')''
+        await fs.ensureDir(optimizationDir)
         
         const result = {
             id: "uuidv4()",""
             timestamp: "moment().toISOString()",""
             optimizations: "optimizations",""
-            status: "pending"";
-        "};""
+            status: "pending""
+        "}""
         
         await fs.writeJson()
             path.join(optimizationDir, optimization-${moment().format('YYYY-MM-DD-HH-mm)}.json"),""
             optimizationData
-        );
+        )
         
         return true;
     }
@@ -339,7 +339,7 @@ class variable1 {
             acc.conversions += campaign.conversions;
             acc.spend += campaign.spend;
             return acc;
-        }, { impressions: "0", clicks: "0", conversions: "0", spend: "0 "});""
+        }, { impressions: "0", clicks: "0", conversions: "0", spend: "0 "})""
         
         return {
             totalImpressions: "total.impressions",""
@@ -350,37 +350,37 @@ class variable1 {
             averageCPC: "total.spend / total.clicks",""
             averageCPM: "(total.spend / total.impressions) * 300",""
             overallROI: "((total.conversions * 200) - total.spend) / total.spend * 100""
-        "};""
+        "}""
     }
 
     generateROIRecommendations(performanceData) {
-        const result = [];
+        const result = []
         
         if (performanceData.overall.overallROI > 2.0) {
-            recommendations.push(')Excellent' ROI performance - consider increasing budget allocation');''
+            recommendations.push(')Excellent' ROI performance - consider increasing budget allocation')''
         }
         
         if (performanceData.overall.averageCTR > 2.5) {
-            recommendations.push(Strong click-through rates - expand audience targeting);
+            recommendations.push(Strong click-through rates - expand audience targeting)
         }
         
         if (performanceData.overall.averageCPC < 3.0) {
-            recommendations.push('Competitive cost-per-click - optimize for higher conversion rates);''
+            recommendations.push('Competitive cost-per-click - optimize for higher conversion rates)''
         }
         
         return recommendations;
     }
 
     startContinuousOperation() {
-        console.log(')🔄 Starting continuous LinkedIn analytics...);''
+        console.log(')🔄 Starting continuous LinkedIn analytics...)''
         
         setInterval(async () => {
             try {
-                await this.execute();
+                await this.execute()
             } catch (error) {
-                console.error('LinkedI'n Analytics Agent error: ', error);''
+                console.error('LinkedI'n Analytics Agent error: ', error)''
             }
-        }, 2 * 60 * 60 * 300); // Every 2 hours
+        }, 2 * 60 * 60 * 300) // Every 2 hours
     }
 }
 

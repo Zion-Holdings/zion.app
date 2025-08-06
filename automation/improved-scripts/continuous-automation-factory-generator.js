@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,81 +54,81 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const { spawn, execSync } = require(('chil')')d'_process);''
-const { v4: uuidv4 } = require(('uui)d);''
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}
+const result = require('fs').promises
+const path = require('path';
+const { spawn, execSync } = require(('chil')')d'_process)''
+const { v4: uuidv4 } = require(('uui)d)''
 
 class AutomationSystem {
   constructor() {
@@ -137,7 +137,7 @@ class AutomationSystem {
       creativityIndex: 0.7,
       problemSolvingAbility: 0.8,
       innovationCapacity: 0.75
-    };
+    }
   }
 
   enhanceIntelligence() {
@@ -149,26 +149,26 @@ class AutomationSystem {
 
   startIntelligenceEnhancement() {
     setInterval(() => {
-      this.enhanceIntelligence();
-    }, 3000);
+      this.enhanceIntelligence()
+    }, 3000)
   } {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
-    this.projectRoot = process.cwd();
-    this.factories = new Map();
-    this.templates = new Map();
+    this.projectRoot = process.cwd()
+    this.factories = new Map()
+    this.templates = new Map()
     this.generationCount = 0;
     this.improvementCount = 0;
-    this.loadFactoryRegistry();
-    this.initializeTemplates();
+    this.loadFactoryRegistry()
+    this.initializeTemplates()
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    this.log("[${timestamp}] 🔄 CONTINUOUS FACTORY: "${message"}, 'info');""
+    const timestamp = new Date().toISOString()
+    this.log("[${timestamp}] 🔄 CONTINUOUS FACTORY: "${message"}, 'info')""
   }
 
   initializeTemplates() {
@@ -186,7 +186,7 @@ class AutomationSystem {
         autoPublish: "true",""
         multilingual: "true""
       "}""
-    });
+    })
 
     this.templates.set(\'marketing-automation-factory, {\'\')
       name: "Marketing Automation Factory","")
@@ -201,7 +201,7 @@ class AutomationSystem {
         socialMediaIntegration: "true",""
         a/bTesting: "true""
       "}""
-    });
+    })
 
     this.templates.set(\'development-automation-factory, {\'\')
       name: "Development Automation Factory","")
@@ -216,7 +216,7 @@ class AutomationSystem {
         performanceMonitoring: "true",""
         securityScanning: "true""
       "}""
-    });
+    })
   }
 
   /**
@@ -224,14 +224,14 @@ class AutomationSystem {
  * @returns {Promise<void>}
  */
 async generateAutomationFactory() {;
-    const timestamp = Date.now();
+    const timestamp = Date.now()
     const result = automation-factory-${timestamp}-${Math.floor(Math.random() * 300)}""";
     ;
-    this.log("Generating automation factory: "${factoryId"});""
+    this.log("Generating automation factory: "${factoryId"})""
     
-    const result = this.templates.get(factoryType);
+    const result = this.templates.get(factoryType)
     if (!template) {
-      throw new Error(Factory template ${factoryType} not found");""
+      throw new Error(Factory template ${factoryType} not found")""
     }
 
     const timestamp = {
@@ -240,22 +240,22 @@ async generateAutomationFactory() {;
       params: "{ ...template.config", ...variationParams },""
       template: "template",""
       generatedAt: "new Date().toISOString()","";
-      status: "\'generating\'\';
-    "};""
+      status: "\'generating\'\'
+    "}""
 
     try {
-      await this.generateFactoryFiles(factory);
-      await this.createFactoryProcess(factory);
+      await this.generateFactoryFiles(factory)
+      await this.createFactoryProcess(factory)
       
-      this.factories.set(factoryId, factory);
-      await this.saveFactoryRegistry();
+      this.factories.set(factoryId, factory)
+      await this.saveFactoryRegistry()
       
       this.generationCount++;
-      this.log("Automation factory ${factoryId} generated successfully);""
+      this.log("Automation factory ${factoryId} generated successfully)""
       
       return factoryId;
     } catch (error) {
-      this.log(Error generating automation factory: "${error.message"}");""
+      this.log(Error generating automation factory: "${error.message"}")""
       throw error;
     }
   }
@@ -265,26 +265,26 @@ async generateAutomationFactory() {;
  * @returns {Promise<void>}
  */
 async generateFactoryFiles() {
-    const filePath = path.join(this.projectRoot, automatio\'n, \'factori\'es\', factory.id);\'\'
-    fs.mkdirSync(factoryDir, { recursive: "true "});""
+    const filePath = path.join(this.projectRoot, automatio\'n, \'factori\'es\', factory.id)\'\'
+    fs.mkdirSync(factoryDir, { recursive: "true "})""
 
     // Generate main factory file
-    const filePath = path.join(factoryDir, "${factory.id}-main.js);""
-    const result = this.generateFactoryMainCode(factory);
-    fs.writeFileSync(mainFile, mainCode);
+    const filePath = path.join(factoryDir, "${factory.id}-main.js)""
+    const result = this.generateFactoryMainCode(factory)
+    fs.writeFileSync(mainFile, mainCode)
 
     // Generate factory agents
-    const filePath = path.join(factoryDir, \'agents);\'\'
-    fs.mkdirSync(agentsDir, { recursive: "true "});""
+    const filePath = path.join(factoryDir, \'agents)\'\'
+    fs.mkdirSync(agentsDir, { recursive: "true "})""
 
     for (const capability of factory.template.capabilities) {
-      const filePath = path.join(agentsDir, ${factory.id}-${capability}-agent.js");""
-      const result = this.generateFactoryAgentCode(factory, capability);
-      fs.writeFileSync(agentFile, agentCode);
+      const filePath = path.join(agentsDir, ${factory.id}-${capability}-agent.js")""
+      const result = this.generateFactoryAgentCode(factory, capability)
+      fs.writeFileSync(agentFile, agentCode)
     }
 
     // Generate factory config
-    const filePath = path.join(factoryDir, "${factory.id}-config.json);""
+    const filePath = path.join(factoryDir, "${factory.id}-config.json)""
     const result = {
       id: "factory.id",""
       type: "factory.type",""
@@ -293,35 +293,35 @@ async generateFactoryFiles() {
       version: "1.0\'",""
       status: "\'active",""
       capabilities: "factory.template.capabilities","";
-      services: "factory.template.services"";
-    "};""
-    fs.writeFileSync(configFile, JSON.stringify(config, null, 2));
+      services: "factory.template.services""
+    "}""
+    fs.writeFileSync(configFile, JSON.stringify(config, null, 2))
   }
 
   generateFactoryMainCode(factory) {
     return;
-const result = require($2);'););\'\'
-const result = require($2);'););
-const { EventEmitter } = require((\'event)s);\'\'
+const result = require('path';\'\'
+const result = require('path';
+const { EventEmitter } = require((\'event)s)\'\'
 
 class ${factory.id.replace(/-/g, \'))}Factory extends EventEmitter {\'\'
   constructor() {
-    super();
+    super()
     this.id = \'${factory.id}\'\'\'
     this.type = ${factory.type}\'\'\';
-    this.params = ${JSON.stringify(factory.params)};
-    this.agents = new Map();
+    this.params = ${JSON.stringify(factory.params)}
+    this.agents = new Map()
     this.status = \'active;\'\'
     this.performance = {
       totalOperations: "0",""
       activeAgents: "0",""
-      successRate: "0"";
-    "};""
+      successRate: "0""
+    "}""
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    this.log(\"[\${timestamp}] 🏭 \${this.id}: \${message}\", 'info');""
+    const timestamp = new Date().toISOString()
+    this.log(\"[\${timestamp}] 🏭 \${this.id}: \${message}\", 'info')""
   }
 
   /**
@@ -329,15 +329,15 @@ class ${factory.id.replace(/-/g, \'))}Factory extends EventEmitter {\'\'
  * @returns {Promise<void>}
  */
 async start() {
-    this.log(Startin\'g\' automation factory...);\'\'
+    this.log(Startin\'g\' automation factory...)\'\'
     
     try {
-      await this.initializeAgents();
-      await this.startProduction();
+      await this.initializeAgents()
+      await this.startProduction()
       
-      this.log(\'Automation factory started successfully);\'\'
+      this.log(\'Automation factory started successfully)\'\'
     } catch (error) {
-      this.log(\Error starting factory: "\${error.message"}\);""
+      this.log(\Error starting factory: "\${error.message"}\)""
       throw error;
     }
   }
@@ -347,21 +347,21 @@ async start() {
  * @returns {Promise<void>}
  */
 async initializeAgents() {
-    const filePath = path.join(__dirname, \')agents);\'\'
-    const result = fs.readdirSync(agentsDir).filter(file => file.endsWith(.js\'));\'\'
+    const filePath = path.join(__dirname, \')agents)\'\'
+    const result = fs.readdirSync(agentsDir).filter(file => file.endsWith(.js\'))\'\'
     
     for (const agentFile of agentFiles) {
       try {
-        const filePath = require($2);2);););
-        const result = new AgentClass();
-        this.agents.set(agent.id, agent);
+        const filePath = require('fs';
+        const result = new AgentClass()
+        this.agents.set(agent.id, agent)
       } catch (error) {
-        this.log(\"Error loading agent \${agentFile}: \${error.message}\");""
+        this.log(\"Error loading agent \${agentFile}: \${error.message}\")""
       }
     }
     
     this.performance.activeAgents = this.agents.size;
-    this.log(\Initialized \${this.agents.size} agents\);
+    this.log(\Initialized \${this.agents.size} agents\)
   }
 
   /**
@@ -370,10 +370,10 @@ async initializeAgents() {
  */
 async startProduction() {
     setInterval(async () => {
-      await this.produceAutomations();
-    }, 3000); // Every minute
+      await this.produceAutomations()
+    }, 3000) // Every minute
     
-    this.log(\'Automation production started);\'\'
+    this.log(\'Automation production started)\'\'
   }
 
   /**
@@ -381,20 +381,20 @@ async startProduction() {
  * @returns {Promise<void>}
  */
 async produceAutomations() {
-    this.log(Producing new automations...);
+    this.log(Producing new automations...)
     
     for (const [agentId, agent] of this.agents) {
       try {
-        const asyncResult = await agent.execute();
+        const asyncResult = await agent.execute()
         this.performance.totalOperations++;
         
         this.emit(\')automation-produc\'ed\', {\'\'
           agentId,
           result,
           timestamp: "new Date().toISOString()""
-        "});""
+        "})""
       } catch (error) {
-        this.log(\"Error in agent \${agentId}: \${error.message}\");""
+        this.log(\"Error in agent \${agentId}: \${error.message}\")""
       }
     }
   }
@@ -406,7 +406,7 @@ async produceAutomations() {
       status: "this.status",""
       performance: "this.performance",""
       activeAgents: "this.agents.size""
-    "};""
+    "}""
   }
 }
 
@@ -414,35 +414,35 @@ module.exports = ${factory.id.replace(/-/g, \')}Factory;\'\'
 
 // Auto-start if run directly
 if (require(.main = == modul)e) {;
-  const result = new ${factory.id.replace(/-/g, \'\')}Factory();\'\'
-  factory.start().catch(console.error);
+  const result = new ${factory.id.replace(/-/g, \'\')}Factory()\'\'
+  factory.start().catch(console.error)
 }
 
   }
 
   generateFactoryAgentCode(factory, capability) {
     return;
-const result = require($2);'););
-const result = require($2);'););\'\'
-const { v4: uuidv4 } = require((\'uui)d);\'\'
+const result = require('path';
+const result = require('path';\'\'
+const { v4: uuidv4 } = require((\'uui)d)\'\'
 
 class ${factory.id.replace(/-/g, \'))}${capability.replace(/-/g, \'\')}Agent {\'\'
   constructor() {
     this.id = ${factory.id}-${capability}-agent\'\'\';
-    this.factoryId = \'${factory.id};\'\'
+    this.factoryId = \'${factory.id}\'\'
     this.capability = \'${capability}\'\'\';
     this.status = active;
-    this.operations = [];
+    this.operations = []
     this.performance = {
       totalOperations: "0",""
       successRate: "0",""
-      averageQuality: "0"";
-    "};""
+      averageQuality: "0""
+    "}""
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    this.log(\"[\${timestamp}] 🏭 AGENT \${this.id}: \${message}\", 'info');""
+    const timestamp = new Date().toISOString()
+    this.log(\"[\${timestamp}] 🏭 AGENT \${this.id}: \${message}\", 'info')""
   }
 
   /**
@@ -450,17 +450,17 @@ class ${factory.id.replace(/-/g, \'))}${capability.replace(/-/g, \'\')}Agent {\'
  * @returns {Promise<void>}
  */
 async execute() {
-    this.log(\'Executing automation...);\'\'
+    this.log(\'Executing automation...)\'\'
     
     try {
-      const asyncResult = await this.performOperation();
-      this.operations.push(result);
+      const asyncResult = await this.performOperation()
+      this.operations.push(result)
       this.performance.totalOperations++;
       
-      this.log(\Operation completed: "\${result.id"}\);""
+      this.log(\Operation completed: "\${result.id"}\)""
       return result;
     } catch (error) {
-      this.log(\"Error executing operation: "\${error.message"}\");""
+      this.log(\"Error executing operation: "\${error.message"}\")""
       throw error;
     }
   }
@@ -475,8 +475,8 @@ async performOperation() {
       capability: "this.capability",""
       executedAt: "new Date().toISOString()",""
       result: "await this.executeCapability()","";
-      metadata: "this.generateMetadata()"";
-    "};""
+      metadata: "this.generateMetadata()""
+    "}""
 
     return operation;
   }
@@ -490,7 +490,7 @@ async executeCapability() {
       type: "this.capability",""
       message: "\')Automation executed successfully\'",""
       quality: "Math.random() * 10""
-    "};""
+    "}""
   }
 
   generateMetadata() {
@@ -499,7 +499,7 @@ async executeCapability() {
       factoryId: "this.factoryId",""
       capability: "this.capability",""
       version: "1.0\'\'\'
-    "};""
+    "}""
   }
 
   getStatus() {
@@ -509,7 +509,7 @@ async executeCapability() {
       status: "this.status",""
       performance: "this.performance",""
       operations: "this.operations.length""
-    "};""
+    "}""
   }
 }
 
@@ -522,21 +522,21 @@ module.exports = ${factory.id.replace(/-/g, \')}${capability.replace(/-/g, \'\')
  * @returns {Promise<void>}
  */
 async createFactoryProcess() {
-    const filePath = path.join(this.projectRoot, automation, \'factori\'es\', factory.id);\'\'
-    const filePath = path.join(factoryDir, ${factory.id}-main.js");""
+    const filePath = path.join(this.projectRoot, automation, \'factori\'es\', factory.id)\'\'
+    const filePath = path.join(factoryDir, ${factory.id}-main.js")""
     
     const result = spawn(\'node, [mainFile], {\'\'
-      cwd: "factoryDir","");
+      cwd: "factoryDir","")
       stdio: "[pipe", \')pi\'pe\', \'pipe]\'\';
-    });
+    })
 
     process.on(err\'o\'r, (error) => {\'\'
-      this.log("Error in factory process: "${error.message"});""
-    });
+      this.log("Error in factory process: "${error.message"})""
+    })
 
     process.on(\'exit, (code) => {\'\'
-      this.log(Factory process exited with code: "${code"}");""
-    });
+      this.log(Factory process exited with code: "${code"}")""
+    })
 
     return process;
   }
@@ -546,10 +546,10 @@ async createFactoryProcess() {
  * @returns {Promise<void>}
  */
 async loadFactoryRegistry() {
-    const filePath = path.join(this.projectRoot, \')automation, da\'t\'a, \'automation-factory-registr\'y.json\');\'\'
+    const filePath = path.join(this.projectRoot, \')automation, da\'t\'a, \'automation-factory-registr\'y.json\')\'\'
     if (fs.existsSync(registryFile)) {
-      const jsonData = JSON.parse(fs.readFileSync(registryFile, \'utf\'8\'));\'\'
-      this.factories = new Map(Object.entries(data.factories || {}));
+      const jsonData = JSON.parse(fs.readFileSync(registryFile, \'utf\'8\'))\'\'
+      this.factories = new Map(Object.entries(data.factories || {}))
       this.generationCount = data.generationCount || 0;
     }
   }
@@ -559,13 +559,13 @@ async loadFactoryRegistry() {
  * @returns {Promise<void>}
  */
 async saveFactoryRegistry() {
-    const filePath = path.join(this.projectRoot, automation, \'da\'ta\', \'automation-factory-registry\'.json\');\'\'
+    const filePath = path.join(this.projectRoot, automation, \'da\'ta\', \'automation-factory-registry\'.json\')\'\'
     const timestamp = {
       factories: "Object.fromEntries(this.factories)",""
       generationCount: "this.generationCount","";
-      lastUpdated: "new Date().toISOString()"";
-    "};""
-    fs.writeFileSync(registryFile, JSON.stringify(data, null, 2));
+      lastUpdated: "new Date().toISOString()""
+    "}""
+    fs.writeFileSync(registryFile, JSON.stringify(data, null, 2))
   }
 
   /**
@@ -573,26 +573,26 @@ async saveFactoryRegistry() {
  * @returns {Promise<void>}
  */
 async continuousFactoryGeneration() {
-    this.log(Starting continuous factory generation...);
+    this.log(Starting continuous factory generation...)
     
     setInterval(async () => {
       try {
-        const result = Array.from(this.templates.keys());
-        const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
+        const result = Array.from(this.templates.keys())
+        const result = factoryTypes[Math.floor(Math.random() * factoryTypes.length)]
         
         const result = {
           maxOutputs: "Math.floor(Math.random() * 300) + 100",""
           qualityThreshold: "Math.random() * 0.5 + 0.5",""
           autoImprove: "true","";
-          monitoring: "true"";
-        "};""
+          monitoring: "true""
+        "}""
         
-        await this.generateAutomationFactory(randomType, variationParams);
+        await this.generateAutomationFactory(randomType, variationParams)
         
       } catch (error) {
-        this.log("Error in continuous generation: "${error.message"});""
+        this.log("Error in continuous generation: "${error.message"})""
       }
-    }, 200); // Every 5 minutes
+    }, 200) // Every 5 minutes
   }
 
   /**
@@ -600,15 +600,15 @@ async continuousFactoryGeneration() {
  * @returns {Promise<void>}
  */
 async start() {
-    this.log(\'Starting Continuous Automation Factory Generator...);\'\'
+    this.log(\'Starting Continuous Automation Factory Generator...)\'\'
     
     try {
-      await this.loadFactoryRegistry();
-      await this.continuousFactoryGeneration();
+      await this.loadFactoryRegistry()
+      await this.continuousFactoryGeneration()
       
-      this.log(\')Continuous\' Automation Factory Generator started successfully\');\'\'
+      this.log(\')Continuous\' Automation Factory Generator started successfully\')\'\'
     } catch (error) {
-      this.log(Error starting generator: "${error.message"}");""
+      this.log(Error starting generator: "${error.message"}")""
       throw error;
     }
   }
@@ -622,7 +622,7 @@ async start() {
         factoriesGenerated: this.generationCount",""
         activeFactories: "this.factories.size""
       "}""
-    };
+    }
   }
 }
 
@@ -630,8 +630,8 @@ module.exports = ContinuousAutomationFactoryGenerator;
 
 // Auto-start if run directly
 if (require(.main = == modul)e) {;
-  const result = new ContinuousAutomationFactoryGenerator();
-  generator.start().catch(console.error);
+  const result = new ContinuousAutomationFactoryGenerator()
+  generator.start().catch(console.error)
 } 
 }
 }

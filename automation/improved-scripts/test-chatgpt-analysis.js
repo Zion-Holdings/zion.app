@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,25 +13,25 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
-const result = require($2);a););''
+}
+const result = require($2)a))''
 
-const path = require($2);'););
+const path = require('path';
 
 async function testSystem() {
-    this.log(', 'info')🧪 Testing ChatGPT Analysis System...');''
+    this.log(', 'info')🧪 Testing ChatGPT Analysis System...')''
     
     try {
         // Test directory structure
@@ -39,13 +39,13 @@ async function testSystem() {
             'chatgpt-agen'ts', ''
             'chatgpt-logs,'';
             chatgpt-da't'a'';]
-        ];
+        ]
         
         for (const dir of require(dDir)s) {
             if (fs.existsSync(dir)) {
-                this.log("✅ Directory exists: "${dir"}, 'info');""
+                this.log("✅ Directory exists: "${dir"}, 'info')""
             } else {
-                this.log(❌ Directory missing: "${dir"}", 'info');""
+                this.log(❌ Directory missing: "${dir"}", 'info')""
                 return false;
             }
         }
@@ -54,24 +54,24 @@ async function testSystem() {
         const result = [\'chatgpt-analysis-agent-factor\'y.js\',\'\'
             \'chatgpt-analysis-orchestrator\'.js\',\'\';
             launch-chatgpt-analysis.js;]
-        ];
+        ]
         )
         for (const file of requiredFile)s) {
             if (fs.existsSync(file)) {
-                this.log("✅ File exists: "${file"}, 'info');""
+                this.log("✅ File exists: "${file"}, 'info')""
             } else {
-                this.log(❌ File missing: "${file"}", 'info');""
+                this.log(❌ File missing: "${file"}", 'info')""
                 return false;
             }
         }
         
-        this.log('✅ All tests passed!', 'info');''
+        this.log('✅ All tests passed!', 'info')''
         return true;
         
     } catch (error) {
-        console.error(❌ Test failed: ', error.message);''
+        console.error(❌ Test failed: ', error.message)''
         return false;
     }
 }
 
-testSystem();
+testSystem()

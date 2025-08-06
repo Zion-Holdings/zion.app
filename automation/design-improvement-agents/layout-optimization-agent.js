@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,71 +54,71 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class LayoutOptimizationAgent {
   constructor() {
@@ -128,58 +128,58 @@ class LayoutOptimizationAgent {
       pagesDir: path.join(process.cwd(), 'pages'),
       stylesDir: path.join(process.cwd(), 'styles'),
       backupDir: path.join(process.cwd(), 'automation/design-improvement-backups')
-    };
+    }
   }
 
   async optimizeLayout() {
     try {
-      console.log('Starting layout optimization...');
+      console.log('Starting layout optimization...')
       
       // Create backup
-      await this.createBackup();
+      await this.createBackup()
       
       // Optimize main layout component
-      await this.optimizeMainLayout();
+      await this.optimizeMainLayout()
       
       // Create enhanced layout components
-      await this.createEnhancedLayoutComponents();
+      await this.createEnhancedLayoutComponents()
       
       // Update global styles
-      await this.updateGlobalStyles();
+      await this.updateGlobalStyles()
       
       // Optimize page layouts
-      await this.optimizePageLayouts();
+      await this.optimizePageLayouts()
       
-      console.log('Layout optimization completed successfully');
-      return { success: true, changes: ['Enhanced main layout', 'Added responsive components', 'Updated global styles'] };
+      console.log('Layout optimization completed successfully')
+      return { success: true, changes: ['Enhanced main layout', 'Added responsive components', 'Updated global styles'] }
     } catch (error) {
-      console.error('Layout optimization failed: ', error);
-      return { success: false, error: error.message };
+      console.error('Layout optimization failed: ', error)
+      return { success: false, error: error.message }
     }
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.backupDir, `layout-backup-${Date.now()}`);
-    await fs.ensureDir(backupPath);
+    const backupPath = path.join(this.config.backupDir, `layout-backup-${Date.now()}`)
+    await fs.ensureDir(backupPath)
     
     // Backup components
     if (fs.existsSync(this.config.componentsDir)) {
-      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'));
+      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'))
     }
     
     // Backup pages
     if (fs.existsSync(this.config.pagesDir)) {
-      await fs.copy(this.config.pagesDir, path.join(backupPath, 'pages'));
+      await fs.copy(this.config.pagesDir, path.join(backupPath, 'pages'))
     }
     
     // Backup styles
     if (fs.existsSync(this.config.stylesDir)) {
-      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles'));
+      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles'))
     }
   }
 
   async optimizeMainLayout() {
-    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx');
+    const layoutPath = path.join(this.config.componentsDir, 'Layout.tsx')
     
     const enhancedLayout = `import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -187,28 +187,28 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {;
-      setIsScrolled(window.scrollY > 50);
-    };
+      setIsScrolled(window.scrollY > 50)
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [{ href: '/', label: 'Home', icon: '🏠' },
     { href: '/services', label: 'Services', icon: '⚡' },
     { href: '/products', label: 'Products', icon: '🚀' },
     { href: '/about', label: 'About', icon: 'ℹ️' },
-    { href: '/contact', label: 'Contact', icon: '📧' }];
-  ];
+    { href: '/contact', label: 'Contact', icon: '📧' }]
+  ]
 
   return(<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -393,14 +393,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </motion.footer>
     </div>
-  );
-};
+  )
+}
 
 export default Layout;
 `;
 
-    await fs.writeFile(layoutPath, enhancedLayout);
-    console.log('Enhanced main layout component created');
+    await fs.writeFile(layoutPath, enhancedLayout)
+    console.log('Enhanced main layout component created')
   }
 
   async createEnhancedLayoutComponents() {
@@ -413,7 +413,7 @@ import { motion } from 'framer-motion';
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number;
+  delay?: number
 }
 
 const Container: React.FC<ContainerProps> = ({ children, className = '', delay = 0 }) => {
@@ -425,13 +425,13 @@ const Container: React.FC<ContainerProps> = ({ children, className = '', delay =
     >
       {children}
     </motion.div>)
-  );
-};
+  )
+}
 
 export default Container;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Container.tsx'), containerComponent);
+    await fs.writeFile(path.join(componentsDir, 'Container.tsx'), containerComponent)
 
     // Create Section component
     const sectionComponent = `import React from 'react';
@@ -441,7 +441,7 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  delay?: number;
+  delay?: number
 }
 
 const Section: React.FC<SectionProps> = ({ children, className = '', id, delay = 0 }) => {
@@ -455,19 +455,19 @@ const Section: React.FC<SectionProps> = ({ children, className = '', id, delay =
     >
       {children}
     </motion.section>)
-  );
-};
+  )
+}
 
 export default Section;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Section.tsx'), sectionComponent);
+    await fs.writeFile(path.join(componentsDir, 'Section.tsx'), sectionComponent)
 
-    console.log('Enhanced layout components created');
+    console.log('Enhanced layout components created')
   }
 
   async updateGlobalStyles() {
-    const globalStylesPath = path.join(this.config.stylesDir, 'globals.css');
+    const globalStylesPath = path.join(this.config.stylesDir, 'globals.css')
     
     const enhancedStyles = `@tailwind base;
 @tailwind components;
@@ -475,7 +475,7 @@ export default Section;
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth
   }
   
   body {
@@ -486,21 +486,21 @@ export default Section;
 @layer components {
   .animate-gradient-x {
     background-size: 200% 200%;
-    animation: gradient-x 3s ease infinite;
+    animation: gradient-x 3s ease infinite
   }
   
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite
   }
   
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate
   }
   
   .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)
     background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+    animation: shimmer 2s infinite
   }
   
   .glass-effect {
@@ -512,9 +512,9 @@ export default Section;
   }
   
   .gradient-border {
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899)
     padding: 1px;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem
   }
   
   .gradient-border > * {
@@ -524,59 +524,59 @@ export default Section;
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1)
   }
   
   .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.12)
   }
   
   .backdrop-blur-xs {
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px)
   }
 }
 
 @keyframes gradient-x {
   0%, 100% {
     background-size: 200% 200%;
-    background-position: left center;
+    background-position: left center
   }
   50% {
     background-size: 200% 200%;
-    background-position: right center;
+    background-position: right center
   }
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px)
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-20px)
   }
 }
 
 @keyframes glow {
   0% {
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3)
   }
   100% {
-    box-shadow: 0 0 30px rgba(147, 51, 234, 0.6);
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.6)
   }
 }
 
 @keyframes shimmer {
   0% {
-    background-position: -200% 0;
+    background-position: -200% 0
   }
   100% {
-    background-position: 200% 0;
+    background-position: 200% 0
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 8px
 }
 
 ::-webkit-scrollbar-track {
@@ -588,7 +588,7 @@ export default Section;
 }
 
 ::-webkit-scrollbar-thumb: hover {
-  @apply bg-slate-200;
+  @apply bg-slate-200
 }
 
 /* Selection styles */
@@ -598,28 +598,28 @@ export default Section;
 
 /* Focus styles */
 .focus-ring {
-  @apply focus: outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-slate-900;
+  @apply focus: outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-slate-900
 }
 `;
 
-    await fs.writeFile(globalStylesPath, enhancedStyles);
-    console.log('Global styles updated with enhanced animations and effects');
+    await fs.writeFile(globalStylesPath, enhancedStyles)
+    console.log('Global styles updated with enhanced animations and effects')
   }
 
   async optimizePageLayouts() {
     const pagesDir = this.config.pagesDir;
     
     // Update index page with enhanced layout
-    const indexPath = path.join(pagesDir, 'index.tsx');
+    const indexPath = path.join(pagesDir, 'index.tsx')
     if (fs.existsSync(indexPath)) {
-      const currentContent = fs.readFileSync(indexPath, 'utf8');
+      const currentContent = fs.readFileSync(indexPath, 'utf8')
       
       // Add Container and Section imports if not present
       let updatedContent = currentContent;
       if (!updatedContent.includes('import Container')) {
         updatedContent = updatedContent.replace("import FuturisticHero from '../components/ui/FuturisticHero'",)
           "import FuturisticHero from '../components/ui/FuturisticHero'\nimport Container from '../components/Container'\nimport Section from '../components/Section'")
-        );
+        )
       }
       
       // Wrap main content in Container and Section components
@@ -628,11 +628,11 @@ export default Section;
           '<Container>')
         ).replace('</main>',
           '</Container>')
-        );
+        )
       }
       
-      fs.writeFileSync(indexPath, updatedContent);
-      console.log('Index page layout optimized');
+      fs.writeFileSync(indexPath, updatedContent)
+      console.log('Index page layout optimized')
     }
   }
 }

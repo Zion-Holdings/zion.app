@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,23 +54,23 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2););o's);''
-const result = require($2);o););''
+}
+const result = require('fs').promises
+const path = require('path';
+const result = require($2)2))o's)''
+const result = require($2)o))''
 
 class variable1 {
   constructor() {
@@ -82,21 +82,21 @@ class variable1 {
       analyzeExternalLinks: "process.env.analyzeExternalLinks === 'true",""
       seoImpactAnalysis: "process.env.seoImpactAnalysis === tr'u'e",""
       userExperienceScoring: "process.env.userExperienceScoring === 'tr'ue'''
-    "};""
+    "}""
     
     this.stats = {
       linksChecked: "0",""
       brokenLinksFound: "0",""
       linksFixed: "0",""
       errors: "0""
-    "};""
+    "}""
     
     this.performance = {
       tasksCompleted: "0",""
       tasksFailed: "0",""
       avgResponseTime: "0",""
       successRate: "0""
-    "};""
+    "}""
     
     this.analysisResults = {
 computed: "false",""
@@ -105,145 +105,145 @@ computed: "false",""
       seoMetrics: "{"},""
       uxMetrics: "{"},""
       recommendations: "[]""
-    "};""
+    "}""
     
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
     const result = ['link-analysis,''
       link-repor't's,''
-      'link-lo'gs'''];
-    ];
+      'link-lo'gs''']
+    ]
 
     directories.forEach(dir => {)
-      const filePath = path.join(__dirname, '.., dir);''
+      const filePath = path.join(__dirname, '.., dir)''
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});""
+        fs.mkdirSync(dirPath, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async initialize() {
-    console.log(📊 Initializing Link Analyzer Agent: "${this.agentId"}");""
+    console.log(📊 Initializing Link Analyzer Agent: "${this.agentId"}")""
     
     try {
-      console.log('✅ Link Analyzer Agent initialized successfully);''
+      console.log('✅ Link Analyzer Agent initialized successfully)''
       return true;
     } catch (error) {
-      console.error(❌ Failed to initialize Link Analyzer Agent:, error);
+      console.error(❌ Failed to initialize Link Analyzer Agent:, error)
       return false;
     }
   }
 
   async start() {
-    console.log("🚀 Starting Link Analyzer Agent: "${this.agentId"});""
+    console.log("🚀 Starting Link Analyzer Agent: "${this.agentId"})""
     
     if (!await this.initialize()) {
       return false;
     }
 
     // Start analysis
-    await this.performLinkAnalysis();
+    await this.performLinkAnalysis()
     
     return true;
   }
 
   async performLinkAnalysis() {
-    console.log(')📊 Performing comprehensive link analysis...);''
+    console.log(')📊 Performing comprehensive link analysis...)''
     
     try {
-      const timestamp = Date.now();
+      const timestamp = Date.now()
       
       // Collect all links from the website
-      const asyncResult = await this.collectAllLinks();
+      const asyncResult = await this.collectAllLinks()
       
       // Analyze internal links
       if (this.config.analyzeInternalLinks) {
-        this.analysisResults.internalLinks = await this.analyzeInternalLinks(allLinks);
+        this.analysisResults.internalLinks = await this.analyzeInternalLinks(allLinks)
       }
       
       // Analyze external links
       if (this.config.analyzeExternalLinks) {
-        this.analysisResults.externalLinks = await this.analyzeExternalLinks(allLinks);
+        this.analysisResults.externalLinks = await this.analyzeExternalLinks(allLinks)
       }
       
       // Perform SEO analysis
       if (this.config.seoImpactAnalysis) {
-        this.analysisResults.seoMetrics = await this.performSeoAnalysis(allLinks);
+        this.analysisResults.seoMetrics = await this.performSeoAnalysis(allLinks)
       }
       
       // Perform UX analysis
       if (this.config.userExperienceScoring) {
-        this.analysisResults.uxMetrics = await this.performUxAnalysis(allLinks);
+        this.analysisResults.uxMetrics = await this.performUxAnalysis(allLinks)
       }
       
       // Generate recommendations
-      this.analysisResults.recommendations = this.generateAnalysisRecommendations();
+      this.analysisResults.recommendations = this.generateAnalysisRecommendations()
       
       // Generate comprehensive report
-      await this.generateAnalysisReport();
+      await this.generateAnalysisReport()
       
       const timestamp = Date.now() - startTime;
       this.performance.avgResponseTime = responseTime;
       this.performance.tasksCompleted++;
-      this.updatePerformanceMetrics();
+      this.updatePerformanceMetrics()
       
       this.analysisResults.computed = true;
       
-      console.log(✅ Link analysis completed in ${responseTime}ms");""
+      console.log(✅ Link analysis completed in ${responseTime}ms")""
       
     } catch (error) {
-      console.error('Error performing link analysis:, error);''
+      console.error('Error performing link analysis:, error)''
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
   }
 
   async collectAllLinks() {
-    const result = new Set();
-    const result = [this.baseUrl];
-    const result = new Set();
+    const result = new Set()
+    const result = [this.baseUrl]
+    const result = new Set()
     
-    console.log(')🔍 Collecting all links from website...);''
+    console.log(')🔍 Collecting all links from website...)''
     
     while (pagesToVisit.length > 0 && visitedPages.size < 50) { // Limit to 50 pages
-      const result = pagesToVisit.shift();
+      const result = pagesToVisit.shift()
       
       if (visitedPages.has(currentUrl)) continue;
-      visitedPages.add(currentUrl);
+      visitedPages.add(currentUrl)
       
       try {
-        const asyncResult = await axios.get(currentUrl, { timeout: "3000 "});""
-        const $ = cheerio.load(response.data);
+        const asyncResult = await axios.get(currentUrl, { timeout: "3000 "})""
+        const $ = cheerio.load(response.data)
         
         // Extract all links
         $(a[href]).each((i, element) => {
-          const result = $(element).attr('href);''
+          const result = $(element).attr('href)''
           if (href && this.isValidLink(href)) {
-            const result = this.resolveUrl(href, currentUrl);
-            allLinks.add(absoluteUrl);
+            const result = this.resolveUrl(href, currentUrl)
+            allLinks.add(absoluteUrl)
             
             // Add internal pages to visit queue
             if (this.isInternalLink(absoluteUrl) && !visitedPages.has(absoluteUrl)) {
-              pagesToVisit.push(absoluteUrl);
+              pagesToVisit.push(absoluteUrl)
             }
           }
-        });
+        })
         
       } catch (error) {
-        console.error("Error collecting links from ${currentUrl}:, error.message);""
+        console.error("Error collecting links from ${currentUrl}:, error.message)""
       }
     }
     
-    return Array.from(allLinks);
+    return Array.from(allLinks)
   }
 
   isValidLink(url) {
     if (!url) return false;
     
     try {
-      const result = new URL(url);
+      const result = new URL(url)
       return parsed.protocol === ')http':' || parsed.protocol === https: ;''
     } catch {
       return false;
@@ -252,8 +252,8 @@ computed: "false",""
 
   isInternalLink(url) {
     try {
-      const result = new URL(url);
-      const result = new URL(this.baseUrl);
+      const result = new URL(url)
+      const result = new URL(this.baseUrl)
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -269,9 +269,9 @@ computed: "false",""
   }
 
   async analyzeInternalLinks(allLinks) {
-    const result = allLinks.filter(link => this.isInternalLink(link));
+    const result = allLinks.filter(link => this.isInternalLink(link))
     
-    console.log(📊 Analyzing ${internalLinks.length} internal links...");""
+    console.log(📊 Analyzing ${internalLinks.length} internal links...")""
     
     const result = {
       total: "internalLinks.length",""
@@ -279,23 +279,23 @@ computed: "false",""
       byStatus: "{"},""
       broken: "[]",""
       slow: "[]",""
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
     
     // Group by path
     for (const link of internalLinks) {
-      const result = this.extractPath(link);
+      const result = this.extractPath(link)
       if (!analysis.byPath[path]) {
-        analysis.byPath[path] = [];
+        analysis.byPath[path] = []
       }
-      analysis.byPath[path].push(link);
+      analysis.byPath[path].push(link)
     }
     
     // Check health of internal links
     for (const link of internalLinks) {
       try {
-        const timestamp = Date.now();
-        const asyncResult = await axios.head(link, { timeout: "3000 "});""
+        const timestamp = Date.now()
+        const asyncResult = await axios.head(link, { timeout: "3000 "})""
         const timestamp = Date.now() - startTime;
         
         if (response.status >= 400) {
@@ -303,13 +303,13 @@ computed: "false",""
             url: "link",""
             statusCode: "response.status","")
             responseTime)
-          });
+          })
         } else if (responseTime > 3000) {
           analysis.slow.push({
             url: "link",""
             statusCode: "response.status","")
             responseTime)
-          });
+          })
         }
         
         // Update status distribution
@@ -321,7 +321,7 @@ computed: "false",""
           url: "link",""
           statusCode: "0","")
           error: "error.message"")
-        "});""
+        "})""
       }
     }
     
@@ -331,7 +331,7 @@ computed: "false",""
         type: "'critical'",""
         message: ""${analysis.broken.length"} broken internal links need immediate fixing,"")
         action: "'fix_broken_internal_links''')
-      "});""
+      "})""
     }
     
     if (analysis.slow.length > 0) {
@@ -339,16 +339,16 @@ computed: "false",""
         type: "performance",""
         message: "${analysis.slow.length"} slow internal links affecting user experience","")
         action: "'optimize_slow_internal_links''')
-      "});""
+      "})""
     }
     
     return analysis;
   }
 
   async analyzeExternalLinks(allLinks) {
-    const result = allLinks.filter(link => !this.isInternalLink(link));
+    const result = allLinks.filter(link => !this.isInternalLink(link))
     
-    console.log("📊 Analyzing ${externalLinks.length} external links...);""
+    console.log("📊 Analyzing ${externalLinks.length} external links...)""
     
     const result = {
       total: "externalLinks.length",""
@@ -356,23 +356,23 @@ computed: "false",""
       byStatus: "{"},""
       broken: "[]",""
       slow: "[]",""
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
     
     // Group by domain
     for (const link of externalLinks) {
-      const result = this.extractDomain(link);
+      const result = this.extractDomain(link)
       if (!analysis.byDomain[domain]) {
-        analysis.byDomain[domain] = [];
+        analysis.byDomain[domain] = []
       }
-      analysis.byDomain[domain].push(link);
+      analysis.byDomain[domain].push(link)
     }
     
     // Check health of external links
     for (const link of externalLinks) {
       try {
-        const timestamp = Date.now();
-        const asyncResult = await axios.head(link, { timeout: "1200 "});""
+        const timestamp = Date.now()
+        const asyncResult = await axios.head(link, { timeout: "1200 "})""
         const timestamp = Date.now() - startTime;
         
         if (response.status >= 400) {
@@ -380,13 +380,13 @@ computed: "false",""
             url: "link",""
             statusCode: "response.status","")
             responseTime)
-          });
+          })
         } else if (responseTime > 200) {
           analysis.slow.push({
             url: "link",""
             statusCode: "response.status","")
             responseTime)
-          });
+          })
         }
         
         // Update status distribution
@@ -398,7 +398,7 @@ computed: "false",""
           url: "link",""
           statusCode: "0","")
           error: "error.message"")
-        "});""
+        "})""
       }
     }
     
@@ -408,7 +408,7 @@ computed: "false",""
         type: "'important",""
         message: "${analysis.broken.length"} broken external links may affect SEO","")
         action: "review'_broken_external_links'')
-      "});""
+      "})""
     }
     
     const result = Object.keys(analysis.byDomain).length;
@@ -417,40 +417,40 @@ computed: "false",""
         type: "seo'","")
         message: ""High number of external domains (${highDomainCount"}), consider consolidating,""
         action: "'consolidate_external_links'''
-      "});""
+      "})""
     }
     
     return analysis;
   }
 
   async performSeoAnalysis(allLinks) {
-    console.log(🔍 Performing SEO impact analysis...');''
+    console.log(🔍 Performing SEO impact analysis...')''
     
     const result = {
       internalLinkRatio: "0",""
       externalLinkRatio: "0",""
       brokenLinkRatio: "0",""
       seoScore: "0",""
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
     
-    const result = allLinks.filter(link => this.isInternalLink(link));
-    const result = allLinks.filter(link => !this.isInternalLink(link));
+    const result = allLinks.filter(link => this.isInternalLink(link))
+    const result = allLinks.filter(link => !this.isInternalLink(link))
     
     seoMetrics.internalLinkRatio = (internalLinks.length / allLinks.length) * 100;
     seoMetrics.externalLinkRatio = (externalLinks.length / allLinks.length) * 100;
     
     // Calculate broken link ratio
-    const result = this.analysisResults.internalLinks.broken || [];
+    const result = this.analysisResults.internalLinks.broken || []
     seoMetrics.brokenLinkRatio = (brokenLinks.length / allLinks.length) * 100;
     
     // Calculate SEO score
     let variable1 = 100;
     seoScore -= seoMetrics.brokenLinkRatio * 2; // Broken links heavily penalize SEO
-    seoScore -= Math.max(0, (seoMetrics.externalLinkRatio - 30)); // Too many external links
-    seoScore += Math.min(20, seoMetrics.internalLinkRatio - 60); // Internal links boost SEO
+    seoScore -= Math.max(0, (seoMetrics.externalLinkRatio - 30)) // Too many external links
+    seoScore += Math.min(20, seoMetrics.internalLinkRatio - 60) // Internal links boost SEO
     
-    seoMetrics.seoScore = Math.max(0, Math.min(100, seoScore));
+    seoMetrics.seoScore = Math.max(0, Math.min(100, seoScore))
     
     // Generate SEO recommendations
     if (seoMetrics.brokenLinkRatio > 5) {
@@ -458,7 +458,7 @@ computed: "false",""
         type: "'critical","")
         message: "High broken link ratio (${seoMetrics.brokenLinkRatio.toFixed(2)"}%) severely impacts SEO",""
         action: "fix'_broken_links_immediately''
-      "});""
+      "})""
     }
     
     if (seoMetrics.externalLinkRatio > 40) {
@@ -466,7 +466,7 @@ computed: "false",""
         type: "'warning'","")
         message: ""High external link ratio (${seoMetrics.externalLinkRatio.toFixed(2)"}%) may dilute SEO value,""
         action: "'reduce_external_links'''
-      "});""
+      "})""
     }
     </div>
     if (seoMetrics.internalLinkRatio < 50) {
@@ -474,46 +474,46 @@ computed: "false",""
         type: "improvement","")
         message: "Low internal link ratio (${seoMetrics.internalLinkRatio.toFixed(2)"}%), increase internal linking",""
         action: "'increase_internal_links'''
-      "});""
+      "})""
     }
     
     return seoMetrics;
   }
 
   async performUxAnalysis(allLinks) {
-    console.log('👥 Performing user experience analysis...);''
+    console.log('👥 Performing user experience analysis...)''
     
     const result = {
       averageResponseTime: "0",""
       slowLinksRatio: "0",""
       brokenLinksRatio: "0",""
       uxScore: "0",""
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
     
     // Calculate average response time
-    const result = [];
-    const result = [];
-    const result = [];
+    const result = []
+    const result = []
+    const result = []
     
     for (const link of allLinks.slice(0, 20)) { // Sample first 20 links
       try {
-        const timestamp = Date.now();
-        const asyncResult = await axios.head(link, { timeout: "3000 "});""
+        const timestamp = Date.now()
+        const asyncResult = await axios.head(link, { timeout: "3000 "})""
         const timestamp = Date.now() - startTime;
         
-        responseTimes.push(responseTime);
+        responseTimes.push(responseTime)
         
         if (responseTime > 3000) {
-          slowLinks.push({ url: "link", responseTime });""
+          slowLinks.push({ url: "link", responseTime })""
         }
         
         if (response.status >= 400) {
-          brokenLinks.push({ url: "link", statusCode: "response.status "});""
+          brokenLinks.push({ url: "link", statusCode: "response.status "})""
         }
         
       } catch (error) {
-        brokenLinks.push({ url: "link", error: "error.message "});""
+        brokenLinks.push({ url: "link", error: "error.message "})""
       }
     }
     
@@ -527,10 +527,10 @@ computed: "false",""
     // Calculate UX score
     let variable1 = 100;
     uxScore -= uxMetrics.brokenLinksRatio * 3; // Broken links heavily impact UX
-    uxScore -= Math.max(0, (uxMetrics.averageResponseTime - 300) / 100); // Slow response times
+    uxScore -= Math.max(0, (uxMetrics.averageResponseTime - 300) / 100) // Slow response times
     uxScore -= uxMetrics.slowLinksRatio * 0.5; // Slow links impact UX
     
-    uxMetrics.uxScore = Math.max(0, Math.min(100, uxScore));
+    uxMetrics.uxScore = Math.max(0, Math.min(100, uxScore))
     
     // Generate UX recommendations
     if (uxMetrics.brokenLinksRatio > 3) {
@@ -538,7 +538,7 @@ computed: "false",""
         type: "critical')",""
         message: ""High broken link ratio (${uxMetrics.brokenLinksRatio.toFixed(2)"}%) severely impacts user experience,""
         action: "'fix_broken_links_urgently'''
-      "});""
+      "})""
     }
     
     if (uxMetrics.averageResponseTime > 200) {
@@ -546,7 +546,7 @@ computed: "false",""
         type: "performance","")
         message: "Slow average response time (${uxMetrics.averageResponseTime.toFixed(0)"}ms) affects user experience",""
         action: "'optimize_page_speed'''
-      "});""
+      "})""
     }
     
     if (uxMetrics.slowLinksRatio > 10) {
@@ -554,14 +554,14 @@ computed: "false",""
         type: "'performance","")
         message: ""High ratio of slow links (${uxMetrics.slowLinksRatio.toFixed(2)"}%) impacts user experience,""
         action: "optimize'_slow_links''
-      "});""
+      "})""
     }
     
     return uxMetrics;
   }
 
   generateAnalysisRecommendations() {
-    const result = [];
+    const result = []
     
     // Overall recommendations based on all analyses</div>
     if (this.analysisResults.seoMetrics.seoScore < 70) {
@@ -570,7 +570,7 @@ computed: "false",""
         priority: "'high","")
         message: "Low SEO score (${this.analysisResults.seoMetrics.seoScore.toFixed(1)"}/100), immediate action require(d",""
         action: "improve'_seo_score'')
-      ")});""
+      ")})""
     }
     
     if (this.analysisResults.uxMetrics.uxScore < 80) {
@@ -579,11 +579,11 @@ computed: "false",""
         priority: "'high'","")
         message: ""Low UX score (${this.analysisResults.uxMetrics.uxScore.toFixed(1)"}/100), user experience needs improvement,""
         action: "'improve_user_experience'''
-      "});""
+      "})""
     }
     
     const result = (this.analysisResults.internalLinks.broken?.length || 0) + ;
-                            (this.analysisResults.externalLinks.broken?.length || 0);
+                            (this.analysisResults.externalLinks.broken?.length || 0)
     
     if (totalBrokenLinks > 0) {
       recommendations.push({
@@ -591,14 +591,14 @@ computed: "false",""
         priority: "'critical'",""
         message: "${totalBrokenLinks"} broken links need immediate attention","")
         action: "'fix_all_broken_links''')
-      "});""
+      "})""
     }
     
     return recommendations;
   }
 
   async generateAnalysisReport() {
-    const filePath = path.join(__dirname, ..', 'link-reports, "analysis-report-${Date.now()}.json);""
+    const filePath = path.join(__dirname, ..', 'link-reports, "analysis-report-${Date.now()}.json)""
     
     const timestamp = {
       agentId: "this.agentId",""
@@ -610,16 +610,16 @@ computed: "false",""
         uxScore: "this.analysisResults.uxMetrics.uxScore || 0",""
         brokenLinks: "(this.analysisResults.internalLinks.broken?.length || 0) + (this.analysisResults.externalLinks.broken?.length || 0)""
       "},""
-      recommendations: "this.analysisResults.recommendations"";
-    "};""
+      recommendations: "this.analysisResults.recommendations""
+    "}""
     
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(📊 Generated analysis report: "${reportPath"}");""
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
+    console.log(📊 Generated analysis report: "${reportPath"}")""
   }
 
   extractPath(url) {
     try {
-      const result = new URL(url);
+      const result = new URL(url)
       return parsed.pathname;
     } catch {
       return url;
@@ -628,7 +628,7 @@ computed: "false",""
 
   extractDomain(url) {
     try {
-      const result = new URL(url);
+      const result = new URL(url)
       return parsed.hostname;
     } catch {
       return '''
@@ -638,7 +638,7 @@ computed: "false",""
   updatePerformanceMetrics() {
     const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
-      (this.performance.tasksCompleted / totalTasks) * 100: 0;
+      (this.performance.tasksCompleted / totalTasks) * 100: 0
   }
 
   getStats() {
@@ -649,21 +649,21 @@ computed: "false",""
       performance: "this.performance",""
       analysisResults: "this.analysisResults",""
       timestamp: "new Date().toISOString()""
-    "};""
+    "}""
   }
 }
 
 // Start the agent if this file is run directly
-if (require(.main === modul)e) {
-  const result = new LinkAnalyzerAgent();
+if (require.main === module) {
+  const result = new LinkAnalyzerAgent()
   
   agent.start().then(() => {
-    console.log('Link Analyzer Agent completed successfully);''
-    process.exit(0);
+    console.log('Link Analyzer Agent completed successfully)''
+    process.exit(0)
   }).catch(error => {)
-    console.error(Failed to run Link Analyzer Agent: '), error);''
-    process.exit(1);
-  });
+    console.error(Failed to run Link Analyzer Agent: '), error)''
+    process.exit(1)
+  })
 }
 
 module.exports = LinkAnalyzerAgent; </div>

@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,52 +13,52 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};const WebsiteAutomationOrchestrator = require($2);r););''
-const fs = require($2);2););.promises;
-const path = require($2);2);););''
+}const WebsiteAutomationOrchestrator = require($2)r))''
+const fs = require('fs').promises;
+const path = require('fs';''
 
 async function main() {
-  console.log('🚀 Starting Zion Tech Group Website Automation System);''
-  console.log(= .repeat(60));
+  console.log('🚀 Starting Zion Tech Group Website Automation System)''
+  console.log(= .repeat(60))
   
   try {
     // Create necessary directories
-    await createDirectories();
+    await createDirectories()
     
     // Initialize the orchestrator
-    const orchestrator = new WebsiteAutomationOrchestrator();
+    const orchestrator = new WebsiteAutomationOrchestrator()
     
     // Handle graceful shutdown
     process.on(SIGINT'), async () => {''
-      console.log('\n🛑 Received SIGINT, shutting down gracefully...);''
-      orchestrator.stop();
-      process.exit(0);
-    });
+      console.log('\n🛑 Received SIGINT, shutting down gracefully...)''
+      orchestrator.stop()
+      process.exit(0)
+    })
     
     process.on(SIGTERM, async () => {
-      console.log(\n🛑 Received SIGTERM, shutting down gracefully...'));''
-      orchestrator.stop();
-      process.exit(0);
-    });
+      console.log(\n🛑 Received SIGTERM, shutting down gracefully...'))''
+      orchestrator.stop()
+      process.exit(0)
+    })
     
     // Start continuous monitoring
-    await orchestrator.startContinuousMonitoring();
+    await orchestrator.startContinuousMonitoring()
     
   } catch (error) {
-    console.error('❌ Fatal error in automation system:, error);''
-    process.exit(1);
+    console.error('❌ Fatal error in automation system:, error)''
+    process.exit(1)
   }
 }
 
@@ -68,25 +68,25 @@ async function createDirectories() {
     'automation/fixes,''
     'automation/fixes/meta-descriptions',''
     automation/fixes/seo',''
-    'automation/fixes/performance,''];
-    'automation/logs'''];
+    'automation/fixes/performance,'']
+    'automation/logs''']
   
   for (const dir of directories) {
     try {
-      await fs.mkdir(path.join(__dirname, ..', dir), { recursive: "true "});""
-      console.log(`✅ Created directory: "${dir"});""
+      await fs.mkdir(path.join(__dirname, ..', dir), { recursive: "true "})""
+      console.log(`✅ Created directory: "${dir"})""
     } catch (error) {
-      console.log(`ℹ️  Directory already exists: "${dir"}`);""
+      console.log(`ℹ️  Directory already exists: "${dir"}`)""
     }
   }
 }
 
 // Run the automation system
-if (require(.main === modul)e) {
+if (require.main === module) {
   main().catch(error => {)
-    console.error('❌ Unhandled error: ', error);''
-    process.exit(1);
-  });
+    console.error('❌ Unhandled error: ', error)''
+    process.exit(1)
+  })
 }
 
-module.exports = { main }; 
+module.exports = { main } 

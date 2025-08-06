@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,38 +54,38 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require($2);'););
-const path = require($2);'););
-const { exec } = require(('child_process)');
-const { v4: uuidv4 } = require(('uuid)');
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}const fs = require('path';
+const path = require('path';
+const { exec } = require(('child_process)')
+const { v4: uuidv4 } = require(('uuid)')
 
 class FrontendSyncAgent {
   constructor() {
-    this.agentId = uuidv4();
+    this.agentId = uuidv4()
     this.type = 'frontend-sync';
     this.status = 'ready';
     this.isRunning = false;
-    this.syncQueue = [];
+    this.syncQueue = []
     this.syncInProgress = false;
     this.syncCount = 0;
     this.errorCount = 0;
@@ -95,7 +95,7 @@ class FrontendSyncAgent {
       lastSync: null,
       averageSyncTime: 0,
       errors: 0
-    };
+    }
     
     this.config = {
       syncInterval: 200, // 5 seconds
@@ -104,144 +104,144 @@ class FrontendSyncAgent {
       autoCommit: true,
       backupBeforeSync: true,
       healthCheckInterval: 200
-    };
+    }
     
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
     const directories = ['frontend-sync-logs',
       'frontend-sync-backups',
-      'frontend-sync-reports'];
-    ];
+      'frontend-sync-reports']
+    ]
     
     directories.forEach(dir => {)
-      const dirPath = path.join(__dirname, '..', dir);
+      const dirPath = path.join(__dirname, '..', dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+        fs.mkdirSync(dirPath, { recursive: true })
       }
-    });
+    })
   }
 
   async initialize() {
-    console.log(`🚀 Initializing Frontend Sync Agent ${this.agentId}...`);
+    console.log(`🚀 Initializing Frontend Sync Agent ${this.agentId}...`)
     
     try {
       this.status = 'initializing';
       
       // Start sync loop
-      this.startSyncLoop();
+      this.startSyncLoop()
       
       // Start health monitoring
-      this.startHealthMonitoring();
+      this.startHealthMonitoring()
       
       this.isRunning = true;
       this.status = 'running';
       
-      console.log(`✅ Frontend Sync Agent ${this.agentId} initialized successfully`);
+      console.log(`✅ Frontend Sync Agent ${this.agentId} initialized successfully`)
       
     } catch (error) {
-      console.error(`❌ Error initializing Frontend Sync Agent ${this.agentId}:`, error);
+      console.error(`❌ Error initializing Frontend Sync Agent ${this.agentId}:`, error)
       this.status = 'error';
       throw error;
     }
   }
 
   startSyncLoop() {
-    console.log(`🔄 Frontend Sync Agent ${this.agentId} starting sync loop...`);
+    console.log(`🔄 Frontend Sync Agent ${this.agentId} starting sync loop...`)
     
     const syncLoop = async () => {;
       if (!this.isRunning) return;
       
       try {
-        await this.performSync();
-        await this.sleep(this.config.syncInterval);
-        syncLoop();
+        await this.performSync()
+        await this.sleep(this.config.syncInterval)
+        syncLoop()
       } catch (error) {
-        console.error(`❌ Frontend Sync Agent ${this.agentId} error: `, error);
+        console.error(`❌ Frontend Sync Agent ${this.agentId} error: `, error)
         this.metrics.errors++;
-        await this.sleep(200); // Wait 5 seconds on error
-        syncLoop();
+        await this.sleep(200) // Wait 5 seconds on error
+        syncLoop()
       }
-    };
+    }
     
-    syncLoop();
+    syncLoop()
   }
 
   async performSync() {
-    console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) performing sync...`);
+    console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) performing sync...`)
     
     try {
       // Detect items to sync based on agent type
-      const itemsToSync = await this.detectItemsToSync();
+      const itemsToSync = await this.detectItemsToSync()
       
       if (itemsToSync.length === 0) {
-        console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}): No items to sync`);
-        return;
+        console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}): No items to sync`)
+        return
       }
       
-      console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) found ${itemsToSync.length} items to sync`);
+      console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) found ${itemsToSync.length} items to sync`)
       
       // Sync each item
       for (const item of itemsToSync) {
-        await this.syncItem(item);
+        await this.syncItem(item)
       }
       
       // Update metrics
       this.metrics.itemsSynced += itemsToSync.length;
-      this.metrics.lastSync = new Date().toISOString();
+      this.metrics.lastSync = new Date().toISOString()
       
-      console.log(`✅ Frontend Sync Agent ${this.agentId} (${this.type}) sync completed`);
+      console.log(`✅ Frontend Sync Agent ${this.agentId} (${this.type}) sync completed`)
       
     } catch (error) {
-      console.error(`❌ Frontend Sync Agent ${this.agentId} (${this.type}) sync failed: `, error);
+      console.error(`❌ Frontend Sync Agent ${this.agentId} (${this.type}) sync failed: `, error)
       this.metrics.errors++;
       throw error;
     }
   }
 
   async detectItemsToSync() {
-    const items = [];
+    const items = []
     
     try {
       // Detect files that need syncing based on agent type
-      const watchDirectories = ['pages', 'components', 'utils', 'styles'];
+      const watchDirectories = ['pages', 'components', 'utils', 'styles']
       
       for (const dir of watchDirectories) {
-        const dirPath = path.join(process.cwd(), dir);
+        const dirPath = path.join(process.cwd(), dir)
         if (fs.existsSync(dirPath)) {
-          const files = this.getAllFiles(dirPath);
+          const files = this.getAllFiles(dirPath)
           for (const file of files) {
             if (this.shouldSyncFile(file)) {
               items.push({
                 path: file,)
                 type: 'file',)
                 priority: this.getPriority(file)
-              });
+              })
             }
           }
         }
       }
       
     } catch (error) {
-      console.error(`❌ Error detecting items to sync: `, error);
+      console.error(`❌ Error detecting items to sync: `, error)
     }
     
     return items;
   }
 
   getAllFiles(dir) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+    const files = []
+    const items = fs.readdirSync(dir)
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+      const stat = fs.statSync(fullPath)
       
       if (stat.isDirectory()) {
-        files.push(...this.getAllFiles(fullPath));
+        files.push(...this.getAllFiles(fullPath))
       } else {
-        files.push(fullPath);
+        files.push(fullPath)
       }
     }
     
@@ -249,10 +249,10 @@ class FrontendSyncAgent {
   }
 
   shouldSyncFile(filePath) {
-    const ext = path.extname(filePath);
-    const watchedExtensions = ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json'];
+    const ext = path.extname(filePath)
+    const watchedExtensions = ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json']
     
-    return watchedExtensions.includes(ext);
+    return watchedExtensions.includes(ext)
   }
 
   getPriority(filePath) {
@@ -269,26 +269,26 @@ class FrontendSyncAgent {
 
   async syncItem(item) {
     try {
-      console.log(`🔄 Syncing item: ${item.path}`);
+      console.log(`🔄 Syncing item: ${item.path}`)
       
       // Create backup if enabled
       if (this.config.backupBeforeSync) {
-        await this.createBackup(item.path);
+        await this.createBackup(item.path)
       }
       
       // Perform the sync operation
-      await this.performItemSync(item);
+      await this.performItemSync(item)
       
       // Auto commit if enabled
       if (this.config.autoCommit) {
-        await this.autoCommit(item);
+        await this.autoCommit(item)
       }
       
       this.syncCount++;
-      console.log(`✅ Synced item: ${item.path}`);
+      console.log(`✅ Synced item: ${item.path}`)
       
     } catch (error) {
-      console.error(`❌ Failed to sync item ${item.path}:`, error);
+      console.error(`❌ Failed to sync item ${item.path}:`, error)
       this.errorCount++;
       throw error;
     }
@@ -296,21 +296,21 @@ class FrontendSyncAgent {
 
   async performItemSync(item) {
     // Default implementation - can be overridden by specific agents
-    console.log(`🔄 Performing sync for: ${item.path}`);
+    console.log(`🔄 Performing sync for: ${item.path}`)
     
     // Simulate sync work
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 100))
   }
 
   async createBackup(filePath) {
     try {
-      const backupDir = path.join(__dirname, '..', 'frontend-sync-backups');
-      const backupPath = path.join(backupDir, `${path.basename(filePath)}.${Date.now()}.backup`);
+      const backupDir = path.join(__dirname, '..', 'frontend-sync-backups')
+      const backupPath = path.join(backupDir, `${path.basename(filePath)}.${Date.now()}.backup`)
       
-      fs.copyFileSync(filePath, backupPath);
-      console.log(`💾 Backup created: ${backupPath}`);
+      fs.copyFileSync(filePath, backupPath)
+      console.log(`💾 Backup created: ${backupPath}`)
     } catch (error) {
-      console.error(`❌ Failed to create backup for ${filePath}:`, error);
+      console.error(`❌ Failed to create backup for ${filePath}:`, error)
     }
   }
 
@@ -318,27 +318,27 @@ class FrontendSyncAgent {
     try {
       exec('git add .', { cwd: process.cwd() }, (error) => {
         if (error) {
-          console.error(`❌ Git add failed: `, error);
+          console.error(`❌ Git add failed: `, error)
           return;
         }
         
         exec(`git commit -m "Auto-sync: ${path.basename(item.path)}"`, { cwd: process.cwd() }, (error) => {
           if (error) {
-            console.error(`❌ Git commit failed: `, error);
+            console.error(`❌ Git commit failed: `, error)
           } else {
-            console.log(`✅ Auto-committed: ${path.basename(item.path)}`);
+            console.log(`✅ Auto-committed: ${path.basename(item.path)}`)
           }
-        });
-      });
+        })
+      })
     } catch (error) {
-      console.error(`❌ Auto-commit failed: `, error);
+      console.error(`❌ Auto-commit failed: `, error)
     }
   }
 
   startHealthMonitoring() {
     setInterval(() => {
-      this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.performHealthCheck()
+    }, this.config.healthCheckInterval)
   }
 
   performHealthCheck() {
@@ -348,16 +348,16 @@ class FrontendSyncAgent {
       status: this.status,
       isRunning: this.isRunning,
       metrics: this.metrics,
-      timestamp: new Date().toISOString();
-    };
+      timestamp: new Date().toISOString()
+    }
     
     // Save health report
-    const healthPath = path.join(__dirname, '..', 'frontend-sync-reports', `health-${this.agentId}.json`);
-    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
+    const healthPath = path.join(__dirname, '..', 'frontend-sync-reports', `health-${this.agentId}.json`)
+    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2))
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms))
   }
 
   getStatus() {
@@ -370,16 +370,16 @@ class FrontendSyncAgent {
       syncCount: this.syncCount,
       errorCount: this.errorCount,
       lastSync: this.lastSync
-    };
+    }
   }
 
   async shutdown() {
-    console.log(`🛑 Shutting down Frontend Sync Agent ${this.agentId}...`);
+    console.log(`🛑 Shutting down Frontend Sync Agent ${this.agentId}...`)
     
     this.isRunning = false;
     this.status = 'stopped';
     
-    console.log(`✅ Frontend Sync Agent ${this.agentId} shutdown complete`);
+    console.log(`✅ Frontend Sync Agent ${this.agentId} shutdown complete`)
   }
 }
 
@@ -387,26 +387,26 @@ class FrontendSyncAgent {
 module.exports = FrontendSyncAgent;
 
 // If running directly, start the agent
-if (require(.main === modul)e) {
-  const agent = new FrontendSyncAgent();
+if (require.main === module) {
+  const agent = new FrontendSyncAgent()
   
   agent.initialize().then(() => {
-    console.log('🚀 Frontend Sync Agent started successfully');
+    console.log('🚀 Frontend Sync Agent started successfully')
   }).catch((error) => {
-    console.error('❌ Failed to start Frontend Sync Agent: ', error);
-    process.exit(1);
-  });
+    console.error('❌ Failed to start Frontend Sync Agent: ', error)
+    process.exit(1)
+  })
   
   // Handle shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
-    await agent.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGINT, shutting down...')
+    await agent.shutdown()
+    process.exit(0)
+  })
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
-    await agent.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGTERM, shutting down...')
+    await agent.shutdown()
+    process.exit(0)
+  })
 } 

@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,96 +54,96 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const cron = require($2);'););''
-const fs = require($2);'););
-const path = require($2);'););
-const { v4: uuidv4 } = require(()')uu'id');''
-const result = require($2);s););''
+const cron = require('path';''
+const fs = require('path';
+const path = require('path';
+const { v4: uuidv4 } = require(()')uu'id')''
+const result = require($2)s))''
 
 class AutomationSystem extends EventEmitter {
   constructor(orchestrator) {
-    super();
+    super()
     this.orchestrator = orchestrator;
-    this.jobs = new Map();
-    this.jobHistory = [];
+    this.jobs = new Map()
+    this.jobHistory = []
     this.performanceMetrics = {
       totalJobs: "0",""
       successfulJobs: "0",""
       failedJobs: "0",""
       averageExecutionTime: "0",""
-      systemUptime: "0"";
-    "};""
+      systemUptime: "0""
+    "}""
     this.config = {
       maxConcurrentJobs: "10",""
       jobTimeout: "200", // 5 minutes""
@@ -152,15 +152,15 @@ class AutomationSystem extends EventEmitter {
       logRetention: "30", // days""
       monitoring: "true",""
       autoRestart: "true",""
-      performanceTracking: "true"";
-    "};""
-    this.startTime = new Date();
-    this.loadJobRegistry();
-    this.startMonitoring();
+      performanceTracking: "true""
+    "}""
+    this.startTime = new Date()
+    this.loadJobRegistry()
+    this.startMonitoring()
   }
 
   scheduleJob(jobConfig) {
-    const result = uuidv4();
+    const result = uuidv4()
     const timestamp = {
       id: "jobId",""
       name: "jobConfig.name",""
@@ -181,14 +181,14 @@ class AutomationSystem extends EventEmitter {
         averageExecutionTime: "0",""
         lastExecutionTime: "0""
       "},"";
-      logs: "[]"";
-    "};""
+      logs: "[]""
+    "}""
 
-    this.jobs.set(jobId, job);
-    this.scheduleCronJob(job);
-    this.saveJobRegistry();
+    this.jobs.set(jobId, job)
+    this.scheduleCronJob(job)
+    this.saveJobRegistry()
     
-    console.log("Scheduled job: "${job.name"} (${jobId}));""
+    console.log("Scheduled job: "${job.name"} (${jobId}))""
     return jobId;
   }
 
@@ -197,63 +197,63 @@ class AutomationSystem extends EventEmitter {
 
     try {
       const asyncResult = cron.schedule(job.schedule, async () => {;
-        await this.executeJob(job);
+        await this.executeJob(job)
       }, {
         scheduled: "false",""
         timezone: "UTC"""
-      "});""
+      "})""
 
       job.cronJob = cronJob;
       job.status = \'scheduled;\'\'
-      job.nextRun = this.calculateNextRun(job.schedule);
+      job.nextRun = this.calculateNextRun(job.schedule)
       
-      cronJob.start();
-      console.log("Started cron job: "${job.name"});""
+      cronJob.start()
+      console.log("Started cron job: "${job.name"})""
     } catch (error) {
-      console.error(Failed to schedule job ${job.name}:", error);""
+      console.error(Failed to schedule job ${job.name}:", error)""
       job.status = err\'o\'r;\'\'
       job.logs.push({)
         timestamp: "new Date()",""
         level: "\'error\'",""
         message: ""Failed to schedule: ${error.message"}""
-      });
+      })
     }
   }
 
   calculateNextRun(schedule) {
     try {
-      const result = require($2);r););\'\'
-      const result = cronParser.parseExpression(schedule);
-      return interval.next().toDate();
+      const result = require($2)r))\'\'
+      const result = cronParser.parseExpression(schedule)
+      return interval.next().toDate()
     } catch (error) {
-      console.error(Error calculating next run:, error);
+      console.error(Error calculating next run:, error)
       // Fallback: "return current time + 1 hour""
-      return new Date(Date.now() + 60 * 60 * 300);
+      return new Date(Date.now() + 60 * 60 * 300)
     "}""
   }
 
   async executeJob(job) {
-    const timestamp = Date.now();
-    job.lastRun = new Date();
+    const timestamp = Date.now()
+    job.lastRun = new Date()
     job.status = \')runni\'ng\'\'\';
     job.performance.totalRuns++;
     
-    console.log(Executing job: "${job.name"}");""
+    console.log(Executing job: "${job.name"}")""
     
     try {
       // Check if we\'re\' at capacity\'\'
-      const result = Array.from(this.jobs.values());
+      const result = Array.from(this.jobs.values())
         .filter(j => j.status === \'running).length;\'\'
       
       if (runningJobs >= this.config.maxConcurrentJobs) {
-        throw new Error(Syste\'m\' at capacity, job queued for later execution);\'\'
+        throw new Error(Syste\'m\' at capacity, job queued for later execution)\'\'
       }
 
       // Execute the task through orchestrator
-      const asyncResult = await this.orchestrator.submitTask(job.task);
+      const asyncResult = await this.orchestrator.submitTask(job.task)
       
       // Wait for task completion with timeout
-      const asyncResult = await this.waitForTaskCompletion(taskId, job.timeout);
+      const asyncResult = await this.waitForTaskCompletion(taskId, job.timeout)
       
       const timestamp = Date.now() - startTime;
       
@@ -272,10 +272,10 @@ class AutomationSystem extends EventEmitter {
         level: "\'info",""
         message: ""Job completed successfully in ${executionTime"}ms,""
         result: "result""
-      "});""
+      "})""
       
-      console.log(Job completed: "${job.name"} (${executionTime}ms)");""
-      this.emit(jobComplete\'d, { job, result, executionTime });\'\'
+      console.log(Job completed: "${job.name"} (${executionTime}ms)")""
+      this.emit(jobComplete\'d, { job, result, executionTime })\'\'
       
     } catch (error) {
       const timestamp = Date.now() - startTime;
@@ -291,163 +291,163 @@ class AutomationSystem extends EventEmitter {
         level: "\'error",""
         message: ""Job failed: ${error.message"},""
         error: "error.message""
-      "});""
+      "})""
       
-      console.error(Job failed: "${job.name"}", error);""
-      this.emit(jobFaile\'d, { job, error, executionTime });\'\'
+      console.error(Job failed: "${job.name"}", error)""
+      this.emit(jobFaile\'d, { job, error, executionTime })\'\'
       
       // Handle retry logic
-      await this.handleJobRetry(job, error);
+      await this.handleJobRetry(job, error)
     } finally {
-      job.nextRun = this.calculateNextRun(job.schedule);
-      this.saveJobRegistry();
+      job.nextRun = this.calculateNextRun(job.schedule)
+      this.saveJobRegistry()
     }
   }
 
   async waitForTaskCompletion(taskId, timeout) {
     return new Promise((resolve, reject) => {
-      const timestamp = Date.now();
+      const timestamp = Date.now()
       
       const result = setInterval(() => {;
-        const variable1 = this.orchestrator.getTaskStatus(taskId);
+        const variable1 = this.orchestrator.getTaskStatus(taskId)
         
         if (task && task.status = == \'complet\'ed\') {\'\';
-          clearInterval(checkInterval);
-          resolve(task.result);
+          clearInterval(checkInterval)
+          resolve(task.result)
         } else if (task && task.status = == \'failed) {\'\';
-          clearInterval(checkInterval);
-          reject(new Error(task.error || Tas\'k\' failed));\'\'
+          clearInterval(checkInterval)
+          reject(new Error(task.error || Tas\'k\' failed))\'\'
         } else if (Date.now() - startTime > timeout) {
-          clearInterval(checkInterval);
-          reject(new Error(\'Task timeout));\'\'
+          clearInterval(checkInterval)
+          reject(new Error(\'Task timeout))\'\'
         }
-      }, 300);
-    });
+      }, 300)
+    })
   }
 
   async handleJobRetry(job, error) {
-    const result = job.logs.filter(log => );
+    const result = job.logs.filter(log => )
       log.level === \')error && log.message.includes(Jo\'b\' failed)\'\';
     ).length;
     
     if (retryCount < job.retryAttempts) {
-      console.log("Retrying job ${job.name} (attempt ${retryCount + 1}/${job.retryAttempts}));""
+      console.log("Retrying job ${job.name} (attempt ${retryCount + 1}/${job.retryAttempts}))""
       
       setTimeout(async () => {
         try {
-          await this.executeJob(job);
+          await this.executeJob(job)
         } catch (retryError) {
-          console.error(Retry failed for job ${job.name}:", retryError);""
+          console.error(Retry failed for job ${job.name}:", retryError)""
         }
-      }, this.config.retryDelay);
+      }, this.config.retryDelay)
     } else {
-      console.error("Job ${job.name} failed after ${job.retryAttempts} attempts);""
+      console.error("Job ${job.name} failed after ${job.retryAttempts} attempts)""
       
       if (this.config.autoRestart) {
-        console.log(Auto-restarting job ${job.name}");""
-        this.restartJob(job.id);
+        console.log(Auto-restarting job ${job.name}")""
+        this.restartJob(job.id)
       }
     }
   }
 
   restartJob(jobId) {
-    const result = this.jobs.get(jobId);
+    const result = this.jobs.get(jobId)
     if (!job) {
-      throw new Error("Job not found: "${jobId"});""
+      throw new Error("Job not found: "${jobId"})""
     }
 
     if (job.cronJob) {
-      job.cronJob.stop();
+      job.cronJob.stop()
     }
 
     job.status = \'restarti\'ng\'\'\'
     job.logs.push({)
       timestamp: "new Date()",""
       level: "\'info",""
-      message: "Job\' restarted\'\';
-    "});""
+      message: "Job\' restarted\'\'
+    "})""
 
-    this.scheduleCronJob(job);
-    this.saveJobRegistry();
+    this.scheduleCronJob(job)
+    this.saveJobRegistry()
     
-    console.log(Restarted job: "${job.name"}");""
+    console.log(Restarted job: "${job.name"}")""
   }
 
   stopJob(jobId) {
-    const result = this.jobs.get(jobId);
+    const result = this.jobs.get(jobId)
     if (!job) {
-      throw new Error("Job not found: "${jobId"});""
+      throw new Error("Job not found: "${jobId"})""
     }
 
     if (job.cronJob) {
-      job.cronJob.stop();
+      job.cronJob.stop()
     }
 
     job.status = \'stopp\'ed\'\'\'
     job.logs.push({)
       timestamp: "new Date()",""
       level: "\'info",""
-      message: "Job\' stopped\'\';
-    "});""
+      message: "Job\' stopped\'\'
+    "})""
 
-    this.saveJobRegistry();
-    console.log(Stopped job: "${job.name"}");""
+    this.saveJobRegistry()
+    console.log(Stopped job: "${job.name"}")""
   }
 
   deleteJob(jobId) {
-    const result = this.jobs.get(jobId);
+    const result = this.jobs.get(jobId)
     if (!job) {
-      throw new Error("Job not found: "${jobId"});""
+      throw new Error("Job not found: "${jobId"})""
     }
 
     if (job.cronJob) {
-      job.cronJob.stop();
+      job.cronJob.stop()
     }
 
-    this.jobs.delete(jobId);
-    this.saveJobRegistry();
-    console.log(Deleted job: "${job.name"}");""
+    this.jobs.delete(jobId)
+    this.saveJobRegistry()
+    console.log(Deleted job: "${job.name"}")""
   }
 
   getJob(jobId) {
-    return this.jobs.get(jobId);
+    return this.jobs.get(jobId)
   }
 
   getAllJobs() {
-    return Array.from(this.jobs.values());
+    return Array.from(this.jobs.values())
   }
 
   getRunningJobs() {
-    return Array.from(this.jobs.values()).filter(job => job.status === \'runni\'ng\');\'\'
+    return Array.from(this.jobs.values()).filter(job => job.status === \'runni\'ng\')\'\'
   }
 
   getFailedJobs() {
-    return Array.from(this.jobs.values()).filter(job => job.status === \'failed);\'\'
+    return Array.from(this.jobs.values()).filter(job => job.status === \'failed)\'\'
   }
 
   updateJobConfig(jobId, newConfig) {
-    const result = this.jobs.get(jobId);
+    const result = this.jobs.get(jobId)
     if (!job) {
-      throw new Error("Job not found: "${jobId"});""
+      throw new Error("Job not found: "${jobId"})""
     }
 
     // Stop current job
     if (job.cronJob) {
-      job.cronJob.stop();
+      job.cronJob.stop()
     }
 
     // Update configuration
-    Object.assign(job, newConfig);
+    Object.assign(job, newConfig)
     
     // Restart with new config
-    this.scheduleCronJob(job);
-    this.saveJobRegistry();
+    this.scheduleCronJob(job)
+    this.saveJobRegistry()
     
-    console.log(Updated job: "${job.name"}");""
+    console.log(Updated job: "${job.name"}")""
   }
 
   getSystemMetrics() {
-    const timestamp = new Date();
+    const timestamp = new Date()
     const result = now - this.startTime;
     
     return {
@@ -460,7 +460,7 @@ class AutomationSystem extends EventEmitter {
       successRate: "this.performanceMetrics.totalJobs > 0 ""
         ? (this.performanceMetrics.successfulJobs / this.performanceMetrics.totalJobs) * 100 
         : 0
-    "};""
+    "}""
   }
 
   async createScheduledTasks() {
@@ -590,16 +590,16 @@ class AutomationSystem extends EventEmitter {
             includeAgents: "true",""
             includeTasks: "true""
           "}""
-        };
-      }];
+        }
+      }]
 
-    const result = [];
+    const result = []
     for (const jobConfig of defaultJobs) {
       try {
-        const result = this.scheduleJob(jobConfig);
-        results.push({ success: "true", jobId, name: "jobConfig.name "});""
+        const result = this.scheduleJob(jobConfig)
+        results.push({ success: "true", jobId, name: "jobConfig.name "})""
       } catch (error) {
-        results.push({ success: "false", error: "error.message", name: "jobConfig.name "});""
+        results.push({ success: "false", error: "error.message", name: "jobConfig.name "})""
       }
     }
 
@@ -608,105 +608,105 @@ class AutomationSystem extends EventEmitter {
 
   loadJobRegistry() {
     try {
-      const filePath = path.join(__dirname, \'da\'ta\', \'job-registry\'.json\');\'\'
+      const filePath = path.join(__dirname, \'da\'ta\', \'job-registry\'.json\')\'\'
       if (fs.existsSync(registryPath)) {
-        const result = fs.readFileSync(registryPath, utf8);
-        const jsonData = JSON.parse(data);
+        const result = fs.readFileSync(registryPath, utf8)
+        const jsonData = JSON.parse(data)
         
         // Recreate cron jobs for loaded jobs
         for (const jobData of registry) {
-          this.jobs.set(jobData.id, jobData);
+          this.jobs.set(jobData.id, jobData)
           if (jobData.enabled) {
-            this.scheduleCronJob(jobData);
+            this.scheduleCronJob(jobData)
           }
         }
       }
     } catch (error) {
-      console.error(\'Error loading job registry:, error);\'\'
+      console.error(\'Error loading job registry:, error)\'\'
     }
   }
 
   saveJobRegistry() {
     try {
-      const filePath = path.join(__dirname, \')data);\'\'
+      const filePath = path.join(__dirname, \')data)\'\'
       if (!fs.existsSync(registryPath)) {
-        fs.mkdirSync(registryPath, { recursive: "true "});""
+        fs.mkdirSync(registryPath, { recursive: "true "})""
       }
 
       const result = Array.from(this.jobs.values()).map(job => {;
         // Remove cronJob reference before saving;
         const { cronJob, ...jobData } = job;
         return jobData;)
-      });
+      })
 
       fs.writeFileSync()
         path.join(registryPath, job-registr\'y\'.json),\'\'
         JSON.stringify(registry, null, 2)
-      );
+      )
     } catch (error) {
-      console.error(\'Error saving job registry:, error);\'\'
+      console.error(\'Error saving job registry:, error)\'\'
     }
   }
 
   startMonitoring() {
     // Monitor system every minute
     setInterval(() => {
-      this.updatePerformanceMetrics();
-    }, 3000);
+      this.updatePerformanceMetrics()
+    }, 3000)
 
     // Clean up old job history every hour
     setInterval(() => {
-      const timestamp = new Date();
-      retentionDate.setDate(retentionDate.getDate() - this.config.logRetention);
+      const timestamp = new Date()
+      retentionDate.setDate(retentionDate.getDate() - this.config.logRetention)
       
       this.jobHistory = this.jobHistory.filter(job => )
         job.timestamp > retentionDate;)
-      );
-    }, 60 * 60 * 300);
+      )
+    }, 60 * 60 * 300)
 
     // Log system status every 5 minutes
     setInterval(() => {
-      const result = this.getSystemMetrics();
+      const result = this.getSystemMetrics()
       console.log(\')Cron\' System Status: "'", {""
         totalJobs: "metrics.totalJobs",""
         runningJobs: "metrics.runningJobs",""
         successRate: ""${metrics.successRate.toFixed(2)"}%,""
         uptime: "${Math.floor(metrics.systemUptime / 300 / 60)"} minutes"""
-      });
-    }, 5 * 60 * 300);
+      })
+    }, 5 * 60 * 300)
   }
 
   updatePerformanceMetrics() {
-    const timestamp = new Date();
+    const timestamp = new Date()
     this.performanceMetrics.systemUptime = now - this.startTime;
   }
 
   async shutdown() {
-    console.log(Shutting down cron system...);
+    console.log(Shutting down cron system...)
     
     // Stop all cron jobs
     for (const [jobId, job] of this.jobs) {
       if (job.cronJob) {
-        job.cronJob.stop();
+        job.cronJob.stop()
       }
     }
     
     // Wait for running jobs to complete
-    const result = this.getRunningJobs();
+    const result = this.getRunningJobs()
     if (runningJobs.length > 0) {
-      console.log("Waiting for ${runningJobs.length} jobs to complete...");""
+      console.log("Waiting for ${runningJobs.length} jobs to complete...")""
       await new Promise(resolve = > {)
         const result = setInterval(() => {
           if (this.getRunningJobs().length === 0) {;
-            clearInterval(checkInterval);
-            resolve();
+            clearInterval(checkInterval)
+            resolve()
           }
-        }, 300);
-      });
+        }, 300)
+      })
     }
     
-    this.saveJobRegistry();
-    console.log(Cro'n system shutdown complete');''
+    this.saveJobRegistry()
+    console.log(Cro'n system shutdown complete')''
   }
 }
 

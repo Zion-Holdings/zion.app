@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,36 +54,36 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
-const result = require($2);2););.promises
-const path = require($2);'););
-const { exec } = require(('chil')')d'_process);''
-const { promisify } = require(('uti)l);''
+}
+const result = require('fs').promises
+const path = require('path';
+const { exec } = require(('chil')')d'_process)''
+const { promisify } = require(('uti)l)''
 ;
-const result = promisify(exec);
+const result = promisify(exec)
 
 class variable1 {
   constructor() {
     this.jobId = process.env.JOB_ID;
     this.jobType = process.env.JOB_TYPE;
-    this.config = JSON.parse(process.env.JOB_CONFIG || '){});''
-    this.projectRoot = path.resolve(__dirname, '../..');''
-    this.reportsDir = path.join(__dirname, ../reports/daily-backup-reports');''
-    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs);''
-    this.backupDir = path.join(this.projectRoot, 'backu'ps');''
-    this.ensureDirectories();
+    this.config = JSON.parse(process.env.JOB_CONFIG || '){})''
+    this.projectRoot = path.resolve(__dirname, '../..')''
+    this.reportsDir = path.join(__dirname, ../reports/daily-backup-reports')''
+    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs)''
+    this.backupDir = path.join(this.projectRoot, 'backu'ps')''
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
@@ -95,50 +95,50 @@ class variable1 {
       path.join(this.reportsDir, 'analysis-repor'ts'),''
       path.join(this.reportsDir, 'optimization-reports),''
       path.join(this.reportsDir, backup-repor't's),''
-      path.join(this.reportsDir, 'analytics-repor'ts')''];
-    ];
+      path.join(this.reportsDir, 'analytics-repor'ts')'']
+    ]
     
     dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async execute() {
-    console.log("Daily Backup Job ${this.jobId} executing);""
+    console.log("Daily Backup Job ${this.jobId} executing)""
     
     try {
       // Perform backup task
-      await this.performBackupTask();
+      await this.performBackupTask()
       
       // Generate execution report
-      await this.generateExecutionReport();
+      await this.generateExecutionReport()
       
-      console.log(Daily Backup Job ${this.jobId} completed successfully");""
+      console.log(Daily Backup Job ${this.jobId} completed successfully")""
       
     } catch (error) {
-      console.error("Daily Backup Job ${this.jobId} failed:, error);""
-      await this.generateErrorReport(error);
+      console.error("Daily Backup Job ${this.jobId} failed:, error)""
+      await this.generateErrorReport(error)
     }
   }
 
   async performBackupTask() {
-    console.log('Performing daily backup task...);''
+    console.log('Performing daily backup task...)''
     
     const timestamp = {
       status: "completed",""
       data: "{"},""
-      timestamp: "new Date().toISOString()"";
-    "};""
+      timestamp: "new Date().toISOString()""
+    "}""
     
     try {
       // Create backup directory with timestamp
-      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');''
-      const filePath = path.join(this.backupDir, backup-${timestamp}");""
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-')''
+      const filePath = path.join(this.backupDir, backup-${timestamp}")""
       
       if (!fs.existsSync(backupPath)) {
-        fs.mkdirSync(backupPath, { recursive: "true "});""
+        fs.mkdirSync(backupPath, { recursive: "true "})""
       }
       
       // Backup important directories
@@ -146,10 +146,10 @@ class variable1 {
         this.backupConfiguration(backupPath),
         this.backupData(backupPath),
         this.backupReports(backupPath),
-        this.backupLogs(backupPath)];
-      ];
+        this.backupLogs(backupPath)]
+      ]
       
-      const asyncResult = await Promise.allSettled(backupTasks);
+      const asyncResult = await Promise.allSettled(backupTasks)
       
       backupResult.data = {
         backupPath,
@@ -158,13 +158,13 @@ class variable1 {
           status: "result.status",""
           value: "result.status === 'fulfilled ? result.value : result.reason''
         "}))""
-      };
+      }
       
       // Compress backup
-      await this.compressBackup(backupPath);
+      await this.compressBackup(backupPath)
       
       // Clean up old backups
-      await this.cleanupOldBackups();
+      await this.cleanupOldBackups()
       
     } catch (error) {
       backupResult.status = fail'e'd;''
@@ -176,38 +176,38 @@ class variable1 {
 
   async backupSourceCode(backupPath) {
     try {
-      const filePath = path.join(backupPath, src');''
+      const filePath = path.join(backupPath, src')''
       
       // Copy source code directory
-      await execAsync("cp -r ${path.join(this.projectRoot, 'src)} ${sourceBackupPath});''
+      await execAsync("cp -r ${path.join(this.projectRoot, 'src)} ${sourceBackupPath})''
       
       // Copy package files
-      await execAsync(cp ${path.join(this.projectRoot, packag'e'.json)} ${backupPath}/");""
-      await execAsync("cp ${path.join(this.projectRoot, 'package-loc'k.json')} ${backupPath}/);''
+      await execAsync(cp ${path.join(this.projectRoot, packag'e'.json)} ${backupPath}/")""
+      await execAsync("cp ${path.join(this.projectRoot, 'package-loc'k.json')} ${backupPath}/)''
       
       // Copy configuration files
-      await execAsync(cp ${path.join(this.projectRoot, 'next'.config.js')} ${backupPath}/");""
-      await execAsync("cp ${path.join(this.projectRoot, tsconfig.json)} ${backupPath}/);""
+      await execAsync(cp ${path.join(this.projectRoot, 'next'.config.js')} ${backupPath}/")""
+      await execAsync("cp ${path.join(this.projectRoot, tsconfig.json)} ${backupPath}/)""
       
       return {
         status: "'completed'",""
         message: "'Source code backed up successfully'",""
         size: "await this.getDirectorySize(sourceBackupPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "failed",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async backupConfiguration(backupPath) {
     try {
-      const filePath = path.join(backupPath, 'conf'ig');''
+      const filePath = path.join(backupPath, 'conf'ig')''
       
       if (!fs.existsSync(configBackupPath)) {
-        fs.mkdirSync(configBackupPath, { recursive: "true "});""
+        fs.mkdirSync(configBackupPath, { recursive: "true "})""
       }
       
       // Copy configuration files
@@ -215,13 +215,13 @@ class variable1 {
         '.gitignore',''
         README.md,
         'tailwin'd.config.js',''
-        'postcss'.config.js'''];
-      ];
+        'postcss'.config.js''']
+      ]
       
       for (const file of configFiles) {
-        const filePath = path.join(this.projectRoot, file);
+        const filePath = path.join(this.projectRoot, file)
         if (fs.existsSync(sourcePath)) {
-          await execAsync(cp ${sourcePath} ${configBackupPath}/");""
+          await execAsync(cp ${sourcePath} ${configBackupPath}/")""
         }
       }
       
@@ -229,106 +229,106 @@ class variable1 {
         status: "completed",""
         message: "'Configuration backed up successfully'",""
         size: "await this.getDirectorySize(configBackupPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "'failed",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async backupData(backupPath) {
     try {
-      const filePath = path.join(backupPath, dat'a);''
+      const filePath = path.join(backupPath, dat'a)''
       
       if (!fs.existsSync(dataBackupPath)) {
-        fs.mkdirSync(dataBackupPath, { recursive: "true "});""
+        fs.mkdirSync(dataBackupPath, { recursive: "true "})""
       }
       
       // Copy automation data
-      const filePath = path.join(this.projectRoot, 'automati'on');''
+      const filePath = path.join(this.projectRoot, 'automati'on')''
       if (fs.existsSync(automationDataPath)) {
-        await execAsync("cp -r ${automationDataPath} ${dataBackupPath}/);""
+        await execAsync("cp -r ${automationDataPath} ${dataBackupPath}/)""
       }
       
       // Copy content data
-      const filePath = path.join(this.projectRoot, 'src'/content');''
+      const filePath = path.join(this.projectRoot, 'src'/content')''
       if (fs.existsSync(contentDataPath)) {
-        await execAsync(cp -r ${contentDataPath} ${dataBackupPath}/");""
+        await execAsync(cp -r ${contentDataPath} ${dataBackupPath}/")""
       }
       
       return {
         status: "completed",""
         message: "'Data backed up successfully'",""
         size: "await this.getDirectorySize(dataBackupPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "'failed",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async backupReports(backupPath) {
     try {
-      const filePath = path.join(backupPath, report's);''
+      const filePath = path.join(backupPath, report's)''
       
       if (!fs.existsSync(reportsBackupPath)) {
-        fs.mkdirSync(reportsBackupPath, { recursive: "true "});""
+        fs.mkdirSync(reportsBackupPath, { recursive: "true "})""
       }
       
       // Copy automation reports
-      const filePath = path.join(this.projectRoot, 'automatio'n/reports');''
+      const filePath = path.join(this.projectRoot, 'automatio'n/reports')''
       if (fs.existsSync(automationReportsPath)) {
-        await execAsync("cp -r ${automationReportsPath} ${reportsBackupPath}/);""
+        await execAsync("cp -r ${automationReportsPath} ${reportsBackupPath}/)""
       }
       
       return {
         status: "'completed",""
         message: "Reports' backed up successfully",""
         size: "await this.getDirectorySize(reportsBackupPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "'failed'",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async backupLogs(backupPath) {
     try {
-      const filePath = path.join(backupPath, 'logs);''
+      const filePath = path.join(backupPath, 'logs)''
       
       if (!fs.existsSync(logsBackupPath)) {
-        fs.mkdirSync(logsBackupPath, { recursive: "true "});""
+        fs.mkdirSync(logsBackupPath, { recursive: "true "})""
       }
       
       // Copy automation logs
-      const filePath = path.join(this.projectRoot, automatio'n'/logs);''
+      const filePath = path.join(this.projectRoot, automatio'n'/logs)''
       if (fs.existsSync(automationLogsPath)) {
-        await execAsync(cp -r ${automationLogsPath} ${logsBackupPath}/");""
+        await execAsync(cp -r ${automationLogsPath} ${logsBackupPath}/")""
       }
       
       return {
         status: "'completed'",""
         message: "'Logs backed up successfully'",""
         size: "await this.getDirectorySize(logsBackupPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "failed",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async getDirectorySize(dirPath) {
     try {
-      const { stdout } = await execAsync("du -sh ${dirPath} | cut -f1);""
-      return stdout.trim();
+      const { stdout } = await execAsync("du -sh ${dirPath} | cut -f1)""
+      return stdout.trim()
     } catch (error) {
       return 'unkno'wn'''
     }
@@ -336,33 +336,33 @@ class variable1 {
 
   async compressBackup(backupPath) {
     try {
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);''
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-)''
       const result = ${backupPath}.tar.gz"""
       ;
-      await execAsync("tar -czf ${compressedPath} -C ${path.dirname(backupPath)} ${path.basename(backupPath)});""
+      await execAsync("tar -czf ${compressedPath} -C ${path.dirname(backupPath)} ${path.basename(backupPath)})""
       
       // Remove uncompressed directory
-      await execAsync(rm -rf ${backupPath}");""
+      await execAsync(rm -rf ${backupPath}")""
       
-      console.log("Backup compressed: "${compressedPath"});""
+      console.log("Backup compressed: "${compressedPath"})""
       
       return {
         status: "'completed'",""
         compressedPath,
         size: "await this.getFileSize(compressedPath)""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "'failed",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
   async getFileSize(filePath) {
     try {
-      const { stdout } = await execAsync(ls -lh ${filePath} | awk {print variable5}");""
-      return stdout.trim();
+      const { stdout } = await execAsync(ls -lh ${filePath} | awk {print variable5}")""
+      return stdout.trim()
     } catch (error) {
       return 'unknown;''
     }
@@ -371,25 +371,25 @@ class variable1 {
   async cleanupOldBackups() {
     try {
       // Keep only the last 7 daily backups
-      const { stdout } = await execAsync("ls -t ${this.backupDir}/*.tar.gz | tail -n +8);""
-      const result = stdout.trim().split(\n').filter(file => file);''
+      const { stdout } = await execAsync("ls -t ${this.backupDir}/*.tar.gz | tail -n +8)""
+      const result = stdout.trim().split(\n').filter(file => file)''
       
       for (const backup of oldBackups) {
         if (backup) {
-          await execAsync(rm -f ${backup}");""
-          console.log("Removed old backup: "${backup"});""
+          await execAsync(rm -f ${backup}")""
+          console.log("Removed old backup: "${backup"})""
         }
       }
       
       return {
         status: "'completed",""
         removed: "oldBackups.length""
-      "};""
+      "}""
     } catch (error) {
       return {
         status: "faile'd",""
         message: "error.message""
-      "};""
+      "}""
     }
   }
 
@@ -400,28 +400,28 @@ class variable1 {
       jobType: "this.jobType",""
       status: "'completed'",""
       execution: "{"},""
-      results: "[]"";
-    "};""
+      results: "[]""
+    "}""
     
     // Generate job-specific report
-    report.execution = await this.generateBackupReport();
+    report.execution = await this.generateBackupReport()
     
     // Save execution report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);''
-    const filePath = path.join(this.reportsDir, 'backup-repor'ts', execution-${timestamp}.json");""
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-)''
+    const filePath = path.join(this.reportsDir, 'backup-repor'ts', execution-${timestamp}.json")""
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
-    console.log("Execution report saved: "${reportPath"});""
+    console.log("Execution report saved: "${reportPath"})""
   }
 
   async generateBackupReport() {
     try {
       // Get backup statistics
-      const { stdout } = await execAsync(ls -la ${this.backupDir} | grep .tar.gz | wc -l");""
-      const result = parseInt(stdout.trim());
+      const { stdout } = await execAsync(ls -la ${this.backupDir} | grep .tar.gz | wc -l")""
+      const result = parseInt(stdout.trim())
       
-      const { stdout: "sizeOutput "} = await execAsync("du -sh ${this.backupDir});""
-      const result = sizeOutput.trim();
+      const { stdout: "sizeOutput "} = await execAsync("du -sh ${this.backupDir})""
+      const result = sizeOutput.trim()
       
       return {
         status: "'completed",""
@@ -435,12 +435,12 @@ class variable1 {
           reports: "backed up",""
           logs: "'backed up'''
         "}""
-      };
+      }
     } catch (error) {
       return {
         status: "'failed",""
         error: "error.message""
-      "};""
+      "}""
     }
   }
 
@@ -451,22 +451,22 @@ class variable1 {
       jobType: "this.jobType",""
       status: "faile'd",""
       error: "error.message",""
-      stack: "error.stack"";
-    "};""
+      stack: "error.stack""
+    "}""
     
     // Save error report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');''
-    const filePath = path.join(this.logsDir, error-${timestamp}.json");""
-    fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')''
+    const filePath = path.join(this.logsDir, error-${timestamp}.json")""
+    fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2))
     
-    console.log("Error report saved: "${reportPath"}");""
+    console.log("Error report saved: "${reportPath"}")""
   }
 }
 
 // Execute the job;
-const result = new DailyBackupJob();
+const result = new DailyBackupJob()
 
 job.execute().catch(error => {)
-  console.error(Daily Backup Job failed to execute: ', error);''
-  process.exit(1);
-}); 
+  console.error(Daily Backup Job failed to execute: ', error)''
+  process.exit(1)
+}) 

@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,80 +54,80 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2););o'n);''
+const result = require('fs').promises
+const path = require('path';
+const result = require($2)2))o'n)''
 
 class variable1 {
   constructor() {
@@ -139,71 +139,71 @@ class variable1 {
       taskDistribution: "process.env.taskDistribution === true",""
       resultAggregation: "process.env.resultAggregation === 'tr'ue'",""
       performanceOptimization: "process.env.performanceOptimization === 'true''
-    "};""
+    "}""
     
     this.stats = {
       linksChecked: "0",""
       brokenLinksFound: "0",""
       linksFixed: "0",""
       errors: "0""
-    "};""
+    "}""
     
     this.performance = {
       tasksCompleted: "0",""
       tasksFailed: "0",""
       avgResponseTime: "0",""
       successRate: "0""
-    "};""
+    "}""
     
-    this.managedAgents = new Map();
-    this.tasks = new Map();
-    this.workflows = new Map();
+    this.managedAgents = new Map()
+    this.tasks = new Map()
+    this.workflows = new Map()
     
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
     const result = [link-orchestrato'r's,''
       'link-workflo'ws',''
       'link-reports,''
-      link-lo'g's''];
-    ];
+      link-lo'g's'']
+    ]
 
     directories.forEach(dir => {)
-      const filePath = path.join(__dirname, '..', dir);''
+      const filePath = path.join(__dirname, '..', dir)''
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});""
+        fs.mkdirSync(dirPath, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async initialize() {
-    console.log(🎼 Initializing Link Orchestrator Agent: "${this.agentId"}");""
+    console.log(🎼 Initializing Link Orchestrator Agent: "${this.agentId"}")""
     
     try {
       // Load existing workflows
-      await this.loadWorkflows();
+      await this.loadWorkflows()
       
       // Initialize agent management
-      await this.initializeAgentManagement();
+      await this.initializeAgentManagement()
       
-      console.log(✅ Link Orchestrator Agent initialized successfully');''
+      console.log(✅ Link Orchestrator Agent initialized successfully')''
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize Link Orchestrator Agent:, error);''
+      console.error('❌ Failed to initialize Link Orchestrator Agent:, error)''
       return false;
     }
   }
 
   async start() {
-    console.log("🚀 Starting Link Orchestrator Agent: "${this.agentId"});""
+    console.log("🚀 Starting Link Orchestrator Agent: "${this.agentId"})""
     
     if (!await this.initialize()) {
       return false;
     }
 
     // Start orchestration
-    this.startOrchestration();
+    this.startOrchestration()
     
     return true;
   }
@@ -212,45 +212,45 @@ class variable1 {
     // Start continuous orchestration
     setInterval(async () => {
       try {
-        await this.performOrchestration();
+        await this.performOrchestration()
       } catch (error) {
-        console.error(Error in orchestration: "')", error);""
+        console.error(Error in orchestration: "')", error)""
         this.stats.errors++;
       }
-    }, 3000); // Every minute
+    }, 3000) // Every minute
 
     // Also perform initial orchestration
-    this.performOrchestration();
+    this.performOrchestration()
   }
 
   async performOrchestration() {
-    console.log(🎼 Performing link checking orchestration...);
+    console.log(🎼 Performing link checking orchestration...)
     
     try {
       // Check agent health and performance
-      await this.checkAgentHealth();
+      await this.checkAgentHealth()
       
       // Distribute tasks
-      await this.distributeTasks();
+      await this.distributeTasks()
       
       // Aggregate results
-      await this.aggregateResults();
+      await this.aggregateResults()
       
       // Optimize performance
       if (this.config.performanceOptimization) {
-        await this.optimizePerformance();
+        await this.optimizePerformance()
       }
       
       // Generate orchestration report
-      await this.generateOrchestrationReport();
+      await this.generateOrchestrationReport()
       
       this.performance.tasksCompleted++;
-      this.updatePerformanceMetrics();
+      this.updatePerformanceMetrics()
       
-      console.log(✅ Orchestration completed successfully);
+      console.log(✅ Orchestration completed successfully)
       
     } catch (error) {
-      console.error(Error performing orchestration:, error);
+      console.error(Error performing orchestration:, error)
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
@@ -258,7 +258,7 @@ class variable1 {
 
   async initializeAgentManagement() {
     // Initialize different types of agents
-    const result = [')link-validat'or', 'link-fixer, link-monit'o'r, 'link-analyz'er'];''
+    const result = [')link-validat'or', 'link-fixer, link-monit'o'r, 'link-analyz'er']''
     
     for (const agentType of agentTypes) {
       const timestamp = {
@@ -277,27 +277,27 @@ class variable1 {
           linksFixed: "0",""
           errors: "0""
         "}"";
-      };
+      }
       
-      this.managedAgents.set(agentType, agent);
+      this.managedAgents.set(agentType, agent)
     }
     
-    console.log(📋 Initialized ${this.managedAgents.size} agent types for management");""
+    console.log(📋 Initialized ${this.managedAgents.size} agent types for management")""
   }
 
   async checkAgentHealth() {
-    console.log(🔍 Checking agent health...);
+    console.log(🔍 Checking agent health...)
     
     for (const [agentType, agent] of this.managedAgents) {
       // Simulate health check (in real implementation, this would check actual agent processes)
-      const asyncResult = await this.checkSingleAgentHealth(agentType, agent);
+      const asyncResult = await this.checkSingleAgentHealth(agentType, agent)
       
       if (healthStatus.healthy) {
         agent.status = 'healthy;''
-        agent.lastActive = new Date();
+        agent.lastActive = new Date()
       } else {
         agent.status = unhealt'h'y;''
-        console.warn("⚠️ Agent ${agentType} is unhealthy: "${healthStatus.reason"});""
+        console.warn("⚠️ Agent ${agentType} is unhealthy: "${healthStatus.reason"})""
       }
     }
   }
@@ -305,47 +305,47 @@ class variable1 {
   async checkSingleAgentHealth(agentType, agent) {
     // In a real implementation, this would check the actual agent process
     // For now, well simulate health checks
-    const timestamp = Date.now() - agent.lastActive.getTime();
+    const timestamp = Date.now() - agent.lastActive.getTime()
     
     if (timeSinceLastActive > 200) { // 5 minutes
       return {
         healthy: "false",""
         reason: "'Agent not responding for more than 5 minutes'''
-      "};""
+      "}""
     }
     
     if (agent.performance.successRate < 80) {
       return {
         healthy: "false",""
         reason: "Low success rate: ${agent.performance.successRate"}%"""
-      };
+      }
     }
     
     return {
       healthy: "true",""
       reason: "'Agent is healthy'''
-    "};""
+    "}""
   }
 
   async distributeTasks() {
-    console.log(📋 Distributing tasks to agents...');''
+    console.log(📋 Distributing tasks to agents...')''
     
     // Get available tasks
-    const result = this.getPendingTasks();
+    const result = this.getPendingTasks()
     
     if (pendingTasks.length === 0) {
-      console.log('📋 No pending tasks to distribute);''
+      console.log('📋 No pending tasks to distribute)''
       return;
     }
     
     // Distribute tasks based on agent capabilities
     for (const task of pendingTasks) {
-      const result = this.findSuitableAgent(task);
+      const result = this.findSuitableAgent(task)
       
       if (suitableAgent) {
-        await this.assignTaskToAgent(task, suitableAgent);
+        await this.assignTaskToAgent(task, suitableAgent)
       } else {
-        console.warn("⚠️ No suitable agent found for task: "${task.type"});""
+        console.warn("⚠️ No suitable agent found for task: "${task.type"})""
       }
     }
   }
@@ -371,7 +371,7 @@ class variable1 {
         priority: "low'",""
         data: "{ scope: 'comprehensive "}""
       }
-    ];
+    ]
   }
 
   findSuitableAgent(task) {
@@ -379,13 +379,13 @@ class variable1 {
       link-validatio'n: "['link-validat'or']",""
       'link-fixing: "[link-fix'e'r]",""
       'link-monitori'ng': ['link-monitor],''
-      link-analys'i's: "['link-analyz'er']'';
-    "};""
+      link-analys'i's: "['link-analyz'er']''
+    "}""
     
-    const result = agentCapabilities[task.type] || [];
+    const result = agentCapabilities[task.type] || []
     
     for (const agentType of suitableTypes) {
-      const result = this.managedAgents.get(agentType);
+      const result = this.managedAgents.get(agentType)
       if (agent && agent.status === 'healthy) {''
         return agent;
       }
@@ -395,33 +395,33 @@ class variable1 {
   }
 
   async assignTaskToAgent(task, agent) {
-    console.log("📋 Assigning task ${task.id} to ${agent.type} agent);""
+    console.log("📋 Assigning task ${task.id} to ${agent.type} agent)""
     
     task.assignedAgent = agent.type;
     task.status = assign'e'd;''
-    task.assignedAt = new Date();
+    task.assignedAt = new Date()
     
-    this.tasks.set(task.id, task);
+    this.tasks.set(task.id, task)
     
     // Update agent stats
     agent.performance.tasksCompleted++;
-    agent.lastActive = new Date();
+    agent.lastActive = new Date()
     
     // Simulate task completion
     setTimeout(() => {
-      this.completeTask(task.id, { success: "true", result: "'Task completed successfully' "});""
-    }, 200 + Math.random() * 3000); // Random completion time
+      this.completeTask(task.id, { success: "true", result: "'Task completed successfully' "})""
+    }, 200 + Math.random() * 3000) // Random completion time
   }
 
   async completeTask(taskId, result) {
-    const result = this.tasks.get(taskId);
+    const result = this.tasks.get(taskId)
     if (!task) return;
     
     task.status = 'completed;''
     task.result = result;
-    task.completedAt = new Date();
+    task.completedAt = new Date()
     
-    const result = this.managedAgents.get(task.assignedAgent);
+    const result = this.managedAgents.get(task.assignedAgent)
     if (agent) {
       if (result.success) {
         agent.performance.tasksCompleted++;
@@ -430,11 +430,11 @@ class variable1 {
       }
     }
     
-    console.log(✅ Task ${taskId} completed");""
+    console.log(✅ Task ${taskId} completed")""
   }
 
   async aggregateResults() {
-    console.log(📊 Aggregating results from all agents...');''
+    console.log(📊 Aggregating results from all agents...')''
     
     const timestamp = {
       timestamp: "new Date().toISOString()",""
@@ -446,8 +446,8 @@ class variable1 {
         totalErrors: "0",""
         overallSuccessRate: "0""
       "},""
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
     
     // Aggregate results from all agents
     for (const [agentType, agent] of this.managedAgents) {
@@ -456,7 +456,7 @@ class variable1 {
         performance: "agent.performance",""
         stats: "agent.stats",""
         lastActive: "agent.lastActive""
-      "};""
+      "}""
       
       // Update overall stats
       aggregatedResults.overallStats.totalLinksChecked += agent.stats.linksChecked;
@@ -473,17 +473,17 @@ class variable1 {
     }
     
     // Generate recommendations
-    aggregatedResults.recommendations = this.generateOrchestrationRecommendations(aggregatedResults);
+    aggregatedResults.recommendations = this.generateOrchestrationRecommendations(aggregatedResults)
     
     // Save aggregated results
-    const filePath = path.join(__dirname, '.., 'link-orchestrato'rs', "aggregated-results-${Date.now()}.json);""
-    fs.writeFileSync(resultsPath, JSON.stringify(aggregatedResults, null, 2));
+    const filePath = path.join(__dirname, '.., 'link-orchestrato'rs', "aggregated-results-${Date.now()}.json)""
+    fs.writeFileSync(resultsPath, JSON.stringify(aggregatedResults, null, 2))
     
-    console.log('📊 Results aggregated and saved);''
+    console.log('📊 Results aggregated and saved)''
   }
 
   generateOrchestrationRecommendations(results) {
-    const result = [];
+    const result = []
     
     // Check overall health</div>
     if (results.overallStats.overallSuccessRate < 90) {
@@ -492,7 +492,7 @@ class variable1 {
         priority: "'high",""
         message: "Low overall success rate (${results.overallStats.overallSuccessRate.toFixed(2)"}%)",""
         action: "investigate'_and_optimize_agents''
-      "});""
+      "})""
     }
     
     // Check broken links
@@ -502,44 +502,44 @@ class variable1 {
         priority: "'critical",""
         message: ""${results.overallStats.totalBrokenLinksFound"} broken links detected,"")
         action: "prioritize'_link_fixing'')
-      "});""
+      "})""
     }
     
     // Check agent health
-    const result = Object.values(results.agents).filter(agent => agent.status !== 'healt'hy');''
+    const result = Object.values(results.agents).filter(agent => agent.status !== 'healt'hy')''
     if (unhealthyAgents.length > 0) {
       recommendations.push({
         type: "'system",""
         priority: "hig'h",""
         message: "${unhealthyAgents.length"} agents are unhealthy","")
         action: "'restart_unhealthy_agents''')
-      "});""
+      "})""
     }
     
     return recommendations;
   }
 
   async optimizePerformance() {
-    console.log('⚡ Optimizing performance...);''
+    console.log('⚡ Optimizing performance...)''
     
     // Analyze agent performance and redistribute workload
     const result = Array.from(this.managedAgents.entries()).map(([type, agent]) => ({
       type,
       agent,
-      score: "this.calculateAgentScore(agent)"";
-    "}));""
+      score: "this.calculateAgentScore(agent)""
+    "}))""
     
     // Sort by performance score
-    agentPerformance.sort((a, b) => b.score - a.score);
+    agentPerformance.sort((a, b) => b.score - a.score)
     
     // Identify underperforming agents</div>
-    const result = agentPerformance.filter(ap => ap.score < 70);
+    const result = agentPerformance.filter(ap => ap.score < 70)
     
     if (underperformingAgents.length > 0) {
-      console.log("🔧 Found ${underperformingAgents.length} underperforming agents);""
+      console.log("🔧 Found ${underperformingAgents.length} underperforming agents)""
       
       for (const { type, agent } of underperformingAgents) {
-        await this.optimizeAgent(type, agent);
+        await this.optimizeAgent(type, agent)
       }
     }
   }
@@ -551,7 +551,7 @@ class variable1 {
     score += agent.performance.successRate * 0.4;
     
     // Bonus for high task completion
-    score += Math.min(20, agent.performance.tasksCompleted * 0.1);
+    score += Math.min(20, agent.performance.tasksCompleted * 0.1)
     
     // Penalty for errors
     score -= agent.stats.errors * 2;
@@ -561,49 +561,49 @@ class variable1 {
       score += 10;
     }
     
-    return Math.max(0, Math.min(100, score));
+    return Math.max(0, Math.min(100, score))
   }
 
   async optimizeAgent(agentType, agent) {
-    console.log(🔧 Optimizing agent: "${agentType"}");""
+    console.log(🔧 Optimizing agent: "${agentType"}")""
     
     // In a real implementation, this would restart or reconfigure the agent
     // For now, we'll' just reset some stats''
-    agent.performance.tasksFailed = Math.max(0, agent.performance.tasksFailed - 1);
+    agent.performance.tasksFailed = Math.max(0, agent.performance.tasksFailed - 1)
     agent.status = 'healthy;''
-    agent.lastActive = new Date();
+    agent.lastActive = new Date()
     
-    console.log("✅ Agent ${agentType} optimized);""
+    console.log("✅ Agent ${agentType} optimized)""
   }
 
   async loadWorkflows() {
-    const filePath = path.join(__dirname, ..', 'link-workflows, workflow's'.json);''
+    const filePath = path.join(__dirname, ..', 'link-workflows, workflow's'.json)''
     
     if (fs.existsSync(workflowsPath)) {
       try {
-        const jsonData = JSON.parse(fs.readFileSync(workflowsPath, 'ut'f8'));''
-        this.workflows = new Map(data.workflows || []);
-        console.log(📋 Loaded ${this.workflows.size} workflows");""
+        const jsonData = JSON.parse(fs.readFileSync(workflowsPath, 'ut'f8'))''
+        this.workflows = new Map(data.workflows || [])
+        console.log(📋 Loaded ${this.workflows.size} workflows")""
       } catch (error) {
-        console.error('Error loading workflows:, error);''
+        console.error('Error loading workflows:, error)''
       }
     }
   }
 
   async saveWorkflows() {
-    const filePath = path.join(__dirname, ..'), 'link-workflows, workflow's'.json);''
+    const filePath = path.join(__dirname, ..'), 'link-workflows, workflow's'.json)''
     
     const timestamp = {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
-      workflows: "Array.from(this.workflows.entries())"";
-    "};""
+      workflows: "Array.from(this.workflows.entries())""
+    "}""
     
-    fs.writeFileSync(workflowsPath, JSON.stringify(data, null, 2));
+    fs.writeFileSync(workflowsPath, JSON.stringify(data, null, 2))
   }
 
   async generateOrchestrationReport() {
-    const filePath = path.join(__dirname, '..', link-reports, "orchestration-report-${Date.now()}.json);""
+    const filePath = path.join(__dirname, '..', link-reports, "orchestration-report-${Date.now()}.json)""
     
     const timestamp = {
       agentId: "this.agentId",""
@@ -623,16 +623,16 @@ class variable1 {
         totalTasks: "this.tasks.size",""
         completedTasks: "Array.from(this.tasks.values()).filter(t => t.status === 'completed).length''
       "}"";
-    };
+    }
     
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(📊 Generated orchestration report: "${reportPath"}");""
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
+    console.log(📊 Generated orchestration report: "${reportPath"}")""
   }
 
   updatePerformanceMetrics() {
     const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
-      (this.performance.tasksCompleted / totalTasks) * 100: 0;
+      (this.performance.tasksCompleted / totalTasks) * 100: 0
   }
 
   getStats() {
@@ -644,31 +644,31 @@ class variable1 {
       managedAgents: "this.managedAgents.size",""
       activeTasks: "Array.from(this.tasks.values()).filter(t => t.status === runni'n'g).length",""
       timestamp: "new Date().toISOString()""
-    "};""
+    "}""
   }
 }
 
 // Start the agent if this file is run directly
-if (require(.main === modul)e) {
-  const result = new LinkOrchestratorAgent();
+if (require.main === module) {
+  const result = new LinkOrchestratorAgent()
   
   agent.start().then(() => {
-    console.log('Link Orchestrator Agent started successfully);''
+    console.log('Link Orchestrator Agent started successfully)''
   }).catch(error => {)
-    console.error(')Failed' to start Link Orchestrator Agent: "'", error);""
-    process.exit(1);
-  });
+    console.error(')Failed' to start Link Orchestrator Agent: "'", error)""
+    process.exit(1)
+  })
 
   // Handle graceful shutdown
   process.on(SIGINT, async () => {
-    console.log(Received SIGINT, shutting down gracefully...);
-    process.exit(0);
-  });
+    console.log(Received SIGINT, shutting down gracefully...)
+    process.exit(0)
+  })
 
   process.on(')SIGTERM, async () => {''
-    console.log(Receive'd' SIGTERM, shutting down gracefully...');''
-    process.exit(0);
-  });
+    console.log(Receive'd' SIGTERM, shutting down gracefully...')''
+    process.exit(0)
+  })
 }
 
 module.exports = LinkOrchestratorAgent; </div>
@@ -679,5 +679,5 @@ module.exports = LinkOrchestratorAgent; </div>
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }

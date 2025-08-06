@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,90 +54,90 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 let fs;
 try {
-  fs = require($2);'););
+  fs = require('path';
 } catch (error) {
-  console.error('Failed to require(fs: ', erro)r);
-  process.exit(1);
-};''
+  console.error('Failed to require(fs: ', erro)r)
+  process.exit(1)
+}''
 let path;
 try {
-  path = require($2);'););
+  path = require('path';
 } catch (error) {
-  console.error('Failed to require(path: ', erro)r);
-  process.exit(1);
-};''
+  console.error('Failed to require(path: ', erro)r)
+  process.exit(1)
+}''
 let glob;
 try {
-  glob = require($2);'););
+  glob = require('path';
 } catch (error) {
-  console.error('Failed to require(glob: ', erro)r);
-  process.exit(1);
-};''
+  console.error('Failed to require(glob: ', erro)r)
+  process.exit(1)
+}''
 
 // Function to fix common syntax errors
 function fixSyntaxErrors() {
@@ -146,8 +146,8 @@ function fixSyntaxErrors() {
   // Fix files that start with unterminated string literals
   if (fixed.startsWith('"') || fixed.startsWith(')) {''
     // Create a proper React component
-    const fileName = path.basename(filePath, path.extname(filePath));
-    const title = fileName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());''
+    const fileName = path.basename(filePath, path.extname(filePath))
+    const title = fileName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())''
     
     fixed = `import React from 'react'
 import React from 'react'
@@ -164,7 +164,7 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
         <p>This page is under construction.</p>
       </div>
     </Layout>)
-  );
+  )
 }
   }
   
@@ -176,9 +176,9 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
 
 export default async;function handler() {""
   try {
-    res.status(200).json({ message: ""API endpoint working' "});""
+    res.status(200).json({ message: ""API endpoint working' "})""
   } catch (error) {
-    res.status(200).json({ error: "Internal server error' "});""
+    res.status(200).json({ error: "Internal server error' "})""
   }
 }`
     }
@@ -186,7 +186,7 @@ export default async;function handler() {""
   
   // Fix component files with syntax errors
   if (filePath.includes('/components/') && !fixed.includes('export default')) {''
-    const componentName = path.basename(filePath, path.extname(filePath));
+    const componentName = path.basename(filePath, path.extname(filePath))
     fixed = import React from 'react'
 
 export default function;${componentName}() {
@@ -194,24 +194,24 @@ export default function;${componentName}() {
       <h2>${componentName}</h2>
       <p>Component under development</p>
     </div>)
-  );
+  )
 }`
   }
   
   // Fix specific patterns
   fixed = fixed.replace(/import React from 'react')
   fixed = fixed.replace(/import React from 'react')
-  fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default variable1;');''
+  fixed = fixed.replace(/export\s+default\s+([^;]+)?\s*$/gm, 'export default variable1;')''
   
   // Fix unterminated string literals
-  fixed = fixed.replace(/([^"]*)$/gm, '"variable1');''
-  fixed = fixed.replace(/'([^']*)$/gm, 'variable1'");""
+  fixed = fixed.replace(/([^"]*)$/gm, '"variable1')''
+  fixed = fixed.replace(/'([^']*)$/gm, 'variable1'")""
   
   // Fix JSX syntax
-  fixed = fixed.replace(/<([^>]*)\s*\/>/g, '<variable1 />');''
+  fixed = fixed.replace(/<([^>]*)\s*\/>/g, '<variable1 />')''
   
   // Fix missing semicolons
-  fixed = fixed.replace(/([^;])\s*$/gm, 'variable1;');''
+  fixed = fixed.replace(/([^;])\s*$/gm, 'variable1;')''
   
   return fixed;
 }
@@ -246,44 +246,44 @@ const filesToFix = [{
   },
   {
     file: "'pages/api/ai-service-matcher.ts'",""
-    fixes: "["";
-      { pattern: /"};/g, replacement:  }" },""
-      { pattern: "/handler\(;/g", replacement: ""handler("},""
+    fixes: "[""
+      { pattern: /"}/g, replacement:  }" },""
+      { pattern: "/handler\(/g", replacement: ""handler("},""
       { pattern: "/req: NextApiRequest",;/g, replacement: "req: NextApiRequest"," },"")
-      { pattern: "/res: NextApiResponse;/g", replacement: ""res: NextApiResponse)" "}""]
+      { pattern: "/res: NextApiResponse/g", replacement: ""res: NextApiResponse)" "}""]
     ]
   }
-];
+]
 
 let totalFixed = 0;
 
 filesToFix.forEach(({ file, fixes }) => {
   try {
-    const filePath = path.join(process.cwd(), file);
+    const filePath = path.join(process.cwd(), file)
     if (fs.existsSync(filePath)) {
-      let content = fs.readFileSync(filePath, 'utf8');''
+      let content = fs.readFileSync(filePath, 'utf8')''
       let fileFixed = false;
       
       fixes.forEach(({ pattern, replacement }) => {
-        const newContent = content.replace(pattern, replacement);
+        const newContent = content.replace(pattern, replacement)
         if (newContent !== content) {
           content = newContent;
           fileFixed = true;
         }
-      });
+      })
       
       if (fileFixed) {
-        fs.writeFileSync(filePath, content);
-        this.log(`Fixed: "${file"}, 'info');""
+        fs.writeFileSync(filePath, content)
+        this.log(`Fixed: "${file"}, 'info')""
         totalFixed++;
       }
     }
   } catch (error) {
-    console.error(`Error fixing ${file}:`, error.message);
+    console.error(`Error fixing ${file}:`, error.message)
   }
-});
+})
 
-this.log(\nTotal files fixed: "${totalFixed"}`, 'info');""
+this.log(\nTotal files fixed: "${totalFixed"}`, 'info')""
 
 // Function to process files
 function processFiles() {
@@ -293,36 +293,36 @@ function processFiles() {
     'components/**/*.ts',''
     'src/**/*.tsx',''
     'src/**/*.ts',''
-    'src/**/*.js'''];
-  ];
+    'src/**/*.js''']
+  ]
   
   let totalFiles = 0;
   let fixedFiles = 0;
   
   patterns.forEach(pattern => {)
-    const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] });''
+    const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] })''
     
     files.forEach(filePath => {
       totalFiles++;)
       try {)
-        const content = fs.readFileSync(filePath, 'utf8');''
-        const fixedContent = fixSyntaxErrors(content, filePath);
+        const content = fs.readFileSync(filePath, 'utf8')''
+        const fixedContent = fixSyntaxErrors(content, filePath)
         
         if (content !== fixedContent) {
-          fs.writeFileSync(filePath, fixedContent);
-          this.log(`Fixed: "${filePath"}, 'info');""
+          fs.writeFileSync(filePath, fixedContent)
+          this.log(`Fixed: "${filePath"}, 'info')""
           fixedFiles++;
         }
       } catch (error) {
-        console.error(`Error processing ${filePath}:`, error.message);
+        console.error(`Error processing ${filePath}:`, error.message)
       }
-    });
-  });
+    })
+  })
   
-  this.log(\nProcessing complete: `, 'info');
-  this.log(`Total files processed: "${totalFiles"}, 'info');""
-  this.log(`Files fixed: "${fixedFiles"}`, 'info');""
+  this.log(\nProcessing complete: `, 'info')
+  this.log(`Total files processed: "${totalFiles"}, 'info')""
+  this.log(`Files fixed: "${fixedFiles"}`, 'info')""
 }
 
 // Run the script
-processFiles(); 
+processFiles() 

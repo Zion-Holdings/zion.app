@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,71 +54,71 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const fs = require($2);'););
-const path = require($2);'););
+const fs = require('path';
+const path = require('path';
 
 class VisualDesignEnhancementAgent {
   constructor() {
@@ -128,63 +128,63 @@ class VisualDesignEnhancementAgent {
       pagesDir: path.join(process.cwd(), 'pages'),
       stylesDir: path.join(process.cwd(), 'styles'),
       backupDir: path.join(process.cwd(), 'automation/design-improvement-backups')
-    };
+    }
   }
 
   async enhanceVisualDesign() {
     try {
-      console.log('Starting visual design enhancement...');
+      console.log('Starting visual design enhancement...')
       
       // Create backup
-      await this.createBackup();
+      await this.createBackup()
       
       // Enhance color scheme
-      await this.enhanceColorScheme();
+      await this.enhanceColorScheme()
       
       // Create enhanced UI components
-      await this.createEnhancedUIComponents();
+      await this.createEnhancedUIComponents()
       
       // Update typography
-      await this.enhanceTypography();
+      await this.enhanceTypography()
       
       // Create animation components
-      await this.createAnimationComponents();
+      await this.createAnimationComponents()
       
       // Enhance existing components
-      await this.enhanceExistingComponents();
+      await this.enhanceExistingComponents()
       
-      console.log('Visual design enhancement completed successfully');
-      return { success: true, changes: ['Enhanced color scheme', 'Created modern UI components', 'Improved typography', 'Added animations'] };
+      console.log('Visual design enhancement completed successfully')
+      return { success: true, changes: ['Enhanced color scheme', 'Created modern UI components', 'Improved typography', 'Added animations'] }
     } catch (error) {
-      console.error('Visual design enhancement failed: ', error);
-      return { success: false, error: error.message };
+      console.error('Visual design enhancement failed: ', error)
+      return { success: false, error: error.message }
     }
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.backupDir, `visual-design-backup-${Date.now()}`);
-    await fs.ensureDir(backupPath);
+    const backupPath = path.join(this.config.backupDir, `visual-design-backup-${Date.now()}`)
+    await fs.ensureDir(backupPath)
     
     // Backup components
     if (fs.existsSync(this.config.componentsDir)) {
-      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'));
+      await fs.copy(this.config.componentsDir, path.join(backupPath, 'components'))
     }
     
     // Backup styles
     if (fs.existsSync(this.config.stylesDir)) {
-      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles'));
+      await fs.copy(this.config.stylesDir, path.join(backupPath, 'styles'))
     }
   }
 
   async enhanceColorScheme() {
-    const tailwindConfigPath = path.join(this.config.projectRoot, 'tailwind.config.js');
+    const tailwindConfigPath = path.join(this.config.projectRoot, 'tailwind.config.js')
     
     if (!fs.existsSync(tailwindConfigPath)) {
-      console.log('Tailwind config not found, skipping color scheme enhancement');
+      console.log('Tailwind config not found, skipping color scheme enhancement')
       return;
     }
 
-    const currentConfig = require($2);'););
+    const currentConfig = require('path';
     
     // Enhanced color palette with futuristic colors
     const enhancedColors = {
@@ -252,21 +252,21 @@ class VisualDesignEnhancementAgent {
         light: 'rgba(255, 255, 255, 0.1)',
         medium: 'rgba(255, 255, 255, 0.05)',
         dark: 'rgba(0, 0, 0, 0.1)',
-      };
-    };
+      }
+    }
 
     // Update the config with enhanced colors
     if (!currentConfig.theme) {
-      currentConfig.theme = {};
+      currentConfig.theme = {}
     }
     if (!currentConfig.theme.extend) {
-      currentConfig.theme.extend = {};
+      currentConfig.theme.extend = {}
     }
     
     currentConfig.theme.extend.colors = {
       ...currentConfig.theme.extend.colors,
       ...enhancedColors
-    };
+    }
 
     // Add enhanced animations
     const enhancedAnimations = {
@@ -313,20 +313,20 @@ class VisualDesignEnhancementAgent {
           backgroundPosition: '0% 50%',
           filter: 'hue-rotate(360deg)'
         }
-      };
-    };
+      }
+    }
 
     currentConfig.theme.extend.animation = {
       ...currentConfig.theme.extend.animation,
       ...enhancedAnimations
-    };
+    }
 
     // Write updated config
     const configContent = `/** @type {import('tailwindcss').Config} */;
 module.exports = ${JSON.stringify(currentConfig, null, 2)}`;
 
-    fs.writeFileSync(tailwindConfigPath, configContent);
-    console.log('Enhanced color scheme and animations added to Tailwind config');
+    fs.writeFileSync(tailwindConfigPath, configContent)
+    console.log('Enhanced color scheme and animations added to Tailwind config')
   }
 
   async createEnhancedUIComponents() {
@@ -345,7 +345,7 @@ interface ButtonProps {
   disabled?: boolean;
   loading?: boolean;
   icon?: React.ReactNode;
-  fullWidth?: boolean;
+  fullWidth?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -359,7 +359,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   fullWidth = false
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus: outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900';
+  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus: outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900'
   
   const variantClasses = {
     primary: 'bg-gradient-to-r from-blue-200 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 focus:ring-blue-200 shadow-lg hover:shadow-xl',
@@ -367,18 +367,18 @@ const Button: React.FC<ButtonProps> = ({
     accent: 'bg-gradient-to-r from-pink-200 to-red-600 text-white hover:from-pink-600 hover:to-red-700 focus:ring-pink-200 shadow-lg hover:shadow-xl',
     outline: 'border-2 border-blue-200 text-blue-400 hover:bg-blue-200 hover:text-white focus:ring-blue-200',
     ghost: 'text-gray-300 hover:text-white hover:bg-slate-800/50 focus:ring-slate-200',
-    neon: 'bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 focus:ring-cyan-400 animate-pulse-neon';
-  };
+    neon: 'bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 focus:ring-cyan-400 animate-pulse-neon'
+  }
   
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-base',
     lg: 'px-6 py-3 text-lg',
-    xl: 'px-8 py-4 text-xl';
-  };
+    xl: 'px-8 py-4 text-xl'
+  }
   
   const widthClass = fullWidth ? 'w-full' : '';
-  const disabledClass = disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer';
+  const disabledClass = disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
   
   const classes = \`\${baseClasses} \${variantClasses[variant]} \${sizeClasses[size]} \${widthClass} \${disabledClass} \${className}\`;
   
@@ -402,13 +402,13 @@ const Button: React.FC<ButtonProps> = ({
         </div>
       )}
     </motion.button>
-  );
-};
+  )
+}
 
 export default Button;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Button.tsx'), buttonComponent);
+    await fs.writeFile(path.join(componentsDir, 'Button.tsx'), buttonComponent)
 
     // Create Card component
     const cardComponent = `import React from 'react';
@@ -419,7 +419,7 @@ interface CardProps {
   variant?: 'default' | 'glass' | 'neon' | 'gradient';
   className?: string;
   hover?: boolean;
-  delay?: number;
+  delay?: number
 }
 
 const Card: React.FC<CardProps> = ({
@@ -435,10 +435,10 @@ const Card: React.FC<CardProps> = ({
     default: 'bg-slate-800/50 backdrop-blur-md border border-slate-700 shadow-lg',
     glass: 'bg-white/10 backdrop-blur-md border border-white/20 shadow-xl',
     neon: 'bg-slate-800/50 backdrop-blur-md border border-cyan-400/50 shadow-lg shadow-cyan-400/20',
-    gradient: 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-md border border-slate-700 shadow-xl';
-  };
+    gradient: 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-md border border-slate-700 shadow-xl'
+  }
   
-  const hoverClasses = hover ? 'hover: scale-105 hover:shadow-2xl' : '';
+  const hoverClasses = hover ? 'hover: scale-105 hover:shadow-2xl' : ''
   
   const classes = \`\${baseClasses} \${variantClasses[variant]} \${hoverClasses} \${className}\`;
   
@@ -451,13 +451,13 @@ const Card: React.FC<CardProps> = ({
     >
       {children}
     </motion.div>)
-  );
-};
+  )
+}
 
 export default Card;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Card.tsx'), cardComponent);
+    await fs.writeFile(path.join(componentsDir, 'Card.tsx'), cardComponent)
 
     // Create Badge component
     const badgeComponent = `import React from 'react';
@@ -467,7 +467,7 @@ interface BadgeProps {
   children: React.ReactNode;
   variant?: 'default' | 'success' | 'warning' | 'error' | 'info' | 'neon';
   size?: 'sm' | 'md' | 'lg';
-  className?: string;
+  className?: string
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -484,14 +484,14 @@ const Badge: React.FC<BadgeProps> = ({
     warning: 'bg-yellow-200/20 text-yellow-400 border border-yellow-200/30',
     error: 'bg-red-200/20 text-red-400 border border-red-200/30',
     info: 'bg-blue-200/20 text-blue-400 border border-blue-200/30',
-    neon: 'bg-cyan-200/20 text-cyan-400 border border-cyan-400/50 animate-pulse-neon';
-  };
+    neon: 'bg-cyan-200/20 text-cyan-400 border border-cyan-400/50 animate-pulse-neon'
+  }
   
   const sizeClasses = {
     sm: 'px-2 py-0.5 text-xs',
     md: 'px-3 py-1 text-sm',
-    lg: 'px-4 py-2 text-base';
-  };
+    lg: 'px-4 py-2 text-base'
+  }
   
   const classes = \`\${baseClasses} \${variantClasses[variant]} \${sizeClasses[size]} \${className}\`;
   
@@ -503,19 +503,19 @@ const Badge: React.FC<BadgeProps> = ({
     >
       {children}
     </motion.span>)
-  );
-};
+  )
+}
 
 export default Badge;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'Badge.tsx'), badgeComponent);
+    await fs.writeFile(path.join(componentsDir, 'Badge.tsx'), badgeComponent)
 
-    console.log('Enhanced UI components created');
+    console.log('Enhanced UI components created')
   }
 
   async enhanceTypography() {
-    const globalStylesPath = path.join(this.config.stylesDir, 'globals.css');
+    const globalStylesPath = path.join(this.config.stylesDir, 'globals.css')
     
     const typographyEnhancements = `
 /* Enhanced Typography */
@@ -525,27 +525,27 @@ export default Badge;
   }
   
   h1 {
-    @apply text-4xl md: text-5xl lg:text-6xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent;
+    @apply text-4xl md: text-5xl lg:text-6xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent
   }
   
   h2 {
-    @apply text-3xl md: text-4xl lg:text-5xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent;
+    @apply text-3xl md: text-4xl lg:text-5xl bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent
   }
   
   h3 {
-    @apply text-2xl md: text-3xl lg:text-4xl text-white;
+    @apply text-2xl md: text-3xl lg:text-4xl text-white
   }
   
   h4 {
-    @apply text-xl md: text-2xl lg:text-3xl text-white;
+    @apply text-xl md: text-2xl lg:text-3xl text-white
   }
   
   h5 {
-    @apply text-lg md: text-xl lg:text-2xl text-white;
+    @apply text-lg md: text-xl lg:text-2xl text-white
   }
   
   h6 {
-    @apply text-base md: text-lg lg:text-xl text-white;
+    @apply text-base md: text-lg lg:text-xl text-white
   }
   
   p {
@@ -553,7 +553,7 @@ export default Badge;
   }
   
   a {
-    @apply text-blue-400 hover: text-blue-300 transition-colors duration-200;
+    @apply text-blue-400 hover: text-blue-300 transition-colors duration-200
   }
   
   strong {
@@ -591,11 +591,11 @@ export default Badge;
 }
 
 .text-neon {
-  @apply text-cyan-400 drop-shadow-[0_0_10px_rgba(0,212,255,0.5)];
+  @apply text-cyan-400 drop-shadow-[0_0_10px_rgba(0,212,255,0.5)]
 }
 
 .text-glow {
-  text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.5)
 }
 
 .font-display {
@@ -609,14 +609,14 @@ export default Badge;
 
     let currentStyles = '';
     if (fs.existsSync(globalStylesPath)) {
-      currentStyles = fs.readFileSync(globalStylesPath, 'utf8');
+      currentStyles = fs.readFileSync(globalStylesPath, 'utf8')
     }
 
     // Add typography enhancements if not already present
     if (!currentStyles.includes('Enhanced Typography')) {
       const updatedStyles = currentStyles + typographyEnhancements;
-      fs.writeFileSync(globalStylesPath, updatedStyles);
-      console.log('Typography enhancements added to global styles');
+      fs.writeFileSync(globalStylesPath, updatedStyles)
+      console.log('Typography enhancements added to global styles')
     }
   }
 
@@ -629,7 +629,7 @@ import { motion } from 'framer-motion';
 
 interface AnimatedBackgroundProps {
   className?: string;
-  variant?: 'particles' | 'gradient' | 'grid' | 'waves';
+  variant?: 'particles' | 'gradient' | 'grid' | 'waves'
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
@@ -658,15 +658,15 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         />
       ))}
     </div>;
-  );
+  )
 
   const renderGradient = () => (
     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-x"></div>;
-  );
+  )
 
   const renderGrid = () => (
-    <div className="absolute inset-0 bg-[url('data: image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http: //www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>;
-  );
+    <div className="absolute inset-0 bg-[url('data: image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http: //www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+  )
 
   const renderWaves = () => (
     <div className="absolute inset-0">
@@ -687,32 +687,32 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         />
       </svg>
     </div>;
-  );
+  )
 
   const renderVariant = () => {
     switch (variant) {
       case 'particles':;
-        return renderParticles();
+        return renderParticles()
       case 'gradient':
-        return renderGradient();
+        return renderGradient()
       case 'grid':
-        return renderGrid();
+        return renderGrid()
       case 'waves':
-        return renderWaves();
-      default: return renderParticles();
+        return renderWaves()
+      default: return renderParticles()
     }
-  };
+  }
 
   return(<div className={\`absolute inset-0 pointer-events-none \${className}\`}>)
       {renderVariant()}
     </div>
-  );
-};
+  )
+}
 
 export default AnimatedBackground;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'AnimatedBackground.tsx'), animatedBackgroundComponent);
+    await fs.writeFile(path.join(componentsDir, 'AnimatedBackground.tsx'), animatedBackgroundComponent)
 
     // Create LoadingSpinner component
     const loadingSpinnerComponent = `import React from 'react';
@@ -721,7 +721,7 @@ import { motion } from 'framer-motion';
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'default' | 'neon' | 'gradient';
-  className?: string;
+  className?: string
 }
 
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
@@ -733,49 +733,49 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     sm: 'w-4 h-4',
     md: 'w-8 h-8',
     lg: 'w-12 h-12',
-    xl: 'w-16 h-16';
-  };
+    xl: 'w-16 h-16'
+  }
 
   const variantClasses = {
     default: 'border-blue-200',
     neon: 'border-cyan-400',
-    gradient: 'border-gradient-to-r from-blue-200 to-purple-600';
-  };
+    gradient: 'border-gradient-to-r from-blue-200 to-purple-600'
+  }
 
   return(<motion.div
       className={\`\${sizeClasses[size]} \${variantClasses[variant]} border-2 border-t-transparent rounded-full animate-spin \${className}\`}
       animate={{ rotate: 360 }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
     />)
-  );
-};
+  )
+}
 
 export default LoadingSpinner;
 `;
 
-    await fs.writeFile(path.join(componentsDir, 'LoadingSpinner.tsx'), loadingSpinnerComponent);
+    await fs.writeFile(path.join(componentsDir, 'LoadingSpinner.tsx'), loadingSpinnerComponent)
 
-    console.log('Animation components created');
+    console.log('Animation components created')
   }
 
   async enhanceExistingComponents() {
     const componentsDir = this.config.componentsDir;
     
     // Enhance existing UI components if they exist
-    const uiDir = path.join(componentsDir, 'ui');
+    const uiDir = path.join(componentsDir, 'ui')
     if (fs.existsSync(uiDir)) {
-      const files = await fs.readdir(uiDir);
+      const files = await fs.readdir(uiDir)
       
       for (const file of files) {
         if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
-          const filePath = path.join(uiDir, file);
-          let content = fs.readFileSync(filePath, 'utf8');
+          const filePath = path.join(uiDir, file)
+          let content = fs.readFileSync(filePath, 'utf8')
           
           // Add motion imports if not present
           if (!content.includes('import { motion }')) {
             content = content.replace("import React from 'react';",)
               "import React from 'react';\nimport { motion } from 'framer-motion';")
-            );
+            )
           }
           
           // Add hover animations to interactive elements
@@ -787,13 +787,13 @@ export default LoadingSpinner;
               }
               return match;
             }
-          );
+          )
           
-          fs.writeFileSync(filePath, content);
+          fs.writeFileSync(filePath, content)
         }
       }
       
-      console.log('Enhanced existing UI components');
+      console.log('Enhanced existing UI components')
     }
   }
 }

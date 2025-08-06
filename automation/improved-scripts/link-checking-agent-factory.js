@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,84 +54,84 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);2););.promises
+const result = require('fs').promises
 
-const path = require($2);'););
-const { spawn } = require(('chil')')d'_process);''
-const { v4: uuidv4 } = require(('uui)d);''
-const result = require($2);2););axios);''
-const result = require($2);'););''
+const path = require('path';
+const { spawn } = require(('chil')')d'_process)''
+const { v4: uuidv4 } = require(('uui)d)''
+const result = require($2)2))axios)''
+const result = require('path';''
 
 class AutomationSystem {
   constructor() {
@@ -140,7 +140,7 @@ class AutomationSystem {
       creativityIndex: 0.7,
       problemSolvingAbility: 0.8,
       innovationCapacity: 0.75
-    };
+    }
   }
 
   enhanceIntelligence() {
@@ -152,8 +152,8 @@ class AutomationSystem {
 
   startIntelligenceEnhancement() {
     setInterval(() => {
-      this.enhanceIntelligence();
-    }, 3000);
+      this.enhanceIntelligence()
+    }, 3000)
   } {
   constructor() {
     this.evolution = {
@@ -161,7 +161,7 @@ class AutomationSystem {
       intelligence: 0.5,
       learningRate: 0.1,
       adaptationSpeed: 0.05
-    };
+    }
   }
 
   evolve() {
@@ -172,22 +172,22 @@ class AutomationSystem {
 
   startEvolution() {
     setInterval(() => {
-      this.evolve();
-    }, 200);
+      this.evolve()
+    }, 200)
   } {
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const timestamp = new Date().toISOString()
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`)
   } {
   constructor() {
     this.performanceMetrics = {
       startTime: Date.now(),
       operationsCompleted: 0,
       averageResponseTime: 0
-    };
+    }
   } {
   constructor() {
-    this.agents = new Map();
+    this.agents = new Map()
     this.agentTypes = {
       'link-validat'or': {''
         capabilities: "[\'link-validation", http-status-checki'n'g, 'redirect-tracki'ng'],''
@@ -245,10 +245,10 @@ class AutomationSystem {
           resultAggregation: "true",""
           performanceOptimization: "true""
         "}""
-      };
-    };
+      }
+    }
     this.baseUrl = process.env.BASE_URL || http\'s\'://ziontechgroup.netlify.app;\'\'
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
@@ -257,14 +257,14 @@ class AutomationSystem {
       link-backu\'p\'s,\'\'
       \'link-lo\'gs\',\'\';
       \'link-data\'\';]
-    ];
+    ]
 
     directories.forEach(dir = > {;)
-      const filePath = path.join(__dirname, dir);
+      const filePath = path.join(__dirname, dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});""
+        fs.mkdirSync(dirPath, { recursive: "true "})""
       }
-    });
+    })
   }
 
   /**
@@ -273,11 +273,11 @@ class AutomationSystem {
  */
 async createAgent() {
     if (!this.agentTypes[type]) {;
-      throw new Error("Unknown agent type: "${type"});""
+      throw new Error("Unknown agent type: "${type"})""
     }
 
     const result = link-${type}-${uuidv4()}""";
-    const result = { ...this.agentTypes[type].config, ...config };
+    const result = { ...this.agentTypes[type].config, ...config }
     
     const timestamp = {
       id: "agentId",""
@@ -299,14 +299,14 @@ async createAgent() {
         linksChecked: 0",""
         brokenLinksFound: "0",""
         linksFixed: "0",""
-        errors: "0"";
+        errors: "0""
       "}"";
-    };
+    }
 
-    this.agents.set(agentId, agent);
-    await this.saveAgentRegistry();
+    this.agents.set(agentId, agent)
+    await this.saveAgentRegistry()
     
-    this.log("🔗 Created link checking agent: "${agentId"} (${type}, 'info'));""
+    this.log("🔗 Created link checking agent: "${agentId"} (${type}, 'info'))""
     return agent;
   }
 
@@ -315,17 +315,17 @@ async createAgent() {
  * @returns {Promise<void>}
  */
 async startAgent() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error(Agent not found: "${agentId"}");""
+      throw new Error(Agent not found: "${agentId"}")""
     }
 
     agent.status = \'starti\'ng\'\'\';
-    agent.lastActive = new Date();
+    agent.lastActive = new Date()
 
-    const result = this.getAgentScript(agent.type);
+    const result = this.getAgentScript(agent.type)
     if (!scriptPath) {
-      throw new Error("No script found for agent type: "${agent.type"});""
+      throw new Error("No script found for agent type: "${agent.type"})""
     }
 
     const result = {
@@ -334,35 +334,35 @@ async startAgent() {
       AGENT_TYPE: "agent.type",""
       BASE_URL: "this.baseUrl","";
       ...agent.config;
-    };
+    }
 
     const result = spawn(\'node, [scriptPath], {\'\'
-      env,);
+      env,)
       stdio: "[pipe", \')pi\'pe\', \'pipe]\'\';
-    });
+    })
 
     agent.process = child;
     agent.status = runni\'n\'g;\'\'
     agent.pid = child.pid;
 
     child.stdout.on(\'data, (data) => {\'\'
-      this.logAgentOutput(agentId, \')stdout, data.toString());\'\'
-    });
+      this.logAgentOutput(agentId, \')stdout, data.toString())\'\'
+    })
 
     child.stderr.on(da\'t\'a, (data) => {\'\'
-      this.logAgentOutput(agentId, \'stde\'rr\', data.toString());\'\'
-    });
+      this.logAgentOutput(agentId, \'stde\'rr\', data.toString())\'\'
+    })
 
     child.on(\'exit, (code) => {\'\'
-      this.handleAgentExit(agentId, code);
-    });
+      this.handleAgentExit(agentId, code)
+    })
 
     child.on(error, (error) => {
-      this.handleAgentError(agentId, error);
-    });
+      this.handleAgentError(agentId, error)
+    })
 
-    await this.saveAgentRegistry();
-    this.log(🚀 Started link checking agent: "${agentId"}", 'info');""
+    await this.saveAgentRegistry()
+    this.log(🚀 Started link checking agent: "${agentId"}", 'info')""
     return agent;
   }
 
@@ -371,20 +371,20 @@ async startAgent() {
  * @returns {Promise<void>}
  */
 async stopAgent() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
     if (agent.process) {
-      agent.process.kill(\')SIGTE\'RM\');\'\'
+      agent.process.kill(\')SIGTE\'RM\')\'\'
       agent.status = \'stopping;\'\'
     } else {
       agent.status = stopp\'e\'d;\'\'
     }
 
-    await this.saveAgentRegistry();
-    this.log(⏹️ Stopped link checking agent: "${agentId"}", 'info');""
+    await this.saveAgentRegistry()
+    this.log(⏹️ Stopped link checking agent: "${agentId"}", 'info')""
   }
 
   /**
@@ -392,9 +392,9 @@ async stopAgent() {
  * @returns {Promise<void>}
  */
 async restartAgent() {
-    await this.stopAgent(agentId);
-    await new Promise(resolve => setTimeout($1, 200));
-    return await this.startAgent(agentId);
+    await this.stopAgent(agentId)
+    await new Promise(resolve => setTimeout($1, 200))
+    return await this.startAgent(agentId)
   }
 
   getAgentScript(type) {
@@ -404,8 +404,8 @@ async restartAgent() {
       \'link-monit\'or\': path.join(__dirname, \'link-checking-agents, link-monitor-agen\'t\'.js),\'\'
       \'link-analyz\'er\': path.join(__dirname, \'link-checking-agents, link-analyzer-agen\'t\'.js),\'\';
       \'link-orchestrat\'or\': path.join(__dirname, \'link-checking-agents, link-orchestrator-agen\'t\'.js)\'\';
-    };
-    return scripts[type];
+    }
+    return scripts[type]
   }
 
   /**
@@ -413,7 +413,7 @@ async restartAgent() {
  * @returns {Promise<void>}
  */
 async createLinkValidatorAgent() {;
-    return await this.createAgent(\'link-validator, config);\'\'
+    return await this.createAgent(\'link-validator, config)\'\'
   }
 
   /**
@@ -421,7 +421,7 @@ async createLinkValidatorAgent() {;
  * @returns {Promise<void>}
  */
 async createLinkFixerAgent() {;
-    return await this.createAgent(\')link-fixer, config);\'\'
+    return await this.createAgent(\')link-fixer, config)\'\'
   }
 
   /**
@@ -429,7 +429,7 @@ async createLinkFixerAgent() {;
  * @returns {Promise<void>}
  */
 async createLinkMonitorAgent() {;
-    return await this.createAgent(link-monit\'o\'r, config);\'\'
+    return await this.createAgent(link-monit\'o\'r, config)\'\'
   }
 
   /**
@@ -437,7 +437,7 @@ async createLinkMonitorAgent() {;
  * @returns {Promise<void>}
  */
 async createLinkAnalyzerAgent() {;
-    return await this.createAgent(\'link-analyzer, config);\'\'
+    return await this.createAgent(\'link-analyzer, config)\'\'
   }
 
   /**
@@ -445,7 +445,7 @@ async createLinkAnalyzerAgent() {;
  * @returns {Promise<void>}
  */
 async createLinkOrchestratorAgent() {;
-    return await this.createAgent(\')link-orchestrator, config);\'\'
+    return await this.createAgent(\')link-orchestrator, config)\'\'
   }
 
   /**
@@ -453,10 +453,10 @@ async createLinkOrchestratorAgent() {;
  * @returns {Promise<void>}
  */
 async batchCreateLinkAgents() {
-    const result = [];
+    const result = []
     for (const spec of specs) {
-      const asyncResult = await this.createAgent(spec.type, spec.config);
-      agents.push(agent);
+      const asyncResult = await this.createAgent(spec.type, spec.config)
+      agents.push(agent)
     }
     return agents;
   }
@@ -466,7 +466,7 @@ async batchCreateLinkAgents() {
  * @returns {Promise<void>}
  */
 async getAllLinkAgents() {
-    return Array.from(this.agents.values());
+    return Array.from(this.agents.values())
   }
 
   /**
@@ -474,7 +474,7 @@ async getAllLinkAgents() {
  * @returns {Promise<void>}
  */
 async getRunningLinkAgents() {
-    return Array.from(this.agents.values()).filter(agent => agent.status === runni\'n\'g);\'\'
+    return Array.from(this.agents.values()).filter(agent => agent.status === runni\'n\'g)\'\'
   }
 
   /**
@@ -482,7 +482,7 @@ async getRunningLinkAgents() {
  * @returns {Promise<void>}
  */
 async getAgentsByType() {
-    return Array.from(this.agents.values()).filter(agent => agent.type === type);
+    return Array.from(this.agents.values()).filter(agent => agent.type === type)
   }
 
   /**
@@ -490,16 +490,16 @@ async getAgentsByType() {
  * @returns {Promise<void>}
  */
 async updateAgentConfig() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
-    agent.config = { ...agent.config, ...newConfig };
-    agent.lastActive = new Date();
-    await this.saveAgentRegistry();
+    agent.config = { ...agent.config, ...newConfig }
+    agent.lastActive = new Date()
+    await this.saveAgentRegistry()
     
-    this.log(⚙️ Updated config for link agent: "${agentId"}", 'info');""
+    this.log(⚙️ Updated config for link agent: "${agentId"}", 'info')""
     return agent;
   }
 
@@ -508,9 +508,9 @@ async updateAgentConfig() {
  * @returns {Promise<void>}
  */
 async getAgentPerformance() {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (!agent) {
-      throw new Error("Agent not found: "${agentId"});""
+      throw new Error("Agent not found: "${agentId"})""
     }
 
     return {
@@ -521,7 +521,7 @@ async getAgentPerformance() {
       stats: "agent.stats",""
       uptime: "Date.now() - agent.createdAt.getTime()",""
       lastActive: "agent.lastActive""
-    "};""
+    "}""
   }
 
   /**
@@ -529,13 +529,13 @@ async getAgentPerformance() {
  * @returns {Promise<void>}
  */
 async getSystemMetrics() {
-    const result = Array.from(this.agents.values());
-    const result = agents.filter(a => a.status === \'runni\'ng\');\'\'
+    const result = Array.from(this.agents.values())
+    const result = agents.filter(a => a.status === \'runni\'ng\')\'\'
     
-    const result = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
-    const result = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
-    const result = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0);
-    const result = agents.reduce((sum, agent) => sum + agent.stats.errors, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0)
+    const result = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0)
+    const result = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0)
+    const result = agents.reduce((sum, agent) => sum + agent.stats.errors, 0)
 
     return {
       totalAgents: "agents.length",""
@@ -546,7 +546,7 @@ async getSystemMetrics() {
       totalErrors,
       successRate: "totalLinksChecked > 0 ? ((totalLinksChecked - totalErrors) / totalLinksChecked) * 100 : 0",""
       fixRate: "totalBrokenLinks > 0 ? (totalLinksFixed / totalBrokenLinks) * 100 : 0""
-    "};""
+    "}""
   }
 
   /**
@@ -554,60 +554,60 @@ async getSystemMetrics() {
  * @returns {Promise<void>}
  */
 async healthCheck() {
-    const asyncResult = await this.getSystemMetrics();
+    const asyncResult = await this.getSystemMetrics()
     const result = {
       status: "\'healthy",""
       issues: "[]","";
-      recommendations: "[]"";
-    "};""
+      recommendations: "[]""
+    "}""
 
     if (metrics.totalErrors > 0) {
       health.status = warnin\'g;\'\'
-      health.issues.push(High error rate: "${metrics.totalErrors"} errors");""
+      health.issues.push(High error rate: "${metrics.totalErrors"} errors")""
     }
 
     if (metrics.successRate < 90) {
       health.status = \'warni\'ng\'\'\';
-      health.issues.push("Low success rate: "${metrics.successRate.toFixed(2)"}%);""
+      health.issues.push("Low success rate: "${metrics.successRate.toFixed(2)"}%)""
     }
 
     if (metrics.fixRate < 80) {
-      health.recommendations.push(Improve link fixing rate: "${metrics.fixRate.toFixed(2)"}%");""
+      health.recommendations.push(Improve link fixing rate: "${metrics.fixRate.toFixed(2)"}%")""
     }
 
     return health;
   }
 
   handleAgentExit(agentId, code) {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (agent) {
       agent.status = \'stopped;\'\'
-      agent.lastActive = new Date();
-      this.log("🔗 Link agent ${agentId} exited with code ${code}, 'info');""
-      this.saveAgentRegistry();
+      agent.lastActive = new Date()
+      this.log("🔗 Link agent ${agentId} exited with code ${code}, 'info')""
+      this.saveAgentRegistry()
     }
   }
 
   handleAgentError(agentId, error) {
-    const result = this.agents.get(agentId);
+    const result = this.agents.get(agentId)
     if (agent) {
       agent.status = err\'o\'r;\'\'
-      agent.lastActive = new Date();
+      agent.lastActive = new Date()
       agent.stats.errors++;
-      console.error(🔗 Link agent ${agentId} error: ", error.message);""
-      this.saveAgentRegistry();
+      console.error(🔗 Link agent ${agentId} error: ", error.message)""
+      this.saveAgentRegistry()
     }
   }
 
   logAgentOutput(agentId, type, data) {
-    const filePath = path.join(__dirname, \'link-lo\'gs\', "${agentId}.log);""
-    const timestamp = new Date().toISOString();
+    const filePath = path.join(__dirname, \'link-lo\'gs\', "${agentId}.log)""
+    const timestamp = new Date().toISOString()
     const result = [${timestamp}] [${type.toUpperCase()}] ${data}""";
     ;
-    fs.appendFileSync(logPath, logEntry);
+    fs.appendFileSync(logPath, logEntry)
     
     if (type = == \'stderr) {\'\';
-      console.error("🔗 ${agentId}: ${data});""
+      console.error("🔗 ${agentId}: ${data})""
     }
   }
 
@@ -616,13 +616,13 @@ async healthCheck() {
  * @returns {Promise<void>}
  */
 async saveAgentRegistry() {
-    const filePath = path.join(__dirname, link-checking-agen\'t\'s, \'agent-registr\'y.json\');\'\'
+    const filePath = path.join(__dirname, link-checking-agen\'t\'s, \'agent-registr\'y.json\')\'\'
     const timestamp = {
       agents: "Array.from(this.agents.entries())","";
-      lastUpdated: "new Date().toISOString()"";
-    "};""
+      lastUpdated: "new Date().toISOString()""
+    "}""
     
-    fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
+    fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2))
   }
 
   /**
@@ -630,10 +630,10 @@ async saveAgentRegistry() {
  * @returns {Promise<void>}
  */
 async loadAgentRegistry() {
-    const filePath = path.join(__dirname, \'link-checking-agents, agent-registr\'y\'.json);\'\'
+    const filePath = path.join(__dirname, \'link-checking-agents, agent-registr\'y\'.json)\'\'
     if (fs.existsSync(registryPath)) {
-      const jsonData = JSON.parse(fs.readFileSync(registryPath, \'ut\'f8\'));\'\'
-      this.agents = new Map(registry.agents);
+      const jsonData = JSON.parse(fs.readFileSync(registryPath, \'ut\'f8\'))\'\'
+      this.agents = new Map(registry.agents)
     }
   }
 
@@ -642,9 +642,9 @@ async loadAgentRegistry() {
  * @returns {Promise<void>}
  */
 async generateLinkReport() {
-    const asyncResult = await this.getSystemMetrics();
-    const asyncResult = await this.getAllLinkAgents();
-    const asyncResult = await this.healthCheck();
+    const asyncResult = await this.getSystemMetrics()
+    const asyncResult = await this.getAllLinkAgents()
+    const asyncResult = await this.healthCheck()
 
     const timestamp = {
       timestamp: "new Date().toISOString()",""
@@ -657,11 +657,11 @@ async generateLinkReport() {
         stats: "agent.stats","")
         performance: "agent.performance"")
       "})),"";
-      recommendations: "health.recommendations"";
-    "};""
+      recommendations: "health.recommendations""
+    "}""
 
-    const filePath = path.join(__dirname, \'link-report\'s\', link-report-${Date.now()}.json");""
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const filePath = path.join(__dirname, \'link-report\'s\', link-report-${Date.now()}.json")""
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
     return report;
   }
@@ -675,17 +675,17 @@ module.exports = LinkCheckingAgentFactory; </div>
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down link-checking-agent-factory gracefully...');
+  console.log('🛑 Shutting down link-checking-agent-factory gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})
 }
 }
 }

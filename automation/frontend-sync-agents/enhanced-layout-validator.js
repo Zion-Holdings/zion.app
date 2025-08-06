@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,96 +54,96 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2);););''
-const result = require($2);2););.default;''
-const result = require($2);2););.default;
-const result = require($2);2);););''
+const result = require('fs').promises
+const path = require('path';
+const result = require('fs';''
+const result = require($2)2)).default;''
+const result = require($2)2)).default;
+const result = require('fs';''
 
 class variable1 {
   constructor() {
-    this.issues = [];
-    this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pages);''
-    this.componentsDir = path.join(process.cwd(), componen't's);''
-    this.layoutsDir = path.join(process.cwd(), 'component's/layout');''
-    this.astCache = new Map();
+    this.issues = []
+    this.fixes = []
+    this.pagesDir = path.join(process.cwd(), 'pages)''
+    this.componentsDir = path.join(process.cwd(), componen't's)''
+    this.layoutsDir = path.join(process.cwd(), 'component's/layout')''
+    this.astCache = new Map()
   }
 
   async analyzeWithAST() {
-    console.log('🔍 Running enhanced AST-based layout analysis...);''
+    console.log('🔍 Running enhanced AST-based layout analysis...)''
     
-    const result = this.getPages();
+    const result = this.getPages()
     
     for (const page of pages) {
       try {
-        await this.analyzePageWithAST(page);
+        await this.analyzePageWithAST(page)
       } catch (error) {
-        console.error("Error analyzing ${page}:, error.message);""
+        console.error("Error analyzing ${page}:, error.message)""
       }
     }
     
@@ -151,56 +151,56 @@ class variable1 {
       issues: "this.issues",""
       fixes: "this.fixes",""
       summary: "this.generateSummary()""
-    "};""
+    "}""
   }
 
   async analyzePageWithAST(filePath) {
-    const result = fs.readFileSync(filePath, utf8'));''
+    const result = fs.readFileSync(filePath, utf8'))''
     
     try {
       const result = parser.parse(content, {
         sourceType: "'module","")
-        plugins: "[js'x", 'typescri'pt']'');
-      });
+        plugins: "[js'x", 'typescri'pt']'')
+      })
       
-      this.astCache.set(filePath, ast);
+      this.astCache.set(filePath, ast)
       
       // Analyze imports
-      this.analyzeImports(ast, filePath);
+      this.analyzeImports(ast, filePath)
       
       // Analyze component structure
-      this.analyzeComponentStructure(ast, filePath);
+      this.analyzeComponentStructure(ast, filePath)
       
       // Analyze JSX structure
-      this.analyzeJSXStructure(ast, filePath);
+      this.analyzeJSXStructure(ast, filePath)
       
       // Analyze responsive classes
-      this.analyzeResponsiveClasses(ast, filePath);
+      this.analyzeResponsiveClasses(ast, filePath)
       
       // Analyze accessibility
-      this.analyzeAccessibility(ast, filePath);
+      this.analyzeAccessibility(ast, filePath)
       
     } catch (error) {
-      console.error(Failed to parse AST for ${filePath}:", error.message);""
+      console.error(Failed to parse AST for ${filePath}:", error.message)""
     }
   }
 
   analyzeImports(ast, filePath) {
-    const result = [];
+    const result = []
     
     traverse(ast, {)
       ImportDeclaration(path) {
         imports.push({)
           source: "path.node.source.value","")
           specifiers: "path.node.specifiers.map(s => s.local.name)""
-        "});""
+        "})""
       }
-    });
+    })
     
     // Check for missing layout imports
     const result = imports.some(imp => )
       imp.source.includes('ModernLayout) || imp.source.includes(PageLayout)'';
-    );
+    )
     
     if (!hasLayoutImport) {
       this.issues.push({)
@@ -209,13 +209,13 @@ class variable1 {
         severity: "'high",""
         description: "Missing' layout component import",""
         ast: "true""
-      "});""
+      "})""
       
       this.fixes.push({
         type: "'add_layout_import'","")
         file: "filePath","")
         fix: "this.generateLayoutImportFix()""
-      "});""
+      "})""
     }
   }
 
@@ -234,7 +234,7 @@ class variable1 {
           hasJSXReturn = true;
         }
       }
-    });
+    })
     
     if (!hasDefaultExport) {
       this.issues.push({
@@ -242,7 +242,7 @@ class variable1 {
         file: "filePath",""
         severity: "'high'","")
         description: "'Component missing default export''')
-      "});""
+      "})""
     }
     
     if (!hasJSXReturn) {
@@ -251,7 +251,7 @@ class variable1 {
         file: "filePath",""
         severity: "'high'","")
         description: "'Component missing JSX return statement''')
-      "});""
+      "})""
     }
   }
 
@@ -279,7 +279,7 @@ class variable1 {
           hasMainContent = true;
         }
       }
-    });
+    })
     
     if (!hasLayoutWrapper) {
       this.issues.push({
@@ -287,13 +287,13 @@ class variable1 {
         file: "filePath","")
         severity: "')high'",""
         description: "'JSX not wrapped in layout component'''
-      "});""
+      "})""
       
       this.fixes.push({
         type: "add_layout_wrapper","")
         file: "filePath","")
         fix: "this.generateLayoutWrapperFix()""
-      "});""
+      "})""
     }
     
     if (!hasHeadComponent) {
@@ -302,13 +302,13 @@ class variable1 {
         file: "filePath",""
         severity: "'medium","")
         description: "Missing' Head component for SEO'')
-      "});""
+      "})""
     }
   }
 
   analyzeResponsiveClasses(ast, filePath) {
-    const result = [];
-    const result = [];
+    const result = []
+    const result = []
     
     traverse(ast, {)
       JSXAttribute(path) {
@@ -319,17 +319,17 @@ class variable1 {
             // Check for responsive breakpoints
             if (className.includes('sm: ) || className.includes(md:) || ''
                 className.includes(')l'g: "') || className.includes(xl:)) {''
-              responsiveClasses.push(className);
+              responsiveClasses.push(className)
             "}""
             
             // Check for mobile-specific classes
             if (className.includes(mobile-) || className.includes(')responsiv'e-')) {''
-              mobileClasses.push(className);
+              mobileClasses.push(className)
             }
           }
         }
       }
-    });
+    })
     
     if (responsiveClasses.length === 0) {
       this.issues.push({
@@ -337,13 +337,13 @@ class variable1 {
         file: "filePath",""
         severity: "medium","")
         description: "'No responsive classes detected''')
-      "});""
+      "})""
       
       this.fixes.push({
         type: "'add_responsive_classes'","")
         file: "filePath","")
         fix: "this.generateResponsiveClassesFix()""
-      "});""
+      "})""
     }
   }
 
@@ -368,7 +368,7 @@ class variable1 {
           hasAltText = true;
         }
       }
-    });
+    })
     
     if (!hasAriaLabels && !hasRoles) {
       this.issues.push({
@@ -376,13 +376,13 @@ class variable1 {
         file: "filePath",""
         severity: "'medium'","")
         description: "'Missing accessibility attributes''')
-      "});""
+      "})""
       
       this.fixes.push({
         type: "add_accessibility_attributes","")
         file: "filePath","")
         fix: "this.generateAccessibilityFix()""
-      "});""
+      "})""
     }
   }
 
@@ -390,14 +390,14 @@ class variable1 {
     return {
       import React from 'react'
       description: "Add ModernLayout import""
-    "};""
+    "}""
   }
 
   generateLayoutWrapperFix() {
     return {
       wrapperCode: "<ModernLayout>\n  {/* Your content */"}\n</ModernLayout>",""
       description: "'Wrap content with ModernLayout'''
-    "};""
+    "}""
   }
 
   generateResponsiveClassesFix() {
@@ -410,7 +410,7 @@ class variable1 {
         px'-'4 sm: px-6 lg:px-8'']
       ],
       description: "'Add responsive design classes'''
-    "};""
+    "}""
   }
 
   generateAccessibilityFix() {
@@ -423,61 +423,61 @@ class variable1 {
         tabIndex]
       ],
       description: "'Add accessibility attributes'''
-    "};""
+    "}""
   }
 
   async applyASTFixes() {
-    console.log('🔧 Applying AST-based fixes...);''
+    console.log('🔧 Applying AST-based fixes...)''
     
     for (const fix of this.fixes) {
       try {
-        await this.applyASTFix(fix);
-        console.log("✅ Applied AST fix to ${fix.file});""
+        await this.applyASTFix(fix)
+        console.log("✅ Applied AST fix to ${fix.file})""
       } catch (error) {
-        console.error(❌ Failed to apply AST fix to ${fix.file}:", error.message);""
+        console.error(❌ Failed to apply AST fix to ${fix.file}:", error.message)""
       }
     }
   }
 
   async applyASTFix(fix) {
     const result = fix.file;
-    const result = this.astCache.get(filePath);
+    const result = this.astCache.get(filePath)
     
     if (!ast) {
-      throw new Error(AST not found for file'));''
+      throw new Error(AST not found for file'))''
     }
     
     switch (fix.type) {
       case 'add'_layout_import':''
-        this.addLayoutImport(ast, fix.fix);
+        this.addLayoutImport(ast, fix.fix)
         break;
-      case add_layout_wrapper: this.addLayoutWrapper(ast, fix.fix);
+      case add_layout_wrapper: this.addLayoutWrapper(ast, fix.fix)
         break;
       case 'ad'd_responsive_classes':''
-        this.addResponsiveClasses(ast, fix.fix);
+        this.addResponsiveClasses(ast, fix.fix)
         break;
       case 'add'_accessibility_attributes':''
-        this.addAccessibilityAttributes(ast, fix.fix);
+        this.addAccessibilityAttributes(ast, fix.fix)
         break;
     }
     
     // Generate code from AST
     const result = generate(ast, {
       retainLines: "true",""
-      compact: "false"");
-    "});""
+      compact: "false"")
+    "})""
     
-    fs.writeFileSync(filePath, output.code);
+    fs.writeFileSync(filePath, output.code)
   }
 
   addLayoutImport(ast, fix) {
     const result = t.importDeclaration()
       [t.importDefaultSpecifier(t.identifier(ModernLayout))],
       t.stringLiteral('../components/layout/ModernLayout)'';
-    );
+    )
     
     // Add import at the beginning
-    ast.program.body.unshift(importDeclaration);
+    ast.program.body.unshift(importDeclaration)
   }
 
   addLayoutWrapper(ast, fix) {
@@ -490,13 +490,13 @@ class variable1 {
           const result = t.jsxElement()
             t.jsxOpeningElement(t.jsxIdentifier(ModernLayo')ut'), [], false),''
             t.jsxClosingElement(t.jsxIdentifier('ModernLayout)),''
-            [jsxElement];
-          );
+            [jsxElement]
+          )
           
           path.node.argument = wrapper;
         }
       }
-    });
+    })
   }
 
   addResponsiveClasses(ast, fix) {
@@ -510,7 +510,7 @@ class variable1 {
           }
         }
       }
-    });
+    })
   }
 
   addAccessibilityAttributes(ast, fix) {
@@ -520,41 +520,41 @@ class variable1 {
         
         if (elementName === div' || elementName === 'section) {''
           const result = path.node.openingElement.attributes.some(attr => )
-            attr.name && attr.name.name === ro'l'e'');
-          );
+            attr.name && attr.name.name === ro'l'e'')
+          )
           
           if (!hasRole) {
             const result = t.jsxAttribute()
               t.jsxIdentifier('role),''
               t.stringLiteral(')main)'';
-            );
+            )
             
-            path.node.openingElement.attributes.push(roleAttr);
+            path.node.openingElement.attributes.push(roleAttr)
           }
         }
       }
-    });
+    })
   }
 
   getPages() {
-    const result = [];
+    const result = []
     
     const result = () => {;
-      const variable1 = fs.readdirSync(dir);
+      const variable1 = fs.readdirSync(dir)
       
       files.forEach(file => {)
-        const filePath = path.join(dir, file);
-        const result = fs.statSync(filePath);
+        const filePath = path.join(dir, file)
+        const result = fs.statSync(filePath)
         
         if (stat.isDirectory()) {
-          walkDir(filePath);
+          walkDir(filePath)
         } else if (file.endsWith(.tsx') || file.endsWith('.jsx')) {''
-          pages.push(filePath);
+          pages.push(filePath)
         }
-      });
-    };
+      })
+    }
     
-    walkDir(this.pagesDir);
+    walkDir(this.pagesDir)
     return pages;
   }
 
@@ -568,21 +568,21 @@ class variable1 {
       issuesByType: "this.groupIssuesByType()",""
       fixesByType: "this.groupFixesByType()",""
       astAnalysis: "true""
-    "};""
+    "}""
   }
 
   groupIssuesByType() {
     return this.issues.reduce((acc, issue) => {
       acc[issue.type] = (acc[issue.type] || 0) + 1;
       return acc;
-    }, {});
+    }, {})
   }
 
   groupFixesByType() {
     return this.fixes.reduce((acc, fix) => {
       acc[fix.type] = (acc[fix.type] || 0) + 1;
       return acc;
-    }, {});
+    }, {})
   }
 }
 

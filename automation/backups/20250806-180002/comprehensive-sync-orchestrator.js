@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,43 +54,43 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require($2);'););
-const path = require($2);'););
-const { spawn, exec, execSync } = require(('child_process)');
-const { v4: uuidv4 } = require(('uuid)');
-const cron = require($2);'););
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}const fs = require('path';
+const path = require('path';
+const { spawn, exec, execSync } = require(('child_process)')
+const { v4: uuidv4 } = require(('uuid)')
+const cron = require('path';
 
 class ComprehensiveSyncOrchestrator {
   constructor() {
     this.id = 'comprehensive-sync-orchestrator';
     this.version = '4.0';
     this.status = 'initializing';
-    this.projectRoot = process.cwd();
+    this.projectRoot = process.cwd()
     this.lastSync = null;
     this.syncCount = 0;
     this.errorCount = 0;
-    this.fileWatchers = new Map();
-    this.syncProcesses = new Map();
+    this.fileWatchers = new Map()
+    this.syncProcesses = new Map()
     this.config = {
       // High-frequency sync settings
       highFreqSyncInterval: 3000, // 3 seconds
@@ -160,61 +160,61 @@ class ComprehensiveSyncOrchestrator {
       enableHighFreqSync: true,
       enableStandardSync: true,
       enableBackupSync: true
-    };
+    }
     
-    this.ensureDirectories();
+    this.ensureDirectories()
   }
 
   ensureDirectories() {
     const directories = ['comprehensive-sync-logs',
       'comprehensive-sync-status',
       'comprehensive-sync-reports',
-      'comprehensive-sync-backups'];
-    ];
+      'comprehensive-sync-backups']
+    ]
 
     directories.forEach(dir => {)
-      const dirPath = path.join(__dirname, dir);
+      const dirPath = path.join(__dirname, dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+        fs.mkdirSync(dirPath, { recursive: true })
       }
-    });
+    })
   }
 
   async initialize() {
-    console.log('🚀 Initializing Comprehensive Sync Orchestrator...');
+    console.log('🚀 Initializing Comprehensive Sync Orchestrator...')
     
     try {
       // Check git status
-      await this.checkGitStatus();
+      await this.checkGitStatus()
       
       // Start file watching
       if (this.config.enableFileWatching) {
-        this.startFileWatching();
+        this.startFileWatching()
       }
       
       // Start sync processes
       if (this.config.enableHighFreqSync) {
-        this.startHighFrequencySync();
+        this.startHighFrequencySync()
       }
       
       if (this.config.enableStandardSync) {
-        this.startStandardSync();
+        this.startStandardSync()
       }
       
       if (this.config.enableBackupSync) {
-        this.startBackupSync();
+        this.startBackupSync()
       }
       
       // Start monitoring
-      this.startMonitoring();
-      this.startHealthChecks();
-      this.startReporting();
+      this.startMonitoring()
+      this.startHealthChecks()
+      this.startReporting()
       
       this.status = 'running';
-      console.log('✅ Comprehensive Sync Orchestrator initialized successfully');
+      console.log('✅ Comprehensive Sync Orchestrator initialized successfully')
       
     } catch (error) {
-      console.error('❌ Error initializing Comprehensive Sync Orchestrator: ', error);
+      console.error('❌ Error initializing Comprehensive Sync Orchestrator: ', error)
       this.status = 'error';
       throw error;
     }
@@ -224,160 +224,160 @@ class ComprehensiveSyncOrchestrator {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8');
-      });
+        encoding: 'utf8')
+      })
       
       if (status.trim()) {
-        console.log('📝 Found uncommitted changes: ', status.split('\n').length - 1, 'files');
+        console.log('📝 Found uncommitted changes: ', status.split('\n').length - 1, 'files')
         return true;
       } else {
-        console.log('✅ No uncommitted changes found');
+        console.log('✅ No uncommitted changes found')
         return false;
       }
     } catch (error) {
-      console.error('❌ Error checking git status: ', error.message);
+      console.error('❌ Error checking git status: ', error.message)
       return false;
     }
   }
 
   startFileWatching() {
-    console.log('👀 Starting comprehensive file watching...');
+    console.log('👀 Starting comprehensive file watching...')
     
     this.config.watchDirectories.forEach(dir => {)
-      const fullPath = path.join(this.projectRoot, dir);
+      const fullPath = path.join(this.projectRoot, dir)
       if (fs.existsSync(fullPath)) {
-        this.watchDirectory(fullPath);
+        this.watchDirectory(fullPath)
       }
-    });
+    })
   }
 
   watchDirectory(dirPath) {
     try {
       const watcher = fs.watch(dirPath, { recursive: true }, (eventType, filename) => {
         if (filename && this.shouldIncludeFile(filename)) {;
-          console.log(`📁 File change detected: ${filename}`);
-          this.triggerImmediateSync();
+          console.log(`📁 File change detected: ${filename}`)
+          this.triggerImmediateSync()
         }
-      });
+      })
       
-      this.fileWatchers.set(dirPath, watcher);
-      console.log(`👀 Watching directory: ${dirPath}`);
+      this.fileWatchers.set(dirPath, watcher)
+      console.log(`👀 Watching directory: ${dirPath}`)
       
     } catch (error) {
-      console.error(`❌ Error watching directory ${dirPath}:`, error.message);
+      console.error(`❌ Error watching directory ${dirPath}:`, error.message)
     }
   }
 
   startHighFrequencySync() {
-    console.log('⚡ Starting high-frequency sync...');
+    console.log('⚡ Starting high-frequency sync...')
     
     setInterval(async () => {
-      await this.performSync('high-frequency');
-    }, this.config.highFreqSyncInterval);
+      await this.performSync('high-frequency')
+    }, this.config.highFreqSyncInterval)
   }
 
   startStandardSync() {
-    console.log('🔄 Starting standard sync...');
+    console.log('🔄 Starting standard sync...')
     
     setInterval(async () => {
-      await this.performSync('standard');
-    }, this.config.standardSyncInterval);
+      await this.performSync('standard')
+    }, this.config.standardSyncInterval)
   }
 
   startBackupSync() {
-    console.log('💾 Starting backup sync...');
+    console.log('💾 Starting backup sync...')
     
     setInterval(async () => {
-      await this.performSync('backup');
-    }, this.config.backupSyncInterval);
+      await this.performSync('backup')
+    }, this.config.backupSyncInterval)
   }
 
   startMonitoring() {
-    console.log('👀 Starting monitoring...');
+    console.log('👀 Starting monitoring...')
     
     setInterval(() => {
-      this.monitorStatus();
-    }, 200);
+      this.monitorStatus()
+    }, 200)
   }
 
   startHealthChecks() {
-    console.log('🏥 Starting health checks...');
+    console.log('🏥 Starting health checks...')
     
     setInterval(() => {
-      this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.performHealthCheck()
+    }, this.config.healthCheckInterval)
   }
 
   startReporting() {
-    console.log('📊 Starting reporting...');
+    console.log('📊 Starting reporting...')
     
     setInterval(() => {
-      this.generateReport();
-    }, this.config.reportInterval);
+      this.generateReport()
+    }, this.config.reportInterval)
   }
 
   triggerImmediateSync() {
     // Trigger immediate sync when file changes are detected
     setTimeout(async () => {
-      await this.performSync('immediate');
-    }, 200); // Wait 200ms to batch changes
+      await this.performSync('immediate')
+    }, 200) // Wait 200ms to batch changes
   }
 
   async performSync(type) {
     try {
-      const hasChanges = await this.checkGitStatus();
+      const hasChanges = await this.checkGitStatus()
       if (!hasChanges) return;
 
-      console.log(`💾 Performing ${type} sync...`);
+      console.log(`💾 Performing ${type} sync...`)
       
       // Get list of changed files
-      const changedFiles = await this.getChangedFiles();
+      const changedFiles = await this.getChangedFiles()
       
       if (changedFiles.length === 0) return;
       
       // Split files into batches
-      const batches = this.splitIntoBatches(changedFiles);
+      const batches = this.splitIntoBatches(changedFiles)
       
       for (const batch of batches) {
-        await this.commitBatch(batch, type);
+        await this.commitBatch(batch, type)
       }
       
       this.syncCount++;
-      this.lastSync = new Date().toISOString();
+      this.lastSync = new Date().toISOString()
       
-      console.log(`✅ ${type} sync successful: ${changedFiles.length} files`);
+      console.log(`✅ ${type} sync successful: ${changedFiles.length} files`)
       
       // Auto push if enabled
       if (this.config.autoPush) {
-        await this.performPush(type);
+        await this.performPush(type)
       }
       
     } catch (error) {
-      console.error(`❌ ${type} sync failed: `, error.message);
+      console.error(`❌ ${type} sync failed: `, error.message)
       this.errorCount++;
-      await this.handleError('sync', error, type);
+      await this.handleError('sync', error, type)
     }
   }
 
   async performPush(type) {
     try {
-      console.log(`🚀 Performing ${type} push...`);
+      console.log(`🚀 Performing ${type} push...`)
       
       // Check if there are commits to push
-      const hasCommitsToPush = await this.hasCommitsToPush();
+      const hasCommitsToPush = await this.hasCommitsToPush()
       if (!hasCommitsToPush) {
         return;
       }
       
       // Push to main branch
-      await this.pushToMain();
+      await this.pushToMain()
       
-      console.log(`✅ ${type} push successful`);
+      console.log(`✅ ${type} push successful`)
       
     } catch (error) {
-      console.error(`❌ ${type} push failed: `, error.message);
+      console.error(`❌ ${type} push failed: `, error.message)
       this.errorCount++;
-      await this.handleError('push', error, type);
+      await this.handleError('push', error, type)
     }
   }
 
@@ -385,20 +385,20 @@ class ComprehensiveSyncOrchestrator {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8');
-      });
+        encoding: 'utf8')
+      })
       
-      const files = status.trim().split('\n').filter(line => line.trim());
+      const files = status.trim().split('\n').filter(line => line.trim())
       
       // Filter files based on include/exclude patterns
       return files.filter(file => {)
-        const filePath = file.substring(4); // Remove status prefix (M + space + space)
-        return this.shouldIncludeFile(filePath);
-      });
+        const filePath = file.substring(4) // Remove status prefix (M + space + space)
+        return this.shouldIncludeFile(filePath)
+      })
       
     } catch (error) {
-      console.error('❌ Error getting changed files: ', error.message);
-      return [];
+      console.error('❌ Error getting changed files: ', error.message)
+      return []
     }
   }
 
@@ -421,14 +421,14 @@ class ComprehensiveSyncOrchestrator {
   }
 
   matchesPattern(filePath, pattern) {
-    const regex = new RegExp(pattern.replace(/\*\*/g, '.*').replace(/\*/g, '[^/]*'));
-    return regex.test(filePath);
+    const regex = new RegExp(pattern.replace(/\*\*/g, '.*').replace(/\*/g, '[^/]*'))
+    return regex.test(filePath)
   }
 
   splitIntoBatches(files) {
-    const batches = [];
+    const batches = []
     for (let i = 0; i < files.length; i += this.config.maxFilesPerCommit) {
-      batches.push(files.slice(i, i + this.config.maxFilesPerCommit));
+      batches.push(files.slice(i, i + this.config.maxFilesPerCommit))
     }
     return batches;
   }
@@ -437,28 +437,28 @@ class ComprehensiveSyncOrchestrator {
     try {
       // Add specific files to staging
       for (const file of files) {
-        const filePath = file.substring(4); // Remove status prefix (M + space + space)
+        const filePath = file.substring(4) // Remove status prefix (M + space + space)
         execSync(`git add "${filePath}"`, { 
           cwd: this.projectRoot,
           stdio: 'pipe')
-        });
+        })
       }
       
       // Create commit
-      const commitMessage = this.generateCommitMessage(files, type);
-      await this.createCommit(commitMessage);
+      const commitMessage = this.generateCommitMessage(files, type)
+      await this.createCommit(commitMessage)
       
-      console.log(`💾 Committed ${type} batch: ${files.length} files`);
+      console.log(`💾 Committed ${type} batch: ${files.length} files`)
       
     } catch (error) {
-      throw new Error(`Failed to commit ${type} batch: ${error.message}`);
+      throw new Error(`Failed to commit ${type} batch: ${error.message}`)
     }
   }
 
   generateCommitMessage(files, type) {
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().toISOString()
     const fileCount = files.length;
-    const fileNames = files.map(f => f.substring(4)).join(', ');
+    const fileNames = files.map(f => f.substring(4)).join(', ')
     
     return `${this.config.commitMessagePrefix} [${type}] ${timestamp} - ${fileCount} files: ${fileNames}`;
   }
@@ -468,10 +468,10 @@ class ComprehensiveSyncOrchestrator {
       execSync(`git commit -m "${message}"`, { 
         cwd: this.projectRoot,
         stdio: 'pipe')
-      });
+      })
       
     } catch (error) {
-      throw new Error(`Failed to create commit: ${error.message}`);
+      throw new Error(`Failed to create commit: ${error.message}`)
     }
   }
 
@@ -479,13 +479,13 @@ class ComprehensiveSyncOrchestrator {
     try {
       const result = execSync('git log --oneline origin/main..HEAD', { 
         cwd: this.projectRoot,
-        encoding: 'utf8');
-      });
+        encoding: 'utf8')
+      })
       
       return result.trim().length > 0;
       
     } catch (error) {
-      console.error('❌ Error checking commits to push: ', error.message);
+      console.error('❌ Error checking commits to push: ', error.message)
       return false;
     }
   }
@@ -495,40 +495,40 @@ class ComprehensiveSyncOrchestrator {
       execSync('git push origin main', { 
         cwd: this.projectRoot,
         stdio: 'pipe')
-      });
+      })
       
-      console.log('🚀 Pushed to main branch');
+      console.log('🚀 Pushed to main branch')
       
     } catch (error) {
-      throw new Error(`Failed to push to main: ${error.message}`);
+      throw new Error(`Failed to push to main: ${error.message}`)
     }
   }
 
   async handleError(operation, error, type = 'unknown') {
-    console.error(`❌ ${operation} error (${type}):`, error.message);
+    console.error(`❌ ${operation} error (${type}):`, error.message)
     
     // Retry logic
     for (let attempt = 1; attempt <= this.config.retryAttempts; attempt++) {
-      console.log(`🔄 Retrying ${operation} (${type}) - attempt ${attempt}/${this.config.retryAttempts}...`);
+      console.log(`🔄 Retrying ${operation} (${type}) - attempt ${attempt}/${this.config.retryAttempts}...`)
       
       try {
-        await new Promise(resolve => setTimeout(resolve, this.config.retryDelay));
+        await new Promise(resolve => setTimeout(resolve, this.config.retryDelay))
         
         if (operation === 'sync') {
-          await this.performSync(type);
+          await this.performSync(type)
         } else if (operation === 'push') {
-          await this.performPush(type);
+          await this.performPush(type)
         }
         
-        console.log(`✅ ${operation} retry successful (${type})`);
+        console.log(`✅ ${operation} retry successful (${type})`)
         return;
         
       } catch (retryError) {
-        console.error(`❌ ${operation} retry ${attempt} failed (${type}):`, retryError.message);
+        console.error(`❌ ${operation} retry ${attempt} failed (${type}):`, retryError.message)
       }
     }
     
-    console.error(`❌ ${operation} failed after ${this.config.retryAttempts} attempts (${type})`);
+    console.error(`❌ ${operation} failed after ${this.config.retryAttempts} attempts (${type})`)
   }
 
   monitorStatus() {
@@ -540,11 +540,11 @@ class ComprehensiveSyncOrchestrator {
       syncCount: this.syncCount,
       errorCount: this.errorCount,
       fileWatchers: this.fileWatchers.size,
-      timestamp: new Date().toISOString();
-    };
+      timestamp: new Date().toISOString()
+    }
     
-    const statusPath = path.join(__dirname, 'comprehensive-sync-status', 'current-status.json');
-    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
+    const statusPath = path.join(__dirname, 'comprehensive-sync-status', 'current-status.json')
+    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2))
   }
 
   performHealthCheck() {
@@ -557,11 +557,11 @@ class ComprehensiveSyncOrchestrator {
       lastSync: this.lastSync,
       fileWatchers: this.fileWatchers.size,
       memory: process.memoryUsage(),
-      uptime: process.uptime();
-    };
+      uptime: process.uptime()
+    }
     
-    const healthPath = path.join(__dirname, 'comprehensive-sync-status', 'health.json');
-    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
+    const healthPath = path.join(__dirname, 'comprehensive-sync-status', 'health.json')
+    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2))
   }
 
   generateReport() {
@@ -572,13 +572,13 @@ class ComprehensiveSyncOrchestrator {
       successRate: this.syncCount > 0 ? ((this.syncCount - this.errorCount) / this.syncCount * 100).toFixed(2) : 0,
       lastSync: this.lastSync,
       config: this.config,
-      fileWatchers: this.fileWatchers.size;
-    };
+      fileWatchers: this.fileWatchers.size
+    }
     
-    const reportPath = path.join(__dirname, 'comprehensive-sync-reports', `report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const reportPath = path.join(__dirname, 'comprehensive-sync-reports', `report-${Date.now()}.json`)
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
-    console.log('📊 Generated comprehensive sync report');
+    console.log('📊 Generated comprehensive sync report')
   }
 
   getStatus() {
@@ -591,43 +591,43 @@ class ComprehensiveSyncOrchestrator {
       errorCount: this.errorCount,
       successRate: this.syncCount > 0 ? ((this.syncCount - this.errorCount) / this.syncCount * 100).toFixed(2) : 0,
       fileWatchers: this.fileWatchers.size
-    };
+    }
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Comprehensive Sync Orchestrator...');
+    console.log('🛑 Shutting down Comprehensive Sync Orchestrator...')
     
     // Close file watchers
     for (const [dirPath, watcher] of this.fileWatchers) {
-      watcher.close();
-      console.log(`👀 Stopped watching: ${dirPath}`);
+      watcher.close()
+      console.log(`👀 Stopped watching: ${dirPath}`)
     }
     
     this.status = 'stopped';
-    console.log('✅ Comprehensive Sync Orchestrator shutdown complete');
+    console.log('✅ Comprehensive Sync Orchestrator shutdown complete')
   }
 }
 
 // Auto-start if run directly
-if (require(.main === modul)e) {
-  const orchestrator = new ComprehensiveSyncOrchestrator();
+if (require.main === module) {
+  const orchestrator = new ComprehensiveSyncOrchestrator()
   
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
-    await orchestrator.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGINT, shutting down...')
+    await orchestrator.shutdown()
+    process.exit(0)
+  })
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
-    await orchestrator.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGTERM, shutting down...')
+    await orchestrator.shutdown()
+    process.exit(0)
+  })
   
   orchestrator.initialize().catch(error => {)
-    console.error('❌ Comprehensive Sync Orchestrator initialization failed: ', error);
-    process.exit(1);
-  });
+    console.error('❌ Comprehensive Sync Orchestrator initialization failed: ', error)
+    process.exit(1)
+  })
 }
 
 module.exports = ComprehensiveSyncOrchestrator;

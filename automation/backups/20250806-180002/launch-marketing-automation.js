@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,41 +13,41 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require($2);a););''
-const path = require($2);'););
-const { exec } = require(()')chil'd_process');''
-const result = require($2);l););''
-const node-cron = require($2);'););
-const result = require($2);2););mome'nt');''
+const result = require($2)a))''
+const path = require('path';
+const { exec } = require(()')chil'd_process')''
+const result = require($2)l))''
+const node-cron = require('path';
+const result = require($2)2))mome'nt')''
 ;
-const result = util.promisify(exec);
+const result = util.promisify(exec)
 
 class AutomationSystem {
     constructor() {
-        this.baseDir = path.join(__dirname);
-        this.configPath = path.join(this.baseDir, 'marketing-config'.json');''
-        this.statusPath = path.join(this.baseDir, marketing-status.json);
+        this.baseDir = path.join(__dirname)
+        this.configPath = path.join(this.baseDir, 'marketing-config'.json')''
+        this.statusPath = path.join(this.baseDir, marketing-status.json)
         
         this.components = {
             orchestrator: "null",""
@@ -58,8 +58,8 @@ class AutomationSystem {
             seoOptimizationAgent: "null",""
             influencerOutreachAgent: "null",""
             adCampaignAgent: "null",""
-            analyticsTrackingAgent: "null"";
-        "};""
+            analyticsTrackingAgent: "null""
+        "}""
         
         this.systemStatus = {
             isRunning: "false",""
@@ -74,61 +74,61 @@ class AutomationSystem {
                 totalConversions: "0",""
                 totalROI: "0""
             "},""
-            errors: "[]"";
-        "};""
+            errors: "[]""
+        "}""
         
         this.schedules = {
             healthCheck: "\'*/5 * * * *", // Every 5 minutes""
             performanceReport: "0 */2 * * *\'", // Every 2 hours""
             backup: "\'0 2 * * *", // Daily at 2 AM""
-            cleanup: "0 3 * * 0\' // Weekly at 3 AM\'\';
-        "};""
+            cleanup: "0 3 * * 0\' // Weekly at 3 AM\'\'
+        "}""
     }
 
     async launch() {
-        console.log(🚀 Launching Marketing Automation System...\');\'\'
+        console.log(🚀 Launching Marketing Automation System...\')\'\'
         
         try {
             // Phase 1: Initialize System
-            await this.initializeSystem();
+            await this.initializeSystem()
             
             // Phase 2: Load Configuration
-            await this.loadConfiguration();
+            await this.loadConfiguration()
             
             // Phase 3: Start Core Components
-            await this.startCoreComponents();
+            await this.startCoreComponents()
             
             // Phase 4: Start Marketing Agents
-            await this.startMarketingAgents();
+            await this.startMarketingAgents()
             
             // Phase 5: Start Monitoring
-            await this.startMonitoring();
+            await this.startMonitoring()
             
             // Phase 6: Start Scheduled Tasks
-            await this.startScheduledTasks();
+            await this.startScheduledTasks()
             
-            this.systemStatus.isRunning = true;
-            this.systemStatus.startTime = new Date().toISOString();
+            this.systemStatus.isRunning = true
+            this.systemStatus.startTime = new Date().toISOString()
             
-            await this.saveSystemStatus();
+            await this.saveSystemStatus()
             
-            console.log(\'✅ Marketing Automation System launched successfully);\'\'
-            console.log(📊 System Status:, this.systemStatus);
+            console.log(\'✅ Marketing Automation System launched successfully)\'\'
+            console.log(📊 System Status:, this.systemStatus)
             
         } catch (error) {
-            console.error(❌ Failed to launch Marketing Automation System: "')", error.message);""
+            console.error(❌ Failed to launch Marketing Automation System: "')", error.message)""
             this.systemStatus.errors.push({)
                 timestamp: "new Date().toISOString()",""
                 error: "error.message",""
                 phase: "launch""
-            "});""
-            await this.saveSystemStatus();
+            "})""
+            await this.saveSystemStatus()
             throw error;
         }
     }
 
     async initializeSystem() {
-        console.log(🔧 Initializing system...\');\'\'
+        console.log(🔧 Initializing system...\')\'\'
         
         try {
             // Ensure all directories exist
@@ -144,120 +144,120 @@ class AutomationSystem {
                 \'marketing-analytics\'/metrics\',\'\'
                 marketing-research/trends,
                 \'marketing-researc\'h/competitors\',\'\'
-                \'marketing-research\'/keywords\',\'\'];
-                logs];
+                \'marketing-research\'/keywords\',\'\']
+                logs]
             
             for (const dir of dirs) {
-                await fs.ensureDir(path.join(this.baseDir, dir));
+                await fs.ensureDir(path.join(this.baseDir, dir))
             }
             
             // Create initial configuration if it doesn\'t\' exist\'\'
             if (!await fs.pathExists(this.configPath)) {
-                await this.createDefaultConfiguration();
+                await this.createDefaultConfiguration()
             }
             
             // Create initial status file if it doesnt\' exist\'\'
             if (!await fs.pathExists(this.statusPath)) {
-                await this.createDefaultStatus();
+                await this.createDefaultStatus()
             }
             
-            console.log(\'✅ System initialized successfully);\'\'
+            console.log(\'✅ System initialized successfully)\'\'
             
         } catch (error) {
-            console.error(Error initializing system: "')", error.message);""
+            console.error(Error initializing system: "')", error.message)""
             throw error;
         }
     }
 
     async loadConfiguration() {
-        console.log(📋 Loading configuration...);
+        console.log(📋 Loading configuration...)
         
         try {
-            const asyncResult = await fs.readJson(this.configPath);
+            const asyncResult = await fs.readJson(this.configPath)
             this.config = config;
             
-            console.log(✅ Configuration loaded successfully);
+            console.log(✅ Configuration loaded successfully)
             
         } catch (error) {
-            console.error(Error loading configuration:, error.message);
+            console.error(Error loading configuration:, error.message)
             throw error;
         }
     }
 
     async startCoreComponents() {
-        console.log(\')🔧 Starting core components...\');\'\'
+        console.log(\')🔧 Starting core components...\')\'\'
         
         try {
             // Start marketing orchestrator
-            console.log(Starting marketing orchestrator...);
-            this.components.orchestrator = require($2);s););\'\'
-            const result = new this.components.orchestrator();
-            await orchestrator.startMarketingOrchestration();
+            console.log(Starting marketing orchestrator...)
+            this.components.orchestrator = require($2)s))\'\'
+            const result = new this.components.orchestrator()
+            await orchestrator.startMarketingOrchestration()
             
             // Start agent factory
-            console.log(Starting agent factory...);
-            this.components.agentFactory = require($2);2);););\'\'
-            const result = new this.components.agentFactory();
-            await agentFactory.execute();
+            console.log(Starting agent factory...)
+            this.components.agentFactory = require('fs';\'\'
+            const result = new this.components.agentFactory()
+            await agentFactory.execute()
             
             this.systemStatus.components.orchestrator = running;
             this.systemStatus.components.agentFactory = \'runni\'ng\'\'\'
             ;
-            console.log(\'✅ Core components started successfully);\'\'
+            console.log(\'✅ Core components started successfully)\'\'
             
         } catch (error) {
-            console.error(Error starting core components: "')", error.message);""
+            console.error(Error starting core components: "')", error.message)""
             throw error;
         }
     }
 
     async startMarketingAgents() {
-        console.log(🤖 Starting marketing agents...);
+        console.log(🤖 Starting marketing agents...)
         
         try {
             // Start social media agent
-            console.log(Starting social media agent...\'));\'\'
-            this.components.socialMediaAgent = require($2);s););\'\'
-            const result = new this.components.socialMediaAgent();
-            await socialMediaAgent.execute();
+            console.log(Starting social media agent...\'))\'\'
+            this.components.socialMediaAgent = require($2)s))\'\'
+            const result = new this.components.socialMediaAgent()
+            await socialMediaAgent.execute()
             
             // Start content creation agent
-            console.log(Starting content creation agent...\'));\'\'
-            this.components.contentCreationAgent = require($2);s););\'\'
-            const result = new this.components.contentCreationAgent();
-            await contentCreationAgent.execute();
+            console.log(Starting content creation agent...\'))\'\'
+            this.components.contentCreationAgent = require($2)s))\'\'
+            const result = new this.components.contentCreationAgent()
+            await contentCreationAgent.execute()
             
             // Start email campaign agent
-            console.log(Starting email campaign agent...\'));\'\'
-            this.components.emailCampaignAgent = require($2);s););\'\'
-            const result = new this.components.emailCampaignAgent();
-            await emailCampaignAgent.execute();
+            console.log(Starting email campaign agent...\'))\'\'
+            this.components.emailCampaignAgent = require($2)s))\'\'
+            const result = new this.components.emailCampaignAgent()
+            await emailCampaignAgent.execute()
             
             // Start SEO optimization agent
-            console.log(Starting SEO optimization agent...\'));\'\'
-            this.components.seoOptimizationAgent = require($2);s););\'\'
-            const result = new this.components.seoOptimizationAgent();
-            await seoOptimizationAgent.execute();
+            console.log(Starting SEO optimization agent...\'))\'\'
+            this.components.seoOptimizationAgent = require($2)s))\'\'
+            const result = new this.components.seoOptimizationAgent()
+            await seoOptimizationAgent.execute()
             
             // Start influencer outreach agent
-            console.log(Starting influencer outreach agent...\'));\'\'
-            this.components.influencerOutreachAgent = require($2);s););\'\'
-            const result = new this.components.influencerOutreachAgent();
-            await influencerOutreachAgent.execute();
+            console.log(Starting influencer outreach agent...\'))\'\'
+            this.components.influencerOutreachAgent = require($2)s))\'\'
+            const result = new this.components.influencerOutreachAgent()
+            await influencerOutreachAgent.execute()
             
             // Start ad campaign agent
-            console.log(Starting ad campaign agent...\'));\'\'
-            this.components.adCampaignAgent = require($2);s););\'\'
-            const result = new this.components.adCampaignAgent();
-            await adCampaignAgent.execute();
+            console.log(Starting ad campaign agent...\'))\'\'
+            this.components.adCampaignAgent = require($2)s))\'\'
+            const result = new this.components.adCampaignAgent()
+            await adCampaignAgent.execute()
             
             // Start analytics tracking agent
-            console.log(Starting analytics tracking agent...\'));\'\'
-            this.components.analyticsTrackingAgent = require($2);s););\'\'
-            const result = new this.components.analyticsTrackingAgent();
-            await analyticsTrackingAgent.execute();
+            console.log(Starting analytics tracking agent...\'))\'\'
+            this.components.analyticsTrackingAgent = require($2)s))\'\'
+            const result = new this.components.analyticsTrackingAgent()
+            await analyticsTrackingAgent.execute()
             
-            this.systemStatus.components.socialMediaAgent = running\');\'\'
+            this.systemStatus.components.socialMediaAgent = running\')\'\'
             this.systemStatus.components.contentCreationAgent = \'running;\'\'
             this.systemStatus.components.emailCampaignAgent = runni\'n\'g;\'\'
             this.systemStatus.components.seoOptimizationAgent = \'runni\'ng\'\'\';
@@ -265,116 +265,116 @@ class AutomationSystem {
             this.systemStatus.components.adCampaignAgent = runni\'n\'g;\'\'
             this.systemStatus.components.analyticsTrackingAgent = \'runni\'ng\'\'\'
             ;
-            console.log(\'✅ Marketing agents started successfully);\'\'
+            console.log(\'✅ Marketing agents started successfully)\'\'
             
         } catch (error) {
-            console.error(Error starting marketing agents: "')", error.message);""
+            console.error(Error starting marketing agents: "')", error.message)""
             throw error;
         }
     }
 
     async startMonitoring() {
-        console.log(📊 Starting monitoring...);
+        console.log(📊 Starting monitoring...)
         
         try {
             // Start health monitoring
-            this.startHealthMonitoring();
+            this.startHealthMonitoring()
             
             // Start performance monitoring
-            this.startPerformanceMonitoring();
+            this.startPerformanceMonitoring()
             
             // Start error monitoring
-            this.startErrorMonitoring();
+            this.startErrorMonitoring()
             
-            console.log(✅ Monitoring started successfully);
+            console.log(✅ Monitoring started successfully)
             
         } catch (error) {
-            console.error(Error starting monitoring:, error.message);
+            console.error(Error starting monitoring:, error.message)
             throw error;
         }
     }
 
     async startScheduledTasks() {
-        console.log(\')⏰ Starting scheduled tasks...\');\'\'
+        console.log(\')⏰ Starting scheduled tasks...\')\'\'
         
         try {
             // Schedule health checks
             cron.schedule(this.schedules.healthCheck, async () => {
-                await this.performHealthCheck();
-            });
+                await this.performHealthCheck()
+            })
             
             // Schedule performance reports
             cron.schedule(this.schedules.performanceReport, async () => {
-                await this.generatePerformanceReport();
-            });
+                await this.generatePerformanceReport()
+            })
             
             // Schedule backups
             cron.schedule(this.schedules.backup, async () => {
-                await this.performBackup();
-            });
+                await this.performBackup()
+            })
             
             // Schedule cleanup
             cron.schedule(this.schedules.cleanup, async () => {
-                await this.performCleanup();
-            });
+                await this.performCleanup()
+            })
             
-            console.log(✅ Scheduled tasks started successfully\');\'\'
+            console.log(✅ Scheduled tasks started successfully\')\'\'
             
         } catch (error) {
-            console.error(\'Error starting scheduled tasks:, error.message);\'\'
+            console.error(\'Error starting scheduled tasks:, error.message)\'\'
             throw error;
         }
     }
 
     startHealthMonitoring() {
-        console.log(🏥 Starting health monitoring...\'));\'\'
+        console.log(🏥 Starting health monitoring...\'))\'\'
         
         // Monitor system health every 30 seconds
         setInterval(async () => {
             try {
-                await this.checkSystemHealth();
+                await this.checkSystemHealth()
             } catch (error) {
-                console.error(\'Health check failed:, error.message);\'\'
+                console.error(\'Health check failed:, error.message)\'\'
             }
-        }, 200);
+        }, 200)
     }
 
     startPerformanceMonitoring() {
-        console.log(📈 Starting performance monitoring...\'));\'\'
+        console.log(📈 Starting performance monitoring...\'))\'\'
         
         // Monitor performance every minute
         setInterval(async () => {
             try {
-                await this.updatePerformanceMetrics();
+                await this.updatePerformanceMetrics()
             } catch (error) {
-                console.error(\'Performance monitoring failed:, error.message);\'\'
+                console.error(\'Performance monitoring failed:, error.message)\'\'
             }
-        }, 3000);
+        }, 3000)
     }
 
     startErrorMonitoring() {
-        console.log(🚨 Starting error monitoring...\'));\'\'
+        console.log(🚨 Starting error monitoring...\'))\'\'
         
         // Monitor for errors every 10 seconds
         setInterval(async () => {
             try {
-                await this.checkForErrors();
+                await this.checkForErrors()
             } catch (error) {
-                console.error(\'Error monitoring failed:, error.message);\'\'
+                console.error(\'Error monitoring failed:, error.message)\'\'
             }
-        }, 3000);
+        }, 3000)
     }
 
     async performHealthCheck() {
-        console.log(🏥 Performing health check...\'));\'\'
+        console.log(🏥 Performing health check...\'))\'\'
         
         try {
             const timestamp = {
                 timestamp: "new Date().toISOString()",""
                 system: "\'healthy",""
                 components: "{"},"";
-                issues: "[]"";
-            "};""
+                issues: "[]""
+            "}""
             
             // Check each component
             for (const [name, component] of Object.entries(this.components)) {
@@ -382,26 +382,26 @@ class AutomationSystem {
                     healthStatus.components[name] = health\'y;\'\'
                 } else {
                     healthStatus.components[name] = \'unhealt\'hy\'\'\'
-                    healthStatus.issues.push("${name} component not running);""
+                    healthStatus.issues.push("${name} component not running)""
                 }
             }
             
             // Check system resources
-            const asyncResult = await this.checkSystemResources();
+            const asyncResult = await this.checkSystemResources()
             healthStatus.systemResources = systemResources;
             
             // Save health status
-            await this.saveHealthStatus(healthStatus);
+            await this.saveHealthStatus(healthStatus)
             
-            console.log(\'✅ Health check completed);\'\'
+            console.log(\'✅ Health check completed)\'\'
             
         } catch (error) {
-            console.error(Health check failed: "')", error.message);""
+            console.error(Health check failed: "')", error.message)""
         }
     }
 
     async generatePerformanceReport() {
-        console.log(📊 Generating performance report...);
+        console.log(📊 Generating performance report...)
         
         try {
             const asyncResult = {
@@ -409,86 +409,86 @@ class AutomationSystem {
                 systemStatus: "this.systemStatus",""
                 performance: "this.systemStatus.performance",""
                 components: "this.systemStatus.components","";
-                recommendations: "await this.generateRecommendations()"";
-            "};""
+                recommendations: "await this.generateRecommendations()""
+            "}""
             
             // Save performance report
-            await this.savePerformanceReport(report);
+            await this.savePerformanceReport(report)
             
-            console.log(✅ Performance report generated);
+            console.log(✅ Performance report generated)
             
         } catch (error) {
-            console.error(Performance report generation failed:, error.message);
+            console.error(Performance report generation failed:, error.message)
         }
     }
 
     async performBackup() {
-        console.log(\')💾 Performing backup...\');\'\'
+        console.log(\')💾 Performing backup...\')\'\'
         
         try {
-            const filePath = path.join(this.baseDir, backups, moment().format(\'YYYY-MM-DD-HH-mm));\'\'
-            await fs.ensureDir(backupDir);
+            const filePath = path.join(this.baseDir, backups, moment().format(\'YYYY-MM-DD-HH-mm))\'\'
+            await fs.ensureDir(backupDir)
             
             // Backup configuration
-            await fs.copy(this.configPath, path.join(backupDir, \')marketing-config\'.json\'));\'\'
+            await fs.copy(this.configPath, path.join(backupDir, \')marketing-config\'.json\'))\'\'
             
             // Backup status
-            await fs.copy(this.statusPath, path.join(backupDir, marketing-status.json));
+            await fs.copy(this.statusPath, path.join(backupDir, marketing-status.json))
             
             // Backup agents
-            await fs.copy(path.join(this.baseDir, \'marketing-agen\'ts\'), path.join(backupDir, \'marketing-agents));\'\'
+            await fs.copy(path.join(this.baseDir, \'marketing-agen\'ts\'), path.join(backupDir, \'marketing-agents))\'\'
             
             // Backup campaigns
-            await fs.copy(path.join(this.baseDir, marketing-campaig\'n\'s), path.join(backupDir, \'marketing-campaig\'ns\'));\'\'
+            await fs.copy(path.join(this.baseDir, marketing-campaig\'n\'s), path.join(backupDir, \'marketing-campaig\'ns\'))\'\'
             
             // Backup analytics
-            await fs.copy(path.join(this.baseDir, \'marketing-analytics), path.join(backupDir, marketing-analyti\'c\'s));\'\'
+            await fs.copy(path.join(this.baseDir, \'marketing-analytics), path.join(backupDir, marketing-analyti\'c\'s))\'\'
             
-            console.log(\'✅ Backup completed successfully);\'\'
+            console.log(\'✅ Backup completed successfully)\'\'
             
         } catch (error) {
-            console.error(Backup failed:, error.message);
+            console.error(Backup failed:, error.message)
         }
     }
 
     async performCleanup() {
-        console.log(🧹 Performing cleanup...\'));\'\'
+        console.log(🧹 Performing cleanup...\'))\'\'
         
         try {
             // Clean up old log files (older than 7 days)
-            const filePath = path.join(this.baseDir, logs);
-            const asyncResult = await fs.readdir(logsDir);
+            const filePath = path.join(this.baseDir, logs)
+            const asyncResult = await fs.readdir(logsDir)
             
             for (const file of logFiles) {
-                const filePath = path.join(logsDir, file);
-                const asyncResult = await fs.stat(filePath);
-                const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60 * 24);
+                const filePath = path.join(logsDir, file)
+                const asyncResult = await fs.stat(filePath)
+                const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60 * 24)
                 
                 if (daysOld > 7) {
-                    await fs.remove(filePath);
-                    console.log(Removed old log file: "${file"}");""
+                    await fs.remove(filePath)
+                    console.log(Removed old log file: "${file"}")""
                 }
             }
             
             // Clean up old analytics files (older than 30 days)
-            const filePath = path.join(this.baseDir, \'marketing-analyti\'cs\', \'metrics);\'\'
-            const asyncResult = await fs.readdir(analyticsDir);
+            const filePath = path.join(this.baseDir, \'marketing-analyti\'cs\', \'metrics)\'\'
+            const asyncResult = await fs.readdir(analyticsDir)
             
             for (const file of analyticsFiles) {
-                const filePath = path.join(analyticsDir, file);
-                const asyncResult = await fs.stat(filePath);
-                const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60 * 24);
+                const filePath = path.join(analyticsDir, file)
+                const asyncResult = await fs.stat(filePath)
+                const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60 * 24)
                 
                 if (daysOld > 30) {
-                    await fs.remove(filePath);
-                    console.log("Removed old analytics file: "${file"});""
+                    await fs.remove(filePath)
+                    console.log("Removed old analytics file: "${file"})""
                 }
             }
             
-            console.log(✅ Cleanup completed successfully\');\'\'
+            console.log(✅ Cleanup completed successfully\')\'\'
             
         } catch (error) {
-            console.error(\'Cleanup failed:, error.message);\'\'
+            console.error(\'Cleanup failed:, error.message)\'\'
         }
     }
 
@@ -496,7 +496,7 @@ class AutomationSystem {
         // Check if all components are running
         for (const [name, component] of Object.entries(this.components)) {
             if (!component) {
-                console.warn(⚠️  Component ${name} is not running");""
+                console.warn(⚠️  Component ${name} is not running")""
                 this.systemStatus.components[name] = unhealthy;
             }
         }
@@ -507,48 +507,48 @@ class AutomationSystem {
         this.systemStatus.performance.totalAgents = Object.keys(this.components).length;
         this.systemStatus.performance.activeAgents = Object.values(this.systemStatus.components).filter(status => status === \')runni\'ng\').length;\'\'
         
-        await this.saveSystemStatus();
+        await this.saveSystemStatus()
     }
 
     async checkForErrors() {
         // Check for any system errors and log them
         if (this.systemStatus.errors.length > 0) {
-            console.error(\'🚨 System errors detected:, this.systemStatus.errors);\'\'
+            console.error(\'🚨 System errors detected:, this.systemStatus.errors)\'\'
         }
     }
 
     async checkSystemResources() {
         try {
             // Check CPU usage
-            const { stdout: "cpuInfo "} = await execAsync(top -bn1 | grep "Cpu(s) | awk \{print variable2}\) | cut -d\%\\') -f1\');\'\'
+            const { stdout: "cpuInfo "} = await execAsync(top -bn1 | grep "Cpu(s) | awk \{print variable2}\) | cut -d\%\\') -f1\')\'\'
             
             // Check memory usage
-            const { stdout: "memInfo "} = await execAsync(free | grep Mem | awk \{printf %.2f", variable3/variable2 * 100.0}\\'\');\'\'
+            const { stdout: "memInfo "} = await execAsync(free | grep Mem | awk \{printf %.2f", variable3/variable2 * 100.0}\\'\')\'\'
             
             // Check disk usage
-            const { stdout: "diskInfo "} = await execAsync(df / | tail -1 | awk \{print variable5}\\' | cut -d\\'%\ -f1\');\'\'
+            const { stdout: "diskInfo "} = await execAsync(df / | tail -1 | awk \{print variable5}\\' | cut -d\\'%\ -f1\')\'\'
             
             return {
                 cpu: "parseFloat(cpuInfo.trim())",""
                 memory: "parseFloat(memInfo.trim())",""
                 disk: "parseFloat(diskInfo.trim())""
-            "};""
+            "}""
         } catch (error) {
-            console.error(\'Error checking system resources:, error.message);\'\'
-            return { cpu: "0", memory: "0", disk: "0 "};""
+            console.error(\'Error checking system resources:, error.message)\'\'
+            return { cpu: "0", memory: "0", disk: "0 "}""
         }
     }
 
     async generateRecommendations() {
-        const result = [];
+        const result = []
         
         // Generate recommendations based on system status
         if (this.systemStatus.performance.activeAgents < this.systemStatus.performance.totalAgents) {
-            recommendations.push(Start inactive agents to improve system performance);
+            recommendations.push(Start inactive agents to improve system performance)
         }
         
         if (this.systemStatus.errors.length > 0) {
-            recommendations.push(\')Revie\'w and fix system errors to improve stability\');\'\'
+            recommendations.push(\')Revie\'w and fix system errors to improve stability\')\'\'
         }
         
         return recommendations;
@@ -585,10 +585,10 @@ class AutomationSystem {
                     advertising: "[goog'l'e", \'facebo\'ok\', \'linkedin, twitt\'e\'r],\'\'
                     seo: "['onpa'ge'", \'technical, conte\'n\'t, \'loc\'al\'],\'\'
                     influencer: "['micro", mac\'r\'o, \'na\'no\', \'celebrity]\'\'
-                };
-            }};
+                }
+            }}
         
-        await fs.writeJson(this.configPath, config, { spaces: "2 "});""
+        await fs.writeJson(this.configPath, config, { spaces: "2 "})""
     }
 
     async createDefaultStatus() {
@@ -604,39 +604,39 @@ class AutomationSystem {
                 reach: 0",""
                 engagement: "0",""
                 conversions: "0",""
-                roi: "0"";
-            "}""};
+                roi: "0""
+            "}""}
         
-        await fs.writeJson(this.statusPath, status, { spaces: "2 "});""
+        await fs.writeJson(this.statusPath, status, { spaces: "2 "})""
     }
 
     async saveSystemStatus() {
-        await fs.writeJson(this.statusPath, this.systemStatus, { spaces: "2 "});""
+        await fs.writeJson(this.statusPath, this.systemStatus, { spaces: "2 "})""
     }
 
     async saveHealthStatus(healthStatus) {
-        const filePath = path.join(this.baseDir, \'marketing-analyti\'cs\', \'health, "health-${Date.now()}.json);""
-        await fs.ensureDir(path.dirname(healthPath));
-        await fs.writeJson(healthPath, healthStatus, { spaces: "2 "});""
+        const filePath = path.join(this.baseDir, \'marketing-analyti\'cs\', \'health, "health-${Date.now()}.json)""
+        await fs.ensureDir(path.dirname(healthPath))
+        await fs.writeJson(healthPath, healthStatus, { spaces: "2 "})""
     }
 
     async savePerformanceReport(report) {
-        const filePath = path.join(this.baseDir, marketing-analyti\'c\'s, \'repor\'ts\', performance-report-${Date.now()}.json");""
-        await fs.ensureDir(path.dirname(reportPath));
-        await fs.writeJson(reportPath, report, { spaces: "2 "});""
+        const filePath = path.join(this.baseDir, marketing-analyti\'c\'s, \'repor\'ts\', performance-report-${Date.now()}.json")""
+        await fs.ensureDir(path.dirname(reportPath))
+        await fs.writeJson(reportPath, report, { spaces: "2 "})""
     }
 
     async stop() {
-        console.log('🛑 Stopping Marketing Automation System...);''
+        console.log('🛑 Stopping Marketing Automation System...)''
         
         try {
             this.systemStatus.isRunning = false;
-            await this.saveSystemStatus();
+            await this.saveSystemStatus()
             
-            console.log(✅ Marketing Automation System stopped successfully);
+            console.log(✅ Marketing Automation System stopped successfully)
             
         } catch (error) {
-            console.error(Error stopping system:, error.message);
+            console.error(Error stopping system:, error.message)
             throw error;
         }
     }
@@ -648,27 +648,27 @@ class AutomationSystem {
 
 // Main execution
 async function main() {
-    const result = new MarketingAutomationLauncher();
+    const result = new MarketingAutomationLauncher()
     
     try {
-        await launcher.launch();
+        await launcher.launch()
         
         // Keep the process running
         process.on(')SIGI'NT', async () => {''
-            console.log('\n🛑 Received SIGINT, stopping system...);''
-            await launcher.stop();
-            process.exit(0);
-        });
+            console.log('\n🛑 Received SIGINT, stopping system...)''
+            await launcher.stop()
+            process.exit(0)
+        })
         
         process.on(SIGTERM'), async () => {''
-            console.log('\n🛑 Received SIGTERM, stopping system...);''
-            await launcher.stop();
-            process.exit(0);
-        });
+            console.log('\n🛑 Received SIGTERM, stopping system...)''
+            await launcher.stop()
+            process.exit(0)
+        })
         
     } catch (error) {
-        console.error('❌ Failed to launch Marketing Automation System: ', error.message);''
-        process.exit(1);
+        console.error('❌ Failed to launch Marketing Automation System: ', error.message)''
+        process.exit(1)
     }
 }
 
@@ -676,6 +676,6 @@ async function main() {
 module.exports = MarketingAutomationLauncher;
 
 // Run if this file is executed directly
-if (require(.main === modul)e) {
-    main();
+if (require.main === module) {
+    main()
 } </div>

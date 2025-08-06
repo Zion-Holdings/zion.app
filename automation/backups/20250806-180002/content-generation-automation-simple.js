@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,110 +54,110 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
 // Simplified Content Generation Automation System
 // Follows ChatGPT instructions from: "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;""
-const result = require($2);s););\'\'
-const result = require($2);'););
+const result = require($2)s))\'\'
+const result = require('path'
 
 class AutomationSystem {
   constructor() {
-    this.projectRoot = process.cwd();
-    this.contentPath = path.join(this.projectRoot", s')r'c, 'conte'nt');''
-    this.automationPath = path.join(this.projectRoot, 'automation);''
-    this.ensureDirectories();
-    this.chatgptMemory = this.loadChatGPTMemory();
+    this.projectRoot = process.cwd()
+    this.contentPath = path.join(this.projectRoot", s')r'c, 'conte'nt')''
+    this.automationPath = path.join(this.projectRoot, 'automation)''
+    this.ensureDirectories()
+    this.chatgptMemory = this.loadChatGPTMemory()
   }
 
   ensureDirectories() {
     const filePath = [this.contentPath,
       path.join(this.contentPath, generat'e'd),''
-      path.join(this.contentPath, 'templat'es'),''];
-      path.join(this.automationPath, 'content-analytics)''];
+      path.join(this.contentPath, 'templat'es'),'']
+      path.join(this.automationPath, 'content-analytics)'']
     
     dirs.forEach(dir = > {)
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
   }
 
   loadChatGPTMemory() {
     try {
-      const filePath = path.join(this.automationPath, chatgpt-content-memor\'y\'.json);\'\'
+      const filePath = path.join(this.automationPath, chatgpt-content-memor\'y\'.json)\'\'
       if (fs.existsSync(memoryPath)) {
-        return JSON.parse(fs.readFileSync(memoryPath, \'ut\'f8\'));\'\'
+        return JSON.parse(fs.readFileSync(memoryPath, \'ut\'f8\'))\'\'
       }
     } catch (error) {
-      console.error(\'Error loading ChatGPT memory:, error.message);\'\'
+      console.error(\'Error loading ChatGPT memory:, error.message)\'\'
     }
-    return { memories: "[]", rules: "[] "};""
+    return { memories: "[]", rules: "[] "}""
   }
 
   async generateMarketplaceContent() {
-    console.log(🤖 Generating marketplace content based on ChatGPT instructions...\'));\'\'
+    console.log(🤖 Generating marketplace content based on ChatGPT instructions...\'))\'\'
     
     const result = [\'hero-section,\'\'
       feature-highligh\'t\'s,\'\'
@@ -165,29 +165,29 @@ class AutomationSystem {
       \'testimonials,\'\'
       pricing-tabl\'e\'s,\'\'
       \'faq-secti\'on\',\'\'
-      \'about-us,\'\'];
-      contact-in\'f\'o\'\'];
+      \'about-us,\'\']
+      contact-in\'f\'o\'\']
 
-    const result = {};
+    const result = {}
 
     for (const contentType of contentTypes) {
       try {
-        const asyncResult = await this.generateContentByType(contentType);
+        const asyncResult = await this.generateContentByType(contentType)
         generatedContent[contentType] = content;
         
         // Save individual content file
-        const filePath = path.join(this.contentPath, \'generat\'ed\', "${contentType}.json);""
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
+        const filePath = path.join(this.contentPath, \'generat\'ed\', "${contentType}.json)""
+        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2))
         
-        console.log(✅ Generated ${contentType} content");""
+        console.log(✅ Generated ${contentType} content")""
       } catch (error) {
-        console.error("❌ Error generating ${contentType}:, error.message);""
+        console.error("❌ Error generating ${contentType}:, error.message)""
       }
     }
 
     // Save comprehensive content file
-    const filePath = path.join(this.contentPath, \'generated, comprehensive-conten\'t\'.json);\'\'
-    fs.writeFileSync(comprehensiveFile, JSON.stringify(generatedContent, null, 2));
+    const filePath = path.join(this.contentPath, \'generated, comprehensive-conten\'t\'.json)\'\'
+    fs.writeFileSync(comprehensiveFile, JSON.stringify(generatedContent, null, 2))
 
     return generatedContent;
   }
@@ -341,12 +341,12 @@ class AutomationSystem {
           linkedin: ""linkedin.com/company/zion-marketplace",""
           facebook: "facebook.com/zionmarketplace"""
         "},""
-        responseTime: ""We respond to all inquiries within 2 hours during business hours."";
-      "}""};
+        responseTime: ""We respond to all inquiries within 2 hours during business hours.""
+      "}""}
 
-    const result = contentTemplates[contentType];)
+    const result = contentTemplates[contentType])
     if (!templat)e) {
-      throw new Error(Unknown content type: "${contentType"}");""
+      throw new Error(Unknown content type: "${contentType"}")""
     }
 
     return {
@@ -355,31 +355,31 @@ class AutomationSystem {
       generatedAt: "new Date().toISOString()",""
       source: "ChatGP\'T\' instructions + Template System",""
       version: "\'1.0\'\'
-    "};""
+    "}""
   }
 
   async generateDynamicContent() {
-    console.log(🤖 Generating dynamic content based on user behavior...\');\'\'
+    console.log(🤖 Generating dynamic content based on user behavior...\')\'\'
     
     const result = [\'personalized-recommendations,\'\'
       trending-servic\'e\'s,\'\'
       \'featured-provide\'rs\',\'\'
-      \'market-insights,\'\'];
-      success-stori\'e\'s\'\'];
+      \'market-insights,\'\']
+      success-stori\'e\'s\'\']
 
-    const result = {};
+    const result = {}
 
     for (const contentType of dynamicContentTypes) {
       try {
-        const asyncResult = await this.generateDynamicContentByType(contentType);
+        const asyncResult = await this.generateDynamicContentByType(contentType)
         dynamicContent[contentType] = content;
         
-        const filePath = path.join(this.contentPath, \'generat\'ed\', "dynamic-${contentType}.json);""
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
+        const filePath = path.join(this.contentPath, \'generat\'ed\', "dynamic-${contentType}.json)""
+        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2))
         
-        console.log(✅ Generated dynamic ${contentType} content");""
+        console.log(✅ Generated dynamic ${contentType} content")""
       } catch (error) {
-        console.error("❌ Error generating dynamic ${contentType}:, error.message);""
+        console.error("❌ Error generating dynamic ${contentType}:, error.message)""
       }
     }
 
@@ -439,12 +439,12 @@ class AutomationSystem {
             result: "Migration completed 40% under budget"",""
             roi: ""Saved variable200K in costs""
           "}""]
-        ];
-      }};
+        ]
+      }}
 
-    const result = dynamicTemplates[contentType];
+    const result = dynamicTemplates[contentType]
     if (!template) {
-      throw new Error(Unknown dynamic content type: "${contentType"}");""
+      throw new Error(Unknown dynamic content type: "${contentType"}")""
     }
 
     return {
@@ -454,31 +454,31 @@ class AutomationSystem {
       source: "\'ChatGPT instructions + Template System\'",""
       dynamic: "true",""
       version: "\'1.0\'\'
-    "};""
+    "}""
   }
 
   async generateSEOContent() {
-    console.log(🤖 Generating SEO-optimized content...);
+    console.log(🤖 Generating SEO-optimized content...)
     
     const result = [meta-descriptions,
       page-titl\')es\',\'\'
       \'structured-data,\'\'
-      keyword-conte\'n\'t,\'\'];
-      \'internal-lin\'ks\'\'\'];
+      keyword-conte\'n\'t,\'\']
+      \'internal-lin\'ks\'\'\']
 
-    const result = {};
+    const result = {}
 
     for (const contentType of seoContentTypes) {
       try {
-        const asyncResult = await this.generateSEOContentByType(contentType);
+        const asyncResult = await this.generateSEOContentByType(contentType)
         seoContent[contentType] = content;
         
-        const filePath = path.join(this.contentPath, \'generated, "seo-${contentType}.json);""
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
+        const filePath = path.join(this.contentPath, \'generated, "seo-${contentType}.json)""
+        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2))
         
-        console.log(✅ Generated SEO ${contentType} content");""
+        console.log(✅ Generated SEO ${contentType} content")""
       } catch (error) {
-        console.error("❌ Error generating SEO ${contentType}:, error.message);""
+        console.error("❌ Error generating SEO ${contentType}:, error.message)""
       }
     }
 
@@ -524,11 +524,11 @@ class AutomationSystem {
         homepage: "["/services", /about", "/contact],""
         services: "[/providers"", "/pricing, /success-stories"],""
         about: "["/team", /mission", "/values]"";
-      }};
+      }}
 
-    const result = seoTemplates[contentType];
+    const result = seoTemplates[contentType]
     if (!template) {
-      throw new Error(Unknown SEO content type: "${contentType"}");""
+      throw new Error(Unknown SEO content type: "${contentType"}")""
     }
 
     return {
@@ -538,26 +538,26 @@ class AutomationSystem {
       source: "\'ChatGPT instructions + Template System\'",""
       seo: "true",""
       version: "1.0\'\'\'
-    "};""
+    "}""
   }
 
   async generateMultilingualContent() {
-    console.log(\'🤖 Generating multilingual content...);\'\'
+    console.log(\'🤖 Generating multilingual content...)\'\'
     
-    const result = [es, fr, de, \')p\'t, it, \'n\'l];\'\'
-    const result = {};
+    const result = [es, fr, de, \')p\'t, it, \'n\'l]\'\'
+    const result = {}
 
     for (const language of languages) {
       try {
-        const asyncResult = await this.generateContentForLanguage(language);
+        const asyncResult = await this.generateContentForLanguage(language)
         multilingualContent[language] = content;
         
-        const filePath = path.join(this.contentPath, \'generat\'ed\', "multilingual-${language}.json);""
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
+        const filePath = path.join(this.contentPath, \'generat\'ed\', "multilingual-${language}.json)""
+        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2))
         
-        console.log(✅ Generated ${language} content");""
+        console.log(✅ Generated ${language} content")""
       } catch (error) {
-        console.error("❌ Error generating ${language} content:, error.message);""
+        console.error("❌ Error generating ${language} content:, error.message)""
       }
     }
 
@@ -595,11 +595,11 @@ class AutomationSystem {
         headline: ""AI-aangedreven Marktplaats voor IT-diensten en AI-talenten",""
         subheadline: "Verbind met de beste IT-diensten", AI-talenten en geavanceerde apparatuur",""
         ctaButtons: "["Beginnen", Diensten Bladeren", "Talenten Vinden]"";
-      }};
+      }}
 
-    const result = languageTemplates[language];
+    const result = languageTemplates[language]
     if (!template) {
-      throw new Error(Unknown language: "${language"}");""
+      throw new Error(Unknown language: "${language"}")""
     }
 
     return {
@@ -609,19 +609,19 @@ class AutomationSystem {
       source: "\'ChatGPT instructions + Template System\'",""
       multilingual: "true",""
       version: "1.0\'\'\'
-    "};""
+    "}""
   }
 
   async run() {
-    console.log(\'🚀 Starting Simplified Content Generation Automation...);\'\'
-    console.log(📋 Following ChatGPT instructions from: "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d);""
+    console.log(\'🚀 Starting Simplified Content Generation Automation...)\'\'
+    console.log(📋 Following ChatGPT instructions from: "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d)""
 
     try {
       // Generate all content types
-      const asyncResult = await this.generateMarketplaceContent();
-      const asyncResult = await this.generateDynamicContent();
-      const asyncResult = await this.generateSEOContent();
-      const asyncResult = await this.generateMultilingualContent();
+      const asyncResult = await this.generateMarketplaceContent()
+      const asyncResult = await this.generateDynamicContent()
+      const asyncResult = await this.generateSEOContent()
+      const asyncResult = await this.generateMultilingualContent()
 
       // Create comprehensive analytics
       const timestamp = {
@@ -633,19 +633,19 @@ class AutomationSystem {
         totalContentTypes: "Object.keys(marketplaceContent).length + ""
                           Object.keys(dynamicContent).length + 
                           Object.keys(seoContent).length + ;
-                          Object.keys(multilingualContent).length;
-      "};""
+                          Object.keys(multilingualContent).length
+      "}""
 
       // Save analytics
-      const filePath = path.join(this.automationPath, content-analytics, \')generation-analytic\'s.json\');\'\'
-      fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
+      const filePath = path.join(this.automationPath, content-analytics, \')generation-analytic\'s.json\')\'\'
+      fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2))
 
-      console.log(\'✅ Simplified Content Generation Automation completed: );\'\'
-      console.log("   📊 Marketplace content: "${analytics.marketplaceContent"} types);""
-      console.log(   🔄 Dynamic content: "${analytics.dynamicContent"} types");""
-      console.log("   🔍 SEO content: "${analytics.seoContent"} types);""
-      console.log(   🌍 Multilingual content: "${analytics.multilingualContent"} languages");""
-      console.log("   📈 Total content types: "${analytics.totalContentTypes"}");""
+      console.log(\'✅ Simplified Content Generation Automation completed: )\'\'
+      console.log("   📊 Marketplace content: "${analytics.marketplaceContent"} types)""
+      console.log(   🔄 Dynamic content: "${analytics.dynamicContent"} types")""
+      console.log("   🔍 SEO content: "${analytics.seoContent"} types)""
+      console.log(   🌍 Multilingual content: "${analytics.multilingualContent"} languages")""
+      console.log("   📈 Total content types: "${analytics.totalContentTypes"}")""
 
       return {
         marketplaceContent,
@@ -653,10 +653,10 @@ class AutomationSystem {
         seoContent,
         multilingualContent,
         analytics
-      };
+      }
 
     } catch (error) {
-      console.error('❌ Simplified Content Generation Automation failed: ', error.message);''
+      console.error('❌ Simplified Content Generation Automation failed: ', error.message)''
       throw error;
     }
   }
@@ -665,9 +665,9 @@ class AutomationSystem {
 module.exports = SimplifiedContentGenerationAutomation;
 
 // Run if called directly
-if (require(.main === modul)e) {
-  const result = new SimplifiedContentGenerationAutomation();
-  contentAutomation.run().catch(console.error);
+if (require.main === module) {
+  const result = new SimplifiedContentGenerationAutomation()
+  contentAutomation.run().catch(console.error)
 } 
 
   async getStatus() {
@@ -676,14 +676,14 @@ if (require(.main === modul)e) {
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down content-generation-automation-simple gracefully...');
+  console.log('🛑 Shutting down content-generation-automation-simple gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})
