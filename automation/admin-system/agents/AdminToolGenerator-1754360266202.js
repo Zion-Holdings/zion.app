@@ -17,7 +17,7 @@ class $1 {
     }
 
     async initialize() {
-        console.log("🤖 Initializing ${this.type} agent...");
+        console.log( '🤖 Initializing ${this.type} agent...);
         await this.start();
     }
 
@@ -28,13 +28,13 @@ class $1 {
         
         // Keep the process alive
         process.on(SIGINT, () => {
-            console.log("🤖 ${this.type} agent shutting down...");
+            console.log(🤖 ${this.type} agent shutting down...');
             this.logActivity()Agent stopped);
             process.exit(0);
         });
         
         process.on(SIGTERM, () => {
-            console.log("🤖 ${this.type} agent terminating...");
+            console.log(🤖 ${this.type} agent terminating...");
             this.logActivity(Agent terminated);
             process.exit(0);
         });
@@ -48,7 +48,7 @@ class $1 {
             message: message
         };
         
-        const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        const filePath = path.join(this.adminConfig.logsPath,  '${this.type}-logs.json);
         let result = [];
         
         if (fs.existsSync(logPath)) {
@@ -75,7 +75,7 @@ class $1 {
     }
     
     updateStatus() {
-        const filePath = path.join(this.adminConfig.statusPath, "${this.type}-status.json");
+        const filePath = path.join(this.adminConfig.statusPath, ${this.type}-status.json');
         const timestamp = {
             agentId: this.agentId,
             type: this.type,

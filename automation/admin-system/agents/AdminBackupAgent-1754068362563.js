@@ -17,7 +17,7 @@ class $1 {
     }
 
     async initialize() {
-        console.log("🤖 Initializing ${this.type} agent...");
+        console.log( '🤖 Initializing ${this.type} agent...);
         await this.start();
     }
 
@@ -35,7 +35,7 @@ class $1 {
             message: message
         };
         
-        const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        const filePath = path.join(this.adminConfig.logsPath, ${this.type}-logs.json');
         let result = [];
         
         if (fs.existsSync(logPath)) {

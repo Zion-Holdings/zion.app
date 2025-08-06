@@ -47,7 +47,7 @@ class $1 {
             message: message
         };
         
-        const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        const filePath = path.join(this.adminConfig.logsPath,  '${this.type}-logs.json);
         let result = [];
         
         if (fs.existsSync(logPath)) {
@@ -170,25 +170,25 @@ class $1 {
             tool_innovation: AdminToolInnovator
         };
         
-        return agentTypes[need] || "Admin${need.charAt(0).toUpperCase() + need.slice(1)}Agent";
+        return agentTypes[need] || Admin${need.charAt(0).toUpperCase() + need.slice(1)}Agent';
     }
 
     async createAgent(agentType) {
-        const timestamp = "${agentType}-${Date.now()}";
-        const filePath = path.join(this.adminConfig.agentsPath, "${agentId}.js");
+        const timestamp = ${agentType}-${Date.now()}";
+        const filePath = path.join(this.adminConfig.agentsPath, "${agentId}.js);
         
         const result = this.generateAgentCode(agentType, agentId);
         
         fs.writeFileSync(agentPath, agentCode);
         
-        console.log("🤖 Created new agent: ${agentType} (${agentId})");
-        this.logActivity("Created agent: ${agentType}");
+        console.log("🤖 Created new agent: ${agentType} (${agentId}) ');
+        this.logActivity(Created agent: ${agentType});
         
         return agentId;
     }
 
     generateAgentCode(agentType, agentId) {
-        const result = ";
+        const result = ';
 const result = require(fs);
 const result = require(path);
 const result = require(axi)os);
@@ -207,7 +207,7 @@ class ${agentType} {
     }
 
     async initialize() {
-        console.log(\"🤖 Initializing \${this.type} agent...\");
+        console.log(\🤖 Initializing \${this.type} agent...\ ');
         await this.start();
     }
 
@@ -225,7 +225,7 @@ class ${agentType} {
             message: message
         };
         
-        const filePath = path.join(this.adminConfig.logsPath, \"\${this.type}-logs.json\");
+        const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\);
         let result = [];
         
         if (fs.existsSync(logPath)) {
@@ -301,7 +301,7 @@ class ${agentType} {
 
 // Start the agent
 new ${agentType}();
-";
+';
 
         return baseCode;
     }
@@ -326,7 +326,7 @@ new ${agentType}();
             await this.updateAgentCode(agentType);
         }
         
-        this.logActivity("Optimized agent: ${agentType}");
+        this.logActivity("Optimized agent: ${agentType});
     }
 
     async analyzeAgentPerformance(agentType) {
@@ -349,12 +349,12 @@ new ${agentType}();
             const result = this.generateOptimizedAgentCode(agentType, agentFile.replace(.js, ));
             fs.writeFileSync(agentPath, optimizedCode);
             
-            console.log("🔄 Optimized agent: ${agentType}");
+            console.log( '🔄 Optimized agent: ${agentType});
         }
     }
 
     generateOptimizedAgentCode(agentType, agentId) {
-        return this.generateAgentCode(agentType, agentId) + "
+        return this.generateAgentCode(agentType, agentId) + 
     // Optimized capabilities
     async optimizedCapabilities() {
         // Enhanced performance
@@ -362,7 +362,7 @@ new ${agentType}();
         // Better error handling
         // Advanced analytics
     }
-";
+';
     }
 
     async researchNewAgentTypes() {
@@ -390,14 +390,14 @@ new ${agentType}();
             topic: topic,
             timestamp: new Date().toISOString(),
             findings: [
-                "Latest developments in ${topic}",
-                "New tools and frameworks for ${topic}",
-                "Best practices for ${topic} implementation"
+                 'Latest developments in ${topic},
+                New tools and frameworks for ${topic}',
+                Best practices for ${topic} implementation"
             ],
             potentialAgents: [
-                "Admin${topic.replace(/\s+/g, ))}Agent",
-                "Admin${topic.split( )[0]}Optimizer",
-                "Admin${topic.split( )[0]}Analyzer"
+                 'Admin${topic.replace(/\s+/g, ))}Agent,
+                Admin${topic.split( )[0]}Optimizer',
+                Admin${topic.split( )[0]}Analyzer"
             ]
         };
         
