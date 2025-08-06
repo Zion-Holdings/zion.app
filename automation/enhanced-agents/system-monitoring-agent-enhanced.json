@@ -1,0 +1,22 @@
+{
+  "id": "system-monitoring-agent",
+  "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/monitoring-agents/system-monitoring-agent.js",
+  "name": "Unknown Agent",
+  "type": "general-purpose",
+  "intelligenceLevel": 0.5,
+  "capabilities": [
+    "adaptive-learning",
+    "pattern-recognition",
+    "predictive-analysis",
+    "collaborative-intelligence",
+    "creative-problem-solving",
+    "autonomous-decision-making",
+    "continuous-improvement",
+    "cross-domain-knowledge",
+    "strategic-thinking"
+  ],
+  "diversificationStrategies": [],
+  "status": "enhanced",
+  "lastEnhanced": "2025-08-06T03:44:03.826Z",
+  "enhancementVersion": "2.0"
+}
