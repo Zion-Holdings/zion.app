@@ -6,7 +6,7 @@ try {
 } catch (error) {
   console.error('Failed to require fs:', error);
   process.exit(1);
-}.promises;
+const fs = require('fs').promises;
 let path;
 try {
   path = require('path');
