@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,29 +54,29 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require($2);'););
-const path = require($2);'););
-const { spawn, exec } = require(('child_process)');
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}const fs = require('path';
+const path = require('path';
+const { spawn, exec } = require(('child_process)')
 
 class SyncEnsurance {
   constructor() {
@@ -84,7 +84,7 @@ class SyncEnsurance {
     this.version = '1.0';
     this.status = 'running';
     this.checkInterval = 200; // 30 seconds
-    this.processes = new Map();
+    this.processes = new Map()
     this.config = {
       syncScripts: ['master-sync-controller.js',
         'comprehensive-sync-orchestrator.js',
@@ -93,52 +93,52 @@ class SyncEnsurance {
       maxRestartAttempts: 5,
       restartDelay: 3000, // 10 seconds
       healthCheckInterval: 3000 // 1 minute
-    };
+    }
   }
 
   async initialize() {
-    console.log('🚀 Initializing Sync Ensurance...');
+    console.log('🚀 Initializing Sync Ensurance...')
     
     try {
       // Start all sync processes
-      this.startAllSyncProcesses();
+      this.startAllSyncProcesses()
       
       // Start monitoring
-      this.startMonitoring();
-      this.startHealthChecks();
+      this.startMonitoring()
+      this.startHealthChecks()
       
       this.status = 'running';
-      console.log('✅ Sync Ensurance initialized successfully');
+      console.log('✅ Sync Ensurance initialized successfully')
       
     } catch (error) {
-      console.error('❌ Error initializing Sync Ensurance: ', error);
+      console.error('❌ Error initializing Sync Ensurance: ', error)
       this.status = 'error';
       throw error;
     }
   }
 
   startAllSyncProcesses() {
-    console.log('⚡ Starting all sync processes...');
+    console.log('⚡ Starting all sync processes...')
     
     this.config.syncScripts.forEach(script => {)
-      this.startSyncProcess(script);
-    });
+      this.startSyncProcess(script)
+    })
   }
 
   startSyncProcess(scriptName) {
-    console.log(`🔄 Starting ${scriptName}...`);
+    console.log(`🔄 Starting ${scriptName}...`)
     
-    const scriptPath = path.join(__dirname, scriptName);
+    const scriptPath = path.join(__dirname, scriptName)
     
     if (!fs.existsSync(scriptPath)) {
-      console.warn(`⚠️  Script not found: ${scriptPath}`);
+      console.warn(`⚠️  Script not found: ${scriptPath}`)
       return;
     }
     
     const process = spawn('node', [scriptPath], {
       stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false);
-    });
+      detached: false)
+    })
     
     this.processes.set(scriptName, {
       process,)
@@ -146,94 +146,94 @@ class SyncEnsurance {
       startTime: new Date().toISOString(),
       restartCount: 0,
       lastHealthCheck: new Date().toISOString()
-    });
+    })
     
-    this.setupProcessHandlers(scriptName, process);
+    this.setupProcessHandlers(scriptName, process)
     
-    console.log(`✅ ${scriptName} started with PID: ${process.pid}`);
+    console.log(`✅ ${scriptName} started with PID: ${process.pid}`)
   }
 
   setupProcessHandlers(scriptName, process) {
     process.stdout.on('data', (data) => {
-      const output = data.toString();
-      console.log(`[${scriptName}] ${output.trim()}`);
-    });
+      const output = data.toString()
+      console.log(`[${scriptName}] ${output.trim()}`)
+    })
     
     process.stderr.on('data', (data) => {
-      const output = data.toString();
-      console.error(`[${scriptName} ERROR] ${output.trim()}`);
-    });
+      const output = data.toString()
+      console.error(`[${scriptName} ERROR] ${output.trim()}`)
+    })
     
     process.on('close', (code) => {
-      console.log(`[${scriptName}] Process exited with code ${code}`);
-      this.handleProcessExit(scriptName, code);
-    });
+      console.log(`[${scriptName}] Process exited with code ${code}`)
+      this.handleProcessExit(scriptName, code)
+    })
     
     process.on('error', (error) => {
-      console.error(`[${scriptName}] Process error: `, error);
-      this.handleProcessError(scriptName, error);
-    });
+      console.error(`[${scriptName}] Process error: `, error)
+      this.handleProcessError(scriptName, error)
+    })
   }
 
   handleProcessExit(scriptName, code) {
-    const processInfo = this.processes.get(scriptName);
+    const processInfo = this.processes.get(scriptName)
     if (processInfo) {
-      console.log(`🔄 ${scriptName} exited with code ${code}, restarting...`);
+      console.log(`🔄 ${scriptName} exited with code ${code}, restarting...`)
       
       if (processInfo.restartCount < this.config.maxRestartAttempts) {
         setTimeout(() => {
-          this.restartProcess(scriptName);
-        }, this.config.restartDelay);
+          this.restartProcess(scriptName)
+        }, this.config.restartDelay)
       } else {
-        console.error(`❌ ${scriptName} exceeded max restart attempts`);
+        console.error(`❌ ${scriptName} exceeded max restart attempts`)
       }
     }
   }
 
   handleProcessError(scriptName, error) {
-    console.error(`❌ ${scriptName} process error: `, error.message);
-    this.handleProcessExit(scriptName, 1);
+    console.error(`❌ ${scriptName} process error: `, error.message)
+    this.handleProcessExit(scriptName, 1)
   }
 
   restartProcess(scriptName) {
-    const processInfo = this.processes.get(scriptName);
+    const processInfo = this.processes.get(scriptName)
     if (processInfo) {
       // Kill existing process if still running
       if (processInfo.process && !processInfo.process.killed) {
-        processInfo.process.kill('SIGTERM');
+        processInfo.process.kill('SIGTERM')
       }
       
       // Increment restart count
       processInfo.restartCount++;
       
       // Start new process
-      this.startSyncProcess(scriptName);
+      this.startSyncProcess(scriptName)
       
-      console.log(`✅ ${scriptName} restarted (attempt ${processInfo.restartCount})`);
+      console.log(`✅ ${scriptName} restarted (attempt ${processInfo.restartCount})`)
     }
   }
 
   startMonitoring() {
-    console.log('👀 Starting monitoring...');
+    console.log('👀 Starting monitoring...')
     
     setInterval(() => {
-      this.checkProcessHealth();
-    }, this.checkInterval);
+      this.checkProcessHealth()
+    }, this.checkInterval)
   }
 
   startHealthChecks() {
-    console.log('🏥 Starting health checks...');
+    console.log('🏥 Starting health checks...')
     
     setInterval(() => {
-      this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.performHealthCheck()
+    }, this.config.healthCheckInterval)
   }
 
   checkProcessHealth() {
     for (const [scriptName, processInfo] of this.processes) {
       if (processInfo.process && processInfo.process.killed) {
-        console.log(`⚠️  ${scriptName} process is dead, restarting...`);
-        this.restartProcess(scriptName);
+        console.log(`⚠️  ${scriptName} process is dead, restarting...`)
+        this.restartProcess(scriptName)
       }
     }
   }
@@ -254,13 +254,13 @@ class SyncEnsurance {
         ])
       ),
       memory: process.memoryUsage(),
-      uptime: process.uptime();
-    };
+      uptime: process.uptime()
+    }
     
-    const healthPath = path.join(__dirname, 'sync-ensurance-health.json');
-    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
+    const healthPath = path.join(__dirname, 'sync-ensurance-health.json')
+    fs.writeFileSync(healthPath, JSON.stringify(health, null, 2))
     
-    console.log('📊 Generated sync ensurance health report');
+    console.log('📊 Generated sync ensurance health report')
   }
 
   getStatus() {
@@ -270,45 +270,45 @@ class SyncEnsurance {
       status: this.status,
       processes: this.processes.size,
       timestamp: new Date().toISOString()
-    };
+    }
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Sync Ensurance...');
+    console.log('🛑 Shutting down Sync Ensurance...')
     
     // Stop all processes
     for (const [scriptName, processInfo] of this.processes) {
       if (processInfo.process && !processInfo.process.killed) {
-        processInfo.process.kill('SIGTERM');
-        console.log(`🛑 Stopped ${scriptName}`);
+        processInfo.process.kill('SIGTERM')
+        console.log(`🛑 Stopped ${scriptName}`)
       }
     }
     
     this.status = 'stopped';
-    console.log('✅ Sync Ensurance shutdown complete');
+    console.log('✅ Sync Ensurance shutdown complete')
   }
 }
 
 // Auto-start if run directly
-if (require(.main === modul)e) {
-  const ensurance = new SyncEnsurance();
+if (require.main === module) {
+  const ensurance = new SyncEnsurance()
   
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
-    await ensurance.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGINT, shutting down...')
+    await ensurance.shutdown()
+    process.exit(0)
+  })
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
-    await ensurance.shutdown();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGTERM, shutting down...')
+    await ensurance.shutdown()
+    process.exit(0)
+  })
   
   ensurance.initialize().catch(error => {)
-    console.error('❌ Sync Ensurance initialization failed: ', error);
-    process.exit(1);
-  });
+    console.error('❌ Sync Ensurance initialization failed: ', error)
+    process.exit(1)
+  })
 }
 
 module.exports = SyncEnsurance;

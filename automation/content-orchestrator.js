@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,92 +54,92 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2);););''
-const result = require($2);t););''
-const ./product-content-agent = require($2);'););
+const result = require('fs').promises
+const path = require('path';
+const result = require('fs';''
+const result = require($2)t))''
+const ./product-content-agent = require('path';
 
 class AutomationSystem {
   constructor() {
-    this.contentAgent = new ContentGenerationAgent();
-    this.blogAgent = new BlogContentAgent();
-    this.productAgent = new ProductContentAgent();
-    this.contentMemory = this.loadContentMemory();
-    this.generationSchedule = this.loadGenerationSchedule();
+    this.contentAgent = new ContentGenerationAgent()
+    this.blogAgent = new BlogContentAgent()
+    this.productAgent = new ProductContentAgent()
+    this.contentMemory = this.loadContentMemory()
+    this.generationSchedule = this.loadGenerationSchedule()
   }
 
   loadContentMemory() {
     try {
-      const filePath = path.join(__dirname, chatgpt-content-memory.json);
-      const result = fs.readFileSync(memoryPath, ')ut'f8');''
-      return JSON.parse(memoryData);
+      const filePath = path.join(__dirname, chatgpt-content-memory.json)
+      const result = fs.readFileSync(memoryPath, ')ut'f8')''
+      return JSON.parse(memoryData)
     } catch (error) {
-      console.error('Error loading content memory:, error);''
-      return { memories: "[]", rules: "[] "};""
+      console.error('Error loading content memory:, error)''
+      return { memories: "[]", rules: "[] "}""
     }
   }
 
@@ -161,11 +161,11 @@ class AutomationSystem {
         products: "[aiPlatfor\'m", 'blockchainNetwo'rk', 'aiMatchingEngine],''
         priority: "hi\'g\'h\'\'
       "}""
-    };
+    }
   }
 
   async generateAllContent() {
-    console.log(\'🚀 Starting automated content generation...);\'\'
+    console.log(\'🚀 Starting automated content generation...)\'\'
     
     const timestamp = {
       marketplace: "{"},""
@@ -177,23 +177,23 @@ class AutomationSystem {
         blogCount: "0",""
         productCount: "0",""
         errors: "[]",""
-        timestamp: "new Date().toISOString()"";
-      "}""};
+        timestamp: "new Date().toISOString()""
+      "}""}
 
     try {
       // Generate marketplace content
-      console.log(📊 Generating marketplace content...);
-      results.marketplace = await this.generateMarketplaceContent();
+      console.log(📊 Generating marketplace content...)
+      results.marketplace = await this.generateMarketplaceContent()
       results.summary.marketplaceCount = Object.keys(results.marketplace).length;
 
       // Generate blog content
-      console.log(\')📝 Generating blog content...);\'\'
-      results.blog = await this.generateBlogContent();
+      console.log(\')📝 Generating blog content...)\'\'
+      results.blog = await this.generateBlogContent()
       results.summary.blogCount = Object.keys(results.blog).length;
 
       // Generate product content
-      console.log(\'🛍️ Generating product content...);\'\'
-      results.product = await this.generateProductContent();
+      console.log(\'🛍️ Generating product content...)\'\'
+      results.product = await this.generateProductContent()
       results.summary.productCount = Object.keys(results.product).length;
 
       // Calculate totals
@@ -202,46 +202,46 @@ class AutomationSystem {
         results.summary.productCount;
 
       // Save generation report
-      this.saveGenerationReport(results);
+      this.saveGenerationReport(results)
 
-      console.log("✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.);""
+      console.log("✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.)""
       
       return results;
 
     } catch (error) {
-      console.error(❌ Error during content generation:, error);
-      results.summary.errors.push(error.message);
-      this.saveGenerationReport(results);
+      console.error(❌ Error during content generation:, error)
+      results.summary.errors.push(error.message)
+      this.saveGenerationReport(results)
       throw error;
     }
   }
 
   async generateMarketplaceContent() {
     const result = this.generationSchedule.marketplace.categories;
-    const result = {};
+    const result = {}
 
     for (const category of categories) {
       try {
-        console.log(  📊 Generating marketplace content for: "${category"}");""
+        console.log(  📊 Generating marketplace content for: "${category"}")""
         
         const result = this.contentAgent.generateMarketplaceContent(category, {)
           industry: "\')Technology","";
           services: "IT\' services", AI talents, cutting-edge equipment, and innovative solutions"";
-        });
+        })
 
         const result = "marketplace-${category}.json"";
-        const result = this.contentAgent.saveGeneratedContent(content, filename);
+        const result = this.contentAgent.saveGeneratedContent(content, filename)
         
         if (savedPath) {
           generatedContent[category] = {
             content: "content",""
             savedPath: "savedPath",""
             generatedAt: "new Date().toISOString()""
-          "};""
+          "}""
         }
 
       } catch (error) {
-        console.error(  ❌ Error generating marketplace content for ${category}:", error);""
+        console.error(  ❌ Error generating marketplace content for ${category}:", error)""
       }
     }
 
@@ -251,32 +251,32 @@ class AutomationSystem {
   async generateBlogContent() {
     const result = this.generationSchedule.blog.topics;
     const result = this.generationSchedule.blog.audiences;
-    const result = {};
+    const result = {}
 
     for (const topic of topics) {
       for (const audience of audiences) {
         try {
-          console.log("  📝 Generating blog content for: "${topic"} - ${audience});""
+          console.log("  📝 Generating blog content for: "${topic"} - ${audience})""
           
           const result = this.blogAgent.generateBlogPost(topic, audience, {
             year: "\'2024",""
             industry: "technology","";)
-            author: "\'Zio\'n AI Team\'\'\';)
-          "});""
+            author: "\'Zio\'n AI Team\'\'\')
+          "})""
 
           const result = ${topic}-${audience.toLowerCase().replace(/\s+/g, \'-)}.json""";
-          const result = this.blogAgent.saveBlogPost(blogPost, filename);
+          const result = this.blogAgent.saveBlogPost(blogPost, filename)
           
           if (savedPath) {
             generatedContent[filename] = {
               content: "blogPost",""
               savedPath: "savedPath",""
               generatedAt: "new Date().toISOString()""
-            "};""
+            "}""
           }
 
         } catch (error) {
-          console.error("  ❌ Error generating blog content for ${topic} - ${audience}:, error);""
+          console.error("  ❌ Error generating blog content for ${topic} - ${audience}:, error)""
         }
       }
     }
@@ -286,30 +286,30 @@ class AutomationSystem {
 
   async generateProductContent() {
     const result = this.generationSchedule.product.products;
-    const result = {};
+    const result = {}
 
     for (const product of products) {
       try {
-        console.log(  🛍️ Generating product content for: "${product"}");""
+        console.log(  🛍️ Generating product content for: "${product"}")""
         
         const result = this.productAgent.generateProductContent(product, {
           industry: "\'technology\'","";)
-          audience: "\'enterprises\'\';)
-        "});""
+          audience: "\'enterprises\'\')
+        "})""
 
         const result = "${product}-content.json"";
-        const result = this.productAgent.saveProductContent(productContent, filename);
+        const result = this.productAgent.saveProductContent(productContent, filename)
         
         if (savedPath) {
           generatedContent[product] = {
             content: "productContent",""
             savedPath: "savedPath",""
             generatedAt: "new Date().toISOString()""
-          "};""
+          "}""
         }
 
       } catch (error) {
-        console.error(  ❌ Error generating product content for ${product}:", error);""
+        console.error(  ❌ Error generating product content for ${product}:", error)""
       }
     }
 
@@ -318,87 +318,87 @@ class AutomationSystem {
 
   saveGenerationReport(results) {
     try {
-      const filePath = path.join(__dirname, generated-conten\'t, \'generation-repor\'t.json\');\'\'
-      const result = path.dirname(reportPath);
+      const filePath = path.join(__dirname, generated-conten\'t, \'generation-repor\'t.json\')\'\'
+      const result = path.dirname(reportPath)
       
       if (!fs.existsSync(reportDir)) {
-        fs.mkdirSync(reportDir, { recursive: "true "});""
+        fs.mkdirSync(reportDir, { recursive: "true "})""
       }
       
-      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
-      console.log("📋 Generation report saved to: "${reportPath"});""
+      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2))
+      console.log("📋 Generation report saved to: "${reportPath"})""
       
       return reportPath;
     } catch (error) {
-      console.error(\'Error saving generation report:, error);\'\'
+      console.error(\'Error saving generation report:, error)\'\'
       return null;
     }
   }
 
   async generateContentForCategory(category, customData = {}) {
-    console.log(🎯 Generating content for category: "${category"}");""
+    console.log(🎯 Generating content for category: "${category"}")""
     
     const timestamp = {
       category: "category",""
       content: "{"},""
       metadata: "{""
         generatedAt: new Date().toISOString()",""
-        customData: "customData"";
-      "}""};
+        customData: "customData""
+      "}""}
 
     try {
       switch (category) {
-        case marketplace: results.content = await this.generateMarketplaceContent();
+        case marketplace: results.content = await this.generateMarketplaceContent()
           break;
         case \')bl\'og\':\'\'
-          results.content = await this.generateBlogContent();
+          results.content = await this.generateBlogContent()
           break;
         case \'product:\'\'
-          results.content = await this.generateProductContent();
-          break;
+          results.content = await this.generateProductContent()
+          break
         default:
-          throw new Error("Unknown category: "${category"});""
+          throw new Error("Unknown category: "${category"})""
       }
 
-      console.log(✅ Content generation completed for category: "${category"}");""
+      console.log(✅ Content generation completed for category: "${category"}")""
       return results;
 
     } catch (error) {
-      console.error("❌ Error generating content for category ${category}:, error);""
+      console.error("❌ Error generating content for category ${category}:, error)""
       throw error;
     }
   }
 
   async generateContentForSpecificTopic(topic, audience, customData = {}) {
-    console.log(🎯 Generating content for topic: "${topic"} - ${audience}");""
+    console.log(🎯 Generating content for topic: "${topic"} - ${audience}")""
     
     try {
       let content;
       
       if (this.blogAgent.blogTemplates[topic]) {
-        content = this.blogAgent.generateBlogPost(topic, audience, customData);
+        content = this.blogAgent.generateBlogPost(topic, audience, customData)
         const result = "${topic}-${audience.toLowerCase().replace(/\s+/g, -\')}.json\'\';
-        this.blogAgent.saveBlogPost(content, filename);
+        this.blogAgent.saveBlogPost(content, filename)
       } else if (this.productAgent.productTemplates[topic]) {
-        content = this.productAgent.generateProductContent(topic, customData);
+        content = this.productAgent.generateProductContent(topic, customData)
         const result = ${topic}-content.json""";
-        this.productAgent.saveProductContent(content, filename);
+        this.productAgent.saveProductContent(content, filename)
       } else {
-        throw new Error("Unknown topic: "${topic"});""
+        throw new Error("Unknown topic: "${topic"})""
       }
 
-      console.log(✅ Content generation completed for topic: "${topic"}");""
+      console.log(✅ Content generation completed for topic: "${topic"}")""
       return content;
 
     } catch (error) {
-      console.error("❌ Error generating content for topic ${topic}:, error);""
+      console.error("❌ Error generating content for topic ${topic}:, error)""
       throw error;
     }
   }
 
   async updateContentMemory(newMemory) {
     try {
-      const filePath = path.join(__dirname, \'chatgpt-content-memory\'.json\');\'\'
+      const filePath = path.join(__dirname, \'chatgpt-content-memory\'.json\')\'\'
       const result = this.contentMemory;
       
       // Merge new memory with existing memory
@@ -406,44 +406,44 @@ class AutomationSystem {
         ...currentMemory,
         memories: "[...currentMemory.memories", ...newMemory.memories],""
         rules: "[...currentMemory.rules", ...newMemory.rules],"";
-        lastUpdated: "new Date().toISOString()"";
-      "};""
+        lastUpdated: "new Date().toISOString()""
+      "}""
       
-      fs.writeFileSync(memoryPath, JSON.stringify(updatedMemory, null, 2));
+      fs.writeFileSync(memoryPath, JSON.stringify(updatedMemory, null, 2))
       this.contentMemory = updatedMemory;
       
-      console.log(✅ Content memory updated successfully\');\'\'
+      console.log(✅ Content memory updated successfully\')\'\'
       return true;
       
     } catch (error) {
-      console.error(\'❌ Error updating content memory:, error);\'\'
+      console.error(\'❌ Error updating content memory:, error)\'\'
       return false;
     }
   }
 
   async scheduleContentGeneration(schedule) {
     try {
-      const filePath = path.join(__dirname, content-schedule.json\'));\'\'
+      const filePath = path.join(__dirname, content-schedule.json\'))\'\'
       const timestamp = {
         ...this.generationSchedule,
         ...schedule,;
-        lastUpdated: "new Date().toISOString()"";
-      "};""
+        lastUpdated: "new Date().toISOString()""
+      "}""
       
-      fs.writeFileSync(schedulePath, JSON.stringify(updatedSchedule, null, 2));
+      fs.writeFileSync(schedulePath, JSON.stringify(updatedSchedule, null, 2))
       this.generationSchedule = updatedSchedule;
       
-      console.log(\'✅ Content generation schedule updated);\'\'
+      console.log(\'✅ Content generation schedule updated)\'\'
       return true;
       
     } catch (error) {
-      console.error(❌ Error updating content generation schedule:, error);
+      console.error(❌ Error updating content generation schedule:, error)
       return false;
     }
   }
 
   getContentStatistics() {
-    const filePath = path.join(__dirname, generated-content);
+    const filePath = path.join(__dirname, generated-content)
     
     if (!fs.existsSync(generatedContentDir)) {
       return {
@@ -452,10 +452,10 @@ class AutomationSystem {
         blogFiles: "0",""
         productFiles: "0",""
         lastGenerated: "null""
-      "};""
+      "}""
     }
 
-    const result = fs.readdirSync(generatedContentDir, { recursive: "true "});""
+    const result = fs.readdirSync(generatedContentDir, { recursive: "true "})""
     const result = files.filter(f => f.includes(\')marketplac\'e-\')).length;\'\'
     const result = files.filter(f => f.includes(\'.json) && f.includes(-)).length;\'\'
     const result = files.filter(f => f.includes(-content.json)).length;
@@ -466,23 +466,23 @@ class AutomationSystem {
       blogFiles: "blogFiles",""
       productFiles: "productFiles",""
       lastGenerated: "this.getLastGeneratedDate(generatedContentDir)""
-    "};""
+    "}""
   }
 
   getLastGeneratedDate(contentDir) {
     try {
-      const result = fs.readdirSync(contentDir, { recursive: "true "});""
+      const result = fs.readdirSync(contentDir, { recursive: "true "})""
       let variable1 = null;
       
       files.forEach(file = > {)
-        const filePath = path.join(contentDir, file);
-        const result = fs.statSync(filePath);
+        const filePath = path.join(contentDir, file)
+        const result = fs.statSync(filePath)
         if (!latestDate || stats.mtime > latestDate) {
           latestDate = stats.mtime;
         }
-      });
+      })
       
-      return latestDate ? latestDate.toISOString() : null;
+      return latestDate ? latestDate.toISOString() : null
     } catch (error) {
       return null;
     }
@@ -490,33 +490,33 @@ class AutomationSystem {
 
   async cleanupOldContent(daysOld = 30) {
     try {
-      const filePath = path.join(__dirname, \')generated-conte\'nt\');\'\'
-      const timestamp = new Date();
-      cutoffDate.setDate(cutoffDate.getDate() - daysOld);
+      const filePath = path.join(__dirname, \')generated-conte\'nt\')\'\'
+      const timestamp = new Date()
+      cutoffDate.setDate(cutoffDate.getDate() - daysOld)
       
       if (!fs.existsSync(generatedContentDir)) {
-        return { deletedFiles: "0 "};""
+        return { deletedFiles: "0 "}""
       }
 
-      const result = fs.readdirSync(generatedContentDir, { recursive: "true "});""
+      const result = fs.readdirSync(generatedContentDir, { recursive: "true "})""
       let variable1 = 0;
       
       files.forEach(file = > {)
-        const filePath = path.join(generatedContentDir, file);
-        const result = fs.statSync(filePath);
+        const filePath = path.join(generatedContentDir, file)
+        const result = fs.statSync(filePath)
         
         if (stats.mtime < cutoffDate) {
-          fs.unlinkSync(filePath);
+          fs.unlinkSync(filePath)
           deletedFiles++;
         }
-      });
+      })
       
-      console.log(🧹 Cleaned up ${deletedFiles} old content files");""
-      return { deletedFiles };
+      console.log(🧹 Cleaned up ${deletedFiles} old content files")""
+      return { deletedFiles }
       
     } catch (error) {
-      console.error(\'❌ Error cleaning up old content: \', error);\'\'
-      return { deletedFiles: "0", error: "error.message "};""
+      console.error(\'❌ Error cleaning up old content: \', error)\'\'
+      return { deletedFiles: "0", error: "error.message "}""
     }
   }
 }
@@ -529,14 +529,14 @@ module.exports = ContentOrchestrator;
       isRunning: this.isRunning,
       startTime: this.startTime,
       uptime: this.startTime ? Date.now() - this.startTime.getTime() : 0
-    };
+    }
   }
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('🛑 Shutting down content-orchestrator gracefully...');
+  console.log('🛑 Shutting down content-orchestrator gracefully...')
   if (this.isRunning) {
     this.isRunning = false;
   }
-  process.exit(0);
-});
+  process.exit(0)
+})

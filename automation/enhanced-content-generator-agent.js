@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,92 +54,92 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }
-const result = require($2);2););.promises
-const path = require($2);'););
-const result = require($2);2););o's);''
-const { GoogleGenerativeAI } = require(('@google/generative-a)i);''
+const result = require('fs').promises
+const path = require('path';
+const result = require($2)2))o's)''
+const { GoogleGenerativeAI } = require(('@google/generative-a)i)''
 
 class AutomationSystem {
   constructor() {
     this.agentId = process.env.AGENT_ID || "content-generator-${Date.now()}""
     
     // Initialize Google AI with fallback;
-    this.initializeGoogleAI();
+    this.initializeGoogleAI()
     
     this.analytics = {
       pagesCreated: "0",""
       contentGenerated: "0",""
       errors: "0",""
-      startTime: "Date.now()"";
-    "};""
+      startTime: "Date.now()""
+    "}""
     
-    this.logFile = path.join(__dirname, logs, content-generator-${this.agentId}.log");""
-    this.ensureLogDirectory();
+    this.logFile = path.join(__dirname, logs, content-generator-${this.agentId}.log")""
+    this.ensureLogDirectory()
     
-    this.contentTemplates = this.loadContentTemplates();
+    this.contentTemplates = this.loadContentTemplates()
   }
 
   initializeGoogleAI() {
@@ -147,38 +147,38 @@ class AutomationSystem {
       const result = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
       
       if (apiKey && apiKey !== placeholder-google-ai-k\')ey\') {\'\'
-        this.genAI = new GoogleGenerativeAI(apiKey);
-        this.model = this.genAI.getGenerativeModel({ model: "'gemini-pro "});""
+        this.genAI = new GoogleGenerativeAI(apiKey)
+        this.model = this.genAI.getGenerativeModel({ model: "'gemini-pro "})""
         this.aiEnabled = true;
-        this.log(Google\' AI initialized successfully);\'\'
+        this.log(Google\' AI initialized successfully)\'\'
       } else {
         this.aiEnabled = false;
-        this.log(\'Google AI disabled - using fallback content generation, \')WARN);\'\'
+        this.log(\'Google AI disabled - using fallback content generation, \')WARN)\'\'
       }
     } catch (error) {
       this.aiEnabled = false;
-      this.log("Google AI initialization failed: "${error.message"}, ERR\'O\'R);\'\'
+      this.log("Google AI initialization failed: "${error.message"}, ERR\'O\'R)\'\'
     }
   }
 
   async generateContentWithAI(prompt) {
     if (!this.aiEnabled) {
-      return this.generateFallbackContent(prompt);
+      return this.generateFallbackContent(prompt)
     }
     
     try {
-      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await this.model.generateContent(prompt)
       const asyncResult = await result.response;
-      return response.text();
+      return response.text()
     } catch (error) {
-      this.log(AI content generation failed: "${error"}", \'ERR\'OR\');\'\'
-      return this.generateFallbackContent(prompt);
+      this.log(AI content generation failed: "${error"}", \'ERR\'OR\')\'\'
+      return this.generateFallbackContent(prompt)
     }
   }
 
   generateFallbackContent(prompt) {
     // Simple fallback content generation based on prompt keywords
-    const result = prompt.toLowerCase().split(\' );\'\'
+    const result = prompt.toLowerCase().split(\' )\'\'
     
     if (keywords.includes(service\')) || keywords.includes(\'solution)) {\'\'
       return "Professional service offering with expert implementation and ongoing support. Our team provides comprehensive solutions tailored to your specific needs.""
@@ -192,17 +192,17 @@ class AutomationSystem {
   }
 
   ensureLogDirectory() {
-    const result = path.dirname(this.logFile);
+    const result = path.dirname(this.logFile)
     if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: "true "});""
+      fs.mkdirSync(logDir, { recursive: "true "})""
     }
   }
 
   log(message, level = \')IN\'FO\') {\'\';
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().toISOString()
     const result = "[${timestamp}] [${level}] [${this.agentId}] ${message}\n"";
-    fs.appendFileSync(this.logFile, logEntry);
-    console.log([${level}] [${this.agentId}] ${message}");""
+    fs.appendFileSync(this.logFile, logEntry)
+    console.log([${level}] [${this.agentId}] ${message}")""
   }
 
   loadContentTemplates() {
@@ -247,111 +247,111 @@ class AutomationSystem {
         description: "\'The page you are looking for does not exist\'",""
         sections: "[\'hero", suggestio'n's, 'navigation-he'lp']''
       }
-    };
+    }
   }
 
   async initialize() {
-    this.log('Initializing Enhanced Content Generator Agent...);''
+    this.log('Initializing Enhanced Content Generator Agent...)''
     
     // Create output directories
-    this.createOutputDirectories();
+    this.createOutputDirectories()
     
     // Load missing pages analysis
-    await this.loadMissingPagesAnalysis();
+    await this.loadMissingPagesAnalysis()
     
     // Start content generation
-    await this.startContentGeneration();
+    await this.startContentGeneration()
   }
 
   createOutputDirectories() {
     const filePath = [path.join(__dirname, generated-content),
       path.join(__dirname, ')generated-pag'es'),''
-      path.join(__dirname, 'content-templates),''];
-      path.join(__dirname, seo-conte'n't)''];
+      path.join(__dirname, 'content-templates),'']
+      path.join(__dirname, seo-conte'n't)'']
     
     dirs.forEach(dir = > {)
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: "true "});""
+        fs.mkdirSync(dir, { recursive: "true "})""
       }
-    });
+    })
   }
 
   async loadMissingPagesAnalysis() {
     try {
-      const filePath = path.join(__dirname, \'missing-conte\'nt\', \'missing-pages\'.json\');\'\'
+      const filePath = path.join(__dirname, \'missing-conte\'nt\', \'missing-pages\'.json\')\'\'
       if (fs.existsSync(missingFile)) {
-        this.missingPages = JSON.parse(fs.readFileSync(missingFile, utf8));
-        this.log("Loaded ${this.missingPages.length} missing pages);""
+        this.missingPages = JSON.parse(fs.readFileSync(missingFile, utf8))
+        this.log("Loaded ${this.missingPages.length} missing pages)""
       } else {
-        this.missingPages = [];
-        this.log(\'No missing pages analysis found, starting fresh);\'\'
+        this.missingPages = []
+        this.log(\'No missing pages analysis found, starting fresh)\'\'
       }
     } catch (error) {
-      this.log(Error loading missing pages: "${error.message"}", \')ERROR);\'\'
-      this.missingPages = [];
+      this.log(Error loading missing pages: "${error.message"}", \')ERROR)\'\'
+      this.missingPages = []
     }
   }
 
   async startContentGeneration() {
     try {
-      this.log(Startin\'g\' content generation process...);\'\'
+      this.log(Startin\'g\' content generation process...)\'\'
       
       // Generate content for missing pages
-      await this.generateMissingPages();
+      await this.generateMissingPages()
       
       // Generate SEO content
-      await this.generateSEOContent();
+      await this.generateSEOContent()
       
       // Generate blog content
-      await this.generateBlogContent();
+      await this.generateBlogContent()
       
       // Generate product/service descriptions
-      await this.generateProductContent();
+      await this.generateProductContent()
       
       // Save generation results
-      await this.saveGenerationResults();
+      await this.saveGenerationResults()
       
-      this.log(\'Content generation completed successfully);\'\'
+      this.log(\'Content generation completed successfully)\'\'
       
     } catch (error) {
-      this.log("Content generation failed: "${error.message"}, \')ERROR);\'\'
+      this.log("Content generation failed: "${error.message"}, \')ERROR)\'\'
       this.analytics.errors++;
     }
   }
 
   async generateMissingPages() {
-    this.log(Generatin\'g\' content for missing pages...);\'\'
+    this.log(Generatin\'g\' content for missing pages...)\'\'
     
     for (const page of this.missingPages) {
       if (page.priority = == \'hi\'gh\') {\'\';
-        await this.generatePageContent(page);
+        await this.generatePageContent(page)
       }
     }
   }
 
   async generatePageContent(page) {
     try {
-      this.log(Generating content for: "${page.url"}");""
+      this.log(Generating content for: "${page.url"}")""
       
-      const result = this.determinePageType(page.url);
-      const result = this.contentTemplates[pageType];
+      const result = this.determinePageType(page.url)
+      const result = this.contentTemplates[pageType]
       
       if (!template) {
-        this.log("No template found for page type: "${pageType"}, \'WARN);\'\'
+        this.log("No template found for page type: "${pageType"}, \'WARN)\'\'
         return;
       }
       
       // Generate page content using AI
-      const asyncResult = await this.generateAIContent(page, template);
+      const asyncResult = await this.generateAIContent(page, template)
       
       // Create page file
-      await this.createPageFile(page, content);
+      await this.createPageFile(page, content)
       
       this.analytics.pagesCreated++;
-      this.log(Generated page: "${page.url"}");""
+      this.log(Generated page: "${page.url"}")""
       
     } catch (error) {
-      this.log("Error generating page content for ${page.url}: ${error.message}, ERR\'O\'R);\'\'
+      this.log("Error generating page content for ${page.url}: ${error.message}, ERR\'O\'R)\'\'
       this.analytics.errors++;
     }
   }
@@ -372,13 +372,13 @@ class AutomationSystem {
   }
 
   async generateAIContent(page, template) {
-    const result = this.buildContentPrompt(page, template);
+    const result = this.buildContentPrompt(page, template)
     
     try {
-      return await this.generateContentWithAI(prompt);
+      return await this.generateContentWithAI(prompt)
     } catch (error) {
-      this.log(AI content generation failed: "${error.message"}", \'ERROR);\'\'
-      return this.generateFallbackContent(page, template);
+      this.log(AI content generation failed: "${error.message"}", \'ERROR)\'\'
+      return this.generateFallbackContent(page, template)
     }
   }
 
@@ -436,17 +436,17 @@ Please generate the complete HTML page with all necessary content, styling consi
   }
 
   async createPageFile(page, content) {
-    const result = this.getPagePath(page.url);
-    const result = path.dirname(pagePath);
+    const result = this.getPagePath(page.url)
+    const result = path.dirname(pagePath)
     
     if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: "true "});""
+      fs.mkdirSync(dir, { recursive: "true "})""
     }
     
     // Generate proper Next.js page content instead of HTML
-    const result = this.generateNextJsPageContent(page, content);
+    const result = this.generateNextJsPageContent(page, content)
     
-    fs.writeFileSync(pagePath, nextJsContent);
+    fs.writeFileSync(pagePath, nextJsContent)
     
     // Save content metadata
     const timestamp = {
@@ -454,17 +454,17 @@ Please generate the complete HTML page with all necessary content, styling consi
       title: "this.extractTitle(content)",""
       description: "this.extractDescription(content)",""
       generatedAt: "new Date().toISOString()","";
-      agentId: "this.agentId"";
-    "};""
+      agentId: "this.agentId""
+    "}""
     
-    const result = pagePath.replace(\'.tsx, .json);\'\'
-    fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
+    const result = pagePath.replace(\'.tsx, .json)\'\'
+    fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2))
   }
 
   generateNextJsPageContent(page, content) {
-    const result = this.extractTitle(content);
-    const result = this.extractDescription(content);
-    const result = this.sanitizeFilename(page.url.replace(/^\//, \')).replace(/\/$/, \') || \'ind\'ex\');\'\'
+    const result = this.extractTitle(content)
+    const result = this.extractDescription(content)
+    const result = this.sanitizeFilename(page.url.replace(/^\//, \')).replace(/\/$/, \') || \'ind\'ex\')\'\'
     
     return "import React from 'react';
 import React from 'react';
@@ -586,43 +586,43 @@ const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = (
       </footer></div>
     </div>)
   )
-};
+}
 ;}
 export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
   }
 
   getPagePath(url) {
-    const result = new URL(url);
+    const result = new URL(url)
     const result = urlObj.pathname;
-    const result = pathname === \'/ ? \'ind\'ex\' : pathname.replace(/^\//, \').replace(/\/$/, \'\');\'\'
+    const result = pathname === \'/ ? \'ind\'ex\' : pathname.replace(/^\//, \').replace(/\/$/, \'\')\'\'
     // Create pages in the main pages directory instead of automation directory
-    return path.join(__dirname, ..\', \'pages, ${filename}.tsx");""
+    return path.join(__dirname, ..\', \'pages, ${filename}.tsx")""
   }
 
   extractTitle(content) {</div>
-    const result = content.match(/<title>(.*?)<\/title>/i);
-    return titleMatch ? titleMatch[1] : Generate\'d\' Page;\'\'
+    const result = content.match(/<title>(.*?)<\/title>/i)
+    return titleMatch ? titleMatch[1] : Generate\'d\' Page\'\'
   }
 
   extractDescription(content) {</div>
-    const result = content.match(/<meta name="description content=(.*?)"/i);""
+    const result = content.match(/<meta name="description content=(.*?)"/i)""
     return descMatch ? descMatch[1] : \'Generate\'d page content\'\'\'
   }
 
   async generateSEOContent() {
-    this.log(\'Generating SEO content...);\'\'
+    this.log(\'Generating SEO content...)\'\'
     
     const asyncResult = {
       metaDescriptions: "await this.generateMetaDescriptions()",""
       pageTitles: "await this.generatePageTitles()",""
       structuredData: "await this.generateStructuredData()",""
       sitemap: "await this.generateSitemap()","";
-      robotsTxt: "await this.generateRobotsTxt()"";
-    "};""
+      robotsTxt: "await this.generateRobotsTxt()""
+    "}""
     
     // Save SEO content
-    const filePath = path.join(__dirname, seo-content, \')seo-conten\'t.json\');\'\'
-    fs.writeFileSync(seoFile, JSON.stringify(seoContent, null, 2));
+    const filePath = path.join(__dirname, seo-content, \')seo-conten\'t.json\')\'\'
+    fs.writeFileSync(seoFile, JSON.stringify(seoContent, null, 2))
     
     this.analytics.contentGenerated += Object.keys(seoContent).length;
   }
@@ -632,18 +632,18 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "\'/about", title: "Abou\'t Us\' "},""
       { url: "\'/services", title: "Servic\'es\' "},""
       { url: "\'/products", title: "Produc\'ts\' "},""
-      { url: "\'/contact", title: "Conta\'ct\' "},""];
-      { url: "\'/blog", title: "Bl\'og\' "}""];
+      { url: "\'/contact", title: "Conta\'ct\' "},""]
+      { url: "\'/blog", title: "Bl\'og\' "}""]
     
-    const result = {};
+    const result = {}
     
     for (const page of pages) {
       const result = "Generate a compelling meta description (150-160 characters) for a ${page.title} page of Zion Tech Group, a technology company offering IT services and solutions.""
       
       try {;
-        const asyncResult = await this.model.generateContent(prompt);
+        const asyncResult = await this.model.generateContent(prompt)
         const asyncResult = await result.response;
-        descriptions[page.url] = response.text().trim();
+        descriptions[page.url] = response.text().trim()
       } catch (error) {
         descriptions[page.url] = Professional ${page.title.toLowerCase()} services and solutions from Zion Tech Group."""
       }
@@ -657,10 +657,10 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "\'/about", title: "Abou\'t Us - Zion Tech Group\' "},""
       { url: "\'/services", title: "Ou\'r Services - Zion Tech Group\' "},""
       { url: "\'/products", title: "Ou\'r Products - Zion Tech Group\' "},""
-      { url: "\'/contact", title: "Contac\'t Us - Zion Tech Group\' "},""];
-      { url: "\'/blog", title: "Blo\'g - Zion Tech Group\' "}""];
+      { url: "\'/contact", title: "Contac\'t Us - Zion Tech Group\' "},""]
+      { url: "\'/blog", title: "Blo\'g - Zion Tech Group\' "}""]
     
-    const result = {};
+    const result = {}
     
     for (const page of pages) {
       titles[page.url] = page.title;
@@ -691,8 +691,8 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
         "@context: https://schema.org"",""
         "@type: "WebSite"",""
         "name: "Zion Tech Group"",""
-        "url: "https://ziontechgroup.netlify.app""";
-      "}""};
+        "url: "https://ziontechgroup.netlify.app"""
+      "}""}
     
     return structuredData;
   }
@@ -702,8 +702,8 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page
       { url: "\'/about", priority: "0.8\'", changefreq: "\'monthly "},""
       { url: "/services", priority: "\'0.9", changefreq: "\'weekly\' "},""
       { url: "\'/products", priority: "0.9\'", changefreq: "weekly "},""
-      { url: "\'/contact", priority: "0.7\'", changefreq: "\'monthly "},""];
-      { url: "/blog", priority: "\'0.8", changefreq: "\'daily\' "}""];
+      { url: "\'/contact", priority: "0.7\'", changefreq: "\'monthly "},""]
+      { url: "/blog", priority: "\'0.8", changefreq: "\'daily\' "}""]
     
     let variable1 = \'<?xml version="1.0 encoding=UTF-8"?>\n;</div>""
     sitemap += \'<urlset xmlns = "http: //www.sitemaps.org/schemas/sitemap/0.9>\n'''
@@ -735,7 +735,7 @@ Disallow: /api/
   "}""
 
   async generateBlogContent() {
-    this.log(\'Generating blog content...);\'\'
+    this.log(\'Generating blog content...)\'\'
     
     const result = [The Future of AI in Business: "2024 Trends",""
       \')Cybersecurit\'y Best Practices for Small Businesses\',\'\'
@@ -743,28 +743,28 @@ Disallow: /api/
       Digital Transformation: "A Complete Guide",""
       \'We\'b Development Trends for 2024\',\'\'
       \'Mobile\' App Development: "Native vs Hybrid'",""
-      Data Analytics: "Driving Business Decisions",""];
-      \'DevOp\'s Best Practices for Enterprise Teams\'\'\'];
+      Data Analytics: "Driving Business Decisions",""]
+      \'DevOp\'s Best Practices for Enterprise Teams\'\'\']
     
-    const result = [];
+    const result = []
     
     for (const topic of blogTopics) {
       try {
-        const asyncResult = await this.generateBlogPost(topic);
-        blogPosts.push(post);
+        const asyncResult = await this.generateBlogPost(topic)
+        blogPosts.push(post)
         
         // Save individual blog post
-        const filePath = path.join(__dirname, \'generated-content, bl\'o\'g, ${this.sanitizeFilename(topic)}.json");""
-        fs.writeFileSync(postFile, JSON.stringify(post, null, 2));
+        const filePath = path.join(__dirname, \'generated-content, bl\'o\'g, ${this.sanitizeFilename(topic)}.json")""
+        fs.writeFileSync(postFile, JSON.stringify(post, null, 2))
         
       } catch (error) {
-        this.log("Error generating blog post for ${topic}: ${error.message}, \'ERR\'OR\');\'\'
+        this.log("Error generating blog post for ${topic}: ${error.message}, \'ERR\'OR\')\'\'
       }
     }
     
     // Save blog index
-    const filePath = path.join(__dirname, \'generated-content, bl\'o\'g, \'blog-inde\'x.json\');\'\'
-    fs.writeFileSync(blogIndexFile, JSON.stringify(blogPosts, null, 2));
+    const filePath = path.join(__dirname, \'generated-content, bl\'o\'g, \'blog-inde\'x.json\')\'\'
+    fs.writeFileSync(blogIndexFile, JSON.stringify(blogPosts, null, 2))
     
     this.analytics.contentGenerated += blogPosts.length;
   }
@@ -794,11 +794,11 @@ Format the response as JSON with the following structure: {
     """
     
     try {;
-      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await this.model.generateContent(prompt)
       const asyncResult = await result.response;
-      return JSON.parse(response.text());
+      return JSON.parse(response.text())
     } catch (error) {
-      return this.generateFallbackBlogPost(topic);
+      return this.generateFallbackBlogPost(topic)
     }
   }
 
@@ -813,11 +813,11 @@ Format the response as JSON with the following structure: {
       publishDate: "new Date().toISOString().split(T')[0]",""
       author: "\'Zion Tech Group\'",""
       category: "Technology""
-    "};""
+    "}""
   }
 
   async generateProductContent() {
-    this.log(\'Generating product content...);\'\'
+    this.log(\'Generating product content...)\'\'
     
     const result = [{
         name: "')AI Platform'",""
@@ -832,18 +832,18 @@ Format the response as JSON with the following structure: {
       {
         name: "\'AI Matching Engine\'",""
         category: "Machine Learning",""
-        description: "\'Intelligent matching system for optimal solutions\'\'\'];
-      "}""];
+        description: "\'Intelligent matching system for optimal solutions\'\'\']
+      "}""]
     
     for (const product of products) {
       try {
-        const asyncResult = await this.generateProductDescription(product);
+        const asyncResult = await this.generateProductDescription(product)
         
-        const filePath = path.join(__dirname, \'generated-content, produc\'t\'s, ${this.sanitizeFilename(product.name)}.json");""
-        fs.writeFileSync(productFile, JSON.stringify(content, null, 2));
+        const filePath = path.join(__dirname, \'generated-content, produc\'t\'s, ${this.sanitizeFilename(product.name)}.json")""
+        fs.writeFileSync(productFile, JSON.stringify(content, null, 2))
         
       } catch (error) {
-        this.log("Error generating product content for ${product.name}: ${error.message}, \'ERR\'OR\');\'\'
+        this.log("Error generating product content for ${product.name}: ${error.message}, \'ERR\'OR\')\'\'
       }
     }
     
@@ -868,11 +868,11 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
     
     
     try {;
-      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await this.model.generateContent(prompt)
       const asyncResult = await result.response;
-      return JSON.parse(response.text());
+      return JSON.parse(response.text())
     } catch (error) {
-      return this.generateFallbackProductDescription(product);
+      return this.generateFallbackProductDescription(product)
     }
   }
 
@@ -889,15 +889,15 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
         deployment: "Cloud-based",""
         support: "\'24/7 available\'\'
       "}""
-    };
+    }
   }
 
   sanitizeFilename(filename) {
-    return filename.replace(/[^a-zA-Z0-9]/g, _\').substring(0, 50);\'\'
+    return filename.replace(/[^a-zA-Z0-9]/g, _\').substring(0, 50)\'\'
   }
 
   async saveGenerationResults() {
-    this.log(\'Saving generation results...);\'\'
+    this.log(\'Saving generation results...)\'\'
     
     const timestamp = {
       agentId: "this.agentId",""
@@ -906,25 +906,25 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
       summary: "{""
         pagesCreated: this.analytics.pagesCreated",""
         contentGenerated: "this.analytics.contentGenerated",""
-        errors: "this.analytics.errors"";
-      "}""};
+        errors: "this.analytics.errors""
+      "}""}
     
-    const filePath = path.join(__dirname, generated-content, generation-results-${this.agentId}.json");""
-    fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
+    const filePath = path.join(__dirname, generated-content, generation-results-${this.agentId}.json")""
+    fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2))
     
     // Update master analytics
-    await this.updateMasterAnalytics();
+    await this.updateMasterAnalytics()
     
-    this.log(\')Generatio\'n results saved\');\'\'
+    this.log(\')Generatio\'n results saved\')\'\'
   }
 
   async updateMasterAnalytics() {
     try {
-      const filePath = path.join(__dirname, \'master-analytics\'.json\');\'\'
-      let variable1 = {};
+      const filePath = path.join(__dirname, \'master-analytics\'.json\')\'\'
+      let variable1 = {}
       
       if (fs.existsSync(analyticsFile)) {
-        analytics = JSON.parse(fs.readFileSync(analyticsFile, utf8));
+        analytics = JSON.parse(fs.readFileSync(analyticsFile, utf8))
       }
       
       analytics.lastContentGeneration = {
@@ -932,12 +932,12 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
         agentId: "this.agentId",""
         pagesCreated: "this.analytics.pagesCreated",""
         contentGenerated: "this.analytics.contentGenerated",""
-        errors: "this.analytics.errors"";
-      "};""
+        errors: "this.analytics.errors""
+      "}""
       
-      fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
+      fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2))
     } catch (error) {
-      this.log("Error updating master analytics: "${error.message"}", 'ERR'OR');''
+      this.log("Error updating master analytics: "${error.message"}", 'ERR'OR')''
     }
   }
 }
@@ -946,11 +946,11 @@ Format as JSON with: "title", description, features, benefits, useCases, pricing
 module.exports = EnhancedContentGeneratorAgent;
 
 // If run directly, start the agent
-if (require(.main === modul)e) {
-  const result = new EnhancedContentGeneratorAgent();
+if (require.main === module) {
+  const result = new EnhancedContentGeneratorAgent()
   
   agent.initialize().catch(error = > {)
-    console.error('Failed' to initialize agent: ', error);''
-    process.exit(1);
-  });
+    console.error('Failed' to initialize agent: ', error)''
+    process.exit(1)
+  })
 } </div>

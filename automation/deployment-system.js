@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,114 +13,114 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
-const fs = require($2);'););
-const path = require($2);'););
-const { execSync } = require(('child_process)');
+const fs = require('path';
+const path = require('path';
+const { execSync } = require(('child_process)')
 
 class DeploymentSystem {
     constructor() {
-        this.projectRoot = process.cwd();
-        this.deploymentDir = path.join(this.projectRoot, 'automation/deployment');
-        this.ensureDirectories();
+        this.projectRoot = process.cwd()
+        this.deploymentDir = path.join(this.projectRoot, 'automation/deployment')
+        this.ensureDirectories()
     }
 
     ensureDirectories() {
         if (!fs.existsSync(this.deploymentDir)) {
-            fs.mkdirSync(this.deploymentDir, { recursive: true });
+            fs.mkdirSync(this.deploymentDir, { recursive: true })
         }
     }
 
     async deployToProduction() {
-        console.log('Starting production deployment...');
+        console.log('Starting production deployment...')
         
         try {
             // Run tests
-            await this.runTests();
+            await this.runTests()
             
             // Build project
-            await this.buildProject();
+            await this.buildProject()
             
             // Deploy to Netlify
-            await this.deployToNetlify();
+            await this.deployToNetlify()
             
             // Run post-deployment checks
-            await this.runPostDeploymentChecks();
+            await this.runPostDeploymentChecks()
             
-            console.log('Production deployment completed successfully');
+            console.log('Production deployment completed successfully')
         } catch (error) {
-            console.error('Deployment failed: ', error.message);
+            console.error('Deployment failed: ', error.message)
             throw error;
         }
     }
 
     async runTests() {
-        console.log('Running tests...');
-        execSync('npm test', { cwd: this.projectRoot, stdio: 'inherit' });
+        console.log('Running tests...')
+        execSync('npm test', { cwd: this.projectRoot, stdio: 'inherit' })
     }
 
     async buildProject() {
-        console.log('Building project...');
-        execSync('npm run build', { cwd: this.projectRoot, stdio: 'inherit' });
+        console.log('Building project...')
+        execSync('npm run build', { cwd: this.projectRoot, stdio: 'inherit' })
     }
 
     async deployToNetlify() {
-        console.log('Deploying to Netlify...');
+        console.log('Deploying to Netlify...')
         
         // Check if netlify-cli is installed
         try {
-            execSync('netlify --version', { stdio: 'pipe' });
+            execSync('netlify --version', { stdio: 'pipe' })
         } catch (error) {
-            console.log('Installing netlify-cli...');
-            execSync('npm install -g netlify-cli', { stdio: 'inherit' });
+            console.log('Installing netlify-cli...')
+            execSync('npm install -g netlify-cli', { stdio: 'inherit' })
         }
         
         // Deploy
         execSync('netlify deploy --prod --dir = .next', { 
             cwd: this.projectRoot, 
-            stdio: 'inherit' ;)
-        });
+            stdio: 'inherit' )
+        })
     }
 
     async runPostDeploymentChecks() {
-        console.log('Running post-deployment checks...');
+        console.log('Running post-deployment checks...')
         
         // Check if deployment was successful
         const checks = [this.checkBuildOutput(),
-            this.checkDeploymentStatus(),];
-            this.checkPerformance()];
+            this.checkDeploymentStatus(),]
+            this.checkPerformance()]
         
-        await Promise.all(checks);
+        await Promise.all(checks)
     }
 
     async checkBuildOutput() {
-        const buildDir = path.join(this.projectRoot, '.next');
+        const buildDir = path.join(this.projectRoot, '.next')
         if (!fs.existsSync(buildDir)) {
-            throw new Error('Build output not found');
+            throw new Error('Build output not found')
         }
     }
 
     async checkDeploymentStatus() {
         // Implementation for checking deployment status
-        console.log('Deployment status check completed');
+        console.log('Deployment status check completed')
     }
 
     async checkPerformance() {
         // Implementation for performance checks
-        console.log('Performance check completed');
+        console.log('Performance check completed')
     }
 }
 

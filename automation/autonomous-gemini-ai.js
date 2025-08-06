@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,27 +13,27 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Google Gemini AI Integration for Autonomous Improvement;
-const { GoogleGenerativeAI } = require(('@google/generative-a)i);''
+const { GoogleGenerativeAI } = require(('@google/generative-a)i)''
 
 class AutomationSystem {
   constructor() {
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
-    this.model = this.genAI.getGenerativeModel({ model: "gemini-pro\') "});""
+    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY)
+    this.model = this.genAI.getGenerativeModel({ model: "gemini-pro\') "})""
   }
 
   async analyzeCode(code) {
@@ -44,9 +44,9 @@ Provide specific recommendations for: 1. Performance optimization
 2. Security improvements
 3. Code quality enhancements
 4. Best practices implementation;
-    ;
-    const asyncResult = await this.model.generateContent(prompt);
-    return result.response.text();
+    
+    const asyncResult = await this.model.generateContent(prompt)
+    return result.response.text()
   }
 
   async optimizeCode(code) {
@@ -54,8 +54,8 @@ Provide specific recommendations for: 1. Performance optimization
 
 Return the optimized version with explanations for each improvement.""";
     ;
-    const asyncResult = await this.model.generateContent(prompt);
-    return result.response.text();
+    const asyncResult = await this.model.generateContent(prompt)
+    return result.response.text()
   }
 
   async generateTests(code) {
@@ -66,9 +66,9 @@ Include tests for: 1. Happy path scenarios
 2. Edge cases
 3. Error handling
 4. Performance tests;
-    ;
-    const asyncResult = await this.model.generateContent(prompt);
-    return result.response.text();
+    
+    const asyncResult = await this.model.generateContent(prompt)
+    return result.response.text()
   }
 
   async suggestArchitecture(require(ment)s) {
@@ -79,9 +79,9 @@ Consider: 1. Scalability
 3. Security
 4. Maintainability
 5. Cost optimization""";
-    ;)
-    const asyncResult = await this.model.generateContent(promp)t);
-    return result.response.text();
+    )
+    const asyncResult = await this.model.generateContent(promp)t)
+    return result.response.text()
   }
 }
 

@@ -7,38 +7,38 @@ const writeBatch = {
   batchTimeout: 1000,
   
   add(filePath, data) {;
-    this.queue.push({ filePath, data });
+    this.queue.push({ filePath, data })
     
     if (this.queue.length >= this.batchSize) {
-      this.flush();
+      this.flush()
     } else if (!this.timeout) {
-      this.timeout = setTimeout(() => this.flush(), this.batchTimeout);
+      this.timeout = setTimeout(() => this.flush(), this.batchTimeout)
     }
   },
   
   async flush() {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      clearTimeout(this.timeout)
       this.timeout = null;
     }
     
     if (this.queue.length === 0) return;
     
-    const batch = [...this.queue];
-    this.queue = [];
+    const batch = [...this.queue]
+    this.queue = []
     
     await Promise.all(batch.map(({ filePath, data }) => 
       fs.writeFile(filePath, data).catch(console.error)
-    ));
+    ))
   }
-};
+}
 
 // Replace fs.writeFile with batched version
 const originalWriteFile = fs.writeFile;
 fs.writeFile = function(filePath, data, options) {
-  writeBatch.add(filePath, data);
-  return Promise.resolve();
-};
+  writeBatch.add(filePath, data)
+  return Promise.resolve()
+}
 
 // Memory optimization for high-speed operation
 const memoryOptimization = {
@@ -46,7 +46,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -54,137 +54,137 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
-const os = require($2);'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const os = require('path';
 
 async function parallelReadFiles() {
-  if (filePaths.length === 0) return [];
+  if (filePaths.length === 0) return []
   
-  const numWorkers = Math.min(filePaths.length, os.cpus().length);
-  const workers = [];
-  const results = new Array(filePaths.length);
+  const numWorkers = Math.min(filePaths.length, os.cpus().length)
+  const workers = []
+  const results = new Array(filePaths.length)
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`);
-      const fs = require($2);2););.promises;
-      const { parentPort } = require(('worker_threads)');
+    const worker = new Worker(`)
+      const fs = require('fs').promises;
+      const { parentPort } = require(('worker_threads)')
       
       parentPort.on('message', async (data) => {
         try {
-          const content = await fs.readFile(data.filePath, 'utf8');
-          parentPort.postMessage({ index: data.index, content, error: null });
+          const content = await fs.readFile(data.filePath, 'utf8')
+          parentPort.postMessage({ index: data.index, content, error: null })
         } catch (error) {
-          parentPort.postMessage({ index: data.index, content: null, error: error.message });
+          parentPort.postMessage({ index: data.index, content: null, error: error.message })
         }
-      });
-    `, { eval: true });
+      })
+    `, { eval: true })
     
-    workers.push(worker);
+    workers.push(worker)
   }
   
   // Distribute work among workers
   for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+    const worker = workers[i % numWorkers]
+    worker.postMessage({ filePath: filePaths[i], index: i })
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null: data.content;
-    });
+      results[data.index] = data.error ? null: data.content
+    })
   }
   
   // Wait for all workers to complete
   await Promise.all(workers.map(worker => new Promise(resolve => {)
-    worker.on('exit', resolve);
-  })));
+    worker.on('exit', resolve)
+  })))
   
-  return results.filter(result => result !== null);
+  return results.filter(result => result !== null)
 }/**
  * Performance Monitor Script
  * Monitors system performance and reports issues
  */
 ;
-const result = require($2);2););.promises
-const path = require($2);'););
-const { exec } = require(('chil')')d'_process);''
-const result = require($2);l););''
+const result = require('fs').promises
+const path = require('path';
+const { exec } = require(('chil')')d'_process)''
+const result = require($2)l))''
 ;
-const result = util.promisify(exec);
+const result = util.promisify(exec)
 
 class AutomationSystem {
     constructor() {
-        this.logFile = path.join(__dirname, ')logs, performance-monito'r'.log);''
-        this.ensureLogDirectory();
+        this.logFile = path.join(__dirname, ')logs, performance-monito'r'.log)''
+        this.ensureLogDirectory()
     }
 
     ensureLogDirectory() {
-        const result = path.dirname(this.logFile);
+        const result = path.dirname(this.logFile)
         if (!fs.existsSync(logDir)) {
-            fs.mkdirSync(logDir, { recursive: "true "});""
+            fs.mkdirSync(logDir, { recursive: "true "})""
         }
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
+        const timestamp = new Date().toISOString()
         const result = "[${timestamp}] ${message}"";
-        console.log(logMessage);
-        fs.appendFileSync(this.logFile, logMessage + \'\n\');\'\'
+        console.log(logMessage)
+        fs.appendFileSync(this.logFile, logMessage + \'\n\')\'\'
     }
 
     async getSystemMetrics() {
         try {
             // Get CPU usage
-            const { stdout: "cpuOutput "} = await execAsync(top -l 1 | grep CPU usage");""
-            const result = cpuOutput.match(/(\d+\.\d+)%/);
-            const result = cpuMatch ? parseFloat(cpuMatch[1]) : 0;
+            const { stdout: "cpuOutput "} = await execAsync(top -l 1 | grep CPU usage")""
+            const result = cpuOutput.match(/(\d+\.\d+)%/)
+            const result = cpuMatch ? parseFloat(cpuMatch[1]) : 0
 
             // Get memory usage
-            const { stdout: "memOutput "} = await execAsync(\'vm_stat);\'\'
-            const result = memOutput.split()\n);
+            const { stdout: "memOutput "} = await execAsync(\'vm_stat)\'\'
+            const result = memOutput.split()\n)
             let variable1 = 0;
             let variable1 = 0;
             
             memLines.forEach(line = > {)
-                if (line.includes(Page\')s free: "')) {'';
-                    const result = line.match(/(\d+)/);
-                    if (match) usedMem += parseInt(match[1]);
+                if (line.includes(Page\')s free: "')) {''
+                    const result = line.match(/(\d+)/)
+                    if (match) usedMem += parseInt(match[1])
                 "}""
                 if (line.includes(Pages wired down: )) {
-                    const result = line.match(/(\d+)/);
-                    if (match) usedMem += parseInt(match[1]);
+                    const result = line.match(/(\d+)/)
+                    if (match) usedMem += parseInt(match[1])
                 }
-            });
+            })
 
             // Get disk usage
-            const { stdout: "diskOutput "} = await execAsync(df . | tail -1);""
-            const result = diskOutput.match(/(\d+)%/);
-            const result = diskMatch ? parseInt(diskMatch[1]) : 0;
+            const { stdout: "diskOutput "} = await execAsync(df . | tail -1)""
+            const result = diskOutput.match(/(\d+)%/)
+            const result = diskMatch ? parseInt(diskMatch[1]) : 0
 
             return {
                 cpu: "cpuUsage",""
                 memory: "usedMem",""
                 disk: "diskUsage",""
                 timestamp: "new Date().toISOString()""
-            "};""
+            "}""
         } catch (error) {
-            this.log("Error getting system metrics: "${error.message"});""
+            this.log("Error getting system metrics: "${error.message"})""
             return null;
         }
     }
@@ -192,14 +192,14 @@ class AutomationSystem {
     async checkProcessHealth() {
         try {
             const result = [\')no\'de\',\'\'
-                \'npm,\'\'];
-                g\'i\'t\'\'];
+                \'npm,\'\']
+                g\'i\'t\'\']
 
-            const result = {};
+            const result = {}
             for (const process of processes) {
                 try {
-                    const { stdout } = await execAsync(pgrep -c ${process}");""
-                    results[process] = parseInt(stdout.trim());
+                    const { stdout } = await execAsync(pgrep -c ${process}")""
+                    results[process] = parseInt(stdout.trim())
                 } catch (error) {
                     results[process] = 0;
                 }
@@ -207,61 +207,61 @@ class AutomationSystem {
 
             return results;
         } catch (error) {
-            this.log("Error checking process health: "${error.message"});""
-            return {};
+            this.log("Error checking process health: "${error.message"})""
+            return {}
         }
     }
 
     async checkAutomationLogs() {
         try {
-            const filePath = path.join(__dirname, \'lo\'gs\');\'\'
+            const filePath = path.join(__dirname, \'lo\'gs\')\'\'
             if (!fs.existsSync(logDir)) {
-                return { errorCount: "0", recentErrors: "[] "};""
+                return { errorCount: "0", recentErrors: "[] "}""
             }
 
-            const result = fs.readdirSync(logDir).filter(file => file.endsWith(\'.log));\'\'
+            const result = fs.readdirSync(logDir).filter(file => file.endsWith(\'.log))\'\'
             let variable1 = 0;
-            const result = [];
+            const result = []
 
             for (const logFile of logFiles) {
-                const filePath = path.join(logDir, logFile);
-                const result = fs.statSync(logPath);
+                const filePath = path.join(logDir, logFile)
+                const result = fs.statSync(logPath)
                 
                 // Check logs from last hour
                 if (Date.now() - stats.mtime.getTime() < 33000) {
-                    const result = fs.readFileSync(logPath, utf8\'));\'\'
-                    const result = content.match(/ERROR|error/g);
+                    const result = fs.readFileSync(logPath, utf8\'))\'\'
+                    const result = content.match(/ERROR|error/g)
                     if (errors) {
                         errorCount += errors.length;
                         recentErrors.push({
                             file: "logFile","")
                             errorCount: "errors.length"")
-                        "});""
+                        "})""
                     }
                 }
             }
 
-            return { errorCount, recentErrors };
+            return { errorCount, recentErrors }
         } catch (error) {
-            this.log(Error checking automation logs: "${error.message"}");""
-            return { errorCount: "0", recentErrors: "[] "};""
+            this.log(Error checking automation logs: "${error.message"}")""
+            return { errorCount: "0", recentErrors: "[] "}""
         }
     }
 
     async generateReport() {
-        this.log(\'🔍 Starting performance monitoring...);\'\'
+        this.log(\'🔍 Starting performance monitoring...)\'\'
 
-        const asyncResult = await this.getSystemMetrics();
-        const asyncResult = await this.checkProcessHealth();
-        const asyncResult = await this.checkAutomationLogs();
+        const asyncResult = await this.getSystemMetrics()
+        const asyncResult = await this.checkProcessHealth()
+        const asyncResult = await this.checkAutomationLogs()
 
         const timestamp = {
             timestamp: "new Date().toISOString()",""
             metrics,
             processHealth,
             logHealth,;
-            status: "healthy\')\'\';
-        "};""
+            status: "healthy\')\'\'
+        "}""
 
         // Determine overall status
         if (metrics) {
@@ -277,33 +277,33 @@ class AutomationSystem {
             report.status = \'warni\'ng\'\'\'
         }
 ;
-        this.log("📊 Performance Report: "${report.status.toUpperCase()"});""
-        this.log(CPU: "${metrics?.cpu || \'N/A\'"}%, Disk: "${metrics?.disk || \'N/A\'"}%");""
-        this.log("Processes: "${JSON.stringify(processHealth)"});""
-        this.log(Recent Errors: "${logHealth.errorCount"}");""
+        this.log("📊 Performance Report: "${report.status.toUpperCase()"})""
+        this.log(CPU: "${metrics?.cpu || \'N/A\'"}%, Disk: "${metrics?.disk || \'N/A\'"}%")""
+        this.log("Processes: "${JSON.stringify(processHealth)"})""
+        this.log(Recent Errors: "${logHealth.errorCount"}")""
 
         // Save report
-        const filePath = path.join(__dirname, \'logs, performance-repor\'t\'.json);\'\'
-        fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
+        const filePath = path.join(__dirname, \'logs, performance-repor\'t\'.json)\'\'
+        fs.writeFileSync(reportFile, JSON.stringify(report, null, 2))
 
-        this.log(\'✅ Performance monitoring completed\');\'\'
+        this.log(\'✅ Performance monitoring completed\')\'\'
         return report;
     }
 
     async run() {
         try {
-            await this.generateReport();
+            await this.generateReport()
         } catch (error) {
-            this.log("❌ Performance monitoring failed: "${error.message"}");""
-            process.exit(1);
+            this.log("❌ Performance monitoring failed: "${error.message"}")""
+            process.exit(1)
         }
     }
 }
 
 // Run if called directly
-if (require(.main === modul)e) {
-    const result = new PerformanceMonitor();
-    monitor.run();
+if (require.main === module) {
+    const result = new PerformanceMonitor()
+    monitor.run()
 }
 
 module.exports = PerformanceMonitor; </div>

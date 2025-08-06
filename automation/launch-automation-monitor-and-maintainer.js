@@ -7,10 +7,10 @@
  * which continuously monitors all project automation systems.
  */
 
-const fs = require($2);'););
-const path = require($2);'););
-const { spawn, exec } = require(('child_process)');
-const cron = require($2);'););
+const fs = require('path';
+const path = require('path';
+const { spawn, exec } = require(('child_process)')
+const cron = require('path';
 
 class AutomationMonitorAndMaintainerLauncher {
   constructor() {
@@ -24,7 +24,7 @@ class AutomationMonitorAndMaintainerLauncher {
       cleanupInterval: '0 2 * * *', // Daily at 2 AM
       maxRetries: 3,
       restartDelay: 5000 // 5 seconds
-    };
+    }
     
     this.metrics = {
       startTime: null,
@@ -33,20 +33,20 @@ class AutomationMonitorAndMaintainerLauncher {
       systemsRestarted: 0,
       reportsGenerated: 0,
       backupsCreated: 0
-    };
+    }
     
-    this.initializeLauncher();
+    this.initializeLauncher()
   }
 
   initializeLauncher() {
-    console.log(`🚀 [${this.launcherId}] Initializing Automation Monitor and Maintainer Launcher...`);
+    console.log(`🚀 [${this.launcherId}] Initializing Automation Monitor and Maintainer Launcher...`)
     
-    this.setupDirectories();
-    this.setupCronJobs();
-    this.loadConfiguration();
+    this.setupDirectories()
+    this.setupCronJobs()
+    this.loadConfiguration()
     
     this.status = 'ready';
-    console.log(`✅ [${this.launcherId}] Launcher initialized successfully`);
+    console.log(`✅ [${this.launcherId}] Launcher initialized successfully`)
   }
 
   setupDirectories() {
@@ -56,16 +56,16 @@ class AutomationMonitorAndMaintainerLauncher {
       'health-reports',
       'error-logs',
       'monitoring-data',
-      'maintenance-logs'];
-    ];
+      'maintenance-logs']
+    ]
 
     directories.forEach(dir => {)
-      const dirPath = path.join(__dirname, dir);
+      const dirPath = path.join(__dirname, dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
-        console.log(`📁 Created directory: ${dir}`);
+        fs.mkdirSync(dirPath, { recursive: true })
+        console.log(`📁 Created directory: ${dir}`)
       }
-    });
+    })
   }
 
   setupCronJobs() {
@@ -90,102 +90,102 @@ class AutomationMonitorAndMaintainerLauncher {
         job: () => this.performSystemCleanup(),
         description: 'Perform system cleanup'
       }
-    };
+    }
 
     Object.entries(this.cronJobs).forEach(([name, job]) => {
       cron.schedule(job.schedule, () => {
         try {
-          job.job();
+          job.job()
         } catch (error) {
-          console.error(`❌ Error in launcher cron job ${name}:`, error);
-          this.logError(name, error);
+          console.error(`❌ Error in launcher cron job ${name}:`, error)
+          this.logError(name, error)
         }
-      });
-      console.log(`✅ Started launcher cron job: ${name} (${job.description})`);
-    });
+      })
+      console.log(`✅ Started launcher cron job: ${name} (${job.description})`)
+    })
   }
 
   loadConfiguration() {
-    const configPath = path.join(__dirname, 'automation-monitor-config.json');
+    const configPath = path.join(__dirname, 'automation-monitor-config.json')
     
     if (fs.existsSync(configPath)) {
       try {
-        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        this.config = { ...this.config, ...config };
-        console.log('📋 Loaded configuration from file');
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
+        this.config = { ...this.config, ...config }
+        console.log('📋 Loaded configuration from file')
       } catch (error) {
-        console.error('❌ Failed to load configuration: ', error);
+        console.error('❌ Failed to load configuration: ', error)
       }
     } else {
       // Create default configuration
-      this.saveConfiguration();
+      this.saveConfiguration()
     }
   }
 
   saveConfiguration() {
-    const configPath = path.join(__dirname, 'automation-monitor-config.json');
-    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
-    console.log('💾 Saved configuration to file');
+    const configPath = path.join(__dirname, 'automation-monitor-config.json')
+    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2))
+    console.log('💾 Saved configuration to file')
   }
 
   async startFactory() {
-    console.log('🏭 Starting Automation Monitor and Maintainer Factory...');
+    console.log('🏭 Starting Automation Monitor and Maintainer Factory...')
     
     try {
-      const FactoryClass = require($2);'););
-      this.factory = new FactoryClass();
-      this.factory.start();
+      const FactoryClass = require('path';
+      this.factory = new FactoryClass()
+      this.factory.start()
       
-      this.metrics.startTime = new Date().toISOString();
+      this.metrics.startTime = new Date().toISOString()
       this.status = 'running';
       
-      console.log('✅ Factory started successfully');
+      console.log('✅ Factory started successfully')
       return true;
     } catch (error) {
-      console.error('❌ Failed to start factory: ', error);
-      this.logError('factory-start', error);
+      console.error('❌ Failed to start factory: ', error)
+      this.logError('factory-start', error)
       return false;
     }
   }
 
   async stopFactory() {
-    console.log('🛑 Stopping Automation Monitor and Maintainer Factory...');
+    console.log('🛑 Stopping Automation Monitor and Maintainer Factory...')
     
     try {
       if (this.factory) {
-        this.factory.stop();
+        this.factory.stop()
         this.factory = null;
       }
       
       this.status = 'stopped';
-      console.log('✅ Factory stopped successfully');
+      console.log('✅ Factory stopped successfully')
       return true;
     } catch (error) {
-      console.error('❌ Failed to stop factory: ', error);
-      this.logError('factory-stop', error);
+      console.error('❌ Failed to stop factory: ', error)
+      this.logError('factory-stop', error)
       return false;
     }
   }
 
   async restartFactory() {
-    console.log('🔄 Restarting Automation Monitor and Maintainer Factory...');
+    console.log('🔄 Restarting Automation Monitor and Maintainer Factory...')
     
-    await this.stopFactory();
+    await this.stopFactory()
     
     // Wait before restarting
-    await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
+    await new Promise(resolve => setTimeout(resolve, this.config.restartDelay))
     
-    const success = await this.startFactory();
+    const success = await this.startFactory()
     if (success) {
       this.metrics.systemsRestarted++;
-      console.log('✅ Factory restarted successfully');
+      console.log('✅ Factory restarted successfully')
     }
     
     return success;
   }
 
   async performLauncherHealthCheck() {
-    console.log('🏥 Performing launcher health check...');
+    console.log('🏥 Performing launcher health check...')
     
     const healthReport = {
       timestamp: new Date().toISOString(),
@@ -193,42 +193,42 @@ class AutomationMonitorAndMaintainerLauncher {
       status: this.status,
       factoryStatus: this.factory ? this.factory.getStatus() : null,
       metrics: this.metrics,
-      issues: [];
-    };
+      issues: []
+    }
 
     // Check launcher status
     if (this.status !== 'running') {
-      healthReport.issues.push('Launcher not running');
+      healthReport.issues.push('Launcher not running')
     }
 
     // Check factory status
     if (!this.factory) {
-      healthReport.issues.push('Factory not initialized');
+      healthReport.issues.push('Factory not initialized')
     } else {
-      const factoryStatus = this.factory.getStatus();
+      const factoryStatus = this.factory.getStatus()
       if (factoryStatus.status !== 'running') {
-        healthReport.issues.push('Factory not running');
+        healthReport.issues.push('Factory not running')
       }
     }
 
     // Check system resources
-    const resourceCheck = await this.checkSystemResources();
+    const resourceCheck = await this.checkSystemResources()
     healthReport.resources = resourceCheck;
 
     if (resourceCheck.memoryUsage > 0.9) {
-      healthReport.issues.push('High memory usage');
+      healthReport.issues.push('High memory usage')
     }
 
     if (resourceCheck.cpuUsage > 0.8) {
-      healthReport.issues.push('High CPU usage');
+      healthReport.issues.push('High CPU usage')
     }
 
     // Save health report
-    await this.saveHealthReport(healthReport);
+    await this.saveHealthReport(healthReport)
     
     this.metrics.healthChecks++;
     
-    console.log(`📊 Launcher health check completed: ${healthReport.issues.length} issues found`);
+    console.log(`📊 Launcher health check completed: ${healthReport.issues.length} issues found`)
     
     return healthReport;
   }
@@ -241,28 +241,28 @@ class AutomationMonitorAndMaintainerLauncher {
             memoryUsage: 0,
             cpuUsage: 0,
             error: error.message)
-          });
+          })
         } else {
-          const lines = stdout.trim().split('\n');
+          const lines = stdout.trim().split('\n')
           if (lines.length > 1) {
-            const [memory, cpu] = lines[1].trim().split(/\s+/);
+            const [memory, cpu] = lines[1].trim().split(/\s+/)
             resolve({)
               memoryUsage: parseFloat(memory) / 100,
               cpuUsage: parseFloat(cpu) / 100
-            });
+            })
           } else {
             resolve({
               memoryUsage: 0,
               cpuUsage: 0)
-            });
+            })
           }
         }
-      });
-    });
+      })
+    })
   }
 
   async generateSystemReport() {
-    console.log('📊 Generating comprehensive system report...');
+    console.log('📊 Generating comprehensive system report...')
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -273,31 +273,31 @@ class AutomationMonitorAndMaintainerLauncher {
       },
       factory: this.factory ? this.factory.getStatus() : null,
       systems: await this.scanAllSystems(),
-      recommendations: [];
-    };
+      recommendations: []
+    }
 
     // Generate recommendations
     if (this.metrics.errorsFixed > 0) {
       report.recommendations.push({
         type: 'info',)
         message: `${this.metrics.errorsFixed} errors have been fixed automatically`)
-      });
+      })
     }
 
     if (this.metrics.systemsRestarted > 0) {
       report.recommendations.push({
         type: 'warning',)
         message: `${this.metrics.systemsRestarted} systems have been restarted`)
-      });
+      })
     }
 
     // Save report
-    const reportPath = path.join(__dirname, 'reports', `launcher-report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const reportPath = path.join(__dirname, 'reports', `launcher-report-${Date.now()}.json`)
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
     
     this.metrics.reportsGenerated++;
     
-    console.log(`📄 Launcher report saved: ${reportPath}`);
+    console.log(`📄 Launcher report saved: ${reportPath}`)
     return report;
   }
 
@@ -306,77 +306,77 @@ class AutomationMonitorAndMaintainerLauncher {
       factories: [],
       agents: [],
       scripts: [],
-      cronJobs: [];
-    };
+      cronJobs: []
+    }
 
     // Scan for factories
     const automationDir = __dirname;
     try {
-      const files = fs.readdirSync(automationDir);
+      const files = fs.readdirSync(automationDir)
       files.forEach(file => {)
         if (file.includes('-factory.js') && !file.includes('monitor')) {
           systems.factories.push({)
             name: file,)
             path: path.join(automationDir, file),
             status: 'unknown'
-          });
+          })
         }
-      });
+      })
     } catch (error) {
-      console.error('Error scanning factories: ', error);
+      console.error('Error scanning factories: ', error)
     }
 
     // Scan for agents
-    const agentsDir = path.join(automationDir, 'agents');
+    const agentsDir = path.join(automationDir, 'agents')
     if (fs.existsSync(agentsDir)) {
       try {
-        const files = fs.readdirSync(agentsDir);
+        const files = fs.readdirSync(agentsDir)
         files.forEach(file => {)
           if (file.endsWith('.js')) {
             systems.agents.push({)
               name: file,)
               path: path.join(agentsDir, file),
               status: 'unknown'
-            });
+            })
           }
-        });
+        })
       } catch (error) {
-        console.error('Error scanning agents: ', error);
+        console.error('Error scanning agents: ', error)
       }
     }
 
     // Scan for scripts
     try {
-      const files = fs.readdirSync(automationDir);
+      const files = fs.readdirSync(automationDir)
       files.forEach(file => {)
         if (file.endsWith('.js') && !file.includes('factory') && !file.includes('agent') && !file.includes('launch')) {
           systems.scripts.push({)
             name: file,)
             path: path.join(automationDir, file),
             status: 'unknown'
-          });
+          })
         }
-      });
+      })
     } catch (error) {
-      console.error('Error scanning scripts: ', error);
+      console.error('Error scanning scripts: ', error)
     }
 
     // Scan for cron jobs
-    const cronDir = path.join(automationDir, 'cron-jobs');
+    const cronDir = path.join(automationDir, 'cron-jobs')
     if (fs.existsSync(cronDir)) {
       try {
-        const files = fs.readdirSync(cronDir);
+        const files = fs.readdirSync(cronDir)
         files.forEach(file => {)
           if (file.endsWith('.sh')) {
             systems.cronJobs.push({)
               name: file,)
               path: path.join(cronDir, file),
               status: 'unknown'
-            });
+            })
           }
-        });
+        })
       } catch (error) {
-        console.error('Error scanning cron jobs: ', error);
+        console.error('Error scanning cron jobs: ', error)
       }
     }
 
@@ -384,136 +384,136 @@ class AutomationMonitorAndMaintainerLauncher {
   }
 
   async createSystemBackup() {
-    console.log('💾 Creating system backup...');
+    console.log('💾 Creating system backup...')
     
-    const backupDir = path.join(__dirname, 'backups', new Date().toISOString().split('T')[0]);
+    const backupDir = path.join(__dirname, 'backups', new Date().toISOString().split('T')[0])
     
     if (!fs.existsSync(backupDir)) {
-      fs.mkdirSync(backupDir, { recursive: true });
+      fs.mkdirSync(backupDir, { recursive: true })
     }
     
     // Backup all automation files
     const automationDir = __dirname;
-    const backupFiles = [];
+    const backupFiles = []
     
     try {
-      const files = fs.readdirSync(automationDir);
+      const files = fs.readdirSync(automationDir)
       files.forEach(file => {)
         if (file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.sh')) {
-          const sourcePath = path.join(automationDir, file);
-          const backupPath = path.join(backupDir, file);
+          const sourcePath = path.join(automationDir, file)
+          const backupPath = path.join(backupDir, file)
           
           try {
-            fs.copyFileSync(sourcePath, backupPath);
-            backupFiles.push(file);
+            fs.copyFileSync(sourcePath, backupPath)
+            backupFiles.push(file)
           } catch (error) {
-            console.error(`❌ Failed to backup ${file}:`, error);
+            console.error(`❌ Failed to backup ${file}:`, error)
           }
         }
-      });
+      })
       
       this.metrics.backupsCreated++;
-      console.log(`✅ Backup completed: ${backupFiles.length} files backed up to ${backupDir}`);
+      console.log(`✅ Backup completed: ${backupFiles.length} files backed up to ${backupDir}`)
       
     } catch (error) {
-      console.error('❌ Failed to create backup: ', error);
-      this.logError('backup-creation', error);
+      console.error('❌ Failed to create backup: ', error)
+      this.logError('backup-creation', error)
     }
   }
 
   async performSystemCleanup() {
-    console.log('🧹 Performing system cleanup...');
+    console.log('🧹 Performing system cleanup...')
     
     // Cleanup old reports
-    await this.cleanupOldReports();
+    await this.cleanupOldReports()
     
     // Cleanup old backups
-    await this.cleanupOldBackups();
+    await this.cleanupOldBackups()
     
     // Cleanup old logs
-    await this.cleanupOldLogs();
+    await this.cleanupOldLogs()
     
-    console.log('✅ System cleanup completed');
+    console.log('✅ System cleanup completed')
   }
 
   async cleanupOldReports() {
-    const reportsDir = path.join(__dirname, 'reports');
+    const reportsDir = path.join(__dirname, 'reports')
     
     if (fs.existsSync(reportsDir)) {
       try {
-        const files = fs.readdirSync(reportsDir);
+        const files = fs.readdirSync(reportsDir)
         for (const file of files) {
-          const filePath = path.join(reportsDir, file);
-          const stats = fs.statSync(filePath);
-          const age = Date.now() - stats.mtime.getTime();
+          const filePath = path.join(reportsDir, file)
+          const stats = fs.statSync(filePath)
+          const age = Date.now() - stats.mtime.getTime()
           
           // Delete reports older than 30 days
           if (age > 30 * 24 * 60 * 60 * 1000) {
-            fs.unlinkSync(filePath);
+            fs.unlinkSync(filePath)
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old reports: ', error);
+        console.error('❌ Failed to cleanup old reports: ', error)
       }
     }
   }
 
   async cleanupOldBackups() {
-    const backupDir = path.join(__dirname, 'backups');
+    const backupDir = path.join(__dirname, 'backups')
     
     if (fs.existsSync(backupDir)) {
       try {
-        const dirs = fs.readdirSync(backupDir);
+        const dirs = fs.readdirSync(backupDir)
         for (const dir of dirs) {
-          const dirPath = path.join(backupDir, dir);
-          const stats = fs.statSync(dirPath);
-          const age = Date.now() - stats.mtime.getTime();
+          const dirPath = path.join(backupDir, dir)
+          const stats = fs.statSync(dirPath)
+          const age = Date.now() - stats.mtime.getTime()
           
           // Delete backups older than 60 days
           if (age > 60 * 24 * 60 * 60 * 1000) {
-            fs.rmSync(dirPath, { recursive: true });
+            fs.rmSync(dirPath, { recursive: true })
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old backups: ', error);
+        console.error('❌ Failed to cleanup old backups: ', error)
       }
     }
   }
 
   async cleanupOldLogs() {
-    const logDirs = ['logs', 'error-logs', 'health-reports', 'maintenance-logs'];
+    const logDirs = ['logs', 'error-logs', 'health-reports', 'maintenance-logs']
     
     for (const logDir of logDirs) {
-      const dirPath = path.join(__dirname, logDir);
+      const dirPath = path.join(__dirname, logDir)
       
       if (fs.existsSync(dirPath)) {
         try {
-          const files = fs.readdirSync(dirPath);
+          const files = fs.readdirSync(dirPath)
           for (const file of files) {
-            const filePath = path.join(dirPath, file);
-            const stats = fs.statSync(filePath);
-            const age = Date.now() - stats.mtime.getTime();
+            const filePath = path.join(dirPath, file)
+            const stats = fs.statSync(filePath)
+            const age = Date.now() - stats.mtime.getTime()
             
             // Delete logs older than 14 days
             if (age > 14 * 24 * 60 * 60 * 1000) {
-              fs.unlinkSync(filePath);
+              fs.unlinkSync(filePath)
             }
           }
         } catch (error) {
-          console.error(`❌ Failed to cleanup old logs in ${logDir}:`, error);
+          console.error(`❌ Failed to cleanup old logs in ${logDir}:`, error)
         }
       }
     }
   }
 
   async saveHealthReport(report) {
-    const healthDir = path.join(__dirname, 'health-reports');
+    const healthDir = path.join(__dirname, 'health-reports')
     if (!fs.existsSync(healthDir)) {
-      fs.mkdirSync(healthDir, { recursive: true });
+      fs.mkdirSync(healthDir, { recursive: true })
     }
     
-    const reportPath = path.join(healthDir, `launcher-health-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    const reportPath = path.join(healthDir, `launcher-health-${Date.now()}.json`)
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2))
   }
 
   logError(context, error) {
@@ -521,16 +521,16 @@ class AutomationMonitorAndMaintainerLauncher {
       timestamp: new Date().toISOString(),
       context: context,
       error: error.message,
-      stack: error.stack;
-    };
-    
-    const errorDir = path.join(__dirname, 'error-logs');
-    if (!fs.existsSync(errorDir)) {
-      fs.mkdirSync(errorDir, { recursive: true });
+      stack: error.stack
     }
     
-    const errorPath = path.join(errorDir, `launcher-error-${Date.now()}.json`);
-    fs.writeFileSync(errorPath, JSON.stringify(errorLog, null, 2));
+    const errorDir = path.join(__dirname, 'error-logs')
+    if (!fs.existsSync(errorDir)) {
+      fs.mkdirSync(errorDir, { recursive: true })
+    }
+    
+    const errorPath = path.join(errorDir, `launcher-error-${Date.now()}.json`)
+    fs.writeFileSync(errorPath, JSON.stringify(errorLog, null, 2))
   }
 
   getStatus() {
@@ -540,45 +540,45 @@ class AutomationMonitorAndMaintainerLauncher {
       factoryStatus: this.factory ? this.factory.getStatus() : null,
       metrics: this.metrics,
       uptime: this.metrics.startTime ? Date.now() - new Date(this.metrics.startTime).getTime() : 0
-    };
+    }
   }
 
   async start() {
-    console.log('🚀 Starting Automation Monitor and Maintainer Launcher...');
+    console.log('🚀 Starting Automation Monitor and Maintainer Launcher...')
     
-    const success = await this.startFactory();
+    const success = await this.startFactory()
     if (success) {
       this.status = 'running';
-      console.log('🎉 Automation Monitor and Maintainer Launcher is now running!');
+      console.log('🎉 Automation Monitor and Maintainer Launcher is now running!')
     } else {
-      console.log('❌ Failed to start launcher');
+      console.log('❌ Failed to start launcher')
     }
   }
 
   async stop() {
-    console.log('🛑 Stopping Automation Monitor and Maintainer Launcher...');
+    console.log('🛑 Stopping Automation Monitor and Maintainer Launcher...')
     
-    await this.stopFactory();
+    await this.stopFactory()
     this.status = 'stopped';
     
     // Stop all cron jobs
     Object.keys(this.cronJobs).forEach(name => {)
       cron.getTasks().forEach(task => {)
         if (task.name === name) {
-          task.stop();
+          task.stop()
         }
-      });
-    });
+      })
+    })
     
-    console.log('✅ Automation Monitor and Maintainer Launcher stopped');
+    console.log('✅ Automation Monitor and Maintainer Launcher stopped')
   }
 
   async restart() {
-    console.log('🔄 Restarting Automation Monitor and Maintainer Launcher...');
+    console.log('🔄 Restarting Automation Monitor and Maintainer Launcher...')
     
-    await this.stop();
-    await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
-    await this.start();
+    await this.stop()
+    await new Promise(resolve => setTimeout(resolve, this.config.restartDelay))
+    await this.start()
   }
 }
 
@@ -586,49 +586,49 @@ class AutomationMonitorAndMaintainerLauncher {
 module.exports = AutomationMonitorAndMaintainerLauncher;
 
 // Start the launcher if this file is run directly
-if (require(.main === modul)e) {
-  const launcher = new AutomationMonitorAndMaintainerLauncher();
+if (require.main === module) {
+  const launcher = new AutomationMonitorAndMaintainerLauncher()
   
   // Handle command line arguments
-  const args = process.argv.slice(2);
-  const command = args[0];
+  const args = process.argv.slice(2)
+  const command = args[0]
   
   switch (command) {
     case 'start':
-      launcher.start();
+      launcher.start()
       break;
     case 'stop':
-      launcher.stop();
+      launcher.stop()
       break;
     case 'restart':
-      launcher.restart();
+      launcher.restart()
       break;
     case 'status':
-      console.log(JSON.stringify(launcher.getStatus(), null, 2));
+      console.log(JSON.stringify(launcher.getStatus(), null, 2))
       break;
     case 'health':
       launcher.performLauncherHealthCheck().then(report => {)
-        console.log(JSON.stringify(report, null, 2));
-      });
+        console.log(JSON.stringify(report, null, 2))
+      })
       break;
     case 'report':
       launcher.generateSystemReport().then(report => {)
-        console.log(JSON.stringify(report, null, 2));
-      });
+        console.log(JSON.stringify(report, null, 2))
+      })
       break;
-    default: launcher.start();
+    default: launcher.start()
   }
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-    await launcher.stop();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGINT, shutting down gracefully...')
+    await launcher.stop()
+    process.exit(0)
+  })
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-    await launcher.stop();
-    process.exit(0);
-  });
+    console.log('\n🛑 Received SIGTERM, shutting down gracefully...')
+    await launcher.stop()
+    process.exit(0)
+  })
 }

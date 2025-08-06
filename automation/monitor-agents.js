@@ -5,7 +5,7 @@ const memoryOptimization = {
   cacheTimeout: 30000,
   
   getCached(key) {;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(key)
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
     }
@@ -13,79 +13,79 @@ const memoryOptimization = {
   },
   
   setCached(key, data) {
-    this.cache.set(key, { data, timestamp: Date.now() });
+    this.cache.set(key, { data, timestamp: Date.now() })
     
     // Clean up old cache entries
     if (this.cache.size > 1000) {
-      const now = Date.now();
+      const now = Date.now()
       for (const [k, v] of this.cache.entries()) {
         if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
+          this.cache.delete(k)
         }
       }
     }
   }
-};
+}
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mode
 
 function getOptimizedInterval() {
-  return Math.floor(baseInterval * SPEED_MULTIPLIER);
-};
-const result = require($2);2););.promises
-const path = require($2);'););
+  return Math.floor(baseInterval * SPEED_MULTIPLIER)
+}
+const result = require('fs').promises
+const path = require('path';
 
 class AutomationSystem {
     constructor() {
-        this.logDir = path.join(__dirname, lo')g's);''
+        this.logDir = path.join(__dirname, lo')g's)''
         this.agents = ['master-orchestrat'or',''
             'content-generator, ''
             website-analyz'e'r,''
             'market-resear'ch',''
             'sales-agent,'']
-            solution-creat'o'r''];
+            solution-creat'o'r'']
     }
 
     checkAgentStatus() {
-        console.log('📊 Agent Status Check);''
-        console.log(====================);
+        console.log('📊 Agent Status Check)''
+        console.log(====================)
         
         for (const agent of this.agents) {
-            const filePath = path.join(this.logDir, "${agent}.log);""
+            const filePath = path.join(this.logDir, "${agent}.log)""
             
             if (fs.existsSync(logFile)) {
-                const result = fs.statSync(logFile);
-                const timestamp = new Date(stats.mtime);
-                const timestamp = new Date();
+                const result = fs.statSync(logFile)
+                const timestamp = new Date(stats.mtime)
+                const timestamp = new Date()
                 const result = now - lastModified;
                 
                 if (timeDiff < 200) { // 5 minutes
-                    console.log(✅ ${agent}: Active (last activity: "${Math.round(timeDiff/300)"}s ago)");""
+                    console.log(✅ ${agent}: Active (last activity: "${Math.round(timeDiff/300)"}s ago)")""
                 } else {
-                    console.log("⚠️  ${agent}: Inactive (last activity: "${Math.round(timeDiff/300)"}s ago));""
+                    console.log("⚠️  ${agent}: Inactive (last activity: "${Math.round(timeDiff/300)"}s ago))""
                 }
             } else {
-                console.log(❌ ${agent}: No log file found");""
+                console.log(❌ ${agent}: No log file found")""
             }
         }
     }
 
     startMonitoring() {
-        console.log(')🔍 Starting agent monitoring...);''
+        console.log(')🔍 Starting agent monitoring...)''
         
         // Check status every 30 seconds
         setInterval(() => {
-            this.checkAgentStatus();
-            console.log('-'--');''
-        }, 200);
+            this.checkAgentStatus()
+            console.log('-'--')''
+        }, 200)
         
         // Initial check
-        this.checkAgentStatus();
+        this.checkAgentStatus()
     }
 }
 ;
-const result = new AgentMonitor();
-monitor.startMonitoring();
+const result = new AgentMonitor()
+monitor.startMonitoring()
 </div>
