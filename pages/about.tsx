@@ -1,303 +1,293 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next'
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import EnhancedButton from '../components/ui/EnhancedButton'
+import GlassmorphismCard from '../components/ui/GlassmorphismCard'
+import InteractiveStats from '../components/ui/InteractiveStats'
 
-const AboutPage: NextPage = () => {
-  const values = [
-    {
-      title: 'Innovation First',
-      description: 'We believe in pushing the boundaries of what\'s possible with AI and technology.',
-      icon: '🚀'
-    },
-    {
-      title: 'Quality Excellence',
-      description: 'Every service and product on our platform meets the highest standards of quality.',
-      icon: '⭐'
-    },
-    {
-      title: 'Community Driven',
-      description: 'We foster a collaborative ecosystem where businesses and talents thrive together.',
-      icon: '🤝'
-    },
-    {
-      title: 'Future Focused',
-      description: 'We\'re building the technology solutions that will define tomorrow\'s business landscape.',
-      icon: '🔮'
-    }
-  ];
+const About: NextPage = () => {
+  const teamStats = [
+    { value: 50, label: 'Team Members', icon: '👥', color: 'blue' as const },
+    { value: 10, label: 'Years Experience', icon: '⏰', color: 'purple' as const, suffix: '+' },
+    { value: 1000, label: 'Projects Completed', icon: '✅', color: 'green' as const, suffix: '+' },
+    { value: 99, label: 'Client Satisfaction', icon: '⭐', color: 'pink' as const, suffix: '%' }
+  ]
 
-  const team = [
+  const teamMembers = [
     {
       name: 'Dr. Sarah Chen',
       role: 'CEO & AI Research Lead',
-      description: 'Former Google AI researcher with 15+ years in machine learning and neural networks.',
-      image: '👩‍💼'
+      description: 'PhD in Machine Learning with 15+ years of experience in AI research and development.',
+      image: '👩‍💼',
+      expertise: ['Machine Learning', 'AI Research', 'Leadership'],
+      color: 'blue' as const
     },
     {
       name: 'Alex Rodriguez',
       role: 'CTO & Platform Architect',
-      description: 'Expert in scalable cloud infrastructure and distributed systems.',
-      image: '👨‍💻'
+      description: 'Expert in scalable systems and cloud architecture with deep knowledge in distributed systems.',
+      image: '👨‍💻',
+      expertise: ['Cloud Architecture', 'System Design', 'DevOps'],
+      color: 'purple' as const
     },
     {
-      name: 'Maria Johnson',
-      role: 'Head of Product',
-      description: 'Product strategist with deep experience in AI-powered marketplaces.',
-      image: '👩‍🎨'
+      name: 'Dr. Michael Kim',
+      role: 'Chief Data Scientist',
+      description: 'Specialist in big data analytics and predictive modeling with quantum computing expertise.',
+      image: '👨‍🔬',
+      expertise: ['Data Science', 'Quantum Computing', 'Analytics'],
+      color: 'green' as const
     },
     {
-      name: 'David Kim',
-      role: 'Head of Security',
-      description: 'Cybersecurity expert ensuring the highest standards of data protection.',
-      image: '👨‍🔒'
+      name: 'Emma Thompson',
+      role: 'VP of Engineering',
+      description: 'Full-stack development expert with focus on AI-powered applications and user experience.',
+      image: '👩‍🔧',
+      expertise: ['Full-Stack', 'AI Applications', 'UX Design'],
+      color: 'pink' as const
     }
-  ];
+  ]
 
-  const milestones = [
+  const values = [
     {
-      year: '2024',
-      title: 'Platform Launch',
-      description: 'Successfully launched Zion as the first free AI-powered marketplace.'
+      title: 'Innovation First',
+      description: 'We push the boundaries of what\'s possible with cutting-edge AI technology and creative solutions.',
+      icon: '🚀',
+      color: 'blue' as const
     },
     {
-      year: '2024',
-      title: '10K+ Users',
-      description: 'Reached our first major milestone with over 10,000 active users.'
+      title: 'Quality Excellence',
+      description: 'Every service and product meets our rigorous standards for performance, security, and reliability.',
+      icon: '⭐',
+      color: 'purple' as const
     },
     {
-      year: '2024',
-      title: '500+ Services',
-      description: 'Expanded our marketplace to include over 500 verified AI services.'
+      title: 'Customer Success',
+      description: 'Your success is our success. We work tirelessly to ensure you achieve your goals.',
+      icon: '🎯',
+      color: 'green' as const
     },
     {
-      year: '2024',
-      title: 'Enterprise Partnerships',
-      description: 'Established partnerships with leading technology companies.'
+      title: 'Global Impact',
+      description: 'We believe in making AI accessible to everyone, everywhere, for a better future.',
+      icon: '🌍',
+      color: 'pink' as const
     }
-  ];
+  ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
-      <Head>
-        <title>About Zion - The First Free AI-Powered Marketplace</title>
-        <meta name="description" content="Learn about Zion's mission to democratize AI technology and create the world's first free AI-powered marketplace." />
-        <meta property="og:title" content="About Zion - The First Free AI-Powered Marketplace" />
-        <meta property="og:description" content="Learn about Zion's mission to democratize AI technology." />
-      </Head>
-
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
-            >
-              Zion
-            </Link>
-            <div className="hidden md:flex gap-6 text-sm font-medium">
-              <Link href="/services" className="hover:text-purple-300 transition-colors">
-                Services
-              </Link>
-              <Link href="/products" className="hover:text-purple-300 transition-colors">
-                Products
-              </Link>
-              <Link href="/talent" className="hover:text-purple-300 transition-colors">
-                Talent
-              </Link>
-              <Link href="/blog" className="hover:text-purple-300 transition-colors">
-                Blog
-              </Link>
-              <Link href="/about" className="text-purple-300">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-purple-300 transition-colors">
-                Contact
-              </Link>
+    <EnhancedLayout
+      title="About Zion - The First Free AI-Powered Marketplace"
+      description="Learn about Zion's mission to democratize AI technology and connect businesses with top-tier AI services and talent."
+    >
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-responsive-4xl lg:text-responsive-6xl font-bold text-white mb-8">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                About Zion
+              </span>
+            </h1>
+            <p className="text-responsive-xl text-gray-300 mb-8 leading-relaxed">
+              We're on a mission to democratize AI technology and create the world's most comprehensive 
+              AI-powered marketplace. Our platform connects businesses with top-tier AI services, 
+              expert talent, and cutting-edge technology solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <EnhancedButton
+                href="/contact"
+                size="lg"
+                gradient="blue"
+                glow
+                icon="📞"
+              >
+                Get in Touch
+              </EnhancedButton>
+              <EnhancedButton
+                href="/careers"
+                variant="outline"
+                size="lg"
+                icon="💼"
+              >
+                Join Our Team
+              </EnhancedButton>
             </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Hero Section */}
-      <section className="py-24 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              About Zion
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            We're on a mission to democratize AI technology and create the world's first truly free AI-powered marketplace, 
-            connecting businesses with cutting-edge technology solutions.
-          </p>
+      {/* Stats Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                Our Impact
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              Numbers that tell our story of growth and success
+            </p>
+          </div>
+          
+          <InteractiveStats stats={teamStats} />
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
+        
+        <div className="container-responsive relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-gray-300 mb-6 text-lg">
-                At Zion, we believe that AI technology should be accessible to every business, regardless of size or budget. 
-                Our platform eliminates the barriers that have traditionally prevented small and medium businesses from 
-                accessing cutting-edge AI solutions.
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
+                  Our Mission
+                </span>
+              </h2>
+              <p className="text-responsive-lg text-gray-300 mb-6 leading-relaxed">
+                At Zion, we believe that AI technology should be accessible to everyone. Our mission is to 
+                democratize AI by creating a comprehensive marketplace that connects businesses with the 
+                world's best AI services, talent, and technology solutions.
               </p>
-              <p className="text-gray-300 mb-6">
-                We're building more than just a marketplace – we're creating an ecosystem where innovation thrives, 
-                where businesses can find the exact AI solutions they need, and where talented professionals can showcase 
-                their expertise to a global audience.
+              <p className="text-responsive-lg text-gray-300 mb-8 leading-relaxed">
+                We're building the future of commerce, where AI-powered matching algorithms ensure perfect 
+                connections between needs and solutions, while maintaining the highest standards of quality 
+                and security.
               </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/services"
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  Explore Services
-                </Link>
-                <Link
-                  href="/contact"
-                  className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  Get in Touch
-                </Link>
-              </div>
+              <EnhancedButton
+                href="/services"
+                size="lg"
+                gradient="green"
+                glow
+                icon="🎯"
+              >
+                Explore Our Services
+              </EnhancedButton>
             </div>
-            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Why Zion?</h3>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3">✓</span>
-                  <span>Free access to premium AI services</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3">✓</span>
-                  <span>Verified professionals and companies</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3">✓</span>
-                  <span>Secure and transparent transactions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3">✓</span>
-                  <span>24/7 customer support</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-400 mr-3">✓</span>
-                  <span>Cutting-edge technology solutions</span>
-                </li>
-              </ul>
+            <div className="relative">
+              <GlassmorphismCard gradient="custom" glow className="p-8">
+                <div className="text-center">
+                  <div className="text-6xl mb-6">🤖</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Future</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    We envision a world where AI technology is seamlessly integrated into every business, 
+                    driving innovation and growth across all industries.
+                  </p>
+                </div>
+              </GlassmorphismCard>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-black/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Our Values</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              These core values guide everything we do at Zion, from product development to customer service.
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
+                Our Values
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              The principles that guide everything we do
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-gray-300">{value.description}</p>
-              </div>
+              <GlassmorphismCard key={index} gradient={value.color} glow>
+                <div className="text-center">
+                  <div className="text-4xl mb-4">{value.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                  <p className="text-gray-300 text-sm">{value.description}</p>
+                </div>
+              </GlassmorphismCard>
             ))}
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50"></div>
+        
+        <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Our Leadership Team</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Meet the visionary leaders driving Zion's mission to democratize AI technology.
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple">
+                Meet Our Team
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              The brilliant minds behind Zion's success
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-                <div className="text-4xl mb-4">{member.image}</div>
-                <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-purple-400 text-sm mb-3">{member.role}</p>
-                <p className="text-gray-300 text-sm">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Milestones Section */}
-      <section className="py-16 bg-black/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Our Journey</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Key milestones in Zion's journey to revolutionize the AI marketplace.
-            </p>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
-                  {milestone.year}
+            {teamMembers.map((member, index) => (
+              <GlassmorphismCard key={index} gradient={member.color} glow>
+                <div className="text-center">
+                  <div className="text-6xl mb-4">{member.image}</div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
+                  <p className="text-neon-blue text-sm mb-3">{member.role}</p>
+                  <p className="text-gray-300 text-sm mb-4">{member.description}</p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {member.expertise.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-2 py-1 bg-white/5 border border-neon-blue/20 rounded-full text-xs text-gray-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{milestone.title}</h3>
-                <p className="text-gray-300 text-sm">{milestone.description}</p>
-              </div>
+              </GlassmorphismCard>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-4">Join Our Mission</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Whether you're a business looking for AI solutions or a professional offering your expertise, 
-              Zion is the platform where innovation meets opportunity.
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                Ready to Join the Future?
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+              Whether you're looking for AI services, want to offer your expertise, or join our team, 
+              we'd love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/auth"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-              >
-                Get Started Free
-              </Link>
-              <Link
+              <EnhancedButton
                 href="/contact"
-                className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+                size="lg"
+                gradient="blue"
+                glow
+                icon="📞"
               >
                 Contact Us
-              </Link>
+              </EnhancedButton>
+              <EnhancedButton
+                href="/careers"
+                variant="outline"
+                size="lg"
+                icon="💼"
+              >
+                View Careers
+              </EnhancedButton>
             </div>
           </div>
         </div>
       </section>
+    </EnhancedLayout>
+  )
+}
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} Zion. All rights reserved.
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default AboutPage;
+export default About

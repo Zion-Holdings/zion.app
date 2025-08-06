@@ -1,8 +1,8 @@
 
 import React from 'react';
 import Head from 'next/head';
-import { EnhancedCard } from '../components/ui/EnhancedCard';
-import { EnhancedButton } from '../components/ui/EnhancedButton';
+import EnhancedCard from '../components/ui/EnhancedCard';
+import EnhancedButton from '../components/ui/EnhancedButton';
 
 export default function EnhancedHome() {
   return (
@@ -27,23 +27,26 @@ export default function EnhancedHome() {
           </section>
           
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <EnhancedCard title="Automation">
-              <p className="text-gray-600">
-                Advanced automation systems for your development workflow.
-              </p>
-            </EnhancedCard>
+            <EnhancedCard 
+              title="Automation"
+              description="Advanced automation systems for your development workflow."
+              icon="⚡"
+              color="blue"
+            />
             
-            <EnhancedCard title="Development">
-              <p className="text-gray-600">
-                Modern development tools and frameworks.
-              </p>
-            </EnhancedCard>
+            <EnhancedCard 
+              title="Development"
+              description="Modern development tools and frameworks."
+              icon="💻"
+              color="purple"
+            />
             
-            <EnhancedCard title="Innovation">
-              <p className="text-gray-600">
-                Cutting-edge solutions for tomorrow's challenges.
-              </p>
-            </EnhancedCard>
+            <EnhancedCard 
+              title="Innovation"
+              description="Cutting-edge solutions for tomorrow's challenges."
+              icon="🚀"
+              color="green"
+            />
           </section>
         </main>
       </div>
