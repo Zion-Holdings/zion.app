@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-08-06T11:15:48.989Z",
+  "timestamp": "2025-08-06T11:29:10.311Z",
   "status": "running",
-  "syncCount": 0,
-  "errorCount": 5,
-  "successRate": 0,
-  "lastSync": null,
-  "fileWatchers": 2,
+  "syncCount": 1,
+  "errorCount": 25,
+  "successRate": "-2400.00",
+  "lastSync": "2025-08-06T11:28:15.610Z",
+  "fileWatchers": 7,
   "memory": {
-    "rss": 41021440,
-    "heapTotal": 6623232,
-    "heapUsed": 5221952,
-    "external": 1759453,
-    "arrayBuffers": 18513
+    "rss": 43405312,
+    "heapTotal": 6885376,
+    "heapUsed": 6191088,
+    "external": 1784405,
+    "arrayBuffers": 31899
   },
-  "uptime": 14.223439915
+  "uptime": 77.586343083
 }

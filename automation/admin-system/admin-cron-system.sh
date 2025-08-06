@@ -103,15 +103,15 @@ manage_web_researcher() {
 }
 
 manage_status_monitor() {
-    start_process "admin-status-monitor" "cd $ADMIN_SYSTEM_PATH && node agents/AdminStatusMonitor.js"
+    start_process "admin-status-monitor" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminStatusMonitor.js"
 }
 
 manage_evolution_agent() {
-    start_process "admin-evolution-agent" "cd $ADMIN_SYSTEM_PATH && node agents/AdminEvolutionAgent.js"
+    start_process "admin-evolution-agent" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminEvolutionAgent.js"
 }
 
 manage_security_agent() {
-    start_process "admin-security-agent" "cd $ADMIN_SYSTEM_PATH && node agents/AdminSecurityAgent.js"
+    start_process "admin-security-agent" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminSecurityAgent.js"
 }
 
 manage_analytics_agent() {
