@@ -1,35 +1,35 @@
 {
-  "timestamp": "2025-08-06T11:11:50.536Z",
+  "timestamp": "2025-08-06T13:00:15.024Z",
   "status": "running",
   "processes": {
     "master-sync-controller.js": {
-      "pid": 63652,
-      "startTime": "2025-08-06T10:50:50.580Z",
+      "pid": 86461,
+      "startTime": "2025-08-06T12:59:15.014Z",
       "restartCount": 0,
-      "lastHealthCheck": "2025-08-06T10:50:50.582Z",
+      "lastHealthCheck": "2025-08-06T12:59:15.015Z",
       "isRunning": true
     },
     "comprehensive-sync-orchestrator.js": {
-      "pid": 63656,
-      "startTime": "2025-08-06T10:50:50.583Z",
+      "pid": 86462,
+      "startTime": "2025-08-06T12:59:15.018Z",
       "restartCount": 0,
-      "lastHealthCheck": "2025-08-06T10:50:50.583Z",
+      "lastHealthCheck": "2025-08-06T12:59:15.018Z",
       "isRunning": true
     },
     "high-frequency-git-sync.js": {
-      "pid": 25284,
-      "startTime": "2025-08-06T11:09:08.762Z",
+      "pid": 86463,
+      "startTime": "2025-08-06T12:59:15.022Z",
       "restartCount": 0,
-      "lastHealthCheck": "2025-08-06T11:09:08.762Z",
+      "lastHealthCheck": "2025-08-06T12:59:15.022Z",
       "isRunning": true
     }
   },
   "memory": {
-    "rss": 49524736,
-    "heapTotal": 6098944,
-    "heapUsed": 5041480,
-    "external": 1605594,
-    "arrayBuffers": 49912
+    "rss": 36368384,
+    "heapTotal": 5836800,
+    "heapUsed": 4675520,
+    "external": 1587591,
+    "arrayBuffers": 31949
   },
-  "uptime": 1260.060801067
+  "uptime": 60.092429886
 }
