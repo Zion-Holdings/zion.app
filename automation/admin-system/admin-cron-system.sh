@@ -85,7 +85,7 @@ manage_admin_orchestrator() {
     if ! is_process_running "$orchestrator_pid"; then
         log_cron_activity "Starting Admin Autonomous Orchestrator"
         cd "$ADMIN_SYSTEM_PATH"
-        nohup node admin-autonomous-orchestrator.js > "$LOG_PATH/admin-orchestrator.log" 2>&1 &
+        nohup node admin-autonomous-orchestrator-simple.js > "$LOG_PATH/admin-orchestrator.log" 2>&1 &
         echo $! > "$orchestrator_pid"
         log_cron_activity "Admin Orchestrator started with PID $(cat $orchestrator_pid)"
     else
