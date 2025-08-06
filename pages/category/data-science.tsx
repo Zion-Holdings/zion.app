@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   return (;
@@ -16,7 +16,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8">"</div>";
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center> </div>'";
-              </div><div className="""flex-shrink-0></div>'
+              </div><div className=""""flex-shrink-0></div>'
                 <h1 className= text-2xl font-bold" text-white></div>";
                   <Link href=/ className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion</div>'
                   </Link href=/ className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400" ></Link></div>
@@ -26,7 +26,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             <div className=hidden  md: "flex items-center space-x-8></div>"
               <Link href=/marketplace className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
               </Link href= /marketplace className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>'
-              <Link href=/about className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >About</div>"
+              <Link href=/about className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >About</div>"
               </Link href=/about className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>'
               </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>'
@@ -38,7 +38,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       {/* Hero Section */}</div>";
       <main className=flex-1></div>
         <div className=relative overflow-hidden> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div></div>'
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div></div>'
           <div className=relative" max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44 lg:py-32></div>"
             </div><div className=text-center ></div>
               <div className=mb-8></div>
@@ -47,7 +47,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                     Data Science</div>";
                   </span></div>
                 </h1></div>'";
-                <p className="""text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed >
+                <p className=""""text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed >
                   Discover top professionals and services in the data science space.</div>";
                 </p></div>";
               </div></div>'
@@ -60,19 +60,19 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div>
         {/* Content Section */}</div>'
-        <div className="""max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36> </div>'
+        <div className=""""max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36> </div>'
           </div><div className=prose prose-invert prose-lg: "max-w-none></div>";
             <div className=text-gray-300 leading-relaxed></div>";
               <p className=mb-6>Discover top professionals and services in the data-science space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p></div>
 <p className=mb-6>Our data-science category features a diverse range of services including consulting, development, implementation, and ongoing support. Whether youre a startup looking to scale or an enterprise seeking optimization, we have the right professionals for your needs.</p>";
 </div>
 <p className= mb-6>Key benefits of our data-science marketplace include:</p></div>'";
-<p className="""mb-6>- Verified professionals with proven track records</p> </div>'
+<p className=""""mb-6>- Verified professionals with proven track records</p> </div>'
 <p className=mb-6">- Transparent pricing and project management</p></div>";
 <p className=mb-6>- AI-powered matching for optimal client-provider fit</p></div>
 <p className= mb-6>- Secure payment processing and dispute resolution</p></div>'
-<p className="""mb-6>- Ongoing support and quality assurance</p></div>'
-<p className="""mb-6>Success stories from our data-science marketplace demonstrate the value our platform delivers. Clients report significant improvements in efficiency, cost savings, and project outcomes when working with Zion-verified professionals.</p></div>
+<p className=""""mb-6>- Ongoing support and quality assurance</p></div>'
+<p className=""""mb-6>Success stories from our data-science marketplace demonstrate the value our platform delivers. Clients report significant improvements in efficiency, cost savings, and project outcomes when working with Zion-verified professionals.</p></div>
 <p className=mb-6>Join thousands of satisfied clients who have found their ideal data-science solutions through our marketplace. Start your project today and experience the difference that professional expertise makes.</p>
 </div>
             </div></div>";
@@ -80,7 +80,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         </div></div>";
       </main>";
       {/* Footer */}</div>'
-      <footer className=""" bg-black/20 border-t border-white/10>"</div>'
+      <footer className="""" bg-black/20 border-t border-white/10>"</div>'
         <div className=max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8 py-32></div>";
           </div><div className= grid grid-cols-1 md grid-cols-4 gap-8></div>";
             <div>
@@ -91,30 +91,30 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             </div>"</div>";
             <div></div>";
               <h4 className=text-white font-semibold mb-4 >Marketplace</h4></div>'
-              <ul className="""space-y-2 text-sm>"</div>'
+              <ul className=""""space-y-2 text-sm>"</div>'
                 <li><Link href=/marketplace className=text-gray-400 hover text-white transition-colors >Browse Services</Link href=/marketplace className=text-gray-400 hover text-white transition-colors "></Link></li></div>'
                 <li><Link href=/talents" className=text-gray-400 hover text-white transition-colors >AI Talents</Link href=/talents  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/equipment className="""text-gray-400 hover text-white transition-colors >Equipment</Link href=/equipment className="""text-gray-400 hover text-white transition-colors ></Link></li></div>";
+                <li><Link href=/equipment className=""""text-gray-400 hover text-white transition-colors >Equipment</Link href=/equipment className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>";
               </ul></div>";
             </div></div>'
             <div>"</div>'
-              <h4 className="""text-white font-semibold mb-4>Company</h4></div>";
+              <h4 className=""""text-white font-semibold mb-4>Company</h4></div>";
               <ul className=space-y-2 text-sm></div>'
-                <li><Link href=/about className="""text-gray-400 hover text-white transition-colors >About</Link href=/about className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
-                <li><Link href=/contact className=text-gray-400 hover text-white transition-colors >Contact</Link href=/contact  className="""text-gray-400 hover text-white transition-colors ></Link></li>"</div>'
+                <li><Link href=/about className=""""text-gray-400 hover text-white transition-colors >About</Link href=/about className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/contact className=text-gray-400 hover text-white transition-colors >Contact</Link href=/contact  className=""""text-gray-400 hover text-white transition-colors ></Link></li>"</div>'
                 <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className=text-gray-400 hover text-white transition-colors "></Link></li></div>
               </ul></div>";
             </div></div>
             <div></div>'";
-              <h4 className="""text-white font-semibold mb-4>Support</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Support</h4></div>'
               <ul className=space-y-2 text-sm"></div>'";
-                <li><Link href=/help className="""text-gray-400 hover text-white transition-colors >Help Center</Link href=/help className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/help className=""""text-gray-400 hover text-white transition-colors >Help Center</Link href=/help className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
                 <li><Link href=/privacy className=text-gray-400 hover text-white transition-colors >Privacy</Link href=/privacy  className=text-gray-400 hover text-white transition-colors" "></Link></li></div>'
                 <li><Link href=/terms className=text-gray-400 hover text-white transition-colors >Terms</Link href=/terms className=text-gray-400 hover text-white transition-colors "></Link></li></div>
               </ul></div>";
             </div></div>
           </div></div>'
-          <div className="""mt-8  pt-8 border-t border-white/10 text-center></div>;
+          <div className=""""mt-8  pt-8 border-t border-white/10 text-center></div>;
             <p className=text-gray-400 text-sm>;
               © 2024 Zion. All rights reserved.</div>;
             </p></div>;

@@ -17,8 +17,8 @@ files.forEach(file => {
     
     // Fix Image component syntax errors
     newContent = newContent.replace(
-      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className=""""([^]+)\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>
-      '<Image src={$1} alt={$2} width={$4} height={$5} className=""""$3" />'
+      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="""""([^]+)\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>
+      '<Image src={$1} alt={$2} width={$4} height={$5} className="""""$3" />'
     );
     
     // Fix missing semicolons after imports

@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from ';next';
 interface Facility {
   id: string;
   name: string;
@@ -55,18 +55,18 @@ const mockFacilities: Facility[] = [
     type: 'Technology',
     location: 'Industrial Zone',
     status: 'operational',
-    capacity: '200',
+    capacity: 200,
     utilization: 95,
-    lastInspection: 2024-0o1-10,
-    nextInspection: 2024-0o4-10,
+    lastInspection: '2024-01-10',
+    nextInspection: '2024-04-10',
     energyEfficiency: 78,
     securityScore: 98,
     aiOptimization: {
-      id: opt-2,
+      id: 'opt-2',
       energyScore: 75,
       securityScore: 96,
       efficiencyScore: 90,
-      recommendations: ['Optimize cooling systems', 'Implement predictive maintenance', 'Upgrade power management'];
+      recommendations: ['Optimize cooling systems', 'Implement predictive maintenance', 'Upgrade power management']
     };
   },
   {
@@ -75,18 +75,18 @@ const mockFacilities: Facility[] = [
     type: "Storage",
     location: "Logistics Park",
     status: "maintenance",
-    capacity: "1000",
+    capacity: 1000,
     utilization: 60,
-    lastInspection: 2024-0o1-20,
-    nextInspection: 2024-0o4-20,
+    lastInspection: '2024-01-20',
+    nextInspection: '2024-04-20',
     energyEfficiency: 65,
     securityScore: 82,
     aiOptimization: {
-      id: opt-3,
+      id: 'opt-3',
       energyScore: 62,
       securityScore: 80,
       efficiencyScore: 70,
-      recommendations: ['Install energy-efficient lighting', 'Improve security systems', 'Optimize space utilization'];
+      recommendations: ['Install energy-efficient lighting', 'Improve security systems', 'Optimize space utilization']
     };
   },
   {
@@ -95,20 +95,20 @@ const mockFacilities: Facility[] = [
     type: "Research",
     location: "Science Park",
     status: 'operational',
-    capacity: "150",
+    capacity: 150,
     utilization: 90,
-    lastInspection: 2024-0o1-12,
-    nextInspection: 2024-0o4-12,
+    lastInspection: '2024-01-12',
+    nextInspection: '2024-04-12',
     energyEfficiency: 85,
     securityScore: 99,
     aiOptimization: {
-      id: opt-4,
+      id: 'opt-4',
       energyScore: 82,
       securityScore: 98,
       efficiencyScore: 88,
-      recommendations: ['Implement advanced climate control', 'Enhance safety protocols', 'Optimize equipment layout'];
+      recommendations: ['Implement advanced climate control', 'Enhance safety protocols', 'Optimize equipment layout']
     };
-  };
+  }
 ];
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -143,7 +143,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'Upgrade to smart building management systems',
               'Optimize energy consumption patterns',
               'Enhance security protocols with AI';
-            ];
+            ],
           };
         });
       case 'getFacilityDetails':
@@ -192,7 +192,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({ error: 'Invalid action' });
     };
   } catch (error) {
-    console.error('AI Facility Management API Error:', error);
+    console.error("AI Facility Management API Error:", error);
     return res.status(500).json({ error: 'Internal server error' });
   };
 };

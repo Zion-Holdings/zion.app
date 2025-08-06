@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   return (;
@@ -9,7 +9,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 },
     {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
@@ -31,12 +31,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             <p className=text-gray-300>5G" and IoT integration</p></div>";
           </Link></div>";
           <Link href=/blog/ai-powered-marketplaces-the-future-of-digital-commerce className=bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 > </div>'
-            </Link href=/blog/ai-powered-marketplaces-the-future-of-digital-commerce className=""" bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 ><h3 className=text-xl" font-semibold text-white mb-3>AI Marketplaces</h3></div>";
+            </Link href=/blog/ai-powered-marketplaces-the-future-of-digital-commerce className="""" bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 ><h3 className=text-xl" font-semibold text-white mb-3>AI Marketplaces</h3></div>";
             <p className=text-gray-300>Future of digital commerce</p></div>";
           </Link></div>'
-          <Link href=/blog/cybersecurity-trends-for-2024-and-beyond className="""bg-black/20" backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 > </div>
+          <Link href=/blog/cybersecurity-trends-for-2024-and-beyond className=""""bg-black/20" backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 > </div>
             </Link href=/blog/cybersecurity-trends-for-2024-and-beyond className= bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30 transition-all duration-300 ><h3 className=text-xl font-semibold text-white mb-3>Cybersecurity</h3></div>'
-            <p className="""text-gray-300>Security trends 2024</p></div>;
+            <p className=""""text-gray-300>Security trends 2024</p></div>;
           </Link></div>;
         </div></div>;
       </div></div>;

@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}";
 import Link from next/link
 import { motion, AnimatePresence }  from ";framer-motion";
@@ -215,29 +215,29 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {/* Background Effects */}"</div>";
         <div className=fixed inset-0 z-0> </div>'
           </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>";
       </div>
         <div className=flex items-center justify-center min-h-screen></div>'
-          </div><div className="""animate-spin rounded-full h-32 w-32 border-b-2 border-white></div></div>
+          </div><div className=""""animate-spin rounded-full h-32 w-32 border-b-2 border-white></div></div>
         </div></div>'
       </div>}'";
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head></div>";
         <title>Help Desk & Support Ticket System - Zion Tech Group</title></div>'
         <meta name=description content=Comprehensive help desk and support ticket system for customer support management > </meta" name=description content=Comprehensive help desk and support ticket system for customer support management ><link rel=icon href=/favicon.ico > </link rel="icon" href=/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head> </div>'";
-      <header className=""" bg-black/20 backdrop-blur-sm border-b border-white/10></div>'
+      <header className="""" bg-black/20 backdrop-blur-sm border-b border-white/10></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"";
           </div><div className=flex  justify-between items-center py-6></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=""" text-2xl font-bold text-white >Zion Tech Group</div>";
+              <Link href=/ className="""" text-2xl font-bold text-white >Zion Tech Group</div>";
               </Link href=/ className=text-2xl font-bold text-white ></Link></div>
             </div></div>'
-            <nav className="""hidden md flex space-x-8></div>'";
-              <Link href=/ className="""text-gray-300 hover text-white transition-colors >Home</div>'
+            <nav className=""""hidden md flex space-x-8></div>'";
+              <Link href=/ className=""""text-gray-300 hover text-white transition-colors >Home</div>'
               </Link href=/  className=text-gray-300 hover text-white transition-colors "></Link></div>'
-              <Link href=/dashboard className="""text-gray-300 hover text-white transition-colors >Dashboard</div>";
+              <Link href=/dashboard className=""""text-gray-300 hover text-white transition-colors >Dashboard</div>";
               </Link href=/dashboard className=text-gray-300 hover text-white transition-colors ></Link> </nav></div>
           </div></div>";
         </div></div>";
@@ -252,30 +252,30 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             and support team coordination. Manage customer inquiries efficiently and provide excellent service.</div>";
           </p></div>
         </div></div>'
-        <div className="""grid grid-cols-1 md grid-cols-4 gap-6 mb-8>
+        <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 mb-8>
           ></div>'
-            <div className="""flex items-center justify-between></div>
+            <div className=""""flex items-center justify-between></div>
               </div><div></div>'
-                <p className="""text-high-contrast-tertiary text-sm>Total Tickets</p></div>'
-                <p className="""text-2xl font-bold text-white >{tickets.length}</p></div>
+                <p className=""""text-high-contrast-tertiary text-sm>Total Tickets</p></div>'
+                <p className=""""text-2xl font-bold text-white >{tickets.length}</p></div>
               </div></div>'";
-              <div className="""text-3xl>🎫</div></div>
+              <div className=""""text-3xl>🎫</div></div>
             </div></div>";
           </motion.div>
           ></div>'
-            <div className="""flex items-center justify-between></div>
+            <div className=""""flex items-center justify-between></div>
               </div><div></div>'
-                <p className="""text-gray-400 text-sm >Open Tickets</p></div>'
-                <p className="""text-2xl font-bold text-white>{tickets.filter(t => t.status === open).length}</p></div>";
+                <p className=""""text-gray-400 text-sm >Open Tickets</p></div>'
+                <p className=""""text-2xl font-bold text-white>{tickets.filter(t => t.status === open).length}</p></div>";
               </div></div>'
-              <div className="""text-3xl>🔓</div"></div>
+              <div className=""""text-3xl>🔓</div"></div>
             </div></div>";
           </motion.div>
           ></div>";
             <div className=flex items-center justify-between></div>";
               </div><div></div>'
                 <p className=text-gray-400 text-sm>Support Agents</p>"</div>'
-                <p className="""text-2xl font-bold text-white>{agents.length}</p> </div>
+                <p className=""""text-2xl font-bold text-white>{agents.length}</p> </div>
               </div></div>";
               <div className=text-3xl>👥</div></div>
             </div></div>";
@@ -286,7 +286,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=flex items-center justify-between></div>";
               </div><div> </div>'
                 <p className=text-gray-400 text-sm>Avg Response Time</p>"</div>'
-                <p className="""text-2xl font-bold text-white>2.8h</p></div>";
+                <p className=""""text-2xl font-bold text-white>2.8h</p></div>";
               </div></div>
               <div className=text-3xl>⏱️</div></div>";
             </div></div>";
@@ -317,7 +317,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {activeTab === ticket's && ('
             '";
             ></div>'
-              <div className=""" flex flex-wrap gap-4 items-center>";
+              <div className="""" flex flex-wrap gap-4 items-center>";
                   onChange={(e) => setSearchTerm(e.target.value)}";
                   className= px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-white/20'
                 />'";
@@ -341,7 +341,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <option value=low>Low</option></div>";
                 </select>
                   onChange={(e) => setFilterCategory(e.target.value)}'";
-                  className="""px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-white/20
+                  className=""""px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-white/20
                 ></div>
                   <option value=all>All Categories</option></div>";
                   <option value=technical>Technical</option></div>
@@ -356,17 +356,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 {filteredTickets.map((ticket) => (";
                   ></div>'
                     <div className=flex items-start justify-between mb-4> "</div>'
-                      </div><div className="""flex-1></div>";
+                      </div><div className=""""flex-1></div>";
                         <div className= flex items-center gap-3 mb-2></div>'
-                          <h3 className="""text-lg" font-semibold text-white>{ticket.title}</h3></div>'
-                          <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}}">";
+                          <h3 className=""""text-lg" font-semibold text-white>{ticket.title}</h3></div>'
+                          <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}}">";
                             {ticket.status}</div>";
                           </span>`</div>'
                           <span className={px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(ticket.priority)}"}>
                             {ticket.priority}</div>";
                           </span></div>
                         </div></div>'
-                        <p className="""text-gray-300 text-sm mb-3>{ticket.description}</p></div>'
+                        <p className=""""text-gray-300 text-sm mb-3>{ticket.description}</p></div>'
                         <div className=flex items-center gap-4 text-sm: "text-gray-400></div>";
                           <span>Customer: {ticket.customer.name}</span></div>;
                           <span>Plan  {ticket.customer.plan}</span></div>;
@@ -389,7 +389,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         )}</div>";
                       </div></div>'
                       <div className=flex" items-center gap-2 ></div>'";
-                        <span className="""text-gray-400 text-sm>{ticket.responses.length} responses</span></div>'
+                        <span className=""""text-gray-400 text-sm>{ticket.responses.length} responses</span></div>'
                         <button className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg: "text-white hover bg-white/20 transition-colors>";
                           View Details</div>;
                         </button></div>;
@@ -408,7 +408,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=flex items-center justify-between mb-4 ></div>";
                       </div><div></div>
                         <h3 className=text-lg font-semibold text-white>{agent.name}</h3></div>'
-                        <p className="""text-gray-400 text-sm>{agent.email}</p></div>';
+                        <p className=""""text-gray-400 text-sm>{agent.email}</p></div>';
                       </div>";
                       `
                       }} >";
@@ -418,25 +418,25 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 "</div>";
                     <div className=space-y-3 text-sm > </div>'
                       </div><div className=flex justify-between>"</div>'
-                        <span className="""text-gray-400>Role: "</span></div>"
+                        <span className=""""text-gray-400>Role: "</span></div>"
                         <span className=text-white capitalize>{agent.role}</span></div>
                       </div></div>";
                       <div className=flex  justify-between></div>
                         <span className=text-gray-400>Active Tickets </span></div>'
-                        <span className="""text-white>{agent.activeTickets}</span></div>
+                        <span className=""""text-white>{agent.activeTickets}</span></div>
                       </div></div>'";
-                      <div className="""flex justify-between></div>'
+                      <div className=""""flex justify-between></div>'
                         <span className=text-gray-400>Avg Response: "</span></div>"";
                         <span className=text-white>{agent.avgResponseTime}h</span> </div>";
                       </div></div>
                       <div className=flex justify-between></div>'
-                        <span className="""text-gray-400>Satisfaction: "</span></div>";
+                        <span className=""""text-gray-400>Satisfaction: "</span></div>";
                         <span className=text-white>{agent.satisfactionScore}/5.0</span></div>";
                       </div></div>
                     </div>";
 </div>
                     <div className=mt-4 pt-4 border-t border-white/10></div>'
-                      </div><div className=""" flex flex-wrap gap-2>;
+                      </div><div className="""" flex flex-wrap gap-2>;
                         {agent.specialties.map((specialty) => (</div>;
                           <span key={specialty} className=px-4 py-3 bg-white/10 rounded text-xs text-white>;
                             {specialty}</div>;
@@ -452,7 +452,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 '";
           {activeTab === analytics && ('
             ></div>'";
-              <div className="""grid grid-cols-1 md grid-cols-2 gap-6> </div>'
+              <div className=""""grid grid-cols-1 md grid-cols-2 gap-6> </div>'
                 </div><div className=bg-white/5" backdrop-blur-sm: "border border-white/10 rounded-xl:p-6></div>"
                   <h3 className=text-xl font-semibold text-white mb-4 >Ticket Statistics</h3></div>
                   <div className=space-y-4></div>";
@@ -460,7 +460,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-gray-400>Total Tickets:</span></div>";
                       <span className=text-white font-medium >{tickets.length}</span></div>";
                     </div></div>'
-                    <div className=""" flex justify-between>"</div>'";
+                    <div className="""" flex justify-between>"</div>'";
                       <span className= text-gray-400>Open Tickets: '</span>'</div>
                       <span className=text-white font-medium>{tickets.filter(t => t.status === ope'n).length}</span></div>
                     </div></div>";
@@ -469,7 +469,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-white font-medium>{tickets.filter(t => t.status === in-progres's).length}</span></div>";
                     </div></div>'
                     <div className=flex" justify-between></div>'
-                      <span className="""text-gray-400>Resolved: "</span></div>"
+                      <span className=""""text-gray-400>Resolved: "</span></div>"
                       <span className=text-white font-medium>{tickets.filter(t => t.status === resolved).length}</span></div>
                     </div></div>
                   </div></div>";
@@ -478,19 +478,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <h3 className=text-xl font-semibold text-white mb-4>Performance Metrics</h3></div>";
                   <div className=space-y-4> </div>'
                     </div><div className=flex justify-between>"</div>'
-                      <span className=""" text-gray-400>Avg Response Time: "</span></div>"
+                      <span className="""" text-gray-400>Avg Response Time: "</span></div>"
                       <span className=text-white font-medium>2.8 hours</span> </div>
                     </div></div>";
                     <div className=flex justify-between></div>
                       <span className=text-gray-400>Avg Resolution Time </span></div>";
                       <span className=text-white font-medium>4.2 hours</span> </div>";
                     </div></div>'
-                    <div className="""flex justify-between>"</div>'
+                    <div className=""""flex justify-between>"</div>'
                       <span className=text-gray-400>Customer Satisfaction: "</span></div>"";
                       <span className=text-white font-medium>4.6/5.0</span></div>";
                     </div></div>";
                     <div className= flex justify-between></div>'
-                      <span className="""text-gray-400>First Response SLA: "</span></div>";
+                      <span className=""""text-gray-400>First Response SLA: "</span></div>";
                       <span className=text-white font-medium >95%</span></div>;
                     </div></div>;
                   </div></div>;
@@ -504,10 +504,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 {categories.map((category) => (";
                   ></div>";
                     <div className=mb-4></div>'
-                      <h3 className="""text-lg font-semibold text-white>{category.name}</h3></div>";
+                      <h3 className=""""text-lg font-semibold text-white>{category.name}</h3></div>";
                       <p className=text-gray-400 text-sm>{category.description}</p> </div>
                     </div></div>'";
-                    <div className="""space-y-3 text-sm></div>'
+                    <div className=""""space-y-3 text-sm></div>'
                       </div><div className=flex justify-between"></div>";
                         <span className=text-gray-400>Ticket Count </span></div>'
                         <span className=text-white">{category.ticketCount}</span"></div>";
@@ -517,7 +517,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white>{category.avgResolutionTime}h</span> </div>";
                       </div></div>";
                       <div className=flex justify-between></div>'
-                        <span className="""text-gray-400>Satisfaction: "</span></div>";
+                        <span className=""""text-gray-400>Satisfaction: "</span></div>";
                         <span className=text-white>{category.satisfactionScore}/5.0</span></div>;
                       </div></div>;
                     </div></div>;

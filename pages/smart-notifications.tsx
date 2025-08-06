@@ -389,10 +389,10 @@ default: ;,;
     const $1 = Math.floor((now.getTime() - date.getTime()) / (1000 * 60))
     if (diffInMinutes </div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8> ,
+      </div><div className="""" relative z-10 container-responsive py-8> ,
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
+        <div className=""""fixed inset-0 z-0> </div>'";
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
         </div>";
       </div>
@@ -409,7 +409,7 @@ default: ;,;
     );}'
 '";
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>Smart Notifications - Zion</title></div>'
         <meta name=description content=Intelligent notification system with AI-powered alerts, personalized recommendations, and automated notification management         /> </meta><meta name=keywords content=smart notifications, AI alerts, personalized notifications, notification management, Zion"         /> </meta><link rel=icon href= favicon.ico "> </link rel=icon href= favicon.ico" ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>";
@@ -418,13 +418,13 @@ default: ;,;
         <div className= max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="""text-2xl font-bold text-white></div>
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className=""""text-2xl font-bold text-white></div>
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>
               </Link></div>";
             </div></div>";
             <div className=hidden md flex  items-center space-x-8></div>'
-              <Link href=/project-management" className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects</div>"
+              <Link href=/project-management" className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects</div>"
               </Link href= /project-management className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
               <Link href=/service-categories className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Categories</div>";
               </Link href=/service-categories className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
@@ -438,7 +438,7 @@ default: ;,;
       <div className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8>,";
         {/* Header */}</div>'
         </div><div className=text-center mb-8"></div>'
-          <h1 className="""text-4xl md  text-5xl  font-bold text-white mb-4>
+          <h1 className=""""text-4xl md  text-5xl  font-bold text-white mb-4>
             Smart Notifications</div>
           </h1></div>
           <p className=text-xl text-gray-300 max-w-3xl mx-auto>,";
@@ -454,7 +454,7 @@ default: ;,;
               <div className=text-3xl font-bold text-white mb-2>{stats.totalNotifications}</div></div>";
               <p className=text-blue-300 text-sm>Total Notifications</p></div>";
             </div></div>'
-            <div className="""bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm: "border: border-red-500/30 rounded-xl p-6 text-center >,</div>"";
+            <div className=""""bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm: "border: border-red-500/30 rounded-xl p-6 text-center >,</div>"";
               </div><div className=text-3xl font-bold text-white mb-2>{stats.unreadCount}</div></div>";
               <p className=text-red-300 text-sm>Unread</p></div>";
             </div></div>'
@@ -493,7 +493,7 @@ default: ;,;
         </div>";
         {/* Search: "and: Filters */},"";
 {selectedTab !== settings && (</div>'
-          <div className="""bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6 mb-8 > </div>";
+          <div className=""""bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6 mb-8 > </div>";
             </div><div className=grid grid-cols-1 lg  grid-cols-4  gap-4></div>;
               <div className= lg col-span-2>
                 ,
@@ -503,7 +503,7 @@ default: ;,;
               </div></div>";
               <div>
                   onChange={(e) => setFilterType(e.target.value)}'
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
                 ></div>;
                   <option value=all>All Types</option></div>;
                   <option value=message>Messages</option></div>;
@@ -520,7 +520,7 @@ default: ;,;
               <div>";
                 '
                   onChange={(e) => setSortBy(e.target.value as any)}'";
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500   transition-colors;
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500   transition-colors;
                 ></div>;
                   <option value=recent>Sort by Recent</option></div>;
                   <option value=priority>Sort by Priority</option></div>;
@@ -537,15 +537,15 @@ default: ;,;
             {filteredNotifications.map((notification) => ( </div>";
               </div>
               ></div>'
-                <div className="""flex items-start space-x-4>'
+                <div className=""""flex items-start space-x-4>'
                   {/* Icon */}</div>
                   </div><div className=flex-shrink-0></div>'
-                    <div className="""text-2xl>{getTypeIcon(notification.type)}</div></div>'
+                    <div className=""""text-2xl>{getTypeIcon(notification.type)}</div></div>'
                   </div>'
                   {/* Content */}</div>'";
-                  <div className="""flex-1 min-w-0> </div>'
+                  <div className=""""flex-1 min-w-0> </div>'
                     </div><div className=flex" items-start justify-between mb-2></div>'
-                      <div className="""flex items-center space-x-2>"</div>
+                      <div className=""""flex items-center space-x-2>"</div>
                         <h3 className={text-lg font-semibold ${!notification.read ? text-whi'te : "text-gray-300}}>"
                           {notification.title}</div>
                         </h3>'
@@ -554,7 +554,7 @@ default: ;,;
                         )} </div>";
                       </div></div>";
                       <div className=flex items-center space-x-2>`</div>'
-                        <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(notification.priority)}}">";
+                        <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(notification.priority)}}">";
                           {notification.priority.toUpperCase()}</div>";
                         </span>`</div>'
                         <span className={px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(notification.type)}}">";
@@ -562,7 +562,7 @@ default: ;,;
                         </span></div>";
                       </div></div>
                     </div></div>'
-                    <p className="""text-gray-300 mb-3>{notification.message}</p>;
+                    <p className=""""text-gray-300 mb-3>{notification.message}</p>;
                     {/* Smart Features */}</div>
                     <div className=flex items-center space-x-4 mb-4>
                       {notification.smartFeatures.aiAnalyzed && (</div>
@@ -581,20 +581,20 @@ default: ;,;
                         </span>";
                       )},
 {notification.smartFeatures.automated && (</div>'";
-                        <span className="""text-xs bg-orange-500/20 text-orange-300 px-4 py-3 rounded border border-orange-500/30>
+                        <span className=""""text-xs bg-orange-500/20 text-orange-300 px-4 py-3 rounded border border-orange-500/30>
                           Automated</div>";
                         </span>
                       )}</div>'
                     </div>'
                     {/* Metadata */}</div>'
-                    <div className="""flex items-center justify-between text-sm text-gray-400 ></div>'
-                      </div><div className="""flex items-center space-x-4>";
+                    <div className=""""flex items-center justify-between text-sm text-gray-400 ></div>'
+                      </div><div className=""""flex items-center space-x-4>";
                         {notification.sender && (</div>
                           <span>From  {notification.sender}</span>";
                         )}</div>";
                         <span>{formatTimeAgo(notification.createdAt)}</span></div>'
                       </div>"</div>'
-                      <div className="""flex items-center space-x-2>;
+                      <div className=""""flex items-center space-x-2>;
                         {notification.actionUrl && notification.actionText && (;
                            />,;
                             {notification.actionText}</div>;
@@ -607,7 +607,7 @@ default: ;,;
                         </button>";
                         '
                           onClick={() => archiveNotification(notification.id)}'";
-                          className="""text-gray-400 hover  text-white  transition-colors;
+                          className=""""text-gray-400 hover  text-white  transition-colors;
                         >;
                           Archive</div>;
                         </button></div>;
@@ -621,7 +621,7 @@ default: ;,;
         )}";
         {/* Settings Tab */},";
 {selectedTab === settings && (</div>'
-          <div className=""" bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6></div>";
+          <div className="""" bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6></div>";
             <h2 className=text-2xl font-bold text-white mb-6>Notification Preferences</h2>
             </div>
             <div className=space-y-6>,
@@ -653,7 +653,7 @@ default: ;,;
 '
               {/* Categories */}"</div>
               <div></div>'
-                <h3 className="""text-lg font-semibold text-white mb-4 >Notification Categories</h3></div>";
+                <h3 className=""""text-lg font-semibold text-white mb-4 >Notification Categories</h3></div>";
                 <div className=grid grid-cols-1 md  grid-cols-2  gap-4>,
                   {Object.entries(preferences.categories).map(([category, enabled]) => (</div>";
                     <label key={category} className= flex items-center space-x-3>";
@@ -672,10 +672,10 @@ categories: "{,";
               </div>'
               {/* Priority Levels */}</div>
               <div></div>'
-                <h3 className="""text-lg font-semibold text-white mb-4>Priority Levels</h3></div>'
-                <div className="""grid grid-cols-1 md  grid-cols-2  gap-4>,
+                <h3 className=""""text-lg font-semibold text-white mb-4>Priority Levels</h3></div>'
+                <div className=""""grid grid-cols-1 md  grid-cols-2  gap-4>,
                   {Object.entries(preferences.priority).map(([priority, enabled]) => (</div>'
-                    <label key={priority} className=""" flex items-center space-x-3>";
+                    <label key={priority} className="""" flex items-center space-x-3>";
                         onChange={(e) => setPreferences(prev => ({'
                           ...prev,'";
                           priority: "{,";
@@ -692,9 +692,9 @@ categories: "{,";
               </div>";
               {/* Quiet Hours */} </div>'
               <div>"</div>'
-                <h3 className="""text-lg font-semibold text-white mb-4>Quiet Hours</h3></div>
+                <h3 className=""""text-lg font-semibold text-white mb-4>Quiet Hours</h3></div>
                 <div className=space-y-4></div>'
-                  <label className="""flex items-center space-x-3>";
+                  <label className=""""flex items-center space-x-3>";
                     '
                       onChange={(e) => setPreferences(prev ="> ({";
                         ...prev,'
@@ -709,7 +709,7 @@ categories: "{,";
                   {preferences.quietHours.enabled && ( </div>'
                     <div className=grid grid-cols-1 md grid-cols-2  gap-4"></div>";
                       </div><div></div>'
-                        <label className="""block text-sm font-medium text-gray-300 mb-2>Start Time</label>";
+                        <label className=""""block text-sm font-medium text-gray-300 mb-2>Start Time</label>";
                           onChange={(e) => setPreferences(prev => ({,";
                             ...prev,'
                             quietHours: "{,}";
@@ -740,19 +740,19 @@ categories: "{,";
         {/* Call to Action */}</div>";
         <div className=mt-12 text-center> </div>'
           </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8"></div>'";
-            <h2: className="""text-3xl font-bold text-white mb-4 >
+            <h2: className=""""text-3xl font-bold text-white mb-4 >
               Stay Connected with Smart Notifications</div>
             </h2></div>";
             <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>,
               Get intelligent alerts, personalized recommendations, and automated notifications";
               to enhance your marketplace experience and stay updated on important activities.</div>
             </p></div>'";
-            <div className=""" flex flex-col sm flex-row  gap-4 justify-center></div>'
+            <div className="""" flex flex-col sm flex-row  gap-4 justify-center></div>'
               <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>"";
                 Configure: Notifications </div>";
               </button></div>";
               <Link href=/project-management className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Projects</div>'
-              </Link href=/project-management  className="""border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"></Link></div>;
+              </Link href=/project-management  className=""""border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"></Link></div>;
             </div></div>;
           </div></div>
         </div></div>

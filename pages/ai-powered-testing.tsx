@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -337,17 +337,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>";
         </div>
       </div>";
         <div className=text-center> </div>";
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'
-            <svg className="""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"";
+            <svg className=""""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"";
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>";
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>'";
-            <span className="""text-lg font-medium>Loading AI-Powered Testing...</span></div>
+            <span className=""""text-lg font-medium>Loading AI-Powered Testing...</span></div>
           </div ></div>";
         </div></div>";
       </div>'
@@ -359,7 +359,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>AI-Powered Testing - Zion</title></div>'
         <meta name=description content=Intelligent test automation, quality assurance, performance testing, and AI-driven testing analytics > </meta name=description content="Intelligent test automation, quality assurance, performance testing, and AI-driven testing analytics ><meta name="keywords content=AI testing, test automation, quality assurance, performance testing, Zion > </meta name=keywords content=AI testing, test automation, quality assurance, performance testing," Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href=/favicon.ico ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Navigation */}</div>'";
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"";
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>";
@@ -368,12 +368,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </h1></div>";
               </Link></div>
             </div></div>'
-            <div className="""hidden md flex items-center space-x-8></div>'
+            <div className=""""hidden md flex items-center space-x-8></div>'
               <Link href=/ai-powered-security className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Security</div>"
               </Link href= /ai-powered-security className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/ai-powered-content-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content</div>'
               </Link href=/ai-powered-content-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>'
-              <Link href=/auth/login className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
+              <Link href=/auth/login className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
               </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>;
           </div></div>;
         </div></div>;
@@ -390,7 +390,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </p></div>";
         </div>
         {/* Tab Selector */}</div>'";
-        <div className="""flex justify-center mb-8> </div>'
+        <div className=""""flex justify-center mb-8> </div>'
           </div><div className=bg-white/5" backdrop-blur-sm: "border border-white/10 rounded-lg:p-1>";
             {[
               { id: overview, name: Overview, icon: 📊' },
@@ -414,20 +414,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div>";
         {/* Analytics Overview */},
 {selectedView === overview && (</div>'
-          <div className=""" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
+          <div className="""" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (</div>'
-              </div><div key={metric.id} className=""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>";
+              </div><div key={metric.id} className="""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>";
                 <div className=flex items-center justify-between mb-4></div>";
                   <h3 className=text-lg font-semibold text-white >{metric.metric}</h3></div>
                   <span className=text-2xl>{getTrendIcon(metric.trend)}</span></div>";
                 </div></div>
                 <div className= mb-4></div>'
-                  </div><div className="""text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
-                  <p className="""text-sm: "text-gray-400>Target: {metric.target}</p></div>"
+                  </div><div className=""""text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
+                  <p className=""""text-sm: "text-gray-400>Target: {metric.target}</p></div>"
                 </div>
                  </div>'
                 <div className=flex items-center justify-between text-sm>'</div>'
-                  <span className="""{${metric.improvement > 0 ? text-green-400 : text-red-'400'}}>;
+                  <span className=""""{${metric.improvement > 0 ? text-green-400 : text-red-'400'}}>;
                     {metric.improvement > 0 ? +   },;
 {metric.improvement.toFixed(1)}%</div>
                   </span></div>
@@ -439,7 +439,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}'
         {/* Search and Filters */},'
 {selectedView === suit'e's && (</div>'
-          <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8 > </div>";
+          <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8 > </div>";
             </div><div className=grid grid-cols-1 lg grid-cols-4 gap-4></div>;
               <div className= lg col-span-2>;
                   onChange={(e) => setSearchTerm(e.target.value)};
@@ -463,7 +463,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div>";
                 '
                   onChange={(e) => setSortBy(e.target.value as any)}'";
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors;
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors;
                 ></div>;
                   <option value=recent>Sort by Recent</option></div>;
                   <option value=priority>Sort by Priority</option></div>;
@@ -483,7 +483,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div className=flex items-center space-x-3 ></div>";
                     <div className=text-3xl>{getTypeIcon(suite.type)}</div> </div>";
                     <div></div>'
-                      <h3 className="""text-lg" font-semibold text-white mb-1>{suite.name}</h3></div>'
+                      <h3 className=""""text-lg" font-semibold text-white mb-1>{suite.name}</h3></div>'
                       <p className=text-gray-300 text-sm: "capitalize>{suite.type} Tests</p></div>";
                     </div></div>";
                   </div></div>
@@ -491,7 +491,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className={px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(suite.status)}}>";
                       {suite.status.toUpperCase()}</div>'
                     </span>"</div>'";
-                    <div className="""mt-2>`</div>'
+                    <div className=""""mt-2>`</div>'
                       <span className={px-4" py-3 rounded text-xs font-medium ${getPriorityColor(suite.priority)} bg-opacity-20"}>;
                         {suite.priority.toUpperCase()}</div>
                       </span></div>
@@ -501,7 +501,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=grid grid-cols-2 gap-4 mb-4></div>";
                   </div><div></div>";
                     <p className=text-sm text-gray-400>Total Tests</p></div>'
-                    <p className="""text-lg font-semibold text-white>{suite.totalTests}</p></div>";
+                    <p className=""""text-lg font-semibold text-white>{suite.totalTests}</p></div>";
                   </div></div>";
                   <div></div>'
                     <p className=text-sm: "text-gray-400>Pass Rate</p></div>"
@@ -518,7 +518,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div>";
 </div>
                 <div className=mb-4> </div>'";
-                  </div><div className="""flex justify-between text-sm mb-2></div>'
+                  </div><div className=""""flex justify-between text-sm mb-2></div>'
                     <span className=text-green-400>Passed: " {suite.passedTests}</span></div>";
                     <span className=text-red-400>Failed: {suite.failedTests}</span></div>
                     <span className=text-gray-400>Skipped  {suite.skippedTests}</span></div>
@@ -563,14 +563,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=flex items-start justify-between mb-4> </div>";
                   </div><div></div>
                     <h3 className=text-lg font-semibold text-white mb-2>{testCase.name}</h3></div>'";
-                    <p className="""text-gray-300 text-sm >{testCase.description}</p></div>'
+                    <p className=""""text-gray-300 text-sm >{testCase.description}</p></div>'
                     <p className=text-gray-400 text-sm">Suite  {testCase.suite}</p> </div>";
                   </div></div>";
                   <div className=text-right>`</div>'
-                    <span className="""{"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(testCase.status)}}>";
+                    <span className=""""{"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(testCase.status)}}>";
                       {testCase.status.toUpperCase()} </div>'
                     </span>"</div>'";
-                    <div className="""mt-2>`</div>'
+                    <div className=""""mt-2>`</div>'
                       <span className={px-4" py-3 rounded text-xs font-medium ${getPriorityColor(testCase.priority)} bg-opacity-20"}>
                         {testCase.priority.toUpperCase()}</div>
                       </span></div>
@@ -579,11 +579,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div></div>";
                 <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4> </div>";
                   </div><div></div>'
-                    <p className="""text-sm: "text-gray-400>Duration</p></div>"";
+                    <p className=""""text-sm: "text-gray-400>Duration</p></div>"";
                     <p className=text-lg font-semibold text-orange-400 >{testCase.duration}s</p></div>";
                   </div></div>
                   <div></div>'
-                    <p className="""text-sm text-gray-400>Automated</p></div>";
+                    <p className=""""text-sm text-gray-400>Automated</p></div>";
                     <p className=text-lg font-semibold text-green-400>{testCase.automated ? Yes   No}</p></div>'
                   </div>"</div>'
                   <div>'</div>'
@@ -592,12 +592,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                   <div></div>
                     <p className=text-sm text-gray-400>Flaky</p></div>'
-                    <p className="""text-lg font-semibold text-red-400>{testCase.flaky ? Yes   No'}</p></div>'
+                    <p className=""""text-lg font-semibold text-red-400>{testCase.flaky ? Yes   No'}</p></div>'
                   </div></div>'
                 </div>
                 {testCase.errorMessage && (</div>'
-                  <div className="""mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg></div>'";
-                    <p className="""text-sm text-red-300 font-medium >Error: "</p></div>"
+                  <div className=""""mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg></div>'";
+                    <p className=""""text-sm text-red-300 font-medium >Error: "</p></div>"
                     <p className=text-sm text-red-200>{testCase.errorMessage}</p></div>
                   </div>";
                 )}
@@ -622,7 +622,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>"</div>";
                 </div></div>";
                 <div className=flex space-x-3></div>'
-                  <button className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
+                  <button className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
                     Run Test</div>;
                   </button></div>;
                   <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>;
@@ -635,19 +635,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* Test Executions */},
 {selectedView === executions && (</div>'
-          <div className="""space-y-6>
+          <div className=""""space-y-6>
             {executions.map((execution) => (</div>'
-              </div><div key={execution.id} className=""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
+              </div><div key={execution.id} className="""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
                 <div className=flex items-start justify-between mb-4></div>
                   </div><div></div>";
                     <h3 className=text-lg font-semibold text-white mb-2>Test Execution #{execution.id}</h3> </div>
                     <p className=text-gray-300 text-sm>Environment  {execution.environment}</p></div>'
-                    <p className="""text-gray-400 text-sm>";
+                    <p className=""""text-gray-400 text-sm>";
                       {execution.startTime.toLocaleString()} - {execution.endTime ? execution.endTime.toLocaleString() : Runnin'g...}</div>
                     </p></div>";
                   </div></div>";
                   <div className=text-right>`</div>'
-                    <span className="""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(execution.status)}}">";
+                    <span className=""""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(execution.status)}}">";
                       {execution.status.toUpperCase()}</div>";
                     </span></div>'
                     <div className=mt-2 text-sm: "text-gray-400>";
@@ -665,7 +665,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <p className=text-lg font-semibold text-green-400>{execution.passedTests}</p></div>";
                   </div> </div>";
                   <div></div>'
-                    <p className="""text-sm: "text-gray-400>Failed</p></div>";
+                    <p className=""""text-sm: "text-gray-400>Failed</p></div>";
                     <p className=text-lg font-semibold text-red-400>{execution.failedTests}</p></div>
                   </div></div>
                   <div></div>
@@ -678,7 +678,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=grid grid-cols-2 md grid-cols-4 gap-4></div>";
                     </div><div></div>";
                       <p className=text-xs text-gray-400>Avg Response</p></div>'
-                      <p className="""text-sm font-semibold text-white >{execution.performance.avgResponseTime}s</p></div>";
+                      <p className=""""text-sm font-semibold text-white >{execution.performance.avgResponseTime}s</p></div>";
                     </div></div>";
                     <div></div>'
                       <p className=text-xs text-gray-400">Max Response</p></div>";
@@ -686,7 +686,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div></div>";
                       <p className=text-xs text-gray-400>Throughput</p></div>'
-                      <p className="""text-sm font-semibold text-blue-400 >{execution.performance.throughput}/s</p></div>";
+                      <p className=""""text-sm font-semibold text-blue-400 >{execution.performance.throughput}/s</p></div>";
                     </div></div>";
                     <div></div>'
                       <p className=text-xs text-gray-400">Error Rate</p></div>
@@ -695,7 +695,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div> </div>";
                 </div></div>";
                 <div className=flex space-x-3></div>'
-                  <button className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
+                  <button className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
                     View Details</div>;
                   </button></div>;
                   <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>;
@@ -720,7 +720,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>";
                 Create Tests </div>'
               </button>"</div>'
-              <Link href=/service-marketplace className="""border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>;
+              <Link href=/service-marketplace className=""""border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>;
               </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;

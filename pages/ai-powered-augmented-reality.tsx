@@ -1,4 +1,4 @@
-import React from 'react';
+import React from ';react';
 import type { NextPage } from next'";
 import Head from ";next/head
 import { motion } from framer-motion'";
@@ -27,7 +27,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <meta name=description content=Advanced AI-powered augmented reality solutions for immersive experiences.         />";
       </Head>
 '
-      <div className="""min-h-screen bg-gradient-to-br from-purple-50 to-pink-100>";
+      <div className=""""min-h-screen bg-gradient-to-br from-purple-50 to-pink-100>";
         {/* Hero Section */}'
         <section className=relative py-20 px-4 sm: "px-6 lg:px-8>";
           <div className=max-w-7xl mx-auto>;
@@ -57,7 +57,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <button className=bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">";
                   Experience AR";
                 </button>'
-                <button className="""border border-gray-300 hover: "border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors>";
+                <button className=""""border border-gray-300 hover: "border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors>";
                   Learn More;
                 </button>;
               </motion.div>;
@@ -78,7 +78,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <h3 className=text-2xl font-bold text-gray-900 mb-2>'
                     {loading ? ..." : analytics.sessions.toLocaleString()}
                   </h3>'";
-                  <p className="""text-gray-600>AR Sessions</p>
+                  <p className=""""text-gray-600>AR Sessions</p>
                 </div>";
               </motion.div>";
               <motion.div '
@@ -91,7 +91,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <h3 className=text-2xl font-bold text-gray-900 mb-2>'
                     {loading ? ... : ${analytics.engagement}%"}
                   </h3>'";
-                  <p className="""text-gray-600>User Engagement</p>
+                  <p className=""""text-gray-600>User Engagement</p>
                 </div>";
               </motion.div>";
               <motion.div '
@@ -104,7 +104,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <h3 className=text-2xl font-bold text-gray-900 mb-2>'
                     {loading ? ... : ${analytics.accuracy}%"}";
                   </h3>'
-                  <p className="""text-gray-600">Recognition Accuracy</p>;
+                  <p className=""""text-gray-600">Recognition Accuracy</p>;
                 </div>;
               </motion.div>;
             </div>;

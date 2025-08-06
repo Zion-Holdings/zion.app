@@ -128,7 +128,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {</div
         setError(null)};
       return { error}
     } catch (err) {
-      console.error('Unexpected reset password error: ", err)";
+      console.error("Unexpected reset password error:", err);
       const $1 = err instanceof Error ? err.message : An unexpected error occurred;
       setError(errorMessage);
       return { error: { message: errorMessage}}}};

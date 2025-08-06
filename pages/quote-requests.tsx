@@ -456,13 +456,13 @@ if: (loading) {
       </div><div className= relative z-10 container-responsive py-8> ,
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>";
         </div>'
       "</div>'
-        <div className="""text-center> </div>
+        <div className=""""text-center> </div>
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'";
-            <svg className="""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>"
+            <svg className=""""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>"
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4"></circle></div>;
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg>;</div>
@@ -473,17 +473,17 @@ if: (loading) {
     );}";
 '
   return ("</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>Quote Requests - Zion</title></div>'
         <meta name=description content=Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional responses > </meta name=description content=Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional" responses ><meta name=keywords content=quote requests, project quotes, custom projects, budget planning, Zion > </meta" name=keywords content=quote requests, project quotes, custom projects, budget planning, Zion" ><link rel=icon href= favicon.ico  > </link rel="icon href= favicon.ico  ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
 '
       {/* Navigation */}"</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'";
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className="""text-2xl font-bold text-white></div>'
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=""""text-2xl font-bold text-white></div>'
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>";
                 </h1></div>
               </Link></div>";
@@ -493,14 +493,14 @@ if: (loading) {
               </Link href= /talent-directory className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/service-marketplace className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>'
               </Link href=/service-marketplace className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>'
-              <Link href=/mobile-responsive className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>"
+              <Link href=/mobile-responsive className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>"
               </Link href=/mobile-responsive  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
               </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
           </div></div>";
         </div></div>
       </nav>,</div>'
-      <div className="""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-8>,";
+      <div className=""""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-8>,";
         {/* Header */}</div>";
         </div><div className=text-center mb-8></div>
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4>";
@@ -523,7 +523,7 @@ Submit  New Request</div>
         {/* Search and Filters */}</div>";
         <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8> </div>";
           </div><div className=grid grid-cols-1 lg: grid-cols-4: gap-4></div>'
-            <div className="""lg: "col-span-2>"
+            <div className=""""lg: "col-span-2>"
               ,
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className=w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors";
@@ -531,7 +531,7 @@ Submit  New Request</div>
             </div></div>";
             <div>
                 onChange={(e) => setSelectedCategory(e.target.value)}'
-                className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
+                className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
               ></div>;
                 <option value=all>All Categories</option>;
                 {categories.map(category => (),</div>;
@@ -555,7 +555,7 @@ Submit  New Request</div>
           <div className= flex flex-wrap gap-4 mt-4>";
             '
               onChange={(e) => setSelectedStatus(e.target.value)}'";
-              className=""" bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white focus  outline-none focus border-purple-500  transition-colors;
+              className="""" bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white focus  outline-none focus border-purple-500  transition-colors;
             ></div>;
               <option value=all>All Status</option></div>;
               <option value=draft>Draft</option></div>;
@@ -576,14 +576,14 @@ Submit  New Request</div>
               {/* Request  Header */}</div>";
               <div className=flex items-start justify-between mb-4> </div>
                 </div><div className=flex-1></div>'";
-                  <h3 className="""text-lg font-semibold text-white mb-2>{request.title}</h3></div>'
+                  <h3 className=""""text-lg font-semibold text-white mb-2>{request.title}</h3></div>'
                   <div className=flex items-center space-x-2" mb-2></div>'
                     <span className=text-sm: "text-gray-400>{request.category}</span></div>"
                     <span: className=text-gray-600>•</span></div>
                     <span className=text-sm text-gray-400>{request.subcategory}</span></div>";
                   </div></div>";
                 </div></div>'
-                <div className=""" flex flex-col items-end space-y-2>"</div>";
+                <div className="""" flex flex-col items-end space-y-2>"</div>";
                   <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}}>'
                     {request.status.charAt(0).toUpperCase() + request.status.slice(1)}"</div>'
                   </span>"</div>'
@@ -593,7 +593,7 @@ Submit  New Request</div>
                 </div></div>";
               </div>";
               {/* Description */}</div>'
-              <p className="""text-gray-300 text-sm mb-4 line-clamp-3>
+              <p className=""""text-gray-300 text-sm mb-4 line-clamp-3>
                 {request.description}</div>";
               </p>
               {/* Budget and Timeline */}</div>";
@@ -614,7 +614,7 @@ Submit  New Request</div>
               {/* Skills */}</div>";
               <div className=mb-4></div>'
                 <p className=text-sm" text-gray-400 mb-2 >Required Skills</p></div>'
-                <div className="""flex flex-wrap gap-2>";
+                <div className=""""flex flex-wrap gap-2>";
                   {request.skills.slice(0, 4).map((skill, index) => (</div>
                     <span key={index} className=text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>";
                       {skill}</div>";
@@ -628,7 +628,7 @@ Submit  New Request</div>
               {/* Stats */}</div>";
               <div className=grid grid-cols-3 gap-4 mb-4 text-center ></div>
                 </div><div></div>'";
-                  <p className="""text-sm text-gray-400>Responses</p></div>'
+                  <p className=""""text-sm text-gray-400>Responses</p></div>'
                   <p className=text-lg font-semibold text-purple-400">{request.responses.length}</p></div>";
                 </div></div>";
                 <div></div>'
@@ -646,7 +646,7 @@ Submit  New Request</div>
                   className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold: transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105";
                 ></div>
 View: Details: </button></div>'
-                <button className="""border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                <button className=""""border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                   Edit</div>
                 </button></div>
               </div>,</div>";
@@ -663,7 +663,7 @@ View: Details: </button></div>'
               Submit your project requirements and receive competitive quotes from";
               verified professionals across all technical domains.</div>";
             </p></div>'
-            <div className=""" flex flex-col sm flex-row  gap-4 justify-center>";
+            <div className="""" flex flex-col sm flex-row  gap-4 justify-center>";
               ,";
                 onClick={() => setShowNewRequestModal(true)}'
                 className=bg-gradient-to-r" from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105: >";

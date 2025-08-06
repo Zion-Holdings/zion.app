@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -177,8 +177,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>AI-Powered Quantum Sensing & Metrology | Zion Tech</title>"</div>'
@@ -189,12 +189,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div><div className=flex  items-center justify-between></div>";
             <div className=flex items-center space-x-4 > </div>";
               </div><div className=flex items-center space-x-3></div>'
-                <div className=""" w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center>"</div>
+                <div className="""" w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center>"</div>
                   <span className=text-white text-xl>🔬</span></div>";
                 </div></div>";
                 <div></div>'
                   <h1 className=text-2xl font-bold text-white >Quantum Sensing & Metrology</h1>"</div>'
-                  <p className="""text-gray-300>AI-Powered Quantum Measurement</p></div>;
+                  <p className=""""text-gray-300>AI-Powered Quantum Measurement</p></div>;
                 </div></div>;
               </div></div>;
             </div></div>;
@@ -241,7 +241,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === dashboard && (</div>";
               </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}</div>'";
-                <div className="""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
+                <div className=""""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
                   </div><div className=flex items-center space-x-3 mb-4></div>
                     <div className=w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center></div>";
                       <span className=text-white text-lg>🔬</span></div>
@@ -254,18 +254,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   </div>";
                   <div className=space-y-3></div>'
                     </div><div className= flex justify-between>"</div>'
-                      <span className="""text-gray-300>Status</span></div>";
+                      <span className=""""text-gray-300>Status</span></div>";
                       <span className=text-green-400>Active</span></div>
                     </div></div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className=text-gray-300">Sensors</span></div>";
                       <span className=text-white>{sensing.length}</span></div>";
                     </div></div>'
-                    <div className="""flex justify-between"></div>
+                    <div className=""""flex justify-between"></div>
                       <span className=text-gray-300>Imaging Systems</span></div>";
                       <span className=text-white>{imaging.length}</span></div>
                     </div></div>'";
-                    <div className="""flex justify-between></div>'
+                    <div className=""""flex justify-between></div>'
                       <span className=text-gray-300>Detectors</span>"</div>
                       <span className=text-white>{detection.length}</span></div>";
                     </div></div>
@@ -277,7 +277,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <div className=grid grid-cols-1 md grid-cols-4 gap-4></div>";
                     <button className= p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200></div>
                       <div className=text-2xl mb-2>📡</div></div>'
-                      <div className="""font-semibold>Start Sensing</div></div>";
+                      <div className=""""font-semibold>Start Sensing</div></div>";
                     </button></div>'
                     <button className=p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200"></div>";
                       <div className=text-2xl mb-2>📷</div></div>'
@@ -288,7 +288,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=font-semibold>Metrology</div> </div>";
                     </button></div>'
                     <button className=p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200"></div>'
-                      <div className="""text-2xl: "mb-2>🎯</div></div>";
+                      <div className=""""text-2xl: "mb-2>🎯</div></div>";
                       <div className=font-semibold>Detection</div></div>;
                     </button></div>;
                   </div></div>
@@ -299,7 +299,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === sensing && (</div>";
               <div className=space-y-6></div>
                 <h2 className=text-2xl font-bold text-white>Quantum Sensing</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {sensing.map((sensor) => (</div>
                     </div><div key={sensor.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
@@ -314,19 +314,19 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       </div>"</div>";
                       <div className=space-y-3> </div>'
                         </div><div className=flex justify-between>"</div>'
-                          <span className="""text-gray-300>Resolution</span></div>";
+                          <span className=""""text-gray-300>Resolution</span></div>";
                           <span className=text-white>{sensor.resolution}</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Bandwidth</span></div>'
-                          <span className="""text-white>{sensor.bandwidth} Hz</span> </div>
+                          <span className=""""text-white>{sensor.bandwidth} Hz</span> </div>
                         </div></div>'
-                        <div className="""flex justify-between></div>";
+                        <div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Dynamic Range</span></div>'
-                          <span className="""text-white>{sensor.dynamicRange} dB</span>"</div>";
+                          <span className=""""text-white>{sensor.dynamicRange} dB</span>"</div>";
                         </div></div>'
                         <div className= flex justify-between>"</div>'";
-                          <span className="""text-gray-300>Status</span></div>'
+                          <span className=""""text-gray-300>Status</span></div>'
                           <span className={text-white capitalize ${getStatusColor(sensor.status)}"}">;
                             {sensor.status}</div>;
                           </span></div>;
@@ -341,7 +341,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === imaging' && (</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Quantum Imaging</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
                   {imaging.map((image) => (</div>;
                     </div><div key={image.id} className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4 ></div>
@@ -354,9 +354,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <div className=text-gray-400" text-sm>Resolution</div></div>";
                         </div> </div>
                       </div></div>'
-                      <div className="""space-y-3></div>
+                      <div className=""""space-y-3></div>
                         </div><div className= flex justify-between></div>'";
-                          <span className="""text-gray-300>Contrast</span></div>'
+                          <span className=""""text-gray-300>Contrast</span></div>'
                           <span className=text-white">{image.contrast}%</span> </div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
@@ -367,9 +367,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <span className= text-gray-300>Field of View</span></div>";
                           <span className=text-white>{image.fieldOfView}°</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between ></div>";
+                        <div className=""""flex justify-between ></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(image.status)}"}>;
+                          <span className=""""{text-white capitalize ${getStatusColor(image.status)}"}>;
                             {image.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -384,7 +384,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
               <div className=space-y-6></div>";
                 <h2 className=text-2xl font-bold text-white >Quantum Metrology</h2>
                  </div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {metrology.map((meter) => (</div>
                     </div><div key={meter.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
@@ -393,27 +393,27 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <p className=text-gray-400 text-sm capitalize>{meter.measurement}</p></div>";
                         </div></div>'
                         <div className= text-right>"</div>'
-                          </div><div className="""text-2xl font-bold text-white>{meter.precision}</div></div>";
+                          </div><div className=""""text-2xl font-bold text-white>{meter.precision}</div></div>";
                           <div className=text-gray-400 text-sm>Precision</div></div>
                         </div></div>";
                       </div>
                       </div>'";
-                      <div className="""space-y-3> </div>'
+                      <div className=""""space-y-3> </div>'
                         </div><div className=flex" justify-between></div>
                           <span className=text-gray-300>Accuracy</span></div>";
                           <span className=text-white>{meter.accuracy}</span></div>
                         </div></div>'";
-                        <div className=""" flex justify-between></div>'
+                        <div className="""" flex justify-between></div>'
                           <span className=text-gray-300>Stability</span"></div>";
                           <span className=text-white>{meter.stability}</span></div>";
                         </div></div>'
                         <div className=flex justify-between>"</div>'
-                          <span className="""text-gray-300>Uncertainty</span></div>";
+                          <span className=""""text-gray-300>Uncertainty</span></div>";
                           <span className=text-white>{meter.uncertainty}</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between></div>";
+                        <div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{"text-white capitalize ${getStatusColor(meter.status)}}">;
+                          <span className=""""{"text-white capitalize ${getStatusColor(meter.status)}}">;
                             {meter.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -425,18 +425,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum Detection */},
 {activeTab === 'detection && (</div>'
-              <div className="""space-y-6></div>
+              <div className=""""space-y-6></div>
                 <h2 className=text-2xl font-bold text-white>Quantum Detection</h2></div>'
-                <div className="""grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
+                <div className=""""grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
                   {detection.map((detector) => (</div>
                     </div><div key={detector.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4> </div>
                         </div><div></div>'
-                          <h3 className="""text-lg font-semibold text-white>{detector.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize >{detector.detector}</p></div>
+                          <h3 className=""""text-lg font-semibold text-white>{detector.name}</h3></div>'
+                          <p className=""""text-gray-400 text-sm capitalize >{detector.detector}</p></div>
                         </div></div>'
-                        <div className="""text-right> </div>'";
-                          </div><div className="""text-2xl font-bold text-white>{detector.efficiency}%</div></div>'
+                        <div className=""""text-right> </div>'";
+                          </div><div className=""""text-2xl font-bold text-white>{detector.efficiency}%</div></div>'
                           <div className=text-gray-400" text-sm>Efficiency</div></div>";
                         </div></div>
                       </div>";
@@ -446,16 +446,16 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <span className= text-gray-300>Dark Count</span></div>";
                           <span className= text-white>{detector.darkCount} cps</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Dead Time</span></div>'
-                          <span className="""text-white>{detector.deadTime} ns</span></div>
+                          <span className=""""text-white>{detector.deadTime} ns</span></div>
                         </div></div>'
-                        <div className=""" flex justify-between></div>";
+                        <div className="""" flex justify-between></div>";
                           <span className=text-gray-300>Jitter</span></div>'
-                          <span className="""text-white>{detector.jitter} ps</span> "</div>";
+                          <span className=""""text-white>{detector.jitter} ps</span> "</div>";
                         </div></div>'
                         <div className=flex justify-between>"</div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
+                          <span className=""""text-gray-300>Status</span>`</div>'
                           <span className={text-white" capitalize ${getStatusColor(detector.status)}"}>;
                             {detector.status}</div>;
                           </span></div>;
@@ -468,37 +468,37 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum Interferometry */},
 {activeTab === interferometry && (</div>'
-              <div className="""space-y-6></div>'
-                <h2 className="""text-2xl font-bold text-white>Quantum Interferometry</h2></div>'
+              <div className=""""space-y-6></div>'
+                <h2 className=""""text-2xl font-bold text-white>Quantum Interferometry</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {interferometry.map((interferometer) => (</div>
                     </div><div key={interferometer.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white>{interferometer.name}</h3>"</div>'
-                          <p className="""text-gray-400 text-sm: "capitalize>{interferometer.interferometer}</p></div>";
+                          <p className=""""text-gray-400 text-sm: "capitalize>{interferometer.interferometer}</p></div>";
                         </div></div>";
                         <div className=text-right></div>
                           </div><div className=text-2xl font-bold text-white>{interferometer.visibility}%</div></div>";
                           <div className=text-gray-400 text-sm>Visibility</div></div>";
                         </div></div>'
                       </div>"</div>'
-                      <div className="""space-y-3> </div>
+                      <div className=""""space-y-3> </div>
                         </div><div className=flex justify-between></div>'
-                          <span className="""text-gray-300>Phase Sensitivity</span></div>'
-                          <span className="""text-white>{interferometer.phaseSensitivity} rad</span></div>
+                          <span className=""""text-gray-300>Phase Sensitivity</span></div>'
+                          <span className=""""text-white>{interferometer.phaseSensitivity} rad</span></div>
                         </div></div>'";
-                        <div className=""" flex justify-between></div>'
-                          <span className="""text-gray-300>Path Length</span></div>";
+                        <div className="""" flex justify-between></div>'
+                          <span className=""""text-gray-300>Path Length</span></div>";
                           <span className=text-white>{interferometer.pathLength} m</span> </div>";
                         </div></div>'
-                        <div className="""flex justify-between>"</div>";
+                        <div className=""""flex justify-between>"</div>";
                           <span className=text-gray-300>Wavelength</span></div>'
                           <span className=text-white>{interferometer.wavelength} nm</span>"</div>'
                         </div>"</div>
                         <div className= flex justify-between></div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(interferometer.status)}"}">;
+                          <span className=""""text-gray-300>Status</span>`</div>'
+                          <span className=""""{text-white capitalize ${getStatusColor(interferometer.status)}"}">;
                             {interferometer.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -512,7 +512,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === spectroscopy && (</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Quantum Spectroscopy</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
                   {spectroscopy.map((spectrometer) => (</div>;
                     </div><div key={spectrometer.id} className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4 ></div>
@@ -525,9 +525,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <div className=text-gray-400" text-sm>Spectral Range</div></div>";
                         </div> </div>
                       </div></div>'
-                      <div className="""space-y-3></div>
+                      <div className=""""space-y-3></div>
                         </div><div className= flex justify-between></div>'";
-                          <span className="""text-gray-300>Resolution</span></div>'
+                          <span className=""""text-gray-300>Resolution</span></div>'
                           <span className=text-white">{spectrometer.resolution} nm</span> </div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
@@ -538,9 +538,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <span className= text-gray-300>Integration Time</span></div>";
                           <span className= text-white>{spectrometer.integrationTime} s</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between ></div>";
+                        <div className=""""flex justify-between ></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{"text-white capitalize ${getStatusColor(spectrometer.status)}}">;
+                          <span className=""""{"text-white capitalize ${getStatusColor(spectrometer.status)}}">;
                             {spectrometer.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -561,7 +561,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             <p className=text-gray-400>";
               AI-Powered Quantum Sensing & Metrology | Zion Tech Group</div>
             </p></div>'
-            <p className=""" text-gray-500 text-sm mt-2>;
+            <p className="""" text-gray-500 text-sm mt-2>;
               Advanced quantum sensing, imaging, metrology, and detection capabilities</div>;
             </p></div>;
           </div></div>;

@@ -43,9 +43,9 @@ export default function;DebugAdmin() {
         <title>Debug Admin Access - Zion</title></div>'
         <meta name = description content=Debug admin authentication > </meta name=description content=Debug admin authentication" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       </div>'
-      <div className="""min-h-screen bg-gray-100 p-8> </div>
+      <div className=""""min-h-screen bg-gray-100 p-8> </div>
         </div><div className=max-w-4xl mx-auto></div>'";
-          <h1 className="""text-3xl font-bold text-gray-900 mb-8>Debug Admin Access</h1></div>'
+          <h1 className=""""text-3xl font-bold text-gray-900 mb-8>Debug Admin Access</h1></div>'
           <div className=bg-white"  rounded-lg: "shadow p-6 mb-6></div>"
             <h2 className=text-xl font-semibold text-gray-900 mb-4>Authentication Status</h2></div>
             <div className=grid grid-cols-1 md grid-cols-2 gap-4></div>";
@@ -54,11 +54,11 @@ export default function;DebugAdmin() {
                 <p className=text-sm:text-gray-600>{loading" ? Loading... : Loaded'}</p></div>";
               </div></div>
               <div></div>'";
-                <h3 className="""font-medium text-gray-700>User Status</h3>'</div>
+                <h3 className=""""font-medium text-gray-700>User Status</h3>'</div>
                 <p className=text-sm text-gray-600>{user ? Authenticated : 'Not authenticated'}</p></div>";
               </div></div>
               <div></div>'";
-                <h3 className="""font-medium text-gray-700>Session Status</h3></div>'
+                <h3 className=""""font-medium text-gray-700>Session Status</h3></div>'
                 <p className=text-sm: "text-gray-600>{session ? Active session : No session}</p></div>"";
               </div></div>";
               <div>'</div>'
@@ -71,13 +71,13 @@ export default function;DebugAdmin() {
           </div></div>";
           <div className=bg-white rounded-lg:shadow p-6 mb-6></div>";
             <h2 className=text-xl font-semibold text-gray-900 mb-4 >Debug Information</h2></div>'
-            <pre className="""bg-gray-50 p-4 rounded text-sm overflow-auto>";
+            <pre className=""""bg-gray-50 p-4 rounded text-sm overflow-auto>";
               {JSON.stringify(debugInfo, null, 2)}</div>";
             </pre></div>'
           </div>"</div>";
           <div className=bg-white rounded-lg shadow p-6 mb-6></div>'
             <h2 className=text-xl font-semibold text-gray-900 mb-4>Actions</h2>"</div>'
-            <div className="""space-y-4>
+            <div className=""""space-y-4>
                 onClick={() => router.push(/admin-dashboard')}'
                 className=px-4 py-4 bg-blue-600 hover: "bg-blue-700 text-white rounded-lg transition-colors";
               >;
@@ -97,10 +97,10 @@ export default function;DebugAdmin() {
           </div>"</div>";
           <div className=bg-white rounded-lg shadow p-6 ></div>'
             <h2 className=text-xl font-semibold text-gray-900 mb-4>Environment Variables</h2>"</div>'
-            <div className="""grid grid-cols-1 md grid-cols-2 gap-4></div>";
+            <div className=""""grid grid-cols-1 md grid-cols-2 gap-4></div>";
               </div><div></div>";
                 <h3 className=font-medium text-gray-700>Supabase URL</h3></div>'
-                <p className="""text-sm: "text-gray-600>"
+                <p className=""""text-sm: "text-gray-600>"
                   {process.env.NEXT_PUBLIC_SUPABASE_URL ? S'et : "Not set}</div>";
                 </p></div>;
               </div></div>;

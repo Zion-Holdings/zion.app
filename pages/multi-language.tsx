@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -308,7 +308,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
           <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>";
       </div>";
@@ -325,27 +325,27 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     );}'
 '";
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>Multi-Language Support - Zion Marketplace</title></div>'
-        <meta name=description content=Comprehensive multi-language support for global marketplace accessibility > </meta name=description content=Comprehensive multi-language support for global marketplace accessibility ><meta name="keywords content=multi-language, internationalization, translations, global marketplace, Zion > </meta name=keywords" content=multi-language, internationalization, translations, global marketplace, Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href="""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name=description content=Comprehensive multi-language support for global marketplace accessibility > </meta name=description content=Comprehensive multi-language support for global marketplace accessibility ><meta name="keywords content=multi-language, internationalization, translations, global marketplace, Zion > </meta name=keywords" content=multi-language, internationalization, translations, global marketplace, Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href=""""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'
-              <Link href=/ className="""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
-                  <span className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
+              <Link href=/ className=""""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
+                  <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
                 </h1></div>'
               </Link></div>
             </div></div>'";
-            <div className="""hidden md flex items-center space-x-8></div>'
-              <Link href="""/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
+            <div className=""""hidden md flex items-center space-x-8></div>'
+              <Link href=""""/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
               </Link href= /marketplace className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/user-profiles className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Profiles</div>";
               </Link href=/user-profiles className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
               <Link href=/analytics-dashboard className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics"</div>'
-              </Link href=/analytics-dashboard  className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
+              </Link href=/analytics-dashboard  className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
               </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
           </div></div>
@@ -354,16 +354,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <div className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>";
         {/* Header */}</div>";
         </div><div className= text-center mb-8></div>'
-          <h1 className="""text-4xl md text-5xl font-bold text-white mb-4>";
+          <h1 className=""""text-4xl md text-5xl font-bold text-white mb-4>";
             Multi-Language Support</div>";
           </h1></div>'
-          <p className="""text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className=""""text-xl text-gray-300 max-w-3xl mx-auto>
             Experience Zion Marketplace in your preferred language.";
             Our comprehensive translation system supports multiple languages for global accessibility.</div>
           </p></div>";
         </div>";
         {/* Language Selector */}</div>'
-        <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8 ></div>"
+        <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8 ></div>"
           </div><div className= text-center mb-6></div>
             <h2 className=text-2xl font-bold text-white mb-2>Select Your Language</h2></div>
             <p className=text-gray-300>Choose your preferred language for the marketplace experience</p></div>";
@@ -371,26 +371,26 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4>";
             {languages.map((language) => (";
                 onClick={() => setSelectedLanguage(language.code)}'
-                className=""" {p-4 rounded-lg: "border transition-all duration-300 ${"
+                className="""" {p-4 rounded-lg: "border transition-all duration-300 ${"
                   selectedLanguage === language.code
                     ? bg-purple-600/20 border-purple-500/50 text-white'
                       bg-white/5 border-white/10 text-gray-300 hover bg-white/10 hover text-white`
                 }}";
               ></div>";
                 <div className= flex items-center space-x-3></div>'
-                  <span className="""text-2xl>{language.flag}</span>"</div>";
+                  <span className=""""text-2xl>{language.flag}</span>"</div>";
                   <div className=text-left></div>'
                     </div><div className=font-semibold>{language.name}</div>"</div>'
-                    <div className="""text-sm opacity-75>{language.nativeName}</div></div>";
+                    <div className=""""text-sm opacity-75>{language.nativeName}</div></div>";
                   </div></div>'
                   <div className=ml-auto>"</div>'
-                    <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(language.status)}}>
+                    <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(language.status)}}>
                       {getStatusIcon(language.status)},";
 {language.status.replace('-,  )}</div>
                     </span></div>";
                   </div></div>
                 </div></div>'";
-                <div className="""mt-3></div>'
+                <div className=""""mt-3></div>'
                   </div><div className=flex justify-between text-sm mb-1"></div>;
                     <span>Translation Progress</span></div>;
                     <span>{language.completion}%</span> </div>;
@@ -417,7 +417,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {showTranslations && (</div>";
             <div className= space-y-4>
               {translations.map((translation) => (</div>'";
-                </div><div key={translation.key} className=""" bg-white/5 rounded-lg p-4></div>'
+                </div><div key={translation.key} className="""" bg-white/5 rounded-lg p-4></div>'
                   <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-4></div>"
                     </div><div></div>
                       <h4 className=text-sm font-medium text-gray-400 mb-2 >English</h4></div>";
@@ -442,7 +442,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div><div className=bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl p-6></div>";
             <div className=flex items-center justify-between></div>
               </div><div> </div>'";
-                <p className="""text-green-300 text-sm font-medium>Available Languages</p>'</div>'
+                <p className=""""text-green-300 text-sm font-medium>Available Languages</p>'</div>'
                 <p className=text-3xl" font-bold text-white>{languages.filter(l => l.status === 'available).length}</p></div>
               </div></div>";
               <div className=text-4xl>🌍</div></div>
@@ -458,7 +458,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className=text-4xl>🟡</div></div>";
             </div></div>";
           </div></div>'
-          <div className=""" bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: "border border-purple-500/30 rounded-xl p-6></div>";
+          <div className="""" bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: "border border-purple-500/30 rounded-xl p-6></div>";
             </div><div className=flex items-center justify-between></div>;
               <div></div>;
                 <p className=text-purple-300 text-sm font-medium >Coming Soon</p></div>
@@ -478,14 +478,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <span>Multi-language interface support</span> "</div>";
               </li></div>
               <li className=flex items-center space-x-2></div>'
-                <span className="""text-green-400>✓</span></div>'
+                <span className=""""text-green-400>✓</span></div>'
                 <span>Automatic language detection</span></div>
               </li></div>'
-              <li className=""" flex items-center space-x-2></div>'
-                <span className="""text-green-400>✓</span></div>";
+              <li className="""" flex items-center space-x-2></div>'
+                <span className=""""text-green-400>✓</span></div>";
                 <span>Localized content and messaging</span> </div>'
               </li>"</div>'";
-              <li className="""flex items-center space-x-2></div>
+              <li className=""""flex items-center space-x-2></div>
                 <span className=text-green-400>✓</span></div>";
                 <span>Cultural adaptation and formatting</span ></div>";
               </li></div>'
@@ -498,7 +498,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <span className=text-green-400>✓</span>"</div>";
                 <span>Professional translation services</span></div>
               </li></div>'
-              <li className="""flex items-center space-x-2 ></div>";
+              <li className=""""flex items-center space-x-2 ></div>";
                 <span className=text-green-400>✓</span></div>
                 <span>Community translation contributions</span></div>";
               </li></div>";
@@ -506,7 +506,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <span className=text-green-400>✓</span>"</div>";
                 <span>Real-time translation updates</span></div>
               </li></div>'
-              <li className="""flex items-center space-x-2 ></div>
+              <li className=""""flex items-center space-x-2 ></div>
                 <span className=text-green-400>✓</span></div>
                 <span>Quality assurance and review</span></div>
               </li ></div>";
@@ -522,13 +522,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className= flex items-center space-x-3></div>'
                   <span className=text-2xl>{language.flag}</span>"</div>
                   <div></div>'
-                    <h4 className="""text-white font-semibold >{language.name}</h4></div>";
+                    <h4 className=""""text-white font-semibold >{language.name}</h4></div>";
                     <p className=text-sm text-gray-400>{language.nativeName}</p></div>
                   </div></div>";
                 </div></div>";
                 <div className= flex items-center space-x-4></div>'
                   </div><div className=text-right>"</div>'
-                    <p className="""text-sm: "text-gray-400>Progress</p></div>";
+                    <p className=""""text-sm: "text-gray-400>Progress</p></div>";
                     <p className=text-white font-semibold>{language.completion}%</p> </div>;
                   </div></div>;
                   <div className=text-right></div>;
@@ -545,7 +545,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div></div>";
         </div>
         {/* Call to Action */}</div>'";
-        <div className="""text-center></div>'
+        <div className=""""text-center></div>'
           </div><div className= bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8></div>
             <h2 className=text-3xl font-bold text-white mb-4>
               Experience Zion in Your Language</div>
@@ -554,7 +554,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Join our global community and access the marketplace in your preferred language.";
               Help us expand language support by contributing translations.</div>
             </p></div>'";
-            <div className=""" flex flex-col sm flex-row gap-4 justify-center></div>'
+            <div className="""" flex flex-col sm flex-row gap-4 justify-center></div>'
               <Link href=/marketplace className=bg-gradient-to-r" from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace</div>";
               </Link href=/marketplace  className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>;
               <Link href=/contribute-translations className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Contribute Translations</div>;

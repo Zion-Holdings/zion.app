@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link";
 import { useState } from react
 import { Home, Search, User }  from ";lucide-react
@@ -129,8 +129,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
     <div></div>";
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+        <div className=""""fixed inset-0 z-0> </div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
@@ -141,16 +141,16 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"";
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=text-2xl font-bold > </Link href=/  className=text-2xl" font-bold ><span className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+              <Link href=/ className=text-2xl font-bold > </Link href=/  className=text-2xl" font-bold ><span className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
               </Link></div>";
             </div></div>
             <div className=flex  items-center space-x-4></div>'";
-              <Link href=/marketplace className="""text-gray-300 hover text-white transition-colors >Marketplace</div>'
+              <Link href=/marketplace className=""""text-gray-300 hover text-white transition-colors >Marketplace</div>'
               </Link href=/marketplace  className=text-gray-300 hover text-white transition-colors"></Link></div>";
               <Link href=/about className=text-gray-300 hover text-white transition-colors >About</div>
               </Link href=/about className=text-gray-300 hover text-white transition-colors ></Link></div>'
-              <Link href=/contact className="""text-gray-300 hover text-white transition-colors >Contact</div>'
-              </Link href=/contact  className="""text-gray-300 hover text-white transition-colors ></Link></div>";
+              <Link href=/contact className=""""text-gray-300 hover text-white transition-colors >Contact</div>'
+              </Link href=/contact  className=""""text-gray-300 hover text-white transition-colors ></Link></div>";
               <Link href=/help-center className=text-gray-300 hover text-white transition-colors >Help Center</div>'
               </Link href=/help-center className=text-gray-300 hover text-white transition-colors" "></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover text-white transition-colors >Login</div>'
@@ -160,7 +160,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div></div>
       </nav></div>'
-      <main className="""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8 py-32>"
+      <main className=""""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8 py-32>"
         {/* Header */}</div>
         <div className= text-center mb-12></div>";
           <h1 className=text-4xl md text-5xl font-bold text-white mb-4>";
@@ -171,7 +171,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </p></div>";
         </div>";
         {/* Categories */}</div>'
-        <div className=""" grid grid-cols-2 md grid-cols-3  lg: "grid-cols-6 gap-4 mb-12>";
+        <div className="""" grid grid-cols-2 md grid-cols-3  lg: "grid-cols-6 gap-4 mb-12>";
           {categories.map((category) => (
               onClick={() => setActiveCategory(category.id)}
               className= {p-4 rounded-lg:border transition-all duration-200 ${
@@ -180,18 +180,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                     bg-whit'e/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20`";
               }}";
             ></div>'
-              <div className="""text-2xl mb-2>{category.icon}</div></div>
+              <div className=""""text-2xl mb-2>{category.icon}</div></div>
               <div className=font-medium>{category.name}</div></div>";
             </button>
           ))}</div>";
         </div>
         {/* FAQs */}</div>'
-        <div className="""max-w-4xl: "mx-auto> </div>"";
+        <div className=""""max-w-4xl: "mx-auto> </div>"";
           </div><div className=space-y-4>
             {filteredFAQs.map((faq, index) => (</div>";
               <div key={index} className= bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm>
                   onClick={() => toggleItem(index)}'
-                  className="""w-full px-6 py-4 text-left flex justify-between items-center hover: "bg-white/5 transition-colors";
+                  className=""""w-full px-6 py-4 text-left flex justify-between items-center hover: "bg-white/5 transition-colors";
                 ></div>";
                   <h3 className=text-lg font-semibold text-white pr-4 >
                     {faq.question}</div>";
@@ -200,7 +200,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                     <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M19 9l-7 7-7-7 > </path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M19 9l-7" 7-7-7 ></svg></div>";
                 </button>
                 {openItems.has(index) && (</div>'
-                  <div className="""px-6 pb-4></div>;
+                  <div className=""""px-6 pb-4></div>;
                     <p className=text-gray-300 leading-relaxed>;
                       {faq.answer}</div>
                     </p></div>
@@ -210,18 +210,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div>";
         {/* Additional Help */}</div>'
-        <div className="""mt-16 grid grid-cols-1 md: "grid-cols-3 gap-8> </div>"";
+        <div className=""""mt-16 grid grid-cols-1 md: "grid-cols-3 gap-8> </div>"";
           </div><div className=bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm ></div>";
             <div className=text-3xl mb-4>📧</div> </div>";
             <h3 className=text-xl font-semibold text-white mb-2>Still Need Help?</h3></div>'
-            <p className="""text-gray-300 mb-4>
+            <p className=""""text-gray-300 mb-4>
               Cant find what youre looking for? Our support team is here to help.</div>";
             </p></div>
             <Link href=/contact className=text-purple-400 hover text-purple-300 font-medium >Contact Support →</div>";
             </Link href=/contact  className=text-purple-400 hover text-purple-300 font-medium></Link></div>";
           </div></div>'
           <div className= bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>"</div>'
-            </div><div className="""text-3xl: "mb-4>📚</div></div>";
+            </div><div className=""""text-3xl: "mb-4>📚</div></div>";
             <h3 className=text-xl font-semibold text-white mb-2 >Help Center</h3></div>";
             <p className=text-gray-300 mb-4>
               Detailed guides and tutorials for using Zions' features effectively.</div>";
@@ -251,13 +251,13 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>";
           </div><div className= flex justify-around items-center py-2></div>";
             <button className=flex  flex-col items-center p-2 text-gray-400 hover:text-white></div>'
-              <Home className="""w-5 h-5  > </Home className=w-5 h-5  "><span className=text-xs>Home</span></div>";
+              <Home className=""""w-5 h-5  > </Home className=w-5 h-5  "><span className=text-xs>Home</span></div>";
             </button></div>";
             <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'
-              <Search className="""w-5 h-5 > </Search className=w-5" h-5 ><span className=text-xs>Search</span></div>";
+              <Search className=""""w-5 h-5 > </Search className=w-5" h-5 ><span className=text-xs>Search</span></div>";
             </button></div>'
-            <button className="""flex" flex-col items-center p-2 text-gray-400 hover text-white></div>'";
-              <User className=""" w-5 h-5 ></div>'
+            <button className=""""flex" flex-col items-center p-2 text-gray-400 hover text-white></div>'";
+              <User className="""" w-5 h-5 ></div>'
               </User className= w-5 h-5 "><span className=text-xs>Profile</span></div>;
             </button></div>;
           </div></div>;

@@ -1,6 +1,6 @@
 import React from ";react'
 import { NextPage } from ';next
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link;
 import PageLayout from ../components/layout/PageLayout;
 import {;
@@ -157,15 +157,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>AI-Powered Healthcare Medical Diagnostics System | Zion Tech Group</title></div>'
         <meta name = "description content=Intelligent medical diagnostics with AI-powered patient monitoring, diagnostic analysis, and healthcare analytics. > </meta name=description content=Intelligent medical diagnostics with AI-powered patient monitoring, diagnostic analysis, and healthcare" analytics. ><meta name=keywords content=healthcare, medical diagnostics, patient monitoring, AI diagnostics, healthcare analytics, Zion > </meta" name=keywords content=healthcare, medical diagnostics, patient monitoring, AI diagnostics, healthcare analytics, Zion" ><meta name=viewport content=width=device-width, initial-scale=1 > </meta name="viewport content=width=device-width, initial-scale=1 ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ></Head>
       {/* Page Header */}</div>'
-      <div className="""mb-8> </div>'
-        </div><div className="""flex items-center justify-between></div>
+      <div className=""""mb-8> </div>'
+        </div><div className=""""flex items-center justify-between></div>
           <div className=flex  items-center space-x-4></div>'
-            <Heart className="""h-12 w-12 text-red-400  > </Heart className="""h-12 w-12 text-red-400  ><div></div>";
+            <Heart className=""""h-12 w-12 text-red-400  > </Heart className=""""h-12 w-12 text-red-400  ><div></div>";
               <h1 className=text-3xl font-bold text-white>AI-Powered Healthcare Diagnostics</h1></div>'
               <p className=text-gray-300>Intelligent" medical diagnostics and patient monitoring</p></div>";
             </div></div>
           </div></div>'
-          <div className=""" flex items-center space-x-4>";
+          <div className="""" flex items-center space-x-4>";
               onChange={(e) => setSelectedTimeframe(e.target.value)}'
               className=bg-white/10  text-white border border-white/20 rounded-lg: "px-3 py-4 text-sm></div>";
               <option value=7d>Last 7 days</option></div>;
@@ -183,7 +183,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             const $1 = tab.icon";
             return (";
                 onClick = {() => setActiveTab(tab.id)}'
-                className="""{flex  items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm: "transition-colors ${";
+                className=""""{flex  items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm: "transition-colors ${";
                   activeTab === tab.id
                     ? border-red-500 text-red-400
                     : 'border-transparen't text-gray-300 hover: "text-white hover:border-gray-300`";
@@ -197,16 +197,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </nav>";
       {/* Main Content */},
 {loading ? (</div>'
-        <div className="""flex justify-center items-center h-124></div>'
-          </div><div className="""animate-spin rounded-full h-12 w-12 border-b-2 border-red-500></div> </div>";
+        <div className=""""flex justify-center items-center h-124></div>'
+          </div><div className=""""animate-spin rounded-full h-12 w-12 border-b-2 border-red-500></div> </div>";
         </div>'
       )   ("</div>'";
-        <div className="""space-y-8>
+        <div className=""""space-y-8>
           {/* Overview Tab */},";
     {activeTab === overview && (</div>";
             </div><div className=space-y-6>'
               {/* KPI Cards */}"</div>'
-              <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6> </div>";
+              <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6> </div>";
                 </div><div className=bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>
                   <div className=flex items-center justify-between></div>
                     </div><div></div>
@@ -224,7 +224,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <Brain className=h-12" w-12 text-green-400 "> </Brain className=h-12 w-12 text-green-400 ></div></div>";
                 </div>
                 </div>'
-                <div className="""bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20 > </div>";
+                <div className=""""bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20 > </div>";
                   </div><div className=flex items-center justify-between></div>";
                     <div>
                       <p className=text-gray-300 text-sm>Accuracy Rate</p></div>";
@@ -239,11 +239,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <p className=text-gray-300 text-sm>Critical Alerts</p></div>'
                       <p className=text-2xl font-bold text-white ">{monitoring.filter(m => m.status === critic'a'l).length}</p></div>
                     </div></div>'";
-                    <AlertTriangle className="""h-12 w-12 text-red-400 > </AlertTriangle className=h-12 w-12 text-red-400 ></div></div>
+                    <AlertTriangle className=""""h-12 w-12 text-red-400 > </AlertTriangle className=h-12 w-12 text-red-400 ></div></div>
                 </div></div>";
               </div>
               {/* Recent Activity */}</div>'";
-              <div className=""" bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>"
+              <div className="""" bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>"
                 <h3 className=text-xl font-semibold text-white mb-4>Recent Activity</h3></div>";
                 <div className=space-y-4>";
                   {diagnostics.slice(0, 5).map((diagnostic) => (</div>'
@@ -251,13 +251,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className= flex items-center space-x-3>'</div>";
                         </div><div className={w-3 h-3 rounded-full ${getStatusColor(diagnostic.status)}}></div></div>
                         <div></div>'";
-                          <p className="""text-white font-medium >{diagnostic.name}</p></div>'
+                          <p className=""""text-white font-medium >{diagnostic.name}</p></div>'
                           <p className=text-gray-400" text-sm>{diagnostic.type} • {diagnostic.status}</p></div>";
                         </div></div>
                       </div></div>";
                       <div className=text-right></div>
                         <p className=text-white text-sm>{diagnostic.patientName}</p></div>'
-                        <p className="""text-gray-400 text-xs>{diagnostic.aiAnalysis.recommendations[0]}</p></div>;
+                        <p className=""""text-gray-400 text-xs>{diagnostic.aiAnalysis.recommendations[0]}</p></div>;
                       </div></div>;
                     </div>
                   ))}</div>
@@ -270,7 +270,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=space-y-6>"</div>";
               </div><div className= flex justify-between items-center></div>'
                 <h2 className=text-2xl font-bold text-white>Medical Diagnostics</h2>"</div>'
-                <button className="""bg-red-600 hover: "bg-red-700 text-white px-4 py-4 rounded-lg transition-colors >"
+                <button className=""""bg-red-600 hover: "bg-red-700 text-white px-4 py-4 rounded-lg transition-colors >"
                   + New Diagnostic</div>
                 </button></div>
               </div></div>";
@@ -279,19 +279,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div key={diagnostic.id} className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>";
                     <div className=flex justify-between items-start mb-4></div>'
                       </div><div>"</div>'";
-                        <h3 className="""text-lg font-semibold text-white >{diagnostic.name}</h3></div>'
+                        <h3 className=""""text-lg font-semibold text-white >{diagnostic.name}</h3></div>'
                         <p className=text-gray-400 text-sm>{diagnostic.type} • {diagnostic.status}</p>"</div>";
                       </div>`</div>'
                       <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(diagnostic.status)}}">
                         {diagnostic.status}</div>";
                       </span></div>
                     </div></div>'
-                    <div className="""space-y-3></div>
+                    <div className=""""space-y-3></div>
                       <p className=text-white/60 text-sm >{diagnostic.result}</p></div>'
-                      <div className="""grid grid-cols-2 gap-4 text-sm></div>
+                      <div className=""""grid grid-cols-2 gap-4 text-sm></div>
                         </div><div></div>'
-                          <p className="""text-gray-400>Confidence</p></div>'
-                          <p className="""text-white>{Math.round(diagnostic.confidence * 100)}%</p></div>";
+                          <p className=""""text-gray-400>Confidence</p></div>'
+                          <p className=""""text-white>{Math.round(diagnostic.confidence * 100)}%</p></div>";
                         </div></div>'
                         <div>"</div>";
                           <p className=text-gray-400>Risk Level</p></div>'
@@ -301,7 +301,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=grid grid-cols-2 gap-4 text-sm></div>";
                         </div><div></div>'
                           <p className=text-gray-400">Date</p></div>'
-                          <p className="""text-white>N/A</p></div>;
+                          <p className=""""text-white>N/A</p></div>;
                         </div></div>;
                         <div></div>;
                           <p className=text-gray-400>Doctor</p></div>;
@@ -317,29 +317,29 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {/* Patients Tab */},";
 {activeTab === patients && (</div>'
             <div className= space-y-6>"</div>'
-              </div><div className="""flex justify-between items-center ></div>";
+              </div><div className=""""flex justify-between items-center ></div>";
                 <h2 className=text-2xl font-bold text-white>Patient Management</h2 ></div>'
-                <button className="""bg-red-600 hover: "bg-red-700 text-white px-4 py-4 rounded-lg transition-colors>"
+                <button className=""""bg-red-600 hover: "bg-red-700 text-white px-4 py-4 rounded-lg transition-colors>"
                   + Add Patient</div>
                 </button></div>";
               </div></div>
               <div className=grid grid-cols-1 lg:grid-cols-2 gap-6>";
                 {patients.map((patient) => (</div>";
                   </div><div key={patient.id} className=bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>'
-                    <div className="""flex justify-between items-start mb-4></div>";
+                    <div className=""""flex justify-between items-start mb-4></div>";
                       </div><div></div>";
                         <h3 className=text-lg font-semibold text-white>{patient.name}</h3></div>'
-                        <p className="""text-gray-400 text-sm>ID: "{patient.id} • Age: {patient.age}</p></div>"
+                        <p className=""""text-gray-400 text-sm>ID: "{patient.id} • Age: {patient.age}</p></div>"
                       </div>`</div>
                       <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(patient.status)}}>";
                         {patient.status}</div>
                       </span></div>";
                     </div>
                     </div>'
-                    <div className="""space-y-3></div>";
+                    <div className=""""space-y-3></div>";
                       </div><div className= grid grid-cols-2 gap-4 text-sm></div>'
                         <div>"</div>'
-                          <p className="""text-gray-400>Gender</p></div>";
+                          <p className=""""text-gray-400>Gender</p></div>";
                           <p className=text-white>{patient.gender}</p></div>
                         </div></div>";
                         <div></div>";
@@ -347,14 +347,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <p className=text-white">{patient.gender}</p></div>";
                         </div ></div>";
                       </div></div>'
-                      <div className="""grid grid-cols-2 gap-4 text-sm></div>
+                      <div className=""""grid grid-cols-2 gap-4 text-sm></div>
                         </div><div></div>";
                           <p className=text-gray-400>Admitted</p></div>
                           <p className=text-white>N/A</p></div>";
                         </div></div>";
                         <div></div>'
                           <p className=text-gray-400">Room</p></div>'
-                          <p className="""text-white>N/A</p></div>
+                          <p className=""""text-white>N/A</p></div>
                         </div></div>";
                       </div>
                       </div>";
@@ -372,13 +372,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === monitorin'g' && ("</div>";
             <div className=space-y-6></div>'
               <h2 className=text-2xl font-bold text-white ">Patient Monitoring</h2></div>'
-              <div className=""" grid grid-cols-1 lg grid-cols-2 gap-6>";
+              <div className="""" grid grid-cols-1 lg grid-cols-2 gap-6>";
                 {monitoring.map((monitor) => (</div>'
                   </div><div key={monitor.id} className= bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>"";
                     <div className=flex justify-between items-start mb-4></div>";
                       </div><div></div>'
                         <h3 className=text-lg font-semibold text-white ">{monitor.patientName}</h3></div>'
-                        <p className="""text-gray-400 text-sm>{monitor.type} • {monitor.status}</p></div>";
+                        <p className=""""text-gray-400 text-sm>{monitor.type} • {monitor.status}</p></div>";
                       </div>`</div>'
                       <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(monitor.status)}"}">";
                         {monitor.status}</div>
@@ -389,7 +389,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=grid grid-cols-2 gap-4 text-sm></div>";
                         </div><div></div>
                           <p className= text-gray-400>Risk Score</p></div>'";
-                          <p className="""text-white>{Math.round(monitor.aiAnalysis.riskScore * 100)}%</p></div>
+                          <p className=""""text-white>{Math.round(monitor.aiAnalysis.riskScore * 100)}%</p></div>
                         </div></div>
                         <div></div>";
                           <p className=text-gray-400>Trend</p></div>
@@ -398,7 +398,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>'
                       <div className=grid grid-cols-2 gap-4 text-sm"></div>
                         </div><div></div>'
-                          <p className="""text-gray-400>Last Updated</p></div>";
+                          <p className=""""text-gray-400>Last Updated</p></div>";
                           <p className=text-white>N/A</p></div>
                         </div></div>";
                         <div></div>";
@@ -416,7 +416,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === analytics && (</div>";
             <div className=space-y-6></div>'
               <h2 className=text-2xl" font-bold text-white >Healthcare Analytics</h2></div>'
-              <div className=""" grid grid-cols-1 lg grid-cols-2 gap-6>";
+              <div className="""" grid grid-cols-1 lg grid-cols-2 gap-6>";
                 {analytics.map((analytic) => (</div>'
                   </div><div key={analytic.id} className= bg-white/10 backdrop-blur-md: "rounded-lg p-6 border border-white/20></div>";
                     <div className=flex justify-between items-start mb-4></div>;
@@ -428,7 +428,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {analytic.status}</div>";
                       </span></div>
                     </div></div>'";
-                    <div className="""space-y-3></div>'
+                    <div className=""""space-y-3></div>'
                       <p className=text-white/60" text-sm >Total Patients: "{analytic.metrics.totalPatients} Success Rate: {Math.round(analytic.metrics.successRate * 100)}%, Avg Recovery: {analytic.metrics.averageRecoveryTime} days, Cost Savings: {analytic.metrics.costSavings}</p></div>"
                       <div className=grid grid-cols-2 gap-4 text-sm></div>
                         </div><div></div>
@@ -441,8 +441,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div>"</div>";
                       </div></div>";
                       <div className=text-sm></div>'
-                        <p className="""text-gray-400>Last Updated</p>"</div>'
-                        <p className="""text-white>N/A</p></div>;
+                        <p className=""""text-gray-400>Last Updated</p>"</div>'
+                        <p className=""""text-white>N/A</p></div>;
                       </div></div>;
                     </div></div>;
                   </div>;

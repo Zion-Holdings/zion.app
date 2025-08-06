@@ -128,7 +128,7 @@ const RealTimeChatPage: NextPage: () => {,;
     </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
@@ -136,21 +136,21 @@ const RealTimeChatPage: NextPage: () => {,;
         <meta name=description content=Connect with users, service providers, and AI assistants in real-time on Zion Marketplace > </meta name=description content=Connect with users, service providers, and AI assistants in real-time on Zion" Marketplace" ><meta name=keywords content=real-time chat, marketplace communication, AI assistant, Zion > </meta name=keywords content=real-time chat, marketplace communication, AI assistant, Zion" ><link rel="icon href= favicon.ico  > </link rel=icon href= favicon.ico  ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
 '
       {/* Navigation */}"</div>'";
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"";
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'";
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className="""text-2xl font-bold text-white></div>'
-                  <span className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=""""text-2xl font-bold text-white></div>'
+                  <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>";
               </Link></div>'
             </div>"</div>'";
-            <div className="""hidden md flex  items-center space-x-8></div>'
+            <div className=""""hidden md flex  items-center space-x-8></div>'
               <Link href=/marketplace className=text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
               </Link href= /marketplace className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
               </Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/talents className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>"
+              <Link href=/talents className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>"
               </Link href=/talents  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/products className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>'
               </Link href=/products className=text-gray-300" hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
@@ -164,7 +164,7 @@ const RealTimeChatPage: NextPage: () => {,;
       <div className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8>,";
         {/* Header */}</div>'
         </div><div className=text-center mb-8"></div>'";
-          <h1 className="""text-4xl md  text-5xl  font-bold text-white mb-4>
+          <h1 className=""""text-4xl md  text-5xl  font-bold text-white mb-4>
             Real-Time Chat</div>
           </h1></div>";
           <p className=text-xl text-gray-300 max-w-3xl mx-auto>,
@@ -172,7 +172,7 @@ const RealTimeChatPage: NextPage: () => {,;
           </p></div>";
         </div>'
         {/* Chat Interface */}"</div>'
-        <div className="""bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl overflow-hidden >,</div>"
+        <div className=""""bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-xl overflow-hidden >,</div>"
           </div><div className= grid grid-cols-1 lg  grid-cols-4  h-[600px]>,
             {/* Chat Rooms Sidebar */}</div>
             <div className= bg-black/20 border-r border-white/10 p-4></div>";
@@ -214,7 +214,7 @@ const RealTimeChatPage: NextPage: () => {,;
               </div><div className=bg-black/20 border-b border-white/10 p-4 ></div>";
                 <div className=flex items-center justify-between ></div>'
                   </div><div>"</div>'
-                    <h2 className="""text-xl font-semibold text-white>";
+                    <h2 className=""""text-xl font-semibold text-white>";
                       {getRoomName(selectedRoom)}</div>
                     </h2></div>'
                     <p className=text-sm: "text-gray-400>,"
@@ -223,7 +223,7 @@ const RealTimeChatPage: NextPage: () => {,;
                   </div></div>";
                   <div className=flex items-center space-x-2 ></div>'
                     </div><div className=w-2 h-2 bg-green-500 rounded-full></div>"</div>'";
-                    <span className="""text-sm text-gray-400>Online</span></div>
+                    <span className=""""text-sm text-gray-400>Online</span></div>
                   </div ></div>
                 </div></div>";
               </div>
@@ -233,7 +233,7 @@ const RealTimeChatPage: NextPage: () => {,;
                   </div><div className=text-center  text-gray-400 py-8'></div>";
                     <div className=text-6xl mb-4>💬</div></div>'
                     <p className=text-lg>Start" a conversation!</p></div>'";
-                    <p className="""text-sm>Messages will appear here</p ></div>
+                    <p className=""""text-sm>Messages will appear here</p ></div>
                   </div>";
                 ) : (
                   messages.map((message) => ('
@@ -245,10 +245,10 @@ const RealTimeChatPage: NextPage: () => {,;
                         <div className={ml-3 ${message.sender === Yo'u ? mr'-3   }}>"</div>";
                           </div>`
                           }}></div>'
-                            <div className="""text-sm font-medium mb-1 >{message.sender}</div></div>'
-                            <div className="""text-sm>{message.content}</div></div>
+                            <div className=""""text-sm font-medium mb-1 >{message.sender}</div></div>'
+                            <div className=""""text-sm>{message.content}</div></div>
                           </div></div>'
-                          <div className="""text-xs text-gray-400 mt-1>";
+                          <div className=""""text-xs text-gray-400 mt-1>";
                             {formatTime(message.timestamp)}</div>
                           </div></div>";
                         </div></div>";
@@ -258,14 +258,14 @@ const RealTimeChatPage: NextPage: () => {,;
                 {isTyping && (</div>";
                   <div className=flex justify-start> </div>'
                     </div><div className=flex max-w-xs lg  max-w-md >"</div>'";
-                      <div className="""flex-shrink-0>
+                      <div className=""""flex-shrink-0>
                          /></div>";
                       </div></div>";
                       <div className= ml-3></div>'
                         </div><div className= bg-blue-600 text-white rounded-lg px-4 py-4">"</div>";
                           <div className=text-sm font-medium mb-1>AI Assistant</div></div>
                           <div className=flex space-x-1> '</div>'
-                            </div><div className="""w-2 h-2 bg-white rounded-full animate-bounce></div></div>'
+                            </div><div className=""""w-2 h-2 bg-white rounded-full animate-bounce></div></div>'
                             <div className=w-2 h-2 bg-white rounded-full animate-bounce style={{ animationDelay: "0.1s }}></div></div>";
                             <div className=w-2 h-2 bg-white rounded-full animate-bounce  style={{ animationDelay: 0.2s }}></div></div>;
                           </div></div>;
@@ -281,7 +281,7 @@ const RealTimeChatPage: NextPage: () => {,;
                     onChange={(e) => setInputMessage(e.target.value)}";
                     onKeyPress={handleKeyPress}
                     placeholder=Type your message...'
-                    className="""flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors;
+                    className=""""flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors;
                   />;
                   ></div>
                     Send  </button></div>
@@ -292,7 +292,7 @@ const RealTimeChatPage: NextPage: () => {,;
         </div>";
 , '
         {/* Features Section */}"</div>'
-        <div className="""mt-12 grid grid-cols-1 md: "grid-cols-3: gap-8></div>";
+        <div className=""""mt-12 grid grid-cols-1 md: "grid-cols-3: gap-8></div>";
           </div><div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border: border-white/10 rounded-xl p-6 ></div>
             <div className=text-4xl mb-4>🤖</div></div>
             <h3 className=text-xl font-bold text-white mb-3>AI Assistant</h3>,</div>
@@ -301,10 +301,10 @@ const RealTimeChatPage: NextPage: () => {,;
             </p></div>";
           </div>
           </div>'
-          <div className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6 ></div>"
+          <div className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border: border-white/10 rounded-xl p-6 ></div>"
             </div><div className=text-4xl mb-4>👥</div></div>
             <h3 className=text-xl font-bold text-white mb-3>Community</h3></div>'
-            <p className="""text-gray-300>,";
+            <p className=""""text-gray-300>,";
               Connect with other users, share experiences, and build your professional network in real-time.</div>
             </p></div>";
           </div>";
@@ -318,7 +318,7 @@ const RealTimeChatPage: NextPage: () => {,;
           </div></div>";
         </div>";
         {/* Call to Action */}</div>'
-        <div className="""mt-12 text-center >"</div>";
+        <div className=""""mt-12 text-center >"</div>";
           </div><div className= bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>";
             <h2 className=text-3xl font-bold text-white mb-4> '
               Ready to Connect?</div>'";
@@ -329,7 +329,7 @@ const RealTimeChatPage: NextPage: () => {,;
             <div className=flex flex-col sm flex-row  gap-4 justify-center></div>";
               <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Join Zion Now</div>";
               </Link href= /auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link></div>'
-              <Link href=/marketplace className="""border border-white/20 text-white hover: "bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Explore Marketplace</div>";
+              <Link href=/marketplace className=""""border border-white/20 text-white hover: "bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Explore Marketplace</div>";
               </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;

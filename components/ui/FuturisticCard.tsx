@@ -72,14 +72,14 @@ const FuturisticCard: "React.FC<FuturisticCardProps> = ({";
         )}";
         {/* Icon */},";
     {icon && (</div>'
-          <div className=""" text-2xl sm: "text-3xl lg text-4xl mb-3 sm mb-4 animate-cyber-float> {icon}</div>"
+          <div className="""" text-2xl sm: "text-3xl lg text-4xl mb-3 sm mb-4 animate-cyber-float> {icon}</div>"
           </div>
         )}";
         {/* Title */}</div>
         <h3 className= text-sm sm:text-base lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover from-neon-blue group-hover to-neon-purple transition-all duration-300> {title}</div>";
         </h3>
         {/* Description */}</div>'";
-        <p className=""" text-gray-400 text-xs sm text-sm mb-3 sm mb-4 line-clamp-3> {description}</div>
+        <p className="""" text-gray-400 text-xs sm text-sm mb-3 sm mb-4 line-clamp-3> {description}</div>
         </p>";
         {/* Price and Rating */}</div>
         <div className= flex items-center justify-between>'";
@@ -104,7 +104,7 @@ const FuturisticCard: "React.FC<FuturisticCardProps> = ({";
             </div > )}</div>";
         </div>
         {/* Hover Effect Overlay */}</div>'
-        <div className="""absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-xl opacity-0 group-hover opacity-100 transition-opacity duration-300 pointer-events-none></div>";
+        <div className=""""absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-xl opacity-0 group-hover opacity-100 transition-opacity duration-300 pointer-events-none></div>";
 '
         {/* Corner Accent */}`"</div>";
         <div className={absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 ${currentColor.border} rounded-bl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300}></div></div>

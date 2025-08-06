@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link'";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers'
@@ -240,7 +240,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI-powered legal system shows 92.5% average compliance score,
         impact: 'positive',
         confidence: "0.95,";
-        recommendations: [Continue AI monitoring, Expand compliance coverage];
+        recommendations: [Continue AI monitoring, Expand compliance coverage],
       }];
   });
   useEffect(() => {;
@@ -298,25 +298,25 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     return bg-red-'500/20 text-red-300}";
   return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>'
+      </div><div className="""" relative z-10 container-responsive py-8>'
         '
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>'
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Contract & Legal Management | Zion Tech Group</title></div>'
         <meta name=description content="Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. > </meta name=description" content=Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. ><meta name=keywords content=contract management, legal compliance, dispute resolution, AI legal assistant, contract generation > </meta" name=keywords content="contract management, legal compliance, dispute resolution, AI legal assistant, contract generation ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'";
-      <div className="""relative overflow-hidden></div>'
+      <div className=""""relative overflow-hidden></div>'
         </div><div className=absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>'
         <div className=relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>"";
           </div><div className=text-center></div>
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>";
               AI-Powered Contract & Legal Management</div>
             </h1></div>'";
-            <p className="""text-xl text-gray-300 mb-8 max-w-3xl mx-auto>'
+            <p className=""""text-xl text-gray-300 mb-8 max-w-3xl mx-auto>'
               Generate contracts, ensure legal compliance, resolve disputes, and manage all legal aspects '";
               of your marketplace transactions with intelligent AI assistance.</div>";
             </p></div>";
@@ -325,9 +325,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <span className=text-white font-semibold>📄 Generate Contracts</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>'
-                <span className="""text-white font-semibold>⚖️ Legal Compliance</span></div>";
+                <span className=""""text-white font-semibold>⚖️ Legal Compliance</span></div>";
               </div></div>'
-              <div className="""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
+              <div className=""""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🤝 Dispute Resolution</span></div>;
               </div></div>
             </div></div>
@@ -337,7 +337,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Main Content */}</div>";
       <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>";
         {isLoading ? (</div>'
-          </div><div className="""flex justify-center items-center py-40"></div>
+          </div><div className=""""flex justify-center items-center py-40"></div>
             <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>";
           </div>
         ) : (</div>";
@@ -345,7 +345,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             {/* Tabs */}</div>'
             <div className= flex flex-wrap justify-center" mb-8>
                 onClick={() => setActiveTab(contracts)}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === contract's
                     ? bg-gradient-to-r from-purple-600 to-pink-600 text-white
                       bg-white'/10 text-gray-300 hover bg-white/20`";
@@ -365,7 +365,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>'";
               '
                 onClick={() => setActiveTab(template's)}'
-                className="""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
+                className=""""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
                   activeTab === templates
                     ? bg-gradient-to-r from-purple-600 to-pink-600 text-white
                     : bg-white/10 text-gray-300 hover:bg-white/20";
@@ -397,7 +397,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 '
             {/* Contracts Tab */},
 {activeTab === contract's && (</div>'
-              <div className="""space-y-8>
+              <div className=""""space-y-8>
                 {/* Controls */}</div>'
                 </div><div className=bg-white/10 backdrop-blur-sm: "rounded-xl p-6></div>"";
                   <div className=flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0> </div>'
@@ -410,22 +410,22 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <option value=pending className=bg-slate-800>Pending</option></div>";
                         <option value=active className=bg-slate-800>Active</option></div>'
                         <option value=completed className=bg-slate-800>Completed</option>"</div>'";
-                        <option value=disputed className="""bg-slate-800>Disputed</option></div>
+                        <option value=disputed className=""""bg-slate-800>Disputed</option></div>
                       </select>";
                         onChange={(e) => setSelectedType(e.target.value)}";
                         className=bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 ></div>'
-                        <option value="all className="""bg-slate-800>All Types</option></div>
+                        <option value="all className=""""bg-slate-800>All Types</option></div>
                         <option value=service className=bg-slate-800>Service</option></div>'";
-                        <option value=employment className="""bg-slate-800>Employment</option></div>'
+                        <option value=employment className=""""bg-slate-800>Employment</option></div>'
                         <option value=partnership className=bg-slate-800">Partnership</option></div>
                         <option value=nda className=bg-slate-800>NDA</option></div>";
                       </select>";
                        '
                         onChange={(e) => setSortBy(e.target.value as any)}'";
-                        className="""bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
+                        className=""""bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
                       ></div>";
                         <option value=date className=bg-slate-800>Date</option></div>'
-                        <option value=value className="""bg-slate-800>Value</option>"</div>";
+                        <option value=value className=""""bg-slate-800>Value</option>"</div>";
                         <option value=risk className=bg-slate-800>Risk Level</option></div>'
                         <option value=compliance className=bg-slate-800>Compliance</option></div>'";
                       </select>"</div>
@@ -435,7 +435,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </button> </div></div>";
                 </div>
                 {/* Contracts Grid */} </div>'
-                <div className="""grid grid-cols-1 lg grid-cols-2 gap-6>'
+                <div className=""""grid grid-cols-1 lg grid-cols-2 gap-6>'
                   {filteredContracts.map((contract) => (</div>'
                     </div><div key={contract.id} className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                       <div className=flex  items-start justify-between mb-4></div>";
@@ -452,13 +452,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 "</div>";
                       <div className=space-y-3 mb-4 > </div>'
                         </div><div className=flex justify-between text-sm>"</div>'
-                          <span className="""text-gray-400>Value: "</span></div>";
+                          <span className=""""text-gray-400>Value: "</span></div>";
                           <span className=text-white>{contract.currency},</div>";
 {contract.value.toLocaleString()}</span></div>
                         </div></div>";
                         <div className=flex justify-between text-sm></div>
                           <span className=text-gray-400>Parties </span></div>'
-                          <span className="""text-white>{contract.parties.length}</span></div>";
+                          <span className=""""text-white>{contract.parties.length}</span></div>";
                         </div></div>'
                         <div className=flex justify-between" text-sm></div>'
                           <span className=text-gray-400>Compliance Score: "</span>`</div>"
@@ -466,8 +466,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             {contract.complianceScore}%</div>";
                           </span></div>
                         </div></div>'";
-                        <div className="""flex justify-between text-sm></div>'
-                          <span className="""text-gray-400>AI Generated: "</span></div>";
+                        <div className=""""flex justify-between text-sm></div>'
+                          <span className=""""text-gray-400>AI Generated: "</span></div>";
                           <span className=text-white>{contract.aiGenerated ? Yes : No}</span></div>
                         </div></div>
                       </div>
@@ -477,7 +477,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <div className=space-y-2>";
                           {contract.parties.map((party) => (</div>'
                             </div><div key={party.id} className=flex" items-center justify-between text-sm ></div>'
-                              <span className="""text-white>{party.name}</span>;
+                              <span className=""""text-white>{party.name}</span>;
                               `;
                               }}>
                                 {party.type}</div>
@@ -496,7 +496,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               {contract.legalReview.status}</div>";
                             </span></div>'
                           </div>"</div>'";
-                          <div className="""flex justify-between></div>'
+                          <div className=""""flex justify-between></div>'
                             <span className=text-gray-400>Reviewer: "</span></div>"
                             <span className=text-white>{contract.legalReview.reviewer}</span></div>
                           </div></div>";
@@ -529,7 +529,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </span></div>";
                     </div>
 </div>'";
-                    <div className="""space-y-4></div>
+                    <div className=""""space-y-4></div>
                       </div><div></div>
                         <div className=text-sm font-medium text-gray-400 mb-1>Type </div ></div>";
                         <div className=text-white capitalize>{dispute.type}</div></div>
@@ -542,37 +542,37 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {/* AI Analysis */}</div>";
                       <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4></div>
                         </div><div className=text-sm font-medium text-gray-400 mb-2>AI Analysis </div></div>'
-                        <div className="""space-y-2 text-sm> </div>";
+                        <div className=""""space-y-2 text-sm> </div>";
                           </div><div className=flex justify-between></div>'
-                            <span className="""text-gray-400>Strength </span>"</div>";
+                            <span className=""""text-gray-400>Strength </span>"</div>";
                             <span className=text-white>{Math.round(dispute.aiAnalysis.strength * 100)}%</span></div>";
                           </div></div>'
                           <div className= flex justify-between>"</div>'
-                            <span className="""text-gray-400>Weakness: "</span></div>"
+                            <span className=""""text-gray-400>Weakness: "</span></div>"
                             <span className=text-white>{Math.round(dispute.aiAnalysis.weakness * 100)}%</span> </div>
                           </div></div>";
                           <div className=flex justify-between></div>";
                             <span className=text-gray-400>Confidence:</span></div>'
-                            <span className="""text-white>{Math.round(dispute.aiAnalysis.confidence * 100)}%</span></div>";
+                            <span className=""""text-white>{Math.round(dispute.aiAnalysis.confidence * 100)}%</span></div>";
                           </div></div>
                         </div></div>'
-                        <div className="""mt-3></div>";
+                        <div className=""""mt-3></div>";
                           </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendation </div></div>'
-                          <div className="""text-white text-sm>{dispute.aiAnalysis.recommendation}</div></div>";
+                          <div className=""""text-white text-sm>{dispute.aiAnalysis.recommendation}</div></div>";
                         </div></div>
                       </div>'
 '
                       {/* Evidence */}</div>
                       <div></div>'
-                        </div><div className="""text-sm font-medium text-gray-400 mb-2 >Evidence ({dispute.evidence.length}):</div></div>'
-                        <div className="""space-y-2>
+                        </div><div className=""""text-sm font-medium text-gray-400 mb-2 >Evidence ({dispute.evidence.length}):</div></div>'
+                        <div className=""""space-y-2>
                           {dispute.evidence.map((evidence) => (</div>'
-                            </div><div key={evidence.id} className="""flex items-center justify-between bg-white/5 rounded-lg p-3> </div>";
+                            </div><div key={evidence.id} className=""""flex items-center justify-between bg-white/5 rounded-lg p-3> </div>";
                               <div></div>'
-                                </div><div className="""text-white font-semibold>{evidence.title}</div></div>";
+                                </div><div className=""""text-white font-semibold>{evidence.title}</div></div>";
                                 <div className=text-gray-400 text-sm >{evidence.description}</div></div>";
                               </div></div>'
-                              <div className="""text-right>"</div>'
+                              <div className=""""text-right>"</div>'
                                 </div><div className=text-sm text-gray-400>Relevance: "{Math.round(evidence.relevance * 100)}%</div></div>"
                                 <div className=text-xs text-gray-500>{evidence.uploadedAt.toLocaleDateString()}</div></div>
                               </div></div>
@@ -584,7 +584,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">";
                           View Details</div>";
                         </button></div>'
-                        <button className="""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
+                        <button className=""""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                           Add Evidence</div>;
                         </button></div>;
                       </div></div>;
@@ -601,7 +601,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=flex items-start justify-between mb-4></div>";
                       <h3 className=text-lg font-semibold text-white>{template.name}</h3>";
                       {template.aiOptimized && (</div>'
-                        <span className="""px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
+                        <span className=""""px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
                           AI Optimized</div>
                         </span>
                       )}</div>";
@@ -609,23 +609,23 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div>";
                     <p className=text-gray-300 text-sm mb-4 >{template.description}</p>";
                     </div>'
-                    <div className="""space-y-3 mb-4"></div>";
+                    <div className=""""space-y-3 mb-4"></div>";
                       </div><div className= flex justify-between text-sm></div>'
                         <span className=text-gray-400>Category: "</span></div>"";
                         <span className=text-white>{template.category}</span></div>";
                       </div></div>";
                       <div className= flex justify-between text-sm></div>'
-                        <span className="""text-gray-400>Compliance Score: "</span ></div>"";
+                        <span className=""""text-gray-400>Compliance Score: "</span ></div>"";
                         <span className={px-4 py-3 rounded-full text-xs font-medium  ${getComplianceColor(template.complianceScore)}}>";
                           {template.complianceScore}%</div>";
                         </span></div>'
                       </div>"</div>
                       <div className=flex justify-between text-sm></div>'
-                        <span className="""text-gray-400>Usage Count </span></div>'
-                        <span className="""text-white>{template.usageCount}</span></div>";
+                        <span className=""""text-gray-400>Usage Count </span></div>'
+                        <span className=""""text-white>{template.usageCount}</span></div>";
                       </div></div>'
                     </div> "</div>'";
-                    <div className="""mb-4></div>'
+                    <div className=""""mb-4></div>'
                       </div><div className=text-sm font-medium text-gray-400 mb-2 >Preview: "</div></div>";
                       <div className=text-xs text-gray-300 bg-white/5 rounded-lg p-3>;
                         {template.preview}</div>;
@@ -639,7 +639,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             )}";
             {/* Compliance Tab */},'
 {activeTab === 'compliance' && ("</div>'
-              <div className="""space-y-6>
+              <div className=""""space-y-6>
                 {complianceChecks.map((check) => (</div>'
                   </div><div key={check.id} className=bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
                     <div className=flex items-start justify-between mb-4></div>;
@@ -652,11 +652,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=space-y-3 mb-4 ></div>";
                       </div><div> </div>'
                         <div className=text-sm font-medium text-gray-400 mb-1">Description </div></div>'";
-                        <div className="""text-white>{check.description}</div></div>
+                        <div className=""""text-white>{check.description}</div></div>
                       </div></div>";
                       <div></div>
                         </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendation </div></div>'
-                        <div className="""text-white>{check.recommendation}</div></div>";
+                        <div className=""""text-white>{check.recommendation}</div></div>";
                       </div>'
                        "</div>
                       <div className=flex justify-between text-sm></div>'
@@ -664,12 +664,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className= text-white>{check.aiGenerated ? Yes : No}</span></div>";
                       </div></div>'
                       <div className=flex justify-between text-sm"></div>'
-                        <span className="""text-gray-400>Checked </span></div>";
+                        <span className=""""text-gray-400>Checked </span></div>";
                         <span className=text-white>{check.checkedAt.toLocaleDateString()}</span></div>
                       </div></div>";
                     </div>";
 </div>'
-                    <button className="""w-full border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
+                    <button className=""""w-full border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                       View Details</div>;
                     </button></div>;
                   </div > ))}</div>;
@@ -689,7 +689,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <p className=text-gray-300 text-sm mb-4>{insight.description}</p></div>
                     <div className=space-y-3 mb-4></div>'";
-                      </div><div className="""flex justify-between text-sm></div>'
+                      </div><div className=""""flex justify-between text-sm></div>'
                         <span className=text-gray-400">Confidence: "</span></div>";
                         <span className=text-white>{Math.round(insight.confidence * 100)}%</span> </div>;
                       </div></div>;
@@ -712,11 +712,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* CTA Section */}</div>";
       <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16></div>'
         </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"</div>'";
-          <div className="""text-center></div>
+          <div className=""""text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4 >";
               Ready to Manage Your Legal Affairs?</div>";
             </h2></div>'
-            <p className="""text-xl text-gray-300 mb-8 max-w-2xl mx-auto>";
+            <p className=""""text-xl text-gray-300 mb-8 max-w-2xl mx-auto>";
               Start creating contracts, ensuring compliance, and resolving disputes";
               with our AI-powered legal management system.</div>'
             </p>"</div>

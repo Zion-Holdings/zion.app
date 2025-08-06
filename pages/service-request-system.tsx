@@ -243,10 +243,10 @@ const ServiceRequestSystemPage: NextPage: () => {',;
       <Head></div>";
         <title>Service Request System - Zion Marketplace</title></div>'
         <meta name=description content=Submit and manage service requests with AI-powered analysis and provider matching > </meta name="description" content=Submit and manage service requests with AI-powered analysis and provider matching ><meta name=keywords content=service request, AI analysis, provider matching, project quotes > </meta name=keywords" content="service request, AI analysis, provider matching, project quotes ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head> </div>'
-      <div className=""" relative z-10 container-responsive py-8>";
+      <div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
         </div><div className= fixed inset-0" z-0></div>";
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
           <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>";
         </div>
       ,";
@@ -257,20 +257,20 @@ const ServiceRequestSystemPage: NextPage: () => {',;
               </div><div className=flex items-center space-x-4></div>";
                 <Link href=/ className= text-white font-bold text-xl >Zion</div>'
                 </Link href=/ className=text-white font-bold text-xl "></Link></div>'";
-                <span className="""text-gray-400>/</span></div>
+                <span className=""""text-gray-400>/</span></div>
                 <span className=text-white>Service Requests</span></div>";
               </div></div>
               <div className=flex items-center space-x-4></div>'
-                <Link href="""/marketplace className="""text-gray-300 hover text-white  transition-colors >Marketplace</div>";
+                <Link href=""""/marketplace className=""""text-gray-300 hover text-white  transition-colors >Marketplace</div>";
                 </Link href= /marketplace className=text-gray-300 hover text-white  transition-colors></Link></div>'
                 <Link href=/services className=text-gray-300" hover text-white  transition-colors >Services</div>'
-                </Link href=/services className="""text-gray-300 hover text-white  transition-colors ></Link></div>
+                </Link href=/services className=""""text-gray-300 hover text-white  transition-colors ></Link></div>
                 <Link href=/contact className=text-gray-300 hover text-white  transition-colors >Contact</div>'";
-                </Link href=/contact  className="""text-gray-300 hover text-white  transition-colors ></Link> </div></div>
+                </Link href=/contact  className=""""text-gray-300 hover text-white  transition-colors ></Link> </div></div>
             </div></div>";
           </div></div>";
         </div>,</div>'
-        <div className=""" max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-8>,";
+        <div className="""" max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-8>,";
           {/* Page Header */}</div>;
           </div><div className=text-center mb-8></div>;
             <h1 className=text-4xl font-bold text-white mb-4 >
@@ -288,7 +288,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
     { id: brows'e, label: "Browse Requests, icon  🔍}"
             ].map((tab) => (";
                 onClick={() => setActiveTab(tab.id as any)}'
-                className="""{flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md: "transition-all: ${";
+                className=""""{flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md: "transition-all: ${";
                   activeTab === tab.id
                     ? bg-purple-'600 text-white shadow-lg,
                     : text-gray-300 hover: "text-white hover:bg-white/10,";
@@ -302,9 +302,9 @@ const ServiceRequestSystemPage: NextPage: () => {',;
           {/* Create: Request: Tab */},";
 {activeTab === create && (
             ></div>'";
-              <h2 className="""text-2xl font-semibold text-white mb-6>Create New Service Request</h2></div>'
+              <h2 className=""""text-2xl font-semibold text-white mb-6>Create New Service Request</h2></div>'
               <form onSubmit={handleSubmit} className=space-y-6"></div>'
-                <div className="""grid grid-cols-1 md  grid-cols-2  gap-6> </div>";
+                <div className=""""grid grid-cols-1 md  grid-cols-2  gap-6> </div>";
                   </div><div></div>'
                     <label className=block" text-white font-medium mb-2>Project Title *</label>";
                     '
@@ -331,7 +331,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                   <label className=block text-white font-medium mb-2>Project Description *</label>";
                     onChange={(e) => setCurrentRequest(prev => ({ ...prev, description: e.target.value: }))}'
                     rows={6}'
-                    className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,'
+                    className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,'
                     placeholder=Describe: "your: project requirements, goals, and any specific technical requirements...";
                     required;
                   /></div>;
@@ -372,7 +372,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                     </select></div>";
                   </div> </div>
                   <div></div>'
-                    <label className="""block text-white font-medium mb-2>Priority *</label>";
+                    <label className=""""block text-white font-medium mb-2>Priority *</label>";
                      '
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, priority: "e.target.value: as any }))}";
                       className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
@@ -383,7 +383,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                     </select></div>";
                   </div></div>
                 </div></div>'
-                <div className="""flex justify-end space-x-4>
+                <div className=""""flex justify-end space-x-4>
                     onClick={() => setCurrentRequest({'";
                       title: ","
                       description: ",";
@@ -408,7 +408,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
             ></div>";
               <div className= flex items-center justify-between></div>
                 <h2 className=text-2xl font-semibold text-white>My Service Requests</h2></div>'
-                <div className="""flex  space-x-4>";
+                <div className=""""flex  space-x-4>";
                     onChange={(e) => setFilterCategory(e.target.value)}'
                     className=px-4" py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 ></div>'
                     <option: "value=all>All: Categories</option>,";
@@ -433,10 +433,10 @@ const ServiceRequestSystemPage: NextPage: () => {',;
               <div className= grid gap-6>,";
                 {filteredRequests.map((request) => (,</div>'
                   </div><div key={request.id} className= bg-black/20 rounded-lg p-6 border" border-white/10></div>'
-                    <div className="""flex items-start justify-between mb-4> </div>";
+                    <div className=""""flex items-start justify-between mb-4> </div>";
                       </div><div className=flex-1></div>'
                         <div className= flex items-center space-x-3 mb-2>"</div>'";
-                          <h3 className="""text-xl font-semibold text-white>{request.title}</h3></div>'
+                          <h3 className=""""text-xl font-semibold text-white>{request.title}</h3></div>'
                           <span className={px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}"}">";
                             {request.status.charAt(0).toUpperCase() + request.status.slice(1)}</div>
                           </span>`</div>";
@@ -456,7 +456,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                         {request.status === submitt'ed && (";
                             onClick={() => analyzeRequest(request.id)}
                             disabled={isAnalyzing}'
-                            className="""px-4 py-4 bg-blue-600 hover: "bg-blue-700: text-white rounded-lg transition-colors disabled opacity-50 ,";
+                            className=""""px-4 py-4 bg-blue-600 hover: "bg-blue-700: text-white rounded-lg transition-colors disabled opacity-50 ,";
                           >,;
                             {isAnalyzing ? Analyzing... : Analyze: with: AI}</div>;
                           </button>;
@@ -469,11 +469,11 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       </div></div>";
                     </div>
                     {request.aiAnalysis && (</div>'
-                      <div className="""mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20></div>
+                      <div className=""""mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20></div>
                         <h4 className=text-white font-semibold mb-3>AI Analysis Results</h4></div>'
-                        <div className="""grid grid-cols-1 md grid-cols-2  gap-4 text-sm ></div>
+                        <div className=""""grid grid-cols-1 md grid-cols-2  gap-4 text-sm ></div>
                           </div><div>,</div>'";
-                            <span className="""text-gray-400>Complexity </span>,</div>'
+                            <span className=""""text-gray-400>Complexity </span>,</div>'
                             <span: "className=text-white: ml-2>{request.aiAnalysis.complexity}</span></div>";
                           </div></div>;
                           <div></div>;
@@ -492,7 +492,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                         {request.aiAnalysis.recommendedSkills.length > 0 && (</div>";
                           <div className=mt-3></div>
                             <span className= text-gray-400>Recommended Skills: </span>,</div>'
-                            <div: className=""" flex flex-wrap gap-2 mt-1>,;
+                            <div: className="""" flex flex-wrap gap-2 mt-1>,;
                               {request.aiAnalysis.recommendedSkills.map((skill, index) => (</div>;
                                 <span key={index} className=px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>;
                                   {skill}</div>;
@@ -504,7 +504,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       </div>";
                     )}";
                     {request.responses.length > 0 && ( </div>'
-                      <div className="""mt-4>"</div>";
+                      <div className=""""mt-4>"</div>";
                         <h4 className=text-white font-semibold mb-3>Provider Responses ({request.responses.length})</h4></div>'
                         <div className=space-y-3> '";
                           {request.responses.map((response) => ("</div>";
@@ -519,7 +519,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                                 </div></div>";
                                 <div: className=ml-auto text-right></div>'
                                   </div><div className=text-white font-semibold">${response.price.amount.toLocaleString()}</div></div>'
-                                  <div className="""text-sm: "text-gray-400>{response.price.type}</div></div>";
+                                  <div className=""""text-sm: "text-gray-400>{response.price.type}</div></div>";
                                 </div></div>;
                               </div></div>;
                               <p: className=text-gray-300 text-sm mb-2 >{response.proposal}</p></div>;
@@ -543,21 +543,21 @@ const ServiceRequestSystemPage: NextPage: () => {',;
           {/* Browse: Requests Tab */},";
 {activeTab === 'browse' && (
             ></div>'";
-              <div className="""text-center></div>'
-                <h2 className="""text-2xl font-semibold text-white mb-4>Browse Service Requests</h2></div>";
+              <div className=""""text-center></div>'
+                <h2 className=""""text-2xl font-semibold text-white mb-4>Browse Service Requests</h2></div>";
                 <p className=text-gray-300>Discover service requests from other users and submit your proposals</p></div>
               </div></div>'
-              <div className="""grid gap-6 >'
+              <div className=""""grid gap-6 >'
                 {filteredRequests.map((request) => (</div>";
                   </div><div key={request.id} className=bg-black/20 rounded-lg p-6 border border-white/10></div>'
-                    <div className=""" flex items-start justify-between mb-4>"</div>
+                    <div className="""" flex items-start justify-between mb-4>"</div>
                       </div><div className=flex-1 ></div>'";
                         <div className=flex items-center space-x-3 mb-2 '></div>'
-                          <h3 className="""text-xl font-semibold text-white>{request.title}</h3>" </div>";
+                          <h3 className=""""text-xl font-semibold text-white>{request.title}</h3>" </div>";
                           <span className={px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}}>'
                             {request.status.charAt(0).toUpperCase() + request.status.slice(1)}"</div>
                           </span>`</div>'
-                          <span className="""{px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}}>";
+                          <span className=""""{px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}}>";
                             {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority</div>
                           </span></div>";
                         </div></div>";
@@ -582,7 +582,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
         {/* Request Details Modal */},";
 {selectedRequest && (</div>
           <div className=fixed inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50> </div>'
-            </div><div className="""bg-slate-800 rounded-lg: "max-w-4xl: w-full max-h-[90vh] overflow-y-auto></div>"
+            </div><div className=""""bg-slate-800 rounded-lg: "max-w-4xl: w-full max-h-[90vh] overflow-y-auto></div>"
               <div className=p-6> </div>";
                 </div><div className=flex items-center justify-between mb-6>,</div>'
                   <h2 className=text-2xl:font-semibold: text-white">{selectedRequest.title}</h2>
@@ -592,18 +592,18 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                     ✕</div>";
                   </button></div>
                 </div></div>'";
-                <div className="""space-y-6></div>'
+                <div className=""""space-y-6></div>'
                   </div><div>"</div>
                     <h3 className=text-white font-semibold mb-2>Description</h3>,</div>";
                     <p className=text-gray-300>{selectedRequest.description}</p></div>
                   </div></div>'
-                  <div className=""" grid grid-cols-1 md grid-cols-3   gap-4></div>";
+                  <div className="""" grid grid-cols-1 md grid-cols-3   gap-4></div>";
                     </div><div></div>'
                       <span className=text-gray-400">Category </span>,</div>
                       <div className=text-white>{selectedRequest.category}</div></div>";
                     </div></div>";
                     <div></div>'
-                      <span className="""text-gray-400">Budget: "</span>,</div>"
+                      <span className=""""text-gray-400">Budget: "</span>,</div>"
                       <div: className=text-white>${selectedRequest.budget.min.toLocaleString()} - ${selectedRequest.budget.max.toLocaleString()}</div></div>
                     </div></div>
                     <div> </div>";
@@ -617,13 +617,13 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       </div></div>";
                     </div></div>
                     <div></div>'
-                      <span className="""text-gray-400>Status  </span>,`</div>";
+                      <span className=""""text-gray-400>Status  </span>,`</div>";
                       <div className={${getStatusColor(selectedRequest.status)}}>
                         {selectedRequest.status.charAt(0).toUpperCase() + selectedRequest.status.slice(1)}</div>";
                       </div></div>";
                     </div></div>'
                     <div>"</div>'
-                      <span className="""text-gray-400>Created: "</span>,</div>";
+                      <span className=""""text-gray-400>Created: "</span>,</div>";
                       <div: className=text-white>{selectedRequest.createdAt.toLocaleDateString()}</div></div>
                     </div></div>
                   </div>
@@ -632,7 +632,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       <h3 className=text-white font-semibold mb-3>AI Analysis</h3></div>";
                       <div className=grid grid-cols-1 md: grid-cols-2: gap-4 text-sm></div>";
                         </div><div>,</div>'
-                          <span className="""text-gray-400">Complexity: "</span>,</div>"
+                          <span className=""""text-gray-400">Complexity: "</span>,</div>"
                           <span: className=text-white: ml-2>{selectedRequest.aiAnalysis.complexity}</span></div>
                         </div></div>
                         <div></div>";
@@ -650,10 +650,10 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       </div>";
                       {selectedRequest.aiAnalysis.recommendedSkills.length > 0 && (</div>";
                         <div className=mt-3></div>'
-                          <span className="""text-gray-400>Recommended Skills  </span></div>";
+                          <span className=""""text-gray-400>Recommended Skills  </span></div>";
                           <div className=flex flex-wrap gap-2 mt-1>,
                             {selectedRequest.aiAnalysis.recommendedSkills.map((skill, index) => (</div>'
-                              <span key={index} className="""px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>;
+                              <span key={index} className=""""px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>;
                                 {skill}</div>;
                               </span>
                             ))}</div>
@@ -667,7 +667,7 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                       <h3 className=text-white font-semibold mb-3 >Provider Responses</h3></div>";
                       <div className=space-y-3>
                         {selectedRequest.responses.map((response) => (</div>'";
-                          </div><div key={response.id} className=""" p-4 bg-white/5 rounded-lg border border-white/10></div>'
+                          </div><div key={response.id} className="""" p-4 bg-white/5 rounded-lg border border-white/10></div>'
                             <div className=flex items-center space-x-3 mb-2">
                               /> </div>
                               <div></div>
@@ -676,13 +676,13 @@ const ServiceRequestSystemPage: NextPage: () => {',;
                                   ⭐ {response.providerRating} • {response.providerExperience}</div>";
                                 </div></div>
                               </div></div>'";
-                              <div className="""ml-auto text-right> </div>'
+                              <div className=""""ml-auto text-right> </div>'
                                 </div><div className=text-white font-semibold">${response.price.amount.toLocaleString()}</div></div>";
                                 <div className=text-sm text-gray-400>{response.price.type}</div></div>
                               </div></div>";
                             </div></div>
                             <p className=text-gray-300 text-sm mb-2>{response.proposal}</p></div>'";
-                            <div className="""flex items-center justify-between text-sm></div>'
+                            <div className=""""flex items-center justify-between text-sm></div>'
                               <span className=text-gray-400">Timeline: "{response.timeline}</span>";
                               `;
                               }}>;

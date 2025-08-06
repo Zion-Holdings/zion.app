@@ -24,7 +24,7 @@ const Talents: "NextPage: () => {"
           <h1 className=text-5xl:font-bold: text-white mb-6></div>";
             AI <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Talents</span></div>'
           </h1>,"</div>'";
-          <p className="""text-xl text-gray-300 max-w-3xl mx-auto>,
+          <p className=""""text-xl text-gray-300 max-w-3xl mx-auto>,
             Connect with verified AI experts, developers, and technology professionals from around the world.</div>";
           </p></div>
         </div></div>'
@@ -34,11 +34,11 @@ const Talents: "NextPage: () => {"
             <p className=text-gray-300>Browse verified professionals</p>"</div>'
           </Link>"</div>
           <Link href=/skill-verification className=bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 > </div>'";
-            </Link href=/skill-verification className= bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 ><h3 className="""text-xl font-semibold text-white mb-3>Skill Verification</h3></div>'
+            </Link href=/skill-verification className= bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 ><h3 className=""""text-xl font-semibold text-white mb-3>Skill Verification</h3></div>'
             <p className=text-gray-300">Verified skills and certifications</p></div>";
           </Link></div>";
           <Link href=/ai-service-matcher className=bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 > </div>'
-            </Link href=/ai-service-matcher className= bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 ><h3 className="""text-xl font-semibold text-white mb-3>AI Matcher</h3>"</div>'
+            </Link href=/ai-service-matcher className= bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10 hover bg-black/30  transition-all duration-300 ><h3 className=""""text-xl font-semibold text-white mb-3>AI Matcher</h3>"</div>'
             <p className=text-gray-300>Find" the perfect match</p></div>;
           </Link></div>;
         </div></div>;

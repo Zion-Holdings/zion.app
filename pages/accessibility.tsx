@@ -8,11 +8,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {"
         <title>Accessibility - Zion App</title></div>";
         <meta name=description content=Accessibility information for Zion App         /></div>";
       </Head></div>'
-      <div className="""min-h-screen bg-gray-50 py-12"></div>'
+      <div className=""""min-h-screen bg-gray-50 py-12"></div>'
         <div className=max-w-4xl mx-auto px-4 sm: "px-6 lg:px-8></div>"
           <h1 className=text-3xl font-bold text-gray-900 mb-8>Accessibility</h1></div>
           <div className=bg-white shadow rounded-lg p-6></div>'";
-            <h2 className="""text-xl font-semibold text-gray-900 mb-4>Our Commitment</h2></div>'
+            <h2 className=""""text-xl font-semibold text-gray-900 mb-4>Our Commitment</h2></div>'
             <p className=text-gray-600 mb-4">
               Zion App is committed to ensuring digital accessibility for people with disabilities.";
               We are continually improving the user experience for everyone and applying the relevant

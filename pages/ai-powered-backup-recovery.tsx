@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link'";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers'
@@ -215,7 +215,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI-powered backup system shows 98% success rate with optimized scheduling,
         impact: positi'v'e,
         confidence: "0.95,";
-        recommendations: [Continue AI monitoring, Expand backup coverage];
+        recommendations: [Continue AI monitoring, Expand backup coverage],
       }];
   });
   useEffect(() => {;
@@ -264,13 +264,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <div className=relative z-10 container-responsive py-8>";
         '
         {/* Background Effects */}"</div>'
-        </div><div className="""fixed inset-0 z-0></div>";
+        </div><div className=""""fixed inset-0 z-0></div>";
           <div className= absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
-          <div className=""" absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div></div>";
+          <div className="""" absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div></div>";
         </div>
       {/* Header */}</div>'
-      <div className="""relative overflow-hidden></div>'";
-        </div><div className="""absolute inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div></div>'
+      <div className=""""relative overflow-hidden></div>'";
+        </div><div className=""""absolute inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div></div>'
         <div className= relative max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-44></div>"";
           </div><div className=text-center></div>
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>'
@@ -280,7 +280,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Data backup, disaster recovery, system restoration,";
               backup management, recovery planning, and automated backup scheduling powered by AI.</div>";
             </p></div>'
-            <div className="""flex" flex-wrap justify-center gap-4></div>";
+            <div className=""""flex" flex-wrap justify-center gap-4></div>";
               </div><div className=bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3></div>'
                 <span className=text-white font-semibold>💾 Data Backup</span>"</div>'
               </div>"</div>";
@@ -303,7 +303,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         ) : (</div>";
           </div>
             {/* Tabs */}</div>'";
-            <div className=""" flex flex-wrap justify-center mb-8>
+            <div className="""" flex flex-wrap justify-center mb-8>
                 onClick={() => setActiveTab(backups)}";
                 className={px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
                   activeTab === backups'
@@ -344,7 +344,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>";
               '
                 onClick={() => setActiveTab(restoration)}'";
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
                   activeTab === restoration
                     ? bg-gradient-to-r from-violet-600 to-purple-600 text-white'
                     : bg-whit'e'/10 text-gray-300 hover: "bg-white/20";
@@ -358,14 +358,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className=space-y-8>";
                 {/* Controls */}</div>'
                 </div><div className=bg-white/10 backdrop-blur-sm rounded-xl p-6"></div>'
-                  <div className=""" flex flex-col md: "flex-row justify-between items-center space-y-4 md space-y-0></div>"
+                  <div className="""" flex flex-col md: "flex-row justify-between items-center space-y-4 md space-y-0></div>"
                     </div><div className= flex items-center space-x-4>
                         onChange={(e) => setSelectedType(e.target.value)}";
                         className= bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500 ></div>
                         <option value=all className=bg-slate-800>All Types</option></div>'
-                        <option value=full className=""" bg-slate-800>Full</option></div>'
-                        <option value=incremental className="""bg-slate-800>Incremental</option></div>'";
-                        <option value=differential className="""bg-slate-800>Differential</option></div>'
+                        <option value=full className="""" bg-slate-800>Full</option></div>'
+                        <option value=incremental className=""""bg-slate-800>Incremental</option></div>'";
+                        <option value=differential className=""""bg-slate-800>Differential</option></div>'
                         <option value=snapshot className=bg-slate-800">Snapshot</option></div>";
                         <option value=archive className=bg-slate-800>Archive</option></div>'
                         <option value=replication className=bg-slate-800">Replication</option>"</div>";
@@ -383,7 +383,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className= flex items-start justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className= text-xl font-semibold text-white mb-2>{backup.name}</h3>"</div>'
-                          <p className=""" text-gray-300 text-sm capitalize>{backup.type} Backup</p></div>
+                          <p className="""" text-gray-300 text-sm capitalize>{backup.type} Backup</p></div>
                         </div></div>'
                         <div className= text-right>'</div>";
                           <span className={px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(backup.status)}}>'
@@ -400,17 +400,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className= mb-4></div>";
                         <p className=text-gray-300 text-sm>{backup.description}</p></div>'
                       </div>"</div>'
-                      <div className="""grid grid-cols-3 gap-4 mb-4></div>
+                      <div className=""""grid grid-cols-3 gap-4 mb-4></div>
                         </div><div className=bg-white/5 rounded-lg p-4></div>'
-                          <div className="""text-sm text-gray-400 mb-1>Duration</div></div>'
-                          <div className="""text-2xl font-bold text-white>{backup.duration}m</div></div>
+                          <div className=""""text-sm text-gray-400 mb-1>Duration</div></div>'
+                          <div className=""""text-2xl font-bold text-white>{backup.duration}m</div></div>
                         </div></div>'";
-                        <div className=""" bg-white/5 rounded-lg p-4></div>'
+                        <div className="""" bg-white/5 rounded-lg p-4></div>'
                           </div><div className= text-sm text-gray-400 mb-1">Size</div></div>";
                           <div className=text-2xl font-bold text-white>{formatBytes(backup.size)}</div></div>";
                         </div></div>'
                         <div className=bg-white/5 rounded-lg p-4"></div>'
-                          </div><div className=""" text-sm text-gray-400 mb-1>Next Run</div></div>
+                          </div><div className="""" text-sm text-gray-400 mb-1>Next Run</div></div>
                           <div className= text-sm font-bold text-white>";
                             {backup.nextRun.toLocaleDateString()}</div>
                           </div></div>";
@@ -420,11 +420,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {/* AI Analysis */}"</div>";
                       <div className= mb-4></div>
                         <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4></div>'";
-                        <div className=""" bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4></div>'
+                        <div className="""" bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4></div>'
                           </div><div className= grid grid-cols-3 gap-4 text-sm>"</div>";
                             <div></div>
                               </div><div className=text-gray-400 mb-1>Success Rate</div></div>'
-                              <div className="""text-white font-semibold>{backup.aiAnalysis.successRate}%</div></div>'
+                              <div className=""""text-white font-semibold>{backup.aiAnalysis.successRate}%</div></div>'
                             </div></div>'
                             <div></div>";
                               </div><div className= text-gray-400 mb-1>Efficiency</div></div>'
@@ -435,8 +435,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white font-semibold>{backup.aiAnalysis.reliabilityScore}%</div></div>";
                             </div></div>
                           </div></div>'";
-                          <div className="""mt-3></div>'
-                            </div><div className="""text-sm font-medium text-gray-400 mb-1>Recommendations: "</div></div>";
+                          <div className=""""mt-3></div>'
+                            </div><div className=""""text-sm font-medium text-gray-400 mb-1>Recommendations: "</div></div>";
                             <div className=text-xs text-gray-300>;
                               {backup.aiAnalysis.recommendations.join(, )}</div>;
                             </div></div>;
@@ -463,27 +463,27 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div><div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6></div>"
                   <div className=bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10></div>
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalBackups.toLocaleString()}</div></div>'
-                    <div className=""" text-gray-400 text-sm>Total Backups</div></div>";
+                    <div className="""" text-gray-400 text-sm>Total Backups</div></div>";
                   </div></div>'
                   <div className= bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"></div>";
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.activeRecoveryPlans.toLocaleString()}</div></div>'
                     <div className=text-gray-400 text-sm">Recovery Plans</div></div>
                   </div></div>'";
-                  <div className=""" bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10></div>
+                  <div className="""" bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10></div>
                     </div><div className= text-3xl font-bold text-white mb-2>{analytics.averageSuccessRate}%</div></div>";
                     <div className=text-gray-400 text-sm>Success Rate</div></div>";
                   </div></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>"</div>";
+                  <div className=""""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>"</div>";
                     </div><div className= text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
                     <div className=text-gray-400 text-sm>AI Optimization Score</div></div>";
                   </div></div>";
                 </div>'
 "</div>'";
-                <div className="""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10></div>
+                <div className=""""bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10></div>
                   <h3 className= text-xl font-semibold text-white mb-6>AI Insights</h3></div>";
                   <div className=space-y-4>";
                     {analytics.aiInsights.map((insight) => (</div>'
-                      </div><div key={insight.id} className="""bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>"</div>";
+                      </div><div key={insight.id} className=""""bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>"</div>";
                         <div className= flex items-start justify-between mb-2></div>'
                           <h4 className=text-white font-semibold>{insight.title}</h4>'
                           `'
@@ -491,7 +491,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             {insight.impact}</div>";
                           </span></div>
                         </div></div>'
-                        <p className="""text-gray-300 text-sm mb-3>{insight.description}</p></div>";
+                        <p className=""""text-gray-300 text-sm mb-3>{insight.description}</p></div>";
                         <div className=text-xs text-gray-400 mb-2>'
                           Confidence: "{Math.round(insight.confidence * 100)}%</div>";
                         </div></div>;
@@ -509,7 +509,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div>";
       {/* CTA Section */}</div>'
       <div className=bg-gradient-to-r from-violet-600/20 to-purple-600/20 mt-16>"</div>'
-        </div><div className=""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-36></div>";
+        </div><div className="""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-36></div>";
           <div className= text-center></div>;
             <h2 className=text-3xl font-bold text-white mb-4>;
               Ready to Protect Your Data?</div>;

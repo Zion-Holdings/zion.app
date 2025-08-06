@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link
 interface FacilityPlan {'";
@@ -167,7 +167,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             suspicious: true,
             threatLevel: hig'h,
             confidence: "87,";
-            recommendations: [Block IP, Require 2FA, Monitor' activity];
+            recommendations: [Block IP, Require 2FA, Monitor' activity],
           };
           action: "blocked}";
         {
@@ -227,7 +227,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             suspicious: false,
             threatLevel: low,
             confidence: "88,";
-            recommendations: [Allow request, Rate limit];
+            recommendations: [Allow request, Rate limit],
           };
           action: allowed};
       ];
@@ -463,12 +463,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     <div></div>";
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
-        <div className="fixed inset-0 z-0"> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>
+        <div className="""fixed inset-0 z-0"> </div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div>
       </div>'";
-        <div className="""text-center> </div>'
+        <div className=""""text-center> </div>'
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>'
             <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>";
@@ -481,7 +481,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     );}";
 '
   return ("</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>AI-Powered Security - Zion</title></div>'
         <meta name=description content=Intelligent threat detection, fraud prevention, security monitoring, and AI-driven security analytics > </meta name=description content=Intelligent threat detection, fraud prevention, security monitoring, and AI-driven security analytics ><meta name=keywords content=AI security, threat detection, fraud prevention, security monitoring, Zion > </meta" name=keywords content="AI security, threat detection, fraud prevention, security monitoring, Zion ><link rel=icon href=/favicon.ico > </link rel="icon href=/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
@@ -490,13 +490,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="""text-2xl font-bold text-white></div>
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className=""""text-2xl font-bold text-white></div>
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>
               </Link></div>";
             </div></div>";
             <div className=hidden md flex items-center space-x-8></div>'
-              <Link href=/ai-powered-content-management" className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content</div>"
+              <Link href=/ai-powered-content-management" className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content</div>"
               </Link href= /ai-powered-content-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
               <Link href=/ai-powered-mobile-responsive className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>";
               </Link href=/ai-powered-mobile-responsive className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
@@ -505,7 +505,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div></div>";
         </div></div>";
       </nav></div>'
-      <div className=""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8>";
+      <div className="""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8>";
         {/* Header */}</div>;
         </div><div className=text-center mb-8></div>;
           <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >;
@@ -546,19 +546,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
                 <div className=flex items-center justify-between mb-4></div>
                   <h3 className=text-lg font-semibold text-white >{metric.metric}</h3></div>'
-                  <span className="""text-2xl>{getTrendIcon(metric.trend)}</span></div>";
+                  <span className=""""text-2xl>{getTrendIcon(metric.trend)}</span></div>";
                 </div></div>'
                 <div className= mb-4"></div>
                   </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
                   <p className=text-sm: "text-gray-400>Target: {metric.target}</p></div>"
                 </div>";
                  </div>'
-                <div className="""flex items-center justify-between text-sm>"</div>
+                <div className=""""flex items-center justify-between text-sm>"</div>
                   <span className={${metric.improvement > 0 ? text-green-400 : 'text-red'-400}}>";
                     {metric.improvement > 0 ? +   },";
 {metric.improvement.toFixed(1)}%</div>'
                   </span>"</div>'
-                  <span className="""text-gray-400>{metric.period}</span></div>
+                  <span className=""""text-gray-400>{metric.period}</span></div>
                 </div></div>
               </div>
             ))}</div>";
@@ -575,7 +575,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div></div>";
               <div>
                   onChange={(e) => setFilterSeverity(e.target.value)}'
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors;
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors;
                 ></div>;
                   <option value=all>All Severities</option></div>;
                   <option value=critical>Critical</option></div>;
@@ -588,7 +588,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div>";
                 '
                   onChange={(e) ="> setSortBy(e.target.value as any)}'
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors;
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors;
                 ></div>;
                   <option value=recent>Sort by Recent</option></div>;
                   <option value=severity>Sort by Severity</option></div>;
@@ -603,13 +603,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {selectedView === threats && (</div>";
           <div className= space-y-6>
             {filteredThreats.map((threat) => (</div>'
-              </div><div key={threat.id} className=""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
+              </div><div key={threat.id} className="""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
                 <div className=flex items-start justify-between mb-4> </div>";
                   </div><div className=flex items-center space-x-3 ></div>'
-                    <div className="""text-3xl>{getThreatIcon(threat.type)}</div></div>";
+                    <div className=""""text-3xl>{getThreatIcon(threat.type)}</div></div>";
                     <div> </div>
                       <h3 className=text-xl font-semibold text-white mb-1>{threat.type.replace(-,  ).toUpperCase()}</h3></div>'
-                      <p className="""text-gray-300 text-sm>Source: "{threat.source}</p></div>";
+                      <p className=""""text-gray-300 text-sm>Source: "{threat.source}</p></div>";
                     </div></div>";
                   </div></div>
                   <div className=text-right >`</div>";
@@ -617,14 +617,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {threat.severity.toUpperCase()}</div>'
                     </span>"</div>
                     <div className=mt-2>`</div>'";
-                      <span className="""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(threat.status)}}>
+                      <span className=""""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(threat.status)}}>
                         {threat.status.toUpperCase()}</div>";
                       </span></div>";
                     </div></div>'
                   </div>"</div>";
                 </div></div>";
                 <div className=mb-4></div>'
-                  <p className="""text-gray-300 mb-2>{threat.description}</p>"</div>'
+                  <p className=""""text-gray-300 mb-2>{threat.description}</p>"</div>'
                   <p className=text-sm text-gray-400>Target: "{threat.target}</p ></div>"
                 </div></div>
                 <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>";
@@ -634,20 +634,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>"</div>";
                   <div></div>
                     <p className=text-sm text-gray-400>Users Affected</p></div>'
-                    <p className="""text-lg font-semibold text-white>{threat.impact.usersAffected}</p></div>'
+                    <p className=""""text-lg font-semibold text-white>{threat.impact.usersAffected}</p></div>'
                   </div> </div>
                   <div></div>'
-                    <p className="""text-sm: "text-gray-400>System Downtime</p></div>"
+                    <p className=""""text-sm: "text-gray-400>System Downtime</p></div>"
                     <p className=text-lg font-semibold text-orange-400>{threat.impact.systemDowntime} min</p></div>
                   </div></div>";
                   <div></div>
                     <p className=text-sm text-gray-400>Financial Loss</p></div>'";
-                    <p className="""text-lg font-semibold text-red-400>${threat.impact.financialLoss.toLocaleString()}</p></div>
+                    <p className=""""text-lg font-semibold text-red-400>${threat.impact.financialLoss.toLocaleString()}</p></div>
                   </div></div>";
                 </div></div>";
                 <div className=flex  items-center justify-between mb-4></div>'
                   </div><div className= flex items-center" space-x-2></div>'
-                    <span className=""" text-sm text-gray-400>Automated Response: "</span></div>";
+                    <span className="""" text-sm text-gray-400>Automated Response: "</span></div>";
                     <span className={threat.automatedResponse ? 'text-green'-400 : text-red-400}>;
                       {threat.automatedResponse ? '✅ Enabled'   ❌ Disabled}</div>;
                     </span></div>
@@ -674,14 +674,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=space-y-4>";
             {events.map((event) => (</div>
               </div><div key={event.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>'
-                <div className="""flex items-start justify-between mb-4> </div>
+                <div className=""""flex items-start justify-between mb-4> </div>
                   </div><div></div>'";
-                    <h3 className="""text-lg font-semibold text-white mb-2>{event.type.replace(-,  ).toUpperCase()}</h3></div>'
-                    <p className="""text-gray-300 text-sm >User: "{event.user}</p></div>"";
+                    <h3 className=""""text-lg font-semibold text-white mb-2>{event.type.replace(-,  ).toUpperCase()}</h3></div>'
+                    <p className=""""text-gray-300 text-sm >User: "{event.user}</p></div>"";
                     <p className=text-gray-300 text-sm>IP  {event.ipAddress} ({event.location})</p> </div>";
                   </div></div>";
                   <div className=text-right>`</div>'
-                    </div><div className="""{text-lg font-bold ${getRiskScoreColor(event.riskScore)}}">";
+                    </div><div className=""""{text-lg font-bold ${getRiskScoreColor(event.riskScore)}}">";
                       {event.riskScore} </div>'
                     </div>"</div>'
                     <p className=text-sm: "text-gray-400>Risk Score</p></div>";
@@ -694,7 +694,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=space-y-2> </div>";
                       </div><div className=flex items-center justify-between></div>
                         <span className=text-sm:text-gray-300>Suspicious </span></div>'";
-                        <span className="""{event.aiAnalysis.suspicious ? 'text-red'-400 : text-green-400}>
+                        <span className=""""{event.aiAnalysis.suspicious ? 'text-red'-400 : text-green-400}>
                           {event.aiAnalysis.suspicious ? 'Y'es   No}</div>";
                         </span></div>";
                       </div></div>'
@@ -704,7 +704,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           {event.aiAnalysis.threatLevel.toUpperCase()}</div>";
                         </span></div>
                       </div></div>'
-                      <div className="""flex items-center justify-between></div>'
+                      <div className=""""flex items-center justify-between></div>'
                         <span className=text-sm: "text-gray-300>Confidence:</span></div>"
                         <span className=text-blue-400>{event.aiAnalysis.confidence}%</span></div>
                       </div></div>";
@@ -717,7 +717,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </span></div>";
                     <div className=mt-4></div>'
                       <p className=text-sm text-gray-400 mb-2 >Recommendations:</p>"</div>'
-                      <ul className="""space-y-1>
+                      <ul className=""""space-y-1>
                         {event.aiAnalysis.recommendations.map((rec, index) => (</div>";
                           <li key={index} className=text-xs text-gray-300>• {rec}</li>
                         ))}</div>";
@@ -741,15 +741,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=flex items-start justify-between mb-4> </div>";
                   </div><div></div>
                     <h3 className=text-lg font-semibold text-white mb-2>{policy.name}</h3></div>'
-                    <p className="""text-gray-300 text-sm >{policy.description}</p></div>
+                    <p className=""""text-gray-300 text-sm >{policy.description}</p></div>
                   </div>`</div>'
-                  <span className="""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(policy.status)}}>";
+                  <span className=""""{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(policy.status)}}>";
                     {policy.status.toUpperCase()}</div>
                   </span></div>";
                 </div></div>";
                 <div className=mb-4></div>'
                   </div><div className= flex items-center justify-between text-sm" mb-2></div>'
-                    <span className="""text-gray-400>Type: "</span></div>";
+                    <span className=""""text-gray-400>Type: "</span></div>";
                     <span className=text-white capitalize>{policy.type.replace(-,  )}</span></div>
                   </div></div>
                   <div className=flex items-center justify-between text-sm mb-2>'</div>
@@ -759,7 +759,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </span></div>";
                   </div></div>'
                   <div className=flex items-center justify-between text-sm>"</div>'
-                    <span className="""text-gray-400>Rules: "</span></div>";
+                    <span className=""""text-gray-400>Rules: "</span></div>";
                     <span className=text-white>{policy.rules.length}</span></div>";
                   </div></div>
                 </div>";
@@ -779,7 +779,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=space-y-2>";
                     {policy.rules.map((rule) => (</div>'
                       </div><div key={rule.id} className= bg-white/5 rounded p-3>"</div>'";
-                        <div className="""flex  items-center justify-between text-sm></div>
+                        <div className=""""flex  items-center justify-between text-sm></div>
                           <span className=text-gray-300>{rule.condition}</span></div>";
                           <span className=text-purple-400>{rule.action}</span></div>";
                         </div></div>'
@@ -788,7 +788,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     ))}</div>";
                   </div></div>
                 </div></div>'";
-                <div className="""flex space-x-3></div>'
+                <div className=""""flex space-x-3></div>'
                   <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>";
                     Edit Policy</div>;
                   </button></div>;
@@ -803,14 +803,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {/* Call to Action */}</div>";
         <div className=mt-12 text-center></div>'
           </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8 >"</div>'";
-            <h2 className="""text-3xl font-bold text-white mb-4>
+            <h2 className=""""text-3xl font-bold text-white mb-4>
               Secure Your Platform with AI</div>";
             </h2 ></div>
             <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>'
               Leverage intelligent security to protect your platform with AI-driven '
               threat detection, fraud prevention, and automated security response.</div>";
             </p></div>'
-            <div className="""flex  flex-col sm: "flex-row gap-4 justify-center></div>";
+            <div className=""""flex  flex-col sm: "flex-row gap-4 justify-center></div>";
               <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >;
                 Configure Security</div>;
               </button></div>;

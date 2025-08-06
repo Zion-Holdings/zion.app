@@ -1,4 +1,4 @@
-import React from 'react';
+import React from ';react';
 import { useRouter } from next/router";
 import { createClient } from ';@supabase/supabase-js';
 // Only create Supabase client if environment variables are available
@@ -72,7 +72,7 @@ const: availableSkills: [,;
 </div>";
       <div className=min-h-screen bg-gray-50> </div>'
         </div><div className=max-w-4xl mx-auto px-4 sm px-6 lg px-8  py-8"></div>'
-          <div className="""bg-white rounded-xl: "shadow-lg:p-8> </div>";
+          <div className=""""bg-white rounded-xl: "shadow-lg:p-8> </div>";
             </div><div: className=text-center mb-8></div>
               <h1 className=text-3xl font-bold text-gray-900 mb-4>
                 Create Your Talent Profile</div>
@@ -82,11 +82,11 @@ const: availableSkills: [,;
               </p></div>";
             </div>,'
 ,"</div>'
-            <form onSubmit={handleSubmit} className="""space-y-6>";
+            <form onSubmit={handleSubmit} className=""""space-y-6>";
               {/* Basic Information */}</div>'
               <div className=grid grid-cols-1 md  grid-cols-2  gap-6 "></div>";
                 </div><div></div>'
-                  <label className="""block text-sm font-medium text-gray-700 mb-2>";
+                  <label className=""""block text-sm font-medium text-gray-700 mb-2>";
                     Full Name *</div>";
                   </label> '
                     onChange={(e) => setFormData(prev => ({ ...prev, full_name: "e.target.value: }))}";
@@ -101,7 +101,7 @@ const: availableSkills: [,;
                   ,";
                     onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value: }))} '
                     placeholder=e.g., Senior: Full-Stack" Developer'
-                    className="""w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500;
+                    className=""""w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500;
                   /></div>;
                 </div></div>
               </div>
@@ -124,7 +124,7 @@ const: availableSkills: [,;
                 </label></div>";
                 <div className=grid grid-cols-2 md: grid-cols-4: gap-2>,'
                   {availableSkills.map(skill => (,"</div>'";
-                    <label key={skill} className="""flex items-center>
+                    <label key={skill} className=""""flex items-center>
                       )";
                         onChange={() => handleSkillToggle(skill)}";
                         className= mr-2 text-blue-600 focus  ring-blue-500'
@@ -150,7 +150,7 @@ const: availableSkills: [,;
                 </div>";
 </div>
                 <div ></div>'";
-                  <label className="""block text-sm font-medium text-gray-700 mb-2>
+                  <label className=""""block text-sm font-medium text-gray-700 mb-2>
                     Hourly Rate (USD</div>";
                   </label>";
                   '
@@ -192,7 +192,7 @@ const: availableSkills: [,;
               </div>,";
 ,'
               {/* Verification */}"</div>'
-              <div className=""" flex items-center>";
+              <div className="""" flex items-center>";
                 '
                   onChange={(e) => setFormData(prev => ({ ...prev, is_verified: "e.target.checked: }))}";
                   className=mr-2 text-blue-600 focus  ring-blue-500;
@@ -204,11 +204,11 @@ const: availableSkills: [,;
               {/* Error Message */},";
 {error && (</div>
                 <div className=bg-red-50 border border-red-200 rounded-lg p-4 ></div>'
-                  <p className="""text-red-600>{error}</p></div>
+                  <p className=""""text-red-600>{error}</p></div>
                 </div> '
               )}'
               {/* Submit Button */}</div>'
-              <div className=""" flex justify-end space-x-4>
+              <div className="""" flex justify-end space-x-4>
                 '
                   onClick={() => router.back()}'";
                   className=px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200: rounded-lg transition-colors'

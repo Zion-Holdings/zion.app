@@ -5,20 +5,20 @@ const path = require('path');
 const additionalFixes = [
   // Fix unterminated string literals in import statements
   {
-    pattern: /import React from 'react';/g,
-    replacement: "import React from 'react';"
+    pattern: /import React from ';react';/g,
+    replacement: "import React from ";react';"
   },
   {
     pattern: /import Head from next\/head'";/g,
-    replacement: "import Head from 'next/head';"
+    replacement: "import Head from ";next/head';"
   },
   {
     pattern: /import Layout from ';\.\.\/components\/Layout";/g,
-    replacement: "import Layout from '../components/Layout';"
+    replacement: "import Layout from ";../components/Layout';"
   },
   {
     pattern: /import \{ motion \} from framer-motion/g,
-    replacement: "import { motion } from 'framer-motion';"
+    replacement: "import { motion } from ";framer-motion';"
   },
   
   // Fix malformed function declarations
@@ -67,32 +67,32 @@ const additionalFixes = [
   
   // Fix malformed className attributes
   {
-    pattern: /className="fixed inset-0 z-0"/g,
-    replacement: 'className="fixed inset-0 z-0"'
+    pattern: /className="""fixed inset-0 z-0"/g,
+    replacement: 'className="""fixed inset-0 z-0"'
   },
   {
-    pattern: /className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"/g,
-    replacement: 'className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"'
+    pattern: /className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"/g,
+    replacement: 'className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"'
   },
   {
-    pattern: /className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"/g,
-    replacement: 'className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"'
+    pattern: /className="""text-4xl md:text-6xl font-bold text-gray-900 mb-6"/g,
+    replacement: 'className="""text-4xl md:text-6xl font-bold text-gray-900 mb-6"'
   },
   {
-    pattern: /className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"/g,
-    replacement: 'className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"'
+    pattern: /className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto"/g,
+    replacement: 'className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto"'
   },
   {
-    pattern: /className="flex flex-col sm:flex-row gap-4 justify-center"/g,
-    replacement: 'className="flex flex-col sm:flex-row gap-4 justify-center"'
+    pattern: /className="""flex flex-col sm:flex-row gap-4 justify-center"/g,
+    replacement: 'className="""flex flex-col sm:flex-row gap-4 justify-center"'
   },
   {
-    pattern: /className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"/g,
-    replacement: 'className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"'
+    pattern: /className="""bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"/g,
+    replacement: 'className="""bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"'
   },
   {
-    pattern: /className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"/g,
-    replacement: 'className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"'
+    pattern: /className="""border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"/g,
+    replacement: 'className="""border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"'
   },
   
   // Fix malformed meta tags
@@ -154,7 +154,7 @@ const additionalFixes = [
   // Fix malformed export
   {
     pattern: /export default \$1;<\/div>/g,
-    replacement: 'export default Component;'
+    replacement: "export default Component";'
   },
   
   // Fix malformed closing tags
@@ -212,21 +212,21 @@ const additionalFixes = [
   // Fix malformed section tags
   {
     pattern: /<section className=relative py-40 px-4 sm:px-6 lg:px-8><\/div>;/g,
-    replacement: '<section className="relative py-40 px-4 sm:px-6 lg:px-8">'
+    replacement: '<section className="""relative py-40 px-4 sm:px-6 lg:px-8">'
   },
   {
     pattern: /<section className=py-40 px-4 sm:px-6 lg:px-8 bg-white><\/div>/g,
-    replacement: '<section className="py-40 px-4 sm:px-6 lg:px-8 bg-white">'
+    replacement: '<section className="""py-40 px-4 sm:px-6 lg:px-8 bg-white">'
   },
   
   // Fix malformed div tags
   {
     pattern: /<div className=max-w-7xl mx-auto><\/div>;/g,
-    replacement: '<div className="max-w-7xl mx-auto">'
+    replacement: '<div className="""max-w-7xl mx-auto">'
   },
   {
     pattern: /<div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-8 mt-12><\/div>"/g,
-    replacement: '<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">'
+    replacement: '<div className="""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">'
   },
   
   // Fix malformed motion.div
@@ -245,42 +245,42 @@ const additionalFixes = [
   
   // Fix malformed h1, h2, h3 tags
   {
-    pattern: /<h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6";/g,
-    replacement: '<h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">'
+    pattern: /<h1 className="""text-4xl md:text-6xl font-bold text-gray-900 mb-6";/g,
+    replacement: '<h1 className="""text-4xl md:text-6xl font-bold text-gray-900 mb-6">'
   },
   {
-    pattern: /<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">/g,
-    replacement: '<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">'
+    pattern: /<h2 className="""text-3xl md:text-4xl font-bold text-gray-900 mb-4">/g,
+    replacement: '<h2 className="""text-3xl md:text-4xl font-bold text-gray-900 mb-4">'
   },
   {
-    pattern: /<h3 className='text-xl font-semibold text-gray-900 mb-2>Advanced AI Capabilities<\/h3><\/div>/g,
-    replacement: '<h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced AI Capabilities</h3>'
+    pattern: /<h3 className="""text-xl font-semibold text-gray-900 mb-2>Advanced AI Capabilities<\/h3><\/div>/g,
+    replacement: '<h3 className="""text-xl font-semibold text-gray-900 mb-2">Advanced AI Capabilities</h3>'
   },
   
   // Fix malformed p tags
   {
-    pattern: /<p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto""/g,
-    replacement: '<p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">'
+    pattern: /<p className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto""/g,
+    replacement: '<p className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto">'
   },
   {
     pattern: /<p className=text-lg text-gray-600 max-w-2xl mx-auto>"/g,
-    replacement: '<p className="text-lg text-gray-600 max-w-2xl mx-auto">'
+    replacement: '<p className="""text-lg text-gray-600 max-w-2xl mx-auto">'
   },
   
   // Fix malformed button tags
   {
-    pattern: /<button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors";/g,
-    replacement: '<button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">'
+    pattern: /<button className="""bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors";/g,
+    replacement: '<button className="""bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">'
   },
   {
-    pattern: /<button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors";/g,
-    replacement: '<button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">'
+    pattern: /<button className="""border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors";/g,
+    replacement: '<button className="""border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">'
   },
   
   // Fix malformed svg tags
   {
     pattern: /<svg className=w-6 h-6 text-blue-600 fill="none" stroke="currentColor" viewBox="0 0 24 24"><\/div>/g,
-    replacement: '<svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">'
+    replacement: '<svg className="""w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">'
   },
   
   // Fix malformed path tags
@@ -332,21 +332,21 @@ const additionalFixes = [
   // Fix malformed closing parenthesis
   {
     pattern: /\)/g,
-    replacement: ');'
+    replacement: ")";'
   },
   {
     pattern: /\)/g,
-    replacement: ');'
+    replacement: ")";'
   },
   
   // Fix malformed closing brace
   {
     pattern: /\}/g,
-    replacement: '};'
+    replacement: "}";'
   },
   {
     pattern: /\}/g,
-    replacement: '};'
+    replacement: "}";'
   }
 ];
 

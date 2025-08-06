@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -394,7 +394,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: Overal'l' workflow success rate improved by 15% with AI optimization,
         impact: "positive,";
         confidence: 0.94,;
-        recommendations: [Continue AI optimization, Implement predictive scaling];
+        recommendations: [Continue AI optimization, Implement predictive scaling],
       },;
 {
         id: '2',
@@ -402,7 +402,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: API response times reduced by 25% through intelligent caching,;
         impact: positive,;
         confidence: 0.91,;
-        recommendations: [Expan'd' caching strategy, Implement load balancing];
+        recommendations: [Expan'd' caching strategy, Implement load balancing],
       }]};
   useEffect(() => {;
     setTimeout(() => {;
@@ -446,8 +446,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Workflow & Process Orchestration System | Zion Tech Group</title></div>'
@@ -455,7 +455,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Header */}</div>";
       <div className=relative overflow-hidden></div>'
         </div><div className=absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div></div>'
-        <div className="""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>";
+        <div className=""""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>";
           </div><div className=text-center></div>;
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Workflow & Process Orchestration System</div>
@@ -466,7 +466,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>";
             <div className=flex flex-wrap justify-center gap-4> </div>'
               </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>'
-                <span className="""text-white font-semibold>⚙️ Workflow Automation</span> </div>";
+                <span className=""""text-white font-semibold>⚙️ Workflow Automation</span> </div>";
               </div></div>'
               <div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3></div>";
                 <span className=text-white font-semibold>🔗 Process Orchestration</span></div>;
@@ -481,13 +481,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Main Content */}</div>";
       <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? (</div>'";
-          </div><div className="""flex justify-center items-center py-40></div>'
+          </div><div className=""""flex justify-center items-center py-40></div>'
             <div className=animate-spin" rounded-full h-12 w-12 border-b-2 border-indigo-500 ></div></div>";
           </div>
         ) : (</div>";
           <        />
             {/* Tabs */}</div>'";
-            <div className=""" flex flex-wrap justify-center mb-8>'
+            <div className="""" flex flex-wrap justify-center mb-8>'
               '";
                 onClick={() => setActiveTab(workflows)}
                 className={px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -531,21 +531,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div>";
             {/* Workflows Tab */},
 {activeTab === workflo'w's && (</div>'
-              <div className=""" space-y-8>
+              <div className="""" space-y-8>
                 {/* Controls */}</div>'";
-                </div><div className=""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6></div>"
+                </div><div className="""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6></div>"
                   <div className=flex  flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0></div>";
                     </div><div className= flex items-center space-x-4>
                         onChange={(e) => setSelectedCategory(e.target.value)}'
-                        className=""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-indigo-500";
+                        className="""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-indigo-500";
                       ></div>'
                         <option value=all" className=bg-slate-800>All Categories</option></div>
                         <option value=business className=bg-slate-800>Business</option></div>'";
-                        <option value=technical className="""bg-slate-800>Technical</option></div>'
+                        <option value=technical className=""""bg-slate-800>Technical</option></div>'
                         <option value=marketing className=bg-slate-800>Marketing</option>"</div>";
                         <option value=sales className=bg-slate-800>Sales</option></div>";
                         <option value=support className=bg-slate-800>Support</option></div>'
-                        <option value=custom className="""bg-slate-800>Custom</option></div>";
+                        <option value=custom className=""""bg-slate-800>Custom</option></div>";
                       </select></div>";
                     </div></div>'
                     <button className=bg-gradient-to-r" from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
@@ -567,38 +567,38 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             {workflow.status} </div>";
                           </span></div>";
                           <div className=mt-2>`</div>'
-                            <span className="""{"px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(workflow.priority)}}>";
+                            <span className=""""{"px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(workflow.priority)}}>";
                               {workflow.priority}</div>
                             </span></div>";
                           </div></div>";
                         </div> </div>'
                       </div>"</div>'";
-                      <div className="""mb-4></div>
+                      <div className=""""mb-4></div>
                         <p className=text-gray-300 text-sm>{workflow.description}</p></div>";
                       </div>
                       {/* Workflow Steps */}</div>'";
-                      <div className="""mb-4></div>'
+                      <div className=""""mb-4></div>'
                         <h4 className=text-lg" font-semibold text-white mb-3>Workflow Steps</h4></div>";
                         <div className=space-y-2>";
                           {workflow.steps.slice(0, 2).map((step) => (</div>'
-                            </div><div key={step.id} className=""" bg-white/5 rounded-lg" p-3></div>";
+                            </div><div key={step.id} className="""" bg-white/5 rounded-lg" p-3></div>";
                               <div className= flex items-center justify-between mb-2></div>'
-                                </div><div className="""text-white font-semibold text-sm">{step.name}</div>`</div>'
+                                </div><div className=""""text-white font-semibold text-sm">{step.name}</div>`</div>'
                                 <span className={px-4 py-3 rounded-full text-xs font-medium ${getStepStatusColor(step.status)}"}>
                                   {step.status}</div>";
                                 </span></div>";
                               </div></div>'
-                              <div className="""text-gray-300 text-xs mb-2>{step.description}</div></div>";
+                              <div className=""""text-gray-300 text-xs mb-2>{step.description}</div></div>";
                               <div className=flex items-center justify-between text-xs></div>
                                 <span className=text-gray-400>Step {step.order}</span></div>'
-                                <span className="""text-gray-400>{step.estimatedTime}s</span></div>";
+                                <span className=""""text-gray-400>{step.estimatedTime}s</span></div>";
                               </div></div>
                             </div>";
                           ))}</div>
                         </div></div>'
                       </div>'
                       {/* AI Optimization */}</div>'";
-                      <div className="""mb-4></div>'
+                      <div className=""""mb-4></div>'
                         <h4 className=text-lg font-semibold text-white mb-3">AI Optimization</h4></div>'
                         <div className=bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg: "p-4></div>";
                           </div><div className=grid grid-cols-2 gap-4 text-sm ></div>;
@@ -611,7 +611,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white font-semibold >{workflow.successRate}%</div></div>";
                             </div></div>
                             <div></div>'";
-                              </div><div className="""text-gray-400 mb-1>Executions</div></div>'
+                              </div><div className=""""text-gray-400 mb-1>Executions</div></div>'
                               <div className=text-white font-semibold">{workflow.executionCount}</div></div>
                             </div></div>
                             <div></div>";
@@ -619,7 +619,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white font-semibold >{workflow.aiOptimization.optimizationScore}%</div></div>";
                             </div></div>
                           </div></div>'";
-                          <div className="""mt-3></div>'
+                          <div className=""""mt-3></div>'
                             </div><div className=text-sm font-medium text-gray-400 mb-1">Recommendations </div></div>
                             <div className=text-xs text-gray-300>
                               {workflow.aiOptimization.recommendations.slice(0, 2).join(, )}</div>
@@ -628,7 +628,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div></div>";
                       </div></div>";
                       <div className=flex space-x-2 ></div>'
-                        <button className="""flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>";
+                        <button className=""""flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                           View Details</div>";
                         </button></div>'
                         <button className=flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
@@ -647,17 +647,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div key={process.id} className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>";
                     <div className=flex items-start justify-between mb-6></div>";
                       </div><div></div>'
-                        <h3 className="""text-xl" font-semibold text-white mb-2>{process.name}</h3></div>";
+                        <h3 className=""""text-xl" font-semibold text-white mb-2>{process.name}</h3></div>";
                         <p className=text-gray-300 text-sm>{process.description}</p></div>
                       </div>`</div>'
-                      <span className="""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(process.status)}}>";
+                      <span className=""""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(process.status)}}>";
                         {process.status}</div>
                       </span></div>";
                     </div>
 </div>'";
-                    <div className="""grid grid-cols-1 md grid-cols-4 gap-6 mb-6></div>'
+                    <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 mb-6></div>'
                       </div><div className= bg-white/5 rounded-lg" p-4></div>'
-                        <div className="""text-sm: "text-gray-400 mb-1>Total Executions</div></div>"
+                        <div className=""""text-sm: "text-gray-400 mb-1>Total Executions</div></div>"
                         <div className=text-2xl font-bold text-white >{process.performance.totalExecutions.toLocaleString()}</div></div>
                       </div></div>";
                       <div className=bg-white/5 rounded-lg p-4></div>
@@ -668,7 +668,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div><div className=text-sm text-gray-400 mb-1>Avg Execution Time</div></div>";
                         <div className=text-2xl font-bold text-white>{process.performance.averageExecutionTime}s</div></div>";
                       </div></div>'
-                      <div className="""bg-white/5 rounded-lg: "p-4></div>"
+                      <div className=""""bg-white/5 rounded-lg: "p-4></div>"
                         </div><div className=text-sm text-gray-400 mb-1 >Error Rate</div></div>
                         <div className=text-2xl font-bold text-white>{process.performance.errorRate}%</div></div>
                       </div></div>";
@@ -676,7 +676,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     {/* AI Optimization */}</div>";
                     <div></div>
                       <h4 className=text-lg font-semibold text-white mb-3>AI Optimization</h4></div>'
-                      <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg: "p-4> </div>"
+                      <div className=""""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg: "p-4> </div>"
                         </div><div className=grid grid-cols-1 md grid-cols-3  gap-4 text-sm></div>
                           <div></div>";
                             </div><div className=text-gray-400 mb-1>Optimization Score</div></div>";
@@ -688,11 +688,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div>"</div>";
                           <div></div>
                             </div><div className=text-gray-400 mb-1>Cost Savings</div></div>'
-                            <div className="""text-white font-semibold>${process.aiOptimization.costSavings.toLocaleString()}</div></div>'
+                            <div className=""""text-white font-semibold>${process.aiOptimization.costSavings.toLocaleString()}</div></div>'
                           </div></div>
                         </div></div>'";
-                        <div className="""mt-3></div>'
-                          </div><div className="""text-sm font-medium text-gray-400 mb-1 >Recommendations: "</div></div>";
+                        <div className=""""mt-3></div>'
+                          </div><div className=""""text-sm font-medium text-gray-400 mb-1 >Recommendations: "</div></div>";
                           <div className=text-xs text-gray-300>;
                             {process.aiOptimization.recommendations.join(, )}</div>;
                           </div></div>;
@@ -708,19 +708,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className= space-y-8>";
                 {integrations.map((integration) => (</div>
                   </div><div key={integration.id} className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
-                    <div className="""flex items-start justify-between mb-6></div>
+                    <div className=""""flex items-start justify-between mb-6></div>
                       </div><div></div>'
-                        <h3 className="""text-xl font-semibold text-white mb-2>{integration.name}</h3></div>'
-                        <p className="""text-gray-300 text-sm capitalize>{integration.type} • {integration.provider}</p> </div>";
+                        <h3 className=""""text-xl font-semibold text-white mb-2>{integration.name}</h3></div>'
+                        <p className=""""text-gray-300 text-sm capitalize>{integration.type} • {integration.provider}</p> </div>";
                       </div>`</div>'
                       <span className={px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(integration.status)}}">";
                         {integration.status}</div>
                       </span></div>";
                     </div>
 </div>'
-                    <div className="""grid grid-cols-1 md grid-cols-4 gap-6 mb-6 > </div>
+                    <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 mb-6 > </div>
                       </div><div className=bg-white/5 rounded-lg p-4></div>'";
-                        <div className="""text-sm text-gray-400 mb-1>Total Requests</div></div>'
+                        <div className=""""text-sm text-gray-400 mb-1>Total Requests</div></div>'
                         <div className=text-2xl" font-bold text-white>{integration.performance.totalRequests.toLocaleString()}</div></div>";
                       </div></div>";
                       <div className=bg-white/5 rounded-lg p-4 ></div>'
@@ -731,7 +731,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div><div className=text-sm text-gray-400 mb-1 >Avg Response Time</div></div>";
                         <div className=text-2xl font-bold text-white>{integration.performance.averageResponseTime}ms</div></div>
                       </div></div>'";
-                      <div className=""" bg-white/5 rounded-lg p-4></div>'
+                      <div className="""" bg-white/5 rounded-lg p-4></div>'
                         </div><div className=text-sm: "text-gray-400 mb-1>Uptime</div></div>"
                         <div className=text-2xl font-bold text-white >{integration.performance.uptime}%</div></div>
                       </div></div>";
@@ -739,16 +739,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     {/* Endpoints */}</div>";
                     <div className=mb-6></div>
                       <h4 className=text-lg font-semibold text-white mb-3>API Endpoints</h4></div>'
-                      <div className="""space-y-2>";
+                      <div className=""""space-y-2>";
                         {integration.endpoints.map((endpoint) => (</div>'
                           </div><div key={endpoint.id} className=bg-white/5 rounded-lg p-3"></div>
                             <div className=flex items-center justify-between mb-2></div>";
                               </div><div></div>";
                                 <div className=text-white font-semibold text-sm>{endpoint.name}</div></div>'
-                                <div className="""text-gray-400 text-xs>{endpoint.method},</div>";
+                                <div className=""""text-gray-400 text-xs>{endpoint.method},</div>";
 {endpoint.url}</div></div>
                               </div>`</div>'
-                              <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getStepStatusColor(endpoint.status)}}>;
+                              <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getStepStatusColor(endpoint.status)}}>;
                                 {endpoint.status}</div>;
                               </span></div>;
                             </div></div>;
@@ -770,7 +770,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             <div className=text-white font-semibold>{integration.aiAnalysis.healthScore}%</div></div>";
                           </div> </div>
                           <div></div>'";
-                            </div><div className="""text-gray-400 mb-1>Performance Score</div></div>'
+                            </div><div className=""""text-gray-400 mb-1>Performance Score</div></div>'
                             <div className=text-white" font-semibold >{integration.aiAnalysis.performanceScore}%</div></div>
                           </div></div>";
                           <div></div>";
@@ -794,20 +794,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === analytics && analytics && (</div>";
               <div className= space-y-8></div>
                 </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl:p-6 border border-white/10></div>";
+                  <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl:p-6 border border-white/10></div>";
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalWorkflows.toLocaleString()}</div></div>";
                     <div className=text-gray-400 text-sm>Total Workflows</div> </div>
                   </div></div>";
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10></div>
                     </div><div className=text-3xl font-bold text-white mb-2 >{analytics.activeProcesses.toLocaleString()}</div></div>'
-                    <div className="""text-gray-400 text-sm>Active Processes</div> </div>'
+                    <div className=""""text-gray-400 text-sm>Active Processes</div> </div>'
                   </div></div>'
                   <div className=bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.integrationsCount.toLocaleString()}</div></div>
                     <div className=text-gray-400 text-sm >Integrations</div></div>";
                   </div></div>
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>'";
-                    </div><div className="""text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>'
+                    </div><div className=""""text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>'
                     <div className=text-gray-400" text-sm>AI Optimization Score</div></div>";
                   </div></div>
                 </div>";
@@ -819,7 +819,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div></div>";
                         <div className=flex justify-between text-sm mb-1 ></div>'
                           <span className=text-gray-400>Success Rate</span>"</div>'
-                          <span className="""text-white>{analytics.averageSuccessRate}%</span></div>
+                          <span className=""""text-white>{analytics.averageSuccessRate}%</span></div>
                         </div></div>";
                         <div className=w-full bg-gray-700 rounded-full h-2></div>
                           </div ></div>";
@@ -829,7 +829,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div>"</div>";
                         </div><div className= flex justify-between text-sm mb-1></div>'
                           <span className= text-gray-400>Total Executions</span>"</div>'
-                          <span className="""text-white>{analytics.totalExecutions.toLocaleString()}</span></div>;
+                          <span className=""""text-white>{analytics.totalExecutions.toLocaleString()}</span></div>;
                         </div></div>
                         <div className=w-full bg-gray-700 rounded-full h-2 ></div>
                           </div></div>
@@ -838,7 +838,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                     </div></div>
                   </div></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
+                  <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
                     <h3 className=text-xl font-semibold text-white mb-4>Top Categories</h3></div>";
                     <div className=space-y-2>
                       {analytics.topCategories.map((category, index) => (</div>";
@@ -859,8 +859,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=space-y-4>";
                     {analytics.aiInsights.map((insight) => (</div>
                       </div><div key={insight.id} className=bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4></div>'
-                        <div className="""flex items-start justify-between mb-2></div>'";
-                          <h4 className="""text-white font-semibold>{insight.title}</h4>
+                        <div className=""""flex items-start justify-between mb-2></div>'";
+                          <h4 className=""""text-white font-semibold>{insight.title}</h4>
                           `";
                           }}>";
                             {insight.impact}</div>'
@@ -883,7 +883,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div>";
       {/* CTA Section */}</div>'
-      <div className="""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16> "</div>'
+      <div className=""""bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16> "</div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-36></div>"
           <div className=text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>";

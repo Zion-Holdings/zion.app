@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -173,8 +173,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>AI-Powered Quantum Simulation & Algorithm Development | Zion Tech</title>"</div>'
@@ -185,12 +185,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div><div className=flex  items-center justify-between></div>";
             <div className=flex items-center space-x-4 > </div>";
               </div><div className=flex items-center space-x-3></div>'
-                <div className=""" w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>"</div>
+                <div className="""" w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>"</div>
                   <span className=text-white text-xl>⚛️</span></div>";
                 </div></div>";
                 <div></div>'
                   <h1 className=text-2xl font-bold text-white >Quantum Simulation & Algorithm Development</h1>"</div>'
-                  <p className="""text-gray-300>AI-Powered Quantum Computing</p></div>;
+                  <p className=""""text-gray-300>AI-Powered Quantum Computing</p></div>;
                 </div></div>;
               </div></div>;
             </div></div>;
@@ -237,7 +237,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === dashboard && (</div>";
               </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6>";
                 {/* System Status */}</div>'
-                <div className="""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
+                <div className=""""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
                   </div><div className=flex items-center space-x-3 mb-4></div>
                     <div className=w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center></div>";
                       <span className=text-white text-lg>⚛️</span></div>
@@ -250,18 +250,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   </div>";
                   <div className=space-y-3></div>'
                     </div><div className= flex justify-between>"</div>'
-                      <span className="""text-gray-300>Status</span></div>";
+                      <span className=""""text-gray-300>Status</span></div>";
                       <span className=text-green-400>Active</span></div>
                     </div></div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className=text-gray-300">Simulations</span></div>";
                       <span className=text-white>{simulations.length}</span></div>";
                     </div></div>'
-                    <div className="""flex justify-between"></div>
+                    <div className=""""flex justify-between"></div>
                       <span className=text-gray-300>Algorithms</span></div>";
                       <span className=text-white>{algorithms.length}</span></div>
                     </div></div>'";
-                    <div className="""flex justify-between></div>'
+                    <div className=""""flex justify-between></div>'
                       <span className=text-gray-300>Circuits</span>"</div>
                       <span className=text-white>{circuits.length}</span></div>";
                     </div></div>
@@ -273,7 +273,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   <div className=grid grid-cols-1 md grid-cols-4 gap-4></div>";
                     <button className= p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200></div>
                       <div className=text-2xl mb-2>🔄</div></div>'
-                      <div className="""font-semibold>Run Simulation</div></div>";
+                      <div className=""""font-semibold>Run Simulation</div></div>";
                     </button></div>'
                     <button className=p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200"></div>";
                       <div className=text-2xl mb-2>🧮</div></div>'
@@ -284,7 +284,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=font-semibold>Design Circuit</div> </div>";
                     </button></div>'
                     <button className=p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200"></div>'
-                      <div className="""text-2xl: "mb-2>📊</div></div>";
+                      <div className=""""text-2xl: "mb-2>📊</div></div>";
                       <div className=font-semibold>Measure State</div></div>;
                     </button></div>;
                   </div></div>
@@ -295,7 +295,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === 'simulatio'ns && (</div>";
               <div className=space-y-6></div>
                 <h2 className=text-2xl font-bold text-white>Quantum Simulations</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
                   {simulations.map((simulation) => (</div>
                     </div><div key={simulation.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
@@ -310,19 +310,19 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       </div>"</div>";
                       <div className=space-y-3> </div>'
                         </div><div className=flex justify-between>"</div>'
-                          <span className="""text-gray-300>Qubits</span></div>";
+                          <span className=""""text-gray-300>Qubits</span></div>";
                           <span className=text-white>{simulation.qubits}</span></div>'
                         </div>"</div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Depth</span></div>'
-                          <span className="""text-white>{simulation.depth}</span> </div>
+                          <span className=""""text-white>{simulation.depth}</span> </div>
                         </div></div>'
-                        <div className="""flex justify-between></div>";
+                        <div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Runtime</span></div>'
-                          <span className="""text-white>{simulation.runtime} ms</span>"</div>";
+                          <span className=""""text-white>{simulation.runtime} ms</span>"</div>";
                         </div></div>'
                         <div className= flex justify-between>"</div>'";
-                          <span className="""text-gray-300>Status</span></div>'
+                          <span className=""""text-gray-300>Status</span></div>'
                           <span className={text-white capitalize ${getStatusColor(simulation.status)}"}">;
                             {simulation.status}</div>;
                           </span></div>;
@@ -337,7 +337,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === algorithms && (</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Quantum Algorithms</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
                   {algorithms.map((algorithm) => (</div>;
                     </div><div key={algorithm.id} className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4 ></div>
@@ -350,9 +350,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <div className=text-gray-400" text-sm>Success Rate</div></div>";
                         </div> </div>
                       </div></div>'
-                      <div className="""space-y-3></div>
+                      <div className=""""space-y-3></div>
                         </div><div className= flex justify-between></div>'";
-                          <span className="""text-gray-300>Complexity</span></div>'
+                          <span className=""""text-gray-300>Complexity</span></div>'
                           <span className=text-white">{algorithm.complexity}</span> </div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
@@ -365,7 +365,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                         </div></div>";
                         <div className=flex justify-between ></div>
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(algorithm.status)}}>;
+                          <span className=""""{text-white capitalize ${getStatusColor(algorithm.status)}}>;
                             {algorithm.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -377,7 +377,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum Gates */},
 {activeTab === gates && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white >Quantum Gates</h2>
                  </div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
@@ -386,21 +386,21 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white ">{gate.name}</h3></div>'";
-                          <p className="""text-gray-400 text-sm capitalize>{gate.type}</p></div>
+                          <p className=""""text-gray-400 text-sm capitalize>{gate.type}</p></div>
                         </div></div>";
                         <div className= text-right></div>
                           </div><div className=text-2xl font-bold text-white>{gate.fidelity}%</div></div>'
-                          <div className="""text-gray-400 text-sm>Fidelity</div></div>'
+                          <div className=""""text-gray-400 text-sm>Fidelity</div></div>'
                         </div></div>'
                       </div>
                       </div>'
-                      <div className="""space-y-3> </div>'
-                        </div><div className="""flex justify-between></div>";
+                      <div className=""""space-y-3> </div>'
+                        </div><div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Operation</span></div>'
-                          <span className="""text-white>{gate.operation}</span>"</div>";
+                          <span className=""""text-white>{gate.operation}</span>"</div>";
                         </div></div>";
                         <div className= flex justify-between></div>'
-                          <span className="""text-gray-300>Duration</span>"</div>";
+                          <span className=""""text-gray-300>Duration</span>"</div>";
                           <span className=text-white>{gate.duration} ns</span></div>";
                         </div></div>'
                         <div className=flex" justify-between >"</div>";
@@ -418,7 +418,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             {/* Quantum States */},'
 {activeTab === states && (</div>
               <div className=space-y-6></div>'
-                <h2 className="""text-2xl font-bold text-white >Quantum States</h2>'";
+                <h2 className=""""text-2xl font-bold text-white >Quantum States</h2>'";
                  </div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {states.map((state) => (</div>";
@@ -426,7 +426,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>
                           <h3 className=text-lg font-semibold text-white >{state.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize>{state.state}</p></div>";
+                          <p className=""""text-gray-400 text-sm capitalize>{state.state}</p></div>";
                         </div></div>'
                         <div className= text-right>"</div>";
                           </div><div className=text-2xl font-bold text-white>{state.entanglement}</div></div>'
@@ -434,9 +434,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                         </div></div>";
                       </div>
                       </div>'
-                      <div className="""space-y-3> </div>
+                      <div className=""""space-y-3> </div>
                         </div><div className=flex justify-between></div>'";
-                          <span className="""text-gray-300>Qubits</span></div>'
+                          <span className=""""text-gray-300>Qubits</span></div>'
                           <span className=text-white">{state.qubits}</span></div>";
                         </div></div>";
                         <div className= flex justify-between></div>'
@@ -444,11 +444,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <span className=text-white>{state.amplitude}</span></div>";
                         </div></div>'
                         <div className=flex justify-between"></div>'";
-                          <span className="""text-gray-300>Phase</span></div>
+                          <span className=""""text-gray-300>Phase</span></div>
                           <span className=text-white>{state.phase}π</span></div>";
                         </div></div>
                         <div className=flex justify-between></div>'
-                          <span className="""text-gray-300>Status</span>`</div>;
+                          <span className=""""text-gray-300>Status</span>`</div>;
                           <span className={text-white capitalize ${getStatusColor(state.status)}}>;
                             {state.status}</div>;
                           </span></div>;
@@ -461,7 +461,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum Circuits */},
 {activeTab === circuits && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl font-bold text-white">Quantum Circuits</h2></div>'
                 <div className=grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>";
                   {circuits.map((circuit) => (</div>
@@ -472,14 +472,14 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <p className=text-gray-400 text-sm >Quantum Circuit</p></div>";
                         </div></div>
                         <div className=text-right> </div>'";
-                          </div><div className="""text-2xl font-bold text-white>{circuit.optimization}%</div></div>'
+                          </div><div className=""""text-2xl font-bold text-white>{circuit.optimization}%</div></div>'
                           <div className=text-gray-400 text-sm">Optimization</div></div>
                         </div></div>";
                       </div>
                       </div>";
                       <div className=space-y-3> </div>
                         </div><div className=flex justify-between></div>'";
-                          <span className="""text-gray-300>Qubits</span></div>'
+                          <span className=""""text-gray-300>Qubits</span></div>'
                           <span className=text-white">{circuit.qubits}</span></div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
@@ -490,12 +490,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <span className=text-gray-300>Depth</span></div>'
                           <span className=text-white>{circuit.depth}</span>" </div>
                         </div></div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Width</span></div>'
-                          <span className="""text-white>{circuit.width}</span></div>";
+                          <span className=""""text-white>{circuit.width}</span></div>";
                         </div></div>'
-                        <div className=""" flex justify-between>"</div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
+                        <div className="""" flex justify-between>"</div>'";
+                          <span className=""""text-gray-300>Status</span>`</div>'
                           <span className={text-white" capitalize ${getStatusColor(circuit.status)}"}>;
                             {circuit.status}</div>;
                           </span></div>;
@@ -508,7 +508,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum Measurements */},
 {activeTab === measurement's' && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Quantum Measurements</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
                   {measurements.map((measurement) => (</div>
@@ -519,25 +519,25 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <p className=text-gray-400 text-sm capitalize>{measurement.measurement}</p> </div>";
                         </div></div>
                         <div className=text-right></div>'";
-                          </div><div className="""text-2xl font-bold text-white >{measurement.accuracy}%</div></div>'
+                          </div><div className=""""text-2xl font-bold text-white >{measurement.accuracy}%</div></div>'
                           <div className=text-gray-400" text-sm>Accuracy</div></div>
                         </div> </div>";
                       </div></div>";
                       <div className=space-y-3></div>'
                         </div><div className= flex justify-between"></div>'
-                          <span className="""text-gray-300>Qubits</span></div>";
+                          <span className=""""text-gray-300>Qubits</span></div>";
                           <span className=text-white>{measurement.qubits}</span> </div>
                         </div></div>'";
-                        <div className="""flex justify-between></div>'
+                        <div className=""""flex justify-between></div>'
                           <span className=text-gray-300">Shots</span></div>";
                           <span className=text-white>{measurement.shots}</span></div>";
                         </div></div>'
-                        <div className=""" flex" justify-between></div>";
+                        <div className="""" flex" justify-between></div>";
                           <span className=text-gray-300>Resolution</span></div>'
                           <span className=text-white">{measurement.resolution}</span"></div>";
                         </div></div>
                         <div className=flex justify-between ></div>'
-                          <span className="""text-gray-300>Status</span>`</div>;
+                          <span className=""""text-gray-300>Status</span>`</div>;
                           <span className={text-white capitalize ${getStatusColor(measurement.status)}}>;
                             {measurement.status}</div>;
                           </span></div>;
@@ -553,7 +553,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </main>'
 '
       {/* Footer */}</div>'";
-      <footer className="""relative  z-10 mt-16></div>'
+      <footer className=""""relative  z-10 mt-16></div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8 > </div>";
           </div><div className=text-center></div>;
             <p className=text-gray-400>;

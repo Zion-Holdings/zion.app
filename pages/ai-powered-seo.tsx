@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -406,13 +406,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>";
         </div>
       </div>'
-        <div className="""text-center> </div>";
+        <div className=""""text-center> </div>";
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'
-            <svg className="""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"
+            <svg className=""""animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>"
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>";
             </svg></div>
@@ -432,17 +432,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=flex-shrink-0> </Link href=/  className="""flex-shrink-0><h1 className="""text-2xl font-bold text-white></div>";
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=""""flex-shrink-0><h1 className=""""text-2xl font-bold text-white></div>";
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>'
               </Link>"</div>'
             </div>"</div>";
             <div className=hidden md flex items-center space-x-8></div>'
-              <Link href=/ai-powered-automation className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation</div>"";
+              <Link href=/ai-powered-automation className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation</div>"";
               </Link href= /ai-powered-automation className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/ai-powered-analytics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics</div>";
               </Link href=/ai-powered-analytics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/smart-notifications className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Notifications</div>";
+              <Link href=/smart-notifications className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Notifications</div>";
               </Link href=/smart-notifications  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
               </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
@@ -485,7 +485,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div>";
         {/* Performance Metrics Overview */},
 {selectedView === 'overview' && (</div>'";
-          <div className="""grid grid-cols-1 md: "grid-cols-3 gap-6 mb-8>"
+          <div className=""""grid grid-cols-1 md: "grid-cols-3 gap-6 mb-8>"
             {performanceMetrics.map((metric) => (</div>
               </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>";
                 <div className=flex items-center justify-between mb-4></div>
@@ -493,12 +493,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <span className=text-2xl>{getTrendIcon(metric.trend)}</span></div>";
                 </div></div>'
                 <div className=mb-4>"</div>'
-                  </div><div className="""text-3xl font-bold text-white mb-2>{metric.current.toLocaleString()}</div></div>'
+                  </div><div className=""""text-3xl font-bold text-white mb-2>{metric.current.toLocaleString()}</div></div>'
                   <p className=text-sm text-gray-400>Target: "{metric.target.toLocaleString()}</p></div>"
                 </div>";
                 </div>'
                 <div className= flex items-center justify-between text-sm>"</div>'";
-                  <span className="""{${getImpactColor(metric.improvement> 0 ? high : low')}}>
+                  <span className=""""{${getImpactColor(metric.improvement> 0 ? high : low')}}>
                     {metric.improvement > 0 ? + : "},";
 {metric.improvement.toFixed(1)}%</div>;
                   </span></div>;
@@ -532,7 +532,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div>";
               <div>";
                   onChange={(e) => setSortBy(e.target.value as any)}'
-                  className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors";
+                  className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors";
                 ></div>";
                   <option value=recent>Sort by Recent</option></div>'
                   <option value=score>Sort by Score</option>"</div>;
@@ -545,21 +545,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* SEO Analysis List */},
 {selectedView === analysis && (</div>'
-          <div className=""" space-y-6>
+          <div className="""" space-y-6>
             {filteredAnalyses.map((analysis) => (</div>'
-              </div><div key={analysis.id} className=""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
+              </div><div key={analysis.id} className="""" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"
                 <div className=flex items-start justify-between mb-4> </div>
                   </div><div className=flex-1></div>";
                     <h3 className=text-lg font-semibold text-white mb-2>{analysis.title}</h3></div>
                     <p className=text-gray-300 text-sm mb-2>{analysis.url}</p></div>'
-                    <p className="""text-gray-400 text-sm>{analysis.description}</p></div>
+                    <p className=""""text-gray-400 text-sm>{analysis.description}</p></div>
                   </div></div>'
-                  <div className="""flex flex-col items-end space-y-2 >`</div>'";
-                    <span className="""{px-3 py-3 rounded-full text-sm font-medium  ${getGradeColor(analysis.grade)}}>'
+                  <div className=""""flex flex-col items-end space-y-2 >`</div>'";
+                    <span className=""""{px-3 py-3 rounded-full text-sm font-medium  ${getGradeColor(analysis.grade)}}>'
                       Grade {analysis.grade}"</div>";
                     </span></div>
                     <span className=text-2xl font-bold text-white>{analysis.score}</span></div>'
-                    <span className="""text-sm: "text-gray-400>Score</span></div>"
+                    <span className=""""text-sm: "text-gray-400>Score</span></div>"
                   </div></div>
                 </div>";
                 {/* Keywords */}</div>";
@@ -575,7 +575,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div>";
                 {/* Issues */},'
 {analysis.issues.length > 0 && ("</div>'
-                  <div className="""mb-4></div>'
+                  <div className=""""mb-4></div>'
                     <p className=text-sm: "text-gray-400 mb-2>Issues Found </p></div>"
                     <div className=space-y-2>
                       {analysis.issues.map((issue) => (</div>";
@@ -585,7 +585,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </span>"</div>";
                           <div className=flex-1></div>'
                             <p className=text-sm text-white font-medium">{issue.title}</p></div>'
-                            <p className="""text-xs text-gray-400>{issue.description}</p>";
+                            <p className=""""text-xs text-gray-400>{issue.description}</p>";
                             {issue.fixable && (</div>'
                               <p className=text-xs text-green-400 mt-1 ">Fix: "{issue.fixDescription}</p>";
                             )}</div>;
@@ -599,13 +599,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {analysis.recommendations.length > 0 && (</div>";
                   <div className=mb-4></div>";
                     <p className=text-sm:text-gray-400 mb-2>AI Recommendations </p></div>'
-                    <div className="""space-y-2>";
+                    <div className=""""space-y-2>";
                       {analysis.recommendations.map((rec) => (</div>";
                         </div><div key={rec.id} className=flex items-start space-x-3>`</div>'
-                          <span className="""{"px-4 py-3 rounded-full text-xs font-medium ${getImpactColor(rec.impact)}}>";
+                          <span className=""""{"px-4 py-3 rounded-full text-xs font-medium ${getImpactColor(rec.impact)}}>";
                             {rec.impact.toUpperCase()} </div>
                           </span></div>'";
-                          <div className="""flex-1></div>'
+                          <div className=""""flex-1></div>'
                             <p className=text-sm" text-white font-medium>{rec.title}</p></div>;
                             <p className=text-xs text-gray-400>{rec.description}</p></div>;
                             <p className=text-xs text-purple-400 mt-1>;
@@ -618,7 +618,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>";
                 )}
                 {/* Actions */}</div>'";
-                <div className="""flex space-x-3></div>'
+                <div className=""""flex space-x-3></div>'
                   <button className=bg-gradient-to-r" from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>";
                     View Details</div>;
                   </button></div>;
@@ -641,14 +641,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=flex items-start justify-between mb-4></div>";
                   </div><div></div>
                     <h3 className=text-lg font-semibold text-white mb-2>{keyword.keyword}</h3></div>'
-                    <p className="""text-gray-300 text-sm>{keyword.aiInsights}</p> </div>";
+                    <p className=""""text-gray-300 text-sm>{keyword.aiInsights}</p> </div>";
                   </div></div>'
                   <div className=flex" items-center space-x-2></div>";
                     <span className=text-2xl>{getTrendIcon(keyword.trends.trend)}</span></div>
                     <span className=text-sm text-gray-400>{keyword.trends.change}%</span></div>";
                   </div></div>
                 </div></div>'
-                <div className="""grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>";
+                <div className=""""grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>";
                   </div><div></div>'
                     <p className=text-sm: "text-gray-400>Search Volume</p></div>"
                     <p className=text-lg font-semibold text-blue-400 >{keyword.searchVolume.toLocaleString()}</p></div>
@@ -663,7 +663,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                   <div></div>";
                     <p className=text-sm text-gray-400>Ranking</p></div>'
-                    <p className="""text-lg font-semibold text-purple-400>#{keyword.ranking}</p></div>";
+                    <p className=""""text-lg font-semibold text-purple-400>#{keyword.ranking}</p></div>";
                   </div> </div>";
                 </div></div>'
                 <div className=mb-4"></div>'
@@ -677,7 +677,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     ))}</div>";
                   </ul></div>
                 </div></div>'";
-                <div className="""flex space-x-3 ></div>'
+                <div className=""""flex space-x-3 ></div>'
                   <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>";
                     Optimize Content</div>;
                   </button></div>;
@@ -692,17 +692,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {selectedView === content && (</div>";
           <div className=space-y-6>
             {contentOptimizations.map((content) => (</div>'
-              </div><div key={content.id} className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>";
+              </div><div key={content.id} className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>";
                 <div className=flex items-start justify-between mb-4> </div>";
                   </div><div className=flex-1></div>
                     <h3 className=text-lg font-semibold text-white mb-2>Current Content</h3></div>";
                     <div className=space-y-2 text-sm></div>";
                       </div><div> </div>'
-                        <p className="""text-gray-400">Title </p></div>";
+                        <p className=""""text-gray-400">Title </p></div>";
                         <p className=text-white>{content.pageTitle}</p></div>";
                       </div></div>'
                       <div>"</div>'
-                        <p className="""text-gray-400>Description: "</p></div>";
+                        <p className=""""text-gray-400>Description: "</p></div>";
                         <p className=text-white>{content.metaDescription}</p></div>;
                       </div></div>;
                     </div></div>;
@@ -716,7 +716,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div></div>";
                 <div className=grid grid-cols-1 md grid-cols-3  gap-4 mb-4></div>'
                   </div><div >"</div>'
-                    <p className="""text-sm text-gray-400>Word Count</p></div>";
+                    <p className=""""text-sm text-gray-400>Word Count</p></div>";
                     <p className=text-lg font-semibold text-blue-400>{content.wordCount}</p></div>'
                   </div>"</div>'
                   <div>"</div>'
@@ -725,11 +725,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                   <div></div>
                     <p className=text-sm text-gray-400>Readability</p></div>'
-                    <p className="""text-lg font-semibold text-purple-400>{content.readabilityScore}/100</p></div>'
+                    <p className=""""text-lg font-semibold text-purple-400>{content.readabilityScore}/100</p></div>'
                   </div></div>
                 </div></div>'";
-                <div className="""mb-4></div>'
-                  <p className="""text-sm text-gray-400 mb-2 >AI Suggestions: "</p></div>"
+                <div className=""""mb-4></div>'
+                  <p className=""""text-sm text-gray-400 mb-2 >AI Suggestions: "</p></div>"
                   <div className=space-y-3> </div>
                     </div><div></div>";
                       <p className=text-sm text-gray-400>Optimized Title:</p></div>
@@ -766,11 +766,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* Call to Action */}</div>'
         <div className=mt-12 text-center "> </div>'";
-          </div><div className="""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>
+          </div><div className=""""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>
             <h2 className=text-3xl font-bold text-white mb-4>";
               Optimize Your SEO with AI</div>";
             </h2></div>'
-            <p className="""text-xl text-gray-300 mb-8 max-w-2xl: "mx-auto>"
+            <p className=""""text-xl text-gray-300 mb-8 max-w-2xl: "mx-auto>"
               Leverage intelligent SEO optimization to improve search rankings,
               increase organic traffic, and maximize your online visibility.</div>";
             </p></div>

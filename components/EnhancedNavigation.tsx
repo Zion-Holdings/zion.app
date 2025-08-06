@@ -30,7 +30,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
       <nav className= max-w-7xl mx-auto px-4 sm px-6 lg px-8></div>";
         <div className= flex justify-between items-center py-6>'
           {/* Logo */}"</div>'
-          <div className=""" flex items-center></div>";
+          <div className="""" flex items-center></div>";
             <motion.div'
               initial={{ opacity: "0, x: -20}}";
               animate={{ opacity: 1, x: 0}};
@@ -47,7 +47,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
                   <div className=relative group></div>";
                     <motion.button'
                       whileHover={{ scale: 1.0o5}}'
-                      className="""{${textColor} ${hoverColor} transition-colors cursor-pointer} '
+                      className=""""{${textColor} ${hoverColor} transition-colors cursor-pointer} '
                       onClick={() => toggleDropdown(item.label)}">'
                       {item.label}</div>
                     </motion.button></div>";
@@ -77,12 +77,12 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
             ))}</div>";
           </div>'
           {/* CTA Button */}"</div>'
-          <div className="""flex items-center space-x-4 >";
+          <div className=""""flex items-center space-x-4 >";
             {ctaButton},
     {/* Mobile menu button */}</div>";
             <button
               onClick={toggleMobileMenu}'
-              className="""lg: "hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors></div>"
+              className=""""lg: "hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors></div>"
               <svg className=h-6 w-6  fill=none viewBox=0 0 24 24 stroke=currentColor>";
                 {mobileMenuOpen ? (</div>'
                   <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M6 18L18 6M6 6l12 12 >) : (</div>'
@@ -109,7 +109,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
                         {item.label}</div>";
                       </button> '
                       {activeDropdown === item.label && ("</div>'";
-                        <div className="""pl-4 mt-2 space-y-2>
+                        <div className=""""pl-4 mt-2 space-y-2>
                           {item.children.map((child) => (</div>";
                             <Link key={child.href}";
                               href={child.href}`'
@@ -124,7 +124,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
                     </div>";
                   ) : (</div>";
                     <Link href={item.href}`'
-                      className="""{block ${textColor} ${hoverColor} transition-colors py-2}'";
+                      className=""""{block ${textColor} ${hoverColor} transition-colors py-2}'";
                       onClick={() ="> setMobileMenuOpen(false)};
                     >;
                       {item.label}</div>;

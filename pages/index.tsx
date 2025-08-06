@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link";
 import FuturisticHero from ../components/ui/FuturisticHero'
@@ -152,14 +152,14 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <title>Zion - The First Free AI-Powered Marketplace</title></div>'
         <meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. > </meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. ><meta name=viewport content=width=device-width, initial-scale=1 > </meta name="viewport content=width=device-width, initial-scale=1 ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ></Head>
 </div>'
-      <main className=""" relative>";
+      <main className="""" relative>";
         {/* Hero Section */}</div>'
         <FuturisticHero >{/* Marketplace Categories */}"</div>";
         </FuturisticHero ><section className= relative py-40 lg py-32></div>'
           <div className=container-responsive>" </div>'
-            </div><div className="""text-center mb-16></div>";
+            </div><div className=""""text-center mb-16></div>";
               <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>'
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-blue  to-neon-purple>";
+                <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-neon-blue  to-neon-purple>";
                   Marketplace Categories</div>";
                 </span></div>'
               </h2>"</div>'
@@ -178,14 +178,14 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* Featured Services */}</div>";
         <section className= relative py-40 lg py-32></div>'
           <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div></div>'
-          <div className="""container-responsive relative z-10> </div>";
+          <div className=""""container-responsive relative z-10> </div>";
             </div><div className=text-center mb-16></div>";
               <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6></div>'
                 <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-purple  to-neon-pink">
                   Featured IT Services</div>";
                 </span></div>";
               </h2></div>'
-              <p className="""text-responsive-lg: "text-high-contrast-secondary max-w-2xl:mx-auto>";
+              <p className=""""text-responsive-lg: "text-high-contrast-secondary max-w-2xl:mx-auto>";
                 Professional IT services delivered by certified experts</div>;
               </p></div>;
             </div>;
@@ -202,7 +202,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           <div className= container-responsive></div>";
             </div><div className= text-center mb-16></div>'
               <h2 className=text-responsive-3xl:lg:text-responsive-4xl:font-bold  text-high-contrast mb-6"></div>'";
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>
+                <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>
                   Top AI Talents</div>";
                 </span></div>";
               </h2></div>'
@@ -221,9 +221,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <section className=relative py-40 lg py-32></div>";
           <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div></div>'
           <div className=container-responsive relative z-10"></div>'
-            </div><div className="""text-center  mb-16></div>";
+            </div><div className=""""text-center  mb-16></div>";
               <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6 ></div>'
-                <span className="""text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>";
+                <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>";
                   Premium Equipment</div>";
                 </span></div>'
               </h2>"</div>'
@@ -241,13 +241,13 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* CTA Section */}</div>";
         <section className=relative py-40 lg py-32></div>
           <div className=container-responsive> </div>'
-            </div><div className="""glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center></div>'
+            </div><div className=""""glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center></div>'
               <h2 className=text-responsive-3xl: "lg:text-responsive-4xl:font-bold text-high-contrast mb-6></div>"
                 <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >
                   Ready to Start Trading?</div>";
                 </span></div>";
               </h2></div>'
-              <p className="""text-responsive-lg: "text-high-contrast-secondary mb-8 max-w-2xl mx-auto>";
+              <p className=""""text-responsive-lg: "text-high-contrast-secondary mb-8 max-w-2xl mx-auto>";
                 Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.</div>;
               </p></div>;
               <div className=flex flex-col sm flex-row gap-4 justify-center>;

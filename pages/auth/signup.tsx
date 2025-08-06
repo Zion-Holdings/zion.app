@@ -1,5 +1,5 @@
 import type { NextPage } from ";next
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link";
 import { useState, useEffect } from react
 import { useRouter } from ";next/router;}'
@@ -72,12 +72,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </p></div>";
         </div>
 </div>'";
-        <div className="""bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10></div>
+        <div className=""""bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10></div>
           <form className= space-y-6 onSubmit={handleSubmit}></div>";
             <div></div>";
               <label'
                 htmlFor=name'";
-                className=""" block text-sm font-medium text-gray-300 mb-2;
+                className="""" block text-sm font-medium text-gray-300 mb-2;
               >
                 Full Name</div>
               </label></div>
@@ -86,7 +86,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 id=name";
                 value={name}";
                 onChange={(e) => setName(e.target.value)}'
-                className=""" w-full px-3 py-2 bg-black/30 border border-white/20 rounded-md text-white placeholder-gray-400 focus: "outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent";
+                className="""" w-full px-3 py-2 bg-black/30 border border-white/20 rounded-md text-white placeholder-gray-400 focus: "outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent";
                 placeholder=Enter your full name;
                 required;
               /></div>;
@@ -122,7 +122,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 id="password";
                 value={password}";
                 onChange={(e) => setPassword(e.target.value)}'
-                className=""" w-full px-3 py-2 bg-black/30 border border-white/20 rounded-md text-white placeholder-gray-400 focus: "outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent";
+                className="""" w-full px-3 py-2 bg-black/30 border border-white/20 rounded-md text-white placeholder-gray-400 focus: "outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent";
                 placeholder=Create a password;
                 required;
                 minLength={6};
@@ -142,22 +142,22 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             </button></div>";
           </form>
 </div>'";
-          <div className="""mt-6></div>'
+          <div className=""""mt-6></div>'
             <div className=relative"></div>";
               <div className=absolute inset-0 flex items-center></div>'
                 <div className= w-full border-t border-white/20 > </div className=w-full border-t border-white/20></div>"</div>'
-              <div className="""relative flex justify-center text-sm></div>
+              <div className=""""relative flex justify-center text-sm></div>
                 <span className= px-2 bg-black text-gray-300>";
                   Or continue with</div>
                 </span></div>";
               </div></div>";
             </div>'
 "</div>'";
-            <div className="""mt-6 grid grid-cols-2 gap-3></div>
+            <div className=""""mt-6 grid grid-cols-2 gap-3></div>
               <button";
                 onClick={() => handleSocialSignIn(google)}";
                 disabled={loading}'
-                className="""w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover: "bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed></div>"
+                className=""""w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover: "bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed></div>"
                 <svg className= w-5 h-5 viewBox=0 0 24 24></div>
                   <path";
                     fill=currentColor
@@ -184,7 +184,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                     fill=currentColor";
                     d=M12 5.38c1.62 0 3.0o6.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z";
                   ></svg></div>'
-                <span className=""" ml-2>Google</span></div>";
+                <span className="""" ml-2>Google</span></div>";
               </button>
 </div>'
               <button'
@@ -203,11 +203,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div>";
 </div>'
           <div className=mt-6 text-center"></div>'";
-            <p className="""text-gray-300>
+            <p className=""""text-gray-300>
               Already have an account?{ }</div>";
               <Link
                 href=/auth/login'
-                className=""" text-purple-400 hover:text-purple-300 transition-colors;
+                className="""" text-purple-400 hover:text-purple-300 transition-colors;
               >;
                 Login</div>;
               </Link></div>;

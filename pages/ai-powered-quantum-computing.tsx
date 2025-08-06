@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -238,7 +238,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI-powered quantum computing system shows 92% efficiency score with optimized algorithms,
         impact: positi've,
         confidence: "0.93,";
-        recommendations: [Continue AI monitoring, Expand quantum capabilities];
+        recommendations: [Continue AI monitoring, Expand quantum capabilities],
       }]};
   useEffect(() => {;
     setTimeout(() => {;
@@ -305,9 +305,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>AI-Powered Quantum Computing & Optimization System | Zion Tech Group</title>"</div>'
         <meta name=description content=Quantum algorithms, quantum optimization, quantum simulation, quantum cryptography, quantum machine learning, and automated quantum computing management powered by AI. > </meta" name=description content=Quantum algorithms, quantum optimization, quantum simulation, quantum cryptography, quantum machine learning, and automated quantum computing management powered by AI." ><meta name=keywords content=quantum computing, quantum algorithms, quantum optimization, quantum simulation, quantum cryptography, AI quantum > </meta name="keywords content=quantum computing, quantum algorithms, quantum optimization, quantum simulation, quantum cryptography, AI quantum ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Header */}</div>'
-      <div className="""relative overflow-hidden></div>";
+      <div className=""""relative overflow-hidden></div>";
         </div><div className=absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20></div></div>'
-        <div className="""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>"
+        <div className=""""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>"
           </div><div className=text-center></div>";
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Quantum Computing & Optimization System</div>";
@@ -316,12 +316,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Quantum algorithms, quantum optimization, quantum simulation, '
               quantum cryptography, quantum machine learning, and automated quantum computing management powered by AI.</div>
             </p></div>'";
-            <div className="""flex flex-wrap justify-center gap-4> </div>'
+            <div className=""""flex flex-wrap justify-center gap-4> </div>'
               </div><div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>"";
                 <span className=text-white font-semibold>⚛️ Quantum Algorithms</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>'
-                <span className="""text-white font-semibold>🔬 Quantum Simulation</span></div>";
+                <span className=""""text-white font-semibold>🔬 Quantum Simulation</span></div>";
               </div></div>'
               <div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🔐 Quantum Cryptography</span></div>;
@@ -334,7 +334,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>";
         {isLoading ? (</div>
           </div><div className=flex justify-center items-center py-40></div>'";
-            <div className="""animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
+            <div className=""""animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
           </div>";
         ) : (</div>";
           <        />'
@@ -371,7 +371,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>'";
               '
                 onClick={() => setActiveTab(cryptography)}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === cryptography'
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white
                       bg-white/10 text-gray-300 hover bg-white/20'";
@@ -391,7 +391,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button> '";
               '
                 onClick={() => setActiveTab(management)}'";
-                className="""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
+                className=""""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
                   activeTab === management
                     ? bg-gradient-to-r from-purple-600 to-blue-600 text-white
                     : bg-white/10 text-gray-300 hover:bg-white/20";
@@ -423,33 +423,33 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         className= bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
                       ></div>'
                         <option value=all className=bg-slate-800>All Types</option>"</div>'
-                        <option value=shor className="""bg-slate-800>Shor</option></div>
+                        <option value=shor className=""""bg-slate-800>Shor</option></div>
                         <option value=grover className=bg-slate-800>Grover</option></div>'
-                        <option value=quantum_fourier className="""bg-slate-800>Quantum Fourier</option></div>'
-                        <option value=quantum_phase className="""bg-slate-800>Quantum Phase</option></div>
+                        <option value=quantum_fourier className=""""bg-slate-800>Quantum Fourier</option></div>'
+                        <option value=quantum_phase className=""""bg-slate-800>Quantum Phase</option></div>
                         <option value=quantum_walk className=bg-slate-800>Quantum Walk</option></div>'
-                        <option value=variational className="""bg-slate-800>Variational</option></div>'
+                        <option value=variational className=""""bg-slate-800>Variational</option></div>'
                       </select></div>
                     </div></div>'
-                    <button className="""bg-gradient-to-r from-purple-600 to-blue-600 hover from-purple-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >";
+                    <button className=""""bg-gradient-to-r from-purple-600 to-blue-600 hover from-purple-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >";
                       Create Algorithm</div>
                     </button> </div></div>";
                 </div>
                 {/* Algorithms Grid */} </div>'
-                <div className="""grid grid-cols-1 lg grid-cols-2 gap-6>
+                <div className=""""grid grid-cols-1 lg grid-cols-2 gap-6>
                   {filteredAlgorithms.map((algorithm) => (</div>'
-                    </div><div key={algorithm.id} className=""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
+                    </div><div key={algorithm.id} className="""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                       <div className=flex items-start justify-between mb-4></div>
                         </div><div></div>";
                           <h3 className=text-xl font-semibold text-white mb-2 >{algorithm.name}</h3></div>";
                           <p className=text-gray-300 text-sm capitalize>{algorithm.type.replace(_,  )} Algorithm</p></div>'
                         </div>"</div>";
                         <div className=text-right></div>'
-                          <span className="""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(algorithm.status)}"}>
+                          <span className=""""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(algorithm.status)}"}>
                             {algorithm.status} </div>";
                           </span></div>
                           <div className=mt-2>`</div>'
-                            <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(algorithm.type)}}>";
+                            <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(algorithm.type)}}>";
                               {algorithm.qubits} qubits</div>
                             </span></div>";
                           </div></div>";
@@ -458,12 +458,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=mb-4></div>'
                         <p className=text-gray-300" text-sm>{algorithm.description}</p> </div>";
                       </div></div>'
-                      <div className="""grid grid-cols-3 gap-4 mb-4></div>";
+                      <div className=""""grid grid-cols-3 gap-4 mb-4></div>";
                         </div><div className= bg-white/5 rounded-lg p-4></div>";
                           <div className=text-sm text-gray-400 mb-1>Depth</div></div>'
                           <div className=text-2xl" font-bold text-white>{algorithm.depth}</div></div>
                         </div></div>'";
-                        <div className="""bg-white/5 rounded-lg p-4 ></div>
+                        <div className=""""bg-white/5 rounded-lg p-4 ></div>
                           </div><div className=text-sm text-gray-400 mb-1>Execution</div></div>";
                           <div className=text-2xl font-bold text-white>{algorithm.executionTime}s</div></div>";
                         </div></div>'
@@ -475,7 +475,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {/* AI Analysis */}</div>";
                       <div className=mb-4></div>";
                         <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4></div>'
-                        <div className="""bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg: "p-4></div>";
+                        <div className=""""bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg: "p-4></div>";
                           </div><div className=grid grid-cols-3 gap-4 text-sm></div>;
                             <div> </div>;
                               </div><div className=text-gray-400 mb-1>Efficiency</div></div>;
@@ -490,7 +490,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white" font-semibold>{algorithm.aiAnalysis.scalabilityScore}%</div></div>";
                             </div></div>
                           </div></div>'
-                          <div className="""mt-3></div>
+                          <div className=""""mt-3></div>
                             </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div></div>
                             <div className=text-xs text-gray-300>
                               {algorithm.aiAnalysis.recommendations.join(, )}</div>";
@@ -499,7 +499,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div> </div>";
                       </div></div>'
                       <div className=flex" space-x-2></div>'
-                        <button className="""flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover from-purple-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >";
+                        <button className=""""flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover from-purple-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >";
                           View Details</div>";
                         </button></div>'
                         <button className=flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
@@ -532,12 +532,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=text-gray-400 text-sm>AI Optimization Score</div></div>";
                   </div></div>
                 </div></div>'
-                <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
+                <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                   <h3 className=text-xl font-semibold text-white mb-6>AI Insights</h3></div>
                   <div className=space-y-4>";
                     {analytics.aiInsights.map((insight) => (</div>
                       </div><div key={insight.id} className= bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg p-4></div>'";
-                        <div className="""flex  items-start justify-between mb-2></div>'
+                        <div className=""""flex  items-start justify-between mb-2></div>'
                           <h4 className=text-white" font-semibold>{insight.title}</h4>";
                           `'
                           }"}>'";
@@ -561,17 +561,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div> '
       {/* CTA Section */}"</div>'
-      <div className="""bg-gradient-to-r from-purple-600/20 to-blue-600/20 mt-16> </div>'
+      <div className=""""bg-gradient-to-r from-purple-600/20 to-blue-600/20 mt-16> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-36></div>"
           <div className=text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>";
               Ready to Explore Quantum Computing?</div>
             </h2></div>'";
-            <p className="""text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=""""text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your quantum computing journey with our AI-powered system";
               and ensure comprehensive quantum optimization and management.</div>";
             </p></div>'
-            <div className="""flex  flex-col sm: "flex-row gap-4 justify-center></div>";
+            <div className=""""flex  flex-col sm: "flex-row gap-4 justify-center></div>";
               <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Computing</div>;
               </Link href=/ai-service-matcher  className=bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link></div>;
               <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More

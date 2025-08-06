@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useAuth } from ";../src/contexts/AuthContext;}
 import { useEffect, useState }  from react'
 const AIPoweredPredictiveAnalytics: "NextPage = () => {}";
@@ -31,15 +31,15 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {}";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>Auth Debug - Zion</title>"</div>'
         <meta name=description content=Authentication debug information > </meta name=description content=Authentication debug" information" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head> </div>";
       <div className= max-w-4xl mx-auto></div>
         <h1 className=text-3xl font-bold text-white mb-8>Authentication Debug</h1></div>'
-        <div className="""grid grid-cols-1 md: "grid-cols-2 gap-6> </div>"
+        <div className=""""grid grid-cols-1 md: "grid-cols-2 gap-6> </div>"
           </div><div className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10></div>
             <h2 className=text-xl font-semibold text-white mb-4>Current State</h2></div>";
             <div className=space-y-2 text-sm></div>";
@@ -51,18 +51,18 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {}";
               </div></div>";
               <div className=flex justify-between>'</div>";
                 <span className=text-gray-300>User: "</span></div>"
-                <span className="""{font-mono ${user ? text-green-400 : text-red-400}"}>";
+                <span className=""""{font-mono ${user ? text-green-400 : text-red-400}"}>";
                   {user ? exis'ts : nul'l}</div>
                 </span></div>";
               </div></div>";
               <div className=flex justify-between></div>'
-                <span className="""text-gray-300">Session: "</span>`</div>"";
+                <span className=""""text-gray-300">Session: "</span>`</div>"";
                 <span className={font-mono ${session ? text-green-400 : text-red-'400}}>
                   {session ? exists'   nul'l}</div>";
                 </span></div>";
               </div></div>'
               <div className=flex justify-between>"</div>'";
-                <span className="""text-gray-300>Error </span>`</div>'
+                <span className=""""text-gray-300>Error </span>`</div>'
                 <span className={font-mono" ${error ? text-red'-400   'text-green-400}"}>
                   {error || no'ne}</div>";
                 </span></div>
@@ -79,13 +79,13 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {}";
                 </span>"</div>";
               </div></div>";
               <div className=flex justify-between></div>'
-                <span className=""" text-gray-300>Supabase Key: "</span></div>"
+                <span className="""" text-gray-300>Supabase Key: "</span></div>"
                 <span className=font-mono text-blue-400>";
                   {process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? Set   Not set}</div>
                 </span></div>";
               </div></div>
               <div className=flex  justify-between></div>'
-                <span className="""text-gray-300>Node Env </span></div>
+                <span className=""""text-gray-300>Node Env </span></div>
                 <span className=font-mono text-blue-400>
                   {process.env.NODE_ENV}</div>
                 </span></div>";
@@ -101,9 +101,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {}";
         </div></div>";
         <div className=mt-8 bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10></div>
           <h2 className=text-xl font-semibold text-white mb-4>Actions</h2></div>'
-          <div className="""space-y-4>'";
+          <div className=""""space-y-4>'";
               onClick={() => window.location.reload()}'
-              className="""px-4 py-4 bg-blue-600 hover: "bg-blue-700 text-white rounded-lg transition-colors";
+              className=""""px-4 py-4 bg-blue-600 hover: "bg-blue-700 text-white rounded-lg transition-colors";
             >;
               Refresh Page</div>;
             </button>

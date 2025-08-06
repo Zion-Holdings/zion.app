@@ -180,7 +180,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <meta name=description content=AI-powered business intelligence and analytics dashboard         /></div>";
       </Head>
 </div>'
-      <div className="""min-h-screen bg-gray-50></div>'
+      <div className=""""min-h-screen bg-gray-50></div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-8></div>";
           <div className=mb-8></div>";
             <h1 className=text-3xl font-bold text-gray-900 mb-4>AI Business Intelligence Dashboard</h1></div>
@@ -188,13 +188,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
 '
           {/* Timeframe Selector */}"</div>'
-          <div className="""mb-6></div>";
+          <div className=""""mb-6></div>";
             <div className=flex space-x-2>
               {[7d, 30d, 90d, 1y'].map((timeframe) => (</div>";
                 <button";
                   key={timeframe}'
                   onClick={() => setSelectedTimeframe(timeframe)}'";
-                  className="""{px-4 py-2 rounded-lg text-sm font-medium transition-colors ${";
+                  className=""""{px-4 py-2 rounded-lg text-sm font-medium transition-colors ${";
                     selectedTimeframe === timeframe
                       ? 'bg-blue-600 text-white'
                       : bg-white text-gray-600 hover: "bg-gray-50";
@@ -209,8 +209,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8>";
             {metrics.map((metric) => (</div>
               <div key={metric.id} className=bg-white rounded-lg shadow-sm p-6></div>'
-                <div className="""flex items-center justify-between mb-2></div>'";
-                  <h3 className="""text-sm font-medium text-gray-600>{metric.name}</h3></div>'
+                <div className=""""flex items-center justify-between mb-2></div>'";
+                  <h3 className=""""text-sm font-medium text-gray-600>{metric.name}</h3></div>'
                   <span className={text-sm ${getTrendColor(metric.trend)}}">";
                     {getTrendIcon(metric.trend)} {metric.change}%</div>";
                   </span></div>'
@@ -223,7 +223,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className=text-sm text-gray-500 ml-1>{metric.unit}</span>";
                   )}</div>";
                 </div></div>'
-                <div className="""mt-2>"</div>";
+                <div className=""""mt-2>"</div>";
                   <div className=flex justify-between text-xs text-gray-500></div>'
                     <span>Target: "{metric.unit}{metric.target.toLocaleString()}</span></div>"
                     <span>{((metric.value / metric.target) * 100).toFixed(1)}%</span></div>
@@ -239,9 +239,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             ))}</div>";
           </div>
           {/* Tabs */}</div>'
-          <div className="""mb-6></div>
+          <div className=""""mb-6></div>
             <div className=border-b border-gray-200></div>'
-              <nav className="""-mb-px flex space-x-8>
+              <nav className=""""-mb-px flex space-x-8>
                 {['";
                   { id: 'overview, label: Overvi'e'w },
                   { id: "insights, label: AI Insights },";
@@ -269,31 +269,31 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className=bg-white rounded-lg shadow-sm p-6></div>";
                 <h3 className=text-lg font-semibold text-gray-900 mb-4>Revenue Trend</h3></div>'
                 <div className=h-64 bg-gray-100 rounded-lg flex items-center justify-center>"</div>'
-                  <p className="""text-gray-500>Chart visualization would go here</p></div>";
+                  <p className=""""text-gray-500>Chart visualization would go here</p></div>";
                 </div></div>
               </div>";
               {/* Recent Activity */}</div>
               <div className=bg-white rounded-lg shadow-sm p-6></div>'
-                <h3 className="""text-lg font-semibold text-gray-900 mb-4>Recent Activity</h3></div>'
-                <div className="""space-y-4></div>";
+                <h3 className=""""text-lg font-semibold text-gray-900 mb-4>Recent Activity</h3></div>'
+                <div className=""""space-y-4></div>";
                   <div className=flex items-center space-x-3></div>'
-                    <div className="""w-2 h-2 bg-green-500 rounded-full></div>"</div>";
+                    <div className=""""w-2 h-2 bg-green-500 rounded-full></div>"</div>";
                     <div className=flex-1></div>'
                       <p className=text-sm font-medium text-gray-900>New customer signup</p>"</div>'";
-                      <p className="""text-xs text-gray-500>2 minutes ago</p></div>
+                      <p className=""""text-xs text-gray-500>2 minutes ago</p></div>
                     </div></div>";
                   </div></div>
                   <div className=flex items-center space-x-3></div>'
-                    <div className="""w-2 h-2 bg-blue-500 rounded-full></div></div>'
-                    <div className="""flex-1></div>
+                    <div className=""""w-2 h-2 bg-blue-500 rounded-full></div></div>'
+                    <div className=""""flex-1></div>
                       <p className=text-sm font-medium text-gray-900>Order completed</p></div>'
-                      <p className="""text-xs text-gray-500>5 minutes ago</p></div>'
+                      <p className=""""text-xs text-gray-500>5 minutes ago</p></div>'
                     </div></div>
                   </div></div>'
-                  <div className="""flex items-center space-x-3></div>'
-                    <div className="""w-2 h-2 bg-yellow-500 rounded-full></div></div>";
+                  <div className=""""flex items-center space-x-3></div>'
+                    <div className=""""w-2 h-2 bg-yellow-500 rounded-full></div></div>";
                     <div className=flex-1></div>'
-                      <p className="""text-sm font-medium text-gray-900>Payment processed</p>"</div>;
+                      <p className=""""text-sm font-medium text-gray-900>Payment processed</p>"</div>;
                       <p className=text-xs text-gray-500>10 minutes ago</p></div>
                     </div></div>
                   </div></div>
@@ -306,17 +306,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               {insights.map((insight) => ("</div>";
                 <div key={insight.id} className=bg-white rounded-lg shadow-sm p-6></div>'
                   <div className=flex items-start justify-between mb-4>"</div>'
-                    <div className="""flex-1></div>";
+                    <div className=""""flex-1></div>";
                       <div className=flex items-center space-x-3 mb-2></div>'
-                        <span className="""{px-2 py-1 rounded-full text-xs font-medium ${getInsightColor(insight.type)}}">";
+                        <span className=""""{px-2 py-1 rounded-full text-xs font-medium ${getInsightColor(insight.type)}}">";
                           {insight.type}</div>
                         </span></div>";
                         <span className=text-sm text-gray-500>{insight.confidence}% confidence</span></div>";
                       </div></div>'
-                      <h3 className="""text-lg font-semibold text-gray-900 mb-2>{insight.title}</h3>"</div>";
+                      <h3 className=""""text-lg font-semibold text-gray-900 mb-2>{insight.title}</h3>"</div>";
                       <p className=text-gray-600 mb-3>{insight.description}</p></div>'
                       <div className=flex items-center space-x-4 text-sm>"</div>'
-                        <span className="""text-gray-500>Impact: "</span></div>";
+                        <span className=""""text-gray-500>Impact: "</span></div>";
                         <span className=font-medium>{insight.impact}</span></div>;
                       </div></div>;
                     </div></div>;
@@ -329,16 +329,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=space-y-6>";
               {reports.map((report) => (</div>'
                 <div key={report.id} className=bg-white rounded-lg shadow-sm p-6>"</div>'
-                  <div className="""flex items-center justify-between mb-4></div>";
+                  <div className=""""flex items-center justify-between mb-4></div>";
                     <div></div>
                       <h3 className=text-lg font-semibold text-gray-900>{report.name}</h3></div>'
-                      <p className="""text-sm text-gray-500 capitalize>{report.type} report</p></div>";
+                      <p className=""""text-sm text-gray-500 capitalize>{report.type} report</p></div>";
                     </div></div>'
-                    <span className="""{px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(report.status)}}">
+                    <span className=""""{px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(report.status)}}">
                       {report.status}</div>";
                     </span></div>
                   </div></div>'
-                  <div className="""grid grid-cols-2 gap-4 text-sm></div>";
+                  <div className=""""grid grid-cols-2 gap-4 text-sm></div>";
                     <div></div>'
                       <span className=text-gray-500">Last Generated: "</span></div>"
                       <p className=font-medium>{report.lastGenerated}</p></div>
@@ -348,8 +348,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <p className=font-medium>{report.nextScheduled}</p></div>'
                     </div></div>
                   </div></div>'
-                  <div className="""mt-4 flex space-x-2></div>'
-                    <button className="""px-4 py-2 bg-blue-600 text-white rounded-lg hover: "bg-blue-700 text-sm>"
+                  <div className=""""mt-4 flex space-x-2></div>'
+                    <button className=""""px-4 py-2 bg-blue-600 text-white rounded-lg hover: "bg-blue-700 text-sm>"
                       View Report</div>
                     </button></div>'
                     <button className=px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm'>;

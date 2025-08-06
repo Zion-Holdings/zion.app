@@ -18,10 +18,10 @@ const $1 = () => {";
               Professional blockchain development services designed to accelerate your business growth and success. </div>";
             </p></div>'
             <div className=flex flex-col sm flex-row  gap-4 justify-center>"</div>'
-              <button className="""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>";
+              <button className=""""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>";
                 Get Started</div>";
               </button></div>'
-              <button className="""border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: transition-colors>;
+              <button className=""""border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: transition-colors>;
                 Contact Us</div>;
               </button></div>;
             </div></div>;

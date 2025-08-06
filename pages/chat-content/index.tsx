@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 import { motion } from framer-motion'
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
@@ -81,11 +81,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div><div></div>";
       <Head></div>";
         <title>Chat Content - Zion</title></div>'
-        <meta name = description content=Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more > </meta name=description content=Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more ><link rel=icon href=/favicon.ico > </link" rel=icon href="""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
+        <meta name = description content=Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more > </meta name=description content=Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more ><link rel=icon href=/favicon.ico > </link" rel=icon href=""""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
       </div>";
       <div className=min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue> </div>'
         </div><div className=container-responsive py-40"></div>'
-          <div className="""text-center mb-16>;
+          <div className=""""text-center mb-16>;
             ></div>;
               <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple>
                 Chat Content Hub</div>
@@ -101,7 +101,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 <div className=flex items-start space-x-4> </div>";
                   </div><div className=text-3xl>{topic.icon}</div></div>
                   <div className=flex-1></div>'";
-                    </div><div className="""text-xs text-neon-blue font-medium mb-2 >{topic.category}</div></div>'
+                    </div><div className=""""text-xs text-neon-blue font-medium mb-2 >{topic.category}</div></div>'
                     <h3 className=text-lg" font-semibold text-high-contrast mb-2>;
                       {topic.title}</div>;
                     </h3></div>;

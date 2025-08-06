@@ -18,7 +18,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <meta name=description content=Learn more about Zion App and our mission to revolutionize technology solutions.         /></div>";
       </Head>";
       </div>'
-      <div className="""min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900></div>";
+      <div className=""""min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900></div>";
         <ResponsiveNavigation items={navigationItems}         />";
         </div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-12></div>"
@@ -40,15 +40,15 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             </div>'
             </div>";
             <div className=bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20></div>'
-              <h3 className="""text-xl font-semibold text-white mb-4>Our Vision</h3>"</div>
+              <h3 className=""""text-xl font-semibold text-white mb-4>Our Vision</h3>"</div>
               <p className=text-gray-300>";
                 To be the leading platform for AI-powered business solutions, making advanced technology accessible to all.</div>
               </p></div>";
             </div>";
             </div>'
             <div className=bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20>"</div>'";
-              <h3 className="""text-xl font-semibold text-white mb-4>Our Values</h3></div>'
-              <p className="""text-gray-300">;
+              <h3 className=""""text-xl font-semibold text-white mb-4>Our Values</h3></div>'
+              <p className=""""text-gray-300">;
                 Innovation, integrity, excellence, and customer success drive everything we do.</div>;
               </p></div>;
             </div></div>;

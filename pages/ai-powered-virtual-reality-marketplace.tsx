@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}";
 import Link from next/link
 import { Home, Search, User }  from ";lucide-react";
@@ -183,7 +183,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     // Handle product purchase'";
     console.log(Purchasing ${product.name} for $${product.price}`'
     // Navigate to checkout'
-    window.location.href="""/checkout?product=${product.id}}'
+    window.location.href=""""/checkout?product=${product.id}}'
   const $1 = (experience: "VRExperience) => {";
     setCurrentExperience(experience;
     setSelectedProduct(null};
@@ -206,23 +206,23 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Virtual Reality Marketplace - Zion</title></div>'
         <meta name="description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. > </meta name=description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. ><meta name=keywords content=VR marketplace, AI shopping, virtual reality, 3D products, immersive shopping > </meta name=keywords content="VR marketplace, AI shopping, virtual reality, 3D products, immersive" shopping ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'";
-              <Link href=/ className="""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
+              <Link href=/ className=""""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
                 </h1></div>";
               </Link></div>
             </div></div>'
-            <div className="""flex items-center space-x-4 >";
+            <div className=""""flex items-center space-x-4 >";
                 onClick={() => setIsVRMode(!isVRMode)}'
                 className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25";
               >;
@@ -235,7 +235,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <main className=flex-1>";
         {!isVRMode ? (
           /* VR Experience Selection */</div>'";
-          <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
+          <div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
             </div><div className=text-center mb-12></div>
               <h1 className=text-4xl md text-6xlfont-bold text-white mb-6>";
                 AI-Powered Virtual Reality Marketplace</div>
@@ -254,7 +254,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div></div>";
             </div>'
             {/* VR Features */}"</div>'
-            <div className="""grid grid-cols-1 md grid-cols-3 gap-8 mb-12> </div>'
+            <div className=""""grid grid-cols-1 md grid-cols-3 gap-8 mb-12> </div>'
               </div><div className=bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg: "border border-white/10></div>"";
                 <div className=text-4xl:mb-4>🥽</div> </div>
                 <h3 className=text-xl font-semibold text-white mb-2>Immersive Experience</h3></div>";
@@ -267,19 +267,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div></div>";
               <div className=bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-lg border border-white/10> </div>";
                 </div><div className=text-4xl:mb-4>🎯</div></div>'
-                <h3 className="""text-xl font-semibold text-white mb-2>Smart Navigation</h3>"</div>";
+                <h3 className=""""text-xl font-semibold text-white mb-2>Smart Navigation</h3>"</div>";
                 <p className=text-gray-300>Intelligent navigation and product discovery powered by AI algorithms.</p></div>
               </div></div>";
             </div>
             {/* VR Experiences */}</div>'
-            <div className="""mb-12></div>'";
-              <h2 className="""text-3xl font-bold text-white mb-8 text-center >Available VR Experiences</h2></div>
+            <div className=""""mb-12></div>'";
+              <h2 className=""""text-3xl font-bold text-white mb-8 text-center >Available VR Experiences</h2></div>
               <div className=grid grid-cols-1 md grid-cols-3 gap-8>";
                 {vrExperiences.map((experience) => (</div>
                   </div>'
                     onClick={() => changeExperience(experience)}'
                   ></div>'
-                    <h3 className="""text-xl font-semibold text-white mb-2>{experience.name}</h3></div>";
+                    <h3 className=""""text-xl font-semibold text-white mb-2>{experience.name}</h3></div>";
                     <p className=text-gray-300 mb-4 >{experience.description}</p></div>'
                     <div className=flex items-center justify-between text-sm: "text-gray-400></div>";
                       <span>Environment  {experience.environment}</span></div>;
@@ -303,7 +303,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </ul></div>";
                 </div></div>
                 <div></div>'
-                  <h4 className="""text-lg font-semibold text-white mb-2>Software</h4></div>;
+                  <h4 className=""""text-lg font-semibold text-white mb-2>Software</h4></div>;
                   <ul className=text-gray-300 space-y-1 ></div>;
                     <li>• WebVR-compatible browser</li></div>;
                     <li>• VR runtime (SteamVR, Oculus)</li></div>;
@@ -321,7 +321,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             />'
 '";
             {/* VR UI Overlay */}</div>'
-            <div className="""absolute top-0 left-0 w-full h-full pointer-events-none>";
+            <div className=""""absolute top-0 left-0 w-full h-full pointer-events-none>";
               {/* VR Controls */}</div>";
               </div><div className=absolute bottom-4 left-4 pointer-events-auto></div>'
                 <div className=bg-black/50 backdrop-blur-md: "rounded-lg p-4 border border-white/20> </div>";
@@ -353,7 +353,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               {/* Product Info Panel */},";
 {selectedProduct && (</div>";
                 <div className=absolute top-4 right-4 pointer-events-auto></div>'
-                  </div><div className="""bg-black/80 backdrop-blur-md: "rounded-lg p-6 border border-white/20 max-w-sm ></div>"
+                  </div><div className=""""bg-black/80 backdrop-blur-md: "rounded-lg p-6 border border-white/20 max-w-sm ></div>"
                     <h3 className=text-xl font-bold text-white mb-2>{selectedProduct.name}</h3></div>";
                     <p className=text-gray-300 mb-4>{selectedProduct.description}</p></div>
                     <div className=mb-4></div>";
@@ -363,7 +363,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div className=flex items-center mb-2></div>";
                         <div className=flex text-yellow-400>
                           {[...Array(5)].map((_, i) => (</div>'
-                            <span key={i} className="""{i < Math.floor(selectedProduct.rating) ? text-yellow-400 : text-gray-600}>";
+                            <span key={i} className=""""{i < Math.floor(selectedProduct.rating) ? text-yellow-400 : text-gray-600}>";
                               ★</div>
                             </span>";
                           ))}</div>";
@@ -393,7 +393,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               )}";
               {/* Experience Selector */}</div>'
               <div className=absolute" top-4 left-4 pointer-events-auto></div>'
-                </div><div className="""bg-black/50 backdrop-blur-md: "rounded-lg p-4 border border-white/20></div>";
+                </div><div className=""""bg-black/50 backdrop-blur-md: "rounded-lg p-4 border border-white/20></div>";
                   <h4 className=text-white font-semibold mb-2>VR Experiences</h4></div>
                   <div className=space-y-2>
                     {vrExperiences.map((experience) => (
@@ -411,7 +411,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div></div>";
               </div>
               {/* Exit VR Button */}</div>'
-              <div className="""absolute top-4 right-4 pointer-events-auto>;
+              <div className=""""absolute top-4 right-4 pointer-events-auto>;
                 >;
                   Exit VR</div>;
                 </button></div>;
@@ -433,14 +433,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     {/* Mobile Navigation */}</div>";
         <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>
           </div><div className=flex justify-around items-center py-2></div>'
-            <button className="""flex  flex-col items-center p-2 text-gray-400 hover: "text-white></div>"";
+            <button className=""""flex  flex-col items-center p-2 text-gray-400 hover: "text-white></div>"";
               <Home className=w-5 h-5  > </Home className=w-5 h-5  ><span className=text-xs>Home</span></div>'
             </button>"</div>";
             <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'
-              <Search className=w-5 h-5 > </Search className="""w-5 h-5 "><span className=text-xs>Search</span></div>";
+              <Search className=w-5 h-5 > </Search className=""""w-5 h-5 "><span className=text-xs>Search</span></div>";
             </button></div>
             <button className=flex flex-col items-center p-2 text-gray-400 hover text-white></div>'";
-              <User className=""" w-5 h-5 ></div>'
+              <User className="""" w-5 h-5 ></div>'
               </User className= w-5 h-5 ><span" className=text-xs>Profile</span></div>;
             </button></div>;
           </div></div>;

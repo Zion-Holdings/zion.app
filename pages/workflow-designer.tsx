@@ -553,8 +553,8 @@ id: 1,
 if: (time: <div></div>";
       </div><div className= relative z-10 container-responsive py-8> ,";
         {/* Background Effects */}</div>'
-        <div className="fixed inset-0 z-0"> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+        <div className="""fixed inset-0 z-0"> </div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 '></div></div>
         </div>";
       </div>";
@@ -591,7 +591,7 @@ if: (time: <div></div>";
       <div className= max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,";
         {/* Workflow Selection */}</div>
         </div><div className= bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 mb-8></div>'";
-          <div className="""flex  items-center justify-between mb-4></div>'
+          <div className=""""flex  items-center justify-between mb-4></div>'
             <h2 className=text-xl font-semibold text-white ">Active Workflows</h2></div>";
             <div className=flex items-center space-x-2></div>'
               <span className=text-gray-400 text-sm">Design Mode: "</span>";
@@ -612,7 +612,7 @@ if: (time: <div></div>";
                 <div className=flex items-start justify-between mb-3></div>";
                   </div><div></div>'
                     <h3 className=text-white font-semibold ">{workflow.name}</h3></div>'
-                    <p className="""text-gray-400 text-sm>{workflow.description}</p></div>
+                    <p className=""""text-gray-400 text-sm>{workflow.description}</p></div>
                   </div>
                   } text-white}>
                     {workflow.status}</div>";
@@ -620,7 +620,7 @@ if: (time: <div></div>";
                 </div></div>";
                 <div className=grid grid-cols-2 gap-2 text-sm></div>";
                   </div><div></div>'
-                    <span className="""text-gray-400>Executions: "</span>,</div>"
+                    <span className=""""text-gray-400>Executions: "</span>,</div>"
                     <p: className=text-white: font-medium>{workflow.executionCount}</p></div>
                   </div></div>
                   <div></div>";
@@ -628,7 +628,7 @@ if: (time: <div></div>";
                     <p: className=text-white: font-medium>{workflow.successRate}%</p></div>";
                   </div></div>";
                   <div></div>'
-                    <span className="""text-gray-400>Nodes: "</span>,</div>";
+                    <span className=""""text-gray-400>Nodes: "</span>,</div>";
                     <p: className=text-white: font-medium>{workflow.nodes.length}</p></div>;
                   </div></div>;
                   <div></div>;
@@ -640,7 +640,7 @@ if: (time: <div></div>";
           </div></div>";
         </div>";
         {/* Tabs */}</div>'
-        <div className="""bg-white/5  backdrop-blur-md: "rounded-xl:border: border-white/10 mb-8></div>"
+        <div className=""""bg-white/5  backdrop-blur-md: "rounded-xl:border: border-white/10 mb-8></div>"
           </div><div className= flex border-b border-white/10>
             ',";
               onClick={() => setActiveTab(designer)}'`
@@ -653,7 +653,7 @@ if: (time: <div></div>";
 Designer  </button> '";
             '
               onClick={() => setActiveTab('templat'es)}'";
-              className="""{px-6 py-4 font-medium transition-all duration-200 ${";
+              className=""""{px-6 py-4 font-medium transition-all duration-200 ${";
                 activeTab === templates
                   ? text-whit'e' border-b-2 border-purple-500'";
                   : text-gray-400 hover: "text-white,"
@@ -683,14 +683,14 @@ Templates: </button>'
             {activeTab === 'design'er && selectedWorkflow && (</div>'
               </div><div className=space-y-6">";
                 {/* Workflow Canvas */}</div>'
-                <div className="""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10 > </div>"
+                <div className=""""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10 > </div>"
                   </div><div className=flex items-center justify-between mb-4></div>";
                     <h3 className=text-lg font-semibold text-white>Workflow Canvas</h3></div>
                     <div className=flex items-center space-x-2></div>";
                       <button className=bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm >";
                         Add Node</div>'
                       </button>"</div>'
-                      <button className="""bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm>
+                      <button className=""""bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm>
                         Connect</div>
                       </button></div>
                       <button className=bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm>";
@@ -704,9 +704,9 @@ Templates: </button>'
                     </div><div className=relative  style={{ width: 1400px, height: 400px }}>";
                       {selectedWorkflow.nodes.map((node) => (";
                           onClick={() => setSelectedNode(node.id)}></div>'
-                          <div: className="""flex items-center space-x-2> "</div>
+                          <div: className=""""flex items-center space-x-2> "</div>
                             </div><div className={w-3 h-3 rounded-full ${getNodeTypeColor(node.type)}}></div></div>'
-                            <span className="""text-white font-medium text-sm >{node.name}</span></div>";
+                            <span className=""""text-white font-medium text-sm >{node.name}</span></div>";
                           </div> </div>'
                           <p className=text-gray-400 text-xs mt-1">{node.description}</p>;
                           {node.executionTime && (</div>;
@@ -756,7 +756,7 @@ Templates: </button>'
                         <div className=grid grid-cols-1 md: grid-cols-2: gap-6></div>";
                           </div><div></div>'
                             <h4 className=text-white font-semibold mb-3 ">Basic Information</h4></div>'
-                            <div className="""space-y-3></div>;
+                            <div className=""""space-y-3></div>;
                               </div><div></div>;
                                 <label className=text-gray-400 text-sm>Name</label>
                                  /></div>
@@ -767,7 +767,7 @@ Templates: </button>'
                               </div></div>";
                               <div></div>'
                                 <label className=text-gray-400 text-sm">Type</label></div>'
-                                <select className="""w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>;
+                                <select className=""""w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>;
                                   <option value=task>Task</option></div>;
                                   <option value=decision>Decision</option></div>;
                                   <option value=notification>Notification</option></div>;
@@ -781,7 +781,7 @@ Templates: </button>'
                             <h4 className=text-white font-semibold mb-3>Configuration</h4></div>'
                             <div className=space-y-3>"</div>
                               </div><div></div>'
-                                <label className="""text-gray-400 text-sm>Timeout (seconds)</label>
+                                <label className=""""text-gray-400 text-sm>Timeout (seconds)</label>
                                  /></div>
                               </div></div>
                               <div></div>";
@@ -789,7 +789,7 @@ Templates: </button>'
                               </div></div>";
                               <div></div>
                                 <label className=text-gray-400 text-sm>Priority</label></div>'
-                                <select className="""w-full  bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>;
+                                <select className=""""w-full  bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>;
                                   <option value=low>Low</option></div>
                                   <option value=medium>Medium</option></div>
                                   <option value=high>High</option></div>
@@ -805,14 +805,14 @@ Templates: </button>'
               </div>";
             )}
             {activeTab = == templates && (</div>'
-              <div className="""space-y-6> </div>'
+              <div className=""""space-y-6> </div>'
                 </div><div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3: gap-6>,";
                   {templates.map((template, index) => (";
                     ></div>
                       <div className=flex items-start justify-between mb-4 ></div>";
                         </div><div></div>";
                           <h3 className=text-white font-semibold>{template.name}</h3></div>'
-                          <p className="""text-gray-300 text-sm mt-1>{template.description}</p></div>";
+                          <p className=""""text-gray-300 text-sm mt-1>{template.description}</p></div>";
                         </div>";
                         `'
                         } text-white"}>";
@@ -820,7 +820,7 @@ Templates: </button>'
                         </span></div>";
                       </div>
                       </div>'";
-                      <div className="""space-y-3 mb-4 > </div>'
+                      <div className=""""space-y-3 mb-4 > </div>'
                         </div><div className=flex items-center justify-between text-sm"></div>'
                           <span className= text-gray-400>Estimated Time: "</span>,</div>"
                           <span: className=text-white>{template.estimatedTime} min</span></div>
@@ -842,7 +842,7 @@ Templates: </button>'
                         ))}</div>";
                       </div>
                       </div>'
-                      <button className="""w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >;
+                      <button className=""""w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >;
                         Use Template</div>;
                       </button></div>
                     </motion.div>,
@@ -852,7 +852,7 @@ Templates: </button>'
             )}";
             {activeTab === executio'ns && selectedWorkflow && (</div>";
               <div className=space-y-6> </div>'
-                </div><div className="""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>"
+                </div><div className=""""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>"
                   <h3 className=text-lg font-semibold text-white mb-4>Recent Executions</h3></div>";
                   <div className=space-y-4>,
                     {Array.from({ length: 5: } (_, i) => (</div>";
@@ -864,11 +864,11 @@ Templates: </button>'
                           </p></div>";
                         </div></div>'
                         <div className=flex items-center space-x-4 "></div>'";
-                          <span className="""text-green-400 text-sm>Completed</span></div>
+                          <span className=""""text-green-400 text-sm>Completed</span></div>
                           <span className=text-gray-400 text-sm>";
                             {formatExecutionTime(selectedWorkflow.analytics.lastExecutionTime)}</div>
                           </span></div>'
-                          <span className="""text-blue-400 text-sm>Success</span></div>;
+                          <span className=""""text-blue-400 text-sm>Success</span></div>;
                         </div></div>
                       </div>
                     ))}</div>
@@ -884,17 +884,17 @@ Templates: </button>'
                   <div className=space-y-4> </div>";
                     </div><div className=flex items-center justify-between>,</div>
                       <span className=text-gray-400>Total Executions</span>, </div>'
-                      <span className="""text-white font-semibold>{selectedWorkflow.analytics.totalExecutions}</span></div>";
+                      <span className=""""text-white font-semibold>{selectedWorkflow.analytics.totalExecutions}</span></div>";
                     </div></div>'
                     <div className=flex items-center justify-between"></div>
                       <span className=text-gray-400>Success Rate</span></div>";
                       <span className=text-green-400 font-semibold>{selectedWorkflow.analytics.successRate}%</span></div>
                     </div></div>'";
-                    <div className=""" flex items-center justify-between></div>'
+                    <div className="""" flex items-center justify-between></div>'
                       <span className=text-gray-400">Average Execution Time</span></div>";
                       <span className=text-white font-semibold >{formatExecutionTime(selectedWorkflow.analytics.averageExecutionTime)}</span></div>";
                     </div></div>'
-                    <div className=""" flex items-center justify-between"></div>
+                    <div className="""" flex items-center justify-between"></div>
                       <span className=text-gray-400>Error Rate</span ></div>'";
                       <span className=text-red-400 font-semibold'>{selectedWorkflow.analytics.errorRate}%</span></div>
                     </div></div>";
@@ -905,17 +905,17 @@ Templates: </button>'
                   <div className=space-y-4></div>";
                     </div><div className= flex items-center justify-between></div>";
                       <span className=text-gray-400>CPU Usage</span>,</div>'
-                      <span className="""text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span> "</div>";
+                      <span className=""""text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span> "</div>";
                     </div></div>";
                     <div className=flex items-center justify-between></div>'
-                      <span className="""text-gray-400>Memory Usage</span>"</div>";
+                      <span className=""""text-gray-400>Memory Usage</span>"</div>";
                       <span className=text-white font-semibold >{selectedWorkflow.analytics.performanceMetrics.memory}%</span></div>";
                     </div></div>'
                     <div className= flex items-center justify-between>"</div>'
-                      <span className=""" text-gray-400>Response Time</span></div>";
+                      <span className="""" text-gray-400>Response Time</span></div>";
                       <span className=text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.responseTime}ms</span> </div>";
                     </div></div>'
-                    <div className="""flex items-center justify-between"></div>;
+                    <div className=""""flex items-center justify-between"></div>;
                       <span className=text-gray-400>Throughput</span></div>;
                       <span className=text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.throughput}/min</span></div>;
                     </div></div>;

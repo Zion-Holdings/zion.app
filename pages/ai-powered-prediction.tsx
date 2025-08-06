@@ -1,7 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import Layout from '../components/Layout';
-import { motion } from 'framer-motion';
+import React from ';react';
+import Head from ';next/head';
+import Layout from ';../components/Layout';
+import { motion } from ';framer-motion';
 const Component = () => {
   return (
     <div></div>";
@@ -13,32 +13,32 @@ const Component = () => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></div>";
         </Head>
         </div>'
-        <div className="""relative z-10 container-responsive py-8>";
+        <div className=""""relative z-10 container-responsive py-8>";
           {/* Background Effects */}</div>'
-          <div className="fixed inset-0 z-0"></div>";
-            <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className="""fixed inset-0 z-0"></div>";
+            <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
             <div className=absolute inset-0 bg-holographic bg-[length: "400%_400%] animate-holographic-shift opacity-10></div></div>";
           </div></div>;
         </div>;
 </div>;
-        <section className="relative py-40 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="""relative py-40 px-4 sm:px-6 lg:px-8">
+          <div className="""max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             ></div>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              <h1 className="""text-4xl md:text-6xl font-bold text-gray-900 mb-6"
                 AI Powered Prediction</div>";
               </h1></div>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"";
+              <p className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto"";
                 Cutting-edge predictive analytics powered by machine learning to forecast trends and opportunities.</div>";
               </p></div>'
-              <div className="""flex flex-col sm: "flex-row gap-4 justify-center></div>";
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors";
+              <div className=""""flex flex-col sm: "flex-row gap-4 justify-center></div>";
+                <button className="""bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors";
                   Get Started
                 </button></div>;
-                <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors";
+                <button className="""border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors";
                   Learn More
                 </button></div>;
               </div></div>;
@@ -72,7 +72,7 @@ const Component = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z         /></div>";
                   </svg></div>
                 </div></div>'";
-                <h3 className="""text-xl font-semibold text-gray-900 mb-2>Advanced AI Capabilities</h3></div>'
+                <h3 className=""""text-xl font-semibold text-gray-900 mb-2>Advanced AI Capabilities</h3></div>'
                 <p className=text-gray-600">Leverage cutting-edge AI technology for superior results</p></div>
               </motion.div>";
 </div>
@@ -100,7 +100,7 @@ const Component = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z         /></div>";
                   </svg></div>
                 </div></div>'";
-                <h3 className="""text-xl font-semibold text-gray-900 mb-2>Scalable Architecture</h3></div>'
+                <h3 className=""""text-xl font-semibold text-gray-900 mb-2>Scalable Architecture</h3></div>'
                 <p className=text-gray-600">Scale your operations with flexible, cloud-native architecture</p></div>
               </motion.div>";
 </div>
@@ -128,7 +128,7 @@ const Component = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z         /></div>";
                   </svg></div>
                 </div></div>'";
-                <h3 className="""text-xl font-semibold text-gray-900 mb-2>Predictive Modeling</h3></div>'
+                <h3 className=""""text-xl font-semibold text-gray-900 mb-2>Predictive Modeling</h3></div>'
                 <p className=text-gray-600">Advanced machine learning models for accurate predictions</p></div>
               </motion.div>";
 </div>
@@ -142,7 +142,7 @@ const Component = () => {
                     <path strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z         /></div>";
                   </svg></div>
                 </div></div>'";
-                <h3 className="""text-xl font-semibold text-gray-900 mb-2>Data Integration</h3></div>'
+                <h3 className=""""text-xl font-semibold text-gray-900 mb-2>Data Integration</h3></div>'
                 <p className=text-gray-600">Seamlessly integrate with your existing data sources</p></div>;
               </motion.div></div>;
             </div></div>;

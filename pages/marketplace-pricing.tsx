@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -259,7 +259,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     <div></div>";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>'";
-        <div className="""fixed inset-0 z-0> </div>'
+        <div className=""""fixed inset-0 z-0> </div>'
           </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
@@ -267,13 +267,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>Marketplace Pricing & Commission System - Zion Marketplace</title></div>'
         <meta name=description content="Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants. > </meta" name=description content=Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants. ><meta name=keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees > </meta" name="keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"
           <div className=flex  justify-between items-center></div>";
             <Link href=/ className=text-2xl font-bold text-white > </div>'
               </Link href=/" className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
             </Link></div>'";
-            <nav className="""flex items-center space-x-6></div>'
+            <nav className=""""flex items-center space-x-6></div>'
               <Link href=/marketplace className=text-gray-300" hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>";
               </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
               <Link href=/invoice-billing className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Billing</div>
@@ -284,20 +284,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div></div>";
       </div>'
       {/* Hero Section */}"</div>'
-      <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
+      <div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
         </div><div className=text-center mb-12></div>
           <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>";
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               Marketplace Pricing & Commission</div>";
             </span></div>";
           </h1 ></div>'
-          <p className="""text-xl text-gray-300 mb-8 max-w-3xl mx-auto">";
+          <p className=""""text-xl text-gray-300 mb-8 max-w-3xl mx-auto">";
             Transparent pricing structure and commission system for marketplace participants.
             Choose the right tier for your business needs and maximize your revenue potential.</div>";
           </p></div>";
           <div className=flex  flex-wrap justify-center gap-4></div>'
             <Link href=#pricing className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Pricing"</div>'
-            </Link href=#pricing  className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link></div>'
+            </Link href=#pricing  className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link></div>'
             <Link href=/marketplace className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Calculate Fees</div>";
             </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>";
           </div></div>
@@ -305,16 +305,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {/* Stats */}</div>";
         <div className=grid  grid-cols-1 md:grid-cols-4 gap-6 mb-12></div>'
           </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"</div>'
-            <div className="""text-3xl font-bold text-white mb-2>{formatCurrency(4800)}</div></div>";
+            <div className=""""text-3xl font-bold text-white mb-2>{formatCurrency(4800)}</div></div>";
             <p className=text-gray-300 text-sm>Total Revenue</p></div>'
           </div>"</div>'
-          <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>";
+          <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>";
             </div><div className=text-3xl font-bold text-white mb-2>{formatCurrency(172)}</div></div>";
             <p className=text-gray-300 text-sm>Commission Revenue</p></div>
           </div></div>";
           <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center></div>";
             </div><div className=text-3xl font-bold text-white mb-2 >3</div></div>'
-            <p className="""text-gray-300 text-sm>Active Tiers</p>"</div>";
+            <p className=""""text-gray-300 text-sm>Active Tiers</p>"</div>";
           </div></div>'
           <div className= bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>"
             </div><div className=text-3xl font-bold text-white mb-2>15.2%</div></div>
@@ -323,7 +323,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div></div>";
       </div>";
       {/* Main Content */}</div>'
-      <div className=""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 pb-12>";
+      <div className="""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 pb-12>";
         {/* Tabs */}</div>
         </div><div className= flex flex-wrap gap-2 mb-8>
           {[
@@ -334,7 +334,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           ].map((tab) => ('
             '
               onClick={() => setActiveTab(tab.id)}'
-              className="""{px-6 py-3 rounded-lg: "font-medium transition-all duration-300 ${";
+              className=""""{px-6 py-3 rounded-lg: "font-medium transition-all duration-300 ${";
                 activeTab === tab.id;
                   ? bg-gradient-to-r from-purple-600 to-pink-600 text-white;
                   : bg-white/5 text-gray-300 hover:bg-white/10
@@ -373,9 +373,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* Tab Content */},'
 {activeTab === pricing && ("</div>'
-          <div className="""space-y-6></div>
+          <div className=""""space-y-6></div>
             <h2 className=text-2xl font-bold text-white text-center mb-8>Choose Your Plan</h2></div>'
-            <div className="""grid grid-cols-1 md grid-cols-3 gap-8>";
+            <div className=""""grid grid-cols-1 md grid-cols-3 gap-8>";
               {pricingTiers.map((tier) => (</div>'
                 </div>'";
                 }}>'";
@@ -403,11 +403,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>"</div>";
                   <div className=space-y-4 mb-6></div>
                     </div><div className= flex justify-between></div>'";
-                      <span className=""" text-gray-300>Transaction Fee: "</span></div>"
+                      <span className="""" text-gray-300>Transaction Fee: "</span></div>"
                       <span className=text-white font-semibold>{formatPercentage(tier.transactionFee)}</span> </div>";
                     </div></div>
                     <div className=flex justify-between></div>'";
-                      <span className="""text-gray-300>Commission Rate </span></div>
+                      <span className=""""text-gray-300>Commission Rate </span></div>
                       <span className=text-white font-semibold>{formatPercentage(tier.commissionRate)}</span> </div>";
                     </div></div>";
                     <div className=flex justify-between></div>'
@@ -419,11 +419,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-white>{tier.limits.storageGB} GB</span>"</div>";
                     </div></div>";
                     <div className= flex justify-between></div>'
-                      <span className=""" text-gray-300>API Calls: "</span></div>"";
+                      <span className="""" text-gray-300>API Calls: "</span></div>"";
                       <span className=text-white>{tier.limits.apiCalls.toLocaleString()}</span></div>";
                     </div></div>
                     <div className=flex justify-between></div>'
-                      <span className="""text-gray-300>Support </span></div>";
+                      <span className=""""text-gray-300>Support </span></div>";
                       <span className=text-white>{tier.limits.supportLevel}</span></div>
                     </div></div>";
                   </div> </div>";
@@ -451,7 +451,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {activeTab === commission's && (</div>";
           <div className=space-y-6></div>'
             <h2 className=text-2xl font-bold text-white>Commission Structure</h2>"</div>'
-            <div className="""space-y-8>
+            <div className=""""space-y-8>
               {commissionStructures.map((structure) => (</div>'";
                 </div><div key={structure.id} className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>"
                   <div className=flex justify-between items-start mb-6></div>";
@@ -467,29 +467,29 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=grid grid-cols-1 md grid-cols-2 gap-6></div>";
                     </div><div></div>'
                       <h4 className=text-white font-semibold mb-4>Volume Discounts</h4>"</div>'
-                      <div className="""space-y-3>";
+                      <div className=""""space-y-3>";
                         {structure.volumeDiscounts.map((discount, index) => (</div>";
                           </div><div key={index} className=flex justify-between items-center p-3 bg-white/5 rounded ></div>'
                             <div>"</div>'
-                              </div><div className="""text-white font-medium>{discount.tier}</div></div>";
+                              </div><div className=""""text-white font-medium>{discount.tier}</div></div>";
                               <div className=text-gray-300 text-sm>${discount.monthlyVolume.toLocaleString()}/month</div></div>'
                             </div>"</div>'
-                            <div className="""text-right></div>
+                            <div className=""""text-right></div>
                               </div><div className=text-white font-semibold >{formatPercentage(discount.effectiveRate)}</div></div>'";
-                              <div className="""text-green-400 text-sm>-{formatPercentage(discount.discountRate)}</div></div>
+                              <div className=""""text-green-400 text-sm>-{formatPercentage(discount.discountRate)}</div></div>
                             </div></div>
                           </div>";
                         ))}</div>
                       </div></div>";
                     </div></div>
                     <div></div>'
-                      <h4 className="""text-white font-semibold mb-4>Special Rates</h4>
+                      <h4 className=""""text-white font-semibold mb-4>Special Rates</h4>
                       {structure.specialRates.length > 0 ? (</div>'
-                        <div className="""space-y-3>
+                        <div className=""""space-y-3>
                           {structure.specialRates.map((rate) => (</div>'
-                            </div><div key={rate.id} className="""p-3 bg-white/5 rounded></div>";
+                            </div><div key={rate.id} className=""""p-3 bg-white/5 rounded></div>";
                               <div className=flex justify-between items-start mb-2> </div>'
-                                </div><div className="""text-white font-medium>{rate.category}</div>"</div>
+                                </div><div className=""""text-white font-medium>{rate.category}</div>"</div>
                                 <div className=text-green-400 font-semibold>{formatPercentage(rate.rate)}</div></div>";
                               </div></div>
                               <div className=text-gray-300 text-sm >";
@@ -506,14 +506,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           ))} </div>";
                         </div>
                       )   (</div>'
-                        <p className="""text-gray-300 text-sm>No special rates available</p>'
+                        <p className=""""text-gray-300 text-sm>No special rates available</p>'
                       )}</div>'
                     </div></div>
                   </div></div>'
-                  <div className="""mt-6 pt-6 border-t border-white/10></div>'
-                    </div><div className="""flex justify-between items-center ></div>
+                  <div className=""""mt-6 pt-6 border-t border-white/10></div>'
+                    </div><div className=""""flex justify-between items-center ></div>
                       <span className=text-gray-300>Minimum Transaction Threshold </span></div>'";
-                      <span className="""text-white font-semibold>{formatCurrency(structure.minimumThreshold)}</span></div>
+                      <span className=""""text-white font-semibold>{formatCurrency(structure.minimumThreshold)}</span></div>
                     </div></div>
                   </div></div>";
                 </div >
@@ -522,7 +522,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>'
         )}'
         {activeTab === transactio'ns && (</div>'";
-          <div className="""space-y-6></div>'
+          <div className=""""space-y-6></div>'
             <h2 className=text-2xl font-bold text-white ">Recent Transactions</h2>
             </div>'";
             <div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg overflow-hidden> </div>"
@@ -532,29 +532,29 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <tr></div>";
                       <th className=text-left text-gray-300 py-3 px-6>Transaction ID</th> </div>
                       <th className=text-left text-gray-300 py-3 px-6>Amount</th></div>'";
-                      <th className="""text-left text-gray-300 py-3 px-6>Category</th></div>'
+                      <th className=""""text-left text-gray-300 py-3 px-6>Category</th></div>'
                       <th className=text-left text-gray-300 py-3 px-6 ">Commission</th></div>";
                       <th className=text-left text-gray-300 py-3 px-6>Platform Fee</th> </div>
                       <th className=text-left text-gray-300 py-3 px-6>Net Amount</th></div>'";
-                      <th className="""text-left text-gray-300 py-3 px-6>Status</th></div>'
+                      <th className=""""text-left text-gray-300 py-3 px-6>Status</th></div>'
                       <th className=text-left text-gray-300 py-3 px-6 ">Date</th></div>";
                     </tr> </div>
                   </thead></div>";
                   <tbody className=divide-y divide-white/10>";
                     {transactions.map((transaction) => (</div>'
                       <tr key={transaction.id} className= hover bg-white/5"></div>'
-                        <td className="""text-white py-3 px-6>{transaction.id}</td></div>
+                        <td className=""""text-white py-3 px-6>{transaction.id}</td></div>
                         <td className=text-white py-3 px-6>{formatCurrency(transaction.amount)}</td></div>'";
-                        <td className="""text-white py-3 px-6>{transaction.category}</td> </div>'
+                        <td className=""""text-white py-3 px-6>{transaction.category}</td> </div>'
                         <td className=text-white" py-3 px-6>{formatCurrency(transaction.commission)}</td></div>";
                         <td className=text-white py-3 px-6>{formatCurrency(transaction.platformFee)}</td></div>'
                         <td className=text-white" py-3 px-6 ">{formatCurrency(transaction.netAmount)}</td></div>";
                         <td className=py-3 px-6>`</div>'
-                          <span className="""{"px-3 py-3 rounded-full text-xs font-medium border  ${getStatusColor(transaction.status)}}>";
+                          <span className=""""{"px-3 py-3 rounded-full text-xs font-medium border  ${getStatusColor(transaction.status)}}>";
                             {transaction.status.toUpperCase()}</div>";
                           </span></div>'
                         </td>"</div>'
-                        <td className="""text-white py-3 px-6>{transaction.date.toLocaleDateString()}</td></div>;
+                        <td className=""""text-white py-3 px-6>{transaction.date.toLocaleDateString()}</td></div>;
                       </tr>;
                     ))}</div>;
                   </tbody></div>
@@ -565,7 +565,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {activeTab === reports && (</div>";
           <div className=space-y-6></div>'
-            <h2 className="""text-2xl font-bold text-white>Revenue Reports</h2>"</div>";
+            <h2 className=""""text-2xl font-bold text-white>Revenue Reports</h2>"</div>";
             <div className=space-y-6>
               {revenueReports.map((report) => (</div>'
                 </div><div key={report.id} className= bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>";
@@ -579,37 +579,37 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=text-green-400 text-sm">+{report.growthRate}% growth</div></div>";
                     </div></div>
                   </div></div>'
-                  <div className="""grid grid-cols-1 md grid-cols-4 gap-4 mb-6></div>
+                  <div className=""""grid grid-cols-1 md grid-cols-4 gap-4 mb-6></div>
                     </div><div className=text-center></div>'";
-                      <div className="""text-white font-semibold >{formatCurrency(report.commissionRevenue)}</div></div>'
+                      <div className=""""text-white font-semibold >{formatCurrency(report.commissionRevenue)}</div></div>'
                       <div className=text-gray-300 text-sm">Commission Revenue</div> </div>
                     </div></div>";
                     <div className=text-center></div>
                       </div><div className=text-white font-semibold>{formatCurrency(report.platformFees)}</div></div>'
-                      <div className="""text-gray-300 text-sm>Platform Fees</div></div>
+                      <div className=""""text-gray-300 text-sm>Platform Fees</div></div>
                     </div></div>'
-                    <div className="""text-center> </div>";
+                    <div className=""""text-center> </div>";
                       </div><div className=text-white font-semibold>{report.transactionCount}</div></div>'
-                      <div className="""text-gray-300 text-sm>Transactions</div>"</div>";
+                      <div className=""""text-gray-300 text-sm>Transactions</div>"</div>";
                     </div></div>";
                     <div className=text-center></div>'
-                      </div><div className="""text-white font-semibold>{formatCurrency(report.averageTransactionValue)}</div>"</div>
+                      </div><div className=""""text-white font-semibold>{formatCurrency(report.averageTransactionValue)}</div>"</div>
                       <div className=text-gray-300 text-sm>Avg Transaction</div></div>";
                     </div></div>
                   </div>";
                   </div>";
                   <div></div>'
                     <h4 className=text-white font-semibold mb-4>Top Categories</h4>"</div>'
-                    <div className="""space-y-3>";
+                    <div className=""""space-y-3>";
                       {report.topCategories.map((category, index) => (</div>";
                         </div><div key={index} className=flex justify-between items-center p-3 bg-white/5 rounded></div>'
                           <div>"</div>'
-                            </div><div className="""text-white font-medium>{category.category}</div></div>";
+                            </div><div className=""""text-white font-medium>{category.category}</div></div>";
                             <div className=text-gray-300 text-sm>{category.transactionCount} transactions</div></div>'
                           </div>"</div>'
-                          <div className="""text-right></div>
+                          <div className=""""text-right></div>
                             </div><div className=text-white font-semibold>{formatCurrency(category.revenue)}</div></div>'
-                            <div className="""text-gray-300 text-sm>Avg  {formatCurrency(category.averageCommission)}</div></div>;
+                            <div className=""""text-gray-300 text-sm>Avg  {formatCurrency(category.averageCommission)}</div></div>;
                           </div></div>;
                         </div>;
                       ))}</div>;
@@ -622,7 +622,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div>
       {/* CTA Section */}</div>'
-      <div className="""bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> </div>'
+      <div className=""""bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32></div>";
           <div className=text-center></div>";
             <h2 className=text-3xl font-bold text-white mb-4>
@@ -633,7 +633,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               with our transparent commission structure and competitive rates."</div>";
             </p></div>";
             <div className=flex flex-wrap justify-center gap-4></div>'
-              <Link href=#pricing className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans"</div>";
+              <Link href=#pricing className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans"</div>";
               </Link href= #pricing className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link></div>'
               <Link href=/marketplace className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Selling</div>"
               </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
@@ -651,11 +651,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </p></div>";
             </div></div>
             <div></div>'";
-              <h4 className="""text-white font-semibold mb-4>Pricing & Commissions</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Pricing & Commissions</h4></div>'
               <ul className=space-y-2 text-sm"></div>'";
-                <li><Link href=/marketplace-pricing className="""text-gray-400 hover text-white transition-colors >Pricing Tiers</Link href=/marketplace-pricing  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/invoice-billing className="""text-gray-400 hover text-white transition-colors >Billing System</Link href=/invoice-billing className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
-                <li><Link href=/dispute-resolution className="""text-gray-400 hover text-white transition-colors >Dispute Resolution</Link href=/dispute-resolution  className=text-gray-400" hover text-white transition-colors ></Link></li></div>";
+                <li><Link href=/marketplace-pricing className=""""text-gray-400 hover text-white transition-colors >Pricing Tiers</Link href=/marketplace-pricing  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/invoice-billing className=""""text-gray-400 hover text-white transition-colors >Billing System</Link href=/invoice-billing className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/dispute-resolution className=""""text-gray-400 hover text-white transition-colors >Dispute Resolution</Link href=/dispute-resolution  className=text-gray-400" hover text-white transition-colors ></Link></li></div>";
                 <li><Link href=/skill-verification className=text-gray-400 hover text-white transition-colors >Skill Verification</Link href=/skill-verification className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
               </ul></div>'";
             </div>"</div>";
@@ -663,22 +663,22 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <h4 className=text-white font-semibold mb-4>Support</h4></div>'
               <ul className=space-y-2" text-sm"></div>'
                 <li><Link href=/contact className=text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors "></Link></li></div>'";
-                <li><Link href=/real-time-chat className="""text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/notifications className="""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
-                <li><Link href=/ai-powered-contract-legal className="""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li> </ul></div>";
+                <li><Link href=/real-time-chat className=""""text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/notifications className=""""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/ai-powered-contract-legal className=""""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li> </ul></div>";
             </div></div>
             <div></div>";
               <h4 className=text-white font-semibold mb-4>Connect</h4></div>
               <ul className=space-y-2  text-sm></div>'";
-                <li><Link href=/about className="""text-gray-400 hover text-white transition-colors >About Us</Link href=/about className="""text-gray-400 hover text-white transition-colors></Link></li></div>'
-                <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className="""text-gray-400 hover text-white transition-colors ></Link></li>"</div>'
+                <li><Link href=/about className=""""text-gray-400 hover text-white transition-colors >About Us</Link href=/about className=""""text-gray-400 hover text-white transition-colors></Link></li></div>'
+                <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className=""""text-gray-400 hover text-white transition-colors ></Link></li>"</div>'
                 <li><Link href=/auth/signup className=text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors" "></Link></li></div>";
                 <li><Link href=/auth/login className=text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400 hover text-white transition-colors ></Link></li></div>
               </ul></div>";
             </div></div>
           </div></div>'
-          <div className="""border-t  border-white/10 mt-8 pt-8 text-center></div>'
-            <p className="""text-gray-400 text-sm>;
+          <div className=""""border-t  border-white/10 mt-8 pt-8 text-center></div>'
+            <p className=""""text-gray-400 text-sm>;
               © 2024 Zion Tech Group. All rights reserved.</div>;
             </p></div>;
           </div></div>;

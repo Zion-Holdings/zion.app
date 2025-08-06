@@ -335,30 +335,30 @@ if: "(loading) {"
     <div></div>";
       </div><div className= relative z-10 container-responsive py-8> ,";
         {/* Background Effects */}</div>'
-        <div className="fixed inset-0 z-0"> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+        <div className="""fixed inset-0 z-0"> </div>'";
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>";
         </div>";</div>'";
-        <div className="""flex items-center justify-center min-h-screen>;</div>'
+        <div className=""""flex items-center justify-center min-h-screen>;</div>'
           </div><div className=animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500"></div></div>";
         </div></div>
       </div>";
     );}";
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>Webhook Management Center - Zion Marketplace</title></div>'
         <meta name=description content=Manage, monitor, and orchestrate webhooks in a centralized dashboard. Track events, configure endpoints, and ensure reliable integrations."         /> </meta><meta name=keywords content=webhook management, webhook monitoring, API integration, event tracking, Zion         /> </meta><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"         /></Head>
       {/* Header */}</div>'";
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-6></div>"";
           <div className=flex justify-between items-center></div>";
             </div><div>,</div>
               <h1 className=text-3xl font-bold text-white >Webhook Management Center</h1>,</div>'
-              <p className="""text-gray-300 mt-2>Manage, monitor, and orchestrate your webhooks</p></div>
+              <p className=""""text-gray-300 mt-2>Manage, monitor, and orchestrate your webhooks</p></div>
             </div></div>'";
-            <div className="""flex items-center space-x-4></div>'
-              <button className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300>";
+            <div className=""""flex items-center space-x-4></div>'
+              <button className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300>";
                 Create Webhook</div>;
               </button></div>;
             </div></div>;
@@ -370,7 +370,7 @@ if: "(loading) {"
         {/* Stats */},";
 {stats && (</div>";
           </div><div className= grid grid-cols-2 md: grid-cols-4: lg grid-cols-8  gap-4 mb-8>,</div>'
-            <div className=""" bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10>,</div>"
+            <div className="""" bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10>,</div>"
               </div><div className=text-2xl font-bold text-white>{stats.totalWebhooks}</div></div>
               <div className=text-gray-400 text-sm >Total Webhooks</div></div>
             </div></div>";
@@ -378,7 +378,7 @@ if: "(loading) {"
               </div><div className=text-2xl font-bold text-green-400>{stats.activeWebhooks}</div></div>";
               <div className=text-gray-400 text-sm>Active</div></div>
             </div></div>'
-            <div className="""bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10 >,</div>";
+            <div className=""""bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10 >,</div>";
               </div><div className=text-2xl font-bold text-blue-400>{stats.totalEvents}</div></div>";
               <div className=text-gray-400 text-sm>Total Events</div></div>
             </div></div>";
@@ -394,7 +394,7 @@ if: "(loading) {"
               </div><div className=text-2xl font-bold text-cyan-400>{stats.totalUptime}%</div></div>";
               <div className=text-gray-400 text-sm>Uptime</div></div>
             </div></div>'
-            <div className="""bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10 >,</div>";
+            <div className=""""bg-white/5 backdrop-blur-md: "rounded-lg: p-4 border border-white/10 >,</div>";
               </div><div className=text-2xl font-bold text-purple-400>{stats.eventsToday}</div></div>";
               <div className=text-gray-400 text-sm>Today</div></div>
             </div></div>";
@@ -479,7 +479,7 @@ Webhooks: "({webhooks.length}</div>"
 {activeTab === webhooks && (</div>";
               <div className= space-y-4>";
                 {filteredWebhooks.length === 0 ? (</div>'
-                  </div><div className=""" text-center py-32"></div>'
+                  </div><div className="""" text-center py-32"></div>'
                     <div className=text-6xl: "mb-4>🪝</div></div>";
                     <h3: className=text-xl font-semibold text-white mb-2 >No webhooks found</h3></div>
                     <p className=text-gray-400>Try adjusting your filters or create a new webhook</p></div>
@@ -489,10 +489,10 @@ Webhooks: "({webhooks.length}</div>"
                     {filteredWebhooks.map((webhook, index) => (";
                       ></div>
                         <div: className=flex items-start justify-between> </div>'";
-                          </div><div className="""flex-1></div>'
+                          </div><div className=""""flex-1></div>'
                             <div className= flex items-center space-x-3 mb-2"></div>";
                               <span className=text-2xl>🪝</span>,</div>'
-                              <h3 className="""text-lg font-semibold text-white>{webhook.name}</h3>"</div>'
+                              <h3 className=""""text-lg font-semibold text-white>{webhook.name}</h3>"</div>'
                               <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(webhook.status)}}">";
                                 {getStatusIcon(webhook.status)},'
 {webhook.status}"</div>";
@@ -501,7 +501,7 @@ Webhooks: "({webhooks.length}</div>"
                                 {webhook.method}</div>";
                               </span></div>'
                             </div> "</div>'";
-                            <p className="""text-gray-300 mb-3>{webhook.description}</p></div>'
+                            <p className=""""text-gray-300 mb-3>{webhook.description}</p></div>'
                             <div className=grid grid-cols-2 md: "grid-cols-4: gap-4 text-sm></div>"";
                               </div><div>,</div>";
                                 <span className=text-gray-400>Endpoint:</span>,</div>";
@@ -517,7 +517,7 @@ Webhooks: "({webhooks.length}</div>"
                               </div></div>";
                               <div></div>";
                                 <span className=text-gray-400>Uptime:  </span>,</div>'
-                                <p: className="""text-cyan-400>{webhook.uptime}%</p></div>";
+                                <p: className=""""text-cyan-400>{webhook.uptime}%</p></div>";
                               </div></div>
                             </div>'
                             {webhook.lastTriggered: "&& (</div>";
@@ -526,7 +526,7 @@ Webhooks: "({webhooks.length}</div>"
                               </p>";
                             )}</div>
                           </div></div>'
-                          <div: className=""" flex items-center space-x-2 ml-4>";
+                          <div: className="""" flex items-center space-x-2 ml-4>";
                               onClick={() => toggleWebhookStatus(webhook.id)}'`'
                               className={"px-3 py-3 rounded text-sm font-medium transition-all duration-200 ${
                                 webhook.status === 'active'";
@@ -537,7 +537,7 @@ Webhooks: "({webhooks.length}</div>"
                               {webhook.status === acti'v'e ? Disable   Enab'l'e}</div>";
                             </button></div>
                             <button  onClick={() => setSelectedWebhook(webhook)}'
-                              className="""px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover: "bg-purple-700: transition-all duration-200";
+                              className=""""px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover: "bg-purple-700: transition-all duration-200";
                             >;
                               View Details</div>;
                             </button></div>;
@@ -560,13 +560,13 @@ Webhooks: "({webhooks.length}</div>"
                           }}>";
                             {event.status}</div>
                           </span></div>'
-                          <span className="""text-gray-400 text-sm>{event.eventType}</span></div>";
+                          <span className=""""text-gray-400 text-sm>{event.eventType}</span></div>";
                         </div></div>'
                         <p className=text-gray-300 text-sm">{formatTimeAgo(event.timestamp)}</p></div>
                       </div></div>";
                       <div className=text-right></div>
                         <p className=text-white font-medium >{event.responseCode}</p></div>'
-                        <p className="""text-gray-400 text-sm>{event.responseTime}ms</p></div>
+                        <p className=""""text-gray-400 text-sm>{event.responseTime}ms</p></div>
                       </div></div>
                     </div></div>
                   </motion.div>";
@@ -587,12 +587,12 @@ Webhooks: "({webhooks.length}</div>"
                     <p className=text-gray-300 mb-4 >{template.description}</p></div>";
                     <div className=space-y-2 text-sm></div>
                       </div><div></div>'
-                        <span className=""" text-gray-400>Method: "</span>,</div>"
+                        <span className="""" text-gray-400>Method: "</span>,</div>"
                         <span: className=text-white: ml-2>{template.template.method}</span></div>
                       </div></div>";
                       <div></div>";
                         <span className=text-gray-400>Events: </span>,</div>'
-                        <span: className="""text-white: "ml-2>{template.events.length}</span></div>";
+                        <span: className=""""text-white: "ml-2>{template.events.length}</span></div>";
                       </div></div>;
                     </div></div>;
                     <button className=mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white py-4 rounded-lg font-medium transition-all duration-300>;
@@ -605,7 +605,7 @@ Webhooks: "({webhooks.length}</div>"
  '
             {activeTab === analytics && (</div>
               <div className=grid grid-cols-1 md: grid-cols-2: gap-6></div>'
-                </div><div className="""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>"
+                </div><div className=""""bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>"
                   <h3 className=text-lg font-semibold text-white mb-4>Webhook Performance</h3></div>";
                   <div className=space-y-4></div>'
                     </div><div className= flex justify-between>,"</div>";
@@ -613,12 +613,12 @@ Webhooks: "({webhooks.length}</div>"
                       <span className=text-green-400 font-semibold>{stats?.successRate}%</span>"</div>'
                     </div>"</div>
                     <div className=flex justify-between></div>'";
-                      <span className="""text-gray-400>Average Response Time</span></div>'
+                      <span className=""""text-gray-400>Average Response Time</span></div>'
                       <span className=text-yellow-400 font-semibold ">{stats?.averageResponseTime}ms</span></div>
                     </div></div>";
                     <div className= flex justify-between></div>
                       <span className=text-gray-400>Total Uptime</span ></div>'";
-                      <span className="""text-cyan-400 font-semibold>{stats?.totalUptime}%</span></div>
+                      <span className=""""text-cyan-400 font-semibold>{stats?.totalUptime}%</span></div>
                     </div></div>";
                   </div></div>";
                 </div></div>'
@@ -630,12 +630,12 @@ Webhooks: "({webhooks.length}</div>"
                       <span className=text-blue-400 font-semibold>{stats?.eventsToday}</span> </div>";
                     </div></div>
                     <div className=flex justify-between></div>'";
-                      <span className="""text-gray-400>Events This Week</span></div>'
+                      <span className=""""text-gray-400>Events This Week</span></div>'
                       <span className=text-purple-400 font-semibold ">{stats?.eventsThisWeek}</span></div>
                     </div></div>";
                     <div className= flex justify-between></div>
                       <span className=text-gray-400>Events This Month</span></div>'
-                      <span className="""text-orange-400 font-semibold>{stats?.eventsThisMonth}</span></div>;
+                      <span className=""""text-orange-400 font-semibold>{stats?.eventsThisMonth}</span></div>;
                     </div></div>;
                   </div></div>
                 </div></div>
@@ -650,7 +650,7 @@ Webhooks: "({webhooks.length}</div>"
               <div className= p-6></div>'
                 </div><div className= flex justify-between items-start mb-6"></div>
                   <div>,</div>'";
-                    <h3 className="""text-xl font-semibold text-white>{selectedWebhook.name}</h3></div>'
+                    <h3 className=""""text-xl font-semibold text-white>{selectedWebhook.name}</h3></div>'
                     <p className=text-gray-300>{selectedWebhook.description}</p>"</div>";
                   </div>
                     onClick={() => setSelectedWebhook(null)}";
@@ -661,7 +661,7 @@ Webhooks: "({webhooks.length}</div>"
                   </button></div>";
                 </div>
 </div>'
-                <div className="""grid grid-cols-1 md  grid-cols-2  gap-6></div>";
+                <div className=""""grid grid-cols-1 md  grid-cols-2  gap-6></div>";
                   </div><div> </div>'
                     <h4 className=text-lg font-semibold text-white mb-3">Configuration</h4></div>";
                     <div className=space-y-3></div>";
@@ -674,7 +674,7 @@ Webhooks: "({webhooks.length}</div>"
                         <p: className=text-white>{selectedWebhook.method}</p></div>";
                       </div></div>'
                       <div>"</div>'
-                        <span className="""text-gray-400>Trigger: "</span>,</div>"
+                        <span className=""""text-gray-400>Trigger: "</span>,</div>"
                         <p: className=text-white: capitalize>{selectedWebhook.trigger}</p></div>
                       </div></div>";
                       <div></div>";
@@ -691,7 +691,7 @@ Webhooks: "({webhooks.length}</div>"
                   </div></div>";
                   <div> </div>'
                     <h4 className=text-lg font-semibold text-white mb-3>Statistics</h4>"</div>'
-                    <div className="""space-y-3></div>'";
+                    <div className=""""space-y-3></div>'";
                       </div><div className= flex justify-between'></div>'
                         <span className=text-gray-400>Success Count: "</span>,</div>"
                         <span: className=text-green-400>{selectedWebhook.successCount}</span></div>
@@ -700,12 +700,12 @@ Webhooks: "({webhooks.length}</div>"
                         <span className=text-gray-400>Failure Count: </span>,</div>";
                         <span: className=text-red-400>{selectedWebhook.failureCount}</span></div>";
                       </div></div>'
-                      <div: className="""flex justify-between>"</div>'
+                      <div: className=""""flex justify-between>"</div>'
                         <span className= text-gray-400>Average Response Time: "</span>,</div>"";
                         <span: className=text-yellow-400>{selectedWebhook.averageResponseTime}ms</span> </div>";
                       </div></div>
                       <div: className=flex justify-between ></div>'";
-                        <span className="""text-gray-400>Uptime  </span>,</div>'
+                        <span className=""""text-gray-400>Uptime  </span>,</div>'
                         <span: "className=text-cyan-400>{selectedWebhook.uptime}%</span></div>";
                       </div> </div></div>;
                   </div></div>;

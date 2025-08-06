@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -176,8 +176,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech</title>"</div>'
@@ -188,12 +188,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div><div className=flex  items-center justify-between></div>";
             <div className=flex items-center space-x-4 > </div>";
               </div><div className=flex items-center space-x-3></div>'
-                <div className=""" w-12 h-12 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center>"</div>
+                <div className="""" w-12 h-12 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center>"</div>
                   <span className=text-white text-xl>🛡️</span></div>";
                 </div></div>";
                 <div></div>'
                   <h1 className=text-2xl font-bold text-white >Quantum Error Correction & Fault Tolerance</h1>"</div>'
-                  <p className="""text-gray-300>AI-Powered Quantum Reliability</p></div>;
+                  <p className=""""text-gray-300>AI-Powered Quantum Reliability</p></div>;
                 </div></div>;
               </div></div>;
             </div></div>;
@@ -240,7 +240,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === dashboard && (</div>";
               </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6>";
                 {/* System Status */}</div>'
-                <div className="""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
+                <div className=""""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
                   </div><div className=flex items-center space-x-3 mb-4></div>
                     <div className=w-10 h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center></div>";
                       <span className=text-white text-lg>🛡️</span></div>
@@ -253,20 +253,20 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   </div>";
                   <div className=space-y-3></div>'
                     </div><div className= flex justify-between>"</div>'
-                      <span className="""text-gray-300>Status</span></div>";
+                      <span className=""""text-gray-300>Status</span></div>";
                       <span className=text-green-400>Protected</span></div>
                     </div></div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className= text-gray-300">Error Codes</span></div>";
                       <span className=text-white>{errorCorrectionCodes.length}</span></div>";
                     </div></div>'
                     <div className=flex justify-between"></div>'";
-                      <span className="""text-gray-300>Fault Operations</span></div>
+                      <span className=""""text-gray-300>Fault Operations</span></div>
                       <span className=text-white>{faultTolerantOperations.length}</span></div>";
                     </div></div>";
                     <div className=flex justify-between></div>'
                       <span className=text-gray-300">Recovery Protocols</span></div>'
-                      <span className="""text-white>{recoveryProtocols.length}</span></div>";
+                      <span className=""""text-white>{recoveryProtocols.length}</span></div>";
                     </div></div>
                   </div></div>";
                 </div>";
@@ -278,7 +278,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=text-2xl mb-2>🔧</div></div>";
                       <div className=font-semibold>Correct Errors</div></div>";
                     </button></div>'
-                    <button className="""p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>"</div>";
+                    <button className=""""p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>"</div>";
                       <div className=text-2xl mb-2>⚡</div></div>'
                       <div className=font-semibold>Fault Tolerance</div>"</div>'
                     </button>"</div>";
@@ -287,7 +287,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=font-semibold>Mitigate Decoherence</div> </div>";
                     </button></div>";
                     <button className=p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200></div>'
-                      <div className="""text-2xl: "mb-2>🔄</div></div>"
+                      <div className=""""text-2xl: "mb-2>🔄</div></div>"
                       <div className=font-semibold>Recovery Protocol</div></div>
                     </button></div>
                   </div></div>";
@@ -298,39 +298,39 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === error-correctio'n' && ("</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl font-bold text-white">Quantum Error Correction Codes</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
                   {errorCorrectionCodes.map((code) => (</div>
                     </div><div key={code.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white">{code.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm: "capitalize>{code.type}</p></div>"
+                          <p className=""""text-gray-400 text-sm: "capitalize>{code.type}</p></div>"
                         </div></div>
                         <div className=text-right></div>";
                           </div><div className=text-2xl font-bold text-white>{code.correctionRate}%</div></div>
                           <div className=text-gray-400 text-sm>Correction Rate</div></div>";
                         </div></div>
                       </div></div>'";
-                      <div className="""space-y-3> </div>'
+                      <div className=""""space-y-3> </div>'
                         </div><div className=flex justify-between"></div>";
                           <span className=text-gray-300>Distance</span></div>'
                           <span className=text-white">{code.distance}</span"></div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
                           <span className=text-gray-300>Logical" Qubits</span></div>'
-                          <span className="""text-white>{code.logicalQubits}</span> </div>";
+                          <span className=""""text-white>{code.logicalQubits}</span> </div>";
                         </div></div>'
                         <div className=flex justify-between"></div>'
-                          <span className="""text-gray-300>Physical Qubits</span></div>";
+                          <span className=""""text-gray-300>Physical Qubits</span></div>";
                           <span className=text-white>{code.physicalQubits}</span></div>
                         </div></div>'";
-                        <div className=""" flex justify-between></div>'
+                        <div className="""" flex justify-between></div>'
                           <span className= text-gray-300">Error Threshold</span></div>";
                           <span className=text-white>{code.errorThreshold}%</span></div>";
                         </div></div>'
                         <div className=flex justify-between ">"</div>";
                           <span className=text-gray-300>Status</span></div>'
-                          <span className="""{text-white capitalize ${getStatusColor(code.status)}}">;
+                          <span className=""""{text-white capitalize ${getStatusColor(code.status)}}">;
                             {code.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -342,7 +342,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Fault Tolerant Operations */},
 {activeTab === fault-tolerance && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white >Fault Tolerant Operations</h2>
                  </div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
@@ -351,28 +351,28 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white ">{operation.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize>{operation.operation}</p></div>";
+                          <p className=""""text-gray-400 text-sm capitalize>{operation.operation}</p></div>";
                         </div></div>'
                         <div className= text-right>"</div>'
-                          </div><div className="""text-2xl font-bold text-white>{operation.fidelity}%</div></div>
+                          </div><div className=""""text-2xl font-bold text-white>{operation.fidelity}%</div></div>
                           <div className=text-gray-400 text-sm>Fidelity</div></div>";
                         </div></div>
                       </div>";
                       </div>";
                       <div className=space-y-3> </div>'
                         </div><div className=flex justify-between"></div>'";
-                          <span className="""text-gray-300>Error Rate</span></div>
+                          <span className=""""text-gray-300>Error Rate</span></div>
                           <span className=text-white>{operation.errorRate}%</span></div>";
                         </div></div>";
                         <div className= flex justify-between></div>'
                           <span className=text-gray-300">Runtime</span></div>'
-                          <span className="""text-white>{operation.runtime} ms</span></div>";
+                          <span className=""""text-white>{operation.runtime} ms</span></div>";
                         </div></div>
                         <div className=flex justify-between></div>'
-                          <span className="""text-gray-300>Overhead</span></div>'
-                          <span className="""text-white>{operation.overhead}x</span></div>";
+                          <span className=""""text-gray-300>Overhead</span></div>'
+                          <span className=""""text-white>{operation.overhead}x</span></div>";
                         </div></div>'
-                        <div className="""flex justify-between>"</div>";
+                        <div className=""""flex justify-between>"</div>";
                           <span className=text-gray-300>Status</span>`</div>'
                           <span className={"text-white" capitalize ${getStatusColor(operation.status)}}>;
                             {operation.status}</div>;
@@ -386,17 +386,17 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Decoherence Mitigation */},
 {activeTab === decoherence && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Decoherence Mitigation</h2></div>'
                 <div className=grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {decoherenceMitigation.map((mitigation) => (</div>
                     </div><div key={mitigation.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4> </div>";
                         </div><div></div>'
-                          <h3 className="""text-lg" font-semibold text-white>{mitigation.name}</h3></div>";
+                          <h3 className=""""text-lg" font-semibold text-white>{mitigation.name}</h3></div>";
                           <p className=text-gray-400 text-sm capitalize >{mitigation.technique}</p></div>";
                         </div></div>'
-                        <div className="""text-right"> </div>";
+                        <div className=""""text-right"> </div>";
                           </div><div className=text-2xl font-bold text-white>{mitigation.improvement}%</div></div>'
                           <div className=text-gray-400" text-sm">Improvement</div></div>";
                         </div></div>
@@ -404,20 +404,20 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       </div>";
                       <div className=space-y-3> </div>'
                         </div><div className=flex justify-between"></div>'
-                          <span className=""" text-gray-300>Coherence Time</span></div>";
+                          <span className="""" text-gray-300>Coherence Time</span></div>";
                           <span className= text-white>{mitigation.coherenceTime} μs</span></div>
                         </div></div>'";
-                        <div className="""flex justify-between></div>'
-                          <span className="""text-gray-300>Decoherence Rate</span></div>";
+                        <div className=""""flex justify-between></div>'
+                          <span className=""""text-gray-300>Decoherence Rate</span></div>";
                           <span className=text-white>{mitigation.decoherenceRate}%</span></div>";
                         </div></div>'
-                        <div className="""flex justify-between>"</div>";
+                        <div className=""""flex justify-between>"</div>";
                           <span className=text-gray-300>Energy Cost</span></div>'
                           <span className=text-white>{mitigation.energyCost} mW</span> "</div>'
                         </div>"</div>
                         <div className=flex justify-between></div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(mitigation.status)}"}">;
+                          <span className=""""text-gray-300>Status</span>`</div>'
+                          <span className=""""{text-white capitalize ${getStatusColor(mitigation.status)}"}">;
                             {mitigation.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -430,36 +430,36 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             {/* Noise Reduction */},";
 {activeTab === noise-reducti'o'n && (</div>";
               <div className=space-y-6></div>'
-                <h2 className="""text-2xl font-bold text-white>Quantum Noise Reduction</h2>"</div>'
+                <h2 className=""""text-2xl font-bold text-white>Quantum Noise Reduction</h2>"</div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {noiseReduction.map((reduction) => (</div>";
                     </div><div key={reduction.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>";
                           <h3 className=text-lg font-semibold text-white>{reduction.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm: "capitalize>{reduction.method}</p></div>"";
+                          <p className=""""text-gray-400 text-sm: "capitalize>{reduction.method}</p></div>"";
                         </div></div>";
                         <div className=text-right></div>
                           </div><div className=text-2xl font-bold text-white>{reduction.reductionFactor}x</div></div>'
                           <div className=text-gray-400 text-sm>Reduction</div></div>'
                         </div></div>
                       </div></div>'
-                      <div className="""space-y-3> </div>'
-                        </div><div className="""flex justify-between></div>";
+                      <div className=""""space-y-3> </div>'
+                        </div><div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Noise Level</span></div>'
-                          <span className="""text-white>{reduction.noiseLevel}%</span>"</div>";
+                          <span className=""""text-white>{reduction.noiseLevel}%</span>"</div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
-                          <span className="""text-gray-300>Bandwidth</span>"</div>";
+                          <span className=""""text-gray-300>Bandwidth</span>"</div>";
                           <span className=text-white>{reduction.bandwidth} MHz</span> </div>";
                         </div></div>'
                         <div className=flex justify-between>"</div>'
-                          <span className="""text-gray-300>Latency</span></div>";
+                          <span className=""""text-gray-300>Latency</span></div>";
                           <span className=text-white>{reduction.latency} ms</span></div>'
                         </div>"</div>'
-                        <div className=""" flex justify-between></div>";
+                        <div className="""" flex justify-between></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{"text-white capitalize ${getStatusColor(reduction.status)}}">;
+                          <span className=""""{"text-white capitalize ${getStatusColor(reduction.status)}}">;
                             {reduction.status}</div>;
                           </span></div>
                         </div></div>
@@ -473,7 +473,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === fault-diagnosis && (</div>";
               <div className=space-y-6></div>";
                 <h2 className=text-2xl font-bold text-white>Quantum Fault Diagnosis</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {faultDiagnosis.map((diagnosis) => (</div>
                     </div><div key={diagnosis.id} className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4 ></div>";
@@ -486,22 +486,22 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <div className=text-gray-400 text-sm>Accuracy</div></div>";
                         </div> </div>
                       </div></div>'";
-                      <div className="""space-y-3></div>'
+                      <div className=""""space-y-3></div>'
                         </div><div className= flex" justify-between></div>";
                           <span className=text-gray-300>Detection Time</span></div>'
                           <span className=text-white">{diagnosis.detectionTime}" ms</span> </div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
                           <span className=text-gray-300>False" Positive Rate</span></div>'
-                          <span className="""text-white>{diagnosis.falsePositiveRate}%</span></div>";
+                          <span className=""""text-white>{diagnosis.falsePositiveRate}%</span></div>";
                         </div></div>'
                         <div className= flex justify-between"></div>'";
-                          <span className="""text-gray-300>Coverage</span></div>'
+                          <span className=""""text-gray-300>Coverage</span></div>'
                           <span className=text-white>{diagnosis.coverage}%</span"></div>
                         </div></div>'
-                        <div className="""flex justify-between ></div>";
+                        <div className=""""flex justify-between ></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(diagnosis.status)}}">;
+                          <span className=""""{text-white capitalize ${getStatusColor(diagnosis.status)}}">;
                             {diagnosis.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -522,7 +522,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>
                           <h3 className=text-lg font-semibold text-white >{protocol.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize>{protocol.protocol}</p></div>";
+                          <p className=""""text-gray-400 text-sm capitalize>{protocol.protocol}</p></div>";
                         </div></div>'
                         <div className= text-right"></div>";
                           </div><div className=text-2xl font-bold text-white>{protocol.successRate}%</div></div>";
@@ -531,21 +531,21 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       </div>'
                       </div>";
                       <div className=space-y-3> </div>'
-                        </div><div className="""flex justify-between>"</div>";
+                        </div><div className=""""flex justify-between>"</div>";
                           <span className=text-gray-300>Recovery Time</span></div>'
                           <span className=text-white>{protocol.recoveryTime} ms</span>"</div>'
                         </div>"</div>";
                         <div className= flex justify-between></div>'
                           <span className= text-gray-300>Resource Overhead</span>"</div>'
-                          <span className="""text-white>{protocol.resourceOverhead}x</span></div>";
+                          <span className=""""text-white>{protocol.resourceOverhead}x</span></div>";
                         </div></div>
                         <div className=flex justify-between></div>'";
-                          <span className="""text-gray-300>Reliability</span></div>'
+                          <span className=""""text-gray-300>Reliability</span></div>'
                           <span className=text-white>{protocol.reliability}%</span"></div>
                         </div></div>";
                         <div className=flex justify-between></div>
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(protocol.status)}}>;
+                          <span className=""""{text-white capitalize ${getStatusColor(protocol.status)}}>;
                             {protocol.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -565,7 +565,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             <p className=text-gray-400>";
               AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech Group </div>
             </p></div>'
-            <p className="""text-gray-500 text-sm mt-2>;
+            <p className=""""text-gray-500 text-sm mt-2>;
               Advanced quantum error correction, fault tolerance, and decoherence mitigation</div>;
             </p></div>;
           </div></div>;

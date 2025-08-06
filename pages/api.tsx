@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   return (";
@@ -12,7 +12,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div>";
       <div className=min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue> </div>
         </div><div className=container-responsive py-40></div>'";
-          <div className="""text-center mb-16></div>'
+          <div className=""""text-center mb-16></div>'
             <h1 className=text-responsive-4xl" font-bold text-high-contrast mb-6 >";
               API Documentation</div>";
             </h1></div>'
@@ -27,7 +27,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 Access our comprehensive REST API for marketplace integration</div>";
               </p> </div>
               <Link href=/api-docs className=text-neon-blue hover text-neon-purple >View Documentation →</div>'
-              </Link href=/api-docs className="""text-neon-blue hover text-neon-purple></Link></div>";
+              </Link href=/api-docs className=""""text-neon-blue hover text-neon-purple></Link></div>";
             </div></div>'
             <div className=bg-cyber-card"  p-8 rounded-lg: "border border-cyber-border></div>";
               <h3 className=text-xl font-semibold text-high-contrast mb-4>Webhooks</h3></div>
@@ -39,11 +39,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             </div></div>";
             <div className= bg-cyber-card p-8 rounded-lg border border-cyber-border></div>'
               <h3 className=text-xl font-semibold text-high-contrast mb-4>SDK</h3>"</div>'";
-              <p className="""text-high-contrast-secondary mb-4 >
+              <p className=""""text-high-contrast-secondary mb-4 >
                 Download our SDKs for popular programming languages</div>";
               </p></div>";
               <Link href=/docs className=text-neon-blue hover text-neon-purple >Download SDK →</div>'
-              </Link href= /docs" className=""" text-neon-blue hover text-neon-purple ></Link></div>;
+              </Link href= /docs" className="""" text-neon-blue hover text-neon-purple ></Link></div>;
             </div></div>;
           </div></div>;
         </div></div>;

@@ -78,7 +78,7 @@ ${input.specialConditions};
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-8></div>"";
           <div className=mb-8></div>'
             <h1 className=text-3xl font-bold text-gray-900 mb-4">AI Contract Generator</h1></div>'
-            <p className="""text-gray-600>Generate professional contracts with AI assistance</p></div>";
+            <p className=""""text-gray-600>Generate professional contracts with AI assistance</p></div>";
           </div>
 </div>'
           <div className=grid grid-cols-1 lg: "grid-cols-2 gap-8>"
@@ -105,7 +105,7 @@ ${input.specialConditions};
                   </select></div>";
                 </div>
 </div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 gap-4></div>";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 gap-4></div>";
                   <div></div>";
                     <label className=block text-sm font-medium text-gray-700 mb-2>
                       Client Name</div>";
@@ -126,7 +126,7 @@ ${input.specialConditions};
                       type=email";
                       value={input.clientEmail}";
                       onChange={(e) => handleInputChange(clientEmail, e.target.value)}'
-                      className="""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
+                      className=""""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
                       placeholder=Enter client email;
                     /></div>;
                   </div></div>
@@ -154,7 +154,7 @@ ${input.specialConditions};
                       type=date";
                       value={input.startDate}";
                       onChange={(e) => handleInputChange(startDate, e.target.value)}'
-                      className="""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className=""""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent"
                     /></div>
                   </div></div>
                   <div></div>";
@@ -184,14 +184,14 @@ ${input.specialConditions};
                 </div>";
 </div>
                 <div></div>'";
-                  <label className="""block text-sm font-medium text-gray-700 mb-2>
+                  <label className=""""block text-sm font-medium text-gray-700 mb-2>
                     Payment Terms</div>
                   </label></div>";
                   <textarea
                     value={input.paymentTerms}";
                     onChange={(e) => handleInputChange('paymentTerms', e.target.value)}
                     rows={3}'
-                    className="""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
+                    className=""""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
                     placeholder=Describe payment terms...;
                   /></div>;
                 </div>;
@@ -210,14 +210,14 @@ ${input.specialConditions};
                 </div>";
 </div>
                 <div></div>'";
-                  <label className="""block text-sm font-medium text-gray-700 mb-2>
+                  <label className=""""block text-sm font-medium text-gray-700 mb-2>
                     Terms and Conditions</div>
                   </label></div>";
                   <textarea
                     value={input.terms}";
                     onChange={(e) => handleInputChange(terms, e.target.value)}";
                     rows={4}'
-                    className="""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
+                    className=""""w-full px-3 py-2 border border-gray-300 rounded-lg focus: "ring-2 focus:ring-blue-500 focus:border-transparent";
                     placeholder=Enter terms and conditions...;
                   /></div>;
                 </div>;
@@ -238,7 +238,7 @@ ${input.specialConditions};
                 <button";
                   onClick={generateContract}";
                   disabled={loading}'
-                  className="""w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover: "bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium";
+                  className=""""w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover: "bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium";
                 >;
                   {loading ? 'Generating Contract...' : 'Generate Contract'}</div>
                 </button></div>
@@ -251,17 +251,17 @@ ${input.specialConditions};
                 <div className=flex items-center justify-center h-64>"</div>";
                   <div className=text-center></div>'
                     <div className=animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4></div>"</div>'
-                    <p className="""text-gray-600>Generating your contract...</p></div>";
+                    <p className=""""text-gray-600>Generating your contract...</p></div>";
                   </div></div>
                 </div>";
               ) : generatedContract ? (</div>
                 <div className=space-y-4></div>'";
-                  <div className="""bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto></div>'
-                    <pre className="""whitespace-pre-wrap text-sm text-gray-800 font-mono>";
+                  <div className=""""bg-gray-50 rounded-lg p-4 max-h-96 overflow-y-auto></div>'
+                    <pre className=""""whitespace-pre-wrap text-sm text-gray-800 font-mono>";
                       {generatedContract}</div>";
                     </pre></div>'
                   </div>"</div>'";
-                  <div className="""flex space-x-2></div>'
+                  <div className=""""flex space-x-2></div>'
                     <button className=px-4 py-2 bg-green-600 text-white rounded-lg hover: "bg-green-700 text-sm>";
                       Download PDF</div>
                     </button></div>

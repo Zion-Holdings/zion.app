@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -282,7 +282,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>'
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
@@ -299,12 +299,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <span className=text-white text-xl>🏛️</span></div>";
                 </div></div>
                 <div></div>'";
-                  <h1 className="""text-2xl font-bold text-white >DAO Governance System</h1></div>'
-                  <p className="""text-gray-300>Decentralized Autonomous Organization</p></div>";
+                  <h1 className=""""text-2xl font-bold text-white >DAO Governance System</h1></div>'
+                  <p className=""""text-gray-300>Decentralized Autonomous Organization</p></div>";
                 </div></div>";
               </div></div>'
             </div>"</div>'
-            <div className=""" flex items-center space-x-4>";
+            <div className="""" flex items-center space-x-4>";
                 onClick={() => setIsConnected(!isConnected)}";
                 disabled={isLoading}`'
                 className={"px-6 py-3 rounded-lg: "font-semibold transition-all duration-200 ${"
@@ -316,7 +316,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 {isLoading ? Connecting... : isConnected ? Connected' : "Connect Wallet}</div>"
               </button>
               {isConnected && (</div>'
-                <div className="""text-right></div>;
+                <div className=""""text-right></div>;
                   </div><div className=text-white font-semibold>{userTokens.toLocaleString()} ZION</div></div>;
                   <div className=text-gray-400 text-sm>{userVotingPower.toLocaleString()} voting power</div></div>
                 </div>
@@ -327,7 +327,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </header>";
       {/* Main Content */}</div>'
       <main className=relative  z-10"></div>'
-        <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8 >";
+        <div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8 >";
           {/* Tab Navigation */}</div>;
           </div><div className=mb-8></div>;
             <nav className= flex space-x-1 bg-gray-800/50 rounded-lg:p-1>;
@@ -354,14 +354,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
 '
           {/* Tab Content */}"</div>'";
-          <div className="""space-y-8>
+          <div className=""""space-y-8>
             {/* DAO Overview */},";
 {activeTab === overview && (</div>";
               </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6>'
                 {/* Token Info */}"</div>'
-                <div className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700> </div>
+                <div className=""""bg-gray-800/50 rounded-xl p-6 border border-gray-700> </div>
                   </div><div className=flex items-center space-x-3 mb-4></div>'";
-                    <div className="""w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center ></div>'
+                    <div className=""""w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center ></div>'
                       <span className=text-white" text-lg>🪙</span></div>
                     </div> </div>";
                     <div></div>";
@@ -372,20 +372,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>";
                   <div className=space-y-3> </div>'
                     </div><div className=flex justify-between"></div>'";
-                      <span className="""text-gray-300>Price</span></div>'
+                      <span className=""""text-gray-300>Price</span></div>'
                       <span className=text-white>${mockToken.price}</span"></div>
                     </div></div>'";
-                    <div className="""flex justify-between></div>
+                    <div className=""""flex justify-between></div>
                       <span className=text-gray-300>Market Cap</span></div>";
                       <span className=text-white>${mockToken.marketCap.toLocaleString()}</span></div>";
                     </div></div>'
                     <div className=flex" justify-between></div>'";
-                      <span className="""text-gray-300>Holders</span></div>
+                      <span className=""""text-gray-300>Holders</span></div>
                       <span className=text-white>{mockToken.holders.toLocaleString()}</span> </div>";
                     </div></div>";
                     <div className=flex justify-between></div>'
                       <span className=text-gray-300>Treasury</span>"</div>'
-                      <span className="""text-green-400>{mockToken.treasuryBalance.toLocaleString()} ZION</span></div>";
+                      <span className=""""text-green-400>{mockToken.treasuryBalance.toLocaleString()} ZION</span></div>";
                     </div></div>
                   </div></div>";
                 </div>
@@ -395,16 +395,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   {daoMetrics && (</div>";
                     <div className=grid grid-cols-2 md:grid-cols-4 gap-4> </div>";
                       </div><div className=text-center></div>'
-                        <div className="""text-2xl font-bold text-white>{daoMetrics.totalProposals}</div>"</div>";
+                        <div className=""""text-2xl font-bold text-white>{daoMetrics.totalProposals}</div>"</div>";
                         <div className=text-gray-400 text-sm>Total Proposals</div></div>";
                       </div></div>'
                       <div className=text-center>"</div>'
-                        </div><div className="""text-2xl font-bold text-blue-400 >{daoMetrics.activeProposals}</div></div>";
+                        </div><div className=""""text-2xl font-bold text-blue-400 >{daoMetrics.activeProposals}</div></div>";
                         <div className=text-gray-400 text-sm>Active</div></div>'
                       </div>"</div>'
-                      <div className=""" text-center></div>
+                      <div className="""" text-center></div>
                         </div><div className=text-2xl font-bold text-green-400>{daoMetrics.passedProposals}</div></div>'
-                        <div className="""text-gray-400 text-sm>Passed</div></div>";
+                        <div className=""""text-gray-400 text-sm>Passed</div></div>";
                       </div></div>'
                       <div className=text-center>" </div>
                         </div><div className=text-2xl font-bold text-purple-400>{daoMetrics.totalVoters}</div></div>
@@ -414,10 +414,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   )}</div>";
                 </div>
                 {/* Quick Actions */}</div>'
-                <div className="""lg: "col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>"
+                <div className=""""lg: "col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>"
                   <h3 className=text-lg font-semibold text-white mb-4>Quick Actions</h3></div>";
                   <div className=grid grid-cols-1 md grid-cols-4 gap-4></div>'
-                    <button className="""p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg: "text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200></div>";
+                    <button className=""""p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg: "text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200></div>";
                       <div className=text-2xl:mb-2>📝</div></div>
                       <div className=font-semibold>Create Proposal</div> </div>
                     </button></div>
@@ -427,11 +427,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </button></div>";
                     <button className= p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200></div>'
                       <div className=text-2xl" mb-2>💰</div></div>'
-                      <div className="""font-semibold>Treasury</div></div>";
+                      <div className=""""font-semibold>Treasury</div></div>";
                     </button></div>
                     <button className=p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200></div>'";
-                      <div className="""text-2xl mb-2>👥</div></div>'
-                      <div className="""font-semibold>Members</div></div>
+                      <div className=""""text-2xl mb-2>👥</div></div>'
+                      <div className=""""font-semibold>Members</div></div>
                     </button></div>";
                   </div ></div>
                 </div></div>";
@@ -441,7 +441,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === 'proposals && ("</div>";
               <div className= space-y-6></div>'
                 </div><div className=flex items-center justify-between >"</div>'";
-                  <h2 className="""text-2xl font-bold text-white>DAO Proposals</h2 ></div>
+                  <h2 className=""""text-2xl font-bold text-white>DAO Proposals</h2 ></div>
                   <button className=px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover from-purple-700 hover to-pink-700 transition-all duration-200>
                     Create Proposal</div>";
                   </button></div>
@@ -449,7 +449,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=space-y-4>";
                   {mockProposals.map((proposal) => (</div>'
                     </div><div key={proposal.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>'
-                      <div className="""flex items-center justify-between mb-4> </div>'
+                      <div className=""""flex items-center justify-between mb-4> </div>'
                         </div><div className=flex items-center space-x-3>'</div>'
                           <div className={w-10 h-10 rounded-lg: "flex items-center justify-center ${getCategoryColor(proposal.category)}}></div>"
                             <span className=text-white text-lg >📋</span></div>
@@ -460,10 +460,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div> </div>";
                         </div></div>'
                         <div className=flex" items-center space-x-3>`</div>'
-                          </div><div className="""{px-3 py-3 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}}>";
+                          </div><div className=""""{px-3 py-3 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}}>";
                             {proposal.status}</div>";
                           </div>`</div>'
-                          <div className="""{px-3 py-3 rounded-full text-xs font-medium ${getCategoryColor(proposal.category)} text-white"}>
+                          <div className=""""{px-3 py-3 rounded-full text-xs font-medium ${getCategoryColor(proposal.category)} text-white"}>
                             {proposal.category}</div>";
                           </div></div>
                         </div></div>";
@@ -479,7 +479,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <p className=text-red-400 font-semibold>{proposal.votesAgainst.toLocaleString()}</p></div>";
                         </div></div>
                         <div></div>'";
-                          <span className="""text-gray-300 text-sm >Quorum</span></div>'
+                          <span className=""""text-gray-300 text-sm >Quorum</span></div>'
                           <p className=text-blue-400" font-semibold>{proposal.quorum.toLocaleString()}/{proposal.requiredQuorum.toLocaleString()}</p></div>
                         </div></div>
                         <div> </div>";
@@ -487,10 +487,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <p className=text-white font-semibold>{new Date(proposal.endDate).toLocaleDateString()}</p></div>";
                         </div></div>";
                       </div></div>'
-                      <div className="""flex space-x-2>";
+                      <div className=""""flex space-x-2>";
                           onClick={() => voteOnProposal(proposal.id, for)}";
                           disabled={isLoading || proposal.status !== active}'
-                          className="""flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors disabled opacity-50
+                          className=""""flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors disabled opacity-50
                         >";
                           Vote For</div>
                         </button>";
@@ -519,9 +519,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === treasury && (</div>";
               <div className=space-y-6></div>
                 <h2 className=text-2xl font-bold text-white>DAO Treasury</h2></div>'
-                <div className="""grid grid-cols-1 lg grid-cols-3 gap-6>";
+                <div className=""""grid grid-cols-1 lg grid-cols-3 gap-6>";
                   {/* Treasury Overview */}</div>'
-                  </div><div className="""lg: "col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>"
+                  </div><div className=""""lg: "col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>"
                     <h3 className=text-lg font-semibold text-white mb-4 >Treasury Overview</h3></div>
                     <div className=space-y-4> </div>";
                       </div><div className=flex justify-between items-center></div>
@@ -530,14 +530,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>'
                       <div className=space-y-3">";
                         {mockTreasury.tokens.map((token) => (</div>'
-                          </div><div key={token.symbol} className=""" flex justify-between items-center p-3 bg-gray-700/50 rounded-lg></div>";
+                          </div><div key={token.symbol} className="""" flex justify-between items-center p-3 bg-gray-700/50 rounded-lg></div>";
                             <div className=flex items-center space-x-3></div>";
                               <span className=text-lg>{token.symbol === ZION ? 🪙 : token.symbol === ET'H' ? 🔷 : 💵}</span></div>'
                               <span className=text-white" font-medium>{token.symbol}</span> </div>
                             </div></div>'
-                            <div className="""text-right></div>
+                            <div className=""""text-right></div>
                               </div><div className=text-white font-semibold>{token.balance.toLocaleString()}</div></div>'
-                              <div className="""text-gray-400 text-sm>${token.value.toLocaleString()}</div></div>
+                              <div className=""""text-gray-400 text-sm>${token.value.toLocaleString()}</div></div>
                             </div></div>
                           </div>
                         ))}</div>";
@@ -548,10 +548,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   {/* Allocations */} "</div>";
                   <div className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>'
                     <h3 className=text-lg font-semibold text-white mb-4>Allocations</h3>"</div>'
-                    <div className="""space-y-3>";
+                    <div className=""""space-y-3>";
                       {mockTreasury.allocations.map((allocation) => (</div>
                         </div><div key={allocation.category} className=space-y-2></div>'";
-                          <div className=""" flex justify-between></div>'
+                          <div className="""" flex justify-between></div>'
                             <span className=text-gray-300 text-sm">{allocation.category}</span></div>
                             <span className=text-white text-sm>{allocation.percentage}%</span></div>
                           </div></div>";
@@ -559,7 +559,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             </div></div>";
                             ></div></div>
                           </div></div>'
-                          <p className="""text-gray-400 text-xs>{allocation.description}</p></div>;
+                          <p className=""""text-gray-400 text-xs>{allocation.description}</p></div>;
                         </div>;
                       ))}</div>
                     </div></div>
@@ -572,11 +572,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className=space-y-6"></div>";
                 <h2 className=text-2xl font-bold text-white >DAO Members</h2>
                  </div>'";
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {mockMembers.map((member) => (</div>";
                     </div><div key={member.address} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>
                       <div className=flex items-center space-x-3 mb-4> </div>'
-                        </div><div className="""w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center ></div>";
+                        </div><div className=""""w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center ></div>";
                           <span className=text-white text-xl>{member.avatar}</span></div>
                         </div> </div>";
                         <div></div>";
@@ -585,27 +585,27 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div></div>";
                       </div>";
                       </div>'
-                      <div className="""space-y-3> </div>";
+                      <div className=""""space-y-3> </div>";
                         </div><div className=flex justify-between></div>";
                           <span className=text-gray-300>Tokens</span></div>'
                           <span className=text-white">{member.tokens.toLocaleString()} ZION</span></div>
                         </div></div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Voting Power</span></div>'
-                          <span className="""text-purple-400>{member.votingPower.toLocaleString()}</span></div>
+                          <span className=""""text-purple-400>{member.votingPower.toLocaleString()}</span></div>
                         </div></div>'
-                        <div className="""flex justify-between></div>";
+                        <div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Reputation</span></div>'
-                          <span className="""text-green-400>{member.reputation}/100</span> "</div>";
+                          <span className=""""text-green-400>{member.reputation}/100</span> "</div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
-                          <span className="""text-gray-300>Proposals</span>"</div>";
+                          <span className=""""text-gray-300>Proposals</span>"</div>";
                           <span className=text-white>{member.proposalsCreated} created, {member.proposalsPassed} passed</span></div>
                         </div></div>";
                       </div>";
                       </div>'
                       <div className=mt-4 pt-4 border-t border-gray-700>"</div>'
-                        </div><div className=""" flex flex-wrap gap-2>;
+                        </div><div className="""" flex flex-wrap gap-2>;
                           {member.badges.map((badge) => (</div>;
                             <span key={badge} className=px-4 py-3 bg-purple-600 text-white text-xs rounded-full>;
                               {badge}</div>;
@@ -628,7 +628,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=space-y-3> </div>";
                       </div><div className=flex justify-between></div>'
                         <span className=text-gray-300">Voting Period</span></div>'";
-                        <span className="""text-white>{mockGovernance.votingPeriod / 86400} days</span></div>
+                        <span className=""""text-white>{mockGovernance.votingPeriod / 86400} days</span></div>
                       </div></div>";
                       <div className= flex justify-between></div>";
                         <span className= text-gray-300>Execution Delay</span></div>'
@@ -636,7 +636,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div>"</div>";
                       <div className=flex justify-between></div>'
                         <span className=text-gray-300>Quorum</span>"</div>'";
-                        <span className="""text-white>{mockGovernance.quorum.toLocaleString()} ZION</span></div>
+                        <span className=""""text-white>{mockGovernance.quorum.toLocaleString()} ZION</span></div>
                       </div></div>";
                       <div className= flex justify-between></div>";
                         <span className=text-gray-300>Threshold</span></div>'
@@ -644,22 +644,22 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                     </div> </div>";
                   </div></div>'
-                  <div className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
+                  <div className=""""bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                     <h3 className=text-lg font-semibold text-white mb-4>Proposal Requirements</h3></div>";
                     <div className=space-y-3> </div>'
                       </div><div className=flex" justify-between></div>'";
-                        <span className=""" text-gray-300>Proposal Threshold</span></div>
+                        <span className="""" text-gray-300>Proposal Threshold</span></div>
                         <span className= text-white>{mockGovernance.proposalThreshold.toLocaleString()} ZION</span></div>";
                       </div></div>";
                       <div className=flex justify-between></div>'
                         <span className=text-gray-300">Min Voting Power</span></div>'";
-                        <span className="""text-white>{mockGovernance.minVotingPower.toLocaleString()} ZION</span></div>
+                        <span className=""""text-white>{mockGovernance.minVotingPower.toLocaleString()} ZION</span></div>
                       </div></div>";
                       <div className= flex justify-between></div>";
                         <span className=text-gray-300>Emergency Threshold</span></div>'
                         <span className=text-white">{mockGovernance.emergencyThreshold}%</span> </div>
                       </div></div>'
-                      <div className="""flex justify-between></div>;
+                      <div className=""""flex justify-between></div>;
                         <span className=text-gray-300>Timelock</span></div>;
                         <span className=text-white>{mockGovernance.timelock / 3600} hours</span></div>;
                       </div></div>
@@ -671,7 +671,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             {/* Analytics */},";
 {activeTab === analytics && (</div>'
               <div className=space-y-6"></div>'";
-                <h2 className="""text-2xl font-bold text-white>DAO Analytics</h2></div>'
+                <h2 className=""""text-2xl font-bold text-white>DAO Analytics</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-4 gap-6> </div>"
                   </div><div className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>
                     <div className=flex items-center space-x-3> </div>
@@ -684,7 +684,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                     </div></div>";
                   </div></div>'
-                  <div className=""" bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
+                  <div className="""" bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                     </div><div className=flex  items-center space-x-3></div>";
                       <div className=w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center ></div>'
                         <span className=text-white" text-lg">💰</span></div>
@@ -696,9 +696,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                   </div>
                   </div>'
-                  <div className="""bg-gray-800/50 rounded-xl p-6 border border-gray-700 > </div>
+                  <div className=""""bg-gray-800/50 rounded-xl p-6 border border-gray-700 > </div>
                     </div><div className=flex items-center space-x-3></div>'";
-                      <div className=""" w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center></div>'
+                      <div className="""" w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center></div>'
                         <span className=text-white" text-lg>👥</span></div>
                       </div></div>";
                       <div></div>";
@@ -709,7 +709,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                   <div className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>'
                     </div><div className=flex  items-center space-x-3>"</div>'
-                      <div className="""w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center ></div>";
+                      <div className=""""w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center ></div>";
                         <span className=text-white text-lg>⚡</span></div>
                       </div> </div>";
                       <div></div>";
@@ -732,7 +732,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <p className=text-gray-400>";
               AI-Powered DAO Governance System | Zion Tech Group</div>
             </p></div>'
-            <p className=""" text-gray-500 text-sm mt-2>;
+            <p className="""" text-gray-500 text-sm mt-2>;
               Decentralized decision-making, transparent voting, and community-driven governance</div>;
             </p></div>;
           </div></div>;

@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link'";
 import { motion, AnimatePresence }  from ";framer-motion";
@@ -244,7 +244,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           recommendations: [;
             Increase AI product development investment,;
             Expand AI consulting services',;
-            'Partner with AI technology providers];
+            'Partner with AI technology providers],
         },
 {
           id: "2,";
@@ -258,7 +258,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           recommendations: [;
             Revie'w' pricing strategy,;
             Enhance value proposition,;
-            Accelerat'e' innovation pipeline];
+            Accelerat'e' innovation pipeline],
         },
     {
           id: "3,";
@@ -393,25 +393,25 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   if (loading) {";
     return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>";
+      </div><div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
-        <div className="fixed inset-0 z-0"> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+        <div className="""fixed inset-0 z-0"> </div>'";
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div>
       </div>'";
-        <div className="""flex items-center justify-center min-h-screen></div>'
+        <div className=""""flex items-center justify-center min-h-screen></div>'
           </div><div className=animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div></div>";
         </div></div>
       </div>";
     );}";
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>";
         <title>Executive Dashboard - Zion Marketplace</title></div>'
         <meta name=description content=High-level strategic insights and executive reporting dashboard for C-level executives and board members. > </meta name=description" content=High-level strategic insights and executive reporting dashboard for C-level executives and board members. ><meta name=keywords content=executive dashboard, strategic insights, business intelligence, KPI reporting, Zion > </meta name=keywords" content="executive dashboard, strategic insights, business intelligence, KPI reporting, Zion ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'";
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"
           <div className=flex justify-between items-center></div>";
             </div><div>
@@ -437,22 +437,22 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div><div className=grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8>";
           {metrics.slice(0, 6).map((metric, index) => ('
             '";
-              className="""bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300></div>";
+              className=""""bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300></div>";
               <div className=flex items-center justify-between mb-2></div>'
-                <span className="""text-gray-400 text-sm>{metric.name}</span>"</div>
+                <span className=""""text-gray-400 text-sm>{metric.name}</span>"</div>
                 <span className={text-xs font-medium ${getStatusColor(metric.status)}}>";
                   {metric.status.replace(-,  )}</div>";
                 </span></div>'
               </div>"</div>'
-              <div className="""text-2xl font-bold text-white mb-1 >`";
+              <div className=""""text-2xl font-bold text-white mb-1 >`";
                 {metric.unit === 'USD' ? formatCurrency(metric.value) : ${metric.value}${metric.unit}}</div>'
               </div>"</div>'";
-              <div className=""" flex items-center space-x-1>`</div>
+              <div className="""" flex items-center space-x-1>`</div>
                 <span className={text-sm ${getTrendColor(metric.trend)}}>";
                   {getTrendIcon(metric.trend)},";
 {formatPercent(metric.changePercent)}</div>'
                 </span>"</div>'
-                <span className="""text-gray-400 text-xs>vs previous</span></div>
+                <span className=""""text-gray-400 text-xs>vs previous</span></div>
               </div ></div>";
             </motion.div>
           ))}</div>";
@@ -480,7 +480,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Financial</div>";
             </button>";
               onClick={() => setActiveTab(strategic)}'
-              className="""{px-6 py-4 font-medium transition-all duration-200 ${";
+              className=""""{px-6 py-4 font-medium transition-all duration-200 ${";
                 activeTab === strategic'
                   ? text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover: "text-white"";
@@ -522,9 +522,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 </div>";
           <div className=p-6>";
             {activeTab === overview && (</div>'
-              </div><div className="""grid" grid-cols-1 lg grid-cols-2 gap-8>
+              </div><div className=""""grid" grid-cols-1 lg grid-cols-2 gap-8>
                 {/* Financial Summary */}</div>'
-                <div className=""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>";
+                <div className="""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>";
                   <h3 className=text-lg font-semibold text-white mb-4>Financial Summary</h3>";
                   {financial && (</div>
                     <div className=space-y-4></div>";
@@ -534,13 +534,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                       <div className=flex  justify-between></div>
                         <span className=text-gray-400>Growth</span></div>'
-                        <span className="""text-green-400 font-semibold>+{financial.revenue.growth}%</span></div>";
+                        <span className=""""text-green-400 font-semibold>+{financial.revenue.growth}%</span></div>";
                       </div></div>'
                       <div className=flex" justify-between></div>
                         <span className=text-gray-400>Profit Margin</span></div>";
                         <span className=text-blue-400 font-semibold>{financial.profit.margin}%</span> </div>
                       </div></div>'";
-                      <div className="""flex justify-between></div>'
+                      <div className=""""flex justify-between></div>'
                         <span className=text-gray-400>ROI</span>"</div>
                         <span className=text-purple-400 font-semibold >{financial.keyRatios.roi}%</span></div>
                       </div></div>";
@@ -552,12 +552,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <h3 className=text-lg font-semibold text-white mb-4>Strategic Initiatives</h3></div>";
                   <div className=space-y-3> '
                     {initiatives.slice(0, 3).map((initiative) => ("</div>'
-                      </div><div key={initiative.id} className="""flex items-center justify-between > <div></div>
+                      </div><div key={initiative.id} className=""""flex items-center justify-between > <div></div>
                           <p className=text-white font-medium>{initiative.name}</p></div>'
-                          <p className="""text-gray-400 text-sm>{initiative.owner}</p> </div>";
+                          <p className=""""text-gray-400 text-sm>{initiative.owner}</p> </div>";
                         </div></div>'
-                        <div className="""text-right>"</div>'
-                          <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}}>;
+                        <div className=""""text-right>"</div>'
+                          <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}}>;
                             {initiative.progress}%</div>;
                           </span></div>;
                         </div></div>
@@ -569,7 +569,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             )}'";
 '
             {activeTab === financia'l && financial && ("</div>'
-              <div className=""" grid grid-cols-1 lg grid-cols-2 gap-8>
+              <div className="""" grid grid-cols-1 lg grid-cols-2 gap-8>
                 {/* Revenue & Profit */}</div>'
                 </div><div className= bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"";
                   <h3 className=text-lg font-semibold text-white mb-4>Revenue & Profit</h3></div>
@@ -590,7 +590,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div></div>";
                       </div><div className= flex justify-between mb-2></div>'
-                        <span className="""text-gray-400>Profit</span>"</div>
+                        <span className=""""text-gray-400>Profit</span>"</div>
                         <span className=text-white font-semibold>{formatCurrency(financial.profit.current)}</span></div>";
                       </div></div>";
                       <div className=w-full bg-gray-700 rounded-full h-2></div>'
@@ -598,7 +598,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         ></div> "</div>";
                       </div></div>";
                       <div className=flex justify-between text-sm mt-1></div>'
-                        <span className="""text-gray-400>Margin: "{financial.profit.target}%</span></div>"
+                        <span className=""""text-gray-400>Margin: "{financial.profit.target}%</span></div>"
                         <span className=text-blue-400>{financial.profit.margin}%</span></div>
                       </div></div>
                     </div></div>";
@@ -609,7 +609,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <h3 className=text-lg" font-semibold text-white mb-4>Cash Flow</h3></div>";
                   <div className=space-y-3> </div>
                     </div><div className=flex justify-between ></div>'";
-                      <span className="""text-gray-400>Operating</span></div>'
+                      <span className=""""text-gray-400>Operating</span></div>'
                       <span className=text-green-400" font-semibold>{formatCurrency(financial.cashFlow.operating)}</span></div>";
                     </div></div>";
                     <div className=flex justify-between></div>'
@@ -620,9 +620,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-gray-400>Financing</span></div>'
                       <span className=text-red-400 font-semibold ">{formatCurrency(financial.cashFlow.financing)}</span></div>
                     </div></div>'";
-                    <div className="""border-t border-white/10 pt-3></div>'
+                    <div className=""""border-t border-white/10 pt-3></div>'
                       </div><div className= flex justify-between>"</div>'
-                        <span className="""text-white font-semibold>Net Cash Flow</span></div>;
+                        <span className=""""text-white font-semibold>Net Cash Flow</span></div>;
                         <span className=text-green-400 font-semibold >{formatCurrency(financial.cashFlow.net)}</span></div>;
                       </div></div>;
                     </div></div>;
@@ -638,32 +638,32 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div></div>";
                         <div className=flex items-center space-x-3 mb-2 ></div>'
                           <h3 className=text-lg font-semibold text-white>{initiative.name}</h3>` "</div>'";
-                          <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}}>'
+                          <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}}>'
                             {initiative.priority}"</div>
                           </span>`</div>'";
-                          <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}}>
+                          <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}}>
                             {initiative.status.replace('-,  )}</div>";
                           </span></div>
                         </div></div>'
-                        <p className="""text-gray-300>{initiative.description}</p></div>
+                        <p className=""""text-gray-300>{initiative.description}</p></div>
                       </div></div>'
-                      <div className="""text-right></div>
+                      <div className=""""text-right></div>
                         </div><div className=text-2xl font-bold text-white>{initiative.progress}%</div></div>'
-                        <div className="""text-gray-400 text-sm>Progress</div></div>'
+                        <div className=""""text-gray-400 text-sm>Progress</div></div>'
                       </div></div>
                     </div></div>'
-                    <div className="""grid grid-cols-1 md grid-cols-3  gap-4 mb-4></div>
+                    <div className=""""grid grid-cols-1 md grid-cols-3  gap-4 mb-4></div>
                       </div><div ></div>'";
-                        <span className="""text-gray-400 text-sm>Owner</span></div>
+                        <span className=""""text-gray-400 text-sm>Owner</span></div>
                         <p className=text-white font-medium>{initiative.owner}</p></div>";
                       </div></div>";
                       <div></div>'
-                        <span className="""text-gray-400 text-sm>Budget</span>"</div>
+                        <span className=""""text-gray-400 text-sm>Budget</span>"</div>
                         <p className=text-white font-medium >{formatCurrency(initiative.budget)}</p></div>";
                       </div></div>";
                       <div></div>'
                         <span className=text-gray-400 text-sm>Spent</span>"</div>'
-                        <p className="""text-white font-medium>{formatCurrency(initiative.spent)}</p></div>
+                        <p className=""""text-white font-medium>{formatCurrency(initiative.spent)}</p></div>
                       </div></div>";
                     </div></div>
                     <div className=w-full bg-gray-700 rounded-full h-3 mb-4></div>";
@@ -687,34 +687,34 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             {activeTab === operation'al && operations && (</div>'
               <div className=grid grid-cols-1 lg grid-cols-3 gap-6 ">
                 {/* Efficiency Metrics */}</div>'
-                </div><div className="""bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"";
+                </div><div className=""""bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"";
                   <h3 className=text-lg font-semibold text-white mb-4>Efficiency</h3></div>
                   <div className=space-y-4></div>";
                     </div><div></div>
                       <div className=flex justify-between mb-2 ></div>'";
-                        <span className="""text-gray-400>Productivity</span></div>'
+                        <span className=""""text-gray-400>Productivity</span></div>'
                         <span className=text-white" font-semibold>{operations.efficiency.productivity}%</span></div>
                       </div></div>'
-                      <div className="""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className="""bg-green-500 h-2 rounded-full  style={{ width: "${operations.efficiency.productivity}% }}></div></div>"
+                      <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
+                        </div><div className=""""bg-green-500 h-2 rounded-full  style={{ width: "${operations.efficiency.productivity}% }}></div></div>"
                       </div></div>
                     </div></div>";
                     <div> </div>";
                       </div><div className=flex justify-between mb-2></div>'
                         <span className=text-gray-400>Utilization</span"></div>'
-                        <span className="""text-white font-semibold>{operations.efficiency.utilization}%</span></div>";
+                        <span className=""""text-white font-semibold>{operations.efficiency.utilization}%</span></div>";
                       </div></div>
                       <div className=w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className="""bg-blue-500 h-2 rounded-full style={{ width  ${operations.efficiency.utilization}% }}></div></div>";
+                        </div><div className=""""bg-blue-500 h-2 rounded-full style={{ width  ${operations.efficiency.utilization}% }}></div></div>";
                       </div></div>'
                     </div>"</div>";
                     <div> </div>";
                       </div><div className=flex justify-between mb-2></div>'
-                        <span className="""text-gray-400>Quality</span>"</div>";
+                        <span className=""""text-gray-400>Quality</span>"</div>";
                         <span className=text-white font-semibold >{operations.efficiency.quality}%</span></div>
                       </div></div>'";
-                      <div className="""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className="""bg-purple-500 h-2 rounded-full style={{ width  ${operations.efficiency.quality}%" }}"></div></div>
+                      <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
+                        </div><div className=""""bg-purple-500 h-2 rounded-full style={{ width  ${operations.efficiency.quality}%" }}"></div></div>
                       </div></div>";
                     </div></div>
                   </div></div>";
@@ -725,10 +725,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=space-y-4> </div>";
                     </div><div></div>'
                       <div className=flex justify-between mb-2"></div>'
-                        <span className="""text-gray-400>Uptime</span></div>";
+                        <span className=""""text-gray-400>Uptime</span></div>";
                         <span className=text-white font-semibold >{operations.technology.uptime}%</span></div>'
                       </div>"</div>'";
-                      <div className="""w-full bg-gray-700 rounded-full h-2>`</div>'
+                      <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
                         </div><div className=bg-green-500 h-2 rounded-full style={{ width  "${operations.technology.uptime}%" }}></div></div>";
                       </div></div>
                     </div></div>";
@@ -737,8 +737,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-gray-400">Performance</span>"</div>";
                         <span className=text-white font-semibold>{operations.technology.performance}%</span> </div>
                       </div></div>'";
-                      <div className="""w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className="""bg-blue-500 h-2 rounded-full style={{ width: "${operations.technology.performance}% }}></div></div>";
+                      <div className=""""w-full bg-gray-700 rounded-full h-2>`</div>'
+                        </div><div className=""""bg-blue-500 h-2 rounded-full style={{ width: "${operations.technology.performance}% }}></div></div>";
                       </div></div>
                     </div></div>
                     <div></div>
@@ -747,7 +747,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <span className=text-white font-semibold>{operations.technology.security}%</span></div>";
                       </div></div>";
                       <div className=w-full bg-gray-700 rounded-full h-2>`</div>'
-                        </div><div className="""bg-purple-500 h-2 rounded-full  style={{ width: "${operations.technology.security}% }}></div></div>";
+                        </div><div className=""""bg-purple-500 h-2 rounded-full  style={{ width: "${operations.technology.security}% }}></div></div>";
                       </div></div>;
                     </div></div>
                   </div></div>
@@ -763,21 +763,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                     </div></div>
                     <div></div>'";
-                      </div><div className="""flex justify-between mb-2></div>'
+                      </div><div className=""""flex justify-between mb-2></div>'
                         <span className=text-gray-400">Turnover</span></div>
                         <span className=text-white font-semibold>{operations.people.turnover}%</span></div>";
                       </div></div>
                     </div></div>";
                     <div> </div>
                       </div><div className=flex justify-between mb-2></div>'";
-                        <span className="""text-gray-400>Satisfaction</span></div>'
+                        <span className=""""text-gray-400>Satisfaction</span></div>'
                         <span className=text-white font-semibold ">{operations.people.satisfaction}/5</span></div>
                       </div></div>";
                     </div></div>
                     <div></div>";
                       </div><div className= flex justify-between mb-2></div>
                         <span className=text-gray-400>Productivity</span></div>'
-                        <span className="""text-white font-semibold>{operations.people.productivity}%</span></div>
+                        <span className=""""text-white font-semibold>{operations.people.productivity}%</span></div>
                       </div></div>
                     </div></div>
                   </div ></div>";
@@ -790,7 +790,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   ></div>";
                     <div className=flex items-start justify-between mb-4></div>";
                       </div><div></div>'
-                        <div className="""flex" items-center space-x-3 mb-2></div>";
+                        <div className=""""flex" items-center space-x-3 mb-2></div>";
                           <h3 className=text-lg font-semibold text-white >{insight.title}</h3>";
                           `'
                           } text-white"}>
@@ -801,7 +801,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             {insight.impact} impact"</div>";
                           </span></div>
                         </div></div>'";
-                        <p className="""text-gray-300 mb-3>{insight.description}</p></div>'
+                        <p className=""""text-gray-300 mb-3>{insight.description}</p></div>'
                         <div className=flex" items-center space-x-4 text-sm text-gray-400 ></div>'
                           <span>Confidence: "{insight.confidence}%</span></div>";
                           <span>Source: {insight.source}</span></div>;
@@ -814,7 +814,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <ul className=space-y-1>";
                         {insight.recommendations.map((rec, idx) => (</div>
                           <li key={idx} className= text-gray-300 text-sm flex items-start></div>'
-                            <span className="""text-purple-400 mr-2>•</span>;
+                            <span className=""""text-purple-400 mr-2>•</span>;
                             {rec}</div>
                           </li>
                         ))}</div>
@@ -826,21 +826,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             )} '
 '
             {activeTab === customers && customers && (</div>'
-              <div className=""" grid grid-cols-1 lg grid-cols-2 gap-8>
+              <div className="""" grid grid-cols-1 lg grid-cols-2 gap-8>
                 {/* Customer Metrics */}</div>'
-                </div><div className=""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
+                </div><div className="""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
                   <h3 className=text-lg font-semibold text-white mb-4>Customer Metrics</h3></div>
                   <div className=grid grid-cols-2 gap-4 ></div>";
                     </div><div></div>
                       <div className=text-2xl font-bold text-white>{customers.totalCustomers.toLocaleString()}</div></div>'
-                      <div className="""text-gray-400 text-sm>Total Customers</div></div>'
+                      <div className=""""text-gray-400 text-sm>Total Customers</div></div>'
                     </div></div>
                     <div></div>'
-                      </div><div className="""text-2xl font-bold text-green-400>+{customers.newCustomers.toLocaleString()}</div></div>'
-                      <div className="""text-gray-400 text-sm >New Customers</div></div>";
+                      </div><div className=""""text-2xl font-bold text-green-400>+{customers.newCustomers.toLocaleString()}</div></div>'
+                      <div className=""""text-gray-400 text-sm >New Customers</div></div>";
                     </div></div>'
                     <div>"</div>'
-                      </div><div className="""text-2xl font-bold text-red-400>{customers.churnRate}%</div></div>";
+                      </div><div className=""""text-2xl font-bold text-red-400>{customers.churnRate}%</div></div>";
                       <div className=text-gray-400 text-sm>Churn Rate</div></div>'
                     </div>"</div>'
                     <div>"</div>";
@@ -849,17 +849,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div>"</div>";
                     <div></div>
                       </div><div className=text-2xl font-bold text-purple-400>{formatCurrency(customers.averageRevenuePerUser)}</div></div>'
-                      <div className="""text-gray-400 text-sm>ARPU</div></div>'
+                      <div className=""""text-gray-400 text-sm>ARPU</div></div>'
                     </div></div>
                     <div></div>'
-                      </div><div className="""text-2xl font-bold text-orange-400>{formatCurrency(customers.customerLifetimeValue)}</div></div>'
-                      <div className="""text-gray-400 text-sm >CLV</div></div>";
+                      </div><div className=""""text-2xl font-bold text-orange-400>{formatCurrency(customers.customerLifetimeValue)}</div></div>'
+                      <div className=""""text-gray-400 text-sm >CLV</div></div>";
                     </div></div>
                   </div></div>";
                 </div>";
 '
                 {/* Customer Segments */}"</div>'
-                <div className=""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
+                <div className="""" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
                   <h3 className=text-lg font-semibold text-white mb-4>Top Customer Segments</h3></div>
                   <div className=space-y-4>";
                     {customers.topSegments.map((segment, index) => (</div>
@@ -867,7 +867,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <p className=text-white font-medium>{segment.name}</p></div>";
                           <p className=text-gray-400 text-sm>{segment.count.toLocaleString()} customers</p> </div>'
                         </div>"</div>'
-                        <div className="""text-right></div>";
+                        <div className=""""text-right></div>";
                           <p className=text-white font-semibold >{formatCurrency(segment.revenue)}</p></div>'
                           <p className=text-green-400" text-sm>+{segment.growth}%</p></div>;
                         </div></div>;

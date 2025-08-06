@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useEffect, useState }  from ";react;}
 import { useRouter } from next/router";
 import Link from next/link;}'
@@ -27,12 +27,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <title>Email Verification - Zion</title></div>'
         <meta name=description content=Verify your email address to complete your Zion account setup. > </meta name=description content="Verify your email address to complete your Zion account setup. ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 </div>'";
-      <div className="""max-w-md mx-auto px-4 sm px-6 lg px-8 py-40> </div>'
+      <div className=""""max-w-md mx-auto px-4 sm px-6 lg px-8 py-40> </div>'
         </div><div className=text-center" mb-8></div>
           <h1 className=text-3xl font-bold text-white mb-4></div>";
             Email <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Verification</span></div>
           </h1></div>'";
-          <p className="""text-gray-300>
+          <p className=""""text-gray-300>
             Verifying your email address...</div>";
           </p></div>";
         </div></div>'
@@ -58,7 +58,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
            '
           {status === err'o'r && (</div>'
             <div className=text-center>"</div>'";
-              </div><div className="""w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4></div>'
+              </div><div className=""""w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4></div>'
                 <svg className= w-12 h-12 text-white fill=none  stroke=currentColor viewBox="0 0 24 24></div>'
                   <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M6 18L18 6M6 6l12 12 > </path strokeLinecap=round" strokeLinejoin=round strokeWidth={2} d="M6 18L18 6M6 6l12 12 ></svg></div>;
               </div></div>;

@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -244,7 +244,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI-powered edge computing system shows 94% performance score with optimized edge devices,
         impact: positi've,
         confidence: "0.94,";
-        recommendations: [Continue AI monitoring, Expand edge capabilities];
+        recommendations: [Continue AI monitoring, Expand edge capabilities],
       }]};
   useEffect(() => {;
     setTimeout(() => {;
@@ -302,9 +302,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     <div></div>";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        <div className=""""fixed inset-0 z-0> </div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Edge & Fog Computing System | Zion Tech Group</title></div>'
@@ -321,14 +321,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Edge computing, fog computing, distributed computing, '
               edge analytics, fog orchestration, and automated edge computing management powered by AI.</div>
             </p></div>'
-            <div className="""flex flex-wrap justify-center gap-4> </div>'
+            <div className=""""flex flex-wrap justify-center gap-4> </div>'
               </div><div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🌐 Edge Computing</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>";
                 <span className=text-white font-semibold>☁️ Fog Computing</span></div>";
               </div></div>'
-              <div className="""bg-white/10" backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
+              <div className=""""bg-white/10" backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🔗 Distributed Computing</span></div>;
               </div></div>
             </div></div>
@@ -346,7 +346,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             {/* Tabs */}</div>";
             <div className= flex flex-wrap justify-center mb-8>
                 onClick={() => setActiveTab(edge)}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
                   activeTab === edge'
                     ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white"
                       bg-white/10 text-gray-300 hover bg-white/20`
@@ -406,7 +406,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>'
               '";
                 onClick={() => setActiveTab(overview)}'
-                className="""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${";
+                className=""""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${";
                   activeTab === overview
                     ? bg-gradient-to-r from-blue-600 to-cyan-600 text-white
                     : bg-white'/10 text-gray-300 hover: "bg-white/20"
@@ -417,17 +417,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div>";
             {/* Edge Computing Tab */},
 {activeTab === edge && (</div>'
-              <div className=""" space-y-8>";
+              <div className="""" space-y-8>";
                 {/* Controls */}</div>'
                 </div><div className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6></div>"";
                   <div className=flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> </div>";
                     </div><div className=flex items-center space-x-4>";
                       '
                         onChange={(e) => setSelectedType(e.target.value)}'";
-                        className=""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500";
+                        className="""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500";
                       ></div>
                         <option value=all className=bg-slate-800>All Types</option></div>'";
-                        <option value=iot_gateway className="""bg-slate-800>IoT Gateway</option></div>'
+                        <option value=iot_gateway className=""""bg-slate-800>IoT Gateway</option></div>'
                         <option value=edge_server className=bg-slate-800">Edge Server</option></div>";
                         <option value=micro_data_center className=bg-slate-800>Micro Data Center</option></div>'
                         <option value=edge_device className=bg-slate-800">Edge" Device</option></div>";
@@ -435,24 +435,24 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <option value=edge_storage className=bg-slate-800>Edge" Storage</option></div>";
                       </select></div>
                     </div></div>'";
-                    <button className="""bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
+                    <button className=""""bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
                       Create Edge Device</div>
                     </button> </div></div>";
                 </div>
                 {/* Edge Devices Grid */}</div>";
                 <div className= grid grid-cols-1 lg grid-cols-2 gap-6>";
                   {filteredEdgeDevices.map((device) => (</div>'
-                    </div><div key={device.id} className=""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"";
+                    </div><div key={device.id} className="""" bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"";
                       <div className=flex items-start justify-between mb-4></div>";
                         </div><div></div>
                           <h3 className=text-xl font-semibold text-white mb-2 >{device.name}</h3></div>'
-                          <p className="""text-gray-300 text-sm capitalize>{device.type.replace(_',  )} Device</p></div>";
+                          <p className=""""text-gray-300 text-sm capitalize>{device.type.replace(_',  )} Device</p></div>";
                         </div></div>'
                         <div className=text-right>"</div>'
-                          <span className="""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(device.status)}}>";
+                          <span className=""""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(device.status)}}>";
                             {device.status} </div>'
                           </span>"</div>'";
-                          <div className="""mt-2>`</div>'
+                          <div className=""""mt-2>`</div>'
                             <span className={px-4" py-3 rounded-full text-xs font-medium ${getTypeColor(device.type)}"}>
                               {device.location}</div>
                             </span></div>";
@@ -462,9 +462,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=mb-4></div>'
                         <p className=text-gray-300 text-sm">{device.description}</p> </div>
                       </div></div>'
-                      <div className="""grid grid-cols-3 gap-4 mb-4></div>
+                      <div className=""""grid grid-cols-3 gap-4 mb-4></div>
                         </div><div className= bg-white/5 rounded-lg p-4></div>'";
-                          <div className="""text-sm text-gray-400 mb-1>Capacity</div></div>'
+                          <div className=""""text-sm text-gray-400 mb-1>Capacity</div></div>'
                           <div className=text-2xl" font-bold text-white>{device.capacity}GB</div></div>";
                         </div></div>";
                         <div className=bg-white/5 rounded-lg p-4 ></div>'
@@ -477,9 +477,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div></div>";
                       </div>
                       {/* AI Analysis */}</div>'
-                      <div className="""mb-4></div>";
+                      <div className=""""mb-4></div>";
                         <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4></div>'
-                        <div className="""bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg: "p-4></div>"";
+                        <div className=""""bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg: "p-4></div>"";
                           </div><div className=grid grid-cols-3 gap-4 text-sm></div>";
                             <div> </div>";
                               </div><div className=text-gray-400 mb-1>Performance</div></div>'
@@ -490,11 +490,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white font-semibold">{device.aiAnalysis.reliabilityScore}%</div></div>";
                             </div></div>
                             <div> </div>'";
-                              </div><div className="""text-gray-400 mb-1>Efficiency</div></div>
+                              </div><div className=""""text-gray-400 mb-1>Efficiency</div></div>
                               <div className=text-white font-semibold>{device.aiAnalysis.efficiencyScore}%</div></div>";
                             </div></div>
                           </div></div>'";
-                          <div className="""mt-3></div>'
+                          <div className=""""mt-3></div>'
                             </div><div className=text-sm" font-medium text-gray-400 mb-1>Recommendations </div></div>
                             <div className=text-xs text-gray-300>";
                               {device.aiAnalysis.recommendations.join(, )}</div>
@@ -502,7 +502,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div></div>";
                         </div> </div>'
                       </div>"</div>'
-                      <div className="""flex space-x-2></div>";
+                      <div className=""""flex space-x-2></div>";
                         <button className=flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >'
                           View Details"</div>'
                         </button>"</div>'
@@ -527,7 +527,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div><div className=text-3xl font-bold text-white mb-2 >{analytics.averageLatency.toLocaleString()}ms</div></div>";
                     <div className=text-gray-400 text-sm>Avg Latency</div> </div>";
                   </div></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
+                  <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.activeFogNodes.toLocaleString()}</div></div>
                     <div className=text-gray-400 text-sm >Active Fog Nodes</div></div>
                   </div></div>
@@ -536,7 +536,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=text-gray-400 text-sm>AI Optimization Score</div></div>";
                   </div></div>
                 </div></div>'
-                <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
+                <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
                   <h3 className=text-xl font-semibold text-white mb-6>AI Insights</h3></div>";
                   <div className=space-y-4>
                     {analytics.aiInsights.map((insight) => (</div>";
@@ -567,7 +567,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* CTA Section */}</div>";
       <div className=bg-gradient-to-r from-blue-600/20 to-cyan-600/20 mt-16> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36"></div>'
-          <div className="""text-center></div>
+          <div className=""""text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>
               Ready to Deploy Edge Computing?</div>
             </h2></div>";
@@ -578,7 +578,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=flex  flex-col sm: "flex-row gap-4 justify-center></div>"
               <Link href=/ai-service-matcher className=bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 >Start Deploying</div>
               </Link href=/ai-service-matcher  className=bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105></Link></div>'";
-              <Link href=/talent-directory className="""border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>'
+              <Link href=/talent-directory className=""""border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>'
               </Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;

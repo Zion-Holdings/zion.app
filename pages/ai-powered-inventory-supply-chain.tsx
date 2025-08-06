@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -258,7 +258,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI development workstations show 40% higher demand than forecasted,
         impact: positi'v'e,
         confidence: "0.92,";
-        recommendations: [Increase stock levels, Negotiate better supplier terms];
+        recommendations: [Increase stock levels, Negotiate better supplier terms],
       },;
 {;
         id: 2,
@@ -266,7 +266,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: "AI analysis suggests 15% cost savings through route optimization,";
         impact: positive,;
         confidence: 0.88,;
-        recommendations: [Implement JIT delivery, Consolidat'e' shipments];
+        recommendations: [Implement JIT delivery, Consolidat'e' shipments],
       }]};
   useEffect(() => {;
     setTimeout(() => {;
@@ -306,19 +306,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       default: return bg-gray'-'500/20 text-gray-300}}";
   return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>";
+      </div><div className="""" relative z-10 container-responsive py-8>";
         '
         {/* Background Effects */}"</div>";
         <div className=fixed inset-0 z-0> </div>'
           </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Inventory & Supply Chain Management | Zion Tech Group</title></div>'
         <meta name=description content=Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by AI. > </meta name="description content=Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by" AI. ><meta name=keywords content=inventory, supply chain, logistics, fulfillment, AI management, tracking > </meta name=keywords" content=inventory, supply chain, logistics, fulfillment, AI management, tracking" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>";
       {/* Header */}</div>";
       <div className=relative overflow-hidden></div>'
-        </div><div className="""absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"</div>'";
+        </div><div className=""""absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"</div>'";
         <div className=relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>"
           </div><div className=text-center></div>
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>";
@@ -335,7 +335,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>";
                 <span className=text-white font-semibold>🔗 Supply Chain</span></div>";
               </div></div>'
-              <div className="""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
+              <div className=""""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🚚 Logistics</span></div>;
               </div></div>
             </div></div>
@@ -351,7 +351,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         ) : (</div>";
           <        />
             {/* Tabs */}</div>'
-            <div className=""" flex flex-wrap justify-center mb-8>
+            <div className="""" flex flex-wrap justify-center mb-8>
               '
                 onClick={() => setActiveTab(inventory)}'
                 className={px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -364,7 +364,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button> '";
               '
                 onClick={() => setActiveTab(supply-chain)}'";
-                className="""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${";
+                className=""""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${";
                   activeTab === supply-chain
                     ? bg-gradient-to-r from-purple-600 to-pink-600 text-white
                     : bg-white/10 text-gray-300 hover:bg-white/20
@@ -396,19 +396,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 '";
             {/* Inventory Tab */},'
 {activeTab === inventory && ("</div>'
-              <div className=""" space-y-8>
+              <div className="""" space-y-8>
                 {/* Controls */}</div>'";
                 </div><div className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6></div>"
                   <div className=flex  flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0></div>";
                     </div><div className= flex items-center space-x-4>
                         onChange={(e) => setSelectedCategory(e.target.value)}'
-                        className=""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
+                        className="""" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
                       ></div>'
                         <option value=all" className=bg-slate-800>All Categories</option></div>'
                         <option value=physical className=bg-slate-800>Physical</option>"</div>'
-                        <option value=digital className="""bg-slate-800>Digital</option></div>
+                        <option value=digital className=""""bg-slate-800>Digital</option></div>
                         <option value=service className=bg-slate-800>Service</option></div>'
-                        <option value=talent className="""bg-slate-800>Talent</option></div>";
+                        <option value=talent className=""""bg-slate-800>Talent</option></div>";
                       </select></div>'
                     </div>"</div>
                     <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
@@ -425,14 +425,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <h3 className=text-xl font-semibold text-white mb-2>{item.name}</h3></div>'";
                           <p className=text-gray-300 text-sm: "capitalize>{item.category} • {item.type}</p></div>"
                         </div>"</div>'
-                        <span className="""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(item.status)}}>";
+                        <span className=""""{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(item.status)}}>";
                           {item.status}</div>
                         </span></div>";
                       </div>
 </div>'";
-                      <div className="""grid grid-cols-2 gap-4 mb-4></div>'
+                      <div className=""""grid grid-cols-2 gap-4 mb-4></div>'
                         </div><div className= bg-white/5 rounded-lg" p-4></div>'
-                          <div className="""text-sm: "text-gray-400 mb-1>Available</div></div>"
+                          <div className=""""text-sm: "text-gray-400 mb-1>Available</div></div>"
                           <div className=text-2xl font-bold text-white >{item.available}</div></div>
                           <div className=text-gray-300 text-sm>of {item.quantity},</div>";
 {item.unit}</div></div>
@@ -444,16 +444,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div></div>";
                       </div>'
                       {/* AI Analysis */}"</div>'
-                      <div className="""mb-4></div>";
+                      <div className=""""mb-4></div>";
                         <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4></div>'
-                        <div className="""bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg: "p-4></div>"";
+                        <div className=""""bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg: "p-4></div>"";
                           </div><div className=grid grid-cols-2 gap-4 text-sm></div>";
                             <div> </div>
                               </div><div className=text-gray-400 mb-1>Demand Forecast</div></div>'
-                              <div className="""text-white font-semibold>{item.aiAnalysis.demandForecast}</div></div>";
+                              <div className=""""text-white font-semibold>{item.aiAnalysis.demandForecast}</div></div>";
                             </div></div>'
                             <div>"</div>'
-                              </div><div className="""text-gray-400 mb-1 >Reorder Point</div></div>";
+                              </div><div className=""""text-gray-400 mb-1 >Reorder Point</div></div>";
                               <div className=text-white font-semibold>{item.aiAnalysis.reorderPoint}</div></div>'
                             </div>"</div>'
                             <div> "</div>";
@@ -461,14 +461,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               <div className=text-white font-semibold>{item.aiAnalysis.leadTime} days</div></div>'";
                             </div>"</div>
                             <div></div>'";
-                              </div><div className="""text-gray-400 mb-1 >Risk Level</div>`</div>'
-                              <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(item.aiAnalysis.riskLevel)}}>
+                              </div><div className=""""text-gray-400 mb-1 >Risk Level</div>`</div>'
+                              <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(item.aiAnalysis.riskLevel)}}>
                                 {item.aiAnalysis.riskLevel}</div>";
                               </span></div>
                             </div> </div>";
                           </div></div>";
                           <div className=mt-3></div>'
-                            </div><div className="""text-sm" font-medium text-gray-400 mb-1>AI Confidence  {Math.round(item.aiAnalysis.confidence * 100)}%</div></div>;
+                            </div><div className=""""text-sm" font-medium text-gray-400 mb-1>AI Confidence  {Math.round(item.aiAnalysis.confidence * 100)}%</div></div>;
                             <div className=text-xs text-gray-300>
                               {item.aiAnalysis.recommendations[0]}</div>
                             </div></div>
@@ -477,7 +477,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div>";
  </div>";
                       <div className=flex space-x-2></div>'
-                        <button className="""flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>";
+                        <button className=""""flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                           Update Stock</div>";
                         </button></div>'
                         <button className=flex-1" border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>";
@@ -497,7 +497,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=flex items-start justify-between mb-6> </div>";
                       </div><div></div>";
                         <h3 className=text-xl font-semibold text-white mb-2>{node.name}</h3></div>'
-                        <p className="""text-gray-300 text-sm capitalize >{node.type} • {node.location}</p></div>";
+                        <p className=""""text-gray-300 text-sm capitalize >{node.type} • {node.location}</p></div>";
                       </div>";
                       `'
                       }"}>";
@@ -511,29 +511,29 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                       <div className=bg-white/5 rounded-lg p-4></div>
                         </div><div className=text-sm:text-gray-400 mb-1>Reliability</div></div>'
-                        <div className="""text-2xl font-bold text-white >{node.reliability}%</div></div>
+                        <div className=""""text-2xl font-bold text-white >{node.reliability}%</div></div>
                       </div></div>'
-                      <div className="""bg-white/5 rounded-lg p-4></div>";
+                      <div className=""""bg-white/5 rounded-lg p-4></div>";
                         </div><div className=text-sm text-gray-400 mb-1>Lead Time</div></div>'
-                        <div className="""text-2xl font-bold text-white>{node.leadTime} days</div>"</div>";
+                        <div className=""""text-2xl font-bold text-white>{node.leadTime} days</div>"</div>";
                       </div></div>";
                       <div className=bg-white/5 rounded-lg p-4 ></div>'
-                        </div><div className="""text-sm text-gray-400 mb-1>Cost</div>"</div>
+                        </div><div className=""""text-sm text-gray-400 mb-1>Cost</div>"</div>
                         <div className=text-2xl font-bold text-white>${node.cost.toLocaleString()}</div></div>";
                       </div></div>
                     </div>";
                     {/* AI Optimization */}</div>";
                     <div></div>'
                       <h4 className=text-lg font-semibold text-white mb-3>AI Optimization</h4>"</div>'
-                      <div className="""bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ></div>";
+                      <div className=""""bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ></div>";
                         </div><div className=grid grid-cols-1 md grid-cols-3 gap-4 text-sm></div>'
                           <div> "</div>'
-                            </div><div className="""text-gray-400 mb-1>Efficiency</div></div>";
+                            </div><div className=""""text-gray-400 mb-1>Efficiency</div></div>";
                             <div className=text-white font-semibold>{node.aiOptimization.efficiency}%</div></div>'
                           </div>"</div>'
                           <div>"</div>";
                             </div><div className=text-gray-400 mb-1 >Cost Savings</div></div>'
-                            <div className="""text-white font-semibold>${node.aiOptimization.costSavings.toLocaleString()}</div></div>";
+                            <div className=""""text-white font-semibold>${node.aiOptimization.costSavings.toLocaleString()}</div></div>";
                           </div> </div>";
                           <div></div>'
                             </div><div className=text-gray-400" mb-1>Risk Reduction</div></div>";
@@ -541,7 +541,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div></div>";
                         </div></div>
                         <div className=mt-3></div>'";
-                          </div><div className="""text-sm font-medium text-gray-400 mb-1>Recommendations </div></div>'
+                          </div><div className=""""text-sm font-medium text-gray-400 mb-1>Recommendations </div></div>'
                           <div className=text-xs" text-gray-300>;
                             {node.aiOptimization.recommendations.join(, )}</div>;
                           </div></div>;
@@ -567,8 +567,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         }}>";
                           {order.status}</div>'
                         </span>"</div>'
-                        <div className="""mt-2></div>'";
-                          <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(order.priority)}}>
+                        <div className=""""mt-2></div>'";
+                          <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(order.priority)}}>
                             {order.priority}</div>";
                           </span></div>";
                         </div></div>'
@@ -578,17 +578,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div className= bg-white/5 rounded-lg p-4></div>";
                         <div className=text-sm text-gray-400 mb-1>Total Value</div></div>'
                         <div className=text-2xl font-bold text-white>${order.totalValue.toLocaleString()}</div>"</div>'
-                        <div className="""text-gray-300 text-sm >Shipping: "${order.shippingCost}</div></div>"
+                        <div className=""""text-gray-300 text-sm >Shipping: "${order.shippingCost}</div></div>"
                       </div></div>
                       <div className=bg-white/5 rounded-lg p-4></div>";
                         </div><div className=text-sm text-gray-400 mb-1>Items</div></div>
                         <div className=text-2xl font-bold text-white>{order.items.length}</div></div>";
                         <div className=text-gray-300 text-sm >Total Qty: {order.items.reduce((sum, item) => sum + item.quantity, 0)}</div></div>";
                       </div></div>'
-                      <div className="""bg-white/5 rounded-lg p-4>"</div>";
+                      <div className=""""bg-white/5 rounded-lg p-4>"</div>";
                         </div><div className=text-sm text-gray-400 mb-1>Estimated Delivery</div></div>'
                         <div className=text-white font-semibold>{order.estimatedDelivery.toLocaleDateString()}</div>"</div>'
-                        <div className="""text-gray-300 text-sm >Order: "{order.orderDate.toLocaleDateString()}</div></div>";
+                        <div className=""""text-gray-300 text-sm >Order: "{order.orderDate.toLocaleDateString()}</div></div>";
                       </div></div>;
                     </div>;
                     {/* AI Optimization */}</div>;
@@ -602,7 +602,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div></div>";
                           <div></div>'
                             </div><div className=text-gray-400" mb-1>Estimated Time</div></div>'";
-                            <div className="""text-white font-semibold>{order.aiOptimization.estimatedTime} days</div></div>
+                            <div className=""""text-white font-semibold>{order.aiOptimization.estimatedTime} days</div></div>
                           </div></div>
                           <div></div>";
                             </div><div className=text-gray-400 mb-1 >Cost Savings</div></div>
@@ -610,7 +610,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div></div>";
                           <div></div>'
                             </div><div className=text-gray-400" mb-1>Carbon Footprint</div></div>'
-                            <div className="""text-white font-semibold>{order.aiOptimization.carbonFootprint} kg CO2</div></div>";
+                            <div className=""""text-white font-semibold>{order.aiOptimization.carbonFootprint} kg CO2</div></div>";
                           </div></div>
                         </div></div>";
                         <div className=mt-3></div>";
@@ -627,13 +627,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             )}";
             {/* Analytics Tab */},
 {activeTab === analytics && analytics && (</div>'
-              <div className="""space-y-8> </div>'
+              <div className=""""space-y-8> </div>'
                 </div><div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6></div>"
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10> </div>
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div></div>";
                     <div className=text-gray-400 text-sm>Total Items</div></div>
                   </div></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10 ></div>"
+                  <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10 ></div>"
                     </div><div className=text-3xl font-bold text-white mb-2>${analytics.totalValue.toLocaleString()}</div></div>";
                     <div className=text-gray-400 text-sm>Total Value</div> </div>'
                   </div>"</div>'
@@ -642,8 +642,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=text-gray-400 text-sm>Low Stock Items</div> </div>";
                   </div></div>
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>'
-                    </div><div className="""text-3xl font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div></div>'
-                    <div className="""text-gray-400 text-sm >Supply Chain Efficiency</div></div>";
+                    </div><div className=""""text-3xl font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div></div>'
+                    <div className=""""text-gray-400 text-sm >Supply Chain Efficiency</div></div>";
                   </div></div>
                 </div>";
 </div>
@@ -652,11 +652,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <h3 className=text-xl font-semibold text-white mb-4>Performance Metrics</h3></div>";
                     <div className=space-y-4></div>'
                       </div><div>"</div>'
-                        <div className=""" flex justify-between text-sm mb-1></div>
+                        <div className="""" flex justify-between text-sm mb-1></div>
                           <span className= text-gray-400>AI Accuracy</span></div>'
-                          <span className="""text-white>{analytics.aiAccuracy}%</span></div>
+                          <span className=""""text-white>{analytics.aiAccuracy}%</span></div>
                         </div></div>'";
-                        <div className="""w-full bg-gray-700 rounded-full h-2 ></div>
+                        <div className=""""w-full bg-gray-700 rounded-full h-2 ></div>
                           </div ></div>
                           ></div></div>";
                         </div></div>
@@ -664,7 +664,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div></div>";
                         </div><div className= flex justify-between text-sm mb-1></div>'
                           <span className=text-gray-400>Average" Lead Time</span></div>'
-                          <span className="""text-white>{analytics.averageLeadTime} days</span></div>;
+                          <span className=""""text-white>{analytics.averageLeadTime} days</span></div>;
                         </div></div>
                         <div className=w-full bg-gray-700 rounded-full h-2></div>
                           </div></div>
@@ -678,7 +678,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=space-y-2>";
                       {analytics.topCategories.map((category, index) => (</div>
                         </div><div key={index} className= flex justify-between items-center></div>'";
-                          <span className="""text-gray-300>{category}</span></div>'
+                          <span className=""""text-gray-300>{category}</span></div>'
                           <div className=w-20" bg-gray-700 rounded-full h-2 ></div>;
                             </div></div>
                             ></div></div>
@@ -704,7 +704,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <div className=text-xs" text-gray-400 mb-2>";
                           Confidence  {Math.round(insight.confidence * 100)}%</div>
                         </div></div>'
-                        <div className="""text-xs text-gray-400></div>'
+                        <div className=""""text-xs text-gray-400></div>'
                           <strong>Recommendations: '</strong> {insight.recommendations.join(, ')}</div>;
                         </div></div>;
                       </div>;
@@ -729,7 +729,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>";
             <div className= flex flex-col sm flex-row gap-4 justify-center></div>'
               <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ">Start Optimization</div>'
-              </Link href=/ai-service-matcher className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>";
+              </Link href=/ai-service-matcher className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>";
               <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
               </Link href=/talent-directory  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;

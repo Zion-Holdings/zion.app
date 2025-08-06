@@ -3,7 +3,7 @@ import { motion } from framer-motion
 ";
 interface DemandForecast {";
   className?: string;}'
-const BlockchainIntegration: 'React.FC<BlockchainIntegrationProps> = ({ className=""" }) => {
+const BlockchainIntegration: 'React.FC<BlockchainIntegrationProps> = ({ className="""" }) => {
   return (</div>";
     <motion.div
       initial={{ opacity: 0, y: 20}}";
@@ -13,7 +13,7 @@ const BlockchainIntegration: 'React.FC<BlockchainIntegrationProps> = ({ classNam
     "></div>";
       <div className=flex items-center mb-4></div>'
         <div className= w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4"></div>'
-          <svg className=""" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24 24"></div>'
+          <svg className="""" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24 24"></div>'
             <path strokeLinecap=round" strokeLinejoin=round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z ></svg></div>
         </div></div>";
         <h3 className= text-xl font-semibold text-gray-900>Blockchain Integration</h3></div>
@@ -25,7 +25,7 @@ const BlockchainIntegration: 'React.FC<BlockchainIntegrationProps> = ({ classNam
         <button className= bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors>";
           Learn More</div>
         </button></div>'";
-        <button className="""border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>
+        <button className=""""border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>
           Demo</div>
         </button></div>";
       </div></div>

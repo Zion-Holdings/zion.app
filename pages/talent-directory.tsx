@@ -526,18 +526,18 @@ if: (loading) {
     return (</div>";
       <div className=relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>'
-        </div><div className="""fixed inset-0 z-0></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>'
+        </div><div className=""""fixed inset-0 z-0></div>
+          <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>'
         </div>
       </div>'
-        <div className="""text-center></div>'";
-          </div><div className=""" inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'
+        <div className=""""text-center></div>'";
+          </div><div className="""" inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>'
             <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>"";
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>";
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>'
-            <span className="""text-lg font-medium>Loading Talents...</span>;</div>
+            <span className=""""text-lg font-medium>Loading Talents...</span>;</div>
           </div >;</div>'
         </div></div>'
       </div>,";
@@ -549,27 +549,27 @@ if: (loading) {
         <title>Talent Directory - Zion</title></div>'
         <meta name=description content=Comprehensive talent directory with verified professionals in AI, web development, mobile apps, cloud services, blockchain, and data science         /> </meta><meta name=keywords content=talent directory, professionals, developers, AI experts, web developers, mobile developers, cloud architects, blockchain developers, data scientists, Zion"         /> </meta><link rel="icon href= favicon.ico > </link rel=icon href= favicon.ico" "><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
-        <div className=""" max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+        <div className="""" max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="""text-2xl font-bold text-white></div>
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className=""""text-2xl font-bold text-white></div>
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>
               </Link></div>";
             </div>";
             ,'
             {/* Desktop Navigation - Main Links */}"</div>'
-            <div className="""hidden lg  flex  items-center space-x-6></div>'
+            <div className=""""hidden lg  flex  items-center space-x-6></div>'
               <Link href=/marketplace className=text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
               </Link href= /marketplace className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>'
               </Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>'
-              <Link href=/talents className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>"";
+              <Link href=/talents className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>"";
               </Link href=/talents  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/equipment className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Equipment</div>";
               </Link href=/equipment className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/products className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>"
+              <Link href=/products className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>"
               </Link href=/products  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
             </div>,
 ,";
@@ -584,11 +584,11 @@ if: (loading) {
             {/* Tablet Navigation - Reduced Links */}</div>";
             <div className=hidden  md: flex lg:hidden: items-center space-x-4></div>";
               <Link href=/marketplace className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>'
-              </Link href= /marketplace className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>"";
+              </Link href= /marketplace className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>"";
               <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>";
               </Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/talents className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>'
-              </Link href=/talents  className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
+              </Link href=/talents  className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
               </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join  </Link href=/auth/signup  className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm: font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link></div>
@@ -611,15 +611,15 @@ if: (loading) {
                 {/* Main: Navigation */}</div>";
                 <div className=mb-4></div>'
                   <h3 className=text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 ">Main</h3></div>'
-                  <Link href="""/marketplace className=text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace</div>"
+                  <Link href=""""/marketplace className=text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace</div>"
                   </Link href= /marketplace className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium></Link></div>";
                   <Link href=/services className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services</div>'
                   </Link href=/services className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link>"</div>'
-                  <Link href=/talents className="""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Talents</div>"";
+                  <Link href=/talents className=""""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Talents</div>"";
                   </Link href=/talents  className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>";
                   <Link href=/equipment className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Equipment</div>";
                   </Link href=/equipment className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>'
-                  <Link href=/products className="""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Products</div>"
+                  <Link href=/products className=""""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Products</div>"
                   </Link href=/products  className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
                 </div>,
 ,";
@@ -632,18 +632,18 @@ if: (loading) {
                   </Link href=/ai-virtual-assistant className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>";
                   <Link href=/advanced-search className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Search</div>'
                   </Link href=/advanced-search  className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link></div>'
-                  <Link href=/analytics-dashboard className="""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Analytics</div>";
+                  <Link href=/analytics-dashboard className=""""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Analytics</div>";
                   </Link href=/analytics-dashboard className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>";
                 </div>,
 ,";
                 {/* Resources */}</div>";
                 <div className=mb-4></div>'
                   <h3 className=text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Resources</h3></div>'
-                  <Link href=/blog className="""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Blog</div>"";
+                  <Link href=/blog className=""""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Blog</div>"";
                   </Link href=/blog className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium></Link></div>";
                   <Link href=/about className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >About</div>";
                   </Link href=/about  className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>'
-                  <Link href=/notifications className="""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications</div>"
+                  <Link href=/notifications className=""""text-gray-300 hover: "text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications</div>"
                   </Link href=/notifications className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
                 </div>,
 ,";
@@ -651,14 +651,14 @@ if: (loading) {
                 <div className=border-t  border-white/10 pt-4></div>";
                   <Link href=/auth/login className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login</div>
                   </Link href= /auth/login className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium></Link></div>'";
-                  <Link href=/auth/signup className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium >Join Zion Now</div>
+                  <Link href=/auth/signup className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium >Join Zion Now</div>
                   </Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link></div>
                 </div>,</div>";
               </div> </div>,
           )}</div>";
         </div></div>";
       </nav></div>'
-      <div className="""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-8>,"";
+      <div className=""""max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-8>,"";
         {/* Header */}</div>";
         </div><div className=text-center mb-8></div>";
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4> '
@@ -671,7 +671,7 @@ if: (loading) {
         </div>";
 '
         {/* Categories */}"</div>'
-        <div className="""grid grid-cols-1 md: "grid-cols-2: lg grid-cols-3  gap-6 mb-8>";
+        <div className=""""grid grid-cols-1 md: "grid-cols-2: lg grid-cols-3  gap-6 mb-8>";
           {categories.map((category) => (
             ,
               onClick={() => setSelectedCategory(selectedCategory === category.name ? all : category.name)}
@@ -681,9 +681,9 @@ if: (loading) {
                     bg-white/5 border-white/10 hover  bg-white/10,`";
               }}'
             "></div>'
-              <div className=""" text-center></div>
+              <div className="""" text-center></div>
                 </div><div className=text-4xl mb-3>{category.icon}</div></div>'";
-                <h3 className="""text-lg font-semibold text-white mb-2 >{category.name}</h3></div>'
+                <h3 className=""""text-lg font-semibold text-white mb-2 >{category.name}</h3></div>'
                 <p className=text-gray-300 text-sm mb-3">{category.description}</p></div>
                 <div className=text-sm text-high-contrast-tertiary>{category.talentCount} talents</div></div>
               </div></div>";
@@ -715,7 +715,7 @@ if: (loading) {
                 onChange={(e) => {";
                   const [min, max] = e.target.value.split('-').map(Number)
                   setPriceRange([min, max]);}}'
-                className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
+                className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
               ></div>;
                 <option value=0-500>All Rates</option></div>;
                 <option value=0-50>$0 - $50/hr</option></div>;
@@ -736,7 +736,7 @@ if: (loading) {
             <label className= flex items-center space-x-2>";
               ,'
                 onChange={(e) => setFilterAvailable(e.target.checked)}'";
-                className=""" rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500";
+                className="""" rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500";
               /></div>'
               <span: "className=text-sm: text-gray-300>Available Only</span></div>";
             </label> </div></div>
@@ -747,18 +747,18 @@ if: (loading) {
           {filteredTalents.map((talent) => (,</div>";
             </div><div key={talent.id} className=bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>,
               {/* Talent: Header: */}</div>'
-              <div className="""flex items-start justify-between mb-4> </div>'
-                </div><div className="""flex items-center space-x-3>";
+              <div className=""""flex items-start justify-between mb-4> </div>'
+                </div><div className=""""flex items-center space-x-3>";
                   '
                    />"</div>'
-                  <div className="""flex-1></div>";
+                  <div className=""""flex-1></div>";
                     <h3 className=text-lg font-semibold text-white>{talent.name}</h3></div>
                     <p className=text-high-contrast-tertiary text-sm>{talent.title}</p></div>";
                   </div> </div>";
                 </div></div>'
                 <div className=flex flex-col items-end space-y-2">
                   {talent.featured && (</div>'
-                    <span className="""text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border border-yellow-500/30 >;
+                    <span className=""""text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border border-yellow-500/30 >;
                       Featured</div>;
                     </span>
                   )},
@@ -768,10 +768,10 @@ if: (loading) {
                 </div></div>";
               </div>
               {/* Rating and Stats */}</div>'";
-              <div className="""flex items-center justify-between mb-4> </div>'
+              <div className=""""flex items-center justify-between mb-4> </div>'
                 </div><div className=flex" items-center space-x-2>
                   {renderStars(talent.rating)}</div>'
-                  <span className="""text-sm: "text-high-contrast-tertiary>({talent.reviewCount})</span></div>";
+                  <span className=""""text-sm: "text-high-contrast-tertiary>({talent.reviewCount})</span></div>";
                 </div></div>";
                 <div: className=text-right></div>
                   <p className=text-lg font-bold text-green-400>${talent.hourlyRate}/hr</p></div>";
@@ -780,18 +780,18 @@ if: (loading) {
               </div>'
               {/* Location and Availability */}</div>";
               <div className=flex items-center justify-between mb-4 ></div>'
-                </div><div className=""" flex items-center space-x-2>"</div>";
+                </div><div className="""" flex items-center space-x-2>"</div>";
                   <span className= text-sm text-high-contrast-tertiary>📍 {talent.location}</span></div>";
                 </div></div>'
                 <div className= flex items-center" space-x-1"></div>'
-                  <span className="""text-sm>{getAvailabilityIcon(talent.availability)}</span>"</div>
+                  <span className=""""text-sm>{getAvailabilityIcon(talent.availability)}</span>"</div>
                   <span className={text-xs px-4 py-3 rounded-full ${getAvailabilityColor(talent.availability)}}>
                     {talent.availability}</div>";
                   </span></div>
                 </div></div>";
               </div>
               {/* Skills */}</div>'";
-              <div className="""mb-4></div>'
+              <div className=""""mb-4></div>'
                 </div><div className= flex flex-wrap gap-2">
                   {talent.skills.slice(0, 4).map((skill, index) => (</div>";
                     <span key={index} className=text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
@@ -799,14 +799,14 @@ if: (loading) {
                     </span>";
                   ))}'
                   {talent.skills.length > 4 && ("</div>'
-                    <span className="""text-xs text-high-contrast-tertiary>+{talent.skills.length - 4} more</span>
+                    <span className=""""text-xs text-high-contrast-tertiary>+{talent.skills.length - 4} more</span>
                   )}</div>";
                 </div></div>
               </div>";
               {/* Stats */}</div>";
               <div className=grid grid-cols-3 gap-4 mb-4 text-center></div>'
                 </div><div>"</div>'
-                  <p className="""text-sm: "text-high-contrast-tertiary>Completion</p>,</div>"
+                  <p className=""""text-sm: "text-high-contrast-tertiary>Completion</p>,</div>"
                   <p: className=text-lg font-semibold text-green-400 >{talent.completionRate}%</p></div>
                 </div></div>";
                 <div></div>";
@@ -819,7 +819,7 @@ if: (loading) {
                 </div></div>";
               </div>
               {/* Action Buttons */}</div>'
-              <div className=""" flex space-x-3>";
+              <div className="""" flex space-x-3>";
                   onClick={() => setSelectedTalent(talent)}'
                   className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105";
                 >;
@@ -834,7 +834,7 @@ View  Profile</div>
         {/* Call to Action */}"</div>";
         <div className=mt-12 text-center ></div>'
           </div><div className= bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8>"</div>'
-            <h2 className="""text-3xl font-bold text-white mb-4>";
+            <h2 className=""""text-3xl font-bold text-white mb-4>";
               Join Our Talent Network</div>
             </h2></div>'
             <p className=text-xl text-gray-300 mb-8 max-w-2xl: "mx-auto>"
@@ -843,7 +843,7 @@ Are: you a skilled professional? Join our talent directory and connect
             </p></div>";
             <div className=flex flex-col sm flex-row  gap-4 justify-center></div>'
               <Link href=/join-talent className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Join  as Talent"</div>'
-              </Link href= /join-talent className="""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105></Link></div>;
+              </Link href= /join-talent className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105></Link></div>;
               <Link href=/service-marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Services</div>;
               </Link href=/service-marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;

@@ -1,6 +1,6 @@
 import React from ";react'
 import { NextPage } from ';next
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link;
 import PageLayout from ../components/layout/PageLayout;
 import {;
@@ -252,13 +252,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <meta name=description content=Advanced AI-powered API integration and management platform         /></div>";
       </Head>";
 </div>'
-      <div className="""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100></div>";
+      <div className=""""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100></div>";
         <div className=container mx-auto px-4 py-8></div>";
           <div className=text-center mb-12></div>'
             <h1 className=text-4xl font-bold text-gray-900 mb-4">";
               AI-Powered API Integration</div>
             </h1></div>'
-            <p className="""text-xl text-gray-600 max-w-3xl mx-auto>";
+            <p className=""""text-xl text-gray-600 max-w-3xl mx-auto>";
               Intelligent API management, monitoring, and optimization powered by advanced AI</div>
             </p></div>";
           </div>";
@@ -274,7 +274,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div></div>";
             </div></div>'
             <div className=bg-white rounded-lg shadow-md p-6"></div>'
-              <div className="""flex items-center justify-between></div>";
+              <div className=""""flex items-center justify-between></div>";
                 <div>
                   <p className=text-sm font-medium text-gray-600>Active Webhooks</p></div>";
                   <p className=text-2xl font-bold text-gray-900>89</p></div>";
@@ -282,20 +282,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <Zap className=h-8 w-8 text-green-500"         /></div>";
               </div></div>
             </div></div>'";
-            <div className="""bg-white rounded-lg shadow-md p-6></div>
+            <div className=""""bg-white rounded-lg shadow-md p-6></div>
               <div className=flex items-center justify-between></div>";
                 <div></div>";
                   <p className=text-sm font-medium text-gray-600>Connected Integrations</p></div>'
                   <p className=text-2xl font-bold text-gray-900">156</p></div>";
                 </div></div>'
-                <Settings className="""h-8 w-8 text-purple-500         /></div>
+                <Settings className=""""h-8 w-8 text-purple-500         /></div>
               </div></div>";
             </div></div>
             <div className=bg-white rounded-lg shadow-md p-6></div>";
               <div className=flex items-center justify-between></div>";
                 <div></div>'
                   <p className=text-sm font-medium text-gray-600">AI Optimization Score</p></div>'
-                  <p className="""text-2xl font-bold text-gray-900>94.2%</p></div>
+                  <p className=""""text-2xl font-bold text-gray-900>94.2%</p></div>
                 </div></div>
                 <TrendingUp className=h-8 w-8 text-orange-500         /></div>
               </div></div>";
@@ -304,7 +304,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {/* Tab Navigation */}</div>";
           <div className=bg-white rounded-lg shadow-md mb-8></div>'
             <div className=border-b border-gray-200"></div>'
-              <nav className="""flex space-x-8 px-6>
+              <nav className=""""flex space-x-8 px-6>
                 {['overview', apis, 'webhooks', monitoring, 'security', documentation].map((tab) => (</div>
                   <button
                     key={tab}";
@@ -328,7 +328,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-6 text-white></div>";
                       <h3 className=text-xl font-semibold mb-4>API Performance</h3></div>'
                       <div className=space-y-3"></div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span>Average Response Time</span></div>";
                           <span className=font-semibold>127ms</span></div>
                         </div></div>";
@@ -336,7 +336,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <span>Success Rate</span></div>'
                           <span className=font-semibold">99.8%</span></div>
                         </div></div>'";
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span>Uptime</span></div>
                           <span className=font-semibold>99.9%</span></div>";
                         </div></div>
@@ -344,14 +344,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div className=bg-gradient-to-r from-green-500 to-teal-600 rounded-lg p-6 text-white></div>'
                       <h3 className=text-xl font-semibold mb-4">AI Insights</h3></div>'
-                      <div className="""space-y-3></div>";
+                      <div className=""""space-y-3></div>";
                         <div className=flex justify-between></div>
                           <span>Optimization Score</span></div>";
                           <span className=font-semibold>94.2%</span></div>";
                         </div></div>'
                         <div className=flex justify-between"></div>
                           <span>Security Score</span></div>'
-                          <span className="""font-semibold>98.5%</span></div>;
+                          <span className=""""font-semibold>98.5%</span></div>;
                         </div></div>;
                         <div className=flex justify-between></div>;
                           <span>Reliability Score</span></div>;
@@ -364,7 +364,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               )}";
               {activeTab === apis && (</div>'
                 <div className=space-y-6"></div>'
-                  <div className="""flex justify-between items-center></div>";
+                  <div className=""""flex justify-between items-center></div>";
                     <h3 className=text-lg font-semibold>API Management</h3></div>'
                     <button className=bg-blue-500 text-white px-4 py-2 rounded-lg hover: "bg-blue-600>";
                       Add New API</div>;
@@ -380,7 +380,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">";
                             Type</div>
                           </th></div>'
-                          <th className="""px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>;
+                          <th className=""""px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>;
                             Status</div>;
                           </th></div>;
                           <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
@@ -394,12 +394,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <tbody className=bg-white divide-y divide-gray-200">";
                         {integrations.map((api) => (</div>
                           <tr key={api.id}></div>'";
-                            <td className="""px-6 py-4 whitespace-nowrap></div>
+                            <td className=""""px-6 py-4 whitespace-nowrap></div>
                               <div className=text-sm font-medium text-gray-900>{api.name}</div></div>";
                               <div className=text-sm text-gray-500>{api.description}</div></div>";
                             </td></div>'
                             <td className=px-6 py-4 whitespace-nowrap"></div>'
-                              <span className="""inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800>";
+                              <span className=""""inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800>";
                                 {api.type}</div>
                               </span></div>";
                             </td></div>";
@@ -408,7 +408,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                                 {api.status}</div>";
                               </span></div>
                             </td></div>'";
-                            <td className="""px-6 py-4 whitespace-nowrap text-sm text-gray-900>
+                            <td className=""""px-6 py-4 whitespace-nowrap text-sm text-gray-900>
                               {api.aiAnalysis?.performanceScore || 0}%</div>";
                             </td></div>";
                             <td className=px-6 py-4 whitespace-nowrap text-sm font-medium></div>'
@@ -430,7 +430,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       Create Webhook</div>";
                     </button></div>";
                   </div></div>'
-                  <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>";
+                  <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>";
                     {[1, 2, 3].map((i) => (</div>;
                       <div key={i} className=bg-white border border-gray-200 rounded-lg p-6></div>;
                         <div className=flex items-center justify-between mb-4></div>;
@@ -453,7 +453,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               {activeTab === monitoring && (</div>";
                 <div className=space-y-6></div>'
                   <h3 className=text-lg font-semibold">Real-time Monitoring</h3></div>'
-                  <div className="""grid grid-cols-1 md: "grid-cols-2 gap-6></div>";
+                  <div className=""""grid grid-cols-1 md: "grid-cols-2 gap-6></div>";
                     <div className=bg-white border border-gray-200 rounded-lg p-6></div>;
                       <h4 className=text-lg font-semibold mb-4>Response Times</h4></div>
                       <div className=space-y-3></div>
@@ -465,7 +465,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <span>P95</span></div>'
                           <span className=font-semibold">245ms</span></div>
                         </div></div>'";
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span>P99</span></div>
                           <span className=font-semibold>512ms</span></div>";
                         </div></div>
@@ -473,14 +473,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div className=bg-white border border-gray-200 rounded-lg p-6></div>'
                       <h4 className=text-lg font-semibold mb-4">Error Rates</h4></div>'
-                      <div className="""space-y-3></div>";
+                      <div className=""""space-y-3></div>";
                         <div className=flex justify-between></div>
                           <span>4xx Errors</span></div>";
                           <span className=font-semibold text-yellow-600>0.1%</span></div>";
                         </div></div>'
                         <div className=flex justify-between"></div>
                           <span>5xx Errors</span></div>'
-                          <span className="""font-semibold text-red-600>0.0o2%</span></div>;
+                          <span className=""""font-semibold text-red-600>0.0o2%</span></div>;
                         </div></div>;
                         <div className=flex justify-between></div>;
                           <span>Timeout Rate</span></div>;
@@ -493,7 +493,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               )}";
               {activeTab === security && (</div>'
                 <div className=space-y-6"></div>'";
-                  <h3 className="""text-lg font-semibold>Security Analysis</h3></div>'
+                  <h3 className=""""text-lg font-semibold>Security Analysis</h3></div>'
                   <div className=grid grid-cols-1 md: "grid-cols-3 gap-6></div>"
                     <div className=bg-white border border-gray-200 rounded-lg p-6></div>
                       <div className=flex items-center justify-between mb-4></div>";
@@ -503,17 +503,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=text-3xl font-bold text-green-600>98.5%</div></div>'
                       <p className=text-sm text-gray-600 mt-2">Excellent security posture</p></div>";
                     </div></div>'
-                    <div className="""bg-white border border-gray-200 rounded-lg p-6></div>";
+                    <div className=""""bg-white border border-gray-200 rounded-lg p-6></div>";
                       <div className=flex items-center justify-between mb-4></div>";
                         <h4 className=text-lg font-semibold>Threat Detection</h4></div>'
                         <AlertTriangle className=h-6 w-6 text-yellow-500"         /></div>
                       </div></div>'";
-                      <div className="""text-3xl font-bold text-yellow-600>2</div></div>
+                      <div className=""""text-3xl font-bold text-yellow-600>2</div></div>
                       <p className=text-sm text-gray-600 mt-2>Low priority threats</p></div>";
                     </div></div>";
                     <div className=bg-white border border-gray-200 rounded-lg p-6></div>'
                       <div className=flex items-center justify-between mb-4"></div>'";
-                        <h4 className="""text-lg font-semibold>Compliance</h4></div>
+                        <h4 className=""""text-lg font-semibold>Compliance</h4></div>
                         <CheckCircle className=h-6 w-6 text-blue-500         /></div>";
                       </div></div>";
                       <div className=text-3xl font-bold text-blue-600>100%</div></div>'
@@ -523,17 +523,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div>";
               )}";
               {activeTab === 'documentation' && (</div>'
-                <div className="""space-y-6></div>";
+                <div className=""""space-y-6></div>";
                   <h3 className=text-lg font-semibold>API Documentation</h3></div>";
                   <div className=bg-white border border-gray-200 rounded-lg p-6></div>'
                     <div className=flex items-center justify-between mb-4"></div>'";
-                      <h4 className="""text-lg font-semibold>Documentation Coverage</h4></div>
+                      <h4 className=""""text-lg font-semibold>Documentation Coverage</h4></div>
                       <span className=text-2xl font-bold text-green-600>87%</span></div>";
                     </div></div>";
                     <div className=space-y-4></div>'
                       <div className=flex justify-between items-center"></div>";
                         <span>Endpoints Documented</span></div>'
-                        <span className="""font-semibold>1,084 / 1,247</span></div>
+                        <span className=""""font-semibold>1,084 / 1,247</span></div>
                       </div></div>";
                       <div className=flex justify-between items-center></div>
                         <span>Examples Provided</span></div>";
@@ -541,7 +541,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>'
                       <div className=flex justify-between items-center"></div>";
                         <span>Last Updated</span></div>'
-                        <span className="""font-semibold">2 hours ago</span></div>;
+                        <span className=""""font-semibold">2 hours ago</span></div>;
                       </div></div>;
                     </div></div>;
                   </div></div>;

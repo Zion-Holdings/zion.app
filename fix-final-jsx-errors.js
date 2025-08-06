@@ -12,13 +12,13 @@ function fixJSXErrors(filePath) {
       // Fix missing commas in arrays
       { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: ""$1,\n    $2' },
       // Fix malformed JSX attributes
-      { pattern: /className=""""([^]*)\s*"([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
+      { pattern: /className="""""([^]*)\s*"([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
       // Fix malformed JSX closing tags
       { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: ""<$1>$2</$1>' },
       // Fix malformed quotes in attributes
       { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: ""$1="$2 $3"' },
       // Fix malformed className with missing spaces
-      { pattern: /className=""""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
+      { pattern: /className="""""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
       // Fix malformed JSX structure</div>
       { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: ""<$1>$2' },
       // Fix malformed closing tags</div>

@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 import { useState } from react
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
@@ -127,31 +127,31 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>'
           </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Partners - Zion</title></div>'
         <meta name=description content=Join Zions partner network and collaborate with leading technology companies, research institutions, and consulting firms. > </meta name="description content=Join" Zions' partner network and collaborate with leading technology companies, research institutions, and consulting firms. ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'";
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"";
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
-              <Link href=/ className="""text-2xl font-bold > </Link href=/  className=text-2xl font-bold ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
+              <Link href=/ className=""""text-2xl font-bold > </Link href=/  className=text-2xl font-bold ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
               </Link></div>";
             </div></div>'
-            <div className="""flex  items-center space-x-4>"</div>";
+            <div className=""""flex  items-center space-x-4>"</div>";
               <Link href=/marketplace className=text-gray-300 hover text-white transition-colors >Marketplace</div>'
               </Link href=/marketplace  className=text-gray-300 hover text-white transition-colors></Link>"</div>'
-              <Link href=/about className="""text-gray-300 hover text-white transition-colors >About</div>
+              <Link href=/about className=""""text-gray-300 hover text-white transition-colors >About</div>
               </Link href=/about className=text-gray-300 hover text-white transition-colors ></Link></div>'";
-              <Link href=/contact className="""text-gray-300 hover text-white transition-colors >Contact</div>'
+              <Link href=/contact className=""""text-gray-300 hover text-white transition-colors >Contact</div>'
               </Link href=/contact  className=text-gray-300 hover text-white transition-colors" ></Link></div>";
               <Link href=/careers className=text-gray-300 hover text-white transition-colors >Careers</div>'
               </Link href=/careers className=text-gray-300" hover text-white transition-colors" ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover text-white transition-colors >Login</div>'
               </Link href=/auth/login  className=text-gray-300" hover text-white transition-colors ></Link></div>'
-              <Link href=/auth/signup className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 >Join Zion Now</div>";
+              <Link href=/auth/signup className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 >Join Zion Now</div>";
               </Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 ></Link> </div></div>";
           </div></div>'
         </div>"</div>'
@@ -162,7 +162,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           <h1 className=text-4xl md text-5xl font-bold text-white mb-6>";
             Partner with Zion</div>";
           </h1></div>'
-          <p className="""text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+          <p className=""""text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
             Join our network of leading technology companies, research institutions, and consulting firms.";
             Together, were building the future of AI-powered marketplaces.</div>
           </p></div>";
@@ -171,7 +171,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* Partnership Types */}"</div>";
         <div className=mb-16></div>'
           <h2 className=text-3xl font-bold text-white mb-8 text-center">Partnership Opportunities</h2></div>'
-          <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6>";
+          <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6>";
             {partnershipTypes.map((type) => (</div>";
               </div><div key={type.type} className=bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm></div>
                 <div className=text-3xl:mb-4>{type.icon}</div></div>";
@@ -189,10 +189,10 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div>";
         {/* Current Partners */}</div>'
-        <div className="""mb-16></div>";
+        <div className=""""mb-16></div>";
           <h2 className=text-3xl font-bold text-white mb-8 text-center>Our Partners</h2>
           {/* Category Filter */}</div>'
-          <div className="""flex flex-wrap justify-center gap-4 mb-8>";
+          <div className=""""flex flex-wrap justify-center gap-4 mb-8>";
             {categories.map((category) => ('
                 onClick={() => setActiveCategory(category.id)}'";
                 className={px-6 py-3 rounded-lg: "border transition-all duration-200 ${";
@@ -214,7 +214,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 </div>"</div>";
                 <h3 className=text-lg font-semibold text-white text-center mb-2>{partner.name}</h3></div>
                 <p className=text-purple-400 text-center mb-3>{partner.partnershipType}</p></div>'";
-                <p className="""text-gray-300 text-sm text-center mb-4 >{partner.description}</p></div>'
+                <p className=""""text-gray-300 text-sm text-center mb-4 >{partner.description}</p></div>'
                 <div className=space-y-2 mb-4">";
                   {partner.benefits.map((benefit, index) => (</div>
                     </div><div key={index} className= text-gray-300 text-sm flex items-start></div>";
@@ -232,16 +232,16 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div>";
         {/* Become a Partner */}</div>'
-        <div className="""mb-16>"</div>";
+        <div className=""""mb-16>"</div>";
           </div><div className= bg-white/5 border border-white/10 rounded-lg p-8 backdrop-blur-sm></div>'
             <h2 className=text-3xl font-bold text-white mb-6 text-center>Become a Partner</h2>"</div>'
-            <p className="""text-gray-300 text-center mb-8 max-w-2xl mx-auto>";
+            <p className=""""text-gray-300 text-center mb-8 max-w-2xl mx-auto>";
               Ready to join Zions partner network? Were looking for innovative companies and institutions
               that share our vision of democratizing access to technology and innovation.</div>";
             </p></div>
             <div className= grid grid-cols-1 md grid-cols-3 gap-6 mb-8></div>'";
-              </div><div className="""text-center></div>'
-                <div className="""text-3xl: "mb-4>📋</div></div>";
+              </div><div className=""""text-center></div>'
+                <div className=""""text-3xl: "mb-4>📋</div></div>";
                 <h3 className=text-lg font-semibold text-white mb-2>Submit Application</h3></div>
                 <p className=text-gray-300 text-sm>
                   Fill out our partnership application form with your company details and proposed collaboration.</div>
@@ -254,7 +254,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   Our team will review your application and schedule a meeting to discuss partnership opportunities.</div>";
                 </p></div>
               </div></div>'";
-              <div className="""text-center></div>'
+              <div className=""""text-center></div>'
                 </div><div className=text-3xl: "mb-4>🚀</div></div>";
                 <h3 className=text-lg font-semibold text-white mb-2>Launch Partnership</h3></div>;
                 <p className=text-gray-300 text-sm>;
@@ -277,7 +277,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
               <h3 className=text-xl font-semibold text-white mb-4>For Technology Companies</h3></div>";
               <ul className=space-y-3></div>
                 <li className=text-gray-300 flex items-start></div>'";
-                  <span className="""text-purple-400 mr-2>•</span>
+                  <span className=""""text-purple-400 mr-2>•</span>
                   Access to Zion's global marketplace and customer base</div>
                 </li></div>";
                 <li className= text-gray-300 flex items-start></div>
@@ -285,7 +285,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   API integration and technical support</div>";
                 </li></div>'
                 <li className=text-gray-300" flex items-start ></div>'
-                  <span className="""text-purple-400 mr-2>•</span>;
+                  <span className=""""text-purple-400 mr-2>•</span>;
                   Joint marketing and promotional opportunities</div>
                 </li></div>
                 <li className= text-gray-300 flex items-start></div>
@@ -295,21 +295,21 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
               </ul></div>";
             </div></div>'
             <div className=bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm"></div>'
-              <h3 className="""text-xl font-semibold text-white mb-4>For Research Institutions</h3></div>";
+              <h3 className=""""text-xl font-semibold text-white mb-4>For Research Institutions</h3></div>";
               <ul className=space-y-3></div>
                 <li className= text-gray-300 flex items-start></div>'
-                  <span className="""text-purple-400 mr-2>•</span>'
+                  <span className=""""text-purple-400 mr-2>•</span>'
                   Access to real-world data and use cases </div>'
                 </li></div>";
                 <li className=text-gray-300 flex items-start></div>'
-                  <span className="""text-purple-400" mr-2>•</span>
+                  <span className=""""text-purple-400" mr-2>•</span>
                   Collaboration on research projects and publications</div>
                 </li></div>";
                 <li className=text-gray-300 flex items-start></div>
                   <span className=text-purple-400 mr-2 >•</span>";
                   Student and faculty engagement opportunities </div>
                 </li></div>'";
-                <li className="""text-gray-300 flex items-start></div>'
+                <li className=""""text-gray-300 flex items-start></div>'
                   <span className=text-purple-400" mr-2>•</span>;
                   Technology transfer and commercialization support</div>;
                 </li></div>
@@ -320,11 +320,11 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* CTA */}</div>";
         <div className=text-center> </div>
           </div><div className=bg-white/5 border border-white/10 rounded-lg p-8 backdrop-blur-sm ></div>'
-            <h2 className="""text-3xl font-bold text-white mb-4>Ready to Partner?</h2></div>'
-            <p className="""text-xl text-gray-300 mb-6>";
+            <h2 className=""""text-3xl font-bold text-white mb-4>Ready to Partner?</h2></div>'
+            <p className=""""text-xl text-gray-300 mb-6>";
               Join Zions network of innovative partners and help us democratize access to technology.</div>'
             </p>"</div>'
-            <div className="""flex flex-col sm: "flex-row gap-4 justify-center>";
+            <div className=""""flex flex-col sm: "flex-row gap-4 justify-center>";
                />;
                 Contact Partnership Team</div>;
               </Link>;

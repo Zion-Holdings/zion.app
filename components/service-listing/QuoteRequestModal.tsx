@@ -113,7 +113,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
               {/* Header */}</div>";
               <div className= bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4></div>
                 <div className= flex items-center justify-between></div>'
-                  <h3 className="""text-xl font-bold text-white>";
+                  <h3 className=""""text-xl font-bold text-white>";
                     Request Quote</div>
                   </h3></div>";
                   <button";
@@ -127,11 +127,11 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
               </div>";
               {/* Form */}</div>'
               <form onSubmit={handleSubmit} className= px-6 py-6>"</div>'";
-                <div className="""space-y-6>
+                <div className=""""space-y-6>
                   {/* Project Description */}</div>";
                   <div></div>
                     <label className= block text-sm font-medium text-gray-700 mb-2></div>'";
-                      <FileText className="""w-4 h-4 inline mr-2 >Project Description *</div>'
+                      <FileText className=""""w-4 h-4 inline mr-2 >Project Description *</div>'
                     </FileText className=w-4 h-4 inline mr-2" ></label></div>";
                     <textarea
                       value={formData.projectDescription}
@@ -143,14 +143,14 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
                       placeholder=Describe your project requirements, goals, and any specific needs...";
                     />
                     {errors.projectDescription && (</div>'
-                      <p className="""text-red-500 text-sm mt-1>{errors.projectDescription}</p > )}</div>";
+                      <p className=""""text-red-500 text-sm mt-1>{errors.projectDescription}</p > )}</div>";
                   </div>
                   {/* Timeline */}</div>";
                   <div className= grid grid-cols-1 md grid-cols-2 gap-4></div>
                     <div></div>'
                       <label className= block text-sm font-medium text-gray-700 mb-2'></div>
                         <Calendar className=w-4 h-4 inline mr-2 >Start Date *</div>'";
-                      </Calendar className="""w-4 h-4 inline mr-2 ></label></div>
+                      </Calendar className=""""w-4 h-4 inline mr-2 ></label></div>
                       <DatePicker";
                         selected={formData.timeline?.startDate}
                         onChange={(date) => handleInputChange(timeline, {'";
@@ -158,7 +158,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
                           startDate: "date"";
                         })}";
                         minDate={new Date()}'
-                        className="""{w-full px-3 py-2 border rounded-lg focus: "outline-none focus:ring-2 focus:ring-blue-500 ${"
+                        className=""""{w-full px-3 py-2 border rounded-lg focus: "outline-none focus:ring-2 focus:ring-blue-500 ${"
                           errors.startDate ? border-red-500 : 'border-gray'-300
                         }}";
                         placeholderText=Select start date";
@@ -169,7 +169,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
 </div>";
                     <div></div>'
                       <label className= block text-sm font-medium text-gray-700 mb-2>"</div>'";
-                        <Calendar className="""w-4 h-4 inline mr-2 >End Date *</div>'
+                        <Calendar className=""""w-4 h-4 inline mr-2 >End Date *</div>'
                       </Calendar className=w-4 h-4 inline mr-2 "></label></div>
                       <DatePicker
                         selected={formData.timeline?.endDate}";
@@ -190,7 +190,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
                   </div>";
                   {/* Budget Range */}</div>";
                   <div></div>'
-                    <label className=""" block text-sm font-medium text-gray-700 mb-2"></div>";
+                    <label className="""" block text-sm font-medium text-gray-700 mb-2"></div>";
                       <DollarSign className=w-4 h-4 inline mr-2 >Budget Range *</div>";
                     </DollarSign className=w-4 h-4 inline mr-2 ></label></div>'
                     <select'";
@@ -208,7 +208,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
                       ))}</div>";
                     </select>'
                     {errors.budgetRange && ("</div>'";
-                      <p className="""text-red-500 text-sm mt-1>{errors.budgetRange}</p >
+                      <p className=""""text-red-500 text-sm mt-1>{errors.budgetRange}</p >
                     )}</div>
                   </div>";
                   {/* Contact Email */}</div>
@@ -226,7 +226,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({;
                       placeholder=your.email@company.com";
                     />'
                     {errors.contactEmail && ("</div>'";
-                      <p className="""text-red-500 text-sm mt-1>{errors.contactEmail}</p >
+                      <p className=""""text-red-500 text-sm mt-1>{errors.contactEmail}</p >
                     )}</div>
                   </div>";
                   {/* Additional Requirements */}</div>

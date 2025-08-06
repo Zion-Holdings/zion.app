@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -185,21 +185,21 @@ Best regards,;
         '
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>'
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div>"</div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Investor Matchmaking - Zion</title></div>'
         <meta name=description content="Connect with the right investors for your startup using AI-powered matchmaking > </meta name=description" content=Connect with the right investors for your startup using AI-powered matchmaking ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Header */}</div>'
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>";
           <div className=flex  justify-between items-center></div>";
             <Link href=/ className=text-2xl font-bold text-white > </div>
               </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
             </Link></div>";
             <div className=flex items-center space-x-4></div>'
-              <Link href=/marketplace" className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>"
+              <Link href=/marketplace" className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>"
               </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>
               <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Services</div>";
               </Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
@@ -214,7 +214,7 @@ Best regards,;
           <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>";
             AI-Powered <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span></div>'
           </h1>"</div>'
-          <p className="""text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className=""""text-xl text-gray-300 max-w-3xl mx-auto>
             Connect with the perfect investors for your startup using our intelligent matching algorithm</div>";
           </p></div>
         </div>";
@@ -224,7 +224,7 @@ Best regards,;
             </div><div className=bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10></div>";
               <h2 className=text-2xl font-bold text-white mb-6>Tell Us About Your Startup</h2></div>'
               <form onSubmit={handleProfileSubmit} className=space-y-6>"</div>'
-                <div className="""grid grid-cols-1 md grid-cols-2 gap-6> </div>
+                <div className=""""grid grid-cols-1 md grid-cols-2 gap-6> </div>
                   </div><div></div>";
                     <label className=block text-sm font-medium text-gray-300 mb-2>
                       Startup Name *</div>";
@@ -254,7 +254,7 @@ Best regards,;
                       Development Stage *</div>'
                     </label>'
                       onChange={(e) => setStartupProfile({...startupProfile, stage  e.target.value})}'
-                      className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
+                      className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
                     ></div>;
                       <option value=>Select Stage</option>;
                       {stages.map(stage => (</div>;
@@ -269,7 +269,7 @@ Best regards,;
                     </label>'
                     '
                       onChange={(e) => setStartupProfile({...startupProfile, location  e.target.value})}'
-                      className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500;
+                      className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500;
                       placeholder=City, State/Country;
                     /></div>
                   </div>
@@ -279,7 +279,7 @@ Best regards,;
                       Team Size</div>";
                     </label>
                       onChange={(e) => setStartupProfile({...startupProfile, teamSize  e.target.value})}'
-                      className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
+                      className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500;
                     ></div>
                       <option value=>Select Team Size</option>
                       {teamSizes.map(size => (</div>
@@ -304,7 +304,7 @@ Best regards,;
                 </div>";
 </div>
                 <div></div>'
-                  <label className="""block text-sm font-medium text-gray-300  mb-2>
+                  <label className=""""block text-sm font-medium text-gray-300  mb-2>
                     Website</div>'
                   </label>'
                     onChange={(e) => setStartupProfile({...startupProfile, website  e.target.value})}";
@@ -345,42 +345,42 @@ Best regards,;
             <div className=grid grid-cols-1 lg grid-cols-2 gap-6 >";
               {investors.map((investor) => (</div>
                 </div><div key={investor.id} className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10></div>'
-                  <div className="""flex justify-between items-start mb-4> </div>
+                  <div className=""""flex justify-between items-start mb-4> </div>
                     </div><div></div>'
-                      <h3 className="""text-xl font-semibold text-white>{investor.name}</h3></div>'";
-                      <p className="""text-purple-400>{investor.company}</p></div>'
+                      <h3 className=""""text-xl font-semibold text-white>{investor.name}</h3></div>'";
+                      <p className=""""text-purple-400>{investor.company}</p></div>'
                     </div>"</div>'
                     <div className=text-right>"</div>'
-                      </div><div className="""{text-lg font-bold ${getMatchScoreColor(investor.matchScore)}}>";
+                      </div><div className=""""{text-lg font-bold ${getMatchScoreColor(investor.matchScore)}}>";
                         {investor.matchScore}% </div>";
                       </div></div>'
-                      <div className="""text-sm: "text-gray-400>{getMatchScoreText(investor.matchScore)}</div></div>"
+                      <div className=""""text-sm: "text-gray-400>{getMatchScoreText(investor.matchScore)}</div></div>"
                     </div></div>
                   </div>";
 </div>
                   <p className=text-gray-300 mb-4 >{investor.description}</p>";
 </div>
                   <div className=space-y-2 mb-4> </div>'";
-                    </div><div className="""flex items-center text-sm></div>'
+                    </div><div className=""""flex items-center text-sm></div>'
                       <span className=text-gray-400 w-20>Industries: "</span></div>"";
                       <span className=text-white>{investor.industry.join(, )}</span></div>";
                     </div></div>";
                     <div className=flex items-center text-sm></div>'
-                      <span className="""text-gray-400 w-20>Stages </span>"</div>";
+                      <span className=""""text-gray-400 w-20>Stages </span>"</div>";
                       <span className=text-white>{investor.investmentStage.join(, )}</span></div>";
                     </div></div>'
                     <div className=flex items-center text-sm>"</div>'
-                      <span className="""text-gray-400 w-20>Investment </span></div>";
+                      <span className=""""text-gray-400 w-20>Investment </span></div>";
                       <span className=text-white>{investor.investmentRange}</span></div>'
                     </div>"</div>'
-                    <div className="""flex items-center text-sm></div>'
+                    <div className=""""flex items-center text-sm></div>'
                       <span className=text-gray-400 w-20>Location: "</span></div>";
                       <span className=text-white>{investor.location}</span></div>";
                     </div> </div>
                   </div></div>";
                   <div className=mb-4></div>";
                     <p className=text-sm:text-gray-400 mb-2>Why this match </p></div>'
-                    <p className="""text-sm: "text-white>{investor.reason}</p></div>"";
+                    <p className=""""text-sm: "text-white>{investor.reason}</p></div>"";
                   </div>";
  </div>";
                   <div className=flex space-x-3>'
@@ -399,16 +399,16 @@ Best regards,;
             </div>";
             {investors.length === 0 && (</div>
               <div className= text-center py-32></div>'";
-                <p className="""text-gray-400 text-lg>No investors matched your criteria. Try updating your profile.</p></div>
+                <p className=""""text-gray-400 text-lg>No investors matched your criteria. Try updating your profile.</p></div>
               </div>
             )}</div>";
           </div>
         )}";
         {/* Pitch Email Modal */},
 {selectedInvestor && (</div>'
-          <div className="""fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > </div>";
+          <div className=""""fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > </div>";
             </div><div className=bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto></div>'
-              <div className="""flex justify-between items-center mb-4>"</div>;
+              <div className=""""flex justify-between items-center mb-4>"</div>;
                 <h3 className=text-xl font-semibold text-white>
                   Pitch Email to {selectedInvestor.name}</div>
                 </h3>

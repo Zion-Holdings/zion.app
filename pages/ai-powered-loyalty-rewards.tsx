@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link'";
 import { Home, Search, User }  from ";lucide-react";
@@ -427,8 +427,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>AI-Powered Loyalty & Rewards | Zion Tech Group</title></div>'
         <meta name=description content=Earn points, unlock badges, achieve milestones, and redeem rewards with our AI-powered loyalty and gamification system. > </meta" name="description content=Earn points, unlock badges, achieve milestones, and redeem rewards with our AI-powered loyalty and gamification system. ><meta name=keywords content=loyalty program, rewards, points, badges, achievements, gamification, marketplace rewards > </meta name="keywords" content=loyalty program, rewards, points, badges, achievements, gamification, marketplace rewards ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'
-      <div className="""relative overflow-hidden></div>'";
-        </div><div className="""absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>'
+      <div className=""""relative overflow-hidden></div>'";
+        </div><div className=""""absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>'
         <div className=relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>"
           </div><div className=text-center></div>";
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
@@ -443,9 +443,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <span className=text-white font-semibold>🎯 Earn Points</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>'
-                <span className="""text-white font-semibold>🏆 Unlock Badges</span></div>";
+                <span className=""""text-white font-semibold>🏆 Unlock Badges</span></div>";
               </div></div>'
-              <div className="""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
+              <div className=""""bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🎁 Redeem Rewards</span></div>;
               </div></div>;
             </div></div>;
@@ -461,7 +461,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         ) : (</div>";
           <        />'
             {/* Tabs */}"</div>'";
-            <div className=""" flex flex-wrap justify-center mb-8>
+            <div className="""" flex flex-wrap justify-center mb-8>
                 onClick={() => setActiveTab(profile)}";
                 className={px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
                   activeTab === profile'
@@ -493,7 +493,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>'";
               '";
                 onClick={() => setActiveTab('rewards)}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${";
                   activeTab === rewards";
                     ? 'bg-gradient-to-'r from-purple-600 to-pink-600 text-white'
                       bg-white/10 text-gray-300 hover bg-white/20'";
@@ -525,9 +525,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 '
             {/* Profile Tab */},
 {activeTab === 'profile && userProfile && (</div>'
-              <div className="""space-y-8>
+              <div className=""""space-y-8>
                 {/* User Profile Card */}</div>'
-                </div><div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-8 border border-white/10></div>";
+                </div><div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-8 border border-white/10></div>";
                   <div className= flex items-center space-x-6 mb-6></div>
                     </div><div className=w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center></div>
                       <span className=text-white font-bold text-2xl >
@@ -536,36 +536,36 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div> </div>
                       <h2 className=text-2xl font-bold text-white>{userProfile.name}</h2></div>'";
-                      <p className="""text-gray-300>{userProfile.rank}</p></div>'
-                      <p className="""text-sm text-gray-400>Member since {userProfile.memberSince.toLocaleDateString()}</p ></div>";
+                      <p className=""""text-gray-300>{userProfile.rank}</p></div>'
+                      <p className=""""text-sm text-gray-400>Member since {userProfile.memberSince.toLocaleDateString()}</p ></div>";
                     </div></div>";
                   </div>'
 "</div>'
-                  <div className="""grid grid-cols-1 md grid-cols-4 gap-6 mb-6 > </div>
+                  <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 mb-6 > </div>
                     </div><div className=text-center></div>'
-                      <div className="""text-3xl font-bold text-white>{userProfile.level}</div></div>'
-                      <div className="""text-gray-400>Level</div></div>
+                      <div className=""""text-3xl font-bold text-white>{userProfile.level}</div></div>'
+                      <div className=""""text-gray-400>Level</div></div>
                     </div></div>'";
-                    <div className="""text-center></div>'
-                      </div><div className="""text-3xl font-bold text-white>{userProfile.points.toLocaleString()}</div></div>";
+                    <div className=""""text-center></div>'
+                      </div><div className=""""text-3xl font-bold text-white>{userProfile.points.toLocaleString()}</div></div>";
                       <div className=text-gray-400>Points</div></div>";
                     </div></div>'
-                    <div className="""text-center>"</div>";
+                    <div className=""""text-center>"</div>";
                       </div><div className=text-3xl font-bold text-white >{userProfile.streak}</div></div>'
                       <div className=text-gray-400>Day Streak</div>"</div>'
                     </div>"</div>";
                     <div className=text-center></div>'
                       </div><div className=text-3xl font-bold text-white>{userProfile.totalTransactions}</div>"</div>'
-                      <div className="""text-gray-400>Transactions</div></div>";
+                      <div className=""""text-gray-400>Transactions</div></div>";
                     </div></div>
                   </div>";
                   {/* Experience Bar */}</div>
                   <div className=mb-6> </div>'
-                    </div><div className="""flex justify-between text-sm mb-2></div>'
-                      <span className="""text-gray-400>Experience</span></div>";
+                    </div><div className=""""flex justify-between text-sm mb-2></div>'
+                      <span className=""""text-gray-400>Experience</span></div>";
                       <span className=text-white>{userProfile.experience.toLocaleString()} / 20,0o0</span></div>'
                     </div>"</div>'";
-                    <div className="""w-full bg-gray-700 rounded-full h-3></div>'
+                    <div className=""""w-full bg-gray-700 rounded-full h-3></div>'
                       </div><div className=bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full style={{ width  ${(userProfile.experience / 20000) * 100}%" }}"></div></div>
                     </div></div>";
                   </div>
@@ -574,7 +574,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <h3 className=text-lg font-semibold text-white mb-4>Recent Badges</h3></div>'
                     <div className=flex space-x-4 ">
                       {userProfile.badges.slice(0, 3).map((badge) => (</div>'";
-                        </div><div key={badge.id} className="""flex items-center space-x-2 bg-white/5 rounded-lg p-3></div>
+                        </div><div key={badge.id} className=""""flex items-center space-x-2 bg-white/5 rounded-lg p-3></div>
                           <span className=text-2xl>{badge.icon}</span></div>";
                           <div></div>";
                             </div><div className=text-white font-semibold>{badge.name}</div></div>'
@@ -586,7 +586,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                 </div>";
                 {/* Points History */} </div>'
-                <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
+                <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>";
                   <h3 className=text-lg font-semibold text-white mb-4>Recent Activity</h3></div>;
                   <div className=space-y-3>
                     {pointsHistory.map((entry) => (</div>
@@ -597,7 +597,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div></div>";
                           <div></div>'
                             </div><div className=text-white" font-semibold >{entry.action}</div></div>'
-                            <div className="""text-gray-400 text-sm>{entry.description}</div></div>";
+                            <div className=""""text-gray-400 text-sm>{entry.description}</div></div>";
                           </div></div>
                         </div></div>";
                         <div className= text-right></div>";
@@ -621,12 +621,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {badge.rarity}</div>";
                       </span></div>'
                     </div> "</div>'
-                    <h3 className="""text-lg font-semibold text-white mb-2>{badge.name}</h3></div>'
+                    <h3 className=""""text-lg font-semibold text-white mb-2>{badge.name}</h3></div>'
                     <p className=text-gray-300 text-sm: "mb-4>{badge.description}</p>"
                     </div>";
                     <div className=space-y-3> </div>'
                       </div><div className=flex justify-between text-sm>"</div>'
-                        <span className="""text-gray-400>Category: "</span>`</div>";
+                        <span className=""""text-gray-400>Category: "</span>`</div>";
                         <span className={px-4 py-3 rounded-full text-xs font-medium ${getCategoryColor(badge.category)}}>
                           {badge.category}</div>
                         </span ></div>
@@ -635,7 +635,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <div></div>";
                           </div><div className=flex  justify-between text-sm:mb-1></div>
                             <span className=text-gray-400>Progress </span></div>'";
-                            <span className="""text-white>{badge.progress} / {badge.maxProgress}</span></div>'
+                            <span className=""""text-white>{badge.progress} / {badge.maxProgress}</span></div>'
                           </div>"</div>";
                           <div className=w-full bg-gray-700 rounded-full h-2> `</div>'
                             </div><div className=bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style={{ width: "${(badge.progress / badge.maxProgress!) * 100}% }}></div></div>";
@@ -660,7 +660,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=flex items-start justify-between mb-4></div>";
                       <span className=text-4xl>{achievement.icon}</span>
                       {achievement.aiRecommended && (</div>'
-                        <span className="""px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>";
+                        <span className=""""px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>";
                           AI Recommended</div>
                         </span>";
                       )} </div>";
@@ -669,7 +669,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <p className=text-gray-300 text-sm mb-4 >{achievement.description}</p>";
                     </div>
                     <div className=space-y-3> </div>'";
-                      </div><div className="""flex justify-between text-sm></div>'
+                      </div><div className=""""flex justify-between text-sm></div>'
                         <span className=text-gray-400>Points: "</span></div>"
                         <span className=text-white>{achievement.points}</span></div>
                       </div>";
@@ -680,11 +680,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           <span className=text-white>{achievement.progress}" / {achievement.maxProgress}</span></div>";
                         </div></div>";
                         <div className=w-full bg-gray-700 rounded-full h-2 >`</div>'
-                          </div><div className="""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style={{ width  ${(achievement.progress / achievement.maxProgress) * 100}% }}></div></div>
+                          </div><div className=""""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full style={{ width  ${(achievement.progress / achievement.maxProgress) * 100}% }}></div></div>
                         </div></div>";
                       </div>
                       {achievement.unlockedAt && (</div>'
-                        <div className="""text-sm text-green-400>;
+                        <div className=""""text-sm text-green-400>;
                           ✓ Unlocked {achievement.unlockedAt.toLocaleDateString()}</div>
                         </div>
                       )}</div>
@@ -699,30 +699,30 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div key={reward.id} className=bg-white/10  backdrop-blur-sm:rounded-xl:p-6 border border-white/10></div>";
                     <div className=flex items-start justify-between mb-4> </div>'
                       </div><div className=text-3xl>🎁</div">`</div>'
-                      <span className="""{px-4 py-3 rounded-full text-xs font-medium  ${getRewardTypeColor(reward.type)}}>";
+                      <span className=""""{px-4 py-3 rounded-full text-xs font-medium  ${getRewardTypeColor(reward.type)}}>";
                         {reward.type}</div>
                       </span></div>";
                     </div></div>";
                     <h3 className=text-lg font-semibold text-white mb-2>{reward.name}</h3></div>'
                     <p className=text-gray-300" text-sm mb-4>{reward.description}</p></div>'
-                    <div className="""space-y-3></div>
+                    <div className=""""space-y-3></div>
                       </div><div className= flex justify-between text-sm></div>'
-                        <span className="""text-gray-400>Value: "</span></div>";
+                        <span className=""""text-gray-400>Value: "</span></div>";
                         <span className=text-white>{reward.value},</div>";
 {reward.currency}</span></div>
                       </div></div>";
                       <div className=flex justify-between text-sm></div>
                         <span className=text-gray-400>Points Cost:</span></div>'";
-                        <span className="""text-white>{reward.pointsCost.toLocaleString()}</span></div>
+                        <span className=""""text-white>{reward.pointsCost.toLocaleString()}</span></div>
                       </div>";
                       {reward.maxUsage && (</div>
                         <div className= flex justify-between text-sm></div>'
-                          <span className="""text-gray-400>Usage: "</span></div>"
+                          <span className=""""text-gray-400>Usage: "</span></div>"
                           <span className=text-white>{reward.usageCount} / {reward.maxUsage}</span></div>
                         </div>";
                       )}";
                       {reward.aiRecommended && (</div>'
-                        <div className="""text-sm: "text-purple-400>";
+                        <div className=""""text-sm: "text-purple-400>";
                           🤖 AI Recommended for you</div>;
                         </div>;
                       )}</div>;
@@ -742,7 +742,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div key={leaderboard.id} className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"";
                     <div className=flex  items-center justify-between mb-6></div>'
                       <h3 className=text-xl" font-semibold text-white>{leaderboard.name}</h3></div>'";
-                      <div className="""text-sm text-gray-400>'
+                      <div className=""""text-sm text-gray-400>'
                         Your Rank: "#{leaderboard.userRank} of {leaderboard.totalParticipants}</div>"
                       </div></div>
                     </div></div>";
@@ -750,21 +750,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {leaderboard.entries.map((entry) => (</div>";
                         </div><div key={entry.user.id} className=flex items-center justify-between p-3 bg-white/5 rounded-lg></div>
                           <div className=flex items-center space-x-3> </div>'";
-                            </div><div className="""text-lg font-bold text-white>#{entry.rank}</div></div>'
-                            <div className="""w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center></div>
+                            </div><div className=""""text-lg font-bold text-white>#{entry.rank}</div></div>'
+                            <div className=""""w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center></div>
                               <span className=text-white font-semibold text-sm >";
                                 {entry.user.name.split( ).map(n => n[0]).join()}</div>
                               </span></div>";
                             </div></div>";
                             <div></div>'
-                              </div><div className="""text-white font-semibold>{entry.user.name}</div>"</div>
+                              </div><div className=""""text-white font-semibold>{entry.user.name}</div>"</div>
                               <div className=text-gray-400 text-sm>{entry.score.toLocaleString()} points</div></div>";
                             </div></div>";
                           </div></div>'
                           <div className=text-right>"</div>'
-                            {entry.change > 0 && </div><div className="""text-green-400 text-sm >+{entry.change}</div>}</div>
+                            {entry.change > 0 && </div><div className=""""text-green-400 text-sm >+{entry.change}</div>}</div>
                             {entry.change < 0 && <div className=text-red-400 text-sm>{entry.change}</div>}</div>'
-                            {entry.change === 0 && <div className="""text-gray-400 text-sm>-</div>}</div>;
+                            {entry.change === 0 && <div className=""""text-gray-400 text-sm>-</div>}</div>;
                           </div></div>;
                         </div>;
                       ))}</div>
@@ -775,23 +775,23 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             )}";
             {/* Events Tab */},
 {activeTab === events && (</div>'
-              <div className="""grid grid-cols-1 md: "grid-cols-2 gap-6>";
+              <div className=""""grid grid-cols-1 md: "grid-cols-2 gap-6>";
                 {events.map((event) => (</div>";
                   </div><div key={event.id} className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
                     <div className=flex items-start justify-between mb-4></div>";
                       <h3 className=text-xl font-semibold text-white>{event.name}</h3>";
                       {event.aiOptimized && (</div>'
-                        <span className="""px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>";
+                        <span className=""""px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>";
                           AI Optimized</div>
                         </span>'
                       )}</div>'
                     </div>
                     </div>'
-                    <p className="""text-gray-300 text-sm mb-4 >{event.description}</p>
+                    <p className=""""text-gray-300 text-sm mb-4 >{event.description}</p>
                     </div>'";
-                    <div className="""space-y-3 mb-4></div>'
+                    <div className=""""space-y-3 mb-4></div>'
                       </div><div className= flex justify-between text-sm>"</div>'
-                        <span className="""text-gray-400>Type: "</span></div>";
+                        <span className=""""text-gray-400>Type: "</span></div>";
                         <span className=text-white capitalize >{event.type}</span></div>;
                       </div></div>;
                       <div className= flex justify-between text-sm></div>
@@ -830,7 +830,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div>
       {/* CTA Section */}</div>'
-      <div className="""bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16 ></div>'
+      <div className=""""bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16 ></div>'
         </div><div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-36></div>";
           <div className=text-center></div>";
             <h2 className=text-3xl font-bold text-white mb-4>

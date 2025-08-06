@@ -71,9 +71,9 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
           <div className={"w-3 h-3 rounded-full ${colorClass.bg}"}></div></div>";
         </div>
         </div>'
-        <div className=""" relative h-32>
+        <div className="""" relative h-32>
           {chart.type === 'line' && (</div>'";
-            <svg className=""" w-full h-full viewBox= 0 0 100 40></div>'
+            <svg className="""" w-full h-full viewBox= 0 0 100 40></div>'
               <defs>'</div>'";
                 <linearGradient id={gradient-${chart.id}"} x1="0% y1=0% x2=0%" y2=100%>'</div>'";
                   <stop offset="0% stopColor={chart.color === blu'e ? #00d4ff : chart.color === purp'le ? '#8b5cf6 : chart.color === pink' ? #ec4899 : '#10b981} stopOpacity=0.8> </stop offset=0% stopColor={chart.color === blue' ? #00d4ff : chart.color === 'purple ? #8b5cf6' : chart.color === pin'k ? #ec4899 : #10b981'} stopOpacity=0.8"><stop offset=100% stopColor={chart.color === blu'e ? #00d4ff : chart.color === purp'le ? '#8b5cf6 : chart.color === pink' ? #ec4899 : '#10b981} stopOpacity=0.1> </stop offset="100% stopColor={chart.color === blue' ? #00d4ff : chart.color === 'purple ? #8b5cf6' : chart.color === pin'k ? #ec4899 : #10b981'} stopOpacity=0.1></linearGradient></div>";
@@ -87,7 +87,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
                 stroke = {chart.color === bl'ue ? '#00d4ff : chart.color === purple' ? #8b5cf6 : chart.color === 'pink ? #ec4899' : #10b981}'
                 strokeWidth="2
                 fill=none'
-                className="""animate-pulse /></div>";
+                className=""""animate-pulse /></div>";
               <path`'
                 d={"M 0 40 ${chart.data.map((value, index) => {
                   const $1 = (index / (chart.data.length - 1)) * 100";
@@ -99,11 +99,11 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
             </svg>";
           )}
           {chart.type === b'ar && (</div>'
-            <div className="""flex items-end justify-between h-full space-x-1>
+            <div className=""""flex items-end justify-between h-full space-x-1>
               {chart.data.map((value, index) => (</div>'";
-                <div key={index} className=""" flex-1 flex flex-col items-center></div>'
+                <div key={index} className="""" flex-1 flex flex-col items-center></div>'
                   <div`'
-                    className="""{w-full rounded-t transition-all duration-1000 ease-out ${'
+                    className=""""{w-full rounded-t transition-all duration-1000 ease-out ${'
                       colorClass.bg'";
                     }"}'
                     style={{'";
@@ -123,8 +123,8 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
     <div className={min-h-screen cyber-bg ${className}}"> '
       {/* Background Effects */}"</div>";
       <div className= fixed inset-0 z-0></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-        <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div></div>";
+        <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+        <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div></div>";
       </div></div>'
       <div className=relative z-10 container-responsive py-8">";
         {/* Header */}</div>
@@ -146,16 +146,16 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
             return (</div>";
               <div'
                 key = {metric.id}`'";
-                className="""{glass-dark border border-neon-blue/20 rounded-xl p-6 hover: "border-neon-blue/40 transition-all duration-500 transform hover:scale-105 ${"
+                className=""""{glass-dark border border-neon-blue/20 rounded-xl p-6 hover: "border-neon-blue/40 transition-all duration-500 transform hover:scale-105 ${"
                   isVisible ? opacity-100 translate-y-0 : opacity-0 translate-y-10'
                 }} `'";
                 style={{ animationDelay: "${index * 100}ms}}"";
               >"</div>'
                 <div className=flex items-center justify-between mb-4>`"</div>'
-                  <div className="""{w-12 h-12 rounded-lg ${colorClass.bg} flex items-center justify-center text-2xl  text-white}>";
+                  <div className=""""{w-12 h-12 rounded-lg ${colorClass.bg} flex items-center justify-center text-2xl  text-white}>";
                     {metric.icon}</div>'
                   </div>`"</div>'";
-                  <div className="""{text-sm font-semibold ${'
+                  <div className=""""{text-sm font-semibold ${'
                     metric.change ">= 0 ? text-neon-green : text-red-400"
                   }}>
                     {metric.change >= 0 ? + : "},";
@@ -164,7 +164,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({;
                 </div>";
                 </div>
                 <div></div>'";
-                  <h3 className="""text-gray-400 text-sm font-medium mb-1>{metric.title}</h3></div>'
+                  <h3 className=""""text-gray-400 text-sm font-medium mb-1>{metric.title}</h3></div>'
                   <p className=text-white text-2xl font-bold">{metric.value}</p></div>";
                 </div>";
 '

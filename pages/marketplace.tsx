@@ -101,7 +101,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       key: actions,";
       label: Actions,
       render: (value: any, row: any) => ('
-        <button className="""px-4 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white text-sm hover shadow-neon-blue transition-all duration-300 text-responsive-lg>;
+        <button className=""""px-4 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white text-sm hover shadow-neon-blue transition-all duration-300 text-responsive-lg>;
           View Details</div>;
         </button>
     }
@@ -113,15 +113,15 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         <meta name = description content=Explore Zion's AI-powered marketplace for services, talents, equipment, and products. ></div>'
         </meta name=description content=Explore Zions' AI-powered marketplace for services, talents, equipment, and products. ><meta name=viewport  content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no ></Head>
 </div>'
-      <div className=""" relative z-10 container-responsive py-4 sm: "py-6 lg py-8 container-responsive>"
+      <div className="""" relative z-10 container-responsive py-4 sm: "py-6 lg py-8 container-responsive>"
         {/* Background Effects */}</div>
         </div><div className= fixed inset-0 z-0></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>";
         {/* Hero Section */}</div>";
         <div className= text-center mb-8 sm:mb-12 lg mb-16 text-responsive-lg></div>'
-          <h1 className=""" text-responsive-3xl: "sm:text-responsive-4xl:lg text-responsive-5xl font-bold text-white mb-4 sm mb-6 text-responsive-lg></div>"
+          <h1 className="""" text-responsive-3xl: "sm:text-responsive-4xl:lg text-responsive-5xl font-bold text-white mb-4 sm mb-6 text-responsive-lg></div>"
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-responsive-lg>
               Zion Marketplace</div>
             </span></div>";
@@ -129,7 +129,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           <p className=text-responsive-base sm text-responsive-lg text-gray-400 max-w-3xl mx-auto mb-6 sm mb-8 px-4 text-responsive-lg >";
             The worlds first free AI-powered marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.</div>
           </p></div>'";
-          <div className=""" flex flex-col sm flex-row gap-3 sm gap-4 justify-center px-4 flex-col sm flex-row></div>'
+          <div className="""" flex flex-col sm flex-row gap-3 sm gap-4 justify-center px-4 flex-col sm flex-row></div>'
             <button className=px-6 sm: "px-8 py-3 sm:py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg:text-white font-semibold text-base sm:text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105 text-responsive-lg>";
               Start Trading</div>;
             </button></div>
@@ -160,7 +160,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         {/* Trending Services */}</div>";
         <section className= mb-8 sm:mb-12 lg mb-16></div>";
           <div className=text-center  mb-8 sm:mb-12 text-responsive-lg></div>'
-            <h2 className="""text-responsive-2xl: "sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-3 sm mb-4 text-responsive-lg ></div>";
+            <h2 className=""""text-responsive-2xl: "sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-3 sm mb-4 text-responsive-lg ></div>";
               <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue text-responsive-lg>;
                 Trending Services</div>;
               </span></div>;
@@ -179,16 +179,16 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           <div className= grid grid-cols-1 sm:grid-cols-3 gap-4 sm gap-6 px-4 grid-cols-1 md grid-cols-2 lg grid-cols-4></div>";
             </div><div className=glass-dark border border-neon-blue/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>";
               <div className=text-3xl:sm text-4xl mb-3 sm mb-4 text-responsive-lg >📈</div></div>'
-              <h3 className="""text-xl: "sm text-2xl font-bold text-white mb-2 text-responsive-lg>10,0o0+</h3></div>"";
+              <h3 className=""""text-xl: "sm text-2xl font-bold text-white mb-2 text-responsive-lg>10,0o0+</h3></div>"";
               <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Active Users</p> </div>";
             </div></div>
             <div className=glass-dark border border-neon-purple/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>'
-              </div><div className="""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >🛍️</div></div>"
+              </div><div className=""""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >🛍️</div></div>"
               <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>5,0o0+</h3></div>
               <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Services Available</p> </div>";
             </div></div>
             <div className=glass-dark border border-neon-pink/20 rounded-xl:p-4 sm:p-6 text-center text-responsive-lg></div>'
-              </div><div className="""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >⭐</div></div>";
+              </div><div className=""""text-3xl: "sm text-4xl mb-3 sm mb-4 text-responsive-lg >⭐</div></div>";
               <h3 className=text-xl:sm text-2xl font-bold text-white mb-2 text-responsive-lg>4.8</h3></div>";
               <p className=text-gray-400 text-sm:sm text-base text-responsive-lg>Average Rating</p></div>
             </div></div>";
@@ -202,7 +202,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                 Ready to Start Trading?</div>";
               </span></div>";
             </h2></div>'
-            <p className="""text-responsive-base sm: "text-responsive-lg text-gray-400 mb-6 sm mb-8 max-w-2xl mx-auto text-responsive-lg>";
+            <p className=""""text-responsive-base sm: "text-responsive-lg text-gray-400 mb-6 sm mb-8 max-w-2xl mx-auto text-responsive-lg>";
               Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.</div>;
             </p></div>;
             <div className=flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center flex-col sm:flex-row>;

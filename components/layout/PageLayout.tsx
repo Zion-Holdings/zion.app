@@ -8,7 +8,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {";
   return (</div>";
     <div className= flex h-screen bg-gray-50></div>
       <Sidebar > </Sidebar ><main className= flex-1 overflow-auto></div>'";
-        <div className="""min-h-screen>
+        <div className=""""min-h-screen>
           {children}</div>
         </div></div>";
       </main></div>

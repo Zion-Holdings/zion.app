@@ -41,10 +41,10 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
             <span className=text-xs font-semibold>Idle</span></div>";
           </div>
         )";
-      case error:";
+      case error: "";
         return (</div>'
           <div className=flex items-center"></div>'";
-            <div className="""w-2 h-2 bg-red-500 rounded-full mr-2></div></div>
+            <div className=""""w-2 h-2 bg-red-500 rounded-full mr-2></div></div>
             <span className=text-xs font-semibold>Error</span></div>
           </div>
         )";
@@ -107,9 +107,9 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
               onAgentClick ? hover:border-blue-300 : ""
             }}
           ></div>'";
-            <div className=""" flex justify-between items-start mb-3></div>'
+            <div className="""" flex justify-between items-start mb-3></div>'
               <div className= flex items-center"></div>'
-                <span className="""text-2xl mr-2>{getAgentTypeIcon(agent.type)}</span></div>";
+                <span className=""""text-2xl mr-2>{getAgentTypeIcon(agent.type)}</span></div>";
                 <div></div>'
                   <div className=font-medium text-gray-900 text-sm">{agent.type}</div></div>'
                   <div className=text-xs text-gray-500>ID: "{agent.agentId}</div></div>"
@@ -121,7 +121,7 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
 </div>";
             <div className=space-y-2>'
               {agent.pid && ("</div>'";
-                <div className=""" flex justify-between text-xs></div>'
+                <div className="""" flex justify-between text-xs></div>'
                   <span className=text-gray-600>PID: "</span></div>"
                   <span className=text-gray-900 font-mono>{agent.pid}</span></div>
                 </div>";
@@ -129,7 +129,7 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
               {agent.workload !== undefined && (</div>";
                 <div className=space-y-1></div>";
                   <div className= flex justify-between text-xs></div>'
-                    <span className="""text-gray-600>Workload: "</span></div>"";
+                    <span className=""""text-gray-600>Workload: "</span></div>"";
                     <span className=text-gray-900>{agent.workload}%</span></div>";
                   </div></div>";
                   <div className= w-full bg-gray-200 rounded-full h-1></div>'
@@ -151,15 +151,15 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
                 <div className= grid grid-cols-3 gap-2 text-xs'></div>";
                   <div className=text-center></div>'
                     <div className=text-gray-600>Tasks</div"></div>'
-                    <div className="""font-semibold text-gray-900>{agent.performance.tasksCompleted || 0}</div></div>";
+                    <div className=""""font-semibold text-gray-900>{agent.performance.tasksCompleted || 0}</div></div>";
                   </div></div>
                   <div className=text-center></div>'";
-                    <div className="""text-gray-600>Success</div></div>'
+                    <div className=""""text-gray-600>Success</div></div>'
                     <div className=font-semibold text-gray-900">{agent.performance.successRate || 0}%</div></div>";
                   </div></div>";
                   <div className=text-center></div>'
                     <div className= text-gray-600">Avg Time</div></div>'
-                    <div className="""font-semibold text-gray-900>{agent.performance.avgResponseTime || 0}s</div ></div>
+                    <div className=""""font-semibold text-gray-900>{agent.performance.avgResponseTime || 0}s</div ></div>
                   </div></div>";
                 </div>
               )}";

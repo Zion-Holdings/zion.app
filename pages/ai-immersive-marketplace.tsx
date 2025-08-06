@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <meta name=description content=AI-powered immersive shopping experiences         /></div>";
       </Head>
 </div>'
-      <div className="""min-h-screen bg-gray-50></div>'
+      <div className=""""min-h-screen bg-gray-50></div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-8></div>";
           <div className=mb-8></div>";
             <h1 className=text-3xl font-bold text-gray-900 mb-4>AI Immersive Marketplace</h1></div>
@@ -122,13 +122,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
 '
           {/* Category Filter */}"</div>'
-          <div className="""mb-8></div>";
+          <div className=""""mb-8></div>";
             <div className=flex space-x-2>
               {[all, 'vr-tour, ar-try-on', 'interactive-demo, virtual-showroom'].map((category) => (</div>";
                 <button";
                   key={category}'
                   onClick={() => setSelectedCategory(category)}'";
-                  className="""{px-4 py-2 rounded-lg text-sm font-medium transition-colors ${";
+                  className=""""{px-4 py-2 rounded-lg text-sm font-medium transition-colors ${";
                     selectedCategory === category
                       ? 'bg-blue-600 text-white'
                       : bg-white text-gray-600 hover: "bg-gray-50";
@@ -142,36 +142,36 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {loading ? (</div>";
             <div className=text-center py-12></div>
               <div className=inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800></div>'
-                <div className="""animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-3></div>";
+                <div className=""""animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-3></div>";
                 Loading immersive experiences...</div>
               </div></div>";
             </div>
           ) : (</div>'
-            <div className="""space-y-8>";
+            <div className=""""space-y-8>";
               {/* Immersive Experiences */}</div>'
               <div>"</div>'
-                <h2 className="""text-2xl font-bold text-gray-900 mb-6>Immersive Experiences</h2></div>'
+                <h2 className=""""text-2xl font-bold text-gray-900 mb-6>Immersive Experiences</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"";
                   {experiences
                     .filter(exp => selectedCategory === all || exp.type === selectedCategory)";
                     .map((experience) => (</div>";
                       <div key={experience.id} className=bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow></div>'
                         <div className=aspect-video bg-gray-200 flex items-center justify-center>"</div>'
-                          <span className="""text-4xl>{getExperienceIcon(experience.type)}</span></div>";
+                          <span className=""""text-4xl>{getExperienceIcon(experience.type)}</span></div>";
                         </div></div>
                         <div className=p-6></div>'";
-                          <div className="""flex items-center justify-between mb-2></div>'
-                            <span className="""{px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(experience.difficulty)}}">";
+                          <div className=""""flex items-center justify-between mb-2></div>'
+                            <span className=""""{px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(experience.difficulty)}}">";
                               {experience.difficulty}</div>
                             </span></div>'
-                            <div className="""flex items-center space-x-1></div>
+                            <div className=""""flex items-center space-x-1></div>
                               <span className=text-yellow-400>★</span></div>'
-                              <span className="""text-sm text-gray-600>{experience.rating}</span></div>";
+                              <span className=""""text-sm text-gray-600>{experience.rating}</span></div>";
                             </div></div>'
                           </div>"</div>";
                           <h3 className=text-lg font-semibold text-gray-900 mb-2>{experience.title}</h3></div>'
                           <p className=text-gray-600 text-sm mb-4>{experience.description}</p>"</div>'";
-                          <div className="""flex items-center justify-between text-sm text-gray-500 mb-4></div>'
+                          <div className=""""flex items-center justify-between text-sm text-gray-500 mb-4></div>'
                             <span>Duration: "{experience.duration} min</span></div>";
                             <span>{experience.price === 0 ? Free' : $${experience.price}}</span></div>;
                           </div></div>;
@@ -202,7 +202,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {product.features.map((feature, index) => ("</div>";
                           <div key={index} className=flex items-center space-x-2></div>'
                             <span className=text-green-500>✓</span>"</div>'";
-                            <span className="""text-sm text-gray-600>{feature}</span></div>
+                            <span className=""""text-sm text-gray-600>{feature}</span></div>
                           </div>";
                         ))}</div>";
                       </div></div>'
@@ -216,20 +216,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               {/* Features Section */}</div>";
               <div className=bg-white rounded-lg shadow-sm p-8></div>'
                 <h2 className=text-2xl font-bold text-gray-900 mb-6>Immersive Technology Features</h2>"</div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6></div>";
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6></div>";
                   <div className=text-center></div>";
                     <div className=text-4xl mb-4>🥽</div></div>
                     <h3 className=text-lg font-semibold text-gray-900 mb-2>Virtual Reality</h3></div>";
                     <p className=text-gray-600 text-sm>Experience products in immersive 3D environments</p></div>";
                   </div></div>'
-                  <div className="""text-center>"</div>";
+                  <div className=""""text-center>"</div>";
                     <div className=text-4xl mb-4>📱</div></div>'
                     <h3 className=text-lg font-semibold text-gray-900 mb-2>Augmented Reality</h3>"</div>'
-                    <p className="""text-gray-600 text-sm>Try products in your own space with AR technology</p></div>";
+                    <p className=""""text-gray-600 text-sm>Try products in your own space with AR technology</p></div>";
                   </div></div>
                   <div className=text-center></div>'
-                    <div className="""text-4xl mb-4>🎮</div></div>'
-                    <h3 className="""text-lg font-semibold text-gray-900 mb-2>Interactive Demos</h3></div>'
+                    <div className=""""text-4xl mb-4>🎮</div></div>'
+                    <h3 className=""""text-lg font-semibold text-gray-900 mb-2>Interactive Demos</h3></div>'
                     <p className=text-gray-600 text-sm'>Explore product features through interactive experiences</p></div>;
                   </div></div>;
                 </div></div>;

@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -442,9 +442,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>'
         '
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        <div className=""""fixed inset-0 z-0> </div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Pricing & Cost Estimation | Zion Tech Group</title></div>'
@@ -461,14 +461,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Get intelligent pricing analysis, detailed cost breakdowns, and budget optimization recommendations '
               powered by advanced AI algorithms and market data analysis.</div>
             </p></div>'
-            <div className="""flex flex-wrap justify-center gap-4> </div>'
+            <div className=""""flex flex-wrap justify-center gap-4> </div>'
               </div><div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>💰 Smart Pricing</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>";
                 <span className=text-white font-semibold>📊 Market Analysis</span></div>";
               </div></div>'
-              <div className="""bg-white/10" backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
+              <div className=""""bg-white/10" backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🎯 Budget Optimization</span></div>;
               </div></div>
             </div></div>
@@ -487,7 +487,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className= flex flex-wrap justify-center mb-8>";
               ';
                 onClick={() => setActiveTab(estimates')}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === estimate's'";
                     ? bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       bg-white'/10 text-gray-300 hover bg-white/20`
@@ -527,7 +527,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <label className=block text-sm font-medium text-gray-300 mb-2>Category</label>";
                       '
                         onChange={(e) => setSelectedCategory(e.target.value)}'";
-                        className=""" w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500;
+                        className="""" w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500;
                       >;
                         {categories.map(category => (</div>
                           <option key={category} value={category} className=bg-slate-800>
@@ -539,7 +539,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div></div>'
                       <label className=block text-sm font-medium text-gray-300 mb-2">Complexity</label>";
                         onChange={(e) => setSelectedComplexity(e.target.value)}'
-                        className="""w-full bg-white/10 border border-white/20 rounded-lg: "px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
+                        className=""""w-full bg-white/10 border border-white/20 rounded-lg: "px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500";
                       ></div>;
                         <option value=all className=bg-slate-800>All Complexities</option></div>
                         <option value=simple className=bg-slate-800>Simple</option></div>
@@ -563,7 +563,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 {/* Estimates Grid */}</div>";
                 <div className=grid grid-cols-1 lg grid-cols-2 gap-8>
                   {filteredEstimates.map((estimate) => (</div>'
-                    </div><div key={estimate.id} className="""bg-white/10 backdrop-blur-sm: "rounded-xl:p-6 border border-white/10>"
+                    </div><div key={estimate.id} className=""""bg-white/10 backdrop-blur-sm: "rounded-xl:p-6 border border-white/10>"
                       {/* Header */}</div>
                       <div className=flex items-start justify-between mb-4 ></div>";
                         </div><div> </div>";
@@ -572,7 +572,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             <span className=px-4 py-3 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300>'
                               {estimate.category}"</div>'
                             </span>"</div>'
-                            <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getComplexityColor(estimate.complexity)}"}>
+                            <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getComplexityColor(estimate.complexity)}"}>
                               {estimate.complexity.charAt(0).toUpperCase() + estimate.complexity.slice(1)}</div>";
                             </span></div>
                           </div></div>";
@@ -589,7 +589,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       {/* AI Factors */}</div>";
                       <div className=mb-4></div>
                         </div><div className=text-sm:text-gray-400 mb-2>AI-Powered Features </div></div>'
-                        <div className="""flex flex-wrap gap-2>";
+                        <div className=""""flex flex-wrap gap-2>";
                           {estimate.aiFactors.map((factor, index) => (</div>'
                             <span key={index} className=px-4" py-3 bg-purple-500/20 rounded-full text-xs text-purple-300>
                               {factor}</div>
@@ -598,7 +598,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         </div></div>";
                       </div>
                       {/* Cost Breakdown */}</div>'
-                      <div className="""mb-4></div>'
+                      <div className=""""mb-4></div>'
                         </div><div className=text-sm: "text-gray-400 mb-2>Cost Breakdown </div></div>"
                         <div className=space-y-2>
                           {estimate.breakdown.map((item, index) => (</div>";
@@ -617,10 +617,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <div className=grid grid-cols-2 gap-2 text-xs ></div>";
                           </div><div></div>";
                             <span className=text-gray-400>Market Average </span></div>'
-                            <div className="""text-white font-semibold>${estimate.marketComparison.averageMarketPrice.toLocaleString()}</div></div>";
+                            <div className=""""text-white font-semibold>${estimate.marketComparison.averageMarketPrice.toLocaleString()}</div></div>";
                           </div></div>";
                           <div></div>'
-                            <span className="""text-gray-400>Price Range: "</span></div>";
+                            <span className=""""text-gray-400>Price Range: "</span></div>";
                             <div className=text-white font-semibold >;
                               ${estimate.marketComparison.priceRange.min.toLocaleString()} - ${estimate.marketComparison.priceRange.max.toLocaleString()}</div>;
                             </div></div>
@@ -632,7 +632,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                           View Details</div>'
                         </button>"</div>'
-                        <button className="""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>";
+                        <button className=""""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>";
                           Get Quote</div>;
                         </button></div>;
                       </div></div>;
@@ -650,7 +650,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <p className=text-gray-300 text-sm:mb-4>{model.description}</p></div>";
                     <div className=mb-4></div>'
                       </div><div className=text-sm font-medium text-gray-400 mb-2">Advantages </div></div>'
-                      <ul className="""space-y-1>;
+                      <ul className=""""space-y-1>;
                         {model.advantages.map((advantage, index) => (</div>
                           <li key={index} className= text-sm text-green-300 flex items-center></div>
                             <span className=mr-2>✓</span>
@@ -660,7 +660,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </ul></div>";
                     </div></div>'
                     <div className=mb-4>" </div>'";
-                      </div><div className="""text-sm font-medium text-gray-400 mb-2>Disadvantages </div></div>
+                      </div><div className=""""text-sm font-medium text-gray-400 mb-2>Disadvantages </div></div>
                       <ul className=space-y-1>";
                         {model.disadvantages.map((disadvantage, index) => (</div>";
                           <li key={index} className=text-sm text-red-300 flex items-center ></div>'
@@ -670,7 +670,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         ))}</div>";
                       </ul></div>
                     </div></div>'";
-                    <div className="""mb-4></div>
+                    <div className=""""mb-4></div>
                       </div><div className=text-sm font-medium text-gray-400 mb-2>Best For </div></div>";
                       <div className=flex  flex-wrap gap-1>";
                         {model.bestFor.map((item, index) => (</div>'
@@ -680,7 +680,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         ))}</div>";
                       </div></div>
                     </div></div>'
-                    <button className="""w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>;
+                    <button className=""""w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>;
                       Learn More
                     </button></div>;
                   </div>
@@ -691,7 +691,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {activeTab === optimization && (</div>";
               <div className=space-y-8>
                 {budgetOptimizations.map((optimization, index) => (</div>'
-                  </div><div key={index} className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
+                  </div><div key={index} className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                     <div className=grid grid-cols-1 md grid-cols-3 gap-6 mb-6> </div>";
                       </div><div className=text-center></div>'
                         <div className=text-2xl font-bold text-red-400>${optimization.originalBudget.toLocaleString()}</div>"</div>'
@@ -703,7 +703,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div></div>";
                       <div className=text-center> </div>
                         </div><div className=text-2xl font-bold text-purple-400>${optimization.savings.toLocaleString()}</div></div>'
-                        <div className="""text-sm text-gray-400>Total Savings</div></div>
+                        <div className=""""text-sm text-gray-400>Total Savings</div></div>
                       </div></div>'
                     </div>'
 </div>";
@@ -714,7 +714,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           </div><div key={recIndex} className= bg-white/5 rounded-lg p-3></div>";
                             <div className=flex justify-between items-start mb-2></div>
                               <h5 className=font-semibold text-white >{rec.action}</h5></div>'
-                              <span className="""text-green-400 font-semibold>-${rec.savings.toLocaleString()}</span></div>;
+                              <span className=""""text-green-400 font-semibold>-${rec.savings.toLocaleString()}</span></div>;
                             </div> </div>
                             <p className=text-sm text-gray-300 mb-2>{rec.impact}</p></div>
                             <p className=text-xs text-gray-400>{rec.implementation}</p></div>
@@ -730,7 +730,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             <h5 className=font-semibold text-white mb-2>{tradeoff.option}</h5></div>";
                             <div className=grid grid-cols-1 md grid-cols-2 gap-4 ></div>
                               </div><div></div>'
-                                <div className="""text-sm font-medium text-green-400 mb-1>Pros </div></div>
+                                <div className=""""text-sm font-medium text-green-400 mb-1>Pros </div></div>
                                 <ul className=space-y-1>
                                   {tradeoff.pros.map((pro, proIndex) => (</div>
                                     <li key={proIndex} className=text-xs text-gray-300>• {pro}</li>";
@@ -764,13 +764,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <h2 className=text-3xl font-bold text-white mb-4>";
               Ready to Get Accurate Pricing Estimates?</div>'
             </h2>"</div>'
-            <p className="""text-xl text-gray-300 mb-8 max-w-2xl: "mx-auto>";
+            <p className=""""text-xl text-gray-300 mb-8 max-w-2xl: "mx-auto>";
               Our AI-powered pricing system analyzes market data, project complexity, and your specific requirements";
               to provide accurate cost estimates and optimization recommendations.</div>
             </p></div>";
             <div className=flex flex-col sm flex-row gap-4 justify-center></div>";
               <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Free Estimate</div>'
-              </Link href= /auth/signup className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link></div>";
+              </Link href= /auth/signup className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link></div>";
               <Link href=/ai-service-matcher className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Try AI Matcher</div>;
               </Link href=/ai-service-matcher className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;

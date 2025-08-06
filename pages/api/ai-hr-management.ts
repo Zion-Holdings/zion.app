@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from ';next';
 interface Employee {
   id: string;
   name: string;
@@ -59,7 +59,7 @@ const mockEmployees: Employee[] = [
       performanceScore: 90,
       satisfactionScore: 85,
       retentionScore: 85,
-      recommendations: ['Consider promotion opportunities', 'Provide additional training', 'Increase recognition'];
+      recommendations: ['Consider promotion opportunities', 'Provide additional training', 'Increase recognition']
     };
   },
   {
@@ -77,7 +77,7 @@ const mockEmployees: Employee[] = [
       performanceScore: 94,
       satisfactionScore: 90,
       retentionScore: 92,
-      recommendations: ['High performer - consider leadership role', 'Maintain current engagement level'];
+      recommendations: ['High performer - consider leadership role', 'Maintain current engagement level'],
     };
   },
   {
@@ -95,7 +95,7 @@ const mockEmployees: Employee[] = [
       performanceScore: 75,
       satisfactionScore: 62,
       retentionScore: 55,
-      recommendations: ['Provide performance coaching', 'Address work-life balance', 'Consider role adjustment'];
+      recommendations: ['Provide performance coaching', 'Address work-life balance', 'Consider role adjustment'],
     };
   },
   {
@@ -113,7 +113,7 @@ const mockEmployees: Employee[] = [
       performanceScore: 86,
       satisfactionScore: 80,
       retentionScore: 78,
-      recommendations: ['Provide career development opportunities', 'Increase project variety', 'Improve team collaboration'];
+      recommendations: ['Provide career development opportunities', 'Increase project variety', 'Improve team collaboration'],
     };
   };
 ];
@@ -131,7 +131,7 @@ const mockJobPostings: JobPosting[] = [
       visibilityScore: 85,
       applicationQuality: 78,
       diversityScore: 82,
-      recommendations: ['Optimize job description keywords', 'Improve diversity outreach', 'Enhance application process'];
+      recommendations: ['Optimize job description keywords', 'Improve diversity outreach', 'Enhance application process'],
     };
   },
   {
@@ -147,7 +147,7 @@ const mockJobPostings: JobPosting[] = [
       visibilityScore: 92,
       applicationQuality: 88,
       diversityScore: 75,
-      recommendations: ['Increase diversity initiatives', 'Streamline interview process', 'Improve candidate experience'];
+      recommendations: ['Increase diversity initiatives', 'Streamline interview process', 'Improve candidate experience'],
     };
   },
   {
@@ -163,7 +163,7 @@ const mockJobPostings: JobPosting[] = [
       visibilityScore: 78,
       applicationQuality: 65,
       diversityScore: 90,
-      recommendations: ['Enhance job posting visibility', 'Improve application screening', 'Add mentorship program details'];
+      recommendations: ['Enhance job posting visibility', 'Improve application screening', 'Add mentorship program details'],
     };
   };
 ];
@@ -211,7 +211,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'Enhance employee engagement programs',
               'Optimize recruitment processes',
               'Develop retention strategies for high-risk employees;
-            ];
+            ],
           };
         });
       case 'getEmployeeDetails':
@@ -264,7 +264,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({ error: 'Invalid action' });
     };
   } catch (error) {
-    console.error('AI HR Management API Error:', error);
+    console.error("AI HR Management API Error:", error);
     return res.status(500).json({ error: 'Internal server error' });
   };
 };

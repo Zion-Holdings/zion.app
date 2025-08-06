@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}";
 import Link from next/link
 import { motion, AnimatePresence }  from ";framer-motion
@@ -211,34 +211,34 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Notifications - Zion Marketplace</title></div>'
-        <meta name=description content=Manage your notifications and stay updated with marketplace activities > </meta name="description content=Manage your notifications and stay updated with marketplace activities ><meta name="keywords content=notifications, marketplace updates, Zion > </meta name=keywords" content=notifications, marketplace updates, Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href="""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name=description content=Manage your notifications and stay updated with marketplace activities > </meta name="description content=Manage your notifications and stay updated with marketplace activities ><meta name="keywords content=notifications, marketplace updates, Zion > </meta name=keywords" content=notifications, marketplace updates, Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href=""""/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'
-              <Link href=/ className="""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
-                  <span className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
+              <Link href=/ className=""""flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className=text-2xl font-bold text-white></div>'
+                  <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
                 </h1></div>'
               </Link></div>
             </div></div>'";
-            <div className="""hidden md flex items-center space-x-8></div>'
-              <Link href="""/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
+            <div className=""""hidden md flex items-center space-x-8></div>'
+              <Link href=""""/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
               </Link href= /marketplace className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>";
               </Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
               <Link href=/talents className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents"</div>'
-              </Link href=/talents  className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>"
+              </Link href=/talents  className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>"
               <Link href=/products className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>
               </Link href=/products className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/real-time-chat className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Live Chat</div>";
               </Link href=/real-time-chat  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/auth/login className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>"
+              <Link href=/auth/login className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>"
               </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
           </div></div>
         </div></div>";
@@ -246,7 +246,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <div className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>";
         {/* Header */}</div>
         </div><div className= text-center mb-8></div>'
-          <h1 className="""text-4xl md text-5xl font-bold text-white mb-4>
+          <h1 className=""""text-4xl md text-5xl font-bold text-white mb-4>
             Notifications</div>
           </h1></div>
           <p className=text-xl text-gray-300 max-w-3xl mx-auto>";
@@ -254,7 +254,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </p></div>";
         </div>
         {/* Stats */}</div>'
-        <div className="""grid grid-cols-1 md grid-cols-4 gap-6 mb-8 ></div>'
+        <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 mb-8 ></div>'
           </div><div className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 text-center></div>"
             <div className=text-3xl font-bold text-white mb-2>{notifications.length}</div></div>
             <div className=text-gray-300>Total</div></div>";
@@ -269,7 +269,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div></div>";
           <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center></div>
             </div><div className=text-3xl font-bold text-purple-400 mb-2>{notifications.filter(n => n.type === marketplac'e').length}</div></div>'";
-            <div className="""text-gray-300>Marketplace</div></div>
+            <div className=""""text-gray-300>Marketplace</div></div>
           </div></div>";
         </div>";
         {/* Filters and Search */}</div>'
@@ -310,7 +310,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div></div>";
           </div>
           {/* Actions */}</div>'";
-          <div className="""flex justify-between items-center mt-4 >
+          <div className=""""flex justify-between items-center mt-4 >
             >";
               Mark all as read</div>";
             </button></div>'
@@ -328,11 +328,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>";
                   <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path ></div>
                 </svg></div>'";
-                <span className="""text-lg font-medium>Loading notifications...</span></div>
+                <span className=""""text-lg font-medium>Loading notifications...</span></div>
               </div></div>";
             </div>
           )   filteredNotifications.length === 0 ? (</div>'";
-            <div className="""text-center py-32> </div>'
+            <div className=""""text-center py-32> </div>'
               </div><div className=text-6xl: "mb-4>🔔</div></div>"
               <h3 className=text-xl font-semibold text-white mb-2 >No notifications found</h3></div>
               <p className=text-gray-400>Try adjusting your filters or search terms</p></div>
@@ -342,7 +342,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               {filteredNotifications.map((notification, index) => (";
                 ></div>'
                   <div className=flex items-start space-x-4>"</div>'
-                    </div><div className="""text-3xl: "flex-shrink-0>";
+                    </div><div className=""""text-3xl: "flex-shrink-0>";
                       {getNotificationIcon(notification.type, notification.icon)}</div>
                     </div> </div>
                     <div className=flex-1 min-w-0></div>
@@ -351,7 +351,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                           {notification.title} </div>";
                         </h3></div>";
                         <div className=flex items-center space-x-2 ></div>'
-                          <span className="""text-sm  text-gray-400>";
+                          <span className=""""text-sm  text-gray-400>";
                             {formatTime(notification.timestamp)}</div>";
                           </span>'
                           ";
@@ -365,7 +365,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <p className=text-gray-300 mb-4 leading-relaxed>";
                         {notification.message}</div>
                       </p></div>'";
-                      <div className="""flex items-center justify-between ></div>'
+                      <div className=""""flex items-center justify-between ></div>'
                         </div><div className=flex" items-center space-x-4>;
                           }}>;
                             {notification.type.charAt(0).toUpperCase() + notification.type.slice(1)}</div>;
@@ -400,8 +400,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto >'
               Never miss important updates about services, talents, and marketplace activities.</div>
             </p></div>'";
-            <div className=""" flex flex-col sm flex-row gap-4 justify-center></div>'
-              <Link href=/marketplace className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace</div>";
+            <div className="""" flex flex-col sm flex-row gap-4 justify-center></div>'
+              <Link href=/marketplace className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace</div>";
               </Link href=/marketplace className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>;
               <Link href=/real-time-chat className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Chatting</div>;
               </Link href=/real-time-chat  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;

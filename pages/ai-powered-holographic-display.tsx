@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -242,7 +242,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI-powered holographic display system shows 95% optimization score with optimized rendering and spatial tracking,
         impact: positive,
         confidence: "0.95,";
-        recommendations: [Continue AI monitoring, Expand holographic capabilities];
+        recommendations: [Continue AI monitoring, Expand holographic capabilities],
       }]};
   useEffect(() => {;
     setTimeout(() => {;
@@ -320,9 +320,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <title>AI-Powered Holographic Display & 3D Visualization System | Zion Tech Group</title>"</div>'
         <meta name=description content=Holographic displays, 3D visualization, spatial computing, holographic projection, volumetric displays, and automated holographic system management powered by AI. > </meta" name=description content=Holographic displays, 3D visualization, spatial computing, holographic projection, volumetric displays, and automated holographic system management powered by AI." ><meta name=keywords content=holographic display, 3D visualization, spatial computing, holographic projection, volumetric displays, AI holographic > </meta name="keywords content=holographic display, 3D visualization, spatial computing, holographic projection, volumetric displays, AI holographic ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Header */}</div>'
-      <div className="""relative overflow-hidden></div>
+      <div className=""""relative overflow-hidden></div>
         </div><div className=absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20></div></div>'
-        <div className="""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>";
+        <div className=""""relative max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-44> </div>";
           </div><div className=text-center></div>";
             <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Holographic Display & 3D Visualization System</div>";
@@ -331,12 +331,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               Holographic displays, 3D visualization, spatial computing, '
               holographic projection, volumetric displays, and automated holographic system management powered by AI.</div>
             </p></div>'";
-            <div className="""flex flex-wrap justify-center gap-4> </div>'
+            <div className=""""flex flex-wrap justify-center gap-4> </div>'
               </div><div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>"";
                 <span className=text-white font-semibold>🌟 Holographic Display</span> </div>";
               </div></div>
               <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>'
-                <span className="""text-white font-semibold>🎨 3D Visualization</span></div>";
+                <span className=""""text-white font-semibold>🎨 3D Visualization</span></div>";
               </div></div>'
               <div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>";
                 <span className=text-white font-semibold>🌐 Spatial Computing</span></div>;
@@ -349,7 +349,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>";
         {isLoading ? (</div>
           </div><div className=flex justify-center items-center py-40></div>'";
-            <div className="""animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 ></div></div>
+            <div className=""""animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 ></div></div>
           </div>";
         ) : (</div>";
           <        />'
@@ -386,7 +386,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button>";
               '
                 onClick={() => setActiveTab(projecti'on)}'
-                className="""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className=""""{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === projection'
                     ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white
                       bg-white/10 text-gray-300 hover bg-white/20'";
@@ -406,7 +406,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </button> '";
               '
                 onClick={() => setActiveTab(manageme'nt)}'";
-                className="""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
+                className=""""{px-6 py-3 rounded-lg: "font-semibold transition-all duration-300 ${"
                   activeTab === management
                     ? bg-gradient-to-r from-cyan-600 to-blue-600 text-white
                     : bg-white/10 text-gray-300 hover:bg-white/20";
@@ -438,15 +438,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         className= bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500";
                       ></div>'
                         <option value=all className=bg-slate-800>All Types</option>"</div>'
-                        <option value=volumetric className="""bg-slate-800>Volumetric</option></div>
+                        <option value=volumetric className=""""bg-slate-800>Volumetric</option></div>
                         <option value=light_field className=bg-slate-800>Light Field</option></div>'
-                        <option value=holographic_projection className="""bg-slate-800>Holographic Projection</option></div>'
-                        <option value=spatial_computing className="""bg-slate-800>Spatial Computing</option></div>
+                        <option value=holographic_projection className=""""bg-slate-800>Holographic Projection</option></div>'
+                        <option value=spatial_computing className=""""bg-slate-800>Spatial Computing</option></div>
                         <option value=mixed_reality className=bg-slate-800>Mixed Reality</option></div>'
-                        <option value=augmented_reality className="""bg-slate-800>Augmented Reality</option></div>'
+                        <option value=augmented_reality className=""""bg-slate-800>Augmented Reality</option></div>'
                       </select></div>
                     </div></div>'
-                    <button className="""bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >";
+                    <button className=""""bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >";
                       Create Holographic Display</div>
                     </button> </div></div>";
                 </div>";
@@ -458,14 +458,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=flex items-start justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-xl font-semibold text-white mb-2 ">{display.name}</h3></div>'
-                          <p className="""text-gray-300 text-sm capitalize>{display.type.replace(_,  )} Display</p></div>";
+                          <p className=""""text-gray-300 text-sm capitalize>{display.type.replace(_,  )} Display</p></div>";
                         </div></div>'
                         <div className=text-right>'</div>";
                           <span className={px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(display.status)}}>
                             {display.status} </div>'
                           </span>'</div>";
                           <div className=mt-2>`</div>'
-                            <span className="""{px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(display.type)}}">
+                            <span className=""""{px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(display.type)}}">
                               {display.resolution}p resolution</div>
                             </span></div>
                           </div></div>";
@@ -474,23 +474,23 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <div className=mb-4></div>";
                         <p className=text-gray-300 text-sm>{display.description}</p> </div>'
                       </div>"</div>'
-                      <div className="""grid grid-cols-3 gap-4 mb-4></div>
+                      <div className=""""grid grid-cols-3 gap-4 mb-4></div>
                         </div><div className= bg-white/5 rounded-lg p-4></div>'
-                          <div className="""text-sm text-gray-400 mb-1>Resolution</div></div>'
-                          <div className="""text-2xl font-bold text-white>{display.resolution}p</div></div>
+                          <div className=""""text-sm text-gray-400 mb-1>Resolution</div></div>'
+                          <div className=""""text-2xl font-bold text-white>{display.resolution}p</div></div>
                         </div></div>'";
-                        <div className="""bg-white/5 rounded-lg p-4 ></div>'
-                          </div><div className="""text-sm text-gray-400 mb-1>Refresh Rate</div></div>";
+                        <div className=""""bg-white/5 rounded-lg p-4 ></div>'
+                          </div><div className=""""text-sm text-gray-400 mb-1>Refresh Rate</div></div>";
                           <div className=text-2xl font-bold text-white>{display.refreshRate}Hz</div></div>";
                         </div></div>'
-                        <div className="""bg-white/5 rounded-lg: "p-4></div>"";
+                        <div className=""""bg-white/5 rounded-lg: "p-4></div>"";
                           </div><div className=text-sm text-gray-400 mb-1 >Field of View</div></div>";
                           <div className=text-2xl font-bold text-white>{display.fieldOfView}°</div></div>
                         </div></div>'
                       </div>'
                       {/* AI Analysis */}</div>";
                       <div className=mb-4></div>'
-                        <h4 className="""text-lg font-semibold text-white mb-3>AI Analysis</h4>"</div>'
+                        <h4 className=""""text-lg font-semibold text-white mb-3>AI Analysis</h4>"</div>'
                         <div className=bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg: "p-4></div>"";
                           </div><div className=grid grid-cols-3 gap-4 text-sm></div>";
                             <div> </div>";
@@ -499,26 +499,26 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                             </div>"</div>";
                             <div></div>
                               </div><div className=text-gray-400 mb-1 >Quality</div></div>'
-                              <div className="""text-white font-semibold>{display.aiAnalysis.qualityScore}%</div></div>'
+                              <div className=""""text-white font-semibold>{display.aiAnalysis.qualityScore}%</div></div>'
                             </div></div>
                             <div> </div>'
-                              </div><div className="""text-gray-400 mb-1>Immersion</div></div>'
-                              <div className="""text-white font-semibold>{display.aiAnalysis.immersionScore}%</div></div>";
+                              </div><div className=""""text-gray-400 mb-1>Immersion</div></div>'
+                              <div className=""""text-white font-semibold>{display.aiAnalysis.immersionScore}%</div></div>";
                             </div></div>'
                           </div>"</div>'
-                          <div className="""mt-3></div>";
+                          <div className=""""mt-3></div>";
                             </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div></div>'
-                            <div className="""text-xs text-gray-300>
+                            <div className=""""text-xs text-gray-300>
                               {display.aiAnalysis.recommendations.join(, )}</div>";
                             </div></div>
                           </div></div>";
                         </div> </div>
                       </div></div>'";
-                      <div className="""flex space-x-2></div>
+                      <div className=""""flex space-x-2></div>
                         <button className=flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >";
                           View Details</div>";
                         </button></div>'
-                        <button className="""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
+                        <button className=""""flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>";
                           Configure</div>;
                         </button></div>;
                       </div></div>;
@@ -536,15 +536,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <div className=text-gray-400 text-sm>Total Holographic Displays</div> </div>";
                   </div></div>
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10></div>'
-                    </div><div className="""text-3xl font-bold text-white mb-2 >{analytics.averageResolution.toLocaleString()}p</div></div>'
-                    <div className="""text-gray-400 text-sm>Avg Resolution</div> </div>
+                    </div><div className=""""text-3xl font-bold text-white mb-2 >{analytics.averageResolution.toLocaleString()}p</div></div>'
+                    <div className=""""text-gray-400 text-sm>Avg Resolution</div> </div>
                   </div></div>'
-                  <div className="""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
+                  <div className=""""bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>"
                     </div><div className=text-3xl font-bold text-white mb-2>{analytics.activeVisualizations.toLocaleString()}</div></div>
                     <div className=text-gray-400 text-sm >Active Visualizations</div></div>";
                   </div></div>
                   <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>'";
-                    </div><div className="""text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
+                    </div><div className=""""text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
                     <div className=text-gray-400 text-sm>AI Optimization Score</div></div>";
                   </div></div>
                 </div></div>'
@@ -578,7 +578,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div>";
       {/* CTA Section */}</div>";
       <div className=bg-gradient-to-r from-cyan-600/20 to-blue-600/20 mt-16> </div>'
-        </div><div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-36></div>";
+        </div><div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-36></div>";
           <div className=text-center></div>;
             <h2 className=text-3xl font-bold text-white mb-4>
               Ready to Experience Holographic Technology?</div>

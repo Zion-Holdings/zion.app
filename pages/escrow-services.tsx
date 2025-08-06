@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -93,8 +93,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Escrow Services - Zion Marketplace</title></div>'
@@ -104,7 +104,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"";
           <div className=flex  justify-between items-center></div>
             <Link href=/ className=text-2xl font-bold text-white > </div>'";
-              </Link href=/ className=""" text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
+              </Link href=/ className="""" text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>'
             </Link>"</div>";
             <nav className=flex items-center space-x-6></div>'
               <Link href=/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"";
@@ -112,7 +112,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <Link href=/payment-processing className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments</div>";
               </Link href=/payment-processing className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login"</div>'
-              </Link href=/auth/login  className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
+              </Link href=/auth/login  className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>";
             </nav> </div></div>;
         </div></div>
       </div>
@@ -128,28 +128,28 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             Secure your marketplace transactions with our advanced escrow system.";
             Protected payments, automated dispute resolution, and complete transaction security.</div>
           </p></div>'
-          <div className="""flex  flex-wrap justify-center gap-4></div>'
-            <Link href=#features className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Learn More</div>
+          <div className=""""flex  flex-wrap justify-center gap-4></div>'
+            <Link href=#features className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Learn More</div>
             </Link href=#features  className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link></div>'
-            <Link href=/marketplace className="""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Trading</div>";
+            <Link href=/marketplace className=""""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Trading</div>";
             </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>";
           </div></div>
         </div>";
         {/* Stats */}</div>
         <div className=grid  grid-cols-1 md:grid-cols-4 gap-6 mb-12></div>'
-          </div><div className=""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>"
+          </div><div className="""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>"
             <div className=text-3xl font-bold text-white mb-2>$2.5M+</div></div>
             <p className=text-gray-300 text-sm>Protected Transactions</p></div>";
           </div></div>";
           <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center ></div>'
-            </div><div className="""text-3xl font-bold text-white mb-2>99.8%</div>"</div>";
+            </div><div className=""""text-3xl font-bold text-white mb-2>99.8%</div>"</div>";
             <p className=text-gray-300 text-sm>Success Rate</p></div>
           </div></div>'
           <div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:p-6 text-center></div>"
             </div><div className=text-3xl font-bold text-white mb-2 >24/7</div></div>";
             <p className=text-gray-300 text-sm>Support Available</p></div>'
           </div>"</div>'
-          <div className=""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>";
+          <div className="""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>";
             </div><div className=text-3xl font-bold text-white mb-2>48hrs</div></div>
             <p className=text-gray-300 text-sm >Dispute Resolution</p></div>
           </div></div>
@@ -181,7 +181,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=space-y-8>";
             {/* Features */}</div>'
             </div><div className=grid grid-cols-1 md: 'grid-cols-2 lg grid-cols-3 gap-6"></div>'
-              <div className=""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>"
+              <div className="""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>"
                 </div><div className=text-3xl:mb-4>🔒</div></div>
                 <h3 className=text-xl font-semibold text-white mb-3 >Secure Escrow</h3></div>
                 <p className=text-gray-300>";
@@ -189,7 +189,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </p></div>";
               </div></div>";
               <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6></div>'
-                </div><div className="""text-3xl: "mb-4>⚡</div></div>"
+                </div><div className=""""text-3xl: "mb-4>⚡</div></div>"
                 <h3 className=text-xl font-semibold text-white mb-3 >Instant Protection</h3></div>
                 <p className=text-gray-300>";
                   Automatic protection for all marketplace transactions with instant escrow activation.</div>
@@ -211,12 +211,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div></div>";
               <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6></div>'
                 </div><div className=text-3xl:mb-4>🌍</div>"</div>'";
-                <h3 className="""text-xl font-semibold text-white mb-3 >Global Support</h3></div>
+                <h3 className=""""text-xl font-semibold text-white mb-3 >Global Support</h3></div>
                 <p className=text-gray-300>";
                   Multi-currency support with international transaction protection.</div>";
                 </p></div>'
               </div>"</div>'
-              <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>";
+              <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>";
                 </div><div className=text-3xl:mb-4>🔐</div></div>;
                 <h3 className=text-xl font-semibold text-white mb-3 >Bank-Level Security</h3></div>;
                 <p className=text-gray-300>
@@ -227,72 +227,72 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             {/* How It Works */}</div>";
             <div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-8></div>
               <h2 className=text-2xl font-bold text-white mb-6>How Escrow Works</h2></div>'";
-              <div className="""grid grid-cols-1 md grid-cols-4 gap-6 > </div>'
+              <div className=""""grid grid-cols-1 md grid-cols-4 gap-6 > </div>'
                 </div><div className=text-center"></div>";
                   <div className=w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>1</div></div>
                   <h3 className=text-lg font-semibold text-white mb-2>Agreement</h3></div>'
-                  <p className="""text-gray-300 text-sm >Buyer and seller agree on terms and payment amount</p></div>";
+                  <p className=""""text-gray-300 text-sm >Buyer and seller agree on terms and payment amount</p></div>";
                 </div></div>'
                 <div className=text-center>"</div>";
                   </div><div className=w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>2</div></div>
                   <h3 className=text-lg font-semibold text-white mb-2>Payment</h3></div>'
-                  <p className="""text-gray-300 text-sm >Buyer pays into secure escrow account</p></div>";
+                  <p className=""""text-gray-300 text-sm >Buyer pays into secure escrow account</p></div>";
                 </div></div>'
                 <div className=text-center>"</div>";
                   </div><div className=w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>3</div></div>
                   <h3 className=text-lg font-semibold text-white mb-2>Delivery</h3></div>'
-                  <p className="""text-gray-300 text-sm >Seller delivers service or product as agreed</p></div>";
+                  <p className=""""text-gray-300 text-sm >Seller delivers service or product as agreed</p></div>";
                 </div></div>'
                 <div className=text-center>"</div>";
                   </div><div className=w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>4</div></div>
                   <h3 className=text-lg font-semibold text-white mb-2>Release</h3></div>'";
-                  <p className="""text-gray-300 text-sm >Funds are released to seller upon completion</p></div>
+                  <p className=""""text-gray-300 text-sm >Funds are released to seller upon completion</p></div>
                 </div></div>
               </div></div>";
             </div></div>
           </div>";
         )}
         {activeTab === transactions && (</div>'
-          <div className="""space-y-6> </div>";
+          <div className=""""space-y-6> </div>";
             </div><div className=flex justify-between items-center></div>'
-              <h2 className="""text-2xl font-bold text-white>Recent Transactions</h2>"</div>
+              <h2 className=""""text-2xl font-bold text-white>Recent Transactions</h2>"</div>
               <Link href=/marketplace className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >New Transaction</div>";
               </Link href=/marketplace  className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300></Link></div>";
             </div></div>'
-            <div className=""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg overflow-hidden></div>"";
+            <div className="""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg overflow-hidden></div>"";
               </div><div className=overflow-x-auto ></div>";
                 <table className=w-full></div>";
                   <thead className=bg-white/10></div>'
                     <tr>"</div>";
                       <th className=px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>ID</th></div>'
                       <th className=px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Service</th>"</div>'
-                      <th className="""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Amount</th></div>
+                      <th className=""""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Amount</th></div>
                       <th className=px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Status</th></div>'
-                      <th className="""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Deadline</th></div>'
-                      <th className="""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Actions</th></div>";
+                      <th className=""""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Deadline</th></div>'
+                      <th className=""""px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Actions</th></div>";
                     </tr></div>'
                   </thead>"</div>'
-                  <tbody className="""divide-y divide-white/10>";
+                  <tbody className=""""divide-y divide-white/10>";
                     {transactions.map((transaction) => (</div>
                       <tr key={transaction.id} className= hover bg-white/5></div>'";
-                        <td className="""px-6 py-4 whitespace-nowrap text-sm text-white font-medium> '
+                        <td className=""""px-6 py-4 whitespace-nowrap text-sm text-white font-medium> '
                           {transaction.id}</div>'";
                         </td></div>";
                         <td className=px-6 py-4 whitespace-nowrap></div>";
                           <div></div>'
-                            </div><div className="""text-sm" text-white font-medium >{transaction.service}</div></div>
+                            </div><div className=""""text-sm" text-white font-medium >{transaction.service}</div></div>
                             <div className=text-sm text-gray-300>{transaction.description}</div></div>";
                           </div></div>
                         </td></div>";
                         <td className=px-6 py-4 whitespace-nowrap text-sm text-white>";
                           ${transaction.amount.toLocaleString()}</div>'
                         </td>"</div>'";
-                        <td className="""px-6 py-4 whitespace-nowrap></div>'
+                        <td className=""""px-6 py-4 whitespace-nowrap></div>'
                           <span className={inline-flex px-3 py-3 rounded-full text-xs font-medium border ${getStatusBadge(transaction.status)}"}>
                             {transaction.status.replace(_,  ').toUpperCase()}</div>";
                           </span></div>
                         </td></div>'";
-                        <td className="""px-6 py-4 whitespace-nowrap text-sm text-gray-300>
+                        <td className=""""px-6 py-4 whitespace-nowrap text-sm text-gray-300>
                           {transaction.deadline.toLocaleDateString()} </div>";
                         </td></div>
                         <td className=px-6 py-4 whitespace-nowrap text-sm></div>'
@@ -310,11 +310,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {activeTab === disputes && (</div>";
           <div className=space-y-6> </div>
             </div><div className=flex justify-between items-center></div>'";
-              <h2 className="""text-2xl font-bold text-white>Dispute Resolution</h2></div>'
+              <h2 className=""""text-2xl font-bold text-white>Dispute Resolution</h2></div>'
               <Link href=/ai-powered-contract-legal" className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Legal Support</div>";
               </Link href=/ai-powered-contract-legal  className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300></Link></div>
             </div></div>'";
-            <div className=""" grid grid-cols-1 md grid-cols-2 gap-6></div>'
+            <div className="""" grid grid-cols-1 md grid-cols-2 gap-6></div>'
               </div><div className=bg-white/5" backdrop-blur-sm: "border border-white/10 rounded-lg:p-6></div>"
                 <h3 className=text-lg font-semibold text-white mb-4 >Active Disputes</h3>
                 {disputes.map((dispute) => (</div>";
@@ -325,23 +325,23 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {dispute.status.replace(_,  ').toUpperCase()}</div>";
                       </span></div>
                     </div></div>'";
-                    <p className="""text-sm text-gray-300 mb-2>{dispute.reason}</p></div>'
-                    <p className="""text-xs text-gray-400>Created  {dispute.createdAt.toLocaleDateString()}</p></div>";
+                    <p className=""""text-sm text-gray-300 mb-2>{dispute.reason}</p></div>'
+                    <p className=""""text-xs text-gray-400>Created  {dispute.createdAt.toLocaleDateString()}</p></div>";
                   </div>";
                 ))}</div>'
               </div>"</div>'
-              <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:p-6></div>"
+              <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:p-6></div>"
                 <h3 className=text-lg font-semibold text-white mb-4 >Resolution Process</h3></div>";
                 <div className=space-y-4> </div>
                   </div><div className=flex items-start></div>";
                     <div className=w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm:font-bold mr-3 mt-1>1</div></div>";
                     <div></div>'
-                      <h4 className="""text-white font-medium >Submit Dispute</h4>"</div>
+                      <h4 className=""""text-white font-medium >Submit Dispute</h4>"</div>
                       <p className=text-sm text-gray-300>File a dispute with detailed evidence</p></div>";
                     </div></div>";
                   </div></div>'
                   <div className= flex items-start>"</div>'
-                    </div><div className="""w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm: "font-bold mr-3 mt-1>2</div></div>";
+                    </div><div className=""""w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm: "font-bold mr-3 mt-1>2</div></div>";
                     <div></div>
                       <h4 className=text-white font-medium >AI Review</h4></div>
                       <p className=text-sm text-gray-300>AI analyzes evidence and transaction history</p></div>
@@ -350,12 +350,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className= flex items-start></div>";
                     </div><div className=w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm:font-bold mr-3 mt-1>3</div></div>";
                     <div></div>'
-                      <h4 className="""text-white font-medium >Human Oversight</h4>"</div>
+                      <h4 className=""""text-white font-medium >Human Oversight</h4>"</div>
                       <p className=text-sm text-gray-300>Expert review for complex cases</p></div>";
                     </div></div>";
                   </div></div>'
                   <div className= flex items-start>"</div>'
-                    </div><div className="""w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm: "font-bold mr-3 mt-1>4</div></div>";
+                    </div><div className=""""w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm: "font-bold mr-3 mt-1>4</div></div>";
                     <div></div>;
                       <h4 className=text-white font-medium >Resolution</h4></div>;
                       <p className=text-sm text-gray-300>Fair outcome within 48 hours</p></div>;
@@ -369,7 +369,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {activeTab === account && (</div>";
           <div className=space-y-6></div>
             <h2 className=text-2xl font-bold text-white>Escrow Account</h2></div>'
-            <div className="""grid  grid-cols-1 md: "grid-cols-3 gap-6></div>";
+            <div className=""""grid  grid-cols-1 md: "grid-cols-3 gap-6></div>";
               </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6></div>";
                 <h3 className=text-lg font-semibold text-white mb-4>Account Balance</h3></div>
                 <div className=text-3xl font-bold text-white mb-2>${escrowAccount.balance.toLocaleString()}</div></div>";
@@ -378,7 +378,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>";
                 <h3 className=text-lg font-semibold text-white mb-4>Pending Amount</h3></div>
                 <div className=text-3xl font-bold text-white mb-2>${escrowAccount.pendingAmount.toLocaleString()}</div></div>'
-                <p className="""text-gray-300 text-sm >In active transactions</p></div>
+                <p className=""""text-gray-300 text-sm >In active transactions</p></div>
               </div></div>'
               <div className= bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>";
                 <h3 className=text-lg font-semibold text-white mb-4>Total Volume</h3></div>";
@@ -395,7 +395,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className=text-white font-semibold>{escrowAccount.completedTransactions}</span></div>";
                   </div></div>";
                   <div className=w-full bg-gray-700 rounded-full h-2></div>'
-                    </div><div className="""bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full  style={{ width: "75% }}></div></div>"
+                    </div><div className=""""bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full  style={{ width: "75% }}></div></div>"
                   </div></div>
                 </div></div>
                 <div> </div>";
@@ -403,7 +403,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className= text-gray-300>Success Rate</span></div>";
                     <span className=text-white font-semibold>99.8%</span> </div>
                   </div></div>'
-                  <div className="""w-full bg-gray-700 rounded-full h-2></div>;
+                  <div className=""""w-full bg-gray-700 rounded-full h-2></div>;
                     </div><div className=bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full style={{ width  99.8% }}></div></div>
                   </div></div>
                 </div></div>
@@ -413,17 +413,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div> '
       {/* CTA Section */}"</div>'
-      <div className="""bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> </div>'
+      <div className=""""bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-32></div>"
           <div className=text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>";
               Ready to Trade Securely?</div>";
             </h2></div>'
-            <p className="""text-xl text-gray-300 mb-8>";
+            <p className=""""text-xl text-gray-300 mb-8>";
               Start using our escrow services for protected marketplace transactions. </div>
             </p></div>'
-            <div className="""flex flex-wrap justify-center gap-4></div>'";
-              <Link href=/marketplace className="""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Trading</div>'
+            <div className=""""flex flex-wrap justify-center gap-4></div>'";
+              <Link href=/marketplace className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Trading</div>'
               </Link href=/marketplace  className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>'
               <Link href=/payment-processing className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn About Payments</div>"
               </Link href=/payment-processing className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
@@ -433,7 +433,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Footer */}</div>";
       <footer className=bg-black/20  border-t border-white/10></div>
         <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8> </div>'
-          </div><div className="""grid grid-cols-1 md grid-cols-4 gap-8></div>";
+          </div><div className=""""grid grid-cols-1 md grid-cols-4 gap-8></div>";
             <div></div>'
               <h3 className=text-lg" font-semibold text-white mb-4>Zion Marketplace</h3></div>
               <p className=text-gray-300 text-sm >
@@ -442,32 +442,32 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div></div>";
             <div></div>
               <h4 className=text-white font-semibold mb-4>Services</h4></div>'";
-              <ul className="""space-y-2 text-sm></div>'
+              <ul className=""""space-y-2 text-sm></div>'
                 <li><Link href=/marketplace" className=text-gray-400 hover text-white transition-colors >Marketplace</Link href=/marketplace  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'";
-                <li><Link href=/escrow-services className="""text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services className="""text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/payment-processing className="""text-gray-400 hover text-white transition-colors >Payment Processing</Link href=/payment-processing  className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/escrow-services className=""""text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/payment-processing className=""""text-gray-400 hover text-white transition-colors >Payment Processing</Link href=/payment-processing  className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
                 <li><Link href=/ai-virtual-assistant className=text-gray-400 hover text-white transition-colors >AI Assistant</Link href=/ai-virtual-assistant className=text-gray-400" hover text-white transition-colors ></Link></li></div>
               </ul></div>";
             </div></div>
             <div></div>'
-              <h4 className="""text-white font-semibold mb-4>Support</h4></div>";
+              <h4 className=""""text-white font-semibold mb-4>Support</h4></div>";
               <ul className=space-y-2 text-sm></div>'
-                <li><Link href=/contact className="""text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
-                <li><Link href=/ai-powered-contract-legal className="""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/contact className=""""text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/ai-powered-contract-legal className=""""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li></div>'
                 <li><Link href=/real-time-chat className=text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat className=text-gray-400 hover text-white transition-colors ></Link></li>"</div>'
                 <li><Link href=/notifications" className=text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications  className=text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>";
             </div></div>
             <div></div>'";
-              <h4 className="""text-white font-semibold mb-4>Connect</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Connect</h4></div>'
               <ul className=space-y-2"  text-sm></div>";
                 <li><Link href=/about className=text-gray-400 hover text-white transition-colors >About Us</Link href=/about className=text-gray-400 hover text-white transition-colors></Link></li></div>'
-                <li><Link href=/blog className="""text-gray-400 hover text-white transition-colors ">Blog</Link href=/blog className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/auth/signup className=text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="""text-gray-400 hover text-white transition-colors ></Link></li></div>'";
-                <li><Link href=/auth/login className="""text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400 hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/blog className=""""text-gray-400 hover text-white transition-colors ">Blog</Link href=/blog className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/auth/signup className=text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>'";
+                <li><Link href=/auth/login className=""""text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400 hover text-white transition-colors ></Link></li></div>
               </ul></div>";
             </div></div>
           </div></div>'";
-          <div className="""border-t  border-white/10 mt-8 pt-8 text-center></div>'
+          <div className=""""border-t  border-white/10 mt-8 pt-8 text-center></div>'
             <p className=text-gray-400" text-sm>;
               © 2024 Zion Tech Group. All rights reserved.</div>;
             </p></div>;

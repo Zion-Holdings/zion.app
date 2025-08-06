@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from ';next';
 
 interface ContractTemplate {
   id: string;
@@ -78,7 +78,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: contractData
     });
   } catch (error) {
-    console.error('Error processing contract request:', error);
+    console.error("Error processing contract request:", error);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }

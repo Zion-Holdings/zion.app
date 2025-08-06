@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useRef }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -173,8 +173,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>AI-Powered Quantum Cryptography & Secure Communication | Zion Tech</title>"</div>'
@@ -185,12 +185,12 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div><div className=flex  items-center justify-between></div>";
             <div className=flex items-center space-x-4 > </div>";
               </div><div className=flex items-center space-x-3></div>'
-                <div className=""" w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center>"</div>
+                <div className="""" w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center>"</div>
                   <span className=text-white text-xl>🔐</span></div>";
                 </div></div>";
                 <div></div>'
                   <h1 className=text-2xl font-bold text-white >Quantum Cryptography & Secure Communication</h1>"</div>'
-                  <p className="""text-gray-300>AI-Powered Quantum Security</p></div>;
+                  <p className=""""text-gray-300>AI-Powered Quantum Security</p></div>;
                 </div></div>;
               </div></div>;
             </div></div>;
@@ -237,7 +237,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === 'dashboard' && (</div>";
               </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}</div>'";
-                <div className="""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
+                <div className=""""bg-gray-800/50 rounded-xl: "p-6 border border-gray-700> </div>"
                   </div><div className=flex items-center space-x-3 mb-4></div>
                     <div className=w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center></div>";
                       <span className=text-white text-lg>🔐</span></div>
@@ -250,20 +250,20 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                   </div>";
                   <div className=space-y-3></div>'
                     </div><div className= flex justify-between>"</div>'
-                      <span className="""text-gray-300>Status</span></div>";
+                      <span className=""""text-gray-300>Status</span></div>";
                       <span className=text-green-400>Secure</span></div>
                     </div></div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className= text-gray-300">Key Distribution</span></div>";
                       <span className=text-white>{keyDistribution.length}</span></div>";
                     </div></div>'
                     <div className=flex justify-between"></div>'";
-                      <span className="""text-gray-300>Secure Channels</span></div>
+                      <span className=""""text-gray-300>Secure Channels</span></div>
                       <span className=text-white>{secureCommunication.length}</span></div>";
                     </div></div>";
                     <div className=flex justify-between></div>'
                       <span className=text-gray-300">Digital Signatures</span></div>'
-                      <span className="""text-white>{digitalSignatures.length}</span></div>";
+                      <span className=""""text-white>{digitalSignatures.length}</span></div>";
                     </div></div>
                   </div></div>";
                 </div>";
@@ -275,7 +275,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=text-2xl mb-2>🔑</div></div>";
                       <div className=font-semibold>Key Exchange</div></div>";
                     </button></div>'
-                    <button className="""p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200>"</div>";
+                    <button className=""""p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200>"</div>";
                       <div className=text-2xl mb-2>🛡️</div></div>'
                       <div className=font-semibold>Encrypt Message</div>"</div>'
                     </button>"</div>";
@@ -284,7 +284,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       <div className=font-semibold>Sign Document</div> </div>";
                     </button></div>";
                     <button className=p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200></div>'
-                      <div className="""text-2xl: "mb-2>🎲</div></div>"
+                      <div className=""""text-2xl: "mb-2>🎲</div></div>"
                       <div className=font-semibold>Generate Random</div></div>
                     </button></div>
                   </div></div>";
@@ -295,34 +295,34 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === key-distribution && ("</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl font-bold text-white">Quantum Key Distribution</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {keyDistribution.map((qkd) => (</div>
                     </div><div key={qkd.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white">{qkd.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm: "capitalize>{qkd.protocol}</p></div>"
+                          <p className=""""text-gray-400 text-sm: "capitalize>{qkd.protocol}</p></div>"
                         </div></div>
                         <div className=text-right></div>";
                           </div><div className=text-2xl font-bold text-white>{qkd.keyRate}</div></div>
                           <div className=text-gray-400 text-sm>bits/s</div></div>";
                         </div></div>
                       </div></div>'";
-                      <div className="""space-y-3> </div>'
+                      <div className=""""space-y-3> </div>'
                         </div><div className=flex justify-between"></div>";
                           <span className=text-gray-300>Distance</span></div>'
                           <span className=text-white">{qkd.distance}" km</span></div>";
                         </div></div>";
                         <div className= flex justify-between></div>'
                           <span className=text-gray-300>Error" Rate</span></div>'
-                          <span className="""text-white>{qkd.errorRate}%</span> </div>";
+                          <span className=""""text-white>{qkd.errorRate}%</span> </div>";
                         </div></div>'
                         <div className=flex justify-between"></div>'
-                          <span className="""text-gray-300>Security Level</span></div>";
+                          <span className=""""text-gray-300>Security Level</span></div>";
                           <span className=text-white>{qkd.securityLevel} bits</span></div>
                         </div></div>'
-                        <div className=""" flex justify-between></div>'
-                          <span className="""text-gray-300>Status</span>'</div>;
+                        <div className="""" flex justify-between></div>'
+                          <span className=""""text-gray-300>Status</span>'</div>;
                           <span className={text-white capitalize ${getStatusColor(qkd.status)}}>;
                             {qkd.status}</div>;
                           </span></div>;
@@ -335,7 +335,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Quantum-Resistant Cryptography */},'
 {activeTab === resistant-cryptography && ("</div>'
-              <div className="""space-y-6></div>";
+              <div className=""""space-y-6></div>";
                 <h2 className=text-2xl font-bold text-white>Quantum-Resistant Cryptography</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {resistantCryptography.map((crypto) => (</div>
@@ -346,25 +346,25 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <p className=text-gray-400 text-sm capitalize>{crypto.algorithm}</p> </div>";
                         </div></div>'
                         <div className=text-right"></div>'
-                          </div><div className="""text-2xl font-bold text-white >{crypto.securityLevel}</div></div>";
+                          </div><div className=""""text-2xl font-bold text-white >{crypto.securityLevel}</div></div>";
                           <div className=text-gray-400 text-sm>bits</div></div>
                         </div> </div>";
                       </div></div>";
                       <div className=space-y-3></div>'
                         </div><div className= flex justify-between>"</div>'
-                          <span className="""text-gray-300>Key Size</span></div>";
+                          <span className=""""text-gray-300>Key Size</span></div>";
                           <span className=text-white>{crypto.keySize} bits</span> </div>'
                         </div>"</div>'
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Performance</span></div>'
-                          <span className="""text-white>{crypto.performance}%</span></div>
+                          <span className=""""text-white>{crypto.performance}%</span></div>
                         </div></div>'
-                        <div className=""" flex justify-between></div>";
+                        <div className="""" flex justify-between></div>";
                           <span className=text-gray-300>Resistance</span></div>'
-                          <span className="""text-white>{crypto.resistance}%</span>"</div>";
+                          <span className=""""text-white>{crypto.resistance}%</span>"</div>";
                         </div></div>";
                         <div className=flex justify-between ></div>'
-                          <span className="""text-gray-300">Status</span>`</div>;
+                          <span className=""""text-gray-300">Status</span>`</div>;
                           <span className={text-white capitalize ${getStatusColor(crypto.status)}}>;
                             {crypto.status}</div>;
                           </span></div>;
@@ -377,16 +377,16 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Secure Communication */},';
 {activeTab === secure-communicatio'n && (</div>'
-              <div className="""space-y-6></div>'
-                <h2 className="""text-2xl font-bold text-white >Quantum Secure Communication</h2>";
+              <div className=""""space-y-6></div>'
+                <h2 className=""""text-2xl font-bold text-white >Quantum Secure Communication</h2>";
                  </div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {secureCommunication.map((comm) => (</div>";
                     </div><div key={comm.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>
                       <div className=flex items-center justify-between mb-4></div>";
                         </div><div></div>
                           <h3 className=text-lg font-semibold text-white >{comm.name}</h3></div>'";
-                          <p className="""text-gray-400 text-sm capitalize>{comm.channel}</p></div>
+                          <p className=""""text-gray-400 text-sm capitalize>{comm.channel}</p></div>
                         </div></div>";
                         <div className= text-right></div>";
                           </div><div className=text-2xl font-bold text-white>{comm.throughput}</div></div>'
@@ -396,20 +396,20 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                       </div>";
                       <div className=space-y-3> </div>'
                         </div><div className=flex justify-between"></div>'
-                          <span className="""text-gray-300>Encryption</span></div>";
+                          <span className=""""text-gray-300>Encryption</span></div>";
                           <span className=text-white text-sm capitalize >{comm.encryption}</span></div>
                         </div></div>'";
-                        <div className=""" flex justify-between></div>'
+                        <div className="""" flex justify-between></div>'
                           <span className= text-gray-300">Message Size</span></div>";
                           <span className= text-white>{comm.messageSize} bytes</span></div>";
                         </div></div>'
-                        <div className="""flex justify-between>"</div>";
+                        <div className=""""flex justify-between>"</div>";
                           <span className=text-gray-300>Latency</span></div>'
                           <span className=text-white>{comm.latency} ms</span>"</div>'
                         </div>"</div>
                         <div className= flex justify-between></div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(comm.status)}"}">;
+                          <span className=""""text-gray-300>Status</span>`</div>'
+                          <span className=""""{text-white capitalize ${getStatusColor(comm.status)}"}">;
                             {comm.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -423,36 +423,36 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === random-generation && (</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl font-bold text-white">Quantum Random Number Generation</h2></div>'
-                <div className="""grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
+                <div className=""""grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
                   {randomGeneration.map((rng) => (</div>
                     </div><div key={rng.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4> </div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white">{rng.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize >{rng.source}</p></div>";
+                          <p className=""""text-gray-400 text-sm capitalize >{rng.source}</p></div>";
                         </div></div>'
                         <div className=text-right>" </div>'
-                          </div><div className="""text-2xl font-bold text-white>{rng.entropyRate}</div></div>";
+                          </div><div className=""""text-2xl font-bold text-white>{rng.entropyRate}</div></div>";
                           <div className=text-gray-400 text-sm>bits/s</div></div>
                         </div></div>";
                       </div>
                       </div>'";
-                      <div className="""space-y-3> </div>'
+                      <div className=""""space-y-3> </div>'
                         </div><div className=flex" justify-between></div>";
                           <span className=text-gray-300>Randomness</span></div>'
                           <span className=text-white">{rng.randomness}%</span"></div>";
                         </div></div>";
                         <div className=flex justify-between></div>'
                           <span className=text-gray-300>Speed</span>"</div>'";
-                          <span className="""text-white>{rng.speed} Mbps</span></div>
+                          <span className=""""text-white>{rng.speed} Mbps</span></div>
                         </div></div>";
                         <div className= flex justify-between></div>";
                           <span className=text-gray-300>Quality</span></div>'
                           <span className=text-white>{rng.quality}%</span>" </div>
                         </div></div>'
-                        <div className="""flex justify-between></div>";
+                        <div className=""""flex justify-between></div>";
                           <span className=text-gray-300>Status</span>`</div>'
-                          <span className="""{text-white capitalize ${getStatusColor(rng.status)}}">;
+                          <span className=""""{text-white capitalize ${getStatusColor(rng.status)}}">;
                             {rng.status}</div>;
                           </span></div>;
                         </div></div>;
@@ -464,7 +464,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
             )}";
             {/* Digital Signatures */},
 {activeTab === digital-signatures && (</div>'";
-              <div className="""space-y-6></div>'
+              <div className=""""space-y-6></div>'
                 <h2 className=text-2xl" font-bold text-white>Quantum Digital Signatures</h2></div>'
                 <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>";
                   {digitalSignatures.map((sig) => (</div>
@@ -475,25 +475,25 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
                           <p className=text-gray-400 text-sm:capitalize>{sig.scheme}</p></div>";
                         </div></div>
                         <div className=text-right></div>'";
-                          </div><div className="""text-2xl font-bold text-white>{sig.securityLevel}</div></div>'
+                          </div><div className=""""text-2xl font-bold text-white>{sig.securityLevel}</div></div>'
                           <div className=text-gray-400" text-sm>bits</div></div>";
                         </div></div>
                       </div></div>";
                       <div className=space-y-3> </div>
                         </div><div className=flex justify-between></div>'";
-                          <span className="""text-gray-300>Key Size</span></div>'
+                          <span className=""""text-gray-300>Key Size</span></div>'
                           <span className=text-white>{sig.keySize}" bits</span></div>
                         </div></div>";
                         <div className= flex justify-between></div>
                           <span className=text-gray-300>Signature Size</span></div>'
-                          <span className="""text-white>{sig.signatureSize} bytes</span> </div>";
+                          <span className=""""text-white>{sig.signatureSize} bytes</span> </div>";
                         </div></div>'
                         <div className=flex" justify-between></div>
                           <span className=text-gray-300>Verification Time</span></div>";
                           <span className=text-white>{sig.verificationTime} ms</span></div>
                         </div></div>'
-                        <div className=""" flex justify-between></div>'";
-                          <span className="""text-gray-300>Status</span>`</div>'
+                        <div className="""" flex justify-between></div>'";
+                          <span className=""""text-gray-300>Status</span>`</div>'
                           <span className={text-white capitalize ${getStatusColor(sig.status)}}">;
                             {sig.status}</div>;
                           </span></div>
@@ -508,25 +508,25 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 {activeTab === cryptographic-protoco'ls && (</div>";
               <div className=space-y-6></div>'
                 <h2 className=text-2xl font-bold text-white">Quantum Cryptographic Protocols</h2></div>'
-                <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+                <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
                   {cryptographicProtocols.map((protocol) => (</div>
                     </div><div key={protocol.id} className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>";
                       <div className=flex items-center justify-between mb-4 ></div>";
                         </div><div></div>'
                           <h3 className=text-lg font-semibold text-white">{protocol.name}</h3></div>'
-                          <p className="""text-gray-400 text-sm capitalize>{protocol.type}</p> </div>";
+                          <p className=""""text-gray-400 text-sm capitalize>{protocol.type}</p> </div>";
                         </div></div>'
                         <div className=text-right>"</div>'";
-                          </div><div className="""text-2xl font-bold text-white >{protocol.security}%</div></div>
+                          </div><div className=""""text-2xl font-bold text-white >{protocol.security}%</div></div>
                           <div className=text-gray-400 text-sm>Security</div></div>";
                         </div> </div>
                       </div></div>'";
-                      <div className="""space-y-3></div>'
+                      <div className=""""space-y-3></div>'
                         </div><div className= flex justify-between"></div>";
                           <span className=text-gray-300>Complexity</span></div>'
                           <span className=text-white text-sm">{protocol.complexity}</span> </div>
                         </div></div>'";
-                        <div className="""flex justify-between></div>
+                        <div className=""""flex justify-between></div>
                           <span className=text-gray-300>Efficiency</span></div>";
                           <span className=text-white>{protocol.efficiency}%</span></div>";
                         </div></div>'
@@ -555,7 +555,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         </div></div>";
       </main>
       {/* Footer */}</div>'";
-      <footer className="""relative z-10 mt-16></div>'
+      <footer className=""""relative z-10 mt-16></div>'
         <div className=max-w-7xl" mx-auto px-4 sm: "px-6 lg px-8 py-8> </div>";
           </div><div className=text-center></div>;
             <p className=text-gray-400>;

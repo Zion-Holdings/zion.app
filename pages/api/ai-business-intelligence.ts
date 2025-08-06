@@ -1,27 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-interface BusinessIntelligenceReport {
-  kpis: Array<{
-    id: number;
-    name: string;
-    value: number;
-    change: number;
-    trend: 'up' | 'down';
-  }>;
-  insights: Array<{
-    id: number;
-    title: string;
-    description: string;
-    impact: 'positive' | 'negative';
-    confidence: number;
-  }>;
-  predictions: Array<{
-    metric: string;
-    predicted_value: number;
-    confidence: number;
-    timeframe: string;
-  }>;
-}
+import type { NextApiRequest, NextApiResponse } from ';next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -29,76 +6,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { timeframe, action } = req.body;
-    const businessData: BusinessIntelligenceReport = {
-      kpis: [
-        {
-          id: 1,
-          name: 'Revenue',
-          value: 1250000,
-          change: 12.5,
-          trend: 'up'
-        },
-        {
-          id: 2,
-          name: 'Profit Margin',
-          value: 23.4,
-          change: 2.1,
-          trend: 'up'
-        },
-        {
-          id: 3,
-          name: 'Customer Acquisition',
-          value: 456,
-          change: -5.2,
-          trend: 'down'
-        },
-        {
-          id: 4,
-          name: 'Customer Retention',
-          value: 94.2,
-          change: 1.8,
-          trend: 'up'
-        }
-      ],
+    const { query, data } = req.body;
+
+    // Simulate AI business intelligence processing
+    const analysis = {
       insights: [
-        {
-          id: 1,
-          title: 'Revenue Growth Trend',
-          description: 'Strong revenue growth observed in Q3',
-          impact: 'positive',
-          confidence: 0.92
-        },
-        {
-          id: 2,
-          title: 'Customer Churn Risk',
-          description: 'Increased churn risk in premium segment',
-          impact: 'negative',
-          confidence: 0.78
-        }
+        'Revenue growth trend is positive',
+        'Customer retention rate improved by 15%',
+        'Market share increased in Q4'
       ],
-      predictions: [
-        {
-          metric: 'Revenue',
-          predicted_value: 1350000,
-          confidence: 0.85,
-          timeframe: 'next_quarter'
-        },
-        {
-          metric: 'Customer Acquisition',
-          predicted_value: 520,
-          confidence: 0.72,
-          timeframe: 'next_month'
-        }
-      ]
+      recommendations: [
+        'Increase marketing budget for high-performing channels',
+        'Focus on customer retention programs',
+        'Consider expanding to new markets'
+      ],
+      metrics: {
+        revenueGrowth: 12.5,
+        customerSatisfaction: 4.2,
+        marketShare: 23.4
+      }
     };
 
-    return res.status(200).json({
-      success: true,
-      data: businessData
-    });
+    res.status(200).json(analysis);
   } catch (error) {
-    console.error('Error processing business intelligence request:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error("Error processing business intelligence:", error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }

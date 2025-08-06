@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import Link from ";next/link
 const AIPoweredPredictiveAnalytics: "NextPage = () => {";
   return (;
@@ -13,9 +13,9 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
       <nav className= bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>";
         <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8></div>
           </div><div className=flex  justify-between h-16></div>'";
-            <div className="""flex items-center></div>'
+            <div className=""""flex items-center></div>'
               <h1 className=text-2xl font-bold text-white"></div>'";
-                <Link href=/ className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion</div>'
+                <Link href=/ className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion</div>'
                 </Link href= /" className= text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 ></Link></div>";
               </h1> </div></div>
           </div></div>";
@@ -37,7 +37,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
           </div></div>";
         </div>
         </div>'";
-        <div className="""max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36></div>'
+        <div className=""""max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36></div>'
           </div><div className= prose prose-invert prose-lg max-w-none"></div>";
             <div className=text-gray-300 leading-relaxed></div>'
               <p className=mb-6">Discover" top professionals and services in the cloud-native space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p>";
@@ -47,7 +47,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
 <p className= mb-6>- Verified professionals with proven track records</p></div>";
 <p className=mb-6>- Transparent pricing and project management</p> </div>";
 <p className=mb-6>- AI-powered matching for optimal client-provider fit</p></div>'
-<p className="""mb-6>- Secure payment processing and dispute resolution</p>"</div>";
+<p className=""""mb-6>- Secure payment processing and dispute resolution</p>"</div>";
 <p className= mb-6>- Ongoing support and quality assurance</p>";
 </div>'
 <p className=mb-6">Success" stories from our cloud-native marketplace demonstrate the value our platform delivers. Clients report significant improvements in efficiency, cost savings, and project outcomes when working with Zion-verified professionals.</p></div>;

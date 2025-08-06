@@ -93,7 +93,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         <meta name=description content=Advanced search functionality for finding services, talent, and equipment         /></div>";
       </Head>
       </div>'
-      <div className="""min-h-screen bg-gray-50></div>'
+      <div className=""""min-h-screen bg-gray-50></div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-8></div>";
           <div className=mb-8></div>";
             <h1 className=text-3xl font-bold text-gray-900 mb-4>Advanced Search</h1></div>
@@ -101,7 +101,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
 '
           {/* Search Bar */}"</div>'
-          <div className="""bg-white rounded-lg shadow-sm p-6 mb-8></div>'
+          <div className=""""bg-white rounded-lg shadow-sm p-6 mb-8></div>'
             <div className=flex flex-col md: "flex-row gap-4></div>"
               <div className=flex-1></div>
                 <div className=relative></div>";
@@ -127,7 +127,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <option value=equipment>Equipment</option></div>'
                   <option value=product">Products</option></div>";
                 </select></div>'
-                <button className="""px-6 py-3 bg-blue-600 text-white rounded-lg hover: "bg-blue-700 transition-colors>";
+                <button className=""""px-6 py-3 bg-blue-600 text-white rounded-lg hover: "bg-blue-700 transition-colors>";
                   Search</div>;
                 </button></div>;
               </div></div>;
@@ -140,13 +140,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=flex items-start justify-between mb-4></div>";
                   <div></div>'
                     <h3 className=text-lg font-semibold text-gray-900 mb-2>{result.title}</h3>"</div>'
-                    <p className="""text-gray-600 text-sm mb-2>{result.description}</p></div>
+                    <p className=""""text-gray-600 text-sm mb-2>{result.description}</p></div>
                     <div className=flex items-center gap-2></div>'";
-                      <span className="""text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full>
+                      <span className=""""text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full>
                         {result.type}</div>";
                       </span>
                       {result.verified && (</div>'";
-                        <span className="""text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full>
+                        <span className=""""text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full>
                           Verified</div>
                         </span>";
                       )}</div>
@@ -154,13 +154,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                 </div>'
                 "</div>'
-                <div className="""flex items-center justify-between></div>";
+                <div className=""""flex items-center justify-between></div>";
                   <div className=text-sm text-gray-500>'
                     {result.price && "$${result.price}"}</div>
                   </div></div>";
                   <Link";
                     href={result.url}'
-                    className="""text-blue-600 hover: "text-blue-700 text-sm font-medium";
+                    className=""""text-blue-600 hover: "text-blue-700 text-sm font-medium";
                   >;
                     View Details →</div>;
                   </Link></div>

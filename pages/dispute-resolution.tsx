@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -302,36 +302,36 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const $1 = getDisputeStats(";
   return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>";
+      </div><div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
         <div className=fixed" inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Dispute Resolution Center - Zion Marketplace</title></div>'
         <meta name=description content=Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services. > </meta name="description" content=Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services. ><meta name=keywords content=dispute resolution, mediation, arbitration, conflict resolution, marketplace disputes > </meta name=keywords" content="dispute resolution, mediation, arbitration, conflict resolution, marketplace disputes ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'";
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"";
           <div className=flex  justify-between items-center></div>";
             <Link href=/ className=text-2xl font-bold text-white > </div>'
               </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
             </Link></div>
             <nav className=flex items-center space-x-6></div>'
-              <Link href=/marketplace className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
+              <Link href=/marketplace className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
               </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
               <Link href=/escrow-services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Escrow</div>";
               </Link href=/escrow-services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>'
-              </Link href=/auth/login  className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>"
+              </Link href=/auth/login  className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>"
             </nav> </div></div>
         </div></div>";
       </div>
       {/* Hero Section */}</div>";
       <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32> </div>
         </div><div className=text-center mb-12></div>'";
-          <h1 className="""text-4xl md text-6xlfont-bold text-white mb-6 ></div>'
+          <h1 className=""""text-4xl md text-6xlfont-bold text-white mb-6 ></div>'
             <span className=text-transparent" bg-clip-text bg-gradient-to-r from-orange-400 to-red-400>
               Dispute Resolution Center</div>
             </span></div>
@@ -340,10 +340,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             Professional dispute resolution services for marketplace conflicts.";
             Fair mediation, arbitration, and conflict resolution to ensure all parties reach satisfactory outcomes.</div>";
           </p></div>'
-          <div className="""flex  flex-wrap justify-center gap-4>"</div>";
+          <div className=""""flex  flex-wrap justify-center gap-4>"</div>";
             <Link href=#disputes className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Disputes</div>'
             </Link href=#disputes  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link>"</div>'
-            <Link href=/marketplace className="""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >File Dispute</div>";
+            <Link href=/marketplace className=""""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >File Dispute</div>";
             </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>";
           </div></div>
         </div>";
@@ -353,12 +353,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=text-3xl font-bold text-white mb-2>{stats.total}</div></div>'
             <p className=text-gray-300 text-sm">Total Disputes</p></div>
           </div></div>'
-          <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>"
+          <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>"
             </div><div className=text-3xl font-bold text-white mb-2>{stats.open}</div></div>
             <p className=text-gray-300 text-sm>Open Cases</p></div>";
           </div></div>
           <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center></div>'";
-            </div><div className="""text-3xl font-bold text-white mb-2 >{stats.inProgress}</div></div>'
+            </div><div className=""""text-3xl font-bold text-white mb-2 >{stats.inProgress}</div></div>'
             <p className=text-gray-300" text-sm>In Progress</p></div>";
           </div></div>'
           <div className= bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>"";
@@ -395,7 +395,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div>
         {/* Filters */}, '";
 {activeTab === 'disputes && ("</div>'
-          <div className="""flex flex-wrap gap-4 mb-8>";
+          <div className=""""flex flex-wrap gap-4 mb-8>";
               onChange={(e) => setFilterStatus(e.target.value)}'
               className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-orange-500 >"</div>
               <option value=all>All Status</option></div>";
@@ -419,17 +419,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* Tab Content */},";
 {activeTab === disputes' && (</div>'
-          <div className="""space-y-6> </div>";
+          <div className=""""space-y-6> </div>";
             </div><div className=flex justify-between items-center></div>";
               <h2 className=text-2xl font-bold text-white>Disputes</h2></div>'
-              <Link href=/marketplace className="""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >File New Dispute"</div>";
+              <Link href=/marketplace className=""""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >File New Dispute"</div>";
               </Link href=/marketplace  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300></Link></div>";
             </div></div>'
             <div className= grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
               {filteredDisputes.map((dispute) => (</div>";
                 </div><div key={dispute.id} className=bg-white/5  backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300></div>'
                   <div className=flex" justify-between items-start mb-4 > </div>'";
-                    </div><div className="""flex items-center gap-2></div>
+                    </div><div className=""""flex items-center gap-2></div>
                       <span className=text-2xl>{getTypeIcon(dispute.type)}</span></div>";
                       <div></div>";
                         <h3 className=text-lg font-semibold text-white>{dispute.title}</h3></div>'
@@ -437,15 +437,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div> </div>'
                     </div>"</div>'
                     <div className=flex flex-col gap-2>"</div>'
-                      <span className="""{px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(dispute.status)}}>";
+                      <span className=""""{px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(dispute.status)}}>";
                         {dispute.status.toUpperCase()} </div>
                       </span>`</div>'
-                      <span className="""{px-3 py-3 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}}>";
+                      <span className=""""{px-3 py-3 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}}>";
                         {dispute.priority.toUpperCase()}</div>
                       </span></div>";
                     </div></div>
                   </div></div>'";
-                  <div className="""space-y-3 mb-4></div>'
+                  <div className=""""space-y-3 mb-4></div>'
                     <p className=text-gray-300" text-sm line-clamp-2>{dispute.description}</p></div>
                     <div className=flex justify-between></div>'
                       <span className=text-gray-300>Amount: "</span></div>"
@@ -455,19 +455,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-gray-300>Parties:</span></div>'
                       <span className=text-white" text-sm>{dispute.parties.complainant} vs {dispute.parties.respondent}</span></div>
                     </div></div>'
-                    <div className="""flex  justify-between></div>";
+                    <div className=""""flex  justify-between></div>";
                       <span className=text-gray-300>Created </span></div>
                       <span className=text-white>{dispute.createdAt.toLocaleDateString()}</span></div>";
                     </div>";
                     {dispute.assignedMediator && (</div>'
-                      <div className=""" flex justify-between>"</div>'
+                      <div className="""" flex justify-between>"</div>'
                         <span className=text-gray-300>Mediator: "</span></div>";
                         <span className=text-white>{dispute.assignedMediator}</span></div>";
                       </div>
                     )} </div>";
                   </div></div>";
                   <div className=flex gap-2></div>'
-                    <button className="""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm:transition-colors>";
+                    <button className=""""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm:transition-colors>";
                       View Details</div>;
                     </button></div>;
                     <button className=flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors >
@@ -482,7 +482,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {activeTab === mediators && (</div>";
           <div className=space-y-6></div>'
             <h2 className=text-2xl font-bold text-white>Professional Mediators</h2>"</div>'
-            <div className="""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
+            <div className=""""grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
               {mediators.map((mediator) => (</div>
                 </div><div key={mediator.id} className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6></div>";
                   <div className=flex justify-between items-start mb-4></div>
@@ -510,10 +510,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-white>{formatCurrency(mediator.hourlyRate)}</span"></div>";
                     </div></div>";
                     <div></div>'
-                      <span className="""text-gray-300 text-sm>Specializations </span></div>";
+                      <span className=""""text-gray-300 text-sm>Specializations </span></div>";
                       <div className=flex  flex-wrap gap-1 mt-1>";
                         {mediator.specialization.map((spec, index) => (</div>'
-                          <span key={index} className="""px-4 py-3 bg-white/10 rounded text-xs text-white>
+                          <span key={index} className=""""px-4 py-3 bg-white/10 rounded text-xs text-white>
                             {spec}</div>";
                           </span>
                         ))}</div>";
@@ -521,7 +521,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>'
                   </div>"</div>";
                   <div className= flex gap-2></div>'
-                    <button className="""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm:transition-colors>";
+                    <button className=""""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm:transition-colors>";
                       View Profile</div>;
                     </button></div>;
                     <button className=flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors >;
@@ -542,7 +542,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=flex justify-between items-start mb-4></div>";
                     </div><div></div>";
                       <h3 className=text-lg font-semibold text-white>Resolution Proposal</h3></div>'
-                      <p className="""text-gray-300 text-sm>Dispute: "{proposal.disputeId}</p></div>"
+                      <p className=""""text-gray-300 text-sm>Dispute: "{proposal.disputeId}</p></div>"
                     </div>
                     }}>
                       {proposal.status.toUpperCase()}</div>";
@@ -556,11 +556,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div className= flex justify-between></div>'
                       <span className=text-gray-300>Type:</span>"</div>'";
-                      <span className="""text-white capitalize>{proposal.type.replace(_,  )}</span></div>
+                      <span className=""""text-white capitalize>{proposal.type.replace(_,  )}</span></div>
                     </div>";
                     {proposal.amount && (</div>
                       <div className=flex justify-between></div>'";
-                        <span className="""text-gray-300>Amount </span></div>'
+                        <span className=""""text-gray-300>Amount </span></div>'
                         <span className=text-white font-semibold">{formatCurrency(proposal.amount)}</span></div>
                       </div>";
                     )}</div>";
@@ -575,11 +575,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>";
                   </div>
                   <div className=space-y-3></div>'
-                    <h4 className="""text-white font-semibold>Responses </h4>
+                    <h4 className=""""text-white font-semibold>Responses </h4>
                     {proposal.responses.map((response) => (</div>'
-                      <div key={response.id} className="""bg-white/5 rounded p-3> </div>
+                      <div key={response.id} className=""""bg-white/5 rounded p-3> </div>
                         </div><div className=flex justify-between items-center mb-2></div>'
-                          <span className="""text-white font-medium >{response.partyId}</span>'";
+                          <span className=""""text-white font-medium >{response.partyId}</span>'";
                           '
                           }"}>";
                             {response.response.toUpperCase()}</div>";
@@ -588,12 +588,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {response.comment && (</div>";
                           <p className=text-gray-300 text-sm>{response.comment}</p>
                         )}</div>'
-                        <p className="""text-gray-400 text-xs mt-1>{response.timestamp.toLocaleDateString()}</p></div>'
+                        <p className=""""text-gray-400 text-xs mt-1>{response.timestamp.toLocaleDateString()}</p></div>'
                       </div>'
                     ))}</div>
                   </div> </div>'";
-                  <div className="""flex gap-2 mt-4 ></div>'
-                    <button className="""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm transition-colors>";
+                  <div className=""""flex gap-2 mt-4 ></div>'
+                    <button className=""""flex-1 bg-white/10 text-white hover: "bg-white/20 px-3 py-4 rounded text-sm transition-colors>";
                       View Details</div>;
                     </button></div>;
                     <button className=flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors>;
@@ -609,7 +609,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=space-y-8></div>'
             <h2 className=text-2xl" font-bold text-white >Dispute Resolution Resources</h2>
             </div>'";
-            <div className="""grid grid-cols-1 md grid-cols-2 gap-8> </div>'
+            <div className=""""grid grid-cols-1 md grid-cols-2 gap-8> </div>'
               </div><div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>";
                 <h3 className=text-lg font-semibold text-white mb-4>How to File a Dispute</h3></div>;
                 <div className=space-y-3 text-gray-300 ></div>;
@@ -644,7 +644,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <p>• Screenshots and documentation</p></div>";
                   <p>• Witness statements</p></div>";
                 </div></div>'
-                <button className="""w-full mt-4 bg-white/10 text-white hover: "bg-white/20 px-4 py-4 rounded text-sm transition-colors>";
+                <button className=""""w-full mt-4 bg-white/10 text-white hover: "bg-white/20 px-4 py-4 rounded text-sm transition-colors>";
                   View Guidelines</div>;
                 </button></div>;
               </div></div>;
@@ -666,7 +666,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div>";
       {/* CTA Section */}</div>";
       <div className=bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10> </div>'
-        </div><div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-32></div>";
+        </div><div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8 py-32></div>";
           <div className=text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>
               Fair Resolution for All</div>
@@ -678,7 +678,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=flex  flex-wrap justify-center gap-4>"</div>";
               <Link href=#disputes className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started</div>'
               </Link href=#disputes  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>'
-              <Link href=/marketplace className="""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More</div>";
+              <Link href=/marketplace className=""""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More</div>";
               </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div> </div></div>
         </div></div>
@@ -689,38 +689,38 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div><div className=grid grid-cols-1 md grid-cols-4 gap-8></div>";
             <div></div>'
               <h3 className=text-lg font-semibold text-white mb-4>Zion Marketplace</h3>"</div>'
-              <p className="""text-gray-300 text-sm >
+              <p className=""""text-gray-300 text-sm >
                 The first free AI-powered marketplace for high-tech products, services, and innovation.</div>";
               </p></div>
             </div></div>";
             <div></div>";
               <h4 className=text-white font-semibold mb-4>Dispute Resolution</h4></div>'
-              <ul className="""space-y-2 text-sm"></div>'
+              <ul className=""""space-y-2 text-sm"></div>'
                 <li><Link href=/dispute-resolution className=text-gray-400 hover text-white transition-colors >Dispute Center</Link href=/dispute-resolution  className=text-gray-400 hover text-white transition-colors ></Link></li>"</div>'";
-                <li><Link href=/escrow-services className="""text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/warranty-protection" className="""text-gray-400 hover text-white transition-colors >Warranty Protection</Link href=/warranty-protection  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/invoice-billing className=text-gray-400 hover text-white transition-colors >Invoice & Billing</Link href=/invoice-billing className="""text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/escrow-services className=""""text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/warranty-protection" className=""""text-gray-400 hover text-white transition-colors >Warranty Protection</Link href=/warranty-protection  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/invoice-billing className=text-gray-400 hover text-white transition-colors >Invoice & Billing</Link href=/invoice-billing className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>'
               </ul></div>'
             </div></div>
             <div></div>'";
-              <h4 className="""text-white font-semibold mb-4>Support</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Support</h4></div>'
               <ul className=space-y-2" text-sm></div>'
                 <li><Link href=/contact className=text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" "></Link></li></div>'
                 <li><Link href=/real-time-chat className=text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className=text-gray-400 hover text-white transition-colors ></Link></li>"</div>'";
-                <li><Link href=/notifications className="""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/ai-powered-contract-legal" className="""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>
+                <li><Link href=/notifications className=""""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/ai-powered-contract-legal" className=""""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>
             </div></div>";
             <div></div>";
               <h4 className=text-white font-semibold mb-4>Connect</h4></div>'
               <ul className=space-y-2"  text-sm></div>'
-                <li><Link href=/about className="""text-gray-400 hover text-white transition-colors >About Us</Link href=/about className=text-gray-400 hover text-white transition-colors></Link></li></div>'";
-                <li><Link href=/blog className="""text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className="""text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/auth/signup className="""text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
+                <li><Link href=/about className=""""text-gray-400 hover text-white transition-colors >About Us</Link href=/about className=text-gray-400 hover text-white transition-colors></Link></li></div>'";
+                <li><Link href=/blog className=""""text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/auth/signup className=""""text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors" ></Link></li></div>'
                 <li><Link href=/auth/login className=text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400" hover text-white transition-colors ></Link></li></div>
               </ul></div>";
             </div></div>
           </div></div>'
-          <div className="""border-t  border-white/10 mt-8 pt-8 text-center></div>;
+          <div className=""""border-t  border-white/10 mt-8 pt-8 text-center></div>;
             <p className=text-gray-400 text-sm>;
               © 2024 Zion Tech Group. All rights reserved.</div>;
             </p></div>;

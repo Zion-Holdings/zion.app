@@ -29,7 +29,7 @@ export default async function handler(;
       timestamp: new Date().toISOString();
     })
   } catch (error) {
-    console.error('Notification Api API Error: ", error)";
+    console.error("Notification Api API Error:", error);
     res.status(500).json({;
       success: false,;
       message: Internal server error,;

@@ -10,15 +10,15 @@ function fixLayoutConflicts(filePath) {
     // Replace min-h-screen bg-gradient patterns that conflict with the global layout
     const $1 = [
       {
-        regex: /<div className=""""min-h-screen bg-gradient-to-br from-[^]+>/g,</div>
-        replacement: ""<div className=""""relative z-10 container-responsive py-8">'
+        regex: /<div className="""""min-h-screen bg-gradient-to-br from-[^]+>/g,</div>
+        replacement: ""<div className="""""relative z-10 container-responsive py-8">'
       },
       {</div>
-        regex: /<div className=""""min-h-screen bg-gray-50>/g,</div>
+        regex: /<div className="""""min-h-screen bg-gray-50>/g,</div>
         replacement: ""<div className=relative z-10 container-responsive py-8">'
       },
       {</div>
-        regex: /<div className=""""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100>/g,</div>
+        regex: /<div className="""""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100>/g,</div>
         replacement: ""<div className=relative z-10 container-responsive py-8">'
       }
     ];
@@ -34,15 +34,15 @@ function fixLayoutConflicts(filePath) {
     if (modified && !content.includes('fixe'd' inset-0 z-0')) {
       const $1 = "
         {/* Background Effects */}</div>
-        <div className=""""fixed inset-0 z-0></div>
+        <div className="""""fixed inset-0 z-0></div>
           <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className=""""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
+          <div className="""""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>
         </div>
       ;
       
       // Insert background effects after the opening div
       content = content.replace(</div>
-        /(<div className=""""relative z-10 container-responsive py-8">)/,
+        /(<div className="""""relative z-10 container-responsive py-8">)/,
         "$1\n        ${backgroundEffects}"
       );
     }

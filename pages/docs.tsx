@@ -9,19 +9,19 @@ export default function;Docs() {
       <Head></div>";
         <title>Documentation - Zion</title></div>'
         <meta name = description" content=Documentation for Zions' marketplace platform > </meta name=description content=Documentation for Zions marketplace platform" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head> </div>'
-      <div className=""" relative z-10 container-responsive py-8>";
+      <div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>";
         </div><div className= fixed inset-0 z-0></div>'
           <div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div>
       </div>'
-        <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32></div>"";
+        <div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32></div>"";
           </div><div className= text-center mb-12></div>
             <h1 className=text-4xl:font-bold text-white mb-4>Documentation</h1></div>";
             <p className=text-xl text-gray-300 mb-8 >Complete documentation for Zions marketplace platform</p></div>";
           </div></div>'
-          <div className=""" grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
+          <div className="""" grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3 gap-6>"
             {[
               { title: Getting Started, description: 'Quick start guide for new users, link: "/api-docs },"
 { title: API Reference, description: Complete API documentation', link: "/api-docs },"

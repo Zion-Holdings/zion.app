@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}";
 import Link from next/link
 import { Home, Search, User }  from ";lucide-react
@@ -192,20 +192,20 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>
         <div className=fixed inset-0 z-0> </div>'";
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>'
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI Recommendation Engine - Zion</title></div>'
         <meta name=description content="Intelligent AI-powered recommendation engine that matches you with the perfect services, talents, and equipment based on your specific needs and preferences. > </meta" name=description content=Intelligent AI-powered recommendation engine that matches you with the perfect services, talents, and equipment based on your specific needs and preferences. ><meta name=keywords content=AI recommendations, intelligent matching, personalized suggestions, marketplace AI, Zion > </meta" name="keywords content=AI recommendations, intelligent matching, personalized suggestions, marketplace AI, Zion ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Header */}</div>'
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"
           <div className=flex  justify-between items-center></div>";
             <Link href=/ className=text-2xl font-bold text-white > </div>'
               </Link href=/" className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
             </Link></div>'";
-            <div className="""flex items-center space-x-4></div>'
+            <div className=""""flex items-center space-x-4></div>'
               <Link href=/marketplace className=text-gray-300" hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>";
               </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>
               <Link href=/ai-virtual-assistant className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >AI Assistant</div>
@@ -216,14 +216,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div></div>";
       </div>'
       {/* Hero Section */}"</div>'
-      <div className="""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
+      <div className=""""max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32> </div>"
         </div><div className=text-center mb-12></div>
           <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>";
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               AI Recommendation Engine</div>";
             </span></div>
           </h1></div>'
-          <p className="""text-xl text-gray-300 max-w-3xl mx-auto >
+          <p className=""""text-xl text-gray-300 max-w-3xl mx-auto >
             Our intelligent AI analyzes your needs and preferences to find the perfect services, '
             talents, and equipment for your projects. Get personalized recommendations with '
             advanced matching algorithms and detailed insights.</div>
@@ -250,7 +250,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div></div>";
               <label className=block text-white font-medium mb-2>Budget Range</label>
                 onChange={(e) => handleProfileUpdate(budget, e.target.value)}'";
-                className=""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                className="""" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
               ></div>
                 <option value=>Select budget range</option>";
                 {budgetOptions.map(budget => (</div>
@@ -272,7 +272,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div>";
             {/* Expertise Level */}</div>
             <div></div>'
-              <label className="""block text-white font-medium mb-2>Your Expertise Level</label>";
+              <label className=""""block text-white font-medium mb-2>Your Expertise Level</label>";
                '
                 onChange={(e) => handleProfileUpdate(experti's'e, e.target.value)}";
                 className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500;
@@ -285,14 +285,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div></div>";
           </div>
           {/* Preferences */}</div>'
-          <div className="""mt-6></div>'
-            <label className="""block text-white font-medium mb-2>Key Preferences (Optional)</label>";
+          <div className=""""mt-6></div>'
+            <label className=""""block text-white font-medium mb-2>Key Preferences (Optional)</label>";
               onChange={(e) => handleProfileUpdate(preferences, e.target.value.split(', '))}
             /></div>";
           </div>";
 '
           {/* Analyze Button */}"</div>'
-          <div className="""mt-8 text-center>;
+          <div className=""""mt-8 text-center>;
             >;
               {isAnalyzing ? Analyzing... : Ge't' AI Recommendations}</div>;
             </button></div>
@@ -332,7 +332,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}";
         {/* Recommendations Grid */},
 {recommendations.length > 0 && (</div>'";
-          <div className="""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6 >"
+          <div className=""""grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6 >"
             {filteredRecommendations.map((recommendation) => (</div>";
               </div><div key={recommendation.id} className=bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover bg-white/15 transition-colors>";
                 {/* Match Score */}</div>'
@@ -351,22 +351,22 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div>";
                 {/* Content */}</div>
                 <h3 className=text-lg font-semibold text-white mb-2>{recommendation.title}</h3></div>'
-                <p className="""text-gray-300 text-sm mb-4>{recommendation.description}</p>'
+                <p className=""""text-gray-300 text-sm mb-4>{recommendation.description}</p>'
                 {/* Tags */}</div>'
-                <div className="""flex flex-wrap gap-2 mb-4>";
+                <div className=""""flex flex-wrap gap-2 mb-4>";
                   {recommendation.tags.map(tag => (</div>'
-                    <span key={tag} className="""px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded >
+                    <span key={tag} className=""""px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded >
                       {tag}</div>";
                     </span>
                   ))}</div>";
                 </div>";
 '
                 {/* Price and Rating */}"</div>'
-                <div className="""flex justify-between items-center mb-4></div>";
+                <div className=""""flex justify-between items-center mb-4></div>";
                   <span className=text-green-400 font-semibold>{recommendation.price}</span></div>";
                   <div className=flex items-center space-x-1></div>'
                     <span className=text-yellow-400">★</span></div>'
-                    <span className="""text-white text-sm>{recommendation.rating}</span></div>
+                    <span className=""""text-white text-sm>{recommendation.rating}</span></div>
                   </div></div>";
                 </div>
                 {/* AI Insights */}</div>";
@@ -390,13 +390,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
         )}
         {/* Features Section */}</div>'
-        <div className="""mt-16 grid grid-cols-1 md grid-cols-3 gap-8 ></div>'
+        <div className=""""mt-16 grid grid-cols-1 md grid-cols-3 gap-8 ></div>'
           </div><div className= bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
             <div className=text-3xl mb-4>🧠</div></div>
             <h3 className=text-xl font-semibold text-white mb-2>Intelligent Matching</h3></div>";
             <p className=text-gray-300>Our AI analyzes your requirements, budget, and preferences to find the perfect matches from our extensive marketplace.</p></div>";
           </div></div>'
-          <div className="""bg-white/5" backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
+          <div className=""""bg-white/5" backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
             </div><div className=text-3xl mb-4>📊</div></div>
             <h3 className=text-xl font-semibold text-white mb-2>Detailed Insights</h3></div>";
             <p className=text-gray-300>Get comprehensive AI insights explaining why each recommendation is perfect for your specific needs and project requirements.</p></div>";
@@ -404,19 +404,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=bg-white/5" backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>"
             </div><div className=text-3xl mb-4>⚡</div></div>
             <h3 className=text-xl font-semibold text-white mb-2>Instant Results</h3></div>'
-            <p className="""text-gray-300>Receive personalized recommendations in seconds with our advanced AI algorithms and real-time analysis.</p></div>";
+            <p className=""""text-gray-300>Receive personalized recommendations in seconds with our advanced AI algorithms and real-time analysis.</p></div>";
           </div></div>
         </div>";
         {/* CTA Section */}</div>";
         <div className= mt-16 text-center></div>'
           <h2 className=text-3xl font-bold text-white mb-4">Ready to Get Started?</h2></div>'
-          <p className="""text-gray-300 mb-8 max-w-2xl: "mx-auto>";
+          <p className=""""text-gray-300 mb-8 max-w-2xl: "mx-auto>";
             Our AI recommendation engine is here to help you find the perfect services, talents, and equipment for your next project. </div>";
           </p></div>
           <div className=flex flex-col sm flex-row gap-4 justify-center></div>";
             <Link href=/marketplace className=bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Explore Marketplace</div>";
             </Link href= /marketplace className=bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors></Link></div>'
-            <Link href=/ai-virtual-assistant className="""bg-white/10 text-white px-8 py-3 rounded-lg: "hover bg-white/20 transition-colors border border-white/20  >Chat with AI Assistant</div>";
+            <Link href=/ai-virtual-assistant className=""""bg-white/10 text-white px-8 py-3 rounded-lg: "hover bg-white/20 transition-colors border border-white/20  >Chat with AI Assistant</div>";
             </Link href=/ai-virtual-assistant className=bg-white/10 text-white px-8 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 ></Link></div>;
           </div></div>;
         </div></div>;

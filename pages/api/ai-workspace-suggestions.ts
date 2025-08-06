@@ -81,7 +81,7 @@ Format each suggestion as a JSON object with: """;
       case deadline_management: ""
         systemPrompt = You are an AI deadline management specialist. Analyze project timelines, task dependencies, and team capacity to provide intelligent suggestions for deadline management and risk mitigation.``
         prompt =
-Analyze the following deadline and timeline data:";
+Analyze the following deadline and timeline data: "";
 **Project Timeline:**
 - Project: ${projectData.name}";
 - Current Progress: ${projectData.progress}%

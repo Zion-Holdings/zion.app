@@ -23,7 +23,7 @@ COMMON QUESTIONS:;
 - How to get support: Contact our support team or use this chat assistant;
 - Pricing information: Check individual tool pages for pricing details;
 - Integration help: Each tool page includes integration documentation
-PLATFORM POLICIES:";
+PLATFORM POLICIES: "";
 - All tools are vetted for quality and security
 - User data is protected and never shared without consent";
 - Regular updates and new tools are added frequently

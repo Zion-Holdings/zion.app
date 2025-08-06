@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -257,7 +257,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI' analysis shows positive sentiment across major cryptocurrencies with institutional adoption increasing,
         impact: "positive,";
         confidence: 0.85,;
-        recommendations: [Consider increasing exposure, Monitor' institutional flows, Watc'h for regulatory news];
+        recommendations: [Consider increasing exposure, Monitor' institutional flows, Watc'h for regulatory news],
       },
 {
         id: "2,";
@@ -265,7 +265,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         description: AI recommends rebalancing portfolio to optimize risk-return profile and maintain diversification',
         impact: "neutral,";
         confidence: 0.78,;
-        recommendations: [Rebalance within 30 days', Consider adding stablecoins, Review' risk allocation'];
+        recommendations: [Rebalance within 30 days', Consider adding stablecoins, Review' risk allocation'],
       }]};
   useEffect(() => {;
     setCryptocurrencies(mockCryptocurrencies;
@@ -322,9 +322,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>'
         '
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        <div className=""""fixed inset-0 z-0> </div>
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'";
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>AI-Powered Cryptocurrency & Digital Asset Management - Zion</title></div>'
@@ -336,12 +336,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <Link href=/ className=text-2xl font-bold text-white "> </div>'
               </Link href=/" className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span></div>
             </Link></div>'
-            <div className="""flex items-center space-x-4></div>'
+            <div className=""""flex items-center space-x-4></div>'
               <Link href=/ai-powered-live-streaming-broadcasting className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Streaming</div>"
               </Link href=/ai-powered-live-streaming-broadcasting  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link></div>";
               <Link href=/ai-powered-voice-assistant-speech-recognition className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant</div>'
               </Link href=/ai-powered-voice-assistant-speech-recognition className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium "></Link></div>'
-              <Link href=/ai-powered-autonomous-vehicle-transportation className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>";
+              <Link href=/ai-powered-autonomous-vehicle-transportation className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>";
               </Link href=/ai-powered-autonomous-vehicle-transportation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>;
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
               </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
@@ -351,7 +351,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div></div>";
       </div>";
       {/* Main Content */}</div>'
-      <div className=""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8>";
+      <div className="""" max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-8>";
         {/* Hero Section */}</div>;
         </div><div className=text-center mb-12></div>;
           <h1 className=text-5xl font-bold text-white mb-6 >;
@@ -383,7 +383,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           ].map((tab) => (";
             '
               onClick={() => setSelectedView(tab.id as any)}'";
-              className="""{flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${";
+              className=""""{flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md: "text-sm font-medium transition-all duration-200 ${";
                 selectedView === tab.id;
                   ? bg-gradient-to-r from-blue-600 to-cyan-600 text-white;
                     text-gray-300 hover text-white hover bg-white/10;
@@ -399,17 +399,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=grid grid-cols-1 lg: "grid-cols-2 gap-8>"
             {/* Cryptocurrencies Overview */}</div>
             </div><div className=bg-black/20 rounded-lg p-6 border border-white/10></div>'
-              <h3 className="""text-xl font-semibold text-white mb-4>Top Cryptocurrencies</h3></div>'
+              <h3 className=""""text-xl font-semibold text-white mb-4>Top Cryptocurrencies</h3></div>'
               <div className=space-y-4>'
                 {cryptocurrencies.slice(0, 3).map((crypto) => (</div>";
                   </div><div key={crypto.id} className= p-4 bg-white/5 rounded-lg></div>'
                     <div className=flex  items-center justify-between mb-2>"</div>'";
-                      <h4 className="""text-white font-medium>{crypto.symbol} - {crypto.name}</h4></div>'
+                      <h4 className=""""text-white font-medium>{crypto.symbol} - {crypto.name}</h4></div>'
                       <span className={px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white"}>
                         {formatPercentage(crypto.change24h)}</div>";
                       </span></div>";
                     </div></div>'
-                    <p className="""text-gray-400 text-sm: "mb-2>{formatCurrency(crypto.price)}</p></div>";
+                    <p className=""""text-gray-400 text-sm: "mb-2>{formatCurrency(crypto.price)}</p></div>";
                     <div className=flex items-center space-x-4 text-sm text-gray-400 ></div>;
                       <span>MC: {formatCurrency(crypto.marketCap)}</span></div>;
                       <span className={getRiskColor(crypto.aiAnalysis.riskLevel)}>;
@@ -444,38 +444,38 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
         )}
         {selectedView === crypto && (</div>'
-          <div className="""space-y-6> </div>'
+          <div className=""""space-y-6> </div>'
             </div><div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
               {cryptocurrencies.map((crypto) => (</div>";
                 <div key={crypto.id} className=bg-black/20 rounded-lg p-6 border border-white/10> </div>'
                   </div><div className=flex items-center justify-between mb-4>"</div>'";
-                    <h3 className="""text-white font-semibold>{crypto.symbol}</h3>`</div>
+                    <h3 className=""""text-white font-semibold>{crypto.symbol}</h3>`</div>
                     <span className={px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white}>";
                       {formatPercentage(crypto.change24h)}</div>";
                     </span></div>'
                   </div>"</div>'
-                  <p className="""text-gray-400 text-sm mb-4>{crypto.name}</p></div>
+                  <p className=""""text-gray-400 text-sm mb-4>{crypto.name}</p></div>
                   <div className=space-y-2 mb-4></div>'";
-                    </div><div className="""flex justify-between text-sm></div>'
-                      <span className="""text-gray-400>Price</span></div>";
+                    </div><div className=""""flex justify-between text-sm></div>'
+                      <span className=""""text-gray-400>Price</span></div>";
                       <span className=text-white>{formatCurrency(crypto.price)}</span> </div>";
                     </div></div>'
-                    <div className="""flex justify-between text-sm>"</div>";
+                    <div className=""""flex justify-between text-sm>"</div>";
                       <span className=text-gray-400>Market Cap</span></div>'
                       <span className=text-white>{formatCurrency(crypto.marketCap)}</span>"</div>'
                     </div>"</div>";
                     <div className= flex justify-between text-sm></div>'
                       <span className= text-gray-400>Volume (24h)</span>"</div>'";
-                      <span className="""text-white>{formatCurrency(crypto.volume24h)}</span></div>
+                      <span className=""""text-white>{formatCurrency(crypto.volume24h)}</span></div>
                     </div></div>";
                   </div></div>
                   <div className=space-y-2> </div>'";
-                    </div><div className="""flex justify-between text-sm></div>'
+                    </div><div className=""""flex justify-between text-sm></div>'
                       <span className=text-gray-400>Sentiment</span"></div>";
                       <span className=text-white>{Math.round(crypto.aiAnalysis.sentimentScore * 100)}%</span></div>";
                     </div></div>'
                     <div className=flex justify-between text-sm "></div>'
-                      <span className="""text-gray-400>Trend</span></div>;
+                      <span className=""""text-gray-400>Trend</span></div>;
                       <span className=text-white flex items-center>;
                         {getTrendIcon(crypto.aiAnalysis.trendPrediction)},;
 {crypto.aiAnalysis.trendPrediction}</div>;
@@ -489,7 +489,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}'
 '";
         {selectedView === asse'ts && (</div>'
-          <div className="""space-y-6>";
+          <div className=""""space-y-6>";
             {/* Asset Type Filter */}</div>
             </div><div className=flex space-x-2 overflow-x-auto pb-2 >'
               {[a'll, 'cryptocurrency, n'ft, 'token, de'fi, 'metaverse].map((type) => ('
@@ -505,11 +505,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               ))}</div>";
             </div>
             {/* Assets Grid */}</div>'";
-            <div className=""" grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
+            <div className="""" grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"
               {filteredAssets.map((asset) => (</div>";
                 </div><div key={asset.id} className=bg-black/20  rounded-lg:p-6 border border-white/10></div>";
                   <div className=flex items-center justify-between mb-4 ></div>'
-                    <h3 className="""text-white font-semibold>{asset.symbol}</h3></div>";
+                    <h3 className=""""text-white font-semibold>{asset.symbol}</h3></div>";
                     <span className={px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(asset.totalReturn)}  text-white}>";
                       {formatPercentage(asset.totalReturn)}</div>'
                     </span>"</div>'
@@ -518,25 +518,25 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=space-y-2 mb-4 > </div>";
                     </div><div className=flex justify-between text-sm></div>";
                       <span className=text-gray-400>Quantity</span></div>'
-                      <span className="""text-white>{asset.quantity}</span"></div>
+                      <span className=""""text-white>{asset.quantity}</span"></div>
                     </div></div>";
                     <div className=flex justify-between text-sm></div>
                       <span className=text-gray-400>Avg Price</span></div>'
-                      <span className="""text-white>{formatCurrency(asset.averagePrice)}</span></div>";
+                      <span className=""""text-white>{formatCurrency(asset.averagePrice)}</span></div>";
                     </div></div>'
                     <div className=flex justify-between" text-sm></div>";
                       <span className=text-gray-400>Current Value</span></div>
                       <span className=text-white>{formatCurrency(asset.currentValue)}</span></div>";
                     </div> </div>
                   </div></div>'";
-                  <div className="""space-y-2></div>'
+                  <div className=""""space-y-2></div>'
                     </div><div className= flex justify-between" text-sm></div>";
                       <span className=text-gray-400>Performance</span></div>'
                       <span className=text-white">{asset.aiAnalysis.performanceScore}/10</span>" </div>";
                     </div></div>";
                     <div className=flex justify-between text-sm></div>'
                       <span className=text-gray-400>Risk</span>"</div>'
-                      <span className="""text-white>{Math.round(asset.aiAnalysis.riskAssessment * 100)}%</span></div>;
+                      <span className=""""text-white>{Math.round(asset.aiAnalysis.riskAssessment * 100)}%</span></div>;
                     </div></div>;
                   </div></div>
                 </div>
@@ -548,30 +548,30 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=space-y-6> </div>'
             </div><div className=grid grid-cols-1 md grid-cols-2 gap-6">
               {portfolios.map((portfolio) => (</div>'
-                <div key={portfolio.id} className="""bg-black/20 rounded-lg: "p-6 border border-white/10> </div>"
+                <div key={portfolio.id} className=""""bg-black/20 rounded-lg: "p-6 border border-white/10> </div>"
                   </div><div className=flex items-center justify-between mb-4 ></div>";
                     <h3 className=text-white font-semibold text-lg>{portfolio.name}</h3>`</div>'
                     <span className={px-3 py-3 rounded-full text-sm ${getChangeBgColor(portfolio.totalReturn)}  text-white"}>
                       {formatPercentage(portfolio.totalReturn)}</div>";
                     </span></div>";
                   </div></div>'
-                  <p className="""text-gray-400 mb-4>{formatCurrency(portfolio.totalValue)} total value</p></div>";
+                  <p className=""""text-gray-400 mb-4>{formatCurrency(portfolio.totalValue)} total value</p></div>";
                   <div className=grid grid-cols-2 gap-4 mb-4 > </div>";
                     </div><div className=text-center></div>'
                       <div className=text-2xl" font-bold text-white>{Math.round(portfolio.riskScore * 100)}%</div></div>'";
-                      <div className="""text-gray-400 text-sm>Risk Score</div></div>
+                      <div className=""""text-gray-400 text-sm>Risk Score</div></div>
                     </div></div>";
                     <div className=text-center></div>";
                       </div><div className=text-2xl font-bold text-white>{Math.round(portfolio.diversificationScore * 100)}%</div></div>'
                       <div className=text-gray-400" text-sm>Diversification</div></div>";
                     </div></div>";
                   </div></div>'
-                  <div className="""space-y-2> </div>";
+                  <div className=""""space-y-2> </div>";
                     </div><div className=flex justify-between text-sm></div>";
                       <span className=text-gray-400>Optimization</span></div>'
                       <span className=text-white>{Math.round(portfolio.aiAnalysis.optimizationScore" * 100)}%</span></div>
                     </div></div>'
-                    <div className=""" flex justify-between text-sm></div>;
+                    <div className="""" flex justify-between text-sm></div>;
                       <span className=text-gray-400>Rebalancing</span></div>;
                       <span className=text-white>{portfolio.aiAnalysis.rebalancingNeeded ? Need'ed   'Not needed}</span></div>;
                     </div></div>;
@@ -584,33 +584,33 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
  '
         {selectedView === strategie's && (</div>'
           <div className=space-y-6>"</div>'
-            </div><div className=""" grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
+            </div><div className="""" grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>"";
               {tradingStrategies.map((strategy) => (</div>
                 <div key={strategy.id} className=bg-black/20  rounded-lg:p-6 border border-white/10></div>";
                   </div><div className=flex items-center justify-between mb-4></div>
                     <h3 className=text-white font-semibold>{strategy.name}</h3></div>'
-                    <span className="""px-3 py-3 rounded-full text-sm: "bg-blue-500/20 text-blue-400>";
+                    <span className=""""px-3 py-3 rounded-full text-sm: "bg-blue-500/20 text-blue-400>";
                       {strategy.type}</div>";
                     </span></div>
                   </div></div>";
                   <p className=text-gray-400 mb-4 >{strategy.description}</p></div>
                   <div className=grid grid-cols-2 gap-4 mb-4></div>'
-                    </div><div className="""text-center></div>
+                    </div><div className=""""text-center></div>
                       <div className=text-2xl font-bold text-white>{formatPercentage(strategy.performance)}</div></div>'
-                      <div className="""text-gray-400 text-sm>Performance</div></div>
+                      <div className=""""text-gray-400 text-sm>Performance</div></div>
                     </div></div>'
-                    <div className="""text-center> </div>
+                    <div className=""""text-center> </div>
                       </div><div className=text-2xl font-bold text-white>{strategy.riskLevel}</div></div>'
-                      <div className="""text-gray-400 text-sm>Risk Level</div></div>'
+                      <div className=""""text-gray-400 text-sm>Risk Level</div></div>'
                     </div></div>
                   </div></div>'
-                  <div className="""space-y-2> </div>'
-                    </div><div className="""flex justify-between text-sm></div>
+                  <div className=""""space-y-2> </div>'
+                    </div><div className=""""flex justify-between text-sm></div>
                       <span className=text-gray-400>Accuracy</span></div>'
-                      <span className="""text-white>{Math.round(strategy.aiAnalysis.accuracy * 100)}%</span></div>'
+                      <span className=""""text-white>{Math.round(strategy.aiAnalysis.accuracy * 100)}%</span></div>'
                     </div></div>";
                     <div className=flex justify-between text-sm></div>'
-                      <span className="""text-gray-400>Profit" Factor</span></div>;
+                      <span className=""""text-gray-400>Profit" Factor</span></div>;
                       <span className=text-white>{strategy.aiAnalysis.profitFactor}</span></div>;
                     </div></div>
                   </div></div>
@@ -620,7 +620,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
         )}
         {selectedView === analytics && analytics && (</div>'
-          <div className=""" space-y-6>
+          <div className="""" space-y-6>
             {/* Analytics Overview */}</div>'
             </div><div className=grid grid-cols-1 md: "grid-cols-2 lg grid-cols-4 gap-6></div>"";
               <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>'
@@ -631,24 +631,24 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div><div className=text-3xl font-bold text-white>{formatCurrency(analytics.totalValue)}</div></div>";
                 <div className=text-gray-400>Total Value</div></div>'
               </div>"</div>'";
-              <div className="""bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>
+              <div className=""""bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>
                 </div><div className=text-3xl font-bold text-white>{formatPercentage(analytics.averageReturn)}</div></div>";
                 <div className=text-gray-400>Avg Return</div></div>";
               </div></div>'
               <div className= bg-black/20 rounded-lg p-6 border border-white/10 text-center"></div>'
-                </div><div className="""text-3xl font-bold text-white>{analytics.topPerformer}</div></div>";
+                </div><div className=""""text-3xl font-bold text-white>{analytics.topPerformer}</div></div>";
                 <div className=text-gray-400>Top Performer</div></div>
               </div></div>";
             </div>
             {/* AI Insights */}</div>'";
-            <div className=""" bg-black/20 rounded-lg p-6 border border-white/10></div>'
+            <div className="""" bg-black/20 rounded-lg p-6 border border-white/10></div>'
               <h3 className=text-xl" font-semibold text-white mb-4>AI Investment Insights</h3></div>";
               <div className=space-y-4>";
                 {analytics.aiInsights.map((insight) => (</div>'
-                  </div><div key={insight.id} className="""p-4 bg-white/5 rounded-lg"></div>";
+                  </div><div key={insight.id} className=""""p-4 bg-white/5 rounded-lg"></div>";
                     <div className= flex items-center space-x-3 mb-2></div>'
-                      <span className="""text-2xl">{getInsightIcon(insight.impact)}</span>`</div>'
-                      <h4 className="""{text-lg font-medium ${getInsightColor(insight.impact)}}">";
+                      <span className=""""text-2xl">{getInsightIcon(insight.impact)}</span>`</div>'
+                      <h4 className=""""{text-lg font-medium ${getInsightColor(insight.impact)}}">";
                         {insight.title} </div>";
                       </h4></div>'
                       <span className=text-sm: "text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span></div>";
@@ -672,7 +672,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Footer */}</div>";
       <div className=bg-black/20  border-t border-white/10 mt-16></div>
         </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8></div>'
-          <div className="""grid grid-cols-1 md grid-cols-4 gap-8> </div>";
+          <div className=""""grid grid-cols-1 md grid-cols-4 gap-8> </div>";
             </div><div></div>'
               <h3 className=text-white font-semibold mb-4">Zion</h3></div>
               <p className=text-gray-400 text-sm >
@@ -681,28 +681,28 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div></div>";
             <div> </div>
               <h4 className=text-white font-semibold mb-4>Features</h4></div>'";
-              <ul className="""space-y-2 text-sm text-gray-400></div>'
+              <ul className=""""space-y-2 text-sm text-gray-400></div>'
                 <li><Link href=/ai-powered-live-streaming-broadcasting className=hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting  className=hover text-white ></Link></li></div>'
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className=hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="""hover text-white ></Link></li></div>'
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className=hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className=""""hover text-white ></Link></li></div>'
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation className=hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className=hover" text-white ></Link></li></div>'
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="""hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white ></Link></li></div>";
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className=""""hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white ></Link></li></div>";
               </ul></div>'
             </div>"</div>'
             <div>"</div>";
               <h4 className=text-white font-semibold mb-4>Services</h4></div>'
               <ul className=space-y-2 text-sm text-gray-400"></div>'
-                <li><Link href=/marketplace className="""hover text-white >Marketplace</Link href=/marketplace className=hover text-white ></Link></li></div>'";
-                <li><Link href=/services className="""hover text-white >IT Services</Link href=/services  className="""hover text-white ></Link></li></div>'
+                <li><Link href=/marketplace className=""""hover text-white >Marketplace</Link href=/marketplace className=hover text-white ></Link></li></div>'";
+                <li><Link href=/services className=""""hover text-white >IT Services</Link href=/services  className=""""hover text-white ></Link></li></div>'
                 <li><Link href=/talents className=hover text-white >AI Talents</Link href=/talents className=hover text-white" "></Link></li></div>'
                 <li><Link href=/equipment className=hover text-white >Equipment</Link href=/equipment  className=hover" text-white ></Link></li> </ul></div>";
             </div></div>
             <div></div>'
-              <h4 className="""text-white font-semibold mb-4>Support</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Support</h4></div>'
               <ul className=space-y-2  text-sm: "text-gray-400></div>"";
                 <li><Link href=/help-desk-support className=hover text-white >Help Desk</Link href=/help-desk-support className=hover text-white></Link></li></div>'
                 <li><Link href=/contact className=hover text-white >Contact</Link href=/contact className=hover text-white ></Link></li>"</div>'
                 <li><Link href=/docs" className=hover text-white >Documentation</Link href=/docs  className=hover text-white "></Link></li></div>'
-                <li><Link href=/status className="""hover text-white >Status</Link href=/status className=hover text-white ></Link></li></div>;
+                <li><Link href=/status className=""""hover text-white >Status</Link href=/status className=hover text-white ></Link></li></div>;
               </ul></div>;
             </div></div>;
           </div></div>;

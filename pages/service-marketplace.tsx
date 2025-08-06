@@ -414,11 +414,11 @@ if: "(loading) {";
       <div className=relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>
         </div><div className=fixed inset-0 z-0></div>";
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>
+          <div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>";
         </div>
       </div>'";
-        <div className="""text-center></div>'
+        <div className=""""text-center></div>'
           </div><div className= inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>'
             <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>"
               <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
@@ -436,7 +436,7 @@ if: "(loading) {";
         <title>Service Marketplace - Zion</title></div>'
         <meta name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science > </meta name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science" ><meta name="keywords content=service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion > </meta name=keywords content=service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion ><link rel="icon href= favicon.ico  > </link" rel=icon href= favicon.ico  ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className= max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>'
@@ -445,12 +445,12 @@ if: "(loading) {";
                 </h1></div>";
               </Link></div>
             </div></div>'";
-            <div className="""hidden md flex  items-center space-x-8></div>'
+            <div className=""""hidden md flex  items-center space-x-8></div>'
               <Link href=/mobile-responsive" className=text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>"";
               </Link href= /mobile-responsive className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/seo-optimization className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO</div>
               </Link href=/seo-optimization className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/multi-language className="""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages</div>"
+              <Link href=/multi-language className=""""text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages</div>"
               </Link href=/multi-language  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>'
               </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
@@ -484,7 +484,7 @@ if: "(loading) {";
                 </div><div className=text-4xl mb-3">{category.icon}</div>"</div>";
                 <h3 className=text-lg font-semibold text-white mb-2 >{category.name}</h3></div>";
                 <p className=text-gray-300 text-sm mb-3>{category.description}</p></div>'
-                <div className="""text-sm text-gray-400>{category.serviceCount} services</div></div>
+                <div className=""""text-sm text-gray-400>{category.serviceCount} services</div></div>
               </div></div>";
             </button >
           ))}</div>";
@@ -501,7 +501,7 @@ if: "(loading) {";
             </div>";
             <div>,
                 onChange={(e) => setSelectedSubcategory(e.target.value)} '
-                className="""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
+                className=""""w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors;
               ></div>;
                 <option value=all>All Subcategories</option>;
                 {categories;
@@ -524,7 +524,7 @@ if: "(loading) {";
             </div></div>";
           </div>
           </div>'
-          <div className=""" flex flex-wrap gap-4 mt-4></div>";
+          <div className="""" flex flex-wrap gap-4 mt-4></div>";
             <label className= flex items-center space-x-2>'
               '";
                 onChange={(e) => setFilterVerified(e.target.checked)}'
@@ -548,16 +548,16 @@ if: "(loading) {";
               {/* Service: Header: */}</div>";
               <div className=flex items-start justify-between mb-4> </div>'
                 </div><div className=flex-1"></div>'";
-                  <h3 className="""text-lg font-semibold text-white mb-2>{service.title}</h3></div>'
+                  <h3 className=""""text-lg font-semibold text-white mb-2>{service.title}</h3></div>'
                   <div className=flex  items-center space-x-2 mb-2"></div>'
-                    <span className="""text-sm text-gray-400>{service.category}</span></div>";
+                    <span className=""""text-sm text-gray-400>{service.category}</span></div>";
                     <span className=text-gray-600>•</span></div>
                     <span className=text-sm text-gray-400>{service.subcategory}</span></div>";
                   </div></div>";
                 </div></div>'
                 <div className=flex flex-col items-end space-y-2 ">
                   {service.featured && (</div>'
-                    <span className="""text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border  border-yellow-500/30>;
+                    <span className=""""text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border  border-yellow-500/30>;
                       Featured</div>;
                     </span>
                   )},
@@ -567,23 +567,23 @@ if: "(loading) {";
                 </div></div>";
               </div >
               {/* Description */}</div>'
-              <p className="""text-gray-300 text-sm mb-4  line-clamp-3>'
+              <p className=""""text-gray-300 text-sm mb-4  line-clamp-3>'
                 {service.description}</div>'
               </p>
               {/* Provider Info */}</div>'";
-              <div className="""flex  items-center space-x-3 mb-4>'
+              <div className=""""flex  items-center space-x-3 mb-4>'
                 '";
                  /></div>";
                 <div className=flex-1></div>
                   <h4 className=text-white font-medium>{service.provider}</h4></div>'
-                  <div className="""flex  items-center space-x-2>";
+                  <div className=""""flex  items-center space-x-2>";
                     {renderStars(service.providerRating)}</div>'
                     <span className=text-sm" text-gray-400>({service.providerReviews})</span></div>
                   </div></div>";
                 </div></div>";
                 <div className=text-right></div>'
                   </div><div className= flex items-center space-x-1>"</div>'";
-                    <span className="""text-sm>{getAvailabilityIcon(service.availability)}</span></div>'
+                    <span className=""""text-sm>{getAvailabilityIcon(service.availability)}</span></div>'
                     <span className={text-xs px-4 py-3 rounded-full ${getAvailabilityColor(service.availability)}"}>
                       {service.availability}</div>
                     </span></div>";
@@ -591,10 +591,10 @@ if: "(loading) {";
                 </div></div>";
               </div>";
               {/* Skills */}</div>'
-              <div className="""mb-4></div>";
+              <div className=""""mb-4></div>";
                 </div><div className= flex flex-wrap gap-2>
                   {service.skills.slice(0, 3).map((skill, index) => (</div>'";
-                    <span key={index} className="""text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
+                    <span key={index} className=""""text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
                       {skill}</div>";
                     </span>";
                   ))}'
@@ -627,7 +627,7 @@ View: Details: </button></div>;
         </div>";
         {/* Call to Action */}</div>";
         <div className=mt-12 text-center> </div>'
-          </div><div className="""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: "p-8></div>"
+          </div><div className=""""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: "p-8></div>"
             <h2: className=text-3xl font-bold text-white mb-4 >
               Need a Custom Service?</div>
             </h2></div>";
@@ -635,11 +635,11 @@ View: Details: </button></div>;
               Cant find what youre' looking for? Post a custom request and get matched";
               with the perfect service provider for your project.</div>
             </p></div>'
-            <div className=""" flex flex-col sm flex-row  gap-4 justify-center></div>'
+            <div className="""" flex flex-col sm flex-row  gap-4 justify-center></div>'
               <Link href=/post-request className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Post  a Request</div>"
               </Link href=/post-request  className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 ></Link></div>
               <Link href=/user-profiles className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Providers</div>'
-              </Link href=/user-profiles className="""border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
+              </Link href=/user-profiles className=""""border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;
         </div></div>

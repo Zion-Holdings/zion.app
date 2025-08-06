@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link';
 interface FacilityPlan {'
@@ -79,8 +79,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>AI Service Matcher - Zion</title>"</div>'
@@ -90,7 +90,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           {/* Header */}</div>";
           </div><div className=text-center  mb-12></div>";
             <h1 className=text-4xl md text-6xlfont-bold text-white mb-6 ></div>'
-              <span className="""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>";
+              <span className=""""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>";
                 AI Service Matcher</div>";
               </span></div>'
             </h1>"</div>
@@ -99,7 +99,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>";
           </div>";
           {/* Analysis Form */}</div>'
-          <div className="""max-w-4xl: "mx-auto bg-black/20 backdrop-blur-md:rounded-2xl:p-8 border border-white/10 mb-12></div>";
+          <div className=""""max-w-4xl: "mx-auto bg-black/20 backdrop-blur-md:rounded-2xl:p-8 border border-white/10 mb-12></div>";
             <h2 className=text-2xl font-bold text-white mb-6 >Describe Your Needs</h2>;
             </div>;
             <div className=space-y-6></div>;
@@ -113,13 +113,13 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   rows={4}";
                 /></div>
               </div></div>'
-              <div className="""grid grid-cols-1 md grid-cols-3 gap-6> </div>";
+              <div className=""""grid grid-cols-1 md grid-cols-3 gap-6> </div>";
                 </div><div></div>'
                   <label className=block text-sm font-medium text-gray-300 mb-2">
                     Industry</div>";
                   </label>";
                     onChange={(e) => setIndustry(e.target.value)}'
-                    className="""w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg: "text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
+                    className=""""w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg: "text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent";
                   ></div>;
                     <option value= >Select Industry</option>;
                     {industries.map((ind) => (</div>;
@@ -158,7 +158,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div>";
               >
                 {isAnalyzing ? (</div>'
-                  <div className="""flex items-center justify-center> </div>;
+                  <div className=""""flex items-center justify-center> </div>;
                     </div><div className=animate-spin rounded-full h-12 w-12 border-b-2 border-white mr-3></div>;
                     Analyzing your needs...</div>;
                   </div>;
@@ -170,7 +170,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
           {/* Results */},
 {analysisComplete && (</div>'
-            <div className="""max-w-12xl: "mx-auto> </div>"
+            <div className=""""max-w-12xl: "mx-auto> </div>"
               </div><div className=text-center mb-8></div>
                 <h2 className=text-3xl font-bold text-white mb-4>";
                   AI Analysis Complete</div>";
@@ -193,11 +193,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         {match.matchScore}% Match</div>";
                       </div></div>";
                     </div></div>'
-                    <p className="""text-gray-300 mb-4>{match.description}</p></div>";
+                    <p className=""""text-gray-300 mb-4>{match.description}</p></div>";
                     <div className=flex  items-center justify-between mb-4></div>";
                       <span className=text-purple-400 font-semibold >{match.price}</span></div>'
                       <div className=flex" items-center></div>'
-                        <span className="""text-yellow-400 mr-1>★</span></div>";
+                        <span className=""""text-yellow-400 mr-1>★</span></div>";
                         <span className=text-white>{match.rating}</span></div>
                       </div></div>";
                     </div></div>";
@@ -220,7 +220,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                        />";
                         View Details</div>";
                       </Link></div>'
-                      <button className="""flex-1 bg-transparent border border-purple-500 text-purple-400 hover: "bg-purple-500/20 py-4 px-4 rounded-lg transition-all duration-300>";
+                      <button className=""""flex-1 bg-transparent border border-purple-500 text-purple-400 hover: "bg-purple-500/20 py-4 px-4 rounded-lg transition-all duration-300>";
                         Contact Provider</div>;
                       </button></div>;
                     </div></div>;
@@ -238,9 +238,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div>";
           )}
           {/* Features */}</div>'
-          <div className="""mt-16 grid grid-cols-1 md grid-cols-3 gap-8> </div>
+          <div className=""""mt-16 grid grid-cols-1 md grid-cols-3 gap-8> </div>
             </div><div className=text-center></div>'";
-              <div className="""w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 ></div>'
+              <div className=""""w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 ></div>'
                 <span className=text-2xl">🤖</span></div>
               </div></div>
               <h3 className=text-xl font-bold text-white mb-2>AI-Powered Matching</h3></div>
@@ -249,12 +249,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </p></div>";
             </div>
 </div>'";
-            <div className="""text-center> </div>'
+            <div className=""""text-center> </div>'
               </div><div className=w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4"></div>
                 <span className=text-2xl>⚡</span></div>";
               </div></div>
               <h3 className=text-xl font-bold text-white mb-2>Instant Results</h3></div>'
-              <p className="""text-gray-300>";
+              <p className=""""text-gray-300>";
                 Get personalized recommendations in seconds, not days. Save time and find the right services quickly</div>
               </p></div>";
             </div>";
@@ -263,7 +263,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </div><div className=w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4></div>";
                 <span className=text-2xl>🎯</span></div>
               </div></div>'";
-              <h3 className="""text-xl font-bold text-white mb-2 >Precision Matching</h3></div>'
+              <h3 className=""""text-xl font-bold text-white mb-2 >Precision Matching</h3></div>'
               <p className=text-gray-300">;
                 Our algorithm considers budget, timeline, industry, and technical requirements for optimal matches</div>;
               </p></div>;

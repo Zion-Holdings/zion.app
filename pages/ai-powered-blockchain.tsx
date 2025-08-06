@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link';
 interface FacilityPlan {'
@@ -491,16 +491,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   if (loading) {";
     return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>";
+      </div><div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
-        <div className="""fixed inset-0 z-0></div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
+        <div className=""""fixed inset-0 z-0></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>";
           <div className= absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>'
         </div>'";
       "</div>";
         <div className=text-center></div>'
           </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"</div>'
-            <svg className=""" animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>";
+            <svg className="""" animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>";
               <circle className=opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>;
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0o14 12H0c0 3.0o42 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>
@@ -510,28 +510,28 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div>";
     );}
   return (</div>'
-    <div className="""relative z-10 container-responsive py-8></div>";
+    <div className=""""relative z-10 container-responsive py-8></div>";
       <Head> </div>'
         <title>AI-Powered Blockchain - Zion</title>"</div>'
         <meta name=description content=Intelligent smart contracts, decentralized applications, blockchain analytics, and AI-driven blockchain optimization > </meta name=description content=Intelligent smart contracts, decentralized applications, blockchain analytics, and AI-driven blockchain optimization ><meta name=keywords content=AI blockchain, smart contracts, dapps, blockchain analytics, Zion > </meta" name="keywords content=AI blockchain, smart contracts, dapps, blockchain analytics, Zion ><link rel=icon href=/favicon.ico > </link rel="icon" href=/favicon.ico ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'
         <div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>
             <div className=flex items-center></div>'";
-              <Link href=/ className=""" flex-shrink-0 > </Link href=/ className=flex-shrink-0><h1 className= text-2xl font-bold text-white></div>'
+              <Link href=/ className="""" flex-shrink-0 > </Link href=/ className=flex-shrink-0><h1 className= text-2xl font-bold text-white></div>'
                   <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>";
                 </h1></div>
               </Link></div>";
             </div>
             </div>'
-            <div className="""hidden md flex items-center space-x-8 ></div>'
+            <div className=""""hidden md flex items-center space-x-8 ></div>'
               <Link href=/ai-powered-machine-learning className= text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >ML</div>"
               </Link href=/ai-powered-machine-learning className= text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/ai-powered-data-analytics className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics</div>";
               </Link href=/ai-powered-data-analytics className= text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>'
-              </Link href=/auth/login  className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>";
+              </Link href=/auth/login  className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>";
           </div></div>;
         </div></div>
       </nav></div>
@@ -541,7 +541,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >";
             AI-Powered Blockchain</div>
           </h1></div>'";
-          <p className=""" text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className="""" text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent smart contracts, decentralized applications, blockchain analytics,
             and AI-driven blockchain optimization with advanced blockchain capabilities.</div>";
           </p></div>
@@ -571,15 +571,15 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         </div>";
         {/* Analytics Overview */},
 {selectedView === overvi'ew && (</div>'
-          <div className="""grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
+          <div className=""""grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (</div>'
-              </div><div key={metric.id} className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"";
+              </div><div key={metric.id} className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>"";
                 <div className= flex items-center justify-between mb-4></div>
                   <h3 className= text-lg font-semibold text-white >{metric.metric}</h3></div>";
                   <span className=text-2xl>{getTrendIcon(metric.trend)}</span></div>";
                 </div></div>'
                 <div className=mb-4>"</div>'
-                  </div><div className=""" text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
+                  </div><div className="""" text-3xl font-bold text-white mb-2>{metric.current}</div></div>'
                   <p className=text-sm: "text-gray-400>Target: {metric.target}</p></div>";
                 </div> </div>";
                 <div className= flex items-center justify-between text-sm></div>
@@ -587,7 +587,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     {metric.improvement > 0 ? +   '},";
 {metric.improvement.toFixed(1)}%</div>'
                   </span>"</div>'
-                  <span className=""" text-gray-400>{metric.period}</span></div>
+                  <span className="""" text-gray-400>{metric.period}</span></div>
                 </div></div>
               </div>
             ))}</div>";
@@ -610,25 +610,25 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className={"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(contract.status)}"}>";
                       {contract.status.toUpperCase()}</div>
                     </span></div>'";
-                    <div className="""mt-2>`</div>'
-                      <span className="""{px-4 py-3 rounded text-xs font-medium ${contract.aiOptimized ? text-green-400 bg-green-500/20 : text-red-400 bg-red-500/20'}}">
+                    <div className=""""mt-2>`</div>'
+                      <span className=""""{px-4 py-3 rounded text-xs font-medium ${contract.aiOptimized ? text-green-400 bg-green-500/20 : text-red-400 bg-red-500/20'}}">
                         {contract.aiOptimized ? AI OPTIMIZED   'AI DISABLED'}</div>";
                       </span></div>
                     </div></div>";
                   </div></div>
                 </div></div>'
-                <div className=""" mb-4></div>
+                <div className="""" mb-4></div>
                   </div><div className= flex items-center space-x-2 mb-2 ></div>'";
                     <span className=text-sm: "text-gray-400>Network </span></div>"
                     <span className= text-lg>{getNetworkIcon(contract.network)}</span></div>";
                     <span className=text-sm text-white capitalize>{contract.network}</span></div>";
                   </div></div>'
                   <p className=text-xs text-gray-400 mb-2>Address:</p>"</div>'
-                  <p className=""" text-sm text-purple-400 font-mono>{shortenAddress(contract.address)}</p></div>";
+                  <p className="""" text-sm text-purple-400 font-mono>{shortenAddress(contract.address)}</p></div>";
                 </div></div>";
                 <div className= grid grid-cols-2 gap-4 mb-4></div>'
                   </div><div>"</div>'
-                    <p className="""text-sm: "text-gray-400>Gas Used</p></div>";
+                    <p className=""""text-sm: "text-gray-400>Gas Used</p></div>";
                     <p className=text-lg font-semibold text-green-400 >{contract.gasUsed.toLocaleString()}</p></div>;
                   </div></div>
                   <div></div>
@@ -651,7 +651,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className=text-gray-400>Gas Efficiency:</span></div>";
                       <span className= text-white>{contract.performance.gasEfficiency}%</span></div>'
                     </div>"</div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className=text-gray-400>Security Score: "</span></div>"
                       <span className=text-white>{contract.performance.securityScore}%</span></div>
                     </div></div>";
@@ -659,7 +659,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       <span className= text-gray-400>Execution Time </span></div>";
                       <span className=text-white>{contract.performance.executionTime}s</span></div>
                     </div></div>'";
-                    <div className=""" flex justify-between></div>'
+                    <div className="""" flex justify-between></div>'
                       <span className=text-gray-400">Complexity: "</span></div>";
                       <span className= text-white>{contract.performance.complexity}/10</span></div>;
                     </div></div>
@@ -670,7 +670,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <span>Updated  {contract.lastUpdated.toLocaleString()}</span></div>";
                 </div></div>";
                 <div className= flex space-x-3></div>'
-                  <button className="""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
+                  <button className=""""bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
                     View Contract</div>;
                   </button></div>;
                   <button className= border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>;
@@ -690,11 +690,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div><div className= flex items-center space-x-3></div>";
                     <div className=text-3xl>{getTransactionTypeIcon(tx.type)}</div></div>
                     <div></div>'
-                      <h3 className="""text-lg font-semibold text-white mb-1>{tx.type.toUpperCase()}</h3></div>'
-                      <p className="""text-gray-300 text-sm>{shortenHash(tx.hash)}</p></div>";
+                      <h3 className=""""text-lg font-semibold text-white mb-1>{tx.type.toUpperCase()}</h3></div>'
+                      <p className=""""text-gray-300 text-sm>{shortenHash(tx.hash)}</p></div>";
                     </div></div>'
                   </div>"</div>'
-                  <div className="""text-right>`</div>";
+                  <div className=""""text-right>`</div>";
                     <span className={px-3  py-3 rounded-full text-xs font-medium ${getTransactionStatusColor(tx.status)}}>
                       {tx.status.toUpperCase()}</div>'
                     </span>'</div>";
@@ -707,7 +707,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div></div>";
                 <div className= grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>";
                   </div><div></div>'
-                    <p className="""text-sm" text-gray-400>From</p></div>
+                    <p className=""""text-sm" text-gray-400>From</p></div>
                     <p className=text-sm font-semibold text-white font-mono>{shortenAddress(tx.from)}</p></div>";
                   </div></div>
                   <div></div>'";
@@ -716,7 +716,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div></div>";
                   <div></div>'
                     <p className=text-sm text-gray-400>Value</p>"</div>'
-                    <p className="""text-lg font-semibold text-green-400>{tx.value} ETH</p></div>";
+                    <p className=""""text-lg font-semibold text-green-400>{tx.value} ETH</p></div>";
                   </div></div>";
                   <div></div>'
                     <p className= text-sm: "text-gray-400>Fee</p></div>"
@@ -726,14 +726,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>";
                   </div><div></div>
                     <p className=text-sm:text-gray-400>Gas Used</p></div>'
-                    <p className="""text-sm font-semibold text-blue-400 >{tx.gasUsed.toLocaleString()}</p></div>";
+                    <p className=""""text-sm font-semibold text-blue-400 >{tx.gasUsed.toLocaleString()}</p></div>";
                   </div></div>'
                   <div>"</div>
                     <p className= text-sm text-gray-400>Gas Price</p></div>";
                     <p className=text-sm font-semibold text-purple-400>{tx.gasPrice} Gwei</p></div>";
                   </div></div>'
                   <div>"</div>'
-                    <p className="""text-sm: "text-gray-400>Block</p></div>";
+                    <p className=""""text-sm: "text-gray-400>Block</p></div>";
                     <p className=text-sm font-semibold text-gray-400 >{tx.blockNumber}</p></div>;
                   </div></div>;
                   <div></div>;
@@ -747,7 +747,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div>";
 </div>'
                 <div className=flex" space-x-3 ></div>'
-                  <button className=""" bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>";
+                  <button className="""" bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>";
                     View on Explorer</div>;
                   </button></div>;
                   <button className=border  border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>;
@@ -762,9 +762,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=grid grid-cols-1 md:grid-cols-2 gap-6>";
             {dapps.map((dapp) => (</div>
               </div><div key={dapp.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 ></div>'
-                <div className=""" flex items-start justify-between mb-4></div>
+                <div className="""" flex items-start justify-between mb-4></div>
                   </div><div></div>'
-                    <h3 className=""" text-lg font-semibold text-white mb-2>{dapp.name}</h3></div>";
+                    <h3 className="""" text-lg font-semibold text-white mb-2>{dapp.name}</h3></div>";
                     <p className=text-gray-300 text-sm>{dapp.description}</p></div>'
                     <p className=text-gray-400" text-sm capitalize ">{dapp.category}</p></div>";
                   </div>`</div>
@@ -772,14 +772,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     {dapp.status.toUpperCase()}</div>";
                   </span></div>'
                 </div>"</div>'
-                <div className=""" grid grid-cols-2 gap-4 mb-4></div>";
+                <div className="""" grid grid-cols-2 gap-4 mb-4></div>";
                   </div><div></div>'
                     <p className=text-sm: "text-gray-400>Users</p></div>"";
                     <p className=text-lg font-semibold text-white >{dapp.users.toLocaleString()}</p></div>";
                   </div></div>";
                   <div></div>'
                     <p className= text-sm text-gray-400>TVL</p>"</div>'
-                    <p className=""" text-lg font-semibold text-green-400>${dapp.tvl.toLocaleString()}</p></div>";
+                    <p className="""" text-lg font-semibold text-green-400>${dapp.tvl.toLocaleString()}</p></div>";
                   </div></div>
                   <div></div>'
                     <p className=text-sm: "text-gray-400>Transactions</p></div>";
@@ -791,7 +791,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </div>"</div>'
                 </div>"</div>";
                 <div className=mb-4></div>'
-                  <p className="""text-sm text-gray-400 mb-2 >Networks: "</p></div>";
+                  <p className=""""text-sm text-gray-400 mb-2 >Networks: "</p></div>";
                   <div className=flex flex-wrap gap-2>;
                     {dapp.networks.map((network, index) => (</div>;
                       <span key={index} className=px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30 capitalize>
@@ -805,12 +805,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=space-y-2>'
                     {dapp.features.map((feature, index) => (</div>
                       </div><div key={index} className= flex items-center justify-between p-2 bg-white/5 rounded></div>'
-                        <span className="""text-sm: "text-white>{feature.name}</span></div>"";
+                        <span className=""""text-sm: "text-white>{feature.name}</span></div>"";
                         <div className= flex items-center space-x-2 >`</div>'
                           <span className={"px-4 py-3 rounded text-xs font-medium ${getStatusColor(feature.status)}}>'
                             {feature.status}"</div>";
                           </span>`</div>'
-                          <span className="""{px-4 py-3 rounded text-xs font-medium ${feature.aiOptimized ? text-green'-400 bg-green-500/20 : "text-red-400 bg-red-500/20}}>"
+                          <span className=""""{px-4 py-3 rounded text-xs font-medium ${feature.aiOptimized ? text-green'-400 bg-green-500/20 : "text-red-400 bg-red-500/20}}>"
                             {feature.aiOptimized ? A'I   Manu'al}</div>
                           </span></div>
                         </div></div>";
@@ -835,12 +835,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
         )}
         {/* Call to Action */}</div>'";
-        <div className="""mt-12 text-center></div>
+        <div className=""""mt-12 text-center></div>
           </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8 ></div>";
             <h2 className= text-3xl font-bold text-white mb-4>";
               Build with Blockchain Intelligence</div>'
             </h2>"</div>'";
-            <p className=""" text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className="""" text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent blockchain technology to create smart contracts,";
               DApps, and decentralized solutions with AI-driven optimization.</div>";
             </p></div>'
@@ -848,7 +848,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >";
                 Deploy Contract</div>";
               </button></div>'
-              <Link href=/service-marketplace className="""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>";
+              <Link href=/service-marketplace className=""""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>";
               </Link href=/service-marketplace className= border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div></div>;
           </div></div>;

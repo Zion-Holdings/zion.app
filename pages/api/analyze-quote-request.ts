@@ -28,7 +28,7 @@ Please provide: "1. A concise summary of the project requirements";
 2. Relevant tags for categorization (e.g., web-development, cloud-migration, ai-integration";
 3. Priority level (low, medium, high) based on complexity and budget
 4. Estimated complexity (simple, moderate, complex";
-Respond in JSON format with the following structure:";
+Respond in JSON format with the following structure: "";
 {'
   summary: Brief project summary",'
   tags: "[tag1, tag2, tag3],"

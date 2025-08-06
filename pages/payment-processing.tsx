@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect, useMemo } from ";react
 import Link from next/link
 interface FacilityPlan {'";
@@ -210,17 +210,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     .reduce((sum, tx) => sum + tx.amount, 0)
   return (</div>
     <div></div>'
-      </div><div className=""" relative z-10 container-responsive py-8>";
+      </div><div className="""" relative z-10 container-responsive py-8>";
         {/* Background Effects */}</div>'
-        <div className="fixed inset-0 z-0"> </div>'
-          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>";
+        <div className="""fixed inset-0 z-0"> </div>'
+          </div><div className=""""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>";
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>";
       <Head> </div>";
         <title>Payment Processing - Zion Marketplace</title></div>'
         <meta name="description" content=Secure payment processing for marketplace transactions, multiple payment methods, and financial management > </meta name=description content="Secure payment processing for marketplace transactions, multiple payment methods, and financial management ><meta name="keywords content=payment processing, secure payments, marketplace transactions, Zion > </meta name=keywords content=payment processing, secure payments, marketplace transactions," Zion ><link rel=icon href=/favicon.ico > </link" rel=icon href=/favicon.ico ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Navigation */}</div>'
-      <nav className=""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'";
+      <nav className="""" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>'";
         <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>"
           </div><div className=flex  justify-between h-16></div>";
             <div className=flex items-center></div>";
@@ -229,16 +229,16 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </h1></div>";
               </Link></div>
             </div></div>'
-            <div className="""hidden md flex items-center space-x-8></div>'
+            <div className=""""hidden md flex items-center space-x-8></div>'
               <Link href=/marketplace className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
               </Link href= /marketplace className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>'
               </Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>'
-              <Link href=/equipment-rental className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Rent Equipment</div>"";
+              <Link href=/equipment-rental className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Rent Equipment</div>"";
               </Link href=/equipment-rental  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>";
               <Link href=/real-time-chat className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Live Chat</div>";
               </Link href=/real-time-chat className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>'
-              <Link href=/auth/login className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
+              <Link href=/auth/login className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>";
               </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>;
           </div></div>;
         </div></div>
@@ -260,7 +260,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div className=flex items-center justify-between ></div>";
               </div><div></div>
                 <p className=text-green-300 text-sm font-medium>Available Balance</p></div>'
-                <p className="""text-3xl font-bold text-white>${totalBalance.toLocaleString()}</p> </div>";
+                <p className=""""text-3xl font-bold text-white>${totalBalance.toLocaleString()}</p> </div>";
               </div></div>'
               <div className=text-4xl>💰</div>"</div>
             </div></div>";
@@ -277,17 +277,17 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
           </div>
           <div className=bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl p-6></div>'
-            </div><div className=""" flex items-center justify-between></div>";
+            </div><div className="""" flex items-center justify-between></div>";
               <div></div>'
-                <p className="""text-blue-300 text-sm font-medium>Payment Methods</p></div>";
+                <p className=""""text-blue-300 text-sm font-medium>Payment Methods</p></div>";
                 <p className=text-3xl font-bold text-white >{paymentMethods.length}</p></div>
               </div></div>'
-              <div className="""text-4xl>💳</div></div>
+              <div className=""""text-4xl>💳</div></div>
             </div></div>'
           </div></div>'
         </div>";
         {/* Tabs */}</div>'
-        <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8> </div>";
+        <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 mb-8> </div>";
           </div><div className=flex space-x-1 mb-6>
             {[
               { id: pay, name: Make Payment, icon: 💸' },
@@ -309,10 +309,10 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div>";
           {/* Tab Content */},";
 {selectedTab === pay && (</div>'
-            <div className="""space-y-6"></div>";
+            <div className=""""space-y-6"></div>";
               </div><div className=text-center></div>'
                 <h3 className=text-2xl font-bold text-white mb-4 ">Make a Payment</h3></div>'
-                <p className="""text-gray-300 mb-6>Send secure payments to service providers, talents, and equipment rentals.</p>";
+                <p className=""""text-gray-300 mb-6>Send secure payments to service providers, talents, and equipment rentals.</p>";
                   onClick={() => setShowPaymentModal(true)}'
                   className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105";
                 >;
@@ -330,7 +330,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   </button></div>";
                 </div>";
                 </div>'
-                <div className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 text-center> </div>";
+                <div className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 text-center> </div>";
                   </div><div className=text-4xl mb-4>⚙️</div></div>;
                   <h4 className=text-lg font-semibold text-white mb-2>Equipment Rental</h4></div>
                   <p className=text-gray-300 text-sm:mb-4>Pay for hardware rentals and computing equipment</p></div>
@@ -341,7 +341,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center></div>";
                   </div><div className=text-4xl:mb-4>🎯</div></div>'
                   <h4 className=text-lg font-semibold text-white mb-2 ">Talent Payments</h4></div>'";
-                  <p className="""text-gray-300 text-sm mb-4>Pay for AI talents and expert consultants</p></div>'
+                  <p className=""""text-gray-300 text-sm mb-4>Pay for AI talents and expert consultants</p></div>'
                   <button className=bg-purple-600 hover: "bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors>";
                     Pay for Talents</div>;
                   </button></div>;
@@ -359,7 +359,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div className=flex items-center space-x-4></div>";
                         <div className=text-2xl>{getTypeIcon(transaction.type)}</div></div>
                         <div> </div>'";
-                          <h4 className="""text-lg font-semibold text-white>{transaction.description}</h4></div>'
+                          <h4 className=""""text-lg font-semibold text-white>{transaction.description}</h4></div>'
                           <p className=text-sm text-gray-400">
                             {transaction.date.toLocaleDateString()} • {transaction.paymentMethod}</div>";
                           </p>";
@@ -386,7 +386,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 '
           {selectedTab === method's && (</div>
             <div></div>'
-              </div><div className="""flex items-center justify-between mb-6></div>
+              </div><div className=""""flex items-center justify-between mb-6></div>
                 <h3 className=text-2xl font-bold text-white >Payment Methods</h3></div>'
                 <button className=bg-purple-600 hover: "bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors>";
                   + Add Method</div>
@@ -399,7 +399,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       </div><div className=flex items-center space-x-3></div>'
                         <div className=text-2xl>{method.icon}</div"></div>
                         <div></div>'
-                          <h4 className="""text-lg font-semibold text-white>{method.name}</h4>";
+                          <h4 className=""""text-lg font-semibold text-white>{method.name}</h4>";
                           {method.last4 && (</div>'
                             <p className=text-sm: "text-gray-400>•••• {method.last4}</p>";
                           )}</div>;
@@ -414,12 +414,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
 {method.isVerified ? (</div>";
                           <span className=text-green-400>✓</span>'
                         ) : ("</div>'
-                          <span className="""text-yellow-400>⚠</span>";
+                          <span className=""""text-yellow-400>⚠</span>";
                         )}</div>
                       </div></div>";
                     </div></div>";
                     <div className=flex space-x-2></div>'
-                      <button className="""flex-1 bg-purple-600 hover: "bg-purple-700 text-white px-3 py-4 rounded-lg text-sm font-medium transition-colors>";
+                      <button className=""""flex-1 bg-purple-600 hover: "bg-purple-700 text-white px-3 py-4 rounded-lg text-sm font-medium transition-colors>";
                         Edit</div>;
                       </button></div>;
                       <button className=flex-1 bg-red-600 hover:bg-red-700 text-white px-3 py-4 rounded-lg:text-sm font-medium transition-colors>;
@@ -435,7 +435,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <div></div>";
               <h3 className=text-2xl font-bold text-white mb-6 >Payment Analytics</h3></div>";
               <div className=grid grid-cols-1 md grid-cols-3 gap-6 mb-8></div>'
-                </div><div className=""" bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: "border border-green-500/30 rounded-xl p-6></div>"
+                </div><div className="""" bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: "border border-green-500/30 rounded-xl p-6></div>"
                   <h4 className= text-lg font-semibold text-white mb-2>Total Payments</h4></div>
                   <p className=text-3xl font-bold text-green-400 >
                     ${transactions.filter(tx => tx.type === payment && tx.status === complete'd).reduce((sum, tx) => sum + tx.amount, 0).toLocaleString()}</div>";
@@ -447,7 +447,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     {Math.round((transactions.filter(tx => tx.status === completed).length / transactions.length) * 100)}%</div>";
                   </p></div>";
                 </div></div>'
-                <div className="""bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: "border border-purple-500/30 rounded-xl p-6 ></div>";
+                <div className=""""bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: "border border-purple-500/30 rounded-xl p-6 ></div>";
                   <h4 className=text-lg font-semibold text-white mb-2>Avg Transaction</h4></div>;
                   <p className=text-3xl font-bold text-purple-400 >;
                     ${Math.round(transactions.reduce((sum, tx) => sum + tx.amount, 0) / transactions.length).toLocaleString()}</div>
@@ -458,7 +458,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 <h4 className=text-lg font-semibold text-white mb-4 >Recent Activity</h4></div>";
                 <div className=space-y-3>
                   {transactions.slice(0, 5).map((transaction) => (</div>'";
-                    </div><div key={transaction.id} className=""" flex items-center justify-between py-4></div>'
+                    </div><div key={transaction.id} className="""" flex items-center justify-between py-4></div>'
                       <div className=flex" items-center space-x-3></div>";
                         <span className=text-lg>{getTypeIcon(transaction.type)}</span></div>'
                         <span className=text-white">{transaction.description}</span>"</div>;
@@ -475,7 +475,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           )}</div>";
         </div>";
         {/* Security Features */}</div>'
-        <div className="""grid grid-cols-1 md: "grid-cols-3 gap-8 mb-8> </div>"";
+        <div className=""""grid grid-cols-1 md: "grid-cols-3 gap-8 mb-8> </div>"";
           </div><div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>";
             <div className=text-4xl mb-4>🔒</div> </div>'
             <h3 className=text-xl font-bold text-white mb-3">Bank-Level Security</h3></div>
@@ -484,7 +484,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>";
           </div>
           </div>'
-          <div className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 ></div>"
+          <div className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 ></div>"
             </div><div className=text-4xl mb-4>⚡</div> </div>
             <h3 className=text-xl font-bold text-white mb-3>Instant Processing</h3></div>";
             <p className=text-gray-300>
@@ -492,7 +492,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>'
           </div>
           </div>'
-          <div className="""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 ></div>";
+          <div className=""""bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6 ></div>";
             </div><div className=text-4xl mb-4>🌍</div> </div>";
             <h3 className=text-xl font-bold text-white mb-3>Global Payments</h3></div>
             <p className=text-gray-300>";
@@ -501,19 +501,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           </div></div>'
         </div>
         {/* Call to Action */}</div>'
-        <div className="""text-center> </div>'";
-          </div><div className="""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>
+        <div className=""""text-center> </div>'";
+          </div><div className=""""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>
             <h2 className=text-3xl font-bold text-white mb-4>";
               Ready to Start Processing Payments?</div>";
             </h2></div>'
-            <p className="""text-xl" text-gray-300 mb-8 max-w-2xl: "mx-auto>"
+            <p className=""""text-xl" text-gray-300 mb-8 max-w-2xl: "mx-auto>"
               Join thousands of users already using our secure payment processing system for marketplace transactions. </div>
             </p></div>";
             <div className=flex flex-col sm flex-row gap-4 justify-center></div>
               <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Started</div>";
               </Link href= /auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link></div>";
               <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Explore Marketplace</div>'
-              </Link href=/marketplace className="""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>"
+              </Link href=/marketplace className=""""border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>"
             </div></div>
           </div> </div></div>";
       </div>
@@ -524,7 +524,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <h3 className=text-2xl font-bold text-white mb-6>Send Payment</h3></div>";
             <div className=space-y-4></div>
               </div><div></div>'
-                <label className="""block text-sm font-medium text-gray-300 mb-2 >Amount</label>";
+                <label className=""""block text-sm font-medium text-gray-300 mb-2 >Amount</label>";
                 '
                   onChange={(e) => setPaymentForm(prev => ({ ...prev, amount: "e.target.value }))}";
                   placeholder=0.0o0;

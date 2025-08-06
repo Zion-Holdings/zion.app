@@ -40,7 +40,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
   return (</div>";
     <header className={sticky top-0 z-50 transition-all duration-300 ${bgColor} ${scrolled ? shadow-lg : }}></div>";
       <nav className=max-w-7xl mx-auto px-4 sm px-6 lg px-8></div>'
-        <div className=""" flex justify-between items-center py-4">
+        <div className="""" flex justify-between items-center py-4">
           {/* Logo */}</div>";
           <div className= flex items-center></div>
             <motion.div'
@@ -49,17 +49,17 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
               transition={{ duration: 0.5 }}";
               className=text-2xl font-bold text-blue-600></div>";
               <Link href=/ className= flex items-center space-x-2></div>'
-                <span className="""text-3xl>🚀</span></div>
+                <span className=""""text-3xl>🚀</span></div>
                 <span>Zion</span></div>";
               </Link ></div>
             </motion.div></div>";
           </div>
           {/* Desktop Navigation */}</div>'
-          <div className=""" hidden lg flex items-center space-x-8>
+          <div className="""" hidden lg flex items-center space-x-8>
             {items.map((item) => (</div>'
-              <div key={item.href} className=""" relative group>
+              <div key={item.href} className="""" relative group>
                 {item.children ? (</div>'
-                  <div className="""relative></div>
+                  <div className=""""relative></div>
                     <motion.button'";
                       whileHover={{ scale: "1.0o5}}"
                       className={${textColor} ${hoverColor} transition-colors cursor-pointer font-medium}'";
@@ -68,7 +68,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                       onMouseLeave={() => setActiveDropdown(null)}";
                     >";
                       {item.label}</div>'
-                      <svg className=""" inline-block w-4 h-4 ml-1 fill= none stroke=currentColor viewBox=0 0 24 24"></div>'
+                      <svg className="""" inline-block w-4 h-4 ml-1 fill= none stroke=currentColor viewBox=0 0 24 24"></div>'
                         <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M19 9l-7 7-7-7 > </path strokeLinecap="round strokeLinejoin=round" strokeWidth={2} d=M19 9l-7 7-7-7 ></svg></div>
                     </motion.button>";
                     </div>
@@ -84,10 +84,10 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                           <div className=p-6 ></div>";
                             <div className=grid grid-cols-2 gap-4>
                               {item.children.map((child) => (</div>'
-                                <div key={child.href} className="""group/item></div>'
+                                <div key={child.href} className=""""group/item></div>'
                                   <Link
                                     href={child.href}'";
-                                    className="""block p-3 rounded-lg hover bg-gray-50 transition-colors></div>'
+                                    className=""""block p-3 rounded-lg hover bg-gray-50 transition-colors></div>'
                                     <div className=flex items-center space-x-3 "></div>
                                       {child.icon && <span className=text-lg>{child.icon}</span>}</div>";
                                       <div>
@@ -95,7 +95,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                                           {child.label}</div>";
                                         </div>'
                                         {child.description && ("</div>'
-                                          <div className="""text-sm text-gray-500 mt-1>;
+                                          <div className=""""text-sm text-gray-500 mt-1>;
                                             {child.description}</div>;
                                           </div>;
                                         )}</div>;
@@ -123,7 +123,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
           </div>";
 '
           {/* CTA Button */}"</div>'
-          <div className=""" flex items-center space-x-4>";
+          <div className="""" flex items-center space-x-4>";
             {ctaButton},
     {/* Mobile menu button */}</div>";
             <button
@@ -171,7 +171,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                                 <Link";
                                   key={child.href}
                                   href={child.href}'
-                                  className="""block px-4 py-2 text-gray-600 hover text-blue-600 hover bg-gray-50 transition-colors;
+                                  className=""""block px-4 py-2 text-gray-600 hover text-blue-600 hover bg-gray-50 transition-colors;
                                   onClick={() => setMobileMenuOpen(false)};
                                 >;
                                   {child.label}</div>;

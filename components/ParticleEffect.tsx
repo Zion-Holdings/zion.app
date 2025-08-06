@@ -16,7 +16,7 @@ interface ParticleEffectProps {;
   color?: string;
 };
 const ParticleEffect: React.FC<ParticleEffectProps> = ({;
-  className=""",;
+  className="""",;
   particleCount = 50,;
   speed = 1,;
   size = 2,;

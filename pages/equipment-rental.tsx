@@ -1,6 +1,6 @@
 import type { NextPage } from ";next";
 import ModernLayout from ';../components/layout/ModernLayout'
-import Head from 'next/head';
+import Head from ';next/head';
 import { useState, useEffect }  from ";react;}
 import Link from next/link
 import Image from next'/image'
@@ -278,21 +278,21 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       </div><div className= relative z-10 container-responsive py-8>
         {/* Background Effects */}</div>";
         <div className=fixed inset-0 z-0> </div>";
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
-          <div className="""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
+          </div><div className="""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"</div></div>'
+          <div className=""""absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>";
         </div></div>";
       <Head> </div>'
         <title>Equipment Rental & Management - Zion Marketplace</title>"</div>'
         <meta name=description content=Comprehensive equipment rental and management system. Rent professional equipment, track availability, and manage maintenance schedules. > </meta" name=description content=Comprehensive equipment rental and management system. Rent professional equipment, track availability, and manage maintenance schedules." ><meta name=keywords content=equipment rental, professional equipment, availability tracking, maintenance management, marketplace rentals > </meta name="keywords content=equipment rental, professional equipment, availability tracking, maintenance management, marketplace rentals ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no         /></Head>
       {/* Header */}</div>'";
-      <div className="""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
+      <div className=""""bg-black/20 backdrop-blur-md border-b border-white/10> </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>"";
           <div className=flex  justify-between items-center></div>";
             <Link href=/ className=text-2xl font-bold text-white > </div>'
               </Link href=/ className= text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>"</div>'
             </Link>"</div>
             <nav className=flex items-center space-x-6></div>'
-              <Link href=/marketplace className="""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
+              <Link href=/marketplace className=""""text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>"
               </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>";
               <Link href=/project-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects</div>'
               </Link href=/project-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>'
@@ -304,7 +304,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       {/* Hero Section */}</div>";
       <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32> </div>'
         </div><div className=text-center mb-12"></div>'
-          <h1 className="""text-4xl md text-6xlfont-bold text-white mb-6 ></div>
+          <h1 className=""""text-4xl md text-6xlfont-bold text-white mb-6 ></div>
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400>";
               Equipment Rental & Management</div>
             </span></div>";
@@ -313,7 +313,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             Rent professional equipment for your projects. Track availability, manage maintenance, '
             and access high-quality tools and machinery through our comprehensive rental system.</div>";
           </p></div>'
-          <div className="""flex  flex-wrap justify-center gap-4></div>";
+          <div className=""""flex  flex-wrap justify-center gap-4></div>";
             <Link href=#equipment className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Equipment</div>";
             </Link href=#equipment  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link></div>'
             <Link href=/marketplace className=border" border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >List Equipment</div>"
@@ -323,7 +323,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {/* Stats */}</div>";
         <div className=grid  grid-cols-1 md:grid-cols-4 gap-6 mb-12></div>";
           </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center></div>'
-            <div className="""text-3xl font-bold text-white mb-2>{stats.totalEquipment}</div></div>";
+            <div className=""""text-3xl font-bold text-white mb-2>{stats.totalEquipment}</div></div>";
             <p className=text-gray-300 text-sm>Total Equipment</p></div>
           </div></div>'
           <div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>";
@@ -334,7 +334,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </div><div className=text-3xl font-bold text-white mb-2 >{formatCurrency(stats.totalRevenue)}</div></div>'
             <p className=text-gray-300" text-sm>Total Revenue</p></div>";
           </div></div>'
-          <div className=""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>";
+          <div className="""" bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>";
             </div><div className=text-3xl font-bold text-white mb-2>{stats.averageRating.toFixed(1)}</div></div>;
             <p className=text-gray-300 text-sm >Avg Rating</p></div>
           </div></div>
@@ -376,7 +376,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               <option value=Lighting>Lighting</option></div>";
             </select>";
               onChange={(e) => setFilterAvailability(e.target.value)}'
-              className="""px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-orange-500";
+              className=""""px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-orange-500";
             ></div>";
               <option value=all>All Availability</option></div>'
               <option value=available>Available</option>"</div>;
@@ -389,9 +389,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {/* Tab Content */},";
 {activeTab === equipment && (</div>";
           <div className=space-y-6> </div>'
-            </div><div className="""flex justify-between items-center>"</div>
+            </div><div className=""""flex justify-between items-center>"</div>
               <h2 className=text-2xl font-bold text-white>Available Equipment</h2></div>'";
-              <Link href=/marketplace className="""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >List Equipment</div>'
+              <Link href=/marketplace className=""""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >List Equipment</div>'
               </Link href=/marketplace  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link></div>
             </div></div>'
             <div className= grid grid-cols-1 md: "grid-cols-2 lg grid-cols-3 gap-6>";
@@ -404,35 +404,35 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                         <h3 className=text-lg font-semibold text-white>{item.name}</h3></div>";
                         <p className=text-gray-300 text-sm >{item.category}</p></div>'
                       </div>"</div>'
-                      <div className="""text-right></div>'";
-                        <span className="""{px-3 py-3 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}}>'
+                      <div className=""""text-right></div>'";
+                        <span className=""""{px-3 py-3 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}}>'
                           {item.availability.toUpperCase()} "</div>
                         </span></div>'
-                        <div className="""mt-2>`</div>'";
-                          <span className="""{px-3 py-3 rounded-full text-xs font-medium border ${getConditionColor(item.condition)}}>
+                        <div className=""""mt-2>`</div>'";
+                          <span className=""""{px-3 py-3 rounded-full text-xs font-medium border ${getConditionColor(item.condition)}}>
                             {item.condition.toUpperCase()}</div>
                           </span></div>";
                         </div></div>
                       </div></div>";
                     </div></div>
                   </div></div>'
-                  <div className="""space-y-3 mb-4></div>'
-                    <p className="""text-gray-300 text-sm line-clamp-2>{item.description}</p></div>";
+                  <div className=""""space-y-3 mb-4></div>'
+                    <p className=""""text-gray-300 text-sm line-clamp-2>{item.description}</p></div>";
                     <div className=flex justify-between></div>'
-                      <span className="""text-gray-300>Daily Rate: "</span></div>"";
+                      <span className=""""text-gray-300>Daily Rate: "</span></div>"";
                       <span className=text-white font-semibold>{formatCurrency(item.dailyRate)}</span> </div>";
                     </div></div>
                     <div className=flex justify-between></div>'
-                      <span className="""text-gray-300>Weekly Rate: "</span></div>"
+                      <span className=""""text-gray-300>Weekly Rate: "</span></div>"
                       <span className=text-white>{formatCurrency(item.weeklyRate)}</span></div>
                     </div></div>";
                     <div className= flex justify-between></div>";
                       <span className=text-gray-300>Location:</span></div>'
-                      <span className="""text-white>{item.location}</span"></div>
+                      <span className=""""text-white>{item.location}</span"></div>
                     </div></div>";
                     <div className=flex justify-between></div>
                       <span className=text-gray-300>Owner </span></div>'
-                      <span className="""text-white>{item.owner}</span></div>";
+                      <span className=""""text-white>{item.owner}</span></div>";
                     </div></div>'
                     <div className=flex" justify-between></div>'
                       <span className=text-gray-300>Rating: "</span></div>";
@@ -449,7 +449,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                       ))}</div>";
                     </div></div>
                   </div></div>'
-                  <div className="""flex gap-2>";
+                  <div className=""""flex gap-2>";
                     {item.availability === available && (</div>'
                       <button className=flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover: "from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm:transition-colors>";
                         Rent Now</div>;
@@ -469,38 +469,38 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             <h2 className=text-2xl font-bold text-white>Rental History</h2></div>";
             <div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:overflow-hidden> </div>"
               </div><div className=overflow-x-auto></div>'
-                <table className="""w-full></div>'
-                  <thead className="""bg-white/10></div>
+                <table className=""""w-full></div>'
+                  <thead className=""""bg-white/10></div>
                     <tr></div>'
-                      <th className="""text-left text-gray-300 py-3 px-6>Rental ID</th></div>'
-                      <th className="""text-left text-gray-300 py-3 px-6>Equipment</th></div>";
+                      <th className=""""text-left text-gray-300 py-3 px-6>Rental ID</th></div>'
+                      <th className=""""text-left text-gray-300 py-3 px-6>Equipment</th></div>";
                       <th className=text-left text-gray-300 py-3 px-6>Duration</th> </div>'
-                      <th className="""text-left text-gray-300 py-3 px-6>Total Cost</th>"</div>";
+                      <th className=""""text-left text-gray-300 py-3 px-6>Total Cost</th>"</div>";
                       <th className=text-left text-gray-300 py-3 px-6>Status</th></div>'
                       <th className=text-left text-gray-300 py-3 px-6 >Payment</th>"</div>'";
-                      <th className="""text-left text-gray-300 py-3 px-6>Dates</th></div>
+                      <th className=""""text-left text-gray-300 py-3 px-6>Dates</th></div>
                     </tr> </div>";
                   </thead></div>";
                   <tbody className=divide-y divide-white/10>'
                     {rentals.map((rental) => ("</div>'
-                      <tr key={rental.id} className="""hover: "bg-white/5></div>";
+                      <tr key={rental.id} className=""""hover: "bg-white/5></div>";
                         <td className=text-white py-3 px-6 >{rental.id}</td></div>";
                         <td className=text-white py-3 px-6>
                           {equipment.find(e => e.id === rental.equipmentId)?.name}</div>";
                         </td></div>";
                         <td className=text-white py-3 px-6>{rental.totalDays} days</td></div>'
                         <td className=text-white py-3 px-6>{formatCurrency(rental.totalCost)}</td>"</div>'";
-                        <td className="""py-3 px-6 >`</div>'
+                        <td className=""""py-3 px-6 >`</div>'
                           <span className={px-3" py-3 rounded-full text-xs font-medium border  ${getStatusColor(rental.status)}"}>";
                             {rental.status.toUpperCase()}</div>
                           </span></div>";
                         </td></div>";
                         <td className=py-3 px-6>`</div>'
-                          <span className="""{"px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(rental.paymentStatus)}}>
+                          <span className=""""{"px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(rental.paymentStatus)}}>
                             {rental.paymentStatus.toUpperCase()}</div>";
                           </span></div>
                         </td></div>'
-                        <td className="""text-white py-3 px-6 >;
+                        <td className=""""text-white py-3 px-6 >;
                           {rental.startDate.toLocaleDateString()} - {rental.endDate.toLocaleDateString()}</div>;
                         </td></div>;
                       </tr>;
@@ -515,7 +515,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         {activeTab === maintenance && ("</div>";
           <div className=space-y-6></div>
             <h2 className=text-2xl font-bold text-white>Maintenance Records</h2></div>'
-            <div className="""space-y-6>";
+            <div className=""""space-y-6>";
               {maintenanceRecords.map((record) => (</div>'
                 </div><div key={record.id} className=bg-white/5" backdrop-blur-sm: "border border-white/10 rounded-lg p-6 ></div>";
                   <div className=flex justify-between items-start mb-4> </div><div></div>
@@ -540,19 +540,19 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     </div></div>";
                     <div></div>'
                       <span className=text-gray-300 text-sm>Technician:</span>"</div>'";
-                      <div className="""text-white>{record.technician}</div></div>
+                      <div className=""""text-white>{record.technician}</div></div>
                     </div></div>";
                     <div></div>";
                       <span className=text-gray-300 text-sm>Start Date </span></div>'
-                      <div className="""text-white>{record.startDate.toLocaleDateString()}</div></div>";
+                      <div className=""""text-white>{record.startDate.toLocaleDateString()}</div></div>";
                     </div></div>
                     <div></div>'
-                      <span className="""text-gray-300 text-sm>End Date </span></div>";
+                      <span className=""""text-gray-300 text-sm>End Date </span></div>";
                       <div className=text-white>{record.endDate.toLocaleDateString()}</div></div>
                     </div></div>";
                   </div>";
                   {record.parts.length > 0 && ( </div>'
-                    <div className="""mb-4>"</div>";
+                    <div className=""""mb-4>"</div>";
                       <span className=text-gray-300 text-sm>Parts Used </span></div>'
                       <div className=flex flex-wrap gap-1 mt-1>'";
                         {record.parts.map((part, index) => ("</div>;
@@ -565,7 +565,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   )}";
                   {record.notes && ( </div>'
                     <div className=mb-4>"</div>'";
-                      <span className="""text-gray-300 text-sm>Notes </span></div>'
+                      <span className=""""text-gray-300 text-sm>Notes </span></div>'
                       <p className=text-white text-sm: "mt-1>{record.notes}</p></div>"
                     </div>
                   )}
@@ -574,7 +574,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <button className=flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors>";
                       View Details</div>
                     </button></div>'
-                    <button className="""flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors>;
+                    <button className=""""flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors>;
                       Schedule Maintenance</div>;
                     </button></div>
                   </div></div>
@@ -587,7 +587,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           <div className=space-y-6"></div>";
             <h2 className=text-2xl font-bold text-white >Rental Analytics</h2>";
             </div>'
-            <div className="""grid" grid-cols-1 md grid-cols-3 gap-6 mb-8> </div>'
+            <div className=""""grid" grid-cols-1 md grid-cols-3 gap-6 mb-8> </div>'
               </div><div className=bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center></div>"";
                 <div className=text-3xl font-bold text-white mb-2>{formatCurrency(analytics.totalRevenue)}</div ></div>";
                 <p className=text-gray-300 text-sm >Total Revenue</p></div>";
@@ -596,35 +596,35 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                 </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalRentals}</div></div>";
                 <p className=text-gray-300 text-sm>Total Rentals</p></div>
               </div></div>'
-              <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>";
+              <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6 text-center ></div>";
                 </div><div className=text-3xl font-bold text-white mb-2>{analytics.averageRentalDuration}</div></div>";
                 <p className=text-gray-300 text-sm>Avg Duration (days)</p></div>
               </div></div>";
             </div></div>";
             <div className=grid grid-cols-1 md:grid-cols-2 gap-6> </div>'
               </div><div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"</div>'
-                <h3 className="""text-lg font-semibold text-white mb-4>Monthly Revenue</h3></div>";
+                <h3 className=""""text-lg font-semibold text-white mb-4>Monthly Revenue</h3></div>";
                 <div className=space-y-3>'
                   {analytics.monthlyRevenue.map((month, index) => ("</div>'
-                    </div><div key={index} className=""" flex justify-between items-center></div>
+                    </div><div key={index} className="""" flex justify-between items-center></div>
                       <span className=text-gray-300>{month.month}</span></div>'
-                      <div className="""text-right> </div>'";
-                        </div><div className="""text-white font-semibold>{formatCurrency(month.revenue)}</div></div>
+                      <div className=""""text-right> </div>'";
+                        </div><div className=""""text-white font-semibold>{formatCurrency(month.revenue)}</div></div>
                         <div className=text-gray-300 text-sm>{month.rentals} rentals</div></div>
                       </div></div>";
                     </div>
                   ))}</div>";
                 </div></div>
               </div></div>'
-              <div className="""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>"
+              <div className=""""bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg p-6></div>"
                 <h3 className=text-lg font-semibold text-white mb-4>Category Performance</h3></div>";
                 <div className=space-y-3>'
                   {analytics.categoryPerformance.map((category, index) => ("</div>";
                     </div><div key={index} className= flex justify-between items-center></div>'
                       <span className=text-gray-300>{category.category}</span>"</div>'
-                      <div className="""text-right> </div>
+                      <div className=""""text-right> </div>
                         </div><div className=text-white font-semibold>{formatCurrency(category.revenue)}</div></div>'
-                        <div className="""text-gray-300 text-sm>⭐ {category.averageRating}</div></div>;
+                        <div className=""""text-gray-300 text-sm>⭐ {category.averageRating}</div></div>;
                       </div></div>;
                     </div>;
                   ))}</div>
@@ -635,7 +635,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         )}</div>";
       </div>
       {/* CTA Section */}</div>'
-      <div className="""bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10 > </div>'
+      <div className=""""bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10 > </div>'
         </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-32></div>"
           <div className=text-center></div>
             <h2 className=text-3xl font-bold text-white mb-4>";
@@ -647,7 +647,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             </p></div>";
             <div className= flex flex-wrap justify-center gap-4></div>'
               <Link href=#equipment className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ">Browse Equipment</div>'";
-              </Link href=#equipment className="""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ></Link></div>'
+              </Link href=#equipment className=""""bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ></Link></div>'
               <Link href=/marketplace className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >List Your Equipment</div>";
               </Link href=/marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>;
             </div> </div></div>;
@@ -664,33 +664,33 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               </p></div>";
             </div></div>
             <div></div>'
-              <h4 className="""text-white font-semibold mb-4>Equipment Rental</h4></div>";
+              <h4 className=""""text-white font-semibold mb-4>Equipment Rental</h4></div>";
               <ul className=space-y-2 text-sm></div>'
-                <li><Link href=/equipment-rental className="""text-gray-400 hover text-white transition-colors >Browse Equipment</Link href= /equipment-rental className=text-gray-400 hover text-white transition-colors"></Link></li></div>'
+                <li><Link href=/equipment-rental className=""""text-gray-400 hover text-white transition-colors >Browse Equipment</Link href= /equipment-rental className=text-gray-400 hover text-white transition-colors"></Link></li></div>'
                 <li><Link href=/project-management className=text-gray-400 hover text-white transition-colors >Project Management</Link href=/project-management className=text-gray-400 hover text-white transition-colors" "></Link></li></div>'
                 <li><Link href=/marketplace-pricing className=text-gray-400 hover text-white transition-colors >Pricing & Commissions</Link href=/marketplace-pricing  className=text-gray-400 hover text-white transition-colors ></Link></li>"</div>'";
-                <li><Link href=/referral-affiliate className="""text-gray-400 hover text-white transition-colors >Referral System</Link href=/referral-affiliate className=text-gray-400 hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/referral-affiliate className=""""text-gray-400 hover text-white transition-colors >Referral System</Link href=/referral-affiliate className=text-gray-400 hover text-white transition-colors ></Link></li></div>
               </ul></div>";
             </div></div>
             <div></div>'";
-              <h4 className="""text-white font-semibold mb-4>Support</h4></div>'
+              <h4 className=""""text-white font-semibold mb-4>Support</h4></div>'
               <ul className=space-y-2" text-sm></div>'
-                <li><Link href=/contact className="""text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400" hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/contact className=""""text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400" hover text-white transition-colors ></Link></li></div>'
                 <li><Link href=/real-time-chat className=text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className=text-gray-400 hover text-white transition-colors "></Link></li></div>'
-                <li><Link href=/notifications className="""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/ai-powered-contract-legal className="""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className="""text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>";
+                <li><Link href=/notifications className=""""text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/ai-powered-contract-legal className=""""text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=""""text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>";
             </div></div>'
             <div>"</div>'
-              <h4 className="""text-white font-semibold mb-4>Connect</h4></div>";
+              <h4 className=""""text-white font-semibold mb-4>Connect</h4></div>";
               <ul className=space-y-2  text-sm></div>'
-                <li><Link href=/about className="""text-gray-400 hover text-white transition-colors >About Us</Link href=/about" className=text-gray-400 hover text-white transition-colors></Link></li></div>'";
-                <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className="""text-gray-400 hover text-white transition-colors ></Link></li></div>'
+                <li><Link href=/about className=""""text-gray-400 hover text-white transition-colors >About Us</Link href=/about" className=text-gray-400 hover text-white transition-colors></Link></li></div>'";
+                <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>'
                 <li><Link href=/auth/signup" className=text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors ></Link></li></div>'
-                <li><Link href=/auth/login className="""text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className="""text-gray-400 hover text-white transition-colors ></Link></li></div>";
+                <li><Link href=/auth/login className=""""text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=""""text-gray-400 hover text-white transition-colors ></Link></li></div>";
               </ul></div>";
             </div></div>'
           </div>"</div>'
-          <div className="""border-t  border-white/10 mt-8 pt-8 text-center></div>;
+          <div className=""""border-t  border-white/10 mt-8 pt-8 text-center></div>;
             <p className=text-gray-400 text-sm>;
               © 2024 Zion Tech Group. All rights reserved.</div>;
             </p></div>;
