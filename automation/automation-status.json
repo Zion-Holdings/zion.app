@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-08-06T08:50:48.604Z",
+  "systems": {
+    "ultimate-automation-factory-system": {
+      "name": "ultimate-automation-factory-system",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found"
+      ]
+    },
+    "intelligent-automation-orchestrator": {
+      "name": "intelligent-automation-orchestrator",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found"
+      ]
+    },
+    "continuous-automation-improvement-system": {
+      "name": "continuous-automation-improvement-system",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found"
+      ]
+    },
+    "master-automation-coordinator": {
+      "name": "master-automation-coordinator",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found"
+      ]
+    },
+    "enhanced-diversification-orchestrator": {
+      "name": "enhanced-diversification-orchestrator",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found",
+        "Missing directory: diversification-data"
+      ]
+    },
+    "intelligent-agent-orchestrator": {
+      "name": "intelligent-agent-orchestrator",
+      "isRunning": false,
+      "health": "unknown",
+      "lastActivity": null,
+      "performance": 0,
+      "intelligence": 0,
+      "evolutionCount": 0,
+      "errors": [
+        "No state file found"
+      ]
+    }
+  },
+  "overallHealth": "critical",
+  "totalSystems": 6,
+  "activeSystems": 0,
+  "failedSystems": 6
+}

@@ -3,7 +3,7 @@
   "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/user-behavior-predictor-agent.js",
   "name": "fs",
   "type": "general-purpose",
-  "intelligenceLevel": 0.81,
+  "intelligenceLevel": 0.95,
   "capabilities": [
     "artificial-intelligence",
     "adaptive-learning",

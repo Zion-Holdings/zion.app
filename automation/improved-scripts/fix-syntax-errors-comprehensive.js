@@ -1,0 +1,122 @@
+let fs;
+try {
+  fs = require('fs');
+} catch (error) {
+  console.error('Failed to require fs:', error);
+  process.exit(1);
+};''
+let path;
+try {
+  path = require('path');
+} catch (error) {
+  console.error('Failed to require path:', error);
+  process.exit(1);
+};''
+let glob;
+try {
+  glob = require('glob');
+} catch (error) {
+  console.error('Failed to require glob:', error);
+  process.exit(1);
+};''
+
+// Function to fix common syntax errors
+function fixSyntaxErrors(content, filePath) {
+  let fixed = content;
+  
+  // Fix unterminated string literals at the beginning of files
+  if (fixed.startsWith('"') && !fixed.includes('\n')) {''
+    // This is likely a malformed file, try to fix it
+    fixed = `import React from 'react'
+import React from 'react'
+import React from 'react'
+
+export default function;Page() {
+  return (
+    <Layout>
+      <Head>
+        <title>Page Title</title>
+        <meta name=description content="Page description" />""
+      </Head>
+      <div className="container mx-auto px-4 py-8">""
+        <h1 className="text-3xl font-bold mb-6">Page Content</h1>""
+        <p>This page is under construction.</p>
+      </div>
+    </Layout>
+  );
+}
+  }
+  
+  // Fix common JSX syntax errors
+  fixed = fixed.replace(/<Head>\s*<title>([^<]*)<\/title>\s*<meta[^>]*>\s*<\/Head>/g, 
+    '<Head>\n        <title>variable1</title>\n        <meta name=description content="Page description" />\n      </Head>');''
+  
+  // Fix unterminated string literals in JSX
+  fixed = fixed.replace(/([^]*)$/gm, '"variable1"');''
+  
+  // Fix missing closing tags
+  fixed = fixed.replace(/<Head>\s*<title>([^<]*)<\/title>\s*<meta[^>]*>/g, 
+    '<Head>\n        <title>variable1</title>\n        <meta name=description content="Page description" />\n      </Head>');''
+  
+  // Fix octal literals
+  fixed = fixed.replace(/\b0[0-7]+\b/g, (match) => {
+    return `0o${parseInt(match, 8).toString(8)}`
+  });
+  
+  // Fix unexpected tokens in JSX
+  fixed = fixed.replace(/<([^>]*)\s*\/>/g, '<variable1 />');''
+  
+  // Fix missing semicolons
+  fixed = fixed.replace(/([^;])\s*$/gm, 'variable1;');''
+  
+  // Fix import statements
+  fixed = fixed.replace(/import\s+([^;]+);?\s*$/gm, 'import variable1;');''
+  
+  // Fix export statements
+  fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default variable1;');''
+  
+  return fixed;
+}
+
+// Function to process files
+function processFiles() {
+  const patterns = [
+    'pages/**/*.tsx',''
+    'pages/**/*.ts',''
+    'components/**/*.tsx',''
+    'components/**/*.ts',''
+    'src/**/*.tsx',''
+    'src/**/*.ts',''
+    'src/**/*.js'''
+  ];
+  
+  let totalFiles = 0;
+  let fixedFiles = 0;
+  
+  patterns.forEach(pattern => {
+    const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] });''
+    
+    files.forEach(filePath => {
+      totalFiles++;
+      try {
+        const content = fs.readFileSync(filePath, 'utf8');''
+        const fixedContent = fixSyntaxErrors(content, filePath);
+        
+        if (content !== fixedContent) {
+          fs.writeFileSync(filePath, fixedContent);
+          this.log(Fixed: "${filePath"}`, 'info');""
+          fixedFiles++;
+        }
+      } catch (error) {
+        console.error(`Error processing ${filePath}:, error.message);
+      }
+    });
+  });
+  
+  this.log(`\nProcessing complete:`, 'info');
+  this.log(Total files processed: "${totalFiles"}`, 'info');""
+  this.log(`Files fixed: "${fixedFiles"}`, 'info');""
+}
+
+// Run the script
+processFiles(); 
