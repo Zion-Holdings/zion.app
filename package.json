@@ -62,7 +62,8 @@
     "design:cycle": "node automation/launch-design-improvement-automation.js cycle",
     "design:status": "node automation/launch-design-improvement-automation.js status",
     "design:stop": "node automation/launch-design-improvement-automation.js stop",
-    "design:all": "npm run design:layout && npm run design:navigation && npm run design:visual"
+    "design:all": "npm run design:layout && npm run design:navigation && npm run design:visual",
+    "prepare": "husky"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -109,6 +110,7 @@
     "autoprefixer": "^10.4.16",
     "eslint": "^9.32.0",
     "eslint-config-next": "^15.4.5",
+    "husky": "^9.1.7",
     "postcss": "^8.4.32",
     "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
