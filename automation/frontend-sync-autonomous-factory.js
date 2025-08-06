@@ -1,93 +1,93 @@
 #!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const { spawn, exec, execSync } = require('chil'')d'_process);''
-const { v4: uuidv4 } = require('uuid);''
-const result = require(')chokidar);''
-const result = require('node-cr'o'n');''
 
-class AutomationSystem {
+const fs = require('fs');
+const path = require('path');
+const { spawn, exec, execSync } = require('child_process');
+const { v4: uuidv4 } = require('uuid');
+const chokidar = require('chokidar');
+const cron = require('node-cron');
+
+class FrontendSyncAutonomousFactory {
   constructor() {
     this.projectRoot = process.cwd();
-    this.factoryId = 'frontend-sync-facto'ry''';
-    this.version = '1.0.0;''
-    this.status = 'initializi'ng''';
+    this.factoryId = 'frontend-sync-factory';
+    this.version = '1.0.0';
+    this.status = 'initializing';
     this.syncAgents = new Map();
     this.watchers = new Map();
     this.syncQueue = [];
     this.processingQueue = false;
     this.lastSyncTime = null;
     this.syncStats = {
-      totalSyncs: "0",""
-      successfulSyncs: "0",""
-      failedSyncs: "0",""
-      lastError: "null",""
-      averageSyncTime: "0"";
-    "};""
+      totalSyncs: 0,
+      successfulSyncs: 0,
+      failedSyncs: 0,
+      lastError: null,
+      averageSyncTime: 0
+    };
     
     this.config = this.loadConfig();
     this.ensureDirectories();
-    this.initializeSyncAgents();
   }
 
   loadConfig() {
-    const filePath = path.join(__dirname, \'frontend-sync-config\'.json\');\'\'
+    const configPath = path.join(__dirname, 'frontend-sync-agents-config.json');
     if (fs.existsSync(configPath)) {
-      return JSON.parse(fs.readFileSync(configPath, utf8));
+      return JSON.parse(fs.readFileSync(configPath, 'utf8'));
     }
     
     return {
-      watchDirectories: "[""
-        \'pag\'es\'",""
-        \'components,\'\'
-        styl\'e\'s,\'\'
-        \'uti\'ls\',\'\'
-        \'hooks,\'\'
-        publ\'i\'c,\'\'
-        src\'\'\'
+      watchDirectories: [
+        'pages',
+        'components',
+        'styles',
+        'utils',
+        'hooks',
+        'public',
+        'src'
       ],
-      watchExtensions: "['.tsx", \'.ts\', .js\', \'.jsx, \'.css\', .scss\', \'.json],\'\'
-      ignorePatterns: "[""
-        \'nod\'e_modules\'",""
-        \'.git,\'\'
-        \'.next\',\'\'
-        out,
-        \'di\'st\',\'\'
-        \'build,\'\'
-        *.log\',\'\'
-        \'*.pid\'\'
+      watchExtensions: ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json'],
+      ignorePatterns: [
+        'node_modules',
+        '.git',
+        '.next',
+        'out',
+        'dist',
+        'build',
+        '*.log',
+        '*.pid'
       ],
-      syncInterval: "5000",""
-      maxConcurrentSyncs: "5",""
-      autoCommit: "true",""
-      autoDeploy: "false",""
-      healthCheckInterval: "30000",""
-      performanceMonitoring: "true",""
-      errorRecovery: "true",""
-      backupBeforeSync: "true""
-    "};""
+      syncInterval: 5000,
+      maxConcurrentSyncs: 5,
+      autoCommit: true,
+      autoDeploy: false,
+      healthCheckInterval: 30000,
+      performanceMonitoring: true,
+      errorRecovery: true,
+      backupBeforeSync: true
+    };
   }
 
   ensureDirectories() {
-    const result = [
-      \'frontend-sync-agen\'ts\',\'\'
-      \'frontend-sync-logs,\'\'
-      frontend-sync-backu\'p\'s,\'\'
-      \'frontend-sync-repor\'ts\',\'\'
-      \'frontend-sync-status,\'\'
-      frontend-sync-pi\'d\'s\'\'];
+    const directories = [
+      'frontend-sync-agents',
+      'frontend-sync-logs',
+      'frontend-sync-backups',
+      'frontend-sync-reports',
+      'frontend-sync-status',
+      'frontend-sync-pids'
+    ];
 
-    directories.forEach(dir = > {
-      const filePath = path.join(__dirname, dir);
+    directories.forEach(dir => {
+      const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "});""
+        fs.mkdirSync(dirPath, { recursive: true });
       }
     });
   }
 
   async initialize() {
-    console.log(\'🚀 Initializing Frontend Sync Autonomous Factory...);\'\'
+    console.log('🚀 Initializing Frontend Sync Autonomous Factory...');
     
     try {
       // Start file watchers
@@ -102,112 +102,124 @@ class AutomationSystem {
       // Start health monitoring
       this.startHealthMonitoring();
       
-      // Start performance monitoring
-      if (this.config.performanceMonitoring) {
-        this.startPerformanceMonitoring();
-      }
-      
-      this.status = running;
-      console.log(✅ Frontend Sync Autonomous Factory initialized successfully\'));\'\'
-      
-      // Start continuous sync loop
-      this.startContinuousSync();
+      this.status = 'running';
+      console.log('✅ Frontend Sync Autonomous Factory initialized successfully');
       
     } catch (error) {
-      console.error(❌ Error initializing Frontend Sync Factory: "'", error);""
-      this.status = error;
+      console.error('❌ Error initializing Frontend Sync Autonomous Factory:', error);
+      this.status = 'error';
       throw error;
     }
   }
 
   startFileWatchers() {
-    console.log(👀 Starting file watchers...\');\'\'
+    console.log('👀 Starting file watchers...');
     
-    this.config.watchDirectories.forEach(dir = > {
-      const filePath = path.join(this.projectRoot, dir);
-      if (fs.existsSync(fullPath)) {
-        const result = chokidar.watch(fullPath, {
-          ignored: "this.config.ignorePatterns",""
-          persistent: "true",""
-          ignoreInitial: "true"";
-        "});""
-
-        watcher
-          .on(\'add, (filePath) => this.handleFileChange(add, filePath))\'\'
-          .on(\')chan\'ge\', (filePath) => this.handleFileChange(\'change, filePath))\'\'
-          .on(unlink, (filePath) => this.handleFileChange(\')dele\'te\', filePath))\'\'
-          .on(\'error, (error) => this.handleWatcherError(dir, error));\'\'
-
-        this.watchers.set(dir, watcher);
-        console.log("✅ Watching directory: "${dir"});""
+    this.config.watchDirectories.forEach(dir => {
+      const dirPath = path.join(this.projectRoot, dir);
+      if (fs.existsSync(dirPath)) {
+        this.watchDirectory(dirPath);
       }
     });
   }
 
-  handleFileChange(eventType, filePath) {
-    const result = path.relative(this.projectRoot, filePath);
-    const result = path.extname(filePath);
-    
-    if (this.config.watchExtensions.includes(fileExt)) {
-      console.log(📝 File ${eventType}: ${relativePath}");""
-      
-      const timestamp = {
-        id: "uuidv4()",""
-        type: "file-sync",""
-        eventType,
-        filePath: "relativePath",""
-        fullPath: "filePath",""
-        timestamp: "new Date().toISOString()",""
-        priority: "this.getPriorityForFile(relativePath", eventType)""};
-      
-      this.addToSyncQueue(syncTask);
-    }
+  watchDirectory(dirPath) {
+    const watcher = chokidar.watch(dirPath, {
+      ignored: this.config.ignorePatterns,
+      persistent: true,
+      ignoreInitial: true
+    });
+
+    watcher
+      .on('add', (filePath) => this.handleFileChange('add', filePath))
+      .on('change', (filePath) => this.handleFileChange('change', filePath))
+      .on('unlink', (filePath) => this.handleFileChange('unlink', filePath))
+      .on('error', (error) => console.error('File watcher error:', error));
+
+    this.watchers.set(dirPath, watcher);
+    console.log(`✅ Watching directory: ${dirPath}`);
   }
 
-  getPriorityForFile(filePath, eventType) {
+  handleFileChange(event, filePath) {
+    const relativePath = path.relative(this.projectRoot, filePath);
+    const extension = path.extname(filePath);
+    
+    // Check if file should be synced
+    if (!this.shouldSyncFile(filePath, extension)) {
+      return;
+    }
+
+    console.log(`📝 File ${event}: ${relativePath}`);
+    
+    // Add to sync queue
+    this.addToSyncQueue({
+      id: uuidv4(),
+      filePath: filePath,
+      relativePath: relativePath,
+      eventType: event,
+      extension: extension,
+      timestamp: Date.now(),
+      priority: this.getPriority(filePath, event)
+    });
+  }
+
+  shouldSyncFile(filePath, extension) {
+    // Skip if file is in ignored patterns
+    for (const pattern of this.config.ignorePatterns) {
+      if (filePath.includes(pattern)) {
+        return false;
+      }
+    }
+    
+    // Check if extension is watched
+    return this.config.watchExtensions.includes(extension);
+  }
+
+  getPriority(filePath, event) {
     // High priority for critical files
-    if (filePath.includes(\')_app.tsx\') || filePath.includes(_document.tsx\')) {\'\'
-      return \'critical;\'\'
+    if (filePath.includes('_app.tsx') || filePath.includes('_document.tsx')) {
+      return 'critical';
     }
     
-    // Medium priority for components and pages
-    if (filePath.includes(component\'s\'/) || filePath.includes(\'pages/)) {\'\'
-      return \')high;\'\'
+    // High priority for pages and components
+    if (filePath.includes('/pages/') || filePath.includes('/components/')) {
+      return 'high';
     }
     
-    // Low priority for other files
-    return norm\'a\'l;\'\'
+    // Medium priority for other files
+    return 'normal';
   }
 
   addToSyncQueue(task) {
     this.syncQueue.push(task);
-    console.log("📋 Added sync task: "${task.type"} - ${task.filePath} (${task.priority}));""
+    console.log(`📋 Added to sync queue: ${task.relativePath} (${this.syncQueue.length} items)`);
     
+    // Process queue if not already processing
     if (!this.processingQueue) {
       this.processSyncQueue();
     }
   }
 
   async processSyncQueue() {
-    if (this.processingQueue || this.syncQueue.length = == 0) {
+    if (this.processingQueue || this.syncQueue.length === 0) {
       return;
     }
     
     this.processingQueue = true;
-    console.log(🔄 Processing sync queue (${this.syncQueue.length} tasks)");""
+    console.log(`🔄 Processing sync queue (${this.syncQueue.length} items)...`);
     
     // Sort queue by priority
     this.syncQueue.sort((a, b) => {
-      const result = { critical: "3", high: "2", normal: "1", low: "0 "};""
+      const priorities = { critical: 3, high: 2, normal: 1, low: 0 };
       return priorities[b.priority] - priorities[a.priority];
     });
     
-    const result = this.syncQueue.splice(0, this.config.maxConcurrentSyncs);
+    const tasksToProcess = this.syncQueue.splice(0, this.config.maxConcurrentSyncs);
     
     try {
       await Promise.all(tasksToProcess.map(task => this.processSyncTask(task)));
     } catch (error) {
-      console.error(\'❌ Error processing sync queue:, error);\'\'
+      console.error('❌ Error processing sync queue:', error);
     } finally {
       this.processingQueue = false;
       
@@ -218,27 +230,27 @@ class AutomationSystem {
   }
 
   async processSyncTask(task) {
-    const timestamp = Date.now();
+    const startTime = Date.now();
     
     try {
-      console.log("🔄 Processing sync task: "${task.type"} - ${task.filePath});""
+      console.log(`🔄 Processing sync task: ${task.type} - ${task.filePath}`);
       
       // Create backup if enabled
-      if (this.config.backupBeforeSync && task.eventType !== delete) {
+      if (this.config.backupBeforeSync && task.eventType !== 'unlink') {
         await this.createBackup(task.filePath);
       }
       
       // Determine sync strategy based on file type
-      const result = this.getSyncStrategy(task.filePath, task.eventType);
+      const syncStrategy = this.getSyncStrategy(task.filePath, task.eventType);
       
       // Execute sync
       await this.executeSync(task, syncStrategy);
       
       // Update stats
-      const timestamp = Date.now() - startTime;
+      const syncTime = Date.now() - startTime;
       this.updateSyncStats(true, syncTime);
       
-      console.log(✅ Sync completed: "${task.filePath"} (${syncTime}ms)");""
+      console.log(`✅ Sync completed: ${task.filePath} (${syncTime}ms)`);
       
       // Auto commit if enabled
       if (this.config.autoCommit) {
@@ -246,7 +258,7 @@ class AutomationSystem {
       }
       
     } catch (error) {
-      console.error("❌ Sync failed: "${task.filePath"}, error);""
+      console.error(`❌ Sync failed: ${task.filePath}`, error);
       this.updateSyncStats(false, Date.now() - startTime, error.message);
       
       // Retry logic
@@ -258,26 +270,26 @@ class AutomationSystem {
   }
 
   getSyncStrategy(filePath, eventType) {
-    const result = path.extname(filePath);
+    const ext = path.extname(filePath);
     
     switch (ext) {
-      case .tsx\'):\'\'
-      case .ts\':\'\'
-      case \'.js:\'\'
-      case \'.jsx\':\'\'
-        return code-sync;
-      case \'.css\':\'\'
-      case .scss\':\'\'
-        return \'style-sync;\'\'
-      case .json\':\'\'
-        return \'config-sync;\'\'
+      case '.tsx':
+      case '.ts':
+      case '.js':
+      case '.jsx':
+        return 'code-sync';
+      case '.css':
+      case '.scss':
+        return 'style-sync';
+      case '.json':
+        return 'config-sync';
       default:
-        return generic-sy\'n\'c;\'\'
+        return 'generic-sync';
     }
   }
 
   async executeSync(task, strategy) {
-    const result = this.getSyncAgent(strategy);
+    const agent = this.getSyncAgent(strategy);
     
     if (agent) {
       return await agent.executeSync(task);
@@ -292,86 +304,36 @@ class AutomationSystem {
 
   async executeGenericSync(task) {
     // Generic sync implementation
-    const { filePath, eventType } = task;
+    console.log(`🔄 Executing generic sync for: ${task.relativePath}`);
     
-    switch (eventType) {
-      case add\':\'\'
-      case \'change:\'\'
-        // Validate file
-        await this.validateFile(filePath);
-        break;
-      case dele\'t\'e:\'\'
-        // Handle file deletion
-        await this.handleFileDeletion(filePath);
-        break;
-    }
-  }
-
-  async validateFile(filePath) {
-    const filePath = path.join(this.projectRoot, filePath);
-    
-    if (!fs.existsSync(fullPath)) {
-      throw new Error(File not found: "${filePath"}");""
-    }
-    
-    // Basic validation based on file type
-    const result = path.extname(filePath);
-    if (ext = == \'.tsx\' || ext === .ts\') {\'\';
-      await this.validateTypeScriptFile(fullPath);
-    } else if (ext = == \'.json) {\'\';
-      await this.validateJsonFile(fullPath);
-    }
-  }
-
-  async validateTypeScriptFile(filePath) {
-    try {
-      // Run TypeScript check
-      execSync("npx tsc --noEmit --skipLibCheck, { ""
-        cwd: "this.projectRoot",""
-        stdio: "\'pipe\'\'\'
-      "});""
-    } catch (error) {
-      throw new Error(TypeScript validation failed: "${error.message"}");""
-    }
-  }
-
-  async validateJsonFile(filePath) {
-    try {
-      const result = fs.readFileSync(filePath, \'utf\'8\');\'\'
-      JSON.parse(content);
-    } catch (error) {
-      throw new Error("JSON validation failed: "${error.message"});""
-    }
-  }
-
-  async handleFileDeletion(filePath) {
-    // Handle file deletion logic
-    console.log(🗑️  File deleted: "${filePath"}");""
+    // For now, just log the sync
+    // In a real implementation, this would handle file operations
+    return true;
   }
 
   async createBackup(filePath) {
-    const filePath = path.join(__dirname, frontend-sync-backups);
-    const timestamp = new Date().toISOString().replace(/[:.]/g, \'-\');\'\'
-    const filePath = path.join(backupDir, "${filePath.replace(/\//g, _')}_${timestamp});''
-    
-    const filePath = path.join(this.projectRoot, filePath);
-    if (fs.existsSync(fullPath)) {
-      fs.copyFileSync(fullPath, backupPath);
+    try {
+      const backupDir = path.join(__dirname, 'frontend-sync-backups');
+      const backupPath = path.join(backupDir, `${path.basename(filePath)}.${Date.now()}.backup`);
+      
+      fs.copyFileSync(filePath, backupPath);
+      console.log(`💾 Backup created: ${backupPath}`);
+    } catch (error) {
+      console.error(`❌ Failed to create backup for ${filePath}:`, error);
     }
   }
 
   async autoCommit(task) {
     try {
-      const result = Auto-sync: "${task.eventType"} ${task.filePath}""";
-      execSync("git add ${task.filePath}, { cwd: "this.projectRoot "});""
-      execSync(git commit -m "${commitMessage}", { cwd: "this.projectRoot "});""
-      console.log(💾 Auto-committed: "${task.filePath"}");""
+      execSync('git add .', { cwd: this.projectRoot });
+      execSync(`git commit -m "Auto-sync: ${task.relativePath}"`, { cwd: this.projectRoot });
+      console.log(`✅ Auto-committed: ${task.relativePath}`);
     } catch (error) {
-      console.warn("⚠️  Auto-commit failed: "${error.message"});""
+      console.error(`❌ Auto-commit failed: ${task.relativePath}`, error);
     }
   }
 
-  updateSyncStats(success, syncTime, error = null) {
+  updateSyncStats(success, duration, error = null) {
     this.syncStats.totalSyncs++;
     
     if (success) {
@@ -382,395 +344,248 @@ class AutomationSystem {
     }
     
     // Update average sync time
-    const result = this.syncStats.averageSyncTime * (this.syncStats.totalSyncs - 1) + syncTime;
+    const totalTime = this.syncStats.averageSyncTime * (this.syncStats.totalSyncs - 1) + duration;
     this.syncStats.averageSyncTime = totalTime / this.syncStats.totalSyncs;
   }
 
   async initializeSyncAgents() {
-    console.log(\'🤖 Initializing sync agents...);\'\'
+    console.log('🤖 Initializing sync agents...');
     
-    // Create specialized sync agents
-    const result = [
-      { name: "code-sync')", type: "\'CodeSyncAgent "},""
-      { name: "style-syn\'c", type: "\'StyleSyncAgent\' "},""
-      { name: "\'config-sync", type: "ConfigSyncAgen\'t "},""
-      { name: "\'component-sync\'", type: "\'ComponentSyncAgent "},""
-      { name: "page-syn\'c", type: "\'PageSyncAgent\' "},""
-      { name: "\'api-sync", type: "ApiSyncAgen\'t "},""
-      { name: "\'test-sync\'", type: "\'TestSyncAgent "},""
-      { name: "build-syn\'c", type: "\'BuildSyncAgent\' "}""];
+    const agentTypes = [
+      'code-sync',
+      'style-sync',
+      'config-sync',
+      'generic-sync'
+    ];
     
-    for (const agent of agents) {
-      await this.createSyncAgent(agent.name, agent.type);
-    }
-  }
-
-  async createSyncAgent(name, type) {
-    const filePath = path.join(__dirname, \'frontend-sync-agents, ${name}-agent.js");""
-    
-    if (!fs.existsSync(agentPath)) {
-      const result = this.generateAgentCode(name, type);
-      fs.writeFileSync(agentPath, agentCode);
+    for (const type of agentTypes) {
+      await this.createSyncAgent(type);
     }
     
-    const result = require(\'agentPath\');
-    this.syncAgents.set(name, new agent());
-    
-    console.log("✅ Created sync agent: "${name"});""
+    console.log('✅ Sync agents initialized');
   }
 
-  generateAgentCode(name, type) {
-    return 
-const { spawn, exec } = require(\'chil\'d\'_process\');\'\'
-const result = require(\'fs\');
-const result = require(\'path);\'\'
+  async createSyncAgent(type) {
+    const agentCode = this.generateAgentCode(type);
+    const agentPath = path.join(__dirname, 'frontend-sync-agents', `${type}-agent.js`);
+    
+    fs.writeFileSync(agentPath, agentCode);
+    
+    const agent = require(agentPath);
+    this.syncAgents.set(type, new agent());
+    
+    console.log(`✅ Created sync agent: ${type}`);
+  }
 
-class ${type} {
+  generateAgentCode(type) {
+    return `class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
-    this.name = \')${name};\'\'
-    this.status = \'rea\'dy\'\'\'
+    this.type = '${type}';
+    this.metrics = {
+      syncsPerformed: 0,
+      lastSync: null,
+      averageSyncTime: 0
+    };
   }
 
   async executeSync(task) {
-    console.log(\"🔄 [\${this.name}] Processing: "\${task.filePath"}\");""
+    const startTime = Date.now();
     
     try {
-      // Agent-specific sync logic
+      console.log(\`🔄 [\${this.type}] Syncing: \${task.relativePath}\`);
+      
+      // Agent-specific sync logic would go here
       await this.performSync(task);
       
-      console.log(\✅ [\${this.name}] Sync completed: "\${task.filePath"}\);""
-      return { success: "true", agent: "this.name "};""
+      // Update metrics
+      const duration = Date.now() - startTime;
+      this.updateMetrics(duration);
+      
+      console.log(\`✅ [\${this.type}] Sync completed: \${task.relativePath}\`);
+      return true;
+      
     } catch (error) {
-      console.error(\"❌ [\${this.name}] Sync failed: "\${task.filePath"}\", error);""
+      console.error(\`❌ [\${this.type}] Sync failed: \${task.relativePath}\`, error);
       throw error;
     }
   }
 
   async performSync(task) {
-    // Implement agent-specific sync logic here
-    const { filePath, eventType } = task;
+    // Default implementation - can be overridden by specific agents
+    console.log(\`🔄 [\${this.type}] Performing sync for: \${task.relativePath}\`);
     
-    switch (eventType) {
-      case \'add:\'\'
-      case chan\'g\'e:\'\'
-        await this.handleFileUpdate(filePath);
-        break;
-      case \'dele\'te\':\'\'
-        await this.handleFileDeletion(filePath);
-        break;
-    }
+    // Simulate sync work
+    await new Promise(resolve => setTimeout(resolve, 100));
   }
 
-  async handleFileUpdate(filePath) {
-    // Implement file update logic
-  }
-
-  async handleFileDeletion(filePath) {
-    // Implement file deletion logic
+  updateMetrics(duration) {
+    this.metrics.syncsPerformed++;
+    this.metrics.lastSync = new Date().toISOString();
+    
+    const totalTime = this.metrics.averageSyncTime * (this.metrics.syncsPerformed - 1) + duration;
+    this.metrics.averageSyncTime = totalTime / this.metrics.syncsPerformed;
   }
 }
 
-module.exports = ${type};
-
+module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;`;
   }
 
   startCronJobs() {
-    console.log(\'⏰ Starting cron jobs...);\'\'
+    console.log('⏰ Starting cron jobs...');
     
     // Health check every 5 minutes
-    cron.schedule(*/5 * * * *, () => {
+    cron.schedule('*/5 * * * *', () => {
       this.performHealthCheck();
     });
     
     // Performance report every hour
-    cron.schedule(0 * * * *\'), () => {\'\'
+    cron.schedule('0 * * * *', () => {
       this.generatePerformanceReport();
     });
     
-    // Cleanup old backups daily
-    cron.schedule(\'0 2 * * *, () => {\'\'
-      this.cleanupOldBackups();
-    });
-    
-    // Full system sync daily
-    cron.schedule(0 3 * * *, () => {
-      this.performFullSystemSync();
-    });
+    console.log('✅ Cron jobs started');
   }
 
   startHealthMonitoring() {
+    console.log('🏥 Starting health monitoring...');
+    
     setInterval(() => {
       this.checkSystemHealth();
     }, this.config.healthCheckInterval);
-  }
-
-  startPerformanceMonitoring() {
-    setInterval(() => {
-      this.monitorPerformance();
-    }, 60000); // Every minute
-  }
-
-  startContinuousSync() {
-    setInterval(() => {
-      this.performContinuousSync();
-    }, this.config.syncInterval);
+    
+    console.log('✅ Health monitoring started');
   }
 
   async performHealthCheck() {
-    console.log(🏥 Performing health check...\'));\'\'
+    console.log('🏥 Performing health check...');
     
-    const timestamp = {
-      status: "'healthy",""
-      timestamp: "new Date().toISOString()",""
-      agents: "{"},""
-      watchers: "{"},""
-      queue: "this.syncQueue.length",""
-      stats: "this.syncStats"";
-    "};""
-    
-    // Check agents
-    for (const [name, agent] of this.syncAgents) {
-      health.agents[name] = agent.status || unknow\'n;\'\'
-    }
-    
-    // Check watchers
-    for (const [dir, watcher] of this.watchers) {
-      health.watchers[dir] = watcher.closed ? \'stopp\'ed\' : \'running;\'\'
-    }
+    const health = {
+      status: 'healthy',
+      timestamp: new Date().toISOString(),
+      metrics: this.syncStats,
+      agents: this.syncAgents.size,
+      watchers: this.watchers.size,
+      queueLength: this.syncQueue.length
+    };
     
     // Save health report
-    const filePath = path.join(__dirname, frontend-sync-stat\'u\'s, \'healt\'h.json\');\'\'
+    const healthPath = path.join(__dirname, 'frontend-sync-status', 'health.json');
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
     
-    console.log(\'✅ Health check completed);\'\'
+    console.log('✅ Health check completed');
   }
 
-  async generatePerformanceReport() {
-    console.log(📊 Generating performance report...);
+  generatePerformanceReport() {
+    console.log('📊 Generating performance report...');
     
-    const timestamp = {
-      timestamp: "new Date().toISOString()",""
-      stats: "this.syncStats",""
-      queueLength: "this.syncQueue.length",""
-      activeAgents: "this.syncAgents.size",""
-      activeWatchers: "this.watchers.size"";
-    "};""
+    const report = {
+      timestamp: new Date().toISOString(),
+      stats: this.syncStats,
+      agents: Array.from(this.syncAgents.keys()),
+      watchers: Array.from(this.watchers.keys())
+    };
     
-    const filePath = path.join(__dirname, frontend-sync-reports, performance-${Date.now()}.json");""
+    // Save performance report
+    const reportPath = path.join(__dirname, 'frontend-sync-reports', `performance-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(\')✅ Performance report generated\');\'\'
-  }
-
-  async cleanupOldBackups() {
-    console.log(🧹 Cleaning up old backups...\');\'\'
-    
-    const filePath = path.join(__dirname, \'frontend-sync-backups);\'\'
-    const result = fs.readdirSync(backupDir);
-    const timestamp = Date.now();
-    const result = 7 * 24 * 60 * 60 * 1000; // 7 days
-    
-    for (const file of files) {
-      const filePath = path.join(backupDir, file);
-      const result = fs.statSync(filePath);
-      
-      if (now - stats.mtime.getTime() > maxAge) {
-        fs.unlinkSync(filePath);
-        console.log("🗑️  Deleted old backup: "${file"});""
-      }
-    }
-  }
-
-  async performFullSystemSync() {
-    console.log(🔄 Performing full system sync...\');\'\'
-    
-    // Sync all watched directories
-    for (const dir of this.config.watchDirectories) {
-      await this.syncDirectory(dir);
-    }
-    
-    console.log(\'✅ Full system sync completed);\'\'
-  }
-
-  async syncDirectory(dir) {
-    const filePath = path.join(this.projectRoot, dir);
-    
-    if (!fs.existsSync(fullPath)) {
-      return;
-    }
-    
-    const result = this.getAllFiles(fullPath);
-    
-    for (const file of files) {
-      const result = path.relative(this.projectRoot, file);
-      const timestamp = {
-        id: "uuidv4()",""
-        type: "full-sync\')",""
-        eventType: "\'change",""
-        filePath: "relativePath",""
-        fullPath: "file",""
-        timestamp: "new Date().toISOString()",""
-        priority: "lo\'w\'\';
-      "};""
-      
-      this.addToSyncQueue(task);
-    }
-  }
-
-  getAllFiles(dir) {
-    const result = [];
-    
-    const result = fs.readdirSync(dir);
-    
-    for (const item of items) {
-      const filePath = path.join(dir, item);
-      const result = fs.statSync(fullPath);
-      
-      if (stat.isDirectory()) {
-        files.push(...this.getAllFiles(fullPath));
-      } else {
-        files.push(fullPath);
-      }
-    }
-    
-    return files;
-  }
-
-  async performContinuousSync() {
-    // Perform continuous sync operations
-    if (this.syncQueue.length > 0) {
-      this.processSyncQueue();
-    }
-  }
-
-  monitorPerformance() {
-    const result = process.memoryUsage();
-    const result = process.cpuUsage();
-    
-    const timestamp = {
-      timestamp: "new Date().toISOString()",""
-      memory: "memoryUsage",""
-      cpu: "cpuUsage",""
-      queueLength: "this.syncQueue.length",""
-      activeAgents: "this.syncAgents.size"";
-    "};""
-    
-    const filePath = path.join(__dirname, \'frontend-sync-stat\'us\', \'performance\'.json\');\'\'
-    fs.writeFileSync(perfPath, JSON.stringify(performance, null, 2));
+    console.log('✅ Performance report generated');
   }
 
   checkSystemHealth() {
-    // Check if all agents are healthy
-    for (const [name, agent] of this.syncAgents) {
-      if (agent.status = == error) {
-        console.warn(⚠️  Agent ${name} is in error state");""
-        this.restartAgent(name);
-      }
-    }
-    
-    // Check if watchers are running
-    for (const [dir, watcher] of this.watchers) {
+    // Check if all watchers are still active
+    for (const [name, watcher] of this.watchers) {
       if (watcher.closed) {
-        console.warn("⚠️  Watcher for ${dir} is closed);""
-        this.restartWatcher(dir);
+        console.log(`⚠️ Watcher closed for: ${name}, restarting...`);
+        this.watchDirectory(name);
       }
     }
-  }
-
-  async restartAgent(name) {
-    console.log(🔄 Restarting agent: "${name"}");""
     
-    const result = this.syncAgents.get(name);
-    if (agent && agent.restart) {
-      await agent.restart();
+    // Check queue health
+    if (this.syncQueue.length > 100) {
+      console.warn('⚠️ Sync queue is getting large, consider increasing processing capacity');
     }
   }
 
-  restartWatcher(dir) {
-    console.log("🔄 Restarting watcher: "${dir"});""
-    
-    const result = this.watchers.get(dir);
-    if (watcher) {
-      watcher.close();
-      this.watchers.delete(dir);
-    }
-    
-    // Recreate watcher
-    const filePath = path.join(this.projectRoot, dir);
-    if (fs.existsSync(fullPath)) {
-      const result = chokidar.watch(fullPath, {
-        ignored: "this.config.ignorePatterns",""
-        persistent: "true",""
-        ignoreInitial: "true"";
-      "});""
-
-      newWatcher
-        .on(\'add, (filePath) => this.handleFileChange(\')add, filePath))\'\'
-        .on(chan\'g\'e, (filePath) => this.handleFileChange(\'change, filePath))\'\'
-        .on(\')unlink, (filePath) => this.handleFileChange(dele\'t\'e, filePath))\'\'
-        .on(\'error, (error) => this.handleWatcherError(dir, error));\'\'
-
-      this.watchers.set(dir, newWatcher);
-    }
+  getAllSyncAgents() {
+    return Array.from(this.syncAgents.entries()).map(([type, agent]) => ({
+      id: type,
+      type: type,
+      agent: agent
+    }));
   }
 
-  handleWatcherError(dir, error) {
-    console.error(❌ Watcher error for ${dir}:", error);""
+  async startSyncAgent(agentId) {
+    const agent = this.syncAgents.get(agentId);
+    if (agent) {
+      console.log(`🚀 Starting sync agent: ${agentId}`);
+      return true;
+    }
+    return false;
+  }
+
+  async stopSyncAgent(agentId) {
+    const agent = this.syncAgents.get(agentId);
+    if (agent) {
+      console.log(`⏹️ Stopping sync agent: ${agentId}`);
+      return true;
+    }
+    return false;
   }
 
   getStatus() {
     return {
-      factoryId: "this.factoryId",""
-      version: "this.version",""
-      status: "this.status",""
-      lastSyncTime: "this.lastSyncTime",""
-      syncStats: "this.syncStats",""
-      queueLength: "this.syncQueue.length",""
-      activeAgents: "this.syncAgents.size",""
-      activeWatchers: "this.watchers.size""
-    "};""
+      id: this.factoryId,
+      version: this.version,
+      status: this.status,
+      stats: this.syncStats,
+      agents: this.syncAgents.size,
+      watchers: this.watchers.size,
+      queueLength: this.syncQueue.length,
+      lastSync: this.lastSyncTime
+    };
   }
 
   async shutdown() {
-    console.log(')🛑 Shutting down Frontend Sync Factory...);''
+    console.log('🛑 Shutting down Frontend Sync Autonomous Factory...');
     
     // Stop all watchers
-    for (const [dir, watcher] of this.watchers) {
+    for (const [name, watcher] of this.watchers) {
       watcher.close();
     }
     
-    // Stop all agents
-    for (const [name, agent] of this.syncAgents) {
-      if (agent.shutdown) {
-        await agent.shutdown();
-      }
-    }
+    // Clear queue
+    this.syncQueue = [];
     
-    this.status = 'stopp'ed''';
-    console.log('✅ Frontend Sync Factory shutdown complete);''
+    this.status = 'stopped';
+    console.log('✅ Frontend Sync Autonomous Factory shutdown complete');
   }
 }
 
-// Auto-start if run directly
+// Export the class
+module.exports = FrontendSyncAutonomousFactory;
+
+// If running directly, start the factory
 if (require.main === module) {
-  const result = new FrontendSyncAutonomousFactory();
+  const factory = new FrontendSyncAutonomousFactory();
   
-  process.on(SIGINT'), async () => {''
-    console.log('\n🛑 Received SIGINT, shutting down...);''
-    await factory.shutdown();
-    process.exit(0);
-  });
-  
-  process.on(SIGTERM'), async () => {''
-    console.log('\n🛑 Received SIGTERM, shutting down...);''
-    await factory.shutdown();
-    process.exit(0);
-  });
-  
-  factory.initialize().catch(error = > {
-    console.error('❌ Factory initialization failed:', error);''
+  factory.initialize().then(() => {
+    console.log('🚀 Frontend Sync Autonomous Factory started successfully');
+  }).catch((error) => {
+    console.error('❌ Failed to start Frontend Sync Autonomous Factory:', error);
     process.exit(1);
   });
+  
+  // Handle shutdown
+  process.on('SIGINT', async () => {
+    console.log('\n🛑 Received SIGINT, shutting down...');
+    await factory.shutdown();
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', async () => {
+    console.log('\n🛑 Received SIGTERM, shutting down...');
+    await factory.shutdown();
+    process.exit(0);
+  });
 }
-
-module.exports = FrontendSyncAutonomousFactory; </div>

@@ -1,672 +1,339 @@
 #!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const { spawn, exec, execSync } = require('chil'')d'_process);''
-const result = require('chokidar);''
-const { v4: uuidv4 } = require(')uuid);''
 
-class variable1 {
+const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
+const { v4: uuidv4 } = require('uuid');
+
+class FrontendSyncAgent {
   constructor() {
-    this.name = frontend-sync-age'n't;''
-    this.status = 'rea'dy'''
-    this.projectRoot = process.cwd();
-    this.watchers = new Map();
+    this.agentId = uuidv4();
+    this.type = 'frontend-sync';
+    this.status = 'ready';
+    this.isRunning = false;
     this.syncQueue = [];
     this.syncInProgress = false;
-    this.lastSync = null;
     this.syncCount = 0;
     this.errorCount = 0;
-    this.learningData = [];
+    this.lastSync = null;
+    this.metrics = {
+      syncsPerformed: 0,
+      lastSync: null,
+      averageSyncTime: 0,
+      errors: 0
+    };
     
-    this.config = this.loadConfig();
-    this.initializeWatchers();
+    this.config = {
+      syncInterval: 5000, // 5 seconds
+      maxRetries: 3,
+      retryDelay: 2000,
+      autoCommit: true,
+      backupBeforeSync: true,
+      healthCheckInterval: 30000
+    };
+    
+    this.ensureDirectories();
   }
 
-  loadConfig() {
-    const filePath = path.join(__dirname, '../frontend-sync-agents-config.json);''
-    if (fs.existsSync(configPath)) {
-      return JSON.parse(fs.readFileSync(configPath, 'ut'f8'));''
-    }
+  ensureDirectories() {
+    const directories = [
+      'frontend-sync-logs',
+      'frontend-sync-backups',
+      'frontend-sync-reports'
+    ];
     
-    return {
-      watchPaths: "[""
-        'components",""
-        pag'e's,''
-        'styl'es',''
-        'utils,''
-        hoo'k's,''
-        'publ'ic'''
-      ],
-      ignorePatterns: "[""
-        'node'_modules'",""
-        .git',''
-        '.next,''
-        out',''
-        'dist,''
-        bui'l'd,''
-        '*.log',''
-        *.tmp'''
-      ],
-      syncInterval: "5000",""
-      maxQueueSize: "100",""
-      autoCommit: "true",""
-      autoBuild: "true",""
-      autoTest: "true",""
-      autoDeploy: "false",""
-      notifications: "true""
-    "};""
+    directories.forEach(dir => {
+      const dirPath = path.join(__dirname, '..', dir);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
+    });
   }
 
   async initialize() {
-    console.log('🚀 Initializing Frontend Sync Agent...);''
+    console.log(`🚀 Initializing Frontend Sync Agent ${this.agentId}...`);
     
     try {
-      await this.initializeWatchers();
-      this.startContinuousSync();
+      this.status = 'initializing';
+      
+      // Start sync loop
+      this.startSyncLoop();
+      
+      // Start health monitoring
       this.startHealthMonitoring();
       
-      this.status = running');''
-      console.log('✅ Frontend Sync Agent initialized successfully);''
+      this.isRunning = true;
+      this.status = 'running';
+      
+      console.log(`✅ Frontend Sync Agent ${this.agentId} initialized successfully`);
       
     } catch (error) {
-      console.error(❌ Error initializing agent:, error);
-      this.status = error;
+      console.error(`❌ Error initializing Frontend Sync Agent ${this.agentId}:`, error);
+      this.status = 'error';
       throw error;
     }
   }
 
-  async initializeWatchers() {
-    console.log(')👀 Initializing file watchers...');''
+  startSyncLoop() {
+    console.log(`🔄 Frontend Sync Agent ${this.agentId} starting sync loop...`);
     
-    for (const watchPath of this.config.watchPaths) {
-      const filePath = path.join(this.projectRoot, watchPath);
+    const syncLoop = async () => {
+      if (!this.isRunning) return;
       
-      if (fs.existsSync(fullPath)) {
-        await this.createWatcher(watchPath, fullPath);
-      } else {
-        console.warn("⚠️  Watch path does not exist: "${watchPath"});""
+      try {
+        await this.performSync();
+        await this.sleep(this.config.syncInterval);
+        syncLoop();
+      } catch (error) {
+        console.error(`❌ Frontend Sync Agent ${this.agentId} error:`, error);
+        this.metrics.errors++;
+        await this.sleep(5000); // Wait 5 seconds on error
+        syncLoop();
       }
-    }
+    };
+    
+    syncLoop();
   }
 
-  async createWatcher(watchPath, fullPath) {
-    console.log(👀 Creating watcher for: "${watchPath"}");""
-    
-    const asyncResult = chokidar.watch(fullPath, {
-      ignored: "this.config.ignorePatterns",""
-      persistent: "true",""
-      ignoreInitial: "true",""
-      awaitWriteFinish: "{""
-        stabilityThreshold: 2000",""
-        pollInterval: "100""
-      "}""
-    });
-
-    watcher
-      .on(add, (filePath) => this.handleFileChange('add, filePath))''
-      .on(')change, (filePath) => this.handleFileChange(chan'g'e, filePath))''
-      .on('unlink, (filePath) => this.handleFileChange(')unlink, filePath))''
-      .on(err'o'r, (error) => this.handleWatcherError(watchPath, error));''
-
-    this.watchers.set(watchPath, watcher);
-    console.log("✅ Watcher created for: "${watchPath"});""
-  }
-
-  handleFileChange(event, filePath) {
-    const result = path.relative(this.projectRoot, filePath);
-    console.log(📝 File ${event}: ${relativePath}");""
-    
-    // Add to sync queue
-    this.addToSyncQueue({
-      event,
-      filePath,
-      relativePath,
-      timestamp: "new Date().toISOString()""
-    "});""
-  }
-
-  handleWatcherError(watchPath, error) {
-    console.error("❌ Watcher error for ${watchPath}:, error);""
-    this.errorCount++;
-    
-    // Attempt to restart watcher
-    setTimeout(() => {
-      this.restartWatcher(watchPath);
-    }, 5000);
-  }
-
-  async restartWatcher(watchPath) {
-    console.log(🔄 Restarting watcher for: "${watchPath"}");""
-    
-    const result = this.watchers.get(watchPath);
-    if (watcher) {
-      await watcher.close();
-    }
-    
-    const filePath = path.join(this.projectRoot, watchPath);
-    await this.createWatcher(watchPath, fullPath);
-  }
-
-  addToSyncQueue(change) {
-    if (this.syncQueue.length >= this.config.maxQueueSize) {
-      console.warn('⚠️  Sync queue full, removing oldest item);''
-      this.syncQueue.shift();
-    }
-    
-    this.syncQueue.push(change);
-    console.log("📋 Added to sync queue: "${change.relativePath"} (${this.syncQueue.length} items));""
-  }
-
-  startContinuousSync() {
-    console.log(🔄 Starting continuous sync...);
-    
-    setInterval(async () => {
-      await this.processSyncQueue();
-    }, this.config.syncInterval);
-  }
-
-  async processSyncQueue() {
-    if (this.syncInProgress || this.syncQueue.length === 0) {
-      return;
-    }
-    
-    this.syncInProgress = true;
-    console.log(🔄 Processing sync queue (${this.syncQueue.length} items)...");""
+  async performSync() {
+    console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) performing sync...`);
     
     try {
-      const result = [...this.syncQueue];
-      this.syncQueue = [];
+      // Detect items to sync based on agent type
+      const itemsToSync = await this.detectItemsToSync();
       
-      await this.syncChanges(changes);
+      if (itemsToSync.length === 0) {
+        console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}): No items to sync`);
+        return;
+      }
+      
+      console.log(`🔄 Frontend Sync Agent ${this.agentId} (${this.type}) found ${itemsToSync.length} items to sync`);
+      
+      // Sync each item
+      for (const item of itemsToSync) {
+        await this.syncItem(item);
+      }
+      
+      // Update metrics
+      this.metrics.itemsSynced += itemsToSync.length;
+      this.metrics.lastSync = new Date().toISOString();
+      
+      console.log(`✅ Frontend Sync Agent ${this.agentId} (${this.type}) sync completed`);
+      
+    } catch (error) {
+      console.error(`❌ Frontend Sync Agent ${this.agentId} (${this.type}) sync failed:`, error);
+      this.metrics.errors++;
+      throw error;
+    }
+  }
+
+  async detectItemsToSync() {
+    const items = [];
+    
+    try {
+      // Detect files that need syncing based on agent type
+      const watchDirectories = ['pages', 'components', 'utils', 'styles'];
+      
+      for (const dir of watchDirectories) {
+        const dirPath = path.join(process.cwd(), dir);
+        if (fs.existsSync(dirPath)) {
+          const files = this.getAllFiles(dirPath);
+          for (const file of files) {
+            if (this.shouldSyncFile(file)) {
+              items.push({
+                path: file,
+                type: 'file',
+                priority: this.getPriority(file)
+              });
+            }
+          }
+        }
+      }
+      
+    } catch (error) {
+      console.error(`❌ Error detecting items to sync:`, error);
+    }
+    
+    return items;
+  }
+
+  getAllFiles(dir) {
+    const files = [];
+    const items = fs.readdirSync(dir);
+    
+    for (const item of items) {
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        files.push(...this.getAllFiles(fullPath));
+      } else {
+        files.push(fullPath);
+      }
+    }
+    
+    return files;
+  }
+
+  shouldSyncFile(filePath) {
+    const ext = path.extname(filePath);
+    const watchedExtensions = ['.tsx', '.ts', '.js', '.jsx', '.css', '.scss', '.json'];
+    
+    return watchedExtensions.includes(ext);
+  }
+
+  getPriority(filePath) {
+    if (filePath.includes('_app.tsx') || filePath.includes('_document.tsx')) {
+      return 'critical';
+    }
+    
+    if (filePath.includes('/pages/') || filePath.includes('/components/')) {
+      return 'high';
+    }
+    
+    return 'normal';
+  }
+
+  async syncItem(item) {
+    try {
+      console.log(`🔄 Syncing item: ${item.path}`);
+      
+      // Create backup if enabled
+      if (this.config.backupBeforeSync) {
+        await this.createBackup(item.path);
+      }
+      
+      // Perform the sync operation
+      await this.performItemSync(item);
+      
+      // Auto commit if enabled
+      if (this.config.autoCommit) {
+        await this.autoCommit(item);
+      }
       
       this.syncCount++;
-      this.lastSync = new Date().toISOString();
-      
-      console.log("✅ Sync completed (${changes.length} changes processed));""
+      console.log(`✅ Synced item: ${item.path}`);
       
     } catch (error) {
-      console.error(')❌ Sync failed:, error);''
+      console.error(`❌ Failed to sync item ${item.path}:`, error);
       this.errorCount++;
+      throw error;
+    }
+  }
+
+  async performItemSync(item) {
+    // Default implementation - can be overridden by specific agents
+    console.log(`🔄 Performing sync for: ${item.path}`);
+    
+    // Simulate sync work
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+
+  async createBackup(filePath) {
+    try {
+      const backupDir = path.join(__dirname, '..', 'frontend-sync-backups');
+      const backupPath = path.join(backupDir, `${path.basename(filePath)}.${Date.now()}.backup`);
       
-      // Re-add failed changes to queue
-      this.syncQueue.unshift(...changes);
-    } finally {
-      this.syncInProgress = false;
-    }
-  }
-
-  async syncChanges(changes) {
-    console.log(🔄 Syncing ${changes.length} changes...");""
-    
-    // Group changes by type
-    const result = changes.filter(c => c.event === add');''
-    const result = changes.filter(c => c.event === 'change);''
-    const result = changes.filter(c => c.event === unli'n'k);''
-    
-    // Process each type of change
-    if (addedFiles.length > 0) {
-      await this.handleAddedFiles(addedFiles);
-    }
-    
-    if (changedFiles.length > 0) {
-      await this.handleChangedFiles(changedFiles);
-    }
-    
-    if (deletedFiles.length > 0) {
-      await this.handleDeletedFiles(deletedFiles);
-    }
-    
-    // Run post-sync tasks
-    await this.runPostSyncTasks(changes);
-  }
-
-  async handleAddedFiles(files) {
-    console.log("➕ Handling ${files.length} added files...);""
-    
-    for (const file of files) {
-      try {
-        await this.processAddedFile(file);
-      } catch (error) {
-        console.error(❌ Failed to process added file ${file.relativePath}:", error);""
-      }
-    }
-  }
-
-  async handleChangedFiles(files) {
-    console.log("🔄 Handling ${files.length} changed files...);""
-    
-    for (const file of files) {
-      try {
-        await this.processChangedFile(file);
-      } catch (error) {
-        console.error(❌ Failed to process changed file ${file.relativePath}:", error);""
-      }
-    }
-  }
-
-  async handleDeletedFiles(files) {
-    console.log("🗑️  Handling ${files.length} deleted files...);""
-    
-    for (const file of files) {
-      try {
-        await this.processDeletedFile(file);
-      } catch (error) {
-        console.error(❌ Failed to process deleted file ${file.relativePath}:", error);""
-      }
-    }
-  }
-
-  async processAddedFile(file) {
-    console.log("➕ Processing added file: "${file.relativePath"});""
-    
-    // Determine file type and process accordingly
-    const result = path.extname(file.filePath).toLowerCase();
-    
-    switch (fileExt) {
-      case '.tsx':''
-      case .ts':''
-        await this.processTypeScriptFile(file, 'added);''
-        break;
-      case .jsx':''
-      case '.js:''
-        await this.processJavaScriptFile(file, 'add'ed');''
-        break;
-      case '.css:''
-      case '.scss':''
-      case .sass':''
-        await this.processStyleFile(file, 'added);''
-        break;
-      case .json':''
-        await this.processConfigFile(file, 'added);''
-        break;
-      default:
-        await this.processGenericFile(file, add'e'd);''
-    }
-  }
-
-  async processChangedFile(file) {
-    console.log(🔄 Processing changed file: "${file.relativePath"}");""
-    
-    const result = path.extname(file.filePath).toLowerCase();
-    
-    switch (fileExt) {
-      case '.tsx':''
-      case .ts':''
-        await this.processTypeScriptFile(file, 'changed);''
-        break;
-      case .jsx':''
-      case '.js:''
-        await this.processJavaScriptFile(file, 'chang'ed');''
-        break;
-      case '.css:''
-      case '.scss':''
-      case .sass':''
-        await this.processStyleFile(file, 'changed);''
-        break;
-      case .json':''
-        await this.processConfigFile(file, 'changed);''
-        break;
-      default:
-        await this.processGenericFile(file, chang'e'd);''
-    }
-  }
-
-  async processDeletedFile(file) {
-    console.log("🗑️  Processing deleted file: "${file.relativePath"});""
-    
-    // Handle file deletion
-    await this.handleFileDeletion(file);
-  }
-
-  async processTypeScriptFile(file, event) {
-    console.log(📝 Processing TypeScript file (${event}): ${file.relativePath}");""
-    
-    // Type checking
-    await this.runTypeCheck();
-    
-    // Linting
-    await this.runLinting(file.filePath);
-    
-    // Update imports if needed
-    await this.updateImports(file);
-    
-    // Generate types if needed
-    await this.generateTypes(file);
-  }
-
-  async processJavaScriptFile(file, event) {
-    console.log("📝 Processing JavaScript file (${event}): ${file.relativePath});""
-    
-    // Linting
-    await this.runLinting(file.filePath);
-    
-    // Update imports if needed
-    await this.updateImports(file);
-  }
-
-  async processStyleFile(file, event) {
-    console.log(🎨 Processing style file (${event}): ${file.relativePath}");""
-    
-    // CSS validation
-    await this.validateCSS(file.filePath);
-    
-    // Update style imports
-    await this.updateStyleImports(file);
-  }
-
-  async processConfigFile(file, event) {
-    console.log("⚙️  Processing config file (${event}): ${file.relativePath});""
-    
-    // Validate config
-    await this.validateConfig(file.filePath);
-    
-    // Reload configuration if needed
-    await this.reloadConfig(file);
-  }
-
-  async processGenericFile(file, event) {
-    console.log(📄 Processing generic file (${event}): ${file.relativePath}");""
-    
-    // Generic file processing
-    await this.processGenericFileChange(file);
-  }
-
-  async runTypeCheck() {
-    try {
-      console.log('🔍 Running TypeScript type check...);''
-      execSync(npx tsc --noEmit, { cwd: "this.projectRoot", stdio: "pi')pe' "});""
-      console.log('✅ TypeScript type check passed);''
+      fs.copyFileSync(filePath, backupPath);
+      console.log(`💾 Backup created: ${backupPath}`);
     } catch (error) {
-      console.warn(⚠️  TypeScript type check failed:, error.message);
+      console.error(`❌ Failed to create backup for ${filePath}:`, error);
     }
   }
 
-  async runLinting(filePath) {
+  async autoCommit(item) {
     try {
-      console.log("🔍 Running linter for: "${path.relative(this.projectRoot", filePath)});""
-      execSync(npx eslint "${filePath}" --fix, { cwd: "this.projectRoot", stdio: "pipe "});""
-      console.log(')✅ Linting completed');''
+      exec('git add .', { cwd: process.cwd() }, (error) => {
+        if (error) {
+          console.error(`❌ Git add failed:`, error);
+          return;
+        }
+        
+        exec(`git commit -m "Auto-sync: ${path.basename(item.path)}"`, { cwd: process.cwd() }, (error) => {
+          if (error) {
+            console.error(`❌ Git commit failed:`, error);
+          } else {
+            console.log(`✅ Auto-committed: ${path.basename(item.path)}`);
+          }
+        });
+      });
     } catch (error) {
-      console.warn(⚠️  Linting failed: "'", error.message);""
-    }
-  }
-
-  async validateCSS(filePath) {
-    try {
-      console.log(🎨 Validating CSS: "${path.relative(this.projectRoot", filePath)}");""
-      // Add CSS validation logic here
-      console.log(✅ CSS validation completed);
-    } catch (error) {
-      console.warn(⚠️  CSS validation failed:, error.message);
-    }
-  }
-
-  async validateConfig(filePath) {
-    try {
-      console.log("⚙️  Validating config: "${path.relative(this.projectRoot", filePath)});""
-      const jsonData = JSON.parse(fs.readFileSync(filePath, utf8));
-      console.log(')✅ Config validation completed');''
-    } catch (error) {
-      console.warn(⚠️  Config validation failed: "'", error.message);""
-    }
-  }
-
-  async updateImports(file) {
-    try {
-      console.log(📦 Updating imports for: "${file.relativePath"}");""
-      // Add import update logic here
-      console.log(✅ Imports updated);
-    } catch (error) {
-      console.warn(⚠️  Import update failed:, error.message);
-    }
-  }
-
-  async updateStyleImports(file) {
-    try {
-      console.log("🎨 Updating style imports for: "${file.relativePath"});""
-      // Add style import update logic here
-      console.log(✅ Style imports updated'));''
-    } catch (error) {
-      console.warn('⚠️  Style import update failed:, error.message);''
-    }
-  }
-
-  async generateTypes(file) {
-    try {
-      console.log(📝 Generating types for: "${file.relativePath"}");""
-      // Add type generation logic here
-      console.log(✅ Types generated);
-    } catch (error) {
-      console.warn(⚠️  Type generation failed: "')", error.message);""
-    }
-  }
-
-  async handleFileDeletion(file) {
-    try {
-      console.log("🗑️  Handling file deletion: "${file.relativePath"});""
-      // Add file deletion handling logic here
-      console.log(✅ File deletion handled);
-    } catch (error) {
-      console.warn(⚠️  File deletion handling failed:, error.message);
-    }
-  }
-
-  async processGenericFileChange(file) {
-    try {
-      console.log(📄 Processing generic file change: "${file.relativePath"}");""
-      // Add generic file processing logic here
-      console.log(✅ Generic file processed'));''
-    } catch (error) {
-      console.warn('⚠️  Generic file processing failed:, error.message);''
-    }
-  }
-
-  async reloadConfig(file) {
-    try {
-      console.log("⚙️  Reloading config: "${file.relativePath"});""
-      // Add config reload logic here
-      console.log(✅ Config reloaded);
-    } catch (error) {
-      console.warn(⚠️  Config reload failed: "')", error.message);""
-    }
-  }
-
-  async runPostSyncTasks(changes) {
-    console.log(🔄 Running post-sync tasks...);
-    
-    // Auto commit if enabled
-    if (this.config.autoCommit && changes.length > 0) {
-      await this.autoCommit(changes);
-    }
-    
-    // Auto build if enabled
-    if (this.config.autoBuild) {
-      await this.autoBuild();
-    }
-    
-    // Auto test if enabled
-    if (this.config.autoTest) {
-      await this.autoTest();
-    }
-    
-    // Auto deploy if enabled
-    if (this.config.autoDeploy) {
-      await this.autoDeploy();
-    }
-    
-    // Send notifications if enabled
-    if (this.config.notifications) {
-      await this.sendNotifications(changes);
-    }
-  }
-
-  async autoCommit(changes) {
-    try {
-      console.log(💾 Auto-committing changes...);
-      
-      const result = changes.map(c => c.relativePath).join(, '));''
-      const result = Auto-sync: "${changeSummary"}"""
-      
-      execSync('git add ., { cwd: "this.projectRoot", stdio: "pipe "});""
-      execSync("git commit -m ${commitMessage}", { cwd: "this.projectRoot", stdio: "')pipe' "});""
-      
-      console.log('✅ Changes auto-committed);''
-    } catch (error) {
-      console.warn(⚠️  Auto-commit failed:, error.message);
-    }
-  }
-
-  async autoBuild() {
-    try {
-      console.log(🔨 Running auto-build...'));''
-      execSync('npm run build, { cwd: "this.projectRoot", stdio: "pipe "});""
-      console.log(')✅ Auto-build completed');''
-    } catch (error) {
-      console.warn(⚠️  Auto-build failed: "'", error.message);""
-    }
-  }
-
-  async autoTest() {
-    try {
-      console.log(🧪 Running auto-tests...);
-      execSync(npm test'), { cwd: "this.projectRoot", stdio: "'pipe "});""
-      console.log(✅ Auto-tests completed);
-    } catch (error) {
-      console.warn('⚠️  Auto-tests failed:, error.message);''
-    }
-  }
-
-  async autoDeploy() {
-    try {
-      console.log(🚀 Running auto-deploy...);
-      // Add deployment logic here
-      console.log(✅ Auto-deploy completed'));''
-    } catch (error) {
-      console.warn('⚠️  Auto-deploy failed:, error.message);''
-    }
-  }
-
-  async sendNotifications(changes) {
-    try {
-      console.log(📢 Sending notifications...);
-      // Add notification logic here
-      console.log(✅ Notifications sent'));''
-    } catch (error) {
-      console.warn('⚠️  Notifications failed:, error.message);''
+      console.error(`❌ Auto-commit failed:`, error);
     }
   }
 
   startHealthMonitoring() {
-    console.log(❤️  Starting health monitoring...);
-    
     setInterval(() => {
-      this.checkHealth();
-    }, 30000); // Every 30 seconds
+      this.performHealthCheck();
+    }, this.config.healthCheckInterval);
   }
 
-  checkHealth() {
-    const result = {
-      status: "this.status",""
-      syncCount: "this.syncCount",""
-      errorCount: "this.errorCount",""
-      queueSize: "this.syncQueue.length",""
-      lastSync: "this.lastSync",""
-      watchers: "this.watchers.size",""
-      memory: "process.memoryUsage()""
-    "};""
+  performHealthCheck() {
+    const health = {
+      agentId: this.agentId,
+      type: this.type,
+      status: this.status,
+      isRunning: this.isRunning,
+      metrics: this.metrics,
+      timestamp: new Date().toISOString()
+    };
     
-    console.log(❤️  Health check: "')", health);""
-    
-    // Save health data
-    const filePath = path.join(__dirname, ../frontend-sync-status/agent-health.json);
+    // Save health report
+    const healthPath = path.join(__dirname, '..', 'frontend-sync-reports', `health-${this.agentId}.json`);
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
   }
 
-  learnFromSync(changes, success) {
-    this.learningData.push({
-      changes,
-      success,
-      timestamp: "new Date().toISOString()",""
-      queueSize: "this.syncQueue.length",""
-      errorCount: "this.errorCount""
-    "});""
-  }
-
-  async improve() {
-    console.log('🔧 Improving frontend sync agent...);''
-    
-    // Analyze learning data for improvements
-    const result = this.learningData.slice(-100);
-    const result = recentData.filter(d => !d.success).length / recentData.length;
-    
-    if (errorRate > 0.1) {
-      console.log(🔧 High error rate detected, implementing improvements...);
-      // Add improvement logic here
-    }
-    
-    // Optimize sync intervals based on performance
-    if (this.syncCount > 100) {
-      const result = this.calculateAverageSyncTime();
-      if (avgSyncTime > 5000) {
-        console.log(')🔧 Slow sync detected, optimizing...);''
-        this.config.syncInterval = Math.max(2000, this.config.syncInterval * 0.8);
-      }
-    }
-  }
-
-  calculateAverageSyncTime() {
-    // Add sync time calculation logic
-    return 3000; // Placeholder
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   getStatus() {
     return {
-      name: "this.name",""
-      status: "this.status",""
-      syncCount: "this.syncCount",""
-      errorCount: "this.errorCount",""
-      queueSize: "this.syncQueue.length",""
-      lastSync: "this.lastSync",""
-      watchers: "this.watchers.size",""
-      config: "this.config""
-    "};""
+      agentId: this.agentId,
+      type: this.type,
+      status: this.status,
+      isRunning: this.isRunning,
+      metrics: this.metrics,
+      syncCount: this.syncCount,
+      errorCount: this.errorCount,
+      lastSync: this.lastSync
+    };
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Frontend Sync Agent...);''
+    console.log(`🛑 Shutting down Frontend Sync Agent ${this.agentId}...`);
     
-    // Close all watchers
-    for (const [name, watcher] of this.watchers) {
-      await watcher.close();
-      console.log("✅ Closed watcher: "${name"}");""
-    }
+    this.isRunning = false;
+    this.status = 'stopped';
     
-    this.status = stopped;
-    console.log(✅ Frontend Sync Agent shutdown complete'));''
+    console.log(`✅ Frontend Sync Agent ${this.agentId} shutdown complete`);
   }
 }
 
-// Auto-start if run directly
+// Export the class
+module.exports = FrontendSyncAgent;
+
+// If running directly, start the agent
 if (require.main === module) {
-  const result = new FrontendSyncAgent();
+  const agent = new FrontendSyncAgent();
   
-  process.on(SIGINT, async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...);''
-    await agent.shutdown();
-    process.exit(0);
-  });
-  
-  process.on(SIGTERM, async () => {
-    console.log(\n🛑 Received SIGTERM, shutting down...'));''
-    await agent.shutdown();
-    process.exit(0);
-  });
-  
-  agent.initialize().catch(error => {
-    console.error(❌ Agent initialization failed:', error);''
+  agent.initialize().then(() => {
+    console.log('🚀 Frontend Sync Agent started successfully');
+  }).catch((error) => {
+    console.error('❌ Failed to start Frontend Sync Agent:', error);
     process.exit(1);
   });
-}
-
-module.exports = FrontendSyncAgent; 
+  
+  // Handle shutdown
+  process.on('SIGINT', async () => {
+    console.log('\n🛑 Received SIGINT, shutting down...');
+    await agent.shutdown();
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', async () => {
+    console.log('\n🛑 Received SIGTERM, shutting down...');
+    await agent.shutdown();
+    process.exit(0);
+  });
+} 
