@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Strategy Automation Agent ${this.agentId} started");
+    console.log("Strategy Automation Agent ${this.agentId} started);
     
     // Initial strategy analysis
     await this.analyzeStrategy();
@@ -59,14 +59,14 @@ class $1 {
       console.log('Performing comprehensive strategy analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        strategicPlanning: [],
-        businessIntelligence: [],
-        decisionSupport: [],
-        opportunities: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        strategicPlanning: "[]",
+        businessIntelligence: "[]",
+        decisionSupport: "[]",
+        opportunities: "[]",
+        recommendations: "[]
+      "};
       
       // Discover strategic planning data
       analysis.strategicPlanning = await this.discoverStrategicPlanning();
@@ -173,12 +173,12 @@ class $1 {
 
   extractStrategyInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      category: 'unknown,
-      timeframe: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      category: "'unknown",
+      timeframe: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -207,7 +207,7 @@ class $1 {
     if (lowerContent.includes('annual) || lowerContent.includes(')yearly)) {
       strategyInfo.timeframe = Annu'a'l;
     } else if (lowerContent.includes('quarterly) || lowerContent.includes(')3 months)) {
-      strategyInfo.timeframe = 'Quarter'ly';
+      strategyInfo.timeframe = 'Quarter'ly'
     } else if (lowerContent.includes('monthly) || lowerContent.includes(30 days)) {
       strategyInfo.timeframe = Monthly;
     }
@@ -263,32 +263,32 @@ class $1 {
 
   extractBusinessPlanInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unknown,
-      stage: 'unknown',
-      components: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unknown",
+      stage: "'unknown'",
+      components: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect business plan type
     if (lowerContent.includes('startup) || lowerContent.includes(new business)) {
-      businessPlanInfo.type = ')Startu'p Business Plan';
+      businessPlanInfo.type = ')Startu'p Business Plan'
     } else if (lowerContent.includes('expansion) || lowerContent.includes(growth)) {
-      businessPlanInfo.type = ')Expansio'n Business Plan';
+      businessPlanInfo.type = ')Expansio'n Business Plan'
     } else if (lowerContent.includes('operational) || lowerContent.includes(operational plan)) {
-      businessPlanInfo.type = ')Operationa'l Business Plan';
+      businessPlanInfo.type = ')Operationa'l Business Plan'
     }
     
     // Detect stage
     if (lowerContent.includes('concept) || lowerContent.includes(idea)) {
-      businessPlanInfo.stage = ')Conce'pt';
+      businessPlanInfo.stage = ')Conce'pt'
     } else if (lowerContent.includes('development) || lowerContent.includes(planning)) {
-      businessPlanInfo.stage = ')Developme'nt';
+      businessPlanInfo.stage = ')Developme'nt'
     } else if (lowerContent.includes('implementation) || lowerContent.includes(execution)) {
-      businessPlanInfo.stage = ')Implementati'on';
+      businessPlanInfo.stage = ')Implementati'on'
     }
     
     // Extract components
@@ -304,7 +304,7 @@ class $1 {
     const result = [];
     
     // Extract component definitions
-    const result = /component\s*[:=]\s*['""]([^""]+)['""]/gi;
+    const result = /component\s*[:=]\s*['"]([^"]+)['"]/gi;
     let match;
     
     while ((match = componentRegex.exec(content)) !== null) {
@@ -312,7 +312,7 @@ class $1 {
     }
     
     // Also look for section definitions
-    const result = /section\s*[:=]\s*['""]([^""]+)['""]/gi;
+    const result = /section\s*[:=]\s*['"]([^"]+)['"]/gi;
     while ((match = sectionRegex.exec(content)) !== null) {
       components.push(match[1]);
     }
@@ -322,39 +322,39 @@ class $1 {
 
   extractStrategyConfiguration(content) {
     const result = {
-      environment: 'unknown,
-      priority: unknow'n,
-      scope: 'unknown',
-      settings: {}
+      environment: "'unknown",
+      priority: "unknow'n",
+      scope: "'unknown'",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Extract environment
     if (lowerContent.includes('production) || lowerContent.includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     // Extract priority
     if (lowerContent.includes('high priority) || lowerContent.includes(critical)) {
-      config.priority = ')hi'gh';
+      config.priority = ')hi'gh'
     } else if (lowerContent.includes('medium priority) || lowerContent.includes(moderate)) {
-      config.priority = ')medi'um';
+      config.priority = ')medi'um'
     } else if (lowerContent.includes('low priority) || lowerContent.includes(nice to have)) {
-      config.priority = ')l'ow';
+      config.priority = ')l'ow'
     }
     
     // Extract scope
     if (lowerContent.includes('global) || lowerContent.includes(worldwide)) {
-      config.scope = ')Glob'al';
+      config.scope = ')Glob'al'
     } else if (lowerContent.includes('regional) || lowerContent.includes(local)) {
-      config.scope = ')Region'al';
+      config.scope = ')Region'al'
     } else if (lowerContent.includes('department) || lowerContent.includes(team)) {
-      config.scope = ')Departme'nt';
+      config.scope = ')Departme'nt'
     }
     
     return config;
@@ -428,12 +428,12 @@ class $1 {
 
   extractBusinessIntelligenceInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      focus: unknow'n,
-      metrics: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      focus: "unknow'n",
+      metrics: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -469,7 +469,7 @@ class $1 {
     const result = [];
     
     // Extract metric definitions
-    const result = /metric\s*[:=]\s*['""]([^'""]+)[""]/gi;
+    const result = /metric\s*[:=]\s*['"]([^'"]+)["]/gi;
     let match;
     
     while ((match = metricRegex.exec(content)) !== null) {
@@ -477,7 +477,7 @@ class $1 {
     }
     
     // Also look for KPI definitions
-    const result = /kpi\s*[:=]\s*['""]([^'""]+)[""]/gi;
+    const result = /kpi\s*[:=]\s*['"]([^'"]+)["]/gi;
     while ((match = kpiRegex.exec(content)) !== null) {
       metrics.push(match[1]);
     }
@@ -553,19 +553,19 @@ class $1 {
 
   extractDecisionSupportInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      approach: 'unknown,
-      scenarios: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      approach: "'unknown",
+      scenarios: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect decision support type
     if (lowerContent.includes(scenari'o) || lowerContent.includes('what-if)) {
-      dsInfo.type = ')Scenario' Analysis';
+      dsInfo.type = ')Scenario' Analysis'
     } else if (lowerContent.includes(simulation) || lowerContent.includes('modeling)) {
       dsInfo.type = ')Simulation;
     } else if (lowerContent.includes(optimizati'o'n) || lowerContent.includes('optimization)) {
@@ -594,7 +594,7 @@ class $1 {
     const result = [];
     
     // Extract scenario definitions
-    const result = /scenario\s*[:=]\s*[""]([^'""]+)['""]/gi;
+    const result = /scenario\s*[:=]\s*["]([^'"]+)['"]/gi;
     let match;
     
     while ((match = scenarioRegex.exec(content)) !== null) {
@@ -602,7 +602,7 @@ class $1 {
     }
     
     // Also look for what-if definitions
-    const result = /what.?if\s*[:=]\s*[""]([^'""]+)['""]/gi;
+    const result = /what.?if\s*[:=]\s*["]([^'"]+)['"]/gi;
     while ((match = whatIfRegex.exec(content)) !== null) {
       scenarios.push(match[1]);
     }
@@ -678,12 +678,12 @@ class $1 {
 
   extractOpportunityInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      priority: 'unknown,
-      impact: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      priority: "'unknown",
+      impact: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -727,41 +727,41 @@ class $1 {
     // Strategic planning recommendations
     if (analysis.strategicPlanning.length === 0) {
       recommendations.push({
-        type: 'strategic planning',
-        priority: 'high,
-        message: No' strategic planning data available,
-        suggestion: 'Develop comprehensive strategic planning framework'
-      });
+        type: "'strategic planning'",
+        priority: "'high",
+        message: "No' strategic planning data available",
+        suggestion: "'Develop comprehensive strategic planning framework'
+      "});
     }
     
     // Business intelligence recommendations
     if (analysis.businessIntelligence.length === 0) {
       recommendations.push({
-        type: 'business intelligence',
-        priority: high,
-        message: 'No business intelligence system available',
-        suggestion: 'Implement business intelligence and analytics system'
-      });
+        type: "'business intelligence'",
+        priority: "high",
+        message: "'No business intelligence system available'",
+        suggestion: "'Implement business intelligence and analytics system'
+      "});
     }
     
     // Decision support recommendations
     if (analysis.decisionSupport.length === 0) {
       recommendations.push({
-        type: decision support,
-        priority: 'medium',
-        message: 'No decision support system available',
-        suggestion: Implement decision support and scenario analysis tools
-      });
+        type: "decision support",
+        priority: "'medium'",
+        message: "'No decision support system available'",
+        suggestion: "Implement decision support and scenario analysis tools
+      "});
     }
     
     // Opportunity recommendations
     if (analysis.opportunities.length === 0) {
       recommendations.push({
-        type: 'opportunities',
-        priority: 'medium,
-        message: No' strategic opportunities identified,
-        suggestion: 'Identify and evaluate strategic opportunities'
-      });
+        type: "'opportunities'",
+        priority: "'medium",
+        message: "No' strategic opportunities identified",
+        suggestion: "'Identify and evaluate strategic opportunities'
+      "});
     }
     
     return recommendations;
@@ -772,12 +772,12 @@ class $1 {
       console.log('Monitoring strategy...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        strategicPlanning: [],
-        businessIntelligence: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        strategicPlanning: "[]",
+        businessIntelligence: "[]",
+        alerts: "[]
+      "};
       
       // Check strategic planning status
       const asyncResult = await this.discoverStrategicPlanning();
@@ -805,7 +805,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.reportsDir, 'monitoring-reports, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'monitoring-reports, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -815,27 +815,27 @@ class $1 {
 
   checkStrategicPlanningStatus(planning) {
     const timestamp = {
-      planning: planning.name,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      planning: "planning.name",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common strategic planning issues
     if (planning.timeframe === 'unknown) {
       status.issues.push({
-        type: timefra'm'e,
-        severity: 'medium',
-        message: 'No strategic timeframe defined'
-      });
+        type: "timefra'm'e",
+        severity: "'medium'",
+        message: "'No strategic timeframe defined'
+      "});
     }
     
     if (planning.category === unknown) {
       status.issues.push({
-        type: 'category',
-        severity: 'low,
-        message: No' strategic category defined
-      });
+        type: "'category'",
+        severity: "'low",
+        message: "No' strategic category defined
+      "});
     }
     
     return status;
@@ -843,27 +843,27 @@ class $1 {
 
   checkBusinessIntelligenceStatus(bi) {
     const timestamp = {
-      bi: bi.name,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      bi: "bi.name",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common business intelligence issues
     if (bi.focus === 'unknown) {
       status.issues.push({
-        type: foc'u's,
-        severity: 'medium',
-        message: 'No BI focus defined'
-      });
+        type: "foc'u's",
+        severity: "'medium'",
+        message: "'No BI focus defined'
+      "});
     }
     
     if (bi.metrics.length === 0) {
       status.issues.push({
-        type: metrics,
-        severity: 'low',
-        message: 'No BI metrics defined'
-      });
+        type: "metrics",
+        severity: "'low'",
+        message: "'No BI metrics defined'
+      "});
     }
     
     return status;
@@ -874,11 +874,11 @@ class $1 {
       console.log(Optimizing strategy...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeStrategy();
@@ -887,16 +887,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: 'completed',
-          improvement: Math.random() * 0.9, // 0-90% improvement
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "'completed'",
+          improvement: "Math.random() * 0.9", // 0-90% improvement
+          description: ""Applied ${optimization.suggestion"}
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -909,12 +909,12 @@ class $1 {
       console.log(Running comprehensive business intelligence analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of business intelligence analysis
       biAnalysisReport.analysis.financial = await this.runFinancialAnalysis();
@@ -930,7 +930,7 @@ class $1 {
       
       // Save business intelligence analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, business-intelligence-reports, "bi-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, business-intelligence-reports, "bi-analysis-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(biAnalysisReport, null, 2));
       
     } catch (error) {
@@ -942,16 +942,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(')npm run analyze:financial);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: ')failed',
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "')failed'",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -959,16 +959,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:operational);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -976,16 +976,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:customer);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -993,26 +993,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:strategic);
       return {
-        status: completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateBIAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      strategy: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      strategy: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -1036,10 +1036,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === fail'e'd) {
         recommendations.push({
-          type: type,
-          priority: 'medium',
-          message: "${type} analysis failed",
-          suggestion: "Fix ${type} analysis issues"
+          type: "type",
+          priority: "'medium'",
+          message: "${type"} analysis failed",
+          suggestion: ""Fix ${type"} analysis issues
         });
       }
     }
@@ -1049,13 +1049,13 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.reportsDir, 'strategy-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'strategy-repor'ts', analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"});
   }
 
   async stop() {
-    console.log("Strategy Automation Agent ${this.agentId} stopping...");
+    console.log(Strategy Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }

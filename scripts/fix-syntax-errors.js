@@ -1,33 +1,24 @@
 const fs = require('fs');
 const path = require('path');
 
-// Common syntax error patterns to fix
-const syntaxFixes = [
-  // Fix malformed import statements
-  { pattern: /import.*from\s+['"];next['"]/g, replacement: "import type { NextApiRequest, NextApiResponse } from 'next'" },
-  { pattern: /import.*from\s+['"];@supabase\/ssr['"]/g, replacement: "import { createServerClient } from '@supabase/ssr'" },
-  { pattern: /import.*from\s+['"];next\/image['"]/g, replacement: "import Image from 'next/image'" },
-  
-  // Fix malformed console.error statements
-  { pattern: /console\.error\('([^']*):\s*",\s*error\)"/g, replacement: "console.error('$1:', error)" },
-  { pattern: /console\.error\('([^']*):\s*",\s*error\)/g, replacement: "console.error('$1:', error)" },
-  
-  // Fix malformed string literals
-  { pattern: /['"];([^'"]*)['"]/g, replacement: "'$1'" },
-  { pattern: /['"]([^'"]*);['"]/g, replacement: "'$1'" },
-  
-  // Fix malformed array syntax
-  { pattern: /\[\s*([^;]*);\s*\]/g, replacement: "[$1]" },
-  { pattern: /,\s*;\s*([^}]*)\s*}/g, replacement: ",$1}" },
-  
-  // Fix malformed object syntax
-  { pattern: /{\s*;\s*([^}]*)\s*}/g, replacement: "{$1}" },
-  
-  // Fix malformed function parameters
-  { pattern: /\(\s*;\s*([^)]*)\s*\)/g, replacement: "($1)" },
-  
-  // Fix malformed template literals
-  { pattern: /`\s*;\s*([^`]*)\s*`/g, replacement: "`$1`" },
+// Common syntax fixes
+const fixes = [
+  // Fix unterminated string literals
+  { pattern: /";/g, replacement: '"' },
+  { pattern: /';/g, replacement: "'" },
+  // Fix incorrect import statements
+  { pattern: /from ';([^']+)'/g, replacement: "from '$1'" },
+  { pattern: /from ";([^"]+)"/g, replacement: "from '$1'" },
+  // Fix className with double quotes
+  { pattern: /className="""/g, replacement: 'className="' },
+  // Fix JSX attributes
+  { pattern: /"([^"]*)"([^"]*)"([^"]*)"/g, replacement: '"$1$2$3"' },
+  // Fix unterminated template literals
+  { pattern: /`([^`]*)`([^`]*)`/g, replacement: '`$1$2`' },
+  // Fix semicolons in wrong places
+  { pattern: /;([a-zA-Z])/g, replacement: ';$1' },
+  // Fix missing quotes in object properties
+  { pattern: /([a-zA-Z]+): ([^,}]+)([,}])/g, replacement: '$1: "$2"$3' }
 ];
 
 function fixFile(filePath) {
@@ -35,28 +26,15 @@ function fixFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let originalContent = content;
     
-    // Apply all syntax fixes
-    syntaxFixes.forEach(fix => {
+    // Apply fixes
+    fixes.forEach(fix => {
       content = content.replace(fix.pattern, fix.replacement);
     });
     
     // Additional specific fixes
-    content = content.replace(/['"];next['"]/g, "'next'");
-    content = content.replace(/['"];@supabase\/ssr['"]/g, "'@supabase/ssr'");
-    content = content.replace(/['"];next\/image['"]/g, "'next/image'");
-    
-    // Fix unterminated string literals
-    content = content.replace(/(['"])([^'"]*)(['"]);/g, '$1$2$3');
-    
-    // Fix malformed semicolons in arrays and objects
-    content = content.replace(/,\s*;\s*/g, ', ');
-    content = content.replace(/;\s*,/g, ',');
-    
-    // Fix malformed interface definitions
-    content = content.replace(/interface\s+(\w+)\s*{;/g, 'interface $1 {');
-    
-    // Fix malformed export statements
-    content = content.replace(/export\s+default\s+async\s+function\s+(\w+)\s*\([^)]*\)\s*{;/g, 'export default async function $1(req, res) {');
+    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";";/g, 'import { useState, useEffect, useRef } from "react";');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'\/link';/g, "import Link from 'next/link';");
     
     if (content !== originalContent) {
       fs.writeFileSync(filePath, content, 'utf8');
@@ -65,12 +43,12 @@ function fixFile(filePath) {
     }
     return false;
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error(`Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
-function walkDirectory(dir) {
+function walkDir(dir) {
   const files = fs.readdirSync(dir);
   let fixedCount = 0;
   
@@ -78,9 +56,9 @@ function walkDirectory(dir) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     
-    if (stat.isDirectory()) {
-      fixedCount += walkDirectory(filePath);
-    } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js') || file.endsWith('.jsx')) {
+    if (stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
+      fixedCount += walkDir(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
       if (fixFile(filePath)) {
         fixedCount++;
       }
@@ -90,8 +68,8 @@ function walkDirectory(dir) {
   return fixedCount;
 }
 
-// Start fixing from the project root
-const projectRoot = process.cwd();
-console.log('Starting syntax error fixes...');
-const totalFixed = walkDirectory(projectRoot);
-console.log(`Fixed ${totalFixed} files.`); 
+// Start fixing from current directory
+const startDir = process.cwd();
+console.log('Starting syntax fixes...');
+const fixedFiles = walkDir(startDir);
+console.log(`Fixed ${fixedFiles} files.`); 

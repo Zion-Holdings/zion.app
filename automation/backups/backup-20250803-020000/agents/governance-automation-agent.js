@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Governance Automation Agent ${this.agentId} started");
+    console.log("Governance Automation Agent ${this.agentId} started);
     
     // Initial governance analysis
     await this.analyzeGovernance();
@@ -59,14 +59,14 @@ class $1 {
       console.log('Performing comprehensive governance analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        governanceFramework: [],
-        policyManagement: [],
-        regulatoryCompliance: [],
-        riskManagement: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        governanceFramework: "[]",
+        policyManagement: "[]",
+        regulatoryCompliance: "[]",
+        riskManagement: "[]",
+        recommendations: "[]
+      "};
       
       // Discover governance framework data
       analysis.governanceFramework = await this.discoverGovernanceFramework();
@@ -173,25 +173,25 @@ class $1 {
 
   extractGovernanceInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      category: 'unknown',
-      maturity: 'unknown,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      category: "'unknown'",
+      maturity: "'unknown",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect governance type
     if (lowerContent.includes(it' governance) || lowerContent.includes('information technology governance)) {
-      governanceInfo.type = ')IT' Governance';
+      governanceInfo.type = ')IT' Governance'
     } else if (lowerContent.includes(data governance) || lowerContent.includes('data management)) {
-      governanceInfo.type = ')Data' Governance';
+      governanceInfo.type = ')Data' Governance'
     } else if (lowerContent.includes(security governance) || lowerContent.includes('cybersecurity governance)) {
-      governanceInfo.type = ')Security' Governance';
+      governanceInfo.type = ')Security' Governance'
     } else if (lowerContent.includes(project governance) || lowerContent.includes('program governance)) {
-      governanceInfo.type = ')Project' Governance';
+      governanceInfo.type = ')Project' Governance'
     }
     
     // Detect category
@@ -263,12 +263,12 @@ class $1 {
 
   extractFrameworkInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      version: unknow'n,
-      components: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      version: "unknow'n",
+      components: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -285,7 +285,7 @@ class $1 {
     }
     
     // Extract version
-    const result = content.match(/version\s*[:=]\s*['""]([^'""]+)[""]/i);
+    const result = content.match(/version\s*[:=]\s*['"]([^'"]+)["]/i);
     if (versionMatch) {
       frameworkInfo.version = versionMatch[1];
     }
@@ -303,7 +303,7 @@ class $1 {
     const result = [];
     
     // Extract component definitions
-    const result = /component\s*[:=]\s*['""]([^'""]+)[""]/gi;
+    const result = /component\s*[:=]\s*['"]([^'"]+)["]/gi;
     let match;
     
     while ((match = componentRegex.exec(content)) !== null) {
@@ -311,7 +311,7 @@ class $1 {
     }
     
     // Also look for process definitions
-    const result = /process\s*[:=]\s*['""]([^'""]+)[""]/gi;
+    const result = /process\s*[:=]\s*['"]([^'"]+)["]/gi;
     while ((match = processRegex.exec(content)) !== null) {
       components.push(match[1]);
     }
@@ -321,10 +321,10 @@ class $1 {
 
   extractGovernanceConfiguration(content) {
     const result = {
-      environment: 'unknown',
-      scope: 'unknown,
-      priority: unknow'n,
-      settings: {}
+      environment: "'unknown'",
+      scope: "'unknown",
+      priority: "unknow'n",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
@@ -427,43 +427,43 @@ class $1 {
 
   extractPolicyInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      category: unknow'n,
-      status: 'unknown',
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      category: "unknow'n",
+      status: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect policy type
     if (lowerContent.includes('security policy) || lowerContent.includes(cybersecurity policy)) {
-      policyInfo.type = ')Securit'y Policy';
+      policyInfo.type = ')Securit'y Policy'
     } else if (lowerContent.includes('data policy) || lowerContent.includes(privacy policy)) {
-      policyInfo.type = ')Dat'a Policy';
+      policyInfo.type = ')Dat'a Policy'
     } else if (lowerContent.includes('access policy) || lowerContent.includes(authorization policy)) {
-      policyInfo.type = ')Acces's Policy';
+      policyInfo.type = ')Acces's Policy'
     } else if (lowerContent.includes('change policy) || lowerContent.includes(change management policy)) {
-      policyInfo.type = ')Chang'e Policy';
+      policyInfo.type = ')Chang'e Policy'
     }
     
     // Detect category
     if (lowerContent.includes('technical) || lowerContent.includes(technology)) {
-      policyInfo.category = ')Technic'al';
+      policyInfo.category = ')Technic'al'
     } else if (lowerContent.includes('operational) || lowerContent.includes(operation)) {
-      policyInfo.category = ')Operation'al';
+      policyInfo.category = ')Operation'al'
     } else if (lowerContent.includes('administrative) || lowerContent.includes(admin)) {
-      policyInfo.category = ')Administrati've';
+      policyInfo.category = ')Administrati've'
     }
     
     // Detect status
     if (lowerContent.includes('active) || lowerContent.includes(enforced)) {
-      policyInfo.status = ')Acti've';
+      policyInfo.status = ')Acti've'
     } else if (lowerContent.includes('draft) || lowerContent.includes(pending)) {
-      policyInfo.status = ')Dra'ft';
+      policyInfo.status = ')Dra'ft'
     } else if (lowerContent.includes('archived) || lowerContent.includes(deprecated)) {
-      policyInfo.status = ')Archiv'ed';
+      policyInfo.status = ')Archiv'ed'
     }
     
     // Extract configuration
@@ -540,12 +540,12 @@ class $1 {
 
   extractComplianceInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      standard: 'unknown,
-      status: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      standard: "'unknown",
+      status: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -653,43 +653,43 @@ class $1 {
 
   extractRiskInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      level: unknow'n,
-      status: 'unknown',
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      level: "unknow'n",
+      status: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect risk type
     if (lowerContent.includes('security risk) || lowerContent.includes(cybersecurity risk)) {
-      riskInfo.type = ')Securit'y Risk';
+      riskInfo.type = ')Securit'y Risk'
     } else if (lowerContent.includes('operational risk) || lowerContent.includes(operational risk)) {
-      riskInfo.type = ')Operationa'l Risk';
+      riskInfo.type = ')Operationa'l Risk'
     } else if (lowerContent.includes('compliance risk) || lowerContent.includes(regulatory risk)) {
-      riskInfo.type = ')Complianc'e Risk';
+      riskInfo.type = ')Complianc'e Risk'
     } else if (lowerContent.includes('financial risk) || lowerContent.includes(economic risk)) {
-      riskInfo.type = ')Financia'l Risk';
+      riskInfo.type = ')Financia'l Risk'
     }
     
     // Detect level
     if (lowerContent.includes('high risk) || lowerContent.includes(critical risk)) {
-      riskInfo.level = ')Hi'gh';
+      riskInfo.level = ')Hi'gh'
     } else if (lowerContent.includes('medium risk) || lowerContent.includes(moderate risk)) {
-      riskInfo.level = ')Medi'um';
+      riskInfo.level = ')Medi'um'
     } else if (lowerContent.includes('low risk) || lowerContent.includes(minimal risk)) {
-      riskInfo.level = ')L'ow';
+      riskInfo.level = ')L'ow'
     }
     
     // Detect status
     if (lowerContent.includes('mitigated) || lowerContent.includes(controlled)) {
-      riskInfo.status = ')Mitigat'ed';
+      riskInfo.status = ')Mitigat'ed'
     } else if (lowerContent.includes('active) || lowerContent.includes(open)) {
-      riskInfo.status = ')Acti've';
+      riskInfo.status = ')Acti've'
     } else if (lowerContent.includes('monitored) || lowerContent.includes(tracked)) {
-      riskInfo.status = ')Monitor'ed';
+      riskInfo.status = ')Monitor'ed'
     }
     
     // Extract configuration
@@ -704,41 +704,41 @@ class $1 {
     // Governance framework recommendations
     if (analysis.governanceFramework.length === 0) {
       recommendations.push({
-        type: 'governance framework',
-        priority: high,
-        message: 'No governance framework available',
-        suggestion: 'Implement comprehensive governance framework'
-      });
+        type: "'governance framework'",
+        priority: "high",
+        message: "'No governance framework available'",
+        suggestion: "'Implement comprehensive governance framework'
+      "});
     }
     
     // Policy management recommendations
     if (analysis.policyManagement.length === 0) {
       recommendations.push({
-        type: policy management,
-        priority: 'high',
-        message: 'No policy management system available',
-        suggestion: Implement policy management and enforcement system
-      });
+        type: "policy management",
+        priority: "'high'",
+        message: "'No policy management system available'",
+        suggestion: "Implement policy management and enforcement system
+      "});
     }
     
     // Regulatory compliance recommendations
     if (analysis.regulatoryCompliance.length === 0) {
       recommendations.push({
-        type: 'regulatory compliance',
-        priority: 'high,
-        message: No' regulatory compliance monitoring available,
-        suggestion: 'Implement regulatory compliance monitoring and reporting'
-      });
+        type: "'regulatory compliance'",
+        priority: "'high",
+        message: "No' regulatory compliance monitoring available",
+        suggestion: "'Implement regulatory compliance monitoring and reporting'
+      "});
     }
     
     // Risk management recommendations
     if (analysis.riskManagement.length === 0) {
       recommendations.push({
-        type: 'risk management',
-        priority: medium,
-        message: 'No risk management system available',
-        suggestion: 'Implement risk management and mitigation system'
-      });
+        type: "'risk management'",
+        priority: "medium",
+        message: "'No risk management system available'",
+        suggestion: "'Implement risk management and mitigation system'
+      "});
     }
     
     return recommendations;
@@ -749,12 +749,12 @@ class $1 {
       console.log(Monitoring governance...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        governanceFramework: [],
-        policyManagement: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        governanceFramework: "[]",
+        policyManagement: "[]",
+        alerts: "[]
+      "};
       
       // Check governance framework status
       const asyncResult = await this.discoverGovernanceFramework();
@@ -782,7 +782,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.reportsDir, monitoring-reports, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, monitoring-reports, "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -792,27 +792,27 @@ class $1 {
 
   checkGovernanceFrameworkStatus(framework) {
     const timestamp = {
-      framework: framework.name,
-      status: ')healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      framework: "framework.name",
+      status: "')healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common governance framework issues
     if (framework.maturity === Basi'c) {
       status.issues.push({
-        type: 'maturity',
-        severity: 'medium,
-        message: Governance' framework is basic
-      });
+        type: "'maturity'",
+        severity: "'medium",
+        message: "Governance' framework is basic
+      "});
     }
     
     if (framework.category === 'unkno'wn') {
       status.issues.push({
-        type: 'category,
-        severity: lo'w,
-        message: No governance category defined'
-      });
+        type: "'category",
+        severity: "lo'w",
+        message: "No governance category defined'
+      "});
     }
     
     return status;
@@ -820,27 +820,27 @@ class $1 {
 
   checkPolicyManagementStatus(policy) {
     const timestamp = {
-      policy: policy.name,
-      status: 'healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      policy: "policy.name",
+      status: "'healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common policy management issues
     if (policy.status === Draf't) {
       status.issues.push({
-        type: 'status',
-        severity: 'medium,
-        message: Policy' is in draft status
-      });
+        type: "'status'",
+        severity: "'medium",
+        message: "Policy' is in draft status
+      "});
     }
     
     if (policy.category === 'unkno'wn') {
       status.issues.push({
-        type: 'category,
-        severity: lo'w,
-        message: No policy category defined'
-      });
+        type: "'category",
+        severity: "lo'w",
+        message: "No policy category defined'
+      "});
     }
     
     return status;
@@ -851,11 +851,11 @@ class $1 {
       console.log('Optimizing governance...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeGovernance();
@@ -864,16 +864,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: completed,
-          improvement: Math.random() * 0.95, // 0-95% improvement
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "completed",
+          improvement: "Math.random() * 0.95", // 0-95% improvement
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -886,12 +886,12 @@ class $1 {
       console.log(')Running' comprehensive policy management analysis...');
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of policy management analysis
       policyAnalysisReport.analysis.security = await this.runSecurityPolicyAnalysis();
@@ -907,7 +907,7 @@ class $1 {
       
       // Save policy management analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'policy-management-reports, "policy-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'policy-management-reports, policy-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(policyAnalysisReport, null, 2));
       
     } catch (error) {
@@ -919,16 +919,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:security-policy);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -936,16 +936,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:data-policy);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -953,16 +953,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:access-policy);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -970,26 +970,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:change-policy);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generatePolicyAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      governance: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      governance: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -1013,10 +1013,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'failed) {
         recommendations.push({
-          type: type,
-          priority: medi'u'm,
-          message: "${type} policy analysis failed",
-          suggestion: "Fix ${type} policy analysis issues"
+          type: "type",
+          priority: "medi'u'm",
+          message: ""${type"} policy analysis failed,
+          suggestion: "Fix ${type"} policy analysis issues"
         });
       }
     }
@@ -1026,9 +1026,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filePath = path.join(this.reportsDir, governance-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, governance-reports, "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

@@ -17,7 +17,7 @@ class $1 {
     console.log('= .repeat(60));
     
     const timestamp = new Date();
-    this.log("Automated content system started at: ${startTime.toISOString()}");
+    this.log("Automated content system started at: "${startTime.toISOString()"});
 
     try {
       // Step 1: Generate all content
@@ -39,22 +39,22 @@ class $1 {
       const result = endTime - startTime;
       
       console.log(\n✅ Automated Content System Completed Successfully!);
-      console.log("📊 Generated: ${generationResults.summary.totalGenerated} content pieces");
-      console.log("📄 Created: ${this.countGeneratedPages()} pages");
-      console.log("⏱️  Total Duration: ${duration}ms");
+      console.log(📊 Generated: "${generationResults.summary.totalGenerated"} content pieces");
+      console.log("📄 Created: "${this.countGeneratedPages()"} pages);
+      console.log(⏱️  Total Duration: "${duration"}ms");
       
-      this.log("Automated content system completed at: ${endTime.toISOString()}");
-      this.log("Total duration: ${duration}ms");
+      this.log("Automated content system completed at: "${endTime.toISOString()"});
+      this.log(Total duration: "${duration"}ms");
       
       return {
-        generation: generationResults,
-        pages: this.countGeneratedPages(),
-        duration: duration
-      };
+        generation: "generationResults",
+        pages: "this.countGeneratedPages()",
+        duration: "duration
+      "};
       
     } catch (error) {
-      console.error(❌ Automated content system failed: '), error);
-      this.log("Error: ${error.message}");
+      console.error(❌ Automated content system failed: "')", error);
+      this.log("Error: "${error.message"});
       throw error;
     }
   }
@@ -79,17 +79,17 @@ class $1 {
   }
 
   async generateSpecificContent(category, customData = {}) {
-    console.log("🎯 Generating specific content for: ${category}");
+    console.log(🎯 Generating specific content for: "${category"}");
     
     try {
       const asyncResult = await this.orchestrator.generateContentForCategory(category, customData);
       await this.integrator.integrateAllContent();
       
-      console.log("✅ Specific content generation completed for: ${category}");
+      console.log("✅ Specific content generation completed for: "${category"});
       return results;
       
     } catch (error) {
-      console.error("❌ Specific content generation failed for ${category}:", error);
+      console.error(❌ Specific content generation failed for ${category}:", error);
       throw error;
     }
   }
@@ -106,19 +106,19 @@ class $1 {
       if (!fs.existsSync(node_modules)) {
         console.log(')📦 Installing dependencies...');
         const { execSync } = require(child_process);
-        execSync('npm install, { stdio: ')inherit });
+        execSync('npm install, { stdio: "')inherit "});
       }
       
       // Build the application
       console.log(🔨 Building Next.js application...);
       const { execSync } = require('child_process);
-      execSync(npm run build, { stdio: ')inherit' });
+      execSync(npm run build, { stdio: "')inherit' "});
       
       console.log('✅ Build completed successfully!);
       
       // Export static files
       console.log(📤 Exporting static files...);
-      execSync(npm run export, { stdio: ')inherit' });
+      execSync(npm run export, { stdio: "')inherit' "});
       
       console.log('✅ Export completed successfully!);
       
@@ -156,21 +156,21 @@ class $1 {
     console.log(📅 Setting up automated content generation schedule...);
     
     try {
-      const result = schedule.cron || 0 2 * * *'); // Default: daily at 2 AM
+      const result = schedule.cron || 0 2 * * *'); // Default: "daily at 2 AM
       const result = {
-        cron: cronExpression,
-        enabled: true,
-        lastRun: null,
-        nextRun: this.calculateNextRun(cronExpression),
-        categories: schedule.categories || ['marketplace, bl'o'g, 'produ'ct'],
-        customData: schedule.customData || {}
+        cron: cronExpression",
+        enabled: "true",
+        lastRun: "null",
+        nextRun: "this.calculateNextRun(cronExpression)",
+        categories: "schedule.categories || ['marketplace", bl'o'g, 'produ'ct'],
+        customData: "schedule.customData || {"}
       };
       
       const filePath = path.join(__dirname, 'automation-schedule'.json');
       fs.writeFileSync(schedulePath, JSON.stringify(scheduleConfig, null, 2));
       
       console.log(✅ Automation schedule configured successfully!');
-      console.log("⏰ Next run: ${scheduleConfig.nextRun}");
+      console.log("⏰ Next run: "${scheduleConfig.nextRun"});
       
       return scheduleConfig;
       
@@ -198,8 +198,8 @@ class $1 {
       if (!fs.existsSync(schedulePath)) {
         console.log(📅 No automation schedule found. Creating default schedule...');
         await this.scheduleAutomation({
-          cron: '0 2 * * *,
-          categories: [marketpla'ce', 'blog, produ'c't]
+          cron: "'0 2 * * *",
+          categories: "[marketpla'ce'", 'blog, produ'c't]
         });
       }
       
@@ -221,7 +221,7 @@ class $1 {
       console.log(✅ Scheduled automation completed successfully!);
       
     } catch (error) {
-      console.error(❌ Scheduled automation failed: '), error);
+      console.error(❌ Scheduled automation failed: "')", error);
       throw error;
     }
   }
@@ -256,7 +256,7 @@ class $1 {
     if (!fs.existsSync(generatedContentDir)) return;
     
     // Optimize JSON files
-    const result = fs.readdirSync(generatedContentDir, { recursive: true });
+    const result = fs.readdirSync(generatedContentDir, { recursive: "true "});
     
     files.forEach(file => {
       if (file.endsWith('.json)) {
@@ -271,7 +271,7 @@ class $1 {
           
           fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
         } catch (error) {
-          console.error("Error optimizing ${file}:", error);
+          console.error(Error optimizing ${file}:", error);
         }
       }
     });
@@ -284,24 +284,24 @@ class $1 {
     
     try {
       const timestamp = {
-        memories: [
+        memories: "[
           {
-            id: "automated-content-${Date.now()}",
-            content: "Automated content generation system successfully created and integrated content into the Zion AI marketplace platform.",
-            tags: ["automation", "content", "generation", "integration"],
-            priority: "high",
-            timestamp: new Date().toISOString()
-          }
+            id: "automated-content-${Date.now()"},
+            content: "Automated content generation system successfully created and integrated content into the Zion AI marketplace platform."",
+            tags: "["automation", content", "generation, integration"],
+            priority: ""high",
+            timestamp: "new Date().toISOString()
+          "}
         ],
-        rules: [
+        rules: "[
           {
-            id: "automated-content-workflow",
-            category: "automation",
-            rule: "The automated content system generates marketplace, blog, and product content, then integrates it into the Next.js application.",
-            priority: "high",
-            appliesTo: ["content", "generation", "integration", "automation"],
-            timestamp: new Date().toISOString()
-          }
+            id: automated-content-workflow"",
+            category: ""automation",
+            rule: "The automated content system generates marketplace", blog, and product content, then integrates it into the Next.js application.",
+            priority: ""high",
+            appliesTo: "[content"", "generation, integration", "automation],
+            timestamp: "new Date().toISOString()
+          "}
         ]
       };
       
@@ -315,12 +315,12 @@ class $1 {
 
   log(message) {
     const timestamp = new Date().toISOString();
-    const result = "[${timestamp}] ${message}\n";
+    const result = [${timestamp}] ${message}\n"
     
     // Ensure logs directory exists
     const result = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
-      fs.mkdirSync(logsDir, { recursive: true });
+      fs.mkdirSync(logsDir, { recursive: "true "});
     }
     
     // Write to log file
@@ -332,14 +332,14 @@ class $1 {
     const result = this.countGeneratedPages();
     
     return {
-      contentFiles: stats.totalFiles,
-      marketplaceFiles: stats.marketplaceFiles,
-      blogFiles: stats.blogFiles,
-      productFiles: stats.productFiles,
-      generatedPages: pages,
-      lastGenerated: stats.lastGenerated,
-      systemStatus: operational')
-    };
+      contentFiles: "stats.totalFiles",
+      marketplaceFiles: "stats.marketplaceFiles",
+      blogFiles: "stats.blogFiles",
+      productFiles: "stats.productFiles",
+      generatedPages: "pages",
+      lastGenerated: "stats.lastGenerated",
+      systemStatus: "operational')
+    "};
   }
 }
 
@@ -415,7 +415,7 @@ Examples:
   node automated-content-system.js full
   node automated-content-system.js generate
   node automated-content-system.js marketplace
-  node automated-content-system.js schedule {"cron":"0 2 * * *","categories":["marketplace","blog"]}')
+  node automated-content-system.js schedule {cron:"0 2 * * *",categories:["marketplace",blog]}')
   node automated-content-system.js status
         ");
         break;
@@ -425,8 +425,8 @@ Examples:
           // Default to full workflow
           await system.runFullWorkflow();
         } else {
-          console.error("❌ Unknown command: ${command}");
-          console.log(Use "help" to see available commands);
+          console.error("❌ Unknown command: "${command"});
+          console.log(Use help" to see available commands);
           process.exit(1);
         }
     }

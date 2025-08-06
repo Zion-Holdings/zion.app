@@ -8,7 +8,7 @@ const cron = require('node-cron');
 class EnhancedAutomationFactoryGenerator extends EventEmitter {
   constructor() {
     super();
-    this.generatorId = `enhanced-automation-factory-generator-${Date.now()}`;
+    this.generatorId = `enhanced-automation-factory-generator-${Date.now()}`
     this.factories = new Map();
     this.templates = new Map();
     this.metrics = {
@@ -171,7 +171,7 @@ class EnhancedAutomationFactoryGenerator extends EventEmitter {
       throw new Error(`Template ${templateKey} not found`);
     }
 
-    const factoryId = `${templateKey}-factory-${Date.now()}`;
+    const factoryId = `${templateKey}-factory-${Date.now()}`
     const factoryPath = path.join(__dirname, `${factoryId}.js`);
     
     const factoryCode = this.generateFactoryCode(template, factoryId);
@@ -455,7 +455,7 @@ class ${className} extends EventEmitter {
   }
 }
 
-module.exports = ${className};`;
+module.exports = ${className};`
   }
 
   async createFactoryVariations() {
@@ -479,7 +479,7 @@ module.exports = ${className};`;
   }
 
   async createVariation(factory) {
-    const variationId = `${factory.id}-variation-${Date.now()}`;
+    const variationId = `${factory.id}-variation-${Date.now()}`
     const variationPath = path.join(__dirname, `${variationId}.js`);
     
     // Create enhanced version of the factory
@@ -816,7 +816,7 @@ class Enhanced${factory.id.split('-').map(word =>
 
 module.exports = Enhanced${factory.id.split('-').map(word => 
   word.charAt(0).toUpperCase() + word.slice(1)
-).join('')};`;
+).join('')};`
   }
 
   async applyImprovements() {

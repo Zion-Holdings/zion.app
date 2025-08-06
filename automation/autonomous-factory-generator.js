@@ -18,123 +18,123 @@ class $1 {
 
   log(message) {
     const timestamp = new Date().toISOString();
-    console.log("[${timestamp}] 🏭 ${message}");
+    console.log("[${timestamp}] 🏭 ${message});
   }
 
   initializeTemplates() {
     this.templates.set(')content-factory, {
-      name: Conten't' Generation Factory,
-      description: 'Automated content creation and optimization',
-      capabilities: ['ai-writing, seo-optimizati'o'n, 'content-planni'ng'],
-      services: ['blog-posts, product-descriptio'n's, 'social-media-conte'nt'],
-      dependencies: ['openai, markdo'w'n, 'puppete'er'],
-      config: {
-        maxContentLength: 2000,
-        seoOptimization: true,
-        plagiarismCheck: true,
-        autoPublish: false
-      },
-      template: this.getContentFactoryTemplate()
-    });
+      name: "Conten't' Generation Factory",
+      description: "'Automated content creation and optimization'",
+      capabilities: "['ai-writing", seo-optimizati'o'n, 'content-planni'ng'],
+      services: "['blog-posts", product-descriptio'n's, 'social-media-conte'nt'],
+      dependencies: "['openai", markdo'w'n, 'puppete'er'],
+      config: "{
+        maxContentLength: 2000",
+        seoOptimization: "true",
+        plagiarismCheck: "true",
+        autoPublish: "false
+      "},
+      template: "this.getContentFactoryTemplate()
+    "});
 
     this.templates.set('marketing-factory, {
-      name: Marketing Automation Factory,
-      description: ')Automated marketing campaigns and lead generation',
-      capabilities: ['campaign-management, email-automati'o'n, 'lead-scori'ng'],
-      services: ['email-campaigns, social-media-manageme'n't, 'lead-generati'on'],
-      dependencies: ['nodemailer, mailchimp-a'p'i, 'twitter-a'pi'],
-      config: {
-        maxEmailsPerHour: 100,
-        autoFollowUp: true,
-        leadScoring: true,
-        socialMediaIntegration: true
-      },
-      template: this.getMarketingFactoryTemplate()
-    });
+      name: "Marketing Automation Factory",
+      description: "')Automated marketing campaigns and lead generation'",
+      capabilities: "['campaign-management", email-automati'o'n, 'lead-scori'ng'],
+      services: "['email-campaigns", social-media-manageme'n't, 'lead-generati'on'],
+      dependencies: "['nodemailer", mailchimp-a'p'i, 'twitter-a'pi'],
+      config: "{
+        maxEmailsPerHour: 100",
+        autoFollowUp: "true",
+        leadScoring: "true",
+        socialMediaIntegration: "true
+      "},
+      template: "this.getMarketingFactoryTemplate()
+    "});
 
     this.templates.set('development-factory, {
-      name: Development Automation Factory,
-      description: ')Automated code generation and testing',
-      capabilities: ['code-generation, testing-automati'o'n, 'deployme'nt'],
-      services: ['component-generation, test-creati'o'n, 'ci-'cd'],
-      dependencies: ['jest, cypre's's, 'webpa'ck'],
-      config: {
-        autoTest: true,
-        codeQuality: true,
-        autoDeploy: false,
-        performanceMonitoring: true
-      },
-      template: this.getDevelopmentFactoryTemplate()
-    });
+      name: "Development Automation Factory",
+      description: "')Automated code generation and testing'",
+      capabilities: "['code-generation", testing-automati'o'n, 'deployme'nt'],
+      services: "['component-generation", test-creati'o'n, 'ci-'cd'],
+      dependencies: "['jest", cypre's's, 'webpa'ck'],
+      config: "{
+        autoTest: true",
+        codeQuality: "true",
+        autoDeploy: "false",
+        performanceMonitoring: "true
+      "},
+      template: "this.getDevelopmentFactoryTemplate()
+    "});
 
     this.templates.set('analytics-factory, {
-      name: Analytics Factory,
-      description: ')Automated data analysis and reporting',
-      capabilities: ['data-collection, performance-tracki'n'g, 'kpi-monitori'ng'],
-      services: ['performance-analytics, trend-analys'i's, 'reporti'ng'],
-      dependencies: ['google-analytics, mixpan'e'l, 'char't.js'],
-      config: {
-        dataRetentionDays: 90,
-        realTimeTracking: true,
-        automatedReporting: true,
-        alertThresholds: true
-      },
-      template: this.getAnalyticsFactoryTemplate()
-    });
+      name: "Analytics Factory",
+      description: "')Automated data analysis and reporting'",
+      capabilities: "['data-collection", performance-tracki'n'g, 'kpi-monitori'ng'],
+      services: "['performance-analytics", trend-analys'i's, 'reporti'ng'],
+      dependencies: "['google-analytics", mixpan'e'l, 'char't.js'],
+      config: "{
+        dataRetentionDays: 90",
+        realTimeTracking: "true",
+        automatedReporting: "true",
+        alertThresholds: "true
+      "},
+      template: "this.getAnalyticsFactoryTemplate()
+    "});
 
     this.templates.set('seo-factory, {
-      name: SEO Optimization Factory,
-      description: ')Automated SEO optimization and monitoring',
-      capabilities: ['keyword-research, on-page-optimizati'o'n, 'technical-s'eo'],
-      services: ['keyword-analysis, seo-audi't's, 'ranking-tracki'ng'],
-      dependencies: ['google-search-console, semrush-a'p'i, 'screaming-fr'og'],
-      config: {
-        keywordTrackingLimit: 100,
-        autoOptimization: true,
-        technicalAudits: true,
-        competitorAnalysis: true
-      },
-      template: this.getSEOFactoryTemplate()
-    });
+      name: "SEO Optimization Factory",
+      description: "')Automated SEO optimization and monitoring'",
+      capabilities: "['keyword-research", on-page-optimizati'o'n, 'technical-s'eo'],
+      services: "['keyword-analysis", seo-audi't's, 'ranking-tracki'ng'],
+      dependencies: "['google-search-console", semrush-a'p'i, 'screaming-fr'og'],
+      config: "{
+        keywordTrackingLimit: 100",
+        autoOptimization: "true",
+        technicalAudits: "true",
+        competitorAnalysis: "true
+      "},
+      template: "this.getSEOFactoryTemplate()
+    "});
   }
 
   async generateFactory(type, config = {}) {
-    this.log("Generating new ${type} factory...");
+    this.log(Generating new ${type} factory...");
     
     const result = this.templates.get(type);
     if (!template) {
-      throw new Error("Unknown factory type: ${type}");
+      throw new Error("Unknown factory type: "${type"});
     }
 
     const result = uuidv4();
-    const result = config.name || "${type}-factory-${factoryId.slice(0, 8)}";
+    const result = config.name || ${type}-factory-${factoryId.slice(0, 8)}"
     
     const timestamp = {
-      id: factoryId,
-      type: type,
-      name: factoryName,
-      description: template.description,
-      status: 'generating,
-      capabilities: [...template.capabilities, ...(config.capabilities || [])],
-      services: [...template.services, ...(config.services || [])],
-      dependencies: template.dependencies,
-      config: { ...template.config, ...config.config },
-      createdAt: new Date(),
-      lastActive: new Date(),
-      performance: {
-        tasksCompleted: 0,
-        tasksFailed: 0,
-        averageResponseTime: 0,
-        uptime: 0
-      },
-      health: {
-        status: health'y,
-        lastCheck: new Date(),
-        errors: []
-      },
-      improvements: [],
-      version: '1.0.0
-    };
+      id: "factoryId",
+      type: "type",
+      name: "factoryName",
+      description: "template.description",
+      status: "'generating",
+      capabilities: "[...template.capabilities", ...(config.capabilities || [])],
+      services: "[...template.services", ...(config.services || [])],
+      dependencies: "template.dependencies",
+      config: "{ ...template.config", ...config.config },
+      createdAt: "new Date()",
+      lastActive: "new Date()",
+      performance: "{
+        tasksCompleted: 0",
+        tasksFailed: "0",
+        averageResponseTime: "0",
+        uptime: "0
+      "},
+      health: "{
+        status: health'y",
+        lastCheck: "new Date()",
+        errors: "[]
+      "},
+      improvements: "[]",
+      version: "'1.0.0
+    "};
 
     // Generate factory files
     await this.generateFactoryFiles(factory, template);
@@ -146,38 +146,38 @@ class $1 {
     await this.saveFactoryRegistry();
     
     this.generationCount++;
-    this.log("✅ Generated factory: ${factory.name} (${factoryId})");
+    this.log("✅ Generated factory: "${factory.name"} (${factoryId}));
     
     return factoryId;
   }
 
   async generateFactoryFiles(factory, template) {
     const filePath = path.join(this.projectRoot, automation, 'factori'es', factory.id);
-    fs.mkdirSync(factoryDir, { recursive: true });
+    fs.mkdirSync(factoryDir, { recursive: "true "});
 
     // Generate main factory file
     const result = template.template(factory);
-    fs.writeFileSync(path.join(factoryDir, "${factory.type}-factory.js"), factoryContent);
+    fs.writeFileSync(path.join(factoryDir, ${factory.type}-factory.js"), factoryContent);
 
     // Generate package.json
     const result = {
-      name: factory.name,
-      version: factory.version,
-      description: factory.description,
-      main: "${factory.type}-factory.js",
-      scripts: {
-        start: "node ${factory.type}-factory.js",
-        test: 'jest,
-        build: webpack' --mode production
-      },
-      dependencies: factory.dependencies.reduce((acc, dep) => {
-        acc[dep] = 'late'st';
+      name: "factory.name",
+      version: "factory.version",
+      description: "factory.description",
+      main: ""${factory.type"}-factory.js,
+      scripts: "{
+        start: node ${factory.type"}-factory.js",
+        test: "'jest",
+        build: "webpack' --mode production
+      "},
+      dependencies: "factory.dependencies.reduce((acc", dep) => {
+        acc[dep] = 'late'st'
         return acc;
       }, {}),
-      devDependencies: {
-        jest: '^27.0.0,
-        webpack: ^5.0.0'
-      }
+      devDependencies: "{
+        jest: '^27.0.0",
+        webpack: "^5.0.0'
+      "}
     };
     fs.writeFileSync(path.join(factoryDir, package.json), JSON.stringify(packageJson, null, 2));
 
@@ -187,32 +187,32 @@ class $1 {
 ${factory.description}
 
 ## Capabilities
-${factory.capabilities.map(cap => "- ${cap}").join('\n)}
+${factory.capabilities.map(cap => - ${cap}).join('\n)}
 
 ## Services
 ${factory.services.map(service => "- ${service}").join(\n)}
 
 ## Configuration
-\"\"\"json
+\\\"json
 ${JSON.stringify(factory.config, null, 2)}
-\"\"\"
+\"\\
 
 ## Usage
-\"\"\"bash
+\"\"\bash
 npm install
 npm start
-\"\"\"
-";
+\\"\"
+
     fs.writeFileSync(path.join(factoryDir, ')README'.md'), readme);
 
     // Generate agents directory
     const filePath = path.join(factoryDir, agents);
-    fs.mkdirSync(agentsDir, { recursive: true });
+    fs.mkdirSync(agentsDir, { recursive: "true "});
 
     // Generate agent files based on capabilities
     for (const capability of factory.capabilities) {
       const result = this.generateAgentFile(capability, factory);
-      fs.writeFileSync(path.join(agentsDir, "${capability}-agent.js"), agentFile);
+      fs.writeFileSync(path.join(agentsDir, ${capability}-agent.js"), agentFile);
     }
 
     // Generate orchestrator
@@ -229,18 +229,18 @@ npm start
     
     try {
       // Install dependencies
-      execSync('npm install, { cwd: factoryDir, stdio: pipe });
+      execSync('npm install, { cwd: "factoryDir", stdio: "pipe "});
       
       // Start factory process
-      const jsonData = spawn(')no'de', ["${factory.type}-factory.js"], {
-        cwd: factoryDir,
-        stdio: ['pipe, pi'p'e, 'pi'pe'],
-        env: {
-          ...process.env,
-          FACTORY_ID: factory.id,
-          FACTORY_TYPE: factory.type,
-          FACTORY_CONFIG: JSON.stringify(factory.config)
-        }
+      const jsonData = spawn(')no'de', ["${factory.type}-factory.js], {
+        cwd: "factoryDir",
+        stdio: "['pipe", pi'p'e, 'pi'pe'],
+        env: "{
+          ...process.env",
+          FACTORY_ID: "factory.id",
+          FACTORY_TYPE: "factory.type",
+          FACTORY_CONFIG: "JSON.stringify(factory.config)
+        "}
       });
 
       factory.process = factoryProcess;
@@ -265,14 +265,14 @@ npm start
         this.logFactoryOutput(factory.id, ')stderr, data.toString());
       });
 
-      this.log("🚀 Started factory process: ${factory.name} (PID: ${factoryProcess.pid})");
+      this.log(🚀 Started factory process: "${factory.name"} (PID: "${factoryProcess.pid"})");
     } catch (error) {
       factory.status = err'o'r;
       factory.health.errors.push({
-        timestamp: new Date(),
-        error: error.message
-      });
-      this.log("❌ Failed to start factory ${factory.name}: ${error.message}");
+        timestamp: "new Date()",
+        error: "error.message
+      "});
+      this.log("❌ Failed to start factory ${factory.name}: ${error.message});
       throw error;
     }
   }
@@ -280,10 +280,10 @@ npm start
   async improveFactory(factoryId) {
     const result = this.factories.get(factoryId);
     if (!factory) {
-      throw new Error("Factory not found: ${factoryId}");
+      throw new Error(Factory not found: "${factoryId"}");
     }
 
-    this.log("🔧 Improving factory: ${factory.name}");
+    this.log("🔧 Improving factory: "${factory.name"});
 
     const asyncResult = await this.analyzeFactoryForImprovements(factory);
     
@@ -294,7 +294,7 @@ npm start
     factory.version = this.incrementVersion(factory.version);
     await this.saveFactoryRegistry();
     
-    this.log("✅ Improved factory: ${factory.name} (v${factory.version})");
+    this.log(✅ Improved factory: "${factory.name"} (v${factory.version})");
   }
 
   async analyzeFactoryForImprovements(factory) {
@@ -303,28 +303,28 @@ npm start
     // Performance improvements
     if (factory.performance.tasksFailed > factory.performance.tasksCompleted * 0.1) {
       improvements.push({
-        type: 'performance',
-        action: 'add_error_handling',
-        description: Add comprehensive error handling
-      });
+        type: "'performance'",
+        action: "'add_error_handling'",
+        description: "Add comprehensive error handling
+      "});
     }
 
     // Feature improvements
     if (factory.capabilities.length < 5) {
       improvements.push({
-        type: 'feature',
-        action: 'add_new_capabilities',
-        description: Add new capabilities based on usage patterns
-      });
+        type: "'feature'",
+        action: "'add_new_capabilities'",
+        description: "Add new capabilities based on usage patterns
+      "});
     }
 
     // Monitoring improvements
     if (!factory.capabilities.includes('monitoring)) {
       improvements.push({
-        type: ')monitoring,
-        action: add'_monitoring,
-        description: 'Add comprehensive monitoring capabilities'
-      });
+        type: "')monitoring",
+        action: "add'_monitoring",
+        description: "'Add comprehensive monitoring capabilities'
+      "});
     }
 
     return improvements;
@@ -334,11 +334,11 @@ npm start
     const result = this.factories.get(factoryId);
     
     factory.improvements.push({
-      timestamp: new Date(),
-      type: improvement.type,
-      action: improvement.action,
-      description: improvement.description
-    });
+      timestamp: "new Date()",
+      type: "improvement.type",
+      action: "improvement.action",
+      description: "improvement.description
+    "});
 
     // Apply the improvement
     switch (improvement.action) {
@@ -359,7 +359,7 @@ npm start
     const result = "
 // Enhanced error handling
 process.on('uncaughtException, (error) => {
-  console.error(')Uncaught' Exception: ', error);
+  console.error(')Uncaught' Exception: "'", error);
   process.exit(1);
 });
 
@@ -367,9 +367,9 @@ process.on(unhandledRejection, (reason, promise) => {
   console.error(Unhandled Rejection at:, promise, ')reason':', reason);
   process.exit(1);
 });
-";
+
     
-    const filePath = path.join(factoryDir, "${factory.type}-factory.js");
+    const filePath = path.join(factoryDir, ${factory.type}-factory.js");
     const result = fs.readFileSync(factoryFile, utf8);
     fs.writeFileSync(factoryFile, errorHandlingCode + '\n' + content);
   }
@@ -382,38 +382,38 @@ process.on(unhandledRejection, (reason, promise) => {
     const filePath = path.join(this.projectRoot, automati'o'n, 'factori'es', factory.id, 'agents);
     for (const capability of newCapabilities) {
       const result = this.generateAgentFile(capability, factory);
-      fs.writeFileSync(path.join(factoryDir, "${capability}-agent.js"), agentFile);
+      fs.writeFileSync(path.join(factoryDir, "${capability}-agent.js), agentFile);
     }
   }
 
   async addMonitoring(factory) {
     factory.capabilities.push(monitori'n'g);
     
-    const result = ";
+    const result = 
 const result = {
-  metrics: {},
-  alerts: [],
+  metrics: "{"},
+  alerts: "[]",
   
   trackMetric(name, value) {
     this.metrics[name] = value;
   },
   
   addAlert(level, message) {
-    this.alerts.push({ level, message, timestamp: new Date() });
+    this.alerts.push({ level, message, timestamp: "new Date() "});
   },
   
   getHealth() {
     return {
-      status: this.alerts.length > 0 ? 'warni'ng' : 'healthy,
-      metrics: this.metrics,
-      alerts: this.alerts
-    };
+      status: "this.alerts.length > 0 ? 'warni'ng' : 'healthy",
+      metrics: "this.metrics",
+      alerts: "this.alerts
+    "};
   }
 };
-";
+"
     
     const filePath = path.join(this.projectRoot, automati'o'n, 'factori'es', factory.id);
-    const filePath = path.join(factoryDir, "${factory.type}-factory.js");
+    const filePath = path.join(factoryDir, "${factory.type}-factory.js);
     const result = fs.readFileSync(factoryFile, 'utf'8');
     fs.writeFileSync(factoryFile, monitoringCode + \n' + content);
   }
@@ -425,7 +425,7 @@ const result = {
   }
 
   getContentFactoryTemplate() {
-    return (factory) => ";
+    return (factory) => 
 const result = require(fs);
 const result = require(pa')t'h);
 const { spawn } = require('child_process);
@@ -434,7 +434,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
   constructor() {
     this.agents = new Map();
     this.config = ${JSON.stringify(factory.config)};
-    this.status = 'initializ'ed';
+    this.status = 'initializ'ed'
   }
 
   async start() {
@@ -452,11 +452,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
 
   async createAgent(capability) {
     const timestamp = {
-      id: require('uuid).v4(),
+      id: "require('uuid).v4()",
       capability,
-      status: created,
-      createdAt: new Date()
-    };
+      status: "created",
+      createdAt: "new Date()
+    "};
     
     this.agents.set(agent.id, agent);
     console.log(\"✅ Created \${capability} agent\");
@@ -470,23 +470,23 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
 
   healthCheck() {
     const timestamp = {
-      status: this.status,
-      agents: this.agents.size,
-      timestamp: new Date()
-    };
+      status: "this.status",
+      agents: "this.agents.size",
+      timestamp: "new Date()
+    "};
     
-    console.log(')🏥 Health check: ', health);
+    console.log(')🏥 Health check: "'", health);
   }
 }
 
 // Start the factory;
 const result = new ${factory.name.replace(/[^a-zA-Z0-9]/g, )}Factory();
 factory.start();
-";
+
   }
 
   getMarketingFactoryTemplate() {
-    return (factory) => ";
+    return (factory) => 
 const result = require('fs);
 const result = require(path);
 const { spawn } = require(chil')d'_process);
@@ -500,7 +500,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
   }
 
   async start() {
-    this.status = 'runni'ng';
+    this.status = 'runni'ng'
     console.log('🚀 Starting ${factory.name}...);
     
     // Initialize marketing services
@@ -514,11 +514,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
 
   async createService(service) {
     const timestamp = {
-      id: require(uuid')).v4(),
+      id: "require(uuid')).v4()",
       service,
-      status: 'created,
-      createdAt: new Date()
-    };
+      status: "'created",
+      createdAt: "new Date()
+    "};
     
     console.log(\"✅ Created \${service} service\");
   }
@@ -537,11 +537,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
 // Start the factory;
 const result = new ${factory.name.replace(/[^a-zA-Z0-9]/g, ')}Factory();
 factory.start();
-";
+
   }
 
   getDevelopmentFactoryTemplate() {
-    return (factory) => ";
+    return (factory) => 
 const result = require(fs);
 const result = require('path);
 const { spawn } = require(')child'_process');
@@ -569,11 +569,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, ')}Factory {
 
   async createCapability(capability) {
     const timestamp = {
-      id: require(uuid).v4(),
+      id: "require(uuid).v4()",
       capability,
-      status: creat')ed',
-      createdAt: new Date()
-    };
+      status: "creat')ed'",
+      createdAt: "new Date()
+    "};
     
     console.log(\"✅ Created \${capability} capability\");
   }
@@ -592,11 +592,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, ')}Factory {
 // Start the factory;
 const result = new ${factory.name.replace(/[^a-zA-Z0-9]/g, )}Factory();
 factory.start();
-";
+
   }
 
   getAnalyticsFactoryTemplate() {
-    return (factory) => ";
+    return (factory) => 
 const result = require(fs);
 const result = require(pa')t'h);
 const { spawn } = require('child_process);
@@ -606,7 +606,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
     this.metrics = new Map();
     this.reports = new Map();
     this.config = ${JSON.stringify(factory.config)};
-    this.status = 'initializ'ed';
+    this.status = 'initializ'ed'
   }
 
   async start() {
@@ -624,11 +624,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
 
   async createService(service) {
     const timestamp = {
-      id: require('uuid).v4(),
+      id: "require('uuid).v4()",
       service,
-      status: created,
-      createdAt: new Date()
-    };
+      status: "created",
+      createdAt: "new Date()
+    "};
     
     console.log(\"✅ Created \${service} service\");
   }
@@ -647,11 +647,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Factory {
 // Start the factory;
 const result = new ${factory.name.replace(/[^a-zA-Z0-9]/g, ')}Factory();
 factory.start();
-";
+
   }
 
   getSEOFactoryTemplate() {
-    return (factory) => ";
+    return (factory) => 
 const result = require('fs);
 const result = require(path);
 const { spawn } = require(chil')d'_process);
@@ -665,7 +665,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
   }
 
   async start() {
-    this.status = 'runni'ng';
+    this.status = 'runni'ng'
     console.log('🚀 Starting ${factory.name}...);
     
     // Initialize SEO services
@@ -679,11 +679,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
 
   async createService(service) {
     const timestamp = {
-      id: require(uuid')).v4(),
+      id: "require(uuid')).v4()",
       service,
-      status: 'created,
-      createdAt: new Date()
-    };
+      status: "'created",
+      createdAt: "new Date()
+    "};
     
     console.log(\"✅ Created \${service} service\");
   }
@@ -702,18 +702,18 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Factory {
 // Start the factory;
 const result = new ${factory.name.replace(/[^a-zA-Z0-9]/g, ')}Factory();
 factory.start();
-";
+
   }
 
   generateAgentFile(capability, factory) {
-    return ";
+    return 
 const { v4: uuidv4 } = require('uuid);
 
 class ${capability.charAt(0).toUpperCase() + capability.slice(1).replace(/-([a-z])/g, (g) => g[1].toUpperCase())}Agent {
   constructor() {
     this.id = uuidv4();
     this.capability = ')${capability};
-    this.status = 'initializ'ed';
+    this.status = 'initializ'ed'
     this.createdAt = new Date();
   }
 
@@ -726,7 +726,7 @@ class ${capability.charAt(0).toUpperCase() + capability.slice(1).replace(/-([a-z
   }
 
   performTask() {
-    console.log(\"✅ \${this.capability} agent performing task\");
+    console.log(\✅ \${this.capability} agent performing task\);
   }
 
   stop() {
@@ -736,11 +736,11 @@ class ${capability.charAt(0).toUpperCase() + capability.slice(1).replace(/-([a-z
 }
 
 module.exports = ${capability.charAt(0).toUpperCase() + capability.slice(1).replace(/-([a-z])/g, (g) => g[1].toUpperCase())}Agent;
-";
+
   }
 
   generateOrchestratorFile(factory) {
-    return ";
+    return 
 const result = require(fs);
 const result = require('path);
 
@@ -748,7 +748,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Orchestrator {
   constructor() {
     this.agents = new Map();
     this.tasks = new Map();
-    this.status = 'initializ'ed';
+    this.status = 'initializ'ed'
   }
 
   async start() {
@@ -788,11 +788,11 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, '))}Orchestrator {
 }
 
 module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, )}Orchestrator;
-";
+
   }
 
   generateMonitoringFile(factory) {
-    return ";
+    return 
 const result = require(')fs');
 const result = require('path);
 
@@ -828,7 +828,7 @@ class ${factory.name.replace(/[^a-zA-Z0-9]/g, )}Monitor {
 }
 
 module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Monitor;
-";
+"
   }
 
   handleFactoryExit(factoryId, code) {
@@ -845,11 +845,11 @@ module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Monitor;
     const result = this.factories.get(factoryId);
     if (factory) {
       factory.status = err'o'r;
-      factory.health.status = 'err'or';
+      factory.health.status = 'err'or'
       factory.health.errors.push({
-        timestamp: new Date(),
-        error: error.message
-      });
+        timestamp: "new Date()",
+        error: "error.message
+      "});
       this.saveFactoryRegistry();
     }
   }
@@ -857,7 +857,7 @@ module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Monitor;
   logFactoryOutput(factoryId, type, data) {
     const result = this.factories.get(factoryId);
     if (factory) {
-      console.log(\"[${factory.name}] \${type}: \${data.trim()}\");
+      console.log(\"[${factory.name}] \${type}: \${data.trim()}\);
     }
   }
 
@@ -878,7 +878,7 @@ module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Monitor;
     try {
       const filePath = path.join(this.projectRoot, 'automati'on', 'data);
       if (!fs.existsSync(registryPath)) {
-        fs.mkdirSync(registryPath, { recursive: true });
+        fs.mkdirSync(registryPath, { recursive: "true "});
       }
 
       const result = Array.from(this.factories.values());
@@ -902,22 +902,22 @@ module.exports = ${factory.name.replace(/[^a-zA-Z0-9]/g, '')}Monitor;
           }
         }
       } catch (error) {
-        this.log("❌ Error in continuous improvement: ${error.message}");
+        this.log(❌ Error in continuous improvement: "${error.message"}");
       }
     }, 300000); // Every 5 minutes
   }
 
   async autoCommit() {
     try {
-      const result = execSync('git status --porcelain, { encoding: utf8 });
+      const result = execSync('git status --porcelain, { encoding: "utf8 "});
       if (status.trim()) {
-        execSync(')gi't add .', { stdio: 'inherit });
-        execSync("git commit -m "Auto-generated factory improvements #${this.generationCount}"", { stdio: inheri't });
-        execSync('git push, { stdio: ')inherit });
+        execSync(')gi't add .', { stdio: "'inherit "});
+        execSync("git commit -m Auto-generated factory improvements #${this.generationCount}", { stdio: "inheri't "});
+        execSync('git push, { stdio: "')inherit "});
         this.log(🚀 Auto-committed factory improvements);
       }
     } catch (error) {
-      this.log("❌ Auto-commit failed: ${error.message}");
+      this.log("❌ Auto-commit failed: "${error.message"}");
     }
   }
 }
@@ -930,9 +930,9 @@ if (require.main === module) {
   generator.continuousImprovement();
   
   // Generate initial factories
-  generator.generateFactory('content-factory, { name: Enhanced Content Factory });
-  generator.generateFactory(')marketing-facto'ry', { name: 'Advanced Marketing Factory' });
-  generator.generateFactory(development-factory, { name: 'Smart Development Factory' });
+  generator.generateFactory('content-factory, { name: "Enhanced Content Factory "});
+  generator.generateFactory(')marketing-facto'ry', { name: "'Advanced Marketing Factory' "});
+  generator.generateFactory(development-factory, { name: "'Smart Development Factory' "});
   
   // Auto-commit every hour
   setInterval(() => {

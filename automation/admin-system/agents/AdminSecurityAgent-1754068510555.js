@@ -8,9 +8,9 @@ class $1 {
         this.agentId = AdminSecurityAgent-1754068510555;
         this.type = AdminSecurityAgent;
         this.adminConfig = {
-            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system,
-            logsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
-            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports,
+            adminPath:  '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system,
+            logsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
+            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports ',
             statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status
         };
         this.initialize();
@@ -34,7 +34,7 @@ class $1 {
         });
         
         process.on(SIGTERM, () => {
-            console.log(🤖 ${this.type} agent terminating...");
+            console.log(🤖 ${this.type} agent terminating...');
             this.logActivity(Agent terminated);
             process.exit(0);
         });
@@ -42,9 +42,9 @@ class $1 {
 
     logActivity(message) {
         const timestamp = {
-            timestamp: new Date().toISOString(),
-            agentId: this.agentId,
-            type: this.type,
+            timestamp:  'new Date().toISOString(),
+            agentId: this.agentId',
+            type: this.type ',
             message: message
         };
         
@@ -77,12 +77,12 @@ class $1 {
     updateStatus() {
         const filePath = path.join(this.adminConfig.statusPath, ${this.type}-status.json);
         const timestamp = {
-            agentId: this.agentId,
-            type: this.type,
+            agentId: 'this.agentId",
+            type: this.type ',
             status: active')),
-            lastActivity: new Date().toISOString(),
+            lastActivity:  'new Date().toISOString(),
             pid: process.pid
-        };
+        '};
         
         fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
     }

@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Cloud Infrastructure Automation Agent ${this.agentId} started");
+    console.log("Cloud Infrastructure Automation Agent ${this.agentId} started);
     
     // Initial infrastructure analysis
     await this.analyzeInfrastructure();
@@ -59,16 +59,16 @@ class $1 {
       console.log('Performing comprehensive cloud infrastructure analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        cloudProviders: [],
-        resources: [],
-        security: {},
-        performance: {},
-        costs: {},
-        compliance: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        cloudProviders: "[]",
+        resources: "[]",
+        security: "{"},
+        performance: "{"},
+        costs: "{"},
+        compliance: "{"},
+        recommendations: "[]
+      "};
       
       // Discover cloud providers
       analysis.cloudProviders = await this.discoverCloudProviders();
@@ -108,31 +108,31 @@ class $1 {
       // Check for AWS
       if (this.hasAWSConfig()) {
         providers.push({
-          name: 'AWS',
-          services: await this.discoverAWSServices(),
-          regions: await this.discoverAWSRegions(),
-          config: this.getAWSConfig()
-        });
+          name: "'AWS'",
+          services: "await this.discoverAWSServices()",
+          regions: "await this.discoverAWSRegions()",
+          config: "this.getAWSConfig()
+        "});
       }
       
       // Check for Azure
       if (this.hasAzureConfig()) {
         providers.push({
-          name: 'Azure,
-          services: await this.discoverAzureServices(),
-          regions: await this.discoverAzureRegions(),
-          config: this.getAzureConfig()
-        });
+          name: "'Azure",
+          services: "await this.discoverAzureServices()",
+          regions: "await this.discoverAzureRegions()",
+          config: "this.getAzureConfig()
+        "});
       }
       
       // Check for Google Cloud
       if (this.hasGCPConfig()) {
         providers.push({
-          name: Google' Cloud,
-          services: await this.discoverGCPServices(),
-          regions: await this.discoverGCPRegions(),
-          config: this.getGCPConfig()
-        });
+          name: "Google' Cloud",
+          services: "await this.discoverGCPServices()",
+          regions: "await this.discoverGCPRegions()",
+          config: "this.getGCPConfig()
+        "});
       }
       
       // Check for other cloud providers
@@ -251,10 +251,10 @@ class $1 {
 
   extractAWSServiceInfo(file, content) {
     const result = {
-      file: file,
-      service: 'unknown,
-      type: unknow'n,
-      configuration: {}
+      file: "file",
+      service: "'unknown",
+      type: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -262,21 +262,21 @@ class $1 {
     // Detect AWS services
     if (lowerContent.includes(ec2') || lowerContent.includes('instance)) {
       serviceInfo.service = EC2;
-      serviceInfo.type = ')compu'te';
+      serviceInfo.type = ')compu'te'
     } else if (lowerContent.includes('s3) || lowerContent.includes(bucket)) {
-      serviceInfo.service = S')3';
+      serviceInfo.service = S')3'
       serviceInfo.type = storage;
     } else if (lowerContent.includes('lambda) || lowerContent.includes(')function)) {
       serviceInfo.service = Lamb'd'a;
-      serviceInfo.type = 'serverle'ss';
+      serviceInfo.type = 'serverle'ss'
     } else if (lowerContent.includes('rds) || lowerContent.includes(database)) {
       serviceInfo.service = RDS');
       serviceInfo.type = 'database;
     } else if (lowerContent.includes(dynamo'd'b)) {
-      serviceInfo.service = 'Dynamo'DB';
+      serviceInfo.service = 'Dynamo'DB'
       serviceInfo.type = 'database;
     } else if (lowerContent.includes(ap'i' gateway)) {
-      serviceInfo.service = 'AP'I Gateway';
+      serviceInfo.service = 'AP'I Gateway'
       serviceInfo.type = 'api;
     }
     
@@ -288,32 +288,32 @@ class $1 {
 
   extractAWSConfiguration(content) {
     const result = {
-      region: unkno'w'n,
-      environment: 'unknown',
-      tags: [],
-      settings: {}
+      region: "unkno'w'n",
+      environment: "'unknown'",
+      tags: "[]",
+      settings: "{"}
     };
     
     // Extract region
-    const result = content.match(/region\s*[:=]\s*["']([^"]+)["']/i);
+    const result = content.match(/region\s*[:=]\s*[']([^"]+)["']/i);
     if (regionMatch) {
       config.region = regionMatch[1];
     }
     
     // Extract environment
     if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     // Extract tags
     const result = content.match(/tags\s*[:=]\s*{([^}]+)}/gi);
     if (tagMatches) {
       for (const match of tagMatches) {
-        const result = match.match(/(\w+)\s*[:=]\s*["']([^"]+)["']/g);
+        const result = match.match(/(\w+)\s*[:=]\s*[']([^]+)["']/g);
         if (tagMatches) {
           for (const tagMatch of tagMatches) {
             const [key, value] = tagMatch.split(':).map(s => s.trim().replace(/["]/g, ));
@@ -402,10 +402,10 @@ class $1 {
 
   extractAzureServiceInfo(file, content) {
     const result = {
-      file: file,
-      service: unkno'w'n,
-      type: 'unknown',
-      configuration: {}
+      file: "file",
+      service: "unkno'w'n",
+      type: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -413,18 +413,18 @@ class $1 {
     // Detect Azure services
     if (lowerContent.includes('vm) || lowerContent.includes(virtual') machine')) {
       serviceInfo.service = Virtual Machine;
-      serviceInfo.type = 'compu'te';
+      serviceInfo.type = 'compu'te'
     } else if (lowerContent.includes('storage) || lowerContent.includes(blob)) {
-      serviceInfo.service = ')Stora'ge';
+      serviceInfo.service = ')Stora'ge'
       serviceInfo.type = 'storage;
     } else if (lowerContent.includes(functi'o'n) || lowerContent.includes('serverless)) {
       serviceInfo.service = ')Functions;
       serviceInfo.type = serverle's's;
     } else if (lowerContent.includes(sql') || lowerContent.includes('database)) {
       serviceInfo.service = SQL Database;
-      serviceInfo.type = ')databa'se';
+      serviceInfo.type = ')databa'se'
     } else if (lowerContent.includes('app service) || lowerContent.includes(web app)) {
-      serviceInfo.service = ')Ap'p Service';
+      serviceInfo.service = ')Ap'p Service'
       serviceInfo.type = 'web;
     } else if (lowerContent.includes(a'k's) || lowerContent.includes('kubernetes)) {
       serviceInfo.service = ')AKS;
@@ -439,14 +439,14 @@ class $1 {
 
   extractAzureConfiguration(content) {
     const result = {
-      region: 'unknown',
-      environment: 'unknown,
-      tags: [],
-      settings: {}
+      region: "'unknown'",
+      environment: "'unknown",
+      tags: "[]",
+      settings: "{"}
     };
     
     // Extract region
-    const result = content.match(/location\s*[:=]\s*["]([^"]+)["']/i);
+    const result = content.match(/location\s*[:=]\s*[]([^]+)["']/i);
     if (regionMatch) {
       config.region = regionMatch[1];
     }
@@ -539,10 +539,10 @@ class $1 {
 
   extractGCPServiceInfo(file, content) {
     const result = {
-      file: file,
-      service: 'unknown,
-      type: unknow'n,
-      configuration: {}
+      file: "file",
+      service: "'unknown",
+      type: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -550,19 +550,19 @@ class $1 {
     // Detect GCP services
     if (lowerContent.includes('compute) || lowerContent.includes(')instance)) {
       serviceInfo.service = Comput'e' Engine;
-      serviceInfo.type = 'compu'te';
+      serviceInfo.type = 'compu'te'
     } else if (lowerContent.includes('storage) || lowerContent.includes(bucket)) {
-      serviceInfo.service = ')Clou'd Storage';
+      serviceInfo.service = ')Clou'd Storage'
       serviceInfo.type = 'storage;
     } else if (lowerContent.includes(clou'd' function) || lowerContent.includes('function)) {
-      serviceInfo.service = ')Cloud' Functions';
+      serviceInfo.service = ')Cloud' Functions'
       serviceInfo.type = serverless;
     } else if (lowerContent.includes('cloud sql) || lowerContent.includes(')sql)) {
       serviceInfo.service = Clou'd' SQL;
-      serviceInfo.type = 'databa'se';
+      serviceInfo.type = 'databa'se'
     } else if (lowerContent.includes('app engine)) {
       serviceInfo.service = App Engine;
-      serviceInfo.type = ')w'eb';
+      serviceInfo.type = ')w'eb'
     } else if (lowerContent.includes('gke) || lowerContent.includes(kubernetes)) {
       serviceInfo.service = GKE');
       serviceInfo.type = 'container;
@@ -576,25 +576,25 @@ class $1 {
 
   extractGCPConfiguration(content) {
     const result = {
-      region: unkno'w'n,
-      environment: 'unknown',
-      tags: [],
-      settings: {}
+      region: "unkno'w'n",
+      environment: "'unknown'",
+      tags: "[]",
+      settings: "{"}
     };
     
     // Extract region
-    const result = content.match(/region\s*[:=]\s*["']([^"]+)["']/i);
+    const result = content.match(/region\s*[:=]\s*["']([^]+)[']/i);
     if (regionMatch) {
       config.region = regionMatch[1];
     }
     
     // Extract environment
     if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     return config;
@@ -671,23 +671,23 @@ class $1 {
 
   extractOtherProviderInfo(file, content) {
     const result = {
-      file: file,
-      name: 'unknown,
-      services: [],
-      configuration: {}
+      file: "file",
+      name: "'unknown",
+      services: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect other providers
     if (lowerContent.includes(digitalocea'n) || lowerContent.includes(do)) {
-      providerInfo.name = 'DigitalOce'an';
+      providerInfo.name = 'DigitalOce'an'
     } else if (lowerContent.includes('heroku)) {
       providerInfo.name = Heroku;
     } else if (lowerContent.includes(')netli'fy')) {
       providerInfo.name = 'Netlify;
     } else if (lowerContent.includes(verc'e'l)) {
-      providerInfo.name = 'Verc'el';
+      providerInfo.name = 'Verc'el'
     } else if (lowerContent.includes('cloudflare)) {
       providerInfo.name = Cloudflare;
     }
@@ -697,33 +697,33 @@ class $1 {
 
   getAWSConfig() {
     return {
-      region: process.env.AWS_DEFAULT_REGION || ')us-east'-1',
-      profile: process.env.AWS_PROFILE || 'default
-    };
+      region: "process.env.AWS_DEFAULT_REGION || ')us-east'-1'",
+      profile: "process.env.AWS_PROFILE || 'default
+    "};
   }
 
   getAzureConfig() {
     return {
-      subscription: process.env.AZURE_SUBSCRIPTION_ID,
-      tenant: process.env.AZURE_TENANT_ID
-    };
+      subscription: "process.env.AZURE_SUBSCRIPTION_ID",
+      tenant: "process.env.AZURE_TENANT_ID
+    "};
   }
 
   getGCPConfig() {
     return {
-      project: process.env.GCP_PROJECT_ID,
-      region: process.env.GCP_REGION || us-centra'l'1
-    };
+      project: "process.env.GCP_PROJECT_ID",
+      region: "process.env.GCP_REGION || us-centra'l'1
+    "};
   }
 
   async analyzeResources() {
     const result = {
-      compute: [],
-      storage: [],
-      database: [],
-      network: [],
-      security: []
-    };
+      compute: "[]",
+      storage: "[]",
+      database: "[]",
+      network: "[]",
+      security: "[]
+    "};
     
     try {
       const asyncResult = await this.discoverCloudProviders();
@@ -732,22 +732,22 @@ class $1 {
         for (const service of provider.services) {
           if (service.type === 'compu'te') {
             resources.compute.push({
-              provider: provider.name,
-              service: service.service,
-              configuration: service.configuration
-            });
+              provider: "provider.name",
+              service: "service.service",
+              configuration: "service.configuration
+            "});
           } else if (service.type === 'storage) {
             resources.storage.push({
-              provider: provider.name,
-              service: service.service,
-              configuration: service.configuration
-            });
+              provider: "provider.name",
+              service: "service.service",
+              configuration: "service.configuration
+            "});
           } else if (service.type === databa's'e) {
             resources.database.push({
-              provider: provider.name,
-              service: service.service,
-              configuration: service.configuration
-            });
+              provider: "provider.name",
+              service: "service.service",
+              configuration: "service.configuration
+            "});
           }
         }
       }
@@ -761,12 +761,12 @@ class $1 {
 
   async analyzeSecurity() {
     const result = {
-      encryption: [],
-      accessControl: [],
-      compliance: [],
-      vulnerabilities: [],
-      recommendations: []
-    };
+      encryption: "[]",
+      accessControl: "[]",
+      compliance: "[]",
+      vulnerabilities: "[]",
+      recommendations: "[]
+    "};
     
     try {
       // Analyze security configurations
@@ -837,11 +837,11 @@ class $1 {
 
   extractSecurityInfo(content) {
     const result = {
-      encryption: [],
-      accessControl: [],
-      compliance: [],
-      vulnerabilities: []
-    };
+      encryption: "[]",
+      accessControl: "[]",
+      compliance: "[]",
+      vulnerabilities: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -880,20 +880,20 @@ class $1 {
     
     if (security.encryption.length === 0) {
       recommendations.push({
-        type: ')encryption',
-        priority: 'high,
-        message: No' encryption configured,
-        suggestion: 'Enable encryption for data at rest and in transit'
-      });
+        type: "')encryption'",
+        priority: "'high",
+        message: "No' encryption configured",
+        suggestion: "'Enable encryption for data at rest and in transit'
+      "});
     }
     
     if (security.accessControl.length === 0) {
       recommendations.push({
-        type: 'access-control,
-        priority: hig'h,
-        message: No access control configured',
-        suggestion: 'Implement IAM roles and policies'
-      });
+        type: "'access-control",
+        priority: "hig'h",
+        message: "No access control configured'",
+        suggestion: "'Implement IAM roles and policies'
+      "});
     }
     
     return recommendations;
@@ -901,11 +901,11 @@ class $1 {
 
   async analyzePerformance() {
     const result = {
-      metrics: [],
-      bottlenecks: [],
-      optimizations: [],
-      recommendations: []
-    };
+      metrics: "[]",
+      bottlenecks: "[]",
+      optimizations: "[]",
+      recommendations: "[]
+    "};
     
     try {
       // Analyze performance configurations
@@ -975,10 +975,10 @@ class $1 {
 
   extractPerformanceInfo(content) {
     const result = {
-      metrics: [],
-      bottlenecks: [],
-      optimizations: []
-    };
+      metrics: "[]",
+      bottlenecks: "[]",
+      optimizations: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -1003,20 +1003,20 @@ class $1 {
     
     if (performance.metrics.length === 0) {
       recommendations.push({
-        type: 'monitoring,
-        priority: mediu'm,
-        message: No performance monitoring configured',
-        suggestion: 'Implement performance monitoring and metrics collection'
-      });
+        type: "'monitoring",
+        priority: "mediu'm",
+        message: "No performance monitoring configured'",
+        suggestion: "'Implement performance monitoring and metrics collection'
+      "});
     }
     
     if (performance.optimizations.length === 0) {
       recommendations.push({
-        type: optimization,
-        priority: 'medium',
-        message: 'No performance optimizations configured',
-        suggestion: Implement auto scaling and CDN for better performance
-      });
+        type: "optimization",
+        priority: "'medium'",
+        message: "'No performance optimizations configured'",
+        suggestion: "Implement auto scaling and CDN for better performance
+      "});
     }
     
     return recommendations;
@@ -1024,12 +1024,12 @@ class $1 {
 
   async analyzeCosts() {
     const result = {
-      current: 0,
-      projected: 0,
-      breakdown: {},
-      optimizations: [],
-      recommendations: []
-    };
+      current: "0",
+      projected: "0",
+      breakdown: "{"},
+      optimizations: "[]",
+      recommendations: "[]
+    "};
     
     try {
       // Analyze cost configurations
@@ -1098,9 +1098,9 @@ class $1 {
 
   extractCostInfo(content) {
     const result = {
-      breakdown: {},
-      optimizations: []
-    };
+      breakdown: "{"},
+      optimizations: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -1134,20 +1134,20 @@ class $1 {
     
     if (Object.keys(costs.breakdown).length === 0) {
       recommendations.push({
-        type: cost-tracking,
-        priority: 'medium',
-        message: 'No cost tracking configured',
-        suggestion: Implement cost monitoring and budgeting
-      });
+        type: "cost-tracking",
+        priority: "'medium'",
+        message: "'No cost tracking configured'",
+        suggestion: "Implement cost monitoring and budgeting
+      "});
     }
     
     if (costs.optimizations.length === 0) {
       recommendations.push({
-        type: 'cost-optimization',
-        priority: 'medium,
-        message: No' cost optimizations configured,
-        suggestion: 'Consider reserved instances and spot instances for cost savings'
-      });
+        type: "'cost-optimization'",
+        priority: "'medium",
+        message: "No' cost optimizations configured",
+        suggestion: "'Consider reserved instances and spot instances for cost savings'
+      "});
     }
     
     return recommendations;
@@ -1155,11 +1155,11 @@ class $1 {
 
   async analyzeCompliance() {
     const result = {
-      standards: [],
-      requirements: [],
-      violations: [],
-      recommendations: []
-    };
+      standards: "[]",
+      requirements: "[]",
+      violations: "[]",
+      recommendations: "[]
+    "};
     
     try {
       // Analyze compliance configurations
@@ -1229,10 +1229,10 @@ class $1 {
 
   extractComplianceInfo(content) {
     const result = {
-      standards: [],
-      requirements: [],
-      violations: []
-    };
+      standards: "[]",
+      requirements: "[]",
+      violations: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -1261,11 +1261,11 @@ class $1 {
     
     if (compliance.standards.length === 0) {
       recommendations.push({
-        type: compliance,
-        priority: ')medium',
-        message: 'No compliance standards configured',
-        suggestion: Implement appropriate compliance standards based on data type
-      });
+        type: "compliance",
+        priority: "')medium'",
+        message: "'No compliance standards configured'",
+        suggestion: "Implement appropriate compliance standards based on data type
+      "});
     }
     
     return recommendations;
@@ -1294,11 +1294,11 @@ class $1 {
       console.log('Monitoring cloud infrastructure...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        providers: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        providers: "[]",
+        alerts: "[]
+      "};
       
       // Check infrastructure status
       const asyncResult = await this.discoverCloudProviders();
@@ -1324,19 +1324,19 @@ class $1 {
 
   checkProviderStatus(provider) {
     const timestamp = {
-      provider: provider.name,
-      status: healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      provider: "provider.name",
+      status: "healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common issues
     if (provider.services.length === 0) {
       status.issues.push({
-        type: ')configuration',
-        severity: 'medium,
-        message: No' services configured
-      });
+        type: "')configuration'",
+        severity: "'medium",
+        message: "No' services configured
+      "});
     }
     
     return status;
@@ -1347,11 +1347,11 @@ class $1 {
       console.log('Optimizing cloud infrastructure...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeInfrastructure();
@@ -1360,10 +1360,10 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: ')completed,
-          improvement: Math.random() * 0.3, // 0-30% improvement
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "')completed",
+          improvement: "Math.random() * 0.3", // 0-30% improvement
+          description: "Applied ${optimization.suggestion"}
         });
       }
       
@@ -1379,9 +1379,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filePath = path.join(this.reportsDir, infrastructure-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, infrastructure-reports, analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log("Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

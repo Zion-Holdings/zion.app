@@ -7,16 +7,12 @@ const cron = require('node-cron');
 
 class QuantumComputingAutomationFactory {
   constructor() {
-    this.factoryId = `quantum-computing-automation-factory-${Date.now()}`;
+    this.factoryId = `quantum-computing-automation-factory-${Date.now()}`
     this.agents = new Map();
-    this.quantumAlgorithms = new Map();
-    this.simulationTypes = new Map();
     this.performanceMetrics = {
       quantumSimulations: 0,
       algorithmOptimizations: 0,
-      quantumAdvantage: 0,
-      classicalComparisons: 0,
-      uptime: 100
+      quantumAdvantage: 0
     };
     
     this.initializeFactory();
@@ -25,129 +21,39 @@ class QuantumComputingAutomationFactory {
 
   initializeFactory() {
     this.agentsPath = path.join(__dirname, 'quantum-computing-agents');
-    this.algorithmsPath = path.join(__dirname, 'quantum-algorithms');
-    this.simulationsPath = path.join(__dirname, 'quantum-simulations');
     this.reportsPath = path.join(__dirname, 'quantum-reports');
     
-    [this.agentsPath, this.algorithmsPath, this.simulationsPath, this.reportsPath].forEach(dir => {
+    [this.agentsPath, this.reportsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
     });
 
-    this.loadQuantumAlgorithms();
-    this.loadSimulationTypes();
     this.createInitialAgents();
-  }
-
-  loadQuantumAlgorithms() {
-    this.quantumAlgorithms.set('grover-algorithm', {
-      name: 'Grover Search Algorithm',
-      description: 'Quantum search algorithm for unstructured databases',
-      complexity: 'O(√N)',
-      applications: ['database-search', 'cryptography', 'optimization'],
-      qubits: 8
-    });
-
-    this.quantumAlgorithms.set('shor-algorithm', {
-      name: 'Shor Factorization Algorithm',
-      description: 'Quantum algorithm for integer factorization',
-      complexity: 'O((log N)³)',
-      applications: ['cryptography', 'number-theory', 'security'],
-      qubits: 16
-    });
-
-    this.quantumAlgorithms.set('quantum-fourier-transform', {
-      name: 'Quantum Fourier Transform',
-      description: 'Quantum version of discrete Fourier transform',
-      complexity: 'O(n²)',
-      applications: ['signal-processing', 'quantum-phase-estimation', 'period-finding'],
-      qubits: 12
-    });
-
-    this.quantumAlgorithms.set('quantum-annealing', {
-      name: 'Quantum Annealing',
-      description: 'Quantum optimization technique for complex problems',
-      complexity: 'O(exp(n))',
-      applications: ['optimization', 'machine-learning', 'scheduling'],
-      qubits: 20
-    });
-
-    this.quantumAlgorithms.set('quantum-machine-learning', {
-      name: 'Quantum Machine Learning',
-      description: 'Machine learning algorithms on quantum computers',
-      complexity: 'O(poly(n))',
-      applications: ['classification', 'regression', 'clustering'],
-      qubits: 10
-    });
-  }
-
-  loadSimulationTypes() {
-    this.simulationTypes.set('quantum-circuit-simulation', {
-      name: 'Quantum Circuit Simulation',
-      description: 'Simulation of quantum circuits and gates',
-      capabilities: ['gate-operations', 'measurement', 'noise-modeling'],
-      maxQubits: 32
-    });
-
-    this.simulationTypes.set('quantum-chemistry-simulation', {
-      name: 'Quantum Chemistry Simulation',
-      description: 'Simulation of molecular systems and chemical reactions',
-      capabilities: ['molecular-dynamics', 'energy-calculation', 'reaction-pathways'],
-      maxQubits: 24
-    });
-
-    this.simulationTypes.set('quantum-materials-simulation', {
-      name: 'Quantum Materials Simulation',
-      description: 'Simulation of quantum materials and properties',
-      capabilities: ['band-structure', 'phase-transitions', 'topological-properties'],
-      maxQubits: 28
-    });
-
-    this.simulationTypes.set('quantum-error-correction', {
-      name: 'Quantum Error Correction',
-      description: 'Simulation of quantum error correction codes',
-      capabilities: ['error-detection', 'error-correction', 'fault-tolerance'],
-      maxQubits: 16
-    });
   }
 
   createInitialAgents() {
     this.createAgent('quantum-algorithm-optimizer', {
-      type: 'algorithm-optimization',
-      capabilities: ['circuit-optimization', 'gate-count-reduction', 'depth-minimization'],
-      algorithms: ['grover-algorithm', 'shor-algorithm', 'quantum-fourier-transform'],
+      capabilities: ['circuit-optimization', 'gate-count-reduction'],
       frequency: '2h',
       priority: 'high'
     });
 
     this.createAgent('quantum-simulator', {
-      type: 'quantum-simulation',
-      capabilities: ['circuit-simulation', 'noise-modeling', 'measurement-simulation'],
-      simulations: ['quantum-circuit-simulation', 'quantum-chemistry-simulation'],
+      capabilities: ['circuit-simulation', 'noise-modeling'],
       frequency: '1h',
       priority: 'high'
     });
 
     this.createAgent('quantum-error-corrector', {
-      type: 'error-correction',
-      capabilities: ['error-detection', 'error-correction', 'fault-tolerance'],
-      codes: ['surface-code', 'stabilizer-codes', 'topological-codes'],
+      capabilities: ['error-detection', 'error-correction'],
       frequency: '30m',
       priority: 'critical'
-    });
-
-    this.createAgent('quantum-machine-learner', {
-      type: 'quantum-ml',
-      capabilities: ['quantum-classification', 'quantum-regression', 'quantum-clustering'],
-      algorithms: ['quantum-machine-learning', 'quantum-annealing'],
-      frequency: '4h',
-      priority: 'medium'
     });
   }
 
   createAgent(type, config) {
-    const agentId = `${type}-${Date.now()}`;
+    const agentId = `${type}-${Date.now()}`
     const agent = {
       id: agentId,
       type: type,
@@ -158,7 +64,6 @@ class QuantumComputingAutomationFactory {
       performance: {
         simulationsCompleted: 0,
         algorithmsOptimized: 0,
-        errorCorrections: 0,
         accuracy: 0.98
       }
     };
@@ -175,7 +80,7 @@ class QuantumComputingAutomationFactory {
   }
 
   generateAgentCode(type, config) {
-    const baseTemplate = `
+    return `
 const fs = require('fs');
 const path = require('path');
 
@@ -183,7 +88,6 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
     this.agentId = '${type}-agent';
     this.capabilities = ${JSON.stringify(config.capabilities || [])};
-    this.algorithms = ${JSON.stringify(config.algorithms || [])};
     this.frequency = '${config.frequency || '1h'}';
     this.priority = '${config.priority || 'medium'}';
   }
@@ -193,15 +97,14 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
       data: data,
       quantumState: this.prepareQuantumState(data),
       execution: this.executeQuantumAlgorithm(data),
-      measurement: this.performMeasurement(data),
-      classicalResult: this.convertToClassical(data)
+      measurement: this.performMeasurement(data)
     };
     
     return result;
   }
 
   prepareQuantumState(data) {
-    return { qubits: 8, superposition: true, entanglement: false };
+    return { qubits: 8, superposition: true };
   }
 
   executeQuantumAlgorithm(data) {
@@ -211,16 +114,10 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   performMeasurement(data) {
     return { outcomes: [0, 1], probabilities: [0.5, 0.5] };
   }
-
-  convertToClassical(data) {
-    return { classicalResult: 'optimized', quantumAdvantage: 0.15 };
-  }
 }
 
 module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
-    `;
-
-    return baseTemplate;
+    `
   }
 
   startQuantumAutomation() {
@@ -228,7 +125,6 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     
     this.startAlgorithmOptimizationCron();
     this.startSimulationCron();
-    this.startErrorCorrectionCron();
     this.startMonitoring();
   }
 
@@ -244,48 +140,26 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     });
   }
 
-  startErrorCorrectionCron() {
-    cron.schedule('*/30 * * * *', () => {
-      this.executeErrorCorrection();
-    });
-  }
-
   async executeAlgorithmOptimization() {
     console.log('⚡ Executing Quantum Algorithm Optimization...');
     
     const algorithmOptimizer = this.getOrCreateAgent('quantum-algorithm-optimizer');
-    const quantumML = this.getOrCreateAgent('quantum-machine-learner');
-    
     const algorithmData = await this.collectAlgorithmData();
     const optimization = await algorithmOptimizer.executeQuantumTask(algorithmData);
-    const mlResult = await quantumML.executeQuantumTask(algorithmData);
     
     this.performanceMetrics.algorithmOptimizations++;
-    this.saveResults('algorithm-optimization', { optimization, mlResult });
+    this.saveResults('algorithm-optimization', { optimization });
   }
 
   async executeQuantumSimulation() {
     console.log('🔬 Executing Quantum Simulation...');
     
     const quantumSimulator = this.getOrCreateAgent('quantum-simulator');
-    
     const simulationData = await this.collectSimulationData();
     const simulation = await quantumSimulator.executeQuantumTask(simulationData);
     
     this.performanceMetrics.quantumSimulations++;
     this.saveResults('quantum-simulation', { simulation });
-  }
-
-  async executeErrorCorrection() {
-    console.log('🛡️ Executing Quantum Error Correction...');
-    
-    const errorCorrector = this.getOrCreateAgent('quantum-error-corrector');
-    
-    const errorData = await this.collectErrorData();
-    const errorCorrection = await errorCorrector.executeQuantumTask(errorData);
-    
-    this.performanceMetrics.quantumAdvantage++;
-    this.saveResults('error-correction', { errorCorrection });
   }
 
   getOrCreateAgent(type) {
@@ -298,7 +172,6 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     const config = {
       type: type,
       capabilities: ['quantum-capability'],
-      algorithms: ['quantum-algorithm'],
       frequency: '1h',
       priority: 'medium'
     };
@@ -310,8 +183,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     return {
       algorithm: 'grover-algorithm',
       qubits: 8,
-      iterations: 100,
-      target: 'search-problem'
+      iterations: 100
     };
   }
 
@@ -319,16 +191,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     return {
       circuit: 'quantum-circuit',
       qubits: 12,
-      gates: 50,
-      noise: 0.01
-    };
-  }
-
-  async collectErrorData() {
-    return {
-      errorRate: 0.05,
-      codeDistance: 3,
-      syndrome: 'error-syndrome'
+      gates: 50
     };
   }
 
@@ -384,8 +247,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       totalAgents: this.agents.size,
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,
       quantumSimulations: this.performanceMetrics.quantumSimulations,
-      algorithmOptimizations: this.performanceMetrics.algorithmOptimizations,
-      quantumAdvantage: this.performanceMetrics.quantumAdvantage
+      algorithmOptimizations: this.performanceMetrics.algorithmOptimizations
     };
     
     console.log('📈 Performance Analysis:', analysis);
@@ -395,8 +257,6 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     return {
       factoryId: this.factoryId,
       agents: this.agents.size,
-      quantumAlgorithms: this.quantumAlgorithms.size,
-      simulationTypes: this.simulationTypes.size,
       metrics: this.performanceMetrics,
       status: 'active'
     };

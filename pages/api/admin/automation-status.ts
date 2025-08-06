@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    // Simulate agent status data
+    // Mock data for automation status
     const agentStatuses: AgentStatus[] = [
       {
         agentId: 'agent-1',

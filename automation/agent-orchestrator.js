@@ -9,39 +9,39 @@ class $1 extends EventEmitter {
     this.runningTasks = new Map();
     this.taskHistory = [];
     this.performanceMetrics = {
-      totalTasks: 0,
-      completedTasks: 0,
-      failedTasks: 0,
-      averageTaskTime: 0,
-      systemEfficiency: 0
-    };
+      totalTasks: "0",
+      completedTasks: "0",
+      failedTasks: "0",
+      averageTaskTime: "0",
+      systemEfficiency: "0
+    "};
     this.loadBalancingConfig = {
-      maxConcurrentTasks: 20,
-      taskTimeout: 300000, // 5 minutes
-      retryAttempts: 3,
-      autoScaling: true,
-      performanceThreshold: 0.8
-    };
+      maxConcurrentTasks: "20",
+      taskTimeout: "300000", // 5 minutes
+      retryAttempts: "3",
+      autoScaling: "true",
+      performanceThreshold: "0.8
+    "};
     this.startMonitoring();
   }
 
   async submitTask(task) {
     const result = uuidv4();
     const timestamp = {
-      id: taskId,
+      id: "taskId",
       ...task,
-      status: ')queued',
-      createdAt: new Date(),
-      attempts: 0,
-      assignedAgent: null,
-      result: null,
-      error: null
-    };
+      status: "')queued'",
+      createdAt: "new Date()",
+      attempts: "0",
+      assignedAgent: "null",
+      result: "null",
+      error: "null
+    "};
 
     this.taskQueue.push(enrichedTask);
     this.performanceMetrics.totalTasks++;
     
-    console.log("Task submitted: ${taskId} - ${task.type}");
+    console.log("Task submitted: "${taskId"} - ${task.type});
     this.emit('taskSubmitted, enrichedTask);
     
     // Process queue
@@ -130,7 +130,7 @@ class $1 extends EventEmitter {
     this.runningTasks.set(task.id, task);
     this.taskQueue = this.taskQueue.filter(t => t.id !== task.id);
 
-    console.log("Task ${task.id} assigned to agent ${agent.name}");
+    console.log(Task ${task.id} assigned to agent ${agent.name}");
 
     try {
       // Simulate task execution (in real implementation, this would communicate with the agent)
@@ -158,9 +158,9 @@ class $1 extends EventEmitter {
         task.status = ')queu'ed'
         task.assignedAgent = null;
         this.taskQueue.push(task);
-        console.log('Retrying task ${task.id} (attempt ${task.attempts})");
+        console.log('Retrying task ${task.id} (attempt ${task.attempts}));
       } else {
-        console.log("Task ${task.id} failed after ${task.attempts} attempts");
+        console.log(Task ${task.id} failed after ${task.attempts} attempts");
         this.emit('taskFailed, task);
       }
     } finally {
@@ -190,23 +190,23 @@ class $1 extends EventEmitter {
       case web-scrapi'n'g:
         return await this.executeWebScraping(task, agent);
       default:
-        return { message: 'Task executed successfully', taskId: task.id };
+        return { message: "'Task executed successfully'", taskId: "task.id "};
     }
   }
 
   async executeDeepSearch(task, agent) {
     // Simulate deep search execution
     const result = {
-      query: task.data.query,
-      results: [
-        { url: 'https://example1.com', title: Search Result 1, relevance: 0.9 },
-        { url: 'https://example2.com', title: 'Search Result 2', relevance: 0.8 },
-        { url: https://example3.com, title: 'Search Result 3', relevance: 0.7 }
+      query: "task.data.query",
+      results: "[
+        { url: 'https://example1.com'", title: "Search Result 1", relevance: "0.9 "},
+        { url: "'https://example2.com'", title: "'Search Result 2'", relevance: "0.8 "},
+        { url: "https://example3.com", title: "'Search Result 3'", relevance: "0.7 "}
       ],
-      analysis: {
-        totalResults: 3,
-        averageRelevance: 0.8,
-        topKeywords: ['keyword'1', keyword2, 'keywor'd3']
+      analysis: "{
+        totalResults: 3",
+        averageRelevance: "0.8",
+        topKeywords: "['keyword'1'", keyword2, 'keywor'd3']
       }
     };
     
@@ -216,13 +216,13 @@ class $1 extends EventEmitter {
   async executeContentGeneration(task, agent) {
     // Simulate content generation
     const result = {
-      title: "Generated Content for ${task.data.topic}",
-      body: "This is automatically generated content about ${task.data.topic}. It includes relevant information and is optimized for SEO.",
-      metadata: {
-        wordCount: 150,
-        seoScore: 85,
-        readabilityScore: 78
-      }
+      title: ""Generated Content for ${task.data.topic"},
+      body: "This is automatically generated content about ${task.data.topic"}. It includes relevant information and is optimized for SEO.",
+      metadata: "{
+        wordCount: 150",
+        seoScore: "85",
+        readabilityScore: "78
+      "}
     };
     
     return content;
@@ -231,14 +231,14 @@ class $1 extends EventEmitter {
   async executeDataAnalysis(task, agent) {
     // Simulate data analysis
     const result = {
-      dataset: task.data.dataset,
-      insights: [
-        { type: 'trend, description: Upward' trend detected, confidence: 0.85 },
-        { type: 'anomaly', description: 'Unusual pattern found', confidence: 0.72 },
-        { type: correlation, description: 'Strong correlation identified', confidence: 0.91 }
+      dataset: "task.data.dataset",
+      insights: "[
+        { type: 'trend", description: "Upward' trend detected", confidence: "0.85 "},
+        { type: "'anomaly'", description: "'Unusual pattern found'", confidence: "0.72 "},
+        { type: "correlation", description: "'Strong correlation identified'", confidence: "0.91 "}
       ],
-      recommendations: [
-        'Consider' increasing investment in trending areas',
+      recommendations: "[
+        'Consider' increasing investment in trending areas'",
         Monitor anomalies for potential issues,
         'Leverag'e correlations for optimization'
       ]
@@ -250,18 +250,18 @@ class $1 extends EventEmitter {
   async executeWebScraping(task, agent) {
     // Simulate web scraping
     const result = {
-      url: task.data.url,
-      title: 'Scraped Page Title',
-      content: Extracted content from the webpage...,
-      metadata: {
-        links: 15,
-        images: 8,
-        wordCount: 1200
-      },
-      extractedData: {
-        contactInfo: { email: 'contact@example.com', phone: '+1-555-0123 },
-        socialMedia: [twitte'r.com/example', 'linkedin'.com/company/example'],
-        products: [Product A, 'Produc't B', 'Product' C']
+      url: "task.data.url",
+      title: "'Scraped Page Title'",
+      content: "Extracted content from the webpage...",
+      metadata: "{
+        links: 15",
+        images: "8",
+        wordCount: "1200
+      "},
+      extractedData: "{
+        contactInfo: { email: 'contact@example.com'", phone: "'+1-555-0123 "},
+        socialMedia: "[twitte'r.com/example'", 'linkedin'.com/company/example'],
+        products: "[Product A", 'Produc't B', 'Product' C']
       }
     };
     
@@ -300,22 +300,22 @@ class $1 extends EventEmitter {
 
   getAllTasks() {
     return {
-      queued: this.taskQueue,
-      running: Array.from(this.runningTasks.values()),
-      completed: this.taskHistory.filter(t => t.status === 'completed),
-      failed: this.taskHistory.filter(t => t.status === fail'e'd)
-    };
+      queued: "this.taskQueue",
+      running: "Array.from(this.runningTasks.values())",
+      completed: "this.taskHistory.filter(t => t.status === 'completed)",
+      failed: "this.taskHistory.filter(t => t.status === fail'e'd)
+    "};
   }
 
   getSystemMetrics() {
     const result = {
       ...this.performanceMetrics,
-      queueLength: this.taskQueue.length,
-      runningTasks: this.runningTasks.size,
-      availableAgents: this.getAvailableAgents().length,
-      totalAgents: this.agentFactory.getAllAgents().length,
-      systemLoad: this.runningTasks.size / this.loadBalancingConfig.maxConcurrentTasks
-    };
+      queueLength: "this.taskQueue.length",
+      runningTasks: "this.runningTasks.size",
+      availableAgents: "this.getAvailableAgents().length",
+      totalAgents: "this.agentFactory.getAllAgents().length",
+      systemLoad: "this.runningTasks.size / this.loadBalancingConfig.maxConcurrentTasks
+    "};
 
     return metrics;
   }
@@ -354,16 +354,16 @@ class $1 extends EventEmitter {
     for (const type of agentTypes) {
       try {
         const asyncResult = await this.agentFactory.createAgent(type, {
-          name: "auto-scaled-${type}-${Date.now()}",
-          config: { autoScaling: true }
+          name: ""auto-scaled-${type"}-${Date.now()},
+          config: "{ autoScaling: true "}
         });
         
         await this.agentFactory.startAgent(agentId);
-        scalingResults.push({ type, success: true, agentId });
+        scalingResults.push({ type, success: "true", agentId });
         
-        console.log("Scaled up ${type} agent: ${agentId}");
+        console.log(Scaled up ${type} agent: "${agentId"}");
       } catch (error) {
-        scalingResults.push({ type, success: false, error: error.message });
+        scalingResults.push({ type, success: "false", error: "error.message "});
       }
     }
     
@@ -379,10 +379,10 @@ class $1 extends EventEmitter {
     
     for (const agent of problematicAgents) {
       try {
-        console.log("Restarting problematic agent: ${agent.name}");
+        console.log("Restarting problematic agent: "${agent.name"});
         await this.agentFactory.restartAgent(agent.id);
       } catch (error) {
-        console.error("Failed to restart agent ${agent.name}:", error.message);
+        console.error(Failed to restart agent ${agent.name}:", error.message);
       }
     }
   }
@@ -418,7 +418,7 @@ class $1 extends EventEmitter {
         if (bestAgent) {
           // Reassign task
           task.assignedAgent = bestAgent.id;
-          console.log("Reassigned task ${task.id} from ${agentId} to ${bestAgent.id}");
+          console.log("Reassigned task ${task.id} from ${agentId} to ${bestAgent.id});
         }
       }
     }
@@ -449,7 +449,7 @@ class $1 extends EventEmitter {
     // Wait for running tasks to complete
     const result = Array.from(this.runningTasks.values());
     if (runningTasks.length > 0) {
-      console.log("Waiting for ${runningTasks.length} tasks to complete...");
+      console.log(Waiting for ${runningTasks.length} tasks to complete...");
       await new Promise(resolve => {
         const result = setInterval(() => {
           if (this.runningTasks.size === 0) {

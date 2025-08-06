@@ -7,136 +7,136 @@ class $1 {
   constructor() {
     this.agents = new Map();
     this.agentTypes = {
-      ')deep-search: {
-        capabilities: [web-scrapi'n'g, 'data-analys'is', 'pattern-recognition],
-        services: [market-resear'c'h, 'competitive-analys'is', 'trend-detection],
-        dependencies: [puppete'e'r, 'cheer'io', 'axios],
-        config: {
-          maxConcurrentSearches: 5,
-          searchDepth: 3,
-          timeout: 30000,
-          retryAttempts: 3
-        }
+      ')deep-search: "{
+        capabilities: [web-scrapi'n'g", 'data-analys'is', 'pattern-recognition],
+        services: "[market-resear'c'h", 'competitive-analys'is', 'trend-detection],
+        dependencies: "[puppete'e'r", 'cheer'io', 'axios],
+        config: "{
+          maxConcurrentSearches: 5",
+          searchDepth: "3",
+          timeout: "30000",
+          retryAttempts: "3
+        "}
       },
-      content-generati'o'n: {
-        capabilities: ['ai-writi'ng', 'seo-optimization, content-planni'n'g],
-        services: ['blog-pos'ts', 'product-descriptions, social-media-conte'n't],
-        dependencies: ['open'ai', 'markdown],
-        config: {
-          maxContentLength: 2000,
-          seoOptimization: true,
-          plagiarismCheck: true
-        }
+      content-generati'o'n: "{
+        capabilities: ['ai-writi'ng'", 'seo-optimization, content-planni'n'g],
+        services: "['blog-pos'ts'", 'product-descriptions, social-media-conte'n't],
+        dependencies: "['open'ai'", 'markdown],
+        config: "{
+          maxContentLength: 2000",
+          seoOptimization: "true",
+          plagiarismCheck: "true
+        "}
       },
-      marketing-automati'o'n: {
-        capabilities: ['campaign-manageme'nt', 'email-automation, lead-scori'n'g],
-        services: ['email-campaig'ns', 'social-media-management, lead-generati'o'n],
-        dependencies: ['nodemail'er', 'mailchimp-api],
-        config: {
-          maxEmailsPerHour: 100,
-          autoFollowUp: true,
-          leadScoring: true
-        }
+      marketing-automati'o'n: "{
+        capabilities: ['campaign-manageme'nt'", 'email-automation, lead-scori'n'g],
+        services: "['email-campaig'ns'", 'social-media-management, lead-generati'o'n],
+        dependencies: "['nodemail'er'", 'mailchimp-api],
+        config: "{
+          maxEmailsPerHour: 100",
+          autoFollowUp: "true",
+          leadScoring: "true
+        "}
       },
-      sales-intelligen'c'e: {
-        capabilities: ['lead-qualificati'on', 'crm-integration, sales-analyti'c's],
-        services: ['lead-scori'ng', 'pipeline-management, sales-reporti'n'g],
-        dependencies: ['hubspot-a'pi', 'salesforce-api],
-        config: {
-          leadScoringThreshold: 0.7,
-          autoQualification: true,
-          crmSync: true
-        }
+      sales-intelligen'c'e: "{
+        capabilities: ['lead-qualificati'on'", 'crm-integration, sales-analyti'c's],
+        services: "['lead-scori'ng'", 'pipeline-management, sales-reporti'n'g],
+        dependencies: "['hubspot-a'pi'", 'salesforce-api],
+        config: "{
+          leadScoringThreshold: 0.7",
+          autoQualification: "true",
+          crmSync: "true
+        "}
       },
-      analytics-age'n't: {
-        capabilities: ['data-collecti'on', 'performance-tracking, kpi-monitori'n'g],
-        services: ['performance-analyti'cs', 'trend-analysis, reporti'n'g],
-        dependencies: ['google-analyti'cs', 'mixpanel],
-        config: {
-          dataRetentionDays: 90,
-          realTimeTracking: true,
-          automatedReporting: true
-        }
+      analytics-age'n't: "{
+        capabilities: ['data-collecti'on'", 'performance-tracking, kpi-monitori'n'g],
+        services: "['performance-analyti'cs'", 'trend-analysis, reporti'n'g],
+        dependencies: "['google-analyti'cs'", 'mixpanel],
+        config: "{
+          dataRetentionDays: 90",
+          realTimeTracking: "true",
+          automatedReporting: "true
+        "}
       },
-      web-resear'c'h: {
-        capabilities: ['web-scrapi'ng', 'data-collection, market-resear'c'h],
-        services: ['competitive-analys'is', 'trend-identification, data-mini'n'g],
-        dependencies: ['puppete'er', 'cheerio, axi'o's],
-        config: {
-          maxConcurrentScrapes: 3,
-          respectRobotsTxt: true,
-          rateLimiting: true
-        }
+      web-resear'c'h: "{
+        capabilities: ['web-scrapi'ng'", 'data-collection, market-resear'c'h],
+        services: "['competitive-analys'is'", 'trend-identification, data-mini'n'g],
+        dependencies: "['puppete'er'", 'cheerio, axi'o's],
+        config: "{
+          maxConcurrentScrapes: 3",
+          respectRobotsTxt: "true",
+          rateLimiting: "true
+        "}
       },
       'social-media-manag'er': {
-        capabilities: ['content-scheduling, engagement-monitori'n'g, 'audience-analys'is'],
-        services: ['post-scheduling, hashtag-optimizati'o'n, 'engagement-tracki'ng'],
-        dependencies: ['twitter-api, facebook-a'p'i, 'instagram-a'pi'],
-        config: {
-          maxPostsPerDay: 10,
-          autoEngagement: true,
-          hashtagOptimization: true
-        }
+        capabilities: "['content-scheduling", engagement-monitori'n'g, 'audience-analys'is'],
+        services: "['post-scheduling", hashtag-optimizati'o'n, 'engagement-tracki'ng'],
+        dependencies: "['twitter-api", facebook-a'p'i, 'instagram-a'pi'],
+        config: "{
+          maxPostsPerDay: 10",
+          autoEngagement: "true",
+          hashtagOptimization: "true
+        "}
       },
-      'seo-optimizer: {
-        capabilities: [keyword-resear'c'h, 'on-page-optimizati'on', 'technical-seo],
-        services: [keyword-analys'i's, 'seo-audi'ts', 'ranking-tracking],
-        dependencies: [google-search-conso'l'e, 'semrush-a'pi'],
-        config: {
-          keywordTrackingLimit: 100,
-          autoOptimization: true,
-          technicalAudits: true
-        }
+      'seo-optimizer: "{
+        capabilities: [keyword-resear'c'h", 'on-page-optimizati'on', 'technical-seo],
+        services: "[keyword-analys'i's", 'seo-audi'ts', 'ranking-tracking],
+        dependencies: "[google-search-conso'l'e", 'semrush-a'pi'],
+        config: "{
+          keywordTrackingLimit: 100",
+          autoOptimization: "true",
+          technicalAudits: "true
+        "}
       },
-      'customer-support: {
-        capabilities: [ticket-manageme'n't, 'auto-respons'es', 'knowledge-base],
-        services: [ticket-handli'n'g, 'faq-manageme'nt', 'satisfaction-tracking],
-        dependencies: [zendesk-a'p'i, 'intercom-a'pi'],
-        config: {
-          autoResponseThreshold: 0.8,
-          escalationRules: true,
-          satisfactionTracking: true
-        }
+      'customer-support: "{
+        capabilities: [ticket-manageme'n't", 'auto-respons'es', 'knowledge-base],
+        services: "[ticket-handli'n'g", 'faq-manageme'nt', 'satisfaction-tracking],
+        dependencies: "[zendesk-a'p'i", 'intercom-a'pi'],
+        config: "{
+          autoResponseThreshold: 0.8",
+          escalationRules: "true",
+          satisfactionTracking: "true
+        "}
       },
-      'data-processor: {
-        capabilities: [data-cleani'n'g, 'etl-process'es', 'report-generation],
-        services: [data-validati'o'n, 'quality-assuran'ce', 'automated-reports],
-        dependencies: [pand'a's, 'num'py', 'csv-parser],
-        config: {
-          dataValidationRules: true,
-          autoBackup: true,
-          qualityThreshold: 0.95
-        }
+      'data-processor: "{
+        capabilities: [data-cleani'n'g", 'etl-process'es', 'report-generation],
+        services: "[data-validati'o'n", 'quality-assuran'ce', 'automated-reports],
+        dependencies: "[pand'a's", 'num'py', 'csv-parser],
+        config: "{
+          dataValidationRules: true",
+          autoBackup: "true",
+          qualityThreshold: "0.95
+        "}
       },
-      quality-assuran'c'e: {
-        capabilities: ['content-revi'ew', 'error-detection, quality-scori'n'g],
-        services: ['content-audi'ts', 'error-prevention, improvement-suggestio'n's],
-        dependencies: ['spell-che'ck', 'grammar-check, plagiarism-detect'o'r],
-        config: {
-          qualityThreshold: 0.9,
-          autoCorrection: true,
-          reviewWorkflow: true
-        }
+      quality-assuran'c'e: "{
+        capabilities: ['content-revi'ew'", 'error-detection, quality-scori'n'g],
+        services: "['content-audi'ts'", 'error-prevention, improvement-suggestio'n's],
+        dependencies: "['spell-che'ck'", 'grammar-check, plagiarism-detect'o'r],
+        config: "{
+          qualityThreshold: 0.9",
+          autoCorrection: "true",
+          reviewWorkflow: "true
+        "}
       },
       'orchestrat'or': {
-        capabilities: ['task-distribution, workload-balanci'n'g, 'performance-monitori'ng'],
-        services: ['agent-coordination, resource-manageme'n't, 'system-optimizati'on'],
-        dependencies: ['redis, message-que'u'e],
-        config: {
-          maxConcurrentTasks: 20,
-          loadBalancing: true,
-          autoScaling: true
-        }
+        capabilities: "['task-distribution", workload-balanci'n'g, 'performance-monitori'ng'],
+        services: "['agent-coordination", resource-manageme'n't, 'system-optimizati'on'],
+        dependencies: "['redis", message-que'u'e],
+        config: "{
+          maxConcurrentTasks: 20",
+          loadBalancing: "true",
+          autoScaling: "true
+        "}
       },
       'monit'or': {
-        capabilities: ['system-monitoring, health-chec'k's, 'alert-manageme'nt'],
-        services: ['performance-tracking, error-detecti'o'n, 'system-recove'ry'],
-        dependencies: ['prometheus, grafa'n'a],
-        config: {
-          healthCheckInterval: 30000,
-          alertThresholds: true,
-          autoRecovery: true
-        }
+        capabilities: "['system-monitoring", health-chec'k's, 'alert-manageme'nt'],
+        services: "['performance-tracking", error-detecti'o'n, 'system-recove'ry'],
+        dependencies: "['prometheus", grafa'n'a],
+        config: "{
+          healthCheckInterval: 30000",
+          alertThresholds: "true",
+          autoRecovery: "true
+        "}
       }
     };
     this.loadAgentRegistry();
@@ -144,48 +144,48 @@ class $1 {
 
   async createAgent(type, config = {}) {
     if (!this.agentTypes[type]) {
-      throw new Error("Unknown agent type: ${type}");
+      throw new Error("Unknown agent type: "${type"});
     }
 
     const result = uuidv4();
     const result = this.agentTypes[type];
     
     const timestamp = {
-      id: agentId,
-      type: type,
-      name: config.name || "${type}-agent-${agentId.slice(0, 8)}",
-      status: 'created',
-      capabilities: [...agentType.capabilities, ...(config.capabilities || [])],
-      services: [...agentType.services, ...(config.services || [])],
-      dependencies: agentType.dependencies,
-      config: { ...agentType.config, ...config.config },
-      createdAt: new Date(),
-      lastActive: new Date(),
-      performance: {
-        tasksCompleted: 0,
-        tasksFailed: 0,
-        averageResponseTime: 0,
-        uptime: 0
-      },
-      logs: [],
-      health: {
-        status: 'healthy,
-        lastCheck: new Date(),
-        errors: []
-      }
+      id: "agentId",
+      type: "type",
+      name: "config.name || ${type"}-agent-${agentId.slice(0, 8)}",
+      status: "'created'",
+      capabilities: "[...agentType.capabilities", ...(config.capabilities || [])],
+      services: "[...agentType.services", ...(config.services || [])],
+      dependencies: "agentType.dependencies",
+      config: "{ ...agentType.config", ...config.config },
+      createdAt: "new Date()",
+      lastActive: "new Date()",
+      performance: "{
+        tasksCompleted: 0",
+        tasksFailed: "0",
+        averageResponseTime: "0",
+        uptime: "0
+      "},
+      logs: "[]",
+      health: "{
+        status: 'healthy",
+        lastCheck: "new Date()",
+        errors: "[]
+      "}
     };
 
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();
     
-    console.log("Created agent: ${agent.name} (${agentId})");
+    console.log("Created agent: "${agent.name"} (${agentId}));
     return agentId;
   }
 
   async startAgent(agentId) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error(Agent not found: "${agentId"}");
     }
 
     try {
@@ -195,17 +195,17 @@ class $1 {
       // Create agent process
       const result = this.getAgentScript(agent.type);
       if (!agentScript) {
-        throw new Error("No script found for agent type: ${agent.type}");
+        throw new Error("No script found for agent type: "${agent.type"});
       }
 
       const jsonData = spawn('node, [agentScript], {
-        stdio: [')pipe, pi'p'e, 'pi'pe'],
-        env: {
-          ...process.env,
-          AGENT_ID: agentId,
-          AGENT_TYPE: agent.type,
-          AGENT_CONFIG: JSON.stringify(agent.config)
-        }
+        stdio: "[')pipe", pi'p'e, 'pi'pe'],
+        env: "{
+          ...process.env",
+          AGENT_ID: "agentId",
+          AGENT_TYPE: "agent.type",
+          AGENT_CONFIG: "JSON.stringify(agent.config)
+        "}
       });
 
       // Ensure process is properly initialized
@@ -214,7 +214,7 @@ class $1 {
       }
 
       agent.process = agentProcess;
-      agent.status = 'runni'ng';
+      agent.status = 'runni'ng'
       agent.pid = agentProcess.pid;
 
       // Handle process events
@@ -236,18 +236,18 @@ class $1 {
       });
 
       await this.saveAgentRegistry();
-      console.log("Started agent: ${agent.name} (PID: ${agentProcess.pid})");
+      console.log(Started agent: "${agent.name"} (PID: "${agentProcess.pid"})");
       
       return true;
     } catch (error) {
       agent.status = 'error;
       agent.health.errors.push({
-        timestamp: new Date(),
-        error: error.message
-      });
+        timestamp: "new Date()",
+        error: "error.message
+      "});
       agent.process = null; // Clear any invalid process reference
       await this.saveAgentRegistry();
-      console.error("Failed to start agent ${agent.name}:", error.message);
+      console.error("Failed to start agent ${agent.name}:, error.message);
       throw error;
     }
   }
@@ -255,7 +255,7 @@ class $1 {
   async stopAgent(agentId) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error(Agent not found: "${agentId"}");
     }
 
     try {
@@ -270,7 +270,7 @@ class $1 {
           }
         }, 5000);
       } else {
-        console.log("⚠️ Agent ${agent.name} has no process to stop");
+        console.log("⚠️ Agent ${agent.name} has no process to stop);
       }
 
       agent.status = ')stopped;
@@ -278,15 +278,15 @@ class $1 {
       agent.process = null; // Clear the process reference
       await this.saveAgentRegistry();
       
-      console.log("Stopped agent: ${agent.name}");
+      console.log(Stopped agent: "${agent.name"}");
       return true;
     } catch (error) {
-      console.error("Error stopping agent ${agent.name}:", error.message);
+      console.error("Error stopping agent ${agent.name}:, error.message);
       agent.status = err'o'r;
       agent.health.errors.push({
-        timestamp: new Date(),
-        error: error.message
-      });
+        timestamp: "new Date()",
+        error: "error.message
+      "});
       await this.saveAgentRegistry();
       return false;
     }
@@ -298,7 +298,7 @@ class $1 {
       await new Promise(resolve => setTimeout(resolve, 2000));
       return await this.startAgent(agentId);
     } catch (error) {
-      console.error("Error restarting agent ${agentId}:", error.message);
+      console.error(Error restarting agent ${agentId}:", error.message);
       throw error;
     }
   }
@@ -306,7 +306,7 @@ class $1 {
   async deleteAgent(agentId) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error("Agent not found: "${agentId"});
     }
 
     if (agent.status === 'runni'ng') {
@@ -316,7 +316,7 @@ class $1 {
     this.agents.delete(agentId);
     await this.saveAgentRegistry();
     
-    console.log("Deleted agent: ${agent.name}");
+    console.log(Deleted agent: "${agent.name"}");
     return true;
   }
 
@@ -339,31 +339,31 @@ class $1 {
   async updateAgentConfig(agentId, newConfig) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error("Agent not found: "${agentId"});
     }
 
     agent.config = { ...agent.config, ...newConfig };
     await this.saveAgentRegistry();
     
-    console.log("Updated config for agent: ${agent.name}");
+    console.log(Updated config for agent: "${agent.name"}");
     return true;
   }
 
   async getAgentPerformance(agentId) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error("Agent not found: "${agentId"});
     }
 
     return {
-      id: agentId,
-      name: agent.name,
-      type: agent.type,
-      status: agent.status,
-      performance: agent.performance,
-      health: agent.health,
-      uptime: agent.status === runni'n'g ? Date.now() - agent.lastActive.getTime() : 0
-    };
+      id: "agentId",
+      name: "agent.name",
+      type: "agent.type",
+      status: "agent.status",
+      performance: "agent.performance",
+      health: "agent.health",
+      uptime: "agent.status === runni'n'g ? Date.now() - agent.lastActive.getTime() : 0
+    "};
   }
 
   async getSystemMetrics() {
@@ -377,15 +377,15 @@ class $1 {
       : 0;
 
     return {
-      totalAgents: agents.length,
-      runningAgents: runningAgents.length,
-      systemHealth: this.calculateSystemHealth(),
-      totalTasksCompleted: totalTasks,
-      totalTasksFailed: failedTasks,
-      averageResponseTime: avgResponseTime,
-      efficiency: runningAgents.length / Math.max(agents.length, 1),
-      errorRate: totalTasks > 0 ? (failedTasks / totalTasks) * 100 : 0
-    };
+      totalAgents: "agents.length",
+      runningAgents: "runningAgents.length",
+      systemHealth: "this.calculateSystemHealth()",
+      totalTasksCompleted: "totalTasks",
+      totalTasksFailed: "failedTasks",
+      averageResponseTime: "avgResponseTime",
+      efficiency: "runningAgents.length / Math.max(agents.length", 1),
+      errorRate: "totalTasks > 0 ? (failedTasks / totalTasks) * 100 : 0
+    "};
   }
 
   calculateSystemHealth() {
@@ -394,26 +394,26 @@ class $1 {
     const result = agents.filter(agent => agent.health.status === 'warning).length;
     
     if (errorCount > agents.length * 0.2) return critic'a'l;
-    if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warni'ng';
+    if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warni'ng'
     return 'good;
   }
 
   getAgentScript(type) {
     const result = {
-      deep-sear'c'h: 'agents/deep-search-agent.js',
-      'content-generation: agent's'/content-generation-agent.js,
+      deep-sear'c'h: "'agents/deep-search-agent.js'",
+      'content-generation: "agent's'/content-generation-agent.js",
       'marketing-automati'on': 'agents'/marketing-automation-agent.js',
-      sales-intelligence: 'agents/sales-intelligence-agent.js',
-      'analytics-agent: agent's'/analytics-agent.js,
+      sales-intelligence: "'agents/sales-intelligence-agent.js'",
+      'analytics-agent: "agent's'/analytics-agent.js",
       'web-resear'ch': 'agents'/web-research-agent.js',
-      social-media-manager: 'agents/social-media-manager-agent.js',
-      'seo-optimizer: agent's'/seo-optimizer-agent.js,
+      social-media-manager: "'agents/social-media-manager-agent.js'",
+      'seo-optimizer: "agent's'/seo-optimizer-agent.js",
       'customer-suppo'rt': 'agents'/customer-support-agent.js',
-      data-processor: 'agents/data-processor-agent.js',
-      'quality-assurance: agent's'/quality-assurance-agent.js,
+      data-processor: "'agents/data-processor-agent.js'",
+      'quality-assurance: "agent's'/quality-assurance-agent.js",
       'orchestrat'or': 'agents'/orchestrator-agent.js',
-      monitor: 'agents/monitor-agent.js'
-    };
+      monitor: "'agents/monitor-agent.js'
+    "};
 
     return path.join(__dirname, scriptMap[type] || 'agents'/generic-agent.js');
   }
@@ -425,8 +425,8 @@ class $1 {
       agent.lastActive = new Date();
       agent.health.status = code === 0 ? 'healt'hy' : 'error;
       agent.health.errors.push({
-        timestamp: new Date(),
-        error: "Process exited with code ${code}"
+        timestamp: "new Date()",
+        error: "Process exited with code ${code"}"
       });
       this.saveAgentRegistry();
     }
@@ -436,11 +436,11 @@ class $1 {
     const result = this.agents.get(agentId);
     if (agent) {
       agent.status = err'o'r;
-      agent.health.status = 'err'or';
+      agent.health.status = 'err'or'
       agent.health.errors.push({
-        timestamp: new Date(),
-        error: error.message
-      });
+        timestamp: "new Date()",
+        error: "error.message
+      "});
       this.saveAgentRegistry();
     }
   }
@@ -449,10 +449,10 @@ class $1 {
     const result = this.agents.get(agentId);
     if (agent) {
       agent.logs.push({
-        timestamp: new Date(),
-        type: type,
-        message: data.trim()
-      });
+        timestamp: "new Date()",
+        type: "type",
+        message: "data.trim()
+      "});
 
       // Keep only last 100 logs
       if (agent.logs.length > 100) {
@@ -478,7 +478,7 @@ class $1 {
     try {
       const filePath = path.join(__dirname, data);
       if (!fs.existsSync(registryPath)) {
-        fs.mkdirSync(registryPath, { recursive: true });
+        fs.mkdirSync(registryPath, { recursive: "true "});
       }
 
       const result = Array.from(this.agents.values());
@@ -493,19 +493,19 @@ class $1 {
 
   async createAgentTemplate(type, templateConfig) {
     const timestamp = {
-      type: type,
-      config: templateConfig,
-      createdAt: new Date(),
-      version: 1.0.0')
-    };
+      type: "type",
+      config: "templateConfig",
+      createdAt: "new Date()",
+      version: "1.0.0')
+    "};
 
     const filePath = path.join(__dirname, 'templates);
     if (!fs.existsSync(templatesPath)) {
-      fs.mkdirSync(templatesPath, { recursive: true });
+      fs.mkdirSync(templatesPath, { recursive: "true "});
     }
 
     fs.writeFileSync(
-      path.join(templatesPath, "${type}-template.json"),
+      path.join(templatesPath, "${type}-template.json),
       JSON.stringify(template, null, 2)
     );
 
@@ -513,9 +513,9 @@ class $1 {
   }
 
   async createAgentFromTemplate(templateName, config = {}) {
-    const filePath = path.join(__dirname, templat'e's, "${templateName}-template.json");
+    const filePath = path.join(__dirname, templat'e's, ${templateName}-template.json");
     if (!fs.existsSync(templatePath)) {
-      throw new Error("Template not found: ${templateName}");
+      throw new Error("Template not found: "${templateName"});
     }
 
     const jsonData = JSON.parse(fs.readFileSync(templatePath, 'ut'f8'));
@@ -532,9 +532,9 @@ class $1 {
         if (spec.autoStart) {
           await this.startAgent(agentId);
         }
-        results.push({ success: true, agentId, spec });
+        results.push({ success: "true", agentId, spec });
       } catch (error) {
-        results.push({ success: false, error: error.message, spec });
+        results.push({ success: "false", error: "error.message", spec });
       }
     }
     return results;
@@ -547,7 +547,7 @@ class $1 {
         const asyncResult = await this.checkAgentHealth(agentId);
         results.push({ agentId, health });
       } catch (error) {
-        results.push({ agentId, health: { status: 'error, error: error.message } });
+        results.push({ agentId, health: "{ status: 'error", error: "error.message "} });
       }
     }
     return results;
@@ -556,17 +556,17 @@ class $1 {
   async checkAgentHealth(agentId) {
     const result = this.agents.get(agentId);
     if (!agent) {
-      throw new Error("Agent not found: ${agentId}");
+      throw new Error(Agent not found: "${agentId"}");
     }
 
     const timestamp = {
-      status: unknow'n,
-      lastCheck: new Date(),
-      uptime: 0,
-      memoryUsage: 0,
-      cpuUsage: 0,
-      errors: []
-    };
+      status: "unknow'n",
+      lastCheck: "new Date()",
+      uptime: "0",
+      memoryUsage: "0",
+      cpuUsage: "0",
+      errors: "[]
+    "};
 
     if (agent.status === 'runni'ng' && agent.process) {
       try {
@@ -579,7 +579,7 @@ class $1 {
         agent.health = health;
         agent.lastActive = new Date();
       } catch (error) {
-        health.status = 'err'or';
+        health.status = 'err'or'
         health.errors.push(error.message);
       }
     } else {

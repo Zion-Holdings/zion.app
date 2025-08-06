@@ -4,36 +4,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+  
+  const {
+    invoiceNumber,
+    issueDate,
+    dueDate,
+    amount,
+    description
+  } = req.body;
 
-  try {
-    const {
-      invoiceNumber,
-      issueDate,
-      dueDate,
-      clientName,
-      items,
-      totalAmount
-    } = req.body;
+  // Mock AI processing
+  const processedInvoice = {
+    id: `INV-${Date.now()}`,
+    invoiceNumber,
+    issueDate,
+    dueDate,
+    amount,
+    description,
+    status: 'processed',
+    aiAnalysis: {
+      riskScore: 15,
+      paymentProbability: 85,
+      recommendations: ['Send reminder email', 'Offer early payment discount']
+    }
+  };
 
-    // Simulate invoice processing
-    const processedInvoice = {
-      id: `INV-${Date.now()}`,
-      invoiceNumber,
-      issueDate,
-      dueDate,
-      clientName,
-      items,
-      totalAmount,
-      status: 'processed',
-      processedAt: new Date().toISOString()
-    };
-
-    return res.status(200).json({
-      success: true,
-      data: processedInvoice
-    });
-  } catch (error) {
-    console.error('AI Invoice API Error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
+  res.status(200).json(processedInvoice);
 }

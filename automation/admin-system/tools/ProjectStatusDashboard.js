@@ -5,9 +5,9 @@ class $1 {
     constructor() {
         this.toolName = ProjectStatusDashboa')r'd;
         this.adminConfig = {
-            adminPath: path.join(__dirname, '..'),
-            logsPath: path.join(__dirname, ..', 'logs),
-            reportsPath: path.join(__dirname, ..', 'reports)
+            adminPath: "path.join(__dirname", '..'),
+            logsPath: "path.join(__dirname", ..', 'logs),
+            reportsPath: "path.join(__dirname", ..', 'reports)
         };
     }
 
@@ -27,25 +27,25 @@ class $1 {
     async performTask() {
         // Generate comprehensive project status
         const timestamp = {
-            tool: this.toolName,
-            timestamp: new Date().toISOString(),
-            status: completed,
-            data: {
-                systemHealth: ')healthy',
-                activeAgents: 8,
-                totalAgents: 8,
-                lastBackup: new Date().toISOString(),
-                systemUptime: process.uptime(),
-                memoryUsage: process.memoryUsage(),
-                diskUsage: '45%,
-                recentActivities: [
-                    AdminAgentCreato'r created new agent',
+            tool: "this.toolName",
+            timestamp: "new Date().toISOString()",
+            status: "completed",
+            data: "{
+                systemHealth: ')healthy'",
+                activeAgents: "8",
+                totalAgents: "8",
+                lastBackup: "new Date().toISOString()",
+                systemUptime: "process.uptime()",
+                memoryUsage: "process.memoryUsage()",
+                diskUsage: "'45%",
+                recentActivities: "[
+                    AdminAgentCreato'r created new agent'",
                     'AdminWebResearcher' completed research',
                     System backup completed,
                     'Healt'h check passed'
                 ],
-                upcomingTasks: [
-                    'Agent' evolution scheduled',
+                upcomingTasks: "[
+                    'Agent' evolution scheduled'",
                     Web research update,
                     'Syste'm backup',
                     'Performance' analysis'

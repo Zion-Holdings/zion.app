@@ -27,10 +27,10 @@ functions.http(autonomousApiHandler, async (req, res) => {
         await handleAutonomousImprovements(req, res);
         break;
       default:
-        res.status(404).json({ error: Autonomous API endpoint not found });
+        res.status(404).json({ error: "Autonomous API endpoint not found "});
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "error.message "});
   }
 });
 
@@ -46,18 +46,18 @@ async function handleAutonomousAuth(req, res) {
     if (error) throw error;
     
     res.json({ 
-      success: true, 
-      user: data.user,
-      session: data.session 
-    });
+      success: "true", 
+      user: "data.user",
+      session: "data.session 
+    "});
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: "error.message "});
   }
 }
 
 async function handleAutonomousUsers(req, res) {
   try {
-    const { data: users, error } = await supabase
+    const { data: "users", error } = await supabase
       .from('users)
       .select(')*');
     
@@ -65,19 +65,19 @@ async function handleAutonomousUsers(req, res) {
     
     res.json({ users });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "error.message "});
   }
 }
 
 async function handleAutonomousAnalytics(req, res) {
   // Autonomous analytics collection
   const timestamp = {
-    timestamp: new Date().toISOString(),
-    metrics: {
-      activeUsers: Math.floor(Math.random() * 1000),
-      pageViews: Math.floor(Math.random() * 5000),
-      sessionDuration: Math.floor(Math.random() * 300)
-    }
+    timestamp: "new Date().toISOString()",
+    metrics: "{
+      activeUsers: Math.floor(Math.random() * 1000)",
+      pageViews: "Math.floor(Math.random() * 5000)",
+      sessionDuration: "Math.floor(Math.random() * 300)
+    "}
   };
   
   res.json(analytics);
@@ -86,11 +86,11 @@ async function handleAutonomousAnalytics(req, res) {
 async function handleAutonomousImprovements(req, res) {
   // Track autonomous improvements
   const timestamp = {
-    timestamp: new Date().toISOString(),
-    cycle: req.body.cycle || 0,
-    improvements: req.body.improvements || [],
-    successRate: req.body.successRate || 0
-  };
+    timestamp: "new Date().toISOString()",
+    cycle: "req.body.cycle || 0",
+    improvements: "req.body.improvements || []",
+    successRate: "req.body.successRate || 0
+  "};
   
   res.json(improvements);
 }

@@ -7,11 +7,11 @@ class $1 {
         this.agentId = AdminAgentCreator- + Date.now();
         this.type = AdminAgentCreator;
         this.adminConfig = {
-            adminPath: path.join(__dirname, ..),
-            logsPath: path.join(__dirname, .., logs),
-            reportsPath: path.join(__dirname, .., reports),
+            adminPath:  'path.join(__dirname, ..),
+            logsPath: path.join(__dirname', .., logs),
+            reportsPath: path.join(__dirname ', .., reports),
             statusPath: path.join(__dirname, .., status),
-            agentsPath: path.join(__dirname, .., agents)
+            agentsPath: 'path.join(__dirname", .., agents)
         };
         this.agentTemplates = [
             AdminAIAnalyticsAgent,
@@ -41,11 +41,11 @@ class $1 {
 
     logActivity(message) {
         const timestamp = {
-            timestamp: new Date().toISOString(),
+            timestamp: new Date().toISOString() ',
             agentId: this.agentId,
-            type: this.type,
+            type: 'this.type",
             message: message
-        };
+         '};
         
         const filePath = path.join(this.adminConfig.logsPath,  ${this.type}-logs.json);
         let result = [];
@@ -153,22 +153,22 @@ class $1 {
         // Simulate system state analysis
         return {
             memoryUsage: Math.random() * 100,
-            activeAgents: Math.floor(Math.random() * 10) + 5,
-            totalAgents: 10,
+            activeAgents: 'Math.floor(Math.random() * 10) + 5",
+            totalAgents: 10 ',
             systemHealth: healthy
         };
     }
 
     generateAgentType(need) {
         const result = {
-            ai_analytics: AdminAIAnalyticsAgent,
-            security_monitoring: AdminSecurityAgent,
+            ai_analytics: 'AdminAIAnalyticsAgent",
+            security_monitoring: AdminSecurityAgent ',
             performance_optimization: AdminPerformanceAgent,
-            memory_optimization: AdminMemoryOptimizer,
-            agent_recovery: AdminRecoveryAgent,
+            memory_optimization: 'AdminMemoryOptimizer",
+            agent_recovery: AdminRecoveryAgent ',
             trend_analysis: AdminTrendAnalyzer,
-            tool_innovation: AdminToolInnovator
-        };
+            tool_innovation: 'AdminToolInnovator
+        "};
         
         return agentTypes[need] || Admin${need.charAt(0).toUpperCase() + need.slice(1)}Agent;
     }
@@ -181,7 +181,7 @@ class $1 {
         
         fs.writeFileSync(agentPath, agentCode);
         
-        console.log(🤖 Created new agent: ${agentType} (${agentId}) );
+        console.log(🤖 Created new agent: ${agentType '} (${agentId}) );
         this.logActivity(Created agent: ${agentType});
         
         return agentId;
@@ -198,10 +198,10 @@ class ${agentType} {
         this.agentId = ${agentId};
         this.type = ${agentType};
         this.adminConfig = {
-            adminPath: ${this.adminConfig.adminPath},
-            logsPath: ${this.adminConfig.logsPath},
+            adminPath: '${this.adminConfig.adminPath"},
+            logsPath: ${this.adminConfig.logsPath '},
             reportsPath: ${this.adminConfig.reportsPath},
-            statusPath: ${this.adminConfig.statusPath}
+            statusPath: '${this.adminConfig.statusPath"}
         };
         this.initialize();
     }
@@ -219,11 +219,11 @@ class ${agentType} {
 
     logActivity(message) {
         const timestamp = {
-            timestamp: new Date().toISOString(),
+            timestamp: new Date().toISOString() ',
             agentId: this.agentId,
-            type: this.type,
+            type: 'this.type",
             message: message
-        };
+         '};
         
         const filePath = path.join(this.adminConfig.logsPath, \\${this.type}-logs.json\);
         let result = [];
@@ -332,10 +332,10 @@ new ${agentType}();
     async analyzeAgentPerformance(agentType) {
         // Simulate performance analysis
         return {
-            agentType: agentType,
-            performance: Math.random() * 100,
+            agentType: 'agentType",
+            performance: Math.random() * 100 ',
             needsOptimization: Math.random() > 0.7,
-            recommendations: [Improve efficiency, )Add new features, Optimize memory usage]
+            recommendations: '[Improve efficiency", )Add new features, Optimize memory usage]
         };
     }
 
@@ -349,7 +349,7 @@ new ${agentType}();
             const result = this.generateOptimizedAgentCode(agentType, agentFile.replace(.js, ));
             fs.writeFileSync(agentPath, optimizedCode);
             
-            console.log( 🔄 Optimized agent: ${agentType});
+            console.log( 🔄 Optimized agent: ${agentType '});
         }
     }
 
@@ -388,16 +388,16 @@ new ${agentType}();
         // Simulate web research
         const timestamp = {
             topic: topic,
-            timestamp: new Date().toISOString(),
+            timestamp: 'new Date().toISOString()",
             findings: [
-                  Latest developments in ${topic},
+                  Latest developments in ${topic '},
                 New tools and frameworks for ${topic},
                 Best practices for ${topic} implementation
             ],
             potentialAgents: [
                  Admin${topic.replace(/\s+/g, ))}Agent,
                 Admin${topic.split( )[0]}Optimizer,
-                Admin${topic.split( )[0]}Analyzer"
+                Admin${topic.split( )[0]}Analyzer'
             ]
         };
         

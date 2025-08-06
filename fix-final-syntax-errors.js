@@ -8,15 +8,15 @@ function fixFile(filePath) {
     let originalContent = content;
     
     // Fix malformed imports - very specific patterns
-    content = content.replace(/import type \{ NextPage \} from ";next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import type \{ NextPage \} from ';next';/g, "import type { NextPage } from 'next';");
-    content = content.replace(/import.*from ';next/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-    content = content.replace(/import.*from ";next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import.*from ';react/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import.*from ";react/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'';/g, "import type { NextPage } from 'next';");
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
+    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
     content = content.replace(/import ModernLayout from ';\.\.\/components\/layout\/ModernLayout'/g, "import ModernLayout from '../components/layout/ModernLayout';");
     content = content.replace(/import Link from next\/link';/g, "import Link from 'next/link';");
-    content = content.replace(/import Head from ';next\/head';/g, "import Head from 'next/head';");
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'\/head';/g, "import Head from 'next/head';");
     
     // Fix malformed function declarations
     content = content.replace(/export default async function handler\(req: NextApiRequest, res: NextApiResponse\) \{;/g, 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {');
@@ -30,8 +30,8 @@ function fixFile(filePath) {
     content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => `style="${styleContent}">`);
     
     // Fix malformed template literals
-    content = content.replace(/const contractHtml = `;/g, 'const contractHtml = `');
-    content = content.replace(/const html = `;/g, 'const html = `');
+    content = content.replace(/const contractHtml = `/g, 'const contractHtml = `');
+    content = content.replace(/const html = `/g, 'const html = `');
     
     // Fix malformed JSX closing tags
     content = content.replace(/<\/div>';/g, '</div>');
@@ -50,7 +50,7 @@ function fixFile(filePath) {
     // Fix malformed string literals in general
     content = content.replace(/';/g, "';");
     content = content.replace(/";/g, '";');
-    content = content.replace(/`;/g, '`');
+    content = content.replace(/`/g, '`');
     content = content.replace(/';/g, "';");
     
     // Fix malformed template literals
@@ -98,7 +98,7 @@ function fixFile(filePath) {
     
     // Fix malformed JSX attributes
     content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => {
-      return `style="${styleContent}">`;
+      return `style="${styleContent}">`
     });
     
     // Fix malformed template literals
@@ -111,10 +111,10 @@ function fixFile(filePath) {
     content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | '$3';");
     
     // Fix malformed imports
-    content = content.replace(/import.*from ';next/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
-    content = content.replace(/import.*from ";next";/g, 'import type { NextPage } from "next";');
-    content = content.replace(/import.*from ';react/g, 'import { useState, useEffect, useMemo } from "react";');
-    content = content.replace(/import.*from ";react/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import type { NextApiRequest, NextApiResponse } from 'next'/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
+    content = content.replace(/import type { NextPage } from "next";/g, 'import type { NextPage } from "next";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
     
     // Fix malformed function declarations
     content = content.replace(/export default async function handler\(req: NextApiRequest, res: NextApiResponse\) \{;/g, 'export default async function handler(req: NextApiRequest, res: NextApiResponse) {');
@@ -124,11 +124,11 @@ function fixFile(filePath) {
     
     // Fix malformed string literals in JSX
     content = content.replace(/style=([^>]*?)>/g, (match, styleContent) => {
-      return `style="${styleContent}">`;
+      return `style="${styleContent}">`
     });
     
     // Fix malformed template literals
-    content = content.replace(/const contractHtml = `;/g, 'const contractHtml = `');
+    content = content.replace(/const contractHtml = `/g, 'const contractHtml = `');
     
     // Fix malformed JSX closing tags
     content = content.replace(/<\/div>';/g, '</div>');

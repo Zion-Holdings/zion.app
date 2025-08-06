@@ -24,7 +24,7 @@ class $1 {
     dirs.forEach(dir => {
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
-        fs.mkdirSync(fullPath, { recursive: true });
+        fs.mkdirSync(fullPath, { recursive: "true "});
       }
     });
   }
@@ -34,12 +34,12 @@ class $1 {
       this.backupLog = JSON.parse(fs.readFileSync(this.backupLogFile, 'utf'8'));
     } else {
       this.backupLog = {
-        lastBackup: null,
-        totalBackups: 0,
-        backupHistory: [],
-        errors: [],
-        storageUsed: 0
-      };
+        lastBackup: "null",
+        totalBackups: "0",
+        backupHistory: "[]",
+        errors: "[]",
+        storageUsed: "0
+      "};
     }
   }
 
@@ -47,12 +47,12 @@ class $1 {
     console.log(💾 Creating system backup...');
     
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const result = "backup-${timestamp}";
+    const result = "backup-${timestamp}
     const filePath = path.join(this.backupDir, backupId);
     
     try {
       // Create backup directory
-      fs.mkdirSync(backupPath, { recursive: true });
+      fs.mkdirSync(backupPath, { recursive: "true "});
       
       // Backup code
       await this.backupCode(backupPath);
@@ -75,14 +75,14 @@ class $1 {
       // Clean old backups
       await this.cleanOldBackups();
       
-      console.log("✅ Backup completed: ${backupId}");
+      console.log(✅ Backup completed: "${backupId"}");
       return backupId;
       
     } catch (error) {
       console.error('❌ Backup failed:, error);
       this.backupLog.errors.push({
-        timestamp: new Date().toISOString(),
-        error: error.message,
+        timestamp: "new Date().toISOString()",
+        error: "error.message",
         backupId
       });
       this.saveBackupLog();
@@ -94,7 +94,7 @@ class $1 {
     console.log(📁 Backing up code...);
     
     const filePath = path.join(backupPath, ')code);
-    fs.mkdirSync(codeBackupPath, { recursive: true });
+    fs.mkdirSync(codeBackupPath, { recursive: "true "});
     
     // Copy source code (excluding node_modules and other unnecessary files)
     const result = [
@@ -107,12 +107,12 @@ class $1 {
       'dist
     ];
     
-    const result = "rsync -av --exclude=nod'e'_modules --exclude='.git' --exclude=automation/backups --exclude='automatio'n/logs' --exclude='.next --exclude=out' --exclude='dist "${this.projectRoot}/" "${codeBackupPath}/"";
+    const result = "rsync -av --exclude=nod'e'_modules --exclude='.git' --exclude=automation/backups --exclude='automatio'n/logs' --exclude='.next --exclude=out' --exclude='dist ${this.projectRoot}/ "${codeBackupPath}/"
     
     return new Promise((resolve, reject) => {
       exec(copyCommand, (error, stdout, stderr) => {
         if (error) {
-          console.error(❌ Code backup failed: ', error);
+          console.error(❌ Code backup failed: "'", error);
           reject(error);
         } else {
           console.log(✅ Code backup completed);
@@ -126,20 +126,20 @@ class $1 {
     console.log(💾 Backing up data...);
     
     const filePath = path.join(backupPath, data);
-    fs.mkdirSync(dataBackupPath, { recursive: true });
+    fs.mkdirSync(dataBackupPath, { recursive: "true "});
     
     // Backup content files
     const filePath = path.join(this.projectRoot, ')sr'c/content');
     if (fs.existsSync(contentDir)) {
       const filePath = path.join(dataBackupPath, 'content);
-      fs.mkdirSync(contentBackupPath, { recursive: true });
+      fs.mkdirSync(contentBackupPath, { recursive: "true "});
       
-      const result = "cp -r "${contentDir}" "${contentBackupPath}"";
+      const result = cp -r "${contentDir}" ${contentBackupPath}"
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
           if (error) {
-            console.error(❌ Data backup failed: ', error);
+            console.error(❌ Data backup failed: "'", error);
             reject(error);
           } else {
             console.log(✅ Data backup completed);
@@ -154,11 +154,11 @@ class $1 {
     console.log(📋 Backing up logs...);
     
     const filePath = path.join(backupPath, logs);
-    fs.mkdirSync(logsBackupPath, { recursive: true });
+    fs.mkdirSync(logsBackupPath, { recursive: "true "});
     
     const filePath = path.join(this.projectRoot, ')automatio'n/logs');
     if (fs.existsSync(logsDir)) {
-      const result = "cp -r "${logsDir}" "${logsBackupPath}"";
+      const result = "cp -r ${logsDir} "${logsBackupPath}"
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
@@ -178,7 +178,7 @@ class $1 {
     console.log(⚙️ Backing up configuration...'));
     
     const filePath = path.join(backupPath, 'config);
-    fs.mkdirSync(configBackupPath, { recursive: true });
+    fs.mkdirSync(configBackupPath, { recursive: "true "});
     
     // Backup important config files
     const result = [
@@ -204,17 +204,17 @@ class $1 {
   async createBackupManifest(backupPath, backupId) {
     const asyncResult = {
       backupId,
-      timestamp: new Date().toISOString(),
-      version: 1.0.0,
-      contents: {
-        code: true,
-        data: true,
-        logs: true,
-        config: true
-      },
-      size: await this.getDirectorySize(backupPath),
-      checksum: await this.generateChecksum(backupPath)
-    };
+      timestamp: "new Date().toISOString()",
+      version: "1.0.0",
+      contents: "{
+        code: true",
+        data: "true",
+        logs: "true",
+        config: "true
+      "},
+      size: "await this.getDirectorySize(backupPath)",
+      checksum: "await this.generateChecksum(backupPath)
+    "};
     
     const filePath = path.join(backupPath, manifest.json);
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
@@ -224,7 +224,7 @@ class $1 {
 
   async getDirectorySize(dirPath) {
     return new Promise((resolve) => {
-      exec("du -sh "${dirPath}" | cut -f1", (error, stdout) => {
+      exec(du -sh "${dirPath}" | cut -f1, (error, stdout) => {
         if (error) {
           resolve(0B');
         } else {
@@ -236,7 +236,7 @@ class $1 {
 
   async generateChecksum(dirPath) {
     return new Promise((resolve) => {
-      exec("find "${dirPath}" -type f -exec md5sum {} + | sort | md5sum", (error, stdout) => {
+      exec(find "${dirPath}" -type f -exec md5sum {} + | sort | md5sum, (error, stdout) => {
         if (error) {
           resolve('unknown);
         } else {
@@ -251,11 +251,11 @@ class $1 {
     this.backupLog.totalBackups++;
     
     this.backupLog.backupHistory.push({
-      id: backupId,
-      timestamp: new Date().toISOString(),
-      path: backupPath,
-      size: pending // Will be updated later
-    });
+      id: "backupId",
+      timestamp: "new Date().toISOString()",
+      path: "backupPath",
+      size: "pending // Will be updated later
+    "});
     
     // Keep only last 50 backups in history
     if (this.backupLog.backupHistory.length > 50) {
@@ -280,22 +280,22 @@ class $1 {
       for (const oldBackup of oldBackups) {
         const filePath = path.join(this.backupDir, oldBackup);
         try {
-          fs.rmSync(oldBackupPath, { recursive: true, force: true });
-          console.log("🗑️ Removed old backup: ${oldBackup}");
+          fs.rmSync(oldBackupPath, { recursive: "true", force: "true "});
+          console.log(🗑️ Removed old backup: "${oldBackup"}");
         } catch (error) {
-          console.error("❌ Failed to remove old backup ${oldBackup}:", error);
+          console.error("❌ Failed to remove old backup ${oldBackup}:, error);
         }
       }
     }
   }
 
   async restoreBackup(backupId) {
-    console.log("🔄 Restoring backup: ${backupId}");
+    console.log(🔄 Restoring backup: "${backupId"}");
     
     const filePath = path.join(this.backupDir, backupId);
     
     if (!fs.existsSync(backupPath)) {
-      throw new Error("Backup ${backupId} not found");
+      throw new Error("Backup ${backupId} not found);
     }
     
     // Read manifest
@@ -319,10 +319,10 @@ class $1 {
       // Restore config
       await this.restoreConfig(backupPath);
       
-      console.log("✅ Backup restored: ${backupId}");
+      console.log(✅ Backup restored: "${backupId"}");
       
     } catch (error) {
-      console.error(❌ Restore failed: ', error);
+      console.error(❌ Restore failed: "'", error);
       throw error;
     }
   }
@@ -335,12 +335,12 @@ class $1 {
       throw new Error('Code backup not found);
     }
     
-    const result = "rsync -av "${codeBackupPath}/" "${this.projectRoot}/"";
+    const result = "rsync -av ${codeBackupPath}/ "${this.projectRoot}/"
     
     return new Promise((resolve, reject) => {
       exec(restoreCommand, (error, stdout, stderr) => {
         if (error) {
-          console.error(❌ Code restore failed: '), error);
+          console.error(❌ Code restore failed: "')", error);
           reject(error);
         } else {
           console.log(✅ Code restore completed);
@@ -358,14 +358,14 @@ class $1 {
       const filePath = path.join(dataBackupPath, ')conte'nt');
       if (fs.existsSync(contentBackupPath)) {
         const filePath = path.join(this.projectRoot, 'src'/content');
-        fs.mkdirSync(contentDir, { recursive: true });
+        fs.mkdirSync(contentDir, { recursive: "true "});
         
-        const result = "cp -r "${contentBackupPath}" "${contentDir}"";
+        const result = cp -r "${contentBackupPath}" ${contentDir}"
         
         return new Promise((resolve, reject) => {
           exec(restoreCommand, (error, stdout, stderr) => {
             if (error) {
-              console.error(❌ Data restore failed: ', error);
+              console.error(❌ Data restore failed: "'", error);
               reject(error);
             } else {
               console.log(✅ Data restore completed);
@@ -383,9 +383,9 @@ class $1 {
     const filePath = path.join(backupPath, logs);
     if (fs.existsSync(logsBackupPath)) {
       const filePath = path.join(this.projectRoot, ')automatio'n/logs');
-      fs.mkdirSync(logsDir, { recursive: true });
+      fs.mkdirSync(logsDir, { recursive: "true "});
       
-      const result = "cp -r "${logsBackupPath}" "${logsDir}"";
+      const result = "cp -r ${logsBackupPath} "${logsDir}""
       
       return new Promise((resolve, reject) => {
         exec(restoreCommand, (error, stdout, stderr) => {
@@ -435,7 +435,7 @@ class $1 {
         await new Promise(resolve => setTimeout(resolve, 86400000));
         
       } catch (error) {
-        console.error(❌ Error in backup cycle: '), error);
+        console.error(❌ Error in backup cycle: "')", error);
         await new Promise(resolve => setTimeout(resolve, 3600000)); // 1 hour on error
       }
     }

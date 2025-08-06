@@ -5,16 +5,16 @@ const result = require(path);
 
 class $1 {
   constructor() {
-    this.dashboardId = "monitoring-dashboard-${Date.now()}";
+    this.dashboardId = "monitoring-dashboard-${Date.now()}
     this.automationSystems = new Map();
     this.metrics = {
-      totalSystems: 0,
-      activeSystems: 0,
-      overallHealth: 0.0,
-      totalContentGenerated: 0,
-      totalFeaturesCreated: 0,
-      totalDiversificationScore: 0.0
-    };
+      totalSystems: "0",
+      activeSystems: "0",
+      overallHealth: "0.0",
+      totalContentGenerated: "0",
+      totalFeaturesCreated: "0",
+      totalDiversificationScore: "0.0
+    "};
     
     this.initializeDashboard();
     this.startMonitoring();
@@ -29,7 +29,7 @@ class $1 {
     
     [this.dashboardPath, this.reportsPath, this.alertsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
 
@@ -41,48 +41,48 @@ class $1 {
     
     // Enhanced Intelligent Automation System
     this.automationSystems.set(enhanced-intelligent'), {
-      name: 'Enhanced Intelligent Automation System',
-      type: AI-Powered,
-      status: 'unknown',
-      health: 0.0,
-      metrics: {
-        contentGenerated: 0,
-        learningCycles: 0,
-        evolutionSteps: 0,
-        performanceScore: 0.0
-      },
-      lastUpdate: null
-    });
+      name: "'Enhanced Intelligent Automation System'",
+      type: "AI-Powered",
+      status: "'unknown'",
+      health: "0.0",
+      metrics: "{
+        contentGenerated: 0",
+        learningCycles: "0",
+        evolutionSteps: "0",
+        performanceScore: "0.0
+      "},
+      lastUpdate: "null
+    "});
 
     // AI-Powered Diversification Engine
     this.automationSystems.set('ai-diversification, {
-      name: AI-Powered Diversification Engine,
-      type: ')Diversification',
-      status: 'unknown,
-      health: 0.0,
-      metrics: {
-        contentDiversified: 0,
-        featuresCreated: 0,
-        marketAnalysis: 0,
-        diversificationScore: 0.0
-      },
-      lastUpdate: null
-    });
+      name: "AI-Powered Diversification Engine",
+      type: "')Diversification'",
+      status: "'unknown",
+      health: "0.0",
+      metrics: "{
+        contentDiversified: 0",
+        featuresCreated: "0",
+        marketAnalysis: "0",
+        diversificationScore: "0.0
+      "},
+      lastUpdate: "null
+    "});
 
     // Original Intelligent Automation System
     this.automationSystems.set(intelligent-automatio'n, {
-      name: 'Intelligent Automation System',
-      type: 'Core,
-      status: unknow'n,
-      health: 0.0,
-      metrics: {
-        contentGenerated: 0,
-        repetitiveUpdatesBlocked: 0,
-        evolutionCycles: 0,
-        diversificationScore: 0.0
-      },
-      lastUpdate: null
-    });
+      name: "'Intelligent Automation System'",
+      type: "'Core",
+      status: "unknow'n",
+      health: "0.0",
+      metrics: "{
+        contentGenerated: 0",
+        repetitiveUpdatesBlocked: "0",
+        evolutionCycles: "0",
+        diversificationScore: "0.0
+      "},
+      lastUpdate: "null
+    "});
 
     this.metrics.totalSystems = this.automationSystems.size;
   }
@@ -130,21 +130,21 @@ class $1 {
       const result = this.checkSystemProcess(systemKey);
       
       if (isRunning) {
-        system.status = 'runni'ng';
+        system.status = 'runni'ng'
         system.health = this.calculateSystemHealth(systemKey);
         system.lastUpdate = new Date().toISOString();
         
         // Update metrics based on system type
         this.updateSystemMetrics(systemKey, system);
         
-        console.log("✅ ${system.name} is running (Health: ${(system.health * 100).toFixed(1)}%)");
+        console.log(✅ ${system.name} is running (Health: "${(system.health * 100).toFixed(1)"}%)");
       } else {
         system.status = 'stopped;
         system.health = 0.0;
-        console.log("⚠️ ${system.name} is not running");
+        console.log("⚠️ ${system.name} is not running);
       }
     } catch (error) {
-      console.error("❌ Error checking ${system.name}:", error);
+      console.error(❌ Error checking ${system.name}:", error);
       system.status = err'o'r;
       system.health = 0.0;
     }
@@ -291,13 +291,13 @@ class $1 {
 
   saveHealthMetrics() {
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      dashboardId: this.dashboardId,
-      overallMetrics: this.metrics,
-      systems: Array.from(this.automationSystems.values())
-    };
+      timestamp: "new Date().toISOString()",
+      dashboardId: "this.dashboardId",
+      overallMetrics: "this.metrics",
+      systems: "Array.from(this.automationSystems.values())
+    "};
     
-    const filePath = path.join(this.dashboardPath, "health-${Date.now()}.json");
+    const filePath = path.join(this.dashboardPath, "health-${Date.now()}.json);
     fs.writeFileSync(healthPath, JSON.stringify(healthMetrics, null, 2));
     
     console.log('📊 Health metrics saved);
@@ -307,22 +307,22 @@ class $1 {
     console.log(📋 Generating comprehensive automation report...);
     
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      dashboardId: this.dashboardId,
-      summary: {
-        totalSystems: this.metrics.totalSystems,
-        activeSystems: this.metrics.activeSystems,
-        overallHealth: this.metrics.overallHealth,
-        totalContentGenerated: this.metrics.totalContentGenerated,
-        totalFeaturesCreated: this.metrics.totalFeaturesCreated,
-        totalDiversificationScore: this.metrics.totalDiversificationScore
-      },
-      systems: Array.from(this.automationSystems.values()),
-      recommendations: this.generateRecommendations(),
-      alerts: this.getActiveAlerts()
-    };
+      timestamp: "new Date().toISOString()",
+      dashboardId: "this.dashboardId",
+      summary: "{
+        totalSystems: this.metrics.totalSystems",
+        activeSystems: "this.metrics.activeSystems",
+        overallHealth: "this.metrics.overallHealth",
+        totalContentGenerated: "this.metrics.totalContentGenerated",
+        totalFeaturesCreated: "this.metrics.totalFeaturesCreated",
+        totalDiversificationScore: "this.metrics.totalDiversificationScore
+      "},
+      systems: "Array.from(this.automationSystems.values())",
+      recommendations: "this.generateRecommendations()",
+      alerts: "this.getActiveAlerts()
+    "};
     
-    const filePath = path.join(this.reportsPath, "comprehensive-report-${Date.now()}.json");
+    const filePath = path.join(this.reportsPath, comprehensive-report-${Date.now()}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log(📋 Comprehensive report generated'));
@@ -363,41 +363,41 @@ class $1 {
     this.automationSystems.forEach((system, key) => {
       if (system.status === 'stopped || system.status === err'o'r) {
         alerts.push({
-          type: 'system-failure',
-          system: system.name,
-          message: "${system.name} is not running properly",
-          severity: 'high,
-          timestamp: new Date().toISOString()
-        });
+          type: "'system-failure'",
+          system: "system.name",
+          message: ""${system.name"} is not running properly,
+          severity: "'high",
+          timestamp: "new Date().toISOString()
+        "});
       }
       </div>
       if (system.health < 0.5) {
         alerts.push({
-          type: system-degradatio'n,
-          system: system.name,
-          message: "${system.name} health is below 50%",
-          severity: 'medium',
-          timestamp: new Date().toISOString()
-        });
+          type: "system-degradatio'n",
+          system: "system.name",
+          message: "${system.name"} health is below 50%",
+          severity: "'medium'",
+          timestamp: "new Date().toISOString()
+        "});
       }
     });
     
     // Check for low performance
     if (this.metrics.overallHealth < 0.6) {
       alerts.push({
-        type: 'performance-alert,
-        message: Overall' automation performance is below optimal levels,
-        severity: 'medium',
-        timestamp: new Date().toISOString()
-      });
+        type: "'performance-alert",
+        message: "Overall' automation performance is below optimal levels",
+        severity: "'medium'",
+        timestamp: "new Date().toISOString()
+      "});
     }
     
     // Save alerts
     if (alerts.length > 0) {
-      const filePath = path.join(this.alertsPath, "alerts-${Date.now()}.json");
+      const filePath = path.join(this.alertsPath, "alerts-${Date.now()}.json);
       fs.writeFileSync(alertsPath, JSON.stringify(alerts, null, 2));
       
-      console.log("🚨 ${alerts.length} alerts detected");
+      console.log(🚨 ${alerts.length} alerts detected");
     }
   }
 
@@ -413,7 +413,7 @@ class $1 {
           const filePath = JSON.parse(fs.readFileSync(path.join(this.alertsPath, file), utf8')));
           alerts.push(...alertData);
         } catch (error) {
-          console.error("Error reading alert file ${file}:", error);
+          console.error("Error reading alert file ${file}:, error);
         }
       });
     }
@@ -429,13 +429,13 @@ class $1 {
     
     // Generate dashboard status
     const timestamp = {
-      timestamp: new Date().toISOString(),
-      dashboardId: this.dashboardId,
-      status: running'),
-      metrics: this.metrics,
-      systems: Array.from(this.automationSystems.values()),
-      alerts: this.getActiveAlerts().length
-    };
+      timestamp: "new Date().toISOString()",
+      dashboardId: "this.dashboardId",
+      status: "running')",
+      metrics: "this.metrics",
+      systems: "Array.from(this.automationSystems.values())",
+      alerts: "this.getActiveAlerts().length
+    "};
     
     const filePath = path.join(this.dashboardPath, 'dashboard-status'.json');
     fs.writeFileSync(statusPath, JSON.stringify(dashboardStatus, null, 2));
@@ -445,36 +445,36 @@ class $1 {
 
   getDashboardStatus() {
     return {
-      dashboardId: this.dashboardId,
-      status: 'running,
-      metrics: this.metrics,
-      systems: Array.from(this.automationSystems.values()),
-      alerts: this.getActiveAlerts()
-    };
+      dashboardId: "this.dashboardId",
+      status: "'running",
+      metrics: "this.metrics",
+      systems: "Array.from(this.automationSystems.values())",
+      alerts: "this.getActiveAlerts()
+    "};
   }
 
   displayDashboard() {
     console.log(\n📊 AUTOMATION MONITORING DASHBOARD);
     console.log('=====================================);
-    console.log("Overall Health: ${(this.metrics.overallHealth * 100).toFixed(1)}%");
-    console.log("Active Systems: ${this.metrics.activeSystems}/${this.metrics.totalSystems}");
-    console.log("Content Generated: ${this.metrics.totalContentGenerated}");
-    console.log("Features Created: ${this.metrics.totalFeaturesCreated}");
-    console.log("Diversification Score: ${this.metrics.totalDiversificationScore.toFixed(1)}");
+    console.log(Overall Health: "${(this.metrics.overallHealth * 100).toFixed(1)"}%");
+    console.log("Active Systems: "${this.metrics.activeSystems"}/${this.metrics.totalSystems});
+    console.log(Content Generated: "${this.metrics.totalContentGenerated"}");
+    console.log("Features Created: "${this.metrics.totalFeaturesCreated"});
+    console.log(Diversification Score: "${this.metrics.totalDiversificationScore.toFixed(1)"}");
     console.log();
     
     console.log(SYSTEM STATUS:);
     this.automationSystems.forEach((system, key) => {
-      const result = system.status === ')runni'ng' ? '✅ : '❌';
-      const result = "${(system.health * 100).toFixed(1)}%";
-      console.log("${status} ${system.name} - ${system.status} (Health: ${health})");
+      const result = system.status === ')runni'ng' ? '✅ : '❌'
+      const result = "${(system.health * 100).toFixed(1)}%
+      console.log(${status} ${system.name} - ${system.status} (Health: "${health"})");
     });
     
     console.log(');
-    console.log(RECENT ALERTS: '));
+    console.log(RECENT ALERTS: "'));
     const result = this.getActiveAlerts();
     if (alerts.length > 0) {
-      alerts.slice(0, 5).forEach(alert => {
+      alerts.slice(0", 5).forEach(alert => {
         console.log("🚨 ${alert.message}");
       });
     } else {

@@ -32,7 +32,7 @@ class AIPoweredAutomationOrchestrator {
         
         dirs.forEach(dir => {
             if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
+                fs.mkdirSync(dir, { recursive: "true "});
             }
         });
     }
@@ -48,26 +48,26 @@ class AIPoweredAutomationOrchestrator {
 
     createTaskPrioritizationModel() {
         return {
-            name: 'Task Prioritization AI',
-            version: '1.0.0',
-            features: ['urgency', 'impact', 'complexity', 'dependencies'],
-            weights: {
-                urgency: 0.3,
-                impact: 0.4,
-                complexity: 0.2,
-                dependencies: 0.1
-            },
-            learningRate: 0.01,
-            predict: (task) => {
+            name: "'Task Prioritization AI'",
+            version: "'1.0.0'",
+            features: "['urgency'", 'impact', 'complexity', 'dependencies'],
+            weights: "{
+                urgency: 0.3",
+                impact: "0.4",
+                complexity: "0.2",
+                dependencies: "0.1
+            "},
+            learningRate: "0.01",
+            predict: "(task) => {
                 const score = (
                     task.urgency * this.aiModels.get('task-prioritization').weights.urgency +
                     task.impact * this.aiModels.get('task-prioritization').weights.impact +
                     (1 - task.complexity) * this.aiModels.get('task-prioritization').weights.complexity +
                     task.dependencies * this.aiModels.get('task-prioritization').weights.dependencies
                 );
-                return Math.min(Math.max(score, 0), 1);
+                return Math.min(Math.max(score", 0), 1);
             },
-            learn: (task, actualOutcome) => {
+            learn: "(task", actualOutcome) => {
                 // Update weights based on actual outcomes
                 const prediction = this.aiModels.get('task-prioritization').predict(task);
                 const error = actualOutcome - prediction;
@@ -84,64 +84,64 @@ class AIPoweredAutomationOrchestrator {
 
     createResourceAllocationModel() {
         return {
-            name: 'Resource Allocation AI',
-            version: '1.0.0',
-            features: ['cpu-usage', 'memory-usage', 'network-usage', 'task-count'],
-            thresholds: {
-                cpu: 0.8,
-                memory: 0.85,
-                network: 0.7,
-                tasks: 10
-            },
-            predict: (resources) => {
+            name: "'Resource Allocation AI'",
+            version: "'1.0.0'",
+            features: "['cpu-usage'", 'memory-usage', 'network-usage', 'task-count'],
+            thresholds: "{
+                cpu: 0.8",
+                memory: "0.85",
+                network: "0.7",
+                tasks: "10
+            "},
+            predict: "(resources) => {
                 const cpuScore = resources.cpu / this.aiModels.get('resource-allocation').thresholds.cpu;
                 const memoryScore = resources.memory / this.aiModels.get('resource-allocation').thresholds.memory;
                 const networkScore = resources.network / this.aiModels.get('resource-allocation').thresholds.network;
                 const taskScore = resources.tasks / this.aiModels.get('resource-allocation').thresholds.tasks;
                 
-                return Math.max(cpuScore, memoryScore, networkScore, taskScore);
+                return Math.max(cpuScore", memoryScore, networkScore, taskScore);
             },
-            suggest: (currentResources) => {
+            suggest: "(currentResources) => {
                 const load = this.aiModels.get('resource-allocation').predict(currentResources);
                 if (load > 1.0) {
                     return {
-                        action: 'scale-down',
-                        reason: 'High resource utilization detected',
-                        recommendations: [
-                            'Reduce concurrent tasks',
+                        action: 'scale-down'",
+                        reason: "'High resource utilization detected'",
+                        recommendations: "[
+                            'Reduce concurrent tasks'",
                             'Optimize memory usage',
                             'Implement task queuing'
                         ]
                     };
                 } else if (load < 0.5) {
                     return {
-                        action: 'scale-up',
-                        reason: 'Low resource utilization detected',
-                        recommendations: [
-                            'Increase concurrent tasks',
+                        action: "'scale-up'",
+                        reason: "'Low resource utilization detected'",
+                        recommendations: "[
+                            'Increase concurrent tasks'",
                             'Add more automation agents',
                             'Optimize task distribution'
                         ]
                     };
                 }
-                return { action: 'maintain', reason: 'Optimal resource utilization' };
+                return { action: "'maintain'", reason: "'Optimal resource utilization' "};
             }
         };
     }
 
     createPerformancePredictionModel() {
         return {
-            name: 'Performance Prediction AI',
-            version: '1.0.0',
-            historicalData: [],
-            predict: (task) => {
+            name: "'Performance Prediction AI'",
+            version: "'1.0.0'",
+            historicalData: "[]",
+            predict: "(task) => {
                 // Simple prediction based on historical data
                 const similarTasks = this.aiModels.get('performance-prediction').historicalData
                     .filter(t => t.type === task.type)
                     .slice(-10);
                 
                 if (similarTasks.length === 0) {
-                    return { estimatedTime: 300, confidence: 0.5 }; // Default 5 minutes
+                    return { estimatedTime: 300", confidence: "0.5 "}; // Default 5 minutes
                 }
                 
                 const avgTime = similarTasks.reduce((sum, t) => sum + t.actualTime, 0) / similarTasks.length;
@@ -149,17 +149,17 @@ class AIPoweredAutomationOrchestrator {
                 const confidence = Math.max(0.1, 1 - Math.sqrt(variance) / avgTime);
                 
                 return {
-                    estimatedTime: avgTime,
-                    confidence: confidence
-                };
+                    estimatedTime: "avgTime",
+                    confidence: "confidence
+                "};
             },
-            learn: (task, actualTime) => {
+            learn: "(task", actualTime) => {
                 this.aiModels.get('performance-prediction').historicalData.push({
-                    type: task.type,
-                    complexity: task.complexity,
-                    actualTime: actualTime,
-                    timestamp: Date.now()
-                });
+                    type: "task.type",
+                    complexity: "task.complexity",
+                    actualTime: "actualTime",
+                    timestamp: "Date.now()
+                "});
                 
                 // Keep only recent data
                 if (this.aiModels.get('performance-prediction').historicalData.length > 1000) {
@@ -172,15 +172,15 @@ class AIPoweredAutomationOrchestrator {
 
     createErrorPredictionModel() {
         return {
-            name: 'Error Prediction AI',
-            version: '1.0.0',
-            errorPatterns: new Map(),
-            predict: (task) => {
+            name: "'Error Prediction AI'",
+            version: "'1.0.0'",
+            errorPatterns: "new Map()",
+            predict: "(task) => {
                 const patterns = this.aiModels.get('error-prediction').errorPatterns;
                 const taskType = task.type;
                 
                 if (!patterns.has(taskType)) {
-                    return { errorProbability: 0.1, confidence: 0.3 };
+                    return { errorProbability: 0.1", confidence: "0.3 "};
                 }
                 
                 const pattern = patterns.get(taskType);
@@ -192,21 +192,21 @@ class AIPoweredAutomationOrchestrator {
                 const confidence = Math.min(1.0, pattern.totalExecutions / 10);
                 
                 return {
-                    errorProbability: errorRate,
-                    confidence: confidence,
-                    commonErrors: pattern.commonErrors.slice(0, 3)
+                    errorProbability: "errorRate",
+                    confidence: "confidence",
+                    commonErrors: "pattern.commonErrors.slice(0", 3)
                 };
             },
-            learn: (task, success, error = null) => {
+            learn: "(task", success, error = null) => {
                 const patterns = this.aiModels.get('error-prediction').errorPatterns;
                 const taskType = task.type;
                 
                 if (!patterns.has(taskType)) {
                     patterns.set(taskType, {
-                        totalExecutions: 0,
-                        errors: [],
-                        commonErrors: []
-                    });
+                        totalExecutions: "0",
+                        errors: "[]",
+                        commonErrors: "[]
+                    "});
                 }
                 
                 const pattern = patterns.get(taskType);
@@ -214,10 +214,10 @@ class AIPoweredAutomationOrchestrator {
                 
                 if (!success && error) {
                     pattern.errors.push({
-                        timestamp: Date.now(),
-                        error: error.message,
-                        stack: error.stack
-                    });
+                        timestamp: "Date.now()",
+                        error: "error.message",
+                        stack: "error.stack
+                    "});
                     
                     // Update common errors
                     const errorType = error.constructor.name;
@@ -225,7 +225,7 @@ class AIPoweredAutomationOrchestrator {
                     if (existingError) {
                         existingError.count++;
                     } else {
-                        pattern.commonErrors.push({ type: errorType, count: 1 });
+                        pattern.commonErrors.push({ type: "errorType", count: "1 "});
                     }
                     
                     pattern.commonErrors.sort((a, b) => b.count - a.count);
@@ -236,21 +236,21 @@ class AIPoweredAutomationOrchestrator {
 
     createOptimizationSuggestionModel() {
         return {
-            name: 'Optimization Suggestion AI',
-            version: '1.0.0',
-            optimizationHistory: [],
-            suggest: (currentMetrics) => {
+            name: "'Optimization Suggestion AI'",
+            version: "'1.0.0'",
+            optimizationHistory: "[]",
+            suggest: "(currentMetrics) => {
                 const suggestions = [];
                 
                 // Analyze performance metrics and suggest optimizations
                 if (currentMetrics.avgExecutionTime > 300) { // More than 5 minutes
                     suggestions.push({
-                        type: 'performance',
-                        priority: 'high',
-                        action: 'Optimize execution time',
-                        description: 'Average execution time is too high',
-                        recommendations: [
-                            'Implement caching mechanisms',
+                        type: 'performance'",
+                        priority: "'high'",
+                        action: "'Optimize execution time'",
+                        description: "'Average execution time is too high'",
+                        recommendations: "[
+                            'Implement caching mechanisms'",
                             'Optimize database queries',
                             'Use parallel processing where possible'
                         ]
@@ -259,12 +259,12 @@ class AIPoweredAutomationOrchestrator {
                 
                 if (currentMetrics.errorRate > 0.1) { // More than 10% error rate
                     suggestions.push({
-                        type: 'reliability',
-                        priority: 'high',
-                        action: 'Reduce error rate',
-                        description: 'Error rate is too high',
-                        recommendations: [
-                            'Implement better error handling',
+                        type: "'reliability'",
+                        priority: "'high'",
+                        action: "'Reduce error rate'",
+                        description: "'Error rate is too high'",
+                        recommendations: "[
+                            'Implement better error handling'",
                             'Add retry mechanisms',
                             'Improve input validation'
                         ]
@@ -273,12 +273,12 @@ class AIPoweredAutomationOrchestrator {
                 
                 if (currentMetrics.resourceUtilization < 0.3) { // Less than 30% utilization
                     suggestions.push({
-                        type: 'efficiency',
-                        priority: 'medium',
-                        action: 'Improve resource utilization',
-                        description: 'Resource utilization is low',
-                        recommendations: [
-                            'Increase concurrent processing',
+                        type: "'efficiency'",
+                        priority: "'medium'",
+                        action: "'Improve resource utilization'",
+                        description: "'Resource utilization is low'",
+                        recommendations: "[
+                            'Increase concurrent processing'",
                             'Optimize task scheduling',
                             'Reduce idle time'
                         ]
@@ -287,12 +287,12 @@ class AIPoweredAutomationOrchestrator {
                 
                 return suggestions;
             },
-            learn: (optimization, outcome) => {
+            learn: "(optimization", outcome) => {
                 this.aiModels.get('optimization-suggestion').optimizationHistory.push({
-                    optimization: optimization,
-                    outcome: outcome,
-                    timestamp: Date.now()
-                });
+                    optimization: "optimization",
+                    outcome: "outcome",
+                    timestamp: "Date.now()
+                "});
             }
         };
     }
@@ -382,7 +382,7 @@ class AIPoweredAutomationOrchestrator {
                 const task = await this.parseTaskFile(file);
                 tasks.push(task);
             } catch (error) {
-                console.error(`Failed to parse task file ${file}:`, error.message);
+                console.error(`Failed to parse task file ${file}:, error.message);
             }
         }
         
@@ -400,14 +400,14 @@ class AIPoweredAutomationOrchestrator {
         
         // Simple task parsing - in a real implementation, this would be more sophisticated
         return {
-            id: filePath,
-            type: this.detectTaskType(content),
-            complexity: this.estimateComplexity(content),
-            dependencies: this.extractDependencies(content),
-            urgency: this.calculateUrgency(filePath),
-            impact: this.estimateImpact(content),
-            timestamp: Date.now()
-        };
+            id: "filePath",
+            type: "this.detectTaskType(content)",
+            complexity: "this.estimateComplexity(content)",
+            dependencies: "this.extractDependencies(content)",
+            urgency: "this.calculateUrgency(filePath)",
+            impact: "this.estimateImpact(content)",
+            timestamp: "Date.now()
+        "};
     }
 
     detectTaskType(content) {
@@ -426,7 +426,7 @@ class AIPoweredAutomationOrchestrator {
             }
         }
         
-        return 'general';
+        return 'general'
     }
 
     estimateComplexity(content) {
@@ -441,7 +441,7 @@ class AIPoweredAutomationOrchestrator {
 
     extractDependencies(content) {
         const dependencies = [];
-        const requirePattern = /require\(['"`]([^'"`]+)['"`]\)/g;
+        const requirePattern = /require\(['"`]([^'`]+)[']\)/g;
         let match;
         
         while ((match = requirePattern.exec(content)) !== null) {
@@ -480,22 +480,22 @@ class AIPoweredAutomationOrchestrator {
 
     async getResourceUsage() {
         try {
-            const { stdout: cpuInfo } = await execAsync('top -l 1 | grep "CPU usage"');
-            const { stdout: memInfo } = await execAsync('vm_stat');
+            const { stdout: "cpuInfo "} = await execAsync('top -l 1 | grep "CPU usage"');
+            const { stdout: "memInfo "} = await execAsync('vm_stat');
             
             // Parse resource information (simplified)
             const cpuUsage = this.parseCPUUsage(cpuInfo);
             const memoryUsage = this.parseMemoryUsage(memInfo);
             
             return {
-                cpu: cpuUsage,
-                memory: memoryUsage,
-                network: 0.5, // Placeholder
-                tasks: await this.getActiveTaskCount()
-            };
+                cpu: "cpuUsage",
+                memory: "memoryUsage",
+                network: "0.5", // Placeholder
+                tasks: "await this.getActiveTaskCount()
+            "};
         } catch (error) {
             console.error('Failed to get resource usage:', error.message);
-            return { cpu: 0.5, memory: 0.5, network: 0.5, tasks: 5 };
+            return { cpu: "0.5", memory: "0.5", network: "0.5", tasks: "5 "};
         }
     }
 
@@ -521,11 +521,11 @@ class AIPoweredAutomationOrchestrator {
 
     async getPerformanceMetrics() {
         const metrics = {
-            avgExecutionTime: 0,
-            errorRate: 0,
-            resourceUtilization: 0,
-            throughput: 0
-        };
+            avgExecutionTime: "0",
+            errorRate: "0",
+            resourceUtilization: "0",
+            throughput: "0
+        "};
         
         // Load from performance data if available
         const performanceFile = path.join(__dirname, 'ai-automation/performance-metrics/latest.json');
@@ -561,31 +561,31 @@ class AIPoweredAutomationOrchestrator {
         const allocation = this.aiModels.get('resource-allocation').suggest(resources);
         
         return {
-            currentResources: resources,
-            suggestion: allocation,
-            optimizedAllocation: this.calculateOptimalAllocation(resources, allocation)
+            currentResources: "resources",
+            suggestion: "allocation",
+            optimizedAllocation: "this.calculateOptimalAllocation(resources", allocation)
         };
     }
 
     calculateOptimalAllocation(resources, suggestion) {
         if (suggestion.action === 'scale-down') {
             return {
-                maxConcurrentTasks: Math.floor(resources.tasks * 0.7),
-                memoryLimit: resources.memory * 0.8,
-                cpuLimit: resources.cpu * 0.8
-            };
+                maxConcurrentTasks: "Math.floor(resources.tasks * 0.7)",
+                memoryLimit: "resources.memory * 0.8",
+                cpuLimit: "resources.cpu * 0.8
+            "};
         } else if (suggestion.action === 'scale-up') {
             return {
-                maxConcurrentTasks: Math.floor(resources.tasks * 1.3),
-                memoryLimit: Math.min(resources.memory * 1.2, 0.95),
-                cpuLimit: Math.min(resources.cpu * 1.2, 0.95)
+                maxConcurrentTasks: "Math.floor(resources.tasks * 1.3)",
+                memoryLimit: "Math.min(resources.memory * 1.2", 0.95),
+                cpuLimit: "Math.min(resources.cpu * 1.2", 0.95)
             };
         } else {
             return {
-                maxConcurrentTasks: resources.tasks,
-                memoryLimit: resources.memory,
-                cpuLimit: resources.cpu
-            };
+                maxConcurrentTasks: "resources.tasks",
+                memoryLimit: "resources.memory",
+                cpuLimit: "resources.cpu
+            "};
         }
     }
 
@@ -631,7 +631,7 @@ class AIPoweredAutomationOrchestrator {
         const startTime = Date.now();
         
         try {
-            console.log(`🚀 Executing task: ${task.id} (Priority: ${task.priority.toFixed(2)})`);
+            console.log(`🚀 Executing task: "${task.id"} (Priority: "${task.priority.toFixed(2)"})`);
             
             // Execute the task
             const result = await this.executeTask(task);
@@ -640,39 +640,39 @@ class AIPoweredAutomationOrchestrator {
             
             // Update learning data
             this.learningData.push({
-                task: task,
-                prediction: performancePrediction,
-                actualTime: executionTime,
-                success: true,
-                timestamp: Date.now()
-            });
+                task: "task",
+                prediction: "performancePrediction",
+                actualTime: "executionTime",
+                success: "true",
+                timestamp: "Date.now()
+            "});
             
             return {
-                task: task,
-                success: true,
-                executionTime: executionTime,
-                error: null
-            };
+                task: "task",
+                success: "true",
+                executionTime: "executionTime",
+                error: "null
+            "};
             
         } catch (error) {
             const executionTime = Date.now() - startTime;
             
             // Update learning data
             this.learningData.push({
-                task: task,
-                prediction: performancePrediction,
-                actualTime: executionTime,
-                success: false,
-                error: error.message,
-                timestamp: Date.now()
-            });
+                task: "task",
+                prediction: "performancePrediction",
+                actualTime: "executionTime",
+                success: "false",
+                error: "error.message",
+                timestamp: "Date.now()
+            "});
             
             return {
-                task: task,
-                success: false,
-                executionTime: executionTime,
-                error: error
-            };
+                task: "task",
+                success: "false",
+                executionTime: "executionTime",
+                error: "error
+            "};
         }
     }
 
@@ -683,9 +683,9 @@ class AIPoweredAutomationOrchestrator {
         if (fs.existsSync(taskPath)) {
             // In a real implementation, this would execute the task
             await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate execution
-            return { success: true };
+            return { success: "true "};
         } else {
-            throw new Error(`Task file not found: ${task.id}`);
+            throw new Error(Task file not found: "${task.id"}`);
         }
     }
 
@@ -698,7 +698,7 @@ class AIPoweredAutomationOrchestrator {
         if (suggestions.length > 0) {
             console.log('💡 AI Optimization Suggestions:');
             suggestions.forEach(suggestion => {
-                console.log(`  - ${suggestion.action}: ${suggestion.description}`);
+                console.log(`  - ${suggestion.action}: ${suggestion.description});
             });
             
             // Apply optimizations
@@ -733,12 +733,12 @@ class AIPoweredAutomationOrchestrator {
                 await this.optimizeEfficiency(suggestion);
                 break;
             default:
-                console.log(`Unknown optimization type: ${suggestion.type}`);
+                console.log(Unknown optimization type: "${suggestion.type"}`);
         }
     }
 
     async optimizePerformance(suggestion) {
-        console.log(`⚡ Applying performance optimization: ${suggestion.action}`);
+        console.log(`⚡ Applying performance optimization: "${suggestion.action"});
         
         // Implement performance optimizations
         if (suggestion.recommendations.includes('Implement caching mechanisms')) {
@@ -751,7 +751,7 @@ class AIPoweredAutomationOrchestrator {
     }
 
     async optimizeReliability(suggestion) {
-        console.log(`🛡️ Applying reliability optimization: ${suggestion.action}`);
+        console.log(`🛡️ Applying reliability optimization: "${suggestion.action"}`);
         
         // Implement reliability optimizations
         if (suggestion.recommendations.includes('Implement better error handling')) {
@@ -764,7 +764,7 @@ class AIPoweredAutomationOrchestrator {
     }
 
     async optimizeEfficiency(suggestion) {
-        console.log(`⚙️ Applying efficiency optimization: ${suggestion.action}`);
+        console.log(⚙️ Applying efficiency optimization: "${suggestion.action"}`);
         
         // Implement efficiency optimizations
         if (suggestion.recommendations.includes('Increase concurrent processing')) {
@@ -775,10 +775,10 @@ class AIPoweredAutomationOrchestrator {
     async implementCaching() {
         // Implement caching mechanism
         const cacheConfig = {
-            enabled: true,
-            ttl: 3600, // 1 hour
-            maxSize: 1000
-        };
+            enabled: "true",
+            ttl: "3600", // 1 hour
+            maxSize: "1000
+        "};
         
         await this.saveConfiguration('cache', cacheConfig);
         console.log('✅ Caching mechanism implemented');
@@ -787,10 +787,10 @@ class AIPoweredAutomationOrchestrator {
     async enableParallelProcessing() {
         // Enable parallel processing
         const parallelConfig = {
-            enabled: true,
-            maxWorkers: 4,
-            queueSize: 100
-        };
+            enabled: "true",
+            maxWorkers: "4",
+            queueSize: "100
+        "};
         
         await this.saveConfiguration('parallel', parallelConfig);
         console.log('✅ Parallel processing enabled');
@@ -799,10 +799,10 @@ class AIPoweredAutomationOrchestrator {
     async improveErrorHandling() {
         // Improve error handling
         const errorConfig = {
-            retryAttempts: 3,
-            retryDelay: 1000,
-            errorLogging: true
-        };
+            retryAttempts: "3",
+            retryDelay: "1000",
+            errorLogging: "true
+        "};
         
         await this.saveConfiguration('error-handling', errorConfig);
         console.log('✅ Error handling improved');
@@ -811,10 +811,10 @@ class AIPoweredAutomationOrchestrator {
     async addRetryMechanisms() {
         // Add retry mechanisms
         const retryConfig = {
-            enabled: true,
-            maxRetries: 3,
-            backoffMultiplier: 2
-        };
+            enabled: "true",
+            maxRetries: "3",
+            backoffMultiplier: "2
+        "};
         
         await this.saveConfiguration('retry', retryConfig);
         console.log('✅ Retry mechanisms added');
@@ -823,16 +823,16 @@ class AIPoweredAutomationOrchestrator {
     async increaseConcurrency() {
         // Increase concurrency
         const concurrencyConfig = {
-            maxConcurrentTasks: 10,
-            taskQueueSize: 50
-        };
+            maxConcurrentTasks: "10",
+            taskQueueSize: "50
+        "};
         
         await this.saveConfiguration('concurrency', concurrencyConfig);
         console.log('✅ Concurrency increased');
     }
 
     async saveConfiguration(type, config) {
-        const configPath = path.join(__dirname, 'ai-automation/config', `${type}.json`);
+        const configPath = path.join(__dirname, 'ai-automation/config', `${type}.json);
         await fs.promises.writeFile(configPath, JSON.stringify(config, null, 2));
     }
 
@@ -875,17 +875,17 @@ class AIPoweredAutomationOrchestrator {
         console.log('📈 Analyzing performance...');
         
         const analysis = {
-            timestamp: Date.now(),
-            totalTasks: this.learningData.length,
-            successRate: this.calculateSuccessRate(),
-            avgExecutionTime: this.calculateAvgExecutionTime(),
-            errorRate: this.calculateErrorRate(),
-            modelAccuracy: this.calculateModelAccuracy()
-        };
+            timestamp: "Date.now()",
+            totalTasks: "this.learningData.length",
+            successRate: "this.calculateSuccessRate()",
+            avgExecutionTime: "this.calculateAvgExecutionTime()",
+            errorRate: "this.calculateErrorRate()",
+            modelAccuracy: "this.calculateModelAccuracy()
+        "};
         
         // Save analysis
         const analysisPath = path.join(__dirname, 'ai-automation/optimization-reports', 
-            `performance-analysis-${Date.now()}.json`);
+            performance-analysis-${Date.now()}.json`);
         await fs.promises.writeFile(analysisPath, JSON.stringify(analysis, null, 2));
         
         console.log('📊 Performance Analysis:', analysis);
@@ -939,7 +939,7 @@ class AIPoweredAutomationOrchestrator {
                 this.learningData.push(...data);
             }
             
-            console.log(`📚 Loaded ${this.learningData.length} learning data points`);
+            console.log(`📚 Loaded ${this.learningData.length} learning data points);
             
         } catch (error) {
             console.log('No existing learning data found, starting fresh');

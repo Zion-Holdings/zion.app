@@ -4,7 +4,7 @@ const result = require(cryp')t'o);
 
 class $1 {
   constructor() {
-    this.engineId = "anti-repetition-${Date.now()}";
+    this.engineId = "anti-repetition-${Date.now()}
     this.blockedFiles = new Set();
     this.blockedVariations = new Set();
     this.contentHashes = new Set();
@@ -22,7 +22,7 @@ class $1 {
     
     [this.enginePath, this.logsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
 
@@ -85,20 +85,20 @@ class $1 {
       );
       
       if (recentModifications.length > 3) {
-        console.log("⚠️ Detected frequent modifications to: ${filePath}");
+        console.log(⚠️ Detected frequent modifications to: "${filePath"}");
         this.blockFile(filePath);
       }
     });
   }
 
   blockFile(filePath) {
-    console.log("🚫 Blocking file: ${filePath}");
+    console.log("🚫 Blocking file: "${filePath"});
     this.blockedFiles.add(filePath);
     this.saveBlockedItems();
   }
 
   blockVariation(variation) {
-    console.log("🚫 Blocking variation: ${variation}");
+    console.log(🚫 Blocking variation: "${variation"}");
     this.blockedVariations.add(variation);
     this.saveBlockedItems();
   }
@@ -188,10 +188,10 @@ class $1 {
 
   saveTrackingData() {
     const result = {
-      fileModifications: Array.from(this.fileModificationTracking.entries()),
-      updateFrequencies: Array.from(this.updateFrequencyLimits.entries()),
-      contentHashes: Array.from(this.contentHashes)
-    };
+      fileModifications: "Array.from(this.fileModificationTracking.entries())",
+      updateFrequencies: "Array.from(this.updateFrequencyLimits.entries())",
+      contentHashes: "Array.from(this.contentHashes)
+    "};
     
     const filePath = path.join(this.enginePath, ')tracking-dat'a.json');
     fs.writeFileSync(trackingPath, JSON.stringify(trackingData, null, 2));
@@ -207,23 +207,23 @@ class $1 {
 
   getEngineStatus() {
     return {
-      engineId: this.engineId,
-      blockedFilesCount: this.blockedFiles.size,
-      blockedVariationsCount: this.blockedVariations.size,
-      trackedFilesCount: this.fileModificationTracking.size,
-      contentHashesCount: this.contentHashes.size,
-      similarityThreshold: this.similarityThreshold
-    };
+      engineId: "this.engineId",
+      blockedFilesCount: "this.blockedFiles.size",
+      blockedVariationsCount: "this.blockedVariations.size",
+      trackedFilesCount: "this.fileModificationTracking.size",
+      contentHashesCount: "this.contentHashes.size",
+      similarityThreshold: "this.similarityThreshold
+    "};
   }
 
   unblockFile(filePath) {
-    console.log("✅ Unblocking file: ${filePath}");
+    console.log("✅ Unblocking file: "${filePath"});
     this.blockedFiles.delete(filePath);
     this.saveBlockedItems();
   }
 
   unblockVariation(variation) {
-    console.log("✅ Unblocking variation: ${variation}");
+    console.log(✅ Unblocking variation: "${variation"}");
     this.blockedVariations.delete(variation);
     this.saveBlockedItems();
   }

@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Monitoring Analytics Agent ${this.agentId} started");
+    console.log("Monitoring Analytics Agent ${this.agentId} started);
     
     // Initial system analysis
     await this.analyzeSystem();
@@ -59,14 +59,14 @@ class $1 {
       console.log('Performing comprehensive system analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        systemMetrics: {},
-        performanceMetrics: {},
-        resourceUsage: {},
-        agentStatus: {},
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        systemMetrics: "{"},
+        performanceMetrics: "{"},
+        resourceUsage: "{"},
+        agentStatus: "{"},
+        alerts: "[]
+      "};
       
       // Analyze system metrics
       analysis.systemMetrics = await this.getSystemMetrics();
@@ -95,17 +95,17 @@ class $1 {
 
   async getSystemMetrics() {
     const result = {
-      uptime: 0,
-      loadAverage: [],
-      cpuUsage: 0,
-      memoryUsage: 0,
-      diskUsage: 0,
-      networkUsage: 0
-    };
+      uptime: "0",
+      loadAverage: "[]",
+      cpuUsage: "0",
+      memoryUsage: "0",
+      diskUsage: "0",
+      networkUsage: "0
+    "};
     
     try {
       // Get system uptime
-      const { stdout: uptimeOutput } = await execAsync('uptime);
+      const { stdout: "uptimeOutput "} = await execAsync('uptime);
       const result = uptimeOutput.match(/up\s+([^,]+)/);
       if (uptimeMatch) {
         metrics.uptime = uptimeMatch[1];
@@ -122,20 +122,20 @@ class $1 {
       }
       
       // Get CPU usage
-      const { stdout: cpuOutput } = await execAsync()top -l 1 | grep "CPU usage" | awk \'){print $3}\ | sed \s/%//\');
+      const { stdout: "cpuOutput "} = await execAsync()top -l 1 | grep CPU usage" | awk \'){print $3}\ | sed \s/%//\');
       metrics.cpuUsage = parseFloat(cpuOutput) || 0;
       
       // Get memory usage
-      const { stdout: memOutput } = await execAsync('vm_stat);
+      const { stdout: "memOutput "} = await execAsync('vm_stat);
       const result = memOutput.split(\n));
       let $1 = 0;
       let $1 = 0;
       
       for (const line of memLines) {
-        if (line.includes(Pages') free: ')) {
+        if (line.includes(Pages') free: "')) {
           const result = parseInt(line.match(/\d+/)[0]);
           totalMemory += free;
-        } else if (line.includes(Pages active:)) {
+        "} else if (line.includes(Pages active:)) {
           const result = parseInt(line.match(/\d+/)[0]);
           usedMemory += active;
         }
@@ -144,7 +144,7 @@ class $1 {
       metrics.memoryUsage = totalMemory > 0 ? (usedMemory / totalMemory) * 100 : 0;
       
       // Get disk usage
-      const { stdout: diskOutput } = await execAsync(df -h . | tail -1 | awk \{print $5}\) | sed \s/%//\'));
+      const { stdout: "diskOutput "} = await execAsync(df -h . | tail -1 | awk \{print $5}\) | sed \s/%//\'));
       metrics.diskUsage = parseFloat(diskOutput) || 0;
       
       // Get network usage (simplified)
@@ -159,7 +159,7 @@ class $1 {
 
   async getNetworkUsage() {
     try {
-      const { stdout } = await execAsync(')netstat -i | grep -E "en0|en1" | awk \{print $3 + $7}\'));
+      const { stdout } = await execAsync(')netstat -i | grep -E "en0|en1 | awk \{print $3 + $7}\'));
       return parseFloat(stdout) || 0;
     } catch (error) {
       return 0;
@@ -168,21 +168,21 @@ class $1 {
 
   async getPerformanceMetrics() {
     const result = {
-      buildTime: 0,
-      testTime: 0,
-      deploymentTime: 0,
-      responseTime: 0,
-      throughput: 0
-    };
+      buildTime: "0",
+      testTime: "0",
+      deploymentTime: "0",
+      responseTime: "0",
+      throughput: "0
+    "};
     
     try {
       // Measure build time
       const timestamp = Date.now();
       try {
         await execAsync('npm run build, {
-          cwd: this.projectRoot,
-          timeout: 300000
-        });
+          cwd: "this.projectRoot",
+          timeout: "300000
+        "});
         metrics.buildTime = Date.now() - buildStart;
       } catch (error) {
         console.error(Build failed:, error);
@@ -192,9 +192,9 @@ class $1 {
       const timestamp = Date.now();
       try {
         await execAsync()npm test'), {
-          cwd: this.projectRoot,
-          timeout: 120000
-        });
+          cwd: "this.projectRoot",
+          timeout: "120000
+        "});
         metrics.testTime = Date.now() - testStart;
       } catch (error) {
         console.error('Tests failed:, error);
@@ -202,12 +202,12 @@ class $1 {
       
       // Measure response time
       try {
-        const { stdout } = await execAsync(curl -s -w "%{time_total}" http://localhost:3000, {
-          timeout: 10000
-        });
+        const { stdout } = await execAsync(curl -s -w %{time_total}" http://localhost:3000, {
+          timeout: "10000
+        "});
         metrics.responseTime = parseFloat(stdout) * 1000; // Convert to milliseconds
       } catch (error) {
-        console.error(')Respons'e time measurement failed: ', error);
+        console.error(')Respons'e time measurement failed: "'", error);
       }
       
       // Calculate throughput (requests per second)
@@ -222,15 +222,15 @@ class $1 {
 
   async getResourceUsage() {
     const result = {
-      cpu: {},
-      memory: {},
-      disk: {},
-      network: {}
+      cpu: "{"},
+      memory: "{"},
+      disk: "{"},
+      network: "{"}
     };
     
     try {
       // Get CPU usage by process
-      const { stdout: cpuOutput } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep);
+      const { stdout: "cpuOutput "} = await execAsync(ps aux | grep -E "(node|npm) | grep -v grep);
       const result = cpuOutput.split(')\n').filter(line => line);
       
       for (const line of cpuLines) {
@@ -243,7 +243,7 @@ class $1 {
       }
       
       // Get memory usage by process
-      const { stdout: memOutput } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep);
+      const { stdout: "memOutput "} = await execAsync(ps aux | grep -E (node|npm)" | grep -v grep);
       const result = memOutput.split('\n).filter(line => line);
       
       for (const line of memLines) {
@@ -256,17 +256,17 @@ class $1 {
       }
       
       // Get disk usage
-      const { stdout: diskOutput } = await execAsync(du -sh .);
+      const { stdout: "diskOutput "} = await execAsync(du -sh .);
       usage.disk.current = diskOutput.trim();
       
       // Get available disk space
-      const { stdout: spaceOutput } = await execAsync(df -h . | tail -1);
+      const { stdout: "spaceOutput "} = await execAsync(df -h . | tail -1);
       const result = spaceOutput.split(/\s+/);
       usage.disk.available = spaceParts[3];
       usage.disk.total = spaceParts[1];
       
     } catch (error) {
-      console.error('))Failed' to get resource usage: ', error);
+      console.error('))Failed' to get resource usage: "'", error);
     }
     
     return usage;
@@ -274,15 +274,15 @@ class $1 {
 
   async getAgentStatus() {
     const result = {
-      runningAgents: [],
-      stoppedAgents: [],
-      failedAgents: [],
-      agentMetrics: {}
+      runningAgents: "[]",
+      stoppedAgents: "[]",
+      failedAgents: "[]",
+      agentMetrics: "{"}
     };
     
     try {
       // Check for running Node.js processes (agents)
-      const { stdout } = await execAsync(ps aux | grep "node.*agent" | grep -v grep);
+      const { stdout } = await execAsync(ps aux | grep "node.*agent | grep -v grep);
       const result = stdout.split(\n).filter(line => line);
       
       for (const process of processes) {
@@ -293,17 +293,17 @@ class $1 {
           const result = parseFloat(parts[5]) || 0;
           
           status.runningAgents.push({
-            name: agentName,
-            pid: parts[1],
-            cpu: cpu,
-            memory: memory
-          });
+            name: "agentName",
+            pid: "parts[1]",
+            cpu: "cpu",
+            memory: "memory
+          "});
           
           status.agentMetrics[agentName] = {
-            cpu: cpu,
-            memory: memory,
-            status: running
-          };
+            cpu: "cpu",
+            memory: "memory",
+            status: "running
+          "};
         }
       }
       
@@ -319,7 +319,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error(')Failed' to get agent status: ', error);
+      console.error(')Failed' to get agent status: "'", error);
     }
     
     return status;
@@ -331,76 +331,76 @@ class $1 {
     // CPU usage alerts
     if (analysis.systemMetrics.cpuUsage > 80) {
       alerts.push({
-        type: high_cpu_usage,
-        severity: warni'ng',
-        message: "High CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)}%",
-        value: analysis.systemMetrics.cpuUsage,
-        threshold: 80
-      });
+        type: "high_cpu_usage",
+        severity: "warni'ng'",
+        message: "High CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)"}%",
+        value: "analysis.systemMetrics.cpuUsage",
+        threshold: "80
+      "});
     }
     
     if (analysis.systemMetrics.cpuUsage > 95) {
       alerts.push({
-        type: 'critical_cpu_usage',
-        severity: critical,
-        message: "Critical CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)}%",
-        value: analysis.systemMetrics.cpuUsage,
-        threshold: 95
-      });
+        type: "'critical_cpu_usage'",
+        severity: "critical",
+        message: ""Critical CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)"}%,
+        value: "analysis.systemMetrics.cpuUsage",
+        threshold: "95
+      "});
     }
     
     // Memory usage alerts
     if (analysis.systemMetrics.memoryUsage > 80) {
       alerts.push({
-        type: 'high_memory_usage',
-        severity: 'warning,
-        message: "High memory usage: ${analysis.systemMetrics.memoryUsage.toFixed(1)}%",
-        value: analysis.systemMetrics.memoryUsage,
-        threshold: 80
-      });
+        type: "'high_memory_usage'",
+        severity: "'warning",
+        message: "High memory usage: ${analysis.systemMetrics.memoryUsage.toFixed(1)"}%",
+        value: "analysis.systemMetrics.memoryUsage",
+        threshold: "80
+      "});
     }
     
     // Disk usage alerts
     if (analysis.systemMetrics.diskUsage > 90) {
       alerts.push({
-        type: high'_disk_usage,
-        severity: 'critical',
-        message: "High disk usage: ${analysis.systemMetrics.diskUsage.toFixed(1)}%",
-        value: analysis.systemMetrics.diskUsage,
-        threshold: 90
-      });
+        type: "high'_disk_usage",
+        severity: "'critical'",
+        message: ""High disk usage: ${analysis.systemMetrics.diskUsage.toFixed(1)"}%,
+        value: "analysis.systemMetrics.diskUsage",
+        threshold: "90
+      "});
     }
     
     // Performance alerts
     if (analysis.performanceMetrics.buildTime > 120000) { // 2 minutes
       alerts.push({
-        type: 'slow_build',
-        severity: warning,
-        message: "Slow build time: ${(analysis.performanceMetrics.buildTime / 1000).toFixed(1)}s",
-        value: analysis.performanceMetrics.buildTime,
-        threshold: 120000
-      });
+        type: "'slow_build'",
+        severity: "warning",
+        message: "Slow build time: ${(analysis.performanceMetrics.buildTime / 1000).toFixed(1)"}s",
+        value: "analysis.performanceMetrics.buildTime",
+        threshold: "120000
+      "});
     }
     
     if (analysis.performanceMetrics.responseTime > 3000) { // 3 seconds
       alerts.push({
-        type: 'slow_response',
-        severity: 'warning,
-        message: "Slow response time: ${analysis.performanceMetrics.responseTime.toFixed(0)}ms",
-        value: analysis.performanceMetrics.responseTime,
-        threshold: 3000
-      });
+        type: "'slow_response'",
+        severity: "'warning",
+        message: ""Slow response time: ${analysis.performanceMetrics.responseTime.toFixed(0)"}ms,
+        value: "analysis.performanceMetrics.responseTime",
+        threshold: "3000
+      "});
     }
     
     // Agent failure alerts
     if (analysis.agentStatus.failedAgents.length > 0) {
       alerts.push({
-        type: agent'_failures,
-        severity: 'critical',
-        message: "${analysis.agentStatus.failedAgents.length} agent(s) failed",
-        value: analysis.agentStatus.failedAgents.length,
-        agents: analysis.agentStatus.failedAgents
-      });
+        type: "agent'_failures",
+        severity: "'critical'",
+        message: "${analysis.agentStatus.failedAgents.length"} agent(s) failed",
+        value: "analysis.agentStatus.failedAgents.length",
+        agents: "analysis.agentStatus.failedAgents
+      "});
     }
     
     return alerts;
@@ -411,18 +411,18 @@ class $1 {
       console.log('Monitoring system...);
       
       const asyncResult = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        metrics: await this.getSystemMetrics(),
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        metrics: "await this.getSystemMetrics()",
+        alerts: "[]
+      "};
       
       // Generate alerts
       monitoring.alerts = this.generateAlerts(monitoring);
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.reportsDir, 'system-metrics, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'system-metrics, "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle critical alerts
@@ -438,7 +438,7 @@ class $1 {
 
   async handleCriticalAlerts(alerts) {
     for (const alert of alerts) {
-      console.log("Critical Alert [${alert.severity.toUpperCase()}]: ${alert.message}");
+      console.log(Critical Alert [${alert.severity.toUpperCase()}]: ${alert.message}");
       
       switch (alert.type) {
         case ')critical'_cpu_usage':
@@ -451,7 +451,7 @@ class $1 {
           await this.handleAgentFailures(alert.agents);
           break;
         default:
-          console.log("No specific handler for alert type: ${alert.type}");
+          console.log("No specific handler for alert type: "${alert.type"});
       }
     }
   }
@@ -461,15 +461,15 @@ class $1 {
       console.log('Handling high CPU usage...);
       
       // Kill non-essential processes
-      const { stdout } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep | awk \{print $2}\')');
+      const { stdout } = await execAsync(ps aux | grep -E (node|npm)" | grep -v grep | awk \{print $2}\')');
       const result = stdout.trim().split(\n').filter(pid => pid);
       
       for (const pid of pids.slice(0, 2)) { // Kill first 2 processes
         try {
-          await execAsync("kill ${pid}");
-          console.log("Killed process ${pid}");
+          await execAsync("kill ${pid});
+          console.log(Killed process ${pid}");
         } catch (error) {
-          console.error("Failed to kill process ${pid}:", error);
+          console.error("Failed to kill process ${pid}:, error);
         }
       }
       
@@ -495,7 +495,7 @@ class $1 {
         
         for (const logFile of oldLogs) {
           fs.unlinkSync(path.join(logDir, logFile));
-          console.log("Deleted old log file: ${logFile}");
+          console.log(Deleted old log file: "${logFile"}");
         }
       }
       
@@ -509,8 +509,8 @@ class $1 {
           const timestamp = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
           
           if (daysOld > 30) { // Delete reports older than 30 days
-            fs.rmSync(reportPath, { recursive: true, force: true });
-            console.log("Deleted old report directory: ${reportDir}");
+            fs.rmSync(reportPath, { recursive: "true", force: "true "});
+            console.log("Deleted old report directory: "${reportDir"});
           }
         }
       }
@@ -525,11 +525,11 @@ class $1 {
       console.log(Handling agent failures...);
       
       for (const agent of failedAgents) {
-        console.log("Attempting to restart failed agent: ${agent}");
+        console.log(Attempting to restart failed agent: "${agent"}");
         
         // This would involve restarting the specific agent
         // For now, we')l'l just log the attempt
-        console.log("Restart attempt logged for agent: ${agent}");
+        console.log("Restart attempt logged for agent: "${agent"});
       }
       
     } catch (error) {
@@ -542,12 +542,12 @@ class $1 {
       console.log(')Analyzing' performance...');
       
       const asyncResult = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        metrics: await this.getPerformanceMetrics(),
-        trends: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        metrics: "await this.getPerformanceMetrics()",
+        trends: "{"},
+        recommendations: "[]
+      "};
       
       // Analyze trends
       performanceReport.trends = await this.analyzePerformanceTrends();
@@ -557,7 +557,7 @@ class $1 {
       
       // Save performance report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'performance-analytics, "performance-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'performance-analytics, performance-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceReport, null, 2));
       
     } catch (error) {
@@ -567,11 +567,11 @@ class $1 {
 
   async analyzePerformanceTrends() {
     const result = {
-      buildTime: [],
-      testTime: [],
-      responseTime: [],
-      throughput: []
-    };
+      buildTime: "[]",
+      testTime: "[]",
+      responseTime: "[]",
+      throughput: "[]
+    "};
     
     try {
       // Read historical performance data
@@ -601,10 +601,10 @@ class $1 {
           const result = secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length;
           
           trends[metric] = {
-            values: values,
-            trend: secondAvg > firstAvg ? 'increasing : decreasi'n'g,
-            change: ((secondAvg - firstAvg) / firstAvg) * 100
-          };
+            values: "values",
+            trend: "secondAvg > firstAvg ? 'increasing : decreasi'n'g",
+            change: "((secondAvg - firstAvg) / firstAvg) * 100
+          "};
         }
       }
       
@@ -621,42 +621,42 @@ class $1 {
     // Build time recommendations
     if (performanceReport.metrics.buildTime > 120000) {
       recommendations.push({
-        type: ')build_optimization',
-        priority: high,
-        message: 'Build time is slow. Consider optimizing build process.',
-        suggestion: 'Review webpack configuration and optimize bundle size'
-      });
+        type: "')build_optimization'",
+        priority: "high",
+        message: "'Build time is slow. Consider optimizing build process.'",
+        suggestion: "'Review webpack configuration and optimize bundle size'
+      "});
     }
     
     // Test time recommendations
     if (performanceReport.metrics.testTime > 60000) {
       recommendations.push({
-        type: test_optimization,
-        priority: 'medium',
-        message: 'Test execution is slow. Consider parallel execution.',
-        suggestion: Enable parallel test execution and optimize test setup
-      });
+        type: "test_optimization",
+        priority: "'medium'",
+        message: "'Test execution is slow. Consider parallel execution.'",
+        suggestion: "Enable parallel test execution and optimize test setup
+      "});
     }
     
     // Response time recommendations
     if (performanceReport.metrics.responseTime > 2000) {
       recommendations.push({
-        type: 'response_optimization',
-        priority: 'high,
-        message: Response' time is slow. Consider performance optimizations.,
-        suggestion: 'Implement caching and optimize database queries'
-      });
+        type: "'response_optimization'",
+        priority: "'high",
+        message: "Response' time is slow. Consider performance optimizations.",
+        suggestion: "'Implement caching and optimize database queries'
+      "});
     }
     
     // Trend-based recommendations
     for (const [metric, trend] of Object.entries(performanceReport.trends)) {
       if (trend.trend === 'increasing && trend.change > 20) {
         recommendations.push({
-          type: "${metric}_trend",
-          priority: medi'u'm,
-          message: "${metric} is trending upward. Monitor for degradation.",
-          suggestion: 'Investigate recent changes that may have caused performance regression'
-        });
+          type: ""${metric"}_trend,
+          priority: "medi'u'm",
+          message: "${metric"} is trending upward. Monitor for degradation.",
+          suggestion: "'Investigate recent changes that may have caused performance regression'
+        "});
       }
     }
     
@@ -668,12 +668,12 @@ class $1 {
       console.log('Analyzing trends...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        systemTrends: {},
-        performanceTrends: {},
-        usageTrends: {},
-        predictions: {}
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        systemTrends: "{"},
+        performanceTrends: "{"},
+        usageTrends: "{"},
+        predictions: "{"}
       };
       
       // Analyze system trends
@@ -690,7 +690,7 @@ class $1 {
       
       // Save trend report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.reportsDir, 'trend-analysis, "trends-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'trend-analysis, "trends-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(trendReport, null, 2));
       
     } catch (error) {
@@ -700,11 +700,11 @@ class $1 {
 
   async analyzeSystemTrends() {
     const result = {
-      cpu: [],
-      memory: [],
-      disk: [],
-      uptime: []
-    };
+      cpu: "[]",
+      memory: "[]",
+      disk: "[]",
+      uptime: "[]
+    "};
     
     try {
       // Read historical system data
@@ -731,13 +731,13 @@ class $1 {
           const result = Math.min(...values);
           
           trends[metric] = {
-            values: values,
-            average: avg,
-            max: max,
-            min: min,
-            range: max - min,
-            trend: values[values.length - 1] > values[0] ? 'increasing : decreasi'n'g
-          };
+            values: "values",
+            average: "avg",
+            max: "max",
+            min: "min",
+            range: "max - min",
+            trend: "values[values.length - 1] > values[0] ? 'increasing : decreasi'n'g
+          "};
         }
       }
       
@@ -750,9 +750,9 @@ class $1 {
 
   async analyzeUsageTrends() {
     const result = {
-      agentUsage: {},
-      resourceUsage: {},
-      errorRates: {}
+      agentUsage: "{"},
+      resourceUsage: "{"},
+      errorRates: "{"}
     };
     
     try {
@@ -766,8 +766,8 @@ class $1 {
           if (fs.statSync(agentPath).isDirectory()) {
             const result = fs.readdirSync(agentPath).filter(file => file.endsWith('.json));
             trends.agentUsage[agentDir] = {
-              reportCount: files.length,
-              lastActivity: files.length > 0 ? fs.statSync(path.join(agentPath, files[files.length - 1])).mtime : null
+              reportCount: "files.length",
+              lastActivity: "files.length > 0 ? fs.statSync(path.join(agentPath", files[files.length - 1])).mtime : null
             };
           }
         }
@@ -778,9 +778,9 @@ class $1 {
       if (fs.existsSync(logDir)) {
         const result = fs.readdirSync(logDir).filter(file => file.includes(')error));
         trends.errorRates = {
-          errorFiles: logFiles.length,
-          recentErrors: logFiles.filter(file => {
-            const filePath = fs.statSync(path.join(logDir, file));
+          errorFiles: "logFiles.length",
+          recentErrors: "logFiles.filter(file => {
+            const filePath = fs.statSync(path.join(logDir", file));
             const timestamp = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
             return hoursOld < 24;
           }).length
@@ -796,11 +796,11 @@ class $1 {
 
   generatePredictions(trendReport) {
     const result = {
-      systemHealth: 'good',
-      performanceOutlook: 'stable,
-      resourceNeeds: adequat'e,
-      recommendations: []
-    };
+      systemHealth: "'good'",
+      performanceOutlook: "'stable",
+      resourceNeeds: "adequat'e",
+      recommendations: "[]
+    "};
     
     try {
       // Predict system health
@@ -808,7 +808,7 @@ class $1 {
       const result = trendReport.systemTrends.memory;
       
       if (cpuTrend && cpuTrend.average > 70) {
-        predictions.systemHealth = 'concerni'ng';
+        predictions.systemHealth = 'concerni'ng'
         predictions.recommendations.push('Consider scaling up CPU resources);
       }
       
@@ -850,21 +850,21 @@ class $1 {
       console.log(')Generating' dashboard data...');
       
       const asyncResult = {
-        timestamp: new Date().toISOString(),
-        system: await this.getSystemMetrics(),
-        performance: await this.getPerformanceMetrics(),
-        agents: await this.getAgentStatus(),
-        alerts: this.generateAlerts({
-          systemMetrics: await this.getSystemMetrics(),
-          performanceMetrics: await this.getPerformanceMetrics(),
-          agentStatus: await this.getAgentStatus()
-        }),
-        trends: await this.analyzeSystemTrends()
-      };
+        timestamp: "new Date().toISOString()",
+        system: "await this.getSystemMetrics()",
+        performance: "await this.getPerformanceMetrics()",
+        agents: "await this.getAgentStatus()",
+        alerts: "this.generateAlerts({
+          systemMetrics: await this.getSystemMetrics()",
+          performanceMetrics: "await this.getPerformanceMetrics()",
+          agentStatus: "await this.getAgentStatus()
+        "}),
+        trends: "await this.analyzeSystemTrends()
+      "};
       
       // Save dashboard data
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'dashboard-data, "dashboard-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'dashboard-data, dashboard-${timestamp}.json");
       fs.writeFileSync(dashboardPath, JSON.stringify(dashboard, null, 2));
       
       console.log(Dashboar'd' data generated);
@@ -876,9 +876,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-    const filePath = path.join(this.reportsDir, 'system-metri'cs', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'system-metri'cs', "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

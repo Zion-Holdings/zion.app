@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("IAC Automation Agent ${this.agentId} started");
+    console.log("IAC Automation Agent ${this.agentId} started);
     
     // Initial infrastructure analysis
     await this.analyzeInfrastructure();
@@ -59,15 +59,15 @@ class $1 {
       console.log('Performing comprehensive infrastructure analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        infrastructureFiles: [],
-        cloudResources: {},
-        securityConfig: {},
-        costAnalysis: {},
-        complianceStatus: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        infrastructureFiles: "[]",
+        cloudResources: "{"},
+        securityConfig: "{"},
+        costAnalysis: "{"},
+        complianceStatus: "{"},
+        recommendations: "[]
+      "};
       
       // Discover infrastructure files
       analysis.infrastructureFiles = await this.discoverInfrastructureFiles();
@@ -167,25 +167,25 @@ class $1 {
 
   extractInfrastructureInfo(file, content) {
     const result = {
-      file: file,
-      type: 'unknown',
-      provider: 'unknown,
-      resources: [],
-      variables: [],
-      outputs: []
-    };
+      file: "file",
+      type: "'unknown'",
+      provider: "'unknown",
+      resources: "[]",
+      variables: "[]",
+      outputs: "[]
+    "};
     
     const result = content.toLowerCase();
     
     // Detect provider
     if (lowerContent.includes(aws'_)) {
-      fileInfo.provider = aws';
+      fileInfo.provider = aws'
     } else if (lowerContent.includes('google_)) {
       fileInfo.provider = gcp;
     } else if (lowerContent.includes(')azur'e_')) {
       fileInfo.provider = 'azure;
     } else if (lowerContent.includes(kubernet'e's)) {
-      fileInfo.provider = 'kubernet'es';
+      fileInfo.provider = 'kubernet'es'
     }
     
     // Detect file type
@@ -213,25 +213,25 @@ class $1 {
     const result = [];
     
     // Extract Terraform resources
-    const result = /resource\s+["']([^"']+)["]\s+["']([^"']+)["]/g;
+    const result = /resource\s+[']([^"']+)["]\s+[']([^']+)["]/g;
     let match;
     
     while ((match = resourceRegex.exec(content)) !== null) {
       resources.push({
-        type: match[1],
-        name: match[2],
-        provider: 'terraform'
-      });
+        type: "match[1]",
+        name: "match[2]",
+        provider: "'terraform'
+      "});
     }
     
     // Extract Kubernetes resources
     const result = /kind:\s*([A-Za-z]+)/g;
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
-        type: match[1],
-        name: 'kubernetes-resource,
-        provider: kubernete's
-      });
+        type: "match[1]",
+        name: "'kubernetes-resource",
+        provider: "kubernete's
+      "});
     }
     
     return resources;
@@ -241,14 +241,14 @@ class $1 {
     const result = [];
     
     // Extract Terraform variables
-    const result = /variable\s+["']([^"']+)["]/g;
+    const result = /variable\s+["']([^']+)[]/g;
     let match;
     
     while ((match = varRegex.exec(content)) !== null) {
       variables.push({
-        name: match[1],
-        type: 'terraform'
-      });
+        name: "match[1]",
+        type: "'terraform'
+      "});
     }
     
     return variables;
@@ -258,14 +258,14 @@ class $1 {
     const result = [];
     
     // Extract Terraform outputs
-    const result = /output\s+["']([^"]+)["']/g;
+    const result = /output\s+["']([^"]+)[']/g;
     let match;
     
     while ((match = outputRegex.exec(content)) !== null) {
       outputs.push({
-        name: match[1],
-        type: 'terraform
-      });
+        name: "match[1]",
+        type: "'terraform
+      "});
     }
     
     return outputs;
@@ -273,13 +273,13 @@ class $1 {
 
   async analyzeCloudResources() {
     const result = {
-      compute: [],
-      storage: [],
-      networking: [],
-      database: [],
-      security: [],
-      totalResources: 0
-    };
+      compute: "[]",
+      storage: "[]",
+      networking: "[]",
+      database: "[]",
+      security: "[]",
+      totalResources: "0
+    "};
     
     try {
       const result = this.findIACFiles();
@@ -310,12 +310,12 @@ class $1 {
 
   categorizeResources(content) {
     const result = {
-      compute: [],
-      storage: [],
-      networking: [],
-      database: [],
-      security: []
-    };
+      compute: "[]",
+      storage: "[]",
+      networking: "[]",
+      database: "[]",
+      security: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -345,12 +345,12 @@ class $1 {
 
   async analyzeSecurityConfig() {
     const result = {
-      securityGroups: [],
-      iamPolicies: [],
-      encryption: [],
-      compliance: [],
-      vulnerabilities: []
-    };
+      securityGroups: "[]",
+      iamPolicies: "[]",
+      encryption: "[]",
+      compliance: "[]",
+      vulnerabilities: "[]
+    "};
     
     try {
       const result = this.findIACFiles();
@@ -376,12 +376,12 @@ class $1 {
 
   extractSecurityInfo(content) {
     const result = {
-      securityGroups: [],
-      iamPolicies: [],
-      encryption: [],
-      compliance: [],
-      vulnerabilities: []
-    };
+      securityGroups: "[]",
+      iamPolicies: "[]",
+      encryption: "[]",
+      compliance: "[]",
+      vulnerabilities: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -415,30 +415,30 @@ class $1 {
 
   async analyzeCosts() {
     const result = {
-      estimatedMonthlyCost: 0,
-      costBreakdown: {},
-      optimizationOpportunities: [],
-      costTrends: []
-    };
+      estimatedMonthlyCost: "0",
+      costBreakdown: "{"},
+      optimizationOpportunities: "[]",
+      costTrends: "[]
+    "};
     
     try {
       // Simulate cost analysis
       costs.estimatedMonthlyCost = Math.random() * 1000 + 100; // $100-$1100
       
       costs.costBreakdown = {
-        compute: Math.random() * 500 + 50,
-        storage: Math.random() * 200 + 20,
-        networking: Math.random() * 100 + 10,
-        database: Math.random() * 300 + 30
-      };
+        compute: "Math.random() * 500 + 50",
+        storage: "Math.random() * 200 + 20",
+        networking: "Math.random() * 100 + 10",
+        database: "Math.random() * 300 + 30
+      "};
       
       // Identify optimization opportunities
       if (costs.estimatedMonthlyCost > 500) {
         costs.optimizationOpportunities.push({
-          type: cos't'_optimization,
-          description: 'High monthly costs detected',
-          suggestion: 'Review and optimize resource usage'
-        });
+          type: "cos't'_optimization",
+          description: "'High monthly costs detected'",
+          suggestion: "'Review and optimize resource usage'
+        "});
       }
       
     } catch (error) {
@@ -450,10 +450,10 @@ class $1 {
 
   async checkCompliance() {
     const result = {
-      standards: [],
-      violations: [],
-      recommendations: []
-    };
+      standards: "[]",
+      violations: "[]",
+      recommendations: "[]
+    "};
     
     try {
       const result = this.findIACFiles();
@@ -476,10 +476,10 @@ class $1 {
 
   checkFileCompliance(content) {
     const result = {
-      standards: [],
-      violations: [],
-      recommendations: []
-    };
+      standards: "[]",
+      violations: "[]",
+      recommendations: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -496,10 +496,10 @@ class $1 {
     if (lowerContent.includes(')0.0.0.0/0')) {
       complianceInfo.violations.push(open-access-violation);
       complianceInfo.recommendations.push({
-        type: 'security',
-        message: 'Open access detected',
-        suggestion: Restrict access to specific IP ranges
-      });
+        type: "'security'",
+        message: "'Open access detected'",
+        suggestion: "Restrict access to specific IP ranges
+      "});
     }
     
     return complianceInfo;
@@ -511,31 +511,31 @@ class $1 {
     // Security recommendations
     if (analysis.securityConfig.vulnerabilities.length > 0) {
       recommendations.push({
-        type: 'security',
-        priority: 'critical,
-        message: Security' vulnerabilities detected,
-        suggestion: 'Review and fix security configurations'
-      });
+        type: "'security'",
+        priority: "'critical",
+        message: "Security' vulnerabilities detected",
+        suggestion: "'Review and fix security configurations'
+      "});
     }
     
     // Cost recommendations
     if (analysis.costAnalysis.estimatedMonthlyCost > 500) {
       recommendations.push({
-        type: 'cost,
-        priority: hig'h,
-        message: 'High infrastructure costs detected',
-        suggestion: 'Optimize resource usage and consider reserved instances'
-      });
+        type: "'cost",
+        priority: "hig'h",
+        message: "'High infrastructure costs detected'",
+        suggestion: "'Optimize resource usage and consider reserved instances'
+      "});
     }
     
     // Compliance recommendations
     if (analysis.complianceStatus.violations.length > 0) {
       recommendations.push({
-        type: compliance,
-        priority: 'high',
-        message: 'Compliance violations detected',
-        suggestion: Address compliance issues immediately
-      });
+        type: "compliance",
+        priority: "'high'",
+        message: "'Compliance violations detected'",
+        suggestion: "Address compliance issues immediately
+      "});
     }
     
     return recommendations;
@@ -546,11 +546,11 @@ class $1 {
       console.log('Monitoring infrastructure...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        resources: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        resources: "[]",
+        alerts: "[]
+      "};
       
       // Check infrastructure status
       const result = this.findIACFiles();
@@ -568,7 +568,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'infrastructure-reports, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'infrastructure-reports, monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -578,30 +578,30 @@ class $1 {
 
   checkInfrastructureStatus(file, content) {
     const timestamp = {
-      file: file,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      file: "file",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     const result = content.toLowerCase();
     
     // Check for common issues
     if (lowerContent.includes('0.0.0.0/0)) {
       status.issues.push({
-        type: security'),
-        severity: 'high,
-        message: Open' access detected
-      });
-      status.status = 'warni'ng';
+        type: "security')",
+        severity: "'high",
+        message: "Open' access detected
+      "});
+      status.status = 'warni'ng'
     }
     
     if (lowerContent.includes('hardcoded) || lowerContent.includes(password)) {
       status.issues.push({
-        type: ')security',
-        severity: 'medium,
-        message: Potential' hardcoded credentials
-      });
+        type: "')security'",
+        severity: "'medium",
+        message: "Potential' hardcoded credentials
+      "});
     }
     
     return status;
@@ -612,11 +612,11 @@ class $1 {
       console.log('Validating infrastructure...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        validations: [],
-        issues: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        validations: "[]",
+        issues: "[]
+      "};
       
       // Validate infrastructure files
       const result = this.findIACFiles();
@@ -634,7 +634,7 @@ class $1 {
       
       // Save validation report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'validation-reports, "validation-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'validation-reports, "validation-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(validationReport, null, 2));
       
     } catch (error) {
@@ -644,10 +644,10 @@ class $1 {
 
   validateInfrastructureFile(file, content) {
     const result = {
-      file: file,
-      isValid: true,
-      issues: []
-    };
+      file: "file",
+      isValid: "true",
+      issues: "[]
+    "};
     
     // Check for syntax errors
     if (file.endsWith('.tf)) {
@@ -676,11 +676,11 @@ class $1 {
       console.log('Monitoring deployments...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        deployments: [],
-        status: ')healthy
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        deployments: "[]",
+        status: "')healthy
+      "};
       
       // Check for deployment files
       const result = this.findDeploymentFiles();
@@ -698,7 +698,7 @@ class $1 {
       
       // Save deployment report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'deployment-reports, "deployment-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'deployment-reports, deployment-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(deploymentReport, null, 2));
       
     } catch (error) {
@@ -752,11 +752,11 @@ class $1 {
 
   analyzeDeployment(file, content) {
     const result = {
-      file: file,
-      status: healt'h'y,
-      resources: [],
-      issues: []
-    };
+      file: "file",
+      status: "healt'h'y",
+      resources: "[]",
+      issues: "[]
+    "};
     
     const result = content.toLowerCase();
     
@@ -787,9 +787,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-    const filePath = path.join(this.reportsDir, 'infrastructure-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'infrastructure-repor'ts', "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

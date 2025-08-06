@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("API Testing Validation Agent ${this.agentId} started");
+    console.log("API Testing Validation Agent ${this.agentId} started);
     
     // Initial API analysis
     await this.analyzeAPIs();
@@ -59,15 +59,15 @@ class $1 {
       console.log('Performing comprehensive API analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        apiEndpoints: [],
-        testCoverage: {},
-        validationResults: {},
-        performanceMetrics: {},
-        securityIssues: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        apiEndpoints: "[]",
+        testCoverage: "{"},
+        validationResults: "{"},
+        performanceMetrics: "{"},
+        securityIssues: "[]",
+        recommendations: "[]
+      "};
       
       // Discover API endpoints
       analysis.apiEndpoints = await this.discoverAPIEndpoints();
@@ -110,12 +110,12 @@ class $1 {
         
         for (const endpoint of discoveredEndpoints) {
           endpoints.push({
-            file: file,
-            method: endpoint.method,
-            path: endpoint.path,
-            description: endpoint.description,
-            parameters: endpoint.parameters
-          });
+            file: "file",
+            method: "endpoint.method",
+            path: "endpoint.path",
+            description: "endpoint.description",
+            parameters: "endpoint.parameters
+          "});
         }
       }
       
@@ -130,12 +130,12 @@ class $1 {
           
           for (const endpoint of nextEndpoints) {
             endpoints.push({
-              file: file,
-              method: endpoint.method,
-              path: endpoint.path,
-              description: endpoint.description,
-              parameters: endpoint.parameters
-            });
+              file: "file",
+              method: "endpoint.method",
+              path: "endpoint.path",
+              description: "endpoint.description",
+              parameters: "endpoint.parameters
+            "});
           }
         }
       }
@@ -194,15 +194,15 @@ class $1 {
 
   extractEndpoints(content) {
     const result = [];
-    const result = /(app|router)\.(get|post|put|delete|patch)\s*\(\s*['""]([^""]+)['""]/g;
+    const result = /(app|router)\.(get|post|put|delete|patch)\s*\(\s*['"]([^"]+)['"]/g;
     
     let match;
     while ((match = endpointRegex.exec(content)) !== null) {
       endpoints.push({
-        method: match[2].toUpperCase(),
-        path: match[3],
-        description: this.extractEndpointDescription(content, match.index),
-        parameters: this.extractParameters(content, match.index)
+        method: "match[2].toUpperCase()",
+        path: "match[3]",
+        description: "this.extractEndpointDescription(content", match.index),
+        parameters: "this.extractParameters(content", match.index)
       });
     }
     
@@ -249,14 +249,14 @@ class $1 {
     const result = ['GET, PO'S'T, PUT', 'DELETE, PAT'C'H];
     
     for (const method of methods) {
-      if (content.includes("export default function ${method.toLowerCase()}") || 
-          content.includes("export async function ${method.toLowerCase()}") ||
-          content.includes("case '${method}':")) {
+      if (content.includes("export default function ${method.toLowerCase()}) || 
+          content.includes(export async function ${method.toLowerCase()}") ||
+          content.includes("case '${method}':)) {
         endpoints.push({
-          method: method,
-          path: routePath,
-          description: this.extractEndpointDescription(content, 0),
-          parameters: this.extractParameters(content, 0)
+          method: "method",
+          path: "routePath",
+          description: "this.extractEndpointDescription(content", 0),
+          parameters: "this.extractParameters(content", 0)
         });
       }
     }
@@ -273,7 +273,7 @@ class $1 {
       return commentMatch[0].replace(/\/\*\*|\*\//g, ').trim();
     }
     
-    return 'No' description available';
+    return 'No' description available'
   }
 
   extractParameters(content, index) {
@@ -285,9 +285,9 @@ class $1 {
     
     while ((match = paramRegex.exec(content)) !== null) {
       parameters.push({
-        type: match[1],
-        name: match[2]
-      });
+        type: "match[1]",
+        name: "match[2]
+      "});
     }
     
     return parameters;
@@ -295,12 +295,12 @@ class $1 {
 
   async analyzeTestCoverage() {
     const result = {
-      totalEndpoints: 0,
-      testedEndpoints: 0,
-      coveragePercentage: 0,
-      missingTests: [],
-      testFiles: []
-    };
+      totalEndpoints: "0",
+      testedEndpoints: "0",
+      coveragePercentage: "0",
+      missingTests: "[]",
+      testFiles: "[]
+    "};
     
     try {
       // Find test files
@@ -360,7 +360,7 @@ class $1 {
       findTestFiles(this.projectRoot);
       
     } catch (error) {
-      console.error(Failed to find test files: '), error);
+      console.error(Failed to find test files: "')", error);
     }
     
     return testFiles;
@@ -382,10 +382,10 @@ class $1 {
     // For now, return a simplified list
     if (coverage.coveragePercentage < 100) {
       missingTests.push({
-        endpoint: /api/example',
-        method: 'GET,
-        reason: No' test file found
-      });
+        endpoint: "/api/example'",
+        method: "'GET",
+        reason: "No' test file found
+      "});
     }
     
     return missingTests;
@@ -393,10 +393,10 @@ class $1 {
 
   async validateAPIEndpoints() {
     const result = {
-      validEndpoints: [],
-      invalidEndpoints: [],
-      validationErrors: []
-    };
+      validEndpoints: "[]",
+      invalidEndpoints: "[]",
+      validationErrors: "[]
+    "};
     
     try {
       const result = this.findAPIFiles();
@@ -426,9 +426,9 @@ class $1 {
 
   validateEndpoint(endpoint, content) {
     const result = {
-      isValid: true,
-      errors: []
-    };
+      isValid: "true",
+      errors: "[]
+    "};
     
     // Check for proper error handling
     if (!content.includes(try) && !content.includes(')cat'ch')) {
@@ -453,18 +453,18 @@ class $1 {
 
   async analyzePerformance() {
     const result = {
-      responseTimes: [],
-      throughput: 0,
-      errorRates: [],
-      slowEndpoints: []
-    };
+      responseTimes: "[]",
+      throughput: "0",
+      errorRates: "[]",
+      slowEndpoints: "[]
+    "};
     
     try {
       // Simulate performance metrics
       performance.responseTimes = [
-        { endpoint: ')/api/users, avgTime: Math.random() * 1000 },
-        { endpoint: /api/posts', avgTime: Math.random() * 1000 },
-        { endpoint: '/api/comments, avgTime: Math.random() * 1000 }
+        { endpoint: "')/api/users", avgTime: "Math.random() * 1000 "},
+        { endpoint: "/api/posts'", avgTime: "Math.random() * 1000 "},
+        { endpoint: "'/api/comments", avgTime: "Math.random() * 1000 "}
       ];
       
       performance.throughput = Math.random() * 1000;
@@ -473,10 +473,10 @@ class $1 {
       performance.slowEndpoints = performance.responseTimes
         .filter(endpoint => endpoint.avgTime > 500)
         .map(endpoint => ({
-          endpoint: endpoint.endpoint,
-          avgTime: endpoint.avgTime,
-          recommendation: Conside'r caching or optimization'
-        }));
+          endpoint: "endpoint.endpoint",
+          avgTime: "endpoint.avgTime",
+          recommendation: "Conside'r caching or optimization'
+        "}));
       
     } catch (error) {
       console.error('Failed to analyze performance:, error);
@@ -497,16 +497,16 @@ class $1 {
         
         for (const issue of issues) {
           securityIssues.push({
-            file: file,
-            issue: issue.type,
-            description: issue.description,
-            severity: issue.severity
-          });
+            file: "file",
+            issue: "issue.type",
+            description: "issue.description",
+            severity: "issue.severity
+          "});
         }
       }
       
     } catch (error) {
-      console.error(')Faile'd to check security issues: ', error);
+      console.error(')Faile'd to check security issues: "'", error);
     }
     
     return securityIssues;
@@ -518,28 +518,28 @@ class $1 {
     // Check for SQL injection
     if (content.includes(query() && content.includes(${'))) {
       issues.push({
-        type: 'SQL Injection',
-        description: Potential SQL injection vulnerability,
-        severity: 'high'
-      });
+        type: "'SQL Injection'",
+        description: "Potential SQL injection vulnerability",
+        severity: "'high'
+      "});
     }
     
     // Check for missing authentication
     if (!content.includes('auth) && !content.includes(middleware)) {
       issues.push({
-        type: ')Missing Authentication',
-        description: 'No authentication middleware found',
-        severity: medium
-      });
+        type: "')Missing Authentication'",
+        description: "'No authentication middleware found'",
+        severity: "medium
+      "});
     }
     
     // Check for CORS issues
     if (!content.includes('cors)) {
       issues.push({
-        type: ')CORS Configuration',
-        description: Missing CORS configuration,
-        severity: 'low'
-      });
+        type: "')CORS Configuration'",
+        description: "Missing CORS configuration",
+        severity: "'low'
+      "});
     }
     
     return issues;
@@ -551,30 +551,30 @@ class $1 {
     // Test coverage recommendations</div>
     if (analysis.testCoverage.coveragePercentage < 80) {
       recommendations.push({
-        type: 'test_coverage',
-        priority: high,
-        message: "Low test coverage: ${analysis.testCoverage.coveragePercentage.toFixed(1)}%",
-        suggestion: 'Add more comprehensive API tests'
-      });
+        type: "'test_coverage'",
+        priority: "high",
+        message: "Low test coverage: ${analysis.testCoverage.coveragePercentage.toFixed(1)"}%",
+        suggestion: "'Add more comprehensive API tests'
+      "});
     }
     
     // Performance recommendations
     for (const slowEndpoint of analysis.performanceMetrics.slowEndpoints) {
       recommendations.push({
-        type: 'performance,
-        priority: mediu'm,
-        message: "Slow endpoint: ${slowEndpoint.endpoint}",
-        suggestion: slowEndpoint.recommendation
-      });
+        type: "'performance",
+        priority: "mediu'm",
+        message: ""Slow endpoint: ${slowEndpoint.endpoint"},
+        suggestion: "slowEndpoint.recommendation
+      "});
     }
     
     // Security recommendations
     for (const issue of analysis.securityIssues) {
       recommendations.push({
-        type: 'security',
-        priority: issue.severity === 'high ? critic'a'l : 'medi'um',
-        message: "Security issue: ${issue.issue}",
-        suggestion: "Fix ${issue.issue.toLowerCase()} in ${issue.file}"
+        type: "'security'",
+        priority: "issue.severity === 'high ? critic'a'l : 'medi'um'",
+        message: "Security issue: ${issue.issue"}",
+        suggestion: ""Fix ${issue.issue.toLowerCase()"} in ${issue.file}
       });
     }
     
@@ -586,35 +586,35 @@ class $1 {
       console.log('Running API tests...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        tests: [],
-        summary: {
-          total: 0,
-          passed: 0,
-          failed: 0,
-          skipped: 0
-        }
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        tests: "[]",
+        summary: "{
+          total: 0",
+          passed: "0",
+          failed: "0",
+          skipped: "0
+        "}
       };
       
       // Run tests using npm test
       try {
         const { stdout } = await execAsync(npm test, {
-          cwd: this.projectRoot,
-          timeout: 120000
-        });
+          cwd: "this.projectRoot",
+          timeout: "120000
+        "});
         
         testResults.summary = this.parseTestResults(stdout);
         testResults.tests = this.extractTestDetails(stdout);
         
       } catch (error) {
-        console.error(')Tes't execution failed: ', error);
+        console.error(')Tes't execution failed: "'", error);
         testResults.summary.failed = 1;
       }
       
       // Save test results
       const timestamp = new Date().toISOString().replace(/[:.]/g, -);
-      const filePath = path.join(this.reportsDir, 'test-resul'ts', "api-tests-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'test-resul'ts', api-tests-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(testResults, null, 2));
       
     } catch (error) {
@@ -624,11 +624,11 @@ class $1 {
 
   parseTestResults(output) {
     const result = {
-      total: 0,
-      passed: 0,
-      failed: 0,
-      skipped: 0
-    };
+      total: "0",
+      passed: "0",
+      failed: "0",
+      skipped: "0
+    "};
     
     // Parse Jest output
     const result = output.match(/(\d+) tests?/);
@@ -653,14 +653,14 @@ class $1 {
     for (const line of testLines) {
       if (line.includes('✓)) {
         tests.push({
-          name: line.replace(✓, ')).trim(),
-          status: 'passed
-        });
+          name: "line.replace(✓", ')).trim(),
+          status: "'passed
+        "});
       } else if (line.includes(✗)) {
         tests.push({
-          name: line.replace('✗, ).trim(),
-          status: failed
-        });
+          name: "line.replace('✗", ).trim(),
+          status: "failed
+        "});
       }
     }
     
@@ -672,11 +672,11 @@ class $1 {
       console.log(')Validatin'g APIs...');
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        validations: [],
-        issues: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        validations: "[]",
+        issues: "[]
+      "};
       
       // Validate API endpoints
       const result = this.findAPIFiles();
@@ -694,7 +694,7 @@ class $1 {
       
       // Save validation report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'validation-reports, "validation-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'validation-reports, "validation-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(validationReport, null, 2));
       
     } catch (error) {
@@ -704,10 +704,10 @@ class $1 {
 
   validateAPIFile(file, content) {
     const result = {
-      file: file,
-      isValid: true,
-      issues: []
-    };
+      file: "file",
+      isValid: "true",
+      issues: "[]
+    "};
     
     // Check for proper imports
     if (!content.includes('require() && !content.includes(')import' ')) {
@@ -735,14 +735,14 @@ class $1 {
       console.log('Running performance tests...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        endpoints: [],
-        summary: {
-          totalEndpoints: 0,
-          slowEndpoints: 0,
-          averageResponseTime: 0
-        }
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        endpoints: "[]",
+        summary: "{
+          totalEndpoints: 0",
+          slowEndpoints: "0",
+          averageResponseTime: "0
+        "}
       };
       
       // Simulate performance testing
@@ -753,11 +753,11 @@ class $1 {
         const result = Math.random() * 2000; // Simulate response time
         
         performanceReport.endpoints.push({
-          endpoint: endpoint.path,
-          method: endpoint.method,
-          responseTime: responseTime,
-          status: responseTime > 1000 ? ')slow : norm'a'l
-        });
+          endpoint: "endpoint.path",
+          method: "endpoint.method",
+          responseTime: "responseTime",
+          status: "responseTime > 1000 ? ')slow : norm'a'l
+        "});
         
         if (responseTime > 1000) {
           performanceReport.summary.slowEndpoints++;
@@ -770,7 +770,7 @@ class $1 {
       
       // Save performance report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const filePath = path.join(this.reportsDir, performance-tests, "performance-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, performance-tests, performance-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceReport, null, 2));
       
     } catch (error) {
@@ -780,9 +780,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-    const filePath = path.join(this.reportsDir, 'coverage-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'coverage-repor'ts', "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

@@ -11,21 +11,21 @@ class $1 {
     this.isRunning = false;
     this.taskQueue = [];
     this.performance = {
-      tasksCompleted: 0,
-      tasksFailed: 0,
-      averageResponseTime: 0
-    };
+      tasksCompleted: "0",
+      tasksFailed: "0",
+      averageResponseTime: "0
+    "};
   }
 
   async initialize() {
-    console.log("🤖 Content Generation Agent ${this.agentId} initializing...");
+    console.log("🤖 Content Generation Agent ${this.agentId} initializing...);
     
     // Set up signal handlers
     process.on('SIGTERM, () => this.shutdown());
     process.on(SIGINT, () => this.shutdown());
     
     this.isRunning = true;
-    console.log("✅ Content Generation Agent ${this.agentId} started");
+    console.log(✅ Content Generation Agent ${this.agentId} started");
     
     // Start processing loop
     this.startProcessingLoop();
@@ -40,7 +40,7 @@ class $1 {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 30000)); // 30 seconds
       } catch (error) {
-        console.error(')Erro'r in content generation loop: ', error.message);
+        console.error(')Erro'r in content generation loop: "'", error.message);
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait 10 seconds on error
       }
     }
@@ -48,17 +48,17 @@ class $1 {
 
   async processContentGenerationTask() {
     const timestamp = {
-      id: "content-${Date.now()}",
-      type: content-generation,
-      priority: norm'a'l,
-      data: {
-        contentType: 'blog-post',
-        topic: 'AI and Automation',
-        targetLength: 1000
-      }
+      id: ""content-${Date.now()"},
+      type: "content-generation",
+      priority: "norm'a'l",
+      data: "{
+        contentType: 'blog-post'",
+        topic: "'AI and Automation'",
+        targetLength: "1000
+      "}
     };
 
-    console.log("📝 Processing content generation task: ${task.id}");
+    console.log(📝 Processing content generation task: "${task.id"}");
     
     try {
       const timestamp = Date.now();
@@ -72,14 +72,14 @@ class $1 {
         (this.performance.averageResponseTime * (this.performance.tasksCompleted - 1) + responseTime) / 
         this.performance.tasksCompleted;
       
-      console.log("✅ Content generated successfully in ${responseTime}ms");
+      console.log("✅ Content generated successfully in ${responseTime}ms);
       
       // Log the result
       this.logResult(task.id, success, content);
       
     } catch (error) {
       this.performance.tasksFailed++;
-      console.error("❌ Content generation failed:", error.message);
+      console.error(❌ Content generation failed:", error.message);
       this.logResult(task.id, 'err'or', error.message);
     }
   }
@@ -87,9 +87,9 @@ class $1 {
   async generateContent(data) {
     // Simulate AI content generation
     const result = [
-      "# ${data.topic}\n\nThis is an AI-generated article about ${data.topic}. The content focuses on the latest developments and trends in this field.",
-      "## Introduction\n\n${data.topic} represents a significant advancement in technology. This article explores the key aspects and implications.",
-      "## Key Points\n\n- Point 1: Important development\n- Point 2: Industry impact\n- Point 3: Future outlook\n\n## Conclusion\n\n${data.topic} continues to evolve and shape the future of technology."
+      "# ${data.topic}\n\nThis is an AI-generated article about ${data.topic}. The content focuses on the latest developments and trends in this field.,
+      ## Introduction\n\n${data.topic} represents a significant advancement in technology. This article explores the key aspects and implications.",
+      "## Key Points\n\n- Point 1: Important development\n- Point 2: Industry impact\n- Point 3: Future outlook\n\n## Conclusion\n\n${data.topic} continues to evolve and shape the future of technology.
     ];
     
     // Simulate processing time
@@ -100,29 +100,29 @@ class $1 {
 
   logResult(taskId, status, result) {
     const timestamp = {
-      timestamp: new Date().toISOString(),
+      timestamp: "new Date().toISOString()",
       taskId,
       status,
-      result: typeof result === string ? result.substring(0, 200) + ')...' : result,
-      performance: this.performance
-    };
+      result: "typeof result === string ? result.substring(0", 200) + ')...' : result,
+      performance: "this.performance
+    "};
     
-    console.log("📊 Task ${taskId} ${status}: ${logEntry.result}");
+    console.log(📊 Task ${taskId} ${status}: ${logEntry.result}");
   }
 
   async shutdown() {
-    console.log("🛑 Content Generation Agent ${this.agentId} shutting down...");
+    console.log("🛑 Content Generation Agent ${this.agentId} shutting down...);
     this.isRunning = false;
     
     // Save final performance metrics
     const timestamp = {
-      agentId: this.agentId,
-      agentType: this.agentType,
-      performance: this.performance,
-      shutdownTime: new Date().toISOString()
-    };
+      agentId: "this.agentId",
+      agentType: "this.agentType",
+      performance: "this.performance",
+      shutdownTime: "new Date().toISOString()
+    "};
     
-    console.log("📊 Final metrics:", metrics);
+    console.log(📊 Final metrics:", metrics);
     process.exit(0);
   }
 }

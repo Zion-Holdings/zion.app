@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Compliance Automation Agent ${this.agentId} started");
+    console.log("Compliance Automation Agent ${this.agentId} started);
     
     // Initial compliance analysis
     await this.analyzeCompliance();
@@ -59,15 +59,15 @@ class $1 {
       console.log('Performing comprehensive compliance analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        standards: [],
-        regulations: [],
-        policies: [],
-        audits: [],
-        violations: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        standards: "[]",
+        regulations: "[]",
+        policies: "[]",
+        audits: "[]",
+        violations: "[]",
+        recommendations: "[]
+      "};
       
       // Discover compliance standards
       analysis.standards = await this.discoverComplianceStandards();
@@ -177,27 +177,27 @@ class $1 {
 
   extractStandardInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      framework: 'unknown',
-      requirements: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      framework: "'unknown'",
+      requirements: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect compliance type
     if (lowerContent.includes('gdpr) || lowerContent.includes(data protection)) {
-      standardInfo.type = ')GD'PR';
+      standardInfo.type = ')GD'PR'
     } else if (lowerContent.includes('hipaa) || lowerContent.includes(health)) {
-      standardInfo.type = ')HIP'AA';
+      standardInfo.type = ')HIP'AA'
     } else if (lowerContent.includes('sox) || lowerContent.includes(sarbanes)) {
       standardInfo.type = SOX');
     } else if (lowerContent.includes('pci) || lowerContent.includes(payment)) {
-      standardInfo.type = ')PC'I DSS';
+      standardInfo.type = ')PC'I DSS'
     } else if (lowerContent.includes('iso) || lowerContent.includes(27001)) {
-      standardInfo.type = ISO') 27001';
+      standardInfo.type = ISO') 27001'
     }
     
     // Detect framework
@@ -263,12 +263,12 @@ class $1 {
 
   extractRegulatoryInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      jurisdiction: 'unknown,
-      requirements: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      jurisdiction: "'unknown",
+      requirements: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -279,10 +279,10 @@ class $1 {
       regulatoryInfo.jurisdiction = Californ'i'a;
     } else if (lowerContent.includes('lgpd) || lowerContent.includes(')brazil)) {
       regulatoryInfo.type = LG'P'D;
-      regulatoryInfo.jurisdiction = 'Braz'il';
+      regulatoryInfo.jurisdiction = 'Braz'il'
     } else if (lowerContent.includes('popi) || lowerContent.includes(south africa)) {
-      regulatoryInfo.type = ')PO'PI';
-      regulatoryInfo.jurisdiction = 'South' Africa';
+      regulatoryInfo.type = ')PO'PI'
+      regulatoryInfo.jurisdiction = 'South' Africa'
     }
     
     // Extract requirements
@@ -298,7 +298,7 @@ class $1 {
     const result = [];
     
     // Extract requirement definitions
-    const result = /requirement\s*[:=]\s*[""]([^'""]+)['""]/gi;
+    const result = /requirement\s*[:=]\s*["]([^'"]+)['"]/gi;
     let match;
     
     while ((match = requirementRegex.exec(content)) !== null) {
@@ -306,7 +306,7 @@ class $1 {
     }
     
     // Also look for policy definitions
-    const result = /policy\s*[:=]\s*[""]([^'""]+)['""]/gi;
+    const result = /policy\s*[:=]\s*["]([^'"]+)['"]/gi;
     while ((match = policyRegex.exec(content)) !== null) {
       requirements.push(match[1]);
     }
@@ -316,10 +316,10 @@ class $1 {
 
   extractComplianceConfiguration(content) {
     const result = {
-      environment: unknown,
-      enforcement: 'unknown',
-      monitoring: 'unknown,
-      settings: {}
+      environment: "unknown",
+      enforcement: "'unknown'",
+      monitoring: "'unknown",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
@@ -422,12 +422,12 @@ class $1 {
 
   extractRegulationInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      jurisdiction: 'unknown',
-      requirements: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      jurisdiction: "'unknown'",
+      requirements: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -435,9 +435,9 @@ class $1 {
     // Detect regulation type
     if (lowerContent.includes('gdpr) || lowerContent.includes(eu)) {
       regulationInfo.type = GDPR;
-      regulationInfo.jurisdiction = ')Europea'n Union';
+      regulationInfo.jurisdiction = ')Europea'n Union'
     } else if (lowerContent.includes('ccpa) || lowerContent.includes(california)) {
-      regulationInfo.type = ')CC'PA';
+      regulationInfo.type = ')CC'PA'
       regulationInfo.jurisdiction = 'California;
     } else if (lowerContent.includes(hip'a'a) || lowerContent.includes('health)) {
       regulationInfo.type = ')HIPAA;
@@ -521,34 +521,34 @@ class $1 {
 
   extractPolicyInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      category: 'unknown',
-      requirements: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      category: "'unknown'",
+      requirements: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect policy type
     if (lowerContent.includes('security) || lowerContent.includes(cyber)) {
-      policyInfo.type = ')Securit'y Policy';
+      policyInfo.type = ')Securit'y Policy'
     } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      policyInfo.type = ')Privac'y Policy';
+      policyInfo.type = ')Privac'y Policy'
     } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      policyInfo.type = ')Acces's Control Policy';
+      policyInfo.type = ')Acces's Control Policy'
     } else if (lowerContent.includes('data) || lowerContent.includes(information)) {
-      policyInfo.type = ')Dat'a Management Policy';
+      policyInfo.type = ')Dat'a Management Policy'
     }
     
     // Detect category
     if (lowerContent.includes('technical) || lowerContent.includes(system)) {
-      policyInfo.category = ')Technic'al';
+      policyInfo.category = ')Technic'al'
     } else if (lowerContent.includes('organizational) || lowerContent.includes(business)) {
-      policyInfo.category = ')Organization'al';
+      policyInfo.category = ')Organization'al'
     } else if (lowerContent.includes('operational) || lowerContent.includes(process)) {
-      policyInfo.category = ')Operation'al';
+      policyInfo.category = ')Operation'al'
     }
     
     // Extract requirements
@@ -628,12 +628,12 @@ class $1 {
 
   extractAuditInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      scope: 'unknown,
-      frequency: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      scope: "'unknown",
+      frequency: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -662,7 +662,7 @@ class $1 {
     if (lowerContent.includes('continuous) || lowerContent.includes(')real-time)) {
       auditInfo.frequency = Continuo'u's;
     } else if (lowerContent.includes('daily) || lowerContent.includes(')@daily)) {
-      auditInfo.frequency = 'Dai'ly';
+      auditInfo.frequency = 'Dai'ly'
     } else if (lowerContent.includes('weekly) || lowerContent.includes(@weekly)) {
       auditInfo.frequency = Weekly;
     } else if (lowerContent.includes(month')l'y) || lowerContent.includes('@monthly)) {
@@ -740,38 +740,38 @@ class $1 {
 
   extractViolationInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      severity: 'unknown,
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      severity: "'unknown",
       description: ,
-      configuration: {}
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect violation type
     if (lowerContent.includes('security) || lowerContent.includes(breach)) {
-      violationInfo.type = ')Securit'y Violation';
+      violationInfo.type = ')Securit'y Violation'
     } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      violationInfo.type = ')Privac'y Violation';
+      violationInfo.type = ')Privac'y Violation'
     } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      violationInfo.type = ')Acces's Control Violation';
+      violationInfo.type = ')Acces's Control Violation'
     } else if (lowerContent.includes('compliance) || lowerContent.includes(regulatory)) {
-      violationInfo.type = ')Complianc'e Violation';
+      violationInfo.type = ')Complianc'e Violation'
     }
     
     // Detect severity
     if (lowerContent.includes('critical) || lowerContent.includes(high)) {
-      violationInfo.severity = ')Critic'al';
+      violationInfo.severity = ')Critic'al'
     } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {
-      violationInfo.severity = ')Medi'um';
+      violationInfo.severity = ')Medi'um'
     } else if (lowerContent.includes('low) || lowerContent.includes(minor)) {
       violationInfo.severity = Low');
     }
     
     // Extract description
-    const result = content.match(/description\s*[:=]\s*['""]([^""]+)['""]/i);
+    const result = content.match(/description\s*[:=]\s*['"]([^"]+)['"]/i);
     if (descMatch) {
       violationInfo.description = descMatch[1];
     }
@@ -785,51 +785,51 @@ class $1 {
     // Standards recommendations
     if (analysis.standards.length === 0) {
       recommendations.push({
-        type: 'standards,
-        priority: hig'h,
-        message: No compliance standards configured',
-        suggestion: 'Implement appropriate compliance standards (GDPR, HIPAA, SOX, PCI DSS)'
+        type: "'standards",
+        priority: "hig'h",
+        message: "No compliance standards configured'",
+        suggestion: "'Implement appropriate compliance standards (GDPR", HIPAA, SOX, PCI DSS)'
       });
     }
     
     // Regulations recommendations
     if (analysis.regulations.length === 0) {
       recommendations.push({
-        type: regulations,
-        priority: 'high',
-        message: 'No regulatory compliance configured',
-        suggestion: Implement regulatory compliance for applicable jurisdictions
-      });
+        type: "regulations",
+        priority: "'high'",
+        message: "'No regulatory compliance configured'",
+        suggestion: "Implement regulatory compliance for applicable jurisdictions
+      "});
     }
     
     // Policies recommendations
     if (analysis.policies.length === 0) {
       recommendations.push({
-        type: 'policies',
-        priority: 'medium,
-        message: No' compliance policies configured,
-        suggestion: 'Implement comprehensive compliance policies and procedures'
-      });
+        type: "'policies'",
+        priority: "'medium",
+        message: "No' compliance policies configured",
+        suggestion: "'Implement comprehensive compliance policies and procedures'
+      "});
     }
     
     // Audits recommendations
     if (analysis.audits.length === 0) {
       recommendations.push({
-        type: 'audits,
-        priority: mediu'm,
-        message: No compliance audits configured',
-        suggestion: 'Implement regular compliance audits and assessments'
-      });
+        type: "'audits",
+        priority: "mediu'm",
+        message: "No compliance audits configured'",
+        suggestion: "'Implement regular compliance audits and assessments'
+      "});
     }
     
     // Violations recommendations
     if (analysis.violations.length > 0) {
       recommendations.push({
-        type: violations,
-        priority: 'high',
-        message: 'Compliance violations detected',
-        suggestion: Address compliance violations immediately and implement preventive measures
-      });
+        type: "violations",
+        priority: "'high'",
+        message: "'Compliance violations detected'",
+        suggestion: "Address compliance violations immediately and implement preventive measures
+      "});
     }
     
     return recommendations;
@@ -840,12 +840,12 @@ class $1 {
       console.log('Monitoring compliance...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        standards: [],
-        violations: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        standards: "[]",
+        violations: "[]",
+        alerts: "[]
+      "};
       
       // Check compliance status
       const asyncResult = await this.discoverComplianceStandards();
@@ -862,7 +862,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
-      const filePath = path.join(this.reportsDir, 'monitoring-repor'ts', "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'monitoring-repor'ts', "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -872,28 +872,28 @@ class $1 {
 
   checkComplianceStatus(standard) {
     const timestamp = {
-      standard: standard.name,
-      status: compliant,
-      violations: [],
-      lastChecked: new Date().toISOString()
-    };
+      standard: "standard.name",
+      status: "compliant",
+      violations: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common compliance issues
     if (standard.requirements.length === 0) {
       status.violations.push({
-        type: ')configuration',
-        severity: 'high,
-        message: No' requirements defined
-      });
-      status.status = 'non-complia'nt';
+        type: "')configuration'",
+        severity: "'high",
+        message: "No' requirements defined
+      "});
+      status.status = 'non-complia'nt'
     }
     
     if (standard.configuration.enforcement === 'unknown) {
       status.violations.push({
-        type: configurati'o'n,
-        severity: 'medium',
-        message: 'No enforcement level defined'
-      });
+        type: "configurati'o'n",
+        severity: "'medium'",
+        message: "'No enforcement level defined'
+      "});
     }
     
     return status;
@@ -904,11 +904,11 @@ class $1 {
       console.log(Optimizing compliance...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeCompliance();
@@ -917,16 +917,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: 'completed',
-          improvement: Math.random() * 0.4, // 0-40% improvement
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "'completed'",
+          improvement: "Math.random() * 0.4", // 0-40% improvement
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -939,12 +939,12 @@ class $1 {
       console.log(Running comprehensive compliance audits...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        audits: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        audits: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of audits
       auditReport.audits.security = await this.runSecurityAudit();
@@ -960,7 +960,7 @@ class $1 {
       
       // Save audit report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, audit-reports, "comprehensive-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, audit-reports, comprehensive-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(auditReport, null, 2));
       
     } catch (error) {
@@ -972,16 +972,16 @@ class $1 {
     try {
       const { stdout } = await execAsync(')npm run audit:security);
       return {
-        status: passed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "passed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: ')failed',
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "')failed'",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -989,16 +989,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run audit:privacy);
       return {
-        status: passed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "passed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -1006,16 +1006,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run audit:compliance);
       return {
-        status: passed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "passed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -1023,26 +1023,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run audit:access);
       return {
-        status: passed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: "passed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: )failed'),
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: ")failed')",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateAuditSummary(audits) {
     const result = {
-      total: 0,
-      passed: 0,
-      failed: 0,
-      compliance: 0
-    };
+      total: "0",
+      passed: "0",
+      failed: "0",
+      compliance: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(audits)) {
@@ -1066,10 +1066,10 @@ class $1 {
     for (const [type, result] of Object.entries(audits)) {
       if (result.status === fail'e'd) {
         recommendations.push({
-          type: type,
-          priority: 'high',
-          message: "${type} audit failed",
-          suggestion: "Fix ${type} compliance issues"
+          type: "type",
+          priority: "'high'",
+          message: ""${type"} audit failed,
+          suggestion: "Fix ${type"} compliance issues"
         });
       }
     }
@@ -1079,9 +1079,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
-    const filePath = path.join(this.reportsDir, 'compliance-repor'ts', "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, 'compliance-repor'ts', "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {

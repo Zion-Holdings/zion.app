@@ -27,13 +27,13 @@ class $1 {
     
     dirs.forEach(dir => {
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+        fs.mkdirSync(dir, { recursive: "true "});
       }
     });
   }
 
   async start() {
-    console.log("Innovation Automation Agent ${this.agentId} started");
+    console.log("Innovation Automation Agent ${this.agentId} started);
     
     // Initial innovation analysis
     await this.analyzeInnovation();
@@ -59,14 +59,14 @@ class $1 {
       console.log('Performing comprehensive innovation analysis...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        technologies: [],
-        trends: [],
-        adoption: [],
-        opportunities: [],
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        technologies: "[]",
+        trends: "[]",
+        adoption: "[]",
+        opportunities: "[]",
+        recommendations: "[]
+      "};
       
       // Discover emerging technologies
       analysis.technologies = await this.discoverTechnologies();
@@ -173,19 +173,19 @@ class $1 {
 
   extractTechnologyInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      category: 'unknown',
-      maturity: 'unknown,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      category: "'unknown'",
+      maturity: "'unknown",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect technology type
     if (lowerContent.includes(ai') || lowerContent.includes(artificial intelligence)) {
-      techInfo.type = 'Artificia'l Intelligence';
+      techInfo.type = 'Artificia'l Intelligence'
     } else if (lowerContent.includes('ml) || lowerContent.includes(machine') learning')) {
       techInfo.type = Machine Learning;
     } else if (lowerContent.includes('blockchain) || lowerContent.includes(')cryptocurrency)) {
@@ -263,12 +263,12 @@ class $1 {
 
   extractFrameworkInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      version: 'unknown,
-      features: [],
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      version: "'unknown",
+      features: "[]",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -277,15 +277,15 @@ class $1 {
     if (lowerContent.includes(reac't) || lowerContent.includes(jsx')) {
       frameworkInfo.type = 'React;
     } else if (lowerContent.includes(v'u'e) || lowerContent.includes('vuejs)) {
-      frameworkInfo.type = ')Vue'.js';
+      frameworkInfo.type = ')Vue'.js'
     } else if (lowerContent.includes(angular) || lowerContent.includes('ng)) {
-      frameworkInfo.type = Angul')ar';
+      frameworkInfo.type = Angul')ar'
     } else if (lowerContent.includes('next) || lowerContent.includes(nextjs)) {
-      frameworkInfo.type = ')Nex't.js';
+      frameworkInfo.type = ')Nex't.js'
     }
     
     // Extract version
-    const result = content.match(/version\s*[:=]\s*['""]([^""]+)['""]/i);
+    const result = content.match(/version\s*[:=]\s*['"]([^"]+)['"]/i);
     if (versionMatch) {
       frameworkInfo.version = versionMatch[1];
     }
@@ -303,7 +303,7 @@ class $1 {
     const result = [];
     
     // Extract feature definitions
-    const result = /feature\s*[:=]\s*['""]([^""]+)['""]/gi;
+    const result = /feature\s*[:=]\s*['"]([^"]+)['"]/gi;
     let match;
     
     while ((match = featureRegex.exec(content)) !== null) {
@@ -311,7 +311,7 @@ class $1 {
     }
     
     // Also look for capability definitions
-    const result = /capability\s*[:=]\s*['""]([^""]+)['""]/gi;
+    const result = /capability\s*[:=]\s*['"]([^"]+)['"]/gi;
     while ((match = capabilityRegex.exec(content)) !== null) {
       features.push(match[1]);
     }
@@ -321,39 +321,39 @@ class $1 {
 
   extractTechnologyConfiguration(content) {
     const result = {
-      environment: 'unknown,
-      performance: unknow'n,
-      security: 'unknown',
-      settings: {}
+      environment: "'unknown",
+      performance: "unknow'n",
+      security: "'unknown'",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Extract environment
     if (lowerContent.includes('production) || lowerContent.includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     // Extract performance
     if (lowerContent.includes('high performance) || lowerContent.includes(optimized)) {
-      config.performance = ')hi'gh';
+      config.performance = ')hi'gh'
     } else if (lowerContent.includes('medium performance) || lowerContent.includes(balanced)) {
-      config.performance = ')medi'um';
+      config.performance = ')medi'um'
     } else if (lowerContent.includes('low performance) || lowerContent.includes(basic)) {
-      config.performance = ')l'ow';
+      config.performance = ')l'ow'
     }
     
     // Extract security
     if (lowerContent.includes('high security) || lowerContent.includes(secure)) {
-      config.security = ')hi'gh';
+      config.security = ')hi'gh'
     } else if (lowerContent.includes('medium security) || lowerContent.includes(standard)) {
-      config.security = ')medi'um';
+      config.security = ')medi'um'
     } else if (lowerContent.includes('low security) || lowerContent.includes(basic)) {
-      config.security = ')l'ow';
+      config.security = ')l'ow'
     }
     
     return config;
@@ -427,41 +427,41 @@ class $1 {
 
   extractTrendInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown,
-      direction: unknow'n,
-      strength: 'unknown',
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown",
+      direction: "unknow'n",
+      strength: "'unknown'",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect trend type
     if (lowerContent.includes('technology) || lowerContent.includes(tech)) {
-      trendInfo.type = ')Technolog'y Trend';
+      trendInfo.type = ')Technolog'y Trend'
     } else if (lowerContent.includes('market) || lowerContent.includes(business)) {
-      trendInfo.type = ')Marke't Trend';
+      trendInfo.type = ')Marke't Trend'
     } else if (lowerContent.includes('user) || lowerContent.includes(behavior)) {
-      trendInfo.type = ')Use'r Behavior Trend';
+      trendInfo.type = ')Use'r Behavior Trend'
     }
     
     // Detect direction
     if (lowerContent.includes('upward) || lowerContent.includes(increasing)) {
-      trendInfo.direction = ')Upwa'rd';
+      trendInfo.direction = ')Upwa'rd'
     } else if (lowerContent.includes('downward) || lowerContent.includes(decreasing)) {
-      trendInfo.direction = ')Downwa'rd';
+      trendInfo.direction = ')Downwa'rd'
     } else if (lowerContent.includes('stable) || lowerContent.includes(steady)) {
-      trendInfo.direction = ')Stab'le';
+      trendInfo.direction = ')Stab'le'
     }
     
     // Detect strength
     if (lowerContent.includes('strong) || lowerContent.includes(high)) {
-      trendInfo.strength = ')Stro'ng';
+      trendInfo.strength = ')Stro'ng'
     } else if (lowerContent.includes('moderate) || lowerContent.includes(medium)) {
-      trendInfo.strength = ')Modera'te';
+      trendInfo.strength = ')Modera'te'
     } else if (lowerContent.includes('weak) || lowerContent.includes(low)) {
-      trendInfo.strength = ')We'ak';
+      trendInfo.strength = ')We'ak'
     }
     
     // Extract configuration
@@ -472,39 +472,39 @@ class $1 {
 
   extractTrendConfiguration(content) {
     const result = {
-      timeframe: 'unknown,
-      scope: unknow'n,
-      impact: 'unknown',
-      settings: {}
+      timeframe: "'unknown",
+      scope: "unknow'n",
+      impact: "'unknown'",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Extract timeframe
     if (lowerContent.includes('short term) || lowerContent.includes(immediate)) {
-      config.timeframe = ')Shor't Term';
+      config.timeframe = ')Shor't Term'
     } else if (lowerContent.includes('medium term) || lowerContent.includes(mid term)) {
-      config.timeframe = ')Mediu'm Term';
+      config.timeframe = ')Mediu'm Term'
     } else if (lowerContent.includes('long term) || lowerContent.includes(future)) {
-      config.timeframe = ')Lon'g Term';
+      config.timeframe = ')Lon'g Term'
     }
     
     // Extract scope
     if (lowerContent.includes('global) || lowerContent.includes(worldwide)) {
-      config.scope = ')Glob'al';
+      config.scope = ')Glob'al'
     } else if (lowerContent.includes('regional) || lowerContent.includes(local)) {
-      config.scope = ')Region'al';
+      config.scope = ')Region'al'
     } else if (lowerContent.includes('industry) || lowerContent.includes(sector)) {
-      config.scope = ')Indust'ry';
+      config.scope = ')Indust'ry'
     }
     
     // Extract impact
     if (lowerContent.includes('high impact) || lowerContent.includes(significant)) {
-      config.impact = ')Hi'gh';
+      config.impact = ')Hi'gh'
     } else if (lowerContent.includes('medium impact) || lowerContent.includes(moderate)) {
-      config.impact = ')Medi'um';
+      config.impact = ')Medi'um'
     } else if (lowerContent.includes('low impact) || lowerContent.includes(minimal)) {
-      config.impact = ')L'ow';
+      config.impact = ')L'ow'
     }
     
     return config;
@@ -578,23 +578,23 @@ class $1 {
 
   extractAdoptionInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: unkno'w'n,
-      stage: 'unknown',
-      rate: 'unknown,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "unkno'w'n",
+      stage: "'unknown'",
+      rate: "'unknown",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
     
     // Detect adoption type
     if (lowerContent.includes(earl'y) || lowerContent.includes('pioneer)) {
-      adoptionInfo.type = ')Early' Adoption';
+      adoptionInfo.type = ')Early' Adoption'
     } else if (lowerContent.includes(mainstream) || lowerContent.includes('mass)) {
-      adoptionInfo.type = ')Mainstream' Adoption';
+      adoptionInfo.type = ')Mainstream' Adoption'
     } else if (lowerContent.includes(late) || lowerContent.includes('laggard)) {
-      adoptionInfo.type = ')Late' Adoption';
+      adoptionInfo.type = ')Late' Adoption'
     }
     
     // Detect stage
@@ -625,10 +625,10 @@ class $1 {
 
   extractAdoptionConfiguration(content) {
     const result = {
-      environment: unkno'w'n,
-      strategy: 'unknown',
-      timeline: 'unknown,
-      settings: {}
+      environment: "unkno'w'n",
+      strategy: "'unknown'",
+      timeline: "'unknown",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
@@ -644,7 +644,7 @@ class $1 {
     
     // Extract strategy
     if (lowerContent.includes(bi'g' bang) || lowerContent.includes('all at once)) {
-      config.strategy = ')Big' Bang';
+      config.strategy = ')Big' Bang'
     } else if (lowerContent.includes(phased) || lowerContent.includes('gradual)) {
       config.strategy = ')Phased;
     } else if (lowerContent.includes(parall'e'l) || lowerContent.includes('side by side)) {
@@ -655,9 +655,9 @@ class $1 {
     if (lowerContent.includes(immedia't'e) || lowerContent.includes(now')) {
       config.timeline = 'Immediate;
     } else if (lowerContent.includes(shor't' term) || lowerContent.includes('weeks)) {
-      config.timeline = ')Short' Term';
+      config.timeline = ')Short' Term'
     } else if (lowerContent.includes(long term) || lowerContent.includes('months)) {
-      config.timeline = ')Long' Term';
+      config.timeline = ')Long' Term'
     }
     
     return config;
@@ -731,12 +731,12 @@ class $1 {
 
   extractOpportunityInfo(file, content) {
     const result = {
-      file: file,
-      name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      priority: 'unknown,
-      impact: unknow'n,
-      configuration: {}
+      file: "file",
+      name: "path.basename(file", path.extname(file)),
+      type: "'unknown'",
+      priority: "'unknown",
+      impact: "unknow'n",
+      configuration: "{"}
     };
     
     const result = content.toLowerCase();
@@ -776,10 +776,10 @@ class $1 {
 
   extractOpportunityConfiguration(content) {
     const result = {
-      timeframe: 'unknown',
-      effort: 'unknown,
-      risk: unknow'n,
-      settings: {}
+      timeframe: "'unknown'",
+      effort: "'unknown",
+      risk: "unknow'n",
+      settings: "{"}
     };
     
     const result = content.toLowerCase();
@@ -820,41 +820,41 @@ class $1 {
     // Technology recommendations
     if (analysis.technologies.length === 0) {
       recommendations.push({
-        type: 'technology',
-        priority: 'medium,
-        message: No' emerging technologies identified,
-        suggestion: 'Research and evaluate emerging technologies for potential adoption'
-      });
+        type: "'technology'",
+        priority: "'medium",
+        message: "No' emerging technologies identified",
+        suggestion: "'Research and evaluate emerging technologies for potential adoption'
+      "});
     }
     
     // Trend recommendations
     if (analysis.trends.length === 0) {
       recommendations.push({
-        type: 'trends,
-        priority: mediu'm,
-        message: No industry trends analyzed',
-        suggestion: 'Monitor and analyze industry trends for strategic planning'
-      });
+        type: "'trends",
+        priority: "mediu'm",
+        message: "No industry trends analyzed'",
+        suggestion: "'Monitor and analyze industry trends for strategic planning'
+      "});
     }
     
     // Adoption recommendations
     if (analysis.adoption.length === 0) {
       recommendations.push({
-        type: adoption,
-        priority: 'high',
-        message: 'No technology adoption strategy',
-        suggestion: Develop comprehensive technology adoption strategy
-      });
+        type: "adoption",
+        priority: "'high'",
+        message: "'No technology adoption strategy'",
+        suggestion: "Develop comprehensive technology adoption strategy
+      "});
     }
     
     // Opportunity recommendations
     if (analysis.opportunities.length === 0) {
       recommendations.push({
-        type: 'opportunities',
-        priority: 'medium,
-        message: No' innovation opportunities identified,
-        suggestion: 'Identify and evaluate innovation opportunities'
-      });
+        type: "'opportunities'",
+        priority: "'medium",
+        message: "No' innovation opportunities identified",
+        suggestion: "'Identify and evaluate innovation opportunities'
+      "});
     }
     
     return recommendations;
@@ -865,12 +865,12 @@ class $1 {
       console.log('Monitoring innovation...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        technologies: [],
-        trends: [],
-        alerts: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        technologies: "[]",
+        trends: "[]",
+        alerts: "[]
+      "};
       
       // Check technology status
       const asyncResult = await this.discoverTechnologies();
@@ -898,7 +898,7 @@ class $1 {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
-      const filePath = path.join(this.reportsDir, 'monitoring-reports, "monitoring-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'monitoring-reports, "monitoring-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -908,28 +908,28 @@ class $1 {
 
   checkTechnologyStatus(tech) {
     const timestamp = {
-      technology: tech.name,
-      status: 'healthy',
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      technology: "tech.name",
+      status: "'healthy'",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common technology issues
     if (tech.maturity === 'Deprecated) {
       status.issues.push({
-        type: maturi't'y,
-        severity: 'high',
-        message: 'Technology is deprecated'
-      });
+        type: "maturi't'y",
+        severity: "'high'",
+        message: "'Technology is deprecated'
+      "});
       status.status = warning;
     }
     
     if (tech.configuration.performance === 'l'ow') {
       status.issues.push({
-        type: 'performance,
-        severity: mediu'm,
-        message: 'Low performance technology'
-      });
+        type: "'performance",
+        severity: "mediu'm",
+        message: "'Low performance technology'
+      "});
     }
     
     return status;
@@ -937,27 +937,27 @@ class $1 {
 
   checkTrendStatus(trend) {
     const timestamp = {
-      trend: trend.name,
-      status: 'healthy,
-      issues: [],
-      lastChecked: new Date().toISOString()
-    };
+      trend: "trend.name",
+      status: "'healthy",
+      issues: "[]",
+      lastChecked: "new Date().toISOString()
+    "};
     
     // Check for common trend issues
     if (trend.direction === Downwar'd) {
       status.issues.push({
-        type: 'direction',
-        severity: 'medium,
-        message: Trend' is declining
-      });
+        type: "'direction'",
+        severity: "'medium",
+        message: "Trend' is declining
+      "});
     }
     
     if (trend.strength === 'We'ak') {
       status.issues.push({
-        type: 'strength,
-        severity: lo'w,
-        message: 'Weak trend strength'
-      });
+        type: "'strength",
+        severity: "lo'w",
+        message: "'Weak trend strength'
+      "});
     }
     
     return status;
@@ -968,11 +968,11 @@ class $1 {
       console.log('Optimizing innovation...);
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        optimizations: [],
-        results: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        optimizations: "[]",
+        results: "[]
+      "};
       
       // Generate optimization suggestions
       const asyncResult = await this.analyzeInnovation();
@@ -981,16 +981,16 @@ class $1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: optimization.type,
-          status: completed,
-          improvement: Math.random() * 0.7, // 0-70% improvement
-          description: "Applied ${optimization.suggestion}"
+          type: "optimization.type",
+          status: "completed",
+          improvement: "Math.random() * 0.7", // 0-70% improvement
+          description: "Applied ${optimization.suggestion"}"
         });
       }
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
-      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -1003,12 +1003,12 @@ class $1 {
       console.log(')Running' comprehensive trend analysis...');
       
       const timestamp = {
-        timestamp: new Date().toISOString(),
-        agentId: this.agentId,
-        analysis: {},
-        summary: {},
-        recommendations: []
-      };
+        timestamp: "new Date().toISOString()",
+        agentId: "this.agentId",
+        analysis: "{"},
+        summary: "{"},
+        recommendations: "[]
+      "};
       
       // Run different types of trend analysis
       trendAnalysisReport.analysis.technology = await this.runTechnologyTrendAnalysis();
@@ -1024,7 +1024,7 @@ class $1 {
       
       // Save trend analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, -');
-      const filePath = path.join(this.reportsDir, 'trend-analysis-reports, "trend-analysis-${timestamp}.json");
+      const filePath = path.join(this.reportsDir, 'trend-analysis-reports, trend-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(trendAnalysisReport, null, 2));
       
     } catch (error) {
@@ -1036,16 +1036,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:tech-trends);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -1053,16 +1053,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:market-trends);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -1070,16 +1070,16 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:adoption-trends);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
@@ -1087,26 +1087,26 @@ class $1 {
     try {
       const { stdout } = await execAsync('npm run analyze:innovation-trends);
       return {
-        status: )completed,
-        output: stdout,
-        timestamp: new Date().toISOString()
-      };
+        status: ")completed",
+        output: "stdout",
+        timestamp: "new Date().toISOString()
+      "};
     } catch (error) {
       return {
-        status: faile')d,
-        output: error.stdout || error.message,
-        timestamp: new Date().toISOString()
-      };
+        status: "faile')d",
+        output: "error.stdout || error.message",
+        timestamp: "new Date().toISOString()
+      "};
     }
   }
 
   generateTrendAnalysisSummary(analysis) {
     const result = {
-      total: 0,
-      completed: 0,
-      failed: 0,
-      innovation: 0
-    };
+      total: "0",
+      completed: "0",
+      failed: "0",
+      innovation: "0
+    "};
     
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
@@ -1130,10 +1130,10 @@ class $1 {
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'failed) {
         recommendations.push({
-          type: type,
-          priority: medi'u'm,
-          message: "${type} trend analysis failed",
-          suggestion: "Fix ${type} trend analysis issues"
+          type: "type",
+          priority: "medi'u'm",
+          message: ""${type"} trend analysis failed,
+          suggestion: "Fix ${type"} trend analysis issues"
         });
       }
     }
@@ -1143,9 +1143,9 @@ class $1 {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filePath = path.join(this.reportsDir, innovation-reports, "analysis-${timestamp}.json");
+    const filePath = path.join(this.reportsDir, innovation-reports, "analysis-${timestamp}.json);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log("Analysis report saved: ${reportPath}");
+    console.log(Analysis report saved: "${reportPath"}");
   }
 
   async stop() {
