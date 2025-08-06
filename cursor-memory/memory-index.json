@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "timestamp": "2025-08-06T08:00:45.823Z",
+  "timestamp": "2025-08-06T15:52:01.117Z",
   "totalEntries": 43,
   "entries": [
     {
@@ -14,7 +14,7 @@
       },
       "source": "scripts/fix-string-literals.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "preference",
@@ -1303,6 +1303,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.8181818181818182,
           "type": "related"
@@ -1648,6 +1663,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -1755,7 +1790,7 @@
       },
       "source": "scripts/validate-content.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.7,
       "tags": [
         "solution",
@@ -3044,6 +3079,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.8181818181818182,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -3394,6 +3444,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -3496,7 +3566,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.7,
       "tags": [
         "automation",
@@ -4784,6 +4854,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.8,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5833333333333334,
           "type": "related"
@@ -5134,6 +5219,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5833333333333334,
           "type": "related"
@@ -5236,7 +5341,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -6340,6 +6445,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 1,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -6565,6 +6680,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 1,
           "type": "related"
@@ -6622,7 +6742,7 @@
       },
       "source": "automation_temp/logs/improvement-loop.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.010Z",
+      "timestamp": "2025-08-06T15:51:58.083Z",
       "confidence": 0.7,
       "tags": [
         "rule",
@@ -7906,6 +8026,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -8256,6 +8391,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -8363,7 +8518,7 @@
       },
       "source": "automation_temp/logs/performance-optimizer.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.018Z",
+      "timestamp": "2025-08-06T15:51:58.091Z",
       "confidence": 0.7,
       "tags": [
         "preference",
@@ -9647,6 +9802,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -9997,6 +10167,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -10104,7 +10294,7 @@
       },
       "source": "automation_temp/logs/improvement-loop.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.010Z",
+      "timestamp": "2025-08-06T15:51:58.083Z",
       "confidence": 0.7,
       "tags": [
         "solution",
@@ -11388,6 +11578,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -11738,6 +11943,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -11845,7 +12070,7 @@
       },
       "source": "automation_temp/logs/performance-optimizer.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.018Z",
+      "timestamp": "2025-08-06T15:51:58.091Z",
       "confidence": 0.7,
       "tags": [
         "error",
@@ -13129,6 +13354,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -13479,6 +13719,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -13586,7 +13846,7 @@
       },
       "source": "automation_temp/logs/performance-optimizer.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.018Z",
+      "timestamp": "2025-08-06T15:51:58.091Z",
       "confidence": 0.7,
       "tags": [
         "automation",
@@ -14870,6 +15130,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -15220,6 +15495,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -15327,7 +15622,7 @@
       },
       "source": "automation_temp/logs/performance-optimizer.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.018Z",
+      "timestamp": "2025-08-06T15:51:58.091Z",
       "confidence": 0.7,
       "tags": [
         "performance",
@@ -16611,6 +16906,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -16961,6 +17271,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -17068,7 +17398,7 @@
       },
       "source": "automation_temp/logs/engine.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:42.991Z",
+      "timestamp": "2025-08-06T15:51:58.063Z",
       "confidence": 0.7,
       "tags": [
         "security",
@@ -18352,6 +18682,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -18702,6 +19047,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -18809,7 +19174,7 @@
       },
       "source": "scripts/fix-all-string-literals.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.036Z",
+      "timestamp": "2025-08-06T15:51:58.111Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -19908,6 +20273,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -20133,6 +20508,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -20195,7 +20575,7 @@
       },
       "source": "scripts/optimize-ui-components.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.041Z",
+      "timestamp": "2025-08-06T15:51:58.117Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -21299,6 +21679,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 1,
           "type": "related"
@@ -21519,6 +21909,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -21581,7 +21976,7 @@
       },
       "source": "scripts/optimize-ui-components.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.041Z",
+      "timestamp": "2025-08-06T15:51:58.117Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -22685,6 +23080,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -22905,6 +23310,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -22967,7 +23377,7 @@
       },
       "source": "automation_temp/logs/system-service.log",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.033Z",
+      "timestamp": "2025-08-06T15:51:58.108Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -24066,6 +24476,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -24291,6 +24711,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -24353,7 +24778,7 @@
       },
       "source": "automation_temp/logs/system-service.log",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.033Z",
+      "timestamp": "2025-08-06T15:51:58.108Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -25452,6 +25877,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -25677,6 +26112,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -25739,7 +26179,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -26843,6 +27283,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -27068,6 +27518,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -27125,7 +27580,7 @@
       },
       "source": "scripts/security-check.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.041Z",
+      "timestamp": "2025-08-06T15:51:58.117Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -28229,6 +28684,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -28449,6 +28914,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -28511,7 +28981,7 @@
       },
       "source": "automation_temp/logs/performance-optimizer.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:43.018Z",
+      "timestamp": "2025-08-06T15:51:58.091Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -29610,6 +30080,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -29835,6 +30315,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -29897,7 +30382,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -31000,6 +31485,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 1,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -31225,6 +31720,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 1,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -31282,7 +31782,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.7,
       "tags": [
         "error",
@@ -32571,6 +33071,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.8181818181818182,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -32921,6 +33436,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -33023,7 +33558,7 @@
       },
       "source": "scripts/fix-product-syntax.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.037Z",
+      "timestamp": "2025-08-06T15:51:58.113Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -34127,6 +34662,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -34347,6 +34892,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -34409,7 +34959,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.7,
       "tags": [
         "rule",
@@ -35698,6 +36248,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -36048,6 +36613,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.8181818181818182,
           "type": "related"
@@ -36150,7 +36735,7 @@
       },
       "source": "scripts/test-build.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.042Z",
+      "timestamp": "2025-08-06T15:51:58.118Z",
       "confidence": 0.7,
       "tags": [
         "performance",
@@ -37439,6 +38024,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -37789,6 +38389,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -37891,7 +38511,7 @@
       },
       "source": "scripts/validate-env-vars.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.043Z",
+      "timestamp": "2025-08-06T15:51:58.120Z",
       "confidence": 0.7,
       "tags": [
         "security",
@@ -39180,6 +39800,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -39530,6 +40165,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -39632,7 +40287,7 @@
       },
       "source": "logs/file-watcher.log",
       "type": "memory",
-      "timestamp": "2025-08-06T08:00:39.346Z",
+      "timestamp": "2025-08-06T15:51:53.689Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -40731,6 +41386,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -40956,6 +41621,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -41018,7 +41688,7 @@
       },
       "source": "scripts/security-check.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.041Z",
+      "timestamp": "2025-08-06T15:51:58.117Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -42122,6 +42792,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -42342,6 +43022,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -42404,7 +43089,7 @@
       },
       "source": "scripts/fix-string-literals.js",
       "type": "automation",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.8,
       "tags": [
         "technical",
@@ -43508,6 +44193,16 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--automation",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--typescript",
           "similarity": 0.6,
           "type": "related"
@@ -43728,6 +44423,11 @@
           "type": "related"
         },
         {
+          "target": "technical:technical-term-found--ai",
+          "similarity": 0.6,
+          "type": "related"
+        },
+        {
           "target": "technical:technical-term-found--automation",
           "similarity": 0.6,
           "type": "related"
@@ -43790,7 +44490,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "rule",
@@ -45078,6 +45778,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -45423,6 +46138,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -45530,7 +46265,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "preference",
@@ -46818,6 +47553,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -47163,6 +47913,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -47270,7 +48040,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "solution",
@@ -48558,6 +49328,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -48903,6 +49688,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -49010,7 +49815,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "error",
@@ -50298,6 +51103,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -50643,6 +51463,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -50750,7 +51590,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "automation",
@@ -52038,6 +52878,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -52383,6 +53238,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -52490,7 +53365,7 @@
       },
       "source": "scripts/fix-all-string-literals.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.036Z",
+      "timestamp": "2025-08-06T15:51:58.111Z",
       "confidence": 0.7,
       "tags": [
         "performance",
@@ -53773,6 +54648,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -54123,6 +55013,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -54230,7 +55140,7 @@
       },
       "source": "scripts/fix-specific-parsing-errors.js",
       "type": "troubleshooting",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.114Z",
       "confidence": 0.7,
       "tags": [
         "security",
@@ -55518,6 +56428,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -55863,6 +56788,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -55964,13 +56909,13 @@
       "content": {
         "category": "rule",
         "title": "Found rule patterns in development content",
-        "description": "Detected 2 instances of rule patterns",
+        "description": "Detected 5 instances of rule patterns",
         "type": "pattern",
         "confidence": 0.7
       },
-      "source": "scripts/generate-sitemap.mjs",
+      "source": "scripts/setup-husky.js",
       "type": "development",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.118Z",
       "confidence": 0.7,
       "tags": [
         "rule",
@@ -55989,7 +56934,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
@@ -56079,12 +57024,12 @@
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -56214,7 +57159,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -56290,311 +57235,6 @@
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
           "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
-          "similarity": 0.8181818181818182,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -56628,47 +57268,22 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
@@ -56685,16 +57300,6 @@
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
           "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -56703,138 +57308,33 @@
           "type": "related"
         },
         {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
+          "target": "pattern:found-rule-patterns-in-memory-content",
           "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
-          "target": "pattern:found-preference-patterns-in-automation-content",
+          "target": "pattern:found-preference-patterns-in-memory-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
-          "target": "pattern:found-solution-patterns-in-automation-content",
+          "target": "pattern:found-solution-patterns-in-memory-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
-          "target": "pattern:found-error-patterns-in-automation-content",
+          "target": "pattern:found-error-patterns-in-memory-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
+          "target": "pattern:found-automation-patterns-in-memory-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
-          "target": "pattern:found-error-patterns-in-automation-content",
+          "target": "pattern:found-performance-patterns-in-memory-content",
           "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
@@ -56869,346 +57369,6 @@
         },
         {
           "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
-          "similarity": 0.8181818181818182,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
@@ -57239,87 +57399,82 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-troubleshooting-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-memory-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
-          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
-          "similarity": 0.5384615384615384,
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -57334,7 +57489,62 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-memory-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57354,17 +57564,22 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57374,6 +57589,641 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-memory-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-memory-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-memory-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-memory-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
@@ -57409,7 +58259,117 @@
         },
         {
           "target": "pattern:found-security-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-troubleshooting-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-troubleshooting-content",
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57469,7 +58429,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57483,13 +58443,18 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.8181818181818182,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-error-patterns-in-development-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-development-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -57509,17 +58474,17 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57539,7 +58504,7 @@
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -57579,7 +58544,97 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.8181818181818182,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -57608,83 +58663,8 @@
           "type": "related"
         },
         {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
           "target": "pattern:found-error-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -57704,13 +58684,13 @@
       "content": {
         "category": "solution",
         "title": "Found solution patterns in development content",
-        "description": "Detected 64 instances of solution patterns",
+        "description": "Detected 7 instances of solution patterns",
         "type": "pattern",
         "confidence": 0.7
       },
-      "source": "scripts/fix-syntax-errors-final.js",
+      "source": "scripts/setup-husky.js",
       "type": "development",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.118Z",
       "confidence": 0.7,
       "tags": [
         "solution",
@@ -58104,7 +59084,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58204,7 +59184,7 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58259,7 +59239,7 @@
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -58284,7 +59264,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
+          "similarity": 0.5833333333333334,
           "type": "related"
         },
         {
@@ -58319,7 +59299,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-memory-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58684,7 +59664,7 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58694,7 +59674,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58894,7 +59874,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -58998,6 +59978,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -59009,7 +60004,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.46153846153846156,
+          "similarity": 0.5833333333333334,
           "type": "related"
         },
         {
@@ -59054,7 +60049,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -59179,12 +60174,17 @@
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
           "target": "pattern:found-rule-patterns-in-development-content",
           "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -59244,7 +60244,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-general-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -59274,7 +60274,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -59340,6 +60340,21 @@
         {
           "target": "pattern:found-security-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -59444,13 +60459,13 @@
       "content": {
         "category": "error",
         "title": "Found error patterns in development content",
-        "description": "Detected 4 instances of error patterns",
+        "description": "Detected 12 instances of error patterns",
         "type": "pattern",
         "confidence": 0.7
       },
-      "source": "scripts/generate-sitemap.mjs",
+      "source": "scripts/setup-husky.js",
       "type": "development",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.118Z",
       "confidence": 0.7,
       "tags": [
         "error",
@@ -59519,7 +60534,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -59554,7 +60569,7 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -59579,7 +60594,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
@@ -59744,12 +60759,12 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -59869,7 +60884,7 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-memory-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -59954,7 +60969,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
@@ -60294,7 +61309,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -60599,7 +61614,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.8181818181818182,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -60614,7 +61629,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -60664,7 +61679,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-troubleshooting-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -60679,7 +61694,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -60689,7 +61704,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -60709,7 +61724,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.8181818181818182,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -60738,6 +61753,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.5833333333333334,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -60824,7 +61854,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -60954,17 +61984,22 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.5833333333333334,
+          "similarity": 0.46153846153846156,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-rule-patterns-in-development-content",
           "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -61034,7 +62069,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -61083,13 +62118,28 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -61184,13 +62234,13 @@
       "content": {
         "category": "automation",
         "title": "Found automation patterns in development content",
-        "description": "Detected 11 instances of automation patterns",
+        "description": "Detected 2 instances of automation patterns",
         "type": "pattern",
         "confidence": 0.7
       },
-      "source": "scripts/fix-syntax-errors-final.js",
+      "source": "scripts/setup-husky.js",
       "type": "development",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.118Z",
       "confidence": 0.7,
       "tags": [
         "automation",
@@ -61209,7 +62259,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -61299,12 +62349,12 @@
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -61434,7 +62484,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -61529,17 +62579,17 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
           "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -61649,7 +62699,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -61734,7 +62784,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -61754,7 +62804,7 @@
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -61824,6 +62874,41 @@
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-preference-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
         },
@@ -61838,41 +62923,6 @@
           "type": "related"
         },
         {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -62039,7 +63089,7 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62094,12 +63144,12 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -62254,12 +63304,12 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -62334,7 +63384,7 @@
         },
         {
           "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62364,7 +63414,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -62384,12 +63434,12 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
           "target": "pattern:found-rule-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -62399,7 +63449,7 @@
         },
         {
           "target": "pattern:found-error-patterns-in-troubleshooting-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
@@ -62409,7 +63459,7 @@
         },
         {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62459,7 +63509,22 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
           "type": "related"
         },
         {
@@ -62479,7 +63544,7 @@
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62519,7 +63584,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -62539,7 +63604,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-troubleshooting-content",
-          "similarity": 0.6666666666666666,
+          "similarity": 0.8181818181818182,
           "type": "related"
         },
         {
@@ -62554,7 +63619,7 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -62574,17 +63639,17 @@
         },
         {
           "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-preference-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62629,7 +63694,7 @@
         },
         {
           "target": "pattern:found-security-patterns-in-troubleshooting-content",
-          "similarity": 0.42857142857142855,
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
@@ -62678,7 +63743,137 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.8181818181818182,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-general-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-general-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-security-patterns-in-general-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.9,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
@@ -62703,73 +63898,63 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-error-patterns-in-development-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
-          "target": "pattern:found-security-patterns-in-development-content",
+          "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
-          "target": "pattern:found-rule-patterns-in-general-content",
-          "similarity": 0.42857142857142855,
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
-          "target": "pattern:found-automation-patterns-in-general-content",
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-performance-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.9,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
-          "target": "pattern:found-security-patterns-in-general-content",
-          "similarity": 0.42857142857142855,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
+          "target": "pattern:found-error-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.9,
           "type": "related"
         },
         {
@@ -62789,122 +63974,22 @@
         },
         {
           "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
+          "similarity": 0.9,
           "type": "related"
         },
         {
           "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-performance-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
           "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
           "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-solution-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-automation-patterns-in-automation-content",
-          "similarity": 0.7272727272727273,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-security-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-rule-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
-          "type": "related"
-        },
-        {
-          "target": "pattern:found-error-patterns-in-automation-content",
-          "similarity": 0.5384615384615384,
+          "similarity": 0.6666666666666666,
           "type": "related"
         },
         {
@@ -62930,7 +64015,7 @@
       },
       "source": "scripts/generate-sitemap.mjs",
       "type": "development",
-      "timestamp": "2025-08-06T08:00:43.039Z",
+      "timestamp": "2025-08-06T15:51:58.115Z",
       "confidence": 0.7,
       "tags": [
         "security",
@@ -64218,6 +65303,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -64563,6 +65663,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -64670,7 +65790,7 @@
       },
       "source": "scripts/link-checker.js",
       "type": "general",
-      "timestamp": "2025-08-06T08:00:43.040Z",
+      "timestamp": "2025-08-06T15:51:58.115Z",
       "confidence": 0.7,
       "tags": [
         "rule",
@@ -65958,6 +67078,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -66303,6 +67438,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
           "type": "related"
@@ -66410,7 +67565,7 @@
       },
       "source": "scripts/link-checker.js",
       "type": "general",
-      "timestamp": "2025-08-06T08:00:43.040Z",
+      "timestamp": "2025-08-06T15:51:58.115Z",
       "confidence": 0.7,
       "tags": [
         "automation",
@@ -67698,6 +68853,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.7272727272727273,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -68043,6 +69213,26 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-rule-patterns-in-automation-content",
           "similarity": 0.5384615384615384,
           "type": "related"
@@ -68150,7 +69340,7 @@
       },
       "source": "scripts/link-checker.js",
       "type": "general",
-      "timestamp": "2025-08-06T08:00:43.040Z",
+      "timestamp": "2025-08-06T15:51:58.115Z",
       "confidence": 0.7,
       "tags": [
         "security",
@@ -69438,6 +70628,21 @@
           "type": "related"
         },
         {
+          "target": "pattern:found-solution-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-automation-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-automation-content",
+          "similarity": 0.46153846153846156,
+          "type": "related"
+        },
+        {
           "target": "pattern:found-preference-patterns-in-automation-content",
           "similarity": 0.42857142857142855,
           "type": "related"
@@ -69780,6 +70985,26 @@
         {
           "target": "pattern:found-security-patterns-in-automation-content",
           "similarity": 0.6666666666666666,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-rule-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-solution-patterns-in-development-content",
+          "similarity": 0.5384615384615384,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-error-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
+          "type": "related"
+        },
+        {
+          "target": "pattern:found-automation-patterns-in-development-content",
+          "similarity": 0.42857142857142855,
           "type": "related"
         },
         {
