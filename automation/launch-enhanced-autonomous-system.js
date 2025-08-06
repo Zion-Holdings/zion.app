@@ -34,11 +34,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1 // 10x faster in high-speed mo
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
-const result = require('fs'
-const ./agent-orchestrator = require('path';
-const result = require('fs';''
-const result = require('fs').promises
-const path = require('path';
+const fs = require('fs').promises
+const AgentOrchestrator = require('./agent-orchestrator');
+const path = require('path');
 
 class AutomationSystem {
   constructor() {
@@ -48,11 +46,11 @@ class AutomationSystem {
     this.isRunning = false;
     this.startTime = null;
     this.systemMetrics = {
-      uptime: "0",""
-      totalAgents: "0",""
-      activeAgents: "0",""
-      totalTasks: "0",""
-      completedTasks: "0",""
+      uptime: "0"
+      totalAgents: "0"
+      activeAgents: "0"
+      totalTasks: "0"
+      completedTasks: "0"
       systemHealth: "unkno\')w\'n\'\'
     "}""
   }

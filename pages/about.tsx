@@ -74,6 +74,37 @@ const About: NextPage = () => {
     }
   ]
 
+  const milestones = [
+    {
+      year: '2024',
+      title: 'Platform Launch',
+      description: 'Successfully launched Zion as the first free AI-powered marketplace with 10,000+ active users.',
+      icon: '🚀',
+      color: 'blue' as const
+    },
+    {
+      year: '2023',
+      title: 'AI Research Breakthrough',
+      description: 'Developed proprietary AI algorithms that power our intelligent matching system.',
+      icon: '🤖',
+      color: 'purple' as const
+    },
+    {
+      year: '2022',
+      title: 'Team Formation',
+      description: 'Assembled world-class team of AI researchers, engineers, and business experts.',
+      icon: '👥',
+      color: 'green' as const
+    },
+    {
+      year: '2021',
+      title: 'Vision Conception',
+      description: 'Conceived the idea of democratizing AI technology through a free marketplace.',
+      icon: '💡',
+      color: 'pink' as const
+    }
+  ]
+
   return (
     <EnhancedLayout
       title="About Zion - The First Free AI-Powered Marketplace"
@@ -99,17 +130,17 @@ const About: NextPage = () => {
                 size="lg"
                 gradient="blue"
                 glow
-                icon="📞"
+                icon="🚀"
               >
                 Get in Touch
               </EnhancedButton>
               <EnhancedButton
-                href="/careers"
+                href="/services"
                 variant="outline"
                 size="lg"
-                icon="💼"
+                icon="📋"
               >
-                Join Our Team
+                Our Services
               </EnhancedButton>
             </div>
           </div>
@@ -121,12 +152,12 @@ const About: NextPage = () => {
         <div className="container-responsive">
           <div className="text-center mb-16">
             <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
                 Our Impact
               </span>
             </h2>
             <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
-              Numbers that tell our story of growth and success
+              Real-time metrics showcasing our team's achievements and platform success
             </p>
           </div>
           
@@ -137,47 +168,23 @@ const About: NextPage = () => {
       {/* Mission Section */}
       <section className="relative py-20 lg:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
-        
+
         <div className="container-responsive relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
-                  Our Mission
-                </span>
-              </h2>
-              <p className="text-responsive-lg text-gray-300 mb-6 leading-relaxed">
-                At Zion, we believe that AI technology should be accessible to everyone. Our mission is to 
-                democratize AI by creating a comprehensive marketplace that connects businesses with the 
-                world's best AI services, talent, and technology solutions.
-              </p>
-              <p className="text-responsive-lg text-gray-300 mb-8 leading-relaxed">
-                We're building the future of commerce, where AI-powered matching algorithms ensure perfect 
-                connections between needs and solutions, while maintaining the highest standards of quality 
-                and security.
-              </p>
-              <EnhancedButton
-                href="/services"
-                size="lg"
-                gradient="green"
-                glow
-                icon="🎯"
-              >
-                Explore Our Services
-              </EnhancedButton>
-            </div>
-            <div className="relative">
-              <GlassmorphismCard gradient="custom" glow className="p-8">
-                <div className="text-center">
-                  <div className="text-6xl mb-6">🤖</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Future</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    We envision a world where AI technology is seamlessly integrated into every business, 
-                    driving innovation and growth across all industries.
-                  </p>
-                </div>
-              </GlassmorphismCard>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-8">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
+                Our Mission
+              </span>
+            </h2>
+            <p className="text-responsive-xl text-gray-300 mb-8 leading-relaxed">
+              We believe that AI technology should be accessible to everyone, not just large corporations. 
+              Our mission is to democratize AI by creating the world's first free AI-powered marketplace 
+              that connects businesses with top-tier AI services, expert talent, and cutting-edge solutions.
+            </p>
+            <p className="text-responsive-lg text-gray-300 leading-relaxed">
+              Through our innovative platform, we're breaking down barriers and making advanced AI 
+              technology available to startups, small businesses, and individuals worldwide.
+            </p>
           </div>
         </div>
       </section>
@@ -187,7 +194,7 @@ const About: NextPage = () => {
         <div className="container-responsive">
           <div className="text-center mb-16">
             <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-green">
                 Our Values
               </span>
             </h2>
@@ -202,7 +209,7 @@ const About: NextPage = () => {
                 <div className="text-center">
                   <div className="text-4xl mb-4">{value.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-300 text-sm">{value.description}</p>
+                  <p className="text-gray-300">{value.description}</p>
                 </div>
               </GlassmorphismCard>
             ))}
@@ -213,7 +220,7 @@ const About: NextPage = () => {
       {/* Team Section */}
       <section className="relative py-20 lg:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50"></div>
-        
+
         <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
@@ -222,28 +229,59 @@ const About: NextPage = () => {
               </span>
             </h2>
             <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
-              The brilliant minds behind Zion's success
+              World-class experts dedicated to democratizing AI technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.map((member, index) => (
+              <GlassmorphismCard key={index} gradient={member.color} glow>
+                <div className="flex items-start space-x-4">
+                  <div className="text-4xl">{member.image}</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
+                    <p className="text-neon-blue font-medium mb-3">{member.role}</p>
+                    <p className="text-gray-300 mb-4">{member.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {member.expertise.map((skill, skillIndex) => (
+                        <span 
+                          key={skillIndex}
+                          className="text-xs bg-neon-blue/20 text-neon-blue px-2 py-1 rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </GlassmorphismCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Milestones Section */}
+      <section className="relative py-20 lg:py-32">
+        <div className="container-responsive">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-green">
+                Our Journey
+              </span>
+            </h2>
+            <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              Key milestones in our mission to democratize AI technology
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <GlassmorphismCard key={index} gradient={member.color} glow>
+            {milestones.map((milestone, index) => (
+              <GlassmorphismCard key={index} gradient={milestone.color} glow>
                 <div className="text-center">
-                  <div className="text-6xl mb-4">{member.image}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-neon-blue text-sm mb-3">{member.role}</p>
-                  <p className="text-gray-300 text-sm mb-4">{member.description}</p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {member.expertise.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-2 py-1 bg-white/5 border border-neon-blue/20 rounded-full text-xs text-gray-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                  <div className="text-4xl mb-4">{milestone.icon}</div>
+                  <div className="text-neon-blue font-bold text-lg mb-2">{milestone.year}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{milestone.title}</h3>
+                  <p className="text-gray-300">{milestone.description}</p>
                 </div>
               </GlassmorphismCard>
             ))}
@@ -257,30 +295,30 @@ const About: NextPage = () => {
           <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
             <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                Ready to Join the Future?
+                Join Our Mission
               </span>
             </h2>
             <p className="text-responsive-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-              Whether you're looking for AI services, want to offer your expertise, or join our team, 
-              we'd love to hear from you.
+              Be part of the revolution in AI technology. Whether you're a business looking for AI solutions 
+              or a professional offering AI services, Zion is the platform for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <EnhancedButton
-                href="/contact"
+                href="/auth/signup"
                 size="lg"
                 gradient="blue"
                 glow
-                icon="📞"
+                icon="🚀"
               >
-                Contact Us
+                Get Started Free
               </EnhancedButton>
               <EnhancedButton
-                href="/careers"
+                href="/contact"
                 variant="outline"
                 size="lg"
-                icon="💼"
+                icon="📧"
               >
-                View Careers
+                Contact Us
               </EnhancedButton>
             </div>
           </div>
