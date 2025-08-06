@@ -3,11 +3,11 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FuturisticHero from '../components/ui/FuturisticHero';
-import FuturisticCard from '../components/ui/FuturisticCard';
-import InteractiveNavigation from '../components/ui/InteractiveNavigation';
+import EnhancedMarketplaceCard from '../components/ui/EnhancedMarketplaceCard';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [activeCategory, setActiveCategory] = useState('all')
 
   useEffect(() => {
     setIsVisible(true)
@@ -20,7 +20,8 @@ const Home: NextPage = () => {
       icon: '💻',
       link: '/services',
       color: 'blue' as const,
-      category: 'Services'
+      category: 'Services',
+      tags: ['Consulting', 'Development', 'Support']
     },
     {
       title: 'AI Talents',
@@ -28,7 +29,8 @@ const Home: NextPage = () => {
       icon: '🤖',
       link: '/talent',
       color: 'purple' as const,
-      category: 'Talent'
+      category: 'Talent',
+      tags: ['AI', 'Machine Learning', 'Data Science']
     },
     {
       title: 'Equipment',
@@ -36,7 +38,8 @@ const Home: NextPage = () => {
       icon: '⚙️',
       link: '/products',
       color: 'green' as const,
-      category: 'Hardware'
+      category: 'Hardware',
+      tags: ['Hardware', 'Computing', 'Infrastructure']
     },
     {
       title: 'Innovation',
@@ -44,7 +47,8 @@ const Home: NextPage = () => {
       icon: '🚀',
       link: '/products',
       color: 'pink' as const,
-      category: 'Products'
+      category: 'Products',
+      tags: ['Innovation', 'Technology', 'Solutions']
     }
   ]
 
@@ -56,7 +60,8 @@ const Home: NextPage = () => {
       rating: 4.9,
       link: '/services/ai-model-development',
       color: 'blue' as const,
-      featured: true
+      featured: true,
+      tags: ['AI', 'Machine Learning', 'Custom Solutions']
     },
     {
       title: 'Cloud Migration',
@@ -64,7 +69,8 @@ const Home: NextPage = () => {
       price: '$2000-15000',
       rating: 4.8,
       link: '/services/cloud-migration-services',
-      color: 'purple' as const
+      color: 'purple' as const,
+      tags: ['Cloud', 'Migration', 'Infrastructure']
     },
     {
       title: 'Security Auditing',
@@ -72,7 +78,8 @@ const Home: NextPage = () => {
       price: '$1000-8000',
       rating: 4.9,
       link: '/services/security-auditing',
-      color: 'green' as const
+      color: 'green' as const,
+      tags: ['Security', 'Auditing', 'Testing']
     },
     {
       title: 'Performance Optimization',
@@ -80,7 +87,8 @@ const Home: NextPage = () => {
       price: '$800-3000',
       rating: 4.7,
       link: '/services/performance-optimization',
-      color: 'pink' as const
+      color: 'pink' as const,
+      tags: ['Performance', 'Optimization', 'Efficiency']
     }
   ]
 
@@ -92,7 +100,8 @@ const Home: NextPage = () => {
       rating: 4.9,
       link: '/talent',
       color: 'blue' as const,
-      featured: true
+      featured: true,
+      tags: ['AI', 'Machine Learning', 'Research']
     },
     {
       title: 'Alex Rodriguez',
@@ -100,7 +109,8 @@ const Home: NextPage = () => {
       price: '$180/hr',
       rating: 4.8,
       link: '/talent',
-      color: 'purple' as const
+      color: 'purple' as const,
+      tags: ['Deep Learning', 'Neural Networks', 'Computer Vision']
     },
     {
       title: 'Maria Johnson',
@@ -108,7 +118,8 @@ const Home: NextPage = () => {
       price: '$220/hr',
       rating: 4.9,
       link: '/talent',
-      color: 'green' as const
+      color: 'green' as const,
+      tags: ['Cloud', 'AWS', 'Azure', 'GCP']
     },
     {
       title: 'David Kim',
@@ -116,7 +127,8 @@ const Home: NextPage = () => {
       price: '$250/hr',
       rating: 4.9,
       link: '/talent',
-      color: 'pink' as const
+      color: 'pink' as const,
+      tags: ['Cybersecurity', 'Threat Detection', 'Prevention']
     }
   ]
 
@@ -125,6 +137,13 @@ const Home: NextPage = () => {
     { value: '500+', label: 'AI Services' },
     { value: '99.9%', label: 'Uptime' },
     { value: '24/7', label: 'Support' }
+  ]
+
+  const categories = [
+    { id: 'all', name: 'All', color: 'blue' },
+    { id: 'services', name: 'Services', color: 'purple' },
+    { id: 'talent', name: 'Talent', color: 'green' },
+    { id: 'products', name: 'Products', color: 'pink' }
   ]
 
   return (
@@ -142,22 +161,67 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="Experience the future of commerce with Zion's cutting-edge AI-powered marketplace." />
       </Head>
 
-      {/* Interactive Navigation */}
-      <InteractiveNavigation />
+      {/* Navigation */}
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
+            >
+              Zion
+            </Link>
+            <div className="hidden md:flex gap-6 text-sm font-medium">
+              <Link href="/services" className="hover:text-purple-300 transition-colors">
+                Services
+              </Link>
+              <Link href="/products" className="hover:text-purple-300 transition-colors">
+                Products
+              </Link>
+              <Link href="/talent" className="hover:text-purple-300 transition-colors">
+                Talent
+              </Link>
+              <Link href="/blog" className="hover:text-purple-300 transition-colors">
+                Blog
+              </Link>
+              <Link href="/about" className="hover:text-purple-300 transition-colors">
+                About
+              </Link>
+              <Link href="/contact" className="hover:text-purple-300 transition-colors">
+                Contact
+              </Link>
+            </div>
+            <div className="flex gap-4">
+              <Link
+                href="/auth"
+                className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/auth"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-200"
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <FuturisticHero />
 
-      {/* Stats Section with Enhanced Animation */}
+      {/* Interactive Stats Section */}
       <section className="py-16 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2 group-hover:from-purple-300 group-hover:to-pink-300 transition-all duration-300">
+              <div key={index} className="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2 group-hover:animate-pulse">
                   {stat.value}
                 </div>
-                <div className="text-gray-300 text-sm md:text-base group-hover:text-white transition-colors duration-300">
+                <div className="text-gray-300 text-sm md:text-base group-hover:text-white transition-colors">
                   {stat.label}
                 </div>
               </div>
@@ -166,90 +230,90 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* Marketplace Categories with Enhanced Layout */}
+      {/* Enhanced Marketplace Categories */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Explore Our Marketplace
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Discover a comprehensive ecosystem of technology solutions, from AI services to enterprise infrastructure.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {marketplaceCategories.map((category, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <FuturisticCard
-                  title={category.title}
-                  description={category.description}
-                  icon={category.icon}
-                  link={category.link}
-                  color={category.color}
-                  category={category.category}
-                />
-              </div>
+              <EnhancedMarketplaceCard
+                key={index}
+                title={category.title}
+                description={category.description}
+                icon={category.icon}
+                link={category.link}
+                color={category.color}
+                category={category.category}
+                tags={category.tags}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Services with Enhanced Animation */}
+      {/* Enhanced Featured Services */}
       <section className="py-16 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Featured Services
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Top-rated services from our verified professionals and companies.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredServices.map((service, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <FuturisticCard
-                  title={service.title}
-                  description={service.description}
-                  link={service.link}
-                  color={service.color}
-                  price={service.price}
-                  rating={service.rating}
-                  featured={service.featured}
-                />
-              </div>
+              <EnhancedMarketplaceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                link={service.link}
+                color={service.color}
+                price={service.price}
+                rating={service.rating}
+                featured={service.featured}
+                tags={service.tags}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Top Talents with Enhanced Animation */}
+      {/* Enhanced Top Talents */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Top AI Talents
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Connect with world-class AI experts and technology professionals.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {topTalents.map((talent, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <FuturisticCard
-                  title={talent.title}
-                  description={talent.description}
-                  link={talent.link}
-                  color={talent.color}
-                  price={talent.price}
-                  rating={talent.rating}
-                  featured={talent.featured}
-                />
-              </div>
+              <EnhancedMarketplaceCard
+                key={index}
+                title={talent.title}
+                description={talent.description}
+                link={talent.link}
+                color={talent.color}
+                price={talent.price}
+                rating={talent.rating}
+                featured={talent.featured}
+                tags={talent.tags}
+              />
             ))}
           </div>
         </div>
@@ -258,18 +322,19 @@ const Home: NextPage = () => {
       {/* Enhanced CTA Section */}
       <section className="py-16 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in delay-200">
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Join thousands of businesses already leveraging Zion's AI-powered marketplace for their technology needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-400">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+              className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
             >
-              Get Started Free
+              <span className="relative z-10">Get Started Free</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Link>
             <Link
               href="/services"
