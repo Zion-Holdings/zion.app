@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-06T13:05:48.660Z",
+  "timestamp": "2025-08-06T13:06:18.659Z",
   "isRunning": true,
   "factories": {
     "content-automation": {
@@ -751,57 +751,106 @@
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.8,
-      "lastCheck": "2025-08-06T13:05:48.659Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "growth-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.85,
-      "lastCheck": "2025-08-06T13:05:48.659Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "technical-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.9,
-      "lastCheck": "2025-08-06T13:05:48.659Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "business-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.75,
-      "lastCheck": "2025-08-06T13:05:48.659Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "intelligence-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.95,
-      "lastCheck": "2025-08-06T13:05:48.659Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "diversification-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.8,
-      "lastCheck": "2025-08-06T13:05:48.660Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "innovation-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.85,
-      "lastCheck": "2025-08-06T13:05:48.660Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     },
     "scalability-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
       "intelligenceLevel": 0.88,
-      "lastCheck": "2025-08-06T13:05:48.660Z"
+      "lastCheck": "2025-08-06T13:06:18.659Z"
     }
   },
-  "evolutionData": {}
+  "evolutionData": {
+    "content-automation": {
+      "intelligenceLevel": 0.8,
+      "evolutionRate": 0.15,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "growth-automation": {
+      "intelligenceLevel": 0.85,
+      "evolutionRate": 0.18,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "technical-automation": {
+      "intelligenceLevel": 0.9,
+      "evolutionRate": 0.12,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "business-automation": {
+      "intelligenceLevel": 0.75,
+      "evolutionRate": 0.1,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "intelligence-automation": {
+      "intelligenceLevel": 0.95,
+      "evolutionRate": 0.25,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "diversification-automation": {
+      "intelligenceLevel": 0.8,
+      "evolutionRate": 0.2,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "innovation-automation": {
+      "intelligenceLevel": 0.85,
+      "evolutionRate": 0.22,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    },
+    "scalability-automation": {
+      "intelligenceLevel": 0.88,
+      "evolutionRate": 0.16,
+      "learningProgress": 0,
+      "lastEvolution": "2025-08-06T13:05:48.661Z"
+    }
+  }
 }
