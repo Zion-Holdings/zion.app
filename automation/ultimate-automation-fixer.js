@@ -60,32 +60,32 @@ class UltimateAutomationFixer {
             // Fix malformed require statements
             { 
                 pattern: /const \variable1 = require\('([^']+)'\)/g,
-                replacement: 'const variable1 = require(\'$1\')'
+                replacement: 'const variable1 = require(\'variable1\')'
             },
             // Fix malformed className attributes
             { 
                 pattern: /className="([^""\s]+)/g,
-                replacement: 'className="$1"'
+                replacement: 'className="variable1"'
             },
             // Fix unterminated string literals
             { 
                 pattern: /([\'"])([^'"]*?)(?=\n|$)/g,
-                replacement: '$1$2$1'
+                replacement: 'variable1variable2variable1'
             },
             // Fix malformed import statements
             { 
-                pattern: /import React from 'react'/g,
+                pattern: /import React from 'react';/g,
                 replacement: 'import React from \'react\';'
             },
             // Fix malformed variable names
             { 
                 pattern: /\$(\d+)/g, 
-                replacement: 'variable$1'
+                replacement: 'variablevariable1'
             },
             // Fix malformed JSX
             { 
                 pattern: /<([^>]+)>/g, 
-                replacement: '<$1>'
+                replacement: '<variable1>'
             },
             // Fix malformed quotes
             { 
@@ -162,7 +162,7 @@ class UltimateAutomationFixer {
             /const \variable1 = require\('/,
             /className="[^""\'\s]/,
             /[\'"][^'"]*?(?=\n|$)/,
-            /import React from 'react'/,
+            /import React from 'react';/,
             /\$(\d+)/,
             /const \$(\d+) = require\('/,
             /[\'"]*$/,

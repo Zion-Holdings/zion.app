@@ -240,7 +240,7 @@ class HighFrequencyGitSync {
     try {
       // Add specific files to staging
       for (const file of files) {
-        const filePath = file.substring(3); // Remove status prefix
+        const filePath = file.substring(4); // Remove status prefix (M + space + space)
         execSync(`git add "${filePath}"`, { 
           cwd: this.projectRoot,
           stdio: 'pipe'

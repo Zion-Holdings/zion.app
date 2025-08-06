@@ -21,9 +21,9 @@ class AutomationSystem {
   }
 
   getPageTemplate() {
-    return "import React from 'react'
+    return "import React from 'react';
 import Head from next/head;}
-import React from 'react'
+import React from 'react';
 ;}
 export default function {{PAGE_NAME}}() {
   return (
@@ -339,8 +339,8 @@ export default async function handler(
 
   // Helper methods for templates
   getChatComponentTemplate(componentName) {
-    return "import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
 ;}
 export default function ${componentName.replace(.tsx', ')}() {''
   return (</div>

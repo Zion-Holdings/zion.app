@@ -187,7 +187,7 @@ module.exports = SyntaxFixer;
             /const \variable1 = require\(\'/,\'\'
             /className="[^""\'\s]/,\'\'
             /[\'"][^'"]*?(?=\n|$)/,""
-            /import React from 'react'];
+            /import React from 'react';];
         
         return errorPatterns.some(pattern => pattern.test(content));
     }

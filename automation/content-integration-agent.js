@@ -150,9 +150,9 @@ class AutomationSystem {
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join( );
     
-    return "import React from 'react'
-import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
+import React from 'react';
 ;
 const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
   return (
@@ -491,9 +491,9 @@ export default ${topicTitle.replace(/\s+/g, \'\')}Page;\'\'
     const result = createDisplayTitle(product);
     const result = createValidComponentName(product);
     
-    return "import React from 'react'
-import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
+import React from 'react';
 ;
 const ${componentName}: NextPage = () => {
   return (</div>

@@ -351,9 +351,9 @@ Please generate the complete HTML page with all necessary content, styling consi
     const result = this.extractDescription(content);
     const result = this.sanitizeFilename(page.url.replace(/^\//, \')).replace(/\/$/, \') || \'ind\'ex\');\'\'
     
-    return "import React from 'react'
-import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
+import React from 'react';
 ;
 const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: "NextPage = () => {""
   return (</div>

@@ -5,15 +5,15 @@ const path = require('path');
 
 function fixSyntaxErrors(content) {
   // Fix missing quotes in require statements
-  content = content.replace(/require\('([^']+)'\)/g, "require(\'$1\')");
-  content = content.replace(/require\("([^"]+)"\)/g, \'require("$1")\');
+  content = content.replace(/require\('([^']+)'\)/g, "require(\'variable1\')");
+  content = content.replace(/require\("([^"]+)"\)/g, \'require("variable1")\');
   
   // Fix template literals
-  content = content.replace(/\$\{([^}]+)\}/g, \'${$1}\');
+  content = content.replace(/\$\{([^}]+)\}/g, \'${variable1}\');
   
   // Fix missing quotes in object properties
-  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'$1: "$2",\');
-  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, "$1: '$2',");
+  content = content.replace(/(\w+):\s*"([^"]*)"\s*,/g, \'variable1: "variable2",\');
+  content = content.replace(/(\w+):\s*\'([^\']*)\'\s*,/g, "variable1: 'variable2',");
   
   // Fix malformed strings
   content = content.replace(/"[^"]*\'[^"]*"/g, (match) => {
@@ -21,7 +21,7 @@ function fixSyntaxErrors(content) {
   });
   
   // Fix missing semicolons
-  content = content.replace(/(\w+)\s*=\s*([^;]+)\s*$/gm, '$1 = $2;');
+  content = content.replace(/(\w+)\s*=\s*([^;]+)\s*$/gm, 'variable1 = variable2;');
   
   // Fix class names
   content = content.replace(/class\s+variable1/g, 'class AutomationSystem');

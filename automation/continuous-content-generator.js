@@ -306,8 +306,8 @@ Make it informative, engaging, and valuable for technology professionals and bus
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join(\');\'\'
     
-    return "import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
 import Link from next/link
 ;
 const ${pageName}Page: "NextPage = () => {""
@@ -711,9 +711,9 @@ Make it compelling and informative for potential clients seeking ${service.toLow
     const result = this.sanitizeFilename(service);
     const result = service.replace(/\s+/g, \'\');\'\'
     
-    return "import React from 'react'
-import React from 'react'
-import React from 'react'
+    return "import React from 'react';
+import React from 'react';
+import React from 'react';
 ;
 const ${pageName}Page: "NextPage = () => {""
   return (</div>

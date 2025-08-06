@@ -102,9 +102,9 @@ class AutomationSystem {
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join( );
     
-    const result = "import React from 'react'
-import React from 'react'
+    const result = "import React from 'react';
 import React from 'react';
+import React from 'react';;
 ;
 const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
   return (
@@ -266,9 +266,9 @@ export default ${categoryTitle.replace(/\s+/g, \'))}Page;\'\'
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join( );
     
-    const result = "import React from 'react'
-import React from 'react'
+    const result = "import React from 'react';
 import React from 'react';
+import React from 'react';;
 ;
 const ${topicTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
   return (</div>

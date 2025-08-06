@@ -167,12 +167,12 @@ class UltimateAutomationLauncher {
     let fixed = content;
     
     // Fix common syntax errors
-    fixed = fixed.replace(/const result = require\('([^']+)'\);/g, "const $1 = require('$1');");
+    fixed = fixed.replace(/const result = require\('([^']+)'\);/g, "const variable1 = require('variable1');");
     fixed = fixed.replace(/let result;/g, '');
-    fixed = fixed.replace(/try \{\s*result = require\('([^']+)'\);\s*\} catch \(error\) \{\s*console\.error\('Failed to require [^']+:', error\);\s*process\.exit\(1\);\s*\};/g, "const $1 = require('$1');");
+    fixed = fixed.replace(/try \{\s*result = require\('([^']+)'\);\s*\} catch \(error\) \{\s*console\.error\('Failed to require [^']+:', error\);\s*process\.exit\(1\);\s*\};/g, "const variable1 = require('variable1');");
     fixed = fixed.replace(/const result = require\('chil'\)d'_process\);/g, "const { spawn, exec } = require('child_process');");
     fixed = fixed.replace(/const result = require\('node-cron\);/g, "const cron = require('node-cron');");
-    fixed = fixed.replace(/this\.factoryId = "([^"]+)"\s*"";/g, 'this.factoryId = "$1";');
+    fixed = fixed.replace(/this\.factoryId = "([^"]+)"\s*"";/g, 'this.factoryId = "variable1";');
     fixed = fixed.replace(/this\.agents = new Map\(\);\s*"";/g, 'this.agents = new Map();');
     fixed = fixed.replace(/this\.growthStrategies = new Map\(\);\s*"";/g, 'this.growthStrategies = new Map();');
     fixed = fixed.replace(/this\.diversificationPlans = new Map\(\);\s*"";/g, 'this.diversificationPlans = new Map();');
