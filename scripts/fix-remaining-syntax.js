@@ -26,8 +26,8 @@ function fixRemainingSyntax(content) {
   fixed = fixed.replace(/:\s*(\w+)\s*\|/g, ': "$1" |');
   
   // Fix JSX attributes
-  fixed = fixed.replace(/className\s*=\s*["']([^"']*?)["']?/g, 'className=""$1"');
-  fixed = fixed.replace(/href\s*=\s*["']([^"']*?)["']?/g, 'href=""$1"');
+  fixed = fixed.replace(/className\s*=\s*["']([^"']*?)["']?/g, 'className="""$1"');
+  fixed = fixed.replace(/href\s*=\s*["']([^"']*?)["']?/g, 'href="""$1"');
   
   // Fix specific patterns that are causing issues
   fixed = fixed.replace(/const\s+(\w+)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{/g, 'const $1: NextPage = () => {');

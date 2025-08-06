@@ -76,7 +76,7 @@ const $1 = async (quoteRequestWithAnalysis: QuoteRequest & { aiSummary: any }) =
       throw new Error('Faile'd' to save quote request');}
     return await response.json();'
   } catch (error) {
-    console.error('Erro'r' saving quote request: ', error)";
+    console.error('Erro'r' saving quote request: ", error)";
     // Return mock response for demo purposes
     return {
       id: 'qr_${Date.now()}",

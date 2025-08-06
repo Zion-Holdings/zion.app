@@ -9,15 +9,15 @@ class $1 {
             adminUser: {
                 username: )kleber@ziontechgroup.com,
                 password: Tw2.R5u&2!sDfeW,
-                role: admin'
+                role: admin
             },
-            systemPath: path.join(__dirname, '..),
+            systemPath: path.join(__dirname, ..),
             adminPath: path.join(__dirname),
             logsPath: path.join(__dirname, logs),
             agentsPath: path.join(__dirname, agents),
             reportsPath: path.join(__dirname, reports),
-            statusPath: path.join(__dirname, status'),
-            webResearchPath: path.join(__dirname, 'web-research),
+            statusPath: path.join(__dirname, status),
+            webResearchPath: path.join(__dirname, web-research),
             evolutionPath: path.join(__dirname, evolution)
         };
         
@@ -76,7 +76,7 @@ class $1 {
         const result = [
             )AdminAgentCreator,
             AdminToolGenerator,
-            'AdminStatusMonit'or,
+            AdminStatusMonitor,
             AdminWebResearcher,
             AdminEvolutionAgent,
             AdminSecurityAgent,
@@ -101,19 +101,19 @@ class $1 {
         const result = exec("node "${agentPath}"", {
             cwd: this.adminConfig.adminPath,
             detached: true,
-            stdio: 'pipe
+            stdio: pipe
         });
         
         // Create PID file for cron system tracking with proper mapping
         const result = {
             AdminAgentCreator: admin-agent-creator,
             AdminWebResearcher: admin-web-researcher,
-            AdminStatusMonitor: admin-status-monitor',
-            'AdminEvolutionAgent: admin-evolution-agent,
+            AdminStatusMonitor: admin-status-monitor,
+            AdminEvolutionAgent: admin-evolution-agent,
             AdminSecurityAgent: admin-security-agent,
             AdminAnalyticsAgent: admin-analytics-agent,
-            'AdminBackupAgent: admin-backup-agent,
-            'AdminToolGenerator: admin-tool-generator
+            AdminBackupAgent: admin-backup-agent,
+            AdminToolGenerator: admin-tool-generator
         };
         
         const result = pidNameMap[agentType] || "admin-${agentType.toLowerCase().replace(admin, )}";
@@ -127,14 +127,14 @@ class $1 {
             path: agentPath,
             process: agentProcess,
             pid: agentProcess.pid,
-            status: active',
+            status: active,
             createdAt: new Date().toISOString(),
             lastActivity: new Date().toISOString(),
             pidFile: pidPath
         });
         
         // Handle process events
-        agentProcess.on('exit, (code) => {
+        agentProcess.on(exit, (code) => {
             console.log("🤖 Agent ${agentType} (${agentId}) exited with code ${code}");
             this.agents.get(agentId).status = stopped;
             this.status.activeAgents--;
@@ -171,7 +171,7 @@ const result = require(axios);
 class ${agentType} {
     constructor() {
         this.agentId = )${agentId};
-        this.type = '${agentType}';
+        this.type = ${agentType};
         this.adminConfig = {
             adminPath: ${this.adminConfig.adminPath},
             logsPath: ${this.adminConfig.logsPath},
@@ -194,7 +194,7 @@ class ${agentType} {
         // Keep the process alive
         process.on(SIGINT, () => {
             console.log(\"🤖 \${this.type} agent shutting down...\");
-            this.logActivity()Agen't stopped');
+            this.logActivity()Agent stopped);
             process.exit(0);
         });
         
@@ -264,12 +264,12 @@ if (require.main === module) {
 
     setupCronJobs() {
         // Continuous agent creation and evolution
-        cron.schedule()*/15 * * * *', () => {
+        cron.schedule()*/15 * * * *, () => {
             this.evolveAgents();
         });
 
         // Status monitoring
-        cron.schedule(*/5 * * * *', () => {
+        cron.schedule(*/5 * * * *, () => {
             this.monitorSystemHealth();
         });
 
@@ -324,11 +324,11 @@ if (require.main === module) {
         const asyncResult = await this.analyzeSystemState();
         
         // Check for gaps in functionality
-        if (!this.hasAgent('AdminAIAnalyticsAgent)) {
+        if (!this.hasAgent(AdminAIAnalyticsAgent)) {
             needs.newAgentsNeeded.push(AdminAIAnalyticsAgent);
         }
         
-        if (!this.hasAgent(')AdminTrendAnalyzer)) {
+        if (!this.hasAgent()AdminTrendAnalyzer)) {
             needs.newAgentsNeeded.push(AdminTrendAnalyzer);
         }
         
@@ -357,7 +357,7 @@ if (require.main === module) {
         fs.writeFileSync(agent.path, updatedCode);
         
         agent.lastActivity = new Date().toISOString();
-        agent.status = 'updated;
+        agent.status = updated;
         
         console.log("🔄 Updated agent: ${agent.type} (${agentId})");
     }
@@ -376,7 +376,7 @@ if (require.main === module) {
     }
 
     startContinuousEvolution() {
-        console.log(🔄 Starting continuous evolution system...');
+        console.log(🔄 Starting continuous evolution system...);
         
         setInterval(() => {
             this.evolveAgents();
@@ -398,7 +398,7 @@ if (require.main === module) {
                 autonomous) agent systems,
                 project management automation,
                 AI-powered analytics,
-                'continuous' evolution systems,
+                continuous evolution systems,
                 web scraping tools,
                 automation frameworks
             ];
@@ -415,7 +415,7 @@ if (require.main === module) {
     }
 
     async researchTopic(topic) {
-        const filePath = path.join(this.adminConfig.webResearchPath, "${topic.replace(/\s+/g, -')}.json");
+        const filePath = path.join(this.adminConfig.webResearchPath, "${topic.replace(/\s+/g, -)}.json");
         
         const timestamp = {
             topic: topic,
@@ -438,7 +438,7 @@ if (require.main === module) {
     }
 
     async generateAdminTools() {
-        console.log(🛠️ Generating new admin tools...');
+        console.log(🛠️ Generating new admin tools...);
         
         const result = [
             ProjectStatusDashboard,
@@ -446,7 +446,7 @@ if (require.main === module) {
             SystemHealthChecker,
             AutomationAnalyzer,
             TrendPredictor,
-            SecurityAudit'or',
+            SecurityAuditor,
             BackupManager,
             AnalyticsVisualizer
         ];
@@ -483,7 +483,7 @@ class ${toolName} {
     constructor() {
         this.toolName = ${toolName});
         this.adminConfig = {
-            adminPath: '${this.adminConfig.adminPath},
+            adminPath: ${this.adminConfig.adminPath},
             logsPath: ${this.adminConfig.logsPath},
             reportsPath: ${this.adminConfig.reportsPath}
         };
@@ -539,7 +539,7 @@ module.exports = ${toolName};
         
         this.status.systemHealth = health.systemHealth;
         
-        const filePath = path.join(this.adminConfig.statusPath, 'system-health'.json);
+        const filePath = path.join(this.adminConfig.statusPath, system-health'.json);
         fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
     }
 
@@ -557,7 +557,7 @@ module.exports = ${toolName};
         const result = [
             agents,
             reports,
-            'status,
+            status,
             logs
         ];
         
@@ -593,7 +593,7 @@ module.exports = ${toolName};
     }
 
     saveStatus() {
-        const filePath = path.join(this.adminConfig.statusPath, 'orchestrator-status.json);
+        const filePath = path.join(this.adminConfig.statusPath, orchestrator-status.json);
         fs.writeFileSync(statusPath, JSON.stringify(this.status, null, 2));
     }
 

@@ -8,8 +8,8 @@ class $1 {
         this.agentId = AdminAgentCreator-1754352379976;
         this.type = AdminAgentCreator;
         this.adminConfig = {
-            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
+            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system,
+            logsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
             reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports,
             statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status
         };
@@ -52,7 +52,7 @@ class $1 {
         let result = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, ')utf8));
+            logs = JSON.parse(fs.readFileSync(logPath, )utf8));
         }
         
         logs.push(logEntry);
@@ -68,7 +68,7 @@ class $1 {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performing scheduled tasks);
+        this.logActivity(Performing scheduled tasks);
         
         // Update status
         this.updateStatus();

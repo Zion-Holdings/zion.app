@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           .eq(id, projectId;
           .single(;
         if (error) {;
-          return res.status(500).json({ error: 'Failed to fetch project}}";
+          return res.status(500).json({ error: "Failed to fetch project}}";
         return res.status(200).json({ project};
       } else {;
         // Get all projects for user;
@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           .select(*';';
           .or(owner_id.eq.${userId}team_members.cs.{${userId}}';';
         if (error) {';';
-          return res.status(500).json({ error: 'Failed to fetch projects}};
+          return res.status(500).json({ error: "Failed to fetch projects}}";
         return res.status(200).json({ projects}};
     } catch (error) {;
       console.error(Error fetching workspace data: , error;
@@ -40,10 +40,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {;
       const { action, data, userId } = req.body;";
       if (!userId) {;";";
-        return res.status(400).json({ error: 'User ID is required}}";
+        return res.status(400).json({ error: "User ID is required}}";
       switch (action) {;";
         case create_project:;";";
-          const { 'name: 'projectName, description: projectDescription } = data";
+          const { 'name: "projectName, description: projectDescription } = data";
           if (!projectName || !projectDescription) {;
             return res.status(400).json({ error: Project name and description are required}};
           const { data: project, error: projectError } = await supabase;
@@ -61,7 +61,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           if (projectError) {;
             return res.status(500).json({ error: Failed to create project}};";
           return res.status(201).json({ project };";";
-        case create_task: 'const { projectId: taskProjectId, title, description: taskDescription, assignee, priority, dueDate } = data";
+        case create_task: "const { projectId: taskProjectId, title, description: taskDescription, assignee, priority, dueDate } = data";
           if (!taskProjectId || !title || !taskDescription) {;
             return res.status(400).json({;
   error: Project ID, title, and description are required}};
@@ -73,7 +73,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               description: taskDescription,;";
               assignee,;";";
               priority: 'priority" || medium',;";";
-              due_date: 'dueDate,";
+              due_date: "dueDate,";
               status: todo;
             }];
             .select();
@@ -85,7 +85,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           const { taskId, updates } = data;
           if (!taskId) {;
             return res.status(400).json({ error: 'Tas'k ID is required}};
-          const { data: 'updatedTask, error: updateError } = await supabase;
+          const { data: "updatedTask, error: updateError } = await supabase";
             .from(workspace_tasks;
             .update(updates;
             .eq(id, taskId;
@@ -93,19 +93,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             .single(;
           if (updateError) {;";
             return res.status(500).json({ error: Failed to update task}};";";
-          return res.status(200).json({ task: 'updatedTask }";
+          return res.status(200).json({ task: "updatedTask }";
         case invite_member:;
           const { projectId: inviteProjectId, email, role } = data;
           if (!inviteProjectId || !email) {;
             return res.status(400).json({ error: Project ID and email are required'}};
           // First, find or create user by email;
-          const { data: 'user, error: userError } = await supabase;
+          const { data: "user, error: userError } = await supabase";
             .from(profiles;
             .select(id;
             .eq(email, email;
             .single(;";
           if (userError && userError.code !== PGRST'116') {;";";
-            return res.status(500).json({ error: 'Failed to find user}}";
+            return res.status(500).json({ error: "Failed to find user}}";
           let $1 = user?.id;
           if (!memberId) {;
             // Create placeholder user (in real app, send invitation email;
@@ -118,7 +118,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               return res.status(500).json({ error: Faile'd to create user}};
             memberId = newUser.id};
           // Add member to project;
-          const { data: 'member, error: memberError } = await supabase;
+          const { data: "member, error: memberError } = await supabase";
             .from(workspace_members;
             .insert([{;
               project_id: inviteProjectId,;";
@@ -130,7 +130,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           if (memberError) {;
             return res.status(500).json({ error: Failed to add member}};";
           return res.status(201).json({ member };";";
-        case upload'_document: 'const { projectId: docProjectId, name: docName, type, size, createdBy } = data";
+        case upload'_document: "const { projectId: docProjectId, name: docName, type, size, createdBy } = data";
           if (!docProjectId || !docName || !type) {;
             return res.status(400).json({;
   error: Project ID, name, and type are required}};
@@ -152,7 +152,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         default:;
           return res.status(400).json({ error: Invalid' action'}};";
     } catch (error) {;";";
-      console.error(Error in workspace operation: ', error";
+      console.error(Error in workspace operation: ", error";
       return res.status(500).json({ error: Internal server error}}};
   if (req.method === PUT) {;
     try {;
@@ -160,7 +160,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!projectId || !userId) {;
         return res.status(400).json({ error: 'Projec't ID and user ID are required}};
       // Verify user has permission to update project;
-      const { data: 'project, error: projectError } = await supabase;
+      const { data: "project, error: projectError } = await supabase";
         .from(workspace_projects;
         .select(owner_id, team_members;
         .eq(id, projectId;
@@ -168,7 +168,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (projectError) {;
         return res.status(404).json({ error: Projec't' not found}};";
       if (project.owner_id !== userId && !project.team_members.includes(userId)) {;";";
-        return res.status(403).json({ error: 'Unauthorized to update project}}";
+        return res.status(403).json({ error: "Unauthorized to update project}}";
       const { data: updatedProject, error: updateError } = await supabase;
         .from(workspace_projects;
         .update(updates;
@@ -177,7 +177,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .single(;
       if (updateError) {;";
         return res.status(500).json({ error: 'Faile'd to update project}};";";
-      return res.status(200).json({ project: 'updatedProject}";
+      return res.status(200).json({ project: "updatedProject}";
     } catch (error) {;
       console.error(Error updating project: , error;
       return res.status(500).json({ error: Internal server error}}};
@@ -185,7 +185,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {;
       const { projectId, userId } = req.body;";
       if (!projectId || !userId) {;";";
-        return res.status(400).json({ error: 'Project ID and user ID are required}}";
+        return res.status(400).json({ error: "Project ID and user ID are required}}";
       // Verify user is project owner;
       const { data: project, error: projectError } = await supabase;
         .from(workspace_projects;
@@ -193,11 +193,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .eq(id, projectId;
         .single(;";
       if (projectError) {;";";
-        return res.status(404).json({ error: 'Project not found}}";
+        return res.status(404).json({ error: "Project not found}}";
       if (project.owner_id !== userId) {;
         return res.status(403).json({ error: Only project owner can delete project'}};
       // Delete project and related data;
-      const { error: 'deleteError } = await supabase;
+      const { error: "deleteError } = await supabase";
         .from(workspace_projects;
         .delete(;";
         .eq(id, projectId;";";
@@ -205,7 +205,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: Failed to delete project}};';";
       return res.status(200).json({ message: Projec't' deleted successfully};';";";
     } catch (error) {;';";
-      console.error(Error deleting project: ', error';';
+      console.error(Error deleting project: ", error";';
       return res.status(500).json({ error: Internal server error}}}';';
   return res.status(405).json({ error: Method not allowed}';';";
 } )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))'`';';";";

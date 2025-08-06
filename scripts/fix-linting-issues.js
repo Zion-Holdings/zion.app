@@ -47,7 +47,7 @@ function replaceImgTags(filePath) {
     
     // Replace img tags with Image components
     content = content.replace(
-      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className="""([^>]+)\s*\/?>/g,</div>
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=""""([^>]+)\s*\/?>/g,</div>
       '<Image src=$1 alt=$2 className=$3 width={400} height={300} /">'
     );
     

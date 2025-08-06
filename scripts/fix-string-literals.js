@@ -92,8 +92,8 @@ function fixStringLiterals(filePath) {
     content = content.replace(/<meta name="viewport" content=([^>]+) \/>/g, '<meta name="viewport" content="$1" />');
     
     // Fix className attributes with unterminated strings
-    content = content.replace(/className="""([^]*) ([^>]+)>/g, (match, p1, p2) => {
-      return "className="""${p1} ${p2}>;
+    content = content.replace(/className=""""([^]*) ([^>]+)>/g, (match, p1, p2) => {
+      return "className=""""${p1} ${p2}>;
     });
     
     // Fix JSX attributes with unterminated strings
@@ -115,14 +115,14 @@ function fixStringLiterals(filePath) {
     // Fix specific patterns for different file types
     if (filePath.includes('iot-solution's'.tsx')) {</div>
       content = content.replace(/<meta name="description content=([^>]+) >/g, '<meta name="description" content="$1" />');</div>
-      content = content.replace(/<div className=""" min-h-screen bg-gradient-to-br from-green-50 to-blue-100>/g, '<div className=min-h-screen bg-gradient-to-br from-green-50 to-blue-100">');</div>
-      content = content.replace(/<section className=""" py-40 px-4 sm: px-6: lg px-8>/g, '<section className=py-40 px-4 sm:px-6 lg:px-8">');</div>
-      content = content.replace(/<div className="""max-w-7xl mx-auto text-center>/g, '<div className=max-w-7xl mx-auto text-center">');</div>
-      content = content.replace(/<h1 className="""text-4xl md text-6xl font-bold text-gray-900 mb-6>/g, '<h1 className=text-4xl md:text-6xl font-bold text-gray-900 mb-6">');</div>
-      content = content.replace(/<p className="""text-xl text-gray-600 mb-8 max-w-3xl mx-auto >/g, '<p className=text-xl text-gray-600 mb-8 max-w-3xl mx-auto">');</div>
-      content = content.replace(/<div className="""flex flex-col sm flex-row  gap-4 justify-center>/g, '<div className=flex flex-col sm:flex-row gap-4 justify-center">');</div>
-      content = content.replace(/<button className="""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>/g, '<button className=bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors>');</div>
-      content = content.replace(/<button className="""border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: transition-colors>/g, '<button className="""border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors>');</div>
+      content = content.replace(/<div className="""" min-h-screen bg-gradient-to-br from-green-50 to-blue-100>/g, '<div className=min-h-screen bg-gradient-to-br from-green-50 to-blue-100">');</div>
+      content = content.replace(/<section className="""" py-40 px-4 sm: px-6: lg px-8>/g, '<section className=py-40 px-4 sm:px-6 lg:px-8">');</div>
+      content = content.replace(/<div className=""""max-w-7xl mx-auto text-center>/g, '<div className=max-w-7xl mx-auto text-center">');</div>
+      content = content.replace(/<h1 className=""""text-4xl md text-6xl font-bold text-gray-900 mb-6>/g, '<h1 className=text-4xl md:text-6xl font-bold text-gray-900 mb-6">');</div>
+      content = content.replace(/<p className=""""text-xl text-gray-600 mb-8 max-w-3xl mx-auto >/g, '<p className=text-xl text-gray-600 mb-8 max-w-3xl mx-auto">');</div>
+      content = content.replace(/<div className=""""flex flex-col sm flex-row  gap-4 justify-center>/g, '<div className=flex flex-col sm:flex-row gap-4 justify-center">');</div>
+      content = content.replace(/<button className=""""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>/g, '<button className=bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors>');</div>
+      content = content.replace(/<button className=""""border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: transition-colors>/g, '<button className=""""border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors>');</div>
       content = content.replace(/<\/Layout>;/g, '</Layout>');</div>
       content = content.replace(/  <\/div>,/g, '  </div>');
       content = content.replace(/  \);/g, '  );');
@@ -131,35 +131,35 @@ function fixStringLiterals(filePath) {
     
     // Fix chat components
     if (filePath.includes('cha't'/')) {</div>
-      content = content.replace(/<div className="""([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');</div>
-      content = content.replace(/<input className=([^"]*)" ([^>]+)>/g, '<input className="""$1 $2 />');</div>
-      content = content.replace(/<button className=([^"]*)" ([^>]+)>/g, '<button className="""$1 $2>');
+      content = content.replace(/<div className=""""([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');</div>
+      content = content.replace(/<input className=([^"]*)" ([^>]+)>/g, '<input className=""""$1 $2 />');</div>
+      content = content.replace(/<button className=([^"]*)" ([^>]+)>/g, '<button className=""""$1 $2>');
     }
     
     // Fix layout components
     if (filePath.includes('layou't'/')) {</div>
-      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');
+      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');
     }
     
     // Fix UI components
     if (filePath.includes('u'i'/')) {</div>
-      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');</div>
-      content = content.replace(/<button className=([^"]*)" ([^>]+)>/g, '<button className="""$1 $2>');
+      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');</div>
+      content = content.replace(/<button className=([^"]*)" ([^>]+)>/g, '<button className=""""$1 $2>');
     }
     
     // Fix auth components
     if (filePath.includes('aut'h'/')) {</div>
-      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');
+      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');
     }
     
     // Fix service listing components
     if (filePath.includes('service-listin'g'/')) {</div>
-      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');
+      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');
     }
     
     // Fix src components
     if (filePath.includes('sr'c'/')) {</div>
-      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className="""$1 $2>');
+      content = content.replace(/<div className=([^"]*)" ([^>]+)>/g, '<div className=""""$1 $2>');
       content = content.replace(/import.*from ([^"]*);/g, (match) => {
         return match.replace(';', '";');
       });

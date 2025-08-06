@@ -8,8 +8,8 @@ class $1 {
         this.agentId = AdminBackupAgent-1754046822807;
         this.type = AdminBackupAgent;
         this.adminConfig = {
-            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
+            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system,
+            logsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
             reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports,
             statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status
         };

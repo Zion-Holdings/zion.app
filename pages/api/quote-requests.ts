@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!supabase) {;
         return res.status(201).json({;
           success: true,;
-          id: 'qr_${Date.now()},";
+          id: "qr_${Date.now()},";
           message: Quote request saved successfully (mock);
         });};
       // Insert quote request into database;
@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .from(quote_requests;
         .insert([;";
           {;";";
-            service_id: 'quoteRequest.serviceId,";
+            service_id: "quoteRequest.serviceId,";
             service_title: quoteRequest.serviceTitle,;
             project_description: quoteRequest.projectDescription,;
             timeline_start: quoteRequest.timeline.startDate,;
@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: Failed to save quote request });};
       return res.status(201).json({;";
         success: true,;";";
-        id: 'data.id,";
+        id: "data.id,";
         message: Quote request saved successfully;
       });
     } catch (error) {;
@@ -57,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       let $1 = supabase;
         .from('quote_requests;";
         .select(*;";";
-        .order('created_at, { ascending: 'false })";
+        .order('created_at, { ascending: "false })";
       if (email) {;
         query = query.eq(contact_email, email);};
       const { data, error } = await query;
@@ -66,7 +66,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: Faile'd to fetch quote requests });};";";
       return res.status(200).json(data || []);";";
     } catch (error) {;';";";
-      console.error(API error: ', error)';";";";
+      console.error(API error: ", error)";";";";
       return res.status(500).json({ error: Internal server error });};';";";
   } else {;';";";
     return res.status(405).json({ error: 'Method not allowed' });}';';";";

@@ -8,8 +8,8 @@ class $1 {
         this.agentId = AdminAnalyticsAgent-1754046913260;
         this.type = AdminAnalyticsAgent;
         this.adminConfig = {
-            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
+            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system,
+            logsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
             reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports,
             statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status
         };

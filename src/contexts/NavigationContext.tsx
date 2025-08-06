@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from ';react;
 import { useRouter } from ";next/router";";
 interface DemandForecast {;';";";
-  isSearchOpen: 'boolean";";
+  isSearchOpen: "boolean";";
   isMobileMenuOpen: boolean;";";
   activeDropdown: 'string" | null;
   recentPages: string[];
@@ -79,7 +79,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
           const $1 = JSON.parse(savedFavorites);
           setState(prev => ({ ...prev, favorites }));";
         } catch (error) {;';";";
-          console.error(Erro'r loading navigation favorites: ', error)}}}";
+          console.error(Erro'r loading navigation favorites: ", error)}}}";
   }, []);
   // Save favorites to localStorage (SSR-safe);
   useEffect(() => {;
@@ -95,7 +95,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
         if (state.isMobileMenuOpen) {;
           toggleMobileMenu()};";
         setActiveDropdown(null)};';";";
-      // Cmd/Ctrl + K: 'Open search";
+      // Cmd/Ctrl + K: "Open search";
       if ((event.metaKey || event.ctrlKey) && event.key === k) {;
         event.preventDefault();
         openSearch()};

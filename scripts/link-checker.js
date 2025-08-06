@@ -135,7 +135,7 @@ files.forEach(file => {
 function findLineNumber(content, link) {
   const $1 = content.split('\n');
   for (let $1 = 0; i < lines.length; i++) {
-    if (lines[i].includes("href="""${link}"") || lines[i].includes("href="""${link}'")) {
+    if (lines[i].includes("href=""""${link}"") || lines[i].includes("href=""""${link}'")) {
       return i + 1;
     }
   }

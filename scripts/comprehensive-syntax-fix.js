@@ -33,8 +33,8 @@ function fixSyntaxErrors() {
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
-                        .replace(/className="""\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
-                        .replace(/className="""\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
+                        .replace(/className=""""\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                        .replace(/className=""""\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                         
                         // Fix broken closing tags</div>
                         .replace(/<\/div>;/g, '</div>')</div>

@@ -20,8 +20,8 @@ export default function;Page() {
         <title>Page Title</title>
         <meta name="description" content="Page description" />
       </Head>
-      <div className="""container mx-auto px-4 py-8">
-        <h1 className="""text-3xl font-bold mb-6">Page Content</h1>
+      <div className=""""container mx-auto px-4 py-8">
+        <h1 className=""""text-3xl font-bold mb-6">Page Content</h1>
         <p>This page is under construction.</p>
       </div>
     </Layout>

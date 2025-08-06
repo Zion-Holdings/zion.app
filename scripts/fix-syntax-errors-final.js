@@ -23,8 +23,8 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
         <title>${title}</title>
         <meta name="description" content="${title} - Professional services and solutions" />
       </Head>
-      <div className="""container mx-auto px-4 py-8">
-        <h1 className="""text-3xl font-bold mb-6">${title}</h1>
+      <div className=""""container mx-auto px-4 py-8">
+        <h1 className=""""text-3xl font-bold mb-6">${title}</h1>
         <p>This page is under construction.</p>
       </div>
     </Layout>

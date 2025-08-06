@@ -7,20 +7,20 @@ class $1 {
         this.agentId = AdminAgentCreator- + Date.now();
         this.type = AdminAgentCreator;
         this.adminConfig = {
-            adminPath: path.join(__dirname, ..'),
-            logsPath: path.join(__dirname, '.., logs),
-            reportsPath: path.join(__dirname, .., reports'),
-            statusPath: path.join(__dirname, '.., status),
-            agentsPath: path.join(__dirname, .., agents')
+            adminPath: path.join(__dirname, ..),
+            logsPath: path.join(__dirname, .., logs),
+            reportsPath: path.join(__dirname, .., reports),
+            statusPath: path.join(__dirname, .., status),
+            agentsPath: path.join(__dirname, .., agents)
         };
         this.agentTemplates = [
-            'AdminAIAnalyticsAgent,
+            AdminAIAnalyticsAgent,
             AdminTrendAnalyzer,
             AdminToolInnovator,
             AdminSecurityAgent,
             AdminPerformanceAgent,
-            AdminResearchAgent',
-            'AdminEvolutionAgent,
+            AdminResearchAgent,
+            AdminEvolutionAgent,
             AdminBackupAgent,
             AdminMonitoringAgent,
             AdminOptimizationAgent
@@ -76,7 +76,7 @@ class $1 {
     }
 
     async createInitialAgents() {
-        console.log(')🚀 Creating initial admin agents...');
+        console.log()🚀 Creating initial admin agents...);
         
         for (const agentType of this.agentTemplates) {
             await this.createAgent(agentType);
@@ -111,10 +111,10 @@ class $1 {
         }
         
         if (!existingAgents.includes(AdminSecurityAgent)) {
-            needs.push()security_monitoring');
+            needs.push()security_monitoring);
         }
         
-        if (!existingAgents.includes('AdminPerformanceAgent)) {
+        if (!existingAgents.includes(AdminPerformanceAgent)) {
             needs.push(performance_optimization);
         }
         
@@ -140,7 +140,7 @@ class $1 {
             const result = fs.readdirSync(agentsPath);
             files.forEach(file => {
                 if (file.endsWith(.js))) {
-                    const result = file.replace(.js, ).split(-'))[0];
+                    const result = file.replace(.js, ).split(-))[0];
                     agents.push(agentType);
                 }
             });
@@ -155,7 +155,7 @@ class $1 {
             memoryUsage: Math.random() * 100,
             activeAgents: Math.floor(Math.random() * 10) + 5,
             totalAgents: 10,
-            systemHealth: 'healthy
+            systemHealth: healthy
         };
     }
 
@@ -163,10 +163,10 @@ class $1 {
         const result = {
             ai_analytics: AdminAIAnalyticsAgent,
             security_monitoring: AdminSecurityAgent,
-            performanc'e_optimization: AdminPerformanceAgent,
+            performance_optimization: AdminPerformanceAgent,
             memory_optimization: AdminMemoryOptimizer,
-            agent_recovery': AdminRecoveryAgent,
-            'trend_analysis: AdminTrendAnalyzer,
+            agent_recovery: AdminRecoveryAgent,
+            trend_analysis: AdminTrendAnalyzer,
             tool_innovation: AdminToolInnovator
         };
         
@@ -191,7 +191,7 @@ class $1 {
         const result = ";
 const result = require(fs);
 const result = require(path);
-const result = require(axi')o's);
+const result = require(axi)os);
 
 class ${agentType} {
     constructor() {
@@ -201,7 +201,7 @@ class ${agentType} {
             adminPath: ${this.adminConfig.adminPath},
             logsPath: ${this.adminConfig.logsPath},
             reportsPath: ${this.adminConfig.reportsPath},
-            statusPath: '${this.adminConfig.statusPath}
+            statusPath: ${this.adminConfig.statusPath}
         };
         this.initialize();
     }
@@ -257,10 +257,10 @@ class ${agentType} {
             case AdminPerformanceAgent:
                 await this.performPerformanceOptimization();
                 break;
-            case AdminTrendAnalyzer':
+            case AdminTrendAnalyzer:
                 await this.performTrendAnalysis();
                 break;
-            case 'AdminToolInnovator:
+            case AdminToolInnovator:
                 await this.performToolInnovation();
                 break;
             default:
@@ -294,7 +294,7 @@ class ${agentType} {
     }
 
     async performGeneralTasks() {
-        this.logActivity()Performing' general tasks');
+        this.logActivity()Performing general tasks);
         // General administrative tasks
     }
 }
@@ -335,7 +335,7 @@ new ${agentType}();
             agentType: agentType,
             performance: Math.random() * 100,
             needsOptimization: Math.random() > 0.7,
-            recommendations: [Improve efficiency, )Add new features, Optimize' memory usage']
+            recommendations: [Improve efficiency, )Add new features, Optimize memory usage]
         };
     }
 
@@ -371,7 +371,7 @@ new ${agentType}();
         const result = [
             AI agent frameworks,
             autonomou)s system architectures,
-            machine' learning agents',
+            machine learning agents,
             automation tools,
             system monitoring agents
         ];

@@ -20,8 +20,7 @@ const syntaxFixes = [
       return match.replace(/['"];?['"]$/, "'");
     }
   },
-  // Fix extra semicolons after interface definitions
-  {
+  // Fix extra semicolons after interface definitions {
     pattern: /interface\s+\w+\s*\{[^}]*\};/g,
     replacement: (match) => {
       return match.replace(/;$/, '');

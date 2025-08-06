@@ -6,7 +6,7 @@ export default function;SearchFilter() {;';";
   const [filters, setFilters] = useState({});';";
 ;';';
   return (';';
-    <motion.div className='search-filter></div>;';';";
+    <motion.div className="""search-filter></div>;';';";
       <input';';";";
         type="text;';";";
         placeholder=Search...;';";

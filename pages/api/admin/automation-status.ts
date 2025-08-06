@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { NextApiRequest, NextApiResponse } from ';next';
+import fs from ';fs';
+import path from ';path';
 ;
 interface AgentStatus {;
   agentId: string;
@@ -157,7 +157,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 ;
     res.status(200).json(status);
   } catch (error) {;
-    console.error('Error fetching automation status:', error);
+    console.error('Error fetching automation status: ", error)";
     res.status(500).json({ error: 'Internal server error' });
   };
 };

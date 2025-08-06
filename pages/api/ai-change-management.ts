@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from ';next';
 ;
 interface ChangeInitiative {;
   id: string;
@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data: changeData;
     });
   } catch (error) {;
-    console.error('Error processing change management request:', error);
+    console.error('Error processing change management request: ", error)";
     return res.status(500).json({ error: 'Internal server error' });
   };
 };

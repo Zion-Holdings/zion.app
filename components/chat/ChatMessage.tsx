@@ -3,7 +3,7 @@ import { motion } from framer-motion;';";";
 ;};';";
 export default function;ChatMessage() {;';';";
   return (';';";";
-    <motion.div className='chat-component>;';";
+    <motion.div className="""chat-component>;';";
       {/* ChatMessage.tsx implementation */}</div>;';';";
     </motion.div>;';';";";
   );';';";";";

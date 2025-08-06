@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         hasSupabaseKey: !!supabaseKey,;
         supabaseUrl: supabaseUrl ? Set : Not set,;
         supabaseKey: supabaseKey ? 'S'et : Not set};
-      session: '{";
+      session: "{";
         exists: !!session,;
         error: sessionError?.message || null};
       user: {;

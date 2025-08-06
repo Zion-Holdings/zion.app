@@ -1,7 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from ";react;';
 ;';';
 interface DemandForecast {';';
-  children: 'ReactNode;
+  children: "ReactNode";
 };
 interface DemandForecast {;
   hasError: boolean;

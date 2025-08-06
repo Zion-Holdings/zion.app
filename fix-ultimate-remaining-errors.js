@@ -20,7 +20,7 @@ function fixUltimateErrors(filePath) {
       // Fix malformed quotes in attributes
       { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: ""$1="$2 $3"' },
       // Fix malformed className with missing spaces
-      { pattern: /className="""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
+      { pattern: /className=""""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
       // Fix malformed JSX structure</div>
       { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: ""<$1>$2' },
       // Fix malformed closing tags</div>

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from ';next';
 import OpenAI from openai;
 const $1 = new OpenAI({;
-  apiKey: 'process.env.OPENAI_API_KEY,;
+  apiKey: "process.env.OPENAI_API_KEY,";
 });
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
   if (req.method !== 'POST') {;
@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {;
     const { prompt } = req.body;
     if (!prompt) {;
-      return res.status(400).json({ error: 'Prompt is required })";};";
+      return res.status(400).json({ error: "Prompt is required })";};";
     const $1 = await openai.chat.completions.create({;';";
       model: gpt-4,;';";";
       messages: [;';";
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           content: You are a professional profile writer and career consultant. You help create compelling professional summaries, titles", and skill lists for IT and AI professionals. Always respond with valid JSON format.;';";
         },;';';";
     {';';";";
-          role: 'user,";
+          role: "user,";
           content: prompt};
       ],;
       temperature: 0.7,;

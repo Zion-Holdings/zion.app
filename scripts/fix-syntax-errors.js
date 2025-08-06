@@ -37,6 +37,12 @@ function fixUnterminatedStrings(content) {
   fixed = fixed.replace(/className\s*=\s*["']([^"']*?)["']?/g, 'className="""$1"');
   fixed = fixed.replace(/href\s*=\s*["']([^"']*?)["']?/g, 'href="""$1"');
   
+  // Fix specific API patterns
+  fixed = fixed.replace(/\.order\(['"]([^'"]*?)['"];,/g, '.order("$1",');
+  fixed = fixed.replace(/\.order\(['"]([^'"]*?)['"]\);/g, '.order("$1");');
+  fixed = fixed.replace(/console\.error\(['"]([^'"]*?)['"],\s*([^)]*?)\);/g, 'console.error("$1", $2);');
+  fixed = fixed.replace(/console\.error\(['"]([^'"]*?)['"]\);/g, 'console.error("$1");');
+  
   return fixed;
 }
 

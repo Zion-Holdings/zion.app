@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from ';next';
 
 interface FacilityPlan {
   id: string;
@@ -72,7 +72,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json(capacityData);
   } catch (error) {
-    console.error('Error processing capacity planning request:', error);
+    console.error('Error processing capacity planning request: ", error)";
     res.status(500).json({ error: 'Internal server error' });
   };
 };

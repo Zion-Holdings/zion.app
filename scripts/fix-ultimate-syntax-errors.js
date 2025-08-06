@@ -10,24 +10,24 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/import { [^}]+ } from ";react;/g, (match) => match.replace(/;$/, '";'));
   
   // Fix all unterminated string literals in JSX className
-  fixed = fixed.replace(/className="""([^]*)$/gm, (match, className) => {
+  fixed = fixed.replace(/className=""""([^]*)$/gm, (match, className) => {
     if (!match.endsWith('')) {
-      return `className="""${className}"`;
+      return `className=""""${className}"`;
     }
     return match;
   });
   
   // Fix all unterminated string literals in JSX
-  fixed = fixed.replace(/className="""([^>]*?)(?=\s|>)/g, (match, className) => {
+  fixed = fixed.replace(/className=""""([^>]*?)(?=\s|>)/g, (match, className) => {
     if (!className.includes('') && !className.includes("'")) {
-      return `className="""${className.trim()}`;
+      return `className=""""${className.trim()}`;
     }
     return match;
   });
   
   // Fix specific patterns
-  fixed = fixed.replace(/className=fixed" inset-0 pointer-events-none z-0"/g, 'className="""fixed inset-0 pointer-events-none z-0');
-  fixed = fixed.replace(/className=([^"]*)"([^"]*)"([^"]*)"/g, 'className="""$1$2$3');
+  fixed = fixed.replace(/className=fixed" inset-0 pointer-events-none z-0"/g, 'className=""""fixed inset-0 pointer-events-none z-0');
+  fixed = fixed.replace(/className=([^"]*)"([^"]*)"([^"]*)"/g, 'className=""""$1$2$3');
   
   // Fix style objects
   fixed = fixed.replace(/style={{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');

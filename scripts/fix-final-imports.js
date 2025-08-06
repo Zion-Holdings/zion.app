@@ -54,12 +54,12 @@ function fixFinalImports(directory) {
         });
         
         // Fix JSX attributes with missing quotes
-        content = content.replace(/className=([^"']+)/g, 'className="""$1"');
+        content = content.replace(/className=([^"']+)/g, 'className=""""$1"');
         content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
         content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
         
         // Fix specific JSX issues
-        content = content.replace(/<div className=([^"']+)>/g, '<div className="""$1">');
+        content = content.replace(/<div className=([^"']+)>/g, '<div className=""""$1">');
         content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
         
         if (modified) {
