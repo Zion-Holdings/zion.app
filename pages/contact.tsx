@@ -266,16 +266,14 @@ const ContactPage: NextPage = () => {
                 )}
 
                 <div className="text-center">
-                  <EnhancedButton
-                    size="lg"
-                    gradient="blue"
-                    glow
-                    icon="📤"
+                  <button
+                    type="submit"
                     disabled={loading}
-                    onClick={() => handleSubmit}
+                    className="bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-blue/80 hover:to-neon-purple/80 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 mx-auto"
                   >
-                    {loading ? 'Sending...' : 'Send Message'}
-                  </EnhancedButton>
+                    <span>📤</span>
+                    <span>{loading ? 'Sending...' : 'Send Message'}</span>
+                  </button>
                 </div>
               </form>
             </div>
