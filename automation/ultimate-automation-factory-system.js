@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
 
 // Batch processing for high-speed file operations
 const writeBatch = {
@@ -98,15 +102,20 @@ async function parallelReadFiles(filePaths) {
   }
   
   // Distribute work among workers
-  for (let i = 0; i < filePaths.length; i++) {
-    const worker = workers[i % numWorkers];
-    worker.postMessage({ filePath: filePaths[i], index: i });
+  const workPerWorker = Math.ceil(filePaths.length / numWorkers);
+  for (let i = 0; i < numWorkers; i++) {
+    const start = i * workPerWorker;
+    const end = Math.min(start + workPerWorker, filePaths.length);
+    
+    for (let j = start; j < end; j++) {
+      workers[i].postMessage({ index: j, filePath: filePaths[j] });
+    }
   }
   
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.content;
     });
   }
   
@@ -115,7 +124,7 @@ async function parallelReadFiles(filePaths) {
     worker.on('exit', resolve);
   })));
   
-  return results.filter(result => result !== null);
+  return results;
 }
 
 // High-speed mode optimizations
@@ -125,35 +134,39 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed 
 function getOptimizedInterval(baseInterval) {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-
-console.log('🚀 Starting Enhanced ultimate-automation-factory-system...');
-
-const AUTOMATION_DIR = path.join(__dirname);
-const STATE_FILE = path.join(AUTOMATION_DIR, 'status-data', 'ultimate-automation-factory-system-state.json');
+// State management
+const STATE_FILE = path.join(__dirname, 'status-data', 'ultimate-automation-factory-state.json');
 
 function updateState(data) {
   try {
-    const state = fs.existsSync(STATE_FILE) 
-      ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))
-      : {
-          name: 'ultimate-automation-factory-system',
-          isRunning: false,
-          health: 'unknown',
-          lastActivity: null,
-          performance: 0,
-          intelligence: 0,
-          evolutionCount: 0,
-          errors: [],
-          startTime: new Date().toISOString(),
-          pid: process.pid
-        };
+    let state = {
+      isRunning: false,
+      health: 'unknown',
+      performance: 0,
+      intelligence: 0,
+      evolutionCount: 0,
+      errors: [],
+      startTime: new Date().toISOString(),
+      pid: process.pid
+    };
+    
+    // Load existing state if available
+    try {
+      const existingState = fs.readFileSync(STATE_FILE, 'utf8');
+      state = { ...state, ...JSON.parse(existingState) };
+    } catch (error) {
+      // State file doesn't exist or is invalid, use defaults
+    }
     
     Object.assign(state, data);
     state.lastActivity = new Date().toISOString();
+    
+    // Ensure directory exists
+    const stateDir = path.dirname(STATE_FILE);
+    if (!fs.existsSync(stateDir)) {
+      fs.mkdirSync(stateDir, { recursive: true });
+    }
     
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
   } catch (error) {
