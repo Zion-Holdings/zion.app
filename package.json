@@ -14,6 +14,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "prepare": "husky",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
     "autonomous:status": "node automation/check-autonomous-status.js",
@@ -62,8 +63,7 @@
     "design:cycle": "node automation/launch-design-improvement-automation.js cycle",
     "design:status": "node automation/launch-design-improvement-automation.js status",
     "design:stop": "node automation/launch-design-improvement-automation.js stop",
-    "design:all": "npm run design:layout && npm run design:navigation && npm run design:visual",
-    "prepare": "husky"
+    "design:all": "npm run design:layout && npm run design:navigation && npm run design:visual"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
