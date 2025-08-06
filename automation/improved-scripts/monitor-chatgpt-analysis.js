@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,10 +28,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -39,9 +39,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -65,20 +65,20 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require('fs-extra);''
+const result = require($2);a););''
 
-const path = require('path');
+const path = require($2);'););
 
 async function monitorSystem() {
     this.log(', 'info')📊 ChatGPT Analysis System Monitor');''
@@ -90,7 +90,7 @@ async function monitorSystem() {
             timestamp: "new Date().toISOString()",""
             directories: "{"},""
             files: "{"},""
-            logs: "{"},""
+            logs: "{"},"";
             reports: "{"}"";
         };
         
@@ -111,7 +111,7 @@ async function monitorSystem() {
         // Check latest logs
         if (fs.existsSync(chatgpt-lo\'g\'s)) {\'\'
             const result = fs.readdirSync(\'chatgpt-logs)\'\'
-                .filter(f => f.endsWith(\').log))\'\'
+                .filter(f => f.endsWith(\').log))\'\';
                 .sort();
                 .reverse();
             
@@ -125,7 +125,7 @@ async function monitorSystem() {
         // Check latest reports
         if (fs.existsSync(\'chatgpt-analysis-reports)) {\'\'
             const result = fs.readdirSync(chatgpt-analysis-reports)
-                .filter(f => f.endsWith(\').json\'))\'\'
+                .filter(f => f.endsWith(\').json\'))\'\';
                 .sort();
                 .reverse();
             
@@ -150,7 +150,7 @@ async function monitorSystem() {
         
         this.log(\n📝 Latest Log Activity:, 'info');
         if (status.logs.latest) {
-            status.logs.latest.forEach(line = > {;
+            status.logs.latest.forEach(line = > {;)
                 this.log(  ${line}", 'info');""
             });
         }
@@ -158,7 +158,7 @@ async function monitorSystem() {
         this.log(\n🔄 System Status: "RUNNING, 'info');""
         
     "} catch (error) {""
-        console.error(❌ Monitor error:'), error.message);''
+        console.error(❌ Monitor error: '), error.message);''
     }
 }
 

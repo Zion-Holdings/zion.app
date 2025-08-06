@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -152,7 +152,7 @@ class variable1 {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -161,7 +161,7 @@ class variable1 {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -175,7 +175,7 @@ class variable1 {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -192,14 +192,13 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'suggestions),''
       path.join(this.reportsDir, analys'i's),''
-      path.join(this.reportsDir, 'refactori'ng')''
+      path.join(this.reportsDir, 'refactori'ng')''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -236,7 +235,7 @@ class variable1 {
         files: "[]",""
         issues: "[]",""
         suggestions: "[]",""
-        metrics: "{"}""
+        metrics: "{"}"";
       };
 
       // Analyze JavaScript/TypeScript files
@@ -301,7 +300,7 @@ class variable1 {
       lines: "0",""
       complexity: "0",""
       issues: "[]",""
-      suggestions: "[]""
+      suggestions: "[]"";
     "};""
 
     try {
@@ -319,8 +318,8 @@ class variable1 {
       console.error(Error analyzing file ${filePath}:", error);""
       analysis.issues.push({
         type: "error",""
-        message: ""Failed to analyze file: ${error.message"},""
-        severity: "'high'''
+        message: ""Failed to analyze file: ${error.message"},"")
+        severity: "'high''')
       "});""
     }
 
@@ -331,7 +330,7 @@ class variable1 {
     const result = {
       issues: "[]",""
       suggestions: "[]",""
-      complexity: "0""
+      complexity: "0"";
     "};""
 
     const result = content.split('\n);''
@@ -345,7 +344,7 @@ class variable1 {
 
       // Check for long lines
       if (line.length > 120) {
-        analysis.issues.push({
+        analysis.issues.push({)
           type: "style')",""
           message: "'Line too long'",""
           line: "lineNumber",""
@@ -358,8 +357,8 @@ class variable1 {
         analysis.suggestions.push({
           type: "refactoring",""
           message: "'Consider simplifying complex condition'",""
-          line: "lineNumber",""
-          severity: "'medium''
+          line: "lineNumber","")
+          severity: "'medium'')
         "});""
         complexity++;
       }
@@ -370,8 +369,8 @@ class variable1 {
         analysis.issues.push({
           type: "structur'e",""
           message: "'Deep nesting detected'",""
-          line: "lineNumber",""
-          severity: "'medium''
+          line: "lineNumber","")
+          severity: "'medium'')
         "});""
         deepNesting++;
       }
@@ -382,14 +381,14 @@ class variable1 {
         analysis.suggestions.push({
           type: "refactorin'g",""
           message: "'Consider extracting magic numbers to constants'",""
-          line: "lineNumber",""
-          severity: "'low''
+          line: "lineNumber","")
+          severity: "'low'')
         "});""
       }
 
       // Check for TODO comments
       if (line.includes(TOD'O) || line.includes('FIXME)) {''
-        analysis.issues.push({
+        analysis.issues.push({)
           type: "')todo",""
           message: "TODO'/FIXME comment found",""
           line: "lineNumber",""
@@ -403,23 +402,23 @@ class variable1 {
     if (functionMatches && functionMatches.length > 10) {
       analysis.suggestions.push({
         type: "'refactoring",""
-        message: "Consider' breaking down large file into smaller modules",""
-        severity: "'medium'''
+        message: "Consider' breaking down large file into smaller modules","")
+        severity: "'medium''')
       "});""
     }
 
     // Check for unused imports (basic check)
     const result = lines.filter(line => line.trim().startsWith('import));''
     const result = this.findUsedImports(content);
-    const result = importLines.filter(line => {
+    const result = importLines.filter(line => {);
       const variable1 = this.extractImportName(line);
       return importName && !usedImports.includes(importName);
     });
 
     if (unusedImports.length > 0) {
       analysis.issues.push({
-        type: "unused",""
-        message: "Found ${unusedImports.length"} potentially unused imports",""
+        type: "unused","")
+        message: "Found ${unusedImports.length"} potentially unused imports","")
         severity: "')medium'''
       "});""
     }
@@ -454,7 +453,7 @@ class variable1 {
       totalSuggestions: "0",""
       averageComplexity: "0",""
       filesWithIssues: "0",""
-      filesWithSuggestions: "0""
+      filesWithSuggestions: "0"";
     "};""
 
     let variable1 = 0;
@@ -491,23 +490,23 @@ class variable1 {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
       priority: "')medium'",""
-      suggestions: "[]""
+      suggestions: "[]"";
     "};""
 
     // High priority suggestions
     if (analysis.metrics.totalIssues > 10) {
       suggestions.suggestions.push({
         type: "'priority",""
-        message: "High' number of issues detected. Consider code review session.",""
-        priority: "'high'''
+        message: "High' number of issues detected. Consider code review session.","")
+        priority: "'high''')
       "});""
     }
 
     if (analysis.metrics.averageComplexity > 5) {
       suggestions.suggestions.push({
         type: "'complexity",""
-        message: "High' code complexity detected. Consider refactoring.",""
-        priority: "'high'''
+        message: "High' code complexity detected. Consider refactoring.","")
+        priority: "'high''')
       "});""
     }
 
@@ -515,8 +514,8 @@ class variable1 {
     if (analysis.metrics.filesWithIssues > analysis.metrics.totalFiles * 0.3) {
       suggestions.suggestions.push({
         type: "'quality",""
-        message: "Many' files have issues. Consider implementing stricter linting rules.",""
-        priority: "'medium'''
+        message: "Many' files have issues. Consider implementing stricter linting rules.","")
+        priority: "'medium''')
       "});""
     }
 
@@ -524,8 +523,8 @@ class variable1 {
     if (analysis.metrics.totalSuggestions > 20) {
       suggestions.suggestions.push({
         type: "'optimization",""
-        message: "Many' optimization opportunities available.",""
-        priority: "low'''
+        message: "Many' optimization opportunities available.","")
+        priority: "low''')
       "});""
     }
 
@@ -542,7 +541,7 @@ class variable1 {
       const timestamp = {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
-        refactoring: "[]""
+        refactoring: "[]"";
       "};""
 
       // Find potential refactoring opportunities
@@ -554,8 +553,8 @@ class variable1 {
         
         if (suggestions.length > 0) {
           refactoringSuggestions.refactoring.push({
-            file,
-            suggestions
+            file,)
+            suggestions)
           });
         }
       }
@@ -582,7 +581,7 @@ class variable1 {
 
       // Long functions
       if (line.includes(function) && line.length > 100) {
-        suggestions.push({
+        suggestions.push({)
           type: "extract-functi')on'",""
           message: "'Consider extracting long function into smaller functions'",""
           line: "lineNumber",""
@@ -595,14 +594,14 @@ class variable1 {
         suggestions.push({
           type: "extract-logger",""
           message: "'Consider creating a logger utility'",""
-          line: "lineNumber",""
-          priority: "'low''
+          line: "lineNumber","")
+          priority: "'low'')
         "});""
       }
 
       // Complex conditions
       if (line.includes(if') && (line.includes(&&') || line.includes('||)) && line.length > 80) {''
-        suggestions.push({
+        suggestions.push({)
           type: "simplify-condition')",""
           message: "'Consider extracting complex condition to a separate function'",""
           line: "lineNumber",""
@@ -616,8 +615,8 @@ class variable1 {
         suggestions.push({
           type: "'extract-constants'",""
           message: "'Consider extracting magic strings to constants'",""
-          line: "lineNumber",""
-          priority: "low""
+          line: "lineNumber","")
+          priority: "low"")
         "});""
       }
     }
@@ -647,7 +646,7 @@ process.on(SIGI'N'T, () => {''
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error('Cod'e Improvement Agent failed to start: ', error);''
   process.exit(1);
 
@@ -719,7 +718,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -808,7 +807,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -897,7 +896,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -986,7 +985,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1075,7 +1074,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1164,7 +1163,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1253,7 +1252,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1342,7 +1341,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1431,7 +1430,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1520,7 +1519,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1609,7 +1608,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1698,7 +1697,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1787,7 +1786,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1876,7 +1875,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1965,7 +1964,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2054,7 +2053,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2143,7 +2142,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2232,7 +2231,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2321,7 +2320,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2410,7 +2409,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2499,7 +2498,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2588,7 +2587,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2677,7 +2676,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2766,7 +2765,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2855,7 +2854,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2944,7 +2943,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3033,7 +3032,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3122,7 +3121,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3211,7 +3210,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3300,7 +3299,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3389,7 +3388,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3478,7 +3477,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3567,7 +3566,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3656,7 +3655,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3745,7 +3744,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3834,7 +3833,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3923,7 +3922,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4012,7 +4011,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4101,7 +4100,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4190,7 +4189,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4279,7 +4278,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4368,7 +4367,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4457,7 +4456,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4546,7 +4545,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4635,7 +4634,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4724,7 +4723,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4813,7 +4812,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4902,7 +4901,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4991,7 +4990,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5080,7 +5079,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5169,7 +5168,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5258,7 +5257,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5347,7 +5346,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

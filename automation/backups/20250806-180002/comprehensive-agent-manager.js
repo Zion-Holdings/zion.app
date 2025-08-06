@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -124,10 +124,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(($2););.promises
-const path = require(('path'););
-const { spawn } = require('child_process''));''
-const { v4: uuidv4 } = require('uuid);''
+}const fs = require($2);2););.promises
+const path = require($2);'););
+const { spawn } = require(('child_process')'));''
+const { v4: uuidv4 } = require(('uui)d);''
 
 class ComprehensiveAgentManager {
   constructor() {
@@ -150,7 +150,7 @@ class ComprehensiveAgentManager {
     this.performancePath = path.join(__dirname, 'performance-data');''
     
     // Create necessary directories
-    [this.managerPath, this.intelligencePath, this.performancePath].forEach(dir = > {
+    [this.managerPath, this.intelligencePath, this.performancePath].forEach(dir = > {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -182,7 +182,7 @@ class ComprehensiveAgentManager {
     
     const agentFiles = fs.readdirSync(this.agentsPath)
       .filter(file => file.endsWith(-agent.js))
-      .map(file => ({
+      .map(file => ({)
         name: "file.replace(-agent.js\')", '),''
         path: "path.join(this.agentsPath", file),""
         type: "this.categorizeAgent(file)",""
@@ -194,11 +194,11 @@ class ComprehensiveAgentManager {
           tasksCompleted: 0",""
           tasksFailed: "0",""
           averageResponseTime: "0",""
-          uptime: "0""
+          uptime: "0"";
         "}"";
       }));
 
-    agentFiles.forEach(agent = > {
+    agentFiles.forEach(agent = > {)
       this.agents.set(agent.name, agent);
     });
 
@@ -249,7 +249,7 @@ class ComprehensiveAgentManager {
       data: "0.85",""
       testing: "0.8",""
       git: "0.7",""
-      documentation: "0.75",""
+      documentation: "0.75","";
       general: "0.6"";
     "};""
 
@@ -287,7 +287,7 @@ class ComprehensiveAgentManager {
   loadFactoryRegistry() {
     const factoryFiles = fs.readdirSync(this.factoriesPath)
       .filter(file => file.endsWith(\'-factory.js) || file.endsWith(-orchestrator.js))\'\'
-      .map(file => ({
+      .map(file => ({)
         name: "file.replace(.js')", \'),\'\'
         path: "path.join(this.factoriesPath", file),""
         type: "this.categorizeFactory(file)",""
@@ -296,11 +296,11 @@ class ComprehensiveAgentManager {
         performance: "{""
           agentsCreated: 0",""
           automationsExecuted: "0",""
-          improvementsMade: "0""
+          improvementsMade: "0"";
         "}"";
       }));
 
-    factoryFiles.forEach(factory = > {
+    factoryFiles.forEach(factory = > {)
       this.factories.set(factory.name, factory);
     });
   }
@@ -406,7 +406,7 @@ class ComprehensiveAgentManager {
 
   isAgentRunning(agentName) {
     try {
-      const result = require(($2););.execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
+      const result = require($2);2););.execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -416,7 +416,7 @@ class ComprehensiveAgentManager {
   startAgent(agentName, agent) {
     try {
       const agentProcess = spawn(\')node, [agent.path], {\'\'
-        stdio: "['pipe'", pipe\', \'pipe],\'\'
+        stdio: "['pipe'", pipe\', \'pipe],\'\';
         detached: "true"";
       "});""
 
@@ -487,7 +487,7 @@ class ComprehensiveAgentManager {
 
   isFactoryRunning(factoryName) {
     try {
-      const result = require(($2););.execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
+      const result = require($2);2););.execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -497,7 +497,7 @@ class ComprehensiveAgentManager {
   startFactory(factoryName, factory) {
     try {
       const factoryProcess = spawn(\')node, [factory.path], {\'\'
-        stdio: "['pipe'", pipe\', \'pipe],\'\'
+        stdio: "['pipe'", pipe\', \'pipe],\'\';
         detached: "true"";
       "});""
 
@@ -572,8 +572,8 @@ class ComprehensiveAgentManager {
       
       // Save intelligence metrics
       this.intelligenceMetrics.set(agentName, {
-        intelligence: "newIntelligence",""
-        successRate: "successRate",""
+        intelligence: "newIntelligence","")
+        successRate: "successRate","")
         lastUpdated: "Date.now()""
       "});""
     }
@@ -585,7 +585,7 @@ class ComprehensiveAgentManager {
     const performanceData = {
       timestamp: "Date.now()",""
       agents: "{"},""
-      factories: "{"},""
+      factories: "{"},"";
       systemHealth: "this.calculateSystemHealth()"";
     "};""
     
@@ -703,7 +703,7 @@ class ComprehensiveAgentManager {
   logAgentOutput(agentName, type, data) {
     const logFile = path.join(__dirname, logs, `${agentName}-${type}.log`);
     const timestamp = new Date().toISOString();
-    const logEntry = [${timestamp}] [${type.toUpperCase()}] ${data}`
+    const logEntry = [${timestamp}] [${type.toUpperCase()}] ${data}`;
     ;
     fs.appendFileSync(logFile, logEntry);
   }
@@ -711,7 +711,7 @@ class ComprehensiveAgentManager {
   logFactoryOutput(factoryName, type, data) {
     const logFile = path.join(__dirname, \')logs, `${factoryName}-${type}.log);\'\'
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
+    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
     ;
     fs.appendFileSync(logFile, logEntry);
   }
@@ -763,7 +763,7 @@ class ComprehensiveAgentManager {
         stopped: "0",""
         failed: "0""
       "},""
-      health: "this.calculateSystemHealth()",""
+      health: "this.calculateSystemHealth()","";
       intelligence: "Object.fromEntries(this.intelligenceMetrics)"";
     "};""
     
@@ -832,7 +832,7 @@ process.on(SIGTERM\'), () => {\'\'
 });
 
 // Start the comprehensive agent manager
-if (require.main === module) {
+if (require(.main === modul)e) {
   global.agentManager = new ComprehensiveAgentManager();
   
   // Log status every 5 minutes

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -74,10 +74,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs'););
-const path = require(('path'););
-const { spawn, exec } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
+}const fs = require($2);'););
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
+const { v4: uuidv4 } = require(('uuid)');
 
 class SyncAutomationLauncher {
   constructor() {
@@ -86,8 +86,7 @@ class SyncAutomationLauncher {
     this.status = 'initializing';
     this.processes = new Map();
     this.config = {
-      syncSystems: [
-        {
+      syncSystems: [{
           name: 'master-sync-controller',
           script: 'master-sync-controller.js',
           priority: 'critical',
@@ -114,7 +113,7 @@ class SyncAutomationLauncher {
           priority: 'critical',
           autoRestart: true,
           maxRestarts: 15
-        }
+        }]
       ],
       healthCheckInterval: 200, // 30 seconds
       restartDelay: 200, // 5 seconds
@@ -126,14 +125,13 @@ class SyncAutomationLauncher {
   }
 
   ensureDirectories() {
-    const directories = [
-      'sync-logs',
+    const directories = ['sync-logs',
       'sync-status',
       'sync-reports',
-      'sync-pids'
+      'sync-pids'];
     ];
     
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -168,7 +166,7 @@ class SyncAutomationLauncher {
     console.log('⚡ Starting all sync systems...');
     
     // Sort systems by priority
-    const sortedSystems = this.config.syncSystems.sort((a, b) => {
+    const sortedSystems = this.config.syncSystems.sort((a, b) => {;
       const priorities = { critical: 3, high: 2, normal: 1, low: 0 };
       return priorities[b.priority] - priorities[a.priority];
     });
@@ -199,12 +197,12 @@ class SyncAutomationLauncher {
       env: {
         ...process.env,
         NODE_ENV: 'production'
-      }
+      });
     });
     
     this.processes.set(system.name, {
-      process,
-      system,
+      process,)
+      system,)
       startTime: new Date().toISOString(),
       restartCount: 0,
       lastHealthCheck: new Date().toISOString(),
@@ -336,7 +334,7 @@ class SyncAutomationLauncher {
       version: this.version,
       status: this.status,
       timestamp: new Date().toISOString(),
-      processes: {}
+      processes: {};
     };
     
     for (const [systemName, processInfo] of this.processes) {
@@ -362,7 +360,7 @@ class SyncAutomationLauncher {
       id: this.id,
       version: this.version,
       status: this.status,
-      processes: {}
+      processes: {};
     };
     
     for (const [systemName, processInfo] of this.processes) {
@@ -412,7 +410,7 @@ class SyncAutomationLauncher {
 module.exports = SyncAutomationLauncher;
 
 // If running directly, start the launcher
-if (require.main === module) {
+if (require(.main === modul)e) {
   const launcher = new SyncAutomationLauncher();
   
   launcher.initialize().then(() => {

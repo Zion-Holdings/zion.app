@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs').promises;
-const path = require('path');
-const { glob } = require('glob');
+const fs = require($2);2););.promises;
+const path = require($2);'););
+const { glob } = require(('glob)');
 
 class SyntaxErrorFixer {
   constructor() {
@@ -27,12 +27,12 @@ class SyntaxErrorFixer {
       console.log(`❌ Found errors in ${this.errors.length} files`);
       
       if (this.errors.length > 0) {
-        console.log('\n📋 Files with errors:');
+        console.log('\n📋 Files with errors: ');
         this.errors.forEach(error => console.log(`  - ${error}`));
       }
       
     } catch (error) {
-      console.error('❌ Error during syntax fixing:', error);
+      console.error('❌ Error during syntax fixing: ', error);
     }
   }
 
@@ -49,26 +49,26 @@ class SyntaxErrorFixer {
         hasChanges = true;
       }
 
-      // Fix 2: Fix malformed require statements
-      const malformedRequireRegex = /require\('fs\);''/g;
+      // Fix 2: Fix malformed require(statements)
+      const malformedRequireRegex = /require\('fs)\);''/g;
       if (malformedRequireRegex.test(content)) {
-        content = content.replace(malformedRequireRegex, "require('fs').promises");
+        content = content.replace(malformedRequireRegex, "require(('fs)').promises");
         hasChanges = true;
       }
 
-      // Fix 3: Fix other malformed require statements
-      const malformedRequire2Regex = /require\('fs\);'/g;
+      // Fix 3: Fix other malformed require(statements)
+      const malformedRequire2Regex = /require\('fs)\);'/g;
       if (malformedRequire2Regex.test(content)) {
-        content = content.replace(malformedRequire2Regex, "require('fs').promises");
+        content = content.replace(malformedRequire2Regex, "require(('fs)').promises");
         hasChanges = true;
       }
 
-      // Fix 4: Fix missing quotes in require statements
-      const missingQuotesRegex = /require\(([^'"]+)\)/g;
+      // Fix 4: Fix missing quotes in require(statements)
+      const missingQuotesRegex = /require\(([^'"])+)\)/g;
       if (missingQuotesRegex.test(content)) {
         content = content.replace(missingQuotesRegex, (match, p1) => {
           if (!p1.startsWith("'") && !p1.startsWith('"')) {
-            return `require('${p1.trim()}')`;
+            return `require(('${p1.trim)()}')`;
           }
           return match;
         });
@@ -76,30 +76,30 @@ class SyntaxErrorFixer {
       }
 
       // Fix 5: Fix missing semicolons
-      const missingSemicolonRegex = /(\w+)\s*=\s*require\([^)]+\)\s*(?!;)/g;
+      const missingSemicolonRegex = /(\w+)\s*=\s*require(\([)^)]+\)\s*(?!;)/g;
       if (missingSemicolonRegex.test(content)) {
-        content = content.replace(missingSemicolonRegex, '$1 = require($2);');
+        content = content.replace(missingSemicolonRegex, '$1 = require($2);'););');
         hasChanges = true;
       }
 
       // Fix 6: Fix template literal syntax errors
       const templateLiteralRegex = /return\s*`#!\/usr\/bin\/env node`/g;
       if (templateLiteralRegex.test(content)) {
-        content = content.replace(templateLiteralRegex, "return '#!/usr/bin/env node'");
+        content = content.replace(templateLiteralRegex, "return ''");
         hasChanges = true;
       }
 
       // Fix 7: Fix return statements with shebang
       const returnShebangRegex = /return\s*"#!\/usr\/bin\/env node"/g;
       if (returnShebangRegex.test(content)) {
-        content = content.replace(returnShebangRegex, "return '#!/usr/bin/env node'");
+        content = content.replace(returnShebangRegex, "return ''");
         hasChanges = true;
       }
 
       // Fix 8: Fix malformed template literals
       const malformedTemplateRegex = /return\s*`#!\/usr\/bin\/env node\s*\n/g;
       if (malformedTemplateRegex.test(content)) {
-        content = content.replace(malformedTemplateRegex, "return '#!/usr/bin/env node\\n");
+        content = content.replace(malformedTemplateRegex, "return '\\n");
         hasChanges = true;
       }
 
@@ -130,9 +130,9 @@ class SyntaxErrorFixer {
       }
 
       // Fix 10: Fix missing parentheses
-      const missingParenRegex = /(\w+)\s*=\s*require\s*([^;]+)(?!;)/g;
+      const missingParenRegex = /(\w+)\s*=\s*require(\s*([^;])+)(?!;)/g;
       if (missingParenRegex.test(content)) {
-        content = content.replace(missingParenRegex, '$1 = require($2);');
+        content = content.replace(missingParenRegex, '$1 = require($2);'););');
         hasChanges = true;
       }
 
@@ -229,7 +229,7 @@ class SyntaxErrorFixer {
 
       // Test if the file is now syntactically correct
       try {
-        require('vm').runInNewContext(content, {}, { timeout: 1000 });
+        require(('vm)').runInNewContext(content, {}, { timeout: 1000 });
       } catch (error) {
         this.errors.push(`${filePath}: ${error.message}`);
       }
@@ -247,7 +247,7 @@ class SyntaxErrorFixer {
       summary: {
         totalFixed: this.fixedFiles.length,
         totalErrors: this.errors.length
-      }
+      };
     };
 
     await fs.writeFile('automation/syntax-fix-report.json', JSON.stringify(report, null, 2));
@@ -261,8 +261,10 @@ async function main() {
   await fixer.generateReport();
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   main().catch(console.error);
 }
 
 module.exports = { SyntaxErrorFixer };
+
+}

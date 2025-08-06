@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -25,12 +25,9 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
-const GoogleDocsAutomationLauncher = require('./launch-google-docs-automation');
+};const fs = require($2);'););
+const path = require($2);'););
+const GoogleDocsAutomationLauncher = require($2);'););
 
 async function testGoogleDocsAutomation() {
   console.log('🧪 Testing Google Docs Automation System...\n');
@@ -40,7 +37,7 @@ async function testGoogleDocsAutomation() {
     const testConfig = {
       googleDocsUrl: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
       checkInterval: 3000, // 10 seconds for testing
-      maxRetries: 2,
+      maxRetries: 2,;
       logLevel: 'debug'};
     
     console.log('🚀 Initializing test system...');
@@ -62,7 +59,7 @@ async function testGoogleDocsAutomation() {
     const testInstruction = {
       type: 'content-management',
       title: 'Test Blog Post Creation',
-      instructions: ['Create a test blog post about automation'],
+      instructions: ['Create a test blog post about automation'],;
       timestamp: new Date().toISOString()};
     
     await launcher.addInstruction(testInstruction);
@@ -70,7 +67,7 @@ async function testGoogleDocsAutomation() {
     
     // Test specialized agents
     console.log('\n📋 Test 4: Specialized Agents');
-    const { ContentGenerationAgent, DevelopmentAgent, DeploymentAgent, MarketingAgent } = require('./agents/specialized-task-agents');
+    const { ContentGenerationAgent, DevelopmentAgent, DeploymentAgent, MarketingAgent } = require(('./agents/specialized-task-agents)');
     
     const contentAgent = new ContentGenerationAgent();
     await contentAgent.initialize();
@@ -93,15 +90,15 @@ async function testGoogleDocsAutomation() {
     
     // Test content generation
     const blogPost = await contentAgent.createBlogPost('Test Automation', {
-      tags: ['test', 'automation'],
-      seoKeywords: ['test', 'automation', 'blog'];
+      tags: ['test', 'automation'],;)
+      seoKeywords: ['test', 'automation', 'blog'];)
     });
     console.log('✅ Blog post creation test passed');
     
     // Test development tasks
     const feature = await devAgent.implementFeature('Test Feature', {
-      description: 'A test feature for automation',
-      priority: 'medium';
+      description: 'A test feature for automation',;)
+      priority: 'medium';)
     });
     console.log('✅ Feature implementation test passed');
     
@@ -148,7 +145,7 @@ async function testGoogleDocsAutomation() {
         deployment,
         socialContent,
         report
-      },
+      },;
       summary: 'All tests passed successfully'};
     
     const testReportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/test-report.json');
@@ -158,13 +155,13 @@ async function testGoogleDocsAutomation() {
     console.log(`📄 Test report saved to: ${testReportFile}`);
     
   } catch (error) {
-    console.error('❌ Test failed:', error);
+    console.error('❌ Test failed: ', error);
     process.exit(1);
   }
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   testGoogleDocsAutomation();
 }
 

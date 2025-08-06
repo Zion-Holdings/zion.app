@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,9 +34,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 };
-const result = require(($2););.promises
-const path = require(('path'););
-const { execSync } = require('chil'')d'_process);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { execSync } = require(('chil')')d'_process);''
 
 class AutomationSystem {
   constructor() {
@@ -113,7 +113,7 @@ class AutomationSystem {
 }
 
 // Run the loop
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new ContinuousLoop();
   loop.runLoop();
 

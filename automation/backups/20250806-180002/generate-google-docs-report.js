@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -25,8 +25,8 @@ const memoryOptimization = {
       }
     }
   }
-};const fs = require(('fs-extra'););
-const path = require(('path'););
+};const fs = require($2);'););
+const path = require($2);'););
 
 async function generateGoogleDocsReport() {
   console.log('📊 Generating Google Docs Automation Report...\n');
@@ -35,7 +35,7 @@ async function generateGoogleDocsReport() {
     const report = {
       timestamp: new Date().toISOString(),
       summary: {},
-      details: {},
+      details: {},;
       recommendations: []};
     
     // Gather instruction history
@@ -56,8 +56,8 @@ async function generateGoogleDocsReport() {
       
       // Analyze by instruction type
       const typeAnalysis = {};
-      history.forEach(instruction = > {
-        const type = instruction.type || 'unknown';
+      history.forEach(instruction = > {)
+        const type = instruction.type || 'unknown';)
         if (!typeAnalysis[type]) {
           typeAnalysis[type] = { total: 0, completed: 0, failed: 0 };
         }
@@ -75,14 +75,14 @@ async function generateGoogleDocsReport() {
         title: instruction.title,
         type: instruction.type,
         status: instruction.status,
-        createdAt: instruction.createdAt,
-        completedAt: instruction.completedAt;
+        createdAt: instruction.createdAt,)
+        completedAt: instruction.completedAt;)
       }));
       
       // Performance analysis
       const completedWithTime = completed.filter(c => c.createdAt && c.completedAt);
       if (completedWithTime.length > 0) {
-        const executionTimes = completedWithTime.map(c => {
+        const executionTimes = completedWithTime.map(c => {);
           const start = new Date(c.createdAt);
           const end = new Date(c.completedAt);
           return end - start;
@@ -118,24 +118,24 @@ async function generateGoogleDocsReport() {
     if (report.summary.failedInstructions > 0) {
       report.recommendations.push({
         type: 'error',
-        message: `Address ${report.summary.failedInstructions} failed instructions`,
-        priority: 'high'
+        message: `Address ${report.summary.failedInstructions} failed instructions`,)
+        priority: 'high')
       });
     }
     
     if (report.summary.successRate < 90) {
       report.recommendations.push({
         type: 'performance',
-        message: `Improve success rate from ${report.summary.successRate}% to above 90%`,
-        priority: 'medium'
+        message: `Improve success rate from ${report.summary.successRate}% to above 90%`,)
+        priority: 'medium')
       });
     }
     
     if (report.summary.pendingInstructions > 0) {
       report.recommendations.push({
         type: 'workflow',
-        message: `Process ${report.summary.pendingInstructions} pending instructions`,
-        priority: 'low'
+        message: `Process ${report.summary.pendingInstructions} pending instructions`,)
+        priority: 'low')
       });
     }
     
@@ -168,8 +168,8 @@ async function generateGoogleDocsReport() {
     
     if (report.recommendations.length > 0) {
       console.log('\n💡 Recommendations: ');
-      report.recommendations.forEach(rec = > {
-        const priorityIcon = rec.priority === 'high' ? '🔴' : rec.priority === 'medium' ? '🟡' : '🟢';
+      report.recommendations.forEach(rec = > {)
+        const priorityIcon = rec.priority === 'high' ? '🔴' : rec.priority === 'medium' ? '🟡' : '🟢';)
         console.log(`  ${priorityIcon} ${rec.message}`);
       });
     }
@@ -183,7 +183,7 @@ async function generateGoogleDocsReport() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   generateGoogleDocsReport();
 }
 

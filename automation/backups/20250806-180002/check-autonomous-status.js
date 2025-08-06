@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,8 +28,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -39,9 +39,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -70,13 +70,13 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}const fs = require(('fs'););
-const path = require(('path'););
+}const fs = require($2);'););
+const path = require($2);'););
 
 class AutonomousStatusChecker {
   constructor() {
@@ -89,7 +89,7 @@ class AutonomousStatusChecker {
     const status = {
       agents: this.checkAgents(),
       jobs: this.checkJobs(),
-      system: this.checkSystemHealth(),
+      system: this.checkSystemHealth(),;
       logs: this.checkLogs()};
     
     this.displayStatus(status);
@@ -120,8 +120,8 @@ class AutonomousStatusChecker {
           id: a.id,
           name: a.name,
           type: a.type,
-          status: a.status,
-          lastActive: a.lastActive
+          status: a.status,)
+          lastActive: a.lastActive)
         }))};
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -151,8 +151,8 @@ class AutonomousStatusChecker {
           name: j.name,
           schedule: j.schedule,
           enabled: j.enabled,
-          lastRun: j.lastRun,
-          nextRun: j.nextRun
+          lastRun: j.lastRun,)
+          nextRun: j.nextRun)
         }))};
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -163,7 +163,7 @@ class AutonomousStatusChecker {
     const health = {
       dataDirectory: fs.existsSync(this.dataPath),
       logDirectory: fs.existsSync(path.join(__dirname, 'logs')),
-      agentsDirectory: fs.existsSync(path.join(__dirname, 'agents')),
+      agentsDirectory: fs.existsSync(path.join(__dirname, 'agents')),;
       templatesDirectory: fs.existsSync(path.join(__dirname, 'templates'))};
     
     const isHealthy = Object.values(health).every(h => h);
@@ -183,8 +183,8 @@ class AutonomousStatusChecker {
 
       const logFiles = fs.readdirSync(logsPath).filter(f => f.endsWith('.log'));
       const recentLogs = logFiles.slice(-5).map(file => ({
-        name: file,
-        size: fs.statSync(path.join(logsPath, file)).size,
+        name: file,)
+        size: fs.statSync(path.join(logsPath, file)).size,;
         modified: fs.statSync(path.join(logsPath, file)).mtime;
       }));
 
@@ -213,8 +213,8 @@ class AutonomousStatusChecker {
       if (status.agents.agents.length > 0) {
         console.log('\n   Agent Details: ');
         status.agents.agents.forEach(agent = > {
-          const statusIcon = agent.status === 'running' ? '✅' : ;
-                           agent.status === 'stopped' ? '⏸️' : '❌';
+          const statusIcon = agent.status === 'running' ? '✅' : ;)
+                           agent.status === 'stopped' ? '⏸️' : '❌';)
           console.log(`     ${statusIcon} ${agent.name} (${agent.type})`);
         });
       }
@@ -233,8 +233,8 @@ class AutonomousStatusChecker {
       
       if (status.jobs.jobs.length > 0) {
         console.log('\n   Job Details: ');
-        status.jobs.jobs.forEach(job = > {
-          const statusIcon = job.enabled ? '✅' : '⏸️';
+        status.jobs.jobs.forEach(job = > {)
+          const statusIcon = job.enabled ? '✅' : '⏸️';)
           console.log(`     ${statusIcon} ${job.name} (${job.schedule})`);
         });
       }
@@ -259,7 +259,7 @@ class AutonomousStatusChecker {
       console.log(`   Total Log Files: ${status.logs.total}`);
       if (status.logs.recent.length > 0) {
         console.log('\n   Recent Logs: ');
-        status.logs.recent.forEach(log = > {
+        status.logs.recent.forEach(log = > {)
           const sizeKB = Math.round(log.size / 1024);
           console.log(`     📄 ${log.name} (${sizeKB}KB)`);
         });
@@ -281,7 +281,7 @@ class AutonomousStatusChecker {
       // Generate summary
       const summary = {
         timestamp: new Date().toISOString(),
-        overall: this.calculateOverallStatus(status),
+        overall: this.calculateOverallStatus(status),;
         recommendations: this.generateRecommendations(status)};
 
       console.log('\n📋 SUMMARY: ');
@@ -342,7 +342,7 @@ class AutonomousStatusChecker {
 }
 
 // Run the status checker
-if (require.main === module) {
+if (require(.main === modul)e) {
   const checker = new AutonomousStatusChecker();
   checker.run().catch(console.error);
 }

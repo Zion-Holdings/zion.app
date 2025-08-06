@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require($2);2););.promises
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -181,7 +181,7 @@ class AutomationSystem {
           {
             id: "\'marketplace-features\'",""
             content: "\'AI-powered matching algorithms", secure blockchain transactions, global network connectivity, 99.9% transaction success rate.'''
-          }
+          }]
         ]
       };
     }
@@ -189,7 +189,7 @@ class AutomationSystem {
 
   extractMarketplaceFeatures() {
     const result = [];
-    this.chatgptMemory.memories.forEach(memory = > {
+    this.chatgptMemory.memories.forEach(memory = > {)
       if (memory.id === marketplace-features) {;
         features.push(...memory.content.split(', ));''
       }
@@ -208,16 +208,14 @@ const variable1: NextPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(\'all)\'\'
   const [searchQuery, setSearchQuery] = useState(\'))\'\'
 
-  const result = [
-    { id: "all'", name: "\'All Services\'", icon: "🌟\' "},""
+  const result = [{ id: "all'", name: "\'All Services\'", icon: "🌟\' "},""
     { id: "\'it-services", name: "IT\' Services", icon: "\'💻 "},""
     { id: "ai-talent", name: "\'A\'I Talent\'", icon: "\'🤖 "},""
     { id: "equipme\'nt\'", name: "\'Equipment", icon: "⚙️ "},""
-    { id: "\'innovation", name: "Innovati\'o\'n", icon: "\'🚀 "}""
+    { id: "\'innovation", name: "Innovati\'o\'n", icon: "\'🚀 "}""]
   ]
 
-  const variable1 = [
-    {
+  const variable1 = [{
       id: "1",""
       title: "AI Development Services",""
       category: "\'ai-tale\'nt\'",""
@@ -256,18 +254,17 @@ const variable1: NextPage = () => {
       rating: "4.9",""
       provider: "\'BlockChain Solutions\'",""
       image: "/images/blockchain.jpg\'\'\'
-    "}""
+    "}""]
   ]
 
-  const variable1 = services.filter(service => {
-    const variable1 = selectedCategory === \'all || service.category === selectedCategory\'\'
+  const variable1 = services.filter(service => {)
+    const variable1 = selectedCategory === \'all || service.category === selectedCategory\'\')
     const variable1 = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                        service.description.toLowerCase().includes(searchQuery.toLowerCase())
     return categoryMatch && searchMatch
   })
 
-  return (
-    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
+  return(<div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>Marketplace - Zion</title></div>
         <meta name=description content="Discover AI-powered services, IT solutions, and innovative technologies on Zion marketplace" /></div>""
@@ -275,7 +272,7 @@ const variable1: NextPage = () => {
 
       {/* Header */}</div>
       <div className="bg-black/20" backdrop-blur-md border-b border-white/10></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-6></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-6></div>""
           <div className="flex justify-between items-center></div>""
             <Link href=/" className="text-2xl" font-bold text-white></div>""
               <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>""
@@ -284,9 +281,9 @@ const variable1: NextPage = () => {
               <input
                 type=text"""
                 placeholder=Search services...
-                value={searchQuery}
+                value={searchQuery})
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
               /></div>
               <Link href=/auth/login" className="text-gray-300" hover:text-white px-3 py-2 rounded-md text-sm font-medium>""
                 Login</div>
@@ -297,7 +294,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Hero Section */}</div>
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-12></div>""
+      <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-12></div>""
         <div className="text-center></div>""
           <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6">""
             AI-Powered</div>
@@ -308,7 +305,7 @@ const variable1: NextPage = () => {
             Powered by advanced AI matching algorithms and secure blockchain technology.</div>
           </p></div>
           <div className="flex justify-center space-x-4></div>""
-            <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
+            <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-purple-200/25>""
               Start Exploring</div>
             </Link></div>
             <button className="border" border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300>""
@@ -319,7 +316,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Categories */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8></div>""
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8></div>""
         <div className="flex" flex-wrap justify-center gap-4">""
           {categories.map((category) => (</div>
             <button
@@ -328,7 +325,7 @@ const variable1: NextPage = () => {
               className="{\px-6" py-3 rounded-lg font-medium transition-all duration-300 \${""
                 selectedCategory === category.id
                   ? bg-gradient-to-\'r\' from-purple-600 to-pink-600 text-white shadow-lg\'\'
-                  : \'bg-whit\'e/10 text-gray-300 hover:text-white hover:bg-white/20\'\'\'
+                  : \'bg-whit\'e/10 text-gray-300 hover: text-white hover:bg-white/20\'\'\'
               }\}
             ></div>
               <span className="mr-2>{category.icon}</span>""
@@ -339,10 +336,10 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Services Grid */}</div>
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>""
+      <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-8"></div>""
         <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>""
           {filteredServices.map((service) => (</div>
-            <div key={service.id} className="bg-white/5" backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-200/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-200/25></div>""
+            <div key={service.id} className="bg-white/5" backdrop-blur-md rounded-xl p-6 border border-white/10 hover: border-purple-200/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-200/25></div>""
               <div className="h-48 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-lg mb-4 flex items-center justify-center></div>""
                 <span className="text-4xl"">🛠️</span></div>""
               </div></div>
@@ -358,7 +355,7 @@ const variable1: NextPage = () => {
                 <span className="text-purple-400 font-semibold>{service.price}</span></div>""
                 <span className="text-gray-400" text-sm">{service.provider}</span></div>""
               </div></div>
-              <button className="w-full" mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-medium transition-all duration-300>""
+              <button className="w-full" mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-medium transition-all duration-300>""
                 View Details</div>
               </button></div>
             </div>
@@ -367,7 +364,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Features Section */}</div>
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+      <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
         <div className="text-center mb-12></div>""
           <h2 className="text-3xl" font-bold text-white mb-4">Why Choose Zion?</h2></div>""
           <p className="text-gray-300" max-w-2xl mx-auto>""
@@ -399,7 +396,7 @@ const variable1: NextPage = () => {
         </div></div>
       </div></div>
     </div>
-  )
+  );
 };
 ;}
 export default Marketplace
@@ -413,11 +410,11 @@ export default Marketplace
   generateAboutPage() {
     const result = }
 import React from \'react\'
-import React from \'react\'
+import React from \'react\';
 import React from \'react\';
 ;
 const variable1: NextPage = () => {
-  return (</div>
+  return(</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>About - Zion</title></div>
@@ -426,7 +423,7 @@ const variable1: NextPage = () => {
 
       {/* Navigation */}</div>
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10></div>""
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8"></div>""
+        <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8"></div>""
           <div className="flex" justify-between h-16></div>""
             <div className="flex" items-center></div>""
               <Link href="/" className="text-2xl" font-bold text-white></div>""
@@ -449,7 +446,7 @@ const variable1: NextPage = () => {
       </nav>
 
       {/* Hero Section */}</div>
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+      <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
         <div className="text-center></div>""
           <h1 className="text-4xl" md:text-6xl font-bold text-white mb-6">""
             Revolutionizing the</div>
@@ -463,7 +460,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Mission Section */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
         <div className="grid" grid-cols-1 lg:grid-cols-2 gap-12 items-center"></div>""
           <div></div>
             <h2 className="text-3xl" font-bold text-white mb-6>Our Mission</h2></div>""
@@ -478,7 +475,7 @@ const variable1: NextPage = () => {
               and every partnership drives real business growth.</div>
             </p></div>
             <div className="flex" space-x-4"></div>""
-              <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300>""
+              <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300>""
                 Explore Marketplace</div>
               </Link></div>
               <Link href=/auth/signup" className="border" border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300>""
@@ -519,7 +516,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Stats Section */}</div>
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+      <div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
         <div className="grid" grid-cols-1 md:grid-cols-4 gap-8></div>""
           <div className="text-center></div>""
             <div className="text-4xl" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">""
@@ -549,7 +546,7 @@ const variable1: NextPage = () => {
       </div>
 
       {/* Technology Section */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16></div>""
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-16></div>""
         <div className="text-center" mb-12"></div>""
           <h2 className="text-3xl" font-bold text-white mb-4>Powered by Advanced Technology</h2></div>""
           <p className="text-gray-300" max-w-2xl mx-auto>""
@@ -580,7 +577,7 @@ const variable1: NextPage = () => {
           </div></div>
         </div></div>
       </div></div>
-    </div>
+    </div>)
   )
 };
 ;}
@@ -595,7 +592,7 @@ export default About
   generateAuthPages() {
     // Login page
     const result = "}""
-import React from \'react\'
+import React from \'react\';
 import React from \'react\';
 import Link from next/link;}
 import React from \'react\'
@@ -604,13 +601,13 @@ const variable1: NextPage = () => {
   const [email, setEmail] = useState(\')\'\'
   const [password, setPassword] = useState()
 
-  const result = (e: "React.FormEvent) => {""
+  const result = () => {""
     e.preventDefault()
     // Handle login logic
-    this.log(Login attempt:", { email, password }, 'info')""
+    this.log(Login attempt: ", { email, password }, 'info')""
   }
 
-  return (</div>
+  return(</div>
     <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center></div>""
       <Head></div>
         <title>Login - Zion</title></div>
@@ -635,11 +632,11 @@ const variable1: NextPage = () => {
               <input
                 type=email"""
                 id=email
-                value={email}
+                value={email})
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                 placeholder=Enter your email"""
-                required
+                require(d
               /></div>
             </div>
 </div>
@@ -650,11 +647,11 @@ const variable1: NextPage = () => {
               <input
                 type=password"""
                 id=password
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                value={password})
+                onChange={()e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                 placeholder=Enter your password"""
-                required
+                require(d
               /></div>
             </div>
 </div>
@@ -667,9 +664,9 @@ const variable1: NextPage = () => {
           </form>
 </div>
           <div className="mt-6" text-center"></div>""
-            <p className="text-gray-300>"""
-              Don\')t\' have an account?{ \'}</div>\'\'
-              <Link href=/auth/signup className="text-purple-400 hover:text-purple-300>""
+            <p className="text-gray-300>""")
+              Don\)')t\' have an account?{ \'}</div>\'\'
+              <Link href=/auth/signup className="text-purple-400 hover: text-purple-300>""
                 Sign up</div>
               </Link></div>
             </p></div>
@@ -677,7 +674,7 @@ const variable1: NextPage = () => {
         </div></div>
       </div></div>
     </div>
-  )
+  );
 };
 ;}
 export default Login
@@ -687,33 +684,33 @@ export default Login
     const result = "}""
 import React from \'react\'
 import React from \'react\'
-import React from \'react\'
+import React from \'react\';
 import React from \'react\';
 ;
 const variable1: NextPage = () => {
   const [formData, setFormData] = useState({
     firstName: "'",""
-    lastName: ,
+    lastName:  ,
     email: "\'\'",""
     password: "\'",""
-    confirmPassword: ,
-    userType: "\'busine\'ss\'\'\'
+    confirmPassword:  ,
+    userType: "\'busine\'ss\'\'\')
   "})""
 </div>
-  const result = (e: "React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {""
+  const result = () => {""
     setFormData({
       ...formData",""
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value)
     })
   }
 
-  const variable1 = (e: "React.FormEvent) => {""
+  const variable1 = () => {""
     e.preventDefault()
     // Handle signup logic
-    this.log(\'Signup attempt:", formData, 'info')""
+    this.log(\'Signup attempt: ", formData, 'info')""
   }
 
-  return (</div>
+  return(</div>
     <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center py-8></div>""
       <Head></div>
         <title>Sign Up - Zion</title></div>
@@ -742,9 +739,9 @@ const variable1: NextPage = () => {
                   name=firstName
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                   placeholder=First name"""
-                  required
+                  require(d
                 /></div>
               </div></div>
               <div></div>
@@ -757,7 +754,7 @@ const variable1: NextPage = () => {
                   name="lastName"""
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                  className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                   placeholder=Last name
                   required
                 /></div>
@@ -774,7 +771,7 @@ const variable1: NextPage = () => {
                 name=email
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                 placeholder=Enter your email"""
                 required
               /></div>
@@ -789,7 +786,7 @@ const variable1: NextPage = () => {
                 name=userType
                 value={formData.userType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-200""
               ></div>
                 <option value=business">Business Owner</option></div>""
                 <option value=provider>Service Provider</option></div>
@@ -807,7 +804,7 @@ const variable1: NextPage = () => {
                 name="password"""
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                 placeholder=Create a password
                 required
               /></div>
@@ -823,7 +820,7 @@ const variable1: NextPage = () => {
                 name=confirmPassword
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-200""
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-200""
                 placeholder=Confirm your password"""
                 required
               /></div>
@@ -838,9 +835,9 @@ const variable1: NextPage = () => {
           </form>
 </div>
           <div className="mt-6" text-center"></div>""
-            <p className="text-gray-300>"""
-              Already have an account?{ \')}</div>\'\'
-              <Link href=/auth/login className="text-purple-400 hover:text-purple-300">""
+            <p className="text-gray-300>""")
+              Already have an account?{ \)')}</div>\'\'
+              <Link href=/auth/login className="text-purple-400 hover: text-purple-300">""
                 Sign in</div>
               </Link></div>
             </p></div>
@@ -848,7 +845,7 @@ const variable1: NextPage = () => {
         </div></div>
       </div></div>
     </div>
-  )
+  );
 };
 ;}
 export default Signup

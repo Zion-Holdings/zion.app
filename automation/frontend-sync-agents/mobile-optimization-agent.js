@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,19 +106,19 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require($2);2););.promises
+const path = require($2);'););
 
 class variable1 {
   constructor() {
@@ -162,7 +162,7 @@ class variable1 {
       
       // Check for proper viewport meta tag
       if (!content.includes(viewport) && !content.includes('width=device-width)) {''
-        this.issues.push({
+        this.issues.push({)
           type: "')viewport_missing'",""
           file: "page",""
           severity: "high",""
@@ -170,8 +170,8 @@ class variable1 {
         "});""
         
         this.fixes.push({
-          type: "'add_viewport'",""
-          file: "page",""
+          type: "'add_viewport'","")
+          file: "page","")
           fix: "this.generateViewportFix()""
         "});""
       }
@@ -185,9 +185,8 @@ class variable1 {
       const result = fs.readFileSync(page, utf8);
       
       // Check for small touch targets
-      const result = [
-        'px'-1', 'px-'2', py'-'1, 'py'-2',''
-        'w-'6', w'-'8, h-6', 'h-'8'''
+      const result = ['px'-1', 'px-'2', py'-'1, 'py'-2',''
+        'w-'6', w'-'8, h-6', 'h-'8'''];
       ];
       
       const result = smallTouchTargets.some(target => content.includes(target));
@@ -196,13 +195,13 @@ class variable1 {
         this.issues.push({
           type: "small_touch_targets",""
           file: "page",""
-          severity: "'medium'",""
-          description: "'Small touch targets detected - may be difficult on mobile'''
+          severity: "'medium'","")
+          description: "'Small touch targets detected - may be difficult on mobile''')
         "});""
         
         this.fixes.push({
-          type: "fix_touch_targets",""
-          file: "page",""
+          type: "fix_touch_targets","")
+          file: "page","")
           fix: "this.generateTouchTargetFix(content)""
         "});""
       }
@@ -216,15 +215,14 @@ class variable1 {
       const result = fs.readFileSync(page, 'ut'f8');''
       
       // Check for mobile navigation patterns
-      const result = [
-        'lg':hidden', md:hidden, 'mobile-togg'le',''
-        'sidebar-container, mobile-me'n'u''
+      const result = ['lg':hidden', md: hidden, 'mobile-togg'le',''
+        'sidebar-container, mobile-me'n'u''];
       ];
       
       const result = mobileNavPatterns.some(pattern => content.includes(pattern));
       
       if (!hasMobileNav && content.includes('navigation)) {''
-        this.issues.push({
+        this.issues.push({)
           type: "')mobile_navigation_missing'",""
           file: "page",""
           severity: "high",""
@@ -232,8 +230,8 @@ class variable1 {
         "});""
         
         this.fixes.push({
-          type: "'add_mobile_navigation'",""
-          file: "page",""
+          type: "'add_mobile_navigation'","")
+          file: "page","")
           fix: "this.generateMobileNavigationFix()""
         "});""
       }
@@ -247,9 +245,8 @@ class variable1 {
       const result = fs.readFileSync(page, utf8);
       
       // Check for responsive breakpoints
-      const result = [
-        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,""
-        'grid-cols'-1', 'flex-col, text-'s'm''
+      const result = ['s'm: "'", md':', lg:, 'x'l: "'", 2xl:,""
+        'grid-cols'-1', 'flex-col, text-'s'm''];
       ];
       
       const result = responsiveClasses.some(cls => content.includes(cls));
@@ -258,13 +255,13 @@ class variable1 {
         this.issues.push({
           type: "'responsive_design_missing'",""
           file: "page",""
-          severity: "'medium",""
-          description: "Missing' responsive design classes''
+          severity: "'medium","")
+          description: "Missing' responsive design classes'')
         "});""
         
         this.fixes.push({
-          type: "'add_responsive_design'",""
-          file: "page",""
+          type: "'add_responsive_design'","")
+          file: "page","")
           fix: "this.generateResponsiveDesignFix(content)""
         "});""
       }
@@ -278,9 +275,8 @@ class variable1 {
       const result = fs.readFileSync(page, 'utf'8');''
       
       // Check for performance issues
-      const result = [
-        animate-pulse, 'animate-sp'in', 'blur-'3xl',''
-        backdrop-blur, 'filt'er'''
+      const result = [animate-pulse, 'animate-sp'in', 'blur-'3xl',''
+        backdrop-blur, 'filt'er'''];
       ];
       
       const result = performanceIssues.some(issue => content.includes(issue));
@@ -289,13 +285,13 @@ class variable1 {
         this.issues.push({
           type: "'mobile_performance_issue'",""
           file: "page",""
-          severity: "low",""
-          description: "'Heavy animations detected - may impact mobile performance'''
+          severity: "low","")
+          description: "'Heavy animations detected - may impact mobile performance''')
         "});""
         
         this.fixes.push({
-          type: "'optimize_performance'",""
-          file: "page",""
+          type: "'optimize_performance'","")
+          file: "page","")
           fix: "this.generatePerformanceFix(content)""
         "});""
       }
@@ -318,7 +314,7 @@ class variable1 {
       'w-'6': w'-'12,''
       w-8': 'w-'12',''
       h'-'6: h-12',''
-      'h-'8': h'-'12''
+      'h-'8': h'-'12'';
     };
     
     return {
@@ -331,7 +327,7 @@ class variable1 {
     return {
       navigation: """"
         {/* Mobile Navigation */"}</div>""
-        <div className="lg:hidden" fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>""
+        <div className="lg: hidden" fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>""
           <div className="flex" justify-around items-center py-2></div>""
             <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white></div>""
               <Home className="w-5" h-5" /></div>""
@@ -353,13 +349,12 @@ class variable1 {
   }
 
   generateResponsiveDesignFix(content) {
-    const result = [
-      container-responsive,
-      'gri'd grid-cols-1 md:grid-cols-2 lg:grid-cols-3',''
-      'flex' flex-col sm:flex-row',''
-      text-sm sm:text-base lg:text-lg,
-      'px'-4 sm:px-6 lg:px-8',''
-      'py-'4 sm:py-6 lg:py-8'''
+    const result = [container-responsive,
+      'gri'd grid-cols-1 md: grid-cols-2 lg:grid-cols-3',''
+      'flex' flex-col sm: flex-row',''
+      text-sm sm: text-base lg:text-lg,
+      'px'-4 sm: px-6 lg:px-8',''
+      'py-'4 sm: py-6 lg:py-8'''];
     ];
     
     return {
@@ -374,7 +369,7 @@ class variable1 {
         'reduce-animatio'ns'",""
         'lazy-load-images,''
         optimize-c's's,''
-        'minimize-javascri'pt'''
+        'minimize-javascri'pt''']
       ],
       description: "'Optimize for mobile performance'''
     "};""
@@ -383,10 +378,10 @@ class variable1 {
   getPages() {
     const result = [];
     
-    const result = (dir) => {
+    const result = () => {;
       const variable1 = fs.readdirSync(dir);
       
-      files.forEach(file => {
+      files.forEach(file => {)
         const filePath = path.join(dir, file);
         const result = fs.statSync(filePath);
         
@@ -452,8 +447,7 @@ class variable1 {
       case 'fix'_touch_targets':''
         content = this.applyTouchTargetFix(content, fix.fix);
         break;
-      case add_mobile_navigation:
-        content = this.applyMobileNavigationFix(content, fix.fix);
+      case add_mobile_navigation: content = this.applyMobileNavigationFix(content, fix.fix);
         break;
       case 'ad'd_responsive_design':''
         content = this.applyResponsiveDesignFix(content, fix.fix);
@@ -496,12 +490,12 @@ class variable1 {
 
   applyResponsiveDesignFix(content, fix) {
     // Add responsive classes to key elements
-    content = content.replace(
+    content = content.replace()
       /className="([^]*container[^]*)/g,""
       'className'=variable1 container-responsive"'''
     );
     
-    content = content.replace(
+    content = content.replace()
       /className="([^]*text-[^]*)/g,""
       className="variable1" text-responsive-lg"""
     );
@@ -511,14 +505,12 @@ class variable1 {
 
   applyPerformanceFix(content, fix) {
     // Reduce animations on mobile
-    content = content.replace(
-      /animate-pulse/g,
-      'animate-puls'e md:animate-pulse'''
+    content = content.replace(/animate-pulse/g,)
+      'animate-puls'e md: animate-pulse''')
     );
     
-    content = content.replace(
-      /blur-3xl/g,
-      'blur-xl' md:blur-3xl'''
+    content = content.replace(/blur-3xl/g,)
+      'blur-xl' md: blur-3xl''')
     );
     
     return content;

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,29 +106,28 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 
 // Function to fix layout conflicts in a file;
-function fixLayoutConflicts(filePath) {
+function fixLayoutConflicts() {
   try {
     let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     let variable1 = false;
 
     // Replace min-h-screen bg-gradient patterns that conflict with the global layout
-    const variable1 = [
-      {
+    const variable1 = [{]
         regex: "/<div className="min-h-screen bg-gradient-to-br from-[^]+>/g",</div>""
         replacement: """<div className="relative z-10 container-responsive py-8">'''
       "},""
@@ -139,10 +138,10 @@ function fixLayoutConflicts(filePath) {
       {</div>
         regex: "/<div className=""min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100>/g",</div>""
         replacement: ""<div className="relative" z-10 container-responsive py-8">'''
-      "}""
+      "}"";
     ];
 
-    patterns.forEach(pattern => {
+    patterns.forEach(pattern => {)
       if (content.match(pattern.regex)) {
         content = content.replace(pattern.regex, pattern.replacement);
         modified = true;
@@ -151,16 +150,15 @@ function fixLayoutConflicts(filePath) {
 
     // Add background effects if they don't' exist''
     if (modified && !content.includes('fixe'd' inset-0 z-0')) {''
-      const variable1 = 
-        {/* Background Effects */}</div>
+      const variable1 = {/* Background Effects */}</div>
         <div className=""fixed inset-0 z-0></div>""
           <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>""
-          <div className=""absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10></div></div>""
-        </div>
+          <div className=""absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10></div></div>""
+        </div>;
       ;
       
       // Insert background effects after the opening div
-      content = content.replace(</div>
+      content = content.replace(</div>)
         /(<div className="relative z-10 container-responsive py-8">)/,""
         variable1\n        ${backgroundEffects}
       );
@@ -185,7 +183,7 @@ function processPagesDirectory() {
   const variable1 = fs.readdirSync(pagesDir, { withFileTypes: "true "});""
   let variable1 = 0;
 
-  files.forEach(file => {
+  files.forEach(file => {)
     if (file.isFile() && (file.name.endsWith('.tsx') || file.name.endsWith('.ts'))) {''
       const variable1 = path.join(pagesDir, file.name);
       

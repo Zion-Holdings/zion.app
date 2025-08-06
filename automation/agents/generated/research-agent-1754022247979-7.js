@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const result = require(('fs-extra););''
-const path = require(('path'););
+const result = require($2);a););''
+const path = require($2);'););
 
 class Mailchimp’sResearchAgentAgent {
     constructor() {
@@ -36,10 +36,9 @@ class Mailchimp’sResearchAgentAgent {
         this.name = 'Mailchimp'’s Research Agent'''
         this.type = research;
         this.focus = 'Mailchim'p’s'''
-        this.capabilities = [
-  'web crawling",""
+        this.capabilities = ['web crawling",""
   data analysis,
-  "trend identification"""
+  "trend identification"""]
 ];
         this.output = 'market' insights'''
         this.frequency = daily;
@@ -47,7 +46,7 @@ class Mailchimp’sResearchAgentAgent {
   'sources: "[""
     web crawlers"",""
     "API endpoints,""
-    data feeds"""
+    data feeds"""]
   ],
   "parameters: "{""
     area": "Mailchimp’s",""
@@ -97,14 +96,14 @@ class Mailchimp’sResearchAgentAgent {
             timestamp: "new Date().toISOString()",""
             agentId: "this.agentId",""
             focus: "this.focus",""
-            data: "[]""
+            data: "[]"";
         "};""
         
         // Simulate data collection
         for (let variable1 = 0; i < 10; i++) {
             data.data.push({
-                id: ""${this.agentId"}-data-${i},""
-                content: "Sample data for ${this.focus"} - ${i + 1}",""
+                id: ""${this.agentId"}-data-${i},"")
+                content: "Sample data for ${this.focus"} - ${i + 1}","")
                 source: "this.configuration.sources[Math.floor(Math.random() * this.configuration.sources.length)]",""
                 collectedAt: "new Date().toISOString()""
             "});""
@@ -120,7 +119,7 @@ class Mailchimp’sResearchAgentAgent {
             ...data,
             processedAt: "new Date().toISOString()",""
             insights: "[]",""
-            metrics: "{"}""
+            metrics: "{"}"";
         };
         
         // Generate insights based on agent type
@@ -136,8 +135,8 @@ class Mailchimp’sResearchAgentAgent {
         data.forEach((item, index) => {
             insights.push({
                 id: "insight-${index"}",""
-                type: "'analysis",""
-                content: ""Insight from ${item.content"},""
+                type: "'analysis","")
+                content: ""Insight from ${item.content"},"")
                 confidence: "Math.random() * 0.5 + 0.5",""
                 relevance: "Math.random() * 0.5 + 0.5""
             "});""
@@ -164,7 +163,7 @@ class Mailchimp’sResearchAgentAgent {
             focus: "this.focus",""
             output: "this.output",""
             data: "processedData",""
-            recommendations: "this.generateRecommendations(processedData)""
+            recommendations: "this.generateRecommendations(processedData)"";
         "};""
         
         return output;
@@ -178,8 +177,8 @@ class Mailchimp’sResearchAgentAgent {
                 recommendations.push({
                     id: ""rec-${index"},""
                     type: "high-confidenc'e",""
-                    action: "Act on ${insight.content"}",""
-                    priority: "'High'",""
+                    action: "Act on ${insight.content"}","")
+                    priority: "'High'","")
                     reasoning: ""High confidence insight: ${insight.confidence.toFixed(2)"}""
                 });
             }
@@ -199,14 +198,14 @@ class Mailchimp’sResearchAgentAgent {
 module.exports = Mailchimp’sResearchAgentAgent;
 
 // Auto-run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new Mailchimp’sResearchAgentAgent();
     agent.startAgent()
         .then(() => {
             console.log(✅ ${agent.name} completed successfully");""
             process.exit(0);
         })
-        .catch(error => {
+        .catch(error => {)
             console.error("❌ ${agent.name} failed: ", error);""
             process.exit(1);
         });

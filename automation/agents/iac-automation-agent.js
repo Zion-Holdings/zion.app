@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -141,7 +141,7 @@ class Iac-automationAutomationAgent {
       trends: "this.analyzeTrends(data)",""
       opportunities: "this.identifyOpportunities(data)",""
       recommendations: "this.generateRecommendations(data)",""
-      predictions: "this.makePredictions(data)""
+      predictions: "this.makePredictions(data)"";
     "};""
     return analysis;
   }
@@ -161,16 +161,16 @@ class Iac-automationAutomationAgent {
   generateRecommendations(data) {
     return data.map(item => ({
       action: "item.recommendedAction",""
-      priority: "item.priority",""
-      impact: "item.expectedImpact""
+      priority: "item.priority","")
+      impact: "item.expectedImpact"")
     "}));""
   }
 
   makePredictions(data) {
     return data.map(item => ({
       prediction: "item.predictedOutcome",""
-      confidence: "item.confidence",""
-      timeframe: "item.timeframe""
+      confidence: "item.confidence","")
+      timeframe: "item.timeframe"")
     "}));""
   }
 
@@ -193,7 +193,7 @@ class Iac-automationAutomationAgent {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -202,7 +202,7 @@ class Iac-automationAutomationAgent {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -216,7 +216,7 @@ class Iac-automationAutomationAgent {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -233,16 +233,15 @@ class Iac-automationAutomationAgent {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'infrastructure-reports),''
       path.join(this.reportsDir, validation-repor't's),''
       path.join(this.reportsDir, 'deployment-repor'ts'),''
       path.join(this.reportsDir, 'security-reports),''
-      path.join(this.reportsDir, cost-analys'i's)''
+      path.join(this.reportsDir, cost-analys'i's)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -283,7 +282,7 @@ class Iac-automationAutomationAgent {
         securityConfig: "{"},""
         costAnalysis: "{"},""
         complianceStatus: "{"},""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Discover infrastructure files
@@ -342,7 +341,7 @@ class Iac-automationAutomationAgent {
     const result = [.tf'), '.yaml, '.yml', .json', '.hcl];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -373,10 +372,9 @@ class Iac-automationAutomationAgent {
   }
 
   containsInfrastructureCode(content) {
-    const result = [
-      terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''
+    const result = [terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''
       resour'c'e, 'provid'er', 'variable, outp'u't, 'modu'le',''
-      'networking, securi't'y, 'compu'te', 'storage, databa's'e''
+      'networking, securi't'y, 'compu'te', 'storage, databa's'e''];
     ];
     
     return iacKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -389,7 +387,7 @@ class Iac-automationAutomationAgent {
       provider: "'unknown",""
       resources: "[]",""
       variables: "[]",""
-      outputs: "[]""
+      outputs: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -436,8 +434,8 @@ class Iac-automationAutomationAgent {
     while ((match = resourceRegex.exec(content)) !== null) {
       resources.push({
         type: "match[1]",""
-        name: "match[2]",""
-        provider: "'terraform'''
+        name: "match[2]","")
+        provider: "'terraform''')
       "});""
     }
     
@@ -446,8 +444,8 @@ class Iac-automationAutomationAgent {
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
         type: "match[1]",""
-        name: "'kubernetes-resource",""
-        provider: "kubernete's''
+        name: "'kubernetes-resource","")
+        provider: "kubernete's'')
       "});""
     }
     
@@ -463,8 +461,8 @@ class Iac-automationAutomationAgent {
     
     while ((match = varRegex.exec(content)) !== null) {
       variables.push({
-        name: "match[1]",""
-        type: "'terraform'''
+        name: "match[1]","")
+        type: "'terraform''')
       "});""
     }
     
@@ -480,8 +478,8 @@ class Iac-automationAutomationAgent {
     
     while ((match = outputRegex.exec(content)) !== null) {
       outputs.push({
-        name: "match[1]",""
-        type: "'terraform''
+        name: "match[1]","")
+        type: "'terraform'')
       "});""
     }
     
@@ -495,7 +493,7 @@ class Iac-automationAutomationAgent {
       networking: "[]",""
       database: "[]",""
       security: "[]",""
-      totalResources: "0""
+      totalResources: "0"";
     "};""
     
     try {
@@ -531,7 +529,7 @@ class Iac-automationAutomationAgent {
       storage: "[]",""
       networking: "[]",""
       database: "[]",""
-      security: "[]""
+      security: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -566,7 +564,7 @@ class Iac-automationAutomationAgent {
       iamPolicies: "[]",""
       encryption: "[]",""
       compliance: "[]",""
-      vulnerabilities: "[]""
+      vulnerabilities: "[]"";
     "};""
     
     try {
@@ -597,7 +595,7 @@ class Iac-automationAutomationAgent {
       iamPolicies: "[]",""
       encryption: "[]",""
       compliance: "[]",""
-      vulnerabilities: "[]""
+      vulnerabilities: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -623,7 +621,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for vulnerabilities
-    if (lowerContent.includes(')0.0.0/0) && lowerContent.includes('cidr_blocks)) {''
+    if (lowerContent.includes(')0.0/0) && lowerContent.includes('cidr_blocks)) {''
       securityInfo.vulnerabilities.push(')open-security-group);''
     }
     
@@ -635,7 +633,7 @@ class Iac-automationAutomationAgent {
       estimatedMonthlyCost: "0",""
       costBreakdown: "{"},""
       optimizationOpportunities: "[]",""
-      costTrends: "[]""
+      costTrends: "[]"";
     "};""
     
     try {
@@ -653,8 +651,8 @@ class Iac-automationAutomationAgent {
       if (costs.estimatedMonthlyCost > 200) {
         costs.optimizationOpportunities.push({
           type: "cos't'_optimization",""
-          description: "'High monthly costs detected'",""
-          suggestion: "'Review and optimize resource usage'''
+          description: "'High monthly costs detected'","")
+          suggestion: "'Review and optimize resource usage''')
         "});""
       }
       
@@ -669,7 +667,7 @@ class Iac-automationAutomationAgent {
     const result = {
       standards: "[]",""
       violations: "[]",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     try {
@@ -695,7 +693,7 @@ class Iac-automationAutomationAgent {
     const result = {
       standards: "[]",""
       violations: "[]",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -710,12 +708,12 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for violations
-    if (lowerContent.includes(')0.0.0/0')) {''
+    if (lowerContent.includes(')0.0/0')) {''
       complianceInfo.violations.push(open-access-violation);
       complianceInfo.recommendations.push({
         type: "'security'",""
-        message: "'Open access detected'",""
-        suggestion: "Restrict access to specific IP ranges""
+        message: "'Open access detected'","")
+        suggestion: "Restrict access to specific IP ranges"")
       "});""
     }
     
@@ -730,8 +728,8 @@ class Iac-automationAutomationAgent {
       recommendations.push({
         type: "'security'",""
         priority: "'critical",""
-        message: "Security' vulnerabilities detected",""
-        suggestion: "'Review and fix security configurations'''
+        message: "Security' vulnerabilities detected","")
+        suggestion: "'Review and fix security configurations''')
       "});""
     }
     
@@ -740,8 +738,8 @@ class Iac-automationAutomationAgent {
       recommendations.push({
         type: "'cost",""
         priority: "hig'h",""
-        message: "'High infrastructure costs detected'",""
-        suggestion: "'Optimize resource usage and consider reserved instances'''
+        message: "'High infrastructure costs detected'","")
+        suggestion: "'Optimize resource usage and consider reserved instances''')
       "});""
     }
     
@@ -750,8 +748,8 @@ class Iac-automationAutomationAgent {
       recommendations.push({
         type: "compliance",""
         priority: "'high'",""
-        message: "'Compliance violations detected'",""
-        suggestion: "Address compliance issues immediately""
+        message: "'Compliance violations detected'","")
+        suggestion: "Address compliance issues immediately"")
       "});""
     }
     
@@ -766,7 +764,7 @@ class Iac-automationAutomationAgent {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         resources: "[]",""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Check infrastructure status
@@ -798,14 +796,14 @@ class Iac-automationAutomationAgent {
       file: "file",""
       status: "'healthy'",""
       issues: "[]",""
-      lastChecked: "new Date().toISOString()""
+      lastChecked: "new Date().toISOString()"";
     "};""
     
     const result = content.toLowerCase();
     
     // Check for common issues
-    if (lowerContent.includes('0.0.0/0)) {''
-      status.issues.push({
+    if (lowerContent.includes('0.0/0)) {''
+      status.issues.push({)
         type: "security')",""
         severity: "'high",""
         message: "Open' access detected''
@@ -814,7 +812,7 @@ class Iac-automationAutomationAgent {
     }
     
     if (lowerContent.includes('hardcoded) || lowerContent.includes(password)) {''
-      status.issues.push({
+      status.issues.push({)
         type: "')security'",""
         severity: "'medium",""
         message: "Potential' hardcoded credentials''
@@ -832,7 +830,7 @@ class Iac-automationAutomationAgent {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         validations: "[]",""
-        issues: "[]""
+        issues: "[]"";
       "};""
       
       // Validate infrastructure files
@@ -863,7 +861,7 @@ class Iac-automationAutomationAgent {
     const result = {
       file: "file",""
       isValid: "true",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     // Check for syntax errors
@@ -875,7 +873,7 @@ class Iac-automationAutomationAgent {
     }
     
     // Check for security issues
-    if (content.includes(')0.0.0/0')) {''
+    if (content.includes(')0.0/0')) {''
       validation.issues.push(Open access configuration detected);
       validation.isValid = false;
     }
@@ -896,7 +894,7 @@ class Iac-automationAutomationAgent {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         deployments: "[]",""
-        status: "')healthy''
+        status: "')healthy'';
       "};""
       
       // Check for deployment files
@@ -928,7 +926,7 @@ class Iac-automationAutomationAgent {
     const result = ['.yaml', .yml', '.json, '.tf'];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -959,9 +957,8 @@ class Iac-automationAutomationAgent {
   }
 
   containsDeploymentCode(content) {
-    const result = [
-      ')deployment, servi'c'e, 'ingre'ss', 'configmap, secr'e't,''
-      'replic'as', 'image, contain'e'r, pod', 'namespace''
+    const result = [')deployment, servi'c'e, 'ingre'ss', 'configmap, secr'e't,''
+      'replic'as', 'image, contain'e'r, pod', 'namespace''];
     ];
     
     return deploymentKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -972,7 +969,7 @@ class Iac-automationAutomationAgent {
       file: "file",""
       status: "healt'h'y",""
       resources: "[]",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -1026,7 +1023,7 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(')IA'C Automation Agent failed to start: ', error);''
   process.exit(1);
 
@@ -1098,7 +1095,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1187,7 +1184,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1276,7 +1273,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1365,7 +1362,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1454,7 +1451,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1543,7 +1540,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1632,7 +1629,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1721,7 +1718,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1810,7 +1807,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1899,7 +1896,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1988,7 +1985,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2077,7 +2074,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2166,7 +2163,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2255,7 +2252,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2344,7 +2341,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2433,7 +2430,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2522,7 +2519,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2611,7 +2608,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2700,7 +2697,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2789,7 +2786,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2878,7 +2875,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2967,7 +2964,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3056,7 +3053,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3145,7 +3142,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3234,7 +3231,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3323,7 +3320,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3412,7 +3409,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3501,7 +3498,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3590,7 +3587,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3679,7 +3676,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3768,7 +3765,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3857,7 +3854,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3946,7 +3943,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4035,7 +4032,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4124,7 +4121,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4213,7 +4210,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4302,7 +4299,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4391,7 +4388,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4480,7 +4477,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4569,7 +4566,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4658,7 +4655,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4747,7 +4744,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4836,7 +4833,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4925,7 +4922,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5014,7 +5011,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5103,7 +5100,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5192,7 +5189,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5281,7 +5278,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5370,7 +5367,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5459,7 +5456,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5548,7 +5545,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5637,7 +5634,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5726,7 +5723,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

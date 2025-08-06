@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,19 +106,19 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require($2);'););
+const path = require($2);'););
 
 class LayoutOptimizationAgent {
   constructor() {
@@ -153,7 +153,7 @@ class LayoutOptimizationAgent {
       console.log('Layout optimization completed successfully');
       return { success: true, changes: ['Enhanced main layout', 'Added responsive components', 'Updated global styles'] };
     } catch (error) {
-      console.error('Layout optimization failed:', error);
+      console.error('Layout optimization failed: ', error);
       return { success: false, error: error.message };
     }
   }
@@ -195,7 +195,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => {;
       setIsScrolled(window.scrollY > 50);
     };
 
@@ -203,16 +203,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { href: '/', label: 'Home', icon: '🏠' },
+  const navItems = [{ href: '/', label: 'Home', icon: '🏠' },
     { href: '/services', label: 'Services', icon: '⚡' },
     { href: '/products', label: 'Products', icon: '🚀' },
     { href: '/about', label: 'About', icon: 'ℹ️' },
-    { href: '/contact', label: 'Contact', icon: '📧' }
+    { href: '/contact', label: 'Contact', icon: '📧' }];
   ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  return(<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Zion - Advanced Technology Solutions</title>
         <meta name="description" content="Cutting-edge technology solutions and services for the future" />
@@ -222,8 +220,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-x"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-x"></div>)
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('data: image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http: //www.w3.org/200/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
       </div>
 
       {/* Header */}
@@ -233,7 +231,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <motion.div 
@@ -250,7 +248,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-8">
+            <nav className="hidden lg: flex space-x-8">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -260,12 +258,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 >
                   <Link 
                     href={item.href}
-                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                    className="flex items-center space-x-2 text-gray-300 hover: text-white transition-colors duration-200 group"
                   >
                     <span className="text-lg">{item.icon}</span>
                     <span className="relative">
                       {item.label}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover: w-full"></span>
                     </span>
                   </Link>
                 </motion.div>
@@ -274,7 +272,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700"
+              className="lg: hidden p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -291,7 +289,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700"
+              className="lg: hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700"
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item, index) => (
@@ -303,7 +301,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     <Link
                       href={item.href}
-                      className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-200 py-2"
+                      className="flex items-center space-x-3 text-gray-300 hover: text-white transition-colors duration-200 py-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <span className="text-xl">{item.icon}</span>
@@ -318,7 +316,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </motion.header>
 
       {/* Main Content */}
-      <main className="pt-16 lg:pt-20">
+      <main className="pt-16 lg: pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -335,10 +333,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1 md: col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">Z</span>
@@ -351,17 +349,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    <path d="M24 4.557c-.883.392-1.832-2.828 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452-2.224 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646-.695 1.797-1.562 2.457-2.549z"/>
                   </svg>
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                    <path d="M22.46 6c-.77.35-1.6-2.46-.53 1.56-1.37 1.88-2.38-.83.5-1.75-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
                   </svg>
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138-2.063 2.063-2.063 1.14 0 2.064 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                 </a>
               </div>
@@ -371,7 +369,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>
               <h3 className="text-white font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="/services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="/services" className="text-gray-400 hover: text-white transition-colors">Services</a></li>
                 <li><a href="/products" className="text-gray-400 hover:text-white transition-colors">Products</a></li>
                 <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
                 <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
@@ -419,15 +417,14 @@ interface ContainerProps {
 }
 
 const Container: React.FC<ContainerProps> = ({ children, className = '', delay = 0 }) => {
-  return (
-    <motion.div
-      className={\`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 \${className}\`}
+  return(<motion.div
+      className={\`max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 \${className}\`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
     >
       {children}
-    </motion.div>
+    </motion.div>)
   );
 };
 
@@ -448,17 +445,16 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ children, className = '', id, delay = 0 }) => {
-  return (
-    <motion.section
+  return(<motion.section
       id={id}
-      className={\`py-16 lg:py-24 \${className}\`}
+      className={\`py-16 lg: py-24 \${className}\`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
       {children}
-    </motion.section>
+    </motion.section>)
   );
 };
 
@@ -591,7 +587,7 @@ export default Section;
   @apply bg-slate-600 rounded-full;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb: hover {
   @apply bg-slate-200;
 }
 
@@ -602,7 +598,7 @@ export default Section;
 
 /* Focus styles */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-slate-900;
+  @apply focus: outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-slate-900;
 }
 `;
 
@@ -621,20 +617,17 @@ export default Section;
       // Add Container and Section imports if not present
       let updatedContent = currentContent;
       if (!updatedContent.includes('import Container')) {
-        updatedContent = updatedContent.replace(
-          "import FuturisticHero from '../components/ui/FuturisticHero'",
-          "import FuturisticHero from '../components/ui/FuturisticHero'\nimport Container from '../components/Container'\nimport Section from '../components/Section'"
+        updatedContent = updatedContent.replace("import FuturisticHero from '../components/ui/FuturisticHero'",)
+          "import FuturisticHero from '../components/ui/FuturisticHero'\nimport Container from '../components/Container'\nimport Section from '../components/Section'")
         );
       }
       
       // Wrap main content in Container and Section components
       if (!updatedContent.includes('<Container>')) {
-        updatedContent = updatedContent.replace(
-          '<main>',
-          '<Container>'
-        ).replace(
-          '</main>',
-          '</Container>'
+        updatedContent = updatedContent.replace('<main>',)
+          '<Container>')
+        ).replace('</main>',
+          '</Container>')
         );
       }
       

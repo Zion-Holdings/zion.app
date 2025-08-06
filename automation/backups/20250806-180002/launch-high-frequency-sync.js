@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -124,9 +124,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs'););
-const path = require(('path'););
-const { spawn } = require('child_process');
+}const fs = require($2);'););
+const path = require($2);'););
+const { spawn } = require(('child_process)');
 
 class HighFrequencySyncLauncher {
   constructor() {
@@ -141,12 +141,11 @@ class HighFrequencySyncLauncher {
   }
 
   ensureDirectories() {
-    const directories = [
-      'high-frequency-sync-logs',
-      'high-frequency-sync-pids'
+    const directories = ['high-frequency-sync-logs',
+      'high-frequency-sync-pids'];
     ];
 
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -169,7 +168,7 @@ class HighFrequencySyncLauncher {
       
       this.process = spawn('node', [syncScript], {
         stdio: ['pipe', 'pipe', 'pipe'],
-        detached: false
+        detached: false)
       });
       
       // Save PID
@@ -249,7 +248,7 @@ class HighFrequencySyncLauncher {
         pid: this.process.pid,
         timestamp: new Date().toISOString(),
         launcher: this.id,
-        version: this.version
+        version: this.version;
       };
       
       fs.writeFileSync(this.pidFile, JSON.stringify(pidData, null, 2));
@@ -314,7 +313,7 @@ class HighFrequencySyncLauncher {
 }
 
 // Auto-start if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const launcher = new HighFrequencySyncLauncher();
   
   process.on('SIGINT', async () => {
@@ -329,7 +328,7 @@ if (require.main === module) {
     process.exit(0);
   });
   
-  launcher.launch().catch(error => {
+  launcher.launch().catch(error => {)
     console.error('❌ Launcher failed: ', error);
     process.exit(1);
   });

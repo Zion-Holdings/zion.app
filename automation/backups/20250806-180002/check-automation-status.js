@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require(($2););.promises;
-const path = require(('path'););
-const { spawn, exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require($2);2););.promises;
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
+const { promisify } = require(('util)');
 
 const execAsync = promisify(exec);
 
@@ -14,13 +14,12 @@ class AutomationStatusChecker {
     this.isRunning = false;
     
     // Automation systems to monitor
-    this.systemTypes = [
-      'ultimate-automation-factory',
+    this.systemTypes = ['ultimate-automation-factory',
       'intelligent-automation-orchestrator',
       'continuous-improvement',
       'enhanced-diversification',
       'intelligent-agent-orchestrator',
-      'master-automation-coordinator'
+      'master-automation-coordinator']
     ];
   }
 
@@ -43,12 +42,11 @@ class AutomationStatusChecker {
   }
 
   async ensureDirectories() {
-    const directories = [
-      'status-data',
+    const directories = ['status-data',
       'health-logs',
       'performance-logs',
       'system-logs',
-      'reports'
+      'reports'];
     ];
     
     for (const dir of directories) {
@@ -80,7 +78,7 @@ class AutomationStatusChecker {
       performance: 0,
       uptime: 0,
       errorCount: 0,
-      successCount: 0
+      successCount: 0;
     };
     
     this.automationSystems.set(systemType, system);
@@ -100,8 +98,8 @@ class AutomationStatusChecker {
         results.push({
           type: systemType,
           isActive: false,
-          health: 'error',
-          error: error.message
+          health: 'error',)
+          error: error.message)
         });
       }
     }
@@ -177,7 +175,7 @@ class AutomationStatusChecker {
       activeSystems: results.filter(r => r.isActive).length,
       inactiveSystems: results.filter(r => !r.isActive).length,
       healthySystems: results.filter(r => r.health === 'healthy').length,
-      systems: results
+      systems: results;
     };
     
     // Save report
@@ -199,8 +197,8 @@ class AutomationStatusChecker {
     console.log('-'.repeat(50));
     
     summary.systems.forEach(system => {
-      const status = system.isActive ? '🟢 ACTIVE' : '🔴 INACTIVE';
-      const health = system.health === 'healthy' ? '✅' : system.health === 'error' ? '❌' : '⚠️';
+      const status = system.isActive ? '🟢 ACTIVE' : '🔴 INACTIVE';)
+      const health = system.health === 'healthy' ? '✅' : system.health === 'error' ? '❌' : '⚠️';)
       console.log(`${health} ${system.type}: ${status}`);
     });
     
@@ -221,7 +219,7 @@ class AutomationStatusChecker {
   async saveSystemState() {
     const state = {
       timestamp: new Date().toISOString(),
-      systems: Array.from(this.automationSystems.entries())
+      systems: Array.from(this.automationSystems.entries());
     };
     
     const statePath = path.join(__dirname, 'status-data', 'system-state.json');
@@ -253,7 +251,7 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   main().catch(console.error);
 }
 

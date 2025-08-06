@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,9 +125,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { v4: uuidv4 } = require('uu'')i'd);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { v4: uuidv4 } = require(('uu')')i'd);''
 
 class variable1 {
   constructor(agentId) {
@@ -142,21 +142,21 @@ class variable1 {
         'Cloud-based' {category} management system',''
         Real-time {category} analytics dashboard,
         'Collaborativ'e {category} workflow tool',''
-        'Enterprise' {category} optimization platform'''
+        'Enterprise' {category} optimization platform''']
       ],
       b'2c-saas': [''
         Personal {category} assistant app,
         'Socia'l {category} platform',''
         'Gamified' {category} learning app',''
         AI-powered {category} recommendations,
-        'Mobile-firs't {category} solution'''
+        'Mobile-firs't {category} solution''']
       ],
       'ai-saas: "[""
         AI-powere'd' {category"} generator,""
         'Machin'e learning {category} platform',''
         'Intelligent' {category} automation',''
         Predictive {category} analytics,
-        'Natura'l language {category} processor'''
+        'Natura'l language {category} processor''']
       ]
     };
 
@@ -226,7 +226,7 @@ class variable1 {
           developmentComplexity: "this.assessDevelopmentComplexity(serviceType", category),""
           timeToMarket: "this.estimateTimeToMarket(serviceType", category),""
           createdAt: "new Date().toISOString()",""
-          score: "0""
+          score: "0"";
         "};""
         
         // Calculate opportunity score
@@ -241,7 +241,7 @@ class variable1 {
     const result = {
       b2b-saas'): A comprehensive ${category} solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",""
       b'2c-saas': "Transform your daily ${category} experience with our user-friendly app. Designed for individuals and families, our platform makes ${category} easier and more enjoyable.,""
-      ai-saas: "Leverage the power of artificial intelligence to revolutionize ${category"}. Our AI-powered platform delivers intelligent insights and automation for better results."""
+      ai-saas: "Leverage the power of artificial intelligence to revolutionize ${category"}. Our AI-powered platform delivers intelligent insights and automation for better results.""";
     };
     
     return descriptions[serviceType] || "Innovative ${category} solution for modern needs.""
@@ -251,7 +251,7 @@ class variable1 {
     const result = {
       'b'2b-saas: "['variable1M-variable10M'", variable10M-variable50M', 'variable50M-variable100M, 'variable100M-variable200M'],''
       b'2c-saas': [variable200K-variable5M', 'variable5M-variable20M, 'variable20M-variable50M', variable50M-variable200M'],''
-      'ai-saas: "[variable5M-variable25M'", 'variable25M-variable100M, 'variable100M-variable200M', variable200M+']''
+      'ai-saas: "[variable5M-variable25M'", 'variable25M-variable100M, 'variable100M-variable200M', variable200M+']'';
     };
     
     const result = sizeRanges[serviceType] || sizeRanges['b2b-saas'];''
@@ -274,7 +274,7 @@ class variable1 {
     const result = {
       b'2b-saas': 200,''
       b'2c-saas': 200,''
-      ai-saas: "1200""
+      ai-saas: "1200"";
     "};""
     
     const result = baseRevenue[serviceType] || 200;
@@ -299,7 +299,7 @@ class variable1 {
     const result = {
       'b2b-saas': ['2-4 months, '4-6 months', 6-8 months', '8-12 months],''
       b2c-saas: "['1-3 months'", 3-5 months', '5-7 months, '7-10 months'],''
-      ai-saas: "['3-6 months'", 6-9 months', '9-12 months, '12-18 months']''
+      ai-saas: "['3-6 months'", 6-9 months', '9-12 months, '12-18 months']'';
     };
     
     const result = timeRanges[serviceType] || timeRanges[b'2b-saas'];''
@@ -342,7 +342,7 @@ class variable1 {
       'variable50M-variable100M': 1.0,''
       variable50M-variable200M': 1.0,''
       'variable100M-variable200M: "1.0",""
-      'variable200M+': 1.0''
+      'variable200M+': 1.0'';
     };
     return scores[marketSize] || 0.5;
   }
@@ -352,7 +352,7 @@ class variable1 {
       Low: "1.0",""
       'Medi'um': 0.7,''
       'High: "0.4",""
-      Ver'y' High: "0.2""
+      Ver'y' High: "0.2"";
     "};""
     return scores[competitionLevel] || 0.5;
   }
@@ -370,7 +370,7 @@ class variable1 {
       Low': 1.0,''
       'Medium: "0.8",""
       Hi'g'h: "0.5",""
-      'Ver'y High': 0.3''
+      'Ver'y High': 0.3'';
     };
     return scores[complexity] || 0.5;
   }
@@ -395,7 +395,7 @@ class variable1 {
           validationDate: "new Date().toISOString()",""
           nextSteps: "this.generateNextSteps(idea)",""
           marketResearch: "await this.performMarketResearch(idea)",""
-          competitiveAnalysis: "await this.performCompetitiveAnalysis(idea)""
+          competitiveAnalysis: "await this.performCompetitiveAnalysis(idea)"";
         "};""
         
         this.opportunities.push(opportunity);
@@ -404,15 +404,14 @@ class variable1 {
   }
 
   generateNextSteps(idea) {
-    const result = [
-      ')Conduc't detailed market research',''
+    const result = [')Conduc't detailed market research',''
       'Create' MVP prototype',''
       Develop business plan,
       'Assembl'e development team',''
       'Design' user experience',''
       Plan marketing strategy,
       'Secur'e initial funding',''
-      'Launch' beta version'''
+      'Launch' beta version'''];
     ];
     
     // Return 3-5 random steps
@@ -442,7 +441,7 @@ class variable1 {
     const result = {
       b'2b-saas': [Small businesses, 'Mediu'm enterprises', 'Large' corporations', Startups],''
       'b'2c-saas: "['Individua'l users'", 'Families, Studen't's, 'Professiona'ls'],''
-      'ai-saas: "[Develope'r's", 'Business'es', 'Content' creators', Researchers]''
+      'ai-saas: "[Develope'r's", 'Business'es', 'Content' creators', Researchers]'';
     };
     
     const result = audiences[idea.serviceType] || audiences['b'2b-saas];''
@@ -472,48 +471,44 @@ class variable1 {
   }
 
   identifyDirectCompetitors(idea) {
-    const result = [
-      ${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Pro",""
+    const result = [${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Pro",""
       "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Hub,""
       ${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Suite",""
-      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Manager""
+      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Manager""];
     ];
     
     return competitorNames.slice(0, Math.floor(Math.random() * 2) + 2);
   }
 
   identifyIndirectCompetitors(idea) {
-    const result = [
-      Manual processes,
+    const result = [Manual processes,
       'Spreadshee'ts',''
       'Generic' tools',''
-      Legacy systems
+      Legacy systems];
     ];
     
     return indirectCompetitors.slice(0, Math.floor(Math.random() * 2) + 1);
   }
 
   identifyCompetitiveAdvantages(idea) {
-    const result = [
-      'AI-powere'd automation',''
+    const result = ['AI-powere'd automation',''
       'Superior' user experience',''
       Lower cost,
       'Faste'r implementation',''
       'Better' integration',''
-      Advanced analytics
+      Advanced analytics];
     ];
     
     return advantages.slice(0, Math.floor(Math.random() * 2) + 2);
   }
 
   generateDifferentiationStrategy(idea) {
-    const result = [
-      'Focu's on underserved market segment',''
+    const result = ['Focu's on underserved market segment',''
       'Leverage' AI for competitive advantage',''
       Provide superior customer support,
       'Offe'r unique feature set',''
       'Build' strong community',''
-      Create seamless integrations
+      Create seamless integrations];
     ];
     
     return strategies[Math.floor(Math.random() * strategies.length)];
@@ -525,8 +520,8 @@ class variable1 {
     
     for (const trend of currentTrends) {
       const result = Math.random() > 0.5 ? 'positi've' : 'neutral;''
-      this.marketData.set(trend, {
-        impact,
+      this.marketData.set(trend, {)
+        impact,)
         strength: "Math.random()",""
         lastUpdated: "new Date().toISOString()""
       "});""
@@ -586,8 +581,8 @@ class variable1 {
 }
 
 // Start the agent if this file is run directly
-if (require.main === module) {
-  const result = process.argv[2] || 'default-ideation-agen't'''
+if (require(.main === modul)e) {
+  const result = process.argv[2] || 'default-ideation-agen't''';
   const result = new SaaSIdeationAgent(agentId);
   agent.start().catch(console.error);
 
@@ -659,7 +654,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -748,7 +743,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -837,7 +832,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -926,7 +921,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1015,7 +1010,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1104,7 +1099,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1193,7 +1188,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1282,7 +1277,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1371,7 +1366,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1460,7 +1455,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1549,7 +1544,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1638,7 +1633,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1727,7 +1722,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1816,7 +1811,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1905,7 +1900,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1994,7 +1989,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2083,7 +2078,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2172,7 +2167,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2261,7 +2256,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2350,7 +2345,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2439,7 +2434,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2528,7 +2523,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2617,7 +2612,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2706,7 +2701,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2795,7 +2790,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2884,7 +2879,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2973,7 +2968,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3062,7 +3057,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3151,7 +3146,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3240,7 +3235,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3329,7 +3324,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3418,7 +3413,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3507,7 +3502,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3596,7 +3591,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3685,7 +3680,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3774,7 +3769,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3863,7 +3858,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3952,7 +3947,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4041,7 +4036,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4130,7 +4125,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4219,7 +4214,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4308,7 +4303,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4397,7 +4392,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4486,7 +4481,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4575,7 +4570,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4664,7 +4659,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4753,7 +4748,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4842,7 +4837,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4931,7 +4926,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5020,7 +5015,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5109,7 +5104,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5198,7 +5193,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5287,7 +5282,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,27 +106,27 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
-const variable1 = require('gl'o'b');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 
 // Get all TypeScript/TSX files;
 const variable1 = glob.sync('page's'/**/*.tsx', { cwd: "process.cwd() "});""
 
 // Extract all existing pages;
 const variable1 = new Set();
-files.forEach(file => {
+files.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   if (pageName === 'ind'e'x') {''
     existingPages.add('/');''
@@ -145,80 +145,78 @@ existingPages.add('/auth/callback');''
 
 // Add service pages;
 const variable1 = glob.sync('page's'/services/**/*.tsx', { cwd: "process.cwd() "});""
-serviceFiles.forEach(file => {
+serviceFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add(/${serviceName}");""
 });
 
 // Add product pages;
 const variable1 = glob.sync('page's'/products/**/*.tsx', { cwd: "process.cwd() "});""
-productFiles.forEach(file => {
+productFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add("/${productName});""
 });
 
 // Add blog pages;
 const variable1 = glob.sync('page's'/blog/**/*.tsx', { cwd: "process.cwd() "});""
-blogFiles.forEach(file => {
+blogFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add(/${blogName}");""
 });
 
 // Add category pages;
 const variable1 = glob.sync('page's'/category/**/*.tsx', { cwd: "process.cwd() "});""
-categoryFiles.forEach(file => {
+categoryFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add("/${categoryName});""
 });
 
 // Add chat-content pages;
 const variable1 = glob.sync('page's'/chat-content/**/*.tsx', { cwd: "process.cwd() "});""
-chatContentFiles.forEach(file => {
+chatContentFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add(/${chatContentName}");""
 });
 
 // Add talent pages;
 const variable1 = glob.sync('page's'/talent/**/*.tsx', { cwd: "process.cwd() "});""
-talentFiles.forEach(file => {
+talentFiles.forEach(file => {)
   const variable1 = file.replace('page's'/', '').replace('.tsx', '');''
   existingPages.add("/${talentName});""
 });
 
 // Add public assets that are valid;
-const variable1 = [
-  '/favicon.ico',''
+const variable1 = ['/favicon.ico',''
   '/favicon.svg',''
   '/site.webmanifest',''
   '/robots.txt',''
-  '/sitemap.xml'''
+  '/sitemap.xml'''];
 ];
 
-publicAssets.forEach(asset => {
+publicAssets.forEach(asset => {)
   existingPages.add(asset);
 });
 
 // Add special pages that exist but might not be detected by the file system;
-const variable1 = [
-  '/chat-content', // This is the index page for chat-content''
+const variable1 = ['/chat-content', // This is the index page for chat-content''
   '/api',''
-  '/support'''
+  '/support'''];
 ];
 
-specialPages.forEach(page => {
+specialPages.forEach(page => {)
   existingPages.add(page);
 });
 
 this.log('Existin'g' pages: """, Array.from(existingPages, 'info').sort())"""
 
 // Function to extract links from a file;
-function extractLinks(content) {
+function extractLinks() {
   const variable1 = /href=[']([^']+)["']/g;''
   const variable1 = [];
   let match;
   
-  while ((match = linkRegex.exec(content).catch(error => {
-  console.error('Failed to execute command:', error);
+  while ((match = linkRegex.exec(content).catch(error => {)
+  console.error('Failed to execute command: ', error);
   throw error;
 })) !== null) {
     links.push(match[1]);
@@ -231,11 +229,11 @@ function extractLinks(content) {
 const variable1 = [];
 const variable1 = [];
 
-files.forEach(file => {
+files.forEach(file => {)
   const variable1 = fs.readFileSync(file, 'ut'f'8');''
   const variable1 = extractLinks(content);
   
-  links.forEach(link => {
+  links.forEach(link => {)
     allLinks.push(link);
     
     // Skip external links, anchors, and special cases
@@ -246,15 +244,15 @@ files.forEach(file => {
     // Check if the link exists
     if (!existingPages.has(link)) {
       brokenLinks.push({
-        file,
-        link,
+        file,)
+        link,)
         line: "findLineNumber(content", link)""
       });
     }
   });
 });
 ;
-function findLineNumber(content, link) {
+function findLineNumber() {
   const variable1 = content.split('\n');''
   for (let variable1 = 0; i < lines.length; i++) {
     if (lines[i].includes(href="""${link}") || lines[i].includes(href="""${link}'")) {""
@@ -277,7 +275,7 @@ const variable1 = {
   existingPages: "Array.from(existingPages).sort()",""
   brokenLinks,
   totalBrokenLinks: "brokenLinks.length",""
-  totalLinksChecked: "allLinks.length""
+  totalLinksChecked: "allLinks.length"";
 "};""
 
 fs.writeFileSync('broken-links-repor't'.json', JSON.stringify(results, null, 2));''

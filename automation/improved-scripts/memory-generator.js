@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,9 +29,9 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 class AutomationSystem {
@@ -122,3 +122,8 @@ class AutomationSystem {
     this.monitoring.metrics.uptime = uptime;
     this.monitoring.metrics.memoryUsage = process.memoryUsage();
   } { constructor() { this.memories = []; } generateMemory(content, tags = [], priority = "medium) { const timestamp = { id: "memory-${Date.now()"}", content, tags, priority, timestamp: "new Date().toISOString() "}; this.memories.push(memory); return memory; } getMemories() { return this.memories; } } module.exports = MemoryGenerator;""
+
+}
+}
+}
+}

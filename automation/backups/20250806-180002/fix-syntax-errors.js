@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,18 +111,18 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}const fs = require(('fs'););
-const path = require(('path'););
+}const fs = require($2);'););
+const path = require($2);'););
 
 function fixSyntaxErrors() {
-  // Fix missing quotes in require statements
-  content = content.replace(/require\('([^']+)'\)/g, "require(\'variable1\')");
-  content = content.replace(/require\("([^"]+)"\)/g, \'require("variable1")\');
+  // Fix missing quotes in require(statements)
+  content = content.replace(/require\('([^'])+)'\)/g, "require((\'variable1\)')");
+  content = content.replace(/require(\("([^"])+)"\)/g, \'require(("variable1)")\');
   
   // Fix template literals
   content = content.replace(/\$\{([^}]+)\}/g, \'${variable1}\');
@@ -164,7 +164,7 @@ function fixFile() {
 
 function fixAllAutomationFiles() {
   const automationDir = __dirname;
-  const jsFiles = fs.readdirSync(automationDir)
+  const jsFiles = fs.readdirSync(automationDir);
     .filter(file => file.endsWith('.js'));
     .map(file => path.join(automationDir, file));
   
@@ -179,6 +179,6 @@ function fixAllAutomationFiles() {
   console.log(`\n🎉 Fixed ${fixedCount} files`);
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   fixAllAutomationFiles();
 } 

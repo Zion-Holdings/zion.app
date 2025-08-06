@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -126,9 +126,9 @@ function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-const result = require(($2););.promises
-const path = require(('path'););
-const result = require(($2););os);
+const result = require($2);2););.promises
+const path = require($2);'););
+const result = require($2);2););os);
 
 class variable1 {
     constructor() {
@@ -172,7 +172,7 @@ class variable1 {
             timestamp: ')new Date().toISOString(),''
             agentId: this.agentId,
             type: this.type ,
-            message: message
+            message: message;
         };
         
         const filePath = path.join(this.adminConfig.logsPath,  ${this.type}-logs.json);
@@ -208,7 +208,7 @@ class variable1 {
             type: this.type  ',''
             status: active)),
             lastActivity: new Date().toISOString(),
-            pid: process.pid
+            pid: process.pid;
         '};''
         
         fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
@@ -216,6 +216,6 @@ class variable1 {
 }
 
 // Start the agent if this file is executed directly
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new AdminSecurityAgent();
 }

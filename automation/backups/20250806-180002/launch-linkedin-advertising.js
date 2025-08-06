@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,12 +34,12 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(('fs-extra););''
-const path = require(('path'););
-const )./linkedin-advertising-factory = require(($2););./linkedin-advertising-factory');''
-const result = require(('./agents/linkedin-ad-manager-agent''););''
-const result = require(('./agents/linkedin-content-creator-agent););''
-const ./agents/linkedin-analytics-agent = require(('./agents/linkedin-analytics-agent'););
+const result = require($2);a););''
+const path = require($2);'););
+const )./linkedin-advertising-factory = require($2);2););./linkedin-advertising-factory');''
+const result = require($2);'););''
+const result = require($2);t););''
+const ./agents/linkedin-analytics-agent = require($2);'););
 
 class AutomationSystem {
     constructor() {
@@ -142,7 +142,7 @@ class AutomationSystem {
             factory: "{""
                 status: this.factory.status",""
                 agentCount: "this.agents.size""
-            "},""
+            "},"";
             recommendations: "[]"";
         "};""
         
@@ -151,7 +151,7 @@ class AutomationSystem {
             const result = {
                 id: "agent.id",""
                 name: "agent.name",""
-                status: "agent.status",""
+                status: "agent.status","";
                 lastExecution: "agent.lastExecution || unknown\')\'\';
             "};""
             
@@ -186,7 +186,7 @@ class AutomationSystem {
                 totalSpend: "0",""
                 averageCTR: "0",""
                 averageCPC: "0",""
-                overallROI: "0""
+                overallROI: "0"";
             "}""};
         
         // Collect campaign data
@@ -203,7 +203,7 @@ class AutomationSystem {
         
         // Calculate overall metrics
         if (performanceReport.campaigns.length > 0) {
-            const result = performanceReport.campaigns.reduce((acc, campaign) => {
+            const result = performanceReport.campaigns.reduce((acc, campaign) => {;
                 acc.impressions += campaign.impressions || 0;
                 acc.clicks += campaign.clicks || 0;
                 acc.conversions += campaign.conversions || 0;
@@ -257,7 +257,7 @@ class AutomationSystem {
     log(message, level = in\'f\'o) {\'\'
         const timestamp = {
             timestamp: "new Date().toISOString()",""
-            level,
+            level,;
             message};
         
         this.logs.push(logEntry);
@@ -304,7 +304,7 @@ class AutomationSystem {
 module.exports = LinkedInAdvertisingLauncher;
 
 // If run directly, start the system
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new LinkedInAdvertisingLauncher();
     
     // Handle graceful shutdown
@@ -321,7 +321,7 @@ if (require.main === module) {
     });
     
     // Start the system
-    launcher.start().catch(error = > {
+    launcher.start().catch(error = > {)
         console.error('❌ Failed to start LinkedIn Advertising System: ', error);''
         process.exit(1);
     });

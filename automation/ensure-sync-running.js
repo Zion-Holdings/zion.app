@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,29 +70,25 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
-const { spawn, exec } = require('child_process');
+}const fs = require($2);'););
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
 
 class SyncEnsurance {
   constructor() {
     this.id = 'sync-ensurance';
-    this.version = '1.0.0';
+    this.version = '1.0';
     this.status = 'running';
     this.checkInterval = 200; // 30 seconds
     this.processes = new Map();
     this.config = {
-      syncScripts: [
-        'master-sync-controller.js',
+      syncScripts: ['master-sync-controller.js',
         'comprehensive-sync-orchestrator.js',
-        'high-frequency-git-sync.js'
+        'high-frequency-git-sync.js']
       ],
       maxRestartAttempts: 5,
       restartDelay: 3000, // 10 seconds
@@ -115,7 +111,7 @@ class SyncEnsurance {
       console.log('✅ Sync Ensurance initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing Sync Ensurance:', error);
+      console.error('❌ Error initializing Sync Ensurance: ', error);
       this.status = 'error';
       throw error;
     }
@@ -124,7 +120,7 @@ class SyncEnsurance {
   startAllSyncProcesses() {
     console.log('⚡ Starting all sync processes...');
     
-    this.config.syncScripts.forEach(script => {
+    this.config.syncScripts.forEach(script => {)
       this.startSyncProcess(script);
     });
   }
@@ -141,12 +137,12 @@ class SyncEnsurance {
     
     const process = spawn('node', [scriptPath], {
       stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
+      detached: false);
     });
     
     this.processes.set(scriptName, {
-      process,
-      scriptName,
+      process,)
+      scriptName,)
       startTime: new Date().toISOString(),
       restartCount: 0,
       lastHealthCheck: new Date().toISOString()
@@ -174,7 +170,7 @@ class SyncEnsurance {
     });
     
     process.on('error', (error) => {
-      console.error(`[${scriptName}] Process error:`, error);
+      console.error(`[${scriptName}] Process error: `, error);
       this.handleProcessError(scriptName, error);
     });
   }
@@ -195,7 +191,7 @@ class SyncEnsurance {
   }
 
   handleProcessError(scriptName, error) {
-    console.error(`❌ ${scriptName} process error:`, error.message);
+    console.error(`❌ ${scriptName} process error: `, error.message);
     this.handleProcessExit(scriptName, 1);
   }
 
@@ -246,20 +242,19 @@ class SyncEnsurance {
     const health = {
       timestamp: new Date().toISOString(),
       status: this.status,
-      processes: Object.fromEntries(
-        Array.from(this.processes.entries()).map(([scriptName, processInfo]) => [
-          scriptName,
+      processes: Object.fromEntries()
+        Array.from(this.processes.entries()).map(([scriptName, processInfo]) => [scriptName,
           {
             pid: processInfo.process ? processInfo.process.pid : null,
             startTime: processInfo.startTime,
             restartCount: processInfo.restartCount,
             lastHealthCheck: processInfo.lastHealthCheck,
             isRunning: processInfo.process && !processInfo.process.killed
-          }
+          }]
         ])
       ),
       memory: process.memoryUsage(),
-      uptime: process.uptime()
+      uptime: process.uptime();
     };
     
     const healthPath = path.join(__dirname, 'sync-ensurance-health.json');
@@ -295,7 +290,7 @@ class SyncEnsurance {
 }
 
 // Auto-start if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const ensurance = new SyncEnsurance();
   
   process.on('SIGINT', async () => {
@@ -310,8 +305,8 @@ if (require.main === module) {
     process.exit(0);
   });
   
-  ensurance.initialize().catch(error => {
-    console.error('❌ Sync Ensurance initialization failed:', error);
+  ensurance.initialize().catch(error => {)
+    console.error('❌ Sync Ensurance initialization failed: ', error);
     process.exit(1);
   });
 }

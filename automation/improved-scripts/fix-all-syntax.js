@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 ;
-function fixFile(filePath) {
+function fixFile() {
   try {
     let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     
@@ -206,22 +206,22 @@ function fixFile(filePath) {
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
     content = content
-      .replace(/rounded-lg:shadow-md/g, 'rounded-l'g' shadow-md')''
-      .replace(/text-lg:font-semibold/g, 'text-l'g' font-semibold')''
-      .replace(/text-3xl:font-bold/g, 'text'-'3xl font-bold')''
-      .replace(/text-xl:font-semibold/g, 'text-x'l' font-semibold')''
-      .replace(/rounded-md:hover:bg-blue-700/g, 'rounded-m'd' hover:bg-blue-700')''
+      .replace(/rounded-lg: shadow-md/g, 'rounded-l'g' shadow-md')''
+      .replace(/text-lg: font-semibold/g, 'text-l'g' font-semibold')''
+      .replace(/text-3xl: font-bold/g, 'text'-'3xl font-bold')''
+      .replace(/text-xl: font-semibold/g, 'text-x'l' font-semibold')''
+      .replace(/rounded-md: hover:bg-blue-700/g, 'rounded-m'd' hover: bg-blue-700')''
       .replace(/hover:from-purple-700/g, 'hove'r':from-purple-700')''
-      .replace(/hover:to-pink-700/g, 'hove'r':to-pink-700')''
-      .replace(/hover:text-purple-300/g, 'hove'r':text-purple-300')''
-      .replace(/hover:bg-black\/30/g, 'hove'r':bg-black/30')''
-      .replace(/focus:outline-none/g, 'focu's':outline-none')''
-      .replace(/focus:ring-2/g, 'focu's':ring-2')''
-      .replace(/focus:ring-offset-2/g, 'focu's':ring-offset-2')''
-      .replace(/focus:ring-purple-200/g, 'focu's':ring-purple-200')''
-      .replace(/focus:border-transparent/g, 'focu's':border-transparent')''
-      .replace(/disabled:opacity-50/g, 'disable'd':opacity-50')''
-      .replace(/disabled:cursor-not-allowed/g, 'disable'd':cursor-not-allowed');''
+      .replace(/hover: to-pink-700/g, 'hove'r':to-pink-700')''
+      .replace(/hover: text-purple-300/g, 'hove'r':text-purple-300')''
+      .replace(/hover: bg-black\/30/g, 'hove'r':bg-black/30')''
+      .replace(/focus: outline-none/g, 'focu's':outline-none')''
+      .replace(/focus: ring-2/g, 'focu's':ring-2')''
+      .replace(/focus: ring-offset-2/g, 'focu's':ring-offset-2')''
+      .replace(/focus: ring-purple-200/g, 'focu's':ring-purple-200')''
+      .replace(/focus: border-transparent/g, 'focu's':border-transparent')''
+      .replace(/disabled: opacity-50/g, 'disable'd':opacity-50')''
+      .replace(/disabled: cursor-not-allowed/g, 'disable'd':cursor-not-allowed');''
     
     // Fix common syntax patterns
     content = content
@@ -254,7 +254,7 @@ function fixFile(filePath) {
   }
 }
 ;
-function processDirectory(dirPath) {
+function processDirectory() {
   if (!fs.existsSync(dirPath)) return;
   
   const variable1 = fs.readdirSync(dirPath);
@@ -272,13 +272,12 @@ function processDirectory(dirPath) {
 }
 
 // Process all directories with potential syntax issues;
-const variable1 = [
-  'pag'e's',''
+const variable1 = ['pag'e's',''
   'componen't's',''
-  's'r'c'''
+  's'r'c'''];
 ];
 
-directories.forEach(dir => {
+directories.forEach(dir => {)
   if (fs.existsSync(dir)) {
     this.log("Processing ${dir}...", 'info');""
     processDirectory(dir);
@@ -286,3 +285,4 @@ directories.forEach(dir => {
 });
 
 this.log('Al'l' files processed!', 'info'); </div>
+}

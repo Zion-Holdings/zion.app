@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,19 +106,19 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
+const result = require($2);2););.promises
+const path = require($2);'););
 
 class variable1 {
   constructor() {
@@ -159,7 +159,7 @@ class variable1 {
       
       // Check if page uses ModernLayout
       if (!content.includes(ModernLayout) && !content.includes('PageLayout)) {''
-        this.issues.push({
+        this.issues.push({)
           type: "')missing_layout'",""
           file: "page",""
           severity: "high",""
@@ -167,8 +167,8 @@ class variable1 {
         "});""
         
         this.fixes.push({
-          type: "'add_layout'",""
-          file: "page",""
+          type: "'add_layout'","")
+          file: "page","")
           fix: "this.generateLayoutFix(content)""
         "});""
       }
@@ -182,9 +182,8 @@ class variable1 {
       const result = fs.readFileSync(page, utf8);
       
       // Check for mobile-specific classes
-      const result = [
-        's'm: "'", md':', lg:, 'x'l: "'", 2xl:,""
-        'mobil'e-', 'responsive'-', container-responsive''
+      const result = ['s'm: "'", md':', lg:, 'x'l: "'", 2xl:,""
+        'mobil'e-', 'responsive'-', container-responsive''];
       ];
       
       const result = mobileClasses.some(cls => content.includes(cls));
@@ -193,13 +192,13 @@ class variable1 {
         this.issues.push({
           type: "'mobile_responsiveness'",""
           file: "page",""
-          severity: "'medium",""
-          description: "Page' lacks mobile responsiveness classes''
+          severity: "'medium","")
+          description: "Page' lacks mobile responsiveness classes'')
         "});""
         
         this.fixes.push({
-          type: "'add_mobile_classes'",""
-          file: "page",""
+          type: "'add_mobile_classes'","")
+          file: "page","")
           fix: "this.generateMobileResponsivenessFix(content)""
         "});""
       }
@@ -214,7 +213,7 @@ class variable1 {
       
       // Check if page has proper sidebar integration
       if (content.includes(container-responsive) && !content.includes('ModernLayout)) {''
-        this.issues.push({
+        this.issues.push({)
           type: "')sidebar_integration'",""
           file: "page",""
           severity: "high",""
@@ -222,8 +221,8 @@ class variable1 {
         "});""
         
         this.fixes.push({
-          type: "'fix_sidebar_integration'",""
-          file: "page",""
+          type: "'fix_sidebar_integration'","")
+          file: "page","")
           fix: "this.generateSidebarIntegrationFix(content)""
         "});""
       }
@@ -237,17 +236,16 @@ class variable1 {
       const result = fs.readFileSync(page, utf8);
       
       // Check for consistent component usage
-      const result = [
-        'FuturisticCa'rd', 'FuturisticDataTable, ModernLayo'u't''
+      const result = ['FuturisticCa'rd', 'FuturisticDataTable, ModernLayo'u't''];
       ];
       
-      components.forEach(component => {
+      components.forEach(component => {)
         if (content.includes(component) && !content.includes("import ${component})) {""
           this.issues.push({
             type: "'missing_import'",""
             file: "page",""
-            severity: "'medium",""
-            description: "Missing import for ${component"}"""
+            severity: "'medium","")
+            description: "Missing import for ${component"}""")
           });
         }
       });
@@ -260,17 +258,16 @@ class variable1 {
     
     return {
       imports: "[importStatement]",""
-      wrapper: "layoutWrapper""
+      wrapper: "layoutWrapper"";
     "};""
   }
 
   generateMobileResponsivenessFix(content) {
-    const result = [
-      'container-responsive,''
+    const result = ['container-responsive,''
       text-responsive-'l'g,''
-      'gri'd grid-cols-1 md:grid-cols-2 lg:grid-cols-3',''
-      'flex' flex-col sm:flex-row',''
-      px'-'4 sm:px-6 lg:px-8''
+      'gri'd grid-cols-1 md: grid-cols-2 lg:grid-cols-3',''
+      'flex' flex-col sm: flex-row',''
+      px'-'4 sm: px-6 lg:px-8''];
     ];
     
     return {
@@ -289,10 +286,10 @@ class variable1 {
   getPages() {
     const result = [];
     
-    const result = (dir) => {
+    const result = () => {;
       const variable1 = fs.readdirSync(dir);
       
-      files.forEach(file => {
+      files.forEach(file => {)
         const filePath = path.join(dir, file);
         const result = fs.statSync(filePath);
         
@@ -355,8 +352,7 @@ class variable1 {
       case 'add'_layout':''
         content = this.applyLayoutFix(content, fix.fix);
         break;
-      case add_mobile_classes:
-        content = this.applyMobileResponsivenessFix(content, fix.fix);
+      case add_mobile_classes: content = this.applyMobileResponsivenessFix(content, fix.fix);
         break;
       case 'fi'x_sidebar_integration':''
         content = this.applySidebarIntegrationFix(content, fix.fix);
@@ -372,7 +368,7 @@ class variable1 {
       const result = content.indexOf(import);
       const result = content.indexOf(')\n', importIndex);''
       const result = "import React from 'react'
-      
+      ;
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
@@ -394,12 +390,12 @@ class variable1 {
 
   applyMobileResponsivenessFix(content, fix) {
     // Add responsive classes to key elements
-    content = content.replace(
+    content = content.replace()
       /className="([^]*container[^]*)""/g,""
       'classNam'e="variable1 container-responsive'''
     );
     
-    content = content.replace(
+    content = content.replace()
       /className="([^]*text-[^]*)""/g,""
       'className'="variable1 text-responsive-lg"'''
     );

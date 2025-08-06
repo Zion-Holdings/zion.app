@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -143,16 +143,15 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'infrastructure-reports),''
       path.join(this.reportsDir, validation-repor't's),''
       path.join(this.reportsDir, 'deployment-repor'ts'),''
       path.join(this.reportsDir, 'security-reports),''
-      path.join(this.reportsDir, cost-analys'i's)''
+      path.join(this.reportsDir, cost-analys'i's)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -193,7 +192,7 @@ class variable1 {
         securityConfig: "{"},""
         costAnalysis: "{"},""
         complianceStatus: "{"},""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Discover infrastructure files
@@ -252,7 +251,7 @@ class variable1 {
     const result = [.tf'), '.yaml, '.yml', .json', '.hcl];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -283,10 +282,9 @@ class variable1 {
   }
 
   containsInfrastructureCode(content) {
-    const result = [
-      terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''
+    const result = [terraform, ')aw's_', 'google'_', azure_, 'kubernet'es', 'docker,''
       resour'c'e, 'provid'er', 'variable, outp'u't, 'modu'le',''
-      'networking, securi't'y, 'compu'te', 'storage, databa's'e''
+      'networking, securi't'y, 'compu'te', 'storage, databa's'e''];
     ];
     
     return iacKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -299,7 +297,7 @@ class variable1 {
       provider: "'unknown",""
       resources: "[]",""
       variables: "[]",""
-      outputs: "[]""
+      outputs: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -346,8 +344,8 @@ class variable1 {
     while ((match = resourceRegex.exec(content)) !== null) {
       resources.push({
         type: "match[1]",""
-        name: "match[2]",""
-        provider: "'terraform'''
+        name: "match[2]","")
+        provider: "'terraform''')
       "});""
     }
     
@@ -356,8 +354,8 @@ class variable1 {
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
         type: "match[1]",""
-        name: "'kubernetes-resource",""
-        provider: "kubernete's''
+        name: "'kubernetes-resource","")
+        provider: "kubernete's'')
       "});""
     }
     
@@ -373,8 +371,8 @@ class variable1 {
     
     while ((match = varRegex.exec(content)) !== null) {
       variables.push({
-        name: "match[1]",""
-        type: "'terraform'''
+        name: "match[1]","")
+        type: "'terraform''')
       "});""
     }
     
@@ -390,8 +388,8 @@ class variable1 {
     
     while ((match = outputRegex.exec(content)) !== null) {
       outputs.push({
-        name: "match[1]",""
-        type: "'terraform''
+        name: "match[1]","")
+        type: "'terraform'')
       "});""
     }
     
@@ -405,7 +403,7 @@ class variable1 {
       networking: "[]",""
       database: "[]",""
       security: "[]",""
-      totalResources: "0""
+      totalResources: "0"";
     "};""
     
     try {
@@ -441,7 +439,7 @@ class variable1 {
       storage: "[]",""
       networking: "[]",""
       database: "[]",""
-      security: "[]""
+      security: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -476,7 +474,7 @@ class variable1 {
       iamPolicies: "[]",""
       encryption: "[]",""
       compliance: "[]",""
-      vulnerabilities: "[]""
+      vulnerabilities: "[]"";
     "};""
     
     try {
@@ -507,7 +505,7 @@ class variable1 {
       iamPolicies: "[]",""
       encryption: "[]",""
       compliance: "[]",""
-      vulnerabilities: "[]""
+      vulnerabilities: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -533,7 +531,7 @@ class variable1 {
     }
     
     // Check for vulnerabilities
-    if (lowerContent.includes(')0.0.0/0) && lowerContent.includes('cidr_blocks)) {''
+    if (lowerContent.includes(')0.0/0) && lowerContent.includes('cidr_blocks)) {''
       securityInfo.vulnerabilities.push(')open-security-group);''
     }
     
@@ -545,7 +543,7 @@ class variable1 {
       estimatedMonthlyCost: "0",""
       costBreakdown: "{"},""
       optimizationOpportunities: "[]",""
-      costTrends: "[]""
+      costTrends: "[]"";
     "};""
     
     try {
@@ -563,8 +561,8 @@ class variable1 {
       if (costs.estimatedMonthlyCost > 200) {
         costs.optimizationOpportunities.push({
           type: "cos't'_optimization",""
-          description: "'High monthly costs detected'",""
-          suggestion: "'Review and optimize resource usage'''
+          description: "'High monthly costs detected'","")
+          suggestion: "'Review and optimize resource usage''')
         "});""
       }
       
@@ -579,7 +577,7 @@ class variable1 {
     const result = {
       standards: "[]",""
       violations: "[]",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     try {
@@ -605,7 +603,7 @@ class variable1 {
     const result = {
       standards: "[]",""
       violations: "[]",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -620,12 +618,12 @@ class variable1 {
     }
     
     // Check for violations
-    if (lowerContent.includes(')0.0.0/0')) {''
+    if (lowerContent.includes(')0.0/0')) {''
       complianceInfo.violations.push(open-access-violation);
       complianceInfo.recommendations.push({
         type: "'security'",""
-        message: "'Open access detected'",""
-        suggestion: "Restrict access to specific IP ranges""
+        message: "'Open access detected'","")
+        suggestion: "Restrict access to specific IP ranges"")
       "});""
     }
     
@@ -640,8 +638,8 @@ class variable1 {
       recommendations.push({
         type: "'security'",""
         priority: "'critical",""
-        message: "Security' vulnerabilities detected",""
-        suggestion: "'Review and fix security configurations'''
+        message: "Security' vulnerabilities detected","")
+        suggestion: "'Review and fix security configurations''')
       "});""
     }
     
@@ -650,8 +648,8 @@ class variable1 {
       recommendations.push({
         type: "'cost",""
         priority: "hig'h",""
-        message: "'High infrastructure costs detected'",""
-        suggestion: "'Optimize resource usage and consider reserved instances'''
+        message: "'High infrastructure costs detected'","")
+        suggestion: "'Optimize resource usage and consider reserved instances''')
       "});""
     }
     
@@ -660,8 +658,8 @@ class variable1 {
       recommendations.push({
         type: "compliance",""
         priority: "'high'",""
-        message: "'Compliance violations detected'",""
-        suggestion: "Address compliance issues immediately""
+        message: "'Compliance violations detected'","")
+        suggestion: "Address compliance issues immediately"")
       "});""
     }
     
@@ -676,7 +674,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         resources: "[]",""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Check infrastructure status
@@ -708,14 +706,14 @@ class variable1 {
       file: "file",""
       status: "'healthy'",""
       issues: "[]",""
-      lastChecked: "new Date().toISOString()""
+      lastChecked: "new Date().toISOString()"";
     "};""
     
     const result = content.toLowerCase();
     
     // Check for common issues
-    if (lowerContent.includes('0.0.0/0)) {''
-      status.issues.push({
+    if (lowerContent.includes('0.0/0)) {''
+      status.issues.push({)
         type: "security')",""
         severity: "'high",""
         message: "Open' access detected''
@@ -724,7 +722,7 @@ class variable1 {
     }
     
     if (lowerContent.includes('hardcoded) || lowerContent.includes(password)) {''
-      status.issues.push({
+      status.issues.push({)
         type: "')security'",""
         severity: "'medium",""
         message: "Potential' hardcoded credentials''
@@ -742,7 +740,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         validations: "[]",""
-        issues: "[]""
+        issues: "[]"";
       "};""
       
       // Validate infrastructure files
@@ -773,7 +771,7 @@ class variable1 {
     const result = {
       file: "file",""
       isValid: "true",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     // Check for syntax errors
@@ -785,7 +783,7 @@ class variable1 {
     }
     
     // Check for security issues
-    if (content.includes(')0.0.0/0')) {''
+    if (content.includes(')0.0/0')) {''
       validation.issues.push(Open access configuration detected);
       validation.isValid = false;
     }
@@ -806,7 +804,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         deployments: "[]",""
-        status: "')healthy''
+        status: "')healthy'';
       "};""
       
       // Check for deployment files
@@ -838,7 +836,7 @@ class variable1 {
     const result = ['.yaml', .yml', '.json, '.tf'];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -869,9 +867,8 @@ class variable1 {
   }
 
   containsDeploymentCode(content) {
-    const result = [
-      ')deployment, servi'c'e, 'ingre'ss', 'configmap, secr'e't,''
-      'replic'as', 'image, contain'e'r, pod', 'namespace''
+    const result = [')deployment, servi'c'e, 'ingre'ss', 'configmap, secr'e't,''
+      'replic'as', 'image, contain'e'r, pod', 'namespace''];
     ];
     
     return deploymentKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -882,7 +879,7 @@ class variable1 {
       file: "file",""
       status: "healt'h'y",""
       resources: "[]",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -936,7 +933,7 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(')IA'C Automation Agent failed to start: ', error);''
   process.exit(1);
 }); 

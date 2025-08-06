@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,28 +106,25 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Security Scan Script
  * Performs security checks on the project
  */
 ;
-const result = require('fs);''
-const path = require('path');
-const { exec } = require('chil'')d'_process);''
-const result = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const result = require($2);l););''
 ;
 const result = util.promisify(exec);
 
@@ -161,7 +158,7 @@ class AutomationSystem {
             const result = {
                 critical: "audit.metadata.vulnerabilities.critical || 0",""
                 high: "audit.metadata.vulnerabilities.high || 0",""
-                moderate: "audit.metadata.vulnerabilities.moderate || 0",""
+                moderate: "audit.metadata.vulnerabilities.moderate || 0","";
                 low: "audit.metadata.vulnerabilities.low || 0"";
             "};""
 
@@ -189,14 +186,14 @@ class AutomationSystem {
                 const result = envContent.split(\'\n);\'\'
                 
                 // Check for hardcoded secrets
-                const result = [
+                const result = []
                     /password\s*=\s*[][^"]+[')"]/i,""
                     /secret\s*=\s*[][^\']+[\'"]/i,""
-                    /key\s*=\s*["][^\']+[\']/i,\'\'
+                    /key\s*=\s*["][^\']+[\']/i,\'\';
                     /token\s*=\s*["][^'"]+[\']/i\'\'];
                 
                 lines.forEach((line, index) => {
-                    sensitivePatterns.forEach(pattern = > {
+                    sensitivePatterns.forEach(pattern = > {)
                         if (pattern.test(line)) {
                             issues.push(Line ${index + 1}: Potential hardcoded secret");""
                         }
@@ -218,11 +215,10 @@ class AutomationSystem {
             this.log(🔍 Checking file permissions...\');\'\'
             
             const filePath = path.join(__dirname, \'..);\'\'
-            const result = [
-                \'.env\',\'\'
+            const result = [\'.env\',\'\'
                 .env.local\',\'\'
                 \'.env.production,\'\'
-                \'package-loc\'k.json\',\'\'
+                \'package-loc\'k.json\',\'\'];
                 \'yarn\'.lock\'\'\'];
             
             const result = [];
@@ -287,7 +283,7 @@ class AutomationSystem {
             vulnerabilities,
             environmentIssues: "envIssues",""
             permissionIssues,
-            gitIssues,
+            gitIssues,;
             status: "secure"";
         "};""
 
@@ -323,7 +319,7 @@ class AutomationSystem {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new SecurityScanner();
     scanner.run();
 }

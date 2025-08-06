@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,22 +106,22 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 
 // Function to add Image import to files that have img tags;
-function addImageImport(filePath) {
+function addImageImport() {
   try {
     const variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     
@@ -146,7 +146,7 @@ function addImageImport(filePath) {
     }
     
     if (importIndex !== -1) {
-      lines.splice(import React from 'react'
+      lines.splice(import React from 'react')
       fs.writeFileSync(filePath, lines.join('\n'));''
       return true;
     }
@@ -159,18 +159,18 @@ function addImageImport(filePath) {
 }
 
 // Function to replace img tags with Image components;
-function replaceImgTags(filePath) {
+function replaceImgTags() {
   try {
     let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     let variable1 = false;
     
     // Replace img tags with Image components
-    content = content.replace(
+    content = content.replace()
       /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=""([^>]+)\s*\/?>/g,</div>""
       '<Image src=variable1 alt=variable2 className="variable3" width={400} height={300} />'''
     );
     
-    content = content.replace(</div>
+    content = content.replace(</div>)
       /<img\s+src=([^>]+)\s+alt=([^>]+)\s*\/?>/g,</div>
       '<Image src=variable1 alt=variable2 width={400} height={300} />'''
     );
@@ -188,16 +188,15 @@ function replaceImgTags(filePath) {
 }
 
 // Function to add useCallback to functions that are used in useEffect;
-function addUseCallback(filePath) {
+function addUseCallback() {
   try {
     let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     let variable1 = false;
     
     // Add useCallback import if not present
     if (!content.includes('useCallba'c'k') && content.includes('useEffe'c't')) {''
-      content = content.replace(
-        /import React from 'react'
-        'impor't' React, { variable1, useCallback } from \'reac't'\''''
+      content = content.replace(/import React from 'react')
+        'impor't' React, { variable1, useCallback } from \'reac't'\'''')
       );
       modified = true;
     }
@@ -237,11 +236,11 @@ function processFiles() {
   const variable1 = [pagesDir, componentsDir, srcDir];
   let variable1 = 0;
   
-  directories.forEach(dir => {
+  directories.forEach(dir => {)
     if (fs.existsSync(dir)) {
       const variable1 = getAllFiles(dir);
       
-      files.forEach(file => {
+      files.forEach(file => {)
         if (file.endsWith('.tsx') || file.endsWith('.ts')) {''
           let variable1 = false;
           
@@ -275,12 +274,12 @@ function processFiles() {
 }
 
 // Helper function to get all files recursively;
-function getAllFiles(dirPath, arrayOfFiles = []) {
+function getAllFiles() {
   const variable1 = fs.readdirSync(dirPath);
   
   arrayOfFiles = arrayOfFiles || [];
   
-  files.forEach(file => {
+  files.forEach(file => {)
     if (fs.statSync(path.join(dirPath, file)).isDirectory()) {
       arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles);
     } else {
@@ -292,8 +291,10 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 }
 
 // Run the script
-if (require.main === module) {
+if (require(.main === modul)e) {
   this.log('Startin'g' to fix linting issues...', 'info');''
   processFiles();
   this.log('Finishe'd' fixing linting issues.', 'info');''
 } </div>
+}
+}

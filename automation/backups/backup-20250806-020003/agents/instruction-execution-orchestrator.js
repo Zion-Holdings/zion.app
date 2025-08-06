@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs-extra');
-const path = require('path');
-const { EventEmitter } = require('events');
-const GoogleDocsInstructionAgent = require('./google-docs-instruction-agent');
+}const fs = require($2);'););
+const path = require($2);'););
+const { EventEmitter } = require(('events)');
+const GoogleDocsInstructionAgent = require($2);'););
 
 class InstructionExecutionOrchestrator extends EventEmitter {
   constructor(config = {}) {
@@ -71,7 +68,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       const googleDocsAgent = new GoogleDocsInstructionAgent({
         googleDocsUrl: this.config.googleDocsUrl,
         checkInterval: 3000, // Check every minute
-        maxRetries: this.config.retryAttempts
+        maxRetries: this.config.retryAttempts);
       });
       
       // Set up event listeners for the agent
@@ -90,17 +87,16 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       return true;
       
     } catch (error) {
-      console.error('❌ Failed to initialize Instruction Execution Orchestrator:', error);
+      console.error('❌ Failed to initialize Instruction Execution Orchestrator: ', error);
       throw error;
     }
   }
 
   async ensureDirectories() {
-    const directories = [
-      'automation/orchestrators/instruction-execution',
+    const directories = ['automation/orchestrators/instruction-execution',
       'automation/data/orchestration',
       'automation/logs/orchestration',
-      'automation/reports/orchestration'
+      'automation/reports/orchestration'];
     ];
     
     for (const dir of directories) {
@@ -129,7 +125,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     });
 
     agent.on('error', (error) => {
-      console.error('🚨 Agent error:', error);
+      console.error('🚨 Agent error: ', error);
       this.emit('error', error);
     });
   }
@@ -166,8 +162,8 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       
       // Add to running tasks
       this.runningTasks.set(taskId, {
-        ...task,
-        id: taskId,
+        ...task,)
+        id: taskId,)
         startTime: new Date().toISOString(),
         status: 'running'
       });
@@ -196,7 +192,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     }
     
     // Set up timeout
-    const timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {;
       console.warn(`⏰ Task ${taskId} timed out`);
       const runningTask = this.runningTasks.get(taskId);
       if (runningTask) {
@@ -239,7 +235,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
         completedTasks: this.completedTasks.length,
         failedTasks: this.failedTasks.length
       },
-      agents: {}
+      agents: {};
     };
     
     // Check agent health
@@ -290,7 +286,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       runningTasks: this.runningTasks.size,
       completedTasks: this.completedTasks.length,
       failedTasks: this.failedTasks.length,
-      agents: Object.fromEntries(
+      agents: Object.fromEntries()
         Array.from(this.agents.entries()).map(([name, agent]) => [name, agent.getStatus()])
       )
     };
@@ -310,7 +306,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       recentTasks: {
         completed: this.completedTasks.slice(-10),
         failed: this.failedTasks.slice(-10)
-      }
+      };
     };
     
     const reportFile = path.join(process.cwd(), 'automation/reports/orchestration/report.json');
@@ -324,7 +320,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
     
     if (completedTasks.length === 0) return 0;
     
-    const totalTime = completedTasks.reduce((sum, task) => {
+    const totalTime = completedTasks.reduce((sum, task) => {;
       const start = new Date(task.startTime);
       const end = new Date(task.endTime);
       return sum + (end - start);
@@ -352,8 +348,7 @@ class InstructionExecutionOrchestrator extends EventEmitter {
       case 'marketing':
         agent = await this.createMarketingAgent(config);
         break;
-      default:
-        agent = await this.createGenericAgent(taskType, config);
+      default: agent = await this.createGenericAgent(taskType, config);
     }
     
     if (agent) {

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,10 +26,10 @@ const memoryOptimization = {
     }
   }
 };;
-const fs = require(('fs'););''
-const path = require(('path'););''
-const { exec } = require('child_process');''
-const util = require(('util'););''
+const fs = require($2);'););''
+const path = require($2);'););''
+const { exec } = require(('child_process)');''
+const util = require($2);'););''
 
 const execAsync = util.promisify(exec);
 
@@ -194,7 +194,7 @@ class ComprehensiveSyntaxFixer {
             else if (value.includes('Date')) varName = 'timestamp'''
             else if (value.includes('JSON')) varName = 'jsonData'''
             else if (value.includes('require')) varName = 'module'''
-            else if (value.includes('exec')) varName = 'command'''
+            else if (value.includes('exec')) varName = 'command''';
             ;
             return `${declaration} ${varName} = ${value};`
         });
@@ -297,7 +297,7 @@ class ComprehensiveSyntaxFixer {
     async getJSFiles(dir) {
         const files = [];
         const walkDir = async (currentDir) => {
-            try {
+            try {;
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
                     const fullPath = path.join(currentDir, item);
@@ -320,7 +320,7 @@ class ComprehensiveSyntaxFixer {
     async getAllFiles(dir, extensions) {
         const files = [];
         const walkDir = async (currentDir) => {
-            try {
+            try {;
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
                     const fullPath = path.join(currentDir, item);
@@ -364,7 +364,7 @@ async function main() {
     await fixer.fixAllSyntaxErrors();
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     main().catch(console.error);
 }
 

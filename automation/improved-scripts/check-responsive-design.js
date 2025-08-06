@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,30 +120,27 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Responsive Design Checker
  * Validates responsive design implementation
  */
 
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -240,9 +237,9 @@ class ResponsiveDesignChecker {
         const configContent = fs.readFileSync(tailwindConfigPath, 'utf8');
         const hasResponsiveConfig = configContent.includes('screens') || 
                                    configContent.includes('breakpoints') ||
-                                   configContent.includes('sm:') ||
+                                   configContent.includes('sm: ') ||
                                    configContent.includes('md:') ||
-                                   configContent.includes('lg:') ||
+                                   configContent.includes('lg:') ||;
                                    configContent.includes('xl:');
         
         if (hasResponsiveConfig) {
@@ -262,33 +259,32 @@ class ResponsiveDesignChecker {
         
         if (fs.existsSync(this.stylesDir)) {
             const files = fs.readdirSync(this.stylesDir);
-            files.forEach(file => {
+            files.forEach(file => {)
                 if (file.endsWith('.css')) {
                     const filePath = path.join(this.stylesDir, file);
                     const content = fs.readFileSync(filePath, 'utf8');
                     
                     cssFiles.push({
                         file,
-                        path: filePath,
-                        size: content.length
+                        path: filePath,)
+                        size: content.length)
                     });
                     
                     // Check for responsive classes
-                    const responsivePatterns = [
-                        /@media\s+\(/g,
-                        /min-width:/g,
-                        /max-width:/g,
-                        /sm:/g,
-                        /md:/g,
-                        /lg:/g,
-                        /xl:/g
+                    const responsivePatterns = [/@media\s+\(/g,
+                        /min-width: /g,
+                        /max-width: /g,
+                        /sm: /g,
+                        /md: /g,
+                        /lg: /g,
+                        /xl: /g];
                     ];
                     
-                    responsivePatterns.forEach(pattern => {
+                    responsivePatterns.forEach(pattern => {)
                         const matches = content.match(pattern);
                         if (matches) {
-                            responsiveClasses.push({
-                                file,
+                            responsiveClasses.push({)
+                                file,)
                                 pattern: pattern.toString(),
                                 count: matches.length
                             });
@@ -323,7 +319,7 @@ class ResponsiveDesignChecker {
     scanComponents(dir, components, responsiveComponents) {
         const items = fs.readdirSync(dir);
         
-        items.forEach(item => {
+        items.forEach(item => {)
             const itemPath = path.join(dir, item);
             const stat = fs.statSync(itemPath);
             
@@ -334,28 +330,27 @@ class ResponsiveDesignChecker {
                 
                 components.push({
                     file: item,
-                    path: itemPath,
-                    size: content.length
+                    path: itemPath,)
+                    size: content.length)
                 });
                 
                 // Check for responsive classes
-                const responsivePatterns = [
-                    /className.*sm:/g,
-                    /className.*md:/g,
-                    /className.*lg:/g,
-                    /className.*xl:/g,
-                    /className.*2xl:/g
+                const responsivePatterns = [/className.*sm: /g,
+                    /className.*md: /g,
+                    /className.*lg: /g,
+                    /className.*xl: /g,
+                    /className.*2xl: /g];
                 ];
                 
-                const hasResponsive = responsivePatterns.some(pattern => 
-                    content.match(pattern)
+                const hasResponsive = responsivePatterns.some(pattern => )
+                    content.match(pattern);
                 );
                 
                 if (hasResponsive) {
                     responsiveComponents.push({
                         file: item,
-                        path: itemPath,
-                        responsiveClasses: responsivePatterns.filter(pattern => 
+                        path: itemPath,)
+                        responsiveClasses: responsivePatterns.filter(pattern => )
                             content.match(pattern)
                         ).length
                     });
@@ -370,27 +365,27 @@ class ResponsiveDesignChecker {
         if (!tailwindConfig.responsive) {
             recommendations.push({
                 type: 'tailwind_config',
-                priority: 'high',
-                message: 'Add responsive breakpoints to Tailwind configuration'
+                priority: 'high',)
+                message: 'Add responsive breakpoints to Tailwind configuration')
             });
         }
         
         if (cssAnalysis.responsiveClasses.length === 0) {
             recommendations.push({
                 type: 'css_responsive',
-                priority: 'medium',
-                message: 'Add responsive CSS media queries'
+                priority: 'medium',)
+                message: 'Add responsive CSS media queries')
             });
         }
         
-        const responsiveComponentRatio = componentAnalysis.responsiveComponents.length / 
+        const responsiveComponentRatio = componentAnalysis.responsiveComponents.length / ;
                                       Math.max(componentAnalysis.components.length, 1);
         
         if (responsiveComponentRatio < 0.5) {
             recommendations.push({
                 type: 'component_responsive',
-                priority: 'medium',
-                message: 'Add responsive classes to more components'
+                priority: 'medium',)
+                message: 'Add responsive classes to more components')
             });
         }
         
@@ -412,7 +407,7 @@ class ResponsiveDesignChecker {
                 responsiveComponents: componentAnalysis.responsiveComponents.length,
                 responsiveRatio: componentAnalysis.components.length > 0 ? 
                     (componentAnalysis.responsiveComponents.length / componentAnalysis.components.length).toFixed(2) : 0
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'responsive-design-report.json');
@@ -436,9 +431,14 @@ class ResponsiveDesignChecker {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const checker = new ResponsiveDesignChecker();
     checker.run();
 }
 
 module.exports = ResponsiveDesignChecker;
+
+}
+}
+}
+}

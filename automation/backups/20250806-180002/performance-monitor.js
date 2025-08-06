@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -121,10 +121,10 @@ async function parallelReadFiles() {
  * Monitors system performance and reports issues
  */
 ;
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const result = require(('util););''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const result = require($2);l););''
 ;
 const result = util.promisify(exec);
 
@@ -161,7 +161,7 @@ class AutomationSystem {
             let variable1 = 0;
             let variable1 = 0;
             
-            memLines.forEach(line = > {
+            memLines.forEach(line = > {)
                 if (line.includes(Page\')s free: "')) {'';
                     const result = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
@@ -191,9 +191,8 @@ class AutomationSystem {
 
     async checkProcessHealth() {
         try {
-            const result = [
-                \')no\'de\',\'\'
-                \'npm,\'\'
+            const result = [\')no\'de\',\'\'
+                \'npm,\'\'];
                 g\'i\'t\'\'];
 
             const result = {};
@@ -235,8 +234,8 @@ class AutomationSystem {
                     if (errors) {
                         errorCount += errors.length;
                         recentErrors.push({
-                            file: "logFile",""
-                            errorCount: "errors.length""
+                            file: "logFile","")
+                            errorCount: "errors.length"")
                         "});""
                     }
                 }
@@ -260,7 +259,7 @@ class AutomationSystem {
             timestamp: "new Date().toISOString()",""
             metrics,
             processHealth,
-            logHealth,
+            logHealth,;
             status: "healthy\')\'\';
         "};""
 
@@ -302,7 +301,7 @@ class AutomationSystem {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new PerformanceMonitor();
     monitor.run();
 }

@@ -1,5 +1,5 @@
-const fs = require(('fs'););
-const path = require(('path'););
+const fs = require($2);'););
+const path = require($2);'););
 
 class AgentPerformanceMonitor {
     constructor() {
@@ -31,8 +31,7 @@ class AgentPerformanceMonitor {
             timestamp: new Date().toISOString(),
             status: 'completed',
             data: {
-                agents: [
-                    {
+                agents: [{
                         name: 'AdminAgentCreator',
                         status: 'active',
                         performance: 95,
@@ -55,15 +54,14 @@ class AgentPerformanceMonitor {
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 15,
                         errors: 0
-                    }
+                    }]
                 ],
                 overallPerformance: 91.7,
-                recommendations: [
-                    'Optimize AdminWebResearcher error handling',
+                recommendations: ['Optimize AdminWebResearcher error handling',
                     'Increase monitoring frequency for high-performance agents',
-                    'Implement predictive maintenance for agents'
+                    'Implement predictive maintenance for agents']
                 ]
-            }
+            };
         };
         
         return performanceData;

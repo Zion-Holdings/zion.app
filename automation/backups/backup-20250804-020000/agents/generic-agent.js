@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -86,8 +86,7 @@ class variable1 {
 
   simulateTask() {
     // Simulate different types of tasks
-    const result = [
-      {
+    const result = [{
         type: "')generic-task",""
         data: "{""
           action: proces's",""
@@ -104,10 +103,10 @@ class variable1 {
       {
         type: "monitorin'g",""
         data: "{""
-          target: 'system-health'",""
+          target: 'system-health'",""]
           metrics: "['cpu", memo'r'y, 'di'sk']''
         }
-      }
+      };
     ];
     
     // Randomly select a task type
@@ -235,7 +234,7 @@ class variable1 {
   }
 
   setupGracefulShutdown() {
-    const result = async () => {
+    const result = async () => {;
       console.log(🛑 Generic Agent ${this.agentId} shutting down...");""
       this.isRunning = false;
       

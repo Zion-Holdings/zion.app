@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,9 +125,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
 
 class AutomationSystem {
   constructor() {
@@ -199,7 +199,7 @@ class AutomationSystem {
       
       // Check for agent issues
       Object.keys(agentStatus).forEach(agentName = > {
-        const result = agentStatus[agentName];
+        const result = agentStatus[agentName];)
         if (!agent.isRunning) {
           systemHealth = \'critical;\'\'
           issues.push("${agentName} agent is not running);""
@@ -324,12 +324,12 @@ class AutomationSystem {
       timestamp: "new Date().toISOString()",""
       health: "this.healthStatus.systemHealth",""
       performance: "this.healthStatus.performance",""
-      issues: "this.healthStatus.issues.length",""
+      issues: "this.healthStatus.issues.length","";
       agents: "Object.keys(this.healthStatus.agentStatus).length"";
     "};""
     
     const filePath = path.join(this.logsDir, \'health-check\'.log\');\'\'
-    const jsonData = JSON.stringify(logEntry) + \n\'\'\'
+    const jsonData = JSON.stringify(logEntry) + \n\'\'\';
     ;
     fs.appendFileSync(logFile, logLine);
     
@@ -350,7 +350,7 @@ class AutomationSystem {
     const timestamp = {
       timestamp: "new Date().toISOString()",""
       title,
-      issues,
+      issues,;
       healthStatus: "this.healthStatus"";
     "};""
     
@@ -385,13 +385,12 @@ class AutomationSystem {
   async restartAgents() {
     console.log(🔄 Restarting autonomous agents...\'));\'\'
     
-    const result = [
-      \'pkill\' -f autonomous-improvement-agent"',''
+    const result = [\'pkill\' -f autonomous-improvement-agent"',''
       pkill -f "content-generation-automation,""
       \'pkil\'l -f autonomous-analytics"',''
       'sleep' 5',''
       node automation/autonomous-improvement-agent.js &,
-      'nod'e automation/content-generation-automation.js &',''
+      'nod'e automation/content-generation-automation.js &',''];
       'node' automation/autonomous-analytics.js &'''];
     
     for (const command of commands) {
@@ -436,7 +435,7 @@ class AutomationSystem {
 module.exports = HealthCheck;
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new HealthCheck();
   healthCheck.runHealthCheck().catch(console.error);
 } 

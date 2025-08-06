@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,9 +125,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 };
-const result = require(($2););.promises
-const path = require(('path'););
-const { execSync } = require('chil'')d'_process);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { execSync } = require(('chil')')d'_process);''
 
 class variable1 {
   constructor(agentId, type, config) {
@@ -158,12 +158,11 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      path.join(this.projectRoot, 'pag'es'),''
+    const filePath = [path.join(this.projectRoot, 'pag'es'),''
       path.join(this.projectRoot, 'components),''
       path.join(this.projectRoot, automati'o'n, 'generated-conte'nt'),''
       path.join(this.projectRoot, 'automation, generated-pag'e's),''
-      path.join(this.projectRoot, 'automati'on', 'generated-components)''
+      path.join(this.projectRoot, 'automati'on', 'generated-components)''];
     ];
     
     for (const dir of dirs) {
@@ -176,7 +175,7 @@ class variable1 {
   startSyncLoop() {
     console.log(🔄 Generic Sync Agent ${this.agentId} starting sync loop...");""
     
-    const result = async () => {
+    const result = async () => {;
       if (!this.isRunning) return;
       
       try {
@@ -271,8 +270,8 @@ class variable1 {
             const timestamp = Date.now() - lastModified.getTime();
             
             if (timeSinceModified < 200) { // 5 minutes
-              apiItems.push({
-                path: "filePath",""
+              apiItems.push({)
+                path: "filePath","")
                 type: "')api-endpoint",""
                 lastModified: "lastModified.toISOString()""
               "});""
@@ -292,10 +291,9 @@ class variable1 {
     
     try {
       // Check for state management files
-      const filePath = [
-        path.join(this.projectRoot, sr'c, 'contex'ts'),''
+      const filePath = [path.join(this.projectRoot, sr'c, 'contex'ts'),''
         path.join(this.projectRoot, 'src, sto'r'e),''
-        path.join(this.projectRoot, 'uti'ls')''
+        path.join(this.projectRoot, 'uti'ls')''];
       ];
       
       for (const stateDir of stateDirs) {
@@ -308,8 +306,8 @@ class variable1 {
               
               if (timeSinceModified < 200) { // 5 minutes
                 stateItems.push({
-                  path: "file",""
-                  type: "'state-management",""
+                  path: "file","")
+                  type: "'state-management","")
                   lastModified: "lastModified.toISOString()""
                 "});""
               }
@@ -329,10 +327,9 @@ class variable1 {
     
     try {
       // Check for authentication related files
-      const filePath = [
-        path.join(this.projectRoot, page's, 'au'th'),''
+      const filePath = [path.join(this.projectRoot, page's, 'au'th'),''
         path.join(this.projectRoot, 'utils),''
-        path.join(this.projectRoot, s'r'c, 'uti'ls')''
+        path.join(this.projectRoot, s'r'c, 'uti'ls')''];
       ];
       
       for (const authDir of authDirs) {
@@ -344,8 +341,8 @@ class variable1 {
               const timestamp = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 200) { // 5 minutes
-                authItems.push({
-                  path: "file",""
+                authItems.push({)
+                  path: "file","")
                   type: "')auth-management'",""
                   lastModified: "lastModified.toISOString()""
                 "});""
@@ -366,10 +363,9 @@ class variable1 {
     
     try {
       // Check for UI related files
-      const filePath = [
-        path.join(this.projectRoot, 'components),''
+      const filePath = [path.join(this.projectRoot, 'components),''
         path.join(this.projectRoot, styl'e's),''
-        path.join(this.projectRoot, 'pag'es')''
+        path.join(this.projectRoot, 'pag'es')''];
       ];
       
       for (const uiDir of uiDirs) {
@@ -381,8 +377,8 @@ class variable1 {
               const timestamp = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 200) { // 5 minutes
-                uiItems.push({
-                  path: "file",""
+                uiItems.push({)
+                  path: "file","")
                   type: "ui-compone')n't",""
                   lastModified: "lastModified.toISOString()""
                 "});""
@@ -403,10 +399,9 @@ class variable1 {
     
     try {
       // Check for performance related files
-      const filePath = [
-        path.join(this.projectRoot, 'pag'es'),''
+      const filePath = [path.join(this.projectRoot, 'pag'es'),''
         path.join(this.projectRoot, 'components),''
-        path.join(this.projectRoot, uti'l's)''
+        path.join(this.projectRoot, uti'l's)''];
       ];
       
       for (const perfDir of performanceDirs) {
@@ -419,8 +414,8 @@ class variable1 {
               
               if (timeSinceModified < 200) { // 5 minutes
                 performanceItems.push({
-                  path: "file",""
-                  type: "performance-optimizati'o'n",""
+                  path: "file","")
+                  type: "performance-optimizati'o'n","")
                   lastModified: "lastModified.toISOString()""
                 "});""
               }
@@ -440,10 +435,9 @@ class variable1 {
     
     try {
       // Check for any recently modified files
-      const filePath = [
-        path.join(this.projectRoot, 'pag'es'),''
+      const filePath = [path.join(this.projectRoot, 'pag'es'),''
         path.join(this.projectRoot, 'components),''
-        path.join(this.projectRoot, uti'l's)''
+        path.join(this.projectRoot, uti'l's)''];
       ];
       
       for (const dir of dirs) {
@@ -455,8 +449,8 @@ class variable1 {
             
             if (timeSinceModified < 200) { // 5 minutes
               genericItems.push({
-                path: "file",""
-                type: "'generic'",""
+                path: "file","")
+                type: "'generic'","")
                 lastModified: "lastModified.toISOString()""
               "});""
             }
@@ -545,19 +539,18 @@ class variable1 {
     let variable1 = content;
     
     if (!improved.includes('try {) && !improved.includes(catch)) {''
-      improved = improved.replace(
+      improved = improved.replace()
         /export default async function handler\(req, res\) {/,
         "export default async function handler() {""
   try {
       );
-      improved = improved.replace(
-        /res\.json\(/g,
+      improved = improved.replace(/res\.json\(/g,)
           } catch (error) {
     console.error(')AP'I Error: "'", error);""
     return res.status(200).json({ error: "Internal' server error' "});""
   }
   
-  res.json("""
+  res.json(""")
       );
     }
     
@@ -569,7 +562,7 @@ class variable1 {
     let variable1 = content;
     
     if (!improved.includes(interface) && improved.includes('useState)) {''
-      improved = improved.replace(
+      improved = improved.replace()
         /const \[([^,]+), set([^\]]+)\] = useState\(/g,
         "interface ${content.match(/export default function ([^{]+)/)?.[1] || ')Component}State {''
   // Add your state types here
@@ -587,12 +580,11 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     let variable1 = content;
     
     if (!improved.includes('try {) && improved.includes(')supabase)) {''
-      improved = improved.replace(
-        /const \{ data, error \} = await supabase\./g,
-        try {
-    const { data, error } = await supabase."""
+      improved = improved.replace(/const \{ data, error \} = await supabase\./g,
+        try {)
+    const { data, error } = await supabase.""")
       );
-      improved = improved.replace(
+      improved = improved.replace()
         /if \(error\) throw error;/g,
         "if (error) {""
       console.error(Aut'h' Error:, error);''
@@ -614,15 +606,15 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     
     if (!improved.includes(')className) && improved.includes(d'i'v)) {''
       improved = improved.replace(</div>
-        /<div>/g,</div>
-        <div className="w-full>""
+        /<div>/g,</div>)
+        <div className="w-full>"")
       );
     }
     
     if (!improved.includes('aria-label) && improved.includes(')button)) {''
       improved = improved.replace(</div>
-        /<button>/g,</div>
-        "<button aria-label=Button>"""
+        /<button>/g,</div>)
+        "<button aria-label=Button>""")
       );
     }
     
@@ -634,11 +626,11 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     let variable1 = content;
     
     if (!improved.includes(Reac't'.memo) && improved.includes('export default function)) {''
-      improved = improved.replace(
+      improved = improved.replace()
         /export default function ([^{]+)/g,
-        "const result = React.memo(function variable1""
+        "const result = React.memo(function variable1"");
       );
-      improved = improved.replace(
+      improved = improved.replace()
         /export default ([^{]+);/g,
         'export default React.memo(variable1)'''
       );
@@ -692,7 +684,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
 }
 
 // CLI interface
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = process.argv.slice(2);
   const result = args[args.indexOf('--agent-id) + 1];''
   const result = args[args.indexOf(--type) + 1];
@@ -714,7 +706,7 @@ if (require.main === module) {
     process.exit(0);
   });
 
-  agent.start().catch(error => {
+  agent.start().catch(error => {)
     console.error("❌ Generic Sync Agent ${agentId} failed to start: ", error);""
     process.exit(1);
   });
@@ -787,7 +779,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -876,7 +868,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -965,7 +957,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1054,7 +1046,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1143,7 +1135,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1232,7 +1224,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1321,7 +1313,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1410,7 +1402,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1499,7 +1491,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1588,7 +1580,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1677,7 +1669,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1766,7 +1758,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1855,7 +1847,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1944,7 +1936,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2033,7 +2025,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2122,7 +2114,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2211,7 +2203,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2300,7 +2292,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2389,7 +2381,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2478,7 +2470,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2567,7 +2559,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2656,7 +2648,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2745,7 +2737,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2834,7 +2826,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2923,7 +2915,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3012,7 +3004,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3101,7 +3093,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3190,7 +3182,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3279,7 +3271,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3368,7 +3360,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3457,7 +3449,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3546,7 +3538,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3635,7 +3627,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3724,7 +3716,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3813,7 +3805,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3902,7 +3894,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3991,7 +3983,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4080,7 +4072,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4169,7 +4161,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4258,7 +4250,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4347,7 +4339,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4436,7 +4428,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4525,7 +4517,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4614,7 +4606,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4703,7 +4695,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4792,7 +4784,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4881,7 +4873,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4970,7 +4962,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5059,7 +5051,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5148,7 +5140,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5237,7 +5229,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5326,7 +5318,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5415,7 +5407,7 @@ if (require.main === module) {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -121,9 +121,9 @@ async function parallelReadFiles() {
  * Launches the comprehensive automation system
  */
 
-const { CursorChatAutomationSystem, ContinuousCursorAutomation } = require('./cursor-chat-automation-system.js');
-const fs = require(('fs'););
-const path = require(('path'););
+const { CursorChatAutomationSystem, ContinuousCursorAutomation } = require(('./cursor-chat-automation-system.js)');
+const fs = require($2);'););
+const path = require($2);'););
 
 class CursorAutomationLauncher {
     constructor() {
@@ -138,7 +138,7 @@ class CursorAutomationLauncher {
 
     ensureDirectories() {
         const dirs = [this.automationDir, this.logsDir];
-        dirs.forEach(dir = > {
+        dirs.forEach(dir = > {)
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
@@ -258,7 +258,7 @@ class CursorAutomationLauncher {
                 lastLaunch: this.status.lastLaunch,
                 totalRuns: this.status.totalRuns,
                 successRate: this.status.totalRuns > 0 ? 
-                    (this.status.successfulRuns / this.status.totalRuns * 100).toFixed(2) : 0
+                    (this.status.successfulRuns / this.status.totalRuns * 100).toFixed(2) : 0;
             }};
         
         const healthFile = path.join(this.automationDir, 'health-check.json');
@@ -275,7 +275,7 @@ class CursorAutomationLauncher {
         console.log(`Total Runs: ${this.status.totalRuns}`);
         console.log(`Successful Runs: ${this.status.successfulRuns}`);
         console.log(`Failed Runs: ${this.status.failedRuns}`);
-        console.log(`Success Rate: ${this.status.totalRuns > 0 ? 
+        console.log(`Success Rate: ${this.status.totalRuns > 0 ? )
             (this.status.successfulRuns / this.status.totalRuns * 100).toFixed(2) : 0}%`);
         console.log('================================\n');
     }
@@ -298,8 +298,8 @@ Options:
 
 Examples: node launch-cursor-automation.js --single
   node launch-cursor-automation.js --continuous
-  node launch-cursor-automation.js --health
-  node launch-cursor-automation.js --status
+  node launch-cursor-automation.js --health)
+  node launch-cursor-automation.js --status)
             `);
             return;
         }
@@ -325,9 +325,9 @@ Examples: node launch-cursor-automation.js --single
 }
 
 // Main execution
-if (require.main === module) {
+if (require(.main === modul)e) {
     const launcher = new CursorAutomationLauncher();
-    launcher.run().catch(error = > {
+    launcher.run().catch(error = > {)
         console.error('Launcher error: ', error.message);
         process.exit(1);
     });

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,7 +34,7 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(('./high-speed-content-generator.js););''
+const result = require($2);s););''
 
 class AutomationSystem {
   constructor() {
@@ -135,7 +135,7 @@ process.on(SIGTERM, async () => {
 module.exports = HighSpeedContentLauncher;
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new HighSpeedContentLauncher();
   global.launcher = launcher;
   

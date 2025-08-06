@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,30 +120,27 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Security Check Script
  * Validates security aspects of the application
  */
 
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -228,43 +225,41 @@ class SecurityChecker {
     checkForHardcodedSecrets() {
         this.log('Checking for hardcoded secrets...', 'info');
         
-        const sensitivePatterns = [
+        const sensitivePatterns = []
             /api_key\s*[:=]\s*['"][^'"]+['"]/gi,
             /secret\s*[:=]\s*['"][^'"]+['"]/gi,
             /password\s*[:=]\s*['"][^'"]+['"]/gi,
             /token\s*[:=]\s*['"][^'"]+['"]/gi,
-            /key\s*[:=]\s*['"][^'"]{20,}['"]/gi
+            /key\s*[:=]\s*['"][^'"]{20,}['"]/gi;
         ];
         
-        const filesToCheck = [
-            'pages/**/*.tsx',
+        const filesToCheck = ['pages/**/*.tsx',
             'pages/**/*.ts',
             'components/**/*.tsx',
             'components/**/*.ts',
             'utils/**/*.ts',
-            'utils/**/*.js'
+            'utils/**/*.js'];
         ];
         
         let foundSecrets = 0;
         
         // Check specific files that might contain secrets
-        const specificFiles = [
-            'next.config.js',
+        const specificFiles = ['next.config.js',
             'tailwind.config.js',
-            'package.json'
+            'package.json'];
         ];
         
-        specificFiles.forEach(file => {
+        specificFiles.forEach(file => {)
             const filePath = path.join(this.baseDir, file);
             if (fs.existsSync(filePath)) {
                 const content = fs.readFileSync(filePath, 'utf8');
-                sensitivePatterns.forEach(pattern => {
+                sensitivePatterns.forEach(pattern => {)
                     const matches = content.match(pattern);
                     if (matches) {
                         foundSecrets += matches.length;
                         this.securityIssues.push({
-                            file,
-                            type: 'hardcoded_secret',
+                            file,)
+                            type: 'hardcoded_secret',)
                             pattern: pattern.toString(),
                             matches: matches.length
                         });
@@ -336,14 +331,13 @@ class SecurityChecker {
         const dependencies = { ...packageJson.dependencies, ...packageJson.devDependencies };
         
         // Check for known vulnerable packages
-        const vulnerablePackages = [
-            'lodash',
+        const vulnerablePackages = ['lodash',
             'moment',
-            'jquery'
+            'jquery'];
         ];
         
         let issues = 0;
-        vulnerablePackages.forEach(pkg => {
+        vulnerablePackages.forEach(pkg => {)
             if (dependencies[pkg]) {
                 this.log(`⚠ Potentially vulnerable package: ${pkg}`, 'info');
                 issues++;
@@ -380,15 +374,14 @@ class SecurityChecker {
     checkAuthenticationSecurity() {
         this.log('Checking authentication security...', 'info');
         
-        const authFiles = [
-            'utils/supabase/client.ts',
+        const authFiles = ['utils/supabase/client.ts',
             'utils/supabase/server.ts',
-            'middleware.ts'
+            'middleware.ts'];
         ];
         
         let issues = 0;
         
-        authFiles.forEach(file => {
+        authFiles.forEach(file => {)
             const filePath = path.join(this.baseDir, file);
             if (fs.existsSync(filePath)) {
                 const content = fs.readFileSync(filePath, 'utf8');
@@ -442,7 +435,7 @@ class SecurityChecker {
                 passed: totalIssues === 0,
                 totalChecks: 5,
                 failedChecks: totalIssues
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'security-report.json');
@@ -455,9 +448,14 @@ class SecurityChecker {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const checker = new SecurityChecker();
     checker.generateReport();
 }
 
 module.exports = SecurityChecker;
+
+}
+}
+}
+}

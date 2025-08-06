@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,10 +34,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(('fs-extra););''
-const path = require(('path'););
-const { v4: uuidv4 } = require(')uu'id');''
-const result = require(('moment););''
+const result = require($2);a););''
+const path = require($2);'););
+const { v4: uuidv4 } = require(()')uu'id');''
+const result = require($2);t););''
 
 class AutomationSystem {
     constructor() {
@@ -153,8 +153,7 @@ class AutomationSystem {
     async createNewAdCampaigns() {
         console.log(🎯 Creating new LinkedIn ad campaigns...);
         
-        const result = [
-            {
+        const result = [{
                 name: "\')ZionTech AI Solutions Campaign\'",""
                 objective: "LEAD_GENERATION",""
                 audience: "\'tech-professionals\'",""
@@ -176,7 +175,7 @@ class AutomationSystem {
                 audience: "innovation-leaders",""
                 budget: "400",""
                 duration: "28",""
-                adFormat: "\'DYNAMIC_AD\'\'\'
+                adFormat: "\'DYNAMIC_AD\'\'\'];
             "}""];
         
         return campaigns;
@@ -191,21 +190,21 @@ class AutomationSystem {
                 \'Unlock\' the Future of Digital Innovation\',\'\'
                 ZionTech: "Your Partner in Digital Transformation",""
                 \'AI-Drive\'n Business Intelligence at Your Fingertips\',\'\'
-                \'Revolutionize\' Your Operations with Smart Technology\'\'\'
+                \'Revolutionize\' Your Operations with Smart Technology\'\'\']
             ],
             descriptions: "[""
                 Discover how ZionTech\s\' cutting-edge AI solutions can streamline your operations", boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',''
                 Ready to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com,
                 'Joi'n the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',''
                 'Experience' the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',''
-                Stay ahead of the competition with ZionTech\s' innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.'''
+                Stay ahead of the competition with ZionTech\s' innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.''']
             ],
             callToActions: "[""
                 Learn More",""
                 \'Ge\'t Started\',\'\'
                 \'Explore\' Solutions\',\'\'
                 Contact Us,
-                \'Discove\'r More\'\'\'
+                \'Discove\'r More\'\'\'];
             ]};
         
         return adContent;

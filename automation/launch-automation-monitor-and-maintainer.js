@@ -7,10 +7,10 @@
  * which continuously monitors all project automation systems.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, exec } = require('child_process');
-const cron = require('node-cron');
+const fs = require($2);'););
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
+const cron = require($2);'););
 
 class AutomationMonitorAndMaintainerLauncher {
   constructor() {
@@ -50,17 +50,16 @@ class AutomationMonitorAndMaintainerLauncher {
   }
 
   setupDirectories() {
-    const directories = [
-      'logs',
+    const directories = ['logs',
       'reports',
       'backups',
       'health-reports',
       'error-logs',
       'monitoring-data',
-      'maintenance-logs'
+      'maintenance-logs'];
     ];
 
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -115,7 +114,7 @@ class AutomationMonitorAndMaintainerLauncher {
         this.config = { ...this.config, ...config };
         console.log('📋 Loaded configuration from file');
       } catch (error) {
-        console.error('❌ Failed to load configuration:', error);
+        console.error('❌ Failed to load configuration: ', error);
       }
     } else {
       // Create default configuration
@@ -133,7 +132,7 @@ class AutomationMonitorAndMaintainerLauncher {
     console.log('🏭 Starting Automation Monitor and Maintainer Factory...');
     
     try {
-      const FactoryClass = require('./automation-monitor-and-maintainer-factory.js');
+      const FactoryClass = require($2);'););
       this.factory = new FactoryClass();
       this.factory.start();
       
@@ -143,7 +142,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log('✅ Factory started successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to start factory:', error);
+      console.error('❌ Failed to start factory: ', error);
       this.logError('factory-start', error);
       return false;
     }
@@ -162,7 +161,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log('✅ Factory stopped successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to stop factory:', error);
+      console.error('❌ Failed to stop factory: ', error);
       this.logError('factory-stop', error);
       return false;
     }
@@ -194,7 +193,7 @@ class AutomationMonitorAndMaintainerLauncher {
       status: this.status,
       factoryStatus: this.factory ? this.factory.getStatus() : null,
       metrics: this.metrics,
-      issues: []
+      issues: [];
     };
 
     // Check launcher status
@@ -241,20 +240,20 @@ class AutomationMonitorAndMaintainerLauncher {
           resolve({
             memoryUsage: 0,
             cpuUsage: 0,
-            error: error.message
+            error: error.message)
           });
         } else {
           const lines = stdout.trim().split('\n');
           if (lines.length > 1) {
             const [memory, cpu] = lines[1].trim().split(/\s+/);
-            resolve({
+            resolve({)
               memoryUsage: parseFloat(memory) / 100,
               cpuUsage: parseFloat(cpu) / 100
             });
           } else {
             resolve({
               memoryUsage: 0,
-              cpuUsage: 0
+              cpuUsage: 0)
             });
           }
         }
@@ -274,21 +273,21 @@ class AutomationMonitorAndMaintainerLauncher {
       },
       factory: this.factory ? this.factory.getStatus() : null,
       systems: await this.scanAllSystems(),
-      recommendations: []
+      recommendations: [];
     };
 
     // Generate recommendations
     if (this.metrics.errorsFixed > 0) {
       report.recommendations.push({
-        type: 'info',
-        message: `${this.metrics.errorsFixed} errors have been fixed automatically`
+        type: 'info',)
+        message: `${this.metrics.errorsFixed} errors have been fixed automatically`)
       });
     }
 
     if (this.metrics.systemsRestarted > 0) {
       report.recommendations.push({
-        type: 'warning',
-        message: `${this.metrics.systemsRestarted} systems have been restarted`
+        type: 'warning',)
+        message: `${this.metrics.systemsRestarted} systems have been restarted`)
       });
     }
 
@@ -307,24 +306,24 @@ class AutomationMonitorAndMaintainerLauncher {
       factories: [],
       agents: [],
       scripts: [],
-      cronJobs: []
+      cronJobs: [];
     };
 
     // Scan for factories
     const automationDir = __dirname;
     try {
       const files = fs.readdirSync(automationDir);
-      files.forEach(file => {
+      files.forEach(file => {)
         if (file.includes('-factory.js') && !file.includes('monitor')) {
-          systems.factories.push({
-            name: file,
+          systems.factories.push({)
+            name: file,)
             path: path.join(automationDir, file),
             status: 'unknown'
           });
         }
       });
     } catch (error) {
-      console.error('Error scanning factories:', error);
+      console.error('Error scanning factories: ', error);
     }
 
     // Scan for agents
@@ -332,34 +331,34 @@ class AutomationMonitorAndMaintainerLauncher {
     if (fs.existsSync(agentsDir)) {
       try {
         const files = fs.readdirSync(agentsDir);
-        files.forEach(file => {
+        files.forEach(file => {)
           if (file.endsWith('.js')) {
-            systems.agents.push({
-              name: file,
+            systems.agents.push({)
+              name: file,)
               path: path.join(agentsDir, file),
               status: 'unknown'
             });
           }
         });
       } catch (error) {
-        console.error('Error scanning agents:', error);
+        console.error('Error scanning agents: ', error);
       }
     }
 
     // Scan for scripts
     try {
       const files = fs.readdirSync(automationDir);
-      files.forEach(file => {
+      files.forEach(file => {)
         if (file.endsWith('.js') && !file.includes('factory') && !file.includes('agent') && !file.includes('launch')) {
-          systems.scripts.push({
-            name: file,
+          systems.scripts.push({)
+            name: file,)
             path: path.join(automationDir, file),
             status: 'unknown'
           });
         }
       });
     } catch (error) {
-      console.error('Error scanning scripts:', error);
+      console.error('Error scanning scripts: ', error);
     }
 
     // Scan for cron jobs
@@ -367,17 +366,17 @@ class AutomationMonitorAndMaintainerLauncher {
     if (fs.existsSync(cronDir)) {
       try {
         const files = fs.readdirSync(cronDir);
-        files.forEach(file => {
+        files.forEach(file => {)
           if (file.endsWith('.sh')) {
-            systems.cronJobs.push({
-              name: file,
+            systems.cronJobs.push({)
+              name: file,)
               path: path.join(cronDir, file),
               status: 'unknown'
             });
           }
         });
       } catch (error) {
-        console.error('Error scanning cron jobs:', error);
+        console.error('Error scanning cron jobs: ', error);
       }
     }
 
@@ -399,7 +398,7 @@ class AutomationMonitorAndMaintainerLauncher {
     
     try {
       const files = fs.readdirSync(automationDir);
-      files.forEach(file => {
+      files.forEach(file => {)
         if (file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.sh')) {
           const sourcePath = path.join(automationDir, file);
           const backupPath = path.join(backupDir, file);
@@ -417,7 +416,7 @@ class AutomationMonitorAndMaintainerLauncher {
       console.log(`✅ Backup completed: ${backupFiles.length} files backed up to ${backupDir}`);
       
     } catch (error) {
-      console.error('❌ Failed to create backup:', error);
+      console.error('❌ Failed to create backup: ', error);
       this.logError('backup-creation', error);
     }
   }
@@ -454,7 +453,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old reports:', error);
+        console.error('❌ Failed to cleanup old reports: ', error);
       }
     }
   }
@@ -476,7 +475,7 @@ class AutomationMonitorAndMaintainerLauncher {
           }
         }
       } catch (error) {
-        console.error('❌ Failed to cleanup old backups:', error);
+        console.error('❌ Failed to cleanup old backups: ', error);
       }
     }
   }
@@ -522,7 +521,7 @@ class AutomationMonitorAndMaintainerLauncher {
       timestamp: new Date().toISOString(),
       context: context,
       error: error.message,
-      stack: error.stack
+      stack: error.stack;
     };
     
     const errorDir = path.join(__dirname, 'error-logs');
@@ -563,8 +562,8 @@ class AutomationMonitorAndMaintainerLauncher {
     this.status = 'stopped';
     
     // Stop all cron jobs
-    Object.keys(this.cronJobs).forEach(name => {
-      cron.getTasks().forEach(task => {
+    Object.keys(this.cronJobs).forEach(name => {)
+      cron.getTasks().forEach(task => {)
         if (task.name === name) {
           task.stop();
         }
@@ -587,7 +586,7 @@ class AutomationMonitorAndMaintainerLauncher {
 module.exports = AutomationMonitorAndMaintainerLauncher;
 
 // Start the launcher if this file is run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const launcher = new AutomationMonitorAndMaintainerLauncher();
   
   // Handle command line arguments
@@ -608,17 +607,16 @@ if (require.main === module) {
       console.log(JSON.stringify(launcher.getStatus(), null, 2));
       break;
     case 'health':
-      launcher.performLauncherHealthCheck().then(report => {
+      launcher.performLauncherHealthCheck().then(report => {)
         console.log(JSON.stringify(report, null, 2));
       });
       break;
     case 'report':
-      launcher.generateSystemReport().then(report => {
+      launcher.generateSystemReport().then(report => {)
         console.log(JSON.stringify(report, null, 2));
       });
       break;
-    default:
-      launcher.start();
+    default: launcher.start();
   }
   
   // Handle graceful shutdown

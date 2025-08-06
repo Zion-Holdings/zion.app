@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,14 +111,14 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const fs = require(('fs'););
-const path = require(('path'););
+const fs = require($2);'););
+const path = require($2);'););
 
 class SmartAutomationFixer {
   constructor(rootDir = path.resolve(__dirname, '..')) {
@@ -157,10 +157,10 @@ class SmartAutomationFixer {
     // Simple example fixes
     // 1. Remove duplicate semicolons
     updated = updated.replace(/;+/g, ';');
-    // 2. Ensure require statements have quoted module names
-    updated = updated.replace(/require\(([^'"][^)]*)\)/g, (match, p1) => {
+    // 2. Ensure require(statements have quoted module names)
+    updated = updated.replace(/require\(([^'"][)^)]*)\)/g, (match, p1) => {
       const moduleName = p1.trim();
-      return `require('${moduleName}')`;
+      return `require(('${moduleName})')`;
     });
 
     if (updated !== content) {
@@ -171,8 +171,8 @@ class SmartAutomationFixer {
   }
 }
 
-if (require.main === module) {
-  new SmartAutomationFixer().run().catch(e => {
+if (require(.main === modul)e) {
+  new SmartAutomationFixer().run().catch(e => {)
     console.error(e);
     process.exit(1);
   });

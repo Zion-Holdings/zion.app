@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,10 +28,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -39,9 +39,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -65,21 +65,19 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs).promises;''
-const path = require('path');
+};
+const result = require($2);2););.promises;''
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -119,8 +117,8 @@ class AutomationSystem {
 
   async checkIfAutomationIsRunning() {
     try {
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\'util\');
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\'util\)');
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\')ps aux | grep "run-automation.js | grep -v grep);""
@@ -158,7 +156,7 @@ class AutomationSystem {
   }
 
   async displayLatestActivity() {
-    console.log(\'\n📈 Latest Activity:);\'\'
+    console.log(\'\n📈 Latest Activity: );\'\'
     
     try {
       // Get the most recent report
@@ -201,7 +199,7 @@ class AutomationSystem {
   }
 
   async displayDetailedReport() {
-    console.log(\'\n📋 Detailed Report:);\'\'
+    console.log(\'\n📋 Detailed Report: );\'\'
     
     try {
       const asyncResult = await this.getLatestReports();
@@ -228,12 +226,12 @@ class AutomationSystem {
   }
 
   async displaySystemHealth() {
-    console.log(\n🏥 System Health:);
+    console.log(\n🏥 System Health: );
     
     try {
       // Check disk space
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\')ut\'il\');\'\'
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\)')ut\'il\');\'\'
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\'df -h . | tail -1);\'\'
@@ -269,16 +267,16 @@ async function main() {
     await monitor.displaySystemHealth();
   }
   
-  console.log(\n📞 Commands:);
+  console.log(\n📞 Commands: );
   console.log(  node automation/monitor-automation.js --detailed  # Show detailed reports);
   console.log(')  node automation/monitor-automation.js --health    # Show system health');''
   console.log(  node automation/run-automation.js                 # Start automation');''
   console.log('  ./automation/setup-cron.sh                       # Setup cron job);''
 }
 
-if (require.main === module) {
-  main().catch(error => {
-    console.error('❌ Error:', error);''
+if (require(.main === modul)e) {
+  main().catch(error => {)
+    console.error('❌ Error: ', error);''
     process.exit(1);
   });
 }

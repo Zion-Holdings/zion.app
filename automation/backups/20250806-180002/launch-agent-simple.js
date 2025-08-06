@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,17 +34,16 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 };
-const { spawn } = require('child_process);''
-const path = require(('path'););
+const { spawn } = require(('child_proces)s);''
+const path = require($2);'););
 
 class AutomationSystem {
     constructor() {
-        this.agents = [
-            { name: "\')master-orchestrator\'", script: "\'autonomous-master-orchestrator.js\' "},""
+        this.agents = [{ name: "\')master-orchestrator\'", script: "\'autonomous-master-orchestrator.js\' "},""
             { name: "content-generator", script: "\'enhanced-content-generator.js\' "},""
             { name: "\'website-analyzer", script: "enhanced-website-analyzer-agent\'.js "},""
             { name: "\'market-research\'", script: "\'autonomous-market-research-agent.js\' "},""
-            { name: "sales-agent", script: "\'autonomous-sales-agent.js\' "},""
+            { name: "sales-agent", script: "\'autonomous-sales-agent.js\' "},""]
             { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}""];
         this.runningAgents = new Map();
     }
@@ -54,13 +53,13 @@ class AutomationSystem {
             console.log("🚀 Starting ${agent.name}...);""
             
             const result = spawn(\'node, [agent.script], {\'\'
-                cwd: "__dirname",""
+                cwd: "__dirname","")
                 stdio: "[\')pipe", pi'p'e, 'pi'pe'],''
                 env: "{""
                     ...process.env",""
                     NODE_ENV: "\'development",""
                     AUTOMATION_SKIP_SUPABASE_CHECK: "tru\'e",""
-                    AUTOMATION_FALLBACK_MODE: "\'true\'\'\'
+                    AUTOMATION_FALLBACK_MODE: "\'true\'\'\';
                 "}"";
             });
 

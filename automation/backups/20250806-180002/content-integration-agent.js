@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,15 +111,15 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require(('path););''
-const fs = require(('fs'););
-const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper''));''
+const result = require($2);h););''
+const fs = require($2);'););
+const { createValidComponentName, createDisplayTitle } = require(('./utils/component-name-helper')'));''
 
 class AutomationSystem {
   constructor() {
@@ -265,7 +265,7 @@ class AutomationSystem {
   }
 
   generateMarketplacePageContent(category, content) {
-    const result = category.split(\'-).map(word => \'\'
+    const result = category.split(\'-).map(word => \'\');
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join( );
     
@@ -274,8 +274,7 @@ import React from 'react';
 import React from 'react';
 ;
 const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
-  return (
-    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
+  return(<div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>${categoryTitle"} - Zion AI Marketplace</title></div>""
         <meta name=description content="${content.content.hero.subtitle}" /></div>""
@@ -348,7 +347,7 @@ const ${categoryTitle.replace(/\s+/g, ')}Page: "NextPage = () => {""
               </div>
               
               {/* Stats */}</div>
-              <div className="grid" grid-cols-2 md: grid-cols-4 gap-8 max-w-4xl mx-auto">""
+              <div className="grid" grid-cols-2 md: grid-cols-4 gap-8 max-w-4xl mx-auto">"")
                 {content.content.hero.stats.map((stat, index) => (</div>
                   <div key={index} className="text-center></div>"""
                     <div className="text-3xl" md: text-4xl font-bold text-white mb-2>{stat.value}</div></div>""
@@ -503,7 +502,7 @@ export default ${categoryTitle.replace(/\s+/g, \')}Page;\'\'
   }
 
   generateBlogPageContent(topic, content) {
-    const result = topic.split(\'-).map(word => \'\'
+    const result = topic.split(\'-).map(word => \'\');
       word.charAt(0).toUpperCase() + word.slice(1);
     ).join( );
     
@@ -512,7 +511,7 @@ import React from \'react\'
 import React from \'react\'
 ;
 const ${topicTitle.replace(/\s+/g, \')}Page: "NextPage = () => {""
-  return (</div>
+  return(</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>${content.content.title"} - Zion AI Blog</title></div>""
@@ -564,7 +563,7 @@ const ${topicTitle.replace(/\s+/g, \')}Page: "NextPage = () => {""
                 <span>By {content.content.metadata.author}</span></div>
                 <span className="mx-2"">•</span></div>""
                 <span>{content.content.metadata.readTime}</span></div>
-                <span className="mx-2>•</span></div>"""
+                <span className="mx-2>•</span></div>""")
                 <span>{new Date(content.content.metadata.publishDate).toLocaleDateString()}</span></div>
               </div></div>
               <p className="text-xl" text-gray-300 leading-relaxed>""
@@ -615,11 +614,11 @@ import React from 'react';
 import React from 'react';
 ;
 const ${componentName}: NextPage = () => {
-  return (</div>
+  return(</div>
     <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>${content.content.overview.title} - Zion AI Products</title></div>
-        <meta name=description content="${content.content.overview.subtitle}" /></div>""
+        <meta name=description content="${content.content.overview.subtitle}" /></div>"")
         <meta name=keywords content="${content.content.seo.keywords.join(, \')}" /></div>""
       </Head>
 

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -152,7 +152,7 @@ class variable1 {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -161,7 +161,7 @@ class variable1 {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -175,7 +175,7 @@ class variable1 {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -192,16 +192,15 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'service-reports),''
       path.join(this.reportsDir, orchestration-repor't's),''
       path.join(this.reportsDir, 'communication-repor'ts'),''
       path.join(this.reportsDir, 'scaling-reports),''
-      path.join(this.reportsDir, health-repor't's)''
+      path.join(this.reportsDir, health-repor't's)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -242,7 +241,7 @@ class variable1 {
         dependencies: "{"},""
         scaling: "{"},""
         health: "{"},""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Discover microservices
@@ -313,7 +312,7 @@ class variable1 {
     const result = ['.js', .ts', '.py, '.java', .go'];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -344,9 +343,8 @@ class variable1 {
   }
 
   containsServiceCode(content) {
-    const result = [
-      'expre'ss', 'fastapi, spri'n'g, gin', 'microservice, servi'c'e,''
-      'ap'p.listen', 'app'.run', server.start, 'po'rt', 'endpoint''
+    const result = ['expre'ss', 'fastapi, spri'n'g, gin', 'microservice, servi'c'e,''
+      'ap'p.listen', 'app'.run', server.start, 'po'rt', 'endpoint''];
     ];
     
     return serviceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -360,7 +358,7 @@ class variable1 {
       framework: "'unknown'",""
       port: "0",""
       endpoints: "[]",""
-      dependencies: "[]""
+      dependencies: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -400,7 +398,7 @@ class variable1 {
     const result = [').yml', .yaml'];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -431,8 +429,7 @@ class variable1 {
   }
 
   containsComposeCode(content) {
-    const result = [
-      'versio'n: "'", services':', docker-compose, 'containe'r_name', 'image''
+    const result = ['versio'n: "'", services':', docker-compose, 'containe'r_name', 'image''];
     ];
     
     return composeKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -445,7 +442,7 @@ class variable1 {
       type: "'orchestration'",""
       services: "[]",""
       networks: "[]",""
-      volumes: "[]""
+      volumes: "[]"";
     "};""
     
     const result = content.split('\n);''
@@ -483,7 +480,7 @@ class variable1 {
     let match;
     
     while ((match = expressRegex.exec(content)) !== null) {
-      endpoints.push({
+      endpoints.push({)
         method: "match[1].toUpperCase()",""
         path: "match[2]""
       "});""
@@ -495,17 +492,17 @@ class variable1 {
   extractDependencies(content) {
     const result = [];
     
-    // Extract require statements
-    const result = /require\s*\(\s*[')"]([^'"]+)["]/g;""
+    // Extract require(statements)
+    const result = /require\s*\(\s*[)')"]([^'"]+)["]/g;""
     let match;
     
-    while ((match = require(Regex.exec(content)) !== null) {
+    while ((match = require($2);t)) !== null) {
       dependencies.push(match[1]););
     }
     
     // Extract import statements
     const result = /import React from 'react'
-    while ((match = importRegex.exec(content)) !== null) {
+    while ((match = importRegex.exec(content)) !== null) {;
       dependencies.push(match[1]);
     }
     
@@ -517,7 +514,7 @@ class variable1 {
       patterns: "[]",""
       protocols: "[]",""
       messageFormats: "[]",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     try {
@@ -545,7 +542,7 @@ class variable1 {
       patterns: "[]",""
       protocols: "[]",""
       messageFormats: "[]",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -592,7 +589,7 @@ class variable1 {
       serviceGraph: "{"},""
       circularDependencies: "[]",""
       externalDependencies: "[]",""
-      internalDependencies: "[]""
+      internalDependencies: "[]"";
     "};""
     
     try {
@@ -641,7 +638,7 @@ class variable1 {
       patterns: "[]",""
       strategies: "[]",""
       metrics: "{"},""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     try {
@@ -668,7 +665,7 @@ class variable1 {
   extractScalingInfo(content) {
     const result = {
       patterns: "[]",""
-      strategies: "[]""
+      strategies: "[]"";
     "};""
     
     const result = content.toLowerCase();
@@ -700,13 +697,13 @@ class variable1 {
       recommendations.push({
         type: "scali'n'g",""
         priority: "'medium'",""
-        message: "'No scaling patterns detected'",""
-        suggestion: "Implement horizontal scaling with load balancing""
+        message: "'No scaling patterns detected'","")
+        suggestion: "Implement horizontal scaling with load balancing"")
       "});""
     }
     
     if (!scaling.strategies.includes('caching)) {''
-      recommendations.push({
+      recommendations.push({)
         type: "')performance",""
         priority: "mediu'm",""
         message: "No caching strategy detected'",""
@@ -722,7 +719,7 @@ class variable1 {
       services: "[]",""
       overallHealth: "healthy",""
       issues: "[]",""
-      metrics: "{"}""
+      metrics: "{"}"";
     };
     
     try {
@@ -754,7 +751,7 @@ class variable1 {
       status: "'healthy'",""
       issues: "[]",""
       uptime: "Math.random() * 100",""
-      responseTime: "Math.random() * 300""
+      responseTime: "Math.random() * 300"";
     "};""
     
     // Check for common health issues
@@ -782,7 +779,7 @@ class variable1 {
       healthyServices: "0",""
       unhealthyServices: "0",""
       averageResponseTime: "0",""
-      averageUptime: "0""
+      averageUptime: "0"";
     "};""
     
     if (services.length > 0) {
@@ -803,8 +800,8 @@ class variable1 {
       recommendations.push({
         type: "'health",""
         priority: "hig'h",""
-        message: "'Service health issues detected'",""
-        suggestion: "'Review and fix unhealthy services'''
+        message: "'Service health issues detected'","")
+        suggestion: "'Review and fix unhealthy services''')
       "});""
     }
     
@@ -813,8 +810,8 @@ class variable1 {
       recommendations.push({
         type: "communication",""
         priority: "'medium'",""
-        message: "'Communication issues detected'",""
-        suggestion: "Review service communication patterns""
+        message: "'Communication issues detected'","")
+        suggestion: "Review service communication patterns"")
       "});""
     }
     
@@ -823,8 +820,8 @@ class variable1 {
       recommendations.push({
         type: "'dependencies'",""
         priority: "'high",""
-        message: "Circular' dependencies detected",""
-        suggestion: "'Refactor to remove circular dependencies'''
+        message: "Circular' dependencies detected","")
+        suggestion: "'Refactor to remove circular dependencies''')
       "});""
     }
     
@@ -844,7 +841,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         services: "[]",""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Check service status
@@ -874,15 +871,15 @@ class variable1 {
       service: "service.name",""
       status: "'running'",""
       issues: "[]",""
-      lastChecked: "new Date().toISOString()""
+      lastChecked: "new Date().toISOString()"";
     "};""
     
     // Check for common issues
     if (service.port === 0) {
       status.issues.push({
         type: "'configuration",""
-        severity: "hig'h",""
-        message: "No port configured'''
+        severity: "hig'h","")
+        message: "No port configured''')
       "});""
       status.status = 'error;''
     }
@@ -890,8 +887,8 @@ class variable1 {
     if (service.endpoints.length === 0) {
       status.issues.push({
         type: "configurati'o'n",""
-        severity: "'medium'",""
-        message: "'No endpoints defined'''
+        severity: "'medium'","")
+        message: "'No endpoints defined''')
       "});""
     }
     
@@ -906,7 +903,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         orchestrations: "[]",""
-        results: "[]""
+        results: "[]"";
       "};""
       
       // Generate orchestration actions
@@ -920,8 +917,8 @@ class variable1 {
         orchestrationReport.results.push({
           service: "service.name",""
           action: "orchestration.action",""
-          status: "'completed'",""
-          result: "'Service orchestrated successfully'''
+          status: "'completed'","")
+          result: "'Service orchestrated successfully''')
         "});""
       }
       
@@ -955,7 +952,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         services: "[]",""
-        overallHealth: "'healthy'''
+        overallHealth: "'healthy''';
       "};""
       
       // Check service health
@@ -1004,7 +1001,7 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(')Microservice's Orchestration Agent failed to start: ', error);''
   process.exit(1);
 
@@ -1076,7 +1073,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1165,7 +1162,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1254,7 +1251,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1343,7 +1340,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1432,7 +1429,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1521,7 +1518,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1610,7 +1607,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1699,7 +1696,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1788,7 +1785,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1877,7 +1874,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1966,7 +1963,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2055,7 +2052,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2144,7 +2141,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2233,7 +2230,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2322,7 +2319,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2411,7 +2408,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2500,7 +2497,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2589,7 +2586,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2678,7 +2675,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2767,7 +2764,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2856,7 +2853,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2945,7 +2942,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3034,7 +3031,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3123,7 +3120,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3212,7 +3209,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3301,7 +3298,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3390,7 +3387,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3479,7 +3476,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3568,7 +3565,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3657,7 +3654,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3746,7 +3743,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3835,7 +3832,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3924,7 +3921,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4013,7 +4010,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4102,7 +4099,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4191,7 +4188,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4280,7 +4277,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4369,7 +4366,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4458,7 +4455,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4547,7 +4544,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4636,7 +4633,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4725,7 +4722,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4814,7 +4811,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4903,7 +4900,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4992,7 +4989,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5081,7 +5078,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5170,7 +5167,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5259,7 +5256,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5348,7 +5345,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5437,7 +5434,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5526,7 +5523,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5615,7 +5612,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5704,7 +5701,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

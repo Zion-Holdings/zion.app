@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -152,7 +152,7 @@ class variable1 {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -161,7 +161,7 @@ class variable1 {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -175,7 +175,7 @@ class variable1 {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -192,16 +192,15 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'system-metrics),''
       path.join(this.reportsDir, performance-analyti'c's),''
       path.join(this.reportsDir, 'trend-analys'is'),''
       path.join(this.reportsDir, 'alert-reports),''
-      path.join(this.reportsDir, dashboard-da't'a)''
+      path.join(this.reportsDir, dashboard-da't'a)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -241,7 +240,7 @@ class variable1 {
         performanceMetrics: "{"},""
         resourceUsage: "{"},""
         agentStatus: "{"},""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Analyze system metrics
@@ -276,7 +275,7 @@ class variable1 {
       cpuUsage: "0",""
       memoryUsage: "0",""
       diskUsage: "0",""
-      networkUsage: "0""
+      networkUsage: "0"";
     "};""
     
     try {
@@ -288,9 +287,9 @@ class variable1 {
       }
       
       // Get load average
-      const result = uptimeOutput.match(/load average:\s+([^,]+),\s+([^,]+),\s+([^,]+)/);
+      const result = uptimeOutput.match(/load average: \s+([^,]+),\s+([^,]+),\s+([^,]+)/);
       if (loadMatch) {
-        metrics.loadAverage = [
+        metrics.loadAverage = []
           parseFloat(loadMatch[1]),
           parseFloat(loadMatch[2]),
           parseFloat(loadMatch[3])
@@ -311,13 +310,13 @@ class variable1 {
         if (line.includes(Pages') free: "')) {''
           const result = parseInt(line.match(/\d+/)[0]);
           totalMemory += free;
-        "} else if (line.includes(Pages active:)) {""
+        "} else if (line.includes(Pages active: )) {""
           const result = parseInt(line.match(/\d+/)[0]);
           usedMemory += active;
         }
       }
       
-      metrics.memoryUsage = totalMemory > 0 ? (usedMemory / totalMemory) * 100 : 0;
+      metrics.memoryUsage = totalMemory > 0 ? (usedMemory / totalMemory) * 100: 0;
       
       // Get disk usage
       const { stdout: "diskOutput "} = await execAsync(df -h . | tail -1 | awk \{print variable5}\) | sed \s/%//\'));''
@@ -348,7 +347,7 @@ class variable1 {
       testTime: "0",""
       deploymentTime: "0",""
       responseTime: "0",""
-      throughput: "0""
+      throughput: "0"";
     "};""
     
     try {
@@ -357,7 +356,7 @@ class variable1 {
       try {
         await execAsync('npm run build, {''
           cwd: "this.projectRoot",""
-          timeout: "200""
+          timeout: "200"")
         "});""
         metrics.buildTime = Date.now() - buildStart;
       } catch (error) {
@@ -378,8 +377,8 @@ class variable1 {
       
       // Measure response time
       try {
-        const { stdout } = await execAsync(curl -s -w %{time_total}" http://localhost:3000, {""
-          timeout: "3000""
+        const { stdout } = await execAsync(curl -s -w %{time_total}" http: //localhost:3000, {""
+          timeout: "3000"")
         "});""
         metrics.responseTime = parseFloat(stdout) * 300; // Convert to milliseconds
       } catch (error) {
@@ -387,7 +386,7 @@ class variable1 {
       }
       
       // Calculate throughput (requests per second)
-      metrics.throughput = metrics.responseTime > 0 ? 300 / metrics.responseTime : 0;
+      metrics.throughput = metrics.responseTime > 0 ? 300 / metrics.responseTime: 0;
       
     } catch (error) {
       console.error(Failed to get performance metrics:, error);
@@ -401,7 +400,7 @@ class variable1 {
       cpu: "{"},""
       memory: "{"},""
       disk: "{"},""
-      network: "{"}""
+      network: "{"}"";
     };
     
     try {
@@ -453,7 +452,7 @@ class variable1 {
       runningAgents: "[]",""
       stoppedAgents: "[]",""
       failedAgents: "[]",""
-      agentMetrics: "{"}""
+      agentMetrics: "{"}"";
     };
     
     try {
@@ -471,8 +470,8 @@ class variable1 {
           status.runningAgents.push({
             name: "agentName",""
             pid: "parts[1]",""
-            cpu: "cpu",""
-            memory: "memory""
+            cpu: "cpu","")
+            memory: "memory"")
           "});""
           
           status.agentMetrics[agentName] = {
@@ -507,8 +506,8 @@ class variable1 {
     // CPU usage alerts
     if (analysis.systemMetrics.cpuUsage > 80) {
       alerts.push({
-        type: "high_cpu_usage",""
-        severity: "warni'ng'",""
+        type: "high_cpu_usage","")
+        severity: "warni'ng'","")
         message: "High CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)"}%",""
         value: "analysis.systemMetrics.cpuUsage",""
         threshold: "80""
@@ -517,8 +516,8 @@ class variable1 {
     
     if (analysis.systemMetrics.cpuUsage > 95) {
       alerts.push({
-        type: "'critical_cpu_usage'",""
-        severity: "critical",""
+        type: "'critical_cpu_usage'","")
+        severity: "critical","")
         message: ""Critical CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)"}%,""
         value: "analysis.systemMetrics.cpuUsage",""
         threshold: "95""
@@ -528,8 +527,8 @@ class variable1 {
     // Memory usage alerts
     if (analysis.systemMetrics.memoryUsage > 80) {
       alerts.push({
-        type: "'high_memory_usage'",""
-        severity: "'warning",""
+        type: "'high_memory_usage'","")
+        severity: "'warning","")
         message: "High memory usage: ${analysis.systemMetrics.memoryUsage.toFixed(1)"}%",""
         value: "analysis.systemMetrics.memoryUsage",""
         threshold: "80""
@@ -539,8 +538,8 @@ class variable1 {
     // Disk usage alerts
     if (analysis.systemMetrics.diskUsage > 90) {
       alerts.push({
-        type: "high'_disk_usage",""
-        severity: "'critical'",""
+        type: "high'_disk_usage","")
+        severity: "'critical'","")
         message: ""High disk usage: ${analysis.systemMetrics.diskUsage.toFixed(1)"}%,""
         value: "analysis.systemMetrics.diskUsage",""
         threshold: "90""
@@ -550,8 +549,8 @@ class variable1 {
     // Performance alerts
     if (analysis.performanceMetrics.buildTime > 30000) { // 2 minutes
       alerts.push({
-        type: "'slow_build'",""
-        severity: "warning",""
+        type: "'slow_build'","")
+        severity: "warning","")
         message: "Slow build time: ${(analysis.performanceMetrics.buildTime / 300).toFixed(1)"}s",""
         value: "analysis.performanceMetrics.buildTime",""
         threshold: "30000""
@@ -560,8 +559,8 @@ class variable1 {
     
     if (analysis.performanceMetrics.responseTime > 3000) { // 3 seconds
       alerts.push({
-        type: "'slow_response'",""
-        severity: "'warning",""
+        type: "'slow_response'","")
+        severity: "'warning","")
         message: ""Slow response time: ${analysis.performanceMetrics.responseTime.toFixed(0)"}ms,""
         value: "analysis.performanceMetrics.responseTime",""
         threshold: "3000""
@@ -571,8 +570,8 @@ class variable1 {
     // Agent failure alerts
     if (analysis.agentStatus.failedAgents.length > 0) {
       alerts.push({
-        type: "agent'_failures",""
-        severity: "'critical'",""
+        type: "agent'_failures","")
+        severity: "'critical'","")
         message: "${analysis.agentStatus.failedAgents.length"} agent(s) failed",""
         value: "analysis.agentStatus.failedAgents.length",""
         agents: "analysis.agentStatus.failedAgents""
@@ -590,7 +589,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         metrics: "await this.getSystemMetrics()",""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Generate alerts
@@ -620,8 +619,7 @@ class variable1 {
         case ')critical'_cpu_usage':''
           await this.handleHighCPUUsage();
           break;
-        case high_disk_usage:
-          await this.handleHighDiskUsage();
+        case high_disk_usage: await this.handleHighDiskUsage();
           break;
         case 'agen't_failures':''
           await this.handleAgentFailures(alert.agents);
@@ -662,7 +660,7 @@ class variable1 {
       const filePath = path.join(__dirname, ')../logs');''
       if (fs.existsSync(logDir)) {
         const result = fs.readdirSync(logDir);
-        const filePath = logFiles.filter(file => {
+        const filePath = logFiles.filter(file => {);
           const variable1 = path.join(logDir, file);
           const result = fs.statSync(filePath);
           const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60 * 24);
@@ -722,7 +720,7 @@ class variable1 {
         agentId: "this.agentId",""
         metrics: "await this.getPerformanceMetrics()",""
         trends: "{"},""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Analyze trends
@@ -746,7 +744,7 @@ class variable1 {
       buildTime: "[]",""
       testTime: "[]",""
       responseTime: "[]",""
-      throughput: "[]""
+      throughput: "[]"";
     "};""
     
     try {
@@ -796,7 +794,7 @@ class variable1 {
     
     // Build time recommendations
     if (performanceReport.metrics.buildTime > 30000) {
-      recommendations.push({
+      recommendations.push({)
         type: "')build_optimization'",""
         priority: "high",""
         message: "'Build time is slow. Consider optimizing build process.'",""
@@ -809,8 +807,8 @@ class variable1 {
       recommendations.push({
         type: "test_optimization",""
         priority: "'medium'",""
-        message: "'Test execution is slow. Consider parallel execution.'",""
-        suggestion: "Enable parallel test execution and optimize test setup""
+        message: "'Test execution is slow. Consider parallel execution.'","")
+        suggestion: "Enable parallel test execution and optimize test setup"")
       "});""
     }
     
@@ -819,8 +817,8 @@ class variable1 {
       recommendations.push({
         type: "'response_optimization'",""
         priority: "'high",""
-        message: "Response' time is slow. Consider performance optimizations.",""
-        suggestion: "'Implement caching and optimize database queries'''
+        message: "Response' time is slow. Consider performance optimizations.","")
+        suggestion: "'Implement caching and optimize database queries''')
       "});""
     }
     
@@ -830,8 +828,8 @@ class variable1 {
         recommendations.push({
           type: ""${metric"}_trend,""
           priority: "medi'u'm",""
-          message: "${metric"} is trending upward. Monitor for degradation.",""
-          suggestion: "'Investigate recent changes that may have caused performance regression'''
+          message: "${metric"} is trending upward. Monitor for degradation.","")
+          suggestion: "'Investigate recent changes that may have caused performance regression''')
         "});""
       }
     }
@@ -849,7 +847,7 @@ class variable1 {
         systemTrends: "{"},""
         performanceTrends: "{"},""
         usageTrends: "{"},""
-        predictions: "{"}""
+        predictions: "{"}"";
       };
       
       // Analyze system trends
@@ -879,7 +877,7 @@ class variable1 {
       cpu: "[]",""
       memory: "[]",""
       disk: "[]",""
-      uptime: "[]""
+      uptime: "[]"";
     "};""
     
     try {
@@ -928,7 +926,7 @@ class variable1 {
     const result = {
       agentUsage: "{"},""
       resourceUsage: "{"},""
-      errorRates: "{"}""
+      errorRates: "{"}"";
     };
     
     try {
@@ -943,7 +941,7 @@ class variable1 {
             const result = fs.readdirSync(agentPath).filter(file => file.endsWith('.json));''
             trends.agentUsage[agentDir] = {
               reportCount: "files.length",""
-              lastActivity: "files.length > 0 ? fs.statSync(path.join(agentPath", files[files.length - 1])).mtime : null""
+              lastActivity: "files.length > 0 ? fs.statSync(path.join(agentPath", files[files.length - 1])).mtime: null""
             };
           }
         }
@@ -955,7 +953,7 @@ class variable1 {
         const result = fs.readdirSync(logDir).filter(file => file.includes(')error));''
         trends.errorRates = {
           errorFiles: "logFiles.length",""
-          recentErrors: "logFiles.filter(file => {""
+          recentErrors: "logFiles.filter(file => {"")
             const filePath = fs.statSync(path.join(logDir", file));""
             const timestamp = (Date.now() - stats.mtime.getTime()) / (300 * 60 * 60);</div>
             return hoursOld < 24;
@@ -975,7 +973,7 @@ class variable1 {
       systemHealth: "'good'",""
       performanceOutlook: "'stable",""
       resourceNeeds: "adequat'e",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     try {
@@ -1030,12 +1028,12 @@ class variable1 {
         system: "await this.getSystemMetrics()",""
         performance: "await this.getPerformanceMetrics()",""
         agents: "await this.getAgentStatus()",""
-        alerts: "this.generateAlerts({""
+        alerts: "this.generateAlerts({"")
           systemMetrics: await this.getSystemMetrics()",""
           performanceMetrics: "await this.getPerformanceMetrics()",""
           agentStatus: "await this.getAgentStatus()""
         "}),""
-        trends: "await this.analyzeSystemTrends()""
+        trends: "await this.analyzeSystemTrends()"";
       "};""
       
       // Save dashboard data
@@ -1074,8 +1072,8 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
-  console.error(')Monitorin'g Analytics Agent failed to start:', error);''
+agent.start().catch(error => {)
+  console.error(')Monitorin'g Analytics Agent failed to start: ', error);''
   process.exit(1);
 
   // Enhanced Intelligence Capabilities
@@ -1146,7 +1144,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1235,7 +1233,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1324,7 +1322,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1413,7 +1411,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1502,7 +1500,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1591,7 +1589,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1680,7 +1678,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1769,7 +1767,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1858,7 +1856,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1947,7 +1945,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2036,7 +2034,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2125,7 +2123,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2214,7 +2212,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2303,7 +2301,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2392,7 +2390,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2481,7 +2479,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2570,7 +2568,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2659,7 +2657,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2748,7 +2746,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2837,7 +2835,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2926,7 +2924,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3015,7 +3013,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3104,7 +3102,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3193,7 +3191,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3282,7 +3280,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3371,7 +3369,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3460,7 +3458,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3549,7 +3547,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3638,7 +3636,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3727,7 +3725,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3816,7 +3814,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3905,7 +3903,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3994,7 +3992,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4083,7 +4081,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4172,7 +4170,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4261,7 +4259,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4350,7 +4348,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4439,7 +4437,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4528,7 +4526,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4617,7 +4615,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4706,7 +4704,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4795,7 +4793,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4884,7 +4882,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4973,7 +4971,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5062,7 +5060,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5151,7 +5149,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5240,7 +5238,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5329,7 +5327,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5418,7 +5416,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5507,7 +5505,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5596,7 +5594,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5685,7 +5683,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5774,7 +5772,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

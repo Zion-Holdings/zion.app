@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,13 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-            const result = require('./monetization-orchestrator);''
+            const result = require($2);r););''
             const result = new MonetizationOrchestrator();
             
             orchestrator.initialize().then(() => {
@@ -47,8 +47,8 @@ function getOptimizedInterval(baseInterval) {
                     this.log('Orchestrator Status:, status, 'info');''
                 }, 200); // Every 5 minutes
                 
-            }).catch(err = > {;
-                console.error(Orchestrator Error:'), err);''
+            }).catch(err = > {;)
+                console.error(Orchestrator Error: '), err);''
                 process.exit(1);
             });
         

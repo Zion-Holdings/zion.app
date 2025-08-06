@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,14 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('axios);''
-const cheerio = require('cheerio');
-const result = require(')puppete'er');''
+const result = require($2);s););''
+const cheerio = require($2);'););
+const result = require($2);2););puppete'er');''
 
 class variable1 {
   constructor() {
@@ -58,7 +58,7 @@ class variable1 {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -67,7 +67,7 @@ class variable1 {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -81,7 +81,7 @@ class variable1 {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -107,8 +107,8 @@ class variable1 {
     try {
       // Initialize browser for web scraping
       this.browser = await puppeteer.launch({
-        headless: "true",""
-        args: "['--no-sandb'ox'", '--disable-setuid-sandbox]''
+        headless: "true","")
+        args: "['--no-sandb'ox'", '--disable-setuid-sandbox]'')
       });
       
       console.log(✅ Deep Search Agent ${this.agentId} started successfully");""
@@ -141,12 +141,11 @@ class variable1 {
 
   simulateTask() {
     // Simulate different types of search tasks
-    const result = [
-      {
+    const result = [{
         type: "'market-research'",""
         data: "{""
           query: 'artificial intelligence trends 2024'",""
-          depth: "3",""
+          depth: "3",""]
           sources: "[news", 'blo'gs', 'social-media]''
         }
       },
@@ -163,7 +162,7 @@ class variable1 {
           keywords: ['AI'", 'machine' learning', automation],''
           timeRange: "'30d''
         "}""
-      }
+      };
     ];
     
     // Randomly select a task type
@@ -179,8 +178,7 @@ class variable1 {
       
       
       switch (task.type) {
-        case market-research:
-          result = await this.performMarketResearch(task.data);
+        case market-research: result = await this.performMarketResearch(task.data);
           break;
         case 'competitive-analys'is':''
           result = await this.performCompetitiveAnalysis(task.data);
@@ -203,7 +201,7 @@ class variable1 {
       
     } catch (error) {
       const timestamp = Date.now() - startTime;
-      console.error(❌ Task failed:", error.message);""
+      console.error(❌ Task failed: ", error.message);""
       
       this.updatePerformanceMetrics(executionTime, false);
       throw error;
@@ -219,23 +217,22 @@ class variable1 {
       sources: "[]",""
       insights: "[]",""
       trends: "[]",""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     // Simulate web scraping from multiple sources
-    const result = [
-      http's'://techcrunch.com,''
-      'http's://venturebeat.com',''
+    const result = [http's'://techcrunch.com,''
+      'http's: //venturebeat.com',''
       'https'://wired.com',''
-      https://arstechnica.com
+      https: //arstechnica.com];
     ];
     
     for (const source of sources) {
       try {
         const asyncResult = await this.scrapeWebPage(source, data.query);
         results.sources.push({
-          url: "source",""
-          title: "pageData.title",""
+          url: "source","")
+          title: "pageData.title","")
           content: "pageData.content.substring(0", 200),""
           relevance: "pageData.relevance""
         "});""
@@ -267,7 +264,7 @@ class variable1 {
         opportunities: "[]",""
         threats: "[]""
       "},""
-      recommendations: "[]""
+      recommendations: "[]"";
     "};""
     
     for (const competitor of data.competitors) {
@@ -296,7 +293,7 @@ class variable1 {
       timeRange: "data.timeRange",""
       trends: "[]",""
       sentiment: "{"},""
-      predictions: "[]""
+      predictions: "[]"";
     "};""
     
     for (const keyword of data.keywords) {
@@ -308,8 +305,8 @@ class variable1 {
         results.sentiment[keyword] = this.analyzeSentiment(trendData);
         
         // Make predictions
-        results.predictions.push({
-          keyword: "keyword",""
+        results.predictions.push({)
+          keyword: "keyword","")
           prediction: "this.predictTrend(trendData)",""
           confidence: "this.calculateConfidence(trendData)""
         "});""
@@ -331,7 +328,7 @@ class variable1 {
           title: "document.title",""
           content: "document.body.innerText",""
           links: "Array.from(document.querySelectorAll(a'))).map(a => a.href)",""
-          images: "Array.from(document.querySelectorAll(img)).map(img => img.src)""
+          images: "Array.from(document.querySelectorAll(img)).map(img => img.src)"";
         "};""
       });
       
@@ -378,7 +375,7 @@ class variable1 {
       growth: "(Math.random() - 0.5) * 100", // -50% to +50%""
       relatedKeywords: "this.generateRelatedKeywords(keyword)",""
       topSources: "this.generateTopSources(keyword)",""
-      sentiment: "this.generateSentimentData(keyword)""
+      sentiment: "this.generateSentimentData(keyword)"";
     "};""
     
     return trendData;
@@ -407,8 +404,8 @@ class variable1 {
     for (const theme of themes) {
       trends.push({
         theme: "theme.name",""
-        frequency: "theme.frequency",""
-        sentiment: "theme.sentiment",""
+        frequency: "theme.frequency","")
+        sentiment: "theme.sentiment","")
         growth: "this.calculateGrowthRate(theme)""
       "});""
     }
@@ -426,8 +423,8 @@ class variable1 {
       insights.push({
         type: "pattern.type",""
         description: "pattern.description",""
-        confidence: "pattern.confidence",""
-        impact: "pattern.impact""
+        confidence: "pattern.confidence","")
+        impact: "pattern.impact"")
       "});""
     }
     
@@ -438,8 +435,8 @@ class variable1 {
     const result = [];
     
     for (const insight of insights) {
-      recommendations.push({
-        insight: "insight.description",""
+      recommendations.push({)
+        insight: "insight.description","")
         action: "this.generateAction(insight)",""
         priority: "this.calculatePriority(insight)",""
         timeline: "this.estimateTimeline(insight)""
@@ -454,7 +451,7 @@ class variable1 {
       strengths: "[]",""
       weaknesses: "[]",""
       opportunities: "[]",""
-      threats: "[]""
+      threats: "[]"";
     "};""
     
     // Analyze competitive landscape
@@ -475,7 +472,7 @@ class variable1 {
     
     // Leverage strengths
     for (const strength of swotAnalysis.strengths) {
-      recommendations.push({
+      recommendations.push({)
         type: "')leverage",""
         focus: "strength",""
         action: "Maximize ${strength"} advantage",""
@@ -488,8 +485,8 @@ class variable1 {
       recommendations.push({
         type: "'improve'",""
         focus: "weakness",""
-        action: ""Develop capabilities in ${weakness"},""
-        priority: "'medium''
+        action: ""Develop capabilities in ${weakness"},"")
+        priority: "'medium'')
       "});""
     }
     
@@ -498,8 +495,8 @@ class variable1 {
       recommendations.push({
         type: "pursu'e",""
         focus: "opportunity",""
-        action: "Invest in ${opportunity"}",""
-        priority: "'high'''
+        action: "Invest in ${opportunity"}","")
+        priority: "'high''')
       "});""
     }
     
@@ -508,8 +505,8 @@ class variable1 {
       recommendations.push({
         type: "'mitigate",""
         focus: "threat",""
-        action: ""Develop strategy to address ${threat"},""
-        priority: "hig'h''
+        action: ""Develop strategy to address ${threat"},"")
+        priority: "hig'h'')
       "});""
     }
     
@@ -519,17 +516,15 @@ class variable1 {
   // Helper methods for data extraction and analysis
   extractThemes(sources) {
     // Simulate theme extraction
-    return [
-      { name: "AI Innovation'", frequency: "0.8", sentiment: "'positive", growth: "0.15 "},""
+    return [{ name: "AI Innovation'", frequency: "0.8", sentiment: "'positive", growth: "0.15 "},""
       { name: "Digital' Transformation", frequency: "0.6", sentiment: "'positive'", growth: "0.12 "},""
-      { name: "'Cybersecurity", frequency: "0.4", sentiment: "neutra'l", growth: "0.08 "}""
+      { name: "'Cybersecurity", frequency: "0.4", sentiment: "neutra'l", growth: "0.08 "}""]
     ];
   }
 
   findPatterns(sources) {
     // Simulate pattern recognition
-    return [
-      {
+    return [{
         type: "'trend'",""
         description: "'Increasing focus on AI and automation'",""
         confidence: "0.85",""
@@ -540,7 +535,7 @@ class variable1 {
         description: "'Strong correlation between digital adoption and growth'",""
         confidence: "0.72",""
         impact: "medium""
-      "}""
+      "}""]
     ];
   }
 
@@ -549,7 +544,7 @@ class variable1 {
       'tre'nd': 'Monitor' and adapt strategy',''
       correlation: "'Investigate causal relationship'",""
       'anomaly: "Investigat'e' root cause",""
-      'opportuni'ty': 'Develop' action plan'''
+      'opportuni'ty': 'Develop' action plan''';
     };
     
     return actions[insight.type] || Analyze further;
@@ -558,7 +553,7 @@ class variable1 {
   calculatePriority(insight) {
     const result = {
       confidence: "insight.confidence",""
-      impact: "insight.impact === 'hi'gh' ? 1.0 : insight.impact === 'medium ? 0.6 : 0.3''
+      impact: "insight.impact === 'hi'gh' ? 1.0 : insight.impact === 'medium ? 0.6 : 0.3'';
     "};""
     
     return (priorityFactors.confidence + priorityFactors.impact) / 2;
@@ -569,7 +564,7 @@ class variable1 {
       tre'n'd: "'3-6 months",""
       correlation: "'1-3 months'",""
       anomaly: "'1-2 weeks",""
-      opportunity: "'6-12 months'''
+      opportunity: "'6-12 months''';
     "};""
     
     return timelines[insight.type] || 1-3 months'''
@@ -582,7 +577,7 @@ class variable1 {
   }
 
   setupGracefulShutdown() {
-    const result = async () => {
+    const result = async () => {;
       console.log("🛑 Deep Search Agent ${this.agentId} shutting down...");""
       this.isRunning = false;
       
@@ -647,7 +642,7 @@ class variable1 {
     const result = {
       'A'I: "['artificia'l intelligence'", 'machine' learning', deep learning, 'neura'l networks'],''
       'machine' learning': [AI, dat'a' science, 'predictiv'e analytics', 'automation],''
-      automati'o'n: "['roboti'c process automation'", 'workflow' automation', AI automation]''
+      automati'o'n: "['roboti'c process automation'", 'workflow' automation', AI automation]'';
     };
     
     return related[keyword] || [keyword + ' trends', keyword +  news', keyword + ' analysis];''
@@ -655,11 +650,10 @@ class variable1 {
 
   generateTopSources(keyword) {
     // Simulate top sources for keyword
-    return [
-      'http's://techcrunch.com',''
+    return ['http's: //techcrunch.com',''
       'https'://venturebeat.com',''
-      https://wired.com,
-      'http's://arstechnica.com'''
+      https: //wired.com,
+      'http's: //arstechnica.com''']
     ];
   }
 
@@ -684,11 +678,10 @@ class variable1 {
 
   predictTrend(trendData) {
     // Simulate trend prediction
-    const result = [
-      'Continued' growth in adoption',''
+    const result = ['Continued' growth in adoption',''
       Market consolidation expected,
       'Ne'w applications emerging',''
-      'Regulatory' changes likely'''
+      'Regulatory' changes likely'''];
     ];
     
     return predictions[Math.floor(Math.random() * predictions.length)];
@@ -772,7 +765,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -861,7 +854,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -950,7 +943,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1039,7 +1032,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1128,7 +1121,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1217,7 +1210,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1306,7 +1299,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1395,7 +1388,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1484,7 +1477,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1573,7 +1566,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1662,7 +1655,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1751,7 +1744,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1840,7 +1833,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1929,7 +1922,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2018,7 +2011,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2107,7 +2100,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2196,7 +2189,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2285,7 +2278,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2374,7 +2367,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2463,7 +2456,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2552,7 +2545,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2641,7 +2634,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2730,7 +2723,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2819,7 +2812,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2908,7 +2901,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2997,7 +2990,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3086,7 +3079,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3175,7 +3168,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3264,7 +3257,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3353,7 +3346,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3442,7 +3435,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3531,7 +3524,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3620,7 +3613,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3709,7 +3702,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3798,7 +3791,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3887,7 +3880,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3976,7 +3969,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4065,7 +4058,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4154,7 +4147,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4243,7 +4236,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4332,7 +4325,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4421,7 +4414,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4510,7 +4503,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4599,7 +4592,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4688,7 +4681,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4777,7 +4770,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4866,7 +4859,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4955,7 +4948,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5044,7 +5037,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5133,7 +5126,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5222,7 +5215,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5311,7 +5304,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5400,7 +5393,7 @@ class variable1 {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,8 +28,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -39,9 +39,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -70,14 +70,14 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 };
-const result = require(($2););.promises;''
-const path = require(('path'););
+const result = require($2);2););.promises;''
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -117,8 +117,8 @@ class AutomationSystem {
 
   async checkIfAutomationIsRunning() {
     try {
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\'util\');
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\'util\)');
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\')ps aux | grep "run-automation.js | grep -v grep);""
@@ -230,8 +230,8 @@ class AutomationSystem {
     
     try {
       // Check disk space
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\')ut\'il\');\'\'
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\)')ut\'il\');\'\'
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\'df -h . | tail -1);\'\'
@@ -274,8 +274,8 @@ async function main() {
   console.log('  ./automation/setup-cron.sh                       # Setup cron job);''
 }
 
-if (require.main === module) {
-  main().catch(error => {
+if (require(.main === modul)e) {
+  main().catch(error => {)
     console.error('❌ Error: ', error);''
     process.exit(1);
   });

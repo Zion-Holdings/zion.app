@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -39,7 +39,7 @@ class RuleGenerator {
       rule,
       appliesTo,
       priority,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString();
     };
     this.rules.push(ruleObj);
     return ruleObj;

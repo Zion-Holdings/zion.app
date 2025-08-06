@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -143,15 +143,14 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'commit-reports),''
       path.join(this.reportsDir, branch-repor't's),''
       path.join(this.reportsDir, 'merge-repor'ts'),''
-      path.join(this.reportsDir, 'sync-reports)''
+      path.join(this.reportsDir, 'sync-reports)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -193,13 +192,13 @@ class variable1 {
         unstagedFiles: "[]",""
         untrackedFiles: "[]",""
         commitsAhead: "0",""
-        commitsBehind: "0""
+        commitsBehind: "0"";
       "};""
       
       // Get current branch
       try {
         const { stdout } = await execAsync('git branch --show-current, {''
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.currentBranch = stdout.trim();
       } catch (error) {
@@ -232,7 +231,7 @@ class variable1 {
       // Get commit difference with remote
       try {
         const { stdout } = await execAsync(git rev-list --count HEAD..origin/main, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.commitsBehind = parseInt(stdout.trim()) || 0;
       } catch (error) {
@@ -241,7 +240,7 @@ class variable1 {
       
       try {
         const { stdout } = await execAsync(git rev-list --count origin/main..HEAD, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.commitsAhead = parseInt(stdout.trim()) || 0;
       } catch (error) {
@@ -292,7 +291,7 @@ class variable1 {
     try {
       // Get modified files
       const { stdout } = await execAsync(git status --porcelain, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split(\n)).filter(line => line);
@@ -302,8 +301,8 @@ class variable1 {
         
         if (statusCode !== ??) { // Exclude untracked files for now
           changes.push({
-            file,
-            status: "statusCode",""
+            file,)
+            status: "statusCode","")
             type: "this.getChangeType(statusCode)""
           "});""
         }
@@ -331,7 +330,7 @@ class variable1 {
       for (const change of changes) {
         if (change.status.startsWith(A) || change.status.startsWith(M')) {''
           await execAsync("git add ${change.file}", {""
-            cwd: "this.projectRoot""
+            cwd: "this.projectRoot"")
           "});""
         }
       }
@@ -352,7 +351,7 @@ class variable1 {
       
       // Create commit
       await execAsync("git commit -m ${commitMessage}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log('Commit created successfully);''
@@ -379,7 +378,7 @@ class variable1 {
     
     // Add timestamp
     message += " (${new Date().toISOString()})""
-    
+    ;
     return message;
   }
 
@@ -388,7 +387,7 @@ class variable1 {
       console.log(Pushing changes...);
       
       const { stdout } = await execAsync('git push, {''
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log()Changes pushed successfully'));''
@@ -421,7 +420,7 @@ class variable1 {
       console.log(')Checking' for conflicts...');''
       
       const { stdout } = await execAsync(git status, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       if (stdout.includes('You have unmerged paths) || stdout.includes(')fix' conflicts')) {''
@@ -440,7 +439,7 @@ class variable1 {
       
       // Get conflicted files
       const { stdout } = await execAsync(git diff --name-only --diff-filter=U, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split('\n).filter(file => file);''
@@ -451,12 +450,12 @@ class variable1 {
       
       // Stage resolved files
       await execAsync(git add ., {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Create merge commit
       await execAsync(git commit -m Resolve merge conflicts", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log('))Conflicts' resolved successfully');''
@@ -476,7 +475,7 @@ class variable1 {
       const result = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g", ""
         (match, ours, theirs) => {
           return // Resolved conflict - keeping both versions\n// Ours: \n${ours}\n// Theirs: \n${theirs}"""
-        }
+        };
       );
       
       fs.writeFileSync(filePath, resolvedContent);
@@ -497,13 +496,13 @@ class variable1 {
         localBranches: "[]",""
         remoteBranches: "[]",""
         mergedBranches: "[]",""
-        staleBranches: "[]""
+        staleBranches: "[]"";
       "};""
       
       // Get current branch
       try {
         const { stdout } = await execAsync(git branch --show-current, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         branchReport.currentBranch = stdout.trim();
       } catch (error) {
@@ -523,7 +522,7 @@ class variable1 {
       // Get remote branches
       try {
         const { stdout } = await execAsync(git branch -r, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         branchReport.remoteBranches = stdout.trim().split(')\n').map(branch => branch.trim());''
       } catch (error) {
@@ -554,7 +553,7 @@ class variable1 {
     
     try {
       const { stdout } = await execAsync(git branch --merged main, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split(\n).map(branch => branch.trim());
@@ -604,7 +603,7 @@ class variable1 {
       for (const branch of mergedBranches) {
         try {
           await execAsync("git branch -d ${branch}, {""
-            cwd: "this.projectRoot""
+            cwd: "this.projectRoot"")
           "});""
           console.log(Deleted merged branch: "${branch"}");""
         } catch (error) {
@@ -625,7 +624,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         operations: "[]",""
-        errors: "[]""
+        errors: "[]"";
       "};""
       
       // Fetch latest changes
@@ -651,7 +650,7 @@ class variable1 {
       // Push local changes
       try {
         await execAsync(gi't' push origin main, {''
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         syncReport.operations.push('push);''
       } catch (error) {
@@ -684,7 +683,7 @@ class variable1 {
       agentId: "this.agentId",""
       commitMessage,
       changes,
-      filesCount: "changes.length""
+      filesCount: "changes.length"";
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -711,12 +710,12 @@ class variable1 {
       
       // Create and checkout new branch
       await execAsync(git checkout -b ${branchName}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Push branch to remote
       await execAsync("git push -u origin ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log(Feature branch ${branchName} created successfully");""
@@ -732,7 +731,7 @@ class variable1 {
       
       // Switch to main branch
       await execAsync('git checkout main, {''
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Pull latest changes
@@ -742,22 +741,22 @@ class variable1 {
       
       // Merge the branch
       await execAsync("git merge ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Push changes
       await execAsync(git push origin main, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Delete the branch
       await execAsync(git branch -d ${branchName}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Delete remote branch
       await execAsync("git push origin --delete ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log(Branch ${branchName} merged successfully");""
@@ -778,7 +777,7 @@ class variable1 {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
       branchName,
-      status: "'merged'''
+      status: "'merged''';
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -802,7 +801,7 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(')Gi't Automation Agent failed to start: ', error);''
   process.exit(1);
 }); </div>

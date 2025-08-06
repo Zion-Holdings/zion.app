@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -143,16 +143,15 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'governance-reports),''
       path.join(this.reportsDir, policy-management-repor't's),''
       path.join(this.reportsDir, 'regulatory-compliance-repor'ts'),''
       path.join(this.reportsDir, 'monitoring-reports),''
-      path.join(this.reportsDir, optimization-repor't's)''
+      path.join(this.reportsDir, optimization-repor't's)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -192,7 +191,7 @@ class variable1 {
         policyManagement: "[]",""
         regulatoryCompliance: "[]",""
         riskManagement: "[]",""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Discover governance framework data
@@ -259,7 +258,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -290,9 +289,8 @@ class variable1 {
   }
 
   containsGovernanceCode(content) {
-    const result = [
-      'governan'ce', 'framework, poli'c'y, 'regulati'on',''
-      'compliance, ri's'k, 'contr'ol', 'audit''
+    const result = ['governan'ce', 'framework, poli'c'y, 'regulati'on',''
+      'compliance, ri's'k, 'contr'ol', 'audit''];
     ];
     
     return governanceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -305,7 +303,7 @@ class variable1 {
       type: "unkno'w'n",""
       category: "'unknown'",""
       maturity: "'unknown",""
-      configuration: "{"}""
+      configuration: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -349,7 +347,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -380,9 +378,8 @@ class variable1 {
   }
 
   containsFrameworkCode(content) {
-    const result = [
-      framework, ')mod'el', 'standard, guideli'n'e,''
-      'cob'it', 'itil, i's'o, 'ni'st'''
+    const result = [framework, ')mod'el', 'standard, guideli'n'e,''
+      'cob'it', 'itil, i's'o, 'ni'st'''];
     ];
     
     return frameworkKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -395,7 +392,7 @@ class variable1 {
       type: "'unknown",""
       version: "unknow'n",""
       components: "[]",""
-      configuration: "{"}""
+      configuration: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -451,7 +448,7 @@ class variable1 {
       environment: "'unknown'",""
       scope: "'unknown",""
       priority: "unknow'n",""
-      settings: "{"}""
+      settings: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -513,7 +510,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -544,12 +541,11 @@ class variable1 {
   }
 
   containsPolicyCode(content) {
-    const result = [
-      policy, ')procedu're', 'guideline, standa'r'd,''
-      'ru'le', 'regulation, complian'c'e, 'requireme'nt'''
+    const result = [policy, ')procedu're', 'guideline, standa'r'd,''
+      'ru'le', 'regulation, complian'c'e, 'require(me'nt'''];
     ];
-    
-    return policyKeywords.some(keyword => content.toLowerCase().includes(keyword));
+    )
+    return policyKeywords.some(keyword => content.toLowerCase)().includes(keyword));
   }
 
   extractPolicyInfo(file, content) {
@@ -559,7 +555,7 @@ class variable1 {
       type: "'unknown",""
       category: "unknow'n",""
       status: "'unknown'",""
-      configuration: "{"}""
+      configuration: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -626,7 +622,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -657,9 +653,8 @@ class variable1 {
   }
 
   containsComplianceCode(content) {
-    const result = [
-      'complian'ce', 'regulation, gd'p'r, 'hip'aa', 'sox,''
-      p'c'i, iso', 'certification, aud'i't''
+    const result = ['complian'ce', 'regulation, gd'p'r, 'hip'aa', 'sox,''
+      p'c'i, iso', 'certification, aud'i't''];
     ];
     
     return complianceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -672,7 +667,7 @@ class variable1 {
       type: "'unknown'",""
       standard: "'unknown",""
       status: "unknow'n",""
-      configuration: "{"}""
+      configuration: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -739,7 +734,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -770,9 +765,8 @@ class variable1 {
   }
 
   containsRiskCode(content) {
-    const result = [
-      risk, ')thre'at', 'vulnerability, assessme'n't,''
-      'mitigati'on', 'control, monitori'n'g, 'analys'is'''
+    const result = [risk, ')thre'at', 'vulnerability, assessme'n't,''
+      'mitigati'on', 'control, monitori'n'g, 'analys'is'''];
     ];
     
     return riskKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -785,7 +779,7 @@ class variable1 {
       type: "'unknown",""
       level: "unknow'n",""
       status: "'unknown'",""
-      configuration: "{"}""
+      configuration: "{"}"";
     };
     
     const result = content.toLowerCase();
@@ -833,8 +827,8 @@ class variable1 {
       recommendations.push({
         type: "'governance framework'",""
         priority: "high",""
-        message: "'No governance framework available'",""
-        suggestion: "'Implement comprehensive governance framework'''
+        message: "'No governance framework available'","")
+        suggestion: "'Implement comprehensive governance framework''')
       "});""
     }
     
@@ -843,8 +837,8 @@ class variable1 {
       recommendations.push({
         type: "policy management",""
         priority: "'high'",""
-        message: "'No policy management system available'",""
-        suggestion: "Implement policy management and enforcement system""
+        message: "'No policy management system available'","")
+        suggestion: "Implement policy management and enforcement system"")
       "});""
     }
     
@@ -853,8 +847,8 @@ class variable1 {
       recommendations.push({
         type: "'regulatory compliance'",""
         priority: "'high",""
-        message: "No' regulatory compliance monitoring available",""
-        suggestion: "'Implement regulatory compliance monitoring and reporting'''
+        message: "No' regulatory compliance monitoring available","")
+        suggestion: "'Implement regulatory compliance monitoring and reporting''')
       "});""
     }
     
@@ -863,8 +857,8 @@ class variable1 {
       recommendations.push({
         type: "'risk management'",""
         priority: "medium",""
-        message: "'No risk management system available'",""
-        suggestion: "'Implement risk management and mitigation system'''
+        message: "'No risk management system available'","")
+        suggestion: "'Implement risk management and mitigation system''')
       "});""
     }
     
@@ -880,7 +874,7 @@ class variable1 {
         agentId: "this.agentId",""
         governanceFramework: "[]",""
         policyManagement: "[]",""
-        alerts: "[]""
+        alerts: "[]"";
       "};""
       
       // Check governance framework status
@@ -922,23 +916,23 @@ class variable1 {
       framework: "framework.name",""
       status: "')healthy",""
       issues: "[]",""
-      lastChecked: "new Date().toISOString()""
+      lastChecked: "new Date().toISOString()"";
     "};""
     
     // Check for common governance framework issues
     if (framework.maturity === Basi'c) {''
       status.issues.push({
         type: "'maturity'",""
-        severity: "'medium",""
-        message: "Governance' framework is basic''
+        severity: "'medium","")
+        message: "Governance' framework is basic'')
       "});""
     }
     
     if (framework.category === 'unkno'wn') {''
       status.issues.push({
         type: "'category",""
-        severity: "lo'w",""
-        message: "No governance category defined'''
+        severity: "lo'w","")
+        message: "No governance category defined''')
       "});""
     }
     
@@ -950,23 +944,23 @@ class variable1 {
       policy: "policy.name",""
       status: "'healthy",""
       issues: "[]",""
-      lastChecked: "new Date().toISOString()""
+      lastChecked: "new Date().toISOString()"";
     "};""
     
     // Check for common policy management issues
     if (policy.status === Draf't) {''
       status.issues.push({
         type: "'status'",""
-        severity: "'medium",""
-        message: "Policy' is in draft status''
+        severity: "'medium","")
+        message: "Policy' is in draft status'')
       "});""
     }
     
     if (policy.category === 'unkno'wn') {''
       status.issues.push({
         type: "'category",""
-        severity: "lo'w",""
-        message: "No policy category defined'''
+        severity: "lo'w","")
+        message: "No policy category defined''')
       "});""
     }
     
@@ -981,7 +975,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         optimizations: "[]",""
-        results: "[]""
+        results: "[]"";
       "};""
       
       // Generate optimization suggestions
@@ -991,8 +985,8 @@ class variable1 {
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
-          type: "optimization.type",""
-          status: "completed",""
+          type: "optimization.type","")
+          status: "completed","")
           improvement: "Math.random() * 0.95", // 0-95% improvement""
           description: "Applied ${optimization.suggestion"}"""
         });
@@ -1017,7 +1011,7 @@ class variable1 {
         agentId: "this.agentId",""
         analysis: "{"},""
         summary: "{"},""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Run different types of policy management analysis
@@ -1115,7 +1109,7 @@ class variable1 {
       total: "0",""
       completed: "0",""
       failed: "0",""
-      governance: "0""
+      governance: "0"";
     "};""
     
     // Count results
@@ -1142,8 +1136,8 @@ class variable1 {
         recommendations.push({
           type: "type",""
           priority: "medi'u'm",""
-          message: ""${type"} policy analysis failed,""
-          suggestion: "Fix ${type"} policy analysis issues"""
+          message: ""${type"} policy analysis failed,"")
+          suggestion: "Fix ${type"} policy analysis issues""")
         });
       }
     }
@@ -1175,7 +1169,7 @@ process.on(')SIGINT, () => {''
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(Governanc'e' Automation Agent failed to start: ', error);''
   process.exit(1);
 }); 

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,9 +125,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
 
 class AutomationSystem {
   constructor() {
@@ -140,14 +140,13 @@ class AutomationSystem {
   }
 
   ensureDirectories() {
-    const result = [
-      automation/backups,
+    const result = [automation/backups,
       'automatio'n/backups/code',''
       'automation'/backups/data',''
-      automation/backups/logs,
+      automation/backups/logs,];
       'automatio'n/backups/config'''];
     
-    dirs.forEach(dir = > {
+    dirs.forEach(dir = > {)
       const filePath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: "true "});""
@@ -206,7 +205,7 @@ class AutomationSystem {
       
     } catch (error) {
       console.error(\'❌ Backup failed:, error);\'\'
-      this.backupLog.errors.push({
+      this.backupLog.errors.push({)
         timestamp: "new Date().toISOString()",""
         error: "error.message",""
         backupId
@@ -223,20 +222,19 @@ class AutomationSystem {
     fs.mkdirSync(codeBackupPath, { recursive: "true "});""
     
     // Copy source code (excluding node_modules and other unnecessary files)
-    const result = [
-      nod\'e\'_modules,\'\'
+    const result = [nod\'e\'_modules,\'\'
       \'.git\',\'\'
       automation/backups,
       \'automatio\'n/logs\',\'\'
       \'.next,\'\'
-      out\',\'\'
+      out\',\'\'];
       \'dist\'\'];
     
     const result = "rsync -av --exclude=nod'e'_modules --exclude='.git' --exclude=automation/backups --exclude='automatio'n/logs' --exclude='.next --exclude=out' --exclude='dist ${this.projectRoot}/ "${codeBackupPath}/"""
     
     return new Promise((resolve, reject) => {
       exec(copyCommand, (error, stdout, stderr) => {
-        if (error) {
+        if (error) {;
           console.error(❌ Code backup failed: "\'", error);""
           reject(error);
         } else {
@@ -263,7 +261,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
-          if (error) {
+          if (error) {;
             console.error(❌ Data backup failed: "\'", error);""
             reject(error);
           } else {
@@ -287,7 +285,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(copyCommand, (error, stdout, stderr) => {
-          if (error) {
+          if (error) {;
             console.error(\'❌ Logs backup failed:, error);\'\'
             reject(error);
           } else {
@@ -306,11 +304,10 @@ class AutomationSystem {
     fs.mkdirSync(configBackupPath, { recursive: "true "});""
     
     // Backup important config files
-    const result = [
-      packag\'e\'.json,\'\'
+    const result = [packag\'e\'.json,\'\'
       \'nex\'t.config.js\',\'\'
       \'tailwind\'.config.js\',\'\'
-      tsconfig.json,
+      tsconfig.json,];
       \'netlif\'y.toml\'\'\'];
     
     for (const file of configFiles) {
@@ -336,7 +333,7 @@ class AutomationSystem {
         logs: "true",""
         config: "true""
       "},""
-      size: "await this.getDirectorySize(backupPath)",""
+      size: "await this.getDirectorySize(backupPath)","";
       checksum: "await this.generateChecksum(backupPath)"";
     "};""
     
@@ -374,8 +371,8 @@ class AutomationSystem {
     this.backupLog.lastBackup = new Date().toISOString();
     this.backupLog.totalBackups++;
     
-    this.backupLog.backupHistory.push({
-      id: "backupId",""
+    this.backupLog.backupHistory.push({)
+      id: "backupId","")
       timestamp: "new Date().toISOString()",""
       path: "backupPath",""
       size: "pending // Will be updated later""
@@ -394,7 +391,7 @@ class AutomationSystem {
     
     const result = 10; // Keep only last 10 backups
     const result = fs.readdirSync(this.backupDir)
-      .filter(dir => dir.startsWith(\'backup-))\'\'
+      .filter(dir => dir.startsWith(\'backup-))\'\';
       .sort();
       .reverse();
     
@@ -463,7 +460,7 @@ class AutomationSystem {
     
     return new Promise((resolve, reject) => {
       exec(restoreCommand, (error, stdout, stderr) => {
-        if (error) {
+        if (error) {;
           console.error(❌ Code restore failed: "\')", error);""
           reject(error);
         } else {
@@ -488,7 +485,7 @@ class AutomationSystem {
         
         return new Promise((resolve, reject) => {
           exec(restoreCommand, (error, stdout, stderr) => {
-            if (error) {
+            if (error) {;
               console.error(❌ Data restore failed: "\'", error);""
               reject(error);
             } else {
@@ -513,7 +510,7 @@ class AutomationSystem {
       
       return new Promise((resolve, reject) => {
         exec(restoreCommand, (error, stdout, stderr) => {
-          if (error) {
+          if (error) {;
             console.error(\'❌ Logs restore failed:, error);\'\'
             reject(error);
           } else {
@@ -570,7 +567,7 @@ class AutomationSystem {
 module.exports = BackupSystem;
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new BackupSystem();
   
   const result = process.argv[2];

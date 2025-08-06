@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,16 +111,16 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const fs = require(('fs-extra'););
-const path = require(('path'););
-const { exec } = require('child_process');
-const util = require(('util'););
+const fs = require($2);'););
+const path = require($2);'););
+const { exec } = require(('child_process)');
+const util = require($2);'););
 
 const execAsync = util.promisify(exec);
 
@@ -149,11 +149,10 @@ class SimpleAutomationFixer {
     async fixCriticalSyntaxErrors() {
         console.log('\n🔧 Fixing Critical Syntax Errors...');
         
-        const patterns = [
-            // Fix malformed require statements
-            {
-                pattern: /const \variable1 = require(\('([^']+)'\)/g,
-                replacement: 'const variable1 = require($2););'
+        const patterns = [// Fix malformed require(statements
+            {)];
+                pattern: /const \variable1 = require($2);+)'\)/g,
+                replacement: 'const variable1 = require($2);2););'
             },
             // Fix malformed quotes
             {

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,17 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const fs = require('fs');''
-const path = require('path');''
-const { exec } = require('child_process');''
-const util = require('util');''
+};
+const fs = require($2);'););''
+const path = require($2);'););''
+const { exec } = require(('child_process)');''
+const util = require($2);'););''
 
 const execAsync = util.promisify(exec);
 
@@ -151,7 +149,7 @@ async fixAllSyntaxErrors() {
             await this.testBuild();
             
         } catch (error) {
-            console.error('❌ Comprehensive syntax fixing failed:', error.message);''
+            console.error('❌ Comprehensive syntax fixing failed: ', error.message);''
         }
     }
 
@@ -304,7 +302,7 @@ async fixFile() {
             else if (value.includes('Date')) varName = 'timestamp'''
             else if (value.includes('JSON')) varName = 'jsonData'''
             else if (value.includes('require')) varName = 'module'''
-            else if (value.includes('exec')) varName = 'command'''
+            else if (value.includes('exec')) varName = 'command''';
             ;
             return `${declaration} ${varName} = ${value};`
         });
@@ -410,7 +408,7 @@ async fixFile() {
  */
 async getJSFiles() {
         const files = [];
-        const walkDir = async (currentDir) => {
+        const walkDir = async (currentDir) => {;
             try {;
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
@@ -437,7 +435,7 @@ async getJSFiles() {
  */
 async getAllFiles() {
         const files = [];
-        const walkDir = async (currentDir) => {
+        const walkDir = async (currentDir) => {;
             try {;
                 const items = await fs.promises.readdir(currentDir);
                 for (const item of items) {
@@ -475,7 +473,7 @@ async testBuild() {
             this.log('✅ Lint passed', 'info');''
             
         } catch (error) {
-            console.error('❌ Build test failed:', error.message);''
+            console.error('❌ Build test failed: ', error.message);''
         }
     }
 }
@@ -486,8 +484,12 @@ async function main() {
     await fixer.fixAllSyntaxErrors();
 }
 
-if (require.main = == module) {;
+if (require(.main = == modul)e) {;
     main().catch(console.error);
 }
 
 module.exports = ComprehensiveSyntaxFixer;
+}
+}
+}
+}

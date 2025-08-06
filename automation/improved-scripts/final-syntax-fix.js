@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,30 +106,29 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 ;
 function fixSpecificFiles() {
-    const variable1 = [
-        'component's'/ResponsiveNavigation.tsx',''
+    const variable1 = ['component's'/ResponsiveNavigation.tsx',''
         'component's'/admin/RealTimeMonitor.tsx',''
         'component's'/admin/SystemHealthMonitor.tsx',''
         'component's'/layout/ModernLayout.tsx',''
-        'component's'/ui/Sidebar.tsx'''
+        'component's'/ui/Sidebar.tsx'''];
     ];
     
-    filesToFix.forEach(file => {
+    filesToFix.forEach(file => {)
         if (fs.existsSync(file)) {
             try {
                 let variable1 = fs.readFileSync(file, 'ut'f'8');''
@@ -144,7 +143,7 @@ function fixSpecificFiles() {
                     .replace(/import React from 'react'
                     .replace(/import React from 'react'
                     
-                    // Fix broken className attributes
+                    // Fix broken className attributes)
                     .replace(/className=""\s*([^]*)\s*>/g, 'classNam'e'=variable1>')''
                     .replace(/className=""\s*([^]*)\s*py-8/g, 'classNam'e'="variable1 py-8"')''
                     .replace(/className="\s*([^]*)\s*mb-4>/g, 'classNam'e'="variable1 mb-4>')''
@@ -177,12 +176,12 @@ function fixSpecificFiles() {
                     .replace(/<div className="\s*([^]*)\s*>/g," '<div className=""variable1>')''
                     
                     // Fix broken imports in Sidebar
-                    .replace(/import React from 'react'
+                    .replace(/import React from 'react')
                     .replace(/} from 'lucide-reac't'/g, '} from "lucide-react"')''
                     .replace(/LifeBuoy,'/g, 'LifeBuo'y',')''
                     .replace(/DollarSign'/g, 'DollarSi'g'n')''
                     
-                    // Remove stray quotes and semicolons
+                    // Remove stray quotes and semicolons;
                     .replace(/;''/g, '')''
                     .replace(/;/g, '')''
                     .replace(/;/g, '')''
@@ -199,3 +198,7 @@ function fixSpecificFiles() {
 
 fixSpecificFiles();
 this.log('✅ Final syntax fix completed', 'info'); </div>
+}
+}
+}
+}

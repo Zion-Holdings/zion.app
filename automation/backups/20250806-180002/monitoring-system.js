@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -68,8 +68,8 @@ const memoryOptimization = {
   }
 };
 
-const fs = require(('fs'););
-const path = require(('path'););
+const fs = require($2);'););
+const path = require($2);'););
 
 class ProjectMonitoringSystem {
     constructor() {
@@ -90,7 +90,7 @@ class ProjectMonitoringSystem {
             buildStatus: await this.checkBuildStatus(),
             testStatus: await this.checkTestStatus(),
             lintStatus: await this.checkLintStatus(),
-            fileCount: await this.countFiles(),
+            fileCount: await this.countFiles(),;
             automationStatus: await this.checkAutomationStatus()};
 
         const healthFile = path.join(this.monitoringDir, 'project-health.json');
@@ -101,9 +101,9 @@ class ProjectMonitoringSystem {
 
     async checkBuildStatus() {
         try {
-            const result = require(($2););.execSync('npm run build', { 
+            const result = require($2);2););.execSync('npm run build', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' ;
+                stdio: 'pipe' ;)
             });
             return { status: 'success', message: 'Build completed successfully' };
         } catch (error) {
@@ -113,9 +113,9 @@ class ProjectMonitoringSystem {
 
     async checkTestStatus() {
         try {
-            const result = require(($2););.execSync('npm test', { 
+            const result = require($2);2););.execSync('npm test', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' ;
+                stdio: 'pipe' ;)
             });
             return { status: 'success', message: 'Tests passed' };
         } catch (error) {
@@ -125,9 +125,9 @@ class ProjectMonitoringSystem {
 
     async checkLintStatus() {
         try {
-            const result = require(($2););.execSync('npm run lint', { 
+            const result = require($2);2););.execSync('npm run lint', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' ;
+                stdio: 'pipe' ;)
             });
             return { status: 'success', message: 'Linting passed' };
         } catch (error) {
@@ -137,9 +137,8 @@ class ProjectMonitoringSystem {
 
     async countFiles() {
         try {
-            const result = require(($2););.execSync(
-                'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js" | grep -v node_modules | grep -v .git | wc -l',
-                { cwd: this.projectRoot };
+            const result = require($2);2););.execSync('find . -name "*.tsx" -o -name "*.ts" -o -name "*.js" | grep -v node_modules | grep -v .git | wc -l',
+                { cwd: this.projectRoot };)
             );
             return parseInt(result.toString().trim());
         } catch (error) {

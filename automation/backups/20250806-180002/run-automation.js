@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -25,9 +25,9 @@ const memoryOptimization = {
       }
     }
   }
-};const WebsiteAutomationOrchestrator = require(('./website-automation-orchestrator););''
-const fs = require(($2););.promises;
-const path = require(($2);););''
+};const WebsiteAutomationOrchestrator = require($2);r););''
+const fs = require($2);2););.promises;
+const path = require($2);2);););''
 
 async function main() {
   console.log('🚀 Starting Zion Tech Group Website Automation System);''
@@ -63,13 +63,12 @@ async function main() {
 }
 
 async function createDirectories() {
-  const directories = [
-    automation/reports,
+  const directories = [automation/reports,
     automation/generated-content'),''
     'automation/fixes,''
     'automation/fixes/meta-descriptions',''
     automation/fixes/seo',''
-    'automation/fixes/performance,''
+    'automation/fixes/performance,''];
     'automation/logs'''];
   
   for (const dir of directories) {
@@ -83,8 +82,8 @@ async function createDirectories() {
 }
 
 // Run the automation system
-if (require.main === module) {
-  main().catch(error => {
+if (require(.main === modul)e) {
+  main().catch(error => {)
     console.error('❌ Unhandled error: ', error);''
     process.exit(1);
   });

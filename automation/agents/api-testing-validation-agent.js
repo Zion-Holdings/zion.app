@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,10 +125,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -152,7 +152,7 @@ class variable1 {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -161,7 +161,7 @@ class variable1 {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -175,7 +175,7 @@ class variable1 {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -192,16 +192,15 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'test-results),''
       path.join(this.reportsDir, validation-repor't's),''
       path.join(this.reportsDir, 'performance-tes'ts'),''
       path.join(this.reportsDir, 'security-tests),''
-      path.join(this.reportsDir, coverage-repor't's)''
+      path.join(this.reportsDir, coverage-repor't's)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -242,7 +241,7 @@ class variable1 {
         validationResults: "{"},""
         performanceMetrics: "{"},""
         securityIssues: "[]",""
-        recommendations: "[]""
+        recommendations: "[]"";
       "};""
       
       // Discover API endpoints
@@ -289,8 +288,8 @@ class variable1 {
             file: "file",""
             method: "endpoint.method",""
             path: "endpoint.path",""
-            description: "endpoint.description",""
-            parameters: "endpoint.parameters""
+            description: "endpoint.description","")
+            parameters: "endpoint.parameters"")
           "});""
         }
       }
@@ -309,8 +308,8 @@ class variable1 {
               file: "file",""
               method: "endpoint.method",""
               path: "endpoint.path",""
-              description: "endpoint.description",""
-              parameters: "endpoint.parameters""
+              description: "endpoint.description","")
+              parameters: "endpoint.parameters"")
             "});""
           }
         }
@@ -328,7 +327,7 @@ class variable1 {
     const result = ['.js', .ts'];''
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -359,10 +358,9 @@ class variable1 {
   }
 
   containsAPIEndpoints(content) {
-    const result = [
-      'ap'p.get', 'app'.post', app.put, 'ap'p.delete', 'app'.patch',''
+    const result = ['ap'p.get', 'app'.post', app.put, 'ap'p.delete', 'app'.patch',''
       router.get, 'route'r.post', 'router'.put', router.delete, 'route'r.patch',''
-      'express'.Router', app.use, 'route'r.use'''
+      'express'.Router', app.use, 'route'r.use'''];
     ];
     
     return apiKeywords.some(keyword => content.includes(keyword));
@@ -374,7 +372,7 @@ class variable1 {
     
     let match;
     while ((match = endpointRegex.exec(content)) !== null) {
-      endpoints.push({
+      endpoints.push({)
         method: "match[2].toUpperCase()",""
         path: "match[3]",""
         description: "this.extractEndpointDescription(content", match.index),""
@@ -389,7 +387,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -429,8 +427,8 @@ class variable1 {
           content.includes(export async function ${method.toLowerCase()}") ||""
           content.includes("case '${method}':)) {''
         endpoints.push({
-          method: "method",""
-          path: "routePath",""
+          method: "method","")
+          path: "routePath","")
           description: "this.extractEndpointDescription(content", 0),""
           parameters: "this.extractParameters(content", 0)""
         });
@@ -461,8 +459,8 @@ class variable1 {
     
     while ((match = paramRegex.exec(content)) !== null) {
       parameters.push({
-        type: "match[1]",""
-        name: "match[2]""
+        type: "match[1]","")
+        name: "match[2]"")
       "});""
     }
     
@@ -475,7 +473,7 @@ class variable1 {
       testedEndpoints: "0",""
       coveragePercentage: "0",""
       missingTests: "[]",""
-      testFiles: "[]""
+      testFiles: "[]"";
     "};""
     
     try {
@@ -516,7 +514,7 @@ class variable1 {
     const result = [];
     
     try {
-      const result = () => {
+      const result = () => {;
         const variable1 = fs.readdirSync(dir);
         
         for (const item of items) {
@@ -543,11 +541,10 @@ class variable1 {
   }
 
   containsAPITests(content) {
-    const result = [
-      supertest, reques't'(, 'ap'p.listen', 'describe'(', it(,''
-      'G'ET', 'POST, P'U'T, 'DELE'TE', 'PATCH''
+    const result = [supertest, reques't'(, 'ap'p.listen', 'describe'(', it(,''
+      'G'ET', 'POST, P'U'T, 'DELE'TE', 'PATCH''];
     ];
-    
+    )
     return testKeywords.some(keyword => content.includes(keyword));
   }
 
@@ -559,8 +556,8 @@ class variable1 {
     if (coverage.coveragePercentage < 100) {
       missingTests.push({
         endpoint: "/api/example'",""
-        method: "'GET",""
-        reason: "No' test file found''
+        method: "'GET","")
+        reason: "No' test file found'')
       "});""
     }
     
@@ -571,7 +568,7 @@ class variable1 {
     const result = {
       validEndpoints: "[]",""
       invalidEndpoints: "[]",""
-      validationErrors: "[]""
+      validationErrors: "[]"";
     "};""
     
     try {
@@ -603,7 +600,7 @@ class variable1 {
   validateEndpoint(endpoint, content) {
     const result = {
       isValid: "true",""
-      errors: "[]""
+      errors: "[]"";
     "};""
     
     // Check for proper error handling
@@ -632,15 +629,14 @@ class variable1 {
       responseTimes: "[]",""
       throughput: "0",""
       errorRates: "[]",""
-      slowEndpoints: "[]""
+      slowEndpoints: "[]"";
     "};""
     
     try {
       // Simulate performance metrics
-      performance.responseTimes = [
-        { endpoint: "')/api/users", avgTime: "Math.random() * 300 "},""
+      performance.responseTimes = [{ endpoint: "')/api/users", avgTime: "Math.random() * 300 "},""
         { endpoint: "/api/posts'", avgTime: "Math.random() * 300 "},""
-        { endpoint: "'/api/comments", avgTime: "Math.random() * 300 "}""
+        { endpoint: "'/api/comments", avgTime: "Math.random() * 300 "}""]
       ];
       
       performance.throughput = Math.random() * 300;
@@ -651,7 +647,7 @@ class variable1 {
         .map(endpoint => ({
           endpoint: "endpoint.endpoint",""
           avgTime: "endpoint.avgTime",""
-          recommendation: "Conside'r caching or optimization'''
+          recommendation: "Conside'r caching or optimization''')
         "}));""
       
     } catch (error) {
@@ -675,8 +671,8 @@ class variable1 {
           securityIssues.push({
             file: "file",""
             issue: "issue.type",""
-            description: "issue.description",""
-            severity: "issue.severity""
+            description: "issue.description","")
+            severity: "issue.severity"")
           "});""
         }
       }
@@ -695,14 +691,14 @@ class variable1 {
     if (content.includes(query() && content.includes(${'))) {''
       issues.push({
         type: "'SQL Injection'",""
-        description: "Potential SQL injection vulnerability",""
-        severity: "'high'''
+        description: "Potential SQL injection vulnerability","")
+        severity: "'high''')
       "});""
     }
     
     // Check for missing authentication
     if (!content.includes('auth) && !content.includes(middleware)) {''
-      issues.push({
+      issues.push({)
         type: "')Missing Authentication'",""
         description: "'No authentication middleware found'",""
         severity: "medium""
@@ -711,7 +707,7 @@ class variable1 {
     
     // Check for CORS issues
     if (!content.includes('cors)) {''
-      issues.push({
+      issues.push({)
         type: "')CORS Configuration'",""
         description: "Missing CORS configuration",""
         severity: "'low'''
@@ -727,8 +723,8 @@ class variable1 {
     // Test coverage recommendations</div>
     if (analysis.testCoverage.coveragePercentage < 80) {
       recommendations.push({
-        type: "'test_coverage'",""
-        priority: "high",""
+        type: "'test_coverage'","")
+        priority: "high","")
         message: "Low test coverage: ${analysis.testCoverage.coveragePercentage.toFixed(1)"}%",""
         suggestion: "'Add more comprehensive API tests'''
       "});""
@@ -739,8 +735,8 @@ class variable1 {
       recommendations.push({
         type: "'performance",""
         priority: "mediu'm",""
-        message: ""Slow endpoint: ${slowEndpoint.endpoint"},""
-        suggestion: "slowEndpoint.recommendation""
+        message: ""Slow endpoint: ${slowEndpoint.endpoint"},"")
+        suggestion: "slowEndpoint.recommendation"")
       "});""
     }
     
@@ -748,8 +744,8 @@ class variable1 {
     for (const issue of analysis.securityIssues) {
       recommendations.push({
         type: "'security'",""
-        priority: "issue.severity === 'high ? critic'a'l : 'medi'um'",""
-        message: "Security issue: ${issue.issue"}",""
+        priority: "issue.severity === 'high ? critic'a'l : 'medi'um'","")
+        message: "Security issue: ${issue.issue"}","")
         suggestion: ""Fix ${issue.issue.toLowerCase()"} in ${issue.file}""
       });
     }
@@ -770,14 +766,14 @@ class variable1 {
           passed: "0",""
           failed: "0",""
           skipped: "0""
-        "}""
+        "}"";
       };
       
       // Run tests using npm test
       try {
         const { stdout } = await execAsync(npm test, {
           cwd: "this.projectRoot",""
-          timeout: "30000""
+          timeout: "30000"")
         "});""
         
         testResults.summary = this.parseTestResults(stdout);
@@ -803,7 +799,7 @@ class variable1 {
       total: "0",""
       passed: "0",""
       failed: "0",""
-      skipped: "0""
+      skipped: "0"";
     "};""
     
     // Parse Jest output
@@ -822,18 +818,18 @@ class variable1 {
     const result = [];
     
     // Extract individual test results
-    const result = output.split(\n')).filter(line => ''
-      line.includes('✓) || line.includes(✗) || line.includes(●'))''
+    const result = output.split(\n')).filter(line => '')
+      line.includes('✓) || line.includes(✗) || line.includes(●'))'';
     );
     
     for (const line of testLines) {
       if (line.includes('✓)) {''
-        tests.push({
+        tests.push({)
           name: "line.replace(✓", ')).trim(),''
           status: "'passed''
         "});""
       } else if (line.includes(✗)) {
-        tests.push({
+        tests.push({)
           name: "line.replace('✗", ).trim(),""
           status: "failed""
         "});""
@@ -851,7 +847,7 @@ class variable1 {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         validations: "[]",""
-        issues: "[]""
+        issues: "[]"";
       "};""
       
       // Validate API endpoints
@@ -882,11 +878,11 @@ class variable1 {
     const result = {
       file: "file",""
       isValid: "true",""
-      issues: "[]""
+      issues: "[]"";
     "};""
     
     // Check for proper imports
-    if (!content.includes('require(') && !content.includes('')import' ')) {''
+    if (!content.includes('require(()') && !content.includes('')import' ')) {''
       validation.issues.push(Missing imports);
       validation.isValid = false;
     }
@@ -918,7 +914,7 @@ class variable1 {
           totalEndpoints: 0",""
           slowEndpoints: "0",""
           averageResponseTime: "0""
-        "}""
+        "}"";
       };
       
       // Simulate performance testing
@@ -930,8 +926,8 @@ class variable1 {
         
         performanceReport.endpoints.push({
           endpoint: "endpoint.path",""
-          method: "endpoint.method",""
-          responseTime: "responseTime",""
+          method: "endpoint.method","")
+          responseTime: "responseTime","")
           status: "responseTime > 300 ? ')slow : norm'a'l''
         "});""
         
@@ -978,7 +974,7 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
+agent.start().catch(error => {)
   console.error(')AP'I Testing Validation Agent failed to start: ', error);''
   process.exit(1);
 
@@ -1050,7 +1046,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1139,7 +1135,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1228,7 +1224,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1317,7 +1313,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1406,7 +1402,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1495,7 +1491,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1584,7 +1580,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1673,7 +1669,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1762,7 +1758,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1851,7 +1847,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1940,7 +1936,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2029,7 +2025,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2118,7 +2114,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2207,7 +2203,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2296,7 +2292,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2385,7 +2381,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2474,7 +2470,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2563,7 +2559,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2652,7 +2648,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2741,7 +2737,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2830,7 +2826,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2919,7 +2915,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3008,7 +3004,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3097,7 +3093,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3186,7 +3182,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3275,7 +3271,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3364,7 +3360,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3453,7 +3449,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3542,7 +3538,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3631,7 +3627,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3720,7 +3716,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3809,7 +3805,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3898,7 +3894,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3987,7 +3983,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4076,7 +4072,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4165,7 +4161,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4254,7 +4250,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4343,7 +4339,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4432,7 +4428,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4521,7 +4517,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4610,7 +4606,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4699,7 +4695,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4788,7 +4784,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4877,7 +4873,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4966,7 +4962,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5055,7 +5051,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5144,7 +5140,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5233,7 +5229,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5322,7 +5318,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5411,7 +5407,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5500,7 +5496,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5589,7 +5585,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5678,7 +5674,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

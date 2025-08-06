@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,7 +28,7 @@ const memoryOptimization = {
 };
 
 // Google Gemini AI Integration for Autonomous Improvement;
-const { GoogleGenerativeAI } = require('@google/generative-ai);''
+const { GoogleGenerativeAI } = require(('@google/generative-a)i);''
 
 class AutomationSystem {
   constructor() {
@@ -43,7 +43,7 @@ ${code}
 Provide specific recommendations for: 1. Performance optimization
 2. Security improvements
 3. Code quality enhancements
-4. Best practices implementation
+4. Best practices implementation;
     ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
@@ -52,7 +52,7 @@ Provide specific recommendations for: 1. Performance optimization
   async optimizeCode(code) {
     const result = Optimize this code for maximum performance, readability, and maintainability: ${code}
 
-Return the optimized version with explanations for each improvement."""
+Return the optimized version with explanations for each improvement.""";
     ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
@@ -65,22 +65,22 @@ ${code}
 Include tests for: 1. Happy path scenarios
 2. Edge cases
 3. Error handling
-4. Performance tests
+4. Performance tests;
     ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
 
-  async suggestArchitecture(requirements) {
-    const result = Suggest the best architecture for these requirements: ${requirements}
+  async suggestArchitecture(require(ment)s) {
+    const result = Suggest the best architecture for these require(ments: ${requirements}
 
 Consider: 1. Scalability
 2. Performance
 3. Security
 4. Maintainability
-5. Cost optimization"""
-    ;
-    const asyncResult = await this.model.generateContent(prompt);
+5. Cost optimization""";
+    ;)
+    const asyncResult = await this.model.generateContent(promp)t);
     return result.response.text();
   }
 }

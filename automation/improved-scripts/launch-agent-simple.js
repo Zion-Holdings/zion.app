@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,16 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const { spawn } = require('child_process);''
+};
+const { spawn } = require(('child_proces)s);''
 
-const path = require('path');
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -114,13 +112,12 @@ class AutomationSystem {
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   } {
     constructor() {
-        this.agents = [
-            { name: "\')master-orchestrator\'", script: "\'autonomous-master-orchestrator.js\' "},""
+        this.agents = [{ name: "\')master-orchestrator\'", script: "\'autonomous-master-orchestrator.js\' "},""
             { name: "content-generator", script: "\'enhanced-content-generator.js\' "},""
             { name: "\'website-analyzer", script: "enhanced-website-analyzer-agent\'.js "},""
             { name: "\'market-research\'", script: "\'autonomous-market-research-agent.js\' "},""
             { name: "sales-agent", script: "\'autonomous-sales-agent.js\' "},""
-            { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}"";
+            { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}"";]
         ];
         this.runningAgents = new Map();
     }
@@ -134,13 +131,13 @@ async startAgent() {
             this.log("🚀 Starting ${agent.name}..., 'info');""
             
             const result = spawn(\'node, [agent.script], {\'\'
-                cwd: "__dirname",""
+                cwd: "__dirname","")
                 stdio: "[\')pipe", pi'p'e, 'pi'pe'],''
                 env: "{""
                     ...process.env",""
                     NODE_ENV: "\'development",""
                     AUTOMATION_SKIP_SUPABASE_CHECK: "tru\'e",""
-                    AUTOMATION_FALLBACK_MODE: "\'true\'\'\'
+                    AUTOMATION_FALLBACK_MODE: "\'true\'\'\';
                 "}"";
             });
 
@@ -202,3 +199,8 @@ async startAllAgents() {
 // Start the launcher;
 const result = new SimpleAgentLauncher();
 launcher.startAllAgents().catch(console.error);
+
+}
+}
+}
+}

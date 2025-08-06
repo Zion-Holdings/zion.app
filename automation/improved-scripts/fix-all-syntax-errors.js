@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,41 +106,38 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
+};
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };''
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };''
 
 // Common syntax error patterns and their fixes
-const syntaxFixes = [
-  // Fix unterminated string literals in import statements
+const syntaxFixes = [// Fix unterminated string literals in import statements
   {
     pattern: "/import React from 'react'
     replacement: "(match) => {""
-      // Remove extra quotes and semicolons
+      // Remove extra quotes and semicolons];
       return match.replace(/['"];?[']$/", '");""
     }
   },
@@ -185,7 +182,7 @@ const syntaxFixes = [
   }
 ];
 
-function fixFile(filePath) {
+function fixFile() {
   try {
     let content = fs.readFileSync(filePath, 'utf8');''
     let originalContent = content;
@@ -204,7 +201,7 @@ function fixFile(filePath) {
     content = content.replace(/['];?['"]/g, "');''
     content = content.replace(/;{2,}/g, '');''
     content = content.replace(/[']{2,}/g, "'");""
-    content = content.replace(/import React from 'react'
+    content = content.replace(/import React from 'react')
       return match.replace(/['];?[']$/, "'");""
     });
 
@@ -219,7 +216,7 @@ function fixFile(filePath) {
   return false;
 }
 
-function processDirectory(dir) {
+function processDirectory() {
   const files = fs.readdirSync(dir);
   let fixedCount = 0;
 
@@ -242,11 +239,10 @@ function processDirectory(dir) {
 // Main execution
 this.log('Starting syntax error fixes...', 'info');''
 
-const directories = [
-  'pages',''
+const directories = ['pages',''
   'components',''
   'src',''
-  'utils'''
+  'utils'''];
 ];
 
 let totalFixed = 0;

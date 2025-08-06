@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,17 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, exec } = require('child_process');
-const { promisify } = require('util');
+}const fs = require($2);2););.promises;
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
+const { promisify } = require(('util)');
 
 const execAsync = promisify(exec);
 
@@ -72,7 +69,7 @@ class Technical-automationMonitoringAutomation {
       this.isRunning = true;
       console.log(`✅ ${this.capability} automation initialized successfully`);
     } catch (error) {
-      console.error(`❌ Error initializing ${this.capability} automation:`, error);
+      console.error(`❌ Error initializing ${this.capability} automation: `, error);
       throw error;
     }
   }
@@ -118,7 +115,7 @@ class Technical-automationMonitoringAutomation {
       
       console.log(`✅ ${this.capability} automation executed successfully`);
     } catch (error) {
-      console.error(`❌ Error executing ${this.capability} automation:`, error);
+      console.error(`❌ Error executing ${this.capability} automation: `, error);
       this.updatePerformanceMetrics(false, Date.now() - startTime);
     }
   }
@@ -149,7 +146,7 @@ class Technical-automationMonitoringAutomation {
       level,
       message,
       capability: this.capability,
-      factoryType: this.factoryType
+      factoryType: this.factoryType;
     };
     
     this.logs.push(logEntry);

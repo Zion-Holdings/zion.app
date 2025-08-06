@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,13 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs');
-const path = require('path');
+const fs = require($2);'););
+const path = require($2);'););
 
 class DeploymentManagerAgent {
   constructor() {
@@ -54,15 +54,14 @@ class DeploymentManagerAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
-      this.dataDir,
+    const dirs = [this.dataDir,
       this.reportsDir,
       this.logsDir,
       path.join(this.reportsDir, 'deployment-manager'),
-      path.join(this.logsDir, 'deployment-manager')
+      path.join(this.logsDir, 'deployment-manager')];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
@@ -101,8 +100,8 @@ class DeploymentManagerAgent {
           
           const report = await this.generateDeploymentReport({
             readiness,
-            staging: stagingDeploy,
-            production: productionDeploy
+            staging: stagingDeploy,)
+            production: productionDeploy);
           });
           
           await this.saveDeploymentResults(report);
@@ -116,7 +115,7 @@ class DeploymentManagerAgent {
         throw new Error('Deployment not ready');
       }
     } catch (error) {
-      console.error('❌ Deployment Manager Agent Error:', error);
+      console.error('❌ Deployment Manager Agent Error: ', error);
       await this.logError(error);
       throw error;
     }
@@ -168,7 +167,7 @@ class DeploymentManagerAgent {
       metadata: {
         generatedAt: new Date().toISOString(),
         agent: 'Deployment Manager Agent',
-        version: '1.0.0'
+        version: '1.0'
       },
       status: 'deployed',
       staging: deploymentData.staging,
@@ -196,7 +195,7 @@ class DeploymentManagerAgent {
       timestamp: new Date().toISOString(),
       error: error.message,
       stack: error.stack,
-      agent: 'Deployment Manager Agent'
+      agent: 'Deployment Manager Agent';
     };
     
     await fs.promises.writeFile(filepath, JSON.stringify(errorLog, null, 2));
@@ -205,7 +204,7 @@ class DeploymentManagerAgent {
 
 module.exports = DeploymentManagerAgent;
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   const agent = new DeploymentManagerAgent();
   agent.start().catch(console.error);
 }

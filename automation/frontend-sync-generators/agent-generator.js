@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,23 +106,21 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const { spawn, exec, execSync } = require('chil'')d'_process);''
-const { v4: uuidv4 } = require('uuid);''
+};
+const result = require($2);2););.promises
+const path = require($2);'););
+const { spawn, exec, execSync } = require(('chil')')d'_process);''
+const { v4: uuidv4 } = require(('uui)d);''
 
 class variable1 {
   constructor() {
@@ -158,7 +156,7 @@ class variable1 {
     
     try {
       const result = fs.readdirSync(templateDir);
-      files.forEach(file => {
+      files.forEach(file => {)
         if (file.endsWith('-template.js)) {''
           const result = file.replace(')-template'.js', ');''
           templates[templateName] = fs.readFileSync(path.join(templateDir, file), 'utf'8');''
@@ -182,11 +180,11 @@ class variable1 {
         id: "agentId",""
         name: "agentName",""
         type: "agentType",""
-        version: "'1.0.0",""
+        version: "'1.0",""
         status: "ready",""
         createdAt: "timestamp",""
         lastModified: "timestamp",""
-        ...options
+        ...options;
       };
 
       const result = this.generateAgentCode(agentType, agentName, agentConfig);
@@ -236,16 +234,15 @@ class variable1 {
   }
 
   generateAgentTests(agentType, agentName) {
-    return #!/usr/bin/env node
-;
-const { spawn, exec } = require('chil'd'_process');''
-const result = require('path);''
+    return;
+const { spawn, exec } = require(('chil'd'_process)');''
+const result = require($2);h););''
 
 describe(')${agentName} Tests, () => {''
   let agent;
 
   beforeAll(() => {
-    const result = require('./${agentName});''
+    const result = require($2);}););''
     agent = new AgentClass();
   });
 
@@ -305,14 +302,13 @@ The agent can be configured via the \${agentName}-config.json\ file.
 
 ## Usage
 \"\"\javascript;""
-const ${agentName} = require('./${agentName}'');''
+const ${agentName} = require(('./${agentName}')');''
 const result = new ${agentName}();
 await agent.start();
 \\"\"""
 
 ## Testing
-Run tests with:
-\\\"bash""
+Run tests with: \\\"bash""
 node ${agentName}.test.js
 \"\\""
 
@@ -328,12 +324,12 @@ The agent provides real-time monitoring and analytics data.
   }
 
   getDefaultTemplate(agentType) {
-    return "#!/usr/bin/env node""
+    return """
 ;
-const result = require('fs);''
-const path = require('path');
-const { spawn, exec, execSync } = require('chil'')d'_process);''
-const { v4: uuidv4 } = require('uuid);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { spawn, exec, execSync } = require(('chil')')d'_process);''
+const { v4: uuidv4 } = require(('uui)d);''
 
 class {{AGENT_NAME}} {
   constructor() {
@@ -375,7 +371,7 @@ class {{AGENT_NAME}} {
       this.status = 'ready;''
       console.log(\"✅ {{AGENT_NAME}} agent initialized successfully\");""
     } catch (error) {
-      console.error(\❌ Error initializing {{AGENT_NAME}} agent:\, error.message);
+      console.error(\❌ Error initializing {{AGENT_NAME}} agent: \, error.message);
       this.status = err'o'r;''
     }
   }
@@ -391,7 +387,7 @@ class {{AGENT_NAME}} {
       console.log(\✅ {{AGENT_NAME}} agent started successfully\);
       return { success: "true "};""
     } catch (error) {
-      console.error(\"❌ Error starting {{AGENT_NAME}} agent:\", error.message);""
+      console.error(\"❌ Error starting {{AGENT_NAME}} agent: \", error.message);""
       this.status = err'o'r;''
       return { success: "false", error: "error.message "};""
     }
@@ -408,7 +404,7 @@ class {{AGENT_NAME}} {
       console.log(\"✅ {{AGENT_NAME}} agent stopped successfully\");""
       return { success: "true "};""
     } catch (error) {
-      console.error(\❌ Error stopping {{AGENT_NAME}} agent:\, error.message);
+      console.error(\❌ Error stopping {{AGENT_NAME}} agent: \, error.message);
       return { success: "false", error: "error.message "};""
     }
   }
@@ -449,7 +445,7 @@ class {{AGENT_NAME}} {
   }
 
   async handleError(error) {
-    console.error(\"{{AGENT_NAME}} agent error:\", error.message);""
+    console.error(\"{{AGENT_NAME}} agent error: \", error.message);""
     
     if (this.config.autoRecovery) {
       console.log(\Attempting auto-recovery for {{AGENT_NAME}}...\);
@@ -470,7 +466,7 @@ class {{AGENT_NAME}} {
       console.log(\✅ {{AGENT_NAME}} agent recovered successfully\);
       return { success: "true "};""
     } catch (error) {
-      console.error(\"❌ Error recovering {{AGENT_NAME}} agent:\", error.message);""
+      console.error(\"❌ Error recovering {{AGENT_NAME}} agent: \", error.message);""
       return { success: "false", error: "error.message "};""
     }
   }
@@ -492,7 +488,7 @@ class {{AGENT_NAME}} {
   }
 
   updateAnalytics(operation, result) {
-    this.learningData.push({
+    this.learningData.push({)
       timestamp: "Date.now()",""
       operation,
       result,
@@ -504,7 +500,7 @@ class {{AGENT_NAME}} {
 module.exports = {{AGENT_NAME}};
 
 // Auto-start if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new {{AGENT_NAME}}();
   agent.start().catch(console.error);
 }
@@ -548,19 +544,19 @@ if (require.main === module) {
     let variable1 = code;
 
     // Add better error handling
-    improvedCode = improvedCode.replace(
+    improvedCode = improvedCode.replace()
       /catch \(error\) {/g,
       ')catc'h (error) {\n      console.error("[${agentName}] Error:, error);\n      this.updateAnalytics(\'erro'r\', error.message);'''
     );
 
     // Add performance monitoring
-    improvedCode = improvedCode.replace(
+    improvedCode = improvedCode.replace()
       /async perform(\w+)Operations\(\) {/g,
       async performvariable1Operations() {\n    const timestamp = Date.now();\n    try {
     );
 
     // Add performance logging
-    improvedCode = improvedCode.replace(
+    improvedCode = improvedCode.replace()
       /console\.log\(\✅ \$\{this\.name\} agent (\w+) successfully\"\);/g,""
       'consol'e.log("✅ ${this.name} agent variable1 successfully (${Date.now() - startTime}ms));'''
     );
@@ -579,7 +575,7 @@ if (require.main === module) {
   }
 
   updateAnalytics(operation, result) {
-    this.learningData.push({
+    this.learningData.push({)
       timestamp: "Date.now()",""
       operation,
       result,
@@ -601,7 +597,12 @@ if (require.main === module) {
 module.exports = AgentGenerator;
 
 // Auto-start if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new AgentGenerator();
-  console.log(Agent' Generator initialized:', generator.getStats());''
+  console.log(Agent' Generator initialized: ', generator.getStats());''
 } 
+}
+}
+}
+}
+}

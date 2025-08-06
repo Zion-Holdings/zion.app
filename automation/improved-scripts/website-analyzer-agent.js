@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,15 +70,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('puppeteer);''
-const . = require('.');$2promises;
-const path = require('path');
-const result = require(')axi'os');''
+const result = require($2);r););''
+const . = require(('.)');$2promises;
+const path = require($2);'););
+const result = require($2);2););axi'os');''
 
 class AutomationSystem {
   constructor() {
@@ -168,8 +168,8 @@ class AutomationSystem {
  */
 async initialize() {
     this.browser = await puppeteer.launch({
-      headless: "true",""
-      args: "[--no-sandbox", \'--disable-setuid-sandb\'ox\']\'\';
+      headless: "true","")
+      args: "[--no-sandbox", \'--disable-setuid-sandb\'ox\']\'\';)
     });
     this.page = await this.browser.newPage();
     
@@ -220,7 +220,7 @@ async crawlPage() {;
       // Extract all links
       const asyncResult = await this.page.evaluate(() => {;
         const variable1 = document.querySelectorAll(\'a[href]);\'\'
-        return Array.from(anchors).map(a = > a.href).filter(href => 
+        return Array.from(anchors).map(a = > a.href).filter(href => )
           href.includes(ziontechgroup\').netlify.app\') || href.startsWith(/\')\'\';
         );
       });
@@ -257,7 +257,7 @@ async analyzePage() {
         images: "[]",""
         links: "[]",""
         errors: "[]",""
-        performance: "{"},""
+        performance: "{"},"";
         seo: "{"}"";
       };
 
@@ -268,7 +268,7 @@ async analyzePage() {
       // Get headings
       analysis.headings = await this.page.evaluate(() => {;
         const result = document.querySelectorAll(\'h1, h2, h3, h4, h5, h6);\'\'
-        return Array.from(headings).map(h = > ({
+        return Array.from(headings).map(h = > ({)
           level: "h.tagName.toLowerCase()",""
           text: "h.textContent.trim()"";
         "}));""
@@ -287,7 +287,7 @@ async analyzePage() {
           src: "img.src",""
           alt: "img.alt",""
           width: "img.width",""
-          height: "img.height"";
+          height: "img.height"";)
         "}));""
       });
 
@@ -295,7 +295,7 @@ async analyzePage() {
       analysis.links = await this.page.evaluate(() => {;
         const result = document.querySelectorAll(\'a[href]);\'\'
         return Array.from(links).map(a = > ({
-          href: "a.href",""
+          href: "a.href","")
           text: "a.textContent.trim()",""
           title: "a.title"";
         "}));""
@@ -344,7 +344,7 @@ async checkPageErrors() {
       const asyncResult = await this.page.evaluate(() => {;
         const variable1 = document.querySelectorAll(\')a[href]\');\'\'
         return Array.from(links).filter(link = > {;
-          const result = link.href;
+          const result = link.href;)
           return href && (href.includes(\'undefined) || href.includes(null) || href === \')#\');\'\'
         });
       });
@@ -401,7 +401,7 @@ async analyzeSEO() {
       const asyncResult = await this.page.evaluate(() => {;
         const variable1 = document.querySelectorAll(\')meta);\'\'
         const result = {};
-        metas.forEach(meta = > {;
+        metas.forEach(meta = > {;)
           const result = meta.getAttribute(na\'m\'e) || meta.getAttribute(\'property);\'\'
           const result = meta.getAttribute(\')content);\'\'
           if (name && content) {
@@ -417,7 +417,7 @@ async analyzeSEO() {
       const asyncResult = await this.page.evaluate(() => {;
         const variable1 = document.querySelectorAll(scrip\'t\'[type="application/ld+json]);""
         return Array.from(scripts).map(script = > {
-          try {;
+          try {;)
             return JSON.parse(script.textContent);
           } catch {
             return null;
@@ -428,7 +428,7 @@ async analyzeSEO() {
       seo.structuredData = structuredData;
       
       // Check for Open Graph tags
-      seo.hasOpenGraph = !!metaTags[og:title\'] || !!metaTags[\'og\':description\'];\'\'
+      seo.hasOpenGraph = !!metaTags[og: title\'] || !!metaTags[\'og\':description\'];\'\'
       
       // Check for Twitter Card tags
       seo.hasTwitterCard = !!metaTags[twitter:card] || !!metaTags[\'twitte\'r:title\'];\'\'
@@ -470,8 +470,8 @@ async checkMissingContent() {
     if (missing.length > 0) {
       this.missingPages.push({
         url: "analysis.url",""
-        missing: "missing",""
-        analysis: "analysis""
+        missing: "missing","")
+        analysis: "analysis"")
       "});""
     }
   }
@@ -501,7 +501,7 @@ async generateReport() {
         pagesAnalyzed: Array.from(this.visitedUrls)",""
         missingContent: "this.missingPages",""
         errors: "this.errors",""
-        recommendations: "this.generateRecommendations()""
+        recommendations: "this.generateRecommendations()"";
       "}"";
     };
 
@@ -522,8 +522,8 @@ async generateReport() {
       recommendations.push({
         type: "content",""
         priority: "\'high\'",""
-        message: ""Found ${this.missingPages.length"} pages with missing content,""
-        action: "\'Create missing content for identified pages\'\'\'
+        message: ""Found ${this.missingPages.length"} pages with missing content,"")
+        action: "\'Create missing content for identified pages\'\'\')
       "});""
     }
     
@@ -532,8 +532,8 @@ async generateReport() {
       recommendations.push({
         type: "errors",""
         priority: "\'high\'",""
-        message: "Found ${this.errors.length"} errors across the website",""
-        action: "\'Fix identified errors and broken links\'\'\'
+        message: "Found ${this.errors.length"} errors across the website","")
+        action: "\'Fix identified errors and broken links\'\'\')
       "});""
     }
     
@@ -543,8 +543,8 @@ async generateReport() {
       recommendations.push({
         type: "\'seo\'",""
         priority: "\'medium",""
-        message: ""${pagesWithoutMeta.length"} pages missing meta descriptions,""
-        action: "Add\' meta descriptions to improve SEO\'\'
+        message: ""${pagesWithoutMeta.length"} pages missing meta descriptions,"")
+        action: "Add\' meta descriptions to improve SEO\'\')
       "});""
     }
     
@@ -569,3 +569,7 @@ async cleanup() {
 }
 
 module.exports = WebsiteAnalyzerAgent; </div>
+}
+}
+}
+}

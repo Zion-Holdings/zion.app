@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -124,11 +124,11 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs'););
-const path = require(('path'););
-const { spawn, exec, execSync } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
-const cron = require(('node-cron'););
+}const fs = require($2);'););
+const path = require($2);'););
+const { spawn, exec, execSync } = require(('child_process)');
+const { v4: uuidv4 } = require(('uuid)');
+const cron = require($2);'););
 
 class GitSyncAutomation {
   constructor() {
@@ -159,35 +159,32 @@ class GitSyncAutomation {
       backupBeforeSync: true,
       retryAttempts: 3,
       retryDelay: 200, // 5 seconds
-      excludePatterns: [
-        'node_modules/**',
+      excludePatterns: ['node_modules/**',
         '.git/**',
         '*.log',
         '*.tmp',
         'automation/logs/**',
-        'automation/temp/**'
+        'automation/temp/**']
       ],
-      includePatterns: [
-        '**/*.js',
+      includePatterns: ['**/*.js',
         '**/*.ts',
         '**/*.tsx',
         '**/*.json',
         '**/*.md',
         '**/*.css',
-        '**/*.html'
+        '**/*.html']
       ]
     };
   }
 
   ensureDirectories() {
-    const directories = [
-      'git-sync-logs',
+    const directories = ['git-sync-logs',
       'git-sync-backups',
       'git-sync-status',
-      'git-sync-reports'
+      'git-sync-reports'];
     ];
 
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -221,7 +218,7 @@ class GitSyncAutomation {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       if (status.trim()) {
@@ -334,13 +331,13 @@ class GitSyncAutomation {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       const files = status.trim().split('\n').filter(line => line.trim());
       
       // Filter files based on include/exclude patterns
-      return files.filter(file => {
+      return files.filter(file => {)
         const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
@@ -379,7 +376,7 @@ class GitSyncAutomation {
       // Add all files
       execSync('git add .', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
       console.log(`📁 Added ${files.length} files to staging`);
@@ -402,7 +399,7 @@ class GitSyncAutomation {
     try {
       execSync(`git commit -m "${message}"`, { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
       console.log(`💾 Created commit: ${message}`);
@@ -416,7 +413,7 @@ class GitSyncAutomation {
     try {
       const result = execSync('git log --oneline origin/main..HEAD', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       return result.trim().length > 0;
@@ -431,7 +428,7 @@ class GitSyncAutomation {
     try {
       execSync('git push origin main', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
       console.log('🚀 Pushed to main branch');
@@ -453,7 +450,7 @@ class GitSyncAutomation {
         syncCount: this.syncCount,
         errorCount: this.errorCount,
         config: this.config,
-        status: this.status
+        status: this.status;
       };
       
       fs.writeFileSync(`${backupPath}.json`, JSON.stringify(backupData, null, 2));
@@ -500,7 +497,7 @@ class GitSyncAutomation {
       lastSync: this.lastSync,
       syncCount: this.syncCount,
       errorCount: this.errorCount,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString();
     };
     
     const statusPath = path.join(__dirname, 'git-sync-status', 'current-status.json');
@@ -514,7 +511,7 @@ class GitSyncAutomation {
       errorCount: this.errorCount,
       successRate: this.syncCount > 0 ? ((this.syncCount - this.errorCount) / this.syncCount * 100).toFixed(2) : 0,
       lastSync: this.lastSync,
-      config: this.config
+      config: this.config;
     };
     
     const reportPath = path.join(__dirname, 'git-sync-reports', `report-${Date.now()}.json`);
@@ -543,7 +540,7 @@ class GitSyncAutomation {
 }
 
 // Auto-start if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const gitSync = new GitSyncAutomation();
   
   process.on('SIGINT', async () => {
@@ -558,7 +555,7 @@ if (require.main === module) {
     process.exit(0);
   });
   
-  gitSync.initialize().catch(error => {
+  gitSync.initialize().catch(error => {)
     console.error('❌ Git Sync Automation initialization failed: ', error);
     process.exit(1);
   });

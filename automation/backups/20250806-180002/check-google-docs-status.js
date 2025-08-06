@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,8 +28,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -39,9 +39,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -70,13 +70,13 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}const fs = require(('fs-extra'););
-const path = require(('path'););
+}const fs = require($2);'););
+const path = require($2);'););
 
 async function checkGoogleDocsStatus() {
   console.log('🔍 Checking Google Docs Automation System Status...\n');
@@ -91,7 +91,7 @@ async function checkGoogleDocsStatus() {
       try {
         pid = await fs.readFile(pidFile, 'utf8');
         // Check if process is actually running
-        const { exec } = require('child_process');
+        const { exec } = require(('child_process)');
         exec(`ps -p ${pid}`, (error) => {
           isRunning = !error;
         });
@@ -111,7 +111,7 @@ async function checkGoogleDocsStatus() {
       const logs = await fs.readFile(logFile, 'utf8');
       const recentLogs = logs.split('\n').slice(-10);
       console.log('\n📝 Recent Logs: ');
-      recentLogs.forEach(log = > {
+      recentLogs.forEach(log = > {)
         if (log.trim()) {
           console.log(`  ${log}`);
         }
@@ -154,7 +154,7 @@ async function checkGoogleDocsStatus() {
       const recent = history.slice(-5);
       if (recent.length > 0) {
         console.log('\n🆕 Recent Instructions: ');
-        recent.forEach(instruction = > {
+        recent.forEach(instruction = > {)
           console.log(`  ${instruction.title} - ${instruction.status}`);
         });
       }
@@ -178,7 +178,7 @@ async function checkGoogleDocsStatus() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   checkGoogleDocsStatus();
 }
 

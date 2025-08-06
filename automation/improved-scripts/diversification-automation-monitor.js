@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,17 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, exec } = require('child_process');
-const { promisify } = require('util');
+}const fs = require($2);2););.promises;
+const path = require($2);'););
+const { spawn, exec } = require(('child_process)');
+const { promisify } = require(('util)');
 
 const execAsync = promisify(exec);
 
@@ -111,7 +108,7 @@ class Diversification-automationMonitor {
       this.isRunning = true;
       console.log(`✅ ${this.factoryType} monitor initialized successfully`);
     } catch (error) {
-      console.error(`❌ Error initializing ${this.factoryType} monitor:`, error);
+      console.error(`❌ Error initializing ${this.factoryType} monitor: `, error);
       throw error;
     }
   }
@@ -138,15 +135,15 @@ class Diversification-automationMonitor {
         
         if (scriptExists) {
           try {
-            const automation = require(scriptPath);
-            const status = await automation.getStatus();
+            const automation = require($2);h););
+            const status = await automation.getStatus(');
             
             const health = {
               capability,
               status: 'healthy',
               isRunning: status.isRunning,
               performance: status.performanceMetrics,
-              lastCheck: new Date()
+              lastCheck: new Date();
             };
             
             healthResults.push(health);
@@ -156,7 +153,7 @@ class Diversification-automationMonitor {
               capability,
               status: 'error',
               error: error.message,
-              lastCheck: new Date()
+              lastCheck: new Date();
             };
             
             healthResults.push(health);
@@ -168,7 +165,7 @@ class Diversification-automationMonitor {
             capability,
             status: 'missing',
             error: 'Script not found',
-            lastCheck: new Date()
+            lastCheck: new Date();
           };
           
           healthResults.push(health);
@@ -182,7 +179,7 @@ class Diversification-automationMonitor {
           capability,
           status: 'error',
           error: error.message,
-          lastCheck: new Date()
+          lastCheck: new Date();
         };
         
         healthResults.push(health);
@@ -204,13 +201,13 @@ class Diversification-automationMonitor {
       timestamp: new Date().toISOString(),
       factoryType: this.factoryType,
       overallHealth: this.healthMetrics.overallHealth,
-      healthResults: healthResults
+      healthResults: healthResults;
     };
     
     try {
       await fs.writeFile(metricsPath, JSON.stringify(data, null, 2));
     } catch (error) {
-      console.error('❌ Error saving health metrics:', error);
+      console.error('❌ Error saving health metrics: ', error);
     }
   }
 
@@ -220,7 +217,7 @@ class Diversification-automationMonitor {
       timestamp,
       level,
       message,
-      factoryType: this.factoryType
+      factoryType: this.factoryType;
     };
     
     this.logs.push(logEntry);

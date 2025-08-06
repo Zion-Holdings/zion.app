@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require($2);'););
+const path = require($2);'););
 
 class userExperienceEnhancer {
     constructor() {
@@ -36,7 +36,7 @@ class userExperienceEnhancer {
         this.description = 'Intelligent UX optimization with personalization';
         this.features = ["personalization","a-b-testing","user-feedback-analysis","conversion-optimization"];
         this.status = 'active';
-        this.version = '3.0.0';
+        this.version = '3.0';
         this.intelligence = {
             learningRate: 0.15,
             adaptationSpeed: 0.9,
@@ -56,7 +56,7 @@ class userExperienceEnhancer {
             
             console.log(`✅ ${this.name} completed successfully`);
         } catch (error) {
-            console.error(`❌ ${this.name} failed:`, error);
+            console.error(`❌ ${this.name} failed: `, error);
             throw error;
         }
     }

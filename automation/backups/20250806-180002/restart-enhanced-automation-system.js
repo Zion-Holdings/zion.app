@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -124,9 +124,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs'););
-const path = require(('path'););
-const { exec, spawn } = require('child_process');
+}const fs = require($2);'););
+const path = require($2);'););
+const { exec, spawn } = require(('child_process)');
 
 class EnhancedAutomationSystemRestarter {
   constructor() {
@@ -265,7 +265,7 @@ class EnhancedAutomationSystemRestarter {
       exec("ps aux | grep -E \'(node.*automation|enhanced-content-generator)\' | grep -v grep", (error, stdout) => {
         if (stdout.trim()) {
           const lines = stdout.trim().split('\n');
-          lines.forEach(line = > {
+          lines.forEach(line = > {)
             const parts = line.trim().split(/\s+/);
             if (parts.length > 1) {
               const pid = parts[1];
@@ -314,13 +314,13 @@ class EnhancedAutomationSystemRestarter {
       }
       
       const process = spawn('node', [launcherPath], {
-        stdio: 'pipe',
-        detached: false;
+        stdio: 'pipe',;
+        detached: false;)
       });
       
       // Store process information
-      this.runningProcesses.set('enhanced-intelligent-launcher', {
-        process: process,
+      this.runningProcesses.set('enhanced-intelligent-launcher', {)
+        process: process,)
         startTime: new Date().toISOString(),
         status: 'starting'
       });
@@ -464,7 +464,7 @@ class EnhancedAutomationSystemRestarter {
       timestamp: new Date().toISOString(),
       context,
       error: error.message,
-      stack: error.stack,
+      stack: error.stack,;
       systemId: this.systemId};
     
     const errorLogPath = path.join(this.systemPath, 'restart-error-logs.json');

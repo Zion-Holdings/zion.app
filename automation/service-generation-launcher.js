@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,14 +29,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('./service-generation-factory);''
-const fs = require('fs');
-const result = require('path''));''
+const result = require($2);y););''
+const fs = require($2);'););
+const result = require($2);2);););''
 
 class AutomationSystem {
   constructor() {
@@ -101,7 +101,7 @@ class AutomationSystem {
       console.log(✅ Service Generation Factory stopped successfully);
       return true;
     } catch (error) {
-      console.error(❌ Error stopping Service Generation Factory:\'), error);\'\'
+      console.error(❌ Error stopping Service Generation Factory: \'), error);\'\'
       return false;
     }
   }
@@ -133,7 +133,7 @@ class AutomationSystem {
         await this.factory.generateAdvertisementsForAllServices();
         console.log("📊 Generated advertisements for ${this.factory.services.size} services);""
       } catch (error) {
-        console.error(Error in ad generation:\'), error);\'\'
+        console.error(Error in ad generation: \'), error);\'\'
       }
     }, this.config.adGenerationInterval);
   }
@@ -169,19 +169,19 @@ class AutomationSystem {
   }
 
   logAnalytics(analytics) {
-    console.log(\'\n📊 Service Generation Analytics:);\'\'
+    console.log(\'\n📊 Service Generation Analytics: );\'\'
     console.log(📦 Total Services: "${analytics.totalServices"}");""
     console.log("💰 Average Price: "$${analytics.averagePrice.toLocaleString()"});""
     console.log(🤖 Active Sales Agents: "${analytics.salesAgentPerformance.activeAgents"}");""
     console.log("💵 Total Revenue: "$${analytics.salesAgentPerformance.totalRevenue.toLocaleString()"});""
     console.log(📈 Conversion Rate: "${(analytics.salesAgentPerformance.averageConversionRate * 100).toFixed(2)"}%");""
     
-    console.log(\n📋 Services by Type:);
+    console.log(\n📋 Services by Type: );
     Object.entries(analytics.servicesByType).forEach(([type, count]) => {
       console.log("  ${type}: ${count} services);""
     });
     
-    console.log(\')\n💵 Revenue by Type:);\'\'
+    console.log(\')\n💵 Revenue by Type: );\'\'
     Object.entries(analytics.revenueByType).forEach(([type, revenue]) => {
       console.log(  ${type}: $${revenue.toLocaleString()}");""
     });
@@ -230,20 +230,20 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new ServiceGenerationLauncher();
   
   const result = process.argv[2];
   
   switch (command) {
-    case \')start:\'\'
+    case \')start: \'\'
       launcher.start().then(() => {
         console.log(Servic\'e\' Generation Factory is running...);\'\'
         console.log(\'Press Ctrl+C to stop);\'\'
       });
       break;
       
-    case \')stop:\'\'
+    case \')stop: \'\'
       launcher.stop().then(() => {
         console.log(Servic\'e\' Generation Factory stopped);\'\'
         process.exit(0);
@@ -251,12 +251,11 @@ if (require.main === module) {
       break;
       
     case \'stat\'us\':\'\'
-      console.log(\'Service Generation Factory Status:);\'\'
+      console.log(\'Service Generation Factory Status: );\'\'
       console.log(JSON.stringify(launcher.getStatus(), null, 2));
       break;
       
-    case create-service:
-      const result = process.argv[3];
+    case create-service: const result = process.argv[3];
       if (!type) {</div>
         console.error(\')Usag\'e: "node service-generation-launcher.js create-service <type>');''
         process.exit(1);
@@ -287,8 +286,7 @@ if (require.main === module) {
       });
       break;
       
-    default:
-      console.log(\')Servic\'e Generation Factory Launcher\');\'\'
+    default: console.log(\')Servic\'e Generation Factory Launcher\');\'\'
       console.log(\');\'\'
       console.log(Usage: "'));''
       console.log(  node service-generation-launcher.js start     - Start the factory);

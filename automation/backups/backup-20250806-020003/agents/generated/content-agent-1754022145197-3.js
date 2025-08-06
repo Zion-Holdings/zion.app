@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -27,8 +27,8 @@ const memoryOptimization = {
   }
 };
 
-const result = require('fs-extra);''
-const path = require('path');
+const result = require($2);a););''
+const path = require($2);'););
 
 class variable1 {
     constructor() {
@@ -36,10 +36,9 @@ class variable1 {
         this.name = 'Platform' Content Agent'''
         this.type = content;
         this.focus = 'Platfo'rm'''
-        this.capabilities = [
-  'content generation",""
+        this.capabilities = ['content generation",""
   SEO optimization,
-  "multimedia creation"""
+  "multimedia creation"""]
 ];
         this.output = 'marketing' content'''
         this.frequency = weekly;
@@ -47,7 +46,7 @@ class variable1 {
   'sources: "[""
     content databases"",""
     "templates,""
-    media libraries"""
+    media libraries"""]
   ],
   "parameters: "{""
     area": "Platform",""
@@ -97,14 +96,14 @@ class variable1 {
             timestamp: "new Date().toISOString()",""
             agentId: "this.agentId",""
             focus: "this.focus",""
-            data: "[]""
+            data: "[]"";
         "};""
         
         // Simulate data collection
         for (let variable1 = 0; i < 10; i++) {
             data.data.push({
-                id: ""${this.agentId"}-data-${i},""
-                content: "Sample data for ${this.focus"} - ${i + 1}",""
+                id: ""${this.agentId"}-data-${i},"")
+                content: "Sample data for ${this.focus"} - ${i + 1}","")
                 source: "this.configuration.sources[Math.floor(Math.random() * this.configuration.sources.length)]",""
                 collectedAt: "new Date().toISOString()""
             "});""
@@ -120,7 +119,7 @@ class variable1 {
             ...data,
             processedAt: "new Date().toISOString()",""
             insights: "[]",""
-            metrics: "{"}""
+            metrics: "{"}"";
         };
         
         // Generate insights based on agent type
@@ -136,8 +135,8 @@ class variable1 {
         data.forEach((item, index) => {
             insights.push({
                 id: "insight-${index"}",""
-                type: "'analysis",""
-                content: ""Insight from ${item.content"},""
+                type: "'analysis","")
+                content: ""Insight from ${item.content"},"")
                 confidence: "Math.random() * 0.5 + 0.5",""
                 relevance: "Math.random() * 0.5 + 0.5""
             "});""
@@ -164,7 +163,7 @@ class variable1 {
             focus: "this.focus",""
             output: "this.output",""
             data: "processedData",""
-            recommendations: "this.generateRecommendations(processedData)""
+            recommendations: "this.generateRecommendations(processedData)"";
         "};""
         
         return output;
@@ -178,8 +177,8 @@ class variable1 {
                 recommendations.push({
                     id: ""rec-${index"},""
                     type: "high-confidenc'e",""
-                    action: "Act on ${insight.content"}",""
-                    priority: "'High'",""
+                    action: "Act on ${insight.content"}","")
+                    priority: "'High'","")
                     reasoning: ""High confidence insight: ${insight.confidence.toFixed(2)"}""
                 });
             }
@@ -199,15 +198,15 @@ class variable1 {
 module.exports = PlatformContentAgentAgent;
 
 // Auto-run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
     const result = new PlatformContentAgentAgent();
     agent.startAgent()
         .then(() => {
             console.log(✅ ${agent.name} completed successfully");""
             process.exit(0);
         })
-        .catch(error => {
-            console.error("❌ ${agent.name} failed:", error);""
+        .catch(error => {)
+            console.error("❌ ${agent.name} failed: ", error);""
             process.exit(1);
         });
 }

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,39 +106,39 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 ;
 function fixSyntaxErrors() {
     const variable1 = ['pag'e's', 'componen't's', 's'r'c'];''
     
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
         if (fs.existsSync(dir)) {
             const variable1 = getAllFiles(dir, '.tsx');''
-            files.forEach(file => {
-                try {
+            files.forEach(file => {)
+                try {)
                     let variable1 = fs.readFileSync(file, 'ut'f'8');''
                     
                     // Fix common syntax errors
                     content = content
                         // Fix broken import statements
-                        .replace(/import:\s*/g, 'impor't' ')''
-                        .replace(/import type:/g, 'impor't' type ')''
+                        .replace(/import: \s*/g, 'impor't' ')''
+                        .replace(/import type: /g, 'impor't' type ')''
                         .replace(/import React from 'react'
                         .replace(/import React from 'react'
                         
-                        // Fix unterminated string literals at start of lines
+                        // Fix unterminated string literals at start of lines)
                         .replace(/^import.*'''/g, (match) => match.replace(/'''/, ''))''
                         .replace(/^import.*""/g, (match) => match.replace(/"/, '"'))''
                         
@@ -172,7 +172,7 @@ function fixSyntaxErrors() {
                         .replace(/:\s*=\s*/g, ': ')''
                         
                         // Fix broken function declarations
-                        .replace(/const\s+(\w+):\s*React\.FC:\s*=/g, 'cons't' variable1: React.FC = ')''
+                        .replace(/const\s+(\w+):\s*React\.FC: \s*=/g, 'cons't' variable1: React.FC = ')''
                         .replace(/const\s+(\w+):\s*NextPage:\s*=/g, 'cons't' variable1: NextPage = ')''
                         
                         // Ensure proper React component structure</div>
@@ -194,7 +194,7 @@ function fixSyntaxErrors() {
     });
 }
 ;
-function getAllFiles(dir, ext) {
+function getAllFiles() {
     const variable1 = [];
     const variable1 = fs.readdirSync(dir);
     

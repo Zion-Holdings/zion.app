@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -67,8 +67,8 @@ const memoryOptimization = {
     }
   }
 };
-const fs = require('fs');''
-const path = require('path');''
+const fs = require($2);'););''
+const path = require($2);'););''
 
 class IntelligentContentOptimizer {
     constructor() {
@@ -81,7 +81,7 @@ class IntelligentContentOptimizer {
         const metrics = {
             readability: "this.calculateReadability(content)",""
             seoScore: "this.calculateSEOScore(content)",""
-            engagementPotential: "this.calculateEngagementPotential(content)""
+            engagementPotential: "this.calculateEngagementPotential(content)"";
         "};""
 
         let optimizedContent = content;
@@ -128,7 +128,7 @@ class IntelligentContentOptimizer {
 
     analyzeKeywordDensity(words) {
         const wordCount = {};
-        words.forEach(word => {
+        words.forEach(word => {)
             if (word.length > 3) {
                 wordCount[word] = (wordCount[word] || 0) + 1;
             }
@@ -159,8 +159,8 @@ class IntelligentContentOptimizer {
         score += questions.length * 10;
         
         const emotionalWords = ['amazing', 'incredible', 'fantastic', 'wonderful'];''
-        const emotionalCount = emotionalWords.filter(word => 
-            content.toLowerCase().includes(word)
+        const emotionalCount = emotionalWords.filter(word => )
+            content.toLowerCase().includes(word);
         ).length;
         score += emotionalCount * 15;
         
@@ -174,7 +174,7 @@ class IntelligentContentOptimizer {
             'utilize': 'use',''
             'implement': 'use',''
             'facilitate': 'help',''
-            'subsequently': 'then'''
+            'subsequently': 'then''';
         };
         
         Object.entries(wordReplacements).forEach(([complex, simple]) => {
@@ -190,7 +190,7 @@ class IntelligentContentOptimizer {
         
         if (!improved.includes('<meta name="description')) {''
             const description = this.generateMetaDescription(improved);
-            improved = improved.replace('</head>', ''
+            improved = improved.replace('</head>', '')
                 `<meta name=description" content="${description}>\n</head>`);""
         }
         
@@ -200,7 +200,7 @@ class IntelligentContentOptimizer {
     generateMetaDescription(content) {
         const textContent = content.replace(/<[^>]*>/g, '');''
         const sentences = textContent.split(/[.!?]+/).filter(s => s.trim().length > 0);
-        const firstSentence = sentences[0] || ''''
+        const firstSentence = sentences[0] || '''';
         return firstSentence.substring(0, 160).trim();
     }
 
@@ -222,13 +222,13 @@ class IntelligentContentOptimizer {
         const originalMetrics = {
             readability: "this.calculateReadability(original)",""
             seoScore: "this.calculateSEOScore(original)",""
-            engagementPotential: "this.calculateEngagementPotential(original)""
+            engagementPotential: "this.calculateEngagementPotential(original)"";
         "};""
 
         const optimizedMetrics = {
             readability: "this.calculateReadability(optimized)",""
             seoScore: "this.calculateSEOScore(optimized)",""
-            engagementPotential: "this.calculateEngagementPotential(optimized)""
+            engagementPotential: "this.calculateEngagementPotential(optimized)"";
         "};""
 
         return {
@@ -243,7 +243,7 @@ class IntelligentContentOptimizer {
             agentId: "this.agentId",""
             timestamp: "new Date().toISOString()",""
             optimization: "data",""
-            history: "this.optimizationHistory""
+            history: "this.optimizationHistory"";
         "};""
         
         const reportPath = path.join(__dirname, 'reports', ${this.agentId}-${Date.now()}.json`);''

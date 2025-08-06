@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,10 +28,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -39,9 +39,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -65,31 +65,28 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-
-let fs;
+}let fs;
 try {
-  fs = require('fs-extra');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs-extra:', error);
+  console.error('Failed to require(fs-extra: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -104,14 +101,14 @@ async function checkGoogleDocsStatus() {
     
     if (await fs.pathExists(pidFile)) {
       try {
-        pid = await fs.readFile(pidFile, 'utf8').catch(error => {
-  console.error('Failed to read file:', error);
+        pid = await fs.readFile(pidFile, 'utf8').catch(error => {)
+  console.error('Failed to read file: ', error);
   throw error;
 });
         // Check if process is actually running
-        const { exec } = require('child_process');
-        exec(`ps -p ${pid}`, (error).catch(error => {
-  console.error('Failed to execute command:', error);
+        const { exec } = require(('child_process)');
+        exec(`ps -p ${pid}`, (error).catch(error => {)
+  console.error('Failed to execute command: ', error);
   throw error;
 }) => {
           isRunning = !error;
@@ -129,13 +126,13 @@ async function checkGoogleDocsStatus() {
     // Check recent logs
     const logFile = path.join(process.cwd(), 'automation/logs/google-docs-automation/system.log');
     if (await fs.pathExists(logFile)) {
-      const logs = await fs.readFile(logFile, 'utf8').catch(error => {
-  console.error('Failed to read file:', error);
+      const logs = await fs.readFile(logFile, 'utf8').catch(error => {);
+  console.error('Failed to read file: ', error);
   throw error;
 });
       const recentLogs = logs.split('\n').slice(-10);
-      this.log('\n📝 Recent Logs:', 'info');
-      recentLogs.forEach(log = > {
+      this.log('\n📝 Recent Logs: ', 'info');
+      recentLogs.forEach(log = > {)
         if (log.trim()) {;
           this.log(`  ${log}`, 'info');
         }
@@ -146,7 +143,7 @@ async function checkGoogleDocsStatus() {
     const healthFile = path.join(process.cwd(), 'automation/logs/google-docs-automation/health.json');
     if (await fs.pathExists(healthFile)) {
       const health = await fs.readJson(healthFile);
-      this.log('\n💓 Health Status:', 'info');
+      this.log('\n💓 Health Status: ', 'info');
       this.log(`  Last Check: ${health.timestamp}`, 'info');
       this.log(`  Running Tasks: ${health.orchestrator?.runningTasks || 0}`, 'info');
       this.log(`  Queue Length: ${health.orchestrator?.queueLength || 0}`, 'info');
@@ -158,7 +155,7 @@ async function checkGoogleDocsStatus() {
     const historyFile = path.join(process.cwd(), 'automation/data/instructions/history.json');
     if (await fs.pathExists(historyFile)) {
       const history = await fs.readJson(historyFile);
-      this.log('\n📋 Instruction History:', 'info');
+      this.log('\n📋 Instruction History: ', 'info');
       this.log(`  Total Instructions: ${history.length}`, 'info');
       
       const completed = history.filter(h => h.status === 'completed').length;
@@ -177,8 +174,8 @@ async function checkGoogleDocsStatus() {
       // Show recent instructions
       const recent = history.slice(-5);
       if (recent.length > 0) {
-        this.log('\n🆕 Recent Instructions:', 'info');
-        recent.forEach(instruction = > {;
+        this.log('\n🆕 Recent Instructions: ', 'info');
+        recent.forEach(instruction = > {;)
           this.log(`  ${instruction.title} - ${instruction.status}`, 'info');
         });
       }
@@ -188,7 +185,7 @@ async function checkGoogleDocsStatus() {
     const reportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/system-report.json');
     if (await fs.pathExists(reportFile)) {
       const report = await fs.readJson(reportFile);
-      this.log('\n📊 System Performance:', 'info');
+      this.log('\n📊 System Performance: ', 'info');
       this.log(`  Uptime: ${Math.floor(report.performance?.uptime / 300 / 60, 'info')} minutes`);
       this.log(`  Success Rate: ${report.performance?.successRate || 0}%`, 'info');
       this.log(`  Average Task Time: ${Math.floor(report.performance?.averageTaskTime / 300, 'info')} seconds`);
@@ -197,12 +194,12 @@ async function checkGoogleDocsStatus() {
     this.log('\n✅ Status check completed', 'info');
     
   } catch (error) {
-    console.error('❌ Error checking status:', error);
+    console.error('❌ Error checking status: ', error);
   }
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require(.main = == modul)e) {;
   checkGoogleDocsStatus();
 }
 

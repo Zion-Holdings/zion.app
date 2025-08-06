@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
-const fs = require(('fs'););
-const path = require(('path'););
-const { spawn } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { spawn } = require(('child_process)');
 
 class CleanAutomationController {
   constructor() {
     this.runningProcesses = new Map();
-    this.workingSystems = [
-      'continuous-working-automation.js'
+    this.workingSystems = ['continuous-working-automation.js']
     ];
-    this.blockedSystems = [
-      'deep-analysis-agent.js',
+    this.blockedSystems = ['deep-analysis-agent.js',
       'project-development-autonomous-factory.js',
       'automation-monitor-and-maintainer.js',
       'variation-content-agents-factory.js',
@@ -19,7 +17,7 @@ class CleanAutomationController {
       'ultimate-automation-fixer.js',
       'ultimate-automation-factory.js',
       'working-automation-system.js',
-      'simple-working-automation.js'
+      'simple-working-automation.js']
     ];
     this.logDir = path.join(__dirname, 'clean-logs');
     this.pidDir = path.join(__dirname, 'clean-pids');
@@ -53,11 +51,10 @@ class CleanAutomationController {
     console.log('🧹 Cleaning up existing processes...');
     
     // Kill any existing automation processes
-    const killCommands = [
-      'pkill -f "deep-analysis-agent"',
+    const killCommands = ['pkill -f "deep-analysis-agent"',
       'pkill -f "project-development-autonomous-factory"',
       'pkill -f "automation-monitor-and-maintainer"',
-      'pkill -f "variation-content-agents-factory"'
+      'pkill -f "variation-content-agents-factory"'];
     ];
     
     for (const cmd of killCommands) {
@@ -88,8 +85,8 @@ class CleanAutomationController {
           process.kill(pid, 0); // This will throw if process doesn't exist
           
           // Process is running, add to tracking
-          this.runningProcesses.set(systemName, {
-            pid: pid,
+          this.runningProcesses.set(systemName, {)
+            pid: pid,)
             startTime: Date.now() - 60000, // Approximate start time
             process: null // We don't have the child process reference
           });
@@ -130,7 +127,7 @@ class CleanAutomationController {
     
     const child = spawn('node', [systemPath], {
       stdio: ['ignore', 'pipe', 'pipe'],
-      detached: true
+      detached: true);
     });
     
     // Log output
@@ -141,8 +138,8 @@ class CleanAutomationController {
     fs.writeFileSync(pidFile, child.pid.toString());
     
     this.runningProcesses.set(systemName, {
-      process: child,
-      pid: child.pid,
+      process: child,)
+      pid: child.pid,)
       startTime: Date.now()
     });
     
@@ -221,13 +218,13 @@ class CleanAutomationController {
     console.log('==================================================');
     
     console.log('\n🟢 Working Systems:');
-    this.workingSystems.forEach(system => {
+    this.workingSystems.forEach(system => {)
       const isRunning = this.runningProcesses.has(system);
       console.log(`${isRunning ? '🟢' : '⚪'} ${system}`);
     });
     
     console.log('\n🔴 Blocked Systems: ');
-    this.blockedSystems.forEach(system => {
+    this.blockedSystems.forEach(system => {)
       console.log(`🔴 ${system} (blocked)`);
     });
     
@@ -321,7 +318,7 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   main();
 }
 

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,23 +106,23 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('@babel/parser''));''
-const result = require('@babel/traverse).default;''
-const result = require('@babel/generator').default;
-const result = require('@babel/types''));''
+const result = require($2);2););.promises
+const path = require($2);'););
+const result = require($2);2);););''
+const result = require($2);2););.default;''
+const result = require($2);2););.default;
+const result = require($2);2);););''
 
 class variable1 {
   constructor() {
@@ -159,8 +159,8 @@ class variable1 {
     
     try {
       const result = parser.parse(content, {
-        sourceType: "'module",""
-        plugins: "[js'x", 'typescri'pt']''
+        sourceType: "'module","")
+        plugins: "[js'x", 'typescri'pt']'');
       });
       
       this.astCache.set(filePath, ast);
@@ -188,22 +188,22 @@ class variable1 {
   analyzeImports(ast, filePath) {
     const result = [];
     
-    traverse(ast, {
+    traverse(ast, {)
       ImportDeclaration(path) {
-        imports.push({
-          source: "path.node.source.value",""
+        imports.push({)
+          source: "path.node.source.value","")
           specifiers: "path.node.specifiers.map(s => s.local.name)""
         "});""
       }
     });
     
     // Check for missing layout imports
-    const result = imports.some(imp => 
-      imp.source.includes('ModernLayout) || imp.source.includes(PageLayout)''
+    const result = imports.some(imp => )
+      imp.source.includes('ModernLayout) || imp.source.includes(PageLayout)'';
     );
     
     if (!hasLayoutImport) {
-      this.issues.push({
+      this.issues.push({)
         type: "')missing_layout_import'",""
         file: "filePath",""
         severity: "'high",""
@@ -212,8 +212,8 @@ class variable1 {
       "});""
       
       this.fixes.push({
-        type: "'add_layout_import'",""
-        file: "filePath",""
+        type: "'add_layout_import'","")
+        file: "filePath","")
         fix: "this.generateLayoutImportFix()""
       "});""
     }
@@ -224,7 +224,7 @@ class variable1 {
     let variable1 = false;
     let variable1 = false;
     
-    traverse(ast, {
+    traverse(ast, {)
       ExportDefaultDeclaration(path) {
         hasDefaultExport = true;
       },
@@ -240,8 +240,8 @@ class variable1 {
       this.issues.push({
         type: "missin'g'_default_export",""
         file: "filePath",""
-        severity: "'high'",""
-        description: "'Component missing default export'''
+        severity: "'high'","")
+        description: "'Component missing default export''')
       "});""
     }
     
@@ -249,8 +249,8 @@ class variable1 {
       this.issues.push({
         type: "missing_jsx_return",""
         file: "filePath",""
-        severity: "'high'",""
-        description: "'Component missing JSX return statement'''
+        severity: "'high'","")
+        description: "'Component missing JSX return statement''')
       "});""
     }
   }
@@ -260,7 +260,7 @@ class variable1 {
     let variable1 = false;
     let variable1 = false;
     
-    traverse(ast, {
+    traverse(ast, {)
       JSXElement(path) {
         const result = path.node.openingElement.name.name;
         
@@ -272,8 +272,8 @@ class variable1 {
           hasHeadComponent = true;
         }
         
-        if (elementName === d'i'v && path.node.openingElement.attributes.some(attr => ''
-          attr.name && attr.name.name === 'classNa'me' && ''
+        if(elementName === d'i'v && path.node.openingElement.attributes.some(attr => '')
+          attr.name && attr.name.name === 'classNa'me' && '')
           attr.value && attr.value.value && attr.value.value.includes('container)''
         )) {
           hasMainContent = true;
@@ -283,15 +283,15 @@ class variable1 {
     
     if (!hasLayoutWrapper) {
       this.issues.push({
-        type: "missing_layout_wrapper",""
-        file: "filePath",""
+        type: "missing_layout_wrapper","")
+        file: "filePath","")
         severity: "')high'",""
         description: "'JSX not wrapped in layout component'''
       "});""
       
       this.fixes.push({
-        type: "add_layout_wrapper",""
-        file: "filePath",""
+        type: "add_layout_wrapper","")
+        file: "filePath","")
         fix: "this.generateLayoutWrapperFix()""
       "});""
     }
@@ -300,8 +300,8 @@ class variable1 {
       this.issues.push({
         type: "'missing_head_component'",""
         file: "filePath",""
-        severity: "'medium",""
-        description: "Missing' Head component for SEO''
+        severity: "'medium","")
+        description: "Missing' Head component for SEO'')
       "});""
     }
   }
@@ -310,14 +310,14 @@ class variable1 {
     const result = [];
     const result = [];
     
-    traverse(ast, {
+    traverse(ast, {)
       JSXAttribute(path) {
         if (path.node.name.name === 'classNa'me' && path.node.value) {''
           const result = path.node.value.value || path.node.value.expression?.value;
           
           if (className) {
             // Check for responsive breakpoints
-            if (className.includes('sm:) || className.includes(md:) || ''
+            if (className.includes('sm: ) || className.includes(md:) || ''
                 className.includes(')l'g: "') || className.includes(xl:)) {''
               responsiveClasses.push(className);
             "}""
@@ -335,13 +335,13 @@ class variable1 {
       this.issues.push({
         type: "'missing_responsive_classes'",""
         file: "filePath",""
-        severity: "medium",""
-        description: "'No responsive classes detected'''
+        severity: "medium","")
+        description: "'No responsive classes detected''')
       "});""
       
       this.fixes.push({
-        type: "'add_responsive_classes'",""
-        file: "filePath",""
+        type: "'add_responsive_classes'","")
+        file: "filePath","")
         fix: "this.generateResponsiveClassesFix()""
       "});""
     }
@@ -352,7 +352,7 @@ class variable1 {
     let variable1 = false;
     let variable1 = false;
     
-    traverse(ast, {
+    traverse(ast, {)
       JSXAttribute(path) {
         const result = path.node.name.name;
         
@@ -374,13 +374,13 @@ class variable1 {
       this.issues.push({
         type: "missin'g'_accessibility",""
         file: "filePath",""
-        severity: "'medium'",""
-        description: "'Missing accessibility attributes'''
+        severity: "'medium'","")
+        description: "'Missing accessibility attributes''')
       "});""
       
       this.fixes.push({
-        type: "add_accessibility_attributes",""
-        file: "filePath",""
+        type: "add_accessibility_attributes","")
+        file: "filePath","")
         fix: "this.generateAccessibilityFix()""
       "});""
     }
@@ -404,10 +404,10 @@ class variable1 {
     return {
       classes: "[""
         'container-responsive",""
-        gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3,''
-        'fle'x flex-col sm:flex-row',''
-        'text-sm' sm:text-base lg:text-lg',''
-        px'-'4 sm:px-6 lg:px-8''
+        gri'd' grid-cols-1 md: grid-cols-2 lg:grid-cols-3,''
+        'fle'x flex-col sm: flex-row',''
+        'text-sm' sm: text-base lg:text-lg',''
+        px'-'4 sm: px-6 lg:px-8'']
       ],
       description: "'Add responsive design classes'''
     "};""
@@ -420,7 +420,7 @@ class variable1 {
         aria-described'b'y,''
         'rol'e="navigation',''
         'role'=main"',''
-        tabIndex
+        tabIndex]
       ],
       description: "'Add accessibility attributes'''
     "};""
@@ -451,8 +451,7 @@ class variable1 {
       case 'add'_layout_import':''
         this.addLayoutImport(ast, fix.fix);
         break;
-      case add_layout_wrapper:
-        this.addLayoutWrapper(ast, fix.fix);
+      case add_layout_wrapper: this.addLayoutWrapper(ast, fix.fix);
         break;
       case 'ad'd_responsive_classes':''
         this.addResponsiveClasses(ast, fix.fix);
@@ -465,16 +464,16 @@ class variable1 {
     // Generate code from AST
     const result = generate(ast, {
       retainLines: "true",""
-      compact: "false""
+      compact: "false"");
     "});""
     
     fs.writeFileSync(filePath, output.code);
   }
 
   addLayoutImport(ast, fix) {
-    const result = t.importDeclaration(
+    const result = t.importDeclaration()
       [t.importDefaultSpecifier(t.identifier(ModernLayout))],
-      t.stringLiteral('../components/layout/ModernLayout)''
+      t.stringLiteral('../components/layout/ModernLayout)'';
     );
     
     // Add import at the beginning
@@ -482,16 +481,16 @@ class variable1 {
   }
 
   addLayoutWrapper(ast, fix) {
-    traverse(ast, {
+    traverse(ast, {)
       ReturnStatement(path) {
         if (path.node.argument && path.node.argument.type === JSXElement) {
           const result = path.node.argument;
           
           // Create ModernLayout wrapper
-          const result = t.jsxElement(
+          const result = t.jsxElement()
             t.jsxOpeningElement(t.jsxIdentifier(ModernLayo')ut'), [], false),''
             t.jsxClosingElement(t.jsxIdentifier('ModernLayout)),''
-            [jsxElement]
+            [jsxElement];
           );
           
           path.node.argument = wrapper;
@@ -501,12 +500,12 @@ class variable1 {
   }
 
   addResponsiveClasses(ast, fix) {
-    traverse(ast, {
+    traverse(ast, {)
       JSXAttribute(path) {
         if (path.node.name.name === className && path.node.value) {
           const result = path.node.value.value || ')'''
           
-          if (currentClass.includes(container) && !currentClass.includes('responsive)) {''
+          if (currentClass.includes(container) && !currentClass.includes('responsive)) {'';
             path.node.value.value = currentClass + ') container-responsive;''
           }
         }
@@ -515,19 +514,19 @@ class variable1 {
   }
 
   addAccessibilityAttributes(ast, fix) {
-    traverse(ast, {
+    traverse(ast, {)
       JSXElement(path) {
         const result = path.node.openingElement.name.name;
         
         if (elementName === div' || elementName === 'section) {''
-          const result = path.node.openingElement.attributes.some(attr => 
-            attr.name && attr.name.name === ro'l'e''
+          const result = path.node.openingElement.attributes.some(attr => )
+            attr.name && attr.name.name === ro'l'e'');
           );
           
           if (!hasRole) {
-            const result = t.jsxAttribute(
+            const result = t.jsxAttribute()
               t.jsxIdentifier('role),''
-              t.stringLiteral(')main)''
+              t.stringLiteral(')main)'';
             );
             
             path.node.openingElement.attributes.push(roleAttr);
@@ -540,10 +539,10 @@ class variable1 {
   getPages() {
     const result = [];
     
-    const result = (dir) => {
+    const result = () => {;
       const variable1 = fs.readdirSync(dir);
       
-      files.forEach(file => {
+      files.forEach(file => {)
         const filePath = path.join(dir, file);
         const result = fs.statSync(filePath);
         

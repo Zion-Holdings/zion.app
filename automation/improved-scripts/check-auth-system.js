@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,30 +120,27 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Authentication System Checker
  * Validates the Supabase authentication system
  */
 
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -222,11 +219,10 @@ class AuthSystemChecker {
   } {
     constructor() {
         this.baseDir = process.cwd();
-        this.authFiles = [
-            'utils/supabase/client.ts',
+        this.authFiles = ['utils/supabase/client.ts',
             'utils/supabase/server.ts',
             'utils/supabase/middleware.ts',
-            'middleware.ts'
+            'middleware.ts']
         ];
     }
 
@@ -236,7 +232,7 @@ class AuthSystemChecker {
         const missingFiles = [];
         const existingFiles = [];
         
-        this.authFiles.forEach(file => {
+        this.authFiles.forEach(file => {)
             const filePath = path.join(this.baseDir, file);
             if (fs.existsSync(filePath)) {
                 existingFiles.push(file);
@@ -254,19 +250,17 @@ class AuthSystemChecker {
         this.log('Checking environment variables...', 'info');
         
         const envFile = path.join(this.baseDir, '.env.local');
-        const requiredVars = [
-            'NEXT_PUBLIC_SUPABASE_URL',
-            'NEXT_PUBLIC_SUPABASE_ANON_KEY'
+        const require(dVars = ['NEXT_PUBLIC_SUPABASE_URL',
+            'NEXT_PUBLIC_SUPABASE_ANON_KEY']
         ];
-        
-        if (fs.existsSync(envFile)) {
+        )
+        if (fs.existsSync(envFil)e)) {
             const envContent = fs.readFileSync(envFile, 'utf8');
-            const missingVars = requiredVars.filter(varName => 
-                !envContent.includes(varName)
-            );
+            const missingVars = require($2);!envContent.includes(varNam)e)
+            ););
             
             if (missingVars.length === 0) {
-                this.log('✓ All required environment variables found', 'info');
+                this.log('✓ All require(d environment variables found', 'info)');
                 return { success: true, missingVars: [] };
             } else {
                 this.log(`✗ Missing environment variables: ${missingVars.join(', ', 'info')}`);
@@ -274,24 +268,23 @@ class AuthSystemChecker {
             }
         } else {
             this.log('✗ .env.local file not found', 'info');
-            return { success: false, missingVars: requiredVars };
+            return { success: false, missingVars: require(dVars };
         }
     }
-
-    checkAuthPages() {
+)
+    checkAuthPages)() {
         this.log('Checking authentication pages...', 'info');
         
-        const authPages = [
-            'pages/auth/login.tsx',
+        const authPages = ['pages/auth/login.tsx',
             'pages/auth/register.tsx',
             'pages/auth/confirm.tsx',
-            'pages/auth/error.tsx'
+            'pages/auth/error.tsx'];
         ];
         
         const missingPages = [];
         const existingPages = [];
         
-        authPages.forEach(page => {
+        authPages.forEach(page => {)
             const pagePath = path.join(this.baseDir, page);
             if (fs.existsSync(pagePath)) {
                 existingPages.push(page);
@@ -323,7 +316,7 @@ class AuthSystemChecker {
                 totalPages: authPages.existingPages.length + authPages.missingPages.length,
                 existingPages: authPages.existingPages.length,
                 missingPages: authPages.missingPages.length
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'auth-system-report.json');
@@ -334,9 +327,14 @@ class AuthSystemChecker {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const checker = new AuthSystemChecker();
     checker.generateReport();
 }
 
 module.exports = AuthSystemChecker;
+
+}
+}
+}
+}

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,21 +26,20 @@ const memoryOptimization = {
     }
   }
 };
-const result = require('fs-extra);''
-const path = require('path');
+const result = require($2);a););''
+const path = require($2);'););
 
 async function testSystem() {
     console.log(')🧪 Testing ChatGPT Analysis System...');''
     
     try {
         // Test directory structure
-        const result = [
-            chatgpt-analysis-reports,
+        const result = [chatgpt-analysis-reports,
             'chatgpt-agen'ts', ''
-            'chatgpt-logs,''
+            'chatgpt-logs,''];
             chatgpt-da't'a''];
         
-        for (const dir of requiredDirs) {
+        for (const dir of require(dDir)s) {
             if (fs.existsSync(dir)) {
                 console.log("✅ Directory exists: "${dir"});""
             } else {
@@ -49,13 +48,12 @@ async function testSystem() {
             }
         }
         
-        // Test required files
-        const result = [
-            \'chatgpt-analysis-agent-factor\'y.js\',\'\'
-            \'chatgpt-analysis-orchestrator\'.js\',\'\'
+        // Test require(d files
+        const result = [\'chatgpt-analysis-agent-factor\'y.js\',\'\'
+            \'chatgpt-analysis-orchestrator\'.js\',\'\'];
             launch-chatgpt-analysis.js];
-        
-        for (const file of requiredFiles) {
+        )
+        for (const file of requiredFile)s) {
             if (fs.existsSync(file)) {
                 console.log("✅ File exists: "${file"});""
             } else {
@@ -68,7 +66,7 @@ async function testSystem() {
         return true;
         
     } catch (error) {
-        console.error(❌ Test failed:', error.message);''
+        console.error(❌ Test failed: ', error.message);''
         return false;
     }
 }

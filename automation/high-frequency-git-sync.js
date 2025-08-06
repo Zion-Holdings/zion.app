@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,16 +29,13 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, execSync } = require('child_process');
+}const fs = require($2);2););.promises;
+const path = require($2);'););
+const { spawn, execSync } = require(('child_process)');
 
 class HighFrequencyGitSync {
   constructor() {
@@ -55,23 +52,21 @@ class HighFrequencyGitSync {
       retryAttempts: 3,
       retryDelay: 300,
       commitMessagePrefix: 'Auto-sync',
-      includePatterns: [
-        'automation/**',
+      includePatterns: ['automation/**',
         'pages/**',
         'components/**',
         'utils/**',
         'styles/**',
-        'scripts/**'
+        'scripts/**']
       ],
-      excludePatterns: [
-        'automation/logs/**',
+      excludePatterns: ['automation/logs/**',
         'automation/temp/**',
         'automation/backups/**',
         'automation/reports/**',
         'node_modules/**',
         '.git/**',
         '*.log',
-        '*.pid'
+        '*.pid']
       ]
     };
   }
@@ -94,7 +89,7 @@ class HighFrequencyGitSync {
       console.log('✅ High Frequency Git Sync initialized successfully');
       
     } catch (error) {
-      console.error('❌ Failed to initialize High Frequency Git Sync:', error.message);
+      console.error('❌ Failed to initialize High Frequency Git Sync: ', error.message);
       throw error;
     }
   }
@@ -103,7 +98,7 @@ class HighFrequencyGitSync {
     try {
       execSync('git status', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       console.log('✅ Git repository status OK');
     } catch (error) {
@@ -114,16 +109,15 @@ class HighFrequencyGitSync {
   startFileWatching() {
     console.log('👀 Starting file watching...');
     
-    const watchDirs = [
-      'pages',
+    const watchDirs = ['pages',
       'components', 
       'utils',
       'styles',
       'scripts',
-      'automation'
+      'automation'];
     ];
     
-    watchDirs.forEach(dir => {
+    watchDirs.forEach(dir => {)
       this.watchDirectory(dir);
     });
   }
@@ -192,7 +186,7 @@ class HighFrequencyGitSync {
       console.log(`✅ High-frequency sync successful: ${changedFiles.length} files`);
       
     } catch (error) {
-      console.error('❌ High-frequency sync failed:', error.message);
+      console.error('❌ High-frequency sync failed: ', error.message);
       this.errorCount++;
       await this.handleError('sync', error);
     }
@@ -214,7 +208,7 @@ class HighFrequencyGitSync {
       console.log('✅ Auto-push successful');
       
     } catch (error) {
-      console.error('❌ Auto-push failed:', error.message);
+      console.error('❌ Auto-push failed: ', error.message);
       this.errorCount++;
       await this.handleError('push', error);
     }
@@ -224,19 +218,19 @@ class HighFrequencyGitSync {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       const files = status.trim().split('\n').filter(line => line.trim());
       
       // Filter files based on include/exclude patterns
-      return files.filter(file => {
+      return files.filter(file => {)
         const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
       
     } catch (error) {
-      console.error('❌ Error getting changed files:', error.message);
+      console.error('❌ Error getting changed files: ', error.message);
       return [];
     }
   }
@@ -279,7 +273,7 @@ class HighFrequencyGitSync {
         const filePath = file.substring(4); // Remove status prefix (M + space + space)
         execSync(`git add "${filePath}"`, { 
           cwd: this.projectRoot,
-          stdio: 'pipe'
+          stdio: 'pipe')
         });
       }
       
@@ -306,7 +300,7 @@ class HighFrequencyGitSync {
     try {
       execSync(`git commit -m "${message}"`, { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
     } catch (error) {
@@ -318,13 +312,13 @@ class HighFrequencyGitSync {
     try {
       const result = execSync('git log --oneline origin/main..HEAD', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       return result.trim().length > 0;
       
     } catch (error) {
-      console.error('❌ Error checking commits to push:', error.message);
+      console.error('❌ Error checking commits to push: ', error.message);
       return false;
     }
   }
@@ -333,7 +327,7 @@ class HighFrequencyGitSync {
     try {
       execSync('git push origin main', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
       console.log('🚀 Pushed to main branch');
@@ -344,7 +338,7 @@ class HighFrequencyGitSync {
   }
 
   async handleError(operation, error) {
-    console.error(`❌ ${operation} error:`, error.message);
+    console.error(`❌ ${operation} error: `, error.message);
     
     // Retry logic
     for (let attempt = 1; attempt <= this.config.retryAttempts; attempt++) {
@@ -363,7 +357,7 @@ class HighFrequencyGitSync {
         return;
         
       } catch (retryError) {
-        console.error(`❌ ${operation} retry ${attempt} failed:`, retryError.message);
+        console.error(`❌ ${operation} retry ${attempt} failed: `, retryError.message);
       }
     }
     
@@ -414,12 +408,12 @@ async function main() {
     }, 3000); // Log status every minute
     
   } catch (error) {
-    console.error('❌ Failed to start High Frequency Git Sync:', error.message);
+    console.error('❌ Failed to start High Frequency Git Sync: ', error.message);
     process.exit(1);
   }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   main().catch(console.error);
 }
 

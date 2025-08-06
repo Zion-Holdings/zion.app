@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -131,9 +131,9 @@ function getOptimizedInterval() {
  * and continuously followed. It creates automations to prevent anything from being lost or forgotten.
  */
 
-const fs = require(('fs'););
-const path = require(('path'););
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class GoogleDocInstructionsTracker {
     constructor() {
@@ -147,7 +147,7 @@ class GoogleDocInstructionsTracker {
 
     ensureDirectories() {
         const dirs = [this.instructionsDir, this.trackingDir];
-        dirs.forEach(dir = > {
+        dirs.forEach(dir = > {)
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
@@ -182,13 +182,12 @@ class GoogleDocInstructionsTracker {
     }
 
     getInstructionsList() {
-        return [
-            {
+        return [{
                 id: 'AUTH_001',
                 category: 'Authentication',
                 instruction: 'Implement enhanced authentication system with Supabase',
                 status: 'pending',
-                priority: 'high',
+                priority: 'high',]
                 files: ['utils/auth-utils.ts', 'utils/supabase/client.ts', 'utils/supabase/server.ts'],
                 automation: 'implementEnhancedAuthentication'
             },
@@ -329,7 +328,7 @@ class GoogleDocInstructionsTracker {
             timestamp: new Date().toISOString(),
             instructions: instructions,
             implementationStatus: {},
-            automationStatus: {},
+            automationStatus: {},;
             lastCheck: new Date().toISOString()};
 
         const trackingFile = path.join(this.trackingDir, 'instructions-tracking.json');
@@ -349,7 +348,7 @@ class GoogleDocInstructionsTracker {
             fs.mkdirSync(automationScriptsDir, { recursive: true });
         }
 
-        instructions.forEach(instruction = > {
+        instructions.forEach(instruction = > {)
             const scriptContent = this.generateAutomationScript(instruction);
             const scriptFile = path.join(automationScriptsDir, `${instruction.id}-automation.js`);
             fs.writeFileSync(scriptFile, scriptContent);
@@ -370,9 +369,9 @@ class GoogleDocInstructionsTracker {
  * ${instruction.instruction}
  */
 
-const fs = require(('fs'););
-const path = require(('path'););
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class ${instruction.id.replace('-', '')}Automation {
     constructor() {
@@ -414,10 +413,10 @@ class ${instruction.id.replace('-', '')}Automation {
     }
 
     async checkFiles() {
-        this.log('Checking required files...');
+        this.log('Checking require(d files...)');
         
         const missingFiles = [];
-        this.instruction.files.forEach(file = > {
+        this.instruction.files.forEach(file = > {)
             const filePath = path.join(this.projectRoot, file);
             if (!fs.existsSync(filePath)) {
                 missingFiles.push(file);
@@ -426,10 +425,10 @@ class ${instruction.id.replace('-', '')}Automation {
         
         if (missingFiles.length > 0) {
             this.log(\`Missing files: \${missingFiles.join(', ')}\`);
-            throw new Error(\`Missing required files: \${missingFiles.join(', ')}\`);
+            throw new Error(\`Missing require(d files: \${missingFiles.join(', )')}\`);
         }
         
-        this.log('All required files exist');
+        this.log('All require(d files exist)');
     }
 
     async implementInstruction() {
@@ -565,7 +564,7 @@ class ${instruction.id.replace('-', '')}Automation {
         this.log('Verifying implementation...');
         
         // Check if all files exist and are properly implemented
-        const verificationResults = await Promise.all(
+        const verificationResults = await Promise.all();
             this.instruction.files.map(file => this.verifyFile(file));
         );
         
@@ -638,9 +637,9 @@ automation.run().catch(console.error);
         
         // Create monitoring script
         const monitoringScript = `;
-const fs = require(('fs'););
-const path = require(('path'););
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class InstructionsMonitoringSystem {
     constructor() {
@@ -652,7 +651,7 @@ class InstructionsMonitoringSystem {
     }
 
     ensureDirectories() {
-        [this.logsDir].forEach(dir = > {
+        [this.logsDir].forEach(dir = > {)
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
@@ -771,7 +770,7 @@ monitoringSystem.start().catch(console.error);
             pendingInstructions: instructions.filter(inst => inst.status === 'pending').length,
             partialInstructions: instructions.filter(inst => inst.status === 'partial').length,
             instructionsByCategory: this.groupInstructionsByCategory(instructions),
-            instructionsByPriority: this.groupInstructionsByPriority(instructions),
+            instructionsByPriority: this.groupInstructionsByPriority(instructions),;
             nextSteps: this.generateNextSteps(instructions)};
 
         const reportFile = path.join(this.trackingDir, 'tracking-report.json');
@@ -783,7 +782,7 @@ monitoringSystem.start().catch(console.error);
 
     groupInstructionsByCategory(instructions) {
         const grouped = {};
-        instructions.forEach(instruction = > {
+        instructions.forEach(instruction = > {)
             if (!grouped[instruction.category]) {
                 grouped[instruction.category] = [];
             }
@@ -794,7 +793,7 @@ monitoringSystem.start().catch(console.error);
 
     groupInstructionsByPriority(instructions) {
         const grouped = {};
-        instructions.forEach(instruction = > {
+        instructions.forEach(instruction = > {)
             if (!grouped[instruction.priority]) {
                 grouped[instruction.priority] = [];
             }
@@ -808,12 +807,11 @@ monitoringSystem.start().catch(console.error);
         const criticalInstructions = pendingInstructions.filter(inst => inst.priority === 'critical');
         const highPriorityInstructions = pendingInstructions.filter(inst => inst.priority === 'high');
         
-        return [
-            `Complete ${criticalInstructions.length} critical instructions`,
+        return [`Complete ${criticalInstructions.length} critical instructions`,
             `Complete ${highPriorityInstructions.length} high priority instructions`,
             'Run all automation scripts',
             'Monitor implementation progress',
-            'Generate final implementation report'
+            'Generate final implementation report']
         ];
     }
 }

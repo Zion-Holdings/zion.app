@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -33,10 +33,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs-extra'););
-const path = require(('path'););
-const axios = require(('axios'););
-const { EventEmitter } = require('events');
+}const fs = require($2);'););
+const path = require($2);'););
+const axios = require($2);'););
+const { EventEmitter } = require(('events)');
 
 class GoogleDocsInstructionAgent extends EventEmitter {
   constructor(config = {}) {
@@ -78,11 +78,10 @@ class GoogleDocsInstructionAgent extends EventEmitter {
   }
 
   async ensureDirectories() {
-    const directories = [
-      'automation/agents/google-docs',
+    const directories = ['automation/agents/google-docs',
       'automation/data/instructions',
       'automation/logs/google-docs',
-      'automation/reports/instruction-execution'
+      'automation/reports/instruction-execution'];
     ];
     
     for (const dir of directories) {
@@ -201,7 +200,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
       if (line.startsWith('## ')) {
         // Save previous section
         if (currentSection && currentInstructions.length > 0) {
-          instructions.push({
+          instructions.push({)
             type: currentSection.toLowerCase().replace(/\s+/g, '-'),
             title: currentSection,
             instructions: currentInstructions,
@@ -218,7 +217,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
     
     // Add last section
     if (currentSection && currentInstructions.length > 0) {
-      instructions.push({
+      instructions.push({)
         type: currentSection.toLowerCase().replace(/\s+/g, '-'),
         title: currentSection,
         instructions: currentInstructions,
@@ -234,9 +233,9 @@ class GoogleDocsInstructionAgent extends EventEmitter {
       const instructionId = `instruction_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
       
       // Check if this instruction is new
-      const isNew = !this.instructionHistory.some(h => 
-        h.title === instruction.title && 
-        JSON.stringify(h.instructions) === JSON.stringify(instruction.instructions)
+      const isNew = !this.instructionHistory.some(h => )
+        h.title === instruction.title && )
+        JSON.stringify(h.instructions) === JSON.stringify(instruction.instructions);
       );
       
       if (isNew) {
@@ -245,8 +244,8 @@ class GoogleDocsInstructionAgent extends EventEmitter {
         // Add to history
         this.instructionHistory.push({
           id: instructionId,
-          ...instruction,
-          status: 'pending',
+          ...instruction,)
+          status: 'pending',)
           createdAt: new Date().toISOString()
         });
         
@@ -271,7 +270,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
         instructions: instruction.instructions,
         status: 'running',
         startTime: new Date().toISOString(),
-        progress: 0
+        progress: 0;
       };
       
       this.currentTasks.set(instructionId, task);
@@ -492,7 +491,7 @@ class GoogleDocsInstructionAgent extends EventEmitter {
         successRate: this.instructionHistory.length > 0 
           ? (this.instructionHistory.filter(h => h.status === 'completed').length / this.instructionHistory.length * 100).toFixed(2)
           : 0
-      }
+      };
     };
     
     const reportFile = path.join(process.cwd(), 'automation/reports/instruction-execution/report.json');

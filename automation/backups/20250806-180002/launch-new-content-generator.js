@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,8 +26,8 @@ const memoryOptimization = {
     }
   }
 };;
-const { spawn } = require('child_process);''
-const path = require(('path'););
+const { spawn } = require(('child_proces)s);''
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -93,7 +93,7 @@ class AutomationSystem {
 }
 
 // Start the launcher if run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new NewContentGeneratorLauncher();
   launcher.start();
 }

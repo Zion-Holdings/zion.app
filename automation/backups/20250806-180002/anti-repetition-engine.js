@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,7 +111,7 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -125,9 +125,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require(($2););.promises
-const path = require(('path'););
-const result = require(($2););t'o);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const result = require($2);2););t'o);''
 
 class AutomationSystem {
   constructor() {
@@ -147,7 +147,7 @@ class AutomationSystem {
     this.enginePath = path.join(__dirname, \'anti-repetition-engi\'ne\');\'\'
     this.logsPath = path.join(__dirname, \'logs);\'\'
     
-    [this.enginePath, this.logsPath].forEach(dir = > {
+    [this.enginePath, this.logsPath].forEach(dir = > {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -207,8 +207,8 @@ class AutomationSystem {
     
     // Check for files being modified too frequently
     this.fileModificationTracking.forEach((modifications, filePath) => {
-      const result = modifications.filter(time => 
-        currentTime - time < 200 // Last 5 minutes;
+      const result = modifications.filter(time => ;)
+        currentTime - time < 200 // Last 5 minutes;)
       );
       
       if (recentModifications.length > 3) {
@@ -316,7 +316,7 @@ class AutomationSystem {
   saveTrackingData() {
     const result = {
       fileModifications: "Array.from(this.fileModificationTracking.entries())",""
-      updateFrequencies: "Array.from(this.updateFrequencyLimits.entries())",""
+      updateFrequencies: "Array.from(this.updateFrequencyLimits.entries())","";
       contentHashes: "Array.from(this.contentHashes)"";
     "};""
     

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,13 +120,13 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require($2);'););
+const path = require($2);'););
 
 class NavigationEnhancementAgent {
   constructor() {
@@ -163,7 +163,7 @@ class NavigationEnhancementAgent {
       console.log('Navigation enhancement completed successfully');
       return { success: true, changes: ['Enhanced navigation menu', 'Added mobile navigation', 'Created search functionality', 'Added breadcrumbs'] };
     } catch (error) {
-      console.error('Navigation enhancement failed:', error);
+      console.error('Navigation enhancement failed: ', error);
       return { success: false, error: error.message };
     }
   }
@@ -205,8 +205,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const navItems: NavItem[] = [
-    {
+  const navItems: NavItem[] = [{
       href: '/',
       label: 'Home',
       icon: '🏠',
@@ -221,7 +220,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
         { href: '/services/ai-development', label: 'AI Development', icon: '🤖' },
         { href: '/services/cloud-migration', label: 'Cloud Migration', icon: '☁️' },
         { href: '/services/security-auditing', label: 'Security Auditing', icon: '🔒' },
-        { href: '/services/performance-optimization', label: 'Performance Optimization', icon: '⚡' }
+        { href: '/services/performance-optimization', label: 'Performance Optimization', icon: '⚡' }]
       ]
     },
     {
@@ -229,10 +228,9 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
       label: 'Products',
       icon: '🚀',
       description: 'Innovative products',
-      children: [
-        { href: '/products/iot-platforms', label: 'IoT Platforms', icon: '📡' },
+      children: [{ href: '/products/iot-platforms', label: 'IoT Platforms', icon: '📡' },
         { href: '/products/blockchain-solutions', label: 'Blockchain Solutions', icon: '🔗' },
-        { href: '/products/ai-tools', label: 'AI Tools', icon: '🧠' }
+        { href: '/products/ai-tools', label: 'AI Tools', icon: '🧠' }]
       ]
     },
     {
@@ -249,24 +247,23 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
     }
   ];
 
-  const isActive = (href: string) => {
-    if (href === '/') {
+  const isActive = () => {
+    if (href === '/') {;
       return router.pathname === '/';
     }
     return router.pathname.startsWith(href);
   };
 
-  const handleDropdownToggle = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
+  const handleDropdownToggle = () => {;
+    setActiveDropdown(activeDropdown === label ? null: label);
   };
 
-  const renderNavItem = (item: NavItem, index: number) => {
+  const renderNavItem = () => {;
     const isItemActive = isActive(item.href);
     const hasChildren = item.children && item.children.length > 0;
 
     if (variant === 'mobile') {
-      return (
-        <motion.div
+      return(<motion.div
           key={item.href}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -274,13 +271,13 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
         >
           <Link
             href={item.href}
-            className={\`flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-slate-800/50 \${isItemActive ? 'text-white bg-slate-800/50' : ''}\`}
+            className={\`flex items-center space-x-3 px-4 py-3 text-gray-300 hover: text-white transition-colors duration-200 rounded-lg hover:bg-slate-800/50 \${isItemActive ? 'text-white bg-slate-800/50' : ''}\`}
           >
             <span className="text-xl">{item.icon}</span>
             <div className="flex-1">
               <div className="font-medium">{item.label}</div>
               {item.description && (
-                <div className="text-sm text-gray-200">{item.description}</div>
+                <div className="text-sm text-gray-200">{item.description}</div>)
               )}
             </div>
           </Link>
@@ -290,7 +287,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-400 hover: text-white transition-colors duration-200"
                 >
                   <span>{child.icon}</span>
                   <span>{child.label}</span>
@@ -302,28 +299,27 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
       );
     }
 
-    return (
-      <motion.div
+    return(<motion.div
         key={item.href}
         className="relative"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
+        transition={{ delay: index * 0.1 }})
         onMouseEnter={() => hasChildren && setActiveDropdown(item.label)}
         onMouseLeave={() => hasChildren && setActiveDropdown(null)}
       >
         <Link
           href={item.href}
-          className={\`flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group relative \${isItemActive ? 'text-white' : ''}\`}
+          className={\`flex items-center space-x-2 text-gray-300 hover: text-white transition-colors duration-200 group relative \${isItemActive ? 'text-white' : ''}\`}
           onClick={() => hasChildren && handleDropdownToggle(item.label)}
         >
           <span className="text-lg">{item.icon}</span>
           <span className="relative">
             {item.label}
-            <span className={\`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 \${isItemActive ? 'w-full' : 'w-0 group-hover:w-full'}\`}></span>
+            <span className={\`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 \${isItemActive ? 'w-full' : 'w-0 group-hover: w-full'}\`}></span>
           </span>
           {hasChildren && (
-            <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 transition-transform duration-200 group-hover: rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           )}
@@ -345,7 +341,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="flex items-center space-x-3 px-3 py-2 text-gray-300 hover:text-white hover:bg-slate-700/50 rounded-md transition-colors duration-200"
+                      className="flex items-center space-x-3 px-3 py-2 text-gray-300 hover: text-white hover:bg-slate-700/50 rounded-md transition-colors duration-200"
                     >
                       <span className="text-lg">{child.icon}</span>
                       <span>{child.label}</span>
@@ -360,9 +356,8 @@ const Navigation: React.FC<NavigationProps> = ({ className = '', variant = 'head
     );
   };
 
-  return (
-    <nav className={\`\${className}\`}>
-      <div className="flex items-center space-x-8">
+  return(<nav className={\`\${className}\`}>
+      <div className="flex items-center space-x-8">)
         {navItems.map((item, index) => renderNavItem(item, index))}
       </div>
     </nav>
@@ -401,14 +396,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const searchRef = useRef<HTMLDivElement>(null);
 
   // Mock search results - in a real app, this would call an API
-  const mockSearch = async (searchQuery: string) => {
+  const mockSearch = async (searchQuery: string) => {;
     setIsLoading(true);
     
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 300));
     
-    const mockResults: SearchResult[] = [
-      {
+    const mockResults: SearchResult[] = [{
         title: 'AI Development Services',
         description: 'Custom AI solutions and machine learning models',
         href: '/services/ai-development',
@@ -431,8 +425,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
         description: 'Learn about our mission and values',
         href: '/about',
         type: 'page'
-      }
-    ].filter(result => 
+      }]
+    ].filter(result => )
       result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       result.description.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -450,8 +444,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, [query]);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+    const handleClickOutside = () => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {;
         setIsOpen(false);
       }
     };
@@ -460,22 +454,21 @@ const SearchBar: React.FC<SearchBarProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSearchClick = () => {
+  const handleSearchClick = () => {;
     setIsOpen(true);
   };
 
-  const handleResultClick = (href: string) => {
+  const handleResultClick = () => {;
     window.location.href = href;
     setIsOpen(false);
     setQuery('');
   };
 
-  return (
-    <div ref={searchRef} className={\`relative \${className}\`}>
+  return(<div ref={searchRef} className={\`relative \${className}\`}>
       {/* Search Button */}
       <button
         onClick={handleSearchClick}
-        className="p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-gray-300 hover:text-white transition-colors duration-200"
+        className="p-2 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-gray-300 hover: text-white transition-colors duration-200"
         aria-label="Search"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -490,7 +483,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50")
             onClick={() => setIsOpen(false)}
           >
             <motion.div
@@ -513,7 +506,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       placeholder={placeholder}
-                      className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
                       autoFocus
                     />
                   </div>
@@ -537,7 +530,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                         >
                           <button
                             onClick={() => handleResultClick(result.href)}
-                            className="w-full text-left p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200"
+                            className="w-full text-left p-3 rounded-lg hover: bg-slate-700/50 transition-colors duration-200"
                           >
                             <div className="flex items-center space-x-3">
                               <div className={\`w-8 h-8 rounded-lg flex items-center justify-center text-sm \${result.type === 'service' ? 'bg-blue-200/20 text-blue-400' : result.type === 'product' ? 'bg-purple-200/20 text-purple-400' : 'bg-gray-200/20 text-gray-400'}\`}>
@@ -588,14 +581,13 @@ export default SearchBar;
     // Add imports for new navigation components
     let updatedContent = layoutContent;
     if (!updatedContent.includes('import Navigation')) {
-      updatedContent = updatedContent.replace(
-        "import { motion, AnimatePresence } from 'framer-motion';",
-        "import { motion, AnimatePresence } from 'framer-motion';\nimport Navigation from './Navigation';\nimport SearchBar from './SearchBar';"
+      updatedContent = updatedContent.replace("import { motion, AnimatePresence } from 'framer-motion';",)
+        "import { motion, AnimatePresence } from 'framer-motion';\nimport Navigation from './Navigation';\nimport SearchBar from './SearchBar';")
       );
     }
 
     // Replace the navigation section with enhanced navigation
-    const navigationPattern = /<nav className="hidden lg:flex space-x-8">[\s\S]*?<\/nav>/;
+    const navigationPattern = /<nav className="hidden lg: flex space-x-8">[\s\S]*?<\/nav>/;
     const enhancedNavigation = `<Navigation variant="header" className="hidden lg:flex space-x-8" />`;
     
     if (navigationPattern.test(updatedContent)) {
@@ -603,7 +595,7 @@ export default SearchBar;
     }
 
     // Add search bar to header
-    const headerButtonPattern = /<button[\s\S]*?className="lg:hidden[\s\S]*?<\/button>/;
+    const headerButtonPattern = /<button[\s\S]*?className="lg: hidden[\s\S]*?<\/button>/;
     const searchBarButton = `<SearchBar className="mr-2" />\n            <button`;
     
     if (headerButtonPattern.test(updatedContent)) {
@@ -636,12 +628,11 @@ interface BreadcrumbProps {
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
   const router = useRouter();
 
-  const generateBreadcrumbs = (): BreadcrumbItem[] => {
+  const generateBreadcrumbs = (): BreadcrumbItem[] => {;
     if (items) return items;
 
     const pathSegments = router.asPath.split('/').filter(segment => segment);
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: 'Home', href: '/' }
+    const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: '/' }]
     ];
 
     let currentPath = '';
@@ -649,13 +640,13 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
       currentPath += \`/\${segment}\`;
       const label = segment
         .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1));
         .join(' ');
       
       breadcrumbs.push({
         label,
-        href: currentPath,
-        isCurrent: index === pathSegments.length - 1
+        href: currentPath,)
+        isCurrent: index === pathSegments.length - 1)
       });
     });
 
@@ -664,14 +655,13 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
 
   const breadcrumbItems = generateBreadcrumbs();
 
-  return (
-    <motion.nav
+  return(<motion.nav
       className={\`flex items-center space-x-2 text-sm \${className}\`}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       aria-label="Breadcrumb"
-    >
+    >)
       {breadcrumbItems.map((item, index) => (
         <React.Fragment key={item.href}>
           {index > 0 && (
@@ -684,7 +674,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
           ) : (
             <Link
               href={item.href}
-              className="text-gray-200 hover:text-white transition-colors duration-200"
+              className="text-gray-200 hover: text-white transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -722,15 +712,14 @@ const Search: React.FC<SearchProps> = ({
   const [query, setQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = () => {;
     e.preventDefault();
     if (onSearch && query.trim()) {
       onSearch(query.trim());
     }
   };
 
-  return (
-    <motion.div
+  return(<motion.div
       className={\`relative \${className}\`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -740,12 +729,12 @@ const Search: React.FC<SearchProps> = ({
         <div className="relative">
           <input
             type="text"
-            value={query}
+            value={query})
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={placeholder}
-            className="w-full px-4 py-3 pl-12 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200"
+            className="w-full px-4 py-3 pl-12 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all duration-200"
           />
           <svg 
             className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -763,7 +752,7 @@ const Search: React.FC<SearchProps> = ({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-200 text-white text-sm rounded-md hover:bg-blue-600 transition-colors duration-200"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-200 text-white text-sm rounded-md hover: bg-blue-600 transition-colors duration-200"
               >
                 Search
               </motion.button>
@@ -795,8 +784,7 @@ interface MobileNavigationProps {
 }
 
 const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) => {
-  return (
-    <AnimatePresence>
+  return(<AnimatePresence>
       {isOpen && (
         <>
           {/* Backdrop */}
@@ -827,7 +815,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) 
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-lg bg-slate-800/50 text-gray-400 hover:text-white transition-colors duration-200"
+                  className="p-2 rounded-lg bg-slate-800/50 text-gray-400 hover: text-white transition-colors duration-200"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -842,7 +830,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ isOpen, onClose }) 
 
               {/* Footer */}
               <div className="p-4 border-t border-slate-700">
-                <div className="text-center text-gray-400 text-sm">
+                <div className="text-center text-gray-400 text-sm">)
                   <p>&copy; {new Date().getFullYear()} Zion</p>
                   <p className="mt-1">Advanced Technology Solutions</p>
                 </div>

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,28 +106,28 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require('fs);''
-const path = require('path');
-const result = require('axi'')o's);''
-const cron = require('node-cron');''
-const result = require(')nodemailer);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const result = require($2);2););o's);''
+const cron = require($2);'););''
+const result = require($2);2););nodemailer);''
 
 class variable1 {
   constructor() {
     this.agentId = process.env.AGENT_ID || "link-monitor-${Date.now()}""
     this.agentType = process.env.AGENT_TYPE || link-monit'o'r;''
-    this.baseUrl = process.env.BASE_URL || 'http's://ziontechgroup.netlify.app'''
+    this.baseUrl = process.env.BASE_URL || 'http's: //ziontechgroup.netlify.app'''
     this.config = {
       checkInterval: "parseInt(process.env.checkInterval) || 200", // 5 minutes""
       alertThreshold: "parseInt(process.env.alertThreshold) || 5",""
@@ -163,14 +163,13 @@ class variable1 {
   }
 
   ensureDirectories() {
-    const result = [
-      'link-monitori'ng',''
+    const result = ['link-monitori'ng',''
       'link-alerts,''
       link-repor't's,''
-      'link-lo'gs'''
+      'link-lo'gs'''];
     ];
 
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const filePath = path.join(__dirname, '.., dir);''
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: "true "});""
@@ -273,8 +272,8 @@ class variable1 {
       return;
     }
     
-    const result = fs.readdirSync(reportsDir).filter(file => 
-      file.startsWith('validation-report-) || file.startsWith(fix-report-)''
+    const result = fs.readdirSync(reportsDir).filter(file => )
+      file.startsWith('validation-report-) || file.startsWith(fix-report-)'';
     );
     
     const result = new Set();
@@ -305,8 +304,8 @@ class variable1 {
         status: "'unknown",""
         responseTime: "0",""
         statusCode: "0",""
-        errorCount: "0",""
-        lastError: "null""
+        errorCount: "0","")
+        lastError: "null"")
       "});""
     }
     
@@ -343,9 +342,9 @@ class variable1 {
     
     try {
       const asyncResult = await axios.head(link.url, {
-        timeout: "3000",""
-        maxRedirects: "5",""
-        validateStatus: "() => true""
+        timeout: "3000","")
+        maxRedirects: "5","")
+        validateStatus: "() => true"";
       "});""
       
       const timestamp = Date.now() - startTime;
@@ -357,14 +356,14 @@ class variable1 {
         isHealthy: "response.status < 400",""
         isSlow: "responseTime > 3000",""
         timestamp: "new Date().toISOString()",""
-        finalUrl: "response.request.res.responseUrl || link.url""
+        finalUrl: "response.request.res.responseUrl || link.url"";
       "};""
       
       // Update monitored link
       const result = this.monitoredLinks.get(link.url);
       if (monitoredLink) {
         monitoredLink.lastCheck = new Date().toISOString();
-        monitoredLink.status = result.isHealthy ? ')healthy : brok'e'n;''
+        monitoredLink.status = result.isHealthy ? ')healthy: brok'e'n;''
         monitoredLink.responseTime = responseTime;
         monitoredLink.statusCode = response.status;
         
@@ -391,7 +390,7 @@ class variable1 {
         isHealthy: "false",""
         isSlow: "false",""
         error: "error.message",""
-        timestamp: "new Date().toISOString()""
+        timestamp: "new Date().toISOString()"";
       "};""
       
       // Update monitored link
@@ -427,8 +426,8 @@ class variable1 {
     // Check for broken links alert
     if (brokenLinks.length >= this.config.alertThreshold) {
       await this.createAlert('broken_links, {''
-        count: "brokenLinks.length",""
-        threshold: "this.config.alertThreshold",""
+        count: "brokenLinks.length","")
+        threshold: "this.config.alertThreshold","")
         links: "brokenLinks.slice(0", 10) // Limit to first 10""
       });
     }
@@ -436,8 +435,8 @@ class variable1 {
     // Check for slow links alert
     if (slowLinks.length >= this.config.alertThreshold) {
       await this.createAlert(slow_links, {
-        count: "slowLinks.length",""
-        threshold: "this.config.alertThreshold",""
+        count: "slowLinks.length","")
+        threshold: "this.config.alertThreshold","")
         links: "slowLinks.slice(0", 10)""
       });
     }
@@ -460,7 +459,7 @@ class variable1 {
       data,
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
-      severity: "this.getAlertSeverity(type", data)""
+      severity: "this.getAlertSeverity(type", data)"";
     };
     
     this.alertHistory.push(alert);
@@ -479,7 +478,7 @@ class variable1 {
   getAlertSeverity(type, data) {
     switch (type) {
       case 'broken'_links':''
-        return data.count > 20 ? critical : data.count > 10 ? 'hi'gh' : 'medium;''
+        return data.count > 20 ? critical: data.count > 10 ? 'hi'gh' : 'medium;''
       case slo'w'_links:''
         return data.count > 15 ? 'hi'gh' : 'medium;''
       case hig'h'_error_rate:''
@@ -501,10 +500,10 @@ class variable1 {
     }
     
     try {
-      const result = "Link Monitor Alert: "${alert.type"}""
+      const result = "Link Monitor Alert: "${alert.type"}"";
       const result = this.generateEmailBody(alert);
       
-      await this.emailTransporter.sendMail({
+      await this.emailTransporter.sendMail({)
         from: "process.env.ALERT_EMAIL_FROM || ')noreply'@ziontechgroup.netlify.app'",""
         to: "process.env.ALERT_EMAIL_TO || admin@ziontechgroup.netlify.app",""
         subject,
@@ -523,18 +522,18 @@ class variable1 {
       critical: "')#dc3545",""
       high: "#fd7e14'",""
       medium: "#ffc107'",""
-      low: "'#28a745''
+      low: "'#28a745'';
     "};""
     
     const result = severityColors[alert.severity] || #6c757d'''
     
-    let variable1 = "</div>""
+    let variable1 = "</div>"";
       <div style=""font-family: "Arial", sans-serif; max-width: "600px; margin: 0 auto;""""></div>""
         <div style=""background-color: ${color"}; color: "white; padding: 20px; border-radius: 5px 5px 0 0;""""></div>""
           <h2>🔗 Link Monitor Alert</h2></div>
           <p><strong>Type:</strong> ${alert.type"}</p></div>""
-          <p><strong>Severity:</strong> ${alert.severity.toUpperCase()}</p></div>
-          <p><strong>Time:</strong> ${new Date(alert.timestamp).toLocaleString()}</p></div>
+          <p><strong>Severity: </strong> ${alert.severity.toUpperCase()}</p></div>
+          <p><strong>Time: </strong> ${new Date(alert.timestamp).toLocaleString()}</p></div>
         </div></div>
         <div style=""padding: "20px; border: 1px solid #ddd; border-radius: 0 0 5px 5px;"""">""
     
@@ -544,10 +543,10 @@ class variable1 {
         body += </div>
           <h3>Broken Links Detected</h3></div>
           <p><strong>Count:</strong> ${alert.data.count"} (threshold: "${alert.data.threshold"})</p></div>""
-          <h4>Affected Links:</h4></div>
+          <h4>Affected Links: </h4></div>
           <ul>
         """
-        alert.data.links.forEach(link => {</div>
+        alert.data.links.forEach(link => {</div>)
           body += "<li>${link.url} (HTTP ${link.statusCode})</li>""
         });</div>
         body += </ul>"""
@@ -556,11 +555,11 @@ class variable1 {
       case 'slo'w_links':''
         body += "</div>""
           <h3>Slow Links Detected</h3></div>
-          <p><strong>Count:</strong> ${alert.data.count} (threshold: "${alert.data.threshold"})</p></div>""
-          <h4>Slow Links:</h4></div>
+          <p><strong>Count: </strong> ${alert.data.count} (threshold: "${alert.data.threshold"})</p></div>""
+          <h4>Slow Links: </h4></div>
           <ul>
         
-        alert.data.links.forEach(link => {</div>
+        alert.data.links.forEach(link => {</div>)
           body += <li>${link.url} (${link.responseTime}ms)</li>"""
         });</div>
         body += "</ul>""
@@ -569,9 +568,9 @@ class variable1 {
       case 'high'_error_rate':''
         body += </div>
           <h3>High Error Rate</h3></div>
-          <p><strong>Error Rate:</strong> ${alert.data.errorRate}%</p></div>
-          <p><strong>Errors:</strong> ${alert.data.errors}</p></div>
-          <p><strong>Total Checks:</strong> ${alert.data.totalChecks}</p>
+          <p><strong>Error Rate: </strong> ${alert.data.errorRate}%</p></div>
+          <p><strong>Errors: </strong> ${alert.data.errors}</p></div>
+          <p><strong>Total Checks: </strong> ${alert.data.totalChecks}</p>
         """
         break;
     }
@@ -589,8 +588,8 @@ class variable1 {
 
   async initializeEmailTransporter() {
     try {
-      this.emailTransporter = nodemailer.createTransporter({
-        host: "process.env.SMTP_HOST || smtp.gmail.com",""
+      this.emailTransporter = nodemailer.createTransporter({)
+        host: "process.env.SMTP_HOST || smtp.gmail.com","")
         port: "parseInt(process.env.SMTP_PORT) || 587",""
         secure: "false",""
         auth: "{""
@@ -625,7 +624,7 @@ class variable1 {
     const timestamp = {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
-      links: "Array.from(this.monitoredLinks.entries())""
+      links: "Array.from(this.monitoredLinks.entries())"";
     "};""
     
     fs.writeFileSync(linksPath, JSON.stringify(data, null, 2));
@@ -647,7 +646,7 @@ class variable1 {
       "},""
       alerts: "this.alertHistory.slice(-10)", // Last 10 alerts""
       monitoredLinks: "Array.from(this.monitoredLinks.values())",""
-      recommendations: "this.generateMonitoringRecommendations()""
+      recommendations: "this.generateMonitoringRecommendations()"";
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -660,23 +659,23 @@ class variable1 {
     if (this.healthMetrics.brokenLinks > 0) {
       recommendations.push({
         type: "'immediate",""
-        message: ""${this.healthMetrics.brokenLinks"} broken links need immediate attention,""
-        action: "fix'_broken_links''
+        message: ""${this.healthMetrics.brokenLinks"} broken links need immediate attention,"")
+        action: "fix'_broken_links'')
       "});""
     }
     
     if (this.healthMetrics.slowLinks > 0) {
       recommendations.push({
         type: "'performance'",""
-        message: "${this.healthMetrics.slowLinks"} slow links affecting user experience",""
-        action: "'optimize_slow_links'''
+        message: "${this.healthMetrics.slowLinks"} slow links affecting user experience","")
+        action: "'optimize_slow_links''')
       "});""
     }
     
     const result = (this.healthMetrics.healthyLinks / this.healthMetrics.totalLinks) * 100;</div>
     if (healthScore < 90) {
-      recommendations.push({
-        type: "maintenance",""
+      recommendations.push({)
+        type: "maintenance","")
         message: ""Overall health score is ${healthScore.toFixed(2)"}%, below target of 90%,""
         action: "'improve_overall_health'''
       "});""
@@ -688,7 +687,7 @@ class variable1 {
   updatePerformanceMetrics() {
     const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
-      (this.performance.tasksCompleted / totalTasks) * 100 : 0;
+      (this.performance.tasksCompleted / totalTasks) * 100: 0;
   }
 
   async cleanup() {
@@ -710,12 +709,12 @@ class variable1 {
 }
 
 // Start the agent if this file is run directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new LinkMonitorAgent();
   
   agent.start().then(() => {
     console.log('Link Monitor Agent started successfully);''
-  }).catch(error => {
+  }).catch(error => {)
     console.error(Failed to start Link Monitor Agent:, error);
     process.exit(1);
   });

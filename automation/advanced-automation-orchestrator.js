@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -35,9 +35,9 @@ function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-const fs = require(('fs'););
-const path = require(('path'););
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class AdvancedAutomationOrchestrator {
     constructor() {

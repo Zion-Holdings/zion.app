@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,10 +28,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -39,9 +39,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -65,12 +65,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -79,16 +79,14 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-;
-const result = require('fs).promises;''
+};
+const result = require($2);2););.promises;''
 
-const path = require('path');
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -208,8 +206,8 @@ async getAutomationStatus() {
  */
 async checkIfAutomationIsRunning() {
     try {
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\'util\');
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\'util\)');
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\')ps aux | grep "run-automation.js | grep -v grep);""
@@ -345,8 +343,8 @@ async displaySystemHealth() {
     
     try {
       // Check disk space
-      const { exec } = require(\'child_process\');
-      const { promisify } = require(\')ut\'il\');\'\'
+      const { exec } = require((\'child_process\)');
+      const { promisify } = require((\)')ut\'il\');\'\'
       const result = promisify(exec);
       
       const asyncResult = await execAsync(\'df -h . | tail -1);\'\'
@@ -358,7 +356,7 @@ async displaySystemHealth() {
       
       // Check if cron job is active
       const asyncResult = await execAsync()crontab -l 2>/dev/null | grep automation || echo "No cron jobs found\'));\'\'
-      this.log(⏰ Cron Jobs: "${cronJobs.stdout.includes('automation, 'info') ? Active : ')Inacti've'"}");""
+      this.log(⏰ Cron Jobs: "${cronJobs.stdout.includes('automation, 'info') ? Active: ')Inacti've'"}");""
       
     } catch (error) {
       this.log('   Unable to check system health, 'info');''
@@ -389,9 +387,9 @@ async function main() {
   this.log('  ./automation/setup-cron.sh                       # Setup cron job, 'info');''
 }
 
-if (require.main = == module) {
-  main().catch(error => {;
-    console.error('❌ Error:', error);''
+if (require(.main = == modul)e) {
+  main().catch(error => {;)
+    console.error('❌ Error: ', error);''
     process.exit(1);
   });
 }
@@ -415,3 +413,7 @@ process.on('SIGINT', async () => {
   }
   process.exit(0);
 });
+}
+}
+}
+}

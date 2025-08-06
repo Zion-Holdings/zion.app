@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -27,9 +27,9 @@ const memoryOptimization = {
   }
 };
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class DeploymentSystem {
     constructor() {
@@ -62,7 +62,7 @@ class DeploymentSystem {
             
             console.log('Production deployment completed successfully');
         } catch (error) {
-            console.error('Deployment failed:', error.message);
+            console.error('Deployment failed: ', error.message);
             throw error;
         }
     }
@@ -91,7 +91,7 @@ class DeploymentSystem {
         // Deploy
         execSync('netlify deploy --prod --dir = .next', { 
             cwd: this.projectRoot, 
-            stdio: 'inherit' ;
+            stdio: 'inherit' ;)
         });
     }
 
@@ -99,9 +99,8 @@ class DeploymentSystem {
         console.log('Running post-deployment checks...');
         
         // Check if deployment was successful
-        const checks = [
-            this.checkBuildOutput(),
-            this.checkDeploymentStatus(),
+        const checks = [this.checkBuildOutput(),
+            this.checkDeploymentStatus(),];
             this.checkPerformance()];
         
         await Promise.all(checks);

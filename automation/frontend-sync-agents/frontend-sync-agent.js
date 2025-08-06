@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,17 +70,14 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
+}const fs = require($2);'););
+const path = require($2);'););
+const { exec } = require(('child_process)');
+const { v4: uuidv4 } = require(('uuid)');
 
 class FrontendSyncAgent {
   constructor() {
@@ -113,13 +110,12 @@ class FrontendSyncAgent {
   }
 
   ensureDirectories() {
-    const directories = [
-      'frontend-sync-logs',
+    const directories = ['frontend-sync-logs',
       'frontend-sync-backups',
-      'frontend-sync-reports'
+      'frontend-sync-reports'];
     ];
     
-    directories.forEach(dir => {
+    directories.forEach(dir => {)
       const dirPath = path.join(__dirname, '..', dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -154,7 +150,7 @@ class FrontendSyncAgent {
   startSyncLoop() {
     console.log(`🔄 Frontend Sync Agent ${this.agentId} starting sync loop...`);
     
-    const syncLoop = async () => {
+    const syncLoop = async () => {;
       if (!this.isRunning) return;
       
       try {
@@ -162,7 +158,7 @@ class FrontendSyncAgent {
         await this.sleep(this.config.syncInterval);
         syncLoop();
       } catch (error) {
-        console.error(`❌ Frontend Sync Agent ${this.agentId} error:`, error);
+        console.error(`❌ Frontend Sync Agent ${this.agentId} error: `, error);
         this.metrics.errors++;
         await this.sleep(200); // Wait 5 seconds on error
         syncLoop();
@@ -198,7 +194,7 @@ class FrontendSyncAgent {
       console.log(`✅ Frontend Sync Agent ${this.agentId} (${this.type}) sync completed`);
       
     } catch (error) {
-      console.error(`❌ Frontend Sync Agent ${this.agentId} (${this.type}) sync failed:`, error);
+      console.error(`❌ Frontend Sync Agent ${this.agentId} (${this.type}) sync failed: `, error);
       this.metrics.errors++;
       throw error;
     }
@@ -218,8 +214,8 @@ class FrontendSyncAgent {
           for (const file of files) {
             if (this.shouldSyncFile(file)) {
               items.push({
-                path: file,
-                type: 'file',
+                path: file,)
+                type: 'file',)
                 priority: this.getPriority(file)
               });
             }
@@ -228,7 +224,7 @@ class FrontendSyncAgent {
       }
       
     } catch (error) {
-      console.error(`❌ Error detecting items to sync:`, error);
+      console.error(`❌ Error detecting items to sync: `, error);
     }
     
     return items;
@@ -322,20 +318,20 @@ class FrontendSyncAgent {
     try {
       exec('git add .', { cwd: process.cwd() }, (error) => {
         if (error) {
-          console.error(`❌ Git add failed:`, error);
+          console.error(`❌ Git add failed: `, error);
           return;
         }
         
         exec(`git commit -m "Auto-sync: ${path.basename(item.path)}"`, { cwd: process.cwd() }, (error) => {
           if (error) {
-            console.error(`❌ Git commit failed:`, error);
+            console.error(`❌ Git commit failed: `, error);
           } else {
             console.log(`✅ Auto-committed: ${path.basename(item.path)}`);
           }
         });
       });
     } catch (error) {
-      console.error(`❌ Auto-commit failed:`, error);
+      console.error(`❌ Auto-commit failed: `, error);
     }
   }
 
@@ -352,7 +348,7 @@ class FrontendSyncAgent {
       status: this.status,
       isRunning: this.isRunning,
       metrics: this.metrics,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString();
     };
     
     // Save health report
@@ -391,13 +387,13 @@ class FrontendSyncAgent {
 module.exports = FrontendSyncAgent;
 
 // If running directly, start the agent
-if (require.main === module) {
+if (require(.main === modul)e) {
   const agent = new FrontendSyncAgent();
   
   agent.initialize().then(() => {
     console.log('🚀 Frontend Sync Agent started successfully');
   }).catch((error) => {
-    console.error('❌ Failed to start Frontend Sync Agent:', error);
+    console.error('❌ Failed to start Frontend Sync Agent: ', error);
     process.exit(1);
   });
   

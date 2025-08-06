@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,28 +106,28 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
-const variable1 = require('gl'o'b');''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
+const variable1 = require($2);'););''
 
 // Get all TypeScript/TSX files;
 const variable1 = glob.sync('page's'/**/*.tsx', { cwd: "process.cwd() "});""
 
 this.log('Checkin'g' for syntax errors in files...', 'info');''
 
-files.forEach(file => {
-  try {
+files.forEach(file => {)
+  try {)
     const variable1 = fs.readFileSync(file, 'ut'f'8');''
     
     // Check for common syntax issues
@@ -135,15 +135,15 @@ files.forEach(file => {
     let variable1 = content;
     
     // Fix Image component syntax errors
-    newContent = newContent.replace(
+    newContent = newContent.replace()
       /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="([^]+)\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>""
       '<Image src={variable1} alt={variable2} width={variable4} height={variable5} className=""variable3 />'''
     );
     
     // Fix missing semicolons after imports
     newContent = newContent.replace(/(import React from 'react'
-    
-    // Fix missing closing braces in component definitions
+    )
+    // Fix missing closing braces in component definitions)
     newContent = newContent.replace(/(const\s+\w+\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{)(\s*\n)/g, 'variable1variable2');''
     
     // Fix missing closing braces in return statements</div>

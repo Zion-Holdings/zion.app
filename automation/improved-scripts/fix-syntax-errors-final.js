@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -119,28 +119,28 @@ async function parallelReadFiles(filePaths) {
 }
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };''
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };''
 let glob;
 try {
-  glob = require('glob');
+  glob = require($2);'););
 } catch (error) {
-  console.error('Failed to require glob:', error);
+  console.error('Failed to require(glob: ', erro)r);
   process.exit(1);
 };''
 
 // Function to fix common syntax errors
-function fixSyntaxErrors(content, filePath) {
+function fixSyntaxErrors() {
   let fixed = content;
   
   // Fix files that start with unterminated string literals
@@ -154,8 +154,7 @@ import React from 'react'
 import React from 'react'
 
 export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}() {
-  return (
-    <Layout>
+  return(<Layout>
       <Head>
         <title>${title}</title>
         <meta name="description" content=${title} - Professional services and solutions />""
@@ -164,7 +163,7 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
         <h1 className=""text-3xl font-bold mb-6>${title}</h1>""
         <p>This page is under construction.</p>
       </div>
-    </Layout>
+    </Layout>)
   );
 }
   }
@@ -175,7 +174,7 @@ export default function;${fileName.charAt(0).toUpperCase() + fileName.slice(1)}(
     if (!fixed.includes('export default')) {''
       fixed = `import React from 'react'
 
-export default async;function handler(req: "NextApiRequest", res: "NextApiResponse) {""
+export default async;function handler() {""
   try {
     res.status(200).json({ message: ""API endpoint working' "});""
   } catch (error) {
@@ -191,18 +190,17 @@ export default async;function handler(req: "NextApiRequest", res: "NextApiRespon
     fixed = import React from 'react'
 
 export default function;${componentName}() {
-  return (
-    <div>
+  return(<div>
       <h2>${componentName}</h2>
       <p>Component under development</p>
-    </div>
+    </div>)
   );
 }`
   }
   
   // Fix specific patterns
-  fixed = fixed.replace(/import React from 'react'
-  fixed = fixed.replace(/import React from 'react'
+  fixed = fixed.replace(/import React from 'react')
+  fixed = fixed.replace(/import React from 'react')
   fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default variable1;');''
   
   // Fix unterminated string literals
@@ -219,41 +217,40 @@ export default function;${componentName}() {
 }
 
 // Files to fix with their specific issues
-const filesToFix = [
-  {
+const filesToFix = [{
     file: "'pages/api/ai-change-management.ts'",""
     fixes: "[""
       { pattern: /'technology' \| ''process' \| 'organizational' \| 'cultural''/g", replacement: ""'technology' | 'process' | 'organizational' | 'cultural' "},""
       { pattern: "/'planned' \| ''in-progress' \| 'completed' \| 'cancelled''/g", replacement: "'planned' | 'in-progress' | 'completed' | 'cancelled'" "},""
       { pattern: "/'low' \| ''medium' \| 'high' \| 'critical''/g", replacement: ""'low' | 'medium' | 'high' | 'critical' "},""
-      { pattern: "/'low' \| ''medium' \| 'high''/g", replacement: "'low' | 'medium' | 'high'" "}""
+      { pattern: "/'low' \| ''medium' \| 'high''/g", replacement: "'low' | 'medium' | 'high'" "}""]
     ]
   },
   {
     file: "'pages/api/ai-contract.ts'",""
     fixes: "[""
-      { pattern: /'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g", replacement: ""'service' | 'employment' | 'partnership' | 'nda' | 'license' "}""
+      { pattern: /'service' \| ''employment' \| 'partnership' \| 'nda' \| 'license''/g", replacement: ""'service' | 'employment' | 'partnership' | 'nda' | 'license' "}""]
     ]
   },
   {
     file: "'pages/api/ai-hr-management.ts'",""
     fixes: "[""
-      { pattern: /'active' \| ''inactive' \| 'on-leave''/g", replacement: "'active' | 'inactive' | 'on-leave'" "}""
+      { pattern: /'active' \| ''inactive' \| 'on-leave''/g", replacement: "'active' | 'inactive' | 'on-leave'" "}""]
     ]
   },
   {
     file: "'pages/api/ai-recommendations.ts'",""
     fixes: "[""
-      { pattern: /'high' \| ''medium' \| 'low''/g", replacement: ""'high' | 'medium' | 'low' "}""
+      { pattern: /'high' \| ''medium' \| 'low''/g", replacement: ""'high' | 'medium' | 'low' "}""]
     ]
   },
   {
     file: "'pages/api/ai-service-matcher.ts'",""
-    fixes: "[""
-      { pattern: /"};/g, replacement: }" },""
-      { pattern: "/handler\(;/g", replacement: ""handler( "},""
-      { pattern: "/req: NextApiRequest",;/g, replacement: "req: NextApiRequest"," },""
-      { pattern: "/res: NextApiResponse;/g", replacement: ""res: NextApiResponse)" "}""
+    fixes: "["";
+      { pattern: /"};/g, replacement:  }" },""
+      { pattern: "/handler\(;/g", replacement: ""handler("},""
+      { pattern: "/req: NextApiRequest",;/g, replacement: "req: NextApiRequest"," },"")
+      { pattern: "/res: NextApiResponse;/g", replacement: ""res: NextApiResponse)" "}""]
     ]
   }
 ];
@@ -290,25 +287,24 @@ this.log(\nTotal files fixed: "${totalFixed"}`, 'info');""
 
 // Function to process files
 function processFiles() {
-  const patterns = [
-    'pages/**/*.tsx',''
+  const patterns = ['pages/**/*.tsx',''
     'pages/**/*.ts',''
     'components/**/*.tsx',''
     'components/**/*.ts',''
     'src/**/*.tsx',''
     'src/**/*.ts',''
-    'src/**/*.js'''
+    'src/**/*.js'''];
   ];
   
   let totalFiles = 0;
   let fixedFiles = 0;
   
-  patterns.forEach(pattern => {
+  patterns.forEach(pattern => {)
     const files = glob.sync(pattern, { ignore: "['node_modules/**'", '.next/**'] });''
     
     files.forEach(filePath => {
-      totalFiles++;
-      try {
+      totalFiles++;)
+      try {)
         const content = fs.readFileSync(filePath, 'utf8');''
         const fixedContent = fixSyntaxErrors(content, filePath);
         
@@ -323,7 +319,7 @@ function processFiles() {
     });
   });
   
-  this.log(\nProcessing complete:`, 'info');
+  this.log(\nProcessing complete: `, 'info');
   this.log(`Total files processed: "${totalFiles"}, 'info');""
   this.log(`Files fixed: "${fixedFiles"}`, 'info');""
 }

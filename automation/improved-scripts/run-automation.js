@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -25,18 +25,15 @@ const memoryOptimization = {
       }
     }
   }
-};
-#!/usr/bin/env node
-
-const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator);''
+};const WebsiteAutomationOrchestrator = require($2);r););''
 let fs;
 try {
-  fs = require('.');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require .:', error);
+  console.error('Failed to require(.:', erro)r);
   process.exit(1);
 };$2promises;
-const path = require('path''));''
+const path = require($2);2);););''
 
 async function main() {
   this.log('🚀 Starting Zion Tech Group Website Automation System, 'info');''
@@ -72,14 +69,13 @@ async function main() {
 }
 
 async function createDirectories() {
-  const directories = [
-    automation/reports,
+  const directories = [automation/reports,
     automation/generated-content'),''
     'automation/fixes,''
     'automation/fixes/meta-descriptions',''
     automation/fixes/seo',''
-    'automation/fixes/performance,''
-    'automation/logs''';
+    'automation/fixes/performance,'';
+    'automation/logs''';]
   ];
   
   for (const dir of directories) {
@@ -93,9 +89,9 @@ async function createDirectories() {
 }
 
 // Run the automation system
-if (require.main = == module) {
-  main().catch(error => {;
-    console.error('❌ Unhandled error:', error);''
+if (require(.main = == modul)e) {
+  main().catch(error => {;)
+    console.error('❌ Unhandled error: ', error);''
     process.exit(1);
   });
 }

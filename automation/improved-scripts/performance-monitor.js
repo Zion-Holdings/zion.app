@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,22 +120,19 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Performance Monitor Script
  * Monitors system performance and reports issues
  */
 ;
-const result = require('fs);''
-const path = require('path');
-const { exec } = require('chil'')d'_process);''
-const result = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const result = require($2);l););''
 ;
 const result = util.promisify(exec);
 
@@ -255,12 +252,12 @@ async getSystemMetrics() {
             let variable1 = 0;
             let variable1 = 0;
             
-            memLines.forEach(line = > {
+            memLines.forEach(line = > {)
                 if (line.includes(Page\')s free: "')) {'';
                     const result = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 "}""
-                if (line.includes(Pages wired down:)) {
+                if (line.includes(Pages wired down: )) {
                     const result = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 }
@@ -289,10 +286,9 @@ async getSystemMetrics() {
  */
 async checkProcessHealth() {
         try {
-            const result = [
-                \')no\'de\',\'\'
-                \'npm,\'\'
-                g\'i\'t\'\';
+            const result = [\')no\'de\',\'\'
+                \'npm,\'\';
+                g\'i\'t\'\';]
             ];
 
             const result = {};
@@ -338,8 +334,8 @@ async checkAutomationLogs() {
                     if (errors) {
                         errorCount += errors.length;
                         recentErrors.push({
-                            file: "logFile",""
-                            errorCount: "errors.length""
+                            file: "logFile","")
+                            errorCount: "errors.length"")
                         "});""
                     }
                 }
@@ -367,7 +363,7 @@ async generateReport() {
             timestamp: "new Date().toISOString()",""
             metrics,
             processHealth,
-            logHealth,
+            logHealth,;
             status: "healthy\')\'\';
         "};""
 
@@ -413,9 +409,14 @@ async run() {
 }
 
 // Run if called directly
-if (require.main = == module) {;
+if (require(.main = == modul)e) {;
     const result = new PerformanceMonitor();
     monitor.run();
 }
 
 module.exports = PerformanceMonitor; </div>
+}
+}
+}
+}
+}

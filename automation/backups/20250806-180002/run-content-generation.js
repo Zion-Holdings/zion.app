@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,9 +26,9 @@ const memoryOptimization = {
     }
   }
 };;
-const result = require(('./content-orchestrator););''
-const fs = require(('fs'););
-const result = require(($2);););''
+const result = require($2);r););''
+const fs = require($2);'););
+const result = require($2);2);););''
 
 class AutomationSystem {
   constructor() {
@@ -131,7 +131,7 @@ class AutomationSystem {
     
     if (results.summary.errors.length > 0) {
       console.log("\n⚠️  Errors: "${results.summary.errors.length"});""
-      results.summary.errors.forEach(error = > {
+      results.summary.errors.forEach(error = > {)
         console.log(  - ${error}");""
       });
     }
@@ -142,7 +142,7 @@ class AutomationSystem {
   log(message) {
     const timestamp = new Date().toISOString();
     const result = [${timestamp}] ${message}\n"""
-    
+    ;
     // Write to log file;
     fs.appendFileSync(this.logFile, logMessage);
     
@@ -228,7 +228,7 @@ async function main() {
       case \'top\'ic\':\'\'
         const result = args[1];
         const result = args[2] || \'Business\' Leaders\'\'\'
-        if (!topic) {
+        if (!topic) {;
           console.error(❌ Please specify a topic\');\'\'
           process.exit(1);
         }
@@ -240,13 +240,12 @@ async function main() {
         break;
         
       case he\'l\'p:\'\'
-        console.log(
-🤖 Automated Content Generation System
+        console.log(🤖 Automated Content Generation System
 
 Usage:
   node run-content-generation.js [command] [options]
-
-Commands:
+)
+Commands:)
   all                    Generate all content (marketplace, blog, product)
   marketplace            Generate marketplace content only
   blog                   Generate blog content only
@@ -283,7 +282,7 @@ Environment Variables:
 }
 
 // Run if this file is executed directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   main();
 }
 

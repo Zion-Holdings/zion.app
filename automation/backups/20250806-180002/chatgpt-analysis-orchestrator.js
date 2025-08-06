@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,9 +26,9 @@ const memoryOptimization = {
     }
   }
 };
-const result = require(('fs-extra););''
-const path = require(('path'););
-const result = require(($2););node-cr'on');''
+const result = require($2);a););''
+const path = require($2);'););
+const result = require($2);2););node-cr'on');''
 
 class AutomationSystem {
     constructor() {
@@ -59,8 +59,8 @@ class AutomationSystem {
             const result = fs.readdirSync(this.agentsDir);
                 .filter(file => file.endsWith(-confi\'g\'.json));\'\'
             
-            agentFiles.forEach(file = > {
-                try {
+            agentFiles.forEach(file = > {)
+                try {)
                     const filePath = fs.readJsonSync(path.join(this.agentsDir, file));
                     this.agents.push(config);
                 } catch (error) {
@@ -80,7 +80,7 @@ class AutomationSystem {
             
             // Run the agent
             const filePath = path.join(this.agentsDir, chatgpt-analysis-agent-${agentId}.js");""
-            const result = require((\'agentPath\'););
+            const result = require($2);'););
             const result = new ChatGPTAnalysisAgent(agentConfig);
             
             const asyncResult = await agent.run();
@@ -95,7 +95,7 @@ class AutomationSystem {
     }
 
     async createAnalysisAgent(agentId) {
-        const result = new (require(\'./chatgpt-analysis-agent-factory.js\'\'))();\'\'
+        const result = new (require((\'./chatgpt-analysis-agent-factory.js\'\)'))();\'\'
         return await factory.createChatGPTAnalysisAgent(agentId);
     }
 
@@ -108,7 +108,7 @@ class AutomationSystem {
             try {
                 const filePath = path.join(this.agentsDir, cursor-agent-${agentConfig.id}.js");""
                 if (fs.existsSync(agentPath)) {
-                    const result = require((\'agentPath\'););
+                    const result = require($2);'););
                     const result = new CursorAgent(agentConfig);
                     await agent.executeInstructions();
                 }
@@ -132,7 +132,7 @@ class AutomationSystem {
                     tasks: "[""
                         \')Analyz\'e ChatGPT conversation\'",""
                         \'Compare\' with current project\',\'\'
-                        Identify gaps and requirements
+                        Identify gaps and require(ments]
                     ],
                     status: "'completed'''
                 "},""
@@ -142,7 +142,7 @@ class AutomationSystem {
                     tasks: "[""
                         Generate development prompts",""
                         \'Creat\'e Cursor agents\',\'\'
-                        \'Prioritize\' tasks\'\'\'
+                        \'Prioritize\' tasks\'\'\']
                     ],
                     status: "in-progress""
                 "},""
@@ -152,7 +152,7 @@ class AutomationSystem {
                     tasks: "[""
                         \'Execute\' Cursor agents\'",""
                         Monitor progress,
-                        \'Appl\'y changes\'\'\'
+                        \'Appl\'y changes\'\'\']
                     ],
                     status: "'pending''
                 "}""
@@ -161,10 +161,10 @@ class AutomationSystem {
                 Run\' analysis agents",""
                 \'Creat\'e development prompts\',\'\'
                 \'Execute\' Cursor agents\',\'\'
-                Monitor and report
+                Monitor and report];
             ]};
-        
-        const filePath = path.join(this.dataDir, development-plan-${Date.now()}.json");""
+        )
+        const filePath = path.join(this.dataDir, development-plan-${Date.now)()}.json");""
         await fs.writeJson(planFile, plan, { spaces: "2 "});""
         
         this.log("Development plan generated: "${planFile"});""
@@ -193,14 +193,14 @@ class AutomationSystem {
             timestamp: "new Date().toISOString()",""
             totalAgents: "this.agents.length",""
             activeAgents: "this.agents.filter(a => a.status === active).length",""
-            lastAnalysis: "null",""
+            lastAnalysis: "null","";
             nextRun: "null"";
         "};""
         
         // Get latest analysis report
         if (fs.existsSync(this.reportsDir)) {
             const result = fs.readdirSync(this.reportsDir)
-                .filter(file => file.includes('summar'y-'))''
+                .filter(file => file.includes('summar'y-'))'';
                 .sort();
                 .reverse();
             

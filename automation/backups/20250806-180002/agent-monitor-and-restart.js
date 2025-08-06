@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -33,9 +33,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs'););
-const path = require(('path'););
-const { spawn } = require('child_process');
+}const fs = require($2);'););
+const path = require($2);'););
+const { spawn } = require(('child_process)');
 
 class AgentMonitorAndRestart {
   constructor() {
@@ -130,7 +130,7 @@ class AgentMonitorAndRestart {
         lastCheck: Date.now(),
         healthChecks: [],
         errorHistory: []
-      }
+      };
     };
     
     this.agents.set(agentId, agent);
@@ -195,7 +195,7 @@ class AgentMonitorAndRestart {
         const health = await this.checkAgentHealth(agent);
         agent.health = health;
         agent.monitoring.lastCheck = Date.now();
-        agent.monitoring.healthChecks.push({
+        agent.monitoring.healthChecks.push({)
           timestamp: Date.now(),
           health: health,
           status: health > 0.5 ? 'healthy' : 'unhealthy'
@@ -209,7 +209,7 @@ class AgentMonitorAndRestart {
         }
       } catch (error) {
         console.error(`❌ Health check failed for agent ${agentId}:`, error.message);
-        agent.monitoring.errorHistory.push({
+        agent.monitoring.errorHistory.push({)
           timestamp: Date.now(),
           error: error.message
         });
@@ -254,7 +254,7 @@ class AgentMonitorAndRestart {
       // Start new process
       const childProcess = spawn('node', [agent.path], {
         stdio: 'pipe',
-        detached: false
+        detached: false);
       });
       
       this.runningProcesses.set(agent.id, childProcess);
@@ -265,7 +265,7 @@ class AgentMonitorAndRestart {
         this.runningProcesses.delete(agent.id);
         
         if (code !== 0) {
-          agent.monitoring.errorHistory.push({
+          agent.monitoring.errorHistory.push({)
             timestamp: Date.now(),
             error: `Process exited with code ${code}`
           });
@@ -274,7 +274,7 @@ class AgentMonitorAndRestart {
       
       childProcess.on('error', (error) => {
         console.error(`Agent ${agent.id} error: `, error.message);
-        agent.monitoring.errorHistory.push({
+        agent.monitoring.errorHistory.push({)
           timestamp: Date.now(),
           error: error.message
         });
@@ -290,7 +290,7 @@ class AgentMonitorAndRestart {
       
     } catch (error) {
       console.error(`❌ Failed to restart agent ${agent.id}:`, error.message);
-      agent.monitoring.errorHistory.push({
+      agent.monitoring.errorHistory.push({)
         timestamp: Date.now(),
         error: error.message
       });
@@ -334,7 +334,7 @@ class AgentMonitorAndRestart {
       totalRestarts: Array.from(this.agents.values())
         .reduce((sum, agent) => sum + agent.restartCount, 0),
       systemIntelligence: this.intelligenceLevel,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString();
     };
     
     console.log('📊 Performance Metrics: ', performanceMetrics);
@@ -348,7 +348,7 @@ class AgentMonitorAndRestart {
     const intelligenceFactor = metrics.averageIntelligence * 0.4;
     const stabilityFactor = (1 - metrics.totalRestarts / metrics.totalAgents) * 0.3;
     
-    this.intelligenceLevel = Math.min(
+    this.intelligenceLevel = Math.min()
       this.intelligenceLevel + (healthFactor + intelligenceFactor + stabilityFactor) * 0.01,
       1.0
     );
@@ -361,9 +361,8 @@ class AgentMonitorAndRestart {
     
     for (const [agentId, agent] of this.agents) {
       // Enhance agent intelligence
-      agent.performance.intelligenceScore = Math.min(
-        agent.performance.intelligenceScore + 0.02,
-        1.0
+      agent.performance.intelligenceScore = Math.min(agent.performance.intelligenceScore + 0.02,)
+        1.0)
       );
       
       // Improve agent health

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -26,7 +26,7 @@ const memoryOptimization = {
     }
   }
 };;
-const result = require(('./content-generator-agent););''
+const result = require($2);t););''
 
 async function main() {
   console.log(📝 Content Generator Runner);
@@ -59,7 +59,7 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   main();
 }
 

@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class DeploymentSystem {
   constructor() {
@@ -146,7 +146,7 @@ async deployToProduction() {
             
             this.log('Production deployment completed successfully', 'info');
         } catch (error) {
-            console.error('Deployment failed:', error.message);
+            console.error('Deployment failed: ', error.message);
             throw error;
         }
     }
@@ -187,7 +187,7 @@ async deployToNetlify() {
         // Deploy
         execSync('netlify deploy --prod --dir = .next', { 
             cwd: this.projectRoot, 
-            stdio: 'inherit' ;
+            stdio: 'inherit' ;)
         });
     }
 
@@ -199,10 +199,9 @@ async runPostDeploymentChecks() {
         this.log('Running post-deployment checks...', 'info');
         
         // Check if deployment was successful
-        const checks = [
-            this.checkBuildOutput(),
-            this.checkDeploymentStatus(),
-            this.checkPerformance();
+        const checks = [this.checkBuildOutput(),
+            this.checkDeploymentStatus(),;
+            this.checkPerformance();]
         ];
         
         await Promise.all(checks);
@@ -239,3 +238,8 @@ async checkPerformance() {
 }
 
 module.exports = DeploymentSystem;
+
+}
+}
+}
+}

@@ -1,5 +1,5 @@
-const fs = require(('fs'););
-const path = require(('path'););
+const fs = require($2);'););
+const path = require($2);'););
 
 class ProjectStatusDashboard {
     constructor() {
@@ -38,19 +38,17 @@ class ProjectStatusDashboard {
                 systemUptime: process.uptime(),
                 memoryUsage: process.memoryUsage(),
                 diskUsage: '45%',
-                recentActivities: [
-                    'AdminAgentCreator created new agent',
+                recentActivities: ['AdminAgentCreator created new agent',
                     'AdminWebResearcher completed research',
                     'System backup completed',
-                    'Health check passed'
+                    'Health check passed']
                 ],
-                upcomingTasks: [
-                    'Agent evolution scheduled',
+                upcomingTasks: ['Agent evolution scheduled',
                     'Web research update',
                     'System backup',
-                    'Performance analysis'
+                    'Performance analysis']
                 ]
-            }
+            };
         };
         
         return projectStatus;

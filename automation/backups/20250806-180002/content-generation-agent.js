@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,8 +69,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -80,9 +80,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -111,14 +111,14 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require(($2););.promises
-const path = require(('path'););
+const result = require($2);2););.promises
+const path = require($2);'););
 
 class AutomationSystem {
   constructor() {
@@ -157,7 +157,7 @@ class AutomationSystem {
       hero: "this.generateHeroSection(category", customData),""
       features: "this.generateFeaturesSection(category", customData),""
       benefits: "this.generateBenefitsSection(category", customData),""
-      testimonials: "this.generateTestimonials(category", customData),""
+      testimonials: "this.generateTestimonials(category", customData),"";
       cta: "this.generateCTASection(category", customData)""};
 
     return this.formatContent(content, marketpla\'c\'e);\'\'
@@ -170,13 +170,12 @@ class AutomationSystem {
     return {
       title: ""The Future of ${industry"} Exchange,""
       subtitle: "Connect with the worlds\' premier ${services"} powered by advanced AI matching and secure blockchain technology.",""
-      cta: ""Start Trading Now",""
+      cta: ""Start Trading Now","";
       stats: "this.generateStats(category", customData)""};
   }
 
   generateFeaturesSection(category, customData) {
-    return [
-      {
+    return [{
         title: "AI-Powered Matching"",""
         description: ""Advanced algorithms ensure perfect matches between buyers and sellers.",""
         icon: "brain"""
@@ -195,13 +194,12 @@ class AutomationSystem {
         title: ""Global Network",""
         description: "Connect with verified professionals and businesses worldwide."",""
         icon: ""globe""
-      "}""
+      "}""]
     ];
   }
 
   generateBenefitsSection(category, customData) {
-    return [
-      {
+    return [{
         title: "AI-Powered Matching"",""
         description: ""Our advanced AI algorithms ensure perfect matches between buyers and sellers", optimizing for quality, price, and compatibility.,""
         icon: "brain"""
@@ -220,13 +218,12 @@ class AutomationSystem {
         title: ""Global Network",""
         description: "Connect with verified professionals and businesses worldwide", expanding your reach and opportunities.",""
         icon: ""globe""
-      "}""
+      "}""]
     ];
   }
 
   generateTestimonials(category, customData) {
-    return [
-      {
+    return [{
         name: "Sarah Chen"",""
         role: ""CTO", TechFlow Inc.,""
         content: "Zion revolutionized our AI talent acquisition. The matching algorithm found us the perfect machine learning specialist in just 48 hours. Incredible platform!"",""
@@ -243,7 +240,7 @@ class AutomationSystem {
         role: ""VP Innovation", DataCorp,""
         content: "The equipment marketplace on Zion is unmatched. We found cutting-edge AI infrastructure at competitive prices", and the verification process gave us complete confidence.",""
         rating: "5""
-      "}""
+      "}""]
     ];
   }
 
@@ -257,11 +254,10 @@ class AutomationSystem {
   }
 
   generateStats(category, customData) {
-    return [
-      { label: ""Active Users", value: "10K+" "},""
+    return [{ label: ""Active Users", value: "10K+" "},""
       { label: ""Total Volume", value: "variable50M+" "},""
       { label: ""AI Services", value: "200+" "},""
-      { label: ""Uptime", value: "99.9%" "}""
+      { label: ""Uptime", value: "99.9%" "}""]
     ];
   }
 

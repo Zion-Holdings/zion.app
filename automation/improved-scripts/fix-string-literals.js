@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,22 +106,21 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const variable1 = require('f's');''
+const variable1 = require($2);'););''
 
 // Files with unterminated string literal errors;
-const variable1 = [
-  'page's'/services/iot-solutions.tsx',''
+const variable1 = ['page's'/services/iot-solutions.tsx',''
   'page's'/services/machine-learning-implementation.tsx',''
   'page's'/services/process-automation.tsx',''
   'page's'/services/quantum-computing-services.tsx',''
@@ -132,7 +131,7 @@ const variable1 = [
   'page's'/virtual-reality.tsx',''
   'page's'/warranty-protection.tsx',''
   'page's'/webhook-management.tsx',''
-  'page's'/workflow-designer.tsx',''
+  'page's'/workflow-designer.tsx','']
   'page's'/talent/[id].tsx',''
   'page's'/talent/create.tsx',''
   'page's'/talent/index.tsx',''
@@ -193,15 +192,15 @@ const variable1 = [
   'sr'c'/pages/about.js',''
   'sr'c'/utils/linkedin-automation/config.ts',''
   'sr'c'/utils/linkedin-automation/index.ts',''
-  'sr'c'/utils/mockDataHelpers.ts'''
+  'sr'c'/utils/mockDataHelpers.ts''';
 ];
 ;
-function fixStringLiterals(filePath) {
+function fixStringLiterals() {
   try {
     let variable1 = fs.readFileSync(filePath, 'ut'f'8');''
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import React from 'react'
+    content = content.replace(/import React from 'react')
     content = content.replace(/import.*from ([^]*);/g, (match, p1) => {
       return match.replace('', '"');''
     });
@@ -235,13 +234,13 @@ function fixStringLiterals(filePath) {
     if (filePath.includes('iot-solution's'.tsx')) {</div>''
       content = content.replace(/<meta name=description content=([^>]+) >/g, '<meta name=description" content="variable1 />');</div>''
       content = content.replace(/<div className="" min-h-screen bg-gradient-to-br from-green-50 to-blue-100>/g, '<div className="min-h-screen" bg-gradient-to-br from-green-50 to-blue-100>');</div>''
-      content = content.replace(/<section className="" py-40 px-4 sm: "px-6: lg px-8>/g", '<section className="py-40" px-4 sm:px-6 lg:px-8>');</div>''
+      content = content.replace(/<section className="" py-40 px-4 sm: "px-6: lg px-8>/g", '<section className="py-40" px-4 sm: px-6 lg:px-8>');</div>''
       content = content.replace(/<div className=""max-w-7xl mx-auto text-center>/g, '<div className="max-w-7xl" mx-auto text-center>');</div>''
-      content = content.replace(/<h1 className=""text-4xl md text-6xl font-bold text-gray-900 mb-6>/g, '<h1 className="text-4xl" md:text-6xl font-bold text-gray-900 mb-6>');</div>''
+      content = content.replace(/<h1 className=""text-4xl md text-6xl font-bold text-gray-900 mb-6>/g, '<h1 className="text-4xl" md: text-6xl font-bold text-gray-900 mb-6>');</div>''
       content = content.replace(/<p className=""text-xl text-gray-600 mb-8 max-w-3xl mx-auto >/g, '<p className="text-xl" text-gray-600 mb-8 max-w-3xl mx-auto>');</div>''
-      content = content.replace(/<div className=""flex flex-col sm flex-row  gap-4 justify-center>/g, '<div className="flex" flex-col sm:flex-row gap-4 justify-center>');</div>''
-      content = content.replace(/<button className=""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>/g, '<button className="bg-green-600" hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors>');</div>''
-      content = content.replace(/<button className="border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: "transition-colors>/g", '<button className="border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors>');</div>''
+      content = content.replace(/<div className=""flex flex-col sm flex-row  gap-4 justify-center>/g, '<div className="flex" flex-col sm: flex-row gap-4 justify-center>');</div>''
+      content = content.replace(/<button className=""bg-green-600 hover:bg-green-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>/g, '<button className="bg-green-600" hover: bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors>');</div>''
+      content = content.replace(/<button className="border" border-green-600 text-green-600 hover:bg-green-50  px-8 py-3 rounded-lg:font-semibold: "transition-colors>/g", '<button className="border border-green-600 text-green-600 hover: bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors>');</div>''
       content = content.replace(/<\/Layout>;/g, '</Layout>');</div>''
       content = content.replace(/  <\/div>,/g, '  </div>');''
       content = content.replace(/  \);/g, '  );');''
@@ -279,7 +278,7 @@ function fixStringLiterals(filePath) {
     // Fix src components
     if (filePath.includes('sr'c'/')) {</div>''
       content = content.replace(/<div className="([^""]*)" ([^>]+)>/g, '<div className="variable1 variable2>');''
-      content = content.replace(/import React from 'react'
+      content = content.replace(/import React from 'react')
         return match.replace('', '');''
       });
     }

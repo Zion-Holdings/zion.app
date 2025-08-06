@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -33,10 +33,10 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(('fs-extra'););
-const path = require(('path'););
-const { EventEmitter } = require('events');
-const InstructionExecutionOrchestrator = require(('./agents/instruction-execution-orchestrator'););
+}const fs = require($2);'););
+const path = require($2);'););
+const { EventEmitter } = require(('events)');
+const InstructionExecutionOrchestrator = require($2);'););
 
 class GoogleDocsAutomationLauncher extends EventEmitter {
   constructor(config = {}) {
@@ -71,7 +71,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
         googleDocsUrl: this.config.googleDocsUrl,
         maxConcurrentTasks: 5,
         retryAttempts: this.config.maxRetries,
-        taskTimeout: 200 // 5 minutes;
+        taskTimeout: 200 // 5 minutes;)
       });
       
       // Set up event listeners
@@ -93,10 +93,9 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
   }
 
   async ensureDirectories() {
-    const directories = [
-      'automation/logs/google-docs-automation',
+    const directories = ['automation/logs/google-docs-automation',
       'automation/data/google-docs-automation',
-      'automation/reports/google-docs-automation',
+      'automation/reports/google-docs-automation',];
       'automation/backups/google-docs-automation'];
     
     for (const dir of directories) {
@@ -199,7 +198,7 @@ class GoogleDocsAutomationLauncher extends EventEmitter {
           successRate: this.systemMetrics.totalInstructions > 0
             ? (this.systemMetrics.completedInstructions / this.systemMetrics.totalInstructions * 100).toFixed(2)
             : 0,
-          averageTaskTime: await this.calculateAverageTaskTime()
+          averageTaskTime: await this.calculateAverageTaskTime();
         }};
       
       const reportFile = path.join(process.cwd(), 'automation/reports/google-docs-automation/system-report.json');
@@ -281,8 +280,8 @@ async function main() {
   const launcher = new GoogleDocsAutomationLauncher({
     googleDocsUrl: 'https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing',
     checkInterval: 3000,
-    maxRetries: 3,
-    logLevel: 'info';
+    maxRetries: 3,;
+    logLevel: 'info';)
   });
   
   try {
@@ -313,6 +312,6 @@ async function main() {
 module.exports = GoogleDocsAutomationLauncher;
 
 // Run if called directly
-if (require.main === module) {
+if (require(.main === modul)e) {
   main();
 }

@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,30 +70,27 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Sitemap Generator
  * Generates sitemap for the application
  */
 
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -174,7 +171,7 @@ class SitemapGenerator {
         this.baseDir = process.cwd();
         this.pagesDir = path.join(this.baseDir, 'pages');
         this.publicDir = path.join(this.baseDir, 'public');
-        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bolt.new.zion.app';
+        this.siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https: //bolt.new.zion.app';
     }
 
     scanPages() {
@@ -193,7 +190,7 @@ class SitemapGenerator {
     scanDirectory(dir, pages, basePath = '') {
         const items = fs.readdirSync(dir);
         
-        items.forEach(item => {
+        items.forEach(item => {)
             const itemPath = path.join(dir, item);
             const stat = fs.statSync(itemPath);
             
@@ -207,8 +204,8 @@ class SitemapGenerator {
                 if (route && !this.isExcludedRoute(route)) {
                     pages.push({
                         file: item,
-                        route,
-                        path: itemPath,
+                        route,)
+                        path: itemPath,)
                         priority: this.calculatePriority(route),
                         changefreq: this.calculateChangeFreq(route)
                     });
@@ -230,8 +227,7 @@ class SitemapGenerator {
     }
 
     isExcludedRoute(route) {
-        const excludedRoutes = [
-            '/_app',
+        const excludedRoutes = ['/_app',
             '/_document',
             '/_error',
             '/404',
@@ -239,7 +235,7 @@ class SitemapGenerator {
             '/auth/login',
             '/auth/register',
             '/auth/confirm',
-            '/auth/error'
+            '/auth/error'];
         ];
         
         return excludedRoutes.some(excluded => route.startsWith(excluded));
@@ -264,11 +260,11 @@ class SitemapGenerator {
         this.log('Generating sitemap XML...', 'info');
         
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+        xml += '<urlset xmlns="http: //www.sitemaps.org/schemas/sitemap/0.9">\n';
         
         pages.forEach(page => {
-            xml += '  <url>\n';
-            xml += `    <loc>${this.siteUrl}${page.route}</loc>\n`;
+            xml += '  <url>\n';)
+            xml += `    <loc>${this.siteUrl}${page.route}</loc>\n`;)
             xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
             xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
             xml += `    <priority>${page.priority}</priority>\n`;
@@ -288,10 +284,10 @@ class SitemapGenerator {
             generatedAt: new Date().toISOString(),
             pages: pages.map(page => ({
                 route: page.route,
-                priority: page.priority,
-                changefreq: page.changefreq,
+                priority: page.priority,)
+                changefreq: page.changefreq,)
                 lastmod: new Date().toISOString().split('T')[0]
-            }))
+            }));
         };
         
         return JSON.stringify(sitemap, null, 2);
@@ -317,15 +313,15 @@ class SitemapGenerator {
             pages: pages.map(page => ({
                 route: page.route,
                 priority: page.priority,
-                changefreq: page.changefreq,
-                file: page.file
+                changefreq: page.changefreq,)
+                file: page.file)
             })),
             summary: {
                 totalPages: pages.length,
                 highPriorityPages: pages.filter(p => p.priority >= '0.9').length,
                 mediumPriorityPages: pages.filter(p => p.priority >= '0.7' && p.priority < '0.9').length,
                 lowPriorityPages: pages.filter(p => p.priority < '0.7').length
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'sitemap-report.json');
@@ -350,9 +346,13 @@ class SitemapGenerator {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const generator = new SitemapGenerator();
     generator.run();
 }
 
 module.exports = SitemapGenerator;
+}
+}
+}
+}

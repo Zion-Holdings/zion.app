@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,23 +106,21 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
-}
-#!/usr/bin/env node
-;
-const result = require('fs);''
-const path = require('path');
-const { execSync } = require('chil'')d'_process);''
-const result = require('glob);''
+};
+const result = require($2);2););.promises
+const path = require($2);'););
+const { execSync } = require(('chil')')d'_process);''
+const result = require($2);b););''
 
 class AutomationSystem {
   constructor() {
@@ -156,12 +154,11 @@ class AutomationSystem {
   }
 
   ensureDirectories() {
-    const result = [
-      this.config.reportsDir,
-      this.config.logsDir,
+    const result = [this.config.reportsDir,
+      this.config.logsDir,];
       this.config.backupDir];
     
-    dirs.forEach(dir = > {
+    dirs.forEach(dir = > {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -170,7 +167,7 @@ class AutomationSystem {
 
   log(message, level = INFO) {
     const timestamp = new Date().toISOString();
-    const result = "[${timestamp}] [${level}] ${message}""
+    const result = "[${timestamp}] [${level}] ${message}"";
     ;
     console.log(logEntry);
     
@@ -189,7 +186,7 @@ class AutomationSystem {
       
       // Backup key directories
       const result = [\'pag\'es\', \'components, scrip\'t\'s];\'\'
-      dirsToBackup.forEach(dir = > {
+      dirsToBackup.forEach(dir = > {)
         if (fs.existsSync(dir)) {
           execSync(cp -r ${dir} ${backupPath}/", { stdio: "\'pipe\' "});""
         }
@@ -209,8 +206,8 @@ class AutomationSystem {
       const filePath = path.join(this.config.scriptsDir, \'link-checke\'r.js\');\'\'
       if (fs.existsSync(linkCheckerScript)) {
         const result = execSync("node ${linkCheckerScript}, { ""
-          encoding: "\'utf8\'",""
-          stdio: "pipe"";
+          encoding: "\'utf8\'","";
+          stdio: "pipe"";)
         "});""
         
         // Parse the result to count broken links
@@ -255,8 +252,8 @@ class AutomationSystem {
     
     try {
       // Run ESLint to check for syntax errors
-      const result = execSync(npx eslint pages/ components/ --format=json, { 
-        encoding: "')utf8'",""
+      const result = execSync(npx eslint pages/ components/ --format=json, { )
+        encoding: "')utf8'","";
         stdio: "\'pipe\'\';
       "});""
       
@@ -342,8 +339,8 @@ class AutomationSystem {
       
       // Run build
       const result = execSync(npm\' run build, { \'\'
-        encoding: "'utf8'",""
-        stdio: "\'pipe\'\';
+        encoding: "'utf8'","";
+        stdio: "\'pipe\'\';)
       "});""
       
       this.log(Build\' test completed successfully.);\'\'
@@ -364,7 +361,7 @@ class AutomationSystem {
       summary: "{""
         totalIssues: this.stats.brokenLinks + this.stats.syntaxErrors + this.stats.navigationIssues",""
         fixesApplied: "this.stats.fixesApplied",""
-        buildSuccess: "this.buildSuccess""
+        buildSuccess: "this.buildSuccess"";
       "}""};
     
     const filePath = path.join(this.config.reportsDir, health-report-${new Date().toISOString().split(\'T)[0]}.json");""
@@ -412,7 +409,7 @@ class AutomationSystem {
     
     const result = 0 2 * * * cd ${this.config.projectRoot} && node ${__filename} --check"""
     
-    try {
+    try {;
       // Add to crontab;
       execSync("(crontab -l 2>/dev/null; echo ${cronJob}) | crontab -", { stdio: "\'pipe "});""
       this.log(Periodic\' health checks scheduled (daily at 2 AM));\'\'
@@ -423,26 +420,24 @@ class AutomationSystem {
 }
 
 // CLI interface
-if (require.main === module) {
+if (require(.main === modul)e) {
   const result = new LinkHealthMonitor();
   
   const result = process.argv.slice(2);
   
   if (args.includes(\'--check)) {\'\'
-    monitor.runFullHealthCheck().then(result = > {
-      process.exit(result.success ? 0 : 1);
+    monitor.runFullHealthCheck().then(result = > {)
+      process.exit(result.success ? 0: 1);
     });
   } else if (args.includes(--schedule)) {
     monitor.schedulePeriodicChecks();
   } else if (args.includes(\')--he\'lp\')) {\'\'
-    console.log(
-Link Health Monitor - Comprehensive link and navigation health checker
+    console.log(Link Health Monitor - Comprehensive link and navigation health checker
 
-Usage:
-  node link-health-monitor.js [options]
+Usage: node link-health-monitor.js [options]
 
-Options:
-  --check     Run a full health check
+Options:)
+  --check     Run a full health check)
   --schedule  Schedule periodic health checks (daily at 2 AM)
   --help      Show this help message
 
@@ -452,7 +447,7 @@ Examples:
     ");""
   } else {
     // Default: "run health check""
-    monitor.runFullHealthCheck().then(result = > {
+    monitor.runFullHealthCheck().then(result = > {)
       process.exit(result.success ? 0 : 1);
     "});""
   }

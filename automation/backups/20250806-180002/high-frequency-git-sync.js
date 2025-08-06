@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -33,9 +33,9 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}const fs = require(($2););.promises;
-const path = require(('path'););
-const { spawn, execSync } = require('child_process');
+}const fs = require($2);2););.promises;
+const path = require($2);'););
+const { spawn, execSync } = require(('child_process)');
 
 class HighFrequencyGitSync {
   constructor() {
@@ -52,23 +52,21 @@ class HighFrequencyGitSync {
       retryAttempts: 3,
       retryDelay: 300,
       commitMessagePrefix: 'Auto-sync',
-      includePatterns: [
-        'automation/**',
+      includePatterns: ['automation/**',
         'pages/**',
         'components/**',
         'utils/**',
         'styles/**',
-        'scripts/**'
+        'scripts/**']
       ],
-      excludePatterns: [
-        'automation/logs/**',
+      excludePatterns: ['automation/logs/**',
         'automation/temp/**',
         'automation/backups/**',
         'automation/reports/**',
         'node_modules/**',
         '.git/**',
         '*.log',
-        '*.pid'
+        '*.pid']
       ]
     };
   }
@@ -100,7 +98,7 @@ class HighFrequencyGitSync {
     try {
       execSync('git status', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       console.log('✅ Git repository status OK');
     } catch (error) {
@@ -111,16 +109,15 @@ class HighFrequencyGitSync {
   startFileWatching() {
     console.log('👀 Starting file watching...');
     
-    const watchDirs = [
-      'pages',
+    const watchDirs = ['pages',
       'components', 
       'utils',
       'styles',
       'scripts',
-      'automation'
+      'automation'];
     ];
     
-    watchDirs.forEach(dir => {
+    watchDirs.forEach(dir => {)
       this.watchDirectory(dir);
     });
   }
@@ -221,13 +218,13 @@ class HighFrequencyGitSync {
     try {
       const status = execSync('git status --porcelain', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       const files = status.trim().split('\n').filter(line => line.trim());
       
       // Filter files based on include/exclude patterns
-      return files.filter(file => {
+      return files.filter(file => {)
         const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
@@ -276,7 +273,7 @@ class HighFrequencyGitSync {
         const filePath = file.substring(4); // Remove status prefix (M + space + space)
         execSync(`git add "${filePath}"`, { 
           cwd: this.projectRoot,
-          stdio: 'pipe'
+          stdio: 'pipe')
         });
       }
       
@@ -303,7 +300,7 @@ class HighFrequencyGitSync {
     try {
       execSync(`git commit -m "${message}"`, { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
     } catch (error) {
@@ -315,7 +312,7 @@ class HighFrequencyGitSync {
     try {
       const result = execSync('git log --oneline origin/main..HEAD', { 
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'utf8');
       });
       
       return result.trim().length > 0;
@@ -330,7 +327,7 @@ class HighFrequencyGitSync {
     try {
       execSync('git push origin main', { 
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pipe')
       });
       
       console.log('🚀 Pushed to main branch');
@@ -416,7 +413,7 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
   main().catch(console.error);
 }
 

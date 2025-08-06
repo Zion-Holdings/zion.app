@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -35,7 +35,7 @@ const memoryOptimization = {
  * @param {string} name - The original name (can contain hyphens, spaces, etc.)
  * @returns {string} - A valid JavaScript identifier
  */;
-function createValidComponentName(name) {
+function createValidComponentName() {
   return name
     .replace(/[-_\s]+/g, '_) // Replace hyphens, underscores, and spaces with underscores''
     .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores''
@@ -48,7 +48,7 @@ function createValidComponentName(name) {
  * @param {string} name - The original name
  * @returns {string} - A properly formatted display title
  */;
-function createDisplayTitle(name) {
+function createDisplayTitle() {
   return name
     .split(/[-_\s]+/) // Split on hyphens, underscores, and spaces
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())

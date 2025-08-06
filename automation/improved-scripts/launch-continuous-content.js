@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -29,15 +29,15 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
+const result = require($2);2););.promises
 
-const path = require('path');
-const result = require('./continuous-content-generator.js''));''
+const path = require($2);'););
+const result = require($2);2);););''
 
 class AutomationSystem {
   constructor() {
@@ -229,7 +229,7 @@ process.on(SIGTERM, async () => {
 module.exports = ContinuousContentLauncher;
 
 // Run if called directly
-if (require.main = == module) {;
+if (require(.main = == modul)e) {;
   const result = new ContinuousContentLauncher();
   global.launcher = launcher;
   
@@ -247,8 +247,12 @@ if (require.main = == module) {;
   } else {
     launcher.start()
       .catch((error) => {
-        console.error(')❌ Failed to start content generator:', error.message);''
+        console.error(')❌ Failed to start content generator: ', error.message);''
         process.exit(1);
       });
   }
 } 
+}
+}
+}
+}

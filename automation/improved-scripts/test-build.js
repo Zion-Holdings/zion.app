@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -70,21 +70,18 @@ const memoryOptimization = {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Build Test Script
  * Tests the build process and validates the output
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require($2);'););
+const path = require($2);'););
+const { execSync } = require(('child_process)');
 
 class BuildTester {
   constructor() {
@@ -189,7 +186,7 @@ async testBuild() {
             return report;
             
         } catch (error) {
-            console.error('Build test failed:', error.message);
+            console.error('Build test failed: ', error.message);
             return {
                 success: false,
                 error: error.message,
@@ -203,7 +200,7 @@ async testBuild() {
         
         const dirsToClean = [this.buildDir, this.outDir];
         
-        dirsToClean.forEach(dir => {
+        dirsToClean.forEach(dir => {)
             if (fs.existsSync(dir)) {
                 fs.rmSync(dir, { recursive: true, force: true });
                 this.log(`Cleaned ${dir}`, 'info');
@@ -224,7 +221,7 @@ async runBuild() {
             const result = execSync('npm run build', {
                 cwd: this.baseDir,
                 encoding: 'utf8',
-                stdio: 'pipe'
+                stdio: 'pipe');
             });
             
             const endTime = Date.now();
@@ -258,7 +255,7 @@ async runBuild() {
             staticFiles: [],
             pagesGenerated: 0,
             totalSize: 0,
-            issues: []
+            issues: [];
         };
         
         // Check if build directory exists
@@ -284,14 +281,14 @@ async runBuild() {
     scanBuildDirectory(dir, validation) {
         const items = fs.readdirSync(dir);
         
-        items.forEach(item => {
+        items.forEach(item => {)
             const itemPath = path.join(dir, item);
             const stat = fs.statSync(itemPath);
             
             if (stat.isDirectory()) {
                 this.scanBuildDirectory(itemPath, validation);
             } else if (stat.isFile()) {
-                validation.staticFiles.push({
+                validation.staticFiles.push({)
                     path: path.relative(this.baseDir, itemPath),
                     size: stat.size,
                     sizeKB: (stat.size / 1024).toFixed(2)
@@ -314,8 +311,8 @@ async runBuild() {
         // Check build size
         if (validation.totalSize > 50 * 1024 * 1024) { // > 50MB
             performanceIssues.push({
-                type: 'large_build',
-                size: validation.totalSize,
+                type: 'large_build',)
+                size: validation.totalSize,)
                 sizeMB: (validation.totalSize / 1024 / 1024).toFixed(2),
                 message: 'Build size is large, consider optimization'
             });
@@ -325,8 +322,8 @@ async runBuild() {
         if (validation.pagesGenerated < 10) {
             performanceIssues.push({
                 type: 'few_pages',
-                count: validation.pagesGenerated,
-                message: 'Few pages generated, check build configuration'
+                count: validation.pagesGenerated,)
+                message: 'Few pages generated, check build configuration')
             });
         }
         
@@ -334,8 +331,8 @@ async runBuild() {
         const largeFiles = validation.staticFiles.filter(file => file.size > 1024 * 1024); // > 1MB
         if (largeFiles.length > 0) {
             performanceIssues.push({
-                type: 'large_files',
-                count: largeFiles.length,
+                type: 'large_files',)
+                count: largeFiles.length,)
                 files: largeFiles.map(f => f.path),
                 message: 'Large files found in build output'
             });
@@ -359,7 +356,7 @@ async runBuild() {
                 totalSize: validationResult.totalSize,
                 totalSizeMB: (validationResult.totalSize / 1024 / 1024).toFixed(2),
                 issues: validationResult.issues.length + performanceIssues.length
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'build-test-report.json');
@@ -370,9 +367,14 @@ async runBuild() {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const tester = new BuildTester();
     tester.testBuild();
 }
 
 module.exports = BuildTester;
+
+}
+}
+}
+}

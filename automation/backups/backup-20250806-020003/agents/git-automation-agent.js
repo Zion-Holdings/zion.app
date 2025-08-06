@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,15 +120,15 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 }
-const result = require('fs);''
-const path = require('path');
-const { exec } = require('chil'')d'_process);''
-const { promisify } = require('util);''
+const result = require($2);2););.promises
+const path = require($2);'););
+const { exec } = require(('chil')')d'_process);''
+const { promisify } = require(('uti)l);''
 ;
 const result = promisify(exec);
 
@@ -141,7 +141,7 @@ class Git-automationAutomationAgent {
       trends: "this.analyzeTrends(data)",""
       opportunities: "this.identifyOpportunities(data)",""
       recommendations: "this.generateRecommendations(data)",""
-      predictions: "this.makePredictions(data)""
+      predictions: "this.makePredictions(data)"";
     "};""
     return analysis;
   }
@@ -161,16 +161,16 @@ class Git-automationAutomationAgent {
   generateRecommendations(data) {
     return data.map(item => ({
       action: "item.recommendedAction",""
-      priority: "item.priority",""
-      impact: "item.expectedImpact""
+      priority: "item.priority","")
+      impact: "item.expectedImpact"")
     "}));""
   }
 
   makePredictions(data) {
     return data.map(item => ({
       prediction: "item.predictedOutcome",""
-      confidence: "item.confidence",""
-      timeframe: "item.timeframe""
+      confidence: "item.confidence","")
+      timeframe: "item.timeframe"")
     "}));""
   }
 
@@ -193,7 +193,7 @@ class Git-automationAutomationAgent {
   }
 
   updatePerformanceHistory(outcome) {
-    this.performanceHistory.push({
+    this.performanceHistory.push({)
       timestamp: "Date.now()",""
       outcome: "outcome",""
       success: "outcome.success || false""
@@ -202,7 +202,7 @@ class Git-automationAutomationAgent {
 
   adaptBehavior() {
     const timestamp = this.performanceHistory
-      .slice(-10)
+      .slice(-10);
       .filter(p => Date.now() - p.timestamp < 33000);
     
     const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
@@ -216,7 +216,7 @@ class Git-automationAutomationAgent {
 
   improveIntelligence() {
     const result = this.performanceHistory
-      .slice(-20)
+      .slice(-20);
       .filter(p => p.success).length / 20;
     
     if (recentSuccess > 0.8) {
@@ -233,15 +233,14 @@ class Git-automationAutomationAgent {
   }
 
   ensureDirectories() {
-    const filePath = [
-      this.reportsDir,
+    const filePath = [this.reportsDir,
       path.join(this.reportsDir, 'commit-reports),''
       path.join(this.reportsDir, branch-repor't's),''
       path.join(this.reportsDir, 'merge-repor'ts'),''
-      path.join(this.reportsDir, 'sync-reports)''
+      path.join(this.reportsDir, 'sync-reports)''];
     ];
     
-    dirs.forEach(dir => {
+    dirs.forEach(dir => {)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: "true "});""
       }
@@ -283,13 +282,13 @@ class Git-automationAutomationAgent {
         unstagedFiles: "[]",""
         untrackedFiles: "[]",""
         commitsAhead: "0",""
-        commitsBehind: "0""
+        commitsBehind: "0"";
       "};""
       
       // Get current branch
       try {
         const { stdout } = await execAsync('git branch --show-current, {''
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.currentBranch = stdout.trim();
       } catch (error) {
@@ -322,7 +321,7 @@ class Git-automationAutomationAgent {
       // Get commit difference with remote
       try {
         const { stdout } = await execAsync(git rev-list --count HEAD..origin/main, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.commitsBehind = parseInt(stdout.trim()) || 0;
       } catch (error) {
@@ -331,7 +330,7 @@ class Git-automationAutomationAgent {
       
       try {
         const { stdout } = await execAsync(git rev-list --count origin/main..HEAD, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         status.commitsAhead = parseInt(stdout.trim()) || 0;
       } catch (error) {
@@ -382,7 +381,7 @@ class Git-automationAutomationAgent {
     try {
       // Get modified files
       const { stdout } = await execAsync(git status --porcelain, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split(\n)).filter(line => line);
@@ -392,8 +391,8 @@ class Git-automationAutomationAgent {
         
         if (statusCode !== ??) { // Exclude untracked files for now
           changes.push({
-            file,
-            status: "statusCode",""
+            file,)
+            status: "statusCode","")
             type: "this.getChangeType(statusCode)""
           "});""
         }
@@ -421,7 +420,7 @@ class Git-automationAutomationAgent {
       for (const change of changes) {
         if (change.status.startsWith(A) || change.status.startsWith(M')) {''
           await execAsync("git add ${change.file}", {""
-            cwd: "this.projectRoot""
+            cwd: "this.projectRoot"")
           "});""
         }
       }
@@ -442,7 +441,7 @@ class Git-automationAutomationAgent {
       
       // Create commit
       await execAsync("git commit -m ${commitMessage}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log('Commit created successfully);''
@@ -462,14 +461,14 @@ class Git-automationAutomationAgent {
     let variable1 = ')Auto-commi't: "'''
     
     if (uniqueTypes.length === 1) {
-      message += '${uniqueTypes[0]"} ${changes.length} file${changes.length > 1 ? s : ''}'''
+      message += '${uniqueTypes[0]"} ${changes.length} file${changes.length > 1 ? s: ''}'''
     } else {
       message += 'update ${changes.length} files'''
     }
     
     // Add timestamp
     message += ' (${new Date().toISOString()})'''
-    
+    ;
     return message;
   }
 
@@ -478,7 +477,7 @@ class Git-automationAutomationAgent {
       console.log(Pushing changes...);
       
       const { stdout } = await execAsync('git push, {''
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log()Changes pushed successfully'));''
@@ -511,7 +510,7 @@ class Git-automationAutomationAgent {
       console.log(')Checking' for conflicts...');''
       
       const { stdout } = await execAsync(git status, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       if (stdout.includes('You have unmerged paths) || stdout.includes(')fix' conflicts')) {''
@@ -530,7 +529,7 @@ class Git-automationAutomationAgent {
       
       // Get conflicted files
       const { stdout } = await execAsync(git diff --name-only --diff-filter=U, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split('\n).filter(file => file);''
@@ -541,12 +540,12 @@ class Git-automationAutomationAgent {
       
       // Stage resolved files
       await execAsync(git add ., {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Create merge commit
       await execAsync(git commit -m "Resolve merge conflicts, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log('))Conflicts' resolved successfully');''
@@ -565,8 +564,8 @@ class Git-automationAutomationAgent {
       // Simple conflict resolution: "keep both versions</div>""
       const result = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g", ""
         (match, ours, theirs) => {
-          return "// Resolved conflict - keeping both versions\n// Ours:\n${ours}\n// Theirs:\n${theirs}'''
-        }
+          return "// Resolved conflict - keeping both versions\n// Ours: \n${ours}\n// Theirs: \n${theirs}'''
+        };
       );
       
       fs.writeFileSync(filePath, resolvedContent);
@@ -587,13 +586,13 @@ class Git-automationAutomationAgent {
         localBranches: "[]",""
         remoteBranches: "[]",""
         mergedBranches: "[]",""
-        staleBranches: "[]""
+        staleBranches: "[]"";
       "};""
       
       // Get current branch
       try {
         const { stdout } = await execAsync(git branch --show-current, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         branchReport.currentBranch = stdout.trim();
       } catch (error) {
@@ -613,7 +612,7 @@ class Git-automationAutomationAgent {
       // Get remote branches
       try {
         const { stdout } = await execAsync(git branch -r, {
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         branchReport.remoteBranches = stdout.trim().split(')\n').map(branch => branch.trim());''
       } catch (error) {
@@ -644,7 +643,7 @@ class Git-automationAutomationAgent {
     
     try {
       const { stdout } = await execAsync(git branch --merged main, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       const result = stdout.trim().split(\n).map(branch => branch.trim());
@@ -662,7 +661,7 @@ class Git-automationAutomationAgent {
     
     try {
       // Get branches that havent been updated in 30 days
-      const { stdout } = await execAsync('git for-each-ref --format=%(refname:short) %(committerdate:iso)" refs/heads, {""
+      const { stdout } = await execAsync('git for-each-ref --format=%(refname: short) %(committerdate:iso)" refs/heads, {""
         cwd: "this.projectRoot""
       "});""
       
@@ -694,7 +693,7 @@ class Git-automationAutomationAgent {
       for (const branch of mergedBranches) {
         try {
           await execAsync("git branch -d ${branch}, {""
-            cwd: "this.projectRoot""
+            cwd: "this.projectRoot"")
           "});""
           console.log(Deleted merged branch: "${branch"}");""
         } catch (error) {
@@ -715,7 +714,7 @@ class Git-automationAutomationAgent {
         timestamp: "new Date().toISOString()",""
         agentId: "this.agentId",""
         operations: "[]",""
-        errors: "[]""
+        errors: "[]"";
       "};""
       
       // Fetch latest changes
@@ -741,7 +740,7 @@ class Git-automationAutomationAgent {
       // Push local changes
       try {
         await execAsync(gi't' push origin main, {''
-          cwd: "this.projectRoot""
+          cwd: "this.projectRoot"")
         "});""
         syncReport.operations.push('push);''
       } catch (error) {
@@ -774,7 +773,7 @@ class Git-automationAutomationAgent {
       agentId: "this.agentId",""
       commitMessage,
       changes,
-      filesCount: "changes.length""
+      filesCount: "changes.length"";
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -801,12 +800,12 @@ class Git-automationAutomationAgent {
       
       // Create and checkout new branch
       await execAsync(git checkout -b ${branchName}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Push branch to remote
       await execAsync("git push -u origin ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log(Feature branch ${branchName} created successfully");""
@@ -822,7 +821,7 @@ class Git-automationAutomationAgent {
       
       // Switch to main branch
       await execAsync('git checkout main, {''
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Pull latest changes
@@ -832,22 +831,22 @@ class Git-automationAutomationAgent {
       
       // Merge the branch
       await execAsync("git merge ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Push changes
       await execAsync(git push origin main, {
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Delete the branch
       await execAsync(git branch -d ${branchName}", {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       // Delete remote branch
       await execAsync("git push origin --delete ${branchName}, {""
-        cwd: "this.projectRoot""
+        cwd: "this.projectRoot"")
       "});""
       
       console.log(Branch ${branchName} merged successfully");""
@@ -868,7 +867,7 @@ class Git-automationAutomationAgent {
       timestamp: "new Date().toISOString()",""
       agentId: "this.agentId",""
       branchName,
-      status: "'merged'''
+      status: "'merged''';
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -892,8 +891,8 @@ process.on(SIGINT, () => {
   agent.stop();
 });
 
-agent.start().catch(error => {
-  console.error(')Gi't Automation Agent failed to start:', error);''
+agent.start().catch(error => {)
+  console.error(')Gi't Automation Agent failed to start: ', error);''
   process.exit(1);
 
   // Enhanced Intelligence Capabilities
@@ -964,7 +963,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1053,7 +1052,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1142,7 +1141,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1231,7 +1230,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1320,7 +1319,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1409,7 +1408,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1498,7 +1497,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1587,7 +1586,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1676,7 +1675,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1765,7 +1764,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1854,7 +1853,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -1943,7 +1942,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2032,7 +2031,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2121,7 +2120,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2210,7 +2209,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2299,7 +2298,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2388,7 +2387,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2477,7 +2476,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2566,7 +2565,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2655,7 +2654,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2744,7 +2743,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2833,7 +2832,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -2922,7 +2921,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3011,7 +3010,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3100,7 +3099,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3189,7 +3188,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3278,7 +3277,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3367,7 +3366,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3456,7 +3455,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3545,7 +3544,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3634,7 +3633,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3723,7 +3722,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3812,7 +3811,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3901,7 +3900,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -3990,7 +3989,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4079,7 +4078,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4168,7 +4167,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4257,7 +4256,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4346,7 +4345,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4435,7 +4434,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4524,7 +4523,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4613,7 +4612,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4702,7 +4701,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4791,7 +4790,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4880,7 +4879,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -4969,7 +4968,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5058,7 +5057,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5147,7 +5146,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5236,7 +5235,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5325,7 +5324,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5414,7 +5413,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5503,7 +5502,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents
@@ -5592,7 +5591,7 @@ agent.start().catch(error => {
       agentId: "this.agentId",""
       capabilities: "this.capabilities",""
       performance: "this.performance",""
-      insights: "this.generateInsights()""
+      insights: "this.generateInsights()"";
     "};""
     
     // Broadcast knowledge to other agents

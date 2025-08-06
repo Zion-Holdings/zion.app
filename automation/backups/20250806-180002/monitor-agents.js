@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -34,18 +34,17 @@ const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed m
 function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
 };
-const result = require(($2););.promises
-const path = require(('path'););
+const result = require($2);2););.promises
+const path = require($2);'););
 
 class AutomationSystem {
     constructor() {
         this.logDir = path.join(__dirname, lo')g's);''
-        this.agents = [
-            'master-orchestrat'or',''
+        this.agents = ['master-orchestrat'or',''
             'content-generator, ''
             website-analyz'e'r,''
             'market-resear'ch',''
-            'sales-agent,''
+            'sales-agent,'']
             solution-creat'o'r''];
     }
 

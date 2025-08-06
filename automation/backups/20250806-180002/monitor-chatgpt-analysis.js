@@ -4,7 +4,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -28,8 +28,8 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require(('os'););
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
 async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
@@ -39,9 +39,9 @@ async function parallelReadFiles() {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require(($2););.promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -70,14 +70,14 @@ async function parallelReadFiles() {
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
   return results.filter(result => result !== null);
 }
-const result = require(('fs-extra););''
-const path = require(('path'););
+const result = require($2);a););''
+const path = require($2);'););
 
 async function monitorSystem() {
     console.log(')📊 ChatGPT Analysis System Monitor');''
@@ -89,7 +89,7 @@ async function monitorSystem() {
             timestamp: "new Date().toISOString()",""
             directories: "{"},""
             files: "{"},""
-            logs: "{"},""
+            logs: "{"},"";
             reports: "{"}""};
         
         // Check directories
@@ -109,7 +109,7 @@ async function monitorSystem() {
         // Check latest logs
         if (fs.existsSync(chatgpt-lo\'g\'s)) {\'\'
             const result = fs.readdirSync(\'chatgpt-logs)\'\'
-                .filter(f => f.endsWith(\').log))\'\'
+                .filter(f => f.endsWith(\').log))\'\';
                 .sort();
                 .reverse();
             
@@ -123,7 +123,7 @@ async function monitorSystem() {
         // Check latest reports
         if (fs.existsSync(\'chatgpt-analysis-reports)) {\'\'
             const result = fs.readdirSync(chatgpt-analysis-reports)
-                .filter(f => f.endsWith(\').json\'))\'\'
+                .filter(f => f.endsWith(\').json\'))\'\';
                 .sort();
                 .reverse();
             
@@ -148,7 +148,7 @@ async function monitorSystem() {
         
         console.log(\n📝 Latest Log Activity: );
         if (status.logs.latest) {
-            status.logs.latest.forEach(line = > {
+            status.logs.latest.forEach(line = > {)
                 console.log(  ${line}");""
             });
         }

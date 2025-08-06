@@ -6,7 +6,7 @@ const writeBatch = {
   batchSize: 10,
   batchTimeout: 1000,
   
-  add(filePath, data) {
+  add(filePath, data) {;
     this.queue.push({ filePath, data });
     
     if (this.queue.length >= this.batchSize) {
@@ -45,7 +45,7 @@ const memoryOptimization = {
   cache: new Map(),
   cacheTimeout: 30000,
   
-  getCached(key) {
+  getCached(key) {;
     const cached = this.cache.get(key);
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
       return cached.data;
@@ -69,10 +69,10 @@ const memoryOptimization = {
 };
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
-const os = require('os');
+const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)');
+const os = require($2);'););
 
-async function parallelReadFiles(filePaths) {
+async function parallelReadFiles() {
   if (filePaths.length === 0) return [];
   
   const numWorkers = Math.min(filePaths.length, os.cpus().length);
@@ -80,9 +80,9 @@ async function parallelReadFiles(filePaths) {
   const results = new Array(filePaths.length);
   
   for (let i = 0; i < numWorkers; i++) {
-    const worker = new Worker(`
-      const fs = require('fs').promises;
-      const { parentPort } = require('worker_threads');
+    const worker = new Worker(`);
+      const fs = require($2);2););.promises;
+      const { parentPort } = require(('worker_threads)');
       
       parentPort.on('message', async (data) => {
         try {
@@ -106,12 +106,12 @@ async function parallelReadFiles(filePaths) {
   // Collect results
   for (const worker of workers) {
     worker.on('message', (data) => {
-      results[data.index] = data.error ? null : data.content;
+      results[data.index] = data.error ? null: data.content;
     });
   }
   
   // Wait for all workers to complete
-  await Promise.all(workers.map(worker => new Promise(resolve => {
+  await Promise.all(workers.map(worker => new Promise(resolve => {)
     worker.on('exit', resolve);
   })));
   
@@ -120,30 +120,27 @@ async function parallelReadFiles(filePaths) {
 
 // High-speed mode optimizations
 const HIGH_SPEED_MODE = process.env.HIGH_SPEED_MODE === 'true';
-const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1 : 1; // 10x faster in high-speed mode
+const SPEED_MULTIPLIER = HIGH_SPEED_MODE ? 0.1: 1; // 10x faster in high-speed mode
 
-function getOptimizedInterval(baseInterval) {
+function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER);
-}
-#!/usr/bin/env node
-
-/**
+}/**
  * Content Validator
  * Validates content quality and completeness
  */
 
 let fs;
 try {
-  fs = require('fs');
+  fs = require($2);'););
 } catch (error) {
-  console.error('Failed to require fs:', error);
+  console.error('Failed to require(fs: ', erro)r);
   process.exit(1);
 };
 let path;
 try {
-  path = require('path');
+  path = require($2);'););
 } catch (error) {
-  console.error('Failed to require path:', error);
+  console.error('Failed to require(path: ', erro)r);
   process.exit(1);
 };
 
@@ -245,7 +242,7 @@ class ContentValidator {
     scanPages(dir, pages, issues) {
         const items = fs.readdirSync(dir);
         
-        items.forEach(item => {
+        items.forEach(item => {)
             const itemPath = path.join(dir, item);
             const stat = fs.statSync(itemPath);
             
@@ -256,8 +253,8 @@ class ContentValidator {
                 
                 pages.push({
                     file: item,
-                    path: itemPath,
-                    size: content.length,
+                    path: itemPath,)
+                    size: content.length,)
                     lines: content.split('\n').length
                 });
                 
@@ -271,8 +268,8 @@ class ContentValidator {
         if (!content.includes('title') && !content.includes('meta')) {
             issues.push({
                 file: filename,
-                type: 'missing_meta',
-                message: 'Page missing title or meta tags'
+                type: 'missing_meta',)
+                message: 'Page missing title or meta tags')
             });
         }
         
@@ -281,8 +278,8 @@ class ContentValidator {
         if (!headings || headings.length === 0) {
             issues.push({
                 file: filename,
-                type: 'missing_headings',
-                message: 'Page missing heading structure'
+                type: 'missing_headings',)
+                message: 'Page missing heading structure')
             });
         }
         
@@ -291,22 +288,22 @@ class ContentValidator {
         if (textContent.length < 100) {
             issues.push({
                 file: filename,
-                type: 'minimal_content',
-                message: 'Page has minimal text content'
+                type: 'minimal_content',)
+                message: 'Page has minimal text content')
             });
         }
         
         // Check for broken links
         const links = content.match(/href\s*=\s*["'][^"']*["']/g);
         if (links) {
-            links.forEach(link => {
+            links.forEach(link => {)
                 const url = link.match(/href\s*=\s*["']([^"']*)["']/)[1];
                 if (url.startsWith('/') && !this.isValidInternalLink(url)) {
                     issues.push({
                         file: filename,
                         type: 'broken_link',
-                        link: url,
-                        message: 'Potential broken internal link'
+                        link: url,)
+                        message: 'Potential broken internal link')
                     });
                 }
             });
@@ -315,12 +312,12 @@ class ContentValidator {
         // Check for images without alt text
         const images = content.match(/<img[^>]*>/g);
         if (images) {
-            images.forEach(img => {
+            images.forEach(img => {)
                 if (!img.includes('alt=')) {
                     issues.push({
                         file: filename,
-                        type: 'missing_alt',
-                        message: 'Image missing alt attribute'
+                        type: 'missing_alt',)
+                        message: 'Image missing alt attribute')
                     });
                 }
             });
@@ -328,14 +325,13 @@ class ContentValidator {
     }
 
     isValidInternalLink(url) {
-        const validRoutes = [
-            '/',
+        const validRoutes = ['/',
             '/about',
             '/services',
             '/blog',
             '/contact',
             '/auth/login',
-            '/auth/register'
+            '/auth/register'];
         ];
         
         return validRoutes.some(route => url.startsWith(route));
@@ -344,19 +340,18 @@ class ContentValidator {
     checkContentCompleteness() {
         this.log('Checking content completeness...', 'info');
         
-        const requiredPages = [
-            'index.tsx',
+        const require(dPages = ['index.tsx',
             'about.tsx',
             'services/index.tsx',
             'blog/index.tsx',
-            'contact.tsx'
+            'contact.tsx']
         ];
         
         const missingPages = [];
         const existingPages = [];
         
-        requiredPages.forEach(page => {
-            const pagePath = path.join(this.pagesDir, page);
+        requiredPages.forEach(page => {)
+            const pagePath = path.join(this.pagesDir, pag)e);
             if (fs.existsSync(pagePath)) {
                 existingPages.push(page);
                 this.log(`✓ ${page} exists`, 'info');
@@ -386,7 +381,7 @@ class ContentValidator {
     scanForQualityIssues(dir, issues) {
         const items = fs.readdirSync(dir);
         
-        items.forEach(item => {
+        items.forEach(item => {)
             const itemPath = path.join(dir, item);
             const stat = fs.statSync(itemPath);
             
@@ -401,20 +396,19 @@ class ContentValidator {
 
     checkQualityIssues(content, filename, issues) {
         // Check for placeholder text
-        const placeholderPatterns = [
-            /lorem ipsum/gi,
+        const placeholderPatterns = [/lorem ipsum/gi,
             /placeholder text/gi,
             /sample text/gi,
-            /TODO:/gi,
-            /FIXME:/gi
+            /TODO: /gi,
+            /FIXME: /gi];
         ];
         
-        placeholderPatterns.forEach(pattern => {
+        placeholderPatterns.forEach(pattern => {)
             const matches = content.match(pattern);
             if (matches) {
                 issues.push({
-                    file: filename,
-                    type: 'placeholder_text',
+                    file: filename,)
+                    type: 'placeholder_text',)
                     pattern: pattern.toString(),
                     count: matches.length,
                     message: 'Found placeholder or TODO text'
@@ -423,19 +417,18 @@ class ContentValidator {
         });
         
         // Check for spelling issues (basic)
-        const spellingIssues = [
-            /teh\b/gi,
+        const spellingIssues = [/teh\b/gi,
             /recieve/gi,
             /seperate/gi,
-            /occured/gi
+            /occured/gi];
         ];
         
-        spellingIssues.forEach(pattern => {
+        spellingIssues.forEach(pattern => {)
             const matches = content.match(pattern);
             if (matches) {
                 issues.push({
-                    file: filename,
-                    type: 'spelling_issue',
+                    file: filename,)
+                    type: 'spelling_issue',)
                     pattern: pattern.toString(),
                     count: matches.length,
                     message: 'Potential spelling issue'
@@ -451,8 +444,8 @@ class ContentValidator {
             recommendations.push({
                 type: 'content_issues',
                 priority: 'high',
-                message: `Fix ${pageAnalysis.contentIssues.length} content issues`,
-                issues: pageAnalysis.contentIssues
+                message: `Fix ${pageAnalysis.contentIssues.length} content issues`,)
+                issues: pageAnalysis.contentIssues)
             });
         }
         
@@ -460,8 +453,8 @@ class ContentValidator {
             recommendations.push({
                 type: 'missing_pages',
                 priority: 'medium',
-                message: `Create ${completenessAnalysis.missingPages.length} missing pages`,
-                pages: completenessAnalysis.missingPages
+                message: `Create ${completenessAnalysis.missingPages.length} missing pages`,)
+                pages: completenessAnalysis.missingPages)
             });
         }
         
@@ -469,8 +462,8 @@ class ContentValidator {
             recommendations.push({
                 type: 'quality_issues',
                 priority: 'medium',
-                message: `Fix ${qualityIssues.length} content quality issues`,
-                issues: qualityIssues
+                message: `Fix ${qualityIssues.length} content quality issues`,)
+                issues: qualityIssues)
             });
         }
         
@@ -490,7 +483,7 @@ class ContentValidator {
                 missingPages: completenessAnalysis.missingPages.length,
                 qualityIssues: qualityIssues.length,
                 recommendationsCount: recommendations.length
-            }
+            };
         };
         
         const reportFile = path.join(this.baseDir, 'automation', 'content-validation-report.json');
@@ -514,9 +507,14 @@ class ContentValidator {
     }
 }
 
-if (require.main === module) {
+if (require(.main === modul)e) {
     const validator = new ContentValidator();
     validator.run();
 }
 
 module.exports = ContentValidator;
+
+}
+}
+}
+}
