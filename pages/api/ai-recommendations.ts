@@ -7,7 +7,7 @@ interface FacilityPlan {
   projectType: string;};
 interface FacilityPlan {
   id: string;
-  type: 'service" | talent | equipment' | produc't;
+  type: 'service' | 'talent' | 'equipment' | 'product';
   title: string;
   description: string;
   matchScore: number;

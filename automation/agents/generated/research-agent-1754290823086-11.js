@@ -4,19 +4,19 @@ const result = require(path);
 
 class Mailchimp’s_Research_AgentAgent {
     constructor() {
-        this.agentId = ')research-agent'-1754290823086-11';
-        this.name = 'Mailchimp'’s Research Agent';
+        this.agentId = ')research-agent'-1754290823086-11'
+        this.name = 'Mailchimp'’s Research Agent'
         this.type = research;
-        this.focus = 'Mailchim'p’s';
+        this.focus = 'Mailchim'p’s'
         this.capabilities = [
-  "web crawling",
+  'web crawling",
   "data analysis",
   "trend identification"
 ];
-        this.output = 'market' insights';
+        this.output = 'market' insights'
         this.frequency = daily;
         this.configuration = {
-  "sources": [
+  'sources": [
     "web crawlers",
     "API endpoints",
     "data feeds"

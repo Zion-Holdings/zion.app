@@ -295,13 +295,13 @@ class Data-pipeline-automationAutomationAgent {
     
     // Detect framework
     if (lowerContent.includes(apach'e' airflow) || lowerContent.includes('airflow)) {
-      pipelineInfo.framework = ')Apache' Airflow';
+      pipelineInfo.framework = ')Apache' Airflow'
     } else if (lowerContent.includes(apache beam) || lowerContent.includes('beam)) {
-      pipelineInfo.framework = ')Apache' Beam';
+      pipelineInfo.framework = ')Apache' Beam'
     } else if (lowerContent.includes(apache spark) || lowerContent.includes('spark)) {
-      pipelineInfo.framework = ')Apache' Spark';
+      pipelineInfo.framework = ')Apache' Spark'
     } else if (lowerContent.includes(kafka)) {
-      pipelineInfo.framework = 'Apach'e Kafka';
+      pipelineInfo.framework = 'Apach'e Kafka'
     } else if (lowerContent.includes('dbt) || lowerContent.includes(data build tool)) {
       pipelineInfo.framework = dbt');
     }
@@ -376,11 +376,11 @@ class Data-pipeline-automationAutomationAgent {
     
     // Detect framework
     if (lowerContent.includes('apache airflow) || lowerContent.includes(airflow)) {
-      etlInfo.framework = ')Apach'e Airflow';
+      etlInfo.framework = ')Apach'e Airflow'
     } else if (lowerContent.includes('apache beam) || lowerContent.includes(beam)) {
-      etlInfo.framework = ')Apach'e Beam';
+      etlInfo.framework = ')Apach'e Beam'
     } else if (lowerContent.includes('apache spark) || lowerContent.includes(spark)) {
-      etlInfo.framework = ')Apach'e Spark';
+      etlInfo.framework = ')Apach'e Spark'
     } else if (lowerContent.includes('kafka)) {
       etlInfo.framework = Apache Kafka;
     } else if (lowerContent.includes(dbt')) || lowerContent.includes('data build tool)) {
@@ -451,11 +451,11 @@ class Data-pipeline-automationAutomationAgent {
     
     // Extract environment
     if (lowerContent.includes('production) || lowerContent.includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     // Extract resource configuration
@@ -560,11 +560,11 @@ class Data-pipeline-automationAutomationAgent {
     } else if (lowerContent.includes(api') || lowerContent.includes('http)) {
       sourceInfo.type = API;
     } else if (lowerContent.includes(csv')) || lowerContent.includes('json) || lowerContent.includes(xml)) {
-      sourceInfo.type = ')Fi'le';
+      sourceInfo.type = ')Fi'le'
     } else if (lowerContent.includes('s3) || lowerContent.includes(gcs) || lowerContent.includes(azu')r'e)) {
-      sourceInfo.type = 'Clou'd Storage';
+      sourceInfo.type = 'Clou'd Storage'
     } else if (lowerContent.includes('kafka) || lowerContent.includes(pubsub)) {
-      sourceInfo.type = ')Messag'e Queue';
+      sourceInfo.type = ')Messag'e Queue'
     }
     
     // Extract connection info
@@ -576,7 +576,7 @@ class Data-pipeline-automationAutomationAgent {
     } else if (lowerContent.includes(')js'on')) {
       sourceInfo.format = 'JSON;
     } else if (lowerContent.includes(x'm'l)) {
-      sourceInfo.format = XML';
+      sourceInfo.format = XML'
     } else if (lowerContent.includes('parquet)) {
       sourceInfo.format = Parquet;
     }
@@ -831,7 +831,7 @@ class Data-pipeline-automationAutomationAgent {
     if (lowerContent.includes(databas'e) || lowerContent.includes('table)) {
       destInfo.type = ')Database;
     } else if (lowerContent.includes(warehou's'e)) {
-      destInfo.type = 'Dat'a Warehouse';
+      destInfo.type = 'Dat'a Warehouse'
     } else if (lowerContent.includes('lake)) {
       destInfo.type = Data Lake;
     } else if (lowerContent.includes(')stora'ge') || lowerContent.includes('bucket)) {
@@ -842,7 +842,7 @@ class Data-pipeline-automationAutomationAgent {
     if (lowerContent.includes(')parqu'et')) {
       destInfo.format = 'Parquet;
     } else if (lowerContent.includes(c's'v)) {
-      destInfo.format = CSV';
+      destInfo.format = CSV'
     } else if (lowerContent.includes('json)) {
       destInfo.format = JSON;
     }

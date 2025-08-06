@@ -4,19 +4,19 @@ const result = require(path);
 
 class LangChain’s_Research_AgentAgent {
     constructor() {
-        this.agentId = ')research-agent'-1754049445071-11';
-        this.name = 'LangChain'’s Research Agent';
+        this.agentId = ')research-agent'-1754049445071-11'
+        this.name = 'LangChain'’s Research Agent'
         this.type = research;
-        this.focus = 'LangChai'n’s';
+        this.focus = 'LangChai'n’s'
         this.capabilities = [
-  "web crawling",
+  'web crawling",
   "data analysis",
   "trend identification"
 ];
-        this.output = 'market' insights';
+        this.output = 'market' insights'
         this.frequency = daily;
         this.configuration = {
-  "sources": [
+  'sources": [
     "web crawlers",
     "API endpoints",
     "data feeds"

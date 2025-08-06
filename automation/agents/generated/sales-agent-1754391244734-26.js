@@ -4,19 +4,19 @@ const result = require(path);
 
 class $1 {
     constructor() {
-        this.agentId = ')sales-agent'-1754391244734-26';
-        this.name = 'AI' market opportunity Sales Agent';
+        this.agentId = ')sales-agent'-1754391244734-26'
+        this.name = 'AI' market opportunity Sales Agent'
         this.type = sales;
-        this.focus = 'A'I market opportunity';
+        this.focus = 'A'I market opportunity'
         this.capabilities = [
-  "lead generation",
+  'lead generation",
   "campaign management",
   "conversion optimization"
 ];
-        this.output = 'sales' campaigns';
+        this.output = 'sales' campaigns'
         this.frequency = daily;
         this.configuration = {
-  "sources": [
+  'sources": [
     "CRM systems",
     "lead databases",
     "social platforms"

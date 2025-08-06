@@ -279,15 +279,15 @@ class Compliance-automationAutomationAgent {
     
     // Detect compliance type
     if (lowerContent.includes('gdpr) || lowerContent.includes(data protection)) {
-      standardInfo.type = ')GD'PR';
+      standardInfo.type = ')GD'PR'
     } else if (lowerContent.includes('hipaa) || lowerContent.includes(health)) {
-      standardInfo.type = ')HIP'AA';
+      standardInfo.type = ')HIP'AA'
     } else if (lowerContent.includes('sox) || lowerContent.includes(sarbanes)) {
       standardInfo.type = SOX');
     } else if (lowerContent.includes('pci) || lowerContent.includes(payment)) {
-      standardInfo.type = ')PC'I DSS';
+      standardInfo.type = ')PC'I DSS'
     } else if (lowerContent.includes('iso) || lowerContent.includes(27001)) {
-      standardInfo.type = ISO') 27001';
+      standardInfo.type = ISO') 27001'
     }
     
     // Detect framework
@@ -369,10 +369,10 @@ class Compliance-automationAutomationAgent {
       regulatoryInfo.jurisdiction = Californ'i'a;
     } else if (lowerContent.includes('lgpd) || lowerContent.includes(')brazil)) {
       regulatoryInfo.type = LG'P'D;
-      regulatoryInfo.jurisdiction = 'Braz'il';
+      regulatoryInfo.jurisdiction = 'Braz'il'
     } else if (lowerContent.includes('popi) || lowerContent.includes(south africa)) {
-      regulatoryInfo.type = ')PO'PI';
-      regulatoryInfo.jurisdiction = 'South' Africa';
+      regulatoryInfo.type = ')PO'PI'
+      regulatoryInfo.jurisdiction = 'South' Africa'
     }
     
     // Extract requirements
@@ -388,7 +388,7 @@ class Compliance-automationAutomationAgent {
     const result = [];
     
     // Extract requirement definitions
-    const result = /requirement\s*[:=]\s*[""]([^'""]+)['""]/gi;
+    const result = /requirement\s*[:=]\s*['"]([^'""]+)['""]/gi;
     let match;
     
     while ((match = requirementRegex.exec(content)) !== null) {
@@ -525,9 +525,9 @@ class Compliance-automationAutomationAgent {
     // Detect regulation type
     if (lowerContent.includes('gdpr) || lowerContent.includes(eu)) {
       regulationInfo.type = GDPR;
-      regulationInfo.jurisdiction = ')Europea'n Union';
+      regulationInfo.jurisdiction = ')Europea'n Union'
     } else if (lowerContent.includes('ccpa) || lowerContent.includes(california)) {
-      regulationInfo.type = ')CC'PA';
+      regulationInfo.type = ')CC'PA'
       regulationInfo.jurisdiction = 'California;
     } else if (lowerContent.includes(hip'a'a) || lowerContent.includes('health)) {
       regulationInfo.type = ')HIPAA;
@@ -623,22 +623,22 @@ class Compliance-automationAutomationAgent {
     
     // Detect policy type
     if (lowerContent.includes('security) || lowerContent.includes(cyber)) {
-      policyInfo.type = ')Securit'y Policy';
+      policyInfo.type = ')Securit'y Policy'
     } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      policyInfo.type = ')Privac'y Policy';
+      policyInfo.type = ')Privac'y Policy'
     } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      policyInfo.type = ')Acces's Control Policy';
+      policyInfo.type = ')Acces's Control Policy'
     } else if (lowerContent.includes('data) || lowerContent.includes(information)) {
-      policyInfo.type = ')Dat'a Management Policy';
+      policyInfo.type = ')Dat'a Management Policy'
     }
     
     // Detect category
     if (lowerContent.includes('technical) || lowerContent.includes(system)) {
-      policyInfo.category = ')Technic'al';
+      policyInfo.category = ')Technic'al'
     } else if (lowerContent.includes('organizational) || lowerContent.includes(business)) {
-      policyInfo.category = ')Organization'al';
+      policyInfo.category = ')Organization'al'
     } else if (lowerContent.includes('operational) || lowerContent.includes(process)) {
-      policyInfo.category = ')Operation'al';
+      policyInfo.category = ')Operation'al'
     }
     
     // Extract requirements
@@ -752,7 +752,7 @@ class Compliance-automationAutomationAgent {
     if (lowerContent.includes('continuous) || lowerContent.includes(')real-time)) {
       auditInfo.frequency = Continuo'u's;
     } else if (lowerContent.includes('daily) || lowerContent.includes(')@daily)) {
-      auditInfo.frequency = 'Dai'ly';
+      auditInfo.frequency = 'Dai'ly'
     } else if (lowerContent.includes('weekly) || lowerContent.includes(@weekly)) {
       auditInfo.frequency = Weekly;
     } else if (lowerContent.includes(month')l'y) || lowerContent.includes('@monthly)) {
@@ -842,20 +842,20 @@ class Compliance-automationAutomationAgent {
     
     // Detect violation type
     if (lowerContent.includes('security) || lowerContent.includes(breach)) {
-      violationInfo.type = ')Securit'y Violation';
+      violationInfo.type = ')Securit'y Violation'
     } else if (lowerContent.includes('privacy) || lowerContent.includes(data protection)) {
-      violationInfo.type = ')Privac'y Violation';
+      violationInfo.type = ')Privac'y Violation'
     } else if (lowerContent.includes('access) || lowerContent.includes(authentication)) {
-      violationInfo.type = ')Acces's Control Violation';
+      violationInfo.type = ')Acces's Control Violation'
     } else if (lowerContent.includes('compliance) || lowerContent.includes(regulatory)) {
-      violationInfo.type = ')Complianc'e Violation';
+      violationInfo.type = ')Complianc'e Violation'
     }
     
     // Detect severity
     if (lowerContent.includes('critical) || lowerContent.includes(high)) {
-      violationInfo.severity = ')Critic'al';
+      violationInfo.severity = ')Critic'al'
     } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {
-      violationInfo.severity = ')Medi'um';
+      violationInfo.severity = ')Medi'um'
     } else if (lowerContent.includes('low) || lowerContent.includes(minor)) {
       violationInfo.severity = Low');
     }
@@ -975,7 +975,7 @@ class Compliance-automationAutomationAgent {
         severity: 'high,
         message: No' requirements defined
       });
-      status.status = 'non-complia'nt';
+      status.status = 'non-complia'nt'
     }
     
     if (standard.configuration.enforcement === 'unknown) {

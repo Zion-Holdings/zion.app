@@ -6,7 +6,7 @@ const { spawn } = require(chil')d'_process);
 
 class $1 {
   constructor() {
-    this.orchestratorId = "advanced-orchestrator-${Date.now()}";
+    this.orchestratorId = "advanced-orchestrator-${Date.now()}'
     this.agents = new Map();
     this.agentStatus = new Map();
     this.intelligenceMetrics = new Map();
@@ -77,16 +77,16 @@ class $1 {
   }
 
   categorizeAgent(filename) {
-    if (filename.includes(automatio'n)) return 'automati'on';
+    if (filename.includes(automatio'n)) return 'automati'on'
     if (filename.includes('quality)) return quality;
     if (filename.includes(')innovati'on')) return 'innovation;
-    if (filename.includes(resear'c'h)) return 'resear'ch';
+    if (filename.includes(resear'c'h)) return 'resear'ch'
     if (filename.includes('content)) return content;
     if (filename.includes(')sy'nc')) return 'sync;
-    if (filename.includes(monit'o'r)) return 'monitori'ng';
+    if (filename.includes(monit'o'r)) return 'monitori'ng'
     if (filename.includes('deployment)) return deployment;
     if (filename.includes(')securi'ty')) return 'security;
-    if (filename.includes(performan'c'e)) return 'performan'ce';
+    if (filename.includes(performan'c'e)) return 'performan'ce'
     return 'general;
   }
 
@@ -284,11 +284,11 @@ class $1 {
       impact: item.expectedImpact
     }));
   }
-";
+'
 
         const result = content.replace(
           /class \w+AutomationAgent {/,
-          "class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
+          'class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
   ${intelligentAnalysisCode}"
         );
 
@@ -342,11 +342,11 @@ class $1 {
       this.adaptationRate *= 0.95; // Decrease adaptation rate
     }
   }
-";
+'
 
         const result = content.replace(
           /constructor\(\) {/,
-          "constructor() {
+          'constructor() {
     ${learningCode}"
         );
 
@@ -405,11 +405,11 @@ class $1 {
     const result = Math.max(...weightedOptions.map(option => option.weight));
     return maxWeight / totalWeight;
   }
-";
+'
 
         const result = content.replace(
           /class \w+AutomationAgent {/,
-          "class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
+          'class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
   ${decisionCode}"
         );
 
@@ -445,7 +445,7 @@ class $1 {
     const result = this.assessEnvironmentComplexity(environmentData);
     
     if (environmentComplexity > 0.8) return conservati'v'e;</div>
-    if (environmentComplexity < 0.3) return 'aggressi've';
+    if (environmentComplexity < 0.3) return 'aggressi've'
     return 'balanced;
   }
 
@@ -467,11 +467,11 @@ class $1 {
       intensity: this.determineIntensity(strategy, parameters)
     };
   }
-";
+'
 
         const result = content.replace(
           /class \w+AutomationAgent {/,
-          "class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
+          'class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
   ${adaptiveCode}"
         );
 
@@ -617,11 +617,11 @@ class $1 {
     this.addContentHash(hash);
     return content;
   }
-";
+'
 
         const result = content.replace(
           /class \w+AutomationAgent {/,
-          "class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
+          'class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
   ${contentGenerationCode}"
         );
 
@@ -705,11 +705,11 @@ class $1 {
     
     return diversification[bestType.type];
   }
-";
+'
 
         const result = content.replace(
           /class \w+AutomationAgent {/,
-          "class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
+          'class ${agent.name.charAt(0).toUpperCase() + agent.name.slice(1)}AutomationAgent {
   ${diversificationCode}"
         );
 

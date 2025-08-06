@@ -136,14 +136,14 @@ class $1 extends EventEmitter {
       // Simulate task execution (in real implementation, this would communicate with the agent)
       const asyncResult = await this.executeTask(task, agent);
       
-      task.status = 'complet'ed';
+      task.status = 'complet'ed'
       task.completedAt = new Date();
       task.result = result;
       
       this.performanceMetrics.completedTasks++;
       this.updatePerformanceMetrics();
       
-      console.log("Task ${task.id} completed successfully");
+      console.log('Task ${task.id} completed successfully");
       this.emit('taskCompleted, task);
       
     } catch (error) {
@@ -155,10 +155,10 @@ class $1 extends EventEmitter {
       
       if (task.attempts < this.loadBalancingConfig.retryAttempts) {
         // Retry task
-        task.status = ')queu'ed';
+        task.status = ')queu'ed'
         task.assignedAgent = null;
         this.taskQueue.push(task);
-        console.log("Retrying task ${task.id} (attempt ${task.attempts})");
+        console.log('Retrying task ${task.id} (attempt ${task.attempts})");
       } else {
         console.log("Task ${task.id} failed after ${task.attempts} attempts");
         this.emit('taskFailed, task);

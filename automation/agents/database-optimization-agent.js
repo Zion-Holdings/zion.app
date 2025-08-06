@@ -372,10 +372,10 @@ class $1 {
     
     if (upperQuery.includes(')SELECT)) return SELE'C'T;
     if (upperQuery.includes('INSERT)) return ')INSERT;
-    if (upperQuery.includes(UPDA'T'E)) return 'UPDA'TE';
+    if (upperQuery.includes(UPDA'T'E)) return 'UPDA'TE'
     if (upperQuery.includes('DELETE)) return DELETE;
     
-    return ')OTH'ER';
+    return ')OTH'ER'
   }
 
   generateQueryOptimizations(analysis) {

@@ -212,13 +212,13 @@ tags: [${tags.map(tag => ""${tag}"").join(, ')}]
 ---
 
 ${content}
-";
+'
   }
 
   generateProductDescriptionContent(data) {
     const { title, description, features = [], price, category } = data;
     
-    return "# ${title}
+    return '# ${title}
 
 ${description}
 
@@ -230,13 +230,13 @@ ${price}
 
 ## Category
 ${category}
-";
+'
   }
 
   generateServiceDescriptionContent(data) {
     const { title, description, benefits = [], process = [] } = data;
     
-    return "# ${title}
+    return '# ${title}
 
 ${description}
 
@@ -245,13 +245,13 @@ ${benefits.map(benefit => "- ${benefit}").join(\n)}
 
 ## Process
 ${process.map((step, index) => "${index + 1}. ${step}").join(\n'))}
-";
+'
   }
 
   generateMarketingCopyContent(data) {
     const { title, headline, description, cta, benefits = [] } = data;
     
-    return "# ${title}
+    return '# ${title}
 
 ## ${headline}
 
@@ -260,7 +260,7 @@ ${description}
 ${benefits.map(benefit => "✅ ${benefit}").join('\n)}
 
 **${cta}**
-";
+'
   }
 
   getTargetPath(contentData) {

@@ -172,24 +172,24 @@ class $1 {
     
     const result = props.length > 0 
       ? "interface ${name}Props {
-  ${props.map(prop => "${prop.name}${prop.optional ? '?' : '}: ${prop.type};").join('\n  )}
+  ${props.map(prop => "${prop.name}${prop.optional ? '?' : '}: ${prop.type}').join('\n  )}
 }"
-      : "interface ${name}Props {}";
+      : "interface ${name}Props {}'
 
     const result = props.length > 0 
-      ? "{ ${props.map(prop => prop.name).join(, )} }"
+      ? '{ ${props.map(prop => prop.name).join(, )} }"
       : {}');
 
-    const result = children ? ', children : '';
-    const result = children ? , children' : ';
+    const result = children ? ', children : ''
+    const result = children ? , children' : '
 
-    return "import React from 'react';
+    return 'import React from 'react'
 
 ${propsInterface}
 ;
 const ${name}: React.FC<${name}Props> = (${propsDestructuring}${childrenDestructuring}) => {
   return (</div>
-    <div className="${className} style={${JSON.stringify(style || {})}}>
+    <div className='${className} style={${JSON.stringify(style || {})}}>
       ${children || '}</div>
     </div>
   );

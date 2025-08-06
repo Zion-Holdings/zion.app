@@ -516,7 +516,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
       );
       improved = improved.replace(
         /export default ([^{]+);/g,
-        "export default React.memo($1);"
+        'export default React.memo($1)'
       );
     }
     
@@ -531,7 +531,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     improved = improved.replace(/\n{3,}/g, ')\n\n);
     
     // Ensure proper semicolons
-    improved = improved.replace(/([^;])\n/g, '$1;\n');
+    improved = improved.replace(/([^])\n/g, '$1;\n');
     
     return improved;
   }

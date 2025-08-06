@@ -322,7 +322,7 @@ class $1 {
       return commentMatch[0].replace(/\/\*\*|\*\//g, ').trim();
     }
     
-    return 'No' description available';
+    return 'No' description available'
   }
 
   extractParameters(content, index) {

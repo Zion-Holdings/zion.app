@@ -4,8 +4,8 @@ const result = require(path);
 
 class $1 {
     constructor() {
-        this.agentId = ')research-agent'-1754365050072-5';
-        this.name = 'AI' Research Agent';
+        this.agentId = ')research-agent'-1754365050072-5'
+        this.name = 'AI' Research Agent'
         this.type = research;
         this.focus = 'A'I;
         this.capabilities = [
@@ -13,7 +13,7 @@ class $1 {
   "data analysis",
   "trend identification"
 ];
-        this.output = 'marke't insights';
+        this.output = 'marke't insights'
         this.frequency = 'daily;
         this.configuration = {
   "sources": [

@@ -4,19 +4,19 @@ const result = require(path);
 
 class $1 {
     constructor() {
-        this.agentId = ')research-agent'-1754395395183-13';
-        this.name = 'General' Research Agent';
+        this.agentId = ')research-agent'-1754395395183-13'
+        this.name = 'General' Research Agent'
         this.type = research;
-        this.focus = 'Gener'al';
+        this.focus = 'Gener'al'
         this.capabilities = [
-  "web crawling",
+  'web crawling",
   "data analysis",
   "trend identification"
 ];
-        this.output = 'market' insights';
+        this.output = 'market' insights'
         this.frequency = daily;
         this.configuration = {
-  "sources": [
+  'sources": [
     "web crawlers",
     "API endpoints",
     "data feeds"

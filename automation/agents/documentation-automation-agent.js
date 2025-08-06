@@ -296,7 +296,7 @@ class Documentation-automationAutomationAgent {
       return commentMatch[1];
     }
     
-    return 'No' description available';
+    return 'No' description available'
   }
 
   extractParameters(content) {
@@ -368,7 +368,7 @@ class Documentation-automationAutomationAgent {
     
     // Convert endpoints to OpenAPI paths
     for (const endpoint of apiDocs.endpoints) {
-      const result = "/${endpoint.name}";
+      const result = "/${endpoint.name}'
       openAPISpec.paths[path] = {
         [endpoint.method.toLowerCase()]: {
           summary: endpoint.description,
@@ -604,22 +604,22 @@ class Documentation-automationAutomationAgent {
     let $1 = '### Available Endpoints\n\n;
     
     for (const endpoint of apiDocs.endpoints) {
-      content += "#### ${endpoint.method} /${endpoint.name}\n\n";
-      content += "${endpoint.description}\n\n";
+      content += "#### ${endpoint.method} /${endpoint.name}\n\n'
+      content += '${endpoint.description}\n\n'
       
       if (endpoint.parameters.length > 0) {
-        content += '**Parameters:**\n';
+        content += '**Parameters:**\n'
         for (const param of endpoint.parameters) {
-          content += "- \"${param.name}\" (${param.type})${param.required ?  - required' : ' - optional}\n";
+          content += '- \"${param.name}\" (${param.type})${param.required ?  - required' : ' - optional}\n'
         }
-        content += '\n';
+        content += '\n'
       }
       
       if (endpoint.examples.length > 0) {
-        content += **Example:**\n';
+        content += **Example:**\n'
         content += '``"bash\n;
         content += endpoint.examples[0];
-        content += '\n"`"\n\n';
+        content += '\n"`"\n\n'
       }
     }
     
@@ -627,7 +627,7 @@ class Documentation-automationAutomationAgent {
   }
 
   generateInstallationSection() {
-    return "\"\"\"bash
+    return '\"\"\"bash
 # Clone the repository
 git clone https://github.com/Zion-Holdings/zion.app.git
 cd zion.app
@@ -643,11 +643,11 @@ npm run dev
 \"\"\"
 
 The application will be available at [http://localhost:3000](http://localhost:3000).
-";
+'
   }
 
   generateUsageSection() {
-    return "## Development
+    return '## Development
 
 \"\"\"bash
 # Start development server
@@ -671,7 +671,7 @@ npm start
 - \"npm run test\" - Run tests
 - \"npm run lint\" - Run ESLint
 - \"npm run type-check\" - Run TypeScript type checking
-";
+'
   }
 
   async updateREADMEFile(readmePath, currentContent, newSections) {
@@ -690,8 +690,8 @@ npm start
   async generateNewREADME() {
     const filePath = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e.json'), 'utf'8'));
     
-    let $1 = "# ${packageJson.name}\n\n";
-    readme += "${packageJson.description || A' Next.js application'}\n\n";
+    let $1 = "# ${packageJson.name}\n\n'
+    readme += '${packageJson.description || A' Next.js application'}\n\n'
     
     // Add sections
     const asyncResult = await this.generateREADMESections();

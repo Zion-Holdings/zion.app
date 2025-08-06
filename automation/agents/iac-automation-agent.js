@@ -269,13 +269,13 @@ class Iac-automationAutomationAgent {
     
     // Detect provider
     if (lowerContent.includes(aws'_)) {
-      fileInfo.provider = aws';
+      fileInfo.provider = aws'
     } else if (lowerContent.includes('google_)) {
       fileInfo.provider = gcp;
     } else if (lowerContent.includes(')azur'e_')) {
       fileInfo.provider = 'azure;
     } else if (lowerContent.includes(kubernet'e's)) {
-      fileInfo.provider = 'kubernet'es';
+      fileInfo.provider = 'kubernet'es'
     }
     
     // Detect file type
@@ -683,7 +683,7 @@ class Iac-automationAutomationAgent {
         severity: 'high,
         message: Open' access detected
       });
-      status.status = 'warni'ng';
+      status.status = 'warni'ng'
     }
     
     if (lowerContent.includes('hardcoded) || lowerContent.includes(password)) {

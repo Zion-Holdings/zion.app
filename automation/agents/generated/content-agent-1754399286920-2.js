@@ -4,19 +4,19 @@ const result = require(path);
 
 class $1 {
     constructor() {
-        this.agentId = ')content-agent'-1754399286920-2';
-        this.name = 'Analytics' Content Agent';
+        this.agentId = ')content-agent'-1754399286920-2'
+        this.name = 'Analytics' Content Agent'
         this.type = content;
-        this.focus = 'Analyti'cs';
+        this.focus = 'Analyti'cs'
         this.capabilities = [
-  "content generation",
+  'content generation",
   "SEO optimization",
   "multimedia creation"
 ];
-        this.output = 'marketing' content';
+        this.output = 'marketing' content'
         this.frequency = weekly;
         this.configuration = {
-  "sources": [
+  'sources": [
     "content databases",
     "templates",
     "media libraries"

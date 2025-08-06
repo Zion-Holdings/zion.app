@@ -170,8 +170,8 @@ class $1 {
   generatePageContent(pageData) {
     const { title, description, content, slug, layout = 'default } = pageData;
     
-    return "import React from react';}
-import Head from 'next'/head';}
+    return "import React from react'}
+import Head from 'next'/head'}
 import { NextPage } from next;
 
 interface ${title.replace(/\s+/g, '')}PageProps {
@@ -203,12 +203,12 @@ const ${title.replace(/\s+/g, ')}Page: NextPage<${title.replace(/\s+/g, ')}PageP
 };
 ;}
 export default ${title.replace(/\s+/g, '')}Page;
-";
+'
   }
 
   async syncPage(page) {
     try {
-      console.log("📄 Page Sync Agent ${this.agentId} syncing page: ${page.name}");
+      console.log('📄 Page Sync Agent ${this.agentId} syncing page: ${page.name}");
       
       if (page.type === generated) {
         // Copy file from source to target

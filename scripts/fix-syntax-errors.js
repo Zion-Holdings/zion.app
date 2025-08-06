@@ -1,103 +1,97 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to fix unterminated string literals
-function fixUnterminatedStrings(content) {
-  // Fix common patterns of unterminated strings
-  let fixed = content;
+// Common syntax error patterns to fix
+const syntaxFixes = [
+  // Fix malformed import statements
+  { pattern: /import.*from\s+['"];next['"]/g, replacement: "import type { NextApiRequest, NextApiResponse } from 'next'" },
+  { pattern: /import.*from\s+['"];@supabase\/ssr['"]/g, replacement: "import { createServerClient } from '@supabase/ssr'" },
+  { pattern: /import.*from\s+['"];next\/image['"]/g, replacement: "import Image from 'next/image'" },
   
-  // Fix import statements with unterminated strings
-  fixed = fixed.replace(/import\s+.*?from\s+["']([^"']*?)["']?;?/g, (match, p1) => {
-    if (!match.endsWith(';')) {
-      return match + ';';
-    }
-    return match;
-  });
+  // Fix malformed console.error statements
+  { pattern: /console\.error\('([^']*):\s*",\s*error\)"/g, replacement: "console.error('$1:', error)" },
+  { pattern: /console\.error\('([^']*):\s*",\s*error\)/g, replacement: "console.error('$1:', error)" },
   
-  // Fix unterminated string literals in JSX
-  fixed = fixed.replace(/([^"']*?)["']([^"']*?)["']?/g, (match, p1, p2) => {
-    if (!match.endsWith('"') && !match.endsWith("'")) {
-      return p1 + '"' + p2 + '"';
-    }
-    return match;
-  });
+  // Fix malformed string literals
+  { pattern: /['"];([^'"]*)['"]/g, replacement: "'$1'" },
+  { pattern: /['"]([^'"]*);['"]/g, replacement: "'$1'" },
   
-  // Fix specific patterns
-  fixed = fixed.replace(/import\s+type\s+\{\s*NextPage\s*\}\s+from\s+["']next["']?/g, 'import type { NextPage } from ";next";');
-  fixed = fixed.replace(/import\s+Head\s+from\s+["']next\/head["']?/g, 'import Head from ";next/head";');
-  fixed = fixed.replace(/import\s+Link\s+from\s+["']next\/link["']?/g, 'import Link from ";next/link";');
-  fixed = fixed.replace(/import\s+\{\s*useState,\s*useEffect\s*\}\s+from\s+["']react["']?/g, 'import { useState, useEffect } from ";react";');
+  // Fix malformed array syntax
+  { pattern: /\[\s*([^;]*);\s*\]/g, replacement: "[$1]" },
+  { pattern: /,\s*;\s*([^}]*)\s*}/g, replacement: ",$1}" },
   
-  // Fix interface definitions
-  fixed = fixed.replace(/interface\s+(\w+)\s*\{/g, 'interface $1 {');
-  fixed = fixed.replace(/:\s*["']([^"']*?)["']?;/g, ': "$1";');
-  fixed = fixed.replace(/:\s*(\w+)\s*\|/g, ': "$1" |');
+  // Fix malformed object syntax
+  { pattern: /{\s*;\s*([^}]*)\s*}/g, replacement: "{$1}" },
   
-  // Fix JSX attributes
-  fixed = fixed.replace(/className\s*=\s*["']([^"']*?)["']?/g, 'className="""$1"');
-  fixed = fixed.replace(/href\s*=\s*["']([^"']*?)["']?/g, 'href="""$1"');
+  // Fix malformed function parameters
+  { pattern: /\(\s*;\s*([^)]*)\s*\)/g, replacement: "($1)" },
   
-  // Fix specific API patterns
-  fixed = fixed.replace(/\.order\(['"]([^'"]*?)['"];,/g, '.order("$1",');
-  fixed = fixed.replace(/\.order\(['"]([^'"]*?)['"]\);/g, '.order("$1");');
-  fixed = fixed.replace(/console\.error\(['"]([^'"]*?)['"],\s*([^)]*?)\);/g, 'console.error("$1", $2);');
-  fixed = fixed.replace(/console\.error\(['"]([^'"]*?)['"]\);/g, 'console.error("$1");');
-  
-  // Fix additional patterns for remaining errors
-  fixed = fixed.replace(/console\.error\('([^']*?) ", ([^)]*?)\)";/g, 'console.error("$1", $2);');
-  fixed = fixed.replace(/\.order\('([^']*?);, \{ ascending: false \}\)/g, '.order("$1", { ascending: false })');
-  fixed = fixed.replace(/recommendations: \[([^\]]*?)\];/g, 'recommendations: [$1],');
-  
-  return fixed;
-}
+  // Fix malformed template literals
+  { pattern: /`\s*;\s*([^`]*)\s*`/g, replacement: "`$1`" },
+];
 
-// Function to process a file
-function processFile(filePath) {
+function fixFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const fixed = fixUnterminatedStrings(content);
+    let content = fs.readFileSync(filePath, 'utf8');
+    let originalContent = content;
     
-    if (content !== fixed) {
-      fs.writeFileSync(filePath, fixed, 'utf8');
+    // Apply all syntax fixes
+    syntaxFixes.forEach(fix => {
+      content = content.replace(fix.pattern, fix.replacement);
+    });
+    
+    // Additional specific fixes
+    content = content.replace(/['"];next['"]/g, "'next'");
+    content = content.replace(/['"];@supabase\/ssr['"]/g, "'@supabase/ssr'");
+    content = content.replace(/['"];next\/image['"]/g, "'next/image'");
+    
+    // Fix unterminated string literals
+    content = content.replace(/(['"])([^'"]*)(['"]);/g, '$1$2$3');
+    
+    // Fix malformed semicolons in arrays and objects
+    content = content.replace(/,\s*;\s*/g, ', ');
+    content = content.replace(/;\s*,/g, ',');
+    
+    // Fix malformed interface definitions
+    content = content.replace(/interface\s+(\w+)\s*{;/g, 'interface $1 {');
+    
+    // Fix malformed export statements
+    content = content.replace(/export\s+default\s+async\s+function\s+(\w+)\s*\([^)]*\)\s*{;/g, 'export default async function $1(req, res) {');
+    
+    if (content !== originalContent) {
+      fs.writeFileSync(filePath, content, 'utf8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error(`Error fixing ${filePath}:`, error.message);
     return false;
   }
 }
 
-// Function to recursively find and process files
-function processDirectory(dir, extensions = ['.tsx', '.ts', '.js']) {
-  const items = fs.readdirSync(dir);
+function walkDirectory(dir) {
+  const files = fs.readdirSync(dir);
   let fixedCount = 0;
   
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
     
     if (stat.isDirectory()) {
-      // Skip node_modules and other directories
-      if (!['node_modules', '.git', 'automation', 'logs', 'backups'].includes(item)) {
-        fixedCount += processDirectory(fullPath, extensions);
-      }
-    } else if (extensions.some(ext => item.endsWith(ext))) {
-      if (processFile(fullPath)) {
+      fixedCount += walkDirectory(filePath);
+    } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js') || file.endsWith('.jsx')) {
+      if (fixFile(filePath)) {
         fixedCount++;
       }
     }
-  }
+  });
   
   return fixedCount;
 }
 
-// Main execution
+// Start fixing from the project root
+const projectRoot = process.cwd();
 console.log('Starting syntax error fixes...');
-const startTime = Date.now();
-
-const fixedCount = processDirectory('.', ['.tsx', '.ts', '.js']);
-
-const endTime = Date.now();
-console.log(`\nCompleted! Fixed ${fixedCount} files in ${endTime - startTime}ms`); 
+const totalFixed = walkDirectory(projectRoot);
+console.log(`Fixed ${totalFixed} files.`); 

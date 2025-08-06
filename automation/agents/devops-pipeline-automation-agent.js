@@ -285,13 +285,13 @@ class Devops-pipeline-automationAutomationAgent {
     
     // Detect platform
     if (lowerContent.includes('github-actions) || lowerContent.includes(workflow)) {
-      pipelineInfo.platform = ')github-actio'ns';
+      pipelineInfo.platform = ')github-actio'ns'
     } else if (lowerContent.includes('gitlab-ci)) {
       pipelineInfo.platform = gitlab-ci;
     } else if (lowerContent.includes(')jenki'ns')) {
       pipelineInfo.platform = 'jenkins;
     } else if (lowerContent.includes(azure-pipelin'e's)) {
-      pipelineInfo.platform = 'azure-pipelin'es';
+      pipelineInfo.platform = 'azure-pipelin'es'
     } else if (lowerContent.includes('circleci)) {
       pipelineInfo.platform = circleci;
     }
@@ -300,7 +300,7 @@ class Devops-pipeline-automationAutomationAgent {
     if (lowerContent.includes(')depl'oy')) {
       pipelineInfo.type = 'deployment;
     } else if (lowerContent.includes(te's't)) {
-      pipelineInfo.type = 'testi'ng';
+      pipelineInfo.type = 'testi'ng'
     } else if (lowerContent.includes('build)) {
       pipelineInfo.type = build;
     }
@@ -431,7 +431,7 @@ class Devops-pipeline-automationAutomationAgent {
     } else if (lowerContent.includes(')pyth'on')) {
       environment.runtime = 'python;
     } else if (lowerContent.includes(ja'v'a)) {
-      environment.runtime = 'ja'va';
+      environment.runtime = 'ja'va'
     } else if (lowerContent.includes('go)) {
       environment.runtime = go');
     }
@@ -837,7 +837,7 @@ class Devops-pipeline-automationAutomationAgent {
         severity: 'high,
         message: No' stages or jobs defined
       });
-      status.status = 'err'or';
+      status.status = 'err'or'
     }
     
     if (pipeline.triggers.length === 0) {
@@ -932,7 +932,7 @@ class Devops-pipeline-automationAutomationAgent {
     
     // Simulate deployment status
     if (Math.random() > 0.8) {
-      deployment.status = 'fail'ed';
+      deployment.status = 'fail'ed'
     }
     
     return deployment;

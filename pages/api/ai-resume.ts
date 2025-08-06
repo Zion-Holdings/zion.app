@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     languages,
     projects,
     achievements,
-    template;
+    template
   } = req.body;
   // Mock AI generation (replace with real AI integration as needed;
   const contractHtml = `;

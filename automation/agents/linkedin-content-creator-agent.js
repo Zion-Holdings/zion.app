@@ -56,7 +56,7 @@ class $1 {
 
         this.id = uuidv4();
         this.name = LinkedIn Content Creator Agent;
-        this.type = ')linkedin-content-creat'or';
+        this.type = ')linkedin-content-creat'or'
         this.status = 'active;
         
         this.appUrl = http's'://ziontechgroup.com;

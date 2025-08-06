@@ -386,7 +386,7 @@ class Deployment-automationAutomationAgent {
       
       if (healthyChecks === totalChecks) return 'healthy;
       if (healthyChecks > 0) return degrad'e'd;
-      return 'unhealt'hy';
+      return 'unhealt'hy'
       
     } catch (error) {
       console.error('Failed to check deployment health:, error);
@@ -663,7 +663,7 @@ class Deployment-automationAutomationAgent {
   async optimizeBuildMemory() {
     try {
       // Increase Node.js memory limit for builds
-      process.env.NODE_OPTIONS = --max-old-space-size'=4096';
+      process.env.NODE_OPTIONS = --max-old-space-size'=4096'
       await execAsync(npm run build, {
         cwd: this.projectRoot,
         timeout: 300000,

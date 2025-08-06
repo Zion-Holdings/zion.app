@@ -536,13 +536,13 @@ class $1 {
       opportunity: '6-12 months'
     };
     
-    return timelines[insight.type] || 1-3 months';
+    return timelines[insight.type] || 1-3 months'
   }
 
   updatePerformanceMetrics(executionTime, success) {
     // Update agent performance metrics
     // In a real implementation, this would communicate with the orchestrator
-    console.log("Performance: ${success ? 'SUCCESS : FAIL'E'D} in ${executionTime}ms");
+    console.log('Performance: ${success ? 'SUCCESS : FAIL'E'D} in ${executionTime}ms");
   }
 
   setupGracefulShutdown() {
@@ -643,7 +643,7 @@ class $1 {
     
     if (sentiment.positive / total > 0.6) return 'positive;
     if (sentiment.negative / total > 0.4) return negati'v'e;
-    return 'neutr'al';
+    return 'neutr'al'
   }
 
   predictTrend(trendData) {

@@ -275,13 +275,13 @@ class Governance-automationAutomationAgent {
     
     // Detect governance type
     if (lowerContent.includes(it' governance) || lowerContent.includes('information technology governance)) {
-      governanceInfo.type = ')IT' Governance';
+      governanceInfo.type = ')IT' Governance'
     } else if (lowerContent.includes(data governance) || lowerContent.includes('data management)) {
-      governanceInfo.type = ')Data' Governance';
+      governanceInfo.type = ')Data' Governance'
     } else if (lowerContent.includes(security governance) || lowerContent.includes('cybersecurity governance)) {
-      governanceInfo.type = ')Security' Governance';
+      governanceInfo.type = ')Security' Governance'
     } else if (lowerContent.includes(project governance) || lowerContent.includes('program governance)) {
-      governanceInfo.type = ')Project' Governance';
+      governanceInfo.type = ')Project' Governance'
     }
     
     // Detect category
@@ -529,31 +529,31 @@ class Governance-automationAutomationAgent {
     
     // Detect policy type
     if (lowerContent.includes('security policy) || lowerContent.includes(cybersecurity policy)) {
-      policyInfo.type = ')Securit'y Policy';
+      policyInfo.type = ')Securit'y Policy'
     } else if (lowerContent.includes('data policy) || lowerContent.includes(privacy policy)) {
-      policyInfo.type = ')Dat'a Policy';
+      policyInfo.type = ')Dat'a Policy'
     } else if (lowerContent.includes('access policy) || lowerContent.includes(authorization policy)) {
-      policyInfo.type = ')Acces's Policy';
+      policyInfo.type = ')Acces's Policy'
     } else if (lowerContent.includes('change policy) || lowerContent.includes(change management policy)) {
-      policyInfo.type = ')Chang'e Policy';
+      policyInfo.type = ')Chang'e Policy'
     }
     
     // Detect category
     if (lowerContent.includes('technical) || lowerContent.includes(technology)) {
-      policyInfo.category = ')Technic'al';
+      policyInfo.category = ')Technic'al'
     } else if (lowerContent.includes('operational) || lowerContent.includes(operation)) {
-      policyInfo.category = ')Operation'al';
+      policyInfo.category = ')Operation'al'
     } else if (lowerContent.includes('administrative) || lowerContent.includes(admin)) {
-      policyInfo.category = ')Administrati've';
+      policyInfo.category = ')Administrati've'
     }
     
     // Detect status
     if (lowerContent.includes('active) || lowerContent.includes(enforced)) {
-      policyInfo.status = ')Acti've';
+      policyInfo.status = ')Acti've'
     } else if (lowerContent.includes('draft) || lowerContent.includes(pending)) {
-      policyInfo.status = ')Dra'ft';
+      policyInfo.status = ')Dra'ft'
     } else if (lowerContent.includes('archived) || lowerContent.includes(deprecated)) {
-      policyInfo.status = ')Archiv'ed';
+      policyInfo.status = ')Archiv'ed'
     }
     
     // Extract configuration
@@ -755,31 +755,31 @@ class Governance-automationAutomationAgent {
     
     // Detect risk type
     if (lowerContent.includes('security risk) || lowerContent.includes(cybersecurity risk)) {
-      riskInfo.type = ')Securit'y Risk';
+      riskInfo.type = ')Securit'y Risk'
     } else if (lowerContent.includes('operational risk) || lowerContent.includes(operational risk)) {
-      riskInfo.type = ')Operationa'l Risk';
+      riskInfo.type = ')Operationa'l Risk'
     } else if (lowerContent.includes('compliance risk) || lowerContent.includes(regulatory risk)) {
-      riskInfo.type = ')Complianc'e Risk';
+      riskInfo.type = ')Complianc'e Risk'
     } else if (lowerContent.includes('financial risk) || lowerContent.includes(economic risk)) {
-      riskInfo.type = ')Financia'l Risk';
+      riskInfo.type = ')Financia'l Risk'
     }
     
     // Detect level
     if (lowerContent.includes('high risk) || lowerContent.includes(critical risk)) {
-      riskInfo.level = ')Hi'gh';
+      riskInfo.level = ')Hi'gh'
     } else if (lowerContent.includes('medium risk) || lowerContent.includes(moderate risk)) {
-      riskInfo.level = ')Medi'um';
+      riskInfo.level = ')Medi'um'
     } else if (lowerContent.includes('low risk) || lowerContent.includes(minimal risk)) {
-      riskInfo.level = ')L'ow';
+      riskInfo.level = ')L'ow'
     }
     
     // Detect status
     if (lowerContent.includes('mitigated) || lowerContent.includes(controlled)) {
-      riskInfo.status = ')Mitigat'ed';
+      riskInfo.status = ')Mitigat'ed'
     } else if (lowerContent.includes('active) || lowerContent.includes(open)) {
-      riskInfo.status = ')Acti've';
+      riskInfo.status = ')Acti've'
     } else if (lowerContent.includes('monitored) || lowerContent.includes(tracked)) {
-      riskInfo.status = ')Monitor'ed';
+      riskInfo.status = ')Monitor'ed'
     }
     
     // Extract configuration

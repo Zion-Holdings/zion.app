@@ -857,7 +857,7 @@ class $1 {
       const result = trendReport.systemTrends.memory;
       
       if (cpuTrend && cpuTrend.average > 70) {
-        predictions.systemHealth = 'concerni'ng';
+        predictions.systemHealth = 'concerni'ng'
         predictions.recommendations.push('Consider scaling up CPU resources);
       }
       

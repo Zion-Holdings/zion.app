@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from ';next;
-interface FacilityPlan {;
-  id: "string";
+import type { NextApiRequest, NextApiResponse } from 'next';
+interface FacilityPlan {
+  id: string;
   title: string;
   category: string;
   description: string;
@@ -12,7 +12,7 @@ interface FacilityPlan {;
   technologies: string[];
   responseTime: string;
   availability: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   userNeeds: string;
   industry?: string;
   budget?: string;

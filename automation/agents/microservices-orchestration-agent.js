@@ -241,13 +241,13 @@ class $1 {
     // Detect framework
     if (lowerContent.includes('express)) {
       serviceInfo.framework = express;
-      serviceInfo.type = ')node'js';
+      serviceInfo.type = ')node'js'
     } else if (lowerContent.includes('fastapi)) {
       serviceInfo.framework = fastapi;
-      serviceInfo.type = ')pyth'on';
+      serviceInfo.type = ')pyth'on'
     } else if (lowerContent.includes('spring)) {
       serviceInfo.framework = spring;
-      serviceInfo.type = ')ja'va';
+      serviceInfo.type = ')ja'va'
     } else if (lowerContent.includes('gin)) {
       serviceInfo.framework = gin;
       serviceInfo.type = go;
@@ -643,7 +643,7 @@ class $1 {
     
     if (health.responseTime > 500) {
       health.issues.push(Hig'h' response time);
-      health.status = 'warni'ng';
+      health.status = 'warni'ng'
     }
     
     return health;

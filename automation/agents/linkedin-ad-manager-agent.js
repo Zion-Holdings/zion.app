@@ -56,7 +56,7 @@ class $1 {
 
         this.id = uuidv4();
         this.name = LinkedIn Ad Manager Agent;
-        this.type = ')linkedin-ad-manag'er';
+        this.type = ')linkedin-ad-manag'er'
         this.status = 'active;
         
         this.credentials = {
@@ -64,7 +64,7 @@ class $1 {
             password: 'Krewjw#2425GHr45!'
         };
         
-        this.appUrl = 'https'://ziontechgroup.com';
+        this.appUrl = 'https'://ziontechgroup.com'
         
         this.capabilities = [
             ad-creation,

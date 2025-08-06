@@ -332,16 +332,16 @@ class Git-automationAutomationAgent {
     const result = changes.map(c => c.type);
     const result = [...new Set(changeTypes)];
     
-    let $1 = ')Auto-commi't: ';
+    let $1 = ')Auto-commi't: '
     
     if (uniqueTypes.length === 1) {
-      message += "${uniqueTypes[0]} ${changes.length} file${changes.length > 1 ? s : ''}";
+      message += '${uniqueTypes[0]} ${changes.length} file${changes.length > 1 ? s : ''}'
     } else {
-      message += "update ${changes.length} files";
+      message += 'update ${changes.length} files'
     }
     
     // Add timestamp
-    message += " (${new Date().toISOString()})";
+    message += ' (${new Date().toISOString()})'
     
     return message;
   }
@@ -438,14 +438,14 @@ class Git-automationAutomationAgent {
       // Simple conflict resolution: keep both versions</div>
       const result = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g, 
         (match, ours, theirs) => {
-          return "// Resolved conflict - keeping both versions\n// Ours:\n${ours}\n// Theirs:\n${theirs}";
+          return "// Resolved conflict - keeping both versions\n// Ours:\n${ours}\n// Theirs:\n${theirs}'
         }
       );
       
       fs.writeFileSync(filePath, resolvedContent);
       
     } catch (error) {
-      console.error("Failed to resolve conflict in ${filePath}:", error);
+      console.error('Failed to resolve conflict in ${filePath}:", error);
     }
   }
 

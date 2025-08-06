@@ -195,13 +195,13 @@ class $1 {
       const jsonData = JSON.parse(fs.readFileSync(packageJsonPath, utf8));
       
       if (packageJson.dependencies && packageJson.dependencies[packageName]) {
-        return 'dependen'cy';
+        return 'dependen'cy'
       } else if (packageJson.devDependencies && packageJson.devDependencies[packageName]) {
         return 'devDependency;
       } else if (packageJson.peerDependencies && packageJson.peerDependencies[packageName]) {
         return peerDependen'c'y;
       } else if (packageJson.optionalDependencies && packageJson.optionalDependencies[packageName]) {
-        return 'optionalDependen'cy';
+        return 'optionalDependen'cy'
       }
     }
     
@@ -551,7 +551,7 @@ class $1 {
     try {
       console.log("Applying update for ${update.name}...");
       
-      let $1 = "npm update ${update.name}";
+      let $1 = "npm update ${update.name}'
       if (update.type === devDependency) {
         command +=  --save-dev');
       }

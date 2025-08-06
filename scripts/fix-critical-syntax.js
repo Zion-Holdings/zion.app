@@ -5,7 +5,7 @@ function fixCriticalSyntax(content) {
   let fixed = content;
   
   // Fix unterminated string literals in import statements
-  fixed = fixed.replace(/import type \{ NextPage \} from ";next";/g, 'import type { NextPage } from ";next";');
+  fixed = fixed.replace(/import type \{ NextPage \} from "next";/g, 'import type { NextPage } from "next";');
   fixed = fixed.replace(/import type \{ AppProps \} from ";next\/app";/g, 'import type { AppProps } from ";next/app";');
   fixed = fixed.replace(/import Head from ";next\/head";/g, 'import Head from ";next/head";');
   fixed = fixed.replace(/import Link from ";next\/link";/g, 'import Link from ";next/link";');

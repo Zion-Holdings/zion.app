@@ -246,13 +246,13 @@ class $1 {
     
     // Detect model type
     if (lowerContent.includes(classificati'o'n)) {
-      modelInfo.type = 'classificati'on';
+      modelInfo.type = 'classificati'on'
     } else if (lowerContent.includes('regression)) {
       modelInfo.type = regression;
     } else if (lowerContent.includes(')clusteri'ng')) {
       modelInfo.type = 'clustering;
     } else if (lowerContent.includes(neur'a'l) || lowerContent.includes('network)) {
-      modelInfo.type = ')neural'_network';
+      modelInfo.type = ')neural'_network'
     }
     
     // Extract parameters

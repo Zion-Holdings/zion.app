@@ -56,7 +56,7 @@ class $1 {
 
         this.id = uuidv4();
         this.name = LinkedIn Analytics Agent;
-        this.type = ')linkedin-analyti'cs';
+        this.type = ')linkedin-analyti'cs'
         this.status = 'active;
         
         this.appUrl = http's'://ziontechgroup.com;

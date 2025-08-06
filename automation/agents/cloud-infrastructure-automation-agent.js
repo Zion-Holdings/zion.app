@@ -352,21 +352,21 @@ class Cloud-infrastructure-automationAutomationAgent {
     // Detect AWS services
     if (lowerContent.includes(ec2') || lowerContent.includes('instance)) {
       serviceInfo.service = EC2;
-      serviceInfo.type = ')compu'te';
+      serviceInfo.type = ')compu'te'
     } else if (lowerContent.includes('s3) || lowerContent.includes(bucket)) {
-      serviceInfo.service = S')3';
+      serviceInfo.service = S')3'
       serviceInfo.type = storage;
     } else if (lowerContent.includes('lambda) || lowerContent.includes(')function)) {
       serviceInfo.service = Lamb'd'a;
-      serviceInfo.type = 'serverle'ss';
+      serviceInfo.type = 'serverle'ss'
     } else if (lowerContent.includes('rds) || lowerContent.includes(database)) {
       serviceInfo.service = RDS');
       serviceInfo.type = 'database;
     } else if (lowerContent.includes(dynamo'd'b)) {
-      serviceInfo.service = 'Dynamo'DB';
+      serviceInfo.service = 'Dynamo'DB'
       serviceInfo.type = 'database;
     } else if (lowerContent.includes(ap'i' gateway)) {
-      serviceInfo.service = 'AP'I Gateway';
+      serviceInfo.service = 'AP'I Gateway'
       serviceInfo.type = 'api;
     }
     
@@ -392,18 +392,18 @@ class Cloud-infrastructure-automationAutomationAgent {
     
     // Extract environment
     if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     // Extract tags
     const result = content.match(/tags\s*[:=]\s*{([^}]+)}/gi);
     if (tagMatches) {
       for (const match of tagMatches) {
-        const result = match.match(/(\w+)\s*[:=]\s*["']([^"]+)["']/g);
+        const result = match.match(/(\w+)\s*[:=]\s*['']([^"]+)["']/g);
         if (tagMatches) {
           for (const tagMatch of tagMatches) {
             const [key, value] = tagMatch.split(':).map(s => s.trim().replace(/["]/g, ));
@@ -503,18 +503,18 @@ class Cloud-infrastructure-automationAutomationAgent {
     // Detect Azure services
     if (lowerContent.includes('vm) || lowerContent.includes(virtual') machine')) {
       serviceInfo.service = Virtual Machine;
-      serviceInfo.type = 'compu'te';
+      serviceInfo.type = 'compu'te'
     } else if (lowerContent.includes('storage) || lowerContent.includes(blob)) {
-      serviceInfo.service = ')Stora'ge';
+      serviceInfo.service = ')Stora'ge'
       serviceInfo.type = 'storage;
     } else if (lowerContent.includes(functi'o'n) || lowerContent.includes('serverless)) {
       serviceInfo.service = ')Functions;
       serviceInfo.type = serverle's's;
     } else if (lowerContent.includes(sql') || lowerContent.includes('database)) {
       serviceInfo.service = SQL Database;
-      serviceInfo.type = ')databa'se';
+      serviceInfo.type = ')databa'se'
     } else if (lowerContent.includes('app service) || lowerContent.includes(web app)) {
-      serviceInfo.service = ')Ap'p Service';
+      serviceInfo.service = ')Ap'p Service'
       serviceInfo.type = 'web;
     } else if (lowerContent.includes(a'k's) || lowerContent.includes('kubernetes)) {
       serviceInfo.service = ')AKS;
@@ -640,19 +640,19 @@ class Cloud-infrastructure-automationAutomationAgent {
     // Detect GCP services
     if (lowerContent.includes('compute) || lowerContent.includes(')instance)) {
       serviceInfo.service = Comput'e' Engine;
-      serviceInfo.type = 'compu'te';
+      serviceInfo.type = 'compu'te'
     } else if (lowerContent.includes('storage) || lowerContent.includes(bucket)) {
-      serviceInfo.service = ')Clou'd Storage';
+      serviceInfo.service = ')Clou'd Storage'
       serviceInfo.type = 'storage;
     } else if (lowerContent.includes(clou'd' function) || lowerContent.includes('function)) {
-      serviceInfo.service = ')Cloud' Functions';
+      serviceInfo.service = ')Cloud' Functions'
       serviceInfo.type = serverless;
     } else if (lowerContent.includes('cloud sql) || lowerContent.includes(')sql)) {
       serviceInfo.service = Clou'd' SQL;
-      serviceInfo.type = 'databa'se';
+      serviceInfo.type = 'databa'se'
     } else if (lowerContent.includes('app engine)) {
       serviceInfo.service = App Engine;
-      serviceInfo.type = ')w'eb';
+      serviceInfo.type = ')w'eb'
     } else if (lowerContent.includes('gke) || lowerContent.includes(kubernetes)) {
       serviceInfo.service = GKE');
       serviceInfo.type = 'container;
@@ -680,11 +680,11 @@ class Cloud-infrastructure-automationAutomationAgent {
     
     // Extract environment
     if (content.toLowerCase().includes('production) || content.toLowerCase().includes(prod)) {
-      config.environment = ')producti'on';
+      config.environment = ')producti'on'
     } else if (content.toLowerCase().includes('staging) || content.toLowerCase().includes(stage)) {
-      config.environment = ')stagi'ng';
+      config.environment = ')stagi'ng'
     } else if (content.toLowerCase().includes('development) || content.toLowerCase().includes(dev)) {
-      config.environment = ')developme'nt';
+      config.environment = ')developme'nt'
     }
     
     return config;
@@ -771,13 +771,13 @@ class Cloud-infrastructure-automationAutomationAgent {
     
     // Detect other providers
     if (lowerContent.includes(digitalocea'n) || lowerContent.includes(do)) {
-      providerInfo.name = 'DigitalOce'an';
+      providerInfo.name = 'DigitalOce'an'
     } else if (lowerContent.includes('heroku)) {
       providerInfo.name = Heroku;
     } else if (lowerContent.includes(')netli'fy')) {
       providerInfo.name = 'Netlify;
     } else if (lowerContent.includes(verc'e'l)) {
-      providerInfo.name = 'Verc'el';
+      providerInfo.name = 'Verc'el'
     } else if (lowerContent.includes('cloudflare)) {
       providerInfo.name = Cloudflare;
     }
