@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,10 +21,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               Zion
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-600 hover:text-gray-900">Home</a>
-              <a href="/services" className="text-gray-600 hover:text-gray-900">Services</a>
-              <a href="/products" className="text-gray-600 hover:text-gray-900">Products</a>
-              <a href="/contact" className="text-gray-600 hover:text-gray-900">Contact</a>
+              <Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link>
+              <Link href="/services" className="text-gray-600 hover:text-gray-900">Services</Link>
+              <Link href="/products" className="text-gray-600 hover:text-gray-900">Products</Link>
+              <Link href="/contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
             </nav>
           </div>
         </div>
