@@ -48,8 +48,8 @@ class AutomationSystem {
     this.systemMetrics = {
       uptime: "0",
       totalAgents: "0",
-      activeAgents: "0"
-      totalTasks: "0"
+      activeAgents: "0",
+      totalTasks: "0",
       completedTasks: "0"
       systemHealth: "unkno\')w\'n\'\'
     "}""
