@@ -1,0 +1,15 @@
+{
+  "id": "master-sync-controller",
+  "version": "5.0.0",
+  "status": "running",
+  "lastSync": null,
+  "syncCount": 0,
+  "errorCount": 2,
+  "processes": [
+    "ultra-high-freq",
+    "high-freq",
+    "standard",
+    "backup"
+  ],
+  "timestamp": "2025-08-06T10:48:49.711Z"
+}

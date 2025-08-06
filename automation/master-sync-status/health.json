@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-08-06T10:48:49.712Z",
+  "status": "running",
+  "syncCount": 0,
+  "errorCount": 2,
+  "successRate": 0,
+  "lastSync": null,
+  "processes": {
+    "ultra-high-freq": {
+      "syncCount": 0,
+      "errorCount": 0,
+      "lastSync": null
+    },
+    "high-freq": {
+      "syncCount": 0,
+      "errorCount": 0,
+      "lastSync": null
+    },
+    "standard": {
+      "syncCount": 0,
+      "errorCount": 0,
+      "lastSync": null
+    },
+    "backup": {
+      "syncCount": 0,
+      "errorCount": 0,
+      "lastSync": null
+    }
+  },
+  "memory": {
+    "rss": 41910272,
+    "heapTotal": 7409664,
+    "heapUsed": 5902992,
+    "external": 1774194,
+    "arrayBuffers": 21728
+  },
+  "uptime": 23.702937353
+}
