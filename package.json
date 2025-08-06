@@ -38,7 +38,15 @@
     "google-docs:dev": "nodemon automation/launch-google-docs-automation.js",
     "google-docs:status": "node automation/check-google-docs-status.js",
     "google-docs:report": "node automation/generate-google-docs-report.js",
-    "google-docs:test": "node automation/test-google-docs-automation.js"
+    "google-docs:test": "node automation/test-google-docs-automation.js",
+    "chat-learning:start": "node chat-learning-launcher.js",
+    "chat-learning:dev": "nodemon chat-learning-launcher.js",
+    "chat-learning:integration": "node chat-learning-integration.js",
+    "chat-learning:analyze": "node chat-learning-automation.js",
+    "chat-learning:report": "node -e \"require('./chat-learning-integration.js').prototype.createLearningReport.call({chatLearningSystem: require('./chat-learning-automation.js')})\"",
+    "chat-learning:insights": "node -e \"require('./chat-learning-integration.js').prototype.generateDevelopmentInsights.call({chatLearningSystem: require('./chat-learning-automation.js')})\"",
+    "chat-learning:patterns": "node -e \"require('./chat-learning-automation.js').prototype.analyzeChatPatterns.call(new (require('./chat-learning-automation.js'))(), {timeRange: 'week'})\"",
+    "chat-learning:rules": "node -e \"require('./chat-learning-automation.js').prototype.generateAutomationRules.call(new (require('./chat-learning-automation.js'))(), {patternType: 'high_value', priority: 'high'})\""
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
