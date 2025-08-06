@@ -51,8 +51,8 @@ class AutomationSystem {
       activeAgents: "0",
       totalTasks: "0",
       completedTasks: "0"
-      systemHealth: "unkno\')w\'n\'\'
-    "}""
+            systemHealth: "unknown"
+    };
   }
 
   async initialize() {
