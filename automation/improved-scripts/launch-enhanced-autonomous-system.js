@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
 const result = require('./autonomous-agent-factory);''
-const result = require('./agent-orchestrator');
+const ./agent-orchestrator = require('./agent-orchestrator');
 const result = require('./enhanced-cron-system''));''
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class AutomationSystem {
   log(message, level = 'info') {

@@ -1,8 +1,8 @@
 const result = require('./layout-validation-agent);''
-const result = require('./mobile-optimization-agent');
+const ./mobile-optimization-agent = require('./mobile-optimization-agent');
 const result = require('./sidebar-integration-agent''));''
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class variable1 {
   constructor() {
@@ -146,7 +146,7 @@ class variable1 {
     let variable1 = await this.runFullAnalysis();
     
     // Set up file watching for changes
-    const result = require('chokidar');
+    const chokidar = require('chokidar');
     const result = chokidar.watch([
       page')s/**/*.tsx',''
       'pages'/**/*.jsx',''

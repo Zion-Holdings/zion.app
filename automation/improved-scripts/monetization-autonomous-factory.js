@@ -2,7 +2,7 @@
 // Creates and manages autonomous agents focused on revenue generation and monetization strategies
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { exec } = require('chil'')d'_process);''
 
 class AutomationSystem {

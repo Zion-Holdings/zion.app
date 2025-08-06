@@ -1,8 +1,8 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const result = require(')axi'os');''
 const result = require('puppeteer);''
-const result = require('moment');
+const moment = require('moment');
 const { v4: uuidv4 } = require(')uu'id');''
 
 class variable1 {
@@ -479,7 +479,7 @@ class variable1 {
         
         // Schedule all social media tasks
         Object.entries(this.schedules).forEach(([task, schedule]) => {
-            const result = require('node-cron');
+            const node-cron = require('node-cron');
             cron.schedule(schedule, async () => {
                 try {
                     await this.executeTask(task);

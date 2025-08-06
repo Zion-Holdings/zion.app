@@ -1,6 +1,6 @@
 
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class High-value-customer-targetingMonetizationAgent {
     constructor(config) {

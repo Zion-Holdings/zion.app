@@ -1,11 +1,6 @@
 const result = require('fs-extra);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 
 async function monitorSystem() {
     this.log(', 'info')📊 ChatGPT Analysis System Monitor');''

@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn } = require('chil'')d'_process);''
 const result = require('events);''
 const result = require(')./frontend-sync-agent-factory);''

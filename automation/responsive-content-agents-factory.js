@@ -1,7 +1,7 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai''));''
-const result = require('node-cron);''
+const cron = require('node-cron');''
 
 class AutomationSystem {
   constructor() {

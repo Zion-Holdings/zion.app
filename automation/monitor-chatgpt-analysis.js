@@ -1,5 +1,5 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 
 async function monitorSystem() {
     console.log(')📊 ChatGPT Analysis System Monitor');''

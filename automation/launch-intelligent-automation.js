@@ -1,8 +1,8 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('./enhanced-automation-orchestrator''));''
 const result = require('./anti-repetition-engine);''
-const result = require('./intelligent-evolution-tracker');
+const ./intelligent-evolution-tracker = require('./intelligent-evolution-tracker');
 
 class AutomationSystem {
   constructor() {

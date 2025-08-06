@@ -1,20 +1,10 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { execSync } = require('chil'')d'_process);''
 const result = require('./memory-generator);''
-let result;
-try {
-  result = require('./rule-generator');
-} catch (error) {
-  console.error('Failed to require ./rule-generator:', error);
-  process.exit(1);
-};
+
+const ./rule-generator = require('./rule-generator');
 
 class AutomationSystem {
   constructor() {

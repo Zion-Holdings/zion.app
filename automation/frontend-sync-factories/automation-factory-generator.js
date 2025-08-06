@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn, exec, execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 
@@ -176,7 +176,7 @@ class variable1 {
     return """
 #!/usr/bin/env node
 ;
-const result = require('fs');
+const fs = require('fs');
 const result = require('path);''
 const { spawn, exec, execSync } = require(')child'_process');''
 const { v4: uuidv4 } = require('uuid');

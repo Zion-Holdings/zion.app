@@ -1,27 +1,12 @@
 const result = require('fs-extra);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
-let result;
-try {
-  result = require(')./linkedin-advertising-factory');
-} catch (error) {
-  console.error('Failed to require )./linkedin-advertising-factory:', error);
-  process.exit(1);
-};''
+
+const path = require('path');
+
+const )./linkedin-advertising-factory = require(')./linkedin-advertising-factory');''
 const result = require('./agents/linkedin-ad-manager-agent'');''
 const result = require('./agents/linkedin-content-creator-agent);''
-let result;
-try {
-  result = require('./agents/linkedin-analytics-agent');
-} catch (error) {
-  console.error('Failed to require ./agents/linkedin-analytics-agent:', error);
-  process.exit(1);
-};
+
+const ./agents/linkedin-analytics-agent = require('./agents/linkedin-analytics-agent');
 
 class AutomationSystem {
   constructor() {

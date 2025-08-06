@@ -1,6 +1,6 @@
 
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const result = require(')axi'os');''
 const result = require('puppeteer);''
 
@@ -255,7 +255,7 @@ class variable1 {
     generateCursorAgentCode(config) {
         return """
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 
 class variable1 {
     constructor(config) {

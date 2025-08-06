@@ -1,6 +1,6 @@
 
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class Partnership-revenueMonetizationAgent {
     constructor(config) {

@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 const result = require(')axios);''

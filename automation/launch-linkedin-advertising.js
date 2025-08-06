@@ -1,9 +1,9 @@
 const result = require('fs-extra);''
-const result = require('path');
-const result = require(')./linkedin-advertising-factory');''
+const path = require('path');
+const )./linkedin-advertising-factory = require(')./linkedin-advertising-factory');''
 const result = require('./agents/linkedin-ad-manager-agent'');''
 const result = require('./agents/linkedin-content-creator-agent);''
-const result = require('./agents/linkedin-analytics-agent');
+const ./agents/linkedin-analytics-agent = require('./agents/linkedin-analytics-agent');
 
 class AutomationSystem {
     constructor() {

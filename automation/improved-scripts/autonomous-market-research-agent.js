@@ -1,5 +1,5 @@
 const result = require('axios);''
-const result = require('cheerio');
+const cheerio = require('cheerio');
 const result = require(')fs-ext'ra');''
 const result = require('path);''
 

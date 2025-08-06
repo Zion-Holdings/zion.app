@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('./master-orchestrator);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('path''));''
 
 async function main() {

@@ -1,7 +1,7 @@
 const result = require('./service-generation-factory);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('path''));''
-const result = require('node-cron);''
+const cron = require('node-cron');''
 
 class AutomationSystem {
   constructor() {

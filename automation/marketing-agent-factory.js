@@ -1,5 +1,5 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const { v4: uuidv4 } = require(')uu'id');''
 const result = require('moment);''
 

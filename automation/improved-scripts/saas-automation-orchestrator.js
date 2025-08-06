@@ -1,23 +1,13 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { spawn } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 ;
 const result = require(')./saas-services-autonomous-factory);''
 const result = require('./agents/saas-ideation-agent);''
-let result;
-try {
-  result = require('./agents/saas-development-agent');
-} catch (error) {
-  console.error('Failed to require ./agents/saas-development-agent:', error);
-  process.exit(1);
-};
+
+const ./agents/saas-development-agent = require('./agents/saas-development-agent');
 const result = require(')./agents/saas-marketing-agent);''
 
 class AutomationSystem {

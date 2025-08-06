@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn, exec, execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 
@@ -212,7 +212,7 @@ The agent provides real-time monitoring and analytics data.
     return "#!/usr/bin/env node""
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn, exec, execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 

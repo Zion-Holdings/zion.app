@@ -1,6 +1,6 @@
 const result = require('./feature-analysis-agent);''
-const result = require('./implementation-agent');
-const result = require('fs');
+const ./implementation-agent = require('./implementation-agent');
+const fs = require('fs');
 const result = require('pa'')t'h);''
 
 class AutomationSystem {

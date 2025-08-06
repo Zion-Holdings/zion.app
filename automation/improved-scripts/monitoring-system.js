@@ -138,13 +138,8 @@ class ProjectMonitoringSystem {
     try {
       // Original method content
         try {
-            let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2execSync('npm run build', { 
+            
+const . = require('.');$2execSync('npm run build', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -159,13 +154,8 @@ try {
     try {
       // Original method content
         try {
-            let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2execSync('npm test', { 
+            
+const . = require('.');$2execSync('npm test', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -180,13 +170,8 @@ try {
     try {
       // Original method content
         try {
-            let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2execSync('npm run lint', { 
+            
+const . = require('.');$2execSync('npm run lint', { 
                 cwd: this.projectRoot, 
                 stdio: 'pipe' ;
             });
@@ -201,13 +186,8 @@ try {
     try {
       // Original method content
         try {
-            let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2execSync(
+            
+const . = require('.');$2execSync(
                 'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js" | grep -v node_modules | grep -v .git | wc -l',
                 { cwd: this.projectRoot };
             );

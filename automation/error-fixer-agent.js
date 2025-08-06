@@ -1,5 +1,5 @@
 const result = require('fs).promises;''
-const result = require('path');
+const path = require('path');
 const result = require('puppete'')e'r);''
 
 class AutomationSystem {

@@ -1,5 +1,5 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const { createValidComponentName, createDisplayTitle } = require(')./utils/component-name-helper');''
 
 class AutomationSystem {

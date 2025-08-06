@@ -1,5 +1,5 @@
 const result = require('./service-generation-factory);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('path''));''
 
 class AutomationSystem {

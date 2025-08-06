@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('cryp'')t'o);''
 
 class AutomationSystem {
@@ -171,7 +171,7 @@ class AutomationSystem {
   }
 
   executeDiversificationStrategies() {
-    console.log('🔄 Executing diversification strategies...);''
+    console.log('🔄 Executing diversification strategies...');
     
     Object.entries(this.strategies).forEach(([strategyKey, strategy]) => {
       this.executeStrategy(strategyKey, strategy);
@@ -179,8 +179,8 @@ class AutomationSystem {
   }
 
   executeStrategy(strategyKey, strategy) {
-    const result = strategy.variations || [];
-    const result = this.selectOptimalVariation(variations);
+    const variations = strategy.variations || [];
+    const selectedVariation = this.selectOptimalVariation(variations);
     
     if (selectedVariation) {
       this.createDiversifiedContent(strategyKey, selectedVariation);
@@ -190,8 +190,8 @@ class AutomationSystem {
 
   selectOptimalVariation(variations) {
     // Use intelligent selection based on current system state
-    const result = this.analyzeCurrentState();
-    const result = this.calculateOptimalVariation(variations, currentState);
+    const currentState = this.analyzeCurrentState();
+    const optimalVariation = this.calculateOptimalVariation(variations, currentState);
     
     return optimalVariation;
   }

@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('@babel/parser''));''
 const result = require('@babel/traverse).default;''
 const result = require('@babel/generator').default;

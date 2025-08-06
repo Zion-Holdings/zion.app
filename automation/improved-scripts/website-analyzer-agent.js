@@ -1,6 +1,6 @@
 const result = require('puppeteer);''
-const result = require('.');$2promises;
-const result = require('path');
+const . = require('.');$2promises;
+const path = require('path');
 const result = require(')axi'os');''
 
 class AutomationSystem {

@@ -6,7 +6,7 @@
  */
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { exec } = require('chil'')d'_process);''
 const result = require('util);''
 ;

@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { EventEmitter } = require('even'')t's);''
 const result = require('./autonomous-agent-factory);''
 

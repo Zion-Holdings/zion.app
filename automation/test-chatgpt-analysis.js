@@ -1,5 +1,5 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 
 async function testSystem() {
     console.log(')🧪 Testing ChatGPT Analysis System...');''

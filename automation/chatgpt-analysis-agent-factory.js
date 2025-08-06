@@ -1,8 +1,8 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const result = require(')axi'os');''
 const result = require('puppeteer);''
-const result = require('node-cron');
+const node-cron = require('node-cron');
 
 class AutomationSystem {
     constructor() {

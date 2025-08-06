@@ -1,11 +1,6 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { EventEmitter } = require('even'')t's);''
 const result = require('./autonomous-agent-factory);''
 

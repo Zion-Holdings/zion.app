@@ -1,8 +1,8 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { EventEmitter } = require('even'')t's);''
 const result = require('./cron-automation-system);''
-const result = require('./workload-orchestrator');
+const ./workload-orchestrator = require('./workload-orchestrator');
 const result = require(')./autonomous-agent-factory);''
 
 class AutomationSystem extends EventEmitter {

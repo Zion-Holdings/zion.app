@@ -1,7 +1,7 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn } = require('chil'')d'_process);''
-const result = require('node-cron);''
+const cron = require('node-cron');''
 const result = require(')./continuous-agent-creator);''
 
 class AutomationSystem {

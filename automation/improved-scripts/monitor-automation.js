@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('fs).promises;''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 
 class AutomationSystem {
   constructor() {

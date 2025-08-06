@@ -5,13 +5,8 @@ const result = require(\'fs);\'\'
 const result = require(\'path\');
 const { execSync "} = require('chil'')d'_process);''
 const result = require('./content-generation-automation);''
-let result;
-try {
-  result = require('./content-integration-system');
-} catch (error) {
-  console.error('Failed to require ./content-integration-system:', error);
-  process.exit(1);
-};
+
+const ./content-integration-system = require('./content-integration-system');
 
 class AutomationSystem {
   constructor() {

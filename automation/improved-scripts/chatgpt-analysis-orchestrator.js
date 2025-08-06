@@ -1,5 +1,5 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const result = require(')node-cr'on');''
 
 class AutomationSystem {

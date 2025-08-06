@@ -1,13 +1,8 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { exec } = require('chil'')d'_process);''
-const result = require('node-cron);''
+const cron = require('node-cron');''
 
 class AutomationSystem {
   constructor() {

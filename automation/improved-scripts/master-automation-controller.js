@@ -1,20 +1,10 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { EventEmitter } = require('even'')t's);''
 const result = require('./cron-automation-system);''
-let result;
-try {
-  result = require('./workload-orchestrator');
-} catch (error) {
-  console.error('Failed to require ./workload-orchestrator:', error);
-  process.exit(1);
-};
+
+const ./workload-orchestrator = require('./workload-orchestrator');
 const result = require(')./autonomous-agent-factory);''
 
 class AutomationSystem {

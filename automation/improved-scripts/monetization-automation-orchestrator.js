@@ -2,13 +2,8 @@
 // Coordinates all monetization agents and revenue generation strategies
 ;
 const result = require('path);''
-let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2promises;
+
+const . = require('.');$2promises;
 const { v4: uuidv4 } = require('uuid');
 
 class AutomationSystem {

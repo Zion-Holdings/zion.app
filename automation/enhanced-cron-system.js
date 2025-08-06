@@ -1,6 +1,6 @@
-const result = require('node-cron);''
-const result = require('fs');
-const result = require('path');
+const cron = require('node-cron');''
+const fs = require('fs');
+const path = require('path');
 const { v4: uuidv4 } = require(')uu'id');''
 const result = require('events);''
 

@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('axi'')o's);''
 const { GoogleGenerativeAI } = require('@google/generative-ai);''
 

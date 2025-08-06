@@ -1,18 +1,8 @@
-const result = require('node-cron);''
-let result;
-try {
-  result = require('fs');
-} catch (error) {
-  console.error('Failed to require fs:', error);
-  process.exit(1);
-};
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+const cron = require('node-cron');''
+
+const fs = require('fs');
+
+const path = require('path');
 const { v4: uuidv4 } = require(')uu'id');''
 const result = require('events);''
 

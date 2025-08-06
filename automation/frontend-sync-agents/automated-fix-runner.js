@@ -1,5 +1,5 @@
 const result = require('./frontend-automation-orchestrator);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('path''));''
 
 class variable1 {

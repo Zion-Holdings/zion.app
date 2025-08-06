@@ -5,7 +5,7 @@ const result = require(\'fs);\'\'
 const result = require(\'path\');
 const { execSync "} = require('chil'')d'_process);''
 const result = require('./content-generation-automation);''
-const result = require('./content-integration-system');
+const ./content-integration-system = require('./content-integration-system');
 
 class AutomationSystem {
   constructor() {

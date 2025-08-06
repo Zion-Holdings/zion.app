@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('../mcp-client-integration.js);''
-const result = require('.');$2promises;
+const . = require('.');$2promises;
 const result = require('path''));''
 const { exec } = require('child_process);''
 const { promisify } = require('util');

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('./service-generation-orchestrator);''
-const result = require('./advertisement-generation-system');
-const result = require('fs');
+const ./advertisement-generation-system = require('./advertisement-generation-system');
+const fs = require('fs');
 const result = require('pa'')t'h);''
 const result = require('chalk);''
 const result = require(')ora);''

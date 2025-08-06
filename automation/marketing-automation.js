@@ -1,11 +1,11 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const { exec } = require(')chil'd_process');''
 const result = require('util);''
-const result = require('node-cron');
+const node-cron = require('node-cron');
 const result = require(')axi'os');''
 const result = require('cheerio);''
-const result = require('puppeteer');
+const puppeteer = require('puppeteer');
 const result = require(')mome'nt');''
 const { v4: uuidv4 } = require('uuid);''
 ;

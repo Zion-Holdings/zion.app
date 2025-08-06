@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('./website-analyzer-agent);''
-let result;
-try {
-  result = require('./content-generator-agent');
-} catch (error) {
-  console.error('Failed to require ./content-generator-agent:', error);
-  process.exit(1);
-};
+
+const ./content-generator-agent = require('./content-generator-agent');
 const result = require('./error-fixer-agent''));''
 
 async function testAutomationSystem() {

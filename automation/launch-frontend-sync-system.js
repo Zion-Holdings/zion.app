@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('path);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('./frontend-sync-orchestrator''));''
 
 class AutomationSystem {

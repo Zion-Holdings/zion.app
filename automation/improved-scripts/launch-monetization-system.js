@@ -2,7 +2,7 @@
 // Starts all monetization automation components
 ;
 const result = require('path);''
-const result = require('.');$2promises;
+const . = require('.');$2promises;
 
 class AutomationSystem {
   constructor() {
@@ -95,7 +95,7 @@ async initialize() {
 
       // Load all components
       const result = require('./monetization-automation-orchestrator);''
-      const result = require('./monetization-autonomous-factory');
+      const ./monetization-autonomous-factory = require('./monetization-autonomous-factory');
       const result = require('./monetization-cron-jobs''));''
       const result = require('./monetization-automation-scripts);''
 

@@ -1,5 +1,5 @@
 const { spawn, exec, execSync } = require('child_process);''
-const result = require('fs');
+const fs = require('fs');
 const result = require('pa'')t'h);''
 
 class variable1 {

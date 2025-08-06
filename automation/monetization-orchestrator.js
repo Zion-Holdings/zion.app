@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('./monetization-autonomous-factory''));''
 
 class AutomationSystem {

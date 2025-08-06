@@ -1,18 +1,8 @@
 const result = require('./feature-analysis-agent);''
-let result;
-try {
-  result = require('./implementation-agent');
-} catch (error) {
-  console.error('Failed to require ./implementation-agent:', error);
-  process.exit(1);
-};
-let result;
-try {
-  result = require('fs');
-} catch (error) {
-  console.error('Failed to require fs:', error);
-  process.exit(1);
-};
+
+const ./implementation-agent = require('./implementation-agent');
+
+const fs = require('fs');
 const result = require('pa'')t'h);''
 
 class AutomationSystem {

@@ -1,21 +1,11 @@
 // Monetization Cron Jobs
 // Automated revenue optimization and monetization tasks
 ;
-const result = require('node-cron);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
-let result;
-try {
-  result = require('.');
-} catch (error) {
-  console.error('Failed to require .:', error);
-  process.exit(1);
-};$2promises;
+const cron = require('node-cron');''
+
+const path = require('path');
+
+const . = require('.');$2promises;
 const { v4: uuidv4 } = require(')uu'id');''
 
 class AutomationSystem {

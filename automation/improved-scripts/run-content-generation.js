@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('./content-orchestrator);''
-let result;
-try {
-  result = require('fs');
-} catch (error) {
-  console.error('Failed to require fs:', error);
-  process.exit(1);
-};
+
+const fs = require('fs');
 const result = require('path''));''
 
 class AutomationSystem {

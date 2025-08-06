@@ -1,8 +1,8 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('chokid'')a'r);''
 const result = require('./enhanced-layout-validator);''
-const result = require('./intelligent-fix-predictor');
+const ./intelligent-fix-predictor = require('./intelligent-fix-predictor');
 
 class variable1 {
   constructor() {

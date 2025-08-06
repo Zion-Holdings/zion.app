@@ -1,11 +1,6 @@
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const result = require('cryp'')t'o);''
 
 class AutomationSystem {
@@ -190,8 +185,8 @@ class AutomationSystem {
   }
 
   executeStrategy(strategyKey, strategy) {
-    const result = strategy.variations || [];
-    const result = this.selectOptimalVariation(variations);
+    const variations = strategy.variations || [];
+    const selectedVariation = this.selectOptimalVariation(variations);
     
     if (selectedVariation) {
       this.createDiversifiedContent(strategyKey, selectedVariation);
@@ -201,8 +196,8 @@ class AutomationSystem {
 
   selectOptimalVariation(variations) {
     // Use intelligent selection based on current system state
-    const result = this.analyzeCurrentState();
-    const result = this.calculateOptimalVariation(variations, currentState);
+    const currentState = this.analyzeCurrentState();
+    const optimalVariation = this.calculateOptimalVariation(variations, currentState);
     
     return optimalVariation;
   }

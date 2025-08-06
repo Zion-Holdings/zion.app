@@ -1,8 +1,8 @@
 const result = require('fs-extra);''
-const result = require('path');
+const path = require('path');
 const { exec } = require(')chil'd_process');''
 const result = require('util);''
-const result = require('node-cron');
+const node-cron = require('node-cron');
 const result = require(')mome'nt');''
 ;
 const result = util.promisify(exec);

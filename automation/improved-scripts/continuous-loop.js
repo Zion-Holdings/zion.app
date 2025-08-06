@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 ;
 const result = require('fs);''
-let result;
-try {
-  result = require('path');
-} catch (error) {
-  console.error('Failed to require path:', error);
-  process.exit(1);
-};
+
+const path = require('path');
 const { execSync } = require('chil'')d'_process);''
 
 class AutomationSystem {

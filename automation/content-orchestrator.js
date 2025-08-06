@@ -1,8 +1,8 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('./content-generation-agent''));''
 const result = require('./blog-content-agent);''
-const result = require('./product-content-agent');
+const ./product-content-agent = require('./product-content-agent');
 
 class AutomationSystem {
   constructor() {

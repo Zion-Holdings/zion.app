@@ -1,7 +1,7 @@
 // Content Integration System
 // Integrates generated content with the Zion marketplace application;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { execSync } = require('chil'')d'_process);''
 
 class AutomationSystem {

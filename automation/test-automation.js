@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('./website-analyzer-agent);''
-const result = require('./content-generator-agent');
+const ./content-generator-agent = require('./content-generator-agent');
 const result = require('./error-fixer-agent''));''
 
 async function testAutomationSystem() {

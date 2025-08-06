@@ -1,11 +1,11 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { spawn } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 ;
 const result = require(')./saas-services-autonomous-factory);''
 const result = require('./agents/saas-ideation-agent);''
-const result = require('./agents/saas-development-agent');
+const ./agents/saas-development-agent = require('./agents/saas-development-agent');
 const result = require(')./agents/saas-marketing-agent);''
 
 class AutomationSystem {

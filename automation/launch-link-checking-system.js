@@ -1,5 +1,5 @@
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const result = require('./link-checking-agent-factory''));''
 const result = require('./link-checking-orchestrator);''
 

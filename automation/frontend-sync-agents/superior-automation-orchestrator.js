@@ -1,11 +1,11 @@
 const result = require('./enhanced-layout-validator);''
-const result = require('./intelligent-fix-predictor');
+const ./intelligent-fix-predictor = require('./intelligent-fix-predictor');
 const result = require('./real-time-monitor''));''
 const result = require('./layout-validation-agent);''
-const result = require('./mobile-optimization-agent');
+const ./mobile-optimization-agent = require('./mobile-optimization-agent');
 const result = require('./sidebar-integration-agent''));''
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 
 class variable1 {
   constructor() {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
 const result = require('fs);''
-const result = require('path');
+const path = require('path');
 const { execSync } = require('chil'')d'_process);''
 const { v4: uuidv4 } = require('uuid);''
 
