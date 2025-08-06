@@ -13,7 +13,7 @@ class AutonomousRoboticsFactory {
       tasksCompleted: 0,
       autonomousDecisions: 0,
       safetyIncidents: 0,
-      efficiency: 0.95
+      efficiency: 0.95;
     };
     
     this.initializeFactory();
@@ -26,8 +26,8 @@ class AutonomousRoboticsFactory {
     this.tasksPath = path.join(__dirname, 'robotic-tasks');''
     this.reportsPath = path.join(__dirname, 'robotics-reports');''
     
-    [this.agentsPath, this.robotsPath, this.tasksPath, this.reportsPath].forEach(dir => {
-      if (!fs.existsSync(dir)) {
+    [this.agentsPath, this.robotsPath, this.tasksPath, this.reportsPath].forEach(dir = > {
+      if (!fs.existsSync(dir)) {;
         fs.mkdirSync(dir, { recursive: true });
       }
     });
@@ -126,7 +126,7 @@ class AutonomousRoboticsFactory {
         safetyIncidents: 0,
         efficiency: 0.95,
         uptime: 100
-      }
+      };
     };
 
     this.agents.set(agentId, agent);
@@ -159,7 +159,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
       planning: this.planTask(data),
       execution: this.executeTask(data),
       monitoring: this.monitorExecution(data),
-      safety: this.ensureSafety(data)
+      safety: this.ensureSafety(data);
     };
     
     return result;
@@ -252,7 +252,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type === type) {
+      if (agent.type = == type) {;
         return require('path.join(this.agentsPath, `${agentId}.js`'));
       }
     }
@@ -261,7 +261,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       capabilities: ['robotic-capability'],''
       frequency: '1s',''
-      priority: 'medium'''
+      priority: 'medium''';
     };
     
     return this.createAgent(type, config);
@@ -300,7 +300,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       timestamp: new Date(),
       results: results,
-      metrics: this.performanceMetrics
+      metrics: this.performanceMetrics;
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -347,7 +347,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,''
       robotsDeployed: this.performanceMetrics.robotsDeployed,
       tasksCompleted: this.performanceMetrics.tasksCompleted,
-      safetyIncidents: this.performanceMetrics.safetyIncidents
+      safetyIncidents: this.performanceMetrics.safetyIncidents;
     };
     
     console.log('📈 Performance Analysis:', analysis);''
@@ -366,7 +366,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = AutonomousRoboticsFactory;
 
-if (require.main === module) {
+if (require.main = == module) {;
   const factory = new AutonomousRoboticsFactory();
   console.log('🏭 Autonomous Robotics Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

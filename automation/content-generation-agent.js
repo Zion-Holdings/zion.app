@@ -1,7 +1,7 @@
 const result = require('fs);''
 const result = require('path');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.contentMemory = this.loadContentMemory();
     this.generationRules = this.loadGenerationRules();
@@ -22,13 +22,13 @@ class variable1 {
     return {
       marketplace: "{""
         tone: professional", innovative, trustworthy,""
-        keywords: "[')A'I marketplace'", 'IT' services', AI talents, 'equipme'nt', 'innovation, blockcha'i'n],''
-        structure: "['he'ro'", 'features, benefi't's, 'testimonia'ls', 'cta]''
+        keywords: "[\')A\'I marketplace\'", 'IT' services', AI talents, 'equipme'nt', 'innovation, blockcha'i'n],''
+        structure: "[\'he\'ro\'", 'features, benefi't's, 'testimonia'ls', 'cta]''
       },
       blog: "{""
-        tone: informativ'e'", engaging, authoritative,""
-        keywords: "[AI trends'", 'marketplace' insights', technology, 'innovati'on'],''
-        structure: "['introduction", mai'n' content, 'conclusi'on', 'cta]''
+        tone: informativ\'e\'", engaging, authoritative,""
+        keywords: "[AI trends\'", 'marketplace' insights', technology, 'innovati'on'],''
+        structure: "[\'introduction", mai'n' content, 'conclusi'on', 'cta]''
       }
     };
   }
@@ -39,21 +39,21 @@ class variable1 {
       features: "this.generateFeaturesSection(category", customData),""
       benefits: "this.generateBenefitsSection(category", customData),""
       testimonials: "this.generateTestimonials(category", customData),""
-      cta: "this.generateCTASection(category", customData)""
+      cta: "this.generateCTASection(category", customData)"";
     };
 
-    return this.formatContent(content, marketpla'c'e);''
+    return this.formatContent(content, marketpla\'c\'e);\'\'
   }
 
   generateHeroSection(category, customData) {
-    const result = customData.industry || 'Busine'ss'''
-    const result = customData.services || 'IT' services, AI talents, cutting-edge equipment, and innovative solutions'''
+    const result = customData.industry || \'Busine\'ss\'\'\'
+    const result = customData.services || \'IT\' services, AI talents, cutting-edge equipment, and innovative solutions\'\'\'
     
     return {
       title: ""The Future of ${industry"} Exchange,""
-      subtitle: "Connect with the worlds' premier ${services"} powered by advanced AI matching and secure blockchain technology.",""
+      subtitle: "Connect with the worlds\' premier ${services"} powered by advanced AI matching and secure blockchain technology.",""
       cta: ""Start Trading Now",""
-      stats: "this.generateStats(category", customData)""
+      stats: "this.generateStats(category", customData)"";
     };
   }
 
@@ -133,7 +133,7 @@ class variable1 {
   generateCTASection(category, customData) {
     return {
       title: ""Ready to Join the Future?",""
-      subtitle: "Become part of the world's most advanced AI-powered marketplace. Connect", trade, and grow with Zion.",""
+      subtitle: "Become part of the world\'s most advanced AI-powered marketplace. Connect", trade, and grow with Zion.",""
       primaryCTA: ""Get Started Free",""
       secondaryCTA: "Explore Marketplace"""
     "};""
@@ -159,7 +159,7 @@ class variable1 {
 
   saveGeneratedContent(content, filename) {
     try {
-      const filePath = path.join(__dirname, 'generated-conte'nt', filename);''
+      const filePath = path.join(__dirname, \'generated-conte\'nt\', filename);\'\'
       const result = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {

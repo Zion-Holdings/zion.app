@@ -3,9 +3,9 @@ const result = require('fs').promises;
 const result = require('path');
 const result = require(')axi'os');''
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.baseUrl = 'https'://ziontechgroup.netlify.app'''
+    this.baseUrl = 'https'://ziontechgroup.netlify.app''';
     this.visitedUrls = new Set();
     this.missingPages = [];
     this.errors = [];
@@ -16,18 +16,18 @@ class variable1 {
   async initialize() {
     this.browser = await puppeteer.launch({
       headless: "true",""
-      args: "[--no-sandbox", '--disable-setuid-sandb'ox']''
+      args: "[--no-sandbox", \'--disable-setuid-sandb\'ox\']\'\';
     });
     this.page = await this.browser.newPage();
     
     // Set viewport and user agent
     await this.page.setViewport({ width: "1920", height: "1080 "});""
-    await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36);''
+    await this.page.setUserAgent(\'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36);\'\'
   }
 
   async analyzeWebsite() {
     try {
-      console.log(🚀 Starting website analysis...'));''
+      console.log(🚀 Starting website analysis...\'));\'\'
       
       // Start with homepage
       await this.crawlPage(this.baseUrl);
@@ -38,7 +38,7 @@ class variable1 {
       // Generate comprehensive report
       await this.generateReport();
       
-      console.log('✅ Website analysis completed);''
+      console.log(\'✅ Website analysis completed);\'\'
     } catch (error) {
       console.error(❌ Error during website analysis:, error);
       this.logs.push({ type: "error", message: "error.message", timestamp: "new Date() "});""
@@ -47,20 +47,20 @@ class variable1 {
     }
   }
 
-  async crawlPage(url, depth = 0) {
+  async crawlPage(url, depth = 0) {;
     if (depth > 5 || this.visitedUrls.has(url)) return;
     
     this.visitedUrls.add(url);
     console.log("🔍 Crawling: "${url"});""
     
     try {
-      await this.page.goto(url, { waitUntil: "')networkidle2'", timeout: "30000 "});""
+      await this.page.goto(url, { waitUntil: "\')networkidle2\'", timeout: "30000 "});""
       
       // Extract all links
-      const asyncResult = await this.page.evaluate(() => {
-        const variable1 = document.querySelectorAll('a[href]);''
-        return Array.from(anchors).map(a => a.href).filter(href => 
-          href.includes(ziontechgroup').netlify.app') || href.startsWith(/')''
+      const asyncResult = await this.page.evaluate(() => {;
+        const variable1 = document.querySelectorAll(\'a[href]);\'\'
+        return Array.from(anchors).map(a = > a.href).filter(href => 
+          href.includes(ziontechgroup\').netlify.app\') || href.startsWith(/\')\'\';
         );
       });
       
@@ -85,54 +85,54 @@ class variable1 {
       const timestamp = {
         url,
         timestamp: "new Date()",""
-        title: "'",""
-        metaDescription: "'",""
+        title: "\'",""
+        metaDescription: "\'",""
         headings: "[]",""
-        content: "'",""
+        content: "\'",""
         images: "[]",""
         links: "[]",""
         errors: "[]",""
         performance: "{"},""
-        seo: "{"}""
+        seo: "{"}"";
       };
 
       // Get page title and meta description
       analysis.title = await this.page.title();
-      analysis.metaDescription = await this.page.$eval(meta[name="description], el => el?.content || '));''
+      analysis.metaDescription = await this.page.$eval(meta[name="description], el => el?.content || \'));\'\'
 
       // Get headings
-      analysis.headings = await this.page.evaluate(() => {
-        const result = document.querySelectorAll('h1, h2, h3, h4, h5, h6);''
-        return Array.from(headings).map(h => ({
+      analysis.headings = await this.page.evaluate(() => {;
+        const result = document.querySelectorAll(\'h1, h2, h3, h4, h5, h6);\'\'
+        return Array.from(headings).map(h = > ({
           level: "h.tagName.toLowerCase()",""
-          text: "h.textContent.trim()""
+          text: "h.textContent.trim()"";
         "}));""
       });
 
       // Get main content
-      analysis.content = await this.page.evaluate(() => {
-        const result = document.querySelector(main) || document.querySelector(bo')d'y);''
-        return main ? main.textContent.trim() : ''''
+      analysis.content = await this.page.evaluate(() => {;
+        const result = document.querySelector(main) || document.querySelector(bo\')d\'y);\'\'
+        return main ? main.textContent.trim() : \'\'\'\'
       });
 
       // Get images
-      analysis.images = await this.page.evaluate(() => {
+      analysis.images = await this.page.evaluate(() => {;
         const result = document.querySelectorAll(img);
-        return Array.from(images).map(img => ({
+        return Array.from(images).map(img = > ({
           src: "img.src",""
           alt: "img.alt",""
           width: "img.width",""
-          height: "img.height""
+          height: "img.height"";
         "}));""
       });
 
       // Get links
-      analysis.links = await this.page.evaluate(() => {
-        const result = document.querySelectorAll('a[href]);''
-        return Array.from(links).map(a => ({
+      analysis.links = await this.page.evaluate(() => {;
+        const result = document.querySelectorAll(\'a[href]);\'\'
+        return Array.from(links).map(a = > ({
           href: "a.href",""
           text: "a.textContent.trim()",""
-          title: "a.title""
+          title: "a.title"";
         "}));""
       });
 
@@ -161,28 +161,28 @@ class variable1 {
     
     try {
       // Check for console errors
-      const asyncResult = await this.page.evaluate(() => {
+      const asyncResult = await this.page.evaluate(() => {;
         return window.consoleErrors || [];
       });
       
       // Check for broken images
-      const asyncResult = await this.page.evaluate(() => {
+      const asyncResult = await this.page.evaluate(() => {;
         const variable1 = document.querySelectorAll(img);
         return Array.from(images).filter(img => !img.complete || img.naturalWidth === 0);
       });
       
       // Check for broken links
-      const asyncResult = await this.page.evaluate(() => {
-        const variable1 = document.querySelectorAll(')a[href]');''
-        return Array.from(links).filter(link => {
+      const asyncResult = await this.page.evaluate(() => {;
+        const variable1 = document.querySelectorAll(\')a[href]\');\'\'
+        return Array.from(links).filter(link = > {;
           const result = link.href;
-          return href && (href.includes('undefined) || href.includes(null) || href === ')#');''
+          return href && (href.includes(\'undefined) || href.includes(null) || href === \')#\');\'\'
         });
       });
       
       if (consoleErrors.length > 0) errors.push({ type: "console", errors: "consoleErrors "});""
-      if (brokenImages.length > 0) errors.push({ type: "'broken_images'", count: "brokenImages.length "});""
-      if (brokenLinks.length > 0) errors.push({ type: "'broken_links'", count: "brokenLinks.length "});""
+      if (brokenImages.length > 0) errors.push({ type: "\'broken_images\'", count: "brokenImages.length "});""
+      if (brokenLinks.length > 0) errors.push({ type: "\'broken_links\'", count: "brokenLinks.length "});""
       
     } catch (error) {
       errors.push({ type: "analysis_error", message: "error.message "});""
@@ -200,8 +200,8 @@ class variable1 {
       performance.loadTime = metrics.Timestamp;
       
       // Get resource timing
-      const asyncResult = await this.page.evaluate(() => {
-        return performance.getEntriesByType('navigation)[0];''
+      const asyncResult = await this.page.evaluate(() => {;
+        return performance.getEntriesByType(\'navigation)[0];\'\'
       });
       
       if (resourceTiming) {
@@ -221,12 +221,12 @@ class variable1 {
     
     try {
       // Check meta tags
-      const asyncResult = await this.page.evaluate(() => {
-        const variable1 = document.querySelectorAll(')meta);''
+      const asyncResult = await this.page.evaluate(() => {;
+        const variable1 = document.querySelectorAll(\')meta);\'\'
         const result = {};
-        metas.forEach(meta => {
-          const result = meta.getAttribute(na'm'e) || meta.getAttribute('property);''
-          const result = meta.getAttribute(')content);''
+        metas.forEach(meta = > {;
+          const result = meta.getAttribute(na\'m\'e) || meta.getAttribute(\'property);\'\'
+          const result = meta.getAttribute(\')content);\'\'
           if (name && content) {
             metaData[name] = content;
           }
@@ -237,10 +237,10 @@ class variable1 {
       seo.metaTags = metaTags;
       
       // Check for structured data
-      const asyncResult = await this.page.evaluate(() => {
-        const variable1 = document.querySelectorAll(scrip't'[type="application/ld+json]);""
-        return Array.from(scripts).map(script => {
-          try {
+      const asyncResult = await this.page.evaluate(() => {;
+        const variable1 = document.querySelectorAll(scrip\'t\'[type="application/ld+json]);""
+        return Array.from(scripts).map(script = > {
+          try {;
             return JSON.parse(script.textContent);
           } catch {
             return null;
@@ -251,10 +251,10 @@ class variable1 {
       seo.structuredData = structuredData;
       
       // Check for Open Graph tags
-      seo.hasOpenGraph = !!metaTags[og:title'] || !!metaTags['og':description'];''
+      seo.hasOpenGraph = !!metaTags[og:title\'] || !!metaTags[\'og\':description\'];\'\'
       
       // Check for Twitter Card tags
-      seo.hasTwitterCard = !!metaTags[twitter:card] || !!metaTags['twitte'r:title'];''
+      seo.hasTwitterCard = !!metaTags[twitter:card] || !!metaTags[\'twitte\'r:title\'];\'\'
       
     } catch (error) {
       seo.error = error.message;
@@ -272,18 +272,18 @@ class variable1 {
     }
     
     // Check for missing headings
-    if (analysis.headings.length === 0) {
-      missing.push({ type: "'no_headings'", severity: "'medium "});""
+    if (analysis.headings.length = == 0) {;
+      missing.push({ type: "\'no_headings\'", severity: "\'medium "});""
     }
     
     // Check for missing meta description
     if (!analysis.metaDescription) {
-      missing.push({ type: "no'_meta_description", severity: "'medium' "});""
+      missing.push({ type: "no\'_meta_description", severity: "\'medium\' "});""
     }
     
     // Check for missing images
-    if (analysis.images.length === 0) {
-      missing.push({ type: "'no_images'", severity: "low "});""
+    if (analysis.images.length = == 0) {;
+      missing.push({ type: "\'no_images\'", severity: "low "});""
     }
     
     if (missing.length > 0) {
@@ -317,11 +317,11 @@ class variable1 {
         missingContent: "this.missingPages",""
         errors: "this.errors",""
         recommendations: "this.generateRecommendations()""
-      "}""
+      "}"";
     };
 
     // Save report
-    const filePath = path.join(__dirname, 'repor'ts', 'website-analysis-report'.json');''
+    const filePath = path.join(__dirname, \'repor\'ts\', \'website-analysis-report\'.json\');\'\'
     await fs.mkdir(path.dirname(reportPath), { recursive: "true "});""
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     
@@ -336,9 +336,9 @@ class variable1 {
     if (this.missingPages.length > 0) {
       recommendations.push({
         type: "content",""
-        priority: "'high'",""
+        priority: "\'high\'",""
         message: ""Found ${this.missingPages.length"} pages with missing content,""
-        action: "'Create missing content for identified pages'''
+        action: "\'Create missing content for identified pages\'\'\'
       "});""
     }
     
@@ -346,9 +346,9 @@ class variable1 {
     if (this.errors.length > 0) {
       recommendations.push({
         type: "errors",""
-        priority: "'high'",""
+        priority: "\'high\'",""
         message: "Found ${this.errors.length"} errors across the website",""
-        action: "'Fix identified errors and broken links'''
+        action: "\'Fix identified errors and broken links\'\'\'
       "});""
     }
     
@@ -356,10 +356,10 @@ class variable1 {
     const result = this.contentAnalysis.filter(page => !page.seo.metaTags[description]);
     if (pagesWithoutMeta.length > 0) {
       recommendations.push({
-        type: "'seo'",""
-        priority: "'medium",""
+        type: "\'seo\'",""
+        priority: "\'medium",""
         message: ""${pagesWithoutMeta.length"} pages missing meta descriptions,""
-        action: "Add' meta descriptions to improve SEO''
+        action: "Add\' meta descriptions to improve SEO\'\'
       "});""
     }
     
@@ -372,7 +372,7 @@ class variable1 {
     }
   }
 
-  log(message, type = 'in'fo') {''
+  log(message, type = \'in\'fo\') {\'\';
     const timestamp = { message, type, timestamp: "new Date() "};""
     this.logs.push(logEntry);
     console.log([${type.toUpperCase()}] ${message}");""

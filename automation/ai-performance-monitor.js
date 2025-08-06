@@ -9,7 +9,7 @@ class AIPerformanceMonitor {
             accuracy: "[]",""
             userSatisfaction: "[]",""
             systemLoad: "[]",""
-            errorRate: "[]""
+            errorRate: "[]"";
         "};""
         this.alerts = [];
         this.optimizations = [];
@@ -43,18 +43,18 @@ class AIPerformanceMonitor {
         
         if (this.calculateAverage(recentMetrics.responseTime) > 800) {
             this.alerts.push({
-                type: "'performance'",""
-                message: "'Response time is above optimal threshold'",""
-                severity: "'high'",""
+                type: "\'performance\'",""
+                message: "\'Response time is above optimal threshold\'",""
+                severity: "\'high\'",""
                 timestamp: "new Date().toISOString()""
             "});""
         }
 
         if (this.calculateAverage(recentMetrics.accuracy) < 85) {
             this.alerts.push({
-                type: "'quality'",""
-                message: "'Accuracy is below target threshold'",""
-                severity: "'medium'",""
+                type: "\'quality\'",""
+                message: "\'Accuracy is below target threshold\'",""
+                severity: "\'medium\'",""
                 timestamp: "new Date().toISOString()""
             "});""
         }
@@ -62,7 +62,7 @@ class AIPerformanceMonitor {
 
     getRecentMetrics(count) {
         const result = {};
-        Object.keys(this.metrics).forEach(key => {
+        Object.keys(this.metrics).forEach(key = > {;
             result[key] = this.metrics[key].slice(-count);
         });
         return result;
@@ -77,19 +77,19 @@ class AIPerformanceMonitor {
 
         if (this.calculateAverage(this.metrics.responseTime) > 600) {
             optimizations.push({
-                type: "'performance'",""
-                action: "'Implement caching layer'",""
-                priority: "'high'",""
-                expectedImprovement: "'Reduce response time by 40%'''
+                type: "\'performance\'",""
+                action: "\'Implement caching layer\'",""
+                priority: "\'high\'",""
+                expectedImprovement: "\'Reduce response time by 40%\'\'\'
             "});""
         }
 
         if (this.calculateAverage(this.metrics.accuracy) < 90) {
             optimizations.push({
-                type: "'quality'",""
-                action: "'Retrain model with new data'",""
-                priority: "'medium'",""
-                expectedImprovement: "'Improve accuracy by 5-10%'''
+                type: "\'quality\'",""
+                action: "\'Retrain model with new data\'",""
+                priority: "\'medium\'",""
+                expectedImprovement: "\'Improve accuracy by 5-10%\'\'\'
             "});""
         }
 
@@ -102,7 +102,7 @@ class AIPerformanceMonitor {
             timestamp: "new Date().toISOString()",""
             metrics: "this.metrics",""
             alerts: "this.alerts",""
-            optimizations: "this.optimizations""
+            optimizations: "this.optimizations"";
         "};""
 
         const filePath = path.join(__dirname, 'monitoring', `${this.monitorId}-${Date.now()}.json`);''

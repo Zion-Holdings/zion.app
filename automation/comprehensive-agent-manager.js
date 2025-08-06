@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require('uuid);''
 
 class ComprehensiveAgentManager {
   constructor() {
-    this.managerId = `comprehensive-manager-${Date.now()}
+    this.managerId = `comprehensive-manager-${Date.now()};
     this.agents = new Map();
     this.factories = new Map();
     this.intelligenceMetrics = new Map();
@@ -26,8 +26,8 @@ class ComprehensiveAgentManager {
     this.performancePath = path.join(__dirname, 'performance-data');''
     
     // Create necessary directories
-    [this.managerPath, this.intelligencePath, this.performancePath].forEach(dir => {
-      if (!fs.existsSync(dir)) {
+    [this.managerPath, this.intelligencePath, this.performancePath].forEach(dir = > {
+      if (!fs.existsSync(dir)) {;
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -38,11 +38,11 @@ class ComprehensiveAgentManager {
   }
 
   loadAgentRegistry() {
-    const registryPath = path.join(__dirname, data', 'agent-registry.json);''
+    const registryPath = path.join(__dirname, data\', \'agent-registry.json);\'\'
     
     if (fs.existsSync(registryPath)) {
       try {
-        const registryData = JSON.parse(fs.readFileSync(registryPath, 'utf8'));''
+        const registryData = JSON.parse(fs.readFileSync(registryPath, \'utf8\'));\'\'
         this.agents = new Map(Object.entries(registryData));
       } catch (error) {
         console.error(Error loading agent registry: "'", error);""
@@ -59,10 +59,10 @@ class ComprehensiveAgentManager {
     const agentFiles = fs.readdirSync(this.agentsPath)
       .filter(file => file.endsWith(-agent.js))
       .map(file => ({
-        name: "file.replace(-agent.js')", '),''
+        name: "file.replace(-agent.js\')", '),''
         path: "path.join(this.agentsPath", file),""
         type: "this.categorizeAgent(file)",""
-        status: "'discovered",""
+        status: "\'discovered",""
         intelligence: "this.assessAgentIntelligence(file)",""
         capabilities: "this.analyzeAgentCapabilities(file)",""
         lastRun: "null",""
@@ -71,10 +71,10 @@ class ComprehensiveAgentManager {
           tasksFailed: "0",""
           averageResponseTime: "0",""
           uptime: "0""
-        "}""
+        "}"";
       }));
 
-    agentFiles.forEach(agent => {
+    agentFiles.forEach(agent = > {;
       this.agents.set(agent.name, agent);
     });
 
@@ -82,27 +82,27 @@ class ComprehensiveAgentManager {
   }
 
   categorizeAgent(filename) {
-    if (filename.includes(automation')) return 'automation;''
-    if (filename.includes('quality)) return quality;''
-    if (filename.includes(')innovation)) return 'innovation'''
-    if (filename.includes(research')) return 'research;''
-    if (filename.includes('content)) return content;''
-    if (filename.includes(')sync)) return 'sync'''
-    if (filename.includes(monitor')) return 'monitoring;''
-    if (filename.includes('deployment)) return deployment;''
-    if (filename.includes(')security)) return 'security'''
-    if (filename.includes(performance')) return 'performance;''
-    if (filename.includes('analytics)) return analytics;''
-    if (filename.includes(')marketing)) return 'marketing'''
-    if (filename.includes(sales')) return 'sales;''
-    if (filename.includes('seo)) return seo;''
-    if (filename.includes(')social)) return 'social'''
-    if (filename.includes(customer')) return 'customer;''
-    if (filename.includes('data)) return data;''
-    if (filename.includes(')test)) return 'testing'''
-    if (filename.includes(git')) return 'git;''
-    if (filename.includes('documentation)) return documentation;''
-    return ')general;''
+    if (filename.includes(automation\')) return \'automation;\'\'
+    if (filename.includes(\'quality)) return quality;\'\'
+    if (filename.includes(\')innovation)) return \'innovation\'\'\'
+    if (filename.includes(research\')) return \'research;\'\'
+    if (filename.includes(\'content)) return content;\'\'
+    if (filename.includes(\')sync)) return \'sync\'\'\'
+    if (filename.includes(monitor\')) return \'monitoring;\'\'
+    if (filename.includes(\'deployment)) return deployment;\'\'
+    if (filename.includes(\')security)) return \'security\'\'\'
+    if (filename.includes(performance\')) return \'performance;\'\'
+    if (filename.includes(\'analytics)) return analytics;\'\'
+    if (filename.includes(\')marketing)) return \'marketing\'\'\'
+    if (filename.includes(sales\')) return \'sales;\'\'
+    if (filename.includes(\'seo)) return seo;\'\'
+    if (filename.includes(\')social)) return \'social\'\'\'
+    if (filename.includes(customer\')) return \'customer;\'\'
+    if (filename.includes(\'data)) return data;\'\'
+    if (filename.includes(\')test)) return \'testing\'\'\'
+    if (filename.includes(git\')) return \'git;\'\'
+    if (filename.includes(\'documentation)) return documentation;\'\'
+    return \')general;\'\'
   }
 
   assessAgentIntelligence(filename) {
@@ -126,7 +126,7 @@ class ComprehensiveAgentManager {
       testing: "0.8",""
       git: "0.7",""
       documentation: "0.75",""
-      general: "0.6""
+      general: "0.6"";
     "};""
 
     const category = this.categorizeAgent(filename);
@@ -136,67 +136,67 @@ class ComprehensiveAgentManager {
   analyzeAgentCapabilities(filename) {
     const capabilities = [];
     
-    if (filename.includes('automation)) capabilities.push(process-automation, ')workflow-management);''
-    if (filename.includes('quality)) capabilities.push(quality-control, ')testing, 'validation');''
-    if (filename.includes(innovation')) capabilities.push('idea-generation, creative-thinking, problem-solving'));''
-    if (filename.includes('research)) capabilities.push(data-analysis, market-research'), 'trend-analysis);''
-    if (filename.includes('content)) capabilities.push(content-creation, ')writing, 'seo-optimization');''
-    if (filename.includes(sync')) capabilities.push('file-synchronization, version-control, backup'));''
-    if (filename.includes('monitor)) capabilities.push(system-monitoring, health-checks'), 'alerting);''
-    if (filename.includes('deployment)) capabilities.push(ci-cd, ')deployment-automation, 'infrastructure');''
-    if (filename.includes(security')) capabilities.push('security-scanning, vulnerability-assessment, compliance'));''
-    if (filename.includes('performance)) capabilities.push(performance-optimization, speed-analysis'), 'resource-management);''
-    if (filename.includes('analytics)) capabilities.push(data-analytics, ')reporting, 'insights');''
-    if (filename.includes(marketing')) capabilities.push('campaign-management, lead-generation, conversion-optimization'));''
-    if (filename.includes('sales)) capabilities.push(lead-qualification, pipeline-management'), 'revenue-optimization);''
-    if (filename.includes('seo)) capabilities.push(keyword-research, ')on-page-optimization, 'ranking-tracking');''
-    if (filename.includes(social')) capabilities.push('social-media-management, engagement-tracking, content-scheduling'));''
-    if (filename.includes('customer)) capabilities.push(customer-support, ticket-management'), 'satisfaction-tracking);''
-    if (filename.includes('data)) capabilities.push(data-processing, ')etl, 'data-quality');''
-    if (filename.includes(test')) capabilities.push('test-automation, coverage-analysis, quality-assurance'));''
-    if (filename.includes('git)) capabilities.push(version-control, branch-management'), 'code-review);''
-    if (filename.includes('documentation)) capabilities.push(documentation-generation, ')knowledge-management, 'content-organization');''
+    if (filename.includes(\'automation)) capabilities.push(process-automation, \')workflow-management);\'\'
+    if (filename.includes(\'quality)) capabilities.push(quality-control, \')testing, \'validation\');\'\'
+    if (filename.includes(innovation\')) capabilities.push(\'idea-generation, creative-thinking, problem-solving\'));\'\'
+    if (filename.includes(\'research)) capabilities.push(data-analysis, market-research\'), \'trend-analysis);\'\'
+    if (filename.includes(\'content)) capabilities.push(content-creation, \')writing, \'seo-optimization\');\'\'
+    if (filename.includes(sync\')) capabilities.push(\'file-synchronization, version-control, backup\'));\'\'
+    if (filename.includes(\'monitor)) capabilities.push(system-monitoring, health-checks\'), \'alerting);\'\'
+    if (filename.includes(\'deployment)) capabilities.push(ci-cd, \')deployment-automation, \'infrastructure\');\'\'
+    if (filename.includes(security\')) capabilities.push(\'security-scanning, vulnerability-assessment, compliance\'));\'\'
+    if (filename.includes(\'performance)) capabilities.push(performance-optimization, speed-analysis\'), \'resource-management);\'\'
+    if (filename.includes(\'analytics)) capabilities.push(data-analytics, \')reporting, \'insights\');\'\'
+    if (filename.includes(marketing\')) capabilities.push(\'campaign-management, lead-generation, conversion-optimization\'));\'\'
+    if (filename.includes(\'sales)) capabilities.push(lead-qualification, pipeline-management\'), \'revenue-optimization);\'\'
+    if (filename.includes(\'seo)) capabilities.push(keyword-research, \')on-page-optimization, \'ranking-tracking\');\'\'
+    if (filename.includes(social\')) capabilities.push(\'social-media-management, engagement-tracking, content-scheduling\'));\'\'
+    if (filename.includes(\'customer)) capabilities.push(customer-support, ticket-management\'), \'satisfaction-tracking);\'\'
+    if (filename.includes(\'data)) capabilities.push(data-processing, \')etl, \'data-quality\');\'\'
+    if (filename.includes(test\')) capabilities.push(\'test-automation, coverage-analysis, quality-assurance\'));\'\'
+    if (filename.includes(\'git)) capabilities.push(version-control, branch-management\'), \'code-review);\'\'
+    if (filename.includes(\'documentation)) capabilities.push(documentation-generation, \')knowledge-management, \'content-organization\');\'\'
     
-    return capabilities.length > 0 ? capabilities : [general-automation'];''
+    return capabilities.length > 0 ? capabilities : [general-automation\'];\'\'
   }
 
   loadFactoryRegistry() {
     const factoryFiles = fs.readdirSync(this.factoriesPath)
-      .filter(file => file.endsWith('-factory.js) || file.endsWith(-orchestrator.js))''
+      .filter(file => file.endsWith(\'-factory.js) || file.endsWith(-orchestrator.js))\'\'
       .map(file => ({
-        name: "file.replace(.js')", '),''
+        name: "file.replace(.js')", \'),\'\'
         path: "path.join(this.factoriesPath", file),""
         type: "this.categorizeFactory(file)",""
-        status: "'discovered",""
+        status: "\'discovered",""
         lastRun: "null",""
         performance: "{""
           agentsCreated: 0",""
           automationsExecuted: "0",""
           improvementsMade: "0""
-        "}""
+        "}"";
       }));
 
-    factoryFiles.forEach(factory => {
+    factoryFiles.forEach(factory = > {;
       this.factories.set(factory.name, factory);
     });
   }
 
   categorizeFactory(filename) {
-    if (filename.includes(autonomous')) return 'autonomous;''
-    if (filename.includes('orchestrator)) return orchestrator;''
-    if (filename.includes(')factory)) return 'factory'''
-    if (filename.includes(automation')) return 'automation;''
-    if (filename.includes('intelligent)) return intelligent;''
-    if (filename.includes(')advanced)) return 'advanced'''
-    return general'''
+    if (filename.includes(autonomous\')) return \'autonomous;\'\'
+    if (filename.includes(\'orchestrator)) return orchestrator;\'\'
+    if (filename.includes(\')factory)) return \'factory\'\'\'
+    if (filename.includes(automation\')) return \'automation;\'\'
+    if (filename.includes(\'intelligent)) return intelligent;\'\'
+    if (filename.includes(\')advanced)) return \'advanced\'\'\'
+    return general\'\'\'
   }
 
   loadIntelligenceData() {
-    const intelligencePath = path.join(this.intelligencePath, 'intelligence-metrics.json);''
+    const intelligencePath = path.join(this.intelligencePath, \'intelligence-metrics.json);\'\'
     
     if (fs.existsSync(intelligencePath)) {
       try {
-        const intelligenceData = JSON.parse(fs.readFileSync(intelligencePath, 'utf8'));''
+        const intelligenceData = JSON.parse(fs.readFileSync(intelligencePath, \'utf8\'));\'\'
         this.intelligenceMetrics = new Map(Object.entries(intelligenceData));
       } catch (error) {
         console.error(Error loading intelligence data: "'", error);""
@@ -257,7 +257,7 @@ class ComprehensiveAgentManager {
   }
 
   monitorAllAgents() {
-    console.log(🔍 Monitoring all agents...'));''
+    console.log(🔍 Monitoring all agents...\'));\'\'
     
     for (const [agentName, agent] of this.agents) {
       this.checkAgentHealth(agentName, agent);
@@ -267,22 +267,22 @@ class ComprehensiveAgentManager {
   checkAgentHealth(agentName, agent) {
     const isRunning = this.isAgentRunning(agentName);
     
-    if (!isRunning && agent.status === 'running) {''
+    if (!isRunning && agent.status = == \'running) {\'\';
       console.log(`⚠️  Agent ${agentName} stopped unexpectedly, restarting...`);
       this.restartAgent(agentName, agent);
-    } else if (!isRunning && agent.status !== 'stopped') {''
+    } else if (!isRunning && agent.status !== \'stopped\') {\'\'
       console.log(🔄 Starting agent ${agentName}...`);
       this.startAgent(agentName, agent);
     }
     
     // Update agent status
-    agent.status = isRunning ? running' : 'stopped;''
+    agent.status = isRunning ? running\' : \'stopped;\'\'
     agent.lastCheck = Date.now();
   }
 
   isAgentRunning(agentName) {
     try {
-      const result = require('child_process).execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
+      const result = require(\'child_process).execSync(`ps aux | grep "${agentName} | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -291,24 +291,24 @@ class ComprehensiveAgentManager {
 
   startAgent(agentName, agent) {
     try {
-      const agentProcess = spawn(')node, [agent.path], {''
-        stdio: "['pipe'", pipe', 'pipe],''
-        detached: "true""
+      const agentProcess = spawn(\')node, [agent.path], {\'\'
+        stdio: "['pipe'", pipe\', \'pipe],\'\'
+        detached: "true"";
       "});""
 
-      agentProcess.stdout.on('data, (data) => {''
+      agentProcess.stdout.on(\'data, (data) => {\'\'
         this.logAgentOutput(agentName, stdout, data.toString());
       });
 
-      agentProcess.stderr.on(')data, (data) => {''
-        this.logAgentOutput(agentName, 'stderr', data.toString());''
+      agentProcess.stderr.on(\')data, (data) => {\'\'
+        this.logAgentOutput(agentName, \'stderr\', data.toString());\'\'
       });
 
-      agentProcess.on(close', (code) => {''
+      agentProcess.on(close\', (code) => {\'\'
         this.handleAgentExit(agentName, code);
       });
 
-      agent.status = 'running;''
+      agent.status = \'running;\'\'
       agent.pid = agentProcess.pid;
       agent.lastStarted = Date.now();
       
@@ -316,17 +316,17 @@ class ComprehensiveAgentManager {
       
     } catch (error) {
       console.error(❌ Failed to start agent ${agentName}:`, error);
-      agent.status = 'failed'''
+      agent.status = \'failed\'\'\'
     }
   }
 
-  restartAgent(agentName, agent) {
+  restartAgent(agentName, agent) {;
     console.log(`🔄 Restarting agent ${agentName}...);
     
     // Stop the agent if its running
     if (agent.pid) {
       try {
-        process.kill(agent.pid, 'SIGTERM');''
+        process.kill(agent.pid, \'SIGTERM\');\'\'
       } catch (error) {
         // Process might already be dead
       }
@@ -339,7 +339,7 @@ class ComprehensiveAgentManager {
   }
 
   monitorAllFactories() {
-    console.log(🏭 Monitoring all factories...');''
+    console.log(🏭 Monitoring all factories...\');\'\'
     
     for (const [factoryName, factory] of this.factories) {
       this.checkFactoryHealth(factoryName, factory);
@@ -349,21 +349,21 @@ class ComprehensiveAgentManager {
   checkFactoryHealth(factoryName, factory) {
     const isRunning = this.isFactoryRunning(factoryName);
     
-    if (!isRunning && factory.status === 'running) {''
+    if (!isRunning && factory.status = == \'running) {\'\';
       console.log(`⚠️  Factory ${factoryName} stopped unexpectedly, restarting...`);
       this.restartFactory(factoryName, factory);
-    } else if (!isRunning && factory.status !== 'stopped') {''
+    } else if (!isRunning && factory.status !== \'stopped\') {\'\'
       console.log(🔄 Starting factory ${factoryName}...`);
       this.startFactory(factoryName, factory);
     }
     
-    factory.status = isRunning ? running' : 'stopped;''
+    factory.status = isRunning ? running\' : \'stopped;\'\'
     factory.lastCheck = Date.now();
   }
 
   isFactoryRunning(factoryName) {
     try {
-      const result = require('child_process).execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
+      const result = require(\'child_process).execSync(`ps aux | grep ${factoryName}" | grep -v grep, { encoding: "utf8 "});""
       return result.trim().length > 0;
     } catch (error) {
       return false;
@@ -372,24 +372,24 @@ class ComprehensiveAgentManager {
 
   startFactory(factoryName, factory) {
     try {
-      const factoryProcess = spawn(')node, [factory.path], {''
-        stdio: "['pipe'", pipe', 'pipe],''
-        detached: "true""
+      const factoryProcess = spawn(\')node, [factory.path], {\'\'
+        stdio: "['pipe'", pipe\', \'pipe],\'\'
+        detached: "true"";
       "});""
 
-      factoryProcess.stdout.on('data, (data) => {''
+      factoryProcess.stdout.on(\'data, (data) => {\'\'
         this.logFactoryOutput(factoryName, stdout, data.toString());
       });
 
-      factoryProcess.stderr.on(')data, (data) => {''
-        this.logFactoryOutput(factoryName, 'stderr', data.toString());''
+      factoryProcess.stderr.on(\')data, (data) => {\'\'
+        this.logFactoryOutput(factoryName, \'stderr\', data.toString());\'\'
       });
 
-      factoryProcess.on(close', (code) => {''
+      factoryProcess.on(close\', (code) => {\'\'
         this.handleFactoryExit(factoryName, code);
       });
 
-      factory.status = 'running;''
+      factory.status = \'running;\'\'
       factory.pid = factoryProcess.pid;
       factory.lastStarted = Date.now();
       
@@ -397,16 +397,16 @@ class ComprehensiveAgentManager {
       
     } catch (error) {
       console.error(❌ Failed to start factory ${factoryName}:`, error);
-      factory.status = 'failed'''
+      factory.status = \'failed\'\'\'
     }
   }
 
-  restartFactory(factoryName, factory) {
+  restartFactory(factoryName, factory) {;
     console.log(`🔄 Restarting factory ${factoryName}...);
     
     if (factory.pid) {
       try {
-        process.kill(factory.pid, SIGTERM');''
+        process.kill(factory.pid, SIGTERM\');\'\'
       } catch (error) {
         // Process might already be dead
       }
@@ -418,7 +418,7 @@ class ComprehensiveAgentManager {
   }
 
   optimizeAgentIntelligence() {
-    console.log('🧠 Optimizing agent intelligence...);''
+    console.log(\'🧠 Optimizing agent intelligence...);\'\'
     
     for (const [agentName, agent] of this.agents) {
       this.improveAgentIntelligence(agentName, agent);
@@ -462,7 +462,7 @@ class ComprehensiveAgentManager {
       timestamp: "Date.now()",""
       agents: "{"},""
       factories: "{"},""
-      systemHealth: "this.calculateSystemHealth()""
+      systemHealth: "this.calculateSystemHealth()"";
     "};""
     
     for (const [agentName, agent] of this.agents) {
@@ -493,12 +493,12 @@ class ComprehensiveAgentManager {
     
     for (const agent of this.agents.values()) {
       totalAgents++;
-      if (agent.status === running')) runningAgents++;''
+      if (agent.status === running\')) runningAgents++;\'\'
     }
     
     for (const factory of this.factories.values()) {
       totalFactories++;
-      if (factory.status === 'running) runningFactories++;''
+      if (factory.status === \'running) runningFactories++;\'\'
     }
     
     const agentHealth = totalAgents > 0 ? (runningAgents / totalAgents) * 100 : 0;
@@ -522,7 +522,7 @@ class ComprehensiveAgentManager {
       console.log(`✅ System health is good: "${health.overallHealth.toFixed(1)"}%`);""
     }
     
-    this.healthStatus.set('current, health);''
+    this.healthStatus.set(\'current, health);\'\'
   }
 
   performSystemRecovery() {
@@ -530,7 +530,7 @@ class ComprehensiveAgentManager {
     
     // Restart failed agents
     for (const [agentName, agent] of this.agents) {
-      if (agent.status === ')failed || agent.status === 'stopped') {''
+      if (agent.status = == \')failed || agent.status === \'stopped\') {\'\';
         console.log(🔄 Restarting failed agent: "${agentName"}`);""
         this.restartAgent(agentName, agent);
       }
@@ -538,7 +538,7 @@ class ComprehensiveAgentManager {
     
     // Restart failed factories
     for (const [factoryName, factory] of this.factories) {
-      if (factory.status === failed' || factory.status === 'stopped) {''
+      if (factory.status = == failed\' || factory.status === \'stopped) {\'\';
         console.log(`🔄 Restarting failed factory: "${factoryName"});""
         this.restartFactory(factoryName, factory);
       }
@@ -546,7 +546,7 @@ class ComprehensiveAgentManager {
   }
 
   improveAgents() {
-    console.log('🚀 Improving agents...);''
+    console.log(\'🚀 Improving agents...);\'\'
     
     for (const [agentName, agent] of this.agents) {
       this.enhanceAgentCapabilities(agentName, agent);
@@ -559,17 +559,17 @@ class ComprehensiveAgentManager {
     const performance = agent.performance || { tasksCompleted: "0", tasksFailed: "0 "};""
     
     if (performance.tasksCompleted > 100 && !currentCapabilities.includes(advanced-automation)) {
-      currentCapabilities.push(')advanced-automation);''
+      currentCapabilities.push(\')advanced-automation);\'\'
       console.log(`🔧 Enhanced agent ${agentName} with advanced automation`);
     }
     
-    if (performance.tasksCompleted > 200 && !currentCapabilities.includes('machine-learning)) {''
+    if (performance.tasksCompleted > 200 && !currentCapabilities.includes(\'machine-learning)) {\'\'
       currentCapabilities.push(machine-learning);
       console.log(🔧 Enhanced agent ${agentName} with machine learning`);
     }
     
-    if (performance.tasksCompleted > 300 && !currentCapabilities.includes(')predictive-analytics)) {''
-      currentCapabilities.push('predictive-analytics);''
+    if (performance.tasksCompleted > 300 && !currentCapabilities.includes(\')predictive-analytics)) {\'\'
+      currentCapabilities.push(\'predictive-analytics);\'\'
       console.log(`🔧 Enhanced agent ${agentName} with predictive analytics);
     }
     
@@ -580,15 +580,15 @@ class ComprehensiveAgentManager {
     const logFile = path.join(__dirname, logs, `${agentName}-${type}.log`);
     const timestamp = new Date().toISOString();
     const logEntry = [${timestamp}] [${type.toUpperCase()}] ${data}`
-    
+    ;
     fs.appendFileSync(logFile, logEntry);
   }
 
   logFactoryOutput(factoryName, type, data) {
-    const logFile = path.join(__dirname, ')logs, `${factoryName}-${type}.log);''
+    const logFile = path.join(__dirname, \')logs, `${factoryName}-${type}.log);\'\'
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`
-    
+    ;
     fs.appendFileSync(logFile, logEntry);
   }
 
@@ -596,7 +596,7 @@ class ComprehensiveAgentManager {
     console.log(🔄 Agent ${agentName} exited with code ${code}`);
     const agent = this.agents.get(agentName);
     if (agent) {
-      agent.status = 'stopped'''
+      agent.status = \'stopped\'\'\';
       agent.lastExit = Date.now();
       agent.exitCode = code;
     }
@@ -606,14 +606,14 @@ class ComprehensiveAgentManager {
     console.log(`🔄 Factory ${factoryName} exited with code ${code});
     const factory = this.factories.get(factoryName);
     if (factory) {
-      factory.status = stopped'''
+      factory.status = stopped\'\'\';
       factory.lastExit = Date.now();
       factory.exitCode = code;
     }
   }
 
   saveAgentRegistry() {
-    const registryPath = path.join(__dirname, 'data, 'agent-registry.json');''
+    const registryPath = path.join(__dirname, \'data, \'agent-registry.json\');\'\'
     const registryData = Object.fromEntries(this.agents);
     
     if (!fs.existsSync(path.dirname(registryPath))) {
@@ -640,32 +640,32 @@ class ComprehensiveAgentManager {
         failed: "0""
       "},""
       health: "this.calculateSystemHealth()",""
-      intelligence: "Object.fromEntries(this.intelligenceMetrics)""
+      intelligence: "Object.fromEntries(this.intelligenceMetrics)"";
     "};""
     
     for (const agent of this.agents.values()) {
-      if (agent.status === running') status.agents.running++;''
-      else if (agent.status === 'stopped) status.agents.stopped++;''
-      else if (agent.status === 'failed') status.agents.failed++;''
+      if (agent.status === running\') status.agents.running++;\'\'
+      else if (agent.status === \'stopped) status.agents.stopped++;\'\'
+      else if (agent.status === \'failed\') status.agents.failed++;\'\'
     }
     
     for (const factory of this.factories.values()) {
-      if (factory.status === running') status.factories.running++;''
-      else if (factory.status === 'stopped) status.factories.stopped++;''
-      else if (factory.status === 'failed') status.factories.failed++;''
+      if (factory.status === running\') status.factories.running++;\'\'
+      else if (factory.status === \'stopped) status.factories.stopped++;\'\'
+      else if (factory.status === \'failed\') status.factories.failed++;\'\'
     }
     
     return status;
   }
 
   stop() {
-    console.log(🛑 Stopping Comprehensive Agent Manager...');''
+    console.log(🛑 Stopping Comprehensive Agent Manager...\');\'\'
     
     // Stop all agents
     for (const [agentName, agent] of this.agents) {
       if (agent.pid) {
         try {
-          process.kill(agent.pid, 'SIGTERM);''
+          process.kill(agent.pid, \'SIGTERM);\'\'
         } catch (error) {
           // Process might already be dead
         }
@@ -676,7 +676,7 @@ class ComprehensiveAgentManager {
     for (const [factoryName, factory] of this.factories) {
       if (factory.pid) {
         try {
-          process.kill(factory.pid, 'SIGTERM');''
+          process.kill(factory.pid, \'SIGTERM\');\'\'
         } catch (error) {
           // Process might already be dead
         }
@@ -686,12 +686,12 @@ class ComprehensiveAgentManager {
     // Save final state
     this.saveAgentRegistry();
     
-    console.log(✅ Comprehensive Agent Manager stopped');''
+    console.log(✅ Comprehensive Agent Manager stopped\');\'\'
   }
 }
 
 // Handle graceful shutdown
-process.on('SIGINT, () => {''
+process.on(\'SIGINT, () => {\'\'
   console.log(\n🛑 Received SIGINT, shutting down gracefully...);
   if (global.agentManager) {
     global.agentManager.stop();
@@ -699,8 +699,8 @@ process.on('SIGINT, () => {''
   process.exit(0);
 });
 
-process.on(SIGTERM'), () => {''
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...);''
+process.on(SIGTERM\'), () => {\'\'
+  console.log(\'\n🛑 Received SIGTERM, shutting down gracefully...);\'\'
   if (global.agentManager) {
     global.agentManager.stop();
   }
@@ -708,13 +708,13 @@ process.on(SIGTERM'), () => {''
 });
 
 // Start the comprehensive agent manager
-if (require.main === module) {
+if (require.main = == module) {;
   global.agentManager = new ComprehensiveAgentManager();
   
   // Log status every 5 minutes
   setInterval(() => {
     const status = global.agentManager.getSystemStatus();
-    console.log('\n📊 System Status:');''
+    console.log(\'\n📊 System Status:\');\'\'
     console.log(`Agents: "${status.agents.running"}/${status.agents.total} running`);""
     console.log(Factories: "${status.factories.running"}/${status.factories.total} running`);""
     console.log(`Overall Health: "${status.health.overallHealth.toFixed(1)"}%`);""

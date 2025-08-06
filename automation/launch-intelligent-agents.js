@@ -53,7 +53,7 @@ class IntelligentAgentLauncher {
       'automation/agents',''
       automation/agents/generated',''
       'automation/agents/production,''
-      'automation/monetization-agents'''
+      'automation/monetization-agents''';
     ];
     
     for (const dir of directories) {
@@ -67,13 +67,13 @@ class IntelligentAgentLauncher {
   }
 
   setupGracefulShutdown() {
-    process.on('SIGINT, async () => {''
+    process.on(\'SIGINT, async () => {\'\'
       console.log(\n🛑 Received SIGINT, shutting down gracefully...);
       await this.shutdown();
     });
     
-    process.on(SIGTERM'), async () => {''
-      console.log('\n🛑 Received SIGTERM, shutting down gracefully...);''
+    process.on(SIGTERM\'), async () => {\'\'
+      console.log(\'\n🛑 Received SIGTERM, shutting down gracefully...);\'\'
       await this.shutdown();
     });
     
@@ -83,13 +83,13 @@ class IntelligentAgentLauncher {
     });
     
     process.on(unhandledRejection, async (reason, promise) => {
-      console.error(❌ Unhandled Rejection at:, promise, reason:'), reason);''
+      console.error(❌ Unhandled Rejection at:, promise, reason:\'), reason);\'\'
       await this.shutdown();
     });
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Intelligent Agent Launcher...);''
+    console.log(\'🛑 Shutting down Intelligent Agent Launcher...);\'\'
     
     try {
       if (this.orchestrator) {
@@ -126,14 +126,14 @@ class IntelligentAgentLauncher {
         startTime: "this.startTime",""
         endTime: "Date.now()",""
         uptime: "this.startTime ? Date.now() - this.startTime : 0",""
-        logs: "this.logs""
+        logs: "this.logs"";
       "};""
       
-      const logPath = path.join(__dirname, logs, intelligent-agent-launcher.log'));''
+      const logPath = path.join(__dirname, logs, intelligent-agent-launcher.log\'));\'\'
       await fs.writeFile(logPath, JSON.stringify(logData, null, 2));
       
     } catch (error) {
-      console.error('❌ Error saving logs:, error);''
+      console.error(\'❌ Error saving logs:, error);\'\'
     }
   }
 
@@ -149,13 +149,13 @@ class IntelligentAgentLauncher {
         "},""
         agents: "this.orchestrator ? {""
           total: this.orchestrator.agents.size",""
-          running: "Array.from(this.orchestrator.agents.values()).filter(a => a.status === running')).length",""
+          running: "Array.from(this.orchestrator.agents.values()).filter(a => a.status === running\')).length",""
           intelligence: "Object.fromEntries(this.orchestrator.intelligenceLevels)",""
           health: "Object.fromEntries(this.orchestrator.healthStatus)""
-        "} : null""
+        "} : null"";
       };
       
-      const reportPath = path.join(__dirname, 'reports, 'final-intelligence-report.json');''
+      const reportPath = path.join(__dirname, \'reports, \'final-intelligence-report.json\');\'\'
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
       
     } catch (error) {
@@ -176,7 +176,7 @@ class IntelligentAgentLauncher {
     const logEntry = {
       timestamp: "new Date().toISOString()",""
       level,
-      message
+      message;
     };
     this.logs.push(logEntry);
     console.log([${level.toUpperCase()}] ${message}`);
@@ -195,7 +195,7 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+if (require.main = == module) {;
   main();
 }
 

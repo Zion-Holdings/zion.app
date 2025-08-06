@@ -2,10 +2,10 @@
 // Google Gemini AI Integration for Autonomous Improvement;
 const { GoogleGenerativeAI } = require('@google/generative-ai);''
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
-    this.model = this.genAI.getGenerativeModel({ model: "gemini-pro') "});""
+    this.model = this.genAI.getGenerativeModel({ model: "gemini-pro\') "});""
   }
 
   async analyzeCode(code) {
@@ -17,7 +17,7 @@ Provide specific recommendations for:
 2. Security improvements
 3. Code quality enhancements
 4. Best practices implementation
-    
+    ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
@@ -27,7 +27,7 @@ Provide specific recommendations for:
 ${code}
 
 Return the optimized version with explanations for each improvement."""
-    
+    ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
@@ -41,7 +41,7 @@ Include tests for:
 2. Edge cases
 3. Error handling
 4. Performance tests
-    
+    ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
@@ -56,7 +56,7 @@ Consider:
 3. Security
 4. Maintainability
 5. Cost optimization"""
-    
+    ;
     const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }

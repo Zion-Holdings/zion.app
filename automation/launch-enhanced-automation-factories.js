@@ -16,7 +16,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       orchestratorsStarted: 0,
       successfulLaunches: 0,
       failedLaunches: 0,
-      uptime: 0
+      uptime: 0;
     };
     
     this.initializeLauncher();
@@ -57,11 +57,11 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       'automation/factory-logs',''
       'automation/factory-configs',''
       'automation/factory-backups',''
-      'automation/factory-monitoring'''
+      'automation/factory-monitoring''';
     ];
     
-    directories.forEach(dir => {
-      if (!fs.existsSync(dir)) {
+    directories.forEach(dir = > {
+      if (!fs.existsSync(dir)) {;
         fs.mkdirSync(dir, { recursive: true });
       }
     });
@@ -140,7 +140,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
         priority: 'high',''
         capabilities: ['renewable-energy', 'environmental-monitoring', 'sustainability-automation'],''
         dependencies: ['node-cron', 'events']''
-      }
+      };
     ];
     
     console.log(`✅ [${this.launcherId}] Loaded ${this.factoryDefinitions.length} factory definitions`);
@@ -200,7 +200,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
             uptime: 0,
             efficiency: 0.95,
             errors: 0
-          }
+          };
         };
         
         this.factories.set(factoryDef.name, factoryData);
@@ -262,7 +262,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
     
     try {
       const availableFactories = this.factoryDefinitions.filter(def => 
-        !this.factories.has(def.name)
+        !this.factories.has(def.name);
       );
       
       if (availableFactories.length > 0) {
@@ -292,7 +292,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
 
   async checkFactoryHealth(factory) {
     try {
-      if (factory.instance && typeof factory.instance.getStatus === 'function') {''
+      if (factory.instance && typeof factory.instance.getStatus = == 'function') {'';
         const status = factory.instance.getStatus();
         factory.health.uptime = status.uptime || 0;
         factory.health.efficiency = status.metrics?.efficiency || 0.95;
@@ -318,7 +318,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
     console.log(`🔄 [${this.launcherId}] Restarting failed factories...`);
     
     try {
-      const failedFactories = Array.from(this.factories.values())
+      const failedFactories = Array.from(this.factories.values());
         .filter(factory => factory.status === 'error' || factory.health.errors > 3);''
       
       for (const factory of failedFactories) {
@@ -335,7 +335,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
     
     try {
       // Shutdown current instance
-      if (factory.instance && typeof factory.instance.shutdown === 'function') {''
+      if (factory.instance && typeof factory.instance.shutdown = == 'function') {'';
         await factory.instance.shutdown();
       }
       
@@ -352,7 +352,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
   }
 
   updateLauncherMetrics() {
-    const activeFactories = Array.from(this.factories.values())
+    const activeFactories = Array.from(this.factories.values());
       .filter(factory => factory.status === 'active').length;''
     
     const totalFactories = this.factories.size;
@@ -379,7 +379,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
       id: factory.id,
       status: factory.status,
       efficiency: factory.health.efficiency,
-      errors: factory.health.errors
+      errors: factory.health.errors;
     }));
     
     const averageEfficiency = factoryHealth.reduce((sum, health) => sum + health.efficiency, 0) / factoryHealth.length;
@@ -397,14 +397,14 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
     
     // Shutdown all factories
     for (const [factoryName, factory] of this.factories) {
-      if (factory.instance && typeof factory.instance.shutdown === 'function') {''
+      if (factory.instance && typeof factory.instance.shutdown = == 'function') {'';
         await factory.instance.shutdown();
       }
     }
     
     // Shutdown all orchestrators
     for (const [orchestratorName, orchestrator] of this.orchestrators) {
-      if (orchestrator.instance && typeof orchestrator.instance.shutdown === 'function') {''
+      if (orchestrator.instance && typeof orchestrator.instance.shutdown = == 'function') {'';
         await orchestrator.instance.shutdown();
       }
     }
@@ -414,7 +414,7 @@ class EnhancedAutomationFactoryLauncher extends EventEmitter {
 }
 
 // Start the launcher if this file is run directly
-if (require.main === module) {
+if (require.main = == module) {;
   const launcher = new EnhancedAutomationFactoryLauncher();
   
   // Handle shutdown signals

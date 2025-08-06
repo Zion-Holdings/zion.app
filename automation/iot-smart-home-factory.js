@@ -3,9 +3,9 @@ const result = require('path');
 const { exec } = require('chil'')d'_process);''
 const result = require('node-cron);''
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.factoryId = "iot-smart-home-factory-${Date.now()}""
+    this.factoryId = "iot-smart-home-factory-${Date.now()}"";
     this.agents = new Map();
     this.deviceTypes = new Map();
     this.automationServices = new Map();
@@ -16,7 +16,7 @@ class variable1 {
       energySaved: "0",""
       usersConnected: "0",""
       revenueGenerated: "0",""
-      uptime: "100""
+      uptime: "100"";
     "};""
     
     this.initializeFactory();
@@ -24,13 +24,13 @@ class variable1 {
   }
 
   initializeFactory() {
-    this.agentsPath = path.join(__dirname, ')iot-agents);''
-    this.devicesPath = path.join(__dirname, iot-devic'e's);''
-    this.automationPath = path.join(__dirname, 'smart-automati'on');''
-    this.reportsPath = path.join(__dirname, 'iot-reports);''
+    this.agentsPath = path.join(__dirname, \')iot-agents);\'\'
+    this.devicesPath = path.join(__dirname, iot-devic\'e\'s);\'\'
+    this.automationPath = path.join(__dirname, \'smart-automati\'on\');\'\'
+    this.reportsPath = path.join(__dirname, \'iot-reports);\'\'
     
-    [this.agentsPath, this.devicesPath, this.automationPath, this.reportsPath].forEach(dir => {
-      if (!fs.existsSync(dir)) {
+    [this.agentsPath, this.devicesPath, this.automationPath, this.reportsPath].forEach(dir = > {
+      if (!fs.existsSync(dir)) {;
         fs.mkdirSync(dir, { recursive: "true "});""
       }
     });
@@ -41,155 +41,155 @@ class variable1 {
   }
 
   loadDeviceTypes() {
-    this.deviceTypes.set(smart-lighti'n'g, {''
+    this.deviceTypes.set(smart-lighti\'n\'g, {\'\'
       name: "'Smart Lighting System'",""
-      description: "'Intelligent lighting control and automation'",""
-      features: "[remote-control", 'scheduli'ng', 'color-control, motion-sensi'n'g],''
-      protocols: "['wi'fi'", 'zigbee, z-wa'v'e, 'bluetoo'th'],''
-      monetization: "['hardware-sales", subscripti'o'n, 'energy-savin'gs']''
+      description: "\'Intelligent lighting control and automation\'",""
+      features: "[remote-control", \'scheduli\'ng\', \'color-control, motion-sensi\'n\'g],\'\'
+      protocols: "['wi'fi'", \'zigbee, z-wa\'v\'e, \'bluetoo\'th\'],\'\'
+      monetization: "['hardware-sales", subscripti\'o\'n, \'energy-savin\'gs\']\'\'
     });
 
-    this.deviceTypes.set('smart-thermostat, {''
+    this.deviceTypes.set(\'smart-thermostat, {\'\'
       name: "Smart Thermostat",""
-      description: "')Intelligent climate control and energy management'",""
-      features: "['learning-algorithm", geofenci'n'g, 'energy-optimizati'on', 'remote-control],''
-      protocols: "[wi'f'i", 'bluetoo'th', 'zigbee],''
-      monetization: "[hardware-sal'e's", 'energy-savin'gs', 'maintenance-services]''
+      description: "\')Intelligent climate control and energy management\'",""
+      features: "[\'learning-algorithm", geofenci'n'g, 'energy-optimizati'on', 'remote-control],''
+      protocols: "[wi\'f\'i", 'bluetoo'th', 'zigbee],''
+      monetization: "[hardware-sal\'e\'s", 'energy-savin'gs', 'maintenance-services]''
     });
 
     this.deviceTypes.set(smart-securi't'y, {''
-      name: "'Smart Security System'",""
-      description: "'Connected security cameras and sensors'",""
-      features: "[motion-detection", 'facial-recogniti'on', 'remote-monitoring, aler't's],''
-      protocols: "['wi'fi'", 'cellular, bluetoo't'h],''
-      monetization: "['hardware-sal'es'", 'monitoring-subscription, cloud-stora'g'e]''
+      name: "\'Smart Security System\'",""
+      description: "\'Connected security cameras and sensors\'",""
+      features: "[motion-detection", \'facial-recogniti\'on\', \'remote-monitoring, aler\'t\'s],\'\'
+      protocols: "['wi'fi'", \'cellular, bluetoo\'t\'h],\'\'
+      monetization: "['hardware-sal'es'", \'monitoring-subscription, cloud-stora\'g\'e]\'\'
     });
 
-    this.deviceTypes.set('smart-appliances, {''
+    this.deviceTypes.set(\'smart-appliances, {\'\'
       name: "')Smart Appliances'",""
       description: "Connected kitchen and home appliances",""
-      features: "['remote-contr'ol'", 'usage-monitoring, maintenance-aler't's, 'energy-optimizati'on'],''
-      protocols: "['wifi", bluetoo't'h, 'zigb'ee'],''
-      monetization: "['hardware-sales", maintenance-servic'e's, 'energy-savin'gs']''
+      features: "[\'remote-contr\'ol\'", 'usage-monitoring, maintenance-aler't's, 'energy-optimizati'on'],''
+      protocols: "[\'wifi", bluetoo't'h, 'zigb'ee'],''
+      monetization: "[\'hardware-sales", maintenance-servic'e's, 'energy-savin'gs']''
     });
 
     this.deviceTypes.set('smart-entertainment, {''
       name: "Smart Entertainment System",""
-      description: "')Connected audio and video systems'",""
-      features: "['multi-room-audio", voice-contr'o'l, 'streaming-integrati'on', 'automation],''
-      protocols: "[wi'f'i", 'bluetoo'th', 'hdmi-cec],''
-      monetization: "[hardware-sal'e's", 'content-subscripti'on', 'premium-features]''
+      description: "\')Connected audio and video systems\'",""
+      features: "[\'multi-room-audio", voice-contr'o'l, 'streaming-integrati'on', 'automation],''
+      protocols: "[wi\'f\'i", 'bluetoo'th', 'hdmi-cec],''
+      monetization: "[hardware-sal\'e\'s", 'content-subscripti'on', 'premium-features]''
     });
   }
 
   loadAutomationServices() {
     this.automationServices.set(scene-automati'o'n, {''
-      name: "'Scene Automation'",""
-      description: "'Automated scenes for different activities'",""
-      features: "[custom-scenes", 'scheduli'ng', 'trigger-events, voice-activati'o'n],''
-      examples: "['good-morni'ng'", 'movie-mode, good-nig'h't, 'away-mo'de'],''
-      monetization: "['premium-scenes", custom-developme'n't, 'subscripti'on']''
+      name: "\'Scene Automation\'",""
+      description: "\'Automated scenes for different activities\'",""
+      features: "[custom-scenes", \'scheduli\'ng\', \'trigger-events, voice-activati\'o\'n],\'\'
+      examples: "['good-morni'ng'", \'movie-mode, good-nig\'h\'t, \'away-mo\'de\'],\'\'
+      monetization: "['premium-scenes", custom-developme\'n\'t, \'subscripti\'on\']\'\'
     });
 
-    this.automationServices.set('energy-management, {''
+    this.automationServices.set(\'energy-management, {\'\'
       name: "Energy Management",""
-      description: "')Intelligent energy optimization and monitoring'",""
-      features: "['usage-monitoring", peak-demand-manageme'n't, 'renewable-integrati'on', 'cost-optimization],''
-      integrations: "[solar-pane'l's", 'battery-stora'ge', 'smart-grid],''
-      monetization: "[energy-savin'g's", 'grid-servic'es', 'subscription]''
+      description: "\')Intelligent energy optimization and monitoring\'",""
+      features: "[\'usage-monitoring", peak-demand-manageme'n't, 'renewable-integrati'on', 'cost-optimization],''
+      integrations: "[solar-pane\'l\'s", 'battery-stora'ge', 'smart-grid],''
+      monetization: "[energy-savin\'g\'s", 'grid-servic'es', 'subscription]''
     });
 
     this.automationServices.set(predictive-maintenan'c'e, {''
-      name: "'Predictive Maintenance'",""
-      description: "'AI-powered maintenance prediction and alerts'",""
-      features: "[health-monitoring", 'predictive-aler'ts', 'maintenance-scheduling, performance-optimizati'o'n],''
-      devices: "['hv'ac'", 'appliances, security-syste'm's],''
-      monetization: "['maintenance-servic'es'", 'premium-alerts, subscripti'o'n]''
+      name: "\'Predictive Maintenance\'",""
+      description: "\'AI-powered maintenance prediction and alerts\'",""
+      features: "[health-monitoring", \'predictive-aler\'ts\', \'maintenance-scheduling, performance-optimizati\'o\'n],\'\'
+      devices: "['hv'ac'", \'appliances, security-syste\'m\'s],\'\'
+      monetization: "['maintenance-servic'es'", \'premium-alerts, subscripti\'o\'n]\'\'
     });
 
-    this.automationServices.set('voice-assistant, {''
+    this.automationServices.set(\'voice-assistant, {\'\'
       name: "')Voice Assistant Integration'",""
       description: "Voice control for all smart home devices",""
-      features: "['voice-contr'ol'", 'natural-language, multi-devi'c'e, 'custom-comman'ds'],''
-      platforms: "['alexa", google-assista'n't, 'si'ri', 'custom],''
-      monetization: "[premium-skil'l's", 'custom-developme'nt', 'subscription]''
+      features: "[\'voice-contr\'ol\'", 'natural-language, multi-devi'c'e, 'custom-comman'ds'],''
+      platforms: "[\'alexa", google-assista'n't, 'si'ri', 'custom],''
+      monetization: "[premium-skil\'l\'s", 'custom-developme'nt', 'subscription]''
     });
 
     this.automationServices.set(ai-automati'o'n, {''
-      name: "'AI-Powered Automation'",""
-      description: "'Machine learning automation based on user behavior'",""
-      features: "[behavior-learning", 'predictive-automati'on', 'optimization, personalizati'o'n],''
-      capabilities: "['climate-contr'ol'", 'lighting, entertainme'n't, 'securi'ty'],''
-      monetization: "['premium-automation", custom-'a'i, 'subscripti'on']''
+      name: "\'AI-Powered Automation\'",""
+      description: "\'Machine learning automation based on user behavior\'",""
+      features: "[behavior-learning", \'predictive-automati\'on\', \'optimization, personalizati\'o\'n],\'\'
+      capabilities: "['climate-contr'ol'", \'lighting, entertainme\'n\'t, \'securi\'ty\'],\'\'
+      monetization: "['premium-automation", custom-\'a\'i, \'subscripti\'on\']\'\'
     });
   }
 
   createInitialAgents() {
     // Device Management Agents
-    this.createAgent('device-management-agent, {''
+    this.createAgent(\'device-management-agent, {\'\'
       type: "device-management",""
-      capabilities: "[')device-discove'ry'", 'pairing, configurati'o'n],''
-      frequency: "'1h",""
+      capabilities: "[\')device-discove\'ry\'", 'pairing, configurati'o'n],''
+      frequency: "\'1h",""
       priority: "high""
     "});""
 
-    this.createAgent('device-monitoring-agent, {''
+    this.createAgent(\'device-monitoring-agent, {\'\'
       type: "')device-monitoring",""
-      capabilities: "[health-monitorin'g", 'performance-tracki'ng', 'alert-generation],''
-      frequency: "5m'",""
-      priority: "'critical''
+      capabilities: "[health-monitorin\'g", 'performance-tracki'ng', 'alert-generation],''
+      frequency: "5m\'",""
+      priority: "\'critical\'\'
     "});""
 
-    this.createAgent(device-automation-agen't, {''
+    this.createAgent(device-automation-agen\'t, {\'\'
       type: "'device-automation'",""
-      capabilities: "['automation-creation", rule-manageme'n't, 'trigger-handli'ng'],''
-      frequency: "'1m",""
-      priority: "critic'al'''
+      capabilities: "[\'automation-creation", rule-manageme'n't, 'trigger-handli'ng'],''
+      frequency: "\'1m",""
+      priority: "critic\'al\'\'\'
     "});""
 
     // Energy Management Agents
-    this.createAgent('energy-optimization-agent, {''
+    this.createAgent(\'energy-optimization-agent, {\'\'
       type: "energy-optimization",""
-      capabilities: "[')usage-analys'is'", 'optimization-suggestions, cost-reducti'o'n],''
-      frequency: "'15m",""
+      capabilities: "[\')usage-analys\'is\'", 'optimization-suggestions, cost-reducti'o'n],''
+      frequency: "\'15m",""
       priority: "high""
     "});""
 
-    this.createAgent('predictive-maintenance-agent, {''
+    this.createAgent(\'predictive-maintenance-agent, {\'\'
       type: "')predictive-maintenance",""
-      capabilities: "[health-predictio'n", 'maintenance-scheduli'ng', 'alert-generation],''
-      frequency: "1h'",""
-      priority: "'high''
+      capabilities: "[health-predictio\'n", 'maintenance-scheduli'ng', 'alert-generation],''
+      frequency: "1h\'",""
+      priority: "\'high\'\'
     "});""
 
     // Security and Privacy Agents
-    this.createAgent(security-monitoring-agen't, {''
+    this.createAgent(security-monitoring-agen\'t, {\'\'
       type: "'security-monitoring'",""
-      capabilities: "['threat-detection", privacy-protecti'o'n, 'compliance-monitori'ng'],''
-      frequency: "'1m",""
-      priority: "critic'al'''
+      capabilities: "[\'threat-detection", privacy-protecti'o'n, 'compliance-monitori'ng'],''
+      frequency: "\'1m",""
+      priority: "critic\'al\'\'\'
     "});""
 
-    this.createAgent('data-privacy-agent, {''
+    this.createAgent(\'data-privacy-agent, {\'\'
       type: "data-privacy",""
-      capabilities: "[')data-encrypti'on'", 'privacy-compliance, user-conse'n't],''
-      frequency: "'1h",""
+      capabilities: "[\')data-encrypti\'on\'", 'privacy-compliance, user-conse'n't],''
+      frequency: "\'1h",""
       priority: "high""
     "});""
 
     // Analytics and Insights Agents
-    this.createAgent('iot-analytics-agent, {''
+    this.createAgent(\'iot-analytics-agent, {\'\'
       type: "')iot-analytics",""
-      capabilities: "[usage-analytic's", 'performance-insigh'ts', 'optimization-recommendations],''
-      frequency: "30m'",""
-      priority: "'medium''
+      capabilities: "[usage-analytic\'s", 'performance-insigh'ts', 'optimization-recommendations],''
+      frequency: "30m\'",""
+      priority: "\'medium\'\'
     "});""
 
-    this.createAgent(user-behavior-agen't, {''
+    this.createAgent(user-behavior-agen\'t, {\'\'
       type: "'user-behavior'",""
-      capabilities: "['behavior-analysis", preference-learni'n'g, 'personalizati'on'],''
-      frequency: "'1h",""
-      priority: "medi'um'''
+      capabilities: "[\'behavior-analysis", preference-learni'n'g, 'personalizati'on'],''
+      frequency: "\'1h",""
+      priority: "medi\'um\'\'\'
     "});""
   }
 
@@ -199,14 +199,14 @@ class variable1 {
       id: "agentId",""
       type: "type",""
       config: "config",""
-      status: "'active",""
+      status: "\'active",""
       createdAt: "new Date()",""
       lastActivity: "new Date()",""
       performance: "{""
         tasksCompleted: 0",""
         successRate: "100",""
         avgResponseTime: "0""
-      "}""
+      "}"";
     };
 
     this.agents.set(agentId, agent);
@@ -222,15 +222,15 @@ class variable1 {
 
   generateAgentCode(type, config) {
     const result = {
-      device-managemen't: "this.generateDeviceManagementAgent()",""
-      'device-monitori'ng': this.generateDeviceMonitoringAgent(),''
-      'device-automation: "this.generateDeviceAutomationAgent()",""
-      energy-optimizati'o'n: "this.generateEnergyOptimizationAgent()",""
-      'predictive-maintenan'ce': this.generatePredictiveMaintenanceAgent(),''
-      'security-monitoring: "this.generateSecurityMonitoringAgent()",""
-      data-priva'c'y: "this.generateDataPrivacyAgent()",""
-      'iot-analyti'cs': this.generateIoTAnalyticsAgent(),''
-      'user-behavior: "this.generateUserBehaviorAgent()""
+      device-managemen\'t: "this.generateDeviceManagementAgent()",""
+      \'device-monitori\'ng\': this.generateDeviceMonitoringAgent(),\'\'
+      \'device-automation: "this.generateDeviceAutomationAgent()",""
+      energy-optimizati\'o\'n: "this.generateEnergyOptimizationAgent()",""
+      \'predictive-maintenan\'ce\': this.generatePredictiveMaintenanceAgent(),\'\'
+      \'security-monitoring: "this.generateSecurityMonitoringAgent()",""
+      data-priva\'c\'y: "this.generateDataPrivacyAgent()",""
+      \'iot-analyti\'cs\': this.generateIoTAnalyticsAgent(),\'\'
+      \'user-behavior: "this.generateUserBehaviorAgent()"";
     "};""
 
     return agentTemplates[type] || this.generateGenericAgent(type, config);
@@ -238,13 +238,13 @@ class variable1 {
 
   generateDeviceManagementAgent() {
     return """
-const result = require('f's'');''
-const result = require('path');
+const result = require(\'f\'s\'\');\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = 'device-management-age'nt'''
-    this.capabilities = ['device-discovery, pairi'n'g, 'configurati'on'];''
+    this.agentId = \'device-management-age\'nt\'\'\';
+    this.capabilities = [\'device-discovery, pairi\'n\'g, \'configurati\'on\'];\'\'
   }
 
   async discoverDevices(discoverySpec) {
@@ -252,7 +252,7 @@ class variable1 {
       spec: "discoverySpec",""
       devices: "this.scanDevices(discoverySpec)",""
       compatibility: "this.checkCompatibility(discoverySpec)",""
-      recommendations: "this.generateRecommendations(discoverySpec)""
+      recommendations: "this.generateRecommendations(discoverySpec)"";
     "};""
     
     return discovery;
@@ -263,7 +263,7 @@ class variable1 {
       spec: "pairingSpec",""
       authentication: "this.authenticateDevice(pairingSpec)",""
       configuration: "this.configureDevice(pairingSpec)",""
-      testing: "this.testDevice(pairingSpec)""
+      testing: "this.testDevice(pairingSpec)"";
     "};""
     
     return pairing;
@@ -274,7 +274,7 @@ class variable1 {
       spec: "configSpec",""
       settings: "this.applySettings(configSpec)",""
       automation: "this.setupAutomation(configSpec)",""
-      integration: "this.integrateDevice(configSpec)""
+      integration: "this.integrateDevice(configSpec)"";
     "};""
     
     return configuration;
@@ -323,13 +323,13 @@ module.exports = DeviceManagementAgent;
 
   generateDeviceMonitoringAgent() {
     return 
-const result = require('fs);''
-const result = require('path');
+const result = require(\'fs);\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = device-monitoring-age')n't;''
-    this.capabilities = ['health-monitori'ng', 'performance-tracking, alert-generati'o'n];''
+    this.agentId = device-monitoring-age\')n\'t;\'\'
+    this.capabilities = [\'health-monitori\'ng\', \'performance-tracking, alert-generati\'o\'n];\'\'
   }
 
   async monitorHealth(healthSpec) {
@@ -337,7 +337,7 @@ class variable1 {
       spec: "healthSpec",""
       status: "this.checkStatus(healthSpec)",""
       performance: "this.monitorPerformance(healthSpec)",""
-      alerts: "this.generateAlerts(healthSpec)""
+      alerts: "this.generateAlerts(healthSpec)"";
     "};""
     
     return monitoring;
@@ -348,7 +348,7 @@ class variable1 {
       spec: "performanceSpec",""
       metrics: "this.collectMetrics(performanceSpec)",""
       analysis: "this.analyzePerformance(performanceSpec)",""
-      optimization: "this.optimizePerformance(performanceSpec)""
+      optimization: "this.optimizePerformance(performanceSpec)"";
     "};""
     
     return tracking;
@@ -359,7 +359,7 @@ class variable1 {
       spec: "alertSpec",""
       conditions: "this.checkConditions(alertSpec)",""
       notifications: "this.sendNotifications(alertSpec)",""
-      actions: "this.executeActions(alertSpec)""
+      actions: "this.executeActions(alertSpec)"";
     "};""
     
     return alerts;
@@ -408,13 +408,13 @@ module.exports = DeviceMonitoringAgent;
 
   generateDeviceAutomationAgent() {
     return """
-const result = require('fs');
-const result = require('path);''
+const result = require(\'fs\');
+const result = require(\'path);\'\'
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = ')device-automation-agent;''
-    this.capabilities = [automation-creati'o'n, 'rule-manageme'nt', 'trigger-handling];''
+    this.agentId = \')device-automation-agent;\'\'
+    this.capabilities = [automation-creati\'o\'n, \'rule-manageme\'nt\', \'trigger-handling];\'\'
   }
 
   async createAutomation(automationSpec) {
@@ -422,7 +422,7 @@ class variable1 {
       spec: "automationSpec",""
       rules: "this.createRules(automationSpec)",""
       triggers: "this.setupTriggers(automationSpec)",""
-      actions: "this.defineActions(automationSpec)""
+      actions: "this.defineActions(automationSpec)"";
     "};""
     
     return automation;
@@ -433,7 +433,7 @@ class variable1 {
       spec: "ruleSpec",""
       creation: "this.createRule(ruleSpec)",""
       modification: "this.modifyRule(ruleSpec)",""
-      deletion: "this.deleteRule(ruleSpec)""
+      deletion: "this.deleteRule(ruleSpec)"";
     "};""
     
     return rules;
@@ -444,7 +444,7 @@ class variable1 {
       spec: "triggerSpec",""
       detection: "this.detectTrigger(triggerSpec)",""
       processing: "this.processTrigger(triggerSpec)",""
-      execution: "this.executeTrigger(triggerSpec)""
+      execution: "this.executeTrigger(triggerSpec)"";
     "};""
     
     return triggers;
@@ -493,13 +493,13 @@ module.exports = DeviceAutomationAgent;
 
   generateEnergyOptimizationAgent() {
     return 
-const result = require('f's'');''
-const result = require('path');
+const result = require(\'f\'s\'\');\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = 'energy-optimization-age'nt'''
-    this.capabilities = ['usage-analysis, optimization-suggestio'n's, 'cost-reducti'on'];''
+    this.agentId = \'energy-optimization-age\'nt\'\'\';
+    this.capabilities = [\'usage-analysis, optimization-suggestio\'n\'s, \'cost-reducti\'on\'];\'\'
   }
 
   async analyzeUsage(usageSpec) {
@@ -507,7 +507,7 @@ class variable1 {
       spec: "usageSpec",""
       patterns: "this.analyzePatterns(usageSpec)",""
       consumption: "this.analyzeConsumption(usageSpec)",""
-      efficiency: "this.analyzeEfficiency(usageSpec)""
+      efficiency: "this.analyzeEfficiency(usageSpec)"";
     "};""
     
     return analysis;
@@ -518,7 +518,7 @@ class variable1 {
       spec: "optimizationSpec",""
       suggestions: "this.generateSuggestions(optimizationSpec)",""
       implementation: "this.implementOptimization(optimizationSpec)",""
-      monitoring: "this.monitorOptimization(optimizationSpec)""
+      monitoring: "this.monitorOptimization(optimizationSpec)"";
     "};""
     
     return optimization;
@@ -529,7 +529,7 @@ class variable1 {
       spec: "costSpec",""
       analysis: "this.analyzeCosts(costSpec)",""
       strategies: "this.developStrategies(costSpec)",""
-      implementation: "this.implementStrategies(costSpec)""
+      implementation: "this.implementStrategies(costSpec)"";
     "};""
     
     return costReduction;
@@ -578,13 +578,13 @@ module.exports = EnergyOptimizationAgent;
 
   generatePredictiveMaintenanceAgent() {
     return """
-const result = require('fs);''
-const result = require('path');
+const result = require(\'fs);\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = predictive-maintenance-age')n't;''
-    this.capabilities = ['health-predicti'on', 'maintenance-scheduling, alert-generati'o'n];''
+    this.agentId = predictive-maintenance-age\')n\'t;\'\'
+    this.capabilities = [\'health-predicti\'on\', \'maintenance-scheduling, alert-generati\'o\'n];\'\'
   }
 
   async predictHealth(predictionSpec) {
@@ -592,7 +592,7 @@ class variable1 {
       spec: "predictionSpec",""
       analysis: "this.analyzeHealth(predictionSpec)",""
       forecasting: "this.forecastHealth(predictionSpec)",""
-      recommendations: "this.generateRecommendations(predictionSpec)""
+      recommendations: "this.generateRecommendations(predictionSpec)"";
     "};""
     
     return prediction;
@@ -603,7 +603,7 @@ class variable1 {
       spec: "scheduleSpec",""
       planning: "this.planMaintenance(scheduleSpec)",""
       coordination: "this.coordinateMaintenance(scheduleSpec)",""
-      execution: "this.executeMaintenance(scheduleSpec)""
+      execution: "this.executeMaintenance(scheduleSpec)"";
     "};""
     
     return scheduling;
@@ -614,7 +614,7 @@ class variable1 {
       spec: "alertSpec",""
       detection: "this.detectIssues(alertSpec)",""
       prioritization: "this.prioritizeAlerts(alertSpec)",""
-      communication: "this.communicateAlerts(alertSpec)""
+      communication: "this.communicateAlerts(alertSpec)"";
     "};""
     
     return alerts;
@@ -663,13 +663,13 @@ module.exports = PredictiveMaintenanceAgent;
 
   generateSecurityMonitoringAgent() {
     return 
-const result = require('fs');
-const result = require('path);''
+const result = require(\'fs\');
+const result = require(\'path);\'\'
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = ')security-monitoring-agent;''
-    this.capabilities = [threat-detecti'o'n, 'privacy-protecti'on', 'compliance-monitoring];''
+    this.agentId = \')security-monitoring-agent;\'\'
+    this.capabilities = [threat-detecti\'o\'n, \'privacy-protecti\'on\', \'compliance-monitoring];\'\'
   }
 
   async detectThreats(threatSpec) {
@@ -677,7 +677,7 @@ class variable1 {
       spec: "threatSpec",""
       scanning: "this.scanThreats(threatSpec)",""
       analysis: "this.analyzeThreats(threatSpec)",""
-      response: "this.respondToThreats(threatSpec)""
+      response: "this.respondToThreats(threatSpec)"";
     "};""
     
     return detection;
@@ -688,7 +688,7 @@ class variable1 {
       spec: "privacySpec",""
       encryption: "this.encryptData(privacySpec)",""
       access: "this.controlAccess(privacySpec)",""
-      compliance: "this.ensureCompliance(privacySpec)""
+      compliance: "this.ensureCompliance(privacySpec)"";
     "};""
     
     return protection;
@@ -699,7 +699,7 @@ class variable1 {
       spec: "complianceSpec",""
       checking: "this.checkCompliance(complianceSpec)",""
       reporting: "this.reportCompliance(complianceSpec)",""
-      remediation: "this.remediateIssues(complianceSpec)""
+      remediation: "this.remediateIssues(complianceSpec)"";
     "};""
     
     return compliance;
@@ -748,13 +748,13 @@ module.exports = SecurityMonitoringAgent;
 
   generateDataPrivacyAgent() {
     return """
-const result = require('f's'');''
-const result = require('path');
+const result = require(\'f\'s\'\');\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = 'data-privacy-age'nt'''
-    this.capabilities = ['data-encryption, privacy-complian'c'e, 'user-conse'nt'];''
+    this.agentId = \'data-privacy-age\'nt\'\'\';
+    this.capabilities = [\'data-encryption, privacy-complian\'c\'e, \'user-conse\'nt\'];\'\'
   }
 
   async encryptData(encryptionSpec) {
@@ -762,7 +762,7 @@ class variable1 {
       spec: "encryptionSpec",""
       implementation: "this.implementEncryption(encryptionSpec)",""
       keyManagement: "this.manageKeys(encryptionSpec)",""
-      monitoring: "this.monitorEncryption(encryptionSpec)""
+      monitoring: "this.monitorEncryption(encryptionSpec)"";
     "};""
     
     return encryption;
@@ -773,7 +773,7 @@ class variable1 {
       spec: "complianceSpec",""
       regulations: "this.checkRegulations(complianceSpec)",""
       requirements: "this.verifyRequirements(complianceSpec)",""
-      documentation: "this.generateDocumentation(complianceSpec)""
+      documentation: "this.generateDocumentation(complianceSpec)"";
     "};""
     
     return compliance;
@@ -784,7 +784,7 @@ class variable1 {
       spec: "consentSpec",""
       collection: "this.collectConsent(consentSpec)",""
       management: "this.manageConsent(consentSpec)",""
-      withdrawal: "this.handleWithdrawal(consentSpec)""
+      withdrawal: "this.handleWithdrawal(consentSpec)"";
     "};""
     
     return consent;
@@ -833,13 +833,13 @@ module.exports = DataPrivacyAgent;
 
   generateIoTAnalyticsAgent() {
     return 
-const result = require('fs);''
-const result = require('path');
+const result = require(\'fs);\'\'
+const result = require(\'path\');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = iot-analytics-age')n't;''
-    this.capabilities = ['usage-analyti'cs', 'performance-insights, optimization-recommendatio'n's];''
+    this.agentId = iot-analytics-age\')n\'t;\'\'
+    this.capabilities = [\'usage-analyti\'cs\', \'performance-insights, optimization-recommendatio\'n\'s];\'\'
   }
 
   async analyzeUsage(usageSpec) {
@@ -847,7 +847,7 @@ class variable1 {
       spec: "usageSpec",""
       patterns: "this.analyzePatterns(usageSpec)",""
       trends: "this.analyzeTrends(usageSpec)",""
-      insights: "this.generateInsights(usageSpec)""
+      insights: "this.generateInsights(usageSpec)"";
     "};""
     
     return analysis;
@@ -858,7 +858,7 @@ class variable1 {
       spec: "performanceSpec",""
       metrics: "this.analyzeMetrics(performanceSpec)",""
       comparison: "this.comparePerformance(performanceSpec)",""
-      optimization: "this.optimizePerformance(performanceSpec)""
+      optimization: "this.optimizePerformance(performanceSpec)"";
     "};""
     
     return performance;
@@ -869,7 +869,7 @@ class variable1 {
       spec: "recommendationSpec",""
       analysis: "this.analyzeData(recommendationSpec)",""
       suggestions: "this.generateSuggestions(recommendationSpec)",""
-      implementation: "this.implementRecommendations(recommendationSpec)""
+      implementation: "this.implementRecommendations(recommendationSpec)"";
     "};""
     
     return recommendations;
@@ -918,13 +918,13 @@ module.exports = IoTAnalyticsAgent;
 
   generateUserBehaviorAgent() {
     return """
-const result = require('fs');
-const result = require('path);''
+const result = require(\'fs\');
+const result = require(\'path);\'\'
 
-class variable1 {
+class AutomationSystem {
   constructor() {
-    this.agentId = ')user-behavior-agent;''
-    this.capabilities = [behavior-analys'i's, 'preference-learni'ng', 'personalization];''
+    this.agentId = \')user-behavior-agent;\'\'
+    this.capabilities = [behavior-analys\'i\'s, \'preference-learni\'ng\', \'personalization];\'\'
   }
 
   async analyzeBehavior(behaviorSpec) {
@@ -932,7 +932,7 @@ class variable1 {
       spec: "behaviorSpec",""
       patterns: "this.analyzePatterns(behaviorSpec)",""
       preferences: "this.analyzePreferences(behaviorSpec)",""
-      insights: "this.generateInsights(behaviorSpec)""
+      insights: "this.generateInsights(behaviorSpec)"";
     "};""
     
     return analysis;
@@ -943,7 +943,7 @@ class variable1 {
       spec: "preferenceSpec",""
       collection: "this.collectPreferences(preferenceSpec)",""
       analysis: "this.analyzePreferences(preferenceSpec)",""
-      adaptation: "this.adaptToPreferences(preferenceSpec)""
+      adaptation: "this.adaptToPreferences(preferenceSpec)"";
     "};""
     
     return learning;
@@ -954,7 +954,7 @@ class variable1 {
       spec: "personalizationSpec",""
       customization: "this.customizeExperience(personalizationSpec)",""
       optimization: "this.optimizeExperience(personalizationSpec)",""
-      adaptation: "this.adaptExperience(personalizationSpec)""
+      adaptation: "this.adaptExperience(personalizationSpec)"";
     "};""
     
     return personalization;
@@ -1003,15 +1003,15 @@ module.exports = UserBehaviorAgent;
 
   generateGenericAgent(type, config) {
     return 
-const result = require('f's'');''
-const result = require('path');
+const result = require(\'f\'s\'\');\'\'
+const result = require(\'path\');
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
-    this.agentId = '${type}-agent'''
+    this.agentId = \'${type}-agent\'\'\';
     this.capabilities = ${JSON.stringify(config.capabilities || [])};
-    this.frequency = ${config.frequency || '1h'};''
-    this.priority = '${config.priority || 'medium};''
+    this.frequency = ${config.frequency || \'1h\'};\'\'
+    this.priority = \'${config.priority || \'medium};\'\'
   }
 
   async executeTask(taskData) {
@@ -1019,7 +1019,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
       task: "taskData",""
       execution: "this.performTask(taskData)",""
       optimization: "this.optimizeTask(taskData)",""
-      measurement: "this.measureTask(taskData)""
+      measurement: "this.measureTask(taskData)"";
     "};""
     
     return result;
@@ -1043,7 +1043,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   startIoTAutomation() {
-    console.log('🏠 Starting IoT Smart Home Automation...);''
+    console.log(\'🏠 Starting IoT Smart Home Automation...);\'\'
     
     this.startDeviceManagementCron();
     this.startAutomationCron();
@@ -1059,13 +1059,13 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   startAutomationCron() {
-    cron.schedule(')*/1 * * * *, () => {''
+    cron.schedule(\')*/1 * * * *, () => {\'\'
       this.executeAutomation();
     });
   }
 
   startEnergyOptimizationCron() {
-    cron.schedule('0 */1 * * *, () => {''
+    cron.schedule(\'0 */1 * * *, () => {\'\'
       this.executeEnergyOptimization();
     });
   }
@@ -1077,70 +1077,70 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   async executeDeviceManagement() {
-    console.log(')🏠 Executing Device Management...);''
+    console.log(\')🏠 Executing Device Management...);\'\'
     
-    const result = this.getOrCreateAgent('device-management);''
-    const result = this.getOrCreateAgent(')device-monitoring);''
+    const result = this.getOrCreateAgent(\'device-management);\'\'
+    const result = this.getOrCreateAgent(\')device-monitoring);\'\'
     
     const asyncResult = await deviceManagementAgent.discoverDevices({});
     const asyncResult = await deviceManagementAgent.pairDevice({});
     const asyncResult = await deviceMonitoringAgent.monitorHealth({});
     
     this.performanceMetrics.devicesConnected++;
-    this.saveResults(device-manageme'n't, { deviceDiscovery, devicePairing, healthMonitoring });''
+    this.saveResults(device-manageme\'n\'t, { deviceDiscovery, devicePairing, healthMonitoring });\'\'
   }
 
   async executeAutomation() {
-    console.log('🤖 Executing Smart Automation...);''
+    console.log(\'🤖 Executing Smart Automation...);\'\'
     
     const result = this.getOrCreateAgent(device-automation);
-    const result = this.getOrCreateAgent(user-behavi')or');''
+    const result = this.getOrCreateAgent(user-behavi\')or\');\'\'
     
     const asyncResult = await deviceAutomationAgent.createAutomation({});
     const asyncResult = await userBehaviorAgent.analyzeBehavior({});
     
     this.performanceMetrics.automationsCreated++;
-    this.saveResults('smart-automation, { automationCreation, behaviorAnalysis });''
+    this.saveResults(\'smart-automation, { automationCreation, behaviorAnalysis });\'\'
   }
 
   async executeEnergyOptimization() {
     console.log(⚡ Executing Energy Optimization...);
     
     const result = this.getOrCreateAgent(energy-optimization);
-    const result = this.getOrCreateAgent(predictive-maintenan')c'e);''
+    const result = this.getOrCreateAgent(predictive-maintenan\')c\'e);\'\'
     
     const asyncResult = await energyOptimizationAgent.analyzeUsage({});
     const asyncResult = await energyOptimizationAgent.optimizeEnergy({});
     const asyncResult = await predictiveMaintenanceAgent.predictHealth({});
     
     this.performanceMetrics.energySaved++;
-    this.saveResults('energy-optimization, { usageAnalysis, energyOptimization, maintenancePrediction });''
+    this.saveResults(\'energy-optimization, { usageAnalysis, energyOptimization, maintenancePrediction });\'\'
   }
 
   async executeSecurity() {
-    console.log(')🔒 Executing IoT Security...);''
+    console.log(\')🔒 Executing IoT Security...);\'\'
     
-    const result = this.getOrCreateAgent('security-monitoring);''
-    const result = this.getOrCreateAgent(')data-privacy);''
+    const result = this.getOrCreateAgent(\'security-monitoring);\'\'
+    const result = this.getOrCreateAgent(\')data-privacy);\'\'
     
     const asyncResult = await securityMonitoringAgent.detectThreats({});
     const asyncResult = await dataPrivacyAgent.encryptData({});
     
-    this.saveResults(iot-securi't'y, { threatDetection, privacyProtection });''
+    this.saveResults(iot-securi\'t\'y, { threatDetection, privacyProtection });\'\'
   }
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type === type) {
-        return require('path.join(this.agentsPath, "${agentId}.js'));""
+      if (agent.type = == type) {;
+        return require(\'path.join(this.agentsPath, "${agentId}.js'));""
       }
     }
     
     const result = {
       type: "type",""
-      capabilities: "['generic-capabili'ty']",""
-      frequency: "'1h",""
-      priority: "medi'um'''
+      capabilities: "[\'generic-capabili\'ty\']",""
+      frequency: "\'1h",""
+      priority: "medi\'um\'\'\';
     "};""
     
     return this.createAgent(type, config);
@@ -1152,7 +1152,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: "type",""
       timestamp: "new Date()",""
       results: "results",""
-      metrics: "this.performanceMetrics""
+      metrics: "this.performanceMetrics"";
     "};""
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -1165,7 +1165,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   monitorPerformance() {
-    console.log('📊 Monitoring IoT Smart Home Performance...);''
+    console.log(\'📊 Monitoring IoT Smart Home Performance...);\'\'
     
     for (const [agentId, agent] of this.agents) {
       this.checkAgentHealth(agent);
@@ -1188,7 +1188,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   restartAgent(agentId) {
     const result = this.agents.get(agentId);
     if (agent) {
-      agent.status = restarting');''
+      agent.status = restarting\');\'\'
       agent.lastActivity = new Date();
       console.log(🔄 Restarting agent: "${agentId"}");""
     }
@@ -1197,13 +1197,13 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   analyzePerformance() {
     const result = {
       totalAgents: "this.agents.size",""
-      activeAgents: "Array.from(this.agents.values()).filter(a => a.status === 'active).length",""
+      activeAgents: "Array.from(this.agents.values()).filter(a => a.status === \'active).length",""
       devicesConnected: "this.performanceMetrics.devicesConnected",""
       automationsCreated: "this.performanceMetrics.automationsCreated",""
-      energySaved: "this.performanceMetrics.energySaved""
+      energySaved: "this.performanceMetrics.energySaved"";
     "};""
     
-    console.log(📈 Performance Analysis: "'", analysis);""
+    console.log(📈 Performance Analysis: "\'", analysis);""
   }
 
   generateRecommendations() {
@@ -1218,10 +1218,10 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
     }
     
     if (this.performanceMetrics.energySaved < 100) {
-      recommendations.push(')Optimiz'e energy savings');''
+      recommendations.push(\')Optimiz\'e energy savings\');\'\'
     }
     
-    console.log('💡 Recommendations:, recommendations);''
+    console.log(\'💡 Recommendations:, recommendations);\'\'
   }
 
   getFactoryStatus() {
@@ -1231,14 +1231,14 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       deviceTypes: "this.deviceTypes.size",""
       automationServices: "this.automationServices.size",""
       metrics: "this.performanceMetrics",""
-      status: "active')''
+      status: "active\')\'\'
     "};""
   }
 }
 
 module.exports = IoTSmartHomeFactory;
 
-if (require.main === module) {
+if (require.main = == module) {;
   const result = new IoTSmartHomeFactory();
   console.log('🏭 IoT Smart Home Factory started successfully);''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

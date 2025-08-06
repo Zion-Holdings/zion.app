@@ -22,7 +22,7 @@ class ProjectMonitoringSystem {
             testStatus: await this.checkTestStatus(),
             lintStatus: await this.checkLintStatus(),
             fileCount: await this.countFiles(),
-            automationStatus: await this.checkAutomationStatus()
+            automationStatus: await this.checkAutomationStatus();
         };
 
         const healthFile = path.join(this.monitoringDir, 'project-health.json');
@@ -35,7 +35,7 @@ class ProjectMonitoringSystem {
         try {
             const result = require('child_process').execSync('npm run build', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' 
+                stdio: 'pipe' ;
             });
             return { status: 'success', message: 'Build completed successfully' };
         } catch (error) {
@@ -47,7 +47,7 @@ class ProjectMonitoringSystem {
         try {
             const result = require('child_process').execSync('npm test', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' 
+                stdio: 'pipe' ;
             });
             return { status: 'success', message: 'Tests passed' };
         } catch (error) {
@@ -59,7 +59,7 @@ class ProjectMonitoringSystem {
         try {
             const result = require('child_process').execSync('npm run lint', { 
                 cwd: this.projectRoot, 
-                stdio: 'pipe' 
+                stdio: 'pipe' ;
             });
             return { status: 'success', message: 'Linting passed' };
         } catch (error) {
@@ -71,7 +71,7 @@ class ProjectMonitoringSystem {
         try {
             const result = require('child_process').execSync(
                 'find . -name "*.tsx" -o -name "*.ts" -o -name "*.js" | grep -v node_modules | grep -v .git | wc -l',
-                { cwd: this.projectRoot }
+                { cwd: this.projectRoot };
             );
             return parseInt(result.toString().trim());
         } catch (error) {

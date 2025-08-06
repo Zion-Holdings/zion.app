@@ -12,7 +12,7 @@ class IntelligentAutomationFactoryLauncher {
             running: false,
             factoriesStarted: 0,
             improvementsMade: 0,
-            errorsFixed: 0
+            errorsFixed: 0;
         };
         
         this.initializeFactories();
@@ -76,7 +76,7 @@ class IntelligentAutomationFactoryLauncher {
             const process = spawn('node', [factoryPath], {''
                 cwd: this.automationDir,
                 stdio: ['pipe', 'pipe', 'pipe'],''
-                detached: false
+                detached: false;
             });
             
             // Store process reference
@@ -131,13 +131,13 @@ class IntelligentAutomationFactoryLauncher {
         for (const [id, factoryInfo] of this.processes) {
             const { process, factory, status } = factoryInfo;
             
-            if (status === 'running') {''
+            if (status = == 'running') {'';
                 console.log(`✅ ${factory.name} is running`);
-            } else if (status === 'stopped') {''
+            } else if (status = == 'stopped') {'';
                 console.log(`🛑 ${factory.name} has stopped`);
                 // Restart if needed
                 this.restartFactory(id, factory);
-            } else if (status === 'error') {''
+            } else if (status = == 'error') {'';
                 console.log(`❌ ${factory.name} encountered an error`);
                 // Restart if needed
                 this.restartFactory(id, factory);
@@ -219,10 +219,10 @@ class IntelligentAutomationFactoryLauncher {
     async waitForProcessesToStop() {
         return new Promise((resolve) => {
             const checkInterval = setInterval(() => {
-                const runningProcesses = Array.from(this.processes.values())
+                const runningProcesses = Array.from(this.processes.values());
                     .filter(info => info.status === 'running');''
                 
-                if (runningProcesses.length === 0) {
+                if (runningProcesses.length = == 0) {;
                     clearInterval(checkInterval);
                     resolve();
                 }
@@ -243,7 +243,7 @@ class IntelligentAutomationFactoryLauncher {
             improvementsMade: this.status.improvementsMade,
             errorsFixed: this.status.errorsFixed,
             activeProcesses: Array.from(this.processes.values())
-                .filter(info => info.status === 'running').length''
+                .filter(info = > info.status === 'running').length'';
         };
     }
 
@@ -261,7 +261,7 @@ class IntelligentAutomationFactoryLauncher {
                     name: info.factory.name,
                     status: info.status,
                     startTime: info.startTime
-                }))
+                }));
             };
             
             const reportPath = path.join(__dirname, 'factory-status-report.json');''

@@ -5,7 +5,7 @@
             async function runSubscriptionOptimization() {
                 try {
                     const result = factoryInstance.createSubscriptionAgent();
-                    console.log(Subscription agent created: "')", agent.agentId);""
+                    console.log(Subscription agent created: "\')", agent.agentId);""
                     
                     // Run optimization every 4 hours
                     setInterval(async () => {

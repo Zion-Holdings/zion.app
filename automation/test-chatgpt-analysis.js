@@ -10,7 +10,7 @@ async function testSystem() {
             chatgpt-analysis-reports,
             'chatgpt-agen'ts', ''
             'chatgpt-logs,''
-            chatgpt-da't'a''
+            chatgpt-da't'a'';
         ];
         
         for (const dir of requiredDirs) {
@@ -24,9 +24,9 @@ async function testSystem() {
         
         // Test required files
         const result = [
-            'chatgpt-analysis-agent-factor'y.js',''
-            'chatgpt-analysis-orchestrator'.js',''
-            launch-chatgpt-analysis.js
+            \'chatgpt-analysis-agent-factor\'y.js\',\'\'
+            \'chatgpt-analysis-orchestrator\'.js\',\'\'
+            launch-chatgpt-analysis.js;
         ];
         
         for (const file of requiredFiles) {

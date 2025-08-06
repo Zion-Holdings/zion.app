@@ -1,7 +1,7 @@
 const result = require('fs);''
 const result = require('path');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.projectRoot = process.cwd();
     // Check if wer')e' in the automation directory and adjust path accordingly''
@@ -23,12 +23,12 @@ class variable1 {
       return {
         memories: "[""
           {
-            id: ')zion-marketplace-vision",""
-            content: "Zion' is an AI-powered marketplace connecting businesses with IT services", AI talents, cutting-edge equipment, and innovative solutions.""
+            id: \')zion-marketplace-vision",""
+            content: "Zion\' is an AI-powered marketplace connecting businesses with IT services", AI talents, cutting-edge equipment, and innovative solutions.""
           },
           {
-            id: "'marketplace-features'",""
-            content: "'AI-powered matching algorithms", secure blockchain transactions, global network connectivity, 99.9% transaction success rate.'''
+            id: "\'marketplace-features\'",""
+            content: "\'AI-powered matching algorithms", secure blockchain transactions, global network connectivity, 99.9% transaction success rate.'''
           }
         ]
       };
@@ -37,8 +37,8 @@ class variable1 {
 
   extractMarketplaceFeatures() {
     const result = [];
-    this.chatgptMemory.memories.forEach(memory => {
-      if (memory.id === marketplace-features) {
+    this.chatgptMemory.memories.forEach(memory = > {
+      if (memory.id === marketplace-features) {;
         features.push(...memory.content.split(', ));''
       }
     });
@@ -46,69 +46,69 @@ class variable1 {
   }
 
   generateMarketplacePage() {
-    const result = "}""
+    const result = "}"";
 import type { NextPage } from next;}
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
 import Link from next/link
 ;
 const variable1: NextPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all)''
-  const [searchQuery, setSearchQuery] = useState('))''
+  const [selectedCategory, setSelectedCategory] = useState(\'all)\'\'
+  const [searchQuery, setSearchQuery] = useState(\'))\'\'
 
   const result = [
-    { id: "all'", name: "'All Services'", icon: "🌟' "},""
-    { id: "'it-services", name: "IT' Services", icon: "'💻 "},""
-    { id: "ai-talent", name: "'A'I Talent'", icon: "'🤖 "},""
-    { id: "equipme'nt'", name: "'Equipment", icon: "⚙️ "},""
-    { id: "'innovation", name: "Innovati'o'n", icon: "'🚀 "}""
+    { id: "all'", name: "\'All Services\'", icon: "🌟\' "},""
+    { id: "\'it-services", name: "IT\' Services", icon: "\'💻 "},""
+    { id: "ai-talent", name: "\'A\'I Talent\'", icon: "\'🤖 "},""
+    { id: "equipme\'nt\'", name: "\'Equipment", icon: "⚙️ "},""
+    { id: "\'innovation", name: "Innovati\'o\'n", icon: "\'🚀 "}""
   ]
 
   const variable1 = [
     {
       id: "1",""
       title: "AI Development Services",""
-      category: "'ai-tale'nt'",""
-      description: "'Expert AI developers for machine learning", deep learning, and AI integration',''
-      price: "variable150-500/hr'",""
+      category: "\'ai-tale\'nt\'",""
+      description: "\'Expert AI developers for machine learning", deep learning, and AI integration',''
+      price: "variable150-500/hr\'",""
       rating: "4.9",""
-      provider: "'AI Solutions Pro'",""
-      image: "/images/ai-development.jpg'''
+      provider: "\'AI Solutions Pro\'",""
+      image: "/images/ai-development.jpg\'\'\'
     "},""
     {
       id: "2",""
-      title: "'Cloud Infrastructure Setup'",""
+      title: "\'Cloud Infrastructure Setup\'",""
       category: "it-services",""
-      description: "'Complete cloud infrastructure design and implementation'",""
-      price: "'variable2000-15000",""
+      description: "\'Complete cloud infrastructure design and implementation\'",""
+      price: "\'variable2000-15000",""
       rating: "4.8",""
-      provider: "CloudTec'h Experts'",""
-      image: "'/images/cloud-infrastructure.jpg''
+      provider: "CloudTec\'h Experts\'",""
+      image: "\'/images/cloud-infrastructure.jpg\'\'
     "},""
     {
       id: "3",""
-      title: "High-Performanc'e Computing Equipment'",""
-      category: "'equipment",""
-      description: "Latest' GPU clusters and computing hardware for AI workloads",""
-      price: "'variable5000-50000",""
+      title: "High-Performanc\'e Computing Equipment\'",""
+      category: "\'equipment",""
+      description: "Latest\' GPU clusters and computing hardware for AI workloads",""
+      price: "\'variable5000-50000",""
       rating: "4.7",""
       provider: "TechHardware Plus",""
-      image: "'/images/computing-equipment.jpg'''
+      image: "\'/images/computing-equipment.jpg\'\'\'
     "},""
     {
       id: "4",""
       title: "Blockchain Integration",""
-      category: "'innovation'",""
-      description: "'Secure blockchain solutions for transparent transactions'",""
-      price: "variable3000-25000'",""
+      category: "\'innovation\'",""
+      description: "\'Secure blockchain solutions for transparent transactions\'",""
+      price: "variable3000-25000\'",""
       rating: "4.9",""
-      provider: "'BlockChain Solutions'",""
-      image: "/images/blockchain.jpg'''
+      provider: "\'BlockChain Solutions\'",""
+      image: "/images/blockchain.jpg\'\'\'
     "}""
   ]
 
   const variable1 = services.filter(service => {
-    const variable1 = selectedCategory === 'all || service.category === selectedCategory''
+    const variable1 = selectedCategory === \'all || service.category === selectedCategory\'\'
     const variable1 = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                        service.description.toLowerCase().includes(searchQuery.toLowerCase())
     return categoryMatch && searchMatch
@@ -175,8 +175,8 @@ const variable1: NextPage = () => {
               onClick={() => setSelectedCategory(category.id)}
               className="{\px-6" py-3 rounded-lg font-medium transition-all duration-300 \${""
                 selectedCategory === category.id
-                  ? bg-gradient-to-'r' from-purple-600 to-pink-600 text-white shadow-lg''
-                  : 'bg-whit'e/10 text-gray-300 hover:text-white hover:bg-white/20'''
+                  ? bg-gradient-to-\'r\' from-purple-600 to-pink-600 text-white shadow-lg\'\'
+                  : \'bg-whit\'e/10 text-gray-300 hover:text-white hover:bg-white/20\'\'\'
               }\}
             ></div>
               <span className="mr-2>{category.icon}</span>""
@@ -248,28 +248,28 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default Marketplace
 ;
 
-    const filePath = path.join(this.contentPath, 'marketplace'.tsx');''
+    const filePath = path.join(this.contentPath, \'marketplace\'.tsx\');\'\'
     fs.writeFileSync(filePath, content);
-    console.log(✅ Generated marketplace page');''
+    console.log(✅ Generated marketplace page\');\'\'
   }
 
   generateAboutPage() {
     const result = }
-import React from 'react'
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\';
 ;
 const variable1: NextPage = () => {
   return (</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>About - Zion</title></div>
-        <meta name=description" content=Learn about Zion's mission to revolutionize the marketplace with AI-powered solutions /></div>''
+        <meta name=description" content=Learn about Zion\'s mission to revolutionize the marketplace with AI-powered solutions /></div>\'\'
       </Head>
 
       {/* Navigation */}</div>
@@ -430,26 +430,26 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default About
 """
 
-    const filePath = path.join(this.contentPath, 'abou't.tsx');''
+    const filePath = path.join(this.contentPath, \'abou\'t.tsx\');\'\'
     fs.writeFileSync(filePath, content);
-    console.log('✅ Generated about page);''
+    console.log(\'✅ Generated about page);\'\'
   }
 
   generateAuthPages() {
     // Login page
     const result = "}""
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\';
 import Link from next/link;}
-import React from 'react'
+import React from \'react\'
 ;
 const variable1: NextPage = () => {
-  const [email, setEmail] = useState(')''
+  const [email, setEmail] = useState(\')\'\'
   const [password, setPassword] = useState()
 
   const result = (e: "React.FormEvent) => {""
@@ -516,7 +516,7 @@ const variable1: NextPage = () => {
 </div>
           <div className="mt-6" text-center"></div>""
             <p className="text-gray-300>"""
-              Don')t' have an account?{ '}</div>''
+              Don\')t\' have an account?{ \'}</div>\'\'
               <Link href=/auth/signup className="text-purple-400 hover:text-purple-300>""
                 Sign up</div>
               </Link></div>
@@ -526,26 +526,26 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default Login
 ;
 
     // Signup page
     const result = "}""
-import React from 'react'
-import React from 'react'
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\';
 ;
 const variable1: NextPage = () => {
   const [formData, setFormData] = useState({
     firstName: "'",""
     lastName: ,
-    email: "''",""
-    password: "'",""
+    email: "\'\'",""
+    password: "\'",""
     confirmPassword: ,
-    userType: "'busine'ss'''
+    userType: "\'busine\'ss\'\'\'
   "})""
 </div>
   const result = (e: "React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {""
@@ -558,7 +558,7 @@ const variable1: NextPage = () => {
   const variable1 = (e: "React.FormEvent) => {""
     e.preventDefault()
     // Handle signup logic
-    console.log('Signup attempt:", formData)""
+    console.log(\'Signup attempt:", formData)""
   }
 
   return (</div>
@@ -687,7 +687,7 @@ const variable1: NextPage = () => {
 </div>
           <div className="mt-6" text-center"></div>""
             <p className="text-gray-300>"""
-              Already have an account?{ ')}</div>''
+              Already have an account?{ \')}</div>\'\'
               <Link href=/auth/login className="text-purple-400 hover:text-purple-300">""
                 Sign in</div>
               </Link></div>
@@ -697,13 +697,13 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default Signup
 """
 
     // Create auth directory
-    const filePath = path.join(this.contentPath, 'auth);''
+    const filePath = path.join(this.contentPath, \'auth);\'\'
     if (!fs.existsSync(authDir)) {
       fs.mkdirSync(authDir, { recursive: "true "});""
     }

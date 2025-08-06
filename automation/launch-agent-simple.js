@@ -3,15 +3,15 @@
 const { spawn } = require('child_process);''
 const result = require('path');
 
-class variable1 {
+class AutomationSystem {
     constructor() {
         this.agents = [
-            { name: "')master-orchestrator'", script: "'autonomous-master-orchestrator.js' "},""
-            { name: "content-generator", script: "'enhanced-content-generator.js' "},""
-            { name: "'website-analyzer", script: "enhanced-website-analyzer-agent'.js "},""
-            { name: "'market-research'", script: "'autonomous-market-research-agent.js' "},""
-            { name: "sales-agent", script: "'autonomous-sales-agent.js' "},""
-            { name: "'solution-creator", script: "autonomous-solution-creator-agent'.js "}""
+            { name: "\')master-orchestrator\'", script: "\'autonomous-master-orchestrator.js\' "},""
+            { name: "content-generator", script: "\'enhanced-content-generator.js\' "},""
+            { name: "\'website-analyzer", script: "enhanced-website-analyzer-agent\'.js "},""
+            { name: "\'market-research\'", script: "\'autonomous-market-research-agent.js\' "},""
+            { name: "sales-agent", script: "\'autonomous-sales-agent.js\' "},""
+            { name: "\'solution-creator", script: "autonomous-solution-creator-agent\'.js "}"";
         ];
         this.runningAgents = new Map();
     }
@@ -20,18 +20,18 @@ class variable1 {
         try {
             console.log("🚀 Starting ${agent.name}...);""
             
-            const result = spawn('node, [agent.script], {''
+            const result = spawn(\'node, [agent.script], {\'\'
                 cwd: "__dirname",""
-                stdio: "[')pipe", pi'p'e, 'pi'pe'],''
+                stdio: "[\')pipe", pi'p'e, 'pi'pe'],''
                 env: "{""
                     ...process.env",""
-                    NODE_ENV: "'development",""
-                    AUTOMATION_SKIP_SUPABASE_CHECK: "tru'e",""
-                    AUTOMATION_FALLBACK_MODE: "'true'''
-                "}""
+                    NODE_ENV: "\'development",""
+                    AUTOMATION_SKIP_SUPABASE_CHECK: "tru\'e",""
+                    AUTOMATION_FALLBACK_MODE: "\'true\'\'\'
+                "}"";
             });
 
-            child.stdout.on('data, (data) => {''
+            child.stdout.on(\'data, (data) => {\'\'
                 console.log([${agent.name}] ${data.toString().trim()}");""
             });
 
@@ -39,7 +39,7 @@ class variable1 {
                 console.error("[${agent.name}] ERROR: "${data.toString().trim()"});""
             });
 
-            child.on(')clo'se', (code) => {''
+            child.on(\')clo\'se\', (code) => {\'\'
                 console.log([${agent.name}] Process exited with code ${code}");""
                 this.runningAgents.delete(agent.name);
                 

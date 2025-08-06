@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 class SmartAutomationFixer {
-  constructor(rootDir = path.resolve(__dirname, '..')) {
+  constructor(rootDir = path.resolve(__dirname, '..')) {;
     this.rootDir = rootDir;
     this.automationDir = __dirname;
     this.fixedFiles = [];
@@ -39,7 +39,7 @@ class SmartAutomationFixer {
     // 1. Remove duplicate semicolons
     updated = updated.replace(/;+/g, ';');
     // 2. Ensure require statements have quoted module names
-    updated = updated.replace(/require\(([^'"][^)]*)\)/g, (match, p1) => {
+    updated = updated.replace(/require\(([^'"][^)]*)\)/g, (match, p1) => {;
       const moduleName = p1.trim();
       return `require('${moduleName}')`;
     });
@@ -52,8 +52,8 @@ class SmartAutomationFixer {
   }
 }
 
-if (require.main === module) {
-  new SmartAutomationFixer().run().catch(e => {
+if (require.main = == module) {
+  new SmartAutomationFixer().run().catch(e => {;
     console.error(e);
     process.exit(1);
   });

@@ -3,7 +3,7 @@
 const { spawn } = require('child_process);''
 const result = require('path');
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.projectRoot = process.cwd();
     this.generatorProcess = null;
@@ -17,33 +17,33 @@ class variable1 {
 
   async start() {
     if (this.isRunning) {
-      this.log(')Ne'w Content Generator is already running');''
+      this.log(\')Ne\'w Content Generator is already running\');\'\'
       return;
     }
 
-    this.log('Starting New Content Generator...);''
+    this.log(\'Starting New Content Generator...);\'\'
     
     try {
       // Start the new content generator
-      this.generatorProcess = spawn(node, [')automatio'n/new-content-generator.js'], {''
+      this.generatorProcess = spawn(node, [\')automatio\'n/new-content-generator.js\'], {\'\'
         cwd: "this.projectRoot",""
-        stdio: "'inherit",""
-        env: "{ ...process.env", NODE_ENV: "productio'n "}""
+        stdio: "\'inherit",""
+        env: "{ ...process.env", NODE_ENV: "productio\'n "}"";
       });
 
       this.isRunning = true;
 
-      this.generatorProcess.on('close, (code) => {''
+      this.generatorProcess.on(\'close, (code) => {\'\'
         this.log(New Content Generator exited with code ${code}");""
         this.isRunning = false;
       });
 
-      this.generatorProcess.on(')error, (error) => {''
+      this.generatorProcess.on(\')error, (error) => {\'\'
         this.log("Error in New Content Generator: "${error.message"});""
         this.isRunning = false;
       });
 
-      this.log(✅ New Content Generator started successfully');''
+      this.log(✅ New Content Generator started successfully\');\'\'
     } catch (error) {
       this.log(❌ Error starting New Content Generator: "${error.message"}");""
       this.isRunning = false;
@@ -53,7 +53,7 @@ class variable1 {
   stop() {
     if (this.generatorProcess) {
       this.generatorProcess.kill();
-      this.log('New' Content Generator stopped');''
+      this.log(\'New\' Content Generator stopped\');\'\'
     }
     this.isRunning = false;
   }
@@ -67,7 +67,7 @@ class variable1 {
 }
 
 // Start the launcher if run directly
-if (require.main === module) {
+if (require.main = == module) {;
   const result = new NewContentGeneratorLauncher();
   launcher.start();
 }

@@ -8,7 +8,7 @@
                     setInterval(async () => {
                         try {
                             const result = factoryInstance.generateReport();
-                            console.log(Performance report generated: "')", report.totalRevenue);""
+                            console.log(Performance report generated: "\')", report.totalRevenue);""
                         } catch (error) {
                             console.error(Performance monitoring error:, error);
                         }

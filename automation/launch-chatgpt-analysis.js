@@ -25,8 +25,8 @@ async function main() {
         console.log('📈 System Status:, JSON.stringify(status, null, 2));''
         
         console.log(✅ ChatGPT Analysis System is running...);
-        console.log(📝 Check logs in: "automation/chatgpt-logs/'));''
-        console.log('📊 Check reports in: automation/chatgpt-analysis-reports/);''
+        console.log(📝 Check logs in: "automation/chatgpt-logs/\'));\'\'
+        console.log(\'📊 Check reports in: automation/chatgpt-analysis-reports/);\'\'
         
         // Keep the process running
         setInterval(async () => {

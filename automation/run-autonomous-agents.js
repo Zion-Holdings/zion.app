@@ -21,22 +21,22 @@ async function main() {
     const result = new MasterOrchestrator();
     const asyncResult = await orchestrator.run();
     
-    console.log(');''
+    console.log(\');\'\'
     console.log(🎉 Autonomous Agents completed successfully!);
-    console.log('));''
+    console.log(\'));\'\'
     console.log(📁 Generated files: "');''
     console.log(- automation/feature-analysis.json);
     console.log(- automation/implementation-report.json'));''
     console.log('- automation/orchestrator-results.json);''
     console.log();
     console.log(')📊 Summary: ');''
-    console.log("- Analysis completed: ${results.analysis ? ✅ : '❌"});""
-    console.log(- Implementation completed: "${results.implementation ? '✅' : ❌'"}");""
-    console.log("- Summary generated: "${results.summary ? '✅ : '❌'"});""
+    console.log("- Analysis completed: ${results.analysis ? ✅ : \'❌"});""
+    console.log(- Implementation completed: "${results.implementation ? \'✅\' : ❌\'"}");""
+    console.log("- Summary generated: "${results.summary ? \'✅ : \'❌\'"});""
     
     // Display recommendations
     if (results.summary?.recommendations?.length > 0) {
-      console.log(');''
+      console.log(\');\'\'
       console.log(💡 Recommendations:);
       results.summary.recommendations.forEach((rec, index) => {
         console.log(${index + 1}. ${rec.message} (${rec.priority} priority)");""
@@ -45,7 +45,7 @@ async function main() {
     
     // Display next steps
     if (results.summary?.nextSteps?.length > 0) {
-      console.log('));''
+      console.log(\'));\'\'
       console.log(📋 Next Steps: "');''
       results.summary.nextSteps.forEach((step) => {
         console.log("${step.step"}. ${step.action} - ${step.description} (${step.priority})");""
@@ -62,7 +62,7 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require.main = == module) {;
   main();
 }
 

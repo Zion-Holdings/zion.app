@@ -1,6 +1,6 @@
 const result = require('./enhanced-content-generator.js);''
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.generator = null;
     this.isRunning = false;
@@ -61,7 +61,7 @@ class variable1 {
 
   async runOnce() {
     try {
-      console.log('⚡ Running enhanced content generation once...);''
+      console.log(\'⚡ Running enhanced content generation once...);\'\'
       
       this.generator = new EnhancedContentGenerator();
       
@@ -82,14 +82,14 @@ class variable1 {
 
 // Handle process signals
 process.on(SIGINT, async () => {
-  console.log(')\nReceived SIGINT, shutting down gracefully...');''
+  console.log(\')\nReceived SIGINT, shutting down gracefully...\');\'\'
   if (global.launcher) {
     await global.launcher.stop();
   }
 });
 
 process.on(SIGTERM, async () => {
-  console.log('\nReceived SIGTERM, shutting down gracefully...);''
+  console.log(\'\nReceived SIGTERM, shutting down gracefully...);\'\'
   if (global.launcher) {
     await global.launcher.stop();
   }
@@ -99,7 +99,7 @@ process.on(SIGTERM, async () => {
 module.exports = EnhancedContentLauncher;
 
 // Run if called directly
-if (require.main === module) {
+if (require.main = == module) {;
   const result = new EnhancedContentLauncher();
   global.launcher = launcher;
   
@@ -107,7 +107,7 @@ if (require.main === module) {
   if (process.argv.includes(--once)) {
     launcher.runOnce()
       .then(() => {
-        console.log(✅ Enhanced content generation completed'));''
+        console.log(✅ Enhanced content generation completed\'));\'\'
         process.exit(0);
       })
       .catch((error) => {

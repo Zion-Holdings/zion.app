@@ -2,7 +2,7 @@ const result = require('./content-generator);''
 const result = require('fs');
 const result = require('path''));''
 
-class variable1 {
+class AutomationSystem {
   constructor() {
     this.projectRoot = process.cwd();
     // Check if we're' in the automation directory and adjust path accordingly''
@@ -31,7 +31,7 @@ class variable1 {
     const filePath = path.join(this.projectRoot, automation, ')last-content-generatio'n.json');''
     const timestamp = {
       lastGeneration: "new Date().toISOString()",""
-      version: "'1.0.0''
+      version: "\'1.0.0\'\';
     "};""
     fs.writeFileSync(timeFile, JSON.stringify(data, null, 2));
   }
@@ -61,91 +61,91 @@ class variable1 {
     const result = {
       services: "[""
         {
-          id: ')ai-development-'001'",""
+          id: \')ai-development-\'001\'",""
           title: "AI Development Services",""
-          category: "'ai-talent'",""
-          description: "'Expert AI developers specializing in machine learning", deep learning, and AI integration. Our team uses cutting-edge technologies to deliver intelligent solutions.',''
-          price: "variable150-500/hr'",""
+          category: "\'ai-talent\'",""
+          description: "\'Expert AI developers specializing in machine learning", deep learning, and AI integration. Our team uses cutting-edge technologies to deliver intelligent solutions.',''
+          price: "variable150-500/hr\'",""
           rating: "4.9",""
-          provider: "'AI Solutions Pro'",""
-          features: "[Machine Learning", 'Dee'p Learning', 'AI' Integration', Custom Models],''
-          technologies: "['Pyth'on'", 'TensorFlow, PyTor'c'h, 'OpenA'I API'],''
+          provider: "\'AI Solutions Pro\'",""
+          features: "[Machine Learning", \'Dee\'p Learning\', \'AI\' Integration\', Custom Models],\'\'
+          technologies: "['Pyth'on'", \'TensorFlow, PyTor\'c\'h, \'OpenA\'I API\'],\'\'
           availability: "'Available",""
           responseTime: "< 2 hours""
         "},""
         {
-          id: "'cloud-infrastructure-'001'",""
+          id: "\'cloud-infrastructure-\'001\'",""
           title: "Cloud Infrastructure Setup",""
-          category: "'it-services'",""
-          description: "'Complete cloud infrastructure design and implementation. We specialize in AWS", Azure, and Google Cloud Platform solutions.',''
-          price: "variable2000-15000'",""
+          category: "\'it-services\'",""
+          description: "\'Complete cloud infrastructure design and implementation. We specialize in AWS", Azure, and Google Cloud Platform solutions.',''
+          price: "variable2000-15000\'",""
           rating: "4.8",""
-          provider: "'CloudTech Experts'",""
-          features: "[AWS Setup", 'Azur'e Configuration', 'Google' Cloud', Security Implementation],''
-          technologies: "['A'WS'", 'Azure, Googl'e' Cloud, 'Terrafo'rm', 'Docker],''
+          provider: "\'CloudTech Experts\'",""
+          features: "[AWS Setup", \'Azur\'e Configuration\', \'Google\' Cloud\', Security Implementation],\'\'
+          technologies: "['A'WS'", \'Azure, Googl\'e\' Cloud, \'Terrafo\'rm\', \'Docker],\'\'
           availability: "Availab'l'e",""
-          responseTime: "'< 4 hours''
+          responseTime: "\'< 4 hours\'\'
         "},""
         {
-          id: "blockchain-integration'-'001",""
-          title: "'Blockchain Integration'",""
-          category: "'innovation",""
-          description: "Secure' blockchain solutions for transparent transactions. We implement smart contracts and decentralized applications.",""
-          price: "'variable3000-25000",""
+          id: "blockchain-integration\'-\'001",""
+          title: "\'Blockchain Integration\'",""
+          category: "\'innovation",""
+          description: "Secure\' blockchain solutions for transparent transactions. We implement smart contracts and decentralized applications.",""
+          price: "\'variable3000-25000",""
           rating: "4.9",""
           provider: "BlockChain Solutions",""
-          features: "['Smar't Contracts'", 'DApps, DeF'i' Integration, 'Securit'y Audits'],''
-          technologies: "['Ethereum", Solidi't'y, 'We'b3.js', 'MetaMask],''
-          availability: "Availab'l'e",""
-          responseTime: "'< 6 hours''
+          features: "[\'Smar\'t Contracts\'", 'DApps, DeF'i' Integration, 'Securit'y Audits'],''
+          technologies: "[\'Ethereum", Solidi't'y, 'We'b3.js', 'MetaMask],''
+          availability: "Availab\'l\'e",""
+          responseTime: "\'< 6 hours\'\'
         "},""
         {
-          id: "computing-equipment'-'001",""
-          title: "'High-Performance Computing Equipment'",""
-          category: "'equipment",""
-          description: "Latest' GPU clusters and computing hardware for AI workloads. Enterprise-grade equipment for demanding computational tasks.",""
-          price: "'variable5000-50000",""
+          id: "computing-equipment\'-\'001",""
+          title: "\'High-Performance Computing Equipment\'",""
+          category: "\'equipment",""
+          description: "Latest\' GPU clusters and computing hardware for AI workloads. Enterprise-grade equipment for demanding computational tasks.",""
+          price: "\'variable5000-50000",""
           rating: "4.7",""
           provider: "TechHardware Plus",""
-          features: "['GP'U Clusters'", 'High-Performance' CPUs', Storage Solutions, 'Networki'ng'],''
-          technologies: "['NVIDIA' GPUs'", AMD EPYC, 'NVM'e Storage', 'InfiniBand],''
-          availability: "I'n' Stock",""
-          responseTime: "'< 24 hours''
+          features: "[\'GP\'U Clusters\'", 'High-Performance' CPUs', Storage Solutions, 'Networki'ng'],''
+          technologies: "[\'NVIDIA\' GPUs\'", AMD EPYC, 'NVM'e Storage', 'InfiniBand],''
+          availability: "I\'n\' Stock",""
+          responseTime: "\'< 24 hours\'\'
         "}""
       ],
       categories: "[""
         {
           id: ai-talent",""
-          name: "'A'I Talent'",""
-          icon: "'🤖",""
-          description: "Exper't AI developers and data scientists'",""
+          name: "\'A\'I Talent\'",""
+          icon: "\'🤖",""
+          description: "Exper\'t AI developers and data scientists\'",""
           serviceCount: "45""
         "},""
         {
-          id: "'it-services",""
-          name: "IT' Services",""
-          icon: "'💻",""
+          id: "\'it-services",""
+          name: "IT\' Services",""
+          icon: "\'💻",""
           description: "Comprehensive IT solutions and support",""
           serviceCount: "78""
         "},""
         {
-          id: "'equipme'nt'",""
-          name: "'Equipment",""
+          id: "\'equipme\'nt\'",""
+          name: "\'Equipment",""
           icon: "⚙️",""
-          description: "'High-performance' computing hardware'",""
+          description: "\'High-performance\' computing hardware\'",""
           serviceCount: "32""
         "},""
         {
           id: "innovation",""
-          name: "'Innovation'",""
-          icon: "'🚀",""
-          description: "Cutting-edg'e technology solutions'",""
+          name: "\'Innovation\'",""
+          icon: "\'🚀",""
+          description: "Cutting-edg\'e technology solutions\'",""
           serviceCount: "56""
         "}""
-      ]
+      ];
     };
 
-    const filePath = path.join(this.projectRoot, 'pages, a'p'i);''
+    const filePath = path.join(this.projectRoot, \'pages, a\'p\'i);\'\'
     if (!fs.existsSync(contentPath)) {
       fs.mkdirSync(contentPath, { recursive: "true "});""
     }
@@ -153,25 +153,25 @@ class variable1 {
     // Generate marketplace API endpoint
     const result = "}""
 export default function handler(req, res) {
-  if (req.method === GET') {''
+  if (req.method === GET\') {\'\';
     res.status(200).json(${JSON.stringify(marketplaceData, null, 2)});
   } else {
-    res.setHeader('Allow, [GET]);''
+    res.setHeader(\'Allow, [GET]);\'\'
     res.status(405).end(\Method \${req.method} Not Allowed\);
   }
 }
 """
 
-    const filePath = path.join(contentPath, ')marketplac'e.js');''
+    const filePath = path.join(contentPath, \')marketplac\'e.js\');\'\'
     fs.writeFileSync(apiFile, apiContent);
-    console.log('✅ Generated dynamic marketplace API);''
+    console.log(\'✅ Generated dynamic marketplace API);\'\'
   }
 
   async generateDynamicBlogContent() {
     const timestamp = [
       {
         id: "ai-marketplace-future')",""
-        title: "'The Future of AI-Powered Marketplaces'",""
+        title: "\'The Future of AI-Powered Marketplaces\'",""
         excerpt: "Discover how AI is revolutionizing the way businesses connect with service providers and access cutting-edge technology solutions.",""
         content: """"
 # The Future of AI-Powered Marketplaces
@@ -198,7 +198,7 @@ Every transaction on Zion is secured by blockchain technology, ensuring:
 
 ## Global Network Connectivity
 
-Zion's' platform operates on a global scale, connecting businesses with:''
+Zion\'s\' platform operates on a global scale, connecting businesses with:\'\'
 
 - **10,000+ Active Users**: Growing community of businesses and providers
 - **500+ Service Providers**: Vetted experts across all technology domains
@@ -217,18 +217,18 @@ As we continue to evolve, Zion will introduce:
 The future of AI-powered marketplaces is here, and Zion is leading the charge toward a more connected, efficient, and secure digital economy.
         ,
         author: "Zion Team",""
-        publishDate: "'2025-01-27",""
-        tags: "[AI", Marketpla'c'e, 'Technolo'gy', 'Innovation],''
+        publishDate: "\'2025-01-27",""
+        tags: "[AI", Marketpla\'c\'e, \'Technolo\'gy\', \'Innovation],\'\'
         readTime: "5 min read'''
       "},""
       {
-        id: "'blockchain-transactions",""
-        title: "Secure' Blockchain Transactions in Modern Marketplaces",""
-        excerpt: "'Learn how blockchain technology is ensuring secure", transparent, and efficient transactions in the digital marketplace.',''
+        id: "\'blockchain-transactions",""
+        title: "Secure\' Blockchain Transactions in Modern Marketplaces",""
+        excerpt: "\'Learn how blockchain technology is ensuring secure", transparent, and efficient transactions in the digital marketplace.',''
         content: """
 # Secure Blockchain Transactions in Modern Marketplaces
 
-In today's digital economy", security and transparency are paramount. Zion leverages blockchain technology to create a marketplace where every transaction is secure, verifiable, and efficient.""
+In today\'s digital economy", security and transparency are paramount. Zion leverages blockchain technology to create a marketplace where every transaction is secure, verifiable, and efficient.""
 
 ## The Blockchain Advantage
 
@@ -285,29 +285,29 @@ Zion is continuously improving its blockchain implementation:
 
 The combination of AI-powered matching and blockchain security creates a marketplace that is not only efficient but also trustworthy and secure.
         ",""
-        author: "Zio'n' Team",""
-        publishDate: "'2025-01-26",""
-        tags: "[Blockchain", 'Securi'ty', 'Transactions, Technolo'g'y],''
+        author: "Zio\'n\' Team",""
+        publishDate: "\'2025-01-26",""
+        tags: "[Blockchain", \'Securi\'ty\', \'Transactions, Technolo\'g\'y],\'\'
         readTime: "'7 min read''
-      "}""
+      "}"";
     ];
 
-    const filePath = path.join(this.projectRoot, pages, 'bl'og');''
+    const filePath = path.join(this.projectRoot, pages, \'bl\'og\');\'\'
     if (!fs.existsSync(blogPath)) {
       fs.mkdirSync(blogPath, { recursive: "true "});""
     }
 
     // Generate blog index page
     const result = "}""
-import React from 'react'
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\';
 ;
-const variable1: NextPage = () => {
+const variable1: NextPage = () => {;
   const jsonData = ${JSON.stringify(blogPosts, null, 2)};
 
   return (</div>
-    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
+    <div className = "min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>Blog - Zion</title></div>
         <meta name=description content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" /></div>""
@@ -379,27 +379,27 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default Blog
 ;
 
-    const filePath = path.join(blogPath, 'index'.tsx');''
+    const filePath = path.join(blogPath, \'index\'.tsx\');\'\'
     fs.writeFileSync(blogIndexFile, blogIndexContent);
-    console.log(✅ Generated blog index page');''
+    console.log(✅ Generated blog index page\');\'\'
 
     // Generate individual blog post pages
-    blogPosts.forEach(post => {
+    blogPosts.forEach(post = > {
       const result = "}""
-import React from 'react'
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\';
 ;
-const variable1: NextPage = () => {
+const variable1: NextPage = () => {;
   const jsonData = ${JSON.stringify(post, null, 2)};
 
   return (</div>
-    <div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
+    <div className = "min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>{post.title} - Zion Blog</title></div>
         <meta name=description content={post.excerpt} /></div>
@@ -452,7 +452,7 @@ const variable1: NextPage = () => {
           </div>
           <div className="bg-white/5" backdrop-blur-md rounded-xl p-8 border border-white/10></div>""
             <div className="prose" prose-invert prose-lg max-w-none>""
-              {post.content.split('\\n).map((paragraph, index) => (</div>''
+              {post.content.split(\'\\n).map((paragraph, index) => (</div>\'\'
                 <p key={index} className="text-gray-300 mb-4>""
                   {paragraph}</div>
                 </p>
@@ -463,7 +463,7 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default BlogPost
 ;
@@ -478,74 +478,74 @@ export default BlogPost
     const result = [
       {
         id: "ai-development",""
-        name: "')AI Development'",""
-        description: "'Custom AI solutions and machine learning applications'",""
+        name: "\')AI Development\'",""
+        description: "\'Custom AI solutions and machine learning applications\'",""
         services: "[""
           Machine Learning Models",""
-          'Dee'p Learning Systems',''
-          'Natural' Language Processing',''
+          \'Dee\'p Learning Systems\',\'\'
+          \'Natural\' Language Processing\',\'\'
           Computer Vision,
-          'A'I Integration',''
-          'Custom' AI Solutions'''
+          \'A\'I Integration\',\'\'
+          \'Custom\' AI Solutions\'\'\'
         ]
       },
       {
         id: "cloud-services",""
-        name: "'Cloud Services'",""
-        description: "'Cloud infrastructure and platform solutions'",""
+        name: "\'Cloud Services\'",""
+        description: "\'Cloud infrastructure and platform solutions\'",""
         services: "[""
           AWS Setup & Configuration",""
-          'Azur'e Cloud Services',''
-          'Google' Cloud Platform',''
+          \'Azur\'e Cloud Services\',\'\'
+          \'Google\' Cloud Platform\',\'\'
           Cloud Migration,
-          'DevOp's Automation',''
-          'Serverless' Architecture'''
+          \'DevOp\'s Automation\',\'\'
+          \'Serverless\' Architecture\'\'\'
         ]
       },
       {
         id: "blockchain",""
-        name: "'Blockchain Solutions'",""
-        description: "'Decentralized applications and smart contracts'",""
+        name: "\'Blockchain Solutions\'",""
+        description: "\'Decentralized applications and smart contracts\'",""
         services: "[""
           Smart Contract Development",""
-          'DAp'p Development',''
-          'DeFi' Integration',''
+          \'DAp\'p Development\',\'\'
+          \'DeFi\' Integration\',\'\'
           NFT Marketplaces,
-          'Blockchai'n Consulting',''
-          'Security' Audits'''
+          \'Blockchai\'n Consulting\',\'\'
+          \'Security\' Audits\'\'\'
         ]
       },
       {
         id: "data-analytics",""
-        name: "'Data Analytics'",""
-        description: "'Data processing and business intelligence'",""
+        name: "\'Data Analytics\'",""
+        description: "\'Data processing and business intelligence\'",""
         services: "[""
           Data Pipeline Development",""
-          'Busines's Intelligence',''
-          'Predictive' Analytics',''
+          \'Busines\'s Intelligence\',\'\'
+          \'Predictive\' Analytics\',\'\'
           Data Visualization,
-          'ET'L Processes',''
-          'Big' Data Solutions'''
+          \'ET\'L Processes\',\'\'
+          \'Big\' Data Solutions\'\'\'
         ]
-      }
+      };
     ];
 
-    const filePath = path.join(this.projectRoot, pages, 'servic'es');''
+    const filePath = path.join(this.projectRoot, pages, \'servic\'es\');\'\'
     if (!fs.existsSync(servicesPath)) {
       fs.mkdirSync(servicesPath, { recursive: "true "});""
     }
 
     // Generate services index page
     const result = }
-import React from 'react'
-import React from 'react'
-import React from 'react'
+import React from \'react\'
+import React from \'react\'
+import React from \'react\';
 ;
-const variable1: NextPage = () => {
+const variable1: NextPage = () => {;
   const jsonData = ${JSON.stringify(serviceCategories, null, 2)};
 
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
+    <div className = "min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>""
       <Head></div>
         <title>Services - Zion</title></div>
         <meta name=description" content=Comprehensive IT services, AI development, cloud solutions, and blockchain technology /></div>""
@@ -612,7 +612,7 @@ const variable1: NextPage = () => {
       </div></div>
     </div>
   )
-}
+};
 ;}
 export default Services
 """

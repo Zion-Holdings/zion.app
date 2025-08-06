@@ -12,7 +12,7 @@ class UltimateAutomationLauncher {
       started: new Date().toISOString(),
       processes: [],
       health: 'healthy',
-      performance: 'optimal'
+      performance: 'optimal';
     };
     
     this.initializeLauncher();
@@ -78,7 +78,7 @@ class UltimateAutomationLauncher {
       
       const child = spawn('node', [filePath], {
         stdio: 'pipe',
-        detached: false
+        detached: false;
       });
       
       this.activeProcesses.set(name, {
@@ -129,7 +129,7 @@ class UltimateAutomationLauncher {
       'intelligent-content-diversification-agent',
       'intelligent-growth-automation-agent',
       'enhanced-agent-intelligence-system',
-      'master-enhanced-orchestrator'
+      'master-enhanced-orchestrator';
     ];
     
     return criticalProcesses.includes(name);
@@ -164,7 +164,7 @@ class UltimateAutomationLauncher {
         totalProcesses: 12,
         systemHealth: this.activeProcesses.size >= 8 ? 'healthy' : 'warning',
         memoryUsage: process.memoryUsage(),
-        uptime: process.uptime()
+        uptime: process.uptime();
       };
       
       // Save health status
@@ -189,7 +189,7 @@ class UltimateAutomationLauncher {
         activeProcesses: this.activeProcesses.size,
         systemPerformance: this.activeProcesses.size >= 10 ? 'optimal' : 'good',
         memoryUsage: process.memoryUsage(),
-        cpuUsage: process.cpuUsage()
+        cpuUsage: process.cpuUsage();
       };
       
       // Save performance metrics
@@ -207,7 +207,7 @@ class UltimateAutomationLauncher {
         systemId: this.systemId,
         status: this.systemStatus,
         activeProcesses: Array.from(this.activeProcesses.keys()),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString();
       };
       
       // Save system status
@@ -246,7 +246,7 @@ class UltimateAutomationLauncher {
     const errorLog = {
       timestamp: new Date().toISOString(),
       error: error.message,
-      stack: error.stack
+      stack: error.stack;
     };
     
     const errorFile = path.join(this.launcherPath, 'error-log.json');

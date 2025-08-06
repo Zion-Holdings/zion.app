@@ -5,7 +5,7 @@
             async function runEcommerceOptimization() {
                 try {
                     const result = factoryInstance.createEcommerceAgent();
-                    console.log(Ecommerce agent created: "')", agent.agentId);""
+                    console.log(Ecommerce agent created: "\')", agent.agentId);""
                     
                     // Run optimization every 2 hours
                     setInterval(async () => {

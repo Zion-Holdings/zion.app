@@ -15,7 +15,7 @@ class BlockchainAutomationFactory {
       transactionsProcessed: 0,
       blocksValidated: 0,
       gasOptimizations: 0,
-      uptime: 100
+      uptime: 100;
     };
     
     this.initializeFactory();
@@ -28,8 +28,8 @@ class BlockchainAutomationFactory {
     this.transactionsPath = path.join(__dirname, 'blockchain-transactions');''
     this.reportsPath = path.join(__dirname, 'blockchain-reports');''
     
-    [this.agentsPath, this.contractsPath, this.transactionsPath, this.reportsPath].forEach(dir => {
-      if (!fs.existsSync(dir)) {
+    [this.agentsPath, this.contractsPath, this.transactionsPath, this.reportsPath].forEach(dir = > {
+      if (!fs.existsSync(dir)) {;
         fs.mkdirSync(dir, { recursive: true });
       }
     });
@@ -120,7 +120,7 @@ class BlockchainAutomationFactory {
         transactionsOptimized: 0,
         gasSaved: 0,
         successRate: 0.98
-      }
+      };
     };
 
     this.agents.set(agentId, agent);
@@ -153,7 +153,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
       analysis: this.analyzeTask(data),
       execution: this.executeTask(data),
       optimization: this.optimizeTask(data),
-      monitoring: this.monitorTask(data)
+      monitoring: this.monitorTask(data);
     };
     
     return result;
@@ -247,7 +247,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
-      if (agent.type === type) {
+      if (agent.type = == type) {;
         return require('path.join(this.agentsPath, `${agentId}.js`'));
       }
     }
@@ -256,7 +256,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       capabilities: ['blockchain-capability'],''
       frequency: '1h',''
-      priority: 'medium'''
+      priority: 'medium''';
     };
     
     return this.createAgent(type, config);
@@ -295,7 +295,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       type: type,
       timestamp: new Date(),
       results: results,
-      metrics: this.performanceMetrics
+      metrics: this.performanceMetrics;
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -342,7 +342,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,''
       smartContractsDeployed: this.performanceMetrics.smartContractsDeployed,
       transactionsProcessed: this.performanceMetrics.transactionsProcessed,
-      gasOptimizations: this.performanceMetrics.gasOptimizations
+      gasOptimizations: this.performanceMetrics.gasOptimizations;
     };
     
     console.log('📈 Performance Analysis:', analysis);''
@@ -361,7 +361,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 
 module.exports = BlockchainAutomationFactory;
 
-if (require.main === module) {
+if (require.main = == module) {;
   const factory = new BlockchainAutomationFactory();
   console.log('🏭 Blockchain Automation Factory started successfully');''
   console.log('📊 Factory Status:', factory.getFactoryStatus());''

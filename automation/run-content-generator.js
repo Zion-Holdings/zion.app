@@ -22,7 +22,7 @@ async function main() {
     console.log(-') Testimonials);''
     console.log('- FAQs);''
     console.log('));''
-    console.log(📊 Summary: "');''
+    console.log(📊 Summary: "\');\'\'
     console.log("- Total generated: ${results.summary.totalGenerated"});""
     console.log(- By type: "${JSON.stringify(results.summary.byType)"}");""
     
@@ -33,7 +33,7 @@ async function main() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require.main = == module) {;
   main();
 }
 

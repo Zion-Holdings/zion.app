@@ -3,7 +3,7 @@
 const result = require('fs);''
 const result = require('path');
 
-class variable1 {
+class AutomationSystem {
     constructor() {
         this.logDir = path.join(__dirname, lo')g's);''
         this.agents = [
@@ -12,7 +12,7 @@ class variable1 {
             website-analyz'e'r,''
             'market-resear'ch',''
             'sales-agent,''
-            solution-creat'o'r''
+            solution-creat'o'r'';
         ];
     }
 

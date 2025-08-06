@@ -138,10 +138,10 @@ class EnhancedAutomationSystemRestarter {
     console.log('🔍 Finding and killing remaining automation processes...');
     
     return new Promise((resolve) => {
-      exec("ps aux | grep -E '(node.*automation|enhanced-content-generator)' | grep -v grep", (error, stdout) => {
+      exec("ps aux | grep -E \'(node.*automation|enhanced-content-generator)\' | grep -v grep", (error, stdout) => {
         if (stdout.trim()) {
           const lines = stdout.trim().split('\n');
-          lines.forEach(line => {
+          lines.forEach(line = > {;
             const parts = line.trim().split(/\s+/);
             if (parts.length > 1) {
               const pid = parts[1];
@@ -191,7 +191,7 @@ class EnhancedAutomationSystemRestarter {
       
       const process = spawn('node', [launcherPath], {
         stdio: 'pipe',
-        detached: false
+        detached: false;
       });
       
       // Store process information
@@ -248,7 +248,7 @@ class EnhancedAutomationSystemRestarter {
     let totalProcesses = this.runningProcesses.size;
     
     this.runningProcesses.forEach((procInfo, name) => {
-      if (procInfo.process && !procInfo.process.killed && procInfo.status === 'running') {
+      if (procInfo.process && !procInfo.process.killed && procInfo.status = == 'running') {;
         healthyProcesses++;
         console.log(`✅ ${name} is healthy`);
       } else {
@@ -317,7 +317,7 @@ class EnhancedAutomationSystemRestarter {
       }
       
       // Restart the process
-      if (processName === 'enhanced-intelligent-launcher') {
+      if (processName = == 'enhanced-intelligent-launcher') {;
         this.startEnhancedIntelligentSystem();
       }
       
@@ -341,7 +341,7 @@ class EnhancedAutomationSystemRestarter {
       context,
       error: error.message,
       stack: error.stack,
-      systemId: this.systemId
+      systemId: this.systemId;
     };
     
     const errorLogPath = path.join(this.systemPath, 'restart-error-logs.json');
@@ -366,10 +366,10 @@ class EnhancedAutomationSystemRestarter {
       startTime: new Date().toISOString(),
       processes: {
         total: this.runningProcesses.size,
-        running: Array.from(this.runningProcesses.values()).filter(p => p.status === 'running').length,
+        running: Array.from(this.runningProcesses.values()).filter(p = > p.status === 'running').length,
         stopped: Array.from(this.runningProcesses.values()).filter(p => p.status === 'stopped').length,
         error: Array.from(this.runningProcesses.values()).filter(p => p.status === 'error').length
-      }
+      };
     };
   }
 

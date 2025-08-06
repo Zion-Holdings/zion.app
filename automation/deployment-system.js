@@ -61,9 +61,9 @@ class DeploymentSystem {
         }
         
         // Deploy
-        execSync('netlify deploy --prod --dir=.next', { 
+        execSync('netlify deploy --prod --dir = .next', { 
             cwd: this.projectRoot, 
-            stdio: 'inherit' 
+            stdio: 'inherit' ;
         });
     }
 
@@ -74,7 +74,7 @@ class DeploymentSystem {
         const checks = [
             this.checkBuildOutput(),
             this.checkDeploymentStatus(),
-            this.checkPerformance()
+            this.checkPerformance();
         ];
         
         await Promise.all(checks);

@@ -5,7 +5,7 @@
             async function runAffiliateOptimization() {
                 try {
                     const result = factoryInstance.createAffiliateAgent();
-                    console.log(Affiliate agent created: "')", agent.agentId);""
+                    console.log(Affiliate agent created: "\')", agent.agentId);""
                     
                     // Run optimization every 6 hours
                     setInterval(async () => {

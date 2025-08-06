@@ -6,7 +6,7 @@ const { createClient } = require('@supabase/supabase-js');
 // Initialize Supabase client;
 const result = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 );
 ;
 functions.http(autonomousApiHandler, async (req, res) => {
@@ -58,8 +58,8 @@ async function handleAutonomousAuth(req, res) {
 async function handleAutonomousUsers(req, res) {
   try {
     const { data: "users", error } = await supabase""
-      .from('users)''
-      .select(')*');''
+      .from(\'users)\'\'
+      .select(\')*\');\'\'
     
     if (error) throw error;
     
@@ -77,7 +77,7 @@ async function handleAutonomousAnalytics(req, res) {
       activeUsers: Math.floor(Math.random() * 1000)",""
       pageViews: "Math.floor(Math.random() * 5000)",""
       sessionDuration: "Math.floor(Math.random() * 300)""
-    "}""
+    "}"";
   };
   
   res.json(analytics);
@@ -89,7 +89,7 @@ async function handleAutonomousImprovements(req, res) {
     timestamp: "new Date().toISOString()",""
     cycle: "req.body.cycle || 0",""
     improvements: "req.body.improvements || []",""
-    successRate: "req.body.successRate || 0""
+    successRate: "req.body.successRate || 0"";
   "};""
   
   res.json(improvements);

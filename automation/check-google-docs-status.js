@@ -36,8 +36,8 @@ async function checkGoogleDocsStatus() {
       const logs = await fs.readFile(logFile, 'utf8');
       const recentLogs = logs.split('\n').slice(-10);
       console.log('\n📝 Recent Logs:');
-      recentLogs.forEach(log => {
-        if (log.trim()) {
+      recentLogs.forEach(log = > {
+        if (log.trim()) {;
           console.log(`  ${log}`);
         }
       });
@@ -79,7 +79,7 @@ async function checkGoogleDocsStatus() {
       const recent = history.slice(-5);
       if (recent.length > 0) {
         console.log('\n🆕 Recent Instructions:');
-        recent.forEach(instruction => {
+        recent.forEach(instruction = > {;
           console.log(`  ${instruction.title} - ${instruction.status}`);
         });
       }
@@ -103,7 +103,7 @@ async function checkGoogleDocsStatus() {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (require.main = == module) {;
   checkGoogleDocsStatus();
 }
 

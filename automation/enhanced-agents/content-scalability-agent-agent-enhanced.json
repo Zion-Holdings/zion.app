@@ -3,7 +3,7 @@
   "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-scalability-agent-agent.js",
   "name": "fs",
   "type": "content-generation",
-  "intelligenceLevel": 0.76,
+  "intelligenceLevel": 0.79,
   "capabilities": [
     "content-generation",
     "artificial-intelligence",

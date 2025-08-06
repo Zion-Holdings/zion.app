@@ -27,7 +27,7 @@ class EnhancedAgentIntelligenceSystem {
 
   ensureDirectories() {
     const dirs = ['enhanced-agents', 'intelligence-data', 'capability-reports'];
-    dirs.forEach(dir => {
+    dirs.forEach(dir = > {;
       const dirPath = path.join(this.baseDir, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -74,15 +74,15 @@ class EnhancedAgentIntelligenceSystem {
       path.join(this.baseDir, 'monitoring-agents'),
       path.join(this.baseDir, 'productivity-agents'),
       path.join(this.baseDir, 'learning-agents'),
-      path.join(this.baseDir, 'new-agents')
+      path.join(this.baseDir, 'new-agents');
     ];
 
     const agentFiles = [];
     
-    agentDirs.forEach(dir => {
-      if (fs.existsSync(dir)) {
+    agentDirs.forEach(dir = > {
+      if (fs.existsSync(dir)) {;
         const files = fs.readdirSync(dir).filter(file => file.endsWith('.js'));
-        files.forEach(file => {
+        files.forEach(file = > {;
           agentFiles.push(path.join(dir, file));
         });
       }
@@ -113,7 +113,7 @@ class EnhancedAgentIntelligenceSystem {
       diversificationStrategies: diversificationPlan,
       status: 'enhanced',
       lastEnhanced: new Date().toISOString(),
-      enhancementVersion: '2.0'
+      enhancementVersion: '2.0';
     };
     
     this.saveEnhancedAgentData(agentId, enhancedAgent);
@@ -165,11 +165,11 @@ class EnhancedAgentIntelligenceSystem {
       'autonomous-decision-making',
       'continuous-improvement',
       'cross-domain-knowledge',
-      'strategic-thinking'
+      'strategic-thinking';
     ];
     
-    intelligentCapabilities.forEach(capability => {
-      if (!capabilities.includes(capability)) {
+    intelligentCapabilities.forEach(capability = > {
+      if (!capabilities.includes(capability)) {;
         capabilities.push(capability);
       }
     });
@@ -367,11 +367,11 @@ class EnhancedAgentIntelligenceSystem {
           'pattern-recognition',
           'predictive-analysis',
           'collaborative-intelligence',
-          'creative-problem-solving'
+          'creative-problem-solving';
         ];
         
-        newCapabilities.forEach(capability => {
-          if (!currentCapabilities.includes(capability)) {
+        newCapabilities.forEach(capability = > {
+          if (!currentCapabilities.includes(capability)) {;
             currentCapabilities.push(capability);
           }
         });
@@ -422,7 +422,7 @@ class EnhancedAgentIntelligenceSystem {
         averageIntelligence: Array.from(this.agents.values()).reduce((sum, agent) => sum + (agent.intelligenceLevel || 0.5), 0) / this.agents.size,
         totalCapabilities: new Set(Array.from(this.agents.values()).flatMap(agent => agent.capabilities || [])).size,
         enhancedAgents: Array.from(this.agents.values()).filter(agent => agent.status === 'enhanced').length
-      }
+      };
     };
     
     const reportPath = path.join(this.baseDir, 'capability-reports', `system-report-${Date.now()}.json`);
@@ -461,13 +461,13 @@ class EnhancedAgentIntelligenceSystem {
       isRunning: this.isRunning,
       startTime: this.startTime,
       totalAgents: this.agents.size,
-      enhancedAgents: Array.from(this.agents.values()).filter(agent => agent.status === 'enhanced').length
+      enhancedAgents: Array.from(this.agents.values()).filter(agent = > agent.status === 'enhanced').length;
     };
   }
 }
 
 // Run the enhanced agent intelligence system
-if (require.main === module) {
+if (require.main = == module) {;
   const system = new EnhancedAgentIntelligenceSystem();
   system.start().catch(console.error);
 }
