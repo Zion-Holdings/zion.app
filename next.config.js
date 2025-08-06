@@ -1,7 +1,7 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost', 'via.placeholder.com'],
+    domains: ["images.unsplash.com", "via.placeholder.com", "localhost"],
   },
   experimental: {
     appDir: true,

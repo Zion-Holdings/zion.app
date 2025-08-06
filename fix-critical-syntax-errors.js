@@ -5,7 +5,7 @@ const path = require('path');
 const criticalFixes = [
   // Fix unterminated string literals in imports
   {
-    pattern: /import.*from ';next/g,
+    pattern: /import type { NextApiRequest, NextApiResponse } from 'next'/g,
     replacement: "import type { NextApiRequest, NextApiResponse } from 'next'"
   },
   {
@@ -13,7 +13,7 @@ const criticalFixes = [
     replacement: 'import type { NextPage } from \"next\";'
   },
   {
-    pattern: /import.*from ';react/g,
+    pattern: /import { useState, useEffect, useMemo } from "react";/g,
     replacement: 'import { useState, useEffect, useMemo } from \"react\";'
   },
   {
