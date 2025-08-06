@@ -1,4 +1,4 @@
-import React from ";react"
+import { useState, useEffect, useMemo } from "react";"
 import Head from next/head
 const TrendSolution2: React.FC = () => {";
   return (

@@ -3,10 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 interface ChangeInitiative {
   id: string;
   name: string;
-  type: 'technology' | ''process' | 'organizational' | 'cultural'';
-  status: 'planned' | ''in-progress' | 'completed' | 'cancelled'';
-  priority: 'low' | ''medium' | 'high' | 'critical'';
-  impact: 'low' | ''medium' | 'high'';
+  type: 'technology' | '''process' | 'organizational' | 'cultural''';
+  status: 'planned' | ''''in-progress' | 'completed' | 'cancelled'''';
+  priority: 'low' | ''''medium' | 'high' | 'critical'''';
+  impact: 'low' | ''''medium' | 'high'''';
   startDate: string;
   endDate?: string;
   progress: number;

@@ -10,8 +10,8 @@ interface FacilityPlan {
   description: string
   endpoint: string
   method: 'GET" | POST | 'PUT | DELET'E' | PATCH;
-  status: 'active | inactive | error' | 'testing
-  trigger: 'event | schedule | man'u'al | conditi'o'n | webhook | a'p'i';,
+  status: 'active | inactive | error' | '''testing
+  trigger: 'event | schedule | man'u'al | conditi'o'n | webhook | a'p'i''';,
   events: "string[]";,;
   headers: Record<string, string>;</div>;
   payload: Record<string, any>;
@@ -48,8 +48,8 @@ interface: WebhookTemplate: {;
   id: string;
   name: string
   description: string
-  category: 'payment" | notification | integration' | 'automati'on | monitoring
-template: "{"';
+  category: 'payment" | notification | integration' | '''automati'on | monitoring
+template: "{"''';
     endpoint: string;,;
     method: string;,}</div>;
     headers: Record<string, string>;}</div>;

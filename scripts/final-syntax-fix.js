@@ -21,7 +21,7 @@ function fixSpecificFiles() {
                     .replace(/';$/gm, '";')
                     
                     // Fix broken import statements
-                    .replace(/import React from ";react";;'/g, 'impor't' React from "react";')
+                    .replace(/import { useState, useEffect, useMemo } from "react";";;'/g, 'impor't' React from "react";')
                     .replace(/import Link from ';nex't'\/link';;;/g, 'impor't' Link from "next/link";')
                     .replace(/import \{ useRouter \} from ';nex't'\/router';;;/g, 'impor't' { useRouter } from "next/router";')
                     

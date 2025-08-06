@@ -8,8 +8,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'communication" | navigation | weather | 'scientific' | military | 'commercia'l
-  status: 'active | maintenance | decommissioned' | 'launching
-  orbit: "{"';
+  status: 'active | maintenance | decommissioned' | '''launching
+  orbit: "{"''';
     altitude: number;
     inclination: number;
     period: number;

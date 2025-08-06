@@ -7,9 +7,9 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'automated" | manual | ai-powered | 'performance' | security | 'complianc'e;
-  status: 'pending | running | passed' | 'faile'd | blocked
+  status: 'pending | running | passed' | '''faile'd | blocked
   priority: 'low | medium | hi'gh' | critical
-  description: "string"';
+  description: "string"''';
   coverage: number;
   executionTime: number;
   lastRun: Date;
@@ -17,9 +17,9 @@ interface FacilityPlan {
 interface FacilityPlan {;
   id: string
   standard: string
-  category: 'security" | privacy' | 'accessibili'ty | performan'ce | 'legal
+  category: 'security" | privacy' | '''accessibili'ty | performan'ce | 'legal
   status: 'compliant | non-compliant | pending' | exemp't
-  complianceRate: "number"';
+  complianceRate: "number"''';
   lastAudit: Date;
   nextAudit: Date;};
 interface FacilityPlan {;

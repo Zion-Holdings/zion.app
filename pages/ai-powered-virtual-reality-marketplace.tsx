@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}";
+import { useState, useEffect, useMemo } from "react";;}";
 import Link from next/link
 import { Home, Search, User }  from ";lucide-react";
 interface FacilityPlan {

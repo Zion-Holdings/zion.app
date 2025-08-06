@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'solar" | wind | hydro | 'battery' | grid | 'consumptio'n
-  status: 'active | maintenance | offline' | 'chargin'g
-  location: "string"';
+  status: 'active | maintenance | offline' | '''chargin'g
+  location: "string"''';
   currentOutput: number;
   capacity: number;
   efficiency: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string
   name: string
   type: 'distribution" | transmission | microgrid | 'storage
-  status: 'active | maintenance | offline' | 'upgradin'g
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgradin'g
+  location: "string"''';
   loadCapacity: number;
   currentLoad: number;
   stability: number;

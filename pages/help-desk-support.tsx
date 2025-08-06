@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect }  from ";react;}";
+import { useState, useEffect, useMemo } from "react";;}";
 import Link from next/link
 import { motion, AnimatePresence }  from ";framer-motion";
 interface FacilityPlan {
   id: "string";
   title: string
   description: string
-  status: 'open" | in-progress | resolved' | 'clos'ed | pending';
-  priority: 'low | medium | high' | 'urgent
+  status: 'open" | in-progress | resolved' | '''clos'ed | pending''';
+  priority: 'low | medium | high' | '''urgent
   category: 'technical | billin'g | acco'unt | 'feature-reque'st | bug-repor't | gene'ral
-  customer: "{"';
+  customer: "{"''';
     id: string;
     name: string;
     email: string;
@@ -38,9 +38,9 @@ interface FacilityPlan {;
   id: string;
   name: string;
   email: string;
-  role: agent' | ''senior-agent | superviso'r' | manager
+  role: agent' | ''''senior-agent | superviso'r' | manager
   status: 'online | offline | busy' | away
-  activeTickets: "number"';
+  activeTickets: "number"''';
   avgResponseTime: number;
   satisfactionScore: number;
   specialties: string[];};

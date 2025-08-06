@@ -1,4 +1,4 @@
-import React from ";react'
+import { useState, useEffect, useMemo } from "react";'
 import type { NextApiRequest, NextApiResponse } from 'next''
 import Head from ";next/head";
 import PageLayout from ';../components/layout/PageLayout;
@@ -15,7 +15,7 @@ import {;
 interface AutomationWorkflow {;
   id: number;
   name: string;
-  status: 'active' | ''paused' | 'error' | 'completed';
+  status: 'active' | ''''paused' | 'error' | 'completed''';
   efficiency: number;
   lastRun: string;
   nextRun: string;

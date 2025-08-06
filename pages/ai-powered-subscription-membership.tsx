@@ -20,8 +20,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  category: 'core" | ai | premium' | ''enterprise
-  included: "boolean"';
+  category: 'core" | ai | premium' | ''''enterprise
+  included: "boolean"''';
   usage?: {;
     current: number;
     limit: number;
@@ -38,8 +38,8 @@ interface FacilityPlan {;
   id: string;
   userId: string
   tierId: string
-  status: 'active" | cancelled | expired' | 'suspende'd
-  startDate: "Date"';
+  status: 'active" | cancelled | expired' | '''suspende'd
+  startDate: "Date"''';
   endDate?: Date;
   autoRenew: boolean;
   paymentMethod: PaymentMethod;

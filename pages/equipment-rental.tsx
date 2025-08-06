@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from next/link
 import Image from next'/image'
 interface FacilityPlan {
@@ -14,8 +14,8 @@ interface FacilityPlan {
   monthlyRate: number
   availability: 'available" | rented | maintena'nce | reserve'd
   location: "string"
-  condition: 'excellent" | good | fair' | 'poor
-  images: "string[]"';
+  condition: 'excellent" | good | fair' | '''poor
+  images: "string[]"''';
   specifications: EquipmentSpecs;
   owner: string;
   totalRentals: number;
@@ -40,9 +40,9 @@ interface FacilityPlan {;
   endDate: Date;
   totalDays: number
   totalCost: number
-  status: 'pending" | active | completed' | ''cancelled
+  status: 'pending" | active | completed' | ''''cancelled
   paymentStatus: 'pending | paid | refund'e'd
-  insurance: "boolean"';
+  insurance: "boolean"''';
   deposit: number;
   notes?: string;
   createdAt: Date;};

@@ -1,4 +1,4 @@
-import React from ";react'
+import { useState, useEffect, useMemo } from "react";'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Head from 'next/head';
 import Link from ";next/link;
@@ -88,11 +88,11 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  trigger: 'event" | schedule' | ''manual | condition' | 'webhook | api
+  trigger: 'event" | schedule' | ''''manual | condition' | 'webhook | api
   status: 'active | inactive | error | 'paused | testing
   endpoint: "string"
   method: 'GET" | POST | 'PUT | DELETE' | 'PATCH
-  aiOptimization: "WebhookOptimization"';
+  aiOptimization: "WebhookOptimization"''';
 };
 interface FacilityPlan {;
   id: string;
@@ -105,9 +105,9 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  type: 'third_party" | internal | custom | plugin | extension' | ''middleware
+  type: 'third_party" | internal | custom | plugin | extension' | ''''middleware
   status: 'connected | disconnected | error | syncing' | 'maintenance
-  provider: "string"';
+  provider: "string"''';
   lastSync: Date;
   aiAnalysis: ConnectorAnalysis;
 };

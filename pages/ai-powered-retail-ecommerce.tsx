@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: inventory-management | point-of-sale | customer-service | 'store-analytics' | merchandising | 'loss-preventio'n
-  status: 'active | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgrading
+  location: "string"''';
   efficiency: number;
   salesVolume: number;
   customerSatisfaction: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: customer-segmentation | behavior-analysis | preference-tracking | loyalty-progra'm
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   accuracy: number;
   coverage: number;
   insightsGenerated: number;
@@ -52,8 +52,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   type: pricing-optimization | inventory-optimization | marketing-automation | demand-forecasting
-  status: 'active" | completed' | ''scheduled
-  metrics: "{"';
+  status: 'active" | completed' | ''''scheduled
+  metrics: "{"''';
     totalRevenue: number;
     efficiencyGain: number;
     costSavings: number;

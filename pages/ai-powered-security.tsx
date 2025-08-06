@@ -22,8 +22,8 @@ interface FacilityPlan {";
   }};
 interface FacilityPlan {;
   id: string
-  type: login-attempt | data-access | system-change' | 'network-traff'ic | 'file-access | api-c'all
-  user: "string"';
+  type: login-attempt | data-access | system-change' | '''network-traff'ic | 'file-access | api-c'all
+  user: "string"''';
   ipAddress: string;
   location: string;
   timestamp: Date;
@@ -56,8 +56,8 @@ interface FacilityPlan {;
   current: number;
   target: number;
   improvement: number
-  trend: 'up' | 'down | 'stabl'e
-  period: "string"';};
+  trend: 'up' | '''down | 'stabl'e
+  period: "string"''';};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [threats, setThreats] = useState<SecurityThreat[]>([]);</div>;
   const [events, setEvents] = useState<SecurityEvent[]>([]);</div>;

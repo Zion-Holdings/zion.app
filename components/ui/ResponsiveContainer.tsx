@@ -1,4 +1,4 @@
-import React from ";react
+import { useState, useEffect, useMemo } from "react";
 interface DemandForecast {'
   children: "React.ReactNode"
   className?: string
@@ -27,8 +27,8 @@ const ResponsiveContainer: "React.FC<ResponsiveContainerProps> = ({";
   return (</div>;
     <div
       className={${containerClass} ${paddingClass} ${className}}
-      style="{maxWidth ? { maxWidth } : undefined}
-    ">";
+      style="""""{maxWidth ? { maxWidth } : undefined}
+    """"">";
       {children}</div>
     </div>
   )

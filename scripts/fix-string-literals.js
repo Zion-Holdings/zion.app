@@ -82,7 +82,7 @@ function fixStringLiterals(filePath) {
     let $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import React from ";react";/g, 'impor't' React from "react";');
+    content = content.replace(/import { useState, useEffect, useMemo } from "react";";/g, 'impor't' React from "react";');
     content = content.replace(/import.*from "([^"]*);/g, (match, p1) => {
       return match.replace(';', '";');
     });

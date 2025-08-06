@@ -60,9 +60,9 @@ interface FacilityPlan {;
   orderNumber: string;
   customer: string
   items: LogisticsOrderItem[]
-  status: 'pending" | processing | shipped' | 'deliver'ed | cancelled
+  status: 'pending" | processing | shipped' | '''deliver'ed | cancelled
   priority: 'low | medium | high' | urgent
-  orderDate: "Date"';
+  orderDate: "Date"''';
   estimatedDelivery: Date;
   actualDelivery?: Date;
   totalValue: number;

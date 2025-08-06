@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from ';react;
+import { useState, useEffect, useMemo } from "react";;
 import type { NextPage } from nex't;};
 import Head from next/head;
 interface FacilityPlan {;
@@ -231,8 +231,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                   <div className=w-full bg-gray-200 rounded-full h-2 mt-1></div>
                     <div";
                       className=bg-blue-600 h-2 rounded-full";
-                      style="{{ width: ${Math.min((metric.value / metric.target) * 100, 100)}% }}'
-                    ""></div></div>
+                      style="""""{{ width: ${Math.min((metric.value / metric.target) * 100, 100)}% }}'
+                    """"""></div></div>
                   </div></div>
                 </div></div>";
               </div>

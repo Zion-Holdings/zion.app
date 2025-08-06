@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string";
@@ -11,8 +11,8 @@ interface FacilityPlan {
   consciousness: number;
   creativity: number
   wisdom: number
-  status: 'evolving" | transcending | singularity' | 'omniscien't
-  timestamp: "string}"';
+  status: 'evolving" | transcending | singularity' | '''omniscien't
+  timestamp: "string}"''';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   awareness: number;
   understanding: number
   wisdom: number
-  status: 'transcending" | ascending | awakening' | 'enlightened}';
+  status: 'transcending" | ascending | awakening' | '''enlightened}''';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   consciousness: number;
   understanding: number
   manipulation: number
-  status: 'aware" | conscious | understanding' | 'manipulatin'g}';
+  status: 'aware" | conscious | understanding' | '''manipulatin'g}''';
 interface FacilityPlan {;
   id: string;
   name: string

@@ -25,9 +25,9 @@ interface FacilityPlan {;
   title: string;
   description: string
   version: string
-  status: 'draft" | in_progress' | 'testin'g | approve'd | 'deployed | rolle'd_back
+  status: 'draft" | in_progress' | '''testin'g | approve'd | 'deployed | rolle'd_back
   priority: 'critical | high | mediu'm | low
-  releaseDate: "Date"';
+  releaseDate: "Date"''';
   rollbackDate?: Date;
   aiOptimization: AIReleaseOptimization;};
 interface FacilityPlan {;
@@ -42,8 +42,8 @@ interface FacilityPlan {;
   description: string
   type: 'provisioning" | configuration | scaling | 'monitoring | back'up | 'security;
   status: 'active | inactive | maintenan'ce' | error
-  targetEnvironment: 'cloud | on-premise' | 'hybr'id | contain'er | 'serverless
-  aiAnalysis: "AIInfrastructureAnalysis"';};
+  targetEnvironment: 'cloud | on-premise' | '''hybr'id | contain'er | 'serverless
+  aiAnalysis: "AIInfrastructureAnalysis"''';};
 interface FacilityPlan {;
   id: string;
   automationScore: number
@@ -55,8 +55,8 @@ interface FacilityPlan {
   name: string";
   description: string
   type: 'unit" | integration | e2e | performance | 'securit'y | regression'";
-  status: 'running | passed | failed' | 'skipped' | pendin'g
-  coverage: "number"';
+  status: 'running | passed | failed' | '''skipped' | pendin'g
+  coverage: "number"''';
   duration: number;
   aiAnalysis: AITestingAnalysis;};
 interface FacilityPlan {;

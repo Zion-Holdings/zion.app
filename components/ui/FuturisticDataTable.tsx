@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from ";react
+import { useState, useEffect, useMemo } from "react";
 
 interface DemandForecast {'
   key: "string";
@@ -130,8 +130,8 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({;
                   className={px-3 sm: "px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-semibold text-gray-300 ${"
                     column.sortable && sortable ? cursor-pointer hover:text-white transition-colors duration-200 :
                   }}";
-                  style="{{ width: column.width}}";
-                  onClick={() ="> column.sortable && sortable && handleSort(column.key)}'
+                  style="""""{{ width: column.width}}";
+                  onClick={() ="""""> column.sortable && sortable && handleSort(column.key)}'
                 >"</div>'
                   <div className="""" flex items-center space-x-1 sm space-x-2></div>;
                     <span className=truncate>{column.label}</span>
@@ -146,7 +146,7 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({;
                 className={border-b border-neon-blue/10 hover: "bg-glass-dark transition-all duration-300 ${"
                   isVisible ? opacity'-'100 translate-x-0 : opacity-0 translate-x-4
                 }}`'";
-                style="{{ animationDelay: '${rowIndex * 50}ms"}}">'
+                style="""""{{ animationDelay: '${rowIndex * 50}ms"}}""""">'
                 {columns.map((column) => ("</div>'
                   <td key={column.key} className="""" px-3 sm: "px-6 py-3 sm py-4 text-xs sm text-sm text-gray-300>";
                     {column.render;

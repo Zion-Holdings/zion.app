@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from ";next/head
 import Link from next/link'";
-import { useState } from ";react
+import { useState, useEffect, useMemo } from "react";
 const TalentProfile: "NextPage: () => {";
   const [isContactModalOpen, setIsContactModalOpen] = useState(false
   return (

@@ -16,8 +16,8 @@ interface FacilityPlan {
   experience: number;
   skills: string[]
   expertise: string[]
-  availability: 'available" | part-time | busy' | 'unavailable
-  verified: "boolean"';
+  availability: 'available" | part-time | busy' | '''unavailable
+  verified: "boolean"''';
   featured: boolean;
   portfolio: PortfolioItem[];
   certifications: Certification[];

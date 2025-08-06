@@ -18,8 +18,8 @@ interface FacilityPlan {;
   sentimentScore: number
   volatilityIndex: number
   riskLevel: 'low" | medium | hi'g'h | extreme
-  trendPrediction: 'bullish | bearish' | ''neutral
-  recommendations: "string[]}"';
+  trendPrediction: 'bullish | bearish' | ''''neutral
+  recommendations: "string[]}"''';
 interface FacilityPlan {;
   id: string
   name: string

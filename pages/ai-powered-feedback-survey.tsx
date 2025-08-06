@@ -8,9 +8,9 @@ interface FacilityPlan {
   title: string
   description: string
   type: 'general" | product | service | 'support | feature' | 'bug;
-  status: 'active | closed | analyzing' | ''completed
+  status: 'active | closed | analyzing' | ''''completed
   priority: 'low | medium | high | 'critica'l
-  responses: "number"';
+  responses: "number"''';
   averageRating: number;
   satisfactionScore: number;
   aiAnalysis: AIFeedbackAnalysis;};
@@ -24,8 +24,8 @@ interface FacilityPlan {;
   title: string;
   description: string;
   type: market-research | user-satisfaction | product-feedback | service-evaluatio'n | custo'm
-  status: 'draft | active | closed' | 'analyzing
-  totalResponses: "number"';
+  status: 'draft | active | closed' | '''analyzing
+  totalResponses: "number"''';
   completionRate: number;
   questionEffectiveness: number;
   aiOptimization: AISurveyOptimization;};
@@ -39,8 +39,8 @@ interface FacilityPlan {;
   title: string;
   description: string;
   type: single-choice | multiple-choice | ranking | rating
-  status: 'active' | 'closed | schedul'e'd
-  totalVotes: "number"';
+  status: 'active' | '''closed | schedul'e'd
+  totalVotes: "number"''';
   participationRate: number;
   averageRating: number;
   aiAnalysis: AIPollAnalysis;};

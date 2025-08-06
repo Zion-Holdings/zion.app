@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: online-courses | virtual-classrooms | adaptive-learning | 'skill-assessment' | certification | 'microlearnin'g
-  status: 'active | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgrading
+  location: "string"''';
   enrollment: number;
   completionRate: number;
   studentSatisfaction: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: adaptive-curriculum | personalized-pathways | skill-gap-analysis | competency-mapping
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   personalizationAccuracy: number;
   adaptationSpeed: number;
   effectivenessScore: number;

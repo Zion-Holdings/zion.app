@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'industrial" | service | autonomous | 'collaborative' | mobile | 'humanoi'd
-  status: 'active | idle | maintenance' | 'erro'r | charging
-  location: "string"';
+  status: 'active | idle | maintenance' | '''erro'r | charging
+  location: "string"''';
   lastSeen: Date;
   batteryLevel: number;
   aiEnabled: boolean;

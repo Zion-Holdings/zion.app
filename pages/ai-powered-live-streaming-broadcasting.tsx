@@ -10,10 +10,10 @@ interface FacilityPlan {
   description: string;
   streamer: string
   category: string
-  status: 'live" | scheduled | ended' | 'offline
+  status: 'live" | scheduled | ended' | '''offline
   viewerCount: "number"
   duration: number
-  quality: '1080p" | 720p | 480p | 360p';
+  quality: '1080p" | 720p | 480p | 360p''';
   thumbnail: string;
   tags: string[];
   aiAnalysis: StreamAnalysis};

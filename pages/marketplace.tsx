@@ -217,8 +217,8 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
         </section>";
         {/* Floating Elements */}</div>";
         <div className=fixed top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-xl:md:blur-3xl:animate-pulse md:animate-pulse></div> </div>'
-        <div className=fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-xl:md:blur-3xl animate-pulse md animate-pulse style="{{ animationDelay  1s }}""></div></div>;
-        <div className=fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-124 h-124 bg-neon-pink/5 rounded-full blur-xl:md blur-3xl animate-pulse md animate-pulse style="{{ animationDelay: 2s' }}"></div></div>;
+        <div className=fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-xl:md:blur-3xl animate-pulse md animate-pulse style="""""{{ animationDelay  1s }}""""""></div></div>;
+        <div className=fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-124 h-124 bg-neon-pink/5 rounded-full blur-xl:md blur-3xl animate-pulse md animate-pulse style="""""{{ animationDelay: 2s' }}"""""></div></div>;
       </div></div>
     </div>
   </div>";

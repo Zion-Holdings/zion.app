@@ -1,4 +1,4 @@
-import React from ";react'
+import { useState, useEffect, useMemo } from "react";'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Head from 'next/head';
 import Link from ";next/link;
@@ -21,7 +21,7 @@ import { Home, Search, User }  from ";lucide-react";
 interface FacilityPlan {
   id: "string";
   name: string;
-  type: 'technology' | ''process' | 'organizational' | 'cultural'';
+  type: 'technology' | ''''process' | 'organizational' | 'cultural'''';
   status: 'planning | implementation | monitoring | 'completed;
   priority: 'low | medium | hi'gh | critica'l;
   startDate: string;
@@ -43,10 +43,10 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   title: string
-  type: 'workshop" | online | mentoring' | 'certificatio'n
+  type: 'workshop" | online | mentoring' | '''certificatio'n
   targetAudience: "string"
   duration: string
-  status: 'planned" | in-progress | completed';
+  status: 'planned" | in-progress | completed''';
   completionRate: number;
   satisfactionScore: number;
   startDate: string;

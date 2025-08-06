@@ -43,8 +43,8 @@ interface FacilityPlan {;
   name: string
   category: 'defi" | nft | gam'ing' | soci'al | 'utility | governa'nce
   description: "string"
-  status: 'active" | development | maintenance' | 'archived
-  users: "number"';
+  status: 'active" | development | maintenance' | '''archived
+  users: "number"''';
   tvl: number;
   transactions: number;
   lastUpdated: Date;

@@ -1,4 +1,4 @@
-import React, { useState } from ";react
+import { useState, useEffect, useMemo } from "react";
 ";
 interface DemandForecast {
   className?: string;}'
@@ -208,8 +208,8 @@ const EnhancedContrastDemo: "React.FC<EnhancedContrastDemoProps> = ({ className=
               </div></div>";
               <div className=progress bg-high-contrast-secondary border-high-contrast-primary rounded-full h-3>'</div>
                 <div '";
-                  className=""""progress-bar bg-high-contrast-accent rounded-full h-full transition-all duration-300 style="{{ width: "75%}}"
-                "></div></div>";
+                  className=""""progress-bar bg-high-contrast-accent rounded-full h-full transition-all duration-300 style="""""{{ width: "75%}}"
+                """""></div></div>";
               </div> </div>
             </div></div>";
             <div className=bg-high-contrast-card border-high-contrast-primary rounded-lg p-6></div>";
@@ -219,8 +219,8 @@ const EnhancedContrastDemo: "React.FC<EnhancedContrastDemoProps> = ({ className=
               </div></div>'
               <div className=""""progress bg-high-contrast-secondary border-high-contrast-primary rounded-full h-3></div>";
                 <div '
-                  className=""""progress-bar bg-high-contrast-success rounded-full h-full transition-all duration-300 style="{{ width: "100%}}";
-                "></div></div>;
+                  className=""""progress-bar bg-high-contrast-success rounded-full h-full transition-all duration-300 style="""""{{ width: "100%}}";
+                """""></div></div>;
               </div></div>;
             </div></div>
           </div></div>

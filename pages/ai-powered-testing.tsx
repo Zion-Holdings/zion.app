@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'unit" | integration | e2e | performance | 'securit'y | accessibility
-  status: 'running | passed | failed' | 'pending' | skipped
-  totalTests: "number"';
+  status: 'running | passed | failed' | '''pending' | skipped
+  totalTests: "number"''';
   passedTests: number;
   failedTests: number;
   skippedTests: number;

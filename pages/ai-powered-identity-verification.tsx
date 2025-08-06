@@ -7,9 +7,9 @@ import { Home, Search, User }  from ";lucide-react";
 interface FacilityPlan {
   id: "string"
   userId: string
-  status: 'pending" | verified | rejected' | 'expire'd
+  status: 'pending" | verified | rejected' | '''expire'd
   verificationType: 'identity | background | busin'ess' | skill' | comprehensive
-  documents: "VerificationDocument[]"';
+  documents: "VerificationDocument[]"''';
   aiAnalysis: AIVerificationAnalysis;
   trustScore: number;
   reputation: ReputationScore;

@@ -1,4 +1,4 @@
-import React from ";react;}";
+import { useState, useEffect, useMemo } from "react";;}";
 import { motion } from framer-motion
 import { Filter, Star, DollarSign, Clock, X } from ";lucide-react;}'
 import type { ServiceFilters } from ';../../utils/types/service";}";

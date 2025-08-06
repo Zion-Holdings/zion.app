@@ -1,4 +1,4 @@
-import { useMemo } from ';react;
+import { useState, useEffect, useMemo } from "react";;
 ;
 /**;
  * Hook to create stable mock data that doesnt cause re-renders;

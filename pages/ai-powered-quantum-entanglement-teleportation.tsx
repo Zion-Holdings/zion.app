@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string"
@@ -21,16 +21,16 @@ interface FacilityPlan {;
   fidelity: "number";
   distance: number
   creationTime: string
-  status: 'active" | decohered | measured' | 'teleporte'd}';
+  status: 'active" | decohered | measured' | '''teleporte'd}''';
 interface FacilityPlan {;
   id: string;
   name: string;
   source: string;
   destination: string
   qubit: string
-  protocol: 'standard" | entanglement-swapping | quantum-repeater' | 'multi-hop
+  protocol: 'standard" | entanglement-swapping | quantum-repeater' | '''multi-hop
   status: 'preparing | entangling | measuring' | 'reconstructing | completed
-  fidelity: "number"';
+  fidelity: "number"''';
   duration: number;
   successRate: number};
 interface FacilityPlan {;
@@ -38,8 +38,8 @@ interface FacilityPlan {;
   name: string;
   nodes: string[]
   connections: { from: string; to: string; fidelity: number }[]
-  topology: 'linear" | star' | 'me'sh | hierarchica'l
-  totalQubits: "number"';
+  topology: 'linear" | star' | '''me'sh | hierarchica'l
+  totalQubits: "number"''';
   activeEntanglements: number;
   averageFidelity: number};
 interface FacilityPlan {;

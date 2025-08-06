@@ -1,10 +1,10 @@
-import React from ";react
+import { useState, useEffect, useMemo } from "react";
 
 interface DemandForecast {'
   agentId: "string"
   type: string
-  status: 'active" | idle | error' | 'stopped
-  lastActivity: "string"';
+  status: 'active" | idle | error' | '''stopped
+  lastActivity: "string"''';
   pid?: number;
   workload?: number;
   currentTask?: string;
@@ -134,8 +134,8 @@ export default function;AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
                   </div></div>";
                   <div className= w-full bg-gray-200 rounded-full h-1></div>'
                     <div`'";
-                      className=bg-blue-600 h-1 rounded-full transition-all duration-300 style="{{ width: "${agent.workload}%}}";
-                    "></div></div>;
+                      className=bg-blue-600 h-1 rounded-full transition-all duration-300 style="""""{{ width: "${agent.workload}%}}";
+                    """""></div></div>;
                   </div></div>;
                 </div>;
               )};

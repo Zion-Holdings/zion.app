@@ -40,11 +40,11 @@ export function createSafeHtmlWrapper(html: string): string {
   "
   // Wrap in a container with CSP-friendly styling
   return '</div>
-    <div class = "safe-html-content style="'
+    <div class = "safe-html-content style="""""'
       font-family: -apple-system, BlinkMacSystemFont, 'Sego'e' UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
-    ">
+    """"">
       ${sanitized}"</div>
     </div>'`"
   '

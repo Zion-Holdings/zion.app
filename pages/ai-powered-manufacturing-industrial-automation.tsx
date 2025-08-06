@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: assembly-line | machining | welding | 'packaging' | inspection | 'material-handlin'g
-  status: 'operational | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'operational | maintenance | offline' | '''upgrading
+  location: "string"''';
   efficiency: number;
   throughput: number;
   qualityScore: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: visual-inspection | dimensional-measurement | material-testing | defect-detectio'n
-  status: 'active | calibrating | offline' | 'maintenance
-  location: "string"';
+  status: 'active | calibrating | offline' | '''maintenance
+  location: "string"''';
   accuracy: number;
   detectionRate: number;
   falsePositiveRate: number;
@@ -52,8 +52,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   type: process-optimization | resource-allocation | scheduling | predictive-maintenance
-  status: 'active" | completed' | ''scheduled
-  metrics: "{"';
+  status: 'active" | completed' | ''''scheduled
+  metrics: "{"''';
     totalProduction: number;
     efficiencyGain: number;
     costSavings: number;

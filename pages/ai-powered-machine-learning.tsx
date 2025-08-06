@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'classification" | regression | clustering | 'nlp' | computer-vision | 'recommendatio'n
-  status: 'training | deployed | failed' | 'archive'd | monitoring
-  accuracy: "number"';
+  status: 'training | deployed | failed' | '''archive'd | monitoring
+  accuracy: "number"''';
   precision: number;
   recall: number;
   f1Score: number;
@@ -28,8 +28,8 @@ interface FacilityPlan {;
   id: string;
   modelName: string
   type: string
-  status: 'queued" | running | completed' | ''failed | cancelled
-  progress: "number"';
+  status: 'queued" | running | completed' | ''''failed | cancelled
+  progress: "number"''';
   startTime: Date;
   endTime?: Date;
   dataset: string;
@@ -51,8 +51,8 @@ interface FacilityPlan {;
   current: number;
   target: number
   improvement: number
-  trend: 'up" | down' | ''stable
-  period: "string"';};
+  trend: 'up" | down' | ''''stable
+  period: "string"''';};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [models, setModels] = useState<MLModel[]>([]);</div>;
   const [trainingJobs, setTrainingJobs] = useState<TrainingJob[]>([]);</div>;

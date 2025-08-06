@@ -44,8 +44,8 @@ interface FacilityPlan {;
   id: string;
   title: string;
   description: string
-  impact: 'positive | negative' | ''neutral
-  confidence: number';
+  impact: 'positive | negative' | ''''neutral
+  confidence: number''';
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [policies, setPolicies] = useState<GovernancePolicy[]>([]</div>;

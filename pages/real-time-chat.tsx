@@ -266,8 +266,8 @@ const RealTimeChatPage: NextPage: () => {,;
                           <div className=text-sm font-medium mb-1>AI Assistant</div></div>
                           <div className=flex space-x-1> '</div>'
                             </div><div className=""""w-2 h-2 bg-white rounded-full animate-bounce></div></div>'
-                            <div className=w-2 h-2 bg-white rounded-full animate-bounce style="{{ animationDelay: "0.1s }}"></div></div>";
-                            <div className=w-2 h-2 bg-white rounded-full animate-bounce  style="{{ animationDelay: 0.2s }}"></div></div>;
+                            <div className=w-2 h-2 bg-white rounded-full animate-bounce style="""""{{ animationDelay: "0.1s }}"""""></div></div>";
+                            <div className=w-2 h-2 bg-white rounded-full animate-bounce  style="""""{{ animationDelay: 0.2s }}"""""></div></div>;
                           </div></div>;
                         </div></div>;
                       </div></div>;

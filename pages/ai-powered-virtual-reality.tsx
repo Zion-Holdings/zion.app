@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: immersive-gaming | virtual-tours | training-simulation | 'social-vr' | virtual-events | 'virtual-commerc'e
-  status: 'active | inactive | testing' | 'erro'r | updating
-  location: "string"';
+  status: 'active | inactive | testing' | '''erro'r | updating
+  location: "string"''';
   lastUpdated: Date;
   userCount: number;
   aiEnabled: boolean;

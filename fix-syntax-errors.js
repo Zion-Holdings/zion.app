@@ -5,7 +5,7 @@ const path = require('path');
 const fixes = [
   // Fix malformed imports
   {
-    pattern: /import type \{ NextPage \} from ";next";/g,
+    pattern: /import type { NextPage } from "next";/g,
     replacement: 'import type { NextPage } from "next";'
   },
   {
@@ -13,7 +13,7 @@ const fixes = [
     replacement: "import ModernLayout from '../components/layout/ModernLayout';"
   },
   {
-    pattern: /import \{ useState, useEffect, useMemo \} from ";react/g,
+    pattern: /import { useState, useEffect, useMemo } from "react";/g,
     replacement: 'import { useState, useEffect, useMemo } from "react";'
   },
   {
@@ -37,7 +37,7 @@ const fixes = [
   },
   // Fix malformed string literals in JSX
   {
-    pattern: /style=""font-family: Arial, sans-serif;"/g,
+    pattern: /style=""""""font-family: Arial, sans-serif;"/g,
     replacement: 'style="font-family: Arial, sans-serif;"'
   },
   // Fix malformed template literals
@@ -47,7 +47,7 @@ const fixes = [
   },
   // Fix malformed JSX closing tags
   {
-    pattern: /<\/div">';/g,
+    pattern: /<\/div""""">';/g,
     replacement: '</div>'
   },
   // Fix malformed interface declarations
@@ -58,7 +58,7 @@ const fixes = [
   // Fix malformed type annotations
   {
     pattern: /type: 'market" \| demand \| trend \| 'risk \| performance' \| 'behavior/g,
-    replacement: "type: 'market' | ''demand' | 'trend' | 'risk' | 'performance' | 'behavior'"
+    replacement: "type: 'market' | ''''demand' | 'trend' | 'risk' | 'performance' | 'behavior'"
   },
   // Fix malformed status types
   {
@@ -67,7 +67,7 @@ const fixes = [
   },
   // Fix malformed confidence types
   {
-    pattern: /confidence: number';/g,
+    pattern: /confidence: number''';/g,
     replacement: 'confidence: number;'
   },
   // Fix malformed string arrays
@@ -95,8 +95,8 @@ function fixFile(filePath) {
     content = content.replace(/';/g, "';");
     
     // Fix malformed JSX attributes
-    content = content.replace(/style="([^">]*?)>/g, (match, styleContent) => {
-      return `style=""${styleContent}"">`
+    content = content.replace(/style="""""([^""""">]*?)>/g, (match, styleContent) => {
+      return `style=""""""${styleContent}"""""">`
     });
     
     // Fix malformed template literals
@@ -106,7 +106,7 @@ function fixFile(filePath) {
     content = content.replace(/(\w+): "([^"]*)"\s*;/g, '$1: "$2";');
     
     // Fix malformed interface properties
-    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | ''$3'';");
+    content = content.replace(/(\w+): '([^']*)' \| ([^;]*);/g, "$1: '$2' | ''''$3'''';");
     
     // Only write if content changed
     if (content !== originalContent) {

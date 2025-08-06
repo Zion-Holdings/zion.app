@@ -6,7 +6,7 @@ const additionalFixes = [
   // Fix unterminated string literals in import statements
   {
     pattern: /import React from 'react';/g,
-    replacement: "import React from ";react';"
+    replacement: "import { useState, useEffect, useMemo } from "react";';"
   },
   {
     pattern: /import Head from next\/head'";/g,

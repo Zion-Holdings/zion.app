@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: social-platform | community-forum | messaging-app | 'content-sharing' | professional-network | 'interest-group's
-  status: 'active | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgrading
+  location: "string"''';
   activeUsers: number;
   postsPerDay: number;
   engagementRate: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: automated-moderation | content-filtering | spam-detection | hate-speech-detection
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   detectionRate: number;
   falsePositiveRate: number;
   responseTime: number;

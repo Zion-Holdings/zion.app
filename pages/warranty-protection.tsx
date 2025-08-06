@@ -17,8 +17,8 @@ interface: ProtectionClaim: {;
   id: string;
   product: string
   issue: string
-  status: 'pending" | approved | rejected' | 'completed
-  submittedDate: "Date"';
+  status: 'pending" | approved | rejected' | '''completed
+  submittedDate: "Date"''';
   estimatedResolution: Date;
   claimAmount: number;
   description: string;,;
@@ -431,7 +431,7 @@ id: basic,
                     </span></div>'
                   </div>'</div>'
                   <div className=""""w-full bg-gray-700 rounded-full h-2></div>'
-                    </div><div className=bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full style="{{ width: "85% }}"></div></div>";
+                    </div><div className=bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full style="""""{{ width: "85% }}"""""></div></div>";
                   </div></div>
                 </div></div>
               </div></div>

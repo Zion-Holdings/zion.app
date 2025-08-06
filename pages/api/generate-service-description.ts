@@ -9,7 +9,7 @@ export default async function handler(;
   req: NextApiRequest,;
   res: NextApiResponse;
 ) {;
-  if (req.method !== 'POST') {;
+  if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });};
   try {;
     const {
@@ -18,7 +18,7 @@ export default async function handler(;
       targetAudience,;
       industry,;
       pricing,;
-      location;
+      location
     } = req.body;
     if (!title || !keyFeatures) {;
       return res.status(400).json({ error: Title' and key features are required' });};

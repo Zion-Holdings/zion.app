@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: city-planning | land-use-optimization | zoning-management | 'development-strategy' | sustainability-planning | 'growth-managemen't
-  status: 'active | planning | implementation' | 'completed
-  location: "string"';
+  status: 'active | planning | implementation' | '''completed
+  location: "string"''';
   population: number;
   areaCovered: number;
   efficiencyScore: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: urban-analytics | traffic-monitoring | environmental-monitoring | resource-optimizatio'n
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   dataPoints: number;
   accuracy: number;
   responseTime: number;
@@ -52,8 +52,8 @@ interface FacilityPlan {;
   id: string;
   name: string
   type: development-projects | construction-management | sustainability-initiatives | community-development
-  status: 'active" | completed' | ''scheduled
-  metrics: "{"';
+  status: 'active" | completed' | ''''scheduled
+  metrics: "{"''';
     totalProjects: number;
     completionRate: number;
     costSavings: number;

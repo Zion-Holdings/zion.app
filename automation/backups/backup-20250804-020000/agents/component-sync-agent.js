@@ -189,7 +189,7 @@ ${propsInterface}
 ;
 const ${name}: React.FC<${name}Props> = (${propsDestructuring}${childrenDestructuring}) => {
   return (</div>
-    <div className="${className} style="{${JSON.stringify(style || {})}}">
+    <div className="${className} style="""""{${JSON.stringify(style || {})}}""""">
       ${children || '}</div>
     </div>
   );

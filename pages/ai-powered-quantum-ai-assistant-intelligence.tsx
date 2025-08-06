@@ -7,68 +7,68 @@ import Link from 'next/link';
 interface QuantumAIAssistant {
   id: string;
   name: string;
-  type: 'quantum-chatbot' | ''quantum-advisor' | 'quantum-tutor' | 'quantum-analyst' | 'quantum-creator'';
+  type: 'quantum-chatbot' | ''''quantum-advisor' | 'quantum-tutor' | 'quantum-analyst' | 'quantum-creator'''';
   intelligence: number;
   responseTime: number;
   accuracy: number;
   learningRate: number;
-  status: 'active' | ''learning' | 'processing' | 'standby'';
+  status: 'active' | ''''learning' | 'processing' | 'standby'''';
   timestamp: string;
 }
 
 interface QuantumIntelligence {
   id: string;
   name: string;
-  intelligence: 'quantum-reasoning' | ''quantum-learning' | 'quantum-adaptation' | 'quantum-innovation' | 'quantum-evolution'';
+  intelligence: 'quantum-reasoning' | ''''quantum-learning' | 'quantum-adaptation' | 'quantum-innovation' | 'quantum-evolution'''';
   capability: number;
   efficiency: number;
   creativity: number;
   problemSolving: number;
-  status: 'reasoning' | ''learning' | 'adapting' | 'innovating'';
+  status: 'reasoning' | ''''learning' | 'adapting' | 'innovating'''';
 }
 
 interface QuantumConsciousness {
   id: string;
   name: string;
-  consciousness: 'quantum-awareness' | ''quantum-self-awareness' | 'quantum-emotional' | 'quantum-creative' | 'quantum-intuitive'';
+  consciousness: 'quantum-awareness' | ''''quantum-self-awareness' | 'quantum-emotional' | 'quantum-creative' | 'quantum-intuitive'''';
   awareness: number;
   selfReflection: number;
   emotionalDepth: number;
   creativity: number;
-  status: 'aware' | ''reflecting' | 'feeling' | 'creating'';
+  status: 'aware' | ''''reflecting' | 'feeling' | 'creating'''';
 }
 
 interface QuantumBrain {
   id: string;
   name: string;
-  brain: 'quantum-neural-network' | ''quantum-memory' | 'quantum-cognition' | 'quantum-emotion' | 'quantum-intuition'';
+  brain: 'quantum-neural-network' | ''''quantum-memory' | 'quantum-cognition' | 'quantum-emotion' | 'quantum-intuition'''';
   neurons: number;
   connections: number;
   processing: number;
   memory: number;
-  status: 'processing' | ''learning' | 'remembering' | 'thinking'';
+  status: 'processing' | ''''learning' | 'remembering' | 'thinking'''';
 }
 
 interface QuantumKnowledge {
   id: string;
   name: string;
-  knowledge: 'quantum-facts' | ''quantum-concepts' | 'quantum-patterns' | 'quantum-insights' | 'quantum-wisdom'';
+  knowledge: 'quantum-facts' | ''''quantum-concepts' | 'quantum-patterns' | 'quantum-insights' | 'quantum-wisdom'''';
   facts: number;
   concepts: number;
   patterns: number;
   insights: number;
-  status: 'storing' | ''organizing' | 'analyzing' | 'synthesizing'';
+  status: 'storing' | ''''organizing' | 'analyzing' | 'synthesizing'''';
 }
 
 interface QuantumCommunication {
   id: string;
   name: string;
-  communication: 'quantum-language' | ''quantum-expression' | 'quantum-understanding' | 'quantum-empathy' | 'quantum-persuasion'';
+  communication: 'quantum-language' | ''''quantum-expression' | 'quantum-understanding' | 'quantum-empathy' | 'quantum-persuasion'''';
   language: number;
   expression: number;
   understanding: number;
   empathy: number;
-  status: 'communicating' | ''expressing' | 'understanding' | 'connecting'';
+  status: 'communicating' | ''''expressing' | 'understanding' | 'connecting'''';
 }
 
 const AIPoweredPredictiveAnalytics: NextPage = () => {
@@ -197,24 +197,24 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         <meta name="keywords" content="quantum AI assistant, quantum intelligence, quantum consciousness, quantum brain, quantum knowledge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
-      <header className="""relative z-10">
-        <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="""flex items-center justify-between">
-            <div className="""flex items-center space-x-4">
-              <div className="""w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <span className="""text-white text-xl">🧠</span>
-              </div>
-              <h1 className="""text-2xl font-bold text-white">Quantum AI Assistant & Intelligence</h1>
-              <p className="""text-gray-300">AI-Powered Quantum Intelligence System</p>
+             <header className="relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+           <div className="flex items-center justify-between">
+             <div className="flex items-center space-x-4">
+               <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                 <span className="text-white text-xl">🧠</span>
+               </div>
+               <h1 className="text-2xl font-bold text-white">Quantum AI Assistant & Intelligence</h1>
+               <p className="text-gray-300">AI-Powered Quantum Intelligence System</p>
             </div>
           </div>
         </div>
       </header>
-      <main className="""relative z-10">
-        <div className="""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Tab Navigation */}
-          <div className="""mb-8">
-            <nav className="""flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+             <main className="relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+           {/* Tab Navigation */}
+           <div className="mb-8">
+             <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
               {[
                 { id: 'dashboard', label: "Intelligence Dashboard", icon: 🧠 },
                 { id: 'assistants', label: 'Quantum AI Assistants', icon: 🤖 },

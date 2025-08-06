@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string"
@@ -57,8 +57,8 @@ interface FacilityPlan {;
   security: number;
   efficiency: number;
   applications: string[]
-  status: 'research' | 'implementation | deployme'n't | production}"
-const AIPoweredPredictiveAnalytics: "NextPage = () => {"';
+  status: 'research' | '''implementation | deployme'n't | production}"
+const AIPoweredPredictiveAnalytics: "NextPage = () => {"''';
   const [activeTab, setActiveTab] = useState(dashboard;
   const [isKeyExchange, setIsKeyExchange] = useState(false;
   const [currentProtocol, setCurrentProtocol] = useState<any>(null</div>;

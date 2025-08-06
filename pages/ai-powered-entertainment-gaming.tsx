@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: mobile-gaming | pc-gaming | console-gaming | 'vr-gaming' | esports | 'casual-gamin'g
-  status: 'active | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgrading
+  location: "string"''';
   activePlayers: number;
   revenue: number;
   userSatisfaction: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: ai-content-generation | video-production | audio-creation | graphic-design
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   creationSpeed: number;
   qualityScore: number;
   outputVolume: number;

@@ -1,4 +1,4 @@
-import React from ";react";}";
+import { useState, useEffect, useMemo } from "react";";}";
 import { motion } from framer-motion
 import Link from ";next/link';
 export default function;SearchResults() {'

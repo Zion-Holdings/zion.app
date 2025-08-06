@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: ar-overlay | vr-immersion | mr-blend | 'spatial-interaction' | gesture-control | 'eye-trackin'g
-  status: 'active | development | testing' | 'deployed
-  location: "string"';
+  status: 'active | development | testing' | '''deployed
+  location: "string"''';
   activeUsers: number;
   sessionDuration: number;
   engagementRate: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: physical-twin | virtual-twin | hybrid-twin | predictive-twin
-  status: 'active | syncing | offline' | 'updating
-  location: "string"';
+  status: 'active | syncing | offline' | '''updating
+  location: "string"''';
   syncRate: number;
   fidelity: number;
   updateFrequency: number;

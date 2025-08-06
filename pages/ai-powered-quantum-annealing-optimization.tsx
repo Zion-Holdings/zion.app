@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string"
@@ -25,7 +25,7 @@ interface FacilityPlan {;
   convergence: number;
   bestEnergy: number
   runtime: number
-  status: 'preparing" | annealing | measuring' | ''completed}';
+  status: 'preparing" | annealing | measuring' | ''''completed}''';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -55,7 +55,7 @@ interface FacilityPlan {;
   timeSteps: number;
   precision: number
   results: string
-  status: 'running" | completed | analyzing' | ''failed}';
+  status: 'running" | completed | analyzing' | ''''failed}''';
 interface FacilityPlan {;
   id: string;
   name: string

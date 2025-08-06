@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'lending" | investment | insurance | 'payments' | wealth-management | 'tradin'g
-  status: 'active | pending | completed' | 'suspended
-  location: "string"';
+  status: 'active | pending | completed' | '''suspended
+  location: "string"''';
   performance: number;
   riskScore: number;
   roi: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: credit-risk | market-risk | operational-risk | 'liquidity-risk | 'compliance-risk' | cybersecurity-risk
-  status: 'active | monitoring | alert' | 'critical
-  location: "string"';
+  status: 'active | monitoring | alert' | '''critical
+  location: "string"''';
   riskLevel: number;
   exposure: number;
   mitigationScore: number;

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from next/link
 interface FacilityPlan {";
   id: "string"
@@ -48,8 +48,8 @@ interface FacilityPlan {;
 interface FacilityPlan {
   id: string
   'name: "string"
-  type: 'focus" | relaxation | creativity | memory' | 'motor-skills
-  duration: "number"';
+  type: 'focus" | relaxation | creativity | memory' | '''motor-skills
+  duration: "number"''';
   progress: number;
   targetRegions: string[];
   exercises: {;
@@ -593,7 +593,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                               activity.activity > 80 ? bg-green-500 : "";
                               activity.activity > 60 ? bg-yellow-500 : bg-red-500`'
                             }"}`'
-                            style="{{ width: "${activity.activity}%}}</div">"
+                            style="""""{{ width: "${activity.activity}%}}</div""""">"
                           ></div></div>
                         </div></div>'
                         <div className=""""flex justify-between></div>";

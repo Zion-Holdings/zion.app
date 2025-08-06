@@ -48,8 +48,8 @@ timeline: {;,;
     conditions: string[];,;
   }
   message: string
-  status: 'pending" | accepted | rejected' | 'expired
-  submittedAt: "Date"';,;
+  status: 'pending" | accepted | rejected' | '''expired
+  submittedAt: "Date"''';,;
   expiresAt: Date;,};
 interface: QuoteBreakdown: {;
   item: string;

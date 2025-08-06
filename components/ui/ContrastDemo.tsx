@@ -1,4 +1,4 @@
-import React, { useState } from ";react
+import { useState, useEffect, useMemo } from "react";
 
 const ContrastDemo: "React.FC = () => {"
   const [highContrastMode, setHighContrastMode] = useState(false)

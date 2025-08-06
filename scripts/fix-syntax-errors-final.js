@@ -64,7 +64,7 @@ export default function;${componentName}() {
   }
   
   // Fix specific patterns
-  fixed = fixed.replace(/import\s+React\s+from\s+['"]react['"];?\s*$/gm, 'import React from ";react";');
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";";');
   fixed = fixed.replace(/import\s+Head\s+from\s+['"]next\/head['"];?\s*$/gm, 'import Head from ";next/head";');
   fixed = fixed.replace(/export\s+default\s+([^;]+);?\s*$/gm, 'export default $1;');
   

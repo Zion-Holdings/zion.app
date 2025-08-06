@@ -8,9 +8,9 @@ interface FacilityPlan {
   name: string
   description: string
   status: 'active" | inactive | draft | archive'd;
-  category: 'business | technical | marketing' | 'sales | 'suppo'rt | custom
+  category: 'business | technical | marketing' | '''sales | 'suppo'rt | custom
   priority: 'low | medium | hi'gh | critical
-  steps: "WorkflowStep[]"';
+  steps: "WorkflowStep[]"''';
   triggers: WorkflowTrigger[];
   lastExecuted: Date;
   executionCount: number;
@@ -88,8 +88,8 @@ interface FacilityPlan {
   id: string
   name: string
   url: string
-  method: 'GET" | POST' | 'PU'T | DELET'E | PAT'CH
-  status: 'healthy | degraded | down' | maintenanc'e'"';
+  method: 'GET" | POST' | '''PU'T | DELET'E | PAT'CH
+  status: 'healthy | degraded | down' | maintenanc'e'"''';
   responseTime: "number";
   successRate: number;
   lastChecked: Date;};
@@ -127,8 +127,8 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [processOrchestrations, setProcessOrchestrations] = useState<ProcessOrchestration[]>([]</div>;
   const [integrations, setIntegrations] = useState<Integration[]>([]</div>;
   const [analytics, setAnalytics] = useState<WorkflowOrchestrationAnalytics | null>(null</div>;
-  const [activeTab, setActiveTab] = useState<workflows | orchestration | integrations' | 'analytics>(workflows'</div>';
-  const [selectedCategory, setSelectedCategory] = useState<string>('all;
+  const [activeTab, setActiveTab] = useState<workflows | orchestration | integrations' | '''analytics>(workflows'</div>
+  const [selectedCategory, setSelectedCategory] = useState<string>('all'';
   const [isLoading, setIsLoading] = useState(true
   // Mock data
   const mockPredictiveModels: "PredictiveModel[] = [";

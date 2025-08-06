@@ -507,7 +507,7 @@ module.exports = {
     optimizeCss: true,
     optimizePackageImports: ['@mui/material', '@emotion/react', '@emotion/styled']
   }
-};`;
+};`
                     await fs.writeFile(nextConfigPath, config);
                 }
             }

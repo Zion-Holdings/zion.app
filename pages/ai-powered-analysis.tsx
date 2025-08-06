@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from ';react;
+import { useState, useEffect, useMemo } from "react";;
 import type { NextPage } from nex't;};
 import Head from next/head;
 interface FacilityPlan {;
@@ -8,8 +8,8 @@ interface FacilityPlan {;
   description: string;
   value: number
   unit: string
-  trend: 'up" | down' | 'stable
-  confidence: number';
+  trend: 'up" | down' | '''stable
+  confidence: number''';
 };
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [analysisData, setAnalysisData] = useState<AnalysisData[]>([]);

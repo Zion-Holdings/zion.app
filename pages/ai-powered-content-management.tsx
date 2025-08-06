@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   title: string
   type: 'blog" | service | product | 'landing | social' | 'email
-  status: 'draft | published | scheduled' | 'archived
-  author: "string"';
+  status: 'draft | published | scheduled' | '''archived
+  author: "string"''';
   createdAt: Date;
   updatedAt: Date;
   publishDate?: Date;

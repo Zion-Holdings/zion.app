@@ -30,8 +30,8 @@ interface FacilityPlan {
   title: string
   description: string
   impact: 'high" | mediu'm | low
-  effort: 'easy | medium' | ''hard
-  estimatedImprovement: "number"';
+  effort: 'easy | medium' | ''''hard
+  estimatedImprovement: "number"''';
   aiGenerated: boolean;};
 interface FacilityPlan {;
   id: string;

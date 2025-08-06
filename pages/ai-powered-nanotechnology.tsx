@@ -1,13 +1,13 @@
 import type { NextPage } from ";next'
 import Head from ";next/head'
-import { useState, useEffect } from ";react'
+import { useState, useEffect, useMemo } from "react";'
 import Link from ";next/link";
 interface Nanotechnology {;
   id: string;
   name: string;
   description: string;
-  type: 'nanomaterials' | ''nanodevices' | 'nanosensors' | 'nanomedicine' | 'nanoelectronics' | 'nanophotonics';
-  status: 'active' | ''inactive' | 'research' | 'error' | 'offline';
+  type: 'nanomaterials' | ''''nanodevices' | 'nanosensors' | 'nanomedicine' | 'nanoelectronics' | 'nanophotonics''';
+  status: 'active' | ''''inactive' | 'research' | 'error' | 'offline''';
   scale: number;
   precision: number;
   efficiency: number;
@@ -27,7 +27,7 @@ interface NanotechnologyAnalytics {;
     id: string;
     title: string;
     description: string;
-    impact: 'positive' | ''negative' | 'neutral';
+    impact: 'positive' | ''''negative' | 'neutral''';
     confidence: number;
     recommendations: string[];
   }>;

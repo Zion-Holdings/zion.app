@@ -18,8 +18,8 @@ function fixFinalImports(directory) {
         const importFixes = [
           // Fix missing closing quotes in imports
           [/import type { NextApiRequest, NextApiResponse } from 'next'/app';"],
-          [/import React from ';react;/g, "import React from 'react';"],
-          [/import React, \{ ([^}]+) \} from ';react;/g, "import React, { $1 } from 'react';"],
+          [/import { useState, useEffect, useMemo } from "react";;/g, "import React from 'react';"],
+          [/import { useState, useEffect, useMemo } from "react";;/g, "import React, { $1 } from 'react';"],
           [/import type { NextApiRequest, NextApiResponse } from 'next'';"],
           [/import type { NextApiRequest, NextApiResponse } from 'next'\/head;/g, "import Head from 'next/head';"],
           [/import Link from next\/link';/g, "import Link from 'next/link';"],

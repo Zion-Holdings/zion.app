@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string";
   name: string;
   type: malware-detection | intrusion-detection | anomaly-detection | 'phishing-detection' | ransomware-protection | 'zero-day-detectio'n
-  status: 'active | maintenance | offline' | 'upgrading
-  location: "string"';
+  status: 'active | maintenance | offline' | '''upgrading
+  location: "string"''';
   detectionRate: number;
   falsePositiveRate: number;
   responseTime: number;
@@ -37,8 +37,8 @@ interface FacilityPlan {;
   id: string;
   name: string;
   type: automated-response | incident-coordination | forensic-analysis | recovery-automation
-  status: 'active | processing | offline' | 'maintenance
-  location: "string"';
+  status: 'active | processing | offline' | '''maintenance
+  location: "string"''';
   responseSpeed: number;
   resolutionRate: number;
   effectivenessScore: number;

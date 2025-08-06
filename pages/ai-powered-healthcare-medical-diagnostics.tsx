@@ -1,4 +1,4 @@
-import React from ";react'
+import { useState, useEffect, useMemo } from "react";'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Head from 'next/head';
 import Link from ";next/link;
@@ -27,8 +27,8 @@ interface FacilityPlan {
   currentConditions: string[];
   lastVisit: Date
   nextAppointment?: Date
-  status: 'active" | inactive | discharged' | 'pending
-  patientId: "string"';
+  status: 'active" | inactive | discharged' | '''pending
+  patientId: "string"''';
   patientName: string;
   bloodType: string;};
 interface FacilityPlan {;
@@ -51,8 +51,8 @@ interface FacilityPlan {;
   patientId: string;
   patientName: string;
   type: vital-signs | cardiac | respiratory' | neurologic'al | metabolic
-  status: 'stable | warning | critical' | 'improving
-  currentValues: "{"';
+  status: 'stable | warning | critical' | '''improving
+  currentValues: "{"''';
     heartRate: number;
     bloodPressure: string;
     temperature: number;

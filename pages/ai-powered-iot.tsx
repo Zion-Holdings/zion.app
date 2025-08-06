@@ -7,8 +7,8 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'sensor" | actuator | gateway | 'camera' | controller | 'smart-applianc'e
-  status: 'online | offline | maintenance' | 'erro'r | updating
-  location: "string"';
+  status: 'online | offline | maintenance' | '''erro'r | updating
+  location: "string"''';
   lastSeen: Date;
   dataPoints: number;
   batteryLevel: number;
@@ -31,8 +31,8 @@ interface FacilityPlan {;
   location: string;
   aiProcessed: boolean
   anomaly: boolean
-  trend: 'increasing" | decreasing' | 'stab'le
-  threshold: "{"';
+  trend: 'increasing" | decreasing' | '''stab'le
+  threshold: "{"''';
     min: number;
     max: number;
     critical: boolean;

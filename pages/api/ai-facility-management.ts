@@ -1,59 +1,38 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+interface FacilityData {
+  id: string;
+  name: string;
+  energyScore: number;
+  securityScore: number;
+  efficiencyScore: number;
+  recommendations: string[];
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
-    const { action } = req.body;
-
-    // Simulate facility data
-    const facilities = [
-      {
-        id: 'facility-1',
-        name: 'Main Office Building',
-        type: 'Office',
-        status: 'operational',
-        capacity: 500,
-        utilization: 85,
-        energyEfficiency: 92,
-        securityScore: 95
-      },
-      {
-        id: 'facility-2',
-        name: 'Data Center',
-        type: 'Technology',
-        status: 'operational',
-        capacity: 200,
-        utilization: 95,
-        energyEfficiency: 78,
-        securityScore: 98
-      }
-    ];
-
-    switch (action) {
-      case 'getFacilities':
-        return res.status(200).json({
-          success: true,
-          data: facilities
-        });
-
-      case 'getAnalytics':
-        return res.status(200).json({
-          success: true,
-          analytics: {
-            totalFacilities: facilities.length,
-            operationalFacilities: facilities.filter(f => f.status === 'operational').length,
-            averageUtilization: facilities.reduce((sum, f) => sum + f.utilization, 0) / facilities.length
-          }
-        });
-
-      default:
-        return res.status(400).json({ error: 'Invalid action' });
+  // Mock data for facility management
+  const facilityData: FacilityData[] = [
+    {
+      id: '1',
+      name: 'Building A',
+      energyScore: 88,
+      securityScore: 92,
+      efficiencyScore: 85,
+      recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']
+    },
+    {
+      id: '2',
+      name: 'Building B',
+      energyScore: 75,
+      securityScore: 85,
+      efficiencyScore: 78,
+      recommendations: ['Install energy monitoring', 'Improve access control', 'Optimize maintenance schedule']
     }
-  } catch (error) {
-    console.error('AI Facility Management API Error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
+  ];
+
+  res.status(200).json(facilityData);
 } 

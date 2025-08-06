@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from ";react
+import { useState, useEffect, useMemo } from "react";
 import type { NextPage } from next'";
 import Head from ";next/head
 import Link from next/link'

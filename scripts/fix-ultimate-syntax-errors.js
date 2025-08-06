@@ -5,9 +5,9 @@ function fixSyntaxErrors(content) {
   let fixed = content;
   
   // Fix all unterminated string literals in imports
-  fixed = fixed.replace(/import React from ";react";/g, 'import React from ";react";');
-  fixed = fixed.replace(/import React, { [^}]+ } from ";react;/g, (match) => match.replace(/;$/, '";'));
-  fixed = fixed.replace(/import { [^}]+ } from ";react;/g, (match) => match.replace(/;$/, '";'));
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";";');
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";;/g, (match) => match.replace(/;$/, '";'));
+  fixed = fixed.replace(/import { useState, useEffect, useMemo } from "react";;/g, (match) => match.replace(/;$/, '";'));
   
   // Fix all unterminated string literals in JSX className
   fixed = fixed.replace(/className="""""([^]*)$/gm, (match, className) => {
@@ -30,10 +30,10 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/className=([^"]*)"([^"]*)"([^"]*)"/g, 'className="""""$1$2$3');
   
   // Fix style objects
-  fixed = fixed.replace(/style="{{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');
-  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) ="> {
+  fixed = fixed.replace(/style="""""{{ background: ""transparent' }}/g, 'style={{ background: \'transparent\' }}');
+  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) ="""""> {
     if (bg.includes('") && !bg.endsWith("'")) {
-      return `style="{{ background: ""transparent' }}`
+      return `style="""""{{ background: ""transparent' }}`
     }
     return match;
   });
@@ -49,7 +49,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/getContext\('2d\)/g, "getContext('2d')");
   
   // Fix export statements
-  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) ="> {
+  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) ="""""> {
     if (!match.endsWith(';')) {
       return `${match};`
     }

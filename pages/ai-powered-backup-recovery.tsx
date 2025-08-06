@@ -9,8 +9,8 @@ interface FacilityPlan {
   name: string
   description: string
   type: 'full" | incremental | differential | 'snapsho't | archive' | replicati'on
-  status: 'running | completed | failed' | 'schedul'ed | paused
-  size: "number"';
+  status: 'running | completed | failed' | '''schedul'ed | paused
+  size: "number"''';
   duration: number;
   lastRun: Date;
   nextRun: Date;
@@ -26,11 +26,11 @@ interface FacilityPlan {;
   name: string
   description: string
   category: 'disaster" | system | d'ata | 'applicati'on | infrastructure | 'busin'ess
-  status: 'active | draft | archived' | ''testing
-  rto: "number"'; // Recovery Time Objective in minutes
+  status: 'active | draft | archived' | ''''testing
+  rto: "number"'''; // Recovery Time Objective in minutes
   rpo: number; // Recovery Point Objective in minutes
-  priority: 'critical" | high | medium' | ''low
-  aiOptimization: "AIRecoveryOptimization"';};
+  priority: 'critical" | high | medium' | ''''low
+  aiOptimization: "AIRecoveryOptimization"''';};
 interface FacilityPlan {;
   id: string;
   optimizationScore: number;
@@ -43,9 +43,9 @@ interface FacilityPlan {;
   description: string
   scenario: 'natural_disaster" | cyber_attack | hardware_failure | 'huma'n_error | power_outage | 'networ'k_failure;
   status: 'active | draft | archived | testin'g;
-  severity: 'critical | high | medium' | 'low
+  severity: 'critical | high | medium' | '''low
   impact: 'business_critical | high_impact | medium_impact' | 'low_impact
-  recoverySteps: "string[]"';
+  recoverySteps: "string[]"''';
   aiAnalysis: AIDisasterAnalysis;};
 interface FacilityPlan {;
   id: string;
@@ -73,9 +73,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  system: 'database" | application | server' | 'network | 'stora'ge | service
+  system: 'database" | application | server' | '''network | 'stora'ge | service
   status: 'in_progress | completed | 'failed | schedul'e'd | cancelled
-  progress: "number"';
+  progress: "number"''';
   estimatedTime: number;
   startTime: Date;
   aiAnalysis: AIRestorationAnalysis;};

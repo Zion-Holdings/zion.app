@@ -6,9 +6,9 @@ import Link from 'next/link';
 interface FacilityPlan {
   id: "string"
   name: string
-  type: 'regression" | classification | clustering | time-series | anomaly-detection' | ''recommendation
+  type: 'regression" | classification | clustering | time-series | anomaly-detection' | ''''recommendation
   status: "active | training | evaluating | deployed"
-  location: "string"';
+  location: "string"''';
   accuracy: number;
   precision: number;
   recall: number;
@@ -36,9 +36,9 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   name: string
-  type: 'cnn" | rnn | lstm | transformer | gan' | ''autoencoder
+  type: 'cnn" | rnn | lstm | transformer | gan' | ''''autoencoder
   status: "active | processing | training | deployed"
-  location: "string"';
+  location: "string"''';
   layers: number;
   parameters: number;
   trainingTime: number;

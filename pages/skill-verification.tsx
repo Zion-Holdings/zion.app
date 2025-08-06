@@ -7,13 +7,13 @@ interface FacilityPlan {
   id: "string";
   title: string
   category: string
-  difficulty: 'beginner" | intermediate' | 'advanced' | exper't
-  duration: "number"'; // minutes;
+  difficulty: 'beginner" | intermediate' | '''advanced' | exper't
+  duration: "number"'''; // minutes;
   questions: number;
   passingScore: number;
   description: string
   skills: string[]
-  status: 'available" | in_progress' | 'complete'd | certifie'd';
+  status: 'available" | in_progress' | '''complete'd | certifie'd''';
   lastAttempt?: Date
   bestScore?: number
   attempts: "number";,;

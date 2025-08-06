@@ -149,7 +149,6 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   async executeMachineLearningTask(task) {
-    // Simulate machine learning task execution
     await new Promise(resolve => setTimeout(resolve, Math.random() * 1000 + 500));
     
     return {
@@ -162,7 +161,6 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   async executePredictiveAnalyticsTask(task) {
-    // Simulate predictive analytics task execution
     await new Promise(resolve => setTimeout(resolve, Math.random() * 800 + 400));
     
     return {
@@ -178,7 +176,6 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   async executeAdaptiveLearningTask(task) {
-    // Simulate adaptive learning task execution
     await new Promise(resolve => setTimeout(resolve, Math.random() * 600 + 300));
     
     return {
@@ -193,7 +190,6 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   async executeIntelligentOptimizationTask(task) {
-    // Simulate intelligent optimization task execution
     await new Promise(resolve => setTimeout(resolve, Math.random() * 700 + 350));
     
     return {
@@ -208,7 +204,6 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   async executeCognitiveAutomationTask(task) {
-    // Simulate cognitive automation task execution
     await new Promise(resolve => setTimeout(resolve, Math.random() * 900 + 450));
     
     return {
@@ -225,12 +220,10 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   setupMachineLearning() {
     console.log(`🧠 [${this.factoryId}] Setting up Machine Learning capabilities...`);
     
-    // Schedule ML model updates
     cron.schedule('0 */6 * * *', () => {
       this.updateMachineLearningModels();
     });
     
-    // Schedule feature engineering
     cron.schedule('0 */2 * * *', () => {
       this.performFeatureEngineering();
     });
@@ -239,12 +232,10 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   setupPredictiveAnalytics() {
     console.log(`📊 [${this.factoryId}] Setting up Predictive Analytics capabilities...`);
     
-    // Schedule predictive model training
     cron.schedule('0 */4 * * *', () => {
       this.trainPredictiveModels();
     });
     
-    // Schedule anomaly detection
     cron.schedule('*/15 * * * *', () => {
       this.detectAnomalies();
     });
@@ -253,12 +244,10 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   setupAdaptiveLearning() {
     console.log(`🎓 [${this.factoryId}] Setting up Adaptive Learning capabilities...`);
     
-    // Schedule learning adaptation
     cron.schedule('0 */1 * * *', () => {
       this.adaptLearning();
     });
     
-    // Schedule knowledge evolution
     cron.schedule('0 0 */1 * *', () => {
       this.evolveKnowledge();
     });
@@ -371,12 +360,10 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   startContinuousLearning() {
     console.log(`🔄 [${this.factoryId}] Starting continuous learning cycle...`);
     
-    // Schedule continuous learning tasks
     cron.schedule('*/30 * * * *', async () => {
       await this.performContinuousLearning();
     });
     
-    // Schedule performance optimization
     cron.schedule('0 */2 * * *', async () => {
       await this.optimizePerformance();
     });
@@ -447,9 +434,8 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 
   calculateUptime() {
-    // Calculate uptime based on factory creation time
     const uptime = Date.now() - parseInt(this.factoryId.split('-').pop());
-    return Math.floor(uptime / (1000 * 60 * 60 * 24)); // Days
+    return Math.floor(uptime / (1000 * 60 * 60 * 24));
   }
 
   async shutdown() {
@@ -459,4 +445,4 @@ class AdvancedAIAutomationFactory extends EventEmitter {
   }
 }
 
-module.exports = AdvancedAIAutomationFactory; 
+module.exports = AdvancedAIAutomationFactory;

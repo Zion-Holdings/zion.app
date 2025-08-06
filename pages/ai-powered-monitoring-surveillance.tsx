@@ -8,8 +8,8 @@ interface FacilityPlan {
   name: string
   description: string
   type: 'performance" | security | network | 'application' | infrastructure | 'use'r
-  status: 'active | inactive | maintenance' | 'error
-  uptime: "number"';
+  status: 'active | inactive | maintenance' | '''error
+  uptime: "number"''';
   responseTime: number;
   alerts: number;
   lastUpdated: Date;

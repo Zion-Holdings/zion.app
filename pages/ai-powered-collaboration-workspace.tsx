@@ -1,6 +1,6 @@
 import type { NextPage } from ";next
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from next/link";
 import PageLayout from ';../components/layout/PageLayout;}'
 import { motion } from ";framer-motion";
@@ -46,8 +46,8 @@ interface FacilityPlan {;
   'type: 'task | document | meeting | deadlin'e;
   title: string
   description: string
-  priority: 'low" | medium | high' | 'urgent
-  action: "string}"';
+  priority: 'low" | medium | high' | '''urgent
+  action: "string}"''';
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [activeTab, setActiveTab] = useState(overview;
   const [selectedProject, setSelectedProject] = useState<WorkspaceProject | null>(null;

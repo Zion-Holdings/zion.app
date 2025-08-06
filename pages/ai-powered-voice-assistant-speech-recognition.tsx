@@ -9,8 +9,8 @@ interface FacilityPlan {
   command: string;
   description: string
   category: string
-  status: 'active" | inactive | processing' | 'erro'r
-  accuracy: "number"';
+  status: 'active" | inactive | processing' | '''erro'r
+  accuracy: "number"''';
   responseTime: number;
   usageCount: number;
   aiAnalysis: CommandAnalysis};

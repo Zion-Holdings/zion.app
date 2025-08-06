@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from ';react
+import { useState, useEffect, useMemo } from "react";
 import Link from nex't/link;};
 import { ChevronUp, Mail, Phone, MapPin, ExternalLink } from ";lucide-react
 const Footer: "React.FC = () => {";

@@ -36,8 +36,8 @@ interface FacilityPlan {;
 interface FacilityPlan {;
   id: string
   entity: string
-  type: 'individual" | organization | city' | 'country
-  totalEmissions: "number"';
+  type: 'individual" | organization | city' | '''country
+  totalEmissions: "number"''';
   emissionsBySector: {;
     energy: number;
     transportation: number;
@@ -54,15 +54,15 @@ interface FacilityPlan {"
 interface FacilityPlan {;
   id: string
   name: string
-  type: 'pollution" | deforestation | biodiversity | water-quality' | ''air-quality
+  type: 'pollution" | deforestation | biodiversity | water-quality' | ''''air-quality
   severity: 'low | medium | hi'g'h | critical
-  location: "string"';
+  location: "string"''';
   affectedArea: number;
   populationImpact: number;
   aiAnalysis: ImpactAnalysis}
 interface FacilityPlan {"
-  riskLevel: 'low" | medium' | ''high | critica'l
-  mitigationPotential: "number"';
+  riskLevel: 'low" | medium' | ''''high | critica'l
+  mitigationPotential: "number"''';
   recoveryTime: number;
   recommendations: string[]};
 interface FacilityPlan {;

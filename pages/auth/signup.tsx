@@ -15,7 +15,7 @@ const AIPoweredPredictiveAnalytics: "NextPage = () => {";
     signInWithProvider,;
     user,;
     loading: authLoading,;
-    error,;
+    error,
   } = useAuth();
   const $1 = useRouter();
   // Redirect if already logged in;

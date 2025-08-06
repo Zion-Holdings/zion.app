@@ -9,9 +9,9 @@ interface FacilityPlan {
   title: string
   description: string
   category: 'guide" | tutorial | 'manua'l | 'faq' | wiki | 'documentatio'n;
-  status: 'draft | published | archived' | 'review
+  status: 'draft | published | archived' | '''review
   priority: 'low' | 'medium' | 'high' | 'critical'
-  views: "number"';
+  views: "number"''';
   helpfulVotes: number;
   lastUpdated: Date;
   aiAnalysis: AIKnowledgeAnalysis;};
@@ -80,8 +80,8 @@ interface FacilityPlan {;
   question: string
   answer: string
   category: 'general" | technical | 'billin'g | accoun't | feature's
-  status: 'draft | published | archived' | 'review
-  helpfulVotes: "number"';
+  status: 'draft | published | archived' | '''review
+  helpfulVotes: "number"''';
   views: number;
   aiAnalysis: AIFAQAnalysis;};
 interface FacilityPlan {;

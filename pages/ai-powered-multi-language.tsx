@@ -45,8 +45,8 @@ interface FacilityPlan {;
   value: number;
   previousValue: number
   change: number
-  trend: 'up" | down' | ''stable
-  language: "string"';
+  trend: 'up" | down' | ''''stable
+  language: "string"''';
   period: string;};
 interface FacilityPlan {;
   id: string;

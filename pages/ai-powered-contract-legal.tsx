@@ -17,8 +17,8 @@ interface FacilityPlan {
   endDate?: Date;
   aiGenerated: boolean;
   complianceScore: number
-  riskLevel: 'low' | ''medium' | 'high'
-  legalReview: "LegalReview"';
+  riskLevel: 'low' | ''''medium' | 'high'
+  legalReview: "LegalReview"''';
   signatures: Signature[];
   attachments: Attachment[];};
 interface FacilityPlan {;
@@ -66,8 +66,8 @@ interface FacilityPlan {;
   id: string
   contractId: string
   type: 'payment" | delivery | quality | timelin'e' | other
-  status: 'open | mediation | arbitration' | ''resolved | closed
-  description: "string"';
+  status: 'open | mediation | arbitration' | ''''resolved | closed
+  description: "string"''';
   evidence: Evidence[];
   aiAnalysis: DisputeAnalysis;
   resolution?: DisputeResolution;
@@ -126,8 +126,8 @@ interface FacilityPlan {;
     id: string;
     title: string
     description: string
-    impact: 'positive" | negative' | 'neutral
-    confidence: number';
+    impact: 'positive" | negative' | '''neutral
+    confidence: number''';
     recommendations: string[];
   }[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string";
@@ -395,7 +395,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className=text-white font-semibold>{escrowAccount.completedTransactions}</span></div>";
                   </div></div>";
                   <div className=w-full bg-gray-700 rounded-full h-2></div>'
-                    </div><div className=""""bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full  style="{{ width: "75% }}"></div></div>"
+                    </div><div className=""""bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full  style="""""{{ width: "75% }}"""""></div></div>"
                   </div></div>
                 </div></div>
                 <div> </div>";
@@ -404,7 +404,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
                     <span className=text-white font-semibold>99.8%</span> </div>
                   </div></div>'
                   <div className=""""w-full bg-gray-700 rounded-full h-2></div>;
-                    </div><div className=bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full style="{{ width  99.8% }}"></div></div>
+                    </div><div className=bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full style="""""{{ width  99.8% }}"""""></div></div>
                   </div></div>
                 </div></div>
               </div></div>";

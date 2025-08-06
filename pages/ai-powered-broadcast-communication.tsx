@@ -43,9 +43,9 @@ interface FacilityPlan {;
   id: string;
   name: string
   description: string
-  type: 'email" | push | sms | in-app' | ''multi-channel
+  type: 'email" | push | sms | in-app' | ''''multi-channel
   status: 'draft | active | paused | 'complet'ed | cancelled
-  targetSegments: "string[]"';
+  targetSegments: "string[]"''';
   analytics: CampaignAnalytics;
   aiOptimization: AICampaignOptimization;};
 interface FacilityPlan {;
@@ -66,8 +66,8 @@ interface FacilityPlan {;
   name: string;
   description: string;
   trigger: user-action | time-based | 'event-base'd | segment-based
-  status: 'active | inactive | draft' | 'testing
-  performance: "AutomationPerformance"';
+  status: 'active | inactive | draft' | '''testing
+  performance: "AutomationPerformance"''';
   aiAnalysis: AIMarketingAnalysis;};
 interface FacilityPlan {;
   totalExecutions: number;
@@ -84,9 +84,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   content: string
-  type: 'discount" | offer | event' | ''product | service
+  type: 'discount" | offer | event' | ''''product | service
   status: 'draft | active | expir'e'd | cancelled
-  targetAudience: "string[]"';
+  targetAudience: "string[]"''';
   deliveryChannels: string[];
   impressions: number;
   clicks: number;
@@ -110,8 +110,8 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  impact: 'positive" | negative' | ''neutral
-  confidence: number';
+  impact: 'positive" | negative' | ''''neutral
+  confidence: number''';
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [broadcasts, setBroadcasts] = useState<Broadcast[]>([]</div>;

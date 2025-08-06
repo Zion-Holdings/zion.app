@@ -7,22 +7,22 @@ interface FacilityPlan {
   id: "string"
   name: string
   type: 'wheat" | corn | soybeans | 'rice' | cotton | 'vegetable's | fruits
-  status: 'growing | harvesting | dormant' | 'planning
-  location: "string"';
+  status: 'growing | harvesting | dormant' | '''planning
+  location: "string"''';
   area: number;
   healthScore: number;
   yieldPrediction: number;
   aiAnalysis: CropAnalysis}
 interface FacilityPlan {"
   growthStage: 'seedling" | vegetativ'e | flower'ing | 'fruiting' | harvest
-  diseaseRisk: 'low | medium' | 'hi'gh | critica'l
-  nutrientDeficiency: "string[]"';
+  diseaseRisk: 'low | medium' | '''hi'gh | critica'l
+  nutrientDeficiency: "string[]"''';
   recommendations: string[]};
 interface FacilityPlan {;
   id: string
   location: string
-  type: 'sandy" | clay | loamy' | 'silty
-  ph: "number"';
+  type: 'sandy" | clay | loamy' | '''silty
+  ph: "number"''';
   moisture: number;
   temperature: number;
   nutrients: {;

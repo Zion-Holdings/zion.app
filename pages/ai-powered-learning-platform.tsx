@@ -30,8 +30,8 @@ interface FacilityPlan {;
   title: string;
   description: string
   duration: number; // minutes
-  type: 'video" | interactive | quiz' | 'project | ai-simulation
-  content: "string[]"';
+  type: 'video" | interactive | quiz' | '''project | ai-simulation
+  content: "string[]"''';
   aiFeatures: string[];
   progress: number;
   completed: boolean;};

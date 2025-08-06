@@ -40,8 +40,8 @@ function fixSpecificFiles() {
   const portfolioPath = path.join(apiDir, 'ai-portfolio.ts');
   if (fs.existsSync(portfolioPath)) {
     let content = fs.readFileSync(portfolioPath, 'utf8');
-    content = content.replace(/<Image src=\${image}" alt=\${name} style="width: "120px";height:120px;border-radius:50%;margin-bottom:16px; \/ width = \{400\} height=\{300\} "> : "}";<\/div>/g, 
-      '<Image src="${image}" alt="${name}" style="{{width: "120px", height: "120px", borderRadius: "50%", marginBottom: "16px"}} width={400} height={300} /">');
+    content = content.replace(/<Image src=\${image}" alt=\${name} style="""""width: "120px";height:120px;border-radius:50%;margin-bottom:16px; \/ width = \{400\} height=\{300\} """""> : "}";<\/div>/g, 
+      '<Image src="${image}" alt="${name}" style="""""{{width: "120px", height: "120px", borderRadius: "50%", marginBottom: "16px"}} width={400} height={300} /""""">');
     fs.writeFileSync(portfolioPath, content);
   }
   
@@ -49,7 +49,7 @@ function fixSpecificFiles() {
   const recommendationsPath = path.join(apiDir, 'ai-recommendations.ts');
   if (fs.existsSync(recommendationsPath)) {
     let content = fs.readFileSync(recommendationsPath, 'utf8');
-    content = content.replace(/type: 'service" \| talent \| equipment' \| produc't;/g, "type: 'service' | ''talent' | 'equipment' | 'product'';");
+    content = content.replace(/type: 'service" \| talent \| equipment' \| produc't;/g, "type: 'service' | ''''talent' | 'equipment' | 'product'''';");
     fs.writeFileSync(recommendationsPath, content);
   }
   

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
-import { useState, useEffect, useRef }  from ";react;}
+import { useState, useEffect, useMemo } from "react";;}
 import Link from 'next/link';
 interface FacilityPlan {
   id: "string";
@@ -11,8 +11,8 @@ interface FacilityPlan {
   coherenceTime: number;
   accessTime: number
   errorRate: number
-  status: 'active" | writing | reading' | 'standb'y
-  timestamp: "string}"';
+  status: 'active" | writing | reading' | '''standb'y
+  timestamp: "string}"''';
 interface FacilityPlan {;
   id: string;
   name: string
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   storage: number;
   bandwidth: number
   uptime: number
-  status: 'running" | scaling | updating' | 'maintenance}';
+  status: 'running" | scaling | updating' | '''maintenance}''';
 interface FacilityPlan {;
   id: string;
   name: string

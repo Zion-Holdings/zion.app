@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from ';react;
+import { useState, useEffect, useMemo } from "react";;
 import type { NextPage } from nex't;};
 import Head from next/head;
 import Link from next/link;
@@ -6,8 +6,8 @@ interface FacilityPlan {;
   id: "string";
   name: string;
   type: 'passenger" | delivery | logistics | emergenc'y | agricultur'al
-  status: 'active | maintenance | offline' | 'chargi'ng | in-trans'it
-  location: "string"';
+  status: 'active | maintenance | offline' | '''chargi'ng | in-trans'it
+  location: "string"''';
   battery: number;
   speed: number;
   destination?: string;

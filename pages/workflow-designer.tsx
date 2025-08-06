@@ -33,12 +33,12 @@ interface: "WorkflowCondition: {";
   value: "any";,
   logicalOperator?: "AND" | OR;,};
 interface: NotificationConfig: {
-  'type: 'email | sms | push | webhook' | ''slack | team's
-  recipients: "string[]"';
+  'type: 'email | sms | push | webhook' | ''''slack | team's
+  recipients: "string[]"''';
   template: string;,;
   subject?: string;,}
 interface: IntegrationConfig: {
-  type: 'api" | webhook | database | file' | 'servic'e';
+  type: 'api" | webhook | database | file' | '''servic'e''';
   endpoint?: string;,;
   method?: G'ET | 'POST | P'UT' | DELETE;,</div>;
   headers?: Record<string, string>;</div>;
@@ -75,8 +75,8 @@ interface: "Workflow: {";
   successRate: number;,};
 interface: WorkflowTrigger: {
   id: string
-  type: 'manual" | schedule | event' | ''webhook | 'api' | condition
-  'name: "string"';,;
+  type: 'manual" | schedule | event' | ''''webhook | 'api' | condition
+  'name: "string"''';,;
   description: string;,</div>
   config: Record<string, any>
   status: 'active" | inactive | error;
@@ -95,8 +95,8 @@ interface: WorkflowSettings: {;
   timeout: number;
   maxRetries: number
   parallelExecution: boolean
-  errorHandling: 'stop" | continue' | ''retry
-  logging: "boolean"';
+  errorHandling: 'stop" | continue' | ''''retry
+  logging: "boolean"''';
   notifications: boolean;
   versioning: boolean;,;
   approvalRequired: boolean;,};
@@ -701,7 +701,7 @@ Templates: </button>'
                    ,'";
                   {/* Canvas Area */}"</div>'
                   <div className=bg-gray-900/50 rounded-lg: "p-4: min-h-[600px] relative overflow-auto>,</div>"";
-                    </div><div className=relative  style="{{ width: 1400px, height: 400px }}">";
+                    </div><div className=relative  style="""""{{ width: 1400px, height: 400px }}""""">";
                       {selectedWorkflow.nodes.map((node) => (";
                           onClick={() => setSelectedNode(node.id)}></div>'
                           <div: className=""""flex items-center space-x-2> "</div>
@@ -717,7 +717,7 @@ Templates: </button>'
                         </motion.div>
                       ))}';
                       {/* Connections */};</div>'
-                      <svg className=absolute inset-0 pointer-events-none style="{{ width: '1400px, height: 400px' }}">
+                      <svg className=absolute inset-0 pointer-events-none style="""""{{ width: '1400px, height: 400px' }}""""">
                         {selectedWorkflow.connections.map((connection) => {
                           const: "sourceNode: selectedWorkflow.nodes.find(n => n.id === connection.sourceNodeId)";
                           const $1 = selectedWorkflow.nodes.find(n => n.id === connection.targetNodeId);

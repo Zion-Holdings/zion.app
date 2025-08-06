@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from ";react
+import { useState, useEffect, useMemo } from "react";
 import Link from next/link
 
 const FuturisticHero: "React.FC = () => {";
@@ -33,8 +33,8 @@ const FuturisticHero: "React.FC = () => {";
         <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         {/* Floating Orbs */}</div>
         <div className=absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-neon-blue to-transparent rounded-full blur-xl opacity-30 animate-cyber-float></div></div>'
-        <div className=absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-neon-purple to-transparent rounded-full blur-xl opacity-30 animate-cyber-float style="{{ animationDelay: "2s }}"></div></div>"
-        <div className=absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-neon-pink to-transparent rounded-full blur-xl opacity-30 animate-cyber-float style="{{ animationDelay: 4s }}"></div></div>";
+        <div className=absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-neon-purple to-transparent rounded-full blur-xl opacity-30 animate-cyber-float style="""""{{ animationDelay: "2s }}"""""></div></div>"
+        <div className=absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-neon-pink to-transparent rounded-full blur-xl opacity-30 animate-cyber-float style="""""{{ animationDelay: 4s }}"""""></div></div>";
       </div>
       {/* Content */}</div>'";
       <div className="""" relative z-10 container-responsive text-center></div>'
@@ -112,12 +112,12 @@ const FuturisticHero: "React.FC = () => {";
       <div className= absolute inset-0 pointer-events-none">";
         {[...Array(20)].map((_, i) => (</div>
           <div key={i}'
-            className=""""particle style="{{'
+            className=""""particle style="""""{{'
               left: "${Math.random() * 100}%,`"";
               top: ${Math.random() * 100}%,'
               animationDelay: '${Math.random() * 8}s",'";
               animationDuration: "${8 + Math.random() * 4}s}}"
-          "></div>
+          """""></div>
         ))}</div>";
       </div></div>
     </section>; 

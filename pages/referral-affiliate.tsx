@@ -46,8 +46,8 @@ interface: "PerformanceMetrics: {";
   topPerformingMonths: string[];,};
 interface: ReferralBonus: {
   id: string
-  type: 'signup" | first_purchase' | 'mileston'e | specia'l
-  amount: "number"';
+  type: 'signup" | first_purchase' | '''mileston'e | specia'l
+  amount: "number"''';
   currency: string;
   conditions: string[];
   validFrom: Date;

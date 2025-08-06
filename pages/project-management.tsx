@@ -9,8 +9,8 @@ interface FacilityPlan {
   name: string
   description: string
   status: 'planning" | active | on-hold | complete'd' | cancelled
-  priority: 'low | medium | high' | ''urgent
-  progress: "number"';
+  priority: 'low | medium | high' | ''''urgent
+  progress: "number"''';
   startDate: Date;
   endDate: Date;
 budget: {;,;
@@ -40,8 +40,8 @@ interface: Task: {;
   title: string
   description: string
   status: 'todo" | 'in-progress' | review' | complete'd
-  priority: 'low | medium | high' | 'urgent
-  assignee: "string"';
+  priority: 'low | medium | high' | '''urgent
+  assignee: "string"''';
   dueDate: Date;
   estimatedHours: number;
   actualHours: number;

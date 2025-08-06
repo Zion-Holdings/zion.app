@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 interface AgentStatus {
   agentId: string;
   type: string;
-  status: 'active' | 'idle' | 'error' | 'stopped';
+  status: 'active' | '''idle' | 'error' | 'stopped''';
   lastActivity: string;
   performance: number;
   uptime: number;

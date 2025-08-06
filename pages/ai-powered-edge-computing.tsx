@@ -8,8 +8,8 @@ interface FacilityPlan {
   name: string
   description: string
   type: 'iot_gateway" | edge_server | micro_data_center | edge'_device | edg'e_router | edge'_storage
-  status: 'active | inactive | maintenance' | 'error' | offline
-  location: "string"';
+  status: 'active | inactive | maintenance' | '''error' | offline
+  location: "string"''';
   capacity: number;
   latency: number;
   aiAnalysis: EdgeAnalysis;};
@@ -23,9 +23,9 @@ interface FacilityPlan {;
   id: string;
   title: string
   description: string
-  type: 'fog_node" | fog_cluster | fog_gateway | fog_router | fog_storage' | ''fog_processor
+  type: 'fog_node" | fog_cluster | fog_gateway | fog_router | fog_storage' | ''''fog_processor
   status: 'active | inactive | maintenance | 'err'or | offline
-  location: "string"';
+  location: "string"''';
   nodes: number;
   bandwidth: number;
   aiOptimization: FogOptimization;};
@@ -56,8 +56,8 @@ interface FacilityPlan {;
   title: string
   description: string
   type: 'real_time" | batch_processing | stream_processing | 'predictive' | descriptive' | prescriptiv'e
-  status: 'running | completed | failed' | 'scheduled
-  dataPoints: "number"';
+  status: 'running | completed | failed' | '''scheduled
+  dataPoints: "number"''';
   processingTime: number;
   aiAnalysis: AnalyticsAnalysis;};
 interface FacilityPlan {;
@@ -71,9 +71,9 @@ interface FacilityPlan {
   orchestrationId: string";
   title: string";
   description: string
-  type: 'resource_orchestration" | service_orchestration | workflow_orchestration | network_orchestration | security_orchestration' | ''data_orchestration'
+  type: 'resource_orchestration" | service_orchestration | workflow_orchestration | network_orchestration | security_orchestration' | ''''data_orchestration'
   status: 'active | inactive | maintenance | 'err'or | offline
-  services: "number"';
+  services: "number"''';
   policies: number;
   aiAnalysis: OrchestrationAnalysis;};
 interface FacilityPlan {;
@@ -87,9 +87,9 @@ interface FacilityPlan {;
   systemId: string;
   title: string
   description: string
-  category: 'hardware" | software' | ''network | 'security | performance' | 'maintenance
+  category: 'hardware" | software' | ''''network | 'security | performance' | 'maintenance
   status: 'operational | maintenance | error' | offline
-  devices: "number"';
+  devices: "number"''';
   uptime: number;
   aiAnalysis: ManagementAnalysis;};
 interface FacilityPlan {;
