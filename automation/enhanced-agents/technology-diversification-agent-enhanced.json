@@ -3,7 +3,7 @@
   "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/technology-diversification-agent.js",
   "name": "fs",
   "type": "content-generation",
-  "intelligenceLevel": 0.74,
+  "intelligenceLevel": 0.76,
   "capabilities": [
     "content-generation",
     "market-research",

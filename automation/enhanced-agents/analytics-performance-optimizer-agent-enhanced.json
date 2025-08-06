@@ -3,7 +3,7 @@
   "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/analytics-performance-optimizer-agent.js",
   "name": "fs",
   "type": "performance-optimization",
-  "intelligenceLevel": 0.74,
+  "intelligenceLevel": 0.76,
   "capabilities": [
     "performance-optimization",
     "artificial-intelligence",
