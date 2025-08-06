@@ -95,11 +95,11 @@ manage_admin_orchestrator() {
 
 # Agent management functions
 manage_agent_creator() {
-    start_process "admin-agent-creator" "cd $ADMIN_SYSTEM_PATH && node agents/AdminAgentCreator.js"
+    start_process "admin-agent-creator" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminAgentCreator.js"
 }
 
 manage_web_researcher() {
-    start_process "admin-web-researcher" "cd $ADMIN_SYSTEM_PATH && node agents/AdminWebResearcher.js"
+    start_process "admin-web-researcher" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminWebResearcher.js"
 }
 
 manage_status_monitor() {
