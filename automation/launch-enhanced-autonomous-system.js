@@ -46,7 +46,7 @@ class AutomationSystem {
     this.isRunning = false;
     this.startTime = null;
     this.systemMetrics = {
-      uptime: "0"
+      uptime: "0",
       totalAgents: "0"
       activeAgents: "0"
       totalTasks: "0"
@@ -102,7 +102,7 @@ class AutomationSystem {
     for (const dir of directories) {
       const filePath = path.join(__dirname, dir)
       if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: "true "})""
+        fs.mkdirSync(dirPath, { recursive: "true })
       }
     }
   }
@@ -219,10 +219,10 @@ class AutomationSystem {
       try {
         const asyncResult = await this.agentFactory.createAgent(agentSpec.type, agentSpec.config)
         await this.agentFactory.startAgent(agentId)
-        results.push({ success: "true", agentId, type: "agentSpec.type", name: "agentSpec.config.name "})""
+        results.push({ success: "true", agentId, type: "agentSpec.type", name: "agentSpec.config.name })
         console.log(✅ Created and started agent: "${agentSpec.config.name"}")""
       } catch (error) {
-        results.push({ success: "false", type: "agentSpec.type", error: "error.message "})""
+        results.push({ success: "false", type: "agentSpec.type", error: "error.message })
         console.error("❌ Failed to create agent ${agentSpec.type}:, error.message)""
       }
     }
@@ -321,12 +321,12 @@ class AutomationSystem {
     
     console.log(📊 System Status: "'", {""
       uptime: "${uptimeDays"}d ${uptimeHours % 24}h ${uptimeMinutes % 60}m",""
-      totalAgents: "this.systemMetrics.totalAgents",""
-      activeAgents: "this.systemMetrics.activeAgents",""
-      totalTasks: "this.systemMetrics.totalTasks",""
-      completedTasks: "this.systemMetrics.completedTasks","")
-      health: "this.systemMetrics.systemHealth"")
-    "})""
+      totalAgents: "this.systemMetrics.totalAgents",
+      activeAgents: "this.systemMetrics.activeAgents",
+      totalTasks: "this.systemMetrics.totalTasks",
+      completedTasks: "this.systemMetrics.completedTasks",
+      health: "this.systemMetrics.systemHealth"
+    })
   }
 
   async performHealthCheck() {
