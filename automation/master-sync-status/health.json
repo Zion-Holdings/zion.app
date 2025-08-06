@@ -1,38 +1,38 @@
 {
-  "timestamp": "2025-08-06T11:32:26.248Z",
+  "timestamp": "2025-08-06T11:49:24.630Z",
   "status": "running",
   "syncCount": 5,
-  "errorCount": 71,
-  "successRate": "-1320.00",
+  "errorCount": 248,
+  "successRate": "-4860.00",
   "lastSync": "2025-08-06T11:31:06.621Z",
   "processes": {
     "ultra-high-freq": {
-      "syncCount": 1,
-      "errorCount": 10,
-      "lastSync": "2025-08-06T11:28:31.001Z"
+      "syncCount": 0,
+      "errorCount": 7,
+      "lastSync": null
     },
     "high-freq": {
       "syncCount": 0,
-      "errorCount": 8,
+      "errorCount": 6,
       "lastSync": null
     },
     "standard": {
       "syncCount": 0,
-      "errorCount": 5,
+      "errorCount": 10,
       "lastSync": null
     },
     "backup": {
       "syncCount": 0,
-      "errorCount": 2,
+      "errorCount": 6,
       "lastSync": null
     }
   },
   "memory": {
-    "rss": 45068288,
-    "heapTotal": 7147520,
-    "heapUsed": 5539712,
-    "external": 1772582,
-    "arrayBuffers": 20076
+    "rss": 51834880,
+    "heapTotal": 9768960,
+    "heapUsed": 8373536,
+    "external": 1772113,
+    "arrayBuffers": 19607
   },
-  "uptime": 257.206312643
+  "uptime": 1275.638406314
 }

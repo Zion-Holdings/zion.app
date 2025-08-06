@@ -113,7 +113,7 @@ class AdvancedAIAutomationFactory extends EventEmitter {
     const startTime = Date.now();
     
     try {
-      let result;
+      
       
       switch (agentType) {
         case \'machine-learning-agent\':\'\'
