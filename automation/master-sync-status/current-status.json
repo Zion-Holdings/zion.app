@@ -2,14 +2,14 @@
   "id": "master-sync-controller",
   "version": "5.0.0",
   "status": "running",
-  "lastSync": "2025-08-06T11:31:06.621Z",
-  "syncCount": 5,
-  "errorCount": 443,
+  "lastSync": null,
+  "syncCount": 0,
+  "errorCount": 25,
   "processes": [
     "ultra-high-freq",
     "high-freq",
     "standard",
     "backup"
   ],
-  "timestamp": "2025-08-06T11:58:30.342Z"
+  "timestamp": "2025-08-06T12:59:55.280Z"
 }

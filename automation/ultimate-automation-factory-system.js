@@ -15,6 +15,7 @@ class UltimateAutomationFactorySystem {
     this.intelligenceLevels = new Map();
     this.evolutionData = new Map();
     this.healthStatus = new Map();
+    this.capabilities = new Map();
     this.isRunning = false;
     this.logs = [];
     
@@ -75,11 +76,22 @@ class UltimateAutomationFactorySystem {
     console.log('🏭 Initializing Ultimate Automation Factory System...');
     
     try {
+      // Create necessary directories
       await this.ensureDirectories();
+      
+      // Initialize all factory types
       await this.initializeFactories();
+      
+      // Load existing performance data
       await this.loadPerformanceData();
+      
+      // Start health monitoring
       this.startHealthMonitoring();
+      
+      // Start evolution tracking
       this.startEvolutionTracking();
+      
+      // Start continuous improvement
       this.startContinuousImprovement();
       
       this.isRunning = true;
@@ -92,17 +104,17 @@ class UltimateAutomationFactorySystem {
 
   async ensureDirectories() {
     const directories = [
-      'improved-scripts',
+      'factories',
+      'generated-scripts',
       'performance-data',
       'evolution-data',
       'health-logs',
-      'capability-reports',
       'intelligence-data',
-      'diversification-data',
-      'innovation-data',
-      'scalability-data'
+      'capability-reports',
+      'factory-logs',
+      'improved-scripts'
     ];
-
+    
     for (const dir of directories) {
       const dirPath = path.join(__dirname, dir);
       try {
@@ -114,6 +126,8 @@ class UltimateAutomationFactorySystem {
   }
 
   async initializeFactories() {
+    console.log('🏭 Initializing automation factories...');
+    
     for (const [factoryType, config] of Object.entries(this.factoryTypes)) {
       await this.createFactory(factoryType, config);
     }
@@ -938,36 +952,60 @@ module.exports = evolution;
   }
 
   async loadPerformanceData() {
-    const performancePath = path.join(__dirname, 'performance-data.json');
-    
     try {
+      const performancePath = path.join(__dirname, 'performance-data', 'performance.json');
       const data = await fs.readFile(performancePath, 'utf8');
-      const performanceData = JSON.parse(data);
+      const performance = JSON.parse(data);
       
-      for (const [factoryType, data] of Object.entries(performanceData)) {
-        this.performanceMetrics.set(factoryType, data);
+      for (const [key, value] of Object.entries(performance)) {
+        this.performanceMetrics.set(key, value);
       }
     } catch (error) {
-      // Performance data doesn't exist yet
+      console.log('No existing performance data found, starting fresh');
+    }
+  }
+
+  addCapability(factoryType, capabilityName) {
+    const factory = this.factories.get(factoryType);
+    if (!factory) return;
+    
+    if (!factory.config.capabilities.includes(capabilityName)) {
+      factory.config.capabilities.push(capabilityName);
+      console.log(`✅ Added capability ${capabilityName} to ${factoryType}`);
+    }
+  }
+
+  expandCapabilities() {
+    console.log('🔧 Expanding factory capabilities...');
+    
+    // Add new capabilities to each factory type
+    for (const [factoryType, factory] of this.factories) {
+      const newCapabilities = this.generateNewCapability(factoryType);
+      if (newCapabilities) {
+        this.addCapability(factoryType, newCapabilities);
+      }
     }
   }
 
   startHealthMonitoring() {
-    setInterval(async () => {
-      await this.checkSystemHealth();
-    }, 60000);
+    console.log('🏥 Starting health monitoring...');
+    setInterval(() => {
+      this.checkSystemHealth();
+    }, 30000); // Check every 30 seconds
   }
 
   startEvolutionTracking() {
-    setInterval(async () => {
-      await this.trackEvolution();
-    }, 300000);
+    console.log('🧬 Starting evolution tracking...');
+    setInterval(() => {
+      this.trackEvolution();
+    }, 60000); // Track every minute
   }
 
   startContinuousImprovement() {
-    setInterval(async () => {
-      await this.improveFactories();
-    }, 600000);
+    console.log('🔄 Starting continuous improvement...');
+    setInterval(() => {
+      this.improveFactories();
+    }, 120000); // Improve every 2 minutes
   }
 
   async checkSystemHealth() {
@@ -1046,7 +1084,9 @@ module.exports = evolution;
     if (!factory.config.capabilities.includes(newCapability)) {
       factory.config.capabilities.push(newCapability);
       console.log(`➕ Added new capability to ${factoryType}: ${newCapability}`);
+      return newCapability; // Return the new capability name
     }
+    return null; // No new capability added
   }
 
   async regenerateFactoryScripts(factoryType) {
@@ -1147,6 +1187,32 @@ module.exports = evolution;
     
     this.logs.push(logEntry);
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+  }
+  addCapability(name, type) {
+    const capability = {
+      name,
+      type,
+      isActive: true,
+      performance: 0.8,
+      evolutionCount: 0,
+      createdAt: new Date().toISOString()
+    };
+    
+    this.capabilities.set(name, capability);
+    this.log(`Added capability: ${name} (${type})`);
+  }
+
+  expandCapabilities() {
+    const newCapabilities = [
+      "automated-testing",
+      "performance-optimization",
+      "intelligent-monitoring",
+      "adaptive-learning",
+      "predictive-analytics"
+    ];
+    
+    const randomCapability = newCapabilities[Math.floor(Math.random() * newCapabilities.length)];
+    this.addCapability(randomCapability, "automated");
   }
 }
 
