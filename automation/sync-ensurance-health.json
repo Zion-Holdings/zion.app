@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-06T13:09:15.003Z",
+  "timestamp": "2025-08-06T13:12:14.996Z",
   "status": "running",
   "processes": {
     "master-sync-controller.js": {
@@ -17,19 +17,19 @@
       "isRunning": true
     },
     "high-frequency-git-sync.js": {
-      "pid": 96964,
-      "startTime": "2025-08-06T13:01:14.793Z",
+      "pid": 45206,
+      "startTime": "2025-08-06T13:12:04.832Z",
       "restartCount": 0,
-      "lastHealthCheck": "2025-08-06T13:01:14.793Z",
+      "lastHealthCheck": "2025-08-06T13:12:04.832Z",
       "isRunning": true
     }
   },
   "memory": {
-    "rss": 49381376,
+    "rss": 49610752,
     "heapTotal": 6098944,
-    "heapUsed": 5227600,
-    "external": 1606495,
-    "arrayBuffers": 50813
+    "heapUsed": 4685360,
+    "external": 1569879,
+    "arrayBuffers": 14197
   },
-  "uptime": 600.095701036
+  "uptime": 780.096286791
 }

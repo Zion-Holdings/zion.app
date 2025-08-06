@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-06T13:09:48.655Z",
+  "timestamp": "2025-08-06T13:11:48.651Z",
   "isRunning": true,
   "factories": {
     "content-automation": {
@@ -32,9 +32,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.8123597424330956,
+        "level": 0.817002786645242,
         "evolutionRate": 0.15,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "growth-automation": {
@@ -67,9 +67,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.8637332232457221,
+        "level": 0.8710462459900477,
         "evolutionRate": 0.18,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "technical-automation": {
@@ -102,9 +102,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.9079374178041801,
+        "level": 0.911176990592855,
         "evolutionRate": 0.12,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "business-automation": {
@@ -137,9 +137,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.7603010066039068,
+        "level": 0.7668621718239398,
         "evolutionRate": 0.1,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "intelligence-automation": {
@@ -172,9 +172,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.9637020017496212,
+        "level": 0.9638401295094926,
         "evolutionRate": 0.25,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "diversification-automation": {
@@ -207,9 +207,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.8082567605849014,
+        "level": 0.814840932893989,
         "evolutionRate": 0.2,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "innovation-automation": {
@@ -242,9 +242,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.8543708904203718,
+        "level": 0.8587684434562716,
         "evolutionRate": 0.22,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     },
     "scalability-automation": {
@@ -277,9 +277,9 @@
         "lastExecution": null
       },
       "intelligence": {
-        "level": 0.8931999771911916,
+        "level": 0.8933898666964981,
         "evolutionRate": 0.16,
-        "learningProgress": 0.02
+        "learningProgress": 0.03
       }
     }
   },
@@ -750,107 +750,107 @@
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.8123597424330956,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.817002786645242,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "growth-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.8637332232457221,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.8710462459900477,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "technical-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.9079374178041801,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.911176990592855,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "business-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.7603010066039068,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.7668621718239398,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "intelligence-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.9637020017496212,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.9638401295094926,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "diversification-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.8082567605849014,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.814840932893989,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "innovation-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.8543708904203718,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.8587684434562716,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     },
     "scalability-automation": {
       "status": "active",
       "scriptsGenerated": 4,
       "successRate": 0.95,
-      "intelligenceLevel": 0.8931999771911916,
-      "lastCheck": "2025-08-06T13:09:48.655Z"
+      "intelligenceLevel": 0.8933898666964981,
+      "lastCheck": "2025-08-06T13:11:48.651Z"
     }
   },
   "evolutionData": {
     "content-automation": {
-      "intelligenceLevel": 0.8123597424330956,
+      "intelligenceLevel": 0.817002786645242,
       "evolutionRate": 0.15,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "growth-automation": {
-      "intelligenceLevel": 0.8637332232457221,
+      "intelligenceLevel": 0.8710462459900477,
       "evolutionRate": 0.18,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "technical-automation": {
-      "intelligenceLevel": 0.9079374178041801,
+      "intelligenceLevel": 0.911176990592855,
       "evolutionRate": 0.12,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "business-automation": {
-      "intelligenceLevel": 0.7603010066039068,
+      "intelligenceLevel": 0.7668621718239398,
       "evolutionRate": 0.1,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "intelligence-automation": {
-      "intelligenceLevel": 0.9637020017496212,
+      "intelligenceLevel": 0.9638401295094926,
       "evolutionRate": 0.25,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "diversification-automation": {
-      "intelligenceLevel": 0.8082567605849014,
+      "intelligenceLevel": 0.814840932893989,
       "evolutionRate": 0.2,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "innovation-automation": {
-      "intelligenceLevel": 0.8543708904203718,
+      "intelligenceLevel": 0.8587684434562716,
       "evolutionRate": 0.22,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     },
     "scalability-automation": {
-      "intelligenceLevel": 0.8931999771911916,
+      "intelligenceLevel": 0.8933898666964981,
       "evolutionRate": 0.16,
-      "learningProgress": 0.02,
-      "lastEvolution": "2025-08-06T13:09:48.653Z"
+      "learningProgress": 0.03,
+      "lastEvolution": "2025-08-06T13:11:48.650Z"
     }
   }
 }
