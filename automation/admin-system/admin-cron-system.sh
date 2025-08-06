@@ -115,11 +115,11 @@ manage_security_agent() {
 }
 
 manage_analytics_agent() {
-    start_process "admin-analytics-agent" "cd $ADMIN_SYSTEM_PATH && node agents/AdminAnalyticsAgent.js"
+    start_process "admin-analytics-agent" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminAnalyticsAgent.js"
 }
 
 manage_backup_agent() {
-    start_process "admin-backup-agent" "cd $ADMIN_SYSTEM_PATH && node agents/AdminBackupAgent.js"
+    start_process "admin-backup-agent" "cd $ADMIN_SYSTEM_PATH && /usr/local/bin/node agents/AdminBackupAgent.js"
 }
 
 # System health monitoring
