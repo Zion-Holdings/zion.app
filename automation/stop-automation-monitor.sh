@@ -1,11 +1,15 @@
 #!/bin/bash
 
-# Stop script for Automation Monitor and Maintainer System
+# Automation Monitor and Maintainer Shutdown Script
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CRON_SCRIPT="$SCRIPT_DIR/cron-jobs/automation-monitor-cron.sh"
+CRON_SCRIPT="$SCRIPT_DIR/cron-jobs/automation-monitor-and-maintainer-cron.sh"
 
-# Stop the monitor
+echo "Stopping Automation Monitor and Maintainer System..."
+
+# Stop the system
 $CRON_SCRIPT stop
 
-echo "Automation Monitor and Maintainer System stopped"
+# Wait a moment and check status
+sleep 3
+$CRON_SCRIPT status

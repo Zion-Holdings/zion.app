@@ -2,228 +2,192 @@
 
 ## Overview
 
-The Automation Monitor and Maintainer System is a comprehensive autonomous system that continuously monitors all project automation factories, agents, scripts, cron jobs, etc. and maintains them without modifying existing autonomous agents factories.
+The Automation Monitor and Maintainer System is a comprehensive monitoring and maintenance solution for all project automation factories, agents, scripts, and cron jobs. It continuously checks system health, detects errors, and automatically fixes issues to ensure optimal performance.
 
 ## Features
 
-### 🔍 Continuous Monitoring
-- Discovers all automation systems automatically
-- Monitors health status every 2 minutes
-- Tracks system performance and errors
-- Generates comprehensive reports
-
-### 🔧 Automatic Maintenance
-- Fixes syntax errors automatically
-- Restarts stopped systems
-- Applies common error fixes
-- Creates backups before making changes
-
-### 📊 Health Management
-- Comprehensive health checks every 5 minutes
-- Error analysis and categorization
-- System optimization every 2 hours
-- Performance monitoring and alerts
-
-### 🛡️ Safety Features
-- Creates backups before any changes
-- Configurable error thresholds
-- Emergency stop capabilities
-- Resource monitoring and cleanup
+- **Comprehensive Health Monitoring**: Monitors all automation systems continuously
+- **Automatic Error Detection**: Detects and identifies system errors
+- **Performance Optimization**: Optimizes system performance automatically
+- **Maintenance Scheduling**: Schedules and performs system maintenance
+- **Error Recovery**: Automatically recovers from errors and restarts systems
+- **Backup Management**: Creates and manages system backups
+- **Cleanup Operations**: Performs system cleanup and maintenance
+- **Report Generation**: Generates comprehensive system reports
+- **Real-time Monitoring**: Provides real-time system status and metrics
 
 ## System Architecture
 
-```
-automation/
-├── automation-monitor-and-maintainer.js    # Main monitoring system
-├── cron-jobs/
-│   └── automation-monitor-cron.sh         # Cron job management
-├── monitor-logs/                          # System logs
-├── monitor-status/                        # Current status
-├── monitor-reports/                       # Generated reports
-├── monitor-pids/                          # Process IDs
-├── backups/                               # System backups
-└── monitor-config.json                    # Configuration
-```
+### Core Components
+
+1. **Automation Monitor and Maintainer Factory** (`automation-monitor-and-maintainer-factory.js`)
+   - Central factory for managing monitoring agents
+   - Comprehensive health monitoring capabilities
+   - Automatic error detection and recovery
+   - Performance optimization and resource management
+
+2. **Automation Monitor and Maintainer Launcher** (`launch-automation-monitor-and-maintainer.js`)
+   - System launcher and manager
+   - Health monitoring and reporting
+   - Configuration management
+   - System backup and cleanup
+
+3. **Cron Job Manager** (`cron-jobs/automation-monitor-and-maintainer-cron.sh`)
+   - Automated scheduling and management
+   - Health checks and system monitoring
+   - Backup and recovery operations
+   - Performance optimization tasks
+
+### Monitoring Agents
+
+1. **System Health Monitor**: Continuous health monitoring
+2. **Error Detection Agent**: Error detection and identification
+3. **Performance Optimizer**: Performance analysis and optimization
+4. **Maintenance Scheduler**: Maintenance planning and scheduling
+5. **Recovery Agent**: Error recovery and system restart
+6. **Backup Manager**: Backup creation and management
+7. **Cleanup Agent**: System cleanup and maintenance
+8. **Report Generator**: Report creation and analysis
 
 ## Usage
 
 ### Starting the System
+
 ```bash
-# Start the monitor
-./automation/cron-jobs/automation-monitor-cron.sh start
+# Start the system
+./cron-jobs/automation-monitor-and-maintainer-cron.sh start
 
-# Or use the startup script
-./automation/start-automation-monitor.sh
-```
-
-### Checking Status
-```bash
-# Check monitor status
-./automation/cron-jobs/automation-monitor-cron.sh status
-
-# Or use the status script
-./automation/status-automation-monitor.sh
+# Or use the launcher directly
+node launch-automation-monitor-and-maintainer.js start
 ```
 
 ### Stopping the System
-```bash
-# Stop the monitor
-./automation/cron-jobs/automation-monitor-cron.sh stop
 
-# Or use the stop script
-./automation/stop-automation-monitor.sh
+```bash
+# Stop the system
+./cron-jobs/automation-monitor-and-maintainer-cron.sh stop
+
+# Or use the launcher directly
+node launch-automation-monitor-and-maintainer.js stop
 ```
 
-### Generating Reports
-```bash
-# Generate health report
-./automation/cron-jobs/automation-monitor-cron.sh report
+### Checking Status
 
-# Check system resources
-./automation/cron-jobs/automation-monitor-cron.sh resources
+```bash
+# Check system status
+./cron-jobs/automation-monitor-and-maintainer-cron.sh status
+
+# Or use the launcher directly
+node launch-automation-monitor-and-maintainer.js status
 ```
 
-### Emergency Operations
-```bash
-# Emergency stop all automation
-./automation/cron-jobs/automation-monitor-cron.sh emergency
+### Health Check
 
-# Clean up old files
-./automation/cron-jobs/automation-monitor-cron.sh cleanup
+```bash
+# Perform health check
+./cron-jobs/automation-monitor-and-maintainer-cron.sh health
+
+# Or use the launcher directly
+node launch-automation-monitor-and-maintainer.js health
+```
+
+### Generate Report
+
+```bash
+# Generate system report
+./cron-jobs/automation-monitor-and-maintainer-cron.sh report
+
+# Or use the launcher directly
+node launch-automation-monitor-and-maintainer.js report
 ```
 
 ## Configuration
 
-The system is configured via `monitor-config.json`:
+The system is configured via `automation-monitor-config.json`:
 
 ```json
 {
-  "monitoring": {
-    "checkInterval": "*/2 * * * *",
-    "healthCheckInterval": "*/5 * * * *",
-    "reportInterval": "0 */1 * * *",
+    "healthCheckInterval": "*/2 * * * *",
     "errorThreshold": 3,
+    "performanceThreshold": 0.8,
     "maxRetries": 3,
-    "autoFix": true,
-    "backupBeforeFix": true,
-    "logLevel": "info"
-  }
+    "backupInterval": "0 */6 * * *",
+    "cleanupInterval": "0 2 * * *",
+    "reportInterval": "0 */1 * * *"
 }
 ```
 
-## Monitoring Capabilities
+## Monitoring
 
-### System Discovery
-- **Factories**: Discovers all automation factories
-- **Agents**: Finds all autonomous agents
-- **Scripts**: Locates automation scripts
-- **Cron Jobs**: Identifies scheduled tasks
+### Health Metrics
 
-### Health Checks
-- **File Existence**: Checks if files exist
-- **Process Status**: Monitors running processes
-- **Syntax Validation**: Validates JavaScript syntax
-- **Error Logging**: Analyzes error patterns
-
-### Automatic Fixes
-- **Syntax Errors**: Fixes common syntax issues
-- **Process Restart**: Restarts stopped systems
-- **Error Resolution**: Applies common error fixes
-- **Missing Systems**: Handles missing automation
-
-### Optimization
-- **Code Optimization**: Removes debug code in production
-- **Require Optimization**: Groups and optimizes imports
-- **Performance Monitoring**: Tracks system performance
-- **Resource Management**: Monitors disk, memory, CPU
-
-## Reports
-
-### Health Reports
-- System health percentages
-- Problematic systems list
-- Error categorization
-- Fix recommendations
-
-### Error Analysis
-- Error frequency analysis
-- Common error patterns
-- System-specific errors
-- Trend analysis
-
-### Performance Reports
-- Optimization results
-- Resource usage
+- System uptime and status
+- Error rates and types
 - Performance metrics
-- Improvement suggestions
+- Resource usage (CPU, memory)
+- Response times
 
-## Safety Features
+### Reports
 
-### Backup System
-- Automatic backups before changes
-- Configurable backup retention
-- Backup verification
-- Restore capabilities
+- Comprehensive system reports
+- Health check reports
+- Performance analysis
+- Error analysis and recommendations
+- Maintenance schedules
 
-### Error Handling
-- Graceful error recovery
-- Configurable retry limits
-- Error logging and analysis
-- Alert system for critical issues
+### Logs
 
-### Resource Management
-- Disk space monitoring
-- Memory usage tracking
-- CPU usage monitoring
-- Automatic cleanup
+- System logs in `logs/` directory
+- Error logs in `error-logs/` directory
+- Health reports in `health-reports/` directory
+- Maintenance logs in `maintenance-logs/` directory
 
-## Integration
+## Maintenance
 
-The system integrates with existing automation without modification:
+### Automatic Maintenance
 
-- **Non-Intrusive**: Doesn't modify existing automation
-- **Comprehensive**: Monitors all automation types
-- **Intelligent**: Learns from patterns and errors
-- **Adaptive**: Improves over time
+- Daily cleanup operations
+- Weekly backup creation
+- Monthly performance optimization
+- Quarterly system health review
+
+### Manual Maintenance
+
+- System restart: `./cron-jobs/automation-monitor-and-maintainer-cron.sh restart`
+- Backup creation: `./cron-jobs/automation-monitor-and-maintainer-cron.sh backup`
+- Cleanup operations: `./cron-jobs/automation-monitor-and-maintainer-cron.sh cleanup`
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **Monitor not starting**
-   - Check Node.js installation
-   - Verify dependencies are installed
-   - Check log files for errors
+1. **System not starting**: Check Node.js installation and dependencies
+2. **Health check failures**: Verify system permissions and file access
+3. **Performance issues**: Check system resources and configuration
+4. **Error recovery failures**: Review error logs and system status
 
-2. **Systems not being discovered**
-   - Verify file patterns in configuration
-   - Check file permissions
-   - Review discovery logs
+### Debugging
 
-3. **Fixes not working**
-   - Check backup creation
-   - Verify file permissions
-   - Review error logs
+- Check logs in `logs/` directory
+- Review error logs in `error-logs/` directory
+- Examine health reports in `health-reports/` directory
+- Use status command for current system state
 
-### Log Files
+## Security
 
-- `monitor-logs/monitor.log` - Main system logs
-- `monitor-logs/automation-monitor.log` - Cron job logs
-- `monitor-logs/automation-monitor-error.log` - Error logs
-
-### Status Files
-
-- `monitor-status/current-status.json` - Current system status
-- `monitor-reports/` - Generated reports
-- `monitor-pids/` - Process ID files
+- All scripts run with user permissions
+- No root access required
+- Secure file permissions
+- Encrypted configuration storage (optional)
 
 ## Support
 
-For issues or questions:
+For issues and questions:
+1. Check the logs and reports
+2. Review the configuration
+3. Test individual components
+4. Restart the system if needed
 
-1. Check the log files for error messages
-2. Review the status files for system health
-3. Generate reports for detailed analysis
-4. Use the emergency stop if needed
+## License
 
-The system is designed to be self-maintaining and will automatically handle most issues without intervention.
+This system is part of the project automation infrastructure.
