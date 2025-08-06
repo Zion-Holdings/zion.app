@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-08-06T21:17:25.866Z",
+  "uptime": 300038,
+  "stats": {
+    "totalStarted": 10,
+    "totalFailed": 0,
+    "totalRunning": 0
+  },
+  "runningSystems": [],
+  "systemDetails": []
+}
