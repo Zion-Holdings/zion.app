@@ -195,7 +195,7 @@ class HighFrequencyGitSync {
       
       // Filter files based on include/exclude patterns
       return files.filter(file => {
-        const filePath = file.substring(3); // Remove status prefix
+        const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
       
@@ -261,7 +261,7 @@ class HighFrequencyGitSync {
   generateCommitMessage(files) {
     const timestamp = new Date().toISOString();
     const fileCount = files.length;
-    const fileNames = files.map(f => f.substring(3)).join(', ');
+    const fileNames = files.map(f => f.substring(4)).join(', ');
     
     return `${this.config.commitMessagePrefix} ${timestamp} - ${fileCount} files: ${fileNames}`;
   }

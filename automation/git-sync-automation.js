@@ -217,7 +217,7 @@ class GitSyncAutomation {
       
       // Filter files based on include/exclude patterns
       return files.filter(file => {
-        const filePath = file.substring(3); // Remove status prefix
+        const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
       

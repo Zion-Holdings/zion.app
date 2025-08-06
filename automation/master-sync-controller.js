@@ -330,7 +330,7 @@ class MasterSyncController {
       
       // Filter files based on include/exclude patterns
       return files.filter(file => {
-        const filePath = file.substring(3); // Remove status prefix
+        const filePath = file.substring(4); // Remove status prefix (M + space + space)
         return this.shouldIncludeFile(filePath);
       });
       
@@ -375,7 +375,7 @@ class MasterSyncController {
     try {
       // Add specific files to staging
       for (const file of files) {
-        const filePath = file.substring(3); // Remove status prefix
+        const filePath = file.substring(4); // Remove status prefix (M + space + space)
         execSync(`git add "${filePath}"`, { 
           cwd: this.projectRoot,
           stdio: 'pipe'
@@ -396,7 +396,7 @@ class MasterSyncController {
   generateCommitMessage(files, type) {
     const timestamp = new Date().toISOString();
     const fileCount = files.length;
-    const fileNames = files.map(f => f.substring(3)).join(', ');
+    const fileNames = files.map(f => f.substring(4)).join(', ');
     
     return `${this.config.commitMessagePrefix} [${type}] ${timestamp} - ${fileCount} files: ${fileNames}`;
   }
