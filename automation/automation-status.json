@@ -1,8 +1,82 @@
 {
-  "timestamp": "2025-08-06T12:43:07.615Z",
+  "timestamp": "2025-08-06T13:09:18.001Z",
   "overallHealth": "healthy",
   "totalSystems": 6,
-  "activeSystems": 1,
-  "failedSystems": 5,
-  "successRate": 17
+  "activeSystems": 6,
+  "failedSystems": 0,
+  "successRate": 100,
+  "systems": [
+    {
+      "name": "ultimate-automation-factory-system",
+      "isRunning": true,
+      "health": "unknown",
+      "lastActivity": "2025-08-06T13:08:52.054Z",
+      "performance": 12,
+      "intelligence": 4,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.604Z",
+      "pid": 41286
+    },
+    {
+      "name": "intelligent-automation-orchestrator",
+      "isRunning": true,
+      "health": "unknown",
+      "lastActivity": "2025-08-06T13:08:52.137Z",
+      "performance": 2,
+      "intelligence": 6,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.604Z",
+      "pid": 41288
+    },
+    {
+      "name": "continuous-automation-improvement-system",
+      "isRunning": true,
+      "health": "unknown",
+      "lastActivity": "2025-08-06T13:08:53.685Z",
+      "performance": 15,
+      "intelligence": 2,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.605Z",
+      "pid": 41290
+    },
+    {
+      "name": "master-automation-coordinator",
+      "isRunning": true,
+      "health": "unknown",
+      "lastActivity": "2025-08-06T13:08:52.812Z",
+      "performance": 4,
+      "intelligence": 8,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.606Z",
+      "pid": 41292
+    },
+    {
+      "name": "enhanced-diversification-orchestrator",
+      "isRunning": true,
+      "health": "excellent",
+      "lastActivity": "2025-08-06T13:09:06.825Z",
+      "performance": 90,
+      "intelligence": 85,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.607Z",
+      "pid": 34188
+    },
+    {
+      "name": "intelligent-agent-orchestrator",
+      "isRunning": true,
+      "health": "excellent",
+      "lastActivity": "2025-08-06T13:09:11.605Z",
+      "performance": 90,
+      "intelligence": 85,
+      "evolutionCount": 1,
+      "errors": [],
+      "startTime": "2025-08-06T12:43:05.607Z",
+      "pid": 34464
+    }
+  ]
 }
