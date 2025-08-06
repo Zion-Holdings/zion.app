@@ -1,0 +1,14 @@
+{
+  "strategy": "re-engagement-campaigns",
+  "description": "Re-engagement campaigns for inactive users",
+  "content": [
+    "Relevant updates",
+    "Special offers",
+    "Feedback requests",
+    "Reactivation incentives"
+  ],
+  "frequency": "Monthly",
+  "targetAudience": "Inactive subscribers",
+  "status": "implemented",
+  "implementedAt": "2025-08-06T03:47:43.757Z"
+}

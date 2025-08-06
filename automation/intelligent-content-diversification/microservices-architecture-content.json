@@ -1,0 +1,23 @@
+{
+  "type": "microservices-architecture",
+  "title": "Comprehensive Guide to microservices architecture",
+  "description": "Learn everything about microservices architecture and its applications",
+  "sections": [
+    "Introduction and Overview",
+    "Key Concepts and Principles",
+    "Implementation Strategies",
+    "Best Practices and Tips",
+    "Case Studies and Examples",
+    "Future Trends and Developments"
+  ],
+  "keywords": [
+    "microservices-architecture",
+    "guide",
+    "tutorial",
+    "best-practices"
+  ],
+  "targetAudience": "developers, architects, decision-makers",
+  "estimatedReadingTime": "15-20 minutes",
+  "difficulty": "intermediate",
+  "generatedAt": "2025-08-06T03:47:35.128Z"
+}

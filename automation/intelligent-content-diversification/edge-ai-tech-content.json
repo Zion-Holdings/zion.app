@@ -1,0 +1,19 @@
+{
+  "technology": "edge-ai",
+  "title": "edge ai: A Complete Guide",
+  "description": "Comprehensive guide to edge ai and its applications",
+  "contentSections": [
+    "Technology Overview and Fundamentals",
+    "Current State and Capabilities",
+    "Implementation and Integration",
+    "Use Cases and Applications",
+    "Challenges and Limitations",
+    "Future Developments and Roadmap"
+  ],
+  "technicalLevel": "advanced",
+  "prerequisites": [
+    "basic understanding of related technologies"
+  ],
+  "estimatedLearningTime": "2-3 hours",
+  "generatedAt": "2025-08-06T03:47:35.136Z"
+}

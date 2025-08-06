@@ -1,0 +1,14 @@
+{
+  "strategy": "nurture-sequences",
+  "description": "Lead nurturing email sequences",
+  "content": [
+    "Educational content",
+    "Product information",
+    "Case studies",
+    "Call-to-action"
+  ],
+  "frequency": "Automated based on behavior",
+  "targetAudience": "Leads and prospects",
+  "status": "implemented",
+  "implementedAt": "2025-08-06T03:47:43.757Z"
+}

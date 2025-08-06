@@ -3,7 +3,7 @@
   "file": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/frontend-sync-agents/frontend-automation-orchestrator.js",
   "name": "result",
   "type": "content-generation",
-  "intelligenceLevel": 0.91,
+  "intelligenceLevel": 0.92,
   "capabilities": [
     "content-generation",
     "data-analysis",

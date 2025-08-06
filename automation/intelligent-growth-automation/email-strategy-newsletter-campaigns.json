@@ -1,0 +1,14 @@
+{
+  "strategy": "newsletter-campaigns",
+  "description": "Regular newsletter campaigns",
+  "content": [
+    "Industry updates",
+    "Company news",
+    "Expert insights",
+    "Resource links"
+  ],
+  "frequency": "Weekly",
+  "targetAudience": "Subscribers and prospects",
+  "status": "implemented",
+  "implementedAt": "2025-08-06T03:47:43.756Z"
+}
