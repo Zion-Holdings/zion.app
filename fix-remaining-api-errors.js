@@ -1,232 +1,188 @@
-const fs = require('fs');'
-const path = require('path');'
+const fs = require('fs');
+const path = require('path');
 
-// Function to fix specific API files with known issues
-function fixSpecificApiFiles() {
-  const fixes = [
-    {
-      file: 'pages/api/ai-resume.ts','
-      content: `import React from 'react'
+// Fix ai-contract.ts
+const contractContent = `import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
-  }
-
-  try {
-    const { personalInfo, experience, education } = req.body;
-
-    // Simulate resume generation
-    const resume = {
-      personalInfo: {
-        name: \`\${personalInfo.firstName} \${personalInfo.lastName}\`,
-        email: personalInfo.email,
-        phone: personalInfo.phone,
-        location: personalInfo.location
-      },
-      experience: experience || [],
-      education: education || [],
-      generatedAt: new Date().toISOString()
-    };
-
-    res.status(200).json(resume);
-  } catch (error) {
-    console.error('Error generating resume:', error);'
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}`
-    },
-    {
-      file: 'pages/api/ai-service-matcher.ts','
-      content: `import React from 'react'
-
-interface ServiceRequest {
-  serviceType: string;
-  industry?: string;
-  budget?: string;
-  timeline?: string;
+interface ContractTemplate {
+  id: string;
+  name: string;
+  type: 'service' | 'employment' | 'partnership' | 'nda' | 'license';
+  category: string;
+  description: string;
+  clauses: string[];
+  variables: Record<string, string>;
+  legalRequirements: string[];
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
-    const { serviceType, industry, budget, timeline } = req.body;
+  const { contractType, requirements, parties, terms } = req.body;
 
-    // Simulate service matching
-    const matches = [
-      {
-        id: 'service-1','
-        name: 'Web Development','
-        description: 'Custom web application development','
-        price: 'variable5000-15000','
-        duration: '4-8 weeks','
-        matchScore: 95
-      },
-      {
-        id: 'service-2','
-        name: 'Mobile App Development','
-        description: 'iOS and Android app development','
-        price: 'variable8000-25000','
-        duration: '6-12 weeks','
-        matchScore: 88
-      }
-    ];
+  // Mock contract generation
+  const contract = {
+    id: 'contract-1',
+    type: contractType || 'service',
+    title: 'Service Agreement',
+    parties: parties || ['Client', 'Provider'],
+    terms: terms || ['Payment terms', 'Delivery timeline', 'Quality standards'],
+    clauses: [
+      'This agreement is entered into between the parties',
+      'Services will be delivered according to specifications',
+      'Payment will be made within 30 days of invoice'
+    ],
+    legalRequirements: [
+      'Compliance with local laws',
+      'Data protection requirements',
+      'Intellectual property rights'
+    ]
+  };
 
-    res.status(200).json({ matches });
-  } catch (error) {
-    console.error('Error matching services:', error);'
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}`
-    },
-    {
-      file: 'pages/api/ai-vendor-management.ts','
-      content: `import React from 'react'
+  res.status(200).json({ contract });
+}`;
+
+// Fix ai-workspace-suggestions.ts
+const workspaceContent = `import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
-    const { action, vendorData } = req.body;
+  const { workspaceType, requirements, budget, teamSize } = req.body;
 
-    // Simulate vendor management
-    const vendors = [
-      {
-        id: 'vendor-1','
-        name: 'Tech Solutions Inc','
-        category: 'Technology','
-        rating: 4.5,
-        status: 'active''
-      },
-      {
-        id: 'vendor-2','
-        name: 'Design Studio Pro','
-        category: 'Design','
-        rating: 4.8,
-        status: 'active''
-      }
-    ];
-
-    res.status(200).json({ vendors });
-  } catch (error) {
-    console.error('Error managing vendors:', error);'
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}`
+  // Mock workspace suggestions
+  const suggestions = [
+    {
+      id: 'suggestion-1',
+      name: 'Modern Open Office',
+      type: 'collaborative',
+      description: 'Open floor plan with flexible seating and meeting areas',
+      features: ['Standing desks', 'Meeting pods', 'Breakout areas'],
+      estimatedCost: 50000,
+      setupTime: '2-3 weeks',
+      suitability: 95
     },
     {
-      file: 'pages/api/ai-workspace-suggestions.ts','
-      content: `import React from 'react'
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
-  }
-
-  try {
-    const { workspaceType, requirements } = req.body;
-
-    // Simulate workspace suggestions
-    const suggestions = [
-      {
-        id: 'workspace-1','
-        name: 'Modern Office Suite','
-        type: 'office','
-        features: ['Ergonomic furniture', 'Natural lighting', 'Meeting rooms'],'
-        price: 'variable2000/month''
-      },
-      {
-        id: 'workspace-2','
-        name: 'Creative Studio','
-        type: 'creative','
-        features: ['Large work surfaces', 'Storage solutions', 'Collaboration areas'],'
-        price: 'variable1500/month''
-      }
-    ];
-
-    res.status(200).json({ suggestions });
-  } catch (error) {
-    console.error('Error generating workspace suggestions:', error);'
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}`
-    },
-    {
-      file: 'pages/api/analytics-api.ts','
-      content: `import React from 'react'
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {'
-    return res.status(405).json({ error: 'Method not allowed' });'
-  }
-
-  try {
-    // Simulate analytics data
-    const analytics = {
-      users: {
-        total: 1250,
-        active: 890,
-        new: 45
-      },
-      revenue: {
-        total: 125000,
-        monthly: 15000,
-        growth: 12.5
-      },
-      performance: {
-        uptime: 99.9,
-        responseTime: 245,
-        errorRate: 0.1
-      }
-    };
-
-    res.status(200).json(analytics);
-  } catch (error) {
-    console.error('Error fetching analytics:', error);'
-    res.status(500).json({ error: 'Internal server error' });'
-  }
-}`
+      id: 'suggestion-2',
+      name: 'Private Office Suite',
+      type: 'private',
+      description: 'Individual offices with shared conference facilities',
+      features: ['Private offices', 'Conference rooms', 'Reception area'],
+      estimatedCost: 75000,
+      setupTime: '3-4 weeks',
+      suitability: 88
     }
   ];
 
-  fixes.forEach(fix => {
-    try {
-      fs.writeFileSync(fix.file, fix.content, 'utf8');'
-      console.log(`Fixed: ${fix.file}`);
-    } catch (error) {
-      console.error(`Error fixing ${fix.file}:`, error.message);
+  res.status(200).json({ suggestions });
+}`;
+
+// Fix analytics-api.ts
+const analyticsContent = `import type { NextApiRequest, NextApiResponse } from 'next';
+
+type Data = {
+  success: boolean;
+  data?: any;
+  message?: string;
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ success: false, message: 'Method not allowed' });
+  }
+
+  // Mock analytics data
+  const analyticsData = {
+    pageViews: 1250,
+    uniqueVisitors: 890,
+    conversionRate: 2.3,
+    topPages: [
+      { path: '/', views: 450 },
+      { path: '/services', views: 320 },
+      { path: '/about', views: 180 }
+    ],
+    userEngagement: {
+      averageSessionDuration: '2m 45s',
+      bounceRate: 35.2,
+      pagesPerSession: 3.1
     }
-  });
-}
+  };
 
-// Function to temporarily deactivate severely corrupted files
-function deactivateCorruptedFiles() {
-  const corruptedFiles = [
-    'pages/api/ai-hr-management.ts','
-    'pages/api/ai-portfolio.ts','
-    'pages/api/ai-recommendations.ts''
-  ];
+  res.status(200).json({ success: true, data: analyticsData });
+}`;
 
-  corruptedFiles.forEach(file => {
-    try {
-      if (fs.existsSync(file)) {
-        const backupName = file.replace('.ts', '.ts.bak');'
-        fs.renameSync(file, backupName);
-        console.log(`Deactivated (backed up): ${file}`);
-      }
-    } catch (error) {
-      console.error(`Error deactivating ${file}:`, error.message);
-    }
-  });
-}
+// Fix analyze-quote-request.ts
+const quoteContent = `import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Main execution
-console.log('Fixing remaining API errors...');'
-fixSpecificApiFiles();
-deactivateCorruptedFiles();
-console.log('API error fixing completed!'); '
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { quoteRequest, requirements, budget } = req.body;
+
+  // Mock quote analysis
+  const analysis = {
+    requestId: 'quote-1',
+    complexity: 'medium',
+    estimatedHours: 120,
+    recommendedRate: 85,
+    totalEstimate: 10200,
+    breakdown: [
+      { phase: 'Planning', hours: 20, cost: 1700 },
+      { phase: 'Development', hours: 80, cost: 6800 },
+      { phase: 'Testing', hours: 15, cost: 1275 },
+      { phase: 'Deployment', hours: 5, cost: 425 }
+    ],
+    risks: ['Scope creep', 'Technical challenges'],
+    recommendations: ['Start with MVP', 'Regular check-ins']
+  };
+
+  res.status(200).json({ analysis });
+}`;
+
+// Fix analyze-service-request.ts
+const serviceContent = `import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { serviceRequest, requirements, timeline } = req.body;
+
+  // Mock service analysis
+  const analysis = {
+    requestId: 'service-1',
+    category: 'Web Development',
+    complexity: 'high',
+    estimatedDuration: '6-8 weeks',
+    teamSize: 3,
+    technologies: ['React', 'Node.js', 'MongoDB'],
+    deliverables: [
+      'Responsive web application',
+      'Admin dashboard',
+      'API documentation',
+      'Deployment guide'
+    ],
+    risks: ['Third-party integrations', 'Performance requirements'],
+    recommendations: ['Agile methodology', 'Regular demos']
+  };
+
+  res.status(200).json({ analysis });
+}`;
+
+// Write the fixed files
+const apiDir = path.join(__dirname, 'pages', 'api');
+
+fs.writeFileSync(path.join(apiDir, 'ai-contract.ts'), contractContent);
+fs.writeFileSync(path.join(apiDir, 'ai-workspace-suggestions.ts'), workspaceContent);
+fs.writeFileSync(path.join(apiDir, 'analytics-api.ts'), analyticsContent);
+fs.writeFileSync(path.join(apiDir, 'analyze-quote-request.ts'), quoteContent);
+fs.writeFileSync(path.join(apiDir, 'analyze-service-request.ts'), serviceContent);
+
+console.log('All remaining API syntax errors fixed!'); '
