@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import InteractiveSearch from './InteractiveSearch';
 
 const FuturisticHero: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [currentStat, setCurrentStat] = useState(0);
+  const [showSearch, setShowSearch] = useState(false);
+
+  const stats = [
+    { value: '10K+', label: 'Active Users', icon: '👥' },
+    { value: '500+', label: 'AI Services', icon: '🤖' },
+    { value: '99.9%', label: 'Uptime', icon: '⚡' },
+    { value: '24/7', label: 'Support', icon: '🛡️' }
+  ];
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -15,102 +26,188 @@ const FuturisticHero: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStat((prev) => (prev + 1) % stats.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [stats.length]);
+
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 overflow-hidden">
-      {/* Animated Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      
+      {/* Interactive Animated Background Elements */}
       <div className="absolute inset-0">
-        {/* Floating Orbs */}
         <div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"
+          className="absolute top-1/4 left-1/4 w-72 h-72 bg-neon-blue/20 rounded-full blur-3xl animate-pulse"
           style={{
-            transform: `translate(${typeof window !== 'undefined' ? (mousePosition.x - window.innerWidth / 2) * 0.02 : 0}px, ${typeof window !== 'undefined' ? (mousePosition.y - window.innerHeight / 2) * 0.02 : 0}px)`
+            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.02}px, ${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`
           }}
-        />
+        ></div>
         <div 
-          className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-red-400/20 rounded-full blur-3xl animate-pulse delay-1000"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-pulse delay-1000"
           style={{
-            transform: `translate(${typeof window !== 'undefined' ? (mousePosition.x - window.innerWidth / 2) * -0.01 : 0}px, ${typeof window !== 'undefined' ? (mousePosition.y - window.innerHeight / 2) * -0.01 : 0}px)`
+            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * -0.01}px, ${(mousePosition.y - window.innerHeight / 2) * -0.01}px)`
           }}
-        />
+        ></div>
         <div 
-          className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-gradient-to-r from-green-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-2000"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-green/20 rounded-full blur-3xl animate-pulse delay-2000"
           style={{
-            transform: `translate(${typeof window !== 'undefined' ? (mousePosition.x - window.innerWidth / 2) * 0.015 : 0}px, ${typeof window !== 'undefined' ? (mousePosition.y - window.innerHeight / 2) * 0.015 : 0}px)`
+            transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.015}px, ${(mousePosition.y - window.innerHeight / 2) * 0.015}px)`
           }}
-        />
+        ></div>
       </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      {/* Particle System */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-neon-blue/60 rounded-full animate-particle-drift"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
+          ></div>
+        ))}
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              The Future of
+      <div className="container-responsive relative z-10 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Enhanced Title with Typewriter Effect */}
+          <h1 className="text-responsive-4xl lg:text-responsive-6xl font-extrabold text-high-contrast mb-8 leading-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink animate-neon-text-glow">
+              Zion
             </span>
             <br />
-            <span className="text-white">Technology</span>
-            <br />
-            <span className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              is Here
+            <span className="text-high-contrast typewriter-text">
+              The First Free AI-Powered Marketplace
             </span>
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover cutting-edge AI solutions, expert talent, and innovative products 
-            that will transform your business and accelerate your success.
+          
+          {/* Enhanced Description with Hover Effects */}
+          <p className="text-responsive-lg lg:text-responsive-xl text-high-contrast-secondary mb-12 max-w-3xl mx-auto leading-relaxed hover:text-white transition-colors duration-300">
+            Experience the future of commerce with our cutting-edge AI-powered marketplace. 
+            Connect with top-tier IT services, AI talents, and innovative products in a seamless, secure environment.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          {/* Interactive Search */}
+          <div className="mb-8">
+            <InteractiveSearch />
+          </div>
+
+          {/* Enhanced CTA Buttons with Interactive Effects */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <Link
-              href="/services"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
+              href="/auth/signup"
+              className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover:shadow-neon-blue transition-all duration-300 transform hover:scale-105 overflow-hidden"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              <span className="relative z-10">Explore Services</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10">Start Trading Now</span>
+              <div className={`absolute inset-0 bg-gradient-to-r from-neon-purple to-neon-pink transform transition-transform duration-300 ${isHovered ? 'translate-x-0' : '-translate-x-full'}`}></div>
             </Link>
-            
             <Link
-              href="/talent"
-              className="group relative px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-lg text-lg transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:border-white/40"
+              href="/marketplace"
+              className="group px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
             >
-              <span className="relative z-10">Find Talent</span>
-              <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10">Explore Marketplace</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">500+</div>
-              <div className="text-gray-400">AI Solutions</div>
+          {/* Enhanced Interactive Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <div 
+                key={index} 
+                className={`text-center transition-all duration-500 transform ${
+                  index === currentStat ? 'scale-110' : 'scale-100'
+                }`}
+              >
+                <div className="text-4xl mb-2 animate-bounce">
+                  {stat.icon}
+                </div>
+                <div className="text-responsive-3xl lg:text-responsive-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-high-contrast-secondary text-responsive-sm lg:text-responsive-base">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Interactive Feature Highlights */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="glass border border-neon-blue/30 rounded-lg p-4 hover:border-neon-blue/60 transition-all duration-300 group">
+              <div className="text-2xl mb-2">🚀</div>
+              <h3 className="text-white font-semibold mb-2 group-hover:text-neon-blue transition-colors">AI-Powered Matching</h3>
+              <p className="text-sm text-gray-300">Advanced algorithms connect you with the perfect services and talents</p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">1000+</div>
-              <div className="text-gray-400">Expert Talents</div>
+            <div className="glass border border-neon-purple/30 rounded-lg p-4 hover:border-neon-purple/60 transition-all duration-300 group">
+              <div className="text-2xl mb-2">🔒</div>
+              <h3 className="text-white font-semibold mb-2 group-hover:text-neon-purple transition-colors">Secure Transactions</h3>
+              <p className="text-sm text-gray-300">Enterprise-grade security for all your business transactions</p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-pink-400 mb-2">99%</div>
-              <div className="text-gray-400">Success Rate</div>
+            <div className="glass border border-neon-green/30 rounded-lg p-4 hover:border-neon-green/60 transition-all duration-300 group">
+              <div className="text-2xl mb-2">⚡</div>
+              <h3 className="text-white font-semibold mb-2 group-hover:text-neon-green transition-colors">Instant Access</h3>
+              <p className="text-sm text-gray-300">Get started in minutes with our streamlined onboarding process</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="animate-bounce">
-          <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+      {/* Enhanced Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-neon-blue/50 rounded-full flex justify-center group cursor-pointer hover:border-neon-blue transition-colors">
+          <div className="w-1 h-3 bg-neon-blue rounded-full mt-2 animate-pulse group-hover:bg-neon-purple transition-colors"></div>
         </div>
+        <div className="text-xs text-gray-400 mt-2 text-center">Scroll to explore</div>
       </div>
-    </div>
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        {/* Search Button */}
+        <button 
+          onClick={() => setShowSearch(!showSearch)}
+          className="w-14 h-14 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover:shadow-neon-blue/50 transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+        >
+          <span className="text-white text-xl">🔍</span>
+        </button>
+        
+        {/* Chat Button */}
+        <button className="w-14 h-14 bg-gradient-to-r from-neon-purple to-neon-pink rounded-full shadow-lg hover:shadow-neon-purple/50 transition-all duration-300 transform hover:scale-110 flex items-center justify-center">
+          <span className="text-white text-xl">💬</span>
+        </button>
+      </div>
+
+      {/* Floating Search Panel */}
+      {showSearch && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-black/90 border border-gray-600/50 rounded-lg p-6 w-full max-w-2xl">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-white text-lg font-semibold">Search Marketplace</h3>
+              <button 
+                onClick={() => setShowSearch(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <InteractiveSearch />
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 

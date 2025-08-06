@@ -4,15 +4,21 @@ const fs = require('fs').promises;
 const path = require('path');
 const { exec } = require('child_process');
 const { promisify } = require('util');
-const OpenAI = require('openai');
 
 const execAsync = promisify(exec);
 
 class CursorMemoryAutomation {
   constructor() {
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
+    // Try to initialize OpenAI, but don't fail if API key is not available
+    this.openai = null;
+    try {
+      const OpenAI = require('openai');
+      this.openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+      });
+    } catch (error) {
+      console.log('⚠️  OpenAI not available, running in fallback mode');
+    }
     
     this.memoryDir = './cursor-memory';
     this.chatLogsDir = './chat-logs';
@@ -171,6 +177,11 @@ class CursorMemoryAutomation {
   }
 
   async extractKnowledgeFromContent(content, type) {
+    // If OpenAI is not available, use pattern-based extraction
+    if (!this.openai) {
+      return this.extractKnowledgePatternBased(content, type);
+    }
+
     const prompt = `Extract key knowledge, insights, and learnable information from the following ${type} content. Focus on:
 
 1. Technical solutions and patterns
@@ -210,8 +221,58 @@ ${content.substring(0, 3000)}`;
       return this.parseKnowledgeResponse(response);
     } catch (error) {
       console.error('❌ Error in knowledge extraction:', error.message);
-      return [];
+      return this.extractKnowledgePatternBased(content, type);
     }
+  }
+
+  extractKnowledgePatternBased(content, type) {
+    const knowledge = [];
+    const lines = content.split('\n');
+    
+    // Extract patterns based on common indicators
+    const patterns = {
+      'rule': /(?:always|never|should|must|work|autonomously|commit|push)/gi,
+      'preference': /(?:prefer|like|want|need|user|preference)/gi,
+      'solution': /(?:solution|fix|resolve|implement|setup|configure)/gi,
+      'error': /(?:error|issue|problem|bug|fail|exception)/gi,
+      'automation': /(?:automation|automate|script|workflow|process)/gi,
+      'performance': /(?:performance|optimize|speed|fast|slow)/gi,
+      'security': /(?:security|secure|auth|authentication|protect)/gi
+    };
+    
+    for (const [category, pattern] of Object.entries(patterns)) {
+      const matches = content.match(pattern);
+      if (matches && matches.length > 0) {
+        knowledge.push({
+          category: category,
+          title: `Found ${category} patterns in ${type} content`,
+          description: `Detected ${matches.length} instances of ${category} patterns`,
+          type: 'pattern',
+          confidence: 0.7
+        });
+      }
+    }
+    
+    // Extract specific technical terms
+    const technicalTerms = [
+      'javascript', 'typescript', 'react', 'next.js', 'node.js',
+      'supabase', 'authentication', 'database', 'api',
+      'automation', 'cursor', 'memory', 'learning', 'ai'
+    ];
+    
+    for (const term of technicalTerms) {
+      if (content.toLowerCase().includes(term)) {
+        knowledge.push({
+          category: 'technical',
+          title: `Technical term found: ${term}`,
+          description: `Content contains references to ${term}`,
+          type: 'technical',
+          confidence: 0.8
+        });
+      }
+    }
+    
+    return knowledge;
   }
 
   parseKnowledgeResponse(response) {

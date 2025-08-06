@@ -1,263 +1,222 @@
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 interface SearchResult {
-  id: string
-  title: string
-  description: string
-  type: 'service' | 'talent' | 'product'
-  category: string
-  price?: string
-  rating?: number
-  link: string
+  title: string;
+  description: string;
+  link: string;
+  category: string;
+  icon: string;
 }
 
-const InteractiveSearch = () => {
-  const [query, setQuery] = useState('')
-  const [isOpen, setIsOpen] = useState(false)
-  const [results, setResults] = useState<SearchResult[]>([])
-  const [selectedIndex, setSelectedIndex] = useState(-1)
-  const [isLoading, setIsLoading] = useState(false)
-  const searchRef = useRef<HTMLDivElement>(null)
+const InteractiveSearch: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const searchRef = useRef<HTMLDivElement>(null);
 
-  // Mock search results - in real app, this would come from API
-  const mockResults: SearchResult[] = [
+  const searchData: SearchResult[] = [
     {
-      id: '1',
-      title: 'AI Model Development',
+      title: 'AI Development Services',
       description: 'Custom AI solutions and machine learning models',
-      type: 'service',
-      category: 'AI Development',
-      price: '$150-500/hr',
-      rating: 4.9,
-      link: '/services/ai-model-development'
+      link: '/services/ai-development',
+      category: 'Services',
+      icon: '🤖'
     },
     {
-      id: '2',
+      title: 'Cloud Migration',
+      description: 'Seamless cloud infrastructure setup and migration',
+      link: '/services/cloud-migration',
+      category: 'Services',
+      icon: '☁️'
+    },
+    {
+      title: 'Security Auditing',
+      description: 'Comprehensive security assessments and testing',
+      link: '/services/security-auditing',
+      category: 'Services',
+      icon: '🔒'
+    },
+    {
       title: 'Dr. Sarah Chen',
       description: 'Machine Learning Expert with 8+ years experience',
-      type: 'talent',
-      category: 'AI Specialist',
-      price: '$200/hr',
-      rating: 4.9,
-      link: '/talent'
+      link: '/talent/sarah-chen',
+      category: 'Talent',
+      icon: '👩‍💻'
     },
     {
-      id: '3',
-      title: 'Cloud Migration Services',
-      description: 'Seamless cloud infrastructure setup and migration',
-      type: 'service',
-      category: 'Cloud Computing',
-      price: '$2000-15000',
-      rating: 4.8,
-      link: '/services/cloud-migration-services'
+      title: 'Alex Rodriguez',
+      description: 'Deep Learning Specialist in neural networks',
+      link: '/talent/alex-rodriguez',
+      category: 'Talent',
+      icon: '👨‍💻'
     },
     {
-      id: '4',
-      title: 'High-Performance GPU Cluster',
-      description: 'Enterprise-grade computing hardware for AI workloads',
-      type: 'product',
-      category: 'Hardware',
-      price: '$50,000+',
-      rating: 4.7,
-      link: '/products'
+      title: 'High-Performance GPUs',
+      description: 'Latest NVIDIA and AMD graphics cards for AI',
+      link: '/products/gpus',
+      category: 'Products',
+      icon: '🖥️'
+    },
+    {
+      title: 'AI Model Training',
+      description: 'Specialized hardware for machine learning',
+      link: '/products/ai-training',
+      category: 'Products',
+      icon: '⚡'
     }
-  ]
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
+        setIsOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    if (typeof window !== 'undefined') {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, []);
 
   useEffect(() => {
-    if (query.length < 2) {
-      setResults([])
-      setIsOpen(false)
-      return
+    if (query.trim()) {
+      const filtered = searchData.filter(item =>
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.description.toLowerCase().includes(query.toLowerCase()) ||
+        item.category.toLowerCase().includes(query.toLowerCase())
+      );
+      setResults(filtered);
+      setSelectedIndex(0);
+    } else {
+      setResults([]);
     }
+  }, [query]);
 
-    setIsLoading(true)
-    
-    // Simulate API delay
-    const timer = setTimeout(() => {
-      const filteredResults = mockResults.filter(result =>
-        result.title.toLowerCase().includes(query.toLowerCase()) ||
-        result.description.toLowerCase().includes(query.toLowerCase()) ||
-        result.category.toLowerCase().includes(query.toLowerCase())
-      )
-      
-      setResults(filteredResults)
-      setIsOpen(true)
-      setIsLoading(false)
-      setSelectedIndex(-1)
-    }, 300)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isOpen) return;
 
-    return () => clearTimeout(timer)
-  }, [query])
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setSelectedIndex(prev => 
-        prev < results.length - 1 ? prev + 1 : prev
-      )
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setSelectedIndex(prev => prev > 0 ? prev - 1 : -1)
-    } else if (e.key === 'Enter') {
-      e.preventDefault()
-      if (selectedIndex >= 0 && results[selectedIndex]) {
-        window.location.href = results[selectedIndex].link
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault();
+          setSelectedIndex(prev => (prev + 1) % results.length);
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          setSelectedIndex(prev => (prev - 1 + results.length) % results.length);
+          break;
+        case 'Enter':
+          event.preventDefault();
+          if (results[selectedIndex]) {
+            if (typeof window !== 'undefined') {
+              window.location.href = results[selectedIndex].link;
+            }
+          }
+          break;
+        case 'Escape':
+          setIsOpen(false);
+          break;
       }
-    } else if (e.key === 'Escape') {
-      setIsOpen(false)
-    }
-  }
+    };
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case 'service': return '🛠️'
-      case 'talent': return '👤'
-      case 'product': return '📦'
-      default: return '🔍'
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
     }
-  }
+  }, [isOpen, results, selectedIndex]);
 
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case 'service': return 'text-neon-blue'
-      case 'talent': return 'text-neon-purple'
-      case 'product': return 'text-neon-green'
-      default: return 'text-gray-400'
+  const handleResultClick = (result: SearchResult) => {
+    if (typeof window !== 'undefined') {
+      window.location.href = result.link;
     }
-  }
+  };
 
   return (
-    <div className="relative" ref={searchRef}>
+    <div ref={searchRef} className="relative w-full max-w-2xl mx-auto">
       {/* Search Input */}
       <div className="relative">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
         <input
           type="text"
-          placeholder="Search services, talents, products..."
+          placeholder="Search for services, talent, or products..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={handleKeyDown}
-          onFocus={() => query.length >= 2 && setIsOpen(true)}
-          className="w-full px-4 py-3 pl-12 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setIsOpen(true);
+          }}
+          onFocus={() => setIsOpen(true)}
+          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
         />
-        
-        {/* Search Icon */}
-        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-          {isLoading ? (
-            <div className="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
-          ) : (
-            <span className="text-lg">🔍</span>
-          )}
-        </div>
-
-        {/* Clear Button */}
         {query && (
           <button
             onClick={() => {
-              setQuery('')
-              setResults([])
-              setIsOpen(false)
+              setQuery('');
+              setResults([]);
             }}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+            className="absolute inset-y-0 right-0 pr-3 flex items-center"
           >
-            ✕
+            <svg className="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         )}
       </div>
 
-      {/* Search Results Dropdown */}
+      {/* Search Results */}
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-2xl z-50 max-h-96 overflow-y-auto">
+        <div className="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
           {results.map((result, index) => (
-            <Link
-              key={result.id}
-              href={result.link}
-              className={`block p-4 hover:bg-white/10 transition-colors duration-200 ${
-                index === selectedIndex ? 'bg-white/10' : ''
+            <div
+              key={index}
+              onClick={() => handleResultClick(result)}
+              className={`px-4 py-3 cursor-pointer transition-colors duration-150 ${
+                index === selectedIndex
+                  ? 'bg-blue-50 border-l-4 border-blue-500'
+                  : 'hover:bg-gray-50'
               }`}
-              onClick={() => setIsOpen(false)}
             >
-              <div className="flex items-start gap-3">
-                <div className="text-2xl">{getTypeIcon(result.type)}</div>
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl">{result.icon}</span>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-white font-semibold truncate">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm font-medium text-gray-900 truncate">
                       {result.title}
-                    </h3>
-                    <span className={`text-xs px-2 py-1 rounded-full ${getTypeColor(result.type)} bg-white/10`}>
-                      {result.type}
+                    </p>
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                      {result.category}
                     </span>
                   </div>
-                  <p className="text-gray-300 text-sm mb-2 line-clamp-2">
+                  <p className="text-sm text-gray-500 truncate">
                     {result.description}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-gray-400">
-                    <span>{result.category}</span>
-                    <div className="flex items-center gap-2">
-                      {result.price && (
-                        <span className="text-neon-green font-medium">
-                          {result.price}
-                        </span>
-                      )}
-                      {result.rating && (
-                        <div className="flex items-center gap-1">
-                          <span className="text-yellow-400">★</span>
-                          <span>{result.rating}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}
 
       {/* No Results */}
-      {isOpen && query.length >= 2 && results.length === 0 && !isLoading && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-2xl z-50 p-4">
-          <div className="text-center text-gray-400">
-            <div className="text-2xl mb-2">🔍</div>
-            <p>No results found for "{query}"</p>
-            <p className="text-sm mt-1">Try different keywords or browse our categories</p>
-          </div>
-        </div>
-      )}
-
-      {/* Search Suggestions */}
-      {isOpen && query.length < 2 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-2xl z-50 p-4">
-          <div className="text-center text-gray-400">
-            <div className="text-2xl mb-2">💡</div>
-            <p>Start typing to search</p>
-            <div className="mt-3 flex flex-wrap gap-2 justify-center">
-              {['AI Development', 'Cloud Services', 'Cybersecurity', 'Data Science'].map((suggestion) => (
-                <button
-                  key={suggestion}
-                  onClick={() => setQuery(suggestion)}
-                  className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-colors"
-                >
-                  {suggestion}
-                </button>
-              ))}
-            </div>
+      {isOpen && query && results.length === 0 && (
+        <div className="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 p-4">
+          <div className="text-center text-gray-500">
+            <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
+            </svg>
+            <p className="mt-2 text-sm">No results found for "{query}"</p>
+            <p className="text-xs text-gray-400">Try different keywords or browse our categories</p>
           </div>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default InteractiveSearch
+export default InteractiveSearch;

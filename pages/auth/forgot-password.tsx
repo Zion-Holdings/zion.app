@@ -1,122 +1,97 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import React, { useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import Link from 'next/link';
-import { supabase } from '../../utils/supabase/client';
 
-const ForgotPasswordPage = () => {
+const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState<'success' | 'error'>('success');
-  const router = useRouter();
+  const [error, setError] = useState('');
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
-  const handleResetPassword = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
     setMessage('');
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/auth/reset-password`,
+        redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/auth/reset-password` : '/auth/reset-password',
       });
-      
-      if (error) throw error;
-      
-      setMessageType('success');
-      setMessage('Check your email for the password reset link!');
-    } catch (error: any) {
-      setMessageType('error');
-      setMessage(error.message);
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setMessage('Check your email for the password reset link!');
+      }
+    } catch (err) {
+      setError('An unexpected error occurred');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex flex-col">
-      <Head>
-        <title>Forgot Password - Zion</title>
-        <meta name="description" content="Reset your password with Zion" />
-      </Head>
-
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
-            >
-              Zion
-            </Link>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 flex items-center justify-center px-4">
+      <div className="max-w-md w-full space-y-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white">Reset Password</h2>
+          <p className="mt-2 text-gray-300">Enter your email to receive a reset link</p>
         </div>
-      </nav>
 
-      {/* Forgot Password Form */}
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="max-w-md w-full space-y-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Forgot Password
-            </h2>
-            <p className="mt-2 text-gray-300">
-              Enter your email address and we'll send you a link to reset your password.
-            </p>
+        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+              Email Address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              placeholder="Enter your email"
+            />
           </div>
 
-          {/* Message Display */}
+          {error && (
+            <div className="bg-red-900/50 border border-red-500 text-red-200 px-4 py-3 rounded-md">
+              {error}
+            </div>
+          )}
+
           {message && (
-            <div className={`p-4 rounded-lg ${
-              messageType === 'success' 
-                ? 'bg-green-500/20 border border-green-500/30 text-green-300' 
-                : 'bg-red-500/20 border border-red-500/30 text-red-300'
-            }`}>
+            <div className="bg-green-900/50 border border-green-500 text-green-200 px-4 py-3 rounded-md">
               {message}
             </div>
           )}
 
-          {/* Reset Password Form */}
-          <form onSubmit={handleResetPassword} className="space-y-6">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email Address
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-                placeholder="Enter your email"
-                disabled={loading}
-              />
-            </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? 'Sending...' : 'Send Reset Link'}
+          </button>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Sending...' : 'Send Reset Link'}
-            </button>
-          </form>
-
-          {/* Back to Login */}
           <div className="text-center">
             <Link
-              href="/auth"
-              className="text-purple-400 hover:text-purple-300 transition-colors"
+              href="/auth/login"
+              className="text-purple-400 hover:text-purple-300 text-sm"
             >
               Back to Sign In
             </Link>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
 };
 
-export default ForgotPasswordPage;
+export default ForgotPassword;
