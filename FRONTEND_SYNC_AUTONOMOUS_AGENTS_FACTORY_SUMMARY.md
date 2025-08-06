@@ -82,6 +82,7 @@ A comprehensive autonomous agents factory system has been successfully created t
   - Error handling enhancements
 
 #### 3. Automation Factory Generator (`automation/frontend-sync-factories/automation-factory-generator.js`)
+
 - **Purpose**: Creates new automation factories
 - **Features**:
   - Multiple factory type templates
@@ -235,6 +236,7 @@ The system is configured via `automation/frontend-sync-autonomous-agents-config.
 - Define required agents and factories
 
 ### Monitoring
+
 - Check logs in `automation/frontend-sync-logs/`
 - Monitor status in `automation/frontend-sync-status/`
 - View performance metrics and alerts
