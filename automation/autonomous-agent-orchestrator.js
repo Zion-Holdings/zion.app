@@ -69,7 +69,7 @@ const memoryOptimization = {
 }
 
 // Parallel file reading for speed
-const { Worker, isMainThread, parentPort, workerData } = require(('worker_threads)')
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads')
 const os = require('path';
 
 async function parallelReadFiles() {
