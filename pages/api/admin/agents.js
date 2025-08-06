@@ -1,35 +1,23 @@
-import { createServerClient } from ';@supabase/ssr';
+import { createServerClient } from '@supabase/ssr';
+
+const supabase = createServerClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        {
-          cookies: {
-            getAll: () => req.cookies,
-            setAll: (cookies) => {
-              cookies.forEach(({ name, value, options }) => {
-                res.setHeader('Set-Cookie', `${name}=${value}; ${Object.entries(options).map(([key, val]) => `${key}=${val}`).join('; ')}`);
-              });
-            },
-          },
-        }
-      );
-
       const { data, error } = await supabase
-        .from('admin_agents')
+        .from('autonomous_agents')
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (error) {
-        return res.status(500).json({ error: 'Failed to fetch agents' });
-      }
+      if (error) throw error;
 
       res.status(200).json(data);
     } catch (error) {
-      console.error("Error fetching agents:", error);
+      console.error('Error fetching agents:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   } else {

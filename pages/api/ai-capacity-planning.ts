@@ -1,22 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from ';next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface CapacityForecast {
+interface FacilityPlan {
   id: string;
-  resource: string;
+  name: string;
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
   currentCapacity: number;
-  currentDemand: number;
-  predictedDemand: number;
-  confidence: number;
-  trend: 'increasing' | 'decreasing' | 'stable';
-  factors: string[];
-  lastUpdated: string;
-}
-
-interface ResourceAllocation {
-  id: string;
-  resource: string;
-  allocated: number;
-  available: number;
+  targetCapacity: number;
   utilization: number;
   recommendations: string[];
 }
@@ -27,58 +16,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { timeframe, action } = req.body;
-    const capacityData = {
-      forecasts: [
-        {
-          id: 'forecast-1',
-          resource: 'Server Capacity',
-          currentCapacity: 1000,
-          currentDemand: 850,
-          predictedDemand: 1200,
-          confidence: 0.89,
-          trend: 'increasing',
-          factors: ['User growth', 'Feature adoption', 'Seasonal patterns'],
-          lastUpdated: new Date().toISOString()
-        },
-        {
-          id: 'forecast-2',
-          resource: 'Storage',
-          currentCapacity: 5000,
-          currentDemand: 3200,
-          predictedDemand: 4800,
-          confidence: 0.92,
-          trend: 'increasing',
-          factors: ['Data growth', 'Backup requirements', 'Compliance needs'],
-          lastUpdated: new Date().toISOString()
-        }
-      ],
-      allocations: [
-        {
-          id: 'alloc-1',
-          resource: 'CPU',
-          allocated: 75,
-          available: 25,
-          utilization: 75,
-          recommendations: ['Scale horizontally', 'Optimize workloads', 'Add capacity']
-        },
-        {
-          id: 'alloc-2',
-          resource: 'Memory',
-          allocated: 60,
-          available: 40,
-          utilization: 60,
-          recommendations: ['Monitor usage patterns', 'Optimize memory allocation']
-        }
+    const { facilityType, currentMetrics } = req.body;
+
+    // Simulate capacity planning analysis
+    const capacityPlan: FacilityPlan = {
+      id: 'plan-1',
+      name: 'Production Facility Optimization',
+      type: 'infrastructure',
+      currentCapacity: 75,
+      targetCapacity: 90,
+      utilization: 83,
+      recommendations: [
+        'Upgrade machinery to increase throughput by 20%',
+        'Implement shift scheduling optimization',
+        'Add 2 new production lines'
       ]
     };
 
-    return res.status(200).json({
-      success: true,
-      data: capacityData
-    });
+    res.status(200).json(capacityPlan);
   } catch (error) {
-    console.error("Error processing capacity planning request:", error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('Error processing capacity planning:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }

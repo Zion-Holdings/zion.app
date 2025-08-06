@@ -4,14 +4,12 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Enable server-side features for API routes
   typescript: {
     ignoreBuildErrors: true
   },
   eslint: {
     ignoreDuringBuilds: true
   },
-  // Add security headers
   async headers() {
     return [
       {
@@ -31,7 +29,7 @@ const nextConfig = {
           },
           {
             key: "X-XSS-Protection",
-            value: "1"; mode=block"
+            value: "1; mode=block"
           }
         ]
       }

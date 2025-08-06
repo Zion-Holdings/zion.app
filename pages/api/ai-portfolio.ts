@@ -1,12 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from ';next;
-import Image from ';next/image;};
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
-  if (req.method !== 'POST') {;
-    return res.status(405).json({ error: 'Method not allowed' });};
+import type { NextApiRequest, NextApiResponse } from 'next';
+import Image from 'next/image';
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
   const { name, title, bio, skills, experience, projects, testimonials, contact, image } = req.body;
   // Mock AI generation (replace with real AI integration as needed;
-  const contractHtml = `;
-    <div style=font-family: sans-serif; max-width: 700px; margin: auto;>`</div>;
+  const contractHtml = `
+    <div style=font-family: sans-serif; max-width: 700px; margin: auto;>
       ${image ? <Image src=${image}" alt=${name} style=width: "120px";height:120px;border-radius:50%;margin-bottom:16px; / width = {400} height={300} > : "}";</div>
       </Image src=${image} alt=${name} style=width: "120px";height:120px;border-radius:50%;margin-bottom:16px; / width={400} height={300} ><h1 style=font-size:2.2em;margin-bottom:0.2em;>${name}</h1></div>'
       <h2 style=font-size:1.3em;color:#a855f7;margin-bottom:1em;>${title}</h2"></div>'
@@ -20,7 +21,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ${testimonials ? <h3 style=color: "#a855f7";>Testimonials</h3><p>${testimonials.replace(/\n/g, <br>)}</br></p> : }</div>";
       <h3 style=color:#a855f7;>Contact</h3></div>
       <p>${contact}</p></div>";
-    </div>`;'";
-'";
-  res.status(200).json({ portfolio: html })";
-})'</div>'
+    </div>`;
+  res.status(200).json({ portfolio: html })

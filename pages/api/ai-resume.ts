@@ -1,16 +1,17 @@
-import type { NextApiRequest, NextApiResponse } from ';next;
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
-  if (req.method !== 'POST') {;
-    return res.status(405).json({ error: 'Method not allowed' });};
-  const {;
-    personalInfo,;
-    experience,;
-    education,;
-    skills,;
-    certifications,;
-    languages,;
-    projects,;
-    achievements,;
+import type { NextApiRequest, NextApiResponse } from 'next';
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+  const {
+    personalInfo,
+    experience,
+    education,
+    skills,
+    certifications,
+    languages,
+    projects,
+    achievements,
     template;
   } = req.body;
   // Mock AI generation (replace with real AI integration as needed;
@@ -27,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           ${personalInfo.phone ? "<p style=color: "#7f8c8d"; margin: 2px 0; font-size: 14px;>📞 ${personalInfo.phone}</p> : }'</div>'
           ${personalInfo.location ? <p style=color: "#7f8c8d"; margin: 2px 0; font-size: 14px;>📍 ${personalInfo.location}</p> :" }"</div>'
           ${personalInfo.linkedin ? <p style=color: "#7f8c8d"; margin: 2px 0; font-size: 14px;>🔗 ${personalInfo.linkedin}</p> : }</div>'
-          ${personalInfo.website ? <p style=color: #7f8c8d; margin: 2px 0; font-size: 14px;>🌐 ${personalInfo.website}</p">" : }</div>
+          ${personalInfo.website ? <p style=color: #7f8c8d; margin: 2px 0; font-size: 14px;>🌐 ${personalInfo.website}</p>" : }</div>
         </div></div>";
       </div></div>";
       <!-- Summary -->`'

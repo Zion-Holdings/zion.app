@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from ';next';
-interface FacilityPlan {;
+import { NextApiRequest, NextApiResponse } from 'next';
+interface FacilityPlan {
   preferences: "string[]";
   budget: string;
   timeline: string;
   expertise: string;
   projectType: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: 'service" | talent | equipment' | produc't;
   title: string;
@@ -18,11 +18,11 @@ interface FacilityPlan {;
   link: string;
   aiInsights: string[];};
 // Mock database of available services, talents, and equipment;
-const availableItems: Recommendation[] = [;
+const availableItems: Recommendation[] = [
   // AI/ML Services;
-  {;
-    id: ai-model-dev,;
-    type: 'service',;
+  {
+    id: ai-model-dev,
+    type: 'service',
     title: AI Model Development,
     description: Custo'm' AI model development with advanced machine learning algorithms,
     matchScore: "0,";
@@ -32,7 +32,7 @@ const availableItems: Recommendation[] = [;
     image: "/api/placeholder/300/200,";
     link: /services/ai-model-development,;
     aiInsights: [];
-  },;
+  },
     {
     id: data-analytics,
     'type: "service,";
@@ -45,7 +45,7 @@ const availableItems: Recommendation[] = [;
     image: "/api/placeholder/300/200,";
     link: /services/data-analytics,;
     aiInsights: [];
-  },;
+  },
     {
     id: cloud-migration',
     type: "service,";
@@ -58,7 +58,7 @@ const availableItems: Recommendation[] = [;
     image: "/api/placeholder/300/200,";
     link: /services/cloud-migration,;
     aiInsights: [];
-  },;
+  },
     {;
     id: web-development,;
     type: 'service',;

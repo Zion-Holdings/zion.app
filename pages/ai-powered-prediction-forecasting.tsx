@@ -1,108 +1,133 @@
-import type { NextPage } from ";next";
-import ModernLayout from ';../components/layout/ModernLayout'
-import Head from ';next/head';
-import { useState, useEffect, useMemo } from ";react
-import Link from next/link';
-interface FacilityPlan {'
-  id: "string";
-  title: string
-  description: string
-  type: 'market" | demand | trend | 'risk | performance' | 'behavior
-  status: 'active | draft | archived' | testing
-  confidence: "number";
+import type { NextPage } from "next";
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from "react";
+import Link from 'next/link';
+
+interface FacilityPlan {
+  id: string;
+  title: string;
+  description: string;
+  type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  confidence: number;
   accuracy: number;
   timeframe: string;
   dataPoints: number;
   lastUpdated: Date;
-  aiAnalysis: AIPredictionAnalysis;};
-interface FacilityPlan {;
+  aiAnalysis: AIPredictionAnalysis;
+}
+
+interface AIPredictionAnalysis {
   id: string;
   confidenceScore: number;
   accuracyScore: number;
   reliabilityScore: number;
-  recommendations: string[];};
-interface FacilityPlan {;
+  recommendations: string[];
+}
+
+interface ForecastPrediction {
   id: string;
-  title: string
-  description: string
-  category: 'sales" | inventory | reve'n'ue | grow't'h | seasonal | tr'e'nd
-  status: 'active | draft | archived | 'testin'g
-  period: "string";
+  title: string;
+  description: string;
+  category: 'sales' | 'inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  period: string;
   confidence: number;
   accuracy: number;
   dataPoints: number;
   predictions: ForecastPrediction[];
-  aiOptimization: AIForecastOptimization;};
-interface FacilityPlan {;
+  aiOptimization: AIForecastOptimization;
+}
+
+interface AIForecastOptimization {
   id: string;
   date: Date;
-  value: number
-  confidence: number
-  status: 'predicted" | actual | pending;};
-interface FacilityPlan {;
+  value: number;
+  confidence: number;
+  status: 'predicted' | 'actual' | 'pending';
+}
+
+interface ForecastDataPoint {
   id: string;
   optimizationScore: number;
   accuracyScore: number;
-  recommendations: string[];};
-interface FacilityPlan {;
+  recommendations: string[];
+}
+
+interface TrendAnalysis {
   id: string;
   title: string;
   description: string;
-  category: 'market | technology' | 'consumer | 'industry | global' | 'local
-  status: 'active | draft | archived' | testing
-  confidence: "number"
-  impact: 'high" | medium | 'l'ow
-  timeframe: "string";
+  category: 'market' | 'technology' | 'consumer' | 'industry' | 'global' | 'local';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  confidence: number;
+  impact: 'high' | 'medium' | 'low';
+  timeframe: string;
   dataPoints: number;
-  aiAnalysis: AITrendAnalysis;};
-interface FacilityPlan {;
+  aiAnalysis: AITrendAnalysis;
+}
+
+interface AITrendAnalysis {
   id: string;
   trendStrength: number;
   confidenceScore: number;
   impactScore: number;
-  recommendations: string[];};
-interface FacilityPlan {
-  id: string
-  title: string
-  description: string
-  category: 'market" | operational | financi'a'l | regulator'y' | technology | competiti'v'e
-  status: 'active | draft | archived | testin'g
-  riskLevel: 'low | medium | high' | critical
-  probability: "number"";
-  impact: 'low" | medium | 'h'igh | critical'
-  mitigationStrategies: "string[]";
-  aiAnalysis: AIRiskAnalysis;};
-interface FacilityPlan {;
+  recommendations: string[];
+}
+
+interface RiskAssessment {
+  id: string;
+  title: string;
+  description: string;
+  category: 'market' | 'operational' | 'financial' | 'regulatory' | 'technology' | 'competitive';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  probability: number;
+  impact: 'low' | 'medium' | 'high' | 'critical';
+  mitigationStrategies: string[];
+  aiAnalysis: AIRiskAnalysis;
+}
+
+interface AIRiskAnalysis {
   id: string;
   riskScore: number;
   probabilityScore: number;
   impactScore: number;
-  recommendations: string[];};
-interface FacilityPlan {;
+  recommendations: string[];
+}
+
+interface MarketPrediction {
   id: string;
-  title: string
-  description: string
-  sector: 'technology" | healthcar'e | finance' | 'retail | manufacturi'n'g | services
-  status: 'active | draft | archiv'e'd | testing
-  timeframe: "string";
+  title: string;
+  description: string;
+  sector: 'technology' | 'healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services';
+  status: 'active' | 'draft' | 'archived' | 'testing';
+  timeframe: string;
   confidence: number;
   accuracy: number;
   predictions: MarketPredictionData[];
-  aiAnalysis: AIMarketAnalysis;};
-interface FacilityPlan {;
+  aiAnalysis: AIMarketAnalysis;
+}
+
+interface MarketPredictionData {
   id: string;
   metric: string;
   currentValue: number;
   predictedValue: number;
   confidence: number;
-  timeframe: string;};
-interface FacilityPlan {;
+  timeframe: string;
+}
+
+interface AIMarketAnalysis {
   id: string;
-  marketScore: number;
   confidenceScore: number;
   accuracyScore: number;
-  recommendations: string[];};
-interface FacilityPlan {;
+  recommendations: string[];
+}
+
+interface PredictionForecastingInsight {
+  id: string;
   totalPredictions: number;
   activeForecasts: number;
   trendAnalyses: number;
@@ -110,23 +135,26 @@ interface FacilityPlan {;
   marketPredictions: number;
   averageAccuracy: number;
   aiOptimizationScore: number;
-  aiInsights: PredictionForecastingInsight[];};
-interface FacilityPlan {;
+  aiInsights: PredictionForecastingInsight[];
+}
+
+interface PredictionInsight {
   id: string;
-  title: string
-  description: string
-  impact: 'positive" | negative' | 'neutral
-  confidence: "number";
-  recommendations: string[];};
-const AIPoweredPredictiveAnalytics: NextPage = () => {;
-  const [predictions, setPredictions] = useState<Prediction[]>([]</div>;
-  const [forecasts, setForecasts] = useState<Forecast[]>([]</div>;
-  const [trendAnalyses, setTrendAnalyses] = useState<TrendAnalysis[]>([]</div>;
-  const [riskAssessments, setRiskAssessments] = useState<RiskAssessment[]>([]</div>;
-  const [marketPredictions, setMarketPredictions] = useState<MarketPrediction[]>([]</div>;
-  const [analytics, setAnalytics] = useState<PredictionForecastingAnalytics | null>(null</div>;
+  title: string;
+  description: string;
+  impact: 'positive' | 'negative' | 'neutral';
+  confidence: number;
+  recommendations: string[];
+}
+const AIPoweredPredictiveAnalytics: NextPage = () => {
+  const [predictions, setPredictions] = useState<Prediction[]>([]);
+  const [forecasts, setForecasts] = useState<Forecast[]>([]);
+  const [trendAnalyses, setTrendAnalyses] = useState<TrendAnalysis[]>([]);
+  const [riskAssessments, setRiskAssessments] = useState<RiskAssessment[]>([]);
+  const [marketPredictions, setMarketPredictions] = useState<MarketPrediction[]>([]);
+  const [analytics, setAnalytics] = useState<PredictionForecastingAnalytics | null>(null);
   const [activeTab, setActiveTab] = useState<predictions | forecasts' | 'trends | 'risks | markets' | 'analytics>(prediction's'</div>;
-  const [selectedType, setSelectedType] = useState<string>(all;
+  const [selectedType, setSelectedType] = useState<string>(all);
   const [isLoading, setIsLoading] = useState(true
   // Mock data
   const mockPredictiveModels: "PredictiveModel[] = [";
@@ -580,5 +608,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   </div>
 </div>";
   </div>
-}";}'";
-export default AIPoweredPredictionForecastingPage;))))))))))))))))))))))))))'</div>'
+};
+export default AIPoweredPredictionForecastingPage;))))))))))))))))))))))))))'
