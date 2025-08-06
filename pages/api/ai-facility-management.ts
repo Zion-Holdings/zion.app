@@ -3,76 +3,202 @@ import { NextApiRequest, NextApiResponse } from 'next';
 interface Facility {
   id: string;
   name: string;
-  type: 'office' | 'warehouse' | 'data-center' | 'manufacturing';
+  type: string;
+  location: string;
   status: 'operational' | 'maintenance' | 'offline';
   capacity: number;
   utilization: number;
+  lastInspection: string;
+  nextInspection: string;
+  energyEfficiency: number;
+  securityScore: number;
+  aiOptimization: FacilityOptimization;
+}
+
+interface FacilityOptimization {
+  id: string;
   energyScore: number;
   securityScore: number;
   efficiencyScore: number;
   recommendations: string[];
 }
 
+interface FacilityAnalytics {
+  totalFacilities: number;
+  operationalFacilities: number;
+  averageUtilization: number;
+  energyEfficiency: number;
+  securityScore: number;
+  aiOptimizationScore: number;
+}
+
+const mockFacilities: Facility[] = [
+  {
+    id: 'facility-1',
+    name: 'Office Building',
+    type: 'Commercial',
+    location: 'Downtown',
+    status: 'operational',
+    capacity: 500,
+    utilization: 85,
+    lastInspection: '2024-01-15',
+    nextInspection: '2024-04-15',
+    energyEfficiency: 82,
+    securityScore: 90,
+    aiOptimization: {
+      id: 'opt-1',
+      energyScore: 88,
+      securityScore: 92,
+      efficiencyScore: 85,
+      recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']
+    }
+  },
+  {
+    id: 'facility-2',
+    name: 'Data Center',
+    type: 'Technology',
+    location: 'Industrial Zone',
+    status: 'operational',
+    capacity: 200,
+    utilization: 95,
+    lastInspection: '2024-01-10',
+    nextInspection: '2024-04-10',
+    energyEfficiency: 78,
+    securityScore: 98,
+    aiOptimization: {
+      id: 'opt-2',
+      energyScore: 75,
+      securityScore: 96,
+      efficiencyScore: 90,
+      recommendations: ['Optimize cooling systems', 'Implement predictive maintenance', 'Upgrade power management']
+    }
+  },
+  {
+    id: "facility-3",
+    name: "Warehouse Complex",
+    type: "Storage",
+    location: "Logistics Park",
+    status: "maintenance",
+    capacity: 1000,
+    utilization: 60,
+    lastInspection: '2024-01-20',
+    nextInspection: '2024-04-20',
+    energyEfficiency: 65,
+    securityScore: 82,
+    aiOptimization: {
+      id: 'opt-3',
+      energyScore: 62,
+      securityScore: 80,
+      efficiencyScore: 70,
+      recommendations: ['Install energy-efficient lighting', 'Improve security systems', 'Optimize space utilization']
+    }
+  },
+  {
+    id: "facility-4",
+    name: "Research Laboratory",
+    type: "Research",
+    location: "Science Park",
+    status: 'operational',
+    capacity: 150,
+    utilization: 90,
+    lastInspection: '2024-01-12',
+    nextInspection: '2024-04-12',
+    energyEfficiency: 85,
+    securityScore: 99,
+    aiOptimization: {
+      id: 'opt-4',
+      energyScore: 82,
+      securityScore: 98,
+      efficiencyScore: 88,
+      recommendations: ['Implement advanced climate control', 'Enhance safety protocols', 'Optimize equipment layout']
+    }
+  }
+];
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
   try {
-    const { facilityType, status } = req.body;
-
-    const facilityData = {
-      facilities: [
-        {
-          id: 'facility-1',
-          name: 'Main Office Building',
-          type: 'office',
-          status: 'operational',
-          capacity: 200,
-          utilization: 85,
-          energyScore: 88,
-          securityScore: 92,
-          efficiencyScore: 85,
-          recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']
-        },
-        {
-          id: 'facility-2',
-          name: 'Data Center',
-          type: 'data-center',
-          status: 'operational',
-          capacity: 1000,
-          utilization: 92,
-          energyScore: 95,
-          securityScore: 98,
-          efficiencyScore: 90,
-          recommendations: ['Optimize cooling systems', 'Implement power management', 'Add redundancy']
-        },
-        {
-          id: 'facility-3',
-          name: 'Warehouse',
-          type: 'warehouse',
-          status: 'maintenance',
-          capacity: 5000,
-          utilization: 60,
-          energyScore: 75,
-          securityScore: 85,
-          efficiencyScore: 70,
-          recommendations: ['Upgrade lighting to LED', 'Improve security systems', 'Optimize layout']
+    const { action, filters } = req.body;
+    switch (action) {
+      case 'getFacilities':
+          return res.status(200).json({
+          success: true,
+          data: mockFacilities,
+          analytics: {
+            totalFacilities: mockFacilities.length,
+            operationalFacilities: mockFacilities.filter(f => f.status === 'operational').length,
+            averageUtilization: mockFacilities.reduce((sum, f) => sum + f.utilization, 0) / mockFacilities.length,
+            averageEnergyEfficiency: mockFacilities.reduce((sum, f) => sum + f.energyEfficiency, 0) / mockFacilities.length
+          }
+        });
+      case 'getFacilityAnalytics':
+        return res.status(200).json({
+          success: true,
+          analytics: {
+            totalFacilities: 4,
+            operationalFacilities: 3,
+            averageUtilization: 82.5,
+            energyEfficiency: 80,
+            securityScore: 93.5,
+            aiOptimizationScore: 91.2,
+            recommendations: [
+              'Implement IoT sensors for real-time monitoring',
+              'Upgrade to smart building management systems',
+              'Optimize energy consumption patterns',
+              'Enhance security protocols with AI'
+            ]
+          }
+        });
+      case 'getFacilityDetails':
+        const { facilityId } = req.body;
+        const facility = mockFacilities.find(f => f.id === facilityId);
+        if (!facility) {
+          return res.status(404).json({ error: "Facility not found" });
         }
-      ],
-      summary: {
-        totalFacilities: 3,
-        operationalFacilities: 2,
-        averageUtilization: 79,
-        averageEnergyScore: 86,
-        criticalMaintenance: 1
-      }
-    };
-
-    res.status(200).json(facilityData);
+        return res.status(200).json({
+          success: true,
+          data: facility,
+          analytics: {
+            utilizationTrend: 'stable',
+            energyTrend: 'improving',
+            securityStatus: 'excellent',
+            maintenanceSchedule: 'on-track',
+            optimizationOpportunities: 3
+          }
+        });
+      case 'optimizeFacility':
+        const { facilityId: optFacilityId, optimizationType } = req.body;
+        const optFacility = mockFacilities.find(f => f.id === optFacilityId);
+        if (!optFacility) {
+          return res.status(404).json({ error: "Facility not found" });
+        }
+        // Simulate AI optimization
+        const optimization = {
+          type: optimizationType,
+          currentScore: optFacility.aiOptimization.efficiencyScore,
+          optimizedScore: Math.min(100, optFacility.aiOptimization.efficiencyScore + 10),
+          improvements: [
+            'Automated climate control adjustment',
+            'Predictive maintenance scheduling',
+            'Energy consumption optimization',
+            'Security system enhancement'
+          ],
+          estimatedSavings: Math.floor(Math.random() * 50000) + 10000,
+          implementationTime: "2-4 weeks"
+        };
+        return res.status(200).json({
+          success: true,
+          optimization,
+          recommendations: optFacility.aiOptimization.recommendations
+        });
+      default:
+        return res.status(400).json({ error: 'Invalid action' });
+    }
   } catch (error) {
-    console.error('Error processing facility management request:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('AI Facility Management API Error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 } 
  
