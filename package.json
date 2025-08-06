@@ -54,7 +54,15 @@
     "automation:all": "npm run automation:factory & npm run automation:orchestrator & npm run automation:improvement & npm run automation:coordinator",
     "automation:status": "node automation/check-automation-status.js",
     "automation:restart": "node automation/restart-all-automation.js",
-    "automation:enhance": "node automation/enhance-all-automation.js"
+    "automation:enhance": "node automation/enhance-all-automation.js",
+    "design:start": "node automation/launch-design-improvement-automation.js start",
+    "design:layout": "node automation/launch-design-improvement-automation.js layout",
+    "design:navigation": "node automation/launch-design-improvement-automation.js navigation",
+    "design:visual": "node automation/launch-design-improvement-automation.js visual-design",
+    "design:cycle": "node automation/launch-design-improvement-automation.js cycle",
+    "design:status": "node automation/launch-design-improvement-automation.js status",
+    "design:stop": "node automation/launch-design-improvement-automation.js stop",
+    "design:all": "npm run design:layout && npm run design:navigation && npm run design:visual"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
