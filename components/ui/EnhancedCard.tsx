@@ -1,30 +1,15 @@
+import React from 'react';
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-  color?: 'blue' | 'purple' | 'green' | 'pink'
-  icon = '🚀'
-  link = '#'
-  color = 'blue'
-      gradient: 'from-neon-blue to-neon-purple'
-      border: 'border-neon-blue/30'
-      hoverBorder: 'border-neon-blue/60'
-      glow: 'shadow-neon-blue/20'
-      hoverGlow: 'shadow-neon-blue/40'
-      gradient: 'from-neon-purple to-neon-pink'
-      border: 'border-neon-purple/30'
-      hoverBorder: 'border-neon-purple/60'
-      glow: 'shadow-neon-purple/20'
-      hoverGlow: 'shadow-neon-purple/40'
-      gradient: 'from-neon-green to-neon-blue'
-      border: 'border-neon-green/30'
-      hoverBorder: 'border-neon-green/60'
-      glow: 'shadow-neon-green/20'
-      hoverGlow: 'shadow-neon-green/40'
-      gradient: 'from-neon-pink to-neon-purple'
-      border: 'border-neon-pink/30'
-      hoverBorder: 'border-neon-pink/60'
-      glow: 'shadow-neon-pink/20'
-      hoverGlow: 'shadow-neon-pink/40'
-            ? 'bg-gradient-to-br from-black/40 to-black/20 border-2 border-neon-blue/50'
-            : 'glass-dark border border-white/10'
-        
+interface EnhancedCardProps {
+  // TODO: Add props interface
+}
+
+const EnhancedCard: React.FC<EnhancedCardProps> = (props) => {
+  return (
+    <div>
+      {/* TODO: Add component content */}
+    </div>
+  );
+};
+
+export default EnhancedCard;

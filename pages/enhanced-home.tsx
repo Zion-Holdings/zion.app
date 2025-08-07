@@ -1,6 +1,20 @@
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-import React from 'react'
-import Head from 'next/head'
-import EnhancedCard from '../components/ui/EnhancedCard'
-import EnhancedButton from '../components/ui/EnhancedButton'
-              description="
+const EnhancedHome: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>EnhancedHome - Zion Tech Solutions</title>
+        <meta name="description" content="EnhancedHome page" />
+      </Head>
+      
+      <main>
+        <h1>EnhancedHome</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default EnhancedHome;

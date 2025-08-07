@@ -1,36 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-    window.addEventListener('scroll'
-    return () => window.removeEventListener('scroll'
-      name: 'Home'
-      href: '/'
-      icon: '🏠'
-      name: 'Services'
-      href: '/services'
-      icon: '⚡'
-        { name: 'AI Development', href: '/services/ai-development'
-        { name: 'Cloud Solutions', href: '/services/cloud-solutions'
-        { name: 'Security', href: '/services/security'
-        { name: 'Consulting', href: '/services/consulting'
-      name: 'Products'
-      href: '/products'
-      icon: '🚀'
-        { name: 'AI Tools', href: '/products/ai-tools'
-        { name: 'Hardware', href: '/products/hardware'
-        { name: 'Software', href: '/products/software'
-      name: 'Talent'
-      href: '/talents'
-      icon: '👥'
-      name: 'Blog'
-      href: '/blog'
-      icon: '📝'
-      name: 'About'
-      href: '/about'
-      icon: 'ℹ️'
-        ? 'bg-black/80 backdrop-blur-xl border-b border-neon-blue/20 shadow-neon-blue/10'
-        : 'bg-transparent'
-                      ? 'text-neon-blue bg-neon-blue/10 border border-neon-blue/30'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
-                        ? 'text-neon-blue bg-neon-blue/10 border border-neon-blue/30'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+import React from 'react';
+
+interface EnhancedNavigationProps {
+  // TODO: Add props interface
+}
+
+const EnhancedNavigation: React.FC<EnhancedNavigationProps> = (props) => {
+  return (
+    <div>
+      {/* TODO: Add component content */}
+    </div>
+  );
+};
+
+export default EnhancedNavigation;

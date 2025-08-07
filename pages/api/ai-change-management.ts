@@ -1,29 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-  type: 'technology' | 'process' | 'organizational' | 'cultural'
-  status: 'planned' | 'in-progress' | 'completed' | 'cancelled'
-  priority: 'low' | 'medium' | 'high' | 'critical'
-  impact: 'low' | 'medium' | 'high'
-  if (req.method !== 'GET'
-    return res.status(405).json({ error: 'Method not allowed'
-        id: 'change-1'
-        name: 'Digital Transformation Initiative'
-        type: 'technology'
-        status: 'in-progress'
-        priority: 'high'
-        impact: 'high'
-        description: 'Migrating legacy systems to modern cloud infrastructure'
-        stakeholders: ['IT Department', 'Executive Team'
-          startDate: '2024-01-01'
-          endDate: '2024-06-30'
-        id: 'change-2'
-        name: 'Process Optimization'
-        type: 'process'
-        status: 'planned'
-        priority: 'medium'
-        impact: 'medium'
-        description: 'Improving internal workflows for faster delivery'
-        stakeholders: ['Operations', 'HR'
-          startDate: '2024-03-01'
-          endDate: '2024-09-01'
-    console.error('Change Management API Error:'
-    return res.status(500).json({ error: 'Internal server error'
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function aichangemanagementHandler(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    if (req.method !== 'GET') {
+      return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    // TODO: Implement actual logic
+    const data = {
+      message: 'API endpoint working',
+      timestamp: new Date().toISOString(),
+      endpoint: 'ai-change-management'
+    };
+
+    return res.status(200).json(data);
+  } catch (error) {
+    console.error('API Error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

@@ -1,55 +1,20 @@
-import type { NextPage } from 'next'
-import EnhancedLayout from '../components/layout/EnhancedLayout'
-import EnhancedButton from '../components/ui/EnhancedButton'
-import GlassmorphismCard from '../components/ui/GlassmorphismCard'
-import InteractiveStats from '../components/ui/InteractiveStats'
-import FuturisticHero from '../components/ui/FuturisticHero'
-    { value: 1000, label: 'Connected Devices', icon: '📱', color: 'blue' as const, suffix: '+'
-    { value: 99.9, label: 'Uptime %', icon: '⚡', color: 'green' as const, suffix: '%'
-    { value: 50, label: 'Protocols Supported', icon: '🔗', color: 'purple' as const, suffix: '+'
-    { value: 24, label: 'Real-time Monitoring', icon: '📊', color: 'pink' as const, suffix: '/7'
-      title: 'Advanced AI Capabilities'
-      description: 'Leverage cutting-edge AI technology for superior results and intelligent automation'
-      icon: '🤖'
-      color: 'blue'
-      title: 'Real-time Processing'
-      description: 'Process data and make decisions in real-time with sub-millisecond latency'
-      icon: '⚡'
-      color: 'purple'
-      title: 'Scalable Architecture'
-      description: 'Handle millions of devices with our cloud-native, auto-scaling platform'
-      icon: '📈'
-      color: 'green'
-      title: 'Secure Communication'
-      description: 'End-to-end encryption and secure protocols for all device communications'
-      icon: '🔒'
-      color: 'pink'
-      title: 'Edge Computing'
-      description: 'Process data at the edge for faster response times and reduced bandwidth'
-      icon: '🌐'
-      color: 'blue'
-      title: 'Analytics Dashboard'
-      description: 'Comprehensive analytics and insights for all your IoT devices and data'
-      icon: '📊'
-      color: 'purple'
-      title: 'Smart City Infrastructure'
-      description: 'Complete IoT solutions for modern smart cities including traffic management, environmental monitoring, and public safety'
-      price: '$50K-500K'
-      icon: '🏙️'
-      color: 'blue'
-      title: 'Industrial IoT (IIoT)'
-      description: 'Manufacturing automation, predictive maintenance, and industrial monitoring solutions'
-      price: '$100K-1M'
-      icon: '🏭'
-      color: 'purple'
-      title: 'Healthcare IoT'
-      description: 'Medical device monitoring, patient tracking, and healthcare facility management'
-      price: '$75K-750K'
-      icon: '🏥'
-      color: 'green'
-      title: 'Agriculture IoT'
-      description: 'Precision farming, crop monitoring, and automated irrigation systems'
-      price: '$25K-250K'
-      icon: '🌾'
-      color: 'pink'
-              Real-time metrics showcasing our IoT platform'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const IotPlatforms: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>IotPlatforms - Zion Tech Solutions</title>
+        <meta name="description" content="IotPlatforms page" />
+      </Head>
+      
+      <main>
+        <h1>IotPlatforms</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default IotPlatforms;

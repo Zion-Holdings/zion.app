@@ -1,31 +1,15 @@
+import React from 'react';
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
-  size?: 'sm' | 'md' | 'lg' | 'xl'
-  iconPosition?: 'left' | 'right'
-  gradient?: 'blue' | 'purple' | 'green' | 'pink' | 'custom'
-  variant = 'primary'
-  size = 'md'
-  iconPosition = 'left'
-  className = ''
-  gradient = 'blue'
-    sm: 'px-4 py-2 text-sm'
-    md: 'px-6 py-3 text-base'
-    lg: 'px-8 py-4 text-lg'
-    xl: 'px-10 py-5 text-xl'
-    blue: 'from-neon-blue to-neon-purple'
-    purple: 'from-neon-purple to-neon-pink'
-    green: 'from-neon-green to-neon-blue'
-    pink: 'from-neon-pink to-neon-purple'
-    custom: 'from-neon-blue via-neon-purple to-neon-pink'
-    secondary: 'bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/40'
-    outline: 'bg-transparent border border-neon-blue/50 text-neon-blue hover:bg-neon-blue/10 hover:border-neon-blue'
-    ghost: 'bg-transparent text-gray-300 hover:text-white hover:bg-white/5'
-    danger: 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:shadow-red-500/50'
-    ${fullWidth ? 'w-full' : ''
-    ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 active:scale-95'
-    ${glow ? 'shadow-neon-blue/30 hover:shadow-neon-blue/50' : ''
-    ${animated ? 'animate-pulse' : ''
-      {icon && iconPosition === 'left'
-      {icon && iconPosition === 'right'
+interface EnhancedButtonProps {
+  // TODO: Add props interface
+}
+
+const EnhancedButton: React.FC<EnhancedButtonProps> = (props) => {
+  return (
+    <div>
+      {/* TODO: Add component content */}
+    </div>
+  );
+};
+
+export default EnhancedButton;

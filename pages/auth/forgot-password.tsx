@@ -1,11 +1,36 @@
-import React, { useState } from 'react'
-import { createBrowserClient } from '@supabase/ssr'
-import Link from 'next/link'
-  const [email, setEmail] = useState(''
-  const [message, setMessage] = useState(''
-  const [error, setError] = useState(''
-    setError(''
-        redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/auth/reset-password`` : '/auth/reset-password'
-        setMessage('Check your email for the password reset link!'
-      setError('An unexpected error occurred'
-            {loading ? 'Sending...' : 'Send Reset Link'`
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { supabase } from '../../utils/supabase/client';
+
+export default function Forgot-password() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // TODO: Implement auth logic
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      <Head>
+        <title>Forgot-password - Zion Tech Solutions</title>
+        <meta name="description" content="Forgot-password authentication page" />
+      </Head>
+      <div>
+        <h1>Forgot-password</h1>
+        {/* TODO: Add component content */}
+      </div>
+    </div>
+  );
+}

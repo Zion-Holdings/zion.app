@@ -1,88 +1,20 @@
-import type { NextPage } from 'next'
-import EnhancedLayout from '../../components/layout/EnhancedLayout'
-import EnhancedButton from '../../components/ui/EnhancedButton'
-import GlassmorphismCard from '../../components/ui/GlassmorphismCard'
-import InteractiveStats from '../../components/ui/InteractiveStats'
-    { value: 50, label: 'Products Available', icon: '📦', color: 'blue' as const, suffix: '+'
-    { value: 99.9, label: 'Uptime %', icon: '⚡', color: 'green' as const, suffix: '%'
-    { value: 1000, label: 'Enterprise Clients', icon: '🏢', color: 'purple' as const, suffix: '+'
-    { value: 24, label: 'Support Hours', icon: '🛡️', color: 'pink' as const, suffix: '/7'
-      id: 'ai-platform'
-      title: 'AI-Powered Analytics Platform'
-      description: 'Advanced machine learning platform for business intelligence and predictive analytics with real-time processing capabilities'
-      features: ['Real-time data processing', 'Predictive modeling', 'Custom dashboards', 'API integration'
-      category: 'AI & Analytics'
-      price: '$10K-100K'
-      icon: '🤖'
-      color: 'blue'
-      id: 'cloud-suite'
-      title: 'Enterprise Cloud Suite'
-      description: 'Comprehensive cloud infrastructure and management solution for enterprises with multi-cloud support'
-      features: ['Multi-cloud management', 'Auto-scaling', 'Security compliance', 'Cost optimization'
-      category: 'Cloud Infrastructure'
-      price: '$25K-500K'
-      icon: '☁️'
-      color: 'purple'
-      id: 'mobile-platform'
-      title: 'Cross-Platform Mobile Platform'
-      description: 'Native mobile development platform for iOS and Android applications with offline capabilities'
-      features: ['Cross-platform development', 'Native performance', 'Offline capabilities', 'Push notifications'
-      category: 'Mobile Development'
-      price: '$15K-150K'
-      icon: '📱'
-      color: 'green'
-      id: 'security-suite'
-      title: 'Cybersecurity Suite'
-      description: 'Comprehensive security solution for enterprise threat detection and prevention with 24/7 monitoring'
-      features: ['Threat detection', 'Vulnerability scanning', 'Compliance reporting', '24/7 monitoring'
-      category: 'Security'
-      price: '$20K-200K'
-      icon: '🔒'
-      color: 'pink'
-      id: 'data-platform'
-      title: 'Data Pipeline Platform'
-      description: 'End-to-end data engineering and analytics platform for big data processing and real-time streaming'
-      features: ['ETL/ELT processing', 'Real-time streaming', 'Data warehousing', 'Business intelligence'
-      category: 'Data Engineering'
-      price: '$30K-300K'
-      icon: '📊'
-      color: 'blue'
-      id: 'devops-platform'
-      title: 'DevOps Automation Platform'
-      description: 'Complete CI/CD and infrastructure automation platform for modern development teams'
-      features: ['Automated deployments', 'Infrastructure as code', 'Monitoring & alerting', 'Team collaboration'
-      category: 'DevOps'
-      price: '$18K-180K'
-      icon: '⚙️'
-      color: 'purple'
-      name: 'AI & Analytics'
-      description: 'Cutting-edge AI and machine learning solutions'
-      count: '15+ products'
-      icon: '🤖'
-      color: 'blue'
-      name: 'Cloud Infrastructure'
-      description: 'Scalable cloud solutions for enterprises'
-      count: '12+ products'
-      icon: '☁️'
-      color: 'purple'
-      name: 'Mobile Development'
-      description: 'Cross-platform mobile solutions'
-      count: '8+ products'
-      icon: '📱'
-      color: 'green'
-      name: 'Security'
-      description: 'Enterprise-grade security solutions'
-      count: '10+ products'
-      icon: '🔒'
-      color: 'pink'
-      name: 'Data Engineering'
-      description: 'Big data and analytics platforms'
-      count: '6+ products'
-      icon: '📊'
-      color: 'blue'
-      name: 'DevOps'
-      description: 'Automation and deployment tools'
-      count: '9+ products'
-      icon: '⚙️'
-      color: 'purple'
-      description="
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default Index;

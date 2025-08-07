@@ -1,88 +1,20 @@
-import type { NextPage } from 'next'
-import EnhancedLayout from '../../components/layout/EnhancedLayout'
-import EnhancedButton from '../../components/ui/EnhancedButton'
-import GlassmorphismCard from '../../components/ui/GlassmorphismCard'
-import InteractiveStats from '../../components/ui/InteractiveStats'
-    { value: 50, label: 'Open Positions', icon: '💼', color: 'blue' as const, suffix: '+'
-    { value: 100, label: 'Team Members', icon: '👥', color: 'green' as const, suffix: '+'
-    { value: 25, label: 'Countries', icon: '🌍', color: 'purple' as const, suffix: '+'
-    { value: 4.9, label: 'Employee Rating', icon: '⭐', color: 'pink'
-      id: 'senior-developer'
-      title: 'Senior Full-Stack Developer'
-      department: 'Engineering'
-      location: 'Remote / Hybrid'
-      type: 'Full-time'
-      description: 'Lead development of scalable web applications using modern technologies'
-      requirements: ['5+ years experience', 'React/Next.js', 'Node.js/Python', 'Cloud platforms', 'Team leadership'
-      icon: '💻'
-      color: 'blue'
-      id: 'devops-engineer'
-      title: 'DevOps Engineer'
-      department: 'Infrastructure'
-      location: 'Remote'
-      type: 'Full-time'
-      description: 'Build and maintain cloud infrastructure and CI/CD pipelines'
-      requirements: ['3+ years experience', 'AWS/Azure/GCP', 'Docker/Kubernetes', 'Terraform', 'Monitoring tools'
-      icon: '⚙️'
-      color: 'purple'
-      id: 'data-scientist'
-      title: 'Data Scientist'
-      department: 'Analytics'
-      location: 'Remote / Hybrid'
-      type: 'Full-time'
-      description: 'Develop machine learning models and data-driven insights'
-      requirements: ['4+ years experience', 'Python/R', 'ML frameworks', 'SQL/NoSQL', 'Statistical analysis'
-      icon: '🧠'
-      color: 'green'
-      id: 'ui-ux-designer'
-      title: 'Senior UI/UX Designer'
-      department: 'Design'
-      location: 'Remote'
-      type: 'Full-time'
-      description: 'Create exceptional user experiences and beautiful interfaces'
-      requirements: ['5+ years experience', 'Figma/Sketch', 'User research', 'Prototyping', 'Design systems'
-      icon: '🎨'
-      color: 'pink'
-      id: 'product-manager'
-      title: 'Product Manager'
-      department: 'Product'
-      location: 'Remote / Hybrid'
-      type: 'Full-time'
-      description: 'Drive product strategy and execution for enterprise solutions'
-      requirements: ['4+ years experience', 'Agile/Scrum', 'Market analysis', 'User research', 'Cross-functional leadership'
-      icon: '📊'
-      color: 'blue'
-      id: 'security-engineer'
-      title: 'Security Engineer'
-      department: 'Security'
-      location: 'Remote'
-      type: 'Full-time'
-      description: 'Protect our systems and ensure compliance with security standards'
-      requirements: ['3+ years experience', 'Security frameworks', 'Penetration testing', 'Compliance', 'Incident response'
-      icon: '🔒'
-      color: 'purple'
-      title: 'Competitive Salary'
-      description: 'Competitive salary with equity options and performance bonuses'
-      icon: '💰'
-      color: 'blue'
-      title: 'Remote Work'
-      description: 'Flexible remote work environment with global team collaboration'
-      icon: '🏠'
-      color: 'purple'
-      title: 'Health Insurance'
-      description: 'Comprehensive health insurance for you and your family'
-      icon: '🏥'
-      color: 'green'
-      title: 'Professional Growth'
-      description: 'Professional development budget and career growth opportunities'
-      icon: '📈'
-      color: 'pink'
-      title: 'Latest Tools'
-      description: 'Latest tools, equipment, and technology to do your best work'
-      icon: '🛠️'
-      color: 'blue'
-      title: 'Unlimited PTO'
-      description: 'Unlimited paid time off to maintain work-life balance'
-      icon: '🌴'
-      color: 'purple'
-      description="
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default Index;

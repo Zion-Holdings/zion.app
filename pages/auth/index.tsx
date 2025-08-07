@@ -1,20 +1,36 @@
-import React, { useState } from 'react'
-import { createBrowserClient } from '@supabase/ssr'
-import Link from 'next/link'
-  const [email, setEmail] = useState(''
-  const [password, setPassword] = useState(''
-  const [error, setError] = useState(''
-    setError(''
-            emailRedirectTo: typeof window !== 'undefined' ? `${window.location.origin}/auth/callback`` : '/auth/callback'
-          setError('Check your email for the confirmation link!'
-      setError('An unexpected error occurred'
-        provider: 'google'
-          redirectTo: typeof window !== 'undefined' ? ``${window.location.origin}/auth/callback`` : '/auth/callback'
-      setError('An unexpected error occurred'
-        provider: 'github'
-          redirectTo: typeof window !== 'undefined' ? ``${window.location.origin}/auth/callback`` : '/auth/callback'
-      setError('An unexpected error occurred'
-            {isSignUp ? 'Create Account' : 'Sign In'
-            {isSignUp ? 'Join our platform today' : 'Welcome back'
-            {loading ? 'Processing...' : (isSignUp ? 'Sign Up' : 'Sign In'
-              {isSignUp ? 'Already have an account? Sign In' : \"`
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { supabase } from '../../utils/supabase/client';
+
+export default function Index() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // TODO: Implement auth logic
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index authentication page" />
+      </Head>
+      <div>
+        <h1>Index</h1>
+        {/* TODO: Add component content */}
+      </div>
+    </div>
+  );
+}

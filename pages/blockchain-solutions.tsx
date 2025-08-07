@@ -1,64 +1,20 @@
-import type { NextPage } from 'next'
-import EnhancedLayout from '../components/layout/EnhancedLayout'
-import EnhancedButton from '../components/ui/EnhancedButton'
-import GlassmorphismCard from '../components/ui/GlassmorphismCard'
-import InteractiveStats from '../components/ui/InteractiveStats'
-    { value: 1000, label: 'Smart Contracts', icon: '📄', color: 'blue' as const, suffix: '+'
-    { value: 99.9, label: 'Security Score', icon: '🔒', color: 'green' as const, suffix: '%'
-    { value: 50, label: 'Blockchain Networks', icon: '🔗', color: 'purple' as const, suffix: '+'
-    { value: 24, label: 'Transaction Speed', icon: '⚡', color: 'pink' as const, suffix: 'ms'
-      title: 'Smart Contracts'
-      description: 'Automated, self-executing contracts that eliminate intermediaries and reduce costs with advanced security features'
-      icon: '📄'
-      color: 'blue'
-      price: '$5K-50K'
-      title: 'DeFi Platforms'
-      description: 'Decentralized finance solutions for lending, borrowing, and trading with high liquidity and low fees'
-      icon: '💰'
-      color: 'green'
-      price: '$25K-250K'
-      title: 'NFT Marketplaces'
-      description: 'Create and trade unique digital assets with our comprehensive NFT platform solutions'
-      icon: '🎨'
-      color: 'purple'
-      price: '$15K-150K'
-      title: 'Tokenization'
-      description: 'Convert real-world assets into digital tokens for enhanced liquidity and fractional ownership'
-      icon: '🪙'
-      color: 'pink'
-      price: '$10K-100K'
-      title: 'Security Audits'
-      description: 'Comprehensive security audits for smart contracts and blockchain applications with detailed reports'
-      icon: '🔍'
-      color: 'blue'
-      price: '$5K-25K'
-      title: 'Cross-Chain Solutions'
-      description: 'Interoperability solutions that enable seamless transactions across multiple blockchain networks'
-      icon: '🌐'
-      color: 'green'
-      price: '$20K-200K'
-      title: 'Decentralized Architecture'
-      description: 'True decentralization with no single point of failure and distributed consensus mechanisms'
-      icon: '🏗️'
-      color: 'blue'
-      title: 'Immutable Records'
-      description: 'Tamper-proof data storage with cryptographic verification and permanent audit trails'
-      icon: '🔐'
-      color: 'purple'
-      title: 'Smart Automation'
-      description: 'Programmable logic that executes automatically based on predefined conditions'
-      icon: '🤖'
-      color: 'green'
-      title: 'Transparent Transactions'
-      description: 'Public ledger with complete transparency and verifiable transaction history'
-      icon: '👁️'
-      color: 'pink'
-      title: 'Cost Efficiency'
-      description: 'Reduced transaction costs and elimination of middlemen fees'
-      icon: '💸'
-      color: 'blue'
-      title: 'Global Accessibility'
-      description: 'Borderless transactions accessible to anyone with internet connection'
-      icon: '🌍'
-      color: 'purple'
-              Real-time metrics showcasing our blockchain platform'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const BlockchainSolutions: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>BlockchainSolutions - Zion Tech Solutions</title>
+        <meta name="description" content="BlockchainSolutions page" />
+      </Head>
+      
+      <main>
+        <h1>BlockchainSolutions</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default BlockchainSolutions;

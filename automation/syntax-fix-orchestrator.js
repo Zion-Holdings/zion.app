@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const SyntaxErrorMonitor = require('./syntax-error-monitor');
-    console.log('🎼 Starting Syntax Fix Orchestrator...'
-    console.log('🔧 Running comprehensive syntax fix...'
+    console.log('🎼 Starting Syntax Fix Orchestrator...');
+    console.log('🔧 Running comprehensive syntax fix...');
       { pattern: /;;/g, fix: ';', name: 'double semicolon'
       { pattern: /,\s*,/g, fix: ',', name: 'double comma'
       { pattern: /\(\s*\)/g, fix: '()', name: 'empty parentheses'

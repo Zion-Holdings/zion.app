@@ -1,54 +1,20 @@
-import type { NextPage } from 'next'
-import { useState } from 'react'
-import EnhancedLayout from '../components/layout/EnhancedLayout'
-import EnhancedButton from '../components/ui/EnhancedButton'
-import GlassmorphismCard from '../components/ui/GlassmorphismCard'
-    name: ''
-    email: ''
-    company: ''
-    subject: ''
-    message: ''
-  const [message, setMessage] = useState(''
-  const [messageType, setMessageType] = useState<'success' | 'error'>('success'
-    setMessage(''
-      setMessageType('success'
-      setMessage('Thank you for your message! We\'ll get back to you within 24 hours.'
-        name: ''
-        email: ''
-        company: ''
-        subject: ''
-        message: ''
-      title: 'Email Support'
-      description: 'Get help with your account or technical issues'
-      value: 'support@zion.com'
-      icon: '📧'
-      color: 'blue'
-      title: 'Sales Inquiries'
-      description: 'Learn about our enterprise solutions'
-      value: 'sales@zion.com'
-      icon: '💼'
-      color: 'purple'
-      title: 'Partnership'
-      description: 'Explore collaboration opportunities'
-      value: 'partnerships@zion.com'
-      icon: '🤝'
-      color: 'green'
-      title: 'General Inquiries'
-      description: 'Questions about our platform and services'
-      value: 'info@zion.com'
-      icon: 'ℹ️'
-      color: 'pink'
-      question: 'How does Zion\'s free marketplace work?'
-      answer: 'Zion provides free access to AI services and professionals. We make money through premium features and enterprise partnerships, not by charging users for basic services.'
-      question: 'How do I get started as a service provider?'
-      answer: 'Simply sign up for an account, complete your profile, and start offering your services. Our team will verify your credentials and help you get set up.'
-      question: 'What types of AI services are available?'
-      answer: 'We offer a wide range of AI services including machine learning, natural language processing, computer vision, data analytics, and custom AI development.'
-      question: 'Is my data secure on Zion?'
-      answer: 'Yes, we implement enterprise-grade security measures including encryption, secure authentication, and compliance with industry standards.'
-              Have questions about our AI-powered marketplace? We'
-                Fill out the form below and we'
-                    messageType === 'success'
-                      ? 'bg-green-900/20 border border-green-500/30 text-green-300'
-                      : 'bg-red-900/20 border border-red-500/30 text-red-300'
-                    <span>{loading ? 'Sending...' : 'Send Message'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Contact: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Contact - Zion Tech Solutions</title>
+        <meta name="description" content="Contact page" />
+      </Head>
+      
+      <main>
+        <h1>Contact</h1>
+        {/* TODO: Add page content */}
+      </main>
+    </div>
+  );
+};
+
+export default Contact;

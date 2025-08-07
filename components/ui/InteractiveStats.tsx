@@ -1,8 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react'
-  color?: 'blue' | 'purple' | 'green' | 'pink'
-  className = ''
-    blue: 'text-neon-blue'
-    purple: 'text-neon-purple'
-    green: 'text-neon-green'
-    pink: 'text-neon-pink'
-            
+import React from 'react';
+
+interface InteractiveStatsProps {
+  // TODO: Add props interface
+}
+
+const InteractiveStats: React.FC<InteractiveStatsProps> = (props) => {
+  return (
+    <div>
+      {/* TODO: Add component content */}
+    </div>
+  );
+};
+
+export default InteractiveStats;

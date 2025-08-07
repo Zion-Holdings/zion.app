@@ -1,27 +1,36 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Link from 'next/link'
-import { supabase } from '../../utils/supabase/client'
-  const [password, setPassword] = useState(''
-  const [confirmPassword, setConfirmPassword] = useState(''
-  const [message, setMessage] = useState(''
-  const [messageType, setMessageType] = useState<'success' | 'error'>('success'
-        router.push('/auth'
-    setMessage(''
-      setMessageType('error'
-      setMessage('Passwords do not match'
-      setMessageType('error'
-      setMessage('Password must be at least 6 characters long'
-      setMessageType('success'
-      setMessage('Password updated successfully! Redirecting to login...'
-        router.push('/auth'
-      setMessageType('error'
-              messageType === 'success'
-                ? 'bg-green-500/20 border border-green-500/30 text-green-300'
-                : 'bg-red-500/20 border border-red-500/30 text-red-300'
-                  type={showPassword ? 'text' : 'password'
-                  {showPassword ? '👁️' : '👁️‍🗨️'
-                  type={showConfirmPassword ? 'text' : 'password'
-                  {showConfirmPassword ? '👁️' : '👁️‍🗨️'
-              {loading ? 'Updating...' : 'Update Password'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { supabase } from '../../utils/supabase/client';
+
+export default function Reset-password() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // TODO: Implement auth logic
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      <Head>
+        <title>Reset-password - Zion Tech Solutions</title>
+        <meta name="description" content="Reset-password authentication page" />
+      </Head>
+      <div>
+        <h1>Reset-password</h1>
+        {/* TODO: Add component content */}
+      </div>
+    </div>
+  );
+}
