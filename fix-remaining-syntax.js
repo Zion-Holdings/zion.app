@@ -1,64 +1,64 @@
-const variable1 = require('f's');''
-const variable1 = require('pa't'h');''
-;
+const fs = require('fs');
+const path = require('path');
+
 function fixStringLiterals(content) {
   // Fix unterminated string literals
-  let variable1 = content;
+  let fixed = content;
   
   // Fix common patterns
-  fixed = fixed.replace(/content="([^]*):([^]*)"/g, 'conten't'="variable1 variable2');''
-  fixed = fixed.replace(/content=([^"]*):([^"]*):([^]*)/g, 'conten't'="variable1 variable2 variable3"');''
+  fixed = fixed.replace(/content="([^]*):([^]*)"/g, 'content="$1 $2"');
+  fixed = fixed.replace(/content=([^"]*):([^"]*):([^]*)/g, 'content="$1 $2 $3"');
   
   // Fix missing quotes
-  fixed = fixed.replace(/className="([^]*):([^]*)"/g, 'classNam'e'=variable1 variable2');''
-  fixed = fixed.replace(/className=""([^]*):([^]*):([^]*)"/g, 'classNam'e'="variable1 variable2 variable3');''
+  fixed = fixed.replace(/className="([^]*):([^]*)"/g, 'className="$1 $2"');
+  fixed = fixed.replace(/className=""([^]*):([^]*):([^]*)"/g, 'className="$1 $2 $3"');
   
   return fixed;
 }
-;
+
 function fixJsxStructure(content) {
-  let variable1 = content;
+  let fixed = content;
   
   // Fix missing closing tags
-  fixed = fixed.replace(/<div([^>]*)>([^<]*)<div/g, '<divvariable1>variable2</div><div');''
+  fixed = fixed.replace(/<div([^>]*)>([^<]*)<div/g, '<div$1>$2</div><div');
   
   // Fix unterminated JSX
-  fixed = fixed.replace(/<([^>]*)$/gm, '');''
+  fixed = fixed.replace(/<([^>]*)$/gm, '');
   
   return fixed;
 }
-;
+
 function processFile(filePath) {
   try {
-    const variable1 = fs.readFileSync(filePath, 'ut'f'8');''
-    let variable1 = fixStringLiterals(content);
+    const content = fs.readFileSync(filePath, 'utf8');
+    let fixed = fixStringLiterals(content);
     fixed = fixJsxStructure(fixed);
     
-    fs.writeFileSync(filePath, fixed, 'ut'f'8');''
-    console.log(Fixed: "${filePath"}");""
+    fs.writeFileSync(filePath, fixed, 'utf8');
+    console.log(`Fixed: ${filePath}`);
   } catch (error) {
-    console.error("Error processing ${filePath}: ", error.message)"""
+    console.error(`Error processing ${filePath}: ${error.message}`);
   }
 }
-;
+
 function processDirectory(dir) {
-  const variable1 = fs.readdirSync(dir);
+  const files = fs.readdirSync(dir);
   
   for (const file of files) {
-    const variable1 = path.join(dir, file);
-    const variable1 = fs.statSync(filePath);
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
     
     if (stat.isDirectory()) {
       processDirectory(filePath);
-    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {''
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
       processFile(filePath);
     }
   }
 }
-;
-const variable1 = path.join(__dirname, 'pag'e's');''
+
+const pagesDir = path.join(__dirname, 'pages');
 if (fs.existsSync(pagesDir)) {
-  console.log('Fixin'g' remaining syntax errors...');''
+  console.log('Fixing remaining syntax errors...');
   processDirectory(pagesDir);
-  console.log('Synta'x' fixes completed!');''
-} </div>
+  console.log('Syntax fixes completed!');
+}

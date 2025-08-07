@@ -210,6 +210,7 @@ npm run automation:status
 ### 3. Enhance Systems
 
 ```bash
+
 # Enhance all systems
 npm run automation:enhance
 ```
@@ -217,6 +218,7 @@ npm run automation:enhance
 ### 4. Restart if Needed
 
 ```bash
+
 # Restart all systems
 npm run automation:restart
 ```
@@ -226,6 +228,7 @@ npm run automation:restart
 ### Environment Variables
 
 ```bash
+
 # Automation system configuration
 AUTOMATION_INTELLIGENCE_LEVEL=0.9
 AUTOMATION_EVOLUTION_RATE=0.2
@@ -268,8 +271,10 @@ AUTOMATION_HEALTH_CHECK_INTERVAL=60000
 ### Debug Commands
 
 ```bash
+
 # Check system health
 npm run automation:status
+```
 
 # View detailed logs
 tail -f automation/health-logs/*.log
@@ -333,6 +338,7 @@ await automationSystem.evolve();
 ### Testing
 
 ```bash
+
 # Test automation systems
 npm run automation:test
 
