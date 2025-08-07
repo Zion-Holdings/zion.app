@@ -2,7 +2,7 @@
 
 echo "🔍 Running pre-commit checks..."
 
-# Temporarily disable ESLint due to module resolution issues
+# Temporarily disable ESLint due to Next.js installation issues
 # echo "📝 Running ESLint..."
 # npm run lint || {
 #     echo "❌ ESLint failed. Please fix the issues before committing."
