@@ -1,1 +1,3 @@
-export const supabaseMiddleware  = { createMiddlewareClient: () => ({ auth: { getSession: () => {} } }) };
+export const supabaseMiddleware = {
+  createMiddlewareClient: () => ({ auth: { getSession: () => {} } }),
+};

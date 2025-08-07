@@ -4,5 +4,5 @@ export interface QuoteRequest {
   description: string;
   budget: number;
   timeline: string;
-  status: 'pending' | 'approved' | 'rejected' | 'completed';
+  status: "pending" | "approved" | "rejected" | "completed";
 }

@@ -1,5 +1,5 @@
 
-import React from 'rea c t';'
+import React from 'react';'
 impo r t '@testi n g-libra r y/je s t-d o m''
     static async testUserInteraction(element: HTMLElement action: 'click' | 'type' | 'hover')
             case 'click':

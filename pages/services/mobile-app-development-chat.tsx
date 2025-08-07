@@ -1,15 +1,18 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 const mobileappdevelopmentchat: NextPage = () => {
   return (
     <div>
       <Head>
         <title>Mobile App Development Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Mobile App Development Chat service" />
+        <meta
+          name="description"
+          content="Mobile App Development Chat service"
+        />
       </Head>
-      
+
       <main>
         <h1>MobileAppDevelopmentChat</h1>
         <p>Service details coming soon...</p>

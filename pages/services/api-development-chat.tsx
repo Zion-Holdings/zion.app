@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 const apidevelopmentchat: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const apidevelopmentchat: NextPage = () => {
         <title>Api Development Chat - Zion Tech Solutions</title>
         <meta name="description" content="Api Development Chat service" />
       </Head>
-      
+
       <main>
         <h1>ApiDevelopmentChat</h1>
         <p>Service details coming soon...</p>

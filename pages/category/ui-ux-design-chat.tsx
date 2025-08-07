@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 const uiuxdesignchat: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const uiuxdesignchat: NextPage = () => {
         <title>Ui Ux Design Chat - Zion Tech Solutions</title>
         <meta name="description" content="Ui Ux Design Chat blog post" />
       </Head>
-      
+
       <main>
         <h1>UiUxDesignChat</h1>
         <p>Blog content coming soon...</p>

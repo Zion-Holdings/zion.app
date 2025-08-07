@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 const securityauditingchat: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const securityauditingchat: NextPage = () => {
         <title>Security Auditing Chat - Zion Tech Solutions</title>
         <meta name="description" content="Security Auditing Chat service" />
       </Head>
-      
+
       <main>
         <h1>SecurityAuditingChat</h1>
         <p>Service details coming soon...</p>

@@ -11,6 +11,6 @@ export interface Service {
   pricing: {
     from: number;
     currency: string;
-    type: 'hourly' | 'fixed' | 'monthly';
+    type: "hourly" | "fixed" | "monthly";
   };
 }

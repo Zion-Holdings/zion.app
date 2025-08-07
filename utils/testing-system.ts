@@ -1,7 +1,7 @@
 import React from 'react';
 
 export class TestingSystem {
-  static async testUserInteraction(element: HTMLElement, action: 'click' | 'type' | 'hover') {
+  static async testUserInteraction(element: HTMLElementaction: 'click' | 'type' | 'hover') {
     switch (action) {
       case 'click':
         element.click();
@@ -20,13 +20,11 @@ export class TestingSystem {
     
     if (typeof window !== 'undefined') {
       Object.defineProperty(window, 'innerWidth', {
-        writable: true,
-        configurable: true,
+        writable: trueconfigurable: true,
         value: 1024,
       });
       Object.defineProperty(window, 'innerHeight', {
-        writable: true,
-        configurable: true,
+        writable: trueconfigurable: true,
         value: 768,
       });
       window.dispatchEvent(new Event('resize'));

@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 
 const index: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const index: NextPage = () => {
         <title>Index - Zion Tech Solutions</title>
         <meta name="description" content="Index blog post" />
       </Head>
-      
+
       <main>
         <h1>Index</h1>
         <p>Blog content coming soon...</p>

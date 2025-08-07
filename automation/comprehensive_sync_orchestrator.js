@@ -2,16 +2,16 @@
 
 /**
  * Comprehensive Sync Orchestrator
- * 
+ *
  * This system orchestrates all synchronization operations across the project,
  * including file synchronization, Git operations, and deployment coordination.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
-const cron = require('node-cron');
+const fs = require("fs");
+const path = require("path");
+const { spawn, execSync } = require("child_process");
+const { v4: uuidv4 } = require("uuid");
+const cron = require("node-cron");
 
 // Batch processing for optimized file operations
 const writeBatch = {
@@ -38,7 +38,7 @@ const writeBatch = {
     });
 
     this.queue = [];
-  }
+  },
 };
 
 class ComprehensiveSyncOrchestrator {
@@ -50,25 +50,25 @@ class ComprehensiveSyncOrchestrator {
       totalSyncs: 0,
       successfulSyncs: 0,
       failedSyncs: 0,
-      startTime: null
+      startTime: null,
     };
 
     this.config = {
-      syncInterval: '*/5 * * * *', // Every 5 minutes
+      syncInterval: "*/5 * * * *", // Every 5 minutes
       maxConcurrentSyncs: 3,
       retryAttempts: 3,
-      retryDelay: 5000
+      retryDelay: 5000,
     };
 
-    this.logDir = path.join(__dirname, 'comprehensive-sync-logs');
-    this.reportsDir = path.join(__dirname, 'comprehensive-sync-reports');
-    this.statusDir = path.join(__dirname, 'comprehensive-sync-status');
+    this.logDir = path.join(__dirname, "comprehensive-sync-logs");
+    this.reportsDir = path.join(__dirname, "comprehensive-sync-reports");
+    this.statusDir = path.join(__dirname, "comprehensive-sync-status");
 
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    [this.logDir, this.reportsDir, this.statusDir].forEach(dir => {
+    [this.logDir, this.reportsDir, this.statusDir].forEach((dir) => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
@@ -76,7 +76,7 @@ class ComprehensiveSyncOrchestrator {
   }
 
   start() {
-    console.log('🚀 Starting Comprehensive Sync Orchestrator...');
+    console.log("🚀 Starting Comprehensive Sync Orchestrator...");
     this.isRunning = true;
     this.stats.startTime = new Date();
 
@@ -90,21 +90,21 @@ class ComprehensiveSyncOrchestrator {
       writeBatch.flush();
     }, writeBatch.flushInterval);
 
-    console.log('✅ Comprehensive Sync Orchestrator started successfully');
+    console.log("✅ Comprehensive Sync Orchestrator started successfully");
   }
 
   async performSync() {
     if (this.activeSyncs.size >= this.config.maxConcurrentSyncs) {
-      console.log('⚠️  Maximum concurrent syncs reached, skipping...');
+      console.log("⚠️  Maximum concurrent syncs reached, skipping...");
       return;
     }
 
     const syncId = uuidv4();
     const syncTask = {
       id: syncId,
-      type: 'comprehensive',
+      type: "comprehensive",
       startTime: new Date(),
-      status: 'running'
+      status: "running",
     };
 
     this.activeSyncs.set(syncId, syncTask);
@@ -123,15 +123,14 @@ class ComprehensiveSyncOrchestrator {
       await this.performDeploymentSync();
 
       // Update sync task status
-      syncTask.status = 'completed';
+      syncTask.status = "completed";
       syncTask.endTime = new Date();
       this.stats.successfulSyncs++;
 
       console.log(`✅ Comprehensive sync ${syncId} completed successfully`);
-
     } catch (error) {
       console.error(`❌ Comprehensive sync ${syncId} failed:`, error.message);
-      syncTask.status = 'failed';
+      syncTask.status = "failed";
       syncTask.error = error.message;
       syncTask.endTime = new Date();
       this.stats.failedSyncs++;
@@ -145,81 +144,83 @@ class ComprehensiveSyncOrchestrator {
   }
 
   async performGitSync() {
-    console.log('📝 Performing Git synchronization...');
+    console.log("📝 Performing Git synchronization...");
 
     try {
       // Check Git status
-      const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      
+      const status = execSync("git status --porcelain", { encoding: "utf8" });
+
       if (status.trim()) {
         // Add all changes
-        execSync('git add .');
-        
+        execSync("git add .");
+
         // Commit with timestamp
         const timestamp = new Date().toISOString();
         execSync(`git commit -m "Auto-sync: ${timestamp}"`);
-        
+
         // Push to remote
-        execSync('git push');
-        
-        console.log('✅ Git sync completed');
+        execSync("git push");
+
+        console.log("✅ Git sync completed");
       } else {
-        console.log('ℹ️  No changes to sync');
+        console.log("ℹ️  No changes to sync");
       }
     } catch (error) {
-      console.error('❌ Git sync failed:', error.message);
+      console.error("❌ Git sync failed:", error.message);
       throw error;
     }
   }
 
   async performFileSync() {
-    console.log('📁 Performing file synchronization...');
+    console.log("📁 Performing file synchronization...");
 
     try {
       // Sync important directories
-      const syncDirs = ['src', 'public', 'components', 'utils'];
-      
+      const syncDirs = ["src", "public", "components", "utils"];
+
       for (const dir of syncDirs) {
         const sourcePath = path.join(process.cwd(), dir);
         if (fs.existsSync(sourcePath)) {
           // Create backup
-          const backupPath = path.join(__dirname, 'backups', dir);
+          const backupPath = path.join(__dirname, "backups", dir);
           fs.mkdirSync(path.dirname(backupPath), { recursive: true });
-          
+
           if (fs.existsSync(backupPath)) {
             fs.rmSync(backupPath, { recursive: true });
           }
-          
+
           fs.cpSync(sourcePath, backupPath, { recursive: true });
         }
       }
 
-      console.log('✅ File sync completed');
+      console.log("✅ File sync completed");
     } catch (error) {
-      console.error('❌ File sync failed:', error.message);
+      console.error("❌ File sync failed:", error.message);
       throw error;
     }
   }
 
   async performDeploymentSync() {
-    console.log('🚀 Performing deployment coordination...');
+    console.log("🚀 Performing deployment coordination...");
 
     try {
       // Check if build is needed
-      const packageJsonPath = path.join(process.cwd(), 'package.json');
+      const packageJsonPath = path.join(process.cwd(), "package.json");
       if (fs.existsSync(packageJsonPath)) {
-        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-        
+        const packageJson = JSON.parse(
+          fs.readFileSync(packageJsonPath, "utf8"),
+        );
+
         // Trigger build if needed
         if (packageJson.scripts && packageJson.scripts.build) {
-          console.log('🔨 Triggering build...');
-          execSync('npm run build', { stdio: 'inherit' });
+          console.log("🔨 Triggering build...");
+          execSync("npm run build", { stdio: "inherit" });
         }
       }
 
-      console.log('✅ Deployment sync completed');
+      console.log("✅ Deployment sync completed");
     } catch (error) {
-      console.error('❌ Deployment sync failed:', error.message);
+      console.error("❌ Deployment sync failed:", error.message);
       throw error;
     }
   }
@@ -231,7 +232,9 @@ class ComprehensiveSyncOrchestrator {
     }
 
     syncTask.retryCount = (syncTask.retryCount || 0) + 1;
-    console.log(`🔄 Retrying sync ${syncId} (attempt ${syncTask.retryCount})...`);
+    console.log(
+      `🔄 Retrying sync ${syncId} (attempt ${syncTask.retryCount})...`,
+    );
 
     setTimeout(async () => {
       try {
@@ -247,28 +250,28 @@ class ComprehensiveSyncOrchestrator {
       isRunning: this.isRunning,
       activeSyncs: this.activeSyncs.size,
       stats: this.stats,
-      lastUpdate: new Date().toISOString()
+      lastUpdate: new Date().toISOString(),
     };
 
-    const statusPath = path.join(this.statusDir, 'orchestrator-status.json');
+    const statusPath = path.join(this.statusDir, "orchestrator-status.json");
     fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
   stop() {
-    console.log('🛑 Stopping Comprehensive Sync Orchestrator...');
+    console.log("🛑 Stopping Comprehensive Sync Orchestrator...");
     this.isRunning = false;
-    
+
     // Stop all active syncs
     this.activeSyncs.clear();
-    
-    console.log('✅ Comprehensive Sync Orchestrator stopped');
+
+    console.log("✅ Comprehensive Sync Orchestrator stopped");
   }
 
   getStats() {
     return {
       ...this.stats,
       activeSyncs: this.activeSyncs.size,
-      isRunning: this.isRunning
+      isRunning: this.isRunning,
     };
   }
 }
@@ -279,12 +282,12 @@ if (require.main === module) {
   orchestrator.start();
 
   // Handle graceful shutdown
-  process.on('SIGINT', () => {
+  process.on("SIGINT", () => {
     orchestrator.stop();
     process.exit(0);
   });
 
-  process.on('SIGTERM', () => {
+  process.on("SIGTERM", () => {
     orchestrator.stop();
     process.exit(0);
   });
