@@ -194,6 +194,38 @@ class LintErrorFixer {
       }
     }
   }
+
+  async startContinuousMode() {
+    this.log('🔄 Starting continuous lint error fixing mode...');
+    
+    // Run initial fix
+    await this.fixAllFiles();
+    
+    // Set up file watcher
+    const patterns = [
+      'pages/**/*.{js,jsx,ts,tsx}',
+      'components/**/*.{js,jsx,ts,tsx}',
+      'utils/**/*.{js,jsx,ts,tsx}',
+      'hooks/**/*.{js,jsx,ts,tsx}'
+    ];
+
+    const watcher = require('chokidar').watch(patterns, {
+      ignored: /(node_modules|\.next)/,
+      persistent: true
+    });
+
+    watcher.on('change', async (filePath) => {
+      this.log(`📝 File changed: ${filePath}`);
+      await this.fixFile(filePath);
+    });
+
+    watcher.on('add', async (filePath) => {
+      this.log(`📝 New file detected: ${filePath}`);
+      await this.fixFile(filePath);
+    });
+
+    this.log('✅ Continuous mode started - watching for file changes');
+  }
 }
 
 // CLI handling
@@ -212,7 +244,10 @@ switch (command) {
   case 'all':
     fixer.fixAllFiles();
     break;
+  case 'continuous':
+    fixer.startContinuousMode();
+    break;
   default:
-    console.log('Usage: node lint-error-fixer.js [file <filepath>|all]');
-    process.exit(1);
+    // If no arguments provided, run in continuous mode
+    fixer.startContinuousMode();
 }

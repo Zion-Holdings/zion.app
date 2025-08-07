@@ -1,12 +1,16 @@
-import React from 'react';
+import { ReactNode } from "react";
 
-const AnimatedBackground: React.FC = () => {
+interface AnimatedBackgroundProps {
+  children?: ReactNode;
+  className?: string;
+}
+
+export default function AnimatedBackground({ children, className = '' }: AnimatedBackgroundProps) {
   return (
-    <div className="fixed inset-0 -z-10">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 animate-pulse"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-purple-50 to-pink-100 opacity-50 animate-pulse delay-1000"></div>
+    <div className={`fixed inset-0 -z-10 ${className}`}>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-transparent opacity-20"></div>
+      {children}
     </div>
   );
-};
-
-export default AnimatedBackground;
+}

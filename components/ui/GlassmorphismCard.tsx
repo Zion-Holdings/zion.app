@@ -1,16 +1,17 @@
-import React from 'react';
+import { ReactNode } from "react";
 
 interface GlassmorphismCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-const GlassmorphismCard: React.FC<GlassmorphismCardProps> = ({ children, className = '' }) => {
+export default function GlassmorphismCard({ 
+  children, 
+  className = "bg-white/20 backdrop-blur-md rounded-xl shadow-lg p-6 border border-white/30" 
+}: GlassmorphismCardProps) {
   return (
-    <div className={`backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 shadow-xl ${className}`}>
+    <div className={className}>
       {children}
     </div>
   );
-};
-
-export default GlassmorphismCard;
+}

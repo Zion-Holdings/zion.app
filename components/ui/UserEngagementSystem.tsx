@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface UserEngagementSystemProps {
   className?: string;
 }
 
 const UserEngagementSystem: React.FC<UserEngagementSystemProps> = ({ className = '' }) => {
-  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className={`fixed bottom-4 right-4 z-50 ${className}`}>
@@ -13,7 +12,7 @@ const UserEngagementSystem: React.FC<UserEngagementSystemProps> = ({ className =
       <div className="bg-white rounded-lg shadow-lg border border-gray-200 w-80">
         <div className="bg-blue-600 text-white p-4 rounded-t-lg">
           <h3 className="font-semibold">Need Help?</h3>
-          <p className="text-sm opacity-90">We're here to assist you</p>
+          <p className="text-sm opacity-90">We&apos;re here to assist you</p>
         </div>
         
         <div className="p-4">

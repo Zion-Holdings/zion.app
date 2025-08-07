@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 interface InteractiveNavigationProps {
   className?: string;
 }
 
 const InteractiveNavigation: React.FC<InteractiveNavigationProps> = ({ className = '' }) => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,10 +19,10 @@ const InteractiveNavigation: React.FC<InteractiveNavigationProps> = ({ className
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-            <a href="/services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-            <a href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-            <a href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+            <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Home</Link>
+            <Link href="/services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</Link>
+            <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
           </div>
 
           {/* Mobile menu button */}
@@ -44,10 +46,10 @@ const InteractiveNavigation: React.FC<InteractiveNavigationProps> = ({ className
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="/" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
-              <a href="/services" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
-              <a href="/about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+              <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</Link>
+              <Link href="/services" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</Link>
+              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</Link>
+              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</Link>
             </div>
           </div>
         )}

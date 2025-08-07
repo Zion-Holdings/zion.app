@@ -1,14 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { execSync, spawn } from 'child_process';
-import chokidar from 'chokidar';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const chokidar = require('chokidar');
 
 class LintMonitor {
   constructor() {
@@ -39,7 +34,8 @@ class LintMonitor {
       this.log('🔍 Checking lint status...');
       const result = execSync('npm run lint', { 
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
+        cwd: path.join(__dirname, '..')
       });
       
       this.errorCount = 0;
@@ -65,7 +61,8 @@ class LintMonitor {
       this.log('🔧 Attempting auto-fix...');
       const result = execSync('npm run lint -- --fix', { 
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
+        cwd: path.join(__dirname, '..')
       });
       this.log('✅ Auto-fix completed successfully');
       return true;

@@ -1,22 +1,29 @@
-import Head from "next/head";
-import { ReactNode } from "react";
+import React from 'react';
+import Head from 'next/head';
 
 interface LayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
   title?: string;
   description?: string;
 }
 
-export default function Layout({ children, title = "Zion Tech Solutions", description = "Leading technology solutions provider" }: LayoutProps) {
+const Layout: React.FC<LayoutProps> = ({ 
+  children, 
+  title = 'Zion Tech Solutions',
+  description = 'Leading technology solutions for modern businesses'
+}) => {
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
     </>
   );
-}
+};
+
+export default Layout;
