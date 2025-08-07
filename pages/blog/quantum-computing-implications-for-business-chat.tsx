@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const quantum-computing-implications-for-business-chat: NextPage = () => {
+const QuantumComputingImplicationsForBusinessChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>quantum-computing-implications-for-business-chat - Zion Tech Solutions</title>
-        <meta name="description" content="quantum-computing-implications-for-business-chat blog post" />
+        <title>QuantumComputingImplicationsForBusinessChat - Zion Tech Solutions</title>
+        <meta name="description" content="QuantumComputingImplicationsForBusinessChat blog post" />
       </Head>
       
       <main>
-        <h1>quantum-computing-implications-for-business-chat</h1>
+        <h1>QuantumComputingImplicationsForBusinessChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const quantum-computing-implications-for-business-chat: NextPage = () => {
   );
 };
 
-export default quantum-computing-implications-for-business-chat;
+export default QuantumComputingImplicationsForBusinessChat;

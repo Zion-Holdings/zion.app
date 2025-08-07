@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const index: NextPage = () => {
+const Index: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>index - Zion Tech Solutions</title>
-        <meta name="description" content="index service" />
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index service" />
       </Head>
       
       <main>
-        <h1>index</h1>
+        <h1>Index</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>
@@ -19,4 +19,4 @@ const index: NextPage = () => {
   );
 };
 
-export default index;
+export default Index;

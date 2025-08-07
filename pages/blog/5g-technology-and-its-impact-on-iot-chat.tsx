@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const FiveGTechnologyAndItsImpactOnIotChat: NextPage = () => {
+const 5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>5g-technology-and-its-impact-on-iot-chat - Zion Tech Solutions</title>
-        <meta name="description" content="5g-technology-and-its-impact-on-iot-chat blog post" />
+        <title>5gTechnologyAndItsImpactOnIotChat - Zion Tech Solutions</title>
+        <meta name="description" content="5gTechnologyAndItsImpactOnIotChat blog post" />
       </Head>
       
       <main>
-        <h1>5g-technology-and-its-impact-on-iot-chat</h1>
+        <h1>5gTechnologyAndItsImpactOnIotChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const FiveGTechnologyAndItsImpactOnIotChat: NextPage = () => {
   );
 };
 
-export default FiveGTechnologyAndItsImpactOnIotChat;
+export default 5gTechnologyAndItsImpactOnIotChat;

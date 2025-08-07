@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const ui-ux-design-chat: NextPage = () => {
+const UiUxDesignChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>ui-ux-design-chat - Zion Tech Solutions</title>
-        <meta name="description" content="ui-ux-design-chat service" />
+        <title>UiUxDesignChat - Zion Tech Solutions</title>
+        <meta name="description" content="UiUxDesignChat service" />
       </Head>
       
       <main>
-        <h1>ui-ux-design-chat</h1>
+        <h1>UiUxDesignChat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>
@@ -19,4 +19,4 @@ const ui-ux-design-chat: NextPage = () => {
   );
 };
 
-export default ui-ux-design-chat;
+export default UiUxDesignChat;

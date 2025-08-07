@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const the-rise-of-edge-computing-in-iot-applications-chat: NextPage = () => {
+const TheRiseOfEdgeComputingInIotApplicationsChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>the-rise-of-edge-computing-in-iot-applications-chat - Zion Tech Solutions</title>
-        <meta name="description" content="the-rise-of-edge-computing-in-iot-applications-chat blog post" />
+        <title>TheRiseOfEdgeComputingInIotApplicationsChat - Zion Tech Solutions</title>
+        <meta name="description" content="TheRiseOfEdgeComputingInIotApplicationsChat blog post" />
       </Head>
       
       <main>
-        <h1>the-rise-of-edge-computing-in-iot-applications-chat</h1>
+        <h1>TheRiseOfEdgeComputingInIotApplicationsChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const the-rise-of-edge-computing-in-iot-applications-chat: NextPage = () => {
   );
 };
 
-export default the-rise-of-edge-computing-in-iot-applications-chat;
+export default TheRiseOfEdgeComputingInIotApplicationsChat;

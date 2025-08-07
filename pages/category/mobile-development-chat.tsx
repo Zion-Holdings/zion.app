@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const mobile-development-chat: NextPage = () => {
+const MobileDevelopmentChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>mobile-development-chat - Zion Tech Solutions</title>
-        <meta name="description" content="mobile-development-chat blog post" />
+        <title>MobileDevelopmentChat - Zion Tech Solutions</title>
+        <meta name="description" content="MobileDevelopmentChat blog post" />
       </Head>
       
       <main>
-        <h1>mobile-development-chat</h1>
+        <h1>MobileDevelopmentChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const mobile-development-chat: NextPage = () => {
   );
 };
 
-export default mobile-development-chat;
+export default MobileDevelopmentChat;
