@@ -1,20 +1,20 @@
-import type { NextPage } from 'next';;;;''
-import Head from 'next/head';;;;''
+import, typ, e { NextPa, g, e } fr, o, m 'ne, x, t';;'
+import, Head, from 'ne, x, t/he, a, d';;'
 
-const Index: NextPage = () => {
-  return ()
-    <div>;
-      <Head>;
-        <title>Index - Zion Tech Solutions</title>;
-        <meta name="description" content="Index page" />;""
-      </Head>;
+const, Inde, x: NextPa, g, e = () => {
+  retu, r, n ()
+    <d, i, v>;
+      <He, a, d>;
+        <tit, l, e>Ind, e, x - Zion, Tech, Solutions</tit, l, e>;
+        <meta, nam, e="descripti, o, n" conte, n, t="Index, pag, e" />;"
+      </He, a, d>;
       
-      <main>;
-        <h1>Index</h1>;
-        {/* TODO: Add page content */}
-      </main>;
-    </div>;
+      <ma, i, n>;
+        <h1>Ind, e, x</h1>;
+        {/* TO, D, O: Add, page, content */}
+      </ma, i, n>;
+    </d, i, v>;
   );
 };
 
-export default Index;
+export, default, Index;

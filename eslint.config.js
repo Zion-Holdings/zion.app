@@ -1,41 +1,41 @@
-import js from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
+import, js, from '@esli, n, t/js';
+import, nextPlugin, from '@ne, x, t/esli, n, t-plug, i, n-ne, x, t';
+import, tseslint, from '@typescri, p, t-esli, n, t/esli, n, t-plug, i, n';
+import, tsparser, from '@typescri, p, t-esli, n, t/pars, e, r';
 
-export default [
-  js.configs.recommended,
+export, defaul, t [
+  js.confi, g, s.recommend, e, d,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      parser: tsparser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true
+    fil, e, s: ['**/*.{js,j, s, x,ts,t, s, x}'],
+    languageOptio, n, s: {
+      pars, e, r: tspars, e, r,
+      parserOptio, n, s: {
+        ecmaVersi, o, n: 'late, s, t',
+        sourceTy, p, e: 'modu, l, e',
+        ecmaFeatur, e, s: {
+          j, s, x: tr, u, e
         }
       }
     },
-    plugins: {
-      '@typescript-eslint': tseslint,
-      '@next/next': nextPlugin
+    plugi, n, s: {
+      '@typescri, p, t-esli, n, t': tsesli, n, t,
+      '@ne, x, t/ne, x, t': nextPlug, i, n
     },
-    rules: {
-      '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      'prefer-const': 'warn',
-      'no-var': 'error',
-      'no-console': 'warn',
-      'no-debugger': 'error',
-      'no-unused-vars': 'off',
-      'no-undef': 'error',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
-      'indent': ['error', 2],
-      'comma-dangle': ['error', 'never'],
-      'object-curly-spacing': ['error', 'always'],
-      'array-bracket-spacing': ['error', 'never']
+    rul, e, s: {
+      '@typescri, p, t-esli, n, t/no-unus, e, d-va, r, s': 'wa, r, n',
+      '@typescri, p, t-esli, n, t/no-explic, i, t-a, n, y': 'wa, r, n',
+      'pref, e, r-con, s, t': 'wa, r, n',
+      'no-v, a, r': 'err, o, r',
+      'no-conso, l, e': 'wa, r, n',
+      'no-debugg, e, r': 'err, o, r',
+      'no-unus, e, d-va, r, s': 'o, f, f',
+      'no-und, e, f': 'err, o, r',
+      'se, m, i': ['err, o, r', 'alwa, y, s'],
+      'quot, e, s': ['err, o, r', 'sing, l, e'],
+      'inde, n, t': ['err, o, r', 2],
+      'com, m, a-dang, l, e': ['err, o, r', 'nev, e, r'],
+      'obje, c, t-cur, l, y-spaci, n, g': ['err, o, r', 'alwa, y, s'],
+      'arr, a, y-brack, e, t-spaci, n, g': ['err, o, r', 'nev, e, r']
     }
   }
 ];

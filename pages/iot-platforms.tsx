@@ -1,20 +1,20 @@
-import type { NextPage } from 'next';;;;''
-import Head from 'next/head';;;;''
+import, typ, e { NextPa, g, e } fr, o, m 'ne, x, t';;'
+import, Head, from 'ne, x, t/he, a, d';;'
 
-const IotPlatforms: NextPage = () => {
-  return ()
-    <div>;
-      <Head>;
-        <title>IotPlatforms - Zion Tech Solutions</title>
-        <meta name="description" content="IotPlatforms page" />""
-      </Head>;
+const, IotPlatform, s: NextPa, g, e = () => {
+  retu, r, n ()
+    <d, i, v>;
+      <He, a, d>;
+        <tit, l, e>IotPlatfor, m, s - Zion, Tech, Solutions</tit, l, e>
+        <meta, nam, e="descripti, o, n" conte, n, t="IotPlatforms, pag, e" />"
+      </He, a, d>;
       
-      <main>;
-        <h1>IotPlatforms</h1>
-        {/* TODO: Add page content */}
-      </main>;
-    </div>;
+      <ma, i, n>;
+        <h1>IotPlatfor, m, s</h1>
+        {/* TO, D, O: Add, page, content */}
+      </ma, i, n>;
+    </d, i, v>;
   );
 };
 
-export default IotPlatforms;
+export, default, IotPlatforms;

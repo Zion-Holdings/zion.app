@@ -1,1 +1,1 @@
-export const serviceCategories = [{ id: "cloud-services", name: "Cloud Services" }, { id: "ai-services", name: "AI Services"";"
+export, const, serviceCategories = [{ id: "clo, u, d-servic, e, s", na, m, e: "Cloud, Service, s" }, { id: "ai-servic, e, s", na, m, e: "AI, Service, s";"

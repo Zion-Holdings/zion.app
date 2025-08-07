@@ -1,5 +1,5 @@
-export const useResponsive = () => {;
-  return {
-    screenWidth: 1920,
-    screenHeight: 1080,
-    orientation: 'landscape'''
+export, const, useResponsive = () => {;
+  retu, r, n {
+    screenWid, t, h: 19, 2, 0,
+    screenHeig, h, t: 10, 8, 0,
+    orientati, o, n: 'landsca, p, e''

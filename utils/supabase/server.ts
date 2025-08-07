@@ -1,1 +1,1 @@
-export const createServerClient = () => ({ auth: { getUser: () => null } });
+export, const, createServerClient = () => ({ au, t, h: { getUs, e, r: () => nu, l, l } });

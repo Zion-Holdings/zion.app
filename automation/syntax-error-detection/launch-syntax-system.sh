@@ -143,10 +143,10 @@ start_system() {
     
     # Start components in order
     local components=(
-        "detector:../syntax-error-detector.js"
-        "fixer:../syntax-error-fixer.js"
-        "orchestrator:../syntax-automation-orchestrator.js"
-        "monitor:monitoring/syntax-monitor.js"
+        "detector:../syntax-error-detector.cjs"
+        "fixer:../syntax-error-fixer.cjs"
+        "orchestrator:../syntax-automation-orchestrator.cjs"
+        "monitor:monitoring/syntax-monitor.cjs"
     )
     
     local failed_components=()
@@ -197,7 +197,7 @@ run_cycle() {
         exit 1
     }
     
-    if node "$SCRIPT_DIR/syntax-automation-orchestrator.js" once; then
+    if node "$SCRIPT_DIR/syntax-automation-orchestrator.cjs" once; then
         success_log "Single cycle completed successfully"
     else
         error_log "Single cycle failed"
@@ -214,7 +214,7 @@ run_continuous() {
         exit 1
     }
     
-    if node "$SCRIPT_DIR/syntax-automation-orchestrator.js" continuous; then
+    if node "$SCRIPT_DIR/syntax-automation-orchestrator.cjs" continuous; then
         success_log "Continuous mode completed"
     else
         error_log "Continuous mode failed"

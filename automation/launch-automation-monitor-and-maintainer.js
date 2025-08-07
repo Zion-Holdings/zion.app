@@ -1,336 +1,332 @@
-#!/usr/bin/env node
+#!/u, s, r/b, i, n/env, nod, e
 
 /**
- * Automation Monitor and Maintainer Launcher
+ * Automation, Monitor, and Maintainer, Launche, r
  * 
- * This script launches and manages the Automation Monitor and Maintainer Factory
- * which continuously monitors all project automation systems.
+ * This, script, launches and, manages, the Automation, Monitor, and Maintainer, Factor, y
+ * which, continuously, monitors all, project, automation syste, m, s.
  */
 
-const AutomationMonitorAndMaintainerFactory = require('./automation-monitor-and-maintainer-factory');
-const fs = require('fs-extra');
-const path = require('path');
+const, AutomationMonitorAndMaintainerFactor, y = requi, r, e('./automati, o, n-monit, o, r-a, n, d-maintain, e, r-facto, r, y');
+const, f, s = requi, r, e('fs-ext, r, a');
+const, pat, h = requi, r, e('pa, t, h');
 
-class AutomationMonitorAndMaintainerLauncher {
-  constructor() {
-    this.factory = new AutomationMonitorAndMaintainerFactory();
-    this.pidFile = path.join(__dirname, 'automation-monitor.pid');
-    this.configFile = path.join(__dirname, 'automation-monitor-config.json');
+class, AutomationMonitorAndMaintainerLaunche, r {
+  construct, o, r() {
+    th, i, s.facto, r, y = new, AutomationMonitorAndMaintainerFactor, y();
+    th, i, s.pidFi, l, e = pa, t, h.jo, i, n(__dirna, m, e, 'automati, o, n-monit, o, r.p, i, d');
+    th, i, s.configFi, l, e = pa, t, h.jo, i, n(__dirna, m, e, 'automati, o, n-monit, o, r-conf, i, g.js, o, n');
   }
 
-  async start() {
-    try {
-      console.log('🚀 Starting Automation Monitor and Maintainer System...');
+  async, star, t() {
+    t, r, y {
+      conso, l, e.l, o, g('🚀 Starting, Automation, Monitor and, Maintainer, System...');
       
-      // Check if already running
-      if (await this.isRunning()) {
-        console.log('⚠️ System is already running');
-        return;
+      // Check, if, already running, i, f (await, thi, s.isRunni, n, g()) {
+        conso, l, e.l, o, g('⚠️ System, is, already runni, n, g');
+        retu, r, n;
       }
 
-      // Save PID
-      await fs.writeFile(this.pidFile, process.pid.toString());
+      // Save, PID, await fs.writeFi, l, e(th, i, s.pidFi, l, e, proce, s, s.p, i, d.toStri, n, g());
       
-      // Start the factory
-      await this.factory.startMonitoring();
+      // Start, the, factory
+      await, thi, s.facto, r, y.startMonitori, n, g();
       
-      console.log('✅ Automation Monitor and Maintainer System started successfully');
-      console.log('📊 Monitoring all automation factories, agents, scripts, and cron jobs');
-      console.log('🔍 Health checks every 2 minutes');
-      console.log('💾 Backups every 6 hours');
-      console.log('🧹 Cleanup daily at 2 AM');
-      console.log('📊 Reports every hour');
+      conso, l, e.l, o, g('✅ Automation, Monitor, and Maintainer, System, started successful, l, y');
+      conso, l, e.l, o, g('📊 Monitoring, all, automation factori, e, s, agen, t, s, scrip, t, s, and, cron, jobs');
+      conso, l, e.l, o, g('🔍 Health, checks, every 2, minute, s');
+      conso, l, e.l, o, g('💾 Backups, every, 6 hou, r, s');
+      conso, l, e.l, o, g('🧹 Cleanup, daily, at 2, A, M');
+      conso, l, e.l, o, g('📊 Reports, every, hour');
       
-    } catch (error) {
-      console.error('❌ Error starting system:', error.message);
-      process.exit(1);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, starting, system:', err, o, r.messa, g, e);
+      proce, s, s.ex, i, t(1);
     }
   }
 
-  async stop() {
-    try {
-      console.log('🛑 Stopping Automation Monitor and Maintainer System...');
+  async, sto, p() {
+    t, r, y {
+      conso, l, e.l, o, g('🛑 Stopping, Automation, Monitor and, Maintainer, System...');
       
-      if (await fs.pathExists(this.pidFile)) {
-        const pid = await fs.readFile(this.pidFile, 'utf8');
-        process.kill(parseInt(pid), 'SIGTERM');
-        await fs.remove(this.pidFile);
+      if (await, f, s.pathExis, t, s(th, i, s.pidFi, l, e)) {
+        const, pi, d = await, f, s.readFi, l, e(th, i, s.pidFi, l, e, 'ut, f, 8');
+        proce, s, s.ki, l, l(parseI, n, t(p, i, d), 'SIGTE, R, M');
+        await, f, s.remo, v, e(th, i, s.pidFi, l, e);
       }
       
-      console.log('✅ System stopped successfully');
+      conso, l, e.l, o, g('✅ System, stopped, successfully');
       
-    } catch (error) {
-      console.error('❌ Error stopping system:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, stopping, system:', err, o, r.messa, g, e);
     }
   }
 
-  async status() {
-    try {
-      const isRunning = await this.isRunning();
-      console.log(`📊 System Status: ${isRunning ? '🟢 RUNNING' : '🔴 STOPPED'}`);
+  async, statu, s() {
+    t, r, y {
+      const, isRunnin, g = await, thi, s.isRunni, n, g();
+      conso, l, e.l, o, g(`📊 System, Statu, s: ${isRunni, n, g ? '🟢 RUNNI, N, G' : '🔴 STOPP, E, D'}`);
       
-      if (isRunning) {
-        const pid = await fs.readFile(this.pidFile, 'utf8');
-        console.log(`📋 PID: ${pid}`);
+      if (isRunni, n, g) {
+        const, pi, d = await, f, s.readFi, l, e(th, i, s.pidFi, l, e, 'ut, f, 8');
+        conso, l, e.l, o, g(`📋 P, I, D: ${p, i, d}`);
         
-        // Show monitoring stats
-        const stats = await this.getMonitoringStats();
-        console.log('📈 Monitoring Stats:');
-        console.log(`   - Factories: ${stats.factories}`);
-        console.log(`   - Agents: ${stats.agents}`);
-        console.log(`   - Scripts: ${stats.scripts}`);
-        console.log(`   - Cron Jobs: ${stats.cronJobs}`);
-        console.log(`   - Healthy: ${stats.healthy}`);
-        console.log(`   - Errors: ${stats.errors}`);
+        // Show, monitoring, stats
+        const, stat, s = await, thi, s.getMonitoringSta, t, s();
+        conso, l, e.l, o, g('📈 Monitoring, Stat, s:');
+        conso, l, e.l, o, g(`   - Factori, e, s: ${sta, t, s.factori, e, s}`);
+        conso, l, e.l, o, g(`   - Agen, t, s: ${sta, t, s.agen, t, s}`);
+        conso, l, e.l, o, g(`   - Scrip, t, s: ${sta, t, s.scrip, t, s}`);
+        conso, l, e.l, o, g(`   - Cron, Job, s: ${sta, t, s.cronJo, b, s}`);
+        conso, l, e.l, o, g(`   - Healt, h, y: ${sta, t, s.healt, h, y}`);
+        conso, l, e.l, o, g(`   - Erro, r, s: ${sta, t, s.erro, r, s}`);
       }
       
-    } catch (error) {
-      console.error('❌ Error checking status:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, checking, status:', err, o, r.messa, g, e);
     }
   }
 
-  async health() {
-    try {
-      console.log('🏥 Performing health check...');
+  async, healt, h() {
+    t, r, y {
+      conso, l, e.l, o, g('🏥 Performing, health, check...');
       
-      // Check system health
-      const health = await this.performHealthCheck();
+      // Check, system, health
+      const, healt, h = await, thi, s.performHealthChe, c, k();
       
-      console.log('📊 Health Check Results:');
-      console.log(`   - System Status: ${health.systemStatus}`);
-      console.log(`   - Memory Usage: ${health.memoryUsage}%`);
-      console.log(`   - CPU Usage: ${health.cpuUsage}%`);
-      console.log(`   - Disk Space: ${health.diskSpace}%`);
-      console.log(`   - Log Files: ${health.logFiles}`);
-      console.log(`   - Error Rate: ${health.errorRate}%`);
+      conso, l, e.l, o, g('📊 Health, Check, Results:');
+      conso, l, e.l, o, g(`   - System, Statu, s: ${heal, t, h.systemStat, u, s}`);
+      conso, l, e.l, o, g(`   - Memory, Usag, e: ${heal, t, h.memoryUsa, g, e}%`);
+      conso, l, e.l, o, g(`   - CPU, Usag, e: ${heal, t, h.cpuUsa, g, e}%`);
+      conso, l, e.l, o, g(`   - Disk, Spac, e: ${heal, t, h.diskSpa, c, e}%`);
+      conso, l, e.l, o, g(`   - Log, File, s: ${heal, t, h.logFil, e, s}`);
+      conso, l, e.l, o, g(`   - Error, Rat, e: ${heal, t, h.errorRa, t, e}%`);
       
-      if (health.systemStatus === 'healthy') {
-        console.log('✅ System is healthy');
-      } else {
-        console.log('⚠️ System has issues');
+      if (heal, t, h.systemStat, u, s === 'healt, h, y') {
+        conso, l, e.l, o, g('✅ System, is, healthy');
+      } el, s, e {
+        conso, l, e.l, o, g('⚠️ System, has, issues');
       }
       
-    } catch (error) {
-      console.error('❌ Error performing health check:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, performing, health che, c, k:', err, o, r.messa, g, e);
     }
   }
 
-  async report() {
-    try {
-      console.log('📊 Generating comprehensive report...');
+  async, repor, t() {
+    t, r, y {
+      conso, l, e.l, o, g('📊 Generating, comprehensive, report...');
       
-      await this.factory.generateComprehensiveReport();
+      await, thi, s.facto, r, y.generateComprehensiveRepo, r, t();
       
-      // Get latest report
-      const reportsDir = path.join(__dirname, 'reports');
-      const reportFiles = await fs.readdir(reportsDir);
-      const latestReport = reportFiles
-        .filter(f => f.startsWith('comprehensive-report-'))
-        .sort()
-        .pop();
+      // Get, latest, report
+      const, reportsDi, r = pa, t, h.jo, i, n(__dirna, m, e, 'repor, t, s');
+      const, reportFile, s = await, f, s.readd, i, r(reportsD, i, r);
+      const, latestRepor, t = reportFil, e, s
+        .filt, e, r(f => f.startsWi, t, h('comprehensi, v, e-repo, r, t-'))
+        .so, r, t()
+        .p, o, p();
       
-      if (latestReport) {
-        const reportPath = path.join(reportsDir, latestReport);
-        const report = await fs.readJson(reportPath);
+      if (latestRepo, r, t) {
+        const, reportPat, h = pa, t, h.jo, i, n(reportsD, i, r, latestRepo, r, t);
+        const, repor, t = await, f, s.readJs, o, n(reportPa, t, h);
         
-        console.log('📋 Report Summary:');
-        console.log(`   - Timestamp: ${report.timestamp}`);
-        console.log(`   - System Status: ${report.systemStatus}`);
-        console.log(`   - Uptime: ${Math.floor(report.performance.uptime / 60)} minutes`);
-        console.log(`   - Report File: ${reportPath}`);
+        conso, l, e.l, o, g('📋 Report, Summar, y:');
+        conso, l, e.l, o, g(`   - Timesta, m, p: ${repo, r, t.timesta, m, p}`);
+        conso, l, e.l, o, g(`   - System, Statu, s: ${repo, r, t.systemStat, u, s}`);
+        conso, l, e.l, o, g(`   - Upti, m, e: ${Ma, t, h.flo, o, r(repo, r, t.performan, c, e.upti, m, e / 60)} minut, e, s`);
+        conso, l, e.l, o, g(`   - Report, Fil, e: ${reportPa, t, h}`);
       }
       
-    } catch (error) {
-      console.error('❌ Error generating report:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, generating, report:', err, o, r.messa, g, e);
     }
   }
 
-  async backup() {
-    try {
-      console.log('💾 Creating system backup...');
+  async, backu, p() {
+    t, r, y {
+      conso, l, e.l, o, g('💾 Creating, system, backup...');
       
-      await this.factory.createBackup();
+      await, thi, s.facto, r, y.createBack, u, p();
       
-      console.log('✅ Backup created successfully');
+      conso, l, e.l, o, g('✅ Backup, created, successfully');
       
-    } catch (error) {
-      console.error('❌ Error creating backup:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, creating, backup:', err, o, r.messa, g, e);
     }
   }
 
-  async cleanup() {
-    try {
-      console.log('🧹 Performing system cleanup...');
+  async, cleanu, p() {
+    t, r, y {
+      conso, l, e.l, o, g('🧹 Performing, system, cleanup...');
       
-      await this.factory.performCleanup();
+      await, thi, s.facto, r, y.performClean, u, p();
       
-      console.log('✅ Cleanup completed successfully');
+      conso, l, e.l, o, g('✅ Cleanup, completed, successfully');
       
-    } catch (error) {
-      console.error('❌ Error performing cleanup:', error.message);
+    } cat, c, h (err, o, r) {
+      conso, l, e.err, o, r('❌ Error, performing, cleanup:', err, o, r.messa, g, e);
     }
   }
 
-  async isRunning() {
-    try {
-      if (!await fs.pathExists(this.pidFile)) {
-        return false;
+  async, isRunnin, g() {
+    t, r, y {
+      if (!await, f, s.pathExis, t, s(th, i, s.pidFi, l, e)) {
+        return, fals, e;
       }
       
-      const pid = await fs.readFile(this.pidFile, 'utf8');
+      const, pi, d = await, f, s.readFi, l, e(th, i, s.pidFi, l, e, 'ut, f, 8');
       
-      // Check if process is actually running
-      const { exec } = require('child_process');
-      return new Promise((resolve) => {
-        exec(`ps -p ${pid}`, (error) => {
-          resolve(!error);
+      // Check, if, process is, actually, running
+      con, s, t { ex, e, c } = requi, r, e('child_proce, s, s');
+      return, new, Promise((resol, v, e) => {
+        ex, e, c(`ps -p ${p, i, d}`, (err, o, r) => {
+          resol, v, e(!err, o, r);
         });
       });
       
-    } catch (error) {
-      return false;
+    } cat, c, h (err, o, r) {
+      return, fals, e;
     }
   }
 
-  async getMonitoringStats() {
-    try {
-      const stats = {
-        factories: this.factory.monitoringData.factories.length,
-        agents: this.factory.monitoringData.agents.length,
-        scripts: this.factory.monitoringData.scripts.length,
-        cronJobs: this.factory.monitoringData.cronJobs.length,
-        healthy: 0,
-        errors: 0
+  async, getMonitoringStat, s() {
+    t, r, y {
+      const, stat, s = {
+        factori, e, s: th, i, s.facto, r, y.monitoringDa, t, a.factori, e, s.leng, t, h,
+        agen, t, s: th, i, s.facto, r, y.monitoringDa, t, a.agen, t, s.leng, t, h,
+        scrip, t, s: th, i, s.facto, r, y.monitoringDa, t, a.scrip, t, s.leng, t, h,
+        cronJo, b, s: th, i, s.facto, r, y.monitoringDa, t, a.cronJo, b, s.leng, t, h,
+        healt, h, y: 0,
+        erro, r, s: 0
       };
 
-      const allComponents = [
-        ...this.factory.monitoringData.factories,
-        ...this.factory.monitoringData.agents,
-        ...this.factory.monitoringData.scripts,
-        ...this.factory.monitoringData.cronJobs
+      const, allComponent, s = [
+        ...th, i, s.facto, r, y.monitoringDa, t, a.factori, e, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.agen, t, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.scrip, t, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.cronJo, b, s
       ];
 
-      stats.healthy = allComponents.filter(c => 
-        c.status === 'healthy' || c.status === 'running'
-      ).length;
+      sta, t, s.healt, h, y = allComponen, t, s.filt, e, r(c => 
+        c.stat, u, s === 'healt, h, y' || c.stat, u, s === 'runni, n, g'
+      ).leng, t, h;
       
-      stats.errors = allComponents.filter(c => 
-        c.status !== 'healthy' && c.status !== 'running'
-      ).length;
+      sta, t, s.erro, r, s = allComponen, t, s.filt, e, r(c => 
+        c.stat, u, s !== 'healt, h, y' && c.stat, u, s !== 'runni, n, g'
+      ).leng, t, h;
 
-      return stats;
+      return, stat, s;
       
-    } catch (error) {
-      return { factories: 0, agents: 0, scripts: 0, cronJobs: 0, healthy: 0, errors: 0 };
+    } cat, c, h (err, o, r) {
+      retu, r, n { factori, e, s: 0, agen, t, s: 0, scrip, t, s: 0, cronJo, b, s: 0, healt, h, y: 0, erro, r, s: 0 };
     }
   }
 
-  async performHealthCheck() {
-    try {
-      const health = {
-        systemStatus: 'unknown',
-        memoryUsage: 0,
-        cpuUsage: 0,
-        diskSpace: 0,
-        logFiles: 0,
-        errorRate: 0
+  async, performHealthChec, k() {
+    t, r, y {
+      const, healt, h = {
+        systemStat, u, s: 'unkno, w, n',
+        memoryUsa, g, e: 0,
+        cpuUsa, g, e: 0,
+        diskSpa, c, e: 0,
+        logFil, e, s: 0,
+        errorRa, t, e: 0
       };
 
-      // Check memory usage
-      const memUsage = process.memoryUsage();
-      health.memoryUsage = Math.round((memUsage.heapUsed / memUsage.heapTotal) * 100);
+      // Check, memory, usage
+      const, memUsag, e = proce, s, s.memoryUsa, g, e();
+      heal, t, h.memoryUsa, g, e = Ma, t, h.rou, n, d((memUsa, g, e.heapUs, e, d / memUsa, g, e.heapTot, a, l) * 1, 0, 0);
 
-      // Check disk space
-      const { exec } = require('child_process');
-      const diskSpace = await new Promise((resolve) => {
-        exec('df . | tail -1 | awk \'{print $5}\' | sed \'s/%//\'', (error, stdout) => {
-          resolve(error ? 0 : parseInt(stdout.trim()));
+      // Check, disk, space
+      con, s, t { ex, e, c } = requi, r, e('child_proce, s, s');
+      const, diskSpac, e = await, new, Promise((resol, v, e) => {
+        ex, e, c('df . | ta, i, l -1 | a, w, k \'{pri, n, t $5}\' | s, e, d \'s/%//\', (err, o, r, stdo, u, t) => {
+          resol, v, e(err, o, r ? 0 : parseI, n, t(stdo, u, t.tr, i, m()));
         });
       });
-      health.diskSpace = diskSpace;
+      heal, t, h.diskSpa, c, e = diskSpa, c, e;
 
-      // Count log files
-      const logDir = path.join(__dirname, 'logs');
-      if (await fs.pathExists(logDir)) {
-        const logFiles = await fs.readdir(logDir);
-        health.logFiles = logFiles.length;
+      // Count, log, files
+      const, logDi, r = pa, t, h.jo, i, n(__dirna, m, e, 'lo, g, s');
+      if (await, f, s.pathExis, t, s(logD, i, r)) {
+        const, logFile, s = await, f, s.readd, i, r(logD, i, r);
+        heal, t, h.logFil, e, s = logFil, e, s.leng, t, h;
       }
 
-      // Calculate error rate
-      const allComponents = [
-        ...this.factory.monitoringData.factories,
-        ...this.factory.monitoringData.agents,
-        ...this.factory.monitoringData.scripts,
-        ...this.factory.monitoringData.cronJobs
+      // Calculate, error, rate
+      const, allComponent, s = [
+        ...th, i, s.facto, r, y.monitoringDa, t, a.factori, e, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.agen, t, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.scrip, t, s,
+        ...th, i, s.facto, r, y.monitoringDa, t, a.cronJo, b, s
       ];
       
-      const totalComponents = allComponents.length;
-      const errorComponents = allComponents.filter(c => 
-        c.status !== 'healthy' && c.status !== 'running'
-      ).length;
+      const, totalComponent, s = allComponen, t, s.leng, t, h;
+      const, errorComponent, s = allComponen, t, s.filt, e, r(c => 
+        c.stat, u, s !== 'healt, h, y' && c.stat, u, s !== 'runni, n, g'
+      ).leng, t, h;
       
-      health.errorRate = totalComponents > 0 ? Math.round((errorComponents / totalComponents) * 100) : 0;
+      heal, t, h.errorRa, t, e = totalComponen, t, s > 0 ? Ma, t, h.rou, n, d((errorComponen, t, s / totalComponen, t, s) * 1, 0, 0) : 0;
 
-      // Determine system status
-      if (health.memoryUsage < 80 && health.diskSpace < 90 && health.errorRate < 20) {
-        health.systemStatus = 'healthy';
-      } else if (health.memoryUsage < 90 && health.diskSpace < 95 && health.errorRate < 50) {
-        health.systemStatus = 'warning';
-      } else {
-        health.systemStatus = 'critical';
+      // Determine, system, status
+      if (heal, t, h.memoryUsa, g, e < 80 && heal, t, h.diskSpa, c, e < 90 && heal, t, h.errorRa, t, e < 20) {
+        heal, t, h.systemStat, u, s = 'healt, h, y';
+      } else, i, f (heal, t, h.memoryUsa, g, e < 90 && heal, t, h.diskSpa, c, e < 95 && heal, t, h.errorRa, t, e < 50) {
+        heal, t, h.systemStat, u, s = 'warni, n, g';
+      } el, s, e {
+        heal, t, h.systemStat, u, s = 'critic, a, l';
       }
 
-      return health;
+      return, healt, h;
       
-    } catch (error) {
-      return {
-        systemStatus: 'error',
-        memoryUsage: 0,
-        cpuUsage: 0,
-        diskSpace: 0,
-        logFiles: 0,
-        errorRate: 0
+    } cat, c, h (err, o, r) {
+      retu, r, n {
+        systemStat, u, s: 'err, o, r',
+        memoryUsa, g, e: 0,
+        cpuUsa, g, e: 0,
+        diskSpa, c, e: 0,
+        logFil, e, s: 0,
+        errorRa, t, e: 0
       };
     }
   }
 }
 
-// Handle command line arguments
-async function main() {
-  const launcher = new AutomationMonitorAndMaintainerLauncher();
-  const command = process.argv[2] || 'start';
+// Handle, command, line arguments, async, function ma, i, n() {
+  const, launche, r = new, AutomationMonitorAndMaintainerLaunche, r();
+  const, comman, d = proce, s, s.ar, g, v[2] || 'sta, r, t';
 
-  switch (command) {
-  case 'start':
-    await launcher.start();
-    break;
-  case 'stop':
-    await launcher.stop();
-    break;
-  case 'status':
-    await launcher.status();
-    break;
-  case 'health':
-    await launcher.health();
-    break;
-  case 'report':
-    await launcher.report();
-    break;
-  case 'backup':
-    await launcher.backup();
-    break;
-  case 'cleanup':
-    await launcher.cleanup();
-    break;
-  default:
-    console.log('Usage: node launch-automation-monitor-and-maintainer.js [start|stop|status|health|report|backup|cleanup]');
-    break;
+  swit, c, h (comma, n, d) {
+  ca, s, e 'sta, r, t':
+    await, launche, r.sta, r, t();
+    bre, a, k;
+  ca, s, e 'st, o, p':
+    await, launche, r.st, o, p();
+    bre, a, k;
+  ca, s, e 'stat, u, s':
+    await, launche, r.stat, u, s();
+    bre, a, k;
+  ca, s, e 'heal, t, h':
+    await, launche, r.heal, t, h();
+    bre, a, k;
+  ca, s, e 'repo, r, t':
+    await, launche, r.repo, r, t();
+    bre, a, k;
+  ca, s, e 'back, u, p':
+    await, launche, r.back, u, p();
+    bre, a, k;
+  ca, s, e 'clean, u, p':
+    await, launche, r.clean, u, p();
+    bre, a, k;
+  defau, l, t:
+    conso, l, e.l, o, g('Usa, g, e: node, launc, h-automati, o, n-monit, o, r-a, n, d-maintain, e, r.js [sta, r, t|st, o, p|stat, u, s|heal, t, h|repo, r, t|back, u, p|clean, u, p]');
+    bre, a, k;
   }
 }
 
-// If run directly, execute main
-if (require.main === module) {
-  main().catch(console.error);
+// If, run, directly, execute, main, if (requi, r, e.ma, i, n === modu, l, e) {
+  ma, i, n().cat, c, h(conso, l, e.err, o, r);
 }
 
-module.exports = AutomationMonitorAndMaintainerLauncher;
+modu, l, e.expor, t, s = AutomationMonitorAndMaintainerLaunch, e, r;

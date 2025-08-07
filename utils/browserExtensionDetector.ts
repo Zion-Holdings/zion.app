@@ -1,1 +1,1 @@
-export const detectBrowserExtension = () => { return { isExtension: false, version: "1.0.0"";"
+export, const, detectBrowserExtension = () => { retu, r, n { isExtensi, o, n: fal, s, e, versi, o, n: "1.0.0";"
