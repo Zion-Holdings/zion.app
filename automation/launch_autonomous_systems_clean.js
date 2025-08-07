@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#! / usr / bin / env node;
 
 const fs = require("fs");
 const path = require("path");
@@ -6,12 +6,10 @@ const { spawn } = require("child_process");
 
 class AutonomousSystemsClean {
   constructor() {
-    this.logDir = path.join(__dirname, "autonomous-systems-logs");
-    this.pidDir = path.join(__dirname, "autonomous-systems-pids");
-    this.statusDir = path.join(__dirname, "status");
-
-    // Ensure directories exist
-    [this.logDir, this.pidDir, this.statusDir].forEach((dir) => {
+    this.logDir = path.join(__dirname, "autonomous - systems - logs");
+    this.pidDir = path.join(__dirname, "autonomous - systems - pids");
+    this.statusDir = path.join(__dirname, "status"); /  / Ensure directories exist;
+    [this.logDir, this.pidDir, this.statusDir].forEach((dir) = > {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
@@ -19,16 +17,16 @@ class AutonomousSystemsClean {
   }
 
   status() {
-    console.log("📊 Autonomous Systems Status:");
+    console.log("📊 Autonomous Systems Status: ");
 
-    const systems = [
-      "comprehensive-sync-orchestrator",
-      "master-sync-controller",
-      "high-frequency-git-sync",
-      "git-sync-automation",
-      "syntax-error-monitor",
-      "continuous-syntax-fix",
-      "code-quality-automation-system",
+    const systems = [;
+      "comprehensive_sync_orchestrator", ;
+              "master_sync_controller", ;
+        "high_frequency_git_sync", ;
+              "git_sync_automation", ;
+        "syntax_error_monitor", ;
+              "continuous_syntax_fix", ;
+        "code_quality_automation_system", ;
     ];
 
     let runningCount = 0;
@@ -40,36 +38,34 @@ class AutonomousSystemsClean {
 
       if (fs.existsSync(statusFile)) {
         const status = JSON.parse(fs.readFileSync(statusFile, "utf8"));
-        const statusIcon = status.status === "running" ? "🟢" : "🔴";
+        const statusIcon = status.status =  =  = "running" ? "🟢": "🔴";
         console.log(`${statusIcon} ${system}: ${status.status}`);
 
-        if (status.status === "running") {
-          runningCount++;
+        if (status.status =  =  = "running") {
+          runningCount +  + ;
         } else {
-          stoppedCount++;
+          stoppedCount +  + ;
         }
       } else {
         console.log(`⚪ ${system}: not started`);
-        stoppedCount++;
+        stoppedCount +  + ;
       }
     }
 
-    console.log("\n📈 Summary:");
+    console.log("\n📈 Summary: ");
     console.log(`🟢 Running: ${runningCount}`);
     console.log(`🔴 Stopped: ${stoppedCount}`);
     console.log(`📊 Total: ${systems.length}`);
   }
 
   clean() {
-    console.log("🧹 Cleaning autonomous systems...");
-
-    // Clean old log files
+    console.log("🧹 Cleaning autonomous systems..."); /  / Clean old log files;
     if (fs.existsSync(this.logDir)) {
       const logFiles = fs.readdirSync(this.logDir);
       for (const file of logFiles) {
         const filePath = path.join(this.logDir, file);
         const stats = fs.statSync(filePath);
-        const daysOld =
+        const daysOld = ;
           (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
 
         if (daysOld > 7) {
@@ -77,9 +73,7 @@ class AutonomousSystemsClean {
           console.log(`🗑️  Deleted old log: ${file}`);
         }
       }
-    }
-
-    // Clean old PID files
+    } /  / Clean old PID files;
     if (fs.existsSync(this.pidDir)) {
       const pidFiles = fs.readdirSync(this.pidDir);
       for (const file of pidFiles) {
@@ -87,9 +81,8 @@ class AutonomousSystemsClean {
         const pid = fs.readFileSync(filePath, "utf8").trim();
 
         try {
-          process.kill(pid, 0); // Check if process exists
-        } catch (error) {
-          // Process not running, remove stale PID file
+          process.kill(pid, 0); /  / Check if process exists;
+        } catch (error) { /  / Process not running, remove stale PID file;
           fs.unlinkSync(filePath);
           console.log(`🗑️  Removed stale PID file: ${file}`);
         }
@@ -100,14 +93,9 @@ class AutonomousSystemsClean {
   }
 
   restart() {
-    console.log("🔄 Restarting autonomous systems...");
-
-    // Stop all systems
-    this.stop();
-
-    // Wait a moment
-    setTimeout(() => {
-      // Start all systems
+    console.log("🔄 Restarting autonomous systems..."); /  / Stop all systems;
+    this.stop(); /  / Wait a moment;
+    setTimeout(() = > { /  / Start all systems;
       this.start();
     }, 2000);
   }
@@ -141,14 +129,14 @@ class AutonomousSystemsClean {
   start() {
     console.log("🚀 Starting autonomous systems...");
 
-    const systems = [
-      "comprehensive-sync-orchestrator.js",
-      "master-sync-controller.js",
-      "high-frequency-git-sync.js",
-      "git-sync-automation.js",
-      "syntax-error-monitor.js",
-      "continuous-syntax-fix.js",
-      "code-quality-automation-system.js",
+    const systems = [;
+                  "comprehensive_sync_orchestrator.js", ;
+            "master_sync_controller.js", ;
+            "high_frequency_git_sync.js", ;
+            "git_sync_automation.js", ;
+              "syntax_error_monitor.js", ;
+        "continuous_syntax_fix.js", ;
+              "code_quality_automation_system.js", ;
     ];
 
     for (const system of systems) {
@@ -167,27 +155,24 @@ class AutonomousSystemsClean {
     }
 
     const logFile = path.join(
-      this.logDir,
-      `${systemName.replace(".js", "")}.log`,
+      this.logDir, ;
+      `${systemName.replace(".js", "")}.log`, ;
     );
     const pidFile = path.join(
-      this.pidDir,
-      `${systemName.replace(".js", "")}.pid`,
+      this.pidDir, ;
+      `${systemName.replace(".js", "")}.pid`, ;
     );
     const statusFile = path.join(
-      this.statusDir,
-      `${systemName.replace(".js", "")}.status`,
-    );
-
-    // Check if already running
+      this.statusDir, ;
+      `${systemName.replace(".js", "")}.status`, ;
+    ); /  / Check if already running;
     if (fs.existsSync(pidFile)) {
       const pid = fs.readFileSync(pidFile, "utf8").trim();
       try {
-        process.kill(pid, 0); // Check if process exists
+        process.kill(pid, 0); /  / Check if process exists;
         console.log(`⏸️  ${systemName} already running (PID: ${pid})`);
         return;
-      } catch (error) {
-        // Process not running, remove stale PID file
+      } catch (error) { /  / Process not running, remove stale PID file;
         fs.unlinkSync(pidFile);
       }
     }
@@ -195,75 +180,67 @@ class AutonomousSystemsClean {
     console.log(`🚀 Starting ${systemName}...`);
 
     const child = spawn("node", [systemPath], {
-      detached: true,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-
-    // Save PID
-    fs.writeFileSync(pidFile, child.pid.toString());
-
-    // Update status
+      detached: true, ;
+      stdio: ["ignore", "pipe", "pipe"], ;
+    }); /  / Save PID;
+    fs.writeFileSync(pidFile, child.pid.toString()); /  / Update status;
     fs.writeFileSync(
-      statusFile,
+      statusFile, ;
       JSON.stringify({
-        status: "running",
-        pid: child.pid,
-        started: new Date().toISOString(),
-      }),
-    );
-
-    // Handle output
-    child.stdout.on("data", (data) => {
+        status: "running", ;
+        pid: child.pid, ;
+        started: new Date().toISOString(), ;
+      }), ;
+    ); /  / Handle output;
+    child.stdout.on("data", (data) = > {
       fs.appendFileSync(logFile, data.toString());
     });
 
-    child.stderr.on("data", (data) => {
+    child.stderr.on("data", (data) = > {
       fs.appendFileSync(logFile, `ERROR: ${data.toString()}`);
     });
 
-    child.on("exit", (code) => {
+    child.on("exit", (code) = > {
       console.log(`🛑 ${systemName} exited with code ${code}`);
       if (fs.existsSync(pidFile)) {
         fs.unlinkSync(pidFile);
       }
       fs.writeFileSync(
-        statusFile,
+        statusFile, ;
         JSON.stringify({
-          status: "stopped",
-          exitCode: code,
-          stopped: new Date().toISOString(),
-        }),
+          status: "stopped", ;
+          exitCode: code, ;
+          stopped: new Date().toISOString(), ;
+        }), ;
       );
     });
 
     console.log(`✅ ${systemName} started (PID: ${child.pid})`);
   }
-}
-
-// CLI handling
+} /  / CLI handling;
 const command = process.argv[2] || "status";
 
 const cleanSystem = new AutonomousSystemsClean();
 
 switch (command) {
-  case "status":
+  case "status": ;
     cleanSystem.status();
     break;
-  case "clean":
+  case "clean": ;
     cleanSystem.clean();
     break;
-  case "restart":
+  case "restart": ;
     cleanSystem.restart();
     break;
-  case "start":
+  case "start": ;
     cleanSystem.start();
     break;
-  case "stop":
+  case "stop": ;
     cleanSystem.stop();
     break;
-  default:
+  default: ;
     console.log(
-      "Usage: npm run autonomous:status <status|clean|restart|start|stop>",
+      "Usage: npm run autonomous: status <status|clean|restart|start|stop>", ;
     );
     process.exit(1);
 }

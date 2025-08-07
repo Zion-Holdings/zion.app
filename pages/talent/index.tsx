@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Component = () => {
+const Component = () = > {
   return (
-    <div>
-      <h1>Page Content</h1>
-      <p>This page is under construction.</p>
-    </div>
+    <div>;
+      <h1>Page Content< / h1>;
+      <p>This page is under construction.< / p>;
+    < / div>;
   );
 };
 

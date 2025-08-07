@@ -1,27 +1,26 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import Head from "next / head";
+import Link from "next / link";
 
-const devopsautomationstrategiesformodernteamschat: NextPage = () => {
+const devopsautomationstrategiesformodernteamschat: NextPage = () = > {
   return (
-    <div>
-      <Head>
-        <title>
-          Devops Automation Strategies For Modern Teams Chat - Zion Tech
-          Solutions
-        </title>
-        <meta
-          name="description"
-          content="Devops Automation Strategies For Modern Teams Chat blog post"
-        />
-      </Head>
+    <div>;
+      <Head>;
+        <title>;
+          Devops Automation Strategies For Modern Teams Chat - Zion Tech;
+          Solutions;
+        < / title>;
+        <meta;
+          name = "description";
+          content = "Devops Automation Strategies For Modern Teams Chat blog post"; / >;
+      < / Head>;
 
-      <main>
-        <h1>DevopsAutomationStrategiesForModernTeamsChat</h1>
-        <p>Blog content coming soon...</p>
-        <Link href="/blog">Back to Blog</Link>
-      </main>
-    </div>
+      <main>;
+        <h1>DevopsAutomationStrategiesForModernTeamsChat< / h1>;
+        <p>Blog content coming soon...< / p>;
+        <Link href = " / blog">Back to Blog< / Link>;
+      < / main>;
+    < / div>;
   );
 };
 

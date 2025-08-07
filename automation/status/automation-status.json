@@ -1,69 +1,94 @@
 {
   "systems": {
-    "automation-monitor-and-maintainer-factory": {
-      "name": "automation-monitor-and-maintainer-factory",
+    "automation_monitor_and_maintainer_factory": {
+      "name": "automation_monitor_and_maintainer_factory",
       "exists": true,
       "running": false,
       "pid": null,
       "lastLog": null,
-      "errors": ["No PID file found"],
-      "warnings": ["No log file found"]
+      "errors": [
+        "No PID file found"
+      ],
+      "warnings": [
+        "No log file found"
+      ]
     },
-    "comprehensive-sync-orchestrator": {
-      "name": "comprehensive-sync-orchestrator",
-      "exists": false,
+    "comprehensive_sync_orchestrator": {
+      "name": "comprehensive_sync_orchestrator",
+      "exists": true,
       "running": false,
       "pid": null,
       "lastLog": null,
-      "errors": ["System file not found"],
-      "warnings": []
+      "errors": [
+        "No PID file found"
+      ],
+      "warnings": [
+        "No log file found"
+      ]
     },
-    "syntax-error-monitor": {
-      "name": "syntax-error-monitor",
-      "exists": false,
-      "running": false,
-      "pid": null,
+    "syntax_error_monitor": {
+      "name": "syntax_error_monitor",
+      "exists": true,
+      "running": true,
+      "pid": "58176",
       "lastLog": null,
-      "errors": ["System file not found"],
-      "warnings": []
+      "errors": [],
+      "warnings": [
+        "No log file found"
+      ]
     },
     "continuous-syntax-fix": {
       "name": "continuous-syntax-fix",
-      "exists": false,
-      "running": false,
-      "pid": null,
+      "exists": true,
+      "running": true,
+      "pid": "59726",
       "lastLog": null,
-      "errors": ["System file not found"],
-      "warnings": []
+      "errors": [],
+      "warnings": [
+        "No log file found"
+      ]
     },
     "code-quality-automation-system": {
       "name": "code-quality-automation-system",
-      "exists": false,
+      "exists": true,
       "running": false,
       "pid": null,
       "lastLog": null,
-      "errors": ["System file not found"],
-      "warnings": []
+      "errors": [
+        "No PID file found"
+      ],
+      "warnings": [
+        "No log file found"
+      ]
     },
     "quick-lint-fix": {
       "name": "quick-lint-fix",
-      "exists": false,
+      "exists": true,
       "running": false,
       "pid": null,
       "lastLog": null,
-      "errors": ["System file not found"],
-      "warnings": []
+      "errors": [
+        "No PID file found"
+      ],
+      "warnings": [
+        "No log file found"
+      ]
     }
   },
   "overallHealth": "critical",
-  "lastCheck": "2025-08-07T15:11:49.396Z",
+  "lastCheck": "2025-08-07T16:12:54.730Z",
   "errors": [
-    "automation-monitor-and-maintainer-factory: No PID file found",
-    "comprehensive-sync-orchestrator: System file not found",
-    "syntax-error-monitor: System file not found",
-    "continuous-syntax-fix: System file not found",
-    "code-quality-automation-system: System file not found",
-    "quick-lint-fix: System file not found"
+    "automation_monitor_and_maintainer_factory: No PID file found",
+    "comprehensive_sync_orchestrator: No PID file found",
+    "code-quality-automation-system: No PID file found",
+    "quick-lint-fix: No PID file found"
   ],
-  "warnings": ["automation-monitor-and-maintainer-factory: No log file found"]
+  "warnings": [
+    "automation_monitor_and_maintainer_factory: No log file found",
+    "comprehensive_sync_orchestrator: No log file found",
+    "syntax_error_monitor: No log file found",
+    "continuous-syntax-fix: No log file found",
+    "code-quality-automation-system: No log file found",
+    "quick-lint-fix: No log file found"
+  ]
 }

@@ -22,9 +22,9 @@ class AutomationStatusChecker {
     };
     
     this.registeredSystems = [
-      'automation-monitor-and-maintainer-factory',
-      'comprehensive-sync-orchestrator',
-      'syntax-error-monitor',
+      'automation_monitor_and_maintainer_factory',
+      'comprehensive_sync_orchestrator',
+      'syntax_error_monitor',
       'continuous-syntax-fix',
       'code-quality-automation-system',
       'quick-lint-fix'
@@ -141,7 +141,7 @@ class AutomationStatusChecker {
     };
     
     console.log(`${healthEmoji[this.statusData.overallHealth]} Overall Health: ${this.statusData.overallHealth.toUpperCase()}`);
-    console.log(`📅 Last Check: ${this.statusData.lastCheck?.toLocaleString() || 'Never'}\n`);
+    console.log(`📅 Last Check: ${this.statusData.lastCheck ? this.statusData.lastCheck.toLocaleString() : 'Never'}\n`);
 
     // System details
     for (const [systemName, status] of Object.entries(this.statusData.systems)) {
