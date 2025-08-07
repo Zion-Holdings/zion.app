@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 interface Stat {
   value: number;
   label: string;
   icon: string;
-  color: 'blue' | 'purple' | 'green' | 'pink';
+  color: "blue" | "purple" | "green" | "pink";
   suffix?: string;
 }
 
@@ -22,7 +22,8 @@ const InteractiveStats: React.FC<InteractiveStatsProps> = ({ stats }) => {
         >
           <div className="text-3xl mb-2">{stat.icon}</div>
           <div className="text-3xl font-bold text-white mb-1">
-            {stat.value}{stat.suffix}
+            {stat.value}
+            {stat.suffix}
           </div>
           <div className="text-gray-300 text-sm">{stat.label}</div>
         </div>

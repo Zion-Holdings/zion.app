@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface GlassmorphismCardProps {
   children: React.ReactNode;
@@ -8,8 +8,8 @@ interface GlassmorphismCardProps {
 
 const GlassmorphismCard: React.FC<GlassmorphismCardProps> = ({
   children,
-  className = '',
-  onClick
+  className = "",
+  onClick,
 }) => {
   return (
     <div

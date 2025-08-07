@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Index() {
   const router = useRouter();
@@ -16,24 +16,27 @@ export default function Index() {
           <div className="flex mb-6">
             <button
               onClick={() => setIsLogin(true)}
-              className={`flex-1 py-2 px-4 ${isLogin ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+              className={`flex-1 py-2 px-4 ${isLogin ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`}
             >
               Login
             </button>
             <button
               onClick={() => setIsLogin(false)}
-              className={`flex-1 py-2 px-4 ${!isLogin ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+              className={`flex-1 py-2 px-4 ${!isLogin ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`}
             >
               Register
             </button>
           </div>
-          
+
           {isLogin ? (
             <div>
               <h1 className="text-2xl font-bold text-gray-900 mb-6">Login</h1>
               <form>
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -43,7 +46,10 @@ export default function Index() {
                   />
                 </div>
                 <div className="mb-6">
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Password
                   </label>
                   <input
@@ -62,10 +68,15 @@ export default function Index() {
             </div>
           ) : (
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-6">Register</h1>
+              <h1 className="text-2xl font-bold text-gray-900 mb-6">
+                Register
+              </h1>
               <form>
                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -75,7 +86,10 @@ export default function Index() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -85,7 +99,10 @@ export default function Index() {
                   />
                 </div>
                 <div className="mb-6">
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Password
                   </label>
                   <input

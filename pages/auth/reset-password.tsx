@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 export default function ResetPassword() {
   const router = useRouter();

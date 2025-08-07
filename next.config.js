@@ -3,11 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    appDir: true
+    appDir: true,
   },
   images: {
-    domains: ['localhost']
-  }
+    domains: ["localhost"],
+  },
 };
 
 export default nextConfig;

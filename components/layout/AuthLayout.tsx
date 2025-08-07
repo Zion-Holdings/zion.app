@@ -1,12 +1,15 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
   title?: string;
 }
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title = 'Authentication' }) => {
+const AuthLayout: React.FC<AuthLayoutProps> = ({
+  children,
+  title = "Authentication",
+}) => {
   return (
     <>
       <Head>

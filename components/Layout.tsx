@@ -1,6 +1,6 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +8,11 @@ interface LayoutProps {
   description?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title = 'Zion - AI-Powered Marketplace', description = 'The first free AI-powered marketplace' }) => {
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  title = "Zion - AI-Powered Marketplace",
+  description = "The first free AI-powered marketplace",
+}) => {
   return (
     <>
       <Head>

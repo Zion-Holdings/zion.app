@@ -1,5 +1,5 @@
-import React from 'react';
-import EnhancedButton from './EnhancedButton';
+import React from "react";
+import EnhancedButton from "./EnhancedButton";
 
 interface FuturisticHeroProps {
   title?: string;
@@ -9,10 +9,10 @@ interface FuturisticHeroProps {
 }
 
 const FuturisticHero: React.FC<FuturisticHeroProps> = ({
-  title = 'The Future of AI is Here',
-  subtitle = 'Discover cutting-edge AI solutions that transform your business',
-  ctaText = 'Get Started',
-  ctaHref = '/services'
+  title = "The Future of AI is Here",
+  subtitle = "Discover cutting-edge AI solutions that transform your business",
+  ctaText = "Get Started",
+  ctaHref = "/services",
 }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
@@ -43,9 +43,15 @@ const FuturisticHero: React.FC<FuturisticHeroProps> = ({
 
       {/* Floating elements */}
       <div className="absolute top-20 left-10 text-4xl animate-bounce">🚀</div>
-      <div className="absolute top-40 right-10 text-4xl animate-bounce animation-delay-1000">🤖</div>
-      <div className="absolute bottom-20 left-20 text-4xl animate-bounce animation-delay-2000">⚡</div>
-      <div className="absolute bottom-40 right-20 text-4xl animate-bounce animation-delay-3000">💡</div>
+      <div className="absolute top-40 right-10 text-4xl animate-bounce animation-delay-1000">
+        🤖
+      </div>
+      <div className="absolute bottom-20 left-20 text-4xl animate-bounce animation-delay-2000">
+        ⚡
+      </div>
+      <div className="absolute bottom-40 right-20 text-4xl animate-bounce animation-delay-3000">
+        💡
+      </div>
     </section>
   );
 };

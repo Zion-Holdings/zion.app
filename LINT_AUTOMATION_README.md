@@ -29,14 +29,16 @@ automation/
 
    ```bash
    npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser chokidar
-```
+   ```
+
+````
 
 2. **Make Scripts Executable**:
 
    ```bash
    chmod +x automation/*.js
    chmod +x start-lint-automation.sh
-```
+````
 
 ## 🚀 Quick Start
 
@@ -106,10 +108,7 @@ The system automatically creates an `.eslintrc.json` file with the following con
 
 ```json
 {
-  "extends": [
-    "next/core-web-vitals",
-    "@typescript-eslint/recommended"
-  ],
+  "extends": ["next/core-web-vitals", "@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "rules": {
@@ -195,13 +194,15 @@ The system automatically fixes common issues:
 
    ```bash
    npm install --save-dev eslint eslint-config-next
-```
+   ```
+
+````
 
 2. **Permission denied**:
 
    ```bash
    chmod +x automation/*.js
-```
+````
 
 3. **High CPU usage**:
    - Increase cooldown periods in scripts
@@ -230,7 +231,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: "18"
       - run: npm install
       - run: node automation/quick-lint-fix.js
 ```
@@ -241,7 +242,9 @@ jobs:
 #!/bin/sh
 node automation/quick-lint-fix.js
 ```
+
 ```
+
 ```
 
 ## 📈 Performance Tips
@@ -277,8 +280,10 @@ For issues or questions:
 
 **Happy Coding! 🚀**
 
+```
 
 ```
+
 ```
 
 ```
