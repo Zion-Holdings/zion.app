@@ -24,7 +24,7 @@ const Contact: NextPage = () = > {
     setIsLoading(true);
     setMessage("");
 
-    try { /  / Mock API call
+    try { /  / Mock API call;
       await new Promise(resolve = > setTimeout(resolve, 1000));
       setMessage('Thank you for your message! We\'ll get back to you soon.');
       setFormData({ name: "", email: "", company: "", message: "" });

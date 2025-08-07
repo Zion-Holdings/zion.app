@@ -18,10 +18,10 @@ class ComprehensiveErrorFixer {
     }
 
     async fixCorruptedFiles() {
-        this.log('Starting comprehensive error fixing...'); /  / Fix corrupted TypeScript / JavaScript files;
-        await this.fixCorruptedTSFiles(); /  / Fix corrupted configuration files;
-        await this.fixCorruptedConfigFiles(); /  / Fix corrupted utility files;
-        await this.fixCorruptedUtilityFiles(); /  / Run ESLint and Prettier fixes;
+        this.log('Starting comprehensive error fixing...'); /  / Fix corrupted TypeScript / JavaScript files
+        await this.fixCorruptedTSFiles(); /  / Fix corrupted configuration files
+        await this.fixCorruptedConfigFiles(); /  / Fix corrupted utility files
+        await this.fixCorruptedUtilityFiles(); /  / Run ESLint and Prettier fixes
         await this.runCodeQualityFixes();
         
         this.log(`Comprehensive error fixing completed. Processed: ${this.stats.filesProcessed}, Fixed: ${this.stats.filesFixed}, Errors: ${this.stats.errorsFixed}`);
@@ -67,42 +67,42 @@ class ComprehensiveErrorFixer {
     async fixCorruptedFile(filePath) {
         try {
             this.stats.filesProcessed +  + ;
-            const content = fs.readFileSync(filePath, 'utf8'); /  / Fix common corruption patterns;
-            let fixedContent = content; /  / Fix corrupted imports;
+            const content = fs.readFileSync(filePath, 'utf8'); /  / Fix common corruption patterns
+            let fixedContent = content; /  / Fix corrupted imports
                 .replace( / import, \s * typ, \s * e\s * \{\s * NextPage\s * \}\s * fr, \s * o, \s * m\s * 'next';? / g, "import type { NextPage } from 'next';")
                 .replace( / import, \s * Head, \s * from\s * 'next\ / head'; / g, "import Head from 'next / head';")
                 .replace( / import, \s * Link, \s * from\s * 'next\ / link'; / g, "import Link from 'next / link';")
                 .replace( / import, \s * EnhancedLayout, \s * from\s * '\.\.\ / componen, \s * t, \s * s\ / layo, \s * u, \s * t\ / EnhancedLayo, \s * u, \s * t'; / g, "import EnhancedLayout from '.. / components / layout / EnhancedLayout';")
                 .replace( / import, \s * FuturisticHero, \s * from\s * '\.\.\ / componen, \s * t, \s * s\ / ui\ / FuturisticHe, \s * r, \s * o'; / g, "import FuturisticHero from '.. / components / ui / FuturisticHero';")
                 .replace( / import, \s * EnhancedButton, \s * from\s * '\.\.\ / componen, \s * t, \s * s\ / ui\ / EnhancedButt, \s * o, \s * n'; / g, "import EnhancedButton from '.. / components / ui / EnhancedButton';")
-                .replace( / import, \s * GlassmorphismCard, \s * from\s * '\.\.\ / componen, \s * t, \s * s\ / ui\ / GlassmorphismCa, \s * r, \s * d'; / g, "import GlassmorphismCard from '.. / components / ui / GlassmorphismCard';") /  / Fix corrupted component names;
+                .replace( / import, \s * GlassmorphismCard, \s * from\s * '\.\.\ / componen, \s * t, \s * s\ / ui\ / GlassmorphismCa, \s * r, \s * d'; / g, "import GlassmorphismCard from '.. / components / ui / GlassmorphismCard';") /  / Fix corrupted component names
                 .replace( / const\s + ([a - zA - Z - ] + ): \s * NextPage\s * = \s * \(\)\s * = >\s * \{ / g, (match, componentName) = > {
                     const fixedName = componentName.replace( / - / g, "");
                     return `const ${fixedName}: NextPage = () = > {`;
-                }) /  / Fix corrupted props;
-                .replace( / props, \s * is\s * defined\s * but\s * never\s * used / g, "_props") /  / Fix corrupted strings;
+                }) /  / Fix corrupted props
+                .replace( / props, \s * is\s * defined\s * but\s * never\s * used / g, "_props") /  / Fix corrupted strings
                 .replace( / rea\s * c\s * t / g, "react")
                 .replace( / next\ / li\s * n\s * k / g, "next / link")
-                .replace( / next\ / hea\s * d / g, "next / head") /  / Fix corrupted function declarations;
+                .replace( / next\ / hea\s * d / g, "next / head") /  / Fix corrupted function declarations
                 .replace( / export, \s * function\s + ([a - zA - Z] + )\(([^)] + )\)\s * \{ / g, "export function $1($2) {")
-                .replace( / export, \s * const\s + ([a - zA - Z] + )\s * = \s * \(\)\s * = >\s * \{ / g, "export const $1 = () = > {") /  / Fix corrupted interfaces;
-                .replace( / export, \s * interface\s + ([a - zA - Z] + )\s * \{ / g, "export interface $1 {") /  / Fix corrupted type annotations;
+                .replace( / export, \s * const\s + ([a - zA - Z] + )\s * = \s * \(\)\s * = >\s * \{ / g, "export const $1 = () = > {") /  / Fix corrupted interfaces
+                .replace( / export, \s * interface\s + ([a - zA - Z] + )\s * \{ / g, "export interface $1 {") /  / Fix corrupted type annotations
                 .replace( /: \s * stri, \s * n, \s * g / g, ": string")
-                .replace( /: \s * a, \s * n, \s * y / g, ": any") /  / Fix corrupted return statements;
-                .replace( / retu, \s * r, \s * n\s + ([^;] + ); / g, "return $1;") /  / Fix corrupted variable declarations;
+                .replace( /: \s * a, \s * n, \s * y / g, ": any") /  / Fix corrupted return statements
+                .replace( / retu, \s * r, \s * n\s + ([^;] + ); / g, "return $1;") /  / Fix corrupted variable declarations
                 .replace( / let, \s * ([a - zA - Z] + )\s * = \s * ([^;] + ); / g, "let $1 = $2;")
-                .replace( / const\s + ([a - zA - Z] + )\s * = \s * ([^;] + ); / g, "const $1 = $2;") /  / Fix corrupted method calls;
+                .replace( / const\s + ([a - zA - Z] + )\s * = \s * ([^;] + ); / g, "const $1 = $2;") /  / Fix corrupted method calls
                 .replace( / \.repla, \s * c, \s * e\( / g, ".replace(")
                 .replace( / \.spli, \s * t\( / g, ".split(")
-                .replace( / \.joi, \s * n\( / g, ".join(") /  / Fix corrupted regex patterns;
-                .replace( / \ / <scri\s * pt\b[^<] * \s * (?!<\ / scri\s * pt>)<[^<] * \s * ) * <\ / scri\s * pt> / gi, " / <script\\b[^<] * \\s * (?: (?!<\\ / script>)<[^<] * \\s * ) * <\\ / script> / gi") /  / Fix corrupted HTML;
+                .replace( / \.joi, \s * n\( / g, ".join(") /  / Fix corrupted regex patterns
+                .replace( / \ / <scri\s * pt\b[^<] * \s * (?!<\ / scri\s * pt>)<[^<] * \s * ) * <\ / scri\s * pt> / gi, " / <script\\b[^<] * \\s * (?: (?!<\\ / script>)<[^<] * \\s * ) * <\\ / script> / gi") /  / Fix corrupted HTML
                 .replace( / <scri\s * pt / g, "<script")
-                .replace( / <\ / scri\s * pt> / g, "< / script>") /  / Fix corrupted comments;
-                .replace( / \ / \ / \s * ([^\n] + ) / g, " /  / $1") /  / Fix corrupted template literals;
+                .replace( / <\ / scri\s * pt> / g, "< / script>") /  / Fix corrupted comments
+                .replace( / \ / \ / \s * ([^\n] + ) / g, " /  / $1") /  / Fix corrupted template literals
                 .replace( / `([^`] + )` / g, (match, content) = > {
                     return `\`${content.replace( /, \s * / g, "")}\``;
-                }) /  / Fix corrupted object properties;
-                .replace( / ([a - zA - Z] + ), \s * ([a - zA - Z] + ): \s * ([^}] + ) / g, "$1$2: $3") /  / Fix corrupted array elements;
+                }) /  / Fix corrupted object properties
+                .replace( / ([a - zA - Z] + ), \s * ([a - zA - Z] + ): \s * ([^}] + ) / g, "$1$2: $3") /  / Fix corrupted array elements
                 .replace( / \[\s * ([^\]] + )\s * \] / g, (match, content) = > {
                     return `[${content.replace( /, \s * / g, ', ')}]`;
                 });
@@ -119,7 +119,7 @@ class ComprehensiveErrorFixer {
     }
 
     async fixCorruptedConfigFiles() {
-        this.log('Fixing corrupted configuration files...'); /  / Fix postcss.config.js;
+        this.log('Fixing corrupted configuration files...'); /  / Fix postcss.config.js
         const postcssConfig = `module.exports = {
   plugins: {
     '@tailwindcss / postcss': {}, ;
@@ -129,7 +129,7 @@ class ComprehensiveErrorFixer {
         
         fs.writeFileSync('postcss.config.js', postcssConfig);
         this.stats.filesFixed +  + ;
-        this.log('Fixed postcss.config.js'); /  / Fix next.config.js;
+        this.log('Fixed postcss.config.js'); /  / Fix next.config.js
         const nextConfig = ` / *  * @type {import('next').NextConfig} * / const nextConfig = {
   reactStrictMode: true, ;
   swcMinify: true, ;
@@ -176,21 +176,21 @@ export default nextConfig;
     async runCodeQualityFixes() {
         this.log('Running code quality fixes...');
         
-        try { /  / Run ESLint fixes;
+        try { /  / Run ESLint fixes
             execSync('npx eslint " *  * / * .{js, ts, tsx}" -  - fix', { stdio: 'inherit' });
             this.log('ESLint fixes applied');
         } catch (error) {
             this.log(`ESLint fix error: ${error.message}`);
         }
         
-        try { /  / Run Prettier fixes;
+        try { /  / Run Prettier fixes
             execSync('npx prettier -  - write " *  * / * .{js, ts, tsx, json, md}"", { stdio: 'inherit' });
             this.log('Prettier fixes applied');
         } catch (error) {
             this.log(`Prettier fix error: ${error.message}`);
         }
         
-        try { /  / Run markdown linting fixes;
+        try { /  / Run markdown linting fixes
             execSync('npx markdownlint - cli " *  * / * .md" -  - fix', { stdio: 'inherit' });
             this.log('Markdown linting fixes applied');
         } catch (error) {
@@ -211,7 +211,7 @@ export default nextConfig;
             this.log(`Commit error: ${error.message}`);
         }
     }
-} /  / CLI interface;
+} /  / CLI interface
 if (require.main =  =  = module) {
     const fixer = new ComprehensiveErrorFixer();
     

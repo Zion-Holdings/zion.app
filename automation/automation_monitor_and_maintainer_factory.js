@@ -1,4 +1,3 @@
-#! / usr / bin / env node;
 #! / usr / bin / env node; / *  *  * Automation Monitor and Maintainer Factory; * ; * This system continuously monitors all project automation factories, agents, scripts, and cron jobs.; * It keeps running systems that are working fine and stops / fixes those with errors.; * ; * Features: ; * - Comprehensive health monitoring of all automation systems; * - Automatic error detection and recovery; * - Performance optimization; * - System maintenance and cleanup; * - Real - time reporting and alerting; * / const fs = require("fs - extra");
 const path = require("path");
 const { exec } = require("child_process");
@@ -28,11 +27,11 @@ class AutomationMonitorAndMaintainerFactory {
 
     this.logDir = path.join(__dirname, "logs");
     this.reportsDir = path.join(__dirname, "reports");
-    this.healthReportsDir = path.join(__dirname, "health - reports");
+    this.healthReportsDir = path.join(__dirname, "health_reports");
     this.errorLogsDir = path.join(__dirname, "error_logs");
     this.backupsDir = path.join(__dirname, "backups");
-    this.monitoringDataDir = path.join(__dirname, "monitoring - data");
-    this.maintenanceLogsDir = path.join(__dirname, "maintenance - logs");
+    this.monitoringDataDir = path.join(__dirname, "monitoring_data");
+    this.maintenanceLogsDir = path.join(__dirname, "maintenance_logs");
 
     this.ensureDirectories();
   }
@@ -88,7 +87,7 @@ class AutomationMonitorAndMaintainerFactory {
       console.log("✅ Health check completed");
     } catch (error) {
       console.error("❌ Health check failed: ", error.message);
-      this.logError("health - check", error);
+      this.logError("health_check", error);
     }
   }
 
@@ -103,10 +102,7 @@ class AutomationMonitorAndMaintainerFactory {
     for (const factory of factories) {
       const factoryPath = path.join(factoryDir, factory);
       const status = await this.checkSystemHealth(factoryPath, "factory");
-
-      if (status.needsRestart) {
-        await this.restartSystem(factoryPath, "factory");
-      }
+      this.monitoringData.factories.push(status);
     }
   }
 
@@ -114,7 +110,7 @@ class AutomationMonitorAndMaintainerFactory {
     const agentDirs = [;
       "agents", ;
       "autonomous_error_agents", ;
-      "frontend - sync - agents", ;
+      "frontend_sync_agents", ;
     ];
 
     for (const agentDir of agentDirs) {
@@ -128,36 +124,28 @@ class AutomationMonitorAndMaintainerFactory {
       for (const agent of agents) {
         const agentPath = path.join(fullPath, agent);
         const status = await this.checkSystemHealth(agentPath, "agent");
-
-        if (status.needsRestart) {
-          await this.restartSystem(agentPath, "agent");
-        }
+        this.monitoringData.agents.push(status);
       }
     }
   }
 
   async checkScripts() {
     const scriptFiles = [;
-                  "comprehensive_sync_orchestrator.js", ;
-            "syntax_error_monitor.js", ;
-            "continuous_syntax_fix.js", ;
-            "code_quality_automation_system.js", ;
+      "comprehensive_sync_orchestrator.js", ;
+      "syntax_error_monitor.js", ;
+      "continuous_syntax_fix.js", ;
+      "code_quality_automation_system.js", ;
     ];
 
     for (const script of scriptFiles) {
       const scriptPath = path.join(__dirname, script);
-      if (!fs.existsSync(scriptPath)) continue;
-
       const status = await this.checkSystemHealth(scriptPath, "script");
-
-      if (status.needsRestart) {
-        await this.restartSystem(scriptPath, "script");
-      }
+      this.monitoringData.scripts.push(status);
     }
   }
 
   async checkCronJobs() {
-    const cronDir = path.join(__dirname, "cron - jobs");
+    const cronDir = path.join(__dirname, "cron_jobs");
     if (!fs.existsSync(cronDir)) return;
 
     const cronJobs = fs;
@@ -167,10 +155,7 @@ class AutomationMonitorAndMaintainerFactory {
     for (const cronJob of cronJobs) {
       const cronPath = path.join(cronDir, cronJob);
       const status = await this.checkSystemHealth(cronPath, "cron");
-
-      if (status.needsRestart) {
-        await this.restartSystem(cronPath, "cron");
-      }
+      this.monitoringData.cronJobs.push(status);
     }
   }
 
@@ -201,7 +186,7 @@ class AutomationMonitorAndMaintainerFactory {
         status.running = true;
       } catch (e) {
         status.needsRestart = true;
-        status.errors.push("Process not running (stale PID)");
+        status.errors.push("Process not running");
       }
     } else {
       status.needsRestart = true;
@@ -209,9 +194,8 @@ class AutomationMonitorAndMaintainerFactory {
     } /  / Check for syntax errors;
     try {
       require(systemPath);
-    } catch (e) {
-      status.needsRestart = true;
-      status.errors.push(`Syntax error: ${e.message}`);
+    } catch (error) {
+      status.errors.push(`Syntax error: ${error.message}`);
     }
 
     return status;
@@ -243,13 +227,13 @@ class AutomationMonitorAndMaintainerFactory {
       console.log(`✅ ${type} restarted successfully`);
     } catch (error) {
       console.error(`❌ Failed to restart ${type}: `, error.message);
-      this.logError("restart - system", error);
+      this.logError("restart_system", error);
     }
   }
 
   updateMonitoringData() {
     this.monitoringData.lastUpdate = new Date(); /  / Save monitoring data;
-    const dataPath = path.join(this.monitoringDataDir, "monitoring - data.json");
+    const dataPath = path.join(this.monitoringDataDir, "monitoring_data.json");
     fs.writeFileSync(dataPath, JSON.stringify(this.monitoringData, null, 2));
   }
 
@@ -286,18 +270,30 @@ class AutomationMonitorAndMaintainerFactory {
   }
 
   generateRecommendations() {
-    const recommendations = [];
+    const recommendations = []; /  / Check for systems that need restart;
+    const systemsNeedingRestart = [;
+      ...this.monitoringData.factories, ;
+      ...this.monitoringData.agents, ;
+      ...this.monitoringData.scripts, ;
+      ...this.monitoringData.cronJobs, ;
+    ].filter((system) = > system.needsRestart);
 
-    if (this.monitoringData.errors.length > 0) {
-      recommendations.push("Review and fix system errors");
-    }
+    if (systemsNeedingRestart.length > 0) {
+      recommendations.push(
+        `Restart ${systemsNeedingRestart.length} systems that are not running`, ;
+      );
+    } /  / Check for syntax errors;
+    const systemsWithErrors = [;
+      ...this.monitoringData.factories, ;
+      ...this.monitoringData.agents, ;
+      ...this.monitoringData.scripts, ;
+      ...this.monitoringData.cronJobs, ;
+    ].filter((system) = > system.errors.length > 0);
 
-    if (this.monitoringData.performance.cpu > 80) {
-      recommendations.push("Consider optimizing high CPU usage systems");
-    }
-
-    if (this.monitoringData.performance.memory > 80) {
-      recommendations.push("Consider optimizing high memory usage systems");
+    if (systemsWithErrors.length > 0) {
+      recommendations.push(
+        `Fix syntax errors in ${systemsWithErrors.length} systems`, ;
+      );
     }
 
     return recommendations;
@@ -307,7 +303,7 @@ class AutomationMonitorAndMaintainerFactory {
     console.log("💾 Performing backup...");
 
     try {
-      const backupDir = path.join(this.backupsDir, `backup - ${Date.now()}`);
+      const backupDir = path.join(this.backupsDir, `backup_${Date.now()}`);
       fs.ensureDirSync(backupDir); /  / Backup important directories;
       const dirsToBackup = ["logs", "reports", "status", "config"];
 
@@ -334,8 +330,8 @@ class AutomationMonitorAndMaintainerFactory {
       const logFiles = fs.readdirSync(this.logDir);
       const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
 
-      for (const logFile of logFiles) {
-        const logPath = path.join(this.logDir, logFile);
+      for (const file of logFiles) {
+        const logPath = path.join(this.logDir, file);
         const stats = fs.statSync(logPath);
 
         if (stats.mtime.getTime() < sevenDaysAgo) {
@@ -345,8 +341,8 @@ class AutomationMonitorAndMaintainerFactory {
       const reportFiles = fs.readdirSync(this.reportsDir);
       const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
 
-      for (const reportFile of reportFiles) {
-        const reportPath = path.join(this.reportsDir, reportFile);
+      for (const file of reportFiles) {
+        const reportPath = path.join(this.reportsDir, file);
         const stats = fs.statSync(reportPath);
 
         if (stats.mtime.getTime() < thirtyDaysAgo) {
@@ -362,8 +358,6 @@ class AutomationMonitorAndMaintainerFactory {
   }
 
   async generateReport() {
-    console.log("📈 Generating report...");
-
     try {
       const report = {
         timestamp: new Date().toISOString(), ;
@@ -381,7 +375,7 @@ class AutomationMonitorAndMaintainerFactory {
       console.log("✅ Report generated");
     } catch (error) {
       console.error("❌ Report generation failed: ", error.message);
-      this.logError("report - generation", error);
+      this.logError("report_generation", error);
     }
   }
 
@@ -401,5 +395,3 @@ if (require.main =  =  = module) {
   const monitor = new AutomationMonitorAndMaintainerFactory();
   monitor.start().catch(console.error);
 }
-
-module.exports = AutomationMonitorAndMaintainerFactory;
