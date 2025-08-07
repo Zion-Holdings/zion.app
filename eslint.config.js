@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
-export default tseslint.config(
+export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -38,14 +38,6 @@ export default tseslint.config(
     },
   },
   {
-    files: ["**/*.config.{js,ts}", "**/*.config.mjs"],
-    languageOptions: {
-      parserOptions: {
-        sourceType: "module",
-      },
-    },
-  },
-  {
     files: ["automation/**/*.js"],
     languageOptions: {
       parserOptions: {
@@ -57,4 +49,4 @@ export default tseslint.config(
       "@typescript-eslint/no-explicit-any": "off",
     },
   },
-);
+];
