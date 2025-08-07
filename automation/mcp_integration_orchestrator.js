@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { exec } = require("child_process");
 
 class MCPIntegrationOrchestrator {
   constructor() {
@@ -11,28 +12,19 @@ class MCPIntegrationOrchestrator {
       logLevel: "info", ;
     };
     this.processes = new Map();
-  }
-
-  async start() {
-    console.log("🚀 Starting MCP Integration Orchestrator...");
-
-    try { /  / Initialize MCP systems;
-      await this.initializeMCPSystems(); /  / Start monitoring;
-      this.startMonitoring();
-
-      console.log("✅ MCP Integration Orchestrator started successfully");
-    } catch (error) {
-      console.error("❌ Failed to start MCP Integration Orchestrator: ", error);
-    }
+    this.systems = ["mcp_automation_system.js", "mcp_client_integration.js"];
   }
 
   async initializeMCPSystems() {
     console.log("🔧 Initializing MCP systems...");
 
-    const systems = ["mcp_automation_system.js", "mcp_client_integration.js"];
-
-    for (const system of systems) {
-      await this.startSystem(system);
+    for (const system of this.systems) {
+      const systemPath = path.join(__dirname, "..", system);
+      if (fs.existsSync(systemPath)) {
+        await this.startSystem(system);
+      } else {
+        console.log(`⚠️ System not found: ${system}`);
+      }
     }
   }
 
@@ -57,9 +49,26 @@ class MCPIntegrationOrchestrator {
 
   checkSystemHealth() {
     console.log("🔍 Checking MCP system health...");
+    
+    for (const [systemName, process] of this.processes) {
+      if (process.status =  =  = "running") {
+        console.log(`✅ ${systemName} is healthy`);
+      } else {
+        console.log(`⚠️ ${systemName} needs attention`);
+      }
+    }
+  }
 
-    for (const [system, info] of this.processes) {
-      console.log(`📊 ${system}: ${info.status} (PID: ${info.pid})`);
+  async start() {
+    console.log("🚀 Starting MCP Integration Orchestrator...");
+
+    try { /  / Initialize MCP systems;
+      await this.initializeMCPSystems(); /  / Start monitoring;
+      this.startMonitoring();
+
+      console.log("✅ MCP Integration Orchestrator started successfully");
+    } catch (error) {
+      console.error("❌ Failed to start MCP Integration Orchestrator: ", error);
     }
   }
 
@@ -70,12 +79,12 @@ class MCPIntegrationOrchestrator {
 
   stop() {
     console.log("🛑 Stopping MCP Integration Orchestrator...");
-
-    for (const [system, info] of this.processes) {
-      console.log(`🛑 Stopping ${system}...`);
-      this.processes.set(system, { ...info, status: "stopped" });
+    
+    for (const [systemName, process] of this.processes) {
+      console.log(`🛑 Stopping ${systemName}...`);
+      process.status = "stopped";
     }
-
+    
     console.log("✅ MCP Integration Orchestrator stopped");
     process.exit(0);
   }
