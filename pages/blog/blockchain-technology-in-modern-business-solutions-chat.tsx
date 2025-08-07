@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const blockchain-technology-in-modern-business-solutions-chat: NextPage = () => {
+const blockchaintechnologyinmodernbusinesssolutionschat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>blockchain-technology-in-modern-business-solutions-chat - Zion Tech Solutions</title>
-        <meta name="description" content="blockchain-technology-in-modern-business-solutions-chat blog post" />
+        <title>Blockchain Technology In Modern Business Solutions Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Blockchain Technology In Modern Business Solutions Chat blog post" />
       </Head>
       
       <main>
-        <h1>blockchain-technology-in-modern-business-solutions-chat</h1>
+        <h1>BlockchainTechnologyInModernBusinessSolutionsChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
@@ -19,4 +19,4 @@ const blockchain-technology-in-modern-business-solutions-chat: NextPage = () => 
   );
 };
 
-export default blockchain-technology-in-modern-business-solutions-chat;
+export default blockchaintechnologyinmodernbusinesssolutionschat;

@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const system-administration-chat: NextPage = () => {
+const systemadministrationchat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>system-administration-chat - Zion Tech Solutions</title>
-        <meta name="description" content="system-administration-chat service" />
+        <title>System Administration Chat - Zion Tech Solutions</title>
+        <meta name="description" content="System Administration Chat service" />
       </Head>
       
       <main>
-        <h1>system-administration-chat</h1>
+        <h1>SystemAdministrationChat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>
@@ -19,4 +19,4 @@ const system-administration-chat: NextPage = () => {
   );
 };
 
-export default system-administration-chat;
+export default systemadministrationchat;

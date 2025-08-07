@@ -1,0 +1,85 @@
+{
+  "systems": {
+    "automation-monitor-and-maintainer-factory": {
+      "name": "automation-monitor-and-maintainer-factory",
+      "exists": true,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "No PID file found"
+      ],
+      "warnings": [
+        "No log file found"
+      ]
+    },
+    "comprehensive-sync-orchestrator": {
+      "name": "comprehensive-sync-orchestrator",
+      "exists": false,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "System file not found"
+      ],
+      "warnings": []
+    },
+    "syntax-error-monitor": {
+      "name": "syntax-error-monitor",
+      "exists": false,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "System file not found"
+      ],
+      "warnings": []
+    },
+    "continuous-syntax-fix": {
+      "name": "continuous-syntax-fix",
+      "exists": false,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "System file not found"
+      ],
+      "warnings": []
+    },
+    "code-quality-automation-system": {
+      "name": "code-quality-automation-system",
+      "exists": false,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "System file not found"
+      ],
+      "warnings": []
+    },
+    "quick-lint-fix": {
+      "name": "quick-lint-fix",
+      "exists": false,
+      "running": false,
+      "pid": null,
+      "lastLog": null,
+      "errors": [
+        "System file not found"
+      ],
+      "warnings": []
+    }
+  },
+  "overallHealth": "critical",
+  "lastCheck": "2025-08-07T15:11:49.396Z",
+  "errors": [
+    "automation-monitor-and-maintainer-factory: No PID file found",
+    "comprehensive-sync-orchestrator: System file not found",
+    "syntax-error-monitor: System file not found",
+    "continuous-syntax-fix: System file not found",
+    "code-quality-automation-system: System file not found",
+    "quick-lint-fix: System file not found"
+  ],
+  "warnings": [
+    "automation-monitor-and-maintainer-factory: No log file found"
+  ]
+}

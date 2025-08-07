@@ -2,16 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const business-intelligence-chat: NextPage = () => {
+const businessintelligencechat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>business-intelligence-chat - Zion Tech Solutions</title>
-        <meta name="description" content="business-intelligence-chat service" />
+        <title>Business Intelligence Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Business Intelligence Chat service" />
       </Head>
       
       <main>
-        <h1>business-intelligence-chat</h1>
+        <h1>BusinessIntelligenceChat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>
@@ -19,4 +19,4 @@ const business-intelligence-chat: NextPage = () => {
   );
 };
 
-export default business-intelligence-chat;
+export default businessintelligencechat;

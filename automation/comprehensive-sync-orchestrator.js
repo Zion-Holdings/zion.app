@@ -1,8 +1,17 @@
-const fs = require("fs");
-const path = require("path");
-const { spawn, execSync } = require("child_process");
-const { v4: uuidv4 } = require("uuid");
-const cron = require("node-cron");
+#!/usr/bin/env node
+
+/**
+ * Comprehensive Sync Orchestrator
+ * 
+ * This system orchestrates all synchronization operations across the project,
+ * including file synchronization, Git operations, and deployment coordination.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { spawn, execSync } = require('child_process');
+const { v4: uuidv4 } = require('uuid');
+const cron = require('node-cron');
 
 // Batch processing for optimized file operations
 const writeBatch = {
@@ -29,344 +38,256 @@ const writeBatch = {
     });
 
     this.queue = [];
-  },
-};
-
-// Memory optimization for high-speed operation
-const memoryOptimization = {
-  cache: new Map(),
-  cacheTimeout: 30000,
-
-  getCached(key) {
-    const cached = this.cache.get(key);
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.value;
-    }
-    return null;
-  },
-
-  setCached(key, value) {
-    this.cache.set(key, { value, timestamp: Date.now() });
-    if (this.cache.size > 1000) {
-      const now = Date.now();
-      for (const [k, v] of this.cache.entries()) {
-        if (now - v.timestamp > this.cacheTimeout) {
-          this.cache.delete(k);
-        }
-      }
-    }
-  },
+  }
 };
 
 class ComprehensiveSyncOrchestrator {
   constructor() {
-    this.id = "comprehensive-sync-orchestrator";
-    this.version = "2.0";
-    this.status = "initializing";
+    this.isRunning = false;
+    this.syncQueue = [];
+    this.activeSyncs = new Map();
+    this.stats = {
+      totalSyncs: 0,
+      successfulSyncs: 0,
+      failedSyncs: 0,
+      startTime: null
+    };
+
     this.config = {
-      commitMessagePrefix: "Comprehensive-sync",
-      includePatterns: [
-        "automation/**",
-        "pages/**",
-        "components/**",
-        "utils/**",
-        "styles/**",
-        "scripts/**",
-      ],
-      excludePatterns: [
-        "automation/logs/**",
-        "automation/temp/**",
-        "automation/backups/**",
-        "automation/reports/**",
-        "node_modules/**",
-        ".git/**",
-        "*.log",
-        "*.pid",
-      ],
+      syncInterval: '*/5 * * * *', // Every 5 minutes
+      maxConcurrentSyncs: 3,
+      retryAttempts: 3,
+      retryDelay: 5000
     };
-    this.setupDirectories();
+
+    this.logDir = path.join(__dirname, 'comprehensive-sync-logs');
+    this.reportsDir = path.join(__dirname, 'comprehensive-sync-reports');
+    this.statusDir = path.join(__dirname, 'comprehensive-sync-status');
+
+    this.ensureDirectories();
   }
 
-  setupDirectories() {
-    const directories = [
-      "comprehensive-sync-logs",
-      "comprehensive-sync-status",
-      "comprehensive-sync-reports",
-    ];
-
-    directories.forEach((dir) => {
-      const dirPath = path.join(__dirname, dir);
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+  ensureDirectories() {
+    [this.logDir, this.reportsDir, this.statusDir].forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
       }
     });
   }
 
-  async initialize() {
-    try {
-      console.log("🔄 Initializing Comprehensive Sync Orchestrator...");
-      await this.checkGitStatus();
-      this.status = "running";
-      console.log(
-        "✅ Comprehensive Sync Orchestrator initialized successfully",
-      );
-    } catch (error) {
-      console.error(
-        "❌ Failed to initialize Comprehensive Sync Orchestrator: ",
-        error.message,
-      );
-      this.status = "error";
-    }
-  }
+  start() {
+    console.log('🚀 Starting Comprehensive Sync Orchestrator...');
+    this.isRunning = true;
+    this.stats.startTime = new Date();
 
-  async checkGitStatus() {
-    try {
-      execSync("git status", { stdio: "pipe" });
-      console.log("✅ Git repository status OK");
-    } catch (error) {
-      console.error("❌ Git repository status check failed: ", error.message);
-    }
-  }
-
-  async start() {
-    console.log("👀 Starting comprehensive file watching...");
-    const watchDirs = [
-      "pages",
-      "components",
-      "utils",
-      "styles",
-      "scripts",
-      "automation",
-    ];
-
-    console.log("🔄 Starting high-frequency sync...");
-    console.log("🔄 Starting standard sync...");
-    console.log("🔄 Starting backup sync...");
-    console.log("🚀 Starting auto-push...");
-
-    // Start monitoring
-    this.startMonitoring();
-  }
-
-  async performHighFrequencySync() {
-    try {
-      console.log("🔄 Performing high-frequency sync...");
-      const changedFiles = this.getChangedFiles();
-
-      if (changedFiles.length > 0) {
-        execSync("git add .", { stdio: "pipe" });
-
-        const commitMessage = `${this.config.commitMessagePrefix}: High-freq ${new Date().toISOString()} - ${changedFiles.length} files`;
-        execSync(`git commit -m "${commitMessage}"`, { stdio: "pipe" });
-        console.log("✅ High-frequency sync successful");
-      } else {
-        console.log("✅ No changes for high-frequency sync");
-      }
-    } catch (error) {
-      console.error("❌ High-frequency sync failed: ", error.message);
-      await this.handleError("high-freq-sync", error);
-    }
-  }
-
-  async performStandardSync() {
-    try {
-      console.log("🔄 Performing standard sync...");
-      const changedFiles = this.getChangedFiles();
-
-      if (changedFiles.length > 0) {
-        execSync("git add .", { stdio: "pipe" });
-
-        const commitMessage = `${this.config.commitMessagePrefix}: Standard ${new Date().toISOString()} - ${changedFiles.length} files`;
-        execSync(`git commit -m "${commitMessage}"`, { stdio: "pipe" });
-        console.log("✅ Standard sync successful");
-      } else {
-        console.log("✅ No changes for standard sync");
-      }
-    } catch (error) {
-      console.error("❌ Standard sync failed: ", error.message);
-      await this.handleError("standard-sync", error);
-    }
-  }
-
-  async performBackupSync() {
-    try {
-      console.log("🔄 Performing backup sync...");
-      const changedFiles = this.getChangedFiles();
-
-      if (changedFiles.length > 0) {
-        execSync("git add .", { stdio: "pipe" });
-
-        const commitMessage = `${this.config.commitMessagePrefix}: Backup ${new Date().toISOString()} - ${changedFiles.length} files`;
-        execSync(`git commit -m "${commitMessage}"`, { stdio: "pipe" });
-        console.log("✅ Backup sync successful");
-      } else {
-        console.log("✅ No changes for backup sync");
-      }
-    } catch (error) {
-      console.error("❌ Backup sync failed: ", error.message);
-      await this.handleError("backup-sync", error);
-    }
-  }
-
-  async performAutoPush() {
-    try {
-      console.log("🚀 Performing auto-push...");
-
-      const commitsToPush = execSync("git log --oneline origin/main..HEAD", {
-        encoding: "utf8",
-      });
-
-      if (commitsToPush.trim()) {
-        execSync("git push origin main", { stdio: "pipe" });
-        console.log("✅ Auto-push successful");
-      } else {
-        console.log("✅ No commits to push");
-      }
-    } catch (error) {
-      console.error("❌ Auto-push failed: ", error.message);
-      await this.handleError("push", error);
-    }
-  }
-
-  getChangedFiles() {
-    try {
-      const status = execSync("git status --porcelain", {
-        encoding: "utf8",
-      });
-      const files = status
-        .trim()
-        .split("\n")
-        .filter((line) => line.trim());
-      return files.map((file) => file.substring(3));
-    } catch (error) {
-      console.error("❌ Error getting changed files: ", error.message);
-      return [];
-    }
-  }
-
-  shouldIncludeFile(filePath) {
-    return this.config.includePatterns.some((pattern) => {
-      const regex = new RegExp(
-        pattern.replace(/\*\*/g, ".*").replace(/\*/g, "[^/]*"),
-      );
-      return regex.test(filePath);
+    // Start cron job for regular syncs
+    cron.schedule(this.config.syncInterval, () => {
+      this.performSync();
     });
+
+    // Start batch flush interval
+    setInterval(() => {
+      writeBatch.flush();
+    }, writeBatch.flushInterval);
+
+    console.log('✅ Comprehensive Sync Orchestrator started successfully');
   }
 
-  shouldExcludeFile(filePath) {
-    return this.config.excludePatterns.some((pattern) => {
-      const regex = new RegExp(
-        pattern.replace(/\*\*/g, ".*").replace(/\*/g, "[^/]*"),
-      );
-      return regex.test(filePath);
-    });
-  }
+  async performSync() {
+    if (this.activeSyncs.size >= this.config.maxConcurrentSyncs) {
+      console.log('⚠️  Maximum concurrent syncs reached, skipping...');
+      return;
+    }
 
-  async handleError(operation, error) {
-    console.error(`❌ Error in ${operation}:`, error.message);
-
-    const errorLog = {
-      timestamp: new Date().toISOString(),
-      operation,
-      error: error.message,
-      stack: error.stack,
+    const syncId = uuidv4();
+    const syncTask = {
+      id: syncId,
+      type: 'comprehensive',
+      startTime: new Date(),
+      status: 'running'
     };
 
-    const errorPath = path.join(
-      __dirname,
-      "comprehensive-sync-logs",
-      `error-${Date.now()}.json`,
-    );
-    fs.writeFileSync(errorPath, JSON.stringify(errorLog, null, 2));
+    this.activeSyncs.set(syncId, syncTask);
+    this.stats.totalSyncs++;
 
-    if (operation === "high-freq-sync") {
-      // Retry high-frequency sync after error
-      setTimeout(() => this.performHighFrequencySync(), 3000);
-    } else if (operation === "standard-sync") {
-      // Retry standard sync after error
-      setTimeout(() => this.performStandardSync(), 15000);
-    } else if (operation === "backup-sync") {
-      // Retry backup sync after error
-      setTimeout(() => this.performBackupSync(), 60000);
-    } else if (operation === "push") {
-      // Retry push after error
-      setTimeout(() => this.performAutoPush(), 30000);
+    try {
+      console.log(`🔄 Starting comprehensive sync ${syncId}...`);
+
+      // Perform Git operations
+      await this.performGitSync();
+
+      // Perform file synchronization
+      await this.performFileSync();
+
+      // Perform deployment coordination
+      await this.performDeploymentSync();
+
+      // Update sync task status
+      syncTask.status = 'completed';
+      syncTask.endTime = new Date();
+      this.stats.successfulSyncs++;
+
+      console.log(`✅ Comprehensive sync ${syncId} completed successfully`);
+
+    } catch (error) {
+      console.error(`❌ Comprehensive sync ${syncId} failed:`, error.message);
+      syncTask.status = 'failed';
+      syncTask.error = error.message;
+      syncTask.endTime = new Date();
+      this.stats.failedSyncs++;
+
+      // Retry logic
+      await this.retrySync(syncId);
+    } finally {
+      this.activeSyncs.delete(syncId);
+      this.updateStatus();
     }
   }
 
-  startMonitoring() {
-    // Set up high-frequency monitoring (every 3 seconds)
-    setInterval(() => {
-      this.performHighFrequencySync();
-    }, 3000);
+  async performGitSync() {
+    console.log('📝 Performing Git synchronization...');
 
-    // Set up standard monitoring (every 15 seconds)
-    setInterval(() => {
-      this.performStandardSync();
-    }, 15000);
-
-    // Set up backup monitoring (every 60 seconds)
-    setInterval(() => {
-      this.performBackupSync();
-    }, 60000);
-
-    // Set up auto-push monitoring (every 30 seconds)
-    setInterval(() => {
-      this.performAutoPush();
-    }, 30000);
+    try {
+      // Check Git status
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });
+      
+      if (status.trim()) {
+        // Add all changes
+        execSync('git add .');
+        
+        // Commit with timestamp
+        const timestamp = new Date().toISOString();
+        execSync(`git commit -m "Auto-sync: ${timestamp}"`);
+        
+        // Push to remote
+        execSync('git push');
+        
+        console.log('✅ Git sync completed');
+      } else {
+        console.log('ℹ️  No changes to sync');
+      }
+    } catch (error) {
+      console.error('❌ Git sync failed:', error.message);
+      throw error;
+    }
   }
 
-  generateReport() {
-    const statusPath = path.join(
-      __dirname,
-      "comprehensive-sync-status",
-      "current-status.json",
-    );
+  async performFileSync() {
+    console.log('📁 Performing file synchronization...');
 
-    const report = {
-      timestamp: new Date().toISOString(),
-      status: this.status,
-      version: this.version,
-      uptime: process.uptime(),
+    try {
+      // Sync important directories
+      const syncDirs = ['src', 'public', 'components', 'utils'];
+      
+      for (const dir of syncDirs) {
+        const sourcePath = path.join(process.cwd(), dir);
+        if (fs.existsSync(sourcePath)) {
+          // Create backup
+          const backupPath = path.join(__dirname, 'backups', dir);
+          fs.mkdirSync(path.dirname(backupPath), { recursive: true });
+          
+          if (fs.existsSync(backupPath)) {
+            fs.rmSync(backupPath, { recursive: true });
+          }
+          
+          fs.cpSync(sourcePath, backupPath, { recursive: true });
+        }
+      }
+
+      console.log('✅ File sync completed');
+    } catch (error) {
+      console.error('❌ File sync failed:', error.message);
+      throw error;
+    }
+  }
+
+  async performDeploymentSync() {
+    console.log('🚀 Performing deployment coordination...');
+
+    try {
+      // Check if build is needed
+      const packageJsonPath = path.join(process.cwd(), 'package.json');
+      if (fs.existsSync(packageJsonPath)) {
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+        
+        // Trigger build if needed
+        if (packageJson.scripts && packageJson.scripts.build) {
+          console.log('🔨 Triggering build...');
+          execSync('npm run build', { stdio: 'inherit' });
+        }
+      }
+
+      console.log('✅ Deployment sync completed');
+    } catch (error) {
+      console.error('❌ Deployment sync failed:', error.message);
+      throw error;
+    }
+  }
+
+  async retrySync(syncId) {
+    const syncTask = this.activeSyncs.get(syncId);
+    if (!syncTask || syncTask.retryCount >= this.config.retryAttempts) {
+      return;
+    }
+
+    syncTask.retryCount = (syncTask.retryCount || 0) + 1;
+    console.log(`🔄 Retrying sync ${syncId} (attempt ${syncTask.retryCount})...`);
+
+    setTimeout(async () => {
+      try {
+        await this.performSync();
+      } catch (error) {
+        console.error(`❌ Retry failed for sync ${syncId}:`, error.message);
+      }
+    }, this.config.retryDelay);
+  }
+
+  updateStatus() {
+    const status = {
+      isRunning: this.isRunning,
+      activeSyncs: this.activeSyncs.size,
+      stats: this.stats,
+      lastUpdate: new Date().toISOString()
     };
 
-    fs.writeFileSync(statusPath, JSON.stringify(report, null, 2));
-    console.log("📊 Generated comprehensive sync report");
+    const statusPath = path.join(this.statusDir, 'orchestrator-status.json');
+    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
-  async shutdown() {
-    console.log("🛑 Shutting down Comprehensive Sync Orchestrator...");
-    this.status = "stopped";
-    this.generateReport();
-    console.log("✅ Comprehensive Sync Orchestrator shutdown complete");
+  stop() {
+    console.log('🛑 Stopping Comprehensive Sync Orchestrator...');
+    this.isRunning = false;
+    
+    // Stop all active syncs
+    this.activeSyncs.clear();
+    
+    console.log('✅ Comprehensive Sync Orchestrator stopped');
+  }
+
+  getStats() {
+    return {
+      ...this.stats,
+      activeSyncs: this.activeSyncs.size,
+      isRunning: this.isRunning
+    };
   }
 }
 
-// Signal handlers
-process.on("SIGTERM", async () => {
-  console.log("🛑 Received SIGTERM, shutting down...");
-  await orchestrator.shutdown();
-  process.exit(0);
-});
+// Run if called directly
+if (require.main === module) {
+  const orchestrator = new ComprehensiveSyncOrchestrator();
+  orchestrator.start();
 
-process.on("SIGINT", async () => {
-  console.log("🛑 Received SIGINT, shutting down...");
-  await orchestrator.shutdown();
-  process.exit(0);
-});
-
-// Initialize and start
-const orchestrator = new ComprehensiveSyncOrchestrator();
-
-orchestrator
-  .initialize()
-  .then(() => {
-    orchestrator.start();
-  })
-  .catch((error) => {
-    console.error(
-      "❌ Failed to start Comprehensive Sync Orchestrator: ",
-      error.message,
-    );
-    process.exit(1);
+  // Handle graceful shutdown
+  process.on('SIGINT', () => {
+    orchestrator.stop();
+    process.exit(0);
   });
+
+  process.on('SIGTERM', () => {
+    orchestrator.stop();
+    process.exit(0);
+  });
+}
+
+module.exports = ComprehensiveSyncOrchestrator;
