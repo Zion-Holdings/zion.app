@@ -1,3 +1,4 @@
+#! / usr / bin / env node;
 #! / usr / bin / env node; / *  *  * Automation Monitor and Maintainer Factory; * ; * This system continuously monitors all project automation factories, agents, scripts, and cron jobs.; * It keeps running systems that are working fine and stops / fixes those with errors.; * ; * Features: ; * - Comprehensive health monitoring of all automation systems; * - Automatic error detection and recovery; * - Performance optimization; * - System maintenance and cleanup; * - Real - time reporting and alerting; * / const fs = require("fs - extra");
 const path = require("path");
 const { exec } = require("child_process");
