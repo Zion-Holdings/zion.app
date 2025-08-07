@@ -26,35 +26,35 @@ export default function UserEngagementSystem(_props: UserEngagementSystemProps) 
         <div className = "text - center">;
           <div className = "text - 2xl font - bold text - blue - 600">{userStats.totalUsers}< / div>;
           <div className = "text - sm text - gray - 600">Total Users< / div>;
-        < / div>;
+        </div>;
         <div className = "text - center">;
           <div className = "text - 2xl font - bold text - green - 600">{userStats.activeUsers}< / div>;
           <div className = "text - sm text - gray - 600">Active Users< / div>;
-        < / div>;
+        </div>;
         <div className = "text - center">;
           <div className = "text - 2xl font - bold text - purple - 600">{userStats.newUsers}< / div>;
           <div className = "text - sm text - gray - 600">New Users< / div>;
-        < / div>;
+        </div>;
         <div className = "text - center">;
           <div className = "text - 2xl font - bold text - orange - 600">{userStats.engagementRate}%< / div>;
           <div className = "text - sm text - gray - 600">Engagement Rate< / div>;
-        < / div>;
-      < / div>;
+        </div>;
+      </div>;
 
       <div>;
         <h4 className = "text - lg font - medium text - gray - 900 mb - 4">Recent Activity< / h4>;
         <div className = "space - y - 3">;
-          {recentActivity.map((activity) = > (
+          {recentActivity.map((activity) => (
             <div key = {activity.id} className = "flex items - center justify - between p - 3 bg - gray - 50 rounded - lg">;
               <div>;
                 <p className = "font - medium text - gray - 900">{activity.user}< / p>;
                 <p className = "text - sm text - gray - 600">{activity.action}< / p>;
-              < / div>;
+              </div>;
               <span className = "text - xs text - gray - 500">{activity.time}< / span>;
-            < / div>;
+            </div>;
           ))}
-        < / div>;
-      < / div>;
-    < / div>;
+        </div>;
+      </div>;
+    </div>;
   );
 }

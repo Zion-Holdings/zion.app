@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import type { NextPage } from 'next';
-import Head from 'next / head';
+import Head from 'next/head';
 
-const Contact: NextPage = () = > {
+const Contact: NextPage = () => {
   const [formData, setFormData] = useState({
     name: "", ;
     email: "", ;
@@ -12,20 +12,20 @@ const Contact: NextPage = () = > {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) = > {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData, ;
       [e.target.name]: e.target.value;
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) = > {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setMessage("");
 
     try { /  / Mock API call;
-      await new Promise(resolve = > setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setMessage('Thank you for your message! We\'ll get back to you soon.');
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error) {
@@ -40,31 +40,31 @@ const Contact: NextPage = () = > {
       <Head>;
         <title>Contact Us - AI Marketplace< / title>;
         <meta name = "description" content = "Get in touch with our team for AI solutions and support." / >;
-      < / Head>;
+      </Head>;
 
       <main className = "container mx - auto px - 4 py - 16">;
         <div className = "max - w - 4xl mx - auto">;
           <div className = "text - center mb - 16">;
             <h1 className = "text - 5xl font - bold text - gray - 900 mb - 6">;
               Get in Touch;
-            < / h1>;
+            </h1>;
             <p className = "text - xl text - gray - 600 max - w - 2xl mx - auto">;
               Ready to transform your business with AI? Let's discuss your project ;
               and find the perfect solution for your needs.;
-            < / p>;
-          < / div>;
+            </p>;
+          </div>;
 
           <div className = "grid grid - cols - 1 lg: grid - cols - 2 gap - 12">;
             <div>;
               <h2 className = "text - 3xl font - bold text - gray - 900 mb - 8">;
                 Send us a message;
-              < / h2>;
+              </h2>;
               
               <form onSubmit = {handleSubmit} className = "space - y - 6">;
                 <div>;
                   <label htmlFor = "name" className = "block text - sm font - medium text - gray - 700 mb - 2">;
                     Full Name * ;
-                  < / label>;
+                  </label>;
                   <input;
                     type = "text";
                     id = "name";
@@ -74,12 +74,12 @@ const Contact: NextPage = () = > {
                     onChange = {handleChange}
                     className = "w - full px - 4 py - 3 border border - gray - 300 rounded - lg focus: ring - 2 focus: ring - blue - 500 focus: border - blue - 500";
                     placeholder = "Your full name"; / >;
-                < / div>;
+                </div>;
 
                 <div>;
                   <label htmlFor = "email" className = "block text - sm font - medium text - gray - 700 mb - 2">;
                     Email Address * ;
-                  < / label>;
+                  </label>;
                   <input;
                     type = "email";
                     id = "email";
@@ -89,12 +89,12 @@ const Contact: NextPage = () = > {
                     onChange = {handleChange}
                     className = "w - full px - 4 py - 3 border border - gray - 300 rounded - lg focus: ring - 2 focus: ring - blue - 500 focus: border - blue - 500";
                     placeholder = "your.email@company.com"; / >;
-                < / div>;
+                </div>;
 
                 <div>;
                   <label htmlFor = "company" className = "block text - sm font - medium text - gray - 700 mb - 2">;
                     Company;
-                  < / label>;
+                  </label>;
                   <input;
                     type = "text";
                     id = "company";
@@ -103,12 +103,12 @@ const Contact: NextPage = () = > {
                     onChange = {handleChange}
                     className = "w - full px - 4 py - 3 border border - gray - 300 rounded - lg focus: ring - 2 focus: ring - blue - 500 focus: border - blue - 500";
                     placeholder = "Your company name"; / >;
-                < / div>;
+                </div>;
 
                 <div>;
                   <label htmlFor = "message" className = "block text - sm font - medium text - gray - 700 mb - 2">;
                     Message * ;
-                  < / label>;
+                  </label>;
                   <textarea;
                     id = "message";
                     name = "message";
@@ -118,12 +118,12 @@ const Contact: NextPage = () = > {
                     onChange = {handleChange}
                     className = "w - full px - 4 py - 3 border border - gray - 300 rounded - lg focus: ring - 2 focus: ring - blue - 500 focus: border - blue - 500";
                     placeholder = "Tell us about your project..."; / >;
-                < / div>;
+                </div>;
 
                 {message && (
                   <div className = {`text - sm ${message.includes('error') ? 'text - red - 600': 'text - green - 600'}`}>;
                     {message}
-                  < / div>;
+                  </div>;
                 )}
 
                 <button;
@@ -132,14 +132,14 @@ const Contact: NextPage = () = > {
                   className = "w - full bg - blue - 600 text - white py - 3 px - 6 rounded - lg font - semibold hover: bg - blue - 700 focus: ring - 2 focus: ring - offset - 2 focus: ring - blue - 500 disabled: opacity - 50 transition - colors";
                 >;
                   {isLoading ? 'Sending...': 'Send Message'}
-                < / button>;
-              < / form>;
-            < / div>;
+                </button>;
+              </form>;
+            </div>;
 
             <div>;
               <h2 className = "text - 3xl font - bold text - gray - 900 mb - 8">;
                 Contact Information;
-              < / h2>;
+              </h2>;
               
               <div className = "space - y - 8">;
                 <div className = "flex items - start">;
@@ -148,8 +148,8 @@ const Contact: NextPage = () = > {
                     <h3 className = "text - lg font - semibold text - gray - 900 mb - 2">Email< / h3>;
                     <p className = "text - gray - 600">hello@aimarketplace.com< / p>;
                     <p className = "text - gray - 600">support@aimarketplace.com< / p>;
-                  < / div>;
-                < / div>;
+                  </div>;
+                </div>;
 
                 <div className = "flex items - start">;
                   <div className = "text - 2xl mr - 4">📞< / div>;
@@ -157,8 +157,8 @@ const Contact: NextPage = () = > {
                     <h3 className = "text - lg font - semibold text - gray - 900 mb - 2">Phone< / h3>;
                     <p className = "text - gray - 600"> + 1 (555) 123 - 4567< / p>;
                     <p className = "text - gray - 600">Mon - Fri: 9AM - 6PM EST< / p>;
-                  < / div>;
-                < / div>;
+                  </div>;
+                </div>;
 
                 <div className = "flex items - start">;
                   <div className = "text - 2xl mr - 4">📍< / div>;
@@ -167,8 +167,8 @@ const Contact: NextPage = () = > {
                     <p className = "text - gray - 600">123 AI Street< / p>;
                     <p className = "text - gray - 600">Tech City, TC 12345< / p>;
                     <p className = "text - gray - 600">United States< / p>;
-                  < / div>;
-                < / div>;
+                  </div>;
+                </div>;
 
                 <div className = "flex items - start">;
                   <div className = "text - 2xl mr - 4">💬< / div>;
@@ -176,14 +176,14 @@ const Contact: NextPage = () = > {
                     <h3 className = "text - lg font - semibold text - gray - 900 mb - 2">Live Chat< / h3>;
                     <p className = "text - gray - 600">Available 24 / 7 for urgent inquiries< / p>;
                     <p className = "text - gray - 600">Click the chat widget below< / p>;
-                  < / div>;
-                < / div>;
-              < / div>;
-            < / div>;
-          < / div>;
-        < / div>;
-      < / main>;
-    < / div>;
+                  </div>;
+                </div>;
+              </div>;
+            </div>;
+          </div>;
+        </div>;
+      </main>;
+    </div>;
   );
 };
 

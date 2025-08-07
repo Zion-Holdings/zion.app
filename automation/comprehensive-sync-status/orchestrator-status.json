@@ -1,0 +1,11 @@
+{
+  "isRunning": true,
+  "activeSyncs": 0,
+  "stats": {
+    "totalSyncs": 1,
+    "successfulSyncs": 0,
+    "failedSyncs": 1,
+    "startTime": "2025-08-07T16:44:53.654Z"
+  },
+  "lastUpdate": "2025-08-07T16:45:00.367Z"
+}

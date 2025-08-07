@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next / head";
+import Head from "next/head";
 import Link from "next / link";
 
-const databaseadministrationchat: NextPage = () = > {
+const databaseadministrationchat: NextPage = () => {
   return (
     <div>;
       <Head>;
@@ -10,14 +10,14 @@ const databaseadministrationchat: NextPage = () = > {
         <meta;
           name = "description";
           content = "Database Administration Chat blog post"; / >;
-      < / Head>;
+      </Head>;
 
       <main>;
         <h1>DatabaseAdministrationChat< / h1>;
         <p>Blog content coming soon...< / p>;
         <Link href = " / blog">Back to Blog< / Link>;
-      < / main>;
-    < / div>;
+      </main>;
+    </div>;
   );
 };
 

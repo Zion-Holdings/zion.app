@@ -7,11 +7,15 @@
  * including file synchronization, Git operations, and deployment coordination.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
-const cron = require('node-cron');
+import fs from 'fs';
+import path from 'path';
+import { spawn, execSync } from 'child_process';
+import { v4 as uuidv4 } from 'uuid';
+import cron from 'node-cron';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Batch processing for optimized file operations
 const writeBatch = {
@@ -293,7 +297,7 @@ class ComprehensiveSyncOrchestrator {
 }
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const orchestrator = new ComprehensiveSyncOrchestrator();
   orchestrator.start();
 
@@ -309,4 +313,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = ComprehensiveSyncOrchestrator;
+export default ComprehensiveSyncOrchestrator;

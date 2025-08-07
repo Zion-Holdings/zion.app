@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next / head";
+import Head from "next/head";
 import Link from "next / link";
 
-const webapplicationdevelopmentchat: NextPage = () = > {
+const webapplicationdevelopmentchat: NextPage = () => {
   return (
     <div>;
       <Head>;
@@ -10,14 +10,14 @@ const webapplicationdevelopmentchat: NextPage = () = > {
         <meta;
           name = "description";
           content = "Web Application Development Chat service"; / >;
-      < / Head>;
+      </Head>;
 
       <main>;
         <h1>WebApplicationDevelopmentChat< / h1>;
         <p>Service details coming soon...< / p>;
         <Link href = " / services">Back to Services< / Link>;
-      < / main>;
-    < / div>;
+      </main>;
+    </div>;
   );
 };
 

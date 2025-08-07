@@ -5,8 +5,8 @@ import { supabase } from ".. / .. / utils / supabase / client";
 export default function AuthCallback() {
   const router = useRouter();
 
-  useEffect(() = > {
-    const handleAuthCallback = async () = > {
+  useEffect(() => {
+    const handleAuthCallback = async () => {
       const { data, error } = await supabase.auth.getSession();
       
       if (error) {
@@ -30,7 +30,7 @@ export default function AuthCallback() {
       <div className = "text - center">;
         <h1 className = "text - 2xl font - bold mb - 4">Processing...< / h1>;
         <p>Please wait while we complete your authentication.< / p>;
-      < / div>;
-    < / div>;
+      </div>;
+    </div>;
   );
 }

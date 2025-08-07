@@ -15,14 +15,14 @@ export default function EnhancedMarketplaceCard(_props: EnhancedMarketplaceCardP
         <h3 className = "text - xl font - semibold text - gray - 900 mb - 2">Marketplace Item< / h3>;
         <p className = "text - gray - 600 mb - 4">;
           High - quality marketplace item with enhanced features and modern design.;
-        < / p>;
+        </p>;
         <div className = "flex justify - between items - center">;
           <span className = "text - 2xl font - bold text - blue - 600">$99.99< / span>;
           <button className = "bg - blue - 600 text - white px - 4 py - 2 rounded - md hover: bg - blue - 700 transition - colors">;
             Add to Cart;
-          < / button>;
-        < / div>;
-      < / div>;
-    < / div>;
+          </button>;
+        </div>;
+      </div>;
+    </div>;
   );
 }

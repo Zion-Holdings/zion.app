@@ -11,11 +11,11 @@ export default function NotificationSystem(_props: NotificationSystemProps) {
     { id: 3, message: "Maintenance scheduled", type: "warning", time: "1 hour ago" }, ;
   ]);
 
-  const removeNotification = (id: number) = > {
-    setNotifications(notifications.filter(n = > n.id ! =  = id));
+  const removeNotification = (id: number) => {
+    setNotifications(notifications.filter(n => n.id !== id));
   };
 
-  const getTypeStyles = (type: string) = > {
+  const getTypeStyles = (type: string) => {
     switch (type) {
       case "success": ;
         return "bg - green - 100 border - green - 400 text - green - 800";
@@ -30,7 +30,7 @@ export default function NotificationSystem(_props: NotificationSystemProps) {
 
   return (
     <div className = "fixed top - 4 right - 4 z - 50 space - y - 2">;
-      {notifications.map((notification) = > (
+      {notifications.map((notification) => (
         <div;
           key = {notification.id}
           className = {`max - w - sm w - full border - l - 4 p - 4 rounded - r - lg shadow - lg ${getTypeStyles(notification.type)}`}
@@ -39,16 +39,16 @@ export default function NotificationSystem(_props: NotificationSystemProps) {
             <div className = "flex - 1">;
               <p className = "text - sm font - medium">{notification.message}< / p>;
               <p className = "text - xs opacity - 75 mt - 1">{notification.time}< / p>;
-            < / div>;
+            </div>;
             <button;
-              onClick = {() = > removeNotification(notification.id)}
+              onClick = {() => removeNotification(notification.id)}
               className = "ml - 4 text - sm opacity - 75 hover: opacity - 100";
             >;
               ×;
-            < / button>;
-          < / div>;
-        < / div>;
+            </button>;
+          </div>;
+        </div>;
       ))}
-    < / div>;
+    </div>;
   );
 }

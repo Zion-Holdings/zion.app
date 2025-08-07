@@ -1,26 +1,26 @@
 import type { NextPage } from "next";
-import Head from "next / head";
+import Head from "next/head";
 import Link from "next / link";
 
-const apifirstdevelopmentbuildingscalablesystemschat: NextPage = () = > {
+const apifirstdevelopmentbuildingscalablesystemschat: NextPage = () => {
   return (
     <div>;
       <Head>;
         <title>;
           Api First Development Building Scalable Systems Chat - Zion Tech;
           Solutions;
-        < / title>;
+        </title>;
         <meta;
           name = "description";
           content = "Api First Development Building Scalable Systems Chat blog post"; / >;
-      < / Head>;
+      </Head>;
 
       <main>;
         <h1>ApiFirstDevelopmentBuildingScalableSystemsChat< / h1>;
         <p>Blog content coming soon...< / p>;
         <Link href = " / blog">Back to Blog< / Link>;
-      < / main>;
-    < / div>;
+      </main>;
+    </div>;
   );
 };
 

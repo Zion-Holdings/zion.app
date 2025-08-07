@@ -12,13 +12,13 @@ export default function EnhancedCard(_props: EnhancedCardProps) {
         <h3 className = "text - xl font - semibold text - gray - 900">Enhanced Card< / h3>;
         <p className = "text - gray - 600">;
           This is an enhanced card component with modern styling and hover effects.;
-        < / p>;
+        </p>;
         <div className = "flex justify - end">;
           <button className = "bg - blue - 600 text - white px - 4 py - 2 rounded - md hover: bg - blue - 700 transition - colors">;
             Learn More;
-          < / button>;
-        < / div>;
-      < / div>;
-    < / div>;
+          </button>;
+        </div>;
+      </div>;
+    </div>;
   );
 }

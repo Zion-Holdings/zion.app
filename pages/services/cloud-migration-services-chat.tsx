@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next / head";
+import Head from "next/head";
 import Link from "next / link";
 
-const cloudmigrationserviceschat: NextPage = () = > {
+const cloudmigrationserviceschat: NextPage = () => {
   return (
     <div>;
       <Head>;
@@ -10,14 +10,14 @@ const cloudmigrationserviceschat: NextPage = () = > {
         <meta;
           name = "description";
           content = "Cloud Migration Services Chat service"; / >;
-      < / Head>;
+      </Head>;
 
       <main>;
         <h1>CloudMigrationServicesChat< / h1>;
         <p>Service details coming soon...< / p>;
         <Link href = " / services">Back to Services< / Link>;
-      < / main>;
-    < / div>;
+      </main>;
+    </div>;
   );
 };
 
