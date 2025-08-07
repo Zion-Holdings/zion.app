@@ -70,13 +70,13 @@ git clone <repository-url>
 cd bolt.new.zion.app
 ```
 
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Configure the Google Docs URL:
+1. Configure the Google Docs URL:
    - Update the `googleDocsUrl` in `automation/launch-google-docs-automation.js`
    - Or set it via environment variable: `GOOGLE_DOCS_URL`
 
@@ -195,6 +195,7 @@ Log files are stored in:
 The system expects Google Docs documents with the following format:
 
 ```markdown
+
 # Automation Instructions
 
 ## Content Management
@@ -245,6 +246,7 @@ The system includes comprehensive tests:
 ### Running Tests
 
 ```bash
+
 # Run all tests
 npm run google-docs:test
 
