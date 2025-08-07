@@ -1,0 +1,69 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-powered-content-management/",
+  "timestamp": "2025-08-04T16:08:55.219Z",
+  "pageInfo": {
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "headings": [],
+    "content": "Loading AI-Powered Content Management...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-content-management\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-content-management-816773e218fda006.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 224,
+    "headingCount": 0,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 10,
+    "stylesheetCount": 1
+  }
+}

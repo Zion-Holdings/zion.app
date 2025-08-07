@@ -1,0 +1,40 @@
+{
+  "name": "project-automation",
+  "version": "1.0.0",
+  "description": "Comprehensive project automation and improvement extension for Cursor",
+  "main": "dist/extension.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "npm run build && node dist/extension.js"
+  },
+  "dependencies": {
+    "@types/node": "^20.8.0",
+    "chokidar": "^3.5.3",
+    "glob": "^10.3.10",
+    "fs-extra": "^11.2.0",
+    "simple-git": "^3.22.0",
+    "execa": "^7.2.0",
+    "ora": "^8.0.1",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.15",
+    "node-cron": "^3.0.3",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "automation",
+    "project-improvement",
+    "error-detection",
+    "continuous-improvement"
+  ],
+  "author": "Project Automation System",
+  "license": "MIT"
+}

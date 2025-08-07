@@ -1,0 +1,17 @@
+{
+  "id": "social-media",
+  "name": "Social Media Management",
+  "description": "Manage social media every hour",
+  "cron": "0 * * * *",
+  "command": "node automation/social-media-management.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": "2025-08-01T22:00:00.934Z",
+  "nextRun": "2025-08-01T22:01:00.937Z",
+  "runCount": 11,
+  "successCount": 0,
+  "failureCount": 11,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.305Z"
+}

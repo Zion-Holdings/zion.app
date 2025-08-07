@@ -1,0 +1,11 @@
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import InteractiveSearch from './InteractiveSearch'
+    { value: '10K+', label: 'Active Users', icon: '👥'
+    { value: '500+', label: 'AI Services', icon: '🤖'
+    { value: '99.9%', label: 'Uptime', icon: '⚡'
+    { value: '24/7', label: 'Support', icon: '🛡️'
+    if (typeof window !== 'undefined'
+      window.addEventListener('mousemove'
+      return () => window.removeEventListener('mousemove'
+      

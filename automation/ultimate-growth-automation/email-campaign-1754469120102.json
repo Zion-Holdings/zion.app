@@ -1,0 +1,16 @@
+{
+  "id": "email-campaign-1754469120102",
+  "campaign": "re-engagement",
+  "strategy": {
+    "subject": "We Miss You - Here's What's New",
+    "content": "Discover the latest automation innovations and how they can benefit your business.",
+    "audience": "Inactive subscribers and customers",
+    "timing": "Monthly on last Friday at 3 PM"
+  },
+  "expectedResults": {
+    "openRate": "15-25%",
+    "clickRate": "2-4%",
+    "conversionRate": "1-2%",
+    "revenue": "$1,000-5,000 monthly"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-08-06T14:30:22.769Z",
+  "status": "running",
+  "syncCount": 0,
+  "errorCount": 1403,
+  "successRate": 0,
+  "lastSync": null,
+  "fileWatchers": 7,
+  "memory": {
+    "rss": 59854848,
+    "heapTotal": 12914688,
+    "heapUsed": 12125672,
+    "external": 1787133,
+    "arrayBuffers": 34627
+  },
+  "uptime": 2381.278302403
+}

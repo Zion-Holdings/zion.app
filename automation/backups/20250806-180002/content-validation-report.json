@@ -1,0 +1,454 @@
+{
+  "timestamp": "2025-08-06T05:16:07.282Z",
+  "pageAnalysis": {
+    "pages": [
+      {
+        "file": "404.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/404.tsx",
+        "size": 771,
+        "lines": 23
+      },
+      {
+        "file": "about.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/about.tsx",
+        "size": 12801,
+        "lines": 304
+      },
+      {
+        "file": "callback.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/auth/callback.tsx",
+        "size": 1418,
+        "lines": 49
+      },
+      {
+        "file": "forgot-password.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/auth/forgot-password.tsx",
+        "size": 4361,
+        "lines": 123
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/auth/index.tsx",
+        "size": 9957,
+        "lines": 280
+      },
+      {
+        "file": "reset-password.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/auth/reset-password.tsx",
+        "size": 6975,
+        "lines": 190
+      },
+      {
+        "file": "5g-technology-and-its-impact-on-iot-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+        "size": 4394,
+        "lines": 77
+      },
+      {
+        "file": "ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+        "size": 4610,
+        "lines": 77
+      },
+      {
+        "file": "api-first-development-building-scalable-systems-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+        "size": 4534,
+        "lines": 77
+      },
+      {
+        "file": "augmented-reality-in-enterprise-applications-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+        "size": 4484,
+        "lines": 77
+      },
+      {
+        "file": "blockchain-technology-in-modern-business-solutions-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+        "size": 4560,
+        "lines": 77
+      },
+      {
+        "file": "cloud-native-architecture-best-practices-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+        "size": 4446,
+        "lines": 77
+      },
+      {
+        "file": "cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+        "size": 4446,
+        "lines": 77
+      },
+      {
+        "file": "data-analytics-in-digital-transformation-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+        "size": 4446,
+        "lines": 77
+      },
+      {
+        "file": "devops-automation-strategies-for-modern-teams-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+        "size": 4502,
+        "lines": 77
+      },
+      {
+        "file": "digital-twins-revolutionizing-industry-4-0-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+        "size": 4476,
+        "lines": 77
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/index.tsx",
+        "size": 4096,
+        "lines": 80
+      },
+      {
+        "file": "machine-learning-applications-in-enterprise-software-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+        "size": 4576,
+        "lines": 77
+      },
+      {
+        "file": "microservices-architecture-benefits-and-challenges-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+        "size": 4563,
+        "lines": 77
+      },
+      {
+        "file": "quantum-computing-implications-for-business-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+        "size": 4487,
+        "lines": 77
+      },
+      {
+        "file": "sustainable-technology-green-computing-solutions-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+        "size": 4541,
+        "lines": 77
+      },
+      {
+        "file": "the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+        "size": 4507,
+        "lines": 77
+      },
+      {
+        "file": "ai-consulting-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/ai-consulting-chat.tsx",
+        "size": 3683,
+        "lines": 70
+      },
+      {
+        "file": "business-intelligence-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/business-intelligence-chat.tsx",
+        "size": 3763,
+        "lines": 70
+      },
+      {
+        "file": "cloud-architecture-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/cloud-architecture-chat.tsx",
+        "size": 3735,
+        "lines": 70
+      },
+      {
+        "file": "cybersecurity-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/cybersecurity-chat.tsx",
+        "size": 3680,
+        "lines": 70
+      },
+      {
+        "file": "data-science-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/data-science-chat.tsx",
+        "size": 3670,
+        "lines": 70
+      },
+      {
+        "file": "database-administration-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/database-administration-chat.tsx",
+        "size": 3795,
+        "lines": 70
+      },
+      {
+        "file": "devops-automation-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/devops-automation-chat.tsx",
+        "size": 3728,
+        "lines": 70
+      },
+      {
+        "file": "mobile-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/mobile-development-chat.tsx",
+        "size": 3729,
+        "lines": 70
+      },
+      {
+        "file": "network-engineering-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/network-engineering-chat.tsx",
+        "size": 3752,
+        "lines": 70
+      },
+      {
+        "file": "product-management-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/product-management-chat.tsx",
+        "size": 3739,
+        "lines": 70
+      },
+      {
+        "file": "quality-assurance-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/quality-assurance-chat.tsx",
+        "size": 3727,
+        "lines": 70
+      },
+      {
+        "file": "system-administration-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/system-administration-chat.tsx",
+        "size": 3765,
+        "lines": 70
+      },
+      {
+        "file": "technical-writing-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/technical-writing-chat.tsx",
+        "size": 3723,
+        "lines": 70
+      },
+      {
+        "file": "ui-ux-design-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/ui-ux-design-chat.tsx",
+        "size": 3667,
+        "lines": 70
+      },
+      {
+        "file": "web-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/category/web-development-chat.tsx",
+        "size": 3691,
+        "lines": 70
+      },
+      {
+        "file": "ai-powered-business-solutions-discussion.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+        "size": 4616,
+        "lines": 83
+      },
+      {
+        "file": "cloud-computing-strategies.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/cloud-computing-strategies.tsx",
+        "size": 4480,
+        "lines": 83
+      },
+      {
+        "file": "cybersecurity-best-practices.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/cybersecurity-best-practices.tsx",
+        "size": 4500,
+        "lines": 83
+      },
+      {
+        "file": "data-analytics-implementation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/data-analytics-implementation.tsx",
+        "size": 4510,
+        "lines": 83
+      },
+      {
+        "file": "digital-transformation-insights.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/digital-transformation-insights.tsx",
+        "size": 4530,
+        "lines": 83
+      },
+      {
+        "file": "emerging-technology-trends.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/emerging-technology-trends.tsx",
+        "size": 4480,
+        "lines": 83
+      },
+      {
+        "file": "future-of-work-and-automation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/future-of-work-and-automation.tsx",
+        "size": 4506,
+        "lines": 83
+      },
+      {
+        "file": "innovation-in-enterprise-technology.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/innovation-in-enterprise-technology.tsx",
+        "size": 4568,
+        "lines": 83
+      },
+      {
+        "file": "sustainable-technology-practices.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/sustainable-technology-practices.tsx",
+        "size": 4540,
+        "lines": 83
+      },
+      {
+        "file": "technology-implementation-strategies.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/chat-content/technology-implementation-strategies.tsx",
+        "size": 4580,
+        "lines": 83
+      },
+      {
+        "file": "contact.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/contact.tsx",
+        "size": 15850,
+        "lines": 375
+      },
+      {
+        "file": "enhanced-home.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/enhanced-home.tsx",
+        "size": 1720,
+        "lines": 53
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/index.tsx",
+        "size": 13702,
+        "lines": 333
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/products/index.tsx",
+        "size": 7492,
+        "lines": 175
+      },
+      {
+        "file": "ai-model-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/ai-model-development-chat.tsx",
+        "size": 3797,
+        "lines": 70
+      },
+      {
+        "file": "api-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/api-development-chat.tsx",
+        "size": 3740,
+        "lines": 70
+      },
+      {
+        "file": "business-intelligence-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/business-intelligence-chat.tsx",
+        "size": 3811,
+        "lines": 70
+      },
+      {
+        "file": "cloud-migration-services-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/cloud-migration-services-chat.tsx",
+        "size": 3843,
+        "lines": 70
+      },
+      {
+        "file": "data-pipeline-engineering-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/data-pipeline-engineering-chat.tsx",
+        "size": 3848,
+        "lines": 70
+      },
+      {
+        "file": "database-design-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/database-design-chat.tsx",
+        "size": 3735,
+        "lines": 70
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/index.tsx",
+        "size": 15137,
+        "lines": 385
+      },
+      {
+        "file": "mobile-app-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/mobile-app-development-chat.tsx",
+        "size": 3819,
+        "lines": 70
+      },
+      {
+        "file": "network-security-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/network-security-chat.tsx",
+        "size": 3747,
+        "lines": 70
+      },
+      {
+        "file": "performance-optimization-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/performance-optimization-chat.tsx",
+        "size": 3853,
+        "lines": 70
+      },
+      {
+        "file": "quality-assurance-testing-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/quality-assurance-testing-chat.tsx",
+        "size": 3849,
+        "lines": 70
+      },
+      {
+        "file": "security-auditing-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/security-auditing-chat.tsx",
+        "size": 3764,
+        "lines": 70
+      },
+      {
+        "file": "system-administration-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/system-administration-chat.tsx",
+        "size": 3819,
+        "lines": 70
+      },
+      {
+        "file": "technical-documentation-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/technical-documentation-chat.tsx",
+        "size": 3835,
+        "lines": 70
+      },
+      {
+        "file": "ui-ux-design-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/ui-ux-design-chat.tsx",
+        "size": 3690,
+        "lines": 70
+      },
+      {
+        "file": "web-application-development-chat.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services/web-application-development-chat.tsx",
+        "size": 3881,
+        "lines": 70
+      },
+      {
+        "file": "index.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/talent/index.tsx",
+        "size": 13129,
+        "lines": 289
+      }
+    ],
+    "contentIssues": [
+      {
+        "file": "404.tsx",
+        "type": "missing_meta",
+        "message": "Page missing title or meta tags"
+      }
+    ]
+  },
+  "completenessAnalysis": {
+    "missingPages": [],
+    "existingPages": [
+      "index.tsx",
+      "about.tsx",
+      "services/index.tsx",
+      "blog/index.tsx",
+      "contact.tsx"
+    ]
+  },
+  "qualityIssues": [],
+  "recommendations": [
+    {
+      "type": "content_issues",
+      "priority": "high",
+      "message": "Fix 1 content issues",
+      "issues": [
+        {
+          "file": "404.tsx",
+          "type": "missing_meta",
+          "message": "Page missing title or meta tags"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalPages": 68,
+    "contentIssues": 1,
+    "missingPages": 0,
+    "qualityIssues": 0,
+    "recommendationsCount": 1
+  }
+}

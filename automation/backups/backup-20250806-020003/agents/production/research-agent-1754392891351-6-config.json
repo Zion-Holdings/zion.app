@@ -1,0 +1,47 @@
+{
+  "id": "research-agent-1754392891351-6",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Qwen-Image is a powerful, open source new AI image generator with support for embedded text in English & Chinese",
+  "status": "Active",
+  "createdAt": "2025-08-05T11:21:31.351Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.7680753231436949,
+    "accuracy": 0.8395283316720479,
+    "reliability": 0.9346145071124042,
+    "scalability": 0.8396238780344862
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    },
+    {
+      "type": "improvement",
+      "action": "Improve agent accuracy",
+      "priority": "High",
+      "reasoning": "Agent accuracy needs improvement"
+    }
+  ]
+}

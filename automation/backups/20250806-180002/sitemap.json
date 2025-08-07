@@ -1,0 +1,408 @@
+{
+  "siteUrl": "https://bolt.new.zion.app",
+  "generatedAt": "2025-08-06T05:16:07.182Z",
+  "pages": [
+    {
+      "route": "/about",
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/auth/callback",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/auth/forgot-password",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "auth",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/auth/reset-password",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/5g-technology-and-its-impact-on-iot-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/api-first-development-building-scalable-systems-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/augmented-reality-in-enterprise-applications-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/cloud-native-architecture-best-practices-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/data-analytics-in-digital-transformation-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/devops-automation-strategies-for-modern-teams-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/digital-twins-revolutionizing-industry-4-0-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "blog",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/machine-learning-applications-in-enterprise-software-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/microservices-architecture-benefits-and-challenges-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/quantum-computing-implications-for-business-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/sustainable-technology-green-computing-solutions-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/blog/the-rise-of-edge-computing-in-iot-applications-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/ai-consulting-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/business-intelligence-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/cloud-architecture-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/cybersecurity-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/data-science-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/database-administration-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/devops-automation-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/mobile-development-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/network-engineering-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/product-management-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/quality-assurance-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/system-administration-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/technical-writing-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/ui-ux-design-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/category/web-development-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/ai-powered-business-solutions-discussion",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/cloud-computing-strategies",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/cybersecurity-best-practices",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/data-analytics-implementation",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/digital-transformation-insights",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/emerging-technology-trends",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/future-of-work-and-automation",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/innovation-in-enterprise-technology",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/sustainable-technology-practices",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/chat-content/technology-implementation-strategies",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/contact",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/enhanced-home",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/",
+      "priority": "1.0",
+      "changefreq": "weekly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "products",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/ai-model-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/api-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/business-intelligence-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/cloud-migration-services-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/data-pipeline-engineering-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/database-design-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "services",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/mobile-app-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/network-security-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/performance-optimization-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/quality-assurance-testing-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/security-auditing-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/system-administration-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/technical-documentation-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/ui-ux-design-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "/services/web-application-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    },
+    {
+      "route": "talent",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "lastmod": "2025-08-06"
+    }
+  ]
+}

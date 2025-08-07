@@ -1,0 +1,182 @@
+{
+  "url": "https://ziontechgroup.netlify.app/",
+  "timestamp": "2025-08-05T00:10:44.539Z",
+  "pageInfo": {
+    "title": "Zion - The First Free AI-Powered Marketplace",
+    "description": "Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products.",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "ZionThe First FreeAI-Powered Marketplace"
+      },
+      {
+        "level": "h2",
+        "text": "Marketplace Categories"
+      },
+      {
+        "level": "h3",
+        "text": "IT Services"
+      },
+      {
+        "level": "h3",
+        "text": "AI Talents"
+      },
+      {
+        "level": "h3",
+        "text": "Equipment"
+      },
+      {
+        "level": "h3",
+        "text": "Innovation"
+      },
+      {
+        "level": "h2",
+        "text": "Featured IT Services"
+      },
+      {
+        "level": "h3",
+        "text": "AI Development"
+      },
+      {
+        "level": "h3",
+        "text": "Cloud Migration"
+      },
+      {
+        "level": "h3",
+        "text": "Security Auditing"
+      },
+      {
+        "level": "h3",
+        "text": "Performance Optimization"
+      },
+      {
+        "level": "h2",
+        "text": "Top AI Talents"
+      },
+      {
+        "level": "h3",
+        "text": "Dr. Sarah Chen"
+      },
+      {
+        "level": "h3",
+        "text": "Alex Rodriguez"
+      },
+      {
+        "level": "h3",
+        "text": "Dr. Michael Kim"
+      },
+      {
+        "level": "h3",
+        "text": "Emma Thompson"
+      },
+      {
+        "level": "h2",
+        "text": "Premium Equipment"
+      },
+      {
+        "level": "h3",
+        "text": "GPU Clusters"
+      },
+      {
+        "level": "h3",
+        "text": "Quantum Computers"
+      },
+      {
+        "level": "h3",
+        "text": "Edge Computing Devices"
+      },
+      {
+        "level": "h3",
+        "text": "Data Storage Systems"
+      },
+      {
+        "level": "h2",
+        "text": "Ready to Start Trading?"
+      }
+    ],
+    "content": "ZZionAI MarketplaceMarketplaceToolsBusinessSupportBlogAboutContactSearchKProfileLoginGet StartedZionThe First FreeAI-Powered MarketplaceExperience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products in a seamless, secure environment.Start Trading NowExplore Marketplace10K+Active Users500+AI Services99.9%UptimeMarketplace CategoriesExplore our comprehensive marketplace featuring cutting-edge technology solutionsServices💻IT ServicesProfessional IT consulting and development servicesTalent🤖AI TalentsExpert AI developers and consultantsHardware⚙️EquipmentHigh-performance computing hardwareProducts🚀InnovationCutting-edge technology solutionsFeatured IT ServicesProfessional IT services delivered by certified expertsFEATUREDAI DevelopmentCustom AI solutions and machine learning models for your business needs$150-500/hr4.9Cloud MigrationSeamless cloud infrastructure setup and migration services$2000-150004.8Security AuditingComprehensive security assessments and penetration testing$1000-80004.9Performance OptimizationSystem and application optimization for maximum efficiency$800-30004.7Top AI TalentsConnect with world-class AI experts and developersFEATUREDDr. Sarah ChenMachine Learning Expert with 8+ years of experience in AI research$200/hr4.9Alex RodriguezDeep Learning Specialist specializing in neural networks and computer vision$180/hr4.8Dr. Michael KimAI Research Scientist with 10+ years in quantum computing and AI$250/hr4.9Emma ThompsonComputer Vision Engineer with expertise in autonomous systems$160/hr4.7Premium EquipmentHigh-performance computing hardware and advanced technology solutionsFEATUREDGPU ClustersHigh-performance computing clusters for AI and machine learning workloads$5000-500004.9Quantum ComputersNext-generation quantum processing units for advanced computations$100000+4.8Edge Computing DevicesIoT and edge processing solutions for real-time applications$1000-100004.7Data Storage SystemsEnterprise-grade storage solutions with high availability$2000-250004.8Ready to Start Trading?Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.Get Started NowExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"NH7KKG2DQU0uJ3UUKzRP2\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-16ca7aacbf7ee910.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-22c76c6e1a554a8b.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-b2fdb1b8f1a88a53.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-7e468c761a8cd1ee.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-25485d3a311367ed.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/profile-e801879bab01539a.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/89091-d54e94d86c8ad8b9.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-26a5531c9d4e9966.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/54417-1368fa5a734b92b2.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/notifications-d1acac947eb34b03.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-48afa93dcd5ca0ff.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/cd99be8369d815c8.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 2407,
+    "headingCount": 22,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 16,
+    "stylesheetCount": 1
+  }
+}

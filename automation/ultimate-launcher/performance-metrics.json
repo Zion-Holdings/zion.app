@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-06T11:25:29.528Z",
+  "activeProcesses": 7,
+  "systemPerformance": "good",
+  "memoryUsage": {
+    "rss": 50642944,
+    "heapTotal": 7671808,
+    "heapUsed": 6491216,
+    "external": 1592386,
+    "arrayBuffers": 36704
+  },
+  "cpuUsage": {
+    "user": 1184806,
+    "system": 469723
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "research-agent-1754049585420-10",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Informatica advances its AI to transform 7-day enterprise data mapping nightmares into 5-minute coffee breaks",
+  "status": "Active",
+  "createdAt": "2025-08-01T11:59:45.420Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.7180654247896064,
+    "accuracy": 0.9417620289673476,
+    "reliability": 0.9936771790407851,
+    "scalability": 0.6835542887198016
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

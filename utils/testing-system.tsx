@@ -1,0 +1,13 @@
+
+import React from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
+    static async testUserInteraction(element: HTMLElement, action: 'click' | 'type' | 'hover'
+            case 'click'
+            case 'type'
+                fireEvent.change(element, { target: { value: 'test input'
+            case 'hover'
+        const elements = container.querySelectorAll('[role], [aria-label], [aria-describedby]'
+            Object.defineProperty(window, 'innerWidth'
+            Object.defineProperty(window, 'innerHeight'
+            window.dispatchEvent(new Event('resize'

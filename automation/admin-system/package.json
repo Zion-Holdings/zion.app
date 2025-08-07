@@ -1,0 +1,43 @@
+{
+  "name": "admin-autonomous-system",
+  "version": "1.0.0",
+  "description": "Autonomous admin system with continuous evolution capabilities",
+  "main": "admin-autonomous-orchestrator.js",
+  "scripts": {
+    "start": "node admin-autonomous-orchestrator.js",
+    "dev": "nodemon admin-autonomous-orchestrator.js",
+    "setup": "./setup-admin-system.sh",
+    "status": "./admin-cron-system.sh status",
+    "backup": "./admin-cron-system.sh backup",
+    "cleanup": "./admin-cron-system.sh cleanup",
+    "report": "./admin-cron-system.sh report"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.1",
+    "chalk": "^4.1.2",
+    "moment": "^2.29.4",
+    "lodash": "^4.17.21",
+    "commander": "^11.1.0",
+    "winston": "^3.11.0",
+    "node-fetch": "^3.3.2",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0"
+  },
+  "keywords": [
+    "autonomous",
+    "agents",
+    "admin",
+    "automation",
+    "ai",
+    "evolution"
+  ],
+  "author": "Zion Tech Group",
+  "license": "MIT"
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-08-07T00:44:21.259Z",
+  "agentId": "husky-error-detection-agent",
+  "summary": {
+    "totalErrors": 2,
+    "totalFixes": 2,
+    "successfulFixes": 2,
+    "failedFixes": 0
+  },
+  "errors": [
+    {
+      "type": "GIT_REPOSITORY_ERROR",
+      "message": "Not in a Git repository or Git not available",
+      "severity": "HIGH"
+    },
+    {
+      "type": "GIT_HOOKS_MISSING",
+      "message": "Git hooks directory is missing or empty",
+      "severity": "MEDIUM"
+    }
+  ],
+  "fixes": [
+    {
+      "type": "GIT_REPOSITORY_FIX",
+      "success": true,
+      "message": "Git repository initialized"
+    },
+    {
+      "type": "GIT_HOOKS_FIX",
+      "success": true,
+      "message": "Git hooks directory created and basic hooks added"
+    }
+  ],
+  "recommendations": [
+    "Consider the following actions:",
+    "- Verify Git hooks directory exists and has proper permissions"
+  ]
+}

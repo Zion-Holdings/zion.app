@@ -1,0 +1,26 @@
+{
+  "id": "research-agent-1754352197291-12",
+  "name": "OpenAI Research Agent",
+  "type": "research",
+  "focus": "OpenAI",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: OpenAI removes ChatGPT feature after private conversations leak to Google search",
+  "status": "Active",
+  "createdAt": "2025-08-05T00:03:17.291Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "OpenAI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  }
+}

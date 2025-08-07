@@ -1,0 +1,32 @@
+{
+  "id": "trend-solution-1754321664316-4",
+  "name": "AI-Powered AI Solution",
+  "description": "Innovative solution leveraging the latest trend: Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
+  "category": "Trend-Based",
+  "pricing": {
+    "basic": "$79/month",
+    "professional": "$199/month",
+    "enterprise": "$599/month",
+    "custom": "Contact sales"
+  },
+  "features": [
+    "Advanced AI Algorithms",
+    "Real-time Processing",
+    "Scalable Architecture",
+    "API Integration",
+    "Analytics Dashboard",
+    "Custom Workflows",
+    "Trend-based AI",
+    "Market Intelligence",
+    "Predictive Analytics",
+    "Automated Insights"
+  ],
+  "targetMarket": "Mixed",
+  "roi": {
+    "developmentCost": 500000,
+    "annualRevenue": 2000000,
+    "roi": "300.0%",
+    "paybackPeriod": "3.0 months"
+  },
+  "createdAt": "2025-08-04T15:34:24.316Z"
+}

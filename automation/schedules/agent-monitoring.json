@@ -1,0 +1,17 @@
+{
+  "id": "agent-monitoring",
+  "name": "Agent Monitoring",
+  "description": "Monitor agent performance every 10 minutes",
+  "cron": "*/10 * * * *",
+  "command": "node automation/monitor-agents.js",
+  "enabled": true,
+  "priority": "high",
+  "lastRun": "2025-08-01T22:00:00.051Z",
+  "nextRun": "2025-08-01T22:01:00.053Z",
+  "runCount": 61,
+  "successCount": 0,
+  "failureCount": 61,
+  "avgDuration": 0,
+  "lastError": "Job timeout",
+  "createdAt": "2025-08-01T11:57:03.313Z"
+}

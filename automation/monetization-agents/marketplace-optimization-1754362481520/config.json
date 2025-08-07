@@ -1,0 +1,12 @@
+{
+  "id": "marketplace-optimization-1754362481520",
+  "type": "marketplace-optimization",
+  "created": "2025-08-05T02:54:41.520Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-08-06T05:15:56.840Z",
+  "authFiles": {
+    "existingFiles": [
+      "utils/supabase/client.ts",
+      "utils/supabase/server.ts",
+      "utils/supabase/middleware.ts",
+      "middleware.ts"
+    ],
+    "missingFiles": []
+  },
+  "environmentVariables": {
+    "success": false,
+    "missingVars": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
+  },
+  "authPages": {
+    "existingPages": [],
+    "missingPages": [
+      "pages/auth/login.tsx",
+      "pages/auth/register.tsx",
+      "pages/auth/confirm.tsx",
+      "pages/auth/error.tsx"
+    ]
+  },
+  "summary": {
+    "totalFiles": 4,
+    "existingFiles": 4,
+    "missingFiles": 0,
+    "envVarsOk": false,
+    "totalPages": 4,
+    "existingPages": 0,
+    "missingPages": 4
+  }
+}

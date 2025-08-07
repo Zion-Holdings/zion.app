@@ -1,0 +1,45 @@
+{
+  "id": "sales-agent-1754023778244-20",
+  "name": "AI startup opportunity Sales Agent",
+  "type": "sales",
+  "focus": "AI startup opportunity",
+  "capabilities": [
+    "lead generation",
+    "campaign management",
+    "conversion optimization"
+  ],
+  "output": "sales campaigns",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Opportunity identified: AI startup opportunity",
+  "status": "Active",
+  "createdAt": "2025-08-01T04:49:38.244Z",
+  "configuration": {
+    "sources": ["CRM systems", "lead databases", "social platforms"],
+    "parameters": {
+      "area": "AI startup opportunity",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.751237817953551,
+    "accuracy": 0.8648732669386021,
+    "reliability": 0.9803788508036798,
+    "scalability": 0.8339647791233691
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

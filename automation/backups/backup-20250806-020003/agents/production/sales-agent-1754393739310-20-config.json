@@ -1,0 +1,45 @@
+{
+  "id": "sales-agent-1754393739310-20",
+  "name": "AI industry needs Sales Agent",
+  "type": "sales",
+  "focus": "AI industry needs",
+  "capabilities": [
+    "lead generation",
+    "campaign management",
+    "conversion optimization"
+  ],
+  "output": "sales campaigns",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Opportunity identified: AI industry needs",
+  "status": "Active",
+  "createdAt": "2025-08-05T11:35:39.310Z",
+  "configuration": {
+    "sources": ["CRM systems", "lead databases", "social platforms"],
+    "parameters": {
+      "area": "AI industry needs",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9724371610009648,
+    "accuracy": 0.8482282431373833,
+    "reliability": 0.9602020420075464,
+    "scalability": 0.8816381967820377
+  },
+  "recommendations": [
+    {
+      "type": "improvement",
+      "action": "Improve agent accuracy",
+      "priority": "High",
+      "reasoning": "Agent accuracy needs improvement"
+    }
+  ]
+}

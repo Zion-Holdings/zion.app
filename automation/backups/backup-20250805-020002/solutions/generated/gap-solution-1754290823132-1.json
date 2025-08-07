@@ -1,0 +1,47 @@
+{
+  "id": "gap-solution-1754290823132-1",
+  "name": "AI automation Solution",
+  "category": "Gap-Based",
+  "description": "Fills the market gap in automation with intelligent automation",
+  "inspiration": "Market gap in automation",
+  "features": [
+    "Comprehensive Solution",
+    "Advanced AI Technology",
+    "User-Friendly Interface",
+    "Scalable Architecture",
+    "Integration Capabilities",
+    "Analytics and Reporting",
+    "Complete automation solution",
+    "Market-leading features",
+    "Competitive pricing",
+    "Expert implementation",
+    "Enterprise Security",
+    "SSO Integration",
+    "Advanced Analytics"
+  ],
+  "pricing": {
+    "basic": "$299/month",
+    "professional": "$598/month",
+    "enterprise": "$1196/month",
+    "custom": "Contact sales"
+  },
+  "targetMarket": "Enterprise",
+  "competitiveAdvantage": "First comprehensive solution in automation",
+  "marketPotential": "High",
+  "developmentTime": "6-12 months",
+  "estimatedRevenue": "$1M - $5M annually",
+  "createdAt": "2025-08-04T07:00:23.132Z",
+  "gapAnalysis": {
+    "area": "automation",
+    "type": "trend-gap",
+    "targetMarket": "Enterprise",
+    "urgency": "High"
+  },
+  "roi": {
+    "developmentCost": 500000,
+    "annualRevenue": 1000000,
+    "roi": "100.0%",
+    "paybackPeriod": "6.0 months"
+  },
+  "marketSize": "$50M - $200M"
+}

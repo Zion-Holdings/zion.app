@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-08-04T15:31:51.090Z",
+  "summary": {
+    "totalInsights": 2,
+    "totalRecommendations": 2,
+    "criticalIssues": 0
+  },
+  "performance": {
+    "averageLoadTime": 1.5,
+    "errorRate": 0.02,
+    "satisfaction": 4.6
+  },
+  "userBehavior": {
+    "totalVisits": 43870,
+    "averageConversion": 0.14
+  },
+  "content": {
+    "totalViews": 22600,
+    "averageEngagement": 2.4
+  },
+  "insights": [
+    {
+      "type": "conversion",
+      "priority": "medium",
+      "title": "Low Conversion Pages Identified",
+      "description": "1 pages have conversion rates below 10%.",
+      "action": "Optimize page content and user experience"
+    },
+    {
+      "type": "content",
+      "priority": "low",
+      "title": "High-Performing Content",
+      "description": "AI-Powered Marketplace Guide is performing exceptionally well.",
+      "action": "Create similar content and promote this piece"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "ux",
+      "priority": "medium",
+      "title": "Improve /about Conversion",
+      "description": "Add clear CTAs, improve page layout, and optimize for conversions.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "category": "content",
+      "priority": "low",
+      "title": "Expand on Successful Content",
+      "description": "Create more content similar to \"AI-Powered Marketplace Guide\" as it's performing well.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ]
+}

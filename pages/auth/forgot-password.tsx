@@ -1,0 +1,11 @@
+import React, { useState } from 'react'
+import { createBrowserClient } from '@supabase/ssr'
+import Link from 'next/link'
+  const [email, setEmail] = useState(''
+  const [message, setMessage] = useState(''
+  const [error, setError] = useState(''
+    setError(''
+        redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/auth/reset-password`` : '/auth/reset-password'
+        setMessage('Check your email for the password reset link!'
+      setError('An unexpected error occurred'
+            {loading ? 'Sending...' : 'Send Reset Link'`

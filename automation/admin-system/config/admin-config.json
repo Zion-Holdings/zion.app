@@ -1,0 +1,47 @@
+{
+  "adminUser": {
+    "username": "kleber@ziontechgroup.com",
+    "password": "Tw2.R5u&2!sDfeW",
+    "role": "admin"
+  },
+  "system": {
+    "autoStart": true,
+    "autoBackup": true,
+    "autoCleanup": true,
+    "maxLogFiles": 100,
+    "maxBackups": 10,
+    "healthCheckInterval": 300,
+    "backupInterval": 86400,
+    "cleanupInterval": 604800
+  },
+  "agents": {
+    "maxConcurrentAgents": 20,
+    "agentTimeout": 300000,
+    "autoRestart": true,
+    "performanceMonitoring": true
+  },
+  "webResearch": {
+    "enabled": true,
+    "researchInterval": 7200000,
+    "maxResearchTopics": 50,
+    "autoUpdateTopics": true
+  },
+  "evolution": {
+    "enabled": true,
+    "evolutionInterval": 1800000,
+    "autoCreateAgents": true,
+    "autoOptimizeAgents": true
+  },
+  "security": {
+    "enabled": true,
+    "auditLogging": true,
+    "threatDetection": true,
+    "autoSecurityUpdates": true
+  },
+  "analytics": {
+    "enabled": true,
+    "dataCollection": true,
+    "performanceMetrics": true,
+    "trendAnalysis": true
+  }
+}

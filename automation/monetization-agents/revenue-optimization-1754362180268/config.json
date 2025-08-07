@@ -1,0 +1,12 @@
+{
+  "id": "revenue-optimization-1754362180268",
+  "type": "revenue-optimization",
+  "created": "2025-08-05T02:49:40.269Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

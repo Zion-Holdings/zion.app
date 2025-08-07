@@ -1,0 +1,18 @@
+{
+  "strategy": "infographics",
+  "description": "Design informative infographics",
+  "contentTypes": [
+    "Data visualization",
+    "Process flows",
+    "Comparison charts",
+    "Statistics"
+  ],
+  "distribution": [
+    "Social media",
+    "Website",
+    "Email",
+    "Presentations"
+  ],
+  "status": "implemented",
+  "implementedAt": "2025-08-06T11:52:50.819Z"
+}

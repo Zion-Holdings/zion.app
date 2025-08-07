@@ -1,0 +1,32 @@
+{
+  "healthCheckInterval": "*/2 * * * *",
+  "errorThreshold": 3,
+  "performanceThreshold": 0.8,
+  "maxRetries": 3,
+  "backupInterval": "0 */6 * * *",
+  "cleanupInterval": "0 2 * * *",
+  "reportInterval": "0 */1 * * *",
+  "restartDelay": 5000,
+  "logLevel": "info",
+  "monitoring": {
+    "enabled": true,
+    "interval": "*/5 * * * *",
+    "metrics": ["health", "performance", "errors", "resources"]
+  },
+  "backup": {
+    "enabled": true,
+    "retention": 60,
+    "compression": true
+  },
+  "cleanup": {
+    "enabled": true,
+    "logRetention": 14,
+    "reportRetention": 30,
+    "backupRetention": 60
+  },
+  "notifications": {
+    "enabled": false,
+    "email": "",
+    "webhook": ""
+  }
+}

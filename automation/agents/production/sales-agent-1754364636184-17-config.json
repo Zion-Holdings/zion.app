@@ -1,0 +1,45 @@
+{
+  "id": "sales-agent-1754364636184-17",
+  "name": "AI market gap Sales Agent",
+  "type": "sales",
+  "focus": "AI market gap",
+  "capabilities": [
+    "lead generation",
+    "campaign management",
+    "conversion optimization"
+  ],
+  "output": "sales campaigns",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Opportunity identified: AI market gap",
+  "status": "Active",
+  "createdAt": "2025-08-05T03:30:36.184Z",
+  "configuration": {
+    "sources": ["CRM systems", "lead databases", "social platforms"],
+    "parameters": {
+      "area": "AI market gap",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9496750890993699,
+    "accuracy": 0.8138132349508814,
+    "reliability": 0.9310346787712729,
+    "scalability": 0.7133629840463822
+  },
+  "recommendations": [
+    {
+      "type": "improvement",
+      "action": "Improve agent accuracy",
+      "priority": "High",
+      "reasoning": "Agent accuracy needs improvement"
+    }
+  ]
+}

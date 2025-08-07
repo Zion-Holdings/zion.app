@@ -1,0 +1,134 @@
+{
+  "url": "https://ziontechgroup.netlify.app/marketplace/",
+  "timestamp": "2025-08-05T15:40:48.162Z",
+  "pageInfo": {
+    "title": "Marketplace - Zion",
+    "description": "Explore Zion's AI-powered marketplace for services, talents, equipment, and products.",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Zion App"
+      },
+      {
+        "level": "h1",
+        "text": "Zion Marketplace"
+      },
+      {
+        "level": "h2",
+        "text": "Marketplace Categories"
+      },
+      {
+        "level": "h3",
+        "text": "AI Services"
+      },
+      {
+        "level": "h3",
+        "text": "AI Talent"
+      },
+      {
+        "level": "h3",
+        "text": "Computing Equipment"
+      },
+      {
+        "level": "h3",
+        "text": "AI Products"
+      },
+      {
+        "level": "h2",
+        "text": "Trending Services"
+      },
+      {
+        "level": "h2",
+        "text": "Trending Services"
+      },
+      {
+        "level": "h3",
+        "text": "10,000+"
+      },
+      {
+        "level": "h3",
+        "text": "5,000+"
+      },
+      {
+        "level": "h3",
+        "text": "4.8"
+      },
+      {
+        "level": "h2",
+        "text": "Ready to Start Trading?"
+      }
+    ],
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZion MarketplaceThe world's first free AI-powered marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.Start TradingLearn MoreMarketplace CategoriesExplore our comprehensive marketplace featuring cutting-edge technology solutionsFEATUREDServices🤖AI ServicesProfessional AI development and consulting servicesFrom $50/hr4.8FEATUREDTalent👥AI TalentExpert AI professionals and developersFrom $75/hr4.9Equipment⚙️Computing EquipmentHigh-performance AI hardware and serversFrom $100/day4.7Products🚀AI ProductsCutting-edge AI software and toolsFrom $994.6Trending ServicesMost popular AI services this weekTrending ServicesMost popular AI services and solutionsShowing 1-4 of 4 resultsService NameProviderCategoryPriceRatingStatusActionsAI Model TrainingTechCorp AIDevelopment$150/hr4.9AvailableView DetailsData AnalysisDataFlow SolutionsAnalytics$120/hr4.8AvailableView DetailsML InfrastructureCloudTech SystemsInfrastructure$200/hr4.7AvailableView DetailsAI ConsultingAI AdvisorsConsulting$180/hr4.9AvailableView Details📈10,000+Active Users🛍️5,000+Services Available⭐4.8Average RatingReady to Start Trading?Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.Get Started NowLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/marketplace\",\"query\":{},\"buildId\":\"xobv0xOkBBo1tTaoZQgZu\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-16ca7aacbf7ee910.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-22c76c6e1a554a8b.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-b2fdb1b8f1a88a53.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-dcd8d3574c3dbd84.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-c8d8c11522502c3f.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-744230f6a1245008.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-17aefc12eec8339a.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-f562c41748e856c1.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-13055b9ded64975b.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/45f6b410ef799d9e.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1556,
+    "headingCount": 13,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 13,
+    "stylesheetCount": 1
+  }
+}

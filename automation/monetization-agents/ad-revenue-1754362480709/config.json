@@ -1,0 +1,25 @@
+{
+  "id": "ad-revenue-1754362480709",
+  "type": "ad-revenue",
+  "created": "2025-08-05T02:54:40.709Z",
+  "status": "active",
+  "config": {
+    "platforms": [
+      "google-ads",
+      "facebook-ads",
+      "native-ads",
+      "programmatic"
+    ],
+    "optimization": [
+      "ctr",
+      "cpc",
+      "roas",
+      "viewability"
+    ]
+  },
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-08-01T14:18:00-03:00",
+  "system": {
+    "admin_system_path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system",
+    "uptime": "14:18  up 1 day, 16:53, 1 user, load averages: 70.44 85.39 67.62",
+    "memory_usage": "%",
+    "disk_usage": "3%"
+  },
+  "agents": {
+    "admin-agent-creator": {
+      "pid": 3763,
+      "status": "stopped"
+    },
+    "admin-analytics-agent": {
+      "pid": 3811,
+      "status": "stopped"
+    },
+    "admin-backup-agent": {
+      "pid": 3818,
+      "status": "stopped"
+    },
+    "admin-evolution-agent": {
+      "pid": 3796,
+      "status": "stopped"
+    },
+    "admin-orchestrator": {
+      "pid": 92863,
+      "status": "running"
+    },
+    "admin-security-agent": {
+      "pid": 3803,
+      "status": "stopped"
+    },
+    "admin-status-monitor": {
+      "pid": 3786,
+      "status": "stopped"
+    },
+    "admin-web-researcher": {
+      "pid": 3775,
+      "status": "stopped"
+    }
+  },
+  "logs": {
+    "cron_log": "   37574 lines",
+    "total_log_files": "      11"
+  },
+  "backups": {
+    "total_backups": "       0",
+    "latest_backup": ""
+  }
+}

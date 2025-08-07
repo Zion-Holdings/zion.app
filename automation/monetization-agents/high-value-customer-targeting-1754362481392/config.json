@@ -1,0 +1,12 @@
+{
+  "id": "high-value-customer-targeting-1754362481392",
+  "type": "high-value-customer-targeting",
+  "created": "2025-08-05T02:54:41.392Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "timestamp": "2025-08-05T13:08:07.020Z",
+  "summary": {
+    "totalAgents": 9,
+    "newAgents": 5,
+    "specializedAgents": 4,
+    "byType": {
+      "research": 2,
+      "content": 2,
+      "sales": 1,
+      "specialized": 4
+    }
+  },
+  "newAgents": [
+    {
+      "id": "research-agent-1754399286920-0",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: AI Automation Trends",
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.920Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9733605085574158,
+        "accuracy": 0.9800808159414857,
+        "reliability": 0.9618270464944749,
+        "scalability": 0.7811779519907497
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754399286920-1",
+      "name": "General Research Agent",
+      "type": "research",
+      "focus": "General",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Machine Learning Platforms",
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.920Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "General",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7704912716873997,
+        "accuracy": 0.9074891513464818,
+        "reliability": 0.9050015178270028,
+        "scalability": 0.6851038789703386
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "content-agent-1754399286920-2",
+      "name": "Analytics Content Agent",
+      "type": "content",
+      "focus": "Analytics",
+      "capabilities": [
+        "content generation",
+        "SEO optimization",
+        "multimedia creation"
+      ],
+      "output": "marketing content",
+      "frequency": "weekly",
+      "priority": "Medium",
+      "reasoning": "Tool category: Analytics",
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.920Z",
+      "configuration": {
+        "sources": ["content databases", "templates", "media libraries"],
+        "parameters": {
+          "area": "Analytics",
+          "priority": "Medium",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 0 * * 0",
+        "outputFormat": "Markdown"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9744934015681399,
+        "accuracy": 0.9682032595389086,
+        "reliability": 0.9115113034872063,
+        "scalability": 0.6294309066384953
+      },
+      "recommendations": []
+    },
+    {
+      "id": "content-agent-1754399286920-3",
+      "name": "Platform Content Agent",
+      "type": "content",
+      "focus": "Platform",
+      "capabilities": [
+        "content generation",
+        "SEO optimization",
+        "multimedia creation"
+      ],
+      "output": "marketing content",
+      "frequency": "weekly",
+      "priority": "Medium",
+      "reasoning": "Tool category: Platform",
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.920Z",
+      "configuration": {
+        "sources": ["content databases", "templates", "media libraries"],
+        "parameters": {
+          "area": "Platform",
+          "priority": "Medium",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 0 * * 0",
+        "outputFormat": "Markdown"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9887938371521325,
+        "accuracy": 0.9280099219992575,
+        "reliability": 0.9418830900709693,
+        "scalability": 0.656783815605636
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754399286920-4",
+      "name": "AI automation Sales Agent",
+      "type": "sales",
+      "focus": "AI automation",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI automation",
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.920Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI automation",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7277735357446999,
+        "accuracy": 0.9757076936787389,
+        "reliability": 0.9610548069279093,
+        "scalability": 0.6293323722543728
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    }
+  ],
+  "specializedAgents": [
+    {
+      "id": "aiTrend-specialized-agent-1754399286970",
+      "name": "AI Trend Analysis Agent",
+      "type": "specialized",
+      "focus": "AI technology trends",
+      "sources": ["research papers", "tech blogs", "conference proceedings"],
+      "output": "AI trend reports",
+      "marketData": {
+        "trends": [
+          {
+            "title": "AI Automation Trends",
+            "source": "test"
+          },
+          {
+            "title": "Machine Learning Platforms",
+            "source": "test"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.971Z",
+      "configuration": {
+        "analysisDepth": "deep",
+        "updateFrequency": "daily",
+        "outputFormat": "trend-report",
+        "alertThreshold": 0.8
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9203408669530855,
+        "accuracy": 0.9819027012295315,
+        "reliability": 0.9454757348039514,
+        "scalability": 0.7043670591812179
+      },
+      "recommendations": []
+    },
+    {
+      "id": "competitor-specialized-agent-1754399286971",
+      "name": "Competitor Analysis Agent",
+      "type": "specialized",
+      "focus": "competitive intelligence",
+      "sources": ["competitor websites", "social media", "news articles"],
+      "output": "competitive analysis",
+      "marketData": {
+        "tools": [
+          {
+            "name": "AI Analytics Tool",
+            "category": "Analytics",
+            "source": "test"
+          },
+          {
+            "name": "ML Platform",
+            "category": "Platform",
+            "source": "test"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.971Z",
+      "configuration": {
+        "monitoringScope": "comprehensive",
+        "updateFrequency": "weekly",
+        "outputFormat": "competitive-analysis",
+        "alertThreshold": 0.7
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9380426880208658,
+        "accuracy": 0.9065209390314586,
+        "reliability": 0.9755496204863316,
+        "scalability": 0.8754172312943533
+      },
+      "recommendations": []
+    },
+    {
+      "id": "customer-specialized-agent-1754399286971",
+      "name": "Customer Insight Agent",
+      "type": "specialized",
+      "focus": "customer behavior analysis",
+      "sources": ["customer feedback", "usage data", "social media"],
+      "output": "customer insights",
+      "marketData": {
+        "opportunities": [
+          {
+            "title": "AI Market Gap Solution",
+            "keyword": "AI automation",
+            "marketSize": "High",
+            "potential": "High"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.971Z",
+      "configuration": {
+        "analysisScope": "behavioral",
+        "updateFrequency": "real-time",
+        "outputFormat": "customer-insights",
+        "alertThreshold": 0.6
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9737295364110341,
+        "accuracy": 0.9943970114943417,
+        "reliability": 0.9999595037960484,
+        "scalability": 0.9862815827197973
+      },
+      "recommendations": []
+    },
+    {
+      "id": "product-specialized-agent-1754399286971",
+      "name": "Product Development Agent",
+      "type": "specialized",
+      "focus": "product innovation",
+      "sources": ["market research", "user feedback", "technology trends"],
+      "output": "product recommendations",
+      "marketData": {
+        "trends": [
+          {
+            "title": "AI Automation Trends",
+            "source": "test"
+          },
+          {
+            "title": "Machine Learning Platforms",
+            "source": "test"
+          }
+        ],
+        "tools": [
+          {
+            "name": "AI Analytics Tool",
+            "category": "Analytics",
+            "source": "test"
+          },
+          {
+            "name": "ML Platform",
+            "category": "Platform",
+            "source": "test"
+          }
+        ],
+        "opportunities": [
+          {
+            "title": "AI Market Gap Solution",
+            "keyword": "AI automation",
+            "marketSize": "High",
+            "potential": "High"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T13:08:06.971Z",
+      "configuration": {
+        "innovationScope": "market-driven",
+        "updateFrequency": "weekly",
+        "outputFormat": "product-recommendations",
+        "alertThreshold": 0.75
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9881578679968588,
+        "accuracy": 0.9075612198041147,
+        "reliability": 0.9169808070728481,
+        "scalability": 0.7833084031039489
+      },
+      "recommendations": []
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "priority",
+      "action": "Focus on high-priority agents",
+      "agents": [
+        "AI Research Agent",
+        "General Research Agent",
+        "AI automation Sales Agent"
+      ],
+      "reasoning": "3 high-priority agents created"
+    },
+    {
+      "type": "specialization",
+      "action": "Leverage specialized agents for targeted insights",
+      "agents": [
+        "AI Trend Analysis Agent",
+        "Competitor Analysis Agent",
+        "Customer Insight Agent",
+        "Product Development Agent"
+      ],
+      "reasoning": "4 specialized agents created"
+    }
+  ]
+}

@@ -1,0 +1,1826 @@
+{
+  "timestamp": "2025-08-05T11:01:15.234Z",
+  "totalAgents": 33,
+  "newAgents": 30,
+  "specializedAgents": 3,
+  "agents": [
+    {
+      "id": "research-agent-1754391675141-0",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Perplexity accused of scraping websites that explicitly blocked AI scraping",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.141Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8162295170493379,
+        "accuracy": 0.9195618221379696,
+        "reliability": 0.9910343059878857,
+        "scalability": 0.9703151041688661
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675141-1",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Obvio’s stop sign cameras use AI to root out unsafe drivers",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.141Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8884922973109022,
+        "accuracy": 0.8681114221887789,
+        "reliability": 0.961932139540595,
+        "scalability": 0.7716044255465685
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675141-2",
+      "name": "sustainability Research Agent",
+      "type": "research",
+      "focus": "sustainability",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Breakneck data center growth challenges Microsoft’s sustainability goals",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.141Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "sustainability",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8322056715657576,
+        "accuracy": 0.8648783279612705,
+        "reliability": 0.9661957328523453,
+        "scalability": 0.6150710083253996
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675141-3",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Meta adds another 650 MW of solar power to its AI push",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8346303279779431,
+        "accuracy": 0.8304330674652096,
+        "reliability": 0.9728327862171943,
+        "scalability": 0.8413213742821682
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-4",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Nvidia thinks AI can solve electrical grid problems caused by AI",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7988702817408191,
+        "accuracy": 0.8694138429089248,
+        "reliability": 0.9253068840273194,
+        "scalability": 0.7609465358909328
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-5",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7008045966837211,
+        "accuracy": 0.8280721727992357,
+        "reliability": 0.9255125449065443,
+        "scalability": 0.6592965735721051
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        },
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-6",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Qwen-Image is a powerful, open source new AI image generator with support for embedded text in English & Chinese",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8891185440865489,
+        "accuracy": 0.9030608660978194,
+        "reliability": 0.9929278589520077,
+        "scalability": 0.8477246255648745
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675142-7",
+      "name": "AI: Research Agent",
+      "type": "research",
+      "focus": "AI:",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Digital Twins and AI: Powering the future of creativity at Nestlé",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI:",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.791498419289987,
+        "accuracy": 0.9002101496661075,
+        "reliability": 0.996836521928766,
+        "scalability": 0.9159549112578198
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-8",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Why tomorrow’s best devs won’t just code — they’ll curate, coordinate and command AI",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8934617494384984,
+        "accuracy": 0.8849119666554827,
+        "reliability": 0.9818124425032407,
+        "scalability": 0.9427313995592502
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675142-9",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Why the AI era is forcing a redesign of the entire compute backbone",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.71033709090899,
+        "accuracy": 0.9043735107473447,
+        "reliability": 0.9799838335037312,
+        "scalability": 0.973613769985917
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-10",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Why open-source AI became an American national priority",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9860059085972587,
+        "accuracy": 0.8835145818026202,
+        "reliability": 0.9205327947844008,
+        "scalability": 0.8666300275965779
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675142-11",
+      "name": "AI Research Agent",
+      "type": "research",
+      "focus": "AI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "AI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.846714254146294,
+        "accuracy": 0.9409327123263683,
+        "reliability": 0.9044663638912568,
+        "scalability": 0.9668487231741165
+      },
+      "recommendations": []
+    },
+    {
+      "id": "research-agent-1754391675142-12",
+      "name": "OpenAI Research Agent",
+      "type": "research",
+      "focus": "OpenAI",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: OpenAI removes ChatGPT feature after private conversations leak to Google search",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "OpenAI",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7083293283455788,
+        "accuracy": 0.9708851150616225,
+        "reliability": 0.9036004046254354,
+        "scalability": 0.9449317006960658
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "research-agent-1754391675142-13",
+      "name": "General Research Agent",
+      "type": "research",
+      "focus": "General",
+      "capabilities": ["web crawling", "data analysis", "trend identification"],
+      "output": "market insights",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Trend identified: artificial intelligence",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["web crawlers", "API endpoints", "data feeds"],
+        "parameters": {
+          "area": "General",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8949563784059071,
+        "accuracy": 0.8559844550871332,
+        "reliability": 0.9994960084211743,
+        "scalability": 0.9743208569574061
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-14",
+      "name": "AI business opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI business opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9826145604335053,
+        "accuracy": 0.8425326862182351,
+        "reliability": 0.9988382843493584,
+        "scalability": 0.8500477514113397
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-15",
+      "name": "AI business opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI business opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9087685561488708,
+        "accuracy": 0.8499329132769851,
+        "reliability": 0.9129421076238602,
+        "scalability": 0.6657759287998829
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-16",
+      "name": "AI market gap Sales Agent",
+      "type": "sales",
+      "focus": "AI market gap",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market gap",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market gap",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7662130190058324,
+        "accuracy": 0.8094993161045996,
+        "reliability": 0.9557396379345542,
+        "scalability": 0.6338215155964784
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        },
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-17",
+      "name": "AI market gap Sales Agent",
+      "type": "sales",
+      "focus": "AI market gap",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market gap",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market gap",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9888247523526636,
+        "accuracy": 0.8850778474668306,
+        "reliability": 0.9754938168369507,
+        "scalability": 0.9565449374887403
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-18",
+      "name": "AI startup opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI startup opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI startup opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI startup opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7519227040800516,
+        "accuracy": 0.9037880730494183,
+        "reliability": 0.9775526217241806,
+        "scalability": 0.717926360882516
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-19",
+      "name": "AI startup opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI startup opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI startup opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI startup opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7886598387290937,
+        "accuracy": 0.9065440066803845,
+        "reliability": 0.9794457439641855,
+        "scalability": 0.8124498257341691
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-20",
+      "name": "AI industry needs Sales Agent",
+      "type": "sales",
+      "focus": "AI industry needs",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI industry needs",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI industry needs",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9189162479265393,
+        "accuracy": 0.9165142454302462,
+        "reliability": 0.9503733835694648,
+        "scalability": 0.6549850566131529
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-21",
+      "name": "AI industry needs Sales Agent",
+      "type": "sales",
+      "focus": "AI industry needs",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI industry needs",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI industry needs",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8889392737755504,
+        "accuracy": 0.8214871072712618,
+        "reliability": 0.9150071336337997,
+        "scalability": 0.6989667897558801
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-22",
+      "name": "AI market demand Sales Agent",
+      "type": "sales",
+      "focus": "AI market demand",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market demand",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market demand",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7467195479510405,
+        "accuracy": 0.9177240265676818,
+        "reliability": 0.9374821177927246,
+        "scalability": 0.7574055041934035
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-23",
+      "name": "AI market demand Sales Agent",
+      "type": "sales",
+      "focus": "AI market demand",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market demand",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market demand",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8106736801404706,
+        "accuracy": 0.9365620035681442,
+        "reliability": 0.9938511252868165,
+        "scalability": 0.7653588398088181
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-24",
+      "name": "AI business problem Sales Agent",
+      "type": "sales",
+      "focus": "AI business problem",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business problem",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business problem",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8734842438638295,
+        "accuracy": 0.8968801857785816,
+        "reliability": 0.9603157096723307,
+        "scalability": 0.6370835277852253
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-25",
+      "name": "AI business problem Sales Agent",
+      "type": "sales",
+      "focus": "AI business problem",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business problem",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business problem",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8121942575690929,
+        "accuracy": 0.9818796545996535,
+        "reliability": 0.9260931010240502,
+        "scalability": 0.6639915233405381
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-26",
+      "name": "AI market opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI market opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8231631044945898,
+        "accuracy": 0.9458446021436432,
+        "reliability": 0.9145043249516419,
+        "scalability": 0.9854982095243912
+      },
+      "recommendations": []
+    },
+    {
+      "id": "sales-agent-1754391675142-27",
+      "name": "AI market opportunity Sales Agent",
+      "type": "sales",
+      "focus": "AI market opportunity",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI market opportunity",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI market opportunity",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.82872696196494,
+        "accuracy": 0.8360410382277954,
+        "reliability": 0.9170774031573737,
+        "scalability": 0.7611885254730388
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-28",
+      "name": "AI business solution Sales Agent",
+      "type": "sales",
+      "focus": "AI business solution",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business solution",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business solution",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.7916522268209794,
+        "accuracy": 0.9061031027534526,
+        "reliability": 0.9988771940047044,
+        "scalability": 0.6547510791378124
+      },
+      "recommendations": [
+        {
+          "type": "optimization",
+          "action": "Optimize agent efficiency",
+          "priority": "High",
+          "reasoning": "Agent efficiency below optimal threshold"
+        }
+      ]
+    },
+    {
+      "id": "sales-agent-1754391675142-29",
+      "name": "AI business solution Sales Agent",
+      "type": "sales",
+      "focus": "AI business solution",
+      "capabilities": [
+        "lead generation",
+        "campaign management",
+        "conversion optimization"
+      ],
+      "output": "sales campaigns",
+      "frequency": "daily",
+      "priority": "High",
+      "reasoning": "Opportunity identified: AI business solution",
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.142Z",
+      "configuration": {
+        "sources": ["CRM systems", "lead databases", "social platforms"],
+        "parameters": {
+          "area": "AI business solution",
+          "priority": "High",
+          "frequency": "daily",
+          "batchSize": 100,
+          "timeout": 30000,
+          "retryAttempts": 3
+        },
+        "schedule": "0 */6 * * *",
+        "outputFormat": "JSON"
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.98454415233302,
+        "accuracy": 0.8072966062068865,
+        "reliability": 0.9093934761165741,
+        "scalability": 0.7472850946897331
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    },
+    {
+      "id": "aiTrend-specialized-agent-1754391675227",
+      "name": "AI Trend Analysis Agent",
+      "type": "specialized",
+      "focus": "AI technology trends",
+      "sources": ["research papers", "tech blogs", "conference proceedings"],
+      "output": "AI trend reports",
+      "marketData": {
+        "trends": [
+          {
+            "title": "Perplexity accused of scraping websites that explicitly blocked AI scraping",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/security/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.512Z"
+          },
+          {
+            "title": "Obvio’s stop sign cameras use AI to root out unsafe drivers",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/transportation/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.513Z"
+          },
+          {
+            "title": "Breakneck data center growth challenges Microsoft’s sustainability goals",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.514Z"
+          },
+          {
+            "title": "Meta adds another 650 MW of solar power to its AI push",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.515Z"
+          },
+          {
+            "title": "Nvidia thinks AI can solve electrical grid problems caused by AI",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.516Z"
+          },
+          {
+            "title": "Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.517Z"
+          },
+          {
+            "title": "Qwen-Image is a powerful, open source new AI image generator with support for embedded text in English & Chinese",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/qwen-image-is-a-powerful-open-source-new-ai-image-generator-with-support-for-embedded-text-in-english-chinese/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.642Z"
+          },
+          {
+            "title": "Digital Twins and AI: Powering the future of creativity at Nestlé",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/digital-twins-and-ai-powering-the-future-of-creativity-at-nestle/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.643Z"
+          },
+          {
+            "title": "Why tomorrow’s best devs won’t just code — they’ll curate, coordinate and command AI",
+            "excerpt": "",
+            "link": "https://venturebeat.com/programming-development/why-tomorrows-best-devs-wont-just-code-theyll-curate-coordinate-and-command-ai/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.643Z"
+          },
+          {
+            "title": "Why the AI era is forcing a redesign of the entire compute backbone",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/why-the-ai-era-is-forcing-a-redesign-of-the-entire-compute-backbone/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.644Z"
+          },
+          {
+            "title": "Why open-source AI became an American national priority",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "OpenAI removes ChatGPT feature after private conversations leak to Google search",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "artificial intelligence",
+            "excerpt": "",
+            "link": "/story/how-supercomputing-will-evolve-according-to-jack-dongarra-quantum-artificial-intelligence/",
+            "source": "https://www.wired.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:01:02.651Z"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.228Z",
+      "configuration": {
+        "analysisDepth": "deep",
+        "updateFrequency": "daily",
+        "outputFormat": "trend-report",
+        "alertThreshold": 0.8
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8636616636864742,
+        "accuracy": 0.8596846961934018,
+        "reliability": 0.9992094424648834,
+        "scalability": 0.6570864478284835
+      },
+      "recommendations": []
+    },
+    {
+      "id": "customer-specialized-agent-1754391675228",
+      "name": "Customer Insight Agent",
+      "type": "specialized",
+      "focus": "customer behavior analysis",
+      "sources": ["customer feedback", "usage data", "social media"],
+      "output": "customer insights",
+      "marketData": {
+        "opportunities": [
+          {
+            "title": "AI-Powered business opportunity Solution",
+            "description": "Automated solution for AI business opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business opportunity",
+            "discoveredAt": "2025-08-05T11:01:11.118Z"
+          },
+          {
+            "title": "Intelligent business opportunity Platform",
+            "description": "Comprehensive platform addressing AI business opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business opportunity",
+            "discoveredAt": "2025-08-05T11:01:11.118Z"
+          },
+          {
+            "title": "AI-Powered market gap Solution",
+            "description": "Automated solution for AI market gap using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market gap",
+            "discoveredAt": "2025-08-05T11:01:11.619Z"
+          },
+          {
+            "title": "Intelligent market gap Platform",
+            "description": "Comprehensive platform addressing AI market gap with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market gap",
+            "discoveredAt": "2025-08-05T11:01:11.619Z"
+          },
+          {
+            "title": "AI-Powered startup opportunity Solution",
+            "description": "Automated solution for AI startup opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI startup opportunity",
+            "discoveredAt": "2025-08-05T11:01:12.121Z"
+          },
+          {
+            "title": "Intelligent startup opportunity Platform",
+            "description": "Comprehensive platform addressing AI startup opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI startup opportunity",
+            "discoveredAt": "2025-08-05T11:01:12.121Z"
+          },
+          {
+            "title": "AI-Powered industry needs Solution",
+            "description": "Automated solution for AI industry needs using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI industry needs",
+            "discoveredAt": "2025-08-05T11:01:12.621Z"
+          },
+          {
+            "title": "Intelligent industry needs Platform",
+            "description": "Comprehensive platform addressing AI industry needs with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI industry needs",
+            "discoveredAt": "2025-08-05T11:01:12.621Z"
+          },
+          {
+            "title": "AI-Powered market demand Solution",
+            "description": "Automated solution for AI market demand using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market demand",
+            "discoveredAt": "2025-08-05T11:01:13.122Z"
+          },
+          {
+            "title": "Intelligent market demand Platform",
+            "description": "Comprehensive platform addressing AI market demand with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market demand",
+            "discoveredAt": "2025-08-05T11:01:13.122Z"
+          },
+          {
+            "title": "AI-Powered business problem Solution",
+            "description": "Automated solution for AI business problem using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business problem",
+            "discoveredAt": "2025-08-05T11:01:13.623Z"
+          },
+          {
+            "title": "Intelligent business problem Platform",
+            "description": "Comprehensive platform addressing AI business problem with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business problem",
+            "discoveredAt": "2025-08-05T11:01:13.623Z"
+          },
+          {
+            "title": "AI-Powered market opportunity Solution",
+            "description": "Automated solution for AI market opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market opportunity",
+            "discoveredAt": "2025-08-05T11:01:14.123Z"
+          },
+          {
+            "title": "Intelligent market opportunity Platform",
+            "description": "Comprehensive platform addressing AI market opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market opportunity",
+            "discoveredAt": "2025-08-05T11:01:14.123Z"
+          },
+          {
+            "title": "AI-Powered business solution Solution",
+            "description": "Automated solution for AI business solution using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business solution",
+            "discoveredAt": "2025-08-05T11:01:14.628Z"
+          },
+          {
+            "title": "Intelligent business solution Platform",
+            "description": "Comprehensive platform addressing AI business solution with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business solution",
+            "discoveredAt": "2025-08-05T11:01:14.628Z"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.228Z",
+      "configuration": {
+        "analysisScope": "behavioral",
+        "updateFrequency": "real-time",
+        "outputFormat": "customer-insights",
+        "alertThreshold": 0.6
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.8909367495614441,
+        "accuracy": 0.9291707786910174,
+        "reliability": 0.9039845115292588,
+        "scalability": 0.8811531120136914
+      },
+      "recommendations": []
+    },
+    {
+      "id": "product-specialized-agent-1754391675228",
+      "name": "Product Development Agent",
+      "type": "specialized",
+      "focus": "product innovation",
+      "sources": ["market research", "user feedback", "technology trends"],
+      "output": "product recommendations",
+      "marketData": {
+        "trends": [
+          {
+            "title": "Perplexity accused of scraping websites that explicitly blocked AI scraping",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/security/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.512Z"
+          },
+          {
+            "title": "Obvio’s stop sign cameras use AI to root out unsafe drivers",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/transportation/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.513Z"
+          },
+          {
+            "title": "Breakneck data center growth challenges Microsoft’s sustainability goals",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.514Z"
+          },
+          {
+            "title": "Meta adds another 650 MW of solar power to its AI push",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.515Z"
+          },
+          {
+            "title": "Nvidia thinks AI can solve electrical grid problems caused by AI",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.516Z"
+          },
+          {
+            "title": "Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
+            "excerpt": "",
+            "link": "https://techcrunch.com/category/climate/",
+            "source": "https://techcrunch.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:00:54.517Z"
+          },
+          {
+            "title": "Qwen-Image is a powerful, open source new AI image generator with support for embedded text in English & Chinese",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/qwen-image-is-a-powerful-open-source-new-ai-image-generator-with-support-for-embedded-text-in-english-chinese/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.642Z"
+          },
+          {
+            "title": "Digital Twins and AI: Powering the future of creativity at Nestlé",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/digital-twins-and-ai-powering-the-future-of-creativity-at-nestle/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.643Z"
+          },
+          {
+            "title": "Why tomorrow’s best devs won’t just code — they’ll curate, coordinate and command AI",
+            "excerpt": "",
+            "link": "https://venturebeat.com/programming-development/why-tomorrows-best-devs-wont-just-code-theyll-curate-coordinate-and-command-ai/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.643Z"
+          },
+          {
+            "title": "Why the AI era is forcing a redesign of the entire compute backbone",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/why-the-ai-era-is-forcing-a-redesign-of-the-entire-compute-backbone/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.644Z"
+          },
+          {
+            "title": "Why open-source AI became an American national priority",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "OpenAI removes ChatGPT feature after private conversations leak to Google search",
+            "excerpt": "",
+            "link": "https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/",
+            "source": "https://venturebeat.com/category/ai/",
+            "discoveredAt": "2025-08-05T11:00:55.645Z"
+          },
+          {
+            "title": "artificial intelligence",
+            "excerpt": "",
+            "link": "/story/how-supercomputing-will-evolve-according-to-jack-dongarra-quantum-artificial-intelligence/",
+            "source": "https://www.wired.com/tag/artificial-intelligence/",
+            "discoveredAt": "2025-08-05T11:01:02.651Z"
+          }
+        ],
+        "tools": [],
+        "opportunities": [
+          {
+            "title": "AI-Powered business opportunity Solution",
+            "description": "Automated solution for AI business opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business opportunity",
+            "discoveredAt": "2025-08-05T11:01:11.118Z"
+          },
+          {
+            "title": "Intelligent business opportunity Platform",
+            "description": "Comprehensive platform addressing AI business opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business opportunity",
+            "discoveredAt": "2025-08-05T11:01:11.118Z"
+          },
+          {
+            "title": "AI-Powered market gap Solution",
+            "description": "Automated solution for AI market gap using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market gap",
+            "discoveredAt": "2025-08-05T11:01:11.619Z"
+          },
+          {
+            "title": "Intelligent market gap Platform",
+            "description": "Comprehensive platform addressing AI market gap with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market gap",
+            "discoveredAt": "2025-08-05T11:01:11.619Z"
+          },
+          {
+            "title": "AI-Powered startup opportunity Solution",
+            "description": "Automated solution for AI startup opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI startup opportunity",
+            "discoveredAt": "2025-08-05T11:01:12.121Z"
+          },
+          {
+            "title": "Intelligent startup opportunity Platform",
+            "description": "Comprehensive platform addressing AI startup opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI startup opportunity",
+            "discoveredAt": "2025-08-05T11:01:12.121Z"
+          },
+          {
+            "title": "AI-Powered industry needs Solution",
+            "description": "Automated solution for AI industry needs using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI industry needs",
+            "discoveredAt": "2025-08-05T11:01:12.621Z"
+          },
+          {
+            "title": "Intelligent industry needs Platform",
+            "description": "Comprehensive platform addressing AI industry needs with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI industry needs",
+            "discoveredAt": "2025-08-05T11:01:12.621Z"
+          },
+          {
+            "title": "AI-Powered market demand Solution",
+            "description": "Automated solution for AI market demand using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market demand",
+            "discoveredAt": "2025-08-05T11:01:13.122Z"
+          },
+          {
+            "title": "Intelligent market demand Platform",
+            "description": "Comprehensive platform addressing AI market demand with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market demand",
+            "discoveredAt": "2025-08-05T11:01:13.122Z"
+          },
+          {
+            "title": "AI-Powered business problem Solution",
+            "description": "Automated solution for AI business problem using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business problem",
+            "discoveredAt": "2025-08-05T11:01:13.623Z"
+          },
+          {
+            "title": "Intelligent business problem Platform",
+            "description": "Comprehensive platform addressing AI business problem with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business problem",
+            "discoveredAt": "2025-08-05T11:01:13.623Z"
+          },
+          {
+            "title": "AI-Powered market opportunity Solution",
+            "description": "Automated solution for AI market opportunity using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI market opportunity",
+            "discoveredAt": "2025-08-05T11:01:14.123Z"
+          },
+          {
+            "title": "Intelligent market opportunity Platform",
+            "description": "Comprehensive platform addressing AI market opportunity with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI market opportunity",
+            "discoveredAt": "2025-08-05T11:01:14.123Z"
+          },
+          {
+            "title": "AI-Powered business solution Solution",
+            "description": "Automated solution for AI business solution using advanced AI algorithms",
+            "marketSize": "High",
+            "competition": "Medium",
+            "entryBarrier": "Low",
+            "potential": "High",
+            "keyword": "AI business solution",
+            "discoveredAt": "2025-08-05T11:01:14.628Z"
+          },
+          {
+            "title": "Intelligent business solution Platform",
+            "description": "Comprehensive platform addressing AI business solution with machine learning",
+            "marketSize": "Medium",
+            "competition": "Low",
+            "entryBarrier": "Medium",
+            "potential": "High",
+            "keyword": "AI business solution",
+            "discoveredAt": "2025-08-05T11:01:14.628Z"
+          }
+        ]
+      },
+      "status": "Active",
+      "createdAt": "2025-08-05T11:01:15.228Z",
+      "configuration": {
+        "innovationScope": "market-driven",
+        "updateFrequency": "weekly",
+        "outputFormat": "product-recommendations",
+        "alertThreshold": 0.75
+      },
+      "optimized": true,
+      "performance": {
+        "efficiency": 0.9510082605850563,
+        "accuracy": 0.8378164256147155,
+        "reliability": 0.9458716461071581,
+        "scalability": 0.8242098231737759
+      },
+      "recommendations": [
+        {
+          "type": "improvement",
+          "action": "Improve agent accuracy",
+          "priority": "High",
+          "reasoning": "Agent accuracy needs improvement"
+        }
+      ]
+    }
+  ]
+}

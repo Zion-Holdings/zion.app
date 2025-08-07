@@ -1,0 +1,41 @@
+{
+  "id": "research-agent-1754362911731-2",
+  "name": "sustainability Research Agent",
+  "type": "research",
+  "focus": "sustainability",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Breakneck data center growth challenges Microsoft’s sustainability goals",
+  "status": "Active",
+  "createdAt": "2025-08-05T03:01:51.731Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "sustainability",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.754954673929884,
+    "accuracy": 0.9881153703906629,
+    "reliability": 0.9673937254897998,
+    "scalability": 0.8370016477776189
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

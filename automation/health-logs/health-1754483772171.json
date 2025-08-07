@@ -1,0 +1,11 @@
+{
+  "systemType": "intelligent-agent-orchestrator",
+  "health": "degraded",
+  "timestamp": "2025-08-06T12:36:12.171Z",
+  "indicators": {
+    "errorCount": 0,
+    "successRate": 0.8,
+    "uptime": 0,
+    "memoryUsage": 0
+  }
+}

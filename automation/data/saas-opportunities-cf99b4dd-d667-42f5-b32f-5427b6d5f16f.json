@@ -1,0 +1,267 @@
+[
+  {
+    "id": "36831295-6557-4ff5-950a-8cb3f3eec323",
+    "name": "AI-powered inventory automation platform",
+    "serviceType": "b2b-saas",
+    "category": "inventory",
+    "description": "A comprehensive inventory solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$50M-$100M",
+    "competitionLevel": "Medium",
+    "revenuePotential": 5221,
+    "developmentComplexity": "Low",
+    "timeToMarket": "8-12 months",
+    "createdAt": "2025-08-05T02:24:24.150Z",
+    "score": 0.79,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.667Z",
+    "nextSteps": [
+      "Conduct detailed market research",
+      "Create MVP prototype",
+      "Launch beta version",
+      "Develop business plan",
+      "Plan marketing strategy"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises",
+        "Large corporations"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "InventoryPro",
+        "InventoryHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Build strong community"
+    }
+  },
+  {
+    "id": "b8051eea-2758-429d-9f7c-b7bfb9c8d6f5",
+    "name": "AI-powered inventory automation platform",
+    "serviceType": "b2b-saas",
+    "category": "inventory",
+    "description": "A comprehensive inventory solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$50M-$100M",
+    "competitionLevel": "High",
+    "revenuePotential": 7447,
+    "developmentComplexity": "Medium",
+    "timeToMarket": "2-4 months",
+    "createdAt": "2025-08-05T02:24:24.653Z",
+    "score": 0.74,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.670Z",
+    "nextSteps": [
+      "Launch beta version",
+      "Conduct detailed market research",
+      "Create MVP prototype",
+      "Develop business plan"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises",
+        "Large corporations"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "InventoryPro",
+        "InventoryHub",
+        "InventorySuite"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Create seamless integrations"
+    }
+  },
+  {
+    "id": "2f774a11-c787-46ed-a36c-3c26beaccf3c",
+    "name": "Social creativity platform",
+    "serviceType": "b2c-saas",
+    "category": "creativity",
+    "description": "Transform your daily creativity experience with our user-friendly app. Designed for individuals and families, our platform makes creativity easier and more enjoyable.",
+    "marketSize": "$20M-$50M",
+    "competitionLevel": "Medium",
+    "revenuePotential": 3881,
+    "developmentComplexity": "Low",
+    "timeToMarket": "1-3 months",
+    "createdAt": "2025-08-05T02:24:24.653Z",
+    "score": 0.78,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.670Z",
+    "nextSteps": [
+      "Launch beta version",
+      "Conduct detailed market research",
+      "Design user experience",
+      "Develop business plan"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Individual users",
+        "Families"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "CreativityPro",
+        "CreativityHub",
+        "CreativitySuite"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience",
+        "Lower cost"
+      ],
+      "differentiationStrategy": "Create seamless integrations"
+    }
+  },
+  {
+    "id": "a22717af-9cab-4491-ae77-771b052fc3f1",
+    "name": "AI-powered social recommendations",
+    "serviceType": "b2c-saas",
+    "category": "social",
+    "description": "Transform your daily social experience with our user-friendly app. Designed for individuals and families, our platform makes social easier and more enjoyable.",
+    "marketSize": "$50M-$200M",
+    "competitionLevel": "Low",
+    "revenuePotential": 2593,
+    "developmentComplexity": "High",
+    "timeToMarket": "1-3 months",
+    "createdAt": "2025-08-05T02:24:24.654Z",
+    "score": 0.8,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.670Z",
+    "nextSteps": [
+      "Launch beta version",
+      "Develop business plan",
+      "Assemble development team"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Individual users",
+        "Families"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "SocialPro",
+        "SocialHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Provide superior customer support"
+    }
+  },
+  {
+    "id": "8db342cf-d6ce-46a6-b22b-98e336d68487",
+    "name": "Natural language data-analysis processor",
+    "serviceType": "ai-saas",
+    "category": "data-analysis",
+    "description": "Leverage the power of artificial intelligence to revolutionize data-analysis. Our AI-powered platform delivers intelligent insights and automation for better results.",
+    "marketSize": "$500M+",
+    "competitionLevel": "Medium",
+    "revenuePotential": 19923,
+    "developmentComplexity": "High",
+    "timeToMarket": "12-18 months",
+    "createdAt": "2025-08-05T02:24:24.666Z",
+    "score": 0.75,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T02:24:24.670Z",
+    "nextSteps": [
+      "Develop business plan",
+      "Assemble development team",
+      "Design user experience",
+      "Create MVP prototype",
+      "Plan marketing strategy"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Developers",
+        "Businesses"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation"
+      ],
+      "growthPotential": "Medium",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "Data-analysisPro",
+        "Data-analysisHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Build strong community"
+    }
+  }
+]

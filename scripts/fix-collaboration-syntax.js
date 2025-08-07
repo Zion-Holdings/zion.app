@@ -1,0 +1,7 @@
+const fs = require('fs'
+const filePath = 'pages/ai-powered-collaboration-team.tsx'
+const content = fs.readFileSync(filePath, 'utf8'
+  /(recommendations: \['Enhance tools', 'Improve processes'
+  '$1\n      },\n    }\n  ])\n\n  $5'
+  console.log('Fixed syntax error in collaboration team file'
+  console.log('No syntax errors found in collaboration team file'

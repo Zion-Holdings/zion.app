@@ -1,0 +1,17 @@
+{
+  "id": "data-cleanup",
+  "name": "Data Cleanup",
+  "description": "Clean up old data daily",
+  "cron": "0 3 * * *",
+  "command": "node automation/data-cleanup.js",
+  "enabled": true,
+  "priority": "low",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.311Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.311Z"
+}

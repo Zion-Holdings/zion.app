@@ -1,0 +1,30 @@
+{
+  "id": "content-agent-1754360862216-2",
+  "name": "Analytics Content Agent",
+  "type": "content",
+  "focus": "Analytics",
+  "capabilities": [
+    "content generation",
+    "SEO optimization",
+    "multimedia creation"
+  ],
+  "output": "marketing content",
+  "frequency": "weekly",
+  "priority": "Medium",
+  "reasoning": "Tool category: Analytics",
+  "status": "Active",
+  "createdAt": "2025-08-05T02:27:42.216Z",
+  "configuration": {
+    "sources": ["content databases", "templates", "media libraries"],
+    "parameters": {
+      "area": "Analytics",
+      "priority": "Medium",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 0 * * 0",
+    "outputFormat": "Markdown"
+  }
+}

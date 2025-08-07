@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-08-05T02:09:02.548Z",
+  "totalAgents": 12,
+  "totalRevenue": 0,
+  "totalConversions": 0,
+  "averageEfficiency": 0,
+  "agentPerformance": [
+    {
+      "id": "ad-revenue-1754359737518",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754359737519",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359737524",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359737526",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359737528",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359737533",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359737530",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359737537",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359737509",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359737512",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359737516",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359737522",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    }
+  ]
+}

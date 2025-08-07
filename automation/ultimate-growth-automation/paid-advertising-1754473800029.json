@@ -1,0 +1,28 @@
+{
+  "id": "paid-advertising-1754473800029",
+  "platform": "snapchat-ads",
+  "strategy": {
+    "targeting": [
+      "audience targeting",
+      "interest targeting",
+      "behavioral targeting"
+    ],
+    "creative": [
+      "text ads",
+      "image ads",
+      "video ads"
+    ],
+    "budget": "$2,000-8,000 monthly budget",
+    "optimization": [
+      "audience optimization",
+      "creative testing",
+      "bid management"
+    ]
+  },
+  "expectedResults": {
+    "impressions": "100,000-500,000 monthly impressions",
+    "clicks": "2,000-10,000 monthly clicks",
+    "conversions": "100-500 monthly conversions",
+    "roas": "3:1 to 5:1 ROAS"
+  }
+}

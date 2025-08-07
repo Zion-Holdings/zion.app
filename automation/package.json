@@ -1,0 +1,35 @@
+{
+  "name": "lint-automation",
+  "version": "1.0.0",
+  "description": "Continuous lint error fixing automation",
+  "main": "lint-automation-manager.js",
+  "scripts": {
+    "start": "node lint-automation-manager.js start",
+    "stop": "node lint-automation-manager.js stop",
+    "restart": "node lint-automation-manager.js restart",
+    "check": "node lint-automation-manager.js check",
+    "fix": "node quick-lint-fix.js",
+    "watch": "node lint-watch.js",
+    "monitor": "node lint-monitor.js monitor",
+    "fixer": "node lint-error-fixer.js continuous"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "eslint": "^9.32.0",
+    "eslint-config-next": "^15.4.5",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0"
+  },
+  "keywords": [
+    "lint",
+    "automation",
+    "eslint",
+    "continuous",
+    "fix"
+  ],
+  "author": "Lint Automation System",
+  "license": "MIT"
+}

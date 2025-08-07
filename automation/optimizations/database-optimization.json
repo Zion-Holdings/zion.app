@@ -1,0 +1,20 @@
+{
+  "name": "database-optimization",
+  "description": "Optimize database queries and indexing",
+  "config": {
+    "indexing": {
+      "users": [
+        "email",
+        "created_at"
+      ],
+      "services": [
+        "category",
+        "rating"
+      ],
+      "reviews": [
+        "service_id",
+        "rating"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "subscription-1754362225818",
+  "type": "subscription",
+  "created": "2025-08-05T02:50:25.818Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

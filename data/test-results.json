@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-06T08:00:31.683Z",
+  "results": [
+    {
+      "test": "System Initialization",
+      "passed": true,
+      "message": "System initialized successfully",
+      "timestamp": "2025-08-06T08:00:31.125Z"
+    },
+    {
+      "test": "Data Loading",
+      "passed": true,
+      "message": "Data loaded successfully",
+      "timestamp": "2025-08-06T08:00:31.133Z"
+    },
+    {
+      "test": "Chat Learning",
+      "passed": true,
+      "message": "Learned 1 patterns",
+      "timestamp": "2025-08-06T08:00:31.141Z"
+    },
+    {
+      "test": "Pattern Analysis",
+      "passed": true,
+      "message": "Analyzed 0 patterns",
+      "timestamp": "2025-08-06T08:00:31.141Z"
+    },
+    {
+      "test": "Automation Rule Generation",
+      "passed": true,
+      "message": "Generated 0 rules",
+      "timestamp": "2025-08-06T08:00:31.144Z"
+    },
+    {
+      "test": "Smart Suggestions",
+      "passed": false,
+      "message": "401 Incorrect API key provided: dummy-ke*********ting. You can find your API key at https://platform.openai.com/account/api-keys.",
+      "timestamp": "2025-08-06T08:00:31.659Z"
+    },
+    {
+      "test": "Auto-Fix Common Issues",
+      "passed": false,
+      "message": "No patterns found for this issue type",
+      "timestamp": "2025-08-06T08:00:31.659Z"
+    },
+    {
+      "test": "Integration Initialization",
+      "passed": true,
+      "message": "Integration initialized successfully",
+      "timestamp": "2025-08-06T08:00:31.670Z"
+    },
+    {
+      "test": "Automation Integration",
+      "passed": true,
+      "message": "Automation integration setup successful",
+      "timestamp": "2025-08-06T08:00:31.676Z"
+    },
+    {
+      "test": "Data Saving",
+      "passed": true,
+      "message": "Data saved successfully",
+      "timestamp": "2025-08-06T08:00:31.678Z"
+    },
+    {
+      "test": "Data Loading",
+      "passed": true,
+      "message": "Data loaded successfully",
+      "timestamp": "2025-08-06T08:00:31.680Z"
+    },
+    {
+      "test": "Performance",
+      "passed": true,
+      "message": "Pattern extraction completed in 0ms",
+      "timestamp": "2025-08-06T08:00:31.680Z"
+    },
+    {
+      "test": "Error Handling",
+      "passed": true,
+      "message": "Handled empty input gracefully",
+      "timestamp": "2025-08-06T08:00:31.682Z"
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "passed": 11,
+    "failed": 2
+  }
+}

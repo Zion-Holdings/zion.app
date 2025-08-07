@@ -1,0 +1,50 @@
+{
+  "projectUrl": "https://ziontechgroup.netlify.app",
+  "chatAnalysisUrl": "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d",
+  "googleDocUrl": "https://docs.google.com/document/d/1Q3-QbWjIIj83VYX_Hx258kmvEyF9qBR2nF09IOi4ppM/edit?usp=sharing",
+  "agents": {
+    "project-analyzer": {
+      "schedule": "*/10 * * * *",
+      "priority": "high",
+      "capabilities": ["deep-analysis", "comparison", "research"]
+    },
+    "content-developer": {
+      "schedule": "*/15 * * * *",
+      "priority": "high",
+      "capabilities": ["content-creation", "optimization", "seo"]
+    },
+    "feature-implementer": {
+      "schedule": "*/20 * * * *",
+      "priority": "medium",
+      "capabilities": ["feature-development", "code-generation", "testing"]
+    },
+    "quality-assurance": {
+      "schedule": "*/30 * * * *",
+      "priority": "high",
+      "capabilities": ["testing", "bug-detection", "performance"]
+    },
+    "deployment-manager": {
+      "schedule": "0 */2 * * *",
+      "priority": "medium",
+      "capabilities": ["deployment", "monitoring", "rollback"]
+    }
+  },
+  "automation": {
+    "continuousDevelopment": true,
+    "autoCommit": true,
+    "autoDeploy": true,
+    "healthMonitoring": true,
+    "performanceOptimization": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "interval": 60000,
+    "alerts": true,
+    "logging": true
+  },
+  "backup": {
+    "enabled": true,
+    "schedule": "0 2 * * *",
+    "retention": 30
+  }
+}

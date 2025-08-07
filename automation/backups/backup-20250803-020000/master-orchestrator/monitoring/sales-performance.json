@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-08-01T12:00:11.841Z",
+  "totalCampaigns": 14,
+  "totalBudget": 200744.9,
+  "averageExpectedROI": "352%",
+  "channelDistribution": {
+    "Website Marketplace": 14,
+    "Social Media Marketing": 7,
+    "Email Marketing Campaigns": 7,
+    "Content Marketing": 12,
+    "Strategic Partnerships": 12
+  }
+}

@@ -1,0 +1,8 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import { supabase } from '../../utils/supabase/client'
+        console.error('Auth callback error:'
+        router.push('/auth?error=auth_failed'
+        router.push('/'
+        router.push('/auth'

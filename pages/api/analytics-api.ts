@@ -1,0 +1,7 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+  if (req.method !== 'GET'
+    return res.status(405).json({ success: false, message: 'Method not allowed'
+      { path: '/'
+      { path: '/services'
+      { path: '/about'
+      averageSessionDuration: '2m 45s'

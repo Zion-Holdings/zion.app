@@ -1,0 +1,12 @@
+const fs = require('fs'
+const path = require('path'
+    let content = fs.readFileSync(filePath, 'utf8'
+      content = content.replace(returnPattern, 'return (\n    <ModernLayout>\n      '
+      content = content.replace(useEffectPattern, 'useEffect(() => {\n    return (\n      <ModernLayout>'
+      content = content.replace(closingTagPattern, '    </ModernLayout>\n  );\n};\n'
+            if (match.includes('Home') || match.includes('Search') || match.includes('User'
+            return match.replace('} from \'lucide-react\'', ', Home, Search, User } from \'lucide-react\''
+          const lastImportIndex = content.lastIndexOf('import'
+            const lastImportEnd = content.indexOf('\n'
+            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-react\';\n'
+      content = content.replace(malformedJSXPattern, 'return (\n    <ModernLayout>\n      

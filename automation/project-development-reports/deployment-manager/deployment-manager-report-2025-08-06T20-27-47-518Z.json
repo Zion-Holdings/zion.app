@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "generatedAt": "2025-08-06T20:27:47.518Z",
+    "agent": "Deployment Manager Agent",
+    "version": "1.0.0"
+  },
+  "status": "deployed",
+  "staging": {
+    "success": true,
+    "url": "https://staging.ziontechgroup.netlify.app",
+    "timestamp": "2025-08-06T20:27:47.518Z"
+  },
+  "production": {
+    "success": true,
+    "url": "https://ziontechgroup.netlify.app",
+    "timestamp": "2025-08-06T20:27:47.518Z"
+  },
+  "monitoring": "active",
+  "timestamp": "2025-08-06T20:27:47.518Z"
+}

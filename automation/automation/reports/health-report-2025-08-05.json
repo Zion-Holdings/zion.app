@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-05T18:37:18.133Z",
+  "stats": {
+    "brokenLinks": 0,
+    "syntaxErrors": 0,
+    "navigationIssues": 2,
+    "filesProcessed": 0,
+    "fixesApplied": 0,
+    "lastCheck": "2025-08-05T18:37:15.484Z",
+    "checkDuration": 1390
+  },
+  "config": {
+    "projectRoot": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation",
+    "pagesDir": "pages",
+    "componentsDir": "components",
+    "scriptsDir": "scripts",
+    "automationDir": "automation",
+    "reportsDir": "automation/reports",
+    "logsDir": "automation/logs",
+    "backupDir": "automation/backups",
+    "maxRetries": 3,
+    "checkInterval": 86400000,
+    "enableAutoFix": true,
+    "enableBackup": true,
+    "enableReporting": true
+  },
+  "summary": {
+    "totalIssues": 2,
+    "fixesApplied": 0,
+    "buildSuccess": false
+  }
+}

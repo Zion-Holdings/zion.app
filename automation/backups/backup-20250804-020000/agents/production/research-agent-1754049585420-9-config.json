@@ -1,0 +1,41 @@
+{
+  "id": "research-agent-1754049585420-9",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: You’ve heard of AI ‘Deep Research’ tools…now Manus is launching ‘Wide Research’ that spins up 100+ agents to scour the web for you",
+  "status": "Active",
+  "createdAt": "2025-08-01T11:59:45.420Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.7593344013474892,
+    "accuracy": 0.9262536048946614,
+    "reliability": 0.9145056690135127,
+    "scalability": 0.9149188662331074
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

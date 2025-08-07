@@ -1,0 +1,41 @@
+{
+  "id": "research-agent-1754025394165-7",
+  "name": "Mailchimp’s Research Agent",
+  "type": "research",
+  "focus": "Mailchimp’s",
+  "capabilities": ["web crawling", "data analysis", "trend identification"],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Hard-won vibe coding insights: Mailchimp’s 40% speed gain came with governance price",
+  "status": "Active",
+  "createdAt": "2025-08-01T05:16:34.165Z",
+  "configuration": {
+    "sources": ["web crawlers", "API endpoints", "data feeds"],
+    "parameters": {
+      "area": "Mailchimp’s",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.7208875802685691,
+    "accuracy": 0.9813792731375428,
+    "reliability": 0.9986434343034722,
+    "scalability": 0.7317977072591839
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

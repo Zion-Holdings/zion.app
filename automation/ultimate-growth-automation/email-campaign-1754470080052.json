@@ -1,0 +1,16 @@
+{
+  "id": "email-campaign-1754470080052",
+  "campaign": "upselling",
+  "strategy": {
+    "subject": "Important Automation Update",
+    "content": "Valuable automation content and insights for your business.",
+    "audience": "Targeted email audience",
+    "timing": "Optimal timing for maximum engagement"
+  },
+  "expectedResults": {
+    "openRate": "25-35% open rate",
+    "clickRate": "4-6% click rate",
+    "conversionRate": "2-4% conversion rate",
+    "revenue": "$3,000-10,000 monthly revenue"
+  }
+}

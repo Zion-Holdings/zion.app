@@ -1,0 +1,12 @@
+{
+  "id": "ad-revenue-1754362475508",
+  "type": "ad-revenue",
+  "created": "2025-08-05T02:54:35.508Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

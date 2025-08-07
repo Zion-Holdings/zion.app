@@ -1,0 +1,45 @@
+{
+  "id": "sales-agent-1754323548665-23",
+  "name": "AI market demand Sales Agent",
+  "type": "sales",
+  "focus": "AI market demand",
+  "capabilities": [
+    "lead generation",
+    "campaign management",
+    "conversion optimization"
+  ],
+  "output": "sales campaigns",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Opportunity identified: AI market demand",
+  "status": "Active",
+  "createdAt": "2025-08-04T16:05:48.665Z",
+  "configuration": {
+    "sources": ["CRM systems", "lead databases", "social platforms"],
+    "parameters": {
+      "area": "AI market demand",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.7091856617574211,
+    "accuracy": 0.9819167677435461,
+    "reliability": 0.966332999186732,
+    "scalability": 0.8510086479952501
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "action": "Optimize agent efficiency",
+      "priority": "High",
+      "reasoning": "Agent efficiency below optimal threshold"
+    }
+  ]
+}

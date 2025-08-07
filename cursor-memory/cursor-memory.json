@@ -1,0 +1,710 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-08-06T15:55:39.834Z",
+  "description": "Automatically generated memory from past chats and conversations",
+  "rules": [
+    {
+      "id": "pattern:found-rule-patterns-in-memory-content",
+      "rule": "Found rule patterns in memory content",
+      "source": "automation_temp/logs/improvement-loop.log",
+      "confidence": 0.7
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-automation-content",
+      "rule": "Found rule patterns in automation content",
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.7
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-troubleshooting-content",
+      "rule": "Found rule patterns in troubleshooting content",
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-development-content",
+      "rule": "Found rule patterns in development content",
+      "source": "scripts/setup-husky.js",
+      "confidence": 0.7
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-general-content",
+      "rule": "Found rule patterns in general content",
+      "source": "scripts/link-checker.js",
+      "confidence": 0.7
+    }
+  ],
+  "memories": [
+    {
+      "id": "pattern:found-preference-patterns-in-automation-content",
+      "content": "Found preference patterns in automation content",
+      "category": "preference",
+      "tags": [
+        "preference",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/fix-string-literals.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-solution-patterns-in-automation-content",
+      "content": "Found solution patterns in automation content",
+      "category": "solution",
+      "tags": [
+        "solution",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/validate-content.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "pattern:found-automation-patterns-in-automation-content",
+      "content": "Found automation patterns in automation content",
+      "category": "automation",
+      "tags": [
+        "automation",
+        "pattern"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "technical:technical-term-found--automation",
+      "content": "Technical term found: automation",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "automation",
+        "ai"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-memory-content",
+      "content": "Found rule patterns in memory content",
+      "category": "rule",
+      "tags": [
+        "rule",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/improvement-loop.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.700Z"
+    },
+    {
+      "id": "pattern:found-preference-patterns-in-memory-content",
+      "content": "Found preference patterns in memory content",
+      "category": "preference",
+      "tags": [
+        "preference",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/performance-optimizer.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.707Z"
+    },
+    {
+      "id": "pattern:found-solution-patterns-in-memory-content",
+      "content": "Found solution patterns in memory content",
+      "category": "solution",
+      "tags": [
+        "solution",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/improvement-loop.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.700Z"
+    },
+    {
+      "id": "pattern:found-error-patterns-in-memory-content",
+      "content": "Found error patterns in memory content",
+      "category": "error",
+      "tags": [
+        "error",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/performance-optimizer.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.707Z"
+    },
+    {
+      "id": "pattern:found-automation-patterns-in-memory-content",
+      "content": "Found automation patterns in memory content",
+      "category": "automation",
+      "tags": [
+        "automation",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/performance-optimizer.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.707Z"
+    },
+    {
+      "id": "pattern:found-performance-patterns-in-memory-content",
+      "content": "Found performance patterns in memory content",
+      "category": "performance",
+      "tags": [
+        "performance",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/performance-optimizer.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.707Z"
+    },
+    {
+      "id": "pattern:found-security-patterns-in-memory-content",
+      "content": "Found security patterns in memory content",
+      "category": "security",
+      "tags": [
+        "security",
+        "pattern",
+        "memory"
+      ],
+      "source": "automation_temp/logs/engine.log",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.682Z"
+    },
+    {
+      "id": "technical:technical-term-found--javascript",
+      "content": "Technical term found: javascript",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "javascript",
+        "ai"
+      ],
+      "source": "scripts/fix-all-string-literals.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.725Z"
+    },
+    {
+      "id": "technical:technical-term-found--typescript",
+      "content": "Technical term found: typescript",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "typescript",
+        "ai"
+      ],
+      "source": "scripts/optimize-ui-components.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.729Z"
+    },
+    {
+      "id": "technical:technical-term-found--react",
+      "content": "Technical term found: react",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "react",
+        "ai"
+      ],
+      "source": "scripts/optimize-ui-components.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.729Z"
+    },
+    {
+      "id": "technical:technical-term-found--next-js",
+      "content": "Technical term found: next.js",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "next.js",
+        "ai"
+      ],
+      "source": "automation_temp/logs/system-service.log",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.722Z"
+    },
+    {
+      "id": "technical:technical-term-found--node-js",
+      "content": "Technical term found: node.js",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "node.js",
+        "ai"
+      ],
+      "source": "automation_temp/logs/system-service.log",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.722Z"
+    },
+    {
+      "id": "technical:technical-term-found--supabase",
+      "content": "Technical term found: supabase",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "ai",
+        "supabase"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "technical:technical-term-found--api",
+      "content": "Technical term found: api",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "ai",
+        "api"
+      ],
+      "source": "scripts/security-check.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "technical:technical-term-found--memory",
+      "content": "Technical term found: memory",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "memory",
+        "ai"
+      ],
+      "source": "automation_temp/logs/performance-optimizer.log",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.707Z"
+    },
+    {
+      "id": "technical:technical-term-found--ai",
+      "content": "Technical term found: ai",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "ai"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "pattern:found-error-patterns-in-automation-content",
+      "content": "Found error patterns in automation content",
+      "category": "error",
+      "tags": [
+        "error",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "technical:technical-term-found--cursor",
+      "content": "Technical term found: cursor",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "cursor",
+        "ai"
+      ],
+      "source": "scripts/fix-product-syntax.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.726Z"
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-automation-content",
+      "content": "Found rule patterns in automation content",
+      "category": "rule",
+      "tags": [
+        "rule",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "pattern:found-performance-patterns-in-automation-content",
+      "content": "Found performance patterns in automation content",
+      "category": "performance",
+      "tags": [
+        "performance",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/test-build.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.731Z"
+    },
+    {
+      "id": "pattern:found-security-patterns-in-automation-content",
+      "content": "Found security patterns in automation content",
+      "category": "security",
+      "tags": [
+        "security",
+        "pattern",
+        "automation"
+      ],
+      "source": "scripts/validate-env-vars.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.732Z"
+    },
+    {
+      "id": "technical:technical-term-found--database",
+      "content": "Technical term found: database",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "ai",
+        "database"
+      ],
+      "source": "logs/file-watcher.log",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:32.636Z"
+    },
+    {
+      "id": "technical:technical-term-found--authentication",
+      "content": "Technical term found: authentication",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "ai",
+        "authentication"
+      ],
+      "source": "scripts/security-check.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "technical:technical-term-found--learning",
+      "content": "Technical term found: learning",
+      "category": "technical",
+      "tags": [
+        "technical",
+        "learning",
+        "ai"
+      ],
+      "source": "scripts/fix-string-literals.js",
+      "confidence": 0.8,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-troubleshooting-content",
+      "content": "Found rule patterns in troubleshooting content",
+      "category": "rule",
+      "tags": [
+        "rule",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-preference-patterns-in-troubleshooting-content",
+      "content": "Found preference patterns in troubleshooting content",
+      "category": "preference",
+      "tags": [
+        "preference",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-solution-patterns-in-troubleshooting-content",
+      "content": "Found solution patterns in troubleshooting content",
+      "category": "solution",
+      "tags": [
+        "solution",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-error-patterns-in-troubleshooting-content",
+      "content": "Found error patterns in troubleshooting content",
+      "category": "error",
+      "tags": [
+        "error",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-automation-patterns-in-troubleshooting-content",
+      "content": "Found automation patterns in troubleshooting content",
+      "category": "automation",
+      "tags": [
+        "automation",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-performance-patterns-in-troubleshooting-content",
+      "content": "Found performance patterns in troubleshooting content",
+      "category": "performance",
+      "tags": [
+        "performance",
+        "pattern"
+      ],
+      "source": "scripts/fix-all-string-literals.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.725Z"
+    },
+    {
+      "id": "pattern:found-security-patterns-in-troubleshooting-content",
+      "content": "Found security patterns in troubleshooting content",
+      "category": "security",
+      "tags": [
+        "security",
+        "pattern"
+      ],
+      "source": "scripts/fix-specific-parsing-errors.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.727Z"
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-development-content",
+      "content": "Found rule patterns in development content",
+      "category": "rule",
+      "tags": [
+        "rule",
+        "pattern"
+      ],
+      "source": "scripts/setup-husky.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "pattern:found-solution-patterns-in-development-content",
+      "content": "Found solution patterns in development content",
+      "category": "solution",
+      "tags": [
+        "solution",
+        "pattern"
+      ],
+      "source": "scripts/setup-husky.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "pattern:found-error-patterns-in-development-content",
+      "content": "Found error patterns in development content",
+      "category": "error",
+      "tags": [
+        "error",
+        "pattern"
+      ],
+      "source": "scripts/setup-husky.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "pattern:found-automation-patterns-in-development-content",
+      "content": "Found automation patterns in development content",
+      "category": "automation",
+      "tags": [
+        "automation",
+        "pattern"
+      ],
+      "source": "scripts/setup-husky.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.730Z"
+    },
+    {
+      "id": "pattern:found-security-patterns-in-development-content",
+      "content": "Found security patterns in development content",
+      "category": "security",
+      "tags": [
+        "security",
+        "pattern"
+      ],
+      "source": "scripts/generate-sitemap.mjs",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.728Z"
+    },
+    {
+      "id": "pattern:found-rule-patterns-in-general-content",
+      "content": "Found rule patterns in general content",
+      "category": "rule",
+      "tags": [
+        "rule",
+        "pattern"
+      ],
+      "source": "scripts/link-checker.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.728Z"
+    },
+    {
+      "id": "pattern:found-automation-patterns-in-general-content",
+      "content": "Found automation patterns in general content",
+      "category": "automation",
+      "tags": [
+        "automation",
+        "pattern"
+      ],
+      "source": "scripts/link-checker.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.728Z"
+    },
+    {
+      "id": "pattern:found-security-patterns-in-general-content",
+      "content": "Found security patterns in general content",
+      "category": "security",
+      "tags": [
+        "security",
+        "pattern"
+      ],
+      "source": "scripts/link-checker.js",
+      "confidence": 0.7,
+      "timestamp": "2025-08-06T15:55:36.728Z"
+    }
+  ],
+  "context": {
+    "projectPatterns": [
+      {
+        "pattern": "Found preference patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found solution patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found automation patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found rule patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found preference patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found solution patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found error patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found automation patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found performance patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found security patterns in memory content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found error patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found rule patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found performance patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found security patterns in automation content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found rule patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found preference patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found solution patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found error patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found automation patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found performance patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found security patterns in troubleshooting content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found rule patterns in development content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found solution patterns in development content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found error patterns in development content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found automation patterns in development content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found security patterns in development content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found rule patterns in general content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found automation patterns in general content",
+        "confidence": 0.7
+      },
+      {
+        "pattern": "Found security patterns in general content",
+        "confidence": 0.7
+      }
+    ],
+    "userPreferences": [],
+    "technicalSolutions": [],
+    "commonIssues": [],
+    "automationStrategies": [
+      {
+        "strategy": "Technical term found: automation",
+        "confidence": 0.8
+      }
+    ]
+  }
+}

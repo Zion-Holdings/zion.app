@@ -1,0 +1,174 @@
+{
+  "timestamp": "2025-08-06T05:16:06.835Z",
+  "tailwindConfig": {
+    "exists": true,
+    "responsive": true
+  },
+  "cssAnalysis": {
+    "cssFiles": [
+      {
+        "file": "enhanced-design-system.css",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/styles/enhanced-design-system.css",
+        "size": 1650
+      },
+      {
+        "file": "globals.css",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/styles/globals.css",
+        "size": 22189
+      },
+      {
+        "file": "modern-design-system.css",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/styles/modern-design-system.css",
+        "size": 15903
+      }
+    ],
+    "responsiveClasses": [
+      {
+        "file": "globals.css",
+        "pattern": "/@media\\s+\\(/g",
+        "count": 4
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/min-width:/g",
+        "count": 4
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/max-width:/g",
+        "count": 4
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/sm:/g",
+        "count": 1
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/md:/g",
+        "count": 1
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/lg:/g",
+        "count": 1
+      },
+      {
+        "file": "globals.css",
+        "pattern": "/xl:/g",
+        "count": 1
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/@media\\s+\\(/g",
+        "count": 4
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/min-width:/g",
+        "count": 4
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/max-width:/g",
+        "count": 3
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/sm:/g",
+        "count": 3
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/md:/g",
+        "count": 3
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/lg:/g",
+        "count": 3
+      },
+      {
+        "file": "modern-design-system.css",
+        "pattern": "/xl:/g",
+        "count": 6
+      }
+    ]
+  },
+  "componentAnalysis": {
+    "components": [
+      {
+        "file": "EnhancedButton.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedButton.tsx",
+        "size": 1174
+      },
+      {
+        "file": "EnhancedCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedCard.tsx",
+        "size": 460
+      },
+      {
+        "file": "EnhancedLoading.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedLoading.tsx",
+        "size": 4990
+      },
+      {
+        "file": "EnhancedMarketplaceCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/EnhancedMarketplaceCard.tsx",
+        "size": 5558
+      },
+      {
+        "file": "FuturisticCard.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticCard.tsx",
+        "size": 4977
+      },
+      {
+        "file": "FuturisticHero.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticHero.tsx",
+        "size": 9196
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveNavigation.tsx",
+        "size": 6216
+      },
+      {
+        "file": "InteractiveSearch.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveSearch.tsx",
+        "size": 8947
+      },
+      {
+        "file": "NotificationSystem.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/NotificationSystem.tsx",
+        "size": 4736
+      }
+    ],
+    "responsiveComponents": [
+      {
+        "file": "FuturisticHero.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/FuturisticHero.tsx",
+        "responsiveClasses": 3
+      },
+      {
+        "file": "InteractiveNavigation.tsx",
+        "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/components/ui/InteractiveNavigation.tsx",
+        "responsiveClasses": 3
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "type": "component_responsive",
+      "priority": "medium",
+      "message": "Add responsive classes to more components"
+    }
+  ],
+  "summary": {
+    "tailwindConfigured": true,
+    "cssFiles": 3,
+    "responsiveCSS": 14,
+    "components": 9,
+    "responsiveComponents": 2,
+    "responsiveRatio": "0.22"
+  }
+}

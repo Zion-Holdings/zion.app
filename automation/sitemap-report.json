@@ -1,0 +1,414 @@
+{
+  "timestamp": "2025-08-06T05:16:07.184Z",
+  "siteUrl": "https://bolt.new.zion.app",
+  "pages": [
+    {
+      "route": "/about",
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "file": "about.tsx"
+    },
+    {
+      "route": "/auth/callback",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "callback.tsx"
+    },
+    {
+      "route": "/auth/forgot-password",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "forgot-password.tsx"
+    },
+    {
+      "route": "auth",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "index.tsx"
+    },
+    {
+      "route": "/auth/reset-password",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "reset-password.tsx"
+    },
+    {
+      "route": "/blog/5g-technology-and-its-impact-on-iot-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "5g-technology-and-its-impact-on-iot-chat.tsx"
+    },
+    {
+      "route": "/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx"
+    },
+    {
+      "route": "/blog/api-first-development-building-scalable-systems-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "api-first-development-building-scalable-systems-chat.tsx"
+    },
+    {
+      "route": "/blog/augmented-reality-in-enterprise-applications-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "augmented-reality-in-enterprise-applications-chat.tsx"
+    },
+    {
+      "route": "/blog/blockchain-technology-in-modern-business-solutions-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "blockchain-technology-in-modern-business-solutions-chat.tsx"
+    },
+    {
+      "route": "/blog/cloud-native-architecture-best-practices-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "cloud-native-architecture-best-practices-chat.tsx"
+    },
+    {
+      "route": "/blog/cybersecurity-trends-for-2024-and-beyond-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "cybersecurity-trends-for-2024-and-beyond-chat.tsx"
+    },
+    {
+      "route": "/blog/data-analytics-in-digital-transformation-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "data-analytics-in-digital-transformation-chat.tsx"
+    },
+    {
+      "route": "/blog/devops-automation-strategies-for-modern-teams-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "devops-automation-strategies-for-modern-teams-chat.tsx"
+    },
+    {
+      "route": "/blog/digital-twins-revolutionizing-industry-4-0-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "digital-twins-revolutionizing-industry-4-0-chat.tsx"
+    },
+    {
+      "route": "blog",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "index.tsx"
+    },
+    {
+      "route": "/blog/machine-learning-applications-in-enterprise-software-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "machine-learning-applications-in-enterprise-software-chat.tsx"
+    },
+    {
+      "route": "/blog/microservices-architecture-benefits-and-challenges-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "microservices-architecture-benefits-and-challenges-chat.tsx"
+    },
+    {
+      "route": "/blog/quantum-computing-implications-for-business-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "quantum-computing-implications-for-business-chat.tsx"
+    },
+    {
+      "route": "/blog/sustainable-technology-green-computing-solutions-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "sustainable-technology-green-computing-solutions-chat.tsx"
+    },
+    {
+      "route": "/blog/the-rise-of-edge-computing-in-iot-applications-chat",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "file": "the-rise-of-edge-computing-in-iot-applications-chat.tsx"
+    },
+    {
+      "route": "/category/ai-consulting-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "ai-consulting-chat.tsx"
+    },
+    {
+      "route": "/category/business-intelligence-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "business-intelligence-chat.tsx"
+    },
+    {
+      "route": "/category/cloud-architecture-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "cloud-architecture-chat.tsx"
+    },
+    {
+      "route": "/category/cybersecurity-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "cybersecurity-chat.tsx"
+    },
+    {
+      "route": "/category/data-science-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "data-science-chat.tsx"
+    },
+    {
+      "route": "/category/database-administration-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "database-administration-chat.tsx"
+    },
+    {
+      "route": "/category/devops-automation-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "devops-automation-chat.tsx"
+    },
+    {
+      "route": "/category/mobile-development-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "mobile-development-chat.tsx"
+    },
+    {
+      "route": "/category/network-engineering-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "network-engineering-chat.tsx"
+    },
+    {
+      "route": "/category/product-management-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "product-management-chat.tsx"
+    },
+    {
+      "route": "/category/quality-assurance-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "quality-assurance-chat.tsx"
+    },
+    {
+      "route": "/category/system-administration-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "system-administration-chat.tsx"
+    },
+    {
+      "route": "/category/technical-writing-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "technical-writing-chat.tsx"
+    },
+    {
+      "route": "/category/ui-ux-design-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "ui-ux-design-chat.tsx"
+    },
+    {
+      "route": "/category/web-development-chat",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "web-development-chat.tsx"
+    },
+    {
+      "route": "/chat-content/ai-powered-business-solutions-discussion",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "ai-powered-business-solutions-discussion.tsx"
+    },
+    {
+      "route": "/chat-content/cloud-computing-strategies",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "cloud-computing-strategies.tsx"
+    },
+    {
+      "route": "/chat-content/cybersecurity-best-practices",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "cybersecurity-best-practices.tsx"
+    },
+    {
+      "route": "/chat-content/data-analytics-implementation",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "data-analytics-implementation.tsx"
+    },
+    {
+      "route": "/chat-content/digital-transformation-insights",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "digital-transformation-insights.tsx"
+    },
+    {
+      "route": "/chat-content/emerging-technology-trends",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "emerging-technology-trends.tsx"
+    },
+    {
+      "route": "/chat-content/future-of-work-and-automation",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "future-of-work-and-automation.tsx"
+    },
+    {
+      "route": "/chat-content/innovation-in-enterprise-technology",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "innovation-in-enterprise-technology.tsx"
+    },
+    {
+      "route": "/chat-content/sustainable-technology-practices",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "sustainable-technology-practices.tsx"
+    },
+    {
+      "route": "/chat-content/technology-implementation-strategies",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "technology-implementation-strategies.tsx"
+    },
+    {
+      "route": "/contact",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "contact.tsx"
+    },
+    {
+      "route": "/enhanced-home",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "enhanced-home.tsx"
+    },
+    {
+      "route": "/",
+      "priority": "1.0",
+      "changefreq": "weekly",
+      "file": "index.tsx"
+    },
+    {
+      "route": "products",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "index.tsx"
+    },
+    {
+      "route": "/services/ai-model-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "ai-model-development-chat.tsx"
+    },
+    {
+      "route": "/services/api-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "api-development-chat.tsx"
+    },
+    {
+      "route": "/services/business-intelligence-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "business-intelligence-chat.tsx"
+    },
+    {
+      "route": "/services/cloud-migration-services-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "cloud-migration-services-chat.tsx"
+    },
+    {
+      "route": "/services/data-pipeline-engineering-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "data-pipeline-engineering-chat.tsx"
+    },
+    {
+      "route": "/services/database-design-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "database-design-chat.tsx"
+    },
+    {
+      "route": "services",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "index.tsx"
+    },
+    {
+      "route": "/services/mobile-app-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "mobile-app-development-chat.tsx"
+    },
+    {
+      "route": "/services/network-security-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "network-security-chat.tsx"
+    },
+    {
+      "route": "/services/performance-optimization-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "performance-optimization-chat.tsx"
+    },
+    {
+      "route": "/services/quality-assurance-testing-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "quality-assurance-testing-chat.tsx"
+    },
+    {
+      "route": "/services/security-auditing-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "security-auditing-chat.tsx"
+    },
+    {
+      "route": "/services/system-administration-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "system-administration-chat.tsx"
+    },
+    {
+      "route": "/services/technical-documentation-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "technical-documentation-chat.tsx"
+    },
+    {
+      "route": "/services/ui-ux-design-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "ui-ux-design-chat.tsx"
+    },
+    {
+      "route": "/services/web-application-development-chat",
+      "priority": "0.9",
+      "changefreq": "monthly",
+      "file": "web-application-development-chat.tsx"
+    },
+    {
+      "route": "talent",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "file": "index.tsx"
+    }
+  ],
+  "summary": {
+    "totalPages": 67,
+    "highPriorityPages": 16,
+    "mediumPriorityPages": 16,
+    "lowPriorityPages": 35
+  }
+}

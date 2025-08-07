@@ -1,0 +1,12 @@
+{
+  "id": "partnership-revenue-1754362481581",
+  "type": "partnership-revenue",
+  "created": "2025-08-05T02:54:41.581Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

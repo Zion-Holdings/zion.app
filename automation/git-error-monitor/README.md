@@ -34,16 +34,19 @@ A comprehensive autonomous system for continuously monitoring and fixing git pro
 ## Installation
 
 1. Navigate to the git error monitoring directory:
+
    ```bash
    cd automation/git-error-monitoring
    ```
 
 2. Make scripts executable:
+
    ```bash
    chmod +x *.sh
    ```
 
 3. Start the system:
+
    ```bash
    ./start-git-error-monitoring.sh
    ```
@@ -51,22 +54,27 @@ A comprehensive autonomous system for continuously monitoring and fixing git pro
 ## Usage
 
 ### Starting the System
+
 ```bash
 ./start-git-error-monitoring.sh
 ```
 
 ### Stopping the System
+
 ```bash
 ./stop-git-error-monitoring.sh
 ```
 
 ### Checking Status
+
 ```bash
 ./status-git-error-monitoring.sh
 ```
 
 ### Setting up Cron Job
+
 Add to your crontab to ensure the system stays running:
+
 ```bash
 # Check every 5 minutes
 */5 * * * * /path/to/automation/git-error-monitor/cron-git-error-monitoring.sh
@@ -75,6 +83,7 @@ Add to your crontab to ensure the system stays running:
 ## Features
 
 ### Error Detection
+
 - Git status errors
 - Merge conflicts
 - Stale lock files
@@ -82,6 +91,7 @@ Add to your crontab to ensure the system stays running:
 - Configuration issues
 
 ### Automatic Fixes
+
 - Removes stale lock files
 - Kills stuck git processes
 - Resets git status when needed
@@ -89,6 +99,7 @@ Add to your crontab to ensure the system stays running:
 - Aborts problematic merges
 
 ### Monitoring & Reporting
+
 - Continuous health monitoring
 - Detailed logging
 - Performance reports
@@ -96,6 +107,7 @@ Add to your crontab to ensure the system stays running:
 - Error statistics
 
 ### System Management
+
 - Automatic agent restart on failure
 - Process health monitoring
 - Log rotation and cleanup
@@ -150,22 +162,26 @@ The system is designed to work out of the box with sensible defaults:
 ## Troubleshooting
 
 ### Check if agents are running
+
 ```bash
 ./status-git-error-monitoring.sh
 ```
 
 ### View recent logs
+
 ```bash
 tail -f logs/git-error-monitor-$(date +%Y-%m-%d).log
 ```
 
 ### Restart the system
+
 ```bash
 ./stop-git-error-monitoring.sh
 ./start-git-error-monitoring.sh
 ```
 
 ### Manual cleanup
+
 ```bash
 # Remove all PID files
 rm -f *.pid

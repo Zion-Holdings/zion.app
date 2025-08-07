@@ -1,0 +1,22 @@
+{
+  "id": "freemium-1754359737530",
+  "type": "freemium",
+  "created": "2025-08-05T02:08:57.531Z",
+  "status": "active",
+  "config": {
+    "conversion": [
+      "free-to-paid",
+      "feature-limits",
+      "trial-periods"
+    ],
+    "metrics": [
+      "conversion-rate",
+      "upgrade-rate"
+    ]
+  },
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

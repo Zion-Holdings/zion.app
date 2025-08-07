@@ -1,0 +1,12 @@
+{
+  "id": "enterprise-upselling-1754362231027",
+  "type": "enterprise-upselling",
+  "created": "2025-08-05T02:50:31.027Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}
