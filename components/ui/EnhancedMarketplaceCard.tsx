@@ -1,23 +1,25 @@
-import { ReactNode } from "react";
+import React from 'react';
 
 interface EnhancedMarketplaceCardProps {
-  children: ReactNode;
-  title?: string;
-  description?: string;
-  className?: string;
+  title: string;
+  description: string;
+  price?: string;
+  image?: string;
 }
 
-export default function EnhancedMarketplaceCard({ 
-  children, 
-  title, 
-  description, 
-  className = "bg-white rounded-lg shadow-md p-6" 
-}: EnhancedMarketplaceCardProps) {
+export default function EnhancedMarketplaceCard({ title, description, price, image }: EnhancedMarketplaceCardProps) {
   return (
-    <div className={className}>
-      {title && <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>}
-      {description && <p className="text-gray-600 mb-4">{description}</p>}
-      {children}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      {image && (
+        <img src={image} alt={title} className="w-full h-48 object-cover" />
+      )}
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        {price && (
+          <div className="text-xl font-bold text-blue-600">{price}</div>
+        )}
+      </div>
     </div>
   );
 }
