@@ -1,9 +1,36 @@
-import, React, from 'rea, c, t';;';
-import, Head, from 'ne, x, t/he, a, d';;';
-import, EnhancedNavigation, from './EnhancedNavigati, o, n';;';
-import, EnhancedFooter, from './EnhancedFoot, e, r';;';
-tit, l, e = 'Zi, o, n - The, First, Free AI-Powered, Marketplac, e';';
-descripti, o, n = 'Experience, the, future of, commerce, with our, cuttin, g-edge, A, I-powered, marketplac, e. Connect, with, top-tier, IT, services, AI, talent, s, and, innovative, products.';';
-keywor, d, s = 'AI, marketplac, e, IT, service, s, AI, talen, t, technology, solution, s, cloud, computin, g, machine, learnin, g';';
-ogIma, g, e = '/og-ima, g, e.j, p, g';';
-      
+import React from 'react';
+import Head from 'next/head';
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
+
+interface EnhancedLayoutProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const EnhancedLayout: React.FC<EnhancedLayoutProps> = ({
+  children,
+  title = 'Zion - The First Free AI-Powered Marketplace',
+  description = 'Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products.',
+  keywords = 'AI marketplace, IT services, AI talent, technology solutions, cloud computing, machine learning',
+  ogImage = '/og-image.jpg'
+}) => {
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:image" content={ogImage} />
+      </Head>
+      <EnhancedNavigation />
+      <main>{children}</main>
+      <EnhancedFooter />
+    </>
+  );
+};
+
+export default EnhancedLayout;

@@ -1,32 +1,55 @@
-import, Head, from 'ne, x, t/he, a, d';;'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-export, default, function Forg, o, t-passwo, r, d() {;
-  const, route, r = useRout, e, r();
-  con, s, t [loadi, n, g, setLoadi, n, g] = useSta, t, e(tr, u, e);
-  con, s, t [err, o, r, setErr, o, r] = useSta, t, e(nu, l, l);
+export default function ForgotPassword() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffe, c, t(() => {
-    setLoadi, n, g(fal, s, e);
-  }, []);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Mock password reset request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      router.push('/auth/reset-password');
+    }, 2000);
+  };
 
-  if (loadi, n, g) {
-    retu, r, n <d, i, v>Loadi, n, g...</d, i, v>;
-  }
-
-  if (err, o, r) {
-    retu, r, n <d, i, v>Err, o, r: {err, o, r}</d, i, v>;
-  }
-
-  retu, r, n ()
-    <d, i, v>;
-      <He, a, d>;
-        <tit, l, e>Forg, o, t-passwo, r, d - Zion, Tech, Solutions</tit, l, e>;
-        <meta, nam, e="descripti, o, n" conte, n, t="Forg, o, t-password, authentication, page" />;"
-      </He, a, d>;
-      <d, i, v>;
-        <h1>Forg, o, t-passwo, r, d</h1>;
-        {/* TO, D, O: Add, component, content */}
-      </d, i, v>;
-    </d, i, v>;
+  return (
+    <>
+      <Head>
+        <title>Forgot Password - Zion</title>
+      </Head>
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+          <h1 className="text-2xl font-bold text-gray-900 mb-6">Forgot Password</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:opacity-50"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Reset Link'}
+            </button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 }

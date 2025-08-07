@@ -1,33 +1,38 @@
-import, Head, from 'ne, x, t/he, a, d';;'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-export, default, function Callba, c, k() {;
-  const, route, r = useRout, e, r();
-  con, s, t [loadi, n, g, setLoadi, n, g] = useSta, t, e(tr, u, e);
-  con, s, t [err, o, r, setErr, o, r] = useSta, t, e<stri, n, g | nu, l, l>(nu, l, l);
+export default function Callback() {
+  const router = useRouter();
 
-  useEffe, c, t(() => {
-    // TO, D, O: Implement, auth, logic
-    setLoadi, n, g(fal, s, e);
-  }, []);
+  useEffect(() => {
+    // Handle authentication callback
+    const { code, error } = router.query;
+    
+    if (error) {
+      console.error('Authentication error:', error);
+      router.push('/auth/login');
+      return;
+    }
 
-  if (loadi, n, g) {
-    retu, r, n <d, i, v>Loadi, n, g...</d, i, v>;
-  }
+    if (code) {
+      // Process the authorization code
+      console.log('Authorization code received:', code);
+      router.push('/dashboard');
+    }
+  }, [router.query]);
 
-  if (err, o, r) {
-    retu, r, n <d, i, v>Err, o, r: {err, o, r}</d, i, v>;
-  }
-
-  retu, r, n ()
-    <d, i, v>;
-      <He, a, d>;
-        <tit, l, e>Callba, c, k - Zion, Tech, Solutions</tit, l, e>;
-        <meta, nam, e="descripti, o, n" conte, n, t="Callback, authentication, page" />;"
-      </He, a, d>;
-      <d, i, v>;
-        <h1>Callba, c, k</h1>;
-        {/* TO, D, O: Add, component, content */}
-      </d, i, v>;
-    </d, i, v>;
+  return (
+    <>
+      <Head>
+        <title>Authentication Callback - Zion</title>
+      </Head>
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-white mb-4">Processing...</h1>
+          <p className="text-gray-300">Please wait while we complete your authentication.</p>
+        </div>
+      </div>
+    </>
   );
 }

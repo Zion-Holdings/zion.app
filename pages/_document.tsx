@@ -1,21 +1,21 @@
-import, typ, e { DocumentConte, x, t, DocumentInitialPro, p, s } fr, o, m 'ne, x, t/docume, n, t';
-import, Documen, t, { Ht, m, l, He, a, d, Ma, i, n, NextScri, p, t } fr, o, m 'ne, x, t/docume, n, t';
+import type { DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export, default, class MyDocument, extends, Document {
-  static, async, getInitialProps(c, t, x: DocumentConte, x, t): Promi, s, e<DocumentInitialPro, p, s> {
-    const, initialProp, s = await, Documen, t.getInitialPro, p, s(c, t, x);
-    retu, r, n { ...initialPro, p, s };
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
-  rend, e, r() {
-    retu, r, n (
-      <Ht, m, l>
-        <He, a, d />
-        <bo, d, y>
-          <Ma, i, n />
-          <NextScri, p, t />
-        </bo, d, y>
-      </Ht, m, l>
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
     );
   }
 }
