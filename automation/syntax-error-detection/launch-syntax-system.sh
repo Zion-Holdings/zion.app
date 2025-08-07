@@ -231,7 +231,7 @@ run_health_check() {
         exit 1
     }
     
-    if node "$SCRIPT_DIR/monitoring/syntax-monitor.js" health; then
+    if node "$SCRIPT_DIR/monitoring/syntax-monitor.cjs" health; then
         success_log "Health check completed"
     else
         error_log "Health check failed"

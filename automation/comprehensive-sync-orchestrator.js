@@ -58,13 +58,13 @@ const memoryOptimization = {
   }
 };
 
-class GitSyncAutomation {
+class ComprehensiveSyncOrchestrator {
   constructor() {
-    this.id = 'git-sync-automation';
+    this.id = 'comprehensive-sync-orchestrator';
     this.version = '2.0';
     this.status = 'initializing';
     this.config = {
-      commitMessagePrefix: 'Auto-sync',
+      commitMessagePrefix: 'Comprehensive-sync',
       includePatterns: [
         'automation/**',
         'pages/**',
@@ -89,9 +89,9 @@ class GitSyncAutomation {
 
   setupDirectories() {
     const directories = [
-      'sync-logs',
-      'sync-status',
-      'sync-reports'
+      'comprehensive-sync-logs',
+      'comprehensive-sync-status',
+      'comprehensive-sync-reports'
     ];
     
     directories.forEach(dir => {
@@ -104,12 +104,12 @@ class GitSyncAutomation {
 
   async initialize() {
     try {
-      console.log('🔄 Initializing Git Sync Automation...');
+      console.log('🔄 Initializing Comprehensive Sync Orchestrator...');
       await this.checkGitStatus();
       this.status = 'running';
-      console.log('✅ Git Sync Automation initialized successfully');
+      console.log('✅ Comprehensive Sync Orchestrator initialized successfully');
     } catch (error) {
-      console.error('❌ Failed to initialize Git Sync Automation: ', error.message);
+      console.error('❌ Failed to initialize Comprehensive Sync Orchestrator: ', error.message);
       this.status = 'error';
     }
   }
@@ -124,7 +124,7 @@ class GitSyncAutomation {
   }
 
   async start() {
-    console.log('👀 Starting file watching...');
+    console.log('👀 Starting comprehensive file watching...');
     const watchDirs = [
       'pages',
       'components',
@@ -134,30 +134,72 @@ class GitSyncAutomation {
       'automation'
     ];
     
-    console.log('🔄 Starting auto-commit...');
+    console.log('🔄 Starting high-frequency sync...');
+    console.log('🔄 Starting standard sync...');
+    console.log('🔄 Starting backup sync...');
     console.log('🚀 Starting auto-push...');
     
     // Start monitoring
     this.startMonitoring();
   }
 
-  async performAutoCommit() {
+  async performHighFrequencySync() {
     try {
-      console.log('🔄 Performing auto-commit...');
+      console.log('🔄 Performing high-frequency sync...');
       const changedFiles = this.getChangedFiles();
       
       if (changedFiles.length > 0) {
         execSync('git add .', { stdio: 'pipe' });
         
-        const commitMessage = `${this.config.commitMessagePrefix}: ${new Date().toISOString()} - ${changedFiles.length} files`;
+        const commitMessage = `${this.config.commitMessagePrefix}: High-freq ${new Date().toISOString()} - ${changedFiles.length} files`;
         execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
-        console.log('✅ Auto-commit successful');
+        console.log('✅ High-frequency sync successful');
       } else {
-        console.log('✅ No changes to commit');
+        console.log('✅ No changes for high-frequency sync');
       }
     } catch (error) {
-      console.error('❌ Auto-commit failed: ', error.message);
-      await this.handleError('commit', error);
+      console.error('❌ High-frequency sync failed: ', error.message);
+      await this.handleError('high-freq-sync', error);
+    }
+  }
+
+  async performStandardSync() {
+    try {
+      console.log('🔄 Performing standard sync...');
+      const changedFiles = this.getChangedFiles();
+      
+      if (changedFiles.length > 0) {
+        execSync('git add .', { stdio: 'pipe' });
+        
+        const commitMessage = `${this.config.commitMessagePrefix}: Standard ${new Date().toISOString()} - ${changedFiles.length} files`;
+        execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
+        console.log('✅ Standard sync successful');
+      } else {
+        console.log('✅ No changes for standard sync');
+      }
+    } catch (error) {
+      console.error('❌ Standard sync failed: ', error.message);
+      await this.handleError('standard-sync', error);
+    }
+  }
+
+  async performBackupSync() {
+    try {
+      console.log('🔄 Performing backup sync...');
+      const changedFiles = this.getChangedFiles();
+      
+      if (changedFiles.length > 0) {
+        execSync('git add .', { stdio: 'pipe' });
+        
+        const commitMessage = `${this.config.commitMessagePrefix}: Backup ${new Date().toISOString()} - ${changedFiles.length} files`;
+        execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
+        console.log('✅ Backup sync successful');
+      } else {
+        console.log('✅ No changes for backup sync');
+      }
+    } catch (error) {
+      console.error('❌ Backup sync failed: ', error.message);
+      await this.handleError('backup-sync', error);
     }
   }
 
@@ -218,32 +260,48 @@ class GitSyncAutomation {
       stack: error.stack
     };
     
-    const errorPath = path.join(__dirname, 'sync-logs', `error-${Date.now()}.json`);
+    const errorPath = path.join(__dirname, 'comprehensive-sync-logs', `error-${Date.now()}.json`);
     fs.writeFileSync(errorPath, JSON.stringify(errorLog, null, 2));
     
-    if (operation === 'commit') {
-      // Retry commit after error
-      setTimeout(() => this.performAutoCommit(), 10000);
+    if (operation === 'high-freq-sync') {
+      // Retry high-frequency sync after error
+      setTimeout(() => this.performHighFrequencySync(), 3000);
+    } else if (operation === 'standard-sync') {
+      // Retry standard sync after error
+      setTimeout(() => this.performStandardSync(), 15000);
+    } else if (operation === 'backup-sync') {
+      // Retry backup sync after error
+      setTimeout(() => this.performBackupSync(), 60000);
     } else if (operation === 'push') {
       // Retry push after error
-      setTimeout(() => this.performAutoPush(), 15000);
+      setTimeout(() => this.performAutoPush(), 30000);
     }
   }
 
   startMonitoring() {
-    // Set up auto-commit monitoring (every 30 seconds)
+    // Set up high-frequency monitoring (every 3 seconds)
     setInterval(() => {
-      this.performAutoCommit();
-    }, 30000);
+      this.performHighFrequencySync();
+    }, 3000);
     
-    // Set up auto-push monitoring (every 60 seconds)
+    // Set up standard monitoring (every 15 seconds)
+    setInterval(() => {
+      this.performStandardSync();
+    }, 15000);
+    
+    // Set up backup monitoring (every 60 seconds)
+    setInterval(() => {
+      this.performBackupSync();
+    }, 60000);
+    
+    // Set up auto-push monitoring (every 30 seconds)
     setInterval(() => {
       this.performAutoPush();
-    }, 60000);
+    }, 30000);
   }
 
   generateReport() {
-    const statusPath = path.join(__dirname, 'sync-status', 'current-status.json');
+    const statusPath = path.join(__dirname, 'comprehensive-sync-status', 'current-status.json');
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -253,36 +311,36 @@ class GitSyncAutomation {
     };
     
     fs.writeFileSync(statusPath, JSON.stringify(report, null, 2));
-    console.log('📊 Generated sync report');
+    console.log('📊 Generated comprehensive sync report');
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Git Sync Automation...');
+    console.log('🛑 Shutting down Comprehensive Sync Orchestrator...');
     this.status = 'stopped';
     this.generateReport();
-    console.log('✅ Git Sync Automation shutdown complete');
+    console.log('✅ Comprehensive Sync Orchestrator shutdown complete');
   }
 }
 
 // Signal handlers
 process.on('SIGTERM', async () => {
   console.log('🛑 Received SIGTERM, shutting down...');
-  await gitSync.shutdown();
+  await orchestrator.shutdown();
   process.exit(0);
 });
 
 process.on('SIGINT', async () => {
   console.log('🛑 Received SIGINT, shutting down...');
-  await gitSync.shutdown();
+  await orchestrator.shutdown();
   process.exit(0);
 });
 
 // Initialize and start
-const gitSync = new GitSyncAutomation();
+const orchestrator = new ComprehensiveSyncOrchestrator();
 
-gitSync.initialize().then(() => {
-  gitSync.start();
+orchestrator.initialize().then(() => {
+  orchestrator.start();
 }).catch(error => {
-  console.error('❌ Failed to start Git Sync Automation: ', error.message);
+  console.error('❌ Failed to start Comprehensive Sync Orchestrator: ', error.message);
   process.exit(1);
 });

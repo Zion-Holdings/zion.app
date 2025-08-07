@@ -58,13 +58,13 @@ const memoryOptimization = {
   }
 };
 
-class GitSyncAutomation {
+class MasterSyncController {
   constructor() {
-    this.id = 'git-sync-automation';
+    this.id = 'master-sync-controller';
     this.version = '2.0';
     this.status = 'initializing';
     this.config = {
-      commitMessagePrefix: 'Auto-sync',
+      commitMessagePrefix: 'Master-sync',
       includePatterns: [
         'automation/**',
         'pages/**',
@@ -89,9 +89,9 @@ class GitSyncAutomation {
 
   setupDirectories() {
     const directories = [
-      'sync-logs',
-      'sync-status',
-      'sync-reports'
+      'master-sync-logs',
+      'master-sync-status',
+      'master-sync-reports'
     ];
     
     directories.forEach(dir => {
@@ -104,12 +104,12 @@ class GitSyncAutomation {
 
   async initialize() {
     try {
-      console.log('🔄 Initializing Git Sync Automation...');
+      console.log('🔄 Initializing Master Sync Controller...');
       await this.checkGitStatus();
       this.status = 'running';
-      console.log('✅ Git Sync Automation initialized successfully');
+      console.log('✅ Master Sync Controller initialized successfully');
     } catch (error) {
-      console.error('❌ Failed to initialize Git Sync Automation: ', error.message);
+      console.error('❌ Failed to initialize Master Sync Controller: ', error.message);
       this.status = 'error';
     }
   }
@@ -124,7 +124,7 @@ class GitSyncAutomation {
   }
 
   async start() {
-    console.log('👀 Starting file watching...');
+    console.log('👀 Starting master file watching...');
     const watchDirs = [
       'pages',
       'components',
@@ -134,30 +134,72 @@ class GitSyncAutomation {
       'automation'
     ];
     
-    console.log('🔄 Starting auto-commit...');
+    console.log('🔄 Starting ultra-high-frequency sync...');
+    console.log('🔄 Starting high-frequency sync...');
+    console.log('🔄 Starting backup sync...');
     console.log('🚀 Starting auto-push...');
     
     // Start monitoring
     this.startMonitoring();
   }
 
-  async performAutoCommit() {
+  async performUltraHighFrequencySync() {
     try {
-      console.log('🔄 Performing auto-commit...');
+      console.log('🔄 Performing ultra-high-frequency sync...');
       const changedFiles = this.getChangedFiles();
       
       if (changedFiles.length > 0) {
         execSync('git add .', { stdio: 'pipe' });
         
-        const commitMessage = `${this.config.commitMessagePrefix}: ${new Date().toISOString()} - ${changedFiles.length} files`;
+        const commitMessage = `${this.config.commitMessagePrefix}: Ultra-high-freq ${new Date().toISOString()} - ${changedFiles.length} files`;
         execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
-        console.log('✅ Auto-commit successful');
+        console.log('✅ Ultra-high-frequency sync successful');
       } else {
-        console.log('✅ No changes to commit');
+        console.log('✅ No changes for ultra-high-frequency sync');
       }
     } catch (error) {
-      console.error('❌ Auto-commit failed: ', error.message);
-      await this.handleError('commit', error);
+      console.error('❌ Ultra-high-frequency sync failed: ', error.message);
+      await this.handleError('ultra-high-freq-sync', error);
+    }
+  }
+
+  async performHighFrequencySync() {
+    try {
+      console.log('🔄 Performing high-frequency sync...');
+      const changedFiles = this.getChangedFiles();
+      
+      if (changedFiles.length > 0) {
+        execSync('git add .', { stdio: 'pipe' });
+        
+        const commitMessage = `${this.config.commitMessagePrefix}: High-freq ${new Date().toISOString()} - ${changedFiles.length} files`;
+        execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
+        console.log('✅ High-frequency sync successful');
+      } else {
+        console.log('✅ No changes for high-frequency sync');
+      }
+    } catch (error) {
+      console.error('❌ High-frequency sync failed: ', error.message);
+      await this.handleError('high-freq-sync', error);
+    }
+  }
+
+  async performBackupSync() {
+    try {
+      console.log('🔄 Performing backup sync...');
+      const changedFiles = this.getChangedFiles();
+      
+      if (changedFiles.length > 0) {
+        execSync('git add .', { stdio: 'pipe' });
+        
+        const commitMessage = `${this.config.commitMessagePrefix}: Backup ${new Date().toISOString()} - ${changedFiles.length} files`;
+        execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
+        console.log('✅ Backup sync successful');
+      } else {
+        console.log('✅ No changes for backup sync');
+      }
+    } catch (error) {
+      console.error('❌ Backup sync failed: ', error.message);
+      await this.handleError('backup-sync', error);
     }
   }
 
@@ -218,12 +260,18 @@ class GitSyncAutomation {
       stack: error.stack
     };
     
-    const errorPath = path.join(__dirname, 'sync-logs', `error-${Date.now()}.json`);
+    const errorPath = path.join(__dirname, 'master-sync-logs', `error-${Date.now()}.json`);
     fs.writeFileSync(errorPath, JSON.stringify(errorLog, null, 2));
     
-    if (operation === 'commit') {
-      // Retry commit after error
-      setTimeout(() => this.performAutoCommit(), 10000);
+    if (operation === 'ultra-high-freq-sync') {
+      // Retry ultra-high-frequency sync after error
+      setTimeout(() => this.performUltraHighFrequencySync(), 1000);
+    } else if (operation === 'high-freq-sync') {
+      // Retry high-frequency sync after error
+      setTimeout(() => this.performHighFrequencySync(), 5000);
+    } else if (operation === 'backup-sync') {
+      // Retry backup sync after error
+      setTimeout(() => this.performBackupSync(), 30000);
     } else if (operation === 'push') {
       // Retry push after error
       setTimeout(() => this.performAutoPush(), 15000);
@@ -231,19 +279,29 @@ class GitSyncAutomation {
   }
 
   startMonitoring() {
-    // Set up auto-commit monitoring (every 30 seconds)
+    // Set up ultra-high-frequency monitoring (every 1 second)
     setInterval(() => {
-      this.performAutoCommit();
+      this.performUltraHighFrequencySync();
+    }, 1000);
+    
+    // Set up high-frequency monitoring (every 5 seconds)
+    setInterval(() => {
+      this.performHighFrequencySync();
+    }, 5000);
+    
+    // Set up backup monitoring (every 30 seconds)
+    setInterval(() => {
+      this.performBackupSync();
     }, 30000);
     
-    // Set up auto-push monitoring (every 60 seconds)
+    // Set up auto-push monitoring (every 15 seconds)
     setInterval(() => {
       this.performAutoPush();
-    }, 60000);
+    }, 15000);
   }
 
   generateReport() {
-    const statusPath = path.join(__dirname, 'sync-status', 'current-status.json');
+    const statusPath = path.join(__dirname, 'master-sync-status', 'current-status.json');
     
     const report = {
       timestamp: new Date().toISOString(),
@@ -253,36 +311,36 @@ class GitSyncAutomation {
     };
     
     fs.writeFileSync(statusPath, JSON.stringify(report, null, 2));
-    console.log('📊 Generated sync report');
+    console.log('📊 Generated master sync report');
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Git Sync Automation...');
+    console.log('🛑 Shutting down Master Sync Controller...');
     this.status = 'stopped';
     this.generateReport();
-    console.log('✅ Git Sync Automation shutdown complete');
+    console.log('✅ Master Sync Controller shutdown complete');
   }
 }
 
 // Signal handlers
 process.on('SIGTERM', async () => {
   console.log('🛑 Received SIGTERM, shutting down...');
-  await gitSync.shutdown();
+  await controller.shutdown();
   process.exit(0);
 });
 
 process.on('SIGINT', async () => {
   console.log('🛑 Received SIGINT, shutting down...');
-  await gitSync.shutdown();
+  await controller.shutdown();
   process.exit(0);
 });
 
 // Initialize and start
-const gitSync = new GitSyncAutomation();
+const controller = new MasterSyncController();
 
-gitSync.initialize().then(() => {
-  gitSync.start();
+controller.initialize().then(() => {
+  controller.start();
 }).catch(error => {
-  console.error('❌ Failed to start Git Sync Automation: ', error.message);
+  console.error('❌ Failed to start Master Sync Controller: ', error.message);
   process.exit(1);
 });
