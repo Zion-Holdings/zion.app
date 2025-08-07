@@ -6,12 +6,12 @@ const DatabaseDesignChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>DatabaseDesignChat - Zion Tech Solutions</title>
-        <meta name="description" content="DatabaseDesignChat service" />
+        <title>Database Design Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Database Design Chat blog post" />
       </Head>
       
       <main>
-        <h1>DatabaseDesignChat</h1>
+        <h1>Database Design Chat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>

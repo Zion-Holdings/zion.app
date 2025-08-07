@@ -6,12 +6,12 @@ const MobileAppDevelopmentChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>MobileAppDevelopmentChat - Zion Tech Solutions</title>
-        <meta name="description" content="MobileAppDevelopmentChat service" />
+        <title>Mobile App Development Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Mobile App Development Chat blog post" />
       </Head>
       
       <main>
-        <h1>MobileAppDevelopmentChat</h1>
+        <h1>Mobile App Development Chat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>

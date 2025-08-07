@@ -6,12 +6,12 @@ const CybersecurityTrendsFor2024AndBeyondChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>CybersecurityTrendsFor2024AndBeyondChat - Zion Tech Solutions</title>
-        <meta name="description" content="CybersecurityTrendsFor2024AndBeyondChat blog post" />
+        <title>Cybersecurity Trends For 2024 And Beyond Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Cybersecurity Trends For 2024 And Beyond Chat blog post" />
       </Head>
       
       <main>
-        <h1>CybersecurityTrendsFor2024AndBeyondChat</h1>
+        <h1>Cybersecurity Trends For 2024 And Beyond Chat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

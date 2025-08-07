@@ -1,15 +1,21 @@
 import React from 'react';
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
 
 interface EnhancedLayoutProps {
   children: React.ReactNode;
 }
 
-export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
+const EnhancedLayout: React.FC<EnhancedLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <main className="container mx-auto px-4 py-8">
+    <div className="min-h-screen flex flex-col">
+      <EnhancedNavigation />
+      <main className="flex-grow">
         {children}
       </main>
+      <EnhancedFooter />
     </div>
   );
-}
+};
+
+export default EnhancedLayout;

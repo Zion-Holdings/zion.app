@@ -6,12 +6,12 @@ const CloudMigrationServicesChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>CloudMigrationServicesChat - Zion Tech Solutions</title>
-        <meta name="description" content="CloudMigrationServicesChat service" />
+        <title>Cloud Migration Services Chat - Zion Tech Solutions</title>
+        <meta name="description" content="Cloud Migration Services Chat blog post" />
       </Head>
       
       <main>
-        <h1>CloudMigrationServicesChat</h1>
+        <h1>Cloud Migration Services Chat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>
