@@ -2,10 +2,10 @@
 
 /**
  * Autonomous Error Fixing Agent Factory
- * 
+ *
  * This factory creates specialized autonomous agents for fixing specific types
  * of automation errors without modifying existing systems.
- * 
+ *
  * Features:
  * - Creates specialized agents for different error types
  * - Self-learning error patterns
@@ -14,45 +14,45 @@
  * - Comprehensive reporting and monitoring
  */
 
-const fs = require('fs-extra');
-const path = require('path');
-const { exec } = require('child_process');
-const cron = require('node-cron');
+const fs = require("fs-extra");
+const path = require("path");
+const { exec } = require("child_process");
+const cron = require("node-cron");
 
 class AutonomousErrorFixingAgentFactory {
   constructor() {
     this.config = {
-      agentGenerationInterval: '*/5 * * * *', // Every 5 minutes
+      agentGenerationInterval: "*/5 * * * *", // Every 5 minutes
       maxAgentsPerType: 3,
       agentTimeout: 300000, // 5 minutes
       learningEnabled: true,
-      patternMatchingEnabled: true
+      patternMatchingEnabled: true,
     };
-    
+
     this.agentTypes = {
-      syntax: 'SyntaxErrorFixingAgent',
-      runtime: 'RuntimeErrorFixingAgent',
-      config: 'ConfigErrorFixingAgent',
-      dependency: 'DependencyErrorFixingAgent',
-      performance: 'PerformanceErrorFixingAgent',
-      network: 'NetworkErrorFixingAgent',
-      security: 'SecurityErrorFixingAgent',
-      database: 'DatabaseErrorFixingAgent'
+      syntax: "SyntaxErrorFixingAgent",
+      runtime: "RuntimeErrorFixingAgent",
+      config: "ConfigErrorFixingAgent",
+      dependency: "DependencyErrorFixingAgent",
+      performance: "PerformanceErrorFixingAgent",
+      network: "NetworkErrorFixingAgent",
+      security: "SecurityErrorFixingAgent",
+      database: "DatabaseErrorFixingAgent",
     };
-    
+
     this.directories = {
-      agents: path.join(__dirname, 'autonomous-error-fixing-agents'),
-      templates: path.join(__dirname, 'agent-templates'),
-      logs: path.join(__dirname, 'agent-factory-logs'),
-      reports: path.join(__dirname, 'agent-factory-reports'),
-      patterns: path.join(__dirname, 'error-patterns'),
-      learning: path.join(__dirname, 'agent-learning-data')
+      agents: path.join(__dirname, "autonomous-error-fixing-agents"),
+      templates: path.join(__dirname, "agent-templates"),
+      logs: path.join(__dirname, "agent-factory-logs"),
+      reports: path.join(__dirname, "agent-factory-reports"),
+      patterns: path.join(__dirname, "error-patterns"),
+      learning: path.join(__dirname, "agent-learning-data"),
     };
-    
+
     this.activeAgents = new Map();
     this.errorPatterns = new Map();
     this.learningData = new Map();
-    
+
     this.ensureDirectories();
   }
 
@@ -62,81 +62,109 @@ class AutonomousErrorFixingAgentFactory {
     }
   }
 
-  async log(message, type = 'info') {
+  async log(message, type = "info") {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${message}\n`;
-    
-    await fs.appendFile(path.join(this.directories.logs, `${type}.log`), logEntry);
+
+    await fs.appendFile(
+      path.join(this.directories.logs, `${type}.log`),
+      logEntry,
+    );
     console.log(`[${type.toUpperCase()}] ${message}`);
   }
 
   async createAgentForError(error) {
     const agentType = this.determineAgentType(error);
     const agentId = this.generateAgentId(agentType);
-    
+
     await this.log(`🔧 Creating ${agentType} agent for error: ${error.error}`);
-    
+
     const agentCode = await this.generateAgentCode(agentType, error);
-    const agentPath = path.join(this.directories.agents, agentId, 'agent.js');
-    
+    const agentPath = path.join(this.directories.agents, agentId, "agent.js");
+
     await fs.ensureDir(path.dirname(agentPath));
     await fs.writeFile(agentPath, agentCode);
-    await fs.chmod(agentPath, '755');
-    
+    await fs.chmod(agentPath, "755");
+
     // Create agent configuration
     const agentConfig = {
       id: agentId,
       type: agentType,
       error: error,
       created: new Date().toISOString(),
-      status: 'created',
+      status: "created",
       attempts: 0,
       maxAttempts: 3,
-      timeout: this.config.agentTimeout
+      timeout: this.config.agentTimeout,
     };
-    
-    const configPath = path.join(this.directories.agents, agentId, 'config.json');
+
+    const configPath = path.join(
+      this.directories.agents,
+      agentId,
+      "config.json",
+    );
     await fs.writeJson(configPath, agentConfig, { spaces: 2 });
-    
+
     // Start the agent
     await this.startAgent(agentId, agentPath);
-    
+
     return agentId;
   }
 
   determineAgentType(error) {
     // Analyze error to determine the best agent type
     const errorMessage = error.error.toLowerCase();
-    const errorFile = error.file ? error.file.toLowerCase() : '';
-    
-    if (errorMessage.includes('syntax') || errorMessage.includes('parse')) {
-      return 'syntax';
-    } else if (errorMessage.includes('runtime') || errorMessage.includes('process')) {
-      return 'runtime';
-    } else if (errorMessage.includes('config') || errorMessage.includes('configuration')) {
-      return 'config';
-    } else if (errorMessage.includes('dependency') || errorMessage.includes('module')) {
-      return 'dependency';
-    } else if (errorMessage.includes('performance') || errorMessage.includes('memory')) {
-      return 'performance';
-    } else if (errorMessage.includes('network') || errorMessage.includes('connection')) {
-      return 'network';
-    } else if (errorMessage.includes('security') || errorMessage.includes('permission')) {
-      return 'security';
-    } else if (errorMessage.includes('database') || errorMessage.includes('sql')) {
-      return 'database';
+    const errorFile = error.file ? error.file.toLowerCase() : "";
+
+    if (errorMessage.includes("syntax") || errorMessage.includes("parse")) {
+      return "syntax";
+    } else if (
+      errorMessage.includes("runtime") ||
+      errorMessage.includes("process")
+    ) {
+      return "runtime";
+    } else if (
+      errorMessage.includes("config") ||
+      errorMessage.includes("configuration")
+    ) {
+      return "config";
+    } else if (
+      errorMessage.includes("dependency") ||
+      errorMessage.includes("module")
+    ) {
+      return "dependency";
+    } else if (
+      errorMessage.includes("performance") ||
+      errorMessage.includes("memory")
+    ) {
+      return "performance";
+    } else if (
+      errorMessage.includes("network") ||
+      errorMessage.includes("connection")
+    ) {
+      return "network";
+    } else if (
+      errorMessage.includes("security") ||
+      errorMessage.includes("permission")
+    ) {
+      return "security";
+    } else if (
+      errorMessage.includes("database") ||
+      errorMessage.includes("sql")
+    ) {
+      return "database";
     }
-    
+
     // Default based on file type
-    if (errorFile.includes('config') || errorFile.includes('json')) {
-      return 'config';
-    } else if (errorFile.includes('package.json')) {
-      return 'dependency';
-    } else if (errorFile.includes('.js')) {
-      return 'syntax';
+    if (errorFile.includes("config") || errorFile.includes("json")) {
+      return "config";
+    } else if (errorFile.includes("package.json")) {
+      return "dependency";
+    } else if (errorFile.includes(".js")) {
+      return "syntax";
     }
-    
-    return 'runtime'; // Default fallback
+
+    return "runtime"; // Default fallback
   }
 
   generateAgentId(agentType) {
@@ -151,12 +179,15 @@ class AutonomousErrorFixingAgentFactory {
   }
 
   async getAgentTemplate(agentType) {
-    const templatePath = path.join(this.directories.templates, `${agentType}-template.js`);
-    
+    const templatePath = path.join(
+      this.directories.templates,
+      `${agentType}-template.js`,
+    );
+
     if (await fs.pathExists(templatePath)) {
-      return await fs.readFile(templatePath, 'utf8');
+      return await fs.readFile(templatePath, "utf8");
     }
-    
+
     // Generate default template if not exists
     return this.generateDefaultTemplate(agentType);
   }
@@ -284,15 +315,15 @@ agent.run().catch(console.error);
   customizeAgentTemplate(template, error) {
     const agentType = this.determineAgentType(error);
     const agentId = this.generateAgentId(agentType);
-    
+
     let customized = template
       .replace(/{{ERROR_OBJECT}}/g, JSON.stringify(error, null, 2))
       .replace(/{{AGENT_ID}}/g, agentId)
       .replace(/{{AGENT_TYPE}}/g, agentType);
-    
+
     // Add agent-specific logic
     customized = this.addAgentSpecificLogic(customized, agentType, error);
-    
+
     return customized;
   }
 
@@ -305,11 +336,11 @@ agent.run().catch(console.error);
       performance: this.getPerformanceAgentLogic(error),
       network: this.getNetworkAgentLogic(error),
       security: this.getSecurityAgentLogic(error),
-      database: this.getDatabaseAgentLogic(error)
+      database: this.getDatabaseAgentLogic(error),
     };
-    
+
     const logic = logicMap[agentType] || this.getGenericAgentLogic(error);
-    
+
     return template
       .replace(/{{ANALYSIS_LOGIC}}/g, logic.analysis)
       .replace(/{{FIX_LOGIC}}/g, logic.fix)
@@ -383,7 +414,7 @@ agent.run().catch(console.error);
             await this.log('✅ Backup file removed');
           }
         }
-      `
+      `,
     };
   }
 
@@ -436,7 +467,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup runtime fixes
         await this.log('Runtime cleanup completed');
-      `
+      `,
     };
   }
 
@@ -502,7 +533,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup config fixes
         await this.log('Configuration cleanup completed');
-      `
+      `,
     };
   }
 
@@ -584,7 +615,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup dependency fixes
         await this.log('Dependency cleanup completed');
-      `
+      `,
     };
   }
 
@@ -631,7 +662,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup performance fixes
         await this.log('Performance cleanup completed');
-      `
+      `,
     };
   }
 
@@ -652,7 +683,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup network fixes
         await this.log('Network cleanup completed');
-      `
+      `,
     };
   }
 
@@ -673,7 +704,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup security fixes
         await this.log('Security cleanup completed');
-      `
+      `,
     };
   }
 
@@ -694,7 +725,7 @@ agent.run().catch(console.error);
       cleanup: `
         // Cleanup database fixes
         await this.log('Database cleanup completed');
-      `
+      `,
     };
   }
 
@@ -715,47 +746,47 @@ agent.run().catch(console.error);
       cleanup: `
         // Generic cleanup
         await this.log('Performing generic cleanup...');
-      `
+      `,
     };
   }
 
   async startAgent(agentId, agentPath) {
     const agentProcess = exec(`node "${agentPath}"`, {
       cwd: path.dirname(agentPath),
-      timeout: this.config.agentTimeout
+      timeout: this.config.agentTimeout,
     });
-    
+
     this.activeAgents.set(agentId, {
       process: agentProcess,
       startTime: new Date().toISOString(),
-      status: 'running'
+      status: "running",
     });
-    
-    agentProcess.on('exit', (code) => {
+
+    agentProcess.on("exit", (code) => {
       this.handleAgentCompletion(agentId, code);
     });
-    
-    agentProcess.on('error', (error) => {
+
+    agentProcess.on("error", (error) => {
       this.handleAgentError(agentId, error);
     });
-    
+
     await this.log(`✅ Started agent: ${agentId}`);
   }
 
   async handleAgentCompletion(agentId, code) {
     const agent = this.activeAgents.get(agentId);
     if (agent) {
-      agent.status = code === 0 ? 'completed' : 'failed';
+      agent.status = code === 0 ? "completed" : "failed";
       agent.endTime = new Date().toISOString();
       agent.exitCode = code;
-      
+
       await this.log(`✅ Agent ${agentId} completed with code: ${code}`);
-      
+
       // Learn from the agent's execution
       if (this.config.learningEnabled) {
         await this.learnFromAgent(agentId, code);
       }
-      
+
       this.activeAgents.delete(agentId);
     }
   }
@@ -763,40 +794,47 @@ agent.run().catch(console.error);
   async handleAgentError(agentId, error) {
     const agent = this.activeAgents.get(agentId);
     if (agent) {
-      agent.status = 'error';
+      agent.status = "error";
       agent.error = error.message;
       agent.endTime = new Date().toISOString();
-      
+
       await this.log(`❌ Agent ${agentId} failed: ${error.message}`);
-      
+
       this.activeAgents.delete(agentId);
     }
   }
 
   async learnFromAgent(agentId, exitCode) {
     const agentDir = path.join(this.directories.agents, agentId);
-    const reportPath = path.join(agentDir, 'fix-report.json');
-    
+    const reportPath = path.join(agentDir, "fix-report.json");
+
     if (await fs.pathExists(reportPath)) {
       const report = await fs.readJson(reportPath);
-      
+
       // Store learning data
       const learningKey = `${report.agentType}-${report.error.type}`;
       if (!this.learningData.has(learningKey)) {
         this.learningData.set(learningKey, []);
       }
-      
+
       this.learningData.get(learningKey).push({
         success: report.success,
         duration: report.duration,
-        timestamp: report.endTime
+        timestamp: report.endTime,
       });
-      
+
       // Save learning data
-      const learningPath = path.join(this.directories.learning, `${learningKey}.json`);
-      await fs.writeJson(learningPath, this.learningData.get(learningKey), { spaces: 2 });
-      
-      await this.log(`🧠 Learned from agent ${agentId} (success: ${report.success})`);
+      const learningPath = path.join(
+        this.directories.learning,
+        `${learningKey}.json`,
+      );
+      await fs.writeJson(learningPath, this.learningData.get(learningKey), {
+        spaces: 2,
+      });
+
+      await this.log(
+        `🧠 Learned from agent ${agentId} (success: ${report.success})`,
+      );
     }
   }
 
@@ -804,14 +842,18 @@ agent.run().catch(console.error);
     const report = {
       timestamp: new Date().toISOString(),
       activeAgents: this.activeAgents.size,
-      totalAgentsCreated: this.activeAgents.size + this.getCompletedAgentsCount(),
+      totalAgentsCreated:
+        this.activeAgents.size + this.getCompletedAgentsCount(),
       learningDataSize: this.learningData.size,
-      errorPatternsSize: this.errorPatterns.size
+      errorPatternsSize: this.errorPatterns.size,
     };
-    
-    const reportPath = path.join(this.directories.reports, `factory-report-${Date.now()}.json`);
+
+    const reportPath = path.join(
+      this.directories.reports,
+      `factory-report-${Date.now()}.json`,
+    );
     await fs.writeJson(reportPath, report, { spaces: 2 });
-    
+
     await this.log(`📊 Generated factory report: ${reportPath}`);
   }
 
@@ -821,8 +863,8 @@ agent.run().catch(console.error);
   }
 
   async start() {
-    await this.log('🚀 Starting Autonomous Error Fixing Agent Factory...');
-    
+    await this.log("🚀 Starting Autonomous Error Fixing Agent Factory...");
+
     // Start agent generation monitoring
     cron.schedule(this.config.agentGenerationInterval, async () => {
       try {
@@ -831,8 +873,10 @@ agent.run().catch(console.error);
         await this.log(`❌ Report generation failed: ${error.message}`);
       }
     });
-    
-    await this.log('✅ Autonomous Error Fixing Agent Factory started successfully');
+
+    await this.log(
+      "✅ Autonomous Error Fixing Agent Factory started successfully",
+    );
   }
 }
 
