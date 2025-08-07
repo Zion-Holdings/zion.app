@@ -1,346 +1,356 @@
-const, f, s = requi, r, e('fs');
-const, pat, h = requi, r, e('pa, t, h');
-con, s, t { execSy, n, c } = requi, r, e('child_proce, s, s');
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 
-class, SyntaxFixLaunche, r {
-  construct, o, r() {
-    th, i, s.conf, i, g = th, i, s.loadConf, i, g();
-    th, i, s.process, e, s = {};
+class SyntaxFixLauncher {
+  constructor() {
+    this.config = this.loadConfig();
+    this.processes = {};
   }
 
-  loadConf, i, g() {
-    t, r, y {
-      const, configPat, h = pa, t, h.jo, i, n(__dirna, m, e, 'synt, a, x-f, i, x-conf, i, g.js, o, n');
-      if (fs.existsSy, n, c(configPa, t, h)) {
-        return, JSO, N.par, s, e(fs.readFileSy, n, c(configPa, t, h, 'ut, f, 8'));
+  loadConfig() {
+    try {
+      const configPath = path.join(__dirname, 'syntax-fix-config.json');
+      if (fs.existsSync(configPath)) {
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
       }
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('Error, loading, config:', err, o, r.messa, g, e);
+    } catch (error) {
+      console.error('Error loading config:', error.message);
     }
-    retu, r, n {
-      monit, o, r: { enabl, e, d: tr, u, e, interv, a, l: 50, 0, 0 },
-      orchestrat, o, r: { enabl, e, d: tr, u, e, maxRetri, e, s: 3 },
-      continuo, u, s: { enabl, e, d: tr, u, e, watchMo, d, e: tr, u, e },
-      loggi, n, g: { lev, e, l: 'in, f, o' }
+    return {
+      monitor: { enabled: true, interval: 5000 },
+      orchestrator: { enabled: true, maxRetries: 3 },
+      continuous: { enabled: true, watchMode: true },
+      logging: { level: 'info' }
     };
   }
 
-  sta, r, t(compone, n, t = 'a, l, l') {
-    conso, l, e.l, o, g('🚀 Starting, syntax, fix automation, syste, m...');
+  start(component = 'all') {
+    console.log('🚀 Starting syntax fix automation system...');
     
-    swit, c, h (compone, n, t) {
-      ca, s, e 'monit, o, r':
-        return, thi, s.startMonit, o, r();
-      ca, s, e 'orchestrat, o, r':
-        return, thi, s.startOrchestrat, o, r();
-      ca, s, e 'continuo, u, s':
-        return, thi, s.startContinuo, u, s();
-      ca, s, e 'a, l, l':
-        return, thi, s.startA, l, l();
-      defau, l, t:
-        conso, l, e.l, o, g('❌ Invalid, componen, t. U, s, e: monit, o, r, orchestrat, o, r, continuo, u, s, or, al, l');
-        return, fals, e;
+    switch (component) {
+      case 'monitor':
+        return this.startMonitor();
+      case 'orchestrator':
+        return this.startOrchestrator();
+      case 'continuous':
+        return this.startContinuous();
+      case 'all':
+        return this.startAll();
+      default:
+        console.log('❌ Invalid component. Use: monitor, orchestrator, continuous, or all');
+        return false;
     }
   }
 
-  startMonit, o, r() {
-    conso, l, e.l, o, g('📊 Starting, syntax, error monit, o, r...');
-    t, r, y {
-      const, monitorPat, h = pa, t, h.jo, i, n(__dirna, m, e, 'synt, a, x-err, o, r-monit, o, r.js');
-      if (fs.existsSy, n, c(monitorPa, t, h)) {
-        th, i, s.process, e, s.monit, o, r = execSy, n, c('no, d, e ' + monitorPa, t, h, { std, i, o: 'inher, i, t' });
-        return, tru, e;
-      } el, s, e {
-        conso, l, e.l, o, g('❌ Monitor, file, not fou, n, d');
-        return, fals, e;
+  startMonitor() {
+    console.log('📊 Starting syntax error monitor...');
+    try {
+      const monitorPath = path.join(__dirname, 'syntax-error-monitor.js');
+      if (fs.existsSync(monitorPath)) {
+        this.processes.monitor = execSync('node ' + monitorPath, { stdio: 'inherit' });
+        return true;
+      } else {
+        console.log('❌ Monitor file not found');
+        return false;
       }
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('❌ Failed, to, start monit, o, r:', err, o, r.messa, g, e);
-      return, fals, e;
+    } catch (error) {
+      console.error('❌ Failed to start monitor:', error.message);
+      return false;
     }
   }
 
-  startOrchestrat, o, r() {
-    conso, l, e.l, o, g('🎼 Starting, syntax, fix orchestrat, o, r...');
-    t, r, y {
-      const, orchestratorPat, h = pa, t, h.jo, i, n(__dirna, m, e, 'synt, a, x-f, i, x-orchestrat, o, r.js');
-      if (fs.existsSy, n, c(orchestratorPa, t, h)) {
-        th, i, s.process, e, s.orchestrat, o, r = execSy, n, c('no, d, e ' + orchestratorPa, t, h, { std, i, o: 'inher, i, t' });
-        return, tru, e;
-      } el, s, e {
-        conso, l, e.l, o, g('❌ Orchestrator, file, not fou, n, d');
-        return, fals, e;
+  startOrchestrator() {
+    console.log('🎼 Starting syntax fix orchestrator...');
+    try {
+      const orchestratorPath = path.join(__dirname, 'syntax-fix-orchestrator.js');
+      if (fs.existsSync(orchestratorPath)) {
+        this.processes.orchestrator = execSync('node ' + orchestratorPath, { stdio: 'inherit' });
+        return true;
+      } else {
+        console.log('❌ Orchestrator file not found');
+        return false;
       }
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('❌ Failed, to, start orchestrat, o, r:', err, o, r.messa, g, e);
-      return, fals, e;
+    } catch (error) {
+      console.error('❌ Failed to start orchestrator:', error.message);
+      return false;
     }
   }
 
-  startContinuo, u, s() {
-    conso, l, e.l, o, g('🔄 Starting, continuous, syntax f, i, x...');
-    t, r, y {
-      const, continuousPat, h = pa, t, h.jo, i, n(__dirna, m, e, 'continuo, u, s-synt, a, x-f, i, x.js');
-      if (fs.existsSy, n, c(continuousPa, t, h)) {
-        th, i, s.process, e, s.continuo, u, s = execSy, n, c('no, d, e ' + continuousPa, t, h, { std, i, o: 'inher, i, t' });
-        return, tru, e;
-      } el, s, e {
-        conso, l, e.l, o, g('❌ Continuous, fix, file not, foun, d');
-        return, fals, e;
+  startContinuous() {
+    console.log('🔄 Starting continuous syntax fix...');
+    try {
+      const continuousPath = path.join(__dirname, 'continuous-syntax-fix.js');
+      if (fs.existsSync(continuousPath)) {
+        this.processes.continuous = execSync('node ' + continuousPath, { stdio: 'inherit' });
+        return true;
+      } else {
+        console.log('❌ Continuous fix file not found');
+        return false;
       }
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('❌ Failed, to, start continuous, fi, x:', err, o, r.messa, g, e);
-      return, fals, e;
+    } catch (error) {
+      console.error('❌ Failed to start continuous fix:', error.message);
+      return false;
     }
   }
 
-  startA, l, l() {
-    conso, l, e.l, o, g('🌟 Starting, all, syntax fix, component, s...');
-    const, result, s = {
-      monit, o, r: th, i, s.startMonit, o, r(),
-      orchestrat, o, r: th, i, s.startOrchestrat, o, r(),
-      continuo, u, s: th, i, s.startContinuo, u, s()
+  startAll() {
+    console.log('🌟 Starting all syntax fix components...');
+    const results = {
+      monitor: this.startMonitor(),
+      orchestrator: this.startOrchestrator(),
+      continuous: this.startContinuous()
     };
     
-    const, successCoun, t = Obje, c, t.valu, e, s(resul, t, s).filt, e, r(Boole, a, n).leng, t, h;
-    conso, l, e.l, o, g(`✅ Start, e, d ${successCou, n, t}/3, components, successfully`);
-    return, successCoun, t > 0;
+    const successCount = Object.values(results).filter(Boolean).length;
+    console.log(`✅ Started ${successCount}/3 components successfully`);
+    return successCount > 0;
   }
 
-  st, o, p() {
-    conso, l, e.l, o, g('🛑 Stopping, syntax, fix automation, syste, m...');
-    Obje, c, t.ke, y, s(th, i, s.process, e, s).forEa, c, h(k, e, y => {
-      if (th, i, s.process, e, s[k, e, y]) {
-        t, r, y {
-          th, i, s.process, e, s[k, e, y].ki, l, l();
-          conso, l, e.l, o, g(`✅ Stopp, e, d ${k, e, y}`);
-        } cat, c, h (err, o, r) {
-          conso, l, e.l, o, g(`❌ Failed, to, stop ${k, e, y}:`, err, o, r.messa, g, e);
+  stop() {
+    console.log('🛑 Stopping syntax fix automation system...');
+    Object.keys(this.processes).forEach(key => {
+      if (this.processes[key]) {
+        try {
+          this.processes[key].kill();
+          console.log(`✅ Stopped ${key}`);
+        } catch (error) {
+          console.log(`❌ Failed to stop ${key}:`, error.message);
         }
       }
     });
   }
 
-  stat, u, s() {
-    conso, l, e.l, o, g('📊 Syntax, fix, automation system, statu, s:');
-    Obje, c, t.ke, y, s(th, i, s.process, e, s).forEa, c, h(k, e, y => {
-      const, isRunnin, g = th, i, s.process, e, s[k, e, y] && !th, i, s.process, e, s[k, e, y].kill, e, d;
-      conso, l, e.l, o, g(`${isRunni, n, g ? '🟢' : '🔴'} ${k, e, y}: ${isRunni, n, g ? 'Runni, n, g' : 'Stopp, e, d'}`);
+  status() {
+    console.log('📊 Syntax fix automation system status:');
+    Object.keys(this.processes).forEach(key => {
+      const isRunning = this.processes[key] && !this.processes[key].killed;
+      console.log(`${isRunning ? '🟢' : '🔴'} ${key}: ${isRunning ? 'Running' : 'Stopped'}`);
     });
   }
 
-  runQuickF, i, x() {
-    conso, l, e.l, o, g('⚡ Running, quick, syntax f, i, x...');
-    t, r, y {
-      // Run, TypeScript, check
-      const, tscResul, t = th, i, s.runTypeScriptChe, c, k();
-      if (tscResu, l, t.erro, r, s.leng, t, h > 0) {
-        conso, l, e.l, o, g(`❌ TypeScript, errors, found, attempting, fixe, s...`);
-        th, i, s.fixTypeScriptErro, r, s(tscResu, l, t.erro, r, s);
-        conso, l, e.l, o, g(`✅ Fix, e, d ${tscResu, l, t.erro, r, s.leng, t, h} TypeScript, error, s`);
+  runQuickFix() {
+    console.log('⚡ Running quick syntax fix...');
+    try {
+      // Run TypeScript check
+      const tscResult = this.runTypeScriptCheck();
+      if (tscResult.errors.length > 0) {
+        console.log(`❌ TypeScript errors found, attempting fixes...`);
+        this.fixTypeScriptErrors(tscResult.errors);
+        console.log(`✅ Fixed ${tscResult.errors.length} TypeScript errors`);
       }
 
-      // Run, ESLint, check
-      const, eslintResul, t = th, i, s.runESLintChe, c, k();
-      if (eslintResu, l, t.erro, r, s.leng, t, h > 0) {
-        conso, l, e.l, o, g(`⚠️ ESLint, errors, found (some, may, be unfixab, l, e)`);
+      // Run ESLint check
+      const eslintResult = this.runESLintCheck();
+      if (eslintResult.errors.length > 0) {
+        console.log(`⚠️ ESLint errors found (some may be unfixable)`);
       }
 
-      conso, l, e.l, o, g('✅ Quick, fix, completed');
-      return, tru, e;
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('❌ Quick, fix, failed:', err, o, r.messa, g, e);
-      return, fals, e;
+      console.log('✅ Quick fix completed');
+      return true;
+    } catch (error) {
+      console.error('❌ Quick fix failed:', error.message);
+      return false;
     }
   }
 
-  runTypeScriptChe, c, k() {
-    t, r, y {
-      const, resul, t = execSy, n, c('npx, ts, c --noEm, i, t', { encodi, n, g: 'ut, f, 8', std, i, o: 'pi, p, e' });
-      retu, r, n { erro, r, s: [] };
-    } cat, c, h (err, o, r) {
-      const, outpu, t = err, o, r.stdo, u, t || err, o, r.stde, r, r || ';
-      const, error, s = th, i, s.parseTypeScriptErro, r, s(outp, u, t);
-      retu, r, n { erro, r, s };
+  runTypeScriptCheck() {
+    try {
+      const result = execSync('npx tsc --noEmit', { encoding: 'utf8', stdio: 'pipe' });
+      return { errors: [] };
+    } catch (error) {
+      const output = error.stdout || error.stderr || '';
+      const errors = this.parseTypeScriptErrors(output);
+      return { errors };
     }
   }
 
-  parseTypeScriptErro, r, s(outp, u, t) {
-    const, error, s = [];
-    const, line, s = outp, u, t.spl, i, t('\n');
+  parseTypeScriptErrors(output) {
+    const errors = [];
+    const lines = output.split('\n');
     
-    f, o, r (const, line, of lin, e, s) {
-      if (li, n, e.includ, e, s('error, T, S')) {
-        const, matc, h = li, n, e.mat, c, h(/(.+):(\d+):(\d+)\s*-\s*err, o, r\s+TS\d+:\s*(.+)/);
-        if (mat, c, h) {
-          erro, r, s.pu, s, h({
-            fi, l, e: mat, c, h[1],
-            li, n, e: parseI, n, t(mat, c, h[2]),
-            colu, m, n: parseI, n, t(mat, c, h[3]),
-            messa, g, e: mat, c, h[4]
+    for (const line of lines) {
+      if (line.includes('error TS')) {
+        const match = line.match(/(.+):(\d+):(\d+)\s*-\s*error\s+TS\d+:\s*(.+)/);
+        if (match) {
+          errors.push({
+            file: match[1],
+            line: parseInt(match[2]),
+            column: parseInt(match[3]),
+            message: match[4]
           });
         }
       }
     }
     
-    return, error, s;
+    return errors;
   }
 
-  fixTypeScriptErro, r, s(erro, r, s) {
-    f, o, r (const, error, of erro, r, s) {
-      th, i, s.fixSingleErr, o, r(err, o, r);
+  fixTypeScriptErrors(errors) {
+    for (const error of errors) {
+      this.fixSingleError(error);
     }
   }
 
-  fixSingleErr, o, r(err, o, r) {
-    t, r, y {
-      if (!fs.existsSy, n, c(err, o, r.fi, l, e)) retu, r, n;
+  fixSingleError(error) {
+    try {
+      if (!fs.existsSync(error.file)) return;
       
-      const, conten, t = fs.readFileSy, n, c(err, o, r.fi, l, e, 'ut, f, 8');
-      const, line, s = conte, n, t.spl, i, t('\n');
+      const content = fs.readFileSync(error.file, 'utf8');
+      const lines = content.split('\n');
       
-      if (err, o, r.li, n, e <= lin, e, s.leng, t, h) {
-        const, fixedLin, e = th, i, s.fixLi, n, e(lin, e, s[err, o, r.li, n, e - 1], err, o, r.messa, g, e);
-        if (fixedLi, n, e !== lin, e, s[err, o, r.li, n, e - 1]) {
-          lin, e, s[err, o, r.li, n, e - 1] = fixedLi, n, e;
-          fs.writeFileSy, n, c(err, o, r.fi, l, e, lin, e, s.jo, i, n('\n'));
+      if (error.line <= lines.length) {
+        const fixedLine = this.fixLine(lines[error.line - 1], error.message);
+        if (fixedLine !== lines[error.line - 1]) {
+          lines[error.line - 1] = fixedLine;
+          fs.writeFileSync(error.file, lines.join('\n'));
         }
       }
-    } cat, c, h (err, o, r) {
-      conso, l, e.err, o, r('Failed, to, fix err, o, r:', err, o, r.messa, g, e);
+    } catch (error) {
+      console.error('Failed to fix error:', error.message);
     }
   }
 
-  fixLi, n, e(li, n, e, errorMessa, g, e) {
-    // Basic, fixes, for common, TypeScript, errors
-    if (errorMessa, g, e.includ, e, s('missing, semicolo, n')) {
-      return, lin, e.repla, c, e(/([^;])\s*$/, '$1;');
+  fixLine(line, errorMessage) {
+    // Basic fixes for common TypeScript errors
+    if (errorMessage.includes('missing semicolon')) {
+      return line.replace(/([^;])\s*$/, '$1;');
     }
-    if (errorMessa, g, e.includ, e, s('unexpected, toke, n')) {
-      return, lin, e.repla, c, e(/;/g, ';');
+    if (errorMessage.includes('unexpected token')) {
+      return line.replace(/;;/g, ';');
     }
-    if (errorMessa, g, e.includ, e, s('expect, e, d')) {
-      return, lin, e.repla, c, e(/\(\s*\)/g, '()');
+    if (errorMessage.includes('expected')) {
+      return line.replace(/\(\s*\)/g, '()');
     }
-    return, lin, e;
+    return line;
   }
 
-  runESLintChe, c, k() {
-    t, r, y {
-      const, resul, t = execSy, n, c('npx, eslin, t . --e, x, t .js,.j, s, x,.ts,.t, s, x', { encodi, n, g: 'ut, f, 8', std, i, o: 'pi, p, e' });
-      retu, r, n { erro, r, s: [] };
-    } cat, c, h (err, o, r) {
-      const, outpu, t = err, o, r.stdo, u, t || err, o, r.stde, r, r || ';
-      const, error, s = th, i, s.parseESLintErro, r, s(outp, u, t);
-      retu, r, n { erro, r, s };
+  runESLintCheck() {
+    try {
+      const result = execSync('npx eslint . --ext .js,.jsx,.ts,.tsx', { encoding: 'utf8', stdio: 'pipe' });
+      return { errors: [] };
+    } catch (error) {
+      const output = error.stdout || error.stderr || '';
+      const errors = this.parseESLintErrors(output);
+      return { errors };
     }
   }
 
-  parseESLintErro, r, s(outp, u, t) {
-    const, error, s = [];
-    const, line, s = outp, u, t.spl, i, t('\n');
+  parseESLintErrors(output) {
+    const errors = [];
+    const lines = output.split('\n');
     
-    f, o, r (const, line, of lin, e, s) {
-      if (li, n, e.includ, e, s('err, o, r')) {
-        const, matc, h = li, n, e.mat, c, h(/(.+):(\d+):(\d+):\s*(.+)/);
-        if (mat, c, h) {
-          erro, r, s.pu, s, h({
-            fi, l, e: mat, c, h[1],
-            li, n, e: parseI, n, t(mat, c, h[2]),
-            colu, m, n: parseI, n, t(mat, c, h[3]),
-            messa, g, e: mat, c, h[4]
+    for (const line of lines) {
+      if (line.includes('error')) {
+        const match = line.match(/(.+):(\d+):(\d+):\s*(.+)/);
+        if (match) {
+          errors.push({
+            file: match[1],
+            line: parseInt(match[2]),
+            column: parseInt(match[3]),
+            message: match[4]
           });
         }
       }
     }
     
-    return, error, s;
+    return errors;
   }
 
-  runBuildChe, c, k() {
-    conso, l, e.l, o, g('🔨 Running, build, check...');
-    t, r, y {
-      const, resul, t = execSy, n, c('npm, run, build', { encodi, n, g: 'ut, f, 8', std, i, o: 'pi, p, e' });
-      conso, l, e.l, o, g('✅ Build, successfu, l');
-      return, tru, e;
-    } cat, c, h (err, o, r) {
-      conso, l, e.l, o, g('❌ Build, faile, d, attempting, to, fix erro, r, s...');
-      const, outpu, t = err, o, r.stdo, u, t || err, o, r.stde, r, r || ';
-      th, i, s.fixBuildErro, r, s(outp, u, t);
-      return, fals, e;
+  runBuildCheck() {
+    console.log('🔨 Running build check...');
+    try {
+      const result = execSync('npm run build', { encoding: 'utf8', stdio: 'pipe' });
+      console.log('✅ Build successful');
+      return true;
+    } catch (error) {
+      console.log('❌ Build failed, attempting to fix errors...');
+      const output = error.stdout || error.stderr || '';
+      this.fixBuildErrors(output);
+      return false;
     }
   }
 
-  fixBuildErro, r, s(outp, u, t) {
-    const, error, s = th, i, s.parseBuildErro, r, s(outp, u, t);
-    f, o, r (const, error, of erro, r, s) {
-      th, i, s.fixSingleErr, o, r(err, o, r);
+  fixBuildErrors(output) {
+    const errors = this.parseBuildErrors(output);
+    for (const error of errors) {
+      this.fixSingleError(error);
     }
   }
 
-  parseBuildErro, r, s(outp, u, t) {
-    const, error, s = [];
-    const, line, s = outp, u, t.spl, i, t('\n');
+  parseBuildErrors(output) {
+    const errors = [];
+    const lines = output.split('\n');
     
-    f, o, r (const, line, of lin, e, s) {
-      if (li, n, e.includ, e, s('err, o, r') || li, n, e.includ, e, s('Err, o, r')) {
-        const, matc, h = li, n, e.mat, c, h(/(.+):(\d+):(\d+)/);
-        if (mat, c, h) {
-          erro, r, s.pu, s, h({
-            fi, l, e: mat, c, h[1],
-            li, n, e: parseI, n, t(mat, c, h[2]),
-            colu, m, n: parseI, n, t(mat, c, h[3]),
-            messa, g, e: li, n, e
+    for (const line of lines) {
+      if (line.includes('error') || line.includes('Error')) {
+        const match = line.match(/(.+):(\d+):(\d+)/);
+        if (match) {
+          errors.push({
+            file: match[1],
+            line: parseInt(match[2]),
+            column: parseInt(match[3]),
+            message: line
           });
         }
       }
     }
     
-    return, error, s;
+    return errors;
   }
 
-  showHe, l, p() {
-    conso, l, e.l, o, g(`
-🔧 Syntax, Fix, Automation System, Usag, e:
-  npm, run, syntax:sta, r, t [compone, n, t]  - Start, the, automation system, npm, run synt, a, x:st, o, p               - Stop, all, components
-  npm, run, syntax:stat, u, s             - Show, system, status
-  npm, run, syntax:qui, c, k-f, i, x          - Run, a, quick syntax, fix, npm run, synta, x:bui, l, d-che, c, k        - Check, and, fix build, errors, Components:
-  monit, o, r      - Syntax, error, monitoring
-  orchestrat, o, r - Syntax, fix, orchestration
-  continuo, u, s   - Continuous, fixing, all          - All, component, s (defau, l, t)
+  showHelp() {
+    console.log(`
+🔧 Syntax Fix Automation System
 
-Exampl, e, s:
-  npm, run, syntax:start, monitor, npm run, synta, x:start, all, npm run, synta, x:qui, c, k-f, i, x
+Usage:
+  npm run syntax:start [component]  - Start the automation system
+  npm run syntax:stop               - Stop all components
+  npm run syntax:status             - Show system status
+  npm run syntax:quick-fix          - Run a quick syntax fix
+  npm run syntax:build-check        - Check and fix build errors
+
+Components:
+  monitor      - Syntax error monitoring
+  orchestrator - Syntax fix orchestration
+  continuous   - Continuous fixing
+  all          - All components (default)
+
+Examples:
+  npm run syntax:start monitor
+  npm run syntax:start all
+  npm run syntax:quick-fix
     `);
   }
 }
 
-// Main, execution, const launch, e, r = new, SyntaxFixLaunche, r();
-const, comman, d = proce, s, s.ar, g, v[2];
-const, componen, t = proce, s, s.ar, g, v[3];
+// Main execution
+const launcher = new SyntaxFixLauncher();
+const command = process.argv[2];
+const component = process.argv[3];
 
-swit, c, h (comma, n, d) {
-  ca, s, e 'sta, r, t':
-    launch, e, r.sta, r, t(compone, n, t);
-    bre, a, k;
-  ca, s, e 'st, o, p':
-    launch, e, r.st, o, p();
-    bre, a, k;
-  ca, s, e 'stat, u, s':
-    launch, e, r.stat, u, s();
-    bre, a, k;
-  ca, s, e 'qui, c, k-f, i, x':
-    launch, e, r.runQuickF, i, x();
-    bre, a, k;
-  ca, s, e 'bui, l, d-che, c, k':
-    launch, e, r.runBuildChe, c, k();
-    bre, a, k;
-  ca, s, e 'he, l, p':
-  ca, s, e '--he, l, p':
-  ca, s, e '-h':
-    launch, e, r.showHe, l, p();
-    bre, a, k;
-  defau, l, t:
-    conso, l, e.l, o, g('❌ Invalid, comman, d. U, s, e: sta, r, t, st, o, p, stat, u, s, qui, c, k-f, i, x, bui, l, d-che, c, k, or, hel, p');
-    launch, e, r.showHe, l, p();
+switch (command) {
+  case 'start':
+    launcher.start(component);
+    break;
+  case 'stop':
+    launcher.stop();
+    break;
+  case 'status':
+    launcher.status();
+    break;
+  case 'quick-fix':
+    launcher.runQuickFix();
+    break;
+  case 'build-check':
+    launcher.runBuildCheck();
+    break;
+  case 'help':
+  case '--help':
+  case '-h':
+    launcher.showHelp();
+    break;
+  default:
+    console.log('❌ Invalid command. Use: start, stop, status, quick-fix, build-check, or help');
+    launcher.showHelp();
 }
