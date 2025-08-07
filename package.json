@@ -2,6 +2,7 @@
   "name": "bolt.new.zion.app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=20.18.1",
     "npm": ">=10.0.0"
@@ -56,10 +57,10 @@
     "automation:status": "node automation/check-automation-status.js",
     "automation:restart": "node automation/restart-all-automation.js",
     "automation:enhance": "node automation/enhance-all-automation.js",
-    "autonomous:start": "node automation/launch-autonomous-systems.js start",
-    "autonomous:stop": "node automation/launch-autonomous-systems.js stop",
-    "autonomous:status": "node automation/launch-autonomous-systems.js status",
-    "autonomous:restart": "node automation/launch-autonomous-systems.js restart",
+    "autonomous:start": "node automation/launch-autonomous-systems-clean.js start",
+    "autonomous:stop": "node automation/launch-autonomous-systems-clean.js stop",
+    "autonomous:status": "node automation/launch-autonomous-systems-clean.js status",
+    "autonomous:restart": "node automation/launch-autonomous-systems-clean.js restart",
     "autonomous:factory": "node automation/autonomous-error-monitoring-factory.js",
     "autonomous:orchestrator": "node automation/autonomous-automation-orchestrator.js",
     "autonomous:cron": "bash automation/autonomous-error-cron-system.sh run",
