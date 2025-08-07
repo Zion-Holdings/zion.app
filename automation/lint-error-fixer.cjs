@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import { globSync } from 'glob';
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+
+
 
 class LintErrorFixer {
   constructor() {
@@ -153,7 +151,7 @@ class LintErrorFixer {
     let totalFiles = 0;
 
     for (const pattern of patterns) {
-      const files = globSync(pattern, { ignore: ['node_modules/**', '.next/**'] });
+      const files = this.glob(pattern);
       for (const file of files) {
         totalFiles++;
         const fixed = await this.fixFile(file);
@@ -163,6 +161,38 @@ class LintErrorFixer {
 
     this.log(`📊 Fixed ${totalFixed}/${totalFiles} files`);
     return { totalFiles, totalFixed };
+  }
+
+  glob(pattern) {
+    // Simple glob implementation using fs
+    const files = [];
+    const parts = pattern.split('/');
+    const baseDir = parts[0];
+    
+    if (fs.existsSync(baseDir)) {
+      this.scanDirectory(baseDir, files, pattern);
+    }
+    
+    return files.filter(file => 
+      !file.includes('node_modules') && 
+      !file.includes('.next') &&
+      (file.endsWith('.js') || file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.jsx'))
+    );
+  }
+
+  scanDirectory(dir, files, pattern) {
+    const items = fs.readdirSync(dir);
+    
+    for (const item of items) {
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        this.scanDirectory(fullPath, files, pattern);
+      } else {
+        files.push(fullPath);
+      }
+    }
   }
 }
 

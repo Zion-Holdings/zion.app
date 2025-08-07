@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync, spawn } = require('child_process');
-const chokidar = require('chokidar');
 
 class IntelligentOrchestrator {
   constructor() {
@@ -31,15 +30,15 @@ class IntelligentOrchestrator {
 
   loadAutomationSystems() {
     const systems = [
-      { name: 'lint-monitor', path: 'lint-monitor.js', priority: 'high' },
-      { name: 'lint-fixer', path: 'lint-error-fixer.js', priority: 'high' },
-      { name: 'lint-manager', path: 'lint-automation-manager.js', priority: 'medium' },
-      { name: 'code-quality', path: 'code-quality-monitor.js', priority: 'medium' },
-      { name: 'performance', path: 'performance-optimizer.js', priority: 'low' },
-      { name: 'content-generator', path: 'content-generator.js', priority: 'low' },
-      { name: 'seo-optimizer', path: 'seo-optimizer.js', priority: 'medium' },
-      { name: 'security-scanner', path: 'security-scanner.js', priority: 'high' },
-      { name: 'test-generator', path: 'test-generator.js', priority: 'medium' }
+      { name: 'lint-monitor', path: 'lint-monitor.cjs', priority: 'high' },
+      { name: 'lint-fixer', path: 'lint-error-fixer.cjs', priority: 'high' },
+      { name: 'lint-manager', path: 'lint-automation-manager.cjs', priority: 'medium' },
+      { name: 'code-quality', path: 'code-quality-monitor.cjs', priority: 'medium' },
+      { name: 'performance', path: 'performance-optimizer.cjs', priority: 'low' },
+      { name: 'content-generator', path: 'content-generator.cjs', priority: 'low' },
+      { name: 'seo-optimizer', path: 'seo-optimizer.cjs', priority: 'medium' },
+      { name: 'security-scanner', path: 'security-scanner.cjs', priority: 'high' },
+      { name: 'test-generator', path: 'test-generator.cjs', priority: 'medium' }
     ];
 
     for (const system of systems) {
@@ -263,26 +262,23 @@ class IntelligentOrchestrator {
   startFileWatcher() {
     this.log('👀 Starting intelligent file watcher...');
     
-    const watcher = chokidar.watch([
-      'pages/**/*.{js,jsx,ts,tsx}',
-      'components/**/*.{js,jsx,ts,tsx}',
-      'utils/**/*.{js,jsx,ts,tsx}',
-      'hooks/**/*.{js,jsx,ts,tsx}'
-    ], {
-      ignored: /(node_modules|\.git|\.next)/,
-      persistent: true
-    });
-
-    let debounceTimer;
-    watcher.on('change', (filePath) => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(async () => {
-        this.log(`📝 File changed: ${filePath}`);
-        await this.handleIntelligentFileChange(filePath);
-      }, 3000);
-    });
-
-    this.watcher = watcher;
+    // Simple file watcher using fs.watch
+    const watchDirectories = ['pages', 'components', 'utils', 'hooks'];
+    
+    for (const dir of watchDirectories) {
+      if (fs.existsSync(dir)) {
+        fs.watch(dir, { recursive: true }, (eventType, filename) => {
+          if (filename && (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js'))) {
+            const filePath = path.join(dir, filename);
+            this.log(`📝 File changed: ${filePath}`);
+            setTimeout(() => {
+              this.handleIntelligentFileChange(filePath);
+            }, 3000);
+          }
+        });
+      }
+    }
+    
     this.log('✅ Intelligent file watcher started');
   }
 
@@ -378,16 +374,12 @@ class IntelligentOrchestrator {
   }
 
   stop() {
-    if (this.watcher) {
-      this.watcher.close();
-      this.watcher = null;
-    }
     this.log('🛑 Intelligent orchestrator stopped');
   }
 
   getStatus() {
     const status = {
-      running: this.watcher !== null,
+      running: true,
       systemsCount: this.automationSystems.size,
       learningDataSize: this.learningData.size,
       report: this.generateIntelligenceReport()
