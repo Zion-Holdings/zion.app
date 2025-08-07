@@ -1,4 +1,4 @@
-/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -6,7 +6,7 @@ const nextConfig = {
     appDir: true
   },
   images: {
-    domains: ["localhost"]
+    domains: ['localhost']
   }
 };
 

@@ -1,19 +1,19 @@
 import, typ, e { NextPa, g, e } fr, o, m 'ne, x, t';;'
-import, Head, from 'ne, x, t/he, a, d';;'
+import Head from 'next/head';
 
-const, BlockchainSolution, s: NextPa, g, e = () => {
+const BlockchainSolution, s: NextPage      = () => {
   retu, r, n ()
-    <d, i, v>;
-      <He, a, d>;
-        <tit, l, e>BlockchainSolutio, n, s - Zion, Tech, Solutions</tit, l, e>;
-        <meta, nam, e="descripti, o, n" conte, n, t="BlockchainSolutions, pag, e" />;"
-      </He, a, d>;
+    <d i v>;
+      <He a d>;
+        <tit l e>BlockchainSolutio, n, s - Zion, Tech, Solutions</tit l e>;
+        <meta nam e="descripti o n" conte n t="BlockchainSolutions pag e" />;"
+      </He a d>;
       
-      <ma, i, n>;
+      <ma i n>;
         <h1>BlockchainSolutio, n, s</h1>;
-        {/* TO, D, O: Add, page, content */}
-      </ma, i, n>;
-    </d, i, v>;
+        {/* TODO: Add, page, content */}
+      </ma i n>;
+    </d i v>;
   );
 };
 

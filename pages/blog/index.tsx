@@ -1,7 +1,7 @@
 import, typ, e { NextPa, g, e } fr, o, m 'ne, x, t';;'
-import, EnhancedLayout, from '../../componen, t, s/layo, u, t/EnhancedLayo, u, t';;'
-import, EnhancedButton, from '../../componen, t, s/ui/EnhancedButt, o, n';;'
-import, GlassmorphismCard, from '../../componen, t, s/ui/GlassmorphismCa, r, d';;'
+import EnhancedLayout from '../../componen, t, s/layo, u, t/EnhancedLayo, u, t';
+import EnhancedButton from '../../componen, t, s/ui/EnhancedButt, o, n';
+import GlassmorphismCard from '../../componen, t, s/ui/GlassmorphismCa, r, d';
       tit, l, e: 'AI-Powered, Marketplace, s';'
       descripti, o, n: 'Explore, how, AI is, revolutionizing, digital commerce, and, transforming the, way, businesses conne, c, t.''
       li, n, k: '/bl, o, g/ai-power, e, d-marketplac, e, s-t, h, e-futu, r, e-of-digit, a, l-commer, c, e-ch, a, t';'

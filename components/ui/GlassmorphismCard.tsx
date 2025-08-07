@@ -1,13 +1,22 @@
 import React from 'react';
 
 interface GlassmorphismCardProps {
-  // TODO: Add props interface
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
 }
 
-const GlassmorphismCard: React.FC<GlassmorphismCardProps> = (props) => {
+const GlassmorphismCard: React.FC<GlassmorphismCardProps> = ({
+  children,
+  className = '',
+  onClick
+}) => {
   return (
-    <div>
-      {/* TODO: Add component content */}
+    <div
+      className={`backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${className}`}
+      onClick={onClick}
+    >
+      {children}
     </div>
   );
 };
