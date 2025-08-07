@@ -6,12 +6,12 @@ const FiveGTechnologyAndItsImpactOnIotChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>5gTechnologyAndItsImpactOnIotChat - Zion Tech Solutions</title>
-        <meta name="description" content="5gTechnologyAndItsImpactOnIotChat blog post" />
+        <title>5G Technology and Its Impact on IoT - Zion Tech Solutions</title>
+        <meta name="description" content="5G Technology and Its Impact on IoT blog post" />
       </Head>
       
       <main>
-        <h1>5gTechnologyAndItsImpactOnIotChat</h1>
+        <h1>5G Technology and Its Impact on IoT</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
