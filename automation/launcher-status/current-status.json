@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-08-07T15:04:59.353Z",
+  "status": "stopped",
+  "version": "2.0",
+  "uptime": 9555.798852762,
+  "scripts": [
+    {
+      "name": "git-sync-automation.js",
+      "description": "Basic git sync automation",
+      "priority": "high"
+    },
+    {
+      "name": "high-frequency-git-sync.js",
+      "description": "High-frequency git sync",
+      "priority": "high"
+    },
+    {
+      "name": "comprehensive-sync-orchestrator.js",
+      "description": "Comprehensive sync orchestrator",
+      "priority": "medium"
+    },
+    {
+      "name": "master-sync-controller.js",
+      "description": "Master sync controller",
+      "priority": "medium"
+    },
+    {
+      "name": "ensure-sync-running.js",
+      "description": "Sync ensurance monitor",
+      "priority": "high"
+    }
+  ]
+}

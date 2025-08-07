@@ -1,34 +1,22 @@
-import, typ, e { NextPa, g, e } fr, o, m 'ne, x, t';;'
-import EnhancedLayout from '../../componen, t, s/layo, u, t/EnhancedLayo, u, t';
-import EnhancedButton from '../../componen, t, s/ui/EnhancedButt, o, n';
-import GlassmorphismCard from '../../componen, t, s/ui/GlassmorphismCa, r, d';
-      tit, l, e: 'AI-Powered, Marketplace, s';'
-      descripti, o, n: 'Explore, how, AI is, revolutionizing, digital commerce, and, transforming the, way, businesses conne, c, t.''
-      li, n, k: '/bl, o, g/ai-power, e, d-marketplac, e, s-t, h, e-futu, r, e-of-digit, a, l-commer, c, e-ch, a, t';'
-      ic, o, n: '🤖';'
-      col, o, r: 'bl, u, e';'
-      tit, l, e: 'Blockchain, Technolog, y';'
-      descripti, o, n: 'Discover, blockchai, n\'s, impact, on modern, business, solutions and, decentralized, applications.';'
-      li, n, k: '/bl, o, g/blockcha, i, n-technolo, g, y-in-mode, r, n-busine, s, s-solutio, n, s-ch, a, t';'
-      ic, o, n: '🔗';'
-      col, o, r: 'purp, l, e';'
-      tit, l, e: 'Cloud, Architectur, e';'
-      descripti, o, n: 'Best, practices, for clo, u, d-native, applications, and scalable, infrastructure, design.''
-      li, n, k: '/bl, o, g/clo, u, d-nati, v, e-architectu, r, e-be, s, t-practic, e, s-ch, a, t';'
-      ic, o, n: '☁️';'
-      col, o, r: 'gre, e, n';'
-      tit, l, e: 'Machine, Learning, Applications';'
-      descripti, o, n: 'Re, a, l-world, applications, of machine, learning, in enterprise, software, development.';'
-      li, n, k: '/bl, o, g/machi, n, e-learni, n, g-applicatio, n, s-in-enterpri, s, e-softwa, r, e-ch, a, t';'
-      ic, o, n: '🧠';'
-      col, o, r: 'pi, n, k';'
-      tit, l, e: 'Cybersecurity, Trend, s';'
-      descripti, o, n: 'Latest, trends, and best, practices, in cybersecurity, for, 2024 and, beyon, d.''
-      li, n, k: '/bl, o, g/cybersecuri, t, y-tren, d, s-f, o, r-20, 2, 4-a, n, d-beyo, n, d-ch, a, t''
-      ic, o, n: '🔒';'
-      col, o, r: 'bl, u, e';'
-      tit, l, e: 'DevOps, Automatio, n';'
-      descripti, o, n: 'Strategies, for, modern DevOps, teams, to automate, and, streamline development, processe, s.''
-      li, n, k: '/bl, o, g/devo, p, s-automati, o, n-strategi, e, s-f, o, r-mode, r, n-tea, m, s-ch, a, t''
-      ic, o, n: '⚙️';'
-      col, o, r: 'purp, l, e';'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+
+const index: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>index - Zion Tech Solutions</title>
+        <meta name="description" content="index blog post" />
+      </Head>
+      
+      <main>
+        <h1>index</h1>
+        <p>Blog content coming soon...</p>
+        <Link href="/blog">Back to Blog</Link>
+      </main>
+    </div>
+  );
+};
+
+export default index;
