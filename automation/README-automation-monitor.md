@@ -17,21 +17,25 @@ This system continuously monitors all automation factories, agents, scripts, and
 ## System Components
 
 ### Factories
+
 - Monitors all automation factories
 - Checks health status and performance
 - Automatically restarts failed factories
 
 ### Agents
+
 - Monitors all automation agents
 - Tracks process status and health
 - Performs error recovery
 
 ### Scripts
+
 - Monitors all automation scripts
 - Validates syntax and dependencies
 - Fixes common issues
 
 ### Cron Jobs
+
 - Monitors all scheduled cron jobs
 - Tracks execution status
 - Performs error recovery
@@ -39,31 +43,37 @@ This system continuously monitors all automation factories, agents, scripts, and
 ## Usage
 
 ### Start the System
+
 ```bash
 ./automation/start-automation-monitor.sh
 ```
 
 ### Stop the System
+
 ```bash
 ./automation/stop-automation-monitor.sh
 ```
 
 ### Check Status
+
 ```bash
 ./automation/status-automation-monitor.sh
 ```
 
 ### Manual Health Check
+
 ```bash
 ./automation/cron-jobs/automation-monitor-and-maintainer-cron.sh health
 ```
 
 ### Generate Report
+
 ```bash
 ./automation/cron-jobs/automation-monitor-and-maintainer-cron.sh report
 ```
 
 ### View Logs
+
 ```bash
 ./automation/cron-jobs/automation-monitor-and-maintainer-cron.sh logs
 ```
@@ -113,16 +123,19 @@ automation/
 ## Troubleshooting
 
 ### System Not Starting
+
 1. Check if Node.js is installed: `node --version`
 2. Check if dependencies are installed: `npm list`
 3. Check logs: `./automation/cron-jobs/automation-monitor-and-maintainer-cron.sh logs`
 
 ### System Not Monitoring
+
 1. Check if system is running: `./automation/status-automation-monitor.sh`
 2. Check cron jobs: `crontab -l`
 3. Check configuration: `cat automation/automation-monitor-config.json`
 
 ### Performance Issues
+
 1. Check system resources: `./automation/cron-jobs/automation-monitor-and-maintainer-cron.sh health`
 2. Review logs for errors
 3. Check disk space: `df -h`
@@ -130,189 +143,3 @@ automation/
 ## Support
 
 For issues or questions, check the logs in `automation/logs/` and reports in `automation/reports/`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
