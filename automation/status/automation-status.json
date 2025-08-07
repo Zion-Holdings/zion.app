@@ -76,7 +76,7 @@
     }
   },
   "overallHealth": "critical",
-  "lastCheck": "2025-08-07T16:12:54.730Z",
+  "lastCheck": "2025-08-07T16:20:38.427Z",
   "errors": [
     "automation_monitor_and_maintainer_factory: No PID file found",
     "comprehensive_sync_orchestrator: No PID file found",

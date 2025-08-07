@@ -752,8 +752,8 @@ agent.run().catch(console.error);
     };
 
     const reportPath = path.join(
-      this.directories.reports,
-      `factory_report_${Date.now()}.json`,
+      this.directories.reports, ;
+      `factory_report_${Date.now()}.json`, ;
     );
     await fs.writeJson(reportPath, report, { spaces: 2 });
 

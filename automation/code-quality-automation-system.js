@@ -1,10 +1,13 @@
-#! / usr / bin / env node; / *  *  * Code Quality Automation System; * ; * This system continuously monitors and improves code quality across the project, ; * including linting, formatting, and best practices enforcement.; * / const fs = require('fs');
-const path = require('path');
-const { execSync, spawn } = require('child_process');
+#! / usr / bin / env node; / *  *  * Code Quality Automation System; * ; * This system continuously monitors and improves code quality across the project, ; * including linting, formatting, and best practices enforcement.; * / import fs from 'fs';
+import path from 'path';
+import { execSync, spawn } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class CodeQualityAutomationSystem {
   constructor() {
-    this.isRunning = false;
     this.config = {
       checkInterval: 300000, /  / 5 minutes;
       lintingEnabled: true, ;
@@ -39,10 +42,21 @@ class CodeQualityAutomationSystem {
   start() {
     console.log('🚀 Starting Code Quality Automation System...');
     this.isRunning = true;
-    this.stats.startTime = new Date(); /  / Start continuous monitoring;
+    this.stats.startTime = new Date(); /  / Create PID file;
+    this.createPidFile(); /  / Start continuous monitoring;
     this.startContinuousMonitoring();
 
     console.log('✅ Code Quality Automation System started successfully');
+  }
+
+  createPidFile() {
+    const pidDir = path.join(__dirname, 'pids');
+    if (!fs.existsSync(pidDir)) {
+      fs.mkdirSync(pidDir, { recursive: true });
+    }
+    
+    const pidFile = path.join(pidDir, 'code - quality - automation - system.pid');
+    fs.writeFileSync(pidFile, process.pid.toString());
   }
 
   startContinuousMonitoring() { /  / Initial check;
@@ -296,7 +310,12 @@ class CodeQualityAutomationSystem {
 
   stop() {
     console.log('🛑 Stopping Code Quality Automation System...');
-    this.isRunning = false;
+    this.isRunning = false; /  / Remove PID file;
+    const pidFile = path.join(__dirname, 'pids', 'code - quality - automation - system.pid');
+    if (fs.existsSync(pidFile)) {
+      fs.unlinkSync(pidFile);
+    }
+    
     this.updateStats();
     console.log('✅ Code Quality Automation System stopped');
   }
@@ -308,7 +327,7 @@ class CodeQualityAutomationSystem {
     };
   }
 } /  / Run if called directly;
-if (require.main =  =  = module) {
+if (import.meta.url =  =  = `file: /  / ${process.argv[1]}`) {
   const system = new CodeQualityAutomationSystem();
   system.start(); /  / Handle graceful shutdown;
   process.on('SIGINT', () = > {
@@ -322,4 +341,4 @@ if (require.main =  =  = module) {
   });
 }
 
-module.exports = CodeQualityAutomationSystem;
+export default CodeQualityAutomationSystem;
