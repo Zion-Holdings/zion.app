@@ -22,11 +22,6 @@ npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugi
 # Create automation directory if it doesn't exist
 mkdir -p automation
 
-# Make automation scripts executable
-chmod +x automation/lint-error-fixer.js
-chmod +x automation/lint-monitor.js
-chmod +x automation/lint-automation-manager.js
-
 # Start the lint automation manager
 echo "🔄 Starting lint automation manager..."
 node automation/lint-automation-manager.js start

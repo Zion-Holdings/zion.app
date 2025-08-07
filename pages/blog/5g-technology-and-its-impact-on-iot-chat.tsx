@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const 5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
+const FiveGTechnologyAndItsImpactOnIotChat: NextPage = () => {
   return (
     <div>
       <Head>
@@ -19,4 +19,4 @@ const 5gTechnologyAndItsImpactOnIotChat: NextPage = () => {
   );
 };
 
-export default 5gTechnologyAndItsImpactOnIotChat;
+export default FiveGTechnologyAndItsImpactOnIotChat;
