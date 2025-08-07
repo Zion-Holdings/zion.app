@@ -1,45 +1,14 @@
 module.exports = {
   extends: [
-    "next/core-web-vitals",
-    "@typescript-eslint/recommended"
-  ],
-  parser: "@typescript-eslint/parser",
-  plugins: [
-    "@typescript-eslint",
-    "react"
+    "next/core-web-vitals"
   ],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
+    "no-unused-vars": [
       "warn",
       { argsIgnorePattern: "^_" }
     ],
-    "no-explicit-any": "warn",
-    "@typescript-eslint/no-explicit-any": "warn",
-    "react/react-in-jsx-scope": "off",
-    "react/no-unescaped-entities": "off"
-  },
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+    "no-explicit-any": "warn"
+  }
 };

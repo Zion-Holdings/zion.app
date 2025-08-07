@@ -115,7 +115,7 @@
     "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.39.0",
-    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/postcss": "^3.4.0",
     "@types/react-datepicker": "^6.2.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
@@ -136,9 +136,9 @@
     "openai": "^5.11.0",
     "path": "^0.12.7",
     "postcss": "^8.4.32",
-    "react": "^18.3.1",
+    "react": "^17.0.2",
     "react-datepicker": "^8.4.0",
-    "react-dom": "^18.3.1",
+    "react-dom": "^17.0.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
@@ -147,8 +147,8 @@
     "@testing-library/react": "^16.3.0",
     "@types/node": "^24.2.0",
     "@types/node-cron": "^3.0.11",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^17.0.87",
+    "@types/react-dom": "^17.0.26",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.16",
@@ -159,8 +159,8 @@
     "husky": "^9.1.7",
     "node": "^10.9.2",
     "postcss": "^8.4.32",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^3.4.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.0.0"
+    "typescript": "^4.9.5"
   }
 }
