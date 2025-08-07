@@ -5,6 +5,7 @@ A comprehensive automation system that continuously monitors and syncs all proje
 ## Quick Start
 
 ```bash
+
 # Full setup and start
 ./automation/setup-frontend-sync-automation.sh --full
 
@@ -35,6 +36,7 @@ A comprehensive automation system that continuously monitors and syncs all proje
 ## Commands
 
 ```bash
+
 # Setup
 ./automation/setup-frontend-sync-automation.sh --setup
 
@@ -66,6 +68,7 @@ A comprehensive automation system that continuously monitors and syncs all proje
 ## Continuous Automation
 
 ```bash
+
 # Start continuous automation
 ./automation/cron-jobs/frontend-sync-continuous-automation.sh start
 

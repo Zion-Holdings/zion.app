@@ -38,7 +38,9 @@ The Cursor Automation System is a comprehensive AI-powered automation platform d
 
 ```bash
 npm run cursor:auto-refactor
+
 # or
+
 node cursor-automation-system.js auto-refactor src/components/MyComponent.js
 ```
 
@@ -60,7 +62,9 @@ node cursor-automation-system.js auto-refactor src/components/MyComponent.js
 
 ```bash
 npm run cursor:generate-tests
+
 # or
+
 node cursor-automation-system.js generate-tests src/utils/helpers.js
 ```
 
@@ -82,7 +86,9 @@ node cursor-automation-system.js generate-tests src/utils/helpers.js
 
 ```bash
 npm run cursor:optimize-performance
+
 # or
+
 node cursor-automation-system.js optimize-performance src/components/HeavyComponent.js
 ```
 
@@ -104,7 +110,9 @@ node cursor-automation-system.js optimize-performance src/components/HeavyCompon
 
 ```bash
 npm run cursor:fix-errors
+
 # or
+
 node cursor-automation-system.js fix-errors src/components/BuggyComponent.js
 ```
 
@@ -126,7 +134,9 @@ node cursor-automation-system.js fix-errors src/components/BuggyComponent.js
 
 ```bash
 npm run cursor:generate-docs
+
 # or
+
 node cursor-automation-system.js generate-docs src/utils/api.js
 ```
 
@@ -148,7 +158,9 @@ node cursor-automation-system.js generate-docs src/utils/api.js
 
 ```bash
 npm run cursor:analyze-quality
+
 # or
+
 node cursor-automation-system.js analyze-quality src/components/ComplexComponent.js
 ```
 
@@ -170,7 +182,9 @@ node cursor-automation-system.js analyze-quality src/components/ComplexComponent
 
 ```bash
 npm run cursor:suggest-improvements
+
 # or
+
 node cursor-automation-system.js suggest-improvements src/utils/helpers.js
 ```
 
@@ -192,7 +206,9 @@ node cursor-automation-system.js suggest-improvements src/utils/helpers.js
 
 ```bash
 npm run cursor:auto-commit
+
 # or
+
 node cursor-automation-system.js auto-commit
 ```
 
@@ -235,7 +251,9 @@ node cursor-automation-system.js auto-commit
 
 ```bash
 npm run cursor:code-review
+
 # or
+
 node cursor-automation-system.js code-review src/components/NewComponent.js
 ```
 
@@ -257,7 +275,9 @@ node cursor-automation-system.js code-review src/components/NewComponent.js
 
 ```bash
 npm run cursor:dependency-analysis
+
 # or
+
 node cursor-automation-system.js dependency-analysis
 ```
 
@@ -301,7 +321,9 @@ node cursor-automation-system.js security-scan src/utils/auth.js
 
 ```bash
 npm run cursor:performance-audit
+
 # or
+
 node cursor-automation-system.js performance-audit
 ```
 
@@ -323,7 +345,9 @@ node cursor-automation-system.js performance-audit
 
 ```bash
 npm run cursor:auto-deploy
+
 # or
+
 node cursor-automation-system.js auto-deploy --environment=staging
 ```
 

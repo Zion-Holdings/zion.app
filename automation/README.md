@@ -68,6 +68,7 @@ npm run automation:all
 ### Individual System Commands
 
 ```bash
+
 # Factory System
 npm run automation:factory
 npm run automation:factory:dev
@@ -88,6 +89,7 @@ npm run automation:coordinator:dev
 ### Management Commands
 
 ```bash
+
 # Check status of all automation systems
 npm run automation:status
 
@@ -192,6 +194,7 @@ automation/
 ### 1. Initialize the System
 
 ```bash
+
 # Start all automation systems
 npm run automation:all
 ```
@@ -199,6 +202,7 @@ npm run automation:all
 ### 2. Monitor Status
 
 ```bash
+
 # Check system status
 npm run automation:status
 ```

@@ -118,7 +118,7 @@ async function parallelReadFiles() {
   return results.filter(result => result !== null)
 }
 const fs = require('fs').promises;
-const path = require('path;
+const path = require('path');
 const cron = require('path;
 const DesignImprovementAutomationSystem = require('path;
 const LayoutOptimizationAgent = require('path;

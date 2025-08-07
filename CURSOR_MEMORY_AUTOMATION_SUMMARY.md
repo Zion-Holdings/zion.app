@@ -96,6 +96,7 @@ Successfully implemented a comprehensive automation system that learns from past
 ### Basic Usage
 
 ```bash
+
 # Run the automation
 npm run cursor:memory
 

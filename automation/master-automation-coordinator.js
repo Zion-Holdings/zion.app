@@ -126,7 +126,7 @@ function getOptimizedInterval() {
   return Math.floor(baseInterval * SPEED_MULTIPLIER)
 }
 const fs = require('fs').promises;
-const path = require('path;
+const path = require('path');
 
 console.log('🚀 Starting Enhanced master-automation-coordinator...');
 
