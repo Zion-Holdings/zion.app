@@ -1,4 +1,4 @@
-export {};
+import React from 'react';
 
 interface EnhancedLayoutProps {
   children: React.ReactNode;
