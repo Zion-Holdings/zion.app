@@ -440,19 +440,19 @@ optimizer.optimizePerformance().then(report => {
       const status = this.runningScripts.has(name) ? 'RUNNING' : script.status.toUpperCase();
       const lastRun = script.lastRun ? new Date(script.lastRun).toLocaleString() : 'Never';
       
-      console.log(\`\\n\${name}:\`);
-      console.log(\`  Description: \${script.description}\`);
-      console.log(\`  Status: \${status}\`);
-      console.log(\`  Last Run: \${lastRun}\`);
-      console.log(\`  Success Count: \${script.successCount}\`);
-      console.log(\`  Error Count: \${script.errorCount}\`);
+      console.log(`\n${name}:`);
+      console.log(`  Description: ${script.description}`);
+      console.log(`  Status: ${status}`);
+      console.log(`  Last Run: ${lastRun}`);
+      console.log(`  Success Count: ${script.successCount}`);
+      console.log(`  Error Count: ${script.errorCount}`);
     }
     
-    console.log('\\nRunning Scripts:');
+    console.log('\nRunning Scripts:');
     console.log('==================');
     for (const [name, info] of this.runningScripts) {
       const duration = Date.now() - info.startTime;
-      console.log(\`\${name}: Running for \${Math.floor(duration / 1000)}s\`);
+      console.log(`${name}: Running for ${Math.floor(duration / 1000)}s`);
     }
   }
 

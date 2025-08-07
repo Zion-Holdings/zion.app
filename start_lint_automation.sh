@@ -15,12 +15,18 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install required dependencies if not already installed
-echo "📦 Checking and installing dependencies..."
-npm install --save-dev eslint eslint-config-next @typescript-eslint/eslint-plugin @typescript-eslint/parser chokidar
-
 # Create automation directory if it doesn't exist
 mkdir -p automation
+mkdir -p automation/logs
+
+# Make automation scripts executable
+chmod +x automation/lint-error-fixer.js
+chmod +x automation/lint-monitor.js
+chmod +x automation/lint-automation-manager.js
+
+# Install basic dependencies if needed
+echo "📦 Checking basic dependencies..."
+npm install --save-dev eslint@^7.23.0 eslint-config-next@^11.1.4 chokidar@^4.0.3 --legacy-peer-deps --force
 
 # Start the lint automation manager
 echo "🔄 Starting lint automation manager..."
