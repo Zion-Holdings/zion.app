@@ -6,12 +6,12 @@ const PerformanceOptimizationChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Performance Optimization Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Performance Optimization Chat blog post" />
+        <title>PerformanceOptimizationChat - Zion Tech Solutions</title>
+        <meta name="description" content="PerformanceOptimizationChat service" />
       </Head>
       
       <main>
-        <h1>Performance Optimization Chat</h1>
+        <h1>PerformanceOptimizationChat</h1>
         <p>Service details coming soon...</p>
         <Link href="/services">Back to Services</Link>
       </main>

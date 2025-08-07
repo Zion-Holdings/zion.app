@@ -6,12 +6,12 @@ const DevopsAutomationStrategiesForModernTeamsChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Devops Automation Strategies For Modern Teams Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Devops Automation Strategies For Modern Teams Chat blog post" />
+        <title>DevopsAutomationStrategiesForModernTeamsChat - Zion Tech Solutions</title>
+        <meta name="description" content="DevopsAutomationStrategiesForModernTeamsChat blog post" />
       </Head>
       
       <main>
-        <h1>Devops Automation Strategies For Modern Teams Chat</h1>
+        <h1>DevopsAutomationStrategiesForModernTeamsChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

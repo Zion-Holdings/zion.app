@@ -6,12 +6,12 @@ const AiConsultingChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Ai Consulting Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Ai Consulting Chat blog post" />
+        <title>AiConsultingChat - Zion Tech Solutions</title>
+        <meta name="description" content="AiConsultingChat blog post" />
       </Head>
       
       <main>
-        <h1>Ai Consulting Chat</h1>
+        <h1>AiConsultingChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

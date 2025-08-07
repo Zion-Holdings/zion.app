@@ -6,12 +6,12 @@ const MachineLearningApplicationsInEnterpriseSoftwareChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Machine Learning Applications In Enterprise Software Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Machine Learning Applications In Enterprise Software Chat blog post" />
+        <title>MachineLearningApplicationsInEnterpriseSoftwareChat - Zion Tech Solutions</title>
+        <meta name="description" content="MachineLearningApplicationsInEnterpriseSoftwareChat blog post" />
       </Head>
       
       <main>
-        <h1>Machine Learning Applications In Enterprise Software Chat</h1>
+        <h1>MachineLearningApplicationsInEnterpriseSoftwareChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

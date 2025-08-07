@@ -6,12 +6,12 @@ const MicroservicesArchitectureBenefitsAndChallengesChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Microservices Architecture Benefits And Challenges Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Microservices Architecture Benefits And Challenges Chat blog post" />
+        <title>MicroservicesArchitectureBenefitsAndChallengesChat - Zion Tech Solutions</title>
+        <meta name="description" content="MicroservicesArchitectureBenefitsAndChallengesChat blog post" />
       </Head>
       
       <main>
-        <h1>Microservices Architecture Benefits And Challenges Chat</h1>
+        <h1>MicroservicesArchitectureBenefitsAndChallengesChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

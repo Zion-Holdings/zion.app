@@ -6,12 +6,12 @@ const DigitalTwinsRevolutionizingIndustry40Chat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Digital Twins Revolutionizing Industry 4 0 Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Digital Twins Revolutionizing Industry 4 0 Chat blog post" />
+        <title>DigitalTwinsRevolutionizingIndustry40Chat - Zion Tech Solutions</title>
+        <meta name="description" content="DigitalTwinsRevolutionizingIndustry40Chat blog post" />
       </Head>
       
       <main>
-        <h1>Digital Twins Revolutionizing Industry 4 0 Chat</h1>
+        <h1>DigitalTwinsRevolutionizingIndustry40Chat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>

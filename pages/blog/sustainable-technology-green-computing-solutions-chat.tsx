@@ -6,12 +6,12 @@ const SustainableTechnologyGreenComputingSolutionsChat: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Sustainable Technology Green Computing Solutions Chat - Zion Tech Solutions</title>
-        <meta name="description" content="Sustainable Technology Green Computing Solutions Chat blog post" />
+        <title>SustainableTechnologyGreenComputingSolutionsChat - Zion Tech Solutions</title>
+        <meta name="description" content="SustainableTechnologyGreenComputingSolutionsChat blog post" />
       </Head>
       
       <main>
-        <h1>Sustainable Technology Green Computing Solutions Chat</h1>
+        <h1>SustainableTechnologyGreenComputingSolutionsChat</h1>
         <p>Blog content coming soon...</p>
         <Link href="/blog">Back to Blog</Link>
       </main>
